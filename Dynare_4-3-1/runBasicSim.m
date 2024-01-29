@@ -21,5 +21,5 @@ cd(fullfile(project_path, 'Dynare_4-3-1','modFiles'));
 
 % calculating the steady state
 dynare steady1.mod
-
+dynare steady2.mod
 %dynare shock_eab_gy1.mod
