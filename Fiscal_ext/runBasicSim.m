@@ -1,5 +1,5 @@
 %% preamble
-clear all; close all; clc;
+clear all; close all; clc; restoredefaultpath
 % Add some paths
 currentFolder = pwd; % Get current directory
 [parentFolder, ~, ~] = fileparts(currentFolder);
@@ -13,7 +13,7 @@ call_paths;
 addpath(iris_path);
 iris.startup
 % Call Dynare
-addpath(dynare_55);
+addpath(dynare_431);
 dynare_config
 
 %%

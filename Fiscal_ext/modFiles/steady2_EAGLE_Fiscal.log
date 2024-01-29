@@ -78891,52 +78891,52 @@ EAAEAB_nerdep       		 1
 EAA_gammabh         		 0
 EAA_bh              		 0
 EAB_bh              		 0
-Total computing time : 0h00m56s
+Total computing time : 0h01m00s
 
 Dynare Preprocessor Warning(s) Encountered:
-     WARNING: Unknown symbol AUX_ENDO_LAG_207_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_207_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_207_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_194_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_194_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_194_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_175_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_272_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_272_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_272_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_605_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_605_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_605_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_592_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_592_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_592_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_573_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_670_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_670_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_670_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1002_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1002_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1002_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_989_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_989_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_989_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_970_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1067_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1067_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1067_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1402_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1402_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1402_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1389_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1389_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1389_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1370_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1464_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1464_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1464_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_87_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_227_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_625_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_206_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_206_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_206_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_193_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_193_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_193_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_174_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_271_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_271_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_271_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_602_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_602_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_602_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_589_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_589_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_589_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_570_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_667_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_667_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_667_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_997_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_997_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_997_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_984_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_984_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_984_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_965_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_1062_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_1062_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_1062_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_1394_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_1394_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_1394_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_1381_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_1381_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_1381_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_1362_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_1456_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_1456_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_1456_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_86_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_226_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
+     WARNING: Unknown symbol AUX_ENDO_LAG_622_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
      WARNING: Unknown symbol AUX_ENDO_LAG_3_1 in eagle_steady_stage1_EAGLE_Fiscal.txt
      WARNING: Unknown symbol AUX_ENDO_LAG_3_2 in eagle_steady_stage1_EAGLE_Fiscal.txt
      WARNING: Unknown symbol AUX_ENDO_LAG_3_3 in eagle_steady_stage1_EAGLE_Fiscal.txt
