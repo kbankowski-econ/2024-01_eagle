@@ -37,3 +37,9 @@ dynare shock_eab_tech.mod
 
 % shock simulation: permanent productivity shock
 dynare shockperm_ea_techn.mod
+
+% shock simulation: risk premium shock
+dynare ea_epsrp.mod
+
+% shock simulation: risk premium shock
+dynare ea_epsrp.mod
