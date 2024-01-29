@@ -13,7 +13,7 @@ call_paths;
 addpath(iris_path);
 iris.startup
 % Call Dynare
-addpath(dynare_443);
+addpath(dynare_431);
 dynare_config
 
 %%
