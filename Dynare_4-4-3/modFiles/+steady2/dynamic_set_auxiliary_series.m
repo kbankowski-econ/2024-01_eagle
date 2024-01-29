@@ -1,0 +1,54 @@
+function ds = dynamic_set_auxiliary_series(ds, params)
+%
+% Status : Computes Auxiliary variables of the dynamic model and returns a dseries
+%
+% Warning : this file is generated automatically by Dynare
+%           from model file (.mod)
+
+ds.AUX_ENDO_LAG_161_1=ds.EAA_pimc(-1);
+ds.AUX_ENDO_LAG_161_2=ds.AUX_ENDO_LAG_161_1(-1);
+ds.AUX_ENDO_LAG_161_3=ds.AUX_ENDO_LAG_161_2(-1);
+ds.AUX_ENDO_LAG_149_1=ds.EAA_pex(-1);
+ds.AUX_ENDO_LAG_149_2=ds.AUX_ENDO_LAG_149_1(-1);
+ds.AUX_ENDO_LAG_149_3=ds.AUX_ENDO_LAG_149_2(-1);
+ds.AUX_ENDO_LAG_134_1=ds.EAA_m(-1);
+ds.AUX_ENDO_LAG_219_1=ds.EAA_y(-1);
+ds.AUX_ENDO_LAG_219_2=ds.AUX_ENDO_LAG_219_1(-1);
+ds.AUX_ENDO_LAG_219_3=ds.AUX_ENDO_LAG_219_2(-1);
+ds.AUX_ENDO_LAG_481_1=ds.EAB_pimc(-1);
+ds.AUX_ENDO_LAG_481_2=ds.AUX_ENDO_LAG_481_1(-1);
+ds.AUX_ENDO_LAG_481_3=ds.AUX_ENDO_LAG_481_2(-1);
+ds.AUX_ENDO_LAG_469_1=ds.EAB_pex(-1);
+ds.AUX_ENDO_LAG_469_2=ds.AUX_ENDO_LAG_469_1(-1);
+ds.AUX_ENDO_LAG_469_3=ds.AUX_ENDO_LAG_469_2(-1);
+ds.AUX_ENDO_LAG_454_1=ds.EAB_m(-1);
+ds.AUX_ENDO_LAG_539_1=ds.EAB_y(-1);
+ds.AUX_ENDO_LAG_539_2=ds.AUX_ENDO_LAG_539_1(-1);
+ds.AUX_ENDO_LAG_539_3=ds.AUX_ENDO_LAG_539_2(-1);
+ds.AUX_ENDO_LAG_801_1=ds.RW_pimc(-1);
+ds.AUX_ENDO_LAG_801_2=ds.AUX_ENDO_LAG_801_1(-1);
+ds.AUX_ENDO_LAG_801_3=ds.AUX_ENDO_LAG_801_2(-1);
+ds.AUX_ENDO_LAG_789_1=ds.RW_pex(-1);
+ds.AUX_ENDO_LAG_789_2=ds.AUX_ENDO_LAG_789_1(-1);
+ds.AUX_ENDO_LAG_789_3=ds.AUX_ENDO_LAG_789_2(-1);
+ds.AUX_ENDO_LAG_774_1=ds.RW_m(-1);
+ds.AUX_ENDO_LAG_859_1=ds.RW_y(-1);
+ds.AUX_ENDO_LAG_859_2=ds.AUX_ENDO_LAG_859_1(-1);
+ds.AUX_ENDO_LAG_859_3=ds.AUX_ENDO_LAG_859_2(-1);
+ds.AUX_ENDO_LAG_1123_1=ds.US_pimc(-1);
+ds.AUX_ENDO_LAG_1123_2=ds.AUX_ENDO_LAG_1123_1(-1);
+ds.AUX_ENDO_LAG_1123_3=ds.AUX_ENDO_LAG_1123_2(-1);
+ds.AUX_ENDO_LAG_1111_1=ds.US_pex(-1);
+ds.AUX_ENDO_LAG_1111_2=ds.AUX_ENDO_LAG_1111_1(-1);
+ds.AUX_ENDO_LAG_1111_3=ds.AUX_ENDO_LAG_1111_2(-1);
+ds.AUX_ENDO_LAG_1096_1=ds.US_m(-1);
+ds.AUX_ENDO_LAG_1178_1=ds.US_y(-1);
+ds.AUX_ENDO_LAG_1178_2=ds.AUX_ENDO_LAG_1178_1(-1);
+ds.AUX_ENDO_LAG_1178_3=ds.AUX_ENDO_LAG_1178_2(-1);
+ds.AUX_ENDO_LAG_62_1=ds.EAAEAB_rer(-1);
+ds.AUX_ENDO_LAG_176_1=ds.EAA_rer(-1);
+ds.AUX_ENDO_LAG_496_1=ds.EAB_rer(-1);
+ds.AUX_ENDO_LAG_3_1=ds.EA_y(-1);
+ds.AUX_ENDO_LAG_3_2=ds.AUX_ENDO_LAG_3_1(-1);
+ds.AUX_ENDO_LAG_3_3=ds.AUX_ENDO_LAG_3_2(-1);
+end

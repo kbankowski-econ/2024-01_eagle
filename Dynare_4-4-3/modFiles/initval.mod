@@ -194,10 +194,14 @@ initval;
   @{COUNTRY}_zt = 1;
     
   @#if(COUNTRY != "EAA" && COUNTRY != "EAB" )
-    @{COUNTRY}_epsr = 0;
+    @# if !steady
+      @{COUNTRY}_epsr = 0;
+    @#endif
   @#endif
   @#if(COUNTRY != "US")
-    @{COUNTRY}_epsrp = 0;
+    @# if !steady
+      @{COUNTRY}_epsrp = 0;
+    @# endif
   @#endif
   
   @{COUNTRY}_gybar = 0;
@@ -272,7 +276,9 @@ EAA_gammabh = 0;
 EAAEAB_nerdep = 1;
 
 EA_bf = 0;
-EA_epsr =  0;
+@# if !steady
+  EA_epsr =  0;
+@#endif
 EA_epsz =  0;
 EA_m = 0.132518;
 EA_pic4 = 1; 

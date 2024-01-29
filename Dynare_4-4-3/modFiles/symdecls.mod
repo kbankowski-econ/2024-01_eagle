@@ -21,7 +21,9 @@ parameters
 
 // Exogenous
 varexo
- @{ea}_epsr
+@# if !steady
+    @{ea}_epsr
+@# endif // !steady
  @{ea}_epsz
 ;
 
@@ -367,10 +369,14 @@ varexo
  @{co}_cpim
  @{co}_epsg
 @# if co != countries[1] && co != countries[2]
- @{co}_epsr
+    @# if !steady
+        @{co}_epsr
+    @# endif
 @# endif
 @# if co != countries[4]
- @{co}_epsrp
+    @# if !steady
+        @{co}_epsrp
+    @# endif
 @# endif
  @{co}_epstauc
  @{co}_epstaud
