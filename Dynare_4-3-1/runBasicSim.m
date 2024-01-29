@@ -30,4 +30,4 @@ dynare shock_eab_gy1.mod
 
 % shock simulation: 4-period g shock in EAB region (with some nuanced shock
 % values)
-dynare shock_eab_gy1.mod
+dynare shock_eab_gy2.mod
