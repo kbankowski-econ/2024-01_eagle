@@ -25,24 +25,5 @@ if true
     dynare steady2_EAGLE_Fiscal.mod
 end
 
-% shock simulation: 4-period g shock in EAB region
+% shock simulation: gc
 dynare EAB_EAGLE_Fiscal_epsgc.mod
-
-% shock simulation: 4-period g shock in EAB region (with some nuanced shock
-% values)
-dynare shock_eab_gy2.mod
-
-% shock simulation: productivity shock
-dynare shock_eab_tech.mod
-
-% shock simulation: permanent productivity shock
-dynare shockperm_ea_techn.mod
-
-% shock simulation: risk premium shock
-dynare ea_epsrp.mod
-
-% shock simulation: risk premium shock
-dynare ea_epsrp.mod
-
-% shock simulation: monetary policy shock
-dynare shock_ea_monpol.mod
