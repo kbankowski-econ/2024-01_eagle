@@ -34,3 +34,6 @@ dynare shock_eab_gy2.mod
 
 % shock simulation: productivity shock
 dynare shock_eab_tech.mod
+
+% shock simulation: permanent productivity shock
+dynare shockperm_ea_techn.mod
