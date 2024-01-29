@@ -43,3 +43,6 @@ dynare ea_epsrp.mod
 
 % shock simulation: risk premium shock
 dynare ea_epsrp.mod
+
+% shock simulation: monetary policy shock
+dynare shock_ea_monpol.mod
