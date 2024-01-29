@@ -27,3 +27,6 @@ end
 
 % shock simulation: gc
 dynare EAB_EAGLE_Fiscal_epsgc.mod
+
+% shock simulation: gi
+dynare EAB_EAGLE_Fiscal_epsgi.mod
