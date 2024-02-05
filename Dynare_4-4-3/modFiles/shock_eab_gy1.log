@@ -966,16 +966,16 @@ MODEL SIMULATION: (method=ByteCode own solver)
       sqr. error=5.2701672447e-03       
       abs. error=2.3824153095e-01       
 -----------------------------------
-(** 1660.954000 milliseconds **)
-Sim : 56.456000 ms
+(** 1660.997000 milliseconds **)
+Sim : 53.890000 ms
 -----------------------------------
       Simulate iteration no 2     
       max. error=3.0489870268e-03       
       sqr. error=3.5498701648e-05       
       abs. error=1.8648405808e-02       
 -----------------------------------
-(** 1635.247000 milliseconds **)
-Sim : 53.518000 ms
+(** 1646.858000 milliseconds **)
+Sim : 54.770000 ms
 -----------------------------------
       Simulate iteration no 3     
       max. error=9.6145083006e-07       
@@ -984,5 +984,5 @@ Sim : 53.518000 ms
 -----------------------------------
 Perfect foresight solution found.
 
-Total computing time : 0h00m06s
+Total computing time : 0h00m04s
 Note: 47 warning(s) encountered in the preprocessor
