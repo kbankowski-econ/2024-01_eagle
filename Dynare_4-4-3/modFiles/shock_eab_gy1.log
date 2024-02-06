@@ -1,4 +1,4 @@
-Starting Dynare (version 5.5-arm64).
+Starting Dynare (version 6.0).
 Calling Dynare with arguments: none
 Starting preprocessing of the model file ...
 Reading eagle_steady.txt.
@@ -51,32 +51,30 @@ WARNING: Unknown symbol AUX_ENDO_LAG_3_3 in eagle_steady.txt
 WARNING: shock_eab_gy1.mod:21.1-58: The 'simul' statement is deprecated. Please use 'perfect_foresight_setup' and 'perfect_foresight_solver' instead.
 Substitution of endo lags >= 2: added 62 auxiliary variables and equations.
 Found 941 equation(s).
-Evaluating expressions...done
+Evaluating expressions...
 Computing static model derivatives (order 1).
 Normalizing the static model...
-Finding the optimal block decomposition of the model ...
-126 block(s) found:
-  122 recursive block(s) and 4 simultaneous block(s).
-  the largest simultaneous block has 447 equation(s)
-                                 and 447 feedback variable(s).
+Finding the optimal block decomposition of the static model...
+124 block(s) found:
+  120 recursive block(s) and 4 simultaneous block(s).
+  the largest simultaneous block has 454 equation(s)
+                                 and 454 feedback variable(s).
 Computing dynamic model derivatives (order 1).
 Normalizing the dynamic model...
-Finding the optimal block decomposition of the model ...
+Finding the optimal block decomposition of the dynamic model...
 60 block(s) found:
   59 recursive block(s) and 1 simultaneous block(s).
   the largest simultaneous block has 560 equation(s)
-                                 and 560 feedback variable(s).
-Processing outputs ...
-done
+                                 and 506 feedback variable(s).
 Preprocessing completed.
-
-MODEL STEADY STATE: (method=ByteCode own solver)
------------------------------------
-      Simulate iteration no 1     
-      max. error=3.2338691000e-04       
-      sqr. error=1.3072386643e-07       
-      abs. error=4.8508148234e-04       
------------------------------------
+Preprocessing time: 0h00m01s.
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 3.234e-04
+      2-norm error   = 3.616e-04
+      1-norm error   = 4.851e-04
+------------------------------------
 
 STEADY-STATE RESULTS:
 
@@ -162,7 +160,7 @@ EAA_cj              		 1.4084
 EAA_cy              		 0.598091
 EAA_d               		 0.312636
 EAA_dn              		 0.312636
-EAA_dt              		 -2.66168e-08
+EAA_dt              		 -2.66174e-08
 EAA_epsilonm        		 -0.750001
 EAA_etot            		 0.87426
 EAA_ex              		 0.907327
@@ -174,7 +172,7 @@ EAA_g               		 0.606277
 EAA_gammab          		 0
 EAA_gammai          		 0
 EAA_gammaider       		 0
-EAA_gammau          		 -1.07348e-16
+EAA_gammau          		 0
 EAA_gammauder       		 0.0341552
 EAA_gammav          		 0.00021177
 EAA_gammavi         		 0.000101018
@@ -259,7 +257,7 @@ EAA_sh              		 1
 EAA_si              		 1
 EAA_sj              		 1
 EAA_snt             		 1
-EAA_t               		 4.99346e-08
+EAA_t               		 4.99324e-08
 EAA_tauc            		 0.183
 EAA_taud            		 0
 EAA_tauk            		 0.189851
@@ -268,8 +266,8 @@ EAA_tauwf           		 0.219
 EAA_tauwh           		 0.118
 EAA_tb              		 0.00648045
 EAA_tby             		 0.00184887
-EAA_ti              		 5.99215e-08
-EAA_tj              		 1.99738e-08
+EAA_ti              		 5.99189e-08
+EAA_tj              		 1.9973e-08
 EAA_tot             		 0.812679
 EAA_tr              		 0.515528
 EAA_tri             		 0.343685
@@ -277,7 +275,7 @@ EAA_trj             		 1.03106
 EAA_try             		 0.14708
 EAA_ttc             		 1.03908
 EAA_tti             		 0.554346
-EAA_ty              		 1.42463e-08
+EAA_ty              		 1.42457e-08
 EAA_u               		 1
 EAA_utili           		 -80.6048
 EAA_utilj           		 -161.271
@@ -293,7 +291,7 @@ EAA_wjtilde         		 0.846062
 EAA_wnty            		 0.490019
 EAA_wy              		 0.523022
 EAA_y               		 3.32835
-EAA_ygap            		 -1.00801e-07
+EAA_ygap            		 -1.008e-07
 EAA_ygrowth         		 1
 EAA_ygrowth4        		 1
 EAA_yhty            		 0.391853
@@ -380,7 +378,7 @@ EAB_cj              		 1.45988
 EAB_cy              		 0.604869
 EAB_d               		 0.326523
 EAB_dn              		 0.326523
-EAB_dt              		 -1.10567e-08
+EAB_dt              		 -1.1057e-08
 EAB_epsilonm        		 -0.750001
 EAB_etot            		 0.831906
 EAB_ex              		 1.05728
@@ -392,7 +390,7 @@ EAB_g               		 0.624295
 EAB_gammab          		 0
 EAB_gammai          		 0
 EAB_gammaider       		 0
-EAB_gammau          		 0
+EAB_gammau          		 6.93889e-18
 EAB_gammauder       		 0.0341188
 EAB_gammav          		 0.000221278
 EAB_gammavi         		 0.000101018
@@ -477,7 +475,7 @@ EAB_sh              		 1
 EAB_si              		 1
 EAB_sj              		 1
 EAB_snt             		 1
-EAB_t               		 2.78577e-07
+EAB_t               		 2.78579e-07
 EAB_tauc            		 0.183
 EAB_taud            		 0
 EAB_tauk            		 0.186621
@@ -486,8 +484,8 @@ EAB_tauwf           		 0.219
 EAB_tauwh           		 0.118
 EAB_tb              		 -0.0178547
 EAB_tby             		 -0.00493033
-EAB_ti              		 3.34292e-07
-EAB_tj              		 1.11431e-07
+EAB_ti              		 3.34295e-07
+EAB_tj              		 1.11432e-07
 EAB_tot             		 0.752525
 EAB_tr              		 0.535201
 EAB_tri             		 0.356801
@@ -495,7 +493,7 @@ EAB_trj             		 1.0704
 EAB_try             		 0.147788
 EAB_ttc             		 1.08839
 EAB_tti             		 0.622098
-EAB_ty              		 7.6925e-08
+EAB_ty              		 7.69257e-08
 EAB_u               		 1
 EAB_utili           		 -73.9339
 EAB_utilj           		 -156.284
@@ -511,7 +509,7 @@ EAB_wjtilde         		 0.875516
 EAB_wnty            		 0.490019
 EAB_wy              		 0.522465
 EAB_y               		 3.42211
-EAB_ygap            		 -7.25659e-08
+EAB_ygap            		 -7.25679e-08
 EAB_ygrowth         		 1
 EAB_ygrowth4        		 1
 EAB_yhty            		 0.385242
@@ -598,7 +596,7 @@ RW_cj               		 1.40314
 RW_cy               		 0.644865
 RW_d                		 0.410514
 RW_dn               		 0.410514
-RW_dt               		 -8.98176e-08
+RW_dt               		 -8.98177e-08
 RW_epsilonm         		 -0.750001
 RW_etot             		 1.10823
 RW_ex               		 0.641162
@@ -610,7 +608,7 @@ RW_g                		 0.668718
 RW_gammab           		 0
 RW_gammai           		 0
 RW_gammaider        		 0
-RW_gammau           		 -2.78346e-17
+RW_gammau           		 -2.15816e-16
 RW_gammauder        		 0.0338385
 RW_gammav           		 0.000273885
 RW_gammavi          		 0.000101018
@@ -827,7 +825,7 @@ US_fn               		 8.22821
 US_g                		 0.677043
 US_gammai           		 0
 US_gammaider        		 0
-US_gammau           		 2.02441e-18
+US_gammau           		 0
 US_gammauder        		 0.0338714
 US_gammav           		 0.000274496
 US_gammavi          		 0.000101018
@@ -957,31 +955,30 @@ US_zn               		 1
 US_zt               		 1
 EAAEAB_nerdep       		 1
 EAA_gammabh         		 0
-EAA_bh              		 -2.01264e-10
-EAB_bh              		 5.36703e-10
-MODEL SIMULATION: (method=ByteCode own solver)
------------------------------------
-      Simulate iteration no 1     
-      max. error=3.6214099384e-02       
-      sqr. error=5.2701672447e-03       
-      abs. error=2.3824153095e-01       
------------------------------------
-(** 1635.573000 milliseconds **)
-Sim : 53.729000 ms
------------------------------------
-      Simulate iteration no 2     
-      max. error=3.0489870268e-03       
-      sqr. error=3.5498701648e-05       
-      abs. error=1.8648405808e-02       
------------------------------------
-(** 1685.615000 milliseconds **)
-Sim : 53.813000 ms
------------------------------------
-      Simulate iteration no 3     
-      max. error=9.6145083006e-07       
-      sqr. error=4.0316817465e-12       
-      abs. error=1.9712389451e-05       
------------------------------------
+EAA_bh              		 -1.89432e-12
+EAB_bh              		 5.05151e-12
+MODEL SIMULATION: (method=LBJ with Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 3.621e-02
+      2-norm error   = 7.260e-02
+      1-norm error   = 2.382e-01
+------------------------------------
+(** 1.78 seconds **)
+------------------------------------
+      Iteration no. 2
+      Inf-norm error = 3.049e-03
+      2-norm error   = 5.957e-03
+      1-norm error   = 1.845e-02
+------------------------------------
+(** 1.76 seconds **)
+------------------------------------
+      Iteration no. 3
+      Inf-norm error = 1.738e-06
+      2-norm error   = 3.028e-06
+      1-norm error   = 2.387e-05
+------------------------------------
+
 Perfect foresight solution found.
 
 Total computing time : 0h00m04s

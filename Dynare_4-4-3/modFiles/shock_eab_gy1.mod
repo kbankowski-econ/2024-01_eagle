@@ -19,7 +19,3 @@ values 0.01;
 end;
 
 simul(periods = 200, stack_solve_algo = 5, markowitz = 5);
-
-plot((EAB_gy-EAB_gy(1,1))*100);
-title('EAB GY')
-ylabel('p.p. deviation from steady state')

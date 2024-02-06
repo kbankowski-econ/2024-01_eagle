@@ -1,10 +1,7 @@
 function ds = dynamic_set_auxiliary_series(ds, params)
 %
-% Status : Computes Auxiliary variables of the dynamic model and returns a dseries
+% Computes auxiliary variables of the dynamic model
 %
-% Warning : this file is generated automatically by Dynare
-%           from model file (.mod)
-
 ds.AUX_ENDO_LAG_165_1=ds.EAA_piw(-1);
 ds.AUX_ENDO_LAG_165_2=ds.AUX_ENDO_LAG_165_1(-1);
 ds.AUX_ENDO_LAG_162_1=ds.EAA_pimc(-1);
