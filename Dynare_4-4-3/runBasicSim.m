@@ -13,7 +13,7 @@ call_paths;
 addpath(iris_path);
 iris.startup
 % Call Dynare
-addpath(dynare_55);
+addpath(dynare_6_0);
 dynare_config
 
 %%
@@ -27,6 +27,12 @@ end
 
 % shock simulation: 4-period g shock in EAB region
 dynare shock_eab_gy1.mod
+
+eabGy1Databank = databank.fromArray(oo_.endo_simul', M_.endo_names, qq(0,4));
+serToPlot = (eabGy1Databank.EAB_gy-eabGy1Databank.EAB_gy(qq(0,4)))*100;
+plot(serToPlot{qq(1,1): qq(50,4)});
+title('EAB GY')
+ylabel('p.p. deviation from steady state')
 
 % shock simulation: 4-period g shock in EAB region (with some nuanced shock
 % values)
