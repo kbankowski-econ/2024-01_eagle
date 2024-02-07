@@ -1,3 +1,5 @@
+// --+ options: stochastic,json=compute +--
+
 @#define steady = 0
 
 @#include "init.mod"

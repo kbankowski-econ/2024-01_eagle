@@ -36,13 +36,11 @@ cd(fullfile(project_path, 'eagleParsing','modFiles'));
 
 fprintf('Parsing %s ...\n', "eagleModel")
 
-dynare(sprintf('eagleModel'), options_ecb.mod_run, options_ecb.mod_path, 'nopreprocessoroutput');
-
 try % To avoid json issue (here we absolutely need the json option)
-    dynare(sprintf('EA_%s', "Longrun"), options_ecb.mod_run, options_ecb.mod_path, 'nopreprocessoroutput');
+    dynare(sprintf('eagleModel'), options_ecb.mod_run, options_ecb.mod_path, 'nopreprocessoroutput');
 catch
-    dynare(sprintf('EA_%s', "Longrun"), options_ecb.mod_run, options_ecb.mod_path, 'nopreprocessoroutput');
+    dynare(sprintf('eagleModel'), options_ecb.mod_run, options_ecb.mod_path, 'nopreprocessoroutput');
 end
 endo =  M_.endo_names(~contains(M_.endo_names, 'AUX_'));
 % Creating .inc files which contain all informations on the model
-utils.ParseModel(sprintf('EA_%s', "Longrun"), sprintf('Parsed_EA_%s', "Longrun"), endo, 1)
+utils.ParseModel(sprintf('eagleModel'), sprintf('Parsed_eagleModel'), endo, 1)
