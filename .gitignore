@@ -10,3 +10,20 @@ Dynare_4-4-3/modFiles/+steady2/*
 Fiscal_ext/modFiles/+shock_eab_gy1/*
 Fiscal_ext/modFiles/+steady1_EAGLE_Fiscal/*
 Fiscal_ext/modFiles/+steady2/*
+
+# Dismissing abundant files automatically generated
+* 2.*
+checksum 2
+* 3.*
+* 4.*
+* 5.*
+* 6.*
+* 7.*
+* 8.*
+* 9.*
+* 10.*
+* 11.*
+* 12.*
+* 13.*
+* 14.*
+* 15.*
