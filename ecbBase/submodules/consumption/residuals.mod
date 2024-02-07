@@ -1,0 +1,13 @@
+res_U2_HH_COR           //'', '', '', 'ar';
+res_U2_H_Q_YER          //'', '', '', 'zero';
+res_U2_H_HH_Y_DIR       //'', '', '', 'zero';
+res_U2_H_HH_S_DIRL      //'', '', '', 'zero';
+res_U2_H_HH_S_DIRT      //'', '', '', 'zero';
+res_U2_W0_CEN           //'', '', '', 'zero';
+res_U2_MIN              //'', '', '', 'zero';
+res_U2_HH_B_SCN         //'', '', '', 'zero';
+res_U2_HH_B_SBN         //'', '', '', 'zero';
+res_U2_S_DTNL           //'', '', '', 'zero';
+res_U2_S_SCNT           //'', '', '', 'zero';
+res_U2_S_DTNT           //'', '', '', 'zero';
+res_U2_S_SCNL           //'', '', '', 'zero';

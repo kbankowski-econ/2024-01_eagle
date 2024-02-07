@@ -1,0 +1,17 @@
+U2_STN_EY10             //'3.2', 'constant', '', '';
+U2_HH_SL_CON            //'4.55', 'constant', 'ad_hoc', '4.5474';
+U2_HH_SL_IHN            //'1.35', 'constant', '', '';   
+U2_SLRN                 //'0.91', 'constant', '', '';
+U2_SCB                  //'1.02', 'constant', '', '';
+U2_SCOE                 //'2.45', 'constant', '', '';
+U2_TP_10Y               //'1.67', 'constant', '', '';
+U2_LT_10Y               //'4.9', 'constant', 'ad_hoc', '4.877224385';
+U2_HH_L_CON             //'12.34', 'constant', '', '';
+U2_HH_L_IHN             //'5.34', 'constant', 'ad_hoc', '5.63770052062957';
+U2_LRN                  //'4.81', 'constant', 'ad_hoc', '3.55644312831984';
+U2_COE                  //'6.18', 'constant', '', '';
+U2_CB                   //'4.75', 'constant', '', '';
+U2_G_YER_EY10           //'0', 'constant', '', '';
+U2_USTP_10Y             //'1.17', 'constant', '', '';
+U2_dUSTP_10Y            //'0', 'constant', '', '';
+U2_BU_L_ITN             //'5.28', 'constant', 'ad_hoc', '5.54990386561776';

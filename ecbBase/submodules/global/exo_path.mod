@@ -1,0 +1,1 @@
+dummy_long_run      //'0', 'constant', 'zero', '';

@@ -1,0 +1,9 @@
+U2_HH_OIHR          //'last', 'real', '', '';
+U2_HH_IHR           //'last', 'real', 'real', '';
+U2_HH_EOIHR         //'0.00325276168261289', 'constant', '', '';
+U2_S_RPPD_IHD       //'1', 'constant', '', '';
+U2_Q_S_RPPD_IHD     //'0', 'constant', '', '';
+U2_ES_RPPD_IHD      //'0', 'constant', '', '';
+U2_HH_U_IHR2        //'last', 'constant', '', '';
+U2_HH_S_IHD         //'1', 'constant', '', '';
+U2_HH_IHN           //'last', 'nominal', 'nominal', '';

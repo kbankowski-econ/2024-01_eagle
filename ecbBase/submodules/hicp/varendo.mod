@@ -1,0 +1,11 @@
+U2_HEG          //'1', 'inflation', 'inflation', '';
+U2_HEF         //'1', 'inflation', 'inflation', '';
+U2_HEX          //'1', 'inflation', 'inflation', '';
+U2_HIF          //'1', 'inflation', 'inflation', '';
+U2_HIC         //'1', 'inflation', 'inflation', '';
+U2_MXDNO        //'1', 'inflation', 'inflation', ''; 
+U2_ZHICP        //'0', 'constant', '', '';
+U2_ZHIF         //'0', 'constant', '', '';
+U2_OHEG         //'1', 'inflation', 'inflation', '';
+U2_OHEF        //'1', 'inflation', 'inflation', '';
+U2_OHEX         //'1', 'inflation', 'inflation', '';

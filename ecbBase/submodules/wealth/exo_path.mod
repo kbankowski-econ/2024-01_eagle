@@ -1,0 +1,17 @@
+U2_HH_B_APN         //'last', 'nominal', '', '';
+U2_HH_GSN           //'last', 'nominal', '', '';
+U2_HH_B_KTN         //'last', 'nominal', '', '';
+U2_HH_IVN           //'last', 'nominal', '', '';
+U2_HH_ITN           //'last', 'nominal', '', '';
+U2_HH_KFN           //'last', 'nominal', '', '';
+U2_HH_NPN           //'last', 'nominal', '', '';
+U2_HH_KFNPN         //'last', 'nominal', '', '';
+U2_HH_CFKN          //'last', 'nominal', '', '';
+U2_HH_D_IHN         //'last', 'constant', '', '';
+U2_HH_B9N           //'last', 'nominal', '', '';
+U2_HH_TWN           //'last', 'nominal', '', '';
+U2_HH_TRV           //'0', 'constant', '', '';
+U2_HH_TWR           //'last', 'real', 'real', '';
+U2_HWN              //'last', 'nominal', '', '';
+U2_HH_HRV           //'last', 'nominal', '', '';
+U2_HH_R_HRV         //'inflation', 'constant', '', '';
