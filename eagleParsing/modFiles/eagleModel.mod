@@ -1,4 +1,4 @@
-// --+ options: stochastic,json=compute +--
+// --+ options: stochastic, json=compute +--
 
 @#define steady = 0
 

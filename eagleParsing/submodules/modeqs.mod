@@ -318,8 +318,10 @@ model(block, bytecode, cutoff=0);
 @{it}@{co}_pimtilde/@{it}@{co}_pim = @{co}_cpim*@{co}_thetat/(@{co}_thetat-1)*@{co}@{it}_fx/@{co}@{it}_gx;
 
 // Definition of fx
+[name='@{co}@{it}_fx']
 @{co}@{it}_fx = @{it}_size/@{co}_size*@{it}@{co}_im*@{co}_mct+@{co}_xix*@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*(@{it}@{co}_piim(+1)/(@{it}@{co}_piim^@{co}_chix*@{co}_pi4target^(1/4*(1-@{co}_chix))))^@{co}_thetat*@{co}@{it}_fx(+1);
 
+[name='@{co}@{it}_gx']
 // Definition of gx   
 @{co}@{it}_gx = @{co}@{it}_rer*@{it}@{co}_pim*@{it}_size/@{co}_size*@{it}@{co}_im+@{co}_xix*@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*(@{it}@{co}_piim(+1)/(@{it}@{co}_piim^@{co}_chix*@{co}_pi4target^(1/4*(1-@{co}_chix))))^(@{co}_thetat-1)*@{co}@{it}_gx(+1);
 
@@ -557,6 +559,7 @@ model(block, bytecode, cutoff=0);
 @#if !steady
 
 // Import adjustment cost
+[name='@{co}@{it}_gammaimc']
 @{co}@{it}_gammaimc = @{co}_gammaimc1/2*((@{co}@{it}_imc/@{co}_qc)/(@{co}@{it}_imc(-1)/@{co}_qc(-1))-1)^2;
 
 // Auxiliary equation for transformation of import adjustment cost
@@ -994,8 +997,10 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @{co}@{it}_imiy = @{co}@{it}_pim*@{co}@{it}_imi/(@{co}_py*@{co}_y);
 
 // Exports of consumption goods to gdp
+[name='@{co}@{it}_excy']
 @{co}@{it}_excy  = @{it}_size/@{co}_size*@{co}@{it}_rer*@{it}@{co}_pim*@{it}@{co}_imc/(@{co}_py*@{co}_y);
 
+[name='@{co}@{it}_exiy']
 // Exports of investment goods to gdp
 @{co}@{it}_exiy  = @{it}_size/@{co}_size*@{co}@{it}_rer*@{it}@{co}_pim*@{it}@{co}_imi/(@{co}_py*@{co}_y);
 
