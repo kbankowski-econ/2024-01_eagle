@@ -8,7 +8,7 @@ addpath(genpath(parentFolder));
 %% performing data transformation
 fprintf('\n\n\n+++ Initialising the project ...\n');
 % calling a specific user input not tracked by GIT
-call_paths;
+utils.call.paths;
 % Call Iris
 addpath(iris_path);
 iris.startup
@@ -45,7 +45,74 @@ endo =  M_.endo_names(~contains(M_.endo_names, 'AUX_'));
 endoProblematic = {...
     'EAAEAB_imc'
     'EAAUS_imc'
+    'RWUS_imc'
+    'EABRW_imc'
+    'USEAA_imc'
+    'EAAEAB_imi'
+    'RWUS_imi'
+    'EABRW_imi'
+    'USEAA_imi'
+    'EAA_b'
+    'EAB_b'
+    'RW_b' 
+    'US_b'
+    'EAA_ii'
+    'EAB_ii'
+    'RW_ii'
+    'US_ii'
+    'EAA_lambdai'
+    'EAB_lambdai'
+    'RW_lambdai'
+    'US_lambdai'
+    'EAA_lambdaj'
+    'EAB_lambdaj'
+    'RW_lambdaj'
+    'US_lambdaj'
+    'EAA_mi'
+    'EAB_mi'
+    'RW_mi'
+    'US_mi'
+    'EAA_mj'
+    'EAB_mj'
+    'RW_mj'
+    'US_mj'
+    'EAA_ndn'
+    'EAB_ndn'
+    'RW_ndn'
+    'US_ndn'
+    'EAA_ndt'
+    'EAB_ndt'
+    'RW_ndt'
+    'US_ndt'
+    'EAA_pic'
+    'EAB_pic'
+    'RW_pic'
+    'US_pic'
+    'EAA_py'
+    'EAB_py'
+    'RW_py'
+    'US_py'
+    'EAA_r'
+    'EAB_r'
+    'RW_r'
+    'US_r'
+    'EAA_rer'
+    'EAB_rer'
+    'RW_rer'
+    'US_rer'
+    'EAA_u' 
+    'EAB_u'
+    'RW_u'
+    'US_u'
+    'EAA_w' 
+    'EAB_w'
+    'RW_w'
+    'US_w'
+         
+    'EAB_bh'
+    
     };
+
 endoAdjusted = setdiff(endo, endoProblematic);
 % Creating .inc files which contain all informations on the model
 utils.ParseModel(sprintf('eagleModel'), sprintf('Parsed_eagleModel'), endoAdjusted, false)
