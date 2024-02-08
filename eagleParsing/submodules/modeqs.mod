@@ -345,6 +345,7 @@ model(block, bytecode, cutoff=0);
 @#endfor // countries - [ co ]
 
 // Total imports 
+[name='@{co}_im']
 @{co}_im = @{co}_imc+@{co}_imi;
 
 // Total import deflator
@@ -532,6 +533,7 @@ model(block, bytecode, cutoff=0);
 
 // Aggregate demand for bilateral imported intermediate goods
 @#for it in countries - [ co ]
+[name='@{co}@{it}_im']
 @{co}@{it}_im = @{co}@{it}_imi+@{co}@{it}_imc;
 @#endfor
 
@@ -563,6 +565,7 @@ model(block, bytecode, cutoff=0);
 @{co}@{it}_gammaimc = @{co}_gammaimc1/2*((@{co}@{it}_imc/@{co}_qc)/(@{co}@{it}_imc(-1)/@{co}_qc(-1))-1)^2;
 
 // Auxiliary equation for transformation of import adjustment cost
+[name='@{co}@{it}_gammaimcdag']
 @{co}@{it}_gammaimcdag = 1-@{co}@{it}_gammaimc-@{co}_gammaimc1*((@{co}@{it}_imc/@{co}_qc)/(@{co}@{it}_imc(-1)/@{co}_qc(-1))-1)*(@{co}@{it}_imc/@{co}_qc)/(@{co}@{it}_imc(-1)/@{co}_qc(-1));
 
 @#else // !steady
@@ -602,9 +605,11 @@ model(block, bytecode, cutoff=0);
 @#if !steady
 
 // Import adjustment cost
+[name='@{co}@{it}_gammaimi']
 @{co}@{it}_gammaimi = @{co}_gammaimi1/2*((@{co}@{it}_imi/@{co}_qi)/(@{co}@{it}_imi(-1)/@{co}_qi(-1))-1)^2;
 
 // Auxiliary equation for transformation of import adjustment cost
+[name='@{co}@{it}_gammaimidag']
 @{co}@{it}_gammaimidag = 1-@{co}@{it}_gammaimi-@{co}_gammaimi1*((@{co}@{it}_imi/@{co}_qi)/(@{co}@{it}_imi(-1)/@{co}_qi)-1)*((@{co}@{it}_imi/@{co}_qi)/(@{co}@{it}_imi(-1)/@{co}_qi(-1)));
 
 @#else // !steady
@@ -990,18 +995,20 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 
 @#for it in countries - [ co ]
 
-// Imports of consumption goods 
+// Imports of consumption goods
+[name='@{co}@{it}_imcy'] 
 @{co}@{it}_imcy  = @{co}@{it}_pim*@{co}@{it}_imc/(@{co}_py*@{co}_y);
 
 // Imports of investment goods
+[name='@{co}@{it}_imiy'] 
 @{co}@{it}_imiy = @{co}@{it}_pim*@{co}@{it}_imi/(@{co}_py*@{co}_y);
 
 // Exports of consumption goods to gdp
 [name='@{co}@{it}_excy']
 @{co}@{it}_excy  = @{it}_size/@{co}_size*@{co}@{it}_rer*@{it}@{co}_pim*@{it}@{co}_imc/(@{co}_py*@{co}_y);
 
-[name='@{co}@{it}_exiy']
 // Exports of investment goods to gdp
+[name='@{co}@{it}_exiy'] 
 @{co}@{it}_exiy  = @{it}_size/@{co}_size*@{co}@{it}_rer*@{it}@{co}_pim*@{it}@{co}_imi/(@{co}_py*@{co}_y);
 
 @#endfor
