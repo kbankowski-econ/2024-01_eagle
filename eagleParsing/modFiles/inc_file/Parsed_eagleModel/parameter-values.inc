@@ -1,0 +1,16 @@
+EAAEAB_rerbar = 1.076310938191268;
+EAA_beta = 0.99263754;
+EAA_chix = 0.5;
+EAA_gammaimc1 = 2;
+EAA_gammaimi1 = 1;
+EAA_pi4target = 1.02;
+EAA_pybar = 1.053099940834652;
+EAA_size = 0.16;
+EAA_thetat = 6;
+EAA_xix = 0.75;
+EAB_pybar = 1.058240036715508;
+EAB_size = 0.06;
+EA_rhoz = 0.9;
+EA_zbar = 1;
+RW_size = 0.47;
+US_size = 0.31;

@@ -43,4 +43,4 @@ catch
 end
 endo =  M_.endo_names(~contains(M_.endo_names, 'AUX_'));
 % Creating .inc files which contain all informations on the model
-utils.ParseModel(sprintf('eagleModel'), sprintf('Parsed_eagleModel'), endo, 1)
+utils.ParseModel(sprintf('eagleModel'), sprintf('Parsed_eagleModel'), endo(1:34), false)
