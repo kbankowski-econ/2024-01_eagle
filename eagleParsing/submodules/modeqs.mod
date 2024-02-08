@@ -24,6 +24,7 @@ model(block, bytecode, cutoff=0);
 //-------------
 
 // Utility
+[name='@{co}_utili']
 @{co}_utili = 
 @#if sigma_equals_one[i]
 @{co}_zcon*log(@{co}_ci-@{co}_kappa*@{co}_ci(-1))-1/(1+@{co}_zeta)*(@{co}_ni)^(1+@{co}_zeta)+@{co}_beta*@{co}_utili(+1)
@@ -57,35 +58,45 @@ model(block, bytecode, cutoff=0);
 @{co}_vi^(2)*@{co}_gammavider = 1-@{co}_beta*@{co}_lambdai(+1)/(@{co}_lambdai*@{co}_pic(+1));
 
 // Consumption-based velocity
+[name='@{co}_vi']
 @{co}_vi = @{co}_ci/@{co}_mi;
 
 // Transaction cost
+[name='@{co}_gammavi']
 @{co}_gammavi = @{co}_gammav1*@{co}_vi+@{co}_gammav2/@{co}_vi-2*(@{co}_gammav1*@{co}_gammav2)^(1/2);
 
 // Derivative of transaction cost
+[name='@{co}_gammavider']
 @{co}_gammavider = @{co}_gammav1-@{co}_gammav2*@{co}_vi^(-2);
 
 @#if !steady
 
 // Capital accumulation
+[name='@{co}_ki']
 @{co}_ki = (1-@{co}_delta)*@{co}_ki(-1)+(1-@{co}_gammai(-1))*@{co}_ii(-1)*@{co}_zinv;
 
 // Investment adjustment cost
+[name='@{co}_gammai']
 @{co}_gammai = @{co}_gammai1/2*(@{co}_ii/@{co}_ii(-1)-1)^2;
 
 // Derivative of investment adjustment cost
+[name='@{co}_gammaider']
 @{co}_gammaider = @{co}_gammai1*(@{co}_ii/@{co}_ii(-1)-1)/@{co}_ii(-1);
 
 // Capacity utilisation cost
+[name='@{co}_gammau']
 @{co}_gammau = ((@{co}_beta^(-1)-1+@{co}_delta)*@{co}_qbar-@{co}_delta*@{co}_taukbar*@{co}_pibar)/((1-@{co}_taukbar)*@{co}_pibar)*(@{co}_u-1)+@{co}_gammau2/2*(@{co}_u-1)^2;
 
 // Derivative of capacity utilisation cost
+[name='@{co}_gammauder']
 @{co}_gammauder = ((@{co}_beta^(-1)-1+@{co}_delta)*@{co}_qbar-@{co}_delta*@{co}_taukbar*@{co}_pibar)/((1-@{co}_taukbar)*@{co}_pibar)+@{co}_gammau2*(@{co}_u-1);
 
 // Optimal capacity utilisation (FOC)
+[name='@{co}_rk']
 @{co}_rk = @{co}_gammauder*@{co}_pi;
 
 // Tobin's Q
+[name='@{co}_pi']
 @{co}_pi = @{co}_q*@{co}_zinv*(1-@{co}_gammai-@{co}_gammaider*@{co}_ii)+@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*@{co}_q(+1)*@{co}_zinv(+1)*@{co}_gammaider(+1)*@{co}_ii(+1)^2/@{co}_ii;
 
 @#else // !steady
@@ -94,7 +105,7 @@ model(block, bytecode, cutoff=0);
 @{co}_gammaider = 0;
 @{co}_gammau = 0;
 @{co}_gammauder = ((@{co}_beta^(-1)-1+@{co}_delta)*@{co}_qbar-@{co}_delta*@{co}_taukbar*@{co}_pibar)/((1-@{co}_taukbar)*@{co}_pibar);
-@{co}_u = 1;
+[name='@{co}_u'] @{co}_u = 1;
 @{co}_pi = @{co}_q;
 @#endif // !steady
 
@@ -104,6 +115,7 @@ model(block, bytecode, cutoff=0);
 @#endif
 
 // Rate of return on capital
+[name='@{co}_q']
 @#if !steady
 @{co}_q = @{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*((1-@{co}_tauk(+1))*(@{co}_rk(+1)*@{co}_u(+1)-@{co}_gammau(+1)*@{co}_pi(+1))+(@{co}_tauk(+1)*@{co}_delta)*@{co}_pi(+1)+(1-@{co}_delta)*@{co}_q(+1));
 @#else
@@ -111,22 +123,27 @@ model(block, bytecode, cutoff=0);
 @#endif
 
 // Optimal wage contract (FOC)
-@{co}_witilde^(1+@{co}_etai*@{co}_zeta) = @{co}_etai/(@{co}_etai-1)*@{co}_fi/@{co}_gi+@{co}_wcst;
+[name='@{co}_witilde']
+@{co}_witilde = (@{co}_etai/(@{co}_etai-1)*@{co}_fi/@{co}_gi+@{co}_wcst)^(1/(1+@{co}_etai*@{co}_zeta));
 
 // Definition of fi
+[name='@{co}_fi']
 @{co}_fi = @{co}_wi^(@{co}_etai*(1+@{co}_zeta))*@{co}_ndi^(1+@{co}_zeta)+@{co}_xii*@{co}_beta*(@{co}_pic(+1)/(@{co}_pic^@{co}_chii*@{co}_pi4target^(1/4*(1-@{co}_chii))))^(@{co}_etai*(1+@{co}_zeta))*@{co}_fi(+1);
 
 // Definition of gi
+[name='@{co}_gi']
 @{co}_gi = @{co}_lambdai*(1-@{co}_taun-@{co}_tauwh)*@{co}_wi^@{co}_etai*@{co}_ndi+@{co}_xii*@{co}_beta*(@{co}_pic(+1)/(@{co}_pic^@{co}_chii*@{co}_pi4target^(1/4*(1-@{co}_chii))))^(@{co}_etai-1)*@{co}_gi(+1);
 
 // Aggregate wage rate
-@{co}_wi^(1-@{co}_etai) = (1-@{co}_xii)*@{co}_witilde^(1-@{co}_etai)+@{co}_xii*@{co}_wi(-1)^(1-@{co}_etai)*(@{co}_pic(-1)^@{co}_chii*@{co}_pi4target^(1/4*(1-@{co}_chii))/@{co}_pic)^(1-@{co}_etai);
+[name='@{co}_wi']
+@{co}_wi = ((1-@{co}_xii)*@{co}_witilde^(1-@{co}_etai)+@{co}_xii*@{co}_wi(-1)^(1-@{co}_etai)*(@{co}_pic(-1)^@{co}_chii*@{co}_pi4target^(1/4*(1-@{co}_chii))/@{co}_pic)^(1-@{co}_etai))^(1/(1-@{co}_etai));
 
 //-------------
 // Household J
 //-------------
 
 // Utility
+[name='@{co}_utilj']
 @{co}_utilj = 
 @#if sigma_equals_one[i]
 @{co}_zcon*log(@{co}_cj-@{co}_kappa*@{co}_cj(-1))-1/(1+@{co}_zeta)*@{co}_nj^(1+@{co}_zeta)+@{co}_beta*@{co}_utilj(+1)
@@ -146,25 +163,32 @@ model(block, bytecode, cutoff=0);
 @{co}_vj^(2)*@{co}_gammavjder = 1-@{co}_beta*@{co}_lambdaj(+1)/(@{co}_lambdaj*@{co}_pic(+1));
 
 // Consumption-based velocity
+[name='@{co}_vj']
 @{co}_vj = @{co}_cj/@{co}_mj;
 
 // Transaction technology
+[name='@{co}_gammavj']
 @{co}_gammavj = @{co}_gammav1*@{co}_vj+@{co}_gammav2/@{co}_vj-2*(@{co}_gammav1*@{co}_gammav2)^(1/2);
 
 // Derivative of transaction technology
+[name='@{co}_gammavjder']
 @{co}_gammavjder = @{co}_gammav1-@{co}_gammav2*@{co}_vj^(-2);
 
 // Optimal wage contract (FOC)
-@{co}_wjtilde^(1+@{co}_etaj*@{co}_zeta) = @{co}_etaj/(@{co}_etaj-1)*@{co}_fj/@{co}_gj+@{co}_wcst;
+[name='@{co}_wjtilde']
+@{co}_wjtilde = (@{co}_etaj/(@{co}_etaj-1)*@{co}_fj/@{co}_gj+@{co}_wcst)^(1/(1+@{co}_etaj*@{co}_zeta));
 
 // Definition of fj
+[name='@{co}_fj']
 @{co}_fj = @{co}_wj^(@{co}_etaj*(1+@{co}_zeta))*@{co}_ndj^(1+@{co}_zeta)+@{co}_xij*@{co}_beta*(@{co}_pic(+1)/(@{co}_pic^@{co}_chij*@{co}_pi4target^(1/4*(1-@{co}_chij))))^(@{co}_etaj*(1+@{co}_zeta))*@{co}_fj(+1);
 
 // Definition of gj
+[name='@{co}_gj']
 @{co}_gj = @{co}_lambdaj*(1-@{co}_taun-@{co}_tauwh)*@{co}_wj^@{co}_etaj*@{co}_ndj+@{co}_xij*@{co}_beta*(@{co}_pic(+1)/(@{co}_pic^@{co}_chij*@{co}_pi4target^(1/4*(1-@{co}_chij))))^(@{co}_etaj-1)*@{co}_gj(+1);
 
 // Aggregate wage rate
-@{co}_wj^(1-@{co}_etaj) = (1-@{co}_xij)*@{co}_wjtilde^(1-@{co}_etaj)+@{co}_xij*@{co}_wj(-1)^(1-@{co}_etaj)*(@{co}_pic(-1)^@{co}_chij*@{co}_pi4target^(1/4*(1-@{co}_chij))/@{co}_pic)^(1-@{co}_etaj);
+[name='@{co}_wj']
+@{co}_wj = ((1-@{co}_xij)*@{co}_wjtilde^(1-@{co}_etaj)+@{co}_xij*@{co}_wj(-1)^(1-@{co}_etaj)*(@{co}_pic(-1)^@{co}_chij*@{co}_pi4target^(1/4*(1-@{co}_chij))/@{co}_pic)^(1-@{co}_etaj))^(1/(1-@{co}_etaj));
 
 
 //-------------
@@ -180,37 +204,47 @@ model(block, bytecode, cutoff=0);
 @#if co != countries[1] && co != countries[2]
 
 // Production function tradable
+[name='@{co}_yst']
 @{co}_yst = @{co}_zt*@{co}_kdt^@{co}_alphat*@{co}_ndt^(1-@{co}_alphat)-@{co}_psitbar;
 
 // Production function nontradable
+[name='@{co}_ysn']
 @{co}_ysn = @{co}_zn*@{co}_kdn^@{co}_alphan*@{co}_ndn^(1-@{co}_alphan)-@{co}_psinbar;
 
 // Real marginal cost tradable
+[name='@{co}_mct']
 @{co}_mct = 1/(@{co}_zt*(@{co}_alphat)^(@{co}_alphat)*(1-@{co}_alphat)^(1-@{co}_alphat))*@{co}_rk^(@{co}_alphat)*((1+@{co}_tauwf)*@{co}_w)^(1-@{co}_alphat);
 
 // Real marginal cost nontradable
+[name='@{co}_mcn']
 @{co}_mcn = 1/(@{co}_zn*(@{co}_alphan)^(@{co}_alphan)*(1-@{co}_alphan)^(1-@{co}_alphan))*@{co}_rk^(@{co}_alphan)*((1+@{co}_tauwf)*@{co}_w)^(1-@{co}_alphan);
 
 @#else // co != countries[1] && co != countries[2]
 
 // Production function tradable
+[name='@{co}_yst']
 @{co}_yst = @{ea}_z*@{co}_zt*@{co}_kdt^@{co}_alphat*@{co}_ndt^(1-@{co}_alphat)-@{co}_psitbar;
 
 // Production function nontradable
+[name='@{co}_ysn']
 @{co}_ysn = @{ea}_z*@{co}_zn*@{co}_kdn^@{co}_alphan*@{co}_ndn^(1-@{co}_alphan)-@{co}_psinbar;
 
 // Real marginal cost tradable
+[name='@{co}_mct']
 @{co}_mct = 1/(@{ea}_z*@{co}_zt*(@{co}_alphat)^(@{co}_alphat)*(1-@{co}_alphat)^(1-@{co}_alphat))*@{co}_rk^(@{co}_alphat)*((1+@{co}_tauwf)*@{co}_w)^(1-@{co}_alphat);
 
 // Real marginal cost nontradable
+[name='@{co}_mcn']
 @{co}_mcn = 1/(@{ea}_z*@{co}_zn*(@{co}_alphan)^(@{co}_alphan)*(1-@{co}_alphan)^(1-@{co}_alphan))*@{co}_rk^(@{co}_alphan)*((1+@{co}_tauwf)*@{co}_w)^(1-@{co}_alphan);
 
 @#endif // co != countries[1] && co != countries[2]
 
 // Wage Inflation (qoq)
+[name='@{co}_piw']
 @{co}_piw = @{co}_w/@{co}_w(-1)*@{co}_pic;
 
 // Wage Inflation (yoy)
+[name='@{co}_piw4']
 @#if !steady
 @{co}_piw4 = @{co}_piw*@{co}_piw(-1)*@{co}_piw(-2)*@{co}_piw(-3);
 @#else
@@ -228,15 +262,19 @@ model(block, bytecode, cutoff=0);
 @#endif
 
 // Capital input (FOC)
-@{co}_rk = @{co}_alphat*(@{co}_yst+@{co}_psitbar)/@{co}_kdt*@{co}_mct;
+[name='@{co}_kdt']
+@{co}_kdt= @{co}_alphat*(@{co}_yst+@{co}_psitbar)/(@{co}_rk*@{co}_mct) ;
 
 // Capital input (FOC)
+[name='@{co}_rk']
 @{co}_rk = @{co}_alphan*(@{co}_ysn+@{co}_psinbar)/@{co}_kdn*@{co}_mcn;
 
 // Total capital demand
-@{co}_kd = @{co}_kdt+@{co}_kdn;
+[name='@{co}_kdn']
+@{co}_kdn = @{co}_kd - @{co}_kdt;
 
 // Demand for labour services by household I
+[name='@{co}_ndi']
 @{co}_ndi = 
 @#if omega_equals_zero[i]
 (@{co}_wi/@{co}_w)^(-@{co}_eta)*@{co}_nd
@@ -246,6 +284,7 @@ model(block, bytecode, cutoff=0);
 ;
 
 // Demand for labour services by household J
+[name='@{co}_ndj']
 @{co}_ndj = 
 @#if omega_equals_zero[i]
 (@{co}_wj/@{co}_w)^(-@{co}_eta)*@{co}_nd
@@ -264,7 +303,7 @@ model(block, bytecode, cutoff=0);
 ;
 
 // Total demand 
-[name='@{co}_dn']
+[name='@{co}_nd']
 @{co}_nd = @{co}_ndt+@{co}_ndn;
 
 // Aggregate dividends
@@ -272,6 +311,7 @@ model(block, bytecode, cutoff=0);
 @{co}_d = @{co}_py*@{co}_y-@{co}_rk*@{co}_kd-(1+@{co}_tauwf)*@{co}_w*@{co}_nd;
 
 // Non-tradable sector dividends
+[name='@{co}_dn']
 @{co}_dn = @{co}_pnt*@{co}_ysn-@{co}_rk*@{co}_kdn-(1+@{co}_tauwf)*@{co}_w*@{co}_ndn;
 
 // Tradable sector dividends
@@ -283,7 +323,8 @@ model(block, bytecode, cutoff=0);
 -@{co}_rk*@{co}_kdt-(1+@{co}_tauwf)*@{co}_w*@{co}_ndt;
 
 // Optimal price contract set in domestic markets (FOC)
-@{co}_phttilde/@{co}_pht = @{co}_thetat/(@{co}_thetat-1)*@{co}_fh/@{co}_gh;
+[name='@{co}_phttilde']
+@{co}_phttilde= @{co}_thetat/(@{co}_thetat-1)*@{co}_fh/@{co}_gh*@{co}_pht;
 
 // Definition of fh
 [name='@{co}_fh']
@@ -294,24 +335,31 @@ model(block, bytecode, cutoff=0);
 @{co}_gh = @{co}_pht*@{co}_ht+@{co}_xih*@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*(@{co}_piht(+1)/(@{co}_piht^@{co}_chih*@{co}_pi4target^(1/4*(1-@{co}_chih))))^(@{co}_thetat-1)*@{co}_gh(+1);
 
 // Aggregate intermediate-good price dynamics
-@{co}_pht^(1-@{co}_thetat) = (1-@{co}_xih)*@{co}_phttilde^(1-@{co}_thetat)+@{co}_xih*(@{co}_pht(-1)/@{co}_pic)^(1-@{co}_thetat)*(@{co}_piht(-1)^@{co}_chih*@{co}_pi4target^(1/4*(1-@{co}_chih)))^(1-@{co}_thetat);
+[name='@{co}_pht']
+@{co}_pht = ((1-@{co}_xih)*@{co}_phttilde^(1-@{co}_thetat)+@{co}_xih*(@{co}_pht(-1)/@{co}_pic)^(1-@{co}_thetat)*(@{co}_piht(-1)^@{co}_chih*@{co}_pi4target^(1/4*(1-@{co}_chih)))^(1-@{co}_thetat))^(1/(1-@{co}_thetat));
 
 // Intermediate-good price inflation
+[name='@{co}_piht']
 @{co}_piht = @{co}_pht/@{co}_pht(-1)*@{co}_pic;
 
 // Optimal price contract set in domestic markets (FOC)
-@{co}_pnttilde/@{co}_pnt = @{co}_thetan/(@{co}_thetan-1)*@{co}_fn/@{co}_gn;
+[name='@{co}_pnttilde']
+@{co}_pnttilde = @{co}_thetan/(@{co}_thetan-1)*@{co}_fn/@{co}_gn*@{co}_pnt;
 
 // Definition of fn
+[name='@{co}_fn']
 @{co}_fn = @{co}_mcn*@{co}_nt+@{co}_xin*@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*(@{co}_pint(+1)/(@{co}_pint^@{co}_chin*@{co}_pi4target^(1/4*(1-@{co}_chin))))^@{co}_thetan*@{co}_fn(+1);
 
 // Definition of gn
+[name='@{co}_gn']
 @{co}_gn = @{co}_pnt*@{co}_nt+@{co}_xin*@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*(@{co}_pint(+1)/(@{co}_pint^@{co}_chin*@{co}_pi4target^(1/4*(1-@{co}_chin))))^(@{co}_thetan-1)*@{co}_gn(+1);
 
 // Aggregate intermediate-good price dynamics
-@{co}_pnt^(1-@{co}_thetan) = (1-@{co}_xin)*@{co}_pnttilde^(1-@{co}_thetan)+@{co}_xin*(@{co}_pnt(-1)/@{co}_pic)^(1-@{co}_thetan)*(@{co}_pint(-1)^@{co}_chin*@{co}_pi4target^(1/4*(1-@{co}_chin)))^(1-@{co}_thetan);
+[name='@{co}_pnt']
+@{co}_pnt = ((1-@{co}_xin)*@{co}_pnttilde^(1-@{co}_thetan)+@{co}_xin*(@{co}_pnt(-1)/@{co}_pic)^(1-@{co}_thetan)*(@{co}_pint(-1)^@{co}_chin*@{co}_pi4target^(1/4*(1-@{co}_chin)))^(1-@{co}_thetan))^(1/(1-@{co}_thetan));
 
 // Intermediate-good price inflation
+[name='@{co}_pint']
 @{co}_pint = @{co}_pnt/@{co}_pnt(-1)*@{co}_pic;
 
 
@@ -362,12 +410,13 @@ model(block, bytecode, cutoff=0);
 
 // Total import deflator
 [name='@{co}_pim']
-@{co}_im*@{co}_pim  = @{co}_pimc*@{co}_imc+@{co}_pimi*@{co}_imi;
+@{co}_pim  = (@{co}_pimc*@{co}_imc+@{co}_pimi*@{co}_imi)/@{co}_im;
 
 // Total Export deflator 
-@{co}_ex*@{co}_pex  =
+[name='@{co}_pex']
+@{co}_pex  = 
 @#for it in countries - [ co ]
-+@{co}@{it}_rer*@{it}@{co}_pim*@{it}_size/@{co}_size*@{it}@{co}_im
++@{co}@{it}_rer*@{it}@{co}_pim*@{it}_size/@{co}_size*@{it}@{co}_im/@{co}_ex
 @#endfor
 ;
 
@@ -400,6 +449,7 @@ model(block, bytecode, cutoff=0);
 @#endfor // countries - [ co ]
 
 // Effective real exchange rate
+[name='@{co}_reer']
 @{co}_reer = 1
 @#for it in countries - [ co ]
 *@{co}@{it}_rer^@{co}@{it}_weight
@@ -419,8 +469,9 @@ model(block, bytecode, cutoff=0);
 // Final-good firms
 //-----------------
 
+[name='@{co}_imc'] 
 // Private consumption good (import)
-@{co}_imc^((@{co}_mumc-1)/@{co}_mumc) =
+@{co}_imc = (
 @#for it in countries - [ co, co3 ]
 @#if !steady
 +@{co}@{it}_numc ^(1/@{co}_mumc)*((1-@{co}@{it}_gammaimc)*@{co}@{it}_imc)^(1-1/@{co}_mumc)
@@ -433,9 +484,9 @@ model(block, bytecode, cutoff=0);
 -@{co}@{it}_numc
 @#endfor
 @#if !steady
-)^(1/@{co}_mumc)*((1-@{co}@{co3}_gammaimc)*@{co}@{co3}_imc)^(1-1/@{co}_mumc);
+)^(1/@{co}_mumc)*((1-@{co}@{co3}_gammaimc)*@{co}@{co3}_imc)^(1-1/@{co}_mumc))^(@{co}_mumc/(@{co}_mumc-1));
 @#else
-)^(1/@{co}_mumc)*@{co}@{co3}_imc^(1-1/@{co}_mumc);
+)^(1/@{co}_mumc)*@{co}@{co3}_imc^(1-1/@{co}_mumc))^(@{co}_mumc/(@{co}_mumc-1));
 @#endif
 
 // Demand for bilateral consumption import goods
@@ -458,7 +509,8 @@ model(block, bytecode, cutoff=0);
 @#endif
 
 // Price of the consumption good (import)
-@{co}_pimc^(1-@{co}_mumc) =
+[name='@{co}_pimc']
+@{co}_pimc = (
 @#for it in countries - [ co, co3 ]
 @#if !steady
 +@{co}@{it}_numc *(@{co}@{it}_pim/@{co}@{it}_gammaimcdag)^(1-@{co}_mumc)
@@ -471,22 +523,26 @@ model(block, bytecode, cutoff=0);
 -@{co}@{it}_numc
 @#endfor
 @#if !steady
-)*(@{co}@{co3}_pim/@{co}@{co3}_gammaimcdag)^(1-@{co}_mumc);
+)*(@{co}@{co3}_pim/@{co}@{co3}_gammaimcdag)^(1-@{co}_mumc))^(1/(1-@{co}_mumc));
 @#else
-)*@{co}@{co3}_pim^(1-@{co}_mumc);
+)*@{co}@{co3}_pim^(1-@{co}_mumc))^(1/(1-@{co}_mumc));
 @#endif
 
 // Private consumption good (import) inflation
+[name='@{co}_piimc']
 @{co}_piimc = @{co}_pimc/@{co}_pimc(-1)*@{co}_pic;
 
 // Private consumption good (import) inflation
+[name='@{co}_piimc4']
 @{co}_piimc4 = @{co}_pimc/@{co}_pimc(-4)*@{co}_pic4;
 
 // Private consumption good (import) inflation
+[name='@{co}_piex4'] 
 @{co}_piex4 = @{co}_pex/@{co}_pex(-4)*@{co}_pic4;
 
 // Private investment good (import)
-@{co}_imi^((@{co}_mumi-1)/@{co}_mumi) =
+[name='@{co}_imi'] 
+@{co}_imi = (
 @#for it in countries - [ co, co3 ]
 @#if !steady
 +@{co}@{it}_numi ^(1/@{co}_mumi)*((1-@{co}@{it}_gammaimi)*@{co}@{it}_imi)^(1-1/@{co}_mumi)
@@ -499,9 +555,9 @@ model(block, bytecode, cutoff=0);
 -@{co}@{it}_numi
 @#endfor
 @#if !steady
-)^(1/@{co}_mumi)*((1-@{co}@{co3}_gammaimi)*@{co}@{co3}_imi)^(1-1/@{co}_mumi);
+)^(1/@{co}_mumi)*((1-@{co}@{co3}_gammaimi)*@{co}@{co3}_imi)^(1-1/@{co}_mumi))^(@{co}_mumi/(@{co}_mumi-1));
 @#else
-)^(1/@{co}_mumi)*@{co}@{co3}_imi^(1-1/@{co}_mumi);
+)^(1/@{co}_mumi)*@{co}@{co3}_imi^(1-1/@{co}_mumi))^(@{co}_mumi/(@{co}_mumi-1));
 @#endif
 
 // Demand for bilateral investment import goods
@@ -524,7 +580,8 @@ model(block, bytecode, cutoff=0);
 @#endif
 
 // Price of the investment good (import)
-@{co}_pimi^(1-@{co}_mumi) =
+[name='@{co}_pimi']
+@{co}_pimi = (
 @#for it in countries - [ co, co3 ]
 @#if !steady
 +@{co}@{it}_numi *(@{co}@{it}_pim/@{co}@{it}_gammaimidag)^(1-@{co}_mumi)
@@ -537,12 +594,13 @@ model(block, bytecode, cutoff=0);
 -@{co}@{it}_numi
 @#endfor
 @#if !steady
-)*(@{co}@{co3}_pim/@{co}@{co3}_gammaimidag)^(1-@{co}_mumi);
+)*(@{co}@{co3}_pim/@{co}@{co3}_gammaimidag)^(1-@{co}_mumi))^(1/(1-@{co}_mumi));
 @#else
-)*@{co}@{co3}_pim^(1-@{co}_mumi);
+)*@{co}@{co3}_pim^(1-@{co}_mumi))^(1/(1-@{co}_mumi));
 @#endif
 
 // Private investment good (import) inflation
+[name='@{co}_piimi']
 @{co}_piimi = @{co}_pimi/@{co}_pimi(-1)*@{co}_pic;
 
 // Wedge between aggregate demand and production, using @{co}_x = @{co2}_size/@{co}_size*@{co2}_im
@@ -561,21 +619,26 @@ model(block, bytecode, cutoff=0);
 // Private consumption good firm
 
 // Private consumption good (tradable)
-@{co}_ttc^((@{co}_mutc-1)/@{co}_mutc) = (@{co}_nutc)^(1/@{co}_mutc)*@{co}_htc^(1-1/@{co}_mutc)+(1-@{co}_nutc)^(1/@{co}_mutc)*@{co}_imc^(1-1/@{co}_mutc);
+[name='@{co}_ttc']
+@{co}_ttc = ((@{co}_nutc)^(1/@{co}_mutc)*@{co}_htc^(1-1/@{co}_mutc)+(1-@{co}_nutc)^(1/@{co}_mutc)*@{co}_imc^(1-1/@{co}_mutc))^(@{co}_mutc/(@{co}_mutc-1));
 
 // Private consumption good  (total)
-@{co}_qc^((@{co}_muc-1)/@{co}_muc) = (@{co}_nuc)^(1/@{co}_muc)*@{co}_ttc^(1-1/@{co}_muc)+(1-@{co}_nuc)^(1/@{co}_muc)*@{co}_ntc^(1-1/@{co}_muc);
+[name='@{co}_qc']
+@{co}_qc = ((@{co}_nuc)^(1/@{co}_muc)*@{co}_ttc^(1-1/@{co}_muc)+(1-@{co}_nuc)^(1/@{co}_muc)*@{co}_ntc^(1-1/@{co}_muc))^(@{co}_muc/(@{co}_muc-1)) ;
 
 // Demand for domestic intermediate goods - NONTRADABLE
+[name='@{co}_ntc']
 @{co}_ntc = (1-@{co}_nuc)*(@{co}_pnt)^(-@{co}_muc)*@{co}_qc;
 
-// Price of the consumption good (tradable)  
-@{co}_pttc^(1-@{co}_mutc) = (@{co}_nutc)*@{co}_pht^(1-@{co}_mutc)+(1-@{co}_nutc)*@{co}_pimc^(1-@{co}_mutc);
+// Price of the consumption good (tradable) 
+[name='@{co}_pttc'] 
+@{co}_pttc = ((@{co}_nutc)*@{co}_pht^(1-@{co}_mutc)+(1-@{co}_nutc)*@{co}_pimc^(1-@{co}_mutc))^(1/(1-@{co}_mutc));
 
 // Price of the consumption good 
 1^(1-@{co}_muc) = (@{co}_nuc)*@{co}_pttc^(1-@{co}_muc)+(1-@{co}_nuc)*@{co}_pnt^(1-@{co}_muc);
 
 // Demand for domestic intermediate goods
+[name='@{co}_htc']
 @{co}_htc = @{co}_nutc*(@{co}_pht/@{co}_pttc)^(-@{co}_mutc)*@{co}_ttc;
 
 @#for it in countries - [ co ]
@@ -600,16 +663,20 @@ model(block, bytecode, cutoff=0);
 // Private investment good firm
 
 // Private investment good
-@{co}_tti^((@{co}_muti-1)/@{co}_muti) = (@{co}_nuti)^(1/@{co}_muti)*@{co}_hti^(1-1/@{co}_muti)+(1-@{co}_nuti)^(1/@{co}_muti)*@{co}_imi^(1-1/@{co}_muti);
+[name='@{co}_tti']
+@{co}_tti = ((@{co}_nuti)^(1/@{co}_muti)*@{co}_hti^(1-1/@{co}_muti)+(1-@{co}_nuti)^(1/@{co}_muti)*@{co}_imi^(1-1/@{co}_muti))^(@{co}_muti/(@{co}_muti-1));
 
 // Private investment good
-@{co}_qi^((@{co}_mui-1)/@{co}_mui) = (@{co}_nui)^(1/@{co}_mui)*@{co}_tti^(1-1/@{co}_mui)+(1-@{co}_nui)^(1/@{co}_mui)*@{co}_nti^(1-1/@{co}_mui);
+[name='@{co}_qi']
+@{co}_qi = ((@{co}_nui)^(1/@{co}_mui)*@{co}_tti^(1-1/@{co}_mui)+(1-@{co}_nui)^(1/@{co}_mui)*@{co}_nti^(1-1/@{co}_mui))^(@{co}_mui/(@{co}_mui-1));
 
 // Demand for domestic intermediate goods
+[name='@{co}_nti']
 @{co}_nti = (1-@{co}_nui)*(@{co}_pnt/@{co}_pi)^(-@{co}_mui)*@{co}_qi;
 
-// Price of the investment good (TRADABLE)  
-@{co}_ptti^(1-@{co}_muti) = (@{co}_nuti)*@{co}_pht^(1-@{co}_muti)+(1-@{co}_nuti)*@{co}_pimi^(1-@{co}_muti);
+// Price of the investment good (TRADABLE) 
+[name='@{co}_ptti'] 
+@{co}_ptti= ((@{co}_nuti)*@{co}_pht^(1-@{co}_muti)+(1-@{co}_nuti)*@{co}_pimi^(1-@{co}_muti))^(1/(@{co}_muti-1)) ;
 
 // Price of the investment good
 @{co}_pi^(1-@{co}_mui) = (@{co}_nui)*@{co}_ptti^(1-@{co}_mui)+(1-@{co}_nui)*(@{co}_pnt)^(1-@{co}_mui);
@@ -620,6 +687,7 @@ model(block, bytecode, cutoff=0);
 @#endif
 
 // Demand for domestic intermediate goods
+[name='@{co}_hti']
 @{co}_hti = @{co}_nuti*(@{co}_pht/@{co}_ptti)^(-@{co}_muti)*@{co}_tti;
 
 @#for it in countries - [ co ]
@@ -640,6 +708,7 @@ model(block, bytecode, cutoff=0);
 @#endfor // countries - [ co ]
 
 // Trade balance
+[name='@{co}_tb']
 @{co}_tb =
 @#for it in countries - [ co ]
 +@{co}@{it}_rer*@{it}@{co}_pim*@{it}_size/@{co}_size*@{it}@{co}_im
@@ -687,15 +756,18 @@ model(block, bytecode, cutoff=0);
 @#endif
 
 // Government spending, using @{co}_pg = @{co}_pht
-@{co}_pnt*@{co}_g = @{co}_gy*@{co}_pybar*@{co}_ybar;
+[name='@{co}_g']
+@{co}_g = @{co}_gy*@{co}_pybar*@{co}_ybar/@{co}_pnt;
 
 @#if !steady
 
 // Transfers
+[name='@{co}_tr']
 @{co}_tr = @{co}_try*@{co}_pybar*@{co}_ybar;
 
 // Fiscal rule
-@{co}_t/(@{co}_pybar*@{co}_ybar) = @{co}_phitb*(@{co}_b/(@{co}_pybar*@{co}_ybar)-@{co}_bytarget);
+[name='@{co}_t']
+@{co}_t = (@{co}_phitb*(@{co}_b/(@{co}_pybar*@{co}_ybar)-@{co}_bytarget))*(@{co}_pybar*@{co}_ybar);
 
 @#else // !steady
 @{co}_t = 0;
@@ -706,23 +778,29 @@ model(block, bytecode, cutoff=0);
 @#if steady
 
 // Auxiliary equation for steady-state output
+[name='@{co}_ybar']
 @{co}_ybar = @{co}_y;
 
 // Auxiliary equation for steady-state output
+[name='@{co}_ytbar']
 @{co}_ytbar = @{co}_yst;
 
 // Auxiliary equation for steady-state output
+[name='@{co}_ynbar']
 @{co}_ynbar = @{co}_ysn;
 
 // Auxiliary equation for steady-state output deflator
+[name='@{co}_pybar']
 @{co}_pybar = @{co}_py;
 
 // Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
+[name='@{co}_trybar']
 @{co}_trybar = @{co}_tr/(@{co}_pybar*@{co}_ybar);
 
 @#endif // steady
 
 // Auxiliary equation for determining the distribution of lump-sum taxes
+[name='@{co}_ti']
 @{co}_ti = @{co}_upsilont*@{co}_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
 upsilont = 0:            ti = 0, tj = 1/omega t
@@ -730,6 +808,7 @@ upsilont = 1:            ti = tj = t
 upsilont = 1/(1-omega):  ti = 1/(1-omega) t, tj = 0. */
 
 // Auxiliary equation for determining the distribution of lump-sum transfers
+[name='@{co}_tri']
 @{co}_tri = @{co}_upsilontr*@{co}_tr;
 /* Note: Valid parameter space: 0 <= upsilontr <= 1/(1-omega) with
 upsilontr = 0:            tri = 0, trj = 1/omega tr
@@ -743,11 +822,12 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 @#if !steady
 
 // Monetary policy rule
-@#if co == countries[2]
 
-@{co}_r^4-1 = @{ea}_phirr*(@{co}_r(-1)^4-1)+(1-@{ea}_phirr)*(@{co}_rrstar^4*@{co}_pi4target-1
+@#if co == countries[2]
+[name='@{co}_r']
+@{co}_r = ((@{ea}_phirr*(@{co}_r(-1)^4-1)+(1-@{ea}_phirr)*(@{co}_rrstar^4*@{co}_pi4target-1
 +@{ea}_phirpi*(@{ea}_pic4-@{co}_pi4target))
-+@{ea}_phirgy*(@{ea}_ygrowth-1)+@{ea}_epsr;
++@{ea}_phirgy*(@{ea}_ygrowth-1)+@{ea}_epsr)+1)^(1/4);
 
 @#else // co == countries[2]
 
@@ -756,22 +836,26 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 @{co}_rerdep/@{co2}_rerdep*@{co}_pic/@{co2}_pic-1=0;
 
 @#else // co == countries[1]
-
-@{co}_r^4-1 = @{co}_phirr*(@{co}_r(-1)^4-1)+(1-@{co}_phirr)*(@{co}_rrstar^4*@{co}_pi4target-1+@{co}_phirpi*(@{co}_pic4-@{co}_pi4target))+@{co}_phirgy*(@{co}_y/@{co}_y(-1)-1)+@{co}_epsr;
+[name='@{co}_r']
+@{co}_r = ((@{co}_phirr*(@{co}_r(-1)^4-1)+(1-@{co}_phirr)*(@{co}_rrstar^4*@{co}_pi4target-1+@{co}_phirpi*(@{co}_pic4-@{co}_pi4target))+@{co}_phirgy*(@{co}_y/@{co}_y(-1)-1)+@{co}_epsr)+1)^(1/4);
 
 @#endif // co == countries[1]
 @#endif // co == countries[2]
 
 // Definition of annual inflation
+[name='@{co}_pic4']
 @{co}_pic4 = @{co}_pic*@{co}_pic(-1)*@{co}_pic(-2)*@{co}_pic(-3);
 
 // Real interest rate
+[name='@{co}_rr']
 @{co}_rr-1 = @{co}_r/@{co}_pic(+1)-1;
 
 @#else // !steady
 @#if co != countries[1]
-@{co}_r^4-1 = @{co}_rrstar^4*@{co}_pi4target-1;
+[name='@{co}_r']
+@{co}_r= ((@{co}_rrstar^4*@{co}_pi4target-1)+1)^(1/4);
 @#else
+[name='@{co}_r']
 @{co}_r = @{co2}_r;
 @#endif
 @{co}_pic4 = @{co}_pi4target;
@@ -779,6 +863,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 @#endif // !steady
 
 // Equilibrium real interest rate
+[name='@{co}_rrstar']
 @{co}_rrstar-1 = 1/@{co}_beta-1;
 
 //-------------
@@ -796,15 +881,19 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 @{co}_c = (1-@{co}_omega)*@{co}_ci+@{co}_omega*@{co}_cj;
 
 // Aggregate money holdings
+[name='@{co}_m']
 @{co}_m = (1-@{co}_omega)*@{co}_mi+@{co}_omega*@{co}_mj;
 
 // Aggregate capital stock
+[name='@{co}_k']
 @{co}_k = (1-@{co}_omega)*@{co}_ki;
 
 // Aggregate investment
+[name='@{co}_i']
 @{co}_i = (1-@{co}_omega)*@{co}_ii;
 
 // Aggregate lump-sum transfers
+[name='@{co}_trj']
 @{co}_trj = 
 @#if omega_equals_zero[i]
 @{co}_tr
@@ -814,6 +903,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 ;
 
 // Aggregate lump-sum taxes
+[name='@{co}_tj']
 @{co}_tj = 
 @#if omega_equals_zero[i]
 @{co}_t
@@ -823,6 +913,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 ;
 
 // Aggregate transaction costs
+[name='@{co}_gammav']
 @{co}_gammav = (1-@{co}_omega)*@{co}_ci*@{co}_gammavi+@{co}_omega*@{co}_cj*@{co}_gammavj;
 
 //-------------
@@ -832,23 +923,28 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 // Labour markets for household I
 
 // Wedge between labour demand/hours worked and labour supply
+[name='@{co}_ni']
 @{co}_ni = @{co}_si*@{co}_ndi;
 
 // Wage dispersion
+[name='@{co}_si']
 @{co}_si = (1-@{co}_xii)*(@{co}_witilde/@{co}_wi)^(-@{co}_etai)+@{co}_xii*(@{co}_wi(-1)/@{co}_wi)^(-@{co}_etai)*(@{co}_pic/(@{co}_pic(-1)^@{co}_chii*@{co}_pi4target^(1/4*(1-@{co}_chii))))^(@{co}_etai)*@{co}_si(-1);
 
 // Labour markets for household J
 
 // Wedge between labour demand/hours worked and labour supply
+[name='@{co}_nj']
 @{co}_nj = @{co}_sj*@{co}_ndj;
 
 // Wage dispersion
+[name='@{co}_sj']
 @{co}_sj = (1-@{co}_xij)*(@{co}_wjtilde/@{co}_wj)^(-@{co}_etaj)+@{co}_xij*(@{co}_wj(-1)/@{co}_wj)^(-@{co}_etaj)*(@{co}_pic/(@{co}_pic(-1)^@{co}_chij*@{co}_pi4target^(1/4*(1-@{co}_chij))))^(@{co}_etaj)*@{co}_sj(-1);
 
 // Rental market for capital
 
 // Equality of capital input and effective capital services
-@{co}_u*@{co}_k = @{co}_kd;
+[name='@{co}_kd']
+@{co}_kd = @{co}_u*@{co}_k;
 
 // Intermediate-good markets
 
@@ -856,12 +952,15 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 @{co}_ysn = @{co}_snt*@{co}_nt;
 
 //  nontradables aggregate demand
+[name='@{co}_nt']
 @{co}_nt =  @{co}_nti+@{co}_ntc+@{co}_g;
 
 // Aggregate demand for domestic intermediate goods, using @{co}_hg = @{co}_g
+[name='@{co}_ht']
 @{co}_ht = @{co}_htc+@{co}_hti;
 
 // Price dispersion in the domestic markets
+[name='@{co}_sh']
 @{co}_sh = (1-@{co}_xih)*(@{co}_phttilde/@{co}_pht)^(-@{co}_thetat)+@{co}_xih*(@{co}_piht/(@{co}_piht(-1)^@{co}_chih*@{co}_pi4target^(1/4*(1-@{co}_chih))))^@{co}_thetat*@{co}_sh(-1);
 
 // Price dispersion in the foreign markets
@@ -871,14 +970,17 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 @#endfor
 
 // Price dispersion in the domestic markets
+[name='@{co}_snt']
 @{co}_snt = (1-@{co}_xin)*(@{co}_pnttilde/@{co}_pnt)^(-@{co}_thetan)+@{co}_xin*(@{co}_pint/(@{co}_pint(-1)^@{co}_chin*@{co}_pi4target^(1/4*(1-@{co}_chin))))^@{co}_thetan*@{co}_snt(-1);
 
 // Final-good markets
 
 // Aggregate consumption and transaction cost
+[name='@{co}_qc']
 @{co}_qc = @{co}_c+@{co}_gammav;
 
 // Aggregate investment and capital utilisation cost
+[name='@{co}_qi']
 @{co}_qi = @{co}_i+@{co}_k*@{co}_gammau;
 
 //-------------
@@ -900,6 +1002,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 ;
 
 // Aggregate real demand
+[name='@{co}_y']
 @{co}_y = @{co}_yst+@{co}_ysn;
 
 
@@ -910,40 +1013,53 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 
 // Productivity shocks
+[name='@{co}_zt']
 log(@{co}_zt) = (1-@{co}_rhozt)*log(@{co}_ztbar)+@{co}_rhozt*log(@{co}_zt(-1))+@{co}_epszt;
+[name='@{co}_zn']
 log(@{co}_zn) = (1-@{co}_rhozn)*log(@{co}_znbar)+@{co}_rhozn*log(@{co}_zn(-1))+@{co}_epszn;
 
 // Government spending shock
+[name='@{co}_gy']
 @{co}_gy = (1-@{co}_rhog)*@{co}_gybar+@{co}_rhog*@{co}_gy(-1)+@{co}_epsg;
 
 // Transfer shock
+[name='@{co}_try']
 @{co}_try = (1-@{co}_rhotr)*@{co}_trybar+@{co}_rhotr*@{co}_try(-1)+@{co}_epstr;
 
 // Consumption tax shock
+[name='@{co}_tauc']
 @{co}_tauc = (1-@{co}_rhotauc)*@{co}_taucbar+@{co}_rhotauc*@{co}_tauc(-1)+@{co}_epstauc;
 
 // Dividend income tax shock
+[name='@{co}_taud']
 @{co}_taud = (1-@{co}_rhotaud)*@{co}_taudbar+@{co}_rhotaud*@{co}_taud(-1)+@{co}_epstaud;
 
 // Capital income tax shock
+[name='@{co}_tauk']
 @{co}_tauk = (1-@{co}_rhotauk)*@{co}_taukbar+@{co}_rhotauk*@{co}_tauk(-1)+@{co}_epstauk;
 
 // Labour income tax shock
+[name='@{co}_taun']
 @{co}_taun = (1-@{co}_rhotaun)*@{co}_taunbar+@{co}_rhotaun*@{co}_taun(-1)+@{co}_epstaun;
 
 // Payroll tax shock: households
+[name='@{co}_tauwh']
 @{co}_tauwh = (1-@{co}_rhotauwh)*@{co}_tauwhbar+@{co}_rhotauwh*@{co}_tauwh(-1)+@{co}_epstauwh;
 
 // Payroll tax shock: firms
+[name='@{co}_tauwf']
 @{co}_tauwf = (1-@{co}_rhotauwf)*@{co}_tauwfbar+@{co}_rhotauwf*@{co}_tauwf(-1)+@{co}_epstauwf;
 
 // Wage cost push shock
+[name='@{co}_wcst']
 @{co}_wcst = (1-@{co}_rhowcst)*@{co}_wcstbar+@{co}_rhowcst*@{co}_wcst(-1)+@{co}_epswcst;
 
 // Preference shock
+[name='@{co}_zcon']
 log(@{co}_zcon) = (1-@{co}_rhozcon)*log(@{co}_zconbar)+@{co}_rhozcon*log(@{co}_zcon(-1))+@{co}_epszcon;
 
 // Investment specific shock
+[name='@{co}_zinv']
 log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_zinv(-1))+@{co}_epszinv;
 
 
@@ -958,15 +1074,19 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @{co}_cy = @{co}_c/(@{co}_py*@{co}_y);
 
 // Aggregate nominal investment share
+[name='@{co}_iy']
 @{co}_iy = @{co}_pi*@{co}_i/(@{co}_py*@{co}_y);
 
 // Aggregate nominal import share  
+[name='@{co}_imy']
 @{co}_imy = (@{co}_pimc*@{co}_imc+@{co}_pimi*@{co}_imi)/(@{co}_py*@{co}_y);
 
 // Aggregate nominal import share for consumption goods 
+[name='@{co}_imcy']
 @{co}_imcy = @{co}_pimc*@{co}_imc/(@{co}_py*@{co}_y);
 
 // Aggregate nominal import share for investment goods to be corrected with multilateral price of imports
+[name='@{co}_imiy']
 @{co}_imiy = @{co}_pimi*@{co}_imi/(@{co}_py*@{co}_y);
 
 // Aggregate debt-to-output ratio
@@ -974,27 +1094,35 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @{co}_by = @{co}_b/(@{co}_pybar*@{co}_ybar);
 
 // Aggregate lump-sum tax-to-output ratio
+[name='@{co}_ty']
 @{co}_ty = @{co}_t/(@{co}_pybar*@{co}_ybar);
 
 // Aggregate labour cost share
+[name='@{co}_lcy']
 @{co}_lcy = ((1+@{co}_tauwf)*@{co}_w*@{co}_nd)/(@{co}_py*@{co}_y);
 
 // Aggregate nominal Wage share
+[name='@{co}_wy']
 @{co}_wy = (@{co}_w*@{co}_nd)/(@{co}_py*@{co}_y);
 
 // NT sector nominal Wage share
+[name='@{co}_wnty']
 @{co}_wnty = (@{co}_w*@{co}_ndn)/(@{co}_pnt*@{co}_ysn);
 
 // T sector nominal Wage share
+[name='@{co}_whty']
 @{co}_whty = (@{co}_w*@{co}_ndt)/(@{co}_pht*@{co}_yst);
 
 // T sector share
+[name='@{co}_yhty']
 @{co}_yhty = @{co}_pht*@{co}_yst/(@{co}_py*@{co}_y);
 
 // NT sector share
+[name='@{co}_ynty']
 @{co}_ynty = @{co}_pnt*@{co}_ysn/(@{co}_py*@{co}_y);
 
 // Output gap
+[name='@{co}_ygap']
 @#if !steady
 @{co}_ygap = @{co}_y/@{co}_ybar-1;
 @#else
@@ -1002,12 +1130,15 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @#endif
 
 // Output growth (gross rate)
+[name='@{co}_ygrowth']
 @{co}_ygrowth = @{co}_y/@{co}_y(-1);
 
 // Output growth (gross rate yoy)
+[name='@{co}_ygrowth4']
 @{co}_ygrowth4 = @{co}_y/@{co}_y(-4);
 
 // Domestic nominal output as a share of world nominal output
+[name='@{co}_yshare']
 @{co}_yshare  = @{co}_size*@{co}_py*@{co}_y/@{co}_rer/(
 @#for it in countries
 +@{it}_size*@{it}_py*@{it}_y/@{it}_rer
@@ -1019,6 +1150,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @{co}_epsilonm = -1/8*1/(@{co}_r*(@{co}_gammav2*@{co}_r+@{co}_r-1));
 
 // Trade balance-to-GDP ratio
+[name='@{co}_tby'] 
 @{co}_tby = @{co}_tb/(@{co}_py*@{co}_y);
 
 @#for it in countries - [ co ]
@@ -1042,6 +1174,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @#endfor
 
 // Internal real exchange rate
+[name='@{co}_internalrer'] 
 @{co}_internalrer = @{co}_pnt/@{co}_pttc;
 
 @#endfor // End of main country loop
@@ -1061,6 +1194,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @#endif
 
 // International transaction cost ('risk premium')
+[name='@{co}_gammab']
 @#if !steady
 @{co}_gammab = @{co}_gammab1*(exp(@{co}_rer*@{co}_bf/@{co4}_pic/(@{co}_py*@{co}_y)-@{co}_bfytarget)-1)
 @#if co == countries[3]
@@ -1072,6 +1206,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @#endif
 
 // Risk premium shock
+[name='@{co}_rp']
 @#if !steady
 @{co}_rp = @{co}_rhorp*@{co}_rp(-1)+@{co}_epsrp;
 @#else
@@ -1079,9 +1214,11 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @#endif
 
 // Definition of the rate of real exchange-rate depreciation
+[name='@{co}_rerdep']
 @{co}_rerdep = @{co}_rer/@{co}_rer(-1);
 
 // Definition of the terms of trade
+[name='@{co}_tot']
 @{co}_tot = @{co}@{co4}_pim/(@{co}_rer*@{co4}@{co}_pim);
 
 @#endfor // Global loop
@@ -1123,6 +1260,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @#endif
 @#endfor
 
+[name='@{co4}_rer']
 @{co4}_rer = 1;
 
 [name='@{co}@{co2}_nerdep'] 
@@ -1137,9 +1275,9 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 
 // International transaction cost ('risk premium')
 @#if !steady
+[name='@{co}_gammabh'] 
 @{co}_gammabh = @{co2}_gammab1*(exp(@{co}@{co2}_rer*@{co}_bh/@{co2}_pic/(@{co}_py*@{co}_y)-@{co}_bhytarget)-1);
 @#else
-[name='@{co}_bh']
 @{co}_bh = (@{co}_bhytarget*@{co}_py*@{co}_y)/@{co}@{co2}_rer*@{co2}_pic;
 @#endif
 
