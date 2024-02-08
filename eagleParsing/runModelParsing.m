@@ -42,5 +42,10 @@ catch
     dynare(sprintf('eagleModel'), options_ecb.mod_run, options_ecb.mod_path, 'nopreprocessoroutput');
 end
 endo =  M_.endo_names(~contains(M_.endo_names, 'AUX_'));
+endoProblematic = {...
+    'EAAEAB_imc'
+    'EAAUS_imc'
+    };
+endoAdjusted = setdiff(endo, endoProblematic);
 % Creating .inc files which contain all informations on the model
-utils.ParseModel(sprintf('eagleModel'), sprintf('Parsed_eagleModel'), endo(1:34), false)
+utils.ParseModel(sprintf('eagleModel'), sprintf('Parsed_eagleModel'), endoAdjusted, false)

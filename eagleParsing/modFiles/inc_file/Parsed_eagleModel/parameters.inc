@@ -1,1 +1,0 @@
-parameters EAAEAB_rerbar EAA_beta EAA_chix EAA_gammaimc1 EAA_gammaimi1 EAA_pi4target EAA_pybar EAA_size EAA_thetat EAA_xix EAB_pybar EAB_size EA_rhoz EA_zbar RW_size US_size ;

@@ -332,6 +332,7 @@ model(block, bytecode, cutoff=0);
 @{it}@{co}_piim = @{it}@{co}_pim/@{it}@{co}_pim(-1)*@{it}_pic;
 
 // Bilateral real exchange rate
+[name='@{co}@{it}_rer']
 @{co}@{it}_rer = @{co}_rer/@{it}_rer;
 
 // Auxiliary equation for steady-state output
@@ -340,6 +341,7 @@ model(block, bytecode, cutoff=0);
 @#endif
 
 //Terms of Trade
+[name='@{co}@{it}_tot'] 
 @{co}@{it}_tot = @{co}@{it}_pim/(@{co}@{it}_rer*@{it}@{co}_pim);
 
 @#endfor // countries - [ co ]
@@ -349,6 +351,7 @@ model(block, bytecode, cutoff=0);
 @{co}_im = @{co}_imc+@{co}_imi;
 
 // Total import deflator
+[name='@{co}_pim']
 @{co}_im*@{co}_pim  = @{co}_pimc*@{co}_imc+@{co}_pimi*@{co}_imi;
 
 // Total Export deflator 
@@ -422,6 +425,7 @@ model(block, bytecode, cutoff=0);
 @#endif
 
 // Demand for bilateral consumption import goods
+[name='@{co}@{co3}_imc'] 
 @#if !steady
 @{co}@{co4}_imc = @{co}@{co4}_numc*(@{co}@{co4}_pim/(@{co}@{co4}_gammaimcdag*@{co}_pimc))^(-@{co}_mumc)*@{co}_imc/(1-@{co}@{co4}_gammaimc);
 @#else
@@ -1093,6 +1097,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @#endfor
 
 @{co4}_rer = 1;
+
 
 @{co}@{co2}_nerdep = @{co}_rerdep/@{co2}_rerdep*@{co}_pic/@{co2}_pic;
 
