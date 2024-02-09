@@ -826,30 +826,29 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 
 @#if !steady
-[name='@{co}_pic']
+[name='@{co}_pic4']
 // Monetary policy rule
 
 @#if co == countries[2]
-@{co}_r = ((@{ea}_phirr*(@{co}_r(-1)^4-1)+(1-@{ea}_phirr)*(@{co}_rrstar^4*@{co}_pi4target-1
-+@{ea}_phirpi*(@{ea}_pic4-@{co}_pi4target))
-+@{ea}_phirgy*(@{ea}_ygrowth-1)+@{ea}_epsr)+1)^(1/4);
+@{ea}_pic4=(((@{co}_r)^(4)-1 - @{ea}_phirr*(@{co}_r(-1)^4-1) - @{ea}_phirgy*(@{ea}_ygrowth-1) - @{ea}_epsr)/(1-@{ea}_phirr) - @{co}_rrstar^4*@{co}_pi4target+1)/@{ea}_phirpi+@{co}_pi4target;
+
 
 @#else // co == countries[2]
 
 @#if co == countries[1]
-
-@{co}_rerdep/@{co2}_rerdep*@{co}_pic/@{co2}_pic-1=0;
+//Here I added 4 otherwise it would not work
+@{co2}_pic4 = @{co}_rerdep/@{co2}_rerdep*@{co}_pic;
 
 @#else // co == countries[1]
 
-@{co}_r = ((@{co}_phirr*(@{co}_r(-1)^4-1)+(1-@{co}_phirr)*(@{co}_rrstar^4*@{co}_pi4target-1+@{co}_phirpi*(@{co}_pic4-@{co}_pi4target))+@{co}_phirgy*(@{co}_y/@{co}_y(-1)-1)+@{co}_epsr)+1)^(1/4);
+@{co}_pic4=(((@{co}_r)^(4)-1 - @{co}_phirr*(@{co}_r(-1)^4-1) - @{co}_phirgy*(@{co}_ygrowth-1) - @{co}_epsr)/(1-@{co}_phirr) - @{co}_rrstar^4*@{co}_pi4target+1)/@{co}_phirpi+@{co}_pi4target;
 
 @#endif // co == countries[1]
 @#endif // co == countries[2]
 
 // Definition of annual inflation
-[name='@{co}_pic4']
-@{co}_pic4 = @{co}_pic*@{co}_pic(-1)*@{co}_pic(-2)*@{co}_pic(-3);
+[name='@{co}_pic']
+@{co}_pic = @{co}_pic4/(@{co}_pic(-1)*@{co}_pic(-2)*@{co}_pic(-3));
 
 // Real interest rate
 [name='@{co}_rr']
