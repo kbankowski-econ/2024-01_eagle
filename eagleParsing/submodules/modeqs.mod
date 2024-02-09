@@ -38,9 +38,10 @@ model(block, bytecode, cutoff=0);
 @{co}_ci =((@{co}_lambdai*(1+@{co}_tauc+@{co}_gammavi+@{co}_vi*@{co}_gammavider))/@{co}_zcon)^(1/@{co}_sigma) + @{co}_kappa*@{co}_ci(-1);
 
 // Euler equation for government bonds
+[name='@{co}_r']
 @#if co == countries[1]
 @#if !steady
-@{co}_r*(1-@{co}_gammabh) = @{co}_beta^(-1)*@{co}_lambdai/@{co}_lambdai(+1)*@{co}_pic(+1);
+@{co}_r =( @{co}_beta^(-1)*@{co}_lambdai/@{co}_lambdai(+1)*@{co}_pic(+1))/(1-@{co}_gammabh);
 @#else
 @{co}_r                   = @{co}_beta^(-1)*@{co}_lambdai/@{co}_lambdai    *@{co}_pic;
 @#endif
@@ -55,7 +56,8 @@ model(block, bytecode, cutoff=0);
 @#endif
 
 // Euler equation for money
-@{co}_vi^(2)*@{co}_gammavider = 1-@{co}_beta*@{co}_lambdai(+1)/(@{co}_lambdai*@{co}_pic(+1));
+[name='@{co}_lambdai']
+@{co}_lambdai = @{co}_beta*@{co}_lambdai(+1)/(1 - @{co}_vi^(2)*@{co}_gammavider)/@{co}_pic(+1);
 
 // Consumption-based velocity
 [name='@{co}_vi']
@@ -160,7 +162,8 @@ model(block, bytecode, cutoff=0);
 @{co}_cj = ((@{co}_lambdaj*(1+@{co}_tauc+@{co}_gammavj+@{co}_vj*@{co}_gammavjder))^(1/@{co}_sigma))/@{co}_zcon + @{co}_kappa*@{co}_cj(-1);
 
 // Euler equation for money
-@{co}_vj^(2)*@{co}_gammavjder = 1-@{co}_beta*@{co}_lambdaj(+1)/(@{co}_lambdaj*@{co}_pic(+1));
+[name='@{co}_lambdaj']
+@{co}_lambdaj = @{co}_beta*@{co}_lambdaj(+1)/(1 - @{co}_vj^(2)*@{co}_gammavjder)/@{co}_pic(+1);
 
 // Consumption-based velocity
 [name='@{co}_vj']
@@ -204,11 +207,11 @@ model(block, bytecode, cutoff=0);
 @#if co != countries[1] && co != countries[2]
 
 // Production function tradable
-[name='@{co}_yst']
-@{co}_yst = @{co}_zt*@{co}_kdt^@{co}_alphat*@{co}_ndt^(1-@{co}_alphat)-@{co}_psitbar;
+[name='@{co}_ndt']
+@{co}_ndt = ((@{co}_yst + @{co}_psitbar)/(@{co}_zt*@{co}_kdt^@{co}_alphat))^(1/(1-@{co}_alphat));
 
 // Production function nontradable
-[name='@{co}_ysn']
+[name='@{co}_ndn'] //MODIFY THIS
 @{co}_ysn = @{co}_zn*@{co}_kdn^@{co}_alphan*@{co}_ndn^(1-@{co}_alphan)-@{co}_psinbar;
 
 // Real marginal cost tradable
@@ -222,11 +225,11 @@ model(block, bytecode, cutoff=0);
 @#else // co != countries[1] && co != countries[2]
 
 // Production function tradable
-[name='@{co}_yst']
+[name='@{co}_ndt'] //MODIFY THIS
 @{co}_yst = @{ea}_z*@{co}_zt*@{co}_kdt^@{co}_alphat*@{co}_ndt^(1-@{co}_alphat)-@{co}_psitbar;
 
 // Production function nontradable
-[name='@{co}_ysn']
+[name='@{co}_ndn'] //MODIFY THIS
 @{co}_ysn = @{ea}_z*@{co}_zn*@{co}_kdn^@{co}_alphan*@{co}_ndn^(1-@{co}_alphan)-@{co}_psinbar;
 
 // Real marginal cost tradable
@@ -266,12 +269,12 @@ model(block, bytecode, cutoff=0);
 @{co}_kdt= @{co}_alphat*(@{co}_yst+@{co}_psitbar)/(@{co}_rk*@{co}_mct) ;
 
 // Capital input (FOC)
-[name='@{co}_rk']
-@{co}_rk = @{co}_alphan*(@{co}_ysn+@{co}_psinbar)/@{co}_kdn*@{co}_mcn;
+[name='@{co}_kdn']
+@{co}_kdn = @{co}_alphan*(@{co}_ysn+@{co}_psinbar)/(@{co}_rk*@{co}_mcn);
 
 // Total capital demand
-[name='@{co}_kdn']
-@{co}_kdn = @{co}_kd - @{co}_kdt;
+[name='@{co}_kd']
+@{co}_kd = @{co}_kdn + @{co}_kdt;
 
 // Demand for labour services by household I
 [name='@{co}_ndi']
@@ -294,17 +297,18 @@ model(block, bytecode, cutoff=0);
 ;
 
 // Aggregate labour demand
-@{co}_nd^(1-1/@{co}_eta) = 
+[name='@{co}_nd']
+@{co}_nd = 
 @#if omega_equals_zero[i]
-@{co}_ndi^(1-1/@{co}_eta)
+(@{co}_ndi^(1-1/@{co}_eta))^(@{co}_eta/(@{co}_eta-1))
 @#else
-(1-@{co}_omega)^(1/@{co}_eta)*@{co}_ndi^(1-1/@{co}_eta)+@{co}_omega^(1/@{co}_eta)*@{co}_ndj^(1-1/@{co}_eta)
+((1-@{co}_omega)^(1/@{co}_eta)*@{co}_ndi^(1-1/@{co}_eta)+@{co}_omega^(1/@{co}_eta)*@{co}_ndj^(1-1/@{co}_eta))^(@{co}_eta/(@{co}_eta-1))
 @#endif
 ;
 
 // Total demand 
 [name='@{co}_nd']
-@{co}_nd = @{co}_ndt+@{co}_ndn;
+@{co}_nd = @{co}_ndt + @{co}_ndn;
 
 // Aggregate dividends
 [name='@{co}_d']
@@ -604,6 +608,7 @@ model(block, bytecode, cutoff=0);
 @{co}_piimi = @{co}_pimi/@{co}_pimi(-1)*@{co}_pic;
 
 // Wedge between aggregate demand and production, using @{co}_x = @{co2}_size/@{co}_size*@{co2}_im
+[name='@{co}_yst']
 @{co}_yst = @{co}_sh*@{co}_ht
 @#for it in countries - [ co ]
 +@{co}@{it}_sx*@{it}_size/@{co}_size*@{it}@{co}_im
@@ -889,8 +894,8 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 @{co}_k = (1-@{co}_omega)*@{co}_ki;
 
 // Aggregate investment
-[name='@{co}_i']
-@{co}_i = (1-@{co}_omega)*@{co}_ii;
+[name='@{co}_ii']
+@{co}_ii = @{co}_i/(1-@{co}_omega);
 
 // Aggregate lump-sum transfers
 [name='@{co}_trj']
@@ -943,12 +948,13 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 // Rental market for capital
 
 // Equality of capital input and effective capital services
-[name='@{co}_kd']
-@{co}_kd = @{co}_u*@{co}_k;
+[name='@{co}_u']
+@{co}_u = @{co}_kd/@{co}_k;
 
 // Intermediate-good markets
 
 // Wedge between aggregate demand and production, using @{co}_x = @{co2}_size/@{co}_size*@{co2}_im
+[name='@{co}_ysn']
 @{co}_ysn = @{co}_snt*@{co}_nt;
 
 //  nontradables aggregate demand
@@ -980,8 +986,8 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 @{co}_qc = @{co}_c+@{co}_gammav;
 
 // Aggregate investment and capital utilisation cost
-[name='@{co}_qi']
-@{co}_qi = @{co}_i+@{co}_k*@{co}_gammau;
+[name='@{co}_i']
+@{co}_i = @{co}_qi - @{co}_k*@{co}_gammau;
 
 //-------------
 // Resource constraint
