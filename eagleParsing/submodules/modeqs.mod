@@ -155,7 +155,8 @@ model(block, bytecode, cutoff=0);
 ;
 
 // Budget constraint
-(1+@{co}_tauc+@{co}_gammavj)*@{co}_cj+@{co}_mj = (1-@{co}_taun-@{co}_tauwh)*@{co}_wj*@{co}_nj+@{co}_trj-@{co}_tj+@{co}_mj(-1)*@{co}_pic^(-1);
+[name='@{co}_mj']
+@{co}_mj = (1-@{co}_taun-@{co}_tauwh)*@{co}_wj*@{co}_nj+@{co}_trj-@{co}_tj+@{co}_mj(-1)*@{co}_pic^(-1) - (1+@{co}_tauc+@{co}_gammavj)*@{co}_cj;
 
 // Marginal utility of consumption
 [name='@{co}_cj']
@@ -211,8 +212,8 @@ model(block, bytecode, cutoff=0);
 @{co}_ndt = ((@{co}_yst + @{co}_psitbar)/(@{co}_zt*@{co}_kdt^@{co}_alphat))^(1/(1-@{co}_alphat));
 
 // Production function nontradable
-[name='@{co}_ndn'] //MODIFY THIS
-@{co}_ysn = @{co}_zn*@{co}_kdn^@{co}_alphan*@{co}_ndn^(1-@{co}_alphan)-@{co}_psinbar;
+[name='@{co}_ndn'] 
+@{co}_ndn = ((@{co}_ysn + @{co}_psinbar)/(@{co}_zn*@{co}_kdn^@{co}_alphan))^(1/(1-@{co}_alphan));
 
 // Real marginal cost tradable
 [name='@{co}_mct']
@@ -225,12 +226,12 @@ model(block, bytecode, cutoff=0);
 @#else // co != countries[1] && co != countries[2]
 
 // Production function tradable
-[name='@{co}_ndt'] //MODIFY THIS
-@{co}_yst = @{ea}_z*@{co}_zt*@{co}_kdt^@{co}_alphat*@{co}_ndt^(1-@{co}_alphat)-@{co}_psitbar;
+[name='@{co}_ndt'] 
+@{co}_ndt = ((@{co}_yst + @{co}_psitbar)/(@{ea}_z*@{co}_zt*@{co}_kdt^@{co}_alphat))^(1/(1-@{co}_alphat));
 
 // Production function nontradable
-[name='@{co}_ndn'] //MODIFY THIS
-@{co}_ysn = @{ea}_z*@{co}_zn*@{co}_kdn^@{co}_alphan*@{co}_ndn^(1-@{co}_alphan)-@{co}_psinbar;
+[name='@{co}_ndn'] 
+@{co}_ndn = ((@{co}_ysn+@{co}_psinbar)/(@{ea}_z*@{co}_zn*@{co}_kdn^@{co}_alphan))^(1/(1-@{co}_alphan));
 
 // Real marginal cost tradable
 [name='@{co}_mct']
@@ -740,22 +741,22 @@ model(block, bytecode, cutoff=0);
 //-------------
 
 // Government budget constraint, using @{co}_pg = @{co}_pht
-
+[name='@{co}_b']
 @#if co == countries[1]
 
-@{co}_pnt(-1)*@{co}_g(-1)+@{co}_tr(-1)
-+@{co}_b(-1)*@{co}_pic(-1)^(-1)+@{co}_m(-2)*@{co}_pic(-1)^(-1) = @{co}_tauc(-1)*@{co}_c(-1)+(@{co}_taun(-1)+@{co}_tauwh(-1))*(@{co}_wi(-1)*@{co}_ndi(-1)+@{co}_wj(-1)*@{co}_ndj(-1))+@{co}_tauwf(-1)*@{co}_w(-1)*@{co}_nd(-1)+@{co}_tauk(-1)*(@{co}_rk(-1)*@{co}_u(-1)-(@{co}_gammau(-1)+@{co}_delta)*@{co}_pi(-1))*@{co}_k(-1)+@{co}_taud(-1)*@{co}_d(-1)+@{co}_t(-1)+(@{co}_r(-1)*(1-@{co}_gammab(-1)))^(-1)*@{co}_b+@{co}_m(-1);
+ @{co}_b = (-1)* (1/(@{co}_r(-1)*(1-@{co}_gammab(-1)))^(-1)) * ( - @{co}_pnt(-1)*@{co}_g(-1) - @{co}_tr(-1)
+- @{co}_b(-1)*@{co}_pic(-1)^(-1) - @{co}_m(-2)*@{co}_pic(-1)^(-1) + @{co}_tauc(-1)*@{co}_c(-1)+(@{co}_taun(-1)+@{co}_tauwh(-1))*(@{co}_wi(-1)*@{co}_ndi(-1)+@{co}_wj(-1)*@{co}_ndj(-1))+@{co}_tauwf(-1)*@{co}_w(-1)*@{co}_nd(-1)+@{co}_tauk(-1)*(@{co}_rk(-1)*@{co}_u(-1)-(@{co}_gammau(-1)+@{co}_delta)*@{co}_pi(-1))*@{co}_k(-1)+@{co}_taud(-1)*@{co}_d(-1)+@{co}_t(-1)+@{co}_m(-1));
 
 @#else
 @#if co == countries[2]
 
-@{co}_pnt(-1)*@{co}_g(-1)+@{co}_tr(-1)
-+@{co}_b(-1)*@{co}_pic(-1)^(-1)+@{co}_m(-2)*@{co}_pic(-1)^(-1) = @{co}_tauc(-1)*@{co}_c(-1)+(@{co}_taun(-1)+@{co}_tauwh(-1))*(@{co}_wi(-1)*@{co}_ndi(-1)+@{co}_wj(-1)*@{co}_ndj(-1))+@{co}_tauwf(-1)*@{co}_w(-1)*@{co}_nd(-1)+@{co}_tauk(-1)*(@{co}_rk(-1)*@{co}_u(-1)-(@{co}_gammau(-1)+@{co}_delta)*@{co}_pi(-1))*@{co}_k(-1)+@{co}_taud(-1)*@{co}_d(-1)+@{co}_t(-1)+(@{co}_r(-1)*(1-@{co}_gammab(-1)))^(-1)*@{co}_b+@{co}_m(-1);
+ @{co}_b = (-1)*(1/(@{co}_r(-1)*(1-@{co}_gammab(-1)))^(-1)) * (- @{co}_pnt(-1)*@{co}_g(-1) - @{co}_tr(-1)
+- @{co}_b(-1)*@{co}_pic(-1)^(-1) - @{co}_m(-2)*@{co}_pic(-1)^(-1) + @{co}_tauc(-1)*@{co}_c(-1)+(@{co}_taun(-1)+@{co}_tauwh(-1))*(@{co}_wi(-1)*@{co}_ndi(-1)+@{co}_wj(-1)*@{co}_ndj(-1))+@{co}_tauwf(-1)*@{co}_w(-1)*@{co}_nd(-1)+@{co}_tauk(-1)*(@{co}_rk(-1)*@{co}_u(-1)-(@{co}_gammau(-1)+@{co}_delta)*@{co}_pi(-1))*@{co}_k(-1)+@{co}_taud(-1)*@{co}_d(-1)+@{co}_t(-1)+@{co}_m(-1));
 
 @#else
 
-@{co}_pnt(-1)*@{co}_g(-1)+@{co}_tr(-1)
-+@{co}_b(-1)*@{co}_pic(-1)^(-1)+@{co}_m(-2)*@{co}_pic(-1)^(-1) = @{co}_tauc(-1)*@{co}_c(-1)+(@{co}_taun(-1)+@{co}_tauwh(-1))*(@{co}_wi(-1)*@{co}_ndi(-1)+@{co}_wj(-1)*@{co}_ndj(-1))+@{co}_tauwf(-1)*@{co}_w(-1)*@{co}_nd(-1)+@{co}_tauk(-1)*(@{co}_rk(-1)*@{co}_u(-1)-(@{co}_gammau(-1)+@{co}_delta)*@{co}_pi(-1))*@{co}_k(-1)+@{co}_taud(-1)*@{co}_d(-1)+@{co}_t(-1)+(@{co}_r(-1))^(-1)*@{co}_b+@{co}_m(-1);
+ @{co}_b = (-1)*(1/(@{co}_r(-1))^(-1))*(- @{co}_pnt(-1)*@{co}_g(-1) - @{co}_tr(-1)
+- @{co}_b(-1)*@{co}_pic(-1)^(-1) - @{co}_m(-2)*@{co}_pic(-1)^(-1) + @{co}_tauc(-1)*@{co}_c(-1)+(@{co}_taun(-1)+@{co}_tauwh(-1))*(@{co}_wi(-1)*@{co}_ndi(-1)+@{co}_wj(-1)*@{co}_ndj(-1))+@{co}_tauwf(-1)*@{co}_w(-1)*@{co}_nd(-1)+@{co}_tauk(-1)*(@{co}_rk(-1)*@{co}_u(-1)-(@{co}_gammau(-1)+@{co}_delta)*@{co}_pi(-1))*@{co}_k(-1)+@{co}_taud(-1)*@{co}_d(-1)+@{co}_t(-1)+@{co}_m(-1));
 
 @#endif
 @#endif
@@ -825,11 +826,10 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 
 @#if !steady
-
+[name='@{co}_pic']
 // Monetary policy rule
 
 @#if co == countries[2]
-[name='@{co}_r']
 @{co}_r = ((@{ea}_phirr*(@{co}_r(-1)^4-1)+(1-@{ea}_phirr)*(@{co}_rrstar^4*@{co}_pi4target-1
 +@{ea}_phirpi*(@{ea}_pic4-@{co}_pi4target))
 +@{ea}_phirgy*(@{ea}_ygrowth-1)+@{ea}_epsr)+1)^(1/4);
@@ -841,7 +841,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 @{co}_rerdep/@{co2}_rerdep*@{co}_pic/@{co2}_pic-1=0;
 
 @#else // co == countries[1]
-[name='@{co}_r']
+
 @{co}_r = ((@{co}_phirr*(@{co}_r(-1)^4-1)+(1-@{co}_phirr)*(@{co}_rrstar^4*@{co}_pi4target-1+@{co}_phirpi*(@{co}_pic4-@{co}_pi4target))+@{co}_phirgy*(@{co}_y/@{co}_y(-1)-1)+@{co}_epsr)+1)^(1/4);
 
 @#endif // co == countries[1]
@@ -994,7 +994,8 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 
 // Aggregate nominal demand, using @{co}_pg = @{co}_pht and @{co}_qg = @{co}_g   
-@{co}_py*@{co}_y = @{co}_qc+@{co}_pi*@{co}_qi+@{co}_pnt*@{co}_g
+[name='@{co}_py']
+@{co}_py = (1/@{co}_y) * ( @{co}_qc+@{co}_pi*@{co}_qi+@{co}_pnt*@{co}_g
 @#for it in countries - [ co ]
 +@{co}@{it}_rer*@{it}@{co}_pim*@{it}_size/@{co}_size*@{it}@{co}_im
 @#if !steady
@@ -1005,7 +1006,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 -@{co}@{it}_pim*@{co}@{it}_imi
 @#endif
 @#endfor
-;
+);
 
 // Aggregate real demand
 [name='@{co}_y']
@@ -1284,6 +1285,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 [name='@{co}_gammabh'] 
 @{co}_gammabh = @{co2}_gammab1*(exp(@{co}@{co2}_rer*@{co}_bh/@{co2}_pic/(@{co}_py*@{co}_y)-@{co}_bhytarget)-1);
 @#else
+[name='@{co}_bh']
 @{co}_bh = (@{co}_bhytarget*@{co}_py*@{co}_y)/@{co}@{co2}_rer*@{co2}_pic;
 @#endif
 
