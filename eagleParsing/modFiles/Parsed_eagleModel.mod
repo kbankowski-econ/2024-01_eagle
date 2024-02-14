@@ -125,6 +125,7 @@ var
 	EAA_m
 	EAA_mcn
 	EAA_mct
+	EAA_mi
 	EAA_mj
 	EAA_nd
 	EAA_ndi
@@ -162,6 +163,7 @@ var
 	EAA_qi
 	EAA_r
 	EAA_reer
+	EAA_rer
 	EAA_rerdep
 	EAA_rk
 	EAA_rp
@@ -337,6 +339,7 @@ var
 	EAB_m
 	EAB_mcn
 	EAB_mct
+	EAB_mi
 	EAB_mj
 	EAB_nd
 	EAB_ndi
@@ -375,6 +378,7 @@ var
 	EAB_qi
 	EAB_r
 	EAB_reer
+	EAB_rer
 	EAB_rerdep
 	EAB_rk
 	EAB_rp
@@ -557,6 +561,7 @@ var
 	RW_m
 	RW_mcn
 	RW_mct
+	RW_mi
 	RW_mj
 	RW_nd
 	RW_ndi
@@ -595,6 +600,7 @@ var
 	RW_qi
 	RW_r
 	RW_reer
+	RW_rer
 	RW_rerdep
 	RW_rk
 	RW_rp
@@ -769,6 +775,7 @@ var
 	US_m
 	US_mcn
 	US_mct
+	US_mi
 	US_mj
 	US_nd
 	US_ndi
@@ -807,6 +814,7 @@ var
 	US_qi
 	US_r
 	US_reer
+	US_rer
 	US_rk
 	US_rr
 	US_rrstar
@@ -1480,9 +1488,7 @@ varexo
 	EAA_epszn
 	EAA_epszt
 	EAA_gybar
-	EAA_mi
 	EAA_pic4
-	EAA_rer
 	EAA_taucbar
 	EAA_taudbar
 	EAA_taukbar
@@ -1514,8 +1520,6 @@ varexo
 	EAB_epszn
 	EAB_epszt
 	EAB_gybar
-	EAB_mi
-	EAB_rer
 	EAB_taucbar
 	EAB_taudbar
 	EAB_taukbar
@@ -1549,8 +1553,6 @@ varexo
 	RW_epszn
 	RW_epszt
 	RW_gybar
-	RW_mi
-	RW_rer
 	RW_taucbar
 	RW_taudbar
 	RW_taukbar
@@ -1581,7 +1583,6 @@ varexo
 	US_epszn
 	US_epszt
 	US_gybar
-	US_mi
 	US_taucbar
 	US_taudbar
 	US_taukbar
@@ -1806,10 +1807,10 @@ model;
 	EAA_by =  EAA_b/(EAA_pybar*EAA_ybar);
 
 	name='EAA_c'
-	EAA_c =  EAA_ci*(1-EAA_omega)+EAA_cj*EAA_omega;
+	EAA_c =  EAA_qc-EAA_gammav;
 
 	name='EAA_ci'
-	EAA_ci =  EAA_kappa*EAA_ci(-1)+(EAA_lambdai*(1+EAA_tauc+EAA_gammavi+EAA_vi*EAA_gammavider)/EAA_zcon)^(1/EAA_sigma);
+	EAA_ci =  (EAA_c-EAA_cj*EAA_omega)/(1-EAA_omega);
 
 	name='EAA_cj'
 	EAA_cj =  EAA_kappa*EAA_cj(-1)+(EAA_lambdaj*(1+EAA_tauc+EAA_gammavj+EAA_vj*EAA_gammavjder))^(1/EAA_sigma)/EAA_zcon;
@@ -1953,7 +1954,7 @@ model;
 	EAA_ki =  (1-EAA_delta)*EAA_ki(-1)+(1-EAA_gammai(-1))*EAA_ii(-1)*EAA_zinv;
 
 	name='EAA_lambdai'
-	EAA_lambdai =  EAA_beta*EAA_lambdai(1)/(1-EAA_gammavider*EAA_vi^2)/EAA_pic(1);
+	EAA_lambdai =  EAA_zcon*(EAA_ci-EAA_kappa*EAA_ci(-1))^(-EAA_sigma)/(1+EAA_tauc+EAA_gammavi+EAA_vi*EAA_gammavider);
 
 	name='EAA_lambdaj'
 	EAA_lambdaj =  EAA_beta*EAA_lambdaj(1)/(1-EAA_gammavjder*EAA_vj^2)/EAA_pic(1);
@@ -1969,6 +1970,9 @@ model;
 
 	name='EAA_mct'
 	EAA_mct =  1/(EA_z*EAA_zt*EAA_alphat^EAA_alphat*(1-EAA_alphat)^(1-EAA_alphat))*EAA_rk^EAA_alphat*((1+EAA_tauwf)*EAA_w)^(1-EAA_alphat);
+
+	name='EAA_mi'
+	EAA_mi =  EAA_ci/EAA_vi;
 
 	name='EAA_mj'
 	EAA_mj =  EAA_nj*(1-EAA_taun-EAA_tauwh)*EAA_wj+EAA_trj-EAA_tj+EAA_mj(-1)*EAA_pic^(-1)-EAA_cj*(1+EAA_tauc+EAA_gammavj);
@@ -2084,8 +2088,11 @@ model;
 	name='EAA_reer'
 	EAA_reer =  EAAEAB_rer^EAAEAB_weight*EAARW_rer^EAARW_weight*EAAUS_rer^EAAUS_weight;
 
+	name='EAA_rer'
+	EAA_rer =  EAA_rerdep*EAA_rer(-1);
+
 	name='EAA_rerdep'
-	EAA_rerdep =  EAA_rer/EAA_rer(-1);
+	EAA_rerdep =  EAA_lambdai*US_pic(1)/US_r/(1-EAA_gammab)/EAA_beta/EAA_lambdai(1);
 
 	name='EAA_rk'
 	EAA_rk =  EAA_gammauder*EAA_pi;
@@ -2178,7 +2185,7 @@ model;
 	EAA_utilj =  EAA_zcon*log(EAA_cj-EAA_kappa*EAA_cj(-1))-1/(1+EAA_zeta)*EAA_nj^(1+EAA_zeta)+EAA_beta*EAA_utilj(1);
 
 	name='EAA_vi'
-	EAA_vi =  EAA_ci/EAA_mi;
+	EAA_vi =  ((1-EAA_beta*EAA_lambdai(1)/(EAA_lambdai*EAA_pic(1)))/EAA_gammavider)^0.5;
 
 	name='EAA_vj'
 	EAA_vj =  EAA_cj/EAA_mj;
@@ -2448,10 +2455,10 @@ model;
 	EAB_by =  EAB_b/(EAB_pybar*EAB_ybar);
 
 	name='EAB_c'
-	EAB_c =  EAB_ci*(1-EAB_omega)+EAB_cj*EAB_omega;
+	EAB_c =  EAB_qc-EAB_gammav;
 
 	name='EAB_ci'
-	EAB_ci =  EAB_kappa*EAB_ci(-1)+(EAB_lambdai*(1+EAB_tauc+EAB_gammavi+EAB_vi*EAB_gammavider)/EAB_zcon)^(1/EAB_sigma);
+	EAB_ci =  (EAB_c-EAB_cj*EAB_omega)/(1-EAB_omega);
 
 	name='EAB_cj'
 	EAB_cj =  EAB_kappa*EAB_cj(-1)+(EAB_lambdaj*(1+EAB_tauc+EAB_gammavj+EAB_vj*EAB_gammavjder))^(1/EAB_sigma)/EAB_zcon;
@@ -2592,7 +2599,7 @@ model;
 	EAB_ki =  (1-EAB_delta)*EAB_ki(-1)+(1-EAB_gammai(-1))*EAB_ii(-1)*EAB_zinv;
 
 	name='EAB_lambdai'
-	EAB_lambdai =  EAB_beta*EAB_lambdai(1)/(1-EAB_gammavider*EAB_vi^2)/EAB_pic(1);
+	EAB_lambdai =  EAB_zcon*(EAB_ci-EAB_kappa*EAB_ci(-1))^(-EAB_sigma)/(1+EAB_tauc+EAB_gammavi+EAB_vi*EAB_gammavider);
 
 	name='EAB_lambdaj'
 	EAB_lambdaj =  EAB_beta*EAB_lambdaj(1)/(1-EAB_gammavjder*EAB_vj^2)/EAB_pic(1);
@@ -2608,6 +2615,9 @@ model;
 
 	name='EAB_mct'
 	EAB_mct =  1/(EA_z*EAB_zt*EAB_alphat^EAB_alphat*(1-EAB_alphat)^(1-EAB_alphat))*EAB_rk^EAB_alphat*((1+EAB_tauwf)*EAB_w)^(1-EAB_alphat);
+
+	name='EAB_mi'
+	EAB_mi =  EAB_ci/EAB_vi;
 
 	name='EAB_mj'
 	EAB_mj =  EAB_nj*(1-EAB_taun-EAB_tauwh)*EAB_wj+EAB_trj-EAB_tj+EAB_mj(-1)*EAB_pic^(-1)-EAB_cj*(1+EAB_tauc+EAB_gammavj);
@@ -2723,8 +2733,11 @@ model;
 	name='EAB_reer'
 	EAB_reer =  EABEAA_rer^EABEAA_weight*EABRW_rer^EABRW_weight*EABUS_rer^EABUS_weight;
 
+	name='EAB_rer'
+	EAB_rer =  EAB_rerdep*EAB_rer(-1);
+
 	name='EAB_rerdep'
-	EAB_rerdep =  EAB_rer/EAB_rer(-1);
+	EAB_rerdep =  EAB_lambdai*US_pic(1)/US_r/(1-EAB_gammab)/EAB_beta/EAB_lambdai(1);
 
 	name='EAB_rk'
 	EAB_rk =  EAB_gammauder*EAB_pi;
@@ -2817,7 +2830,7 @@ model;
 	EAB_utilj =  EAB_zcon*log(EAB_cj-EAB_kappa*EAB_cj(-1))-1/(1+EAB_zeta)*EAB_nj^(1+EAB_zeta)+EAB_beta*EAB_utilj(1);
 
 	name='EAB_vi'
-	EAB_vi =  EAB_ci/EAB_mi;
+	EAB_vi =  ((1-EAB_beta*EAB_lambdai(1)/(EAB_lambdai*EAB_pic(1)))/EAB_gammavider)^0.5;
 
 	name='EAB_vj'
 	EAB_vj =  EAB_cj/EAB_mj;
@@ -3105,10 +3118,10 @@ model;
 	RW_by =  RW_b/(RW_pybar*RW_ybar);
 
 	name='RW_c'
-	RW_c =  RW_ci*(1-RW_omega)+RW_cj*RW_omega;
+	RW_c =  RW_qc-RW_gammav;
 
 	name='RW_ci'
-	RW_ci =  RW_kappa*RW_ci(-1)+(RW_lambdai*(1+RW_tauc+RW_gammavi+RW_vi*RW_gammavider)/RW_zcon)^(1/RW_sigma);
+	RW_ci =  (RW_c-RW_cj*RW_omega)/(1-RW_omega);
 
 	name='RW_cj'
 	RW_cj =  RW_kappa*RW_cj(-1)+(RW_lambdaj*(1+RW_tauc+RW_gammavj+RW_vj*RW_gammavjder))^(1/RW_sigma)/RW_zcon;
@@ -3249,7 +3262,7 @@ model;
 	RW_ki =  (1-RW_delta)*RW_ki(-1)+(1-RW_gammai(-1))*RW_ii(-1)*RW_zinv;
 
 	name='RW_lambdai'
-	RW_lambdai =  RW_beta*RW_lambdai(1)/(1-RW_gammavider*RW_vi^2)/RW_pic(1);
+	RW_lambdai =  RW_zcon*(RW_ci-RW_kappa*RW_ci(-1))^(-RW_sigma)/(1+RW_tauc+RW_gammavi+RW_vi*RW_gammavider);
 
 	name='RW_lambdaj'
 	RW_lambdaj =  RW_beta*RW_lambdaj(1)/(1-RW_gammavjder*RW_vj^2)/RW_pic(1);
@@ -3265,6 +3278,9 @@ model;
 
 	name='RW_mct'
 	RW_mct =  1/(RW_zt*RW_alphat^RW_alphat*(1-RW_alphat)^(1-RW_alphat))*RW_rk^RW_alphat*((1+RW_tauwf)*RW_w)^(1-RW_alphat);
+
+	name='RW_mi'
+	RW_mi =  RW_ci/RW_vi;
 
 	name='RW_mj'
 	RW_mj =  RW_nj*(1-RW_taun-RW_tauwh)*RW_wj+RW_trj-RW_tj+RW_mj(-1)*RW_pic^(-1)-RW_cj*(1+RW_tauc+RW_gammavj);
@@ -3380,8 +3396,11 @@ model;
 	name='RW_reer'
 	RW_reer =  RWEAA_rer^RWEAA_weight*RWEAB_rer^RWEAB_weight*RWUS_rer^RWUS_weight;
 
+	name='RW_rer'
+	RW_rer =  RW_rerdep*RW_rer(-1);
+
 	name='RW_rerdep'
-	RW_rerdep =  RW_rer/RW_rer(-1);
+	RW_rerdep =  RW_lambdai*US_pic(1)/US_r/(1-RW_gammab)/RW_beta/RW_lambdai(1);
 
 	name='RW_rk'
 	RW_rk =  RW_gammauder*RW_pi;
@@ -3474,7 +3493,7 @@ model;
 	RW_utilj =  RW_zcon*log(RW_cj-RW_kappa*RW_cj(-1))-1/(1+RW_zeta)*RW_nj^(1+RW_zeta)+RW_beta*RW_utilj(1);
 
 	name='RW_vi'
-	RW_vi =  RW_ci/RW_mi;
+	RW_vi =  ((1-RW_beta*RW_lambdai(1)/(RW_lambdai*RW_pic(1)))/RW_gammavider)^0.5;
 
 	name='RW_vj'
 	RW_vj =  RW_cj/RW_mj;
@@ -3744,10 +3763,10 @@ model;
 	US_by =  US_b/(US_pybar*US_ybar);
 
 	name='US_c'
-	US_c =  US_ci*(1-US_omega)+US_cj*US_omega;
+	US_c =  US_qc-US_gammav;
 
 	name='US_ci'
-	US_ci =  US_kappa*US_ci(-1)+(US_lambdai*(1+US_tauc+US_gammavi+US_vi*US_gammavider)/US_zcon)^(1/US_sigma);
+	US_ci =  (US_c-US_cj*US_omega)/(1-US_omega);
 
 	name='US_cj'
 	US_cj =  US_kappa*US_cj(-1)+(US_lambdaj*(1+US_tauc+US_gammavj+US_vj*US_gammavjder))^(1/US_sigma)/US_zcon;
@@ -3885,7 +3904,7 @@ model;
 	US_ki =  (1-US_delta)*US_ki(-1)+(1-US_gammai(-1))*US_ii(-1)*US_zinv;
 
 	name='US_lambdai'
-	US_lambdai =  US_beta*US_lambdai(1)/(1-US_gammavider*US_vi^2)/US_pic(1);
+	US_lambdai =  US_zcon*(US_ci-US_kappa*US_ci(-1))^(-US_sigma)/(1+US_tauc+US_gammavi+US_vi*US_gammavider);
 
 	name='US_lambdaj'
 	US_lambdaj =  US_beta*US_lambdaj(1)/(1-US_gammavjder*US_vj^2)/US_pic(1);
@@ -3901,6 +3920,9 @@ model;
 
 	name='US_mct'
 	US_mct =  1/(US_zt*US_alphat^US_alphat*(1-US_alphat)^(1-US_alphat))*US_rk^US_alphat*((1+US_tauwf)*US_w)^(1-US_alphat);
+
+	name='US_mi'
+	US_mi =  US_ci/US_vi;
 
 	name='US_mj'
 	US_mj =  US_nj*(1-US_taun-US_tauwh)*US_wj+US_trj-US_tj+US_mj(-1)*US_pic^(-1)-US_cj*(1+US_tauc+US_gammavj);
@@ -4016,6 +4038,9 @@ model;
 	name='US_reer'
 	US_reer =  USEAA_rer^USEAA_weight*USEAB_rer^USEAB_weight*USRW_rer^USRW_weight;
 
+	name='US_rer'
+	US_rer =  1;
+
 	name='US_rk'
 	US_rk =  US_gammauder*US_pi;
 
@@ -4101,7 +4126,7 @@ model;
 	US_utilj =  US_zcon*log(US_cj-US_kappa*US_cj(-1))-1/(1+US_zeta)*US_nj^(1+US_zeta)+US_beta*US_utilj(1);
 
 	name='US_vi'
-	US_vi =  US_ci/US_mi;
+	US_vi =  ((1-US_beta*US_lambdai(1)/(US_lambdai*US_pic(1)))/US_gammavider)^0.5;
 
 	name='US_vj'
 	US_vj =  US_cj/US_mj;

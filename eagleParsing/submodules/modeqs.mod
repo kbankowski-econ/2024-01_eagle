@@ -34,8 +34,8 @@ model(block, bytecode, cutoff=0);
 ;
 
 // Marginal utility of consumption
-[name='@{co}_ci']
-@{co}_ci =((@{co}_lambdai*(1+@{co}_tauc+@{co}_gammavi+@{co}_vi*@{co}_gammavider))/@{co}_zcon)^(1/@{co}_sigma) + @{co}_kappa*@{co}_ci(-1);
+[name='@{co}_lambdai']
+@{co}_lambdai = (@{co}_zcon*(@{co}_ci-@{co}_kappa*@{co}_ci(-1))^(-@{co}_sigma))/(1+@{co}_tauc+@{co}_gammavi+@{co}_vi*@{co}_gammavider);
 
 // Euler equation for government bonds
 [name='@{co}_r']
@@ -56,12 +56,12 @@ model(block, bytecode, cutoff=0);
 @#endif
 
 // Euler equation for money
-[name='@{co}_lambdai']
-@{co}_lambdai = @{co}_beta*@{co}_lambdai(+1)/(1 - @{co}_vi^(2)*@{co}_gammavider)/@{co}_pic(+1);
+[name='@{co}_vi']
+@{co}_vi = ((1-@{co}_beta*@{co}_lambdai(+1)/(@{co}_lambdai*@{co}_pic(+1)))/@{co}_gammavider)^(1/2);
 
 // Consumption-based velocity
-[name='@{co}_vi']
-@{co}_vi = @{co}_ci/@{co}_mi;
+[name='@{co}_mi']
+@{co}_mi = @{co}_ci/@{co}_vi;
 
 // Transaction cost
 [name='@{co}_gammavi']
@@ -881,8 +881,8 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 
 // Aggregate consumption
-[name='@{co}_c']
-@{co}_c = (1-@{co}_omega)*@{co}_ci+@{co}_omega*@{co}_cj;
+[name='@{co}_ci']
+@{co}_ci = (@{co}_c-@{co}_omega*@{co}_cj )/(1-@{co}_omega);
 
 // Aggregate money holdings
 [name='@{co}_m']
@@ -981,8 +981,8 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 // Final-good markets
 
 // Aggregate consumption and transaction cost
-[name='@{co}_qc']
-@{co}_qc = @{co}_c+@{co}_gammav;
+[name='@{co}_c']
+@{co}_c = @{co}_qc - @{co}_gammav ;
 
 // Aggregate investment and capital utilisation cost
 [name='@{co}_i']
@@ -1193,8 +1193,9 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 //-------------
 
 // Euler equation for internationally traded bonds
+[name='@{co}_rerdep'] 
 @#if !steady
-1 = @{co4}_r*(1-@{co}_gammab)*@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*@{co}_rerdep(+1)/@{co4}_pic(+1);
+@{co}_rerdep(+1) = @{co}_lambdai*@{co4}_pic(+1)/@{co4}_r/(1-@{co}_gammab)/@{co}_beta/@{co}_lambdai(+1) ;
 @#else
 @{co}_gammab = 0;
 @#endif
@@ -1220,8 +1221,8 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @#endif
 
 // Definition of the rate of real exchange-rate depreciation
-[name='@{co}_rerdep']
-@{co}_rerdep = @{co}_rer/@{co}_rer(-1);
+[name='@{co}_rer']
+@{co}_rer = @{co}_rerdep*@{co}_rer(-1);
 
 // Definition of the terms of trade
 [name='@{co}_tot']
@@ -1273,8 +1274,9 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @{co}@{co2}_nerdep = @{co}_rerdep/@{co2}_rerdep*@{co}_pic/@{co2}_pic;
 
 // Euler equation for euroarea traded bonds
+[name='@{co}_lambdai'] 
 @#if !steady
-1 = @{co2}_r*(1-@{co}_gammabh)*@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*@{co}@{co2}_rer(+1)/@{co}@{co2}_rer   /@{co2}_pic(+1);
+@{co}_lambdai = @{co2}_r*(1-@{co}_gammabh)*@{co}_beta*@{co}_lambdai(+1)*@{co}@{co2}_rer(+1)/@{co}@{co2}_rer   /@{co2}_pic(+1);
 @#else
 @{co}_gammabh = 0;
 @#endif
