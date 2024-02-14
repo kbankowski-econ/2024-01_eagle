@@ -197,6 +197,7 @@ var
 	EAA_utilj
 	EAA_vi
 	EAA_vj
+	EAA_w
 	EAA_wcst
 	EAA_whty
 	EAA_wi
@@ -413,6 +414,7 @@ var
 	EAB_utilj
 	EAB_vi
 	EAB_vj
+	EAB_w
 	EAB_wcst
 	EAB_whty
 	EAB_wi
@@ -635,6 +637,7 @@ var
 	RW_utilj
 	RW_vi
 	RW_vj
+	RW_w
 	RW_wcst
 	RW_whty
 	RW_wi
@@ -846,6 +849,7 @@ var
 	US_utilj
 	US_vi
 	US_vj
+	US_w
 	US_wcst
 	US_whty
 	US_wi
@@ -1496,7 +1500,6 @@ varexo
 	EAA_taunbar
 	EAA_tauwfbar
 	EAA_tauwhbar
-	EAA_w
 	EAA_wcstbar
 	EAA_zconbar
 	EAA_zinvbar
@@ -1526,7 +1529,6 @@ varexo
 	EAB_taunbar
 	EAB_tauwfbar
 	EAB_tauwhbar
-	EAB_w
 	EAB_wcstbar
 	EAB_zconbar
 	EAB_zinvbar
@@ -1559,7 +1561,6 @@ varexo
 	RW_taunbar
 	RW_tauwfbar
 	RW_tauwhbar
-	RW_w
 	RW_wcstbar
 	RW_zconbar
 	RW_zinvbar
@@ -1589,7 +1590,6 @@ varexo
 	US_taunbar
 	US_tauwfbar
 	US_tauwhbar
-	US_w
 	US_wcstbar
 	US_zconbar
 	US_zinvbar
@@ -1978,10 +1978,10 @@ model;
 	EAA_mj =  EAA_nj*(1-EAA_taun-EAA_tauwh)*EAA_wj+EAA_trj-EAA_tj+EAA_mj(-1)*EAA_pic^(-1)-EAA_cj*(1+EAA_tauc+EAA_gammavj);
 
 	name='EAA_nd'
-	EAA_nd =  ((1-EAA_omega)^(1/EAA_eta)*EAA_ndi^(1-1/EAA_eta)+EAA_omega^(1/EAA_eta)*EAA_ndj^(1-1/EAA_eta))^(EAA_eta/(EAA_eta-1));
+	EAA_nd =  EAA_ndt+EAA_ndn;
 
 	name='EAA_ndi'
-	EAA_ndi =  (1-EAA_omega)*(EAA_wi/EAA_w)^(-EAA_eta)*EAA_nd;
+	EAA_ndi =  ((EAA_nd^((EAA_eta-1)/EAA_eta)-EAA_omega^(1/EAA_eta)*EAA_ndj^(1-1/EAA_eta))/(1-EAA_omega)^(1/EAA_eta))^(1/(1-1/EAA_eta));
 
 	name='EAA_ndj'
 	EAA_ndj =  EAA_nd*EAA_omega*(EAA_wj/EAA_w)^(-EAA_eta);
@@ -2189,6 +2189,9 @@ model;
 
 	name='EAA_vj'
 	EAA_vj =  EAA_cj/EAA_mj;
+
+	name='EAA_w'
+	EAA_w =  EAA_wi/(EAA_ndi/EAA_nd/(1-EAA_omega))^(1/(-EAA_eta));
 
 	name='EAA_wcst'
 	EAA_wcst =  (1-EAA_rhowcst)*EAA_wcstbar+EAA_rhowcst*EAA_wcst(-1)+EAA_epswcst;
@@ -2626,10 +2629,10 @@ model;
 	EAB_mj =  EAB_nj*(1-EAB_taun-EAB_tauwh)*EAB_wj+EAB_trj-EAB_tj+EAB_mj(-1)*EAB_pic^(-1)-EAB_cj*(1+EAB_tauc+EAB_gammavj);
 
 	name='EAB_nd'
-	EAB_nd =  ((1-EAB_omega)^(1/EAB_eta)*EAB_ndi^(1-1/EAB_eta)+EAB_omega^(1/EAB_eta)*EAB_ndj^(1-1/EAB_eta))^(EAB_eta/(EAB_eta-1));
+	EAB_nd =  EAB_ndt+EAB_ndn;
 
 	name='EAB_ndi'
-	EAB_ndi =  (1-EAB_omega)*(EAB_wi/EAB_w)^(-EAB_eta)*EAB_nd;
+	EAB_ndi =  ((EAB_nd^((EAB_eta-1)/EAB_eta)-EAB_omega^(1/EAB_eta)*EAB_ndj^(1-1/EAB_eta))/(1-EAB_omega)^(1/EAB_eta))^(1/(1-1/EAB_eta));
 
 	name='EAB_ndj'
 	EAB_ndj =  EAB_nd*EAB_omega*(EAB_wj/EAB_w)^(-EAB_eta);
@@ -2837,6 +2840,9 @@ model;
 
 	name='EAB_vj'
 	EAB_vj =  EAB_cj/EAB_mj;
+
+	name='EAB_w'
+	EAB_w =  EAB_wi/(EAB_ndi/EAB_nd/(1-EAB_omega))^(1/(-EAB_eta));
 
 	name='EAB_wcst'
 	EAB_wcst =  (1-EAB_rhowcst)*EAB_wcstbar+EAB_rhowcst*EAB_wcst(-1)+EAB_epswcst;
@@ -3289,10 +3295,10 @@ model;
 	RW_mj =  RW_nj*(1-RW_taun-RW_tauwh)*RW_wj+RW_trj-RW_tj+RW_mj(-1)*RW_pic^(-1)-RW_cj*(1+RW_tauc+RW_gammavj);
 
 	name='RW_nd'
-	RW_nd =  ((1-RW_omega)^(1/RW_eta)*RW_ndi^(1-1/RW_eta)+RW_omega^(1/RW_eta)*RW_ndj^(1-1/RW_eta))^(RW_eta/(RW_eta-1));
+	RW_nd =  RW_ndt+RW_ndn;
 
 	name='RW_ndi'
-	RW_ndi =  (1-RW_omega)*(RW_wi/RW_w)^(-RW_eta)*RW_nd;
+	RW_ndi =  ((RW_nd^((RW_eta-1)/RW_eta)-RW_omega^(1/RW_eta)*RW_ndj^(1-1/RW_eta))/(1-RW_omega)^(1/RW_eta))^(1/(1-1/RW_eta));
 
 	name='RW_ndj'
 	RW_ndj =  RW_nd*RW_omega*(RW_wj/RW_w)^(-RW_eta);
@@ -3500,6 +3506,9 @@ model;
 
 	name='RW_vj'
 	RW_vj =  RW_cj/RW_mj;
+
+	name='RW_w'
+	RW_w =  RW_wi/(RW_ndi/RW_nd/(1-RW_omega))^(1/(-RW_eta));
 
 	name='RW_wcst'
 	RW_wcst =  (1-RW_rhowcst)*RW_wcstbar+RW_rhowcst*RW_wcst(-1)+RW_epswcst;
@@ -3931,10 +3940,10 @@ model;
 	US_mj =  US_nj*(1-US_taun-US_tauwh)*US_wj+US_trj-US_tj+US_mj(-1)*US_pic^(-1)-US_cj*(1+US_tauc+US_gammavj);
 
 	name='US_nd'
-	US_nd =  ((1-US_omega)^(1/US_eta)*US_ndi^(1-1/US_eta)+US_omega^(1/US_eta)*US_ndj^(1-1/US_eta))^(US_eta/(US_eta-1));
+	US_nd =  US_ndt+US_ndn;
 
 	name='US_ndi'
-	US_ndi =  (1-US_omega)*(US_wi/US_w)^(-US_eta)*US_nd;
+	US_ndi =  ((US_nd^((US_eta-1)/US_eta)-US_omega^(1/US_eta)*US_ndj^(1-1/US_eta))/(1-US_omega)^(1/US_eta))^(1/(1-1/US_eta));
 
 	name='US_ndj'
 	US_ndj =  US_nd*US_omega*(US_wj/US_w)^(-US_eta);
@@ -4133,6 +4142,9 @@ model;
 
 	name='US_vj'
 	US_vj =  US_cj/US_mj;
+
+	name='US_w'
+	US_w =  US_wi/(US_ndi/US_nd/(1-US_omega))^(1/(-US_eta));
 
 	name='US_wcst'
 	US_wcst =  (1-US_rhowcst)*US_wcstbar+US_rhowcst*US_wcst(-1)+US_epswcst;

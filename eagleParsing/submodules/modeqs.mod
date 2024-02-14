@@ -278,12 +278,12 @@ model(block, bytecode, cutoff=0);
 @{co}_kd = @{co}_kdn + @{co}_kdt;
 
 // Demand for labour services by household I
-[name='@{co}_ndi']
-@{co}_ndi = 
+[name='@{co}_w']
+@{co}_w = 
 @#if omega_equals_zero[i]
-(@{co}_wi/@{co}_w)^(-@{co}_eta)*@{co}_nd
+@{co}_wi/(@{co}_ndi/@{co}_nd)^(1/(-@{co}_eta))
 @#else
-(1-@{co}_omega)*(@{co}_wi/@{co}_w)^(-@{co}_eta)*@{co}_nd
+(@{co}_wi/(@{co}_ndi/@{co}_nd/(1-@{co}_omega))^(1/(-@{co}_eta)))
 @#endif
 ;
 
@@ -298,12 +298,12 @@ model(block, bytecode, cutoff=0);
 ;
 
 // Aggregate labour demand
-[name='@{co}_nd']
-@{co}_nd = 
+[name='@{co}_ndi']
+@{co}_ndi =  
 @#if omega_equals_zero[i]
-(@{co}_ndi^(1-1/@{co}_eta))^(@{co}_eta/(@{co}_eta-1))
+((@{co}_nd)^((@{co}_eta-1)/@{co}_eta))^(1/(1-1/@{co}_eta))
 @#else
-((1-@{co}_omega)^(1/@{co}_eta)*@{co}_ndi^(1-1/@{co}_eta)+@{co}_omega^(1/@{co}_eta)*@{co}_ndj^(1-1/@{co}_eta))^(@{co}_eta/(@{co}_eta-1))
+(((@{co}_nd)^((@{co}_eta-1)/@{co}_eta)-@{co}_omega^(1/@{co}_eta)*@{co}_ndj^(1-1/@{co}_eta))/(1-@{co}_omega)^(1/@{co}_eta))^(1/(1-1/@{co}_eta)) 
 @#endif
 ;
 
