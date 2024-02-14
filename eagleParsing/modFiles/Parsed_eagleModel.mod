@@ -284,6 +284,7 @@ var
 	EABUS_weightim
 	EAB_b
 	EAB_bf
+	EAB_bh
 	EAB_by
 	EAB_c
 	EAB_ci
@@ -1503,7 +1504,6 @@ varexo
 	EAA_ztbar
 	EABRW_imc
 	EABRW_imi
-	EAB_bh
 	EAB_cpim
 	EAB_epsg
 	EAB_epsrp
@@ -1801,7 +1801,7 @@ model;
 	EAA_bf =  US_r(-1)*((-EAA_bh)/EAB_r(-1)*EAAEAB_rer(-1)/EAA_rer(-1)+EAA_bh(-1)*EAAEAB_rer(-2)/EAA_rer(-2)+EAA_bf(-1)+EAA_tb(-1)/EAA_rer(-1));
 
 	name='EAA_bh'
-	EAA_bh =  EAB_bh*(-EAB_size)/EAA_size;
+	EAA_bh =  EAB_pic*EAA_py*EAA_y*(log(1+EAA_gammabh/EAB_gammab1)+EAA_bhytarget)/EAAEAB_rer;
 
 	name='EAA_by'
 	EAA_by =  EAA_b/(EAA_pybar*EAA_ybar);
@@ -1855,7 +1855,7 @@ model;
 	EAA_gammab =  EAA_gammab1*(exp(EAA_rer*EAA_bf/US_pic/(EAA_py*EAA_y)-EAA_bfytarget)-1);
 
 	name='EAA_gammabh'
-	EAA_gammabh =  EAB_gammab1*(exp(EAAEAB_rer*EAA_bh/EAB_pic/(EAA_py*EAA_y)-EAA_bhytarget)-1);
+	EAA_gammabh =  1-EAA_lambdai*EAAEAB_rer*EAB_pic(1)/EAB_r/EAAEAB_rer(1)/EAA_lambdai(1)/EAA_beta;
 
 	name='EAA_gammai'
 	EAA_gammai =  EAA_gammai1/2*(EAA_ii/EAA_ii(-1)-1)^2;
@@ -2450,6 +2450,9 @@ model;
 
 	name='EAB_bf'
 	EAB_bf =  US_r(-1)*((-EAB_bh)/EAA_r(-1)/EAB_rer(-1)+EAB_bh(-1)/EAB_rer(-2)+EAB_bf(-1)+EAB_tb(-1)/EAB_rer(-1));
+
+	name='EAB_bh'
+	EAB_bh =  EAA_size*(-EAA_bh)/EAB_size;
 
 	name='EAB_by'
 	EAB_by =  EAB_b/(EAB_pybar*EAB_ybar);

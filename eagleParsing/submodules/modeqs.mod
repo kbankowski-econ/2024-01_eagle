@@ -1274,24 +1274,23 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @{co}@{co2}_nerdep = @{co}_rerdep/@{co2}_rerdep*@{co}_pic/@{co2}_pic;
 
 // Euler equation for euroarea traded bonds
-[name='@{co}_lambdai'] 
+[name='@{co}_gammabh'] 
 @#if !steady
-@{co}_lambdai = @{co2}_r*(1-@{co}_gammabh)*@{co}_beta*@{co}_lambdai(+1)*@{co}@{co2}_rer(+1)/@{co}@{co2}_rer   /@{co2}_pic(+1);
+@{co}_gammabh = 1 - @{co2}_pic(+1)*@{co}@{co2}_rer/@{co2}_r/@{co}@{co2}_rer(+1)*@{co}_lambdai/@{co}_lambdai(+1)/@{co}_beta ;
 @#else
 @{co}_gammabh = 0;
 @#endif
 
 // International transaction cost ('risk premium')
+[name='@{co}_bh'] 
 @#if !steady
-[name='@{co}_gammabh'] 
-@{co}_gammabh = @{co2}_gammab1*(exp(@{co}@{co2}_rer*@{co}_bh/@{co2}_pic/(@{co}_py*@{co}_y)-@{co}_bhytarget)-1);
+@{co}_bh = (log(@{co}_gammabh/@{co2}_gammab1+1)+@{co}_bhytarget)*(@{co}_py*@{co}_y)*@{co2}_pic/@{co}@{co2}_rer;
 @#else
-[name='@{co}_bh']
 @{co}_bh = (@{co}_bhytarget*@{co}_py*@{co}_y)/@{co}@{co2}_rer*@{co2}_pic;
 @#endif
 
-[name='@{co}_bh']
-@{co}_bh = (-@{co2}_size*@{co2}_bh)/@{co}_size;
+[name='@{co2}_bh']
+@{co2}_bh = (-@{co}_bh*@{co}_size)/ @{co2}_size;
 
 
 //-------------
