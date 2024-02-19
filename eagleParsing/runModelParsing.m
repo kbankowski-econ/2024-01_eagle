@@ -43,27 +43,14 @@ catch
 end
 endo =  M_.endo_names(~contains(M_.endo_names, 'AUX_'));
 endoProblematic = {...
-    'EAAEAB_imi'
-    'RWUS_imi'
-    'EABRW_imi'
-    'USEAA_imi'
     'EAAEAB_imc'
     'RWUS_imc'
     'EABRW_imc'
     'USEAA_imc'
-    'EAA_mi'
-    'EAB_mi'
-    'RW_mi'
-    'US_mi'
-    'EAA_rer'
-    'EAB_rer'
-    'RW_rer'
-    'US_rer'
-    'EAA_w' 
-    'EAB_w'
-    'RW_w'
-    'US_w'
-    'EAB_bh'
+    'EAAEAB_imi' 
+    'EABRW_imi' 
+    'RWUS_imi'
+    'USEAA_imi'
     };
 
 endoAdjusted = setdiff(endo, endoProblematic);

@@ -513,6 +513,7 @@ model(block, bytecode, cutoff=0);
 )*(@{co}@{co3}_pim/@{co}_pimc)^(-@{co}_mumc)*@{co}_imc;
 @#endif
 
+
 // Price of the consumption good (import)
 [name='@{co}_pimc']
 @{co}_pimc = (
@@ -545,7 +546,6 @@ model(block, bytecode, cutoff=0);
 [name='@{co}_piex4'] 
 @{co}_piex4 = @{co}_pex/@{co}_pex(-4)*@{co}_pic4;
 
-// Private investment good (import)
 [name='@{co}_imi'] 
 @{co}_imi = (
 @#for it in countries - [ co, co3 ]
@@ -564,6 +564,7 @@ model(block, bytecode, cutoff=0);
 @#else
 )^(1/@{co}_mumi)*@{co}@{co3}_imi^(1-1/@{co}_mumi))^(@{co}_mumi/(@{co}_mumi-1));
 @#endif
+
 
 // Demand for bilateral investment import goods
 [name='@{co}@{co4}_imi'] 
