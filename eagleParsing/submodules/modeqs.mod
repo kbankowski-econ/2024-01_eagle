@@ -565,7 +565,6 @@ model(block, bytecode, cutoff=0);
 )^(1/@{co}_mumi)*@{co}@{co3}_imi^(1-1/@{co}_mumi))^(@{co}_mumi/(@{co}_mumi-1));
 @#endif
 
-
 // Demand for bilateral investment import goods
 [name='@{co}@{co4}_imi'] 
 @#if !steady
@@ -686,7 +685,7 @@ model(block, bytecode, cutoff=0);
 @{co}_ptti= ((@{co}_nuti)*@{co}_pht^(1-@{co}_muti)+(1-@{co}_nuti)*@{co}_pimi^(1-@{co}_muti))^(1/(@{co}_muti-1)) ;
 
 // Price of the investment good
-@{co}_pi^(1-@{co}_mui) = (@{co}_nui)*@{co}_ptti^(1-@{co}_mui)+(1-@{co}_nui)*(@{co}_pnt)^(1-@{co}_mui);
+@{co}_pi = ((@{co}_nui)*@{co}_ptti^(1-@{co}_mui)+(1-@{co}_nui)*(@{co}_pnt)^(1-@{co}_mui))^(1/(1-@{co}_mui));
 
 // Auxiliary equation for the price of the investment good in steady state
 @#if steady
@@ -837,8 +836,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 @#else // co == countries[2]
 
 @#if co == countries[1]
-//Here I added 4 otherwise it would not work
-@{co2}_pic4 = @{co}_rerdep/@{co2}_rerdep*@{co}_pic;
+@{co2}_pic = @{co}_rerdep/@{co2}_rerdep*@{co}_pic;
 
 @#else // co == countries[1]
 
