@@ -2340,16 +2340,247 @@ model;
 	EAB_sh =  (1-EAB_xih)*(EAB_phttilde/EAB_pht)^(-EAB_thetat)+EAB_xih*(EAB_piht/(EAB_pi4target^(0.25*(1-EAB_chih))*EAB_piht(-1)^EAB_chih))^EAB_thetat*EAB_sh(-1);
 	EAA_sh =  (1-EAA_xih)*(EAA_phttilde/EAA_pht)^(-EAA_thetat)+EAA_xih*(EAA_piht/(EAA_pi4target^(0.25*(1-EAA_chih))*EAA_piht(-1)^EAA_chih))^EAA_thetat*EAA_sh(-1);
 
+    //(eq.113)
+	EAAEAB_sx =  (1-EAA_xix)*(EABEAA_pimtilde/EABEAA_pim)^(-EAA_thetat)+EAA_xix*(EABEAA_piim/(EAA_pi4target^(0.25*(1-EAA_chih))*EABEAA_piim(-1)^EAA_chix))^EAA_thetat*EAAEAB_sx(-1);
+	EAARW_sx =  (1-EAA_xix)*(RWEAA_pimtilde/RWEAA_pim)^(-EAA_thetat)+EAA_xix*(RWEAA_piim/(EAA_pi4target^(0.25*(1-EAA_chih))*RWEAA_piim(-1)^EAA_chix))^EAA_thetat*EAARW_sx(-1);
+	EAAUS_sx =  (1-EAA_xix)*(USEAA_pimtilde/USEAA_pim)^(-EAA_thetat)+EAA_xix*(USEAA_piim/(EAA_pi4target^(0.25*(1-EAA_chih))*USEAA_piim(-1)^EAA_chix))^EAA_thetat*EAAUS_sx(-1);
+	EABEAA_sx =  (1-EAB_xix)*(EAAEAB_pimtilde/EAAEAB_pim)^(-EAB_thetat)+EAB_xix*(EAAEAB_piim/(EAB_pi4target^(0.25*(1-EAB_chih))*EAAEAB_piim(-1)^EAB_chix))^EAB_thetat*EABEAA_sx(-1);
+	EABRW_sx =  (1-EAB_xix)*(RWEAB_pimtilde/RWEAB_pim)^(-EAB_thetat)+EAB_xix*(RWEAB_piim/(EAB_pi4target^(0.25*(1-EAB_chih))*RWEAB_piim(-1)^EAB_chix))^EAB_thetat*EABRW_sx(-1);
+	EABUS_sx =  (1-EAB_xix)*(USEAB_pimtilde/USEAB_pim)^(-EAB_thetat)+EAB_xix*(USEAB_piim/(EAB_pi4target^(0.25*(1-EAB_chih))*USEAB_piim(-1)^EAB_chix))^EAB_thetat*EABUS_sx(-1);
+	RWEAA_sx =  (1-RW_xix)*(EAARW_pimtilde/EAARW_pim)^(-RW_thetat)+RW_xix*(EAARW_piim/(RW_pi4target^(0.25*(1-RW_chih))*EAARW_piim(-1)^RW_chix))^RW_thetat*RWEAA_sx(-1);
+	RWEAB_sx =  (1-RW_xix)*(EABRW_pimtilde/EABRW_pim)^(-RW_thetat)+RW_xix*(EABRW_piim/(RW_pi4target^(0.25*(1-RW_chih))*EABRW_piim(-1)^RW_chix))^RW_thetat*RWEAB_sx(-1);
+	RWUS_sx =  (1-RW_xix)*(USRW_pimtilde/USRW_pim)^(-RW_thetat)+RW_xix*(USRW_piim/(RW_pi4target^(0.25*(1-RW_chih))*USRW_piim(-1)^RW_chix))^RW_thetat*RWUS_sx(-1);
+	USEAA_sx =  (1-US_xix)*(EAAUS_pimtilde/EAAUS_pim)^(-US_thetat)+US_xix*(EAAUS_piim/(US_pi4target^(0.25*(1-US_chih))*EAAUS_piim(-1)^US_chix))^US_thetat*USEAA_sx(-1);
+	USEAB_sx =  (1-US_xix)*(EABUS_pimtilde/EABUS_pim)^(-US_thetat)+US_xix*(EABUS_piim/(US_pi4target^(0.25*(1-US_chih))*EABUS_piim(-1)^US_chix))^US_thetat*USEAB_sx(-1);
+	USRW_sx =  (1-US_xix)*(RWUS_pimtilde/RWUS_pim)^(-US_thetat)+US_xix*(RWUS_piim/(US_pi4target^(0.25*(1-US_chih))*RWUS_piim(-1)^US_chix))^US_thetat*USRW_sx(-1);
 
+    //labour
+    //(eq.114)
+	EAA_ni =  EAA_ndi*EAA_si;
+	EAB_ni =  EAB_ndi*EAB_si;
+	RW_ni =  RW_ndi*RW_si;
+	US_ni =  US_ndi*US_si;
+
+    //(eq.115)
+	EAA_nj =  EAA_ndj*EAA_sj;
+	EAB_nj =  EAB_ndj*EAB_sj;
+    RW_nj =  RW_ndj*RW_sj;
+	US_nj =  US_ndj*US_sj;
+
+    //(eq.116)
+	EAA_si =  (1-EAA_xii)*(EAA_witilde/EAA_wi)^(-EAA_etai)+EAA_xii*(EAA_wi(-1)/EAA_wi)^(-EAA_etai)*(EAA_pic/(EAA_pi4target^(0.25*(1-EAA_chii))*EAA_pic(-1)^EAA_chii))^EAA_etai*EAA_si(-1);
+    EAB_si =  (1-EAB_xii)*(EAB_witilde/EAB_wi)^(-EAB_etai)+EAB_xii*(EAB_wi(-1)/EAB_wi)^(-EAB_etai)*(EAB_pic/(EAB_pi4target^(0.25*(1-EAB_chii))*EAB_pic(-1)^EAB_chii))^EAB_etai*EAB_si(-1);
+	RW_si =  (1-RW_xii)*(RW_witilde/RW_wi)^(-RW_etai)+RW_xii*(RW_wi(-1)/RW_wi)^(-RW_etai)*(RW_pic/(RW_pi4target^(0.25*(1-RW_chii))*RW_pic(-1)^RW_chii))^RW_etai*RW_si(-1);
+	US_si =  (1-US_xii)*(US_witilde/US_wi)^(-US_etai)+US_xii*(US_wi(-1)/US_wi)^(-US_etai)*(US_pic/(US_pi4target^(0.25*(1-US_chii))*US_pic(-1)^US_chii))^US_etai*US_si(-1);
+
+	//(eq.117)
+	EAA_sj =  (1-EAA_xij)*(EAA_wjtilde/EAA_wj)^(-EAA_etaj)+EAA_xij*(EAA_wj(-1)/EAA_wj)^(-EAA_etaj)*(EAA_pic/(EAA_pi4target^(0.25*(1-EAA_chij))*EAA_pic(-1)^EAA_chij))^EAA_etaj*EAA_sj(-1);
+	EAB_sj =  (1-EAB_xij)*(EAB_wjtilde/EAB_wj)^(-EAB_etaj)+EAB_xij*(EAB_wj(-1)/EAB_wj)^(-EAB_etaj)*(EAB_pic/(EAB_pi4target^(0.25*(1-EAB_chij))*EAB_pic(-1)^EAB_chij))^EAB_etaj*EAB_sj(-1);
+	RW_sj =  (1-RW_xij)*(RW_wjtilde/RW_wj)^(-RW_etaj)+RW_xij*(RW_wj(-1)/RW_wj)^(-RW_etaj)*(RW_pic/(RW_pi4target^(0.25*(1-RW_chij))*RW_pic(-1)^RW_chij))^RW_etaj*RW_sj(-1);
+	US_sj =  (1-US_xij)*(US_wjtilde/US_wj)^(-US_etaj)+US_xij*(US_wj(-1)/US_wj)^(-US_etaj)*(US_pic/(US_pi4target^(0.25*(1-US_chij))*US_pic(-1)^US_chij))^US_etaj*US_sj(-1);
+
+    //capital services
+	//(eq.118)
+	EAA_u =  EAA_kd/EAA_k;
+	EAB_u =  EAB_kd/EAB_k;
+	RW_u =  RW_kd/RW_k;
+	US_u =  US_kd/US_k;
+
+	//(eq.119) missing
+
+    //resource constraint, trade balance and net foreign asset position
+	//(eq.120)
+    EAA_py =  1/EAA_y*(USEAA_im*USEAA_pim*EAAUS_rer*US_size/EAA_size+RWEAA_im*RWEAA_pim*EAARW_rer*RW_size/EAA_size+EABEAA_im*EABEAA_pim*EAAEAB_rer*EAB_size/EAA_size+EAA_qc+EAA_pi*EAA_qi+EAA_pnt*EAA_g-EAAEAB_pim*(1-EAAEAB_gammaimc)*EAAEAB_imc/EAAEAB_gammaimcdag-EAAEAB_pim*(1-EAAEAB_gammaimi)*EAAEAB_imi/EAAEAB_gammaimidag-EAARW_pim*(1-EAARW_gammaimc)*EAARW_imc/EAARW_gammaimcdag-EAARW_pim*(1-EAARW_gammaimi)*EAARW_imi/EAARW_gammaimidag-EAAUS_pim*(1-EAAUS_gammaimc)*EAAUS_imc/EAAUS_gammaimcdag-EAAUS_pim*(1-EAAUS_gammaimi)*EAAUS_imi/EAAUS_gammaimidag);
+	EAB_py =  1/EAB_y*(USEAB_im*US_size*USEAB_pim*EABUS_rer/EAB_size+RWEAB_im*RW_size*RWEAB_pim*EABRW_rer/EAB_size+EAAEAB_im*EAA_size*EAAEAB_pim*EABEAA_rer/EAB_size+EAB_qc+EAB_pi*EAB_qi+EAB_pnt*EAB_g-EABEAA_pim*EABEAA_imc*(1-EABEAA_gammaimc)/EABEAA_gammaimcdag-EABEAA_pim*EABEAA_imi*(1-EABEAA_gammaimi)/EABEAA_gammaimidag-EABRW_pim*(1-EABRW_gammaimc)*EABRW_imc/EABRW_gammaimcdag-EABRW_pim*(1-EABRW_gammaimi)*EABRW_imi/EABRW_gammaimidag-EABUS_pim*(1-EABUS_gammaimc)*EABUS_imc/EABUS_gammaimcdag-EABUS_pim*(1-EABUS_gammaimi)*EABUS_imi/EABUS_gammaimidag);
+    RW_py =  1/RW_y*(USRW_im*US_size*USRW_pim*RWUS_rer/RW_size+EABRW_im*EAB_size*EABRW_pim*RWEAB_rer/RW_size+EAARW_im*EAA_size*EAARW_pim*RWEAA_rer/RW_size+RW_qc+RW_pi*RW_qi+RW_pnt*RW_g-RWEAA_pim*RWEAA_imc*(1-RWEAA_gammaimc)/RWEAA_gammaimcdag-RWEAA_pim*RWEAA_imi*(1-RWEAA_gammaimi)/RWEAA_gammaimidag-RWEAB_pim*RWEAB_imc*(1-RWEAB_gammaimc)/RWEAB_gammaimcdag-RWEAB_pim*RWEAB_imi*(1-RWEAB_gammaimi)/RWEAB_gammaimidag-RWUS_pim*(1-RWUS_gammaimc)*RWUS_imc/RWUS_gammaimcdag-RWUS_pim*(1-RWUS_gammaimi)*RWUS_imi/RWUS_gammaimidag);
+    US_py =  1/US_y*(RWUS_im*RW_size*RWUS_pim*USRW_rer/US_size+EABUS_im*EAB_size*EABUS_pim*USEAB_rer/US_size+EAAUS_im*EAA_size*EAAUS_pim*USEAA_rer/US_size+US_qc+US_pi*US_qi+US_pnt*US_g-USEAA_pim*USEAA_imc*(1-USEAA_gammaimc)/USEAA_gammaimcdag-USEAA_pim*USEAA_imi*(1-USEAA_gammaimi)/USEAA_gammaimidag-USEAB_pim*USEAB_imc*(1-USEAB_gammaimc)/USEAB_gammaimcdag-USEAB_pim*USEAB_imi*(1-USEAB_gammaimi)/USEAB_gammaimidag-USRW_pim*USRW_imc*(1-USRW_gammaimc)/USRW_gammaimcdag-USRW_pim*USRW_imi*(1-USRW_gammaimi)/USRW_gammaimidag);
+    
+    //(eq.121) different from the paper 
+	USRW_im =  USRW_imc+USRW_imi;
+	EAAEAB_im =  EAAEAB_imc+EAAEAB_imi;
+	EAARW_im =  EAARW_imc+EAARW_imi;
+	EAAUS_im =  EAAUS_imc+EAAUS_imi;
+	EABEAA_im =  EABEAA_imc+EABEAA_imi;
+	EABRW_im =  EABRW_imc+EABRW_imi;
+	EABUS_im =  EABUS_imc+EABUS_imi;
+	RWEAA_im =  RWEAA_imc+RWEAA_imi;
+	RWEAB_im =  RWEAB_imc+RWEAB_imi;
+	RWUS_im =  RWUS_imc+RWUS_imi;
+	USEAB_im =  USEAB_imc+USEAB_imi;
+	USEAA_im =  USEAA_imc+USEAA_imi;
+
+    //(eq.122) //different from the paper
+	EAA_ex =  US_size/EAA_size*USEAA_im+EAB_size/EAA_size*EABEAA_im+RW_size/EAA_size*RWEAA_im;
+	EAB_ex =  USEAB_im*US_size/EAB_size+EAAEAB_im*EAA_size/EAB_size+RWEAB_im*RW_size/EAB_size;
+	RW_ex =  USRW_im*US_size/RW_size+EAARW_im*EAA_size/RW_size+EABRW_im*EAB_size/RW_size;
+	US_ex =  RWUS_im*RW_size/US_size+EAAUS_im*EAA_size/US_size+EABUS_im*EAB_size/US_size;
+
+    //(eq.123)
+	EAA_y =  EAA_yst+EAA_ysn;
+	EAB_y =  EAB_yst+EAB_ysn;
+	RW_y =  RW_yst+RW_ysn;
+	US_y =  US_yst+US_ysn;
+
+    //(eq.124)
+	EAA_tb =  USEAA_im*USEAA_pim*EAAUS_rer*US_size/EAA_size+RWEAA_im*RWEAA_pim*EAARW_rer*RW_size/EAA_size+EABEAA_im*EABEAA_pim*EAAEAB_rer*EAB_size/EAA_size-EAAEAB_pim*EAAEAB_im-EAARW_pim*EAARW_im-EAAUS_pim*EAAUS_im;
+	EAB_tb =  USEAB_im*US_size*USEAB_pim*EABUS_rer/EAB_size+RWEAB_im*RW_size*RWEAB_pim*EABRW_rer/EAB_size+EAAEAB_im*EAA_size*EAAEAB_pim*EABEAA_rer/EAB_size-EABEAA_pim*EABEAA_im-EABRW_im*EABRW_pim-EABUS_im*EABUS_pim;
+	RW_tb =  USRW_im*US_size*USRW_pim*RWUS_rer/RW_size+EABRW_im*EAB_size*EABRW_pim*RWEAB_rer/RW_size+EAARW_im*EAA_size*EAARW_pim*RWEAA_rer/RW_size-RWEAA_pim*RWEAA_im-RWEAB_im*RWEAB_pim-RWUS_im*RWUS_pim;
+	US_tb =  RWUS_im*RW_size*RWUS_pim*USRW_rer/US_size+EABUS_im*EAB_size*EABUS_pim*USEAB_rer/US_size+EAAUS_im*EAA_size*EAAUS_pim*USEAA_rer/US_size-USEAA_pim*USEAA_im-USEAB_im*USEAB_pim-USRW_im*USRW_pim;
+    
+    //(eq.125)
+	EAA_bf =  US_r(-1)*((-EAA_bh)/EAB_r(-1)*EAAEAB_rer(-1)/EAA_rer(-1)+EAA_bh(-1)*EAAEAB_rer(-2)/EAA_rer(-2)+EAA_bf(-1)+EAA_tb(-1)/EAA_rer(-1));
+	EAB_bf =  US_r(-1)*((-EAB_bh)/EAA_r(-1)/EAB_rer(-1)+EAB_bh(-1)/EAB_rer(-2)+EAB_bf(-1)+EAB_tb(-1)/EAB_rer(-1));
+	RW_bf =  US_r(-1)*(RW_bf(-1)+RW_tb(-1)/RW_rer(-1));
+	US_bf =  EAA_bf*(-EAA_size)/US_size-EAB_size*EAB_bf/US_size-RW_size*RW_bf/US_size;
+
+    //relative prices
+    //bilateral terms of trade (eq.126)
+	EAAEAB_tot =  EAAEAB_pim/(EABEAA_pim*EAAEAB_rer);
+	EAARW_tot =  EAARW_pim/(RWEAA_pim*EAARW_rer);
+	EAAUS_tot =  EAAUS_pim/(USEAA_pim*EAAUS_rer);
+	EABEAA_tot =  EABEAA_pim/(EAAEAB_pim*EABEAA_rer);
+	EABRW_tot =  EABRW_pim/(RWEAB_pim*EABRW_rer);
+	EABUS_tot =  EABUS_pim/(USEAB_pim*EABUS_rer);
+	RWEAA_tot =  RWEAA_pim/(EAARW_pim*RWEAA_rer);
+	RWEAB_tot =  RWEAB_pim/(EABRW_pim*RWEAB_rer);
+	RWUS_tot =  RWUS_pim/(USRW_pim*RWUS_rer);
+	USEAA_tot =  USEAA_pim/(EAAUS_pim*USEAA_rer);
+	USEAB_tot =  USEAB_pim/(EABUS_pim*USEAB_rer);
+	USRW_tot =  USRW_pim/(RWUS_pim*USRW_rer);
+
+    //(eq.127)
+    EAAEAB_rer =  EAA_rer/EAB_rer;
+	EAARW_rer =  EAA_rer/RW_rer;
+    EAAUS_rer =  EAA_rer;
+    EABEAA_rer =  EAB_rer/EAA_rer;
+    EABRW_rer =  EAB_rer/RW_rer;
+    EABUS_rer =  EAB_rer;
+    RWEAA_rer =  RW_rer/EAA_rer;
+    RWEAB_rer =  RW_rer/EAB_rer;
+    RWUS_rer =  RW_rer;
+    USEAA_rer =  1/EAA_rer;
+    USEAB_rer =  1/EAB_rer;
+    USRW_rer =  1/RW_rer;	
+
+    //(eq.128)
+	EAA_reer =  EAAEAB_rer^EAAEAB_weight*EAARW_rer^EAARW_weight*EAAUS_rer^EAAUS_weight;
+	EAB_reer =  EABEAA_rer^EABEAA_weight*EABRW_rer^EABRW_weight*EABUS_rer^EABUS_weight;
+	RW_reer =  RWEAA_rer^RWEAA_weight*RWEAB_rer^RWEAB_weight*RWUS_rer^RWUS_weight;
+	US_reer =  USEAA_rer^USEAA_weight*USEAB_rer^USEAB_weight*USRW_rer^USRW_weight;
+
+    //(eq.129)
+	EAAUS_weight =  EAA_im*EAA_pim/(EAA_im*EAA_pim+EAA_pex*EAA_ex)*EAAUS_weightim+EAA_pex*EAA_ex/(EAA_im*EAA_pim+EAA_pex*EAA_ex)*EAAUS_weightex;
+	EAAEAB_weight =  EAAEAB_weightim*EAA_im*EAA_pim/(EAA_im*EAA_pim+EAA_pex*EAA_ex)+EAAEAB_weightex*EAA_pex*EAA_ex/(EAA_im*EAA_pim+EAA_pex*EAA_ex);
+	EAARW_weight =  EAA_im*EAA_pim/(EAA_im*EAA_pim+EAA_pex*EAA_ex)*EAARW_weightim+EAA_pex*EAA_ex/(EAA_im*EAA_pim+EAA_pex*EAA_ex)*EAARW_weightex;
+	EABEAA_weight =  EABEAA_weightim*EAB_im*EAB_pim/(EAB_im*EAB_pim+EAB_pex*EAB_ex)+EABEAA_weightex*EAB_pex*EAB_ex/(EAB_im*EAB_pim+EAB_pex*EAB_ex);
+	EABRW_weight =  EAB_im*EAB_pim/(EAB_im*EAB_pim+EAB_pex*EAB_ex)*EABRW_weightim+EAB_pex*EAB_ex/(EAB_im*EAB_pim+EAB_pex*EAB_ex)*EABRW_weightex;
+	EABUS_weight =  EAB_im*EAB_pim/(EAB_im*EAB_pim+EAB_pex*EAB_ex)*EABUS_weightim+EAB_pex*EAB_ex/(EAB_im*EAB_pim+EAB_pex*EAB_ex)*EABUS_weightex;
+	RWEAA_weight =  RWEAA_weightim*RW_im*RW_pim/(RW_im*RW_pim+RW_pex*RW_ex)+RWEAA_weightex*RW_pex*RW_ex/(RW_im*RW_pim+RW_pex*RW_ex);
+	USRW_weight =  US_im*US_pim/(US_im*US_pim+US_pex*US_ex)*USRW_weightim+US_pex*US_ex/(US_im*US_pim+US_pex*US_ex)*USRW_weightex;
+	USEAB_weight =  US_im*US_pim/(US_im*US_pim+US_pex*US_ex)*USEAB_weightim+US_pex*US_ex/(US_im*US_pim+US_pex*US_ex)*USEAB_weightex;
+	USEAA_weight =  USEAA_weightim*US_im*US_pim/(US_im*US_pim+US_pex*US_ex)+USEAA_weightex*US_pex*US_ex/(US_im*US_pim+US_pex*US_ex);
+	RWUS_weight =  RW_im*RW_pim/(RW_im*RW_pim+RW_pex*RW_ex)*RWUS_weightim+RW_pex*RW_ex/(RW_im*RW_pim+RW_pex*RW_ex)*RWUS_weightex;
+	RWEAB_weight =  RW_im*RW_pim/(RW_im*RW_pim+RW_pex*RW_ex)*RWEAB_weightim+RW_pex*RW_ex/(RW_im*RW_pim+RW_pex*RW_ex)*RWEAB_weightex;
  
-	//name='EAAEAB_excy'
+    //(eq.130)
+	EAAUS_weightex =  US_y*US_py*EAAUS_rer*US_size/EAA_size*USEAA_im/EAA_ex/(EAAUS_rer*US_py*US_y+EAAEAB_rer*EAB_pex*USEAB_im+EAARW_rer*RW_pex*USRW_im)+EABUS_im*US_pex*EAAUS_rer*EAB_size/EAA_size*EABEAA_im/EAA_ex/(EAB_y*EAAEAB_rer*EAB_py+EAARW_rer*RW_pex*EABRW_im+EAAUS_rer*US_pex*EABUS_im)+RWUS_im*US_pex*EAAUS_rer*RW_size/EAA_size*RWEAA_im/EAA_ex/(EAARW_rer*RW_py*RW_y+EAAEAB_rer*EAB_pex*RWEAB_im+EAAUS_rer*US_pex*RWUS_im);
+	EAAEAB_weightex =  EAAEAB_rer*EAB_size/EAA_size*EABEAA_im/EAA_ex*EAB_py*EAB_y/(EAB_y*EAAEAB_rer*EAB_py+EAARW_rer*RW_pex*EABRW_im+EAAUS_rer*US_pex*EABUS_im)+EAB_pex*EAAEAB_rer*RW_size/EAA_size*RWEAA_im/EAA_ex*RWEAB_im/(EAARW_rer*RW_py*RW_y+EAAEAB_rer*EAB_pex*RWEAB_im+EAAUS_rer*US_pex*RWUS_im)+EAB_pex*EAAEAB_rer*US_size/EAA_size*USEAA_im/EAA_ex*USEAB_im/(EAAUS_rer*US_py*US_y+EAAEAB_rer*EAB_pex*USEAB_im+EAARW_rer*RW_pex*USRW_im);
+	EAARW_weightex =  RW_y*RW_py*EAARW_rer*RW_size/EAA_size*RWEAA_im/EAA_ex/(EAARW_rer*RW_py*RW_y+EAAEAB_rer*EAB_pex*RWEAB_im+EAAUS_rer*US_pex*RWUS_im)+EABRW_im*RW_pex*EAARW_rer*EAB_size/EAA_size*EABEAA_im/EAA_ex/(EAB_y*EAAEAB_rer*EAB_py+EAARW_rer*RW_pex*EABRW_im+EAAUS_rer*US_pex*EABUS_im)+USRW_im*RW_pex*EAARW_rer*US_size/EAA_size*USEAA_im/EAA_ex/(EAAUS_rer*US_py*US_y+EAAEAB_rer*EAB_pex*USEAB_im+EAARW_rer*RW_pex*USRW_im);
+	EABEAA_weightex =  EAA_y*EAA_py*EABEAA_rer*EAAEAB_im*EAA_size/EAB_size/EAB_ex/(EAA_y*EAA_py*EABEAA_rer+EAARW_im*RW_pex*EABRW_rer+EAAUS_im*US_pex*EABUS_rer)+RWEAA_im*EAA_pex*EABEAA_rer*RWEAB_im*RW_size/EAB_size/EAB_ex/(RW_y*RW_py*EABRW_rer+RWEAA_im*EAA_pex*EABEAA_rer+RWUS_im*US_pex*EABUS_rer)+USEAA_im*EAA_pex*EABEAA_rer*USEAB_im*US_size/EAB_size/EAB_ex/(US_y*US_py*EABUS_rer+USEAA_im*EAA_pex*EABEAA_rer+USRW_im*RW_pex*EABRW_rer);
+	EABRW_weightex =  RW_y*RW_py*EABRW_rer*RWEAB_im*RW_size/EAB_size/EAB_ex/(RW_y*RW_py*EABRW_rer+RWEAA_im*EAA_pex*EABEAA_rer+RWUS_im*US_pex*EABUS_rer)+EAARW_im*RW_pex*EABRW_rer*EAAEAB_im*EAA_size/EAB_size/EAB_ex/(EAA_y*EAA_py*EABEAA_rer+EAARW_im*RW_pex*EABRW_rer+EAAUS_im*US_pex*EABUS_rer)+USRW_im*RW_pex*EABRW_rer*USEAB_im*US_size/EAB_size/EAB_ex/(US_y*US_py*EABUS_rer+USEAA_im*EAA_pex*EABEAA_rer+USRW_im*RW_pex*EABRW_rer);
+	EABUS_weightex =  US_y*US_py*EABUS_rer*USEAB_im*US_size/EAB_size/EAB_ex/(US_y*US_py*EABUS_rer+USEAA_im*EAA_pex*EABEAA_rer+USRW_im*RW_pex*EABRW_rer)+EAAUS_im*US_pex*EABUS_rer*EAAEAB_im*EAA_size/EAB_size/EAB_ex/(EAA_y*EAA_py*EABEAA_rer+EAARW_im*RW_pex*EABRW_rer+EAAUS_im*US_pex*EABUS_rer)+RWUS_im*US_pex*EABUS_rer*RWEAB_im*RW_size/EAB_size/EAB_ex/(RW_y*RW_py*EABRW_rer+RWEAA_im*EAA_pex*EABEAA_rer+RWUS_im*US_pex*EABUS_rer);
+	RWEAA_weightex =  EAA_y*EAA_py*RWEAA_rer*EAARW_im*EAA_size/RW_size/RW_ex/(EAA_y*EAA_py*RWEAA_rer+EAAEAB_im*EAB_pex*RWEAB_rer+EAAUS_im*US_pex*RWUS_rer)+EABEAA_im*EAA_pex*RWEAA_rer*EABRW_im*EAB_size/RW_size/RW_ex/(EAB_y*EAB_py*RWEAB_rer+EABEAA_im*EAA_pex*RWEAA_rer+EABUS_im*US_pex*RWUS_rer)+USEAA_im*EAA_pex*RWEAA_rer*USRW_im*US_size/RW_size/RW_ex/(US_y*US_py*RWUS_rer+USEAA_im*EAA_pex*RWEAA_rer+USEAB_im*EAB_pex*RWEAB_rer);
+	RWEAB_weightex =  EAB_y*EAB_py*RWEAB_rer*EABRW_im*EAB_size/RW_size/RW_ex/(EAB_y*EAB_py*RWEAB_rer+EABEAA_im*EAA_pex*RWEAA_rer+EABUS_im*US_pex*RWUS_rer)+EAAEAB_im*EAB_pex*RWEAB_rer*EAARW_im*EAA_size/RW_size/RW_ex/(EAA_y*EAA_py*RWEAA_rer+EAAEAB_im*EAB_pex*RWEAB_rer+EAAUS_im*US_pex*RWUS_rer)+USEAB_im*EAB_pex*RWEAB_rer*USRW_im*US_size/RW_size/RW_ex/(US_y*US_py*RWUS_rer+USEAA_im*EAA_pex*RWEAA_rer+USEAB_im*EAB_pex*RWEAB_rer);
+	RWUS_weightex =  US_y*US_py*RWUS_rer*USRW_im*US_size/RW_size/RW_ex/(US_y*US_py*RWUS_rer+USEAA_im*EAA_pex*RWEAA_rer+USEAB_im*EAB_pex*RWEAB_rer)+EAAUS_im*US_pex*RWUS_rer*EAARW_im*EAA_size/RW_size/RW_ex/(EAA_y*EAA_py*RWEAA_rer+EAAEAB_im*EAB_pex*RWEAB_rer+EAAUS_im*US_pex*RWUS_rer)+EABUS_im*US_pex*RWUS_rer*EABRW_im*EAB_size/RW_size/RW_ex/(EAB_y*EAB_py*RWEAB_rer+EABEAA_im*EAA_pex*RWEAA_rer+EABUS_im*US_pex*RWUS_rer);
+	USEAA_weightex =  EAA_y*EAA_py*USEAA_rer*EAAUS_im*EAA_size/US_size/US_ex/(EAA_y*EAA_py*USEAA_rer+EAAEAB_im*EAB_pex*USEAB_rer+EAARW_im*RW_pex*USRW_rer)+EABEAA_im*EAA_pex*USEAA_rer*EABUS_im*EAB_size/US_size/US_ex/(EAB_y*EAB_py*USEAB_rer+EABEAA_im*EAA_pex*USEAA_rer+EABRW_im*RW_pex*USRW_rer)+RWEAA_im*EAA_pex*USEAA_rer*RWUS_im*RW_size/US_size/US_ex/(RW_y*RW_py*USRW_rer+RWEAA_im*EAA_pex*USEAA_rer+RWEAB_im*EAB_pex*USEAB_rer);
+	USEAB_weightex =  EAB_y*EAB_py*USEAB_rer*EABUS_im*EAB_size/US_size/US_ex/(EAB_y*EAB_py*USEAB_rer+EABEAA_im*EAA_pex*USEAA_rer+EABRW_im*RW_pex*USRW_rer)+EAAEAB_im*EAB_pex*USEAB_rer*EAAUS_im*EAA_size/US_size/US_ex/(EAA_y*EAA_py*USEAA_rer+EAAEAB_im*EAB_pex*USEAB_rer+EAARW_im*RW_pex*USRW_rer)+RWEAB_im*EAB_pex*USEAB_rer*RWUS_im*RW_size/US_size/US_ex/(RW_y*RW_py*USRW_rer+RWEAA_im*EAA_pex*USEAA_rer+RWEAB_im*EAB_pex*USEAB_rer);
+	USRW_weightex =  RW_y*RW_py*USRW_rer*RWUS_im*RW_size/US_size/US_ex/(RW_y*RW_py*USRW_rer+RWEAA_im*EAA_pex*USEAA_rer+RWEAB_im*EAB_pex*USEAB_rer)+EAARW_im*RW_pex*USRW_rer*EAAUS_im*EAA_size/US_size/US_ex/(EAA_y*EAA_py*USEAA_rer+EAAEAB_im*EAB_pex*USEAB_rer+EAARW_im*RW_pex*USRW_rer)+EABRW_im*RW_pex*USRW_rer*EABUS_im*EAB_size/US_size/US_ex/(EAB_y*EAB_py*USEAB_rer+EABEAA_im*EAA_pex*USEAA_rer+EABRW_im*RW_pex*USRW_rer);
+
+    //(eq.131)
+	EAAUS_weightim =  EAAUS_rer*US_pex*EAAUS_im/(EAA_im*EAA_pim);
+	EAAEAB_weightim =  EAAEAB_rer*EAB_pex*EAAEAB_im/(EAA_im*EAA_pim);
+	EAARW_weightim =  EAARW_rer*RW_pex*EAARW_im/(EAA_im*EAA_pim);
+	EABEAA_weightim =  EABEAA_im*EAA_pex*EABEAA_rer/(EAB_im*EAB_pim);
+	EABRW_weightim =  EABRW_im*RW_pex*EABRW_rer/(EAB_im*EAB_pim);
+	EABUS_weightim =  EABUS_im*US_pex*EABUS_rer/(EAB_im*EAB_pim);
+	RWEAA_weightim =  RWEAA_im*EAA_pex*RWEAA_rer/(RW_im*RW_pim);
+	RWEAB_weightim =  RWEAB_im*EAB_pex*RWEAB_rer/(RW_im*RW_pim);
+	RWUS_weightim =  RWUS_im*US_pex*RWUS_rer/(RW_im*RW_pim);
+	USEAA_weightim =  USEAA_im*EAA_pex*USEAA_rer/(US_im*US_pim);
+	USEAB_weightim =  USEAB_im*EAB_pex*USEAB_rer/(US_im*US_pim);
+	USRW_weightim =  USRW_im*RW_pex*USRW_rer/(US_im*US_pim);
+
+    //(eq.132)
+	EAA_pim =  (EAA_imc*EAA_pimc+EAA_imi*EAA_pimi)/EAA_im;
+	EAB_pim =  (EAB_imc*EAB_pimc+EAB_imi*EAB_pimi)/EAB_im;
+	RW_pim =  (RW_imc*RW_pimc+RW_imi*RW_pimi)/RW_im;
+	US_pim =  (US_imc*US_pimc+US_imi*US_pimi)/US_im;
+
+    //(eq.133)
+
+    //(eq.134)
+	EAA_pex =  EABEAA_im*EABEAA_pim*EAAEAB_rer*EAB_size/EAA_size/EAA_ex+RWEAA_im*RWEAA_pim*EAARW_rer*RW_size/EAA_size/EAA_ex+USEAA_im*USEAA_pim*EAAUS_rer*US_size/EAA_size/EAA_ex;
+	EAB_pex =  EAAEAB_im*EAA_size*EAAEAB_pim*EABEAA_rer/EAB_size/EAB_ex+RWEAB_im*RW_size*RWEAB_pim*EABRW_rer/EAB_size/EAB_ex+USEAB_im*US_size*USEAB_pim*EABUS_rer/EAB_size/EAB_ex;
+	RW_pex =  EAARW_im*EAA_size*EAARW_pim*RWEAA_rer/RW_size/RW_ex+EABRW_im*EAB_size*EABRW_pim*RWEAB_rer/RW_size/RW_ex+USRW_im*US_size*USRW_pim*RWUS_rer/RW_size/RW_ex;
+	US_pex =  EAAUS_im*EAA_size*EAAUS_pim*USEAA_rer/US_size/US_ex+EABUS_im*EAB_size*EABUS_pim*USEAB_rer/US_size/US_ex+RWUS_im*RW_size*RWUS_pim*USRW_rer/US_size/US_ex;
+
+    //(eq.135) missing
+
+    //(eq.136) //different from the paper
+	RW_rer =  RW_rerdep*RW_rer(-1);
+	EAB_rer =  EAB_rerdep*EAB_rer(-1);
+	EAA_rer =  EAA_rerdep*EAA_rer(-1);
+    //missing US (=1?)
+
+    //(eq.137) //different from the paper
+	EAAEAB_nerdep =  EAA_pic*EAA_rerdep/EAB_rerdep/EAB_pic;
+
+    //euro area variables
+    //(eq.138) missing
+    //(eq.139) missing
+
+    //(eq.140) 
+    EA_y =  (EAA_y*EAA_size*EAA_pybar+EAB_y*EAB_pybar*EAB_size*EAAEAB_rerbar)/(EAB_size+EAA_size);
+
+    //(eq.141)
+    EA_m =  (EAA_size*EAA_m+EAB_m*EAB_size*EAAEAB_rerbar)/(EAB_size+EAA_size);
+    
+    //(eq.142)
+    EA_bf =  (EAB_size*EAB_bf+EAA_size*EAA_bf)/(EAB_size+EAA_size);
+    
+
+    //conditions for calibration and reporting
+    //(eq.146)
+	EAA_rr =  EAA_r/EAA_pic(1)-1;
+	EAB_rr =  EAB_r/EAB_pic(1)-1;
+	RW_rr =  RW_r/RW_pic(1)-1;
+	US_rr =  US_r/US_pic(1)-1;
+
+    //(eq.147)
+	EAA_cy =  EAA_c/(EAA_py*EAA_y);
+	EAB_cy =  EAB_c/(EAB_py*EAB_y);
+	RW_cy =  RW_c/(RW_py*RW_y);
+	US_cy =  US_c/(US_py*US_y);
+
+    //(eq.148)
+	EAA_iy =  EAA_pi*EAA_i/(EAA_py*EAA_y);
+	EAB_iy =  EAB_pi*EAB_i/(EAB_py*EAB_y);
+	RW_iy =  RW_pi*RW_i/(RW_py*RW_y);
+	US_iy =  US_pi*US_i/(US_py*US_y);
+
+
+
+    //(eq.?)
+	EAA_im =  EAA_imc+EAA_imi;
+	EAB_im =  EAB_imc+EAB_imi;
+    RW_im =  RW_imc+RW_imi;
+	US_im =  US_imc+US_imi;
+ 
+    //name='EAAEAB_excy'
 	EAAEAB_excy =  EABEAA_imc*EABEAA_pim*EAAEAB_rer*EAB_size/EAA_size/(EAA_py*EAA_y);
 
 	//name='EAAEAB_exiy'
 	EAAEAB_exiy =  EABEAA_imi*EABEAA_pim*EAAEAB_rer*EAB_size/EAA_size/(EAA_py*EAA_y);
-
-	//name='EAAEAB_im'
-	EAAEAB_im =  EAAEAB_imc+EAAEAB_imi;
 
 	//name='EAAEAB_imcy'
 	EAAEAB_imcy =  EAAEAB_pim*EAAEAB_imc/(EAA_py*EAA_y);
@@ -2357,68 +2588,23 @@ model;
 	//name='EAAEAB_imiy'
 	EAAEAB_imiy =  EAAEAB_pim*EAAEAB_imi/(EAA_py*EAA_y);
 
-	//name='EAAEAB_nerdep'
-	EAAEAB_nerdep =  EAA_pic*EAA_rerdep/EAB_rerdep/EAB_pic;
-
-	//name='EAAEAB_rer'
-	EAAEAB_rer =  EAA_rer/EAB_rer;
-
-	//name='EAAEAB_sx'
-	EAAEAB_sx =  (1-EAA_xix)*(EABEAA_pimtilde/EABEAA_pim)^(-EAA_thetat)+EAA_xix*(EABEAA_piim/(EAA_pi4target^(0.25*(1-EAA_chih))*EABEAA_piim(-1)^EAA_chix))^EAA_thetat*EAAEAB_sx(-1);
-
-	//name='EAAEAB_tot'
-	EAAEAB_tot =  EAAEAB_pim/(EABEAA_pim*EAAEAB_rer);
-
-	//name='EAAEAB_weight'
-	EAAEAB_weight =  EAAEAB_weightim*EAA_im*EAA_pim/(EAA_im*EAA_pim+EAA_pex*EAA_ex)+EAAEAB_weightex*EAA_pex*EAA_ex/(EAA_im*EAA_pim+EAA_pex*EAA_ex);
-
-	//name='EAAEAB_weightex'
-	EAAEAB_weightex =  EAAEAB_rer*EAB_size/EAA_size*EABEAA_im/EAA_ex*EAB_py*EAB_y/(EAB_y*EAAEAB_rer*EAB_py+EAARW_rer*RW_pex*EABRW_im+EAAUS_rer*US_pex*EABUS_im)+EAB_pex*EAAEAB_rer*RW_size/EAA_size*RWEAA_im/EAA_ex*RWEAB_im/(EAARW_rer*RW_py*RW_y+EAAEAB_rer*EAB_pex*RWEAB_im+EAAUS_rer*US_pex*RWUS_im)+EAB_pex*EAAEAB_rer*US_size/EAA_size*USEAA_im/EAA_ex*USEAB_im/(EAAUS_rer*US_py*US_y+EAAEAB_rer*EAB_pex*USEAB_im+EAARW_rer*RW_pex*USRW_im);
-
-	//name='EAAEAB_weightim'
-	EAAEAB_weightim =  EAAEAB_rer*EAB_pex*EAAEAB_im/(EAA_im*EAA_pim);
-
 	//name='EAARW_excy'
 	EAARW_excy =  RWEAA_imc*RWEAA_pim*EAARW_rer*RW_size/EAA_size/(EAA_py*EAA_y);
 
 	//name='EAARW_exiy'
 	EAARW_exiy =  RWEAA_imi*RWEAA_pim*EAARW_rer*RW_size/EAA_size/(EAA_py*EAA_y);
 
-	//name='EAARW_im'
-	EAARW_im =  EAARW_imc+EAARW_imi;
-
 	//name='EAARW_imcy'
 	EAARW_imcy =  EAARW_pim*EAARW_imc/(EAA_py*EAA_y);
 
 	//name='EAARW_imiy'
 	EAARW_imiy =  EAARW_pim*EAARW_imi/(EAA_py*EAA_y);
-
-	//name='EAARW_rer'
-	EAARW_rer =  EAA_rer/RW_rer;
-
-	//name='EAARW_sx'
-	EAARW_sx =  (1-EAA_xix)*(RWEAA_pimtilde/RWEAA_pim)^(-EAA_thetat)+EAA_xix*(RWEAA_piim/(EAA_pi4target^(0.25*(1-EAA_chih))*RWEAA_piim(-1)^EAA_chix))^EAA_thetat*EAARW_sx(-1);
-
-	//name='EAARW_tot'
-	EAARW_tot =  EAARW_pim/(RWEAA_pim*EAARW_rer);
-
-	//name='EAARW_weight'
-	EAARW_weight =  EAA_im*EAA_pim/(EAA_im*EAA_pim+EAA_pex*EAA_ex)*EAARW_weightim+EAA_pex*EAA_ex/(EAA_im*EAA_pim+EAA_pex*EAA_ex)*EAARW_weightex;
-
-	//name='EAARW_weightex'
-	EAARW_weightex =  RW_y*RW_py*EAARW_rer*RW_size/EAA_size*RWEAA_im/EAA_ex/(EAARW_rer*RW_py*RW_y+EAAEAB_rer*EAB_pex*RWEAB_im+EAAUS_rer*US_pex*RWUS_im)+EABRW_im*RW_pex*EAARW_rer*EAB_size/EAA_size*EABEAA_im/EAA_ex/(EAB_y*EAAEAB_rer*EAB_py+EAARW_rer*RW_pex*EABRW_im+EAAUS_rer*US_pex*EABUS_im)+USRW_im*RW_pex*EAARW_rer*US_size/EAA_size*USEAA_im/EAA_ex/(EAAUS_rer*US_py*US_y+EAAEAB_rer*EAB_pex*USEAB_im+EAARW_rer*RW_pex*USRW_im);
-
-	//name='EAARW_weightim'
-	EAARW_weightim =  EAARW_rer*RW_pex*EAARW_im/(EAA_im*EAA_pim);
-
+    
 	//name='EAAUS_excy'
 	EAAUS_excy =  USEAA_imc*USEAA_pim*EAAUS_rer*US_size/EAA_size/(EAA_py*EAA_y);
 
 	//name='EAAUS_exiy'
 	EAAUS_exiy =  USEAA_imi*USEAA_pim*EAAUS_rer*US_size/EAA_size/(EAA_py*EAA_y);
-
-	//name='EAAUS_im'
-	EAAUS_im =  EAAUS_imc+EAAUS_imi;
 
 	//name='EAAUS_imcy'
 	EAAUS_imcy =  EAAUS_pim*EAAUS_imc/(EAA_py*EAA_y);
@@ -2426,35 +2612,11 @@ model;
 	//name='EAAUS_imiy'
 	EAAUS_imiy =  EAAUS_pim*EAAUS_imi/(EAA_py*EAA_y);
 
-	//name='EAAUS_rer'
-	EAAUS_rer =  EAA_rer;
-
-	//name='EAAUS_sx'
-	EAAUS_sx =  (1-EAA_xix)*(USEAA_pimtilde/USEAA_pim)^(-EAA_thetat)+EAA_xix*(USEAA_piim/(EAA_pi4target^(0.25*(1-EAA_chih))*USEAA_piim(-1)^EAA_chix))^EAA_thetat*EAAUS_sx(-1);
-
-	//name='EAAUS_tot'
-	EAAUS_tot =  EAAUS_pim/(USEAA_pim*EAAUS_rer);
-
-	//name='EAAUS_weight'
-	EAAUS_weight =  EAA_im*EAA_pim/(EAA_im*EAA_pim+EAA_pex*EAA_ex)*EAAUS_weightim+EAA_pex*EAA_ex/(EAA_im*EAA_pim+EAA_pex*EAA_ex)*EAAUS_weightex;
-
-	//name='EAAUS_weightex'
-	EAAUS_weightex =  US_y*US_py*EAAUS_rer*US_size/EAA_size*USEAA_im/EAA_ex/(EAAUS_rer*US_py*US_y+EAAEAB_rer*EAB_pex*USEAB_im+EAARW_rer*RW_pex*USRW_im)+EABUS_im*US_pex*EAAUS_rer*EAB_size/EAA_size*EABEAA_im/EAA_ex/(EAB_y*EAAEAB_rer*EAB_py+EAARW_rer*RW_pex*EABRW_im+EAAUS_rer*US_pex*EABUS_im)+RWUS_im*US_pex*EAAUS_rer*RW_size/EAA_size*RWEAA_im/EAA_ex/(EAARW_rer*RW_py*RW_y+EAAEAB_rer*EAB_pex*RWEAB_im+EAAUS_rer*US_pex*RWUS_im);
-
-	//name='EAAUS_weightim'
-	EAAUS_weightim =  EAAUS_rer*US_pex*EAAUS_im/(EAA_im*EAA_pim);
-	
-	//name='EAA_bf'
-	EAA_bf =  US_r(-1)*((-EAA_bh)/EAB_r(-1)*EAAEAB_rer(-1)/EAA_rer(-1)+EAA_bh(-1)*EAAEAB_rer(-2)/EAA_rer(-2)+EAA_bf(-1)+EAA_tb(-1)/EAA_rer(-1));
-
 	//name='EAA_bh'
 	EAA_bh =  EAB_pic*EAA_py*EAA_y*(log(1+EAA_gammabh/EAB_gammab1)+EAA_bhytarget)/EAAEAB_rer;
 
 	//name='EAA_by'
 	EAA_by =  EAA_b/(EAA_pybar*EAA_ybar);
-
-	//name='EAA_cy'
-	EAA_cy =  EAA_c/(EAA_py*EAA_y);
 
 	//name='EAA_dn'
 	EAA_dn =  EAA_ysn*EAA_pnt-EAA_rk*EAA_kdn-EAA_ndn*(1+EAA_tauwf)*EAA_w;
@@ -2468,14 +2630,8 @@ model;
 	//name='EAA_etot'
 	EAA_etot =  EAAEAB_tot^EAAEAB_weight*EAARW_tot^EAARW_weight*EAAUS_tot^EAAUS_weight;
 
-	//name='EAA_ex'
-	EAA_ex =  US_size/EAA_size*USEAA_im+EAB_size/EAA_size*EABEAA_im+RW_size/EAA_size*RWEAA_im;
-
-	//name='EAA_gy'
+    //name='EAA_gy'
 	EAA_gy =  (1-EAA_rhog)*EAA_gybar+EAA_rhog*EAA_gy(-1)+EAA_epsg;
-
-	//name='EAA_im'
-	EAA_im =  EAA_imc+EAA_imi;
 
 	//name='EAA_imcy'
 	EAA_imcy =  EAA_imc*EAA_pimc/(EAA_py*EAA_y);
@@ -2489,20 +2645,8 @@ model;
 	//name='EAA_internalrer'
 	EAA_internalrer =  EAA_pnt/EAA_pttc;
 
-	//name='EAA_iy'
-	EAA_iy =  EAA_pi*EAA_i/(EAA_py*EAA_y);
-
 	//name='EAA_lcy'
 	EAA_lcy =  (1+EAA_tauwf)*EAA_w*EAA_nd/(EAA_py*EAA_y);
-
-	//name='EAA_ni'
-	EAA_ni =  EAA_ndi*EAA_si;
-
-	//name='EAA_nj'
-	EAA_nj =  EAA_ndj*EAA_sj;
-
-	//name='EAA_pex'
-	EAA_pex =  EABEAA_im*EABEAA_pim*EAAEAB_rer*EAB_size/EAA_size/EAA_ex+RWEAA_im*RWEAA_pim*EAARW_rer*RW_size/EAA_size/EAA_ex+USEAA_im*USEAA_pim*EAAUS_rer*US_size/EAA_size/EAA_ex;
 
 	//name='EAB_pic'
 	EAB_pic =  EAA_pic*EAA_rerdep/EAB_rerdep;
@@ -2519,23 +2663,11 @@ model;
 	//name='EAA_piimi'
 	EAA_piimi =  EAA_pic*EAA_pimi/EAA_pimi(-1);
 
-	//name='EAA_pim'
-	EAA_pim =  (EAA_imc*EAA_pimc+EAA_imi*EAA_pimi)/EAA_im;
-
 	//name='EAA_piw'
 	EAA_piw =  EAA_pic*EAA_w/EAA_w(-1);
 
 	//name='EAA_piw4'
 	EAA_piw4 =  EAA_piw*EAA_piw(-1)*EAA_piw(-2)*EAA_piw(-3);
-
-	//name='EAA_py'
-	EAA_py =  1/EAA_y*(USEAA_im*USEAA_pim*EAAUS_rer*US_size/EAA_size+RWEAA_im*RWEAA_pim*EAARW_rer*RW_size/EAA_size+EABEAA_im*EABEAA_pim*EAAEAB_rer*EAB_size/EAA_size+EAA_qc+EAA_pi*EAA_qi+EAA_pnt*EAA_g-EAAEAB_pim*(1-EAAEAB_gammaimc)*EAAEAB_imc/EAAEAB_gammaimcdag-EAAEAB_pim*(1-EAAEAB_gammaimi)*EAAEAB_imi/EAAEAB_gammaimidag-EAARW_pim*(1-EAARW_gammaimc)*EAARW_imc/EAARW_gammaimcdag-EAARW_pim*(1-EAARW_gammaimi)*EAARW_imi/EAARW_gammaimidag-EAAUS_pim*(1-EAAUS_gammaimc)*EAAUS_imc/EAAUS_gammaimcdag-EAAUS_pim*(1-EAAUS_gammaimi)*EAAUS_imi/EAAUS_gammaimidag);
-
-    //name='EAA_reer'
-	EAA_reer =  EAAEAB_rer^EAAEAB_weight*EAARW_rer^EAARW_weight*EAAUS_rer^EAAUS_weight;
-
-	//name='EAA_rer'
-	EAA_rer =  EAA_rerdep*EAA_rer(-1);
 
 	//name='EAA_rerdep'
 	EAA_rerdep =  EAA_lambdai*US_pic(1)/US_r/(1-EAA_gammab)/EAA_beta/EAA_lambdai(1);
@@ -2543,17 +2675,8 @@ model;
 	//name='EAA_rp'
 	EAA_rp =  EAA_rhorp*EAA_rp(-1)+EAA_epsrp;
 
-	//name='EAA_rr'
-	EAA_rr =  EAA_r/EAA_pic(1)-1;
-
 	//name='EAA_rrstar'
 	EAA_rrstar =  1/EAA_beta-1;
-
-	//name='EAA_si'
-	EAA_si =  (1-EAA_xii)*(EAA_witilde/EAA_wi)^(-EAA_etai)+EAA_xii*(EAA_wi(-1)/EAA_wi)^(-EAA_etai)*(EAA_pic/(EAA_pi4target^(0.25*(1-EAA_chii))*EAA_pic(-1)^EAA_chii))^EAA_etai*EAA_si(-1);
-
-	//name='EAA_sj'
-	EAA_sj =  (1-EAA_xij)*(EAA_wjtilde/EAA_wj)^(-EAA_etaj)+EAA_xij*(EAA_wj(-1)/EAA_wj)^(-EAA_etaj)*(EAA_pic/(EAA_pi4target^(0.25*(1-EAA_chij))*EAA_pic(-1)^EAA_chij))^EAA_etaj*EAA_sj(-1);
 
 	//name='EAA_tauc'
 	EAA_tauc =  (1-EAA_rhotauc)*EAA_taucbar+EAA_tauc(-1)*EAA_rhotauc+EAA_epstauc;
@@ -2573,16 +2696,11 @@ model;
 	//name='EAA_tauwh'
 	EAA_tauwh =  (1-EAA_rhotauwh)*EAA_tauwhbar+EAA_tauwh(-1)*EAA_rhotauwh+EAA_epstauwh;
 
-	//name='EAA_tb'
-	EAA_tb =  USEAA_im*USEAA_pim*EAAUS_rer*US_size/EAA_size+RWEAA_im*RWEAA_pim*EAARW_rer*RW_size/EAA_size+EABEAA_im*EABEAA_pim*EAAEAB_rer*EAB_size/EAA_size-EAAEAB_pim*EAAEAB_im-EAARW_pim*EAARW_im-EAAUS_pim*EAAUS_im;
-
 	//name='EAA_tby'
 	EAA_tby =  EAA_tb/(EAA_py*EAA_y);
 
 	//name='EAA_ti'
 	EAA_ti =  EAA_t*EAA_upsilont;
-
-
 
 	//name='EAA_tot'
 	EAA_tot =  EAAUS_pim/(USEAA_pim*EAA_rer);
@@ -2592,9 +2710,6 @@ model;
 
 	//name='EAA_try'
 	EAA_try =  (1-EAA_rhotr)*EAA_trybar+EAA_rhotr*EAA_try(-1)+EAA_epstr;
-
-	//name='EAA_u'
-	EAA_u =  EAA_kd/EAA_k;
 
 	//name='EAA_wcst'
 	EAA_wcst =  (1-EAA_rhowcst)*EAA_wcstbar+EAA_rhowcst*EAA_wcst(-1)+EAA_epswcst;
@@ -2607,9 +2722,6 @@ model;
 
 	//name='EAA_wy'
 	EAA_wy =  EAA_w*EAA_nd/(EAA_py*EAA_y);
-
-	//name='EAA_y'
-	EAA_y =  EAA_yst+EAA_ysn;
 
 	//name='EAA_ygap'
 	EAA_ygap =  EAA_y/EAA_ybar-1;
@@ -2647,32 +2759,11 @@ model;
 	//name='EABEAA_exiy'
 	EABEAA_exiy =  EAAEAB_imi*EAAEAB_pim*EABEAA_rer*EAA_size/EAB_size/(EAB_py*EAB_y);
 
-	//name='EABEAA_im'
-	EABEAA_im =  EABEAA_imc+EABEAA_imi;
-
 	//name='EABEAA_imcy'
 	EABEAA_imcy =  EABEAA_pim*EABEAA_imc/(EAB_py*EAB_y);
 
 	//name='EABEAA_imiy'
 	EABEAA_imiy =  EABEAA_pim*EABEAA_imi/(EAB_py*EAB_y);
-
-	//name='EABEAA_rer'
-	EABEAA_rer =  EAB_rer/EAA_rer;
-
-	//name='EABEAA_sx'
-	EABEAA_sx =  (1-EAB_xix)*(EAAEAB_pimtilde/EAAEAB_pim)^(-EAB_thetat)+EAB_xix*(EAAEAB_piim/(EAB_pi4target^(0.25*(1-EAB_chih))*EAAEAB_piim(-1)^EAB_chix))^EAB_thetat*EABEAA_sx(-1);
-
-	//name='EABEAA_tot'
-	EABEAA_tot =  EABEAA_pim/(EAAEAB_pim*EABEAA_rer);
-
-	//name='EABEAA_weight'
-	EABEAA_weight =  EABEAA_weightim*EAB_im*EAB_pim/(EAB_im*EAB_pim+EAB_pex*EAB_ex)+EABEAA_weightex*EAB_pex*EAB_ex/(EAB_im*EAB_pim+EAB_pex*EAB_ex);
-
-	//name='EABEAA_weightex'
-	EABEAA_weightex =  EAA_y*EAA_py*EABEAA_rer*EAAEAB_im*EAA_size/EAB_size/EAB_ex/(EAA_y*EAA_py*EABEAA_rer+EAARW_im*RW_pex*EABRW_rer+EAAUS_im*US_pex*EABUS_rer)+RWEAA_im*EAA_pex*EABEAA_rer*RWEAB_im*RW_size/EAB_size/EAB_ex/(RW_y*RW_py*EABRW_rer+RWEAA_im*EAA_pex*EABEAA_rer+RWUS_im*US_pex*EABUS_rer)+USEAA_im*EAA_pex*EABEAA_rer*USEAB_im*US_size/EAB_size/EAB_ex/(US_y*US_py*EABUS_rer+USEAA_im*EAA_pex*EABEAA_rer+USRW_im*RW_pex*EABRW_rer);
-
-	//name='EABEAA_weightim'
-	EABEAA_weightim =  EABEAA_im*EAA_pex*EABEAA_rer/(EAB_im*EAB_pim);
 
 	//name='EABRW_excy'
 	EABRW_excy =  RWEAB_imc*RWEAB_pim*EABRW_rer*RW_size/EAB_size/(EAB_py*EAB_y);
@@ -2680,33 +2771,11 @@ model;
 	//name='EABRW_exiy'
 	EABRW_exiy =  RWEAB_imi*RWEAB_pim*EABRW_rer*RW_size/EAB_size/(EAB_py*EAB_y);
 
-	
-	//name='EABRW_im'
-	EABRW_im =  EABRW_imc+EABRW_imi;
-
 	//name='EABRW_imcy'
 	EABRW_imcy =  EABRW_pim*EABRW_imc/(EAB_py*EAB_y);
 
 	//name='EABRW_imiy'
-	EABRW_imiy =  EABRW_pim*EABRW_imi/(EAB_py*EAB_y);
-
-	//name='EABRW_rer'
-	EABRW_rer =  EAB_rer/RW_rer;
-
-	//name='EABRW_sx'
-	EABRW_sx =  (1-EAB_xix)*(RWEAB_pimtilde/RWEAB_pim)^(-EAB_thetat)+EAB_xix*(RWEAB_piim/(EAB_pi4target^(0.25*(1-EAB_chih))*RWEAB_piim(-1)^EAB_chix))^EAB_thetat*EABRW_sx(-1);
-
-	//name='EABRW_tot'
-	EABRW_tot =  EABRW_pim/(RWEAB_pim*EABRW_rer);
-
-	//name='EABRW_weight'
-	EABRW_weight =  EAB_im*EAB_pim/(EAB_im*EAB_pim+EAB_pex*EAB_ex)*EABRW_weightim+EAB_pex*EAB_ex/(EAB_im*EAB_pim+EAB_pex*EAB_ex)*EABRW_weightex;
-
-	//name='EABRW_weightex'
-	EABRW_weightex =  RW_y*RW_py*EABRW_rer*RWEAB_im*RW_size/EAB_size/EAB_ex/(RW_y*RW_py*EABRW_rer+RWEAA_im*EAA_pex*EABEAA_rer+RWUS_im*US_pex*EABUS_rer)+EAARW_im*RW_pex*EABRW_rer*EAAEAB_im*EAA_size/EAB_size/EAB_ex/(EAA_y*EAA_py*EABEAA_rer+EAARW_im*RW_pex*EABRW_rer+EAAUS_im*US_pex*EABUS_rer)+USRW_im*RW_pex*EABRW_rer*USEAB_im*US_size/EAB_size/EAB_ex/(US_y*US_py*EABUS_rer+USEAA_im*EAA_pex*EABEAA_rer+USRW_im*RW_pex*EABRW_rer);
-
-	//name='EABRW_weightim'
-	EABRW_weightim =  EABRW_im*RW_pex*EABRW_rer/(EAB_im*EAB_pim);
+	EABRW_imiy =  EABRW_pim*EABRW_imi/(EAB_py*EAB_y);  
 
 	//name='EABUS_excy'
 	EABUS_excy =  USEAB_imc*USEAB_pim*EABUS_rer*US_size/EAB_size/(EAB_py*EAB_y);
@@ -2714,45 +2783,17 @@ model;
 	//name='EABUS_exiy'
 	EABUS_exiy =  USEAB_imi*USEAB_pim*EABUS_rer*US_size/EAB_size/(EAB_py*EAB_y);
 
-	
-	//name='EABUS_im'
-	EABUS_im =  EABUS_imc+EABUS_imi;
-
 	//name='EABUS_imcy'
 	EABUS_imcy =  EABUS_pim*EABUS_imc/(EAB_py*EAB_y);
 
 	//name='EABUS_imiy'
 	EABUS_imiy =  EABUS_pim*EABUS_imi/(EAB_py*EAB_y);
 
-	//name='EABUS_rer'
-	EABUS_rer =  EAB_rer;
-
-	//name='EABUS_sx'
-	EABUS_sx =  (1-EAB_xix)*(USEAB_pimtilde/USEAB_pim)^(-EAB_thetat)+EAB_xix*(USEAB_piim/(EAB_pi4target^(0.25*(1-EAB_chih))*USEAB_piim(-1)^EAB_chix))^EAB_thetat*EABUS_sx(-1);
-
-	//name='EABUS_tot'
-	EABUS_tot =  EABUS_pim/(USEAB_pim*EABUS_rer);
-
-	//name='EABUS_weight'
-	EABUS_weight =  EAB_im*EAB_pim/(EAB_im*EAB_pim+EAB_pex*EAB_ex)*EABUS_weightim+EAB_pex*EAB_ex/(EAB_im*EAB_pim+EAB_pex*EAB_ex)*EABUS_weightex;
-
-	//name='EABUS_weightex'
-	EABUS_weightex =  US_y*US_py*EABUS_rer*USEAB_im*US_size/EAB_size/EAB_ex/(US_y*US_py*EABUS_rer+USEAA_im*EAA_pex*EABEAA_rer+USRW_im*RW_pex*EABRW_rer)+EAAUS_im*US_pex*EABUS_rer*EAAEAB_im*EAA_size/EAB_size/EAB_ex/(EAA_y*EAA_py*EABEAA_rer+EAARW_im*RW_pex*EABRW_rer+EAAUS_im*US_pex*EABUS_rer)+RWUS_im*US_pex*EABUS_rer*RWEAB_im*RW_size/EAB_size/EAB_ex/(RW_y*RW_py*EABRW_rer+RWEAA_im*EAA_pex*EABEAA_rer+RWUS_im*US_pex*EABUS_rer);
-
-	//name='EABUS_weightim'
-	EABUS_weightim =  EABUS_im*US_pex*EABUS_rer/(EAB_im*EAB_pim);
-
-   	//name='EAB_bf'
-	EAB_bf =  US_r(-1)*((-EAB_bh)/EAA_r(-1)/EAB_rer(-1)+EAB_bh(-1)/EAB_rer(-2)+EAB_bf(-1)+EAB_tb(-1)/EAB_rer(-1));
-
-	//name='EAB_bh'
+   	//name='EAB_bh'
 	EAB_bh =  EAA_size*(-EAA_bh)/EAB_size;
 
 	//name='EAB_by'
 	EAB_by =  EAB_b/(EAB_pybar*EAB_ybar);
-
-	//name='EAB_cy'
-	EAB_cy =  EAB_c/(EAB_py*EAB_y);
 
 	//name='EAB_dn'
 	EAB_dn =  EAB_ysn*EAB_pnt-EAB_rk*EAB_kdn-EAB_ndn*(1+EAB_tauwf)*EAB_w;
@@ -2766,14 +2807,8 @@ model;
 	//name='EAB_etot'
 	EAB_etot =  EABEAA_tot^EABEAA_weight*EABRW_tot^EABRW_weight*EABUS_tot^EABUS_weight;
 
-	//name='EAB_ex'
-	EAB_ex =  USEAB_im*US_size/EAB_size+EAAEAB_im*EAA_size/EAB_size+RWEAB_im*RW_size/EAB_size;
-
     //name='EAB_gy'
 	EAB_gy =  (1-EAB_rhog)*EAB_gybar+EAB_rhog*EAB_gy(-1)+EAB_epsg;
-
-	//name='EAB_im'
-	EAB_im =  EAB_imc+EAB_imi;
 
 	//name='EAB_imcy'
 	EAB_imcy =  EAB_imc*EAB_pimc/(EAB_py*EAB_y);
@@ -2787,20 +2822,8 @@ model;
 	//name='EAB_internalrer'
 	EAB_internalrer =  EAB_pnt/EAB_pttc;
 
-	//name='EAB_iy'
-	EAB_iy =  EAB_pi*EAB_i/(EAB_py*EAB_y);
-
 	//name='EAB_lcy'
 	EAB_lcy =  (1+EAB_tauwf)*EAB_w*EAB_nd/(EAB_py*EAB_y);
-
-	//name='EAB_ni'
-	EAB_ni =  EAB_ndi*EAB_si;
-
-	//name='EAB_nj'
-	EAB_nj =  EAB_ndj*EAB_sj;
-
-	//name='EAB_pex'
-	EAB_pex =  EAAEAB_im*EAA_size*EAAEAB_pim*EABEAA_rer/EAB_size/EAB_ex+RWEAB_im*RW_size*RWEAB_pim*EABRW_rer/EAB_size/EAB_ex+USEAB_im*US_size*USEAB_pim*EABUS_rer/EAB_size/EAB_ex;
 
 	//name='EAB_piex4'
 	EAB_piex4 =  EAB_pic4*EAB_pex/EAB_pex(-4);
@@ -2813,24 +2836,12 @@ model;
 
 	//name='EAB_piimi'
 	EAB_piimi =  EAB_pic*EAB_pimi/EAB_pimi(-1);
-
-	//name='EAB_pim'
-	EAB_pim =  (EAB_imc*EAB_pimc+EAB_imi*EAB_pimi)/EAB_im;
-
+    
 	//name='EAB_piw'
 	EAB_piw =  EAB_pic*EAB_w/EAB_w(-1);
 
 	//name='EAB_piw4'
 	EAB_piw4 =  EAB_piw*EAB_piw(-1)*EAB_piw(-2)*EAB_piw(-3);
-	
-	//name='EAB_py'
-	EAB_py =  1/EAB_y*(USEAB_im*US_size*USEAB_pim*EABUS_rer/EAB_size+RWEAB_im*RW_size*RWEAB_pim*EABRW_rer/EAB_size+EAAEAB_im*EAA_size*EAAEAB_pim*EABEAA_rer/EAB_size+EAB_qc+EAB_pi*EAB_qi+EAB_pnt*EAB_g-EABEAA_pim*EABEAA_imc*(1-EABEAA_gammaimc)/EABEAA_gammaimcdag-EABEAA_pim*EABEAA_imi*(1-EABEAA_gammaimi)/EABEAA_gammaimidag-EABRW_pim*(1-EABRW_gammaimc)*EABRW_imc/EABRW_gammaimcdag-EABRW_pim*(1-EABRW_gammaimi)*EABRW_imi/EABRW_gammaimidag-EABUS_pim*(1-EABUS_gammaimc)*EABUS_imc/EABUS_gammaimcdag-EABUS_pim*(1-EABUS_gammaimi)*EABUS_imi/EABUS_gammaimidag);
-
-	//name='EAB_reer'
-	EAB_reer =  EABEAA_rer^EABEAA_weight*EABRW_rer^EABRW_weight*EABUS_rer^EABUS_weight;
-
-	//name='EAB_rer'
-	EAB_rer =  EAB_rerdep*EAB_rer(-1);
 
 	//name='EAB_rerdep'
 	EAB_rerdep =  EAB_lambdai*US_pic(1)/US_r/(1-EAB_gammab)/EAB_beta/EAB_lambdai(1);
@@ -2838,17 +2849,8 @@ model;
 	//name='EAB_rp'
 	EAB_rp =  EAB_rhorp*EAB_rp(-1)+EAB_epsrp;
 
-	//name='EAB_rr'
-	EAB_rr =  EAB_r/EAB_pic(1)-1;
-
 	//name='EAB_rrstar'
 	EAB_rrstar =  1/EAB_beta-1;
-
-	//name='EAB_si'
-	EAB_si =  (1-EAB_xii)*(EAB_witilde/EAB_wi)^(-EAB_etai)+EAB_xii*(EAB_wi(-1)/EAB_wi)^(-EAB_etai)*(EAB_pic/(EAB_pi4target^(0.25*(1-EAB_chii))*EAB_pic(-1)^EAB_chii))^EAB_etai*EAB_si(-1);
-
-	//name='EAB_sj'
-	EAB_sj =  (1-EAB_xij)*(EAB_wjtilde/EAB_wj)^(-EAB_etaj)+EAB_xij*(EAB_wj(-1)/EAB_wj)^(-EAB_etaj)*(EAB_pic/(EAB_pi4target^(0.25*(1-EAB_chij))*EAB_pic(-1)^EAB_chij))^EAB_etaj*EAB_sj(-1);
 
 	//name='EAB_tauc'
 	EAB_tauc =  (1-EAB_rhotauc)*EAB_taucbar+EAB_tauc(-1)*EAB_rhotauc+EAB_epstauc;
@@ -2868,9 +2870,6 @@ model;
 	//name='EAB_tauwh'
 	EAB_tauwh =  (1-EAB_rhotauwh)*EAB_tauwhbar+EAB_tauwh(-1)*EAB_rhotauwh+EAB_epstauwh;
 
-	//name='EAB_tb'
-	EAB_tb =  USEAB_im*US_size*USEAB_pim*EABUS_rer/EAB_size+RWEAB_im*RW_size*RWEAB_pim*EABRW_rer/EAB_size+EAAEAB_im*EAA_size*EAAEAB_pim*EABEAA_rer/EAB_size-EABEAA_pim*EABEAA_im-EABRW_im*EABRW_pim-EABUS_im*EABUS_pim;
-
 	//name='EAB_tby'
 	EAB_tby =  EAB_tb/(EAB_py*EAB_y);
 
@@ -2886,9 +2885,6 @@ model;
 	//name='EAB_try'
 	EAB_try =  (1-EAB_rhotr)*EAB_trybar+EAB_rhotr*EAB_try(-1)+EAB_epstr;
 
-	//name='EAB_u'
-	EAB_u =  EAB_kd/EAB_k;
-	
 	//name='EAB_wcst'
 	EAB_wcst =  (1-EAB_rhowcst)*EAB_wcstbar+EAB_rhowcst*EAB_wcst(-1)+EAB_epswcst;
 
@@ -2900,9 +2896,6 @@ model;
 
 	//name='EAB_wy'
 	EAB_wy =  EAB_w*EAB_nd/(EAB_py*EAB_y);
-
-	//name='EAB_y'
-	EAB_y =  EAB_yst+EAB_ysn;
 
 	//name='EAB_ygap'
 	EAB_ygap =  EAB_y/EAB_ybar-1;
@@ -2934,15 +2927,6 @@ model;
 	//name='EAB_zt'
 	log(EAB_zt) =  (1-EAB_rhozt)*log(EAB_ztbar)+EAB_rhozt*log(EAB_zt(-1))+EAB_epszt;
 
-	//name='EA_bf'
-	EA_bf =  (EAB_size*EAB_bf+EAA_size*EAA_bf)/(EAB_size+EAA_size);
-
-	//name='EA_m'
-	EA_m =  (EAA_size*EAA_m+EAB_m*EAB_size*EAAEAB_rerbar)/(EAB_size+EAA_size);
-
-	//name='EA_y'
-	EA_y =  (EAA_y*EAA_size*EAA_pybar+EAB_y*EAB_pybar*EAB_size*EAAEAB_rerbar)/(EAB_size+EAA_size);
-
 	//name='EA_ygrowth'
 	EA_ygrowth =  EA_y/EA_y(-1);
 
@@ -2957,42 +2941,18 @@ model;
 
 	//name='RWEAA_exiy'
 	RWEAA_exiy =  EAARW_imi*EAARW_pim*RWEAA_rer*EAA_size/RW_size/(RW_py*RW_y);
-
-	//name='RWEAA_im'
-	RWEAA_im =  RWEAA_imc+RWEAA_imi;
-    
+  
 	//name='RWEAA_imcy'
 	RWEAA_imcy =  RWEAA_pim*RWEAA_imc/(RW_py*RW_y);
 
 	//name='RWEAA_imiy'
 	RWEAA_imiy =  RWEAA_pim*RWEAA_imi/(RW_py*RW_y);
 
-	//name='RWEAA_rer'
-	RWEAA_rer =  RW_rer/EAA_rer;
-
-	//name='RWEAA_sx'
-	RWEAA_sx =  (1-RW_xix)*(EAARW_pimtilde/EAARW_pim)^(-RW_thetat)+RW_xix*(EAARW_piim/(RW_pi4target^(0.25*(1-RW_chih))*EAARW_piim(-1)^RW_chix))^RW_thetat*RWEAA_sx(-1);
-
-	//name='RWEAA_tot'
-	RWEAA_tot =  RWEAA_pim/(EAARW_pim*RWEAA_rer);
-
-	//name='RWEAA_weight'
-	RWEAA_weight =  RWEAA_weightim*RW_im*RW_pim/(RW_im*RW_pim+RW_pex*RW_ex)+RWEAA_weightex*RW_pex*RW_ex/(RW_im*RW_pim+RW_pex*RW_ex);
-
-	//name='RWEAA_weightex'
-	RWEAA_weightex =  EAA_y*EAA_py*RWEAA_rer*EAARW_im*EAA_size/RW_size/RW_ex/(EAA_y*EAA_py*RWEAA_rer+EAAEAB_im*EAB_pex*RWEAB_rer+EAAUS_im*US_pex*RWUS_rer)+EABEAA_im*EAA_pex*RWEAA_rer*EABRW_im*EAB_size/RW_size/RW_ex/(EAB_y*EAB_py*RWEAB_rer+EABEAA_im*EAA_pex*RWEAA_rer+EABUS_im*US_pex*RWUS_rer)+USEAA_im*EAA_pex*RWEAA_rer*USRW_im*US_size/RW_size/RW_ex/(US_y*US_py*RWUS_rer+USEAA_im*EAA_pex*RWEAA_rer+USEAB_im*EAB_pex*RWEAB_rer);
-
-	//name='RWEAA_weightim'
-	RWEAA_weightim =  RWEAA_im*EAA_pex*RWEAA_rer/(RW_im*RW_pim);
-
-	//name='RWEAB_excy'
+    //name='RWEAB_excy'
 	RWEAB_excy =  EABRW_imc*EABRW_pim*RWEAB_rer*EAB_size/RW_size/(RW_py*RW_y);
 
 	//name='RWEAB_exiy'
 	RWEAB_exiy =  EABRW_imi*EABRW_pim*RWEAB_rer*EAB_size/RW_size/(RW_py*RW_y);
-
-	//name='RWEAB_im'
-	RWEAB_im =  RWEAB_imc+RWEAB_imi;
 
 	//name='RWEAB_imcy'
 	RWEAB_imcy =  RWEAB_pim*RWEAB_imc/(RW_py*RW_y);
@@ -3000,32 +2960,11 @@ model;
 	//name='RWEAB_imiy'
 	RWEAB_imiy =  RWEAB_pim*RWEAB_imi/(RW_py*RW_y);
 
-	//name='RWEAB_rer'
-	RWEAB_rer =  RW_rer/EAB_rer;
-
-	//name='RWEAB_sx'
-	RWEAB_sx =  (1-RW_xix)*(EABRW_pimtilde/EABRW_pim)^(-RW_thetat)+RW_xix*(EABRW_piim/(RW_pi4target^(0.25*(1-RW_chih))*EABRW_piim(-1)^RW_chix))^RW_thetat*RWEAB_sx(-1);
-
-	//name='RWEAB_tot'
-	RWEAB_tot =  RWEAB_pim/(EABRW_pim*RWEAB_rer);
-
-	//name='RWEAB_weight'
-	RWEAB_weight =  RW_im*RW_pim/(RW_im*RW_pim+RW_pex*RW_ex)*RWEAB_weightim+RW_pex*RW_ex/(RW_im*RW_pim+RW_pex*RW_ex)*RWEAB_weightex;
-
-	//name='RWEAB_weightex'
-	RWEAB_weightex =  EAB_y*EAB_py*RWEAB_rer*EABRW_im*EAB_size/RW_size/RW_ex/(EAB_y*EAB_py*RWEAB_rer+EABEAA_im*EAA_pex*RWEAA_rer+EABUS_im*US_pex*RWUS_rer)+EAAEAB_im*EAB_pex*RWEAB_rer*EAARW_im*EAA_size/RW_size/RW_ex/(EAA_y*EAA_py*RWEAA_rer+EAAEAB_im*EAB_pex*RWEAB_rer+EAAUS_im*US_pex*RWUS_rer)+USEAB_im*EAB_pex*RWEAB_rer*USRW_im*US_size/RW_size/RW_ex/(US_y*US_py*RWUS_rer+USEAA_im*EAA_pex*RWEAA_rer+USEAB_im*EAB_pex*RWEAB_rer);
-
-	//name='RWEAB_weightim'
-	RWEAB_weightim =  RWEAB_im*EAB_pex*RWEAB_rer/(RW_im*RW_pim);
-
 	//name='RWUS_excy'
 	RWUS_excy =  USRW_imc*USRW_pim*RWUS_rer*US_size/RW_size/(RW_py*RW_y);
 
 	//name='RWUS_exiy'
 	RWUS_exiy =  USRW_imi*USRW_pim*RWUS_rer*US_size/RW_size/(RW_py*RW_y);
-
-	//name='RWUS_im'
-	RWUS_im =  RWUS_imc+RWUS_imi;
 
 	//name='RWUS_imcy'
 	RWUS_imcy =  RWUS_pim*RWUS_imc/(RW_py*RW_y);
@@ -3033,32 +2972,8 @@ model;
 	//name='RWUS_imiy'
 	RWUS_imiy =  RWUS_pim*RWUS_imi/(RW_py*RW_y);
 
-	//name='RWUS_rer'
-	RWUS_rer =  RW_rer;
-
-	//name='RWUS_sx'
-	RWUS_sx =  (1-RW_xix)*(USRW_pimtilde/USRW_pim)^(-RW_thetat)+RW_xix*(USRW_piim/(RW_pi4target^(0.25*(1-RW_chih))*USRW_piim(-1)^RW_chix))^RW_thetat*RWUS_sx(-1);
-
-	//name='RWUS_tot'
-	RWUS_tot =  RWUS_pim/(USRW_pim*RWUS_rer);
-
-	//name='RWUS_weight'
-	RWUS_weight =  RW_im*RW_pim/(RW_im*RW_pim+RW_pex*RW_ex)*RWUS_weightim+RW_pex*RW_ex/(RW_im*RW_pim+RW_pex*RW_ex)*RWUS_weightex;
-
-	//name='RWUS_weightex'
-	RWUS_weightex =  US_y*US_py*RWUS_rer*USRW_im*US_size/RW_size/RW_ex/(US_y*US_py*RWUS_rer+USEAA_im*EAA_pex*RWEAA_rer+USEAB_im*EAB_pex*RWEAB_rer)+EAAUS_im*US_pex*RWUS_rer*EAARW_im*EAA_size/RW_size/RW_ex/(EAA_y*EAA_py*RWEAA_rer+EAAEAB_im*EAB_pex*RWEAB_rer+EAAUS_im*US_pex*RWUS_rer)+EABUS_im*US_pex*RWUS_rer*EABRW_im*EAB_size/RW_size/RW_ex/(EAB_y*EAB_py*RWEAB_rer+EABEAA_im*EAA_pex*RWEAA_rer+EABUS_im*US_pex*RWUS_rer);
-
-	//name='RWUS_weightim'
-	RWUS_weightim =  RWUS_im*US_pex*RWUS_rer/(RW_im*RW_pim);
-
- 	//name='RW_bf'
-	RW_bf =  US_r(-1)*(RW_bf(-1)+RW_tb(-1)/RW_rer(-1));
-
 	//name='RW_by'
 	RW_by =  RW_b/(RW_pybar*RW_ybar);
-
-	//name='RW_cy'
-	RW_cy =  RW_c/(RW_py*RW_y);
 
 	//name='RW_dn'
 	RW_dn =  RW_ysn*RW_pnt-RW_rk*RW_kdn-RW_ndn*(1+RW_tauwf)*RW_w;
@@ -3072,14 +2987,8 @@ model;
 	//name='RW_etot'
 	RW_etot =  RWEAA_tot^RWEAA_weight*RWEAB_tot^RWEAB_weight*RWUS_tot^RWUS_weight;
 
-	//name='RW_ex'
-	RW_ex =  USRW_im*US_size/RW_size+EAARW_im*EAA_size/RW_size+EABRW_im*EAB_size/RW_size;
-
 	//name='RW_gy'
 	RW_gy =  (1-RW_rhog)*RW_gybar+RW_rhog*RW_gy(-1)+RW_epsg;
-
-	//name='RW_im'
-	RW_im =  RW_imc+RW_imi;
 
 	//name='RW_imcy'
 	RW_imcy =  RW_imc*RW_pimc/(RW_py*RW_y);
@@ -3093,22 +3002,8 @@ model;
 	//name='RW_internalrer'
 	RW_internalrer =  RW_pnt/RW_pttc;
 
-	//name='RW_iy'
-	RW_iy =  RW_pi*RW_i/(RW_py*RW_y);
-
 	//name='RW_lcy'
 	RW_lcy =  (1+RW_tauwf)*RW_w*RW_nd/(RW_py*RW_y);
-
-	//name='RW_ni'
-	RW_ni =  RW_ndi*RW_si;
-
-	//name='RW_nj'
-	RW_nj =  RW_ndj*RW_sj;
-
-	//name='RW_pex'
-	RW_pex =  EAARW_im*EAA_size*EAARW_pim*RWEAA_rer/RW_size/RW_ex+EABRW_im*EAB_size*EABRW_pim*RWEAB_rer/RW_size/RW_ex+USRW_im*US_size*USRW_pim*RWUS_rer/RW_size/RW_ex;
-
-
 
 	//name='RW_piex4'
 	RW_piex4 =  RW_pic4*RW_pex/RW_pex(-4);
@@ -3122,23 +3017,11 @@ model;
 	//name='RW_piimi'
 	RW_piimi =  RW_pic*RW_pimi/RW_pimi(-1);
 
-	//name='RW_pim'
-	RW_pim =  (RW_imc*RW_pimc+RW_imi*RW_pimi)/RW_im;
-
 	//name='RW_piw'
 	RW_piw =  RW_pic*RW_w/RW_w(-1);
 
 	//name='RW_piw4'
 	RW_piw4 =  RW_piw*RW_piw(-1)*RW_piw(-2)*RW_piw(-3);
-
-	//name='RW_py'
-	RW_py =  1/RW_y*(USRW_im*US_size*USRW_pim*RWUS_rer/RW_size+EABRW_im*EAB_size*EABRW_pim*RWEAB_rer/RW_size+EAARW_im*EAA_size*EAARW_pim*RWEAA_rer/RW_size+RW_qc+RW_pi*RW_qi+RW_pnt*RW_g-RWEAA_pim*RWEAA_imc*(1-RWEAA_gammaimc)/RWEAA_gammaimcdag-RWEAA_pim*RWEAA_imi*(1-RWEAA_gammaimi)/RWEAA_gammaimidag-RWEAB_pim*RWEAB_imc*(1-RWEAB_gammaimc)/RWEAB_gammaimcdag-RWEAB_pim*RWEAB_imi*(1-RWEAB_gammaimi)/RWEAB_gammaimidag-RWUS_pim*(1-RWUS_gammaimc)*RWUS_imc/RWUS_gammaimcdag-RWUS_pim*(1-RWUS_gammaimi)*RWUS_imi/RWUS_gammaimidag);
-
-	//name='RW_reer'
-	RW_reer =  RWEAA_rer^RWEAA_weight*RWEAB_rer^RWEAB_weight*RWUS_rer^RWUS_weight;
-
-	//name='RW_rer'
-	RW_rer =  RW_rerdep*RW_rer(-1);
 
 	//name='RW_rerdep'
 	RW_rerdep =  RW_lambdai*US_pic(1)/US_r/(1-RW_gammab)/RW_beta/RW_lambdai(1);
@@ -3146,17 +3029,8 @@ model;
 	//name='RW_rp'
 	RW_rp =  RW_rhorp*RW_rp(-1)+RW_epsrp;
 
-	//name='RW_rr'
-	RW_rr =  RW_r/RW_pic(1)-1;
-
 	//name='RW_rrstar'
 	RW_rrstar =  1/RW_beta-1;
-
-	//name='RW_si'
-	RW_si =  (1-RW_xii)*(RW_witilde/RW_wi)^(-RW_etai)+RW_xii*(RW_wi(-1)/RW_wi)^(-RW_etai)*(RW_pic/(RW_pi4target^(0.25*(1-RW_chii))*RW_pic(-1)^RW_chii))^RW_etai*RW_si(-1);
-
-	//name='RW_sj'
-	RW_sj =  (1-RW_xij)*(RW_wjtilde/RW_wj)^(-RW_etaj)+RW_xij*(RW_wj(-1)/RW_wj)^(-RW_etaj)*(RW_pic/(RW_pi4target^(0.25*(1-RW_chij))*RW_pic(-1)^RW_chij))^RW_etaj*RW_sj(-1);
 
 	//name='RW_tauc'
 	RW_tauc =  (1-RW_rhotauc)*RW_taucbar+RW_tauc(-1)*RW_rhotauc+RW_epstauc;
@@ -3176,9 +3050,6 @@ model;
 	//name='RW_tauwh'
 	RW_tauwh =  (1-RW_rhotauwh)*RW_tauwhbar+RW_tauwh(-1)*RW_rhotauwh+RW_epstauwh;
 
-	//name='RW_tb'
-	RW_tb =  USRW_im*US_size*USRW_pim*RWUS_rer/RW_size+EABRW_im*EAB_size*EABRW_pim*RWEAB_rer/RW_size+EAARW_im*EAA_size*EAARW_pim*RWEAA_rer/RW_size-RWEAA_pim*RWEAA_im-RWEAB_im*RWEAB_pim-RWUS_im*RWUS_pim;
-
 	//name='RW_tby'
 	RW_tby =  RW_tb/(RW_py*RW_y);
 
@@ -3194,9 +3065,6 @@ model;
 	//name='RW_try'
 	RW_try =  (1-RW_rhotr)*RW_trybar+RW_rhotr*RW_try(-1)+RW_epstr;
 
-	//name='RW_u'
-	RW_u =  RW_kd/RW_k;
-
 	//name='RW_wcst'
 	RW_wcst =  (1-RW_rhowcst)*RW_wcstbar+RW_rhowcst*RW_wcst(-1)+RW_epswcst;
 
@@ -3208,9 +3076,6 @@ model;
 
 	//name='RW_wy'
 	RW_wy =  RW_w*RW_nd/(RW_py*RW_y);
-
-	//name='RW_y'
-	RW_y =  RW_yst+RW_ysn;
 
 	//name='RW_ygap'
 	RW_ygap =  RW_y/RW_ybar-1;
@@ -3248,32 +3113,11 @@ model;
 	//name='USEAA_exiy'
 	USEAA_exiy =  EAAUS_imi*EAAUS_pim*USEAA_rer*EAA_size/US_size/(US_py*US_y);
 
-	//name='USEAA_im'
-	USEAA_im =  USEAA_imc+USEAA_imi;
-
 	//name='USEAA_imcy'
 	USEAA_imcy =  USEAA_pim*USEAA_imc/(US_py*US_y);
 
 	//name='USEAA_imiy'
 	USEAA_imiy =  USEAA_pim*USEAA_imi/(US_py*US_y);
-
-	//name='USEAA_rer'
-	USEAA_rer =  1/EAA_rer;
-
-	//name='USEAA_sx'
-	USEAA_sx =  (1-US_xix)*(EAAUS_pimtilde/EAAUS_pim)^(-US_thetat)+US_xix*(EAAUS_piim/(US_pi4target^(0.25*(1-US_chih))*EAAUS_piim(-1)^US_chix))^US_thetat*USEAA_sx(-1);
-
-	//name='USEAA_tot'
-	USEAA_tot =  USEAA_pim/(EAAUS_pim*USEAA_rer);
-
-	//name='USEAA_weight'
-	USEAA_weight =  USEAA_weightim*US_im*US_pim/(US_im*US_pim+US_pex*US_ex)+USEAA_weightex*US_pex*US_ex/(US_im*US_pim+US_pex*US_ex);
-
-	//name='USEAA_weightex'
-	USEAA_weightex =  EAA_y*EAA_py*USEAA_rer*EAAUS_im*EAA_size/US_size/US_ex/(EAA_y*EAA_py*USEAA_rer+EAAEAB_im*EAB_pex*USEAB_rer+EAARW_im*RW_pex*USRW_rer)+EABEAA_im*EAA_pex*USEAA_rer*EABUS_im*EAB_size/US_size/US_ex/(EAB_y*EAB_py*USEAB_rer+EABEAA_im*EAA_pex*USEAA_rer+EABRW_im*RW_pex*USRW_rer)+RWEAA_im*EAA_pex*USEAA_rer*RWUS_im*RW_size/US_size/US_ex/(RW_y*RW_py*USRW_rer+RWEAA_im*EAA_pex*USEAA_rer+RWEAB_im*EAB_pex*USEAB_rer);
-
-	//name='USEAA_weightim'
-	USEAA_weightim =  USEAA_im*EAA_pex*USEAA_rer/(US_im*US_pim);
 
 	//name='USEAB_excy'
 	USEAB_excy =  EABUS_imc*EABUS_pim*USEAB_rer*EAB_size/US_size/(US_py*US_y);
@@ -3281,32 +3125,11 @@ model;
 	//name='USEAB_exiy'
 	USEAB_exiy =  EABUS_imi*EABUS_pim*USEAB_rer*EAB_size/US_size/(US_py*US_y);
 
-	//name='USEAB_im'
-	USEAB_im =  USEAB_imc+USEAB_imi;
-
 	//name='USEAB_imcy'
 	USEAB_imcy =  USEAB_pim*USEAB_imc/(US_py*US_y);
 
 	//name='USEAB_imiy'
 	USEAB_imiy =  USEAB_pim*USEAB_imi/(US_py*US_y);
-
-	//name='USEAB_rer'
-	USEAB_rer =  1/EAB_rer;
-
-	//name='USEAB_sx'
-	USEAB_sx =  (1-US_xix)*(EABUS_pimtilde/EABUS_pim)^(-US_thetat)+US_xix*(EABUS_piim/(US_pi4target^(0.25*(1-US_chih))*EABUS_piim(-1)^US_chix))^US_thetat*USEAB_sx(-1);
-
-	//name='USEAB_tot'
-	USEAB_tot =  USEAB_pim/(EABUS_pim*USEAB_rer);
-
-	//name='USEAB_weight'
-	USEAB_weight =  US_im*US_pim/(US_im*US_pim+US_pex*US_ex)*USEAB_weightim+US_pex*US_ex/(US_im*US_pim+US_pex*US_ex)*USEAB_weightex;
-
-	//name='USEAB_weightex'
-	USEAB_weightex =  EAB_y*EAB_py*USEAB_rer*EABUS_im*EAB_size/US_size/US_ex/(EAB_y*EAB_py*USEAB_rer+EABEAA_im*EAA_pex*USEAA_rer+EABRW_im*RW_pex*USRW_rer)+EAAEAB_im*EAB_pex*USEAB_rer*EAAUS_im*EAA_size/US_size/US_ex/(EAA_y*EAA_py*USEAA_rer+EAAEAB_im*EAB_pex*USEAB_rer+EAARW_im*RW_pex*USRW_rer)+RWEAB_im*EAB_pex*USEAB_rer*RWUS_im*RW_size/US_size/US_ex/(RW_y*RW_py*USRW_rer+RWEAA_im*EAA_pex*USEAA_rer+RWEAB_im*EAB_pex*USEAB_rer);
-
-	//name='USEAB_weightim'
-	USEAB_weightim =  USEAB_im*EAB_pex*USEAB_rer/(US_im*US_pim);
 
 	//name='USRW_excy'
 	USRW_excy =  RWUS_imc*RWUS_pim*USRW_rer*RW_size/US_size/(US_py*US_y);
@@ -3314,41 +3137,14 @@ model;
 	//name='USRW_exiy'
 	USRW_exiy =  RWUS_imi*RWUS_pim*USRW_rer*RW_size/US_size/(US_py*US_y);
 
-	//name='USRW_im'
-	USRW_im =  USRW_imc+USRW_imi;
-
 	//name='USRW_imcy'
 	USRW_imcy =  USRW_pim*USRW_imc/(US_py*US_y);
 
 	//name='USRW_imiy'
 	USRW_imiy =  USRW_pim*USRW_imi/(US_py*US_y);
-
-	//name='USRW_rer'
-	USRW_rer =  1/RW_rer;
-
-	//name='USRW_sx'
-	USRW_sx =  (1-US_xix)*(RWUS_pimtilde/RWUS_pim)^(-US_thetat)+US_xix*(RWUS_piim/(US_pi4target^(0.25*(1-US_chih))*RWUS_piim(-1)^US_chix))^US_thetat*USRW_sx(-1);
-
-	//name='USRW_tot'
-	USRW_tot =  USRW_pim/(RWUS_pim*USRW_rer);
-
-	//name='USRW_weight'
-	USRW_weight =  US_im*US_pim/(US_im*US_pim+US_pex*US_ex)*USRW_weightim+US_pex*US_ex/(US_im*US_pim+US_pex*US_ex)*USRW_weightex;
-
-	//name='USRW_weightex'
-	USRW_weightex =  RW_y*RW_py*USRW_rer*RWUS_im*RW_size/US_size/US_ex/(RW_y*RW_py*USRW_rer+RWEAA_im*EAA_pex*USEAA_rer+RWEAB_im*EAB_pex*USEAB_rer)+EAARW_im*RW_pex*USRW_rer*EAAUS_im*EAA_size/US_size/US_ex/(EAA_y*EAA_py*USEAA_rer+EAAEAB_im*EAB_pex*USEAB_rer+EAARW_im*RW_pex*USRW_rer)+EABRW_im*RW_pex*USRW_rer*EABUS_im*EAB_size/US_size/US_ex/(EAB_y*EAB_py*USEAB_rer+EABEAA_im*EAA_pex*USEAA_rer+EABRW_im*RW_pex*USRW_rer);
-
-	//name='USRW_weightim'
-	USRW_weightim =  USRW_im*RW_pex*USRW_rer/(US_im*US_pim);
-
-	//name='US_bf'
-	US_bf =  EAA_bf*(-EAA_size)/US_size-EAB_size*EAB_bf/US_size-RW_size*RW_bf/US_size;
-
+    
 	//name='US_by'
 	US_by =  US_b/(US_pybar*US_ybar);
-	
-	//name='US_cy'
-	US_cy =  US_c/(US_py*US_y);
 
 	//name='US_dn'
 	US_dn =  US_ysn*US_pnt-US_rk*US_kdn-US_ndn*(1+US_tauwf)*US_w;
@@ -3362,14 +3158,8 @@ model;
 	//name='US_etot'
 	US_etot =  USEAA_tot^USEAA_weight*USEAB_tot^USEAB_weight*USRW_tot^USRW_weight;
 
-	//name='US_ex'
-	US_ex =  RWUS_im*RW_size/US_size+EAAUS_im*EAA_size/US_size+EABUS_im*EAB_size/US_size;
-
 	//name='US_gy'
 	US_gy =  (1-US_rhog)*US_gybar+US_rhog*US_gy(-1)+US_epsg;
-
-	//name='US_im'
-	US_im =  US_imc+US_imi;
 
 	//name='US_imcy'
 	US_imcy =  US_imc*US_pimc/(US_py*US_y);
@@ -3383,22 +3173,10 @@ model;
 	//name='US_internalrer'
 	US_internalrer =  US_pnt/US_pttc;
 
-	//name='US_iy'
-	US_iy =  US_pi*US_i/(US_py*US_y);
-
 	//name='US_lcy'
 	US_lcy =  (1+US_tauwf)*US_w*US_nd/(US_py*US_y);
 
-	//name='US_ni'
-	US_ni =  US_ndi*US_si;
-
-	//name='US_nj'
-	US_nj =  US_ndj*US_sj;
-
-	//name='US_pex'
-	US_pex =  EAAUS_im*EAA_size*EAAUS_pim*USEAA_rer/US_size/US_ex+EABUS_im*EAB_size*EABUS_pim*USEAB_rer/US_size/US_ex+RWUS_im*RW_size*RWUS_pim*USRW_rer/US_size/US_ex;
-
-	//name='US_piex4'
+    //name='US_piex4'
 	US_piex4 =  US_pic4*US_pex/US_pex(-4);
 
 	//name='US_piimc'
@@ -3410,35 +3188,17 @@ model;
 	//name='US_piimi'
 	US_piimi =  US_pic*US_pimi/US_pimi(-1);
 
-	//name='US_pim'
-	US_pim =  (US_imc*US_pimc+US_imi*US_pimi)/US_im;
-
 	//name='US_piw'
 	US_piw =  US_pic*US_w/US_w(-1);
 
 	//name='US_piw4'
 	US_piw4 =  US_piw*US_piw(-1)*US_piw(-2)*US_piw(-3);
 
-	//name='US_py'
-	US_py =  1/US_y*(RWUS_im*RW_size*RWUS_pim*USRW_rer/US_size+EABUS_im*EAB_size*EABUS_pim*USEAB_rer/US_size+EAAUS_im*EAA_size*EAAUS_pim*USEAA_rer/US_size+US_qc+US_pi*US_qi+US_pnt*US_g-USEAA_pim*USEAA_imc*(1-USEAA_gammaimc)/USEAA_gammaimcdag-USEAA_pim*USEAA_imi*(1-USEAA_gammaimi)/USEAA_gammaimidag-USEAB_pim*USEAB_imc*(1-USEAB_gammaimc)/USEAB_gammaimcdag-USEAB_pim*USEAB_imi*(1-USEAB_gammaimi)/USEAB_gammaimidag-USRW_pim*USRW_imc*(1-USRW_gammaimc)/USRW_gammaimcdag-USRW_pim*USRW_imi*(1-USRW_gammaimi)/USRW_gammaimidag);
-
-	//name='US_reer'
-	US_reer =  USEAA_rer^USEAA_weight*USEAB_rer^USEAB_weight*USRW_rer^USRW_weight;
-
 	//name='US_rer'
 	US_rer =  1;
 
-	//name='US_rr'
-	US_rr =  US_r/US_pic(1)-1;
-
 	//name='US_rrstar'
 	US_rrstar =  1/US_beta-1;
-
-	//name='US_si'
-	US_si =  (1-US_xii)*(US_witilde/US_wi)^(-US_etai)+US_xii*(US_wi(-1)/US_wi)^(-US_etai)*(US_pic/(US_pi4target^(0.25*(1-US_chii))*US_pic(-1)^US_chii))^US_etai*US_si(-1);
-
-	//name='US_sj'
-	US_sj =  (1-US_xij)*(US_wjtilde/US_wj)^(-US_etaj)+US_xij*(US_wj(-1)/US_wj)^(-US_etaj)*(US_pic/(US_pi4target^(0.25*(1-US_chij))*US_pic(-1)^US_chij))^US_etaj*US_sj(-1);
 
  	//name='US_tauc'
 	US_tauc =  (1-US_rhotauc)*US_taucbar+US_tauc(-1)*US_rhotauc+US_epstauc;
@@ -3458,9 +3218,6 @@ model;
 	//name='US_tauwh'
 	US_tauwh =  (1-US_rhotauwh)*US_tauwhbar+US_tauwh(-1)*US_rhotauwh+US_epstauwh;
 
-	//name='US_tb'
-	US_tb =  RWUS_im*RW_size*RWUS_pim*USRW_rer/US_size+EABUS_im*EAB_size*EABUS_pim*USEAB_rer/US_size+EAAUS_im*EAA_size*EAAUS_pim*USEAA_rer/US_size-USEAA_pim*USEAA_im-USEAB_im*USEAB_pim-USRW_im*USRW_pim;
-
 	//name='US_tby'
 	US_tby =  US_tb/(US_py*US_y);
 
@@ -3473,9 +3230,6 @@ model;
 	//name='US_try'
 	US_try =  (1-US_rhotr)*US_trybar+US_rhotr*US_try(-1)+US_epstr;
 
-	//name='US_u'
-	US_u =  US_kd/US_k;
-
 	//name='US_wcst'
 	US_wcst =  (1-US_rhowcst)*US_wcstbar+US_rhowcst*US_wcst(-1)+US_epswcst;
 
@@ -3487,9 +3241,6 @@ model;
 
 	//name='US_wy'
 	US_wy =  US_w*US_nd/(US_py*US_y);
-
-	//name='US_y'
-	US_y =  US_yst+US_ysn;
 
 	//name='US_ygap'
 	US_ygap =  US_y/US_ybar-1;
