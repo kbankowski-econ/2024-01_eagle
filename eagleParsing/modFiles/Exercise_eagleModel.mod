@@ -879,6 +879,9 @@ var
     EABRW_imc  
     RWUS_imc
     USEAA_imc 
+    EAA_pic4	
+    EAB_pic4
+
   ;
 
 parameters
@@ -1502,7 +1505,6 @@ varexo
 	EAA_epszn
 	EAA_epszt
 	EAA_gybar
-	EAA_pic4 //WHY
 	EAA_taucbar
 	EAA_taudbar
 	EAA_taukbar
@@ -1529,7 +1531,6 @@ varexo
 	EAB_epszn
 	EAB_epszt
 	EAB_gybar
-	EAB_pic4 //WHY
 	EAB_taucbar
 	EAB_taudbar
 	EAB_taukbar
@@ -1861,32 +1862,360 @@ model;
 	RW_ndi =  ((RW_nd^((RW_eta-1)/RW_eta)-RW_omega^(1/RW_eta)*RW_ndj^(1-1/RW_eta))/(1-RW_omega)^(1/RW_eta))^(1/(1-1/RW_eta));
 	US_ndi =  ((US_nd^((US_eta-1)/US_eta)-US_omega^(1/US_eta)*US_ndj^(1-1/US_eta))/(1-US_omega)^(1/US_eta))^(1/(1-1/US_eta));
 
-	//tradables pricing
+	//tradables pricing (domestic market)
+    //(eq.47)
+	EAA_phttilde =  EAA_pht*EAA_thetat/(EAA_thetat-1)*EAA_fh/EAA_gh;
+	EAB_phttilde =  EAB_pht*EAB_thetat/(EAB_thetat-1)*EAB_fh/EAB_gh;
+	RW_phttilde =  RW_pht*RW_thetat/(RW_thetat-1)*RW_fh/RW_gh;
+	US_phttilde =  US_pht*US_thetat/(US_thetat-1)*US_fh/US_gh;
 
+    //(eq.48)
+    EAA_fh =  EAA_mct*EAA_ht+EAA_lambdai(1)*EAA_beta*EAA_xih/EAA_lambdai*(EAA_piht(1)/(EAA_piht^EAA_chih*EAA_pi4target^(0.25*(1-EAA_chih))))^EAA_thetat*EAA_fh(1);
+	EAB_fh =  EAB_mct*EAB_ht+EAB_lambdai(1)*EAB_beta*EAB_xih/EAB_lambdai*(EAB_piht(1)/(EAB_piht^EAB_chih*EAB_pi4target^(0.25*(1-EAB_chih))))^EAB_thetat*EAB_fh(1);
+	RW_fh =  RW_mct*RW_ht+RW_lambdai(1)*RW_beta*RW_xih/RW_lambdai*(RW_piht(1)/(RW_piht^RW_chih*RW_pi4target^(0.25*(1-RW_chih))))^RW_thetat*RW_fh(1);
+	US_fh =  US_mct*US_ht+US_lambdai(1)*US_beta*US_xih/US_lambdai*(US_piht(1)/(US_piht^US_chih*US_pi4target^(0.25*(1-US_chih))))^US_thetat*US_fh(1);
+	
+    //(eq.49)
+    EAA_gh =  EAA_pht*EAA_ht+EAA_lambdai(1)*EAA_beta*EAA_xih/EAA_lambdai*(EAA_piht(1)/(EAA_piht^EAA_chih*EAA_pi4target^(0.25*(1-EAA_chih))))^(EAA_thetat-1)*EAA_gh(1);
+    EAB_gh =  EAB_pht*EAB_ht+EAB_lambdai(1)*EAB_beta*EAB_xih/EAB_lambdai*(EAB_piht(1)/(EAB_piht^EAB_chih*EAB_pi4target^(0.25*(1-EAB_chih))))^(EAB_thetat-1)*EAB_gh(1);
+    RW_gh =  RW_pht*RW_ht+RW_lambdai(1)*RW_beta*RW_xih/RW_lambdai*(RW_piht(1)/(RW_piht^RW_chih*RW_pi4target^(0.25*(1-RW_chih))))^(RW_thetat-1)*RW_gh(1);
+    US_gh =  US_pht*US_ht+US_lambdai(1)*US_beta*US_xih/US_lambdai*(US_piht(1)/(US_piht^US_chih*US_pi4target^(0.25*(1-US_chih))))^(US_thetat-1)*US_gh(1);
+    			
+    //(eq.50)
+	EAA_pht =  ((1-EAA_xih)*EAA_phttilde^(1-EAA_thetat)+EAA_xih*(EAA_pht(-1)/EAA_pic)^(1-EAA_thetat)*(EAA_pi4target^(0.25*(1-EAA_chih))*EAA_piht(-1)^EAA_chih)^(1-EAA_thetat))^(1/(1-EAA_thetat));
+	EAB_pht =  ((1-EAB_xih)*EAB_phttilde^(1-EAB_thetat)+EAB_xih*(EAB_pht(-1)/EAB_pic)^(1-EAB_thetat)*(EAB_pi4target^(0.25*(1-EAB_chih))*EAB_piht(-1)^EAB_chih)^(1-EAB_thetat))^(1/(1-EAB_thetat));
+	RW_pht =  ((1-RW_xih)*RW_phttilde^(1-RW_thetat)+RW_xih*(RW_pht(-1)/RW_pic)^(1-RW_thetat)*(RW_pi4target^(0.25*(1-RW_chih))*RW_piht(-1)^RW_chih)^(1-RW_thetat))^(1/(1-RW_thetat));
+	US_pht =  ((1-US_xih)*US_phttilde^(1-US_thetat)+US_xih*(US_pht(-1)/US_pic)^(1-US_thetat)*(US_pi4target^(0.25*(1-US_chih))*US_piht(-1)^US_chih)^(1-US_thetat))^(1/(1-US_thetat));
+
+    //(eq.51)
+	EAA_piht =  EAA_pic*EAA_pht/EAA_pht(-1);
+	EAB_piht =  EAB_pic*EAB_pht/EAB_pht(-1);
+	RW_piht =  RW_pic*RW_pht/RW_pht(-1);
+	US_piht =  US_pic*US_pht/US_pht(-1);
+
+	//tradables pricing (export)
+    //(eq.52)
+	EAAEAB_pimtilde =  EAAEAB_pim*EAB_thetat*EAB_cpim/(EAB_thetat-1)*EABEAA_fx/EABEAA_gx;
+	EAARW_pimtilde =  EAARW_pim*RW_thetat*RW_cpim/(RW_thetat-1)*RWEAA_fx/RWEAA_gx;
+	EAAUS_pimtilde =  EAAUS_pim*US_thetat*US_cpim/(US_thetat-1)*USEAA_fx/USEAA_gx;
+	EABEAA_pimtilde =  EABEAA_pim*EAA_thetat*EAA_cpim/(EAA_thetat-1)*EAAEAB_fx/EAAEAB_gx;
+	EABRW_pimtilde =  EABRW_pim*RW_thetat*RW_cpim/(RW_thetat-1)*RWEAB_fx/RWEAB_gx;
+	EABUS_pimtilde =  EABUS_pim*US_thetat*US_cpim/(US_thetat-1)*USEAB_fx/USEAB_gx;
+	RWEAA_pimtilde =  RWEAA_pim*EAA_thetat*EAA_cpim/(EAA_thetat-1)*EAARW_fx/EAARW_gx;
+	RWEAB_pimtilde =  RWEAB_pim*EAB_thetat*EAB_cpim/(EAB_thetat-1)*EABRW_fx/EABRW_gx;
+	RWUS_pimtilde =  RWUS_pim*US_thetat*US_cpim/(US_thetat-1)*USRW_fx/USRW_gx;
+	USEAA_pimtilde =  USEAA_pim*EAA_thetat*EAA_cpim/(EAA_thetat-1)*EAAUS_fx/EAAUS_gx;
+	USEAB_pimtilde =  USEAB_pim*EAB_thetat*EAB_cpim/(EAB_thetat-1)*EABUS_fx/EABUS_gx;
+	USRW_pimtilde =  USRW_pim*RW_thetat*RW_cpim/(RW_thetat-1)*RWUS_fx/RWUS_gx;
+	
+    //(eq.53)
+	EAAEAB_fx =  EAA_mct*EAB_size/EAA_size*EABEAA_im+EAA_lambdai(1)*EAA_beta*EAA_xix/EAA_lambdai*(EABEAA_piim(1)/(EABEAA_piim^EAA_chix*EAA_pi4target^(0.25*(1-EAA_chix))))^EAA_thetat*EAAEAB_fx(1);
+	EAARW_fx =  EAA_mct*RW_size/EAA_size*RWEAA_im+EAA_lambdai(1)*EAA_beta*EAA_xix/EAA_lambdai*(RWEAA_piim(1)/(EAA_pi4target^(0.25*(1-EAA_chix))*RWEAA_piim^EAA_chix))^EAA_thetat*EAARW_fx(1);
+	EAAUS_fx =  EAA_mct*US_size/EAA_size*USEAA_im+EAA_lambdai(1)*EAA_beta*EAA_xix/EAA_lambdai*(USEAA_piim(1)/(EAA_pi4target^(0.25*(1-EAA_chix))*USEAA_piim^EAA_chix))^EAA_thetat*EAAUS_fx(1);
+	EABEAA_fx =  EAB_mct*EAAEAB_im*EAA_size/EAB_size+EAB_lambdai(1)*EAB_beta*EAB_xix/EAB_lambdai*(EAAEAB_piim(1)/(EAAEAB_piim^EAB_chix*EAB_pi4target^(0.25*(1-EAB_chix))))^EAB_thetat*EABEAA_fx(1);
+	EABRW_fx =  EAB_mct*RWEAB_im*RW_size/EAB_size+EAB_lambdai(1)*EAB_beta*EAB_xix/EAB_lambdai*(RWEAB_piim(1)/(EAB_pi4target^(0.25*(1-EAB_chix))*RWEAB_piim^EAB_chix))^EAB_thetat*EABRW_fx(1);
+	EABUS_fx =  EAB_mct*USEAB_im*US_size/EAB_size+EAB_lambdai(1)*EAB_beta*EAB_xix/EAB_lambdai*(USEAB_piim(1)/(EAB_pi4target^(0.25*(1-EAB_chix))*USEAB_piim^EAB_chix))^EAB_thetat*EABUS_fx(1);
+	RWEAA_fx =  RW_mct*EAARW_im*EAA_size/RW_size+RW_lambdai(1)*RW_beta*RW_xix/RW_lambdai*(EAARW_piim(1)/(EAARW_piim^RW_chix*RW_pi4target^(0.25*(1-RW_chix))))^RW_thetat*RWEAA_fx(1);
+	RWEAB_fx =  RW_mct*EABRW_im*EAB_size/RW_size+RW_lambdai(1)*RW_beta*RW_xix/RW_lambdai*(EABRW_piim(1)/(RW_pi4target^(0.25*(1-RW_chix))*EABRW_piim^RW_chix))^RW_thetat*RWEAB_fx(1);
+	RWUS_fx =  RW_mct*USRW_im*US_size/RW_size+RW_lambdai(1)*RW_beta*RW_xix/RW_lambdai*(USRW_piim(1)/(RW_pi4target^(0.25*(1-RW_chix))*USRW_piim^RW_chix))^RW_thetat*RWUS_fx(1);
+	USEAA_fx =  US_mct*EAAUS_im*EAA_size/US_size+US_lambdai(1)*US_beta*US_xix/US_lambdai*(EAAUS_piim(1)/(EAAUS_piim^US_chix*US_pi4target^(0.25*(1-US_chix))))^US_thetat*USEAA_fx(1);
+	USEAB_fx =  US_mct*EABUS_im*EAB_size/US_size+US_lambdai(1)*US_beta*US_xix/US_lambdai*(EABUS_piim(1)/(US_pi4target^(0.25*(1-US_chix))*EABUS_piim^US_chix))^US_thetat*USEAB_fx(1);
+	USRW_fx =  US_mct*RWUS_im*RW_size/US_size+US_lambdai(1)*US_beta*US_xix/US_lambdai*(RWUS_piim(1)/(US_pi4target^(0.25*(1-US_chix))*RWUS_piim^US_chix))^US_thetat*USRW_fx(1);
+
+    //(eq.54)
+	EAAEAB_gx =  EABEAA_im*EABEAA_pim*EAAEAB_rer*EAB_size/EAA_size+EAA_lambdai(1)*EAA_beta*EAA_xix/EAA_lambdai*(EABEAA_piim(1)/(EABEAA_piim^EAA_chix*EAA_pi4target^(0.25*(1-EAA_chix))))^(EAA_thetat-1)*EAAEAB_gx(1);
+    EAARW_gx =  RWEAA_im*RWEAA_pim*EAARW_rer*RW_size/EAA_size+EAA_lambdai(1)*EAA_beta*EAA_xix/EAA_lambdai*(RWEAA_piim(1)/(EAA_pi4target^(0.25*(1-EAA_chix))*RWEAA_piim^EAA_chix))^(EAA_thetat-1)*EAARW_gx(1);
+	EAAUS_gx =  USEAA_im*USEAA_pim*EAAUS_rer*US_size/EAA_size+EAA_lambdai(1)*EAA_beta*EAA_xix/EAA_lambdai*(USEAA_piim(1)/(EAA_pi4target^(0.25*(1-EAA_chix))*USEAA_piim^EAA_chix))^(EAA_thetat-1)*EAAUS_gx(1);
+	EABEAA_gx =  EAAEAB_im*EAA_size*EAAEAB_pim*EABEAA_rer/EAB_size+EAB_lambdai(1)*EAB_beta*EAB_xix/EAB_lambdai*(EAAEAB_piim(1)/(EAAEAB_piim^EAB_chix*EAB_pi4target^(0.25*(1-EAB_chix))))^(EAB_thetat-1)*EABEAA_gx(1);
+	EABRW_gx =  RWEAB_im*RW_size*RWEAB_pim*EABRW_rer/EAB_size+EAB_lambdai(1)*EAB_beta*EAB_xix/EAB_lambdai*(RWEAB_piim(1)/(EAB_pi4target^(0.25*(1-EAB_chix))*RWEAB_piim^EAB_chix))^(EAB_thetat-1)*EABRW_gx(1);
+    EABUS_gx =  USEAB_im*US_size*USEAB_pim*EABUS_rer/EAB_size+EAB_lambdai(1)*EAB_beta*EAB_xix/EAB_lambdai*(USEAB_piim(1)/(EAB_pi4target^(0.25*(1-EAB_chix))*USEAB_piim^EAB_chix))^(EAB_thetat-1)*EABUS_gx(1);
+	RWEAA_gx =  EAARW_im*EAA_size*EAARW_pim*RWEAA_rer/RW_size+RW_lambdai(1)*RW_beta*RW_xix/RW_lambdai*(EAARW_piim(1)/(EAARW_piim^RW_chix*RW_pi4target^(0.25*(1-RW_chix))))^(RW_thetat-1)*RWEAA_gx(1);
+	RWUS_gx =  USRW_im*US_size*USRW_pim*RWUS_rer/RW_size+RW_lambdai(1)*RW_beta*RW_xix/RW_lambdai*(USRW_piim(1)/(RW_pi4target^(0.25*(1-RW_chix))*USRW_piim^RW_chix))^(RW_thetat-1)*RWUS_gx(1);
+	RWEAB_gx =  EABRW_im*EAB_size*EABRW_pim*RWEAB_rer/RW_size+RW_lambdai(1)*RW_beta*RW_xix/RW_lambdai*(EABRW_piim(1)/(RW_pi4target^(0.25*(1-RW_chix))*EABRW_piim^RW_chix))^(RW_thetat-1)*RWEAB_gx(1);
+	USEAB_gx =  EABUS_im*EAB_size*EABUS_pim*USEAB_rer/US_size+US_lambdai(1)*US_beta*US_xix/US_lambdai*(EABUS_piim(1)/(US_pi4target^(0.25*(1-US_chix))*EABUS_piim^US_chix))^(US_thetat-1)*USEAB_gx(1);
+	USEAA_gx =  EAAUS_im*EAA_size*EAAUS_pim*USEAA_rer/US_size+US_lambdai(1)*US_beta*US_xix/US_lambdai*(EAAUS_piim(1)/(EAAUS_piim^US_chix*US_pi4target^(0.25*(1-US_chix))))^(US_thetat-1)*USEAA_gx(1);
+	USRW_gx =  RWUS_im*RW_size*RWUS_pim*USRW_rer/US_size+US_lambdai(1)*US_beta*US_xix/US_lambdai*(RWUS_piim(1)/(US_pi4target^(0.25*(1-US_chix))*RWUS_piim^US_chix))^(US_thetat-1)*USRW_gx(1);
+	
+    //(eq.55)
+	EAAEAB_pim =  ((1-EAB_xix)*EAAEAB_pimtilde^(1-EAB_thetat)+EAB_xix*(EAAEAB_pim(-1)/EAA_pic)^(1-EAB_thetat)*(EAAEAB_piim(-1)^EAB_chix*EAA_pi4target^(0.25*(1-EAB_chih)))^(1-EAB_thetat))^((-1)/(1-EAB_thetat));
+    EAARW_pim =  ((1-RW_xix)*EAARW_pimtilde^(1-RW_thetat)+RW_xix*(EAARW_pim(-1)/EAA_pic)^(1-RW_thetat)*(EAARW_piim(-1)^RW_chix*EAA_pi4target^(0.25*(1-RW_chih)))^(1-RW_thetat))^((-1)/(1-RW_thetat));
+    EAAUS_pim =  ((1-US_xix)*EAAUS_pimtilde^(1-US_thetat)+US_xix*(EAAUS_pim(-1)/EAA_pic)^(1-US_thetat)*(EAAUS_piim(-1)^US_chix*EAA_pi4target^(0.25*(1-US_chih)))^(1-US_thetat))^((-1)/(1-US_thetat));
+    EABEAA_pim =  ((1-EAA_xix)*EABEAA_pimtilde^(1-EAA_thetat)+EAA_xix*(EABEAA_pim(-1)/EAB_pic)^(1-EAA_thetat)*(EABEAA_piim(-1)^EAA_chix*EAB_pi4target^(0.25*(1-EAA_chih)))^(1-EAA_thetat))^((-1)/(1-EAA_thetat));
+    EABRW_pim =  ((1-RW_xix)*EABRW_pimtilde^(1-RW_thetat)+RW_xix*(EABRW_pim(-1)/EAB_pic)^(1-RW_thetat)*(EABRW_piim(-1)^RW_chix*EAB_pi4target^(0.25*(1-RW_chih)))^(1-RW_thetat))^((-1)/(1-RW_thetat));
+    EABUS_pim =  ((1-US_xix)*EABUS_pimtilde^(1-US_thetat)+US_xix*(EABUS_pim(-1)/EAB_pic)^(1-US_thetat)*(EABUS_piim(-1)^US_chix*EAB_pi4target^(0.25*(1-US_chih)))^(1-US_thetat))^((-1)/(1-US_thetat));
+    RWEAA_pim =  ((1-EAA_xix)*RWEAA_pimtilde^(1-EAA_thetat)+EAA_xix*(RWEAA_pim(-1)/RW_pic)^(1-EAA_thetat)*(RWEAA_piim(-1)^EAA_chix*RW_pi4target^(0.25*(1-EAA_chih)))^(1-EAA_thetat))^((-1)/(1-EAA_thetat));
+    RWEAB_pim =  ((1-EAB_xix)*RWEAB_pimtilde^(1-EAB_thetat)+EAB_xix*(RWEAB_pim(-1)/RW_pic)^(1-EAB_thetat)*(RWEAB_piim(-1)^EAB_chix*RW_pi4target^(0.25*(1-EAB_chih)))^(1-EAB_thetat))^((-1)/(1-EAB_thetat));
+    RWUS_pim =  ((1-US_xix)*RWUS_pimtilde^(1-US_thetat)+US_xix*(RWUS_pim(-1)/RW_pic)^(1-US_thetat)*(RWUS_piim(-1)^US_chix*RW_pi4target^(0.25*(1-US_chih)))^(1-US_thetat))^((-1)/(1-US_thetat));
+    USEAA_pim =  ((1-EAA_xix)*USEAA_pimtilde^(1-EAA_thetat)+EAA_xix*(USEAA_pim(-1)/US_pic)^(1-EAA_thetat)*(USEAA_piim(-1)^EAA_chix*US_pi4target^(0.25*(1-EAA_chih)))^(1-EAA_thetat))^((-1)/(1-EAA_thetat));
+    USEAB_pim =  ((1-EAB_xix)*USEAB_pimtilde^(1-EAB_thetat)+EAB_xix*(USEAB_pim(-1)/US_pic)^(1-EAB_thetat)*(USEAB_piim(-1)^EAB_chix*US_pi4target^(0.25*(1-EAB_chih)))^(1-EAB_thetat))^((-1)/(1-EAB_thetat));
+    USRW_pim =  ((1-RW_xix)*USRW_pimtilde^(1-RW_thetat)+RW_xix*(USRW_pim(-1)/US_pic)^(1-RW_thetat)*(USRW_piim(-1)^RW_chix*US_pi4target^(0.25*(1-RW_chih)))^(1-RW_thetat))^((-1)/(1-RW_thetat));
+
+    //(eq.56)
+	EAAEAB_piim =  EAA_pic*EAAEAB_pim/EAAEAB_pim(-1);
+	EAARW_piim =  EAA_pic*EAARW_pim/EAARW_pim(-1);
+    EAAUS_piim =  EAA_pic*EAAUS_pim/EAAUS_pim(-1);
+    EABEAA_piim =  EAB_pic*EABEAA_pim/EABEAA_pim(-1);
+	EABRW_piim =  EAB_pic*EABRW_pim/EABRW_pim(-1);
+    EABUS_piim =  EAB_pic*EABUS_pim/EABUS_pim(-1);
+	RWEAA_piim =  RW_pic*RWEAA_pim/RWEAA_pim(-1);
+	RWEAB_piim =  RW_pic*RWEAB_pim/RWEAB_pim(-1);
+    RWUS_piim =  RW_pic*RWUS_pim/RWUS_pim(-1);
+    USEAA_piim =  US_pic*USEAA_pim/USEAA_pim(-1);
+    USEAB_piim =  US_pic*USEAB_pim/USEAB_pim(-1);
+	USRW_piim =  US_pic*USRW_pim/USRW_pim(-1);
+
+    //nontradable pricing
+    //(eq.57)
+	EAA_pnttilde =  EAA_pnt*EAA_thetan/(EAA_thetan-1)*EAA_fn/EAA_gn;
+	EAB_pnttilde =  EAB_pnt*EAB_thetan/(EAB_thetan-1)*EAB_fn/EAB_gn;
+	RW_pnttilde =  RW_pnt*RW_thetan/(RW_thetan-1)*RW_fn/RW_gn;
+	US_pnttilde =  US_pnt*US_thetan/(US_thetan-1)*US_fn/US_gn;
+
+    //(eq.58)
+	EAA_fn =  EAA_mcn*EAA_nt+EAA_lambdai(1)*EAA_beta*EAA_xin/EAA_lambdai*(EAA_pint(1)/(EAA_pint^EAA_chin*EAA_pi4target^(0.25*(1-EAA_chin))))^EAA_thetan*EAA_fn(1);
+	EAB_fn =  EAB_mcn*EAB_nt+EAB_lambdai(1)*EAB_beta*EAB_xin/EAB_lambdai*(EAB_pint(1)/(EAB_pint^EAB_chin*EAB_pi4target^(0.25*(1-EAB_chin))))^EAB_thetan*EAB_fn(1);
+	RW_fn =  RW_mcn*RW_nt+RW_lambdai(1)*RW_beta*RW_xin/RW_lambdai*(RW_pint(1)/(RW_pint^RW_chin*RW_pi4target^(0.25*(1-RW_chin))))^RW_thetan*RW_fn(1);
+	US_fn =  US_mcn*US_nt+US_lambdai(1)*US_beta*US_xin/US_lambdai*(US_pint(1)/(US_pint^US_chin*US_pi4target^(0.25*(1-US_chin))))^US_thetan*US_fn(1);
+
+	//(eq.59)
+	EAA_gn =  EAA_pnt*EAA_nt+EAA_lambdai(1)*EAA_beta*EAA_xin/EAA_lambdai*(EAA_pint(1)/(EAA_pint^EAA_chin*EAA_pi4target^(0.25*(1-EAA_chin))))^(EAA_thetan-1)*EAA_gn(1);
+	EAB_gn =  EAB_pnt*EAB_nt+EAB_lambdai(1)*EAB_beta*EAB_xin/EAB_lambdai*(EAB_pint(1)/(EAB_pint^EAB_chin*EAB_pi4target^(0.25*(1-EAB_chin))))^(EAB_thetan-1)*EAB_gn(1);
+	RW_gn =  RW_pnt*RW_nt+RW_lambdai(1)*RW_beta*RW_xin/RW_lambdai*(RW_pint(1)/(RW_pint^RW_chin*RW_pi4target^(0.25*(1-RW_chin))))^(RW_thetan-1)*RW_gn(1);
+	US_gn =  US_pnt*US_nt+US_lambdai(1)*US_beta*US_xin/US_lambdai*(US_pint(1)/(US_pint^US_chin*US_pi4target^(0.25*(1-US_chin))))^(US_thetan-1)*US_gn(1);
+
+	//(eq.60)
+	EAA_pnt =  ((1-EAA_xin)*EAA_pnttilde^(1-EAA_thetan)+EAA_xin*(EAA_pnt(-1)/EAA_pic)^(1-EAA_thetan)*(EAA_pi4target^(0.25*(1-EAA_chin))*EAA_pint(-1)^EAA_chin)^(1-EAA_thetan))^(1/(1-EAA_thetan));
+	EAB_pnt =  ((1-EAB_xin)*EAB_pnttilde^(1-EAB_thetan)+EAB_xin*(EAB_pnt(-1)/EAB_pic)^(1-EAB_thetan)*(EAB_pi4target^(0.25*(1-EAB_chin))*EAB_pint(-1)^EAB_chin)^(1-EAB_thetan))^(1/(1-EAB_thetan));
+	RW_pnt =  ((1-RW_xin)*RW_pnttilde^(1-RW_thetan)+RW_xin*(RW_pnt(-1)/RW_pic)^(1-RW_thetan)*(RW_pi4target^(0.25*(1-RW_chin))*RW_pint(-1)^RW_chin)^(1-RW_thetan))^(1/(1-RW_thetan));
+	US_pnt =  ((1-US_xin)*US_pnttilde^(1-US_thetan)+US_xin*(US_pnt(-1)/US_pic)^(1-US_thetan)*(US_pi4target^(0.25*(1-US_chin))*US_pint(-1)^US_chin)^(1-US_thetan))^(1/(1-US_thetan));
+
+	//(eq.61)
+	EAA_pint =  EAA_pic*EAA_pnt/EAA_pnt(-1);
+	EAB_pint =  EAB_pic*EAB_pnt/EAB_pnt(-1);
+	RW_pint =  RW_pic*RW_pnt/RW_pnt(-1);
+	US_pint =  US_pic*US_pnt/US_pnt(-1);
+
+    //final goods consumption bundle
+    //(eq.62)
+	EAA_qc =  (EAA_nuc^(1/EAA_muc)*EAA_ttc^(1-1/EAA_muc)+(1-EAA_nuc)^(1/EAA_muc)*EAA_ntc^(1-1/EAA_muc))^(EAA_muc/(EAA_muc-1));
+	EAB_qc =  (EAB_nuc^(1/EAB_muc)*EAB_ttc^(1-1/EAB_muc)+(1-EAB_nuc)^(1/EAB_muc)*EAB_ntc^(1-1/EAB_muc))^(EAB_muc/(EAB_muc-1));
+	RW_qc =  (RW_nuc^(1/RW_muc)*RW_ttc^(1-1/RW_muc)+(1-RW_nuc)^(1/RW_muc)*RW_ntc^(1-1/RW_muc))^(RW_muc/(RW_muc-1));
+	US_qc =  (US_nuc^(1/US_muc)*US_ttc^(1-1/US_muc)+(1-US_nuc)^(1/US_muc)*US_ntc^(1-1/US_muc))^(US_muc/(US_muc-1));
+
+    //(eq.63)
+	EAA_ntc =  EAA_qc*(1-EAA_nuc)*EAA_pnt^(-EAA_muc);
+	EAB_ntc =  EAB_qc*(1-EAB_nuc)*EAB_pnt^(-EAB_muc);
+	RW_ntc =  RW_qc*(1-RW_nuc)*RW_pnt^(-RW_muc);
+	US_ntc =  US_qc*(1-US_nuc)*US_pnt^(-US_muc);
+ 
+    //(eq.64)
+	EAA_ttc =  (EAA_nutc^(1/EAA_mutc)*EAA_htc^(1-1/EAA_mutc)+(1-EAA_nutc)^(1/EAA_mutc)*EAA_imc^(1-1/EAA_mutc))^(EAA_mutc/(EAA_mutc-1));
+	EAB_ttc =  (EAB_nutc^(1/EAB_mutc)*EAB_htc^(1-1/EAB_mutc)+(1-EAB_nutc)^(1/EAB_mutc)*EAB_imc^(1-1/EAB_mutc))^(EAB_mutc/(EAB_mutc-1));
+	RW_ttc =  (RW_nutc^(1/RW_mutc)*RW_htc^(1-1/RW_mutc)+(1-RW_nutc)^(1/RW_mutc)*RW_imc^(1-1/RW_mutc))^(RW_mutc/(RW_mutc-1));
+	US_ttc =  (US_nutc^(1/US_mutc)*US_htc^(1-1/US_mutc)+(1-US_nutc)^(1/US_mutc)*US_imc^(1-1/US_mutc))^(US_mutc/(US_mutc-1));
+
+    //(eq.65)
+	EAA_htc =  EAA_ttc*EAA_nutc*(EAA_pht/EAA_pttc)^(-EAA_mutc);
+	EAB_htc =  EAB_ttc*EAB_nutc*(EAB_pht/EAB_pttc)^(-EAB_mutc);
+	RW_htc =  RW_ttc*RW_nutc*(RW_pht/RW_pttc)^(-RW_mutc);
+	US_htc =  US_ttc*US_nutc*(US_pht/US_pttc)^(-US_mutc);
+
+    //(eq.66)
+	EAA_imc =  (EAAEAB_numc^(1/EAA_mumc)*((1-EAAEAB_gammaimc)*EAAEAB_imc)^(1-1/EAA_mumc)+EAAUS_numc^(1/EAA_mumc)*((1-EAAUS_gammaimc)*EAAUS_imc)^(1-1/EAA_mumc)+(1-EAAEAB_numc-EAAUS_numc)^(1/EAA_mumc)*((1-EAARW_gammaimc)*EAARW_imc)^(1-1/EAA_mumc))^(EAA_mumc/(EAA_mumc-1));
+	EAB_imc =  (EABEAA_numc^(1/EAB_mumc)*(EABEAA_imc*(1-EABEAA_gammaimc))^(1-1/EAB_mumc)+EABRW_numc^(1/EAB_mumc)*((1-EABRW_gammaimc)*EABRW_imc)^(1-1/EAB_mumc)+(1-EABEAA_numc-EABRW_numc)^(1/EAB_mumc)*((1-EABUS_gammaimc)*EABUS_imc)^(1-1/EAB_mumc))^(EAB_mumc/(EAB_mumc-1));
+	RW_imc =  (RWEAB_numc^(1/RW_mumc)*(RWEAB_imc*(1-RWEAB_gammaimc))^(1-1/RW_mumc)+RWUS_numc^(1/RW_mumc)*((1-RWUS_gammaimc)*RWUS_imc)^(1-1/RW_mumc)+(1-RWEAB_numc-RWUS_numc)^(1/RW_mumc)*(RWEAA_imc*(1-RWEAA_gammaimc))^(1-1/RW_mumc))^(RW_mumc/(RW_mumc-1));
+	US_imc =  (USEAA_numc^(1/US_mumc)*(USEAA_imc*(1-USEAA_gammaimc))^(1-1/US_mumc)+USRW_numc^(1/US_mumc)*(USRW_imc*(1-USRW_gammaimc))^(1-1/US_mumc)+(1-USEAA_numc-USRW_numc)^(1/US_mumc)*(USEAB_imc*(1-USEAB_gammaimc))^(1-1/US_mumc))^(US_mumc/(US_mumc-1));
+
+    //(eq.67)
+	EAARW_imc =  EAA_imc*(1-EAAEAB_numc-EAAUS_numc)*(EAARW_pim/(EAA_pimc*EAARW_gammaimcdag))^(-EAA_mumc)/(1-EAARW_gammaimc);
+    EAAUS_imc =  EAA_imc*EAAUS_numc*(EAAUS_pim/(EAA_pimc*EAAUS_gammaimcdag))^(-EAA_mumc)/(1-EAAUS_gammaimc);
+	EAAEAB_imc = EAA_imc*EAAEAB_numc*(EAAEAB_pim/(EAA_pimc*EAAEAB_gammaimcdag))^(-EAA_mumc)/(1-EAAEAB_gammaimc);    
+    EABEAA_imc =  EAB_imc*EABEAA_numc*(EABEAA_pim/(EAB_pimc*EABEAA_gammaimcdag))^(-EAB_mumc)/(1-EABEAA_gammaimc);
+	EABRW_imc =  EAB_imc*EABRW_numc*(EABRW_pim/(EAB_pimc*EABRW_gammaimcdag))^(-EAB_mumc)/(1-EABRW_gammaimc); 
+    EABUS_imc =  EAB_imc*(1-EABEAA_numc-EABRW_numc)*(EABUS_pim/(EAB_pimc*EABUS_gammaimcdag))^(-EAB_mumc)/(1-EABUS_gammaimc);	
+    RWEAA_imc =  RW_imc*(1-RWEAB_numc-RWUS_numc)*(RWEAA_pim/(RW_pimc*RWEAA_gammaimcdag))^(-RW_mumc)/(1-RWEAA_gammaimc);
+	RWEAB_imc =  RW_imc*RWEAB_numc*(RWEAB_pim/(RW_pimc*RWEAB_gammaimcdag))^(-RW_mumc)/(1-RWEAB_gammaimc);
+	RWUS_imc = RW_imc*RWUS_numc*(RWUS_pim/(RW_pimc*RWUS_gammaimcdag))^(-RW_mumc)/(1-RWUS_gammaimc);
+    USEAB_imc =  US_imc*(1-USEAA_numc-USRW_numc)*(USEAB_pim/(US_pimc*USEAB_gammaimcdag))^(-US_mumc)/(1-USEAB_gammaimc);
+    USEAA_imc = US_imc*USEAA_numc*(USEAA_pim/(US_pimc*USEAA_gammaimcdag))^(-US_mumc)/(1-USEAA_gammaimc);	
+	USRW_imc =  US_imc*USRW_numc*(USRW_pim/(US_pimc*USRW_gammaimcdag))^(-US_mumc)/(1-USRW_gammaimc);
+
+   	//(eq.68)
+	EAAEAB_gammaimc =  EAA_gammaimc1/2*(EAAEAB_imc/EAA_qc/(EAAEAB_imc(-1)/EAA_qc(-1))-1)^2;
+    EAARW_gammaimc =  EAA_gammaimc1/2*(EAARW_imc/EAA_qc/(EAARW_imc(-1)/EAA_qc(-1))-1)^2;
+	EAAUS_gammaimc =  EAA_gammaimc1/2*(EAAUS_imc/EAA_qc/(EAAUS_imc(-1)/EAA_qc(-1))-1)^2;
+    EABEAA_gammaimc =  EAB_gammaimc1/2*(EABEAA_imc/EAB_qc/(EABEAA_imc(-1)/EAB_qc(-1))-1)^2;
+	EABRW_gammaimc =  EAB_gammaimc1/2*(EABRW_imc/EAB_qc/(EABRW_imc(-1)/EAB_qc(-1))-1)^2;
+	USRW_gammaimc =  US_gammaimc1/2*(USRW_imc/US_qc/(USRW_imc(-1)/US_qc(-1))-1)^2;
+	USEAB_gammaimc =  US_gammaimc1/2*(USEAB_imc/US_qc/(USEAB_imc(-1)/US_qc(-1))-1)^2;
+	USEAA_gammaimc =  US_gammaimc1/2*(USEAA_imc/US_qc/(USEAA_imc(-1)/US_qc(-1))-1)^2;
+	RWUS_gammaimc =  RW_gammaimc1/2*(RWUS_imc/RW_qc/(RWUS_imc(-1)/RW_qc(-1))-1)^2;
+	RWEAB_gammaimc =  RW_gammaimc1/2*(RWEAB_imc/RW_qc/(RWEAB_imc(-1)/RW_qc(-1))-1)^2;
+	RWEAA_gammaimc =  RW_gammaimc1/2*(RWEAA_imc/RW_qc/(RWEAA_imc(-1)/RW_qc(-1))-1)^2;
+	EABUS_gammaimc =  EAB_gammaimc1/2*(EABUS_imc/EAB_qc/(EABUS_imc(-1)/EAB_qc(-1))-1)^2;
+
+	//(eq.69)
+	EAAEAB_gammaimcdag =  1-EAAEAB_gammaimc-EAAEAB_imc/EAA_qc*EAA_gammaimc1*(EAAEAB_imc/EAA_qc/(EAAEAB_imc(-1)/EAA_qc(-1))-1)/(EAAEAB_imc(-1)/EAA_qc(-1));
+	EAARW_gammaimcdag =  1-EAARW_gammaimc-EAARW_imc/EAA_qc*EAA_gammaimc1*(EAARW_imc/EAA_qc/(EAARW_imc(-1)/EAA_qc(-1))-1)/(EAARW_imc(-1)/EAA_qc(-1));
+	EABEAA_gammaimcdag =  1-EABEAA_gammaimc-EABEAA_imc/EAB_qc*EAB_gammaimc1*(EABEAA_imc/EAB_qc/(EABEAA_imc(-1)/EAB_qc(-1))-1)/(EABEAA_imc(-1)/EAB_qc(-1));
+	EABRW_gammaimcdag =  1-EABRW_gammaimc-EABRW_imc/EAB_qc*EAB_gammaimc1*(EABRW_imc/EAB_qc/(EABRW_imc(-1)/EAB_qc(-1))-1)/(EABRW_imc(-1)/EAB_qc(-1));
+	EAAUS_gammaimcdag =  1-EAAUS_gammaimc-EAAUS_imc/EAA_qc*EAA_gammaimc1*(EAAUS_imc/EAA_qc/(EAAUS_imc(-1)/EAA_qc(-1))-1)/(EAAUS_imc(-1)/EAA_qc(-1));
+	EABUS_gammaimcdag =  1-EABUS_gammaimc-EABUS_imc/EAB_qc*EAB_gammaimc1*(EABUS_imc/EAB_qc/(EABUS_imc(-1)/EAB_qc(-1))-1)/(EABUS_imc(-1)/EAB_qc(-1));
+    RWEAA_gammaimcdag =  1-RWEAA_gammaimc-RWEAA_imc/RW_qc*RW_gammaimc1*(RWEAA_imc/RW_qc/(RWEAA_imc(-1)/RW_qc(-1))-1)/(RWEAA_imc(-1)/RW_qc(-1));
+	RWEAB_gammaimcdag =  1-RWEAB_gammaimc-RWEAB_imc/RW_qc*RW_gammaimc1*(RWEAB_imc/RW_qc/(RWEAB_imc(-1)/RW_qc(-1))-1)/(RWEAB_imc(-1)/RW_qc(-1));
+    RWUS_gammaimcdag =  1-RWUS_gammaimc-RWUS_imc/RW_qc*RW_gammaimc1*(RWUS_imc/RW_qc/(RWUS_imc(-1)/RW_qc(-1))-1)/(RWUS_imc(-1)/RW_qc(-1));
+	USEAA_gammaimcdag =  1-USEAA_gammaimc-USEAA_imc/US_qc*US_gammaimc1*(USEAA_imc/US_qc/(USEAA_imc(-1)/US_qc(-1))-1)/(USEAA_imc(-1)/US_qc(-1));
+	USEAB_gammaimcdag =  1-USEAB_gammaimc-USEAB_imc/US_qc*US_gammaimc1*(USEAB_imc/US_qc/(USEAB_imc(-1)/US_qc(-1))-1)/(USEAB_imc(-1)/US_qc(-1));
+	USRW_gammaimcdag =  1-USRW_gammaimc-USRW_imc/US_qc*US_gammaimc1*(USRW_imc/US_qc/(USRW_imc(-1)/US_qc(-1))-1)/(USRW_imc(-1)/US_qc(-1));
+
+    //final goods investment bundle
+	//(eq.70)
+	EAA_qi =  (EAA_nui^(1/EAA_mui)*EAA_tti^(1-1/EAA_mui)+(1-EAA_nui)^(1/EAA_mui)*EAA_nti^(1-1/EAA_mui))^(EAA_mui/(EAA_mui-1));
+	EAB_qi =  (EAB_nui^(1/EAB_mui)*EAB_tti^(1-1/EAB_mui)+(1-EAB_nui)^(1/EAB_mui)*EAB_nti^(1-1/EAB_mui))^(EAB_mui/(EAB_mui-1));
+	RW_qi =  (RW_nui^(1/RW_mui)*RW_tti^(1-1/RW_mui)+(1-RW_nui)^(1/RW_mui)*RW_nti^(1-1/RW_mui))^(RW_mui/(RW_mui-1));
+	US_qi =  (US_nui^(1/US_mui)*US_tti^(1-1/US_mui)+(1-US_nui)^(1/US_mui)*US_nti^(1-1/US_mui))^(US_mui/(US_mui-1));
+
+    //(eq.71)
+	EAA_nti =  EAA_qi*(1-EAA_nui)*(EAA_pnt/EAA_pi)^(-EAA_mui);
+	EAB_nti =  EAB_qi*(1-EAB_nui)*(EAB_pnt/EAB_pi)^(-EAB_mui);
+	RW_nti =  RW_qi*(1-RW_nui)*(RW_pnt/RW_pi)^(-RW_mui);
+	US_nti =  US_qi*(1-US_nui)*(US_pnt/US_pi)^(-US_mui);
+
+    //(eq.72)
+	EAA_tti =  (EAA_nuti^(1/EAA_muti)*EAA_hti^(1-1/EAA_muti)+(1-EAA_nuti)^(1/EAA_muti)*EAA_imi^(1-1/EAA_muti))^(EAA_muti/(EAA_muti-1));
+	EAB_tti =  (EAB_nuti^(1/EAB_muti)*EAB_hti^(1-1/EAB_muti)+(1-EAB_nuti)^(1/EAB_muti)*EAB_imi^(1-1/EAB_muti))^(EAB_muti/(EAB_muti-1));
+	RW_tti =  (RW_nuti^(1/RW_muti)*RW_hti^(1-1/RW_muti)+(1-RW_nuti)^(1/RW_muti)*RW_imi^(1-1/RW_muti))^(RW_muti/(RW_muti-1));
+	US_tti =  (US_nuti^(1/US_muti)*US_hti^(1-1/US_muti)+(1-US_nuti)^(1/US_muti)*US_imi^(1-1/US_muti))^(US_muti/(US_muti-1));
+
+    //(eq.73)
+	EAA_hti =  EAA_tti*EAA_nuti*(EAA_pht/EAA_ptti)^(-EAA_muti);
+	EAB_hti =  EAB_tti*EAB_nuti*(EAB_pht/EAB_ptti)^(-EAB_muti);
+	RW_hti =  RW_tti*RW_nuti*(RW_pht/RW_ptti)^(-RW_muti);
+	US_hti =  US_tti*US_nuti*(US_pht/US_ptti)^(-US_muti);
+
+    //(eq.74)
+	EAB_imi =  (EABEAA_numi^(1/EAB_mumi)*(EABEAA_imi*(1-EABEAA_gammaimi))^(1-1/EAB_mumi)+EABRW_numi^(1/EAB_mumi)*((1-EABRW_gammaimi)*EABRW_imi)^(1-1/EAB_mumi)+(1-EABEAA_numi-EABRW_numi)^(1/EAB_mumi)*((1-EABUS_gammaimi)*EABUS_imi)^(1-1/EAB_mumi))^(EAB_mumi/(EAB_mumi-1));
+	EAA_imi =  (EAAEAB_numi^(1/EAA_mumi)*((1-EAAEAB_gammaimi)*EAAEAB_imi)^(1-1/EAA_mumi)+EAAUS_numi^(1/EAA_mumi)*((1-EAAUS_gammaimi)*EAAUS_imi)^(1-1/EAA_mumi)+(1-EAAEAB_numi-EAAUS_numi)^(1/EAA_mumi)*((1-EAARW_gammaimi)*EAARW_imi)^(1-1/EAA_mumi))^(EAA_mumi/(EAA_mumi-1));
+	RW_imi =  (RWEAB_numi^(1/RW_mumi)*(RWEAB_imi*(1-RWEAB_gammaimi))^(1-1/RW_mumi)+RWUS_numi^(1/RW_mumi)*((1-RWUS_gammaimi)*RWUS_imi)^(1-1/RW_mumi)+(1-RWEAB_numi-RWUS_numi)^(1/RW_mumi)*(RWEAA_imi*(1-RWEAA_gammaimi))^(1-1/RW_mumi))^(RW_mumi/(RW_mumi-1));
+	US_imi =  (USEAA_numi^(1/US_mumi)*(USEAA_imi*(1-USEAA_gammaimi))^(1-1/US_mumi)+USRW_numi^(1/US_mumi)*(USRW_imi*(1-USRW_gammaimi))^(1-1/US_mumi)+(1-USEAA_numi-USRW_numi)^(1/US_mumi)*(USEAB_imi*(1-USEAB_gammaimi))^(1-1/US_mumi))^(US_mumi/(US_mumi-1));
+
+	//(eq.75)
+	EAARW_imi =  EAA_imi*(1-EAAEAB_numi-EAAUS_numi)*(EAARW_pim/(EAA_pimi*EAARW_gammaimidag))^(-EAA_mumi)/(1-EAARW_gammaimi);
+	EAAUS_imi =  EAA_imi*EAAUS_numi*(EAAUS_pim/(EAA_pimi*EAAUS_gammaimidag))^(-EAA_mumi)/(1-EAAUS_gammaimi);
+	EABEAA_imi =  EAB_imi*EABEAA_numi*(EABEAA_pim/(EAB_pimi*EABEAA_gammaimidag))^(-EAB_mumi)/(1-EABEAA_gammaimi);
+	EABUS_imi =  EAB_imi*(1-EABEAA_numi-EABRW_numi)*(EABUS_pim/(EAB_pimi*EABUS_gammaimidag))^(-EAB_mumi)/(1-EABUS_gammaimi);
+	RWEAA_imi =  RW_imi*(1-RWEAB_numi-RWUS_numi)*(RWEAA_pim/(RW_pimi*RWEAA_gammaimidag))^(-RW_mumi)/(1-RWEAA_gammaimi);
+	RWEAB_imi =  RW_imi*RWEAB_numi*(RWEAB_pim/(RW_pimi*RWEAB_gammaimidag))^(-RW_mumi)/(1-RWEAB_gammaimi);
+	USEAB_imi =  US_imi*(1-USEAA_numi-USRW_numi)*(USEAB_pim/(US_pimi*USEAB_gammaimidag))^(-US_mumi)/(1-USEAB_gammaimi);
+    EAAEAB_imi = EAA_imi*EAAEAB_numi*(EAAEAB_pim/(EAA_pimi*EAAEAB_gammaimidag))^(-EAA_mumi)/(1-EAAEAB_gammaimi);
+	EABRW_imi = EAB_imi*EABRW_numi*(EABRW_pim/(EAB_pimi*EABRW_gammaimidag))^(-EAB_mumi)/(1-EABRW_gammaimi);
+    RWUS_imi = RW_imi*RWUS_numi*(RWUS_pim/(RW_pimi*RWUS_gammaimidag))^(-RW_mumi)/(1-RWUS_gammaimi);
+    USEAA_imi = US_imi*USEAA_numi*(USEAA_pim/(US_pimi*USEAA_gammaimidag))^(-US_mumi)/(1-USEAA_gammaimi);
+    USRW_imi =  US_imi*USRW_numi*(USRW_pim/(US_pimi*USRW_gammaimidag))^(-US_mumi)/(1-USRW_gammaimi);
+
+    //(eq.76)
+	EAAEAB_gammaimi =  EAA_gammaimi1/2*(EAAEAB_imi/EAA_qi/(EAAEAB_imi(-1)/EAA_qi(-1))-1)^2;
+	EAARW_gammaimi =  EAA_gammaimi1/2*(EAARW_imi/EAA_qi/(EAARW_imi(-1)/EAA_qi(-1))-1)^2;
+	EABEAA_gammaimi =  EAB_gammaimi1/2*(EABEAA_imi/EAB_qi/(EABEAA_imi(-1)/EAB_qi(-1))-1)^2;
+	EABRW_gammaimi =  EAB_gammaimi1/2*(EABRW_imi/EAB_qi/(EABRW_imi(-1)/EAB_qi(-1))-1)^2;
+	USRW_gammaimi =  US_gammaimi1/2*(USRW_imi/US_qi/(USRW_imi(-1)/US_qi(-1))-1)^2;
+	USEAB_gammaimi =  US_gammaimi1/2*(USEAB_imi/US_qi/(USEAB_imi(-1)/US_qi(-1))-1)^2;
+	USEAA_gammaimi =  US_gammaimi1/2*(USEAA_imi/US_qi/(USEAA_imi(-1)/US_qi(-1))-1)^2;
+	RWUS_gammaimi =  RW_gammaimi1/2*(RWUS_imi/RW_qi/(RWUS_imi(-1)/RW_qi(-1))-1)^2;
+	RWEAB_gammaimi =  RW_gammaimi1/2*(RWEAB_imi/RW_qi/(RWEAB_imi(-1)/RW_qi(-1))-1)^2;
+	RWEAA_gammaimi =  RW_gammaimi1/2*(RWEAA_imi/RW_qi/(RWEAA_imi(-1)/RW_qi(-1))-1)^2;
+	EABUS_gammaimi =  EAB_gammaimi1/2*(EABUS_imi/EAB_qi/(EABUS_imi(-1)/EAB_qi(-1))-1)^2;
+	EAAUS_gammaimi =  EAA_gammaimi1/2*(EAAUS_imi/EAA_qi/(EAAUS_imi(-1)/EAA_qi(-1))-1)^2;
+
+	//(eq.77)
+	EAAEAB_gammaimidag =  1-EAAEAB_gammaimi-EAAEAB_imi/EAA_qi/(EAAEAB_imi(-1)/EAA_qi(-1))*EAA_gammaimi1*(EAAEAB_imi/EAA_qi/(EAAEAB_imi(-1)/EAA_qi)-1);
+	EAARW_gammaimidag =  1-EAARW_gammaimi-EAARW_imi/EAA_qi/(EAARW_imi(-1)/EAA_qi(-1))*EAA_gammaimi1*(EAARW_imi/EAA_qi/(EAARW_imi(-1)/EAA_qi)-1);
+	EABEAA_gammaimidag =  1-EABEAA_gammaimi-EABEAA_imi/EAB_qi/(EABEAA_imi(-1)/EAB_qi(-1))*EAB_gammaimi1*(EABEAA_imi/EAB_qi/(EABEAA_imi(-1)/EAB_qi)-1);
+	EABRW_gammaimidag =  1-EABRW_gammaimi-EABRW_imi/EAB_qi/(EABRW_imi(-1)/EAB_qi(-1))*EAB_gammaimi1*(EABRW_imi/EAB_qi/(EABRW_imi(-1)/EAB_qi)-1);
+	EAAUS_gammaimidag =  1-EAAUS_gammaimi-EAAUS_imi/EAA_qi/(EAAUS_imi(-1)/EAA_qi(-1))*EAA_gammaimi1*(EAAUS_imi/EAA_qi/(EAAUS_imi(-1)/EAA_qi)-1);
+	EABUS_gammaimidag =  1-EABUS_gammaimi-EABUS_imi/EAB_qi/(EABUS_imi(-1)/EAB_qi(-1))*EAB_gammaimi1*(EABUS_imi/EAB_qi/(EABUS_imi(-1)/EAB_qi)-1);
+	RWEAA_gammaimidag =  1-RWEAA_gammaimi-RWEAA_imi/RW_qi/(RWEAA_imi(-1)/RW_qi(-1))*RW_gammaimi1*(RWEAA_imi/RW_qi/(RWEAA_imi(-1)/RW_qi)-1);
+	RWEAB_gammaimidag =  1-RWEAB_gammaimi-RWEAB_imi/RW_qi/(RWEAB_imi(-1)/RW_qi(-1))*RW_gammaimi1*(RWEAB_imi/RW_qi/(RWEAB_imi(-1)/RW_qi)-1);
+	RWUS_gammaimidag =  1-RWUS_gammaimi-RWUS_imi/RW_qi/(RWUS_imi(-1)/RW_qi(-1))*RW_gammaimi1*(RWUS_imi/RW_qi/(RWUS_imi(-1)/RW_qi)-1);
+	USEAA_gammaimidag =  1-USEAA_gammaimi-USEAA_imi/US_qi/(USEAA_imi(-1)/US_qi(-1))*US_gammaimi1*(USEAA_imi/US_qi/(USEAA_imi(-1)/US_qi)-1);
+	USEAB_gammaimidag =  1-USEAB_gammaimi-USEAB_imi/US_qi/(USEAB_imi(-1)/US_qi(-1))*US_gammaimi1*(USEAB_imi/US_qi/(USEAB_imi(-1)/US_qi)-1);
+	USRW_gammaimidag =  1-USRW_gammaimi-USRW_imi/US_qi/(USRW_imi(-1)/US_qi(-1))*US_gammaimi1*(USRW_imi/US_qi/(USRW_imi(-1)/US_qi)-1);
+
+    //consumption prices
+    //(eq.78)
+    // 1^(1-EAA_muc) = (EAA_nuc)*EAA_pttc^(1-EAA_muc)+(1-EAA_nuc)*EAA_pnt^(1-EAA_muc);
+    // 1^(1-EAB_muc) = (EAB_nuc)*EAB_pttc^(1-EAB_muc)+(1-EAB_nuc)*EAB_pnt^(1-EAB_muc);
+    // 1^(1-RW_muc) = (RW_nuc)*RW_pttc^(1-RW_muc)+(1-RW_nuc)*RW_pnt^(1-RW_muc);
+    // 1^(1-US_muc) = (US_nuc)*US_pttc^(1-US_muc)+(1-US_nuc)*US_pnt^(1-US_muc);
+
+    //(eq.79)
+	EAA_pttc =  (EAA_nutc*EAA_pht^(1-EAA_mutc)+(1-EAA_nutc)*EAA_pimc^(1-EAA_mutc))^(1/(1-EAA_mutc));
+	EAB_pttc =  (EAB_nutc*EAB_pht^(1-EAB_mutc)+(1-EAB_nutc)*EAB_pimc^(1-EAB_mutc))^(1/(1-EAB_mutc));
+	RW_pttc =  (RW_nutc*RW_pht^(1-RW_mutc)+(1-RW_nutc)*RW_pimc^(1-RW_mutc))^(1/(1-RW_mutc));	
+    US_pttc =  (US_nutc*US_pht^(1-US_mutc)+(1-US_nutc)*US_pimc^(1-US_mutc))^(1/(1-US_mutc));
+
+    //(eq.80)
+    EAA_pimc =  (EAAEAB_numc*(EAAEAB_pim/EAAEAB_gammaimcdag)^(1-EAA_mumc)+EAAUS_numc*(EAAUS_pim/EAAUS_gammaimcdag)^(1-EAA_mumc)+(1-EAAEAB_numc-EAAUS_numc)*(EAARW_pim/EAARW_gammaimcdag)^(1-EAA_mumc))^(1/(1-EAA_mumc));
+	EAB_pimc =  (EABEAA_numc*(EABEAA_pim/EABEAA_gammaimcdag)^(1-EAB_mumc)+EABRW_numc*(EABRW_pim/EABRW_gammaimcdag)^(1-EAB_mumc)+(1-EABEAA_numc-EABRW_numc)*(EABUS_pim/EABUS_gammaimcdag)^(1-EAB_mumc))^(1/(1-EAB_mumc));
+	RW_pimc =  (RWEAB_numc*(RWEAB_pim/RWEAB_gammaimcdag)^(1-RW_mumc)+RWUS_numc*(RWUS_pim/RWUS_gammaimcdag)^(1-RW_mumc)+(1-RWEAB_numc-RWUS_numc)*(RWEAA_pim/RWEAA_gammaimcdag)^(1-RW_mumc))^(1/(1-RW_mumc));
+	US_pimc =  (USEAA_numc*(USEAA_pim/USEAA_gammaimcdag)^(1-US_mumc)+USRW_numc*(USRW_pim/USRW_gammaimcdag)^(1-US_mumc)+(1-USEAA_numc-USRW_numc)*(USEAB_pim/USEAB_gammaimcdag)^(1-US_mumc))^(1/(1-US_mumc));
+
+    //(eq.81)
+    // EAA_pi = ((EAA_nui)*EAA_ptti^(1-EAA_mui)+(1-EAA_nui)*(EAA_pnt)^(1-EAA_mui))^(1/(1-EAA_mui));
+    // EAB_pi = ((EAB_nui)*EAB_ptti^(1-EAB_mui)+(1-EAB_nui)*(EAB_pnt)^(1-EAB_mui))^(1/(1-EAB_mui));
+    // RW_pi = ((RW_nui)*RW_ptti^(1-RW_mui)+(1-RW_nui)*(RW_pnt)^(1-RW_mui))^(1/(1-RW_mui));
+    // US_pi = ((US_nui)*US_ptti^(1-US_mui)+(1-US_nui)*(US_pnt)^(1-US_mui))^(1/(1-US_mui));
+
+    //(eq.82)
+	EAA_ptti =  (EAA_nuti*EAA_pht^(1-EAA_muti)+(1-EAA_nuti)*EAA_pimi^(1-EAA_muti))^(1/(EAA_muti-1));
+	EAB_ptti =  (EAB_nuti*EAB_pht^(1-EAB_muti)+(1-EAB_nuti)*EAB_pimi^(1-EAB_muti))^(1/(EAB_muti-1));
+	RW_ptti =  (RW_nuti*RW_pht^(1-RW_muti)+(1-RW_nuti)*RW_pimi^(1-RW_muti))^(1/(RW_muti-1));
+	US_ptti =  (US_nuti*US_pht^(1-US_muti)+(1-US_nuti)*US_pimi^(1-US_muti))^(1/(US_muti-1));
+
+    //(eq.83)
+	EAA_pimi =  (EAAEAB_numi*(EAAEAB_pim/EAAEAB_gammaimidag)^(1-EAA_mumi)+EAAUS_numi*(EAAUS_pim/EAAUS_gammaimidag)^(1-EAA_mumi)+(1-EAAEAB_numi-EAAUS_numi)*(EAARW_pim/EAARW_gammaimidag)^(1-EAA_mumi))^(1/(1-EAA_mumi));
+	EAB_pimi =  (EABEAA_numi*(EABEAA_pim/EABEAA_gammaimidag)^(1-EAB_mumi)+EABRW_numi*(EABRW_pim/EABRW_gammaimidag)^(1-EAB_mumi)+(1-EABEAA_numi-EABRW_numi)*(EABUS_pim/EABUS_gammaimidag)^(1-EAB_mumi))^(1/(1-EAB_mumi));
+	US_pimi =  (USEAA_numi*(USEAA_pim/USEAA_gammaimidag)^(1-US_mumi)+USRW_numi*(USRW_pim/USRW_gammaimidag)^(1-US_mumi)+(1-USEAA_numi-USRW_numi)*(USEAB_pim/USEAB_gammaimidag)^(1-US_mumi))^(1/(1-US_mumi));
+	RW_pimi =  (RWEAB_numi*(RWEAB_pim/RWEAB_gammaimidag)^(1-RW_mumi)+RWUS_numi*(RWUS_pim/RWUS_gammaimidag)^(1-RW_mumi)+(1-RWEAB_numi-RWUS_numi)*(RWEAA_pim/RWEAA_gammaimidag)^(1-RW_mumi))^(1/(1-RW_mumi));
+
+    //monetary authority
+    //(eq.84)
+    EAA_r^4-1 = EA_phirr*(EAA_r(-1)^4-1)+(1-EA_phirr)*(EAA_rrstar^4*EAA_pi4target-1+EA_phirpi*(EA_pic4-EAA_pi4target))+EA_phirgy*(EA_ygrowth-1)+EA_epsr;
+    EAB_r^4-1 = EA_phirr*(EAB_r(-1)^4-1)+(1-EA_phirr)*(EAB_rrstar^4*EAB_pi4target-1+EA_phirpi*(EA_pic4-EAB_pi4target))+EA_phirgy*(EA_ygrowth-1)+EA_epsr;
+    //(eq.85)
+    US_pic4 =  US_pi4target+(1+(US_r^4-1-US_phirr*(US_r(-1)^4-1)-US_phirgy*(US_ygrowth-1)-US_epsr)/(1-US_phirr)-US_pi4target*US_rrstar^4)/US_phirpi;
+	RW_pic4 =  RW_pi4target+(1+(RW_r^4-1-RW_phirr*(RW_r(-1)^4-1)-RW_phirgy*(RW_ygrowth-1)-RW_epsr)/(1-RW_phirr)-RW_pi4target*RW_rrstar^4)/RW_phirpi;
+    
+    //(eq.86)
+    EAA_pic =  EAA_pic4/(EAA_pic(-1)*EAA_pic(-2)*EAA_pic(-3));
+    EAB_pic =  EAB_pic4/(EAB_pic(-1)*EAB_pic(-2)*EAB_pic(-3));
+	RW_pic =  RW_pic4/(RW_pic(-1)*RW_pic(-2)*RW_pic(-3));
+	US_pic =  US_pic4/(US_pic(-1)*US_pic(-2)*US_pic(-3));
+
+    //fiscal authority
+    //(eq.87)
+    EAA_b =  (-(1/(EAA_r(-1)*(1-EAA_gammab(-1)))^(-1)))*((-EAA_pnt(-1))*EAA_g(-1)-EAA_tr(-1)-EAA_b(-1)*EAA_pic(-1)^(-1)-EAA_pic(-1)^(-1)*EAA_m(-2)+EAA_tauc(-1)*EAA_c(-1)+(EAA_taun(-1)+EAA_tauwh(-1))*(EAA_wi(-1)*EAA_ndi(-1)+EAA_wj(-1)*EAA_ndj(-1))+EAA_w(-1)*EAA_tauwf(-1)*EAA_nd(-1)+EAA_tauk(-1)*(EAA_rk(-1)*EAA_u(-1)-(EAA_delta+EAA_gammau(-1))*EAA_pi(-1))*EAA_k(-1)+EAA_taud(-1)*EAA_d(-1)+EAA_t(-1)+EAA_m(-1));
+	EAB_b =  (-(1/(EAB_r(-1)*(1-EAB_gammab(-1)))^(-1)))*((-EAB_pnt(-1))*EAB_g(-1)-EAB_tr(-1)-EAB_b(-1)*EAB_pic(-1)^(-1)-EAB_pic(-1)^(-1)*EAB_m(-2)+EAB_tauc(-1)*EAB_c(-1)+(EAB_taun(-1)+EAB_tauwh(-1))*(EAB_wi(-1)*EAB_ndi(-1)+EAB_wj(-1)*EAB_ndj(-1))+EAB_w(-1)*EAB_tauwf(-1)*EAB_nd(-1)+EAB_tauk(-1)*(EAB_rk(-1)*EAB_u(-1)-(EAB_delta+EAB_gammau(-1))*EAB_pi(-1))*EAB_k(-1)+EAB_taud(-1)*EAB_d(-1)+EAB_t(-1)+EAB_m(-1));
+	RW_b =  (-(1/RW_r(-1)^(-1)))*((-RW_pnt(-1))*RW_g(-1)-RW_tr(-1)-RW_b(-1)*RW_pic(-1)^(-1)-RW_pic(-1)^(-1)*RW_m(-2)+RW_tauc(-1)*RW_c(-1)+(RW_taun(-1)+RW_tauwh(-1))*(RW_wi(-1)*RW_ndi(-1)+RW_wj(-1)*RW_ndj(-1))+RW_w(-1)*RW_tauwf(-1)*RW_nd(-1)+RW_tauk(-1)*(RW_rk(-1)*RW_u(-1)-(RW_delta+RW_gammau(-1))*RW_pi(-1))*RW_k(-1)+RW_taud(-1)*RW_d(-1)+RW_t(-1)+RW_m(-1));
+	US_b =  (-(1/US_r(-1)^(-1)))*((-US_pnt(-1))*US_g(-1)-US_tr(-1)-US_b(-1)*US_pic(-1)^(-1)-US_pic(-1)^(-1)*US_m(-2)+US_tauc(-1)*US_c(-1)+(US_taun(-1)+US_tauwh(-1))*(US_wi(-1)*US_ndi(-1)+US_wj(-1)*US_ndj(-1))+US_w(-1)*US_tauwf(-1)*US_nd(-1)+US_tauk(-1)*(US_rk(-1)*US_u(-1)-(US_delta+US_gammau(-1))*US_pi(-1))*US_k(-1)+US_taud(-1)*US_d(-1)+US_t(-1)+US_m(-1));
+
+    //(eq.88)
+	EAA_g =  EAA_gy*EAA_pybar*EAA_ybar/EAA_pnt;
+	EAB_g =  EAB_gy*EAB_pybar*EAB_ybar/EAB_pnt;
+	RW_g =  RW_gy*RW_pybar*RW_ybar/RW_pnt;
+	US_g =  US_gy*US_pybar*US_ybar/US_pnt;
+    
+    //(eq.89)
+	EAA_tr =  EAA_ybar*EAA_pybar*EAA_try;
+	EAB_tr =  EAB_ybar*EAB_pybar*EAB_try;
+	RW_tr =  RW_ybar*RW_pybar*RW_try;
+	US_tr =  US_ybar*US_pybar*US_try;
 
 	//name='EAAEAB_excy'
 	EAAEAB_excy =  EABEAA_imc*EABEAA_pim*EAAEAB_rer*EAB_size/EAA_size/(EAA_py*EAA_y);
 
 	//name='EAAEAB_exiy'
 	EAAEAB_exiy =  EABEAA_imi*EABEAA_pim*EAAEAB_rer*EAB_size/EAA_size/(EAA_py*EAA_y);
-
-	//name='EAAEAB_fx'
-	EAAEAB_fx =  EAA_mct*EAB_size/EAA_size*EABEAA_im+EAA_lambdai(1)*EAA_beta*EAA_xix/EAA_lambdai*(EABEAA_piim(1)/(EABEAA_piim^EAA_chix*EAA_pi4target^(0.25*(1-EAA_chix))))^EAA_thetat*EAAEAB_fx(1);
-
-	//name='EAAEAB_gammaimc'
-	EAAEAB_gammaimc =  EAA_gammaimc1/2*(EAAEAB_imc/EAA_qc/(EAAEAB_imc(-1)/EAA_qc(-1))-1)^2;
-
-	//name='EAAEAB_gammaimcdag'
-	EAAEAB_gammaimcdag =  1-EAAEAB_gammaimc-EAAEAB_imc/EAA_qc*EAA_gammaimc1*(EAAEAB_imc/EAA_qc/(EAAEAB_imc(-1)/EAA_qc(-1))-1)/(EAAEAB_imc(-1)/EAA_qc(-1));
-
-	//name='EAAEAB_gammaimi'
-	EAAEAB_gammaimi =  EAA_gammaimi1/2*(EAAEAB_imi/EAA_qi/(EAAEAB_imi(-1)/EAA_qi(-1))-1)^2;
-
-	//name='EAAEAB_gammaimidag'
-	EAAEAB_gammaimidag =  1-EAAEAB_gammaimi-EAAEAB_imi/EAA_qi/(EAAEAB_imi(-1)/EAA_qi(-1))*EAA_gammaimi1*(EAAEAB_imi/EAA_qi/(EAAEAB_imi(-1)/EAA_qi)-1);
-
-	//name='EAAEAB_gx'
-	EAAEAB_gx =  EABEAA_im*EABEAA_pim*EAAEAB_rer*EAB_size/EAA_size+EAA_lambdai(1)*EAA_beta*EAA_xix/EAA_lambdai*(EABEAA_piim(1)/(EABEAA_piim^EAA_chix*EAA_pi4target^(0.25*(1-EAA_chix))))^(EAA_thetat-1)*EAAEAB_gx(1);
 
 	//name='EAAEAB_im'
 	EAAEAB_im =  EAAEAB_imc+EAAEAB_imi;
@@ -1899,15 +2228,6 @@ model;
 
 	//name='EAAEAB_nerdep'
 	EAAEAB_nerdep =  EAA_pic*EAA_rerdep/EAB_rerdep/EAB_pic;
-
-	//name='EAAEAB_piim'
-	EAAEAB_piim =  EAA_pic*EAAEAB_pim/EAAEAB_pim(-1);
-
-	//name='EAAEAB_pim'
-	EAAEAB_pim =  ((1-EAB_xix)*EAAEAB_pimtilde^(1-EAB_thetat)+EAB_xix*(EAAEAB_pim(-1)/EAA_pic)^(1-EAB_thetat)*(EAAEAB_piim(-1)^EAB_chix*EAA_pi4target^(0.25*(1-EAB_chih)))^(1-EAB_thetat))^((-1)/(1-EAB_thetat));
-
-	//name='EAAEAB_pimtilde'
-	EAAEAB_pimtilde =  EAAEAB_pim*EAB_thetat*EAB_cpim/(EAB_thetat-1)*EABEAA_fx/EABEAA_gx;
 
 	//name='EAAEAB_rer'
 	EAAEAB_rer =  EAA_rer/EAB_rer;
@@ -1933,47 +2253,14 @@ model;
 	//name='EAARW_exiy'
 	EAARW_exiy =  RWEAA_imi*RWEAA_pim*EAARW_rer*RW_size/EAA_size/(EAA_py*EAA_y);
 
-	//name='EAARW_fx'
-	EAARW_fx =  EAA_mct*RW_size/EAA_size*RWEAA_im+EAA_lambdai(1)*EAA_beta*EAA_xix/EAA_lambdai*(RWEAA_piim(1)/(EAA_pi4target^(0.25*(1-EAA_chix))*RWEAA_piim^EAA_chix))^EAA_thetat*EAARW_fx(1);
-
-	//name='EAARW_gammaimc'
-	EAARW_gammaimc =  EAA_gammaimc1/2*(EAARW_imc/EAA_qc/(EAARW_imc(-1)/EAA_qc(-1))-1)^2;
-
-	//name='EAARW_gammaimcdag'
-	EAARW_gammaimcdag =  1-EAARW_gammaimc-EAARW_imc/EAA_qc*EAA_gammaimc1*(EAARW_imc/EAA_qc/(EAARW_imc(-1)/EAA_qc(-1))-1)/(EAARW_imc(-1)/EAA_qc(-1));
-
-	//name='EAARW_gammaimi'
-	EAARW_gammaimi =  EAA_gammaimi1/2*(EAARW_imi/EAA_qi/(EAARW_imi(-1)/EAA_qi(-1))-1)^2;
-
-	//name='EAARW_gammaimidag'
-	EAARW_gammaimidag =  1-EAARW_gammaimi-EAARW_imi/EAA_qi/(EAARW_imi(-1)/EAA_qi(-1))*EAA_gammaimi1*(EAARW_imi/EAA_qi/(EAARW_imi(-1)/EAA_qi)-1);
-
-	//name='EAARW_gx'
-	EAARW_gx =  RWEAA_im*RWEAA_pim*EAARW_rer*RW_size/EAA_size+EAA_lambdai(1)*EAA_beta*EAA_xix/EAA_lambdai*(RWEAA_piim(1)/(EAA_pi4target^(0.25*(1-EAA_chix))*RWEAA_piim^EAA_chix))^(EAA_thetat-1)*EAARW_gx(1);
-
 	//name='EAARW_im'
 	EAARW_im =  EAARW_imc+EAARW_imi;
-
-	//name='EAARW_imc'
-	EAARW_imc =  EAA_imc*(1-EAAEAB_numc-EAAUS_numc)*(EAARW_pim/(EAA_pimc*EAARW_gammaimcdag))^(-EAA_mumc)/(1-EAARW_gammaimc);
 
 	//name='EAARW_imcy'
 	EAARW_imcy =  EAARW_pim*EAARW_imc/(EAA_py*EAA_y);
 
-	//name='EAARW_imi'
-	EAARW_imi =  EAA_imi*(1-EAAEAB_numi-EAAUS_numi)*(EAARW_pim/(EAA_pimi*EAARW_gammaimidag))^(-EAA_mumi)/(1-EAARW_gammaimi);
-
 	//name='EAARW_imiy'
 	EAARW_imiy =  EAARW_pim*EAARW_imi/(EAA_py*EAA_y);
-
-	//name='EAARW_piim'
-	EAARW_piim =  EAA_pic*EAARW_pim/EAARW_pim(-1);
-
-	//name='EAARW_pim'
-	EAARW_pim =  ((1-RW_xix)*EAARW_pimtilde^(1-RW_thetat)+RW_xix*(EAARW_pim(-1)/EAA_pic)^(1-RW_thetat)*(EAARW_piim(-1)^RW_chix*EAA_pi4target^(0.25*(1-RW_chih)))^(1-RW_thetat))^((-1)/(1-RW_thetat));
-
-	//name='EAARW_pimtilde'
-	EAARW_pimtilde =  EAARW_pim*RW_thetat*RW_cpim/(RW_thetat-1)*RWEAA_fx/RWEAA_gx;
 
 	//name='EAARW_rer'
 	EAARW_rer =  EAA_rer/RW_rer;
@@ -1999,47 +2286,14 @@ model;
 	//name='EAAUS_exiy'
 	EAAUS_exiy =  USEAA_imi*USEAA_pim*EAAUS_rer*US_size/EAA_size/(EAA_py*EAA_y);
 
-	//name='EAAUS_fx'
-	EAAUS_fx =  EAA_mct*US_size/EAA_size*USEAA_im+EAA_lambdai(1)*EAA_beta*EAA_xix/EAA_lambdai*(USEAA_piim(1)/(EAA_pi4target^(0.25*(1-EAA_chix))*USEAA_piim^EAA_chix))^EAA_thetat*EAAUS_fx(1);
-
-	//name='EAAUS_gammaimc'
-	EAAUS_gammaimc =  EAA_gammaimc1/2*(EAAUS_imc/EAA_qc/(EAAUS_imc(-1)/EAA_qc(-1))-1)^2;
-
-	//name='EAAUS_gammaimcdag'
-	EAAUS_gammaimcdag =  1-EAAUS_gammaimc-EAAUS_imc/EAA_qc*EAA_gammaimc1*(EAAUS_imc/EAA_qc/(EAAUS_imc(-1)/EAA_qc(-1))-1)/(EAAUS_imc(-1)/EAA_qc(-1));
-
-	//name='EAAUS_gammaimi'
-	EAAUS_gammaimi =  EAA_gammaimi1/2*(EAAUS_imi/EAA_qi/(EAAUS_imi(-1)/EAA_qi(-1))-1)^2;
-
-	//name='EAAUS_gammaimidag'
-	EAAUS_gammaimidag =  1-EAAUS_gammaimi-EAAUS_imi/EAA_qi/(EAAUS_imi(-1)/EAA_qi(-1))*EAA_gammaimi1*(EAAUS_imi/EAA_qi/(EAAUS_imi(-1)/EAA_qi)-1);
-
-	//name='EAAUS_gx'
-	EAAUS_gx =  USEAA_im*USEAA_pim*EAAUS_rer*US_size/EAA_size+EAA_lambdai(1)*EAA_beta*EAA_xix/EAA_lambdai*(USEAA_piim(1)/(EAA_pi4target^(0.25*(1-EAA_chix))*USEAA_piim^EAA_chix))^(EAA_thetat-1)*EAAUS_gx(1);
-
 	//name='EAAUS_im'
 	EAAUS_im =  EAAUS_imc+EAAUS_imi;
-
-	//name='EAAUS_imc'
-	EAAUS_imc =  EAA_imc*EAAUS_numc*(EAAUS_pim/(EAA_pimc*EAAUS_gammaimcdag))^(-EAA_mumc)/(1-EAAUS_gammaimc);
 
 	//name='EAAUS_imcy'
 	EAAUS_imcy =  EAAUS_pim*EAAUS_imc/(EAA_py*EAA_y);
 
-	//name='EAAUS_imi'
-	EAAUS_imi =  EAA_imi*EAAUS_numi*(EAAUS_pim/(EAA_pimi*EAAUS_gammaimidag))^(-EAA_mumi)/(1-EAAUS_gammaimi);
-
 	//name='EAAUS_imiy'
 	EAAUS_imiy =  EAAUS_pim*EAAUS_imi/(EAA_py*EAA_y);
-
-	//name='EAAUS_piim'
-	EAAUS_piim =  EAA_pic*EAAUS_pim/EAAUS_pim(-1);
-
-	//name='EAAUS_pim'
-	EAAUS_pim =  ((1-US_xix)*EAAUS_pimtilde^(1-US_thetat)+US_xix*(EAAUS_pim(-1)/EAA_pic)^(1-US_thetat)*(EAAUS_piim(-1)^US_chix*EAA_pi4target^(0.25*(1-US_chih)))^(1-US_thetat))^((-1)/(1-US_thetat));
-
-	//name='EAAUS_pimtilde'
-	EAAUS_pimtilde =  EAAUS_pim*US_thetat*US_cpim/(US_thetat-1)*USEAA_fx/USEAA_gx;
 
 	//name='EAAUS_rer'
 	EAAUS_rer =  EAA_rer;
@@ -2058,10 +2312,7 @@ model;
 
 	//name='EAAUS_weightim'
 	EAAUS_weightim =  EAAUS_rer*US_pex*EAAUS_im/(EAA_im*EAA_pim);
-
-	//name='EAA_b'
-	EAA_b =  (-(1/(EAA_r(-1)*(1-EAA_gammab(-1)))^(-1)))*((-EAA_pnt(-1))*EAA_g(-1)-EAA_tr(-1)-EAA_b(-1)*EAA_pic(-1)^(-1)-EAA_pic(-1)^(-1)*EAA_m(-2)+EAA_tauc(-1)*EAA_c(-1)+(EAA_taun(-1)+EAA_tauwh(-1))*(EAA_wi(-1)*EAA_ndi(-1)+EAA_wj(-1)*EAA_ndj(-1))+EAA_w(-1)*EAA_tauwf(-1)*EAA_nd(-1)+EAA_tauk(-1)*(EAA_rk(-1)*EAA_u(-1)-(EAA_delta+EAA_gammau(-1))*EAA_pi(-1))*EAA_k(-1)+EAA_taud(-1)*EAA_d(-1)+EAA_t(-1)+EAA_m(-1));
-
+	
 	//name='EAA_bf'
 	EAA_bf =  US_r(-1)*((-EAA_bh)/EAB_r(-1)*EAAEAB_rer(-1)/EAA_rer(-1)+EAA_bh(-1)*EAAEAB_rer(-2)/EAA_rer(-2)+EAA_bf(-1)+EAA_tb(-1)/EAA_rer(-1));
 
@@ -2098,35 +2349,14 @@ model;
 	//name='EAA_ex'
 	EAA_ex =  US_size/EAA_size*USEAA_im+EAB_size/EAA_size*EABEAA_im+RW_size/EAA_size*RWEAA_im;
 
-	//name='EAA_fh'
-	EAA_fh =  EAA_mct*EAA_ht+EAA_lambdai(1)*EAA_beta*EAA_xih/EAA_lambdai*(EAA_piht(1)/(EAA_piht^EAA_chih*EAA_pi4target^(0.25*(1-EAA_chih))))^EAA_thetat*EAA_fh(1);
-
-	//name='EAA_fn'
-	EAA_fn =  EAA_mcn*EAA_nt+EAA_lambdai(1)*EAA_beta*EAA_xin/EAA_lambdai*(EAA_pint(1)/(EAA_pint^EAA_chin*EAA_pi4target^(0.25*(1-EAA_chin))))^EAA_thetan*EAA_fn(1);
-
-	//name='EAA_g'
-	EAA_g =  EAA_gy*EAA_pybar*EAA_ybar/EAA_pnt;
-
 	//name='EAA_gammav'
 	EAA_gammav =  EAA_gammavi*EAA_ci*(1-EAA_omega)+EAA_gammavj*EAA_cj*EAA_omega;
-
-	//name='EAA_gh'
-	EAA_gh =  EAA_pht*EAA_ht+EAA_lambdai(1)*EAA_beta*EAA_xih/EAA_lambdai*(EAA_piht(1)/(EAA_piht^EAA_chih*EAA_pi4target^(0.25*(1-EAA_chih))))^(EAA_thetat-1)*EAA_gh(1);
-
-	//name='EAA_gn'
-	EAA_gn =  EAA_pnt*EAA_nt+EAA_lambdai(1)*EAA_beta*EAA_xin/EAA_lambdai*(EAA_pint(1)/(EAA_pint^EAA_chin*EAA_pi4target^(0.25*(1-EAA_chin))))^(EAA_thetan-1)*EAA_gn(1);
 
 	//name='EAA_gy'
 	EAA_gy =  (1-EAA_rhog)*EAA_gybar+EAA_rhog*EAA_gy(-1)+EAA_epsg;
 
 	//name='EAA_ht'
 	EAA_ht =  EAA_htc+EAA_hti;
-
-	//name='EAA_htc'
-	EAA_htc =  EAA_ttc*EAA_nutc*(EAA_pht/EAA_pttc)^(-EAA_mutc);
-
-	//name='EAA_hti'
-	EAA_hti =  EAA_tti*EAA_nuti*(EAA_pht/EAA_ptti)^(-EAA_muti);
 
 	//name='EAA_i'
 	EAA_i =  EAA_qi-EAA_gammau*EAA_k;
@@ -2137,14 +2367,8 @@ model;
 	//name='EAA_im'
 	EAA_im =  EAA_imc+EAA_imi;
 
-	//name='EAA_imc'
-	EAA_imc =  (EAAEAB_numc^(1/EAA_mumc)*((1-EAAEAB_gammaimc)*EAAEAB_imc)^(1-1/EAA_mumc)+EAAUS_numc^(1/EAA_mumc)*((1-EAAUS_gammaimc)*EAAUS_imc)^(1-1/EAA_mumc)+(1-EAAEAB_numc-EAAUS_numc)^(1/EAA_mumc)*((1-EAARW_gammaimc)*EAARW_imc)^(1-1/EAA_mumc))^(EAA_mumc/(EAA_mumc-1));
-
 	//name='EAA_imcy'
 	EAA_imcy =  EAA_imc*EAA_pimc/(EAA_py*EAA_y);
-
-	//name='EAA_imi'
-	EAA_imi =  (EAAEAB_numi^(1/EAA_mumi)*((1-EAAEAB_gammaimi)*EAAEAB_imi)^(1-1/EAA_mumi)+EAAUS_numi^(1/EAA_mumi)*((1-EAAUS_gammaimi)*EAAUS_imi)^(1-1/EAA_mumi)+(1-EAAEAB_numi-EAAUS_numi)^(1/EAA_mumi)*((1-EAARW_gammaimi)*EAARW_imi)^(1-1/EAA_mumi))^(EAA_mumi/(EAA_mumi-1));
 
 	//name='EAA_imiy'
 	EAA_imiy =  EAA_imi*EAA_pimi/(EAA_py*EAA_y);
@@ -2182,32 +2406,14 @@ model;
 	//name='EAA_nt'
 	EAA_nt =  EAA_g+EAA_ntc+EAA_nti;
 
-	//name='EAA_ntc'
-	EAA_ntc =  EAA_qc*(1-EAA_nuc)*EAA_pnt^(-EAA_muc);
-
-	//name='EAA_nti'
-	EAA_nti =  EAA_qi*(1-EAA_nui)*(EAA_pnt/EAA_pi)^(-EAA_mui);
-
 	//name='EAA_pex'
 	EAA_pex =  EABEAA_im*EABEAA_pim*EAAEAB_rer*EAB_size/EAA_size/EAA_ex+RWEAA_im*RWEAA_pim*EAARW_rer*RW_size/EAA_size/EAA_ex+USEAA_im*USEAA_pim*EAAUS_rer*US_size/EAA_size/EAA_ex;
-
-	//name='EAA_pht'
-	EAA_pht =  ((1-EAA_xih)*EAA_phttilde^(1-EAA_thetat)+EAA_xih*(EAA_pht(-1)/EAA_pic)^(1-EAA_thetat)*(EAA_pi4target^(0.25*(1-EAA_chih))*EAA_piht(-1)^EAA_chih)^(1-EAA_thetat))^(1/(1-EAA_thetat));
-
-	//name='EAA_phttilde'
-	EAA_phttilde =  EAA_pht*EAA_thetat/(EAA_thetat-1)*EAA_fh/EAA_gh;
-
-	//name='EAA_pic'
-	EAA_pic =  EAA_pic4/(EAA_pic(-1)*EAA_pic(-2)*EAA_pic(-3));
 
 	//name='EAB_pic'
 	EAB_pic =  EAA_pic*EAA_rerdep/EAB_rerdep;
 
 	//name='EAA_piex4'
 	EAA_piex4 =  EAA_pic4*EAA_pex/EAA_pex(-4);
-
-	//name='EAA_piht'
-	EAA_piht =  EAA_pic*EAA_pht/EAA_pht(-1);
 
 	//name='EAA_piimc'
 	EAA_piimc =  EAA_pic*EAA_pimc/EAA_pimc(-1);
@@ -2221,45 +2427,16 @@ model;
 	//name='EAA_pim'
 	EAA_pim =  (EAA_imc*EAA_pimc+EAA_imi*EAA_pimi)/EAA_im;
 
-	//name='EAA_pimc'
-	EAA_pimc =  (EAAEAB_numc*(EAAEAB_pim/EAAEAB_gammaimcdag)^(1-EAA_mumc)+EAAUS_numc*(EAAUS_pim/EAAUS_gammaimcdag)^(1-EAA_mumc)+(1-EAAEAB_numc-EAAUS_numc)*(EAARW_pim/EAARW_gammaimcdag)^(1-EAA_mumc))^(1/(1-EAA_mumc));
-
-	//name='EAA_pimi'
-	EAA_pimi =  (EAAEAB_numi*(EAAEAB_pim/EAAEAB_gammaimidag)^(1-EAA_mumi)+EAAUS_numi*(EAAUS_pim/EAAUS_gammaimidag)^(1-EAA_mumi)+(1-EAAEAB_numi-EAAUS_numi)*(EAARW_pim/EAARW_gammaimidag)^(1-EAA_mumi))^(1/(1-EAA_mumi));
-
-	//name='EAA_pint'
-	EAA_pint =  EAA_pic*EAA_pnt/EAA_pnt(-1);
-
 	//name='EAA_piw'
 	EAA_piw =  EAA_pic*EAA_w/EAA_w(-1);
 
 	//name='EAA_piw4'
 	EAA_piw4 =  EAA_piw*EAA_piw(-1)*EAA_piw(-2)*EAA_piw(-3);
 
-	//name='EAA_pnt'
-	EAA_pnt =  ((1-EAA_xin)*EAA_pnttilde^(1-EAA_thetan)+EAA_xin*(EAA_pnt(-1)/EAA_pic)^(1-EAA_thetan)*(EAA_pi4target^(0.25*(1-EAA_chin))*EAA_pint(-1)^EAA_chin)^(1-EAA_thetan))^(1/(1-EAA_thetan));
-
-	//name='EAA_pnttilde'
-	EAA_pnttilde =  EAA_pnt*EAA_thetan/(EAA_thetan-1)*EAA_fn/EAA_gn;
-
-	//name='EAA_pttc'
-	EAA_pttc =  (EAA_nutc*EAA_pht^(1-EAA_mutc)+(1-EAA_nutc)*EAA_pimc^(1-EAA_mutc))^(1/(1-EAA_mutc));
-
-	//name='EAA_ptti'
-	EAA_ptti =  (EAA_nuti*EAA_pht^(1-EAA_muti)+(1-EAA_nuti)*EAA_pimi^(1-EAA_muti))^(1/(EAA_muti-1));
-
 	//name='EAA_py'
 	EAA_py =  1/EAA_y*(USEAA_im*USEAA_pim*EAAUS_rer*US_size/EAA_size+RWEAA_im*RWEAA_pim*EAARW_rer*RW_size/EAA_size+EABEAA_im*EABEAA_pim*EAAEAB_rer*EAB_size/EAA_size+EAA_qc+EAA_pi*EAA_qi+EAA_pnt*EAA_g-EAAEAB_pim*(1-EAAEAB_gammaimc)*EAAEAB_imc/EAAEAB_gammaimcdag-EAAEAB_pim*(1-EAAEAB_gammaimi)*EAAEAB_imi/EAAEAB_gammaimidag-EAARW_pim*(1-EAARW_gammaimc)*EAARW_imc/EAARW_gammaimcdag-EAARW_pim*(1-EAARW_gammaimi)*EAARW_imi/EAARW_gammaimidag-EAAUS_pim*(1-EAAUS_gammaimc)*EAAUS_imc/EAAUS_gammaimcdag-EAAUS_pim*(1-EAAUS_gammaimi)*EAAUS_imi/EAAUS_gammaimidag);
 
-	//name='EAA_qc'
-	EAA_qc =  (EAA_nuc^(1/EAA_muc)*EAA_ttc^(1-1/EAA_muc)+(1-EAA_nuc)^(1/EAA_muc)*EAA_ntc^(1-1/EAA_muc))^(EAA_muc/(EAA_muc-1));
-
-	//name='EAA_qi'
-	EAA_qi =  (EAA_nui^(1/EAA_mui)*EAA_tti^(1-1/EAA_mui)+(1-EAA_nui)^(1/EAA_mui)*EAA_nti^(1-1/EAA_mui))^(EAA_mui/(EAA_mui-1));
-
-	
-
-	//name='EAA_reer'
+    //name='EAA_reer'
 	EAA_reer =  EAAEAB_rer^EAAEAB_weight*EAARW_rer^EAARW_weight*EAAUS_rer^EAAUS_weight;
 
 	//name='EAA_rer'
@@ -2325,9 +2502,6 @@ model;
 	//name='EAA_tot'
 	EAA_tot =  EAAUS_pim/(USEAA_pim*EAA_rer);
 
-	//name='EAA_tr'
-	EAA_tr =  EAA_ybar*EAA_pybar*EAA_try;
-
 	//name='EAA_tri'
 	EAA_tri =  EAA_tr*EAA_upsilontr;
 
@@ -2336,12 +2510,6 @@ model;
 
 	//name='EAA_try'
 	EAA_try =  (1-EAA_rhotr)*EAA_trybar+EAA_rhotr*EAA_try(-1)+EAA_epstr;
-
-	//name='EAA_ttc'
-	EAA_ttc =  (EAA_nutc^(1/EAA_mutc)*EAA_htc^(1-1/EAA_mutc)+(1-EAA_nutc)^(1/EAA_mutc)*EAA_imc^(1-1/EAA_mutc))^(EAA_mutc/(EAA_mutc-1));
-
-	//name='EAA_tti'
-	EAA_tti =  (EAA_nuti^(1/EAA_muti)*EAA_hti^(1-1/EAA_muti)+(1-EAA_nuti)^(1/EAA_muti)*EAA_imi^(1-1/EAA_muti))^(EAA_muti/(EAA_muti-1));
 
 	//name='EAA_ty'
 	EAA_ty =  EAA_t/(EAA_pybar*EAA_ybar);
@@ -2406,47 +2574,14 @@ model;
 	//name='EABEAA_exiy'
 	EABEAA_exiy =  EAAEAB_imi*EAAEAB_pim*EABEAA_rer*EAA_size/EAB_size/(EAB_py*EAB_y);
 
-	//name='EABEAA_fx'
-	EABEAA_fx =  EAB_mct*EAAEAB_im*EAA_size/EAB_size+EAB_lambdai(1)*EAB_beta*EAB_xix/EAB_lambdai*(EAAEAB_piim(1)/(EAAEAB_piim^EAB_chix*EAB_pi4target^(0.25*(1-EAB_chix))))^EAB_thetat*EABEAA_fx(1);
-
-	//name='EABEAA_gammaimc'
-	EABEAA_gammaimc =  EAB_gammaimc1/2*(EABEAA_imc/EAB_qc/(EABEAA_imc(-1)/EAB_qc(-1))-1)^2;
-
-	//name='EABEAA_gammaimcdag'
-	EABEAA_gammaimcdag =  1-EABEAA_gammaimc-EABEAA_imc/EAB_qc*EAB_gammaimc1*(EABEAA_imc/EAB_qc/(EABEAA_imc(-1)/EAB_qc(-1))-1)/(EABEAA_imc(-1)/EAB_qc(-1));
-
-	//name='EABEAA_gammaimi'
-	EABEAA_gammaimi =  EAB_gammaimi1/2*(EABEAA_imi/EAB_qi/(EABEAA_imi(-1)/EAB_qi(-1))-1)^2;
-
-	//name='EABEAA_gammaimidag'
-	EABEAA_gammaimidag =  1-EABEAA_gammaimi-EABEAA_imi/EAB_qi/(EABEAA_imi(-1)/EAB_qi(-1))*EAB_gammaimi1*(EABEAA_imi/EAB_qi/(EABEAA_imi(-1)/EAB_qi)-1);
-
-	//name='EABEAA_gx'
-	EABEAA_gx =  EAAEAB_im*EAA_size*EAAEAB_pim*EABEAA_rer/EAB_size+EAB_lambdai(1)*EAB_beta*EAB_xix/EAB_lambdai*(EAAEAB_piim(1)/(EAAEAB_piim^EAB_chix*EAB_pi4target^(0.25*(1-EAB_chix))))^(EAB_thetat-1)*EABEAA_gx(1);
-
 	//name='EABEAA_im'
 	EABEAA_im =  EABEAA_imc+EABEAA_imi;
-
-	//name='EABEAA_imc'
-	EABEAA_imc =  EAB_imc*EABEAA_numc*(EABEAA_pim/(EAB_pimc*EABEAA_gammaimcdag))^(-EAB_mumc)/(1-EABEAA_gammaimc);
 
 	//name='EABEAA_imcy'
 	EABEAA_imcy =  EABEAA_pim*EABEAA_imc/(EAB_py*EAB_y);
 
-	//name='EABEAA_imi'
-	EABEAA_imi =  EAB_imi*EABEAA_numi*(EABEAA_pim/(EAB_pimi*EABEAA_gammaimidag))^(-EAB_mumi)/(1-EABEAA_gammaimi);
-
 	//name='EABEAA_imiy'
 	EABEAA_imiy =  EABEAA_pim*EABEAA_imi/(EAB_py*EAB_y);
-
-	//name='EABEAA_piim'
-	EABEAA_piim =  EAB_pic*EABEAA_pim/EABEAA_pim(-1);
-
-	//name='EABEAA_pim'
-	EABEAA_pim =  ((1-EAA_xix)*EABEAA_pimtilde^(1-EAA_thetat)+EAA_xix*(EABEAA_pim(-1)/EAB_pic)^(1-EAA_thetat)*(EABEAA_piim(-1)^EAA_chix*EAB_pi4target^(0.25*(1-EAA_chih)))^(1-EAA_thetat))^((-1)/(1-EAA_thetat));
-
-	//name='EABEAA_pimtilde'
-	EABEAA_pimtilde =  EABEAA_pim*EAA_thetat*EAA_cpim/(EAA_thetat-1)*EAAEAB_fx/EAAEAB_gx;
 
 	//name='EABEAA_rer'
 	EABEAA_rer =  EAB_rer/EAA_rer;
@@ -2472,24 +2607,7 @@ model;
 	//name='EABRW_exiy'
 	EABRW_exiy =  RWEAB_imi*RWEAB_pim*EABRW_rer*RW_size/EAB_size/(EAB_py*EAB_y);
 
-	//name='EABRW_fx'
-	EABRW_fx =  EAB_mct*RWEAB_im*RW_size/EAB_size+EAB_lambdai(1)*EAB_beta*EAB_xix/EAB_lambdai*(RWEAB_piim(1)/(EAB_pi4target^(0.25*(1-EAB_chix))*RWEAB_piim^EAB_chix))^EAB_thetat*EABRW_fx(1);
-
-	//name='EABRW_gammaimc'
-	EABRW_gammaimc =  EAB_gammaimc1/2*(EABRW_imc/EAB_qc/(EABRW_imc(-1)/EAB_qc(-1))-1)^2;
-
-	//name='EABRW_gammaimcdag'
-	EABRW_gammaimcdag =  1-EABRW_gammaimc-EABRW_imc/EAB_qc*EAB_gammaimc1*(EABRW_imc/EAB_qc/(EABRW_imc(-1)/EAB_qc(-1))-1)/(EABRW_imc(-1)/EAB_qc(-1));
-
-	//name='EABRW_gammaimi'
-	EABRW_gammaimi =  EAB_gammaimi1/2*(EABRW_imi/EAB_qi/(EABRW_imi(-1)/EAB_qi(-1))-1)^2;
-
-	//name='EABRW_gammaimidag'
-	EABRW_gammaimidag =  1-EABRW_gammaimi-EABRW_imi/EAB_qi/(EABRW_imi(-1)/EAB_qi(-1))*EAB_gammaimi1*(EABRW_imi/EAB_qi/(EABRW_imi(-1)/EAB_qi)-1);
-
-	//name='EABRW_gx'
-	EABRW_gx =  RWEAB_im*RW_size*RWEAB_pim*EABRW_rer/EAB_size+EAB_lambdai(1)*EAB_beta*EAB_xix/EAB_lambdai*(RWEAB_piim(1)/(EAB_pi4target^(0.25*(1-EAB_chix))*RWEAB_piim^EAB_chix))^(EAB_thetat-1)*EABRW_gx(1);
-
+	
 	//name='EABRW_im'
 	EABRW_im =  EABRW_imc+EABRW_imi;
 
@@ -2498,15 +2616,6 @@ model;
 
 	//name='EABRW_imiy'
 	EABRW_imiy =  EABRW_pim*EABRW_imi/(EAB_py*EAB_y);
-
-	//name='EABRW_piim'
-	EABRW_piim =  EAB_pic*EABRW_pim/EABRW_pim(-1);
-
-	//name='EABRW_pim'
-	EABRW_pim =  ((1-RW_xix)*EABRW_pimtilde^(1-RW_thetat)+RW_xix*(EABRW_pim(-1)/EAB_pic)^(1-RW_thetat)*(EABRW_piim(-1)^RW_chix*EAB_pi4target^(0.25*(1-RW_chih)))^(1-RW_thetat))^((-1)/(1-RW_thetat));
-
-	//name='EABRW_pimtilde'
-	EABRW_pimtilde =  EABRW_pim*RW_thetat*RW_cpim/(RW_thetat-1)*RWEAB_fx/RWEAB_gx;
 
 	//name='EABRW_rer'
 	EABRW_rer =  EAB_rer/RW_rer;
@@ -2532,47 +2641,15 @@ model;
 	//name='EABUS_exiy'
 	EABUS_exiy =  USEAB_imi*USEAB_pim*EABUS_rer*US_size/EAB_size/(EAB_py*EAB_y);
 
-	//name='EABUS_fx'
-	EABUS_fx =  EAB_mct*USEAB_im*US_size/EAB_size+EAB_lambdai(1)*EAB_beta*EAB_xix/EAB_lambdai*(USEAB_piim(1)/(EAB_pi4target^(0.25*(1-EAB_chix))*USEAB_piim^EAB_chix))^EAB_thetat*EABUS_fx(1);
-
-	//name='EABUS_gammaimc'
-	EABUS_gammaimc =  EAB_gammaimc1/2*(EABUS_imc/EAB_qc/(EABUS_imc(-1)/EAB_qc(-1))-1)^2;
-
-	//name='EABUS_gammaimcdag'
-	EABUS_gammaimcdag =  1-EABUS_gammaimc-EABUS_imc/EAB_qc*EAB_gammaimc1*(EABUS_imc/EAB_qc/(EABUS_imc(-1)/EAB_qc(-1))-1)/(EABUS_imc(-1)/EAB_qc(-1));
-
-	//name='EABUS_gammaimi'
-	EABUS_gammaimi =  EAB_gammaimi1/2*(EABUS_imi/EAB_qi/(EABUS_imi(-1)/EAB_qi(-1))-1)^2;
-
-	//name='EABUS_gammaimidag'
-	EABUS_gammaimidag =  1-EABUS_gammaimi-EABUS_imi/EAB_qi/(EABUS_imi(-1)/EAB_qi(-1))*EAB_gammaimi1*(EABUS_imi/EAB_qi/(EABUS_imi(-1)/EAB_qi)-1);
-
-	//name='EABUS_gx'
-	EABUS_gx =  USEAB_im*US_size*USEAB_pim*EABUS_rer/EAB_size+EAB_lambdai(1)*EAB_beta*EAB_xix/EAB_lambdai*(USEAB_piim(1)/(EAB_pi4target^(0.25*(1-EAB_chix))*USEAB_piim^EAB_chix))^(EAB_thetat-1)*EABUS_gx(1);
-
+	
 	//name='EABUS_im'
 	EABUS_im =  EABUS_imc+EABUS_imi;
-
-	//name='EABUS_imc'
-	EABUS_imc =  EAB_imc*(1-EABEAA_numc-EABRW_numc)*(EABUS_pim/(EAB_pimc*EABUS_gammaimcdag))^(-EAB_mumc)/(1-EABUS_gammaimc);
 
 	//name='EABUS_imcy'
 	EABUS_imcy =  EABUS_pim*EABUS_imc/(EAB_py*EAB_y);
 
-	//name='EABUS_imi'
-	EABUS_imi =  EAB_imi*(1-EABEAA_numi-EABRW_numi)*(EABUS_pim/(EAB_pimi*EABUS_gammaimidag))^(-EAB_mumi)/(1-EABUS_gammaimi);
-
 	//name='EABUS_imiy'
 	EABUS_imiy =  EABUS_pim*EABUS_imi/(EAB_py*EAB_y);
-
-	//name='EABUS_piim'
-	EABUS_piim =  EAB_pic*EABUS_pim/EABUS_pim(-1);
-
-	//name='EABUS_pim'
-	EABUS_pim =  ((1-US_xix)*EABUS_pimtilde^(1-US_thetat)+US_xix*(EABUS_pim(-1)/EAB_pic)^(1-US_thetat)*(EABUS_piim(-1)^US_chix*EAB_pi4target^(0.25*(1-US_chih)))^(1-US_thetat))^((-1)/(1-US_thetat));
-
-	//name='EABUS_pimtilde'
-	EABUS_pimtilde =  EABUS_pim*US_thetat*US_cpim/(US_thetat-1)*USEAB_fx/USEAB_gx;
 
 	//name='EABUS_rer'
 	EABUS_rer =  EAB_rer;
@@ -2592,10 +2669,7 @@ model;
 	//name='EABUS_weightim'
 	EABUS_weightim =  EABUS_im*US_pex*EABUS_rer/(EAB_im*EAB_pim);
 
-	//name='EAB_b'
-	EAB_b =  (-(1/(EAB_r(-1)*(1-EAB_gammab(-1)))^(-1)))*((-EAB_pnt(-1))*EAB_g(-1)-EAB_tr(-1)-EAB_b(-1)*EAB_pic(-1)^(-1)-EAB_pic(-1)^(-1)*EAB_m(-2)+EAB_tauc(-1)*EAB_c(-1)+(EAB_taun(-1)+EAB_tauwh(-1))*(EAB_wi(-1)*EAB_ndi(-1)+EAB_wj(-1)*EAB_ndj(-1))+EAB_w(-1)*EAB_tauwf(-1)*EAB_nd(-1)+EAB_tauk(-1)*(EAB_rk(-1)*EAB_u(-1)-(EAB_delta+EAB_gammau(-1))*EAB_pi(-1))*EAB_k(-1)+EAB_taud(-1)*EAB_d(-1)+EAB_t(-1)+EAB_m(-1));
-
-	//name='EAB_bf'
+   	//name='EAB_bf'
 	EAB_bf =  US_r(-1)*((-EAB_bh)/EAA_r(-1)/EAB_rer(-1)+EAB_bh(-1)/EAB_rer(-2)+EAB_bf(-1)+EAB_tb(-1)/EAB_rer(-1));
 
 	//name='EAB_bh'
@@ -2631,35 +2705,14 @@ model;
 	//name='EAB_ex'
 	EAB_ex =  USEAB_im*US_size/EAB_size+EAAEAB_im*EAA_size/EAB_size+RWEAB_im*RW_size/EAB_size;
 
-	//name='EAB_fh'
-	EAB_fh =  EAB_mct*EAB_ht+EAB_lambdai(1)*EAB_beta*EAB_xih/EAB_lambdai*(EAB_piht(1)/(EAB_piht^EAB_chih*EAB_pi4target^(0.25*(1-EAB_chih))))^EAB_thetat*EAB_fh(1);
-
-	//name='EAB_fn'
-	EAB_fn =  EAB_mcn*EAB_nt+EAB_lambdai(1)*EAB_beta*EAB_xin/EAB_lambdai*(EAB_pint(1)/(EAB_pint^EAB_chin*EAB_pi4target^(0.25*(1-EAB_chin))))^EAB_thetan*EAB_fn(1);
-
-	//name='EAB_g'
-	EAB_g =  EAB_gy*EAB_pybar*EAB_ybar/EAB_pnt;
-
     //name='EAB_gammav'
 	EAB_gammav =  EAB_gammavi*EAB_ci*(1-EAB_omega)+EAB_gammavj*EAB_cj*EAB_omega;
 
-	//name='EAB_gh'
-	EAB_gh =  EAB_pht*EAB_ht+EAB_lambdai(1)*EAB_beta*EAB_xih/EAB_lambdai*(EAB_piht(1)/(EAB_piht^EAB_chih*EAB_pi4target^(0.25*(1-EAB_chih))))^(EAB_thetat-1)*EAB_gh(1);
-
-	//name='EAB_gn'
-	EAB_gn =  EAB_pnt*EAB_nt+EAB_lambdai(1)*EAB_beta*EAB_xin/EAB_lambdai*(EAB_pint(1)/(EAB_pint^EAB_chin*EAB_pi4target^(0.25*(1-EAB_chin))))^(EAB_thetan-1)*EAB_gn(1);
-
-	//name='EAB_gy'
+    //name='EAB_gy'
 	EAB_gy =  (1-EAB_rhog)*EAB_gybar+EAB_rhog*EAB_gy(-1)+EAB_epsg;
 
 	//name='EAB_ht'
 	EAB_ht =  EAB_htc+EAB_hti;
-
-	//name='EAB_htc'
-	EAB_htc =  EAB_ttc*EAB_nutc*(EAB_pht/EAB_pttc)^(-EAB_mutc);
-
-	//name='EAB_hti'
-	EAB_hti =  EAB_tti*EAB_nuti*(EAB_pht/EAB_ptti)^(-EAB_muti);
 
 	//name='EAB_i'
 	EAB_i =  EAB_qi-EAB_gammau*EAB_k;
@@ -2670,14 +2723,8 @@ model;
 	//name='EAB_im'
 	EAB_im =  EAB_imc+EAB_imi;
 
-	//name='EAB_imc'
-	EAB_imc =  (EABEAA_numc^(1/EAB_mumc)*(EABEAA_imc*(1-EABEAA_gammaimc))^(1-1/EAB_mumc)+EABRW_numc^(1/EAB_mumc)*((1-EABRW_gammaimc)*EABRW_imc)^(1-1/EAB_mumc)+(1-EABEAA_numc-EABRW_numc)^(1/EAB_mumc)*((1-EABUS_gammaimc)*EABUS_imc)^(1-1/EAB_mumc))^(EAB_mumc/(EAB_mumc-1));
-
 	//name='EAB_imcy'
 	EAB_imcy =  EAB_imc*EAB_pimc/(EAB_py*EAB_y);
-
-	//name='EAB_imi'
-	EAB_imi =  (EABEAA_numi^(1/EAB_mumi)*(EABEAA_imi*(1-EABEAA_gammaimi))^(1-1/EAB_mumi)+EABRW_numi^(1/EAB_mumi)*((1-EABRW_gammaimi)*EABRW_imi)^(1-1/EAB_mumi)+(1-EABEAA_numi-EABRW_numi)^(1/EAB_mumi)*((1-EABUS_gammaimi)*EABUS_imi)^(1-1/EAB_mumi))^(EAB_mumi/(EAB_mumi-1));
 
 	//name='EAB_imiy'
 	EAB_imiy =  EAB_imi*EAB_pimi/(EAB_py*EAB_y);
@@ -2715,29 +2762,11 @@ model;
 	//name='EAB_nt'
 	EAB_nt =  EAB_g+EAB_ntc+EAB_nti;
 
-	//name='EAB_ntc'
-	EAB_ntc =  EAB_qc*(1-EAB_nuc)*EAB_pnt^(-EAB_muc);
-
-	//name='EAB_nti'
-	EAB_nti =  EAB_qi*(1-EAB_nui)*(EAB_pnt/EAB_pi)^(-EAB_mui);
-
 	//name='EAB_pex'
 	EAB_pex =  EAAEAB_im*EAA_size*EAAEAB_pim*EABEAA_rer/EAB_size/EAB_ex+RWEAB_im*RW_size*RWEAB_pim*EABRW_rer/EAB_size/EAB_ex+USEAB_im*US_size*USEAB_pim*EABUS_rer/EAB_size/EAB_ex;
 
-	//name='EAB_pht'
-	EAB_pht =  ((1-EAB_xih)*EAB_phttilde^(1-EAB_thetat)+EAB_xih*(EAB_pht(-1)/EAB_pic)^(1-EAB_thetat)*(EAB_pi4target^(0.25*(1-EAB_chih))*EAB_piht(-1)^EAB_chih)^(1-EAB_thetat))^(1/(1-EAB_thetat));
-
-	//name='EAB_phttilde'
-	EAB_phttilde =  EAB_pht*EAB_thetat/(EAB_thetat-1)*EAB_fh/EAB_gh;
-
-	//name='EA_pic4'
-	EA_pic4 =  EAB_pi4target+(1+(EAB_r^4-1-EA_phirr*(EAB_r(-1)^4-1)-EA_phirgy*(EA_ygrowth-1)-EA_epsr)/(1-EA_phirr)-EAB_pi4target*EAB_rrstar^4)/EA_phirpi;
-
 	//name='EAB_piex4'
 	EAB_piex4 =  EAB_pic4*EAB_pex/EAB_pex(-4);
-
-	//name='EAB_piht'
-	EAB_piht =  EAB_pic*EAB_pht/EAB_pht(-1);
 
 	//name='EAB_piimc'
 	EAB_piimc =  EAB_pic*EAB_pimc/EAB_pimc(-1);
@@ -2751,41 +2780,14 @@ model;
 	//name='EAB_pim'
 	EAB_pim =  (EAB_imc*EAB_pimc+EAB_imi*EAB_pimi)/EAB_im;
 
-	//name='EAB_pimc'
-	EAB_pimc =  (EABEAA_numc*(EABEAA_pim/EABEAA_gammaimcdag)^(1-EAB_mumc)+EABRW_numc*(EABRW_pim/EABRW_gammaimcdag)^(1-EAB_mumc)+(1-EABEAA_numc-EABRW_numc)*(EABUS_pim/EABUS_gammaimcdag)^(1-EAB_mumc))^(1/(1-EAB_mumc));
-
-	//name='EAB_pimi'
-	EAB_pimi =  (EABEAA_numi*(EABEAA_pim/EABEAA_gammaimidag)^(1-EAB_mumi)+EABRW_numi*(EABRW_pim/EABRW_gammaimidag)^(1-EAB_mumi)+(1-EABEAA_numi-EABRW_numi)*(EABUS_pim/EABUS_gammaimidag)^(1-EAB_mumi))^(1/(1-EAB_mumi));
-
-	//name='EAB_pint'
-	EAB_pint =  EAB_pic*EAB_pnt/EAB_pnt(-1);
-
 	//name='EAB_piw'
 	EAB_piw =  EAB_pic*EAB_w/EAB_w(-1);
 
 	//name='EAB_piw4'
 	EAB_piw4 =  EAB_piw*EAB_piw(-1)*EAB_piw(-2)*EAB_piw(-3);
-
-	//name='EAB_pnt'
-	EAB_pnt =  ((1-EAB_xin)*EAB_pnttilde^(1-EAB_thetan)+EAB_xin*(EAB_pnt(-1)/EAB_pic)^(1-EAB_thetan)*(EAB_pi4target^(0.25*(1-EAB_chin))*EAB_pint(-1)^EAB_chin)^(1-EAB_thetan))^(1/(1-EAB_thetan));
-
-	//name='EAB_pnttilde'
-	EAB_pnttilde =  EAB_pnt*EAB_thetan/(EAB_thetan-1)*EAB_fn/EAB_gn;
-
-	//name='EAB_pttc'
-	EAB_pttc =  (EAB_nutc*EAB_pht^(1-EAB_mutc)+(1-EAB_nutc)*EAB_pimc^(1-EAB_mutc))^(1/(1-EAB_mutc));
-
-	//name='EAB_ptti'
-	EAB_ptti =  (EAB_nuti*EAB_pht^(1-EAB_muti)+(1-EAB_nuti)*EAB_pimi^(1-EAB_muti))^(1/(EAB_muti-1));
-
+	
 	//name='EAB_py'
 	EAB_py =  1/EAB_y*(USEAB_im*US_size*USEAB_pim*EABUS_rer/EAB_size+RWEAB_im*RW_size*RWEAB_pim*EABRW_rer/EAB_size+EAAEAB_im*EAA_size*EAAEAB_pim*EABEAA_rer/EAB_size+EAB_qc+EAB_pi*EAB_qi+EAB_pnt*EAB_g-EABEAA_pim*EABEAA_imc*(1-EABEAA_gammaimc)/EABEAA_gammaimcdag-EABEAA_pim*EABEAA_imi*(1-EABEAA_gammaimi)/EABEAA_gammaimidag-EABRW_pim*(1-EABRW_gammaimc)*EABRW_imc/EABRW_gammaimcdag-EABRW_pim*(1-EABRW_gammaimi)*EABRW_imi/EABRW_gammaimidag-EABUS_pim*(1-EABUS_gammaimc)*EABUS_imc/EABUS_gammaimcdag-EABUS_pim*(1-EABUS_gammaimi)*EABUS_imi/EABUS_gammaimidag);
-
-	//name='EAB_qc'
-	EAB_qc =  (EAB_nuc^(1/EAB_muc)*EAB_ttc^(1-1/EAB_muc)+(1-EAB_nuc)^(1/EAB_muc)*EAB_ntc^(1-1/EAB_muc))^(EAB_muc/(EAB_muc-1));
-
-	//name='EAB_qi'
-	EAB_qi =  (EAB_nui^(1/EAB_mui)*EAB_tti^(1-1/EAB_mui)+(1-EAB_nui)^(1/EAB_mui)*EAB_nti^(1-1/EAB_mui))^(EAB_mui/(EAB_mui-1));
 
 	//name='EAB_reer'
 	EAB_reer =  EABEAA_rer^EABEAA_weight*EABRW_rer^EABRW_weight*EABUS_rer^EABUS_weight;
@@ -2853,9 +2855,6 @@ model;
 	//name='EAB_tot'
 	EAB_tot =  EABUS_pim/(EAB_rer*USEAB_pim);
 
-	//name='EAB_tr'
-	EAB_tr =  EAB_ybar*EAB_pybar*EAB_try;
-
 	//name='EAB_tri'
 	EAB_tri =  EAB_tr*EAB_upsilontr;
 
@@ -2864,12 +2863,6 @@ model;
 
 	//name='EAB_try'
 	EAB_try =  (1-EAB_rhotr)*EAB_trybar+EAB_rhotr*EAB_try(-1)+EAB_epstr;
-
-	//name='EAB_ttc'
-	EAB_ttc =  (EAB_nutc^(1/EAB_mutc)*EAB_htc^(1-1/EAB_mutc)+(1-EAB_nutc)^(1/EAB_mutc)*EAB_imc^(1-1/EAB_mutc))^(EAB_mutc/(EAB_mutc-1));
-
-	//name='EAB_tti'
-	EAB_tti =  (EAB_nuti^(1/EAB_muti)*EAB_hti^(1-1/EAB_muti)+(1-EAB_nuti)^(1/EAB_muti)*EAB_imi^(1-1/EAB_muti))^(EAB_muti/(EAB_muti-1));
 
 	//name='EAB_ty'
 	EAB_ty =  EAB_t/(EAB_pybar*EAB_ybar);
@@ -2953,47 +2946,14 @@ model;
 	//name='RWEAA_exiy'
 	RWEAA_exiy =  EAARW_imi*EAARW_pim*RWEAA_rer*EAA_size/RW_size/(RW_py*RW_y);
 
-	//name='RWEAA_fx'
-	RWEAA_fx =  RW_mct*EAARW_im*EAA_size/RW_size+RW_lambdai(1)*RW_beta*RW_xix/RW_lambdai*(EAARW_piim(1)/(EAARW_piim^RW_chix*RW_pi4target^(0.25*(1-RW_chix))))^RW_thetat*RWEAA_fx(1);
-
-	//name='RWEAA_gammaimc'
-	RWEAA_gammaimc =  RW_gammaimc1/2*(RWEAA_imc/RW_qc/(RWEAA_imc(-1)/RW_qc(-1))-1)^2;
-
-	//name='RWEAA_gammaimcdag'
-	RWEAA_gammaimcdag =  1-RWEAA_gammaimc-RWEAA_imc/RW_qc*RW_gammaimc1*(RWEAA_imc/RW_qc/(RWEAA_imc(-1)/RW_qc(-1))-1)/(RWEAA_imc(-1)/RW_qc(-1));
-
-	//name='RWEAA_gammaimi'
-	RWEAA_gammaimi =  RW_gammaimi1/2*(RWEAA_imi/RW_qi/(RWEAA_imi(-1)/RW_qi(-1))-1)^2;
-
-	//name='RWEAA_gammaimidag'
-	RWEAA_gammaimidag =  1-RWEAA_gammaimi-RWEAA_imi/RW_qi/(RWEAA_imi(-1)/RW_qi(-1))*RW_gammaimi1*(RWEAA_imi/RW_qi/(RWEAA_imi(-1)/RW_qi)-1);
-
-	//name='RWEAA_gx'
-	RWEAA_gx =  EAARW_im*EAA_size*EAARW_pim*RWEAA_rer/RW_size+RW_lambdai(1)*RW_beta*RW_xix/RW_lambdai*(EAARW_piim(1)/(EAARW_piim^RW_chix*RW_pi4target^(0.25*(1-RW_chix))))^(RW_thetat-1)*RWEAA_gx(1);
-
 	//name='RWEAA_im'
 	RWEAA_im =  RWEAA_imc+RWEAA_imi;
-
-	//name='RWEAA_imc'
-	RWEAA_imc =  RW_imc*(1-RWEAB_numc-RWUS_numc)*(RWEAA_pim/(RW_pimc*RWEAA_gammaimcdag))^(-RW_mumc)/(1-RWEAA_gammaimc);
-
+    
 	//name='RWEAA_imcy'
 	RWEAA_imcy =  RWEAA_pim*RWEAA_imc/(RW_py*RW_y);
 
-	//name='RWEAA_imi'
-	RWEAA_imi =  RW_imi*(1-RWEAB_numi-RWUS_numi)*(RWEAA_pim/(RW_pimi*RWEAA_gammaimidag))^(-RW_mumi)/(1-RWEAA_gammaimi);
-
 	//name='RWEAA_imiy'
 	RWEAA_imiy =  RWEAA_pim*RWEAA_imi/(RW_py*RW_y);
-
-	//name='RWEAA_piim'
-	RWEAA_piim =  RW_pic*RWEAA_pim/RWEAA_pim(-1);
-
-	//name='RWEAA_pim'
-	RWEAA_pim =  ((1-EAA_xix)*RWEAA_pimtilde^(1-EAA_thetat)+EAA_xix*(RWEAA_pim(-1)/RW_pic)^(1-EAA_thetat)*(RWEAA_piim(-1)^EAA_chix*RW_pi4target^(0.25*(1-EAA_chih)))^(1-EAA_thetat))^((-1)/(1-EAA_thetat));
-
-	//name='RWEAA_pimtilde'
-	RWEAA_pimtilde =  RWEAA_pim*EAA_thetat*EAA_cpim/(EAA_thetat-1)*EAARW_fx/EAARW_gx;
 
 	//name='RWEAA_rer'
 	RWEAA_rer =  RW_rer/EAA_rer;
@@ -3019,47 +2979,14 @@ model;
 	//name='RWEAB_exiy'
 	RWEAB_exiy =  EABRW_imi*EABRW_pim*RWEAB_rer*EAB_size/RW_size/(RW_py*RW_y);
 
-	//name='RWEAB_fx'
-	RWEAB_fx =  RW_mct*EABRW_im*EAB_size/RW_size+RW_lambdai(1)*RW_beta*RW_xix/RW_lambdai*(EABRW_piim(1)/(RW_pi4target^(0.25*(1-RW_chix))*EABRW_piim^RW_chix))^RW_thetat*RWEAB_fx(1);
-
-	//name='RWEAB_gammaimc'
-	RWEAB_gammaimc =  RW_gammaimc1/2*(RWEAB_imc/RW_qc/(RWEAB_imc(-1)/RW_qc(-1))-1)^2;
-
-	//name='RWEAB_gammaimcdag'
-	RWEAB_gammaimcdag =  1-RWEAB_gammaimc-RWEAB_imc/RW_qc*RW_gammaimc1*(RWEAB_imc/RW_qc/(RWEAB_imc(-1)/RW_qc(-1))-1)/(RWEAB_imc(-1)/RW_qc(-1));
-
-	//name='RWEAB_gammaimi'
-	RWEAB_gammaimi =  RW_gammaimi1/2*(RWEAB_imi/RW_qi/(RWEAB_imi(-1)/RW_qi(-1))-1)^2;
-
-	//name='RWEAB_gammaimidag'
-	RWEAB_gammaimidag =  1-RWEAB_gammaimi-RWEAB_imi/RW_qi/(RWEAB_imi(-1)/RW_qi(-1))*RW_gammaimi1*(RWEAB_imi/RW_qi/(RWEAB_imi(-1)/RW_qi)-1);
-
-	//name='RWEAB_gx'
-	RWEAB_gx =  EABRW_im*EAB_size*EABRW_pim*RWEAB_rer/RW_size+RW_lambdai(1)*RW_beta*RW_xix/RW_lambdai*(EABRW_piim(1)/(RW_pi4target^(0.25*(1-RW_chix))*EABRW_piim^RW_chix))^(RW_thetat-1)*RWEAB_gx(1);
-
 	//name='RWEAB_im'
 	RWEAB_im =  RWEAB_imc+RWEAB_imi;
-
-	//name='RWEAB_imc'
-	RWEAB_imc =  RW_imc*RWEAB_numc*(RWEAB_pim/(RW_pimc*RWEAB_gammaimcdag))^(-RW_mumc)/(1-RWEAB_gammaimc);
 
 	//name='RWEAB_imcy'
 	RWEAB_imcy =  RWEAB_pim*RWEAB_imc/(RW_py*RW_y);
 
-	//name='RWEAB_imi'
-	RWEAB_imi =  RW_imi*RWEAB_numi*(RWEAB_pim/(RW_pimi*RWEAB_gammaimidag))^(-RW_mumi)/(1-RWEAB_gammaimi);
-
 	//name='RWEAB_imiy'
 	RWEAB_imiy =  RWEAB_pim*RWEAB_imi/(RW_py*RW_y);
-
-	//name='RWEAB_piim'
-	RWEAB_piim =  RW_pic*RWEAB_pim/RWEAB_pim(-1);
-
-	//name='RWEAB_pim'
-	RWEAB_pim =  ((1-EAB_xix)*RWEAB_pimtilde^(1-EAB_thetat)+EAB_xix*(RWEAB_pim(-1)/RW_pic)^(1-EAB_thetat)*(RWEAB_piim(-1)^EAB_chix*RW_pi4target^(0.25*(1-EAB_chih)))^(1-EAB_thetat))^((-1)/(1-EAB_thetat));
-
-	//name='RWEAB_pimtilde'
-	RWEAB_pimtilde =  RWEAB_pim*EAB_thetat*EAB_cpim/(EAB_thetat-1)*EABRW_fx/EABRW_gx;
 
 	//name='RWEAB_rer'
 	RWEAB_rer =  RW_rer/EAB_rer;
@@ -3085,24 +3012,6 @@ model;
 	//name='RWUS_exiy'
 	RWUS_exiy =  USRW_imi*USRW_pim*RWUS_rer*US_size/RW_size/(RW_py*RW_y);
 
-	//name='RWUS_fx'
-	RWUS_fx =  RW_mct*USRW_im*US_size/RW_size+RW_lambdai(1)*RW_beta*RW_xix/RW_lambdai*(USRW_piim(1)/(RW_pi4target^(0.25*(1-RW_chix))*USRW_piim^RW_chix))^RW_thetat*RWUS_fx(1);
-
-	//name='RWUS_gammaimc'
-	RWUS_gammaimc =  RW_gammaimc1/2*(RWUS_imc/RW_qc/(RWUS_imc(-1)/RW_qc(-1))-1)^2;
-
-	//name='RWUS_gammaimcdag'
-	RWUS_gammaimcdag =  1-RWUS_gammaimc-RWUS_imc/RW_qc*RW_gammaimc1*(RWUS_imc/RW_qc/(RWUS_imc(-1)/RW_qc(-1))-1)/(RWUS_imc(-1)/RW_qc(-1));
-
-	//name='RWUS_gammaimi'
-	RWUS_gammaimi =  RW_gammaimi1/2*(RWUS_imi/RW_qi/(RWUS_imi(-1)/RW_qi(-1))-1)^2;
-
-	//name='RWUS_gammaimidag'
-	RWUS_gammaimidag =  1-RWUS_gammaimi-RWUS_imi/RW_qi/(RWUS_imi(-1)/RW_qi(-1))*RW_gammaimi1*(RWUS_imi/RW_qi/(RWUS_imi(-1)/RW_qi)-1);
-
-	//name='RWUS_gx'
-	RWUS_gx =  USRW_im*US_size*USRW_pim*RWUS_rer/RW_size+RW_lambdai(1)*RW_beta*RW_xix/RW_lambdai*(USRW_piim(1)/(RW_pi4target^(0.25*(1-RW_chix))*USRW_piim^RW_chix))^(RW_thetat-1)*RWUS_gx(1);
-
 	//name='RWUS_im'
 	RWUS_im =  RWUS_imc+RWUS_imi;
 
@@ -3111,15 +3020,6 @@ model;
 
 	//name='RWUS_imiy'
 	RWUS_imiy =  RWUS_pim*RWUS_imi/(RW_py*RW_y);
-
-	//name='RWUS_piim'
-	RWUS_piim =  RW_pic*RWUS_pim/RWUS_pim(-1);
-
-	//name='RWUS_pim'
-	RWUS_pim =  ((1-US_xix)*RWUS_pimtilde^(1-US_thetat)+US_xix*(RWUS_pim(-1)/RW_pic)^(1-US_thetat)*(RWUS_piim(-1)^US_chix*RW_pi4target^(0.25*(1-US_chih)))^(1-US_thetat))^((-1)/(1-US_thetat));
-
-	//name='RWUS_pimtilde'
-	RWUS_pimtilde =  RWUS_pim*US_thetat*US_cpim/(US_thetat-1)*USRW_fx/USRW_gx;
 
 	//name='RWUS_rer'
 	RWUS_rer =  RW_rer;
@@ -3139,10 +3039,7 @@ model;
 	//name='RWUS_weightim'
 	RWUS_weightim =  RWUS_im*US_pex*RWUS_rer/(RW_im*RW_pim);
 
-	//name='RW_b'
-	RW_b =  (-(1/RW_r(-1)^(-1)))*((-RW_pnt(-1))*RW_g(-1)-RW_tr(-1)-RW_b(-1)*RW_pic(-1)^(-1)-RW_pic(-1)^(-1)*RW_m(-2)+RW_tauc(-1)*RW_c(-1)+(RW_taun(-1)+RW_tauwh(-1))*(RW_wi(-1)*RW_ndi(-1)+RW_wj(-1)*RW_ndj(-1))+RW_w(-1)*RW_tauwf(-1)*RW_nd(-1)+RW_tauk(-1)*(RW_rk(-1)*RW_u(-1)-(RW_delta+RW_gammau(-1))*RW_pi(-1))*RW_k(-1)+RW_taud(-1)*RW_d(-1)+RW_t(-1)+RW_m(-1));
-
-	//name='RW_bf'
+ 	//name='RW_bf'
 	RW_bf =  US_r(-1)*(RW_bf(-1)+RW_tb(-1)/RW_rer(-1));
 
 	//name='RW_by'
@@ -3175,35 +3072,14 @@ model;
 	//name='RW_ex'
 	RW_ex =  USRW_im*US_size/RW_size+EAARW_im*EAA_size/RW_size+EABRW_im*EAB_size/RW_size;
 
-	//name='RW_fh'
-	RW_fh =  RW_mct*RW_ht+RW_lambdai(1)*RW_beta*RW_xih/RW_lambdai*(RW_piht(1)/(RW_piht^RW_chih*RW_pi4target^(0.25*(1-RW_chih))))^RW_thetat*RW_fh(1);
-
-	//name='RW_fn'
-	RW_fn =  RW_mcn*RW_nt+RW_lambdai(1)*RW_beta*RW_xin/RW_lambdai*(RW_pint(1)/(RW_pint^RW_chin*RW_pi4target^(0.25*(1-RW_chin))))^RW_thetan*RW_fn(1);
-
-	//name='RW_g'
-	RW_g =  RW_gy*RW_pybar*RW_ybar/RW_pnt;
-
 	//name='RW_gammav'
 	RW_gammav =  RW_gammavi*RW_ci*(1-RW_omega)+RW_gammavj*RW_cj*RW_omega;
-
-	//name='RW_gh'
-	RW_gh =  RW_pht*RW_ht+RW_lambdai(1)*RW_beta*RW_xih/RW_lambdai*(RW_piht(1)/(RW_piht^RW_chih*RW_pi4target^(0.25*(1-RW_chih))))^(RW_thetat-1)*RW_gh(1);
-
-	//name='RW_gn'
-	RW_gn =  RW_pnt*RW_nt+RW_lambdai(1)*RW_beta*RW_xin/RW_lambdai*(RW_pint(1)/(RW_pint^RW_chin*RW_pi4target^(0.25*(1-RW_chin))))^(RW_thetan-1)*RW_gn(1);
 
 	//name='RW_gy'
 	RW_gy =  (1-RW_rhog)*RW_gybar+RW_rhog*RW_gy(-1)+RW_epsg;
 
 	//name='RW_ht'
 	RW_ht =  RW_htc+RW_hti;
-
-	//name='RW_htc'
-	RW_htc =  RW_ttc*RW_nutc*(RW_pht/RW_pttc)^(-RW_mutc);
-
-	//name='RW_hti'
-	RW_hti =  RW_tti*RW_nuti*(RW_pht/RW_ptti)^(-RW_muti);
 
 	//name='RW_i'
 	RW_i =  RW_qi-RW_gammau*RW_k;
@@ -3214,14 +3090,8 @@ model;
 	//name='RW_im'
 	RW_im =  RW_imc+RW_imi;
 
-	//name='RW_imc'
-	RW_imc =  (RWEAB_numc^(1/RW_mumc)*(RWEAB_imc*(1-RWEAB_gammaimc))^(1-1/RW_mumc)+RWUS_numc^(1/RW_mumc)*((1-RWUS_gammaimc)*RWUS_imc)^(1-1/RW_mumc)+(1-RWEAB_numc-RWUS_numc)^(1/RW_mumc)*(RWEAA_imc*(1-RWEAA_gammaimc))^(1-1/RW_mumc))^(RW_mumc/(RW_mumc-1));
-
 	//name='RW_imcy'
 	RW_imcy =  RW_imc*RW_pimc/(RW_py*RW_y);
-
-	//name='RW_imi'
-	RW_imi =  (RWEAB_numi^(1/RW_mumi)*(RWEAB_imi*(1-RWEAB_gammaimi))^(1-1/RW_mumi)+RWUS_numi^(1/RW_mumi)*((1-RWUS_gammaimi)*RWUS_imi)^(1-1/RW_mumi)+(1-RWEAB_numi-RWUS_numi)^(1/RW_mumi)*(RWEAA_imi*(1-RWEAA_gammaimi))^(1-1/RW_mumi))^(RW_mumi/(RW_mumi-1));
 
 	//name='RW_imiy'
 	RW_imiy =  RW_imi*RW_pimi/(RW_py*RW_y);
@@ -3259,32 +3129,13 @@ model;
 	//name='RW_nt'
 	RW_nt =  RW_g+RW_ntc+RW_nti;
 
-	//name='RW_ntc'
-	RW_ntc =  RW_qc*(1-RW_nuc)*RW_pnt^(-RW_muc);
-
-	//name='RW_nti'
-	RW_nti =  RW_qi*(1-RW_nui)*(RW_pnt/RW_pi)^(-RW_mui);
-
 	//name='RW_pex'
 	RW_pex =  EAARW_im*EAA_size*EAARW_pim*RWEAA_rer/RW_size/RW_ex+EABRW_im*EAB_size*EABRW_pim*RWEAB_rer/RW_size/RW_ex+USRW_im*US_size*USRW_pim*RWUS_rer/RW_size/RW_ex;
 
-	//name='RW_pht'
-	RW_pht =  ((1-RW_xih)*RW_phttilde^(1-RW_thetat)+RW_xih*(RW_pht(-1)/RW_pic)^(1-RW_thetat)*(RW_pi4target^(0.25*(1-RW_chih))*RW_piht(-1)^RW_chih)^(1-RW_thetat))^(1/(1-RW_thetat));
 
-	//name='RW_phttilde'
-	RW_phttilde =  RW_pht*RW_thetat/(RW_thetat-1)*RW_fh/RW_gh;
-
-	//name='RW_pic'
-	RW_pic =  RW_pic4/(RW_pic(-1)*RW_pic(-2)*RW_pic(-3));
-
-	//name='RW_pic4'
-	RW_pic4 =  RW_pi4target+(1+(RW_r^4-1-RW_phirr*(RW_r(-1)^4-1)-RW_phirgy*(RW_ygrowth-1)-RW_epsr)/(1-RW_phirr)-RW_pi4target*RW_rrstar^4)/RW_phirpi;
 
 	//name='RW_piex4'
 	RW_piex4 =  RW_pic4*RW_pex/RW_pex(-4);
-
-	//name='RW_piht'
-	RW_piht =  RW_pic*RW_pht/RW_pht(-1);
 
 	//name='RW_piimc'
 	RW_piimc =  RW_pic*RW_pimc/RW_pimc(-1);
@@ -3298,41 +3149,14 @@ model;
 	//name='RW_pim'
 	RW_pim =  (RW_imc*RW_pimc+RW_imi*RW_pimi)/RW_im;
 
-	//name='RW_pimc'
-	RW_pimc =  (RWEAB_numc*(RWEAB_pim/RWEAB_gammaimcdag)^(1-RW_mumc)+RWUS_numc*(RWUS_pim/RWUS_gammaimcdag)^(1-RW_mumc)+(1-RWEAB_numc-RWUS_numc)*(RWEAA_pim/RWEAA_gammaimcdag)^(1-RW_mumc))^(1/(1-RW_mumc));
-
-	//name='RW_pimi'
-	RW_pimi =  (RWEAB_numi*(RWEAB_pim/RWEAB_gammaimidag)^(1-RW_mumi)+RWUS_numi*(RWUS_pim/RWUS_gammaimidag)^(1-RW_mumi)+(1-RWEAB_numi-RWUS_numi)*(RWEAA_pim/RWEAA_gammaimidag)^(1-RW_mumi))^(1/(1-RW_mumi));
-
-	//name='RW_pint'
-	RW_pint =  RW_pic*RW_pnt/RW_pnt(-1);
-
 	//name='RW_piw'
 	RW_piw =  RW_pic*RW_w/RW_w(-1);
 
 	//name='RW_piw4'
 	RW_piw4 =  RW_piw*RW_piw(-1)*RW_piw(-2)*RW_piw(-3);
 
-	//name='RW_pnt'
-	RW_pnt =  ((1-RW_xin)*RW_pnttilde^(1-RW_thetan)+RW_xin*(RW_pnt(-1)/RW_pic)^(1-RW_thetan)*(RW_pi4target^(0.25*(1-RW_chin))*RW_pint(-1)^RW_chin)^(1-RW_thetan))^(1/(1-RW_thetan));
-
-	//name='RW_pnttilde'
-	RW_pnttilde =  RW_pnt*RW_thetan/(RW_thetan-1)*RW_fn/RW_gn;
-
-	//name='RW_pttc'
-	RW_pttc =  (RW_nutc*RW_pht^(1-RW_mutc)+(1-RW_nutc)*RW_pimc^(1-RW_mutc))^(1/(1-RW_mutc));
-
-	//name='RW_ptti'
-	RW_ptti =  (RW_nuti*RW_pht^(1-RW_muti)+(1-RW_nuti)*RW_pimi^(1-RW_muti))^(1/(RW_muti-1));
-
 	//name='RW_py'
 	RW_py =  1/RW_y*(USRW_im*US_size*USRW_pim*RWUS_rer/RW_size+EABRW_im*EAB_size*EABRW_pim*RWEAB_rer/RW_size+EAARW_im*EAA_size*EAARW_pim*RWEAA_rer/RW_size+RW_qc+RW_pi*RW_qi+RW_pnt*RW_g-RWEAA_pim*RWEAA_imc*(1-RWEAA_gammaimc)/RWEAA_gammaimcdag-RWEAA_pim*RWEAA_imi*(1-RWEAA_gammaimi)/RWEAA_gammaimidag-RWEAB_pim*RWEAB_imc*(1-RWEAB_gammaimc)/RWEAB_gammaimcdag-RWEAB_pim*RWEAB_imi*(1-RWEAB_gammaimi)/RWEAB_gammaimidag-RWUS_pim*(1-RWUS_gammaimc)*RWUS_imc/RWUS_gammaimcdag-RWUS_pim*(1-RWUS_gammaimi)*RWUS_imi/RWUS_gammaimidag);
-
-	//name='RW_qc'
-	RW_qc =  (RW_nuc^(1/RW_muc)*RW_ttc^(1-1/RW_muc)+(1-RW_nuc)^(1/RW_muc)*RW_ntc^(1-1/RW_muc))^(RW_muc/(RW_muc-1));
-
-	//name='RW_qi'
-	RW_qi =  (RW_nui^(1/RW_mui)*RW_tti^(1-1/RW_mui)+(1-RW_nui)^(1/RW_mui)*RW_nti^(1-1/RW_mui))^(RW_mui/(RW_mui-1));
 
 	//name='RW_reer'
 	RW_reer =  RWEAA_rer^RWEAA_weight*RWEAB_rer^RWEAB_weight*RWUS_rer^RWUS_weight;
@@ -3400,9 +3224,6 @@ model;
 	//name='RW_tot'
 	RW_tot =  RWUS_pim/(RW_rer*USRW_pim);
 
-	//name='RW_tr'
-	RW_tr =  RW_ybar*RW_pybar*RW_try;
-
 	//name='RW_tri'
 	RW_tri =  RW_tr*RW_upsilontr;
 
@@ -3411,12 +3232,6 @@ model;
 
 	//name='RW_try'
 	RW_try =  (1-RW_rhotr)*RW_trybar+RW_rhotr*RW_try(-1)+RW_epstr;
-
-	//name='RW_ttc'
-	RW_ttc =  (RW_nutc^(1/RW_mutc)*RW_htc^(1-1/RW_mutc)+(1-RW_nutc)^(1/RW_mutc)*RW_imc^(1-1/RW_mutc))^(RW_mutc/(RW_mutc-1));
-
-	//name='RW_tti'
-	RW_tti =  (RW_nuti^(1/RW_muti)*RW_hti^(1-1/RW_muti)+(1-RW_nuti)^(1/RW_muti)*RW_imi^(1-1/RW_muti))^(RW_muti/(RW_muti-1));
 
 	//name='RW_ty'
 	RW_ty =  RW_t/(RW_pybar*RW_ybar);
@@ -3481,24 +3296,6 @@ model;
 	//name='USEAA_exiy'
 	USEAA_exiy =  EAAUS_imi*EAAUS_pim*USEAA_rer*EAA_size/US_size/(US_py*US_y);
 
-	//name='USEAA_fx'
-	USEAA_fx =  US_mct*EAAUS_im*EAA_size/US_size+US_lambdai(1)*US_beta*US_xix/US_lambdai*(EAAUS_piim(1)/(EAAUS_piim^US_chix*US_pi4target^(0.25*(1-US_chix))))^US_thetat*USEAA_fx(1);
-
-	//name='USEAA_gammaimc'
-	USEAA_gammaimc =  US_gammaimc1/2*(USEAA_imc/US_qc/(USEAA_imc(-1)/US_qc(-1))-1)^2;
-
-	//name='USEAA_gammaimcdag'
-	USEAA_gammaimcdag =  1-USEAA_gammaimc-USEAA_imc/US_qc*US_gammaimc1*(USEAA_imc/US_qc/(USEAA_imc(-1)/US_qc(-1))-1)/(USEAA_imc(-1)/US_qc(-1));
-
-	//name='USEAA_gammaimi'
-	USEAA_gammaimi =  US_gammaimi1/2*(USEAA_imi/US_qi/(USEAA_imi(-1)/US_qi(-1))-1)^2;
-
-	//name='USEAA_gammaimidag'
-	USEAA_gammaimidag =  1-USEAA_gammaimi-USEAA_imi/US_qi/(USEAA_imi(-1)/US_qi(-1))*US_gammaimi1*(USEAA_imi/US_qi/(USEAA_imi(-1)/US_qi)-1);
-
-	//name='USEAA_gx'
-	USEAA_gx =  EAAUS_im*EAA_size*EAAUS_pim*USEAA_rer/US_size+US_lambdai(1)*US_beta*US_xix/US_lambdai*(EAAUS_piim(1)/(EAAUS_piim^US_chix*US_pi4target^(0.25*(1-US_chix))))^(US_thetat-1)*USEAA_gx(1);
-
 	//name='USEAA_im'
 	USEAA_im =  USEAA_imc+USEAA_imi;
 
@@ -3507,15 +3304,6 @@ model;
 
 	//name='USEAA_imiy'
 	USEAA_imiy =  USEAA_pim*USEAA_imi/(US_py*US_y);
-
-	//name='USEAA_piim'
-	USEAA_piim =  US_pic*USEAA_pim/USEAA_pim(-1);
-
-	//name='USEAA_pim'
-	USEAA_pim =  ((1-EAA_xix)*USEAA_pimtilde^(1-EAA_thetat)+EAA_xix*(USEAA_pim(-1)/US_pic)^(1-EAA_thetat)*(USEAA_piim(-1)^EAA_chix*US_pi4target^(0.25*(1-EAA_chih)))^(1-EAA_thetat))^((-1)/(1-EAA_thetat));
-
-	//name='USEAA_pimtilde'
-	USEAA_pimtilde =  USEAA_pim*EAA_thetat*EAA_cpim/(EAA_thetat-1)*EAAUS_fx/EAAUS_gx;
 
 	//name='USEAA_rer'
 	USEAA_rer =  1/EAA_rer;
@@ -3541,47 +3329,14 @@ model;
 	//name='USEAB_exiy'
 	USEAB_exiy =  EABUS_imi*EABUS_pim*USEAB_rer*EAB_size/US_size/(US_py*US_y);
 
-	//name='USEAB_fx'
-	USEAB_fx =  US_mct*EABUS_im*EAB_size/US_size+US_lambdai(1)*US_beta*US_xix/US_lambdai*(EABUS_piim(1)/(US_pi4target^(0.25*(1-US_chix))*EABUS_piim^US_chix))^US_thetat*USEAB_fx(1);
-
-	//name='USEAB_gammaimc'
-	USEAB_gammaimc =  US_gammaimc1/2*(USEAB_imc/US_qc/(USEAB_imc(-1)/US_qc(-1))-1)^2;
-
-	//name='USEAB_gammaimcdag'
-	USEAB_gammaimcdag =  1-USEAB_gammaimc-USEAB_imc/US_qc*US_gammaimc1*(USEAB_imc/US_qc/(USEAB_imc(-1)/US_qc(-1))-1)/(USEAB_imc(-1)/US_qc(-1));
-
-	//name='USEAB_gammaimi'
-	USEAB_gammaimi =  US_gammaimi1/2*(USEAB_imi/US_qi/(USEAB_imi(-1)/US_qi(-1))-1)^2;
-
-	//name='USEAB_gammaimidag'
-	USEAB_gammaimidag =  1-USEAB_gammaimi-USEAB_imi/US_qi/(USEAB_imi(-1)/US_qi(-1))*US_gammaimi1*(USEAB_imi/US_qi/(USEAB_imi(-1)/US_qi)-1);
-
-	//name='USEAB_gx'
-	USEAB_gx =  EABUS_im*EAB_size*EABUS_pim*USEAB_rer/US_size+US_lambdai(1)*US_beta*US_xix/US_lambdai*(EABUS_piim(1)/(US_pi4target^(0.25*(1-US_chix))*EABUS_piim^US_chix))^(US_thetat-1)*USEAB_gx(1);
-
 	//name='USEAB_im'
 	USEAB_im =  USEAB_imc+USEAB_imi;
-
-	//name='USEAB_imc'
-	USEAB_imc =  US_imc*(1-USEAA_numc-USRW_numc)*(USEAB_pim/(US_pimc*USEAB_gammaimcdag))^(-US_mumc)/(1-USEAB_gammaimc);
 
 	//name='USEAB_imcy'
 	USEAB_imcy =  USEAB_pim*USEAB_imc/(US_py*US_y);
 
-	//name='USEAB_imi'
-	USEAB_imi =  US_imi*(1-USEAA_numi-USRW_numi)*(USEAB_pim/(US_pimi*USEAB_gammaimidag))^(-US_mumi)/(1-USEAB_gammaimi);
-
 	//name='USEAB_imiy'
 	USEAB_imiy =  USEAB_pim*USEAB_imi/(US_py*US_y);
-
-	//name='USEAB_piim'
-	USEAB_piim =  US_pic*USEAB_pim/USEAB_pim(-1);
-
-	//name='USEAB_pim'
-	USEAB_pim =  ((1-EAB_xix)*USEAB_pimtilde^(1-EAB_thetat)+EAB_xix*(USEAB_pim(-1)/US_pic)^(1-EAB_thetat)*(USEAB_piim(-1)^EAB_chix*US_pi4target^(0.25*(1-EAB_chih)))^(1-EAB_thetat))^((-1)/(1-EAB_thetat));
-
-	//name='USEAB_pimtilde'
-	USEAB_pimtilde =  USEAB_pim*EAB_thetat*EAB_cpim/(EAB_thetat-1)*EABUS_fx/EABUS_gx;
 
 	//name='USEAB_rer'
 	USEAB_rer =  1/EAB_rer;
@@ -3607,47 +3362,14 @@ model;
 	//name='USRW_exiy'
 	USRW_exiy =  RWUS_imi*RWUS_pim*USRW_rer*RW_size/US_size/(US_py*US_y);
 
-	//name='USRW_fx'
-	USRW_fx =  US_mct*RWUS_im*RW_size/US_size+US_lambdai(1)*US_beta*US_xix/US_lambdai*(RWUS_piim(1)/(US_pi4target^(0.25*(1-US_chix))*RWUS_piim^US_chix))^US_thetat*USRW_fx(1);
-
-	//name='USRW_gammaimc'
-	USRW_gammaimc =  US_gammaimc1/2*(USRW_imc/US_qc/(USRW_imc(-1)/US_qc(-1))-1)^2;
-
-	//name='USRW_gammaimcdag'
-	USRW_gammaimcdag =  1-USRW_gammaimc-USRW_imc/US_qc*US_gammaimc1*(USRW_imc/US_qc/(USRW_imc(-1)/US_qc(-1))-1)/(USRW_imc(-1)/US_qc(-1));
-
-	//name='USRW_gammaimi'
-	USRW_gammaimi =  US_gammaimi1/2*(USRW_imi/US_qi/(USRW_imi(-1)/US_qi(-1))-1)^2;
-
-	//name='USRW_gammaimidag'
-	USRW_gammaimidag =  1-USRW_gammaimi-USRW_imi/US_qi/(USRW_imi(-1)/US_qi(-1))*US_gammaimi1*(USRW_imi/US_qi/(USRW_imi(-1)/US_qi)-1);
-
-	//name='USRW_gx'
-	USRW_gx =  RWUS_im*RW_size*RWUS_pim*USRW_rer/US_size+US_lambdai(1)*US_beta*US_xix/US_lambdai*(RWUS_piim(1)/(US_pi4target^(0.25*(1-US_chix))*RWUS_piim^US_chix))^(US_thetat-1)*USRW_gx(1);
-
 	//name='USRW_im'
 	USRW_im =  USRW_imc+USRW_imi;
-
-	//name='USRW_imc'
-	USRW_imc =  US_imc*USRW_numc*(USRW_pim/(US_pimc*USRW_gammaimcdag))^(-US_mumc)/(1-USRW_gammaimc);
 
 	//name='USRW_imcy'
 	USRW_imcy =  USRW_pim*USRW_imc/(US_py*US_y);
 
-	//name='USRW_imi'
-	USRW_imi =  US_imi*USRW_numi*(USRW_pim/(US_pimi*USRW_gammaimidag))^(-US_mumi)/(1-USRW_gammaimi);
-
 	//name='USRW_imiy'
 	USRW_imiy =  USRW_pim*USRW_imi/(US_py*US_y);
-
-	//name='USRW_piim'
-	USRW_piim =  US_pic*USRW_pim/USRW_pim(-1);
-
-	//name='USRW_pim'
-	USRW_pim =  ((1-RW_xix)*USRW_pimtilde^(1-RW_thetat)+RW_xix*(USRW_pim(-1)/US_pic)^(1-RW_thetat)*(USRW_piim(-1)^RW_chix*US_pi4target^(0.25*(1-RW_chih)))^(1-RW_thetat))^((-1)/(1-RW_thetat));
-
-	//name='USRW_pimtilde'
-	USRW_pimtilde =  USRW_pim*RW_thetat*RW_cpim/(RW_thetat-1)*RWUS_fx/RWUS_gx;
 
 	//name='USRW_rer'
 	USRW_rer =  1/RW_rer;
@@ -3666,9 +3388,6 @@ model;
 
 	//name='USRW_weightim'
 	USRW_weightim =  USRW_im*RW_pex*USRW_rer/(US_im*US_pim);
-
-	//name='US_b'
-	US_b =  (-(1/US_r(-1)^(-1)))*((-US_pnt(-1))*US_g(-1)-US_tr(-1)-US_b(-1)*US_pic(-1)^(-1)-US_pic(-1)^(-1)*US_m(-2)+US_tauc(-1)*US_c(-1)+(US_taun(-1)+US_tauwh(-1))*(US_wi(-1)*US_ndi(-1)+US_wj(-1)*US_ndj(-1))+US_w(-1)*US_tauwf(-1)*US_nd(-1)+US_tauk(-1)*(US_rk(-1)*US_u(-1)-(US_delta+US_gammau(-1))*US_pi(-1))*US_k(-1)+US_taud(-1)*US_d(-1)+US_t(-1)+US_m(-1));
 
 	//name='US_bf'
 	US_bf =  EAA_bf*(-EAA_size)/US_size-EAB_size*EAB_bf/US_size-RW_size*RW_bf/US_size;
@@ -3703,35 +3422,14 @@ model;
 	//name='US_ex'
 	US_ex =  RWUS_im*RW_size/US_size+EAAUS_im*EAA_size/US_size+EABUS_im*EAB_size/US_size;
 
-	//name='US_fh'
-	US_fh =  US_mct*US_ht+US_lambdai(1)*US_beta*US_xih/US_lambdai*(US_piht(1)/(US_piht^US_chih*US_pi4target^(0.25*(1-US_chih))))^US_thetat*US_fh(1);
-
-	//name='US_fn'
-	US_fn =  US_mcn*US_nt+US_lambdai(1)*US_beta*US_xin/US_lambdai*(US_pint(1)/(US_pint^US_chin*US_pi4target^(0.25*(1-US_chin))))^US_thetan*US_fn(1);
-
-	//name='US_g'
-	US_g =  US_gy*US_pybar*US_ybar/US_pnt;
-
 	//name='US_gammav'
 	US_gammav =  US_gammavi*US_ci*(1-US_omega)+US_gammavj*US_cj*US_omega;
-
-	//name='US_gh'
-	US_gh =  US_pht*US_ht+US_lambdai(1)*US_beta*US_xih/US_lambdai*(US_piht(1)/(US_piht^US_chih*US_pi4target^(0.25*(1-US_chih))))^(US_thetat-1)*US_gh(1);
-
-	//name='US_gn'
-	US_gn =  US_pnt*US_nt+US_lambdai(1)*US_beta*US_xin/US_lambdai*(US_pint(1)/(US_pint^US_chin*US_pi4target^(0.25*(1-US_chin))))^(US_thetan-1)*US_gn(1);
 
 	//name='US_gy'
 	US_gy =  (1-US_rhog)*US_gybar+US_rhog*US_gy(-1)+US_epsg;
 
 	//name='US_ht'
 	US_ht =  US_htc+US_hti;
-
-	//name='US_htc'
-	US_htc =  US_ttc*US_nutc*(US_pht/US_pttc)^(-US_mutc);
-
-	//name='US_hti'
-	US_hti =  US_tti*US_nuti*(US_pht/US_ptti)^(-US_muti);
 
 	//name='US_i'
 	US_i =  US_qi-US_gammau*US_k;
@@ -3742,14 +3440,8 @@ model;
 	//name='US_im'
 	US_im =  US_imc+US_imi;
 
-	//name='US_imc'
-	US_imc =  (USEAA_numc^(1/US_mumc)*(USEAA_imc*(1-USEAA_gammaimc))^(1-1/US_mumc)+USRW_numc^(1/US_mumc)*(USRW_imc*(1-USRW_gammaimc))^(1-1/US_mumc)+(1-USEAA_numc-USRW_numc)^(1/US_mumc)*(USEAB_imc*(1-USEAB_gammaimc))^(1-1/US_mumc))^(US_mumc/(US_mumc-1));
-
 	//name='US_imcy'
 	US_imcy =  US_imc*US_pimc/(US_py*US_y);
-
-	//name='US_imi'
-	US_imi =  (USEAA_numi^(1/US_mumi)*(USEAA_imi*(1-USEAA_gammaimi))^(1-1/US_mumi)+USRW_numi^(1/US_mumi)*(USRW_imi*(1-USRW_gammaimi))^(1-1/US_mumi)+(1-USEAA_numi-USRW_numi)^(1/US_mumi)*(USEAB_imi*(1-USEAB_gammaimi))^(1-1/US_mumi))^(US_mumi/(US_mumi-1));
 
 	//name='US_imiy'
 	US_imiy =  US_imi*US_pimi/(US_py*US_y);
@@ -3787,32 +3479,11 @@ model;
 	//name='US_nt'
 	US_nt =  US_g+US_ntc+US_nti;
 
-	//name='US_ntc'
-	US_ntc =  US_qc*(1-US_nuc)*US_pnt^(-US_muc);
-
-	//name='US_nti'
-	US_nti =  US_qi*(1-US_nui)*(US_pnt/US_pi)^(-US_mui);
-
 	//name='US_pex'
 	US_pex =  EAAUS_im*EAA_size*EAAUS_pim*USEAA_rer/US_size/US_ex+EABUS_im*EAB_size*EABUS_pim*USEAB_rer/US_size/US_ex+RWUS_im*RW_size*RWUS_pim*USRW_rer/US_size/US_ex;
 
-	//name='US_pht'
-	US_pht =  ((1-US_xih)*US_phttilde^(1-US_thetat)+US_xih*(US_pht(-1)/US_pic)^(1-US_thetat)*(US_pi4target^(0.25*(1-US_chih))*US_piht(-1)^US_chih)^(1-US_thetat))^(1/(1-US_thetat));
-
-	//name='US_phttilde'
-	US_phttilde =  US_pht*US_thetat/(US_thetat-1)*US_fh/US_gh;
-
-	//name='US_pic'
-	US_pic =  US_pic4/(US_pic(-1)*US_pic(-2)*US_pic(-3));
-
-	//name='US_pic4'
-	US_pic4 =  US_pi4target+(1+(US_r^4-1-US_phirr*(US_r(-1)^4-1)-US_phirgy*(US_ygrowth-1)-US_epsr)/(1-US_phirr)-US_pi4target*US_rrstar^4)/US_phirpi;
-
 	//name='US_piex4'
 	US_piex4 =  US_pic4*US_pex/US_pex(-4);
-
-	//name='US_piht'
-	US_piht =  US_pic*US_pht/US_pht(-1);
 
 	//name='US_piimc'
 	US_piimc =  US_pic*US_pimc/US_pimc(-1);
@@ -3826,41 +3497,14 @@ model;
 	//name='US_pim'
 	US_pim =  (US_imc*US_pimc+US_imi*US_pimi)/US_im;
 
-	//name='US_pimc'
-	US_pimc =  (USEAA_numc*(USEAA_pim/USEAA_gammaimcdag)^(1-US_mumc)+USRW_numc*(USRW_pim/USRW_gammaimcdag)^(1-US_mumc)+(1-USEAA_numc-USRW_numc)*(USEAB_pim/USEAB_gammaimcdag)^(1-US_mumc))^(1/(1-US_mumc));
-
-	//name='US_pimi'
-	US_pimi =  (USEAA_numi*(USEAA_pim/USEAA_gammaimidag)^(1-US_mumi)+USRW_numi*(USRW_pim/USRW_gammaimidag)^(1-US_mumi)+(1-USEAA_numi-USRW_numi)*(USEAB_pim/USEAB_gammaimidag)^(1-US_mumi))^(1/(1-US_mumi));
-
-	//name='US_pint'
-	US_pint =  US_pic*US_pnt/US_pnt(-1);
-
 	//name='US_piw'
 	US_piw =  US_pic*US_w/US_w(-1);
 
 	//name='US_piw4'
 	US_piw4 =  US_piw*US_piw(-1)*US_piw(-2)*US_piw(-3);
 
-	//name='US_pnt'
-	US_pnt =  ((1-US_xin)*US_pnttilde^(1-US_thetan)+US_xin*(US_pnt(-1)/US_pic)^(1-US_thetan)*(US_pi4target^(0.25*(1-US_chin))*US_pint(-1)^US_chin)^(1-US_thetan))^(1/(1-US_thetan));
-
-	//name='US_pnttilde'
-	US_pnttilde =  US_pnt*US_thetan/(US_thetan-1)*US_fn/US_gn;
-
-	//name='US_pttc'
-	US_pttc =  (US_nutc*US_pht^(1-US_mutc)+(1-US_nutc)*US_pimc^(1-US_mutc))^(1/(1-US_mutc));
-
-	//name='US_ptti'
-	US_ptti =  (US_nuti*US_pht^(1-US_muti)+(1-US_nuti)*US_pimi^(1-US_muti))^(1/(US_muti-1));
-
 	//name='US_py'
 	US_py =  1/US_y*(RWUS_im*RW_size*RWUS_pim*USRW_rer/US_size+EABUS_im*EAB_size*EABUS_pim*USEAB_rer/US_size+EAAUS_im*EAA_size*EAAUS_pim*USEAA_rer/US_size+US_qc+US_pi*US_qi+US_pnt*US_g-USEAA_pim*USEAA_imc*(1-USEAA_gammaimc)/USEAA_gammaimcdag-USEAA_pim*USEAA_imi*(1-USEAA_gammaimi)/USEAA_gammaimidag-USEAB_pim*USEAB_imc*(1-USEAB_gammaimc)/USEAB_gammaimcdag-USEAB_pim*USEAB_imi*(1-USEAB_gammaimi)/USEAB_gammaimidag-USRW_pim*USRW_imc*(1-USRW_gammaimc)/USRW_gammaimcdag-USRW_pim*USRW_imi*(1-USRW_gammaimi)/USRW_gammaimidag);
-
-	//name='US_qc'
-	US_qc =  (US_nuc^(1/US_muc)*US_ttc^(1-1/US_muc)+(1-US_nuc)^(1/US_muc)*US_ntc^(1-1/US_muc))^(US_muc/(US_muc-1));
-
-	//name='US_qi'
-	US_qi =  (US_nui^(1/US_mui)*US_tti^(1-1/US_mui)+(1-US_nui)^(1/US_mui)*US_nti^(1-1/US_mui))^(US_mui/(US_mui-1));
 
 	//name='US_reer'
 	US_reer =  USEAA_rer^USEAA_weight*USEAB_rer^USEAB_weight*USRW_rer^USRW_weight;
@@ -3919,9 +3563,6 @@ model;
 	//name='US_tj'
 	US_tj =  US_t*1/US_omega-US_ti*(1-US_omega)/US_omega;
 
-	//name='US_tr'
-	US_tr =  US_ybar*US_pybar*US_try;
-
 	//name='US_tri'
 	US_tri =  US_tr*US_upsilontr;
 
@@ -3930,12 +3571,6 @@ model;
 
 	//name='US_try'
 	US_try =  (1-US_rhotr)*US_trybar+US_rhotr*US_try(-1)+US_epstr;
-
-	//name='US_ttc'
-	US_ttc =  (US_nutc^(1/US_mutc)*US_htc^(1-1/US_mutc)+(1-US_nutc)^(1/US_mutc)*US_imc^(1-1/US_mutc))^(US_mutc/(US_mutc-1));
-
-	//name='US_tti'
-	US_tti =  (US_nuti^(1/US_muti)*US_hti^(1-1/US_muti)+(1-US_nuti)^(1/US_muti)*US_imi^(1-1/US_muti))^(US_muti/(US_muti-1));
 
 	//name='US_ty'
 	US_ty =  US_t/(US_pybar*US_ybar);
@@ -3993,23 +3628,9 @@ model;
 
 	//name='US_zt'
 	log(US_zt) =  (1-US_rhozt)*log(US_ztbar)+US_rhozt*log(US_zt(-1))+US_epszt;
-
-    //my addings
-    EAAEAB_imi = EAA_imi*EAAEAB_numi*(EAAEAB_pim/(EAA_pimi*EAAEAB_gammaimidag))^(-EAA_mumi)/(1-EAAEAB_gammaimi);
-	EABRW_imi = EAB_imi*EABRW_numi*(EABRW_pim/(EAB_pimi*EABRW_gammaimidag))^(-EAB_mumi)/(1-EABRW_gammaimi);
-    RWUS_imi = RW_imi*RWUS_numi*(RWUS_pim/(RW_pimi*RWUS_gammaimidag))^(-RW_mumi)/(1-RWUS_gammaimi);
-    USEAA_imi = US_imi*USEAA_numi*(USEAA_pim/(US_pimi*USEAA_gammaimidag))^(-US_mumi)/(1-USEAA_gammaimi);
-
-    EAAEAB_imc = EAA_imc*EAAEAB_numc*(EAAEAB_pim/(EAA_pimc*EAAEAB_gammaimcdag))^(-EAA_mumc)/(1-EAAEAB_gammaimc);    
-    EABRW_imc =  EAB_imc*EABRW_numc*(EABRW_pim/(EAB_pimc*EABRW_gammaimcdag))^(-EAB_mumc)/(1-EABRW_gammaimc); 
-    RWUS_imc = RW_imc*RWUS_numc*(RWUS_pim/(RW_pimc*RWUS_gammaimcdag))^(-RW_mumc)/(1-RWUS_gammaimc);
-    USEAA_imc = US_imc*USEAA_numc*(USEAA_pim/(US_pimc*USEAA_gammaimcdag))^(-US_mumc)/(1-USEAA_gammaimc);	
 	
-	// Price of the consumption good 
-   // 1^(1-EAA_muc) = (EAA_nuc)*EAA_pttc^(1-EAA_muc)+(1-EAA_nuc)*EAA_pnt^(1-EAA_muc);
-   // 1^(1-EAB_muc) = (EAB_nuc)*EAB_pttc^(1-EAB_muc)+(1-EAB_nuc)*EAB_pnt^(1-EAB_muc);
-   // 1^(1-RW_muc) = (RW_nuc)*RW_pttc^(1-RW_muc)+(1-RW_nuc)*RW_pnt^(1-RW_muc);
-   // 1^(1-US_muc) = (US_nuc)*US_pttc^(1-US_muc)+(1-US_nuc)*US_pnt^(1-US_muc);
+
+
 	
 
 	
