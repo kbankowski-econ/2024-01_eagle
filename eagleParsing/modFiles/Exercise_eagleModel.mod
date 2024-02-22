@@ -1873,6 +1873,18 @@ model;
 	EAB_ndi =  ((EAB_nd^((EAB_eta-1)/EAB_eta)-EAB_omega^(1/EAB_eta)*EAB_ndj^(1-1/EAB_eta))/(1-EAB_omega)^(1/EAB_eta))^(1/(1-1/EAB_eta));
 	RW_ndi =  ((RW_nd^((RW_eta-1)/RW_eta)-RW_omega^(1/RW_eta)*RW_ndj^(1-1/RW_eta))/(1-RW_omega)^(1/RW_eta))^(1/(1-1/RW_eta));
 	US_ndi =  ((US_nd^((US_eta-1)/US_eta)-US_omega^(1/US_eta)*US_ndj^(1-1/US_eta))/(1-US_omega)^(1/US_eta))^(1/(1-1/US_eta));
+    
+        //(eq.?)
+	EAA_dn =  EAA_ysn*EAA_pnt-EAA_rk*EAA_kdn-EAA_ndn*(1+EAA_tauwf)*EAA_w;
+	EAB_dn =  EAB_ysn*EAB_pnt-EAB_rk*EAB_kdn-EAB_ndn*(1+EAB_tauwf)*EAB_w;
+	RW_dn =  RW_ysn*RW_pnt-RW_rk*RW_kdn-RW_ndn*(1+RW_tauwf)*RW_w;
+	US_dn =  US_ysn*US_pnt-US_rk*US_kdn-US_ndn*(1+US_tauwf)*US_w;
+
+    //(eq.?)
+	EAA_dt =  EAA_pht*EAA_ht+EABEAA_pim*EAAEAB_rer*(EABEAA_imc+EABEAA_imi)*EAB_size/EAA_size+RWEAA_pim*EAARW_rer*(RWEAA_imc+RWEAA_imi)*RW_size/EAA_size+USEAA_pim*EAAUS_rer*(USEAA_imc+USEAA_imi)*US_size/EAA_size-EAA_rk*EAA_kdt-EAA_ndt*(1+EAA_tauwf)*EAA_w;
+    EAB_dt =  EAB_pht*EAB_ht+EAA_size*(EAAEAB_imc+EAAEAB_imi)*EAAEAB_pim*EABEAA_rer/EAB_size+RW_size*RWEAB_pim*EABRW_rer*(RWEAB_imc+RWEAB_imi)/EAB_size+US_size*USEAB_pim*EABUS_rer*(USEAB_imc+USEAB_imi)/EAB_size-EAB_rk*EAB_kdt-EAB_ndt*(1+EAB_tauwf)*EAB_w;
+	RW_dt =  RW_pht*RW_ht+EAA_size*(EAARW_imc+EAARW_imi)*EAARW_pim*RWEAA_rer/RW_size+EAB_size*(EABRW_imc+EABRW_imi)*EABRW_pim*RWEAB_rer/RW_size+US_size*USRW_pim*RWUS_rer*(USRW_imc+USRW_imi)/RW_size-RW_rk*RW_kdt-RW_ndt*(1+RW_tauwf)*RW_w;
+	US_dt =  US_pht*US_ht+EAA_size*(EAAUS_imc+EAAUS_imi)*EAAUS_pim*USEAA_rer/US_size+EAB_size*(EABUS_imc+EABUS_imi)*EABUS_pim*USEAB_rer/US_size+RW_size*(RWUS_imc+RWUS_imi)*RWUS_pim*USRW_rer/US_size-US_rk*US_kdt-US_ndt*(1+US_tauwf)*US_w;
 
 	//tradables pricing (domestic market)
     //(eq.47)
@@ -2261,7 +2273,6 @@ model;
 	US_t =  US_pybar*US_ybar*US_phitb*(US_b/(US_pybar*US_ybar)-US_bytarget);
 
     //aggregate variables
-
     //(eq.92) 
     EAA_ci =  (EAA_c-EAA_cj*EAA_omega)/(1-EAA_omega);
 	EAB_ci =  (EAB_c-EAB_cj*EAB_omega)/(1-EAB_omega);
@@ -2496,6 +2507,17 @@ model;
 	USEAA_tot =  USEAA_pim/(EAAUS_pim*USEAA_rer);
 	USEAB_tot =  USEAB_pim/(EABUS_pim*USEAB_rer);
 	USRW_tot =  USRW_pim/(RWUS_pim*USRW_rer);
+
+    //(eq.?)
+	EAA_etot =  EAAEAB_tot^EAAEAB_weight*EAARW_tot^EAARW_weight*EAAUS_tot^EAAUS_weight;
+	EAB_etot =  EABEAA_tot^EABEAA_weight*EABRW_tot^EABRW_weight*EABUS_tot^EABUS_weight;
+	RW_etot =  RWEAA_tot^RWEAA_weight*RWEAB_tot^RWEAB_weight*RWUS_tot^RWUS_weight;
+	US_etot =  USEAA_tot^USEAA_weight*USEAB_tot^USEAB_weight*USRW_tot^USRW_weight;
+
+    //(eq.?)
+	EAA_tot =  EAAUS_pim/(USEAA_pim*EAA_rer);
+	EAB_tot =  EABUS_pim/(EAB_rer*USEAB_pim);
+	RW_tot =  RWUS_pim/(RW_rer*USRW_pim);
 
     //(eq.127)
     EAAEAB_rer =  EAA_rer/EAB_rer;
@@ -2739,18 +2761,6 @@ model;
 	US_yshare =  US_y*US_size*US_py/(EAA_y*EAA_py*EAA_size/EAA_rer+EAB_y*EAB_size*EAB_py/EAB_rer+RW_y*RW_size*RW_py/RW_rer+US_y*US_size*US_py);
 
     //(eq.?)
-	EAA_dn =  EAA_ysn*EAA_pnt-EAA_rk*EAA_kdn-EAA_ndn*(1+EAA_tauwf)*EAA_w;
-	EAB_dn =  EAB_ysn*EAB_pnt-EAB_rk*EAB_kdn-EAB_ndn*(1+EAB_tauwf)*EAB_w;
-	RW_dn =  RW_ysn*RW_pnt-RW_rk*RW_kdn-RW_ndn*(1+RW_tauwf)*RW_w;
-	US_dn =  US_ysn*US_pnt-US_rk*US_kdn-US_ndn*(1+US_tauwf)*US_w;
-
-    //(eq.?)
-	EAA_dt =  EAA_pht*EAA_ht+EABEAA_pim*EAAEAB_rer*(EABEAA_imc+EABEAA_imi)*EAB_size/EAA_size+RWEAA_pim*EAARW_rer*(RWEAA_imc+RWEAA_imi)*RW_size/EAA_size+USEAA_pim*EAAUS_rer*(USEAA_imc+USEAA_imi)*US_size/EAA_size-EAA_rk*EAA_kdt-EAA_ndt*(1+EAA_tauwf)*EAA_w;
-    EAB_dt =  EAB_pht*EAB_ht+EAA_size*(EAAEAB_imc+EAAEAB_imi)*EAAEAB_pim*EABEAA_rer/EAB_size+RW_size*RWEAB_pim*EABRW_rer*(RWEAB_imc+RWEAB_imi)/EAB_size+US_size*USEAB_pim*EABUS_rer*(USEAB_imc+USEAB_imi)/EAB_size-EAB_rk*EAB_kdt-EAB_ndt*(1+EAB_tauwf)*EAB_w;
-	RW_dt =  RW_pht*RW_ht+EAA_size*(EAARW_imc+EAARW_imi)*EAARW_pim*RWEAA_rer/RW_size+EAB_size*(EABRW_imc+EABRW_imi)*EABRW_pim*RWEAB_rer/RW_size+US_size*USRW_pim*RWUS_rer*(USRW_imc+USRW_imi)/RW_size-RW_rk*RW_kdt-RW_ndt*(1+RW_tauwf)*RW_w;
-	US_dt =  US_pht*US_ht+EAA_size*(EAAUS_imc+EAAUS_imi)*EAAUS_pim*USEAA_rer/US_size+EAB_size*(EABUS_imc+EABUS_imi)*EABUS_pim*USEAB_rer/US_size+RW_size*(RWUS_imc+RWUS_imi)*RWUS_pim*USRW_rer/US_size-US_rk*US_kdt-US_ndt*(1+US_tauwf)*US_w;
-
-    //(eq.?)
 	EAA_ygrowth4 =  EAA_y/EAA_y(-4);
 	EAB_ygrowth4 =  EAB_y/EAB_y(-4);
 	RW_ygrowth4 =  RW_y/RW_y(-4);
@@ -2882,7 +2892,7 @@ model;
     //WEIRD
 	EAB_pic =  EAA_pic*EAA_rerdep/EAB_rerdep;
 
-	//name='EAA_rerdep' 
+	//name='EAA_rerdep'
 	EAA_rerdep =  EAA_lambdai*US_pic(1)/US_r/(1-EAA_gammab)/EAA_beta/EAA_lambdai(1);
 	EAB_rerdep =  EAB_lambdai*US_pic(1)/US_r/(1-EAB_gammab)/EAB_beta/EAB_lambdai(1);
 	RW_rerdep =  RW_lambdai*US_pic(1)/US_r/(1-RW_gammab)/RW_beta/RW_lambdai(1);
@@ -2901,17 +2911,6 @@ model;
 	EAB_internalrer =  EAB_pnt/EAB_pttc;
 	RW_internalrer =  RW_pnt/RW_pttc;
 	US_internalrer =  US_pnt/US_pttc;
-
-    //(eq.?)
-	EAA_etot =  EAAEAB_tot^EAAEAB_weight*EAARW_tot^EAARW_weight*EAAUS_tot^EAAUS_weight;
-	EAB_etot =  EABEAA_tot^EABEAA_weight*EABRW_tot^EABRW_weight*EABUS_tot^EABUS_weight;
-	RW_etot =  RWEAA_tot^RWEAA_weight*RWEAB_tot^RWEAB_weight*RWUS_tot^RWUS_weight;
-	US_etot =  USEAA_tot^USEAA_weight*USEAB_tot^USEAB_weight*USRW_tot^USRW_weight;
-
-    //(eq.?)
-	EAA_tot =  EAAUS_pim/(USEAA_pim*EAA_rer);
-	EAB_tot =  EABUS_pim/(EAB_rer*USEAB_pim);
-	RW_tot =  RWUS_pim/(RW_rer*USRW_pim);
 
 
 end;
