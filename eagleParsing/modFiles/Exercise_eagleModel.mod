@@ -1229,14 +1229,68 @@ EAA_lambdai_ss EAB_lambdai_ss RW_lambdai_ss US_lambdai_ss
 EAA_r_ss EAB_r_ss RW_r_ss US_r_ss
 EAA_pic_ss EAB_pic_ss RW_pic_ss US_pic_ss
 EAA_taucbar	EAB_taucbar RW_taucbar US_taucbar
-
-;
-
-varexo
+EAA_gammauder_ss EAB_gammauder_ss RW_gammauder_ss US_gammauder_ss
+EAA_rk_ss EAB_rk_ss RW_rk_ss US_rk_ss
+EAA_taukbar EAB_taukbar RW_taukbar US_taukbar
+EAA_witilde_ss EAB_witilde_ss RW_witilde_ss US_witilde_ss 
+EAA_fi_ss EAB_fi_ss RW_fi_ss US_fi_ss 
     EAA_cpim
     EAB_cpim
     RW_cpim
     US_cpim
+
+	EAA_gybar
+	EAA_taudbar
+	EAA_taunbar
+	EAA_tauwfbar
+	EAA_tauwhbar
+	EAA_wcstbar
+	EAA_zconbar
+	EAA_zinvbar
+	EAA_znbar
+	EAA_ztbar
+
+	US_gybar
+	US_taudbar
+	US_taunbar
+	US_tauwfbar
+	US_tauwhbar
+	US_wcstbar
+	US_zconbar
+	US_zinvbar
+	US_znbar
+	US_ztbar
+
+	EAB_gybar
+	EAB_taudbar
+	EAB_taunbar
+	EAB_tauwfbar
+	EAB_tauwhbar
+	EAB_wcstbar
+	EAB_zconbar
+	EAB_zinvbar
+	EAB_znbar
+	EAB_ztbar
+
+	RW_gybar
+	RW_taudbar
+	RW_taunbar
+	RW_tauwfbar
+	RW_tauwhbar
+	RW_wcstbar
+	RW_zconbar
+	RW_zinvbar
+	RW_znbar
+	RW_ztbar
+
+
+
+
+
+;
+
+varexo
+
 	EAA_epsg
 	EAA_epsrp
 	EAA_epstauc
@@ -1251,17 +1305,7 @@ varexo
 	EAA_epszinv
 	EAA_epszn
 	EAA_epszt
-	EAA_gybar
-	EAA_taudbar
-	EAA_taukbar
-	EAA_taunbar
-	EAA_tauwfbar
-	EAA_tauwhbar
-	EAA_wcstbar
-	EAA_zconbar
-	EAA_zinvbar
-	EAA_znbar
-	EAA_ztbar
+
 	EAB_epsg
 	EAB_epsrp
 	EAB_epstauc
@@ -1276,17 +1320,7 @@ varexo
 	EAB_epszinv
 	EAB_epszn
 	EAB_epszt
-	EAB_gybar
-	EAB_taudbar
-	EAB_taukbar
-	EAB_taunbar
-	EAB_tauwfbar
-	EAB_tauwhbar
-	EAB_wcstbar
-	EAB_zconbar
-	EAB_zinvbar
-	EAB_znbar
-	EAB_ztbar
+
 	EA_epsr
 	EA_epsz
 	RW_epsg
@@ -1304,17 +1338,7 @@ varexo
 	RW_epszinv
 	RW_epszn
 	RW_epszt
-	RW_gybar
-	RW_taudbar
-	RW_taukbar
-	RW_taunbar
-	RW_tauwfbar
-	RW_tauwhbar
-	RW_wcstbar
-	RW_zconbar
-	RW_zinvbar
-	RW_znbar
-	RW_ztbar
+
 	US_epsg
 	US_epsr
 	US_epstauc
@@ -1329,17 +1353,11 @@ varexo
 	US_epszinv
 	US_epszn
 	US_epszt
-	US_gybar
-	US_taudbar
-	US_taukbar
-	US_taunbar
-	US_tauwfbar
-	US_tauwhbar
-	US_wcstbar
-	US_zconbar
-	US_zinvbar
-	US_znbar
-	US_ztbar
+
+
+
+
+
 ;
 
 //***************************************************************************************
@@ -2694,6 +2712,11 @@ initval;
     EAB_utili =  (log(EAB_ci_ss-EAB_kappa*EAB_ci_ss)-1/(1+EAB_zeta)*EAB_ni_ss^(1+EAB_zeta))/(1-EAB_beta);
     RW_utili =  (log(RW_ci_ss-RW_kappa*RW_ci_ss)-1/(1+RW_zeta)*RW_ni_ss^(1+RW_zeta))/(1-RW_beta);
     US_utili =  (log(US_ci_ss-US_kappa*US_ci_ss)-1/(1+US_zeta)*US_ni_ss^(1+US_zeta))/(1-US_beta);
+
+    EAA_utilj =  (log(EAA_cj_ss-EAA_kappa*EAA_cj_ss)-1/(1+EAA_zeta)*EAA_nj_ss^(1+EAA_zeta))/(1-EAA_beta);
+    EAB_utilj =  (log(EAB_cj_ss-EAB_kappa*EAB_cj_ss)-1/(1+EAB_zeta)*EAB_nj_ss^(1+EAB_zeta))/(1-EAB_beta);
+    RW_utilj =  (log(RW_cj_ss-RW_kappa*RW_cj_ss)-1/(1+RW_zeta)*RW_nj_ss^(1+RW_zeta))/(1-RW_beta);
+    US_utilj =  (log(US_cj_ss-US_kappa*US_cj_ss)-1/(1+US_zeta)*US_nj_ss^(1+US_zeta))/(1-US_beta);
     
     EAA_ii = EAA_ii_ss;
     EAB_ii = EAB_ii_ss;
@@ -2754,31 +2777,74 @@ initval;
     EAB_gammaider = 0;
     RW_gammaider = 0;
     US_gammaider = 0;
+
+    EAA_u = 1;
+    EAB_u = 1;
+    RW_u = 1;
+    US_u = 1;
     
     EAA_gammau = 0;
     EAB_gammau = 0;
     RW_gammau = 0;
     US_gammau = 0;
     
-    EAA_gammauder = ((EAA_beta^(-1)-1+EAA_delta)*EAA_qbar-EAA_delta*EAA_taukbar*EAA_pibar)/((1-EAA_taukbar)*EAA_pibar);
-    EAB_gammauder = ((EAB_beta^(-1)-1+EAB_delta)*EAB_qbar-EAB_delta*EAB_taukbar*EAB_pibar)/((1-EAB_taukbar)*EAB_pibar);
-    RW_gammauder = ((RW_beta^(-1)-1+RW_delta)*RW_qbar-RW_delta*RW_taukbar*RW_pibar)/((1-RW_taukbar)*RW_pibar);
-    US_gammauder = ((US_beta^(-1)-1+US_delta)*US_qbar-US_delta*US_taukbar*US_pibar)/((1-US_taukbar)*US_pibar);
+    EAA_gammauder = EAA_gammauder_ss;
+    EAB_gammauder = EAB_gammauder_ss;
+    RW_gammauder = RW_gammauder_ss;
+    US_gammauder = US_gammauder_ss;
+
+	EAA_rk =  EAA_gammauder*EAA_pi;
+	EAB_rk =  EAB_gammauder*EAB_pi;
+	RW_rk =  RW_gammauder*RW_pi;
+	US_rk =  US_gammauder*US_pi;
     
-    EAA_pi = EAA_q;
-    EAB_pi = EAB_q;
-    RW_pi = RW_q;
-    US_pi = US_q;
+    EAA_pi = EAA_qbar;
+    EAB_pi = EAB_qbar;
+    RW_pi = RW_qbar;
+    US_pi = US_qbar;
     
     EAA_q = EAA_qbar;
     EAB_q = EAB_qbar;
     RW_q = RW_qbar;
     US_q = US_qbar;
     
-    EAA_q = EAA_beta*((1-EAA_tauk)*EAA_rk+(EAA_tauk*EAA_delta)*EAA_pi+(1-EAA_delta)*EAA_q);
-    EAB_q = EAB_beta*((1-EAB_tauk)*EAB_rk+(EAB_tauk*EAB_delta)*EAB_pi+(1-EAB_delta)*EAB_q);
-    RW_q = RW_beta*((1-RW_tauk)*RW_rk+(RW_tauk*RW_delta)*RW_pi+(1-RW_delta)*RW_q);
-    US_q = US_beta*((1-US_tauk)*US_rk+(US_tauk*US_delta)*US_pi+(1-US_delta)*US_q);
+    EAA_witilde  = EAA_witilde_ss;
+    EAB_witilde = EAB_witilde_ss;
+    RW_witilde = RW_witilde_ss;
+    US_witilde = US_witilde_ss;
+
+    EAA_wi  = EAA_witilde_ss;
+    EAB_wi = EAB_witilde_ss;
+    RW_wi = RW_witilde_ss;
+    US_wi = US_witilde_ss;
+
+    EAA_fi = EAA_fi_ss;
+    EAB_fi = EAB_fi_ss;
+    RW_fi  = RW_fi_ss ;
+    US_fi  = US_fi_ss ;
+
+    EAA_gi = EAA_gi_ss;
+    EAB_gi = EAB_gi_ss;
+    RW_gi  = RW_gi_ss ;
+    US_gi  = US_gi_ss ;
+
+    EAA_wcst = 0;
+    EAB_wcst = 0;
+    RW_wcst = 0;
+    US_wcst = 0;
+    
+    EAA_ti = 0;
+    EAB_ti = 0;
+    RW_ti = 0;
+    US_ti = 0;
+    
+    EAA_tj = 0;
+    EAB_tj = 0;
+    RW_tj = 0;
+    US_tj = 0;
+
+    
+
     
     //EAA_psitbar = EAA_psit*EAA_ytbar;
     //EAB_psitbar = EAB_psit*EAB_ytbar;
@@ -2977,7 +3043,7 @@ steady;
 //check;
 
 shocks;
-var EAA_cpim;
+var US_epsg;
 periods 1;
 values 0.01;
 
