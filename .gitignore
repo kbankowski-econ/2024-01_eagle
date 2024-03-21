@@ -1,5 +1,5 @@
 # Specify filepatterns you want git to ignore.
-subroutines/call_paths.m
+subroutines/+utils/+call/paths.m
 *.bin
 *.cod
 *.asv
