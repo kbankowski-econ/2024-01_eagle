@@ -390,36 +390,6 @@ US_cpim = 1;
 
 %% Steady-state values/parameters set/calibrated by authors
 
-EAA_ci_ss  = 2.325676688150624;
-EAB_ci_ss =  2.434012553448504;
-RW_ci_ss = 3.14728887542883;
-US_ci_ss = 3.147311749179933;
-
-EAA_cj_ss =  1.408402919903379;
-EAB_cj_ss =  1.459879994669635;
-RW_cj_ss = 1.403145762719761;
-US_cj_ss = 1.427544971010542;
-
-EAA_ni_ss = 0.8881001197738558;
-EAB_ni_ss = 0.8835327150297586;
-RW_ni_ss = 0.9145079901893759;
-US_ni_ss = 0.9226319361020098;
-
-EAA_nj_ss = 0.992446840121961;
-EAB_nj_ss = 0.9916149208450837;
-RW_nj_ss = 1.243097453371136;
-US_nj_ss = 1.2440723671378;
-
-EAA_ki_ss = 38.2657709029393;
-EAB_ki_ss = 42.35298225380408;
-RW_ki_ss = 45.24079717410596;
-US_ki_ss = 46.79461697806094;
-
-EAA_pic_ss = 1.004962931576366;
-EAB_pic_ss = 1.004962931576366;
-RW_pic_ss = 1.004962931576366;
-US_pic_ss = 1.004962931576366;
-
     EAA_vi_ss = 2.38;
     EAB_vi_ss = 2.38;
     RW_vi_ss = 2.38; 
@@ -430,52 +400,70 @@ US_pic_ss = 1.004962931576366;
     RW_vj_ss = 2.38;
     US_vj_ss = 2.38;
 
+    %%% to be pinned down in formulas 
+
+    EAA_ci_ss  = 2.325676688150624;
+    EAB_ci_ss =  2.434012553448504;
+    RW_ci_ss = 3.14728887542883;
+    US_ci_ss = 3.147311749179933;
+    
+    EAA_cj_ss =  1.408402919903379;
+    EAB_cj_ss =  1.459879994669635;
+    RW_cj_ss = 1.403145762719761;
+    US_cj_ss = 1.427544971010542;
+    
+    EAA_ni_ss = 0.8881001197738558;
+    EAB_ni_ss = 0.8835327150297586;
+    RW_ni_ss = 0.9145079901893759;
+    US_ni_ss = 0.9226319361020098;
+    
+    EAA_nj_ss = 0.992446840121961;
+    EAB_nj_ss = 0.9916149208450837;
+    RW_nj_ss = 1.243097453371136;
+    US_nj_ss = 1.2440723671378;
+
+    EAA_ki_ss = 38.2657709029393;
+    EAB_ki_ss = 42.35298225380408;
+    RW_ki_ss = 45.24079717410596;
+    US_ki_ss = 46.79461697806094;
 
 
 
+    EAA_witilde_ss = 1.118752123370639;
+    EAB_witilde_ss = 1.158854094127478;
+    RW_witilde_ss = 1.279141025840976;
+    US_witilde_ss = 1.301977690063702;
+    
+    EAA_wjtilde_ss = 0.8460618236418631;
+    EAB_wjtilde_ss = 0.8755157011229305;
+    RW_wjtilde_ss = 1.053707219300546;
+    US_wjtilde_ss = 1.073712227700075;
+    
+    EAA_tr_ss = 0.5155275283539803;
+    EAA_tri_ss = 0.3436850154658033;
+    EAA_trj_ss = 1.031055067018511;
+    
+    EAB_tr_ss =0.535201065848797;
+    EAB_tri_ss =0.3568007069978576;
+    EAB_trj_ss =1.070402142401615;
 
-
-
-EAA_witilde_ss = 1.118752123370639;
-EAB_witilde_ss = 1.158854094127478;
-RW_witilde_ss = 1.279141025840976;
-US_witilde_ss = 1.301977690063702;
-
-EAA_wjtilde_ss = 0.8460618236418631;
-EAB_wjtilde_ss = 0.8755157011229305;
-RW_wjtilde_ss = 1.053707219300546;
-US_wjtilde_ss = 1.073712227700075;
-
-EAA_tr_ss = 0.5155275283539803;
-EAA_tri_ss = 0.3436850154658033;
-EAA_trj_ss = 1.031055067018511;
-
-EAB_tr_ss =0.535201065848797;
-EAB_tri_ss =0.3568007069978576;
-EAB_trj_ss =1.070402142401615;
-
-RW_tr_ss =0.2495495582138249;
-RW_tri_ss =0.1663663704788862;
-RW_trj_ss =0.499099121418641;
-
-US_tr_ss =0.2526730341740533;
-US_tri_ss =0.168448687764882;
-US_trj_ss = 0.5053460734015673;
-
-
-
-
-
-
-
-
-
-
-
-
-
+    RW_tr_ss =0.2495495582138249;
+    RW_tri_ss =0.1663663704788862;
+    RW_trj_ss =0.499099121418641;
+    
+    US_tr_ss =0.2526730341740533;
+    US_tri_ss =0.168448687764882;
+    US_trj_ss = 0.5053460734015673;
+    
 %% Steady State Calculations
 
+%%% Households
+
+    EAA_r_ss=  EAA_pic_ss*EAA_beta^(-1); 
+	EAB_r_ss = EAB_pic_ss*EAB_beta^(-1);
+	RW_r_ss =  RW_pic_ss*RW_beta^(-1);
+	US_r_ss =  US_pic_ss*US_beta^(-1);
+    
 	EAA_gammavi_ss =  EAA_vi_ss*EAA_gammav1+EAA_gammav2/EAA_vi_ss-2*(EAA_gammav1*EAA_gammav2)^0.5;
     EAB_gammavi_ss =  EAB_vi_ss*EAB_gammav1+EAB_gammav2/EAB_vi_ss-2*(EAB_gammav1*EAB_gammav2)^0.5;
     RW_gammavi_ss =  RW_vi_ss*RW_gammav1+RW_gammav2/RW_vi_ss-2*(RW_gammav1*RW_gammav2)^0.5;
@@ -485,28 +473,26 @@ US_trj_ss = 0.5053460734015673;
     EAB_gammavj_ss=  EAA_vj_ss*EAA_gammav1+EAA_gammav2/EAA_vj_ss-2*(EAA_gammav1*EAA_gammav2)^0.5;
     RW_gammavj_ss=  EAA_vj_ss*EAA_gammav1+EAA_gammav2/EAA_vj_ss-2*(EAA_gammav1*EAA_gammav2)^0.5;
     US_gammavj_ss=  EAA_vj_ss*EAA_gammav1+EAA_gammav2/EAA_vj_ss-2*(EAA_gammav1*EAA_gammav2)^0.5;
-
-
-
-
-
-
-
-
-	EAA_gammavider_ss =  EAA_gammav1-EAA_gammav2*EAA_vi_ss^(-2);
+      
+    EAA_gammavider_ss =  EAA_gammav1-EAA_gammav2*EAA_vi_ss^(-2);
 	EAB_gammavider_ss =  EAB_gammav1-EAB_gammav2*EAB_vi_ss^(-2);
 	RW_gammavider_ss =  RW_gammav1-RW_gammav2*RW_vi_ss^(-2);
 	US_gammavider_ss =  US_gammav1-US_gammav2*US_vi_ss^(-2);
+
+    EAA_gammavjder_ss =  EAA_gammav1-EAA_gammav2*EAA_vj_ss^(-2);
+	EAB_gammavjder_ss =  EAB_gammav1-EAB_gammav2*EAB_vj_ss^(-2);
+	RW_gammavjder_ss =  RW_gammav1-RW_gammav2*RW_vj_ss^(-2);
+	US_gammavjder_ss =  US_gammav1-US_gammav2*US_vj_ss^(-2);
+
+    EAA_pic_ss = EAA_beta/(1-EAA_vj_ss^2*EAA_gammavider_ss); 
+    EAB_pic_ss = EAB_beta/(1-EAB_vj_ss^2*EAB_gammavider_ss); 
+    RW_pic_ss = RW_beta/(1-RW_vj_ss^2*RW_gammavider_ss); 
+    US_pic_ss = US_beta/(1-US_vj_ss^2*US_gammavider_ss); 
 
     EAA_lambdai_ss =  (EAA_ci_ss-EAA_kappa*EAA_ci_ss)^(-EAA_sigma)/(1+EAA_taucbar+EAA_gammavi_ss+EAA_vi_ss*EAA_gammavider_ss);
     EAB_lambdai_ss =  (EAB_ci_ss-EAB_kappa*EAB_ci_ss)^(-EAB_sigma)/(1+EAB_taucbar+EAB_gammavi_ss+EAB_vi_ss*EAB_gammavider_ss);
     RW_lambdai_ss =  (RW_ci_ss-RW_kappa*RW_ci_ss)^(-RW_sigma)/(1+RW_taucbar+RW_gammavi_ss+RW_vi_ss*RW_gammavider_ss);
     US_lambdai_ss =  (US_ci_ss-US_kappa*US_ci_ss)^(-US_sigma)/(1+US_taucbar+US_gammavi_ss+US_vi_ss*US_gammavider_ss);
-
-    EAA_r_ss=  EAA_pic_ss*EAA_beta^(-1); 
-	EAB_r_ss = EAB_pic_ss*EAB_beta^(-1);
-	RW_r_ss =  RW_pic_ss*RW_beta^(-1);
-	US_r_ss =  US_pic_ss*US_beta^(-1);
 
     EAA_mi_ss =  EAA_ci_ss/EAA_vi_ss;
     EAB_mi_ss =  EAB_ci_ss/EAB_vi_ss;
@@ -543,11 +529,34 @@ US_trj_ss = 0.5053460734015673;
     RW_gi_ss = RW_ni_ss*RW_lambdai_ss*(1-RW_taunbar-RW_tauwhbar)*RW_witilde_ss^RW_etai/(1-RW_beta*RW_xii);
     US_gi_ss = US_ni_ss*US_lambdai_ss*(1-US_taunbar-US_tauwhbar)*US_witilde_ss^US_etai/(1-US_beta*US_xii);
 
-    EAA_mj_ss = (EAA_nj_ss*(1-EAA_taunbar-EAA_tauwhbar)*EAA_wjtilde_ss+EAA_trj_ss-EAA_cj_ss*(1+EAA_taucbar+EAA_gammavj_ss))/(EAA_pic_ss-1);
-	EAB_mj_ss = (EAB_nj_ss*(1-EAB_taunbar-EAB_tauwhbar)*EAB_wjtilde_ss+EAB_trj_ss-EAB_cj_ss*(1+EAB_taucbar+EAB_gammavj_ss))/(EAB_pic_ss-1);
-	RW_mj_ss = (RW_nj_ss*(1-RW_taunbar-RW_tauwhbar)*RW_wjtilde_ss+RW_trj_ss-RW_cj_ss*(1+RW_taucbar+RW_gammavj_ss))/(RW_pic_ss-1);
-	US_mj_ss = (US_nj_ss*(1-US_taunbar-US_tauwhbar)*US_wjtilde_ss+US_trj_ss-US_cj_ss*(1+US_taucbar+US_gammavj_ss))/(US_pic_ss-1);
+    EAA_mj_ss = (EAA_nj_ss*(1-EAA_taunbar-EAA_tauwhbar)*EAA_wjtilde_ss+EAA_trj_ss-EAA_cj_ss*(1+EAA_taucbar+EAA_gammavj_ss))/(1-EAA_pic_ss^(-1));
+	EAB_mj_ss = (EAB_nj_ss*(1-EAB_taunbar-EAB_tauwhbar)*EAB_wjtilde_ss+EAB_trj_ss-EAB_cj_ss*(1+EAB_taucbar+EAB_gammavj_ss))/(1-EAB_pic_ss^(-1));
+	RW_mj_ss = (RW_nj_ss*(1-RW_taunbar-RW_tauwhbar)*RW_wjtilde_ss+RW_trj_ss-RW_cj_ss*(1+RW_taucbar+RW_gammavj_ss))/(1-RW_pic_ss^(-1));
+	US_mj_ss = (US_nj_ss*(1-US_taunbar-US_tauwhbar)*US_wjtilde_ss+US_trj_ss-US_cj_ss*(1+US_taucbar+US_gammavj_ss))/(1-US_pic_ss^(-1));
+
+    EAA_cj_ss = EAA_mj_ss * EAA_vj_ss;
+    EAB_cj_ss = EAB_mj_ss * EAB_vj_ss;
+    RW_cj_ss = RW_mj_ss * RW_vj_ss; 
+	US_cj_ss = US_vj_ss * US_mj_ss;
+
+    EAA_lambdaj_ss =  (EAA_cj_ss-EAA_kappa*EAA_cj_ss)^(-EAA_sigma)/(1+EAA_taucbar+EAA_gammavj_ss+EAA_vj_ss*EAA_gammavjder_ss);
+    EAB_lambdaj_ss =  (EAB_cj_ss-EAB_kappa*EAB_cj_ss)^(-EAB_sigma)/(1+EAB_taucbar+EAB_gammavj_ss+EAB_vj_ss*EAB_gammavjder_ss);
+    RW_lambdaj_ss =  (RW_cj_ss-RW_kappa*RW_cj_ss)^(-RW_sigma)/(1+RW_taucbar+RW_gammavj_ss+RW_vj_ss*RW_gammavjder_ss);
+    US_lambdaj_ss =  (US_cj_ss-US_kappa*US_cj_ss)^(-US_sigma)/(1+US_taucbar+US_gammavj_ss+US_vj_ss*US_gammavjder_ss);
 	
+    EAA_fj_ss =(EAA_wjtilde_ss^((1+EAA_zeta)*EAA_etaj)*EAA_nj_ss^(1+EAA_zeta))/(1-EAA_beta*EAA_xij);
+    EAB_fj_ss =(EAB_wjtilde_ss^((1+EAB_zeta)*EAB_etaj)*EAB_nj_ss^(1+EAB_zeta))/(1-EAB_beta*EAA_xij);
+    RW_fj_ss =(RW_wjtilde_ss^((1+RW_zeta)*EAA_etaj)*RW_nj_ss^(1+RW_zeta))/(1-RW_beta*RW_xij);
+    US_fj_ss =(US_wjtilde_ss^((1+US_zeta)*US_etaj)*US_nj_ss^(1+US_zeta))/(1-US_beta*US_xij);
+
+    EAA_gj_ss = EAA_nj_ss*EAA_lambdaj_ss*(1-EAA_taunbar-EAA_tauwhbar)*EAA_wjtilde_ss^EAA_etaj/(1-EAA_beta*EAA_xij);
+    EAB_gj_ss = EAB_nj_ss*EAB_lambdaj_ss*(1-EAB_taunbar-EAB_tauwhbar)*EAB_wjtilde_ss^EAB_etaj/(1-EAB_beta*EAB_xij);
+    RW_gj_ss = RW_nj_ss*RW_lambdaj_ss*(1-RW_taunbar-RW_tauwhbar)*RW_wjtilde_ss^RW_etaj/(1-RW_beta*RW_xij);
+    US_gj_ss = US_nj_ss*US_lambdaj_ss*(1-US_taunbar-US_tauwhbar)*US_wjtilde_ss^US_etaj/(1-US_beta*US_xij);
+
+%%% Production
+
+    
 
 
 

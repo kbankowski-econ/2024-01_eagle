@@ -1234,6 +1234,10 @@ EAA_rk_ss EAB_rk_ss RW_rk_ss US_rk_ss
 EAA_taukbar EAB_taukbar RW_taukbar US_taukbar
 EAA_witilde_ss EAB_witilde_ss RW_witilde_ss US_witilde_ss 
 EAA_fi_ss EAB_fi_ss RW_fi_ss US_fi_ss 
+EAA_gi_ss EAB_gi_ss RW_gi_ss US_gi_ss 
+EAA_fj_ss EAB_fj_ss RW_fj_ss US_fj_ss 
+EAA_gj_ss EAB_gj_ss RW_gj_ss US_gj_ss 
+
     EAA_cpim
     EAB_cpim
     RW_cpim
@@ -2733,6 +2737,11 @@ initval;
 	RW_lambdai =  RW_lambdai_ss;
     US_lambdai =  US_lambdai_ss;
 
+	EAA_lambdaj =  EAA_lambdaj_ss;
+    EAB_lambdaj =  EAB_lambdaj_ss;
+	RW_lambdaj =  RW_lambdaj_ss;
+    US_lambdaj =  US_lambdaj_ss;
+
 	EAA_tauc = EAA_taucbar;
 	EAB_tauc = EAB_taucbar;
 	RW_tauc =  RW_taucbar;
@@ -2748,6 +2757,16 @@ initval;
 	RW_gammavider =  RW_gammavider_ss;
 	US_gammavider =  US_gammavider_ss;
 
+	EAA_gammavj = EAA_gammavj_ss;
+    EAB_gammavj = EAB_gammavj_ss;
+    RW_gammavj  = RW_gammavj_ss; 
+    US_gammavj  = US_gammavj_ss; 
+
+	EAA_gammavjder = EAA_gammavjder_ss;
+	EAB_gammavjder =  EAB_gammavjder_ss;
+	RW_gammavjder =  RW_gammavjder_ss;
+	US_gammavjder =  US_gammavjder_ss;
+
     EAA_ci  = EAA_ci_ss;
     EAB_ci =  EAB_ci_ss;
     RW_ci = RW_ci_ss;   
@@ -2757,6 +2776,16 @@ initval;
     EAB_vi =  EAB_vi_ss;
     RW_vi = RW_vi_ss;   
     US_vi = US_vi_ss; 
+
+    EAA_cj  = EAA_cj_ss;
+    EAB_cj =  EAB_cj_ss;
+    RW_cj = RW_cj_ss;   
+    US_cj = US_cj_ss; 
+
+    EAA_vj  = EAA_vj_ss;
+    EAB_vj =  EAB_vj_ss;
+    RW_vj = RW_vj_ss;   
+    US_vj = US_vj_ss; 
 
     EAA_r =EAA_r_ss;
     EAB_r =EAB_r_ss;
@@ -2818,6 +2847,16 @@ initval;
     RW_wi = RW_witilde_ss;
     US_wi = US_witilde_ss;
 
+    EAA_wjtilde  = EAA_wjtilde_ss;
+    EAB_wjtilde = EAB_wjtilde_ss;
+    RW_wjtilde = RW_wjtilde_ss;
+    US_wjtilde = US_wjtilde_ss;
+
+    EAA_wj  = EAA_wjtilde_ss;
+    EAB_wj = EAB_wjtilde_ss;
+    RW_wj = RW_wjtilde_ss;
+    US_wj = US_wjtilde_ss;
+
     EAA_fi = EAA_fi_ss;
     EAB_fi = EAB_fi_ss;
     RW_fi  = RW_fi_ss ;
@@ -2827,6 +2866,16 @@ initval;
     EAB_gi = EAB_gi_ss;
     RW_gi  = RW_gi_ss ;
     US_gi  = US_gi_ss ;
+
+    EAA_fj = EAA_fj_ss;
+    EAB_fj = EAB_fj_ss;
+    RW_fj  = RW_fj_ss ;
+    US_fj  = US_fj_ss ;
+
+    EAA_gj = EAA_gj_ss;
+    EAB_gj = EAB_gj_ss;
+    RW_gj  = RW_gj_ss ;
+    US_gj  = US_gj_ss ;
 
     EAA_wcst = 0;
     EAB_wcst = 0;
