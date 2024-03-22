@@ -30,29 +30,12 @@ options.runParsing = true;
 
 
 %% ----------------------
-%  Parsing all mod files
+%  Loading the model and saving the mod file
 %  ----------------------
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 
 try % To avoid json issue (here we absolutely need the json option)
-    dynare(sprintf('eagleModel'), options_ecb.mod_run, options_ecb.mod_path, 'nopreprocessoroutput');
+    dynare(sprintf('eagleModel'), options_ecb.mod_run, options_ecb.mod_path, 'nopreprocessoroutput', 'savemacro');
 catch
-    dynare(sprintf('eagleModel'), options_ecb.mod_run, options_ecb.mod_path, 'nopreprocessoroutput');
+    dynare(sprintf('eagleModel'), options_ecb.mod_run, options_ecb.mod_path, 'nopreprocessoroutput', 'savemacro');
 end
-
-%%
-endo =  M_.endo_names(~contains(M_.endo_names, 'AUX_'));
-endoProblematic = {...
-    'EAAEAB_imc'
-    'RWUS_imc'
-    'EABRW_imc'
-    'USEAA_imc'
-    'EAAEAB_imi' 
-    'EABRW_imi' 
-    'RWUS_imi'
-    'USEAA_imi'
-    };
-
-endoAdjusted = setdiff(endo, endoProblematic);
-% Creating .inc files which contain all informations on the model
-utils.ParseModel(sprintf('eagleModel'), sprintf('Parsed_eagleModel'), endoAdjusted, false)
