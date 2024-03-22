@@ -1,81 +1,80 @@
-Starting Dynare (version 4.4.3).
-Starting preprocessing of the model file ...
-Reading eagle_steady.txt.
-WARNING: Unknown symbol AUX_ENDO_LAG_162_1 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_162_2 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_162_3 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_150_1 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_150_2 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_150_3 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_135_1 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_220_1 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_220_2 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_220_3 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_483_1 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_483_2 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_483_3 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_471_1 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_471_2 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_471_3 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_456_1 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_541_1 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_541_2 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_541_3 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_804_1 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_804_2 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_804_3 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_792_1 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_792_2 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_792_3 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_777_1 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_862_1 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_862_2 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_862_3 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1128_1 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1128_2 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1128_3 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1116_1 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1116_2 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1116_3 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1101_1 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1183_1 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1183_2 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1183_3 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_63_1 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_177_1 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_498_1 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3_1 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3_2 in eagle_steady.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3_3 in eagle_steady.txt
-Substitution of endo lags >= 2: added 62 auxiliary variables and equations.
-Found 941 equation(s).
-Evaluating expressions...done
-Computing static model derivatives:
- - order 1
-Normalizing the model...
-Finding the optimal block decomposition of the model ...
-125 block(s) found:
-  121 recursive block(s) and 4 simultaneous block(s).
-  the largest simultaneous block has 454 equation(s)
-                                 and 454 feedback variable(s).
-Computing dynamic model derivatives:
- - order 1
-Normalizing the model...
-Finding the optimal block decomposition of the model ...
-60 block(s) found:
-  59 recursive block(s) and 1 simultaneous block(s).
-  the largest simultaneous block has 560 equation(s)
-                                 and 560 feedback variable(s).
-Processing outputs ...done
-Preprocessing completed.
-Starting MATLAB/Octave computing.
-MODEL STEADY STATE: (method=ByteCode own solver)
------------------------------------
-      Simulate iteration no 1     
-      max. error=3.2338691001e-04       
-      sqr. error=1.3072386644e-07       
-      abs. error=4.8508147967e-04       
------------------------------------
+Starting Dynare (version 6.0).
+Calling Dynare with arguments: none
+Starting preprocessing of the model file ... 
+Reading eagle_steady.txt. 
+WARNING: Unknown symbol AUX_ENDO_LAG_161_1 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_161_2 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_161_3 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_149_1 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_149_2 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_149_3 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_134_1 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_219_1 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_219_2 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_219_3 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_481_1 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_481_2 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_481_3 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_469_1 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_469_2 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_469_3 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_454_1 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_539_1 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_539_2 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_539_3 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_801_1 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_801_2 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_801_3 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_789_1 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_789_2 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_789_3 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_774_1 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_859_1 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_859_2 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_859_3 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1123_1 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1123_2 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1123_3 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1111_1 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1111_2 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1111_3 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1096_1 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1178_1 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1178_2 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1178_3 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_62_1 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_176_1 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_496_1 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3_1 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3_2 in eagle_steady.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3_3 in eagle_steady.txt 
+WARNING: shock_eab_gy2.mod:19.1-58: The 'simul' statement is deprecated. Please use 'perfect_foresight_setup' and 'perfect_foresight_solver' instead. 
+Substitution of endo lags >= 2: added 62 auxiliary variables and equations. 
+Found 941 equation(s). 
+Evaluating expressions... 
+Computing static model derivatives (order 1). 
+Normalizing the static model... 
+Finding the optimal block decomposition of the static model... 
+124 block(s) found: 
+  120 recursive block(s) and 4 simultaneous block(s). 
+  the largest simultaneous block has 454 equation(s) 
+                                 and 454 feedback variable(s). 
+Computing dynamic model derivatives (order 1). 
+Normalizing the dynamic model... 
+Finding the optimal block decomposition of the dynamic model... 
+60 block(s) found: 
+  59 recursive block(s) and 1 simultaneous block(s). 
+  the largest simultaneous block has 560 equation(s) 
+                                 and 506 feedback variable(s). 
+Preprocessing completed. 
+Preprocessing time: 0h00m03s.
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 3.234e-04
+      2-norm error   = 3.616e-04
+      1-norm error   = 4.851e-04
+------------------------------------
 
 STEADY-STATE RESULTS:
 
@@ -161,7 +160,7 @@ EAA_cj              		 1.4084
 EAA_cy              		 0.598091
 EAA_d               		 0.312636
 EAA_dn              		 0.312636
-EAA_dt              		 -2.66175e-08
+EAA_dt              		 -2.66174e-08
 EAA_epsilonm        		 -0.750001
 EAA_etot            		 0.87426
 EAA_ex              		 0.907327
@@ -173,7 +172,7 @@ EAA_g               		 0.606277
 EAA_gammab          		 0
 EAA_gammai          		 0
 EAA_gammaider       		 0
-EAA_gammau          		 4.1439e-18
+EAA_gammau          		 0
 EAA_gammauder       		 0.0341552
 EAA_gammav          		 0.00021177
 EAA_gammavi         		 0.000101018
@@ -379,7 +378,7 @@ EAB_cj              		 1.45988
 EAB_cy              		 0.604869
 EAB_d               		 0.326523
 EAB_dn              		 0.326523
-EAB_dt              		 -1.10569e-08
+EAB_dt              		 -1.1057e-08
 EAB_epsilonm        		 -0.750001
 EAB_etot            		 0.831906
 EAB_ex              		 1.05728
@@ -391,7 +390,7 @@ EAB_g               		 0.624295
 EAB_gammab          		 0
 EAB_gammai          		 0
 EAB_gammaider       		 0
-EAB_gammau          		 0
+EAB_gammau          		 -6.93889e-18
 EAB_gammauder       		 0.0341188
 EAB_gammav          		 0.000221278
 EAB_gammavi         		 0.000101018
@@ -510,7 +509,7 @@ EAB_wjtilde         		 0.875516
 EAB_wnty            		 0.490019
 EAB_wy              		 0.522465
 EAB_y               		 3.42211
-EAB_ygap            		 -7.25679e-08
+EAB_ygap            		 -7.2568e-08
 EAB_ygrowth         		 1
 EAB_ygrowth4        		 1
 EAB_yhty            		 0.385242
@@ -609,7 +608,7 @@ RW_g                		 0.668718
 RW_gammab           		 0
 RW_gammai           		 0
 RW_gammaider        		 0
-RW_gammau           		 3.1225e-17
+RW_gammau           		 3.33067e-16
 RW_gammauder        		 0.0338385
 RW_gammav           		 0.000273885
 RW_gammavi          		 0.000101018
@@ -826,7 +825,7 @@ US_fn               		 8.22821
 US_g                		 0.677043
 US_gammai           		 0
 US_gammaider        		 0
-US_gammau           		 0
+US_gammau           		 -6.93889e-18
 US_gammauder        		 0.0338714
 US_gammav           		 0.000274496
 US_gammavi          		 0.000101018
@@ -956,30 +955,29 @@ US_zn               		 1
 US_zt               		 1
 EAAEAB_nerdep       		 1
 EAA_gammabh         		 0
-EAA_bh              		 -1.80533e-12
-EAB_bh              		 4.81422e-12
-MODEL SIMULATION: (method=ByteCode own solver)
------------------------------------
-      Simulate iteration no 1     
-      max. error=3.6214099384e-02       
-      sqr. error=1.0861132536e-02       
-      abs. error=5.6416842421e-01       
------------------------------------
-(** 5367.000000 milliseconds **)
-Sim : 198.000000 ms
------------------------------------
-      Simulate iteration no 2     
-      max. error=4.1494821263e-03       
-      sqr. error=1.0955956997e-04       
-      abs. error=5.6668127488e-02       
------------------------------------
-(** 5124.000000 milliseconds **)
-Sim : 213.000000 ms
------------------------------------
-      Simulate iteration no 3     
-      max. error=7.2296423870e-07       
-      sqr. error=1.7472247615e-12       
-      abs. error=1.0237724865e-05       
------------------------------------
-Total computing time : 0h00m12s
-Note: 46 warning(s) encountered in the preprocessor
+EAA_bh              		 2.45359e-13
+EAB_bh              		 -6.54291e-13
+MODEL SIMULATION: (method=LBJ with Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 3.621e-02
+      2-norm error   = 1.042e-01
+      1-norm error   = 5.642e-01
+------------------------------------
+(** 10.27 seconds **)
+------------------------------------
+      Iteration no. 2
+      Inf-norm error = 4.149e-03
+      2-norm error   = 1.047e-02
+      1-norm error   = 5.648e-02
+------------------------------------
+(** 14.17 seconds **)
+------------------------------------
+      Iteration no. 3
+      Inf-norm error = 2.900e-07
+      2-norm error   = 7.315e-07
+      1-norm error   = 6.150e-06
+------------------------------------
+
+Perfect foresight solution found.
+

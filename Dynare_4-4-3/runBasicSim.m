@@ -8,7 +8,7 @@ addpath(genpath(parentFolder));
 %% performing data transformation
 fprintf('\n\n\n+++ Initialising the project ...\n');
 % calling a specific user input not tracked by GIT
-call_paths;
+utils.call.paths;
 % Call Iris
 addpath(iris_path);
 iris.startup
