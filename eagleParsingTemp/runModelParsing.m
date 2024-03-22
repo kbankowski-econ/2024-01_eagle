@@ -19,7 +19,6 @@ dynare_config
 %% --------------------
 %  Setting up  options
 %  --------------------
-options_ecb.mod_path = sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp');
 options_ecb.simulation = 1; % Do we want to simulate long-run model yes=1 and no=0 
 options_ecb.normalization = 1; % Do we want to normalize dataset yes=1 and no=0 
 norm_years = 200; % Normalization horizon #of_years
@@ -34,9 +33,9 @@ options.runParsing = true;
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 
 try % To avoid json issue (here we absolutely need the json option)
-    dynare(sprintf('eagleModel'), options_ecb.mod_path, 'nopreprocessoroutput', 'savemacro');
+    dynare(sprintf('eagleModel'), sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'nopreprocessoroutput', 'savemacro');
 catch
-    dynare(sprintf('eagleModel'), options_ecb.mod_path, 'nopreprocessoroutput', 'savemacro');
+    dynare(sprintf('eagleModel'), sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'nopreprocessoroutput', 'savemacro');
 end
 
 %% ----------------------
