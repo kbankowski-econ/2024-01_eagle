@@ -8,4 +8,4 @@
 
 @#include "modeqs.mod"
 
-load_params_and_steady_state('eagle_steady.txt');
+// load_params_and_steady_state('eagle_steady.txt');
