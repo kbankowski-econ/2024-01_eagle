@@ -17,7 +17,6 @@ options_.markowitz = 5;
 
 @#include "initval.mod"
 
-
 // Technology
 
 disp('alphat')
