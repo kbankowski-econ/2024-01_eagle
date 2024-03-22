@@ -39,3 +39,19 @@ try % To avoid json issue (here we absolutely need the json option)
 catch
     dynare(sprintf('eagleModel'), options_ecb.mod_run, options_ecb.mod_path, 'nopreprocessoroutput', 'savemacro');
 end
+
+%% ----------------------
+%  Loading the 'parsed' model
+%  ----------------------
+cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
+
+copyfile( ...
+    fullfile(project_path, 'eagleParsingTemp','modFiles', 'eagleModel-macroexp.mod') ...
+    , fullfile(project_path, 'eagleParsingTemp','modFiles', 'eagleModel_macroexp.mod') ...
+);
+
+try % To avoid json issue (here we absolutely need the json option)
+    dynare(sprintf('eagleModel_macroexp'), options_ecb.mod_run, options_ecb.mod_path, 'nopreprocessoroutput');
+catch
+    dynare(sprintf('eagleModel_macroexp'), options_ecb.mod_run, options_ecb.mod_path, 'nopreprocessoroutput');
+end
