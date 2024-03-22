@@ -19,6 +19,9 @@ dynare_config
 %%
 cd(fullfile(project_path, 'Dynare_4-4-3','modFiles'));
 
+% just a test in the context for solving the extended model
+dynare steady0.mod
+
 % calculating the steady state
 if true
     dynare steady1.mod
