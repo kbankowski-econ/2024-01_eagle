@@ -405,9 +405,9 @@ parameters
 
 var @{countries[1]}@{countries[2]}_nerdep;
 var @{countries[1]}@{countries[3]}_nerdep;
-var @{countries[2]}@{countries[3]}_nerdep;
 
 var @{countries[1]}_gammabh;
+var @{countries[2]}_gammabh;
 
 var
 @#for co in countries[1:3]
