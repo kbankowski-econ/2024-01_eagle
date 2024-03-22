@@ -19,6 +19,10 @@ dynare_config
 %%
 cd(fullfile(project_path, 'Dynare_4-4-3','modFiles'));
 
+% just loading the models (both nonSS and SS) to have a macro-exp version
+dynare(sprintf('eagleModel_verNoNss'), 'nopreprocessoroutput', 'savemacro');
+dynare(sprintf('eagleModel_verSS'), 'nopreprocessoroutput', 'savemacro');
+
 % just a test in the context for solving the extended model
 dynare steady0.mod
 

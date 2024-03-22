@@ -1,0 +1,21 @@
+function [y, T] = static_1(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
+  y(94)=0;
+  y(95)=0;
+  y(96)=0;
+  y(200)=1;
+  y(18)=0;
+  y(21)=1;
+  y(19)=0;
+  y(22)=1;
+  y(20)=0;
+  y(23)=1;
+  y(24)=0;
+  y(27)=1;
+  y(25)=0;
+  y(28)=1;
+  y(26)=0;
+  y(29)=1;
+  y(181)=0;
+  y(190)=0;
+  y(149)=params(38);
+end
