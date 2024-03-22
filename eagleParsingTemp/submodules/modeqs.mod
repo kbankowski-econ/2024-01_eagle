@@ -5,11 +5,12 @@ model(block, bytecode, cutoff=0);
 @#endif
 
 
-@#for i in 1:4
+@#for i in 1:5
 @#define co = countries[i]
 @#define co2 = countries2[i]
 @#define co3 = countries3[i]
 @#define co4 = countries4[i]
+@#define co5 = countries5[i]
 
 // Core model begins
 
@@ -36,7 +37,7 @@ model(block, bytecode, cutoff=0);
 @{co}_lambdai*(1+@{co}_tauc+@{co}_gammavi+@{co}_vi*@{co}_gammavider) = @{co}_zcon*(@{co}_ci-@{co}_kappa*@{co}_ci(-1))^(-@{co}_sigma);
 
 // Euler equation for government bonds
-@#if co == countries[1]
+@#if co == countries[1] || co == countries[2]
 @#if !steady
 @{co}_r*(1-@{co}_gammabh) = @{co}_beta^(-1)*@{co}_lambdai/@{co}_lambdai(+1)*@{co}_pic(+1);
 @#else
@@ -44,11 +45,11 @@ model(block, bytecode, cutoff=0);
 @#endif
 @#endif
 
-@#if co == countries[2]
+@#if co == countries[3]
 @{co}_r = @{co}_beta^(-1)*@{co}_lambdai/@{co}_lambdai(+1)*@{co}_pic(+1);
 @#endif
 
-@#if co != countries[1] && co != countries[2]
+@#if co != countries[1] && co != countries[2] && co != countries[3]
 @{co}_r = @{co}_beta^(-1)*@{co}_lambdai/@{co}_lambdai(+1)*@{co}_pic(+1);
 @#endif
 
@@ -175,7 +176,7 @@ model(block, bytecode, cutoff=0);
 // Intermediate-good firms
 //-------------
 
-@#if co != countries[1] && co != countries[2]
+@#if co != countries[1] && co != countries[2] && co != countries[3]
 
 // Production function tradable
 @{co}_yst = @{co}_zt*@{co}_kdt^@{co}_alphat*@{co}_ndt^(1-@{co}_alphat)-@{co}_psitbar;
@@ -401,7 +402,7 @@ model(block, bytecode, cutoff=0);
 
 // Private consumption good (import)
 @{co}_imc^((@{co}_mumc-1)/@{co}_mumc) =
-@#for it in countries - [ co, co3 ]
+@#for it in countries - [ co, co4 ]
 @#if !steady
 +@{co}@{it}_numc ^(1/@{co}_mumc)*((1-@{co}@{it}_gammaimc)*@{co}@{it}_imc)^(1-1/@{co}_mumc)
 @#else
@@ -409,30 +410,36 @@ model(block, bytecode, cutoff=0);
 @#endif
 @#endfor
 +(1
-@#for it in countries - [ co, co3 ]
+@#for it in countries - [ co, co4 ]
 -@{co}@{it}_numc
 @#endfor
 @#if !steady
-)^(1/@{co}_mumc)*((1-@{co}@{co3}_gammaimc)*@{co}@{co3}_imc)^(1-1/@{co}_mumc);
+)^(1/@{co}_mumc)*((1-@{co}@{co4}_gammaimc)*@{co}@{co4}_imc)^(1-1/@{co}_mumc);
 @#else
-)^(1/@{co}_mumc)*@{co}@{co3}_imc^(1-1/@{co}_mumc);
+)^(1/@{co}_mumc)*@{co}@{co4}_imc^(1-1/@{co}_mumc);
 @#endif
 
 // Demand for bilateral consumption import goods
 @#if !steady
-@{co}@{co4}_imc = @{co}@{co4}_numc*(@{co}@{co4}_pim/(@{co}@{co4}_gammaimcdag*@{co}_pimc))^(-@{co}_mumc)*@{co}_imc/(1-@{co}@{co4}_gammaimc);
+@{co}@{co5}_imc = @{co}@{co5}_numc*(@{co}@{co5}_pim/(@{co}@{co5}_gammaimcdag*@{co}_pimc))^(-@{co}_mumc)*@{co}_imc/(1-@{co}@{co5}_gammaimc);
 @#else
-@{co}@{co4}_imc = @{co}@{co4}_numc*(@{co}@{co4}_pim/@{co}_pimc)^(-@{co}_mumc)*@{co}_imc;
+@{co}@{co5}_imc = @{co}@{co5}_numc*(@{co}@{co5}_pim/@{co}_pimc)^(-@{co}_mumc)*@{co}_imc;
 @#endif
 
-@{co}@{co3}_imc = (1
-@#for it in countries - [ co, co3 ]
+@#if !steady
+@{co}@{co3}_imc = @{co}@{co3}_numc*(@{co}@{co3}_pim/(@{co}@{co3}_gammaimcdag*@{co}_pimc))^(-@{co}_mumc)*@{co}_imc/(1-@{co}@{co3}_gammaimc);
+@#else
+@{co}@{co3}_imc = @{co}@{co3}_numc*(@{co}@{co3}_pim/@{co}_pimc)^(-@{co}_mumc)*@{co}_imc;
+@#endif
+
+@{co}@{co4}_imc = (1
+@#for it in countries - [ co, co4 ]
 -@{co}@{it}_numc
 @#endfor
 @#if !steady
-)*(@{co}@{co3}_pim/(@{co}@{co3}_gammaimcdag*@{co}_pimc))^(-@{co}_mumc)*@{co}_imc/(1-@{co}@{co3}_gammaimc);
+)*(@{co}@{co4}_pim/(@{co}@{co4}_gammaimcdag*@{co}_pimc))^(-@{co}_mumc)*@{co}_imc/(1-@{co}@{co4}_gammaimc);
 @#else
-)*(@{co}@{co3}_pim/@{co}_pimc)^(-@{co}_mumc)*@{co}_imc;
+)*(@{co}@{co4}_pim/@{co}_pimc)^(-@{co}_mumc)*@{co}_imc;
 @#endif
 
 // Price of the consumption good (import)
