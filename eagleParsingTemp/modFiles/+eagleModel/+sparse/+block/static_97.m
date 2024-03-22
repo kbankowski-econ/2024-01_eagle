@@ -1,33 +1,13 @@
-function [y, T] = static_97(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(118)=y(160)/y(162);
-  y(13)=y(695)*y(704)*y(58)*params(287)/params(57)/(y(164)*y(213));
-  y(10)=y(689)*y(704)*y(58)*params(287)/params(57)/(y(164)*y(213));
-  y(46)=y(52)*y(43)/(y(164)*y(213));
-  y(40)=y(52)*y(37)/(y(164)*y(213));
-  y(12)=y(477)*y(486)*y(57)*params(212)/params(57)/(y(164)*y(213));
-  y(9)=y(471)*y(486)*y(57)*params(212)/params(57)/(y(164)*y(213));
-  y(45)=y(51)*y(42)/(y(164)*y(213));
-  y(39)=y(51)*y(36)/(y(164)*y(213));
-  y(11)=y(259)*y(268)*y(56)*params(133)/params(57)/(y(164)*y(213));
-  y(8)=y(253)*y(268)*y(56)*params(133)/params(57)/(y(164)*y(213));
-  y(44)=y(50)*y(41)/(y(164)*y(213));
-  y(38)=y(50)*y(35)/(y(164)*y(213));
-  y(188)=y(187)/(y(164)*y(213));
-  y(84)=(-0.125)/(y(168)*(y(168)+y(168)*params(25)-1));
-  y(219)=y(213)*y(164)*params(57)/y(170)/T(724);
-  y(216)=y(213)/y(893);
-  y(214)=y(213)/params(80)-1;
-  y(218)=y(220)*y(160)/(y(164)*y(213));
-  y(217)=y(221)*y(144)/(y(164)*y(213));
-  y(206)=y(137)*y(204)/(y(221)*y(144));
-  y(211)=y(136)*y(204)/(y(220)*y(160));
-  y(212)=y(204)*y(133)/(y(164)*y(213));
-  y(127)=(1+y(185))*y(204)*y(133)/(y(164)*y(213));
-  y(198)=y(180)/(params(77)*params(80));
-  y(76)=y(74)/(params(77)*params(80));
-  y(116)=y(115)*y(156)/(y(164)*y(213));
-  y(114)=y(113)*y(155)/(y(164)*y(213));
-  y(117)=(y(113)*y(155)+y(115)*y(156))/(y(164)*y(213));
-  y(119)=y(146)*y(110)/(y(164)*y(213));
-  y(80)=y(77)/(y(164)*y(213));
+function [y, T, residual, g1] = static_97(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
+residual=NaN(1, 1);
+  residual(1)=(y(223))-(y(244)*log(y(101)-params(26)*y(101))-1/(1+params(63))*y(161)^(1+params(63))+params(9)*y(223));
+if nargout > 3
+    g1_v = NaN(1, 1);
+g1_v(1)=1-params(9);
+    if ~isoctave && matlab_ver_less_than('9.8')
+        sparse_rowval = double(sparse_rowval);
+        sparse_colval = double(sparse_colval);
+    end
+    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
+end
 end
