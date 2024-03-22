@@ -19,6 +19,8 @@ dynare_config
 %%
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 
+dynare('steady0.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
+
 % calculating the steady state
 if true
     dynare('steady1.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
