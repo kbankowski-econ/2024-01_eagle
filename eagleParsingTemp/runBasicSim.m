@@ -27,6 +27,8 @@ if true
     dynare('steady2.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
 end
 
+dynare(sprintf('eagleModel_verSS'), 'nopreprocessoroutput', 'savemacro');
+
 
 % % shock simulation: 4-period g shock in EAB region
 % dynare shock_eab_gy1.mod
