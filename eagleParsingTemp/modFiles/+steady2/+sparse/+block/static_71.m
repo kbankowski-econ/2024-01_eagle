@@ -1,0 +1,22 @@
+function [y, T] = static_71(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
+  y(1195)=0;
+  y(1210)=0;
+  y(1211)=1;
+  y(108)=0;
+  y(186)=0;
+  y(184)=1;
+  y(355)=0;
+  y(433)=0;
+  y(431)=1;
+  y(602)=0;
+  y(680)=0;
+  y(678)=1;
+  y(849)=0;
+  y(927)=0;
+  y(925)=1;
+  y(1170)=1;
+  y(1272)=0;
+  y(1273)=0;
+  y(5)=1;
+  y(3)=y(161)^(params(63)/(params(205)+params(134)+params(63)))*y(408)^(params(134)/(params(205)+params(134)+params(63)))*y(655)^(params(205)/(params(205)+params(134)+params(63)));
+end
