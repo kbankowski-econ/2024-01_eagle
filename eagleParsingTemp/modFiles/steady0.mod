@@ -21,11 +21,11 @@ options_.markowitz = 5;
 
 disp('alphat')
 homotopy_setup;
-EAA_alphat, 0.1;
-RW_alphat,  0.1;
-US_alphat,  0.1;
-EAB_alphat, 0.1;
-EAC_alphat, 0.1;
+EAA_alphat, 0.3;
+RW_alphat,  0.3;
+US_alphat,  0.3;
+EAB_alphat, 0.3;
+EAC_alphat, 0.3;
 end;
 steady(homotopy_steps = 5);
 
