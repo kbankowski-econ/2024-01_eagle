@@ -24,7 +24,7 @@ dynare('steady0.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingT
 % calculating the steady state
 if true
     dynare('steady1.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
-%     dynare steady2.mod
+    dynare('steady2.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
 end
 
 
