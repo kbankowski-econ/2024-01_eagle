@@ -444,7 +444,7 @@ model(block, bytecode, cutoff=0);
 
 // Price of the consumption good (import)
 @{co}_pimc^(1-@{co}_mumc) =
-@#for it in countries - [ co, co3 ]
+@#for it in countries - [ co, co4 ]
 @#if !steady
 +@{co}@{it}_numc *(@{co}@{it}_pim/@{co}@{it}_gammaimcdag)^(1-@{co}_mumc)
 @#else
@@ -452,13 +452,13 @@ model(block, bytecode, cutoff=0);
 @#endif
 @#endfor
 +(1
-@#for it in countries - [ co, co3 ]
+@#for it in countries - [ co, co4 ]
 -@{co}@{it}_numc
 @#endfor
 @#if !steady
-)*(@{co}@{co3}_pim/@{co}@{co3}_gammaimcdag)^(1-@{co}_mumc);
+)*(@{co}@{co4}_pim/@{co}@{co4}_gammaimcdag)^(1-@{co}_mumc);
 @#else
-)*@{co}@{co3}_pim^(1-@{co}_mumc);
+)*@{co}@{co4}_pim^(1-@{co}_mumc);
 @#endif
 
 // Private consumption good (import) inflation
@@ -472,7 +472,7 @@ model(block, bytecode, cutoff=0);
 
 // Private investment good (import)
 @{co}_imi^((@{co}_mumi-1)/@{co}_mumi) =
-@#for it in countries - [ co, co3 ]
+@#for it in countries - [ co, co4 ]
 @#if !steady
 +@{co}@{it}_numi ^(1/@{co}_mumi)*((1-@{co}@{it}_gammaimi)*@{co}@{it}_imi)^(1-1/@{co}_mumi)
 @#else
@@ -480,35 +480,42 @@ model(block, bytecode, cutoff=0);
 @#endif
 @#endfor
 +(1
-@#for it in countries - [ co, co3 ]
+@#for it in countries - [ co, co4 ]
 -@{co}@{it}_numi
 @#endfor
 @#if !steady
-)^(1/@{co}_mumi)*((1-@{co}@{co3}_gammaimi)*@{co}@{co3}_imi)^(1-1/@{co}_mumi);
+)^(1/@{co}_mumi)*((1-@{co}@{co4}_gammaimi)*@{co}@{co4}_imi)^(1-1/@{co}_mumi);
 @#else
-)^(1/@{co}_mumi)*@{co}@{co3}_imi^(1-1/@{co}_mumi);
+)^(1/@{co}_mumi)*@{co}@{co4}_imi^(1-1/@{co}_mumi);
 @#endif
 
 // Demand for bilateral investment import goods
 @#if !steady
-@{co}@{co4}_imi = @{co}@{co4}_numi*(@{co}@{co4}_pim/(@{co}@{co4}_gammaimidag*@{co}_pimi))^(-@{co}_mumi)*@{co}_imi/(1-@{co}@{co4}_gammaimi);
+@{co}@{co5}_imi = @{co}@{co5}_numi*(@{co}@{co5}_pim/(@{co}@{co5}_gammaimidag*@{co}_pimi))^(-@{co}_mumi)*@{co}_imi/(1-@{co}@{co5}_gammaimi);
 @#else
-@{co}@{co4}_imi = @{co}@{co4}_numi*(@{co}@{co4}_pim/@{co}_pimi)^(-@{co}_mumi)*@{co}_imi;
+@{co}@{co5}_imi = @{co}@{co5}_numi*(@{co}@{co5}_pim/@{co}_pimi)^(-@{co}_mumi)*@{co}_imi;
 @#endif
 
-@{co}@{co3}_imi = (1
-@#for it in countries - [ co, co3 ]
+// Demand for bilateral investment import goods
+@#if !steady
+@{co}@{co3}_imi = @{co}@{co3}_numi*(@{co}@{co3}_pim/(@{co}@{co3}_gammaimidag*@{co}_pimi))^(-@{co}_mumi)*@{co}_imi/(1-@{co}@{co3}_gammaimi);
+@#else
+@{co}@{co3}_imi = @{co}@{co3}_numi*(@{co}@{co3}_pim/@{co}_pimi)^(-@{co}_mumi)*@{co}_imi;
+@#endif
+
+@{co}@{co4}_imi = (1
+@#for it in countries - [ co, co4 ]
 -@{co}@{it}_numi
 @#endfor
 @#if !steady
-)*(@{co}@{co3}_pim/(@{co}@{co3}_gammaimidag*@{co}_pimi))^(-@{co}_mumi)*@{co}_imi/(1-@{co}@{co3}_gammaimi);
+)*(@{co}@{co4}_pim/(@{co}@{co4}_gammaimidag*@{co}_pimi))^(-@{co}_mumi)*@{co}_imi/(1-@{co}@{co4}_gammaimi);
 @#else
-)*(@{co}@{co3}_pim/@{co}_pimi)^(-@{co}_mumi)*@{co}_imi;
+)*(@{co}@{co4}_pim/@{co}_pimi)^(-@{co}_mumi)*@{co}_imi;
 @#endif
 
 // Price of the investment good (import)
 @{co}_pimi^(1-@{co}_mumi) =
-@#for it in countries - [ co, co3 ]
+@#for it in countries - [ co, co4 ]
 @#if !steady
 +@{co}@{it}_numi *(@{co}@{it}_pim/@{co}@{it}_gammaimidag)^(1-@{co}_mumi)
 @#else
@@ -516,13 +523,13 @@ model(block, bytecode, cutoff=0);
 @#endif
 @#endfor
 +(1
-@#for it in countries - [ co, co3 ]
+@#for it in countries - [ co, co4 ]
 -@{co}@{it}_numi
 @#endfor
 @#if !steady
-)*(@{co}@{co3}_pim/@{co}@{co3}_gammaimidag)^(1-@{co}_mumi);
+)*(@{co}@{co4}_pim/@{co}@{co4}_gammaimidag)^(1-@{co}_mumi);
 @#else
-)*@{co}@{co3}_pim^(1-@{co}_mumi);
+)*@{co}@{co4}_pim^(1-@{co}_mumi);
 @#endif
 
 // Private investment good (import) inflation
@@ -644,23 +651,16 @@ model(block, bytecode, cutoff=0);
 
 // Government budget constraint, using @{co}_pg = @{co}_pht
 
-@#if co == countries[1]
+@#if co == countries[1] || co == countries[2] || co == countries[3] 
 
-@{co}_pnt(-1)*@{co}_g(-1)+@{co}_tr(-1)
-+@{co}_b(-1)*@{co}_pic(-1)^(-1)+@{co}_m(-2)*@{co}_pic(-1)^(-1) = @{co}_tauc(-1)*@{co}_c(-1)+(@{co}_taun(-1)+@{co}_tauwh(-1))*(@{co}_wi(-1)*@{co}_ndi(-1)+@{co}_wj(-1)*@{co}_ndj(-1))+@{co}_tauwf(-1)*@{co}_w(-1)*@{co}_nd(-1)+@{co}_tauk(-1)*(@{co}_rk(-1)*@{co}_u(-1)-(@{co}_gammau(-1)+@{co}_delta)*@{co}_pi(-1))*@{co}_k(-1)+@{co}_taud(-1)*@{co}_d(-1)+@{co}_t(-1)+(@{co}_r(-1)*(1-@{co}_gammab(-1)))^(-1)*@{co}_b+@{co}_m(-1);
-
-@#else
-@#if co == countries[2]
-
-@{co}_pnt(-1)*@{co}_g(-1)+@{co}_tr(-1)
-+@{co}_b(-1)*@{co}_pic(-1)^(-1)+@{co}_m(-2)*@{co}_pic(-1)^(-1) = @{co}_tauc(-1)*@{co}_c(-1)+(@{co}_taun(-1)+@{co}_tauwh(-1))*(@{co}_wi(-1)*@{co}_ndi(-1)+@{co}_wj(-1)*@{co}_ndj(-1))+@{co}_tauwf(-1)*@{co}_w(-1)*@{co}_nd(-1)+@{co}_tauk(-1)*(@{co}_rk(-1)*@{co}_u(-1)-(@{co}_gammau(-1)+@{co}_delta)*@{co}_pi(-1))*@{co}_k(-1)+@{co}_taud(-1)*@{co}_d(-1)+@{co}_t(-1)+(@{co}_r(-1)*(1-@{co}_gammab(-1)))^(-1)*@{co}_b+@{co}_m(-1);
+	@{co}_pnt(-1)*@{co}_g(-1)+@{co}_tr(-1)
+	+@{co}_b(-1)*@{co}_pic(-1)^(-1)+@{co}_m(-2)*@{co}_pic(-1)^(-1) = @{co}_tauc(-1)*@{co}_c(-1)+(@{co}_taun(-1)+@{co}_tauwh(-1))*(@{co}_wi(-1)*@{co}_ndi(-1)+@{co}_wj(-1)*@{co}_ndj(-1))+@{co}_tauwf(-1)*@{co}_w(-1)*@{co}_nd(-1)+@{co}_tauk(-1)*(@{co}_rk(-1)*@{co}_u(-1)-(@{co}_gammau(-1)+@{co}_delta)*@{co}_pi(-1))*@{co}_k(-1)+@{co}_taud(-1)*@{co}_d(-1)+@{co}_t(-1)+(@{co}_r(-1)*(1-@{co}_gammab(-1)))^(-1)*@{co}_b+@{co}_m(-1);
 
 @#else
 
-@{co}_pnt(-1)*@{co}_g(-1)+@{co}_tr(-1)
-+@{co}_b(-1)*@{co}_pic(-1)^(-1)+@{co}_m(-2)*@{co}_pic(-1)^(-1) = @{co}_tauc(-1)*@{co}_c(-1)+(@{co}_taun(-1)+@{co}_tauwh(-1))*(@{co}_wi(-1)*@{co}_ndi(-1)+@{co}_wj(-1)*@{co}_ndj(-1))+@{co}_tauwf(-1)*@{co}_w(-1)*@{co}_nd(-1)+@{co}_tauk(-1)*(@{co}_rk(-1)*@{co}_u(-1)-(@{co}_gammau(-1)+@{co}_delta)*@{co}_pi(-1))*@{co}_k(-1)+@{co}_taud(-1)*@{co}_d(-1)+@{co}_t(-1)+(@{co}_r(-1))^(-1)*@{co}_b+@{co}_m(-1);
+	@{co}_pnt(-1)*@{co}_g(-1)+@{co}_tr(-1)
+	+@{co}_b(-1)*@{co}_pic(-1)^(-1)+@{co}_m(-2)*@{co}_pic(-1)^(-1) = @{co}_tauc(-1)*@{co}_c(-1)+(@{co}_taun(-1)+@{co}_tauwh(-1))*(@{co}_wi(-1)*@{co}_ndi(-1)+@{co}_wj(-1)*@{co}_ndj(-1))+@{co}_tauwf(-1)*@{co}_w(-1)*@{co}_nd(-1)+@{co}_tauk(-1)*(@{co}_rk(-1)*@{co}_u(-1)-(@{co}_gammau(-1)+@{co}_delta)*@{co}_pi(-1))*@{co}_k(-1)+@{co}_taud(-1)*@{co}_d(-1)+@{co}_t(-1)+(@{co}_r(-1))^(-1)*@{co}_b+@{co}_m(-1);
 
-@#endif
 @#endif
 
 // Government spending, using @{co}_pg = @{co}_pht
@@ -718,40 +718,55 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 
 @#if !steady
 
-// Monetary policy rule
-@#if co == countries[2]
+	// Monetary policy rule
+	@#if co == countries[3]
 
-@{co}_r^4-1 = @{ea}_phirr*(@{co}_r(-1)^4-1)+(1-@{ea}_phirr)*(@{co}_rrstar^4*@{co}_pi4target-1
-+@{ea}_phirpi*(@{ea}_pic4-@{co}_pi4target))
-+@{ea}_phirgy*(@{ea}_ygrowth-1)+@{ea}_epsr;
+		@{co}_r^4-1 = @{ea}_phirr*(@{co}_r(-1)^4-1)+(1-@{ea}_phirr)*(@{co}_rrstar^4*@{co}_pi4target-1
+		+@{ea}_phirpi*(@{ea}_pic4-@{co}_pi4target))
+		+@{ea}_phirgy*(@{ea}_ygrowth-1)+@{ea}_epsr;
 
-@#else // co == countries[2]
+	@#else // co == countries[2]
 
-@#if co == countries[1]
+		@#if co == countries[1] // NOTE: the parity condition always with respect to EAC
 
-@{co}_rerdep/@{co2}_rerdep*@{co}_pic/@{co2}_pic-1=0;
+			@{co}_rerdep/@{co3}_rerdep*@{co}_pic/@{co3}_pic-1=0;
 
-@#else // co == countries[1]
+		@#else // co == countries[1]
+		
+			@#if co == countries[2]
+			
+				@{co}_rerdep/@{co2}_rerdep*@{co}_pic/@{co2}_pic-1=0;
+				
+			@#else
 
-@{co}_r^4-1 = @{co}_phirr*(@{co}_r(-1)^4-1)+(1-@{co}_phirr)*(@{co}_rrstar^4*@{co}_pi4target-1+@{co}_phirpi*(@{co}_pic4-@{co}_pi4target))+@{co}_phirgy*(@{co}_y/@{co}_y(-1)-1)+@{co}_epsr;
+				@{co}_r^4-1 = @{co}_phirr*(@{co}_r(-1)^4-1)+(1-@{co}_phirr)*(@{co}_rrstar^4*@{co}_pi4target-1+@{co}_phirpi*(@{co}_pic4-@{co}_pi4target))+@{co}_phirgy*(@{co}_y/@{co}_y(-1)-1)+@{co}_epsr;
+			@#endif
+			
+		@#endif // co == countries[1]
+	@#endif // co == countries[2]
 
-@#endif // co == countries[1]
-@#endif // co == countries[2]
+	// Definition of annual inflation
+	@{co}_pic4 = @{co}_pic*@{co}_pic(-1)*@{co}_pic(-2)*@{co}_pic(-3);
 
-// Definition of annual inflation
-@{co}_pic4 = @{co}_pic*@{co}_pic(-1)*@{co}_pic(-2)*@{co}_pic(-3);
-
-// Real interest rate
-@{co}_rr-1 = @{co}_r/@{co}_pic(+1)-1;
+	// Real interest rate
+	@{co}_rr-1 = @{co}_r/@{co}_pic(+1)-1;
 
 @#else // !steady
-@#if co != countries[1]
-@{co}_r^4-1 = @{co}_rrstar^4*@{co}_pi4target-1;
-@#else
-@{co}_r = @{co2}_r;
-@#endif
-@{co}_pic4 = @{co}_pi4target;
-@{co}_rr-1 = @{co}_r/@{co}_pi4target^(1/4)-1;
+
+	@#if co != countries[1] && co != countries[2]
+		@{co}_r^4-1 = @{co}_rrstar^4*@{co}_pi4target-1;
+	@#else
+	
+		@#if co == countries[1]
+			@{co}_r = @{co3}_r;
+		@#else // co == countries[2]
+			@{co}_r = @{co2}_r;
+		@#endif
+		
+	@#endif
+
+	@{co}_pic4 = @{co}_pi4target;
+	@{co}_rr-1 = @{co}_r/@{co}_pi4target^(1/4)-1;
 @#endif // !steady
 
 // Equilibrium real interest rate
@@ -1013,8 +1028,8 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 
 @#endfor // End of main country loop
 
-@#for co in countries[1:3]
-@#define co4 = countries[4]
+@#for co in countries[1:4]
+@#define co5 = countries[5]
 
 //-------------
 // Bilateral equations versus country N
@@ -1022,20 +1037,20 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 
 // Euler equation for internationally traded bonds
 @#if !steady
-1 = @{co4}_r*(1-@{co}_gammab)*@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*@{co}_rerdep(+1)/@{co4}_pic(+1);
+1 = @{co5}_r*(1-@{co}_gammab)*@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*@{co}_rerdep(+1)/@{co5}_pic(+1);
 @#else
 @{co}_gammab = 0;
 @#endif
 
 // International transaction cost ('risk premium')
 @#if !steady
-@{co}_gammab = @{co}_gammab1*(exp(@{co}_rer*@{co}_bf/@{co4}_pic/(@{co}_py*@{co}_y)-@{co}_bfytarget)-1)
-@#if co == countries[3]
+@{co}_gammab = @{co}_gammab1*(exp(@{co}_rer*@{co}_bf/@{co5}_pic/(@{co}_py*@{co}_y)-@{co}_bfytarget)-1)
+@#if co == countries[4]
 -@{co}_rp
 @#endif
 ;
 @#else
-@{co}_bf = (@{co}_bfytarget*@{co}_py*@{co}_y)/@{co}_rer*@{co4}_pic;
+@{co}_bf = (@{co}_bfytarget*@{co}_py*@{co}_y)/@{co}_rer*@{co5}_pic;
 @#endif
 
 // Risk premium shock
@@ -1049,7 +1064,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @{co}_rerdep = @{co}_rer/@{co}_rer(-1);
 
 // Definition of the terms of trade
-@{co}_tot = @{co}@{co4}_pim/(@{co}_rer*@{co4}@{co}_pim);
+@{co}_tot = @{co}@{co5}_pim/(@{co}_rer*@{co5}@{co}_pim);
 
 @#endfor // Global loop
 
@@ -1061,59 +1076,76 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @#define co2 = countries[2]
 @#define co3 = countries[3]
 @#define co4 = countries[4]
+@#define co5 = countries[5]
 
-@{co4}_size*@{co4}_bf =
-@#for it in countries[1:3]
+@{co5}_size*@{co5}_bf =
+@#for it in countries[1:4]
 -@{it}_size*@{it}_bf
 @#endfor
 ;
 
 // Net foreign asset position
-@#for it in countries[1:3]
-@#if it == countries[3] || it == countries[4]
+@#for it in countries[1:4]
 
-@{it}_bf/@{co4}_r(-1) = @{it}_bf(-1)+@{it}_tb(-1)/@{it}_rer(-1);
+	@#if it == countries[4] || it == countries[5]
 
-@#else
-@#if it == countries[2]
+		@{it}_bf/@{co5}_r(-1) = @{it}_bf(-1)+@{it}_tb(-1)/@{it}_rer(-1);
 
-@{it}_bf/@{co4}_r(-1) = -@{it}_bh/@{co}_r(-1) / @{it}_rer(-1) + @{it}_bh(-1) / @{it}_rer(-2) + @{it}_bf(-1) + @{it}_tb(-1)/@{it}_rer(-1);
+	@#else
+	
+		@#if it == countries[3]
 
-@#else
+			@{it}_bf/@{co5}_r(-1) = -@{it}_bh/@{co}_r(-1) / @{it}_rer(-1) + @{it}_bh(-1) / @{it}_rer(-2) + @{it}_bf(-1) + @{it}_tb(-1)/@{it}_rer(-1);
 
-@{it}_bf/@{co4}_r(-1) = -@{it}_bh/@{co2}_r(-1)*@{it}@{co2}_rer(-1)/@{it}_rer(-1) + @{it}_bh(-1)*@{it}@{co2}_rer(-2) / @{it}_rer(-2) + @{it}_bf(-1) + @{it}_tb(-1)/@{it}_rer(-1);
+		@#else
+		
+			@#if it == countries[2]
 
-@#endif
-@#endif
+				@{it}_bf/@{co5}_r(-1) = -@{it}_bh/@{co3}_r(-1)*@{it}@{co3}_rer(-1)/@{it}_rer(-1) + @{it}_bh(-1)*@{it}@{co3}_rer(-2) / @{it}_rer(-2) + @{it}_bf(-1) + @{it}_tb(-1)/@{it}_rer(-1);
+				
+			@#else // if it == countries[1]
+			
+				@{it}_bf/@{co5}_r(-1) = -@{it}_bh/@{co3}_r(-1)*@{it}@{co3}_rer(-1)/@{it}_rer(-1) + @{it}_bh(-1)*@{it}@{co3}_rer(-2) / @{it}_rer(-2) + @{it}_bf(-1) + @{it}_tb(-1)/@{it}_rer(-1);
+			
+			@#endif
+
+		@#endif
+		
+	@#endif
+	
 @#endfor
 
-@{co4}_rer = 1;
+@{co5}_rer = 1;
 
-@{co}@{co2}_nerdep = @{co}_rerdep/@{co2}_rerdep*@{co}_pic/@{co2}_pic;
+@{co}@{co3}_nerdep = @{co}_rerdep/@{co3}_rerdep*@{co}_pic/@{co3}_pic;
+@{co2}@{co3}_nerdep = @{co2}_rerdep/@{co3}_rerdep*@{co2}_pic/@{co3}_pic;
 
 // Euler equation for euroarea traded bonds
 @#if !steady
-1 = @{co2}_r*(1-@{co}_gammabh)*@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*@{co}@{co2}_rer(+1)/@{co}@{co2}_rer   /@{co2}_pic(+1);
+1 = @{co3}_r*(1-@{co}_gammabh)*@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*@{co}@{co3}_rer(+1)/@{co}@{co3}_rer   /@{co3}_pic(+1);
+1 = @{co3}_r*(1-@{co2}_gammabh)*@{co2}_beta*@{co2}_lambdai(+1)/@{co2}_lambdai*@{co2}@{co3}_rer(+1)/@{co2}@{co3}_rer   /@{co3}_pic(+1);
 @#else
 @{co}_gammabh = 0;
+@{co2}_gammabh = 0;
 @#endif
 
 // International transaction cost ('risk premium')
 @#if !steady
-@{co}_gammabh = @{co2}_gammab1*(exp(@{co}@{co2}_rer*@{co}_bh/@{co2}_pic/(@{co}_py*@{co}_y)-@{co}_bhytarget)-1);
+@{co}_gammabh = @{co3}_gammab1*(exp(@{co}@{co3}_rer*@{co}_bh/@{co3}_pic/(@{co}_py*@{co}_y)-@{co}_bhytarget)-1);
+@{co2}_gammabh = @{co3}_gammab1*(exp(@{co2}@{co3}_rer*@{co2}_bh/@{co3}_pic/(@{co2}_py*@{co2}_y)-@{co2}_bhytarget)-1);
 @#else
-@{co}_bh = (@{co}_bhytarget*@{co}_py*@{co}_y)/@{co}@{co2}_rer*@{co2}_pic;
+@{co}_bh = (@{co}_bhytarget*@{co}_py*@{co}_y)/@{co}@{co3}_rer*@{co3}_pic;
+@{co2}_bh = (@{co2}_bhytarget*@{co2}_py*@{co2}_y)/@{co2}@{co3}_rer*@{co3}_pic;
 @#endif
 
-@{co2}_size*@{co2}_bh+@{co}_size*@{co}_bh = 0;
-
+@{co3}_size*@{co3}_bh+@{co2}_size*@{co2}_bh+@{co}_size*@{co}_bh = 0;
 
 //-------------
 // Euroarea-wide variables
 //-------------
 
 // GDP
-@{ea}_y = (@{co}_size*@{co}_pybar*@{co}_y + @{co2}_size*@{co}@{co2}_rerbar*@{co2}_pybar *@{co2}_y)/(@{co}_size+@{co2}_size);
+@{ea}_y = (@{co}_size*@{co}_pybar*@{co}_y 	+ @{co2}_size*@{co}@{co2}_rerbar*@{co2}_pybar *@{co2}_y	+ @{co3}_size*@{co}@{co3}_rerbar*@{co3}_pybar *@{co3}_y	)/(@{co}_size+@{co2}_size+@{co3}_size);
 
 // GDP growth
 @{ea}_ygrowth= @{ea}_y/@{ea}_y(-1);
@@ -1122,12 +1154,13 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @{ea}_ygrowth4= @{ea}_y/@{ea}_y(-4);
 
 // Money
-@{ea}_m = (@{co}_size*@{co}_m + @{co2}_size*@{co}@{co2}_rerbar*@{co2}_m)/(@{co}_size+@{co2}_size);
+@{ea}_m = (@{co}_size*@{co}_m + @{co2}_size*@{co}@{co2}_rerbar*@{co2}_m + @{co3}_size*@{co}@{co3}_rerbar*@{co3}_m)/(@{co}_size+@{co2}_size+@{co3}_size);
 
-@{ea}_bf = (@{co}_size*@{co}_bf + @{co2}_size*@{co2}_bf)/(@{co}_size+@{co2}_size);
+@{ea}_bf = (@{co}_size*@{co}_bf + @{co2}_size*@{co2}_bf + @{co3}_size*@{co3}_bf)/(@{co}_size+@{co2}_size+@{co3}_size);
 
 // Annual inflation
-@{ea}_pic4 = @{co}_pic4^(@{co}_size/(@{co}_size+@{co2}_size))*@{co2}_pic4^(@{co2}_size/(@{co}_size+@{co2}_size));
+@{ea}_pic4 = 
+  @{co}_pic4^(@{co}_size/(@{co}_size+@{co2}_size+@{co3}_size)) * @{co2}_pic4^(@{co2}_size/(@{co}_size+@{co2}_size+@{co3}_size))* @{co3}_pic4^(@{co3}_size/(@{co}_size+@{co2}_size+@{co3}_size));
 
 // Productivity
 log(@{ea}_z) = (1-@{ea}_rhoz)*log(@{ea}_zbar)+@{ea}_rhoz*log(@{ea}_z(-1))+@{ea}_epsz;

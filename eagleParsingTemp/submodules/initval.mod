@@ -274,8 +274,8 @@ EAA_bh = 0;
 EAB_bh = 0;
 EAA_gammabh = 0;
 EAB_gammabh = 0;
-EAAEAB_nerdep = 1;
 EAAEAC_nerdep = 1;
+EABEAC_nerdep = 1;
 
 EA_bf = 0;
 @# if !steady
