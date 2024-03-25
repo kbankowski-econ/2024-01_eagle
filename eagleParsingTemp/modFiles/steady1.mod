@@ -9,7 +9,7 @@ options_.markowitz = 5;
 
 @#include "symdecls.mod"
 
-@#define sigma_equals_one = [ 1, 1, 1, 1, 1 ] 
+@#define sigma_equals_one = [ 1, 1, 1, 1, 1 , 1 , 1 ] 
 
 @#include "modeqs.mod"
 

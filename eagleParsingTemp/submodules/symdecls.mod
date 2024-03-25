@@ -116,7 +116,7 @@ var
  @{co}_fj
  @{co}_fn
  @{co}_g
-@# if co != countries[5]
+@# if co != countries[7]
  @{co}_gammab
 @# endif
  @{co}_gammai
@@ -197,11 +197,11 @@ var
  @{co}_r
  @{co}_reer
  @{co}_rer
-@#if co != countries[5]
+@#if co != countries[7]
  @{co}_rerdep
 @#endif
  @{co}_rk
-@#if co != countries[5]
+@#if co != countries[7]
  @{co}_rp
 @#endif
  @{co}_rr
@@ -221,7 +221,7 @@ var
  @{co}_tby
  @{co}_ti
  @{co}_tj
-@#if co != countries[5]
+@#if co != countries[7]
  @{co}_tot
 @#endif
  @{co}_tr
@@ -265,7 +265,7 @@ parameters
  @{co}_alphan
  @{co}_alphat
  @{co}_beta
-@# if co != countries[5]
+@# if co != countries[7]
  @{co}_bfytarget
  @{co}_bhytarget
 @# endif
@@ -276,7 +276,7 @@ parameters
  @{co}_chij
  @{co}_chix
  @{co}_delta
-@# if co != countries[5]
+@# if co != countries[7]
  @{co}_gammab1
 @# endif
  @{co}_gammai1
@@ -297,7 +297,7 @@ parameters
  @{co}_nutc
  @{co}_nuti
  @{co}_omega
-@# if co != countries[1] && co != countries[2] && co != countries[3]
+@# if co != countries[1] && co != countries[2] && co != countries[3] && co != countries[4] && co != countries[5]
  @{co}_phirgy
  @{co}_phirpi
  @{co}_phirr
@@ -307,7 +307,7 @@ parameters
  @{co}_psin
  @{co}_psit
  @{co}_rhog
-@# if co != countries[5]
+@# if co != countries[7]
  @{co}_rhorp
 @# endif
  @{co}_rhotauc
@@ -368,12 +368,12 @@ varexo
 
  @{co}_cpim
  @{co}_epsg
-@# if co != countries[1] && co != countries[2] && co != countries[3]
+@# if co != countries[1] && co != countries[2] && co != countries[3] && co != countries[4] && co != countries[5]
     @# if !steady
         @{co}_epsr
     @# endif
 @# endif
-@# if co != countries[5]
+@# if co != countries[7]
     @# if !steady
         @{co}_epsrp
     @# endif
@@ -395,22 +395,26 @@ varexo
 @#endfor
 
 parameters
-@#for i in 1:5
-@# for it in countries - [ countries[i], countries4[i] ]
+@#for i in 1:7
+@# for it in countries - [ countries[i], countries6[i] ]
  @{countries[i]}@{it}_numc
  @{countries[i]}@{it}_numi
 @# endfor
 @#endfor
 ;
 
-var @{countries[1]}@{countries[3]}_nerdep;
-var @{countries[2]}@{countries[3]}_nerdep;
+var @{countries[1]}@{countries[5]}_nerdep;
+var @{countries[2]}@{countries[5]}_nerdep;
+var @{countries[3]}@{countries[5]}_nerdep;
+var @{countries[4]}@{countries[5]}_nerdep;
 
 var @{countries[1]}_gammabh;
 var @{countries[2]}_gammabh;
+var @{countries[3]}_gammabh;
+var @{countries[4]}_gammabh;
 
 var
-@#for co in countries[1:3]
+@#for co in countries[1:5]
  @{co}_bh
 @#endfor
 ;
