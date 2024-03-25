@@ -1,6 +1,5 @@
 function [y, T] = dynamic_66(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(1922)=y(1906)/(y(2159)*y(1914));
-  y(1800)=y(1654)/(y(1779)*y(2411));
-  y(1921)=y(1905)/(y(1652)*y(1913));
-  y(1920)=y(1904)/(y(1399)*y(1912));
+  y(1584)=y(1408);
+  y(1583)=y(1407);
+  y(1696)=y(2388)*params(314)/params(120)+y(2135)*params(251)/params(120)+y(1375)*params(56)/params(120)+y(1882)*params(184)/params(120);
 end
