@@ -471,6 +471,7 @@ EAA_omega, 0.25;
 US_omega,  0.25;
 RW_omega,  0.25;
 EAB_omega, 0.25;
+EAC_omega, 0.25;
 end;
 steady(homotopy_steps = 5);
 */
