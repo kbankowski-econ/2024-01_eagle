@@ -127,95 +127,102 @@
 
  // Bilateral and asymmetric
  
- EAAUS_numc       = 0.2;
- EAAEAB_numc      = 0.15;
- EAAEAC_numc      = 0.15;
- EAAEAD_numc      = 0.15;
- EAAEAE_numc      = 0.15;
+ EAAUS_numc       = 0.1;
+ EAAEAB_numc      = 0.2;
+ EAAEAC_numc      = 0.2;
+ EAAEAD_numc      = 0.2;
+ EAAEAE_numc      = 0.2;
  EAARW_numc       = 1-EAAUS_numc-EAAEAB_numc-EAAEAC_numc-EAAEAD_numc-EAAEAE_numc;
- EAAUS_numi       = 0.3;
- EAAEAB_numi      = 0.15;
- EAAEAC_numi      = 0.15;
- EAAEAD_numi      = 0.15;
- EAAEAE_numi      = 0.15;
+
+ EAAUS_numi       = 0.1;
+ EAAEAB_numi      = 0.2;
+ EAAEAC_numi      = 0.2;
+ EAAEAD_numi      = 0.2;
+ EAAEAE_numi      = 0.2;
  EAARW_numi       = 1-EAAUS_numi-EAAEAB_numi-EAAEAC_numi-EAAEAD_numi-EAAEAE_numi;
  
- EABRW_numc       = 0.2;
- EABEAA_numc      = 0.15;
- EABEAC_numc      = 0.15;
- EABEAD_numc      = 0.15;
- EABEAE_numc      = 0.15;
+ EABRW_numc       = 0.1;
+ EABEAA_numc      = 0.2;
+ EABEAC_numc      = 0.2;
+ EABEAD_numc      = 0.2;
+ EABEAE_numc      = 0.2;
  EABUS_numc       = 1-EABRW_numc-EABEAA_numc-EABEAC_numc-EABEAD_numc-EABEAE_numc;
- EABRW_numi       = 0.2;
- EABEAA_numi      = 0.15;
- EABEAC_numi      = 0.15;
- EABEAD_numi      = 0.15;
- EABEAE_numi      = 0.15;
+
+ EABRW_numi       = 0.1;
+ EABEAA_numi      = 0.2;
+ EABEAC_numi      = 0.2;
+ EABEAD_numi      = 0.2;
+ EABEAE_numi      = 0.2;
  EABUS_numi       = 1-EABRW_numi-EABEAA_numi-EABEAC_numi-EABEAD_numi-EABEAE_numi;
 
- EACEAD_numc      = 0.15;
- EACEAE_numc      = 0.15;
- EACRW_numc       = 0.2;
- EACUS_numc       = 0.2;         
- EACEAB_numc      = 0.15;
+ EACEAD_numc      = 0.2;
+ EACEAE_numc      = 0.2;
+ EACRW_numc       = 0.1;
+ EACUS_numc       = 0.1;         
+ EACEAB_numc      = 0.2;
  EACEAA = 1-EACEAD_numc-EACEAE_numc-EACRW_numc-EACUS_numc-EACEAB_numc;
- EACEAD_numi      = 0.15;
- EACEAE_numi      = 0.15;
- EACRW_numi       = 0.2;
- EACUS_numi       = 0.2;         
- EACEAB_numi      = 0.15;
+
+ EACEAD_numi      = 0.2;
+ EACEAE_numi      = 0.2;
+ EACRW_numi       = 0.1;
+ EACUS_numi       = 0.1;         
+ EACEAB_numi      = 0.2;
  EACEAA = 1-EACEAD_numi-EACEAE_numi-EACRW_numi-EACUS_numi-EACEAB_numi;
 
- EADEAE_numc      = 0.15;
- EADRW_numc       = 0.2;
- EADUS_numc       = 0.2;         
- EADEAA_numc      = 0.15;
- EADEAC_numc      = 0.15;
+ EADEAE_numc      = 0.2;
+ EADRW_numc       = 0.1;
+ EADUS_numc       = 0.1;         
+ EADEAA_numc      = 0.2;
+ EADEAC_numc      = 0.2;
  EADEAB = 1-EADEAE_numc-EADEAC_numc-EADRW_numc-EADUS_numc-EADEAA_numc;
- EADEAE_numi      = 0.15;
- EADRW_numi       = 0.2;
- EADUS_numi       = 0.2;         
- EADEAA_numi      = 0.15;
- EADEAC_numi      = 0.15;
+
+ EADEAE_numi      = 0.2;
+ EADRW_numi       = 0.1;
+ EADUS_numi       = 0.1;         
+ EADEAA_numi      = 0.2;
+ EADEAC_numi      = 0.2;
  EADEAB = 1-EADEAE_numi-EADEAC_numi-EADRW_numi-EADUS_numi-EADEAA_numi;
 
- EAERW_numc       = 0.2;
- EAEUS_numc       = 0.2;
- EAEEAA_numc      = 0.15;         
- EAEEAB_numc      = 0.15;
- EAEEAD_numc      = 0.15;
+ EAERW_numc       = 0.1;
+ EAEUS_numc       = 0.1;
+ EAEEAA_numc      = 0.2;         
+ EAEEAB_numc      = 0.2;
+ EAEEAD_numc      = 0.2;
  EAEEAC = 1-EAERW_numc-EAEUS_numc-EAEEAA_numc-EAEEAB_numc-EAEEAD_numc;
- EAERW_numi       = 0.2;
- EAEUS_numi       = 0.2;
- EAEEAA_numi      = 0.15;         
- EAEEAB_numi      = 0.15;
- EAEEAD_numi      = 0.15;
+
+ EAERW_numi       = 0.1;
+ EAEUS_numi       = 0.1;
+ EAEEAA_numi      = 0.2;         
+ EAEEAB_numi      = 0.2;
+ EAEEAD_numi      = 0.2;
  EAEEAC = 1-EAERW_numi-EAEUS_numi-EAEEAA_numi-EAEEAB_numi-EAEEAD_numi;
 
- RWUS_numc        = 0.6;
- RWEAA_numc       = 0.08;
- RWEAB_numc       = 0.08;
- RWEAC_numc       = 0.08;
- RWEAE_numc       = 0.08;
+ RWUS_numc        = 0.3;
+ RWEAA_numc       = 0.15625;
+ RWEAB_numc       = 0.15625;
+ RWEAC_numc       = 0.15625;
+ RWEAE_numc       = 0.075;
  RWEAD_numc       = 1-RWUS_numc-RWEAA_numc-RWEAB_numc-RWEAC_numc-RWEAE_numc;
- RWUS_numi        = 0.6;
- RWEAA_numi       = 0.08;
- RWEAB_numi       = 0.08;
- RWEAC_numi       = 0.08;
- RWEAE_numi       = 0.08;
+
+ RWUS_numi        = 0.3;
+ RWEAA_numi       = 0.15625;
+ RWEAB_numi       = 0.15625;
+ RWEAC_numi       = 0.15625;
+ RWEAE_numi       = 0.075;
  RWEAD_numi       = 1-RWUS_numi-RWEAA_numi-RWEAB_numi-RWEAC_numi-RWEAE_numi;
 
- USEAA_numc       = 0.08;
- USEAB_numc       = 0.08;
- USEAC_numc       = 0.08;
- USEAD_numc       = 0.08;
- USRW_numc        = 0.6;
+ USEAA_numc       = 0.15625;
+ USEAB_numc       = 0.15625;
+ USEAC_numc       = 0.15625;
+ USEAD_numc       = 0.15625;
+ USRW_numc        = 0.3;
  USEAE_numc       = 1-USEAA_numc-USEAB_numc-USEAC_numc-USEAD_numc-USRW_numc;
- USEAA_numi       = 0.08;
- USEAB_numi       = 0.08;
- USEAC_numi       = 0.08;
- USEAD_numi       = 0.08;
- USRW_numi        = 0.6;
+ 
+ USEAA_numi       = 0.15625;
+ USEAB_numi       = 0.15625;
+ USEAC_numi       = 0.15625;
+ USEAD_numi       = 0.15625;
+ USRW_numi        = 0.3;
  USEAE_numi       = 1-USEAA_numi-USEAB_numi-USEAC_numi-USEAD_numi-USRW_numi;
 
 // Euro area
