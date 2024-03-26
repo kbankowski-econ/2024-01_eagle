@@ -7,7 +7,7 @@
 
 // Country size (population)
 
-   @{COUNTRY}_size        = 0.14285714285;
+   @{COUNTRY}_size        = 1/7;
 
 // Size of household J
 
