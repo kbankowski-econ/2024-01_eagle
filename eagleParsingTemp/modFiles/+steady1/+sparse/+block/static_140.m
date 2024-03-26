@@ -1,10 +1,6 @@
 function [y, T] = static_140(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(1009)=y(833);
-  y(1008)=y(832);
-  y(141)=y(183)/y(185);
-  y(16)=y(1065)*y(1077)*y(76)*params(314)/params(56)/(y(187)*y(236));
-  y(865)=y(926)*y(889)+params(56)*(y(47)+y(55))*y(67)*y(832)/params(251)+params(120)*(y(300)+y(308))*y(320)*y(833)/params(251)+params(184)*(y(553)+y(561))*y(573)*y(834)/params(251)+params(314)*y(1080)*y(835)*(y(1060)+y(1068))/params(251)-y(954)*y(905)-y(919)*(1+y(967))*y(986);
-  y(864)=y(1002)*y(942)-y(954)*y(904)-y(918)*(1+y(967))*y(986);
-  y(241)=y(243)*y(183)/(y(187)*y(236));
-  y(12)=y(1057)*y(1077)*y(76)*params(314)/params(56)/(y(187)*y(236));
+  y(1972)=y(1973)+y(1975);
+  y(452)=y(1852)*params(442)/params(120)+y(1553)*params(379)/params(120)+y(1254)*params(312)/params(120)+y(955)*params(248)/params(120)+y(57)*params(56)/params(120)+y(656)*params(184)/params(120);
+  y(153)=params(442)/params(56)*y(1851)+params(379)/params(56)*y(1552)+params(312)/params(56)*y(1253)+params(248)/params(56)*y(954)+params(120)/params(56)*y(356)+params(184)/params(56)*y(655);
+  y(1050)=y(1854)*params(442)/params(248)+y(1555)*params(379)/params(248)+y(1256)*params(312)/params(248)+y(657)*params(184)/params(248)+y(59)*params(56)/params(248)+y(358)*params(120)/params(248);
 end

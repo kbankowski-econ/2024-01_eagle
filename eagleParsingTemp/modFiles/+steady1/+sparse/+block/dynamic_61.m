@@ -1,4 +1,13 @@
-function [y, T] = dynamic_61(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(1443)=params(314)/params(56)*y(2387)+params(251)/params(56)*y(2134)+params(120)/params(56)*y(1628)+params(184)/params(56)*y(1881);
-  y(1949)=y(2389)*params(314)/params(184)+y(2136)*params(251)/params(184)+y(1376)*params(56)/params(184)+y(1629)*params(120)/params(184);
+function [y, T, residual, g1] = dynamic_61(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
+residual=NaN(1, 1);
+  residual(1)=(y(3629)-1)-(y(3623)/params(294)^0.25-1);
+if nargout > 3
+    g1_v = NaN(1, 1);
+g1_v(1)=1;
+    if ~isoctave && matlab_ver_less_than('9.8')
+        sparse_rowval = double(sparse_rowval);
+        sparse_colval = double(sparse_colval);
+    end
+    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
+end
 end
