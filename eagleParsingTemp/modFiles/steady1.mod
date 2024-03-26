@@ -26,6 +26,8 @@ RW_alphat,  0.3;
 US_alphat,  0.3;
 EAB_alphat, 0.3;
 EAC_alphat, 0.3;
+EAD_alphat, 0.3;
+EAE_alphat, 0.3;
 end;
 steady(homotopy_steps = 5);
 
@@ -36,6 +38,8 @@ RW_alphan,  0.3;
 US_alphan,  0.3;
 EAB_alphan, 0.3;
 EAC_alphan, 0.3;
+EAD_alphan, 0.3;
+EAE_alphan, 0.3;
 end;
 steady(homotopy_steps = 5);
 
@@ -48,6 +52,8 @@ RW_muc,  0.5;
 US_muc,  0.5;
 EAB_muc, 0.5;
 EAC_muc, 0.5;
+EAD_muc, 0.5;
+EAE_muc, 0.5;
 end;
 steady(homotopy_steps = 5);
 
@@ -58,6 +64,8 @@ RW_mutc,  2.5;
 US_mutc,  2.5;
 EAB_mutc, 2.5;
 EAC_mutc, 2.5;
+EAD_mutc, 2.5;
+EAE_mutc, 2.5;
 end;
 steady(homotopy_steps = 5);
 
@@ -68,6 +76,8 @@ RW_mumc,  2.5;
 US_mumc,  2.5;
 EAB_mumc, 2.5;
 EAC_mumc, 2.5;
+EAD_mumc, 2.5;
+EAE_mumc, 2.5;
 end;
 steady(homotopy_steps = 5);
 
@@ -78,6 +88,8 @@ RW_mui,  0.5;
 US_mui,  0.5;
 EAB_mui, 0.5;
 EAC_mui, 0.5;
+EAD_mui, 0.5;
+EAE_mui, 0.5;
 end;
 steady(homotopy_steps = 5);
 
@@ -88,6 +100,8 @@ RW_muti,  2.5;
 US_muti,  2.5;
 EAB_muti, 2.5;
 EAC_muti, 2.5;
+EAD_muti, 2.5;
+EAE_muti, 2.5;
 end;
 steady(homotopy_steps = 5);
 
@@ -98,6 +112,8 @@ RW_mumi,  2.5;
 US_mumi,  2.5;
 EAB_mumi, 2.5;
 EAC_mumi, 2.5;
+EAD_mumi, 2.5;
+EAE_mumi, 2.5;
 end;
 steady(homotopy_steps = 5);
 
@@ -108,6 +124,8 @@ RW_nuc,  0.35;
 US_nuc,  0.35;
 EAB_nuc, 0.45;
 EAC_nuc, 0.45;
+EAD_nuc, 0.45;
+EAE_nuc, 0.45;
 end;
 steady(homotopy_steps = 5);
 
@@ -118,6 +136,8 @@ RW_nui,  0.75;
 US_nui,  0.75;
 EAB_nui, 0.75;
 EAC_nui, 0.75;
+EAD_nui, 0.75;
+EAE_nui, 0.75;
 end;
 steady(homotopy_steps = 5);
 
@@ -128,6 +148,8 @@ RW_nutc,  0.20;
 US_nutc,  0.85;
 EAB_nutc, 0.20;
 EAC_nutc, 0.20;
+EAD_nutc, 0.20;
+EAE_nutc, 0.20;
 end;
 steady(homotopy_steps = 5);
 
@@ -138,6 +160,8 @@ RW_nuti,  0.20;
 US_nuti,  0.85;
 EAB_nuti, 0.20;
 EAC_nuti, 0.20;
+EAD_nuti, 0.20;
+EAE_nuti, 0.20;
 end;
 steady(homotopy_steps = 5);
 
@@ -150,6 +174,8 @@ RW_psit,  0.2;
 US_psit,  0.2;
 EAB_psit, 0.2;
 EAC_psit, 0.2;
+EAD_psit, 0.2;
+EAE_psit, 0.2;
 end;
 steady(homotopy_steps = 5);
 
@@ -160,6 +186,8 @@ RW_psin,  0.08;
 US_psin,  0.08;
 EAB_psin, 0.28;
 EAC_psin, 0.28;
+EAD_psit, 0.2;
+EAE_psit, 0.2;
 end;
 steady(homotopy_steps = 5);
 
@@ -170,6 +198,8 @@ RW_xin,  0.75;
 US_xin,  0.75;
 EAB_xin, 0.92;
 EAC_xin, 0.92;
+EAD_xin, 0.92;
+EAE_xin, 0.92;
 end;
 steady(homotopy_steps = 5);
 
@@ -180,6 +210,8 @@ RW_xih,  0.75;
 US_xih,  0.75;
 EAB_xih, 0.92;
 EAC_xih, 0.92;
+EAD_xih, 0.92;
+EAE_xih, 0.92;
 end;
 steady(homotopy_steps = 5);
 
@@ -190,6 +222,8 @@ RW_xix,  0.75;
 US_xix,  0.75;
 EAB_xix, 0.75;
 EAC_xix, 0.75;
+EAD_xix, 0.75;
+EAE_xix, 0.75;
 end;
 steady(homotopy_steps = 5);
 
@@ -206,6 +240,10 @@ EAB_xii, 0.75;
 EAB_xij, 0.75;
 EAC_xii, 0.75;
 EAC_xij, 0.75;
+EAD_xii, 0.75;
+EAD_xij, 0.75;
+EAE_xii, 0.75;
+EAE_xij, 0.75;
 end;
 steady(homotopy_steps = 5);
 
@@ -216,6 +254,8 @@ RW_chin,  0.5;
 US_chin,  0.5;
 EAB_chin, 0.5;
 EAC_chin, 0.5;
+EAD_chin, 0.5;
+EAE_chin, 0.5;
 end;
 steady(homotopy_steps = 5);
 
@@ -226,6 +266,8 @@ RW_chih,  0.5;
 US_chih,  0.5;
 EAB_chih, 0.5;
 EAC_chih, 0.5;
+EAD_chih, 0.5;
+EAE_chih, 0.5;
 end;
 steady(homotopy_steps = 5);
 
@@ -236,6 +278,8 @@ RW_chix,  0.5;
 US_chix,  0.5;
 EAB_chix, 0.5;
 EAC_chix, 0.5;
+EAD_chix, 0.5;
+EAE_chix, 0.5;
 end;
 steady(homotopy_steps = 5);
 
@@ -251,6 +295,10 @@ EAB_chii, 0.75;
 EAB_chij, 0.75;
 EAC_chii, 0.75;
 EAC_chij, 0.75;
+EAD_chii, 0.75;
+EAD_chij, 0.75;
+EAE_chii, 0.75;
+EAE_chij, 0.75;
 end;
 steady(homotopy_steps = 5);
 
@@ -264,6 +312,9 @@ EAA_sigma, 1.0;
 RW_sigma,  1.0;
 US_sigma,  1.0;
 EAB_sigma, 1.0;
+EAC_sigma,  1.0;
+EAD_sigma, 1.0;
+EAE_sigma, 1.0;
 end;
 steady(homotopy_steps = 5);
 */
@@ -276,6 +327,8 @@ RW_kappa,  0.70;
 US_kappa,  0.70;
 EAB_kappa, 0.70;
 EAC_kappa, 0.70;
+EAD_kappa, 0.70;
+EAE_kappa, 0.70;
 end;
 steady(homotopy_steps = 5);
 
@@ -300,6 +353,8 @@ RW_gammav1,  0.0267;
 US_gammav1,  0.0267;
 EAB_gammav1, 0.0267;
 EAC_gammav1, 0.0267;
+EAD_gammav1, 0.0267;
+EAE_gammav1, 0.0267;
 end;
 steady(homotopy_steps = 5);
 
@@ -310,6 +365,8 @@ RW_gammav2,  0.1284;
 US_gammav2,  0.1284;
 EAB_gammav2, 0.1284;
 EAC_gammav2, 0.1284;
+EAD_gammav2, 0.1284;
+EAE_gammav2, 0.1284;
 end;
 steady(homotopy_steps = 5);
 
@@ -320,6 +377,8 @@ RW_thetan,  4.60;
 US_thetan,  4.60;
 EAB_thetan, 3.00;
 EAC_thetan, 3.00;
+EAD_thetan, 3.00;
+EAE_thetan, 3.00;
 end;
 steady(homotopy_steps = 10);
 
@@ -331,6 +390,8 @@ RW_thetat,  6.00;
 US_thetat,  6.00;
 EAB_thetat, 6.00;
 EAC_thetat, 6.00;
+EAD_thetat, 6.00;
+EAE_thetat, 6.00;
 end;
 steady(homotopy_steps = 15);
 
@@ -355,6 +416,22 @@ homotopy_setup;
 EAC_eta,  4.33;
 EAC_etai, 4.33;
 EAC_etaj, 4.33;
+end;
+steady(homotopy_steps = 10);
+
+disp('EAD_eta*')
+homotopy_setup;
+EAD_eta,  4.33;
+EAD_etai, 4.33;
+EAD_etaj, 4.33;
+end;
+steady(homotopy_steps = 10);
+
+disp('EAE_eta*')
+homotopy_setup;
+EAE_eta,  4.33;
+EAE_etai, 4.33;
+EAE_etaj, 4.33;
 end;
 steady(homotopy_steps = 10);
 
@@ -383,6 +460,8 @@ US_bytarget,  2.40;
 RW_bytarget,  2.40;
 EAB_bytarget, 2.40;
 EAC_bytarget, 2.40;
+EAD_bytarget, 2.40;
+EAE_bytarget, 2.40;
 end;
 steady(homotopy_steps = 5);
 
@@ -393,6 +472,8 @@ US_gybar,  0.16;
 RW_gybar,  0.16;
 EAB_gybar, 0.20;
 EAC_gybar, 0.20;
+EAD_gybar, 0.20;
+EAE_gybar, 0.20;
 end;
 steady(homotopy_steps = 5);
 
@@ -405,6 +486,8 @@ US_pi4target,  1.02;
 RW_pi4target,  1.02;
 EAB_pi4target, 1.02;
 EAC_pi4target, 1.02;
+EAD_pi4target, 1.02;
+EAE_pi4target, 1.02;
 end;
 steady(homotopy_steps = 5);
 
@@ -418,6 +501,8 @@ US_beta,  0.99263754;
 RW_beta,  0.99263754;
 EAB_beta, 0.99263754;
 EAC_beta, 0.99263754;
+EAD_beta, 0.99263754;
+EAE_beta, 0.99263754;
 end;
 steady(homotopy_steps = 5);
 
@@ -430,6 +515,8 @@ US_taucbar,  0.077;
 RW_taucbar,  0.077;
 EAB_taucbar, 0.183;
 EAC_taucbar, 0.183;
+EAD_taucbar, 0.183;
+EAE_taucbar, 0.183;
 end;
 steady(homotopy_steps = 5);
 
@@ -440,6 +527,8 @@ US_taunbar,  0.154;
 RW_taunbar,  0.154;
 EAB_taunbar, 0.122;
 EAC_taunbar, 0.122;
+EAD_taunbar, 0.122;
+EAE_taunbar, 0.122;
 end;
 steady(homotopy_steps = 5);
 
@@ -450,6 +539,8 @@ US_tauwhbar,  0.071;
 RW_tauwhbar,  0.071;
 EAB_tauwhbar, 0.118;
 EAC_tauwhbar, 0.118;
+EAD_tauwhbar, 0.118;
+EAE_tauwhbar, 0.118;
 end;
 steady(homotopy_steps = 5);
 
@@ -460,6 +551,8 @@ US_tauwfbar,  0.071;
 RW_tauwfbar,  0.071;
 EAB_tauwfbar, 0.219;
 EAC_tauwfbar, 0.219;
+EAD_tauwfbar, 0.219;
+EAE_tauwfbar, 0.219;
 end;
 steady(homotopy_steps = 5);
 
@@ -472,6 +565,8 @@ US_omega,  0.25;
 RW_omega,  0.25;
 EAB_omega, 0.25;
 EAC_omega, 0.25;
+EAD_omega, 0.25;
+EAE_omega, 0.25;
 end;
 steady(homotopy_steps = 5);
 */
@@ -486,6 +581,8 @@ US_upsilontr,  0.66666666;
 RW_upsilontr,  0.66666666;
 EAB_upsilontr, 0.66666666;
 EAC_upsilontr, 0.66666666;
+EAD_upsilontr, 0.66666666;
+EAE_upsilontr, 0.66666666;
 end;
 steady(homotopy_steps = 5);
 
@@ -496,6 +593,8 @@ US_upsilont,  1.20;
 RW_upsilont,  1.20;
 EAB_upsilont, 1.20;
 EAC_upsilont, 1.20;
+EAD_upsilont, 1.20;
+EAE_upsilont, 1.20;
 end;
 steady(homotopy_steps = 5);
 
@@ -505,6 +604,8 @@ EAA_bfytarget, -0.15;
 RW_bfytarget,   0.40;
 EAB_bfytarget,  0.40;
 EAC_bfytarget,  0.40;
+EAD_bfytarget,  0.40;
+EAE_bfytarget,  0.40;
 end;
 steady(homotopy_steps = 5);
 

@@ -7,7 +7,7 @@
 
 // Country size (population)
 
-   @{COUNTRY}_size        = 0.2;
+   @{COUNTRY}_size        = 0.14285714285;
 
 // Size of household J
 
@@ -128,49 +128,95 @@
  // Bilateral and asymmetric
  
  EAAUS_numc       = 0.2;
- EAAEAB_numc      = 0.3;
- EAAEAC_numc      = 0.3;
- EAARW_numc       = 1-EAAUS_numc-EAAEAB_numc-EAAEAC_numc;
+ EAAEAB_numc      = 0.15;
+ EAAEAC_numc      = 0.15;
+ EAAEAD_numc      = 0.15;
+ EAAEAE_numc      = 0.15;
+ EAARW_numc       = 1-EAAUS_numc-EAAEAB_numc-EAAEAC_numc-EAAEAD_numc-EAAEAE_numc;
  EAAUS_numi       = 0.3;
- EAAEAB_numi      = 0.3;
- EAAEAC_numi      = 0.3;
- EAARW_numi       = 1-EAAUS_numi-EAAEAB_numi-EAAEAC_numi;
+ EAAEAB_numi      = 0.15;
+ EAAEAC_numi      = 0.15;
+ EAAEAD_numi      = 0.15;
+ EAAEAE_numi      = 0.15;
+ EAARW_numi       = 1-EAAUS_numi-EAAEAB_numi-EAAEAC_numi-EAAEAD_numi-EAAEAE_numi;
  
  EABRW_numc       = 0.2;
- EABEAA_numc      = 0.3;
- EABEAC_numc      = 0.3;
- EABUS_numc       = 1-EABRW_numc-EABEAA_numc-EABEAC_numc;
+ EABEAA_numc      = 0.15;
+ EABEAC_numc      = 0.15;
+ EABEAD_numc      = 0.15;
+ EABEAE_numc      = 0.15;
+ EABUS_numc       = 1-EABRW_numc-EABEAA_numc-EABEAC_numc-EABEAD_numc-EABEAE_numc;
  EABRW_numi       = 0.2;
- EABEAA_numi      = 0.3;
- EABEAC_numi      = 0.3;
- EABUS_numi       = 1-EABRW_numi-EABEAA_numi-EABEAC_numi;
+ EABEAA_numi      = 0.15;
+ EABEAC_numi      = 0.15;
+ EABEAD_numi      = 0.15;
+ EABEAE_numi      = 0.15;
+ EABUS_numi       = 1-EABRW_numi-EABEAA_numi-EABEAC_numi-EABEAD_numi-EABEAE_numi;
 
+ EACEAD_numc      = 0.15;
+ EACEAE_numc      = 0.15;
  EACRW_numc       = 0.2;
- EACEAA_numc      = 0.3;
- EACEAB_numc      = 0.3;
- EACUS_numc       = 1-EACRW_numc-EACEAA_numc-EACEAB_numc;
+ EACUS_numc       = 0.2;         
+ EACEAB_numc      = 0.15;
+ EACEAA = 1-EACEAD_numc-EACEAE_numc-EACRW_numc-EACUS_numc-EACEAB_numc;
+ EACEAD_numi      = 0.15;
+ EACEAE_numi      = 0.15;
  EACRW_numi       = 0.2;
- EACEAA_numi      = 0.3;
- EACEAB_numi      = 0.3;
- EACUS_numi       = 1-EACRW_numi-EACEAA_numi-EACEAB_numi;
+ EACUS_numi       = 0.2;         
+ EACEAB_numi      = 0.15;
+ EACEAA = 1-EACEAD_numi-EACEAE_numi-EACRW_numi-EACUS_numi-EACEAB_numi;
+
+ EADEAE_numc      = 0.15;
+ EADRW_numc       = 0.2;
+ EADUS_numc       = 0.2;         
+ EADEAA_numc      = 0.15;
+ EADEAC_numc      = 0.15;
+ EADEAB = 1-EADEAE_numc-EADEAC_numc-EADRW_numc-EADUS_numc-EADEAA_numc;
+ EADEAE_numi      = 0.15;
+ EADRW_numi       = 0.2;
+ EADUS_numi       = 0.2;         
+ EADEAA_numi      = 0.15;
+ EADEAC_numi      = 0.15;
+ EADEAB = 1-EADEAE_numi-EADEAC_numi-EADRW_numi-EADUS_numi-EADEAA_numi;
+
+ EAERW_numc       = 0.2;
+ EAEUS_numc       = 0.2;
+ EAEEAA_numc      = 0.15;         
+ EAEEAB_numc      = 0.15;
+ EAEEAD_numc      = 0.15;
+ EAEEAC = 1-EAERW_numc-EAEUS_numc-EAEEAA_numc-EAEEAB_numc-EAEEAD_numc;
+ EAERW_numi       = 0.2;
+ EAEUS_numi       = 0.2;
+ EAEEAA_numi      = 0.15;         
+ EAEEAB_numi      = 0.15;
+ EAEEAD_numi      = 0.15;
+ EAEEAC = 1-EAERW_numi-EAEUS_numi-EAEEAA_numi-EAEEAB_numi-EAEEAD_numi;
 
  RWUS_numc        = 0.6;
- RWEAA_numc       = 0.25;
- RWEAB_numc       = 0.075;
- RWEAC_numc       = 1-RWUS_numc-RWEAA_numc-RWEAB_numc;
+ RWEAA_numc       = 0.08;
+ RWEAB_numc       = 0.08;
+ RWEAC_numc       = 0.08;
+ RWEAE_numc       = 0.08;
+ RWEAD_numc       = 1-RWUS_numc-RWEAA_numc-RWEAB_numc-RWEAC_numc-RWEAE_numc;
  RWUS_numi        = 0.6;
- RWEAA_numi       = 0.25;
- RWEAB_numi       = 0.075;
- RWEAC_numi       = 1-RWUS_numi-RWEAA_numi-RWEAB_numi;
+ RWEAA_numi       = 0.08;
+ RWEAB_numi       = 0.08;
+ RWEAC_numi       = 0.08;
+ RWEAE_numi       = 0.08;
+ RWEAD_numi       = 1-RWUS_numi-RWEAA_numi-RWEAB_numi-RWEAC_numi-RWEAE_numi;
 
- USEAA_numc       = 0.25;
- USEAB_numc       = 0.075;
- USEAC_numc       = 0.075;
- USRW_numc        = 1-USEAA_numc-USEAB_numc-USEAC_numc;
- USEAA_numi       = 0.25;
- USEAB_numi       = 0.075;
- USEAC_numi       = 0.075;
- USRW_numi        = 1-USEAA_numi-USEAB_numi-USEAC_numi;
+ USEAA_numc       = 0.08;
+ USEAB_numc       = 0.08;
+ USEAC_numc       = 0.08;
+ USEAD_numc       = 0.08;
+ USRW_numc        = 0.6;
+ USEAE_numc       = 1-USEAA_numc-USEAB_numc-USEAC_numc-USEAD_numc-USRW_numc;
+ USEAA_numi       = 0.08;
+ USEAB_numi       = 0.08;
+ USEAC_numi       = 0.08;
+ USEAD_numi       = 0.08;
+ USRW_numi        = 0.6;
+ USEAE_numi       = 1-USEAA_numi-USEAB_numi-USEAC_numi-USEAD_numi-USRW_numi;
 
 // Euro area
 

@@ -193,7 +193,7 @@ initval;
   @{COUNTRY}_zn = 1;
   @{COUNTRY}_zt = 1;
     
-  @#if(COUNTRY != "EAA" && COUNTRY != "EAB" && COUNTRY != "EAC" )
+  @#if(COUNTRY != "EAA" && COUNTRY != "EAB" && COUNTRY != "EAC" && COUNTRY != "EAD" && COUNTRY != "EAE")
     @# if !steady
       @{COUNTRY}_epsr = 0;
     @#endif
@@ -274,8 +274,12 @@ EAA_bh = 0;
 EAB_bh = 0;
 EAA_gammabh = 0;
 EAB_gammabh = 0;
-EAAEAC_nerdep = 1;
-EABEAC_nerdep = 1;
+EAC_gammabh = 0;
+EAD_gammabh = 0;
+EAAEAE_nerdep = 1;
+EABEAE_nerdep = 1;
+EACEAE_nerdep = 1;
+EADEAE_nerdep = 1;
 
 EA_bf = 0;
 @# if !steady

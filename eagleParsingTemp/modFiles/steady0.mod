@@ -9,7 +9,7 @@ options_.markowitz = 5;
 
 @#include "symdecls.mod"
 
-@#define sigma_equals_one = [ 1, 1, 1, 1, 1 ] 
+@#define sigma_equals_one = [ 1, 1, 1, 1, 1, 1, 1 ] 
 
 @#include "modeqs.mod"
 
@@ -26,6 +26,8 @@ RW_alphat,  0.3;
 US_alphat,  0.3;
 EAB_alphat, 0.3;
 EAC_alphat, 0.3;
+EAD_alphat, 0.3;
+EAE_alphat, 0.3;
 end;
 steady(homotopy_steps = 5);
 
