@@ -178,13 +178,7 @@ USEAC_imiy, 0.0037/4;
 USEAD_imiy, 0.0037/4;
 USRW_imiy, 0.0364;
 
-end;
-steady(homotopy_steps = 15);
-
 // Sizes
-
-disp('size')
-homotopy_setup;
 EAA_size, 0.16/4;
 US_size,  0.31;
 RW_size,  0.47;
@@ -194,8 +188,7 @@ EAD_size, 0.16/4;
 EAE_size, 0.06;
 
 end;
-steady(homotopy_steps = 5);
-
+steady(homotopy_steps = 15);
 
 //---------------------------------------------------------//
 // Change parameters that appear only in the dynamic model //
