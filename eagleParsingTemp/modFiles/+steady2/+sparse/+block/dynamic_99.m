@@ -1,29 +1,13 @@
-function [y, T] = dynamic_99(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(1960)=y(2001)/y(2003);
-  y(1844)=y(2374)*y(2383)*y(1898)*params(349)/params(205)/T(367);
-  y(1840)=y(2369)*y(2383)*y(1898)*params(349)/params(205)/T(367);
-  y(1843)=y(2127)*y(2136)*y(1897)*params(279)/params(205)/T(367);
-  y(1839)=y(2122)*y(2136)*y(1897)*params(279)/params(205)/T(367);
-  y(1842)=y(1632)*y(1641)*y(1896)*params(134)/params(205)/T(367);
-  y(1838)=y(1627)*y(1641)*y(1896)*params(134)/params(205)/T(367);
-  y(1841)=y(1385)*y(1394)*y(1895)*params(63)/params(205)/T(367);
-  y(1837)=y(1380)*y(1394)*y(1895)*params(63)/params(205)/T(367);
-  y(1882)=y(1887)*y(1878)/T(367);
-  y(1877)=y(1887)*y(1873)/T(367);
-  y(2029)=y(2028)/T(367);
-  y(2059)=y(2053)*params(205)*y(2005)/y(2011)/T(1210);
-  y(2056)=y(2053)/y(1306);
-  y(2055)=y(2053)/y(719);
-  y(1498)=y(1494)*y(1502)/y(168);
-  y(2058)=y(2060)*y(2001)/T(367);
-  y(2057)=y(2061)*y(1985)/T(367);
-  y(2046)=y(1978)*y(2044)/(y(2061)*y(1985));
-  y(2051)=y(1977)*y(2044)/(y(2060)*y(2001));
-  y(2052)=y(2044)*y(1974)/T(367);
-  y(1968)=(1+y(2026))*y(2044)*y(1974)/T(367);
-  y(1921)=y(1919)/(y(2077)*y(2080));
-  y(1959)=(y(1957)*y(1996)+y(1958)*y(1997))/T(367);
-  y(1925)=y(1922)/T(367);
-  y(1435)=y(1409)^y(1413)*y(1410)^y(1414)*y(1411)^y(1415)*y(1412)^y(1416);
-  y(1516)=y(1401)^y(1413)*y(1402)^y(1414)*y(1403)^y(1415)*y(1404)^y(1416);
+function [y, T, residual, g1] = dynamic_99(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
+residual=NaN(1, 1);
+  residual(1)=(y(2966)*y(2912))-(y(3985)*params(519)*y(4011)*y(2870)/params(217)+y(3696)*params(445)*y(3722)*y(2869)/params(217)+y(3407)*params(367)*y(3433)*y(2868)/params(217)+y(3118)*params(292)*y(3144)*y(2867)/params(217)+y(2250)*params(67)*y(2276)*y(2865)/params(217)+y(2539)*params(142)*y(2565)*y(2866)/params(217));
+if nargout > 3
+    g1_v = NaN(1, 1);
+g1_v(1)=y(2912);
+    if ~isoctave && matlab_ver_less_than('9.8')
+        sparse_rowval = double(sparse_rowval);
+        sparse_colval = double(sparse_colval);
+    end
+    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
+end
 end
