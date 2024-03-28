@@ -7,23 +7,27 @@ options_.markowitz = 5;
 
 @#include "init.mod"
 
-@#include "symdecls_govCo.mod"
+@#include "symdecls.mod"
 
-@#include "modeqs_govCo.mod"
+@#include "modeqs.mod"
 
-load_params_and_steady_state('eagle_steady_govCo_stage0.txt');
+load_params_and_steady_state('eagle_steady.txt');
 
+resid(non_zero);
+
+/*
 // The same parameter values like in the params.mod; just to check the steady state solution
 disp('alphat')
 homotopy_setup;
-EAA_nucces, 0.75;
-RW_nucces,  0.75;
-US_nucces,  0.75;
-EAB_nucces, 0.75;
-EAC_nucces, 0.75;
-EAD_nucces, 0.75;
-EAE_nucces, 0.75;
+EAA_alphat, 0.3;
+RW_alphat,  0.3;
+US_alphat,  0.3;
+EAB_alphat, 0.3;
+EAC_alphat, 0.3;
+EAD_alphat, 0.3;
+EAE_alphat, 0.3;
 end;
 steady(homotopy_steps = 5);
 
-save_params_and_steady_state('eagle_steady_govCo.txt');
+save_params_and_steady_state('eagle_steady_post.txt');
+*/
