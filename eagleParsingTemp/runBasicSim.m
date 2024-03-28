@@ -52,6 +52,7 @@ for aCountry = [ "EAA", "EAB", "EAC", "EAD", "EAE", "RW", "US" ]
     steady2struct.ssValues.(aCountry+"_dcci") = ((0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_ci")^(1-1/0.3)+(1-0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_g")^(1-1/0.3))^(1/(0.3-1))*(0.75^(1/0.3))*(steady2struct.ssValues.(aCountry+"_ci")^(-1/0.3));
     steady2struct.ssValues.(aCountry+"_dccj") = ((0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cj")^(1-1/0.3)+(1-0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_g")^(1-1/0.3))^(1/(0.3-1))*(0.75^(1/0.3))*(steady2struct.ssValues.(aCountry+"_cj")^(-1/0.3));
 
+    %{
     % Steps to calculate SS utility
     % EAB_utilj = EAB_zcon*log(EAB_ccesj-EAB_kappa*EAB_ccesj(-1))-1/(1+EAB_zeta)*(EAB_nj)^(1+EAB_zeta)+EAB_beta*EAB_utilj(+1)
     % EAB_utilj - EAB_beta*EAB_utilj(+1) = EAB_zcon*log(EAB_ccesj-EAB_kappa*EAB_ccesj(-1))-1/(1+EAB_zeta)*(EAB_nj)^(1+EAB_zeta)
@@ -69,7 +70,7 @@ for aCountry = [ "EAA", "EAB", "EAC", "EAD", "EAE", "RW", "US" ]
 
     steady2struct.ssValues.(aCountry+"_lambdai") = steady2struct.ssValues.(aCountry+"_zcon")*(steady2struct.ssValues.(aCountry+"_ccesi")-steady2struct.params.(aCountry+"_kappa")*steady2struct.ssValues.(aCountry+"_ccesi"))^(-steady2struct.params.(aCountry+"_sigma"))*steady2struct.ssValues.(aCountry+"_dcci")/(1+steady2struct.ssValues.(aCountry+"_tauc")+steady2struct.ssValues.(aCountry+"_gammavi")+steady2struct.params.(aCountry+"_vi")*steady2struct.ssValues.(aCountry+"_gammavider"));
     steady2struct.ssValues.(aCountry+"_lambdaj") = steady2struct.ssValues.(aCountry+"_zcon")*(steady2struct.ssValues.(aCountry+"_ccesj")-steady2struct.params.(aCountry+"_kappa")*steady2struct.ssValues.(aCountry+"_ccesj"))^(-steady2struct.params.(aCountry+"_sigma"))*steady2struct.ssValues.(aCountry+"_dcci")/(1+steady2struct.ssValues.(aCountry+"_tauc")+steady2struct.ssValues.(aCountry+"_gammavj")+steady2struct.ssValues.(aCountry+"_vj")*steady2struct.ssValues.(aCountry+"_gammavjder"));
-
+    %}
 
 end
 
