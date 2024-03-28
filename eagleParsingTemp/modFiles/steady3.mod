@@ -7,11 +7,11 @@ options_.markowitz = 5;
 
 @#include "init.mod"
 
-@#include "symdecls.mod"
+@#include "symdecls_govCo.mod"
 
-@#include "modeqs.mod"
+@#include "modeqs_govCo.mod"
 
-load_params_and_steady_state('eagle_steady.txt');
+load_params_and_steady_state('eagle_steady_govCo_stage0.txt');
 
 resid(non_zero);
 

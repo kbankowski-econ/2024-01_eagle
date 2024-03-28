@@ -1,13 +1,30 @@
-function [y, T, residual, g1] = static_199(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-residual=NaN(1, 1);
-  residual(1)=(y(1159))-(y(1201)*(1-params(241))+y(1159)*params(241)+x(100));
-if nargout > 3
-    g1_v = NaN(1, 1);
-g1_v(1)=1-params(241);
-    if ~isoctave && matlab_ver_less_than('9.8')
-        sparse_rowval = double(sparse_rowval);
-        sparse_colval = double(sparse_colval);
-    end
-    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
-end
+function [y, T] = static_199(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
+  y(1098)=y(1140)/y(1142);
+  y(929)=y(1896)*y(1914)*y(1019)*params(456)/params(256)/(y(1144)*y(1193));
+  y(923)=y(1884)*y(1914)*y(1019)*params(456)/params(256)/(y(1144)*y(1193));
+  y(995)=y(1007)*y(989)/(y(1144)*y(1193));
+  y(983)=y(1007)*y(977)/(y(1144)*y(1193));
+  y(928)=y(1593)*y(1611)*y(1018)*params(391)/params(256)/(y(1144)*y(1193));
+  y(922)=y(1581)*y(1611)*y(1018)*params(391)/params(256)/(y(1144)*y(1193));
+  y(994)=y(1006)*y(988)/(y(1144)*y(1193));
+  y(982)=y(1006)*y(976)/(y(1144)*y(1193));
+  y(927)=y(1290)*y(1308)*y(1017)*params(322)/params(256)/(y(1144)*y(1193));
+  y(921)=y(1278)*y(1308)*y(1017)*params(322)/params(256)/(y(1144)*y(1193));
+  y(993)=y(1005)*y(987)/(y(1144)*y(1193));
+  y(981)=y(1005)*y(975)/(y(1144)*y(1193));
+  y(926)=y(683)*y(701)*y(1016)*params(190)/params(256)/(y(1144)*y(1193));
+  y(920)=y(671)*y(701)*y(1016)*params(190)/params(256)/(y(1144)*y(1193));
+  y(992)=y(1004)*y(986)/(y(1144)*y(1193));
+  y(980)=y(1004)*y(974)/(y(1144)*y(1193));
+  y(925)=y(380)*y(398)*y(1015)*params(124)/params(256)/(y(1144)*y(1193));
+  y(919)=y(368)*y(398)*y(1015)*params(124)/params(256)/(y(1144)*y(1193));
+  y(991)=y(1003)*y(985)/(y(1144)*y(1193));
+  y(979)=y(1003)*y(973)/(y(1144)*y(1193));
+  y(924)=y(77)*y(95)*y(1014)*params(58)/params(256)/(y(1144)*y(1193));
+  y(918)=y(65)*y(95)*y(1014)*params(58)/params(256)/(y(1144)*y(1193));
+  y(990)=y(1002)*y(984)/(y(1144)*y(1193));
+  y(978)=y(1002)*y(972)/(y(1144)*y(1193));
+  y(1168)=y(1167)/(y(1144)*y(1193));
+  y(1199)=y(1193)*params(256)*y(1144)/y(1150)/T(1285);
+  y(1196)=y(1193)/y(2178);
 end

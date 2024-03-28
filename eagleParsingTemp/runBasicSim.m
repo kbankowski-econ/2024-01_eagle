@@ -30,6 +30,10 @@ end
 steady2output = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'steady2', 'Output', 'steady2_results.mat'));
 steady2struct = struct();
 
+for aExoVar = string(reshape(steady2output.M_.exo_names, 1, []))
+    steady2struct.exo_names.(aExoVar) = steady2output.oo_.exo_steady_state(strcmp(aExoVar, steady2output.M_.exo_names));
+end
+
 for aParam = string(reshape(steady2output.M_.param_names, 1, []))
     steady2struct.params.(aParam) = steady2output.M_.params(strcmp(aParam, steady2output.M_.param_names));
 end
@@ -80,7 +84,7 @@ if fileID == -1
     error('Failed to open the file.');
 end
 % Loop through each field in the structure
-for aType = ["params", "ssValues"]
+for aType = ["params", "ssValues", "exo_names"]
     fields = fieldnames(steady2struct.(aType));
     for i = 1:length(fields)
         % Get the field name
@@ -100,6 +104,8 @@ dynare('steady3.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingT
 
     
 dynare(sprintf('eagleModel_verSS'), sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'nopreprocessoroutput', 'savemacro');
+
+log(steady2struct.ssValues.EAA_zt) = (1-steady2struct.ssValues.EAA_rhozt)*log(steady2struct.params.EAA_ztbar)+EAA_rhozt*log(steady2struct.ssValues.EAA_zt)+EAA_epszt;
 
 
 % % shock simulation: 4-period g shock in EAB region
