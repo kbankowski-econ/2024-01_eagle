@@ -10396,5 +10396,17 @@ log(EA_z) = (1-EA_rhoz)*log(EA_zbar)+EA_rhoz*log(EA_z(-1))+EA_epsz;
 // Auxiliary equation for steady-state output
 EA_ybar = EA_y;
 end;
-// load_params_and_steady_state('eagle_steady_govCo_stage0.txt');
-// save_params_and_steady_state('eagle_steady_govCo.txt');
+load_params_and_steady_state('eagle_steady_govCo_stage0.txt');
+// The same parameter values like in the params.mod; just to check the steady state solution
+disp('alphat')
+homotopy_setup;
+EAA_nucces, 0.75;
+RW_nucces,  0.75;
+US_nucces,  0.75;
+EAB_nucces, 0.75;
+EAC_nucces, 0.75;
+EAD_nucces, 0.75;
+EAE_nucces, 0.75;
+end;
+steady(homotopy_steps = 5);
+save_params_and_steady_state('eagle_steady_govCo.txt');
