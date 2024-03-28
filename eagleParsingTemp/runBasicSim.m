@@ -33,12 +33,21 @@ steady2struct = struct();
 for aParam = string(reshape(steady2output.M_.param_names, 1, []))
     steady2struct.params.(aParam) = steady2output.M_.params(strcmp(aParam, steady2output.M_.param_names));
 end
+for aCountry = [ "EAA", "EAB", "EAC", "EAD", "EAE", "RW", "US" ]
+    steady2struct.params.(aCountry+"_nucces") = 0.75;
+    steady2struct.params.(aCountry+"_mucces") = 0.3;
+end
 
 varList = steady2output.M_.endo_names(~startsWith(steady2output.M_.endo_names, 'AUX_ENDO_'));
 for aVar = string(reshape(varList, 1, []))
     steady2struct.ssValues.(aVar) = steady2output.oo_.steady_state(strcmp(aVar, varList));
 end
-
+for aCountry = [ "EAA", "EAB", "EAC", "EAD", "EAE", "RW", "US" ]
+    steady2struct.ssValues.(aCountry+"_ccesi") = ((0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_ci")^(1-1/0.3)+(1-0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_g")^(1-1/0.3))^(1/(1-1/0.3));
+    steady2struct.ssValues.(aCountry+"_ccesj") = ((0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cj")^(1-1/0.3)+(1-0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_g")^(1-1/0.3))^(1/(1-1/0.3));
+    steady2struct.ssValues.(aCountry+"_dcci") = ((0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_ci")^(1-1/0.3)+(1-0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_g")^(1-1/0.3))^(1/(0.3-1))*(0.75^(1/0.3))*(steady2struct.ssValues.(aCountry+"_ci")^(-1/0.3));
+    steady2struct.ssValues.(aCountry+"_dccj") = ((0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cj")^(1-1/0.3)+(1-0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_g")^(1-1/0.3))^(1/(0.3-1))*(0.75^(1/0.3))*(steady2struct.ssValues.(aCountry+"_cj")^(-1/0.3));
+end
 
 % Specify the output file name
 filename = fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'eagle_steady_govCo_stage0.txt');
@@ -60,13 +69,12 @@ for aType = ["params", "ssValues"]
         fprintf(fileID, '%s %f\n', fieldName, fieldValue);
     end
 end
+
+
 % Close the file
 fclose(fileID);
 
-
-
-
-dynare('steady3.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
+dynare('steady3.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
     
 dynare(sprintf('eagleModel_verSS'), sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'nopreprocessoroutput', 'savemacro');
