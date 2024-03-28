@@ -1,4 +1,3 @@
 function [y, T] = static_78(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(435)=y(424);
-  y(688)=y(677);
+  y(1752)=0;
 end
