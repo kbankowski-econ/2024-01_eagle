@@ -27,6 +27,9 @@ if true
     dynare('steady2.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
 end
 
+dynare('steady3.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
+
+    
 dynare(sprintf('eagleModel_verSS'), sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'nopreprocessoroutput', 'savemacro');
 
 
