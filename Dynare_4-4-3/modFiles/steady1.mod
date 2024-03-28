@@ -13,10 +13,7 @@ options_.markowitz = 5;
 
 @#include "modeqs.mod"
 
-@#include "params.mod"
-
-@#include "initval.mod"
-
+load_params_and_steady_state('eagle_steady_stage0.txt');
 
 // Technology
 
