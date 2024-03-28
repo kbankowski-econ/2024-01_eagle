@@ -1,6 +1,6 @@
 function [y, T] = dynamic_129(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  T(2190)=params(259)*(y(1187)/y(3407))^(-params(264))*(y(3347)/T(412))^params(264);
-  y(3377)=(1-params(259))*(y(3408)/y(3407))^(-params(264))+T(2190)*y(1157);
+  T(2086)=params(259)*(y(1187)/y(3407))^(-params(264))*(y(3347)/T(518))^params(264);
+  y(3377)=(1-params(259))*(y(3408)/y(3407))^(-params(264))+T(2086)*y(1157);
   y(3338)=y(3334)*y(3377);
   y(3432)=y(3346);
   y(2444)=y(2438)*y(2447)/y(227);
