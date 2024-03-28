@@ -17,17 +17,16 @@ options_.markowitz = 5;
 
 @#include "initval.mod"
 
-// Technology
-
+// The same parameter values like in the params.mod; just to check the steady state solution
 disp('alphat')
 homotopy_setup;
-EAA_alphat, 0.3;
-RW_alphat,  0.3;
-US_alphat,  0.3;
-EAB_alphat, 0.3;
-EAC_alphat, 0.3;
-EAD_alphat, 0.3;
-EAE_alphat, 0.3;
+EAA_alphat, 0.1;
+RW_alphat,  0.1;
+US_alphat,  0.1;
+EAB_alphat, 0.1;
+EAC_alphat, 0.1;
+EAD_alphat, 0.1;
+EAE_alphat, 0.1;
 end;
 steady(homotopy_steps = 5);
 
