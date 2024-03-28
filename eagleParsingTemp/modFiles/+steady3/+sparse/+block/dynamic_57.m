@@ -1,0 +1,22 @@
+function [y, T] = dynamic_57(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
+  y(4303)=0;
+  y(4319)=0;
+  y(2383)=0;
+  y(2464)=0;
+  y(2686)=0;
+  y(2767)=0;
+  y(2989)=0;
+  y(3070)=0;
+  y(3292)=0;
+  y(3373)=0;
+  y(3595)=0;
+  y(3676)=0;
+  y(3898)=0;
+  y(3979)=0;
+  y(4278)=1;
+  y(4350)=0;
+  y(4351)=0;
+  y(4352)=0;
+  y(4353)=0;
+  y(2223)=y(2439)^(params(58)/(params(322)+params(256)+params(190)+params(124)+params(58)))*y(2742)^(params(124)/(params(322)+params(256)+params(190)+params(124)+params(58)))*y(3045)^(params(190)/(params(322)+params(256)+params(190)+params(124)+params(58)))*y(3348)^(params(256)/(params(322)+params(256)+params(190)+params(124)+params(58)))*y(3651)^(params(322)/(params(322)+params(256)+params(190)+params(124)+params(58)));
+end

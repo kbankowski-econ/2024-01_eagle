@@ -11,6 +11,6 @@ options_.markowitz = 5;
 
 @#include "modeqs_govCo.mod"
 
-load_params_and_steady_state('eagle_steady_govCo_stage0.txt');
+// load_params_and_steady_state('eagle_steady_govCo_stage0.txt');
 
-save_params_and_steady_state('eagle_steady_govCo.txt');
+// save_params_and_steady_state('eagle_steady_govCo.txt');
