@@ -27,6 +27,45 @@ if true
     dynare('steady2.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
 end
 
+steady2output = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'steady2', 'Output', 'steady2_results.mat'));
+steady2struct = struct();
+
+for aParam = string(reshape(steady2output.M_.param_names, 1, []))
+    steady2struct.params.(aParam) = steady2output.M_.params(strcmp(aParam, steady2output.M_.param_names));
+end
+
+varList = steady2output.M_.endo_names(~startsWith(steady2output.M_.endo_names, 'AUX_ENDO_'));
+for aVar = string(reshape(varList, 1, []))
+    steady2struct.ssValues.(aVar) = steady2output.oo_.steady_state(strcmp(aVar, varList));
+end
+
+
+% Specify the output file name
+filename = fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'eagle_steady_govCo_stage0.txt');
+% Open the file for writing
+fileID = fopen(filename, 'w');
+% Check if the file was opened successfully
+if fileID == -1
+    error('Failed to open the file.');
+end
+% Loop through each field in the structure
+for aType = ["params", "ssValues"]
+    fields = fieldnames(steady2struct.(aType));
+    for i = 1:length(fields)
+        % Get the field name
+        fieldName = fields{i};
+        % Get the value associated with the field
+        fieldValue = steady2struct.(aType).(fieldName);
+        % Write the field name and value to the file
+        fprintf(fileID, '%s %f\n', fieldName, fieldValue);
+    end
+end
+% Close the file
+fclose(fileID);
+
+
+
+
 dynare('steady3.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
 
     
