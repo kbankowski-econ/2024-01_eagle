@@ -109,7 +109,7 @@
 
    @{COUNTRY}_rhoz        = 0.90;
    @{COUNTRY}_rhorp       = 0.90;
-   @{COUNTRY}_rhog        = 0.90;
+   @{COUNTRY}_rhocg        = 0.90;
    @{COUNTRY}_rhotr       = 0.90;
    @{COUNTRY}_rhotauc     = 0.90;
    @{COUNTRY}_rhotauk     = 0.90;

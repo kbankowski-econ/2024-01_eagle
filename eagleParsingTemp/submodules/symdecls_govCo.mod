@@ -119,7 +119,7 @@ var
  @{co}_fi
  @{co}_fj
  @{co}_fn
- @{co}_g
+ @{co}_cg
 @# if co != countries[7]
  @{co}_gammab
 @# endif
@@ -136,7 +136,7 @@ var
  @{co}_gi
  @{co}_gj
  @{co}_gn
- @{co}_gy
+ @{co}_cgy
  @{co}_ht
  @{co}_htc
  @{co}_hti
@@ -312,7 +312,7 @@ parameters
  @{co}_pi4target
  @{co}_psin
  @{co}_psit
- @{co}_rhog
+ @{co}_rhocg
 @# if co != countries[7]
  @{co}_rhorp
 @# endif
@@ -359,7 +359,7 @@ parameters
 
 // Exogenous
 varexo
- @{co}_gybar
+ @{co}_cgybar
  @{co}_taucbar
  @{co}_taudbar
  @{co}_taukbar

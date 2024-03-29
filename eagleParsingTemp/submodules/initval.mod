@@ -24,7 +24,7 @@ initval;
   @{COUNTRY}_fj = 1.45356923003055E-007;
   @{COUNTRY}_fn = 0.015;
 
-  @{COUNTRY}_g = 0;
+  @{COUNTRY}_cg = 0;
   @#if(COUNTRY != "US")
     @{COUNTRY}_gammab = 0;
   @#endif
@@ -41,7 +41,7 @@ initval;
   @{COUNTRY}_gi = 0.0394976510764103;
   @{COUNTRY}_gj = 0.735309110981097;
   @{COUNTRY}_gn = 0.18;
-  @{COUNTRY}_gy = 0;
+  @{COUNTRY}_cgy = 0;
 
   @{COUNTRY}_ht = 0.08;
   @{COUNTRY}_htc = 0.08;
@@ -204,7 +204,7 @@ initval;
     @# endif
   @#endif
   
-  @{COUNTRY}_gybar = 0;
+  @{COUNTRY}_cgybar = 0;
   @{COUNTRY}_taucbar = 0;
   @{COUNTRY}_taudbar = 0;
   @{COUNTRY}_taukbar = 0;

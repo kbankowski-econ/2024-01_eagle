@@ -467,13 +467,13 @@ steady(homotopy_steps = 5);
 
 disp('gybar')
 homotopy_setup;
-EAA_gybar, 0.20;
-US_gybar,  0.16;
-RW_gybar,  0.16;
-EAB_gybar, 0.20;
-EAC_gybar, 0.20;
-EAD_gybar, 0.20;
-EAE_gybar, 0.20;
+EAA_cgybar, 0.20;
+US_cgybar,  0.16;
+RW_cgybar,  0.16;
+EAB_cgybar, 0.20;
+EAC_cgybar, 0.20;
+EAD_cgybar, 0.20;
+EAE_cgybar, 0.20;
 end;
 steady(homotopy_steps = 5);
 
