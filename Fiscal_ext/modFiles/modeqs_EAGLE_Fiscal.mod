@@ -6,10 +6,10 @@
 
 
 @#for i in 1:4
-@# define co = countries[i]
-@# define co2 = countries2[i]
-@# define co3 = countries3[i]
-@# define co4 = countries4[i]
+@#define co = countries[i]
+@#define co2 = countries2[i]
+@#define co3 = countries3[i]
+@#define co4 = countries4[i]
 
 // Core model begins
 
