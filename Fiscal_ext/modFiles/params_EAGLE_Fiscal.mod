@@ -149,16 +149,8 @@
    @{COUNTRY}_rhozcon     = 0.90;
 @#endfor
 
-
  // Bilateral and asymmetric
- /*
- EAAUS_numc       = 0.1;
- EAAEAB_numc      = 0.1;
- EAARW_numc       = 1-EAAUS_numc-EAAEAB_numc;
- EAAUS_numi       = 0.1;
- EAAEAB_numi      = 0.1;
- EAARW_numi       = 1-EAAUS_numi-EAAEAB_numi;
-*/
+
  EAAUS_numc       = 0.2;
  EAAEAB_numc      = 0.6;
  EAARW_numc       = 1-EAAUS_numc-EAAEAB_numc;
@@ -168,15 +160,13 @@
  EAAUS_numx       = 0.3;
  EAAEAB_numx      = 0.3;
  EAARW_numx       = 1-EAAUS_numc-EAAEAB_numc;
+ EAAUS_numcg       = 0.33;
+ EAAEAB_numcg      = 0.40;
+ EAARW_numcg       = 1-EAAUS_numcg-EAAEAB_numcg;
+ EAAUS_numig       = 0.33;
+ EAAEAB_numig      = 0.33;
+ EAARW_numig       = 1-EAAUS_numig-EAAEAB_numig;
 
-/* 
- EABRW_numc       = 0.45;
- EABEAA_numc      = 0.45;
- EABUS_numc       = 1-EABRW_numc-EABEAA_numc;
- EABRW_numi       = 0.45;
- EABEAA_numi      = 0.45;
- EABUS_numi       = 1-EABRW_numi-EABEAA_numi;
-*/
  EABRW_numc       = 0.2;
  EABEAA_numc      = 0.6;
  EABUS_numc       = 1-EABRW_numc-EABEAA_numc;
@@ -186,15 +176,13 @@
  EABRW_numx       = 0.33;
  EABEAA_numx      = 0.33;
  EABUS_numx       = 1-EABRW_numc-EABEAA_numc;
+ EABRW_numcg       = 0.45;
+ EABEAA_numcg      = 0.45;
+ EABUS_numcg       = 1-EABRW_numcg-EABEAA_numcg;
+ EABRW_numig       = 0.45;
+ EABEAA_numig      = 0.45;
+ EABUS_numig       = 1-EABRW_numig-EABEAA_numig;
 
-/*
- RWUS_numc        = 0.45;
- RWEAA_numc       = 0.45;
- RWEAB_numc       = 1-RWUS_numc-RWEAA_numc;
- RWUS_numi        = 0.45;
- RWEAA_numi       = 0.45;
- RWEAB_numi       = 1-RWUS_numi-RWEAA_numi;
-*/
  RWUS_numc        = 0.6;
  RWEAA_numc       = 0.25;
  RWEAB_numc       = 1-RWUS_numc-RWEAA_numc;
@@ -204,15 +192,13 @@
  RWUS_numx        = 0.33;
  RWEAA_numx       = 0.33;
  RWEAB_numx       = 1-RWUS_numc-RWEAA_numc;
+ RWUS_numcg        = 0.45;
+ RWEAA_numcg       = 0.45;
+ RWEAB_numcg       = 1-RWUS_numcg-RWEAA_numcg;
+ RWUS_numig        = 0.45;
+ RWEAA_numig       = 0.45;
+ RWEAB_numig       = 1-RWUS_numig-RWEAA_numig;
 
-/*
- USEAA_numc       = 0.1;
- USEAB_numc       = 0.05;
- USRW_numc        = 1-USEAA_numc-USEAB_numc;
- USEAA_numi       = 0.1;
- USEAB_numi       = 0.05;
- USRW_numi        = 1-USEAA_numi-USEAB_numi;
-*/
  USEAA_numc       = 0.25;
  USEAB_numc       = 0.15;
  USRW_numc        = 1-USEAA_numc-USEAB_numc;
@@ -222,47 +208,12 @@
  USEAA_numx       = 0.33;
  USEAB_numx       = 0.33;
  USRW_numx        = 1-USEAA_numc-USEAB_numc;
-
- EAAUS_numcg       = 0.33;
- EAAEAB_numcg      = 0.40;
- EAARW_numcg       = 1-EAAUS_numcg-EAAEAB_numcg;
-
- EABRW_numcg       = 0.45;
- EABEAA_numcg      = 0.45;
- EABUS_numcg       = 1-EABRW_numcg-EABEAA_numcg;
-
- RWUS_numcg        = 0.45;
- RWEAA_numcg       = 0.45;
- RWEAB_numcg       = 1-RWUS_numcg-RWEAA_numcg;
-
  USEAA_numcg       = 0.25;
  USEAB_numcg       = 0.15;
  USRW_numcg        = 1-USEAA_numcg-USEAB_numcg;
-
-
- EAAUS_numig       = 0.33;
- EAAEAB_numig      = 0.33;
- EAARW_numig       = 1-EAAUS_numig-EAAEAB_numig;
-
- EABRW_numig       = 0.45;
- EABEAA_numig      = 0.45;
- EABUS_numig       = 1-EABRW_numig-EABEAA_numig;
-
- RWUS_numig        = 0.45;
- RWEAA_numig       = 0.45;
- RWEAB_numig       = 1-RWUS_numig-RWEAA_numig;
-
  USEAA_numig       = 0.25;
  USEAB_numig       = 0.15;
  USRW_numig        = 1-USEAA_numig-USEAB_numig;
-
-
-
-
-
-
-
-
 
 // Euro area
 

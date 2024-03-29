@@ -1,5 +1,4 @@
 // Adjusted for Monetary Union setup
-
 // Endogenous
 var
  @{ea}_bf
@@ -23,101 +22,127 @@ parameters
 
 // Exogenous
 varexo
-@# if !steady
+@#if !steady
     @{ea}_epsr
-@# endif
+@#endif
  @{ea}_epsz
 ;
 
 
 @#for co in countries
-
 // Endogenous
 var
-@# for it in countries - [ co ]
+@#for it in countries - [ co ]
  @{co}@{it}_excy
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_exiy
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_fx
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_gammaimc
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_gammaimcdag
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_gammaimi
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_gammaimidag
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_gammaimx
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_gammaimxdag
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_gx
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_im
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_imc
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_imcy
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_imi
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_imcg
  @{co}@{it}_imig
  @{co}@{it}_imcgy
  @{co}@{it}_imigy
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_imiy
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_imx
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_imxy
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_piim
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_pim
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_pimtilde
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_rer
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_sx
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_tot
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_weight
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_weightex
-@# endfor
-@# for it in countries - [ co ]
+@#endfor
+
+@#for it in countries - [ co ]
  @{co}@{it}_weightim
-@# endfor
+@#endfor
+
  @{co}_b
  @{co}_bf
  @{co}_by
@@ -141,9 +166,10 @@ var
  @{co}_fi
  @{co}_fj
  @{co}_fn
-@# if co != countries[4]
+@#if co != countries[4]
  @{co}_gammab
-@# endif
+@#endif
+
  @{co}_gammai
  @{co}_gammaider
  @{co}_gammau
@@ -243,13 +269,17 @@ var
  @{co}_r
  @{co}_reer
  @{co}_rer
+
 @#if co != countries[4]
  @{co}_rerdep
 @#endif
+
  @{co}_rk
+
 @#if co != countries[4]
  @{co}_rp
 @#endif
+
  @{co}_rr
  @{co}_rrstar
  @{co}_sh
@@ -267,9 +297,11 @@ var
  @{co}_tby
  @{co}_ti
  @{co}_tj
+
 @#if co != countries[4]
  @{co}_tot
 @#endif
+
  @{co}_tr
  @{co}_tri
  @{co}_trj
@@ -313,17 +345,16 @@ parameters
  @{co}_alphag
  @{co}_alphan
  @{co}_alphat
-
  @{co}_beta
-@# if co != countries[4]
- @{co}_bfytarget
-@# endif
-@# if co == "EAA"
- @{co}_bhytarget
-@# endif
 
- @{co}_bytarget
- 
+@#if co != countries[4]
+ @{co}_bfytarget
+@#endif
+@#if co == "EAA"
+ @{co}_bhytarget
+@#endif
+
+ @{co}_bytarget 
  @{co}_chin
  @{co}_chih
  @{co}_chii
@@ -332,9 +363,10 @@ parameters
  @{co}_delta
  @{co}_deltag           
 
-@# if co != countries[4]
+@#if co != countries[4]
  @{co}_gammab1
-@# endif
+@#endif
+
  @{co}_gammai1
  @{co}_gammaimc1
  @{co}_gammaimi1
@@ -358,7 +390,6 @@ parameters
  @{co}_mutcg
  @{co}_muti
  @{co}_mutig
-
  @{co}_nuc
  @{co}_nucces
  @{co}_nucg
@@ -371,23 +402,24 @@ parameters
  @{co}_nuti
  @{co}_nutig
  @{co}_nux
-
  @{co}_omega
-@# if co != countries[1] && co != countries[2]
+
+@#if co != countries[1] && co != countries[2]
  @{co}_phirgy
  @{co}_phirpi
  @{co}_phirr
-@# endif
+@#endif
+
  @{co}_phitb
  @{co}_pi4target
  @{co}_psin
  @{co}_psit
-
  @{co}_rhocg
  @{co}_rhoig
-@# if co != countries[4]
+@#if co != countries[4]
  @{co}_rhorp
-@# endif
+@#endif
+
  @{co}_rhotauc
  @{co}_rhotaud
  @{co}_rhotauk
@@ -416,9 +448,11 @@ parameters
  @{co}_thetax
  @{co}_upsilont
  @{co}_upsilontr
-@# for it in countries - [ co ]
+
+@#for it in countries - [ co ]
  @{co}@{it}_rerbar
-@# endfor
+@#endfor
+
  @{co}_pibar
  @{co}_psinbar
  @{co}_psitbar
@@ -429,7 +463,6 @@ parameters
  @{co}_ynbar
  @{co}_ytbar
 ;
-
 
 // Exogenous
 varexo
@@ -446,23 +479,19 @@ varexo
  @{co}_zinvbar
  @{co}_znbar
  @{co}_ztbar
-
  @{co}_cpim
  @{co}_epsgc
  @{co}_epsgi
-@# if co != countries[1] && co != countries[2]
-    @# if !steady
+@#if co != countries[1] && co != countries[2]
+@#if !steady
         @{co}_epsr
-    @# endif
-@# endif
-//@# if co == countries[2] 
- //@{co}_epsner
-//@# endif
-@# if co != countries[4]
-    @# if !steady
+@#endif
+@#endif
+@#if co != countries[4]
+    @#if !steady
         @{co}_epsrp
-    @# endif
-@# endif
+    @#endif
+@#endif
  @{co}_epstauc
  @{co}_epstaud
  @{co}_epstauk
@@ -475,28 +504,31 @@ varexo
  @{co}_epszinv
  @{co}_epszn
  @{co}_epszt
-@# if !steady
+@#if !steady
     @{co}_epsbfy
-@# endif
+@#endif
 ;
-
 @#endfor
 
 parameters
 @#for i in 1:4
-@# for it in countries - [ countries[i], countries3[i] ]
+@#for it in countries - [ countries[i], countries3[i] ]
  @{countries[i]}@{it}_numc
  @{countries[i]}@{it}_numcg
  @{countries[i]}@{it}_numi
  @{countries[i]}@{it}_numig
  @{countries[i]}@{it}_numx
-@# endfor
+@#endfor
 @#endfor
 ;
 
-var @{countries[1]}@{countries[2]}_nerdep;
+var 
+@{countries[1]}@{countries[2]}_nerdep
+;
 
-var @{countries[1]}_gammabh;
+var 
+    @{countries[1]}_gammabh
+;
 
 var
 @#for co in countries[1:2]
@@ -509,10 +541,12 @@ var
 @#if steady
 change_type(var)
  @{ea}_ybar
-@# for co in countries
-@#  for it in countries - [ co ]
+@#for co in countries
+
+@#for it in countries - [ co ]
  @{co}@{it}_rerbar
-@#  endfor
+@#endfor
+
  @{co}_pibar
  @{co}_psinbar
  @{co}_psitbar
@@ -522,6 +556,6 @@ change_type(var)
  @{co}_ybar
  @{co}_ynbar
  @{co}_ytbar
-@# endfor
+@#endfor
 ;
 @#endif
