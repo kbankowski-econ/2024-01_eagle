@@ -5,7 +5,6 @@ options_.markowitz = 5;
 //
 // Is sigma equal to one for any country ?
 // Is omega equal to zero for any country ?
-// TODO: fix highlighting for countries5 in Notepad++
 // Endogenous
 var
  EA_bf
@@ -419,7 +418,7 @@ varexo
  EAA_znbar
  EAA_ztbar
  EAA_cpim
- EAA_epsg
+ EAA_epsgc
  EAA_epstauc
  EAA_epstaud
  EAA_epstauk
@@ -823,7 +822,7 @@ varexo
  EAB_znbar
  EAB_ztbar
  EAB_cpim
- EAB_epsg
+ EAB_epsgc
  EAB_epstauc
  EAB_epstaud
  EAB_epstauk
@@ -1227,7 +1226,7 @@ varexo
  EAC_znbar
  EAC_ztbar
  EAC_cpim
- EAC_epsg
+ EAC_epsgc
  EAC_epstauc
  EAC_epstaud
  EAC_epstauk
@@ -1631,7 +1630,7 @@ varexo
  EAD_znbar
  EAD_ztbar
  EAD_cpim
- EAD_epsg
+ EAD_epsgc
  EAD_epstauc
  EAD_epstaud
  EAD_epstauk
@@ -2035,7 +2034,7 @@ varexo
  EAE_znbar
  EAE_ztbar
  EAE_cpim
- EAE_epsg
+ EAE_epsgc
  EAE_epstauc
  EAE_epstaud
  EAE_epstauk
@@ -2442,7 +2441,7 @@ varexo
  RW_znbar
  RW_ztbar
  RW_cpim
- RW_epsg
+ RW_epsgc
  RW_epstauc
  RW_epstaud
  RW_epstauk
@@ -2841,7 +2840,7 @@ varexo
  US_znbar
  US_ztbar
  US_cpim
- US_epsg
+ US_epsgc
  US_epstauc
  US_epstaud
  US_epstauk
@@ -3956,7 +3955,7 @@ EAA_y = EAA_yst+EAA_ysn;
 log(EAA_zt) = (1-EAA_rhozt)*log(EAA_ztbar)+EAA_rhozt*log(EAA_zt(-1))+EAA_epszt;
 log(EAA_zn) = (1-EAA_rhozn)*log(EAA_znbar)+EAA_rhozn*log(EAA_zn(-1))+EAA_epszn;
 // Government spending shock
-EAA_cgy = (1-EAA_rhocg)*EAA_cgybar+EAA_rhocg*EAA_cgy(-1)+EAA_epsg;
+EAA_cgy = (1-EAA_rhocg)*EAA_cgybar+EAA_rhocg*EAA_cgy(-1)+EAA_epsgc;
 // Transfer shock
 EAA_try = (1-EAA_rhotr)*EAA_trybar+EAA_rhotr*EAA_try(-1)+EAA_epstr;
 // Consumption tax shock
@@ -4984,7 +4983,7 @@ EAB_y = EAB_yst+EAB_ysn;
 log(EAB_zt) = (1-EAB_rhozt)*log(EAB_ztbar)+EAB_rhozt*log(EAB_zt(-1))+EAB_epszt;
 log(EAB_zn) = (1-EAB_rhozn)*log(EAB_znbar)+EAB_rhozn*log(EAB_zn(-1))+EAB_epszn;
 // Government spending shock
-EAB_cgy = (1-EAB_rhocg)*EAB_cgybar+EAB_rhocg*EAB_cgy(-1)+EAB_epsg;
+EAB_cgy = (1-EAB_rhocg)*EAB_cgybar+EAB_rhocg*EAB_cgy(-1)+EAB_epsgc;
 // Transfer shock
 EAB_try = (1-EAB_rhotr)*EAB_trybar+EAB_rhotr*EAB_try(-1)+EAB_epstr;
 // Consumption tax shock
@@ -6015,7 +6014,7 @@ EAC_y = EAC_yst+EAC_ysn;
 log(EAC_zt) = (1-EAC_rhozt)*log(EAC_ztbar)+EAC_rhozt*log(EAC_zt(-1))+EAC_epszt;
 log(EAC_zn) = (1-EAC_rhozn)*log(EAC_znbar)+EAC_rhozn*log(EAC_zn(-1))+EAC_epszn;
 // Government spending shock
-EAC_cgy = (1-EAC_rhocg)*EAC_cgybar+EAC_rhocg*EAC_cgy(-1)+EAC_epsg;
+EAC_cgy = (1-EAC_rhocg)*EAC_cgybar+EAC_rhocg*EAC_cgy(-1)+EAC_epsgc;
 // Transfer shock
 EAC_try = (1-EAC_rhotr)*EAC_trybar+EAC_rhotr*EAC_try(-1)+EAC_epstr;
 // Consumption tax shock
@@ -7046,7 +7045,7 @@ EAD_y = EAD_yst+EAD_ysn;
 log(EAD_zt) = (1-EAD_rhozt)*log(EAD_ztbar)+EAD_rhozt*log(EAD_zt(-1))+EAD_epszt;
 log(EAD_zn) = (1-EAD_rhozn)*log(EAD_znbar)+EAD_rhozn*log(EAD_zn(-1))+EAD_epszn;
 // Government spending shock
-EAD_cgy = (1-EAD_rhocg)*EAD_cgybar+EAD_rhocg*EAD_cgy(-1)+EAD_epsg;
+EAD_cgy = (1-EAD_rhocg)*EAD_cgybar+EAD_rhocg*EAD_cgy(-1)+EAD_epsgc;
 // Transfer shock
 EAD_try = (1-EAD_rhotr)*EAD_trybar+EAD_rhotr*EAD_try(-1)+EAD_epstr;
 // Consumption tax shock
@@ -8072,7 +8071,7 @@ EAE_y = EAE_yst+EAE_ysn;
 log(EAE_zt) = (1-EAE_rhozt)*log(EAE_ztbar)+EAE_rhozt*log(EAE_zt(-1))+EAE_epszt;
 log(EAE_zn) = (1-EAE_rhozn)*log(EAE_znbar)+EAE_rhozn*log(EAE_zn(-1))+EAE_epszn;
 // Government spending shock
-EAE_cgy = (1-EAE_rhocg)*EAE_cgybar+EAE_rhocg*EAE_cgy(-1)+EAE_epsg;
+EAE_cgy = (1-EAE_rhocg)*EAE_cgybar+EAE_rhocg*EAE_cgy(-1)+EAE_epsgc;
 // Transfer shock
 EAE_try = (1-EAE_rhotr)*EAE_trybar+EAE_rhotr*EAE_try(-1)+EAE_epstr;
 // Consumption tax shock
@@ -9098,7 +9097,7 @@ RW_y = RW_yst+RW_ysn;
 log(RW_zt) = (1-RW_rhozt)*log(RW_ztbar)+RW_rhozt*log(RW_zt(-1))+RW_epszt;
 log(RW_zn) = (1-RW_rhozn)*log(RW_znbar)+RW_rhozn*log(RW_zn(-1))+RW_epszn;
 // Government spending shock
-RW_cgy = (1-RW_rhocg)*RW_cgybar+RW_rhocg*RW_cgy(-1)+RW_epsg;
+RW_cgy = (1-RW_rhocg)*RW_cgybar+RW_rhocg*RW_cgy(-1)+RW_epsgc;
 // Transfer shock
 RW_try = (1-RW_rhotr)*RW_trybar+RW_rhotr*RW_try(-1)+RW_epstr;
 // Consumption tax shock
@@ -10124,7 +10123,7 @@ US_y = US_yst+US_ysn;
 log(US_zt) = (1-US_rhozt)*log(US_ztbar)+US_rhozt*log(US_zt(-1))+US_epszt;
 log(US_zn) = (1-US_rhozn)*log(US_znbar)+US_rhozn*log(US_zn(-1))+US_epszn;
 // Government spending shock
-US_cgy = (1-US_rhocg)*US_cgybar+US_rhocg*US_cgy(-1)+US_epsg;
+US_cgy = (1-US_rhocg)*US_cgybar+US_rhocg*US_cgy(-1)+US_epsgc;
 // Transfer shock
 US_try = (1-US_rhotr)*US_trybar+US_rhotr*US_try(-1)+US_epstr;
 // Consumption tax shock
