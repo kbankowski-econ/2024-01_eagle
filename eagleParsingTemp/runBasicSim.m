@@ -97,11 +97,70 @@ for aType = ["params", "ssValues", "exo_names"]
     end
 end
 
-
 % Close the file
 fclose(fileID);
 
 dynare('steady3.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
+
+%%
+steady3output = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'steady3', 'Output', 'steady3_results.mat'));
+steady3struct = struct();
+
+for aExoVar = string(reshape(steady3output.M_.exo_names, 1, []))
+    steady3struct.exo_names.(aExoVar) = steady3output.oo_.exo_steady_state(strcmp(aExoVar, steady3output.M_.exo_names));
+end
+for aCountry = [ "EAA", "EAB", "EAC", "EAD", "EAE", "RW", "US" ]
+    steady3struct.exo_names.(aCountry+"_igybar") = 0;
+    steady3struct.exo_names.(aCountry+"_epsgi") = 0;
+end
+
+for aParam = string(reshape(steady3output.M_.param_names, 1, []))
+    steady3struct.params.(aParam) = steady3output.M_.params(strcmp(aParam, steady3output.M_.param_names));
+end
+for aCountry = [ "EAA", "EAB", "EAC", "EAD", "EAE", "RW", "US" ]
+    steady3struct.params.(aCountry+"_deltag") = 0;
+    steady3struct.params.(aCountry+"_alphag") = 0;
+    steady3struct.params.(aCountry+"_rhoig") = 0.9;
+end
+
+varList = steady3output.M_.endo_names(~startsWith(steady3output.M_.endo_names, 'AUX_ENDO_'));
+for aVar = string(reshape(varList, 1, []))
+    steady3struct.ssValues.(aVar) = steady3output.oo_.steady_state(strcmp(aVar, varList));
+end
+for aCountry = [ "EAA", "EAB", "EAC", "EAD", "EAE", "RW", "US" ]
+    steady3struct.ssValues.(aCountry+"_kg") = 1;
+    steady3struct.ssValues.(aCountry+"_ig") = 0;
+    steady3struct.ssValues.(aCountry+"_igy") = 0;
+end
+
+    
+
+% Specify the output file name
+filename = fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'eagle_steady_govInv_stage0.txt');
+% Open the file for writing
+fileID = fopen(filename, 'w');
+% Check if the file was opened successfully
+if fileID == -1
+    error('Failed to open the file.');
+end
+% Loop through each field in the structure
+for aType = ["params", "ssValues", "exo_names"]
+    fields = fieldnames(steady3struct.(aType));
+    for i = 1:length(fields)
+        % Get the field name
+        fieldName = fields{i};
+        % Get the value associated with the field
+        fieldValue = steady3struct.(aType).(fieldName);
+        % Write the field name and value to the file
+        fprintf(fileID, '%s %f\n', fieldName, fieldValue);
+    end
+end
+
+% Close the file
+fclose(fileID);
+
+%%
+dynare('steady4.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
     
 dynare(sprintf('eagleModel_verSS'), sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'nopreprocessoroutput', 'savemacro');
