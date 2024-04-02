@@ -184,7 +184,7 @@ var
  EAA_fi
  EAA_fj
  EAA_fn
- EAA_g
+ EAA_cg
  EAA_gammab
  EAA_gammai
  EAA_gammaider
@@ -199,7 +199,7 @@ var
  EAA_gi
  EAA_gj
  EAA_gn
- EAA_gy
+ EAA_cgy
  EAA_ht
  EAA_htc
  EAA_hti
@@ -359,7 +359,7 @@ parameters
  EAA_pi4target
  EAA_psin
  EAA_psit
- EAA_rhog
+ EAA_rhocg
  EAA_rhorp
  EAA_rhotauc
  EAA_rhotaud
@@ -406,7 +406,7 @@ parameters
 ;
 // Exogenous
 varexo
- EAA_gybar
+ EAA_cgybar
  EAA_taucbar
  EAA_taudbar
  EAA_taukbar
@@ -588,7 +588,7 @@ var
  EAB_fi
  EAB_fj
  EAB_fn
- EAB_g
+ EAB_cg
  EAB_gammab
  EAB_gammai
  EAB_gammaider
@@ -603,7 +603,7 @@ var
  EAB_gi
  EAB_gj
  EAB_gn
- EAB_gy
+ EAB_cgy
  EAB_ht
  EAB_htc
  EAB_hti
@@ -763,7 +763,7 @@ parameters
  EAB_pi4target
  EAB_psin
  EAB_psit
- EAB_rhog
+ EAB_rhocg
  EAB_rhorp
  EAB_rhotauc
  EAB_rhotaud
@@ -810,7 +810,7 @@ parameters
 ;
 // Exogenous
 varexo
- EAB_gybar
+ EAB_cgybar
  EAB_taucbar
  EAB_taudbar
  EAB_taukbar
@@ -992,7 +992,7 @@ var
  EAC_fi
  EAC_fj
  EAC_fn
- EAC_g
+ EAC_cg
  EAC_gammab
  EAC_gammai
  EAC_gammaider
@@ -1007,7 +1007,7 @@ var
  EAC_gi
  EAC_gj
  EAC_gn
- EAC_gy
+ EAC_cgy
  EAC_ht
  EAC_htc
  EAC_hti
@@ -1167,7 +1167,7 @@ parameters
  EAC_pi4target
  EAC_psin
  EAC_psit
- EAC_rhog
+ EAC_rhocg
  EAC_rhorp
  EAC_rhotauc
  EAC_rhotaud
@@ -1214,7 +1214,7 @@ parameters
 ;
 // Exogenous
 varexo
- EAC_gybar
+ EAC_cgybar
  EAC_taucbar
  EAC_taudbar
  EAC_taukbar
@@ -1396,7 +1396,7 @@ var
  EAD_fi
  EAD_fj
  EAD_fn
- EAD_g
+ EAD_cg
  EAD_gammab
  EAD_gammai
  EAD_gammaider
@@ -1411,7 +1411,7 @@ var
  EAD_gi
  EAD_gj
  EAD_gn
- EAD_gy
+ EAD_cgy
  EAD_ht
  EAD_htc
  EAD_hti
@@ -1571,7 +1571,7 @@ parameters
  EAD_pi4target
  EAD_psin
  EAD_psit
- EAD_rhog
+ EAD_rhocg
  EAD_rhorp
  EAD_rhotauc
  EAD_rhotaud
@@ -1618,7 +1618,7 @@ parameters
 ;
 // Exogenous
 varexo
- EAD_gybar
+ EAD_cgybar
  EAD_taucbar
  EAD_taudbar
  EAD_taukbar
@@ -1800,7 +1800,7 @@ var
  EAE_fi
  EAE_fj
  EAE_fn
- EAE_g
+ EAE_cg
  EAE_gammab
  EAE_gammai
  EAE_gammaider
@@ -1815,7 +1815,7 @@ var
  EAE_gi
  EAE_gj
  EAE_gn
- EAE_gy
+ EAE_cgy
  EAE_ht
  EAE_htc
  EAE_hti
@@ -1975,7 +1975,7 @@ parameters
  EAE_pi4target
  EAE_psin
  EAE_psit
- EAE_rhog
+ EAE_rhocg
  EAE_rhorp
  EAE_rhotauc
  EAE_rhotaud
@@ -2022,7 +2022,7 @@ parameters
 ;
 // Exogenous
 varexo
- EAE_gybar
+ EAE_cgybar
  EAE_taucbar
  EAE_taudbar
  EAE_taukbar
@@ -2204,7 +2204,7 @@ var
  RW_fi
  RW_fj
  RW_fn
- RW_g
+ RW_cg
  RW_gammab
  RW_gammai
  RW_gammaider
@@ -2219,7 +2219,7 @@ var
  RW_gi
  RW_gj
  RW_gn
- RW_gy
+ RW_cgy
  RW_ht
  RW_htc
  RW_hti
@@ -2382,7 +2382,7 @@ parameters
  RW_pi4target
  RW_psin
  RW_psit
- RW_rhog
+ RW_rhocg
  RW_rhorp
  RW_rhotauc
  RW_rhotaud
@@ -2429,7 +2429,7 @@ parameters
 ;
 // Exogenous
 varexo
- RW_gybar
+ RW_cgybar
  RW_taucbar
  RW_taudbar
  RW_taukbar
@@ -2611,7 +2611,7 @@ var
  US_fi
  US_fj
  US_fn
- US_g
+ US_cg
  US_gammai
  US_gammaider
  US_gammau
@@ -2625,7 +2625,7 @@ var
  US_gi
  US_gj
  US_gn
- US_gy
+ US_cgy
  US_ht
  US_htc
  US_hti
@@ -2782,7 +2782,7 @@ parameters
  US_pi4target
  US_psin
  US_psit
- US_rhog
+ US_rhocg
  US_rhotauc
  US_rhotaud
  US_rhotauk
@@ -2828,7 +2828,7 @@ parameters
 ;
 // Exogenous
 varexo
- US_gybar
+ US_cgybar
  US_taucbar
  US_taudbar
  US_taukbar
@@ -3059,8 +3059,8 @@ model(block, bytecode, cutoff = 0);
 //-------------
 //-------------
 // CES consumption bundle for each type of household:
-    EAA_ccesi^(1-1/EAA_mucces) = (EAA_nucces)^(1/EAA_mucces)*EAA_ci^(1-1/EAA_mucces)+(1-EAA_nucces)^(1/EAA_mucces)*EAA_g^(1-1/EAA_mucces);
-    EAA_ccesj^(1-1/EAA_mucces) = (EAA_nucces)^(1/EAA_mucces)*EAA_cj^(1-1/EAA_mucces)+(1-EAA_nucces)^(1/EAA_mucces)*EAA_g^(1-1/EAA_mucces);
+    EAA_ccesi^(1-1/EAA_mucces) = (EAA_nucces)^(1/EAA_mucces)*EAA_ci^(1-1/EAA_mucces)+(1-EAA_nucces)^(1/EAA_mucces)*EAA_cg^(1-1/EAA_mucces);
+    EAA_ccesj^(1-1/EAA_mucces) = (EAA_nucces)^(1/EAA_mucces)*EAA_cj^(1-1/EAA_mucces)+(1-EAA_nucces)^(1/EAA_mucces)*EAA_cg^(1-1/EAA_mucces);
 //-------------
 // Household I
 //-------------
@@ -3069,7 +3069,7 @@ EAA_utili =
 EAA_zcon*log(EAA_ccesi-EAA_kappa*EAA_ccesi(-1))-1/(1+EAA_zeta)*(EAA_ni)^(1+EAA_zeta)+EAA_beta*EAA_utili(+1)
 ;
 // Marginal utility of consumption
-EAA_dcci = ((EAA_nucces)^(1/EAA_mucces)*EAA_ci^(1-1/EAA_mucces)+(1-EAA_nucces)^(1/EAA_mucces)*EAA_g^(1-1/EAA_mucces))^(1/(EAA_mucces-1))*(EAA_nucces^(1/EAA_mucces))*(EAA_ci^(-1/EAA_mucces));
+EAA_dcci = ((EAA_nucces)^(1/EAA_mucces)*EAA_ci^(1-1/EAA_mucces)+(1-EAA_nucces)^(1/EAA_mucces)*EAA_cg^(1-1/EAA_mucces))^(1/(EAA_mucces-1))*(EAA_nucces^(1/EAA_mucces))*(EAA_ci^(-1/EAA_mucces));
 EAA_lambdai*(1+EAA_tauc+EAA_gammavi+EAA_vi*EAA_gammavider) = EAA_zcon*(EAA_ccesi-EAA_kappa*EAA_ccesi(-1))^(-EAA_sigma)*EAA_dcci;
 // Euler equation for government bonds
 EAA_r                   = EAA_beta^(-1)*EAA_lambdai/EAA_lambdai    *EAA_pic;
@@ -3110,7 +3110,7 @@ EAA_zcon*log(EAA_ccesj-EAA_kappa*EAA_ccesj(-1))-1/(1+EAA_zeta)*(EAA_nj)^(1+EAA_z
 // Budget constraint
 (1+EAA_tauc+EAA_gammavj)*EAA_cj+EAA_mj = (1-EAA_taun-EAA_tauwh)*EAA_wj*EAA_nj+EAA_trj-EAA_tj+EAA_mj(-1)*EAA_pic^(-1);
 // Marginal utility of consumption
-EAA_dccj = ((EAA_nucces)^(1/EAA_mucces)*EAA_cj^(1-1/EAA_mucces)+(1-EAA_nucces)^(1/EAA_mucces)*EAA_g^(1-1/EAA_mucces))^(1/(EAA_mucces-1))*(EAA_nucces^(1/EAA_mucces))*(EAA_cj^(-1/EAA_mucces));
+EAA_dccj = ((EAA_nucces)^(1/EAA_mucces)*EAA_cj^(1-1/EAA_mucces)+(1-EAA_nucces)^(1/EAA_mucces)*EAA_cg^(1-1/EAA_mucces))^(1/(EAA_mucces-1))*(EAA_nucces^(1/EAA_mucces))*(EAA_cj^(-1/EAA_mucces));
 EAA_lambdaj*(1+EAA_tauc+EAA_gammavj+EAA_vj*EAA_gammavjder) = EAA_zcon*(EAA_ccesj-EAA_kappa*EAA_ccesj(-1))^(-EAA_sigma)*EAA_dccj;
 // Euler equation for money
 EAA_vj^(2)*EAA_gammavjder = 1-EAA_beta*EAA_lambdaj(+1)/(EAA_lambdaj*EAA_pic(+1));
@@ -3818,10 +3818,10 @@ EAA_ex =
 // Fiscal authority
 //-------------
 // Government budget constraint, using EAA_pg = EAA_pht
-	EAA_pnt(-1)*EAA_g(-1)+EAA_tr(-1)
+	EAA_pnt(-1)*EAA_cg(-1)+EAA_tr(-1)
 	+EAA_b(-1)*EAA_pic(-1)^(-1)+EAA_m(-2)*EAA_pic(-1)^(-1) = EAA_tauc(-1)*EAA_c(-1)+(EAA_taun(-1)+EAA_tauwh(-1))*(EAA_wi(-1)*EAA_ndi(-1)+EAA_wj(-1)*EAA_ndj(-1))+EAA_tauwf(-1)*EAA_w(-1)*EAA_nd(-1)+EAA_tauk(-1)*(EAA_rk(-1)*EAA_u(-1)-(EAA_gammau(-1)+EAA_delta)*EAA_pi(-1))*EAA_k(-1)+EAA_taud(-1)*EAA_d(-1)+EAA_t(-1)+(EAA_r(-1)*(1-EAA_gammab(-1)))^(-1)*EAA_b+EAA_m(-1);
 // Government spending, using EAA_pg = EAA_pht
-EAA_pnt*EAA_g = EAA_gy*EAA_pybar*EAA_ybar;
+EAA_pnt*EAA_cg = EAA_cgy*EAA_pybar*EAA_ybar;
 EAA_t = 0;
 EAA_b = EAA_bytarget*EAA_pybar*EAA_ybar;
 // Auxiliary equation for steady-state output
@@ -3902,8 +3902,8 @@ EAA_u*EAA_k = EAA_kd;
 // Wedge between aggregate demand and production, using EAA_x = EAB_size/EAA_size*EAB_im
 EAA_ysn = EAA_snt*EAA_nt;
 //  nontradables aggregate demand
-EAA_nt =  EAA_nti+EAA_ntc+EAA_g;
-// Aggregate demand for domestic intermediate goods, using EAA_hg = EAA_g
+EAA_nt =  EAA_nti+EAA_ntc+EAA_cg;
+// Aggregate demand for domestic intermediate goods, using EAA_hg = EAA_cg
 EAA_ht = EAA_htc+EAA_hti;
 // Price dispersion in the domestic markets
 EAA_sh = (1-EAA_xih)*(EAA_phttilde/EAA_pht)^(-EAA_thetat)+EAA_xih*(EAA_piht/(EAA_piht(-1)^EAA_chih*EAA_pi4target^(1/4*(1-EAA_chih))))^EAA_thetat*EAA_sh(-1);
@@ -3924,8 +3924,8 @@ EAA_qi = EAA_i+EAA_k*EAA_gammau;
 //-------------
 // Resource constraint
 //-------------
-// Aggregate nominal demand, using EAA_pg = EAA_pht and EAA_qg = EAA_g   
-EAA_py*EAA_y = EAA_qc+EAA_pi*EAA_qi+EAA_pnt*EAA_g
+// Aggregate nominal demand, using EAA_pg = EAA_pht and EAA_qg = EAA_cg   
+EAA_py*EAA_y = EAA_qc+EAA_pi*EAA_qi+EAA_pnt*EAA_cg
 +EAAEAB_rer*EABEAA_pim*EAB_size/EAA_size*EABEAA_im
 -EAAEAB_pim*EAAEAB_imc
 -EAAEAB_pim*EAAEAB_imi
@@ -3956,7 +3956,7 @@ EAA_y = EAA_yst+EAA_ysn;
 log(EAA_zt) = (1-EAA_rhozt)*log(EAA_ztbar)+EAA_rhozt*log(EAA_zt(-1))+EAA_epszt;
 log(EAA_zn) = (1-EAA_rhozn)*log(EAA_znbar)+EAA_rhozn*log(EAA_zn(-1))+EAA_epszn;
 // Government spending shock
-EAA_gy = (1-EAA_rhog)*EAA_gybar+EAA_rhog*EAA_gy(-1)+EAA_epsg;
+EAA_cgy = (1-EAA_rhocg)*EAA_cgybar+EAA_rhocg*EAA_cgy(-1)+EAA_epsg;
 // Transfer shock
 EAA_try = (1-EAA_rhotr)*EAA_trybar+EAA_rhotr*EAA_try(-1)+EAA_epstr;
 // Consumption tax shock
@@ -4085,8 +4085,8 @@ EAA_internalrer = EAA_pnt/EAA_pttc;
 //-------------
 //-------------
 // CES consumption bundle for each type of household:
-    EAB_ccesi^(1-1/EAB_mucces) = (EAB_nucces)^(1/EAB_mucces)*EAB_ci^(1-1/EAB_mucces)+(1-EAB_nucces)^(1/EAB_mucces)*EAB_g^(1-1/EAB_mucces);
-    EAB_ccesj^(1-1/EAB_mucces) = (EAB_nucces)^(1/EAB_mucces)*EAB_cj^(1-1/EAB_mucces)+(1-EAB_nucces)^(1/EAB_mucces)*EAB_g^(1-1/EAB_mucces);
+    EAB_ccesi^(1-1/EAB_mucces) = (EAB_nucces)^(1/EAB_mucces)*EAB_ci^(1-1/EAB_mucces)+(1-EAB_nucces)^(1/EAB_mucces)*EAB_cg^(1-1/EAB_mucces);
+    EAB_ccesj^(1-1/EAB_mucces) = (EAB_nucces)^(1/EAB_mucces)*EAB_cj^(1-1/EAB_mucces)+(1-EAB_nucces)^(1/EAB_mucces)*EAB_cg^(1-1/EAB_mucces);
 //-------------
 // Household I
 //-------------
@@ -4095,7 +4095,7 @@ EAB_utili =
 EAB_zcon*log(EAB_ccesi-EAB_kappa*EAB_ccesi(-1))-1/(1+EAB_zeta)*(EAB_ni)^(1+EAB_zeta)+EAB_beta*EAB_utili(+1)
 ;
 // Marginal utility of consumption
-EAB_dcci = ((EAB_nucces)^(1/EAB_mucces)*EAB_ci^(1-1/EAB_mucces)+(1-EAB_nucces)^(1/EAB_mucces)*EAB_g^(1-1/EAB_mucces))^(1/(EAB_mucces-1))*(EAB_nucces^(1/EAB_mucces))*(EAB_ci^(-1/EAB_mucces));
+EAB_dcci = ((EAB_nucces)^(1/EAB_mucces)*EAB_ci^(1-1/EAB_mucces)+(1-EAB_nucces)^(1/EAB_mucces)*EAB_cg^(1-1/EAB_mucces))^(1/(EAB_mucces-1))*(EAB_nucces^(1/EAB_mucces))*(EAB_ci^(-1/EAB_mucces));
 EAB_lambdai*(1+EAB_tauc+EAB_gammavi+EAB_vi*EAB_gammavider) = EAB_zcon*(EAB_ccesi-EAB_kappa*EAB_ccesi(-1))^(-EAB_sigma)*EAB_dcci;
 // Euler equation for government bonds
 EAB_r                   = EAB_beta^(-1)*EAB_lambdai/EAB_lambdai    *EAB_pic;
@@ -4136,7 +4136,7 @@ EAB_zcon*log(EAB_ccesj-EAB_kappa*EAB_ccesj(-1))-1/(1+EAB_zeta)*(EAB_nj)^(1+EAB_z
 // Budget constraint
 (1+EAB_tauc+EAB_gammavj)*EAB_cj+EAB_mj = (1-EAB_taun-EAB_tauwh)*EAB_wj*EAB_nj+EAB_trj-EAB_tj+EAB_mj(-1)*EAB_pic^(-1);
 // Marginal utility of consumption
-EAB_dccj = ((EAB_nucces)^(1/EAB_mucces)*EAB_cj^(1-1/EAB_mucces)+(1-EAB_nucces)^(1/EAB_mucces)*EAB_g^(1-1/EAB_mucces))^(1/(EAB_mucces-1))*(EAB_nucces^(1/EAB_mucces))*(EAB_cj^(-1/EAB_mucces));
+EAB_dccj = ((EAB_nucces)^(1/EAB_mucces)*EAB_cj^(1-1/EAB_mucces)+(1-EAB_nucces)^(1/EAB_mucces)*EAB_cg^(1-1/EAB_mucces))^(1/(EAB_mucces-1))*(EAB_nucces^(1/EAB_mucces))*(EAB_cj^(-1/EAB_mucces));
 EAB_lambdaj*(1+EAB_tauc+EAB_gammavj+EAB_vj*EAB_gammavjder) = EAB_zcon*(EAB_ccesj-EAB_kappa*EAB_ccesj(-1))^(-EAB_sigma)*EAB_dccj;
 // Euler equation for money
 EAB_vj^(2)*EAB_gammavjder = 1-EAB_beta*EAB_lambdaj(+1)/(EAB_lambdaj*EAB_pic(+1));
@@ -4844,10 +4844,10 @@ EAB_ex =
 // Fiscal authority
 //-------------
 // Government budget constraint, using EAB_pg = EAB_pht
-	EAB_pnt(-1)*EAB_g(-1)+EAB_tr(-1)
+	EAB_pnt(-1)*EAB_cg(-1)+EAB_tr(-1)
 	+EAB_b(-1)*EAB_pic(-1)^(-1)+EAB_m(-2)*EAB_pic(-1)^(-1) = EAB_tauc(-1)*EAB_c(-1)+(EAB_taun(-1)+EAB_tauwh(-1))*(EAB_wi(-1)*EAB_ndi(-1)+EAB_wj(-1)*EAB_ndj(-1))+EAB_tauwf(-1)*EAB_w(-1)*EAB_nd(-1)+EAB_tauk(-1)*(EAB_rk(-1)*EAB_u(-1)-(EAB_gammau(-1)+EAB_delta)*EAB_pi(-1))*EAB_k(-1)+EAB_taud(-1)*EAB_d(-1)+EAB_t(-1)+(EAB_r(-1)*(1-EAB_gammab(-1)))^(-1)*EAB_b+EAB_m(-1);
 // Government spending, using EAB_pg = EAB_pht
-EAB_pnt*EAB_g = EAB_gy*EAB_pybar*EAB_ybar;
+EAB_pnt*EAB_cg = EAB_cgy*EAB_pybar*EAB_ybar;
 EAB_t = 0;
 EAB_b = EAB_bytarget*EAB_pybar*EAB_ybar;
 // Auxiliary equation for steady-state output
@@ -4930,8 +4930,8 @@ EAB_u*EAB_k = EAB_kd;
 // Wedge between aggregate demand and production, using EAB_x = EAC_size/EAB_size*EAC_im
 EAB_ysn = EAB_snt*EAB_nt;
 //  nontradables aggregate demand
-EAB_nt =  EAB_nti+EAB_ntc+EAB_g;
-// Aggregate demand for domestic intermediate goods, using EAB_hg = EAB_g
+EAB_nt =  EAB_nti+EAB_ntc+EAB_cg;
+// Aggregate demand for domestic intermediate goods, using EAB_hg = EAB_cg
 EAB_ht = EAB_htc+EAB_hti;
 // Price dispersion in the domestic markets
 EAB_sh = (1-EAB_xih)*(EAB_phttilde/EAB_pht)^(-EAB_thetat)+EAB_xih*(EAB_piht/(EAB_piht(-1)^EAB_chih*EAB_pi4target^(1/4*(1-EAB_chih))))^EAB_thetat*EAB_sh(-1);
@@ -4952,8 +4952,8 @@ EAB_qi = EAB_i+EAB_k*EAB_gammau;
 //-------------
 // Resource constraint
 //-------------
-// Aggregate nominal demand, using EAB_pg = EAB_pht and EAB_qg = EAB_g   
-EAB_py*EAB_y = EAB_qc+EAB_pi*EAB_qi+EAB_pnt*EAB_g
+// Aggregate nominal demand, using EAB_pg = EAB_pht and EAB_qg = EAB_cg   
+EAB_py*EAB_y = EAB_qc+EAB_pi*EAB_qi+EAB_pnt*EAB_cg
 +EABEAA_rer*EAAEAB_pim*EAA_size/EAB_size*EAAEAB_im
 -EABEAA_pim*EABEAA_imc
 -EABEAA_pim*EABEAA_imi
@@ -4984,7 +4984,7 @@ EAB_y = EAB_yst+EAB_ysn;
 log(EAB_zt) = (1-EAB_rhozt)*log(EAB_ztbar)+EAB_rhozt*log(EAB_zt(-1))+EAB_epszt;
 log(EAB_zn) = (1-EAB_rhozn)*log(EAB_znbar)+EAB_rhozn*log(EAB_zn(-1))+EAB_epszn;
 // Government spending shock
-EAB_gy = (1-EAB_rhog)*EAB_gybar+EAB_rhog*EAB_gy(-1)+EAB_epsg;
+EAB_cgy = (1-EAB_rhocg)*EAB_cgybar+EAB_rhocg*EAB_cgy(-1)+EAB_epsg;
 // Transfer shock
 EAB_try = (1-EAB_rhotr)*EAB_trybar+EAB_rhotr*EAB_try(-1)+EAB_epstr;
 // Consumption tax shock
@@ -5113,8 +5113,8 @@ EAB_internalrer = EAB_pnt/EAB_pttc;
 //-------------
 //-------------
 // CES consumption bundle for each type of household:
-    EAC_ccesi^(1-1/EAC_mucces) = (EAC_nucces)^(1/EAC_mucces)*EAC_ci^(1-1/EAC_mucces)+(1-EAC_nucces)^(1/EAC_mucces)*EAC_g^(1-1/EAC_mucces);
-    EAC_ccesj^(1-1/EAC_mucces) = (EAC_nucces)^(1/EAC_mucces)*EAC_cj^(1-1/EAC_mucces)+(1-EAC_nucces)^(1/EAC_mucces)*EAC_g^(1-1/EAC_mucces);
+    EAC_ccesi^(1-1/EAC_mucces) = (EAC_nucces)^(1/EAC_mucces)*EAC_ci^(1-1/EAC_mucces)+(1-EAC_nucces)^(1/EAC_mucces)*EAC_cg^(1-1/EAC_mucces);
+    EAC_ccesj^(1-1/EAC_mucces) = (EAC_nucces)^(1/EAC_mucces)*EAC_cj^(1-1/EAC_mucces)+(1-EAC_nucces)^(1/EAC_mucces)*EAC_cg^(1-1/EAC_mucces);
 //-------------
 // Household I
 //-------------
@@ -5123,7 +5123,7 @@ EAC_utili =
 EAC_zcon*log(EAC_ccesi-EAC_kappa*EAC_ccesi(-1))-1/(1+EAC_zeta)*(EAC_ni)^(1+EAC_zeta)+EAC_beta*EAC_utili(+1)
 ;
 // Marginal utility of consumption
-EAC_dcci = ((EAC_nucces)^(1/EAC_mucces)*EAC_ci^(1-1/EAC_mucces)+(1-EAC_nucces)^(1/EAC_mucces)*EAC_g^(1-1/EAC_mucces))^(1/(EAC_mucces-1))*(EAC_nucces^(1/EAC_mucces))*(EAC_ci^(-1/EAC_mucces));
+EAC_dcci = ((EAC_nucces)^(1/EAC_mucces)*EAC_ci^(1-1/EAC_mucces)+(1-EAC_nucces)^(1/EAC_mucces)*EAC_cg^(1-1/EAC_mucces))^(1/(EAC_mucces-1))*(EAC_nucces^(1/EAC_mucces))*(EAC_ci^(-1/EAC_mucces));
 EAC_lambdai*(1+EAC_tauc+EAC_gammavi+EAC_vi*EAC_gammavider) = EAC_zcon*(EAC_ccesi-EAC_kappa*EAC_ccesi(-1))^(-EAC_sigma)*EAC_dcci;
 // Euler equation for government bonds
 EAC_r                   = EAC_beta^(-1)*EAC_lambdai/EAC_lambdai    *EAC_pic;
@@ -5164,7 +5164,7 @@ EAC_zcon*log(EAC_ccesj-EAC_kappa*EAC_ccesj(-1))-1/(1+EAC_zeta)*(EAC_nj)^(1+EAC_z
 // Budget constraint
 (1+EAC_tauc+EAC_gammavj)*EAC_cj+EAC_mj = (1-EAC_taun-EAC_tauwh)*EAC_wj*EAC_nj+EAC_trj-EAC_tj+EAC_mj(-1)*EAC_pic^(-1);
 // Marginal utility of consumption
-EAC_dccj = ((EAC_nucces)^(1/EAC_mucces)*EAC_cj^(1-1/EAC_mucces)+(1-EAC_nucces)^(1/EAC_mucces)*EAC_g^(1-1/EAC_mucces))^(1/(EAC_mucces-1))*(EAC_nucces^(1/EAC_mucces))*(EAC_cj^(-1/EAC_mucces));
+EAC_dccj = ((EAC_nucces)^(1/EAC_mucces)*EAC_cj^(1-1/EAC_mucces)+(1-EAC_nucces)^(1/EAC_mucces)*EAC_cg^(1-1/EAC_mucces))^(1/(EAC_mucces-1))*(EAC_nucces^(1/EAC_mucces))*(EAC_cj^(-1/EAC_mucces));
 EAC_lambdaj*(1+EAC_tauc+EAC_gammavj+EAC_vj*EAC_gammavjder) = EAC_zcon*(EAC_ccesj-EAC_kappa*EAC_ccesj(-1))^(-EAC_sigma)*EAC_dccj;
 // Euler equation for money
 EAC_vj^(2)*EAC_gammavjder = 1-EAC_beta*EAC_lambdaj(+1)/(EAC_lambdaj*EAC_pic(+1));
@@ -5872,10 +5872,10 @@ EAC_ex =
 // Fiscal authority
 //-------------
 // Government budget constraint, using EAC_pg = EAC_pht
-	EAC_pnt(-1)*EAC_g(-1)+EAC_tr(-1)
+	EAC_pnt(-1)*EAC_cg(-1)+EAC_tr(-1)
 	+EAC_b(-1)*EAC_pic(-1)^(-1)+EAC_m(-2)*EAC_pic(-1)^(-1) = EAC_tauc(-1)*EAC_c(-1)+(EAC_taun(-1)+EAC_tauwh(-1))*(EAC_wi(-1)*EAC_ndi(-1)+EAC_wj(-1)*EAC_ndj(-1))+EAC_tauwf(-1)*EAC_w(-1)*EAC_nd(-1)+EAC_tauk(-1)*(EAC_rk(-1)*EAC_u(-1)-(EAC_gammau(-1)+EAC_delta)*EAC_pi(-1))*EAC_k(-1)+EAC_taud(-1)*EAC_d(-1)+EAC_t(-1)+(EAC_r(-1)*(1-EAC_gammab(-1)))^(-1)*EAC_b+EAC_m(-1);
 // Government spending, using EAC_pg = EAC_pht
-EAC_pnt*EAC_g = EAC_gy*EAC_pybar*EAC_ybar;
+EAC_pnt*EAC_cg = EAC_cgy*EAC_pybar*EAC_ybar;
 EAC_t = 0;
 EAC_b = EAC_bytarget*EAC_pybar*EAC_ybar;
 // Auxiliary equation for steady-state output
@@ -5961,8 +5961,8 @@ EAC_u*EAC_k = EAC_kd;
 // Wedge between aggregate demand and production, using EAC_x = EAD_size/EAC_size*EAD_im
 EAC_ysn = EAC_snt*EAC_nt;
 //  nontradables aggregate demand
-EAC_nt =  EAC_nti+EAC_ntc+EAC_g;
-// Aggregate demand for domestic intermediate goods, using EAC_hg = EAC_g
+EAC_nt =  EAC_nti+EAC_ntc+EAC_cg;
+// Aggregate demand for domestic intermediate goods, using EAC_hg = EAC_cg
 EAC_ht = EAC_htc+EAC_hti;
 // Price dispersion in the domestic markets
 EAC_sh = (1-EAC_xih)*(EAC_phttilde/EAC_pht)^(-EAC_thetat)+EAC_xih*(EAC_piht/(EAC_piht(-1)^EAC_chih*EAC_pi4target^(1/4*(1-EAC_chih))))^EAC_thetat*EAC_sh(-1);
@@ -5983,8 +5983,8 @@ EAC_qi = EAC_i+EAC_k*EAC_gammau;
 //-------------
 // Resource constraint
 //-------------
-// Aggregate nominal demand, using EAC_pg = EAC_pht and EAC_qg = EAC_g   
-EAC_py*EAC_y = EAC_qc+EAC_pi*EAC_qi+EAC_pnt*EAC_g
+// Aggregate nominal demand, using EAC_pg = EAC_pht and EAC_qg = EAC_cg   
+EAC_py*EAC_y = EAC_qc+EAC_pi*EAC_qi+EAC_pnt*EAC_cg
 +EACEAA_rer*EAAEAC_pim*EAA_size/EAC_size*EAAEAC_im
 -EACEAA_pim*EACEAA_imc
 -EACEAA_pim*EACEAA_imi
@@ -6015,7 +6015,7 @@ EAC_y = EAC_yst+EAC_ysn;
 log(EAC_zt) = (1-EAC_rhozt)*log(EAC_ztbar)+EAC_rhozt*log(EAC_zt(-1))+EAC_epszt;
 log(EAC_zn) = (1-EAC_rhozn)*log(EAC_znbar)+EAC_rhozn*log(EAC_zn(-1))+EAC_epszn;
 // Government spending shock
-EAC_gy = (1-EAC_rhog)*EAC_gybar+EAC_rhog*EAC_gy(-1)+EAC_epsg;
+EAC_cgy = (1-EAC_rhocg)*EAC_cgybar+EAC_rhocg*EAC_cgy(-1)+EAC_epsg;
 // Transfer shock
 EAC_try = (1-EAC_rhotr)*EAC_trybar+EAC_rhotr*EAC_try(-1)+EAC_epstr;
 // Consumption tax shock
@@ -6144,8 +6144,8 @@ EAC_internalrer = EAC_pnt/EAC_pttc;
 //-------------
 //-------------
 // CES consumption bundle for each type of household:
-    EAD_ccesi^(1-1/EAD_mucces) = (EAD_nucces)^(1/EAD_mucces)*EAD_ci^(1-1/EAD_mucces)+(1-EAD_nucces)^(1/EAD_mucces)*EAD_g^(1-1/EAD_mucces);
-    EAD_ccesj^(1-1/EAD_mucces) = (EAD_nucces)^(1/EAD_mucces)*EAD_cj^(1-1/EAD_mucces)+(1-EAD_nucces)^(1/EAD_mucces)*EAD_g^(1-1/EAD_mucces);
+    EAD_ccesi^(1-1/EAD_mucces) = (EAD_nucces)^(1/EAD_mucces)*EAD_ci^(1-1/EAD_mucces)+(1-EAD_nucces)^(1/EAD_mucces)*EAD_cg^(1-1/EAD_mucces);
+    EAD_ccesj^(1-1/EAD_mucces) = (EAD_nucces)^(1/EAD_mucces)*EAD_cj^(1-1/EAD_mucces)+(1-EAD_nucces)^(1/EAD_mucces)*EAD_cg^(1-1/EAD_mucces);
 //-------------
 // Household I
 //-------------
@@ -6154,7 +6154,7 @@ EAD_utili =
 EAD_zcon*log(EAD_ccesi-EAD_kappa*EAD_ccesi(-1))-1/(1+EAD_zeta)*(EAD_ni)^(1+EAD_zeta)+EAD_beta*EAD_utili(+1)
 ;
 // Marginal utility of consumption
-EAD_dcci = ((EAD_nucces)^(1/EAD_mucces)*EAD_ci^(1-1/EAD_mucces)+(1-EAD_nucces)^(1/EAD_mucces)*EAD_g^(1-1/EAD_mucces))^(1/(EAD_mucces-1))*(EAD_nucces^(1/EAD_mucces))*(EAD_ci^(-1/EAD_mucces));
+EAD_dcci = ((EAD_nucces)^(1/EAD_mucces)*EAD_ci^(1-1/EAD_mucces)+(1-EAD_nucces)^(1/EAD_mucces)*EAD_cg^(1-1/EAD_mucces))^(1/(EAD_mucces-1))*(EAD_nucces^(1/EAD_mucces))*(EAD_ci^(-1/EAD_mucces));
 EAD_lambdai*(1+EAD_tauc+EAD_gammavi+EAD_vi*EAD_gammavider) = EAD_zcon*(EAD_ccesi-EAD_kappa*EAD_ccesi(-1))^(-EAD_sigma)*EAD_dcci;
 // Euler equation for government bonds
 EAD_r                   = EAD_beta^(-1)*EAD_lambdai/EAD_lambdai    *EAD_pic;
@@ -6195,7 +6195,7 @@ EAD_zcon*log(EAD_ccesj-EAD_kappa*EAD_ccesj(-1))-1/(1+EAD_zeta)*(EAD_nj)^(1+EAD_z
 // Budget constraint
 (1+EAD_tauc+EAD_gammavj)*EAD_cj+EAD_mj = (1-EAD_taun-EAD_tauwh)*EAD_wj*EAD_nj+EAD_trj-EAD_tj+EAD_mj(-1)*EAD_pic^(-1);
 // Marginal utility of consumption
-EAD_dccj = ((EAD_nucces)^(1/EAD_mucces)*EAD_cj^(1-1/EAD_mucces)+(1-EAD_nucces)^(1/EAD_mucces)*EAD_g^(1-1/EAD_mucces))^(1/(EAD_mucces-1))*(EAD_nucces^(1/EAD_mucces))*(EAD_cj^(-1/EAD_mucces));
+EAD_dccj = ((EAD_nucces)^(1/EAD_mucces)*EAD_cj^(1-1/EAD_mucces)+(1-EAD_nucces)^(1/EAD_mucces)*EAD_cg^(1-1/EAD_mucces))^(1/(EAD_mucces-1))*(EAD_nucces^(1/EAD_mucces))*(EAD_cj^(-1/EAD_mucces));
 EAD_lambdaj*(1+EAD_tauc+EAD_gammavj+EAD_vj*EAD_gammavjder) = EAD_zcon*(EAD_ccesj-EAD_kappa*EAD_ccesj(-1))^(-EAD_sigma)*EAD_dccj;
 // Euler equation for money
 EAD_vj^(2)*EAD_gammavjder = 1-EAD_beta*EAD_lambdaj(+1)/(EAD_lambdaj*EAD_pic(+1));
@@ -6903,10 +6903,10 @@ EAD_ex =
 // Fiscal authority
 //-------------
 // Government budget constraint, using EAD_pg = EAD_pht
-	EAD_pnt(-1)*EAD_g(-1)+EAD_tr(-1)
+	EAD_pnt(-1)*EAD_cg(-1)+EAD_tr(-1)
 	+EAD_b(-1)*EAD_pic(-1)^(-1)+EAD_m(-2)*EAD_pic(-1)^(-1) = EAD_tauc(-1)*EAD_c(-1)+(EAD_taun(-1)+EAD_tauwh(-1))*(EAD_wi(-1)*EAD_ndi(-1)+EAD_wj(-1)*EAD_ndj(-1))+EAD_tauwf(-1)*EAD_w(-1)*EAD_nd(-1)+EAD_tauk(-1)*(EAD_rk(-1)*EAD_u(-1)-(EAD_gammau(-1)+EAD_delta)*EAD_pi(-1))*EAD_k(-1)+EAD_taud(-1)*EAD_d(-1)+EAD_t(-1)+(EAD_r(-1)*(1-EAD_gammab(-1)))^(-1)*EAD_b+EAD_m(-1);
 // Government spending, using EAD_pg = EAD_pht
-EAD_pnt*EAD_g = EAD_gy*EAD_pybar*EAD_ybar;
+EAD_pnt*EAD_cg = EAD_cgy*EAD_pybar*EAD_ybar;
 EAD_t = 0;
 EAD_b = EAD_bytarget*EAD_pybar*EAD_ybar;
 // Auxiliary equation for steady-state output
@@ -6992,8 +6992,8 @@ EAD_u*EAD_k = EAD_kd;
 // Wedge between aggregate demand and production, using EAD_x = EAE_size/EAD_size*EAE_im
 EAD_ysn = EAD_snt*EAD_nt;
 //  nontradables aggregate demand
-EAD_nt =  EAD_nti+EAD_ntc+EAD_g;
-// Aggregate demand for domestic intermediate goods, using EAD_hg = EAD_g
+EAD_nt =  EAD_nti+EAD_ntc+EAD_cg;
+// Aggregate demand for domestic intermediate goods, using EAD_hg = EAD_cg
 EAD_ht = EAD_htc+EAD_hti;
 // Price dispersion in the domestic markets
 EAD_sh = (1-EAD_xih)*(EAD_phttilde/EAD_pht)^(-EAD_thetat)+EAD_xih*(EAD_piht/(EAD_piht(-1)^EAD_chih*EAD_pi4target^(1/4*(1-EAD_chih))))^EAD_thetat*EAD_sh(-1);
@@ -7014,8 +7014,8 @@ EAD_qi = EAD_i+EAD_k*EAD_gammau;
 //-------------
 // Resource constraint
 //-------------
-// Aggregate nominal demand, using EAD_pg = EAD_pht and EAD_qg = EAD_g   
-EAD_py*EAD_y = EAD_qc+EAD_pi*EAD_qi+EAD_pnt*EAD_g
+// Aggregate nominal demand, using EAD_pg = EAD_pht and EAD_qg = EAD_cg   
+EAD_py*EAD_y = EAD_qc+EAD_pi*EAD_qi+EAD_pnt*EAD_cg
 +EADEAA_rer*EAAEAD_pim*EAA_size/EAD_size*EAAEAD_im
 -EADEAA_pim*EADEAA_imc
 -EADEAA_pim*EADEAA_imi
@@ -7046,7 +7046,7 @@ EAD_y = EAD_yst+EAD_ysn;
 log(EAD_zt) = (1-EAD_rhozt)*log(EAD_ztbar)+EAD_rhozt*log(EAD_zt(-1))+EAD_epszt;
 log(EAD_zn) = (1-EAD_rhozn)*log(EAD_znbar)+EAD_rhozn*log(EAD_zn(-1))+EAD_epszn;
 // Government spending shock
-EAD_gy = (1-EAD_rhog)*EAD_gybar+EAD_rhog*EAD_gy(-1)+EAD_epsg;
+EAD_cgy = (1-EAD_rhocg)*EAD_cgybar+EAD_rhocg*EAD_cgy(-1)+EAD_epsg;
 // Transfer shock
 EAD_try = (1-EAD_rhotr)*EAD_trybar+EAD_rhotr*EAD_try(-1)+EAD_epstr;
 // Consumption tax shock
@@ -7175,8 +7175,8 @@ EAD_internalrer = EAD_pnt/EAD_pttc;
 //-------------
 //-------------
 // CES consumption bundle for each type of household:
-    EAE_ccesi^(1-1/EAE_mucces) = (EAE_nucces)^(1/EAE_mucces)*EAE_ci^(1-1/EAE_mucces)+(1-EAE_nucces)^(1/EAE_mucces)*EAE_g^(1-1/EAE_mucces);
-    EAE_ccesj^(1-1/EAE_mucces) = (EAE_nucces)^(1/EAE_mucces)*EAE_cj^(1-1/EAE_mucces)+(1-EAE_nucces)^(1/EAE_mucces)*EAE_g^(1-1/EAE_mucces);
+    EAE_ccesi^(1-1/EAE_mucces) = (EAE_nucces)^(1/EAE_mucces)*EAE_ci^(1-1/EAE_mucces)+(1-EAE_nucces)^(1/EAE_mucces)*EAE_cg^(1-1/EAE_mucces);
+    EAE_ccesj^(1-1/EAE_mucces) = (EAE_nucces)^(1/EAE_mucces)*EAE_cj^(1-1/EAE_mucces)+(1-EAE_nucces)^(1/EAE_mucces)*EAE_cg^(1-1/EAE_mucces);
 //-------------
 // Household I
 //-------------
@@ -7185,7 +7185,7 @@ EAE_utili =
 EAE_zcon*log(EAE_ccesi-EAE_kappa*EAE_ccesi(-1))-1/(1+EAE_zeta)*(EAE_ni)^(1+EAE_zeta)+EAE_beta*EAE_utili(+1)
 ;
 // Marginal utility of consumption
-EAE_dcci = ((EAE_nucces)^(1/EAE_mucces)*EAE_ci^(1-1/EAE_mucces)+(1-EAE_nucces)^(1/EAE_mucces)*EAE_g^(1-1/EAE_mucces))^(1/(EAE_mucces-1))*(EAE_nucces^(1/EAE_mucces))*(EAE_ci^(-1/EAE_mucces));
+EAE_dcci = ((EAE_nucces)^(1/EAE_mucces)*EAE_ci^(1-1/EAE_mucces)+(1-EAE_nucces)^(1/EAE_mucces)*EAE_cg^(1-1/EAE_mucces))^(1/(EAE_mucces-1))*(EAE_nucces^(1/EAE_mucces))*(EAE_ci^(-1/EAE_mucces));
 EAE_lambdai*(1+EAE_tauc+EAE_gammavi+EAE_vi*EAE_gammavider) = EAE_zcon*(EAE_ccesi-EAE_kappa*EAE_ccesi(-1))^(-EAE_sigma)*EAE_dcci;
 // Euler equation for government bonds
 EAE_r = EAE_beta^(-1)*EAE_lambdai/EAE_lambdai(+1)*EAE_pic(+1);
@@ -7226,7 +7226,7 @@ EAE_zcon*log(EAE_ccesj-EAE_kappa*EAE_ccesj(-1))-1/(1+EAE_zeta)*(EAE_nj)^(1+EAE_z
 // Budget constraint
 (1+EAE_tauc+EAE_gammavj)*EAE_cj+EAE_mj = (1-EAE_taun-EAE_tauwh)*EAE_wj*EAE_nj+EAE_trj-EAE_tj+EAE_mj(-1)*EAE_pic^(-1);
 // Marginal utility of consumption
-EAE_dccj = ((EAE_nucces)^(1/EAE_mucces)*EAE_cj^(1-1/EAE_mucces)+(1-EAE_nucces)^(1/EAE_mucces)*EAE_g^(1-1/EAE_mucces))^(1/(EAE_mucces-1))*(EAE_nucces^(1/EAE_mucces))*(EAE_cj^(-1/EAE_mucces));
+EAE_dccj = ((EAE_nucces)^(1/EAE_mucces)*EAE_cj^(1-1/EAE_mucces)+(1-EAE_nucces)^(1/EAE_mucces)*EAE_cg^(1-1/EAE_mucces))^(1/(EAE_mucces-1))*(EAE_nucces^(1/EAE_mucces))*(EAE_cj^(-1/EAE_mucces));
 EAE_lambdaj*(1+EAE_tauc+EAE_gammavj+EAE_vj*EAE_gammavjder) = EAE_zcon*(EAE_ccesj-EAE_kappa*EAE_ccesj(-1))^(-EAE_sigma)*EAE_dccj;
 // Euler equation for money
 EAE_vj^(2)*EAE_gammavjder = 1-EAE_beta*EAE_lambdaj(+1)/(EAE_lambdaj*EAE_pic(+1));
@@ -7934,10 +7934,10 @@ EAE_ex =
 // Fiscal authority
 //-------------
 // Government budget constraint, using EAE_pg = EAE_pht
-	EAE_pnt(-1)*EAE_g(-1)+EAE_tr(-1)
+	EAE_pnt(-1)*EAE_cg(-1)+EAE_tr(-1)
 	+EAE_b(-1)*EAE_pic(-1)^(-1)+EAE_m(-2)*EAE_pic(-1)^(-1) = EAE_tauc(-1)*EAE_c(-1)+(EAE_taun(-1)+EAE_tauwh(-1))*(EAE_wi(-1)*EAE_ndi(-1)+EAE_wj(-1)*EAE_ndj(-1))+EAE_tauwf(-1)*EAE_w(-1)*EAE_nd(-1)+EAE_tauk(-1)*(EAE_rk(-1)*EAE_u(-1)-(EAE_gammau(-1)+EAE_delta)*EAE_pi(-1))*EAE_k(-1)+EAE_taud(-1)*EAE_d(-1)+EAE_t(-1)+(EAE_r(-1)*(1-EAE_gammab(-1)))^(-1)*EAE_b+EAE_m(-1);
 // Government spending, using EAE_pg = EAE_pht
-EAE_pnt*EAE_g = EAE_gy*EAE_pybar*EAE_ybar;
+EAE_pnt*EAE_cg = EAE_cgy*EAE_pybar*EAE_ybar;
 EAE_t = 0;
 EAE_b = EAE_bytarget*EAE_pybar*EAE_ybar;
 // Auxiliary equation for steady-state output
@@ -8018,8 +8018,8 @@ EAE_u*EAE_k = EAE_kd;
 // Wedge between aggregate demand and production, using EAE_x = RW_size/EAE_size*RW_im
 EAE_ysn = EAE_snt*EAE_nt;
 //  nontradables aggregate demand
-EAE_nt =  EAE_nti+EAE_ntc+EAE_g;
-// Aggregate demand for domestic intermediate goods, using EAE_hg = EAE_g
+EAE_nt =  EAE_nti+EAE_ntc+EAE_cg;
+// Aggregate demand for domestic intermediate goods, using EAE_hg = EAE_cg
 EAE_ht = EAE_htc+EAE_hti;
 // Price dispersion in the domestic markets
 EAE_sh = (1-EAE_xih)*(EAE_phttilde/EAE_pht)^(-EAE_thetat)+EAE_xih*(EAE_piht/(EAE_piht(-1)^EAE_chih*EAE_pi4target^(1/4*(1-EAE_chih))))^EAE_thetat*EAE_sh(-1);
@@ -8040,8 +8040,8 @@ EAE_qi = EAE_i+EAE_k*EAE_gammau;
 //-------------
 // Resource constraint
 //-------------
-// Aggregate nominal demand, using EAE_pg = EAE_pht and EAE_qg = EAE_g   
-EAE_py*EAE_y = EAE_qc+EAE_pi*EAE_qi+EAE_pnt*EAE_g
+// Aggregate nominal demand, using EAE_pg = EAE_pht and EAE_qg = EAE_cg   
+EAE_py*EAE_y = EAE_qc+EAE_pi*EAE_qi+EAE_pnt*EAE_cg
 +EAEEAA_rer*EAAEAE_pim*EAA_size/EAE_size*EAAEAE_im
 -EAEEAA_pim*EAEEAA_imc
 -EAEEAA_pim*EAEEAA_imi
@@ -8072,7 +8072,7 @@ EAE_y = EAE_yst+EAE_ysn;
 log(EAE_zt) = (1-EAE_rhozt)*log(EAE_ztbar)+EAE_rhozt*log(EAE_zt(-1))+EAE_epszt;
 log(EAE_zn) = (1-EAE_rhozn)*log(EAE_znbar)+EAE_rhozn*log(EAE_zn(-1))+EAE_epszn;
 // Government spending shock
-EAE_gy = (1-EAE_rhog)*EAE_gybar+EAE_rhog*EAE_gy(-1)+EAE_epsg;
+EAE_cgy = (1-EAE_rhocg)*EAE_cgybar+EAE_rhocg*EAE_cgy(-1)+EAE_epsg;
 // Transfer shock
 EAE_try = (1-EAE_rhotr)*EAE_trybar+EAE_rhotr*EAE_try(-1)+EAE_epstr;
 // Consumption tax shock
@@ -8201,8 +8201,8 @@ EAE_internalrer = EAE_pnt/EAE_pttc;
 //-------------
 //-------------
 // CES consumption bundle for each type of household:
-    RW_ccesi^(1-1/RW_mucces) = (RW_nucces)^(1/RW_mucces)*RW_ci^(1-1/RW_mucces)+(1-RW_nucces)^(1/RW_mucces)*RW_g^(1-1/RW_mucces);
-    RW_ccesj^(1-1/RW_mucces) = (RW_nucces)^(1/RW_mucces)*RW_cj^(1-1/RW_mucces)+(1-RW_nucces)^(1/RW_mucces)*RW_g^(1-1/RW_mucces);
+    RW_ccesi^(1-1/RW_mucces) = (RW_nucces)^(1/RW_mucces)*RW_ci^(1-1/RW_mucces)+(1-RW_nucces)^(1/RW_mucces)*RW_cg^(1-1/RW_mucces);
+    RW_ccesj^(1-1/RW_mucces) = (RW_nucces)^(1/RW_mucces)*RW_cj^(1-1/RW_mucces)+(1-RW_nucces)^(1/RW_mucces)*RW_cg^(1-1/RW_mucces);
 //-------------
 // Household I
 //-------------
@@ -8211,7 +8211,7 @@ RW_utili =
 RW_zcon*log(RW_ccesi-RW_kappa*RW_ccesi(-1))-1/(1+RW_zeta)*(RW_ni)^(1+RW_zeta)+RW_beta*RW_utili(+1)
 ;
 // Marginal utility of consumption
-RW_dcci = ((RW_nucces)^(1/RW_mucces)*RW_ci^(1-1/RW_mucces)+(1-RW_nucces)^(1/RW_mucces)*RW_g^(1-1/RW_mucces))^(1/(RW_mucces-1))*(RW_nucces^(1/RW_mucces))*(RW_ci^(-1/RW_mucces));
+RW_dcci = ((RW_nucces)^(1/RW_mucces)*RW_ci^(1-1/RW_mucces)+(1-RW_nucces)^(1/RW_mucces)*RW_cg^(1-1/RW_mucces))^(1/(RW_mucces-1))*(RW_nucces^(1/RW_mucces))*(RW_ci^(-1/RW_mucces));
 RW_lambdai*(1+RW_tauc+RW_gammavi+RW_vi*RW_gammavider) = RW_zcon*(RW_ccesi-RW_kappa*RW_ccesi(-1))^(-RW_sigma)*RW_dcci;
 // Euler equation for government bonds
 RW_r = RW_beta^(-1)*RW_lambdai/RW_lambdai(+1)*RW_pic(+1);
@@ -8252,7 +8252,7 @@ RW_zcon*log(RW_ccesj-RW_kappa*RW_ccesj(-1))-1/(1+RW_zeta)*(RW_nj)^(1+RW_zeta)+RW
 // Budget constraint
 (1+RW_tauc+RW_gammavj)*RW_cj+RW_mj = (1-RW_taun-RW_tauwh)*RW_wj*RW_nj+RW_trj-RW_tj+RW_mj(-1)*RW_pic^(-1);
 // Marginal utility of consumption
-RW_dccj = ((RW_nucces)^(1/RW_mucces)*RW_cj^(1-1/RW_mucces)+(1-RW_nucces)^(1/RW_mucces)*RW_g^(1-1/RW_mucces))^(1/(RW_mucces-1))*(RW_nucces^(1/RW_mucces))*(RW_cj^(-1/RW_mucces));
+RW_dccj = ((RW_nucces)^(1/RW_mucces)*RW_cj^(1-1/RW_mucces)+(1-RW_nucces)^(1/RW_mucces)*RW_cg^(1-1/RW_mucces))^(1/(RW_mucces-1))*(RW_nucces^(1/RW_mucces))*(RW_cj^(-1/RW_mucces));
 RW_lambdaj*(1+RW_tauc+RW_gammavj+RW_vj*RW_gammavjder) = RW_zcon*(RW_ccesj-RW_kappa*RW_ccesj(-1))^(-RW_sigma)*RW_dccj;
 // Euler equation for money
 RW_vj^(2)*RW_gammavjder = 1-RW_beta*RW_lambdaj(+1)/(RW_lambdaj*RW_pic(+1));
@@ -8960,10 +8960,10 @@ RW_ex =
 // Fiscal authority
 //-------------
 // Government budget constraint, using RW_pg = RW_pht
-	RW_pnt(-1)*RW_g(-1)+RW_tr(-1)
+	RW_pnt(-1)*RW_cg(-1)+RW_tr(-1)
 	+RW_b(-1)*RW_pic(-1)^(-1)+RW_m(-2)*RW_pic(-1)^(-1) = RW_tauc(-1)*RW_c(-1)+(RW_taun(-1)+RW_tauwh(-1))*(RW_wi(-1)*RW_ndi(-1)+RW_wj(-1)*RW_ndj(-1))+RW_tauwf(-1)*RW_w(-1)*RW_nd(-1)+RW_tauk(-1)*(RW_rk(-1)*RW_u(-1)-(RW_gammau(-1)+RW_delta)*RW_pi(-1))*RW_k(-1)+RW_taud(-1)*RW_d(-1)+RW_t(-1)+(RW_r(-1))^(-1)*RW_b+RW_m(-1);
 // Government spending, using RW_pg = RW_pht
-RW_pnt*RW_g = RW_gy*RW_pybar*RW_ybar;
+RW_pnt*RW_cg = RW_cgy*RW_pybar*RW_ybar;
 RW_t = 0;
 RW_b = RW_bytarget*RW_pybar*RW_ybar;
 // Auxiliary equation for steady-state output
@@ -9044,8 +9044,8 @@ RW_u*RW_k = RW_kd;
 // Wedge between aggregate demand and production, using RW_x = US_size/RW_size*US_im
 RW_ysn = RW_snt*RW_nt;
 //  nontradables aggregate demand
-RW_nt =  RW_nti+RW_ntc+RW_g;
-// Aggregate demand for domestic intermediate goods, using RW_hg = RW_g
+RW_nt =  RW_nti+RW_ntc+RW_cg;
+// Aggregate demand for domestic intermediate goods, using RW_hg = RW_cg
 RW_ht = RW_htc+RW_hti;
 // Price dispersion in the domestic markets
 RW_sh = (1-RW_xih)*(RW_phttilde/RW_pht)^(-RW_thetat)+RW_xih*(RW_piht/(RW_piht(-1)^RW_chih*RW_pi4target^(1/4*(1-RW_chih))))^RW_thetat*RW_sh(-1);
@@ -9066,8 +9066,8 @@ RW_qi = RW_i+RW_k*RW_gammau;
 //-------------
 // Resource constraint
 //-------------
-// Aggregate nominal demand, using RW_pg = RW_pht and RW_qg = RW_g   
-RW_py*RW_y = RW_qc+RW_pi*RW_qi+RW_pnt*RW_g
+// Aggregate nominal demand, using RW_pg = RW_pht and RW_qg = RW_cg   
+RW_py*RW_y = RW_qc+RW_pi*RW_qi+RW_pnt*RW_cg
 +RWEAA_rer*EAARW_pim*EAA_size/RW_size*EAARW_im
 -RWEAA_pim*RWEAA_imc
 -RWEAA_pim*RWEAA_imi
@@ -9098,7 +9098,7 @@ RW_y = RW_yst+RW_ysn;
 log(RW_zt) = (1-RW_rhozt)*log(RW_ztbar)+RW_rhozt*log(RW_zt(-1))+RW_epszt;
 log(RW_zn) = (1-RW_rhozn)*log(RW_znbar)+RW_rhozn*log(RW_zn(-1))+RW_epszn;
 // Government spending shock
-RW_gy = (1-RW_rhog)*RW_gybar+RW_rhog*RW_gy(-1)+RW_epsg;
+RW_cgy = (1-RW_rhocg)*RW_cgybar+RW_rhocg*RW_cgy(-1)+RW_epsg;
 // Transfer shock
 RW_try = (1-RW_rhotr)*RW_trybar+RW_rhotr*RW_try(-1)+RW_epstr;
 // Consumption tax shock
@@ -9227,8 +9227,8 @@ RW_internalrer = RW_pnt/RW_pttc;
 //-------------
 //-------------
 // CES consumption bundle for each type of household:
-    US_ccesi^(1-1/US_mucces) = (US_nucces)^(1/US_mucces)*US_ci^(1-1/US_mucces)+(1-US_nucces)^(1/US_mucces)*US_g^(1-1/US_mucces);
-    US_ccesj^(1-1/US_mucces) = (US_nucces)^(1/US_mucces)*US_cj^(1-1/US_mucces)+(1-US_nucces)^(1/US_mucces)*US_g^(1-1/US_mucces);
+    US_ccesi^(1-1/US_mucces) = (US_nucces)^(1/US_mucces)*US_ci^(1-1/US_mucces)+(1-US_nucces)^(1/US_mucces)*US_cg^(1-1/US_mucces);
+    US_ccesj^(1-1/US_mucces) = (US_nucces)^(1/US_mucces)*US_cj^(1-1/US_mucces)+(1-US_nucces)^(1/US_mucces)*US_cg^(1-1/US_mucces);
 //-------------
 // Household I
 //-------------
@@ -9237,7 +9237,7 @@ US_utili =
 US_zcon*log(US_ccesi-US_kappa*US_ccesi(-1))-1/(1+US_zeta)*(US_ni)^(1+US_zeta)+US_beta*US_utili(+1)
 ;
 // Marginal utility of consumption
-US_dcci = ((US_nucces)^(1/US_mucces)*US_ci^(1-1/US_mucces)+(1-US_nucces)^(1/US_mucces)*US_g^(1-1/US_mucces))^(1/(US_mucces-1))*(US_nucces^(1/US_mucces))*(US_ci^(-1/US_mucces));
+US_dcci = ((US_nucces)^(1/US_mucces)*US_ci^(1-1/US_mucces)+(1-US_nucces)^(1/US_mucces)*US_cg^(1-1/US_mucces))^(1/(US_mucces-1))*(US_nucces^(1/US_mucces))*(US_ci^(-1/US_mucces));
 US_lambdai*(1+US_tauc+US_gammavi+US_vi*US_gammavider) = US_zcon*(US_ccesi-US_kappa*US_ccesi(-1))^(-US_sigma)*US_dcci;
 // Euler equation for government bonds
 US_r = US_beta^(-1)*US_lambdai/US_lambdai(+1)*US_pic(+1);
@@ -9278,7 +9278,7 @@ US_zcon*log(US_ccesj-US_kappa*US_ccesj(-1))-1/(1+US_zeta)*(US_nj)^(1+US_zeta)+US
 // Budget constraint
 (1+US_tauc+US_gammavj)*US_cj+US_mj = (1-US_taun-US_tauwh)*US_wj*US_nj+US_trj-US_tj+US_mj(-1)*US_pic^(-1);
 // Marginal utility of consumption
-US_dccj = ((US_nucces)^(1/US_mucces)*US_cj^(1-1/US_mucces)+(1-US_nucces)^(1/US_mucces)*US_g^(1-1/US_mucces))^(1/(US_mucces-1))*(US_nucces^(1/US_mucces))*(US_cj^(-1/US_mucces));
+US_dccj = ((US_nucces)^(1/US_mucces)*US_cj^(1-1/US_mucces)+(1-US_nucces)^(1/US_mucces)*US_cg^(1-1/US_mucces))^(1/(US_mucces-1))*(US_nucces^(1/US_mucces))*(US_cj^(-1/US_mucces));
 US_lambdaj*(1+US_tauc+US_gammavj+US_vj*US_gammavjder) = US_zcon*(US_ccesj-US_kappa*US_ccesj(-1))^(-US_sigma)*US_dccj;
 // Euler equation for money
 US_vj^(2)*US_gammavjder = 1-US_beta*US_lambdaj(+1)/(US_lambdaj*US_pic(+1));
@@ -9986,10 +9986,10 @@ US_ex =
 // Fiscal authority
 //-------------
 // Government budget constraint, using US_pg = US_pht
-	US_pnt(-1)*US_g(-1)+US_tr(-1)
+	US_pnt(-1)*US_cg(-1)+US_tr(-1)
 	+US_b(-1)*US_pic(-1)^(-1)+US_m(-2)*US_pic(-1)^(-1) = US_tauc(-1)*US_c(-1)+(US_taun(-1)+US_tauwh(-1))*(US_wi(-1)*US_ndi(-1)+US_wj(-1)*US_ndj(-1))+US_tauwf(-1)*US_w(-1)*US_nd(-1)+US_tauk(-1)*(US_rk(-1)*US_u(-1)-(US_gammau(-1)+US_delta)*US_pi(-1))*US_k(-1)+US_taud(-1)*US_d(-1)+US_t(-1)+(US_r(-1))^(-1)*US_b+US_m(-1);
 // Government spending, using US_pg = US_pht
-US_pnt*US_g = US_gy*US_pybar*US_ybar;
+US_pnt*US_cg = US_cgy*US_pybar*US_ybar;
 US_t = 0;
 US_b = US_bytarget*US_pybar*US_ybar;
 // Auxiliary equation for steady-state output
@@ -10070,8 +10070,8 @@ US_u*US_k = US_kd;
 // Wedge between aggregate demand and production, using US_x = EAA_size/US_size*EAA_im
 US_ysn = US_snt*US_nt;
 //  nontradables aggregate demand
-US_nt =  US_nti+US_ntc+US_g;
-// Aggregate demand for domestic intermediate goods, using US_hg = US_g
+US_nt =  US_nti+US_ntc+US_cg;
+// Aggregate demand for domestic intermediate goods, using US_hg = US_cg
 US_ht = US_htc+US_hti;
 // Price dispersion in the domestic markets
 US_sh = (1-US_xih)*(US_phttilde/US_pht)^(-US_thetat)+US_xih*(US_piht/(US_piht(-1)^US_chih*US_pi4target^(1/4*(1-US_chih))))^US_thetat*US_sh(-1);
@@ -10092,8 +10092,8 @@ US_qi = US_i+US_k*US_gammau;
 //-------------
 // Resource constraint
 //-------------
-// Aggregate nominal demand, using US_pg = US_pht and US_qg = US_g   
-US_py*US_y = US_qc+US_pi*US_qi+US_pnt*US_g
+// Aggregate nominal demand, using US_pg = US_pht and US_qg = US_cg   
+US_py*US_y = US_qc+US_pi*US_qi+US_pnt*US_cg
 +USEAA_rer*EAAUS_pim*EAA_size/US_size*EAAUS_im
 -USEAA_pim*USEAA_imc
 -USEAA_pim*USEAA_imi
@@ -10124,7 +10124,7 @@ US_y = US_yst+US_ysn;
 log(US_zt) = (1-US_rhozt)*log(US_ztbar)+US_rhozt*log(US_zt(-1))+US_epszt;
 log(US_zn) = (1-US_rhozn)*log(US_znbar)+US_rhozn*log(US_zn(-1))+US_epszn;
 // Government spending shock
-US_gy = (1-US_rhog)*US_gybar+US_rhog*US_gy(-1)+US_epsg;
+US_cgy = (1-US_rhocg)*US_cgybar+US_rhocg*US_cgy(-1)+US_epsg;
 // Transfer shock
 US_try = (1-US_rhotr)*US_trybar+US_rhotr*US_try(-1)+US_epstr;
 // Consumption tax shock
