@@ -2814,7 +2814,7 @@ EAA_zinvbar 1
 EAA_znbar 1
 EAA_ztbar 1
 EAA_cpim 1
-EAA_epsg 0
+EAA_epsgc 0
 EAA_epsgi 0
 EAA_epstauc 0
 EAA_epstaud 0
@@ -2842,7 +2842,7 @@ EAB_zinvbar 1
 EAB_znbar 1
 EAB_ztbar 1
 EAB_cpim 1
-EAB_epsg 0
+EAB_epsgc 0
 EAB_epsgi 0
 EAB_epstauc 0
 EAB_epstaud 0
@@ -2870,7 +2870,7 @@ EAC_zinvbar 1
 EAC_znbar 1
 EAC_ztbar 1
 EAC_cpim 1
-EAC_epsg 0
+EAC_epsgc 0
 EAC_epsgi 0
 EAC_epstauc 0
 EAC_epstaud 0
@@ -2898,7 +2898,7 @@ EAD_zinvbar 1
 EAD_znbar 1
 EAD_ztbar 1
 EAD_cpim 1
-EAD_epsg 0
+EAD_epsgc 0
 EAD_epsgi 0
 EAD_epstauc 0
 EAD_epstaud 0
@@ -2926,7 +2926,7 @@ EAE_zinvbar 1
 EAE_znbar 1
 EAE_ztbar 1
 EAE_cpim 1
-EAE_epsg 0
+EAE_epsgc 0
 EAE_epsgi 0
 EAE_epstauc 0
 EAE_epstaud 0
@@ -2954,7 +2954,7 @@ RW_zinvbar 1
 RW_znbar 1
 RW_ztbar 1
 RW_cpim 1
-RW_epsg 0
+RW_epsgc 0
 RW_epsgi 0
 RW_epstauc 0
 RW_epstaud 0
@@ -2982,7 +2982,7 @@ US_zinvbar 1
 US_znbar 1
 US_ztbar 1
 US_cpim 1
-US_epsg 0
+US_epsgc 0
 US_epsgi 0
 US_epstauc 0
 US_epstaud 0
