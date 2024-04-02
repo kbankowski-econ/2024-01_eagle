@@ -10501,4 +10501,16 @@ EAD_alphat, 0.3;
 EAE_alphat, 0.3;
 end;
 steady(homotopy_steps = 5);
+// Productivity of public capital
+disp('alphag')
+homotopy_setup;
+EAA_alphag, 0.05;
+US_alphag,  0.05;
+RW_alphag,  0.05;
+EAB_alphag, 0.05;     
+EAC_alphag, 0.05;     
+EAD_alphag, 0.05;     
+EAE_alphag, 0.05;     
+end;
+steady(homotopy_steps = 5);
 save_params_and_steady_state('eagle_steady_govInv.txt');
