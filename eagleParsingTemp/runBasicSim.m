@@ -110,7 +110,7 @@ for aExoVar = string(reshape(steady3output.M_.exo_names, 1, []))
     steady3struct.exo_names.(aExoVar) = steady3output.oo_.exo_steady_state(strcmp(aExoVar, steady3output.M_.exo_names));
 end
 for aCountry = [ "EAA", "EAB", "EAC", "EAD", "EAE", "RW", "US" ]
-    steady3struct.exo_names.(aCountry+"_igybar") = 0.01;
+    steady3struct.exo_names.(aCountry+"_igybar") = 0.04;
     steady3struct.exo_names.(aCountry+"_epsgi") = 0;
 end
 
@@ -128,7 +128,7 @@ for aVar = string(reshape(varList, 1, []))
     steady3struct.ssValues.(aVar) = steady3output.oo_.steady_state(strcmp(aVar, varList));
 end
 for aCountry = [ "EAA", "EAB", "EAC", "EAD", "EAE", "RW", "US" ]
-    steady3struct.ssValues.(aCountry+"_igy") = 0.01;
+    steady3struct.ssValues.(aCountry+"_igy") = steady3struct.exo_names.(aCountry+"_igybar");
     steady3struct.ssValues.(aCountry+"_ig") = steady3struct.ssValues.(aCountry+"_igy")*steady2struct.ssValues.(aCountry+"_pybar")*steady2struct.ssValues.(aCountry+"_ybar")/steady2struct.ssValues.(aCountry+"_pnt");;
     steady3struct.ssValues.(aCountry+"_kg") = steady3struct.ssValues.(aCountry+"_ig")/steady3struct.params.(aCountry+"_deltag");
 end
