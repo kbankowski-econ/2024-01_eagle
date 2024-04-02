@@ -216,7 +216,7 @@ initval;
   @{COUNTRY}_zinvbar = 1;
   @{COUNTRY}_znbar = 1;
   @{COUNTRY}_ztbar = 1;
-  @{COUNTRY}_epsg = 0;
+  @{COUNTRY}_epsgc = 0;
   @{COUNTRY}_epstauc = 0;
   @{COUNTRY}_epstaud = 0;
   @{COUNTRY}_epstauk = 0;

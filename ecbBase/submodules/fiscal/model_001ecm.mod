@@ -1,5 +1,4 @@
 //////////////////////////////////// FISCAL BLOCK ////////////////////////////////////////////////
-// TODO: in theory this version of the model shold not be needed
 
 // trend rate of tax payable by corporations [AR + MEAN	]
 [name = 'U2_T_GO_BU_R_DTN', type = 'longrun', long_run_name = 'U2_GO_BU_R_DTN', blockname='fiscal']

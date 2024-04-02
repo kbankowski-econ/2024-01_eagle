@@ -21,6 +21,7 @@ cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 
 dynare('steady0.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
 
+%% 
 % calculating the steady state
 if true
     dynare('steady1.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
@@ -129,7 +130,7 @@ for aVar = string(reshape(varList, 1, []))
 end
 for aCountry = [ "EAA", "EAB", "EAC", "EAD", "EAE", "RW", "US" ]
     steady3struct.ssValues.(aCountry+"_igy") = steady3struct.exo_names.(aCountry+"_igybar");
-    steady3struct.ssValues.(aCountry+"_ig") = steady3struct.ssValues.(aCountry+"_igy")*steady2struct.ssValues.(aCountry+"_pybar")*steady2struct.ssValues.(aCountry+"_ybar")/steady2struct.ssValues.(aCountry+"_pnt");;
+    steady3struct.ssValues.(aCountry+"_ig") = steady3struct.ssValues.(aCountry+"_igy")*steady2struct.ssValues.(aCountry+"_pybar")*steady2struct.ssValues.(aCountry+"_ybar")/steady2struct.ssValues.(aCountry+"_pnt");
     steady3struct.ssValues.(aCountry+"_kg") = steady3struct.ssValues.(aCountry+"_ig")/steady3struct.params.(aCountry+"_deltag");
 end
 
@@ -157,41 +158,7 @@ end
 % Close the file
 fclose(fileID);
 
-%%
 dynare('steady4.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
+%%
 dynare('steady5.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
-
-    
-dynare(sprintf('eagleModel_verSS'), sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'nopreprocessoroutput', 'savemacro');
-
-log(steady2struct.ssValues.EAA_zt) = (1-steady2struct.ssValues.EAA_rhozt)*log(steady2struct.params.EAA_ztbar)+EAA_rhozt*log(steady2struct.ssValues.EAA_zt)+EAA_epszt;
-
-
-% % shock simulation: 4-period g shock in EAB region
-% dynare shock_eab_gy1.mod
-% 
-% eabGy1Databank = databank.fromArray(oo_.endo_simul', M_.endo_names, qq(0,4));
-% serToPlot = (eabGy1Databank.EAB_gy-eabGy1Databank.EAB_gy(qq(0,4)))*100;
-% plot(serToPlot{qq(1,1): qq(50,4)});
-% title('EAB GY')
-% ylabel('p.p. deviation from steady state')
-% 
-% % shock simulation: 4-period g shock in EAB region (with some nuanced shock
-% % values)
-% dynare shock_eab_gy2.mod
-% 
-% % shock simulation: productivity shock
-% dynare shock_eab_tech.mod
-% 
-% % shock simulation: permanent productivity shock
-% dynare shockperm_ea_techn.mod
-% 
-% % shock simulation: risk premium shock
-% dynare ea_epsrp.mod
-% 
-% % shock simulation: risk premium shock
-% dynare ea_epsrp.mod
-% 
-% % shock simulation: monetary policy shock
-% dynare shock_ea_monpol.mod

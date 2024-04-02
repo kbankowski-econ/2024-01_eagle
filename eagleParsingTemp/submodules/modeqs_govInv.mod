@@ -980,7 +980,7 @@ log(@{co}_zt) = (1-@{co}_rhozt)*log(@{co}_ztbar)+@{co}_rhozt*log(@{co}_zt(-1))+@
 log(@{co}_zn) = (1-@{co}_rhozn)*log(@{co}_znbar)+@{co}_rhozn*log(@{co}_zn(-1))+@{co}_epszn;
 
 // Government spending shock
-@{co}_cgy = (1-@{co}_rhocg)*@{co}_cgybar+@{co}_rhocg*@{co}_cgy(-1)+@{co}_epsg;
+@{co}_cgy = (1-@{co}_rhocg)*@{co}_cgybar+@{co}_rhocg*@{co}_cgy(-1)+@{co}_epsgc;
 @{co}_igy = (1-@{co}_rhoig)*@{co}_igybar+@{co}_rhoig*@{co}_igy(-1)+@{co}_epsgi;
 
 // Transfer shock
