@@ -19,15 +19,15 @@ dynare_config
 %%
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 
-dynare('steady0.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
+dynare('steady0.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
 %% 
-% calculating the steady state
-if true
-    dynare('steady1.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
-    dynare('steady2.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
-end
+dynare('steady1.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
+%%
+dynare('steady2.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
+
+%%
 steady2output = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'steady2', 'Output', 'steady2_results.mat'));
 steady2struct = struct();
 
