@@ -5,7 +5,6 @@ options_.markowitz = 5;
 //
 // Is sigma equal to one for any country ?
 // Is omega equal to zero for any country ?
-// TODO: fix highlighting for countries5 in Notepad++
 // Endogenous
 var
  EA_bf
@@ -427,7 +426,7 @@ varexo
  EAA_ztbar
  EAA_cpim
 // TODO: change below to epsgc 
- EAA_epsg
+ EAA_epsgc
  EAA_epsgi
  EAA_epstauc
  EAA_epstaud
@@ -840,7 +839,7 @@ varexo
  EAB_ztbar
  EAB_cpim
 // TODO: change below to epsgc 
- EAB_epsg
+ EAB_epsgc
  EAB_epsgi
  EAB_epstauc
  EAB_epstaud
@@ -1253,7 +1252,7 @@ varexo
  EAC_ztbar
  EAC_cpim
 // TODO: change below to epsgc 
- EAC_epsg
+ EAC_epsgc
  EAC_epsgi
  EAC_epstauc
  EAC_epstaud
@@ -1666,7 +1665,7 @@ varexo
  EAD_ztbar
  EAD_cpim
 // TODO: change below to epsgc 
- EAD_epsg
+ EAD_epsgc
  EAD_epsgi
  EAD_epstauc
  EAD_epstaud
@@ -2079,7 +2078,7 @@ varexo
  EAE_ztbar
  EAE_cpim
 // TODO: change below to epsgc 
- EAE_epsg
+ EAE_epsgc
  EAE_epsgi
  EAE_epstauc
  EAE_epstaud
@@ -2495,7 +2494,7 @@ varexo
  RW_ztbar
  RW_cpim
 // TODO: change below to epsgc 
- RW_epsg
+ RW_epsgc
  RW_epsgi
  RW_epstauc
  RW_epstaud
@@ -2903,7 +2902,7 @@ varexo
  US_ztbar
  US_cpim
 // TODO: change below to epsgc 
- US_epsg
+ US_epsgc
  US_epsgi
  US_epstauc
  US_epstaud
@@ -4022,7 +4021,7 @@ EAA_y = EAA_yst+EAA_ysn;
 log(EAA_zt) = (1-EAA_rhozt)*log(EAA_ztbar)+EAA_rhozt*log(EAA_zt(-1))+EAA_epszt;
 log(EAA_zn) = (1-EAA_rhozn)*log(EAA_znbar)+EAA_rhozn*log(EAA_zn(-1))+EAA_epszn;
 // Government spending shock
-EAA_cgy = (1-EAA_rhocg)*EAA_cgybar+EAA_rhocg*EAA_cgy(-1)+EAA_epsg;
+EAA_cgy = (1-EAA_rhocg)*EAA_cgybar+EAA_rhocg*EAA_cgy(-1)+EAA_epsgc;
 EAA_igy = (1-EAA_rhoig)*EAA_igybar+EAA_rhoig*EAA_igy(-1)+EAA_epsgi;
 // Transfer shock
 EAA_try = (1-EAA_rhotr)*EAA_trybar+EAA_rhotr*EAA_try(-1)+EAA_epstr;
@@ -5054,7 +5053,7 @@ EAB_y = EAB_yst+EAB_ysn;
 log(EAB_zt) = (1-EAB_rhozt)*log(EAB_ztbar)+EAB_rhozt*log(EAB_zt(-1))+EAB_epszt;
 log(EAB_zn) = (1-EAB_rhozn)*log(EAB_znbar)+EAB_rhozn*log(EAB_zn(-1))+EAB_epszn;
 // Government spending shock
-EAB_cgy = (1-EAB_rhocg)*EAB_cgybar+EAB_rhocg*EAB_cgy(-1)+EAB_epsg;
+EAB_cgy = (1-EAB_rhocg)*EAB_cgybar+EAB_rhocg*EAB_cgy(-1)+EAB_epsgc;
 EAB_igy = (1-EAB_rhoig)*EAB_igybar+EAB_rhoig*EAB_igy(-1)+EAB_epsgi;
 // Transfer shock
 EAB_try = (1-EAB_rhotr)*EAB_trybar+EAB_rhotr*EAB_try(-1)+EAB_epstr;
@@ -6089,7 +6088,7 @@ EAC_y = EAC_yst+EAC_ysn;
 log(EAC_zt) = (1-EAC_rhozt)*log(EAC_ztbar)+EAC_rhozt*log(EAC_zt(-1))+EAC_epszt;
 log(EAC_zn) = (1-EAC_rhozn)*log(EAC_znbar)+EAC_rhozn*log(EAC_zn(-1))+EAC_epszn;
 // Government spending shock
-EAC_cgy = (1-EAC_rhocg)*EAC_cgybar+EAC_rhocg*EAC_cgy(-1)+EAC_epsg;
+EAC_cgy = (1-EAC_rhocg)*EAC_cgybar+EAC_rhocg*EAC_cgy(-1)+EAC_epsgc;
 EAC_igy = (1-EAC_rhoig)*EAC_igybar+EAC_rhoig*EAC_igy(-1)+EAC_epsgi;
 // Transfer shock
 EAC_try = (1-EAC_rhotr)*EAC_trybar+EAC_rhotr*EAC_try(-1)+EAC_epstr;
@@ -7124,7 +7123,7 @@ EAD_y = EAD_yst+EAD_ysn;
 log(EAD_zt) = (1-EAD_rhozt)*log(EAD_ztbar)+EAD_rhozt*log(EAD_zt(-1))+EAD_epszt;
 log(EAD_zn) = (1-EAD_rhozn)*log(EAD_znbar)+EAD_rhozn*log(EAD_zn(-1))+EAD_epszn;
 // Government spending shock
-EAD_cgy = (1-EAD_rhocg)*EAD_cgybar+EAD_rhocg*EAD_cgy(-1)+EAD_epsg;
+EAD_cgy = (1-EAD_rhocg)*EAD_cgybar+EAD_rhocg*EAD_cgy(-1)+EAD_epsgc;
 EAD_igy = (1-EAD_rhoig)*EAD_igybar+EAD_rhoig*EAD_igy(-1)+EAD_epsgi;
 // Transfer shock
 EAD_try = (1-EAD_rhotr)*EAD_trybar+EAD_rhotr*EAD_try(-1)+EAD_epstr;
@@ -8154,7 +8153,7 @@ EAE_y = EAE_yst+EAE_ysn;
 log(EAE_zt) = (1-EAE_rhozt)*log(EAE_ztbar)+EAE_rhozt*log(EAE_zt(-1))+EAE_epszt;
 log(EAE_zn) = (1-EAE_rhozn)*log(EAE_znbar)+EAE_rhozn*log(EAE_zn(-1))+EAE_epszn;
 // Government spending shock
-EAE_cgy = (1-EAE_rhocg)*EAE_cgybar+EAE_rhocg*EAE_cgy(-1)+EAE_epsg;
+EAE_cgy = (1-EAE_rhocg)*EAE_cgybar+EAE_rhocg*EAE_cgy(-1)+EAE_epsgc;
 EAE_igy = (1-EAE_rhoig)*EAE_igybar+EAE_rhoig*EAE_igy(-1)+EAE_epsgi;
 // Transfer shock
 EAE_try = (1-EAE_rhotr)*EAE_trybar+EAE_rhotr*EAE_try(-1)+EAE_epstr;
@@ -9184,7 +9183,7 @@ RW_y = RW_yst+RW_ysn;
 log(RW_zt) = (1-RW_rhozt)*log(RW_ztbar)+RW_rhozt*log(RW_zt(-1))+RW_epszt;
 log(RW_zn) = (1-RW_rhozn)*log(RW_znbar)+RW_rhozn*log(RW_zn(-1))+RW_epszn;
 // Government spending shock
-RW_cgy = (1-RW_rhocg)*RW_cgybar+RW_rhocg*RW_cgy(-1)+RW_epsg;
+RW_cgy = (1-RW_rhocg)*RW_cgybar+RW_rhocg*RW_cgy(-1)+RW_epsgc;
 RW_igy = (1-RW_rhoig)*RW_igybar+RW_rhoig*RW_igy(-1)+RW_epsgi;
 // Transfer shock
 RW_try = (1-RW_rhotr)*RW_trybar+RW_rhotr*RW_try(-1)+RW_epstr;
@@ -10214,7 +10213,7 @@ US_y = US_yst+US_ysn;
 log(US_zt) = (1-US_rhozt)*log(US_ztbar)+US_rhozt*log(US_zt(-1))+US_epszt;
 log(US_zn) = (1-US_rhozn)*log(US_znbar)+US_rhozn*log(US_zn(-1))+US_epszn;
 // Government spending shock
-US_cgy = (1-US_rhocg)*US_cgybar+US_rhocg*US_cgy(-1)+US_epsg;
+US_cgy = (1-US_rhocg)*US_cgybar+US_rhocg*US_cgy(-1)+US_epsgc;
 US_igy = (1-US_rhoig)*US_igybar+US_rhoig*US_igy(-1)+US_epsgi;
 // Transfer shock
 US_try = (1-US_rhotr)*US_trybar+US_rhotr*US_try(-1)+US_epstr;
@@ -10511,31 +10510,6 @@ EAB_alphag, 0.05;
 EAC_alphag, 0.05;     
 EAD_alphag, 0.05;     
 EAE_alphag, 0.05;     
-end;
-steady(homotopy_steps = 5);
-disp('iy')
-    change_type(parameters) EAA_iy;
-    change_type(var) EAA_psit;
-    change_type(parameters) EAB_iy;
-    change_type(var) EAB_psit;
-    change_type(parameters) EAC_iy;
-    change_type(var) EAC_psit;
-    change_type(parameters) EAD_iy;
-    change_type(var) EAD_psit;
-    change_type(parameters) EAE_iy;
-    change_type(var) EAE_psit;
-    change_type(parameters) RW_iy;
-    change_type(var) RW_psit;
-    change_type(parameters) US_iy;
-    change_type(var) US_psit;
-homotopy_setup;
-EAA_iy, 0.21-EAA_igybar;
-US_iy,  0.19-US_igybar;
-RW_iy,  0.25-RW_igybar;
-EAB_iy, 0.1906-EAB_igybar;  
-EAC_iy, 0.1906-EAC_igybar;  
-EAD_iy, 0.1906-EAD_igybar;  
-EAE_iy, 0.1906-EAE_igybar;  
 end;
 steady(homotopy_steps = 5);
 save_params_and_steady_state('eagle_steady_govInv.txt');

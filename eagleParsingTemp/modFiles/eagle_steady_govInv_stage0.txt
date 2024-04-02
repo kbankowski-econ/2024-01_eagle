@@ -2731,7 +2731,7 @@ EAA_zinvbar 1.000000
 EAA_znbar 1.000000
 EAA_ztbar 1.000000
 EAA_cpim 1.000000
-EAA_epsg 0.000000
+EAA_epsgc 0.000000
 EAA_epstauc 0.000000
 EAA_epstaud 0.000000
 EAA_epstauk 0.000000
@@ -2757,7 +2757,7 @@ EAB_zinvbar 1.000000
 EAB_znbar 1.000000
 EAB_ztbar 1.000000
 EAB_cpim 1.000000
-EAB_epsg 0.000000
+EAB_epsgc 0.000000
 EAB_epstauc 0.000000
 EAB_epstaud 0.000000
 EAB_epstauk 0.000000
@@ -2783,7 +2783,7 @@ EAC_zinvbar 1.000000
 EAC_znbar 1.000000
 EAC_ztbar 1.000000
 EAC_cpim 1.000000
-EAC_epsg 0.000000
+EAC_epsgc 0.000000
 EAC_epstauc 0.000000
 EAC_epstaud 0.000000
 EAC_epstauk 0.000000
@@ -2809,7 +2809,7 @@ EAD_zinvbar 1.000000
 EAD_znbar 1.000000
 EAD_ztbar 1.000000
 EAD_cpim 1.000000
-EAD_epsg 0.000000
+EAD_epsgc 0.000000
 EAD_epstauc 0.000000
 EAD_epstaud 0.000000
 EAD_epstauk 0.000000
@@ -2835,7 +2835,7 @@ EAE_zinvbar 1.000000
 EAE_znbar 1.000000
 EAE_ztbar 1.000000
 EAE_cpim 1.000000
-EAE_epsg 0.000000
+EAE_epsgc 0.000000
 EAE_epstauc 0.000000
 EAE_epstaud 0.000000
 EAE_epstauk 0.000000
@@ -2861,7 +2861,7 @@ RW_zinvbar 1.000000
 RW_znbar 1.000000
 RW_ztbar 1.000000
 RW_cpim 1.000000
-RW_epsg 0.000000
+RW_epsgc 0.000000
 RW_epstauc 0.000000
 RW_epstaud 0.000000
 RW_epstauk 0.000000
@@ -2887,7 +2887,7 @@ US_zinvbar 1.000000
 US_znbar 1.000000
 US_ztbar 1.000000
 US_cpim 1.000000
-US_epsg 0.000000
+US_epsgc 0.000000
 US_epstauc 0.000000
 US_epstaud 0.000000
 US_epstauk 0.000000
