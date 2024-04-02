@@ -42,22 +42,4 @@ EAE_alphag, 0.05;
 end;
 steady(homotopy_steps = 5);
 
-disp('iy')
-
-@#for co in countries
-    change_type(parameters) @{co}_iy;
-    change_type(var) @{co}_psit;
-@#endfor
-
-homotopy_setup;
-EAA_iy, 0.21-EAA_igybar;
-US_iy,  0.19-US_igybar;
-RW_iy,  0.25-RW_igybar;
-EAB_iy, 0.1906-EAB_igybar;  
-EAC_iy, 0.1906-EAC_igybar;  
-EAD_iy, 0.1906-EAD_igybar;  
-EAE_iy, 0.1906-EAE_igybar;  
-end;
-steady(homotopy_steps = 5);
-
 save_params_and_steady_state('eagle_steady_govInv.txt');
