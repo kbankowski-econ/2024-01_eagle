@@ -299,8 +299,8 @@ parameters
  @{co}_mumi
  @{co}_mutc
  @{co}_muti
- @{co}_nuc
  @{co}_nucces
+ @{co}_nuc
  @{co}_nui
  @{co}_nutc
  @{co}_nuti

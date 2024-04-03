@@ -155,8 +155,8 @@ var
  @{co}_k
  @{co}_kd
  @{co}_kdn
- @{co}_kdt
  @{co}_kg
+ @{co}_kdt
  @{co}_ki
  @{co}_lambdai
  @{co}_lambdaj
@@ -269,8 +269,8 @@ var
 
 // Parameters
 parameters
- @{co}_alphag
  @{co}_alphan
+ @{co}_alphag
  @{co}_alphat
  @{co}_beta
 @# if co != countries[7]
@@ -302,8 +302,8 @@ parameters
  @{co}_mumi
  @{co}_mutc
  @{co}_muti
- @{co}_nuc
  @{co}_nucces
+ @{co}_nuc
  @{co}_nui
  @{co}_nutc
  @{co}_nuti
@@ -451,6 +451,7 @@ change_type(var)
  @{co}_ybar
  @{co}_ynbar
  @{co}_ytbar
+
 @# endfor
 ;
 @#endif
