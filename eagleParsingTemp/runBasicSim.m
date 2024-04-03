@@ -1,3 +1,7 @@
+%// NOTE: next step is to introduce import content into gov cons
+% and investment, which should be done relatively easy given the
+% modular structure of the model
+
 %% preamble
 clear all; close all; clc; restoredefaultpath
 % Add some paths
