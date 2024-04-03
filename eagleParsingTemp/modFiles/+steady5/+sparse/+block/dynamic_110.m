@@ -1,3 +1,3 @@
 function [y, T] = dynamic_110(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(2821)=y(2842)*log(y(2693)-params(97)*y(452))-1/(1+params(136))*y(2759)^(1+params(136))+params(79)*y(5062);
+  y(2811)=y(2832)*log(y(4371)-params(91)*y(2130))-1/(1+params(128))*y(2749)^(1+params(128))+params(74)*y(5052);
 end

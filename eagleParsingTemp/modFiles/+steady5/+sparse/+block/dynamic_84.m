@@ -1,3 +1,3 @@
 function [y, T] = dynamic_84(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(3010)=y(4136)*params(477)/params(199)+y(3830)*params(409)/params(199)+y(3524)*params(337)/params(199)+y(3218)*params(268)/params(199)+y(2299)*params(61)/params(199)+y(2605)*params(130)/params(199);
+  y(2996)=y(4106)*params(449)/params(187)+y(3805)*params(385)/params(187)+y(3504)*params(317)/params(187)+y(3203)*params(252)/params(187)+y(2299)*params(57)/params(187)+y(2600)*params(122)/params(187);
 end
