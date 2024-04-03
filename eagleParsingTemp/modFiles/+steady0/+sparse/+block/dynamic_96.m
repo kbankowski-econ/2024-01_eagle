@@ -1,5 +1,5 @@
 function [y, T] = dynamic_96(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(2371)=y(2372)+y(2374);
-  y(2969)=y(2970)+y(2972);
-  y(2670)=y(2671)+y(2673);
+  y(2386)=y(2387)+y(2389);
+  y(2988)=y(2989)+y(2991);
+  y(2687)=y(2688)+y(2690);
 end

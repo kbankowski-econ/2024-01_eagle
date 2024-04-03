@@ -1,5 +1,5 @@
 function [y, T] = dynamic_82(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(4164)=y(4165)+y(4167);
-  y(2345)=params(442)/params(56)*y(4043)+params(379)/params(56)*y(3744)+params(312)/params(56)*y(3445)+params(248)/params(56)*y(3146)+params(120)/params(56)*y(2548)+params(184)/params(56)*y(2847);
-  y(3840)=y(4048)*params(442)/params(379)+y(3449)*params(312)/params(379)+y(3150)*params(248)/params(379)+y(2851)*params(184)/params(379)+y(2253)*params(56)/params(379)+y(2552)*params(120)/params(379);
+  y(4191)=y(4192)+y(4194);
+  y(2359)=params(449)/params(57)*y(4069)+params(385)/params(57)*y(3768)+params(317)/params(57)*y(3467)+params(252)/params(57)*y(3166)+params(122)/params(57)*y(2564)+params(187)/params(57)*y(2865);
+  y(3864)=y(4074)*params(449)/params(385)+y(3471)*params(317)/params(385)+y(3170)*params(252)/params(385)+y(2869)*params(187)/params(385)+y(2267)*params(57)/params(385)+y(2568)*params(122)/params(385);
 end
