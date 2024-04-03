@@ -5,5 +5,5 @@ function [y, T] = static_184(y, x, params, sparse_rowval, sparse_colval, sparse_
   y(86)=y(98)*y(80)/(y(238)*y(287));
   y(74)=y(98)*y(68)/(y(238)*y(287));
   y(19)=y(1605)*y(1623)*y(109)*params(409)/params(61)/(y(238)*y(287));
-  y(428)=y(404)/(y(1930)*y(416));
+  y(611)=y(416);
 end

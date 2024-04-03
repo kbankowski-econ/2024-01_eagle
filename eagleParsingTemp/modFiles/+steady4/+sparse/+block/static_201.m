@@ -1,6 +1,5 @@
 function [y, T] = static_201(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
   y(212)=y(208)*y(251);
-  y(610)=y(415);
   y(1530)=y(1444);
   y(1447)=y(1446)*y(1441)/y(2205);
   y(1450)=y(1446)*y(1453)/y(2202);
@@ -14,4 +13,6 @@ function [y, T] = static_201(y, x, params, sparse_rowval, sparse_colval, sparse_
   y(1524)=y(1329);
   y(1378)=y(1442)*y(1402)+params(61)*(y(66)+y(78))*y(96)*y(1329)/params(337)+params(130)*(y(372)+y(384))*y(402)*y(1330)/params(337)+params(199)*(y(678)+y(690))*y(708)*y(1331)/params(337)+params(268)*(y(984)+y(996))*y(1014)*y(1332)/params(337)+params(409)*y(1627)*y(1333)*(y(1597)+y(1609))/params(337)+params(477)*y(1933)*y(1334)*(y(1903)+y(1915))/params(337)-y(1470)*y(1420)-y(1435)*(1+y(1483))*y(1502);
   y(1377)=y(1518)*y(1458)-y(1470)*y(1419)-y(1434)*(1+y(1483))*y(1502);
+  y(423)=y(399)/(y(93)*y(411));
+  y(426)=y(402)/(y(1318)*y(414));
 end
