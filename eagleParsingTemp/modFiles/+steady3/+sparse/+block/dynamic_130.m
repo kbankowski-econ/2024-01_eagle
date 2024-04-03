@@ -1,5 +1,4 @@
 function [y, T] = dynamic_130(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(2657)=y(2633)/(y(2938)*y(2645));
   y(3454)=y(3368);
   y(2460)=y(2454)*y(2463)/y(229);
   y(3375)=y(3369)*y(3378)/y(1144);

@@ -1,5 +1,5 @@
 function [residual, g1, g2, g3] = static(y, x, params)
-    T = NaN(2612, 1);
+    T = NaN(2605, 1);
     if nargout <= 1
         residual = steady3.static_resid(T, y, x, params, true);
     elseif nargout == 2
