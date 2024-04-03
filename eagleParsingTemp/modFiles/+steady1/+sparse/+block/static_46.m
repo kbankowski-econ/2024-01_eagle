@@ -1,36 +1,13 @@
-function [y, T] = static_46(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(863)=0;
-  y(879)=0;
-  y(880)=1;
-  y(1057)=0;
-  y(1058)=0;
-  y(1059)=0;
-  y(1163)=1;
-  y(924)=0;
-  y(930)=1;
-  y(925)=0;
-  y(931)=1;
-  y(926)=0;
-  y(932)=1;
-  y(927)=0;
-  y(933)=1;
-  y(928)=0;
-  y(934)=1;
-  y(929)=0;
-  y(935)=1;
-  y(936)=0;
-  y(942)=1;
-  y(937)=0;
-  y(943)=1;
-  y(938)=0;
-  y(944)=1;
-  y(939)=0;
-  y(945)=1;
-  y(940)=0;
-  y(946)=1;
-  y(941)=0;
-  y(947)=1;
-  y(1144)=0;
-  y(1153)=0;
-  y(1112)=params(230);
+function [y, T, residual, g1] = static_46(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
+residual=NaN(1, 1);
+  residual(1)=(y(876))-((1-params(181))*x(66)+y(876)*params(181)+x(81));
+if nargout > 3
+    g1_v = NaN(1, 1);
+g1_v(1)=1-params(181);
+    if ~isoctave && matlab_ver_less_than('9.8')
+        sparse_rowval = double(sparse_rowval);
+        sparse_colval = double(sparse_colval);
+    end
+    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
+end
 end

@@ -465,6 +465,7 @@ EAE_bytarget, 2.40;
 end;
 steady(homotopy_steps = 5);
 
+//TODO: you may want to add ig here immediately
 disp('gybar')
 homotopy_setup;
 EAA_cgybar, 0.20;

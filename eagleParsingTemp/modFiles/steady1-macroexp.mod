@@ -199,6 +199,7 @@ var
  EAA_htc
  EAA_hti
  EAA_i
+ EAA_ig
  EAA_ii
  EAA_im
  EAA_imc
@@ -208,6 +209,7 @@ var
  EAA_imy
  EAA_internalrer
  EAA_iy
+ EAA_igy
  EAA_k
  EAA_kd
  EAA_kdn
@@ -353,6 +355,7 @@ parameters
  EAA_psin
  EAA_psit
  EAA_rhocg
+ EAA_rhoig
  EAA_rhorp
  EAA_rhotauc
  EAA_rhotaud
@@ -400,6 +403,7 @@ parameters
 // Exogenous
 varexo
  EAA_cgybar
+ EAA_igybar
  EAA_taucbar
  EAA_taudbar
  EAA_taukbar
@@ -413,6 +417,7 @@ varexo
  EAA_ztbar
  EAA_cpim
  EAA_epsgc
+ EAA_epsgi
  EAA_epstauc
  EAA_epstaud
  EAA_epstauk
@@ -597,6 +602,7 @@ var
  EAB_htc
  EAB_hti
  EAB_i
+ EAB_ig
  EAB_ii
  EAB_im
  EAB_imc
@@ -606,6 +612,7 @@ var
  EAB_imy
  EAB_internalrer
  EAB_iy
+ EAB_igy
  EAB_k
  EAB_kd
  EAB_kdn
@@ -751,6 +758,7 @@ parameters
  EAB_psin
  EAB_psit
  EAB_rhocg
+ EAB_rhoig
  EAB_rhorp
  EAB_rhotauc
  EAB_rhotaud
@@ -798,6 +806,7 @@ parameters
 // Exogenous
 varexo
  EAB_cgybar
+ EAB_igybar
  EAB_taucbar
  EAB_taudbar
  EAB_taukbar
@@ -811,6 +820,7 @@ varexo
  EAB_ztbar
  EAB_cpim
  EAB_epsgc
+ EAB_epsgi
  EAB_epstauc
  EAB_epstaud
  EAB_epstauk
@@ -995,6 +1005,7 @@ var
  EAC_htc
  EAC_hti
  EAC_i
+ EAC_ig
  EAC_ii
  EAC_im
  EAC_imc
@@ -1004,6 +1015,7 @@ var
  EAC_imy
  EAC_internalrer
  EAC_iy
+ EAC_igy
  EAC_k
  EAC_kd
  EAC_kdn
@@ -1149,6 +1161,7 @@ parameters
  EAC_psin
  EAC_psit
  EAC_rhocg
+ EAC_rhoig
  EAC_rhorp
  EAC_rhotauc
  EAC_rhotaud
@@ -1196,6 +1209,7 @@ parameters
 // Exogenous
 varexo
  EAC_cgybar
+ EAC_igybar
  EAC_taucbar
  EAC_taudbar
  EAC_taukbar
@@ -1209,6 +1223,7 @@ varexo
  EAC_ztbar
  EAC_cpim
  EAC_epsgc
+ EAC_epsgi
  EAC_epstauc
  EAC_epstaud
  EAC_epstauk
@@ -1393,6 +1408,7 @@ var
  EAD_htc
  EAD_hti
  EAD_i
+ EAD_ig
  EAD_ii
  EAD_im
  EAD_imc
@@ -1402,6 +1418,7 @@ var
  EAD_imy
  EAD_internalrer
  EAD_iy
+ EAD_igy
  EAD_k
  EAD_kd
  EAD_kdn
@@ -1547,6 +1564,7 @@ parameters
  EAD_psin
  EAD_psit
  EAD_rhocg
+ EAD_rhoig
  EAD_rhorp
  EAD_rhotauc
  EAD_rhotaud
@@ -1594,6 +1612,7 @@ parameters
 // Exogenous
 varexo
  EAD_cgybar
+ EAD_igybar
  EAD_taucbar
  EAD_taudbar
  EAD_taukbar
@@ -1607,6 +1626,7 @@ varexo
  EAD_ztbar
  EAD_cpim
  EAD_epsgc
+ EAD_epsgi
  EAD_epstauc
  EAD_epstaud
  EAD_epstauk
@@ -1791,6 +1811,7 @@ var
  EAE_htc
  EAE_hti
  EAE_i
+ EAE_ig
  EAE_ii
  EAE_im
  EAE_imc
@@ -1800,6 +1821,7 @@ var
  EAE_imy
  EAE_internalrer
  EAE_iy
+ EAE_igy
  EAE_k
  EAE_kd
  EAE_kdn
@@ -1945,6 +1967,7 @@ parameters
  EAE_psin
  EAE_psit
  EAE_rhocg
+ EAE_rhoig
  EAE_rhorp
  EAE_rhotauc
  EAE_rhotaud
@@ -1992,6 +2015,7 @@ parameters
 // Exogenous
 varexo
  EAE_cgybar
+ EAE_igybar
  EAE_taucbar
  EAE_taudbar
  EAE_taukbar
@@ -2005,6 +2029,7 @@ varexo
  EAE_ztbar
  EAE_cpim
  EAE_epsgc
+ EAE_epsgi
  EAE_epstauc
  EAE_epstaud
  EAE_epstauk
@@ -2189,6 +2214,7 @@ var
  RW_htc
  RW_hti
  RW_i
+ RW_ig
  RW_ii
  RW_im
  RW_imc
@@ -2198,6 +2224,7 @@ var
  RW_imy
  RW_internalrer
  RW_iy
+ RW_igy
  RW_k
  RW_kd
  RW_kdn
@@ -2346,6 +2373,7 @@ parameters
  RW_psin
  RW_psit
  RW_rhocg
+ RW_rhoig
  RW_rhorp
  RW_rhotauc
  RW_rhotaud
@@ -2393,6 +2421,7 @@ parameters
 // Exogenous
 varexo
  RW_cgybar
+ RW_igybar
  RW_taucbar
  RW_taudbar
  RW_taukbar
@@ -2406,6 +2435,7 @@ varexo
  RW_ztbar
  RW_cpim
  RW_epsgc
+ RW_epsgi
  RW_epstauc
  RW_epstaud
  RW_epstauk
@@ -2589,6 +2619,7 @@ var
  US_htc
  US_hti
  US_i
+ US_ig
  US_ii
  US_im
  US_imc
@@ -2598,6 +2629,7 @@ var
  US_imy
  US_internalrer
  US_iy
+ US_igy
  US_k
  US_kd
  US_kdn
@@ -2740,6 +2772,7 @@ parameters
  US_psin
  US_psit
  US_rhocg
+ US_rhoig
  US_rhotauc
  US_rhotaud
  US_rhotauk
@@ -2786,6 +2819,7 @@ parameters
 // Exogenous
 varexo
  US_cgybar
+ US_igybar
  US_taucbar
  US_taudbar
  US_taukbar
@@ -2799,6 +2833,7 @@ varexo
  US_ztbar
  US_cpim
  US_epsgc
+ US_epsgi
  US_epstauc
  US_epstaud
  US_epstauk
@@ -3770,10 +3805,11 @@ EAA_ex =
 // Fiscal authority
 //-------------
 // Government budget constraint, using EAA_pg = EAA_pht
-	EAA_pnt(-1)*EAA_cg(-1)+EAA_tr(-1)
+	EAA_pnt(-1)*EAA_cg(-1)+EAA_pnt(-1)*EAA_ig(-1)+EAA_tr(-1)
 	+EAA_b(-1)*EAA_pic(-1)^(-1)+EAA_m(-2)*EAA_pic(-1)^(-1) = EAA_tauc(-1)*EAA_c(-1)+(EAA_taun(-1)+EAA_tauwh(-1))*(EAA_wi(-1)*EAA_ndi(-1)+EAA_wj(-1)*EAA_ndj(-1))+EAA_tauwf(-1)*EAA_w(-1)*EAA_nd(-1)+EAA_tauk(-1)*(EAA_rk(-1)*EAA_u(-1)-(EAA_gammau(-1)+EAA_delta)*EAA_pi(-1))*EAA_k(-1)+EAA_taud(-1)*EAA_d(-1)+EAA_t(-1)+(EAA_r(-1)*(1-EAA_gammab(-1)))^(-1)*EAA_b+EAA_m(-1);
 // Government spending, using EAA_pg = EAA_pht
 EAA_pnt*EAA_cg = EAA_cgy*EAA_pybar*EAA_ybar;
+EAA_pnt*EAA_ig = EAA_igy*EAA_pybar*EAA_ybar;
 EAA_t = 0;
 EAA_b = EAA_bytarget*EAA_pybar*EAA_ybar;
 // Auxiliary equation for steady-state output
@@ -3854,7 +3890,7 @@ EAA_u*EAA_k = EAA_kd;
 // Wedge between aggregate demand and production, using EAA_x = EAB_size/EAA_size*EAB_im
 EAA_ysn = EAA_snt*EAA_nt;
 //  nontradables aggregate demand
-EAA_nt =  EAA_nti+EAA_ntc+EAA_cg;
+EAA_nt =  EAA_nti+EAA_ntc+EAA_cg+EAA_ig;
 // Aggregate demand for domestic intermediate goods, using EAA_hg = EAA_cg
 EAA_ht = EAA_htc+EAA_hti;
 // Price dispersion in the domestic markets
@@ -3877,7 +3913,7 @@ EAA_qi = EAA_i+EAA_k*EAA_gammau;
 // Resource constraint
 //-------------
 // Aggregate nominal demand, using EAA_pg = EAA_pht and EAA_qg = EAA_cg   
-EAA_py*EAA_y = EAA_qc+EAA_pi*EAA_qi+EAA_pnt*EAA_cg
+EAA_py*EAA_y = EAA_qc+EAA_pi*EAA_qi+EAA_pnt*EAA_cg+EAA_pnt*EAA_ig
 +EAAEAB_rer*EABEAA_pim*EAB_size/EAA_size*EABEAA_im
 -EAAEAB_pim*EAAEAB_imc
 -EAAEAB_pim*EAAEAB_imi
@@ -3909,6 +3945,7 @@ log(EAA_zt) = (1-EAA_rhozt)*log(EAA_ztbar)+EAA_rhozt*log(EAA_zt(-1))+EAA_epszt;
 log(EAA_zn) = (1-EAA_rhozn)*log(EAA_znbar)+EAA_rhozn*log(EAA_zn(-1))+EAA_epszn;
 // Government spending shock
 EAA_cgy = (1-EAA_rhocg)*EAA_cgybar+EAA_rhocg*EAA_cgy(-1)+EAA_epsgc;
+EAA_igy = (1-EAA_rhoig)*EAA_igybar+EAA_rhoig*EAA_igy(-1)+EAA_epsgi;
 // Transfer shock
 EAA_try = (1-EAA_rhotr)*EAA_trybar+EAA_rhotr*EAA_try(-1)+EAA_epstr;
 // Consumption tax shock
@@ -4791,10 +4828,11 @@ EAB_ex =
 // Fiscal authority
 //-------------
 // Government budget constraint, using EAB_pg = EAB_pht
-	EAB_pnt(-1)*EAB_cg(-1)+EAB_tr(-1)
+	EAB_pnt(-1)*EAB_cg(-1)+EAB_pnt(-1)*EAB_ig(-1)+EAB_tr(-1)
 	+EAB_b(-1)*EAB_pic(-1)^(-1)+EAB_m(-2)*EAB_pic(-1)^(-1) = EAB_tauc(-1)*EAB_c(-1)+(EAB_taun(-1)+EAB_tauwh(-1))*(EAB_wi(-1)*EAB_ndi(-1)+EAB_wj(-1)*EAB_ndj(-1))+EAB_tauwf(-1)*EAB_w(-1)*EAB_nd(-1)+EAB_tauk(-1)*(EAB_rk(-1)*EAB_u(-1)-(EAB_gammau(-1)+EAB_delta)*EAB_pi(-1))*EAB_k(-1)+EAB_taud(-1)*EAB_d(-1)+EAB_t(-1)+(EAB_r(-1)*(1-EAB_gammab(-1)))^(-1)*EAB_b+EAB_m(-1);
 // Government spending, using EAB_pg = EAB_pht
 EAB_pnt*EAB_cg = EAB_cgy*EAB_pybar*EAB_ybar;
+EAB_pnt*EAB_ig = EAB_igy*EAB_pybar*EAB_ybar;
 EAB_t = 0;
 EAB_b = EAB_bytarget*EAB_pybar*EAB_ybar;
 // Auxiliary equation for steady-state output
@@ -4877,7 +4915,7 @@ EAB_u*EAB_k = EAB_kd;
 // Wedge between aggregate demand and production, using EAB_x = EAC_size/EAB_size*EAC_im
 EAB_ysn = EAB_snt*EAB_nt;
 //  nontradables aggregate demand
-EAB_nt =  EAB_nti+EAB_ntc+EAB_cg;
+EAB_nt =  EAB_nti+EAB_ntc+EAB_cg+EAB_ig;
 // Aggregate demand for domestic intermediate goods, using EAB_hg = EAB_cg
 EAB_ht = EAB_htc+EAB_hti;
 // Price dispersion in the domestic markets
@@ -4900,7 +4938,7 @@ EAB_qi = EAB_i+EAB_k*EAB_gammau;
 // Resource constraint
 //-------------
 // Aggregate nominal demand, using EAB_pg = EAB_pht and EAB_qg = EAB_cg   
-EAB_py*EAB_y = EAB_qc+EAB_pi*EAB_qi+EAB_pnt*EAB_cg
+EAB_py*EAB_y = EAB_qc+EAB_pi*EAB_qi+EAB_pnt*EAB_cg+EAB_pnt*EAB_ig
 +EABEAA_rer*EAAEAB_pim*EAA_size/EAB_size*EAAEAB_im
 -EABEAA_pim*EABEAA_imc
 -EABEAA_pim*EABEAA_imi
@@ -4932,6 +4970,7 @@ log(EAB_zt) = (1-EAB_rhozt)*log(EAB_ztbar)+EAB_rhozt*log(EAB_zt(-1))+EAB_epszt;
 log(EAB_zn) = (1-EAB_rhozn)*log(EAB_znbar)+EAB_rhozn*log(EAB_zn(-1))+EAB_epszn;
 // Government spending shock
 EAB_cgy = (1-EAB_rhocg)*EAB_cgybar+EAB_rhocg*EAB_cgy(-1)+EAB_epsgc;
+EAB_igy = (1-EAB_rhoig)*EAB_igybar+EAB_rhoig*EAB_igy(-1)+EAB_epsgi;
 // Transfer shock
 EAB_try = (1-EAB_rhotr)*EAB_trybar+EAB_rhotr*EAB_try(-1)+EAB_epstr;
 // Consumption tax shock
@@ -5814,10 +5853,11 @@ EAC_ex =
 // Fiscal authority
 //-------------
 // Government budget constraint, using EAC_pg = EAC_pht
-	EAC_pnt(-1)*EAC_cg(-1)+EAC_tr(-1)
+	EAC_pnt(-1)*EAC_cg(-1)+EAC_pnt(-1)*EAC_ig(-1)+EAC_tr(-1)
 	+EAC_b(-1)*EAC_pic(-1)^(-1)+EAC_m(-2)*EAC_pic(-1)^(-1) = EAC_tauc(-1)*EAC_c(-1)+(EAC_taun(-1)+EAC_tauwh(-1))*(EAC_wi(-1)*EAC_ndi(-1)+EAC_wj(-1)*EAC_ndj(-1))+EAC_tauwf(-1)*EAC_w(-1)*EAC_nd(-1)+EAC_tauk(-1)*(EAC_rk(-1)*EAC_u(-1)-(EAC_gammau(-1)+EAC_delta)*EAC_pi(-1))*EAC_k(-1)+EAC_taud(-1)*EAC_d(-1)+EAC_t(-1)+(EAC_r(-1)*(1-EAC_gammab(-1)))^(-1)*EAC_b+EAC_m(-1);
 // Government spending, using EAC_pg = EAC_pht
 EAC_pnt*EAC_cg = EAC_cgy*EAC_pybar*EAC_ybar;
+EAC_pnt*EAC_ig = EAC_igy*EAC_pybar*EAC_ybar;
 EAC_t = 0;
 EAC_b = EAC_bytarget*EAC_pybar*EAC_ybar;
 // Auxiliary equation for steady-state output
@@ -5903,7 +5943,7 @@ EAC_u*EAC_k = EAC_kd;
 // Wedge between aggregate demand and production, using EAC_x = EAD_size/EAC_size*EAD_im
 EAC_ysn = EAC_snt*EAC_nt;
 //  nontradables aggregate demand
-EAC_nt =  EAC_nti+EAC_ntc+EAC_cg;
+EAC_nt =  EAC_nti+EAC_ntc+EAC_cg+EAC_ig;
 // Aggregate demand for domestic intermediate goods, using EAC_hg = EAC_cg
 EAC_ht = EAC_htc+EAC_hti;
 // Price dispersion in the domestic markets
@@ -5926,7 +5966,7 @@ EAC_qi = EAC_i+EAC_k*EAC_gammau;
 // Resource constraint
 //-------------
 // Aggregate nominal demand, using EAC_pg = EAC_pht and EAC_qg = EAC_cg   
-EAC_py*EAC_y = EAC_qc+EAC_pi*EAC_qi+EAC_pnt*EAC_cg
+EAC_py*EAC_y = EAC_qc+EAC_pi*EAC_qi+EAC_pnt*EAC_cg+EAC_pnt*EAC_ig
 +EACEAA_rer*EAAEAC_pim*EAA_size/EAC_size*EAAEAC_im
 -EACEAA_pim*EACEAA_imc
 -EACEAA_pim*EACEAA_imi
@@ -5958,6 +5998,7 @@ log(EAC_zt) = (1-EAC_rhozt)*log(EAC_ztbar)+EAC_rhozt*log(EAC_zt(-1))+EAC_epszt;
 log(EAC_zn) = (1-EAC_rhozn)*log(EAC_znbar)+EAC_rhozn*log(EAC_zn(-1))+EAC_epszn;
 // Government spending shock
 EAC_cgy = (1-EAC_rhocg)*EAC_cgybar+EAC_rhocg*EAC_cgy(-1)+EAC_epsgc;
+EAC_igy = (1-EAC_rhoig)*EAC_igybar+EAC_rhoig*EAC_igy(-1)+EAC_epsgi;
 // Transfer shock
 EAC_try = (1-EAC_rhotr)*EAC_trybar+EAC_rhotr*EAC_try(-1)+EAC_epstr;
 // Consumption tax shock
@@ -6840,10 +6881,11 @@ EAD_ex =
 // Fiscal authority
 //-------------
 // Government budget constraint, using EAD_pg = EAD_pht
-	EAD_pnt(-1)*EAD_cg(-1)+EAD_tr(-1)
+	EAD_pnt(-1)*EAD_cg(-1)+EAD_pnt(-1)*EAD_ig(-1)+EAD_tr(-1)
 	+EAD_b(-1)*EAD_pic(-1)^(-1)+EAD_m(-2)*EAD_pic(-1)^(-1) = EAD_tauc(-1)*EAD_c(-1)+(EAD_taun(-1)+EAD_tauwh(-1))*(EAD_wi(-1)*EAD_ndi(-1)+EAD_wj(-1)*EAD_ndj(-1))+EAD_tauwf(-1)*EAD_w(-1)*EAD_nd(-1)+EAD_tauk(-1)*(EAD_rk(-1)*EAD_u(-1)-(EAD_gammau(-1)+EAD_delta)*EAD_pi(-1))*EAD_k(-1)+EAD_taud(-1)*EAD_d(-1)+EAD_t(-1)+(EAD_r(-1)*(1-EAD_gammab(-1)))^(-1)*EAD_b+EAD_m(-1);
 // Government spending, using EAD_pg = EAD_pht
 EAD_pnt*EAD_cg = EAD_cgy*EAD_pybar*EAD_ybar;
+EAD_pnt*EAD_ig = EAD_igy*EAD_pybar*EAD_ybar;
 EAD_t = 0;
 EAD_b = EAD_bytarget*EAD_pybar*EAD_ybar;
 // Auxiliary equation for steady-state output
@@ -6929,7 +6971,7 @@ EAD_u*EAD_k = EAD_kd;
 // Wedge between aggregate demand and production, using EAD_x = EAE_size/EAD_size*EAE_im
 EAD_ysn = EAD_snt*EAD_nt;
 //  nontradables aggregate demand
-EAD_nt =  EAD_nti+EAD_ntc+EAD_cg;
+EAD_nt =  EAD_nti+EAD_ntc+EAD_cg+EAD_ig;
 // Aggregate demand for domestic intermediate goods, using EAD_hg = EAD_cg
 EAD_ht = EAD_htc+EAD_hti;
 // Price dispersion in the domestic markets
@@ -6952,7 +6994,7 @@ EAD_qi = EAD_i+EAD_k*EAD_gammau;
 // Resource constraint
 //-------------
 // Aggregate nominal demand, using EAD_pg = EAD_pht and EAD_qg = EAD_cg   
-EAD_py*EAD_y = EAD_qc+EAD_pi*EAD_qi+EAD_pnt*EAD_cg
+EAD_py*EAD_y = EAD_qc+EAD_pi*EAD_qi+EAD_pnt*EAD_cg+EAD_pnt*EAD_ig
 +EADEAA_rer*EAAEAD_pim*EAA_size/EAD_size*EAAEAD_im
 -EADEAA_pim*EADEAA_imc
 -EADEAA_pim*EADEAA_imi
@@ -6984,6 +7026,7 @@ log(EAD_zt) = (1-EAD_rhozt)*log(EAD_ztbar)+EAD_rhozt*log(EAD_zt(-1))+EAD_epszt;
 log(EAD_zn) = (1-EAD_rhozn)*log(EAD_znbar)+EAD_rhozn*log(EAD_zn(-1))+EAD_epszn;
 // Government spending shock
 EAD_cgy = (1-EAD_rhocg)*EAD_cgybar+EAD_rhocg*EAD_cgy(-1)+EAD_epsgc;
+EAD_igy = (1-EAD_rhoig)*EAD_igybar+EAD_rhoig*EAD_igy(-1)+EAD_epsgi;
 // Transfer shock
 EAD_try = (1-EAD_rhotr)*EAD_trybar+EAD_rhotr*EAD_try(-1)+EAD_epstr;
 // Consumption tax shock
@@ -7866,10 +7909,11 @@ EAE_ex =
 // Fiscal authority
 //-------------
 // Government budget constraint, using EAE_pg = EAE_pht
-	EAE_pnt(-1)*EAE_cg(-1)+EAE_tr(-1)
+	EAE_pnt(-1)*EAE_cg(-1)+EAE_pnt(-1)*EAE_ig(-1)+EAE_tr(-1)
 	+EAE_b(-1)*EAE_pic(-1)^(-1)+EAE_m(-2)*EAE_pic(-1)^(-1) = EAE_tauc(-1)*EAE_c(-1)+(EAE_taun(-1)+EAE_tauwh(-1))*(EAE_wi(-1)*EAE_ndi(-1)+EAE_wj(-1)*EAE_ndj(-1))+EAE_tauwf(-1)*EAE_w(-1)*EAE_nd(-1)+EAE_tauk(-1)*(EAE_rk(-1)*EAE_u(-1)-(EAE_gammau(-1)+EAE_delta)*EAE_pi(-1))*EAE_k(-1)+EAE_taud(-1)*EAE_d(-1)+EAE_t(-1)+(EAE_r(-1)*(1-EAE_gammab(-1)))^(-1)*EAE_b+EAE_m(-1);
 // Government spending, using EAE_pg = EAE_pht
 EAE_pnt*EAE_cg = EAE_cgy*EAE_pybar*EAE_ybar;
+EAE_pnt*EAE_ig = EAE_igy*EAE_pybar*EAE_ybar;
 EAE_t = 0;
 EAE_b = EAE_bytarget*EAE_pybar*EAE_ybar;
 // Auxiliary equation for steady-state output
@@ -7950,7 +7994,7 @@ EAE_u*EAE_k = EAE_kd;
 // Wedge between aggregate demand and production, using EAE_x = RW_size/EAE_size*RW_im
 EAE_ysn = EAE_snt*EAE_nt;
 //  nontradables aggregate demand
-EAE_nt =  EAE_nti+EAE_ntc+EAE_cg;
+EAE_nt =  EAE_nti+EAE_ntc+EAE_cg+EAE_ig;
 // Aggregate demand for domestic intermediate goods, using EAE_hg = EAE_cg
 EAE_ht = EAE_htc+EAE_hti;
 // Price dispersion in the domestic markets
@@ -7973,7 +8017,7 @@ EAE_qi = EAE_i+EAE_k*EAE_gammau;
 // Resource constraint
 //-------------
 // Aggregate nominal demand, using EAE_pg = EAE_pht and EAE_qg = EAE_cg   
-EAE_py*EAE_y = EAE_qc+EAE_pi*EAE_qi+EAE_pnt*EAE_cg
+EAE_py*EAE_y = EAE_qc+EAE_pi*EAE_qi+EAE_pnt*EAE_cg+EAE_pnt*EAE_ig
 +EAEEAA_rer*EAAEAE_pim*EAA_size/EAE_size*EAAEAE_im
 -EAEEAA_pim*EAEEAA_imc
 -EAEEAA_pim*EAEEAA_imi
@@ -8005,6 +8049,7 @@ log(EAE_zt) = (1-EAE_rhozt)*log(EAE_ztbar)+EAE_rhozt*log(EAE_zt(-1))+EAE_epszt;
 log(EAE_zn) = (1-EAE_rhozn)*log(EAE_znbar)+EAE_rhozn*log(EAE_zn(-1))+EAE_epszn;
 // Government spending shock
 EAE_cgy = (1-EAE_rhocg)*EAE_cgybar+EAE_rhocg*EAE_cgy(-1)+EAE_epsgc;
+EAE_igy = (1-EAE_rhoig)*EAE_igybar+EAE_rhoig*EAE_igy(-1)+EAE_epsgi;
 // Transfer shock
 EAE_try = (1-EAE_rhotr)*EAE_trybar+EAE_rhotr*EAE_try(-1)+EAE_epstr;
 // Consumption tax shock
@@ -8887,10 +8932,11 @@ RW_ex =
 // Fiscal authority
 //-------------
 // Government budget constraint, using RW_pg = RW_pht
-	RW_pnt(-1)*RW_cg(-1)+RW_tr(-1)
+	RW_pnt(-1)*RW_cg(-1)+RW_pnt(-1)*RW_ig(-1)+RW_tr(-1)
 	+RW_b(-1)*RW_pic(-1)^(-1)+RW_m(-2)*RW_pic(-1)^(-1) = RW_tauc(-1)*RW_c(-1)+(RW_taun(-1)+RW_tauwh(-1))*(RW_wi(-1)*RW_ndi(-1)+RW_wj(-1)*RW_ndj(-1))+RW_tauwf(-1)*RW_w(-1)*RW_nd(-1)+RW_tauk(-1)*(RW_rk(-1)*RW_u(-1)-(RW_gammau(-1)+RW_delta)*RW_pi(-1))*RW_k(-1)+RW_taud(-1)*RW_d(-1)+RW_t(-1)+(RW_r(-1))^(-1)*RW_b+RW_m(-1);
 // Government spending, using RW_pg = RW_pht
 RW_pnt*RW_cg = RW_cgy*RW_pybar*RW_ybar;
+RW_pnt*RW_ig = RW_igy*RW_pybar*RW_ybar;
 RW_t = 0;
 RW_b = RW_bytarget*RW_pybar*RW_ybar;
 // Auxiliary equation for steady-state output
@@ -8971,7 +9017,7 @@ RW_u*RW_k = RW_kd;
 // Wedge between aggregate demand and production, using RW_x = US_size/RW_size*US_im
 RW_ysn = RW_snt*RW_nt;
 //  nontradables aggregate demand
-RW_nt =  RW_nti+RW_ntc+RW_cg;
+RW_nt =  RW_nti+RW_ntc+RW_cg+RW_ig;
 // Aggregate demand for domestic intermediate goods, using RW_hg = RW_cg
 RW_ht = RW_htc+RW_hti;
 // Price dispersion in the domestic markets
@@ -8994,7 +9040,7 @@ RW_qi = RW_i+RW_k*RW_gammau;
 // Resource constraint
 //-------------
 // Aggregate nominal demand, using RW_pg = RW_pht and RW_qg = RW_cg   
-RW_py*RW_y = RW_qc+RW_pi*RW_qi+RW_pnt*RW_cg
+RW_py*RW_y = RW_qc+RW_pi*RW_qi+RW_pnt*RW_cg+RW_pnt*RW_ig
 +RWEAA_rer*EAARW_pim*EAA_size/RW_size*EAARW_im
 -RWEAA_pim*RWEAA_imc
 -RWEAA_pim*RWEAA_imi
@@ -9026,6 +9072,7 @@ log(RW_zt) = (1-RW_rhozt)*log(RW_ztbar)+RW_rhozt*log(RW_zt(-1))+RW_epszt;
 log(RW_zn) = (1-RW_rhozn)*log(RW_znbar)+RW_rhozn*log(RW_zn(-1))+RW_epszn;
 // Government spending shock
 RW_cgy = (1-RW_rhocg)*RW_cgybar+RW_rhocg*RW_cgy(-1)+RW_epsgc;
+RW_igy = (1-RW_rhoig)*RW_igybar+RW_rhoig*RW_igy(-1)+RW_epsgi;
 // Transfer shock
 RW_try = (1-RW_rhotr)*RW_trybar+RW_rhotr*RW_try(-1)+RW_epstr;
 // Consumption tax shock
@@ -9908,10 +9955,11 @@ US_ex =
 // Fiscal authority
 //-------------
 // Government budget constraint, using US_pg = US_pht
-	US_pnt(-1)*US_cg(-1)+US_tr(-1)
+	US_pnt(-1)*US_cg(-1)+US_pnt(-1)*US_ig(-1)+US_tr(-1)
 	+US_b(-1)*US_pic(-1)^(-1)+US_m(-2)*US_pic(-1)^(-1) = US_tauc(-1)*US_c(-1)+(US_taun(-1)+US_tauwh(-1))*(US_wi(-1)*US_ndi(-1)+US_wj(-1)*US_ndj(-1))+US_tauwf(-1)*US_w(-1)*US_nd(-1)+US_tauk(-1)*(US_rk(-1)*US_u(-1)-(US_gammau(-1)+US_delta)*US_pi(-1))*US_k(-1)+US_taud(-1)*US_d(-1)+US_t(-1)+(US_r(-1))^(-1)*US_b+US_m(-1);
 // Government spending, using US_pg = US_pht
 US_pnt*US_cg = US_cgy*US_pybar*US_ybar;
+US_pnt*US_ig = US_igy*US_pybar*US_ybar;
 US_t = 0;
 US_b = US_bytarget*US_pybar*US_ybar;
 // Auxiliary equation for steady-state output
@@ -9992,7 +10040,7 @@ US_u*US_k = US_kd;
 // Wedge between aggregate demand and production, using US_x = EAA_size/US_size*EAA_im
 US_ysn = US_snt*US_nt;
 //  nontradables aggregate demand
-US_nt =  US_nti+US_ntc+US_cg;
+US_nt =  US_nti+US_ntc+US_cg+US_ig;
 // Aggregate demand for domestic intermediate goods, using US_hg = US_cg
 US_ht = US_htc+US_hti;
 // Price dispersion in the domestic markets
@@ -10015,7 +10063,7 @@ US_qi = US_i+US_k*US_gammau;
 // Resource constraint
 //-------------
 // Aggregate nominal demand, using US_pg = US_pht and US_qg = US_cg   
-US_py*US_y = US_qc+US_pi*US_qi+US_pnt*US_cg
+US_py*US_y = US_qc+US_pi*US_qi+US_pnt*US_cg+US_pnt*US_ig
 +USEAA_rer*EAAUS_pim*EAA_size/US_size*EAAUS_im
 -USEAA_pim*USEAA_imc
 -USEAA_pim*USEAA_imi
@@ -10047,6 +10095,7 @@ log(US_zt) = (1-US_rhozt)*log(US_ztbar)+US_rhozt*log(US_zt(-1))+US_epszt;
 log(US_zn) = (1-US_rhozn)*log(US_znbar)+US_rhozn*log(US_zn(-1))+US_epszn;
 // Government spending shock
 US_cgy = (1-US_rhocg)*US_cgybar+US_rhocg*US_cgy(-1)+US_epsgc;
+US_igy = (1-US_rhoig)*US_igybar+US_rhoig*US_igy(-1)+US_epsgi;
 // Transfer shock
 US_try = (1-US_rhotr)*US_trybar+US_rhotr*US_try(-1)+US_epstr;
 // Consumption tax shock
@@ -10392,6 +10441,7 @@ end;
    EAA_rhoz        = 0.90;
    EAA_rhorp       = 0.90;
    EAA_rhocg        = 0.90;
+   EAA_rhoig        = 0.90;
    EAA_rhotr       = 0.90;
    EAA_rhotauc     = 0.90;
    EAA_rhotauk     = 0.90;
@@ -10484,6 +10534,7 @@ end;
    EAB_rhoz        = 0.90;
    EAB_rhorp       = 0.90;
    EAB_rhocg        = 0.90;
+   EAB_rhoig        = 0.90;
    EAB_rhotr       = 0.90;
    EAB_rhotauc     = 0.90;
    EAB_rhotauk     = 0.90;
@@ -10576,6 +10627,7 @@ end;
    EAC_rhoz        = 0.90;
    EAC_rhorp       = 0.90;
    EAC_rhocg        = 0.90;
+   EAC_rhoig        = 0.90;
    EAC_rhotr       = 0.90;
    EAC_rhotauc     = 0.90;
    EAC_rhotauk     = 0.90;
@@ -10668,6 +10720,7 @@ end;
    EAD_rhoz        = 0.90;
    EAD_rhorp       = 0.90;
    EAD_rhocg        = 0.90;
+   EAD_rhoig        = 0.90;
    EAD_rhotr       = 0.90;
    EAD_rhotauc     = 0.90;
    EAD_rhotauk     = 0.90;
@@ -10760,6 +10813,7 @@ end;
    EAE_rhoz        = 0.90;
    EAE_rhorp       = 0.90;
    EAE_rhocg        = 0.90;
+   EAE_rhoig        = 0.90;
    EAE_rhotr       = 0.90;
    EAE_rhotauc     = 0.90;
    EAE_rhotauk     = 0.90;
@@ -10852,6 +10906,7 @@ end;
    RW_rhoz        = 0.90;
    RW_rhorp       = 0.90;
    RW_rhocg        = 0.90;
+   RW_rhoig        = 0.90;
    RW_rhotr       = 0.90;
    RW_rhotauc     = 0.90;
    RW_rhotauk     = 0.90;
@@ -10942,6 +10997,7 @@ end;
    US_rhoz        = 0.90;
    US_rhorp       = 0.90;
    US_rhocg        = 0.90;
+   US_rhoig        = 0.90;
    US_rhotr       = 0.90;
    US_rhotauc     = 0.90;
    US_rhotauk     = 0.90;
@@ -11070,6 +11126,7 @@ initval;
   EAA_fj = 1.45356923003055E-007;
   EAA_fn = 0.015;
   EAA_cg = 0;
+  EAA_ig = 0;
     EAA_gammab = 0;
   EAA_gammai = 0;
   EAA_gammaider = 0;
@@ -11085,6 +11142,7 @@ initval;
   EAA_gj = 0.735309110981097;
   EAA_gn = 0.18;
   EAA_cgy = 0;
+  EAA_igy = 0;
   EAA_ht = 0.08;
   EAA_htc = 0.08;
   EAA_hti =  0.0005;
@@ -11218,6 +11276,7 @@ initval;
     
   
   EAA_cgybar = 0;
+  EAA_igybar = 0;
   EAA_taucbar = 0;
   EAA_taudbar = 0;
   EAA_taukbar = 0;
@@ -11230,6 +11289,7 @@ initval;
   EAA_znbar = 1;
   EAA_ztbar = 1;
   EAA_epsgc = 0;
+  EAA_epsgi = 0;
   EAA_epstauc = 0;
   EAA_epstaud = 0;
   EAA_epstauk = 0;
@@ -11376,6 +11436,7 @@ initval;
   EAB_fj = 1.45356923003055E-007;
   EAB_fn = 0.015;
   EAB_cg = 0;
+  EAB_ig = 0;
     EAB_gammab = 0;
   EAB_gammai = 0;
   EAB_gammaider = 0;
@@ -11391,6 +11452,7 @@ initval;
   EAB_gj = 0.735309110981097;
   EAB_gn = 0.18;
   EAB_cgy = 0;
+  EAB_igy = 0;
   EAB_ht = 0.08;
   EAB_htc = 0.08;
   EAB_hti =  0.0005;
@@ -11524,6 +11586,7 @@ initval;
     
   
   EAB_cgybar = 0;
+  EAB_igybar = 0;
   EAB_taucbar = 0;
   EAB_taudbar = 0;
   EAB_taukbar = 0;
@@ -11536,6 +11599,7 @@ initval;
   EAB_znbar = 1;
   EAB_ztbar = 1;
   EAB_epsgc = 0;
+  EAB_epsgi = 0;
   EAB_epstauc = 0;
   EAB_epstaud = 0;
   EAB_epstauk = 0;
@@ -11682,6 +11746,7 @@ initval;
   EAC_fj = 1.45356923003055E-007;
   EAC_fn = 0.015;
   EAC_cg = 0;
+  EAC_ig = 0;
     EAC_gammab = 0;
   EAC_gammai = 0;
   EAC_gammaider = 0;
@@ -11697,6 +11762,7 @@ initval;
   EAC_gj = 0.735309110981097;
   EAC_gn = 0.18;
   EAC_cgy = 0;
+  EAC_igy = 0;
   EAC_ht = 0.08;
   EAC_htc = 0.08;
   EAC_hti =  0.0005;
@@ -11830,6 +11896,7 @@ initval;
     
   
   EAC_cgybar = 0;
+  EAC_igybar = 0;
   EAC_taucbar = 0;
   EAC_taudbar = 0;
   EAC_taukbar = 0;
@@ -11842,6 +11909,7 @@ initval;
   EAC_znbar = 1;
   EAC_ztbar = 1;
   EAC_epsgc = 0;
+  EAC_epsgi = 0;
   EAC_epstauc = 0;
   EAC_epstaud = 0;
   EAC_epstauk = 0;
@@ -11988,6 +12056,7 @@ initval;
   EAD_fj = 1.45356923003055E-007;
   EAD_fn = 0.015;
   EAD_cg = 0;
+  EAD_ig = 0;
     EAD_gammab = 0;
   EAD_gammai = 0;
   EAD_gammaider = 0;
@@ -12003,6 +12072,7 @@ initval;
   EAD_gj = 0.735309110981097;
   EAD_gn = 0.18;
   EAD_cgy = 0;
+  EAD_igy = 0;
   EAD_ht = 0.08;
   EAD_htc = 0.08;
   EAD_hti =  0.0005;
@@ -12136,6 +12206,7 @@ initval;
     
   
   EAD_cgybar = 0;
+  EAD_igybar = 0;
   EAD_taucbar = 0;
   EAD_taudbar = 0;
   EAD_taukbar = 0;
@@ -12148,6 +12219,7 @@ initval;
   EAD_znbar = 1;
   EAD_ztbar = 1;
   EAD_epsgc = 0;
+  EAD_epsgi = 0;
   EAD_epstauc = 0;
   EAD_epstaud = 0;
   EAD_epstauk = 0;
@@ -12294,6 +12366,7 @@ initval;
   EAE_fj = 1.45356923003055E-007;
   EAE_fn = 0.015;
   EAE_cg = 0;
+  EAE_ig = 0;
     EAE_gammab = 0;
   EAE_gammai = 0;
   EAE_gammaider = 0;
@@ -12309,6 +12382,7 @@ initval;
   EAE_gj = 0.735309110981097;
   EAE_gn = 0.18;
   EAE_cgy = 0;
+  EAE_igy = 0;
   EAE_ht = 0.08;
   EAE_htc = 0.08;
   EAE_hti =  0.0005;
@@ -12442,6 +12516,7 @@ initval;
     
   
   EAE_cgybar = 0;
+  EAE_igybar = 0;
   EAE_taucbar = 0;
   EAE_taudbar = 0;
   EAE_taukbar = 0;
@@ -12454,6 +12529,7 @@ initval;
   EAE_znbar = 1;
   EAE_ztbar = 1;
   EAE_epsgc = 0;
+  EAE_epsgi = 0;
   EAE_epstauc = 0;
   EAE_epstaud = 0;
   EAE_epstauk = 0;
@@ -12600,6 +12676,7 @@ initval;
   RW_fj = 1.45356923003055E-007;
   RW_fn = 0.015;
   RW_cg = 0;
+  RW_ig = 0;
     RW_gammab = 0;
   RW_gammai = 0;
   RW_gammaider = 0;
@@ -12615,6 +12692,7 @@ initval;
   RW_gj = 0.735309110981097;
   RW_gn = 0.18;
   RW_cgy = 0;
+  RW_igy = 0;
   RW_ht = 0.08;
   RW_htc = 0.08;
   RW_hti =  0.0005;
@@ -12748,6 +12826,7 @@ initval;
     
   
   RW_cgybar = 0;
+  RW_igybar = 0;
   RW_taucbar = 0;
   RW_taudbar = 0;
   RW_taukbar = 0;
@@ -12760,6 +12839,7 @@ initval;
   RW_znbar = 1;
   RW_ztbar = 1;
   RW_epsgc = 0;
+  RW_epsgi = 0;
   RW_epstauc = 0;
   RW_epstaud = 0;
   RW_epstauk = 0;
@@ -12906,6 +12986,7 @@ initval;
   US_fj = 1.45356923003055E-007;
   US_fn = 0.015;
   US_cg = 0;
+  US_ig = 0;
   US_gammai = 0;
   US_gammaider = 0;
   US_gammau = 0;
@@ -12920,6 +13001,7 @@ initval;
   US_gj = 0.735309110981097;
   US_gn = 0.18;
   US_cgy = 0;
+  US_igy = 0;
   US_ht = 0.08;
   US_htc = 0.08;
   US_hti =  0.0005;
@@ -13050,6 +13132,7 @@ initval;
     
   
   US_cgybar = 0;
+  US_igybar = 0;
   US_taucbar = 0;
   US_taudbar = 0;
   US_taukbar = 0;
@@ -13062,6 +13145,7 @@ initval;
   US_znbar = 1;
   US_ztbar = 1;
   US_epsgc = 0;
+  US_epsgi = 0;
   US_epstauc = 0;
   US_epstaud = 0;
   US_epstauk = 0;
