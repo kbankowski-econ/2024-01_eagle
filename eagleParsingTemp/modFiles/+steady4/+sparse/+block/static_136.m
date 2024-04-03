@@ -1,7 +1,7 @@
 function [y, T, residual, g1] = static_136(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
 residual=NaN(1, 1);
-  T(32)=params(426)^(-1);
-  residual(1)=(y(2077))-(y(2056)*T(32));
+  T(32)=params(401)^(-1);
+  residual(1)=(y(2042))-(y(2021)*T(32));
 if nargout > 3
     g1_v = NaN(1, 1);
 g1_v(1)=(-T(32));

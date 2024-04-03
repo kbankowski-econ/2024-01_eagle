@@ -166,14 +166,10 @@ var
  EAA_bf
  EAA_by
  EAA_c
- EAA_ccesi
- EAA_ccesj
  EAA_ci
  EAA_cj
  EAA_cy
  EAA_d
- EAA_dcci
- EAA_dccj
  EAA_dn
  EAA_dt
  EAA_epsilonm
@@ -217,7 +213,6 @@ var
  EAA_k
  EAA_kd
  EAA_kdn
- EAA_kg
  EAA_kdt
  EAA_ki
  EAA_lambdai
@@ -325,7 +320,6 @@ var
 // Parameters
 parameters
  EAA_alphan
- EAA_alphag
  EAA_alphat
  EAA_beta
  EAA_bfytarget
@@ -337,7 +331,6 @@ parameters
  EAA_chij
  EAA_chix
  EAA_delta
- EAA_deltag
  EAA_gammab1
  EAA_gammai1
  EAA_gammaimc1
@@ -347,13 +340,11 @@ parameters
  EAA_gammav2
  EAA_kappa
  EAA_muc
- EAA_mucces
  EAA_mui
  EAA_mumc
  EAA_mumi
  EAA_mutc
  EAA_muti
- EAA_nucces
  EAA_nuc
  EAA_nui
  EAA_nutc
@@ -578,14 +569,10 @@ var
  EAB_bf
  EAB_by
  EAB_c
- EAB_ccesi
- EAB_ccesj
  EAB_ci
  EAB_cj
  EAB_cy
  EAB_d
- EAB_dcci
- EAB_dccj
  EAB_dn
  EAB_dt
  EAB_epsilonm
@@ -629,7 +616,6 @@ var
  EAB_k
  EAB_kd
  EAB_kdn
- EAB_kg
  EAB_kdt
  EAB_ki
  EAB_lambdai
@@ -737,7 +723,6 @@ var
 // Parameters
 parameters
  EAB_alphan
- EAB_alphag
  EAB_alphat
  EAB_beta
  EAB_bfytarget
@@ -749,7 +734,6 @@ parameters
  EAB_chij
  EAB_chix
  EAB_delta
- EAB_deltag
  EAB_gammab1
  EAB_gammai1
  EAB_gammaimc1
@@ -759,13 +743,11 @@ parameters
  EAB_gammav2
  EAB_kappa
  EAB_muc
- EAB_mucces
  EAB_mui
  EAB_mumc
  EAB_mumi
  EAB_mutc
  EAB_muti
- EAB_nucces
  EAB_nuc
  EAB_nui
  EAB_nutc
@@ -990,14 +972,10 @@ var
  EAC_bf
  EAC_by
  EAC_c
- EAC_ccesi
- EAC_ccesj
  EAC_ci
  EAC_cj
  EAC_cy
  EAC_d
- EAC_dcci
- EAC_dccj
  EAC_dn
  EAC_dt
  EAC_epsilonm
@@ -1041,7 +1019,6 @@ var
  EAC_k
  EAC_kd
  EAC_kdn
- EAC_kg
  EAC_kdt
  EAC_ki
  EAC_lambdai
@@ -1149,7 +1126,6 @@ var
 // Parameters
 parameters
  EAC_alphan
- EAC_alphag
  EAC_alphat
  EAC_beta
  EAC_bfytarget
@@ -1161,7 +1137,6 @@ parameters
  EAC_chij
  EAC_chix
  EAC_delta
- EAC_deltag
  EAC_gammab1
  EAC_gammai1
  EAC_gammaimc1
@@ -1171,13 +1146,11 @@ parameters
  EAC_gammav2
  EAC_kappa
  EAC_muc
- EAC_mucces
  EAC_mui
  EAC_mumc
  EAC_mumi
  EAC_mutc
  EAC_muti
- EAC_nucces
  EAC_nuc
  EAC_nui
  EAC_nutc
@@ -1402,14 +1375,10 @@ var
  EAD_bf
  EAD_by
  EAD_c
- EAD_ccesi
- EAD_ccesj
  EAD_ci
  EAD_cj
  EAD_cy
  EAD_d
- EAD_dcci
- EAD_dccj
  EAD_dn
  EAD_dt
  EAD_epsilonm
@@ -1453,7 +1422,6 @@ var
  EAD_k
  EAD_kd
  EAD_kdn
- EAD_kg
  EAD_kdt
  EAD_ki
  EAD_lambdai
@@ -1561,7 +1529,6 @@ var
 // Parameters
 parameters
  EAD_alphan
- EAD_alphag
  EAD_alphat
  EAD_beta
  EAD_bfytarget
@@ -1573,7 +1540,6 @@ parameters
  EAD_chij
  EAD_chix
  EAD_delta
- EAD_deltag
  EAD_gammab1
  EAD_gammai1
  EAD_gammaimc1
@@ -1583,13 +1549,11 @@ parameters
  EAD_gammav2
  EAD_kappa
  EAD_muc
- EAD_mucces
  EAD_mui
  EAD_mumc
  EAD_mumi
  EAD_mutc
  EAD_muti
- EAD_nucces
  EAD_nuc
  EAD_nui
  EAD_nutc
@@ -1814,14 +1778,10 @@ var
  EAE_bf
  EAE_by
  EAE_c
- EAE_ccesi
- EAE_ccesj
  EAE_ci
  EAE_cj
  EAE_cy
  EAE_d
- EAE_dcci
- EAE_dccj
  EAE_dn
  EAE_dt
  EAE_epsilonm
@@ -1865,7 +1825,6 @@ var
  EAE_k
  EAE_kd
  EAE_kdn
- EAE_kg
  EAE_kdt
  EAE_ki
  EAE_lambdai
@@ -1973,7 +1932,6 @@ var
 // Parameters
 parameters
  EAE_alphan
- EAE_alphag
  EAE_alphat
  EAE_beta
  EAE_bfytarget
@@ -1985,7 +1943,6 @@ parameters
  EAE_chij
  EAE_chix
  EAE_delta
- EAE_deltag
  EAE_gammab1
  EAE_gammai1
  EAE_gammaimc1
@@ -1995,13 +1952,11 @@ parameters
  EAE_gammav2
  EAE_kappa
  EAE_muc
- EAE_mucces
  EAE_mui
  EAE_mumc
  EAE_mumi
  EAE_mutc
  EAE_muti
- EAE_nucces
  EAE_nuc
  EAE_nui
  EAE_nutc
@@ -2226,14 +2181,10 @@ var
  RW_bf
  RW_by
  RW_c
- RW_ccesi
- RW_ccesj
  RW_ci
  RW_cj
  RW_cy
  RW_d
- RW_dcci
- RW_dccj
  RW_dn
  RW_dt
  RW_epsilonm
@@ -2277,7 +2228,6 @@ var
  RW_k
  RW_kd
  RW_kdn
- RW_kg
  RW_kdt
  RW_ki
  RW_lambdai
@@ -2385,7 +2335,6 @@ var
 // Parameters
 parameters
  RW_alphan
- RW_alphag
  RW_alphat
  RW_beta
  RW_bfytarget
@@ -2397,7 +2346,6 @@ parameters
  RW_chij
  RW_chix
  RW_delta
- RW_deltag
  RW_gammab1
  RW_gammai1
  RW_gammaimc1
@@ -2407,13 +2355,11 @@ parameters
  RW_gammav2
  RW_kappa
  RW_muc
- RW_mucces
  RW_mui
  RW_mumc
  RW_mumi
  RW_mutc
  RW_muti
- RW_nucces
  RW_nuc
  RW_nui
  RW_nutc
@@ -2641,14 +2587,10 @@ var
  US_bf
  US_by
  US_c
- US_ccesi
- US_ccesj
  US_ci
  US_cj
  US_cy
  US_d
- US_dcci
- US_dccj
  US_dn
  US_dt
  US_epsilonm
@@ -2691,7 +2633,6 @@ var
  US_k
  US_kd
  US_kdn
- US_kg
  US_kdt
  US_ki
  US_lambdai
@@ -2796,7 +2737,6 @@ var
 // Parameters
 parameters
  US_alphan
- US_alphag
  US_alphat
  US_beta
  US_bytarget
@@ -2806,7 +2746,6 @@ parameters
  US_chij
  US_chix
  US_delta
- US_deltag
  US_gammai1
  US_gammaimc1
  US_gammaimi1
@@ -2815,13 +2754,11 @@ parameters
  US_gammav2
  US_kappa
  US_muc
- US_mucces
  US_mui
  US_mumc
  US_mumi
  US_mutc
  US_muti
- US_nucces
  US_nuc
  US_nui
  US_nutc
@@ -3105,6 +3042,42 @@ change_type(var)
  US_ybar
  US_ynbar
  US_ytbar
+;
+var 
+        EAA_ccesi EAA_ccesj EAA_dcci EAA_dccj
+        EAB_ccesi EAB_ccesj EAB_dcci EAB_dccj
+        EAC_ccesi EAC_ccesj EAC_dcci EAC_dccj
+        EAD_ccesi EAD_ccesj EAD_dcci EAD_dccj
+        EAE_ccesi EAE_ccesj EAE_dcci EAE_dccj
+        RW_ccesi RW_ccesj RW_dcci RW_dccj
+        US_ccesi US_ccesj US_dcci US_dccj
+;
+parameters 
+        EAA_mucces EAA_nucces
+        EAB_mucces EAB_nucces
+        EAC_mucces EAC_nucces
+        EAD_mucces EAD_nucces
+        EAE_mucces EAE_nucces
+        RW_mucces RW_nucces
+        US_mucces US_nucces
+;
+var 
+        EAA_kg
+        EAB_kg
+        EAC_kg
+        EAD_kg
+        EAE_kg
+        RW_kg
+        US_kg
+;
+parameters 
+        EAA_alphag EAA_deltag
+        EAB_alphag EAB_deltag
+        EAC_alphag EAC_deltag
+        EAD_alphag EAD_deltag
+        EAE_alphag EAE_deltag
+        RW_alphag RW_deltag
+        US_alphag US_deltag
 ;
 model(block, bytecode, cutoff = 0);
 // Core model begins

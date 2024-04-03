@@ -450,7 +450,7 @@ var
         @{co}_ccesi @{co}_ccesj @{co}_dcci @{co}_dccj
     @#endfor
 ;
-params 
+parameters 
     @#for co in countries
         @{co}_mucces @{co}_nucces
     @#endfor
@@ -460,7 +460,7 @@ var
         @{co}_kg
     @#endfor
 ;
-params 
+parameters 
     @#for co in countries
         @{co}_alphag @{co}_deltag
     @#endfor
