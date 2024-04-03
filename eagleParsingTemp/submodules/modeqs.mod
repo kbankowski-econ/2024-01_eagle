@@ -26,17 +26,7 @@ model(block, bytecode, cutoff=0);
 // Household I
 //-------------
 
-// Utility
-@{co}_utili = 
-@#if sigma_equals_one[i]
-@{co}_zcon*log(@{co}_ci-@{co}_kappa*@{co}_ci(-1))-1/(1+@{co}_zeta)*(@{co}_ni)^(1+@{co}_zeta)+@{co}_beta*@{co}_utili(+1)
-@#else
-@{co}_zcon*1/(1-@{co}_sigma)*(@{co}_ci-@{co}_kappa*@{co}_ci(-1))^(1-@{co}_sigma)-1/(1+@{co}_zeta)*(@{co}_ni)^(1+@{co}_zeta)+@{co}_beta*@{co}_utili(+1)
-@#endif
-;
-
-// Marginal utility of consumption
-@{co}_lambdai*(1+@{co}_tauc+@{co}_gammavi+@{co}_vi*@{co}_gammavider) = @{co}_zcon*(@{co}_ci-@{co}_kappa*@{co}_ci(-1))^(-@{co}_sigma);
+@#include "modeqs_hhI.mod"
 
 // Euler equation for government bonds
 @#if co == countries[1] || co == countries[2] || co == countries[3] || co == countries[4]
@@ -128,20 +118,10 @@ model(block, bytecode, cutoff=0);
 // Household J
 //-------------
 
-// Utility
-@{co}_utilj = 
-@#if sigma_equals_one[i]
-@{co}_zcon*log(@{co}_cj-@{co}_kappa*@{co}_cj(-1))-1/(1+@{co}_zeta)*@{co}_nj^(1+@{co}_zeta)+@{co}_beta*@{co}_utilj(+1)
-@#else
-@{co}_zcon*1/(1-@{co}_sigma)*(@{co}_cj-@{co}_kappa*@{co}_cj(-1))^(1-@{co}_sigma)-1/(1+@{co}_zeta)*@{co}_nj^(1+@{co}_zeta)+@{co}_beta*@{co}_utilj(+1)
-@#endif
-;
+@#include "modeqs_hhJ.mod"
 
 // Budget constraint
 (1+@{co}_tauc+@{co}_gammavj)*@{co}_cj+@{co}_mj = (1-@{co}_taun-@{co}_tauwh)*@{co}_wj*@{co}_nj+@{co}_trj-@{co}_tj+@{co}_mj(-1)*@{co}_pic^(-1);
-
-// Marginal utility of consumption
-@{co}_lambdaj*(1+@{co}_tauc+@{co}_gammavj+@{co}_vj*@{co}_gammavjder) = @{co}_zcon*(@{co}_cj-@{co}_kappa*@{co}_cj(-1))^(-@{co}_sigma);
 
 // Euler equation for money
 @{co}_vj^(2)*@{co}_gammavjder = 1-@{co}_beta*@{co}_lambdaj(+1)/(@{co}_lambdaj*@{co}_pic(+1));
@@ -178,35 +158,7 @@ model(block, bytecode, cutoff=0);
 // Intermediate-good firms
 //-------------
 
-@#if co != countries[1] && co != countries[2] && co != countries[3] && co != countries[4] && co != countries[5]
-
-// Production function tradable
-@{co}_yst = @{co}_zt*@{co}_kdt^@{co}_alphat*@{co}_ndt^(1-@{co}_alphat)-@{co}_psitbar;
-
-// Production function nontradable
-@{co}_ysn = @{co}_zn*@{co}_kdn^@{co}_alphan*@{co}_ndn^(1-@{co}_alphan)-@{co}_psinbar;
-
-// Real marginal cost tradable
-@{co}_mct = 1/(@{co}_zt*(@{co}_alphat)^(@{co}_alphat)*(1-@{co}_alphat)^(1-@{co}_alphat))*@{co}_rk^(@{co}_alphat)*((1+@{co}_tauwf)*@{co}_w)^(1-@{co}_alphat);
-
-// Real marginal cost nontradable
-@{co}_mcn = 1/(@{co}_zn*(@{co}_alphan)^(@{co}_alphan)*(1-@{co}_alphan)^(1-@{co}_alphan))*@{co}_rk^(@{co}_alphan)*((1+@{co}_tauwf)*@{co}_w)^(1-@{co}_alphan);
-
-@#else // co != countries[1] && co != countries[2]
-
-// Production function tradable
-@{co}_yst = @{ea}_z*@{co}_zt*@{co}_kdt^@{co}_alphat*@{co}_ndt^(1-@{co}_alphat)-@{co}_psitbar;
-
-// Production function nontradable
-@{co}_ysn = @{ea}_z*@{co}_zn*@{co}_kdn^@{co}_alphan*@{co}_ndn^(1-@{co}_alphan)-@{co}_psinbar;
-
-// Real marginal cost tradable
-@{co}_mct = 1/(@{ea}_z*@{co}_zt*(@{co}_alphat)^(@{co}_alphat)*(1-@{co}_alphat)^(1-@{co}_alphat))*@{co}_rk^(@{co}_alphat)*((1+@{co}_tauwf)*@{co}_w)^(1-@{co}_alphat);
-
-// Real marginal cost nontradable
-@{co}_mcn = 1/(@{ea}_z*@{co}_zn*(@{co}_alphan)^(@{co}_alphan)*(1-@{co}_alphan)^(1-@{co}_alphan))*@{co}_rk^(@{co}_alphan)*((1+@{co}_tauwf)*@{co}_w)^(1-@{co}_alphan);
-
-@#endif // co != countries[1] && co != countries[2]
+@#include "modeqs_Prod.mod"
 
 // Wage Inflation (qoq)
 @{co}_piw = @{co}_w/@{co}_w(-1)*@{co}_pic;
