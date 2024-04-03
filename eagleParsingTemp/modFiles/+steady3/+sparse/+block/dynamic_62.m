@@ -1,5 +1,5 @@
 function [y, T] = dynamic_62(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(3587)=(-0.125)/(y(3671)*(y(3671)+y(3671)*params(288)-1));
-  y(3965)=y(3954);
-  y(2450)=y(2439);
+  y(3609)=(-0.125)/(y(3695)*(y(3695)+y(3695)*params(292)-1));
+  y(3991)=y(3980);
+  y(2466)=y(2455);
 end

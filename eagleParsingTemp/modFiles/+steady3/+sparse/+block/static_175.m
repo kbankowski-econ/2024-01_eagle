@@ -1,13 +1,22 @@
-function [y, T, residual, g1] = static_175(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-residual=NaN(1, 1);
-  residual(1)=(params(456)*y(1960))-(y(142)*(-params(58))-params(124)*y(445)-params(190)*y(748)-params(256)*y(1051));
-if nargout > 3
-    g1_v = NaN(1, 1);
-g1_v(1)=params(456);
-    if ~isoctave && matlab_ver_less_than('9.8')
-        sparse_rowval = double(sparse_rowval);
-        sparse_colval = double(sparse_colval);
-    end
-    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
-end
+function [y, T] = static_175(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
+  y(429)=T(1256)*y(441)+T(1257)*y(435);
+  y(2131)=y(2048);
+  T(1283)=y(1709)*y(1752)/(y(1709)*y(1752)+y(1741)*y(1682));
+  T(1284)=y(1741)*y(1682)/(y(1709)*y(1752)+y(1741)*y(1682));
+  y(1653)=T(1283)*y(1665)+T(1284)*y(1659);
+  y(1652)=T(1283)*y(1664)+T(1284)*y(1658);
+  y(1651)=T(1283)*y(1663)+T(1284)*y(1657);
+  y(1650)=T(1283)*y(1662)+T(1284)*y(1656);
+  y(1649)=T(1283)*y(1661)+T(1284)*y(1655);
+  y(1648)=y(1660)*T(1283)+y(1654)*T(1284);
+  y(1647)=y(1623)/(y(1928)*y(1635));
+  y(1646)=y(1622)/(y(1317)*y(1634));
+  y(1645)=y(1621)/(y(1012)*y(1633));
+  y(153)=y(293)*y(233)-y(245)*y(195)-y(209)*(1+y(258))*y(277);
+  y(1644)=y(1620)/(y(707)*y(1632));
+  y(472)=((params(84)+T(33)-1)*y(614)-params(84)*x(34)*y(610))/(y(610)*(1-x(34)));
+  y(1643)=y(1619)/(y(402)*y(1631));
+  y(154)=y(217)*y(178)+y(398)*y(105)*(y(368)+y(380))*params(126)/params(59)+y(703)*y(106)*(y(673)+y(685))*params(193)/params(59)+y(1008)*y(107)*(y(978)+y(990))*params(260)/params(59)+y(1313)*y(108)*(y(1283)+y(1295))*params(327)/params(59)+y(1618)*y(109)*(y(1588)+y(1600))*params(397)/params(59)+y(1923)*y(110)*(y(1893)+y(1905))*params(463)/params(59)-y(245)*y(196)-y(210)*(1+y(258))*y(277);
+  y(1642)=y(1618)/(y(97)*y(1630));
+  y(2087)=y(1587)*params(397)*y(1623)*y(1940)/params(463)+y(1282)*params(327)*y(1318)*y(1939)/params(463)+y(977)*params(260)*y(1013)*y(1938)/params(463)+y(672)*params(193)*y(708)*y(1937)/params(463)+y(367)*params(126)*y(403)*y(1936)/params(463)+y(62)*params(59)*y(98)*y(1935)/params(463)-y(1923)*y(1887)-y(1888)*y(1924)-y(1889)*y(1925)-y(1890)*y(1926)-y(1891)*y(1927)-y(1892)*y(1928);
 end
