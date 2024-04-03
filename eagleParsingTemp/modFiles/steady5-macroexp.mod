@@ -425,7 +425,6 @@ varexo
  EAA_znbar
  EAA_ztbar
  EAA_cpim
-// TODO: change below to epsgc 
  EAA_epsgc
  EAA_epsgi
  EAA_epstauc
@@ -838,7 +837,6 @@ varexo
  EAB_znbar
  EAB_ztbar
  EAB_cpim
-// TODO: change below to epsgc 
  EAB_epsgc
  EAB_epsgi
  EAB_epstauc
@@ -1251,7 +1249,6 @@ varexo
  EAC_znbar
  EAC_ztbar
  EAC_cpim
-// TODO: change below to epsgc 
  EAC_epsgc
  EAC_epsgi
  EAC_epstauc
@@ -1664,7 +1661,6 @@ varexo
  EAD_znbar
  EAD_ztbar
  EAD_cpim
-// TODO: change below to epsgc 
  EAD_epsgc
  EAD_epsgi
  EAD_epstauc
@@ -2077,7 +2073,6 @@ varexo
  EAE_znbar
  EAE_ztbar
  EAE_cpim
-// TODO: change below to epsgc 
  EAE_epsgc
  EAE_epsgi
  EAE_epstauc
@@ -2493,7 +2488,6 @@ varexo
  RW_znbar
  RW_ztbar
  RW_cpim
-// TODO: change below to epsgc 
  RW_epsgc
  RW_epsgi
  RW_epstauc
@@ -2901,7 +2895,6 @@ varexo
  US_znbar
  US_ztbar
  US_cpim
-// TODO: change below to epsgc 
  US_epsgc
  US_epsgi
  US_epstauc
