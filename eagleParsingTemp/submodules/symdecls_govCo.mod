@@ -141,6 +141,7 @@ var
  @{co}_htc
  @{co}_hti
  @{co}_i
+ @{co}_ig
  @{co}_ii
  @{co}_im
  @{co}_imc
@@ -150,6 +151,7 @@ var
  @{co}_imy
  @{co}_internalrer
  @{co}_iy
+ @{co}_igy
  @{co}_k
  @{co}_kd
  @{co}_kdn
@@ -313,6 +315,7 @@ parameters
  @{co}_psin
  @{co}_psit
  @{co}_rhocg
+ @{co}_rhoig
 @# if co != countries[7]
  @{co}_rhorp
 @# endif
@@ -360,6 +363,7 @@ parameters
 // Exogenous
 varexo
  @{co}_cgybar
+ @{co}_igybar
  @{co}_taucbar
  @{co}_taudbar
  @{co}_taukbar
@@ -374,6 +378,7 @@ varexo
 
  @{co}_cpim
  @{co}_epsgc
+ @{co}_epsgi
 @# if co != countries[1] && co != countries[2] && co != countries[3] && co != countries[4] && co != countries[5]
     @# if !steady
         @{co}_epsr

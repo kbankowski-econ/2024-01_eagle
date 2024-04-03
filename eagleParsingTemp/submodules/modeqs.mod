@@ -681,18 +681,19 @@ model(block, bytecode, cutoff=0);
 
 @#if co == countries[1] || co == countries[2] || co == countries[3]  || co == countries[4]  || co == countries[5] 
 
-	@{co}_pnt(-1)*@{co}_cg(-1)+@{co}_tr(-1)
+	@{co}_pnt(-1)*@{co}_cg(-1)+@{co}_pnt(-1)*@{co}_ig(-1)+@{co}_tr(-1)
 	+@{co}_b(-1)*@{co}_pic(-1)^(-1)+@{co}_m(-2)*@{co}_pic(-1)^(-1) = @{co}_tauc(-1)*@{co}_c(-1)+(@{co}_taun(-1)+@{co}_tauwh(-1))*(@{co}_wi(-1)*@{co}_ndi(-1)+@{co}_wj(-1)*@{co}_ndj(-1))+@{co}_tauwf(-1)*@{co}_w(-1)*@{co}_nd(-1)+@{co}_tauk(-1)*(@{co}_rk(-1)*@{co}_u(-1)-(@{co}_gammau(-1)+@{co}_delta)*@{co}_pi(-1))*@{co}_k(-1)+@{co}_taud(-1)*@{co}_d(-1)+@{co}_t(-1)+(@{co}_r(-1)*(1-@{co}_gammab(-1)))^(-1)*@{co}_b+@{co}_m(-1);
 
 @#else
 
-	@{co}_pnt(-1)*@{co}_cg(-1)+@{co}_tr(-1)
+	@{co}_pnt(-1)*@{co}_cg(-1)+@{co}_pnt(-1)*@{co}_ig(-1)+@{co}_tr(-1)
 	+@{co}_b(-1)*@{co}_pic(-1)^(-1)+@{co}_m(-2)*@{co}_pic(-1)^(-1) = @{co}_tauc(-1)*@{co}_c(-1)+(@{co}_taun(-1)+@{co}_tauwh(-1))*(@{co}_wi(-1)*@{co}_ndi(-1)+@{co}_wj(-1)*@{co}_ndj(-1))+@{co}_tauwf(-1)*@{co}_w(-1)*@{co}_nd(-1)+@{co}_tauk(-1)*(@{co}_rk(-1)*@{co}_u(-1)-(@{co}_gammau(-1)+@{co}_delta)*@{co}_pi(-1))*@{co}_k(-1)+@{co}_taud(-1)*@{co}_d(-1)+@{co}_t(-1)+(@{co}_r(-1))^(-1)*@{co}_b+@{co}_m(-1);
 
 @#endif
 
 // Government spending, using @{co}_pg = @{co}_pht
 @{co}_pnt*@{co}_cg = @{co}_cgy*@{co}_pybar*@{co}_ybar;
+@{co}_pnt*@{co}_ig = @{co}_igy*@{co}_pybar*@{co}_ybar;
 
 @#if !steady
 
@@ -909,7 +910,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 @{co}_ysn = @{co}_snt*@{co}_nt;
 
 //  nontradables aggregate demand
-@{co}_nt =  @{co}_nti+@{co}_ntc+@{co}_cg;
+@{co}_nt =  @{co}_nti+@{co}_ntc+@{co}_cg+@{co}_ig;
 
 // Aggregate demand for domestic intermediate goods, using @{co}_hg = @{co}_cg
 @{co}_ht = @{co}_htc+@{co}_hti;
@@ -938,7 +939,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 
 // Aggregate nominal demand, using @{co}_pg = @{co}_pht and @{co}_qg = @{co}_cg   
-@{co}_py*@{co}_y = @{co}_qc+@{co}_pi*@{co}_qi+@{co}_pnt*@{co}_cg
+@{co}_py*@{co}_y = @{co}_qc+@{co}_pi*@{co}_qi+@{co}_pnt*@{co}_cg+@{co}_pnt*@{co}_ig
 @#for it in countries - [ co ]
 +@{co}@{it}_rer*@{it}@{co}_pim*@{it}_size/@{co}_size*@{it}@{co}_im
 @#if !steady
@@ -967,6 +968,7 @@ log(@{co}_zn) = (1-@{co}_rhozn)*log(@{co}_znbar)+@{co}_rhozn*log(@{co}_zn(-1))+@
 
 // Government spending shock
 @{co}_cgy = (1-@{co}_rhocg)*@{co}_cgybar+@{co}_rhocg*@{co}_cgy(-1)+@{co}_epsgc;
+@{co}_igy = (1-@{co}_rhoig)*@{co}_igybar+@{co}_rhoig*@{co}_igy(-1)+@{co}_epsgi;
 
 // Transfer shock
 @{co}_try = (1-@{co}_rhotr)*@{co}_trybar+@{co}_rhotr*@{co}_try(-1)+@{co}_epstr;

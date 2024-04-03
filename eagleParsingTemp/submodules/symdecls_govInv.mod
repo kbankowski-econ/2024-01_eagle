@@ -380,7 +380,6 @@ varexo
  @{co}_ztbar
 
  @{co}_cpim
-// TODO: change below to epsgc 
  @{co}_epsgc
  @{co}_epsgi
 @# if co != countries[1] && co != countries[2] && co != countries[3] && co != countries[4] && co != countries[5]

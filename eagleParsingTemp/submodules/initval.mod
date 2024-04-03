@@ -25,6 +25,7 @@ initval;
   @{COUNTRY}_fn = 0.015;
 
   @{COUNTRY}_cg = 0;
+  @{COUNTRY}_ig = 0;
   @#if(COUNTRY != "US")
     @{COUNTRY}_gammab = 0;
   @#endif
@@ -42,6 +43,7 @@ initval;
   @{COUNTRY}_gj = 0.735309110981097;
   @{COUNTRY}_gn = 0.18;
   @{COUNTRY}_cgy = 0;
+  @{COUNTRY}_igy = 0;
 
   @{COUNTRY}_ht = 0.08;
   @{COUNTRY}_htc = 0.08;
@@ -205,6 +207,7 @@ initval;
   @#endif
   
   @{COUNTRY}_cgybar = 0;
+  @{COUNTRY}_igybar = 0;
   @{COUNTRY}_taucbar = 0;
   @{COUNTRY}_taudbar = 0;
   @{COUNTRY}_taukbar = 0;
@@ -217,6 +220,7 @@ initval;
   @{COUNTRY}_znbar = 1;
   @{COUNTRY}_ztbar = 1;
   @{COUNTRY}_epsgc = 0;
+  @{COUNTRY}_epsgi = 0;
   @{COUNTRY}_epstauc = 0;
   @{COUNTRY}_epstaud = 0;
   @{COUNTRY}_epstauk = 0;
