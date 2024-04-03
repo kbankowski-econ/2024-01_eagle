@@ -1,7 +1,7 @@
 function [y, T, residual, g1] = dynamic_79(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
 residual=NaN(1, 1);
-  T(3)=params(209)^(-1);
-  residual(1)=(y(3390))-(y(3369)*T(3));
+  T(3)=params(203)^(-1);
+  residual(1)=(y(3374))-(y(3353)*T(3));
 if nargout > 3
     g1_v = NaN(1, 1);
 g1_v(1)=(-T(3));

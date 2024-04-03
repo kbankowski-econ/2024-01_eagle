@@ -1,8 +1,8 @@
 function [y, T] = dynamic_1(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(2398)=0;
-  y(2399)=0;
-  y(2400)=0;
-  y(2506)=1;
+  y(2394)=0;
+  y(2395)=0;
+  y(2396)=0;
+  y(2502)=1;
   y(2261)=0;
   y(2267)=1;
   y(2262)=0;
@@ -27,7 +27,7 @@ function [y, T] = dynamic_1(y, x, params, steady_state, sparse_rowval, sparse_co
   y(2283)=1;
   y(2278)=0;
   y(2284)=1;
-  y(2487)=0;
-  y(2496)=0;
-  y(2455)=params(40);
+  y(2483)=0;
+  y(2492)=0;
+  y(2451)=params(38);
 end

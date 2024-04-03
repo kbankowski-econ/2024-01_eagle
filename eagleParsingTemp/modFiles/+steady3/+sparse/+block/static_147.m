@@ -1,7 +1,7 @@
 function [y, T] = static_147(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(2013)=y(2014)+y(2016);
-  y(462)=y(1888)*params(463)/params(126)+y(1583)*params(397)/params(126)+y(1278)*params(327)/params(126)+y(973)*params(260)/params(126)+y(57)*params(59)/params(126)+y(668)*params(193)/params(126);
-  y(1682)=y(1892)*params(463)/params(397)+y(1281)*params(327)/params(397)+y(976)*params(260)/params(397)+y(671)*params(193)/params(397)+y(61)*params(59)/params(397)+y(366)*params(126)/params(397);
-  y(157)=params(463)/params(59)*y(1887)+params(397)/params(59)*y(1582)+params(327)/params(59)*y(1277)+params(260)/params(59)*y(972)+params(126)/params(59)*y(362)+params(193)/params(59)*y(667);
-  y(1072)=y(1890)*params(463)/params(260)+y(1585)*params(397)/params(260)+y(1280)*params(327)/params(260)+y(669)*params(193)/params(260)+y(59)*params(59)/params(260)+y(364)*params(126)/params(260);
+  y(1985)=y(1986)+y(1988);
+  y(454)=y(1864)*params(449)/params(122)+y(1563)*params(385)/params(122)+y(1262)*params(317)/params(122)+y(961)*params(252)/params(122)+y(57)*params(57)/params(122)+y(660)*params(187)/params(122);
+  y(1658)=y(1868)*params(449)/params(385)+y(1265)*params(317)/params(385)+y(964)*params(252)/params(385)+y(663)*params(187)/params(385)+y(61)*params(57)/params(385)+y(362)*params(122)/params(385);
+  y(153)=params(449)/params(57)*y(1863)+params(385)/params(57)*y(1562)+params(317)/params(57)*y(1261)+params(252)/params(57)*y(960)+params(122)/params(57)*y(358)+params(187)/params(57)*y(659);
+  y(1056)=y(1866)*params(449)/params(252)+y(1565)*params(385)/params(252)+y(1264)*params(317)/params(252)+y(661)*params(187)/params(252)+y(59)*params(57)/params(252)+y(360)*params(122)/params(252);
 end

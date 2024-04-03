@@ -1,8 +1,8 @@
 function [y, T] = static_1(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(164)=0;
-  y(165)=0;
-  y(166)=0;
-  y(272)=1;
+  y(160)=0;
+  y(161)=0;
+  y(162)=0;
+  y(268)=1;
   y(27)=0;
   y(33)=1;
   y(28)=0;
@@ -27,7 +27,7 @@ function [y, T] = static_1(y, x, params, sparse_rowval, sparse_colval, sparse_co
   y(49)=1;
   y(44)=0;
   y(50)=1;
-  y(253)=0;
-  y(262)=0;
-  y(221)=params(40);
+  y(249)=0;
+  y(258)=0;
+  y(217)=params(38);
 end

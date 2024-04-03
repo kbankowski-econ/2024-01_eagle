@@ -450,7 +450,7 @@ var
         @{co}_ccesi @{co}_ccesj @{co}_dcci @{co}_dccj
     @#endfor
 ;
-params 
+parameters 
     @#for co in countries
         @{co}_mucces @{co}_nucces
     @#endfor
