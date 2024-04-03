@@ -102,14 +102,10 @@ var
  @{co}_bf
  @{co}_by
  @{co}_c
- @{co}_ccesi
- @{co}_ccesj
  @{co}_ci
  @{co}_cj
  @{co}_cy
  @{co}_d
- @{co}_dcci
- @{co}_dccj
  @{co}_dn
  @{co}_dt
  @{co}_epsilonm
@@ -155,7 +151,6 @@ var
  @{co}_k
  @{co}_kd
  @{co}_kdn
- @{co}_kg
  @{co}_kdt
  @{co}_ki
  @{co}_lambdai
@@ -270,7 +265,6 @@ var
 // Parameters
 parameters
  @{co}_alphan
- @{co}_alphag
  @{co}_alphat
  @{co}_beta
 @# if co != countries[7]
@@ -284,7 +278,6 @@ parameters
  @{co}_chij
  @{co}_chix
  @{co}_delta
- @{co}_deltag
 @# if co != countries[7]
  @{co}_gammab1
 @# endif
@@ -296,13 +289,11 @@ parameters
  @{co}_gammav2
  @{co}_kappa
  @{co}_muc
- @{co}_mucces
  @{co}_mui
  @{co}_mumc
  @{co}_mumi
  @{co}_mutc
  @{co}_muti
- @{co}_nucces
  @{co}_nuc
  @{co}_nui
  @{co}_nutc
@@ -451,7 +442,26 @@ change_type(var)
  @{co}_ybar
  @{co}_ynbar
  @{co}_ytbar
-
 @# endfor
 ;
 @#endif
+var 
+    @#for co in countries
+        @{co}_ccesi @{co}_ccesj @{co}_dcci @{co}_dccj
+    @#endfor
+;
+params 
+    @#for co in countries
+        @{co}_mucces @{co}_nucces
+    @#endfor
+;
+var 
+    @#for co in countries
+        @{co}_kg
+    @#endfor
+;
+params 
+    @#for co in countries
+        @{co}_alphag @{co}_deltag
+    @#endfor
+;
