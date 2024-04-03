@@ -102,14 +102,10 @@ var
  @{co}_bf
  @{co}_by
  @{co}_c
- @{co}_ccesi
- @{co}_ccesj
  @{co}_ci
  @{co}_cj
  @{co}_cy
  @{co}_d
- @{co}_dcci
- @{co}_dccj
  @{co}_dn
  @{co}_dt
  @{co}_epsilonm
@@ -293,13 +289,11 @@ parameters
  @{co}_gammav2
  @{co}_kappa
  @{co}_muc
- @{co}_mucces
  @{co}_mui
  @{co}_mumc
  @{co}_mumi
  @{co}_mutc
  @{co}_muti
- @{co}_nucces
  @{co}_nuc
  @{co}_nui
  @{co}_nutc
@@ -451,3 +445,13 @@ change_type(var)
 @# endfor
 ;
 @#endif
+var 
+    @#for co in countries
+        @{co}_ccesi @{co}_ccesj @{co}_dcci @{co}_dccj
+    @#endfor
+;
+params 
+    @#for co in countries
+        @{co}_mucces @{co}_nucces
+    @#endfor
+;
