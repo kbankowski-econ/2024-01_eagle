@@ -465,8 +465,7 @@ EAE_bytarget, 2.40;
 end;
 steady(homotopy_steps = 5);
 
-//TODO: you may want to add ig here immediately
-disp('gybar')
+disp('cgybar')
 homotopy_setup;
 EAA_cgybar, 0.20;
 US_cgybar,  0.16;
@@ -475,6 +474,18 @@ EAB_cgybar, 0.20;
 EAC_cgybar, 0.20;
 EAD_cgybar, 0.20;
 EAE_cgybar, 0.20;
+end;
+steady(homotopy_steps = 5);
+
+disp('igybar')
+homotopy_setup;
+EAA_igybar, 0.04;
+US_igybar,  0.04;
+RW_igybar,  0.04;
+EAB_igybar, 0.04;
+EAC_igybar, 0.04;
+EAD_igybar, 0.04;
+EAE_igybar, 0.04;
 end;
 steady(homotopy_steps = 5);
 
