@@ -1,13 +1,34 @@
-function [y, T, residual, g1] = dynamic_127(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-residual=NaN(1, 1);
-  residual(1)=(y(3873))-(y(3934)*(1-params(434))+y(1681)*params(434)+x(142));
-if nargout > 3
-    g1_v = NaN(1, 1);
-g1_v(1)=(-(1-params(434)));
-    if ~isoctave && matlab_ver_less_than('9.8')
-        sparse_rowval = double(sparse_rowval);
-        sparse_colval = double(sparse_colval);
-    end
-    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
-end
+function [y, T] = dynamic_127(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
+  y(3834)=y(3876)/y(3878);
+  y(3681)=y(4027)*y(4040)*y(3761)*params(526)/params(451)/T(60);
+  y(3675)=y(4020)*y(4040)*y(3761)*params(526)/params(451)/T(60);
+  y(3680)=y(3444)*y(3457)*y(3760)*params(372)/params(451)/T(60);
+  y(3674)=y(3437)*y(3457)*y(3760)*params(372)/params(451)/T(60);
+  y(3679)=y(3153)*y(3166)*y(3759)*params(296)/params(451)/T(60);
+  y(3673)=y(3146)*y(3166)*y(3759)*params(296)/params(451)/T(60);
+  y(3737)=y(3747)*y(3734)/T(60);
+  y(3730)=y(3747)*y(3727)/T(60);
+  y(3678)=y(2862)*y(2875)*y(3758)*params(220)/params(451)/T(60);
+  y(3672)=y(2855)*y(2875)*y(3758)*params(220)/params(451)/T(60);
+  y(3677)=y(2571)*y(2584)*y(3757)*params(144)/params(451)/T(60);
+  y(3671)=y(2564)*y(2584)*y(3757)*params(144)/params(451)/T(60);
+  y(3676)=y(2280)*y(2293)*y(3756)*params(68)/params(451)/T(60);
+  y(3670)=y(2273)*y(2293)*y(3756)*params(68)/params(451)/T(60);
+  y(3904)=y(3903)/T(60);
+  y(3934)=y(3928)*params(451)*y(3880)/y(3886)/T(2169);
+  y(3931)=y(3928)/y(2184);
+  y(3930)=y(3928)/y(1722);
+  y(2223)=y(3149)*y(3162)*y(2303)*params(296)/params(68)/T(79);
+  y(3933)=y(3935)*y(3876)/T(60);
+  y(3932)=y(3936)*y(3860)/T(60);
+  y(3921)=y(3853)*y(3919)/(y(3936)*y(3860));
+  y(3926)=y(3852)*y(3919)/(y(3935)*y(3876));
+  y(3927)=y(3919)*y(3849)/T(60);
+  y(3843)=(1+y(3901))*y(3919)*y(3849)/T(60);
+  y(2217)=y(3142)*y(3162)*y(2303)*params(296)/params(68)/T(79);
+  y(3794)=y(3792)/(y(3954)*y(3957));
+  y(3833)=(y(3831)*y(3871)+y(3832)*y(3872))/T(60);
+  y(3798)=y(3795)/T(60);
+  y(2222)=y(2858)*y(2871)*y(2302)*params(220)/params(68)/T(79);
+  y(2216)=y(2851)*y(2871)*y(2302)*params(220)/params(68)/T(79);
 end
