@@ -30,8 +30,8 @@ EAA_mumc 2.5
 EAA_mumi 2.5
 EAA_mutc 2.5
 EAA_muti 2.5
-EAA_nuc 0.45
 EAA_nucces 0.75
+EAA_nuc 0.45
 EAA_nui 0.75
 EAA_nutc 0.123339
 EAA_nuti 0.804463
@@ -97,8 +97,8 @@ EAB_mumc 2.5
 EAB_mumi 2.5
 EAB_mutc 2.5
 EAB_muti 2.5
-EAB_nuc 0.45
 EAB_nucces 0.75
+EAB_nuc 0.45
 EAB_nui 0.75
 EAB_nutc 0.134203
 EAB_nuti 0.811155
@@ -164,8 +164,8 @@ EAC_mumc 2.5
 EAC_mumi 2.5
 EAC_mutc 2.5
 EAC_muti 2.5
-EAC_nuc 0.45
 EAC_nucces 0.75
+EAC_nuc 0.45
 EAC_nui 0.75
 EAC_nutc 0.134203
 EAC_nuti 0.811155
@@ -231,8 +231,8 @@ EAD_mumc 2.5
 EAD_mumi 2.5
 EAD_mutc 2.5
 EAD_muti 2.5
-EAD_nuc 0.45
 EAD_nucces 0.75
+EAD_nuc 0.45
 EAD_nui 0.75
 EAD_nutc 0.156326
 EAD_nuti 0.76008
@@ -298,8 +298,8 @@ EAE_mumc 2.5
 EAE_mumi 2.5
 EAE_mutc 2.5
 EAE_muti 2.5
-EAE_nuc 0.45
 EAE_nucces 0.75
+EAE_nuc 0.45
 EAE_nui 0.75
 EAE_nutc 0.225935
 EAE_nuti 0.357352
@@ -365,8 +365,8 @@ RW_mumc 2.5
 RW_mumi 2.5
 RW_mutc 2.5
 RW_muti 2.5
-RW_nuc 0.35
 RW_nucces 0.75
+RW_nuc 0.35
 RW_nui 0.75
 RW_nutc 0.543746
 RW_nuti 0.5380509999999999
@@ -432,8 +432,8 @@ US_mumc 2.5
 US_mumi 2.5
 US_mutc 2.5
 US_muti 2.5
-US_nuc 0.35
 US_nucces 0.75
+US_nuc 0.35
 US_nui 0.75
 US_nutc 0.614275
 US_nuti 0.693912

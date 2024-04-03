@@ -50,8 +50,6 @@ insertInTextFile( ...
     , 296 ...    
 );
 
-%%
-
 steady2output = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'steady2', 'Output', 'steady2_results.mat'));
 steady2struct = struct();
 
@@ -150,7 +148,6 @@ insertInTextFile( ...
     , 450 ...    
 );
 
-%%
 steady3output = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'steady3', 'Output', 'steady3_results.mat'));
 steady3struct = struct();
 
