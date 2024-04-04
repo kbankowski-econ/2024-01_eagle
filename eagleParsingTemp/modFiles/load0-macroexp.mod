@@ -3928,7 +3928,12 @@ EAA_u*EAA_k = EAA_kd;
 // Wedge between aggregate demand and production, using EAA_x = EAB_size/EAA_size*EAB_im
 EAA_ysn = EAA_snt*EAA_nt;
 //  nontradables aggregate demand
-EAA_nt =  EAA_nti+EAA_ntc+EAA_cg+EAA_ig;
+//TODO: adjust for the fiscal extension
+EAA_nt = 
++EAA_ntc
++EAA_nti
++EAA_cg+EAA_ig
+;
 // Aggregate demand for domestic intermediate goods, using EAA_hg = EAA_cg
 EAA_ht =
 +EAA_htc
@@ -4994,7 +4999,12 @@ EAB_u*EAB_k = EAB_kd;
 // Wedge between aggregate demand and production, using EAB_x = EAC_size/EAB_size*EAC_im
 EAB_ysn = EAB_snt*EAB_nt;
 //  nontradables aggregate demand
-EAB_nt =  EAB_nti+EAB_ntc+EAB_cg+EAB_ig;
+//TODO: adjust for the fiscal extension
+EAB_nt = 
++EAB_ntc
++EAB_nti
++EAB_cg+EAB_ig
+;
 // Aggregate demand for domestic intermediate goods, using EAB_hg = EAB_cg
 EAB_ht =
 +EAB_htc
@@ -6063,7 +6073,12 @@ EAC_u*EAC_k = EAC_kd;
 // Wedge between aggregate demand and production, using EAC_x = EAD_size/EAC_size*EAD_im
 EAC_ysn = EAC_snt*EAC_nt;
 //  nontradables aggregate demand
-EAC_nt =  EAC_nti+EAC_ntc+EAC_cg+EAC_ig;
+//TODO: adjust for the fiscal extension
+EAC_nt = 
++EAC_ntc
++EAC_nti
++EAC_cg+EAC_ig
+;
 // Aggregate demand for domestic intermediate goods, using EAC_hg = EAC_cg
 EAC_ht =
 +EAC_htc
@@ -7132,7 +7147,12 @@ EAD_u*EAD_k = EAD_kd;
 // Wedge between aggregate demand and production, using EAD_x = EAE_size/EAD_size*EAE_im
 EAD_ysn = EAD_snt*EAD_nt;
 //  nontradables aggregate demand
-EAD_nt =  EAD_nti+EAD_ntc+EAD_cg+EAD_ig;
+//TODO: adjust for the fiscal extension
+EAD_nt = 
++EAD_ntc
++EAD_nti
++EAD_cg+EAD_ig
+;
 // Aggregate demand for domestic intermediate goods, using EAD_hg = EAD_cg
 EAD_ht =
 +EAD_htc
@@ -8196,7 +8216,12 @@ EAE_u*EAE_k = EAE_kd;
 // Wedge between aggregate demand and production, using EAE_x = RW_size/EAE_size*RW_im
 EAE_ysn = EAE_snt*EAE_nt;
 //  nontradables aggregate demand
-EAE_nt =  EAE_nti+EAE_ntc+EAE_cg+EAE_ig;
+//TODO: adjust for the fiscal extension
+EAE_nt = 
++EAE_ntc
++EAE_nti
++EAE_cg+EAE_ig
+;
 // Aggregate demand for domestic intermediate goods, using EAE_hg = EAE_cg
 EAE_ht =
 +EAE_htc
@@ -9260,7 +9285,12 @@ RW_u*RW_k = RW_kd;
 // Wedge between aggregate demand and production, using RW_x = US_size/RW_size*US_im
 RW_ysn = RW_snt*RW_nt;
 //  nontradables aggregate demand
-RW_nt =  RW_nti+RW_ntc+RW_cg+RW_ig;
+//TODO: adjust for the fiscal extension
+RW_nt = 
++RW_ntc
++RW_nti
++RW_cg+RW_ig
+;
 // Aggregate demand for domestic intermediate goods, using RW_hg = RW_cg
 RW_ht =
 +RW_htc
@@ -10324,7 +10354,12 @@ US_u*US_k = US_kd;
 // Wedge between aggregate demand and production, using US_x = EAA_size/US_size*EAA_im
 US_ysn = US_snt*US_nt;
 //  nontradables aggregate demand
-US_nt =  US_nti+US_ntc+US_cg+US_ig;
+//TODO: adjust for the fiscal extension
+US_nt = 
++US_ntc
++US_nti
++US_cg+US_ig
+;
 // Aggregate demand for domestic intermediate goods, using US_hg = US_cg
 US_ht =
 +US_htc
