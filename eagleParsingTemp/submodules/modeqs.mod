@@ -461,7 +461,11 @@ model(block, bytecode, cutoff=0);
 
 // Aggregate demand for bilateral imported intermediate goods
 @#for it in countries - [ co ]
-@{co}@{it}_im = @{co}@{it}_imi+@{co}@{it}_imc;
+@{co}@{it}_im = 
+@#for aItem in demandItems
++@{co}@{it}_im@{aItem}
+@#endfor
+;
 @#endfor
 
 // Private consumption good firm
