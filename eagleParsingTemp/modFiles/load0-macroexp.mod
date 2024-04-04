@@ -4027,7 +4027,10 @@ EAA_cy = EAA_c/(EAA_py*EAA_y);
 // Aggregate nominal investment share
 EAA_iy = EAA_pi*EAA_i/(EAA_py*EAA_y);
 // Aggregate nominal import share  
-EAA_imy = (EAA_pimc*EAA_imc+EAA_pimi*EAA_imi)/(EAA_py*EAA_y);
+EAA_imy = (
++EAA_pimc*EAA_imc
++EAA_pimi*EAA_imi
+)/(EAA_py*EAA_y);
 // Aggregate nominal import share for consumption goods 
 EAA_imcy = EAA_pimc*EAA_imc/(EAA_py*EAA_y);
 // Aggregate nominal import share for investment goods to be corrected with multilateral price of imports
@@ -5103,7 +5106,10 @@ EAB_cy = EAB_c/(EAB_py*EAB_y);
 // Aggregate nominal investment share
 EAB_iy = EAB_pi*EAB_i/(EAB_py*EAB_y);
 // Aggregate nominal import share  
-EAB_imy = (EAB_pimc*EAB_imc+EAB_pimi*EAB_imi)/(EAB_py*EAB_y);
+EAB_imy = (
++EAB_pimc*EAB_imc
++EAB_pimi*EAB_imi
+)/(EAB_py*EAB_y);
 // Aggregate nominal import share for consumption goods 
 EAB_imcy = EAB_pimc*EAB_imc/(EAB_py*EAB_y);
 // Aggregate nominal import share for investment goods to be corrected with multilateral price of imports
@@ -6182,7 +6188,10 @@ EAC_cy = EAC_c/(EAC_py*EAC_y);
 // Aggregate nominal investment share
 EAC_iy = EAC_pi*EAC_i/(EAC_py*EAC_y);
 // Aggregate nominal import share  
-EAC_imy = (EAC_pimc*EAC_imc+EAC_pimi*EAC_imi)/(EAC_py*EAC_y);
+EAC_imy = (
++EAC_pimc*EAC_imc
++EAC_pimi*EAC_imi
+)/(EAC_py*EAC_y);
 // Aggregate nominal import share for consumption goods 
 EAC_imcy = EAC_pimc*EAC_imc/(EAC_py*EAC_y);
 // Aggregate nominal import share for investment goods to be corrected with multilateral price of imports
@@ -7261,7 +7270,10 @@ EAD_cy = EAD_c/(EAD_py*EAD_y);
 // Aggregate nominal investment share
 EAD_iy = EAD_pi*EAD_i/(EAD_py*EAD_y);
 // Aggregate nominal import share  
-EAD_imy = (EAD_pimc*EAD_imc+EAD_pimi*EAD_imi)/(EAD_py*EAD_y);
+EAD_imy = (
++EAD_pimc*EAD_imc
++EAD_pimi*EAD_imi
+)/(EAD_py*EAD_y);
 // Aggregate nominal import share for consumption goods 
 EAD_imcy = EAD_pimc*EAD_imc/(EAD_py*EAD_y);
 // Aggregate nominal import share for investment goods to be corrected with multilateral price of imports
@@ -8335,7 +8347,10 @@ EAE_cy = EAE_c/(EAE_py*EAE_y);
 // Aggregate nominal investment share
 EAE_iy = EAE_pi*EAE_i/(EAE_py*EAE_y);
 // Aggregate nominal import share  
-EAE_imy = (EAE_pimc*EAE_imc+EAE_pimi*EAE_imi)/(EAE_py*EAE_y);
+EAE_imy = (
++EAE_pimc*EAE_imc
++EAE_pimi*EAE_imi
+)/(EAE_py*EAE_y);
 // Aggregate nominal import share for consumption goods 
 EAE_imcy = EAE_pimc*EAE_imc/(EAE_py*EAE_y);
 // Aggregate nominal import share for investment goods to be corrected with multilateral price of imports
@@ -9409,7 +9424,10 @@ RW_cy = RW_c/(RW_py*RW_y);
 // Aggregate nominal investment share
 RW_iy = RW_pi*RW_i/(RW_py*RW_y);
 // Aggregate nominal import share  
-RW_imy = (RW_pimc*RW_imc+RW_pimi*RW_imi)/(RW_py*RW_y);
+RW_imy = (
++RW_pimc*RW_imc
++RW_pimi*RW_imi
+)/(RW_py*RW_y);
 // Aggregate nominal import share for consumption goods 
 RW_imcy = RW_pimc*RW_imc/(RW_py*RW_y);
 // Aggregate nominal import share for investment goods to be corrected with multilateral price of imports
@@ -10483,7 +10501,10 @@ US_cy = US_c/(US_py*US_y);
 // Aggregate nominal investment share
 US_iy = US_pi*US_i/(US_py*US_y);
 // Aggregate nominal import share  
-US_imy = (US_pimc*US_imc+US_pimi*US_imi)/(US_py*US_y);
+US_imy = (
++US_pimc*US_imc
++US_pimi*US_imi
+)/(US_py*US_y);
 // Aggregate nominal import share for consumption goods 
 US_imcy = US_pimc*US_imc/(US_py*US_y);
 // Aggregate nominal import share for investment goods to be corrected with multilateral price of imports
