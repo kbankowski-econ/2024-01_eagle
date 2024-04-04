@@ -3310,9 +3310,15 @@ EAAUS_rerbar = EAAUS_rer;
 //Terms of Trade
 EAAUS_tot = EAAUS_pim/(EAAUS_rer*USEAA_pim);
 // Total imports 
-EAA_im = EAA_imc+EAA_imi;
+EAA_im = 
++EAA_imc
++EAA_imi
+;
 // Total import deflator
-EAA_im*EAA_pim  = EAA_pimc*EAA_imc+EAA_pimi*EAA_imi;
+EAA_im*EAA_pim  = 
++EAA_pimc*EAA_imc
++EAA_pimi*EAA_imi
+;
 // Total Export deflator 
 EAA_ex*EAA_pex  =
 +EAAEAB_rer*EABEAA_pim*EAB_size/EAA_size*EABEAA_im
@@ -4347,9 +4353,15 @@ EABUS_rerbar = EABUS_rer;
 //Terms of Trade
 EABUS_tot = EABUS_pim/(EABUS_rer*USEAB_pim);
 // Total imports 
-EAB_im = EAB_imc+EAB_imi;
+EAB_im = 
++EAB_imc
++EAB_imi
+;
 // Total import deflator
-EAB_im*EAB_pim  = EAB_pimc*EAB_imc+EAB_pimi*EAB_imi;
+EAB_im*EAB_pim  = 
++EAB_pimc*EAB_imc
++EAB_pimi*EAB_imi
+;
 // Total Export deflator 
 EAB_ex*EAB_pex  =
 +EABEAA_rer*EAAEAB_pim*EAA_size/EAB_size*EAAEAB_im
@@ -5386,9 +5398,15 @@ EACUS_rerbar = EACUS_rer;
 //Terms of Trade
 EACUS_tot = EACUS_pim/(EACUS_rer*USEAC_pim);
 // Total imports 
-EAC_im = EAC_imc+EAC_imi;
+EAC_im = 
++EAC_imc
++EAC_imi
+;
 // Total import deflator
-EAC_im*EAC_pim  = EAC_pimc*EAC_imc+EAC_pimi*EAC_imi;
+EAC_im*EAC_pim  = 
++EAC_pimc*EAC_imc
++EAC_pimi*EAC_imi
+;
 // Total Export deflator 
 EAC_ex*EAC_pex  =
 +EACEAA_rer*EAAEAC_pim*EAA_size/EAC_size*EAAEAC_im
@@ -6428,9 +6446,15 @@ EADUS_rerbar = EADUS_rer;
 //Terms of Trade
 EADUS_tot = EADUS_pim/(EADUS_rer*USEAD_pim);
 // Total imports 
-EAD_im = EAD_imc+EAD_imi;
+EAD_im = 
++EAD_imc
++EAD_imi
+;
 // Total import deflator
-EAD_im*EAD_pim  = EAD_pimc*EAD_imc+EAD_pimi*EAD_imi;
+EAD_im*EAD_pim  = 
++EAD_pimc*EAD_imc
++EAD_pimi*EAD_imi
+;
 // Total Export deflator 
 EAD_ex*EAD_pex  =
 +EADEAA_rer*EAAEAD_pim*EAA_size/EAD_size*EAAEAD_im
@@ -7470,9 +7494,15 @@ EAEUS_rerbar = EAEUS_rer;
 //Terms of Trade
 EAEUS_tot = EAEUS_pim/(EAEUS_rer*USEAE_pim);
 // Total imports 
-EAE_im = EAE_imc+EAE_imi;
+EAE_im = 
++EAE_imc
++EAE_imi
+;
 // Total import deflator
-EAE_im*EAE_pim  = EAE_pimc*EAE_imc+EAE_pimi*EAE_imi;
+EAE_im*EAE_pim  = 
++EAE_pimc*EAE_imc
++EAE_pimi*EAE_imi
+;
 // Total Export deflator 
 EAE_ex*EAE_pex  =
 +EAEEAA_rer*EAAEAE_pim*EAA_size/EAE_size*EAAEAE_im
@@ -8507,9 +8537,15 @@ RWUS_rerbar = RWUS_rer;
 //Terms of Trade
 RWUS_tot = RWUS_pim/(RWUS_rer*USRW_pim);
 // Total imports 
-RW_im = RW_imc+RW_imi;
+RW_im = 
++RW_imc
++RW_imi
+;
 // Total import deflator
-RW_im*RW_pim  = RW_pimc*RW_imc+RW_pimi*RW_imi;
+RW_im*RW_pim  = 
++RW_pimc*RW_imc
++RW_pimi*RW_imi
+;
 // Total Export deflator 
 RW_ex*RW_pex  =
 +RWEAA_rer*EAARW_pim*EAA_size/RW_size*EAARW_im
@@ -9544,9 +9580,15 @@ USRW_rerbar = USRW_rer;
 //Terms of Trade
 USRW_tot = USRW_pim/(USRW_rer*RWUS_pim);
 // Total imports 
-US_im = US_imc+US_imi;
+US_im = 
++US_imc
++US_imi
+;
 // Total import deflator
-US_im*US_pim  = US_pimc*US_imc+US_pimi*US_imi;
+US_im*US_pim  = 
++US_pimc*US_imc
++US_pimi*US_imi
+;
 // Total Export deflator 
 US_ex*US_pex  =
 +USEAA_rer*EAAUS_pim*EAA_size/US_size*EAAUS_im
