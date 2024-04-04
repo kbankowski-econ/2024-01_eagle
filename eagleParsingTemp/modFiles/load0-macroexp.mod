@@ -3165,12 +3165,30 @@ EAA_d = EAA_py*EAA_y-EAA_rk*EAA_kd-(1+EAA_tauwf)*EAA_w*EAA_nd;
 EAA_dn = EAA_pnt*EAA_ysn-EAA_rk*EAA_kdn-(1+EAA_tauwf)*EAA_w*EAA_ndn;
 // Tradable sector dividends
 EAA_dt = EAA_pht*EAA_ht
-+EABEAA_pim*EAAEAB_rer*(EABEAA_imc+EABEAA_imi)*EAB_size/EAA_size
-+EACEAA_pim*EAAEAC_rer*(EACEAA_imc+EACEAA_imi)*EAC_size/EAA_size
-+EADEAA_pim*EAAEAD_rer*(EADEAA_imc+EADEAA_imi)*EAD_size/EAA_size
-+EAEEAA_pim*EAAEAE_rer*(EAEEAA_imc+EAEEAA_imi)*EAE_size/EAA_size
-+RWEAA_pim*EAARW_rer*(RWEAA_imc+RWEAA_imi)*RW_size/EAA_size
-+USEAA_pim*EAAUS_rer*(USEAA_imc+USEAA_imi)*US_size/EAA_size
++EABEAA_pim*EAAEAB_rer*(
+	+EABEAA_imc
+	+EABEAA_imi
+	)*EAB_size/EAA_size
++EACEAA_pim*EAAEAC_rer*(
+	+EACEAA_imc
+	+EACEAA_imi
+	)*EAC_size/EAA_size
++EADEAA_pim*EAAEAD_rer*(
+	+EADEAA_imc
+	+EADEAA_imi
+	)*EAD_size/EAA_size
++EAEEAA_pim*EAAEAE_rer*(
+	+EAEEAA_imc
+	+EAEEAA_imi
+	)*EAE_size/EAA_size
++RWEAA_pim*EAARW_rer*(
+	+RWEAA_imc
+	+RWEAA_imi
+	)*RW_size/EAA_size
++USEAA_pim*EAAUS_rer*(
+	+USEAA_imc
+	+USEAA_imi
+	)*US_size/EAA_size
 -EAA_rk*EAA_kdt-(1+EAA_tauwf)*EAA_w*EAA_ndt;
 // Optimal price contract set in domestic markets (FOC)
 EAA_phttilde/EAA_pht = EAA_thetat/(EAA_thetat-1)*EAA_fh/EAA_gh;
@@ -4184,12 +4202,30 @@ EAB_d = EAB_py*EAB_y-EAB_rk*EAB_kd-(1+EAB_tauwf)*EAB_w*EAB_nd;
 EAB_dn = EAB_pnt*EAB_ysn-EAB_rk*EAB_kdn-(1+EAB_tauwf)*EAB_w*EAB_ndn;
 // Tradable sector dividends
 EAB_dt = EAB_pht*EAB_ht
-+EAAEAB_pim*EABEAA_rer*(EAAEAB_imc+EAAEAB_imi)*EAA_size/EAB_size
-+EACEAB_pim*EABEAC_rer*(EACEAB_imc+EACEAB_imi)*EAC_size/EAB_size
-+EADEAB_pim*EABEAD_rer*(EADEAB_imc+EADEAB_imi)*EAD_size/EAB_size
-+EAEEAB_pim*EABEAE_rer*(EAEEAB_imc+EAEEAB_imi)*EAE_size/EAB_size
-+RWEAB_pim*EABRW_rer*(RWEAB_imc+RWEAB_imi)*RW_size/EAB_size
-+USEAB_pim*EABUS_rer*(USEAB_imc+USEAB_imi)*US_size/EAB_size
++EAAEAB_pim*EABEAA_rer*(
+	+EAAEAB_imc
+	+EAAEAB_imi
+	)*EAA_size/EAB_size
++EACEAB_pim*EABEAC_rer*(
+	+EACEAB_imc
+	+EACEAB_imi
+	)*EAC_size/EAB_size
++EADEAB_pim*EABEAD_rer*(
+	+EADEAB_imc
+	+EADEAB_imi
+	)*EAD_size/EAB_size
++EAEEAB_pim*EABEAE_rer*(
+	+EAEEAB_imc
+	+EAEEAB_imi
+	)*EAE_size/EAB_size
++RWEAB_pim*EABRW_rer*(
+	+RWEAB_imc
+	+RWEAB_imi
+	)*RW_size/EAB_size
++USEAB_pim*EABUS_rer*(
+	+USEAB_imc
+	+USEAB_imi
+	)*US_size/EAB_size
 -EAB_rk*EAB_kdt-(1+EAB_tauwf)*EAB_w*EAB_ndt;
 // Optimal price contract set in domestic markets (FOC)
 EAB_phttilde/EAB_pht = EAB_thetat/(EAB_thetat-1)*EAB_fh/EAB_gh;
@@ -5205,12 +5241,30 @@ EAC_d = EAC_py*EAC_y-EAC_rk*EAC_kd-(1+EAC_tauwf)*EAC_w*EAC_nd;
 EAC_dn = EAC_pnt*EAC_ysn-EAC_rk*EAC_kdn-(1+EAC_tauwf)*EAC_w*EAC_ndn;
 // Tradable sector dividends
 EAC_dt = EAC_pht*EAC_ht
-+EAAEAC_pim*EACEAA_rer*(EAAEAC_imc+EAAEAC_imi)*EAA_size/EAC_size
-+EABEAC_pim*EACEAB_rer*(EABEAC_imc+EABEAC_imi)*EAB_size/EAC_size
-+EADEAC_pim*EACEAD_rer*(EADEAC_imc+EADEAC_imi)*EAD_size/EAC_size
-+EAEEAC_pim*EACEAE_rer*(EAEEAC_imc+EAEEAC_imi)*EAE_size/EAC_size
-+RWEAC_pim*EACRW_rer*(RWEAC_imc+RWEAC_imi)*RW_size/EAC_size
-+USEAC_pim*EACUS_rer*(USEAC_imc+USEAC_imi)*US_size/EAC_size
++EAAEAC_pim*EACEAA_rer*(
+	+EAAEAC_imc
+	+EAAEAC_imi
+	)*EAA_size/EAC_size
++EABEAC_pim*EACEAB_rer*(
+	+EABEAC_imc
+	+EABEAC_imi
+	)*EAB_size/EAC_size
++EADEAC_pim*EACEAD_rer*(
+	+EADEAC_imc
+	+EADEAC_imi
+	)*EAD_size/EAC_size
++EAEEAC_pim*EACEAE_rer*(
+	+EAEEAC_imc
+	+EAEEAC_imi
+	)*EAE_size/EAC_size
++RWEAC_pim*EACRW_rer*(
+	+RWEAC_imc
+	+RWEAC_imi
+	)*RW_size/EAC_size
++USEAC_pim*EACUS_rer*(
+	+USEAC_imc
+	+USEAC_imi
+	)*US_size/EAC_size
 -EAC_rk*EAC_kdt-(1+EAC_tauwf)*EAC_w*EAC_ndt;
 // Optimal price contract set in domestic markets (FOC)
 EAC_phttilde/EAC_pht = EAC_thetat/(EAC_thetat-1)*EAC_fh/EAC_gh;
@@ -6229,12 +6283,30 @@ EAD_d = EAD_py*EAD_y-EAD_rk*EAD_kd-(1+EAD_tauwf)*EAD_w*EAD_nd;
 EAD_dn = EAD_pnt*EAD_ysn-EAD_rk*EAD_kdn-(1+EAD_tauwf)*EAD_w*EAD_ndn;
 // Tradable sector dividends
 EAD_dt = EAD_pht*EAD_ht
-+EAAEAD_pim*EADEAA_rer*(EAAEAD_imc+EAAEAD_imi)*EAA_size/EAD_size
-+EABEAD_pim*EADEAB_rer*(EABEAD_imc+EABEAD_imi)*EAB_size/EAD_size
-+EACEAD_pim*EADEAC_rer*(EACEAD_imc+EACEAD_imi)*EAC_size/EAD_size
-+EAEEAD_pim*EADEAE_rer*(EAEEAD_imc+EAEEAD_imi)*EAE_size/EAD_size
-+RWEAD_pim*EADRW_rer*(RWEAD_imc+RWEAD_imi)*RW_size/EAD_size
-+USEAD_pim*EADUS_rer*(USEAD_imc+USEAD_imi)*US_size/EAD_size
++EAAEAD_pim*EADEAA_rer*(
+	+EAAEAD_imc
+	+EAAEAD_imi
+	)*EAA_size/EAD_size
++EABEAD_pim*EADEAB_rer*(
+	+EABEAD_imc
+	+EABEAD_imi
+	)*EAB_size/EAD_size
++EACEAD_pim*EADEAC_rer*(
+	+EACEAD_imc
+	+EACEAD_imi
+	)*EAC_size/EAD_size
++EAEEAD_pim*EADEAE_rer*(
+	+EAEEAD_imc
+	+EAEEAD_imi
+	)*EAE_size/EAD_size
++RWEAD_pim*EADRW_rer*(
+	+RWEAD_imc
+	+RWEAD_imi
+	)*RW_size/EAD_size
++USEAD_pim*EADUS_rer*(
+	+USEAD_imc
+	+USEAD_imi
+	)*US_size/EAD_size
 -EAD_rk*EAD_kdt-(1+EAD_tauwf)*EAD_w*EAD_ndt;
 // Optimal price contract set in domestic markets (FOC)
 EAD_phttilde/EAD_pht = EAD_thetat/(EAD_thetat-1)*EAD_fh/EAD_gh;
@@ -7253,12 +7325,30 @@ EAE_d = EAE_py*EAE_y-EAE_rk*EAE_kd-(1+EAE_tauwf)*EAE_w*EAE_nd;
 EAE_dn = EAE_pnt*EAE_ysn-EAE_rk*EAE_kdn-(1+EAE_tauwf)*EAE_w*EAE_ndn;
 // Tradable sector dividends
 EAE_dt = EAE_pht*EAE_ht
-+EAAEAE_pim*EAEEAA_rer*(EAAEAE_imc+EAAEAE_imi)*EAA_size/EAE_size
-+EABEAE_pim*EAEEAB_rer*(EABEAE_imc+EABEAE_imi)*EAB_size/EAE_size
-+EACEAE_pim*EAEEAC_rer*(EACEAE_imc+EACEAE_imi)*EAC_size/EAE_size
-+EADEAE_pim*EAEEAD_rer*(EADEAE_imc+EADEAE_imi)*EAD_size/EAE_size
-+RWEAE_pim*EAERW_rer*(RWEAE_imc+RWEAE_imi)*RW_size/EAE_size
-+USEAE_pim*EAEUS_rer*(USEAE_imc+USEAE_imi)*US_size/EAE_size
++EAAEAE_pim*EAEEAA_rer*(
+	+EAAEAE_imc
+	+EAAEAE_imi
+	)*EAA_size/EAE_size
++EABEAE_pim*EAEEAB_rer*(
+	+EABEAE_imc
+	+EABEAE_imi
+	)*EAB_size/EAE_size
++EACEAE_pim*EAEEAC_rer*(
+	+EACEAE_imc
+	+EACEAE_imi
+	)*EAC_size/EAE_size
++EADEAE_pim*EAEEAD_rer*(
+	+EADEAE_imc
+	+EADEAE_imi
+	)*EAD_size/EAE_size
++RWEAE_pim*EAERW_rer*(
+	+RWEAE_imc
+	+RWEAE_imi
+	)*RW_size/EAE_size
++USEAE_pim*EAEUS_rer*(
+	+USEAE_imc
+	+USEAE_imi
+	)*US_size/EAE_size
 -EAE_rk*EAE_kdt-(1+EAE_tauwf)*EAE_w*EAE_ndt;
 // Optimal price contract set in domestic markets (FOC)
 EAE_phttilde/EAE_pht = EAE_thetat/(EAE_thetat-1)*EAE_fh/EAE_gh;
@@ -8272,12 +8362,30 @@ RW_d = RW_py*RW_y-RW_rk*RW_kd-(1+RW_tauwf)*RW_w*RW_nd;
 RW_dn = RW_pnt*RW_ysn-RW_rk*RW_kdn-(1+RW_tauwf)*RW_w*RW_ndn;
 // Tradable sector dividends
 RW_dt = RW_pht*RW_ht
-+EAARW_pim*RWEAA_rer*(EAARW_imc+EAARW_imi)*EAA_size/RW_size
-+EABRW_pim*RWEAB_rer*(EABRW_imc+EABRW_imi)*EAB_size/RW_size
-+EACRW_pim*RWEAC_rer*(EACRW_imc+EACRW_imi)*EAC_size/RW_size
-+EADRW_pim*RWEAD_rer*(EADRW_imc+EADRW_imi)*EAD_size/RW_size
-+EAERW_pim*RWEAE_rer*(EAERW_imc+EAERW_imi)*EAE_size/RW_size
-+USRW_pim*RWUS_rer*(USRW_imc+USRW_imi)*US_size/RW_size
++EAARW_pim*RWEAA_rer*(
+	+EAARW_imc
+	+EAARW_imi
+	)*EAA_size/RW_size
++EABRW_pim*RWEAB_rer*(
+	+EABRW_imc
+	+EABRW_imi
+	)*EAB_size/RW_size
++EACRW_pim*RWEAC_rer*(
+	+EACRW_imc
+	+EACRW_imi
+	)*EAC_size/RW_size
++EADRW_pim*RWEAD_rer*(
+	+EADRW_imc
+	+EADRW_imi
+	)*EAD_size/RW_size
++EAERW_pim*RWEAE_rer*(
+	+EAERW_imc
+	+EAERW_imi
+	)*EAE_size/RW_size
++USRW_pim*RWUS_rer*(
+	+USRW_imc
+	+USRW_imi
+	)*US_size/RW_size
 -RW_rk*RW_kdt-(1+RW_tauwf)*RW_w*RW_ndt;
 // Optimal price contract set in domestic markets (FOC)
 RW_phttilde/RW_pht = RW_thetat/(RW_thetat-1)*RW_fh/RW_gh;
@@ -9291,12 +9399,30 @@ US_d = US_py*US_y-US_rk*US_kd-(1+US_tauwf)*US_w*US_nd;
 US_dn = US_pnt*US_ysn-US_rk*US_kdn-(1+US_tauwf)*US_w*US_ndn;
 // Tradable sector dividends
 US_dt = US_pht*US_ht
-+EAAUS_pim*USEAA_rer*(EAAUS_imc+EAAUS_imi)*EAA_size/US_size
-+EABUS_pim*USEAB_rer*(EABUS_imc+EABUS_imi)*EAB_size/US_size
-+EACUS_pim*USEAC_rer*(EACUS_imc+EACUS_imi)*EAC_size/US_size
-+EADUS_pim*USEAD_rer*(EADUS_imc+EADUS_imi)*EAD_size/US_size
-+EAEUS_pim*USEAE_rer*(EAEUS_imc+EAEUS_imi)*EAE_size/US_size
-+RWUS_pim*USRW_rer*(RWUS_imc+RWUS_imi)*RW_size/US_size
++EAAUS_pim*USEAA_rer*(
+	+EAAUS_imc
+	+EAAUS_imi
+	)*EAA_size/US_size
++EABUS_pim*USEAB_rer*(
+	+EABUS_imc
+	+EABUS_imi
+	)*EAB_size/US_size
++EACUS_pim*USEAC_rer*(
+	+EACUS_imc
+	+EACUS_imi
+	)*EAC_size/US_size
++EADUS_pim*USEAD_rer*(
+	+EADUS_imc
+	+EADUS_imi
+	)*EAD_size/US_size
++EAEUS_pim*USEAE_rer*(
+	+EAEUS_imc
+	+EAEUS_imi
+	)*EAE_size/US_size
++RWUS_pim*USRW_rer*(
+	+RWUS_imc
+	+RWUS_imi
+	)*RW_size/US_size
 -US_rk*US_kdt-(1+US_tauwf)*US_w*US_ndt;
 // Optimal price contract set in domestic markets (FOC)
 US_phttilde/US_pht = US_thetat/(US_thetat-1)*US_fh/US_gh;
