@@ -821,17 +821,27 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 // Resource constraint
 //-------------
 
-// Aggregate nominal demand, using @{co}_pg = @{co}_pht and @{co}_qg = @{co}_cg   
-@{co}_py*@{co}_y = @{co}_qc+@{co}_pi*@{co}_qi+@{co}_pnt*@{co}_cg+@{co}_pnt*@{co}_ig
+// Aggregate nominal demand
+//TODO: adjust when extending to fiscal
+@{co}_py*@{co}_y = 
+@#for aItem in demandItems
+@#if aItem == "c"
++@{co}_q@{aItem}
+@#else
++@{co}_p@{aItem}*@{co}_q@{aItem}
+@#endif
+@#endfor
++@{co}_pnt*@{co}_cg
++@{co}_pnt*@{co}_ig
 @#for it in countries - [ co ]
 +@{co}@{it}_rer*@{it}@{co}_pim*@{it}_size/@{co}_size*@{it}@{co}_im
+@#for aItem in demandItems
 @#if !steady
--@{co}@{it}_pim*(@{co}@{it}_imc*(1-@{co}@{it}_gammaimc)/@{co}@{it}_gammaimcdag)
--@{co}@{it}_pim*(@{co}@{it}_imi*(1-@{co}@{it}_gammaimi)/@{co}@{it}_gammaimidag)
+-@{co}@{it}_pim*(@{co}@{it}_im@{aItem}*(1-@{co}@{it}_gammaim@{aItem})/@{co}@{it}_gammaim@{aItem}dag)
 @#else
--@{co}@{it}_pim*@{co}@{it}_imc
--@{co}@{it}_pim*@{co}@{it}_imi
+-@{co}@{it}_pim*@{co}@{it}_im@{aItem}
 @#endif
+@#endfor
 @#endfor
 ;
 
