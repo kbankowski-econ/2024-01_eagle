@@ -4031,9 +4031,8 @@ EAA_imy = (
 +EAA_pimc*EAA_imc
 +EAA_pimi*EAA_imi
 )/(EAA_py*EAA_y);
-// Aggregate nominal import share for consumption goods 
+// Aggregate nominal import share
 EAA_imcy = EAA_pimc*EAA_imc/(EAA_py*EAA_y);
-// Aggregate nominal import share for investment goods to be corrected with multilateral price of imports
 EAA_imiy = EAA_pimi*EAA_imi/(EAA_py*EAA_y);
 // Aggregate debt-to-output ratio
 EAA_by = EAA_b/(EAA_pybar*EAA_ybar);
@@ -5110,9 +5109,8 @@ EAB_imy = (
 +EAB_pimc*EAB_imc
 +EAB_pimi*EAB_imi
 )/(EAB_py*EAB_y);
-// Aggregate nominal import share for consumption goods 
+// Aggregate nominal import share
 EAB_imcy = EAB_pimc*EAB_imc/(EAB_py*EAB_y);
-// Aggregate nominal import share for investment goods to be corrected with multilateral price of imports
 EAB_imiy = EAB_pimi*EAB_imi/(EAB_py*EAB_y);
 // Aggregate debt-to-output ratio
 EAB_by = EAB_b/(EAB_pybar*EAB_ybar);
@@ -6192,9 +6190,8 @@ EAC_imy = (
 +EAC_pimc*EAC_imc
 +EAC_pimi*EAC_imi
 )/(EAC_py*EAC_y);
-// Aggregate nominal import share for consumption goods 
+// Aggregate nominal import share
 EAC_imcy = EAC_pimc*EAC_imc/(EAC_py*EAC_y);
-// Aggregate nominal import share for investment goods to be corrected with multilateral price of imports
 EAC_imiy = EAC_pimi*EAC_imi/(EAC_py*EAC_y);
 // Aggregate debt-to-output ratio
 EAC_by = EAC_b/(EAC_pybar*EAC_ybar);
@@ -7274,9 +7271,8 @@ EAD_imy = (
 +EAD_pimc*EAD_imc
 +EAD_pimi*EAD_imi
 )/(EAD_py*EAD_y);
-// Aggregate nominal import share for consumption goods 
+// Aggregate nominal import share
 EAD_imcy = EAD_pimc*EAD_imc/(EAD_py*EAD_y);
-// Aggregate nominal import share for investment goods to be corrected with multilateral price of imports
 EAD_imiy = EAD_pimi*EAD_imi/(EAD_py*EAD_y);
 // Aggregate debt-to-output ratio
 EAD_by = EAD_b/(EAD_pybar*EAD_ybar);
@@ -8351,9 +8347,8 @@ EAE_imy = (
 +EAE_pimc*EAE_imc
 +EAE_pimi*EAE_imi
 )/(EAE_py*EAE_y);
-// Aggregate nominal import share for consumption goods 
+// Aggregate nominal import share
 EAE_imcy = EAE_pimc*EAE_imc/(EAE_py*EAE_y);
-// Aggregate nominal import share for investment goods to be corrected with multilateral price of imports
 EAE_imiy = EAE_pimi*EAE_imi/(EAE_py*EAE_y);
 // Aggregate debt-to-output ratio
 EAE_by = EAE_b/(EAE_pybar*EAE_ybar);
@@ -9428,9 +9423,8 @@ RW_imy = (
 +RW_pimc*RW_imc
 +RW_pimi*RW_imi
 )/(RW_py*RW_y);
-// Aggregate nominal import share for consumption goods 
+// Aggregate nominal import share
 RW_imcy = RW_pimc*RW_imc/(RW_py*RW_y);
-// Aggregate nominal import share for investment goods to be corrected with multilateral price of imports
 RW_imiy = RW_pimi*RW_imi/(RW_py*RW_y);
 // Aggregate debt-to-output ratio
 RW_by = RW_b/(RW_pybar*RW_ybar);
@@ -10505,9 +10499,8 @@ US_imy = (
 +US_pimc*US_imc
 +US_pimi*US_imi
 )/(US_py*US_y);
-// Aggregate nominal import share for consumption goods 
+// Aggregate nominal import share
 US_imcy = US_pimc*US_imc/(US_py*US_y);
-// Aggregate nominal import share for investment goods to be corrected with multilateral price of imports
 US_imiy = US_pimi*US_imi/(US_py*US_y);
 // Aggregate debt-to-output ratio
 US_by = US_b/(US_pybar*US_ybar);
