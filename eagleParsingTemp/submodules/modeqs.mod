@@ -782,7 +782,11 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 @{co}_nt =  @{co}_nti+@{co}_ntc+@{co}_cg+@{co}_ig;
 
 // Aggregate demand for domestic intermediate goods, using @{co}_hg = @{co}_cg
-@{co}_ht = @{co}_htc+@{co}_hti;
+@{co}_ht =
+@#for aItem in demandItems 
++@{co}_ht@{aItem}
+@#endfor
+;
 
 // Price dispersion in the domestic markets
 @{co}_sh = (1-@{co}_xih)*(@{co}_phttilde/@{co}_pht)^(-@{co}_thetat)+@{co}_xih*(@{co}_piht/(@{co}_piht(-1)^@{co}_chih*@{co}_pi4target^(1/4*(1-@{co}_chih))))^@{co}_thetat*@{co}_sh(-1);
