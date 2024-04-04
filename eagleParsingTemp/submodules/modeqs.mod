@@ -302,10 +302,18 @@ model(block, bytecode, cutoff=0);
 @#endfor // countries - [ co ]
 
 // Total imports 
-@{co}_im = @{co}_imc+@{co}_imi;
+@{co}_im = 
+@#for aItem in demandItems
++@{co}_im@{aItem}
+@#endfor
+;
 
 // Total import deflator
-@{co}_im*@{co}_pim  = @{co}_pimc*@{co}_imc+@{co}_pimi*@{co}_imi;
+@{co}_im*@{co}_pim  = 
+@#for aItem in demandItems
++@{co}_pim@{aItem}*@{co}_im@{aItem}
+@#endfor
+;
 
 // Total Export deflator 
 @{co}_ex*@{co}_pex  =
