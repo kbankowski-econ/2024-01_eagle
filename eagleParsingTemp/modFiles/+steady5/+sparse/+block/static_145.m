@@ -30,7 +30,7 @@ function [y, T] = static_145(y, x, params, sparse_rowval, sparse_colval, sparse_
   y(88)=y(215);
   y(992)=y(1118);
   y(219)=y(215);
-  y(89)=y(215);
   y(221)=y(215);
+  y(89)=y(215);
   y(218)=y(215);
 end
