@@ -783,7 +783,13 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 @{co}_ysn = @{co}_snt*@{co}_nt;
 
 //  nontradables aggregate demand
-@{co}_nt =  @{co}_nti+@{co}_ntc+@{co}_cg+@{co}_ig;
+//TODO: adjust for the fiscal extension
+@{co}_nt = 
+@#for aItem in demandItems
++@{co}_nt@{aItem}
+@#endfor
++@{co}_cg+@{co}_ig
+;
 
 // Aggregate demand for domestic intermediate goods, using @{co}_hg = @{co}_cg
 @{co}_ht =
