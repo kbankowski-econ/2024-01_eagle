@@ -913,11 +913,10 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @#endfor
 )/(@{co}_py*@{co}_y);
 
-// Aggregate nominal import share for consumption goods 
-@{co}_imcy = @{co}_pimc*@{co}_imc/(@{co}_py*@{co}_y);
-
-// Aggregate nominal import share for investment goods to be corrected with multilateral price of imports
-@{co}_imiy = @{co}_pimi*@{co}_imi/(@{co}_py*@{co}_y);
+// Aggregate nominal import share
+@#for aItem in demandItems
+@{co}_im@{aItem}y = @{co}_pim@{aItem}*@{co}_im@{aItem}/(@{co}_py*@{co}_y);
+@#endfor
 
 // Aggregate debt-to-output ratio
 @{co}_by = @{co}_b/(@{co}_pybar*@{co}_ybar);
