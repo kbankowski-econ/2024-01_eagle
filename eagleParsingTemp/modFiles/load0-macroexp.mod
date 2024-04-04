@@ -3958,8 +3958,13 @@ EAA_qi = EAA_i+EAA_k*EAA_gammau;
 //-------------
 // Resource constraint
 //-------------
-// Aggregate nominal demand, using EAA_pg = EAA_pht and EAA_qg = EAA_cg   
-EAA_py*EAA_y = EAA_qc+EAA_pi*EAA_qi+EAA_pnt*EAA_cg+EAA_pnt*EAA_ig
+// Aggregate nominal demand
+//TODO: adjust when extending to fiscal
+EAA_py*EAA_y = 
++EAA_qc
++EAA_pi*EAA_qi
++EAA_pnt*EAA_cg
++EAA_pnt*EAA_ig
 +EAAEAB_rer*EABEAA_pim*EAB_size/EAA_size*EABEAA_im
 -EAAEAB_pim*EAAEAB_imc
 -EAAEAB_pim*EAAEAB_imi
@@ -5029,8 +5034,13 @@ EAB_qi = EAB_i+EAB_k*EAB_gammau;
 //-------------
 // Resource constraint
 //-------------
-// Aggregate nominal demand, using EAB_pg = EAB_pht and EAB_qg = EAB_cg   
-EAB_py*EAB_y = EAB_qc+EAB_pi*EAB_qi+EAB_pnt*EAB_cg+EAB_pnt*EAB_ig
+// Aggregate nominal demand
+//TODO: adjust when extending to fiscal
+EAB_py*EAB_y = 
++EAB_qc
++EAB_pi*EAB_qi
++EAB_pnt*EAB_cg
++EAB_pnt*EAB_ig
 +EABEAA_rer*EAAEAB_pim*EAA_size/EAB_size*EAAEAB_im
 -EABEAA_pim*EABEAA_imc
 -EABEAA_pim*EABEAA_imi
@@ -6103,8 +6113,13 @@ EAC_qi = EAC_i+EAC_k*EAC_gammau;
 //-------------
 // Resource constraint
 //-------------
-// Aggregate nominal demand, using EAC_pg = EAC_pht and EAC_qg = EAC_cg   
-EAC_py*EAC_y = EAC_qc+EAC_pi*EAC_qi+EAC_pnt*EAC_cg+EAC_pnt*EAC_ig
+// Aggregate nominal demand
+//TODO: adjust when extending to fiscal
+EAC_py*EAC_y = 
++EAC_qc
++EAC_pi*EAC_qi
++EAC_pnt*EAC_cg
++EAC_pnt*EAC_ig
 +EACEAA_rer*EAAEAC_pim*EAA_size/EAC_size*EAAEAC_im
 -EACEAA_pim*EACEAA_imc
 -EACEAA_pim*EACEAA_imi
@@ -7177,8 +7192,13 @@ EAD_qi = EAD_i+EAD_k*EAD_gammau;
 //-------------
 // Resource constraint
 //-------------
-// Aggregate nominal demand, using EAD_pg = EAD_pht and EAD_qg = EAD_cg   
-EAD_py*EAD_y = EAD_qc+EAD_pi*EAD_qi+EAD_pnt*EAD_cg+EAD_pnt*EAD_ig
+// Aggregate nominal demand
+//TODO: adjust when extending to fiscal
+EAD_py*EAD_y = 
++EAD_qc
++EAD_pi*EAD_qi
++EAD_pnt*EAD_cg
++EAD_pnt*EAD_ig
 +EADEAA_rer*EAAEAD_pim*EAA_size/EAD_size*EAAEAD_im
 -EADEAA_pim*EADEAA_imc
 -EADEAA_pim*EADEAA_imi
@@ -8246,8 +8266,13 @@ EAE_qi = EAE_i+EAE_k*EAE_gammau;
 //-------------
 // Resource constraint
 //-------------
-// Aggregate nominal demand, using EAE_pg = EAE_pht and EAE_qg = EAE_cg   
-EAE_py*EAE_y = EAE_qc+EAE_pi*EAE_qi+EAE_pnt*EAE_cg+EAE_pnt*EAE_ig
+// Aggregate nominal demand
+//TODO: adjust when extending to fiscal
+EAE_py*EAE_y = 
++EAE_qc
++EAE_pi*EAE_qi
++EAE_pnt*EAE_cg
++EAE_pnt*EAE_ig
 +EAEEAA_rer*EAAEAE_pim*EAA_size/EAE_size*EAAEAE_im
 -EAEEAA_pim*EAEEAA_imc
 -EAEEAA_pim*EAEEAA_imi
@@ -9315,8 +9340,13 @@ RW_qi = RW_i+RW_k*RW_gammau;
 //-------------
 // Resource constraint
 //-------------
-// Aggregate nominal demand, using RW_pg = RW_pht and RW_qg = RW_cg   
-RW_py*RW_y = RW_qc+RW_pi*RW_qi+RW_pnt*RW_cg+RW_pnt*RW_ig
+// Aggregate nominal demand
+//TODO: adjust when extending to fiscal
+RW_py*RW_y = 
++RW_qc
++RW_pi*RW_qi
++RW_pnt*RW_cg
++RW_pnt*RW_ig
 +RWEAA_rer*EAARW_pim*EAA_size/RW_size*EAARW_im
 -RWEAA_pim*RWEAA_imc
 -RWEAA_pim*RWEAA_imi
@@ -10384,8 +10414,13 @@ US_qi = US_i+US_k*US_gammau;
 //-------------
 // Resource constraint
 //-------------
-// Aggregate nominal demand, using US_pg = US_pht and US_qg = US_cg   
-US_py*US_y = US_qc+US_pi*US_qi+US_pnt*US_cg+US_pnt*US_ig
+// Aggregate nominal demand
+//TODO: adjust when extending to fiscal
+US_py*US_y = 
++US_qc
++US_pi*US_qi
++US_pnt*US_cg
++US_pnt*US_ig
 +USEAA_rer*EAAUS_pim*EAA_size/US_size*EAAUS_im
 -USEAA_pim*USEAA_imc
 -USEAA_pim*USEAA_imi
