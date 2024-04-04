@@ -970,11 +970,11 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 
 @#for it in countries - [ co ]
 
-// Imports of consumption goods 
-@{co}@{it}_imcy  = @{co}@{it}_pim*@{co}@{it}_imc/(@{co}_py*@{co}_y);
+// Bilateral shares
+@#for aItem in demandItems
+@{co}@{it}_im@{aItem}y = @{co}@{it}_pim*@{co}@{it}_im@{aItem}/(@{co}_py*@{co}_y);
+@#endfor
 
-// Imports of investment goods
-@{co}@{it}_imiy = @{co}@{it}_pim*@{co}@{it}_imi/(@{co}_py*@{co}_y);
 
 // Exports of consumption goods to gdp
 @{co}@{it}_excy  = @{it}_size/@{co}_size*@{co}@{it}_rer*@{it}@{co}_pim*@{it}@{co}_imc/(@{co}_py*@{co}_y);
