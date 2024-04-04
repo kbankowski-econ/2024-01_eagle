@@ -228,7 +228,11 @@ model(block, bytecode, cutoff=0);
 // Tradable sector dividends
 @{co}_dt = @{co}_pht*@{co}_ht
 @#for it in countries - [ co ]
-+@{it}@{co}_pim*@{co}@{it}_rer*(@{it}@{co}_imc+@{it}@{co}_imi)*@{it}_size/@{co}_size
++@{it}@{co}_pim*@{co}@{it}_rer*(
+	@#for aItem in demandItems
+	+@{it}@{co}_im@{aItem}
+	@#endfor
+	)*@{it}_size/@{co}_size
 @#endfor
 -@{co}_rk*@{co}_kdt-(1+@{co}_tauwf)*@{co}_w*@{co}_ndt;
 
