@@ -454,80 +454,60 @@ model(block, bytecode, cutoff=0);
 
 // Private consumption good firm
 
+@#for aItem in demandItems
+
 // Private consumption good (tradable)
-@{co}_ttc^((@{co}_mutc-1)/@{co}_mutc) = (@{co}_nutc)^(1/@{co}_mutc)*@{co}_htc^(1-1/@{co}_mutc)+(1-@{co}_nutc)^(1/@{co}_mutc)*@{co}_imc^(1-1/@{co}_mutc);
+@{co}_tt@{aItem}^((@{co}_mut@{aItem}-1)/@{co}_mut@{aItem}) = (@{co}_nut@{aItem})^(1/@{co}_mut@{aItem})*@{co}_ht@{aItem}^(1-1/@{co}_mut@{aItem})+(1-@{co}_nut@{aItem})^(1/@{co}_mut@{aItem})*@{co}_im@{aItem}^(1-1/@{co}_mut@{aItem});
 
 // Private consumption good  (total)
-@{co}_qc^((@{co}_muc-1)/@{co}_muc) = (@{co}_nuc)^(1/@{co}_muc)*@{co}_ttc^(1-1/@{co}_muc)+(1-@{co}_nuc)^(1/@{co}_muc)*@{co}_ntc^(1-1/@{co}_muc);
+@{co}_q@{aItem}^((@{co}_mu@{aItem}-1)/@{co}_mu@{aItem}) = (@{co}_nu@{aItem})^(1/@{co}_mu@{aItem})*@{co}_tt@{aItem}^(1-1/@{co}_mu@{aItem})+(1-@{co}_nu@{aItem})^(1/@{co}_mu@{aItem})*@{co}_nt@{aItem}^(1-1/@{co}_mu@{aItem});
 
 // Demand for domestic intermediate goods - NONTRADABLE
-@{co}_ntc = (1-@{co}_nuc)*(@{co}_pnt)^(-@{co}_muc)*@{co}_qc;
+@#if aItem == "c"
+@{co}_nt@{aItem} = (1-@{co}_nu@{aItem})*(@{co}_pnt)^(-@{co}_mu@{aItem})*@{co}_q@{aItem};
+@#else
+@{co}_nt@{aItem} = (1-@{co}_nu@{aItem})*(@{co}_pnt/@{co}_p@{aItem})^(-@{co}_mu@{aItem})*@{co}_q@{aItem};
+@#endif
 
 // Price of the consumption good (tradable)  
-@{co}_pttc^(1-@{co}_mutc) = (@{co}_nutc)*@{co}_pht^(1-@{co}_mutc)+(1-@{co}_nutc)*@{co}_pimc^(1-@{co}_mutc);
+@{co}_ptt@{aItem}^(1-@{co}_mut@{aItem}) = (@{co}_nut@{aItem})*@{co}_pht^(1-@{co}_mut@{aItem})+(1-@{co}_nut@{aItem})*@{co}_pim@{aItem}^(1-@{co}_mut@{aItem});
 
 // Price of the consumption good 
-1^(1-@{co}_muc) = (@{co}_nuc)*@{co}_pttc^(1-@{co}_muc)+(1-@{co}_nuc)*@{co}_pnt^(1-@{co}_muc);
-
-// Demand for domestic intermediate goods
-@{co}_htc = @{co}_nutc*(@{co}_pht/@{co}_pttc)^(-@{co}_mutc)*@{co}_ttc;
-
-@#for it in countries - [ co ]
-@#if !steady
-
-// Import adjustment cost
-@{co}@{it}_gammaimc = @{co}_gammaimc1/2*((@{co}@{it}_imc/@{co}_qc)/(@{co}@{it}_imc(-1)/@{co}_qc(-1))-1)^2;
-
-// Auxiliary equation for transformation of import adjustment cost
-@{co}@{it}_gammaimcdag = 1-@{co}@{it}_gammaimc-@{co}_gammaimc1*((@{co}@{it}_imc/@{co}_qc)/(@{co}@{it}_imc(-1)/@{co}_qc(-1))-1)*(@{co}@{it}_imc/@{co}_qc)/(@{co}@{it}_imc(-1)/@{co}_qc(-1));
-
-@#else // !steady
-@{co}@{it}_gammaimc = 0;
-@{co}@{it}_gammaimcdag = 1;
-@#endif // !steady
-
-@#endfor // countries - [ co ]
-
-
-// Private investment good firm
-
-// Private investment good
-@{co}_tti^((@{co}_muti-1)/@{co}_muti) = (@{co}_nuti)^(1/@{co}_muti)*@{co}_hti^(1-1/@{co}_muti)+(1-@{co}_nuti)^(1/@{co}_muti)*@{co}_imi^(1-1/@{co}_muti);
-
-// Private investment good
-@{co}_qi^((@{co}_mui-1)/@{co}_mui) = (@{co}_nui)^(1/@{co}_mui)*@{co}_tti^(1-1/@{co}_mui)+(1-@{co}_nui)^(1/@{co}_mui)*@{co}_nti^(1-1/@{co}_mui);
-
-// Demand for domestic intermediate goods
-@{co}_nti = (1-@{co}_nui)*(@{co}_pnt/@{co}_pi)^(-@{co}_mui)*@{co}_qi;
-
-// Price of the investment good (TRADABLE)  
-@{co}_ptti^(1-@{co}_muti) = (@{co}_nuti)*@{co}_pht^(1-@{co}_muti)+(1-@{co}_nuti)*@{co}_pimi^(1-@{co}_muti);
-
-// Price of the investment good
-@{co}_pi^(1-@{co}_mui) = (@{co}_nui)*@{co}_ptti^(1-@{co}_mui)+(1-@{co}_nui)*(@{co}_pnt)^(1-@{co}_mui);
-
-// Demand for domestic intermediate goods
-@{co}_hti = @{co}_nuti*(@{co}_pht/@{co}_ptti)^(-@{co}_muti)*@{co}_tti;
-
-@#for it in countries - [ co ]
-@#if !steady
-
-// Import adjustment cost
-@{co}@{it}_gammaimi = @{co}_gammaimi1/2*((@{co}@{it}_imi/@{co}_qi)/(@{co}@{it}_imi(-1)/@{co}_qi(-1))-1)^2;
-
-// Auxiliary equation for transformation of import adjustment cost
-@{co}@{it}_gammaimidag = 1-@{co}@{it}_gammaimi-@{co}_gammaimi1*((@{co}@{it}_imi/@{co}_qi)/(@{co}@{it}_imi(-1)/@{co}_qi)-1)*((@{co}@{it}_imi/@{co}_qi)/(@{co}@{it}_imi(-1)/@{co}_qi(-1)));
-
-@#else // !steady
-@{co}@{it}_gammaimi = 0;
-@{co}@{it}_gammaimidag = 1;
-@#endif // !steady
-@#endfor // countries - [ co ]
-
-// Auxiliary equation for the price of the investment good in steady state
-@#if steady
-@{co}_pibar = @{co}_pi;
+@#if aItem == "c"
+1^(1-@{co}_mu@{aItem}) = (@{co}_nu@{aItem})*@{co}_ptt@{aItem}^(1-@{co}_mu@{aItem})+(1-@{co}_nu@{aItem})*@{co}_pnt^(1-@{co}_mu@{aItem});
+@#else
+@{co}_p@{aItem}^(1-@{co}_mu@{aItem}) = (@{co}_nu@{aItem})*@{co}_ptt@{aItem}^(1-@{co}_mu@{aItem})+(1-@{co}_nu@{aItem})*@{co}_pnt^(1-@{co}_mu@{aItem});
 @#endif
+
+@#if aItem == "c"
+// Auxiliary equation for the price of the investment good in steady state
+@#else
+@#if steady
+@{co}_p@{aItem}bar = @{co}_p@{aItem};
+@#endif
+@#endif
+
+// Demand for domestic intermediate goods
+@{co}_ht@{aItem} = @{co}_nut@{aItem}*(@{co}_pht/@{co}_ptt@{aItem})^(-@{co}_mut@{aItem})*@{co}_tt@{aItem};
+
+
+@#for it in countries - [ co ]
+@#if !steady
+
+// Import adjustment cost
+@{co}@{it}_gammaim@{aItem} = @{co}_gammaim@{aItem}1/2*((@{co}@{it}_im@{aItem}/@{co}_q@{aItem})/(@{co}@{it}_im@{aItem}(-1)/@{co}_q@{aItem}(-1))-1)^2;
+
+// Auxiliary equation for transformation of import adjustment cost
+@{co}@{it}_gammaim@{aItem}dag = 1-@{co}@{it}_gammaim@{aItem}-@{co}_gammaim@{aItem}1*((@{co}@{it}_im@{aItem}/@{co}_q@{aItem})/(@{co}@{it}_im@{aItem}(-1)/@{co}_q@{aItem}(-1))-1)*(@{co}@{it}_im@{aItem}/@{co}_q@{aItem})/(@{co}@{it}_im@{aItem}(-1)/@{co}_q@{aItem}(-1));
+
+@#else // !steady
+@{co}@{it}_gammaim@{aItem} = 0;
+@{co}@{it}_gammaim@{aItem}dag = 1;
+@#endif // !steady
+
+@#endfor // countries - [ co ]
+
+@#endfor // aItem
 
 // Trade balance
 @{co}_tb =
