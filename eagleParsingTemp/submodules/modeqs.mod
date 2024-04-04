@@ -907,7 +907,11 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @{co}_iy = @{co}_pi*@{co}_i/(@{co}_py*@{co}_y);
 
 // Aggregate nominal import share  
-@{co}_imy = (@{co}_pimc*@{co}_imc+@{co}_pimi*@{co}_imi)/(@{co}_py*@{co}_y);
+@{co}_imy = (
+@#for aItem in demandItems
++@{co}_pim@{aItem}*@{co}_im@{aItem}
+@#endfor
+)/(@{co}_py*@{co}_y);
 
 // Aggregate nominal import share for consumption goods 
 @{co}_imcy = @{co}_pimc*@{co}_imc/(@{co}_py*@{co}_y);
