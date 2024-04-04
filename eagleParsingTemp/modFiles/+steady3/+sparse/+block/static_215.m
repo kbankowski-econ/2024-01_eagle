@@ -39,6 +39,4 @@ function [y, T] = static_215(y, x, params, sparse_rowval, sparse_colval, sparse_
   y(787)=(y(783)*y(826)+y(785)*y(827))/(y(835)*y(884));
   y(789)=y(817)*y(779)/(y(835)*y(884));
   y(749)=y(746)/(y(835)*y(884));
-  y(218)=y(217)*y(212)/y(2158);
-  y(221)=y(217)*y(224)/y(2155);
 end

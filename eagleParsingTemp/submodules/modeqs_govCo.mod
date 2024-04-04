@@ -228,7 +228,11 @@ model(block, bytecode, cutoff=0);
 // Tradable sector dividends
 @{co}_dt = @{co}_pht*@{co}_ht
 @#for it in countries - [ co ]
-+@{it}@{co}_pim*@{co}@{it}_rer*(@{it}@{co}_imc+@{it}@{co}_imi)*@{it}_size/@{co}_size
++@{it}@{co}_pim*@{co}@{it}_rer*(
+	@#for aItem in demandItems
+	+@{it}@{co}_im@{aItem}
+	@#endfor
+	)*@{it}_size/@{co}_size
 @#endfor
 -@{co}_rk*@{co}_kdt-(1+@{co}_tauwf)*@{co}_w*@{co}_ndt;
 
@@ -298,10 +302,18 @@ model(block, bytecode, cutoff=0);
 @#endfor // countries - [ co ]
 
 // Total imports 
-@{co}_im = @{co}_imc+@{co}_imi;
+@{co}_im = 
+@#for aItem in demandItems
++@{co}_im@{aItem}
+@#endfor
+;
 
 // Total import deflator
-@{co}_im*@{co}_pim  = @{co}_pimc*@{co}_imc+@{co}_pimi*@{co}_imi;
+@{co}_im*@{co}_pim  = 
+@#for aItem in demandItems
++@{co}_pim@{aItem}*@{co}_im@{aItem}
+@#endfor
+;
 
 // Total Export deflator 
 @{co}_ex*@{co}_pex  =
@@ -354,166 +366,91 @@ model(block, bytecode, cutoff=0);
 // Final-good firms
 //-----------------
 
+@#for aItem in demandItems
+
 // Private consumption good (import)
-@{co}_imc^((@{co}_mumc-1)/@{co}_mumc) =
+@{co}_im@{aItem}^((@{co}_mum@{aItem}-1)/@{co}_mum@{aItem}) =
 @#for it in countries - [ co, co6 ]
 @#if !steady
-+@{co}@{it}_numc ^(1/@{co}_mumc)*((1-@{co}@{it}_gammaimc)*@{co}@{it}_imc)^(1-1/@{co}_mumc)
++@{co}@{it}_num@{aItem} ^(1/@{co}_mum@{aItem})*((1-@{co}@{it}_gammaim@{aItem})*@{co}@{it}_im@{aItem})^(1-1/@{co}_mum@{aItem})
 @#else
-+@{co}@{it}_numc ^(1/@{co}_mumc)*@{co}@{it}_imc^(1-1/@{co}_mumc)
++@{co}@{it}_num@{aItem} ^(1/@{co}_mum@{aItem})*@{co}@{it}_im@{aItem}^(1-1/@{co}_mum@{aItem})
 @#endif
 @#endfor
 +(1
 @#for it in countries - [ co, co6 ]
--@{co}@{it}_numc
+-@{co}@{it}_num@{aItem}
 @#endfor
 @#if !steady
-)^(1/@{co}_mumc)*((1-@{co}@{co6}_gammaimc)*@{co}@{co6}_imc)^(1-1/@{co}_mumc);
+)^(1/@{co}_mum@{aItem})*((1-@{co}@{co6}_gammaim@{aItem})*@{co}@{co6}_im@{aItem})^(1-1/@{co}_mum@{aItem});
 @#else
-)^(1/@{co}_mumc)*@{co}@{co6}_imc^(1-1/@{co}_mumc);
+)^(1/@{co}_mum@{aItem})*@{co}@{co6}_im@{aItem}^(1-1/@{co}_mum@{aItem});
 @#endif
 
 // Demand for bilateral consumption import goods
 @#if !steady
-@{co}@{co5}_imc = @{co}@{co5}_numc*(@{co}@{co5}_pim/(@{co}@{co5}_gammaimcdag*@{co}_pimc))^(-@{co}_mumc)*@{co}_imc/(1-@{co}@{co5}_gammaimc);
+@{co}@{co5}_im@{aItem} = @{co}@{co5}_num@{aItem}*(@{co}@{co5}_pim/(@{co}@{co5}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{co5}_gammaim@{aItem});
 @#else
-@{co}@{co5}_imc = @{co}@{co5}_numc*(@{co}@{co5}_pim/@{co}_pimc)^(-@{co}_mumc)*@{co}_imc;
+@{co}@{co5}_im@{aItem} = @{co}@{co5}_num@{aItem}*(@{co}@{co5}_pim/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
 @#endif
 
 @#if !steady
-@{co}@{co3}_imc = @{co}@{co3}_numc*(@{co}@{co3}_pim/(@{co}@{co3}_gammaimcdag*@{co}_pimc))^(-@{co}_mumc)*@{co}_imc/(1-@{co}@{co3}_gammaimc);
+@{co}@{co3}_im@{aItem} = @{co}@{co3}_num@{aItem}*(@{co}@{co3}_pim/(@{co}@{co3}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{co3}_gammaim@{aItem});
 @#else
-@{co}@{co3}_imc = @{co}@{co3}_numc*(@{co}@{co3}_pim/@{co}_pimc)^(-@{co}_mumc)*@{co}_imc;
+@{co}@{co3}_im@{aItem} = @{co}@{co3}_num@{aItem}*(@{co}@{co3}_pim/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
 @#endif
 
 @#if !steady
-@{co}@{co4}_imc = @{co}@{co4}_numc*(@{co}@{co4}_pim/(@{co}@{co4}_gammaimcdag*@{co}_pimc))^(-@{co}_mumc)*@{co}_imc/(1-@{co}@{co4}_gammaimc);
+@{co}@{co4}_im@{aItem} = @{co}@{co4}_num@{aItem}*(@{co}@{co4}_pim/(@{co}@{co4}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{co4}_gammaim@{aItem});
 @#else
-@{co}@{co4}_imc = @{co}@{co4}_numc*(@{co}@{co4}_pim/@{co}_pimc)^(-@{co}_mumc)*@{co}_imc;
+@{co}@{co4}_im@{aItem} = @{co}@{co4}_num@{aItem}*(@{co}@{co4}_pim/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
 @#endif
 
 @#if !steady
-@{co}@{co7}_imc = @{co}@{co7}_numc*(@{co}@{co7}_pim/(@{co}@{co7}_gammaimcdag*@{co}_pimc))^(-@{co}_mumc)*@{co}_imc/(1-@{co}@{co7}_gammaimc);
+@{co}@{co7}_im@{aItem} = @{co}@{co7}_num@{aItem}*(@{co}@{co7}_pim/(@{co}@{co7}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{co7}_gammaim@{aItem});
 @#else
-@{co}@{co7}_imc = @{co}@{co7}_numc*(@{co}@{co7}_pim/@{co}_pimc)^(-@{co}_mumc)*@{co}_imc;
+@{co}@{co7}_im@{aItem} = @{co}@{co7}_num@{aItem}*(@{co}@{co7}_pim/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
 @#endif
 
-@{co}@{co6}_imc = (1
+@{co}@{co6}_im@{aItem} = (1
 @#for it in countries - [ co, co6 ]
--@{co}@{it}_numc
+-@{co}@{it}_num@{aItem}
 @#endfor
 @#if !steady
-)*(@{co}@{co6}_pim/(@{co}@{co6}_gammaimcdag*@{co}_pimc))^(-@{co}_mumc)*@{co}_imc/(1-@{co}@{co6}_gammaimc);
+)*(@{co}@{co6}_pim/(@{co}@{co6}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{co6}_gammaim@{aItem});
 @#else
-)*(@{co}@{co6}_pim/@{co}_pimc)^(-@{co}_mumc)*@{co}_imc;
+)*(@{co}@{co6}_pim/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
 @#endif
 
 // Price of the consumption good (import)
-@{co}_pimc^(1-@{co}_mumc) =
+@{co}_pim@{aItem}^(1-@{co}_mum@{aItem}) =
 @#for it in countries - [ co, co6 ]
 @#if !steady
-+@{co}@{it}_numc *(@{co}@{it}_pim/@{co}@{it}_gammaimcdag)^(1-@{co}_mumc)
++@{co}@{it}_num@{aItem} *(@{co}@{it}_pim/@{co}@{it}_gammaim@{aItem}dag)^(1-@{co}_mum@{aItem})
 @#else
-+@{co}@{it}_numc * @{co}@{it}_pim^(1-@{co}_mumc)
++@{co}@{it}_num@{aItem} * @{co}@{it}_pim^(1-@{co}_mum@{aItem})
 @#endif
 @#endfor
 +(1
 @#for it in countries - [ co, co6 ]
--@{co}@{it}_numc
+-@{co}@{it}_num@{aItem}
 @#endfor
 @#if !steady
-)*(@{co}@{co6}_pim/@{co}@{co6}_gammaimcdag)^(1-@{co}_mumc);
+)*(@{co}@{co6}_pim/@{co}@{co6}_gammaim@{aItem}dag)^(1-@{co}_mum@{aItem});
 @#else
-)*@{co}@{co6}_pim^(1-@{co}_mumc);
+)*@{co}@{co6}_pim^(1-@{co}_mum@{aItem});
 @#endif
 
 // Private consumption good (import) inflation
-@{co}_piimc = @{co}_pimc/@{co}_pimc(-1)*@{co}_pic;
+@{co}_piim@{aItem} = @{co}_pim@{aItem}/@{co}_pim@{aItem}(-1)*@{co}_pic;
+
+@#endfor
 
 // Private consumption good (import) inflation
 @{co}_piimc4 = @{co}_pimc/@{co}_pimc(-4)*@{co}_pic4;
 
 // Private consumption good (import) inflation
 @{co}_piex4 = @{co}_pex/@{co}_pex(-4)*@{co}_pic4;
-
-// Private investment good (import)
-@{co}_imi^((@{co}_mumi-1)/@{co}_mumi) =
-@#for it in countries - [ co, co6 ]
-@#if !steady
-+@{co}@{it}_numi ^(1/@{co}_mumi)*((1-@{co}@{it}_gammaimi)*@{co}@{it}_imi)^(1-1/@{co}_mumi)
-@#else
-+@{co}@{it}_numi ^(1/@{co}_mumi)*@{co}@{it}_imi^(1-1/@{co}_mumi)
-@#endif
-@#endfor
-+(1
-@#for it in countries - [ co, co6 ]
--@{co}@{it}_numi
-@#endfor
-@#if !steady
-)^(1/@{co}_mumi)*((1-@{co}@{co6}_gammaimi)*@{co}@{co6}_imi)^(1-1/@{co}_mumi);
-@#else
-)^(1/@{co}_mumi)*@{co}@{co6}_imi^(1-1/@{co}_mumi);
-@#endif
-
-// Demand for bilateral investment import goods
-@#if !steady
-@{co}@{co5}_imi = @{co}@{co5}_numi*(@{co}@{co5}_pim/(@{co}@{co5}_gammaimidag*@{co}_pimi))^(-@{co}_mumi)*@{co}_imi/(1-@{co}@{co5}_gammaimi);
-@#else
-@{co}@{co5}_imi = @{co}@{co5}_numi*(@{co}@{co5}_pim/@{co}_pimi)^(-@{co}_mumi)*@{co}_imi;
-@#endif
-
-// Demand for bilateral investment import goods
-@#if !steady
-@{co}@{co3}_imi = @{co}@{co3}_numi*(@{co}@{co3}_pim/(@{co}@{co3}_gammaimidag*@{co}_pimi))^(-@{co}_mumi)*@{co}_imi/(1-@{co}@{co3}_gammaimi);
-@#else
-@{co}@{co3}_imi = @{co}@{co3}_numi*(@{co}@{co3}_pim/@{co}_pimi)^(-@{co}_mumi)*@{co}_imi;
-@#endif
-
-// Demand for bilateral investment import goods
-@#if !steady
-@{co}@{co4}_imi = @{co}@{co4}_numi*(@{co}@{co4}_pim/(@{co}@{co4}_gammaimidag*@{co}_pimi))^(-@{co}_mumi)*@{co}_imi/(1-@{co}@{co4}_gammaimi);
-@#else
-@{co}@{co4}_imi = @{co}@{co4}_numi*(@{co}@{co4}_pim/@{co}_pimi)^(-@{co}_mumi)*@{co}_imi;
-@#endif
-
-// Demand for bilateral investment import goods
-@#if !steady
-@{co}@{co7}_imi = @{co}@{co7}_numi*(@{co}@{co7}_pim/(@{co}@{co7}_gammaimidag*@{co}_pimi))^(-@{co}_mumi)*@{co}_imi/(1-@{co}@{co7}_gammaimi);
-@#else
-@{co}@{co7}_imi = @{co}@{co7}_numi*(@{co}@{co7}_pim/@{co}_pimi)^(-@{co}_mumi)*@{co}_imi;
-@#endif
-
-@{co}@{co6}_imi = (1
-@#for it in countries - [ co, co6 ]
--@{co}@{it}_numi
-@#endfor
-@#if !steady
-)*(@{co}@{co6}_pim/(@{co}@{co6}_gammaimidag*@{co}_pimi))^(-@{co}_mumi)*@{co}_imi/(1-@{co}@{co6}_gammaimi);
-@#else
-)*(@{co}@{co6}_pim/@{co}_pimi)^(-@{co}_mumi)*@{co}_imi;
-@#endif
-
-// Price of the investment good (import)
-@{co}_pimi^(1-@{co}_mumi) =
-@#for it in countries - [ co, co6 ]
-@#if !steady
-+@{co}@{it}_numi *(@{co}@{it}_pim/@{co}@{it}_gammaimidag)^(1-@{co}_mumi)
-@#else
-+@{co}@{it}_numi * @{co}@{it}_pim^(1-@{co}_mumi)
-@#endif
-@#endfor
-+(1
-@#for it in countries - [ co, co6 ]
--@{co}@{it}_numi
-@#endfor
-@#if !steady
-)*(@{co}@{co6}_pim/@{co}@{co6}_gammaimidag)^(1-@{co}_mumi);
-@#else
-)*@{co}@{co6}_pim^(1-@{co}_mumi);
-@#endif
-
-// Private investment good (import) inflation
-@{co}_piimi = @{co}_pimi/@{co}_pimi(-1)*@{co}_pic;
 
 // Wedge between aggregate demand and production, using @{co}_x = @{co2}_size/@{co}_size*@{co2}_im
 @{co}_yst = @{co}_sh*@{co}_ht
@@ -524,85 +461,69 @@ model(block, bytecode, cutoff=0);
 
 // Aggregate demand for bilateral imported intermediate goods
 @#for it in countries - [ co ]
-@{co}@{it}_im = @{co}@{it}_imi+@{co}@{it}_imc;
+@{co}@{it}_im = 
+@#for aItem in demandItems
++@{co}@{it}_im@{aItem}
+@#endfor
+;
 @#endfor
 
 // Private consumption good firm
 
+@#for aItem in demandItems
+
 // Private consumption good (tradable)
-@{co}_ttc^((@{co}_mutc-1)/@{co}_mutc) = (@{co}_nutc)^(1/@{co}_mutc)*@{co}_htc^(1-1/@{co}_mutc)+(1-@{co}_nutc)^(1/@{co}_mutc)*@{co}_imc^(1-1/@{co}_mutc);
+@{co}_tt@{aItem}^((@{co}_mut@{aItem}-1)/@{co}_mut@{aItem}) = (@{co}_nut@{aItem})^(1/@{co}_mut@{aItem})*@{co}_ht@{aItem}^(1-1/@{co}_mut@{aItem})+(1-@{co}_nut@{aItem})^(1/@{co}_mut@{aItem})*@{co}_im@{aItem}^(1-1/@{co}_mut@{aItem});
 
 // Private consumption good  (total)
-@{co}_qc^((@{co}_muc-1)/@{co}_muc) = (@{co}_nuc)^(1/@{co}_muc)*@{co}_ttc^(1-1/@{co}_muc)+(1-@{co}_nuc)^(1/@{co}_muc)*@{co}_ntc^(1-1/@{co}_muc);
+@{co}_q@{aItem}^((@{co}_mu@{aItem}-1)/@{co}_mu@{aItem}) = (@{co}_nu@{aItem})^(1/@{co}_mu@{aItem})*@{co}_tt@{aItem}^(1-1/@{co}_mu@{aItem})+(1-@{co}_nu@{aItem})^(1/@{co}_mu@{aItem})*@{co}_nt@{aItem}^(1-1/@{co}_mu@{aItem});
 
 // Demand for domestic intermediate goods - NONTRADABLE
-@{co}_ntc = (1-@{co}_nuc)*(@{co}_pnt)^(-@{co}_muc)*@{co}_qc;
+@#if aItem == "c"
+@{co}_nt@{aItem} = (1-@{co}_nu@{aItem})*(@{co}_pnt)^(-@{co}_mu@{aItem})*@{co}_q@{aItem};
+@#else
+@{co}_nt@{aItem} = (1-@{co}_nu@{aItem})*(@{co}_pnt/@{co}_p@{aItem})^(-@{co}_mu@{aItem})*@{co}_q@{aItem};
+@#endif
 
 // Price of the consumption good (tradable)  
-@{co}_pttc^(1-@{co}_mutc) = (@{co}_nutc)*@{co}_pht^(1-@{co}_mutc)+(1-@{co}_nutc)*@{co}_pimc^(1-@{co}_mutc);
+@{co}_ptt@{aItem}^(1-@{co}_mut@{aItem}) = (@{co}_nut@{aItem})*@{co}_pht^(1-@{co}_mut@{aItem})+(1-@{co}_nut@{aItem})*@{co}_pim@{aItem}^(1-@{co}_mut@{aItem});
 
 // Price of the consumption good 
-1^(1-@{co}_muc) = (@{co}_nuc)*@{co}_pttc^(1-@{co}_muc)+(1-@{co}_nuc)*@{co}_pnt^(1-@{co}_muc);
+@#if aItem == "c"
+1^(1-@{co}_mu@{aItem}) = (@{co}_nu@{aItem})*@{co}_ptt@{aItem}^(1-@{co}_mu@{aItem})+(1-@{co}_nu@{aItem})*@{co}_pnt^(1-@{co}_mu@{aItem});
+@#else
+@{co}_p@{aItem}^(1-@{co}_mu@{aItem}) = (@{co}_nu@{aItem})*@{co}_ptt@{aItem}^(1-@{co}_mu@{aItem})+(1-@{co}_nu@{aItem})*@{co}_pnt^(1-@{co}_mu@{aItem});
+@#endif
 
-// Demand for domestic intermediate goods
-@{co}_htc = @{co}_nutc*(@{co}_pht/@{co}_pttc)^(-@{co}_mutc)*@{co}_ttc;
-
-@#for it in countries - [ co ]
-@#if !steady
-
-// Import adjustment cost
-@{co}@{it}_gammaimc = @{co}_gammaimc1/2*((@{co}@{it}_imc/@{co}_qc)/(@{co}@{it}_imc(-1)/@{co}_qc(-1))-1)^2;
-
-// Auxiliary equation for transformation of import adjustment cost
-@{co}@{it}_gammaimcdag = 1-@{co}@{it}_gammaimc-@{co}_gammaimc1*((@{co}@{it}_imc/@{co}_qc)/(@{co}@{it}_imc(-1)/@{co}_qc(-1))-1)*(@{co}@{it}_imc/@{co}_qc)/(@{co}@{it}_imc(-1)/@{co}_qc(-1));
-
-@#else // !steady
-@{co}@{it}_gammaimc = 0;
-@{co}@{it}_gammaimcdag = 1;
-@#endif // !steady
-
-@#endfor // countries - [ co ]
-
-
-// Private investment good firm
-
-// Private investment good
-@{co}_tti^((@{co}_muti-1)/@{co}_muti) = (@{co}_nuti)^(1/@{co}_muti)*@{co}_hti^(1-1/@{co}_muti)+(1-@{co}_nuti)^(1/@{co}_muti)*@{co}_imi^(1-1/@{co}_muti);
-
-// Private investment good
-@{co}_qi^((@{co}_mui-1)/@{co}_mui) = (@{co}_nui)^(1/@{co}_mui)*@{co}_tti^(1-1/@{co}_mui)+(1-@{co}_nui)^(1/@{co}_mui)*@{co}_nti^(1-1/@{co}_mui);
-
-// Demand for domestic intermediate goods
-@{co}_nti = (1-@{co}_nui)*(@{co}_pnt/@{co}_pi)^(-@{co}_mui)*@{co}_qi;
-
-// Price of the investment good (TRADABLE)  
-@{co}_ptti^(1-@{co}_muti) = (@{co}_nuti)*@{co}_pht^(1-@{co}_muti)+(1-@{co}_nuti)*@{co}_pimi^(1-@{co}_muti);
-
-// Price of the investment good
-@{co}_pi^(1-@{co}_mui) = (@{co}_nui)*@{co}_ptti^(1-@{co}_mui)+(1-@{co}_nui)*(@{co}_pnt)^(1-@{co}_mui);
-
+@#if aItem == "c"
 // Auxiliary equation for the price of the investment good in steady state
+@#else
 @#if steady
-@{co}_pibar = @{co}_pi;
+@{co}_p@{aItem}bar = @{co}_p@{aItem};
+@#endif
 @#endif
 
 // Demand for domestic intermediate goods
-@{co}_hti = @{co}_nuti*(@{co}_pht/@{co}_ptti)^(-@{co}_muti)*@{co}_tti;
+@{co}_ht@{aItem} = @{co}_nut@{aItem}*(@{co}_pht/@{co}_ptt@{aItem})^(-@{co}_mut@{aItem})*@{co}_tt@{aItem};
+
 
 @#for it in countries - [ co ]
 @#if !steady
 
 // Import adjustment cost
-@{co}@{it}_gammaimi = @{co}_gammaimi1/2*((@{co}@{it}_imi/@{co}_qi)/(@{co}@{it}_imi(-1)/@{co}_qi(-1))-1)^2;
+@{co}@{it}_gammaim@{aItem} = @{co}_gammaim@{aItem}1/2*((@{co}@{it}_im@{aItem}/@{co}_q@{aItem})/(@{co}@{it}_im@{aItem}(-1)/@{co}_q@{aItem}(-1))-1)^2;
 
 // Auxiliary equation for transformation of import adjustment cost
-@{co}@{it}_gammaimidag = 1-@{co}@{it}_gammaimi-@{co}_gammaimi1*((@{co}@{it}_imi/@{co}_qi)/(@{co}@{it}_imi(-1)/@{co}_qi)-1)*((@{co}@{it}_imi/@{co}_qi)/(@{co}@{it}_imi(-1)/@{co}_qi(-1)));
+@{co}@{it}_gammaim@{aItem}dag = 1-@{co}@{it}_gammaim@{aItem}-@{co}_gammaim@{aItem}1*((@{co}@{it}_im@{aItem}/@{co}_q@{aItem})/(@{co}@{it}_im@{aItem}(-1)/@{co}_q@{aItem}(-1))-1)*(@{co}@{it}_im@{aItem}/@{co}_q@{aItem})/(@{co}@{it}_im@{aItem}(-1)/@{co}_q@{aItem}(-1));
 
 @#else // !steady
-@{co}@{it}_gammaimi = 0;
-@{co}@{it}_gammaimidag = 1;
+@{co}@{it}_gammaim@{aItem} = 0;
+@{co}@{it}_gammaim@{aItem}dag = 1;
 @#endif // !steady
+
 @#endfor // countries - [ co ]
+
+@#endfor // aItem
 
 // Trade balance
 @{co}_tb =
@@ -862,10 +783,20 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 @{co}_ysn = @{co}_snt*@{co}_nt;
 
 //  nontradables aggregate demand
-@{co}_nt =  @{co}_nti+@{co}_ntc+@{co}_cg+@{co}_ig;
+//TODO: adjust for the fiscal extension
+@{co}_nt = 
+@#for aItem in demandItems
++@{co}_nt@{aItem}
+@#endfor
++@{co}_cg+@{co}_ig
+;
 
 // Aggregate demand for domestic intermediate goods, using @{co}_hg = @{co}_cg
-@{co}_ht = @{co}_htc+@{co}_hti;
+@{co}_ht =
+@#for aItem in demandItems 
++@{co}_ht@{aItem}
+@#endfor
+;
 
 // Price dispersion in the domestic markets
 @{co}_sh = (1-@{co}_xih)*(@{co}_phttilde/@{co}_pht)^(-@{co}_thetat)+@{co}_xih*(@{co}_piht/(@{co}_piht(-1)^@{co}_chih*@{co}_pi4target^(1/4*(1-@{co}_chih))))^@{co}_thetat*@{co}_sh(-1);
@@ -890,17 +821,27 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 // Resource constraint
 //-------------
 
-// Aggregate nominal demand, using @{co}_pg = @{co}_pht and @{co}_qg = @{co}_cg   
-@{co}_py*@{co}_y = @{co}_qc+@{co}_pi*@{co}_qi+@{co}_pnt*@{co}_cg+@{co}_pnt*@{co}_ig
+// Aggregate nominal demand
+//TODO: adjust when extending to fiscal
+@{co}_py*@{co}_y = 
+@#for aItem in demandItems
+@#if aItem == "c"
++@{co}_q@{aItem}
+@#else
++@{co}_p@{aItem}*@{co}_q@{aItem}
+@#endif
+@#endfor
++@{co}_pnt*@{co}_cg
++@{co}_pnt*@{co}_ig
 @#for it in countries - [ co ]
 +@{co}@{it}_rer*@{it}@{co}_pim*@{it}_size/@{co}_size*@{it}@{co}_im
+@#for aItem in demandItems
 @#if !steady
--@{co}@{it}_pim*(@{co}@{it}_imc*(1-@{co}@{it}_gammaimc)/@{co}@{it}_gammaimcdag)
--@{co}@{it}_pim*(@{co}@{it}_imi*(1-@{co}@{it}_gammaimi)/@{co}@{it}_gammaimidag)
+-@{co}@{it}_pim*(@{co}@{it}_im@{aItem}*(1-@{co}@{it}_gammaim@{aItem})/@{co}@{it}_gammaim@{aItem}dag)
 @#else
--@{co}@{it}_pim*@{co}@{it}_imc
--@{co}@{it}_pim*@{co}@{it}_imi
+-@{co}@{it}_pim*@{co}@{it}_im@{aItem}
 @#endif
+@#endfor
 @#endfor
 ;
 
@@ -966,13 +907,16 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @{co}_iy = @{co}_pi*@{co}_i/(@{co}_py*@{co}_y);
 
 // Aggregate nominal import share  
-@{co}_imy = (@{co}_pimc*@{co}_imc+@{co}_pimi*@{co}_imi)/(@{co}_py*@{co}_y);
+@{co}_imy = (
+@#for aItem in demandItems
++@{co}_pim@{aItem}*@{co}_im@{aItem}
+@#endfor
+)/(@{co}_py*@{co}_y);
 
-// Aggregate nominal import share for consumption goods 
-@{co}_imcy = @{co}_pimc*@{co}_imc/(@{co}_py*@{co}_y);
-
-// Aggregate nominal import share for investment goods to be corrected with multilateral price of imports
-@{co}_imiy = @{co}_pimi*@{co}_imi/(@{co}_py*@{co}_y);
+// Aggregate nominal import share
+@#for aItem in demandItems
+@{co}_im@{aItem}y = @{co}_pim@{aItem}*@{co}_im@{aItem}/(@{co}_py*@{co}_y);
+@#endfor
 
 // Aggregate debt-to-output ratio
 @{co}_by = @{co}_b/(@{co}_pybar*@{co}_ybar);
@@ -1026,11 +970,11 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 
 @#for it in countries - [ co ]
 
-// Imports of consumption goods 
-@{co}@{it}_imcy  = @{co}@{it}_pim*@{co}@{it}_imc/(@{co}_py*@{co}_y);
+// Bilateral shares
+@#for aItem in demandItems
+@{co}@{it}_im@{aItem}y = @{co}@{it}_pim*@{co}@{it}_im@{aItem}/(@{co}_py*@{co}_y);
+@#endfor
 
-// Imports of investment goods
-@{co}@{it}_imiy = @{co}@{it}_pim*@{co}@{it}_imi/(@{co}_py*@{co}_y);
 
 // Exports of consumption goods to gdp
 @{co}@{it}_excy  = @{it}_size/@{co}_size*@{co}@{it}_rer*@{it}@{co}_pim*@{it}@{co}_imc/(@{co}_py*@{co}_y);
