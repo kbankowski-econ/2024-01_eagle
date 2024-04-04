@@ -3655,11 +3655,7 @@ EAA_pimc^(1-EAA_mumc) =
 )*EAARW_pim^(1-EAA_mumc);
 // Private consumption good (import) inflation
 EAA_piimc = EAA_pimc/EAA_pimc(-1)*EAA_pic;
-// Private consumption good (import) inflation
-EAA_piimc4 = EAA_pimc/EAA_pimc(-4)*EAA_pic4;
-// Private consumption good (import) inflation
-EAA_piex4 = EAA_pex/EAA_pex(-4)*EAA_pic4;
-// Private investment good (import)
+// Private consumption good (import)
 EAA_imi^((EAA_mumi-1)/EAA_mumi) =
 +EAAEAB_numi ^(1/EAA_mumi)*EAAEAB_imi^(1-1/EAA_mumi)
 +EAAEAC_numi ^(1/EAA_mumi)*EAAEAC_imi^(1-1/EAA_mumi)
@@ -3673,13 +3669,10 @@ EAA_imi^((EAA_mumi-1)/EAA_mumi) =
 -EAAEAE_numi
 -EAAUS_numi
 )^(1/EAA_mumi)*EAARW_imi^(1-1/EAA_mumi);
-// Demand for bilateral investment import goods
+// Demand for bilateral consumption import goods
 EAAEAE_imi = EAAEAE_numi*(EAAEAE_pim/EAA_pimi)^(-EAA_mumi)*EAA_imi;
-// Demand for bilateral investment import goods
 EAAEAC_imi = EAAEAC_numi*(EAAEAC_pim/EAA_pimi)^(-EAA_mumi)*EAA_imi;
-// Demand for bilateral investment import goods
 EAAEAD_imi = EAAEAD_numi*(EAAEAD_pim/EAA_pimi)^(-EAA_mumi)*EAA_imi;
-// Demand for bilateral investment import goods
 EAAUS_imi = EAAUS_numi*(EAAUS_pim/EAA_pimi)^(-EAA_mumi)*EAA_imi;
 EAARW_imi = (1
 -EAAEAB_numi
@@ -3688,7 +3681,7 @@ EAARW_imi = (1
 -EAAEAE_numi
 -EAAUS_numi
 )*(EAARW_pim/EAA_pimi)^(-EAA_mumi)*EAA_imi;
-// Price of the investment good (import)
+// Price of the consumption good (import)
 EAA_pimi^(1-EAA_mumi) =
 +EAAEAB_numi * EAAEAB_pim^(1-EAA_mumi)
 +EAAEAC_numi * EAAEAC_pim^(1-EAA_mumi)
@@ -3702,8 +3695,12 @@ EAA_pimi^(1-EAA_mumi) =
 -EAAEAE_numi
 -EAAUS_numi
 )*EAARW_pim^(1-EAA_mumi);
-// Private investment good (import) inflation
+// Private consumption good (import) inflation
 EAA_piimi = EAA_pimi/EAA_pimi(-1)*EAA_pic;
+// Private consumption good (import) inflation
+EAA_piimc4 = EAA_pimc/EAA_pimc(-4)*EAA_pic4;
+// Private consumption good (import) inflation
+EAA_piex4 = EAA_pex/EAA_pex(-4)*EAA_pic4;
 // Wedge between aggregate demand and production, using EAA_x = EAB_size/EAA_size*EAB_im
 EAA_yst = EAA_sh*EAA_ht
 +EAAEAB_sx*EAB_size/EAA_size*EABEAA_im
@@ -4678,11 +4675,7 @@ EAB_pimc^(1-EAB_mumc) =
 )*EABUS_pim^(1-EAB_mumc);
 // Private consumption good (import) inflation
 EAB_piimc = EAB_pimc/EAB_pimc(-1)*EAB_pic;
-// Private consumption good (import) inflation
-EAB_piimc4 = EAB_pimc/EAB_pimc(-4)*EAB_pic4;
-// Private consumption good (import) inflation
-EAB_piex4 = EAB_pex/EAB_pex(-4)*EAB_pic4;
-// Private investment good (import)
+// Private consumption good (import)
 EAB_imi^((EAB_mumi-1)/EAB_mumi) =
 +EABEAA_numi ^(1/EAB_mumi)*EABEAA_imi^(1-1/EAB_mumi)
 +EABEAC_numi ^(1/EAB_mumi)*EABEAC_imi^(1-1/EAB_mumi)
@@ -4696,13 +4689,10 @@ EAB_imi^((EAB_mumi-1)/EAB_mumi) =
 -EABEAE_numi
 -EABRW_numi
 )^(1/EAB_mumi)*EABUS_imi^(1-1/EAB_mumi);
-// Demand for bilateral investment import goods
+// Demand for bilateral consumption import goods
 EABRW_imi = EABRW_numi*(EABRW_pim/EAB_pimi)^(-EAB_mumi)*EAB_imi;
-// Demand for bilateral investment import goods
 EABEAD_imi = EABEAD_numi*(EABEAD_pim/EAB_pimi)^(-EAB_mumi)*EAB_imi;
-// Demand for bilateral investment import goods
 EABEAE_imi = EABEAE_numi*(EABEAE_pim/EAB_pimi)^(-EAB_mumi)*EAB_imi;
-// Demand for bilateral investment import goods
 EABEAA_imi = EABEAA_numi*(EABEAA_pim/EAB_pimi)^(-EAB_mumi)*EAB_imi;
 EABUS_imi = (1
 -EABEAA_numi
@@ -4711,7 +4701,7 @@ EABUS_imi = (1
 -EABEAE_numi
 -EABRW_numi
 )*(EABUS_pim/EAB_pimi)^(-EAB_mumi)*EAB_imi;
-// Price of the investment good (import)
+// Price of the consumption good (import)
 EAB_pimi^(1-EAB_mumi) =
 +EABEAA_numi * EABEAA_pim^(1-EAB_mumi)
 +EABEAC_numi * EABEAC_pim^(1-EAB_mumi)
@@ -4725,8 +4715,12 @@ EAB_pimi^(1-EAB_mumi) =
 -EABEAE_numi
 -EABRW_numi
 )*EABUS_pim^(1-EAB_mumi);
-// Private investment good (import) inflation
+// Private consumption good (import) inflation
 EAB_piimi = EAB_pimi/EAB_pimi(-1)*EAB_pic;
+// Private consumption good (import) inflation
+EAB_piimc4 = EAB_pimc/EAB_pimc(-4)*EAB_pic4;
+// Private consumption good (import) inflation
+EAB_piex4 = EAB_pex/EAB_pex(-4)*EAB_pic4;
 // Wedge between aggregate demand and production, using EAB_x = EAC_size/EAB_size*EAC_im
 EAB_yst = EAB_sh*EAB_ht
 +EABEAA_sx*EAA_size/EAB_size*EAAEAB_im
@@ -5703,11 +5697,7 @@ EAC_pimc^(1-EAC_mumc) =
 )*EACEAA_pim^(1-EAC_mumc);
 // Private consumption good (import) inflation
 EAC_piimc = EAC_pimc/EAC_pimc(-1)*EAC_pic;
-// Private consumption good (import) inflation
-EAC_piimc4 = EAC_pimc/EAC_pimc(-4)*EAC_pic4;
-// Private consumption good (import) inflation
-EAC_piex4 = EAC_pex/EAC_pex(-4)*EAC_pic4;
-// Private investment good (import)
+// Private consumption good (import)
 EAC_imi^((EAC_mumi-1)/EAC_mumi) =
 +EACEAB_numi ^(1/EAC_mumi)*EACEAB_imi^(1-1/EAC_mumi)
 +EACEAD_numi ^(1/EAC_mumi)*EACEAD_imi^(1-1/EAC_mumi)
@@ -5721,13 +5711,10 @@ EAC_imi^((EAC_mumi-1)/EAC_mumi) =
 -EACRW_numi
 -EACUS_numi
 )^(1/EAC_mumi)*EACEAA_imi^(1-1/EAC_mumi);
-// Demand for bilateral investment import goods
+// Demand for bilateral consumption import goods
 EACUS_imi = EACUS_numi*(EACUS_pim/EAC_pimi)^(-EAC_mumi)*EAC_imi;
-// Demand for bilateral investment import goods
 EACEAE_imi = EACEAE_numi*(EACEAE_pim/EAC_pimi)^(-EAC_mumi)*EAC_imi;
-// Demand for bilateral investment import goods
 EACRW_imi = EACRW_numi*(EACRW_pim/EAC_pimi)^(-EAC_mumi)*EAC_imi;
-// Demand for bilateral investment import goods
 EACEAB_imi = EACEAB_numi*(EACEAB_pim/EAC_pimi)^(-EAC_mumi)*EAC_imi;
 EACEAA_imi = (1
 -EACEAB_numi
@@ -5736,7 +5723,7 @@ EACEAA_imi = (1
 -EACRW_numi
 -EACUS_numi
 )*(EACEAA_pim/EAC_pimi)^(-EAC_mumi)*EAC_imi;
-// Price of the investment good (import)
+// Price of the consumption good (import)
 EAC_pimi^(1-EAC_mumi) =
 +EACEAB_numi * EACEAB_pim^(1-EAC_mumi)
 +EACEAD_numi * EACEAD_pim^(1-EAC_mumi)
@@ -5750,8 +5737,12 @@ EAC_pimi^(1-EAC_mumi) =
 -EACRW_numi
 -EACUS_numi
 )*EACEAA_pim^(1-EAC_mumi);
-// Private investment good (import) inflation
+// Private consumption good (import) inflation
 EAC_piimi = EAC_pimi/EAC_pimi(-1)*EAC_pic;
+// Private consumption good (import) inflation
+EAC_piimc4 = EAC_pimc/EAC_pimc(-4)*EAC_pic4;
+// Private consumption good (import) inflation
+EAC_piex4 = EAC_pex/EAC_pex(-4)*EAC_pic4;
 // Wedge between aggregate demand and production, using EAC_x = EAD_size/EAC_size*EAD_im
 EAC_yst = EAC_sh*EAC_ht
 +EACEAA_sx*EAA_size/EAC_size*EAAEAC_im
@@ -6731,11 +6722,7 @@ EAD_pimc^(1-EAD_mumc) =
 )*EADEAB_pim^(1-EAD_mumc);
 // Private consumption good (import) inflation
 EAD_piimc = EAD_pimc/EAD_pimc(-1)*EAD_pic;
-// Private consumption good (import) inflation
-EAD_piimc4 = EAD_pimc/EAD_pimc(-4)*EAD_pic4;
-// Private consumption good (import) inflation
-EAD_piex4 = EAD_pex/EAD_pex(-4)*EAD_pic4;
-// Private investment good (import)
+// Private consumption good (import)
 EAD_imi^((EAD_mumi-1)/EAD_mumi) =
 +EADEAA_numi ^(1/EAD_mumi)*EADEAA_imi^(1-1/EAD_mumi)
 +EADEAC_numi ^(1/EAD_mumi)*EADEAC_imi^(1-1/EAD_mumi)
@@ -6749,13 +6736,10 @@ EAD_imi^((EAD_mumi-1)/EAD_mumi) =
 -EADRW_numi
 -EADUS_numi
 )^(1/EAD_mumi)*EADEAB_imi^(1-1/EAD_mumi);
-// Demand for bilateral investment import goods
+// Demand for bilateral consumption import goods
 EADEAA_imi = EADEAA_numi*(EADEAA_pim/EAD_pimi)^(-EAD_mumi)*EAD_imi;
-// Demand for bilateral investment import goods
 EADRW_imi = EADRW_numi*(EADRW_pim/EAD_pimi)^(-EAD_mumi)*EAD_imi;
-// Demand for bilateral investment import goods
 EADUS_imi = EADUS_numi*(EADUS_pim/EAD_pimi)^(-EAD_mumi)*EAD_imi;
-// Demand for bilateral investment import goods
 EADEAC_imi = EADEAC_numi*(EADEAC_pim/EAD_pimi)^(-EAD_mumi)*EAD_imi;
 EADEAB_imi = (1
 -EADEAA_numi
@@ -6764,7 +6748,7 @@ EADEAB_imi = (1
 -EADRW_numi
 -EADUS_numi
 )*(EADEAB_pim/EAD_pimi)^(-EAD_mumi)*EAD_imi;
-// Price of the investment good (import)
+// Price of the consumption good (import)
 EAD_pimi^(1-EAD_mumi) =
 +EADEAA_numi * EADEAA_pim^(1-EAD_mumi)
 +EADEAC_numi * EADEAC_pim^(1-EAD_mumi)
@@ -6778,8 +6762,12 @@ EAD_pimi^(1-EAD_mumi) =
 -EADRW_numi
 -EADUS_numi
 )*EADEAB_pim^(1-EAD_mumi);
-// Private investment good (import) inflation
+// Private consumption good (import) inflation
 EAD_piimi = EAD_pimi/EAD_pimi(-1)*EAD_pic;
+// Private consumption good (import) inflation
+EAD_piimc4 = EAD_pimc/EAD_pimc(-4)*EAD_pic4;
+// Private consumption good (import) inflation
+EAD_piex4 = EAD_pex/EAD_pex(-4)*EAD_pic4;
 // Wedge between aggregate demand and production, using EAD_x = EAE_size/EAD_size*EAE_im
 EAD_yst = EAD_sh*EAD_ht
 +EADEAA_sx*EAA_size/EAD_size*EAAEAD_im
@@ -7759,11 +7747,7 @@ EAE_pimc^(1-EAE_mumc) =
 )*EAEEAC_pim^(1-EAE_mumc);
 // Private consumption good (import) inflation
 EAE_piimc = EAE_pimc/EAE_pimc(-1)*EAE_pic;
-// Private consumption good (import) inflation
-EAE_piimc4 = EAE_pimc/EAE_pimc(-4)*EAE_pic4;
-// Private consumption good (import) inflation
-EAE_piex4 = EAE_pex/EAE_pex(-4)*EAE_pic4;
-// Private investment good (import)
+// Private consumption good (import)
 EAE_imi^((EAE_mumi-1)/EAE_mumi) =
 +EAEEAA_numi ^(1/EAE_mumi)*EAEEAA_imi^(1-1/EAE_mumi)
 +EAEEAB_numi ^(1/EAE_mumi)*EAEEAB_imi^(1-1/EAE_mumi)
@@ -7777,13 +7761,10 @@ EAE_imi^((EAE_mumi-1)/EAE_mumi) =
 -EAERW_numi
 -EAEUS_numi
 )^(1/EAE_mumi)*EAEEAC_imi^(1-1/EAE_mumi);
-// Demand for bilateral investment import goods
+// Demand for bilateral consumption import goods
 EAEEAB_imi = EAEEAB_numi*(EAEEAB_pim/EAE_pimi)^(-EAE_mumi)*EAE_imi;
-// Demand for bilateral investment import goods
 EAEUS_imi = EAEUS_numi*(EAEUS_pim/EAE_pimi)^(-EAE_mumi)*EAE_imi;
-// Demand for bilateral investment import goods
 EAEEAA_imi = EAEEAA_numi*(EAEEAA_pim/EAE_pimi)^(-EAE_mumi)*EAE_imi;
-// Demand for bilateral investment import goods
 EAEEAD_imi = EAEEAD_numi*(EAEEAD_pim/EAE_pimi)^(-EAE_mumi)*EAE_imi;
 EAEEAC_imi = (1
 -EAEEAA_numi
@@ -7792,7 +7773,7 @@ EAEEAC_imi = (1
 -EAERW_numi
 -EAEUS_numi
 )*(EAEEAC_pim/EAE_pimi)^(-EAE_mumi)*EAE_imi;
-// Price of the investment good (import)
+// Price of the consumption good (import)
 EAE_pimi^(1-EAE_mumi) =
 +EAEEAA_numi * EAEEAA_pim^(1-EAE_mumi)
 +EAEEAB_numi * EAEEAB_pim^(1-EAE_mumi)
@@ -7806,8 +7787,12 @@ EAE_pimi^(1-EAE_mumi) =
 -EAERW_numi
 -EAEUS_numi
 )*EAEEAC_pim^(1-EAE_mumi);
-// Private investment good (import) inflation
+// Private consumption good (import) inflation
 EAE_piimi = EAE_pimi/EAE_pimi(-1)*EAE_pic;
+// Private consumption good (import) inflation
+EAE_piimc4 = EAE_pimc/EAE_pimc(-4)*EAE_pic4;
+// Private consumption good (import) inflation
+EAE_piex4 = EAE_pex/EAE_pex(-4)*EAE_pic4;
 // Wedge between aggregate demand and production, using EAE_x = RW_size/EAE_size*RW_im
 EAE_yst = EAE_sh*EAE_ht
 +EAEEAA_sx*EAA_size/EAE_size*EAAEAE_im
@@ -8782,11 +8767,7 @@ RW_pimc^(1-RW_mumc) =
 )*RWEAD_pim^(1-RW_mumc);
 // Private consumption good (import) inflation
 RW_piimc = RW_pimc/RW_pimc(-1)*RW_pic;
-// Private consumption good (import) inflation
-RW_piimc4 = RW_pimc/RW_pimc(-4)*RW_pic4;
-// Private consumption good (import) inflation
-RW_piex4 = RW_pex/RW_pex(-4)*RW_pic4;
-// Private investment good (import)
+// Private consumption good (import)
 RW_imi^((RW_mumi-1)/RW_mumi) =
 +RWEAA_numi ^(1/RW_mumi)*RWEAA_imi^(1-1/RW_mumi)
 +RWEAB_numi ^(1/RW_mumi)*RWEAB_imi^(1-1/RW_mumi)
@@ -8800,13 +8781,10 @@ RW_imi^((RW_mumi-1)/RW_mumi) =
 -RWEAE_numi
 -RWUS_numi
 )^(1/RW_mumi)*RWEAD_imi^(1-1/RW_mumi);
-// Demand for bilateral investment import goods
+// Demand for bilateral consumption import goods
 RWEAC_imi = RWEAC_numi*(RWEAC_pim/RW_pimi)^(-RW_mumi)*RW_imi;
-// Demand for bilateral investment import goods
 RWEAA_imi = RWEAA_numi*(RWEAA_pim/RW_pimi)^(-RW_mumi)*RW_imi;
-// Demand for bilateral investment import goods
 RWEAB_imi = RWEAB_numi*(RWEAB_pim/RW_pimi)^(-RW_mumi)*RW_imi;
-// Demand for bilateral investment import goods
 RWEAE_imi = RWEAE_numi*(RWEAE_pim/RW_pimi)^(-RW_mumi)*RW_imi;
 RWEAD_imi = (1
 -RWEAA_numi
@@ -8815,7 +8793,7 @@ RWEAD_imi = (1
 -RWEAE_numi
 -RWUS_numi
 )*(RWEAD_pim/RW_pimi)^(-RW_mumi)*RW_imi;
-// Price of the investment good (import)
+// Price of the consumption good (import)
 RW_pimi^(1-RW_mumi) =
 +RWEAA_numi * RWEAA_pim^(1-RW_mumi)
 +RWEAB_numi * RWEAB_pim^(1-RW_mumi)
@@ -8829,8 +8807,12 @@ RW_pimi^(1-RW_mumi) =
 -RWEAE_numi
 -RWUS_numi
 )*RWEAD_pim^(1-RW_mumi);
-// Private investment good (import) inflation
+// Private consumption good (import) inflation
 RW_piimi = RW_pimi/RW_pimi(-1)*RW_pic;
+// Private consumption good (import) inflation
+RW_piimc4 = RW_pimc/RW_pimc(-4)*RW_pic4;
+// Private consumption good (import) inflation
+RW_piex4 = RW_pex/RW_pex(-4)*RW_pic4;
 // Wedge between aggregate demand and production, using RW_x = US_size/RW_size*US_im
 RW_yst = RW_sh*RW_ht
 +RWEAA_sx*EAA_size/RW_size*EAARW_im
@@ -9805,11 +9787,7 @@ US_pimc^(1-US_mumc) =
 )*USEAE_pim^(1-US_mumc);
 // Private consumption good (import) inflation
 US_piimc = US_pimc/US_pimc(-1)*US_pic;
-// Private consumption good (import) inflation
-US_piimc4 = US_pimc/US_pimc(-4)*US_pic4;
-// Private consumption good (import) inflation
-US_piex4 = US_pex/US_pex(-4)*US_pic4;
-// Private investment good (import)
+// Private consumption good (import)
 US_imi^((US_mumi-1)/US_mumi) =
 +USEAA_numi ^(1/US_mumi)*USEAA_imi^(1-1/US_mumi)
 +USEAB_numi ^(1/US_mumi)*USEAB_imi^(1-1/US_mumi)
@@ -9823,13 +9801,10 @@ US_imi^((US_mumi-1)/US_mumi) =
 -USEAD_numi
 -USRW_numi
 )^(1/US_mumi)*USEAE_imi^(1-1/US_mumi);
-// Demand for bilateral investment import goods
+// Demand for bilateral consumption import goods
 USEAD_imi = USEAD_numi*(USEAD_pim/US_pimi)^(-US_mumi)*US_imi;
-// Demand for bilateral investment import goods
 USEAB_imi = USEAB_numi*(USEAB_pim/US_pimi)^(-US_mumi)*US_imi;
-// Demand for bilateral investment import goods
 USEAC_imi = USEAC_numi*(USEAC_pim/US_pimi)^(-US_mumi)*US_imi;
-// Demand for bilateral investment import goods
 USRW_imi = USRW_numi*(USRW_pim/US_pimi)^(-US_mumi)*US_imi;
 USEAE_imi = (1
 -USEAA_numi
@@ -9838,7 +9813,7 @@ USEAE_imi = (1
 -USEAD_numi
 -USRW_numi
 )*(USEAE_pim/US_pimi)^(-US_mumi)*US_imi;
-// Price of the investment good (import)
+// Price of the consumption good (import)
 US_pimi^(1-US_mumi) =
 +USEAA_numi * USEAA_pim^(1-US_mumi)
 +USEAB_numi * USEAB_pim^(1-US_mumi)
@@ -9852,8 +9827,12 @@ US_pimi^(1-US_mumi) =
 -USEAD_numi
 -USRW_numi
 )*USEAE_pim^(1-US_mumi);
-// Private investment good (import) inflation
+// Private consumption good (import) inflation
 US_piimi = US_pimi/US_pimi(-1)*US_pic;
+// Private consumption good (import) inflation
+US_piimc4 = US_pimc/US_pimc(-4)*US_pic4;
+// Private consumption good (import) inflation
+US_piex4 = US_pex/US_pex(-4)*US_pic4;
 // Wedge between aggregate demand and production, using US_x = EAA_size/US_size*EAA_im
 US_yst = US_sh*US_ht
 +USEAA_sx*EAA_size/US_size*EAAUS_im
