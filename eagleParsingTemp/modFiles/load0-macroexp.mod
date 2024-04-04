@@ -3912,7 +3912,10 @@ EAA_ysn = EAA_snt*EAA_nt;
 //  nontradables aggregate demand
 EAA_nt =  EAA_nti+EAA_ntc+EAA_cg+EAA_ig;
 // Aggregate demand for domestic intermediate goods, using EAA_hg = EAA_cg
-EAA_ht = EAA_htc+EAA_hti;
+EAA_ht =
++EAA_htc
++EAA_hti
+;
 // Price dispersion in the domestic markets
 EAA_sh = (1-EAA_xih)*(EAA_phttilde/EAA_pht)^(-EAA_thetat)+EAA_xih*(EAA_piht/(EAA_piht(-1)^EAA_chih*EAA_pi4target^(1/4*(1-EAA_chih))))^EAA_thetat*EAA_sh(-1);
 // Price dispersion in the foreign markets
@@ -4957,7 +4960,10 @@ EAB_ysn = EAB_snt*EAB_nt;
 //  nontradables aggregate demand
 EAB_nt =  EAB_nti+EAB_ntc+EAB_cg+EAB_ig;
 // Aggregate demand for domestic intermediate goods, using EAB_hg = EAB_cg
-EAB_ht = EAB_htc+EAB_hti;
+EAB_ht =
++EAB_htc
++EAB_hti
+;
 // Price dispersion in the domestic markets
 EAB_sh = (1-EAB_xih)*(EAB_phttilde/EAB_pht)^(-EAB_thetat)+EAB_xih*(EAB_piht/(EAB_piht(-1)^EAB_chih*EAB_pi4target^(1/4*(1-EAB_chih))))^EAB_thetat*EAB_sh(-1);
 // Price dispersion in the foreign markets
@@ -6005,7 +6011,10 @@ EAC_ysn = EAC_snt*EAC_nt;
 //  nontradables aggregate demand
 EAC_nt =  EAC_nti+EAC_ntc+EAC_cg+EAC_ig;
 // Aggregate demand for domestic intermediate goods, using EAC_hg = EAC_cg
-EAC_ht = EAC_htc+EAC_hti;
+EAC_ht =
++EAC_htc
++EAC_hti
+;
 // Price dispersion in the domestic markets
 EAC_sh = (1-EAC_xih)*(EAC_phttilde/EAC_pht)^(-EAC_thetat)+EAC_xih*(EAC_piht/(EAC_piht(-1)^EAC_chih*EAC_pi4target^(1/4*(1-EAC_chih))))^EAC_thetat*EAC_sh(-1);
 // Price dispersion in the foreign markets
@@ -7053,7 +7062,10 @@ EAD_ysn = EAD_snt*EAD_nt;
 //  nontradables aggregate demand
 EAD_nt =  EAD_nti+EAD_ntc+EAD_cg+EAD_ig;
 // Aggregate demand for domestic intermediate goods, using EAD_hg = EAD_cg
-EAD_ht = EAD_htc+EAD_hti;
+EAD_ht =
++EAD_htc
++EAD_hti
+;
 // Price dispersion in the domestic markets
 EAD_sh = (1-EAD_xih)*(EAD_phttilde/EAD_pht)^(-EAD_thetat)+EAD_xih*(EAD_piht/(EAD_piht(-1)^EAD_chih*EAD_pi4target^(1/4*(1-EAD_chih))))^EAD_thetat*EAD_sh(-1);
 // Price dispersion in the foreign markets
@@ -8096,7 +8108,10 @@ EAE_ysn = EAE_snt*EAE_nt;
 //  nontradables aggregate demand
 EAE_nt =  EAE_nti+EAE_ntc+EAE_cg+EAE_ig;
 // Aggregate demand for domestic intermediate goods, using EAE_hg = EAE_cg
-EAE_ht = EAE_htc+EAE_hti;
+EAE_ht =
++EAE_htc
++EAE_hti
+;
 // Price dispersion in the domestic markets
 EAE_sh = (1-EAE_xih)*(EAE_phttilde/EAE_pht)^(-EAE_thetat)+EAE_xih*(EAE_piht/(EAE_piht(-1)^EAE_chih*EAE_pi4target^(1/4*(1-EAE_chih))))^EAE_thetat*EAE_sh(-1);
 // Price dispersion in the foreign markets
@@ -9139,7 +9154,10 @@ RW_ysn = RW_snt*RW_nt;
 //  nontradables aggregate demand
 RW_nt =  RW_nti+RW_ntc+RW_cg+RW_ig;
 // Aggregate demand for domestic intermediate goods, using RW_hg = RW_cg
-RW_ht = RW_htc+RW_hti;
+RW_ht =
++RW_htc
++RW_hti
+;
 // Price dispersion in the domestic markets
 RW_sh = (1-RW_xih)*(RW_phttilde/RW_pht)^(-RW_thetat)+RW_xih*(RW_piht/(RW_piht(-1)^RW_chih*RW_pi4target^(1/4*(1-RW_chih))))^RW_thetat*RW_sh(-1);
 // Price dispersion in the foreign markets
@@ -10182,7 +10200,10 @@ US_ysn = US_snt*US_nt;
 //  nontradables aggregate demand
 US_nt =  US_nti+US_ntc+US_cg+US_ig;
 // Aggregate demand for domestic intermediate goods, using US_hg = US_cg
-US_ht = US_htc+US_hti;
+US_ht =
++US_htc
++US_hti
+;
 // Price dispersion in the domestic markets
 US_sh = (1-US_xih)*(US_phttilde/US_pht)^(-US_thetat)+US_xih*(US_piht/(US_piht(-1)^US_chih*US_pi4target^(1/4*(1-US_chih))))^US_thetat*US_sh(-1);
 // Price dispersion in the foreign markets
