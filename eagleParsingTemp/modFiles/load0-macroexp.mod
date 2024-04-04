@@ -3753,8 +3753,6 @@ EAA_nti = (1-EAA_nui)*(EAA_pnt/EAA_pi)^(-EAA_mui)*EAA_qi;
 EAA_ptti^(1-EAA_muti) = (EAA_nuti)*EAA_pht^(1-EAA_muti)+(1-EAA_nuti)*EAA_pimi^(1-EAA_muti);
 // Price of the investment good
 EAA_pi^(1-EAA_mui) = (EAA_nui)*EAA_ptti^(1-EAA_mui)+(1-EAA_nui)*(EAA_pnt)^(1-EAA_mui);
-// Auxiliary equation for the price of the investment good in steady state
-EAA_pibar = EAA_pi;
 // Demand for domestic intermediate goods
 EAA_hti = EAA_nuti*(EAA_pht/EAA_ptti)^(-EAA_muti)*EAA_tti;
 EAAEAB_gammaimi = 0;
@@ -3769,6 +3767,8 @@ EAARW_gammaimi = 0;
 EAARW_gammaimidag = 1;
 EAAUS_gammaimi = 0;
 EAAUS_gammaimidag = 1;
+// Auxiliary equation for the price of the investment good in steady state
+EAA_pibar = EAA_pi;
 // Trade balance
 EAA_tb =
 +EAAEAB_rer*EABEAA_pim*EAB_size/EAA_size*EABEAA_im
@@ -4773,8 +4773,6 @@ EAB_nti = (1-EAB_nui)*(EAB_pnt/EAB_pi)^(-EAB_mui)*EAB_qi;
 EAB_ptti^(1-EAB_muti) = (EAB_nuti)*EAB_pht^(1-EAB_muti)+(1-EAB_nuti)*EAB_pimi^(1-EAB_muti);
 // Price of the investment good
 EAB_pi^(1-EAB_mui) = (EAB_nui)*EAB_ptti^(1-EAB_mui)+(1-EAB_nui)*(EAB_pnt)^(1-EAB_mui);
-// Auxiliary equation for the price of the investment good in steady state
-EAB_pibar = EAB_pi;
 // Demand for domestic intermediate goods
 EAB_hti = EAB_nuti*(EAB_pht/EAB_ptti)^(-EAB_muti)*EAB_tti;
 EABEAA_gammaimi = 0;
@@ -4789,6 +4787,8 @@ EABRW_gammaimi = 0;
 EABRW_gammaimidag = 1;
 EABUS_gammaimi = 0;
 EABUS_gammaimidag = 1;
+// Auxiliary equation for the price of the investment good in steady state
+EAB_pibar = EAB_pi;
 // Trade balance
 EAB_tb =
 +EABEAA_rer*EAAEAB_pim*EAA_size/EAB_size*EAAEAB_im
@@ -5795,8 +5795,6 @@ EAC_nti = (1-EAC_nui)*(EAC_pnt/EAC_pi)^(-EAC_mui)*EAC_qi;
 EAC_ptti^(1-EAC_muti) = (EAC_nuti)*EAC_pht^(1-EAC_muti)+(1-EAC_nuti)*EAC_pimi^(1-EAC_muti);
 // Price of the investment good
 EAC_pi^(1-EAC_mui) = (EAC_nui)*EAC_ptti^(1-EAC_mui)+(1-EAC_nui)*(EAC_pnt)^(1-EAC_mui);
-// Auxiliary equation for the price of the investment good in steady state
-EAC_pibar = EAC_pi;
 // Demand for domestic intermediate goods
 EAC_hti = EAC_nuti*(EAC_pht/EAC_ptti)^(-EAC_muti)*EAC_tti;
 EACEAA_gammaimi = 0;
@@ -5811,6 +5809,8 @@ EACRW_gammaimi = 0;
 EACRW_gammaimidag = 1;
 EACUS_gammaimi = 0;
 EACUS_gammaimidag = 1;
+// Auxiliary equation for the price of the investment good in steady state
+EAC_pibar = EAC_pi;
 // Trade balance
 EAC_tb =
 +EACEAA_rer*EAAEAC_pim*EAA_size/EAC_size*EAAEAC_im
@@ -6820,8 +6820,6 @@ EAD_nti = (1-EAD_nui)*(EAD_pnt/EAD_pi)^(-EAD_mui)*EAD_qi;
 EAD_ptti^(1-EAD_muti) = (EAD_nuti)*EAD_pht^(1-EAD_muti)+(1-EAD_nuti)*EAD_pimi^(1-EAD_muti);
 // Price of the investment good
 EAD_pi^(1-EAD_mui) = (EAD_nui)*EAD_ptti^(1-EAD_mui)+(1-EAD_nui)*(EAD_pnt)^(1-EAD_mui);
-// Auxiliary equation for the price of the investment good in steady state
-EAD_pibar = EAD_pi;
 // Demand for domestic intermediate goods
 EAD_hti = EAD_nuti*(EAD_pht/EAD_ptti)^(-EAD_muti)*EAD_tti;
 EADEAA_gammaimi = 0;
@@ -6836,6 +6834,8 @@ EADRW_gammaimi = 0;
 EADRW_gammaimidag = 1;
 EADUS_gammaimi = 0;
 EADUS_gammaimidag = 1;
+// Auxiliary equation for the price of the investment good in steady state
+EAD_pibar = EAD_pi;
 // Trade balance
 EAD_tb =
 +EADEAA_rer*EAAEAD_pim*EAA_size/EAD_size*EAAEAD_im
@@ -7845,8 +7845,6 @@ EAE_nti = (1-EAE_nui)*(EAE_pnt/EAE_pi)^(-EAE_mui)*EAE_qi;
 EAE_ptti^(1-EAE_muti) = (EAE_nuti)*EAE_pht^(1-EAE_muti)+(1-EAE_nuti)*EAE_pimi^(1-EAE_muti);
 // Price of the investment good
 EAE_pi^(1-EAE_mui) = (EAE_nui)*EAE_ptti^(1-EAE_mui)+(1-EAE_nui)*(EAE_pnt)^(1-EAE_mui);
-// Auxiliary equation for the price of the investment good in steady state
-EAE_pibar = EAE_pi;
 // Demand for domestic intermediate goods
 EAE_hti = EAE_nuti*(EAE_pht/EAE_ptti)^(-EAE_muti)*EAE_tti;
 EAEEAA_gammaimi = 0;
@@ -7861,6 +7859,8 @@ EAERW_gammaimi = 0;
 EAERW_gammaimidag = 1;
 EAEUS_gammaimi = 0;
 EAEUS_gammaimidag = 1;
+// Auxiliary equation for the price of the investment good in steady state
+EAE_pibar = EAE_pi;
 // Trade balance
 EAE_tb =
 +EAEEAA_rer*EAAEAE_pim*EAA_size/EAE_size*EAAEAE_im
@@ -8865,8 +8865,6 @@ RW_nti = (1-RW_nui)*(RW_pnt/RW_pi)^(-RW_mui)*RW_qi;
 RW_ptti^(1-RW_muti) = (RW_nuti)*RW_pht^(1-RW_muti)+(1-RW_nuti)*RW_pimi^(1-RW_muti);
 // Price of the investment good
 RW_pi^(1-RW_mui) = (RW_nui)*RW_ptti^(1-RW_mui)+(1-RW_nui)*(RW_pnt)^(1-RW_mui);
-// Auxiliary equation for the price of the investment good in steady state
-RW_pibar = RW_pi;
 // Demand for domestic intermediate goods
 RW_hti = RW_nuti*(RW_pht/RW_ptti)^(-RW_muti)*RW_tti;
 RWEAA_gammaimi = 0;
@@ -8881,6 +8879,8 @@ RWEAE_gammaimi = 0;
 RWEAE_gammaimidag = 1;
 RWUS_gammaimi = 0;
 RWUS_gammaimidag = 1;
+// Auxiliary equation for the price of the investment good in steady state
+RW_pibar = RW_pi;
 // Trade balance
 RW_tb =
 +RWEAA_rer*EAARW_pim*EAA_size/RW_size*EAARW_im
@@ -9885,8 +9885,6 @@ US_nti = (1-US_nui)*(US_pnt/US_pi)^(-US_mui)*US_qi;
 US_ptti^(1-US_muti) = (US_nuti)*US_pht^(1-US_muti)+(1-US_nuti)*US_pimi^(1-US_muti);
 // Price of the investment good
 US_pi^(1-US_mui) = (US_nui)*US_ptti^(1-US_mui)+(1-US_nui)*(US_pnt)^(1-US_mui);
-// Auxiliary equation for the price of the investment good in steady state
-US_pibar = US_pi;
 // Demand for domestic intermediate goods
 US_hti = US_nuti*(US_pht/US_ptti)^(-US_muti)*US_tti;
 USEAA_gammaimi = 0;
@@ -9901,6 +9899,8 @@ USEAE_gammaimi = 0;
 USEAE_gammaimidag = 1;
 USRW_gammaimi = 0;
 USRW_gammaimidag = 1;
+// Auxiliary equation for the price of the investment good in steady state
+US_pibar = US_pi;
 // Trade balance
 US_tb =
 +USEAA_rer*EAAUS_pim*EAA_size/US_size*EAAUS_im
