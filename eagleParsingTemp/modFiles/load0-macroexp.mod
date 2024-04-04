@@ -3735,12 +3735,30 @@ EAA_yst = EAA_sh*EAA_ht
 +EAAUS_sx*US_size/EAA_size*USEAA_im
 ;
 // Aggregate demand for bilateral imported intermediate goods
-EAAEAB_im = EAAEAB_imi+EAAEAB_imc;
-EAAEAC_im = EAAEAC_imi+EAAEAC_imc;
-EAAEAD_im = EAAEAD_imi+EAAEAD_imc;
-EAAEAE_im = EAAEAE_imi+EAAEAE_imc;
-EAARW_im = EAARW_imi+EAARW_imc;
-EAAUS_im = EAAUS_imi+EAAUS_imc;
+EAAEAB_im = 
++EAAEAB_imc
++EAAEAB_imi
+;
+EAAEAC_im = 
++EAAEAC_imc
++EAAEAC_imi
+;
+EAAEAD_im = 
++EAAEAD_imc
++EAAEAD_imi
+;
+EAAEAE_im = 
++EAAEAE_imc
++EAAEAE_imi
+;
+EAARW_im = 
++EAARW_imc
++EAARW_imi
+;
+EAAUS_im = 
++EAAUS_imc
++EAAUS_imi
+;
 // Private consumption good firm
 // Private consumption good (tradable)
 EAA_ttc^((EAA_mutc-1)/EAA_mutc) = (EAA_nutc)^(1/EAA_mutc)*EAA_htc^(1-1/EAA_mutc)+(1-EAA_nutc)^(1/EAA_mutc)*EAA_imc^(1-1/EAA_mutc);
@@ -4781,12 +4799,30 @@ EAB_yst = EAB_sh*EAB_ht
 +EABUS_sx*US_size/EAB_size*USEAB_im
 ;
 // Aggregate demand for bilateral imported intermediate goods
-EABEAA_im = EABEAA_imi+EABEAA_imc;
-EABEAC_im = EABEAC_imi+EABEAC_imc;
-EABEAD_im = EABEAD_imi+EABEAD_imc;
-EABEAE_im = EABEAE_imi+EABEAE_imc;
-EABRW_im = EABRW_imi+EABRW_imc;
-EABUS_im = EABUS_imi+EABUS_imc;
+EABEAA_im = 
++EABEAA_imc
++EABEAA_imi
+;
+EABEAC_im = 
++EABEAC_imc
++EABEAC_imi
+;
+EABEAD_im = 
++EABEAD_imc
++EABEAD_imi
+;
+EABEAE_im = 
++EABEAE_imc
++EABEAE_imi
+;
+EABRW_im = 
++EABRW_imc
++EABRW_imi
+;
+EABUS_im = 
++EABUS_imc
++EABUS_imi
+;
 // Private consumption good firm
 // Private consumption good (tradable)
 EAB_ttc^((EAB_mutc-1)/EAB_mutc) = (EAB_nutc)^(1/EAB_mutc)*EAB_htc^(1-1/EAB_mutc)+(1-EAB_nutc)^(1/EAB_mutc)*EAB_imc^(1-1/EAB_mutc);
@@ -5829,12 +5865,30 @@ EAC_yst = EAC_sh*EAC_ht
 +EACUS_sx*US_size/EAC_size*USEAC_im
 ;
 // Aggregate demand for bilateral imported intermediate goods
-EACEAA_im = EACEAA_imi+EACEAA_imc;
-EACEAB_im = EACEAB_imi+EACEAB_imc;
-EACEAD_im = EACEAD_imi+EACEAD_imc;
-EACEAE_im = EACEAE_imi+EACEAE_imc;
-EACRW_im = EACRW_imi+EACRW_imc;
-EACUS_im = EACUS_imi+EACUS_imc;
+EACEAA_im = 
++EACEAA_imc
++EACEAA_imi
+;
+EACEAB_im = 
++EACEAB_imc
++EACEAB_imi
+;
+EACEAD_im = 
++EACEAD_imc
++EACEAD_imi
+;
+EACEAE_im = 
++EACEAE_imc
++EACEAE_imi
+;
+EACRW_im = 
++EACRW_imc
++EACRW_imi
+;
+EACUS_im = 
++EACUS_imc
++EACUS_imi
+;
 // Private consumption good firm
 // Private consumption good (tradable)
 EAC_ttc^((EAC_mutc-1)/EAC_mutc) = (EAC_nutc)^(1/EAC_mutc)*EAC_htc^(1-1/EAC_mutc)+(1-EAC_nutc)^(1/EAC_mutc)*EAC_imc^(1-1/EAC_mutc);
@@ -6880,12 +6934,30 @@ EAD_yst = EAD_sh*EAD_ht
 +EADUS_sx*US_size/EAD_size*USEAD_im
 ;
 // Aggregate demand for bilateral imported intermediate goods
-EADEAA_im = EADEAA_imi+EADEAA_imc;
-EADEAB_im = EADEAB_imi+EADEAB_imc;
-EADEAC_im = EADEAC_imi+EADEAC_imc;
-EADEAE_im = EADEAE_imi+EADEAE_imc;
-EADRW_im = EADRW_imi+EADRW_imc;
-EADUS_im = EADUS_imi+EADUS_imc;
+EADEAA_im = 
++EADEAA_imc
++EADEAA_imi
+;
+EADEAB_im = 
++EADEAB_imc
++EADEAB_imi
+;
+EADEAC_im = 
++EADEAC_imc
++EADEAC_imi
+;
+EADEAE_im = 
++EADEAE_imc
++EADEAE_imi
+;
+EADRW_im = 
++EADRW_imc
++EADRW_imi
+;
+EADUS_im = 
++EADUS_imc
++EADUS_imi
+;
 // Private consumption good firm
 // Private consumption good (tradable)
 EAD_ttc^((EAD_mutc-1)/EAD_mutc) = (EAD_nutc)^(1/EAD_mutc)*EAD_htc^(1-1/EAD_mutc)+(1-EAD_nutc)^(1/EAD_mutc)*EAD_imc^(1-1/EAD_mutc);
@@ -7931,12 +8003,30 @@ EAE_yst = EAE_sh*EAE_ht
 +EAEUS_sx*US_size/EAE_size*USEAE_im
 ;
 // Aggregate demand for bilateral imported intermediate goods
-EAEEAA_im = EAEEAA_imi+EAEEAA_imc;
-EAEEAB_im = EAEEAB_imi+EAEEAB_imc;
-EAEEAC_im = EAEEAC_imi+EAEEAC_imc;
-EAEEAD_im = EAEEAD_imi+EAEEAD_imc;
-EAERW_im = EAERW_imi+EAERW_imc;
-EAEUS_im = EAEUS_imi+EAEUS_imc;
+EAEEAA_im = 
++EAEEAA_imc
++EAEEAA_imi
+;
+EAEEAB_im = 
++EAEEAB_imc
++EAEEAB_imi
+;
+EAEEAC_im = 
++EAEEAC_imc
++EAEEAC_imi
+;
+EAEEAD_im = 
++EAEEAD_imc
++EAEEAD_imi
+;
+EAERW_im = 
++EAERW_imc
++EAERW_imi
+;
+EAEUS_im = 
++EAEUS_imc
++EAEUS_imi
+;
 // Private consumption good firm
 // Private consumption good (tradable)
 EAE_ttc^((EAE_mutc-1)/EAE_mutc) = (EAE_nutc)^(1/EAE_mutc)*EAE_htc^(1-1/EAE_mutc)+(1-EAE_nutc)^(1/EAE_mutc)*EAE_imc^(1-1/EAE_mutc);
@@ -8977,12 +9067,30 @@ RW_yst = RW_sh*RW_ht
 +RWUS_sx*US_size/RW_size*USRW_im
 ;
 // Aggregate demand for bilateral imported intermediate goods
-RWEAA_im = RWEAA_imi+RWEAA_imc;
-RWEAB_im = RWEAB_imi+RWEAB_imc;
-RWEAC_im = RWEAC_imi+RWEAC_imc;
-RWEAD_im = RWEAD_imi+RWEAD_imc;
-RWEAE_im = RWEAE_imi+RWEAE_imc;
-RWUS_im = RWUS_imi+RWUS_imc;
+RWEAA_im = 
++RWEAA_imc
++RWEAA_imi
+;
+RWEAB_im = 
++RWEAB_imc
++RWEAB_imi
+;
+RWEAC_im = 
++RWEAC_imc
++RWEAC_imi
+;
+RWEAD_im = 
++RWEAD_imc
++RWEAD_imi
+;
+RWEAE_im = 
++RWEAE_imc
++RWEAE_imi
+;
+RWUS_im = 
++RWUS_imc
++RWUS_imi
+;
 // Private consumption good firm
 // Private consumption good (tradable)
 RW_ttc^((RW_mutc-1)/RW_mutc) = (RW_nutc)^(1/RW_mutc)*RW_htc^(1-1/RW_mutc)+(1-RW_nutc)^(1/RW_mutc)*RW_imc^(1-1/RW_mutc);
@@ -10023,12 +10131,30 @@ US_yst = US_sh*US_ht
 +USRW_sx*RW_size/US_size*RWUS_im
 ;
 // Aggregate demand for bilateral imported intermediate goods
-USEAA_im = USEAA_imi+USEAA_imc;
-USEAB_im = USEAB_imi+USEAB_imc;
-USEAC_im = USEAC_imi+USEAC_imc;
-USEAD_im = USEAD_imi+USEAD_imc;
-USEAE_im = USEAE_imi+USEAE_imc;
-USRW_im = USRW_imi+USRW_imc;
+USEAA_im = 
++USEAA_imc
++USEAA_imi
+;
+USEAB_im = 
++USEAB_imc
++USEAB_imi
+;
+USEAC_im = 
++USEAC_imc
++USEAC_imi
+;
+USEAD_im = 
++USEAD_imc
++USEAD_imi
+;
+USEAE_im = 
++USEAE_imc
++USEAE_imi
+;
+USRW_im = 
++USRW_imc
++USRW_imi
+;
 // Private consumption good firm
 // Private consumption good (tradable)
 US_ttc^((US_mutc-1)/US_mutc) = (US_nutc)^(1/US_mutc)*US_htc^(1-1/US_mutc)+(1-US_nutc)^(1/US_mutc)*US_imc^(1-1/US_mutc);
