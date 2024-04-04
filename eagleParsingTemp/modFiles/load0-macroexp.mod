@@ -3728,6 +3728,7 @@ EAA_ntc = (1-EAA_nuc)*(EAA_pnt)^(-EAA_muc)*EAA_qc;
 EAA_pttc^(1-EAA_mutc) = (EAA_nutc)*EAA_pht^(1-EAA_mutc)+(1-EAA_nutc)*EAA_pimc^(1-EAA_mutc);
 // Price of the consumption good 
 1^(1-EAA_muc) = (EAA_nuc)*EAA_pttc^(1-EAA_muc)+(1-EAA_nuc)*EAA_pnt^(1-EAA_muc);
+// Auxiliary equation for the price of the investment good in steady state
 // Demand for domestic intermediate goods
 EAA_htc = EAA_nutc*(EAA_pht/EAA_pttc)^(-EAA_mutc)*EAA_ttc;
 EAAEAB_gammaimc = 0;
@@ -3742,17 +3743,17 @@ EAARW_gammaimc = 0;
 EAARW_gammaimcdag = 1;
 EAAUS_gammaimc = 0;
 EAAUS_gammaimcdag = 1;
-// Private investment good firm
-// Private investment good
+// Private consumption good (tradable)
 EAA_tti^((EAA_muti-1)/EAA_muti) = (EAA_nuti)^(1/EAA_muti)*EAA_hti^(1-1/EAA_muti)+(1-EAA_nuti)^(1/EAA_muti)*EAA_imi^(1-1/EAA_muti);
-// Private investment good
+// Private consumption good  (total)
 EAA_qi^((EAA_mui-1)/EAA_mui) = (EAA_nui)^(1/EAA_mui)*EAA_tti^(1-1/EAA_mui)+(1-EAA_nui)^(1/EAA_mui)*EAA_nti^(1-1/EAA_mui);
-// Demand for domestic intermediate goods
+// Demand for domestic intermediate goods - NONTRADABLE
 EAA_nti = (1-EAA_nui)*(EAA_pnt/EAA_pi)^(-EAA_mui)*EAA_qi;
-// Price of the investment good (TRADABLE)  
+// Price of the consumption good (tradable)  
 EAA_ptti^(1-EAA_muti) = (EAA_nuti)*EAA_pht^(1-EAA_muti)+(1-EAA_nuti)*EAA_pimi^(1-EAA_muti);
-// Price of the investment good
-EAA_pi^(1-EAA_mui) = (EAA_nui)*EAA_ptti^(1-EAA_mui)+(1-EAA_nui)*(EAA_pnt)^(1-EAA_mui);
+// Price of the consumption good 
+EAA_pi^(1-EAA_mui) = (EAA_nui)*EAA_ptti^(1-EAA_mui)+(1-EAA_nui)*EAA_pnt^(1-EAA_mui);
+EAA_pibar = EAA_pi;
 // Demand for domestic intermediate goods
 EAA_hti = EAA_nuti*(EAA_pht/EAA_ptti)^(-EAA_muti)*EAA_tti;
 EAAEAB_gammaimi = 0;
@@ -3767,8 +3768,6 @@ EAARW_gammaimi = 0;
 EAARW_gammaimidag = 1;
 EAAUS_gammaimi = 0;
 EAAUS_gammaimidag = 1;
-// Auxiliary equation for the price of the investment good in steady state
-EAA_pibar = EAA_pi;
 // Trade balance
 EAA_tb =
 +EAAEAB_rer*EABEAA_pim*EAB_size/EAA_size*EABEAA_im
@@ -4748,6 +4747,7 @@ EAB_ntc = (1-EAB_nuc)*(EAB_pnt)^(-EAB_muc)*EAB_qc;
 EAB_pttc^(1-EAB_mutc) = (EAB_nutc)*EAB_pht^(1-EAB_mutc)+(1-EAB_nutc)*EAB_pimc^(1-EAB_mutc);
 // Price of the consumption good 
 1^(1-EAB_muc) = (EAB_nuc)*EAB_pttc^(1-EAB_muc)+(1-EAB_nuc)*EAB_pnt^(1-EAB_muc);
+// Auxiliary equation for the price of the investment good in steady state
 // Demand for domestic intermediate goods
 EAB_htc = EAB_nutc*(EAB_pht/EAB_pttc)^(-EAB_mutc)*EAB_ttc;
 EABEAA_gammaimc = 0;
@@ -4762,17 +4762,17 @@ EABRW_gammaimc = 0;
 EABRW_gammaimcdag = 1;
 EABUS_gammaimc = 0;
 EABUS_gammaimcdag = 1;
-// Private investment good firm
-// Private investment good
+// Private consumption good (tradable)
 EAB_tti^((EAB_muti-1)/EAB_muti) = (EAB_nuti)^(1/EAB_muti)*EAB_hti^(1-1/EAB_muti)+(1-EAB_nuti)^(1/EAB_muti)*EAB_imi^(1-1/EAB_muti);
-// Private investment good
+// Private consumption good  (total)
 EAB_qi^((EAB_mui-1)/EAB_mui) = (EAB_nui)^(1/EAB_mui)*EAB_tti^(1-1/EAB_mui)+(1-EAB_nui)^(1/EAB_mui)*EAB_nti^(1-1/EAB_mui);
-// Demand for domestic intermediate goods
+// Demand for domestic intermediate goods - NONTRADABLE
 EAB_nti = (1-EAB_nui)*(EAB_pnt/EAB_pi)^(-EAB_mui)*EAB_qi;
-// Price of the investment good (TRADABLE)  
+// Price of the consumption good (tradable)  
 EAB_ptti^(1-EAB_muti) = (EAB_nuti)*EAB_pht^(1-EAB_muti)+(1-EAB_nuti)*EAB_pimi^(1-EAB_muti);
-// Price of the investment good
-EAB_pi^(1-EAB_mui) = (EAB_nui)*EAB_ptti^(1-EAB_mui)+(1-EAB_nui)*(EAB_pnt)^(1-EAB_mui);
+// Price of the consumption good 
+EAB_pi^(1-EAB_mui) = (EAB_nui)*EAB_ptti^(1-EAB_mui)+(1-EAB_nui)*EAB_pnt^(1-EAB_mui);
+EAB_pibar = EAB_pi;
 // Demand for domestic intermediate goods
 EAB_hti = EAB_nuti*(EAB_pht/EAB_ptti)^(-EAB_muti)*EAB_tti;
 EABEAA_gammaimi = 0;
@@ -4787,8 +4787,6 @@ EABRW_gammaimi = 0;
 EABRW_gammaimidag = 1;
 EABUS_gammaimi = 0;
 EABUS_gammaimidag = 1;
-// Auxiliary equation for the price of the investment good in steady state
-EAB_pibar = EAB_pi;
 // Trade balance
 EAB_tb =
 +EABEAA_rer*EAAEAB_pim*EAA_size/EAB_size*EAAEAB_im
@@ -5770,6 +5768,7 @@ EAC_ntc = (1-EAC_nuc)*(EAC_pnt)^(-EAC_muc)*EAC_qc;
 EAC_pttc^(1-EAC_mutc) = (EAC_nutc)*EAC_pht^(1-EAC_mutc)+(1-EAC_nutc)*EAC_pimc^(1-EAC_mutc);
 // Price of the consumption good 
 1^(1-EAC_muc) = (EAC_nuc)*EAC_pttc^(1-EAC_muc)+(1-EAC_nuc)*EAC_pnt^(1-EAC_muc);
+// Auxiliary equation for the price of the investment good in steady state
 // Demand for domestic intermediate goods
 EAC_htc = EAC_nutc*(EAC_pht/EAC_pttc)^(-EAC_mutc)*EAC_ttc;
 EACEAA_gammaimc = 0;
@@ -5784,17 +5783,17 @@ EACRW_gammaimc = 0;
 EACRW_gammaimcdag = 1;
 EACUS_gammaimc = 0;
 EACUS_gammaimcdag = 1;
-// Private investment good firm
-// Private investment good
+// Private consumption good (tradable)
 EAC_tti^((EAC_muti-1)/EAC_muti) = (EAC_nuti)^(1/EAC_muti)*EAC_hti^(1-1/EAC_muti)+(1-EAC_nuti)^(1/EAC_muti)*EAC_imi^(1-1/EAC_muti);
-// Private investment good
+// Private consumption good  (total)
 EAC_qi^((EAC_mui-1)/EAC_mui) = (EAC_nui)^(1/EAC_mui)*EAC_tti^(1-1/EAC_mui)+(1-EAC_nui)^(1/EAC_mui)*EAC_nti^(1-1/EAC_mui);
-// Demand for domestic intermediate goods
+// Demand for domestic intermediate goods - NONTRADABLE
 EAC_nti = (1-EAC_nui)*(EAC_pnt/EAC_pi)^(-EAC_mui)*EAC_qi;
-// Price of the investment good (TRADABLE)  
+// Price of the consumption good (tradable)  
 EAC_ptti^(1-EAC_muti) = (EAC_nuti)*EAC_pht^(1-EAC_muti)+(1-EAC_nuti)*EAC_pimi^(1-EAC_muti);
-// Price of the investment good
-EAC_pi^(1-EAC_mui) = (EAC_nui)*EAC_ptti^(1-EAC_mui)+(1-EAC_nui)*(EAC_pnt)^(1-EAC_mui);
+// Price of the consumption good 
+EAC_pi^(1-EAC_mui) = (EAC_nui)*EAC_ptti^(1-EAC_mui)+(1-EAC_nui)*EAC_pnt^(1-EAC_mui);
+EAC_pibar = EAC_pi;
 // Demand for domestic intermediate goods
 EAC_hti = EAC_nuti*(EAC_pht/EAC_ptti)^(-EAC_muti)*EAC_tti;
 EACEAA_gammaimi = 0;
@@ -5809,8 +5808,6 @@ EACRW_gammaimi = 0;
 EACRW_gammaimidag = 1;
 EACUS_gammaimi = 0;
 EACUS_gammaimidag = 1;
-// Auxiliary equation for the price of the investment good in steady state
-EAC_pibar = EAC_pi;
 // Trade balance
 EAC_tb =
 +EACEAA_rer*EAAEAC_pim*EAA_size/EAC_size*EAAEAC_im
@@ -6795,6 +6792,7 @@ EAD_ntc = (1-EAD_nuc)*(EAD_pnt)^(-EAD_muc)*EAD_qc;
 EAD_pttc^(1-EAD_mutc) = (EAD_nutc)*EAD_pht^(1-EAD_mutc)+(1-EAD_nutc)*EAD_pimc^(1-EAD_mutc);
 // Price of the consumption good 
 1^(1-EAD_muc) = (EAD_nuc)*EAD_pttc^(1-EAD_muc)+(1-EAD_nuc)*EAD_pnt^(1-EAD_muc);
+// Auxiliary equation for the price of the investment good in steady state
 // Demand for domestic intermediate goods
 EAD_htc = EAD_nutc*(EAD_pht/EAD_pttc)^(-EAD_mutc)*EAD_ttc;
 EADEAA_gammaimc = 0;
@@ -6809,17 +6807,17 @@ EADRW_gammaimc = 0;
 EADRW_gammaimcdag = 1;
 EADUS_gammaimc = 0;
 EADUS_gammaimcdag = 1;
-// Private investment good firm
-// Private investment good
+// Private consumption good (tradable)
 EAD_tti^((EAD_muti-1)/EAD_muti) = (EAD_nuti)^(1/EAD_muti)*EAD_hti^(1-1/EAD_muti)+(1-EAD_nuti)^(1/EAD_muti)*EAD_imi^(1-1/EAD_muti);
-// Private investment good
+// Private consumption good  (total)
 EAD_qi^((EAD_mui-1)/EAD_mui) = (EAD_nui)^(1/EAD_mui)*EAD_tti^(1-1/EAD_mui)+(1-EAD_nui)^(1/EAD_mui)*EAD_nti^(1-1/EAD_mui);
-// Demand for domestic intermediate goods
+// Demand for domestic intermediate goods - NONTRADABLE
 EAD_nti = (1-EAD_nui)*(EAD_pnt/EAD_pi)^(-EAD_mui)*EAD_qi;
-// Price of the investment good (TRADABLE)  
+// Price of the consumption good (tradable)  
 EAD_ptti^(1-EAD_muti) = (EAD_nuti)*EAD_pht^(1-EAD_muti)+(1-EAD_nuti)*EAD_pimi^(1-EAD_muti);
-// Price of the investment good
-EAD_pi^(1-EAD_mui) = (EAD_nui)*EAD_ptti^(1-EAD_mui)+(1-EAD_nui)*(EAD_pnt)^(1-EAD_mui);
+// Price of the consumption good 
+EAD_pi^(1-EAD_mui) = (EAD_nui)*EAD_ptti^(1-EAD_mui)+(1-EAD_nui)*EAD_pnt^(1-EAD_mui);
+EAD_pibar = EAD_pi;
 // Demand for domestic intermediate goods
 EAD_hti = EAD_nuti*(EAD_pht/EAD_ptti)^(-EAD_muti)*EAD_tti;
 EADEAA_gammaimi = 0;
@@ -6834,8 +6832,6 @@ EADRW_gammaimi = 0;
 EADRW_gammaimidag = 1;
 EADUS_gammaimi = 0;
 EADUS_gammaimidag = 1;
-// Auxiliary equation for the price of the investment good in steady state
-EAD_pibar = EAD_pi;
 // Trade balance
 EAD_tb =
 +EADEAA_rer*EAAEAD_pim*EAA_size/EAD_size*EAAEAD_im
@@ -7820,6 +7816,7 @@ EAE_ntc = (1-EAE_nuc)*(EAE_pnt)^(-EAE_muc)*EAE_qc;
 EAE_pttc^(1-EAE_mutc) = (EAE_nutc)*EAE_pht^(1-EAE_mutc)+(1-EAE_nutc)*EAE_pimc^(1-EAE_mutc);
 // Price of the consumption good 
 1^(1-EAE_muc) = (EAE_nuc)*EAE_pttc^(1-EAE_muc)+(1-EAE_nuc)*EAE_pnt^(1-EAE_muc);
+// Auxiliary equation for the price of the investment good in steady state
 // Demand for domestic intermediate goods
 EAE_htc = EAE_nutc*(EAE_pht/EAE_pttc)^(-EAE_mutc)*EAE_ttc;
 EAEEAA_gammaimc = 0;
@@ -7834,17 +7831,17 @@ EAERW_gammaimc = 0;
 EAERW_gammaimcdag = 1;
 EAEUS_gammaimc = 0;
 EAEUS_gammaimcdag = 1;
-// Private investment good firm
-// Private investment good
+// Private consumption good (tradable)
 EAE_tti^((EAE_muti-1)/EAE_muti) = (EAE_nuti)^(1/EAE_muti)*EAE_hti^(1-1/EAE_muti)+(1-EAE_nuti)^(1/EAE_muti)*EAE_imi^(1-1/EAE_muti);
-// Private investment good
+// Private consumption good  (total)
 EAE_qi^((EAE_mui-1)/EAE_mui) = (EAE_nui)^(1/EAE_mui)*EAE_tti^(1-1/EAE_mui)+(1-EAE_nui)^(1/EAE_mui)*EAE_nti^(1-1/EAE_mui);
-// Demand for domestic intermediate goods
+// Demand for domestic intermediate goods - NONTRADABLE
 EAE_nti = (1-EAE_nui)*(EAE_pnt/EAE_pi)^(-EAE_mui)*EAE_qi;
-// Price of the investment good (TRADABLE)  
+// Price of the consumption good (tradable)  
 EAE_ptti^(1-EAE_muti) = (EAE_nuti)*EAE_pht^(1-EAE_muti)+(1-EAE_nuti)*EAE_pimi^(1-EAE_muti);
-// Price of the investment good
-EAE_pi^(1-EAE_mui) = (EAE_nui)*EAE_ptti^(1-EAE_mui)+(1-EAE_nui)*(EAE_pnt)^(1-EAE_mui);
+// Price of the consumption good 
+EAE_pi^(1-EAE_mui) = (EAE_nui)*EAE_ptti^(1-EAE_mui)+(1-EAE_nui)*EAE_pnt^(1-EAE_mui);
+EAE_pibar = EAE_pi;
 // Demand for domestic intermediate goods
 EAE_hti = EAE_nuti*(EAE_pht/EAE_ptti)^(-EAE_muti)*EAE_tti;
 EAEEAA_gammaimi = 0;
@@ -7859,8 +7856,6 @@ EAERW_gammaimi = 0;
 EAERW_gammaimidag = 1;
 EAEUS_gammaimi = 0;
 EAEUS_gammaimidag = 1;
-// Auxiliary equation for the price of the investment good in steady state
-EAE_pibar = EAE_pi;
 // Trade balance
 EAE_tb =
 +EAEEAA_rer*EAAEAE_pim*EAA_size/EAE_size*EAAEAE_im
@@ -8840,6 +8835,7 @@ RW_ntc = (1-RW_nuc)*(RW_pnt)^(-RW_muc)*RW_qc;
 RW_pttc^(1-RW_mutc) = (RW_nutc)*RW_pht^(1-RW_mutc)+(1-RW_nutc)*RW_pimc^(1-RW_mutc);
 // Price of the consumption good 
 1^(1-RW_muc) = (RW_nuc)*RW_pttc^(1-RW_muc)+(1-RW_nuc)*RW_pnt^(1-RW_muc);
+// Auxiliary equation for the price of the investment good in steady state
 // Demand for domestic intermediate goods
 RW_htc = RW_nutc*(RW_pht/RW_pttc)^(-RW_mutc)*RW_ttc;
 RWEAA_gammaimc = 0;
@@ -8854,17 +8850,17 @@ RWEAE_gammaimc = 0;
 RWEAE_gammaimcdag = 1;
 RWUS_gammaimc = 0;
 RWUS_gammaimcdag = 1;
-// Private investment good firm
-// Private investment good
+// Private consumption good (tradable)
 RW_tti^((RW_muti-1)/RW_muti) = (RW_nuti)^(1/RW_muti)*RW_hti^(1-1/RW_muti)+(1-RW_nuti)^(1/RW_muti)*RW_imi^(1-1/RW_muti);
-// Private investment good
+// Private consumption good  (total)
 RW_qi^((RW_mui-1)/RW_mui) = (RW_nui)^(1/RW_mui)*RW_tti^(1-1/RW_mui)+(1-RW_nui)^(1/RW_mui)*RW_nti^(1-1/RW_mui);
-// Demand for domestic intermediate goods
+// Demand for domestic intermediate goods - NONTRADABLE
 RW_nti = (1-RW_nui)*(RW_pnt/RW_pi)^(-RW_mui)*RW_qi;
-// Price of the investment good (TRADABLE)  
+// Price of the consumption good (tradable)  
 RW_ptti^(1-RW_muti) = (RW_nuti)*RW_pht^(1-RW_muti)+(1-RW_nuti)*RW_pimi^(1-RW_muti);
-// Price of the investment good
-RW_pi^(1-RW_mui) = (RW_nui)*RW_ptti^(1-RW_mui)+(1-RW_nui)*(RW_pnt)^(1-RW_mui);
+// Price of the consumption good 
+RW_pi^(1-RW_mui) = (RW_nui)*RW_ptti^(1-RW_mui)+(1-RW_nui)*RW_pnt^(1-RW_mui);
+RW_pibar = RW_pi;
 // Demand for domestic intermediate goods
 RW_hti = RW_nuti*(RW_pht/RW_ptti)^(-RW_muti)*RW_tti;
 RWEAA_gammaimi = 0;
@@ -8879,8 +8875,6 @@ RWEAE_gammaimi = 0;
 RWEAE_gammaimidag = 1;
 RWUS_gammaimi = 0;
 RWUS_gammaimidag = 1;
-// Auxiliary equation for the price of the investment good in steady state
-RW_pibar = RW_pi;
 // Trade balance
 RW_tb =
 +RWEAA_rer*EAARW_pim*EAA_size/RW_size*EAARW_im
@@ -9860,6 +9854,7 @@ US_ntc = (1-US_nuc)*(US_pnt)^(-US_muc)*US_qc;
 US_pttc^(1-US_mutc) = (US_nutc)*US_pht^(1-US_mutc)+(1-US_nutc)*US_pimc^(1-US_mutc);
 // Price of the consumption good 
 1^(1-US_muc) = (US_nuc)*US_pttc^(1-US_muc)+(1-US_nuc)*US_pnt^(1-US_muc);
+// Auxiliary equation for the price of the investment good in steady state
 // Demand for domestic intermediate goods
 US_htc = US_nutc*(US_pht/US_pttc)^(-US_mutc)*US_ttc;
 USEAA_gammaimc = 0;
@@ -9874,17 +9869,17 @@ USEAE_gammaimc = 0;
 USEAE_gammaimcdag = 1;
 USRW_gammaimc = 0;
 USRW_gammaimcdag = 1;
-// Private investment good firm
-// Private investment good
+// Private consumption good (tradable)
 US_tti^((US_muti-1)/US_muti) = (US_nuti)^(1/US_muti)*US_hti^(1-1/US_muti)+(1-US_nuti)^(1/US_muti)*US_imi^(1-1/US_muti);
-// Private investment good
+// Private consumption good  (total)
 US_qi^((US_mui-1)/US_mui) = (US_nui)^(1/US_mui)*US_tti^(1-1/US_mui)+(1-US_nui)^(1/US_mui)*US_nti^(1-1/US_mui);
-// Demand for domestic intermediate goods
+// Demand for domestic intermediate goods - NONTRADABLE
 US_nti = (1-US_nui)*(US_pnt/US_pi)^(-US_mui)*US_qi;
-// Price of the investment good (TRADABLE)  
+// Price of the consumption good (tradable)  
 US_ptti^(1-US_muti) = (US_nuti)*US_pht^(1-US_muti)+(1-US_nuti)*US_pimi^(1-US_muti);
-// Price of the investment good
-US_pi^(1-US_mui) = (US_nui)*US_ptti^(1-US_mui)+(1-US_nui)*(US_pnt)^(1-US_mui);
+// Price of the consumption good 
+US_pi^(1-US_mui) = (US_nui)*US_ptti^(1-US_mui)+(1-US_nui)*US_pnt^(1-US_mui);
+US_pibar = US_pi;
 // Demand for domestic intermediate goods
 US_hti = US_nuti*(US_pht/US_ptti)^(-US_muti)*US_tti;
 USEAA_gammaimi = 0;
@@ -9899,8 +9894,6 @@ USEAE_gammaimi = 0;
 USEAE_gammaimidag = 1;
 USRW_gammaimi = 0;
 USRW_gammaimidag = 1;
-// Auxiliary equation for the price of the investment good in steady state
-US_pibar = US_pi;
 // Trade balance
 US_tb =
 +USEAA_rer*EAAUS_pim*EAA_size/US_size*EAAUS_im
