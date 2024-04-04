@@ -506,11 +506,6 @@ model(block, bytecode, cutoff=0);
 // Price of the investment good
 @{co}_pi^(1-@{co}_mui) = (@{co}_nui)*@{co}_ptti^(1-@{co}_mui)+(1-@{co}_nui)*(@{co}_pnt)^(1-@{co}_mui);
 
-// Auxiliary equation for the price of the investment good in steady state
-@#if steady
-@{co}_pibar = @{co}_pi;
-@#endif
-
 // Demand for domestic intermediate goods
 @{co}_hti = @{co}_nuti*(@{co}_pht/@{co}_ptti)^(-@{co}_muti)*@{co}_tti;
 
@@ -528,6 +523,11 @@ model(block, bytecode, cutoff=0);
 @{co}@{it}_gammaimidag = 1;
 @#endif // !steady
 @#endfor // countries - [ co ]
+
+// Auxiliary equation for the price of the investment good in steady state
+@#if steady
+@{co}_pibar = @{co}_pi;
+@#endif
 
 // Trade balance
 @{co}_tb =
