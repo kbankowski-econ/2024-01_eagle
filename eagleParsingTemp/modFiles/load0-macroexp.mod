@@ -4070,49 +4070,43 @@ EAA_yshare  = EAA_size*EAA_py*EAA_y/EAA_rer/(
 EAA_epsilonm = -1/8*1/(EAA_r*(EAA_gammav2*EAA_r+EAA_r-1));
 // Trade balance-to-GDP ratio
 EAA_tby = EAA_tb/(EAA_py*EAA_y);
-// Imports of consumption goods 
-EAAEAB_imcy  = EAAEAB_pim*EAAEAB_imc/(EAA_py*EAA_y);
-// Imports of investment goods
+// Bilateral shares
+EAAEAB_imcy = EAAEAB_pim*EAAEAB_imc/(EAA_py*EAA_y);
 EAAEAB_imiy = EAAEAB_pim*EAAEAB_imi/(EAA_py*EAA_y);
 // Exports of consumption goods to gdp
 EAAEAB_excy  = EAB_size/EAA_size*EAAEAB_rer*EABEAA_pim*EABEAA_imc/(EAA_py*EAA_y);
 // Exports of investment goods to gdp
 EAAEAB_exiy  = EAB_size/EAA_size*EAAEAB_rer*EABEAA_pim*EABEAA_imi/(EAA_py*EAA_y);
-// Imports of consumption goods 
-EAAEAC_imcy  = EAAEAC_pim*EAAEAC_imc/(EAA_py*EAA_y);
-// Imports of investment goods
+// Bilateral shares
+EAAEAC_imcy = EAAEAC_pim*EAAEAC_imc/(EAA_py*EAA_y);
 EAAEAC_imiy = EAAEAC_pim*EAAEAC_imi/(EAA_py*EAA_y);
 // Exports of consumption goods to gdp
 EAAEAC_excy  = EAC_size/EAA_size*EAAEAC_rer*EACEAA_pim*EACEAA_imc/(EAA_py*EAA_y);
 // Exports of investment goods to gdp
 EAAEAC_exiy  = EAC_size/EAA_size*EAAEAC_rer*EACEAA_pim*EACEAA_imi/(EAA_py*EAA_y);
-// Imports of consumption goods 
-EAAEAD_imcy  = EAAEAD_pim*EAAEAD_imc/(EAA_py*EAA_y);
-// Imports of investment goods
+// Bilateral shares
+EAAEAD_imcy = EAAEAD_pim*EAAEAD_imc/(EAA_py*EAA_y);
 EAAEAD_imiy = EAAEAD_pim*EAAEAD_imi/(EAA_py*EAA_y);
 // Exports of consumption goods to gdp
 EAAEAD_excy  = EAD_size/EAA_size*EAAEAD_rer*EADEAA_pim*EADEAA_imc/(EAA_py*EAA_y);
 // Exports of investment goods to gdp
 EAAEAD_exiy  = EAD_size/EAA_size*EAAEAD_rer*EADEAA_pim*EADEAA_imi/(EAA_py*EAA_y);
-// Imports of consumption goods 
-EAAEAE_imcy  = EAAEAE_pim*EAAEAE_imc/(EAA_py*EAA_y);
-// Imports of investment goods
+// Bilateral shares
+EAAEAE_imcy = EAAEAE_pim*EAAEAE_imc/(EAA_py*EAA_y);
 EAAEAE_imiy = EAAEAE_pim*EAAEAE_imi/(EAA_py*EAA_y);
 // Exports of consumption goods to gdp
 EAAEAE_excy  = EAE_size/EAA_size*EAAEAE_rer*EAEEAA_pim*EAEEAA_imc/(EAA_py*EAA_y);
 // Exports of investment goods to gdp
 EAAEAE_exiy  = EAE_size/EAA_size*EAAEAE_rer*EAEEAA_pim*EAEEAA_imi/(EAA_py*EAA_y);
-// Imports of consumption goods 
-EAARW_imcy  = EAARW_pim*EAARW_imc/(EAA_py*EAA_y);
-// Imports of investment goods
+// Bilateral shares
+EAARW_imcy = EAARW_pim*EAARW_imc/(EAA_py*EAA_y);
 EAARW_imiy = EAARW_pim*EAARW_imi/(EAA_py*EAA_y);
 // Exports of consumption goods to gdp
 EAARW_excy  = RW_size/EAA_size*EAARW_rer*RWEAA_pim*RWEAA_imc/(EAA_py*EAA_y);
 // Exports of investment goods to gdp
 EAARW_exiy  = RW_size/EAA_size*EAARW_rer*RWEAA_pim*RWEAA_imi/(EAA_py*EAA_y);
-// Imports of consumption goods 
-EAAUS_imcy  = EAAUS_pim*EAAUS_imc/(EAA_py*EAA_y);
-// Imports of investment goods
+// Bilateral shares
+EAAUS_imcy = EAAUS_pim*EAAUS_imc/(EAA_py*EAA_y);
 EAAUS_imiy = EAAUS_pim*EAAUS_imi/(EAA_py*EAA_y);
 // Exports of consumption goods to gdp
 EAAUS_excy  = US_size/EAA_size*EAAUS_rer*USEAA_pim*USEAA_imc/(EAA_py*EAA_y);
@@ -5148,49 +5142,43 @@ EAB_yshare  = EAB_size*EAB_py*EAB_y/EAB_rer/(
 EAB_epsilonm = -1/8*1/(EAB_r*(EAB_gammav2*EAB_r+EAB_r-1));
 // Trade balance-to-GDP ratio
 EAB_tby = EAB_tb/(EAB_py*EAB_y);
-// Imports of consumption goods 
-EABEAA_imcy  = EABEAA_pim*EABEAA_imc/(EAB_py*EAB_y);
-// Imports of investment goods
+// Bilateral shares
+EABEAA_imcy = EABEAA_pim*EABEAA_imc/(EAB_py*EAB_y);
 EABEAA_imiy = EABEAA_pim*EABEAA_imi/(EAB_py*EAB_y);
 // Exports of consumption goods to gdp
 EABEAA_excy  = EAA_size/EAB_size*EABEAA_rer*EAAEAB_pim*EAAEAB_imc/(EAB_py*EAB_y);
 // Exports of investment goods to gdp
 EABEAA_exiy  = EAA_size/EAB_size*EABEAA_rer*EAAEAB_pim*EAAEAB_imi/(EAB_py*EAB_y);
-// Imports of consumption goods 
-EABEAC_imcy  = EABEAC_pim*EABEAC_imc/(EAB_py*EAB_y);
-// Imports of investment goods
+// Bilateral shares
+EABEAC_imcy = EABEAC_pim*EABEAC_imc/(EAB_py*EAB_y);
 EABEAC_imiy = EABEAC_pim*EABEAC_imi/(EAB_py*EAB_y);
 // Exports of consumption goods to gdp
 EABEAC_excy  = EAC_size/EAB_size*EABEAC_rer*EACEAB_pim*EACEAB_imc/(EAB_py*EAB_y);
 // Exports of investment goods to gdp
 EABEAC_exiy  = EAC_size/EAB_size*EABEAC_rer*EACEAB_pim*EACEAB_imi/(EAB_py*EAB_y);
-// Imports of consumption goods 
-EABEAD_imcy  = EABEAD_pim*EABEAD_imc/(EAB_py*EAB_y);
-// Imports of investment goods
+// Bilateral shares
+EABEAD_imcy = EABEAD_pim*EABEAD_imc/(EAB_py*EAB_y);
 EABEAD_imiy = EABEAD_pim*EABEAD_imi/(EAB_py*EAB_y);
 // Exports of consumption goods to gdp
 EABEAD_excy  = EAD_size/EAB_size*EABEAD_rer*EADEAB_pim*EADEAB_imc/(EAB_py*EAB_y);
 // Exports of investment goods to gdp
 EABEAD_exiy  = EAD_size/EAB_size*EABEAD_rer*EADEAB_pim*EADEAB_imi/(EAB_py*EAB_y);
-// Imports of consumption goods 
-EABEAE_imcy  = EABEAE_pim*EABEAE_imc/(EAB_py*EAB_y);
-// Imports of investment goods
+// Bilateral shares
+EABEAE_imcy = EABEAE_pim*EABEAE_imc/(EAB_py*EAB_y);
 EABEAE_imiy = EABEAE_pim*EABEAE_imi/(EAB_py*EAB_y);
 // Exports of consumption goods to gdp
 EABEAE_excy  = EAE_size/EAB_size*EABEAE_rer*EAEEAB_pim*EAEEAB_imc/(EAB_py*EAB_y);
 // Exports of investment goods to gdp
 EABEAE_exiy  = EAE_size/EAB_size*EABEAE_rer*EAEEAB_pim*EAEEAB_imi/(EAB_py*EAB_y);
-// Imports of consumption goods 
-EABRW_imcy  = EABRW_pim*EABRW_imc/(EAB_py*EAB_y);
-// Imports of investment goods
+// Bilateral shares
+EABRW_imcy = EABRW_pim*EABRW_imc/(EAB_py*EAB_y);
 EABRW_imiy = EABRW_pim*EABRW_imi/(EAB_py*EAB_y);
 // Exports of consumption goods to gdp
 EABRW_excy  = RW_size/EAB_size*EABRW_rer*RWEAB_pim*RWEAB_imc/(EAB_py*EAB_y);
 // Exports of investment goods to gdp
 EABRW_exiy  = RW_size/EAB_size*EABRW_rer*RWEAB_pim*RWEAB_imi/(EAB_py*EAB_y);
-// Imports of consumption goods 
-EABUS_imcy  = EABUS_pim*EABUS_imc/(EAB_py*EAB_y);
-// Imports of investment goods
+// Bilateral shares
+EABUS_imcy = EABUS_pim*EABUS_imc/(EAB_py*EAB_y);
 EABUS_imiy = EABUS_pim*EABUS_imi/(EAB_py*EAB_y);
 // Exports of consumption goods to gdp
 EABUS_excy  = US_size/EAB_size*EABUS_rer*USEAB_pim*USEAB_imc/(EAB_py*EAB_y);
@@ -6229,49 +6217,43 @@ EAC_yshare  = EAC_size*EAC_py*EAC_y/EAC_rer/(
 EAC_epsilonm = -1/8*1/(EAC_r*(EAC_gammav2*EAC_r+EAC_r-1));
 // Trade balance-to-GDP ratio
 EAC_tby = EAC_tb/(EAC_py*EAC_y);
-// Imports of consumption goods 
-EACEAA_imcy  = EACEAA_pim*EACEAA_imc/(EAC_py*EAC_y);
-// Imports of investment goods
+// Bilateral shares
+EACEAA_imcy = EACEAA_pim*EACEAA_imc/(EAC_py*EAC_y);
 EACEAA_imiy = EACEAA_pim*EACEAA_imi/(EAC_py*EAC_y);
 // Exports of consumption goods to gdp
 EACEAA_excy  = EAA_size/EAC_size*EACEAA_rer*EAAEAC_pim*EAAEAC_imc/(EAC_py*EAC_y);
 // Exports of investment goods to gdp
 EACEAA_exiy  = EAA_size/EAC_size*EACEAA_rer*EAAEAC_pim*EAAEAC_imi/(EAC_py*EAC_y);
-// Imports of consumption goods 
-EACEAB_imcy  = EACEAB_pim*EACEAB_imc/(EAC_py*EAC_y);
-// Imports of investment goods
+// Bilateral shares
+EACEAB_imcy = EACEAB_pim*EACEAB_imc/(EAC_py*EAC_y);
 EACEAB_imiy = EACEAB_pim*EACEAB_imi/(EAC_py*EAC_y);
 // Exports of consumption goods to gdp
 EACEAB_excy  = EAB_size/EAC_size*EACEAB_rer*EABEAC_pim*EABEAC_imc/(EAC_py*EAC_y);
 // Exports of investment goods to gdp
 EACEAB_exiy  = EAB_size/EAC_size*EACEAB_rer*EABEAC_pim*EABEAC_imi/(EAC_py*EAC_y);
-// Imports of consumption goods 
-EACEAD_imcy  = EACEAD_pim*EACEAD_imc/(EAC_py*EAC_y);
-// Imports of investment goods
+// Bilateral shares
+EACEAD_imcy = EACEAD_pim*EACEAD_imc/(EAC_py*EAC_y);
 EACEAD_imiy = EACEAD_pim*EACEAD_imi/(EAC_py*EAC_y);
 // Exports of consumption goods to gdp
 EACEAD_excy  = EAD_size/EAC_size*EACEAD_rer*EADEAC_pim*EADEAC_imc/(EAC_py*EAC_y);
 // Exports of investment goods to gdp
 EACEAD_exiy  = EAD_size/EAC_size*EACEAD_rer*EADEAC_pim*EADEAC_imi/(EAC_py*EAC_y);
-// Imports of consumption goods 
-EACEAE_imcy  = EACEAE_pim*EACEAE_imc/(EAC_py*EAC_y);
-// Imports of investment goods
+// Bilateral shares
+EACEAE_imcy = EACEAE_pim*EACEAE_imc/(EAC_py*EAC_y);
 EACEAE_imiy = EACEAE_pim*EACEAE_imi/(EAC_py*EAC_y);
 // Exports of consumption goods to gdp
 EACEAE_excy  = EAE_size/EAC_size*EACEAE_rer*EAEEAC_pim*EAEEAC_imc/(EAC_py*EAC_y);
 // Exports of investment goods to gdp
 EACEAE_exiy  = EAE_size/EAC_size*EACEAE_rer*EAEEAC_pim*EAEEAC_imi/(EAC_py*EAC_y);
-// Imports of consumption goods 
-EACRW_imcy  = EACRW_pim*EACRW_imc/(EAC_py*EAC_y);
-// Imports of investment goods
+// Bilateral shares
+EACRW_imcy = EACRW_pim*EACRW_imc/(EAC_py*EAC_y);
 EACRW_imiy = EACRW_pim*EACRW_imi/(EAC_py*EAC_y);
 // Exports of consumption goods to gdp
 EACRW_excy  = RW_size/EAC_size*EACRW_rer*RWEAC_pim*RWEAC_imc/(EAC_py*EAC_y);
 // Exports of investment goods to gdp
 EACRW_exiy  = RW_size/EAC_size*EACRW_rer*RWEAC_pim*RWEAC_imi/(EAC_py*EAC_y);
-// Imports of consumption goods 
-EACUS_imcy  = EACUS_pim*EACUS_imc/(EAC_py*EAC_y);
-// Imports of investment goods
+// Bilateral shares
+EACUS_imcy = EACUS_pim*EACUS_imc/(EAC_py*EAC_y);
 EACUS_imiy = EACUS_pim*EACUS_imi/(EAC_py*EAC_y);
 // Exports of consumption goods to gdp
 EACUS_excy  = US_size/EAC_size*EACUS_rer*USEAC_pim*USEAC_imc/(EAC_py*EAC_y);
@@ -7310,49 +7292,43 @@ EAD_yshare  = EAD_size*EAD_py*EAD_y/EAD_rer/(
 EAD_epsilonm = -1/8*1/(EAD_r*(EAD_gammav2*EAD_r+EAD_r-1));
 // Trade balance-to-GDP ratio
 EAD_tby = EAD_tb/(EAD_py*EAD_y);
-// Imports of consumption goods 
-EADEAA_imcy  = EADEAA_pim*EADEAA_imc/(EAD_py*EAD_y);
-// Imports of investment goods
+// Bilateral shares
+EADEAA_imcy = EADEAA_pim*EADEAA_imc/(EAD_py*EAD_y);
 EADEAA_imiy = EADEAA_pim*EADEAA_imi/(EAD_py*EAD_y);
 // Exports of consumption goods to gdp
 EADEAA_excy  = EAA_size/EAD_size*EADEAA_rer*EAAEAD_pim*EAAEAD_imc/(EAD_py*EAD_y);
 // Exports of investment goods to gdp
 EADEAA_exiy  = EAA_size/EAD_size*EADEAA_rer*EAAEAD_pim*EAAEAD_imi/(EAD_py*EAD_y);
-// Imports of consumption goods 
-EADEAB_imcy  = EADEAB_pim*EADEAB_imc/(EAD_py*EAD_y);
-// Imports of investment goods
+// Bilateral shares
+EADEAB_imcy = EADEAB_pim*EADEAB_imc/(EAD_py*EAD_y);
 EADEAB_imiy = EADEAB_pim*EADEAB_imi/(EAD_py*EAD_y);
 // Exports of consumption goods to gdp
 EADEAB_excy  = EAB_size/EAD_size*EADEAB_rer*EABEAD_pim*EABEAD_imc/(EAD_py*EAD_y);
 // Exports of investment goods to gdp
 EADEAB_exiy  = EAB_size/EAD_size*EADEAB_rer*EABEAD_pim*EABEAD_imi/(EAD_py*EAD_y);
-// Imports of consumption goods 
-EADEAC_imcy  = EADEAC_pim*EADEAC_imc/(EAD_py*EAD_y);
-// Imports of investment goods
+// Bilateral shares
+EADEAC_imcy = EADEAC_pim*EADEAC_imc/(EAD_py*EAD_y);
 EADEAC_imiy = EADEAC_pim*EADEAC_imi/(EAD_py*EAD_y);
 // Exports of consumption goods to gdp
 EADEAC_excy  = EAC_size/EAD_size*EADEAC_rer*EACEAD_pim*EACEAD_imc/(EAD_py*EAD_y);
 // Exports of investment goods to gdp
 EADEAC_exiy  = EAC_size/EAD_size*EADEAC_rer*EACEAD_pim*EACEAD_imi/(EAD_py*EAD_y);
-// Imports of consumption goods 
-EADEAE_imcy  = EADEAE_pim*EADEAE_imc/(EAD_py*EAD_y);
-// Imports of investment goods
+// Bilateral shares
+EADEAE_imcy = EADEAE_pim*EADEAE_imc/(EAD_py*EAD_y);
 EADEAE_imiy = EADEAE_pim*EADEAE_imi/(EAD_py*EAD_y);
 // Exports of consumption goods to gdp
 EADEAE_excy  = EAE_size/EAD_size*EADEAE_rer*EAEEAD_pim*EAEEAD_imc/(EAD_py*EAD_y);
 // Exports of investment goods to gdp
 EADEAE_exiy  = EAE_size/EAD_size*EADEAE_rer*EAEEAD_pim*EAEEAD_imi/(EAD_py*EAD_y);
-// Imports of consumption goods 
-EADRW_imcy  = EADRW_pim*EADRW_imc/(EAD_py*EAD_y);
-// Imports of investment goods
+// Bilateral shares
+EADRW_imcy = EADRW_pim*EADRW_imc/(EAD_py*EAD_y);
 EADRW_imiy = EADRW_pim*EADRW_imi/(EAD_py*EAD_y);
 // Exports of consumption goods to gdp
 EADRW_excy  = RW_size/EAD_size*EADRW_rer*RWEAD_pim*RWEAD_imc/(EAD_py*EAD_y);
 // Exports of investment goods to gdp
 EADRW_exiy  = RW_size/EAD_size*EADRW_rer*RWEAD_pim*RWEAD_imi/(EAD_py*EAD_y);
-// Imports of consumption goods 
-EADUS_imcy  = EADUS_pim*EADUS_imc/(EAD_py*EAD_y);
-// Imports of investment goods
+// Bilateral shares
+EADUS_imcy = EADUS_pim*EADUS_imc/(EAD_py*EAD_y);
 EADUS_imiy = EADUS_pim*EADUS_imi/(EAD_py*EAD_y);
 // Exports of consumption goods to gdp
 EADUS_excy  = US_size/EAD_size*EADUS_rer*USEAD_pim*USEAD_imc/(EAD_py*EAD_y);
@@ -8386,49 +8362,43 @@ EAE_yshare  = EAE_size*EAE_py*EAE_y/EAE_rer/(
 EAE_epsilonm = -1/8*1/(EAE_r*(EAE_gammav2*EAE_r+EAE_r-1));
 // Trade balance-to-GDP ratio
 EAE_tby = EAE_tb/(EAE_py*EAE_y);
-// Imports of consumption goods 
-EAEEAA_imcy  = EAEEAA_pim*EAEEAA_imc/(EAE_py*EAE_y);
-// Imports of investment goods
+// Bilateral shares
+EAEEAA_imcy = EAEEAA_pim*EAEEAA_imc/(EAE_py*EAE_y);
 EAEEAA_imiy = EAEEAA_pim*EAEEAA_imi/(EAE_py*EAE_y);
 // Exports of consumption goods to gdp
 EAEEAA_excy  = EAA_size/EAE_size*EAEEAA_rer*EAAEAE_pim*EAAEAE_imc/(EAE_py*EAE_y);
 // Exports of investment goods to gdp
 EAEEAA_exiy  = EAA_size/EAE_size*EAEEAA_rer*EAAEAE_pim*EAAEAE_imi/(EAE_py*EAE_y);
-// Imports of consumption goods 
-EAEEAB_imcy  = EAEEAB_pim*EAEEAB_imc/(EAE_py*EAE_y);
-// Imports of investment goods
+// Bilateral shares
+EAEEAB_imcy = EAEEAB_pim*EAEEAB_imc/(EAE_py*EAE_y);
 EAEEAB_imiy = EAEEAB_pim*EAEEAB_imi/(EAE_py*EAE_y);
 // Exports of consumption goods to gdp
 EAEEAB_excy  = EAB_size/EAE_size*EAEEAB_rer*EABEAE_pim*EABEAE_imc/(EAE_py*EAE_y);
 // Exports of investment goods to gdp
 EAEEAB_exiy  = EAB_size/EAE_size*EAEEAB_rer*EABEAE_pim*EABEAE_imi/(EAE_py*EAE_y);
-// Imports of consumption goods 
-EAEEAC_imcy  = EAEEAC_pim*EAEEAC_imc/(EAE_py*EAE_y);
-// Imports of investment goods
+// Bilateral shares
+EAEEAC_imcy = EAEEAC_pim*EAEEAC_imc/(EAE_py*EAE_y);
 EAEEAC_imiy = EAEEAC_pim*EAEEAC_imi/(EAE_py*EAE_y);
 // Exports of consumption goods to gdp
 EAEEAC_excy  = EAC_size/EAE_size*EAEEAC_rer*EACEAE_pim*EACEAE_imc/(EAE_py*EAE_y);
 // Exports of investment goods to gdp
 EAEEAC_exiy  = EAC_size/EAE_size*EAEEAC_rer*EACEAE_pim*EACEAE_imi/(EAE_py*EAE_y);
-// Imports of consumption goods 
-EAEEAD_imcy  = EAEEAD_pim*EAEEAD_imc/(EAE_py*EAE_y);
-// Imports of investment goods
+// Bilateral shares
+EAEEAD_imcy = EAEEAD_pim*EAEEAD_imc/(EAE_py*EAE_y);
 EAEEAD_imiy = EAEEAD_pim*EAEEAD_imi/(EAE_py*EAE_y);
 // Exports of consumption goods to gdp
 EAEEAD_excy  = EAD_size/EAE_size*EAEEAD_rer*EADEAE_pim*EADEAE_imc/(EAE_py*EAE_y);
 // Exports of investment goods to gdp
 EAEEAD_exiy  = EAD_size/EAE_size*EAEEAD_rer*EADEAE_pim*EADEAE_imi/(EAE_py*EAE_y);
-// Imports of consumption goods 
-EAERW_imcy  = EAERW_pim*EAERW_imc/(EAE_py*EAE_y);
-// Imports of investment goods
+// Bilateral shares
+EAERW_imcy = EAERW_pim*EAERW_imc/(EAE_py*EAE_y);
 EAERW_imiy = EAERW_pim*EAERW_imi/(EAE_py*EAE_y);
 // Exports of consumption goods to gdp
 EAERW_excy  = RW_size/EAE_size*EAERW_rer*RWEAE_pim*RWEAE_imc/(EAE_py*EAE_y);
 // Exports of investment goods to gdp
 EAERW_exiy  = RW_size/EAE_size*EAERW_rer*RWEAE_pim*RWEAE_imi/(EAE_py*EAE_y);
-// Imports of consumption goods 
-EAEUS_imcy  = EAEUS_pim*EAEUS_imc/(EAE_py*EAE_y);
-// Imports of investment goods
+// Bilateral shares
+EAEUS_imcy = EAEUS_pim*EAEUS_imc/(EAE_py*EAE_y);
 EAEUS_imiy = EAEUS_pim*EAEUS_imi/(EAE_py*EAE_y);
 // Exports of consumption goods to gdp
 EAEUS_excy  = US_size/EAE_size*EAEUS_rer*USEAE_pim*USEAE_imc/(EAE_py*EAE_y);
@@ -9462,49 +9432,43 @@ RW_yshare  = RW_size*RW_py*RW_y/RW_rer/(
 RW_epsilonm = -1/8*1/(RW_r*(RW_gammav2*RW_r+RW_r-1));
 // Trade balance-to-GDP ratio
 RW_tby = RW_tb/(RW_py*RW_y);
-// Imports of consumption goods 
-RWEAA_imcy  = RWEAA_pim*RWEAA_imc/(RW_py*RW_y);
-// Imports of investment goods
+// Bilateral shares
+RWEAA_imcy = RWEAA_pim*RWEAA_imc/(RW_py*RW_y);
 RWEAA_imiy = RWEAA_pim*RWEAA_imi/(RW_py*RW_y);
 // Exports of consumption goods to gdp
 RWEAA_excy  = EAA_size/RW_size*RWEAA_rer*EAARW_pim*EAARW_imc/(RW_py*RW_y);
 // Exports of investment goods to gdp
 RWEAA_exiy  = EAA_size/RW_size*RWEAA_rer*EAARW_pim*EAARW_imi/(RW_py*RW_y);
-// Imports of consumption goods 
-RWEAB_imcy  = RWEAB_pim*RWEAB_imc/(RW_py*RW_y);
-// Imports of investment goods
+// Bilateral shares
+RWEAB_imcy = RWEAB_pim*RWEAB_imc/(RW_py*RW_y);
 RWEAB_imiy = RWEAB_pim*RWEAB_imi/(RW_py*RW_y);
 // Exports of consumption goods to gdp
 RWEAB_excy  = EAB_size/RW_size*RWEAB_rer*EABRW_pim*EABRW_imc/(RW_py*RW_y);
 // Exports of investment goods to gdp
 RWEAB_exiy  = EAB_size/RW_size*RWEAB_rer*EABRW_pim*EABRW_imi/(RW_py*RW_y);
-// Imports of consumption goods 
-RWEAC_imcy  = RWEAC_pim*RWEAC_imc/(RW_py*RW_y);
-// Imports of investment goods
+// Bilateral shares
+RWEAC_imcy = RWEAC_pim*RWEAC_imc/(RW_py*RW_y);
 RWEAC_imiy = RWEAC_pim*RWEAC_imi/(RW_py*RW_y);
 // Exports of consumption goods to gdp
 RWEAC_excy  = EAC_size/RW_size*RWEAC_rer*EACRW_pim*EACRW_imc/(RW_py*RW_y);
 // Exports of investment goods to gdp
 RWEAC_exiy  = EAC_size/RW_size*RWEAC_rer*EACRW_pim*EACRW_imi/(RW_py*RW_y);
-// Imports of consumption goods 
-RWEAD_imcy  = RWEAD_pim*RWEAD_imc/(RW_py*RW_y);
-// Imports of investment goods
+// Bilateral shares
+RWEAD_imcy = RWEAD_pim*RWEAD_imc/(RW_py*RW_y);
 RWEAD_imiy = RWEAD_pim*RWEAD_imi/(RW_py*RW_y);
 // Exports of consumption goods to gdp
 RWEAD_excy  = EAD_size/RW_size*RWEAD_rer*EADRW_pim*EADRW_imc/(RW_py*RW_y);
 // Exports of investment goods to gdp
 RWEAD_exiy  = EAD_size/RW_size*RWEAD_rer*EADRW_pim*EADRW_imi/(RW_py*RW_y);
-// Imports of consumption goods 
-RWEAE_imcy  = RWEAE_pim*RWEAE_imc/(RW_py*RW_y);
-// Imports of investment goods
+// Bilateral shares
+RWEAE_imcy = RWEAE_pim*RWEAE_imc/(RW_py*RW_y);
 RWEAE_imiy = RWEAE_pim*RWEAE_imi/(RW_py*RW_y);
 // Exports of consumption goods to gdp
 RWEAE_excy  = EAE_size/RW_size*RWEAE_rer*EAERW_pim*EAERW_imc/(RW_py*RW_y);
 // Exports of investment goods to gdp
 RWEAE_exiy  = EAE_size/RW_size*RWEAE_rer*EAERW_pim*EAERW_imi/(RW_py*RW_y);
-// Imports of consumption goods 
-RWUS_imcy  = RWUS_pim*RWUS_imc/(RW_py*RW_y);
-// Imports of investment goods
+// Bilateral shares
+RWUS_imcy = RWUS_pim*RWUS_imc/(RW_py*RW_y);
 RWUS_imiy = RWUS_pim*RWUS_imi/(RW_py*RW_y);
 // Exports of consumption goods to gdp
 RWUS_excy  = US_size/RW_size*RWUS_rer*USRW_pim*USRW_imc/(RW_py*RW_y);
@@ -10538,49 +10502,43 @@ US_yshare  = US_size*US_py*US_y/US_rer/(
 US_epsilonm = -1/8*1/(US_r*(US_gammav2*US_r+US_r-1));
 // Trade balance-to-GDP ratio
 US_tby = US_tb/(US_py*US_y);
-// Imports of consumption goods 
-USEAA_imcy  = USEAA_pim*USEAA_imc/(US_py*US_y);
-// Imports of investment goods
+// Bilateral shares
+USEAA_imcy = USEAA_pim*USEAA_imc/(US_py*US_y);
 USEAA_imiy = USEAA_pim*USEAA_imi/(US_py*US_y);
 // Exports of consumption goods to gdp
 USEAA_excy  = EAA_size/US_size*USEAA_rer*EAAUS_pim*EAAUS_imc/(US_py*US_y);
 // Exports of investment goods to gdp
 USEAA_exiy  = EAA_size/US_size*USEAA_rer*EAAUS_pim*EAAUS_imi/(US_py*US_y);
-// Imports of consumption goods 
-USEAB_imcy  = USEAB_pim*USEAB_imc/(US_py*US_y);
-// Imports of investment goods
+// Bilateral shares
+USEAB_imcy = USEAB_pim*USEAB_imc/(US_py*US_y);
 USEAB_imiy = USEAB_pim*USEAB_imi/(US_py*US_y);
 // Exports of consumption goods to gdp
 USEAB_excy  = EAB_size/US_size*USEAB_rer*EABUS_pim*EABUS_imc/(US_py*US_y);
 // Exports of investment goods to gdp
 USEAB_exiy  = EAB_size/US_size*USEAB_rer*EABUS_pim*EABUS_imi/(US_py*US_y);
-// Imports of consumption goods 
-USEAC_imcy  = USEAC_pim*USEAC_imc/(US_py*US_y);
-// Imports of investment goods
+// Bilateral shares
+USEAC_imcy = USEAC_pim*USEAC_imc/(US_py*US_y);
 USEAC_imiy = USEAC_pim*USEAC_imi/(US_py*US_y);
 // Exports of consumption goods to gdp
 USEAC_excy  = EAC_size/US_size*USEAC_rer*EACUS_pim*EACUS_imc/(US_py*US_y);
 // Exports of investment goods to gdp
 USEAC_exiy  = EAC_size/US_size*USEAC_rer*EACUS_pim*EACUS_imi/(US_py*US_y);
-// Imports of consumption goods 
-USEAD_imcy  = USEAD_pim*USEAD_imc/(US_py*US_y);
-// Imports of investment goods
+// Bilateral shares
+USEAD_imcy = USEAD_pim*USEAD_imc/(US_py*US_y);
 USEAD_imiy = USEAD_pim*USEAD_imi/(US_py*US_y);
 // Exports of consumption goods to gdp
 USEAD_excy  = EAD_size/US_size*USEAD_rer*EADUS_pim*EADUS_imc/(US_py*US_y);
 // Exports of investment goods to gdp
 USEAD_exiy  = EAD_size/US_size*USEAD_rer*EADUS_pim*EADUS_imi/(US_py*US_y);
-// Imports of consumption goods 
-USEAE_imcy  = USEAE_pim*USEAE_imc/(US_py*US_y);
-// Imports of investment goods
+// Bilateral shares
+USEAE_imcy = USEAE_pim*USEAE_imc/(US_py*US_y);
 USEAE_imiy = USEAE_pim*USEAE_imi/(US_py*US_y);
 // Exports of consumption goods to gdp
 USEAE_excy  = EAE_size/US_size*USEAE_rer*EAEUS_pim*EAEUS_imc/(US_py*US_y);
 // Exports of investment goods to gdp
 USEAE_exiy  = EAE_size/US_size*USEAE_rer*EAEUS_pim*EAEUS_imi/(US_py*US_y);
-// Imports of consumption goods 
-USRW_imcy  = USRW_pim*USRW_imc/(US_py*US_y);
-// Imports of investment goods
+// Bilateral shares
+USRW_imcy = USRW_pim*USRW_imc/(US_py*US_y);
 USRW_imiy = USRW_pim*USRW_imi/(US_py*US_y);
 // Exports of consumption goods to gdp
 USRW_excy  = RW_size/US_size*USRW_rer*RWUS_pim*RWUS_imc/(US_py*US_y);
