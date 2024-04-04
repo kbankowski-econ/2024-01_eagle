@@ -22,7 +22,9 @@ dynare_config
 
 %%
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
+dynare('load0.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
+%%
 dynare('steady0.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
 %% 
