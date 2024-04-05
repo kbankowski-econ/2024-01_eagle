@@ -342,13 +342,18 @@ initval;
 @#for aItem in demandItems
   @#if aItem == "c"
       @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.02;
-  @#ifelse aItem == "i"
-      @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.0003;
-  @#ifelse aItem == "cg"
-      @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.02;
-  @#ifelse aItem == "ig"
+  @#else
+  @#if aItem == "i"
       @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.0003;
   @#else
+  @#if aItem == "cg"
+      @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.02;
+  @#else
+  @#if aItem == "ig"
+      @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.0003;
+  @#endif
+  @#endif
+  @#endif
   @#endif
 @#endfor
       @{COUNTRY}@{COUNTRY1}_sx = 0.999999999999999;
@@ -371,13 +376,18 @@ initval;
 @#for aItem in demandItems
   @#if aItem == "c"
       @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.09;
-  @#ifelse aItem == "i"
-      @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.0008;
-  @#ifelse aItem == "cg"
-      @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.09;
-  @#ifelse aItem == "ig"
+  @#else
+  @#if aItem == "i"
       @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.0008;
   @#else
+  @#if aItem == "cg"
+      @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.09;
+  @#else
+  @#if aItem == "ig"
+      @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.0008;
+  @#endif
+  @#endif
+  @#endif
   @#endif
 @#endfor
       @{COUNTRY}@{COUNTRY1}_excy = 0.09;
