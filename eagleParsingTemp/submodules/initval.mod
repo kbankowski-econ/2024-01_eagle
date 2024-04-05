@@ -60,7 +60,9 @@ initval;
   @#else
   @#if aItem == "ig"
   @{COUNTRY}_ht@{aItem} =  0.0005;
-  @#else
+  @#endif
+  @#endif
+  @#endif
   @#endif
 @#endfor
 
@@ -83,7 +85,9 @@ initval;
   @#if aItem == "ig"
   @{COUNTRY}_im@{aItem} = 0.0005;
   @{COUNTRY}_im@{aItem}y = 0.0016;
-  @#else
+  @#endif
+  @#endif
+  @#endif
   @#endif
 @#endfor
   @{COUNTRY}_imy = 0.25;
@@ -129,7 +133,9 @@ initval;
   @#else
   @#if aItem == "ig"
   @{COUNTRY}_nt@{aItem} = 0.001;
-  @#else
+  @#endif
+  @#endif
+  @#endif
   @#endif
 @#endfor
 
@@ -182,7 +188,9 @@ initval;
   @#else
   @#if aItem == "ig"
   @{COUNTRY}_q@{aItem} =  0.00209600391746659*2;
-  @#else
+  @#endif
+  @#endif
+  @#endif
   @#endif
 @#endfor
 
@@ -236,7 +244,9 @@ initval;
   @#else
   @#if aItem == "ig"
   @{COUNTRY}_tt@{aItem} = 0.001;
-  @#else
+  @#endif
+  @#endif
+  @#endif
   @#endif
 @#endfor
 
@@ -281,6 +291,8 @@ initval;
   @#if(COUNTRY != "EAA" && COUNTRY != "EAB" && COUNTRY != "EAC" && COUNTRY != "EAD" && COUNTRY != "EAE")
     @# if !steady
       @{COUNTRY}_epsr = 0;
+    @#endif
+  @#endif
     @#endif
   @#endif
   @#if(COUNTRY != "US")
