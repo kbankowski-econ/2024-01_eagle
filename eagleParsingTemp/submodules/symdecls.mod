@@ -177,19 +177,22 @@ var
  @{co}_piimc4
  @{co}_piimi
  @{co}_pim
- @{co}_pimc
- @{co}_pimi
+@#for aItem in demandItems
+ @{co}_pim@{aItem}
+@#endfor 
  @{co}_pint
  @{co}_piw
  @{co}_piw4
  @{co}_pnt
  @{co}_pnttilde
- @{co}_pttc
- @{co}_ptti
+@#for aItem in demandItems
+ @{co}_ptt@{aItem}
+@#endfor 
  @{co}_py
  @{co}_q
- @{co}_qc
- @{co}_qi
+@#for aItem in demandItems
+ @{co}_q@{aItem}
+@#endfor 
  @{co}_r
  @{co}_reer
  @{co}_rer
