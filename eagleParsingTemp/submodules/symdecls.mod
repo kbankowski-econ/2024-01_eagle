@@ -55,18 +55,14 @@ var
 @# for it in countries - [ co ]
  @{co}@{it}_im
 @# endfor
+@#for aItem in demandItems
 @# for it in countries - [ co ]
- @{co}@{it}_imc
+ @{co}@{it}_im@{aItem}
 @# endfor
 @# for it in countries - [ co ]
- @{co}@{it}_imcy
+ @{co}@{it}_im@{aItem}y
 @# endfor
-@# for it in countries - [ co ]
- @{co}@{it}_imi
-@# endfor
-@# for it in countries - [ co ]
- @{co}@{it}_imiy
-@# endfor
+@#endfor
 @# for it in countries - [ co ]
  @{co}@{it}_piim
 @# endfor
