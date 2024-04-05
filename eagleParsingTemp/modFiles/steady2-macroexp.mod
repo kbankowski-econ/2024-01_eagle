@@ -340,14 +340,14 @@ parameters
  EAA_gammav2
  EAA_kappa
  EAA_muc
- EAA_mui
  EAA_mumc
- EAA_mumi
  EAA_mutc
- EAA_muti
  EAA_nuc
- EAA_nui
  EAA_nutc
+ EAA_mui
+ EAA_mumi
+ EAA_muti
+ EAA_nui
  EAA_nuti
  EAA_omega
  EAA_phitb
@@ -743,14 +743,14 @@ parameters
  EAB_gammav2
  EAB_kappa
  EAB_muc
- EAB_mui
  EAB_mumc
- EAB_mumi
  EAB_mutc
- EAB_muti
  EAB_nuc
- EAB_nui
  EAB_nutc
+ EAB_mui
+ EAB_mumi
+ EAB_muti
+ EAB_nui
  EAB_nuti
  EAB_omega
  EAB_phitb
@@ -1146,14 +1146,14 @@ parameters
  EAC_gammav2
  EAC_kappa
  EAC_muc
- EAC_mui
  EAC_mumc
- EAC_mumi
  EAC_mutc
- EAC_muti
  EAC_nuc
- EAC_nui
  EAC_nutc
+ EAC_mui
+ EAC_mumi
+ EAC_muti
+ EAC_nui
  EAC_nuti
  EAC_omega
  EAC_phitb
@@ -1549,14 +1549,14 @@ parameters
  EAD_gammav2
  EAD_kappa
  EAD_muc
- EAD_mui
  EAD_mumc
- EAD_mumi
  EAD_mutc
- EAD_muti
  EAD_nuc
- EAD_nui
  EAD_nutc
+ EAD_mui
+ EAD_mumi
+ EAD_muti
+ EAD_nui
  EAD_nuti
  EAD_omega
  EAD_phitb
@@ -1952,14 +1952,14 @@ parameters
  EAE_gammav2
  EAE_kappa
  EAE_muc
- EAE_mui
  EAE_mumc
- EAE_mumi
  EAE_mutc
- EAE_muti
  EAE_nuc
- EAE_nui
  EAE_nutc
+ EAE_mui
+ EAE_mumi
+ EAE_muti
+ EAE_nui
  EAE_nuti
  EAE_omega
  EAE_phitb
@@ -2355,14 +2355,14 @@ parameters
  RW_gammav2
  RW_kappa
  RW_muc
- RW_mui
  RW_mumc
- RW_mumi
  RW_mutc
- RW_muti
  RW_nuc
- RW_nui
  RW_nutc
+ RW_mui
+ RW_mumi
+ RW_muti
+ RW_nui
  RW_nuti
  RW_omega
  RW_phirgy
@@ -2754,14 +2754,14 @@ parameters
  US_gammav2
  US_kappa
  US_muc
- US_mui
  US_mumc
- US_mumi
  US_mutc
- US_muti
  US_nuc
- US_nui
  US_nutc
+ US_mui
+ US_mumi
+ US_muti
+ US_nui
  US_nuti
  US_omega
  US_phirgy
