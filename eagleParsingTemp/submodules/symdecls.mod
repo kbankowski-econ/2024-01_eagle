@@ -162,8 +162,9 @@ var
  @{co}_ni
  @{co}_nj
  @{co}_nt
- @{co}_ntc
- @{co}_nti
+ @#for aItem in demandItems
+ @{co}_nt@{aItem}
+@#endfor 
  @{co}_pex
  @{co}_pht
  @{co}_phttilde
