@@ -57,17 +57,13 @@
    @{COUNTRY}_chix        = 0.00;
 
 // Final-good technologies
-
-   @{COUNTRY}_mumc        = 1.001;
-   @{COUNTRY}_mumi        = 1.001;
-   @{COUNTRY}_nutc        = 0.5;
-   @{COUNTRY}_mutc        = 1.001;
-   @{COUNTRY}_nuti        = 0.5;
-   @{COUNTRY}_muti        = 1.001;
-   @{COUNTRY}_nuc         = 0.5;
-   @{COUNTRY}_muc         = 1.001;
-   @{COUNTRY}_nui         = 0.5;
-   @{COUNTRY}_mui         = 1.001;
+@#for aItem in demandItems
+   @{COUNTRY}_mum@{aItem}        = 1.001;
+   @{COUNTRY}_nut@{aItem}        = 0.5;
+   @{COUNTRY}_mut@{aItem}        = 1.001;
+   @{COUNTRY}_nu@{aItem}         = 0.5;
+   @{COUNTRY}_mu@{aItem}         = 1.001;
+@#endfor
 
 // Adjustment and transaction cost
 
@@ -79,8 +75,9 @@
      @{COUNTRY}_gammau1     = 0.00;  
    @#endif
    @{COUNTRY}_gammau2     = 1.00;
-   @{COUNTRY}_gammaimc1   = 1.00;
-   @{COUNTRY}_gammaimi1   = 1.00;
+@#for aItem in demandItems
+   @{COUNTRY}_gammaim@{aItem}1   = 1.00;
+@#endfor
    @{COUNTRY}_gammab1     = 0.20;
 
 // Fiscal policy
@@ -127,104 +124,58 @@
 @#endfor
 
  // Bilateral and asymmetric
- 
- EAAUS_numc       = 0.1;
- EAAEAB_numc      = 0.2;
- EAAEAC_numc      = 0.2;
- EAAEAD_numc      = 0.2;
- EAAEAE_numc      = 0.2;
- EAARW_numc       = 1-EAAUS_numc-EAAEAB_numc-EAAEAC_numc-EAAEAD_numc-EAAEAE_numc;
+@#for aItem in demandItems
 
- EAAUS_numi       = 0.1;
- EAAEAB_numi      = 0.2;
- EAAEAC_numi      = 0.2;
- EAAEAD_numi      = 0.2;
- EAAEAE_numi      = 0.2;
- EAARW_numi       = 1-EAAUS_numi-EAAEAB_numi-EAAEAC_numi-EAAEAD_numi-EAAEAE_numi;
- 
- EABRW_numc       = 0.1;
- EABEAA_numc      = 0.2;
- EABEAC_numc      = 0.2;
- EABEAD_numc      = 0.2;
- EABEAE_numc      = 0.2;
- EABUS_numc       = 1-EABRW_numc-EABEAA_numc-EABEAC_numc-EABEAD_numc-EABEAE_numc;
+ EAAUS_num@{aItem}       = 0.1;
+ EAAEAB_num@{aItem}      = 0.2;
+ EAAEAC_num@{aItem}      = 0.2;
+ EAAEAD_num@{aItem}      = 0.2;
+ EAAEAE_num@{aItem}      = 0.2;
+ EAARW_num@{aItem}       = 1-EAAUS_num@{aItem}-EAAEAB_num@{aItem}-EAAEAC_num@{aItem}-EAAEAD_num@{aItem}-EAAEAE_num@{aItem};
 
- EABRW_numi       = 0.1;
- EABEAA_numi      = 0.2;
- EABEAC_numi      = 0.2;
- EABEAD_numi      = 0.2;
- EABEAE_numi      = 0.2;
- EABUS_numi       = 1-EABRW_numi-EABEAA_numi-EABEAC_numi-EABEAD_numi-EABEAE_numi;
+ EABRW_num@{aItem}       = 0.1;
+ EABEAA_num@{aItem}      = 0.2;
+ EABEAC_num@{aItem}      = 0.2;
+ EABEAD_num@{aItem}      = 0.2;
+ EABEAE_num@{aItem}      = 0.2;
+ EABUS_num@{aItem}       = 1-EABRW_num@{aItem}-EABEAA_num@{aItem}-EABEAC_num@{aItem}-EABEAD_num@{aItem}-EABEAE_num@{aItem};
 
- EACEAD_numc      = 0.2;
- EACEAE_numc      = 0.2;
- EACRW_numc       = 0.1;
- EACUS_numc       = 0.1;         
- EACEAB_numc      = 0.2;
- EACEAA = 1-EACEAD_numc-EACEAE_numc-EACRW_numc-EACUS_numc-EACEAB_numc;
+ EACEAD_num@{aItem}      = 0.2;
+ EACEAE_num@{aItem}      = 0.2;
+ EACRW_num@{aItem}       = 0.1;
+ EACUS_num@{aItem}       = 0.1;         
+ EACEAB_num@{aItem}      = 0.2;
+ EACEAA_num@{aItem} = 1-EACEAD_num@{aItem}-EACEAE_num@{aItem}-EACRW_num@{aItem}-EACUS_num@{aItem}-EACEAB_num@{aItem};
 
- EACEAD_numi      = 0.2;
- EACEAE_numi      = 0.2;
- EACRW_numi       = 0.1;
- EACUS_numi       = 0.1;         
- EACEAB_numi      = 0.2;
- EACEAA = 1-EACEAD_numi-EACEAE_numi-EACRW_numi-EACUS_numi-EACEAB_numi;
+ EADEAE_num@{aItem}      = 0.2;
+ EADRW_num@{aItem}       = 0.1;
+ EADUS_num@{aItem}       = 0.1;         
+ EADEAA_num@{aItem}      = 0.2;
+ EADEAC_num@{aItem}      = 0.2;
+ EADEAB_num@{aItem} = 1-EADEAE_num@{aItem}-EADEAC_num@{aItem}-EADRW_num@{aItem}-EADUS_num@{aItem}-EADEAA_num@{aItem};
 
- EADEAE_numc      = 0.2;
- EADRW_numc       = 0.1;
- EADUS_numc       = 0.1;         
- EADEAA_numc      = 0.2;
- EADEAC_numc      = 0.2;
- EADEAB = 1-EADEAE_numc-EADEAC_numc-EADRW_numc-EADUS_numc-EADEAA_numc;
+ EAERW_num@{aItem}       = 0.1;
+ EAEUS_num@{aItem}       = 0.1;
+ EAEEAA_num@{aItem}      = 0.2;         
+ EAEEAB_num@{aItem}      = 0.2;
+ EAEEAD_num@{aItem}      = 0.2;
+ EAEEAC_num@{aItem} = 1-EAERW_num@{aItem}-EAEUS_num@{aItem}-EAEEAA_num@{aItem}-EAEEAB_num@{aItem}-EAEEAD_num@{aItem};
 
- EADEAE_numi      = 0.2;
- EADRW_numi       = 0.1;
- EADUS_numi       = 0.1;         
- EADEAA_numi      = 0.2;
- EADEAC_numi      = 0.2;
- EADEAB = 1-EADEAE_numi-EADEAC_numi-EADRW_numi-EADUS_numi-EADEAA_numi;
+ RWUS_num@{aItem}        = 0.3;
+ RWEAA_num@{aItem}       = 0.15625;
+ RWEAB_num@{aItem}       = 0.15625;
+ RWEAC_num@{aItem}       = 0.15625;
+ RWEAE_num@{aItem}       = 0.075;
+ RWEAD_num@{aItem}       = 1-RWUS_num@{aItem}-RWEAA_num@{aItem}-RWEAB_num@{aItem}-RWEAC_num@{aItem}-RWEAE_num@{aItem};
 
- EAERW_numc       = 0.1;
- EAEUS_numc       = 0.1;
- EAEEAA_numc      = 0.2;         
- EAEEAB_numc      = 0.2;
- EAEEAD_numc      = 0.2;
- EAEEAC = 1-EAERW_numc-EAEUS_numc-EAEEAA_numc-EAEEAB_numc-EAEEAD_numc;
+ USEAA_num@{aItem}       = 0.15625;
+ USEAB_num@{aItem}       = 0.15625;
+ USEAC_num@{aItem}       = 0.15625;
+ USEAD_num@{aItem}       = 0.15625;
+ USRW_num@{aItem}        = 0.3;
+ USEAE_num@{aItem}       = 1-USEAA_num@{aItem}-USEAB_num@{aItem}-USEAC_num@{aItem}-USEAD_num@{aItem}-USRW_num@{aItem};
 
- EAERW_numi       = 0.1;
- EAEUS_numi       = 0.1;
- EAEEAA_numi      = 0.2;         
- EAEEAB_numi      = 0.2;
- EAEEAD_numi      = 0.2;
- EAEEAC = 1-EAERW_numi-EAEUS_numi-EAEEAA_numi-EAEEAB_numi-EAEEAD_numi;
-
- RWUS_numc        = 0.3;
- RWEAA_numc       = 0.15625;
- RWEAB_numc       = 0.15625;
- RWEAC_numc       = 0.15625;
- RWEAE_numc       = 0.075;
- RWEAD_numc       = 1-RWUS_numc-RWEAA_numc-RWEAB_numc-RWEAC_numc-RWEAE_numc;
-
- RWUS_numi        = 0.3;
- RWEAA_numi       = 0.15625;
- RWEAB_numi       = 0.15625;
- RWEAC_numi       = 0.15625;
- RWEAE_numi       = 0.075;
- RWEAD_numi       = 1-RWUS_numi-RWEAA_numi-RWEAB_numi-RWEAC_numi-RWEAE_numi;
-
- USEAA_numc       = 0.15625;
- USEAB_numc       = 0.15625;
- USEAC_numc       = 0.15625;
- USEAD_numc       = 0.15625;
- USRW_numc        = 0.3;
- USEAE_numc       = 1-USEAA_numc-USEAB_numc-USEAC_numc-USEAD_numc-USRW_numc;
- 
- USEAA_numi       = 0.15625;
- USEAB_numi       = 0.15625;
- USEAC_numi       = 0.15625;
- USEAD_numi       = 0.15625;
- USRW_numi        = 0.3;
- USEAE_numi       = 1-USEAA_numi-USEAB_numi-USEAC_numi-USEAD_numi-USRW_numi;
+@#endfor
 
 // Euro area
 
