@@ -46,16 +46,40 @@ initval;
   @{COUNTRY}_igy = 0;
 
   @{COUNTRY}_ht = 0.08;
-  @{COUNTRY}_htc = 0.08;
-  @{COUNTRY}_hti =  0.0005;
+
+//TODO: with fiscal variables country shares may need revisiting  
+@#for aItem in demandItems
+  @#if aItem == "c"
+  @{COUNTRY}_ht@{aItem} = 0.08;
+  @#elseif aItem == "i"
+  @{COUNTRY}_ht@{aItem} =  0.0005;
+  @#elseif aItem == "cg"
+  @{COUNTRY}_ht@{aItem} = 0.08;
+  @#elseif aItem == "ig"
+  @{COUNTRY}_ht@{aItem} =  0.0005;
+  @#else
+  @#endif
+@#endfor
 
   @{COUNTRY}_i = 0.00209600391746659;
   @{COUNTRY}_ii = 0.00279467188995545;
   @{COUNTRY}_im = 0.08;
-  @{COUNTRY}_imc = 0.08;
-  @{COUNTRY}_imcy = 0.25;
-  @{COUNTRY}_imi = 0.0005;
-  @{COUNTRY}_imiy = 0.0016;
+@#for aItem in demandItems
+  @#if aItem == "c"
+  @{COUNTRY}_im@{aItem} = 0.08;
+  @{COUNTRY}_im@{aItem}y = 0.25;
+  @#elseif aItem == "i"
+  @{COUNTRY}_im@{aItem} = 0.0005;
+  @{COUNTRY}_im@{aItem}y = 0.0016;
+  @#elseif aItem == "cg"
+  @{COUNTRY}_im@{aItem} = 0.08;
+  @{COUNTRY}_im@{aItem}y = 0.25;
+  @#elseif aItem == "ig"
+  @{COUNTRY}_im@{aItem} = 0.0005;
+  @{COUNTRY}_im@{aItem}y = 0.0016;
+  @#else
+  @#endif
+@#endfor
   @{COUNTRY}_imy = 0.25;
   @{COUNTRY}_internalrer = 1;
   @{COUNTRY}_iy = 0.00647482014388443;
@@ -84,8 +108,23 @@ initval;
   @{COUNTRY}_ni = 0.158787199981097;
   @{COUNTRY}_nj = 0.449007091712631;
   @{COUNTRY}_nt = 0.162;
-  @{COUNTRY}_ntc = 0.161;
-  @{COUNTRY}_nti = 0.001;
+
+
+
+@#for aItem in demandItems
+  @#if aItem == "c"
+  @{COUNTRY}_nt@{aItem} = 0.161;
+  @#elseif aItem == "i"
+  @{COUNTRY}_nt@{aItem} = 0.001;
+  @#elseif aItem == "cg"
+  @{COUNTRY}_nt@{aItem} = 0.161;
+  @#elseif aItem == "ig"
+  @{COUNTRY}_nt@{aItem} = 0.001;
+  @#else
+  @#endif
+@#endfor
+
+
 
   @{COUNTRY}_pex = 1;
   @{COUNTRY}_pht = 0.999999999999995;
@@ -100,8 +139,9 @@ initval;
   @{COUNTRY}_piimc4 = 1;
   @{COUNTRY}_piimi = 1;
   @{COUNTRY}_pim = 1;
-  @{COUNTRY}_pimc = 1;
-  @{COUNTRY}_pimi = 1;
+@#for aItem in demandItems
+  @{COUNTRY}_pim@{aItem} = 1;
+@#endfor
   @{COUNTRY}_pint = 1;
   @{COUNTRY}_piw = 1;
   @{COUNTRY}_piw4  = 1;
@@ -109,15 +149,31 @@ initval;
   @{COUNTRY}_pnttilde =  0.999999999999926;
   @{COUNTRY}_psitbar = 0;
   @{COUNTRY}_psinbar = 0;
-  @{COUNTRY}_pttc = 0.999999999999924;
-  @{COUNTRY}_ptti = 0.999999999999924;
+
+@#for aItem in demandItems
+  @{COUNTRY}_ptt@{aItem} = 0.999999999999924;
+@#endfor
+
+  
   @{COUNTRY}_py = 1.00000000000005;
   @{COUNTRY}_pybar = 1.00000000000005; 
 
   @{COUNTRY}_q = 0.999999999999969;
   @{COUNTRY}_qbar = 0.999999999999969;
-  @{COUNTRY}_qc =  0.321620156669017*2;
-  @{COUNTRY}_qi =  0.00209600391746659*2;
+
+@#for aItem in demandItems
+  @#if aItem == "c"
+  @{COUNTRY}_q@{aItem} =  0.321620156669017*2;
+  @#elseif aItem == "i"
+  @{COUNTRY}_q@{aItem} =  0.00209600391746659*2;
+  @#elseif aItem == "cg"
+  @{COUNTRY}_q@{aItem} =  0.321620156669017*2;
+  @#elseif aItem == "ig"
+  @{COUNTRY}_q@{aItem} =  0.00209600391746659*2;
+  @#else
+  @#endif
+@#endfor
+
 
   @{COUNTRY}_r = 1.01010101010101;
   @{COUNTRY}_reer = 1;
@@ -155,8 +211,20 @@ initval;
   @{COUNTRY}_trj = 7.1529038134542E-031;
   @{COUNTRY}_try = 2.20962209625084E-030;
   @{COUNTRY}_trybar = 2.20962209625084E-030;
-  @{COUNTRY}_ttc = 0.16;
-  @{COUNTRY}_tti = 0.001;
+
+@#for aItem in demandItems
+  @#if aItem == "c"
+  @{COUNTRY}_tt@{aItem} = 0.16;
+  @#elseif aItem == "i"
+  @{COUNTRY}_tt@{aItem} = 0.001;
+  @#elseif aItem == "cg"
+  @{COUNTRY}_tt@{aItem} = 0.16;
+  @#elseif aItem == "ig"
+  @{COUNTRY}_tt@{aItem} = 0.001;
+  @#else
+  @#endif
+@#endfor
+
   @{COUNTRY}_ty = 0;
 
   @{COUNTRY}_u = 1;
@@ -246,13 +314,23 @@ initval;
       @{COUNTRY}@{COUNTRY1}_fx = 0.002;
       @{COUNTRY}@{COUNTRY1}_gx = 0.04;
       @{COUNTRY}@{COUNTRY1}_im = 0.03;
-      @{COUNTRY}@{COUNTRY1}_imc = 0.02;
-      @{COUNTRY}@{COUNTRY1}_imi = 0.0003;
+@#for aItem in demandItems
+  @#if aItem == "c"
+      @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.02;
+  @#ifelse aItem == "i"
+      @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.0003;
+  @#ifelse aItem == "cg"
+      @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.02;
+  @#ifelse aItem == "ig"
+      @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.0003;
+  @#else
+  @#endif
+@#endfor
       @{COUNTRY}@{COUNTRY1}_sx = 0.999999999999999;
-      @{COUNTRY}@{COUNTRY1}_gammaimc = 0;
-      @{COUNTRY}@{COUNTRY1}_gammaimcdag = 1;
-      @{COUNTRY}@{COUNTRY1}_gammaimi = 0;
-      @{COUNTRY}@{COUNTRY1}_gammaimidag = 1;
+@#for aItem in demandItems
+      @{COUNTRY}@{COUNTRY1}_gammaim@{aItem} = 0;
+      @{COUNTRY}@{COUNTRY1}_gammaimćdag = 1;
+@#endfor
       @{COUNTRY}@{COUNTRY1}_tot = 1;
       @{COUNTRY}@{COUNTRY1}_weight = 0.35;
       @{COUNTRY}@{COUNTRY1}_weightex = 0.35;
@@ -265,8 +343,18 @@ initval;
   @#for COUNTRY1 IN countries
     @#if (COUNTRY != COUNTRY1)
       // Shares
-      @{COUNTRY}@{COUNTRY1}_imcy = 0.09;
-      @{COUNTRY}@{COUNTRY1}_imiy = 0.0008;
+@#for aItem in demandItems
+  @#if aItem == "c"
+      @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.09;
+  @#ifelse aItem == "i"
+      @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.0008;
+  @#ifelse aItem == "cg"
+      @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.09;
+  @#ifelse aItem == "ig"
+      @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.0008;
+  @#else
+  @#endif
+@#endfor
       @{COUNTRY}@{COUNTRY1}_excy = 0.09;
       @{COUNTRY}@{COUNTRY1}_exiy = 0.0008;
     @#endif
