@@ -10,7 +10,7 @@ temp_file_c_words=$(mktemp)
 temp_file_all_words=$(mktemp)
 
 # Extract words containing 'c'
-grep -oE '\b\w*c\w*\b' "$file_path" > "$temp_file_c_words"
+grep -oE '\b\w*c\w*\b' "$file_path" | grep -vE '\b(_epsgc|_cgybar|_rhocg|_excy|_c|_cy|_ci|_cg|_cgy|_piimc)\b' > "$temp_file_c_words"
 
 # Extract all words to another temporary file
 grep -oE '\b\w+\b' "$file_path" > "$temp_file_all_words"
