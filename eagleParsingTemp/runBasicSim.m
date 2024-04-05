@@ -1,6 +1,7 @@
-%// NOTE: next step is to introduce import content into gov cons
-% and investment, which should be done relatively easy given the
-% modular structure of the model
+%// NOTE: next step is to introduce the missing elements of the
+% import content that may be not covered in the loops (see also
+% some TODO items; first to load the model and then later to
+% solve for its SS)
 
 %% preamble
 clear all; close all; clc; restoredefaultpath
