@@ -340,14 +340,14 @@ parameters
  EAA_gammav2
  EAA_kappa
  EAA_muc
- EAA_mui
  EAA_mumc
- EAA_mumi
  EAA_mutc
- EAA_muti
  EAA_nuc
- EAA_nui
  EAA_nutc
+ EAA_mui
+ EAA_mumi
+ EAA_muti
+ EAA_nui
  EAA_nuti
  EAA_omega
  EAA_phitb
@@ -743,14 +743,14 @@ parameters
  EAB_gammav2
  EAB_kappa
  EAB_muc
- EAB_mui
  EAB_mumc
- EAB_mumi
  EAB_mutc
- EAB_muti
  EAB_nuc
- EAB_nui
  EAB_nutc
+ EAB_mui
+ EAB_mumi
+ EAB_muti
+ EAB_nui
  EAB_nuti
  EAB_omega
  EAB_phitb
@@ -1146,14 +1146,14 @@ parameters
  EAC_gammav2
  EAC_kappa
  EAC_muc
- EAC_mui
  EAC_mumc
- EAC_mumi
  EAC_mutc
- EAC_muti
  EAC_nuc
- EAC_nui
  EAC_nutc
+ EAC_mui
+ EAC_mumi
+ EAC_muti
+ EAC_nui
  EAC_nuti
  EAC_omega
  EAC_phitb
@@ -1549,14 +1549,14 @@ parameters
  EAD_gammav2
  EAD_kappa
  EAD_muc
- EAD_mui
  EAD_mumc
- EAD_mumi
  EAD_mutc
- EAD_muti
  EAD_nuc
- EAD_nui
  EAD_nutc
+ EAD_mui
+ EAD_mumi
+ EAD_muti
+ EAD_nui
  EAD_nuti
  EAD_omega
  EAD_phitb
@@ -1952,14 +1952,14 @@ parameters
  EAE_gammav2
  EAE_kappa
  EAE_muc
- EAE_mui
  EAE_mumc
- EAE_mumi
  EAE_mutc
- EAE_muti
  EAE_nuc
- EAE_nui
  EAE_nutc
+ EAE_mui
+ EAE_mumi
+ EAE_muti
+ EAE_nui
  EAE_nuti
  EAE_omega
  EAE_phitb
@@ -2355,14 +2355,14 @@ parameters
  RW_gammav2
  RW_kappa
  RW_muc
- RW_mui
  RW_mumc
- RW_mumi
  RW_mutc
- RW_muti
  RW_nuc
- RW_nui
  RW_nutc
+ RW_mui
+ RW_mumi
+ RW_muti
+ RW_nui
  RW_nuti
  RW_omega
  RW_phirgy
@@ -2754,14 +2754,14 @@ parameters
  US_gammav2
  US_kappa
  US_muc
- US_mui
  US_mumc
- US_mumi
  US_mutc
- US_muti
  US_nuc
- US_nui
  US_nutc
+ US_mui
+ US_mumi
+ US_muti
+ US_nui
  US_nuti
  US_omega
  US_phirgy
@@ -10739,13 +10739,13 @@ end;
    EAA_chix        = 0.00;
 // Final-good technologies
    EAA_mumc        = 1.001;
-   EAA_mumi        = 1.001;
    EAA_nutc        = 0.5;
    EAA_mutc        = 1.001;
-   EAA_nuti        = 0.5;
-   EAA_muti        = 1.001;
    EAA_nuc         = 0.5;
    EAA_muc         = 1.001;
+   EAA_mumi        = 1.001;
+   EAA_nuti        = 0.5;
+   EAA_muti        = 1.001;
    EAA_nui         = 0.5;
    EAA_mui         = 1.001;
 // Adjustment and transaction cost
@@ -10827,13 +10827,13 @@ end;
    EAB_chix        = 0.00;
 // Final-good technologies
    EAB_mumc        = 1.001;
-   EAB_mumi        = 1.001;
    EAB_nutc        = 0.5;
    EAB_mutc        = 1.001;
-   EAB_nuti        = 0.5;
-   EAB_muti        = 1.001;
    EAB_nuc         = 0.5;
    EAB_muc         = 1.001;
+   EAB_mumi        = 1.001;
+   EAB_nuti        = 0.5;
+   EAB_muti        = 1.001;
    EAB_nui         = 0.5;
    EAB_mui         = 1.001;
 // Adjustment and transaction cost
@@ -10920,13 +10920,13 @@ end;
    EAC_chix        = 0.00;
 // Final-good technologies
    EAC_mumc        = 1.001;
-   EAC_mumi        = 1.001;
    EAC_nutc        = 0.5;
    EAC_mutc        = 1.001;
-   EAC_nuti        = 0.5;
-   EAC_muti        = 1.001;
    EAC_nuc         = 0.5;
    EAC_muc         = 1.001;
+   EAC_mumi        = 1.001;
+   EAC_nuti        = 0.5;
+   EAC_muti        = 1.001;
    EAC_nui         = 0.5;
    EAC_mui         = 1.001;
 // Adjustment and transaction cost
@@ -11013,13 +11013,13 @@ end;
    EAD_chix        = 0.00;
 // Final-good technologies
    EAD_mumc        = 1.001;
-   EAD_mumi        = 1.001;
    EAD_nutc        = 0.5;
    EAD_mutc        = 1.001;
-   EAD_nuti        = 0.5;
-   EAD_muti        = 1.001;
    EAD_nuc         = 0.5;
    EAD_muc         = 1.001;
+   EAD_mumi        = 1.001;
+   EAD_nuti        = 0.5;
+   EAD_muti        = 1.001;
    EAD_nui         = 0.5;
    EAD_mui         = 1.001;
 // Adjustment and transaction cost
@@ -11106,13 +11106,13 @@ end;
    EAE_chix        = 0.00;
 // Final-good technologies
    EAE_mumc        = 1.001;
-   EAE_mumi        = 1.001;
    EAE_nutc        = 0.5;
    EAE_mutc        = 1.001;
-   EAE_nuti        = 0.5;
-   EAE_muti        = 1.001;
    EAE_nuc         = 0.5;
    EAE_muc         = 1.001;
+   EAE_mumi        = 1.001;
+   EAE_nuti        = 0.5;
+   EAE_muti        = 1.001;
    EAE_nui         = 0.5;
    EAE_mui         = 1.001;
 // Adjustment and transaction cost
@@ -11199,13 +11199,13 @@ end;
    RW_chix        = 0.00;
 // Final-good technologies
    RW_mumc        = 1.001;
-   RW_mumi        = 1.001;
    RW_nutc        = 0.5;
    RW_mutc        = 1.001;
-   RW_nuti        = 0.5;
-   RW_muti        = 1.001;
    RW_nuc         = 0.5;
    RW_muc         = 1.001;
+   RW_mumi        = 1.001;
+   RW_nuti        = 0.5;
+   RW_muti        = 1.001;
    RW_nui         = 0.5;
    RW_mui         = 1.001;
 // Adjustment and transaction cost
@@ -11292,13 +11292,13 @@ end;
    US_chix        = 0.00;
 // Final-good technologies
    US_mumc        = 1.001;
-   US_mumi        = 1.001;
    US_nutc        = 0.5;
    US_mutc        = 1.001;
-   US_nuti        = 0.5;
-   US_muti        = 1.001;
    US_nuc         = 0.5;
    US_muc         = 1.001;
+   US_mumi        = 1.001;
+   US_nuti        = 0.5;
+   US_muti        = 1.001;
    US_nui         = 0.5;
    US_mui         = 1.001;
 // Adjustment and transaction cost
@@ -11341,87 +11341,84 @@ end;
    US_rhowcst     = 0.90;
    US_rhozcon     = 0.90;
  // Bilateral and asymmetric
- 
  EAAUS_numc       = 0.1;
  EAAEAB_numc      = 0.2;
  EAAEAC_numc      = 0.2;
  EAAEAD_numc      = 0.2;
  EAAEAE_numc      = 0.2;
  EAARW_numc       = 1-EAAUS_numc-EAAEAB_numc-EAAEAC_numc-EAAEAD_numc-EAAEAE_numc;
- EAAUS_numi       = 0.1;
- EAAEAB_numi      = 0.2;
- EAAEAC_numi      = 0.2;
- EAAEAD_numi      = 0.2;
- EAAEAE_numi      = 0.2;
- EAARW_numi       = 1-EAAUS_numi-EAAEAB_numi-EAAEAC_numi-EAAEAD_numi-EAAEAE_numi;
- 
  EABRW_numc       = 0.1;
  EABEAA_numc      = 0.2;
  EABEAC_numc      = 0.2;
  EABEAD_numc      = 0.2;
  EABEAE_numc      = 0.2;
  EABUS_numc       = 1-EABRW_numc-EABEAA_numc-EABEAC_numc-EABEAD_numc-EABEAE_numc;
- EABRW_numi       = 0.1;
- EABEAA_numi      = 0.2;
- EABEAC_numi      = 0.2;
- EABEAD_numi      = 0.2;
- EABEAE_numi      = 0.2;
- EABUS_numi       = 1-EABRW_numi-EABEAA_numi-EABEAC_numi-EABEAD_numi-EABEAE_numi;
  EACEAD_numc      = 0.2;
  EACEAE_numc      = 0.2;
  EACRW_numc       = 0.1;
  EACUS_numc       = 0.1;         
  EACEAB_numc      = 0.2;
- EACEAA = 1-EACEAD_numc-EACEAE_numc-EACRW_numc-EACUS_numc-EACEAB_numc;
- EACEAD_numi      = 0.2;
- EACEAE_numi      = 0.2;
- EACRW_numi       = 0.1;
- EACUS_numi       = 0.1;         
- EACEAB_numi      = 0.2;
- EACEAA = 1-EACEAD_numi-EACEAE_numi-EACRW_numi-EACUS_numi-EACEAB_numi;
+ EACEAA_numc = 1-EACEAD_numc-EACEAE_numc-EACRW_numc-EACUS_numc-EACEAB_numc;
  EADEAE_numc      = 0.2;
  EADRW_numc       = 0.1;
  EADUS_numc       = 0.1;         
  EADEAA_numc      = 0.2;
  EADEAC_numc      = 0.2;
- EADEAB = 1-EADEAE_numc-EADEAC_numc-EADRW_numc-EADUS_numc-EADEAA_numc;
- EADEAE_numi      = 0.2;
- EADRW_numi       = 0.1;
- EADUS_numi       = 0.1;         
- EADEAA_numi      = 0.2;
- EADEAC_numi      = 0.2;
- EADEAB = 1-EADEAE_numi-EADEAC_numi-EADRW_numi-EADUS_numi-EADEAA_numi;
+ EADEAB_numc = 1-EADEAE_numc-EADEAC_numc-EADRW_numc-EADUS_numc-EADEAA_numc;
  EAERW_numc       = 0.1;
  EAEUS_numc       = 0.1;
  EAEEAA_numc      = 0.2;         
  EAEEAB_numc      = 0.2;
  EAEEAD_numc      = 0.2;
- EAEEAC = 1-EAERW_numc-EAEUS_numc-EAEEAA_numc-EAEEAB_numc-EAEEAD_numc;
- EAERW_numi       = 0.1;
- EAEUS_numi       = 0.1;
- EAEEAA_numi      = 0.2;         
- EAEEAB_numi      = 0.2;
- EAEEAD_numi      = 0.2;
- EAEEAC = 1-EAERW_numi-EAEUS_numi-EAEEAA_numi-EAEEAB_numi-EAEEAD_numi;
+ EAEEAC_numc = 1-EAERW_numc-EAEUS_numc-EAEEAA_numc-EAEEAB_numc-EAEEAD_numc;
  RWUS_numc        = 0.3;
  RWEAA_numc       = 0.15625;
  RWEAB_numc       = 0.15625;
  RWEAC_numc       = 0.15625;
  RWEAE_numc       = 0.075;
  RWEAD_numc       = 1-RWUS_numc-RWEAA_numc-RWEAB_numc-RWEAC_numc-RWEAE_numc;
- RWUS_numi        = 0.3;
- RWEAA_numi       = 0.15625;
- RWEAB_numi       = 0.15625;
- RWEAC_numi       = 0.15625;
- RWEAE_numi       = 0.075;
- RWEAD_numi       = 1-RWUS_numi-RWEAA_numi-RWEAB_numi-RWEAC_numi-RWEAE_numi;
  USEAA_numc       = 0.15625;
  USEAB_numc       = 0.15625;
  USEAC_numc       = 0.15625;
  USEAD_numc       = 0.15625;
  USRW_numc        = 0.3;
  USEAE_numc       = 1-USEAA_numc-USEAB_numc-USEAC_numc-USEAD_numc-USRW_numc;
- 
+ EAAUS_numi       = 0.1;
+ EAAEAB_numi      = 0.2;
+ EAAEAC_numi      = 0.2;
+ EAAEAD_numi      = 0.2;
+ EAAEAE_numi      = 0.2;
+ EAARW_numi       = 1-EAAUS_numi-EAAEAB_numi-EAAEAC_numi-EAAEAD_numi-EAAEAE_numi;
+ EABRW_numi       = 0.1;
+ EABEAA_numi      = 0.2;
+ EABEAC_numi      = 0.2;
+ EABEAD_numi      = 0.2;
+ EABEAE_numi      = 0.2;
+ EABUS_numi       = 1-EABRW_numi-EABEAA_numi-EABEAC_numi-EABEAD_numi-EABEAE_numi;
+ EACEAD_numi      = 0.2;
+ EACEAE_numi      = 0.2;
+ EACRW_numi       = 0.1;
+ EACUS_numi       = 0.1;         
+ EACEAB_numi      = 0.2;
+ EACEAA_numi = 1-EACEAD_numi-EACEAE_numi-EACRW_numi-EACUS_numi-EACEAB_numi;
+ EADEAE_numi      = 0.2;
+ EADRW_numi       = 0.1;
+ EADUS_numi       = 0.1;         
+ EADEAA_numi      = 0.2;
+ EADEAC_numi      = 0.2;
+ EADEAB_numi = 1-EADEAE_numi-EADEAC_numi-EADRW_numi-EADUS_numi-EADEAA_numi;
+ EAERW_numi       = 0.1;
+ EAEUS_numi       = 0.1;
+ EAEEAA_numi      = 0.2;         
+ EAEEAB_numi      = 0.2;
+ EAEEAD_numi      = 0.2;
+ EAEEAC_numi = 1-EAERW_numi-EAEUS_numi-EAEEAA_numi-EAEEAB_numi-EAEEAD_numi;
+ RWUS_numi        = 0.3;
+ RWEAA_numi       = 0.15625;
+ RWEAB_numi       = 0.15625;
+ RWEAC_numi       = 0.15625;
+ RWEAE_numi       = 0.075;
+ RWEAD_numi       = 1-RWUS_numi-RWEAA_numi-RWEAB_numi-RWEAC_numi-RWEAE_numi;
  USEAA_numi       = 0.15625;
  USEAB_numi       = 0.15625;
  USEAC_numi       = 0.15625;
@@ -11473,6 +11470,7 @@ initval;
   EAA_cgy = 0;
   EAA_igy = 0;
   EAA_ht = 0.08;
+//TODO: with fiscal variables country shares may need revisiting  
   EAA_htc = 0.08;
   EAA_hti =  0.0005;
   EAA_i = 0.00209600391746659;
@@ -11533,6 +11531,7 @@ initval;
   EAA_psinbar = 0;
   EAA_pttc = 0.999999999999924;
   EAA_ptti = 0.999999999999924;
+  
   EAA_py = 1.00000000000005;
   EAA_pybar = 1.00000000000005; 
   EAA_q = 0.999999999999969;
@@ -11783,6 +11782,7 @@ initval;
   EAB_cgy = 0;
   EAB_igy = 0;
   EAB_ht = 0.08;
+//TODO: with fiscal variables country shares may need revisiting  
   EAB_htc = 0.08;
   EAB_hti =  0.0005;
   EAB_i = 0.00209600391746659;
@@ -11843,6 +11843,7 @@ initval;
   EAB_psinbar = 0;
   EAB_pttc = 0.999999999999924;
   EAB_ptti = 0.999999999999924;
+  
   EAB_py = 1.00000000000005;
   EAB_pybar = 1.00000000000005; 
   EAB_q = 0.999999999999969;
@@ -12093,6 +12094,7 @@ initval;
   EAC_cgy = 0;
   EAC_igy = 0;
   EAC_ht = 0.08;
+//TODO: with fiscal variables country shares may need revisiting  
   EAC_htc = 0.08;
   EAC_hti =  0.0005;
   EAC_i = 0.00209600391746659;
@@ -12153,6 +12155,7 @@ initval;
   EAC_psinbar = 0;
   EAC_pttc = 0.999999999999924;
   EAC_ptti = 0.999999999999924;
+  
   EAC_py = 1.00000000000005;
   EAC_pybar = 1.00000000000005; 
   EAC_q = 0.999999999999969;
@@ -12403,6 +12406,7 @@ initval;
   EAD_cgy = 0;
   EAD_igy = 0;
   EAD_ht = 0.08;
+//TODO: with fiscal variables country shares may need revisiting  
   EAD_htc = 0.08;
   EAD_hti =  0.0005;
   EAD_i = 0.00209600391746659;
@@ -12463,6 +12467,7 @@ initval;
   EAD_psinbar = 0;
   EAD_pttc = 0.999999999999924;
   EAD_ptti = 0.999999999999924;
+  
   EAD_py = 1.00000000000005;
   EAD_pybar = 1.00000000000005; 
   EAD_q = 0.999999999999969;
@@ -12713,6 +12718,7 @@ initval;
   EAE_cgy = 0;
   EAE_igy = 0;
   EAE_ht = 0.08;
+//TODO: with fiscal variables country shares may need revisiting  
   EAE_htc = 0.08;
   EAE_hti =  0.0005;
   EAE_i = 0.00209600391746659;
@@ -12773,6 +12779,7 @@ initval;
   EAE_psinbar = 0;
   EAE_pttc = 0.999999999999924;
   EAE_ptti = 0.999999999999924;
+  
   EAE_py = 1.00000000000005;
   EAE_pybar = 1.00000000000005; 
   EAE_q = 0.999999999999969;
@@ -13023,6 +13030,7 @@ initval;
   RW_cgy = 0;
   RW_igy = 0;
   RW_ht = 0.08;
+//TODO: with fiscal variables country shares may need revisiting  
   RW_htc = 0.08;
   RW_hti =  0.0005;
   RW_i = 0.00209600391746659;
@@ -13083,6 +13091,7 @@ initval;
   RW_psinbar = 0;
   RW_pttc = 0.999999999999924;
   RW_ptti = 0.999999999999924;
+  
   RW_py = 1.00000000000005;
   RW_pybar = 1.00000000000005; 
   RW_q = 0.999999999999969;
@@ -13332,6 +13341,7 @@ initval;
   US_cgy = 0;
   US_igy = 0;
   US_ht = 0.08;
+//TODO: with fiscal variables country shares may need revisiting  
   US_htc = 0.08;
   US_hti =  0.0005;
   US_i = 0.00209600391746659;
@@ -13392,6 +13402,7 @@ initval;
   US_psinbar = 0;
   US_pttc = 0.999999999999924;
   US_ptti = 0.999999999999924;
+  
   US_py = 1.00000000000005;
   US_pybar = 1.00000000000005; 
   US_q = 0.999999999999969;
