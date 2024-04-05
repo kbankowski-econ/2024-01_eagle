@@ -51,11 +51,14 @@ initval;
 @#for aItem in demandItems
   @#if aItem == "c"
   @{COUNTRY}_ht@{aItem} = 0.08;
-  @#elseif aItem == "i"
+  @#else
+  @#if aItem == "i"
   @{COUNTRY}_ht@{aItem} =  0.0005;
-  @#elseif aItem == "cg"
+  @#else
+  @#if aItem == "cg"
   @{COUNTRY}_ht@{aItem} = 0.08;
-  @#elseif aItem == "ig"
+  @#else
+  @#if aItem == "ig"
   @{COUNTRY}_ht@{aItem} =  0.0005;
   @#else
   @#endif
@@ -68,13 +71,16 @@ initval;
   @#if aItem == "c"
   @{COUNTRY}_im@{aItem} = 0.08;
   @{COUNTRY}_im@{aItem}y = 0.25;
-  @#elseif aItem == "i"
+  @#else
+  @#if aItem == "i"
   @{COUNTRY}_im@{aItem} = 0.0005;
   @{COUNTRY}_im@{aItem}y = 0.0016;
-  @#elseif aItem == "cg"
+  @#else
+  @#if aItem == "cg"
   @{COUNTRY}_im@{aItem} = 0.08;
   @{COUNTRY}_im@{aItem}y = 0.25;
-  @#elseif aItem == "ig"
+  @#else
+  @#if aItem == "ig"
   @{COUNTRY}_im@{aItem} = 0.0005;
   @{COUNTRY}_im@{aItem}y = 0.0016;
   @#else
@@ -114,11 +120,14 @@ initval;
 @#for aItem in demandItems
   @#if aItem == "c"
   @{COUNTRY}_nt@{aItem} = 0.161;
-  @#elseif aItem == "i"
+  @#else
+  @#if aItem == "i"
   @{COUNTRY}_nt@{aItem} = 0.001;
-  @#elseif aItem == "cg"
+  @#else
+  @#if aItem == "cg"
   @{COUNTRY}_nt@{aItem} = 0.161;
-  @#elseif aItem == "ig"
+  @#else
+  @#if aItem == "ig"
   @{COUNTRY}_nt@{aItem} = 0.001;
   @#else
   @#endif
@@ -164,11 +173,14 @@ initval;
 @#for aItem in demandItems
   @#if aItem == "c"
   @{COUNTRY}_q@{aItem} =  0.321620156669017*2;
-  @#elseif aItem == "i"
+  @#else
+  @#if aItem == "i"
   @{COUNTRY}_q@{aItem} =  0.00209600391746659*2;
-  @#elseif aItem == "cg"
+  @#else
+  @#if aItem == "cg"
   @{COUNTRY}_q@{aItem} =  0.321620156669017*2;
-  @#elseif aItem == "ig"
+  @#else
+  @#if aItem == "ig"
   @{COUNTRY}_q@{aItem} =  0.00209600391746659*2;
   @#else
   @#endif
@@ -215,11 +227,14 @@ initval;
 @#for aItem in demandItems
   @#if aItem == "c"
   @{COUNTRY}_tt@{aItem} = 0.16;
-  @#elseif aItem == "i"
+  @#else
+  @#if aItem == "i"
   @{COUNTRY}_tt@{aItem} = 0.001;
-  @#elseif aItem == "cg"
+  @#else
+  @#if aItem == "cg"
   @{COUNTRY}_tt@{aItem} = 0.16;
-  @#elseif aItem == "ig"
+  @#else
+  @#if aItem == "ig"
   @{COUNTRY}_tt@{aItem} = 0.001;
   @#else
   @#endif
