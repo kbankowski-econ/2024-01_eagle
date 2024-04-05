@@ -133,10 +133,10 @@ var
  @{co}_ig
  @{co}_ii
  @{co}_im
- @{co}_imc
- @{co}_imcy
- @{co}_imi
- @{co}_imiy
+@#for aItem in demandItems
+ @{co}_im@{aItem}
+ @{co}_im@{aItem}y
+@#endfor 
  @{co}_imy
  @{co}_internalrer
  @{co}_iy
