@@ -359,7 +359,7 @@ initval;
       @{COUNTRY}@{COUNTRY1}_sx = 0.999999999999999;
 @#for aItem in demandItems
       @{COUNTRY}@{COUNTRY1}_gammaim@{aItem} = 0;
-      @{COUNTRY}@{COUNTRY1}_gammaimćdag = 1;
+      @{COUNTRY}@{COUNTRY1}_gammaim@{aItem}dag = 1;
 @#endfor
       @{COUNTRY}@{COUNTRY1}_tot = 1;
       @{COUNTRY}@{COUNTRY1}_weight = 0.35;
