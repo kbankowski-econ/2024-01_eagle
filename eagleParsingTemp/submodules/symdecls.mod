@@ -288,16 +288,13 @@ parameters
  @{co}_gammav1
  @{co}_gammav2
  @{co}_kappa
- @{co}_muc
- @{co}_mui
- @{co}_mumc
- @{co}_mumi
- @{co}_mutc
- @{co}_muti
- @{co}_nuc
- @{co}_nui
- @{co}_nutc
- @{co}_nuti
+@#for aItem in demandItems
+ @{co}_mu@{aItem}
+ @{co}_mum@{aItem}
+ @{co}_mut@{aItem}
+ @{co}_nu@{aItem}
+ @{co}_nut@{aItem}
+@#endfor
  @{co}_omega
 @# if co != countries[1] && co != countries[2] && co != countries[3] && co != countries[4] && co != countries[5]
  @{co}_phirgy
