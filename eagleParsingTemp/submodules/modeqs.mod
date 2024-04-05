@@ -514,7 +514,11 @@ model(block, bytecode, cutoff=0);
 @{co}@{it}_gammaim@{aItem} = @{co}_gammaim@{aItem}1/2*((@{co}@{it}_im@{aItem}/@{co}_q@{aItem})/(@{co}@{it}_im@{aItem}(-1)/@{co}_q@{aItem}(-1))-1)^2;
 
 // Auxiliary equation for transformation of import adjustment cost
+@#if aItem == "c"
 @{co}@{it}_gammaim@{aItem}dag = 1-@{co}@{it}_gammaim@{aItem}-@{co}_gammaim@{aItem}1*((@{co}@{it}_im@{aItem}/@{co}_q@{aItem})/(@{co}@{it}_im@{aItem}(-1)/@{co}_q@{aItem}(-1))-1)*(@{co}@{it}_im@{aItem}/@{co}_q@{aItem})/(@{co}@{it}_im@{aItem}(-1)/@{co}_q@{aItem}(-1));
+@#else
+@{co}@{it}_gammaim@{aItem}dag = 1-@{co}@{it}_gammaim@{aItem}-@{co}_gammaim@{aItem}1*((@{co}@{it}_im@{aItem}/@{co}_q@{aItem})/(@{co}@{it}_im@{aItem}(-1)/@{co}_q@{aItem})-1)*((@{co}@{it}_im@{aItem}/@{co}_q@{aItem})/(@{co}@{it}_im@{aItem}(-1)/@{co}_q@{aItem}(-1)));
+@#endif
 
 @#else // !steady
 @{co}@{it}_gammaim@{aItem} = 0;
