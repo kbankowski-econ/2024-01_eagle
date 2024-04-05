@@ -6,6 +6,8 @@
 
 @#include "symdecls.mod"
 
+@#define sigma_equals_one = [ 1, 1, 1, 1, 1, 1, 1 ] 
+
 @#include "modeqs.mod"
 
-// load_params_and_steady_state('eagle_steady.txt');
+@#include "params.mod"
