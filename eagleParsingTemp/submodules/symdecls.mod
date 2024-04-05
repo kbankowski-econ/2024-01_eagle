@@ -126,8 +126,9 @@ var
  @{co}_gn
  @{co}_cgy
  @{co}_ht
- @{co}_htc
- @{co}_hti
+@#for aItem in demandItems
+ @{co}_ht@{aItem}
+@#endfor 
  @{co}_i
  @{co}_ig
  @{co}_ii
