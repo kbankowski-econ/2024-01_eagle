@@ -41,18 +41,14 @@ var
 @# for it in countries - [ co ]
  @{co}@{it}_fx
 @# endfor
+@#for aItem in demandItems
 @# for it in countries - [ co ]
- @{co}@{it}_gammaimc
+ @{co}@{it}_gammaim@{aItem}
 @# endfor
 @# for it in countries - [ co ]
- @{co}@{it}_gammaimcdag
+ @{co}@{it}_gammaim@{aItem}dag
 @# endfor
-@# for it in countries - [ co ]
- @{co}@{it}_gammaimi
-@# endfor
-@# for it in countries - [ co ]
- @{co}@{it}_gammaimidag
-@# endfor
+@#endfor
 @# for it in countries - [ co ]
  @{co}@{it}_gx
 @# endfor
