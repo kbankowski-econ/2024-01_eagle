@@ -41,28 +41,36 @@ var
 @# for it in countries - [ co ]
  @{co}@{it}_fx
 @# endfor
-@#for aItem in demandItems
 @# for it in countries - [ co ]
- @{co}@{it}_gammaim@{aItem}
+ @{co}@{it}_gammaimc
 @# endfor
 @# for it in countries - [ co ]
- @{co}@{it}_gammaim@{aItem}dag
+ @{co}@{it}_gammaimcdag
 @# endfor
-@#endfor
+@# for it in countries - [ co ]
+ @{co}@{it}_gammaimi
+@# endfor
+@# for it in countries - [ co ]
+ @{co}@{it}_gammaimidag
+@# endfor
 @# for it in countries - [ co ]
  @{co}@{it}_gx
 @# endfor
 @# for it in countries - [ co ]
  @{co}@{it}_im
 @# endfor
-@#for aItem in demandItems
 @# for it in countries - [ co ]
- @{co}@{it}_im@{aItem}
+ @{co}@{it}_imc
 @# endfor
 @# for it in countries - [ co ]
- @{co}@{it}_im@{aItem}y
+ @{co}@{it}_imcy
 @# endfor
-@#endfor
+@# for it in countries - [ co ]
+ @{co}@{it}_imi
+@# endfor
+@# for it in countries - [ co ]
+ @{co}@{it}_imiy
+@# endfor
 @# for it in countries - [ co ]
  @{co}@{it}_piim
 @# endfor
@@ -126,17 +134,16 @@ var
  @{co}_gn
  @{co}_cgy
  @{co}_ht
-@#for aItem in demandItems
- @{co}_ht@{aItem}
-@#endfor 
+ @{co}_htc
+ @{co}_hti
  @{co}_i
  @{co}_ig
  @{co}_ii
  @{co}_im
-@#for aItem in demandItems
- @{co}_im@{aItem}
- @{co}_im@{aItem}y
-@#endfor 
+ @{co}_imc
+ @{co}_imcy
+ @{co}_imi
+ @{co}_imiy
  @{co}_imy
  @{co}_internalrer
  @{co}_iy
@@ -162,9 +169,8 @@ var
  @{co}_ni
  @{co}_nj
  @{co}_nt
- @#for aItem in demandItems
- @{co}_nt@{aItem}
-@#endfor 
+ @{co}_ntc
+ @{co}_nti
  @{co}_pex
  @{co}_pht
  @{co}_phttilde
@@ -177,22 +183,19 @@ var
  @{co}_piimc4
  @{co}_piimi
  @{co}_pim
-@#for aItem in demandItems
- @{co}_pim@{aItem}
-@#endfor 
+ @{co}_pimc
+ @{co}_pimi
  @{co}_pint
  @{co}_piw
  @{co}_piw4
  @{co}_pnt
  @{co}_pnttilde
-@#for aItem in demandItems
- @{co}_ptt@{aItem}
-@#endfor 
+ @{co}_pttc
+ @{co}_ptti
  @{co}_py
  @{co}_q
-@#for aItem in demandItems
- @{co}_q@{aItem}
-@#endfor 
+ @{co}_qc
+ @{co}_qi
  @{co}_r
  @{co}_reer
  @{co}_rer
@@ -285,13 +288,16 @@ parameters
  @{co}_gammav1
  @{co}_gammav2
  @{co}_kappa
-@#for aItem in demandItems
- @{co}_mu@{aItem}
- @{co}_mum@{aItem}
- @{co}_mut@{aItem}
- @{co}_nu@{aItem}
- @{co}_nut@{aItem}
-@#endfor
+ @{co}_muc
+ @{co}_mui
+ @{co}_mumc
+ @{co}_mumi
+ @{co}_mutc
+ @{co}_muti
+ @{co}_nuc
+ @{co}_nui
+ @{co}_nutc
+ @{co}_nuti
  @{co}_omega
 @# if co != countries[1] && co != countries[2] && co != countries[3] && co != countries[4] && co != countries[5]
  @{co}_phirgy
