@@ -1,0 +1,23 @@
+function [y, T] = static_127(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
+  y(546)=params(164)*params(161)*y(549);
+  y(547)=y(546)*params(151);
+  y(548)=y(546)*1/params(117)-y(547)*(1-params(117))/params(117);
+  y(832)=params(244)*params(241)*y(835);
+  y(833)=y(832)*params(231);
+  y(834)=y(832)*1/params(197)-y(833)*(1-params(197))/params(197);
+  y(1118)=params(324)*params(321)*y(1121);
+  y(1119)=y(1118)*params(311);
+  y(1120)=y(1118)*1/params(277)-y(1119)*(1-params(277))/params(277);
+  y(260)=params(84)*params(81)*y(263);
+  y(261)=y(260)*params(71);
+  y(1404)=params(404)*params(401)*y(1407);
+  y(1405)=y(1404)*params(391);
+  y(1406)=y(1404)*1/params(357)-y(1405)*(1-params(357))/params(357);
+  y(262)=y(260)*1/params(37)-y(261)*(1-params(37))/params(37);
+  y(1690)=params(487)*params(484)*y(1693);
+  y(1691)=y(1690)*params(474);
+  y(1692)=y(1690)*1/params(437)-y(1691)*(1-params(437))/params(437);
+  y(1972)=params(566)*params(563)*y(1975);
+  y(1973)=y(1972)*params(553);
+  y(1974)=y(1972)*1/params(517)-y(1973)*(1-params(517))/params(517);
+end
