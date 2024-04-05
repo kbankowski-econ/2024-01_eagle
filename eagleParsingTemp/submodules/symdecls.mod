@@ -227,8 +227,9 @@ var
  @{co}_tri
  @{co}_trj
  @{co}_try
- @{co}_ttc
- @{co}_tti
+@#for aItem in demandItems
+ @{co}_tt@{aItem}
+@#endfor
  @{co}_ty
  @{co}_u
  @{co}_utili
@@ -279,8 +280,9 @@ parameters
  @{co}_gammab1
 @# endif
  @{co}_gammai1
- @{co}_gammaimc1
- @{co}_gammaimi1
+@#for aItem in demandItems
+ @{co}_gammaim@{aItem}1
+@#endfor
  @{co}_gammau2
  @{co}_gammav1
  @{co}_gammav2
@@ -396,8 +398,9 @@ varexo
 parameters
 @#for i in 1:7
 @# for it in countries - [ countries[i], countries6[i] ]
- @{countries[i]}@{it}_numc
- @{countries[i]}@{it}_numi
+@#for aItem in demandItems
+ @{countries[i]}@{it}_num@{aItem}
+@#endfor
 @# endfor
 @#endfor
 ;
