@@ -3708,27 +3708,27 @@ EAA_hti = EAA_nuti*(EAA_pht/EAA_ptti)^(-EAA_muti)*EAA_tti;
 // Import adjustment cost
 EAAEAB_gammaimi = EAA_gammaimi1/2*((EAAEAB_imi/EAA_qi)/(EAAEAB_imi(-1)/EAA_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EAAEAB_gammaimidag = 1-EAAEAB_gammaimi-EAA_gammaimi1*((EAAEAB_imi/EAA_qi)/(EAAEAB_imi(-1)/EAA_qi(-1))-1)*(EAAEAB_imi/EAA_qi)/(EAAEAB_imi(-1)/EAA_qi(-1));
+EAAEAB_gammaimidag = 1-EAAEAB_gammaimi-EAA_gammaimi1*((EAAEAB_imi/EAA_qi)/(EAAEAB_imi(-1)/EAA_qi)-1)*((EAAEAB_imi/EAA_qi)/(EAAEAB_imi(-1)/EAA_qi(-1)));
 // Import adjustment cost
 EAAEAC_gammaimi = EAA_gammaimi1/2*((EAAEAC_imi/EAA_qi)/(EAAEAC_imi(-1)/EAA_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EAAEAC_gammaimidag = 1-EAAEAC_gammaimi-EAA_gammaimi1*((EAAEAC_imi/EAA_qi)/(EAAEAC_imi(-1)/EAA_qi(-1))-1)*(EAAEAC_imi/EAA_qi)/(EAAEAC_imi(-1)/EAA_qi(-1));
+EAAEAC_gammaimidag = 1-EAAEAC_gammaimi-EAA_gammaimi1*((EAAEAC_imi/EAA_qi)/(EAAEAC_imi(-1)/EAA_qi)-1)*((EAAEAC_imi/EAA_qi)/(EAAEAC_imi(-1)/EAA_qi(-1)));
 // Import adjustment cost
 EAAEAD_gammaimi = EAA_gammaimi1/2*((EAAEAD_imi/EAA_qi)/(EAAEAD_imi(-1)/EAA_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EAAEAD_gammaimidag = 1-EAAEAD_gammaimi-EAA_gammaimi1*((EAAEAD_imi/EAA_qi)/(EAAEAD_imi(-1)/EAA_qi(-1))-1)*(EAAEAD_imi/EAA_qi)/(EAAEAD_imi(-1)/EAA_qi(-1));
+EAAEAD_gammaimidag = 1-EAAEAD_gammaimi-EAA_gammaimi1*((EAAEAD_imi/EAA_qi)/(EAAEAD_imi(-1)/EAA_qi)-1)*((EAAEAD_imi/EAA_qi)/(EAAEAD_imi(-1)/EAA_qi(-1)));
 // Import adjustment cost
 EAAEAE_gammaimi = EAA_gammaimi1/2*((EAAEAE_imi/EAA_qi)/(EAAEAE_imi(-1)/EAA_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EAAEAE_gammaimidag = 1-EAAEAE_gammaimi-EAA_gammaimi1*((EAAEAE_imi/EAA_qi)/(EAAEAE_imi(-1)/EAA_qi(-1))-1)*(EAAEAE_imi/EAA_qi)/(EAAEAE_imi(-1)/EAA_qi(-1));
+EAAEAE_gammaimidag = 1-EAAEAE_gammaimi-EAA_gammaimi1*((EAAEAE_imi/EAA_qi)/(EAAEAE_imi(-1)/EAA_qi)-1)*((EAAEAE_imi/EAA_qi)/(EAAEAE_imi(-1)/EAA_qi(-1)));
 // Import adjustment cost
 EAARW_gammaimi = EAA_gammaimi1/2*((EAARW_imi/EAA_qi)/(EAARW_imi(-1)/EAA_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EAARW_gammaimidag = 1-EAARW_gammaimi-EAA_gammaimi1*((EAARW_imi/EAA_qi)/(EAARW_imi(-1)/EAA_qi(-1))-1)*(EAARW_imi/EAA_qi)/(EAARW_imi(-1)/EAA_qi(-1));
+EAARW_gammaimidag = 1-EAARW_gammaimi-EAA_gammaimi1*((EAARW_imi/EAA_qi)/(EAARW_imi(-1)/EAA_qi)-1)*((EAARW_imi/EAA_qi)/(EAARW_imi(-1)/EAA_qi(-1)));
 // Import adjustment cost
 EAAUS_gammaimi = EAA_gammaimi1/2*((EAAUS_imi/EAA_qi)/(EAAUS_imi(-1)/EAA_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EAAUS_gammaimidag = 1-EAAUS_gammaimi-EAA_gammaimi1*((EAAUS_imi/EAA_qi)/(EAAUS_imi(-1)/EAA_qi(-1))-1)*(EAAUS_imi/EAA_qi)/(EAAUS_imi(-1)/EAA_qi(-1));
+EAAUS_gammaimidag = 1-EAAUS_gammaimi-EAA_gammaimi1*((EAAUS_imi/EAA_qi)/(EAAUS_imi(-1)/EAA_qi)-1)*((EAAUS_imi/EAA_qi)/(EAAUS_imi(-1)/EAA_qi(-1)));
 // Trade balance
 EAA_tb =
 +EAAEAB_rer*EABEAA_pim*EAB_size/EAA_size*EABEAA_im
@@ -4793,27 +4793,27 @@ EAB_hti = EAB_nuti*(EAB_pht/EAB_ptti)^(-EAB_muti)*EAB_tti;
 // Import adjustment cost
 EABEAA_gammaimi = EAB_gammaimi1/2*((EABEAA_imi/EAB_qi)/(EABEAA_imi(-1)/EAB_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EABEAA_gammaimidag = 1-EABEAA_gammaimi-EAB_gammaimi1*((EABEAA_imi/EAB_qi)/(EABEAA_imi(-1)/EAB_qi(-1))-1)*(EABEAA_imi/EAB_qi)/(EABEAA_imi(-1)/EAB_qi(-1));
+EABEAA_gammaimidag = 1-EABEAA_gammaimi-EAB_gammaimi1*((EABEAA_imi/EAB_qi)/(EABEAA_imi(-1)/EAB_qi)-1)*((EABEAA_imi/EAB_qi)/(EABEAA_imi(-1)/EAB_qi(-1)));
 // Import adjustment cost
 EABEAC_gammaimi = EAB_gammaimi1/2*((EABEAC_imi/EAB_qi)/(EABEAC_imi(-1)/EAB_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EABEAC_gammaimidag = 1-EABEAC_gammaimi-EAB_gammaimi1*((EABEAC_imi/EAB_qi)/(EABEAC_imi(-1)/EAB_qi(-1))-1)*(EABEAC_imi/EAB_qi)/(EABEAC_imi(-1)/EAB_qi(-1));
+EABEAC_gammaimidag = 1-EABEAC_gammaimi-EAB_gammaimi1*((EABEAC_imi/EAB_qi)/(EABEAC_imi(-1)/EAB_qi)-1)*((EABEAC_imi/EAB_qi)/(EABEAC_imi(-1)/EAB_qi(-1)));
 // Import adjustment cost
 EABEAD_gammaimi = EAB_gammaimi1/2*((EABEAD_imi/EAB_qi)/(EABEAD_imi(-1)/EAB_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EABEAD_gammaimidag = 1-EABEAD_gammaimi-EAB_gammaimi1*((EABEAD_imi/EAB_qi)/(EABEAD_imi(-1)/EAB_qi(-1))-1)*(EABEAD_imi/EAB_qi)/(EABEAD_imi(-1)/EAB_qi(-1));
+EABEAD_gammaimidag = 1-EABEAD_gammaimi-EAB_gammaimi1*((EABEAD_imi/EAB_qi)/(EABEAD_imi(-1)/EAB_qi)-1)*((EABEAD_imi/EAB_qi)/(EABEAD_imi(-1)/EAB_qi(-1)));
 // Import adjustment cost
 EABEAE_gammaimi = EAB_gammaimi1/2*((EABEAE_imi/EAB_qi)/(EABEAE_imi(-1)/EAB_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EABEAE_gammaimidag = 1-EABEAE_gammaimi-EAB_gammaimi1*((EABEAE_imi/EAB_qi)/(EABEAE_imi(-1)/EAB_qi(-1))-1)*(EABEAE_imi/EAB_qi)/(EABEAE_imi(-1)/EAB_qi(-1));
+EABEAE_gammaimidag = 1-EABEAE_gammaimi-EAB_gammaimi1*((EABEAE_imi/EAB_qi)/(EABEAE_imi(-1)/EAB_qi)-1)*((EABEAE_imi/EAB_qi)/(EABEAE_imi(-1)/EAB_qi(-1)));
 // Import adjustment cost
 EABRW_gammaimi = EAB_gammaimi1/2*((EABRW_imi/EAB_qi)/(EABRW_imi(-1)/EAB_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EABRW_gammaimidag = 1-EABRW_gammaimi-EAB_gammaimi1*((EABRW_imi/EAB_qi)/(EABRW_imi(-1)/EAB_qi(-1))-1)*(EABRW_imi/EAB_qi)/(EABRW_imi(-1)/EAB_qi(-1));
+EABRW_gammaimidag = 1-EABRW_gammaimi-EAB_gammaimi1*((EABRW_imi/EAB_qi)/(EABRW_imi(-1)/EAB_qi)-1)*((EABRW_imi/EAB_qi)/(EABRW_imi(-1)/EAB_qi(-1)));
 // Import adjustment cost
 EABUS_gammaimi = EAB_gammaimi1/2*((EABUS_imi/EAB_qi)/(EABUS_imi(-1)/EAB_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EABUS_gammaimidag = 1-EABUS_gammaimi-EAB_gammaimi1*((EABUS_imi/EAB_qi)/(EABUS_imi(-1)/EAB_qi(-1))-1)*(EABUS_imi/EAB_qi)/(EABUS_imi(-1)/EAB_qi(-1));
+EABUS_gammaimidag = 1-EABUS_gammaimi-EAB_gammaimi1*((EABUS_imi/EAB_qi)/(EABUS_imi(-1)/EAB_qi)-1)*((EABUS_imi/EAB_qi)/(EABUS_imi(-1)/EAB_qi(-1)));
 // Trade balance
 EAB_tb =
 +EABEAA_rer*EAAEAB_pim*EAA_size/EAB_size*EAAEAB_im
@@ -5882,27 +5882,27 @@ EAC_hti = EAC_nuti*(EAC_pht/EAC_ptti)^(-EAC_muti)*EAC_tti;
 // Import adjustment cost
 EACEAA_gammaimi = EAC_gammaimi1/2*((EACEAA_imi/EAC_qi)/(EACEAA_imi(-1)/EAC_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EACEAA_gammaimidag = 1-EACEAA_gammaimi-EAC_gammaimi1*((EACEAA_imi/EAC_qi)/(EACEAA_imi(-1)/EAC_qi(-1))-1)*(EACEAA_imi/EAC_qi)/(EACEAA_imi(-1)/EAC_qi(-1));
+EACEAA_gammaimidag = 1-EACEAA_gammaimi-EAC_gammaimi1*((EACEAA_imi/EAC_qi)/(EACEAA_imi(-1)/EAC_qi)-1)*((EACEAA_imi/EAC_qi)/(EACEAA_imi(-1)/EAC_qi(-1)));
 // Import adjustment cost
 EACEAB_gammaimi = EAC_gammaimi1/2*((EACEAB_imi/EAC_qi)/(EACEAB_imi(-1)/EAC_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EACEAB_gammaimidag = 1-EACEAB_gammaimi-EAC_gammaimi1*((EACEAB_imi/EAC_qi)/(EACEAB_imi(-1)/EAC_qi(-1))-1)*(EACEAB_imi/EAC_qi)/(EACEAB_imi(-1)/EAC_qi(-1));
+EACEAB_gammaimidag = 1-EACEAB_gammaimi-EAC_gammaimi1*((EACEAB_imi/EAC_qi)/(EACEAB_imi(-1)/EAC_qi)-1)*((EACEAB_imi/EAC_qi)/(EACEAB_imi(-1)/EAC_qi(-1)));
 // Import adjustment cost
 EACEAD_gammaimi = EAC_gammaimi1/2*((EACEAD_imi/EAC_qi)/(EACEAD_imi(-1)/EAC_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EACEAD_gammaimidag = 1-EACEAD_gammaimi-EAC_gammaimi1*((EACEAD_imi/EAC_qi)/(EACEAD_imi(-1)/EAC_qi(-1))-1)*(EACEAD_imi/EAC_qi)/(EACEAD_imi(-1)/EAC_qi(-1));
+EACEAD_gammaimidag = 1-EACEAD_gammaimi-EAC_gammaimi1*((EACEAD_imi/EAC_qi)/(EACEAD_imi(-1)/EAC_qi)-1)*((EACEAD_imi/EAC_qi)/(EACEAD_imi(-1)/EAC_qi(-1)));
 // Import adjustment cost
 EACEAE_gammaimi = EAC_gammaimi1/2*((EACEAE_imi/EAC_qi)/(EACEAE_imi(-1)/EAC_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EACEAE_gammaimidag = 1-EACEAE_gammaimi-EAC_gammaimi1*((EACEAE_imi/EAC_qi)/(EACEAE_imi(-1)/EAC_qi(-1))-1)*(EACEAE_imi/EAC_qi)/(EACEAE_imi(-1)/EAC_qi(-1));
+EACEAE_gammaimidag = 1-EACEAE_gammaimi-EAC_gammaimi1*((EACEAE_imi/EAC_qi)/(EACEAE_imi(-1)/EAC_qi)-1)*((EACEAE_imi/EAC_qi)/(EACEAE_imi(-1)/EAC_qi(-1)));
 // Import adjustment cost
 EACRW_gammaimi = EAC_gammaimi1/2*((EACRW_imi/EAC_qi)/(EACRW_imi(-1)/EAC_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EACRW_gammaimidag = 1-EACRW_gammaimi-EAC_gammaimi1*((EACRW_imi/EAC_qi)/(EACRW_imi(-1)/EAC_qi(-1))-1)*(EACRW_imi/EAC_qi)/(EACRW_imi(-1)/EAC_qi(-1));
+EACRW_gammaimidag = 1-EACRW_gammaimi-EAC_gammaimi1*((EACRW_imi/EAC_qi)/(EACRW_imi(-1)/EAC_qi)-1)*((EACRW_imi/EAC_qi)/(EACRW_imi(-1)/EAC_qi(-1)));
 // Import adjustment cost
 EACUS_gammaimi = EAC_gammaimi1/2*((EACUS_imi/EAC_qi)/(EACUS_imi(-1)/EAC_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EACUS_gammaimidag = 1-EACUS_gammaimi-EAC_gammaimi1*((EACUS_imi/EAC_qi)/(EACUS_imi(-1)/EAC_qi(-1))-1)*(EACUS_imi/EAC_qi)/(EACUS_imi(-1)/EAC_qi(-1));
+EACUS_gammaimidag = 1-EACUS_gammaimi-EAC_gammaimi1*((EACUS_imi/EAC_qi)/(EACUS_imi(-1)/EAC_qi)-1)*((EACUS_imi/EAC_qi)/(EACUS_imi(-1)/EAC_qi(-1)));
 // Trade balance
 EAC_tb =
 +EACEAA_rer*EAAEAC_pim*EAA_size/EAC_size*EAAEAC_im
@@ -6972,27 +6972,27 @@ EAD_hti = EAD_nuti*(EAD_pht/EAD_ptti)^(-EAD_muti)*EAD_tti;
 // Import adjustment cost
 EADEAA_gammaimi = EAD_gammaimi1/2*((EADEAA_imi/EAD_qi)/(EADEAA_imi(-1)/EAD_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EADEAA_gammaimidag = 1-EADEAA_gammaimi-EAD_gammaimi1*((EADEAA_imi/EAD_qi)/(EADEAA_imi(-1)/EAD_qi(-1))-1)*(EADEAA_imi/EAD_qi)/(EADEAA_imi(-1)/EAD_qi(-1));
+EADEAA_gammaimidag = 1-EADEAA_gammaimi-EAD_gammaimi1*((EADEAA_imi/EAD_qi)/(EADEAA_imi(-1)/EAD_qi)-1)*((EADEAA_imi/EAD_qi)/(EADEAA_imi(-1)/EAD_qi(-1)));
 // Import adjustment cost
 EADEAB_gammaimi = EAD_gammaimi1/2*((EADEAB_imi/EAD_qi)/(EADEAB_imi(-1)/EAD_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EADEAB_gammaimidag = 1-EADEAB_gammaimi-EAD_gammaimi1*((EADEAB_imi/EAD_qi)/(EADEAB_imi(-1)/EAD_qi(-1))-1)*(EADEAB_imi/EAD_qi)/(EADEAB_imi(-1)/EAD_qi(-1));
+EADEAB_gammaimidag = 1-EADEAB_gammaimi-EAD_gammaimi1*((EADEAB_imi/EAD_qi)/(EADEAB_imi(-1)/EAD_qi)-1)*((EADEAB_imi/EAD_qi)/(EADEAB_imi(-1)/EAD_qi(-1)));
 // Import adjustment cost
 EADEAC_gammaimi = EAD_gammaimi1/2*((EADEAC_imi/EAD_qi)/(EADEAC_imi(-1)/EAD_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EADEAC_gammaimidag = 1-EADEAC_gammaimi-EAD_gammaimi1*((EADEAC_imi/EAD_qi)/(EADEAC_imi(-1)/EAD_qi(-1))-1)*(EADEAC_imi/EAD_qi)/(EADEAC_imi(-1)/EAD_qi(-1));
+EADEAC_gammaimidag = 1-EADEAC_gammaimi-EAD_gammaimi1*((EADEAC_imi/EAD_qi)/(EADEAC_imi(-1)/EAD_qi)-1)*((EADEAC_imi/EAD_qi)/(EADEAC_imi(-1)/EAD_qi(-1)));
 // Import adjustment cost
 EADEAE_gammaimi = EAD_gammaimi1/2*((EADEAE_imi/EAD_qi)/(EADEAE_imi(-1)/EAD_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EADEAE_gammaimidag = 1-EADEAE_gammaimi-EAD_gammaimi1*((EADEAE_imi/EAD_qi)/(EADEAE_imi(-1)/EAD_qi(-1))-1)*(EADEAE_imi/EAD_qi)/(EADEAE_imi(-1)/EAD_qi(-1));
+EADEAE_gammaimidag = 1-EADEAE_gammaimi-EAD_gammaimi1*((EADEAE_imi/EAD_qi)/(EADEAE_imi(-1)/EAD_qi)-1)*((EADEAE_imi/EAD_qi)/(EADEAE_imi(-1)/EAD_qi(-1)));
 // Import adjustment cost
 EADRW_gammaimi = EAD_gammaimi1/2*((EADRW_imi/EAD_qi)/(EADRW_imi(-1)/EAD_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EADRW_gammaimidag = 1-EADRW_gammaimi-EAD_gammaimi1*((EADRW_imi/EAD_qi)/(EADRW_imi(-1)/EAD_qi(-1))-1)*(EADRW_imi/EAD_qi)/(EADRW_imi(-1)/EAD_qi(-1));
+EADRW_gammaimidag = 1-EADRW_gammaimi-EAD_gammaimi1*((EADRW_imi/EAD_qi)/(EADRW_imi(-1)/EAD_qi)-1)*((EADRW_imi/EAD_qi)/(EADRW_imi(-1)/EAD_qi(-1)));
 // Import adjustment cost
 EADUS_gammaimi = EAD_gammaimi1/2*((EADUS_imi/EAD_qi)/(EADUS_imi(-1)/EAD_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EADUS_gammaimidag = 1-EADUS_gammaimi-EAD_gammaimi1*((EADUS_imi/EAD_qi)/(EADUS_imi(-1)/EAD_qi(-1))-1)*(EADUS_imi/EAD_qi)/(EADUS_imi(-1)/EAD_qi(-1));
+EADUS_gammaimidag = 1-EADUS_gammaimi-EAD_gammaimi1*((EADUS_imi/EAD_qi)/(EADUS_imi(-1)/EAD_qi)-1)*((EADUS_imi/EAD_qi)/(EADUS_imi(-1)/EAD_qi(-1)));
 // Trade balance
 EAD_tb =
 +EADEAA_rer*EAAEAD_pim*EAA_size/EAD_size*EAAEAD_im
@@ -8065,27 +8065,27 @@ EAE_hti = EAE_nuti*(EAE_pht/EAE_ptti)^(-EAE_muti)*EAE_tti;
 // Import adjustment cost
 EAEEAA_gammaimi = EAE_gammaimi1/2*((EAEEAA_imi/EAE_qi)/(EAEEAA_imi(-1)/EAE_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EAEEAA_gammaimidag = 1-EAEEAA_gammaimi-EAE_gammaimi1*((EAEEAA_imi/EAE_qi)/(EAEEAA_imi(-1)/EAE_qi(-1))-1)*(EAEEAA_imi/EAE_qi)/(EAEEAA_imi(-1)/EAE_qi(-1));
+EAEEAA_gammaimidag = 1-EAEEAA_gammaimi-EAE_gammaimi1*((EAEEAA_imi/EAE_qi)/(EAEEAA_imi(-1)/EAE_qi)-1)*((EAEEAA_imi/EAE_qi)/(EAEEAA_imi(-1)/EAE_qi(-1)));
 // Import adjustment cost
 EAEEAB_gammaimi = EAE_gammaimi1/2*((EAEEAB_imi/EAE_qi)/(EAEEAB_imi(-1)/EAE_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EAEEAB_gammaimidag = 1-EAEEAB_gammaimi-EAE_gammaimi1*((EAEEAB_imi/EAE_qi)/(EAEEAB_imi(-1)/EAE_qi(-1))-1)*(EAEEAB_imi/EAE_qi)/(EAEEAB_imi(-1)/EAE_qi(-1));
+EAEEAB_gammaimidag = 1-EAEEAB_gammaimi-EAE_gammaimi1*((EAEEAB_imi/EAE_qi)/(EAEEAB_imi(-1)/EAE_qi)-1)*((EAEEAB_imi/EAE_qi)/(EAEEAB_imi(-1)/EAE_qi(-1)));
 // Import adjustment cost
 EAEEAC_gammaimi = EAE_gammaimi1/2*((EAEEAC_imi/EAE_qi)/(EAEEAC_imi(-1)/EAE_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EAEEAC_gammaimidag = 1-EAEEAC_gammaimi-EAE_gammaimi1*((EAEEAC_imi/EAE_qi)/(EAEEAC_imi(-1)/EAE_qi(-1))-1)*(EAEEAC_imi/EAE_qi)/(EAEEAC_imi(-1)/EAE_qi(-1));
+EAEEAC_gammaimidag = 1-EAEEAC_gammaimi-EAE_gammaimi1*((EAEEAC_imi/EAE_qi)/(EAEEAC_imi(-1)/EAE_qi)-1)*((EAEEAC_imi/EAE_qi)/(EAEEAC_imi(-1)/EAE_qi(-1)));
 // Import adjustment cost
 EAEEAD_gammaimi = EAE_gammaimi1/2*((EAEEAD_imi/EAE_qi)/(EAEEAD_imi(-1)/EAE_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EAEEAD_gammaimidag = 1-EAEEAD_gammaimi-EAE_gammaimi1*((EAEEAD_imi/EAE_qi)/(EAEEAD_imi(-1)/EAE_qi(-1))-1)*(EAEEAD_imi/EAE_qi)/(EAEEAD_imi(-1)/EAE_qi(-1));
+EAEEAD_gammaimidag = 1-EAEEAD_gammaimi-EAE_gammaimi1*((EAEEAD_imi/EAE_qi)/(EAEEAD_imi(-1)/EAE_qi)-1)*((EAEEAD_imi/EAE_qi)/(EAEEAD_imi(-1)/EAE_qi(-1)));
 // Import adjustment cost
 EAERW_gammaimi = EAE_gammaimi1/2*((EAERW_imi/EAE_qi)/(EAERW_imi(-1)/EAE_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EAERW_gammaimidag = 1-EAERW_gammaimi-EAE_gammaimi1*((EAERW_imi/EAE_qi)/(EAERW_imi(-1)/EAE_qi(-1))-1)*(EAERW_imi/EAE_qi)/(EAERW_imi(-1)/EAE_qi(-1));
+EAERW_gammaimidag = 1-EAERW_gammaimi-EAE_gammaimi1*((EAERW_imi/EAE_qi)/(EAERW_imi(-1)/EAE_qi)-1)*((EAERW_imi/EAE_qi)/(EAERW_imi(-1)/EAE_qi(-1)));
 // Import adjustment cost
 EAEUS_gammaimi = EAE_gammaimi1/2*((EAEUS_imi/EAE_qi)/(EAEUS_imi(-1)/EAE_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-EAEUS_gammaimidag = 1-EAEUS_gammaimi-EAE_gammaimi1*((EAEUS_imi/EAE_qi)/(EAEUS_imi(-1)/EAE_qi(-1))-1)*(EAEUS_imi/EAE_qi)/(EAEUS_imi(-1)/EAE_qi(-1));
+EAEUS_gammaimidag = 1-EAEUS_gammaimi-EAE_gammaimi1*((EAEUS_imi/EAE_qi)/(EAEUS_imi(-1)/EAE_qi)-1)*((EAEUS_imi/EAE_qi)/(EAEUS_imi(-1)/EAE_qi(-1)));
 // Trade balance
 EAE_tb =
 +EAEEAA_rer*EAAEAE_pim*EAA_size/EAE_size*EAAEAE_im
@@ -9151,27 +9151,27 @@ RW_hti = RW_nuti*(RW_pht/RW_ptti)^(-RW_muti)*RW_tti;
 // Import adjustment cost
 RWEAA_gammaimi = RW_gammaimi1/2*((RWEAA_imi/RW_qi)/(RWEAA_imi(-1)/RW_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-RWEAA_gammaimidag = 1-RWEAA_gammaimi-RW_gammaimi1*((RWEAA_imi/RW_qi)/(RWEAA_imi(-1)/RW_qi(-1))-1)*(RWEAA_imi/RW_qi)/(RWEAA_imi(-1)/RW_qi(-1));
+RWEAA_gammaimidag = 1-RWEAA_gammaimi-RW_gammaimi1*((RWEAA_imi/RW_qi)/(RWEAA_imi(-1)/RW_qi)-1)*((RWEAA_imi/RW_qi)/(RWEAA_imi(-1)/RW_qi(-1)));
 // Import adjustment cost
 RWEAB_gammaimi = RW_gammaimi1/2*((RWEAB_imi/RW_qi)/(RWEAB_imi(-1)/RW_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-RWEAB_gammaimidag = 1-RWEAB_gammaimi-RW_gammaimi1*((RWEAB_imi/RW_qi)/(RWEAB_imi(-1)/RW_qi(-1))-1)*(RWEAB_imi/RW_qi)/(RWEAB_imi(-1)/RW_qi(-1));
+RWEAB_gammaimidag = 1-RWEAB_gammaimi-RW_gammaimi1*((RWEAB_imi/RW_qi)/(RWEAB_imi(-1)/RW_qi)-1)*((RWEAB_imi/RW_qi)/(RWEAB_imi(-1)/RW_qi(-1)));
 // Import adjustment cost
 RWEAC_gammaimi = RW_gammaimi1/2*((RWEAC_imi/RW_qi)/(RWEAC_imi(-1)/RW_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-RWEAC_gammaimidag = 1-RWEAC_gammaimi-RW_gammaimi1*((RWEAC_imi/RW_qi)/(RWEAC_imi(-1)/RW_qi(-1))-1)*(RWEAC_imi/RW_qi)/(RWEAC_imi(-1)/RW_qi(-1));
+RWEAC_gammaimidag = 1-RWEAC_gammaimi-RW_gammaimi1*((RWEAC_imi/RW_qi)/(RWEAC_imi(-1)/RW_qi)-1)*((RWEAC_imi/RW_qi)/(RWEAC_imi(-1)/RW_qi(-1)));
 // Import adjustment cost
 RWEAD_gammaimi = RW_gammaimi1/2*((RWEAD_imi/RW_qi)/(RWEAD_imi(-1)/RW_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-RWEAD_gammaimidag = 1-RWEAD_gammaimi-RW_gammaimi1*((RWEAD_imi/RW_qi)/(RWEAD_imi(-1)/RW_qi(-1))-1)*(RWEAD_imi/RW_qi)/(RWEAD_imi(-1)/RW_qi(-1));
+RWEAD_gammaimidag = 1-RWEAD_gammaimi-RW_gammaimi1*((RWEAD_imi/RW_qi)/(RWEAD_imi(-1)/RW_qi)-1)*((RWEAD_imi/RW_qi)/(RWEAD_imi(-1)/RW_qi(-1)));
 // Import adjustment cost
 RWEAE_gammaimi = RW_gammaimi1/2*((RWEAE_imi/RW_qi)/(RWEAE_imi(-1)/RW_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-RWEAE_gammaimidag = 1-RWEAE_gammaimi-RW_gammaimi1*((RWEAE_imi/RW_qi)/(RWEAE_imi(-1)/RW_qi(-1))-1)*(RWEAE_imi/RW_qi)/(RWEAE_imi(-1)/RW_qi(-1));
+RWEAE_gammaimidag = 1-RWEAE_gammaimi-RW_gammaimi1*((RWEAE_imi/RW_qi)/(RWEAE_imi(-1)/RW_qi)-1)*((RWEAE_imi/RW_qi)/(RWEAE_imi(-1)/RW_qi(-1)));
 // Import adjustment cost
 RWUS_gammaimi = RW_gammaimi1/2*((RWUS_imi/RW_qi)/(RWUS_imi(-1)/RW_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-RWUS_gammaimidag = 1-RWUS_gammaimi-RW_gammaimi1*((RWUS_imi/RW_qi)/(RWUS_imi(-1)/RW_qi(-1))-1)*(RWUS_imi/RW_qi)/(RWUS_imi(-1)/RW_qi(-1));
+RWUS_gammaimidag = 1-RWUS_gammaimi-RW_gammaimi1*((RWUS_imi/RW_qi)/(RWUS_imi(-1)/RW_qi)-1)*((RWUS_imi/RW_qi)/(RWUS_imi(-1)/RW_qi(-1)));
 // Trade balance
 RW_tb =
 +RWEAA_rer*EAARW_pim*EAA_size/RW_size*EAARW_im
@@ -10243,27 +10243,27 @@ US_hti = US_nuti*(US_pht/US_ptti)^(-US_muti)*US_tti;
 // Import adjustment cost
 USEAA_gammaimi = US_gammaimi1/2*((USEAA_imi/US_qi)/(USEAA_imi(-1)/US_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-USEAA_gammaimidag = 1-USEAA_gammaimi-US_gammaimi1*((USEAA_imi/US_qi)/(USEAA_imi(-1)/US_qi(-1))-1)*(USEAA_imi/US_qi)/(USEAA_imi(-1)/US_qi(-1));
+USEAA_gammaimidag = 1-USEAA_gammaimi-US_gammaimi1*((USEAA_imi/US_qi)/(USEAA_imi(-1)/US_qi)-1)*((USEAA_imi/US_qi)/(USEAA_imi(-1)/US_qi(-1)));
 // Import adjustment cost
 USEAB_gammaimi = US_gammaimi1/2*((USEAB_imi/US_qi)/(USEAB_imi(-1)/US_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-USEAB_gammaimidag = 1-USEAB_gammaimi-US_gammaimi1*((USEAB_imi/US_qi)/(USEAB_imi(-1)/US_qi(-1))-1)*(USEAB_imi/US_qi)/(USEAB_imi(-1)/US_qi(-1));
+USEAB_gammaimidag = 1-USEAB_gammaimi-US_gammaimi1*((USEAB_imi/US_qi)/(USEAB_imi(-1)/US_qi)-1)*((USEAB_imi/US_qi)/(USEAB_imi(-1)/US_qi(-1)));
 // Import adjustment cost
 USEAC_gammaimi = US_gammaimi1/2*((USEAC_imi/US_qi)/(USEAC_imi(-1)/US_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-USEAC_gammaimidag = 1-USEAC_gammaimi-US_gammaimi1*((USEAC_imi/US_qi)/(USEAC_imi(-1)/US_qi(-1))-1)*(USEAC_imi/US_qi)/(USEAC_imi(-1)/US_qi(-1));
+USEAC_gammaimidag = 1-USEAC_gammaimi-US_gammaimi1*((USEAC_imi/US_qi)/(USEAC_imi(-1)/US_qi)-1)*((USEAC_imi/US_qi)/(USEAC_imi(-1)/US_qi(-1)));
 // Import adjustment cost
 USEAD_gammaimi = US_gammaimi1/2*((USEAD_imi/US_qi)/(USEAD_imi(-1)/US_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-USEAD_gammaimidag = 1-USEAD_gammaimi-US_gammaimi1*((USEAD_imi/US_qi)/(USEAD_imi(-1)/US_qi(-1))-1)*(USEAD_imi/US_qi)/(USEAD_imi(-1)/US_qi(-1));
+USEAD_gammaimidag = 1-USEAD_gammaimi-US_gammaimi1*((USEAD_imi/US_qi)/(USEAD_imi(-1)/US_qi)-1)*((USEAD_imi/US_qi)/(USEAD_imi(-1)/US_qi(-1)));
 // Import adjustment cost
 USEAE_gammaimi = US_gammaimi1/2*((USEAE_imi/US_qi)/(USEAE_imi(-1)/US_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-USEAE_gammaimidag = 1-USEAE_gammaimi-US_gammaimi1*((USEAE_imi/US_qi)/(USEAE_imi(-1)/US_qi(-1))-1)*(USEAE_imi/US_qi)/(USEAE_imi(-1)/US_qi(-1));
+USEAE_gammaimidag = 1-USEAE_gammaimi-US_gammaimi1*((USEAE_imi/US_qi)/(USEAE_imi(-1)/US_qi)-1)*((USEAE_imi/US_qi)/(USEAE_imi(-1)/US_qi(-1)));
 // Import adjustment cost
 USRW_gammaimi = US_gammaimi1/2*((USRW_imi/US_qi)/(USRW_imi(-1)/US_qi(-1))-1)^2;
 // Auxiliary equation for transformation of import adjustment cost
-USRW_gammaimidag = 1-USRW_gammaimi-US_gammaimi1*((USRW_imi/US_qi)/(USRW_imi(-1)/US_qi(-1))-1)*(USRW_imi/US_qi)/(USRW_imi(-1)/US_qi(-1));
+USRW_gammaimidag = 1-USRW_gammaimi-US_gammaimi1*((USRW_imi/US_qi)/(USRW_imi(-1)/US_qi)-1)*((USRW_imi/US_qi)/(USRW_imi(-1)/US_qi(-1)));
 // Trade balance
 US_tb =
 +USEAA_rer*EAAUS_pim*EAA_size/US_size*EAAUS_im
