@@ -293,8 +293,6 @@ initval;
       @{COUNTRY}_epsr = 0;
     @#endif
   @#endif
-    @#endif
-  @#endif
   @#if(COUNTRY != "US")
     @# if !steady
       @{COUNTRY}_epsrp = 0;
