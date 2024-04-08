@@ -25,7 +25,7 @@ dynare_config
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 dynare('load0.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
-meta.load0output183c0ee7 = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'load0', 'Output', 'load0_results_183c0ee7.mat'));
+meta.load0output183c0ee7 = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'steady0', 'Output', 'steady0_results_183c0ee7.mat'));
 meta.load0struct183c0ee7 = struct();
 
 meta.load0output = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'load0', 'Output', 'load0_results.mat'));
@@ -53,10 +53,17 @@ for aModel = outputList
     end
 end
 
-load0struct.ssValues.EABEAA_pimtilde/load0struct.ssValues.EABEAA_pim - (load0struct.exo_names.EAA_cpim*load0struct.params.EAA_thetat/(load0struct.params.EAA_thetat-1)*load0struct.ssValues.EAAEAB_fx/load0struct.ssValues.EAAEAB_gx)
+load0struct.ssValues.EABEAA_pimtilde/load0struct.ssValues.EABEAA_pim ...
+    - (load0struct.exo_names.EAA_cpim ...
+    *load0struct.params.EAA_thetat/(load0struct.params.EAA_thetat-1) ...
+    *load0struct.ssValues.EAAEAB_fx ...
+    /load0struct.ssValues.EAAEAB_gx)
 
-meta.load0struct183c0ee7.ssValues.EABEAA_pimtilde/meta.load0struct183c0ee7.ssValues.EABEAA_pim - (meta.load0struct183c0ee7.exo_names.EAA_cpim*meta.load0struct183c0ee7.params.EAA_thetat/(meta.load0struct183c0ee7.params.EAA_thetat-1)*meta.load0struct183c0ee7.ssValues.EAAEAB_fx/meta.load0struct183c0ee7.ssValues.EAAEAB_gx)
-
+meta.load0struct183c0ee7.ssValues.EABEAA_pimtilde/meta.load0struct183c0ee7.ssValues.EABEAA_pim ...
+    - (meta.load0struct183c0ee7.exo_names.EAA_cpim ...
+    *meta.load0struct183c0ee7.params.EAA_thetat/(meta.load0struct183c0ee7.params.EAA_thetat-1) ...
+    *meta.load0struct183c0ee7.ssValues.EAAEAB_fx ...
+    /meta.load0struct183c0ee7.ssValues.EAAEAB_gx)
 
 
 %% non-SS version of the model
