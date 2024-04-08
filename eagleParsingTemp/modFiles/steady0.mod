@@ -17,6 +17,8 @@ options_.markowitz = 5;
 
 @#include "initval.mod"
 
+resid(non_zero);
+
 // The same parameter values like in the params.mod; just to check the steady state solution
 disp('alphat')
 homotopy_setup;

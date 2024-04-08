@@ -46,8 +46,7 @@ initval;
   @{COUNTRY}_igy = 0;
 
   @{COUNTRY}_ht = 0.08;
-
-//TODO: with fiscal variables country shares may need revisiting  
+// NOTE: since gov components are zero all their subcomponents (i.e., ht, tt, nt, im) need to be zero
 @#for aItem in demandItems
   @#if aItem == "c"
   @{COUNTRY}_ht@{aItem} = 0.08;
@@ -56,10 +55,10 @@ initval;
   @{COUNTRY}_ht@{aItem} =  0.0005;
   @#else
   @#if aItem == "cg"
-  @{COUNTRY}_ht@{aItem} = 0.08;
+  @{COUNTRY}_ht@{aItem} = 0;
   @#else
   @#if aItem == "ig"
-  @{COUNTRY}_ht@{aItem} =  0.0005;
+  @{COUNTRY}_ht@{aItem} =  0;
   @#endif
   @#endif
   @#endif
@@ -79,12 +78,12 @@ initval;
   @{COUNTRY}_im@{aItem}y = 0.0016;
   @#else
   @#if aItem == "cg"
-  @{COUNTRY}_im@{aItem} = 0.08;
-  @{COUNTRY}_im@{aItem}y = 0.25;
+  @{COUNTRY}_im@{aItem} = 0;
+  @{COUNTRY}_im@{aItem}y = 0;
   @#else
   @#if aItem == "ig"
-  @{COUNTRY}_im@{aItem} = 0.0005;
-  @{COUNTRY}_im@{aItem}y = 0.0016;
+  @{COUNTRY}_im@{aItem} = 0;
+  @{COUNTRY}_im@{aItem}y = 0;
   @#endif
   @#endif
   @#endif
@@ -129,10 +128,10 @@ initval;
   @{COUNTRY}_nt@{aItem} = 0.001;
   @#else
   @#if aItem == "cg"
-  @{COUNTRY}_nt@{aItem} = 0.161;
+  @{COUNTRY}_nt@{aItem} = 0;
   @#else
   @#if aItem == "ig"
-  @{COUNTRY}_nt@{aItem} = 0.001;
+  @{COUNTRY}_nt@{aItem} = 0;
   @#endif
   @#endif
   @#endif
@@ -184,10 +183,10 @@ initval;
   @{COUNTRY}_q@{aItem} =  0.00209600391746659*2;
   @#else
   @#if aItem == "cg"
-  @{COUNTRY}_q@{aItem} =  0.321620156669017*2;
+  @{COUNTRY}_q@{aItem} =  0;
   @#else
   @#if aItem == "ig"
-  @{COUNTRY}_q@{aItem} =  0.00209600391746659*2;
+  @{COUNTRY}_q@{aItem} =  0;
   @#endif
   @#endif
   @#endif
@@ -240,10 +239,10 @@ initval;
   @{COUNTRY}_tt@{aItem} = 0.001;
   @#else
   @#if aItem == "cg"
-  @{COUNTRY}_tt@{aItem} = 0.16;
+  @{COUNTRY}_tt@{aItem} = 0;
   @#else
   @#if aItem == "ig"
-  @{COUNTRY}_tt@{aItem} = 0.001;
+  @{COUNTRY}_tt@{aItem} = 0;
   @#endif
   @#endif
   @#endif
@@ -339,6 +338,7 @@ initval;
       @{COUNTRY}@{COUNTRY1}_fx = 0.002;
       @{COUNTRY}@{COUNTRY1}_gx = 0.04;
       @{COUNTRY}@{COUNTRY1}_im = 0.03;
+
 @#for aItem in demandItems
   @#if aItem == "c"
       @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.02;
@@ -347,15 +347,16 @@ initval;
       @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.0003;
   @#else
   @#if aItem == "cg"
-      @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.02;
+      @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0;
   @#else
   @#if aItem == "ig"
-      @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.0003;
+      @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0;
   @#endif
   @#endif
   @#endif
   @#endif
 @#endfor
+
       @{COUNTRY}@{COUNTRY1}_sx = 0.999999999999999;
 @#for aItem in demandItems
       @{COUNTRY}@{COUNTRY1}_gammaim@{aItem} = 0;
@@ -372,6 +373,7 @@ initval;
 @#for COUNTRY IN countries
   @#for COUNTRY1 IN countries
     @#if (COUNTRY != COUNTRY1)
+      
       // Shares
 @#for aItem in demandItems
   @#if aItem == "c"
@@ -381,15 +383,16 @@ initval;
       @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.0008;
   @#else
   @#if aItem == "cg"
-      @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.09;
+      @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0;
   @#else
   @#if aItem == "ig"
-      @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.0008;
+      @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0;
   @#endif
   @#endif
   @#endif
   @#endif
 @#endfor
+
       @{COUNTRY}@{COUNTRY1}_excy = 0.09;
       @{COUNTRY}@{COUNTRY1}_exiy = 0.0008;
     @#endif
