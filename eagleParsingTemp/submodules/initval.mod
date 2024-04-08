@@ -144,14 +144,19 @@ initval;
   @{COUNTRY}_pht = 0.999999999999995;
   @{COUNTRY}_phttilde = 0.999999999999995;
   @{COUNTRY}_pi = 0.999999999999969;
+  @{COUNTRY}_pcg = 0.999999999999969;
+  @{COUNTRY}_pig = 0.999999999999969;
   @{COUNTRY}_pibar = 0.999999999999969;
   @{COUNTRY}_pic = 1;
   @{COUNTRY}_pic4 = 1;
   @{COUNTRY}_piex4 = 1;
   @{COUNTRY}_piht = 1;
-  @{COUNTRY}_piimc = 1;
+
+@#for aItem in demandItems
+  @{COUNTRY}_piim@{aItem} = 1;
+@#endfor
+  
   @{COUNTRY}_piimc4 = 1;
-  @{COUNTRY}_piimi = 1;
   @{COUNTRY}_pim = 1;
 @#for aItem in demandItems
   @{COUNTRY}_pim@{aItem} = 1;
