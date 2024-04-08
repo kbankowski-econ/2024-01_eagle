@@ -25,52 +25,37 @@ dynare_config
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 dynare('load0.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
-load0output183c0ee7 = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'load0', 'Output', 'load0_results_183c0ee7.mat'));
-load0struct183c0ee7 = struct();
+meta.load0output183c0ee7 = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'load0', 'Output', 'load0_results_183c0ee7.mat'));
+meta.load0struct183c0ee7 = struct();
 
-load0output = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'load0', 'Output', 'load0_results.mat'));
-load0struct = struct();
+meta.load0output = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'load0', 'Output', 'load0_results.mat'));
+meta.load0struct = struct();
 
 setdiff(load0output.M_.endo_names, load0output183c0ee7.M_.endo_names);
 setdiff(load0output183c0ee7.M_.endo_names, load0output.M_.endo_names);
 
-varList = load0output.M_.endo_names(~startsWith(load0output.M_.endo_names, 'AUX_ENDO_'));
-for aVar = string(reshape(varList, 1, []))
-    load0struct.ssValues.(aVar) = load0output.oo_.steady_state(strcmp(aVar, varList));
+outputList = ["load0output", "load0output183c0ee7"];
+structList =  ["load0struct", "load0struct183c0ee7"];
+for aModel = outputList
+    aStruct = structList(aModel == outputList);
+
+    varList = meta.(aModel).M_.endo_names(~startsWith(meta.(aModel).M_.endo_names, 'AUX_ENDO_'));
+    for aVar = string(reshape(varList, 1, []))
+        meta.(aStruct).ssValues.(aVar) = meta.(aModel).oo_.steady_state(strcmp(aVar, varList));
+    end
+    
+    for aExoVar = string(reshape(meta.(aModel).M_.exo_names, 1, []))
+        meta.(aStruct).exo_names.(aExoVar) = meta.(aModel).oo_.exo_steady_state(strcmp(aExoVar, meta.(aModel).M_.exo_names));
+    end
+    
+    for aParam = string(reshape(meta.(aModel).M_.param_names, 1, []))
+        meta.(aStruct).params.(aParam) = meta.(aModel).M_.params(strcmp(aParam, meta.(aModel).M_.param_names));
+    end
 end
 
-for aExoVar = string(reshape(load0output.M_.exo_names, 1, []))
-    load0struct.exo_names.(aExoVar) = load0output.oo_.exo_steady_state(strcmp(aExoVar, load0output.M_.exo_names));
-end
+load0struct.ssValues.EABEAA_pimtilde/load0struct.ssValues.EABEAA_pim - (load0struct.exo_names.EAA_cpim*load0struct.params.EAA_thetat/(load0struct.params.EAA_thetat-1)*load0struct.ssValues.EAAEAB_fx/load0struct.ssValues.EAAEAB_gx)
 
-for aParam = string(reshape(load0output.M_.param_names, 1, []))
-    load0struct.params.(aParam) = load0output.M_.params(strcmp(aParam, load0output.M_.param_names));
-end
-
-load0struct.ssValues.EAA_htcg - load0struct.params.EAA_nutcg*(load0struct.ssValues.EAA_pht/load0struct.ssValues.EAA_pttcg)^(-load0struct.params.EAA_mutcg)*load0struct.ssValues.EAA_ttcg
-
-load0struct.ssValues.EAA_htig - load0struct.params.EAA_nutig*(load0struct.ssValues.EAA_pht/load0struct.ssValues.EAA_pttig)^(-load0struct.params.EAA_mutig)*load0struct.ssValues.EAA_ttig
-
-load0struct.ssValues.EAA_imcg^((load0struct.params.EAA_mumcg-1)/load0struct.params.EAA_mumcg) - (...
-+load0struct.params.EAAEAB_numcg ^(1/load0struct.params.EAA_mumcg)*load0struct.ssValues.EAAEAB_imcg^(1-1/load0struct.params.EAA_mumcg) ...
-+load0struct.params.EAAEAC_numcg ^(1/load0struct.params.EAA_mumcg)*load0struct.ssValues.EAAEAC_imcg^(1-1/load0struct.params.EAA_mumcg) ...
-+load0struct.params.EAAEAD_numcg ^(1/load0struct.params.EAA_mumcg)*load0struct.ssValues.EAAEAD_imcg^(1-1/load0struct.params.EAA_mumcg) ...
-+load0struct.params.EAAEAE_numcg ^(1/load0struct.params.EAA_mumcg)*load0struct.ssValues.EAAEAE_imcg^(1-1/load0struct.params.EAA_mumcg) ...
-+load0struct.params.EAAUS_numcg ^(1/load0struct.params.EAA_mumcg)*load0struct.ssValues.EAAUS_imcg^(1-1/load0struct.params.EAA_mumcg) ...
-+(1 ...
--load0struct.params.EAAEAB_numcg ...
--load0struct.params.EAAEAC_numcg ...
--load0struct.params.EAAEAD_numcg ...
--load0struct.params.EAAEAE_numcg ...
--load0struct.params.EAAUS_numcg ...
-)^(1/load0struct.params.EAA_mumcg)*load0struct.ssValues.EAARW_imcg^(1-1/load0struct.params.EAA_mumcg))
-
-load0struct.ssValues.EAA_imcgy - load0struct.ssValues.EAA_pimcg*load0struct.ssValues.EAA_imcg/(load0struct.ssValues.EAA_py*load0struct.ssValues.EAA_y)
-
-load0struct.ssValues.EAA_ntcg - (1-load0struct.params.EAA_nucg)*(load0struct.ssValues.EAA_pnt/load0struct.ssValues.EAA_pcg)^(-load0struct.params.EAA_mucg)*load0struct.ssValues.EAA_qcg
-
-load0struct.ssValues.EAA_pcg^(1-load0struct.params.EAA_mucg) - ((load0struct.params.EAA_nucg)*load0struct.ssValues.EAA_pttcg^(1-load0struct.params.EAA_mucg)+(1-load0struct.params.EAA_nucg)*load0struct.ssValues.EAA_pnt^(1-load0struct.params.EAA_mucg))
-
+meta.load0struct183c0ee7.ssValues.EABEAA_pimtilde/meta.load0struct183c0ee7.ssValues.EABEAA_pim - (meta.load0struct183c0ee7.exo_names.EAA_cpim*meta.load0struct183c0ee7.params.EAA_thetat/(meta.load0struct183c0ee7.params.EAA_thetat-1)*meta.load0struct183c0ee7.ssValues.EAAEAB_fx/meta.load0struct183c0ee7.ssValues.EAAEAB_gx)
 
 
 
