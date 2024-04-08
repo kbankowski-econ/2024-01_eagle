@@ -1,5 +1,6 @@
 function [y, T] = static_115(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(830)=y(819);
-  y(1131)=y(1120);
-  y(1432)=y(1421);
+  y(1028)=y(1013);
+  y(290)=y(275);
+  y(1397)=y(1382);
+  y(1766)=y(1751);
 end
