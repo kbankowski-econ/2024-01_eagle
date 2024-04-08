@@ -25,6 +25,9 @@ dynare_config
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 dynare('load0.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
+load0output = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'load0', 'Output', 'load0_results.mat'));
+load0struct = struct();
+
 varList = load0output.M_.endo_names(~startsWith(load0output.M_.endo_names, 'AUX_ENDO_'));
 for aVar = string(reshape(varList, 1, []))
     load0struct.ssValues.(aVar) = load0output.oo_.steady_state(strcmp(aVar, varList));
