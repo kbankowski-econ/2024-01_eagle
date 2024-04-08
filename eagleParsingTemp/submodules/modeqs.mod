@@ -495,12 +495,13 @@ model(block, bytecode, cutoff=0);
 @{co}_p@{aItem}^(1-@{co}_mu@{aItem}) = (@{co}_nu@{aItem})*@{co}_ptt@{aItem}^(1-@{co}_mu@{aItem})+(1-@{co}_nu@{aItem})*@{co}_pnt^(1-@{co}_mu@{aItem});
 @#endif
 
-@#if aItem == "c"
+@#if aItem == "i"
 // Auxiliary equation for the price of the investment good in steady state
-@#else
+// this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
 @#if steady
 @{co}_p@{aItem}bar = @{co}_p@{aItem};
 @#endif
+@#else
 @#endif
 
 // Demand for domestic intermediate goods
