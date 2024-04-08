@@ -827,7 +827,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Resource constraint
 //-------------
-
+// TODO: why there is no adjustment cost for gov components
 // Aggregate nominal demand
 @{co}_py*@{co}_y = 
 @#for aItem in demandItems
