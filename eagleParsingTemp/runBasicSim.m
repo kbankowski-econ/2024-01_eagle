@@ -39,6 +39,14 @@ for aVar = string(reshape(varList, 1, []))
     load0struct.ssValues.(aVar) = load0output.oo_.steady_state(strcmp(aVar, varList));
 end
 
+for aExoVar = string(reshape(load0output.M_.exo_names, 1, []))
+    load0struct.exo_names.(aExoVar) = load0output.oo_.exo_steady_state(strcmp(aExoVar, load0output.M_.exo_names));
+end
+
+for aParam = string(reshape(load0output.M_.param_names, 1, []))
+    load0struct.params.(aParam) = load0output.M_.params(strcmp(aParam, load0output.M_.param_names));
+end
+
 %% non-SS version of the model
 dynare('eagleModel.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
