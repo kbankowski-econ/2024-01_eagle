@@ -14,4 +14,4 @@
 @#define countries6 = [ countries[6], countries[7], countries[1], countries[2], countries[3] , countries[4] , countries[5] ]
 @#define countries7 = [ countries[7], countries[1], countries[2], countries[3], countries[4] , countries[5] , countries[6] ]
 
-@#define demandItems = [ "c", "i"]
+@#define demandItems = [ "c", "i", "cg", "ig"]

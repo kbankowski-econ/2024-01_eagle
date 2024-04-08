@@ -555,22 +555,22 @@ model(block, bytecode, cutoff=0);
 //-------------
 
 // Government budget constraint, using @{co}_pg = @{co}_pht
-
+// TODO: check the (1-@{co}_gammab(-1)) adjustment here, which is not in the fiscal extention
 @#if co == countries[1] || co == countries[2] || co == countries[3]  || co == countries[4]  || co == countries[5] 
 
-	@{co}_pnt(-1)*@{co}_cg(-1)+@{co}_pnt(-1)*@{co}_ig(-1)+@{co}_tr(-1)
+	@{co}_pcg(-1)*@{co}_cg(-1)+@{co}_pig(-1)*@{co}_ig(-1)+@{co}_tr(-1)
 	+@{co}_b(-1)*@{co}_pic(-1)^(-1)+@{co}_m(-2)*@{co}_pic(-1)^(-1) = @{co}_tauc(-1)*@{co}_c(-1)+(@{co}_taun(-1)+@{co}_tauwh(-1))*(@{co}_wi(-1)*@{co}_ndi(-1)+@{co}_wj(-1)*@{co}_ndj(-1))+@{co}_tauwf(-1)*@{co}_w(-1)*@{co}_nd(-1)+@{co}_tauk(-1)*(@{co}_rk(-1)*@{co}_u(-1)-(@{co}_gammau(-1)+@{co}_delta)*@{co}_pi(-1))*@{co}_k(-1)+@{co}_taud(-1)*@{co}_d(-1)+@{co}_t(-1)+(@{co}_r(-1)*(1-@{co}_gammab(-1)))^(-1)*@{co}_b+@{co}_m(-1);
 
 @#else
 
-	@{co}_pnt(-1)*@{co}_cg(-1)+@{co}_pnt(-1)*@{co}_ig(-1)+@{co}_tr(-1)
+	@{co}_pcg(-1)*@{co}_cg(-1)+@{co}_pig(-1)*@{co}_ig(-1)+@{co}_tr(-1)
 	+@{co}_b(-1)*@{co}_pic(-1)^(-1)+@{co}_m(-2)*@{co}_pic(-1)^(-1) = @{co}_tauc(-1)*@{co}_c(-1)+(@{co}_taun(-1)+@{co}_tauwh(-1))*(@{co}_wi(-1)*@{co}_ndi(-1)+@{co}_wj(-1)*@{co}_ndj(-1))+@{co}_tauwf(-1)*@{co}_w(-1)*@{co}_nd(-1)+@{co}_tauk(-1)*(@{co}_rk(-1)*@{co}_u(-1)-(@{co}_gammau(-1)+@{co}_delta)*@{co}_pi(-1))*@{co}_k(-1)+@{co}_taud(-1)*@{co}_d(-1)+@{co}_t(-1)+(@{co}_r(-1))^(-1)*@{co}_b+@{co}_m(-1);
 
 @#endif
 
 // Government spending, using @{co}_pg = @{co}_pht
-@{co}_pnt*@{co}_cg = @{co}_cgy*@{co}_pybar*@{co}_ybar;
-@{co}_pnt*@{co}_ig = @{co}_igy*@{co}_pybar*@{co}_ybar;
+@{co}_pcg*@{co}_cg = @{co}_cgy*@{co}_pybar*@{co}_ybar;
+@{co}_pig*@{co}_ig = @{co}_igy*@{co}_pybar*@{co}_ybar;
 
 @#if !steady
 
@@ -787,12 +787,10 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 @{co}_ysn = @{co}_snt*@{co}_nt;
 
 //  nontradables aggregate demand
-//TODO: adjust for the fiscal extension
 @{co}_nt = 
 @#for aItem in demandItems
 +@{co}_nt@{aItem}
 @#endfor
-+@{co}_cg+@{co}_ig
 ;
 
 // Aggregate demand for domestic intermediate goods, using @{co}_hg = @{co}_cg
@@ -821,12 +819,15 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 // Aggregate investment and capital utilisation cost
 @{co}_qi = @{co}_i+@{co}_k*@{co}_gammau;
 
+// Aggregate gov demand components added to use the same structure like in private components
+@{co}_qcg = @{co}_cg;
+@{co}_qig = @{co}_ig;
+
 //-------------
 // Resource constraint
 //-------------
 
 // Aggregate nominal demand
-//TODO: adjust when extending to fiscal
 @{co}_py*@{co}_y = 
 @#for aItem in demandItems
 @#if aItem == "c"
@@ -835,13 +836,15 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 +@{co}_p@{aItem}*@{co}_q@{aItem}
 @#endif
 @#endfor
-+@{co}_pnt*@{co}_cg
-+@{co}_pnt*@{co}_ig
 @#for it in countries - [ co ]
 +@{co}@{it}_rer*@{it}@{co}_pim*@{it}_size/@{co}_size*@{it}@{co}_im
 @#for aItem in demandItems
 @#if !steady
+@#if aItem == "c" || aItem == "i"
 -@{co}@{it}_pim*(@{co}@{it}_im@{aItem}*(1-@{co}@{it}_gammaim@{aItem})/@{co}@{it}_gammaim@{aItem}dag)
+@#else
+-@{co}@{it}_pim*@{co}@{it}_im@{aItem}
+@#endif
 @#else
 -@{co}@{it}_pim*@{co}@{it}_im@{aItem}
 @#endif
