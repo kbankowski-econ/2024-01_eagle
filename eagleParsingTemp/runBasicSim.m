@@ -25,8 +25,14 @@ dynare_config
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 dynare('load0.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
+load0output183c0ee7 = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'load0', 'Output', 'load0_results_183c0ee7.mat'));
+load0struct183c0ee7 = struct();
+
 load0output = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'load0', 'Output', 'load0_results.mat'));
 load0struct = struct();
+
+setdiff(load0output.M_.endo_names, load0output183c0ee7.M_.endo_names);
+setdiff(load0output183c0ee7.M_.endo_names, load0output.M_.endo_names);
 
 varList = load0output.M_.endo_names(~startsWith(load0output.M_.endo_names, 'AUX_ENDO_'));
 for aVar = string(reshape(varList, 1, []))
