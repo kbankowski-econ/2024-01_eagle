@@ -65,6 +65,27 @@ meta.load0struct183c0ee7.ssValues.EABEAA_pimtilde/meta.load0struct183c0ee7.ssVal
     *meta.load0struct183c0ee7.ssValues.EAAEAB_fx ...
     /meta.load0struct183c0ee7.ssValues.EAAEAB_gx)
 
+EAAEAB_gx 
+= EAAEAB_rer*EABEAA_pim*EAB_size/EAA_size*EABEAA_im
++ EAA_xix*EAA_beta*(EABEAA_piim/(EABEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^(EAA_thetat-1)*EAAEAB_gx;
+
+1 
+= (EAAEAB_rer*EABEAA_pim*EAB_size/EAA_size*EABEAA_im)/EAAEAB_gx
++ EAA_xix*EAA_beta*(EABEAA_piim/(EABEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^(EAA_thetat-1);
+
+1 
+- EAA_xix*EAA_beta*(EABEAA_piim/(EABEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^(EAA_thetat-1)
+= (EAAEAB_rer*EABEAA_pim*EAB_size/EAA_size*EABEAA_im)/EAAEAB_gx
+;
+
+meta.load0struct.ssValues.EAAEAB_gx
+=
+(meta.load0struct.ssValues.EAAEAB_rer*meta.load0struct.ssValues.EABEAA_pim*meta.load0struct.params.EAB_size/meta.load0struct.params.EAA_size*meta.load0struct.ssValues.EABEAA_im) ...
+/(1 - meta.load0struct.params.EAA_xix*meta.load0struct.params.EAA_beta*(meta.load0struct.ssValues.EABEAA_piim/(meta.load0struct.ssValues.EABEAA_piim^EAA_chix*meta.load0struct.params.EAA_pi4target^(1/4*(1-meta.load0struct.params.EAA_chix))))^(meta.load0struct.params.EAA_thetat-1))
+
+(meta.load0struct183c0ee7.ssValues.EAAEAB_rer*meta.load0struct183c0ee7.ssValues.EABEAA_pim*meta.load0struct183c0ee7.params.EAB_size/meta.load0struct183c0ee7.params.EAA_size*meta.load0struct183c0ee7.ssValues.EABEAA_im) ...
+/(1 - meta.load0struct183c0ee7.params.EAA_xix*meta.load0struct183c0ee7.params.EAA_beta*(meta.load0struct183c0ee7.ssValues.EABEAA_piim/(meta.load0struct183c0ee7.ssValues.EABEAA_piim^EAA_chix*meta.load0struct183c0ee7.params.EAA_pi4target^(1/4*(1-meta.load0struct183c0ee7.params.EAA_chix))))^(meta.load0struct183c0ee7.params.EAA_thetat-1))
+
 
 %% non-SS version of the model
 dynare('eagleModel.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
