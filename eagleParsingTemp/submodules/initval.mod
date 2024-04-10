@@ -194,24 +194,6 @@ initval;
   @{COUNTRY}_try = 2.20962209625084E-030;
   @{COUNTRY}_trybar = 2.20962209625084E-030;
 
-@#for aItem in demandItems
-  @#if aItem == "c"
-  @{COUNTRY}_tt@{aItem} = 0.16;
-  @#else
-  @#if aItem == "i"
-  @{COUNTRY}_tt@{aItem} = 0.001;
-  @#else
-  @#if aItem == "cg"
-  @{COUNTRY}_tt@{aItem} = 0;
-  @#else
-  @#if aItem == "ig"
-  @{COUNTRY}_tt@{aItem} = 0;
-  @#endif
-  @#endif
-  @#endif
-  @#endif
-@#endfor
-
   @{COUNTRY}_ty = 0;
 
   @{COUNTRY}_u = 1;
@@ -384,6 +366,18 @@ initval;
   @{COUNTRY}_nt@{aItem} = 0.001;
   @#else
   @{COUNTRY}_nt@{aItem} = (1-@{COUNTRY}_nu@{aItem})*(@{COUNTRY}_pnt/@{COUNTRY}_p@{aItem})^(-@{COUNTRY}_mu@{aItem})*@{COUNTRY}_q@{aItem};
+  @#endif
+  @#endif
+@#endfor
+
+@#for aItem in demandItems
+  @#if aItem == "c"
+  @{COUNTRY}_tt@{aItem} = 0.16;
+  @#else
+  @#if aItem == "i"
+  @{COUNTRY}_tt@{aItem} = 0.001;
+  @#else
+  @{COUNTRY}_tt@{aItem} = @{COUNTRY}_nu@{aItem}*(@{COUNTRY}_ptt@{aItem}/@{COUNTRY}_p@{aItem})^(-@{COUNTRY}_mu@{aItem})*@{COUNTRY}_q@{aItem};
   @#endif
   @#endif
 @#endfor
