@@ -53,6 +53,9 @@ for aModel = outputList
     end
 end
 
+meta.load0struct.ssValues.EAA_ttig
+meta.load0struct.ssValues.EAA_ttcg
+
 load0struct.ssValues.EABEAA_pimtilde/load0struct.ssValues.EABEAA_pim ...
     - (load0struct.exo_names.EAA_cpim ...
     *load0struct.params.EAA_thetat/(load0struct.params.EAA_thetat-1) ...
