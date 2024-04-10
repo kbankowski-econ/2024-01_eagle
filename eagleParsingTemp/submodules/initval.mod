@@ -40,8 +40,8 @@ initval;
   @{COUNTRY}_gi = 0.0394976510764103;
   @{COUNTRY}_gj = 0.735309110981097;
   @{COUNTRY}_gn = 0.18;
-  @{COUNTRY}_cgy = 0.01/2;
-@{COUNTRY}_igy = 0.01/2;
+  @{COUNTRY}_cgy = 0.01/10;
+@{COUNTRY}_igy = 0.01/10;
 
   @{COUNTRY}_ht = 0.08;
 
@@ -207,8 +207,8 @@ initval;
     @# endif
   @#endif
   
-  @{COUNTRY}_cgybar = 0.01/2;
-  @{COUNTRY}_igybar = 0.01/2;
+  @{COUNTRY}_cgybar = 0.01/10;
+  @{COUNTRY}_igybar = 0.01/10;
   @{COUNTRY}_taucbar = 0;
   @{COUNTRY}_taudbar = 0;
   @{COUNTRY}_taukbar = 0;
