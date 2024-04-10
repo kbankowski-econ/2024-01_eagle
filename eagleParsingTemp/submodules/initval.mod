@@ -24,8 +24,6 @@ initval;
   @{COUNTRY}_fj = 1.45356923003055E-007;
   @{COUNTRY}_fn = 0.015;
 
-  @{COUNTRY}_cg = 0;
-  @{COUNTRY}_ig = 0;
   @#if(COUNTRY != "US")
     @{COUNTRY}_gammab = 0;
   @#endif
@@ -42,8 +40,8 @@ initval;
   @{COUNTRY}_gi = 0.0394976510764103;
   @{COUNTRY}_gj = 0.735309110981097;
   @{COUNTRY}_gn = 0.18;
-  @{COUNTRY}_cgy = 0;
-  @{COUNTRY}_igy = 0;
+  @{COUNTRY}_cgy = 0.01;
+@{COUNTRY}_igy = 0.01;
 
   @{COUNTRY}_ht = 0.08;
 // NOTE: since gov components are zero all their subcomponents (i.e., ht, tt, nt, im) need to be zero
@@ -287,6 +285,9 @@ initval;
   @{COUNTRY}_yst = 0.161;
   @{COUNTRY}_yshare = 0.25;
 
+  @{COUNTRY}_cg = @{COUNTRY}_cgy*@{COUNTRY}_pybar*@{COUNTRY}_ybar/@{COUNTRY}_pnt;
+  @{COUNTRY}_ig = @{COUNTRY}_igy*@{COUNTRY}_pybar*@{COUNTRY}_ybar/@{COUNTRY}_pnt;
+
   @{COUNTRY}_zcon = 1;
   @{COUNTRY}_zinv = 1;
   @{COUNTRY}_zn = 1;
@@ -303,8 +304,8 @@ initval;
     @# endif
   @#endif
   
-  @{COUNTRY}_cgybar = 0;
-  @{COUNTRY}_igybar = 0;
+  @{COUNTRY}_cgybar = 0.01;
+  @{COUNTRY}_igybar = 0.01;
   @{COUNTRY}_taucbar = 0;
   @{COUNTRY}_taudbar = 0;
   @{COUNTRY}_taukbar = 0;
