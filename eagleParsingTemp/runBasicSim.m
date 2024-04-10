@@ -53,8 +53,12 @@ for aModel = outputList
     end
 end
 
-meta.load0struct.ssValues.EAA_imig
-meta.load0struct.ssValues.EAA_imcg
+meta.load0struct.ssValues.EAAEAC_imig
+meta.load0struct.ssValues.EAAEAC_imcg
+meta.load0struct.ssValues.EAAEAC_imigy
+meta.load0struct.ssValues.EAAEAC_imcgy
+meta.load0struct.ssValues.EAARW_imig
+meta.load0struct.ssValues.EAARW_imcg
 
 load0struct.ssValues.EABEAA_pimtilde/load0struct.ssValues.EABEAA_pim ...
     - (load0struct.exo_names.EAA_cpim ...

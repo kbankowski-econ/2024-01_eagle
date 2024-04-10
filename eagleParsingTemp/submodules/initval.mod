@@ -248,24 +248,6 @@ initval;
       @{COUNTRY}@{COUNTRY1}_gx = 0.04;
       @{COUNTRY}@{COUNTRY1}_im = 0.03;
 
-@#for aItem in demandItems
-  @#if aItem == "c"
-      @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.02;
-  @#else
-  @#if aItem == "i"
-      @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.0003;
-  @#else
-  @#if aItem == "cg"
-      @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0;
-  @#else
-  @#if aItem == "ig"
-      @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0;
-  @#endif
-  @#endif
-  @#endif
-  @#endif
-@#endfor
-
       @{COUNTRY}@{COUNTRY1}_sx = 0.999999999999999;
 @#for aItem in demandItems
       @{COUNTRY}@{COUNTRY1}_gammaim@{aItem} = 0;
@@ -284,24 +266,6 @@ initval;
     @#if (COUNTRY != COUNTRY1)
       
       // Shares
-@#for aItem in demandItems
-  @#if aItem == "c"
-      @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.09;
-  @#else
-  @#if aItem == "i"
-      @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.0008;
-  @#else
-  @#if aItem == "cg"
-      @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0;
-  @#else
-  @#if aItem == "ig"
-      @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0;
-  @#endif
-  @#endif
-  @#endif
-  @#endif
-@#endfor
-
       @{COUNTRY}@{COUNTRY1}_excy = 0.09;
       @{COUNTRY}@{COUNTRY1}_exiy = 0.0008;
     @#endif
@@ -370,6 +334,24 @@ initval;
   @#endif
 @#endfor
 
+@#for COUNTRY1 IN countries
+@#if (COUNTRY != COUNTRY1)
+@#for aItem in demandItems
+  @#if aItem == "c"
+      @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.02;
+      @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.09;
+  @#else
+    @#if aItem == "i"
+        @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.0003;
+        @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.0008;
+    @#else
+        @{COUNTRY}@{COUNTRY1}_im@{aItem} = @{COUNTRY}@{COUNTRY1}_num@{aItem}*(@{COUNTRY}@{COUNTRY1}_pim/@{COUNTRY}_pim@{aItem})^(-@{COUNTRY}_mum@{aItem})*@{COUNTRY}_im@{aItem};
+        @{COUNTRY}@{COUNTRY1}_im@{aItem}y = @{COUNTRY}@{COUNTRY1}_pim*@{COUNTRY}@{COUNTRY1}_im@{aItem}/(@{COUNTRY}_py*@{COUNTRY}_y);
+    @#endif
+  @#endif
+@#endfor
+@#endif
+@#endfor
 
 @#endfor
 
