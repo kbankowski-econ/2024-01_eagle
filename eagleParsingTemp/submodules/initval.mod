@@ -48,27 +48,6 @@ initval;
   @{COUNTRY}_i = 0.00209600391746659;
   @{COUNTRY}_ii = 0.00279467188995545;
   @{COUNTRY}_im = 0.08;
-@#for aItem in demandItems
-  @#if aItem == "c"
-  @{COUNTRY}_im@{aItem} = 0.08;
-  @{COUNTRY}_im@{aItem}y = 0.25;
-  @#else
-  @#if aItem == "i"
-  @{COUNTRY}_im@{aItem} = 0.0005;
-  @{COUNTRY}_im@{aItem}y = 0.0016;
-  @#else
-  @#if aItem == "cg"
-  @{COUNTRY}_im@{aItem} = 0;
-  @{COUNTRY}_im@{aItem}y = 0;
-  @#else
-  @#if aItem == "ig"
-  @{COUNTRY}_im@{aItem} = 0;
-  @{COUNTRY}_im@{aItem}y = 0;
-  @#endif
-  @#endif
-  @#endif
-  @#endif
-@#endfor
   @{COUNTRY}_imy = 0.25;
   @{COUNTRY}_internalrer = 1;
   @{COUNTRY}_iy = 0.00647482014388443;
@@ -375,6 +354,22 @@ initval;
   @#endif
   @#endif
 @#endfor
+
+@#for aItem in demandItems
+  @#if aItem == "c"
+  @{COUNTRY}_im@{aItem} = 0.08;
+  @{COUNTRY}_im@{aItem}y = 0.25;
+  @#else
+  @#if aItem == "i"
+  @{COUNTRY}_im@{aItem} = 0.0005;
+  @{COUNTRY}_im@{aItem}y = 0.0016;
+  @#else
+  @{COUNTRY}_im@{aItem} = (1-@{COUNTRY}_nut@{aItem})*(@{COUNTRY}_pim@{aItem}/@{COUNTRY}_ptt@{aItem})^(-@{COUNTRY}_mut@{aItem})*@{COUNTRY}_tt@{aItem};
+  @{COUNTRY}_im@{aItem}y = @{COUNTRY}_pim@{aItem}*@{COUNTRY}_im@{aItem}/(@{COUNTRY}_py*@{COUNTRY}_y);
+  @#endif
+  @#endif
+@#endfor
+
 
 @#endfor
 
