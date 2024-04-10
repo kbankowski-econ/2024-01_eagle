@@ -116,28 +116,6 @@ initval;
   @{COUNTRY}_nj = 0.449007091712631;
   @{COUNTRY}_nt = 0.162;
 
-
-
-@#for aItem in demandItems
-  @#if aItem == "c"
-  @{COUNTRY}_nt@{aItem} = 0.161;
-  @#else
-  @#if aItem == "i"
-  @{COUNTRY}_nt@{aItem} = 0.001;
-  @#else
-  @#if aItem == "cg"
-  @{COUNTRY}_nt@{aItem} = 0;
-  @#else
-  @#if aItem == "ig"
-  @{COUNTRY}_nt@{aItem} = 0;
-  @#endif
-  @#endif
-  @#endif
-  @#endif
-@#endfor
-
-
-
   @{COUNTRY}_pex = 1;
   @{COUNTRY}_pht = 0.999999999999995;
   @{COUNTRY}_phttilde = 0.999999999999995;
@@ -403,7 +381,21 @@ initval;
       @{COUNTRY}@{COUNTRY1}_exiy = 0.0008;
     @#endif
   @#endfor
+
+@#for aItem in demandItems
+  @#if aItem == "c"
+  @{COUNTRY}_nt@{aItem} = 0.161;
+  @#else
+  @#if aItem == "i"
+  @{COUNTRY}_nt@{aItem} = 0.001;
+  @#else
+  @{COUNTRY}_nt@{aItem} = (1-@{COUNTRY}_nu@{aItem})*(@{COUNTRY}_pnt/@{COUNTRY}_p@{aItem})^(-@{COUNTRY}_mu@{aItem})*@{COUNTRY}_q@{aItem};
+  @#endif
+  @#endif
 @#endfor
+
+@#endfor
+
  
 // Euro Area only
 EAA_bh = 0;
