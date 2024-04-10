@@ -156,24 +156,6 @@ initval;
   @{COUNTRY}_q = 0.999999999999969;
   @{COUNTRY}_qbar = 0.999999999999969;
 
-@#for aItem in demandItems
-  @#if aItem == "c"
-  @{COUNTRY}_q@{aItem} =  0.321620156669017*2;
-  @#else
-  @#if aItem == "i"
-  @{COUNTRY}_q@{aItem} =  0.00209600391746659*2;
-  @#else
-  @#if aItem == "cg"
-  @{COUNTRY}_q@{aItem} =  0;
-  @#else
-  @#if aItem == "ig"
-  @{COUNTRY}_q@{aItem} =  0;
-  @#endif
-  @#endif
-  @#endif
-  @#endif
-@#endfor
-
 
   @{COUNTRY}_r = 1.01010101010101;
   @{COUNTRY}_reer = 1;
@@ -381,6 +363,18 @@ initval;
       @{COUNTRY}@{COUNTRY1}_exiy = 0.0008;
     @#endif
   @#endfor
+
+@#for aItem in demandItems
+  @#if aItem == "c"
+  @{COUNTRY}_q@{aItem} =  0.321620156669017*2;
+  @#else
+  @#if aItem == "i"
+  @{COUNTRY}_q@{aItem} =  0.00209600391746659*2;
+  @#else
+  @{COUNTRY}_q@{aItem} =  @{COUNTRY}_@{aItem};
+  @#endif
+  @#endif
+@#endfor
 
 @#for aItem in demandItems
   @#if aItem == "c"
