@@ -44,24 +44,6 @@ initval;
 @{COUNTRY}_igy = 0.01;
 
   @{COUNTRY}_ht = 0.08;
-// NOTE: since gov components are zero all their subcomponents (i.e., ht, tt, nt, im) need to be zero
-@#for aItem in demandItems
-  @#if aItem == "c"
-  @{COUNTRY}_ht@{aItem} = 0.08;
-  @#else
-  @#if aItem == "i"
-  @{COUNTRY}_ht@{aItem} =  0.0005;
-  @#else
-  @#if aItem == "cg"
-  @{COUNTRY}_ht@{aItem} = 0;
-  @#else
-  @#if aItem == "ig"
-  @{COUNTRY}_ht@{aItem} =  0;
-  @#endif
-  @#endif
-  @#endif
-  @#endif
-@#endfor
 
   @{COUNTRY}_i = 0.00209600391746659;
   @{COUNTRY}_ii = 0.00279467188995545;
@@ -378,6 +360,18 @@ initval;
   @{COUNTRY}_tt@{aItem} = 0.001;
   @#else
   @{COUNTRY}_tt@{aItem} = @{COUNTRY}_nu@{aItem}*(@{COUNTRY}_ptt@{aItem}/@{COUNTRY}_p@{aItem})^(-@{COUNTRY}_mu@{aItem})*@{COUNTRY}_q@{aItem};
+  @#endif
+  @#endif
+@#endfor
+
+@#for aItem in demandItems
+  @#if aItem == "c"
+  @{COUNTRY}_ht@{aItem} = 0.08;
+  @#else
+  @#if aItem == "i"
+  @{COUNTRY}_ht@{aItem} =  0.0005;
+  @#else
+  @{COUNTRY}_ht@{aItem} = @{COUNTRY}_nut@{aItem}*(@{COUNTRY}_pht/@{COUNTRY}_ptt@{aItem})^(-@{COUNTRY}_mut@{aItem})*@{COUNTRY}_tt@{aItem};
   @#endif
   @#endif
 @#endfor
