@@ -19,4 +19,4 @@ values 0.01;
 end;
 
 perfect_foresight_setup(periods = 100);
-perfect_foresight_solver(solve_algo = 5, markowitz = 10);
+perfect_foresight_solver(solve_algo = 5);
