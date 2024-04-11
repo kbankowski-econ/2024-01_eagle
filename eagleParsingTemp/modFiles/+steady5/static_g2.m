@@ -18,6 +18,6 @@ function g2 = static_g2(T, y, x, params, T_flag)
 if T_flag
     T = steady5.static_g2_tt(T, y, x, params);
 end
-g2 = sparse([],[],[],2241,5022081);
+g2 = sparse([],[],[],2717,7382089);
 
 end

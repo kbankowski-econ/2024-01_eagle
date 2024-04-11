@@ -1,4 +1,3 @@
 function [y, T] = dynamic_90(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(4200)=y(3808)*params(385)/params(449)+y(3507)*params(317)/params(449)+y(3206)*params(252)/params(449)+y(2905)*params(187)/params(449)+y(2303)*params(57)/params(449)+y(2604)*params(122)/params(449);
-  y(3598)=y(4108)*params(449)/params(317)+y(3807)*params(385)/params(317)+y(3204)*params(252)/params(317)+y(2903)*params(187)/params(317)+y(2301)*params(57)/params(317)+y(2602)*params(122)/params(317);
+  y(5132)=y(4648)*params(457)/params(533)+y(4279)*params(377)/params(533)+y(3910)*params(300)/params(533)+y(3541)*params(223)/params(533)+y(2803)*params(69)/params(533)+y(3172)*params(146)/params(533);
 end
