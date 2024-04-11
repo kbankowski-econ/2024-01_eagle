@@ -165,7 +165,7 @@ Finding the optimal block decomposition of the dynamic model...
   the largest simultaneous block has 1654 equation(s)
                                  and 1491 feedback variable(s).
 Preprocessing completed.
-Preprocessing time: 0h00m05s.
+Preprocessing time: 0h00m04s.
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 1
@@ -2754,8 +2754,6 @@ EAB_bh              		 0
 EAC_bh              		 6.28178e-16
 EAD_bh              		 -1.94814e-15
 EAE_bh              		 6.29809e-16
-<a href="matlab: opentoline('/Users/kk/Documents/0000-00_work/2024-01_eagle/eagleParsingTemp/modFiles/+shock_eab_gy1/driver.m',59382,1)">59382 </a>options_.solve_algo = 14;
-if system_dependent('IsDebugMode')==1, dbcont; end
 MODEL SIMULATION: (method=Sparse LU solver on stacked system)
 ------------------------------------
       Iteration no. 1
@@ -2763,14 +2761,14 @@ MODEL SIMULATION: (method=Sparse LU solver on stacked system)
       2-norm error   = 1.099e-01
       1-norm error   = 2.215e-01
 ------------------------------------
-(** 24.59 seconds **)
+(** 24.01 seconds **)
 ------------------------------------
       Iteration no. 2
       Inf-norm error = 7.604e-03
       2-norm error   = 1.591e-02
       1-norm error   = 8.240e-02
 ------------------------------------
-(** 21.60 seconds **)
+(** 21.45 seconds **)
 ------------------------------------
       Iteration no. 3
       Inf-norm error = 2.868e-06
@@ -2780,5 +2778,5 @@ MODEL SIMULATION: (method=Sparse LU solver on stacked system)
 
 Perfect foresight solution found.
 
-Total computing time : 0h00m53s
+Total computing time : 0h00m47s
 Note: 145 warning(s) encountered in the preprocessor
