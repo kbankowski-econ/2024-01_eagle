@@ -16,6 +16,9 @@ shocks;
 var EAB_epsgi;
 periods 1:4;
 values 0.01;
+var EAB_epsgc;
+periods 1:4;
+values 0.01;
 end;
 
 perfect_foresight_setup(periods = 100);

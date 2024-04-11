@@ -2758,39 +2758,39 @@ MODEL SIMULATION: (method=Sparse LU solver on stacked system)
 ------------------------------------
       Iteration no. 1
       Inf-norm error = 1.889e-01
-      2-norm error   = 4.733e-01
-      1-norm error   = 2.199e+00
+      2-norm error   = 4.859e-01
+      1-norm error   = 2.419e+00
 ------------------------------------
-(** 24.18 seconds **)
+(** 24.43 seconds **)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 9.094e-02
-      2-norm error   = 2.574e-01
-      1-norm error   = 3.245e+00
+      Inf-norm error = 1.476e-01
+      2-norm error   = 3.237e-01
+      1-norm error   = 3.625e+00
 ------------------------------------
-(** 22.18 seconds **)
+(** 23.18 seconds **)
 ------------------------------------
       Iteration no. 3
-      Inf-norm error = 1.988e-03
-      2-norm error   = 3.806e-03
-      1-norm error   = 2.858e-02
+      Inf-norm error = 1.983e-03
+      2-norm error   = 3.881e-03
+      1-norm error   = 2.993e-02
 ------------------------------------
-(** 21.69 seconds **)
+(** 21.37 seconds **)
 ------------------------------------
       Iteration no. 4
-      Inf-norm error = 5.286e-04
-      2-norm error   = 7.840e-04
-      1-norm error   = 2.352e-03
+      Inf-norm error = 5.269e-04
+      2-norm error   = 7.818e-04
+      1-norm error   = 2.346e-03
 ------------------------------------
-(** 21.82 seconds **)
+(** 21.79 seconds **)
 ------------------------------------
       Iteration no. 5
-      Inf-norm error = 4.890e-08
-      2-norm error   = 1.066e-07
-      1-norm error   = 3.850e-07
+      Inf-norm error = 4.843e-08
+      2-norm error   = 1.060e-07
+      1-norm error   = 3.830e-07
 ------------------------------------
 
 Perfect foresight solution found.
 
-Total computing time : 0h01m31s
+Total computing time : 0h01m32s
 Note: 145 warning(s) encountered in the preprocessor
