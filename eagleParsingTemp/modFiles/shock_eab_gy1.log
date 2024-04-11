@@ -2754,60 +2754,29 @@ EAB_bh              		 0
 EAC_bh              		 6.28178e-16
 EAD_bh              		 -1.94814e-15
 EAE_bh              		 6.29809e-16
-MODEL SIMULATION: (method=LBJ with Sparse Gaussian Elimination)
+MODEL SIMULATION: (method=Sparse LU solver on stacked system)
 ------------------------------------
       Iteration no. 1
       Inf-norm error = 5.494e-02
       2-norm error   = 1.099e-01
       1-norm error   = 2.215e-01
 ------------------------------------
-(** 56.13 seconds **)
+(** 24.18 seconds **)
 ------------------------------------
       Iteration no. 2
       Inf-norm error = 7.604e-03
       2-norm error   = 1.591e-02
       1-norm error   = 8.240e-02
 ------------------------------------
-(** 61.10 seconds **)
+(** 22.01 seconds **)
 ------------------------------------
       Iteration no. 3
-      Inf-norm error = 1.403e-04
-      2-norm error   = 1.985e-04
-      1-norm error   = 6.441e-04
+      Inf-norm error = 2.868e-06
+      2-norm error   = 5.650e-06
+      1-norm error   = 2.539e-05
 ------------------------------------
-(** 65.44 seconds **)
-------------------------------------
-      Iteration no. 4
-      Inf-norm error = 1.774e-05
-      2-norm error   = 2.489e-05
-      1-norm error   = 1.447e-04
-------------------------------------
-(** 67.67 seconds **)
-------------------------------------
-      Iteration no. 5
-      Inf-norm error = 3.188e-05
-      2-norm error   = 6.815e-05
-      1-norm error   = 3.530e-04
-------------------------------------
-(** 108.75 seconds **)
-------------------------------------
-      Iteration no. 6
-      Inf-norm error = 8.729e-05
-      2-norm error   = 1.114e-04
-      1-norm error   = 4.868e-04
-------------------------------------
-{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('perfect_foresight_solver_core')" style="font-weight:bold">perfect_foresight_solver_core</a>
 
+Perfect foresight solution found.
 
-In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('perfect_foresight_solver>homotopy_loop', '/Applications/Dynare/6.0-arm64/matlab/perfect-foresight-models/perfect_foresight_solver.m', 357)" style="font-weight:bold">perfect_foresight_solver>homotopy_loop</a> (<a href="matlab: opentoline('/Applications/Dynare/6.0-arm64/matlab/perfect-foresight-models/perfect_foresight_solver.m',357,0)">line 357</a>)
-        [endo_simul, success, maxerror, solver_iter, per_block_status] = perfect_foresight_solver_core(endo_simul, exo_simul, steady_state, exo_steady_state, M_, options_);
-
-In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('perfect_foresight_solver', '/Applications/Dynare/6.0-arm64/matlab/perfect-foresight-models/perfect_foresight_solver.m', 153)" style="font-weight:bold">perfect_foresight_solver</a> (<a href="matlab: opentoline('/Applications/Dynare/6.0-arm64/matlab/perfect-foresight-models/perfect_foresight_solver.m',153,0)">line 153</a>)
-[completed_share, endo_simul, exo_simul, steady_state, exo_steady_state, iteration, maxerror, solver_iter, per_block_status] = homotopy_loop(M_,options_,oo_,options_.simul.homotopy_max_completion_share, shareorig, endoorig, exoorig, endobase, exobase, initperiods, simperiods, lastperiods, recompute_final_steady_state, oo_.steady_state, oo_.exo_steady_state);
-
-In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('shock_eab_gy1.driver', '/Users/kk/Documents/0000-00_work/2024-01_eagle/eagleParsingTemp/modFiles/+shock_eab_gy1/driver.m', 59383)" style="font-weight:bold">shock_eab_gy1.driver</a> (<a href="matlab: opentoline('/Users/kk/Documents/0000-00_work/2024-01_eagle/eagleParsingTemp/modFiles/+shock_eab_gy1/driver.m',59383,0)">line 59383</a>)
-[oo_, Simulated_time_series] = perfect_foresight_solver(M_, options_, oo_);
-
-In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('dynare', '/Applications/Dynare/6.0-arm64/matlab/dynare.m', 310)" style="font-weight:bold">dynare</a> (<a href="matlab: opentoline('/Applications/Dynare/6.0-arm64/matlab/dynare.m',310,0)">line 310</a>)
-    evalin('base',[fname '.driver']);
-} 
+Total computing time : 0h00m47s
+Note: 145 warning(s) encountered in the preprocessor
