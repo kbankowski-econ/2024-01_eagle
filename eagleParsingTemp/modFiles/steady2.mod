@@ -74,109 +74,109 @@ steady(homotopy_steps = 5, maxit=20);
 
 disp('Trade matrix')
 homotopy_setup;
-EAA_imcy, 0.2010;
-EAAEAB_imcy, 0.008375;
-EAAEAC_imcy, 0.008375;
-EAAEAD_imcy, 0.008375;
-EAAEAE_imcy, 0.0266875;
-EAAUS_imcy, 0.0041125;
+EAA_imcy, 0.9*0.2010;
+EAAEAB_imcy, 0.9*0.008375;
+EAAEAC_imcy, 0.9*0.008375;
+EAAEAD_imcy, 0.9*0.008375;
+EAAEAE_imcy, 0.9*0.0266875;
+EAAUS_imcy, 0.9*0.0041125;
 
-EAB_imcy, 0.2010;
-EABEAA_imcy, 0.008375;
-EABEAC_imcy, 0.008375;
-EABEAD_imcy, 0.008375;
-EABEAE_imcy, 0.0266875;
-EABRW_imcy, 0.145075;
+EAB_imcy, 0.9*0.2010;
+EABEAA_imcy, 0.9*0.008375;
+EABEAC_imcy, 0.9*0.008375;
+EABEAD_imcy, 0.9*0.008375;
+EABEAE_imcy, 0.9*0.0266875;
+EABRW_imcy, 0.9*0.145075;
 
-EAC_imcy, 0.2010;
-EACEAB_imcy, 0.008375;
-EACEAD_imcy, 0.008375;
-EACEAE_imcy, 0.0266875;
-EACRW_imcy, 0.145075;
-EACUS_imcy, 0.0041125;
+EAC_imcy, 0.9*0.2010;
+EACEAB_imcy, 0.9*0.008375;
+EACEAD_imcy, 0.9*0.008375;
+EACEAE_imcy, 0.9*0.0266875;
+EACRW_imcy, 0.9*0.145075;
+EACUS_imcy, 0.9*0.0041125;
 
-EAD_imcy, 0.2010;
-EADEAA_imcy, 0.008375;
-EADEAC_imcy, 0.008375;
-EADEAE_imcy, 0.0266875;
-EADRW_imcy, 0.145075;
-EADUS_imcy, 0.0041125;
-
-// done
-EAE_imcy, 0.1839;
-EAEEAA_imcy, 0.0872/4;
-EAEEAB_imcy, 0.0872/4;
-EAEEAD_imcy, 0.0872/4;
-EAERW_imcy, 0.0852;
-EAEUS_imcy, 0.0115;
+EAD_imcy, 0.9*0.2010;
+EADEAA_imcy, 0.9*0.008375;
+EADEAC_imcy, 0.9*0.008375;
+EADEAE_imcy, 0.9*0.0266875;
+EADRW_imcy, 0.9*0.145075;
+EADUS_imcy, 0.9*0.0041125;
 
 // done
-RW_imcy,  0.0860;
-RWEAA_imcy, 0.0354/4;
-RWEAB_imcy, 0.0354/4;
-RWEAC_imcy, 0.0354/4;
-RWEAE_imcy, 0.0106;
-RWUS_imcy, 0.0400;
+EAE_imcy, 0.9*0.1839;
+EAEEAA_imcy, 0.9*0.0872/4;
+EAEEAB_imcy, 0.9*0.0872/4;
+EAEEAD_imcy, 0.9*0.0872/4;
+EAERW_imcy, 0.9*0.0852;
+EAEUS_imcy, 0.9*0.0115;
 
 // done
-US_imcy,  0.0726;
-USEAA_imcy, 0.0078/4;
-USEAB_imcy, 0.0078/4;
-USEAC_imcy, 0.0078/4;
-USEAD_imcy, 0.0078/4;
-USRW_imcy, 0.0617;
-
-EAA_imiy, 0.0366;
-EAAEAB_imiy, 0.001525;
-EAAEAC_imiy, 0.001525;
-EAAEAD_imiy, 0.001525;
-EAAEAE_imiy, 0.0193375;
-EAAUS_imiy, 0.0056875;
-
-EAB_imiy, 0.0366;
-EABEAA_imiy, 0.001525;
-EABEAC_imiy, 0.001525;
-EABEAD_imiy, 0.001525;
-EABEAE_imiy, 0.0193375;
-EABRW_imiy, 0.007;
-
-EAC_imiy, 0.0366;
-EACEAB_imiy, 0.001525;
-EACEAD_imiy, 0.001525;
-EACEAE_imiy, 0.0193375;
-EACRW_imiy, 0.007;
-EACUS_imiy, 0.0056875;
-
-EAD_imiy, 0.0366;
-EADEAC_imiy, 0.001525;
-EADEAA_imiy, 0.001525;
-EADEAE_imiy, 0.0193375;
-EADRW_imiy, 0.007;
-EADUS_imiy, 0.0056875;
+RW_imcy, 0.9* 0.0860;
+RWEAA_imcy, 0.9*0.0354/4;
+RWEAB_imcy, 0.9*0.0354/4;
+RWEAC_imcy, 0.9*0.0354/4;
+RWEAE_imcy, 0.9*0.0106;
+RWUS_imcy, 0.9*0.0400;
 
 // done
-EAE_imiy, 0.0920;
-EAEEAB_imiy, 0.0436/4;
-EAEEAD_imiy, 0.0436/4;
-EAEEAA_imiy, 0.0436/4;
-EAERW_imiy, 0.0426;
-EAEUS_imiy, 0.0058;
+US_imcy, 0.9* 0.0726;
+USEAA_imcy, 0.9*0.0078/4;
+USEAB_imcy, 0.9*0.0078/4;
+USEAC_imcy, 0.9*0.0078/4;
+USEAD_imcy, 0.9*0.0078/4;
+USRW_imcy, 0.9*0.0617;
+
+EAA_imiy, 0.9*0.0366;
+EAAEAB_imiy, 0.9*0.001525;
+EAAEAC_imiy, 0.9*0.001525;
+EAAEAD_imiy, 0.9*0.001525;
+EAAEAE_imiy, 0.9*0.0193375;
+EAAUS_imiy, 0.9*0.0056875;
+
+EAB_imiy, 0.9*0.0366;
+EABEAA_imiy, 0.9*0.001525;
+EABEAC_imiy, 0.9*0.001525;
+EABEAD_imiy, 0.9*0.001525;
+EABEAE_imiy, 0.9*0.0193375;
+EABRW_imiy, 0.9*0.007;
+
+EAC_imiy, 0.9*0.0366;
+EACEAB_imiy, 0.9*0.001525;
+EACEAD_imiy, 0.9*0.001525;
+EACEAE_imiy, 0.9*0.0193375;
+EACRW_imiy, 0.9*0.007;
+EACUS_imiy, 0.9*0.0056875;
+
+EAD_imiy, 0.9*0.0366;
+EADEAC_imiy, 0.9*0.001525;
+EADEAA_imiy, 0.9*0.001525;
+EADEAE_imiy, 0.9*0.0193375;
+EADRW_imiy, 0.9*0.007;
+EADUS_imiy, 0.9*0.0056875;
 
 // done
-RW_imiy,  0.0630;
-RWEAA_imiy, 0.0219/4;
-RWEAC_imiy, 0.0219/4;
-RWEAB_imiy, 0.0219/4;
-RWEAE_imiy, 0.0073;
-RWUS_imiy, 0.0338;
+EAE_imiy, 0.9*0.0920;
+EAEEAB_imiy, 0.9*0.0436/4;
+EAEEAD_imiy, 0.9*0.0436/4;
+EAEEAA_imiy, 0.9*0.0436/4;
+EAERW_imiy, 0.9*0.0426;
+EAEUS_imiy, 0.9*0.0058;
 
 // done
-US_imiy,  0.0420;
-USEAA_imiy, 0.0037/4;
-USEAB_imiy, 0.0037/4;
-USEAC_imiy, 0.0037/4;
-USEAD_imiy, 0.0037/4;
-USRW_imiy, 0.0364;
+RW_imiy, 0.9* 0.0630;
+RWEAA_imiy, 0.9*0.0219/4;
+RWEAC_imiy, 0.9*0.0219/4;
+RWEAB_imiy, 0.9*0.0219/4;
+RWEAE_imiy, 0.9*0.0073;
+RWUS_imiy, 0.9*0.0338;
+
+// done
+US_imiy, 0.9* 0.0420;
+USEAA_imiy, 0.9*0.0037/4;
+USEAB_imiy, 0.9*0.0037/4;
+USEAC_imiy, 0.9*0.0037/4;
+USEAD_imiy, 0.9*0.0037/4;
+USRW_imiy, 0.9*0.0364;
 
 // Sizes
 EAA_size, 0.16/4;
