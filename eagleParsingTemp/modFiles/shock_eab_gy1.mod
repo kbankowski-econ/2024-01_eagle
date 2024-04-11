@@ -18,4 +18,4 @@ periods 1:4;
 values 0.01;
 end;
 
-simul(periods = 200, stack_solve_algo = 5, markowitz = 5);
+simul(periods = 200);
