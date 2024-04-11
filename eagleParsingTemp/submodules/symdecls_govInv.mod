@@ -169,13 +169,16 @@ var
  @{co}_pht
  @{co}_phttilde
  @{co}_pi
+ @{co}_pcg
+ @{co}_pig
  @{co}_pic
  @{co}_pic4
  @{co}_piex4
  @{co}_piht
- @{co}_piimc
+@#for aItem in demandItems
+ @{co}_piim@{aItem}
+@#endfor  
  @{co}_piimc4
- @{co}_piimi
  @{co}_pim
 @#for aItem in demandItems
  @{co}_pim@{aItem}
