@@ -60,13 +60,13 @@ steady(homotopy_steps = 5);
 
 disp('iy')
 homotopy_setup;
-EAA_iy, 0.20 - EAA_igybar;
-US_iy,  0.20 - US_igybar;
-RW_iy,  0.20 - RW_igybar;
-EAB_iy, 0.20 - EAB_igybar;
-EAC_iy, 0.20 - EAC_igybar;
-EAD_iy, 0.20 - EAD_igybar;
-EAE_iy, 0.20 - EAE_igybar;
+EAA_iy, 0.22 - EAA_igybar;
+US_iy,  0.22 - US_igybar;
+RW_iy,  0.22 - RW_igybar;
+EAB_iy, 0.22 - EAB_igybar;
+EAC_iy, 0.22 - EAC_igybar;
+EAD_iy, 0.22 - EAD_igybar;
+EAE_iy, 0.22 - EAE_igybar;
 end;
 steady(homotopy_steps = 5, maxit=20);
 
