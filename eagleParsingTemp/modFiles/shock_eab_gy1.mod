@@ -18,4 +18,5 @@ periods 1:4;
 values 0.01;
 end;
 
-simul(solve_algo = 4, periods = 100);
+perfect_foresight_setup(periods = 100);
+perfect_foresight_solver(solve_algo = 4);
