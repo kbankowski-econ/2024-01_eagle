@@ -4692,6 +4692,7 @@ EAA_qig = EAA_ig;
 //-------------
 // Resource constraint
 //-------------
+// TODO: why there is no adjustment cost for gov components
 // Aggregate nominal demand
 EAA_py*EAA_y = 
 +EAA_qc
@@ -5999,6 +6000,7 @@ EAB_qig = EAB_ig;
 //-------------
 // Resource constraint
 //-------------
+// TODO: why there is no adjustment cost for gov components
 // Aggregate nominal demand
 EAB_py*EAB_y = 
 +EAB_qc
@@ -7307,6 +7309,7 @@ EAC_qig = EAC_ig;
 //-------------
 // Resource constraint
 //-------------
+// TODO: why there is no adjustment cost for gov components
 // Aggregate nominal demand
 EAC_py*EAC_y = 
 +EAC_qc
@@ -8618,6 +8621,7 @@ EAD_qig = EAD_ig;
 //-------------
 // Resource constraint
 //-------------
+// TODO: why there is no adjustment cost for gov components
 // Aggregate nominal demand
 EAD_py*EAD_y = 
 +EAD_qc
@@ -9922,6 +9926,7 @@ EAE_qig = EAE_ig;
 //-------------
 // Resource constraint
 //-------------
+// TODO: why there is no adjustment cost for gov components
 // Aggregate nominal demand
 EAE_py*EAE_y = 
 +EAE_qc
@@ -11232,6 +11237,7 @@ RW_qig = RW_ig;
 //-------------
 // Resource constraint
 //-------------
+// TODO: why there is no adjustment cost for gov components
 // Aggregate nominal demand
 RW_py*RW_y = 
 +RW_qc
@@ -12542,6 +12548,7 @@ US_qig = US_ig;
 //-------------
 // Resource constraint
 //-------------
+// TODO: why there is no adjustment cost for gov components
 // Aggregate nominal demand
 US_py*US_y = 
 +US_qc
