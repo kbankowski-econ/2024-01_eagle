@@ -20,14 +20,14 @@ dynare_config
 cd(fullfile(project_path, 'Dynare_4-4-3','modFiles'));
 
 % just loading the models (both nonSS and SS) to have a macro-exp version
-dynare(sprintf('eagleModel_verNoNss'), 'nopreprocessoroutput', 'savemacro');
-dynare(sprintf('eagleModel_verSS'), 'nopreprocessoroutput', 'savemacro');
+% dynare(sprintf('eagleModel_verNoNss'), 'nopreprocessoroutput', 'savemacro');
+% dynare(sprintf('eagleModel_verSS'), 'nopreprocessoroutput', 'savemacro');
 
 % just a test in the context for solving the extended model
-dynare steady0.mod
+% dynare steady0.mod
 
 % calculating the steady state
-if true
+if false
     dynare steady1.mod
     dynare steady2.mod
 end
@@ -40,6 +40,8 @@ serToPlot = (eabGy1Databank.EAB_gy-eabGy1Databank.EAB_gy(qq(0,4)))*100;
 plot(serToPlot{qq(1,1): qq(50,4)});
 title('EAB GY')
 ylabel('p.p. deviation from steady state')
+
+return
 
 % shock simulation: 4-period g shock in EAB region (with some nuanced shock
 % values)
