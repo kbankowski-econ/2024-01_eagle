@@ -126,6 +126,58 @@ USEAC_imcy, 0.9*0.0078/4;
 USEAD_imcy, 0.9*0.0078/4;
 USRW_imcy, 0.9*0.0617;
 
+EAA_imcgy, 0.1*0.2010;
+EAAEAB_imcgy, 0.1*0.008375;
+EAAEAC_imcgy, 0.1*0.008375;
+EAAEAD_imcgy, 0.1*0.008375;
+EAAEAE_imcgy, 0.1*0.0266875;
+EAAUS_imcgy, 0.1*0.0041125;
+
+EAB_imcgy, 0.1*0.2010;
+EABEAA_imcgy, 0.1*0.008375;
+EABEAC_imcgy, 0.1*0.008375;
+EABEAD_imcgy, 0.1*0.008375;
+EABEAE_imcgy, 0.1*0.0266875;
+EABRW_imcgy, 0.1*0.145075;
+
+EAC_imcgy, 0.1*0.2010;
+EACEAB_imcgy, 0.1*0.008375;
+EACEAD_imcgy, 0.1*0.008375;
+EACEAE_imcgy, 0.1*0.0266875;
+EACRW_imcgy, 0.1*0.145075;
+EACUS_imcgy, 0.1*0.0041125;
+
+EAD_imcgy, 0.1*0.2010;
+EADEAA_imcgy, 0.1*0.008375;
+EADEAC_imcgy, 0.1*0.008375;
+EADEAE_imcgy, 0.1*0.0266875;
+EADRW_imcgy, 0.1*0.145075;
+EADUS_imcgy, 0.1*0.0041125;
+
+// done
+EAE_imcgy, 0.1*0.1839;
+EAEEAA_imcgy, 0.1*0.0872/4;
+EAEEAB_imcgy, 0.1*0.0872/4;
+EAEEAD_imcgy, 0.1*0.0872/4;
+EAERW_imcgy, 0.1*0.0852;
+EAEUS_imcgy, 0.1*0.0115;
+
+// done
+RW_imcgy, 0.1* 0.0860;
+RWEAA_imcgy, 0.1*0.0354/4;
+RWEAB_imcgy, 0.1*0.0354/4;
+RWEAC_imcgy, 0.1*0.0354/4;
+RWEAE_imcgy, 0.1*0.0106;
+RWUS_imcgy, 0.1*0.0400;
+
+// done
+US_imcgy, 0.1* 0.0726;
+USEAA_imcgy, 0.1*0.0078/4;
+USEAB_imcgy, 0.1*0.0078/4;
+USEAC_imcgy, 0.1*0.0078/4;
+USEAD_imcgy, 0.1*0.0078/4;
+USRW_imcgy, 0.1*0.0617;
+
 EAA_imiy, 0.9*0.0366;
 EAAEAB_imiy, 0.9*0.001525;
 EAAEAC_imiy, 0.9*0.001525;
