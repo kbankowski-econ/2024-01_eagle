@@ -230,6 +230,58 @@ USEAC_imiy, 0.9*0.0037/4;
 USEAD_imiy, 0.9*0.0037/4;
 USRW_imiy, 0.9*0.0364;
 
+EAA_imiy, 0.9*0.0366;
+EAAEAB_imiy, 0.9*0.001525;
+EAAEAC_imiy, 0.9*0.001525;
+EAAEAD_imiy, 0.9*0.001525;
+EAAEAE_imiy, 0.9*0.0193375;
+EAAUS_imiy, 0.9*0.0056875;
+
+EAB_imiy, 0.9*0.0366;
+EABEAA_imiy, 0.9*0.001525;
+EABEAC_imiy, 0.9*0.001525;
+EABEAD_imiy, 0.9*0.001525;
+EABEAE_imiy, 0.9*0.0193375;
+EABRW_imiy, 0.9*0.007;
+
+EAC_imiy, 0.9*0.0366;
+EACEAB_imiy, 0.9*0.001525;
+EACEAD_imiy, 0.9*0.001525;
+EACEAE_imiy, 0.9*0.0193375;
+EACRW_imiy, 0.9*0.007;
+EACUS_imiy, 0.9*0.0056875;
+
+EAD_imiy, 0.9*0.0366;
+EADEAC_imiy, 0.9*0.001525;
+EADEAA_imiy, 0.9*0.001525;
+EADEAE_imiy, 0.9*0.0193375;
+EADRW_imiy, 0.9*0.007;
+EADUS_imiy, 0.9*0.0056875;
+
+// done
+EAE_imiy, 0.9*0.0920;
+EAEEAB_imiy, 0.9*0.0436/4;
+EAEEAD_imiy, 0.9*0.0436/4;
+EAEEAA_imiy, 0.9*0.0436/4;
+EAERW_imiy, 0.9*0.0426;
+EAEUS_imiy, 0.9*0.0058;
+
+// done
+RW_imiy, 0.9* 0.0630;
+RWEAA_imiy, 0.9*0.0219/4;
+RWEAC_imiy, 0.9*0.0219/4;
+RWEAB_imiy, 0.9*0.0219/4;
+RWEAE_imiy, 0.9*0.0073;
+RWUS_imiy, 0.9*0.0338;
+
+// done
+US_imiy, 0.9* 0.0420;
+USEAA_imiy, 0.9*0.0037/4;
+USEAB_imiy, 0.9*0.0037/4;
+USEAC_imiy, 0.9*0.0037/4;
+USEAD_imiy, 0.9*0.0037/4;
+USRW_imiy, 0.9*0.0364;
+
 // Sizes
 EAA_size, 0.16/4;
 US_size,  0.31;
