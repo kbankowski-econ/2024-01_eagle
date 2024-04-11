@@ -165,7 +165,7 @@ Finding the optimal block decomposition of the dynamic model...
   the largest simultaneous block has 1654 equation(s)
                                  and 1491 feedback variable(s).
 Preprocessing completed.
-Preprocessing time: 0h00m05s.
+Preprocessing time: 0h00m04s.
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 1
@@ -2761,14 +2761,14 @@ MODEL SIMULATION: (method=Sparse LU solver on stacked system)
       2-norm error   = 1.099e-01
       1-norm error   = 2.215e-01
 ------------------------------------
-(** 24.13 seconds **)
+(** 25.51 seconds **)
 ------------------------------------
       Iteration no. 2
       Inf-norm error = 7.604e-03
       2-norm error   = 1.591e-02
       1-norm error   = 8.240e-02
 ------------------------------------
-(** 22.75 seconds **)
+(** 21.56 seconds **)
 ------------------------------------
       Iteration no. 3
       Inf-norm error = 2.868e-06
