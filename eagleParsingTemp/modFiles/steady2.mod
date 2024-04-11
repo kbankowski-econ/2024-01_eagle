@@ -12,8 +12,8 @@ options_.markowitz = 5;
 // Flip variables
 
 @#for co in countries
-change_type(parameters) @{co}_epsilonm @{co}_vi @{co}_iy @{co}_imcy @{co}_imiy;
-change_type(var) @{co}_gammav2 @{co}_gammav1 @{co}_taukbar @{co}_nutc @{co}_nuti;
+change_type(parameters) @{co}_epsilonm @{co}_vi @{co}_iy @{co}_imcy @{co}_imiy @{co}_imcgy @{co}_imigy;
+change_type(var) @{co}_gammav2 @{co}_gammav1 @{co}_taukbar @{co}_nutc @{co}_nuti @{co}_nutcg @{co}_nutig;
 @#endfor
 
 @#for i in 1:7
@@ -60,13 +60,13 @@ steady(homotopy_steps = 5);
 
 disp('iy')
 homotopy_setup;
-EAA_iy, 0.20;
-US_iy,  0.20;
-RW_iy,  0.20;
-EAB_iy, 0.20;
-EAC_iy, 0.20;
-EAD_iy, 0.20;
-EAE_iy, 0.20;
+EAA_iy, 0.20 - EAA_igybar;
+US_iy,  0.20 - US_igybar;
+RW_iy,  0.20 - RW_igybar;
+EAB_iy, 0.20 - EAB_igybar;
+EAC_iy, 0.20 - EAC_igybar;
+EAD_iy, 0.20 - EAD_igybar;
+EAE_iy, 0.20 - EAE_igybar;
 end;
 steady(homotopy_steps = 5, maxit=20);
 
