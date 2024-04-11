@@ -18,4 +18,4 @@ periods 1:4;
 values 0.01;
 end;
 
-simul(periods = 200);
+simul(solve_algo = 14, periods = 200);

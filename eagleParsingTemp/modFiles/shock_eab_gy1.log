@@ -147,7 +147,7 @@ WARNING: Unknown symbol AUX_ENDO_LAG_2206_1 in eagle_steady_govInv_refined.txt
 WARNING: Unknown symbol AUX_ENDO_LAG_3_1 in eagle_steady_govInv_refined.txt
 WARNING: Unknown symbol AUX_ENDO_LAG_3_2 in eagle_steady_govInv_refined.txt
 WARNING: Unknown symbol AUX_ENDO_LAG_3_3 in eagle_steady_govInv_refined.txt
-WARNING: shock_eab_gy1.mod:21.1-21: The 'simul' statement is deprecated. Please use 'perfect_foresight_setup' and 'perfect_foresight_solver' instead.
+WARNING: shock_eab_gy1.mod:21.1-38: The 'simul' statement is deprecated. Please use 'perfect_foresight_setup' and 'perfect_foresight_solver' instead.
 Substitution of endo lags >= 2: added 110 auxiliary variables and equations.
 Found 2604 equation(s).
 Evaluating expressions...
@@ -2762,14 +2762,14 @@ MODEL SIMULATION: (method=Sparse LU solver on stacked system)
       2-norm error   = 1.099e-01
       1-norm error   = 2.233e-01
 ------------------------------------
-(** 86.36 seconds **)
+(** 77.69 seconds **)
 ------------------------------------
       Iteration no. 2
       Inf-norm error = 7.603e-03
       2-norm error   = 1.591e-02
       1-norm error   = 8.240e-02
 ------------------------------------
-(** 72.43 seconds **)
+(** 70.59 seconds **)
 ------------------------------------
       Iteration no. 3
       Inf-norm error = 2.868e-06
@@ -2779,4 +2779,5 @@ MODEL SIMULATION: (method=Sparse LU solver on stacked system)
 
 Perfect foresight solution found.
 
-Total computing time : 0h02m41s
+Total computing time : 0h02m30s
+Note: 146 warning(s) encountered in the preprocessor
