@@ -13,7 +13,7 @@ function T = static_g3_tt(T, y, x, params)
 %   T         [#temp variables by 1]  double   vector of temporary terms
 %
 
-assert(length(T) >= 2591);
+assert(length(T) >= 3025);
 
 T = steady3.static_g2_tt(T, y, x, params);
 

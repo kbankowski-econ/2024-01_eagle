@@ -1,13 +1,17 @@
-function [y, T, residual, g1] = static_190(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-residual=NaN(1, 1);
-  residual(1)=(y(1775))-(y(1796)*log(y(2146)-params(350)*y(2146))-1/(1+params(391))*y(1713)^(1+params(391))+params(333)*y(1775));
-if nargout > 3
-    g1_v = NaN(1, 1);
-g1_v(1)=1-params(333);
-    if ~isoctave && matlab_ver_less_than('9.8')
-        sparse_rowval = double(sparse_rowval);
-        sparse_colval = double(sparse_colval);
-    end
-    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
-end
+function [y, T] = static_190(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
+  y(742)=y(667);
+  y(2214)=y(2116);
+  y(580)=((params(94)+T(32)-1)*y(742)-params(94)*x(34)*y(738))/(y(738)*(1-x(34)));
+  y(2121)=y(2120)*y(2113)/y(2684);
+  y(2127)=y(2120)*y(2129)/y(2681);
+  y(2045)=y(2010)^y(2016)*y(2011)^y(2017)*y(2012)^y(2018)*y(2013)^y(2019)*y(2014)^y(2020)*y(2015)^y(2021);
+  y(2149)=y(1998)^y(2016)*y(1999)^y(2017)*y(2000)^y(2018)*y(2001)^y(2019)*y(2002)^y(2020)*y(2003)^y(2021);
+  y(2213)=y(2003);
+  y(2212)=y(2002);
+  y(2211)=y(2001);
+  y(2210)=y(2000);
+  y(2209)=y(1999);
+  y(2208)=y(1998);
+  y(2043)=y(2114)*y(2067)+params(69)*(y(127)+y(115)+y(91)+y(103))*y(145)*y(1998)/params(457)+params(146)*(y(496)+y(484)+y(460)+y(472))*y(514)*y(1999)/params(457)+params(223)*(y(865)+y(853)+y(829)+y(841))*y(883)*y(2000)/params(457)+params(300)*(y(1234)+y(1222)+y(1198)+y(1210))*y(1252)*y(2001)/params(457)+params(377)*(y(1603)+y(1591)+y(1567)+y(1579))*y(1621)*y(2002)/params(457)+params(533)*y(2360)*y(2003)*(y(2306)+y(2318)+y(2330)+y(2342))/params(457)-y(2152)*y(2091)-y(2105)*(1+y(2165))*y(2186);
+  y(2042)=y(2202)*y(2136)-y(2152)*y(2090)-y(2104)*(1+y(2165))*y(2186);
 end
