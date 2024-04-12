@@ -11,9 +11,7 @@ load_params_and_steady_state('eagle_steady_govInv_refined.txt');
 steady;
 
 shocks;
-var EAB_epsgi;
-periods 1;
-values 0.01;
+var EAB_epsgi = (0.01)^2;
 end;
 
-stoch_simul(order = 1,nograph, IRF=90);
+stoch_simul(order=1, nocorr, nomoments, irf=16, nograph) EA_y;
