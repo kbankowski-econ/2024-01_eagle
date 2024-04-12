@@ -470,9 +470,7 @@ model(block, bytecode, cutoff=0);
 
 // Wedge between aggregate demand and production, using @{co}_x = @{co2}_size/@{co}_size*@{co2}_im
 @{co}_yst = @{co}_sh*@{co}_ht
-@#for it in countries - [ co ]
-+@{co}@{it}_sx*@{it}_size/@{co}_size*@{it}@{co}_im
-@#endfor
++@{co}_sx*@{co}_ex
 ;
 
 // Aggregate demand for bilateral imported intermediate goods
@@ -821,9 +819,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 @{co}_sh = (1-@{co}_xih)*(@{co}_phttilde/@{co}_pht)^(-@{co}_thetat)+@{co}_xih*(@{co}_piht/(@{co}_piht(-1)^@{co}_chih*@{co}_pi4target^(1/4*(1-@{co}_chih))))^@{co}_thetat*@{co}_sh(-1);
 
 // Price dispersion in the foreign markets
-@#for it in countries - [ co ]
-@{co}@{it}_sx = (1-@{co}_xix)*(@{it}@{co}_pimtilde/@{it}@{co}_pim)^(-@{co}_thetat)+@{co}_xix*(@{it}@{co}_piim/(@{it}@{co}_piim(-1)^@{co}_chix*@{co}_pi4target^(1/4*(1-@{co}_chih))))^@{co}_thetat*@{co}@{it}_sx(-1);
-@#endfor
+@{co}_sx = (1-@{co}_xix)*(@{co}_pxtilde/@{co}_px)^(-@{co}_thetat)+@{co}_xix*(@{co}_pix/(@{co}_pix(-1)^@{co}_chix*@{co}_pi4target^(1/4*(1-@{co}_chih))))^@{co}_thetat*@{co}_sx(-1);
 
 // Price dispersion in the domestic markets
 @{co}_snt = (1-@{co}_xin)*(@{co}_pnttilde/@{co}_pnt)^(-@{co}_thetan)+@{co}_xin*(@{co}_pint/(@{co}_pint(-1)^@{co}_chin*@{co}_pi4target^(1/4*(1-@{co}_chin))))^@{co}_thetan*@{co}_snt(-1);
