@@ -35,4 +35,4 @@ ylabel('p.p. deviation from steady state')
 
 
 %% stochastic simulation
-dynare('shock_eab_gy1.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
+dynare('eagleModelFiscalShocksStoch.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));

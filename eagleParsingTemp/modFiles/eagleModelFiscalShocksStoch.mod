@@ -8,24 +8,12 @@
 
 load_params_and_steady_state('eagle_steady_govInv_refined.txt');
 
-EAB_rhocg=0; //if we don't want persistent shock
-
-steady(solve_algo = 5, markowitz = 5);
+steady;
 
 shocks;
 var EAB_epsgi;
-periods 1:4;
-values 0.01;
-var EAB_epsgc;
-periods 1:4;
-values 0.01;
-var EAE_epsgi;
-periods 1:4;
-values 0.01;
-var EAE_epsgc;
-periods 1:4;
+periods 1;
 values 0.01;
 end;
 
-perfect_foresight_setup(periods = 100);
-perfect_foresight_solver;
+stoch_simul(order = 1,nograph, IRF=90);
