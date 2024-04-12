@@ -2,9 +2,9 @@
 
 @#include "init.mod"
 
-@#include "symdecls.mod"
+@#include "symdecls_govInv.mod"
 
-@#include "modeqs.mod"
+@#include "modeqs_govInv.mod"
 
 load_params_and_steady_state('eagle_steady_govInv_refined.txt');
 
