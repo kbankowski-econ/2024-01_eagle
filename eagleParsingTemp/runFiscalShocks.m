@@ -21,8 +21,10 @@ iris.startup
 addpath(dynare_6_0);
 dynare_config
 
-%%
+%% cding to a proper folder
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
+
+%% deterministic simulation
 dynare('shock_eab_gy1.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
 
 eabGy1Databank = databank.fromArray(oo_.endo_simul', M_.endo_names, qq(0,4));
@@ -30,3 +32,7 @@ serToPlot = (eabGy1Databank.EAB_cgy-eabGy1Databank.EAB_cgy(qq(0,4)))*100;
 plot(serToPlot{qq(1,1): qq(50,4)});
 title('EAB GY')
 ylabel('p.p. deviation from steady state')
+
+
+%% stochastic simulation
+dynare('shock_eab_gy1.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
