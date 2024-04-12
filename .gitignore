@@ -4,6 +4,7 @@ subroutines/+utils/+call/paths.m
 *.cod
 *.asv
 ~*.xlsx
+*.icloud
 
 Dynare_4-4-3/modFiles/+shock_eab_gy1/*
 Dynare_4-4-3/modFiles/+steady1/*
