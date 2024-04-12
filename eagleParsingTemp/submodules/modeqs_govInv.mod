@@ -1,7 +1,7 @@
 @#if(steady)
 model(block, bytecode, cutoff = 0);
 @#else
-model(cutoff=0);
+model(block, bytecode, cutoff = 0);
 @#endif
 
 
