@@ -1,3 +1,8 @@
+@#if(steady)
+model(block, bytecode, cutoff = 0);
+@#else
+model(block, bytecode, cutoff=0);
+@#endif
 
 
 @#for i in 1:7
