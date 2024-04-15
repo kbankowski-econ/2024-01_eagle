@@ -2635,46 +2635,61 @@ EAD_kg              		 8.72892
 EAE_kg              		 8.84452
 RW_kg               		 7.93211
 US_kg               		 11.2737
-MODEL SIMULATION: (method=Sparse LU solver with optimal path length on stacked system)
+MODEL SIMULATION: (method=BiCGStab on stacked system, preconditioner=incomplete lutp on dynamic jacobian)
 ------------------------------------
       Iteration no. 1
       Inf-norm error = 1.889e-01
       2-norm error   = 8.148e-01
       1-norm error   = 6.714e+00
 ------------------------------------
-(** 15.68 seconds **)
+(** 48.56 seconds **)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 2.239e+00
-      2-norm error   = 7.297e+00
-      1-norm error   = 1.026e+02
+      Inf-norm error = 8.168e-01
+      2-norm error   = 2.817e+00
+      1-norm error   = 4.431e+01
 ------------------------------------
-(** 14.88 seconds **)
-(** 0.68 seconds **)
+(** 72.90 seconds **)
 ------------------------------------
       Iteration no. 3
-      Inf-norm error = 3.686e-02
-      2-norm error   = 8.191e-02
-      1-norm error   = 5.095e-01
+      Inf-norm error = 8.289e-01
+      2-norm error   = 2.730e+00
+      1-norm error   = 3.909e+01
 ------------------------------------
-(** 14.81 seconds **)
-(** 0.62 seconds **)
+(** 74.99 seconds **)
 ------------------------------------
       Iteration no. 4
-      Inf-norm error = 2.289e-04
-      2-norm error   = 3.460e-04
-      1-norm error   = 1.223e-03
+      Inf-norm error = 7.022e-01
+      2-norm error   = 1.434e+00
+      1-norm error   = 1.899e+01
 ------------------------------------
-(** 15.99 seconds **)
-(** 0.32 seconds **)
+(** 73.95 seconds **)
 ------------------------------------
       Iteration no. 5
-      Inf-norm error = 1.019e-08
-      2-norm error   = 1.876e-08
-      1-norm error   = 7.924e-08
+      Inf-norm error = 2.489e-01
+      2-norm error   = 8.772e-01
+      1-norm error   = 1.421e+01
 ------------------------------------
+(** 73.83 seconds **)
+------------------------------------
+      Iteration no. 6
+      Inf-norm error = 3.829e-01
+      2-norm error   = 1.278e+00
+      1-norm error   = 1.770e+01
+------------------------------------
+(** 74.13 seconds **)
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('perfect_foresight_solver_core')" style="font-weight:bold">perfect_foresight_solver_core</a>
 
-Perfect foresight solution found.
 
-Total computing time : 0h01m05s
-Note: 82 warning(s) encountered in the preprocessor
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('perfect_foresight_solver>homotopy_loop', '/Applications/Dynare/7-2024-04-12-1835-arm64/matlab/perfect-foresight-models/perfect_foresight_solver.m', 357)" style="font-weight:bold">perfect_foresight_solver>homotopy_loop</a> (<a href="matlab: opentoline('/Applications/Dynare/7-2024-04-12-1835-arm64/matlab/perfect-foresight-models/perfect_foresight_solver.m',357,0)">line 357</a>)
+        [endo_simul, success, maxerror, solver_iter, per_block_status] = perfect_foresight_solver_core(endo_simul, exo_simul, steady_state, exo_steady_state, M_, options_);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('perfect_foresight_solver', '/Applications/Dynare/7-2024-04-12-1835-arm64/matlab/perfect-foresight-models/perfect_foresight_solver.m', 153)" style="font-weight:bold">perfect_foresight_solver</a> (<a href="matlab: opentoline('/Applications/Dynare/7-2024-04-12-1835-arm64/matlab/perfect-foresight-models/perfect_foresight_solver.m',153,0)">line 153</a>)
+[completed_share, endo_simul, exo_simul, steady_state, exo_steady_state, iteration, maxerror, solver_iter, per_block_status] = homotopy_loop(M_,options_,oo_,options_.simul.homotopy_max_completion_share, shareorig, endoorig, exoorig, endobase, exobase, initperiods, simperiods, lastperiods, recompute_final_steady_state, oo_.steady_state, oo_.exo_steady_state);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('shock_eab_gy1.driver', '/Users/kk/Documents/0000-00_work/2024-01_eagle/eagleParsingTemp/modFiles/+shock_eab_gy1/driver.m', 60103)" style="font-weight:bold">shock_eab_gy1.driver</a> (<a href="matlab: opentoline('/Users/kk/Documents/0000-00_work/2024-01_eagle/eagleParsingTemp/modFiles/+shock_eab_gy1/driver.m',60103,0)">line 60103</a>)
+[oo_, Simulated_time_series] = perfect_foresight_solver(M_, options_, oo_);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('dynare', '/Applications/Dynare/7-2024-04-12-1835-arm64/matlab/dynare.m', 306)" style="font-weight:bold">dynare</a> (<a href="matlab: opentoline('/Applications/Dynare/7-2024-04-12-1835-arm64/matlab/dynare.m',306,0)">line 306</a>)
+    evalin('base',[fname(1:end-4) '.driver']);
+} 
