@@ -2635,43 +2635,31 @@ EAD_kg              		 8.72892
 EAE_kg              		 8.84452
 RW_kg               		 7.93211
 US_kg               		 11.2737
-MODEL SIMULATION: (method=Sparse LU solver on stacked system)
+MODEL SIMULATION: (method=LBJ with Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 1
       Inf-norm error = 1.889e-01
       2-norm error   = 8.148e-01
       1-norm error   = 6.714e+00
 ------------------------------------
-(** 15.06 seconds **)
+(** 60.24 seconds **)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 8.084e-01
-      2-norm error   = 2.741e+00
-      1-norm error   = 4.137e+01
+      Inf-norm error = 2.279e+02
+      2-norm error   = 2.921e+02
+      1-norm error   = 5.402e+02
 ------------------------------------
-(** 15.48 seconds **)
+(** 103.04 seconds **)
 ------------------------------------
       Iteration no. 3
-      Inf-norm error = 5.157e-01
-      2-norm error   = 1.609e+00
-      1-norm error   = 1.969e+01
+      Inf-norm error = 8.384e-01
+      2-norm error   = 4.203e+00
+      1-norm error   = 7.010e+01
 ------------------------------------
-(** 14.16 seconds **)
+(** 84.39 seconds **)
 ------------------------------------
       Iteration no. 4
-      Inf-norm error = 5.119e-04
-      2-norm error   = 1.062e-03
-      1-norm error   = 7.220e-03
+      Inf-norm error = 4.916e-02
+      2-norm error   = 6.936e-02
+      1-norm error   = 5.689e-01
 ------------------------------------
-(** 14.20 seconds **)
-------------------------------------
-      Iteration no. 5
-      Inf-norm error = 4.437e-08
-      2-norm error   = 5.006e-08
-      1-norm error   = 1.439e-07
-------------------------------------
-
-Perfect foresight solution found.
-
-Total computing time : 0h01m03s
-Note: 82 warning(s) encountered in the preprocessor
