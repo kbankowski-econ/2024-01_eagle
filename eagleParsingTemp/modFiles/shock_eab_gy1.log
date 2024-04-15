@@ -2635,4 +2635,43 @@ EAD_kg              		 8.72892
 EAE_kg              		 8.84452
 RW_kg               		 7.93211
 US_kg               		 11.2737
-Bytecode: Can't use option stack_solve_algo=7
+MODEL SIMULATION: (method=Sparse LU solver on stacked system)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 1.889e-01
+      2-norm error   = 8.147e-01
+      1-norm error   = 6.600e+00
+------------------------------------
+(** 2.99 seconds **)
+------------------------------------
+      Iteration no. 2
+      Inf-norm error = 8.315e-01
+      2-norm error   = 2.715e+00
+      1-norm error   = 3.365e+01
+------------------------------------
+(** 2.53 seconds **)
+------------------------------------
+      Iteration no. 3
+      Inf-norm error = 6.802e-01
+      2-norm error   = 2.070e+00
+      1-norm error   = 2.104e+01
+------------------------------------
+(** 2.62 seconds **)
+------------------------------------
+      Iteration no. 4
+      Inf-norm error = 8.680e-04
+      2-norm error   = 1.778e-03
+      1-norm error   = 9.800e-03
+------------------------------------
+(** 2.41 seconds **)
+------------------------------------
+      Iteration no. 5
+      Inf-norm error = 6.174e-08
+      2-norm error   = 7.267e-08
+      1-norm error   = 2.190e-07
+------------------------------------
+
+Perfect foresight solution found.
+
+Total computing time : 0h00m12s
+Note: 82 warning(s) encountered in the preprocessor
