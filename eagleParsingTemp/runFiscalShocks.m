@@ -18,7 +18,7 @@ utils.call.paths;
 addpath(iris_path);
 iris.startup
 % Call Dynare
-addpath(dynare_6_0);
+addpath(dynare_7_2024_04_12_1835);
 dynare_config
 
 %% cding to a proper folder
