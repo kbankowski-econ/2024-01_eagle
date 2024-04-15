@@ -1,0 +1,1018 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+
+
+% titletoc has to be loaded before hyperfer; otherwise toc does not look properly
+\usepackage{titletoc}
+
+
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=false,colorlinks=true]
+ {hyperref}
+\hypersetup{
+ urlcolor=blue, citecolor=blue, linkcolor=red}
+
+
+\usepackage{caption}
+\newcommand{\source}[1]{\vspace{-10pt} \caption*{\footnotesize{\emph{Sources: }{#1}}}}
+\newcommand{\desc}[1]{\vspace{-10pt} \caption*{\footnotesize{\emph{Notes: }{#1}}}}
+\usepackage{colortbl}
+\definecolor{grey}{cmyk}{0, 0, 0, 0.17}
+
+% there are long tables in the document and they need this package
+\usepackage{longtable}
+\usepackage{bigints}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+% Check if 'annotate-equations' package is correctly installed and used
+\usepackage{annotate-equations} 
+
+
+% ECB formatting requirements
+
+
+%%%%%%%%% Paper format A4
+%\documentclass[a4paper,11pt] {article}
+% article is defined in the settings already (Document Class)
+% page size a4 (Page Layout)
+% font size (Fonts)
+
+
+%%%%%%%%% There are NO PAGE NUMBERS, nor any other items in the page headers or footers
+%\pagenumbering{gobble}
+
+
+%%%%%%%%% The margins are 2.5 cm (horizontal) and 3.5 cm (vertical)
+%\usepackage[hmargin=2.5cm,vmargin=3.5cm]{geometry}
+% specified in the setting (Page Margins)
+
+
+%%%%%%%%% Line spacing of about 1.5 line
+\usepackage{setspace}
+\setstretch{1.5}
+
+% for some reason thanks footnotes had 1.5 spacing so this is to force 1 spacing
+\let\oldthanks\thanks
+\renewcommand{\thanks}[1]{\oldthanks{\linespread{1.0}\selectfont#1\normalsize}}
+
+\newcommand{\bibinput}[1]{\bibliography{#1}}
+
+% to ensure that formulas have no indent
+\setlength{\mathindent}{0pt}
+
+% to ensuring proper spacing between equations and text;
+% without this adjustment there were issues for the aligned environment
+%\AtBeginDocument{
+%\addtolength{\abovedisplayskip}{-3ex}
+%\addtolength{\abovedisplayshortskip}{-3ex}
+%\addtolength{\belowdisplayskip}{-1ex}
+%\addtolength{\belowdisplayshortskip}{-1ex}
+%}
+\end_preamble
+\options fleqn, most, usenames,dvipsnames
+\use_default_options true
+\begin_modules
+tcolorbox
+\end_modules
+\maintain_unincluded_children false
+\language british
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing double
+\use_hyperref false
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "urlcolor=blue, citecolor=blue, linkcolor=blue"
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 3.5cm
+\rightmargin 2.5cm
+\bottommargin 3.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 25bp
+\is_math_indent 1
+\math_indentation 100bp
+\math_numbering_side right
+\quotes_style british
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+EAGLE MODEL 
+\begin_inset Newline newline
+\end_inset
+
+- Appendix derivations -
+\end_layout
+
+\begin_layout Abstract
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+startcontents 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+printcontents{ }{1}{
+\backslash
+section*{Table of content}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Price setting in the export markets problem: local currency assumption
+\end_layout
+
+\begin_layout Standard
+Firm 
+\begin_inset Formula $h$
+\end_inset
+
+ discriminates across countries, by invoicing and setting the price of its
+ brand in the currency of the generic destination market 
+\begin_inset Formula $CO$
+\end_inset
+
+.
+ Hence, the local currency pricing assumption holds.
+ There is sluggish price adjustment due to staggered price contracts 
+\shape italic
+a' la Calvo
+\shape default
+.
+ The probability of optimally resetting prices in a given period 
+\begin_inset Formula $t$
+\end_inset
+
+ is 
+\lang english
+
+\begin_inset Formula $1−\xi_{X}$
+\end_inset
+
+ 
+\begin_inset Formula $(0≤\xi_{X}≤1)$
+\end_inset
+
+
+\lang british
+.
+ All firms that receive permission to reset their price contracts in a given
+ period 
+\begin_inset Formula $t$
+\end_inset
+
+ choose the same price, 
+\begin_inset Formula $\widetilde{P}{}_{X,t}^{H,CO}$
+\end_inset
+
+ , while those firms which do not re-optimize update their prices according
+ to the following scheme:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{gather*}
+P_{X,t}^{CO}(h)=\left(\Pi_{X,t-1}^{H,CO}\right)^{\chi_{X}}\overline{\Pi}^{1-\chi_{X}}P_{X,t-1}^{CO}(h)
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+and which can also be written as:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{gather*}
+P_{t+k}(n)=\stackrel[s=1]{k}{\prod}\left(\Pi_{NT,t+s-1}\right)^{\chi_{N}}\overline{\Pi}^{1-\chi_{N}}P_{t}(n)
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+meaning that the price contracts are indexed to a geometric average of past
+ (gross) sector-specific inflation,
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+where 
+\begin_inset Formula $\Pi_{X,t-1}^{H,CO}=P{}_{X,t-1}^{H,CO}/P_{X,t-2}^{H,CO}$
+\end_inset
+
+ is the sector-specific inflation rate and the foreign inflation objective
+ is assumed to be time invariant and equal to the Home long-run inflation
+ objective, 
+\begin_inset Formula $\overline{\Pi}^{CO}=\overline{\Pi}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+title=Price-setting iteration, arc=0 mm, colbacktitle=gray, boxrule=0.5pt,
+ breakable, title after break=continued..., code={
+\backslash
+singlespacing}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+
+\lang english
+The price setting scheme provided is
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+
+\lang english
+\begin_inset Formula 
+\begin{gather*}
+P_{X,t}^{CO}(h)=\left(\Pi_{X,t-1}^{H,CO}\right)^{\chi_{X}}\overline{\Pi}^{1-\chi_{X}}P_{X,t-1}^{CO}(h)
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+which can be written for periods 
+\begin_inset Formula $t+1$
+\end_inset
+
+, 
+\begin_inset Formula $t+2$
+\end_inset
+
+and 
+\begin_inset Formula $t+3$
+\end_inset
+
+ as:
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+
+\lang english
+\begin_inset Formula 
+\begin{gather*}
+P_{X,t+1}^{CO}(h)=\left(\Pi_{X,t}^{H,CO}\right)^{\chi_{X}}\overline{\Pi}^{1-\chi_{X}}P_{X,t}^{CO}(h)\\
+P_{X,t+2}^{CO}(h)=\left(\Pi_{X,t+1}^{H,CO}\right)^{\chi_{X}}\overline{\Pi}^{1-\chi_{X}}P_{X,t+1}^{CO}(h)\\
+P_{X,t+3}^{CO}(h)=\left(\Pi_{X,t+2}^{H,CO}\right)^{\chi_{X}}\overline{\Pi}^{1-\chi_{X}}P_{X,t+2}^{CO}(h)
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+
+\lang english
+By substituting all the conditions above one into the other in otrder to
+ express 
+\begin_inset Formula $P_{t+k}(n)$
+\end_inset
+
+ (where 
+\begin_inset Formula $k=3$
+\end_inset
+
+) with 
+\begin_inset Formula $P_{t}(n)$
+\end_inset
+
+ we obtain the following:
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Formula 
+\[
+P_{X,t+3}^{CO}(h)=\underset{P_{X,t+3}^{CO}(h)}{\underbrace{\left(\Pi_{X,t+2}^{H,CO}\right)^{\chi_{X}}\overline{\Pi}^{1-\chi_{X}}\underset{P_{X,t+2}^{CO}(h)}{\underbrace{\left(\Pi_{X,t+1}^{H,CO}\right)^{\chi_{X}}\overline{\Pi}^{1-\chi_{X}}\underset{P_{X,t+1}^{CO}(h)}{\underbrace{\left(\Pi_{X,t}^{H,CO}\right)^{\chi_{X}}\overline{\Pi}^{1-\chi_{X}}P_{X,t}^{CO}(h)}}}}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+which can be simplified using the 
+\begin_inset Formula $\prod$
+\end_inset
+
+ operator:
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Formula 
+\begin{gather*}
+P_{X,t+k}^{CO}(h)=\stackrel[s=0]{k-1}{\prod}\left(\Pi_{X,t+s}^{H,CO}\right)^{\chi_{X}}\overline{\Pi}^{1-\chi_{X}}P_{X,t}^{CO}(h),
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+and which can also be written as:
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Formula 
+\begin{gather*}
+P_{X,t+k}^{CO}(h)=\stackrel[s=1]{k}{\prod}\left(\Pi_{X,t+s-1}^{H,CO}\right)^{\chi_{X}}\overline{\Pi}^{1-\chi_{X}}P_{X,t}^{CO}(h)
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Each exporting firm 
+\begin_inset Formula $h$
+\end_inset
+
+ that re-optimizes at time 
+\begin_inset Formula $t$
+\end_inset
+
+ maximizes the discounted sum of its expected nominal profits, expressed
+ in domestic currency:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{gather*}
+E_{t}\left[\stackrel[k=0]{\infty}{\sum}\varLambda_{I,t,t+k}\left[\stackrel[CO\neq H]{}{\sum}\left(\xi_{X}\right)^{k}\left(S_{t+k}^{H,CO}P_{X,t+k}^{CO}(h)IM_{t+k}^{CO}(h)-MC_{T,t+k}(IM_{t+k}^{CO}(h)+\psi_{T})\right)\right]\right]
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+subject to price-indexation scheme and taking as given the demand function
+ of importing country 
+\begin_inset Formula $CO$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{gather*}
+IM_{t+k}^{CO}(h)=\left(\frac{P_{X,t+k}^{CO}(h)}{P_{X,t+k}^{H,CO}}\right)^{-\theta_{T}}IM_{t+k}^{CO,H}
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+title=Derivation of the optimal amount of IM from CO, arc=0 mm, colbacktitle=gra
+y, boxrule=0.5pt, breakable, title after break=continued..., , code={
+\backslash
+singlespacing}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+The generic firm 
+\begin_inset Formula $x^{CO}$
+\end_inset
+
+ in the consumption sector of the importing country 
+\begin_inset Formula $CO$
+\end_inset
+
+ exploits the following CES technology: 
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Formula 
+\[
+IM_{t}^{C}(x^{CO})=\left[\left(\frac{1}{s^{H}}\right)^{\frac{1}{\theta_{T}}}\int_{_{0}}^{^{s^{H}}}IM_{t}^{C}(x^{CO},h){}^{(\theta_{T}-1)/\theta_{T}}dh\right]^{\theta_{T}/(\theta_{T}-1)},\theta_{T}>1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+Cost minimization implies:
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Formula 
+\begin{align*}
+\underset{\{IM_{t}^{C}(x^{CO},h):x^{CO},h\in[0,s^{H}]\}}{max} & P_{X,t}^{H,CO}\underbrace{\left[\left(\frac{1}{s^{H}}\right)^{\frac{1}{\theta_{T}}}\int_{_{0}}^{^{s^{H}}}IM_{t}^{C}(x^{CO},h){}^{(\theta_{T}-1)/\theta_{T}}dh\right]^{\theta_{T}/(\theta_{T}-1)}}_{IM_{t}^{C}(x^{CO})}\\
+ & -\int_{_{0}}^{^{s^{H}}}P_{X,t}^{CO}(h)IM_{t}^{C}(x^{CO},h)dh
+\end{align*}
+
+\end_inset
+
+
+\begin_inset VSpace 0.5em
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fcolorbox{blue}{lightgray}{FOC with respect to $IM_{t}^{C}(x^{CO},h)$:}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{gather*}
+P_{X,t}^{H,CO}\left(\frac{\theta_{T}}{\theta_{T}-1}\right)\underbrace{\left(\left(\frac{1}{s^{H}}\right)^{\frac{1}{\theta_{T}}}\int_{_{0}}^{^{s^{H}}}IM_{t}^{C}(x^{CO},h){}^{(\theta_{T}-1)/\theta_{T}}dh\right)^{1/(\theta_{T}-1)}}_{\left(IM_{t}^{C}(x^{CO})\right)^{\nicefrac{1}{\theta_{T}}}}\left(\frac{\theta_{T}-1}{\theta_{T}}\right)\left(\frac{1}{s^{H}}\right)^{\frac{1}{\theta_{T}}}IM_{t}^{C}(x^{CO},h)^{-1/\theta_{T}}-P_{X,t}^{CO}(h)\overset{!}{=}0\\
+P_{X,t}^{H,CO}\left(IM_{t}^{C}(x^{CO})\right)^{1/\theta_{T}}\left(\frac{1}{s^{H}}\right)^{\frac{1}{\theta_{T}}}IM_{t}^{C}(x^{CO},h)^{-1/\theta_{T}}-P_{X,t}^{CO}(h)=0\\
+IM_{t}^{C}(x^{CO},h)^{-1/\theta_{T}}=\left(\frac{1}{s^{H}}\right)^{-\frac{1}{\theta_{T}}}\frac{P_{X,t}^{CO}(h)\left(IM_{t}^{C}(x^{CO})\right)^{1/\theta_{T}}}{P_{X,t}^{H,CO}}\\
+IM_{t}^{C}(x^{CO},h)=\frac{1}{s^{H}}\left(\frac{P_{X,t}^{CO}(h)}{P_{X,t}^{H,CO}}\right)^{-\theta_{T}}IM_{t}^{C}(x^{CO})
+\end{gather*}
+
+\end_inset
+
+By substituting the optimal amount of import good 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang british
+
+\begin_inset Formula $(x^{CO},n)$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+ into the production function, we arrive at the below expression:
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Formula 
+\begin{gather*}
+IM_{t}^{C}(x^{CO})=\left[\left(\frac{1}{s^{H}}\right)^{\frac{1}{\theta_{T}}}\int_{_{0}}^{^{s^{H}}}\Bigg[\underbrace{\frac{1}{s^{H}}\left(\frac{P_{X,t}^{CO}(h)}{P_{X,t}^{H,CO}}\right)^{-\theta_{T}}IM_{t}^{C}(x^{CO})}_{IM_{t}^{C}(x^{CO},h)}\Bigg]^{(\theta_{T}-1)/\theta_{T}}dh\right]^{\theta_{T}/(\theta_{T}-1)},
+\end{gather*}
+
+\end_inset
+
+
+\lang british
+which can be simplified further as follows through the series of steps:
+\begin_inset Formula 
+\begin{gather*}
+1=\left\{ \left(\frac{1}{s^{H}}\right)^{\frac{1}{\theta_{T}}}\int_{_{0}}^{^{s^{H}}}\left[\frac{1}{s^{H}}\left(\frac{P_{X,t}^{CO}(h)}{P_{X,t}^{H,CO}}\right)^{-\theta_{T}}\right]^{\nicefrac{\left(\theta_{T}-1\right)}{\theta_{T}}}dn\right\} ^{\nicefrac{\theta_{T}}{\left(\theta_{T}-1\right)}}\\
+1=\left\{ \left(\frac{1}{s^{H}}\right)\int_{_{0}}^{^{s^{H}}}\left[\left(P_{X,t}^{CO}(h)\right)^{-\theta_{T}}\right]^{\nicefrac{\left(\theta_{T}-1\right)}{\theta_{T}}}dh\left(P_{X,t}^{H,CO}\right)^{\theta_{T}\nicefrac{\left(\theta_{T}-1\right)}{\theta_{T}}}\right\} ^{\nicefrac{\theta_{T}}{\left(\theta_{T}-1\right)}}\\
+1=\left\{ \left(\frac{1}{s^{H}}\right)\int_{_{0}}^{^{s^{H}}}\left[\left(P_{X,t}^{CO}(h)\right)^{-\theta_{T}}\right]^{(\theta_{T}-1)/\theta_{T}}dh\right\} ^{\nicefrac{\theta_{T}}{\left(\theta_{T}-1\right)}}\left(P_{X,t}^{H,CO}\right)^{\theta_{T}}\\
+\left(P_{X,t}^{H,CO}\right)^{-\theta_{T}}=\left\{ \left(\frac{1}{s^{H}}\right)^{\frac{1}{\theta_{T}}}\int_{_{0}}^{^{s^{H}}}\left[P_{X,t}^{CO}(h)\right]^{(1-\theta_{T})}dh\right\} ^{\nicefrac{\theta_{T}}{\left(\theta_{T}-1\right)}}\\
+P_{X,t}^{H,CO}=\left\{ \left(\frac{1}{s^{H}}\right)^{\frac{1}{\theta_{T}}}\int_{_{0}}^{^{s^{H}}}\left[P_{X,t}^{CO}(h)\right]^{(1-\theta_{T})}dh\right\} ^{\nicefrac{\theta_{T}}{\left(\theta_{T}-1\right)}\left(\nicefrac{-1}{\theta_{T}}\right)}\\
+P_{X,t}^{H,CO}=\left\{ \left(\frac{1}{s^{H}}\right)^{\frac{1}{\theta_{N}}}\int_{_{0}}^{^{s^{H}}}\left[P_{X,t}^{CO}(h)\right]^{(1-\theta_{T})}dh\right\} ^{\nicefrac{1}{(1-\theta_{T})}}
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+The implied first-order condition is:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{gather*}
+E_{t}\left[\stackrel[k=0]{\infty}{\sum}\left(\xi_{X}\right)^{k}\varLambda_{I,t,t+k}\left(\stackrel[s=1]{k}{\prod}\left(\Pi_{X,t+s-1}^{H,CO}\right)^{\chi_{X}}\overline{\Pi}^{1-\chi_{X}}\widetilde{P}_{X,t}^{H,CO}-\frac{\theta_{T}}{\theta_{T}-1}\left(S_{t+k}^{H,CO}\right)^{-1}MC_{T,t+k}\right)IM_{t+k}^{CO}(h)\right]=0.
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+With firms setting prices according to the setup described above the sector-spec
+ific price index 
+\begin_inset Formula $P_{HT,t}$
+\end_inset
+
+ evolves according to: 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{gather*}
+P_{X,t}^{H,CO}=\left[\xi_{X}\left(\left(\Pi_{X,t-1}^{H,CO}\right)^{\chi_{N}}\overline{\Pi}^{1-\chi_{N}}P_{X,t-1}^{H,CO}\right)^{1-\theta_{T}}+(1-\xi_{X})\left(\widetilde{P}_{X,t}^{H,CO}\right)^{1-\theta_{T}}\right]^{\frac{1}{1-\theta_{T}}}
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Flex Color Box
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+title=Price setting derivation, arc=0 mm, colbacktitle=gray, boxrule=0.5pt,
+ breakable, title after break=continued..., code={
+\backslash
+singlespacing}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+
+\lang english
+We plug the constraint into the objective function, which becomes
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+
+\lang english
+\begin_inset Formula 
+\begin{align*}
+\underset{\{P_{X,t+k}^{CO}(h):h\in[0,s^{H}]\}}{max} & E_{t}\left[\stackrel[k=0]{\infty}{\sum}\varLambda_{I,t,t+k}\left[\stackrel[CO\neq H]{}{\sum}\left(\xi_{X}\right)^{k}\left(S_{t+k}^{H,CO}P_{X,t+k}^{CO}(h)IM_{t+k}^{CO}(h)-MC_{T,t+k}(IM_{t+k}^{CO}(h)+\psi_{T})\right)\right]\right]\\
+\underset{\{P_{X,t+k}^{CO}(h):h\in[0,s^{H}]\}}{max} & E_{t}\left[\stackrel[k=0]{\infty}{\sum}\left(\xi_{X}\right)^{k}\varLambda_{I,t,t+k}\left[\stackrel[CO\neq H]{}{\sum}\left(S_{t+k}^{H,CO}P_{X,t+k}^{CO}(h)\left(\frac{P_{X,t+k}^{CO}(h)}{P_{X,t+k}^{H,CO}}\right)^{-\theta_{T}}IM_{t+k}^{CO,H}-MC_{T,t+k}\left(\left(\frac{P_{X,t+k}^{CO}(h)}{P_{X,t+k}^{H,CO}}\right)^{-\theta_{T}}IM_{t+k}^{CO,H}+\psi_{T}\right)\right)\right]\right]\\
+\underset{\{P_{X,t+k}^{CO}(h):h\in[0,s^{H}]\}}{max} & E_{t}\left[\stackrel[k=0]{\infty}{\sum}\left(\xi_{X}\right)^{k}\varLambda_{I,t,t+k}\left[\stackrel[CO\neq H]{}{\sum}\left(S_{t+k}^{H,CO}\left(P_{X,t+k}^{CO}(h)\right)^{1-\theta_{T}}\left(P_{X,t+k}^{H,CO}\right)^{\theta_{T}}IM_{t+k}^{CO,H}-MC_{T,t+k}\left(\left(\frac{P_{X,t+k}^{CO}(h)}{P_{X,t+k}^{H,CO}}\right)^{-\theta_{T}}IM_{t+k}^{CO,H}+\psi_{T}\right)\right)\right]\right]
+\end{align*}
+
+\end_inset
+
+
+\begin_inset VSpace 0.5em
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fcolorbox{blue}{lightgray}{FOC with respect to $P_{X,t}^{CO}(h)$:}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Formula 
+\begin{gather*}
+E_{t}\left[\stackrel[k=0]{\infty}{\sum}\left(\xi_{X}\right)^{k}\varLambda_{I,t,t+k}\left(\left(1-\theta_{T}\right)S_{t+k}^{H,CO}\left(P_{X,t+k}^{CO}(h)\right)^{-\theta_{T}}\left(P_{X,t+k}^{H,CO}\right)^{\theta_{T}}IM_{t+k}^{CO,H}-MC_{T,t+k}\left(-\theta_{T}\left(\frac{P_{X,t+k}^{CO}(h)}{P_{X,t+k}^{H,CO}}\right)^{-\theta_{T}-1}\frac{1}{P_{X,t+k}^{H,CO}}IM_{t+k}^{CO,H}\right)\right)\right]=0\\
+E_{t}\left[\stackrel[k=0]{\infty}{\sum}\left(\xi_{X}\right)^{k}\varLambda_{I,t,t+k}\left(\left(1-\theta_{N}\right)S_{t+k}^{H,CO}\left(P_{X,t+k}^{CO}(h)\right)^{-\theta_{T}}\left(P_{X,t+k}^{H,CO}\right)^{\theta_{T}}IM_{t+k}^{CO,H}-MC_{T,t+k}\left(-\theta_{T}\left(P_{X,t+k}^{CO}(h)\right)^{-\theta_{T}-1}\left(P_{X,t+k}^{H,CO}\right)^{\theta_{T}}IM_{t+k}^{CO,H}\right)\right)\right]=0\\
+E_{t}\left[\stackrel[k=0]{\infty}{\sum}\left(\xi_{X}\right)^{k}\varLambda_{I,t,t+k}\left(S_{t+k}^{H,CO}\left(\frac{P_{X,t+k}^{H,CO}}{P_{X,t+k}^{CO}(h)}\right)^{\theta_{T}}IM_{t+k}^{CO,H}-MC_{T,t+k}\left(-\frac{\theta_{T}}{\left(1-\theta_{T}\right)}\left(P_{X,t+k}^{CO}(h)\right)^{-1}\left(\frac{P_{X,t+k}^{H,CO}}{P_{X,t+k}^{CO}(h)}\right)^{\theta_{T}}IM_{t+k}^{CO,H}\right)\right)\right]=0\\
+E_{t}\left[\stackrel[k=0]{\infty}{\sum}\left(\xi_{X}\right)^{k}\varLambda_{I,t,t+k}\left(S_{t+k}^{H,CO}\underset{IM_{t+k}^{CO}(h)}{\underbrace{\left(\frac{P_{X,t+k}^{CO}(h)}{P_{X,t+k}^{H,CO}}\right)^{-\theta_{T}}IM_{t+k}^{CO,H}}}-MC_{T,t+k}\left(-\frac{\theta_{T}}{\left(1-\theta_{T}\right)}\left(P_{X,t+k}^{CO}(h)\right)^{-1}\underset{IM_{t+k}^{CO}(h)}{\underbrace{\left(\frac{P_{X,t+k}^{CO}(h)}{P_{X,t+k}^{H,CO}}\right)^{-\theta_{T}}IM_{t+k}^{CO,H}}}\right)\right)\right]=0\\
+E_{t}\left[\stackrel[k=0]{\infty}{\sum}\left(\xi_{X}\right)^{k}\varLambda_{I,t,t+k}\left(S_{t+k}^{H,CO}IM_{t+k}^{CO}(h)-MC_{T,t+k}\left(\frac{\theta_{T}}{\theta_{T}-1}\left(P_{X,t+k}^{CO}(h)\right)^{-1}IM_{t+k}^{CO}(h)\right)\right)\right]=0\\
+E_{t}\left[\stackrel[k=0]{\infty}{\sum}\left(\xi_{X}\right)^{k}\varLambda_{I,t,t+k}\left(P_{X,t+k}^{CO}(h)-\frac{\theta_{T}}{\theta_{T}-1}\left(S_{t+k}^{H,CO}\right)^{-1}MC_{T,t+k}\right)IM_{t+k}^{CO}(h)\right]=0\\
+E_{t}\left[\stackrel[k=0]{\infty}{\sum}\left(\xi_{X}\right)^{k}\varLambda_{I,t,t+k}\left(\stackrel[s=1]{k}{\prod}\left(\Pi_{X,t+s-1}^{H,CO}\right)^{\chi_{X}}\overline{\Pi}^{1-\chi_{X}}P_{X,t}^{H,CO}(h)-\frac{\theta_{T}}{\theta_{T}-1}\left(S_{t+k}^{H,CO}\right)^{-1}MC_{T,t+k}\right)IM_{t+k}^{CO}(h)\right]=0
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+Since the reset price 
+\begin_inset Formula $P_{t}(n)$
+\end_inset
+
+ is the new price chosen at time 
+\begin_inset Formula $t$
+\end_inset
+
+ (common to all firms that change price at that date) we replace 
+\begin_inset Formula $P_{X,t}^{H,CO}(h)$
+\end_inset
+
+ with 
+\begin_inset Formula $\widetilde{P}_{X,t}^{H,CO}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Formula 
+\begin{gather*}
+E_{t}\left[\stackrel[k=0]{\infty}{\sum}\left(\xi_{X}\right)^{k}\varLambda_{I,t,t+k}\left(\stackrel[s=1]{k}{\prod}\left(\Pi_{X,t+s-1}^{H,CO}\right)^{\chi_{X}}\overline{\Pi}^{1-\chi_{X}}\widetilde{P}_{X,t}^{H,CO}-\frac{\theta_{T}}{\theta_{T}-1}\left(S_{t+k}^{H,CO}\right)^{-1}MC_{T,t+k}\right)IM_{t+k}^{CO}(h)\right]=0
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color teal
+I now try to write the first order condition in a recursive way, as presented
+ in the code [NOT SUCCESFUL]
+\end_layout
+
+\begin_layout Standard
+
+\color teal
+\lang english
+\begin_inset Formula 
+\begin{gather*}
+E_{t}\left[\stackrel[k=0]{\infty}{\sum}\left(\xi_{X}\right)^{k}\varLambda_{I,t,t+k}\left(\stackrel[s=1]{k}{\prod}\left(\Pi_{X,t+s-1}^{H,CO}\right)^{\chi_{X}}\overline{\Pi}^{1-\chi_{X}}\widetilde{P}_{X,t}^{H,CO}-\frac{\theta_{T}}{\theta_{T}-1}\left(S_{t+k}^{H,CO}\right)^{-1}MC_{T,t+k}\right)IM_{t+k}^{CO}(h)\right]=0
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color teal
+\lang english
+k to 0 (empty product in 
+\begin_inset Formula $\stackrel[s=1]{0}{\prod}$
+\end_inset
+
+results in 1)
+\end_layout
+
+\begin_layout Standard
+
+\color teal
+\begin_inset Formula $IM_{t+k}^{CO}(h)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color teal
+k to 1
+\end_layout
+
+\begin_layout Standard
+
+\color teal
+\lang english
+\begin_inset Formula 
+\begin{gather*}
+IM_{t+k}^{CO}(h)+E_{t}\left[\left(\xi_{X}\right)^{1}\varLambda_{I,t,t+1}\left(\left(\Pi_{X,t}^{H,CO}\right)^{\chi_{X}}\overline{\Pi}^{1-\chi_{X}}\widetilde{P}_{X,t}^{H,CO}-\frac{\theta_{T}}{\theta_{T}-1}\left(S_{t+1}^{H,CO}\right)^{-1}MC_{T,t+1}\right)IM_{t+1}^{CO}(h)\right]=0
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color teal
+k to 2
+\end_layout
+
+\begin_layout Standard
+
+\color teal
+\lang english
+\begin_inset Formula 
+\begin{gather*}
+IM_{t+k}^{CO}(h)+E_{t}\left[\left(\xi_{X}\right)^{1}\varLambda_{I,t,t+1}\left(\left(\Pi_{X,t}^{H,CO}\right)^{\chi_{X}}\overline{\Pi}^{1-\chi_{X}}\widetilde{P}_{X,t}^{H,CO}-\frac{\theta_{T}}{\theta_{T}-1}\left(S_{t+1}^{H,CO}\right)^{-1}MC_{T,t+1}\right)IM_{t+1}^{CO}(h)\right]\\
++E_{t}\left(\xi_{X}\right)^{2}\varLambda_{I,t,t+2}\left(\left(\Pi_{X,t}^{H,CO}\right)^{\chi_{X}}\overline{\Pi}^{1-\chi_{X}}\widetilde{P}_{X,t}^{H,CO}-\frac{\theta_{T}}{\theta_{T}-1}\left(S_{t+1}^{H,CO}\right)^{-1}MC_{T,t+1}\right)\\
+\left(\left(\Pi_{X,t+1}^{H,CO}\right)^{\chi_{X}}\overline{\Pi}^{1-\chi_{X}}\widetilde{P}_{X,t}^{H,CO}-\frac{\theta_{T}}{\theta_{T}-1}\left(S_{t+2}^{H,CO}\right)^{-1}MC_{T,t+2}\right)IM_{t+2}^{CO}(h)=0
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color teal
+\lang english
+\begin_inset Formula 
+\begin{gather*}
+IM_{t+k}^{CO}(h)+E_{t}\left[\left(\xi_{X}\right)^{1}\varLambda_{I,t,t+1}\left(\left(\Pi_{X,t}^{H,CO}\right)^{\chi_{X}}\overline{\Pi}^{1-\chi_{X}}\widetilde{P}_{X,t}^{H,CO}-\frac{\theta_{T}}{\theta_{T}-1}\left(S_{t+1}^{H,CO}\right)^{-1}MC_{T,t+1}\right)IM_{t+1}^{CO}(h)\right]\\
++E_{t}\left(\xi_{X}\right)^{2}\varLambda_{I,t,t+2}\left(\left(\Pi_{X,t}^{H,CO}\right)^{\chi_{X}}\overline{\Pi}^{1-\chi_{X}}\widetilde{P}_{X,t}^{H,CO}-\frac{\theta_{T}}{\theta_{T}-1}\left(S_{t+1}^{H,CO}\right)^{-1}MC_{T,t+1}\right)\\
+\left(\left(\Pi_{X,t+1}^{H,CO}\right)^{\chi_{X}}\overline{\Pi}^{1-\chi_{X}}\widetilde{P}_{X,t}^{H,CO}-\frac{\theta_{T}}{\theta_{T}-1}\left(S_{t+2}^{H,CO}\right)^{-1}MC_{T,t+2}\right)IM_{t+2}^{CO}(h)=0
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+——–
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\lang english
+\begin_inset Formula 
+\begin{gather*}
+\frac{\widetilde{P}_{IM,t}^{CO,H}}{P_{IM,t}^{CO,H}}=\frac{\theta_{T}}{\theta_{T}-1}\frac{f_{X,t}^{H,CO}}{g_{X,t}^{H,CO}},\text{ for all }CO\neq H\\
+f_{X,t}^{H,CO}=MC_{T,t}\frac{s^{CO}}{s^{H}}IM_{t}^{CO,H}+\beta\xi_{X}E_{t}\left[\frac{\Lambda_{I,t+1}}{\Lambda_{I,t}}\left(\frac{\Pi_{IM,t+1}^{CO,H}}{\left(\Pi_{IM,t}^{CO,H}\right)^{\chi X}\bar{\Pi}^{1-\chi X}}\right)^{\theta_{T}}f_{X,t+1}^{H,CO}\right]\text{ for all }CO\neq H\\
+g_{X,t}^{H,CO}=S_{t}^{H,CO}P_{IM,t}^{CO,H}\frac{s^{CO}}{s^{H}}IM_{t}^{CO,H}+\beta\xi_{X}E_{t}\left[\frac{\Lambda_{I,t+1}}{\Lambda_{I,t}}\left(\frac{\Pi_{IM,t+1}^{CO,H}}{\left(\Pi_{IM,t}^{CO,H}\right)^{\chi X}\bar{\Pi}^{1-\chi X}}\right)^{\theta_{T}-1}g_{X,t+1}^{H,CO}\right]\text{ for all }CO\neq H\\
+\Pi_{IM,t}^{CO,H}\equiv\frac{P_{IM,t}^{CO,H}}{P_{IM,t-1}^{CO,H}}
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\[
+\frac{\widetilde{P}_{IM,t}^{CO,H}}{P_{IM,t}^{CO,H}}=\frac{\theta_{T}}{\theta_{T}-1}\frac{MC_{T,t}\frac{s^{CO}}{s^{H}}IM_{t}^{CO,H}+\beta\xi_{X}E_{t}\left[\frac{\Lambda_{I,t+1}}{\Lambda_{I,t}}\left(\frac{\Pi_{IM,t+1}^{CO,H}}{\left(\Pi_{IM,t}^{CO,H}\right)^{\chi X}\bar{\Pi}^{1-\chi X}}\right)^{\theta_{T}}f_{X,t+1}^{H,CO}\right]}{S_{t}^{H,CO}P_{IM,t}^{CO,H}\frac{s^{CO}}{s^{H}}IM_{t}^{CO,H}+\beta\xi_{X}E_{t}\left[\frac{\Lambda_{I,t+1}}{\Lambda_{I,t}}\left(\frac{\Pi_{IM,t+1}^{CO,H}}{\left(\Pi_{IM,t}^{CO,H}\right)^{\chi X}\bar{\Pi}^{1-\chi X}}\right)^{\theta_{T}-1}g_{X,t+1}^{H,CO}\right]}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
