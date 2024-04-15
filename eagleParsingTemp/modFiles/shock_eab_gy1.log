@@ -2635,25 +2635,4 @@ EAD_kg              		 8.72892
 EAE_kg              		 8.84452
 RW_kg               		 7.93211
 US_kg               		 11.2737
-MODEL SIMULATION: (method=GMRES on stacked system, preconditioner=incomplete lutp on dynamic jacobian)
-------------------------------------
-      Iteration no. 1
-      Inf-norm error = 1.889e-01
-      2-norm error   = 8.148e-01
-      1-norm error   = 6.714e+00
-------------------------------------
-(** 53.78 seconds **)
-------------------------------------
-      Iteration no. 2
-      Inf-norm error = 8.084e-01
-      2-norm error   = 2.732e+00
-      1-norm error   = 4.102e+01
-------------------------------------
-(** 79.49 seconds **)
-------------------------------------
-      Iteration no. 3
-      Inf-norm error = 5.157e-01
-      2-norm error   = 1.625e+00
-      1-norm error   = 2.055e+01
-------------------------------------
-<a href="matlab: opentoline('/Applications/MATLAB_R2023b.app/toolbox/matlab/sparfun/gmres.m',80,1)">80  </a>if nargin < 2
+Bytecode: Can't use option stack_solve_algo=7
