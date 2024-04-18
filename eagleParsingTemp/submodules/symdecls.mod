@@ -60,7 +60,6 @@ var
 @# endfor
 @#endfor
 @{co}_piex
-@{co}_pex
 @{co}_pextilde
 @# for it in countries - [ co ]
  @{co}@{it}_rer

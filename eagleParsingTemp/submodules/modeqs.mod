@@ -392,27 +392,27 @@ model(block, bytecode, cutoff=0);
 
 // Demand for bilateral consumption import goods
 @#if !steady
-@{co}@{co5}_im@{aItem} = @{co}@{co5}_num@{aItem}*(@{co}@{co5}_pim/(@{co}@{co5}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{co5}_gammaim@{aItem});
+@{co}@{co5}_im@{aItem} = @{co}@{co5}_num@{aItem}*((@{co5}_pex*@{co}@{co5}_rer)/(@{co}@{co5}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{co5}_gammaim@{aItem});
 @#else
-@{co}@{co5}_im@{aItem} = @{co}@{co5}_num@{aItem}*(@{co}@{co5}_pim/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
+@{co}@{co5}_im@{aItem} = @{co}@{co5}_num@{aItem}*((@{co5}_pex*@{co}@{co5}_rer)/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
 @#endif
 
 @#if !steady
-@{co}@{co3}_im@{aItem} = @{co}@{co3}_num@{aItem}*(@{co}@{co3}_pim/(@{co}@{co3}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{co3}_gammaim@{aItem});
+@{co}@{co3}_im@{aItem} = @{co}@{co3}_num@{aItem}*((@{co3}_pex*@{co}@{co3}_rer)/(@{co}@{co3}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{co3}_gammaim@{aItem});
 @#else
-@{co}@{co3}_im@{aItem} = @{co}@{co3}_num@{aItem}*(@{co}@{co3}_pim/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
+@{co}@{co3}_im@{aItem} = @{co}@{co3}_num@{aItem}*((@{co3}_pex*@{co}@{co3}_rer)/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
 @#endif
 
 @#if !steady
-@{co}@{co4}_im@{aItem} = @{co}@{co4}_num@{aItem}*(@{co}@{co4}_pim/(@{co}@{co4}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{co4}_gammaim@{aItem});
+@{co}@{co4}_im@{aItem} = @{co}@{co4}_num@{aItem}*((@{co4}_pex*@{co}@{co4}_rer)/(@{co}@{co4}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{co4}_gammaim@{aItem});
 @#else
-@{co}@{co4}_im@{aItem} = @{co}@{co4}_num@{aItem}*(@{co}@{co4}_pim/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
+@{co}@{co4}_im@{aItem} = @{co}@{co4}_num@{aItem}*((@{co4}_pex*@{co}@{co4}_rer)/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
 @#endif
 
 @#if !steady
-@{co}@{co7}_im@{aItem} = @{co}@{co7}_num@{aItem}*(@{co}@{co7}_pim/(@{co}@{co7}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{co7}_gammaim@{aItem});
+@{co}@{co7}_im@{aItem} = @{co}@{co7}_num@{aItem}*((@{co7}_pex*@{co}@{co7}_rer)/(@{co}@{co7}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{co7}_gammaim@{aItem});
 @#else
-@{co}@{co7}_im@{aItem} = @{co}@{co7}_num@{aItem}*(@{co}@{co7}_pim/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
+@{co}@{co7}_im@{aItem} = @{co}@{co7}_num@{aItem}*((@{co7}_pex*@{co}@{co7}_rer)/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
 @#endif
 
 @{co}@{co6}_im@{aItem} = (1
@@ -420,9 +420,9 @@ model(block, bytecode, cutoff=0);
 -@{co}@{it}_num@{aItem}
 @#endfor
 @#if !steady
-)*(@{co}@{co6}_pim/(@{co}@{co6}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{co6}_gammaim@{aItem});
+)*((@{co6}_pex*@{co}@{co6}_rer)/(@{co}@{co6}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{co6}_gammaim@{aItem});
 @#else
-)*(@{co}@{co6}_pim/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
+)*((@{co6}_pex*@{co}@{co6}_rer)/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
 @#endif
 
 // Price of the consumption good (import)
@@ -439,9 +439,9 @@ model(block, bytecode, cutoff=0);
 -@{co}@{it}_num@{aItem}
 @#endfor
 @#if !steady
-)*(@{co}@{co6}_pim/@{co}@{co6}_gammaim@{aItem}dag)^(1-@{co}_mum@{aItem});
+)*((@{co6}_pex*@{co}@{co6}_rer)/@{co}@{co6}_gammaim@{aItem}dag)^(1-@{co}_mum@{aItem});
 @#else
-)*@{co}@{co6}_pim^(1-@{co}_mum@{aItem});
+)*(@{co6}_pex*@{co}@{co6}_rer)^(1-@{co}_mum@{aItem});
 @#endif
 
 // Private consumption good (import) inflation
@@ -1030,7 +1030,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @{co}_rerdep = @{co}_rer/@{co}_rer(-1);
 
 // Definition of the terms of trade
-@{co}_tot = @{co}@{co7}_pim/(@{co}_rer*@{co7}@{co}_pim);
+@{co}_tot = @{co7}_pex*@{co}_rer/@{co}_pex;
 
 @#endfor // Global loop
 
