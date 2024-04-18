@@ -1,13 +1,39 @@
-function [y, T, residual, g1] = static_203(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-residual=NaN(1, 1);
-  residual(1)=(y(1700))-(y(1750)*(1-params(470))+y(1700)*params(470)+x(136));
-if nargout > 3
-    g1_v = NaN(1, 1);
-g1_v(1)=1-params(470);
-    if ~isoctave && matlab_ver_less_than('9.8')
-        sparse_rowval = double(sparse_rowval);
-        sparse_colval = double(sparse_colval);
-    end
-    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
-end
+function [y, T] = static_203(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
+  y(1138)=y(1188)/y(1190);
+  y(974)=y(1165)*params(673)/params(380)*y(1995)/T(585);
+  y(968)=y(1165)*params(673)/params(380)*y(1988)/T(585);
+  y(973)=y(1165)*params(577)/params(380)*y(1677)/T(585);
+  y(967)=y(1165)*params(577)/params(380)*y(1670)/T(585);
+  y(972)=y(1165)*params(477)/params(380)*y(1359)/T(585);
+  y(966)=y(1165)*params(477)/params(380)*y(1352)/T(585);
+  y(971)=y(722)*y(1165)*params(283)/params(380)/T(585);
+  y(965)=y(715)*y(1165)*params(283)/params(380)/T(585);
+  y(970)=y(404)*y(1165)*params(186)/params(380)/T(585);
+  y(964)=y(397)*y(1165)*params(186)/params(380)/T(585);
+  y(1058)=y(529)*y(1062)*y(1053)/T(585);
+  y(1051)=y(529)*y(1062)*y(1046)/T(585);
+  y(1044)=y(1039)*y(529)*y(1062)/T(585);
+  y(1037)=y(1032)*y(529)*y(1062)/T(585);
+  y(969)=y(86)*y(1165)*params(89)/params(380)/T(585);
+  y(963)=y(79)*y(1165)*params(89)/params(380)/T(585);
+  y(1220)=y(1219)/T(585);
+  y(1252)=y(1246)*params(380)*y(1194)/y(1202)/T(2027);
+  y(1249)=y(1246)/y(2423);
+  y(295)=y(292)/y(2393);
+  y(1251)=y(1253)*y(1188)/T(585);
+  y(1250)=y(1254)*y(1166)/T(585);
+  y(1239)=y(1157)*y(1237)/(y(1254)*y(1166));
+  y(1244)=y(1156)*y(1237)/(y(1253)*y(1188));
+  y(1245)=y(1237)*y(1153)/T(585);
+  y(1147)=(1+y(1217))*y(1237)*y(1153)/T(585);
+  y(1094)=y(1092)/(y(1275)*y(1278));
+  y(1137)=(y(1133)*y(1181)+y(1134)*y(1182)+y(1135)*y(1183)+y(1136)*y(1184))/T(585);
+  y(1098)=y(1095)/T(585);
+  y(297)=y(299)*y(234)/T(457);
+  y(296)=y(300)*y(212)/T(457);
+  y(285)=y(203)*y(283)/(y(300)*y(212));
+  y(290)=y(202)*y(283)/(y(299)*y(234));
+  y(291)=y(283)*y(199)/T(457);
+  y(193)=(1+y(263))*y(283)*y(199)/T(457);
+  y(140)=y(138)/(y(321)*y(324));
 end
