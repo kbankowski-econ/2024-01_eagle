@@ -8,7 +8,6 @@ initval;
   @{COUNTRY}_c = 0.32158748924289;
   @{COUNTRY}_ci = 0.426239346856029;
   @{COUNTRY}_cj = 0.00763191640347169;
-  @{COUNTRY}_cpim  = 1;
   @{COUNTRY}_cy = 0.993424266061439;
  
   @{COUNTRY}_d = 0.294287418715;
@@ -20,6 +19,7 @@ initval;
   @{COUNTRY}_ex = 0.081148;
 
   @{COUNTRY}_fh = 0.008;
+  @{COUNTRY}_fx = 0.008;
   @{COUNTRY}_fi = 3.92463692108248E-006;
   @{COUNTRY}_fj = 1.45356923003055E-007;
   @{COUNTRY}_fn = 0.015;
@@ -37,6 +37,7 @@ initval;
   @{COUNTRY}_gammavj = 0.000101581769364808;
   @{COUNTRY}_gammavjder = 0.00181818181818184;
   @{COUNTRY}_gh = 0.09;
+  @{COUNTRY}_gx = 0.09;
   @{COUNTRY}_gi = 0.0394976510764103;
   @{COUNTRY}_gj = 0.735309110981097;
   @{COUNTRY}_gn = 0.18;
@@ -80,6 +81,7 @@ initval;
   @{COUNTRY}_pex = 1;
   @{COUNTRY}_pht = 0.999999999999995;
   @{COUNTRY}_phttilde = 0.999999999999995;
+  @{COUNTRY}_pextilde = 0.999999999999995;
   @{COUNTRY}_pi = 0.999999999999969;
   @{COUNTRY}_pcg = 0.999999999999969;
   @{COUNTRY}_pig = 0.999999999999969;
@@ -88,6 +90,7 @@ initval;
   @{COUNTRY}_pic4 = 1;
   @{COUNTRY}_piex4 = 1;
   @{COUNTRY}_piht = 1;
+  @{COUNTRY}_piex = 1;
 
 @#for aItem in demandItems
   @{COUNTRY}_piim@{aItem} = 1;
@@ -131,6 +134,7 @@ initval;
   @{COUNTRY}_rrstar = 1.01010101010101;
 
   @{COUNTRY}_sh = 1;
+  @{COUNTRY}_sx = 1;
   @{COUNTRY}_si = 1;
   @{COUNTRY}_sj = 1;
   @{COUNTRY}_snt = 0.999999999999999;
@@ -241,14 +245,8 @@ initval;
     @#if (COUNTRY != COUNTRY1)
       @{COUNTRY}@{COUNTRY1}_rer = 1;
       @{COUNTRY}@{COUNTRY1}_rerbar = 1;
-      @{COUNTRY}@{COUNTRY1}_pim = 1;
-      @{COUNTRY}@{COUNTRY1}_piim = 1;
-      @{COUNTRY}@{COUNTRY1}_pimtilde = 1;
-      @{COUNTRY}@{COUNTRY1}_fx = 0.002;
-      @{COUNTRY}@{COUNTRY1}_gx = 0.04;
       @{COUNTRY}@{COUNTRY1}_im = 0.03;
 
-      @{COUNTRY}@{COUNTRY1}_sx = 0.999999999999999;
 @#for aItem in demandItems
       @{COUNTRY}@{COUNTRY1}_gammaim@{aItem} = 0;
       @{COUNTRY}@{COUNTRY1}_gammaim@{aItem}dag = 1;
@@ -345,8 +343,8 @@ initval;
         @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.0003;
         @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.0008;
     @#else
-        @{COUNTRY}@{COUNTRY1}_im@{aItem} = @{COUNTRY}@{COUNTRY1}_num@{aItem}*(@{COUNTRY}@{COUNTRY1}_pim/@{COUNTRY}_pim@{aItem})^(-@{COUNTRY}_mum@{aItem})*@{COUNTRY}_im@{aItem};
-        @{COUNTRY}@{COUNTRY1}_im@{aItem}y = @{COUNTRY}@{COUNTRY1}_pim*@{COUNTRY}@{COUNTRY1}_im@{aItem}/(@{COUNTRY}_py*@{COUNTRY}_y);
+        @{COUNTRY}@{COUNTRY1}_im@{aItem} = @{COUNTRY}@{COUNTRY1}_num@{aItem}*((@{COUNTRY1}_pex*@{COUNTRY}@{COUNTRY1}_rer)/@{COUNTRY}_pim@{aItem})^(-@{COUNTRY}_mum@{aItem})*@{COUNTRY}_im@{aItem};
+        @{COUNTRY}@{COUNTRY1}_im@{aItem}y = (@{COUNTRY1}_pex*@{COUNTRY}@{COUNTRY1}_rer)*@{COUNTRY}@{COUNTRY1}_im@{aItem}/(@{COUNTRY}_py*@{COUNTRY}_y);
     @#endif
   @#endif
 @#endfor
