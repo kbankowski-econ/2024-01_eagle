@@ -1,3 +1,3 @@
 function [y, T] = dynamic_19(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(3773)=0;
+  y(3463)=0;
 end

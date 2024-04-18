@@ -38,9 +38,7 @@ var
 @# for it in countries - [ co ]
  @{co}@{it}_exiy
 @# endfor
-@# for it in countries - [ co ]
- @{co}@{it}_fx
-@# endfor
+@{co}_fx
 @#for aItem in demandItems
 @# for it in countries - [ co ]
  @{co}@{it}_gammaim@{aItem}
@@ -49,9 +47,7 @@ var
  @{co}@{it}_gammaim@{aItem}dag
 @# endfor
 @#endfor
-@# for it in countries - [ co ]
- @{co}@{it}_gx
-@# endfor
+@{co}_gx
 @# for it in countries - [ co ]
  @{co}@{it}_im
 @# endfor
@@ -63,21 +59,12 @@ var
  @{co}@{it}_im@{aItem}y
 @# endfor
 @#endfor
-@# for it in countries - [ co ]
- @{co}@{it}_piim
-@# endfor
-@# for it in countries - [ co ]
- @{co}@{it}_pim
-@# endfor
-@# for it in countries - [ co ]
- @{co}@{it}_pimtilde
-@# endfor
+@{co}_piex
+@{co}_pextilde
 @# for it in countries - [ co ]
  @{co}@{it}_rer
 @# endfor
-@# for it in countries - [ co ]
- @{co}@{it}_sx
-@# endfor
+@{co}_sx
 @# for it in countries - [ co ]
  @{co}@{it}_tot
 @# endfor
@@ -369,7 +356,6 @@ varexo
  @{co}_znbar
  @{co}_ztbar
 
- @{co}_cpim
  @{co}_epsgc
  @{co}_epsgi
 @# if co != countries[1] && co != countries[2] && co != countries[3] && co != countries[4] && co != countries[5]
