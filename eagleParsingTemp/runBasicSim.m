@@ -21,78 +21,9 @@ iris.startup
 addpath(dynare_6_0);
 dynare_config
 
-%%
+%% SS version of the model
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 dynare('load0.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
-
-meta.load0output183c0ee7 = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'steady0', 'Output', 'steady0_results_183c0ee7.mat'));
-meta.load0struct183c0ee7 = struct();
-
-meta.load0output = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'load0', 'Output', 'load0_results.mat'));
-meta.load0struct = struct();
-
-setdiff(load0output.M_.endo_names, load0output183c0ee7.M_.endo_names);
-setdiff(load0output183c0ee7.M_.endo_names, load0output.M_.endo_names);
-
-outputList = ["load0output", "load0output183c0ee7"];
-structList =  ["load0struct", "load0struct183c0ee7"];
-for aModel = outputList
-    aStruct = structList(aModel == outputList);
-
-    varList = meta.(aModel).M_.endo_names(~startsWith(meta.(aModel).M_.endo_names, 'AUX_ENDO_'));
-    for aVar = string(reshape(varList, 1, []))
-        meta.(aStruct).ssValues.(aVar) = meta.(aModel).oo_.steady_state(strcmp(aVar, varList));
-    end
-    
-    for aExoVar = string(reshape(meta.(aModel).M_.exo_names, 1, []))
-        meta.(aStruct).exo_names.(aExoVar) = meta.(aModel).oo_.exo_steady_state(strcmp(aExoVar, meta.(aModel).M_.exo_names));
-    end
-    
-    for aParam = string(reshape(meta.(aModel).M_.param_names, 1, []))
-        meta.(aStruct).params.(aParam) = meta.(aModel).M_.params(strcmp(aParam, meta.(aModel).M_.param_names));
-    end
-end
-
-meta.load0struct.ssValues.EAAEAC_imig
-meta.load0struct.ssValues.EAAEAC_imcg
-meta.load0struct.ssValues.EAAEAC_imigy
-meta.load0struct.ssValues.EAAEAC_imcgy
-meta.load0struct.ssValues.EAARW_imig
-meta.load0struct.ssValues.EAARW_imcg
-
-load0struct.ssValues.EABEAA_pimtilde/load0struct.ssValues.EABEAA_pim ...
-    - (load0struct.exo_names.EAA_cpim ...
-    *load0struct.params.EAA_thetat/(load0struct.params.EAA_thetat-1) ...
-    *load0struct.ssValues.EAAEAB_fx ...
-    /load0struct.ssValues.EAAEAB_gx)
-
-meta.load0struct183c0ee7.ssValues.EABEAA_pimtilde/meta.load0struct183c0ee7.ssValues.EABEAA_pim ...
-    - (meta.load0struct183c0ee7.exo_names.EAA_cpim ...
-    *meta.load0struct183c0ee7.params.EAA_thetat/(meta.load0struct183c0ee7.params.EAA_thetat-1) ...
-    *meta.load0struct183c0ee7.ssValues.EAAEAB_fx ...
-    /meta.load0struct183c0ee7.ssValues.EAAEAB_gx)
-
-EAAEAB_gx 
-= EAAEAB_rer*EABEAA_pim*EAB_size/EAA_size*EABEAA_im
-+ EAA_xix*EAA_beta*(EABEAA_piim/(EABEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^(EAA_thetat-1)*EAAEAB_gx;
-
-1 
-= (EAAEAB_rer*EABEAA_pim*EAB_size/EAA_size*EABEAA_im)/EAAEAB_gx
-+ EAA_xix*EAA_beta*(EABEAA_piim/(EABEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^(EAA_thetat-1);
-
-1 
-- EAA_xix*EAA_beta*(EABEAA_piim/(EABEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^(EAA_thetat-1)
-= (EAAEAB_rer*EABEAA_pim*EAB_size/EAA_size*EABEAA_im)/EAAEAB_gx
-;
-
-meta.load0struct.ssValues.EAAEAB_gx
-=
-(meta.load0struct.ssValues.EAAEAB_rer*meta.load0struct.ssValues.EABEAA_pim*meta.load0struct.params.EAB_size/meta.load0struct.params.EAA_size*meta.load0struct.ssValues.EABEAA_im) ...
-/(1 - meta.load0struct.params.EAA_xix*meta.load0struct.params.EAA_beta*(meta.load0struct.ssValues.EABEAA_piim/(meta.load0struct.ssValues.EABEAA_piim^EAA_chix*meta.load0struct.params.EAA_pi4target^(1/4*(1-meta.load0struct.params.EAA_chix))))^(meta.load0struct.params.EAA_thetat-1))
-
-(meta.load0struct183c0ee7.ssValues.EAAEAB_rer*meta.load0struct183c0ee7.ssValues.EABEAA_pim*meta.load0struct183c0ee7.params.EAB_size/meta.load0struct183c0ee7.params.EAA_size*meta.load0struct183c0ee7.ssValues.EABEAA_im) ...
-/(1 - meta.load0struct183c0ee7.params.EAA_xix*meta.load0struct183c0ee7.params.EAA_beta*(meta.load0struct183c0ee7.ssValues.EABEAA_piim/(meta.load0struct183c0ee7.ssValues.EABEAA_piim^EAA_chix*meta.load0struct183c0ee7.params.EAA_pi4target^(1/4*(1-meta.load0struct183c0ee7.params.EAA_chix))))^(meta.load0struct183c0ee7.params.EAA_thetat-1))
-
 
 %% non-SS version of the model
 dynare('eagleModel.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
