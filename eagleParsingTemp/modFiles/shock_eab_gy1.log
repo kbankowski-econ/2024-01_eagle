@@ -1,106 +1,106 @@
-Starting Dynare (version 7-unstable-2024-04-12-1834-79153ab1).
+Starting Dynare (version 6.0).
 Calling Dynare with arguments: -I/Users/kk/Documents/0000-00_work/2024-01_eagle/eagleParsingTemp/submodules savemacro
 Starting preprocessing of the model file ...
 Reading eagle_steady_govInv_refined.txt.
-WARNING: Unknown symbol AUX_ENDO_LAG_289_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_289_2 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_289_3 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_273_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_273_2 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_273_3 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_256_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_355_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_355_2 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_355_3 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_763_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_763_2 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_763_3 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_747_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_747_2 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_747_3 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_730_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_829_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_829_2 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_829_3 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1237_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1237_2 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1237_3 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1221_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1221_2 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1221_3 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1204_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1303_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1303_2 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1303_3 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1711_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1711_2 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1711_3 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1695_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1695_2 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1695_3 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1678_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1777_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1777_2 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1777_3 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2185_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2185_2 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2185_3 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2169_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2169_2 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2169_3 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2152_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2251_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2251_2 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2251_3 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2659_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2659_2 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2659_3 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2643_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2643_2 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2643_3 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2626_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2725_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2725_2 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2725_3 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3135_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3135_2 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3135_3 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3119_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3119_2 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3119_3 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3102_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3198_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3198_2 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3198_3 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_161_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_310_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_635_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_784_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_258_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_258_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_258_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_242_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_242_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_242_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_225_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_324_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_324_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_324_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_700_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_700_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_700_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_684_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_684_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_684_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_667_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_766_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_766_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_766_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1142_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1142_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1142_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1126_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1126_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1126_3 in eagle_steady_govInv_refined.txt
 WARNING: Unknown symbol AUX_ENDO_LAG_1109_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1258_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1583_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1732_1 in eagle_steady_govInv_refined.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2206_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1208_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1208_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1208_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1584_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1584_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1584_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1568_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1568_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1568_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1551_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1650_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1650_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1650_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2026_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2026_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2026_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2010_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2010_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2010_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1993_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2092_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2092_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2092_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2468_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2468_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2468_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2452_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2452_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2452_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2435_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2534_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2534_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2534_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2912_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2912_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2912_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2896_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2896_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2896_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2879_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2975_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2975_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2975_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_135_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_279_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_577_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_721_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1019_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1163_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1461_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1605_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_2047_1 in eagle_steady_govInv_refined.txt
 WARNING: Unknown symbol AUX_ENDO_LAG_3_1 in eagle_steady_govInv_refined.txt
 WARNING: Unknown symbol AUX_ENDO_LAG_3_2 in eagle_steady_govInv_refined.txt
 WARNING: Unknown symbol AUX_ENDO_LAG_3_3 in eagle_steady_govInv_refined.txt
 Substitution of endo lags >= 2: added 110 auxiliary variables and equations.
-Found 2639 equation(s).
+Found 2422 equation(s).
 Evaluating expressions...
 Computing static model derivatives (order 1).
 Normalizing the static model...
 Finding the optimal block decomposition of the static model...
-232 block(s) found:
-  228 recursive block(s) and 4 simultaneous block(s).
-  the largest simultaneous block has 1229 equation(s)
-                                 and 1229 feedback variable(s).
+218 block(s) found:
+  214 recursive block(s) and 4 simultaneous block(s).
+  the largest simultaneous block has 1061 equation(s)
+                                 and 1061 feedback variable(s).
 Computing dynamic model derivatives (order 1).
 Normalizing the dynamic model...
 Finding the optimal block decomposition of the dynamic model...
-102 block(s) found:
-  101 recursive block(s) and 1 simultaneous block(s).
-  the largest simultaneous block has 1689 equation(s)
-                                 and 1505 feedback variable(s).
+92 block(s) found:
+  91 recursive block(s) and 1 simultaneous block(s).
+  the largest simultaneous block has 1486 equation(s)
+                                 and 1288 feedback variable(s).
 Preprocessing completed.
 Preprocessing time: 0h00m05s.
 
@@ -125,12 +125,7 @@ EAAEAD_exiy         		 0.00107596
 EAAEAE_exiy         		 0.0118171
 EAARW_exiy          		 0.0483879
 EAAUS_exiy          		 0.00449696
-EAAEAB_fx           		 0.190844
-EAAEAC_fx           		 0.190846
-EAAEAD_fx           		 0.190844
-EAAEAE_fx           		 0.836343
-EAARW_fx            		 2.19332
-EAAUS_fx            		 0.331837
+EAA_fx              		 3.93404
 EAAEAB_gammaimc     		 0
 EAAEAC_gammaimc     		 0
 EAAEAD_gammaimc     		 0
@@ -179,12 +174,7 @@ EAAEAD_gammaimigdag 		 1
 EAAEAE_gammaimigdag 		 1
 EAARW_gammaimigdag  		 1
 EAAUS_gammaimigdag  		 1
-EAAEAB_gx           		 0.229012
-EAAEAC_gx           		 0.229015
-EAAEAD_gx           		 0.229012
-EAAEAE_gx           		 1.00361
-EAARW_gx            		 2.63199
-EAAUS_gx            		 0.398204
+EAA_gx              		 4.72084
 EAAEAB_im           		 0.0619222
 EAAEAC_im           		 0.0619221
 EAAEAD_im           		 0.0619222
@@ -239,36 +229,15 @@ EAAEAD_imigy        		 0.00016251
 EAAEAE_imigy        		 0.00200529
 EAARW_imigy         		 0.000613288
 EAAUS_imigy         		 0.000586236
-EAAEAB_piim         		 1.00496
-EAAEAC_piim         		 1.00496
-EAAEAD_piim         		 1.00496
-EAAEAE_piim         		 1.00496
-EAARW_piim          		 1.00496
-EAAUS_piim          		 1.00496
-EAAEAB_pim          		 0.918324
-EAAEAC_pim          		 0.918325
-EAAEAD_pim          		 0.918324
-EAAEAE_pim          		 0.88238
-EAARW_pim           		 0.738415
-EAAUS_pim           		 0.631847
-EAAEAB_pimtilde     		 0.918325
-EAAEAC_pimtilde     		 0.918325
-EAAEAD_pimtilde     		 0.918325
-EAAEAE_pimtilde     		 0.88238
-EAARW_pimtilde      		 0.738415
-EAAUS_pimtilde      		 0.631847
+EAA_piex            		 1.00496
+EAA_pextilde        		 0.931337
 EAAEAB_rer          		 0.991458
 EAAEAC_rer          		 0.991458
 EAAEAD_rer          		 0.991458
 EAAEAE_rer          		 0.982733
 EAARW_rer           		 0.776756
 EAAUS_rer           		 0.673026
-EAAEAB_sx           		 1
-EAAEAC_sx           		 1
-EAAEAD_sx           		 1
-EAAEAE_sx           		 1
-EAARW_sx            		 1
-EAAUS_sx            		 1
+EAA_sx              		 1
 EAAEAB_tot          		 0.986029
 EAAEAC_tot          		 0.986029
 EAAEAD_tot          		 0.986029
@@ -479,12 +448,7 @@ EABEAD_exiy         		 0.00104799
 EABEAE_exiy         		 0.0115101
 EABRW_exiy          		 0.0471307
 EABUS_exiy          		 0.00438008
-EABEAA_fx           		 0.187051
-EABEAC_fx           		 0.205384
-EABEAD_fx           		 0.205387
-EABEAE_fx           		 0.900058
-EABRW_fx            		 2.36042
-EABUS_fx            		 0.357119
+EAB_fx              		 4.21542
 EABEAA_gammaimc     		 0
 EABEAC_gammaimc     		 0
 EABEAD_gammaimc     		 0
@@ -533,12 +497,7 @@ EABEAD_gammaimigdag 		 1
 EABEAE_gammaimigdag 		 1
 EABRW_gammaimigdag  		 1
 EABUS_gammaimigdag  		 1
-EABEAA_gx           		 0.224461
-EABEAC_gx           		 0.246461
-EABEAD_gx           		 0.246464
-EABEAE_gx           		 1.08007
-EABRW_gx            		 2.8325
-EABUS_gx            		 0.428542
+EAB_gx              		 5.0585
 EABEAA_im           		 0.0628318
 EABEAC_im           		 0.0679913
 EABEAD_im           		 0.0679913
@@ -593,36 +552,15 @@ EABEAD_imigy        		 0.00015408
 EABEAE_imigy        		 0.00190127
 EABRW_imigy         		 0.000581479
 EABUS_imigy         		 0.000555818
-EABEAA_piim         		 1.00496
-EABEAC_piim         		 1.00496
-EABEAD_piim         		 1.00496
-EABEAE_piim         		 1.00496
-EABRW_piim          		 1.00496
-EABUS_piim          		 1.00496
-EABEAA_pim          		 0.93936
-EABEAC_pim          		 0.926236
-EABEAD_pim          		 0.926236
-EABEAE_pim          		 0.889982
-EABRW_pim           		 0.744776
-EABUS_pim           		 0.63729
-EABEAA_pimtilde     		 0.93936
-EABEAC_pimtilde     		 0.926236
-EABEAD_pimtilde     		 0.926236
-EABEAE_pimtilde     		 0.889982
-EABRW_pimtilde      		 0.744777
-EABUS_pimtilde      		 0.63729
+EAB_piex            		 1.00496
+EAB_pextilde        		 0.926236
 EABEAA_rer          		 1.00862
 EABEAC_rer          		 1
 EABEAD_rer          		 1
 EABEAE_rer          		 0.991199
 EABRW_rer           		 0.783448
 EABUS_rer           		 0.678824
-EABEAA_sx           		 1
-EABEAC_sx           		 1
-EABEAD_sx           		 1
-EABEAE_sx           		 1
-EABRW_sx            		 1
-EABUS_sx            		 1
+EAB_sx              		 1
 EABEAA_tot          		 1.01417
 EABEAC_tot          		 1
 EABEAD_tot          		 1
@@ -833,12 +771,7 @@ EACEAD_exiy         		 0.00104801
 EACEAE_exiy         		 0.0115101
 EACRW_exiy          		 0.0471306
 EACUS_exiy          		 0.00438008
-EACEAA_fx           		 0.187051
-EACEAB_fx           		 0.205384
-EACEAD_fx           		 0.205384
-EACEAE_fx           		 0.900062
-EACRW_fx            		 2.36042
-EACUS_fx            		 0.357119
+EAC_fx              		 4.21542
 EACEAA_gammaimc     		 0
 EACEAB_gammaimc     		 0
 EACEAD_gammaimc     		 0
@@ -887,12 +820,7 @@ EACEAD_gammaimigdag 		 1
 EACEAE_gammaimigdag 		 1
 EACRW_gammaimigdag  		 1
 EACUS_gammaimigdag  		 1
-EACEAA_gx           		 0.224461
-EACEAB_gx           		 0.246461
-EACEAD_gx           		 0.246461
-EACEAE_gx           		 1.08007
-EACRW_gx            		 2.8325
-EACUS_gx            		 0.428542
+EAC_gx              		 5.0585
 EACEAA_im           		 0.0628327
 EACEAB_im           		 0.0679914
 EACEAD_im           		 0.0679914
@@ -947,36 +875,15 @@ EACEAD_imigy        		 0.00015408
 EACEAE_imigy        		 0.00190127
 EACRW_imigy         		 0.000581479
 EACUS_imigy         		 0.000555823
-EACEAA_piim         		 1.00496
-EACEAB_piim         		 1.00496
-EACEAD_piim         		 1.00496
-EACEAE_piim         		 1.00496
-EACRW_piim          		 1.00496
-EACUS_piim          		 1.00496
-EACEAA_pim          		 0.93936
-EACEAB_pim          		 0.926236
-EACEAD_pim          		 0.926236
-EACEAE_pim          		 0.889982
-EACRW_pim           		 0.744776
-EACUS_pim           		 0.63729
-EACEAA_pimtilde     		 0.93936
-EACEAB_pimtilde     		 0.926236
-EACEAD_pimtilde     		 0.926236
-EACEAE_pimtilde     		 0.889982
-EACRW_pimtilde      		 0.744776
-EACUS_pimtilde      		 0.63729
+EAC_piex            		 1.00496
+EAC_pextilde        		 0.926236
 EACEAA_rer          		 1.00862
 EACEAB_rer          		 1
 EACEAD_rer          		 1
 EACEAE_rer          		 0.991199
 EACRW_rer           		 0.783448
 EACUS_rer           		 0.678824
-EACEAA_sx           		 1
-EACEAB_sx           		 1
-EACEAD_sx           		 1
-EACEAE_sx           		 1
-EACRW_sx            		 1
-EACUS_sx            		 1
+EAC_sx              		 1
 EACEAA_tot          		 1.01417
 EACEAB_tot          		 1
 EACEAD_tot          		 1
@@ -1187,12 +1094,7 @@ EADEAC_exiy         		 0.00104801
 EADEAE_exiy         		 0.0115101
 EADRW_exiy          		 0.0471303
 EADUS_exiy          		 0.00438008
-EADEAA_fx           		 0.187051
-EADEAB_fx           		 0.205384
-EADEAC_fx           		 0.205384
-EADEAE_fx           		 0.900058
-EADRW_fx            		 2.36042
-EADUS_fx            		 0.357119
+EAD_fx              		 4.21542
 EADEAA_gammaimc     		 0
 EADEAB_gammaimc     		 0
 EADEAC_gammaimc     		 0
@@ -1241,12 +1143,7 @@ EADEAC_gammaimigdag 		 1
 EADEAE_gammaimigdag 		 1
 EADRW_gammaimigdag  		 1
 EADUS_gammaimigdag  		 1
-EADEAA_gx           		 0.224461
-EADEAB_gx           		 0.246461
-EADEAC_gx           		 0.246461
-EADEAE_gx           		 1.08007
-EADRW_gx            		 2.83251
-EADUS_gx            		 0.428542
+EAD_gx              		 5.0585
 EADEAA_im           		 0.0628318
 EADEAB_im           		 0.0679922
 EADEAC_im           		 0.0679913
@@ -1301,36 +1198,15 @@ EADEAC_imigy        		 0.00015408
 EADEAE_imigy        		 0.00190127
 EADRW_imigy         		 0.000581479
 EADUS_imigy         		 0.000555823
-EADEAA_piim         		 1.00496
-EADEAB_piim         		 1.00496
-EADEAC_piim         		 1.00496
-EADEAE_piim         		 1.00496
-EADRW_piim          		 1.00496
-EADUS_piim          		 1.00496
-EADEAA_pim          		 0.93936
-EADEAB_pim          		 0.926236
-EADEAC_pim          		 0.926236
-EADEAE_pim          		 0.889982
-EADRW_pim           		 0.744776
-EADUS_pim           		 0.63729
-EADEAA_pimtilde     		 0.93936
-EADEAB_pimtilde     		 0.926236
-EADEAC_pimtilde     		 0.926236
-EADEAE_pimtilde     		 0.889982
-EADRW_pimtilde      		 0.744776
-EADUS_pimtilde      		 0.63729
+EAD_piex            		 1.00496
+EAD_pextilde        		 0.926236
 EADEAA_rer          		 1.00862
 EADEAB_rer          		 1
 EADEAC_rer          		 1
 EADEAE_rer          		 0.991199
 EADRW_rer           		 0.783448
 EADUS_rer           		 0.678824
-EADEAA_sx           		 1
-EADEAB_sx           		 1
-EADEAC_sx           		 1
-EADEAE_sx           		 1
-EADRW_sx            		 1
-EADUS_sx            		 1
+EAD_sx              		 1
 EADEAA_tot          		 1.01417
 EADEAB_tot          		 1
 EADEAC_tot          		 1
@@ -1541,12 +1417,7 @@ EAEEAC_exiy         		 0.00889977
 EAEEAD_exiy         		 0.00889977
 EAERW_exiy          		 0.0420848
 EAEUS_exiy          		 0.00602542
-EAEEAA_fx           		 0.532838
-EAEEAB_fx           		 0.562199
-EAEEAC_fx           		 0.562199
-EAEEAD_fx           		 0.562199
-EAERW_fx            		 1.93357
-EAEUS_fx            		 0.398911
+EAE_fx              		 4.55192
 EAEEAA_gammaimc     		 0
 EAEEAB_gammaimc     		 0
 EAEEAC_gammaimc     		 0
@@ -1595,12 +1466,7 @@ EAEEAC_gammaimigdag 		 1
 EAEEAD_gammaimigdag 		 1
 EAERW_gammaimigdag  		 1
 EAEUS_gammaimigdag  		 1
-EAEEAA_gx           		 0.639406
-EAEEAB_gx           		 0.674638
-EAEEAC_gx           		 0.674639
-EAEEAD_gx           		 0.674639
-EAERW_gx            		 2.32028
-EAEUS_gx            		 0.478693
+EAE_gx              		 5.4623
 EAEEAA_im           		 0.183567
 EAEEAB_im           		 0.19864
 EAEEAC_im           		 0.198641
@@ -1655,36 +1521,15 @@ EAEEAC_imigy        		 0.00115578
 EAEEAD_imigy        		 0.00115578
 EAERW_imigy         		 0.00371382
 EAEUS_imigy         		 0.000594859
-EAEEAA_piim         		 1.00496
-EAEEAB_piim         		 1.00496
-EAEEAC_piim         		 1.00496
-EAEEAD_piim         		 1.00496
-EAERW_piim          		 1.00496
-EAEUS_piim          		 1.00496
-EAEEAA_pim          		 0.947701
-EAEEAB_pim          		 0.93446
-EAEEAC_pim          		 0.93446
-EAEEAD_pim          		 0.93446
-EAERW_pim           		 0.751389
-EAEUS_pim           		 0.642949
-EAEEAA_pimtilde     		 0.947701
-EAEEAB_pimtilde     		 0.93446
-EAEEAC_pimtilde     		 0.93446
-EAEEAD_pimtilde     		 0.93446
-EAERW_pimtilde      		 0.751389
-EAEUS_pimtilde      		 0.642949
+EAE_piex            		 1.00496
+EAE_pextilde        		 0.897884
 EAEEAA_rer          		 1.01757
 EAEEAB_rer          		 1.00888
 EAEEAC_rer          		 1.00888
 EAEEAD_rer          		 1.00888
 EAERW_rer           		 0.790405
 EAEUS_rer           		 0.684851
-EAEEAA_sx           		 1
-EAEEAB_sx           		 1
-EAEEAC_sx           		 1
-EAEEAD_sx           		 1
-EAERW_sx            		 1
-EAEUS_sx            		 1
+EAE_sx              		 1
 EAEEAA_tot          		 1.05548
 EAEEAB_tot          		 1.04074
 EAEEAC_tot          		 1.04074
@@ -1895,12 +1740,7 @@ RWEAC_exiy          		 0.000490865
 RWEAD_exiy          		 0.000490865
 RWEAE_exiy          		 0.00459023
 RWUS_exiy           		 0.017588
-RWEAA_fx            		 0.263269
-RWEAB_fx            		 0.293259
-RWEAC_fx            		 0.293259
-RWEAD_fx            		 0.293259
-RWEAE_fx            		 0.314172
-RWUS_fx             		 1.07111
+RW_fx               		 2.52833
 RWEAA_gammaimc      		 0
 RWEAB_gammaimc      		 0
 RWEAC_gammaimc      		 0
@@ -1949,12 +1789,7 @@ RWEAC_gammaimigdag  		 1
 RWEAD_gammaimigdag  		 1
 RWEAE_gammaimigdag  		 1
 RWUS_gammaimigdag   		 1
-RWEAA_gx            		 0.315922
-RWEAB_gx            		 0.351911
-RWEAC_gx            		 0.351911
-RWEAD_gx            		 0.351911
-RWEAE_gx            		 0.377007
-RWUS_gx             		 1.28534
+RW_gx               		 3.034
 RWEAA_im            		 0.0614563
 RWEAB_im            		 0.0665025
 RWEAC_im            		 0.0665025
@@ -2009,36 +1844,15 @@ RWEAC_imigy         		 0.000640957
 RWEAD_imigy         		 0.000640952
 RWEAE_imigy         		 0.000831638
 RWUS_imigy          		 0.00382738
-RWEAA_piim          		 1.00496
-RWEAB_piim          		 1.00496
-RWEAC_piim          		 1.00496
-RWEAD_piim          		 1.00496
-RWEAE_piim          		 1.00496
-RWUS_piim           		 1.00496
-RWEAA_pim           		 1.19901
-RWEAB_pim           		 1.18226
-RWEAC_pim           		 1.18226
-RWEAD_pim           		 1.18226
-RWEAE_pim           		 1.13598
-RWUS_pim            		 0.813442
-RWEAA_pimtilde      		 1.19901
-RWEAB_pimtilde      		 1.18226
-RWEAC_pimtilde      		 1.18226
-RWEAD_pimtilde      		 1.18226
-RWEAE_pimtilde      		 1.13598
-RWUS_pimtilde       		 0.813443
+RW_piex             		 1.00496
+RW_pextilde         		 0.950639
 RWEAA_rer           		 1.2874
 RWEAB_rer           		 1.27641
 RWEAC_rer           		 1.27641
 RWEAD_rer           		 1.27641
 RWEAE_rer           		 1.26517
 RWUS_rer            		 0.866456
-RWEAA_sx            		 1
-RWEAB_sx            		 1
-RWEAC_sx            		 1
-RWEAD_sx            		 1
-RWEAE_sx            		 1
-RWUS_sx             		 1
+RW_sx               		 1
 RWEAA_tot           		 1.26126
 RWEAB_tot           		 1.24364
 RWEAC_tot           		 1.24364
@@ -2249,12 +2063,7 @@ USEAC_exiy          		 0.000577433
 USEAD_exiy          		 0.000577433
 USEAE_exiy          		 0.000904825
 USRW_exiy           		 0.0429856
-USEAA_fx            		 0.0305631
-USEAB_fx            		 0.0313685
-USEAC_fx            		 0.0313677
-USEAD_fx            		 0.0313677
-USEAE_fx            		 0.0874952
-USRW_fx             		 2.24641
+US_fx               		 2.45857
 USEAA_gammaimc      		 0
 USEAB_gammaimc      		 0
 USEAC_gammaimc      		 0
@@ -2303,12 +2112,7 @@ USEAC_gammaimigdag  		 1
 USEAD_gammaimigdag  		 1
 USEAE_gammaimigdag  		 1
 USRW_gammaimigdag   		 1
-USEAA_gx            		 0.0366757
-USEAB_gx            		 0.0376422
-USEAC_gx            		 0.0376412
-USEAD_gx            		 0.0376412
-USEAE_gx            		 0.104994
-USRW_gx             		 2.69569
+US_gx               		 2.95029
 USEAA_im            		 0.0140969
 USEAB_im            		 0.0152545
 USEAC_im            		 0.0152545
@@ -2363,36 +2167,15 @@ USEAC_imigy         		 9.73875e-05
 USEAD_imigy         		 9.73875e-05
 USEAE_imigy         		 0.000194667
 USRW_imigy          		 0.00315086
-USEAA_piim          		 1.00496
-USEAB_piim          		 1.00496
-USEAC_piim          		 1.00496
-USEAD_piim          		 1.00496
-USEAE_piim          		 1.00496
-USRW_piim           		 1.00496
-USEAA_pim           		 1.38381
-USEAB_pim           		 1.36447
-USEAC_pim           		 1.36447
-USEAD_pim           		 1.36447
-USEAE_pim           		 1.31106
-USRW_pim            		 1.09716
-USEAA_pimtilde      		 1.38381
-USEAB_pimtilde      		 1.36447
-USEAC_pimtilde      		 1.36447
-USEAD_pimtilde      		 1.36447
-USEAE_pimtilde      		 1.31106
-USRW_pimtilde       		 1.09716
+US_piex             		 1.00496
+US_pextilde         		 0.938815
 USEAA_rer           		 1.48583
 USEAB_rer           		 1.47314
 USEAC_rer           		 1.47314
 USEAD_rer           		 1.47314
 USEAE_rer           		 1.46017
 USRW_rer            		 1.15413
-USEAA_sx            		 1
-USEAB_sx            		 1
-USEAC_sx            		 1
-USEAD_sx            		 1
-USEAE_sx            		 1
-USRW_sx             		 1
+US_sx               		 1
 USEAA_tot           		 1.47399
 USEAB_tot           		 1.4534
 USEAC_tot           		 1.4534
@@ -2597,9 +2380,9 @@ EAC_gammabh         		 0
 EAD_gammabh         		 0
 EAA_bh              		 0
 EAB_bh              		 0
-EAC_bh              		 -1.87017e-16
+EAC_bh              		 3.11898e-16
 EAD_bh              		 0
-EAE_bh              		 1.24678e-16
+EAE_bh              		 -2.07932e-16
 EAA_ccesi           		 4.53904
 EAA_ccesj           		 1.65112
 EAA_dcci            		 0.886515
@@ -2639,39 +2422,39 @@ MODEL SIMULATION: (method=Sparse LU solver on stacked system)
 ------------------------------------
       Iteration no. 1
       Inf-norm error = 1.889e-01
-      2-norm error   = 8.147e-01
-      1-norm error   = 6.600e+00
+      2-norm error   = 8.148e-01
+      1-norm error   = 6.714e+00
 ------------------------------------
-(** 2.49 seconds **)
+(** 12.22 seconds **)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 8.315e-01
-      2-norm error   = 2.715e+00
-      1-norm error   = 3.365e+01
+      Inf-norm error = 8.229e-01
+      2-norm error   = 2.729e+00
+      1-norm error   = 4.081e+01
 ------------------------------------
-(** 2.63 seconds **)
+(** 10.16 seconds **)
 ------------------------------------
       Iteration no. 3
-      Inf-norm error = 6.802e-01
-      2-norm error   = 2.070e+00
-      1-norm error   = 2.104e+01
+      Inf-norm error = 5.311e-01
+      2-norm error   = 1.623e+00
+      1-norm error   = 1.949e+01
 ------------------------------------
-(** 2.48 seconds **)
+(** 10.50 seconds **)
 ------------------------------------
       Iteration no. 4
-      Inf-norm error = 8.680e-04
-      2-norm error   = 1.778e-03
-      1-norm error   = 9.800e-03
+      Inf-norm error = 5.392e-04
+      2-norm error   = 1.144e-03
+      1-norm error   = 7.786e-03
 ------------------------------------
-(** 2.35 seconds **)
+(** 9.95 seconds **)
 ------------------------------------
       Iteration no. 5
-      Inf-norm error = 6.174e-08
-      2-norm error   = 7.267e-08
-      1-norm error   = 2.190e-07
+      Inf-norm error = 8.176e-08
+      2-norm error   = 9.014e-08
+      1-norm error   = 2.236e-07
 ------------------------------------
 
 Perfect foresight solution found.
 
-Total computing time : 0h00m12s
+Total computing time : 0h00m46s
 Note: 82 warning(s) encountered in the preprocessor
