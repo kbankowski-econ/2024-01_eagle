@@ -1,4 +1,4 @@
 function [y, T] = dynamic_76(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(4023)=(-0.125)/(y(4127)*(y(4127)+y(4127)*params(257)-1));
-  y(2916)=(-0.125)/(y(3020)*(y(3020)+y(3020)*params(26)-1));
+  y(3682)=(-0.125)/(y(3786)*(y(3786)+y(3786)*params(257)-1));
+  y(2668)=(-0.125)/(y(2772)*(y(2772)+y(2772)*params(26)-1));
 end
