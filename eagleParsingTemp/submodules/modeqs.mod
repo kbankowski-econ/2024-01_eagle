@@ -251,6 +251,7 @@ model(block, bytecode, cutoff=0);
 // Intermediate-good price inflation
 @{co}_piht = @{co}_pht/@{co}_pht(-1)*@{co}_pic;
 
+
 // Optimal price contract set in domestic markets (FOC)
 @{co}_pnttilde/@{co}_pnt = @{co}_thetan/(@{co}_thetan-1)*@{co}_fn/@{co}_gn;
 
@@ -267,6 +268,20 @@ model(block, bytecode, cutoff=0);
 @{co}_pint = @{co}_pnt/@{co}_pnt(-1)*@{co}_pic;
 
 
+// Optimal price contract set in domestic markets (FOC)
+@{co}_pextilde/@{co}_pex = @{co}_thetat/(@{co}_thetat-1)*@{co}_fx/@{co}_gx;
+
+// Definition of fh
+@{co}_fx = @{co}_mct*@{co}_ex+@{co}_xix*@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*(@{co}_piex(+1)/(@{co}_piex^@{co}_chix*@{co}_pi4target^(1/4*(1-@{co}_chix))))^@{co}_thetat*@{co}_fx(+1);
+
+// Definition of gh
+@{co}_gx = @{co}_pex*@{co}_ex+@{co}_xix*@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*(@{co}_piex(+1)/(@{co}_piex^@{co}_chix*@{co}_pi4target^(1/4*(1-@{co}_chix))))^(@{co}_thetat-1)*@{co}_gx(+1);
+
+// Aggregate intermediate-good price dynamics
+@{co}_pex^(1-@{co}_thetat) = (1-@{co}_xix)*@{co}_pextilde^(1-@{co}_thetat)+@{co}_xix*(@{co}_pex(-1)/@{co}_pic)^(1-@{co}_thetat)*(@{co}_piex(-1)^@{co}_chix*@{co}_pi4target^(1/4*(1-@{co}_chix)))^(1-@{co}_thetat);
+
+// Intermediate-good price inflation
+@{co}_piex = @{co}_pex/@{co}_pex(-1)*@{co}_pic;
 //---------------
 // import pricing
 //---------------
@@ -274,19 +289,19 @@ model(block, bytecode, cutoff=0);
 @#for it in countries - [ co ]
 
 // Optimal price contract set in foreign markets (FOC), using @{co}_pxtilde = @{it}_pimtilde
-@{it}@{co}_pimtilde/@{it}@{co}_pim = @{co}_cpim*@{co}_thetat/(@{co}_thetat-1)*@{co}@{it}_fx/@{co}@{it}_gx;
+// @{it}@{co}_pimtilde/@{it}@{co}_pim = @{co}_cpim*@{co}_thetat/(@{co}_thetat-1)*@{co}@{it}_fx/@{co}@{it}_gx;
 
 // Definition of fx
-@{co}@{it}_fx = @{it}_size/@{co}_size*@{it}@{co}_im*@{co}_mct+@{co}_xix*@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*(@{it}@{co}_piim(+1)/(@{it}@{co}_piim^@{co}_chix*@{co}_pi4target^(1/4*(1-@{co}_chix))))^@{co}_thetat*@{co}@{it}_fx(+1);
+// @{co}@{it}_fx = @{it}_size/@{co}_size*@{it}@{co}_im*@{co}_mct+@{co}_xix*@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*(@{it}@{co}_piim(+1)/(@{it}@{co}_piim^@{co}_chix*@{co}_pi4target^(1/4*(1-@{co}_chix))))^@{co}_thetat*@{co}@{it}_fx(+1);
 
 // Definition of gx   
-@{co}@{it}_gx = @{co}@{it}_rer*@{it}@{co}_pim*@{it}_size/@{co}_size*@{it}@{co}_im+@{co}_xix*@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*(@{it}@{co}_piim(+1)/(@{it}@{co}_piim^@{co}_chix*@{co}_pi4target^(1/4*(1-@{co}_chix))))^(@{co}_thetat-1)*@{co}@{it}_gx(+1);
+// @{co}@{it}_gx = @{co}@{it}_rer*@{it}@{co}_pim*@{it}_size/@{co}_size*@{it}@{co}_im+@{co}_xix*@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*(@{it}@{co}_piim(+1)/(@{it}@{co}_piim^@{co}_chix*@{co}_pi4target^(1/4*(1-@{co}_chix))))^(@{co}_thetat-1)*@{co}@{it}_gx(+1);
 
 // Aggregate intermediate-good price dynamics, using @{co}_px = @{it}_pim
-@{it}@{co}_pim^(1-@{co}_thetat) = (1-@{co}_xix)*@{it}@{co}_pimtilde^(1-@{co}_thetat)+@{co}_xix*(@{it}@{co}_pim(-1)/@{it}_pic)^(1-@{co}_thetat)*(@{it}@{co}_piim(-1)^@{co}_chix*@{it}_pi4target^(1/4*(1-@{co}_chih)))^(1-@{co}_thetat);
+// @{it}@{co}_pim^(1-@{co}_thetat) = (1-@{co}_xix)*@{it}@{co}_pimtilde^(1-@{co}_thetat)+@{co}_xix*(@{it}@{co}_pim(-1)/@{it}_pic)^(1-@{co}_thetat)*(@{it}@{co}_piim(-1)^@{co}_chix*@{it}_pi4target^(1/4*(1-@{co}_chih)))^(1-@{co}_thetat);
 
 // Intermediate-good price inflation, using @{co}_pix = @{it}_piim
-@{it}@{co}_piim = @{it}@{co}_pim/@{it}@{co}_pim(-1)*@{it}_pic;
+// @{it}@{co}_piim = @{it}@{co}_pim/@{it}@{co}_pim(-1)*@{it}_pic;
 
 // Bilateral real exchange rate
 @{co}@{it}_rer = @{co}_rer/@{it}_rer;
@@ -315,12 +330,6 @@ model(block, bytecode, cutoff=0);
 @#endfor
 ;
 
-// Total Export deflator 
-@{co}_ex*@{co}_pex  =
-@#for it in countries - [ co ]
-+@{co}@{it}_rer*@{it}@{co}_pim*@{it}_size/@{co}_size*@{it}@{co}_im
-@#endfor
-;
 
 @#for it in countries - [ co ]
 
