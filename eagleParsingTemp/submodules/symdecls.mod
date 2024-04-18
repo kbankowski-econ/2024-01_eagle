@@ -356,7 +356,6 @@ varexo
  @{co}_znbar
  @{co}_ztbar
 
- @{co}_cpim
  @{co}_epsgc
  @{co}_epsgi
 @# if co != countries[1] && co != countries[2] && co != countries[3] && co != countries[4] && co != countries[5]
