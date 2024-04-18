@@ -1,6 +1,6 @@
 function [y, T] = dynamic_59(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(3710)=y(3695);
-  y(4079)=y(4064);
-  y(2972)=y(2957);
-  y(4448)=y(4433);
+  y(3400)=y(3385);
+  y(2724)=y(2709);
+  y(3738)=y(3723);
+  y(4076)=y(4061);
 end
