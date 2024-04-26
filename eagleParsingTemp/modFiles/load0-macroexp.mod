@@ -12170,10 +12170,10 @@ US_size*US_bf =
 		RW_bf/US_r(-1) = RW_bf(-1)+RW_tb(-1)/RW_rer(-1);
 	
 US_rer = 1;
-EAAEAE_nerdep = EAA_rerdep/EAE_rerdep*EAA_pic/EAE_pic;
-EABEAE_nerdep = EAB_rerdep/EAE_rerdep*EAB_pic/EAE_pic;
-EACEAE_nerdep = EAC_rerdep/EAE_rerdep*EAC_pic/EAE_pic;
-EADEAE_nerdep = EAD_rerdep/EAE_rerdep*EAD_pic/EAE_pic;
+	EAAEAE_nerdep = EAA_rerdep/EAE_rerdep*EAA_pic/EAE_pic;
+	EABEAE_nerdep = EAB_rerdep/EAE_rerdep*EAB_pic/EAE_pic;
+	EACEAE_nerdep = EAC_rerdep/EAE_rerdep*EAC_pic/EAE_pic;
+	EADEAE_nerdep = EAD_rerdep/EAE_rerdep*EAD_pic/EAE_pic;
 // Euler equation for euroarea traded bonds
 EAA_gammabh = 0;
 EAB_gammabh = 0;

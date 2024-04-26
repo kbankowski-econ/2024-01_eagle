@@ -996,10 +996,9 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 
 @{coUSA}_rer = 1;
 
-@{co}@{co5}_nerdep = @{co}_rerdep/@{co5}_rerdep*@{co}_pic/@{co5}_pic;
-@{co2}@{co5}_nerdep = @{co2}_rerdep/@{co5}_rerdep*@{co2}_pic/@{co5}_pic;
-@{co3}@{co5}_nerdep = @{co3}_rerdep/@{co5}_rerdep*@{co3}_pic/@{co5}_pic;
-@{co4}@{co5}_nerdep = @{co4}_rerdep/@{co5}_rerdep*@{co4}_pic/@{co5}_pic;
+@#for it in countries[1: ctryNumber-3]
+	@{it}@{coGermany}_nerdep = @{it}_rerdep/@{coGermany}_rerdep*@{it}_pic/@{coGermany}_pic;
+@#endfor
 
 // Euler equation for euroarea traded bonds
 @#if !steady
