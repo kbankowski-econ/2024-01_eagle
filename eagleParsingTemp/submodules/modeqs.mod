@@ -368,7 +368,7 @@ model(block, bytecode, cutoff=0);
 
 // Private consumption good (import)
 @{co}_im@{aItem}^((@{co}_mum@{aItem}-1)/@{co}_mum@{aItem}) =
-@#for it in countries - [ co, co6 ]
+@#for it in countries - [ co, coResid ]
 @#if !steady
 +@{co}@{it}_num@{aItem} ^(1/@{co}_mum@{aItem})*((1-@{co}@{it}_gammaim@{aItem})*@{co}@{it}_im@{aItem})^(1-1/@{co}_mum@{aItem})
 @#else
@@ -376,13 +376,13 @@ model(block, bytecode, cutoff=0);
 @#endif
 @#endfor
 +(1
-@#for it in countries - [ co, co6 ]
+@#for it in countries - [ co, coResid ]
 -@{co}@{it}_num@{aItem}
 @#endfor
 @#if !steady
-)^(1/@{co}_mum@{aItem})*((1-@{co}@{co6}_gammaim@{aItem})*@{co}@{co6}_im@{aItem})^(1-1/@{co}_mum@{aItem});
+)^(1/@{co}_mum@{aItem})*((1-@{co}@{coResid}_gammaim@{aItem})*@{co}@{coResid}_im@{aItem})^(1-1/@{co}_mum@{aItem});
 @#else
-)^(1/@{co}_mum@{aItem})*@{co}@{co6}_im@{aItem}^(1-1/@{co}_mum@{aItem});
+)^(1/@{co}_mum@{aItem})*@{co}@{coResid}_im@{aItem}^(1-1/@{co}_mum@{aItem});
 @#endif
 
 // Demand for bilateral consumption import goods
