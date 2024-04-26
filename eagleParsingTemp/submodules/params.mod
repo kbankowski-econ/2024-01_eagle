@@ -125,6 +125,112 @@ load("paramsToBeSaved", 'ctryNumberDouble')
 @#endfor
 
  // Bilateral and asymmetric
+
+
+
+
+            
+              
+
+
+
+
+/*
+@#for i in 1: ctryNumber
+@#include "dynamicCtryList7.mod"
+@# for it in countries - [ countries[i], coResid]
+@#for aItem in demandItems
+ @{countries[i]}@{it}_num@{aItem} = ;
+@#endfor
+@# endfor
+@#endfor
+*/
+
+
+
+
+
+
+@#for aItem in demandItems
+ 
+@#for co in countries
+ 
+@#for it in countries - [ co]
+ 
+@#if co == countries[ctryNumber-1] // **RW Imports**
+        
+            @#if it == countries[ctryNumber-2] // RWEAE_im
+                @{co}@{it}_num@{aItem} = 0.075 ;
+                
+               @#else
+           
+                   @#if it == countries[ctryNumber] // RWUS_im       
+                    @{co}@{it}_num@{aItem} = 0.3;
+           
+                @#else // RW-BIG4_im
+                    @{co}@{it}_num@{aItem} = 0.6250 / (ctryNumber-3) ;
+         
+                   @#endif
+                         
+            @#endif
+ 
+@#else
+ 
+    @#if co == countries[ctryNumber] // **US Imports**
+                 
+               @#if it == countries[ctryNumber-1] // USRW_im       
+                    @{co}@{it}_num@{aItem} = 0.3;
+               
+               @#else
+           
+                   @#if it == countries[ctryNumber] // USEAE_im       
+                        @{co}@{it}_num@{aItem} = 0.075 ;
+               
+                @#else // US-BIG4_im
+                        @{co}@{it}_num@{aItem} = 0.6250 / (ctryNumber-3);
+             
+                   @#endif
+             
+                @#endif
+ 
+  @#else // End US Imports, Beginning of **BIG4 Imports**
+       
+    @#if it == countries[ctryNumber] //BIG4-EAE_im
+                @{co}@{it}_num@{aItem} = 0.1 ;
+                  
+        @#if it == countries[ctryNumber-1] //BIG4-RW_im       
+                    @{co}@{it}_num@{aItem} = 0.1 ;
+       
+        @#else // BIG4
+               
+            @#if it == countries[7] //BIG4-US_im       
+                        @{co}@{it}_im@{aItem}y, @{aShare}*0.0193375;
+                  
+            @#else //BIG4-BIG4_im
+                        @{co}@{it}_num@{aItem} = 0.8/(ctryNumber-3);
+ 
+ 
+            @#endif
+ 
+        @#endif
+ 
+     @#endif
+ 
+@#endif
+ 
+@#endfor
+ 
+@#endfor          
+ 
+@#endfor
+
+
+
+
+
+
+
+/*
 @#for aItem in demandItems
 
  EAAUS_num@{aItem}       = 0.1;
@@ -177,6 +283,8 @@ load("paramsToBeSaved", 'ctryNumberDouble')
  USEAE_num@{aItem}       = 1-USEAA_num@{aItem}-USEAB_num@{aItem}-USEAC_num@{aItem}-USEAD_num@{aItem}-USRW_num@{aItem};
 
 @#endfor
+
+*/
 
 // Euro area
 
