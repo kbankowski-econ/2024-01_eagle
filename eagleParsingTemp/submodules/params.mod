@@ -125,166 +125,17 @@ load("paramsToBeSaved", 'ctryNumberDouble')
 @#endfor
 
  // Bilateral and asymmetric
-
-
-
-
-            
-              
-
-
-
-
-/*
-@#for i in 1: ctryNumber
-@#include "dynamicCtryList7.mod"
-@# for it in countries - [ countries[i], coResid]
 @#for aItem in demandItems
- @{countries[i]}@{it}_num@{aItem} = ;
-@#endfor
-@# endfor
-@#endfor
-*/
-
-
-
-
-
-
-@#for aItem in demandItems
- 
-@#for co in countries
- 
-@#for it in countries - [ co]
- 
-@#if co == countries[ctryNumber-1] // **RW Imports**
-        
-            @#if it == countries[ctryNumber-2] // RWEAE_im
-                @{co}@{it}_num@{aItem} = 0.075 ;
-                
-               @#else
-           
-                   @#if it == countries[ctryNumber] // RWUS_im       
-                    @{co}@{it}_num@{aItem} = 0.3;
-           
-                @#else // RW-BIG4_im
-                    @{co}@{it}_num@{aItem} = 0.6250 / (ctryNumber-3) ;
-         
-                   @#endif
-                         
-            @#endif
- 
-@#else
- 
-    @#if co == countries[ctryNumber] // **US Imports**
-                 
-               @#if it == countries[ctryNumber-1] // USRW_im       
-                    @{co}@{it}_num@{aItem} = 0.3;
-               
-               @#else
-           
-                   @#if it == countries[ctryNumber] // USEAE_im       
-                        @{co}@{it}_num@{aItem} = 0.075 ;
-               
-                @#else // US-BIG4_im
-                        @{co}@{it}_num@{aItem} = 0.6250 / (ctryNumber-3);
-             
-                   @#endif
-             
-                @#endif
- 
-  @#else // End US Imports, Beginning of **BIG4 Imports**
-       
-    @#if it == countries[ctryNumber] //BIG4-EAE_im
-                @{co}@{it}_num@{aItem} = 0.1 ;
-                  
-        @#if it == countries[ctryNumber-1] //BIG4-RW_im       
-                    @{co}@{it}_num@{aItem} = 0.1 ;
-       
-        @#else // BIG4
-               
-            @#if it == countries[7] //BIG4-US_im       
-                        @{co}@{it}_im@{aItem}y, @{aShare}*0.0193375;
-                  
-            @#else //BIG4-BIG4_im
-                        @{co}@{it}_num@{aItem} = 0.8/(ctryNumber-3);
- 
- 
-            @#endif
- 
-        @#endif
- 
-     @#endif
- 
-@#endif
- 
-@#endfor
- 
-@#endfor          
- 
+   @#for i in 1: ctryNumber
+      @#include "dynamicCtryList7.mod"
+      @#for it in countries - [ countries[i], coResid]
+         @#for aItem in demandItems
+            set_param_value(['@{countries[i]}', '@{it}', '_num', '@{aItem}'], 1/(ctryNumberDouble-1));
+         @#endfor
+      @#endfor
+   @#endfor
 @#endfor
 
-
-
-
-
-
-
-/*
-@#for aItem in demandItems
-
- EAAUS_num@{aItem}       = 0.1;
- EAAEAB_num@{aItem}      = 0.2;
- EAAEAC_num@{aItem}      = 0.2;
- EAAEAD_num@{aItem}      = 0.2;
- EAAEAE_num@{aItem}      = 0.2;
- EAARW_num@{aItem}       = 1-EAAUS_num@{aItem}-EAAEAB_num@{aItem}-EAAEAC_num@{aItem}-EAAEAD_num@{aItem}-EAAEAE_num@{aItem};
-
- EABRW_num@{aItem}       = 0.1;
- EABEAA_num@{aItem}      = 0.2;
- EABEAC_num@{aItem}      = 0.2;
- EABEAD_num@{aItem}      = 0.2;
- EABEAE_num@{aItem}      = 0.2;
- EABUS_num@{aItem}       = 1-EABRW_num@{aItem}-EABEAA_num@{aItem}-EABEAC_num@{aItem}-EABEAD_num@{aItem}-EABEAE_num@{aItem};
-
- EACEAD_num@{aItem}      = 0.2;
- EACEAE_num@{aItem}      = 0.2;
- EACRW_num@{aItem}       = 0.1;
- EACUS_num@{aItem}       = 0.1;         
- EACEAB_num@{aItem}      = 0.2;
- EACEAA_num@{aItem} = 1-EACEAD_num@{aItem}-EACEAE_num@{aItem}-EACRW_num@{aItem}-EACUS_num@{aItem}-EACEAB_num@{aItem};
-
- EADEAE_num@{aItem}      = 0.2;
- EADRW_num@{aItem}       = 0.1;
- EADUS_num@{aItem}       = 0.1;         
- EADEAA_num@{aItem}      = 0.2;
- EADEAC_num@{aItem}      = 0.2;
- EADEAB_num@{aItem} = 1-EADEAE_num@{aItem}-EADEAC_num@{aItem}-EADRW_num@{aItem}-EADUS_num@{aItem}-EADEAA_num@{aItem};
-
- EAERW_num@{aItem}       = 0.1;
- EAEUS_num@{aItem}       = 0.1;
- EAEEAA_num@{aItem}      = 0.2;         
- EAEEAB_num@{aItem}      = 0.2;
- EAEEAD_num@{aItem}      = 0.2;
- EAEEAC_num@{aItem} = 1-EAERW_num@{aItem}-EAEUS_num@{aItem}-EAEEAA_num@{aItem}-EAEEAB_num@{aItem}-EAEEAD_num@{aItem};
-
- RWUS_num@{aItem}        = 0.3;
- RWEAA_num@{aItem}       = 0.15625;
- RWEAB_num@{aItem}       = 0.15625;
- RWEAC_num@{aItem}       = 0.15625;
- RWEAE_num@{aItem}       = 0.075;
- RWEAD_num@{aItem}       = 1-RWUS_num@{aItem}-RWEAA_num@{aItem}-RWEAB_num@{aItem}-RWEAC_num@{aItem}-RWEAE_num@{aItem};
-
- USEAA_num@{aItem}       = 0.15625;
- USEAB_num@{aItem}       = 0.15625;
- USEAC_num@{aItem}       = 0.15625;
- USEAD_num@{aItem}       = 0.15625;
- USRW_num@{aItem}        = 0.3;
- USEAE_num@{aItem}       = 1-USEAA_num@{aItem}-USEAB_num@{aItem}-USEAC_num@{aItem}-USEAD_num@{aItem}-USRW_num@{aItem};
-
-@#endfor
-
-*/
 
 // Euro area
 
