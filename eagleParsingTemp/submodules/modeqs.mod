@@ -5,7 +5,8 @@ model(block, bytecode, cutoff=0);
 @#endif
 
 
-@#for i in 1:7
+@#for i in 1: ctryNumber
+
 @#define co = countries[i]
 @#define co2 = countries2[i]
 @#define co3 = countries3[i]
