@@ -7,13 +7,7 @@ model(block, bytecode, cutoff=0);
 
 @#for i in 1: ctryNumber
 
-@#define co = countries[i]
-@#define co2 = countries2[i]
-@#define co3 = countries3[i]
-@#define co4 = countries4[i]
-@#define co5 = countries5[i]
-@#define co6 = countries6[i]
-@#define co7 = countries7[i]
+@#include "dynamicCtryList7.mod"
 
 // Core model begins
 
