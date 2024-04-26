@@ -12171,14 +12171,17 @@ US_size*US_bf =
 	
 US_rer = 1;
 	EAAEAE_nerdep = EAA_rerdep/EAE_rerdep*EAA_pic/EAE_pic;
+// Euler equation for euroarea traded bonds
+		EAA_gammabh = 0;
 	EABEAE_nerdep = EAB_rerdep/EAE_rerdep*EAB_pic/EAE_pic;
+// Euler equation for euroarea traded bonds
+		EAB_gammabh = 0;
 	EACEAE_nerdep = EAC_rerdep/EAE_rerdep*EAC_pic/EAE_pic;
+// Euler equation for euroarea traded bonds
+		EAC_gammabh = 0;
 	EADEAE_nerdep = EAD_rerdep/EAE_rerdep*EAD_pic/EAE_pic;
 // Euler equation for euroarea traded bonds
-EAA_gammabh = 0;
-EAB_gammabh = 0;
-EAC_gammabh = 0;
-EAD_gammabh = 0;
+		EAD_gammabh = 0;
 // International transaction cost ('risk premium')
 EAA_bh = (EAA_bhytarget*EAA_py*EAA_y)/EAAEAE_rer*EAE_pic;
 EAB_bh = (EAB_bhytarget*EAB_py*EAB_y)/EABEAE_rer*EAE_pic;

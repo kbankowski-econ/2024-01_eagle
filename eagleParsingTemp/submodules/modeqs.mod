@@ -998,20 +998,13 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 
 @#for it in countries[1: ctryNumber-3]
 	@{it}@{coGermany}_nerdep = @{it}_rerdep/@{coGermany}_rerdep*@{it}_pic/@{coGermany}_pic;
-@#endfor
-
 // Euler equation for euroarea traded bonds
-@#if !steady
-1 = @{co5}_r*(1-@{co}_gammabh)*@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*@{co}@{co5}_rer(+1)/@{co}@{co5}_rer   /@{co5}_pic(+1);
-1 = @{co5}_r*(1-@{co2}_gammabh)*@{co2}_beta*@{co2}_lambdai(+1)/@{co2}_lambdai*@{co2}@{co5}_rer(+1)/@{co2}@{co5}_rer   /@{co5}_pic(+1);
-1 = @{co5}_r*(1-@{co3}_gammabh)*@{co3}_beta*@{co3}_lambdai(+1)/@{co3}_lambdai*@{co3}@{co5}_rer(+1)/@{co3}@{co5}_rer   /@{co5}_pic(+1);
-1 = @{co5}_r*(1-@{co4}_gammabh)*@{co4}_beta*@{co4}_lambdai(+1)/@{co4}_lambdai*@{co4}@{co5}_rer(+1)/@{co4}@{co5}_rer   /@{co5}_pic(+1);
-@#else
-@{co}_gammabh = 0;
-@{co2}_gammabh = 0;
-@{co3}_gammabh = 0;
-@{co4}_gammabh = 0;
-@#endif
+	@#if !steady
+		1 = @{coGermany}_r*(1-@{co}_gammabh)*@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*@{co}@{coGermany}_rer(+1)/@{co}@{coGermany}_rer/@{coGermany}_pic(+1);
+	@#else
+		@{it}_gammabh = 0;
+	@#endif
+@#endfor
 
 // International transaction cost ('risk premium')
 @#if !steady
