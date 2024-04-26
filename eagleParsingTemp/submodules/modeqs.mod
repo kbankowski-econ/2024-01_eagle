@@ -385,30 +385,16 @@ model(block, bytecode, cutoff=0);
 )^(1/@{co}_mum@{aItem})*@{co}@{coResid}_im@{aItem}^(1-1/@{co}_mum@{aItem});
 @#endif
 
+@#for it in countries - [ co, co2, coResid]
+
 // Demand for bilateral consumption import goods
 @#if !steady
-@{co}@{co5}_im@{aItem} = @{co}@{co5}_num@{aItem}*((@{co5}_pex*@{co}@{co5}_rer)/(@{co}@{co5}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{co5}_gammaim@{aItem});
+@{co}@{it}_im@{aItem} = @{co}@{it}_num@{aItem}*((@{it}_pex*@{co}@{it}_rer)/(@{co}@{it}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{it}_gammaim@{aItem});
 @#else
-@{co}@{co5}_im@{aItem} = @{co}@{co5}_num@{aItem}*((@{co5}_pex*@{co}@{co5}_rer)/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
+@{co}@{it}_im@{aItem} = @{co}@{it}_num@{aItem}*((@{it}_pex*@{co}@{it}_rer)/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
 @#endif
 
-@#if !steady
-@{co}@{co3}_im@{aItem} = @{co}@{co3}_num@{aItem}*((@{co3}_pex*@{co}@{co3}_rer)/(@{co}@{co3}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{co3}_gammaim@{aItem});
-@#else
-@{co}@{co3}_im@{aItem} = @{co}@{co3}_num@{aItem}*((@{co3}_pex*@{co}@{co3}_rer)/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
-@#endif
-
-@#if !steady
-@{co}@{co4}_im@{aItem} = @{co}@{co4}_num@{aItem}*((@{co4}_pex*@{co}@{co4}_rer)/(@{co}@{co4}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{co4}_gammaim@{aItem});
-@#else
-@{co}@{co4}_im@{aItem} = @{co}@{co4}_num@{aItem}*((@{co4}_pex*@{co}@{co4}_rer)/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
-@#endif
-
-@#if !steady
-@{co}@{co7}_im@{aItem} = @{co}@{co7}_num@{aItem}*((@{co7}_pex*@{co}@{co7}_rer)/(@{co}@{co7}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{co7}_gammaim@{aItem});
-@#else
-@{co}@{co7}_im@{aItem} = @{co}@{co7}_num@{aItem}*((@{co7}_pex*@{co}@{co7}_rer)/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
-@#endif
+@#endfor
 
 @{co}@{co6}_im@{aItem} = (1
 @#for it in countries - [ co, co6 ]
