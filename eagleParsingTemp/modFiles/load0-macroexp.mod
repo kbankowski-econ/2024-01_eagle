@@ -12139,6 +12139,8 @@ US_size*US_bf =
 -EAB_size*EAB_bf
 -EAC_size*EAC_bf
 -EAD_size*EAD_bf
+-EAE_size*EAE_bf
+-RW_size*RW_bf
 ;
 // Net foreign asset position
 	

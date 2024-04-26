@@ -966,13 +966,13 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @#include "staticCtryList7.mod"
 
 @{coUSA}_size*@{coUSA}_bf =
-@#for it in countries[1:ctryNumber-3]
+@#for it in countries[1:ctryNumber-1]
 -@{it}_size*@{it}_bf
 @#endfor
 ;
 
 // Net foreign asset position
-@#for it in countries[1:6]
+@#for it in countries[1:ctryNumber-1]
 
 	@#if it == countries[6] || it == countries[7]
 
