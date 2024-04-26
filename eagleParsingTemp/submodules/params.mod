@@ -1,3 +1,5 @@
+load("paramsToBeSaved", 'ctryNumberDouble')
+
 @#for COUNTRY in countries
   disp('Creating data for @{COUNTRY}');
 
@@ -6,8 +8,7 @@
 // ------------------ //
 
 // Country size (population)
-
-   @{COUNTRY}_size        = 1/7;
+   set_param_value(['@{COUNTRY}', '_size'], 1/ctryNumberDouble);
 
 // Size of household J
 
@@ -70,7 +71,7 @@
    @{COUNTRY}_gammav1     = 0.02;
    @{COUNTRY}_gammav2     = 0.10;
    @{COUNTRY}_gammai1     = 1.00;
-   @#if(COUNTRY != "EAA")
+  @#if(COUNTRY == countries[ctryNumber] || COUNTRY == countries[ctryNumber-1] || COUNTRY == countries[ctryNumber-2])
 // must equal steady-state value of rk
      @{COUNTRY}_gammau1     = 0.00;  
    @#endif
@@ -90,7 +91,7 @@
 // Monetary policy
 
   @{COUNTRY}_pi4target   = 1.00;
-  @#if(COUNTRY != "EAA")
+  @#if(COUNTRY == countries[ctryNumber] || COUNTRY == countries[ctryNumber-1] || COUNTRY == countries[ctryNumber-2])
     @{COUNTRY}_phirr       = 0.75;
     @{COUNTRY}_phirgy      = 0.00;
     @{COUNTRY}_phirpi      = 1.50;

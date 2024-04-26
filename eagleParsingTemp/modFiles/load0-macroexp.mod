@@ -2,6 +2,8 @@ options_.maxit_ = 20
 options_.homotopy_mode = 1;
 options_.solve_algo = 5;
 options_.markowitz = 5;
+ctryNumberDouble = 7
+save("paramsToBeSaved", 'ctryNumberDouble')
 //
 // Is sigma equal to one for any country ?
 // Is omega equal to zero for any country ?
@@ -12294,12 +12296,13 @@ log(EA_z) = (1-EA_rhoz)*log(EA_zbar)+EA_rhoz*log(EA_z(-1))+EA_epsz;
 // Auxiliary equation for steady-state output
 EA_ybar = EA_y;
 end;
+load("paramsToBeSaved", 'ctryNumberDouble')
   disp('Creating data for EAA');
 // ------------------ //
 // Parameter values   //
 // ------------------ //
 // Country size (population)
-   EAA_size        = 1/7;
+set_param_value(['EAA', '_size'], 1/ctryNumberDouble);
 // Size of household J
    EAA_omega       = 0.25;
 // Utility function
@@ -12399,7 +12402,7 @@ end;
 // Parameter values   //
 // ------------------ //
 // Country size (population)
-   EAB_size        = 1/7;
+set_param_value(['EAB', '_size'], 1/ctryNumberDouble);
 // Size of household J
    EAB_omega       = 0.25;
 // Utility function
@@ -12460,8 +12463,6 @@ end;
    EAB_gammav1     = 0.02;
    EAB_gammav2     = 0.10;
    EAB_gammai1     = 1.00;
-// must equal steady-state value of rk
-     EAB_gammau1     = 0.00;  
    EAB_gammau2     = 1.00;
    EAB_gammaimc1   = 1.00;
    EAB_gammaimi1   = 1.00;
@@ -12475,9 +12476,6 @@ end;
    EAB_upsilontr   = 1.00;
 // Monetary policy
   EAB_pi4target   = 1.00;
-    EAB_phirr       = 0.75;
-    EAB_phirgy      = 0.00;
-    EAB_phirpi      = 1.50;
 // Net foreign asset position
     EAB_bfytarget   = 0.00;
     EAB_bhytarget   = 0.00;
@@ -12504,7 +12502,7 @@ end;
 // Parameter values   //
 // ------------------ //
 // Country size (population)
-   EAC_size        = 1/7;
+set_param_value(['EAC', '_size'], 1/ctryNumberDouble);
 // Size of household J
    EAC_omega       = 0.25;
 // Utility function
@@ -12565,8 +12563,6 @@ end;
    EAC_gammav1     = 0.02;
    EAC_gammav2     = 0.10;
    EAC_gammai1     = 1.00;
-// must equal steady-state value of rk
-     EAC_gammau1     = 0.00;  
    EAC_gammau2     = 1.00;
    EAC_gammaimc1   = 1.00;
    EAC_gammaimi1   = 1.00;
@@ -12580,9 +12576,6 @@ end;
    EAC_upsilontr   = 1.00;
 // Monetary policy
   EAC_pi4target   = 1.00;
-    EAC_phirr       = 0.75;
-    EAC_phirgy      = 0.00;
-    EAC_phirpi      = 1.50;
 // Net foreign asset position
     EAC_bfytarget   = 0.00;
     EAC_bhytarget   = 0.00;
@@ -12609,7 +12602,7 @@ end;
 // Parameter values   //
 // ------------------ //
 // Country size (population)
-   EAD_size        = 1/7;
+set_param_value(['EAD', '_size'], 1/ctryNumberDouble);
 // Size of household J
    EAD_omega       = 0.25;
 // Utility function
@@ -12670,8 +12663,6 @@ end;
    EAD_gammav1     = 0.02;
    EAD_gammav2     = 0.10;
    EAD_gammai1     = 1.00;
-// must equal steady-state value of rk
-     EAD_gammau1     = 0.00;  
    EAD_gammau2     = 1.00;
    EAD_gammaimc1   = 1.00;
    EAD_gammaimi1   = 1.00;
@@ -12685,9 +12676,6 @@ end;
    EAD_upsilontr   = 1.00;
 // Monetary policy
   EAD_pi4target   = 1.00;
-    EAD_phirr       = 0.75;
-    EAD_phirgy      = 0.00;
-    EAD_phirpi      = 1.50;
 // Net foreign asset position
     EAD_bfytarget   = 0.00;
     EAD_bhytarget   = 0.00;
@@ -12714,7 +12702,7 @@ end;
 // Parameter values   //
 // ------------------ //
 // Country size (population)
-   EAE_size        = 1/7;
+set_param_value(['EAE', '_size'], 1/ctryNumberDouble);
 // Size of household J
    EAE_omega       = 0.25;
 // Utility function
@@ -12819,7 +12807,7 @@ end;
 // Parameter values   //
 // ------------------ //
 // Country size (population)
-   RW_size        = 1/7;
+set_param_value(['RW', '_size'], 1/ctryNumberDouble);
 // Size of household J
    RW_omega       = 0.25;
 // Utility function
@@ -12924,7 +12912,7 @@ end;
 // Parameter values   //
 // ------------------ //
 // Country size (population)
-   US_size        = 1/7;
+set_param_value(['US', '_size'], 1/ctryNumberDouble);
 // Size of household J
    US_omega       = 0.25;
 // Utility function

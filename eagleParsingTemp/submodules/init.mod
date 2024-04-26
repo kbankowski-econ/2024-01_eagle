@@ -1,5 +1,7 @@
 @#define countries = [ "EAA", "EAB", "EAC", "EAD", "EAE", "RW", "US" ]
 @#define ctryNumber = 7
+ctryNumberDouble = 7;
+save("paramsToBeSaved", 'ctryNumberDouble')
 @#define coGermany = countries[ctryNumber-2]
 @#define coUSA = countries[ctryNumber]
 @#define ea = "EA"
