@@ -537,7 +537,7 @@ model(block, bytecode, cutoff=0);
 
 // Government budget constraint, using @{co}_pg = @{co}_pht
 // TODO: check the (1-@{co}_gammab(-1)) adjustment here, which is not in the fiscal extention
-@#if co == countries[1] || co == countries[2] || co == countries[3]  || co == countries[4]  || co == countries[5] 
+@#if co != countries[ctryNumber] && co != countries[ctryNumber-1] 
 
 	@{co}_pcg(-1)*@{co}_cg(-1)+@{co}_pig(-1)*@{co}_ig(-1)+@{co}_tr(-1)
 	+@{co}_b(-1)*@{co}_pic(-1)^(-1)+@{co}_m(-2)*@{co}_pic(-1)^(-1) = @{co}_tauc(-1)*@{co}_c(-1)+(@{co}_taun(-1)+@{co}_tauwh(-1))*(@{co}_wi(-1)*@{co}_ndi(-1)+@{co}_wj(-1)*@{co}_ndj(-1))+@{co}_tauwf(-1)*@{co}_w(-1)*@{co}_nd(-1)+@{co}_tauk(-1)*(@{co}_rk(-1)*@{co}_u(-1)-(@{co}_gammau(-1)+@{co}_delta)*@{co}_pi(-1))*@{co}_k(-1)+@{co}_taud(-1)*@{co}_d(-1)+@{co}_t(-1)+(@{co}_r(-1)*(1-@{co}_gammab(-1)))^(-1)*@{co}_b+@{co}_m(-1);
