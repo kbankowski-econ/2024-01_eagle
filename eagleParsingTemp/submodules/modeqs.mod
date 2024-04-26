@@ -1019,7 +1019,19 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 //-------------
 
 // GDP
-@{ea}_y = (@{co}_size*@{co}_pybar*@{co}_y 	+ @{co2}_size*@{co}@{co2}_rerbar*@{co2}_pybar *@{co2}_y	+ @{co3}_size*@{co}@{co3}_rerbar*@{co3}_pybar *@{co3}_y + @{co4}_size*@{co}@{co4}_rerbar*@{co4}_pybar *@{co4}_y	+ @{co5}_size*@{co}@{co5}_rerbar*@{co5}_pybar *@{co5}_y)/(@{co}_size+@{co2}_size+@{co3}_size+@{co4}_size+@{co5}_size);
+@{ea}_y = 
+	(
+	@{co}_size*@{co}_pybar*@{co}_y
+	@#for it in countries[2: ctryNumber-2]
+		+ @{it}_size*@{co}@{it}_rerbar*@{it}_pybar *@{it}_y	
+	@#endfor	 	
+	)
+	/
+	(
+	@#for it in countries[1: ctryNumber-2]
+	+ @{it}_size
+	@#endfor
+);
 
 // GDP growth
 @{ea}_ygrowth= @{ea}_y/@{ea}_y(-1);
@@ -1028,13 +1040,44 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @{ea}_ygrowth4= @{ea}_y/@{ea}_y(-4);
 
 // Money
-@{ea}_m = (@{co}_size*@{co}_m + @{co2}_size*@{co}@{co2}_rerbar*@{co2}_m + @{co3}_size*@{co}@{co3}_rerbar*@{co3}_m+ @{co4}_size*@{co}@{co4}_rerbar*@{co4}_m + @{co5}_size*@{co}@{co5}_rerbar*@{co5}_m)/(@{co}_size+@{co2}_size+@{co3}_size+@{co4}_size+@{co5}_size);
-
-@{ea}_bf = (@{co}_size*@{co}_bf + @{co2}_size*@{co2}_bf + @{co3}_size*@{co3}_bf+ @{co4}_size*@{co4}_bf+ @{co5}_size*@{co5}_bf)/(@{co}_size+@{co2}_size+@{co3}_size+@{co4}_size+@{co5}_size);
+@{ea}_m = 
+	(
+	@{co}_size*@{co}_m
+	@#for it in countries[2: ctryNumber-2]
+		+ @{it}_size*@{co}@{it}_rerbar*@{it}_m	
+	@#endfor	 	
+	)
+	/
+	(
+	@#for it in countries[1: ctryNumber-2]
+	+ @{it}_size
+	@#endfor
+);
+	
+@{ea}_bf = 
+	(
+	@#for it in countries[1: ctryNumber-2]
+		+ @{it}_size*@{it}_bf	
+	@#endfor	 	
+	)
+	/
+	(
+	@#for it in countries[1: ctryNumber-2]
+	+ @{it}_size
+	@#endfor
+);
 
 // Annual inflation
-@{ea}_pic4 = 
-  @{co}_pic4^(@{co}_size/(@{co}_size+@{co2}_size+@{co3}_size+@{co4}_size+@{co5}_size)) * @{co2}_pic4^(@{co2}_size/(@{co}_size+@{co2}_size+@{co3}_size++@{co4}_size+@{co5}_size))* @{co3}_pic4^(@{co3}_size/(@{co}_size+@{co2}_size+@{co3}_size+@{co4}_size+@{co5}_size))* @{co4}_pic4^(@{co4}_size/(@{co}_size+@{co2}_size+@{co3}_size+@{co4}_size+@{co5}_size))* @{co5}_pic4^(@{co5}_size/(@{co}_size+@{co2}_size+@{co3}_size+@{co4}_size+@{co5}_size));
+@{ea}_pic4 = 1 
+	@#for it in countries[1: ctryNumber-2]
+		* @{it}_pic4^(@{it}_size/(
+			@#for it1 in countries[1: ctryNumber-2]
+				+ @{it1}_size
+			@#endfor	 	
+			)) 
+	@#endfor	 	
+;
+
 
 // Productivity
 log(@{ea}_z) = (1-@{ea}_rhoz)*log(@{ea}_zbar)+@{ea}_rhoz*log(@{ea}_z(-1))+@{ea}_epsz;

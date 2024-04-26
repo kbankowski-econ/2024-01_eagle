@@ -12197,17 +12197,98 @@ US_rer = 1;
 // Euroarea-wide variables
 //-------------
 // GDP
-EA_y = (EAA_size*EAA_pybar*EAA_y 	+ EAB_size*EAAEAB_rerbar*EAB_pybar *EAB_y	+ EAC_size*EAAEAC_rerbar*EAC_pybar *EAC_y + EAD_size*EAAEAD_rerbar*EAD_pybar *EAD_y	+ EAE_size*EAAEAE_rerbar*EAE_pybar *EAE_y)/(EAA_size+EAB_size+EAC_size+EAD_size+EAE_size);
+EA_y = 
+	(
+	EAA_size*EAA_pybar*EAA_y
+		+ EAB_size*EAAEAB_rerbar*EAB_pybar *EAB_y	
+		+ EAC_size*EAAEAC_rerbar*EAC_pybar *EAC_y	
+		+ EAD_size*EAAEAD_rerbar*EAD_pybar *EAD_y	
+		+ EAE_size*EAAEAE_rerbar*EAE_pybar *EAE_y	
+	)
+	/
+	(
+	+ EAA_size
+	+ EAB_size
+	+ EAC_size
+	+ EAD_size
+	+ EAE_size
+);
 // GDP growth
 EA_ygrowth= EA_y/EA_y(-1);
 // GDP growth (yoy)
 EA_ygrowth4= EA_y/EA_y(-4);
 // Money
-EA_m = (EAA_size*EAA_m + EAB_size*EAAEAB_rerbar*EAB_m + EAC_size*EAAEAC_rerbar*EAC_m+ EAD_size*EAAEAD_rerbar*EAD_m + EAE_size*EAAEAE_rerbar*EAE_m)/(EAA_size+EAB_size+EAC_size+EAD_size+EAE_size);
-EA_bf = (EAA_size*EAA_bf + EAB_size*EAB_bf + EAC_size*EAC_bf+ EAD_size*EAD_bf+ EAE_size*EAE_bf)/(EAA_size+EAB_size+EAC_size+EAD_size+EAE_size);
+EA_m = 
+	(
+	EAA_size*EAA_m
+		+ EAB_size*EAAEAB_rerbar*EAB_m	
+		+ EAC_size*EAAEAC_rerbar*EAC_m	
+		+ EAD_size*EAAEAD_rerbar*EAD_m	
+		+ EAE_size*EAAEAE_rerbar*EAE_m	
+	)
+	/
+	(
+	+ EAA_size
+	+ EAB_size
+	+ EAC_size
+	+ EAD_size
+	+ EAE_size
+);
+	
+EA_bf = 
+	(
+		+ EAA_size*EAA_bf	
+		+ EAB_size*EAB_bf	
+		+ EAC_size*EAC_bf	
+		+ EAD_size*EAD_bf	
+		+ EAE_size*EAE_bf	
+	)
+	/
+	(
+	+ EAA_size
+	+ EAB_size
+	+ EAC_size
+	+ EAD_size
+	+ EAE_size
+);
 // Annual inflation
-EA_pic4 = 
-  EAA_pic4^(EAA_size/(EAA_size+EAB_size+EAC_size+EAD_size+EAE_size)) * EAB_pic4^(EAB_size/(EAA_size+EAB_size+EAC_size++EAD_size+EAE_size))* EAC_pic4^(EAC_size/(EAA_size+EAB_size+EAC_size+EAD_size+EAE_size))* EAD_pic4^(EAD_size/(EAA_size+EAB_size+EAC_size+EAD_size+EAE_size))* EAE_pic4^(EAE_size/(EAA_size+EAB_size+EAC_size+EAD_size+EAE_size));
+EA_pic4 = 1 
+		* EAA_pic4^(EAA_size/(
+				+ EAA_size
+				+ EAB_size
+				+ EAC_size
+				+ EAD_size
+				+ EAE_size
+			)) 
+		* EAB_pic4^(EAB_size/(
+				+ EAA_size
+				+ EAB_size
+				+ EAC_size
+				+ EAD_size
+				+ EAE_size
+			)) 
+		* EAC_pic4^(EAC_size/(
+				+ EAA_size
+				+ EAB_size
+				+ EAC_size
+				+ EAD_size
+				+ EAE_size
+			)) 
+		* EAD_pic4^(EAD_size/(
+				+ EAA_size
+				+ EAB_size
+				+ EAC_size
+				+ EAD_size
+				+ EAE_size
+			)) 
+		* EAE_pic4^(EAE_size/(
+				+ EAA_size
+				+ EAB_size
+				+ EAC_size
+				+ EAD_size
+				+ EAE_size
+			)) 
+;
 // Productivity
 log(EA_z) = (1-EA_rhoz)*log(EA_zbar)+EA_rhoz*log(EA_z(-1))+EA_epsz;
 // Auxiliary equation for steady-state output
