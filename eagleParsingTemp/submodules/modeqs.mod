@@ -963,16 +963,10 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 // Closure conditions
 //-------------
 
-@#define co = countries[1]
-@#define co2 = countries[2]
-@#define co3 = countries[3]
-@#define co4 = countries[4]
-@#define co5 = countries[5]
-@#define co6 = countries[6]
-@#define co7 = countries[7]
+@#include "staticCtryList7.mod"
 
-@{co7}_size*@{co7}_bf =
-@#for it in countries[1:4]
+@{coUSA}_size*@{coUSA}_bf =
+@#for it in countries[1:ctryNumber-3]
 -@{it}_size*@{it}_bf
 @#endfor
 ;
