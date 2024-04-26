@@ -396,19 +396,19 @@ model(block, bytecode, cutoff=0);
 
 @#endfor
 
-@{co}@{co6}_im@{aItem} = (1
-@#for it in countries - [ co, co6 ]
+@{co}@{coResid}_im@{aItem} = (1
+@#for it in countries - [ co, coResid ]
 -@{co}@{it}_num@{aItem}
 @#endfor
 @#if !steady
-)*((@{co6}_pex*@{co}@{co6}_rer)/(@{co}@{co6}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{co6}_gammaim@{aItem});
+)*((@{coResid}_pex*@{co}@{coResid}_rer)/(@{co}@{coResid}_gammaim@{aItem}dag*@{co}_pim@{aItem}))^(-@{co}_mum@{aItem})*@{co}_im@{aItem}/(1-@{co}@{coResid}_gammaim@{aItem});
 @#else
-)*((@{co6}_pex*@{co}@{co6}_rer)/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
+)*((@{coResid}_pex*@{co}@{coResid}_rer)/@{co}_pim@{aItem})^(-@{co}_mum@{aItem})*@{co}_im@{aItem};
 @#endif
 
 // Price of the consumption good (import)
 @{co}_pim@{aItem}^(1-@{co}_mum@{aItem}) =
-@#for it in countries - [ co, co6 ]
+@#for it in countries - [ co, coResid ]
 @#if !steady
 +@{co}@{it}_num@{aItem} *((@{it}_pex*@{co}@{it}_rer)/@{co}@{it}_gammaim@{aItem}dag)^(1-@{co}_mum@{aItem})
 @#else
@@ -416,13 +416,13 @@ model(block, bytecode, cutoff=0);
 @#endif
 @#endfor
 +(1
-@#for it in countries - [ co, co6 ]
+@#for it in countries - [ co, coResid ]
 -@{co}@{it}_num@{aItem}
 @#endfor
 @#if !steady
-)*((@{co6}_pex*@{co}@{co6}_rer)/@{co}@{co6}_gammaim@{aItem}dag)^(1-@{co}_mum@{aItem});
+)*((@{coResid}_pex*@{co}@{coResid}_rer)/@{co}@{coResid}_gammaim@{aItem}dag)^(1-@{co}_mum@{aItem});
 @#else
-)*(@{co6}_pex*@{co}@{co6}_rer)^(1-@{co}_mum@{aItem});
+)*(@{coResid}_pex*@{co}@{coResid}_rer)^(1-@{co}_mum@{aItem});
 @#endif
 
 // Private consumption good (import) inflation
