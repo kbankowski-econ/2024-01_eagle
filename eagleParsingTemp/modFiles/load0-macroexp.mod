@@ -12186,7 +12186,13 @@ US_rer = 1;
 	// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 		EAD_gammabh = 0;
 		EAD_bh = (EAD_bhytarget*EAD_py*EAD_y)/EADEAE_rer*EAE_pic;
-EAE_size*EAE_bh+EAD_size*EAD_bh+EAC_size*EAC_bh+EAB_size*EAB_bh+EAA_size*EAA_bh = 0;
+0 =
+	+ EAA_size*EAA_bh
+	+ EAB_size*EAB_bh
+	+ EAC_size*EAC_bh
+	+ EAD_size*EAD_bh
+	+ EAE_size*EAE_bh
+;
 //-------------
 // Euroarea-wide variables
 //-------------

@@ -1008,7 +1008,11 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 	@#endif
 @#endfor
 
-@{co5}_size*@{co5}_bh+@{co4}_size*@{co4}_bh+@{co3}_size*@{co3}_bh+@{co2}_size*@{co2}_bh+@{co}_size*@{co}_bh = 0;
+0 =
+@#for it in countries[1: ctryNumber-2]
+	+ @{it}_size*@{it}_bh
+@#endfor
+;
 
 //-------------
 // Euroarea-wide variables
