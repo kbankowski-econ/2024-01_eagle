@@ -974,19 +974,19 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 // Net foreign asset position
 @#for it in countries[1:ctryNumber-1]
 
-	@#if it == countries[6] || it == countries[7]
+	@#if it == countries[ctryNumber-1] || it == countries[ctryNumber]
 
-		@{it}_bf/@{co7}_r(-1) = @{it}_bf(-1)+@{it}_tb(-1)/@{it}_rer(-1);
+		@{it}_bf/@{coUSA}_r(-1) = @{it}_bf(-1)+@{it}_tb(-1)/@{it}_rer(-1);
 
 	@#else
 	
-		@#if it == countries[5]
+		@#if it == countries[ctryNumber-2]
 
-			@{it}_bf/@{co7}_r(-1) = -@{it}_bh/@{co}_r(-1) / @{it}_rer(-1) + @{it}_bh(-1) / @{it}_rer(-2) + @{it}_bf(-1) + @{it}_tb(-1)/@{it}_rer(-1);
+			@{it}_bf/@{coUSA}_r(-1) = -@{it}_bh/@{co}_r(-1) / @{it}_rer(-1) + @{it}_bh(-1) / @{it}_rer(-2) + @{it}_bf(-1) + @{it}_tb(-1)/@{it}_rer(-1);
 
 		@#else
 		
-			@{it}_bf/@{co7}_r(-1) = -@{it}_bh/@{co5}_r(-1)*@{it}@{co5}_rer(-1)/@{it}_rer(-1) + @{it}_bh(-1)*@{it}@{co5}_rer(-2) / @{it}_rer(-2) + @{it}_bf(-1) + @{it}_tb(-1)/@{it}_rer(-1);
+			@{it}_bf/@{coUSA}_r(-1) = -@{it}_bh/@{coGermany}_r(-1)*@{it}@{coGermany}_rer(-1)/@{it}_rer(-1) + @{it}_bh(-1)*@{it}@{coGermany}_rer(-2) / @{it}_rer(-2) + @{it}_bf(-1) + @{it}_tb(-1)/@{it}_rer(-1);
 
 		@#endif
 		
@@ -994,7 +994,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 	
 @#endfor
 
-@{co7}_rer = 1;
+@{coUSA}_rer = 1;
 
 @{co}@{co5}_nerdep = @{co}_rerdep/@{co5}_rerdep*@{co}_pic/@{co5}_pic;
 @{co2}@{co5}_nerdep = @{co2}_rerdep/@{co5}_rerdep*@{co2}_pic/@{co5}_pic;
