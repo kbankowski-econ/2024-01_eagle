@@ -920,8 +920,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 
 @#endfor // End of main country loop
 
-@#for co in countries[1:6]
-@#define co7 = countries[7]
+@#for co in countries[1:ctryNumber-1]
 
 //-------------
 // Bilateral equations versus country N
@@ -929,20 +928,20 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 
 // Euler equation for internationally traded bonds
 @#if !steady
-1 = @{co7}_r*(1-@{co}_gammab)*@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*@{co}_rerdep(+1)/@{co7}_pic(+1);
+1 = @{coUSA}_r*(1-@{co}_gammab)*@{co}_beta*@{co}_lambdai(+1)/@{co}_lambdai*@{co}_rerdep(+1)/@{coUSA}_pic(+1);
 @#else
 @{co}_gammab = 0;
 @#endif
 
 // International transaction cost ('risk premium')
 @#if !steady
-@{co}_gammab = @{co}_gammab1*(exp(@{co}_rer*@{co}_bf/@{co7}_pic/(@{co}_py*@{co}_y)-@{co}_bfytarget)-1)
+@{co}_gammab = @{co}_gammab1*(exp(@{co}_rer*@{co}_bf/@{coUSA}_pic/(@{co}_py*@{co}_y)-@{co}_bfytarget)-1)
 @#if co == countries[6]
 -@{co}_rp
 @#endif
 ;
 @#else
-@{co}_bf = (@{co}_bfytarget*@{co}_py*@{co}_y)/@{co}_rer*@{co7}_pic;
+@{co}_bf = (@{co}_bfytarget*@{co}_py*@{co}_y)/@{co}_rer*@{coUSA}_pic;
 @#endif
 
 // Risk premium shock
@@ -956,7 +955,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @{co}_rerdep = @{co}_rer/@{co}_rer(-1);
 
 // Definition of the terms of trade
-@{co}_tot = @{co7}_pex*@{co}_rer/@{co}_pex;
+@{co}_tot = @{coUSA}_pex*@{co}_rer/@{co}_pex;
 
 @#endfor // Global loop
 
