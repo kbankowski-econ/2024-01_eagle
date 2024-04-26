@@ -24,7 +24,7 @@ model(block, bytecode, cutoff=0);
 @#include "modeqs_hhI.mod"
 
 // Euler equation for government bonds
-@#if co == countries[1] || co == countries[2] || co == countries[3] || co == countries[4]
+@#if co != countries[ctryNumber] && co != countries[ctryNumber-1] && co != countries[ctryNumber-2] 
 @#if !steady
 @{co}_r*(1-@{co}_gammabh) = @{co}_beta^(-1)*@{co}_lambdai/@{co}_lambdai(+1)*@{co}_pic(+1);
 @#else
@@ -32,11 +32,11 @@ model(block, bytecode, cutoff=0);
 @#endif
 @#endif
 
-@#if co == countries[5]
+@#if co == countries[ctryNumber-2]
 @{co}_r = @{co}_beta^(-1)*@{co}_lambdai/@{co}_lambdai(+1)*@{co}_pic(+1);
 @#endif
 
-@#if co != countries[1] && co != countries[2] && co != countries[3] && co != countries[4] && co != countries[5]
+@#if co == countries[ctryNumber] || co == countries[ctryNumber-1] 
 @{co}_r = @{co}_beta^(-1)*@{co}_lambdai/@{co}_lambdai(+1)*@{co}_pic(+1);
 @#endif
 
