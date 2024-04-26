@@ -1,5 +1,6 @@
 @#define countries = [ "EAA", "EAB", "EAC", "EAD", "EAE", "RW", "US" ]
 @#define ctryNumber = 7
+@#define coGermany = countries[ctryNumber-2]
 @#define ea = "EA"
 //
 @#define asymmetric_trade_var = 0

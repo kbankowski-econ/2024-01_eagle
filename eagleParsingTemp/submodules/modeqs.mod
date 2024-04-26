@@ -605,90 +605,35 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 
 @#if !steady
 
-	// Monetary policy rule
-	@#if co == countries[5]
-
+@#if co == countries[ctryNumber] || co == countries[ctryNumber-1]
+	@{co}_r^4-1 = @{co}_phirr*(@{co}_r(-1)^4-1)+(1-@{co}_phirr)*(@{co}_rrstar^4*@{co}_pi4target-1+@{co}_phirpi*(@{co}_pic4-@{co}_pi4target))+@{co}_phirgy*(@{co}_y/@{co}_y(-1)-1)+@{co}_epsr;
+@#else
+	@#if co == countries[ctryNumber-2]
 		@{co}_r^4-1 = @{ea}_phirr*(@{co}_r(-1)^4-1)+(1-@{ea}_phirr)*(@{co}_rrstar^4*@{co}_pi4target-1
 		+@{ea}_phirpi*(@{ea}_pic4-@{co}_pi4target))
 		+@{ea}_phirgy*(@{ea}_ygrowth-1)+@{ea}_epsr;
+	@#else
+		@{co}_rerdep/@{coGermany}_rerdep*@{co}_pic/@{coGermany}_pic-1=0;
+	@#endif
+@#endif
 
-	@#else // co == countries[2]
+// Definition of annual inflation
+@{co}_pic4 = @{co}_pic*@{co}_pic(-1)*@{co}_pic(-2)*@{co}_pic(-3);
 
-		@#if co == countries[1] // NOTE: the parity condition always with respect to EAC
-
-			@{co}_rerdep/@{co5}_rerdep*@{co}_pic/@{co5}_pic-1=0;
-
-		@#else // co == countries[1]
-		
-			@#if co == countries[2]
-			
-				@{co}_rerdep/@{co4}_rerdep*@{co}_pic/@{co4}_pic-1=0;
-				
-			@#else
-			
-				@#if co == countries[3]
-
-					@{co}_rerdep/@{co3}_rerdep*@{co}_pic/@{co3}_pic-1=0;
-				
-				@#else
-				
-					@#if co == countries[4]
-						
-						@{co}_rerdep/@{co2}_rerdep*@{co}_pic/@{co2}_pic-1=0;
-					
-					@#else
-
-					@{co}_r^4-1 = @{co}_phirr*(@{co}_r(-1)^4-1)+(1-@{co}_phirr)*(@{co}_rrstar^4*@{co}_pi4target-1+@{co}_phirpi*(@{co}_pic4-@{co}_pi4target))+@{co}_phirgy*(@{co}_y/@{co}_y(-1)-1)+@{co}_epsr;
-					
-					@#endif
-					
-				@#endif
-				
-			@#endif
-			
-		@#endif // co == countries[1]
-		
-	@#endif // co == countries[2]
-
-	// Definition of annual inflation
-	@{co}_pic4 = @{co}_pic*@{co}_pic(-1)*@{co}_pic(-2)*@{co}_pic(-3);
-
-	// Real interest rate
-	@{co}_rr-1 = @{co}_r/@{co}_pic(+1)-1;
+// Real interest rate
+@{co}_rr-1 = @{co}_r/@{co}_pic(+1)-1;
 
 @#else // !steady
 
-	@#if co != countries[1] && co != countries[2] && co != countries[3] && co != countries[4]
-	
-		@{co}_r^4-1 = @{co}_rrstar^4*@{co}_pi4target-1;
-	
-	@#else
-	
-		@#if co == countries[1]
-			@{co}_r = @{co5}_r;
-		@#else 
-		
-			@#if co == countries[2]
-				@{co}_r = @{co4}_r;
+@#if co == countries[ctryNumber] || co == countries[ctryNumber-1] || co == countries[ctryNumber-2]
+	@{co}_r^4-1 = @{co}_rrstar^4*@{co}_pi4target-1;
+@#else
+	@{co}_r = @{coGermany}_r;
+@#endif
 
-			@#else
-			
-				@#if  co == countries[3]
-					@{co}_r = @{co3}_r;
-				
-				@#else // co == countries[4]
-					@{co}_r = @{co2}_r;
-				
-				@#endif
-				
-			@#endif
-			
-		@#endif
-		
-	@#endif
+@{co}_pic4 = @{co}_pi4target;
+@{co}_rr-1 = @{co}_r/@{co}_pi4target^(1/4)-1;
 
-	@{co}_pic4 = @{co}_pi4target;
-	@{co}_rr-1 = @{co}_r/@{co}_pi4target^(1/4)-1;
 @#endif // !steady
 
 // Equilibrium real interest rate

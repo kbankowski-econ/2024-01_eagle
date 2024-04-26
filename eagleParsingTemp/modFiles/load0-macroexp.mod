@@ -4414,11 +4414,9 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	
-			EAA_r = EAE_r;
-		
-	EAA_pic4 = EAA_pi4target;
-	EAA_rr-1 = EAA_r/EAA_pi4target^(1/4)-1;
+	EAA_r = EAE_r;
+EAA_pic4 = EAA_pi4target;
+EAA_rr-1 = EAA_r/EAA_pi4target^(1/4)-1;
 // Equilibrium real interest rate
 EAA_rrstar-1 = 1/EAA_beta-1;
 //-------------
@@ -5645,13 +5643,9 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	
-		
-				EAB_r = EAE_r;
-			
-		
-	EAB_pic4 = EAB_pi4target;
-	EAB_rr-1 = EAB_r/EAB_pi4target^(1/4)-1;
+	EAB_r = EAE_r;
+EAB_pic4 = EAB_pi4target;
+EAB_rr-1 = EAB_r/EAB_pi4target^(1/4)-1;
 // Equilibrium real interest rate
 EAB_rrstar-1 = 1/EAB_beta-1;
 //-------------
@@ -6878,16 +6872,9 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	
-		
-			
-					EAC_r = EAE_r;
-				
-				
-			
-		
-	EAC_pic4 = EAC_pi4target;
-	EAC_rr-1 = EAC_r/EAC_pi4target^(1/4)-1;
+	EAC_r = EAE_r;
+EAC_pic4 = EAC_pi4target;
+EAC_rr-1 = EAC_r/EAC_pi4target^(1/4)-1;
 // Equilibrium real interest rate
 EAC_rrstar-1 = 1/EAC_beta-1;
 //-------------
@@ -8114,16 +8101,9 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	
-		
-			
-					EAD_r = EAE_r;
-				
-				
-			
-		
-	EAD_pic4 = EAD_pi4target;
-	EAD_rr-1 = EAD_r/EAD_pi4target^(1/4)-1;
+	EAD_r = EAE_r;
+EAD_pic4 = EAD_pi4target;
+EAD_rr-1 = EAD_r/EAD_pi4target^(1/4)-1;
 // Equilibrium real interest rate
 EAD_rrstar-1 = 1/EAD_beta-1;
 //-------------
@@ -9350,11 +9330,9 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	
-		EAE_r^4-1 = EAE_rrstar^4*EAE_pi4target-1;
-	
-	EAE_pic4 = EAE_pi4target;
-	EAE_rr-1 = EAE_r/EAE_pi4target^(1/4)-1;
+	EAE_r^4-1 = EAE_rrstar^4*EAE_pi4target-1;
+EAE_pic4 = EAE_pi4target;
+EAE_rr-1 = EAE_r/EAE_pi4target^(1/4)-1;
 // Equilibrium real interest rate
 EAE_rrstar-1 = 1/EAE_beta-1;
 //-------------
@@ -10581,11 +10559,9 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	
-		RW_r^4-1 = RW_rrstar^4*RW_pi4target-1;
-	
-	RW_pic4 = RW_pi4target;
-	RW_rr-1 = RW_r/RW_pi4target^(1/4)-1;
+	RW_r^4-1 = RW_rrstar^4*RW_pi4target-1;
+RW_pic4 = RW_pi4target;
+RW_rr-1 = RW_r/RW_pi4target^(1/4)-1;
 // Equilibrium real interest rate
 RW_rrstar-1 = 1/RW_beta-1;
 //-------------
@@ -11812,11 +11788,9 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	
-		US_r^4-1 = US_rrstar^4*US_pi4target-1;
-	
-	US_pic4 = US_pi4target;
-	US_rr-1 = US_r/US_pi4target^(1/4)-1;
+	US_r^4-1 = US_rrstar^4*US_pi4target-1;
+US_pic4 = US_pi4target;
+US_rr-1 = US_r/US_pi4target^(1/4)-1;
 // Equilibrium real interest rate
 US_rrstar-1 = 1/US_beta-1;
 //-------------
