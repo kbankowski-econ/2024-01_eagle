@@ -3936,9 +3936,12 @@ EAA_imc^((EAA_mumc-1)/EAA_mumc) =
 -EAAUS_numc
 )^(1/EAA_mumc)*((1-EAARW_gammaimc)*EAARW_imc)^(1-1/EAA_mumc);
 // Demand for bilateral consumption import goods
-EAAEAE_imc = EAAEAE_numc*((EAE_pex*EAAEAE_rer)/(EAAEAE_gammaimcdag*EAA_pimc))^(-EAA_mumc)*EAA_imc/(1-EAAEAE_gammaimc);
 EAAEAC_imc = EAAEAC_numc*((EAC_pex*EAAEAC_rer)/(EAAEAC_gammaimcdag*EAA_pimc))^(-EAA_mumc)*EAA_imc/(1-EAAEAC_gammaimc);
+// Demand for bilateral consumption import goods
 EAAEAD_imc = EAAEAD_numc*((EAD_pex*EAAEAD_rer)/(EAAEAD_gammaimcdag*EAA_pimc))^(-EAA_mumc)*EAA_imc/(1-EAAEAD_gammaimc);
+// Demand for bilateral consumption import goods
+EAAEAE_imc = EAAEAE_numc*((EAE_pex*EAAEAE_rer)/(EAAEAE_gammaimcdag*EAA_pimc))^(-EAA_mumc)*EAA_imc/(1-EAAEAE_gammaimc);
+// Demand for bilateral consumption import goods
 EAAUS_imc = EAAUS_numc*((US_pex*EAAUS_rer)/(EAAUS_gammaimcdag*EAA_pimc))^(-EAA_mumc)*EAA_imc/(1-EAAUS_gammaimc);
 EAARW_imc = (1
 -EAAEAB_numc
@@ -3978,9 +3981,12 @@ EAA_imi^((EAA_mumi-1)/EAA_mumi) =
 -EAAUS_numi
 )^(1/EAA_mumi)*((1-EAARW_gammaimi)*EAARW_imi)^(1-1/EAA_mumi);
 // Demand for bilateral consumption import goods
-EAAEAE_imi = EAAEAE_numi*((EAE_pex*EAAEAE_rer)/(EAAEAE_gammaimidag*EAA_pimi))^(-EAA_mumi)*EAA_imi/(1-EAAEAE_gammaimi);
 EAAEAC_imi = EAAEAC_numi*((EAC_pex*EAAEAC_rer)/(EAAEAC_gammaimidag*EAA_pimi))^(-EAA_mumi)*EAA_imi/(1-EAAEAC_gammaimi);
+// Demand for bilateral consumption import goods
 EAAEAD_imi = EAAEAD_numi*((EAD_pex*EAAEAD_rer)/(EAAEAD_gammaimidag*EAA_pimi))^(-EAA_mumi)*EAA_imi/(1-EAAEAD_gammaimi);
+// Demand for bilateral consumption import goods
+EAAEAE_imi = EAAEAE_numi*((EAE_pex*EAAEAE_rer)/(EAAEAE_gammaimidag*EAA_pimi))^(-EAA_mumi)*EAA_imi/(1-EAAEAE_gammaimi);
+// Demand for bilateral consumption import goods
 EAAUS_imi = EAAUS_numi*((US_pex*EAAUS_rer)/(EAAUS_gammaimidag*EAA_pimi))^(-EAA_mumi)*EAA_imi/(1-EAAUS_gammaimi);
 EAARW_imi = (1
 -EAAEAB_numi
@@ -4020,9 +4026,12 @@ EAA_imcg^((EAA_mumcg-1)/EAA_mumcg) =
 -EAAUS_numcg
 )^(1/EAA_mumcg)*((1-EAARW_gammaimcg)*EAARW_imcg)^(1-1/EAA_mumcg);
 // Demand for bilateral consumption import goods
-EAAEAE_imcg = EAAEAE_numcg*((EAE_pex*EAAEAE_rer)/(EAAEAE_gammaimcgdag*EAA_pimcg))^(-EAA_mumcg)*EAA_imcg/(1-EAAEAE_gammaimcg);
 EAAEAC_imcg = EAAEAC_numcg*((EAC_pex*EAAEAC_rer)/(EAAEAC_gammaimcgdag*EAA_pimcg))^(-EAA_mumcg)*EAA_imcg/(1-EAAEAC_gammaimcg);
+// Demand for bilateral consumption import goods
 EAAEAD_imcg = EAAEAD_numcg*((EAD_pex*EAAEAD_rer)/(EAAEAD_gammaimcgdag*EAA_pimcg))^(-EAA_mumcg)*EAA_imcg/(1-EAAEAD_gammaimcg);
+// Demand for bilateral consumption import goods
+EAAEAE_imcg = EAAEAE_numcg*((EAE_pex*EAAEAE_rer)/(EAAEAE_gammaimcgdag*EAA_pimcg))^(-EAA_mumcg)*EAA_imcg/(1-EAAEAE_gammaimcg);
+// Demand for bilateral consumption import goods
 EAAUS_imcg = EAAUS_numcg*((US_pex*EAAUS_rer)/(EAAUS_gammaimcgdag*EAA_pimcg))^(-EAA_mumcg)*EAA_imcg/(1-EAAUS_gammaimcg);
 EAARW_imcg = (1
 -EAAEAB_numcg
@@ -4062,9 +4071,12 @@ EAA_imig^((EAA_mumig-1)/EAA_mumig) =
 -EAAUS_numig
 )^(1/EAA_mumig)*((1-EAARW_gammaimig)*EAARW_imig)^(1-1/EAA_mumig);
 // Demand for bilateral consumption import goods
-EAAEAE_imig = EAAEAE_numig*((EAE_pex*EAAEAE_rer)/(EAAEAE_gammaimigdag*EAA_pimig))^(-EAA_mumig)*EAA_imig/(1-EAAEAE_gammaimig);
 EAAEAC_imig = EAAEAC_numig*((EAC_pex*EAAEAC_rer)/(EAAEAC_gammaimigdag*EAA_pimig))^(-EAA_mumig)*EAA_imig/(1-EAAEAC_gammaimig);
+// Demand for bilateral consumption import goods
 EAAEAD_imig = EAAEAD_numig*((EAD_pex*EAAEAD_rer)/(EAAEAD_gammaimigdag*EAA_pimig))^(-EAA_mumig)*EAA_imig/(1-EAAEAD_gammaimig);
+// Demand for bilateral consumption import goods
+EAAEAE_imig = EAAEAE_numig*((EAE_pex*EAAEAE_rer)/(EAAEAE_gammaimigdag*EAA_pimig))^(-EAA_mumig)*EAA_imig/(1-EAAEAE_gammaimig);
+// Demand for bilateral consumption import goods
 EAAUS_imig = EAAUS_numig*((US_pex*EAAUS_rer)/(EAAUS_gammaimigdag*EAA_pimig))^(-EAA_mumig)*EAA_imig/(1-EAAUS_gammaimig);
 EAARW_imig = (1
 -EAAEAB_numig
@@ -4337,13 +4349,11 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	// Monetary policy rule
-			EAA_rerdep/EAE_rerdep*EAA_pic/EAE_pic-1=0;
-		
-	// Definition of annual inflation
-	EAA_pic4 = EAA_pic*EAA_pic(-1)*EAA_pic(-2)*EAA_pic(-3);
-	// Real interest rate
-	EAA_rr-1 = EAA_r/EAA_pic(+1)-1;
+		EAA_rerdep/EAE_rerdep*EAA_pic/EAE_pic-1=0;
+// Definition of annual inflation
+EAA_pic4 = EAA_pic*EAA_pic(-1)*EAA_pic(-2)*EAA_pic(-3);
+// Real interest rate
+EAA_rr-1 = EAA_r/EAA_pic(+1)-1;
 // Equilibrium real interest rate
 EAA_rrstar-1 = 1/EAA_beta-1;
 //-------------
@@ -5194,10 +5204,13 @@ EAB_imc^((EAB_mumc-1)/EAB_mumc) =
 -EABRW_numc
 )^(1/EAB_mumc)*((1-EABUS_gammaimc)*EABUS_imc)^(1-1/EAB_mumc);
 // Demand for bilateral consumption import goods
-EABRW_imc = EABRW_numc*((RW_pex*EABRW_rer)/(EABRW_gammaimcdag*EAB_pimc))^(-EAB_mumc)*EAB_imc/(1-EABRW_gammaimc);
-EABEAD_imc = EABEAD_numc*((EAD_pex*EABEAD_rer)/(EABEAD_gammaimcdag*EAB_pimc))^(-EAB_mumc)*EAB_imc/(1-EABEAD_gammaimc);
-EABEAE_imc = EABEAE_numc*((EAE_pex*EABEAE_rer)/(EABEAE_gammaimcdag*EAB_pimc))^(-EAB_mumc)*EAB_imc/(1-EABEAE_gammaimc);
 EABEAA_imc = EABEAA_numc*((EAA_pex*EABEAA_rer)/(EABEAA_gammaimcdag*EAB_pimc))^(-EAB_mumc)*EAB_imc/(1-EABEAA_gammaimc);
+// Demand for bilateral consumption import goods
+EABEAD_imc = EABEAD_numc*((EAD_pex*EABEAD_rer)/(EABEAD_gammaimcdag*EAB_pimc))^(-EAB_mumc)*EAB_imc/(1-EABEAD_gammaimc);
+// Demand for bilateral consumption import goods
+EABEAE_imc = EABEAE_numc*((EAE_pex*EABEAE_rer)/(EABEAE_gammaimcdag*EAB_pimc))^(-EAB_mumc)*EAB_imc/(1-EABEAE_gammaimc);
+// Demand for bilateral consumption import goods
+EABRW_imc = EABRW_numc*((RW_pex*EABRW_rer)/(EABRW_gammaimcdag*EAB_pimc))^(-EAB_mumc)*EAB_imc/(1-EABRW_gammaimc);
 EABUS_imc = (1
 -EABEAA_numc
 -EABEAC_numc
@@ -5236,10 +5249,13 @@ EAB_imi^((EAB_mumi-1)/EAB_mumi) =
 -EABRW_numi
 )^(1/EAB_mumi)*((1-EABUS_gammaimi)*EABUS_imi)^(1-1/EAB_mumi);
 // Demand for bilateral consumption import goods
-EABRW_imi = EABRW_numi*((RW_pex*EABRW_rer)/(EABRW_gammaimidag*EAB_pimi))^(-EAB_mumi)*EAB_imi/(1-EABRW_gammaimi);
-EABEAD_imi = EABEAD_numi*((EAD_pex*EABEAD_rer)/(EABEAD_gammaimidag*EAB_pimi))^(-EAB_mumi)*EAB_imi/(1-EABEAD_gammaimi);
-EABEAE_imi = EABEAE_numi*((EAE_pex*EABEAE_rer)/(EABEAE_gammaimidag*EAB_pimi))^(-EAB_mumi)*EAB_imi/(1-EABEAE_gammaimi);
 EABEAA_imi = EABEAA_numi*((EAA_pex*EABEAA_rer)/(EABEAA_gammaimidag*EAB_pimi))^(-EAB_mumi)*EAB_imi/(1-EABEAA_gammaimi);
+// Demand for bilateral consumption import goods
+EABEAD_imi = EABEAD_numi*((EAD_pex*EABEAD_rer)/(EABEAD_gammaimidag*EAB_pimi))^(-EAB_mumi)*EAB_imi/(1-EABEAD_gammaimi);
+// Demand for bilateral consumption import goods
+EABEAE_imi = EABEAE_numi*((EAE_pex*EABEAE_rer)/(EABEAE_gammaimidag*EAB_pimi))^(-EAB_mumi)*EAB_imi/(1-EABEAE_gammaimi);
+// Demand for bilateral consumption import goods
+EABRW_imi = EABRW_numi*((RW_pex*EABRW_rer)/(EABRW_gammaimidag*EAB_pimi))^(-EAB_mumi)*EAB_imi/(1-EABRW_gammaimi);
 EABUS_imi = (1
 -EABEAA_numi
 -EABEAC_numi
@@ -5278,10 +5294,13 @@ EAB_imcg^((EAB_mumcg-1)/EAB_mumcg) =
 -EABRW_numcg
 )^(1/EAB_mumcg)*((1-EABUS_gammaimcg)*EABUS_imcg)^(1-1/EAB_mumcg);
 // Demand for bilateral consumption import goods
-EABRW_imcg = EABRW_numcg*((RW_pex*EABRW_rer)/(EABRW_gammaimcgdag*EAB_pimcg))^(-EAB_mumcg)*EAB_imcg/(1-EABRW_gammaimcg);
-EABEAD_imcg = EABEAD_numcg*((EAD_pex*EABEAD_rer)/(EABEAD_gammaimcgdag*EAB_pimcg))^(-EAB_mumcg)*EAB_imcg/(1-EABEAD_gammaimcg);
-EABEAE_imcg = EABEAE_numcg*((EAE_pex*EABEAE_rer)/(EABEAE_gammaimcgdag*EAB_pimcg))^(-EAB_mumcg)*EAB_imcg/(1-EABEAE_gammaimcg);
 EABEAA_imcg = EABEAA_numcg*((EAA_pex*EABEAA_rer)/(EABEAA_gammaimcgdag*EAB_pimcg))^(-EAB_mumcg)*EAB_imcg/(1-EABEAA_gammaimcg);
+// Demand for bilateral consumption import goods
+EABEAD_imcg = EABEAD_numcg*((EAD_pex*EABEAD_rer)/(EABEAD_gammaimcgdag*EAB_pimcg))^(-EAB_mumcg)*EAB_imcg/(1-EABEAD_gammaimcg);
+// Demand for bilateral consumption import goods
+EABEAE_imcg = EABEAE_numcg*((EAE_pex*EABEAE_rer)/(EABEAE_gammaimcgdag*EAB_pimcg))^(-EAB_mumcg)*EAB_imcg/(1-EABEAE_gammaimcg);
+// Demand for bilateral consumption import goods
+EABRW_imcg = EABRW_numcg*((RW_pex*EABRW_rer)/(EABRW_gammaimcgdag*EAB_pimcg))^(-EAB_mumcg)*EAB_imcg/(1-EABRW_gammaimcg);
 EABUS_imcg = (1
 -EABEAA_numcg
 -EABEAC_numcg
@@ -5320,10 +5339,13 @@ EAB_imig^((EAB_mumig-1)/EAB_mumig) =
 -EABRW_numig
 )^(1/EAB_mumig)*((1-EABUS_gammaimig)*EABUS_imig)^(1-1/EAB_mumig);
 // Demand for bilateral consumption import goods
-EABRW_imig = EABRW_numig*((RW_pex*EABRW_rer)/(EABRW_gammaimigdag*EAB_pimig))^(-EAB_mumig)*EAB_imig/(1-EABRW_gammaimig);
-EABEAD_imig = EABEAD_numig*((EAD_pex*EABEAD_rer)/(EABEAD_gammaimigdag*EAB_pimig))^(-EAB_mumig)*EAB_imig/(1-EABEAD_gammaimig);
-EABEAE_imig = EABEAE_numig*((EAE_pex*EABEAE_rer)/(EABEAE_gammaimigdag*EAB_pimig))^(-EAB_mumig)*EAB_imig/(1-EABEAE_gammaimig);
 EABEAA_imig = EABEAA_numig*((EAA_pex*EABEAA_rer)/(EABEAA_gammaimigdag*EAB_pimig))^(-EAB_mumig)*EAB_imig/(1-EABEAA_gammaimig);
+// Demand for bilateral consumption import goods
+EABEAD_imig = EABEAD_numig*((EAD_pex*EABEAD_rer)/(EABEAD_gammaimigdag*EAB_pimig))^(-EAB_mumig)*EAB_imig/(1-EABEAD_gammaimig);
+// Demand for bilateral consumption import goods
+EABEAE_imig = EABEAE_numig*((EAE_pex*EABEAE_rer)/(EABEAE_gammaimigdag*EAB_pimig))^(-EAB_mumig)*EAB_imig/(1-EABEAE_gammaimig);
+// Demand for bilateral consumption import goods
+EABRW_imig = EABRW_numig*((RW_pex*EABRW_rer)/(EABRW_gammaimigdag*EAB_pimig))^(-EAB_mumig)*EAB_imig/(1-EABRW_gammaimig);
 EABUS_imig = (1
 -EABEAA_numig
 -EABEAC_numig
@@ -5595,17 +5617,11 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	// Monetary policy rule
-		
-			
-				EAB_rerdep/EAE_rerdep*EAB_pic/EAE_pic-1=0;
-				
-			
-		
-	// Definition of annual inflation
-	EAB_pic4 = EAB_pic*EAB_pic(-1)*EAB_pic(-2)*EAB_pic(-3);
-	// Real interest rate
-	EAB_rr-1 = EAB_r/EAB_pic(+1)-1;
+		EAB_rerdep/EAE_rerdep*EAB_pic/EAE_pic-1=0;
+// Definition of annual inflation
+EAB_pic4 = EAB_pic*EAB_pic(-1)*EAB_pic(-2)*EAB_pic(-3);
+// Real interest rate
+EAB_rr-1 = EAB_r/EAB_pic(+1)-1;
 // Equilibrium real interest rate
 EAB_rrstar-1 = 1/EAB_beta-1;
 //-------------
@@ -6456,10 +6472,13 @@ EAC_imc^((EAC_mumc-1)/EAC_mumc) =
 -EACUS_numc
 )^(1/EAC_mumc)*((1-EACEAA_gammaimc)*EACEAA_imc)^(1-1/EAC_mumc);
 // Demand for bilateral consumption import goods
-EACUS_imc = EACUS_numc*((US_pex*EACUS_rer)/(EACUS_gammaimcdag*EAC_pimc))^(-EAC_mumc)*EAC_imc/(1-EACUS_gammaimc);
-EACEAE_imc = EACEAE_numc*((EAE_pex*EACEAE_rer)/(EACEAE_gammaimcdag*EAC_pimc))^(-EAC_mumc)*EAC_imc/(1-EACEAE_gammaimc);
-EACRW_imc = EACRW_numc*((RW_pex*EACRW_rer)/(EACRW_gammaimcdag*EAC_pimc))^(-EAC_mumc)*EAC_imc/(1-EACRW_gammaimc);
 EACEAB_imc = EACEAB_numc*((EAB_pex*EACEAB_rer)/(EACEAB_gammaimcdag*EAC_pimc))^(-EAC_mumc)*EAC_imc/(1-EACEAB_gammaimc);
+// Demand for bilateral consumption import goods
+EACEAE_imc = EACEAE_numc*((EAE_pex*EACEAE_rer)/(EACEAE_gammaimcdag*EAC_pimc))^(-EAC_mumc)*EAC_imc/(1-EACEAE_gammaimc);
+// Demand for bilateral consumption import goods
+EACRW_imc = EACRW_numc*((RW_pex*EACRW_rer)/(EACRW_gammaimcdag*EAC_pimc))^(-EAC_mumc)*EAC_imc/(1-EACRW_gammaimc);
+// Demand for bilateral consumption import goods
+EACUS_imc = EACUS_numc*((US_pex*EACUS_rer)/(EACUS_gammaimcdag*EAC_pimc))^(-EAC_mumc)*EAC_imc/(1-EACUS_gammaimc);
 EACEAA_imc = (1
 -EACEAB_numc
 -EACEAD_numc
@@ -6498,10 +6517,13 @@ EAC_imi^((EAC_mumi-1)/EAC_mumi) =
 -EACUS_numi
 )^(1/EAC_mumi)*((1-EACEAA_gammaimi)*EACEAA_imi)^(1-1/EAC_mumi);
 // Demand for bilateral consumption import goods
-EACUS_imi = EACUS_numi*((US_pex*EACUS_rer)/(EACUS_gammaimidag*EAC_pimi))^(-EAC_mumi)*EAC_imi/(1-EACUS_gammaimi);
-EACEAE_imi = EACEAE_numi*((EAE_pex*EACEAE_rer)/(EACEAE_gammaimidag*EAC_pimi))^(-EAC_mumi)*EAC_imi/(1-EACEAE_gammaimi);
-EACRW_imi = EACRW_numi*((RW_pex*EACRW_rer)/(EACRW_gammaimidag*EAC_pimi))^(-EAC_mumi)*EAC_imi/(1-EACRW_gammaimi);
 EACEAB_imi = EACEAB_numi*((EAB_pex*EACEAB_rer)/(EACEAB_gammaimidag*EAC_pimi))^(-EAC_mumi)*EAC_imi/(1-EACEAB_gammaimi);
+// Demand for bilateral consumption import goods
+EACEAE_imi = EACEAE_numi*((EAE_pex*EACEAE_rer)/(EACEAE_gammaimidag*EAC_pimi))^(-EAC_mumi)*EAC_imi/(1-EACEAE_gammaimi);
+// Demand for bilateral consumption import goods
+EACRW_imi = EACRW_numi*((RW_pex*EACRW_rer)/(EACRW_gammaimidag*EAC_pimi))^(-EAC_mumi)*EAC_imi/(1-EACRW_gammaimi);
+// Demand for bilateral consumption import goods
+EACUS_imi = EACUS_numi*((US_pex*EACUS_rer)/(EACUS_gammaimidag*EAC_pimi))^(-EAC_mumi)*EAC_imi/(1-EACUS_gammaimi);
 EACEAA_imi = (1
 -EACEAB_numi
 -EACEAD_numi
@@ -6540,10 +6562,13 @@ EAC_imcg^((EAC_mumcg-1)/EAC_mumcg) =
 -EACUS_numcg
 )^(1/EAC_mumcg)*((1-EACEAA_gammaimcg)*EACEAA_imcg)^(1-1/EAC_mumcg);
 // Demand for bilateral consumption import goods
-EACUS_imcg = EACUS_numcg*((US_pex*EACUS_rer)/(EACUS_gammaimcgdag*EAC_pimcg))^(-EAC_mumcg)*EAC_imcg/(1-EACUS_gammaimcg);
-EACEAE_imcg = EACEAE_numcg*((EAE_pex*EACEAE_rer)/(EACEAE_gammaimcgdag*EAC_pimcg))^(-EAC_mumcg)*EAC_imcg/(1-EACEAE_gammaimcg);
-EACRW_imcg = EACRW_numcg*((RW_pex*EACRW_rer)/(EACRW_gammaimcgdag*EAC_pimcg))^(-EAC_mumcg)*EAC_imcg/(1-EACRW_gammaimcg);
 EACEAB_imcg = EACEAB_numcg*((EAB_pex*EACEAB_rer)/(EACEAB_gammaimcgdag*EAC_pimcg))^(-EAC_mumcg)*EAC_imcg/(1-EACEAB_gammaimcg);
+// Demand for bilateral consumption import goods
+EACEAE_imcg = EACEAE_numcg*((EAE_pex*EACEAE_rer)/(EACEAE_gammaimcgdag*EAC_pimcg))^(-EAC_mumcg)*EAC_imcg/(1-EACEAE_gammaimcg);
+// Demand for bilateral consumption import goods
+EACRW_imcg = EACRW_numcg*((RW_pex*EACRW_rer)/(EACRW_gammaimcgdag*EAC_pimcg))^(-EAC_mumcg)*EAC_imcg/(1-EACRW_gammaimcg);
+// Demand for bilateral consumption import goods
+EACUS_imcg = EACUS_numcg*((US_pex*EACUS_rer)/(EACUS_gammaimcgdag*EAC_pimcg))^(-EAC_mumcg)*EAC_imcg/(1-EACUS_gammaimcg);
 EACEAA_imcg = (1
 -EACEAB_numcg
 -EACEAD_numcg
@@ -6582,10 +6607,13 @@ EAC_imig^((EAC_mumig-1)/EAC_mumig) =
 -EACUS_numig
 )^(1/EAC_mumig)*((1-EACEAA_gammaimig)*EACEAA_imig)^(1-1/EAC_mumig);
 // Demand for bilateral consumption import goods
-EACUS_imig = EACUS_numig*((US_pex*EACUS_rer)/(EACUS_gammaimigdag*EAC_pimig))^(-EAC_mumig)*EAC_imig/(1-EACUS_gammaimig);
-EACEAE_imig = EACEAE_numig*((EAE_pex*EACEAE_rer)/(EACEAE_gammaimigdag*EAC_pimig))^(-EAC_mumig)*EAC_imig/(1-EACEAE_gammaimig);
-EACRW_imig = EACRW_numig*((RW_pex*EACRW_rer)/(EACRW_gammaimigdag*EAC_pimig))^(-EAC_mumig)*EAC_imig/(1-EACRW_gammaimig);
 EACEAB_imig = EACEAB_numig*((EAB_pex*EACEAB_rer)/(EACEAB_gammaimigdag*EAC_pimig))^(-EAC_mumig)*EAC_imig/(1-EACEAB_gammaimig);
+// Demand for bilateral consumption import goods
+EACEAE_imig = EACEAE_numig*((EAE_pex*EACEAE_rer)/(EACEAE_gammaimigdag*EAC_pimig))^(-EAC_mumig)*EAC_imig/(1-EACEAE_gammaimig);
+// Demand for bilateral consumption import goods
+EACRW_imig = EACRW_numig*((RW_pex*EACRW_rer)/(EACRW_gammaimigdag*EAC_pimig))^(-EAC_mumig)*EAC_imig/(1-EACRW_gammaimig);
+// Demand for bilateral consumption import goods
+EACUS_imig = EACUS_numig*((US_pex*EACUS_rer)/(EACUS_gammaimigdag*EAC_pimig))^(-EAC_mumig)*EAC_imig/(1-EACUS_gammaimig);
 EACEAA_imig = (1
 -EACEAB_numig
 -EACEAD_numig
@@ -6857,18 +6885,11 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	// Monetary policy rule
-		
-			
-					EAC_rerdep/EAE_rerdep*EAC_pic/EAE_pic-1=0;
-				
-				
-			
-		
-	// Definition of annual inflation
-	EAC_pic4 = EAC_pic*EAC_pic(-1)*EAC_pic(-2)*EAC_pic(-3);
-	// Real interest rate
-	EAC_rr-1 = EAC_r/EAC_pic(+1)-1;
+		EAC_rerdep/EAE_rerdep*EAC_pic/EAE_pic-1=0;
+// Definition of annual inflation
+EAC_pic4 = EAC_pic*EAC_pic(-1)*EAC_pic(-2)*EAC_pic(-3);
+// Real interest rate
+EAC_rr-1 = EAC_r/EAC_pic(+1)-1;
 // Equilibrium real interest rate
 EAC_rrstar-1 = 1/EAC_beta-1;
 //-------------
@@ -7720,9 +7741,12 @@ EAD_imc^((EAD_mumc-1)/EAD_mumc) =
 )^(1/EAD_mumc)*((1-EADEAB_gammaimc)*EADEAB_imc)^(1-1/EAD_mumc);
 // Demand for bilateral consumption import goods
 EADEAA_imc = EADEAA_numc*((EAA_pex*EADEAA_rer)/(EADEAA_gammaimcdag*EAD_pimc))^(-EAD_mumc)*EAD_imc/(1-EADEAA_gammaimc);
-EADRW_imc = EADRW_numc*((RW_pex*EADRW_rer)/(EADRW_gammaimcdag*EAD_pimc))^(-EAD_mumc)*EAD_imc/(1-EADRW_gammaimc);
-EADUS_imc = EADUS_numc*((US_pex*EADUS_rer)/(EADUS_gammaimcdag*EAD_pimc))^(-EAD_mumc)*EAD_imc/(1-EADUS_gammaimc);
+// Demand for bilateral consumption import goods
 EADEAC_imc = EADEAC_numc*((EAC_pex*EADEAC_rer)/(EADEAC_gammaimcdag*EAD_pimc))^(-EAD_mumc)*EAD_imc/(1-EADEAC_gammaimc);
+// Demand for bilateral consumption import goods
+EADRW_imc = EADRW_numc*((RW_pex*EADRW_rer)/(EADRW_gammaimcdag*EAD_pimc))^(-EAD_mumc)*EAD_imc/(1-EADRW_gammaimc);
+// Demand for bilateral consumption import goods
+EADUS_imc = EADUS_numc*((US_pex*EADUS_rer)/(EADUS_gammaimcdag*EAD_pimc))^(-EAD_mumc)*EAD_imc/(1-EADUS_gammaimc);
 EADEAB_imc = (1
 -EADEAA_numc
 -EADEAC_numc
@@ -7762,9 +7786,12 @@ EAD_imi^((EAD_mumi-1)/EAD_mumi) =
 )^(1/EAD_mumi)*((1-EADEAB_gammaimi)*EADEAB_imi)^(1-1/EAD_mumi);
 // Demand for bilateral consumption import goods
 EADEAA_imi = EADEAA_numi*((EAA_pex*EADEAA_rer)/(EADEAA_gammaimidag*EAD_pimi))^(-EAD_mumi)*EAD_imi/(1-EADEAA_gammaimi);
-EADRW_imi = EADRW_numi*((RW_pex*EADRW_rer)/(EADRW_gammaimidag*EAD_pimi))^(-EAD_mumi)*EAD_imi/(1-EADRW_gammaimi);
-EADUS_imi = EADUS_numi*((US_pex*EADUS_rer)/(EADUS_gammaimidag*EAD_pimi))^(-EAD_mumi)*EAD_imi/(1-EADUS_gammaimi);
+// Demand for bilateral consumption import goods
 EADEAC_imi = EADEAC_numi*((EAC_pex*EADEAC_rer)/(EADEAC_gammaimidag*EAD_pimi))^(-EAD_mumi)*EAD_imi/(1-EADEAC_gammaimi);
+// Demand for bilateral consumption import goods
+EADRW_imi = EADRW_numi*((RW_pex*EADRW_rer)/(EADRW_gammaimidag*EAD_pimi))^(-EAD_mumi)*EAD_imi/(1-EADRW_gammaimi);
+// Demand for bilateral consumption import goods
+EADUS_imi = EADUS_numi*((US_pex*EADUS_rer)/(EADUS_gammaimidag*EAD_pimi))^(-EAD_mumi)*EAD_imi/(1-EADUS_gammaimi);
 EADEAB_imi = (1
 -EADEAA_numi
 -EADEAC_numi
@@ -7804,9 +7831,12 @@ EAD_imcg^((EAD_mumcg-1)/EAD_mumcg) =
 )^(1/EAD_mumcg)*((1-EADEAB_gammaimcg)*EADEAB_imcg)^(1-1/EAD_mumcg);
 // Demand for bilateral consumption import goods
 EADEAA_imcg = EADEAA_numcg*((EAA_pex*EADEAA_rer)/(EADEAA_gammaimcgdag*EAD_pimcg))^(-EAD_mumcg)*EAD_imcg/(1-EADEAA_gammaimcg);
-EADRW_imcg = EADRW_numcg*((RW_pex*EADRW_rer)/(EADRW_gammaimcgdag*EAD_pimcg))^(-EAD_mumcg)*EAD_imcg/(1-EADRW_gammaimcg);
-EADUS_imcg = EADUS_numcg*((US_pex*EADUS_rer)/(EADUS_gammaimcgdag*EAD_pimcg))^(-EAD_mumcg)*EAD_imcg/(1-EADUS_gammaimcg);
+// Demand for bilateral consumption import goods
 EADEAC_imcg = EADEAC_numcg*((EAC_pex*EADEAC_rer)/(EADEAC_gammaimcgdag*EAD_pimcg))^(-EAD_mumcg)*EAD_imcg/(1-EADEAC_gammaimcg);
+// Demand for bilateral consumption import goods
+EADRW_imcg = EADRW_numcg*((RW_pex*EADRW_rer)/(EADRW_gammaimcgdag*EAD_pimcg))^(-EAD_mumcg)*EAD_imcg/(1-EADRW_gammaimcg);
+// Demand for bilateral consumption import goods
+EADUS_imcg = EADUS_numcg*((US_pex*EADUS_rer)/(EADUS_gammaimcgdag*EAD_pimcg))^(-EAD_mumcg)*EAD_imcg/(1-EADUS_gammaimcg);
 EADEAB_imcg = (1
 -EADEAA_numcg
 -EADEAC_numcg
@@ -7846,9 +7876,12 @@ EAD_imig^((EAD_mumig-1)/EAD_mumig) =
 )^(1/EAD_mumig)*((1-EADEAB_gammaimig)*EADEAB_imig)^(1-1/EAD_mumig);
 // Demand for bilateral consumption import goods
 EADEAA_imig = EADEAA_numig*((EAA_pex*EADEAA_rer)/(EADEAA_gammaimigdag*EAD_pimig))^(-EAD_mumig)*EAD_imig/(1-EADEAA_gammaimig);
-EADRW_imig = EADRW_numig*((RW_pex*EADRW_rer)/(EADRW_gammaimigdag*EAD_pimig))^(-EAD_mumig)*EAD_imig/(1-EADRW_gammaimig);
-EADUS_imig = EADUS_numig*((US_pex*EADUS_rer)/(EADUS_gammaimigdag*EAD_pimig))^(-EAD_mumig)*EAD_imig/(1-EADUS_gammaimig);
+// Demand for bilateral consumption import goods
 EADEAC_imig = EADEAC_numig*((EAC_pex*EADEAC_rer)/(EADEAC_gammaimigdag*EAD_pimig))^(-EAD_mumig)*EAD_imig/(1-EADEAC_gammaimig);
+// Demand for bilateral consumption import goods
+EADRW_imig = EADRW_numig*((RW_pex*EADRW_rer)/(EADRW_gammaimigdag*EAD_pimig))^(-EAD_mumig)*EAD_imig/(1-EADRW_gammaimig);
+// Demand for bilateral consumption import goods
+EADUS_imig = EADUS_numig*((US_pex*EADUS_rer)/(EADUS_gammaimigdag*EAD_pimig))^(-EAD_mumig)*EAD_imig/(1-EADUS_gammaimig);
 EADEAB_imig = (1
 -EADEAA_numig
 -EADEAC_numig
@@ -8120,21 +8153,11 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	// Monetary policy rule
-		
-			
-				
-						
-						EAD_rerdep/EAE_rerdep*EAD_pic/EAE_pic-1=0;
-					
-					
-				
-			
-		
-	// Definition of annual inflation
-	EAD_pic4 = EAD_pic*EAD_pic(-1)*EAD_pic(-2)*EAD_pic(-3);
-	// Real interest rate
-	EAD_rr-1 = EAD_r/EAD_pic(+1)-1;
+		EAD_rerdep/EAE_rerdep*EAD_pic/EAE_pic-1=0;
+// Definition of annual inflation
+EAD_pic4 = EAD_pic*EAD_pic(-1)*EAD_pic(-2)*EAD_pic(-3);
+// Real interest rate
+EAD_rr-1 = EAD_r/EAD_pic(+1)-1;
 // Equilibrium real interest rate
 EAD_rrstar-1 = 1/EAD_beta-1;
 //-------------
@@ -8985,10 +9008,13 @@ EAE_imc^((EAE_mumc-1)/EAE_mumc) =
 -EAEUS_numc
 )^(1/EAE_mumc)*((1-EAEEAC_gammaimc)*EAEEAC_imc)^(1-1/EAE_mumc);
 // Demand for bilateral consumption import goods
-EAEEAB_imc = EAEEAB_numc*((EAB_pex*EAEEAB_rer)/(EAEEAB_gammaimcdag*EAE_pimc))^(-EAE_mumc)*EAE_imc/(1-EAEEAB_gammaimc);
-EAEUS_imc = EAEUS_numc*((US_pex*EAEUS_rer)/(EAEUS_gammaimcdag*EAE_pimc))^(-EAE_mumc)*EAE_imc/(1-EAEUS_gammaimc);
 EAEEAA_imc = EAEEAA_numc*((EAA_pex*EAEEAA_rer)/(EAEEAA_gammaimcdag*EAE_pimc))^(-EAE_mumc)*EAE_imc/(1-EAEEAA_gammaimc);
+// Demand for bilateral consumption import goods
+EAEEAB_imc = EAEEAB_numc*((EAB_pex*EAEEAB_rer)/(EAEEAB_gammaimcdag*EAE_pimc))^(-EAE_mumc)*EAE_imc/(1-EAEEAB_gammaimc);
+// Demand for bilateral consumption import goods
 EAEEAD_imc = EAEEAD_numc*((EAD_pex*EAEEAD_rer)/(EAEEAD_gammaimcdag*EAE_pimc))^(-EAE_mumc)*EAE_imc/(1-EAEEAD_gammaimc);
+// Demand for bilateral consumption import goods
+EAEUS_imc = EAEUS_numc*((US_pex*EAEUS_rer)/(EAEUS_gammaimcdag*EAE_pimc))^(-EAE_mumc)*EAE_imc/(1-EAEUS_gammaimc);
 EAEEAC_imc = (1
 -EAEEAA_numc
 -EAEEAB_numc
@@ -9027,10 +9053,13 @@ EAE_imi^((EAE_mumi-1)/EAE_mumi) =
 -EAEUS_numi
 )^(1/EAE_mumi)*((1-EAEEAC_gammaimi)*EAEEAC_imi)^(1-1/EAE_mumi);
 // Demand for bilateral consumption import goods
-EAEEAB_imi = EAEEAB_numi*((EAB_pex*EAEEAB_rer)/(EAEEAB_gammaimidag*EAE_pimi))^(-EAE_mumi)*EAE_imi/(1-EAEEAB_gammaimi);
-EAEUS_imi = EAEUS_numi*((US_pex*EAEUS_rer)/(EAEUS_gammaimidag*EAE_pimi))^(-EAE_mumi)*EAE_imi/(1-EAEUS_gammaimi);
 EAEEAA_imi = EAEEAA_numi*((EAA_pex*EAEEAA_rer)/(EAEEAA_gammaimidag*EAE_pimi))^(-EAE_mumi)*EAE_imi/(1-EAEEAA_gammaimi);
+// Demand for bilateral consumption import goods
+EAEEAB_imi = EAEEAB_numi*((EAB_pex*EAEEAB_rer)/(EAEEAB_gammaimidag*EAE_pimi))^(-EAE_mumi)*EAE_imi/(1-EAEEAB_gammaimi);
+// Demand for bilateral consumption import goods
 EAEEAD_imi = EAEEAD_numi*((EAD_pex*EAEEAD_rer)/(EAEEAD_gammaimidag*EAE_pimi))^(-EAE_mumi)*EAE_imi/(1-EAEEAD_gammaimi);
+// Demand for bilateral consumption import goods
+EAEUS_imi = EAEUS_numi*((US_pex*EAEUS_rer)/(EAEUS_gammaimidag*EAE_pimi))^(-EAE_mumi)*EAE_imi/(1-EAEUS_gammaimi);
 EAEEAC_imi = (1
 -EAEEAA_numi
 -EAEEAB_numi
@@ -9069,10 +9098,13 @@ EAE_imcg^((EAE_mumcg-1)/EAE_mumcg) =
 -EAEUS_numcg
 )^(1/EAE_mumcg)*((1-EAEEAC_gammaimcg)*EAEEAC_imcg)^(1-1/EAE_mumcg);
 // Demand for bilateral consumption import goods
-EAEEAB_imcg = EAEEAB_numcg*((EAB_pex*EAEEAB_rer)/(EAEEAB_gammaimcgdag*EAE_pimcg))^(-EAE_mumcg)*EAE_imcg/(1-EAEEAB_gammaimcg);
-EAEUS_imcg = EAEUS_numcg*((US_pex*EAEUS_rer)/(EAEUS_gammaimcgdag*EAE_pimcg))^(-EAE_mumcg)*EAE_imcg/(1-EAEUS_gammaimcg);
 EAEEAA_imcg = EAEEAA_numcg*((EAA_pex*EAEEAA_rer)/(EAEEAA_gammaimcgdag*EAE_pimcg))^(-EAE_mumcg)*EAE_imcg/(1-EAEEAA_gammaimcg);
+// Demand for bilateral consumption import goods
+EAEEAB_imcg = EAEEAB_numcg*((EAB_pex*EAEEAB_rer)/(EAEEAB_gammaimcgdag*EAE_pimcg))^(-EAE_mumcg)*EAE_imcg/(1-EAEEAB_gammaimcg);
+// Demand for bilateral consumption import goods
 EAEEAD_imcg = EAEEAD_numcg*((EAD_pex*EAEEAD_rer)/(EAEEAD_gammaimcgdag*EAE_pimcg))^(-EAE_mumcg)*EAE_imcg/(1-EAEEAD_gammaimcg);
+// Demand for bilateral consumption import goods
+EAEUS_imcg = EAEUS_numcg*((US_pex*EAEUS_rer)/(EAEUS_gammaimcgdag*EAE_pimcg))^(-EAE_mumcg)*EAE_imcg/(1-EAEUS_gammaimcg);
 EAEEAC_imcg = (1
 -EAEEAA_numcg
 -EAEEAB_numcg
@@ -9111,10 +9143,13 @@ EAE_imig^((EAE_mumig-1)/EAE_mumig) =
 -EAEUS_numig
 )^(1/EAE_mumig)*((1-EAEEAC_gammaimig)*EAEEAC_imig)^(1-1/EAE_mumig);
 // Demand for bilateral consumption import goods
-EAEEAB_imig = EAEEAB_numig*((EAB_pex*EAEEAB_rer)/(EAEEAB_gammaimigdag*EAE_pimig))^(-EAE_mumig)*EAE_imig/(1-EAEEAB_gammaimig);
-EAEUS_imig = EAEUS_numig*((US_pex*EAEUS_rer)/(EAEUS_gammaimigdag*EAE_pimig))^(-EAE_mumig)*EAE_imig/(1-EAEUS_gammaimig);
 EAEEAA_imig = EAEEAA_numig*((EAA_pex*EAEEAA_rer)/(EAEEAA_gammaimigdag*EAE_pimig))^(-EAE_mumig)*EAE_imig/(1-EAEEAA_gammaimig);
+// Demand for bilateral consumption import goods
+EAEEAB_imig = EAEEAB_numig*((EAB_pex*EAEEAB_rer)/(EAEEAB_gammaimigdag*EAE_pimig))^(-EAE_mumig)*EAE_imig/(1-EAEEAB_gammaimig);
+// Demand for bilateral consumption import goods
 EAEEAD_imig = EAEEAD_numig*((EAD_pex*EAEEAD_rer)/(EAEEAD_gammaimigdag*EAE_pimig))^(-EAE_mumig)*EAE_imig/(1-EAEEAD_gammaimig);
+// Demand for bilateral consumption import goods
+EAEUS_imig = EAEUS_numig*((US_pex*EAEUS_rer)/(EAEUS_gammaimigdag*EAE_pimig))^(-EAE_mumig)*EAE_imig/(1-EAEUS_gammaimig);
 EAEEAC_imig = (1
 -EAEEAA_numig
 -EAEEAB_numig
@@ -9386,14 +9421,13 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	// Monetary policy rule
 		EAE_r^4-1 = EA_phirr*(EAE_r(-1)^4-1)+(1-EA_phirr)*(EAE_rrstar^4*EAE_pi4target-1
 		+EA_phirpi*(EA_pic4-EAE_pi4target))
 		+EA_phirgy*(EA_ygrowth-1)+EA_epsr;
-	// Definition of annual inflation
-	EAE_pic4 = EAE_pic*EAE_pic(-1)*EAE_pic(-2)*EAE_pic(-3);
-	// Real interest rate
-	EAE_rr-1 = EAE_r/EAE_pic(+1)-1;
+// Definition of annual inflation
+EAE_pic4 = EAE_pic*EAE_pic(-1)*EAE_pic(-2)*EAE_pic(-3);
+// Real interest rate
+EAE_rr-1 = EAE_r/EAE_pic(+1)-1;
 // Equilibrium real interest rate
 EAE_rrstar-1 = 1/EAE_beta-1;
 //-------------
@@ -10244,9 +10278,12 @@ RW_imc^((RW_mumc-1)/RW_mumc) =
 -RWUS_numc
 )^(1/RW_mumc)*((1-RWEAD_gammaimc)*RWEAD_imc)^(1-1/RW_mumc);
 // Demand for bilateral consumption import goods
-RWEAC_imc = RWEAC_numc*((EAC_pex*RWEAC_rer)/(RWEAC_gammaimcdag*RW_pimc))^(-RW_mumc)*RW_imc/(1-RWEAC_gammaimc);
 RWEAA_imc = RWEAA_numc*((EAA_pex*RWEAA_rer)/(RWEAA_gammaimcdag*RW_pimc))^(-RW_mumc)*RW_imc/(1-RWEAA_gammaimc);
+// Demand for bilateral consumption import goods
 RWEAB_imc = RWEAB_numc*((EAB_pex*RWEAB_rer)/(RWEAB_gammaimcdag*RW_pimc))^(-RW_mumc)*RW_imc/(1-RWEAB_gammaimc);
+// Demand for bilateral consumption import goods
+RWEAC_imc = RWEAC_numc*((EAC_pex*RWEAC_rer)/(RWEAC_gammaimcdag*RW_pimc))^(-RW_mumc)*RW_imc/(1-RWEAC_gammaimc);
+// Demand for bilateral consumption import goods
 RWEAE_imc = RWEAE_numc*((EAE_pex*RWEAE_rer)/(RWEAE_gammaimcdag*RW_pimc))^(-RW_mumc)*RW_imc/(1-RWEAE_gammaimc);
 RWEAD_imc = (1
 -RWEAA_numc
@@ -10286,9 +10323,12 @@ RW_imi^((RW_mumi-1)/RW_mumi) =
 -RWUS_numi
 )^(1/RW_mumi)*((1-RWEAD_gammaimi)*RWEAD_imi)^(1-1/RW_mumi);
 // Demand for bilateral consumption import goods
-RWEAC_imi = RWEAC_numi*((EAC_pex*RWEAC_rer)/(RWEAC_gammaimidag*RW_pimi))^(-RW_mumi)*RW_imi/(1-RWEAC_gammaimi);
 RWEAA_imi = RWEAA_numi*((EAA_pex*RWEAA_rer)/(RWEAA_gammaimidag*RW_pimi))^(-RW_mumi)*RW_imi/(1-RWEAA_gammaimi);
+// Demand for bilateral consumption import goods
 RWEAB_imi = RWEAB_numi*((EAB_pex*RWEAB_rer)/(RWEAB_gammaimidag*RW_pimi))^(-RW_mumi)*RW_imi/(1-RWEAB_gammaimi);
+// Demand for bilateral consumption import goods
+RWEAC_imi = RWEAC_numi*((EAC_pex*RWEAC_rer)/(RWEAC_gammaimidag*RW_pimi))^(-RW_mumi)*RW_imi/(1-RWEAC_gammaimi);
+// Demand for bilateral consumption import goods
 RWEAE_imi = RWEAE_numi*((EAE_pex*RWEAE_rer)/(RWEAE_gammaimidag*RW_pimi))^(-RW_mumi)*RW_imi/(1-RWEAE_gammaimi);
 RWEAD_imi = (1
 -RWEAA_numi
@@ -10328,9 +10368,12 @@ RW_imcg^((RW_mumcg-1)/RW_mumcg) =
 -RWUS_numcg
 )^(1/RW_mumcg)*((1-RWEAD_gammaimcg)*RWEAD_imcg)^(1-1/RW_mumcg);
 // Demand for bilateral consumption import goods
-RWEAC_imcg = RWEAC_numcg*((EAC_pex*RWEAC_rer)/(RWEAC_gammaimcgdag*RW_pimcg))^(-RW_mumcg)*RW_imcg/(1-RWEAC_gammaimcg);
 RWEAA_imcg = RWEAA_numcg*((EAA_pex*RWEAA_rer)/(RWEAA_gammaimcgdag*RW_pimcg))^(-RW_mumcg)*RW_imcg/(1-RWEAA_gammaimcg);
+// Demand for bilateral consumption import goods
 RWEAB_imcg = RWEAB_numcg*((EAB_pex*RWEAB_rer)/(RWEAB_gammaimcgdag*RW_pimcg))^(-RW_mumcg)*RW_imcg/(1-RWEAB_gammaimcg);
+// Demand for bilateral consumption import goods
+RWEAC_imcg = RWEAC_numcg*((EAC_pex*RWEAC_rer)/(RWEAC_gammaimcgdag*RW_pimcg))^(-RW_mumcg)*RW_imcg/(1-RWEAC_gammaimcg);
+// Demand for bilateral consumption import goods
 RWEAE_imcg = RWEAE_numcg*((EAE_pex*RWEAE_rer)/(RWEAE_gammaimcgdag*RW_pimcg))^(-RW_mumcg)*RW_imcg/(1-RWEAE_gammaimcg);
 RWEAD_imcg = (1
 -RWEAA_numcg
@@ -10370,9 +10413,12 @@ RW_imig^((RW_mumig-1)/RW_mumig) =
 -RWUS_numig
 )^(1/RW_mumig)*((1-RWEAD_gammaimig)*RWEAD_imig)^(1-1/RW_mumig);
 // Demand for bilateral consumption import goods
-RWEAC_imig = RWEAC_numig*((EAC_pex*RWEAC_rer)/(RWEAC_gammaimigdag*RW_pimig))^(-RW_mumig)*RW_imig/(1-RWEAC_gammaimig);
 RWEAA_imig = RWEAA_numig*((EAA_pex*RWEAA_rer)/(RWEAA_gammaimigdag*RW_pimig))^(-RW_mumig)*RW_imig/(1-RWEAA_gammaimig);
+// Demand for bilateral consumption import goods
 RWEAB_imig = RWEAB_numig*((EAB_pex*RWEAB_rer)/(RWEAB_gammaimigdag*RW_pimig))^(-RW_mumig)*RW_imig/(1-RWEAB_gammaimig);
+// Demand for bilateral consumption import goods
+RWEAC_imig = RWEAC_numig*((EAC_pex*RWEAC_rer)/(RWEAC_gammaimigdag*RW_pimig))^(-RW_mumig)*RW_imig/(1-RWEAC_gammaimig);
+// Demand for bilateral consumption import goods
 RWEAE_imig = RWEAE_numig*((EAE_pex*RWEAE_rer)/(RWEAE_gammaimigdag*RW_pimig))^(-RW_mumig)*RW_imig/(1-RWEAE_gammaimig);
 RWEAD_imig = (1
 -RWEAA_numig
@@ -10645,20 +10691,11 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	// Monetary policy rule
-		
-			
-				
-					RW_r^4-1 = RW_phirr*(RW_r(-1)^4-1)+(1-RW_phirr)*(RW_rrstar^4*RW_pi4target-1+RW_phirpi*(RW_pic4-RW_pi4target))+RW_phirgy*(RW_y/RW_y(-1)-1)+RW_epsr;
-					
-					
-				
-			
-		
-	// Definition of annual inflation
-	RW_pic4 = RW_pic*RW_pic(-1)*RW_pic(-2)*RW_pic(-3);
-	// Real interest rate
-	RW_rr-1 = RW_r/RW_pic(+1)-1;
+	RW_r^4-1 = RW_phirr*(RW_r(-1)^4-1)+(1-RW_phirr)*(RW_rrstar^4*RW_pi4target-1+RW_phirpi*(RW_pic4-RW_pi4target))+RW_phirgy*(RW_y/RW_y(-1)-1)+RW_epsr;
+// Definition of annual inflation
+RW_pic4 = RW_pic*RW_pic(-1)*RW_pic(-2)*RW_pic(-3);
+// Real interest rate
+RW_rr-1 = RW_r/RW_pic(+1)-1;
 // Equilibrium real interest rate
 RW_rrstar-1 = 1/RW_beta-1;
 //-------------
@@ -11509,9 +11546,12 @@ US_imc^((US_mumc-1)/US_mumc) =
 -USRW_numc
 )^(1/US_mumc)*((1-USEAE_gammaimc)*USEAE_imc)^(1-1/US_mumc);
 // Demand for bilateral consumption import goods
-USEAD_imc = USEAD_numc*((EAD_pex*USEAD_rer)/(USEAD_gammaimcdag*US_pimc))^(-US_mumc)*US_imc/(1-USEAD_gammaimc);
 USEAB_imc = USEAB_numc*((EAB_pex*USEAB_rer)/(USEAB_gammaimcdag*US_pimc))^(-US_mumc)*US_imc/(1-USEAB_gammaimc);
+// Demand for bilateral consumption import goods
 USEAC_imc = USEAC_numc*((EAC_pex*USEAC_rer)/(USEAC_gammaimcdag*US_pimc))^(-US_mumc)*US_imc/(1-USEAC_gammaimc);
+// Demand for bilateral consumption import goods
+USEAD_imc = USEAD_numc*((EAD_pex*USEAD_rer)/(USEAD_gammaimcdag*US_pimc))^(-US_mumc)*US_imc/(1-USEAD_gammaimc);
+// Demand for bilateral consumption import goods
 USRW_imc = USRW_numc*((RW_pex*USRW_rer)/(USRW_gammaimcdag*US_pimc))^(-US_mumc)*US_imc/(1-USRW_gammaimc);
 USEAE_imc = (1
 -USEAA_numc
@@ -11551,9 +11591,12 @@ US_imi^((US_mumi-1)/US_mumi) =
 -USRW_numi
 )^(1/US_mumi)*((1-USEAE_gammaimi)*USEAE_imi)^(1-1/US_mumi);
 // Demand for bilateral consumption import goods
-USEAD_imi = USEAD_numi*((EAD_pex*USEAD_rer)/(USEAD_gammaimidag*US_pimi))^(-US_mumi)*US_imi/(1-USEAD_gammaimi);
 USEAB_imi = USEAB_numi*((EAB_pex*USEAB_rer)/(USEAB_gammaimidag*US_pimi))^(-US_mumi)*US_imi/(1-USEAB_gammaimi);
+// Demand for bilateral consumption import goods
 USEAC_imi = USEAC_numi*((EAC_pex*USEAC_rer)/(USEAC_gammaimidag*US_pimi))^(-US_mumi)*US_imi/(1-USEAC_gammaimi);
+// Demand for bilateral consumption import goods
+USEAD_imi = USEAD_numi*((EAD_pex*USEAD_rer)/(USEAD_gammaimidag*US_pimi))^(-US_mumi)*US_imi/(1-USEAD_gammaimi);
+// Demand for bilateral consumption import goods
 USRW_imi = USRW_numi*((RW_pex*USRW_rer)/(USRW_gammaimidag*US_pimi))^(-US_mumi)*US_imi/(1-USRW_gammaimi);
 USEAE_imi = (1
 -USEAA_numi
@@ -11593,9 +11636,12 @@ US_imcg^((US_mumcg-1)/US_mumcg) =
 -USRW_numcg
 )^(1/US_mumcg)*((1-USEAE_gammaimcg)*USEAE_imcg)^(1-1/US_mumcg);
 // Demand for bilateral consumption import goods
-USEAD_imcg = USEAD_numcg*((EAD_pex*USEAD_rer)/(USEAD_gammaimcgdag*US_pimcg))^(-US_mumcg)*US_imcg/(1-USEAD_gammaimcg);
 USEAB_imcg = USEAB_numcg*((EAB_pex*USEAB_rer)/(USEAB_gammaimcgdag*US_pimcg))^(-US_mumcg)*US_imcg/(1-USEAB_gammaimcg);
+// Demand for bilateral consumption import goods
 USEAC_imcg = USEAC_numcg*((EAC_pex*USEAC_rer)/(USEAC_gammaimcgdag*US_pimcg))^(-US_mumcg)*US_imcg/(1-USEAC_gammaimcg);
+// Demand for bilateral consumption import goods
+USEAD_imcg = USEAD_numcg*((EAD_pex*USEAD_rer)/(USEAD_gammaimcgdag*US_pimcg))^(-US_mumcg)*US_imcg/(1-USEAD_gammaimcg);
+// Demand for bilateral consumption import goods
 USRW_imcg = USRW_numcg*((RW_pex*USRW_rer)/(USRW_gammaimcgdag*US_pimcg))^(-US_mumcg)*US_imcg/(1-USRW_gammaimcg);
 USEAE_imcg = (1
 -USEAA_numcg
@@ -11635,9 +11681,12 @@ US_imig^((US_mumig-1)/US_mumig) =
 -USRW_numig
 )^(1/US_mumig)*((1-USEAE_gammaimig)*USEAE_imig)^(1-1/US_mumig);
 // Demand for bilateral consumption import goods
-USEAD_imig = USEAD_numig*((EAD_pex*USEAD_rer)/(USEAD_gammaimigdag*US_pimig))^(-US_mumig)*US_imig/(1-USEAD_gammaimig);
 USEAB_imig = USEAB_numig*((EAB_pex*USEAB_rer)/(USEAB_gammaimigdag*US_pimig))^(-US_mumig)*US_imig/(1-USEAB_gammaimig);
+// Demand for bilateral consumption import goods
 USEAC_imig = USEAC_numig*((EAC_pex*USEAC_rer)/(USEAC_gammaimigdag*US_pimig))^(-US_mumig)*US_imig/(1-USEAC_gammaimig);
+// Demand for bilateral consumption import goods
+USEAD_imig = USEAD_numig*((EAD_pex*USEAD_rer)/(USEAD_gammaimigdag*US_pimig))^(-US_mumig)*US_imig/(1-USEAD_gammaimig);
+// Demand for bilateral consumption import goods
 USRW_imig = USRW_numig*((RW_pex*USRW_rer)/(USRW_gammaimigdag*US_pimig))^(-US_mumig)*US_imig/(1-USRW_gammaimig);
 USEAE_imig = (1
 -USEAA_numig
@@ -11910,20 +11959,11 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	// Monetary policy rule
-		
-			
-				
-					US_r^4-1 = US_phirr*(US_r(-1)^4-1)+(1-US_phirr)*(US_rrstar^4*US_pi4target-1+US_phirpi*(US_pic4-US_pi4target))+US_phirgy*(US_y/US_y(-1)-1)+US_epsr;
-					
-					
-				
-			
-		
-	// Definition of annual inflation
-	US_pic4 = US_pic*US_pic(-1)*US_pic(-2)*US_pic(-3);
-	// Real interest rate
-	US_rr-1 = US_r/US_pic(+1)-1;
+	US_r^4-1 = US_phirr*(US_r(-1)^4-1)+(1-US_phirr)*(US_rrstar^4*US_pi4target-1+US_phirpi*(US_pic4-US_pi4target))+US_phirgy*(US_y/US_y(-1)-1)+US_epsr;
+// Definition of annual inflation
+US_pic4 = US_pic*US_pic(-1)*US_pic(-2)*US_pic(-3);
+// Real interest rate
+US_rr-1 = US_r/US_pic(+1)-1;
 // Equilibrium real interest rate
 US_rrstar-1 = 1/US_beta-1;
 //-------------
