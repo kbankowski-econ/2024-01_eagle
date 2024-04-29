@@ -218,8 +218,8 @@ steady(homotopy_steps = 5);
 disp('chii/chij')
 homotopy_setup;
 @#for co in countries
-@{co}_chii, 0.5;
-@{co}_chij, 0.5;
+@{co}_chii, 0.75;
+@{co}_chij, 0.75;
 @#endfor
 end;
 steady(homotopy_steps = 5);
