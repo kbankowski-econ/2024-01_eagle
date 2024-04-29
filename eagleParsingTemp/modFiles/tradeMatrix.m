@@ -117,8 +117,8 @@ for i = 1:length(countries)
                 end
             end
             
-            % Create label
-            label = strcat(co, orig_country, suffix);
+           % Create label
+           label = strcat(co, orig_country, suffix);
             
             % Print label and value to the file
             fprintf(fid, '%s, %f;\n', label, value);
@@ -126,6 +126,54 @@ for i = 1:length(countries)
     end
 end
 
+% Add the total amount of import per country
+
+fprintf(fid, '\n');
+% Loop to print additional lines
+for i = 1:length(countries)
+    co = countries(i);
+    
+    % Loop over suffixes
+    for sufIdx = 1:length(suffixes)
+        suffix = suffixes(sufIdx);
+        
+    if strcmp(co, EA)
+        fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.1839);
+        fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.1839);
+        fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0920);
+        fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 * 0.0920);
+    elseif strcmp(co, "RW")
+        fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.0860);
+        fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.0860);
+        fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0630);
+        fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 * 0.0630);
+    elseif strcmp(co, "US")
+        fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.0726);
+        fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.0726);
+        fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0420);
+        fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 * 0.0420);
+    else
+        fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.2010);
+        fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.2010);
+        fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0366);
+        fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 * 0.0366);
+    end
+    end
+
+    % Add country sizes
+
+    if strcmp(co, EA)
+        fprintf(fid, '%s, %f;\n', strcat(co, "_size"), 0.06);
+    elseif strcmp(co,"RW")
+        fprintf(fid, '%s, %f;\n', strcat(co, "_size"), 0.47);
+    elseif strcmp(co,"US")
+        fprintf(fid, '%s, %f;\n', strcat(co, "_size"), 0.31);
+    else
+        fprintf(fid, '%s, %f;\n', strcat(co, "_size"), 0.16/(length(countries)-3));
+    end
+
+
+end
 
 
 
