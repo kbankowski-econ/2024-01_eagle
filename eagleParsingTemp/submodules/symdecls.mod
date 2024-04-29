@@ -387,7 +387,7 @@ varexo
 parameters
 @#for i in 1: ctryNumber
 @#include "dynamicCtryList7.mod"
-@# for it in countries - [ countries[i], coResid]
+@# for it in countries - [ countries[i]]
 @#for aItem in demandItems
  @{countries[i]}@{it}_num@{aItem}
 @#endfor

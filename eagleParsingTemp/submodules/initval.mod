@@ -1,12 +1,5 @@
-load("paramsToBeSaved", 'ctryNumberDouble')
-
 initval;
-@#for i in 1: ctryNumber
-
-  @#define COUNTRY = countries[i]
-
-  @#include "dynamicCtryList7.mod"
-  
+@#for COUNTRY in countries
 
   @{COUNTRY}_b = 0;
   @{COUNTRY}_bf = 0;
@@ -206,8 +199,8 @@ initval;
   @{COUNTRY}_zinv = 1;
   @{COUNTRY}_zn = 1;
   @{COUNTRY}_zt = 1;
-
-  @#if(COUNTRY == "RW" || COUNTRY == "US" )
+    
+  @#if(COUNTRY != "EAA" && COUNTRY != "EAB" && COUNTRY != "EAC" && COUNTRY != "EAD" && COUNTRY != "EAE")
     @# if !steady
       @{COUNTRY}_epsr = 0;
     @#endif
@@ -253,17 +246,20 @@ initval;
       @{COUNTRY}@{COUNTRY1}_rer = 1;
       @{COUNTRY}@{COUNTRY1}_rerbar = 1;
       @{COUNTRY}@{COUNTRY1}_im = 0.03;
-      @#for aItem in demandItems
-        @{COUNTRY}@{COUNTRY1}_gammaim@{aItem} = 0;
-        @{COUNTRY}@{COUNTRY1}_gammaim@{aItem}dag = 1;
-      @#endfor
+
+@#for aItem in demandItems
+      @{COUNTRY}@{COUNTRY1}_gammaim@{aItem} = 0;
+      @{COUNTRY}@{COUNTRY1}_gammaim@{aItem}dag = 1;
+@#endfor
       @{COUNTRY}@{COUNTRY1}_tot = 1;
       @{COUNTRY}@{COUNTRY1}_weight = 0.35;
       @{COUNTRY}@{COUNTRY1}_weightex = 0.35;
       @{COUNTRY}@{COUNTRY1}_weightim = 0.35;
     @#endif
   @#endfor
+@#endfor
 
+@#for COUNTRY IN countries
   @#for COUNTRY1 IN countries
     @#if (COUNTRY != COUNTRY1)
       
@@ -336,26 +332,26 @@ initval;
   @#endif
 @#endfor
 
-
 @#for COUNTRY1 IN countries
-  @#if (COUNTRY != COUNTRY1)
-    @#for aItem in demandItems
-      @#if COUNTRY1==coResid
-        @{COUNTRY}@{COUNTRY1}_im@{aItem} = 
-        +(1
-        @#for it in countries - [COUNTRY, coResid]
-        -@{COUNTRY}@{it}_num@{aItem}
-        @#endfor
-        )*((@{COUNTRY1}_pex*@{COUNTRY}@{COUNTRY1}_rer)/@{COUNTRY}_pim@{aItem})^(-@{COUNTRY}_mum@{aItem})*@{COUNTRY}_im@{aItem};
-      @#else
+@#if (COUNTRY != COUNTRY1)
+@#for aItem in demandItems
+  @#if aItem == "c"
+      @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.02;
+      @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.09;
+  @#else
+    @#if aItem == "i"
+        @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.0003;
+        @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.0008;
+    @#else
         @{COUNTRY}@{COUNTRY1}_im@{aItem} = @{COUNTRY}@{COUNTRY1}_num@{aItem}*((@{COUNTRY1}_pex*@{COUNTRY}@{COUNTRY1}_rer)/@{COUNTRY}_pim@{aItem})^(-@{COUNTRY}_mum@{aItem})*@{COUNTRY}_im@{aItem};
-      @#endif
-      @{COUNTRY}@{COUNTRY1}_im@{aItem}y = (@{COUNTRY1}_pex*@{COUNTRY}@{COUNTRY1}_rer)*@{COUNTRY}@{COUNTRY1}_im@{aItem}/(@{COUNTRY}_py*@{COUNTRY}_y);
-    @#endfor
+        @{COUNTRY}@{COUNTRY1}_im@{aItem}y = (@{COUNTRY1}_pex*@{COUNTRY}@{COUNTRY1}_rer)*@{COUNTRY}@{COUNTRY1}_im@{aItem}/(@{COUNTRY}_py*@{COUNTRY}_y);
+    @#endif
   @#endif
 @#endfor
+@#endif
+@#endfor
 
-@#endfor // big loop initiated at the beginning of the file
+@#endfor
 
  
 // Euro Area only

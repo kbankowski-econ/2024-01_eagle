@@ -128,7 +128,7 @@ load("paramsToBeSaved", 'ctryNumberDouble')
 @#for aItem in demandItems
    @#for i in 1: ctryNumber
       @#include "dynamicCtryList7.mod"
-      @#for it in countries - [ countries[i], coResid]
+      @#for it in countries - [ countries[i]]
          @#for aItem in demandItems
             set_param_value(['@{countries[i]}', '@{it}', '_num', '@{aItem}'], 1/(ctryNumberDouble-1));
          @#endfor
