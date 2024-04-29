@@ -365,8 +365,9 @@ initval;
 
  
 // Euro Area only
-EAA_bh = 0;
-EAB_bh = 0;
+@#for co in countries[1: ctryNumber-2]
+ @{co}_bh = 0;
+@#endfor
 
 @#for it in countries
     @#if it!=countries[ctryNumber] && it!=countries[ctryNumber-1] && it!=countries[ctryNumber-2]
