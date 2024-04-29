@@ -1,3 +1,5 @@
+load("paramsToBeSaved", 'ctryNumberDouble')
+
 initval;
 @#for i in 1: ctryNumber
 
@@ -205,7 +207,7 @@ initval;
   @{COUNTRY}_zn = 1;
   @{COUNTRY}_zt = 1;
 
-  @#if(COUNTRY != "EAA" && COUNTRY != "EAB" && COUNTRY != "EAC" && COUNTRY != "EAD" && COUNTRY != "EAE")
+  @#if(COUNTRY == "RW" || COUNTRY == "US" )
     @# if !steady
       @{COUNTRY}_epsr = 0;
     @#endif
@@ -266,8 +268,8 @@ initval;
     @#if (COUNTRY != COUNTRY1)
       
       // Shares
-      @{COUNTRY}@{COUNTRY1}_excy = 0.09;
-      @{COUNTRY}@{COUNTRY1}_exiy = 0.0008;
+      @{COUNTRY}@{COUNTRY1}_excy = 0.09*3/(ctryNumberDouble-1);
+      @{COUNTRY}@{COUNTRY1}_exiy = 0.0008*3/(ctryNumberDouble-1);
     @#endif
   @#endfor
 

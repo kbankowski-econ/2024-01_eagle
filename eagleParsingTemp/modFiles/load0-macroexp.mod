@@ -13577,6 +13577,7 @@ load("paramsToBeSaved", 'ctryNumberDouble')
  EA_phirpi      = 1.50;
  EA_rhoz        = 0.90;
  EA_zbar        = 1; 
+load("paramsToBeSaved", 'ctryNumberDouble')
 initval;
   
   EAA_b = 0;
@@ -13868,28 +13869,28 @@ EAA_igy = 0.01/10;
       EAAUS_weightim = 0.35;
       
       // Shares
-      EAAEAB_excy = 0.09;
-      EAAEAB_exiy = 0.0008;
+      EAAEAB_excy = 0.09*3/(ctryNumberDouble-1);
+      EAAEAB_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EAAEAC_excy = 0.09;
-      EAAEAC_exiy = 0.0008;
+      EAAEAC_excy = 0.09*3/(ctryNumberDouble-1);
+      EAAEAC_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EAAEAD_excy = 0.09;
-      EAAEAD_exiy = 0.0008;
+      EAAEAD_excy = 0.09*3/(ctryNumberDouble-1);
+      EAAEAD_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EAAEAE_excy = 0.09;
-      EAAEAE_exiy = 0.0008;
+      EAAEAE_excy = 0.09*3/(ctryNumberDouble-1);
+      EAAEAE_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EAARW_excy = 0.09;
-      EAARW_exiy = 0.0008;
+      EAARW_excy = 0.09*3/(ctryNumberDouble-1);
+      EAARW_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EAAUS_excy = 0.09;
-      EAAUS_exiy = 0.0008;
+      EAAUS_excy = 0.09*3/(ctryNumberDouble-1);
+      EAAUS_exiy = 0.0008*3/(ctryNumberDouble-1);
   EAA_qc =  0.321620156669017*2;
   EAA_qi =  0.00209600391746659*2;
   EAA_qcg =  EAA_cg;
@@ -14266,28 +14267,28 @@ EAB_igy = 0.01/10;
       EABUS_weightim = 0.35;
       
       // Shares
-      EABEAA_excy = 0.09;
-      EABEAA_exiy = 0.0008;
+      EABEAA_excy = 0.09*3/(ctryNumberDouble-1);
+      EABEAA_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EABEAC_excy = 0.09;
-      EABEAC_exiy = 0.0008;
+      EABEAC_excy = 0.09*3/(ctryNumberDouble-1);
+      EABEAC_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EABEAD_excy = 0.09;
-      EABEAD_exiy = 0.0008;
+      EABEAD_excy = 0.09*3/(ctryNumberDouble-1);
+      EABEAD_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EABEAE_excy = 0.09;
-      EABEAE_exiy = 0.0008;
+      EABEAE_excy = 0.09*3/(ctryNumberDouble-1);
+      EABEAE_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EABRW_excy = 0.09;
-      EABRW_exiy = 0.0008;
+      EABRW_excy = 0.09*3/(ctryNumberDouble-1);
+      EABRW_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EABUS_excy = 0.09;
-      EABUS_exiy = 0.0008;
+      EABUS_excy = 0.09*3/(ctryNumberDouble-1);
+      EABUS_exiy = 0.0008*3/(ctryNumberDouble-1);
   EAB_qc =  0.321620156669017*2;
   EAB_qi =  0.00209600391746659*2;
   EAB_qcg =  EAB_cg;
@@ -14664,28 +14665,28 @@ EAC_igy = 0.01/10;
       EACUS_weightim = 0.35;
       
       // Shares
-      EACEAA_excy = 0.09;
-      EACEAA_exiy = 0.0008;
+      EACEAA_excy = 0.09*3/(ctryNumberDouble-1);
+      EACEAA_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EACEAB_excy = 0.09;
-      EACEAB_exiy = 0.0008;
+      EACEAB_excy = 0.09*3/(ctryNumberDouble-1);
+      EACEAB_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EACEAD_excy = 0.09;
-      EACEAD_exiy = 0.0008;
+      EACEAD_excy = 0.09*3/(ctryNumberDouble-1);
+      EACEAD_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EACEAE_excy = 0.09;
-      EACEAE_exiy = 0.0008;
+      EACEAE_excy = 0.09*3/(ctryNumberDouble-1);
+      EACEAE_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EACRW_excy = 0.09;
-      EACRW_exiy = 0.0008;
+      EACRW_excy = 0.09*3/(ctryNumberDouble-1);
+      EACRW_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EACUS_excy = 0.09;
-      EACUS_exiy = 0.0008;
+      EACUS_excy = 0.09*3/(ctryNumberDouble-1);
+      EACUS_exiy = 0.0008*3/(ctryNumberDouble-1);
   EAC_qc =  0.321620156669017*2;
   EAC_qi =  0.00209600391746659*2;
   EAC_qcg =  EAC_cg;
@@ -15062,28 +15063,28 @@ EAD_igy = 0.01/10;
       EADUS_weightim = 0.35;
       
       // Shares
-      EADEAA_excy = 0.09;
-      EADEAA_exiy = 0.0008;
+      EADEAA_excy = 0.09*3/(ctryNumberDouble-1);
+      EADEAA_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EADEAB_excy = 0.09;
-      EADEAB_exiy = 0.0008;
+      EADEAB_excy = 0.09*3/(ctryNumberDouble-1);
+      EADEAB_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EADEAC_excy = 0.09;
-      EADEAC_exiy = 0.0008;
+      EADEAC_excy = 0.09*3/(ctryNumberDouble-1);
+      EADEAC_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EADEAE_excy = 0.09;
-      EADEAE_exiy = 0.0008;
+      EADEAE_excy = 0.09*3/(ctryNumberDouble-1);
+      EADEAE_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EADRW_excy = 0.09;
-      EADRW_exiy = 0.0008;
+      EADRW_excy = 0.09*3/(ctryNumberDouble-1);
+      EADRW_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EADUS_excy = 0.09;
-      EADUS_exiy = 0.0008;
+      EADUS_excy = 0.09*3/(ctryNumberDouble-1);
+      EADUS_exiy = 0.0008*3/(ctryNumberDouble-1);
   EAD_qc =  0.321620156669017*2;
   EAD_qi =  0.00209600391746659*2;
   EAD_qcg =  EAD_cg;
@@ -15460,28 +15461,28 @@ EAE_igy = 0.01/10;
       EAEUS_weightim = 0.35;
       
       // Shares
-      EAEEAA_excy = 0.09;
-      EAEEAA_exiy = 0.0008;
+      EAEEAA_excy = 0.09*3/(ctryNumberDouble-1);
+      EAEEAA_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EAEEAB_excy = 0.09;
-      EAEEAB_exiy = 0.0008;
+      EAEEAB_excy = 0.09*3/(ctryNumberDouble-1);
+      EAEEAB_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EAEEAC_excy = 0.09;
-      EAEEAC_exiy = 0.0008;
+      EAEEAC_excy = 0.09*3/(ctryNumberDouble-1);
+      EAEEAC_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EAEEAD_excy = 0.09;
-      EAEEAD_exiy = 0.0008;
+      EAEEAD_excy = 0.09*3/(ctryNumberDouble-1);
+      EAEEAD_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EAERW_excy = 0.09;
-      EAERW_exiy = 0.0008;
+      EAERW_excy = 0.09*3/(ctryNumberDouble-1);
+      EAERW_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EAEUS_excy = 0.09;
-      EAEUS_exiy = 0.0008;
+      EAEUS_excy = 0.09*3/(ctryNumberDouble-1);
+      EAEUS_exiy = 0.0008*3/(ctryNumberDouble-1);
   EAE_qc =  0.321620156669017*2;
   EAE_qi =  0.00209600391746659*2;
   EAE_qcg =  EAE_cg;
@@ -15858,28 +15859,28 @@ RW_igy = 0.01/10;
       RWUS_weightim = 0.35;
       
       // Shares
-      RWEAA_excy = 0.09;
-      RWEAA_exiy = 0.0008;
+      RWEAA_excy = 0.09*3/(ctryNumberDouble-1);
+      RWEAA_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      RWEAB_excy = 0.09;
-      RWEAB_exiy = 0.0008;
+      RWEAB_excy = 0.09*3/(ctryNumberDouble-1);
+      RWEAB_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      RWEAC_excy = 0.09;
-      RWEAC_exiy = 0.0008;
+      RWEAC_excy = 0.09*3/(ctryNumberDouble-1);
+      RWEAC_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      RWEAD_excy = 0.09;
-      RWEAD_exiy = 0.0008;
+      RWEAD_excy = 0.09*3/(ctryNumberDouble-1);
+      RWEAD_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      RWEAE_excy = 0.09;
-      RWEAE_exiy = 0.0008;
+      RWEAE_excy = 0.09*3/(ctryNumberDouble-1);
+      RWEAE_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      RWUS_excy = 0.09;
-      RWUS_exiy = 0.0008;
+      RWUS_excy = 0.09*3/(ctryNumberDouble-1);
+      RWUS_exiy = 0.0008*3/(ctryNumberDouble-1);
   RW_qc =  0.321620156669017*2;
   RW_qi =  0.00209600391746659*2;
   RW_qcg =  RW_cg;
@@ -16252,28 +16253,28 @@ US_igy = 0.01/10;
       USRW_weightim = 0.35;
       
       // Shares
-      USEAA_excy = 0.09;
-      USEAA_exiy = 0.0008;
+      USEAA_excy = 0.09*3/(ctryNumberDouble-1);
+      USEAA_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      USEAB_excy = 0.09;
-      USEAB_exiy = 0.0008;
+      USEAB_excy = 0.09*3/(ctryNumberDouble-1);
+      USEAB_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      USEAC_excy = 0.09;
-      USEAC_exiy = 0.0008;
+      USEAC_excy = 0.09*3/(ctryNumberDouble-1);
+      USEAC_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      USEAD_excy = 0.09;
-      USEAD_exiy = 0.0008;
+      USEAD_excy = 0.09*3/(ctryNumberDouble-1);
+      USEAD_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      USEAE_excy = 0.09;
-      USEAE_exiy = 0.0008;
+      USEAE_excy = 0.09*3/(ctryNumberDouble-1);
+      USEAE_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      USRW_excy = 0.09;
-      USRW_exiy = 0.0008;
+      USRW_excy = 0.09*3/(ctryNumberDouble-1);
+      USRW_exiy = 0.0008*3/(ctryNumberDouble-1);
   US_qc =  0.321620156669017*2;
   US_qi =  0.00209600391746659*2;
   US_qcg =  US_cg;
