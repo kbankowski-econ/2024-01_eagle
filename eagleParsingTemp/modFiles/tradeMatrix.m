@@ -1,8 +1,5 @@
 %% Trade Matrix Calculations
 
-% Define countries list 
-countries = ["EAA", "EAB", "EAC", "EAD", "EAE", "EAF", "EAG", "EAH", "EAI", "RW", "US"];
-countries10 = [countries(10), countries(11) , countries(1) , countries(2) , countries(3) , countries(4) , countries(5) , countries(6) , countries(7) , countries(8),countries(9)];
 % Get the third last element of the countries list to define Rest of Europe
 EA = countries(end - 2);
 
@@ -17,7 +14,7 @@ for i = 1:length(countries)
     co = countries(i);
     
     % Exclude co6 and itself from the list of possible origins
-    possible_origins = setdiff(countries, [co, countries10(i)]);
+    possible_origins = setdiff(countries, [co, countriesResidual(i)]);
     
     % Loop over suffixes
     for sufIdx = 1:length(suffixes)
