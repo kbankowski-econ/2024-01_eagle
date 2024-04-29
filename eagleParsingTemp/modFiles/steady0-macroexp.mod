@@ -2,6 +2,8 @@ options_.maxit_ = 20
 options_.homotopy_mode = 1;
 options_.solve_algo = 5;
 options_.markowitz = 5;
+ctryNumberDouble = 7;
+save("paramsToBeSaved", 'ctryNumberDouble')
 //
 // Is sigma equal to one for any country ?
 // Is omega equal to zero for any country ?
@@ -3325,14 +3327,14 @@ parameters
  USRW_numcg
  USRW_numig
 ;
-var EAAEAE_nerdep;
-var EABEAE_nerdep;
-var EACEAE_nerdep;
-var EADEAE_nerdep;
-var EAA_gammabh;
-var EAB_gammabh;
-var EAC_gammabh;
-var EAD_gammabh;
+    var EAAEAE_nerdep;
+    var EAA_gammabh;
+    var EABEAE_nerdep;
+    var EAB_gammabh;
+    var EACEAE_nerdep;
+    var EAC_gammabh;
+    var EADEAE_nerdep;
+    var EAD_gammabh;
 var
  EAA_bh
  EAB_bh
@@ -4040,9 +4042,12 @@ EAA_imc^((EAA_mumc-1)/EAA_mumc) =
 -EAAUS_numc
 )^(1/EAA_mumc)*EAARW_imc^(1-1/EAA_mumc);
 // Demand for bilateral consumption import goods
-EAAEAE_imc = EAAEAE_numc*((EAE_pex*EAAEAE_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
 EAAEAC_imc = EAAEAC_numc*((EAC_pex*EAAEAC_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
+// Demand for bilateral consumption import goods
 EAAEAD_imc = EAAEAD_numc*((EAD_pex*EAAEAD_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
+// Demand for bilateral consumption import goods
+EAAEAE_imc = EAAEAE_numc*((EAE_pex*EAAEAE_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
+// Demand for bilateral consumption import goods
 EAAUS_imc = EAAUS_numc*((US_pex*EAAUS_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
 EAARW_imc = (1
 -EAAEAB_numc
@@ -4082,9 +4087,12 @@ EAA_imi^((EAA_mumi-1)/EAA_mumi) =
 -EAAUS_numi
 )^(1/EAA_mumi)*EAARW_imi^(1-1/EAA_mumi);
 // Demand for bilateral consumption import goods
-EAAEAE_imi = EAAEAE_numi*((EAE_pex*EAAEAE_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
 EAAEAC_imi = EAAEAC_numi*((EAC_pex*EAAEAC_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
+// Demand for bilateral consumption import goods
 EAAEAD_imi = EAAEAD_numi*((EAD_pex*EAAEAD_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
+// Demand for bilateral consumption import goods
+EAAEAE_imi = EAAEAE_numi*((EAE_pex*EAAEAE_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
+// Demand for bilateral consumption import goods
 EAAUS_imi = EAAUS_numi*((US_pex*EAAUS_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
 EAARW_imi = (1
 -EAAEAB_numi
@@ -4124,9 +4132,12 @@ EAA_imcg^((EAA_mumcg-1)/EAA_mumcg) =
 -EAAUS_numcg
 )^(1/EAA_mumcg)*EAARW_imcg^(1-1/EAA_mumcg);
 // Demand for bilateral consumption import goods
-EAAEAE_imcg = EAAEAE_numcg*((EAE_pex*EAAEAE_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
 EAAEAC_imcg = EAAEAC_numcg*((EAC_pex*EAAEAC_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
+// Demand for bilateral consumption import goods
 EAAEAD_imcg = EAAEAD_numcg*((EAD_pex*EAAEAD_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
+// Demand for bilateral consumption import goods
+EAAEAE_imcg = EAAEAE_numcg*((EAE_pex*EAAEAE_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
+// Demand for bilateral consumption import goods
 EAAUS_imcg = EAAUS_numcg*((US_pex*EAAUS_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
 EAARW_imcg = (1
 -EAAEAB_numcg
@@ -4166,9 +4177,12 @@ EAA_imig^((EAA_mumig-1)/EAA_mumig) =
 -EAAUS_numig
 )^(1/EAA_mumig)*EAARW_imig^(1-1/EAA_mumig);
 // Demand for bilateral consumption import goods
-EAAEAE_imig = EAAEAE_numig*((EAE_pex*EAAEAE_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
 EAAEAC_imig = EAAEAC_numig*((EAC_pex*EAAEAC_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
+// Demand for bilateral consumption import goods
 EAAEAD_imig = EAAEAD_numig*((EAD_pex*EAAEAD_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
+// Demand for bilateral consumption import goods
+EAAEAE_imig = EAAEAE_numig*((EAE_pex*EAAEAE_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
+// Demand for bilateral consumption import goods
 EAAUS_imig = EAAUS_numig*((US_pex*EAAUS_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
 EAARW_imig = (1
 -EAAEAB_numig
@@ -4402,11 +4416,9 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	
-			EAA_r = EAE_r;
-		
-	EAA_pic4 = EAA_pi4target;
-	EAA_rr-1 = EAA_r/EAA_pi4target^(1/4)-1;
+	EAA_r = EAE_r;
+EAA_pic4 = EAA_pi4target;
+EAA_rr-1 = EAA_r/EAA_pi4target^(1/4)-1;
 // Equilibrium real interest rate
 EAA_rrstar-1 = 1/EAA_beta-1;
 //-------------
@@ -5259,10 +5271,13 @@ EAB_imc^((EAB_mumc-1)/EAB_mumc) =
 -EABRW_numc
 )^(1/EAB_mumc)*EABUS_imc^(1-1/EAB_mumc);
 // Demand for bilateral consumption import goods
-EABRW_imc = EABRW_numc*((RW_pex*EABRW_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
-EABEAD_imc = EABEAD_numc*((EAD_pex*EABEAD_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
-EABEAE_imc = EABEAE_numc*((EAE_pex*EABEAE_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
 EABEAA_imc = EABEAA_numc*((EAA_pex*EABEAA_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
+// Demand for bilateral consumption import goods
+EABEAD_imc = EABEAD_numc*((EAD_pex*EABEAD_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
+// Demand for bilateral consumption import goods
+EABEAE_imc = EABEAE_numc*((EAE_pex*EABEAE_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
+// Demand for bilateral consumption import goods
+EABRW_imc = EABRW_numc*((RW_pex*EABRW_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
 EABUS_imc = (1
 -EABEAA_numc
 -EABEAC_numc
@@ -5301,10 +5316,13 @@ EAB_imi^((EAB_mumi-1)/EAB_mumi) =
 -EABRW_numi
 )^(1/EAB_mumi)*EABUS_imi^(1-1/EAB_mumi);
 // Demand for bilateral consumption import goods
-EABRW_imi = EABRW_numi*((RW_pex*EABRW_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
-EABEAD_imi = EABEAD_numi*((EAD_pex*EABEAD_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
-EABEAE_imi = EABEAE_numi*((EAE_pex*EABEAE_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
 EABEAA_imi = EABEAA_numi*((EAA_pex*EABEAA_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
+// Demand for bilateral consumption import goods
+EABEAD_imi = EABEAD_numi*((EAD_pex*EABEAD_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
+// Demand for bilateral consumption import goods
+EABEAE_imi = EABEAE_numi*((EAE_pex*EABEAE_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
+// Demand for bilateral consumption import goods
+EABRW_imi = EABRW_numi*((RW_pex*EABRW_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
 EABUS_imi = (1
 -EABEAA_numi
 -EABEAC_numi
@@ -5343,10 +5361,13 @@ EAB_imcg^((EAB_mumcg-1)/EAB_mumcg) =
 -EABRW_numcg
 )^(1/EAB_mumcg)*EABUS_imcg^(1-1/EAB_mumcg);
 // Demand for bilateral consumption import goods
-EABRW_imcg = EABRW_numcg*((RW_pex*EABRW_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
-EABEAD_imcg = EABEAD_numcg*((EAD_pex*EABEAD_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
-EABEAE_imcg = EABEAE_numcg*((EAE_pex*EABEAE_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
 EABEAA_imcg = EABEAA_numcg*((EAA_pex*EABEAA_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
+// Demand for bilateral consumption import goods
+EABEAD_imcg = EABEAD_numcg*((EAD_pex*EABEAD_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
+// Demand for bilateral consumption import goods
+EABEAE_imcg = EABEAE_numcg*((EAE_pex*EABEAE_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
+// Demand for bilateral consumption import goods
+EABRW_imcg = EABRW_numcg*((RW_pex*EABRW_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
 EABUS_imcg = (1
 -EABEAA_numcg
 -EABEAC_numcg
@@ -5385,10 +5406,13 @@ EAB_imig^((EAB_mumig-1)/EAB_mumig) =
 -EABRW_numig
 )^(1/EAB_mumig)*EABUS_imig^(1-1/EAB_mumig);
 // Demand for bilateral consumption import goods
-EABRW_imig = EABRW_numig*((RW_pex*EABRW_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
-EABEAD_imig = EABEAD_numig*((EAD_pex*EABEAD_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
-EABEAE_imig = EABEAE_numig*((EAE_pex*EABEAE_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
 EABEAA_imig = EABEAA_numig*((EAA_pex*EABEAA_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
+// Demand for bilateral consumption import goods
+EABEAD_imig = EABEAD_numig*((EAD_pex*EABEAD_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
+// Demand for bilateral consumption import goods
+EABEAE_imig = EABEAE_numig*((EAE_pex*EABEAE_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
+// Demand for bilateral consumption import goods
+EABRW_imig = EABRW_numig*((RW_pex*EABRW_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
 EABUS_imig = (1
 -EABEAA_numig
 -EABEAC_numig
@@ -5621,13 +5645,9 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	
-		
-				EAB_r = EAE_r;
-			
-		
-	EAB_pic4 = EAB_pi4target;
-	EAB_rr-1 = EAB_r/EAB_pi4target^(1/4)-1;
+	EAB_r = EAE_r;
+EAB_pic4 = EAB_pi4target;
+EAB_rr-1 = EAB_r/EAB_pi4target^(1/4)-1;
 // Equilibrium real interest rate
 EAB_rrstar-1 = 1/EAB_beta-1;
 //-------------
@@ -6480,10 +6500,13 @@ EAC_imc^((EAC_mumc-1)/EAC_mumc) =
 -EACUS_numc
 )^(1/EAC_mumc)*EACEAA_imc^(1-1/EAC_mumc);
 // Demand for bilateral consumption import goods
-EACUS_imc = EACUS_numc*((US_pex*EACUS_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
-EACEAE_imc = EACEAE_numc*((EAE_pex*EACEAE_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
-EACRW_imc = EACRW_numc*((RW_pex*EACRW_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
 EACEAB_imc = EACEAB_numc*((EAB_pex*EACEAB_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
+// Demand for bilateral consumption import goods
+EACEAE_imc = EACEAE_numc*((EAE_pex*EACEAE_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
+// Demand for bilateral consumption import goods
+EACRW_imc = EACRW_numc*((RW_pex*EACRW_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
+// Demand for bilateral consumption import goods
+EACUS_imc = EACUS_numc*((US_pex*EACUS_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
 EACEAA_imc = (1
 -EACEAB_numc
 -EACEAD_numc
@@ -6522,10 +6545,13 @@ EAC_imi^((EAC_mumi-1)/EAC_mumi) =
 -EACUS_numi
 )^(1/EAC_mumi)*EACEAA_imi^(1-1/EAC_mumi);
 // Demand for bilateral consumption import goods
-EACUS_imi = EACUS_numi*((US_pex*EACUS_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
-EACEAE_imi = EACEAE_numi*((EAE_pex*EACEAE_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
-EACRW_imi = EACRW_numi*((RW_pex*EACRW_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
 EACEAB_imi = EACEAB_numi*((EAB_pex*EACEAB_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
+// Demand for bilateral consumption import goods
+EACEAE_imi = EACEAE_numi*((EAE_pex*EACEAE_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
+// Demand for bilateral consumption import goods
+EACRW_imi = EACRW_numi*((RW_pex*EACRW_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
+// Demand for bilateral consumption import goods
+EACUS_imi = EACUS_numi*((US_pex*EACUS_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
 EACEAA_imi = (1
 -EACEAB_numi
 -EACEAD_numi
@@ -6564,10 +6590,13 @@ EAC_imcg^((EAC_mumcg-1)/EAC_mumcg) =
 -EACUS_numcg
 )^(1/EAC_mumcg)*EACEAA_imcg^(1-1/EAC_mumcg);
 // Demand for bilateral consumption import goods
-EACUS_imcg = EACUS_numcg*((US_pex*EACUS_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
-EACEAE_imcg = EACEAE_numcg*((EAE_pex*EACEAE_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
-EACRW_imcg = EACRW_numcg*((RW_pex*EACRW_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
 EACEAB_imcg = EACEAB_numcg*((EAB_pex*EACEAB_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
+// Demand for bilateral consumption import goods
+EACEAE_imcg = EACEAE_numcg*((EAE_pex*EACEAE_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
+// Demand for bilateral consumption import goods
+EACRW_imcg = EACRW_numcg*((RW_pex*EACRW_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
+// Demand for bilateral consumption import goods
+EACUS_imcg = EACUS_numcg*((US_pex*EACUS_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
 EACEAA_imcg = (1
 -EACEAB_numcg
 -EACEAD_numcg
@@ -6606,10 +6635,13 @@ EAC_imig^((EAC_mumig-1)/EAC_mumig) =
 -EACUS_numig
 )^(1/EAC_mumig)*EACEAA_imig^(1-1/EAC_mumig);
 // Demand for bilateral consumption import goods
-EACUS_imig = EACUS_numig*((US_pex*EACUS_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
-EACEAE_imig = EACEAE_numig*((EAE_pex*EACEAE_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
-EACRW_imig = EACRW_numig*((RW_pex*EACRW_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
 EACEAB_imig = EACEAB_numig*((EAB_pex*EACEAB_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
+// Demand for bilateral consumption import goods
+EACEAE_imig = EACEAE_numig*((EAE_pex*EACEAE_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
+// Demand for bilateral consumption import goods
+EACRW_imig = EACRW_numig*((RW_pex*EACRW_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
+// Demand for bilateral consumption import goods
+EACUS_imig = EACUS_numig*((US_pex*EACUS_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
 EACEAA_imig = (1
 -EACEAB_numig
 -EACEAD_numig
@@ -6842,16 +6874,9 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	
-		
-			
-					EAC_r = EAE_r;
-				
-				
-			
-		
-	EAC_pic4 = EAC_pi4target;
-	EAC_rr-1 = EAC_r/EAC_pi4target^(1/4)-1;
+	EAC_r = EAE_r;
+EAC_pic4 = EAC_pi4target;
+EAC_rr-1 = EAC_r/EAC_pi4target^(1/4)-1;
 // Equilibrium real interest rate
 EAC_rrstar-1 = 1/EAC_beta-1;
 //-------------
@@ -7705,9 +7730,12 @@ EAD_imc^((EAD_mumc-1)/EAD_mumc) =
 )^(1/EAD_mumc)*EADEAB_imc^(1-1/EAD_mumc);
 // Demand for bilateral consumption import goods
 EADEAA_imc = EADEAA_numc*((EAA_pex*EADEAA_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
-EADRW_imc = EADRW_numc*((RW_pex*EADRW_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
-EADUS_imc = EADUS_numc*((US_pex*EADUS_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
+// Demand for bilateral consumption import goods
 EADEAC_imc = EADEAC_numc*((EAC_pex*EADEAC_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
+// Demand for bilateral consumption import goods
+EADRW_imc = EADRW_numc*((RW_pex*EADRW_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
+// Demand for bilateral consumption import goods
+EADUS_imc = EADUS_numc*((US_pex*EADUS_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
 EADEAB_imc = (1
 -EADEAA_numc
 -EADEAC_numc
@@ -7747,9 +7775,12 @@ EAD_imi^((EAD_mumi-1)/EAD_mumi) =
 )^(1/EAD_mumi)*EADEAB_imi^(1-1/EAD_mumi);
 // Demand for bilateral consumption import goods
 EADEAA_imi = EADEAA_numi*((EAA_pex*EADEAA_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
-EADRW_imi = EADRW_numi*((RW_pex*EADRW_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
-EADUS_imi = EADUS_numi*((US_pex*EADUS_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
+// Demand for bilateral consumption import goods
 EADEAC_imi = EADEAC_numi*((EAC_pex*EADEAC_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
+// Demand for bilateral consumption import goods
+EADRW_imi = EADRW_numi*((RW_pex*EADRW_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
+// Demand for bilateral consumption import goods
+EADUS_imi = EADUS_numi*((US_pex*EADUS_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
 EADEAB_imi = (1
 -EADEAA_numi
 -EADEAC_numi
@@ -7789,9 +7820,12 @@ EAD_imcg^((EAD_mumcg-1)/EAD_mumcg) =
 )^(1/EAD_mumcg)*EADEAB_imcg^(1-1/EAD_mumcg);
 // Demand for bilateral consumption import goods
 EADEAA_imcg = EADEAA_numcg*((EAA_pex*EADEAA_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
-EADRW_imcg = EADRW_numcg*((RW_pex*EADRW_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
-EADUS_imcg = EADUS_numcg*((US_pex*EADUS_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
+// Demand for bilateral consumption import goods
 EADEAC_imcg = EADEAC_numcg*((EAC_pex*EADEAC_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
+// Demand for bilateral consumption import goods
+EADRW_imcg = EADRW_numcg*((RW_pex*EADRW_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
+// Demand for bilateral consumption import goods
+EADUS_imcg = EADUS_numcg*((US_pex*EADUS_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
 EADEAB_imcg = (1
 -EADEAA_numcg
 -EADEAC_numcg
@@ -7831,9 +7865,12 @@ EAD_imig^((EAD_mumig-1)/EAD_mumig) =
 )^(1/EAD_mumig)*EADEAB_imig^(1-1/EAD_mumig);
 // Demand for bilateral consumption import goods
 EADEAA_imig = EADEAA_numig*((EAA_pex*EADEAA_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
-EADRW_imig = EADRW_numig*((RW_pex*EADRW_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
-EADUS_imig = EADUS_numig*((US_pex*EADUS_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
+// Demand for bilateral consumption import goods
 EADEAC_imig = EADEAC_numig*((EAC_pex*EADEAC_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
+// Demand for bilateral consumption import goods
+EADRW_imig = EADRW_numig*((RW_pex*EADRW_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
+// Demand for bilateral consumption import goods
+EADUS_imig = EADUS_numig*((US_pex*EADUS_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
 EADEAB_imig = (1
 -EADEAA_numig
 -EADEAC_numig
@@ -8066,16 +8103,9 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	
-		
-			
-					EAD_r = EAE_r;
-				
-				
-			
-		
-	EAD_pic4 = EAD_pi4target;
-	EAD_rr-1 = EAD_r/EAD_pi4target^(1/4)-1;
+	EAD_r = EAE_r;
+EAD_pic4 = EAD_pi4target;
+EAD_rr-1 = EAD_r/EAD_pi4target^(1/4)-1;
 // Equilibrium real interest rate
 EAD_rrstar-1 = 1/EAD_beta-1;
 //-------------
@@ -8928,10 +8958,13 @@ EAE_imc^((EAE_mumc-1)/EAE_mumc) =
 -EAEUS_numc
 )^(1/EAE_mumc)*EAEEAC_imc^(1-1/EAE_mumc);
 // Demand for bilateral consumption import goods
-EAEEAB_imc = EAEEAB_numc*((EAB_pex*EAEEAB_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
-EAEUS_imc = EAEUS_numc*((US_pex*EAEUS_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
 EAEEAA_imc = EAEEAA_numc*((EAA_pex*EAEEAA_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
+// Demand for bilateral consumption import goods
+EAEEAB_imc = EAEEAB_numc*((EAB_pex*EAEEAB_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
+// Demand for bilateral consumption import goods
 EAEEAD_imc = EAEEAD_numc*((EAD_pex*EAEEAD_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
+// Demand for bilateral consumption import goods
+EAEUS_imc = EAEUS_numc*((US_pex*EAEUS_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
 EAEEAC_imc = (1
 -EAEEAA_numc
 -EAEEAB_numc
@@ -8970,10 +9003,13 @@ EAE_imi^((EAE_mumi-1)/EAE_mumi) =
 -EAEUS_numi
 )^(1/EAE_mumi)*EAEEAC_imi^(1-1/EAE_mumi);
 // Demand for bilateral consumption import goods
-EAEEAB_imi = EAEEAB_numi*((EAB_pex*EAEEAB_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
-EAEUS_imi = EAEUS_numi*((US_pex*EAEUS_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
 EAEEAA_imi = EAEEAA_numi*((EAA_pex*EAEEAA_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
+// Demand for bilateral consumption import goods
+EAEEAB_imi = EAEEAB_numi*((EAB_pex*EAEEAB_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
+// Demand for bilateral consumption import goods
 EAEEAD_imi = EAEEAD_numi*((EAD_pex*EAEEAD_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
+// Demand for bilateral consumption import goods
+EAEUS_imi = EAEUS_numi*((US_pex*EAEUS_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
 EAEEAC_imi = (1
 -EAEEAA_numi
 -EAEEAB_numi
@@ -9012,10 +9048,13 @@ EAE_imcg^((EAE_mumcg-1)/EAE_mumcg) =
 -EAEUS_numcg
 )^(1/EAE_mumcg)*EAEEAC_imcg^(1-1/EAE_mumcg);
 // Demand for bilateral consumption import goods
-EAEEAB_imcg = EAEEAB_numcg*((EAB_pex*EAEEAB_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
-EAEUS_imcg = EAEUS_numcg*((US_pex*EAEUS_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
 EAEEAA_imcg = EAEEAA_numcg*((EAA_pex*EAEEAA_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
+// Demand for bilateral consumption import goods
+EAEEAB_imcg = EAEEAB_numcg*((EAB_pex*EAEEAB_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
+// Demand for bilateral consumption import goods
 EAEEAD_imcg = EAEEAD_numcg*((EAD_pex*EAEEAD_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
+// Demand for bilateral consumption import goods
+EAEUS_imcg = EAEUS_numcg*((US_pex*EAEUS_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
 EAEEAC_imcg = (1
 -EAEEAA_numcg
 -EAEEAB_numcg
@@ -9054,10 +9093,13 @@ EAE_imig^((EAE_mumig-1)/EAE_mumig) =
 -EAEUS_numig
 )^(1/EAE_mumig)*EAEEAC_imig^(1-1/EAE_mumig);
 // Demand for bilateral consumption import goods
-EAEEAB_imig = EAEEAB_numig*((EAB_pex*EAEEAB_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
-EAEUS_imig = EAEUS_numig*((US_pex*EAEUS_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
 EAEEAA_imig = EAEEAA_numig*((EAA_pex*EAEEAA_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
+// Demand for bilateral consumption import goods
+EAEEAB_imig = EAEEAB_numig*((EAB_pex*EAEEAB_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
+// Demand for bilateral consumption import goods
 EAEEAD_imig = EAEEAD_numig*((EAD_pex*EAEEAD_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
+// Demand for bilateral consumption import goods
+EAEUS_imig = EAEUS_numig*((US_pex*EAEUS_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
 EAEEAC_imig = (1
 -EAEEAA_numig
 -EAEEAB_numig
@@ -9290,11 +9332,9 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	
-		EAE_r^4-1 = EAE_rrstar^4*EAE_pi4target-1;
-	
-	EAE_pic4 = EAE_pi4target;
-	EAE_rr-1 = EAE_r/EAE_pi4target^(1/4)-1;
+	EAE_r^4-1 = EAE_rrstar^4*EAE_pi4target-1;
+EAE_pic4 = EAE_pi4target;
+EAE_rr-1 = EAE_r/EAE_pi4target^(1/4)-1;
 // Equilibrium real interest rate
 EAE_rrstar-1 = 1/EAE_beta-1;
 //-------------
@@ -10147,9 +10187,12 @@ RW_imc^((RW_mumc-1)/RW_mumc) =
 -RWUS_numc
 )^(1/RW_mumc)*RWEAD_imc^(1-1/RW_mumc);
 // Demand for bilateral consumption import goods
-RWEAC_imc = RWEAC_numc*((EAC_pex*RWEAC_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
 RWEAA_imc = RWEAA_numc*((EAA_pex*RWEAA_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+// Demand for bilateral consumption import goods
 RWEAB_imc = RWEAB_numc*((EAB_pex*RWEAB_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+// Demand for bilateral consumption import goods
+RWEAC_imc = RWEAC_numc*((EAC_pex*RWEAC_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+// Demand for bilateral consumption import goods
 RWEAE_imc = RWEAE_numc*((EAE_pex*RWEAE_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
 RWEAD_imc = (1
 -RWEAA_numc
@@ -10189,9 +10232,12 @@ RW_imi^((RW_mumi-1)/RW_mumi) =
 -RWUS_numi
 )^(1/RW_mumi)*RWEAD_imi^(1-1/RW_mumi);
 // Demand for bilateral consumption import goods
-RWEAC_imi = RWEAC_numi*((EAC_pex*RWEAC_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
 RWEAA_imi = RWEAA_numi*((EAA_pex*RWEAA_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+// Demand for bilateral consumption import goods
 RWEAB_imi = RWEAB_numi*((EAB_pex*RWEAB_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+// Demand for bilateral consumption import goods
+RWEAC_imi = RWEAC_numi*((EAC_pex*RWEAC_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+// Demand for bilateral consumption import goods
 RWEAE_imi = RWEAE_numi*((EAE_pex*RWEAE_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
 RWEAD_imi = (1
 -RWEAA_numi
@@ -10231,9 +10277,12 @@ RW_imcg^((RW_mumcg-1)/RW_mumcg) =
 -RWUS_numcg
 )^(1/RW_mumcg)*RWEAD_imcg^(1-1/RW_mumcg);
 // Demand for bilateral consumption import goods
-RWEAC_imcg = RWEAC_numcg*((EAC_pex*RWEAC_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
 RWEAA_imcg = RWEAA_numcg*((EAA_pex*RWEAA_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+// Demand for bilateral consumption import goods
 RWEAB_imcg = RWEAB_numcg*((EAB_pex*RWEAB_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+// Demand for bilateral consumption import goods
+RWEAC_imcg = RWEAC_numcg*((EAC_pex*RWEAC_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+// Demand for bilateral consumption import goods
 RWEAE_imcg = RWEAE_numcg*((EAE_pex*RWEAE_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
 RWEAD_imcg = (1
 -RWEAA_numcg
@@ -10273,9 +10322,12 @@ RW_imig^((RW_mumig-1)/RW_mumig) =
 -RWUS_numig
 )^(1/RW_mumig)*RWEAD_imig^(1-1/RW_mumig);
 // Demand for bilateral consumption import goods
-RWEAC_imig = RWEAC_numig*((EAC_pex*RWEAC_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
 RWEAA_imig = RWEAA_numig*((EAA_pex*RWEAA_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+// Demand for bilateral consumption import goods
 RWEAB_imig = RWEAB_numig*((EAB_pex*RWEAB_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+// Demand for bilateral consumption import goods
+RWEAC_imig = RWEAC_numig*((EAC_pex*RWEAC_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+// Demand for bilateral consumption import goods
 RWEAE_imig = RWEAE_numig*((EAE_pex*RWEAE_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
 RWEAD_imig = (1
 -RWEAA_numig
@@ -10509,11 +10561,9 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	
-		RW_r^4-1 = RW_rrstar^4*RW_pi4target-1;
-	
-	RW_pic4 = RW_pi4target;
-	RW_rr-1 = RW_r/RW_pi4target^(1/4)-1;
+	RW_r^4-1 = RW_rrstar^4*RW_pi4target-1;
+RW_pic4 = RW_pi4target;
+RW_rr-1 = RW_r/RW_pi4target^(1/4)-1;
 // Equilibrium real interest rate
 RW_rrstar-1 = 1/RW_beta-1;
 //-------------
@@ -11366,9 +11416,12 @@ US_imc^((US_mumc-1)/US_mumc) =
 -USRW_numc
 )^(1/US_mumc)*USEAE_imc^(1-1/US_mumc);
 // Demand for bilateral consumption import goods
-USEAD_imc = USEAD_numc*((EAD_pex*USEAD_rer)/US_pimc)^(-US_mumc)*US_imc;
 USEAB_imc = USEAB_numc*((EAB_pex*USEAB_rer)/US_pimc)^(-US_mumc)*US_imc;
+// Demand for bilateral consumption import goods
 USEAC_imc = USEAC_numc*((EAC_pex*USEAC_rer)/US_pimc)^(-US_mumc)*US_imc;
+// Demand for bilateral consumption import goods
+USEAD_imc = USEAD_numc*((EAD_pex*USEAD_rer)/US_pimc)^(-US_mumc)*US_imc;
+// Demand for bilateral consumption import goods
 USRW_imc = USRW_numc*((RW_pex*USRW_rer)/US_pimc)^(-US_mumc)*US_imc;
 USEAE_imc = (1
 -USEAA_numc
@@ -11408,9 +11461,12 @@ US_imi^((US_mumi-1)/US_mumi) =
 -USRW_numi
 )^(1/US_mumi)*USEAE_imi^(1-1/US_mumi);
 // Demand for bilateral consumption import goods
-USEAD_imi = USEAD_numi*((EAD_pex*USEAD_rer)/US_pimi)^(-US_mumi)*US_imi;
 USEAB_imi = USEAB_numi*((EAB_pex*USEAB_rer)/US_pimi)^(-US_mumi)*US_imi;
+// Demand for bilateral consumption import goods
 USEAC_imi = USEAC_numi*((EAC_pex*USEAC_rer)/US_pimi)^(-US_mumi)*US_imi;
+// Demand for bilateral consumption import goods
+USEAD_imi = USEAD_numi*((EAD_pex*USEAD_rer)/US_pimi)^(-US_mumi)*US_imi;
+// Demand for bilateral consumption import goods
 USRW_imi = USRW_numi*((RW_pex*USRW_rer)/US_pimi)^(-US_mumi)*US_imi;
 USEAE_imi = (1
 -USEAA_numi
@@ -11450,9 +11506,12 @@ US_imcg^((US_mumcg-1)/US_mumcg) =
 -USRW_numcg
 )^(1/US_mumcg)*USEAE_imcg^(1-1/US_mumcg);
 // Demand for bilateral consumption import goods
-USEAD_imcg = USEAD_numcg*((EAD_pex*USEAD_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
 USEAB_imcg = USEAB_numcg*((EAB_pex*USEAB_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
+// Demand for bilateral consumption import goods
 USEAC_imcg = USEAC_numcg*((EAC_pex*USEAC_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
+// Demand for bilateral consumption import goods
+USEAD_imcg = USEAD_numcg*((EAD_pex*USEAD_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
+// Demand for bilateral consumption import goods
 USRW_imcg = USRW_numcg*((RW_pex*USRW_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
 USEAE_imcg = (1
 -USEAA_numcg
@@ -11492,9 +11551,12 @@ US_imig^((US_mumig-1)/US_mumig) =
 -USRW_numig
 )^(1/US_mumig)*USEAE_imig^(1-1/US_mumig);
 // Demand for bilateral consumption import goods
-USEAD_imig = USEAD_numig*((EAD_pex*USEAD_rer)/US_pimig)^(-US_mumig)*US_imig;
 USEAB_imig = USEAB_numig*((EAB_pex*USEAB_rer)/US_pimig)^(-US_mumig)*US_imig;
+// Demand for bilateral consumption import goods
 USEAC_imig = USEAC_numig*((EAC_pex*USEAC_rer)/US_pimig)^(-US_mumig)*US_imig;
+// Demand for bilateral consumption import goods
+USEAD_imig = USEAD_numig*((EAD_pex*USEAD_rer)/US_pimig)^(-US_mumig)*US_imig;
+// Demand for bilateral consumption import goods
 USRW_imig = USRW_numig*((RW_pex*USRW_rer)/US_pimig)^(-US_mumig)*US_imig;
 USEAE_imig = (1
 -USEAA_numig
@@ -11728,11 +11790,9 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	
-		US_r^4-1 = US_rrstar^4*US_pi4target-1;
-	
-	US_pic4 = US_pi4target;
-	US_rr-1 = US_r/US_pi4target^(1/4)-1;
+	US_r^4-1 = US_rrstar^4*US_pi4target-1;
+US_pic4 = US_pi4target;
+US_rr-1 = US_r/US_pi4target^(1/4)-1;
 // Equilibrium real interest rate
 US_rrstar-1 = 1/US_beta-1;
 //-------------
@@ -12081,6 +12141,8 @@ US_size*US_bf =
 -EAB_size*EAB_bf
 -EAC_size*EAC_bf
 -EAD_size*EAD_bf
+-EAE_size*EAE_bf
+-RW_size*RW_bf
 ;
 // Net foreign asset position
 	
@@ -12110,47 +12172,137 @@ US_size*US_bf =
 		RW_bf/US_r(-1) = RW_bf(-1)+RW_tb(-1)/RW_rer(-1);
 	
 US_rer = 1;
-EAAEAE_nerdep = EAA_rerdep/EAE_rerdep*EAA_pic/EAE_pic;
-EABEAE_nerdep = EAB_rerdep/EAE_rerdep*EAB_pic/EAE_pic;
-EACEAE_nerdep = EAC_rerdep/EAE_rerdep*EAC_pic/EAE_pic;
-EADEAE_nerdep = EAD_rerdep/EAE_rerdep*EAD_pic/EAE_pic;
-// Euler equation for euroarea traded bonds
-EAA_gammabh = 0;
-EAB_gammabh = 0;
-EAC_gammabh = 0;
-EAD_gammabh = 0;
-// International transaction cost ('risk premium')
-EAA_bh = (EAA_bhytarget*EAA_py*EAA_y)/EAAEAE_rer*EAE_pic;
-EAB_bh = (EAB_bhytarget*EAB_py*EAB_y)/EABEAE_rer*EAE_pic;
-EAC_bh = (EAC_bhytarget*EAC_py*EAC_y)/EACEAE_rer*EAE_pic;
-EAD_bh = (EAD_bhytarget*EAD_py*EAD_y)/EADEAE_rer*EAE_pic;
-EAE_size*EAE_bh+EAD_size*EAD_bh+EAC_size*EAC_bh+EAB_size*EAB_bh+EAA_size*EAA_bh = 0;
+	EAAEAE_nerdep = EAA_rerdep/EAE_rerdep*EAA_pic/EAE_pic;
+	// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
+		EAA_gammabh = 0;
+		EAA_bh = (EAA_bhytarget*EAA_py*EAA_y)/EAAEAE_rer*EAE_pic;
+	EABEAE_nerdep = EAB_rerdep/EAE_rerdep*EAB_pic/EAE_pic;
+	// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
+		EAB_gammabh = 0;
+		EAB_bh = (EAB_bhytarget*EAB_py*EAB_y)/EABEAE_rer*EAE_pic;
+	EACEAE_nerdep = EAC_rerdep/EAE_rerdep*EAC_pic/EAE_pic;
+	// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
+		EAC_gammabh = 0;
+		EAC_bh = (EAC_bhytarget*EAC_py*EAC_y)/EACEAE_rer*EAE_pic;
+	EADEAE_nerdep = EAD_rerdep/EAE_rerdep*EAD_pic/EAE_pic;
+	// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
+		EAD_gammabh = 0;
+		EAD_bh = (EAD_bhytarget*EAD_py*EAD_y)/EADEAE_rer*EAE_pic;
+0 =
+	+ EAA_size*EAA_bh
+	+ EAB_size*EAB_bh
+	+ EAC_size*EAC_bh
+	+ EAD_size*EAD_bh
+	+ EAE_size*EAE_bh
+;
 //-------------
 // Euroarea-wide variables
 //-------------
 // GDP
-EA_y = (EAA_size*EAA_pybar*EAA_y 	+ EAB_size*EAAEAB_rerbar*EAB_pybar *EAB_y	+ EAC_size*EAAEAC_rerbar*EAC_pybar *EAC_y + EAD_size*EAAEAD_rerbar*EAD_pybar *EAD_y	+ EAE_size*EAAEAE_rerbar*EAE_pybar *EAE_y)/(EAA_size+EAB_size+EAC_size+EAD_size+EAE_size);
+EA_y = 
+	(
+	EAA_size*EAA_pybar*EAA_y
+		+ EAB_size*EAAEAB_rerbar*EAB_pybar *EAB_y	
+		+ EAC_size*EAAEAC_rerbar*EAC_pybar *EAC_y	
+		+ EAD_size*EAAEAD_rerbar*EAD_pybar *EAD_y	
+		+ EAE_size*EAAEAE_rerbar*EAE_pybar *EAE_y	
+	)
+	/
+	(
+	+ EAA_size
+	+ EAB_size
+	+ EAC_size
+	+ EAD_size
+	+ EAE_size
+);
 // GDP growth
 EA_ygrowth= EA_y/EA_y(-1);
 // GDP growth (yoy)
 EA_ygrowth4= EA_y/EA_y(-4);
 // Money
-EA_m = (EAA_size*EAA_m + EAB_size*EAAEAB_rerbar*EAB_m + EAC_size*EAAEAC_rerbar*EAC_m+ EAD_size*EAAEAD_rerbar*EAD_m + EAE_size*EAAEAE_rerbar*EAE_m)/(EAA_size+EAB_size+EAC_size+EAD_size+EAE_size);
-EA_bf = (EAA_size*EAA_bf + EAB_size*EAB_bf + EAC_size*EAC_bf+ EAD_size*EAD_bf+ EAE_size*EAE_bf)/(EAA_size+EAB_size+EAC_size+EAD_size+EAE_size);
+EA_m = 
+	(
+	EAA_size*EAA_m
+		+ EAB_size*EAAEAB_rerbar*EAB_m	
+		+ EAC_size*EAAEAC_rerbar*EAC_m	
+		+ EAD_size*EAAEAD_rerbar*EAD_m	
+		+ EAE_size*EAAEAE_rerbar*EAE_m	
+	)
+	/
+	(
+	+ EAA_size
+	+ EAB_size
+	+ EAC_size
+	+ EAD_size
+	+ EAE_size
+);
+	
+EA_bf = 
+	(
+		+ EAA_size*EAA_bf	
+		+ EAB_size*EAB_bf	
+		+ EAC_size*EAC_bf	
+		+ EAD_size*EAD_bf	
+		+ EAE_size*EAE_bf	
+	)
+	/
+	(
+	+ EAA_size
+	+ EAB_size
+	+ EAC_size
+	+ EAD_size
+	+ EAE_size
+);
 // Annual inflation
-EA_pic4 = 
-  EAA_pic4^(EAA_size/(EAA_size+EAB_size+EAC_size+EAD_size+EAE_size)) * EAB_pic4^(EAB_size/(EAA_size+EAB_size+EAC_size++EAD_size+EAE_size))* EAC_pic4^(EAC_size/(EAA_size+EAB_size+EAC_size+EAD_size+EAE_size))* EAD_pic4^(EAD_size/(EAA_size+EAB_size+EAC_size+EAD_size+EAE_size))* EAE_pic4^(EAE_size/(EAA_size+EAB_size+EAC_size+EAD_size+EAE_size));
+EA_pic4 = 1 
+		* EAA_pic4^(EAA_size/(
+				+ EAA_size
+				+ EAB_size
+				+ EAC_size
+				+ EAD_size
+				+ EAE_size
+			)) 
+		* EAB_pic4^(EAB_size/(
+				+ EAA_size
+				+ EAB_size
+				+ EAC_size
+				+ EAD_size
+				+ EAE_size
+			)) 
+		* EAC_pic4^(EAC_size/(
+				+ EAA_size
+				+ EAB_size
+				+ EAC_size
+				+ EAD_size
+				+ EAE_size
+			)) 
+		* EAD_pic4^(EAD_size/(
+				+ EAA_size
+				+ EAB_size
+				+ EAC_size
+				+ EAD_size
+				+ EAE_size
+			)) 
+		* EAE_pic4^(EAE_size/(
+				+ EAA_size
+				+ EAB_size
+				+ EAC_size
+				+ EAD_size
+				+ EAE_size
+			)) 
+;
 // Productivity
 log(EA_z) = (1-EA_rhoz)*log(EA_zbar)+EA_rhoz*log(EA_z(-1))+EA_epsz;
 // Auxiliary equation for steady-state output
 EA_ybar = EA_y;
 end;
+load("paramsToBeSaved", 'ctryNumberDouble')
   disp('Creating data for EAA');
 // ------------------ //
 // Parameter values   //
 // ------------------ //
 // Country size (population)
-   EAA_size        = 1/7;
+   set_param_value(['EAA', '_size'], 1/ctryNumberDouble);
 // Size of household J
    EAA_omega       = 0.25;
 // Utility function
@@ -12250,7 +12402,7 @@ end;
 // Parameter values   //
 // ------------------ //
 // Country size (population)
-   EAB_size        = 1/7;
+   set_param_value(['EAB', '_size'], 1/ctryNumberDouble);
 // Size of household J
    EAB_omega       = 0.25;
 // Utility function
@@ -12311,8 +12463,6 @@ end;
    EAB_gammav1     = 0.02;
    EAB_gammav2     = 0.10;
    EAB_gammai1     = 1.00;
-// must equal steady-state value of rk
-     EAB_gammau1     = 0.00;  
    EAB_gammau2     = 1.00;
    EAB_gammaimc1   = 1.00;
    EAB_gammaimi1   = 1.00;
@@ -12326,9 +12476,6 @@ end;
    EAB_upsilontr   = 1.00;
 // Monetary policy
   EAB_pi4target   = 1.00;
-    EAB_phirr       = 0.75;
-    EAB_phirgy      = 0.00;
-    EAB_phirpi      = 1.50;
 // Net foreign asset position
     EAB_bfytarget   = 0.00;
     EAB_bhytarget   = 0.00;
@@ -12355,7 +12502,7 @@ end;
 // Parameter values   //
 // ------------------ //
 // Country size (population)
-   EAC_size        = 1/7;
+   set_param_value(['EAC', '_size'], 1/ctryNumberDouble);
 // Size of household J
    EAC_omega       = 0.25;
 // Utility function
@@ -12416,8 +12563,6 @@ end;
    EAC_gammav1     = 0.02;
    EAC_gammav2     = 0.10;
    EAC_gammai1     = 1.00;
-// must equal steady-state value of rk
-     EAC_gammau1     = 0.00;  
    EAC_gammau2     = 1.00;
    EAC_gammaimc1   = 1.00;
    EAC_gammaimi1   = 1.00;
@@ -12431,9 +12576,6 @@ end;
    EAC_upsilontr   = 1.00;
 // Monetary policy
   EAC_pi4target   = 1.00;
-    EAC_phirr       = 0.75;
-    EAC_phirgy      = 0.00;
-    EAC_phirpi      = 1.50;
 // Net foreign asset position
     EAC_bfytarget   = 0.00;
     EAC_bhytarget   = 0.00;
@@ -12460,7 +12602,7 @@ end;
 // Parameter values   //
 // ------------------ //
 // Country size (population)
-   EAD_size        = 1/7;
+   set_param_value(['EAD', '_size'], 1/ctryNumberDouble);
 // Size of household J
    EAD_omega       = 0.25;
 // Utility function
@@ -12521,8 +12663,6 @@ end;
    EAD_gammav1     = 0.02;
    EAD_gammav2     = 0.10;
    EAD_gammai1     = 1.00;
-// must equal steady-state value of rk
-     EAD_gammau1     = 0.00;  
    EAD_gammau2     = 1.00;
    EAD_gammaimc1   = 1.00;
    EAD_gammaimi1   = 1.00;
@@ -12536,9 +12676,6 @@ end;
    EAD_upsilontr   = 1.00;
 // Monetary policy
   EAD_pi4target   = 1.00;
-    EAD_phirr       = 0.75;
-    EAD_phirgy      = 0.00;
-    EAD_phirpi      = 1.50;
 // Net foreign asset position
     EAD_bfytarget   = 0.00;
     EAD_bhytarget   = 0.00;
@@ -12565,7 +12702,7 @@ end;
 // Parameter values   //
 // ------------------ //
 // Country size (population)
-   EAE_size        = 1/7;
+   set_param_value(['EAE', '_size'], 1/ctryNumberDouble);
 // Size of household J
    EAE_omega       = 0.25;
 // Utility function
@@ -12670,7 +12807,7 @@ end;
 // Parameter values   //
 // ------------------ //
 // Country size (population)
-   RW_size        = 1/7;
+   set_param_value(['RW', '_size'], 1/ctryNumberDouble);
 // Size of household J
    RW_omega       = 0.25;
 // Utility function
@@ -12775,7 +12912,7 @@ end;
 // Parameter values   //
 // ------------------ //
 // Country size (population)
-   US_size        = 1/7;
+   set_param_value(['US', '_size'], 1/ctryNumberDouble);
 // Size of household J
    US_omega       = 0.25;
 // Utility function
@@ -12874,181 +13011,575 @@ end;
    US_rhowcst     = 0.90;
    US_rhozcon     = 0.90;
  // Bilateral and asymmetric
- EAAUS_numc       = 0.1;
- EAAEAB_numc      = 0.2;
- EAAEAC_numc      = 0.2;
- EAAEAD_numc      = 0.2;
- EAAEAE_numc      = 0.2;
- EAARW_numc       = 1-EAAUS_numc-EAAEAB_numc-EAAEAC_numc-EAAEAD_numc-EAAEAE_numc;
- EABRW_numc       = 0.1;
- EABEAA_numc      = 0.2;
- EABEAC_numc      = 0.2;
- EABEAD_numc      = 0.2;
- EABEAE_numc      = 0.2;
- EABUS_numc       = 1-EABRW_numc-EABEAA_numc-EABEAC_numc-EABEAD_numc-EABEAE_numc;
- EACEAD_numc      = 0.2;
- EACEAE_numc      = 0.2;
- EACRW_numc       = 0.1;
- EACUS_numc       = 0.1;         
- EACEAB_numc      = 0.2;
- EACEAA_numc = 1-EACEAD_numc-EACEAE_numc-EACRW_numc-EACUS_numc-EACEAB_numc;
- EADEAE_numc      = 0.2;
- EADRW_numc       = 0.1;
- EADUS_numc       = 0.1;         
- EADEAA_numc      = 0.2;
- EADEAC_numc      = 0.2;
- EADEAB_numc = 1-EADEAE_numc-EADEAC_numc-EADRW_numc-EADUS_numc-EADEAA_numc;
- EAERW_numc       = 0.1;
- EAEUS_numc       = 0.1;
- EAEEAA_numc      = 0.2;         
- EAEEAB_numc      = 0.2;
- EAEEAD_numc      = 0.2;
- EAEEAC_numc = 1-EAERW_numc-EAEUS_numc-EAEEAA_numc-EAEEAB_numc-EAEEAD_numc;
- RWUS_numc        = 0.3;
- RWEAA_numc       = 0.15625;
- RWEAB_numc       = 0.15625;
- RWEAC_numc       = 0.15625;
- RWEAE_numc       = 0.075;
- RWEAD_numc       = 1-RWUS_numc-RWEAA_numc-RWEAB_numc-RWEAC_numc-RWEAE_numc;
- USEAA_numc       = 0.15625;
- USEAB_numc       = 0.15625;
- USEAC_numc       = 0.15625;
- USEAD_numc       = 0.15625;
- USRW_numc        = 0.3;
- USEAE_numc       = 1-USEAA_numc-USEAB_numc-USEAC_numc-USEAD_numc-USRW_numc;
- EAAUS_numi       = 0.1;
- EAAEAB_numi      = 0.2;
- EAAEAC_numi      = 0.2;
- EAAEAD_numi      = 0.2;
- EAAEAE_numi      = 0.2;
- EAARW_numi       = 1-EAAUS_numi-EAAEAB_numi-EAAEAC_numi-EAAEAD_numi-EAAEAE_numi;
- EABRW_numi       = 0.1;
- EABEAA_numi      = 0.2;
- EABEAC_numi      = 0.2;
- EABEAD_numi      = 0.2;
- EABEAE_numi      = 0.2;
- EABUS_numi       = 1-EABRW_numi-EABEAA_numi-EABEAC_numi-EABEAD_numi-EABEAE_numi;
- EACEAD_numi      = 0.2;
- EACEAE_numi      = 0.2;
- EACRW_numi       = 0.1;
- EACUS_numi       = 0.1;         
- EACEAB_numi      = 0.2;
- EACEAA_numi = 1-EACEAD_numi-EACEAE_numi-EACRW_numi-EACUS_numi-EACEAB_numi;
- EADEAE_numi      = 0.2;
- EADRW_numi       = 0.1;
- EADUS_numi       = 0.1;         
- EADEAA_numi      = 0.2;
- EADEAC_numi      = 0.2;
- EADEAB_numi = 1-EADEAE_numi-EADEAC_numi-EADRW_numi-EADUS_numi-EADEAA_numi;
- EAERW_numi       = 0.1;
- EAEUS_numi       = 0.1;
- EAEEAA_numi      = 0.2;         
- EAEEAB_numi      = 0.2;
- EAEEAD_numi      = 0.2;
- EAEEAC_numi = 1-EAERW_numi-EAEUS_numi-EAEEAA_numi-EAEEAB_numi-EAEEAD_numi;
- RWUS_numi        = 0.3;
- RWEAA_numi       = 0.15625;
- RWEAB_numi       = 0.15625;
- RWEAC_numi       = 0.15625;
- RWEAE_numi       = 0.075;
- RWEAD_numi       = 1-RWUS_numi-RWEAA_numi-RWEAB_numi-RWEAC_numi-RWEAE_numi;
- USEAA_numi       = 0.15625;
- USEAB_numi       = 0.15625;
- USEAC_numi       = 0.15625;
- USEAD_numi       = 0.15625;
- USRW_numi        = 0.3;
- USEAE_numi       = 1-USEAA_numi-USEAB_numi-USEAC_numi-USEAD_numi-USRW_numi;
- EAAUS_numcg       = 0.1;
- EAAEAB_numcg      = 0.2;
- EAAEAC_numcg      = 0.2;
- EAAEAD_numcg      = 0.2;
- EAAEAE_numcg      = 0.2;
- EAARW_numcg       = 1-EAAUS_numcg-EAAEAB_numcg-EAAEAC_numcg-EAAEAD_numcg-EAAEAE_numcg;
- EABRW_numcg       = 0.1;
- EABEAA_numcg      = 0.2;
- EABEAC_numcg      = 0.2;
- EABEAD_numcg      = 0.2;
- EABEAE_numcg      = 0.2;
- EABUS_numcg       = 1-EABRW_numcg-EABEAA_numcg-EABEAC_numcg-EABEAD_numcg-EABEAE_numcg;
- EACEAD_numcg      = 0.2;
- EACEAE_numcg      = 0.2;
- EACRW_numcg       = 0.1;
- EACUS_numcg       = 0.1;         
- EACEAB_numcg      = 0.2;
- EACEAA_numcg = 1-EACEAD_numcg-EACEAE_numcg-EACRW_numcg-EACUS_numcg-EACEAB_numcg;
- EADEAE_numcg      = 0.2;
- EADRW_numcg       = 0.1;
- EADUS_numcg       = 0.1;         
- EADEAA_numcg      = 0.2;
- EADEAC_numcg      = 0.2;
- EADEAB_numcg = 1-EADEAE_numcg-EADEAC_numcg-EADRW_numcg-EADUS_numcg-EADEAA_numcg;
- EAERW_numcg       = 0.1;
- EAEUS_numcg       = 0.1;
- EAEEAA_numcg      = 0.2;         
- EAEEAB_numcg      = 0.2;
- EAEEAD_numcg      = 0.2;
- EAEEAC_numcg = 1-EAERW_numcg-EAEUS_numcg-EAEEAA_numcg-EAEEAB_numcg-EAEEAD_numcg;
- RWUS_numcg        = 0.3;
- RWEAA_numcg       = 0.15625;
- RWEAB_numcg       = 0.15625;
- RWEAC_numcg       = 0.15625;
- RWEAE_numcg       = 0.075;
- RWEAD_numcg       = 1-RWUS_numcg-RWEAA_numcg-RWEAB_numcg-RWEAC_numcg-RWEAE_numcg;
- USEAA_numcg       = 0.15625;
- USEAB_numcg       = 0.15625;
- USEAC_numcg       = 0.15625;
- USEAD_numcg       = 0.15625;
- USRW_numcg        = 0.3;
- USEAE_numcg       = 1-USEAA_numcg-USEAB_numcg-USEAC_numcg-USEAD_numcg-USRW_numcg;
- EAAUS_numig       = 0.1;
- EAAEAB_numig      = 0.2;
- EAAEAC_numig      = 0.2;
- EAAEAD_numig      = 0.2;
- EAAEAE_numig      = 0.2;
- EAARW_numig       = 1-EAAUS_numig-EAAEAB_numig-EAAEAC_numig-EAAEAD_numig-EAAEAE_numig;
- EABRW_numig       = 0.1;
- EABEAA_numig      = 0.2;
- EABEAC_numig      = 0.2;
- EABEAD_numig      = 0.2;
- EABEAE_numig      = 0.2;
- EABUS_numig       = 1-EABRW_numig-EABEAA_numig-EABEAC_numig-EABEAD_numig-EABEAE_numig;
- EACEAD_numig      = 0.2;
- EACEAE_numig      = 0.2;
- EACRW_numig       = 0.1;
- EACUS_numig       = 0.1;         
- EACEAB_numig      = 0.2;
- EACEAA_numig = 1-EACEAD_numig-EACEAE_numig-EACRW_numig-EACUS_numig-EACEAB_numig;
- EADEAE_numig      = 0.2;
- EADRW_numig       = 0.1;
- EADUS_numig       = 0.1;         
- EADEAA_numig      = 0.2;
- EADEAC_numig      = 0.2;
- EADEAB_numig = 1-EADEAE_numig-EADEAC_numig-EADRW_numig-EADUS_numig-EADEAA_numig;
- EAERW_numig       = 0.1;
- EAEUS_numig       = 0.1;
- EAEEAA_numig      = 0.2;         
- EAEEAB_numig      = 0.2;
- EAEEAD_numig      = 0.2;
- EAEEAC_numig = 1-EAERW_numig-EAEUS_numig-EAEEAA_numig-EAEEAB_numig-EAEEAD_numig;
- RWUS_numig        = 0.3;
- RWEAA_numig       = 0.15625;
- RWEAB_numig       = 0.15625;
- RWEAC_numig       = 0.15625;
- RWEAE_numig       = 0.075;
- RWEAD_numig       = 1-RWUS_numig-RWEAA_numig-RWEAB_numig-RWEAC_numig-RWEAE_numig;
- USEAA_numig       = 0.15625;
- USEAB_numig       = 0.15625;
- USEAC_numig       = 0.15625;
- USEAD_numig       = 0.15625;
- USRW_numig        = 0.3;
- USEAE_numig       = 1-USEAA_numig-USEAB_numig-USEAC_numig-USEAD_numig-USRW_numig;
+            set_param_value(['EAA', 'EAB', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAB', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAB', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAB', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAC', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAC', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAC', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAC', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAD', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAD', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAD', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAD', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAE', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAE', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAE', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAE', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'US', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'US', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'US', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'US', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAA', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAA', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAA', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAA', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAC', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAC', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAC', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAC', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAD', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAD', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAD', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAD', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAE', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAE', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAE', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAE', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'RW', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'RW', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'RW', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'RW', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAB', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAB', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAB', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAB', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAD', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAD', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAD', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAD', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAE', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAE', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAE', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAE', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'RW', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'RW', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'RW', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'RW', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'US', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'US', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'US', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'US', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAA', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAA', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAA', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAA', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAC', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAC', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAC', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAC', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAE', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAE', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAE', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAE', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'RW', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'RW', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'RW', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'RW', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'US', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'US', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'US', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'US', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAA', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAA', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAA', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAA', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAB', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAB', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAB', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAB', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAD', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAD', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAD', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAD', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'RW', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'RW', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'RW', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'RW', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'US', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'US', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'US', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'US', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAA', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAA', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAA', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAA', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAB', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAB', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAB', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAB', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAC', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAC', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAC', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAC', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAE', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAE', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAE', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAE', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'US', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'US', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'US', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'US', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAA', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAA', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAA', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAA', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAB', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAB', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAB', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAB', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAC', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAC', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAC', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAC', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAD', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAD', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAD', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAD', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'RW', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'RW', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'RW', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'RW', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAB', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAB', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAB', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAB', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAC', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAC', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAC', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAC', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAD', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAD', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAD', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAD', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAE', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAE', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAE', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAE', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'US', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'US', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'US', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'US', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAA', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAA', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAA', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAA', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAC', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAC', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAC', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAC', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAD', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAD', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAD', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAD', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAE', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAE', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAE', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAE', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'RW', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'RW', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'RW', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'RW', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAB', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAB', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAB', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAB', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAD', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAD', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAD', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAD', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAE', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAE', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAE', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAE', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'RW', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'RW', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'RW', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'RW', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'US', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'US', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'US', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'US', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAA', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAA', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAA', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAA', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAC', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAC', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAC', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAC', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAE', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAE', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAE', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAE', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'RW', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'RW', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'RW', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'RW', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'US', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'US', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'US', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'US', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAA', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAA', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAA', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAA', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAB', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAB', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAB', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAB', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAD', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAD', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAD', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAD', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'RW', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'RW', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'RW', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'RW', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'US', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'US', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'US', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'US', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAA', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAA', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAA', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAA', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAB', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAB', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAB', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAB', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAC', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAC', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAC', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAC', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAE', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAE', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAE', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAE', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'US', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'US', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'US', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'US', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAA', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAA', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAA', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAA', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAB', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAB', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAB', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAB', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAC', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAC', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAC', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAC', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAD', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAD', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAD', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAD', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'RW', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'RW', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'RW', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'RW', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAB', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAB', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAB', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAB', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAC', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAC', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAC', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAC', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAD', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAD', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAD', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAD', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAE', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAE', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAE', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAE', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'US', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'US', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'US', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'US', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAA', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAA', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAA', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAA', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAC', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAC', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAC', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAC', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAD', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAD', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAD', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAD', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAE', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAE', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAE', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAE', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'RW', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'RW', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'RW', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'RW', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAB', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAB', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAB', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAB', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAD', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAD', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAD', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAD', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAE', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAE', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAE', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAE', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'RW', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'RW', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'RW', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'RW', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'US', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'US', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'US', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'US', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAA', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAA', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAA', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAA', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAC', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAC', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAC', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAC', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAE', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAE', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAE', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAE', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'RW', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'RW', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'RW', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'RW', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'US', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'US', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'US', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'US', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAA', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAA', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAA', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAA', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAB', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAB', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAB', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAB', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAD', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAD', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAD', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAD', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'RW', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'RW', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'RW', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'RW', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'US', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'US', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'US', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'US', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAA', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAA', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAA', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAA', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAB', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAB', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAB', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAB', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAC', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAC', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAC', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAC', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAE', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAE', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAE', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAE', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'US', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'US', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'US', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'US', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAA', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAA', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAA', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAA', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAB', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAB', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAB', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAB', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAC', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAC', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAC', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAC', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAD', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAD', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAD', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAD', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'RW', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'RW', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'RW', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'RW', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAB', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAB', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAB', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAB', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAC', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAC', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAC', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAC', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAD', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAD', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAD', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAD', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAE', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAE', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAE', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'EAE', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'US', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'US', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'US', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAA', 'US', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAA', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAA', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAA', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAA', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAC', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAC', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAC', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAC', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAD', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAD', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAD', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAD', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAE', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAE', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAE', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'EAE', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'RW', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'RW', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'RW', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAB', 'RW', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAB', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAB', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAB', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAB', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAD', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAD', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAD', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAD', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAE', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAE', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAE', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'EAE', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'RW', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'RW', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'RW', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'RW', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'US', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'US', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'US', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAC', 'US', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAA', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAA', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAA', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAA', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAC', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAC', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAC', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAC', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAE', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAE', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAE', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'EAE', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'RW', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'RW', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'RW', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'RW', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'US', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'US', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'US', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAD', 'US', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAA', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAA', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAA', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAA', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAB', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAB', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAB', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAB', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAD', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAD', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAD', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'EAD', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'RW', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'RW', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'RW', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'RW', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'US', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'US', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'US', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['EAE', 'US', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAA', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAA', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAA', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAA', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAB', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAB', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAB', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAB', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAC', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAC', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAC', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAC', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAE', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAE', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAE', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'EAE', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'US', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'US', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'US', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['RW', 'US', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAA', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAA', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAA', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAA', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAB', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAB', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAB', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAB', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAC', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAC', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAC', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAC', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAD', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAD', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAD', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'EAD', '_num', 'ig'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'RW', '_num', 'c'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'RW', '_num', 'i'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'RW', '_num', 'cg'], 1/(ctryNumberDouble-1));
+            set_param_value(['US', 'RW', '_num', 'ig'], 1/(ctryNumberDouble-1));
 // Euro area
  EA_phirr       = 0.75;
  EA_phirgy      = 0.00;
  EA_phirpi      = 1.50;
  EA_rhoz        = 0.90;
  EA_zbar        = 1; 
+load("paramsToBeSaved", 'ctryNumberDouble')
 initval;
+  
   EAA_b = 0;
   EAA_bf = 0;
   EAA_by = 0;
@@ -13218,7 +13749,6 @@ EAA_igy = 0.01/10;
   EAA_zinv = 1;
   EAA_zn = 1;
   EAA_zt = 1;
-    
   
   EAA_cgybar = 0.01/10;
   EAA_igybar = 0.01/10;
@@ -13250,14 +13780,14 @@ EAA_igy = 0.01/10;
       EAAEAB_rer = 1;
       EAAEAB_rerbar = 1;
       EAAEAB_im = 0.03;
-      EAAEAB_gammaimc = 0;
-      EAAEAB_gammaimcdag = 1;
-      EAAEAB_gammaimi = 0;
-      EAAEAB_gammaimidag = 1;
-      EAAEAB_gammaimcg = 0;
-      EAAEAB_gammaimcgdag = 1;
-      EAAEAB_gammaimig = 0;
-      EAAEAB_gammaimigdag = 1;
+        EAAEAB_gammaimc = 0;
+        EAAEAB_gammaimcdag = 1;
+        EAAEAB_gammaimi = 0;
+        EAAEAB_gammaimidag = 1;
+        EAAEAB_gammaimcg = 0;
+        EAAEAB_gammaimcgdag = 1;
+        EAAEAB_gammaimig = 0;
+        EAAEAB_gammaimigdag = 1;
       EAAEAB_tot = 1;
       EAAEAB_weight = 0.35;
       EAAEAB_weightex = 0.35;
@@ -13265,14 +13795,14 @@ EAA_igy = 0.01/10;
       EAAEAC_rer = 1;
       EAAEAC_rerbar = 1;
       EAAEAC_im = 0.03;
-      EAAEAC_gammaimc = 0;
-      EAAEAC_gammaimcdag = 1;
-      EAAEAC_gammaimi = 0;
-      EAAEAC_gammaimidag = 1;
-      EAAEAC_gammaimcg = 0;
-      EAAEAC_gammaimcgdag = 1;
-      EAAEAC_gammaimig = 0;
-      EAAEAC_gammaimigdag = 1;
+        EAAEAC_gammaimc = 0;
+        EAAEAC_gammaimcdag = 1;
+        EAAEAC_gammaimi = 0;
+        EAAEAC_gammaimidag = 1;
+        EAAEAC_gammaimcg = 0;
+        EAAEAC_gammaimcgdag = 1;
+        EAAEAC_gammaimig = 0;
+        EAAEAC_gammaimigdag = 1;
       EAAEAC_tot = 1;
       EAAEAC_weight = 0.35;
       EAAEAC_weightex = 0.35;
@@ -13280,14 +13810,14 @@ EAA_igy = 0.01/10;
       EAAEAD_rer = 1;
       EAAEAD_rerbar = 1;
       EAAEAD_im = 0.03;
-      EAAEAD_gammaimc = 0;
-      EAAEAD_gammaimcdag = 1;
-      EAAEAD_gammaimi = 0;
-      EAAEAD_gammaimidag = 1;
-      EAAEAD_gammaimcg = 0;
-      EAAEAD_gammaimcgdag = 1;
-      EAAEAD_gammaimig = 0;
-      EAAEAD_gammaimigdag = 1;
+        EAAEAD_gammaimc = 0;
+        EAAEAD_gammaimcdag = 1;
+        EAAEAD_gammaimi = 0;
+        EAAEAD_gammaimidag = 1;
+        EAAEAD_gammaimcg = 0;
+        EAAEAD_gammaimcgdag = 1;
+        EAAEAD_gammaimig = 0;
+        EAAEAD_gammaimigdag = 1;
       EAAEAD_tot = 1;
       EAAEAD_weight = 0.35;
       EAAEAD_weightex = 0.35;
@@ -13295,14 +13825,14 @@ EAA_igy = 0.01/10;
       EAAEAE_rer = 1;
       EAAEAE_rerbar = 1;
       EAAEAE_im = 0.03;
-      EAAEAE_gammaimc = 0;
-      EAAEAE_gammaimcdag = 1;
-      EAAEAE_gammaimi = 0;
-      EAAEAE_gammaimidag = 1;
-      EAAEAE_gammaimcg = 0;
-      EAAEAE_gammaimcgdag = 1;
-      EAAEAE_gammaimig = 0;
-      EAAEAE_gammaimigdag = 1;
+        EAAEAE_gammaimc = 0;
+        EAAEAE_gammaimcdag = 1;
+        EAAEAE_gammaimi = 0;
+        EAAEAE_gammaimidag = 1;
+        EAAEAE_gammaimcg = 0;
+        EAAEAE_gammaimcgdag = 1;
+        EAAEAE_gammaimig = 0;
+        EAAEAE_gammaimigdag = 1;
       EAAEAE_tot = 1;
       EAAEAE_weight = 0.35;
       EAAEAE_weightex = 0.35;
@@ -13310,14 +13840,14 @@ EAA_igy = 0.01/10;
       EAARW_rer = 1;
       EAARW_rerbar = 1;
       EAARW_im = 0.03;
-      EAARW_gammaimc = 0;
-      EAARW_gammaimcdag = 1;
-      EAARW_gammaimi = 0;
-      EAARW_gammaimidag = 1;
-      EAARW_gammaimcg = 0;
-      EAARW_gammaimcgdag = 1;
-      EAARW_gammaimig = 0;
-      EAARW_gammaimigdag = 1;
+        EAARW_gammaimc = 0;
+        EAARW_gammaimcdag = 1;
+        EAARW_gammaimi = 0;
+        EAARW_gammaimidag = 1;
+        EAARW_gammaimcg = 0;
+        EAARW_gammaimcgdag = 1;
+        EAARW_gammaimig = 0;
+        EAARW_gammaimigdag = 1;
       EAARW_tot = 1;
       EAARW_weight = 0.35;
       EAARW_weightex = 0.35;
@@ -13325,18 +13855,143 @@ EAA_igy = 0.01/10;
       EAAUS_rer = 1;
       EAAUS_rerbar = 1;
       EAAUS_im = 0.03;
-      EAAUS_gammaimc = 0;
-      EAAUS_gammaimcdag = 1;
-      EAAUS_gammaimi = 0;
-      EAAUS_gammaimidag = 1;
-      EAAUS_gammaimcg = 0;
-      EAAUS_gammaimcgdag = 1;
-      EAAUS_gammaimig = 0;
-      EAAUS_gammaimigdag = 1;
+        EAAUS_gammaimc = 0;
+        EAAUS_gammaimcdag = 1;
+        EAAUS_gammaimi = 0;
+        EAAUS_gammaimidag = 1;
+        EAAUS_gammaimcg = 0;
+        EAAUS_gammaimcgdag = 1;
+        EAAUS_gammaimig = 0;
+        EAAUS_gammaimigdag = 1;
       EAAUS_tot = 1;
       EAAUS_weight = 0.35;
       EAAUS_weightex = 0.35;
       EAAUS_weightim = 0.35;
+      
+      // Shares
+      EAAEAB_excy = 0.09*3/(ctryNumberDouble-1);
+      EAAEAB_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EAAEAC_excy = 0.09*3/(ctryNumberDouble-1);
+      EAAEAC_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EAAEAD_excy = 0.09*3/(ctryNumberDouble-1);
+      EAAEAD_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EAAEAE_excy = 0.09*3/(ctryNumberDouble-1);
+      EAAEAE_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EAARW_excy = 0.09*3/(ctryNumberDouble-1);
+      EAARW_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EAAUS_excy = 0.09*3/(ctryNumberDouble-1);
+      EAAUS_exiy = 0.0008*3/(ctryNumberDouble-1);
+  EAA_qc =  0.321620156669017*2;
+  EAA_qi =  0.00209600391746659*2;
+  EAA_qcg =  EAA_cg;
+  EAA_qig =  EAA_ig;
+  EAA_ntc = 0.161;
+  EAA_nti = 0.001;
+  EAA_ntcg = (1-EAA_nucg)*(EAA_pnt/EAA_pcg)^(-EAA_mucg)*EAA_qcg;
+  EAA_ntig = (1-EAA_nuig)*(EAA_pnt/EAA_pig)^(-EAA_muig)*EAA_qig;
+  EAA_ttc = 0.16;
+  EAA_tti = 0.001;
+  EAA_ttcg = EAA_nucg*(EAA_pttcg/EAA_pcg)^(-EAA_mucg)*EAA_qcg;
+  EAA_ttig = EAA_nuig*(EAA_pttig/EAA_pig)^(-EAA_muig)*EAA_qig;
+  EAA_htc = 0.08;
+  EAA_hti =  0.0005;
+  EAA_htcg = EAA_nutcg*(EAA_pht/EAA_pttcg)^(-EAA_mutcg)*EAA_ttcg;
+  EAA_htig = EAA_nutig*(EAA_pht/EAA_pttig)^(-EAA_mutig)*EAA_ttig;
+  EAA_imc = 0.08;
+  EAA_imcy = 0.25;
+  EAA_imi = 0.0005;
+  EAA_imiy = 0.0016;
+  EAA_imcg = (1-EAA_nutcg)*(EAA_pimcg/EAA_pttcg)^(-EAA_mutcg)*EAA_ttcg;
+  EAA_imcgy = EAA_pimcg*EAA_imcg/(EAA_py*EAA_y);
+  EAA_imig = (1-EAA_nutig)*(EAA_pimig/EAA_pttig)^(-EAA_mutig)*EAA_ttig;
+  EAA_imigy = EAA_pimig*EAA_imig/(EAA_py*EAA_y);
+        EAAEAB_imc = EAAEAB_numc*((EAB_pex*EAAEAB_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
+      EAAEAB_imcy = (EAB_pex*EAAEAB_rer)*EAAEAB_imc/(EAA_py*EAA_y);
+        EAAEAB_imi = EAAEAB_numi*((EAB_pex*EAAEAB_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
+      EAAEAB_imiy = (EAB_pex*EAAEAB_rer)*EAAEAB_imi/(EAA_py*EAA_y);
+        EAAEAB_imcg = EAAEAB_numcg*((EAB_pex*EAAEAB_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
+      EAAEAB_imcgy = (EAB_pex*EAAEAB_rer)*EAAEAB_imcg/(EAA_py*EAA_y);
+        EAAEAB_imig = EAAEAB_numig*((EAB_pex*EAAEAB_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
+      EAAEAB_imigy = (EAB_pex*EAAEAB_rer)*EAAEAB_imig/(EAA_py*EAA_y);
+        EAAEAC_imc = EAAEAC_numc*((EAC_pex*EAAEAC_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
+      EAAEAC_imcy = (EAC_pex*EAAEAC_rer)*EAAEAC_imc/(EAA_py*EAA_y);
+        EAAEAC_imi = EAAEAC_numi*((EAC_pex*EAAEAC_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
+      EAAEAC_imiy = (EAC_pex*EAAEAC_rer)*EAAEAC_imi/(EAA_py*EAA_y);
+        EAAEAC_imcg = EAAEAC_numcg*((EAC_pex*EAAEAC_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
+      EAAEAC_imcgy = (EAC_pex*EAAEAC_rer)*EAAEAC_imcg/(EAA_py*EAA_y);
+        EAAEAC_imig = EAAEAC_numig*((EAC_pex*EAAEAC_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
+      EAAEAC_imigy = (EAC_pex*EAAEAC_rer)*EAAEAC_imig/(EAA_py*EAA_y);
+        EAAEAD_imc = EAAEAD_numc*((EAD_pex*EAAEAD_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
+      EAAEAD_imcy = (EAD_pex*EAAEAD_rer)*EAAEAD_imc/(EAA_py*EAA_y);
+        EAAEAD_imi = EAAEAD_numi*((EAD_pex*EAAEAD_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
+      EAAEAD_imiy = (EAD_pex*EAAEAD_rer)*EAAEAD_imi/(EAA_py*EAA_y);
+        EAAEAD_imcg = EAAEAD_numcg*((EAD_pex*EAAEAD_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
+      EAAEAD_imcgy = (EAD_pex*EAAEAD_rer)*EAAEAD_imcg/(EAA_py*EAA_y);
+        EAAEAD_imig = EAAEAD_numig*((EAD_pex*EAAEAD_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
+      EAAEAD_imigy = (EAD_pex*EAAEAD_rer)*EAAEAD_imig/(EAA_py*EAA_y);
+        EAAEAE_imc = EAAEAE_numc*((EAE_pex*EAAEAE_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
+      EAAEAE_imcy = (EAE_pex*EAAEAE_rer)*EAAEAE_imc/(EAA_py*EAA_y);
+        EAAEAE_imi = EAAEAE_numi*((EAE_pex*EAAEAE_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
+      EAAEAE_imiy = (EAE_pex*EAAEAE_rer)*EAAEAE_imi/(EAA_py*EAA_y);
+        EAAEAE_imcg = EAAEAE_numcg*((EAE_pex*EAAEAE_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
+      EAAEAE_imcgy = (EAE_pex*EAAEAE_rer)*EAAEAE_imcg/(EAA_py*EAA_y);
+        EAAEAE_imig = EAAEAE_numig*((EAE_pex*EAAEAE_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
+      EAAEAE_imigy = (EAE_pex*EAAEAE_rer)*EAAEAE_imig/(EAA_py*EAA_y);
+        EAARW_imc = 
+        +(1
+        -EAAEAB_numc
+        -EAAEAC_numc
+        -EAAEAD_numc
+        -EAAEAE_numc
+        -EAAUS_numc
+        )*((RW_pex*EAARW_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
+      EAARW_imcy = (RW_pex*EAARW_rer)*EAARW_imc/(EAA_py*EAA_y);
+        EAARW_imi = 
+        +(1
+        -EAAEAB_numi
+        -EAAEAC_numi
+        -EAAEAD_numi
+        -EAAEAE_numi
+        -EAAUS_numi
+        )*((RW_pex*EAARW_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
+      EAARW_imiy = (RW_pex*EAARW_rer)*EAARW_imi/(EAA_py*EAA_y);
+        EAARW_imcg = 
+        +(1
+        -EAAEAB_numcg
+        -EAAEAC_numcg
+        -EAAEAD_numcg
+        -EAAEAE_numcg
+        -EAAUS_numcg
+        )*((RW_pex*EAARW_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
+      EAARW_imcgy = (RW_pex*EAARW_rer)*EAARW_imcg/(EAA_py*EAA_y);
+        EAARW_imig = 
+        +(1
+        -EAAEAB_numig
+        -EAAEAC_numig
+        -EAAEAD_numig
+        -EAAEAE_numig
+        -EAAUS_numig
+        )*((RW_pex*EAARW_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
+      EAARW_imigy = (RW_pex*EAARW_rer)*EAARW_imig/(EAA_py*EAA_y);
+        EAAUS_imc = EAAUS_numc*((US_pex*EAAUS_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
+      EAAUS_imcy = (US_pex*EAAUS_rer)*EAAUS_imc/(EAA_py*EAA_y);
+        EAAUS_imi = EAAUS_numi*((US_pex*EAAUS_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
+      EAAUS_imiy = (US_pex*EAAUS_rer)*EAAUS_imi/(EAA_py*EAA_y);
+        EAAUS_imcg = EAAUS_numcg*((US_pex*EAAUS_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
+      EAAUS_imcgy = (US_pex*EAAUS_rer)*EAAUS_imcg/(EAA_py*EAA_y);
+        EAAUS_imig = EAAUS_numig*((US_pex*EAAUS_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
+      EAAUS_imigy = (US_pex*EAAUS_rer)*EAAUS_imig/(EAA_py*EAA_y);
+  
   EAB_b = 0;
   EAB_bf = 0;
   EAB_by = 0;
@@ -13506,7 +14161,6 @@ EAB_igy = 0.01/10;
   EAB_zinv = 1;
   EAB_zn = 1;
   EAB_zt = 1;
-    
   
   EAB_cgybar = 0.01/10;
   EAB_igybar = 0.01/10;
@@ -13538,14 +14192,14 @@ EAB_igy = 0.01/10;
       EABEAA_rer = 1;
       EABEAA_rerbar = 1;
       EABEAA_im = 0.03;
-      EABEAA_gammaimc = 0;
-      EABEAA_gammaimcdag = 1;
-      EABEAA_gammaimi = 0;
-      EABEAA_gammaimidag = 1;
-      EABEAA_gammaimcg = 0;
-      EABEAA_gammaimcgdag = 1;
-      EABEAA_gammaimig = 0;
-      EABEAA_gammaimigdag = 1;
+        EABEAA_gammaimc = 0;
+        EABEAA_gammaimcdag = 1;
+        EABEAA_gammaimi = 0;
+        EABEAA_gammaimidag = 1;
+        EABEAA_gammaimcg = 0;
+        EABEAA_gammaimcgdag = 1;
+        EABEAA_gammaimig = 0;
+        EABEAA_gammaimigdag = 1;
       EABEAA_tot = 1;
       EABEAA_weight = 0.35;
       EABEAA_weightex = 0.35;
@@ -13553,14 +14207,14 @@ EAB_igy = 0.01/10;
       EABEAC_rer = 1;
       EABEAC_rerbar = 1;
       EABEAC_im = 0.03;
-      EABEAC_gammaimc = 0;
-      EABEAC_gammaimcdag = 1;
-      EABEAC_gammaimi = 0;
-      EABEAC_gammaimidag = 1;
-      EABEAC_gammaimcg = 0;
-      EABEAC_gammaimcgdag = 1;
-      EABEAC_gammaimig = 0;
-      EABEAC_gammaimigdag = 1;
+        EABEAC_gammaimc = 0;
+        EABEAC_gammaimcdag = 1;
+        EABEAC_gammaimi = 0;
+        EABEAC_gammaimidag = 1;
+        EABEAC_gammaimcg = 0;
+        EABEAC_gammaimcgdag = 1;
+        EABEAC_gammaimig = 0;
+        EABEAC_gammaimigdag = 1;
       EABEAC_tot = 1;
       EABEAC_weight = 0.35;
       EABEAC_weightex = 0.35;
@@ -13568,14 +14222,14 @@ EAB_igy = 0.01/10;
       EABEAD_rer = 1;
       EABEAD_rerbar = 1;
       EABEAD_im = 0.03;
-      EABEAD_gammaimc = 0;
-      EABEAD_gammaimcdag = 1;
-      EABEAD_gammaimi = 0;
-      EABEAD_gammaimidag = 1;
-      EABEAD_gammaimcg = 0;
-      EABEAD_gammaimcgdag = 1;
-      EABEAD_gammaimig = 0;
-      EABEAD_gammaimigdag = 1;
+        EABEAD_gammaimc = 0;
+        EABEAD_gammaimcdag = 1;
+        EABEAD_gammaimi = 0;
+        EABEAD_gammaimidag = 1;
+        EABEAD_gammaimcg = 0;
+        EABEAD_gammaimcgdag = 1;
+        EABEAD_gammaimig = 0;
+        EABEAD_gammaimigdag = 1;
       EABEAD_tot = 1;
       EABEAD_weight = 0.35;
       EABEAD_weightex = 0.35;
@@ -13583,14 +14237,14 @@ EAB_igy = 0.01/10;
       EABEAE_rer = 1;
       EABEAE_rerbar = 1;
       EABEAE_im = 0.03;
-      EABEAE_gammaimc = 0;
-      EABEAE_gammaimcdag = 1;
-      EABEAE_gammaimi = 0;
-      EABEAE_gammaimidag = 1;
-      EABEAE_gammaimcg = 0;
-      EABEAE_gammaimcgdag = 1;
-      EABEAE_gammaimig = 0;
-      EABEAE_gammaimigdag = 1;
+        EABEAE_gammaimc = 0;
+        EABEAE_gammaimcdag = 1;
+        EABEAE_gammaimi = 0;
+        EABEAE_gammaimidag = 1;
+        EABEAE_gammaimcg = 0;
+        EABEAE_gammaimcgdag = 1;
+        EABEAE_gammaimig = 0;
+        EABEAE_gammaimigdag = 1;
       EABEAE_tot = 1;
       EABEAE_weight = 0.35;
       EABEAE_weightex = 0.35;
@@ -13598,14 +14252,14 @@ EAB_igy = 0.01/10;
       EABRW_rer = 1;
       EABRW_rerbar = 1;
       EABRW_im = 0.03;
-      EABRW_gammaimc = 0;
-      EABRW_gammaimcdag = 1;
-      EABRW_gammaimi = 0;
-      EABRW_gammaimidag = 1;
-      EABRW_gammaimcg = 0;
-      EABRW_gammaimcgdag = 1;
-      EABRW_gammaimig = 0;
-      EABRW_gammaimigdag = 1;
+        EABRW_gammaimc = 0;
+        EABRW_gammaimcdag = 1;
+        EABRW_gammaimi = 0;
+        EABRW_gammaimidag = 1;
+        EABRW_gammaimcg = 0;
+        EABRW_gammaimcgdag = 1;
+        EABRW_gammaimig = 0;
+        EABRW_gammaimigdag = 1;
       EABRW_tot = 1;
       EABRW_weight = 0.35;
       EABRW_weightex = 0.35;
@@ -13613,18 +14267,143 @@ EAB_igy = 0.01/10;
       EABUS_rer = 1;
       EABUS_rerbar = 1;
       EABUS_im = 0.03;
-      EABUS_gammaimc = 0;
-      EABUS_gammaimcdag = 1;
-      EABUS_gammaimi = 0;
-      EABUS_gammaimidag = 1;
-      EABUS_gammaimcg = 0;
-      EABUS_gammaimcgdag = 1;
-      EABUS_gammaimig = 0;
-      EABUS_gammaimigdag = 1;
+        EABUS_gammaimc = 0;
+        EABUS_gammaimcdag = 1;
+        EABUS_gammaimi = 0;
+        EABUS_gammaimidag = 1;
+        EABUS_gammaimcg = 0;
+        EABUS_gammaimcgdag = 1;
+        EABUS_gammaimig = 0;
+        EABUS_gammaimigdag = 1;
       EABUS_tot = 1;
       EABUS_weight = 0.35;
       EABUS_weightex = 0.35;
       EABUS_weightim = 0.35;
+      
+      // Shares
+      EABEAA_excy = 0.09*3/(ctryNumberDouble-1);
+      EABEAA_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EABEAC_excy = 0.09*3/(ctryNumberDouble-1);
+      EABEAC_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EABEAD_excy = 0.09*3/(ctryNumberDouble-1);
+      EABEAD_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EABEAE_excy = 0.09*3/(ctryNumberDouble-1);
+      EABEAE_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EABRW_excy = 0.09*3/(ctryNumberDouble-1);
+      EABRW_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EABUS_excy = 0.09*3/(ctryNumberDouble-1);
+      EABUS_exiy = 0.0008*3/(ctryNumberDouble-1);
+  EAB_qc =  0.321620156669017*2;
+  EAB_qi =  0.00209600391746659*2;
+  EAB_qcg =  EAB_cg;
+  EAB_qig =  EAB_ig;
+  EAB_ntc = 0.161;
+  EAB_nti = 0.001;
+  EAB_ntcg = (1-EAB_nucg)*(EAB_pnt/EAB_pcg)^(-EAB_mucg)*EAB_qcg;
+  EAB_ntig = (1-EAB_nuig)*(EAB_pnt/EAB_pig)^(-EAB_muig)*EAB_qig;
+  EAB_ttc = 0.16;
+  EAB_tti = 0.001;
+  EAB_ttcg = EAB_nucg*(EAB_pttcg/EAB_pcg)^(-EAB_mucg)*EAB_qcg;
+  EAB_ttig = EAB_nuig*(EAB_pttig/EAB_pig)^(-EAB_muig)*EAB_qig;
+  EAB_htc = 0.08;
+  EAB_hti =  0.0005;
+  EAB_htcg = EAB_nutcg*(EAB_pht/EAB_pttcg)^(-EAB_mutcg)*EAB_ttcg;
+  EAB_htig = EAB_nutig*(EAB_pht/EAB_pttig)^(-EAB_mutig)*EAB_ttig;
+  EAB_imc = 0.08;
+  EAB_imcy = 0.25;
+  EAB_imi = 0.0005;
+  EAB_imiy = 0.0016;
+  EAB_imcg = (1-EAB_nutcg)*(EAB_pimcg/EAB_pttcg)^(-EAB_mutcg)*EAB_ttcg;
+  EAB_imcgy = EAB_pimcg*EAB_imcg/(EAB_py*EAB_y);
+  EAB_imig = (1-EAB_nutig)*(EAB_pimig/EAB_pttig)^(-EAB_mutig)*EAB_ttig;
+  EAB_imigy = EAB_pimig*EAB_imig/(EAB_py*EAB_y);
+        EABEAA_imc = EABEAA_numc*((EAA_pex*EABEAA_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
+      EABEAA_imcy = (EAA_pex*EABEAA_rer)*EABEAA_imc/(EAB_py*EAB_y);
+        EABEAA_imi = EABEAA_numi*((EAA_pex*EABEAA_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
+      EABEAA_imiy = (EAA_pex*EABEAA_rer)*EABEAA_imi/(EAB_py*EAB_y);
+        EABEAA_imcg = EABEAA_numcg*((EAA_pex*EABEAA_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
+      EABEAA_imcgy = (EAA_pex*EABEAA_rer)*EABEAA_imcg/(EAB_py*EAB_y);
+        EABEAA_imig = EABEAA_numig*((EAA_pex*EABEAA_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
+      EABEAA_imigy = (EAA_pex*EABEAA_rer)*EABEAA_imig/(EAB_py*EAB_y);
+        EABEAC_imc = EABEAC_numc*((EAC_pex*EABEAC_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
+      EABEAC_imcy = (EAC_pex*EABEAC_rer)*EABEAC_imc/(EAB_py*EAB_y);
+        EABEAC_imi = EABEAC_numi*((EAC_pex*EABEAC_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
+      EABEAC_imiy = (EAC_pex*EABEAC_rer)*EABEAC_imi/(EAB_py*EAB_y);
+        EABEAC_imcg = EABEAC_numcg*((EAC_pex*EABEAC_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
+      EABEAC_imcgy = (EAC_pex*EABEAC_rer)*EABEAC_imcg/(EAB_py*EAB_y);
+        EABEAC_imig = EABEAC_numig*((EAC_pex*EABEAC_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
+      EABEAC_imigy = (EAC_pex*EABEAC_rer)*EABEAC_imig/(EAB_py*EAB_y);
+        EABEAD_imc = EABEAD_numc*((EAD_pex*EABEAD_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
+      EABEAD_imcy = (EAD_pex*EABEAD_rer)*EABEAD_imc/(EAB_py*EAB_y);
+        EABEAD_imi = EABEAD_numi*((EAD_pex*EABEAD_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
+      EABEAD_imiy = (EAD_pex*EABEAD_rer)*EABEAD_imi/(EAB_py*EAB_y);
+        EABEAD_imcg = EABEAD_numcg*((EAD_pex*EABEAD_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
+      EABEAD_imcgy = (EAD_pex*EABEAD_rer)*EABEAD_imcg/(EAB_py*EAB_y);
+        EABEAD_imig = EABEAD_numig*((EAD_pex*EABEAD_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
+      EABEAD_imigy = (EAD_pex*EABEAD_rer)*EABEAD_imig/(EAB_py*EAB_y);
+        EABEAE_imc = EABEAE_numc*((EAE_pex*EABEAE_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
+      EABEAE_imcy = (EAE_pex*EABEAE_rer)*EABEAE_imc/(EAB_py*EAB_y);
+        EABEAE_imi = EABEAE_numi*((EAE_pex*EABEAE_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
+      EABEAE_imiy = (EAE_pex*EABEAE_rer)*EABEAE_imi/(EAB_py*EAB_y);
+        EABEAE_imcg = EABEAE_numcg*((EAE_pex*EABEAE_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
+      EABEAE_imcgy = (EAE_pex*EABEAE_rer)*EABEAE_imcg/(EAB_py*EAB_y);
+        EABEAE_imig = EABEAE_numig*((EAE_pex*EABEAE_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
+      EABEAE_imigy = (EAE_pex*EABEAE_rer)*EABEAE_imig/(EAB_py*EAB_y);
+        EABRW_imc = EABRW_numc*((RW_pex*EABRW_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
+      EABRW_imcy = (RW_pex*EABRW_rer)*EABRW_imc/(EAB_py*EAB_y);
+        EABRW_imi = EABRW_numi*((RW_pex*EABRW_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
+      EABRW_imiy = (RW_pex*EABRW_rer)*EABRW_imi/(EAB_py*EAB_y);
+        EABRW_imcg = EABRW_numcg*((RW_pex*EABRW_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
+      EABRW_imcgy = (RW_pex*EABRW_rer)*EABRW_imcg/(EAB_py*EAB_y);
+        EABRW_imig = EABRW_numig*((RW_pex*EABRW_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
+      EABRW_imigy = (RW_pex*EABRW_rer)*EABRW_imig/(EAB_py*EAB_y);
+        EABUS_imc = 
+        +(1
+        -EABEAA_numc
+        -EABEAC_numc
+        -EABEAD_numc
+        -EABEAE_numc
+        -EABRW_numc
+        )*((US_pex*EABUS_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
+      EABUS_imcy = (US_pex*EABUS_rer)*EABUS_imc/(EAB_py*EAB_y);
+        EABUS_imi = 
+        +(1
+        -EABEAA_numi
+        -EABEAC_numi
+        -EABEAD_numi
+        -EABEAE_numi
+        -EABRW_numi
+        )*((US_pex*EABUS_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
+      EABUS_imiy = (US_pex*EABUS_rer)*EABUS_imi/(EAB_py*EAB_y);
+        EABUS_imcg = 
+        +(1
+        -EABEAA_numcg
+        -EABEAC_numcg
+        -EABEAD_numcg
+        -EABEAE_numcg
+        -EABRW_numcg
+        )*((US_pex*EABUS_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
+      EABUS_imcgy = (US_pex*EABUS_rer)*EABUS_imcg/(EAB_py*EAB_y);
+        EABUS_imig = 
+        +(1
+        -EABEAA_numig
+        -EABEAC_numig
+        -EABEAD_numig
+        -EABEAE_numig
+        -EABRW_numig
+        )*((US_pex*EABUS_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
+      EABUS_imigy = (US_pex*EABUS_rer)*EABUS_imig/(EAB_py*EAB_y);
+  
   EAC_b = 0;
   EAC_bf = 0;
   EAC_by = 0;
@@ -13794,7 +14573,6 @@ EAC_igy = 0.01/10;
   EAC_zinv = 1;
   EAC_zn = 1;
   EAC_zt = 1;
-    
   
   EAC_cgybar = 0.01/10;
   EAC_igybar = 0.01/10;
@@ -13826,14 +14604,14 @@ EAC_igy = 0.01/10;
       EACEAA_rer = 1;
       EACEAA_rerbar = 1;
       EACEAA_im = 0.03;
-      EACEAA_gammaimc = 0;
-      EACEAA_gammaimcdag = 1;
-      EACEAA_gammaimi = 0;
-      EACEAA_gammaimidag = 1;
-      EACEAA_gammaimcg = 0;
-      EACEAA_gammaimcgdag = 1;
-      EACEAA_gammaimig = 0;
-      EACEAA_gammaimigdag = 1;
+        EACEAA_gammaimc = 0;
+        EACEAA_gammaimcdag = 1;
+        EACEAA_gammaimi = 0;
+        EACEAA_gammaimidag = 1;
+        EACEAA_gammaimcg = 0;
+        EACEAA_gammaimcgdag = 1;
+        EACEAA_gammaimig = 0;
+        EACEAA_gammaimigdag = 1;
       EACEAA_tot = 1;
       EACEAA_weight = 0.35;
       EACEAA_weightex = 0.35;
@@ -13841,14 +14619,14 @@ EAC_igy = 0.01/10;
       EACEAB_rer = 1;
       EACEAB_rerbar = 1;
       EACEAB_im = 0.03;
-      EACEAB_gammaimc = 0;
-      EACEAB_gammaimcdag = 1;
-      EACEAB_gammaimi = 0;
-      EACEAB_gammaimidag = 1;
-      EACEAB_gammaimcg = 0;
-      EACEAB_gammaimcgdag = 1;
-      EACEAB_gammaimig = 0;
-      EACEAB_gammaimigdag = 1;
+        EACEAB_gammaimc = 0;
+        EACEAB_gammaimcdag = 1;
+        EACEAB_gammaimi = 0;
+        EACEAB_gammaimidag = 1;
+        EACEAB_gammaimcg = 0;
+        EACEAB_gammaimcgdag = 1;
+        EACEAB_gammaimig = 0;
+        EACEAB_gammaimigdag = 1;
       EACEAB_tot = 1;
       EACEAB_weight = 0.35;
       EACEAB_weightex = 0.35;
@@ -13856,14 +14634,14 @@ EAC_igy = 0.01/10;
       EACEAD_rer = 1;
       EACEAD_rerbar = 1;
       EACEAD_im = 0.03;
-      EACEAD_gammaimc = 0;
-      EACEAD_gammaimcdag = 1;
-      EACEAD_gammaimi = 0;
-      EACEAD_gammaimidag = 1;
-      EACEAD_gammaimcg = 0;
-      EACEAD_gammaimcgdag = 1;
-      EACEAD_gammaimig = 0;
-      EACEAD_gammaimigdag = 1;
+        EACEAD_gammaimc = 0;
+        EACEAD_gammaimcdag = 1;
+        EACEAD_gammaimi = 0;
+        EACEAD_gammaimidag = 1;
+        EACEAD_gammaimcg = 0;
+        EACEAD_gammaimcgdag = 1;
+        EACEAD_gammaimig = 0;
+        EACEAD_gammaimigdag = 1;
       EACEAD_tot = 1;
       EACEAD_weight = 0.35;
       EACEAD_weightex = 0.35;
@@ -13871,14 +14649,14 @@ EAC_igy = 0.01/10;
       EACEAE_rer = 1;
       EACEAE_rerbar = 1;
       EACEAE_im = 0.03;
-      EACEAE_gammaimc = 0;
-      EACEAE_gammaimcdag = 1;
-      EACEAE_gammaimi = 0;
-      EACEAE_gammaimidag = 1;
-      EACEAE_gammaimcg = 0;
-      EACEAE_gammaimcgdag = 1;
-      EACEAE_gammaimig = 0;
-      EACEAE_gammaimigdag = 1;
+        EACEAE_gammaimc = 0;
+        EACEAE_gammaimcdag = 1;
+        EACEAE_gammaimi = 0;
+        EACEAE_gammaimidag = 1;
+        EACEAE_gammaimcg = 0;
+        EACEAE_gammaimcgdag = 1;
+        EACEAE_gammaimig = 0;
+        EACEAE_gammaimigdag = 1;
       EACEAE_tot = 1;
       EACEAE_weight = 0.35;
       EACEAE_weightex = 0.35;
@@ -13886,14 +14664,14 @@ EAC_igy = 0.01/10;
       EACRW_rer = 1;
       EACRW_rerbar = 1;
       EACRW_im = 0.03;
-      EACRW_gammaimc = 0;
-      EACRW_gammaimcdag = 1;
-      EACRW_gammaimi = 0;
-      EACRW_gammaimidag = 1;
-      EACRW_gammaimcg = 0;
-      EACRW_gammaimcgdag = 1;
-      EACRW_gammaimig = 0;
-      EACRW_gammaimigdag = 1;
+        EACRW_gammaimc = 0;
+        EACRW_gammaimcdag = 1;
+        EACRW_gammaimi = 0;
+        EACRW_gammaimidag = 1;
+        EACRW_gammaimcg = 0;
+        EACRW_gammaimcgdag = 1;
+        EACRW_gammaimig = 0;
+        EACRW_gammaimigdag = 1;
       EACRW_tot = 1;
       EACRW_weight = 0.35;
       EACRW_weightex = 0.35;
@@ -13901,18 +14679,143 @@ EAC_igy = 0.01/10;
       EACUS_rer = 1;
       EACUS_rerbar = 1;
       EACUS_im = 0.03;
-      EACUS_gammaimc = 0;
-      EACUS_gammaimcdag = 1;
-      EACUS_gammaimi = 0;
-      EACUS_gammaimidag = 1;
-      EACUS_gammaimcg = 0;
-      EACUS_gammaimcgdag = 1;
-      EACUS_gammaimig = 0;
-      EACUS_gammaimigdag = 1;
+        EACUS_gammaimc = 0;
+        EACUS_gammaimcdag = 1;
+        EACUS_gammaimi = 0;
+        EACUS_gammaimidag = 1;
+        EACUS_gammaimcg = 0;
+        EACUS_gammaimcgdag = 1;
+        EACUS_gammaimig = 0;
+        EACUS_gammaimigdag = 1;
       EACUS_tot = 1;
       EACUS_weight = 0.35;
       EACUS_weightex = 0.35;
       EACUS_weightim = 0.35;
+      
+      // Shares
+      EACEAA_excy = 0.09*3/(ctryNumberDouble-1);
+      EACEAA_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EACEAB_excy = 0.09*3/(ctryNumberDouble-1);
+      EACEAB_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EACEAD_excy = 0.09*3/(ctryNumberDouble-1);
+      EACEAD_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EACEAE_excy = 0.09*3/(ctryNumberDouble-1);
+      EACEAE_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EACRW_excy = 0.09*3/(ctryNumberDouble-1);
+      EACRW_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EACUS_excy = 0.09*3/(ctryNumberDouble-1);
+      EACUS_exiy = 0.0008*3/(ctryNumberDouble-1);
+  EAC_qc =  0.321620156669017*2;
+  EAC_qi =  0.00209600391746659*2;
+  EAC_qcg =  EAC_cg;
+  EAC_qig =  EAC_ig;
+  EAC_ntc = 0.161;
+  EAC_nti = 0.001;
+  EAC_ntcg = (1-EAC_nucg)*(EAC_pnt/EAC_pcg)^(-EAC_mucg)*EAC_qcg;
+  EAC_ntig = (1-EAC_nuig)*(EAC_pnt/EAC_pig)^(-EAC_muig)*EAC_qig;
+  EAC_ttc = 0.16;
+  EAC_tti = 0.001;
+  EAC_ttcg = EAC_nucg*(EAC_pttcg/EAC_pcg)^(-EAC_mucg)*EAC_qcg;
+  EAC_ttig = EAC_nuig*(EAC_pttig/EAC_pig)^(-EAC_muig)*EAC_qig;
+  EAC_htc = 0.08;
+  EAC_hti =  0.0005;
+  EAC_htcg = EAC_nutcg*(EAC_pht/EAC_pttcg)^(-EAC_mutcg)*EAC_ttcg;
+  EAC_htig = EAC_nutig*(EAC_pht/EAC_pttig)^(-EAC_mutig)*EAC_ttig;
+  EAC_imc = 0.08;
+  EAC_imcy = 0.25;
+  EAC_imi = 0.0005;
+  EAC_imiy = 0.0016;
+  EAC_imcg = (1-EAC_nutcg)*(EAC_pimcg/EAC_pttcg)^(-EAC_mutcg)*EAC_ttcg;
+  EAC_imcgy = EAC_pimcg*EAC_imcg/(EAC_py*EAC_y);
+  EAC_imig = (1-EAC_nutig)*(EAC_pimig/EAC_pttig)^(-EAC_mutig)*EAC_ttig;
+  EAC_imigy = EAC_pimig*EAC_imig/(EAC_py*EAC_y);
+        EACEAA_imc = 
+        +(1
+        -EACEAB_numc
+        -EACEAD_numc
+        -EACEAE_numc
+        -EACRW_numc
+        -EACUS_numc
+        )*((EAA_pex*EACEAA_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
+      EACEAA_imcy = (EAA_pex*EACEAA_rer)*EACEAA_imc/(EAC_py*EAC_y);
+        EACEAA_imi = 
+        +(1
+        -EACEAB_numi
+        -EACEAD_numi
+        -EACEAE_numi
+        -EACRW_numi
+        -EACUS_numi
+        )*((EAA_pex*EACEAA_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
+      EACEAA_imiy = (EAA_pex*EACEAA_rer)*EACEAA_imi/(EAC_py*EAC_y);
+        EACEAA_imcg = 
+        +(1
+        -EACEAB_numcg
+        -EACEAD_numcg
+        -EACEAE_numcg
+        -EACRW_numcg
+        -EACUS_numcg
+        )*((EAA_pex*EACEAA_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
+      EACEAA_imcgy = (EAA_pex*EACEAA_rer)*EACEAA_imcg/(EAC_py*EAC_y);
+        EACEAA_imig = 
+        +(1
+        -EACEAB_numig
+        -EACEAD_numig
+        -EACEAE_numig
+        -EACRW_numig
+        -EACUS_numig
+        )*((EAA_pex*EACEAA_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
+      EACEAA_imigy = (EAA_pex*EACEAA_rer)*EACEAA_imig/(EAC_py*EAC_y);
+        EACEAB_imc = EACEAB_numc*((EAB_pex*EACEAB_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
+      EACEAB_imcy = (EAB_pex*EACEAB_rer)*EACEAB_imc/(EAC_py*EAC_y);
+        EACEAB_imi = EACEAB_numi*((EAB_pex*EACEAB_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
+      EACEAB_imiy = (EAB_pex*EACEAB_rer)*EACEAB_imi/(EAC_py*EAC_y);
+        EACEAB_imcg = EACEAB_numcg*((EAB_pex*EACEAB_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
+      EACEAB_imcgy = (EAB_pex*EACEAB_rer)*EACEAB_imcg/(EAC_py*EAC_y);
+        EACEAB_imig = EACEAB_numig*((EAB_pex*EACEAB_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
+      EACEAB_imigy = (EAB_pex*EACEAB_rer)*EACEAB_imig/(EAC_py*EAC_y);
+        EACEAD_imc = EACEAD_numc*((EAD_pex*EACEAD_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
+      EACEAD_imcy = (EAD_pex*EACEAD_rer)*EACEAD_imc/(EAC_py*EAC_y);
+        EACEAD_imi = EACEAD_numi*((EAD_pex*EACEAD_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
+      EACEAD_imiy = (EAD_pex*EACEAD_rer)*EACEAD_imi/(EAC_py*EAC_y);
+        EACEAD_imcg = EACEAD_numcg*((EAD_pex*EACEAD_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
+      EACEAD_imcgy = (EAD_pex*EACEAD_rer)*EACEAD_imcg/(EAC_py*EAC_y);
+        EACEAD_imig = EACEAD_numig*((EAD_pex*EACEAD_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
+      EACEAD_imigy = (EAD_pex*EACEAD_rer)*EACEAD_imig/(EAC_py*EAC_y);
+        EACEAE_imc = EACEAE_numc*((EAE_pex*EACEAE_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
+      EACEAE_imcy = (EAE_pex*EACEAE_rer)*EACEAE_imc/(EAC_py*EAC_y);
+        EACEAE_imi = EACEAE_numi*((EAE_pex*EACEAE_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
+      EACEAE_imiy = (EAE_pex*EACEAE_rer)*EACEAE_imi/(EAC_py*EAC_y);
+        EACEAE_imcg = EACEAE_numcg*((EAE_pex*EACEAE_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
+      EACEAE_imcgy = (EAE_pex*EACEAE_rer)*EACEAE_imcg/(EAC_py*EAC_y);
+        EACEAE_imig = EACEAE_numig*((EAE_pex*EACEAE_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
+      EACEAE_imigy = (EAE_pex*EACEAE_rer)*EACEAE_imig/(EAC_py*EAC_y);
+        EACRW_imc = EACRW_numc*((RW_pex*EACRW_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
+      EACRW_imcy = (RW_pex*EACRW_rer)*EACRW_imc/(EAC_py*EAC_y);
+        EACRW_imi = EACRW_numi*((RW_pex*EACRW_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
+      EACRW_imiy = (RW_pex*EACRW_rer)*EACRW_imi/(EAC_py*EAC_y);
+        EACRW_imcg = EACRW_numcg*((RW_pex*EACRW_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
+      EACRW_imcgy = (RW_pex*EACRW_rer)*EACRW_imcg/(EAC_py*EAC_y);
+        EACRW_imig = EACRW_numig*((RW_pex*EACRW_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
+      EACRW_imigy = (RW_pex*EACRW_rer)*EACRW_imig/(EAC_py*EAC_y);
+        EACUS_imc = EACUS_numc*((US_pex*EACUS_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
+      EACUS_imcy = (US_pex*EACUS_rer)*EACUS_imc/(EAC_py*EAC_y);
+        EACUS_imi = EACUS_numi*((US_pex*EACUS_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
+      EACUS_imiy = (US_pex*EACUS_rer)*EACUS_imi/(EAC_py*EAC_y);
+        EACUS_imcg = EACUS_numcg*((US_pex*EACUS_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
+      EACUS_imcgy = (US_pex*EACUS_rer)*EACUS_imcg/(EAC_py*EAC_y);
+        EACUS_imig = EACUS_numig*((US_pex*EACUS_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
+      EACUS_imigy = (US_pex*EACUS_rer)*EACUS_imig/(EAC_py*EAC_y);
+  
   EAD_b = 0;
   EAD_bf = 0;
   EAD_by = 0;
@@ -14082,7 +14985,6 @@ EAD_igy = 0.01/10;
   EAD_zinv = 1;
   EAD_zn = 1;
   EAD_zt = 1;
-    
   
   EAD_cgybar = 0.01/10;
   EAD_igybar = 0.01/10;
@@ -14114,14 +15016,14 @@ EAD_igy = 0.01/10;
       EADEAA_rer = 1;
       EADEAA_rerbar = 1;
       EADEAA_im = 0.03;
-      EADEAA_gammaimc = 0;
-      EADEAA_gammaimcdag = 1;
-      EADEAA_gammaimi = 0;
-      EADEAA_gammaimidag = 1;
-      EADEAA_gammaimcg = 0;
-      EADEAA_gammaimcgdag = 1;
-      EADEAA_gammaimig = 0;
-      EADEAA_gammaimigdag = 1;
+        EADEAA_gammaimc = 0;
+        EADEAA_gammaimcdag = 1;
+        EADEAA_gammaimi = 0;
+        EADEAA_gammaimidag = 1;
+        EADEAA_gammaimcg = 0;
+        EADEAA_gammaimcgdag = 1;
+        EADEAA_gammaimig = 0;
+        EADEAA_gammaimigdag = 1;
       EADEAA_tot = 1;
       EADEAA_weight = 0.35;
       EADEAA_weightex = 0.35;
@@ -14129,14 +15031,14 @@ EAD_igy = 0.01/10;
       EADEAB_rer = 1;
       EADEAB_rerbar = 1;
       EADEAB_im = 0.03;
-      EADEAB_gammaimc = 0;
-      EADEAB_gammaimcdag = 1;
-      EADEAB_gammaimi = 0;
-      EADEAB_gammaimidag = 1;
-      EADEAB_gammaimcg = 0;
-      EADEAB_gammaimcgdag = 1;
-      EADEAB_gammaimig = 0;
-      EADEAB_gammaimigdag = 1;
+        EADEAB_gammaimc = 0;
+        EADEAB_gammaimcdag = 1;
+        EADEAB_gammaimi = 0;
+        EADEAB_gammaimidag = 1;
+        EADEAB_gammaimcg = 0;
+        EADEAB_gammaimcgdag = 1;
+        EADEAB_gammaimig = 0;
+        EADEAB_gammaimigdag = 1;
       EADEAB_tot = 1;
       EADEAB_weight = 0.35;
       EADEAB_weightex = 0.35;
@@ -14144,14 +15046,14 @@ EAD_igy = 0.01/10;
       EADEAC_rer = 1;
       EADEAC_rerbar = 1;
       EADEAC_im = 0.03;
-      EADEAC_gammaimc = 0;
-      EADEAC_gammaimcdag = 1;
-      EADEAC_gammaimi = 0;
-      EADEAC_gammaimidag = 1;
-      EADEAC_gammaimcg = 0;
-      EADEAC_gammaimcgdag = 1;
-      EADEAC_gammaimig = 0;
-      EADEAC_gammaimigdag = 1;
+        EADEAC_gammaimc = 0;
+        EADEAC_gammaimcdag = 1;
+        EADEAC_gammaimi = 0;
+        EADEAC_gammaimidag = 1;
+        EADEAC_gammaimcg = 0;
+        EADEAC_gammaimcgdag = 1;
+        EADEAC_gammaimig = 0;
+        EADEAC_gammaimigdag = 1;
       EADEAC_tot = 1;
       EADEAC_weight = 0.35;
       EADEAC_weightex = 0.35;
@@ -14159,14 +15061,14 @@ EAD_igy = 0.01/10;
       EADEAE_rer = 1;
       EADEAE_rerbar = 1;
       EADEAE_im = 0.03;
-      EADEAE_gammaimc = 0;
-      EADEAE_gammaimcdag = 1;
-      EADEAE_gammaimi = 0;
-      EADEAE_gammaimidag = 1;
-      EADEAE_gammaimcg = 0;
-      EADEAE_gammaimcgdag = 1;
-      EADEAE_gammaimig = 0;
-      EADEAE_gammaimigdag = 1;
+        EADEAE_gammaimc = 0;
+        EADEAE_gammaimcdag = 1;
+        EADEAE_gammaimi = 0;
+        EADEAE_gammaimidag = 1;
+        EADEAE_gammaimcg = 0;
+        EADEAE_gammaimcgdag = 1;
+        EADEAE_gammaimig = 0;
+        EADEAE_gammaimigdag = 1;
       EADEAE_tot = 1;
       EADEAE_weight = 0.35;
       EADEAE_weightex = 0.35;
@@ -14174,14 +15076,14 @@ EAD_igy = 0.01/10;
       EADRW_rer = 1;
       EADRW_rerbar = 1;
       EADRW_im = 0.03;
-      EADRW_gammaimc = 0;
-      EADRW_gammaimcdag = 1;
-      EADRW_gammaimi = 0;
-      EADRW_gammaimidag = 1;
-      EADRW_gammaimcg = 0;
-      EADRW_gammaimcgdag = 1;
-      EADRW_gammaimig = 0;
-      EADRW_gammaimigdag = 1;
+        EADRW_gammaimc = 0;
+        EADRW_gammaimcdag = 1;
+        EADRW_gammaimi = 0;
+        EADRW_gammaimidag = 1;
+        EADRW_gammaimcg = 0;
+        EADRW_gammaimcgdag = 1;
+        EADRW_gammaimig = 0;
+        EADRW_gammaimigdag = 1;
       EADRW_tot = 1;
       EADRW_weight = 0.35;
       EADRW_weightex = 0.35;
@@ -14189,18 +15091,143 @@ EAD_igy = 0.01/10;
       EADUS_rer = 1;
       EADUS_rerbar = 1;
       EADUS_im = 0.03;
-      EADUS_gammaimc = 0;
-      EADUS_gammaimcdag = 1;
-      EADUS_gammaimi = 0;
-      EADUS_gammaimidag = 1;
-      EADUS_gammaimcg = 0;
-      EADUS_gammaimcgdag = 1;
-      EADUS_gammaimig = 0;
-      EADUS_gammaimigdag = 1;
+        EADUS_gammaimc = 0;
+        EADUS_gammaimcdag = 1;
+        EADUS_gammaimi = 0;
+        EADUS_gammaimidag = 1;
+        EADUS_gammaimcg = 0;
+        EADUS_gammaimcgdag = 1;
+        EADUS_gammaimig = 0;
+        EADUS_gammaimigdag = 1;
       EADUS_tot = 1;
       EADUS_weight = 0.35;
       EADUS_weightex = 0.35;
       EADUS_weightim = 0.35;
+      
+      // Shares
+      EADEAA_excy = 0.09*3/(ctryNumberDouble-1);
+      EADEAA_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EADEAB_excy = 0.09*3/(ctryNumberDouble-1);
+      EADEAB_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EADEAC_excy = 0.09*3/(ctryNumberDouble-1);
+      EADEAC_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EADEAE_excy = 0.09*3/(ctryNumberDouble-1);
+      EADEAE_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EADRW_excy = 0.09*3/(ctryNumberDouble-1);
+      EADRW_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EADUS_excy = 0.09*3/(ctryNumberDouble-1);
+      EADUS_exiy = 0.0008*3/(ctryNumberDouble-1);
+  EAD_qc =  0.321620156669017*2;
+  EAD_qi =  0.00209600391746659*2;
+  EAD_qcg =  EAD_cg;
+  EAD_qig =  EAD_ig;
+  EAD_ntc = 0.161;
+  EAD_nti = 0.001;
+  EAD_ntcg = (1-EAD_nucg)*(EAD_pnt/EAD_pcg)^(-EAD_mucg)*EAD_qcg;
+  EAD_ntig = (1-EAD_nuig)*(EAD_pnt/EAD_pig)^(-EAD_muig)*EAD_qig;
+  EAD_ttc = 0.16;
+  EAD_tti = 0.001;
+  EAD_ttcg = EAD_nucg*(EAD_pttcg/EAD_pcg)^(-EAD_mucg)*EAD_qcg;
+  EAD_ttig = EAD_nuig*(EAD_pttig/EAD_pig)^(-EAD_muig)*EAD_qig;
+  EAD_htc = 0.08;
+  EAD_hti =  0.0005;
+  EAD_htcg = EAD_nutcg*(EAD_pht/EAD_pttcg)^(-EAD_mutcg)*EAD_ttcg;
+  EAD_htig = EAD_nutig*(EAD_pht/EAD_pttig)^(-EAD_mutig)*EAD_ttig;
+  EAD_imc = 0.08;
+  EAD_imcy = 0.25;
+  EAD_imi = 0.0005;
+  EAD_imiy = 0.0016;
+  EAD_imcg = (1-EAD_nutcg)*(EAD_pimcg/EAD_pttcg)^(-EAD_mutcg)*EAD_ttcg;
+  EAD_imcgy = EAD_pimcg*EAD_imcg/(EAD_py*EAD_y);
+  EAD_imig = (1-EAD_nutig)*(EAD_pimig/EAD_pttig)^(-EAD_mutig)*EAD_ttig;
+  EAD_imigy = EAD_pimig*EAD_imig/(EAD_py*EAD_y);
+        EADEAA_imc = EADEAA_numc*((EAA_pex*EADEAA_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
+      EADEAA_imcy = (EAA_pex*EADEAA_rer)*EADEAA_imc/(EAD_py*EAD_y);
+        EADEAA_imi = EADEAA_numi*((EAA_pex*EADEAA_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
+      EADEAA_imiy = (EAA_pex*EADEAA_rer)*EADEAA_imi/(EAD_py*EAD_y);
+        EADEAA_imcg = EADEAA_numcg*((EAA_pex*EADEAA_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
+      EADEAA_imcgy = (EAA_pex*EADEAA_rer)*EADEAA_imcg/(EAD_py*EAD_y);
+        EADEAA_imig = EADEAA_numig*((EAA_pex*EADEAA_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
+      EADEAA_imigy = (EAA_pex*EADEAA_rer)*EADEAA_imig/(EAD_py*EAD_y);
+        EADEAB_imc = 
+        +(1
+        -EADEAA_numc
+        -EADEAC_numc
+        -EADEAE_numc
+        -EADRW_numc
+        -EADUS_numc
+        )*((EAB_pex*EADEAB_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
+      EADEAB_imcy = (EAB_pex*EADEAB_rer)*EADEAB_imc/(EAD_py*EAD_y);
+        EADEAB_imi = 
+        +(1
+        -EADEAA_numi
+        -EADEAC_numi
+        -EADEAE_numi
+        -EADRW_numi
+        -EADUS_numi
+        )*((EAB_pex*EADEAB_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
+      EADEAB_imiy = (EAB_pex*EADEAB_rer)*EADEAB_imi/(EAD_py*EAD_y);
+        EADEAB_imcg = 
+        +(1
+        -EADEAA_numcg
+        -EADEAC_numcg
+        -EADEAE_numcg
+        -EADRW_numcg
+        -EADUS_numcg
+        )*((EAB_pex*EADEAB_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
+      EADEAB_imcgy = (EAB_pex*EADEAB_rer)*EADEAB_imcg/(EAD_py*EAD_y);
+        EADEAB_imig = 
+        +(1
+        -EADEAA_numig
+        -EADEAC_numig
+        -EADEAE_numig
+        -EADRW_numig
+        -EADUS_numig
+        )*((EAB_pex*EADEAB_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
+      EADEAB_imigy = (EAB_pex*EADEAB_rer)*EADEAB_imig/(EAD_py*EAD_y);
+        EADEAC_imc = EADEAC_numc*((EAC_pex*EADEAC_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
+      EADEAC_imcy = (EAC_pex*EADEAC_rer)*EADEAC_imc/(EAD_py*EAD_y);
+        EADEAC_imi = EADEAC_numi*((EAC_pex*EADEAC_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
+      EADEAC_imiy = (EAC_pex*EADEAC_rer)*EADEAC_imi/(EAD_py*EAD_y);
+        EADEAC_imcg = EADEAC_numcg*((EAC_pex*EADEAC_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
+      EADEAC_imcgy = (EAC_pex*EADEAC_rer)*EADEAC_imcg/(EAD_py*EAD_y);
+        EADEAC_imig = EADEAC_numig*((EAC_pex*EADEAC_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
+      EADEAC_imigy = (EAC_pex*EADEAC_rer)*EADEAC_imig/(EAD_py*EAD_y);
+        EADEAE_imc = EADEAE_numc*((EAE_pex*EADEAE_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
+      EADEAE_imcy = (EAE_pex*EADEAE_rer)*EADEAE_imc/(EAD_py*EAD_y);
+        EADEAE_imi = EADEAE_numi*((EAE_pex*EADEAE_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
+      EADEAE_imiy = (EAE_pex*EADEAE_rer)*EADEAE_imi/(EAD_py*EAD_y);
+        EADEAE_imcg = EADEAE_numcg*((EAE_pex*EADEAE_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
+      EADEAE_imcgy = (EAE_pex*EADEAE_rer)*EADEAE_imcg/(EAD_py*EAD_y);
+        EADEAE_imig = EADEAE_numig*((EAE_pex*EADEAE_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
+      EADEAE_imigy = (EAE_pex*EADEAE_rer)*EADEAE_imig/(EAD_py*EAD_y);
+        EADRW_imc = EADRW_numc*((RW_pex*EADRW_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
+      EADRW_imcy = (RW_pex*EADRW_rer)*EADRW_imc/(EAD_py*EAD_y);
+        EADRW_imi = EADRW_numi*((RW_pex*EADRW_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
+      EADRW_imiy = (RW_pex*EADRW_rer)*EADRW_imi/(EAD_py*EAD_y);
+        EADRW_imcg = EADRW_numcg*((RW_pex*EADRW_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
+      EADRW_imcgy = (RW_pex*EADRW_rer)*EADRW_imcg/(EAD_py*EAD_y);
+        EADRW_imig = EADRW_numig*((RW_pex*EADRW_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
+      EADRW_imigy = (RW_pex*EADRW_rer)*EADRW_imig/(EAD_py*EAD_y);
+        EADUS_imc = EADUS_numc*((US_pex*EADUS_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
+      EADUS_imcy = (US_pex*EADUS_rer)*EADUS_imc/(EAD_py*EAD_y);
+        EADUS_imi = EADUS_numi*((US_pex*EADUS_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
+      EADUS_imiy = (US_pex*EADUS_rer)*EADUS_imi/(EAD_py*EAD_y);
+        EADUS_imcg = EADUS_numcg*((US_pex*EADUS_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
+      EADUS_imcgy = (US_pex*EADUS_rer)*EADUS_imcg/(EAD_py*EAD_y);
+        EADUS_imig = EADUS_numig*((US_pex*EADUS_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
+      EADUS_imigy = (US_pex*EADUS_rer)*EADUS_imig/(EAD_py*EAD_y);
+  
   EAE_b = 0;
   EAE_bf = 0;
   EAE_by = 0;
@@ -14370,7 +15397,6 @@ EAE_igy = 0.01/10;
   EAE_zinv = 1;
   EAE_zn = 1;
   EAE_zt = 1;
-    
   
   EAE_cgybar = 0.01/10;
   EAE_igybar = 0.01/10;
@@ -14402,14 +15428,14 @@ EAE_igy = 0.01/10;
       EAEEAA_rer = 1;
       EAEEAA_rerbar = 1;
       EAEEAA_im = 0.03;
-      EAEEAA_gammaimc = 0;
-      EAEEAA_gammaimcdag = 1;
-      EAEEAA_gammaimi = 0;
-      EAEEAA_gammaimidag = 1;
-      EAEEAA_gammaimcg = 0;
-      EAEEAA_gammaimcgdag = 1;
-      EAEEAA_gammaimig = 0;
-      EAEEAA_gammaimigdag = 1;
+        EAEEAA_gammaimc = 0;
+        EAEEAA_gammaimcdag = 1;
+        EAEEAA_gammaimi = 0;
+        EAEEAA_gammaimidag = 1;
+        EAEEAA_gammaimcg = 0;
+        EAEEAA_gammaimcgdag = 1;
+        EAEEAA_gammaimig = 0;
+        EAEEAA_gammaimigdag = 1;
       EAEEAA_tot = 1;
       EAEEAA_weight = 0.35;
       EAEEAA_weightex = 0.35;
@@ -14417,14 +15443,14 @@ EAE_igy = 0.01/10;
       EAEEAB_rer = 1;
       EAEEAB_rerbar = 1;
       EAEEAB_im = 0.03;
-      EAEEAB_gammaimc = 0;
-      EAEEAB_gammaimcdag = 1;
-      EAEEAB_gammaimi = 0;
-      EAEEAB_gammaimidag = 1;
-      EAEEAB_gammaimcg = 0;
-      EAEEAB_gammaimcgdag = 1;
-      EAEEAB_gammaimig = 0;
-      EAEEAB_gammaimigdag = 1;
+        EAEEAB_gammaimc = 0;
+        EAEEAB_gammaimcdag = 1;
+        EAEEAB_gammaimi = 0;
+        EAEEAB_gammaimidag = 1;
+        EAEEAB_gammaimcg = 0;
+        EAEEAB_gammaimcgdag = 1;
+        EAEEAB_gammaimig = 0;
+        EAEEAB_gammaimigdag = 1;
       EAEEAB_tot = 1;
       EAEEAB_weight = 0.35;
       EAEEAB_weightex = 0.35;
@@ -14432,14 +15458,14 @@ EAE_igy = 0.01/10;
       EAEEAC_rer = 1;
       EAEEAC_rerbar = 1;
       EAEEAC_im = 0.03;
-      EAEEAC_gammaimc = 0;
-      EAEEAC_gammaimcdag = 1;
-      EAEEAC_gammaimi = 0;
-      EAEEAC_gammaimidag = 1;
-      EAEEAC_gammaimcg = 0;
-      EAEEAC_gammaimcgdag = 1;
-      EAEEAC_gammaimig = 0;
-      EAEEAC_gammaimigdag = 1;
+        EAEEAC_gammaimc = 0;
+        EAEEAC_gammaimcdag = 1;
+        EAEEAC_gammaimi = 0;
+        EAEEAC_gammaimidag = 1;
+        EAEEAC_gammaimcg = 0;
+        EAEEAC_gammaimcgdag = 1;
+        EAEEAC_gammaimig = 0;
+        EAEEAC_gammaimigdag = 1;
       EAEEAC_tot = 1;
       EAEEAC_weight = 0.35;
       EAEEAC_weightex = 0.35;
@@ -14447,14 +15473,14 @@ EAE_igy = 0.01/10;
       EAEEAD_rer = 1;
       EAEEAD_rerbar = 1;
       EAEEAD_im = 0.03;
-      EAEEAD_gammaimc = 0;
-      EAEEAD_gammaimcdag = 1;
-      EAEEAD_gammaimi = 0;
-      EAEEAD_gammaimidag = 1;
-      EAEEAD_gammaimcg = 0;
-      EAEEAD_gammaimcgdag = 1;
-      EAEEAD_gammaimig = 0;
-      EAEEAD_gammaimigdag = 1;
+        EAEEAD_gammaimc = 0;
+        EAEEAD_gammaimcdag = 1;
+        EAEEAD_gammaimi = 0;
+        EAEEAD_gammaimidag = 1;
+        EAEEAD_gammaimcg = 0;
+        EAEEAD_gammaimcgdag = 1;
+        EAEEAD_gammaimig = 0;
+        EAEEAD_gammaimigdag = 1;
       EAEEAD_tot = 1;
       EAEEAD_weight = 0.35;
       EAEEAD_weightex = 0.35;
@@ -14462,14 +15488,14 @@ EAE_igy = 0.01/10;
       EAERW_rer = 1;
       EAERW_rerbar = 1;
       EAERW_im = 0.03;
-      EAERW_gammaimc = 0;
-      EAERW_gammaimcdag = 1;
-      EAERW_gammaimi = 0;
-      EAERW_gammaimidag = 1;
-      EAERW_gammaimcg = 0;
-      EAERW_gammaimcgdag = 1;
-      EAERW_gammaimig = 0;
-      EAERW_gammaimigdag = 1;
+        EAERW_gammaimc = 0;
+        EAERW_gammaimcdag = 1;
+        EAERW_gammaimi = 0;
+        EAERW_gammaimidag = 1;
+        EAERW_gammaimcg = 0;
+        EAERW_gammaimcgdag = 1;
+        EAERW_gammaimig = 0;
+        EAERW_gammaimigdag = 1;
       EAERW_tot = 1;
       EAERW_weight = 0.35;
       EAERW_weightex = 0.35;
@@ -14477,18 +15503,143 @@ EAE_igy = 0.01/10;
       EAEUS_rer = 1;
       EAEUS_rerbar = 1;
       EAEUS_im = 0.03;
-      EAEUS_gammaimc = 0;
-      EAEUS_gammaimcdag = 1;
-      EAEUS_gammaimi = 0;
-      EAEUS_gammaimidag = 1;
-      EAEUS_gammaimcg = 0;
-      EAEUS_gammaimcgdag = 1;
-      EAEUS_gammaimig = 0;
-      EAEUS_gammaimigdag = 1;
+        EAEUS_gammaimc = 0;
+        EAEUS_gammaimcdag = 1;
+        EAEUS_gammaimi = 0;
+        EAEUS_gammaimidag = 1;
+        EAEUS_gammaimcg = 0;
+        EAEUS_gammaimcgdag = 1;
+        EAEUS_gammaimig = 0;
+        EAEUS_gammaimigdag = 1;
       EAEUS_tot = 1;
       EAEUS_weight = 0.35;
       EAEUS_weightex = 0.35;
       EAEUS_weightim = 0.35;
+      
+      // Shares
+      EAEEAA_excy = 0.09*3/(ctryNumberDouble-1);
+      EAEEAA_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EAEEAB_excy = 0.09*3/(ctryNumberDouble-1);
+      EAEEAB_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EAEEAC_excy = 0.09*3/(ctryNumberDouble-1);
+      EAEEAC_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EAEEAD_excy = 0.09*3/(ctryNumberDouble-1);
+      EAEEAD_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EAERW_excy = 0.09*3/(ctryNumberDouble-1);
+      EAERW_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      EAEUS_excy = 0.09*3/(ctryNumberDouble-1);
+      EAEUS_exiy = 0.0008*3/(ctryNumberDouble-1);
+  EAE_qc =  0.321620156669017*2;
+  EAE_qi =  0.00209600391746659*2;
+  EAE_qcg =  EAE_cg;
+  EAE_qig =  EAE_ig;
+  EAE_ntc = 0.161;
+  EAE_nti = 0.001;
+  EAE_ntcg = (1-EAE_nucg)*(EAE_pnt/EAE_pcg)^(-EAE_mucg)*EAE_qcg;
+  EAE_ntig = (1-EAE_nuig)*(EAE_pnt/EAE_pig)^(-EAE_muig)*EAE_qig;
+  EAE_ttc = 0.16;
+  EAE_tti = 0.001;
+  EAE_ttcg = EAE_nucg*(EAE_pttcg/EAE_pcg)^(-EAE_mucg)*EAE_qcg;
+  EAE_ttig = EAE_nuig*(EAE_pttig/EAE_pig)^(-EAE_muig)*EAE_qig;
+  EAE_htc = 0.08;
+  EAE_hti =  0.0005;
+  EAE_htcg = EAE_nutcg*(EAE_pht/EAE_pttcg)^(-EAE_mutcg)*EAE_ttcg;
+  EAE_htig = EAE_nutig*(EAE_pht/EAE_pttig)^(-EAE_mutig)*EAE_ttig;
+  EAE_imc = 0.08;
+  EAE_imcy = 0.25;
+  EAE_imi = 0.0005;
+  EAE_imiy = 0.0016;
+  EAE_imcg = (1-EAE_nutcg)*(EAE_pimcg/EAE_pttcg)^(-EAE_mutcg)*EAE_ttcg;
+  EAE_imcgy = EAE_pimcg*EAE_imcg/(EAE_py*EAE_y);
+  EAE_imig = (1-EAE_nutig)*(EAE_pimig/EAE_pttig)^(-EAE_mutig)*EAE_ttig;
+  EAE_imigy = EAE_pimig*EAE_imig/(EAE_py*EAE_y);
+        EAEEAA_imc = EAEEAA_numc*((EAA_pex*EAEEAA_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
+      EAEEAA_imcy = (EAA_pex*EAEEAA_rer)*EAEEAA_imc/(EAE_py*EAE_y);
+        EAEEAA_imi = EAEEAA_numi*((EAA_pex*EAEEAA_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
+      EAEEAA_imiy = (EAA_pex*EAEEAA_rer)*EAEEAA_imi/(EAE_py*EAE_y);
+        EAEEAA_imcg = EAEEAA_numcg*((EAA_pex*EAEEAA_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
+      EAEEAA_imcgy = (EAA_pex*EAEEAA_rer)*EAEEAA_imcg/(EAE_py*EAE_y);
+        EAEEAA_imig = EAEEAA_numig*((EAA_pex*EAEEAA_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
+      EAEEAA_imigy = (EAA_pex*EAEEAA_rer)*EAEEAA_imig/(EAE_py*EAE_y);
+        EAEEAB_imc = EAEEAB_numc*((EAB_pex*EAEEAB_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
+      EAEEAB_imcy = (EAB_pex*EAEEAB_rer)*EAEEAB_imc/(EAE_py*EAE_y);
+        EAEEAB_imi = EAEEAB_numi*((EAB_pex*EAEEAB_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
+      EAEEAB_imiy = (EAB_pex*EAEEAB_rer)*EAEEAB_imi/(EAE_py*EAE_y);
+        EAEEAB_imcg = EAEEAB_numcg*((EAB_pex*EAEEAB_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
+      EAEEAB_imcgy = (EAB_pex*EAEEAB_rer)*EAEEAB_imcg/(EAE_py*EAE_y);
+        EAEEAB_imig = EAEEAB_numig*((EAB_pex*EAEEAB_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
+      EAEEAB_imigy = (EAB_pex*EAEEAB_rer)*EAEEAB_imig/(EAE_py*EAE_y);
+        EAEEAC_imc = 
+        +(1
+        -EAEEAA_numc
+        -EAEEAB_numc
+        -EAEEAD_numc
+        -EAERW_numc
+        -EAEUS_numc
+        )*((EAC_pex*EAEEAC_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
+      EAEEAC_imcy = (EAC_pex*EAEEAC_rer)*EAEEAC_imc/(EAE_py*EAE_y);
+        EAEEAC_imi = 
+        +(1
+        -EAEEAA_numi
+        -EAEEAB_numi
+        -EAEEAD_numi
+        -EAERW_numi
+        -EAEUS_numi
+        )*((EAC_pex*EAEEAC_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
+      EAEEAC_imiy = (EAC_pex*EAEEAC_rer)*EAEEAC_imi/(EAE_py*EAE_y);
+        EAEEAC_imcg = 
+        +(1
+        -EAEEAA_numcg
+        -EAEEAB_numcg
+        -EAEEAD_numcg
+        -EAERW_numcg
+        -EAEUS_numcg
+        )*((EAC_pex*EAEEAC_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
+      EAEEAC_imcgy = (EAC_pex*EAEEAC_rer)*EAEEAC_imcg/(EAE_py*EAE_y);
+        EAEEAC_imig = 
+        +(1
+        -EAEEAA_numig
+        -EAEEAB_numig
+        -EAEEAD_numig
+        -EAERW_numig
+        -EAEUS_numig
+        )*((EAC_pex*EAEEAC_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
+      EAEEAC_imigy = (EAC_pex*EAEEAC_rer)*EAEEAC_imig/(EAE_py*EAE_y);
+        EAEEAD_imc = EAEEAD_numc*((EAD_pex*EAEEAD_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
+      EAEEAD_imcy = (EAD_pex*EAEEAD_rer)*EAEEAD_imc/(EAE_py*EAE_y);
+        EAEEAD_imi = EAEEAD_numi*((EAD_pex*EAEEAD_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
+      EAEEAD_imiy = (EAD_pex*EAEEAD_rer)*EAEEAD_imi/(EAE_py*EAE_y);
+        EAEEAD_imcg = EAEEAD_numcg*((EAD_pex*EAEEAD_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
+      EAEEAD_imcgy = (EAD_pex*EAEEAD_rer)*EAEEAD_imcg/(EAE_py*EAE_y);
+        EAEEAD_imig = EAEEAD_numig*((EAD_pex*EAEEAD_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
+      EAEEAD_imigy = (EAD_pex*EAEEAD_rer)*EAEEAD_imig/(EAE_py*EAE_y);
+        EAERW_imc = EAERW_numc*((RW_pex*EAERW_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
+      EAERW_imcy = (RW_pex*EAERW_rer)*EAERW_imc/(EAE_py*EAE_y);
+        EAERW_imi = EAERW_numi*((RW_pex*EAERW_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
+      EAERW_imiy = (RW_pex*EAERW_rer)*EAERW_imi/(EAE_py*EAE_y);
+        EAERW_imcg = EAERW_numcg*((RW_pex*EAERW_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
+      EAERW_imcgy = (RW_pex*EAERW_rer)*EAERW_imcg/(EAE_py*EAE_y);
+        EAERW_imig = EAERW_numig*((RW_pex*EAERW_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
+      EAERW_imigy = (RW_pex*EAERW_rer)*EAERW_imig/(EAE_py*EAE_y);
+        EAEUS_imc = EAEUS_numc*((US_pex*EAEUS_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
+      EAEUS_imcy = (US_pex*EAEUS_rer)*EAEUS_imc/(EAE_py*EAE_y);
+        EAEUS_imi = EAEUS_numi*((US_pex*EAEUS_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
+      EAEUS_imiy = (US_pex*EAEUS_rer)*EAEUS_imi/(EAE_py*EAE_y);
+        EAEUS_imcg = EAEUS_numcg*((US_pex*EAEUS_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
+      EAEUS_imcgy = (US_pex*EAEUS_rer)*EAEUS_imcg/(EAE_py*EAE_y);
+        EAEUS_imig = EAEUS_numig*((US_pex*EAEUS_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
+      EAEUS_imigy = (US_pex*EAEUS_rer)*EAEUS_imig/(EAE_py*EAE_y);
+  
   RW_b = 0;
   RW_bf = 0;
   RW_by = 0;
@@ -14658,7 +15809,6 @@ RW_igy = 0.01/10;
   RW_zinv = 1;
   RW_zn = 1;
   RW_zt = 1;
-    
   
   RW_cgybar = 0.01/10;
   RW_igybar = 0.01/10;
@@ -14690,14 +15840,14 @@ RW_igy = 0.01/10;
       RWEAA_rer = 1;
       RWEAA_rerbar = 1;
       RWEAA_im = 0.03;
-      RWEAA_gammaimc = 0;
-      RWEAA_gammaimcdag = 1;
-      RWEAA_gammaimi = 0;
-      RWEAA_gammaimidag = 1;
-      RWEAA_gammaimcg = 0;
-      RWEAA_gammaimcgdag = 1;
-      RWEAA_gammaimig = 0;
-      RWEAA_gammaimigdag = 1;
+        RWEAA_gammaimc = 0;
+        RWEAA_gammaimcdag = 1;
+        RWEAA_gammaimi = 0;
+        RWEAA_gammaimidag = 1;
+        RWEAA_gammaimcg = 0;
+        RWEAA_gammaimcgdag = 1;
+        RWEAA_gammaimig = 0;
+        RWEAA_gammaimigdag = 1;
       RWEAA_tot = 1;
       RWEAA_weight = 0.35;
       RWEAA_weightex = 0.35;
@@ -14705,14 +15855,14 @@ RW_igy = 0.01/10;
       RWEAB_rer = 1;
       RWEAB_rerbar = 1;
       RWEAB_im = 0.03;
-      RWEAB_gammaimc = 0;
-      RWEAB_gammaimcdag = 1;
-      RWEAB_gammaimi = 0;
-      RWEAB_gammaimidag = 1;
-      RWEAB_gammaimcg = 0;
-      RWEAB_gammaimcgdag = 1;
-      RWEAB_gammaimig = 0;
-      RWEAB_gammaimigdag = 1;
+        RWEAB_gammaimc = 0;
+        RWEAB_gammaimcdag = 1;
+        RWEAB_gammaimi = 0;
+        RWEAB_gammaimidag = 1;
+        RWEAB_gammaimcg = 0;
+        RWEAB_gammaimcgdag = 1;
+        RWEAB_gammaimig = 0;
+        RWEAB_gammaimigdag = 1;
       RWEAB_tot = 1;
       RWEAB_weight = 0.35;
       RWEAB_weightex = 0.35;
@@ -14720,14 +15870,14 @@ RW_igy = 0.01/10;
       RWEAC_rer = 1;
       RWEAC_rerbar = 1;
       RWEAC_im = 0.03;
-      RWEAC_gammaimc = 0;
-      RWEAC_gammaimcdag = 1;
-      RWEAC_gammaimi = 0;
-      RWEAC_gammaimidag = 1;
-      RWEAC_gammaimcg = 0;
-      RWEAC_gammaimcgdag = 1;
-      RWEAC_gammaimig = 0;
-      RWEAC_gammaimigdag = 1;
+        RWEAC_gammaimc = 0;
+        RWEAC_gammaimcdag = 1;
+        RWEAC_gammaimi = 0;
+        RWEAC_gammaimidag = 1;
+        RWEAC_gammaimcg = 0;
+        RWEAC_gammaimcgdag = 1;
+        RWEAC_gammaimig = 0;
+        RWEAC_gammaimigdag = 1;
       RWEAC_tot = 1;
       RWEAC_weight = 0.35;
       RWEAC_weightex = 0.35;
@@ -14735,14 +15885,14 @@ RW_igy = 0.01/10;
       RWEAD_rer = 1;
       RWEAD_rerbar = 1;
       RWEAD_im = 0.03;
-      RWEAD_gammaimc = 0;
-      RWEAD_gammaimcdag = 1;
-      RWEAD_gammaimi = 0;
-      RWEAD_gammaimidag = 1;
-      RWEAD_gammaimcg = 0;
-      RWEAD_gammaimcgdag = 1;
-      RWEAD_gammaimig = 0;
-      RWEAD_gammaimigdag = 1;
+        RWEAD_gammaimc = 0;
+        RWEAD_gammaimcdag = 1;
+        RWEAD_gammaimi = 0;
+        RWEAD_gammaimidag = 1;
+        RWEAD_gammaimcg = 0;
+        RWEAD_gammaimcgdag = 1;
+        RWEAD_gammaimig = 0;
+        RWEAD_gammaimigdag = 1;
       RWEAD_tot = 1;
       RWEAD_weight = 0.35;
       RWEAD_weightex = 0.35;
@@ -14750,14 +15900,14 @@ RW_igy = 0.01/10;
       RWEAE_rer = 1;
       RWEAE_rerbar = 1;
       RWEAE_im = 0.03;
-      RWEAE_gammaimc = 0;
-      RWEAE_gammaimcdag = 1;
-      RWEAE_gammaimi = 0;
-      RWEAE_gammaimidag = 1;
-      RWEAE_gammaimcg = 0;
-      RWEAE_gammaimcgdag = 1;
-      RWEAE_gammaimig = 0;
-      RWEAE_gammaimigdag = 1;
+        RWEAE_gammaimc = 0;
+        RWEAE_gammaimcdag = 1;
+        RWEAE_gammaimi = 0;
+        RWEAE_gammaimidag = 1;
+        RWEAE_gammaimcg = 0;
+        RWEAE_gammaimcgdag = 1;
+        RWEAE_gammaimig = 0;
+        RWEAE_gammaimigdag = 1;
       RWEAE_tot = 1;
       RWEAE_weight = 0.35;
       RWEAE_weightex = 0.35;
@@ -14765,18 +15915,143 @@ RW_igy = 0.01/10;
       RWUS_rer = 1;
       RWUS_rerbar = 1;
       RWUS_im = 0.03;
-      RWUS_gammaimc = 0;
-      RWUS_gammaimcdag = 1;
-      RWUS_gammaimi = 0;
-      RWUS_gammaimidag = 1;
-      RWUS_gammaimcg = 0;
-      RWUS_gammaimcgdag = 1;
-      RWUS_gammaimig = 0;
-      RWUS_gammaimigdag = 1;
+        RWUS_gammaimc = 0;
+        RWUS_gammaimcdag = 1;
+        RWUS_gammaimi = 0;
+        RWUS_gammaimidag = 1;
+        RWUS_gammaimcg = 0;
+        RWUS_gammaimcgdag = 1;
+        RWUS_gammaimig = 0;
+        RWUS_gammaimigdag = 1;
       RWUS_tot = 1;
       RWUS_weight = 0.35;
       RWUS_weightex = 0.35;
       RWUS_weightim = 0.35;
+      
+      // Shares
+      RWEAA_excy = 0.09*3/(ctryNumberDouble-1);
+      RWEAA_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      RWEAB_excy = 0.09*3/(ctryNumberDouble-1);
+      RWEAB_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      RWEAC_excy = 0.09*3/(ctryNumberDouble-1);
+      RWEAC_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      RWEAD_excy = 0.09*3/(ctryNumberDouble-1);
+      RWEAD_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      RWEAE_excy = 0.09*3/(ctryNumberDouble-1);
+      RWEAE_exiy = 0.0008*3/(ctryNumberDouble-1);
+      
+      // Shares
+      RWUS_excy = 0.09*3/(ctryNumberDouble-1);
+      RWUS_exiy = 0.0008*3/(ctryNumberDouble-1);
+  RW_qc =  0.321620156669017*2;
+  RW_qi =  0.00209600391746659*2;
+  RW_qcg =  RW_cg;
+  RW_qig =  RW_ig;
+  RW_ntc = 0.161;
+  RW_nti = 0.001;
+  RW_ntcg = (1-RW_nucg)*(RW_pnt/RW_pcg)^(-RW_mucg)*RW_qcg;
+  RW_ntig = (1-RW_nuig)*(RW_pnt/RW_pig)^(-RW_muig)*RW_qig;
+  RW_ttc = 0.16;
+  RW_tti = 0.001;
+  RW_ttcg = RW_nucg*(RW_pttcg/RW_pcg)^(-RW_mucg)*RW_qcg;
+  RW_ttig = RW_nuig*(RW_pttig/RW_pig)^(-RW_muig)*RW_qig;
+  RW_htc = 0.08;
+  RW_hti =  0.0005;
+  RW_htcg = RW_nutcg*(RW_pht/RW_pttcg)^(-RW_mutcg)*RW_ttcg;
+  RW_htig = RW_nutig*(RW_pht/RW_pttig)^(-RW_mutig)*RW_ttig;
+  RW_imc = 0.08;
+  RW_imcy = 0.25;
+  RW_imi = 0.0005;
+  RW_imiy = 0.0016;
+  RW_imcg = (1-RW_nutcg)*(RW_pimcg/RW_pttcg)^(-RW_mutcg)*RW_ttcg;
+  RW_imcgy = RW_pimcg*RW_imcg/(RW_py*RW_y);
+  RW_imig = (1-RW_nutig)*(RW_pimig/RW_pttig)^(-RW_mutig)*RW_ttig;
+  RW_imigy = RW_pimig*RW_imig/(RW_py*RW_y);
+        RWEAA_imc = RWEAA_numc*((EAA_pex*RWEAA_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+      RWEAA_imcy = (EAA_pex*RWEAA_rer)*RWEAA_imc/(RW_py*RW_y);
+        RWEAA_imi = RWEAA_numi*((EAA_pex*RWEAA_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+      RWEAA_imiy = (EAA_pex*RWEAA_rer)*RWEAA_imi/(RW_py*RW_y);
+        RWEAA_imcg = RWEAA_numcg*((EAA_pex*RWEAA_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+      RWEAA_imcgy = (EAA_pex*RWEAA_rer)*RWEAA_imcg/(RW_py*RW_y);
+        RWEAA_imig = RWEAA_numig*((EAA_pex*RWEAA_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+      RWEAA_imigy = (EAA_pex*RWEAA_rer)*RWEAA_imig/(RW_py*RW_y);
+        RWEAB_imc = RWEAB_numc*((EAB_pex*RWEAB_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+      RWEAB_imcy = (EAB_pex*RWEAB_rer)*RWEAB_imc/(RW_py*RW_y);
+        RWEAB_imi = RWEAB_numi*((EAB_pex*RWEAB_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+      RWEAB_imiy = (EAB_pex*RWEAB_rer)*RWEAB_imi/(RW_py*RW_y);
+        RWEAB_imcg = RWEAB_numcg*((EAB_pex*RWEAB_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+      RWEAB_imcgy = (EAB_pex*RWEAB_rer)*RWEAB_imcg/(RW_py*RW_y);
+        RWEAB_imig = RWEAB_numig*((EAB_pex*RWEAB_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+      RWEAB_imigy = (EAB_pex*RWEAB_rer)*RWEAB_imig/(RW_py*RW_y);
+        RWEAC_imc = RWEAC_numc*((EAC_pex*RWEAC_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+      RWEAC_imcy = (EAC_pex*RWEAC_rer)*RWEAC_imc/(RW_py*RW_y);
+        RWEAC_imi = RWEAC_numi*((EAC_pex*RWEAC_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+      RWEAC_imiy = (EAC_pex*RWEAC_rer)*RWEAC_imi/(RW_py*RW_y);
+        RWEAC_imcg = RWEAC_numcg*((EAC_pex*RWEAC_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+      RWEAC_imcgy = (EAC_pex*RWEAC_rer)*RWEAC_imcg/(RW_py*RW_y);
+        RWEAC_imig = RWEAC_numig*((EAC_pex*RWEAC_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+      RWEAC_imigy = (EAC_pex*RWEAC_rer)*RWEAC_imig/(RW_py*RW_y);
+        RWEAD_imc = 
+        +(1
+        -RWEAA_numc
+        -RWEAB_numc
+        -RWEAC_numc
+        -RWEAE_numc
+        -RWUS_numc
+        )*((EAD_pex*RWEAD_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+      RWEAD_imcy = (EAD_pex*RWEAD_rer)*RWEAD_imc/(RW_py*RW_y);
+        RWEAD_imi = 
+        +(1
+        -RWEAA_numi
+        -RWEAB_numi
+        -RWEAC_numi
+        -RWEAE_numi
+        -RWUS_numi
+        )*((EAD_pex*RWEAD_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+      RWEAD_imiy = (EAD_pex*RWEAD_rer)*RWEAD_imi/(RW_py*RW_y);
+        RWEAD_imcg = 
+        +(1
+        -RWEAA_numcg
+        -RWEAB_numcg
+        -RWEAC_numcg
+        -RWEAE_numcg
+        -RWUS_numcg
+        )*((EAD_pex*RWEAD_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+      RWEAD_imcgy = (EAD_pex*RWEAD_rer)*RWEAD_imcg/(RW_py*RW_y);
+        RWEAD_imig = 
+        +(1
+        -RWEAA_numig
+        -RWEAB_numig
+        -RWEAC_numig
+        -RWEAE_numig
+        -RWUS_numig
+        )*((EAD_pex*RWEAD_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+      RWEAD_imigy = (EAD_pex*RWEAD_rer)*RWEAD_imig/(RW_py*RW_y);
+        RWEAE_imc = RWEAE_numc*((EAE_pex*RWEAE_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+      RWEAE_imcy = (EAE_pex*RWEAE_rer)*RWEAE_imc/(RW_py*RW_y);
+        RWEAE_imi = RWEAE_numi*((EAE_pex*RWEAE_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+      RWEAE_imiy = (EAE_pex*RWEAE_rer)*RWEAE_imi/(RW_py*RW_y);
+        RWEAE_imcg = RWEAE_numcg*((EAE_pex*RWEAE_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+      RWEAE_imcgy = (EAE_pex*RWEAE_rer)*RWEAE_imcg/(RW_py*RW_y);
+        RWEAE_imig = RWEAE_numig*((EAE_pex*RWEAE_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+      RWEAE_imigy = (EAE_pex*RWEAE_rer)*RWEAE_imig/(RW_py*RW_y);
+        RWUS_imc = RWUS_numc*((US_pex*RWUS_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+      RWUS_imcy = (US_pex*RWUS_rer)*RWUS_imc/(RW_py*RW_y);
+        RWUS_imi = RWUS_numi*((US_pex*RWUS_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+      RWUS_imiy = (US_pex*RWUS_rer)*RWUS_imi/(RW_py*RW_y);
+        RWUS_imcg = RWUS_numcg*((US_pex*RWUS_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+      RWUS_imcgy = (US_pex*RWUS_rer)*RWUS_imcg/(RW_py*RW_y);
+        RWUS_imig = RWUS_numig*((US_pex*RWUS_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+      RWUS_imigy = (US_pex*RWUS_rer)*RWUS_imig/(RW_py*RW_y);
+  
   US_b = 0;
   US_bf = 0;
   US_by = 0;
@@ -14942,7 +16217,6 @@ US_igy = 0.01/10;
   US_zinv = 1;
   US_zn = 1;
   US_zt = 1;
-    
   
   US_cgybar = 0.01/10;
   US_igybar = 0.01/10;
@@ -14974,14 +16248,14 @@ US_igy = 0.01/10;
       USEAA_rer = 1;
       USEAA_rerbar = 1;
       USEAA_im = 0.03;
-      USEAA_gammaimc = 0;
-      USEAA_gammaimcdag = 1;
-      USEAA_gammaimi = 0;
-      USEAA_gammaimidag = 1;
-      USEAA_gammaimcg = 0;
-      USEAA_gammaimcgdag = 1;
-      USEAA_gammaimig = 0;
-      USEAA_gammaimigdag = 1;
+        USEAA_gammaimc = 0;
+        USEAA_gammaimcdag = 1;
+        USEAA_gammaimi = 0;
+        USEAA_gammaimidag = 1;
+        USEAA_gammaimcg = 0;
+        USEAA_gammaimcgdag = 1;
+        USEAA_gammaimig = 0;
+        USEAA_gammaimigdag = 1;
       USEAA_tot = 1;
       USEAA_weight = 0.35;
       USEAA_weightex = 0.35;
@@ -14989,14 +16263,14 @@ US_igy = 0.01/10;
       USEAB_rer = 1;
       USEAB_rerbar = 1;
       USEAB_im = 0.03;
-      USEAB_gammaimc = 0;
-      USEAB_gammaimcdag = 1;
-      USEAB_gammaimi = 0;
-      USEAB_gammaimidag = 1;
-      USEAB_gammaimcg = 0;
-      USEAB_gammaimcgdag = 1;
-      USEAB_gammaimig = 0;
-      USEAB_gammaimigdag = 1;
+        USEAB_gammaimc = 0;
+        USEAB_gammaimcdag = 1;
+        USEAB_gammaimi = 0;
+        USEAB_gammaimidag = 1;
+        USEAB_gammaimcg = 0;
+        USEAB_gammaimcgdag = 1;
+        USEAB_gammaimig = 0;
+        USEAB_gammaimigdag = 1;
       USEAB_tot = 1;
       USEAB_weight = 0.35;
       USEAB_weightex = 0.35;
@@ -15004,14 +16278,14 @@ US_igy = 0.01/10;
       USEAC_rer = 1;
       USEAC_rerbar = 1;
       USEAC_im = 0.03;
-      USEAC_gammaimc = 0;
-      USEAC_gammaimcdag = 1;
-      USEAC_gammaimi = 0;
-      USEAC_gammaimidag = 1;
-      USEAC_gammaimcg = 0;
-      USEAC_gammaimcgdag = 1;
-      USEAC_gammaimig = 0;
-      USEAC_gammaimigdag = 1;
+        USEAC_gammaimc = 0;
+        USEAC_gammaimcdag = 1;
+        USEAC_gammaimi = 0;
+        USEAC_gammaimidag = 1;
+        USEAC_gammaimcg = 0;
+        USEAC_gammaimcgdag = 1;
+        USEAC_gammaimig = 0;
+        USEAC_gammaimigdag = 1;
       USEAC_tot = 1;
       USEAC_weight = 0.35;
       USEAC_weightex = 0.35;
@@ -15019,14 +16293,14 @@ US_igy = 0.01/10;
       USEAD_rer = 1;
       USEAD_rerbar = 1;
       USEAD_im = 0.03;
-      USEAD_gammaimc = 0;
-      USEAD_gammaimcdag = 1;
-      USEAD_gammaimi = 0;
-      USEAD_gammaimidag = 1;
-      USEAD_gammaimcg = 0;
-      USEAD_gammaimcgdag = 1;
-      USEAD_gammaimig = 0;
-      USEAD_gammaimigdag = 1;
+        USEAD_gammaimc = 0;
+        USEAD_gammaimcdag = 1;
+        USEAD_gammaimi = 0;
+        USEAD_gammaimidag = 1;
+        USEAD_gammaimcg = 0;
+        USEAD_gammaimcgdag = 1;
+        USEAD_gammaimig = 0;
+        USEAD_gammaimigdag = 1;
       USEAD_tot = 1;
       USEAD_weight = 0.35;
       USEAD_weightex = 0.35;
@@ -15034,14 +16308,14 @@ US_igy = 0.01/10;
       USEAE_rer = 1;
       USEAE_rerbar = 1;
       USEAE_im = 0.03;
-      USEAE_gammaimc = 0;
-      USEAE_gammaimcdag = 1;
-      USEAE_gammaimi = 0;
-      USEAE_gammaimidag = 1;
-      USEAE_gammaimcg = 0;
-      USEAE_gammaimcgdag = 1;
-      USEAE_gammaimig = 0;
-      USEAE_gammaimigdag = 1;
+        USEAE_gammaimc = 0;
+        USEAE_gammaimcdag = 1;
+        USEAE_gammaimi = 0;
+        USEAE_gammaimidag = 1;
+        USEAE_gammaimcg = 0;
+        USEAE_gammaimcgdag = 1;
+        USEAE_gammaimig = 0;
+        USEAE_gammaimigdag = 1;
       USEAE_tot = 1;
       USEAE_weight = 0.35;
       USEAE_weightex = 0.35;
@@ -15049,618 +16323,42 @@ US_igy = 0.01/10;
       USRW_rer = 1;
       USRW_rerbar = 1;
       USRW_im = 0.03;
-      USRW_gammaimc = 0;
-      USRW_gammaimcdag = 1;
-      USRW_gammaimi = 0;
-      USRW_gammaimidag = 1;
-      USRW_gammaimcg = 0;
-      USRW_gammaimcgdag = 1;
-      USRW_gammaimig = 0;
-      USRW_gammaimigdag = 1;
+        USRW_gammaimc = 0;
+        USRW_gammaimcdag = 1;
+        USRW_gammaimi = 0;
+        USRW_gammaimidag = 1;
+        USRW_gammaimcg = 0;
+        USRW_gammaimcgdag = 1;
+        USRW_gammaimig = 0;
+        USRW_gammaimigdag = 1;
       USRW_tot = 1;
       USRW_weight = 0.35;
       USRW_weightex = 0.35;
       USRW_weightim = 0.35;
       
       // Shares
-      EAAEAB_excy = 0.09;
-      EAAEAB_exiy = 0.0008;
+      USEAA_excy = 0.09*3/(ctryNumberDouble-1);
+      USEAA_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EAAEAC_excy = 0.09;
-      EAAEAC_exiy = 0.0008;
+      USEAB_excy = 0.09*3/(ctryNumberDouble-1);
+      USEAB_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EAAEAD_excy = 0.09;
-      EAAEAD_exiy = 0.0008;
+      USEAC_excy = 0.09*3/(ctryNumberDouble-1);
+      USEAC_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EAAEAE_excy = 0.09;
-      EAAEAE_exiy = 0.0008;
+      USEAD_excy = 0.09*3/(ctryNumberDouble-1);
+      USEAD_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EAARW_excy = 0.09;
-      EAARW_exiy = 0.0008;
+      USEAE_excy = 0.09*3/(ctryNumberDouble-1);
+      USEAE_exiy = 0.0008*3/(ctryNumberDouble-1);
       
       // Shares
-      EAAUS_excy = 0.09;
-      EAAUS_exiy = 0.0008;
-  EAA_qc =  0.321620156669017*2;
-  EAA_qi =  0.00209600391746659*2;
-  EAA_qcg =  EAA_cg;
-  EAA_qig =  EAA_ig;
-  EAA_ntc = 0.161;
-  EAA_nti = 0.001;
-  EAA_ntcg = (1-EAA_nucg)*(EAA_pnt/EAA_pcg)^(-EAA_mucg)*EAA_qcg;
-  EAA_ntig = (1-EAA_nuig)*(EAA_pnt/EAA_pig)^(-EAA_muig)*EAA_qig;
-  EAA_ttc = 0.16;
-  EAA_tti = 0.001;
-  EAA_ttcg = EAA_nucg*(EAA_pttcg/EAA_pcg)^(-EAA_mucg)*EAA_qcg;
-  EAA_ttig = EAA_nuig*(EAA_pttig/EAA_pig)^(-EAA_muig)*EAA_qig;
-  EAA_htc = 0.08;
-  EAA_hti =  0.0005;
-  EAA_htcg = EAA_nutcg*(EAA_pht/EAA_pttcg)^(-EAA_mutcg)*EAA_ttcg;
-  EAA_htig = EAA_nutig*(EAA_pht/EAA_pttig)^(-EAA_mutig)*EAA_ttig;
-  EAA_imc = 0.08;
-  EAA_imcy = 0.25;
-  EAA_imi = 0.0005;
-  EAA_imiy = 0.0016;
-  EAA_imcg = (1-EAA_nutcg)*(EAA_pimcg/EAA_pttcg)^(-EAA_mutcg)*EAA_ttcg;
-  EAA_imcgy = EAA_pimcg*EAA_imcg/(EAA_py*EAA_y);
-  EAA_imig = (1-EAA_nutig)*(EAA_pimig/EAA_pttig)^(-EAA_mutig)*EAA_ttig;
-  EAA_imigy = EAA_pimig*EAA_imig/(EAA_py*EAA_y);
-      EAAEAB_imc = 0.02;
-      EAAEAB_imcy = 0.09;
-        EAAEAB_imi = 0.0003;
-        EAAEAB_imiy = 0.0008;
-        EAAEAB_imcg = EAAEAB_numcg*((EAB_pex*EAAEAB_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
-        EAAEAB_imcgy = (EAB_pex*EAAEAB_rer)*EAAEAB_imcg/(EAA_py*EAA_y);
-        EAAEAB_imig = EAAEAB_numig*((EAB_pex*EAAEAB_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
-        EAAEAB_imigy = (EAB_pex*EAAEAB_rer)*EAAEAB_imig/(EAA_py*EAA_y);
-      EAAEAC_imc = 0.02;
-      EAAEAC_imcy = 0.09;
-        EAAEAC_imi = 0.0003;
-        EAAEAC_imiy = 0.0008;
-        EAAEAC_imcg = EAAEAC_numcg*((EAC_pex*EAAEAC_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
-        EAAEAC_imcgy = (EAC_pex*EAAEAC_rer)*EAAEAC_imcg/(EAA_py*EAA_y);
-        EAAEAC_imig = EAAEAC_numig*((EAC_pex*EAAEAC_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
-        EAAEAC_imigy = (EAC_pex*EAAEAC_rer)*EAAEAC_imig/(EAA_py*EAA_y);
-      EAAEAD_imc = 0.02;
-      EAAEAD_imcy = 0.09;
-        EAAEAD_imi = 0.0003;
-        EAAEAD_imiy = 0.0008;
-        EAAEAD_imcg = EAAEAD_numcg*((EAD_pex*EAAEAD_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
-        EAAEAD_imcgy = (EAD_pex*EAAEAD_rer)*EAAEAD_imcg/(EAA_py*EAA_y);
-        EAAEAD_imig = EAAEAD_numig*((EAD_pex*EAAEAD_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
-        EAAEAD_imigy = (EAD_pex*EAAEAD_rer)*EAAEAD_imig/(EAA_py*EAA_y);
-      EAAEAE_imc = 0.02;
-      EAAEAE_imcy = 0.09;
-        EAAEAE_imi = 0.0003;
-        EAAEAE_imiy = 0.0008;
-        EAAEAE_imcg = EAAEAE_numcg*((EAE_pex*EAAEAE_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
-        EAAEAE_imcgy = (EAE_pex*EAAEAE_rer)*EAAEAE_imcg/(EAA_py*EAA_y);
-        EAAEAE_imig = EAAEAE_numig*((EAE_pex*EAAEAE_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
-        EAAEAE_imigy = (EAE_pex*EAAEAE_rer)*EAAEAE_imig/(EAA_py*EAA_y);
-      EAARW_imc = 0.02;
-      EAARW_imcy = 0.09;
-        EAARW_imi = 0.0003;
-        EAARW_imiy = 0.0008;
-        EAARW_imcg = EAARW_numcg*((RW_pex*EAARW_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
-        EAARW_imcgy = (RW_pex*EAARW_rer)*EAARW_imcg/(EAA_py*EAA_y);
-        EAARW_imig = EAARW_numig*((RW_pex*EAARW_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
-        EAARW_imigy = (RW_pex*EAARW_rer)*EAARW_imig/(EAA_py*EAA_y);
-      EAAUS_imc = 0.02;
-      EAAUS_imcy = 0.09;
-        EAAUS_imi = 0.0003;
-        EAAUS_imiy = 0.0008;
-        EAAUS_imcg = EAAUS_numcg*((US_pex*EAAUS_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
-        EAAUS_imcgy = (US_pex*EAAUS_rer)*EAAUS_imcg/(EAA_py*EAA_y);
-        EAAUS_imig = EAAUS_numig*((US_pex*EAAUS_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
-        EAAUS_imigy = (US_pex*EAAUS_rer)*EAAUS_imig/(EAA_py*EAA_y);
-      
-      // Shares
-      EABEAA_excy = 0.09;
-      EABEAA_exiy = 0.0008;
-      
-      // Shares
-      EABEAC_excy = 0.09;
-      EABEAC_exiy = 0.0008;
-      
-      // Shares
-      EABEAD_excy = 0.09;
-      EABEAD_exiy = 0.0008;
-      
-      // Shares
-      EABEAE_excy = 0.09;
-      EABEAE_exiy = 0.0008;
-      
-      // Shares
-      EABRW_excy = 0.09;
-      EABRW_exiy = 0.0008;
-      
-      // Shares
-      EABUS_excy = 0.09;
-      EABUS_exiy = 0.0008;
-  EAB_qc =  0.321620156669017*2;
-  EAB_qi =  0.00209600391746659*2;
-  EAB_qcg =  EAB_cg;
-  EAB_qig =  EAB_ig;
-  EAB_ntc = 0.161;
-  EAB_nti = 0.001;
-  EAB_ntcg = (1-EAB_nucg)*(EAB_pnt/EAB_pcg)^(-EAB_mucg)*EAB_qcg;
-  EAB_ntig = (1-EAB_nuig)*(EAB_pnt/EAB_pig)^(-EAB_muig)*EAB_qig;
-  EAB_ttc = 0.16;
-  EAB_tti = 0.001;
-  EAB_ttcg = EAB_nucg*(EAB_pttcg/EAB_pcg)^(-EAB_mucg)*EAB_qcg;
-  EAB_ttig = EAB_nuig*(EAB_pttig/EAB_pig)^(-EAB_muig)*EAB_qig;
-  EAB_htc = 0.08;
-  EAB_hti =  0.0005;
-  EAB_htcg = EAB_nutcg*(EAB_pht/EAB_pttcg)^(-EAB_mutcg)*EAB_ttcg;
-  EAB_htig = EAB_nutig*(EAB_pht/EAB_pttig)^(-EAB_mutig)*EAB_ttig;
-  EAB_imc = 0.08;
-  EAB_imcy = 0.25;
-  EAB_imi = 0.0005;
-  EAB_imiy = 0.0016;
-  EAB_imcg = (1-EAB_nutcg)*(EAB_pimcg/EAB_pttcg)^(-EAB_mutcg)*EAB_ttcg;
-  EAB_imcgy = EAB_pimcg*EAB_imcg/(EAB_py*EAB_y);
-  EAB_imig = (1-EAB_nutig)*(EAB_pimig/EAB_pttig)^(-EAB_mutig)*EAB_ttig;
-  EAB_imigy = EAB_pimig*EAB_imig/(EAB_py*EAB_y);
-      EABEAA_imc = 0.02;
-      EABEAA_imcy = 0.09;
-        EABEAA_imi = 0.0003;
-        EABEAA_imiy = 0.0008;
-        EABEAA_imcg = EABEAA_numcg*((EAA_pex*EABEAA_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
-        EABEAA_imcgy = (EAA_pex*EABEAA_rer)*EABEAA_imcg/(EAB_py*EAB_y);
-        EABEAA_imig = EABEAA_numig*((EAA_pex*EABEAA_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
-        EABEAA_imigy = (EAA_pex*EABEAA_rer)*EABEAA_imig/(EAB_py*EAB_y);
-      EABEAC_imc = 0.02;
-      EABEAC_imcy = 0.09;
-        EABEAC_imi = 0.0003;
-        EABEAC_imiy = 0.0008;
-        EABEAC_imcg = EABEAC_numcg*((EAC_pex*EABEAC_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
-        EABEAC_imcgy = (EAC_pex*EABEAC_rer)*EABEAC_imcg/(EAB_py*EAB_y);
-        EABEAC_imig = EABEAC_numig*((EAC_pex*EABEAC_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
-        EABEAC_imigy = (EAC_pex*EABEAC_rer)*EABEAC_imig/(EAB_py*EAB_y);
-      EABEAD_imc = 0.02;
-      EABEAD_imcy = 0.09;
-        EABEAD_imi = 0.0003;
-        EABEAD_imiy = 0.0008;
-        EABEAD_imcg = EABEAD_numcg*((EAD_pex*EABEAD_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
-        EABEAD_imcgy = (EAD_pex*EABEAD_rer)*EABEAD_imcg/(EAB_py*EAB_y);
-        EABEAD_imig = EABEAD_numig*((EAD_pex*EABEAD_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
-        EABEAD_imigy = (EAD_pex*EABEAD_rer)*EABEAD_imig/(EAB_py*EAB_y);
-      EABEAE_imc = 0.02;
-      EABEAE_imcy = 0.09;
-        EABEAE_imi = 0.0003;
-        EABEAE_imiy = 0.0008;
-        EABEAE_imcg = EABEAE_numcg*((EAE_pex*EABEAE_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
-        EABEAE_imcgy = (EAE_pex*EABEAE_rer)*EABEAE_imcg/(EAB_py*EAB_y);
-        EABEAE_imig = EABEAE_numig*((EAE_pex*EABEAE_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
-        EABEAE_imigy = (EAE_pex*EABEAE_rer)*EABEAE_imig/(EAB_py*EAB_y);
-      EABRW_imc = 0.02;
-      EABRW_imcy = 0.09;
-        EABRW_imi = 0.0003;
-        EABRW_imiy = 0.0008;
-        EABRW_imcg = EABRW_numcg*((RW_pex*EABRW_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
-        EABRW_imcgy = (RW_pex*EABRW_rer)*EABRW_imcg/(EAB_py*EAB_y);
-        EABRW_imig = EABRW_numig*((RW_pex*EABRW_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
-        EABRW_imigy = (RW_pex*EABRW_rer)*EABRW_imig/(EAB_py*EAB_y);
-      EABUS_imc = 0.02;
-      EABUS_imcy = 0.09;
-        EABUS_imi = 0.0003;
-        EABUS_imiy = 0.0008;
-        EABUS_imcg = EABUS_numcg*((US_pex*EABUS_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
-        EABUS_imcgy = (US_pex*EABUS_rer)*EABUS_imcg/(EAB_py*EAB_y);
-        EABUS_imig = EABUS_numig*((US_pex*EABUS_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
-        EABUS_imigy = (US_pex*EABUS_rer)*EABUS_imig/(EAB_py*EAB_y);
-      
-      // Shares
-      EACEAA_excy = 0.09;
-      EACEAA_exiy = 0.0008;
-      
-      // Shares
-      EACEAB_excy = 0.09;
-      EACEAB_exiy = 0.0008;
-      
-      // Shares
-      EACEAD_excy = 0.09;
-      EACEAD_exiy = 0.0008;
-      
-      // Shares
-      EACEAE_excy = 0.09;
-      EACEAE_exiy = 0.0008;
-      
-      // Shares
-      EACRW_excy = 0.09;
-      EACRW_exiy = 0.0008;
-      
-      // Shares
-      EACUS_excy = 0.09;
-      EACUS_exiy = 0.0008;
-  EAC_qc =  0.321620156669017*2;
-  EAC_qi =  0.00209600391746659*2;
-  EAC_qcg =  EAC_cg;
-  EAC_qig =  EAC_ig;
-  EAC_ntc = 0.161;
-  EAC_nti = 0.001;
-  EAC_ntcg = (1-EAC_nucg)*(EAC_pnt/EAC_pcg)^(-EAC_mucg)*EAC_qcg;
-  EAC_ntig = (1-EAC_nuig)*(EAC_pnt/EAC_pig)^(-EAC_muig)*EAC_qig;
-  EAC_ttc = 0.16;
-  EAC_tti = 0.001;
-  EAC_ttcg = EAC_nucg*(EAC_pttcg/EAC_pcg)^(-EAC_mucg)*EAC_qcg;
-  EAC_ttig = EAC_nuig*(EAC_pttig/EAC_pig)^(-EAC_muig)*EAC_qig;
-  EAC_htc = 0.08;
-  EAC_hti =  0.0005;
-  EAC_htcg = EAC_nutcg*(EAC_pht/EAC_pttcg)^(-EAC_mutcg)*EAC_ttcg;
-  EAC_htig = EAC_nutig*(EAC_pht/EAC_pttig)^(-EAC_mutig)*EAC_ttig;
-  EAC_imc = 0.08;
-  EAC_imcy = 0.25;
-  EAC_imi = 0.0005;
-  EAC_imiy = 0.0016;
-  EAC_imcg = (1-EAC_nutcg)*(EAC_pimcg/EAC_pttcg)^(-EAC_mutcg)*EAC_ttcg;
-  EAC_imcgy = EAC_pimcg*EAC_imcg/(EAC_py*EAC_y);
-  EAC_imig = (1-EAC_nutig)*(EAC_pimig/EAC_pttig)^(-EAC_mutig)*EAC_ttig;
-  EAC_imigy = EAC_pimig*EAC_imig/(EAC_py*EAC_y);
-      EACEAA_imc = 0.02;
-      EACEAA_imcy = 0.09;
-        EACEAA_imi = 0.0003;
-        EACEAA_imiy = 0.0008;
-        EACEAA_imcg = EACEAA_numcg*((EAA_pex*EACEAA_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
-        EACEAA_imcgy = (EAA_pex*EACEAA_rer)*EACEAA_imcg/(EAC_py*EAC_y);
-        EACEAA_imig = EACEAA_numig*((EAA_pex*EACEAA_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
-        EACEAA_imigy = (EAA_pex*EACEAA_rer)*EACEAA_imig/(EAC_py*EAC_y);
-      EACEAB_imc = 0.02;
-      EACEAB_imcy = 0.09;
-        EACEAB_imi = 0.0003;
-        EACEAB_imiy = 0.0008;
-        EACEAB_imcg = EACEAB_numcg*((EAB_pex*EACEAB_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
-        EACEAB_imcgy = (EAB_pex*EACEAB_rer)*EACEAB_imcg/(EAC_py*EAC_y);
-        EACEAB_imig = EACEAB_numig*((EAB_pex*EACEAB_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
-        EACEAB_imigy = (EAB_pex*EACEAB_rer)*EACEAB_imig/(EAC_py*EAC_y);
-      EACEAD_imc = 0.02;
-      EACEAD_imcy = 0.09;
-        EACEAD_imi = 0.0003;
-        EACEAD_imiy = 0.0008;
-        EACEAD_imcg = EACEAD_numcg*((EAD_pex*EACEAD_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
-        EACEAD_imcgy = (EAD_pex*EACEAD_rer)*EACEAD_imcg/(EAC_py*EAC_y);
-        EACEAD_imig = EACEAD_numig*((EAD_pex*EACEAD_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
-        EACEAD_imigy = (EAD_pex*EACEAD_rer)*EACEAD_imig/(EAC_py*EAC_y);
-      EACEAE_imc = 0.02;
-      EACEAE_imcy = 0.09;
-        EACEAE_imi = 0.0003;
-        EACEAE_imiy = 0.0008;
-        EACEAE_imcg = EACEAE_numcg*((EAE_pex*EACEAE_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
-        EACEAE_imcgy = (EAE_pex*EACEAE_rer)*EACEAE_imcg/(EAC_py*EAC_y);
-        EACEAE_imig = EACEAE_numig*((EAE_pex*EACEAE_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
-        EACEAE_imigy = (EAE_pex*EACEAE_rer)*EACEAE_imig/(EAC_py*EAC_y);
-      EACRW_imc = 0.02;
-      EACRW_imcy = 0.09;
-        EACRW_imi = 0.0003;
-        EACRW_imiy = 0.0008;
-        EACRW_imcg = EACRW_numcg*((RW_pex*EACRW_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
-        EACRW_imcgy = (RW_pex*EACRW_rer)*EACRW_imcg/(EAC_py*EAC_y);
-        EACRW_imig = EACRW_numig*((RW_pex*EACRW_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
-        EACRW_imigy = (RW_pex*EACRW_rer)*EACRW_imig/(EAC_py*EAC_y);
-      EACUS_imc = 0.02;
-      EACUS_imcy = 0.09;
-        EACUS_imi = 0.0003;
-        EACUS_imiy = 0.0008;
-        EACUS_imcg = EACUS_numcg*((US_pex*EACUS_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
-        EACUS_imcgy = (US_pex*EACUS_rer)*EACUS_imcg/(EAC_py*EAC_y);
-        EACUS_imig = EACUS_numig*((US_pex*EACUS_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
-        EACUS_imigy = (US_pex*EACUS_rer)*EACUS_imig/(EAC_py*EAC_y);
-      
-      // Shares
-      EADEAA_excy = 0.09;
-      EADEAA_exiy = 0.0008;
-      
-      // Shares
-      EADEAB_excy = 0.09;
-      EADEAB_exiy = 0.0008;
-      
-      // Shares
-      EADEAC_excy = 0.09;
-      EADEAC_exiy = 0.0008;
-      
-      // Shares
-      EADEAE_excy = 0.09;
-      EADEAE_exiy = 0.0008;
-      
-      // Shares
-      EADRW_excy = 0.09;
-      EADRW_exiy = 0.0008;
-      
-      // Shares
-      EADUS_excy = 0.09;
-      EADUS_exiy = 0.0008;
-  EAD_qc =  0.321620156669017*2;
-  EAD_qi =  0.00209600391746659*2;
-  EAD_qcg =  EAD_cg;
-  EAD_qig =  EAD_ig;
-  EAD_ntc = 0.161;
-  EAD_nti = 0.001;
-  EAD_ntcg = (1-EAD_nucg)*(EAD_pnt/EAD_pcg)^(-EAD_mucg)*EAD_qcg;
-  EAD_ntig = (1-EAD_nuig)*(EAD_pnt/EAD_pig)^(-EAD_muig)*EAD_qig;
-  EAD_ttc = 0.16;
-  EAD_tti = 0.001;
-  EAD_ttcg = EAD_nucg*(EAD_pttcg/EAD_pcg)^(-EAD_mucg)*EAD_qcg;
-  EAD_ttig = EAD_nuig*(EAD_pttig/EAD_pig)^(-EAD_muig)*EAD_qig;
-  EAD_htc = 0.08;
-  EAD_hti =  0.0005;
-  EAD_htcg = EAD_nutcg*(EAD_pht/EAD_pttcg)^(-EAD_mutcg)*EAD_ttcg;
-  EAD_htig = EAD_nutig*(EAD_pht/EAD_pttig)^(-EAD_mutig)*EAD_ttig;
-  EAD_imc = 0.08;
-  EAD_imcy = 0.25;
-  EAD_imi = 0.0005;
-  EAD_imiy = 0.0016;
-  EAD_imcg = (1-EAD_nutcg)*(EAD_pimcg/EAD_pttcg)^(-EAD_mutcg)*EAD_ttcg;
-  EAD_imcgy = EAD_pimcg*EAD_imcg/(EAD_py*EAD_y);
-  EAD_imig = (1-EAD_nutig)*(EAD_pimig/EAD_pttig)^(-EAD_mutig)*EAD_ttig;
-  EAD_imigy = EAD_pimig*EAD_imig/(EAD_py*EAD_y);
-      EADEAA_imc = 0.02;
-      EADEAA_imcy = 0.09;
-        EADEAA_imi = 0.0003;
-        EADEAA_imiy = 0.0008;
-        EADEAA_imcg = EADEAA_numcg*((EAA_pex*EADEAA_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
-        EADEAA_imcgy = (EAA_pex*EADEAA_rer)*EADEAA_imcg/(EAD_py*EAD_y);
-        EADEAA_imig = EADEAA_numig*((EAA_pex*EADEAA_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
-        EADEAA_imigy = (EAA_pex*EADEAA_rer)*EADEAA_imig/(EAD_py*EAD_y);
-      EADEAB_imc = 0.02;
-      EADEAB_imcy = 0.09;
-        EADEAB_imi = 0.0003;
-        EADEAB_imiy = 0.0008;
-        EADEAB_imcg = EADEAB_numcg*((EAB_pex*EADEAB_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
-        EADEAB_imcgy = (EAB_pex*EADEAB_rer)*EADEAB_imcg/(EAD_py*EAD_y);
-        EADEAB_imig = EADEAB_numig*((EAB_pex*EADEAB_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
-        EADEAB_imigy = (EAB_pex*EADEAB_rer)*EADEAB_imig/(EAD_py*EAD_y);
-      EADEAC_imc = 0.02;
-      EADEAC_imcy = 0.09;
-        EADEAC_imi = 0.0003;
-        EADEAC_imiy = 0.0008;
-        EADEAC_imcg = EADEAC_numcg*((EAC_pex*EADEAC_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
-        EADEAC_imcgy = (EAC_pex*EADEAC_rer)*EADEAC_imcg/(EAD_py*EAD_y);
-        EADEAC_imig = EADEAC_numig*((EAC_pex*EADEAC_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
-        EADEAC_imigy = (EAC_pex*EADEAC_rer)*EADEAC_imig/(EAD_py*EAD_y);
-      EADEAE_imc = 0.02;
-      EADEAE_imcy = 0.09;
-        EADEAE_imi = 0.0003;
-        EADEAE_imiy = 0.0008;
-        EADEAE_imcg = EADEAE_numcg*((EAE_pex*EADEAE_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
-        EADEAE_imcgy = (EAE_pex*EADEAE_rer)*EADEAE_imcg/(EAD_py*EAD_y);
-        EADEAE_imig = EADEAE_numig*((EAE_pex*EADEAE_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
-        EADEAE_imigy = (EAE_pex*EADEAE_rer)*EADEAE_imig/(EAD_py*EAD_y);
-      EADRW_imc = 0.02;
-      EADRW_imcy = 0.09;
-        EADRW_imi = 0.0003;
-        EADRW_imiy = 0.0008;
-        EADRW_imcg = EADRW_numcg*((RW_pex*EADRW_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
-        EADRW_imcgy = (RW_pex*EADRW_rer)*EADRW_imcg/(EAD_py*EAD_y);
-        EADRW_imig = EADRW_numig*((RW_pex*EADRW_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
-        EADRW_imigy = (RW_pex*EADRW_rer)*EADRW_imig/(EAD_py*EAD_y);
-      EADUS_imc = 0.02;
-      EADUS_imcy = 0.09;
-        EADUS_imi = 0.0003;
-        EADUS_imiy = 0.0008;
-        EADUS_imcg = EADUS_numcg*((US_pex*EADUS_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
-        EADUS_imcgy = (US_pex*EADUS_rer)*EADUS_imcg/(EAD_py*EAD_y);
-        EADUS_imig = EADUS_numig*((US_pex*EADUS_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
-        EADUS_imigy = (US_pex*EADUS_rer)*EADUS_imig/(EAD_py*EAD_y);
-      
-      // Shares
-      EAEEAA_excy = 0.09;
-      EAEEAA_exiy = 0.0008;
-      
-      // Shares
-      EAEEAB_excy = 0.09;
-      EAEEAB_exiy = 0.0008;
-      
-      // Shares
-      EAEEAC_excy = 0.09;
-      EAEEAC_exiy = 0.0008;
-      
-      // Shares
-      EAEEAD_excy = 0.09;
-      EAEEAD_exiy = 0.0008;
-      
-      // Shares
-      EAERW_excy = 0.09;
-      EAERW_exiy = 0.0008;
-      
-      // Shares
-      EAEUS_excy = 0.09;
-      EAEUS_exiy = 0.0008;
-  EAE_qc =  0.321620156669017*2;
-  EAE_qi =  0.00209600391746659*2;
-  EAE_qcg =  EAE_cg;
-  EAE_qig =  EAE_ig;
-  EAE_ntc = 0.161;
-  EAE_nti = 0.001;
-  EAE_ntcg = (1-EAE_nucg)*(EAE_pnt/EAE_pcg)^(-EAE_mucg)*EAE_qcg;
-  EAE_ntig = (1-EAE_nuig)*(EAE_pnt/EAE_pig)^(-EAE_muig)*EAE_qig;
-  EAE_ttc = 0.16;
-  EAE_tti = 0.001;
-  EAE_ttcg = EAE_nucg*(EAE_pttcg/EAE_pcg)^(-EAE_mucg)*EAE_qcg;
-  EAE_ttig = EAE_nuig*(EAE_pttig/EAE_pig)^(-EAE_muig)*EAE_qig;
-  EAE_htc = 0.08;
-  EAE_hti =  0.0005;
-  EAE_htcg = EAE_nutcg*(EAE_pht/EAE_pttcg)^(-EAE_mutcg)*EAE_ttcg;
-  EAE_htig = EAE_nutig*(EAE_pht/EAE_pttig)^(-EAE_mutig)*EAE_ttig;
-  EAE_imc = 0.08;
-  EAE_imcy = 0.25;
-  EAE_imi = 0.0005;
-  EAE_imiy = 0.0016;
-  EAE_imcg = (1-EAE_nutcg)*(EAE_pimcg/EAE_pttcg)^(-EAE_mutcg)*EAE_ttcg;
-  EAE_imcgy = EAE_pimcg*EAE_imcg/(EAE_py*EAE_y);
-  EAE_imig = (1-EAE_nutig)*(EAE_pimig/EAE_pttig)^(-EAE_mutig)*EAE_ttig;
-  EAE_imigy = EAE_pimig*EAE_imig/(EAE_py*EAE_y);
-      EAEEAA_imc = 0.02;
-      EAEEAA_imcy = 0.09;
-        EAEEAA_imi = 0.0003;
-        EAEEAA_imiy = 0.0008;
-        EAEEAA_imcg = EAEEAA_numcg*((EAA_pex*EAEEAA_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
-        EAEEAA_imcgy = (EAA_pex*EAEEAA_rer)*EAEEAA_imcg/(EAE_py*EAE_y);
-        EAEEAA_imig = EAEEAA_numig*((EAA_pex*EAEEAA_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
-        EAEEAA_imigy = (EAA_pex*EAEEAA_rer)*EAEEAA_imig/(EAE_py*EAE_y);
-      EAEEAB_imc = 0.02;
-      EAEEAB_imcy = 0.09;
-        EAEEAB_imi = 0.0003;
-        EAEEAB_imiy = 0.0008;
-        EAEEAB_imcg = EAEEAB_numcg*((EAB_pex*EAEEAB_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
-        EAEEAB_imcgy = (EAB_pex*EAEEAB_rer)*EAEEAB_imcg/(EAE_py*EAE_y);
-        EAEEAB_imig = EAEEAB_numig*((EAB_pex*EAEEAB_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
-        EAEEAB_imigy = (EAB_pex*EAEEAB_rer)*EAEEAB_imig/(EAE_py*EAE_y);
-      EAEEAC_imc = 0.02;
-      EAEEAC_imcy = 0.09;
-        EAEEAC_imi = 0.0003;
-        EAEEAC_imiy = 0.0008;
-        EAEEAC_imcg = EAEEAC_numcg*((EAC_pex*EAEEAC_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
-        EAEEAC_imcgy = (EAC_pex*EAEEAC_rer)*EAEEAC_imcg/(EAE_py*EAE_y);
-        EAEEAC_imig = EAEEAC_numig*((EAC_pex*EAEEAC_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
-        EAEEAC_imigy = (EAC_pex*EAEEAC_rer)*EAEEAC_imig/(EAE_py*EAE_y);
-      EAEEAD_imc = 0.02;
-      EAEEAD_imcy = 0.09;
-        EAEEAD_imi = 0.0003;
-        EAEEAD_imiy = 0.0008;
-        EAEEAD_imcg = EAEEAD_numcg*((EAD_pex*EAEEAD_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
-        EAEEAD_imcgy = (EAD_pex*EAEEAD_rer)*EAEEAD_imcg/(EAE_py*EAE_y);
-        EAEEAD_imig = EAEEAD_numig*((EAD_pex*EAEEAD_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
-        EAEEAD_imigy = (EAD_pex*EAEEAD_rer)*EAEEAD_imig/(EAE_py*EAE_y);
-      EAERW_imc = 0.02;
-      EAERW_imcy = 0.09;
-        EAERW_imi = 0.0003;
-        EAERW_imiy = 0.0008;
-        EAERW_imcg = EAERW_numcg*((RW_pex*EAERW_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
-        EAERW_imcgy = (RW_pex*EAERW_rer)*EAERW_imcg/(EAE_py*EAE_y);
-        EAERW_imig = EAERW_numig*((RW_pex*EAERW_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
-        EAERW_imigy = (RW_pex*EAERW_rer)*EAERW_imig/(EAE_py*EAE_y);
-      EAEUS_imc = 0.02;
-      EAEUS_imcy = 0.09;
-        EAEUS_imi = 0.0003;
-        EAEUS_imiy = 0.0008;
-        EAEUS_imcg = EAEUS_numcg*((US_pex*EAEUS_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
-        EAEUS_imcgy = (US_pex*EAEUS_rer)*EAEUS_imcg/(EAE_py*EAE_y);
-        EAEUS_imig = EAEUS_numig*((US_pex*EAEUS_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
-        EAEUS_imigy = (US_pex*EAEUS_rer)*EAEUS_imig/(EAE_py*EAE_y);
-      
-      // Shares
-      RWEAA_excy = 0.09;
-      RWEAA_exiy = 0.0008;
-      
-      // Shares
-      RWEAB_excy = 0.09;
-      RWEAB_exiy = 0.0008;
-      
-      // Shares
-      RWEAC_excy = 0.09;
-      RWEAC_exiy = 0.0008;
-      
-      // Shares
-      RWEAD_excy = 0.09;
-      RWEAD_exiy = 0.0008;
-      
-      // Shares
-      RWEAE_excy = 0.09;
-      RWEAE_exiy = 0.0008;
-      
-      // Shares
-      RWUS_excy = 0.09;
-      RWUS_exiy = 0.0008;
-  RW_qc =  0.321620156669017*2;
-  RW_qi =  0.00209600391746659*2;
-  RW_qcg =  RW_cg;
-  RW_qig =  RW_ig;
-  RW_ntc = 0.161;
-  RW_nti = 0.001;
-  RW_ntcg = (1-RW_nucg)*(RW_pnt/RW_pcg)^(-RW_mucg)*RW_qcg;
-  RW_ntig = (1-RW_nuig)*(RW_pnt/RW_pig)^(-RW_muig)*RW_qig;
-  RW_ttc = 0.16;
-  RW_tti = 0.001;
-  RW_ttcg = RW_nucg*(RW_pttcg/RW_pcg)^(-RW_mucg)*RW_qcg;
-  RW_ttig = RW_nuig*(RW_pttig/RW_pig)^(-RW_muig)*RW_qig;
-  RW_htc = 0.08;
-  RW_hti =  0.0005;
-  RW_htcg = RW_nutcg*(RW_pht/RW_pttcg)^(-RW_mutcg)*RW_ttcg;
-  RW_htig = RW_nutig*(RW_pht/RW_pttig)^(-RW_mutig)*RW_ttig;
-  RW_imc = 0.08;
-  RW_imcy = 0.25;
-  RW_imi = 0.0005;
-  RW_imiy = 0.0016;
-  RW_imcg = (1-RW_nutcg)*(RW_pimcg/RW_pttcg)^(-RW_mutcg)*RW_ttcg;
-  RW_imcgy = RW_pimcg*RW_imcg/(RW_py*RW_y);
-  RW_imig = (1-RW_nutig)*(RW_pimig/RW_pttig)^(-RW_mutig)*RW_ttig;
-  RW_imigy = RW_pimig*RW_imig/(RW_py*RW_y);
-      RWEAA_imc = 0.02;
-      RWEAA_imcy = 0.09;
-        RWEAA_imi = 0.0003;
-        RWEAA_imiy = 0.0008;
-        RWEAA_imcg = RWEAA_numcg*((EAA_pex*RWEAA_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
-        RWEAA_imcgy = (EAA_pex*RWEAA_rer)*RWEAA_imcg/(RW_py*RW_y);
-        RWEAA_imig = RWEAA_numig*((EAA_pex*RWEAA_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
-        RWEAA_imigy = (EAA_pex*RWEAA_rer)*RWEAA_imig/(RW_py*RW_y);
-      RWEAB_imc = 0.02;
-      RWEAB_imcy = 0.09;
-        RWEAB_imi = 0.0003;
-        RWEAB_imiy = 0.0008;
-        RWEAB_imcg = RWEAB_numcg*((EAB_pex*RWEAB_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
-        RWEAB_imcgy = (EAB_pex*RWEAB_rer)*RWEAB_imcg/(RW_py*RW_y);
-        RWEAB_imig = RWEAB_numig*((EAB_pex*RWEAB_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
-        RWEAB_imigy = (EAB_pex*RWEAB_rer)*RWEAB_imig/(RW_py*RW_y);
-      RWEAC_imc = 0.02;
-      RWEAC_imcy = 0.09;
-        RWEAC_imi = 0.0003;
-        RWEAC_imiy = 0.0008;
-        RWEAC_imcg = RWEAC_numcg*((EAC_pex*RWEAC_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
-        RWEAC_imcgy = (EAC_pex*RWEAC_rer)*RWEAC_imcg/(RW_py*RW_y);
-        RWEAC_imig = RWEAC_numig*((EAC_pex*RWEAC_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
-        RWEAC_imigy = (EAC_pex*RWEAC_rer)*RWEAC_imig/(RW_py*RW_y);
-      RWEAD_imc = 0.02;
-      RWEAD_imcy = 0.09;
-        RWEAD_imi = 0.0003;
-        RWEAD_imiy = 0.0008;
-        RWEAD_imcg = RWEAD_numcg*((EAD_pex*RWEAD_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
-        RWEAD_imcgy = (EAD_pex*RWEAD_rer)*RWEAD_imcg/(RW_py*RW_y);
-        RWEAD_imig = RWEAD_numig*((EAD_pex*RWEAD_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
-        RWEAD_imigy = (EAD_pex*RWEAD_rer)*RWEAD_imig/(RW_py*RW_y);
-      RWEAE_imc = 0.02;
-      RWEAE_imcy = 0.09;
-        RWEAE_imi = 0.0003;
-        RWEAE_imiy = 0.0008;
-        RWEAE_imcg = RWEAE_numcg*((EAE_pex*RWEAE_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
-        RWEAE_imcgy = (EAE_pex*RWEAE_rer)*RWEAE_imcg/(RW_py*RW_y);
-        RWEAE_imig = RWEAE_numig*((EAE_pex*RWEAE_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
-        RWEAE_imigy = (EAE_pex*RWEAE_rer)*RWEAE_imig/(RW_py*RW_y);
-      RWUS_imc = 0.02;
-      RWUS_imcy = 0.09;
-        RWUS_imi = 0.0003;
-        RWUS_imiy = 0.0008;
-        RWUS_imcg = RWUS_numcg*((US_pex*RWUS_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
-        RWUS_imcgy = (US_pex*RWUS_rer)*RWUS_imcg/(RW_py*RW_y);
-        RWUS_imig = RWUS_numig*((US_pex*RWUS_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
-        RWUS_imigy = (US_pex*RWUS_rer)*RWUS_imig/(RW_py*RW_y);
-      
-      // Shares
-      USEAA_excy = 0.09;
-      USEAA_exiy = 0.0008;
-      
-      // Shares
-      USEAB_excy = 0.09;
-      USEAB_exiy = 0.0008;
-      
-      // Shares
-      USEAC_excy = 0.09;
-      USEAC_exiy = 0.0008;
-      
-      // Shares
-      USEAD_excy = 0.09;
-      USEAD_exiy = 0.0008;
-      
-      // Shares
-      USEAE_excy = 0.09;
-      USEAE_exiy = 0.0008;
-      
-      // Shares
-      USRW_excy = 0.09;
-      USRW_exiy = 0.0008;
+      USRW_excy = 0.09*3/(ctryNumberDouble-1);
+      USRW_exiy = 0.0008*3/(ctryNumberDouble-1);
   US_qc =  0.321620156669017*2;
   US_qi =  0.00209600391746659*2;
   US_qcg =  US_cg;
@@ -15685,54 +16383,82 @@ US_igy = 0.01/10;
   US_imcgy = US_pimcg*US_imcg/(US_py*US_y);
   US_imig = (1-US_nutig)*(US_pimig/US_pttig)^(-US_mutig)*US_ttig;
   US_imigy = US_pimig*US_imig/(US_py*US_y);
-      USEAA_imc = 0.02;
-      USEAA_imcy = 0.09;
-        USEAA_imi = 0.0003;
-        USEAA_imiy = 0.0008;
+        USEAA_imc = USEAA_numc*((EAA_pex*USEAA_rer)/US_pimc)^(-US_mumc)*US_imc;
+      USEAA_imcy = (EAA_pex*USEAA_rer)*USEAA_imc/(US_py*US_y);
+        USEAA_imi = USEAA_numi*((EAA_pex*USEAA_rer)/US_pimi)^(-US_mumi)*US_imi;
+      USEAA_imiy = (EAA_pex*USEAA_rer)*USEAA_imi/(US_py*US_y);
         USEAA_imcg = USEAA_numcg*((EAA_pex*USEAA_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
-        USEAA_imcgy = (EAA_pex*USEAA_rer)*USEAA_imcg/(US_py*US_y);
+      USEAA_imcgy = (EAA_pex*USEAA_rer)*USEAA_imcg/(US_py*US_y);
         USEAA_imig = USEAA_numig*((EAA_pex*USEAA_rer)/US_pimig)^(-US_mumig)*US_imig;
-        USEAA_imigy = (EAA_pex*USEAA_rer)*USEAA_imig/(US_py*US_y);
-      USEAB_imc = 0.02;
-      USEAB_imcy = 0.09;
-        USEAB_imi = 0.0003;
-        USEAB_imiy = 0.0008;
+      USEAA_imigy = (EAA_pex*USEAA_rer)*USEAA_imig/(US_py*US_y);
+        USEAB_imc = USEAB_numc*((EAB_pex*USEAB_rer)/US_pimc)^(-US_mumc)*US_imc;
+      USEAB_imcy = (EAB_pex*USEAB_rer)*USEAB_imc/(US_py*US_y);
+        USEAB_imi = USEAB_numi*((EAB_pex*USEAB_rer)/US_pimi)^(-US_mumi)*US_imi;
+      USEAB_imiy = (EAB_pex*USEAB_rer)*USEAB_imi/(US_py*US_y);
         USEAB_imcg = USEAB_numcg*((EAB_pex*USEAB_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
-        USEAB_imcgy = (EAB_pex*USEAB_rer)*USEAB_imcg/(US_py*US_y);
+      USEAB_imcgy = (EAB_pex*USEAB_rer)*USEAB_imcg/(US_py*US_y);
         USEAB_imig = USEAB_numig*((EAB_pex*USEAB_rer)/US_pimig)^(-US_mumig)*US_imig;
-        USEAB_imigy = (EAB_pex*USEAB_rer)*USEAB_imig/(US_py*US_y);
-      USEAC_imc = 0.02;
-      USEAC_imcy = 0.09;
-        USEAC_imi = 0.0003;
-        USEAC_imiy = 0.0008;
+      USEAB_imigy = (EAB_pex*USEAB_rer)*USEAB_imig/(US_py*US_y);
+        USEAC_imc = USEAC_numc*((EAC_pex*USEAC_rer)/US_pimc)^(-US_mumc)*US_imc;
+      USEAC_imcy = (EAC_pex*USEAC_rer)*USEAC_imc/(US_py*US_y);
+        USEAC_imi = USEAC_numi*((EAC_pex*USEAC_rer)/US_pimi)^(-US_mumi)*US_imi;
+      USEAC_imiy = (EAC_pex*USEAC_rer)*USEAC_imi/(US_py*US_y);
         USEAC_imcg = USEAC_numcg*((EAC_pex*USEAC_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
-        USEAC_imcgy = (EAC_pex*USEAC_rer)*USEAC_imcg/(US_py*US_y);
+      USEAC_imcgy = (EAC_pex*USEAC_rer)*USEAC_imcg/(US_py*US_y);
         USEAC_imig = USEAC_numig*((EAC_pex*USEAC_rer)/US_pimig)^(-US_mumig)*US_imig;
-        USEAC_imigy = (EAC_pex*USEAC_rer)*USEAC_imig/(US_py*US_y);
-      USEAD_imc = 0.02;
-      USEAD_imcy = 0.09;
-        USEAD_imi = 0.0003;
-        USEAD_imiy = 0.0008;
+      USEAC_imigy = (EAC_pex*USEAC_rer)*USEAC_imig/(US_py*US_y);
+        USEAD_imc = USEAD_numc*((EAD_pex*USEAD_rer)/US_pimc)^(-US_mumc)*US_imc;
+      USEAD_imcy = (EAD_pex*USEAD_rer)*USEAD_imc/(US_py*US_y);
+        USEAD_imi = USEAD_numi*((EAD_pex*USEAD_rer)/US_pimi)^(-US_mumi)*US_imi;
+      USEAD_imiy = (EAD_pex*USEAD_rer)*USEAD_imi/(US_py*US_y);
         USEAD_imcg = USEAD_numcg*((EAD_pex*USEAD_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
-        USEAD_imcgy = (EAD_pex*USEAD_rer)*USEAD_imcg/(US_py*US_y);
+      USEAD_imcgy = (EAD_pex*USEAD_rer)*USEAD_imcg/(US_py*US_y);
         USEAD_imig = USEAD_numig*((EAD_pex*USEAD_rer)/US_pimig)^(-US_mumig)*US_imig;
-        USEAD_imigy = (EAD_pex*USEAD_rer)*USEAD_imig/(US_py*US_y);
-      USEAE_imc = 0.02;
-      USEAE_imcy = 0.09;
-        USEAE_imi = 0.0003;
-        USEAE_imiy = 0.0008;
-        USEAE_imcg = USEAE_numcg*((EAE_pex*USEAE_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
-        USEAE_imcgy = (EAE_pex*USEAE_rer)*USEAE_imcg/(US_py*US_y);
-        USEAE_imig = USEAE_numig*((EAE_pex*USEAE_rer)/US_pimig)^(-US_mumig)*US_imig;
-        USEAE_imigy = (EAE_pex*USEAE_rer)*USEAE_imig/(US_py*US_y);
-      USRW_imc = 0.02;
-      USRW_imcy = 0.09;
-        USRW_imi = 0.0003;
-        USRW_imiy = 0.0008;
+      USEAD_imigy = (EAD_pex*USEAD_rer)*USEAD_imig/(US_py*US_y);
+        USEAE_imc = 
+        +(1
+        -USEAA_numc
+        -USEAB_numc
+        -USEAC_numc
+        -USEAD_numc
+        -USRW_numc
+        )*((EAE_pex*USEAE_rer)/US_pimc)^(-US_mumc)*US_imc;
+      USEAE_imcy = (EAE_pex*USEAE_rer)*USEAE_imc/(US_py*US_y);
+        USEAE_imi = 
+        +(1
+        -USEAA_numi
+        -USEAB_numi
+        -USEAC_numi
+        -USEAD_numi
+        -USRW_numi
+        )*((EAE_pex*USEAE_rer)/US_pimi)^(-US_mumi)*US_imi;
+      USEAE_imiy = (EAE_pex*USEAE_rer)*USEAE_imi/(US_py*US_y);
+        USEAE_imcg = 
+        +(1
+        -USEAA_numcg
+        -USEAB_numcg
+        -USEAC_numcg
+        -USEAD_numcg
+        -USRW_numcg
+        )*((EAE_pex*USEAE_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
+      USEAE_imcgy = (EAE_pex*USEAE_rer)*USEAE_imcg/(US_py*US_y);
+        USEAE_imig = 
+        +(1
+        -USEAA_numig
+        -USEAB_numig
+        -USEAC_numig
+        -USEAD_numig
+        -USRW_numig
+        )*((EAE_pex*USEAE_rer)/US_pimig)^(-US_mumig)*US_imig;
+      USEAE_imigy = (EAE_pex*USEAE_rer)*USEAE_imig/(US_py*US_y);
+        USRW_imc = USRW_numc*((RW_pex*USRW_rer)/US_pimc)^(-US_mumc)*US_imc;
+      USRW_imcy = (RW_pex*USRW_rer)*USRW_imc/(US_py*US_y);
+        USRW_imi = USRW_numi*((RW_pex*USRW_rer)/US_pimi)^(-US_mumi)*US_imi;
+      USRW_imiy = (RW_pex*USRW_rer)*USRW_imi/(US_py*US_y);
         USRW_imcg = USRW_numcg*((RW_pex*USRW_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
-        USRW_imcgy = (RW_pex*USRW_rer)*USRW_imcg/(US_py*US_y);
+      USRW_imcgy = (RW_pex*USRW_rer)*USRW_imcg/(US_py*US_y);
         USRW_imig = USRW_numig*((RW_pex*USRW_rer)/US_pimig)^(-US_mumig)*US_imig;
-        USRW_imigy = (RW_pex*USRW_rer)*USRW_imig/(US_py*US_y);
+      USRW_imigy = (RW_pex*USRW_rer)*USRW_imig/(US_py*US_y);
  
 // Euro Area only
 EAA_bh = 0;
@@ -15760,12 +16486,12 @@ resid(non_zero);
 disp('alphat')
 homotopy_setup;
 EAA_alphat, 0.1;
-RW_alphat,  0.1;
-US_alphat,  0.1;
 EAB_alphat, 0.1;
 EAC_alphat, 0.1;
 EAD_alphat, 0.1;
 EAE_alphat, 0.1;
+RW_alphat, 0.1;
+US_alphat, 0.1;
 end;
 steady(homotopy_steps = 5);
 save_params_and_steady_state('eagle_steady_stage0.txt');

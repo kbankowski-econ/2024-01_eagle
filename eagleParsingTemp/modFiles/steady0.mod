@@ -22,13 +22,9 @@ resid(non_zero);
 // The same parameter values like in the params.mod; just to check the steady state solution
 disp('alphat')
 homotopy_setup;
-EAA_alphat, 0.1;
-RW_alphat,  0.1;
-US_alphat,  0.1;
-EAB_alphat, 0.1;
-EAC_alphat, 0.1;
-EAD_alphat, 0.1;
-EAE_alphat, 0.1;
+@#for co in countries
+@{co}_alphat, 0.1;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
