@@ -301,193 +301,122 @@ homotopy_setup;
 end;
 steady(homotopy_steps = 15);
 
-disp('EAA_eta*')
-homotopy_setup;
-EAA_eta,  4.33;
-EAA_etai, 4.33;
-EAA_etaj, 4.33;
-end;
-steady(homotopy_steps = 10);
+@#for co in countries
+    @#if co=="RW" || co=="US"
+        disp('RW and US _eta*')
+        homotopy_setup;
+        @{co}_eta, 7.25;
+        @{co}_etai, 7.25;
+        @{co}_etaj, 7.25;
+        end;
+        steady(homotopy_steps = 10);
+    @#else
+        disp('EUROPE _eta*')
+        homotopy_setup;
+        @{co}_eta, 4.33;
+        @{co}_etai, 4.33;
+        @{co}_etaj, 4.33;
+        end;
+        steady(homotopy_steps = 10);
+    @#endif
 
-disp('EAB_eta*')
-homotopy_setup;
-EAB_eta,  4.33;
-EAB_etai, 4.33;
-EAB_etaj, 4.33;
-end;
-steady(homotopy_steps = 10);
-
-disp('EAC_eta*')
-homotopy_setup;
-EAC_eta,  4.33;
-EAC_etai, 4.33;
-EAC_etaj, 4.33;
-end;
-steady(homotopy_steps = 10);
-
-disp('EAD_eta*')
-homotopy_setup;
-EAD_eta,  4.33;
-EAD_etai, 4.33;
-EAD_etaj, 4.33;
-end;
-steady(homotopy_steps = 10);
-
-disp('EAE_eta*')
-homotopy_setup;
-EAE_eta,  4.33;
-EAE_etai, 4.33;
-EAE_etaj, 4.33;
-end;
-steady(homotopy_steps = 10);
-
-disp('US_eta*')
-homotopy_setup;
-US_eta,  7.25;
-US_etai, 7.25;
-US_etaj, 7.25;
-end;
-steady(homotopy_steps = 15);
-
-disp('RW_eta*')
-homotopy_setup;
-RW_eta,  7.25;
-RW_etai, 7.25;
-RW_etaj, 7.25;
-end;
-steady(homotopy_steps = 10);
+@#endfor
 
 // Fiscal policy
 
 disp('bytarget')
 homotopy_setup;
-EAA_bytarget, 2.40;
-US_bytarget,  2.40;
-RW_bytarget,  2.40;
-EAB_bytarget, 2.40;
-EAC_bytarget, 2.40;
-EAD_bytarget, 2.40;
-EAE_bytarget, 2.40;
+@#for co in countries
+@{co}_bytarget, 2.40;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('cgybar')
 homotopy_setup;
-EAA_cgybar, 0.20;
-US_cgybar,  0.16;
-RW_cgybar,  0.16;
-EAB_cgybar, 0.20;
-EAC_cgybar, 0.20;
-EAD_cgybar, 0.20;
-EAE_cgybar, 0.20;
+@#for co in countries
+    @#if co=="RW" || co=="US"
+        @{co}_cgybar, 0.16;
+    @#else
+        @{co}_cgybar, 0.20;
+    @#endif
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('igybar')
 homotopy_setup;
-EAA_igybar, 0.04;
-US_igybar,  0.04;
-RW_igybar,  0.04;
-EAB_igybar, 0.04;
-EAC_igybar, 0.04;
-EAD_igybar, 0.04;
-EAE_igybar, 0.04;
+@#for co in countries
+@{co}_igybar, 0.04;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('mutcg') 
 homotopy_setup;
-EAA_mutcg, 2.5;
-US_mutcg,  2.5;
-RW_mutcg,  2.5;
-EAB_mutcg, 2.5;
-EAC_mutcg, 2.5;
-EAD_mutcg, 2.5;
-EAE_mutcg, 2.5;
+@#for co in countries
+@{co}_mutcg, 2.5;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('mutig')
 homotopy_setup;
-EAA_mutig, 2.5;
-US_mutig,  2.5;
-RW_mutig,  2.5;
-EAB_mutig, 2.5;
-EAC_mutig, 2.5;
-EAD_mutig, 2.5;
-EAE_mutig, 2.5;
+@#for co in countries
+@{co}_mutig, 2.5;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('mumcg')
 homotopy_setup;
-EAA_mumcg, 2.5;
-US_mumcg,  2.5;
-RW_mumcg,  2.5;
-EAB_mumcg, 2.5;
-EAC_mumcg, 2.5;
-EAD_mumcg, 2.5;
-EAE_mumcg, 2.5;
+@#for co in countries
+@{co}_mumcg, 2.5;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('mumig')
 homotopy_setup;
-EAA_mumig, 2.5;
-US_mumig,  2.5;
-RW_mumig,  2.5;
-EAB_mumig, 2.5;
-EAC_mumig, 2.5;
-EAD_mumig, 2.5;
-EAE_mumig, 2.5;
+@#for co in countries
+@{co}_mumig, 2.5;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('nuig') 
 homotopy_setup;
-EAA_nuig, 0.8;
-US_nuig,  0.8;
-RW_nuig,  0.8;
-EAB_nuig, 0.6;
-EAC_nuig, 0.6;
-EAD_nuig, 0.6;
-EAE_nuig, 0.6;
+@#for co in countries
+    @#if co== countries[ctryNumber-2]
+        @{co}_nuig, 0.6;
+    @#else
+        @{co}_nuig, 0.8;
+    @#endif
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('nucg') 
 homotopy_setup;
-EAA_nucg, 0.8;
-US_nucg,  0.8;
-RW_nucg,  0.8;
-EAB_nucg, 0.8;
-EAC_nucg, 0.8;
-EAD_nucg, 0.8;
-EAE_nucg, 0.8;
+@#for co in countries
+@{co}_nucg, 0.8;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('mucg')
 homotopy_setup;
-EAA_mucg, 0.5;
-US_mucg,  0.5;
-RW_mucg,  0.5;
-EAB_mucg, 0.5;
-EAC_mucg, 0.5;
-EAD_mucg, 0.5;
-EAE_mucg, 0.5;
+@#for co in countries
+@{co}_mucg, 0.5;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('muig') 
 homotopy_setup;
-EAA_muig, 0.5;
-US_muig,  0.5;
-RW_muig,  0.5;
-EAB_muig, 0.5;
-EAC_muig, 0.5;
-EAD_muig, 0.5;
-EAE_muig, 0.5;
+@#for co in countries
+@{co}_muig, 0.5;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
@@ -495,13 +424,9 @@ steady(homotopy_steps = 5);
 
 disp('pi4target')
 homotopy_setup;
-EAA_pi4target, 1.02;
-US_pi4target,  1.02;
-RW_pi4target,  1.02;
-EAB_pi4target, 1.02;
-EAC_pi4target, 1.02;
-EAD_pi4target, 1.02;
-EAE_pi4target, 1.02;
+@#for co in countries
+@{co}_pi4target, 1.02;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
@@ -510,13 +435,9 @@ steady(homotopy_steps = 5);
 // rrstar = 1.03**0.25
 disp('beta')
 homotopy_setup;
-EAA_beta, 0.99263754;
-US_beta,  0.99263754;
-RW_beta,  0.99263754;
-EAB_beta, 0.99263754;
-EAC_beta, 0.99263754;
-EAD_beta, 0.99263754;
-EAE_beta, 0.99263754;
+@#for co in countries
+@{co}_beta, 0.99263754;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
@@ -524,49 +445,49 @@ steady(homotopy_steps = 5);
 
 disp('taucbar')
 homotopy_setup;
-EAA_taucbar, 0.183;
-US_taucbar,  0.077;
-RW_taucbar,  0.077;
-EAB_taucbar, 0.183;
-EAC_taucbar, 0.183;
-EAD_taucbar, 0.183;
-EAE_taucbar, 0.183;
+@#for co in countries
+    @#if co=="RW" || co=="US"
+        @{co}_taucbar, 0.077;
+    @#else
+        @{co}_taucbar, 0.183;
+    @#endif
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('taunbar')
 homotopy_setup;
-EAA_taunbar, 0.122;
-US_taunbar,  0.154;
-RW_taunbar,  0.154;
-EAB_taunbar, 0.122;
-EAC_taunbar, 0.122;
-EAD_taunbar, 0.122;
-EAE_taunbar, 0.122;
+@#for co in countries
+    @#if co=="RW" || co=="US"
+        @{co}_taunbar, 0.154;
+    @#else
+        @{co}_taunbar, 0.122;
+    @#endif
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('tauwhbar')
 homotopy_setup;
-EAA_tauwhbar, 0.118;
-US_tauwhbar,  0.071;
-RW_tauwhbar,  0.071;
-EAB_tauwhbar, 0.118;
-EAC_tauwhbar, 0.118;
-EAD_tauwhbar, 0.118;
-EAE_tauwhbar, 0.118;
+@#for co in countries
+    @#if co=="RW" || co=="US"
+        @{co}_tauwhbar, 0.071;
+    @#else
+        @{co}_tauwhbar, 0.118;
+    @#endif
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('tauwfbar')
 homotopy_setup;
-EAA_tauwfbar, 0.219;
-US_tauwfbar,  0.071;
-RW_tauwfbar,  0.071;
-EAB_tauwfbar, 0.219;
-EAC_tauwfbar, 0.219;
-EAD_tauwfbar, 0.219;
-EAE_tauwfbar, 0.219;
+@#for co in countries
+    @#if co=="RW" || co=="US"
+        @{co}_tauwfbar, 0.071;
+    @#else
+        @{co}_tauwfbar, 0.219;
+    @#endif
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
@@ -590,36 +511,29 @@ steady(homotopy_steps = 5);
 
 disp('upsilontr')
 homotopy_setup;
-EAA_upsilontr, 0.66666666;
-US_upsilontr,  0.66666666;
-RW_upsilontr,  0.66666666;
-EAB_upsilontr, 0.66666666;
-EAC_upsilontr, 0.66666666;
-EAD_upsilontr, 0.66666666;
-EAE_upsilontr, 0.66666666;
+@#for co in countries
+@{co}_upsilontr, 0.66666666;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('upsilont')
 homotopy_setup;
-EAA_upsilont, 1.20;
-US_upsilont,  1.20;
-RW_upsilont,  1.20;
-EAB_upsilont, 1.20;
-EAC_upsilont, 1.20;
-EAD_upsilont, 1.20;
-EAE_upsilont, 1.20;
+@#for co in countries
+@{co}_upsilont, 1.20;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('bfytarget')
 homotopy_setup;
-EAA_bfytarget, -0.15;
-RW_bfytarget,   0.40;
-EAB_bfytarget,  0.40;
-EAC_bfytarget,  0.40;
-EAD_bfytarget,  0.40;
-EAE_bfytarget,  0.40;
+@#for co in countries - [ countries[ctryNumber]]
+    @#if co=="RW" || co=="US" || co== countries[ctryNumber-2]
+        @{co}_bfytarget, 0.4;
+    @#else
+        @{co}_bfytarget, -0.15;
+    @#endif
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
