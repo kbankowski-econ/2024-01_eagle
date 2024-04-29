@@ -338,17 +338,8 @@ initval;
 
 
 @#for COUNTRY1 IN countries
-
-@#if (COUNTRY != COUNTRY1)
-@#for aItem in demandItems
-  @#if aItem == "c"
-      @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.02;
-      @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.09;
-  @#else
-    @#if aItem == "i"
-        @{COUNTRY}@{COUNTRY1}_im@{aItem} = 0.0003;
-        @{COUNTRY}@{COUNTRY1}_im@{aItem}y = 0.0008;
-    @#else
+  @#if (COUNTRY != COUNTRY1)
+    @#for aItem in demandItems
       @#if COUNTRY1==coResid
         @{COUNTRY}@{COUNTRY1}_im@{aItem} = 
         +(1
@@ -360,13 +351,11 @@ initval;
         @{COUNTRY}@{COUNTRY1}_im@{aItem} = @{COUNTRY}@{COUNTRY1}_num@{aItem}*((@{COUNTRY1}_pex*@{COUNTRY}@{COUNTRY1}_rer)/@{COUNTRY}_pim@{aItem})^(-@{COUNTRY}_mum@{aItem})*@{COUNTRY}_im@{aItem};
       @#endif
       @{COUNTRY}@{COUNTRY1}_im@{aItem}y = (@{COUNTRY1}_pex*@{COUNTRY}@{COUNTRY1}_rer)*@{COUNTRY}@{COUNTRY1}_im@{aItem}/(@{COUNTRY}_py*@{COUNTRY}_y);
-    @#endif
+    @#endfor
   @#endif
 @#endfor
-@#endif
-@#endfor
 
-@#endfor
+@#endfor // big loop initiated at the beginning of the file
 
  
 // Euro Area only
