@@ -996,16 +996,18 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 
 @{coUSA}_rer = 1;
 
-@#for it in countries[1: ctryNumber-3]
-	@{it}@{coGermany}_nerdep = @{it}_rerdep/@{coGermany}_rerdep*@{it}_pic/@{coGermany}_pic;
-	// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
-	@#if !steady
-		1 = @{coGermany}_r*(1-@{it}_gammabh)*@{it}_beta*@{it}_lambdai(+1)/@{it}_lambdai*@{it}@{coGermany}_rer(+1)/@{it}@{coGermany}_rer/@{coGermany}_pic(+1);
-		@{it}_gammabh = @{coGermany}_gammab1*(exp(@{it}@{coGermany}_rer*@{it}_bh/@{coGermany}_pic/(@{it}_py*@{it}_y)-@{it}_bhytarget)-1);
-	@#else
-		@{it}_gammabh = 0;
-		@{it}_bh = (@{it}_bhytarget*@{it}_py*@{it}_y)/@{it}@{coGermany}_rer*@{coGermany}_pic;
-	@#endif
+@#for it in countries
+    @#if it!=countries[ctryNumber] && it!=countries[ctryNumber-1] && it!=countries[ctryNumber-2]
+		@{it}@{coGermany}_nerdep = @{it}_rerdep/@{coGermany}_rerdep*@{it}_pic/@{coGermany}_pic;
+		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
+		@#if !steady
+			1 = @{coGermany}_r*(1-@{it}_gammabh)*@{it}_beta*@{it}_lambdai(+1)/@{it}_lambdai*@{it}@{coGermany}_rer(+1)/@{it}@{coGermany}_rer/@{coGermany}_pic(+1);
+			@{it}_gammabh = @{coGermany}_gammab1*(exp(@{it}@{coGermany}_rer*@{it}_bh/@{coGermany}_pic/(@{it}_py*@{it}_y)-@{it}_bhytarget)-1);
+		@#else
+			@{it}_gammabh = 0;
+			@{it}_bh = (@{it}_bhytarget*@{it}_py*@{it}_y)/@{it}@{coGermany}_rer*@{coGermany}_pic;
+		@#endif
+    @#endif
 @#endfor
 
 0 =
@@ -1022,8 +1024,10 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @{ea}_y = 
 	(
 	@{co}_size*@{co}_pybar*@{co}_y
-	@#for it in countries[2: ctryNumber-2]
-		+ @{it}_size*@{co}@{it}_rerbar*@{it}_pybar *@{it}_y	
+	@#for it in countries[2: ctryNumber]
+		@#if it!= "RW" && it!= "US"
+			+ @{it}_size*@{co}@{it}_rerbar*@{it}_pybar *@{it}_y	
+		@#endif
 	@#endfor	 	
 	)
 	/
@@ -1043,8 +1047,10 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @{ea}_m = 
 	(
 	@{co}_size*@{co}_m
-	@#for it in countries[2: ctryNumber-2]
-		+ @{it}_size*@{co}@{it}_rerbar*@{it}_m	
+	@#for it in countries[2: ctryNumber]
+		@#if it!= "RW" && it!= "US"
+			+ @{it}_size*@{co}@{it}_rerbar*@{it}_m	
+		@#endif
 	@#endfor	 	
 	)
 	/

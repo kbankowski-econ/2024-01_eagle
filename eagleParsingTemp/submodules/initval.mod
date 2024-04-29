@@ -367,14 +367,13 @@ initval;
 // Euro Area only
 EAA_bh = 0;
 EAB_bh = 0;
-EAA_gammabh = 0;
-EAB_gammabh = 0;
-EAC_gammabh = 0;
-EAD_gammabh = 0;
-EAAEAE_nerdep = 1;
-EABEAE_nerdep = 1;
-EACEAE_nerdep = 1;
-EADEAE_nerdep = 1;
+
+@#for it in countries
+    @#if it!=countries[ctryNumber] && it!=countries[ctryNumber-1] && it!=countries[ctryNumber-2]
+      @{it}_gammabh = 0;
+      @{it}@{coGermany}_nerdep = 1;
+    @#endif
+@#endfor
 
 EA_bf = 0;
 @# if !steady

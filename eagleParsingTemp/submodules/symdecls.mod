@@ -395,9 +395,11 @@ parameters
 @#endfor
 ;
 
-@#for it in countries[1: ctryNumber-3]
-    var @{it}@{coGermany}_nerdep;
-    var @{it}_gammabh;
+@#for it in countries
+    @#if it!=countries[ctryNumber] && it!=countries[ctryNumber-1] && it!=countries[ctryNumber-2]
+        var @{it}@{coGermany}_nerdep;
+        var @{it}_gammabh;
+    @#endif
 @#endfor
 
 var
