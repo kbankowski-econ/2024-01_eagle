@@ -3327,14 +3327,14 @@ parameters
  USRW_numcg
  USRW_numig
 ;
-    var EAAEAE_nerdep;
-    var EAA_gammabh;
-    var EABEAE_nerdep;
-    var EAB_gammabh;
-    var EACEAE_nerdep;
-    var EAC_gammabh;
-    var EADEAE_nerdep;
-    var EAD_gammabh;
+        var EAAEAE_nerdep;
+        var EAA_gammabh;
+        var EABEAE_nerdep;
+        var EAB_gammabh;
+        var EACEAE_nerdep;
+        var EAC_gammabh;
+        var EADEAE_nerdep;
+        var EAD_gammabh;
 var
  EAA_bh
  EAB_bh
@@ -12172,22 +12172,22 @@ US_size*US_bf =
 		RW_bf/US_r(-1) = RW_bf(-1)+RW_tb(-1)/RW_rer(-1);
 	
 US_rer = 1;
-	EAAEAE_nerdep = EAA_rerdep/EAE_rerdep*EAA_pic/EAE_pic;
-	// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
-		EAA_gammabh = 0;
-		EAA_bh = (EAA_bhytarget*EAA_py*EAA_y)/EAAEAE_rer*EAE_pic;
-	EABEAE_nerdep = EAB_rerdep/EAE_rerdep*EAB_pic/EAE_pic;
-	// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
-		EAB_gammabh = 0;
-		EAB_bh = (EAB_bhytarget*EAB_py*EAB_y)/EABEAE_rer*EAE_pic;
-	EACEAE_nerdep = EAC_rerdep/EAE_rerdep*EAC_pic/EAE_pic;
-	// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
-		EAC_gammabh = 0;
-		EAC_bh = (EAC_bhytarget*EAC_py*EAC_y)/EACEAE_rer*EAE_pic;
-	EADEAE_nerdep = EAD_rerdep/EAE_rerdep*EAD_pic/EAE_pic;
-	// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
-		EAD_gammabh = 0;
-		EAD_bh = (EAD_bhytarget*EAD_py*EAD_y)/EADEAE_rer*EAE_pic;
+		EAAEAE_nerdep = EAA_rerdep/EAE_rerdep*EAA_pic/EAE_pic;
+		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
+			EAA_gammabh = 0;
+			EAA_bh = (EAA_bhytarget*EAA_py*EAA_y)/EAAEAE_rer*EAE_pic;
+		EABEAE_nerdep = EAB_rerdep/EAE_rerdep*EAB_pic/EAE_pic;
+		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
+			EAB_gammabh = 0;
+			EAB_bh = (EAB_bhytarget*EAB_py*EAB_y)/EABEAE_rer*EAE_pic;
+		EACEAE_nerdep = EAC_rerdep/EAE_rerdep*EAC_pic/EAE_pic;
+		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
+			EAC_gammabh = 0;
+			EAC_bh = (EAC_bhytarget*EAC_py*EAC_y)/EACEAE_rer*EAE_pic;
+		EADEAE_nerdep = EAD_rerdep/EAE_rerdep*EAD_pic/EAE_pic;
+		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
+			EAD_gammabh = 0;
+			EAD_bh = (EAD_bhytarget*EAD_py*EAD_y)/EADEAE_rer*EAE_pic;
 0 =
 	+ EAA_size*EAA_bh
 	+ EAB_size*EAB_bh
@@ -12202,10 +12202,10 @@ US_rer = 1;
 EA_y = 
 	(
 	EAA_size*EAA_pybar*EAA_y
-		+ EAB_size*EAAEAB_rerbar*EAB_pybar *EAB_y	
-		+ EAC_size*EAAEAC_rerbar*EAC_pybar *EAC_y	
-		+ EAD_size*EAAEAD_rerbar*EAD_pybar *EAD_y	
-		+ EAE_size*EAAEAE_rerbar*EAE_pybar *EAE_y	
+			+ EAB_size*EAAEAB_rerbar*EAB_pybar *EAB_y	
+			+ EAC_size*EAAEAC_rerbar*EAC_pybar *EAC_y	
+			+ EAD_size*EAAEAD_rerbar*EAD_pybar *EAD_y	
+			+ EAE_size*EAAEAE_rerbar*EAE_pybar *EAE_y	
 	)
 	/
 	(
@@ -12223,10 +12223,10 @@ EA_ygrowth4= EA_y/EA_y(-4);
 EA_m = 
 	(
 	EAA_size*EAA_m
-		+ EAB_size*EAAEAB_rerbar*EAB_m	
-		+ EAC_size*EAAEAC_rerbar*EAC_m	
-		+ EAD_size*EAAEAD_rerbar*EAD_m	
-		+ EAE_size*EAAEAE_rerbar*EAE_m	
+			+ EAB_size*EAAEAB_rerbar*EAB_m	
+			+ EAC_size*EAAEAC_rerbar*EAC_m	
+			+ EAD_size*EAAEAD_rerbar*EAD_m	
+			+ EAE_size*EAAEAE_rerbar*EAE_m	
 	)
 	/
 	(
@@ -16468,16 +16468,19 @@ US_igy = 0.01/10;
   USRW_imigy = (RW_pex*USRW_rer)*USRW_imig/(US_py*US_y);
  
 // Euro Area only
-EAA_bh = 0;
-EAB_bh = 0;
-EAA_gammabh = 0;
-EAB_gammabh = 0;
-EAC_gammabh = 0;
-EAD_gammabh = 0;
-EAAEAE_nerdep = 1;
-EABEAE_nerdep = 1;
-EACEAE_nerdep = 1;
-EADEAE_nerdep = 1;
+ EAA_bh = 0;
+ EAB_bh = 0;
+ EAC_bh = 0;
+ EAD_bh = 0;
+ EAE_bh = 0;
+      EAA_gammabh = 0;
+      EAAEAE_nerdep = 1;
+      EAB_gammabh = 0;
+      EABEAE_nerdep = 1;
+      EAC_gammabh = 0;
+      EACEAE_nerdep = 1;
+      EAD_gammabh = 0;
+      EADEAE_nerdep = 1;
 EA_bf = 0;
 EA_epsz =  0;
 EA_m = 0.132518;
