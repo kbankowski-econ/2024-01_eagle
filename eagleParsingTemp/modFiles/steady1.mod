@@ -9,8 +9,6 @@ options_.markowitz = 5;
 
 @#include "symdecls.mod"
 
-@#define sigma_equals_one = [ 1, 1, 1, 1, 1 , 1 , 1 ] 
-
 @#include "modeqs.mod"
 
 @#include "params.mod"
@@ -21,25 +19,17 @@ options_.markowitz = 5;
 
 disp('alphat')
 homotopy_setup;
-EAA_alphat, 0.3;
-RW_alphat,  0.3;
-US_alphat,  0.3;
-EAB_alphat, 0.3;
-EAC_alphat, 0.3;
-EAD_alphat, 0.3;
-EAE_alphat, 0.3;
+@#for co in countries
+@{co}_alphat, 0.3;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('alphan')
 homotopy_setup;
-EAA_alphan, 0.3;
-RW_alphan,  0.3;
-US_alphan,  0.3;
-EAB_alphan, 0.3;
-EAC_alphan, 0.3;
-EAD_alphan, 0.3;
-EAE_alphan, 0.3;
+@#for co in countries
+@{co}_alphan, 0.3;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
@@ -47,121 +37,93 @@ steady(homotopy_steps = 5);
 
 disp('muc')
 homotopy_setup;
-EAA_muc, 0.5;
-RW_muc,  0.5;
-US_muc,  0.5;
-EAB_muc, 0.5;
-EAC_muc, 0.5;
-EAD_muc, 0.5;
-EAE_muc, 0.5;
+@#for co in countries
+@{co}_muc, 0.5;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('mutc')
 homotopy_setup;
-EAA_mutc, 2.5;
-RW_mutc,  2.5;
-US_mutc,  2.5;
-EAB_mutc, 2.5;
-EAC_mutc, 2.5;
-EAD_mutc, 2.5;
-EAE_mutc, 2.5;
+@#for co in countries
+@{co}_mutc, 2.5;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('mumc')
 homotopy_setup;
-EAA_mumc, 2.5;
-RW_mumc,  2.5;
-US_mumc,  2.5;
-EAB_mumc, 2.5;
-EAC_mumc, 2.5;
-EAD_mumc, 2.5;
-EAE_mumc, 2.5;
+@#for co in countries
+@{co}_mumc, 2.5;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('mui')
 homotopy_setup;
-EAA_mui, 0.5;
-RW_mui,  0.5;
-US_mui,  0.5;
-EAB_mui, 0.5;
-EAC_mui, 0.5;
-EAD_mui, 0.5;
-EAE_mui, 0.5;
+@#for co in countries
+@{co}_mui, 0.5;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('muti')
 homotopy_setup;
-EAA_muti, 2.5;
-RW_muti,  2.5;
-US_muti,  2.5;
-EAB_muti, 2.5;
-EAC_muti, 2.5;
-EAD_muti, 2.5;
-EAE_muti, 2.5;
+@#for co in countries
+@{co}_muti, 2.5;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('mumi')
 homotopy_setup;
-EAA_mumi, 2.5;
-RW_mumi,  2.5;
-US_mumi,  2.5;
-EAB_mumi, 2.5;
-EAC_mumi, 2.5;
-EAD_mumi, 2.5;
-EAE_mumi, 2.5;
+@#for co in countries
+@{co}_mumi, 2.5;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('nuc')
 homotopy_setup;
-EAA_nuc, 0.45;
-RW_nuc,  0.35;
-US_nuc,  0.35;
-EAB_nuc, 0.45;
-EAC_nuc, 0.45;
-EAD_nuc, 0.45;
-EAE_nuc, 0.45;
+@#for co in countries
+    @#if co=="RW" || co=="US"
+        @{co}_nuc, 0.35;
+    @#else
+        @{co}_nuc, 0.45;
+    @#endif
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('nui')
 homotopy_setup;
-EAA_nui, 0.75;
-RW_nui,  0.75;
-US_nui,  0.75;
-EAB_nui, 0.75;
-EAC_nui, 0.75;
-EAD_nui, 0.75;
-EAE_nui, 0.75;
+@#for co in countries
+@{co}_nui, 0.75;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('nutc')
 homotopy_setup;
-EAA_nutc, 0.20;
-RW_nutc,  0.20;
-US_nutc,  0.85;
-EAB_nutc, 0.20;
-EAC_nutc, 0.20;
-EAD_nutc, 0.20;
-EAE_nutc, 0.20;
+@#for co in countries
+    @#if co=="US"
+        @{co}_nutc, 0.85;
+    @#else
+        @{co}_nutc, 0.20;
+    @#endif
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('nuti')
 homotopy_setup;
-EAA_nuti, 0.20;
-RW_nuti,  0.20;
-US_nuti,  0.85;
-EAB_nuti, 0.20;
-EAC_nuti, 0.20;
-EAD_nuti, 0.20;
-EAE_nuti, 0.20;
+@#for co in countries
+    @#if co=="US"
+        @{co}_nuti, 0.85;
+    @#else
+        @{co}_nuti, 0.20;
+    @#endif
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
