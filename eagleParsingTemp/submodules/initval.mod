@@ -268,8 +268,8 @@ initval;
     @#if (COUNTRY != COUNTRY1)
       
       // Shares
-      @{COUNTRY}@{COUNTRY1}_excy = 0.09*3/(ctryNumberDouble-1);
-      @{COUNTRY}@{COUNTRY1}_exiy = 0.0008*3/(ctryNumberDouble-1);
+      @{COUNTRY}@{COUNTRY1}_excy = 0.09;
+      @{COUNTRY}@{COUNTRY1}_exiy = 0.0008;
     @#endif
   @#endfor
 
