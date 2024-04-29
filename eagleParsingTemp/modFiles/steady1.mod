@@ -131,136 +131,96 @@ steady(homotopy_steps = 5);
 
 disp('psit')
 homotopy_setup;
-EAA_psit, 0.2;
-RW_psit,  0.2;
-US_psit,  0.2;
-EAB_psit, 0.2;
-EAC_psit, 0.2;
-EAD_psit, 0.2;
-EAE_psit, 0.2;
+@#for co in countries
+@{co}_psit, 0.2;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('psin')
 homotopy_setup;
-EAA_psin, 0.28;
-RW_psin,  0.08;
-US_psin,  0.08;
-EAB_psin, 0.28;
-EAC_psin, 0.28;
-EAD_psit, 0.2;
-EAE_psit, 0.2;
+@#for co in countries
+    @#if co=="RW" || co=="US"
+        @{co}_psin, 0.08;
+    @#else
+        @{co}_psin, 0.28;
+    @#endif
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('xin')
 homotopy_setup;
-EAA_xin, 0.92;
-RW_xin,  0.75;
-US_xin,  0.75;
-EAB_xin, 0.92;
-EAC_xin, 0.92;
-EAD_xin, 0.92;
-EAE_xin, 0.92;
+@#for co in countries
+    @#if co=="RW" || co=="US"
+        @{co}_xin, 0.75;
+    @#else
+        @{co}_xin, 0.92;
+    @#endif
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('xih')
 homotopy_setup;
-EAA_xih, 0.92;
-RW_xih,  0.75;
-US_xih,  0.75;
-EAB_xih, 0.92;
-EAC_xih, 0.92;
-EAD_xih, 0.92;
-EAE_xih, 0.92;
+@#for co in countries
+    @#if co=="RW" || co=="US"
+        @{co}_xih, 0.75;
+    @#else
+        @{co}_xih, 0.92;
+    @#endif
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('xix')
 homotopy_setup;
-EAA_xix, 0.75;
-RW_xix,  0.75; 
-US_xix,  0.75;
-EAB_xix, 0.75;
-EAC_xix, 0.75;
-EAD_xix, 0.75;
-EAE_xix, 0.75;
+@#for co in countries
+@{co}_xix, 0.75;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 // DE a bit more flexible
 disp('xii/xij')
 homotopy_setup;
-EAA_xii, 0.75;
-EAA_xij, 0.75;
-US_xii,  0.75;
-US_xij,  0.75;
-RW_xii,  0.75;
-RW_xij,  0.75;
-EAB_xii, 0.75;
-EAB_xij, 0.75;
-EAC_xii, 0.75;
-EAC_xij, 0.75;
-EAD_xii, 0.75;
-EAD_xij, 0.75;
-EAE_xii, 0.75;
-EAE_xij, 0.75;
+@#for co in countries
+@{co}_xii, 0.75;
+@{co}_xij, 0.75;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('chin')
 homotopy_setup;
-EAA_chin, 0.5;
-RW_chin,  0.5;
-US_chin,  0.5;
-EAB_chin, 0.5;
-EAC_chin, 0.5;
-EAD_chin, 0.5;
-EAE_chin, 0.5;
+@#for co in countries
+@{co}_chin, 0.5;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('chih')
 homotopy_setup;
-EAA_chih, 0.5;
-RW_chih,  0.5;
-US_chih,  0.5;
-EAB_chih, 0.5;
-EAC_chih, 0.5;
-EAD_chih, 0.5;
-EAE_chih, 0.5;
+@#for co in countries
+@{co}_chih, 0.5;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('chix')
 homotopy_setup;
-EAA_chix, 0.5;
-RW_chix,  0.5;
-US_chix,  0.5;
-EAB_chix, 0.5;
-EAC_chix, 0.5;
-EAD_chix, 0.5;
-EAE_chix, 0.5;
+@#for co in countries
+@{co}_chix, 0.5;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('chii/chij')
 homotopy_setup;
-EAA_chii, 0.75;
-EAA_chij, 0.75;
-US_chii,  0.75;
-US_chij,  0.75;
-RW_chii,  0.75;
-RW_chij,  0.75;
-EAB_chii, 0.75;
-EAB_chij, 0.75;
-EAC_chii, 0.75;
-EAC_chij, 0.75;
-EAD_chii, 0.75;
-EAD_chij, 0.75;
-EAE_chii, 0.75;
-EAE_chij, 0.75;
+@#for co in countries
+@{co}_chii, 0.5;
+@{co}_chij, 0.5;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
@@ -284,13 +244,9 @@ steady(homotopy_steps = 5);
 // DE less persistent
 disp('kappa')
 homotopy_setup;
-EAA_kappa, 0.70;
-RW_kappa,  0.70;
-US_kappa,  0.70;
-EAB_kappa, 0.70;
-EAC_kappa, 0.70;
-EAD_kappa, 0.70;
-EAE_kappa, 0.70;
+@#for co in countries
+@{co}_kappa, 0.70;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
@@ -310,50 +266,38 @@ steady(homotopy_steps = 5);
 
 disp('gammav1')
 homotopy_setup;
-EAA_gammav1, 0.0267;
-RW_gammav1,  0.0267;
-US_gammav1,  0.0267;
-EAB_gammav1, 0.0267;
-EAC_gammav1, 0.0267;
-EAD_gammav1, 0.0267;
-EAE_gammav1, 0.0267;
+@#for co in countries
+@{co}_gammav1, 0.0267;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('gammav2')
 homotopy_setup;
-EAA_gammav2, 0.1284;
-RW_gammav2,  0.1284;
-US_gammav2,  0.1284;
-EAB_gammav2, 0.1284;
-EAC_gammav2, 0.1284;
-EAD_gammav2, 0.1284;
-EAE_gammav2, 0.1284;
+@#for co in countries
+@{co}_gammav2, 0.1284;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 disp('thetan')
 homotopy_setup;
-EAA_thetan, 3.00;
-RW_thetan,  4.60;
-US_thetan,  4.60;
-EAB_thetan, 3.00;
-EAC_thetan, 3.00;
-EAD_thetan, 3.00;
-EAE_thetan, 3.00;
+@#for co in countries
+    @#if co=="RW" || co=="US"
+        @{co}_thetan, 4.60;
+    @#else
+        @{co}_thetan, 3.00;
+    @#endif
+@#endfor
 end;
 steady(homotopy_steps = 10);
 
 // Elasticities
 disp('thetat')
 homotopy_setup;
-EAA_thetat, 6.00;
-RW_thetat,  6.00;
-US_thetat,  6.00;
-EAB_thetat, 6.00;
-EAC_thetat, 6.00;
-EAD_thetat, 6.00;
-EAE_thetat, 6.00;
+@#for co in countries
+@{co}_thetat, 6.00;
+@#endfor
 end;
 steady(homotopy_steps = 15);
 
