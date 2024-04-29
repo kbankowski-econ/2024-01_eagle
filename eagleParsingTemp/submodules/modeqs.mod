@@ -936,7 +936,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 // International transaction cost ('risk premium')
 @#if !steady
 @{co}_gammab = @{co}_gammab1*(exp(@{co}_rer*@{co}_bf/@{coUSA}_pic/(@{co}_py*@{co}_y)-@{co}_bfytarget)-1)
-@#if co == countries[6]
+@#if co == "RW"
 -@{co}_rp
 @#endif
 ;
