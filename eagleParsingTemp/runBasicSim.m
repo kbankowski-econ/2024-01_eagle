@@ -84,7 +84,8 @@ end
 for aParam = string(reshape(steady2output.M_.param_names, 1, []))
     steady2struct.params.(aParam) = steady2output.M_.params(strcmp(aParam, steady2output.M_.param_names));
 end
-for aCountry = [ "EAA", "EAB", "EAC", "EAD", "EAE", "RW", "US" ]
+for i = 1:length(countries)
+    aCountry = countries(i);
     steady2struct.params.(aCountry+"_nucces") = 0.75;
     steady2struct.params.(aCountry+"_mucces") = 0.3;
 end
@@ -93,7 +94,8 @@ varList = steady2output.M_.endo_names(~startsWith(steady2output.M_.endo_names, '
 for aVar = string(reshape(varList, 1, []))
     steady2struct.ssValues.(aVar) = steady2output.oo_.steady_state(strcmp(aVar, varList));
 end
-for aCountry = [ "EAA", "EAB", "EAC", "EAD", "EAE", "RW", "US" ]
+for i = 1:length(countries)
+    aCountry = countries(i);
     steady2struct.ssValues.(aCountry+"_ccesi") = ((0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_ci")^(1-1/0.3)+(1-0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cg")^(1-1/0.3))^(1/(1-1/0.3));
     steady2struct.ssValues.(aCountry+"_ccesj") = ((0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cj")^(1-1/0.3)+(1-0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cg")^(1-1/0.3))^(1/(1-1/0.3));
     steady2struct.ssValues.(aCountry+"_dcci") = ((0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_ci")^(1-1/0.3)+(1-0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cg")^(1-1/0.3))^(1/(0.3-1))*(0.75^(1/0.3))*(steady2struct.ssValues.(aCountry+"_ci")^(-1/0.3));
@@ -147,7 +149,7 @@ end
 % Close the file
 fclose(fileID);
 
-dynare('steady3.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
+%dynare('steady3.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
 %%
 replaceInTextFile( ...
@@ -185,13 +187,13 @@ steady3struct = struct();
 for aExoVar = string(reshape(steady3output.M_.exo_names, 1, []))
     steady3struct.exo_names.(aExoVar) = steady3output.oo_.exo_steady_state(strcmp(aExoVar, steady3output.M_.exo_names));
 end
-for aCountry = [ "EAA", "EAB", "EAC", "EAD", "EAE", "RW", "US" ]
-end
 
 for aParam = string(reshape(steady3output.M_.param_names, 1, []))
     steady3struct.params.(aParam) = steady3output.M_.params(strcmp(aParam, steady3output.M_.param_names));
 end
-for aCountry = [ "EAA", "EAB", "EAC", "EAD", "EAE", "RW", "US" ]
+
+for i = 1:length(countries)
+    aCountry = countries(i);
     steady3struct.params.(aCountry+"_deltag") = 0.025;
     steady3struct.params.(aCountry+"_alphag") = 0;
 end
@@ -200,7 +202,8 @@ varList = steady3output.M_.endo_names(~startsWith(steady3output.M_.endo_names, '
 for aVar = string(reshape(varList, 1, []))
     steady3struct.ssValues.(aVar) = steady3output.oo_.steady_state(strcmp(aVar, varList));
 end
-for aCountry = [ "EAA", "EAB", "EAC", "EAD", "EAE", "RW", "US" ]
+for i = 1:length(countries)
+    aCountry = countries(i);
     steady3struct.ssValues.(aCountry+"_kg") = steady3struct.ssValues.(aCountry+"_ig")/steady3struct.params.(aCountry+"_deltag");
 end
 
