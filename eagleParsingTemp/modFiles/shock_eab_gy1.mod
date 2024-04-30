@@ -19,12 +19,6 @@ values 0.01;
 var EAB_epsgc;
 periods 1:4;
 values 0.01;
-var EAE_epsgi;
-periods 1:4;
-values 0.01;
-var EAE_epsgc;
-periods 1:4;
-values 0.01;
 end;
 
 perfect_foresight_setup(periods = 100);
