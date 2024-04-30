@@ -16,8 +16,9 @@ change_type(parameters) @{co}_epsilonm @{co}_vi @{co}_iy @{co}_imcy @{co}_imiy @
 change_type(var) @{co}_gammav2 @{co}_gammav1 @{co}_psit @{co}_nutc @{co}_nuti @{co}_nutcg @{co}_nutig;
 @#endfor
 
-@#for i in 1:7
-@#for it in countries - [ countries[i], countries6[i]]
+@#for i in 1:ctryNumber
+@#include "dynamicCtryList7.mod"
+@#for it in countries - [ countries[i], coResid]
 change_type(parameters) @{countries[i]}@{it}_imcy @{countries[i]}@{it}_imiy @{countries[i]}@{it}_imcgy @{countries[i]}@{it}_imigy;
 change_type(var) @{countries[i]}@{it}_numc @{countries[i]}@{it}_numi @{countries[i]}@{it}_numcg @{countries[i]}@{it}_numig;
 @#endfor
