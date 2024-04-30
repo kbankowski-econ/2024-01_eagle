@@ -2,6 +2,3 @@
 @#define co2 = countries[2]
 @#define co3 = countries[3]
 @#define co4 = countries[4]
-@#define co5 = countries[5]
-@#define co6 = countries[6]
-@#define co7 = countries[7]
