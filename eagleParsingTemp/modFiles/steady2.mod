@@ -32,13 +32,9 @@ load_params_and_steady_state('eagle_steady_stage1.txt');
 
 disp('epsilonm')
 homotopy_setup;
-EAA_epsilonm, -0.75;
-US_epsilonm,  -0.75;
-RW_epsilonm,  -0.75;
-EAB_epsilonm, -0.75;
-EAC_epsilonm, -0.75;
-EAD_epsilonm, -0.75;
-EAE_epsilonm, -0.75;
+@#for co in countries
+@{co}_epsilonm, -0.75;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
@@ -47,13 +43,9 @@ steady(homotopy_steps = 5);
 
 disp('vi')
 homotopy_setup;
-EAA_vi, 2.38;
-US_vi,  2.38;
-RW_vi,  2.38;
-EAB_vi, 2.38;
-EAC_vi, 2.38;
-EAD_vi, 2.38;
-EAE_vi, 2.38;
+@#for co in countries
+@{co}_vi, 2.38;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
@@ -61,13 +53,9 @@ steady(homotopy_steps = 5);
 
 disp('iy')
 homotopy_setup;
-EAA_iy, 0.20;
-US_iy,  0.20;
-RW_iy,  0.20;
-EAB_iy, 0.20;
-EAC_iy, 0.20;
-EAD_iy, 0.20;
-EAE_iy, 0.20;
+@#for co in countries
+@{co}_iy, 0.2;
+@#endfor
 end;
 steady(homotopy_steps = 5, maxit=20);
 
@@ -86,13 +74,9 @@ steady(homotopy_steps = 15);
 //---------------------------------------------------------//
 
 // Fiscal policy rule
-EAA_phitb = 0.10;
-US_phitb  = 0.10;
-RW_phitb  = 0.10;
-EAB_phitb = 0.10;
-EAC_phitb = 0.10;
-EAD_phitb = 0.10;
-EAE_phitb = 0.10;
+@#for co in countries
+@{co}_phitb = 0.1;
+@#endfor
 
 // Monetary policy rule
 EA_phirr  = 0.87;
@@ -106,43 +90,28 @@ RW_phirpi = 1.70;
 RW_phirgy = 0.10;
 
 // Adjustment and transaction cost
-EAA_gammai1 = 6.00;
-US_gammai1  = 4.00;
-RW_gammai1  = 4.00;
-EAB_gammai1 = 6.00; 
-EAC_gammai1 = 6.00; 
-EAD_gammai1 = 6.00; 
-EAE_gammai1 = 6.00; 
+@#for co in countries
+    @#if co=="RW" || co=="US"
+        @{co}_gammai1= 4.00;
+    @#else
+        @{co}_gammai1= 6.00;
+    @#endif
+@#endfor
 
-EAA_gammau2 = 2000;
-US_gammau2  = 2000;
-RW_gammau2  = 2000;
-EAB_gammau2 = 2000; 
-EAC_gammau2 = 2000; 
-EAD_gammau2 = 2000; 
-EAE_gammau2 = 2000; 
+@#for co in countries
+@{co}_gammau2= 2000;
+@#endfor
 
-EAA_gammaimc1 = 2.00;
-US_gammaimc1  = 2.00;
-RW_gammaimc1  = 2.00;
-EAB_gammaimc1 = 2.00;
-EAC_gammaimc1 = 2.00;
-EAD_gammaimc1 = 2.00;
-EAE_gammaimc1 = 2.00;
+@#for co in countries
+@{co}_gammaimc1= 2.00;
+@#endfor
 
-EAA_gammaimi1 = 1.00;
-US_gammaimi1  = 1.00;
-RW_gammaimi1  = 1.00;
-EAB_gammaimi1 = 1.00;
-EAC_gammaimi1 = 1.00;
-EAD_gammaimi1 = 1.00;
-EAE_gammaimi1 = 1.00;
+@#for co in countries
+@{co}_gammaimi1= 1.00;
+@#endfor
 
-EAA_gammab1 = 0.01;
-RW_gammab1  = 0.01;
-EAB_gammab1 = 0.01;
-EAC_gammab1 = 0.01;
-EAD_gammab1 = 0.01;
-EAE_gammab1 = 0.01;
+@#for co in countries
+@{co}_gammab1= 0.01;
+@#endfor
 
 save_params_and_steady_state('eagle_steady.txt');
