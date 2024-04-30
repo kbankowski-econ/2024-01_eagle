@@ -11,5 +11,5 @@ function [y, T] = static_139(y, x, params, sparse_rowval, sparse_colval, sparse_
   y(586)=y(581);
   y(587)=y(581);
   y(588)=y(581);
-  y(2372)=y(581)*y(613)/y(1627)/y(1595);
+  y(2373)=y(581)*y(613)/y(1627)/y(1595);
 end

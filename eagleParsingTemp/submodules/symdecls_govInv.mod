@@ -95,7 +95,7 @@ var
  @{co}_fj
  @{co}_fn
  @{co}_cg
-@# if co != countries[7]
+@# if co != coUSA
  @{co}_gammab
 @# endif
  @{co}_gammai
@@ -186,11 +186,11 @@ var
  @{co}_r
  @{co}_reer
  @{co}_rer
-@#if co != countries[7]
+@#if co != coUSA
  @{co}_rerdep
 @#endif
  @{co}_rk
-@#if co != countries[7]
+@#if co != coUSA
  @{co}_rp
 @#endif
  @{co}_rr
@@ -210,7 +210,7 @@ var
  @{co}_tby
  @{co}_ti
  @{co}_tj
-@#if co != countries[7]
+@#if co != coUSA
  @{co}_tot
 @#endif
  @{co}_tr
@@ -255,7 +255,7 @@ parameters
  @{co}_alphan
  @{co}_alphat
  @{co}_beta
-@# if co != countries[7]
+@# if co != coUSA
  @{co}_bfytarget
  @{co}_bhytarget
 @# endif
@@ -266,7 +266,7 @@ parameters
  @{co}_chij
  @{co}_chix
  @{co}_delta
-@# if co != countries[7]
+@# if co != coUSA
  @{co}_gammab1
 @# endif
  @{co}_gammai1
@@ -285,7 +285,7 @@ parameters
  @{co}_nut@{aItem}
 @#endfor
  @{co}_omega
-@# if co != countries[1] && co != countries[2] && co != countries[3] && co != countries[4] && co != countries[5]
+@# if co == countries[ctryNumber] || co == countries[ctryNumber-1] 
  @{co}_phirgy
  @{co}_phirpi
  @{co}_phirr
@@ -296,7 +296,7 @@ parameters
  @{co}_psit
  @{co}_rhocg
  @{co}_rhoig
-@# if co != countries[7]
+@# if co != coUSA
  @{co}_rhorp
 @# endif
  @{co}_rhotauc
@@ -358,12 +358,12 @@ varexo
 
  @{co}_epsgc
  @{co}_epsgi
-@# if co != countries[1] && co != countries[2] && co != countries[3] && co != countries[4] && co != countries[5]
+@# if co == countries[ctryNumber] || co == countries[ctryNumber-1] 
     @# if !steady
         @{co}_epsr
     @# endif
 @# endif
-@# if co != countries[7]
+@# if co != coUSA
     @# if !steady
         @{co}_epsrp
     @# endif
@@ -385,8 +385,9 @@ varexo
 @#endfor
 
 parameters
-@#for i in 1:7
-@# for it in countries - [ countries[i], countries6[i] ]
+@#for i in 1: ctryNumber
+@#include "dynamicCtryList7.mod"
+@# for it in countries - [ countries[i], coResid]
 @#for aItem in demandItems
  @{countries[i]}@{it}_num@{aItem}
 @#endfor
@@ -394,18 +395,15 @@ parameters
 @#endfor
 ;
 
-var @{countries[1]}@{countries[5]}_nerdep;
-var @{countries[2]}@{countries[5]}_nerdep;
-var @{countries[3]}@{countries[5]}_nerdep;
-var @{countries[4]}@{countries[5]}_nerdep;
-
-var @{countries[1]}_gammabh;
-var @{countries[2]}_gammabh;
-var @{countries[3]}_gammabh;
-var @{countries[4]}_gammabh;
+@#for it in countries
+    @#if it!=countries[ctryNumber] && it!=countries[ctryNumber-1] && it!=countries[ctryNumber-2]
+        var @{it}@{coGermany}_nerdep;
+        var @{it}_gammabh;
+    @#endif
+@#endfor
 
 var
-@#for co in countries[1:5]
+@#for co in countries[1: ctryNumber-2]
  @{co}_bh
 @#endfor
 ;

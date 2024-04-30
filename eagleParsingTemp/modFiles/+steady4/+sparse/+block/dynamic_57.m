@@ -14,9 +14,9 @@ function [y, T] = dynamic_57(y, x, params, steady_state, sparse_rowval, sparse_c
   y(4366)=0;
   y(4467)=0;
   y(4801)=1;
-  y(4875)=0;
+  y(4872)=0;
+  y(4874)=0;
   y(4876)=0;
-  y(4877)=0;
   y(4878)=0;
   y(2503)=y(2744)^(params(69)/(params(377)+params(300)+params(223)+params(146)+params(69)))*y(3082)^(params(146)/(params(377)+params(300)+params(223)+params(146)+params(69)))*y(3420)^(params(223)/(params(377)+params(300)+params(223)+params(146)+params(69)))*y(3758)^(params(300)/(params(377)+params(300)+params(223)+params(146)+params(69)))*y(4096)^(params(377)/(params(377)+params(300)+params(223)+params(146)+params(69)));
 end

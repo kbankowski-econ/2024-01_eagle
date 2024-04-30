@@ -19,26 +19,18 @@ resid(non_zero);
 // The same parameter values like in the params.mod; just to check the steady state solution
 disp('alphat')
 homotopy_setup;
-EAA_alphat, 0.3;
-RW_alphat,  0.3;
-US_alphat,  0.3;
-EAB_alphat, 0.3;
-EAC_alphat, 0.3;
-EAD_alphat, 0.3;
-EAE_alphat, 0.3;
+@#for co in countries
+@{co}_alphat, 0.3;
+@#endfor
 end;
 steady(homotopy_steps = 5);
 
 // Productivity of public capital
 disp('alphag')
 homotopy_setup;
-EAA_alphag, 0.05;
-US_alphag,  0.05;
-RW_alphag,  0.05;
-EAB_alphag, 0.05;     
-EAC_alphag, 0.05;     
-EAD_alphag, 0.05;     
-EAE_alphag, 0.05;     
+@#for co in countries
+@{co}_alphag, 0.05;
+@#endfor  
 end;
 steady(homotopy_steps = 5);
 
