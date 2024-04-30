@@ -21,13 +21,23 @@ load_params_and_steady_state('eagle_steady_govInv.txt');
 disp('iy')
 
 homotopy_setup;
-EAA_iy, 0.21-EAA_igybar;
-US_iy,  0.19-US_igybar;
-RW_iy,  0.25-RW_igybar;
-EAB_iy, 0.1906-EAB_igybar;  
-EAC_iy, 0.1906-EAC_igybar;  
-EAD_iy, 0.1906-EAD_igybar;  
-EAE_iy, 0.1906-EAE_igybar;  
+
+@#for co in countries
+    @#if co== coGermany
+        @{co}_iy, 0.1906-@{co}_igybar;  
+    @#else
+        @#if co== coUSA
+            @{co}_iy,  0.19-@{co}_igybar; 
+        @#else
+            @#if co== "RW"
+                @{co}_iy,  0.25-@{co}_igybar; 
+            @#else
+                @{co}_iy,  0.21-@{co}_igybar;
+            @#endif
+        @#endif
+    @#endif         
+@#endfor
+
 end;
 steady(homotopy_steps = 5);
 
