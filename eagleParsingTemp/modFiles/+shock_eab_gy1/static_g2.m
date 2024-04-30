@@ -18,6 +18,6 @@ function g2 = static_g2(T, y, x, params, T_flag)
 if T_flag
     T = shock_eab_gy1.static_g2_tt(T, y, x, params);
 end
-g2 = sparse([],[],[],2422,5866084);
+g2 = sparse([],[],[],1093,1194649);
 
 end
