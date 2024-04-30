@@ -149,7 +149,7 @@ end
 % Close the file
 fclose(fileID);
 
-%dynare('steady3.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
+dynare('steady3.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
 %%
 replaceInTextFile( ...
