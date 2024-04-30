@@ -34,7 +34,7 @@ EAA_gammab1 0.01
 EAA_gammai1 6
 EAA_gammaimc1 2
 EAA_gammaimi1 1
-EAA_gammaimcg1 1
+EAA_gammaimcg1 2
 EAA_gammaimig1 1
 EAA_gammau2 2000
 EAA_kappa 0.7
@@ -119,7 +119,7 @@ EAB_gammab1 0.01
 EAB_gammai1 6
 EAB_gammaimc1 2
 EAB_gammaimi1 1
-EAB_gammaimcg1 1
+EAB_gammaimcg1 2
 EAB_gammaimig1 1
 EAB_gammau2 2000
 EAB_kappa 0.7
@@ -204,7 +204,7 @@ RW_gammab1 0.01
 RW_gammai1 4
 RW_gammaimc1 2
 RW_gammaimi1 1
-RW_gammaimcg1 1
+RW_gammaimcg1 2
 RW_gammaimig1 1
 RW_gammau2 2000
 RW_kappa 0.7
@@ -289,7 +289,7 @@ US_delta 0.025
 US_gammai1 4
 US_gammaimc1 2
 US_gammaimi1 1
-US_gammaimcg1 1
+US_gammaimcg1 2
 US_gammaimig1 1
 US_gammau2 2000
 US_kappa 0.7

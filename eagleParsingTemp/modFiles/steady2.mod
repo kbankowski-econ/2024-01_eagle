@@ -107,7 +107,15 @@ RW_phirgy = 0.10;
 @#endfor
 
 @#for co in countries
+@{co}_gammaimcg1= 2.00;
+@#endfor
+
+@#for co in countries
 @{co}_gammaimi1= 1.00;
+@#endfor
+
+@#for co in countries
+@{co}_gammaimig1= 1.00;
 @#endfor
 
 @#for co in countries
