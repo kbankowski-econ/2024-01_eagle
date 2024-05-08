@@ -1,3 +1,5 @@
 function [y, T] = dynamic_154(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(5140)=y(5161)*log(y(4996)-params(258)*y(1375))-1/(1+params(306))*y(5064)^(1+params(306))+params(239)*y(8761);
+  y(7582)=y(7504);
+  y(4596)=y(4589)*y(4602)/y(328);
+  y(7417)=((params(556)+T(1939)-1)*y(7582)-params(556)*x(195)*y(7578))/(y(7578)*(1-x(195)));
 end
