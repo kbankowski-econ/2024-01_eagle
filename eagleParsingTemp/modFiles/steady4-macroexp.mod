@@ -2,7 +2,7 @@
 options_.homotopy_mode = 1;
 options_.solve_algo = 5;
 options_.markowitz = 5;
-ctryNumberDouble = 8;
+ctryNumberDouble = 9;
 save("paramsToBeSaved", 'ctryNumberDouble')
 // Is sigma equal to one for any country ?
 // Is omega equal to zero for any country ?
@@ -36,6 +36,7 @@ var
  EAAEAD_excy
  EAAEAE_excy
  EAAEAF_excy
+ EAAEAG_excy
  EAARW_excy
  EAAUS_excy
  EAAEAB_exiy
@@ -43,6 +44,7 @@ var
  EAAEAD_exiy
  EAAEAE_exiy
  EAAEAF_exiy
+ EAAEAG_exiy
  EAARW_exiy
  EAAUS_exiy
 EAA_fx
@@ -51,6 +53,7 @@ EAA_fx
  EAAEAD_gammaimc
  EAAEAE_gammaimc
  EAAEAF_gammaimc
+ EAAEAG_gammaimc
  EAARW_gammaimc
  EAAUS_gammaimc
  EAAEAB_gammaimcdag
@@ -58,6 +61,7 @@ EAA_fx
  EAAEAD_gammaimcdag
  EAAEAE_gammaimcdag
  EAAEAF_gammaimcdag
+ EAAEAG_gammaimcdag
  EAARW_gammaimcdag
  EAAUS_gammaimcdag
  EAAEAB_gammaimi
@@ -65,6 +69,7 @@ EAA_fx
  EAAEAD_gammaimi
  EAAEAE_gammaimi
  EAAEAF_gammaimi
+ EAAEAG_gammaimi
  EAARW_gammaimi
  EAAUS_gammaimi
  EAAEAB_gammaimidag
@@ -72,6 +77,7 @@ EAA_fx
  EAAEAD_gammaimidag
  EAAEAE_gammaimidag
  EAAEAF_gammaimidag
+ EAAEAG_gammaimidag
  EAARW_gammaimidag
  EAAUS_gammaimidag
  EAAEAB_gammaimcg
@@ -79,6 +85,7 @@ EAA_fx
  EAAEAD_gammaimcg
  EAAEAE_gammaimcg
  EAAEAF_gammaimcg
+ EAAEAG_gammaimcg
  EAARW_gammaimcg
  EAAUS_gammaimcg
  EAAEAB_gammaimcgdag
@@ -86,6 +93,7 @@ EAA_fx
  EAAEAD_gammaimcgdag
  EAAEAE_gammaimcgdag
  EAAEAF_gammaimcgdag
+ EAAEAG_gammaimcgdag
  EAARW_gammaimcgdag
  EAAUS_gammaimcgdag
  EAAEAB_gammaimig
@@ -93,6 +101,7 @@ EAA_fx
  EAAEAD_gammaimig
  EAAEAE_gammaimig
  EAAEAF_gammaimig
+ EAAEAG_gammaimig
  EAARW_gammaimig
  EAAUS_gammaimig
  EAAEAB_gammaimigdag
@@ -100,6 +109,7 @@ EAA_fx
  EAAEAD_gammaimigdag
  EAAEAE_gammaimigdag
  EAAEAF_gammaimigdag
+ EAAEAG_gammaimigdag
  EAARW_gammaimigdag
  EAAUS_gammaimigdag
 EAA_gx
@@ -108,6 +118,7 @@ EAA_gx
  EAAEAD_im
  EAAEAE_im
  EAAEAF_im
+ EAAEAG_im
  EAARW_im
  EAAUS_im
  EAAEAB_imc
@@ -115,6 +126,7 @@ EAA_gx
  EAAEAD_imc
  EAAEAE_imc
  EAAEAF_imc
+ EAAEAG_imc
  EAARW_imc
  EAAUS_imc
  EAAEAB_imcy
@@ -122,6 +134,7 @@ EAA_gx
  EAAEAD_imcy
  EAAEAE_imcy
  EAAEAF_imcy
+ EAAEAG_imcy
  EAARW_imcy
  EAAUS_imcy
  EAAEAB_imi
@@ -129,6 +142,7 @@ EAA_gx
  EAAEAD_imi
  EAAEAE_imi
  EAAEAF_imi
+ EAAEAG_imi
  EAARW_imi
  EAAUS_imi
  EAAEAB_imiy
@@ -136,6 +150,7 @@ EAA_gx
  EAAEAD_imiy
  EAAEAE_imiy
  EAAEAF_imiy
+ EAAEAG_imiy
  EAARW_imiy
  EAAUS_imiy
  EAAEAB_imcg
@@ -143,6 +158,7 @@ EAA_gx
  EAAEAD_imcg
  EAAEAE_imcg
  EAAEAF_imcg
+ EAAEAG_imcg
  EAARW_imcg
  EAAUS_imcg
  EAAEAB_imcgy
@@ -150,6 +166,7 @@ EAA_gx
  EAAEAD_imcgy
  EAAEAE_imcgy
  EAAEAF_imcgy
+ EAAEAG_imcgy
  EAARW_imcgy
  EAAUS_imcgy
  EAAEAB_imig
@@ -157,6 +174,7 @@ EAA_gx
  EAAEAD_imig
  EAAEAE_imig
  EAAEAF_imig
+ EAAEAG_imig
  EAARW_imig
  EAAUS_imig
  EAAEAB_imigy
@@ -164,6 +182,7 @@ EAA_gx
  EAAEAD_imigy
  EAAEAE_imigy
  EAAEAF_imigy
+ EAAEAG_imigy
  EAARW_imigy
  EAAUS_imigy
 EAA_piex
@@ -173,6 +192,7 @@ EAA_pextilde
  EAAEAD_rer
  EAAEAE_rer
  EAAEAF_rer
+ EAAEAG_rer
  EAARW_rer
  EAAUS_rer
 EAA_sx
@@ -181,6 +201,7 @@ EAA_sx
  EAAEAD_tot
  EAAEAE_tot
  EAAEAF_tot
+ EAAEAG_tot
  EAARW_tot
  EAAUS_tot
  EAAEAB_weight
@@ -188,6 +209,7 @@ EAA_sx
  EAAEAD_weight
  EAAEAE_weight
  EAAEAF_weight
+ EAAEAG_weight
  EAARW_weight
  EAAUS_weight
  EAAEAB_weightex
@@ -195,6 +217,7 @@ EAA_sx
  EAAEAD_weightex
  EAAEAE_weightex
  EAAEAF_weightex
+ EAAEAG_weightex
  EAARW_weightex
  EAAUS_weightex
  EAAEAB_weightim
@@ -202,6 +225,7 @@ EAA_sx
  EAAEAD_weightim
  EAAEAE_weightim
  EAAEAF_weightim
+ EAAEAG_weightim
  EAARW_weightim
  EAAUS_weightim
  EAA_b
@@ -463,6 +487,7 @@ parameters
  EAAEAD_rerbar
  EAAEAE_rerbar
  EAAEAF_rerbar
+ EAAEAG_rerbar
  EAARW_rerbar
  EAAUS_rerbar
  EAA_pibar
@@ -512,6 +537,7 @@ var
  EABEAD_excy
  EABEAE_excy
  EABEAF_excy
+ EABEAG_excy
  EABRW_excy
  EABUS_excy
  EABEAA_exiy
@@ -519,6 +545,7 @@ var
  EABEAD_exiy
  EABEAE_exiy
  EABEAF_exiy
+ EABEAG_exiy
  EABRW_exiy
  EABUS_exiy
 EAB_fx
@@ -527,6 +554,7 @@ EAB_fx
  EABEAD_gammaimc
  EABEAE_gammaimc
  EABEAF_gammaimc
+ EABEAG_gammaimc
  EABRW_gammaimc
  EABUS_gammaimc
  EABEAA_gammaimcdag
@@ -534,6 +562,7 @@ EAB_fx
  EABEAD_gammaimcdag
  EABEAE_gammaimcdag
  EABEAF_gammaimcdag
+ EABEAG_gammaimcdag
  EABRW_gammaimcdag
  EABUS_gammaimcdag
  EABEAA_gammaimi
@@ -541,6 +570,7 @@ EAB_fx
  EABEAD_gammaimi
  EABEAE_gammaimi
  EABEAF_gammaimi
+ EABEAG_gammaimi
  EABRW_gammaimi
  EABUS_gammaimi
  EABEAA_gammaimidag
@@ -548,6 +578,7 @@ EAB_fx
  EABEAD_gammaimidag
  EABEAE_gammaimidag
  EABEAF_gammaimidag
+ EABEAG_gammaimidag
  EABRW_gammaimidag
  EABUS_gammaimidag
  EABEAA_gammaimcg
@@ -555,6 +586,7 @@ EAB_fx
  EABEAD_gammaimcg
  EABEAE_gammaimcg
  EABEAF_gammaimcg
+ EABEAG_gammaimcg
  EABRW_gammaimcg
  EABUS_gammaimcg
  EABEAA_gammaimcgdag
@@ -562,6 +594,7 @@ EAB_fx
  EABEAD_gammaimcgdag
  EABEAE_gammaimcgdag
  EABEAF_gammaimcgdag
+ EABEAG_gammaimcgdag
  EABRW_gammaimcgdag
  EABUS_gammaimcgdag
  EABEAA_gammaimig
@@ -569,6 +602,7 @@ EAB_fx
  EABEAD_gammaimig
  EABEAE_gammaimig
  EABEAF_gammaimig
+ EABEAG_gammaimig
  EABRW_gammaimig
  EABUS_gammaimig
  EABEAA_gammaimigdag
@@ -576,6 +610,7 @@ EAB_fx
  EABEAD_gammaimigdag
  EABEAE_gammaimigdag
  EABEAF_gammaimigdag
+ EABEAG_gammaimigdag
  EABRW_gammaimigdag
  EABUS_gammaimigdag
 EAB_gx
@@ -584,6 +619,7 @@ EAB_gx
  EABEAD_im
  EABEAE_im
  EABEAF_im
+ EABEAG_im
  EABRW_im
  EABUS_im
  EABEAA_imc
@@ -591,6 +627,7 @@ EAB_gx
  EABEAD_imc
  EABEAE_imc
  EABEAF_imc
+ EABEAG_imc
  EABRW_imc
  EABUS_imc
  EABEAA_imcy
@@ -598,6 +635,7 @@ EAB_gx
  EABEAD_imcy
  EABEAE_imcy
  EABEAF_imcy
+ EABEAG_imcy
  EABRW_imcy
  EABUS_imcy
  EABEAA_imi
@@ -605,6 +643,7 @@ EAB_gx
  EABEAD_imi
  EABEAE_imi
  EABEAF_imi
+ EABEAG_imi
  EABRW_imi
  EABUS_imi
  EABEAA_imiy
@@ -612,6 +651,7 @@ EAB_gx
  EABEAD_imiy
  EABEAE_imiy
  EABEAF_imiy
+ EABEAG_imiy
  EABRW_imiy
  EABUS_imiy
  EABEAA_imcg
@@ -619,6 +659,7 @@ EAB_gx
  EABEAD_imcg
  EABEAE_imcg
  EABEAF_imcg
+ EABEAG_imcg
  EABRW_imcg
  EABUS_imcg
  EABEAA_imcgy
@@ -626,6 +667,7 @@ EAB_gx
  EABEAD_imcgy
  EABEAE_imcgy
  EABEAF_imcgy
+ EABEAG_imcgy
  EABRW_imcgy
  EABUS_imcgy
  EABEAA_imig
@@ -633,6 +675,7 @@ EAB_gx
  EABEAD_imig
  EABEAE_imig
  EABEAF_imig
+ EABEAG_imig
  EABRW_imig
  EABUS_imig
  EABEAA_imigy
@@ -640,6 +683,7 @@ EAB_gx
  EABEAD_imigy
  EABEAE_imigy
  EABEAF_imigy
+ EABEAG_imigy
  EABRW_imigy
  EABUS_imigy
 EAB_piex
@@ -649,6 +693,7 @@ EAB_pextilde
  EABEAD_rer
  EABEAE_rer
  EABEAF_rer
+ EABEAG_rer
  EABRW_rer
  EABUS_rer
 EAB_sx
@@ -657,6 +702,7 @@ EAB_sx
  EABEAD_tot
  EABEAE_tot
  EABEAF_tot
+ EABEAG_tot
  EABRW_tot
  EABUS_tot
  EABEAA_weight
@@ -664,6 +710,7 @@ EAB_sx
  EABEAD_weight
  EABEAE_weight
  EABEAF_weight
+ EABEAG_weight
  EABRW_weight
  EABUS_weight
  EABEAA_weightex
@@ -671,6 +718,7 @@ EAB_sx
  EABEAD_weightex
  EABEAE_weightex
  EABEAF_weightex
+ EABEAG_weightex
  EABRW_weightex
  EABUS_weightex
  EABEAA_weightim
@@ -678,6 +726,7 @@ EAB_sx
  EABEAD_weightim
  EABEAE_weightim
  EABEAF_weightim
+ EABEAG_weightim
  EABRW_weightim
  EABUS_weightim
  EAB_b
@@ -939,6 +988,7 @@ parameters
  EABEAD_rerbar
  EABEAE_rerbar
  EABEAF_rerbar
+ EABEAG_rerbar
  EABRW_rerbar
  EABUS_rerbar
  EAB_pibar
@@ -988,6 +1038,7 @@ var
  EACEAD_excy
  EACEAE_excy
  EACEAF_excy
+ EACEAG_excy
  EACRW_excy
  EACUS_excy
  EACEAA_exiy
@@ -995,6 +1046,7 @@ var
  EACEAD_exiy
  EACEAE_exiy
  EACEAF_exiy
+ EACEAG_exiy
  EACRW_exiy
  EACUS_exiy
 EAC_fx
@@ -1003,6 +1055,7 @@ EAC_fx
  EACEAD_gammaimc
  EACEAE_gammaimc
  EACEAF_gammaimc
+ EACEAG_gammaimc
  EACRW_gammaimc
  EACUS_gammaimc
  EACEAA_gammaimcdag
@@ -1010,6 +1063,7 @@ EAC_fx
  EACEAD_gammaimcdag
  EACEAE_gammaimcdag
  EACEAF_gammaimcdag
+ EACEAG_gammaimcdag
  EACRW_gammaimcdag
  EACUS_gammaimcdag
  EACEAA_gammaimi
@@ -1017,6 +1071,7 @@ EAC_fx
  EACEAD_gammaimi
  EACEAE_gammaimi
  EACEAF_gammaimi
+ EACEAG_gammaimi
  EACRW_gammaimi
  EACUS_gammaimi
  EACEAA_gammaimidag
@@ -1024,6 +1079,7 @@ EAC_fx
  EACEAD_gammaimidag
  EACEAE_gammaimidag
  EACEAF_gammaimidag
+ EACEAG_gammaimidag
  EACRW_gammaimidag
  EACUS_gammaimidag
  EACEAA_gammaimcg
@@ -1031,6 +1087,7 @@ EAC_fx
  EACEAD_gammaimcg
  EACEAE_gammaimcg
  EACEAF_gammaimcg
+ EACEAG_gammaimcg
  EACRW_gammaimcg
  EACUS_gammaimcg
  EACEAA_gammaimcgdag
@@ -1038,6 +1095,7 @@ EAC_fx
  EACEAD_gammaimcgdag
  EACEAE_gammaimcgdag
  EACEAF_gammaimcgdag
+ EACEAG_gammaimcgdag
  EACRW_gammaimcgdag
  EACUS_gammaimcgdag
  EACEAA_gammaimig
@@ -1045,6 +1103,7 @@ EAC_fx
  EACEAD_gammaimig
  EACEAE_gammaimig
  EACEAF_gammaimig
+ EACEAG_gammaimig
  EACRW_gammaimig
  EACUS_gammaimig
  EACEAA_gammaimigdag
@@ -1052,6 +1111,7 @@ EAC_fx
  EACEAD_gammaimigdag
  EACEAE_gammaimigdag
  EACEAF_gammaimigdag
+ EACEAG_gammaimigdag
  EACRW_gammaimigdag
  EACUS_gammaimigdag
 EAC_gx
@@ -1060,6 +1120,7 @@ EAC_gx
  EACEAD_im
  EACEAE_im
  EACEAF_im
+ EACEAG_im
  EACRW_im
  EACUS_im
  EACEAA_imc
@@ -1067,6 +1128,7 @@ EAC_gx
  EACEAD_imc
  EACEAE_imc
  EACEAF_imc
+ EACEAG_imc
  EACRW_imc
  EACUS_imc
  EACEAA_imcy
@@ -1074,6 +1136,7 @@ EAC_gx
  EACEAD_imcy
  EACEAE_imcy
  EACEAF_imcy
+ EACEAG_imcy
  EACRW_imcy
  EACUS_imcy
  EACEAA_imi
@@ -1081,6 +1144,7 @@ EAC_gx
  EACEAD_imi
  EACEAE_imi
  EACEAF_imi
+ EACEAG_imi
  EACRW_imi
  EACUS_imi
  EACEAA_imiy
@@ -1088,6 +1152,7 @@ EAC_gx
  EACEAD_imiy
  EACEAE_imiy
  EACEAF_imiy
+ EACEAG_imiy
  EACRW_imiy
  EACUS_imiy
  EACEAA_imcg
@@ -1095,6 +1160,7 @@ EAC_gx
  EACEAD_imcg
  EACEAE_imcg
  EACEAF_imcg
+ EACEAG_imcg
  EACRW_imcg
  EACUS_imcg
  EACEAA_imcgy
@@ -1102,6 +1168,7 @@ EAC_gx
  EACEAD_imcgy
  EACEAE_imcgy
  EACEAF_imcgy
+ EACEAG_imcgy
  EACRW_imcgy
  EACUS_imcgy
  EACEAA_imig
@@ -1109,6 +1176,7 @@ EAC_gx
  EACEAD_imig
  EACEAE_imig
  EACEAF_imig
+ EACEAG_imig
  EACRW_imig
  EACUS_imig
  EACEAA_imigy
@@ -1116,6 +1184,7 @@ EAC_gx
  EACEAD_imigy
  EACEAE_imigy
  EACEAF_imigy
+ EACEAG_imigy
  EACRW_imigy
  EACUS_imigy
 EAC_piex
@@ -1125,6 +1194,7 @@ EAC_pextilde
  EACEAD_rer
  EACEAE_rer
  EACEAF_rer
+ EACEAG_rer
  EACRW_rer
  EACUS_rer
 EAC_sx
@@ -1133,6 +1203,7 @@ EAC_sx
  EACEAD_tot
  EACEAE_tot
  EACEAF_tot
+ EACEAG_tot
  EACRW_tot
  EACUS_tot
  EACEAA_weight
@@ -1140,6 +1211,7 @@ EAC_sx
  EACEAD_weight
  EACEAE_weight
  EACEAF_weight
+ EACEAG_weight
  EACRW_weight
  EACUS_weight
  EACEAA_weightex
@@ -1147,6 +1219,7 @@ EAC_sx
  EACEAD_weightex
  EACEAE_weightex
  EACEAF_weightex
+ EACEAG_weightex
  EACRW_weightex
  EACUS_weightex
  EACEAA_weightim
@@ -1154,6 +1227,7 @@ EAC_sx
  EACEAD_weightim
  EACEAE_weightim
  EACEAF_weightim
+ EACEAG_weightim
  EACRW_weightim
  EACUS_weightim
  EAC_b
@@ -1415,6 +1489,7 @@ parameters
  EACEAD_rerbar
  EACEAE_rerbar
  EACEAF_rerbar
+ EACEAG_rerbar
  EACRW_rerbar
  EACUS_rerbar
  EAC_pibar
@@ -1464,6 +1539,7 @@ var
  EADEAC_excy
  EADEAE_excy
  EADEAF_excy
+ EADEAG_excy
  EADRW_excy
  EADUS_excy
  EADEAA_exiy
@@ -1471,6 +1547,7 @@ var
  EADEAC_exiy
  EADEAE_exiy
  EADEAF_exiy
+ EADEAG_exiy
  EADRW_exiy
  EADUS_exiy
 EAD_fx
@@ -1479,6 +1556,7 @@ EAD_fx
  EADEAC_gammaimc
  EADEAE_gammaimc
  EADEAF_gammaimc
+ EADEAG_gammaimc
  EADRW_gammaimc
  EADUS_gammaimc
  EADEAA_gammaimcdag
@@ -1486,6 +1564,7 @@ EAD_fx
  EADEAC_gammaimcdag
  EADEAE_gammaimcdag
  EADEAF_gammaimcdag
+ EADEAG_gammaimcdag
  EADRW_gammaimcdag
  EADUS_gammaimcdag
  EADEAA_gammaimi
@@ -1493,6 +1572,7 @@ EAD_fx
  EADEAC_gammaimi
  EADEAE_gammaimi
  EADEAF_gammaimi
+ EADEAG_gammaimi
  EADRW_gammaimi
  EADUS_gammaimi
  EADEAA_gammaimidag
@@ -1500,6 +1580,7 @@ EAD_fx
  EADEAC_gammaimidag
  EADEAE_gammaimidag
  EADEAF_gammaimidag
+ EADEAG_gammaimidag
  EADRW_gammaimidag
  EADUS_gammaimidag
  EADEAA_gammaimcg
@@ -1507,6 +1588,7 @@ EAD_fx
  EADEAC_gammaimcg
  EADEAE_gammaimcg
  EADEAF_gammaimcg
+ EADEAG_gammaimcg
  EADRW_gammaimcg
  EADUS_gammaimcg
  EADEAA_gammaimcgdag
@@ -1514,6 +1596,7 @@ EAD_fx
  EADEAC_gammaimcgdag
  EADEAE_gammaimcgdag
  EADEAF_gammaimcgdag
+ EADEAG_gammaimcgdag
  EADRW_gammaimcgdag
  EADUS_gammaimcgdag
  EADEAA_gammaimig
@@ -1521,6 +1604,7 @@ EAD_fx
  EADEAC_gammaimig
  EADEAE_gammaimig
  EADEAF_gammaimig
+ EADEAG_gammaimig
  EADRW_gammaimig
  EADUS_gammaimig
  EADEAA_gammaimigdag
@@ -1528,6 +1612,7 @@ EAD_fx
  EADEAC_gammaimigdag
  EADEAE_gammaimigdag
  EADEAF_gammaimigdag
+ EADEAG_gammaimigdag
  EADRW_gammaimigdag
  EADUS_gammaimigdag
 EAD_gx
@@ -1536,6 +1621,7 @@ EAD_gx
  EADEAC_im
  EADEAE_im
  EADEAF_im
+ EADEAG_im
  EADRW_im
  EADUS_im
  EADEAA_imc
@@ -1543,6 +1629,7 @@ EAD_gx
  EADEAC_imc
  EADEAE_imc
  EADEAF_imc
+ EADEAG_imc
  EADRW_imc
  EADUS_imc
  EADEAA_imcy
@@ -1550,6 +1637,7 @@ EAD_gx
  EADEAC_imcy
  EADEAE_imcy
  EADEAF_imcy
+ EADEAG_imcy
  EADRW_imcy
  EADUS_imcy
  EADEAA_imi
@@ -1557,6 +1645,7 @@ EAD_gx
  EADEAC_imi
  EADEAE_imi
  EADEAF_imi
+ EADEAG_imi
  EADRW_imi
  EADUS_imi
  EADEAA_imiy
@@ -1564,6 +1653,7 @@ EAD_gx
  EADEAC_imiy
  EADEAE_imiy
  EADEAF_imiy
+ EADEAG_imiy
  EADRW_imiy
  EADUS_imiy
  EADEAA_imcg
@@ -1571,6 +1661,7 @@ EAD_gx
  EADEAC_imcg
  EADEAE_imcg
  EADEAF_imcg
+ EADEAG_imcg
  EADRW_imcg
  EADUS_imcg
  EADEAA_imcgy
@@ -1578,6 +1669,7 @@ EAD_gx
  EADEAC_imcgy
  EADEAE_imcgy
  EADEAF_imcgy
+ EADEAG_imcgy
  EADRW_imcgy
  EADUS_imcgy
  EADEAA_imig
@@ -1585,6 +1677,7 @@ EAD_gx
  EADEAC_imig
  EADEAE_imig
  EADEAF_imig
+ EADEAG_imig
  EADRW_imig
  EADUS_imig
  EADEAA_imigy
@@ -1592,6 +1685,7 @@ EAD_gx
  EADEAC_imigy
  EADEAE_imigy
  EADEAF_imigy
+ EADEAG_imigy
  EADRW_imigy
  EADUS_imigy
 EAD_piex
@@ -1601,6 +1695,7 @@ EAD_pextilde
  EADEAC_rer
  EADEAE_rer
  EADEAF_rer
+ EADEAG_rer
  EADRW_rer
  EADUS_rer
 EAD_sx
@@ -1609,6 +1704,7 @@ EAD_sx
  EADEAC_tot
  EADEAE_tot
  EADEAF_tot
+ EADEAG_tot
  EADRW_tot
  EADUS_tot
  EADEAA_weight
@@ -1616,6 +1712,7 @@ EAD_sx
  EADEAC_weight
  EADEAE_weight
  EADEAF_weight
+ EADEAG_weight
  EADRW_weight
  EADUS_weight
  EADEAA_weightex
@@ -1623,6 +1720,7 @@ EAD_sx
  EADEAC_weightex
  EADEAE_weightex
  EADEAF_weightex
+ EADEAG_weightex
  EADRW_weightex
  EADUS_weightex
  EADEAA_weightim
@@ -1630,6 +1728,7 @@ EAD_sx
  EADEAC_weightim
  EADEAE_weightim
  EADEAF_weightim
+ EADEAG_weightim
  EADRW_weightim
  EADUS_weightim
  EAD_b
@@ -1891,6 +1990,7 @@ parameters
  EADEAC_rerbar
  EADEAE_rerbar
  EADEAF_rerbar
+ EADEAG_rerbar
  EADRW_rerbar
  EADUS_rerbar
  EAD_pibar
@@ -1940,6 +2040,7 @@ var
  EAEEAC_excy
  EAEEAD_excy
  EAEEAF_excy
+ EAEEAG_excy
  EAERW_excy
  EAEUS_excy
  EAEEAA_exiy
@@ -1947,6 +2048,7 @@ var
  EAEEAC_exiy
  EAEEAD_exiy
  EAEEAF_exiy
+ EAEEAG_exiy
  EAERW_exiy
  EAEUS_exiy
 EAE_fx
@@ -1955,6 +2057,7 @@ EAE_fx
  EAEEAC_gammaimc
  EAEEAD_gammaimc
  EAEEAF_gammaimc
+ EAEEAG_gammaimc
  EAERW_gammaimc
  EAEUS_gammaimc
  EAEEAA_gammaimcdag
@@ -1962,6 +2065,7 @@ EAE_fx
  EAEEAC_gammaimcdag
  EAEEAD_gammaimcdag
  EAEEAF_gammaimcdag
+ EAEEAG_gammaimcdag
  EAERW_gammaimcdag
  EAEUS_gammaimcdag
  EAEEAA_gammaimi
@@ -1969,6 +2073,7 @@ EAE_fx
  EAEEAC_gammaimi
  EAEEAD_gammaimi
  EAEEAF_gammaimi
+ EAEEAG_gammaimi
  EAERW_gammaimi
  EAEUS_gammaimi
  EAEEAA_gammaimidag
@@ -1976,6 +2081,7 @@ EAE_fx
  EAEEAC_gammaimidag
  EAEEAD_gammaimidag
  EAEEAF_gammaimidag
+ EAEEAG_gammaimidag
  EAERW_gammaimidag
  EAEUS_gammaimidag
  EAEEAA_gammaimcg
@@ -1983,6 +2089,7 @@ EAE_fx
  EAEEAC_gammaimcg
  EAEEAD_gammaimcg
  EAEEAF_gammaimcg
+ EAEEAG_gammaimcg
  EAERW_gammaimcg
  EAEUS_gammaimcg
  EAEEAA_gammaimcgdag
@@ -1990,6 +2097,7 @@ EAE_fx
  EAEEAC_gammaimcgdag
  EAEEAD_gammaimcgdag
  EAEEAF_gammaimcgdag
+ EAEEAG_gammaimcgdag
  EAERW_gammaimcgdag
  EAEUS_gammaimcgdag
  EAEEAA_gammaimig
@@ -1997,6 +2105,7 @@ EAE_fx
  EAEEAC_gammaimig
  EAEEAD_gammaimig
  EAEEAF_gammaimig
+ EAEEAG_gammaimig
  EAERW_gammaimig
  EAEUS_gammaimig
  EAEEAA_gammaimigdag
@@ -2004,6 +2113,7 @@ EAE_fx
  EAEEAC_gammaimigdag
  EAEEAD_gammaimigdag
  EAEEAF_gammaimigdag
+ EAEEAG_gammaimigdag
  EAERW_gammaimigdag
  EAEUS_gammaimigdag
 EAE_gx
@@ -2012,6 +2122,7 @@ EAE_gx
  EAEEAC_im
  EAEEAD_im
  EAEEAF_im
+ EAEEAG_im
  EAERW_im
  EAEUS_im
  EAEEAA_imc
@@ -2019,6 +2130,7 @@ EAE_gx
  EAEEAC_imc
  EAEEAD_imc
  EAEEAF_imc
+ EAEEAG_imc
  EAERW_imc
  EAEUS_imc
  EAEEAA_imcy
@@ -2026,6 +2138,7 @@ EAE_gx
  EAEEAC_imcy
  EAEEAD_imcy
  EAEEAF_imcy
+ EAEEAG_imcy
  EAERW_imcy
  EAEUS_imcy
  EAEEAA_imi
@@ -2033,6 +2146,7 @@ EAE_gx
  EAEEAC_imi
  EAEEAD_imi
  EAEEAF_imi
+ EAEEAG_imi
  EAERW_imi
  EAEUS_imi
  EAEEAA_imiy
@@ -2040,6 +2154,7 @@ EAE_gx
  EAEEAC_imiy
  EAEEAD_imiy
  EAEEAF_imiy
+ EAEEAG_imiy
  EAERW_imiy
  EAEUS_imiy
  EAEEAA_imcg
@@ -2047,6 +2162,7 @@ EAE_gx
  EAEEAC_imcg
  EAEEAD_imcg
  EAEEAF_imcg
+ EAEEAG_imcg
  EAERW_imcg
  EAEUS_imcg
  EAEEAA_imcgy
@@ -2054,6 +2170,7 @@ EAE_gx
  EAEEAC_imcgy
  EAEEAD_imcgy
  EAEEAF_imcgy
+ EAEEAG_imcgy
  EAERW_imcgy
  EAEUS_imcgy
  EAEEAA_imig
@@ -2061,6 +2178,7 @@ EAE_gx
  EAEEAC_imig
  EAEEAD_imig
  EAEEAF_imig
+ EAEEAG_imig
  EAERW_imig
  EAEUS_imig
  EAEEAA_imigy
@@ -2068,6 +2186,7 @@ EAE_gx
  EAEEAC_imigy
  EAEEAD_imigy
  EAEEAF_imigy
+ EAEEAG_imigy
  EAERW_imigy
  EAEUS_imigy
 EAE_piex
@@ -2077,6 +2196,7 @@ EAE_pextilde
  EAEEAC_rer
  EAEEAD_rer
  EAEEAF_rer
+ EAEEAG_rer
  EAERW_rer
  EAEUS_rer
 EAE_sx
@@ -2085,6 +2205,7 @@ EAE_sx
  EAEEAC_tot
  EAEEAD_tot
  EAEEAF_tot
+ EAEEAG_tot
  EAERW_tot
  EAEUS_tot
  EAEEAA_weight
@@ -2092,6 +2213,7 @@ EAE_sx
  EAEEAC_weight
  EAEEAD_weight
  EAEEAF_weight
+ EAEEAG_weight
  EAERW_weight
  EAEUS_weight
  EAEEAA_weightex
@@ -2099,6 +2221,7 @@ EAE_sx
  EAEEAC_weightex
  EAEEAD_weightex
  EAEEAF_weightex
+ EAEEAG_weightex
  EAERW_weightex
  EAEUS_weightex
  EAEEAA_weightim
@@ -2106,6 +2229,7 @@ EAE_sx
  EAEEAC_weightim
  EAEEAD_weightim
  EAEEAF_weightim
+ EAEEAG_weightim
  EAERW_weightim
  EAEUS_weightim
  EAE_b
@@ -2367,6 +2491,7 @@ parameters
  EAEEAC_rerbar
  EAEEAD_rerbar
  EAEEAF_rerbar
+ EAEEAG_rerbar
  EAERW_rerbar
  EAEUS_rerbar
  EAE_pibar
@@ -2416,6 +2541,7 @@ var
  EAFEAC_excy
  EAFEAD_excy
  EAFEAE_excy
+ EAFEAG_excy
  EAFRW_excy
  EAFUS_excy
  EAFEAA_exiy
@@ -2423,6 +2549,7 @@ var
  EAFEAC_exiy
  EAFEAD_exiy
  EAFEAE_exiy
+ EAFEAG_exiy
  EAFRW_exiy
  EAFUS_exiy
 EAF_fx
@@ -2431,6 +2558,7 @@ EAF_fx
  EAFEAC_gammaimc
  EAFEAD_gammaimc
  EAFEAE_gammaimc
+ EAFEAG_gammaimc
  EAFRW_gammaimc
  EAFUS_gammaimc
  EAFEAA_gammaimcdag
@@ -2438,6 +2566,7 @@ EAF_fx
  EAFEAC_gammaimcdag
  EAFEAD_gammaimcdag
  EAFEAE_gammaimcdag
+ EAFEAG_gammaimcdag
  EAFRW_gammaimcdag
  EAFUS_gammaimcdag
  EAFEAA_gammaimi
@@ -2445,6 +2574,7 @@ EAF_fx
  EAFEAC_gammaimi
  EAFEAD_gammaimi
  EAFEAE_gammaimi
+ EAFEAG_gammaimi
  EAFRW_gammaimi
  EAFUS_gammaimi
  EAFEAA_gammaimidag
@@ -2452,6 +2582,7 @@ EAF_fx
  EAFEAC_gammaimidag
  EAFEAD_gammaimidag
  EAFEAE_gammaimidag
+ EAFEAG_gammaimidag
  EAFRW_gammaimidag
  EAFUS_gammaimidag
  EAFEAA_gammaimcg
@@ -2459,6 +2590,7 @@ EAF_fx
  EAFEAC_gammaimcg
  EAFEAD_gammaimcg
  EAFEAE_gammaimcg
+ EAFEAG_gammaimcg
  EAFRW_gammaimcg
  EAFUS_gammaimcg
  EAFEAA_gammaimcgdag
@@ -2466,6 +2598,7 @@ EAF_fx
  EAFEAC_gammaimcgdag
  EAFEAD_gammaimcgdag
  EAFEAE_gammaimcgdag
+ EAFEAG_gammaimcgdag
  EAFRW_gammaimcgdag
  EAFUS_gammaimcgdag
  EAFEAA_gammaimig
@@ -2473,6 +2606,7 @@ EAF_fx
  EAFEAC_gammaimig
  EAFEAD_gammaimig
  EAFEAE_gammaimig
+ EAFEAG_gammaimig
  EAFRW_gammaimig
  EAFUS_gammaimig
  EAFEAA_gammaimigdag
@@ -2480,6 +2614,7 @@ EAF_fx
  EAFEAC_gammaimigdag
  EAFEAD_gammaimigdag
  EAFEAE_gammaimigdag
+ EAFEAG_gammaimigdag
  EAFRW_gammaimigdag
  EAFUS_gammaimigdag
 EAF_gx
@@ -2488,6 +2623,7 @@ EAF_gx
  EAFEAC_im
  EAFEAD_im
  EAFEAE_im
+ EAFEAG_im
  EAFRW_im
  EAFUS_im
  EAFEAA_imc
@@ -2495,6 +2631,7 @@ EAF_gx
  EAFEAC_imc
  EAFEAD_imc
  EAFEAE_imc
+ EAFEAG_imc
  EAFRW_imc
  EAFUS_imc
  EAFEAA_imcy
@@ -2502,6 +2639,7 @@ EAF_gx
  EAFEAC_imcy
  EAFEAD_imcy
  EAFEAE_imcy
+ EAFEAG_imcy
  EAFRW_imcy
  EAFUS_imcy
  EAFEAA_imi
@@ -2509,6 +2647,7 @@ EAF_gx
  EAFEAC_imi
  EAFEAD_imi
  EAFEAE_imi
+ EAFEAG_imi
  EAFRW_imi
  EAFUS_imi
  EAFEAA_imiy
@@ -2516,6 +2655,7 @@ EAF_gx
  EAFEAC_imiy
  EAFEAD_imiy
  EAFEAE_imiy
+ EAFEAG_imiy
  EAFRW_imiy
  EAFUS_imiy
  EAFEAA_imcg
@@ -2523,6 +2663,7 @@ EAF_gx
  EAFEAC_imcg
  EAFEAD_imcg
  EAFEAE_imcg
+ EAFEAG_imcg
  EAFRW_imcg
  EAFUS_imcg
  EAFEAA_imcgy
@@ -2530,6 +2671,7 @@ EAF_gx
  EAFEAC_imcgy
  EAFEAD_imcgy
  EAFEAE_imcgy
+ EAFEAG_imcgy
  EAFRW_imcgy
  EAFUS_imcgy
  EAFEAA_imig
@@ -2537,6 +2679,7 @@ EAF_gx
  EAFEAC_imig
  EAFEAD_imig
  EAFEAE_imig
+ EAFEAG_imig
  EAFRW_imig
  EAFUS_imig
  EAFEAA_imigy
@@ -2544,6 +2687,7 @@ EAF_gx
  EAFEAC_imigy
  EAFEAD_imigy
  EAFEAE_imigy
+ EAFEAG_imigy
  EAFRW_imigy
  EAFUS_imigy
 EAF_piex
@@ -2553,6 +2697,7 @@ EAF_pextilde
  EAFEAC_rer
  EAFEAD_rer
  EAFEAE_rer
+ EAFEAG_rer
  EAFRW_rer
  EAFUS_rer
 EAF_sx
@@ -2561,6 +2706,7 @@ EAF_sx
  EAFEAC_tot
  EAFEAD_tot
  EAFEAE_tot
+ EAFEAG_tot
  EAFRW_tot
  EAFUS_tot
  EAFEAA_weight
@@ -2568,6 +2714,7 @@ EAF_sx
  EAFEAC_weight
  EAFEAD_weight
  EAFEAE_weight
+ EAFEAG_weight
  EAFRW_weight
  EAFUS_weight
  EAFEAA_weightex
@@ -2575,6 +2722,7 @@ EAF_sx
  EAFEAC_weightex
  EAFEAD_weightex
  EAFEAE_weightex
+ EAFEAG_weightex
  EAFRW_weightex
  EAFUS_weightex
  EAFEAA_weightim
@@ -2582,6 +2730,7 @@ EAF_sx
  EAFEAC_weightim
  EAFEAD_weightim
  EAFEAE_weightim
+ EAFEAG_weightim
  EAFRW_weightim
  EAFUS_weightim
  EAF_b
@@ -2843,6 +2992,7 @@ parameters
  EAFEAC_rerbar
  EAFEAD_rerbar
  EAFEAE_rerbar
+ EAFEAG_rerbar
  EAFRW_rerbar
  EAFUS_rerbar
  EAF_pibar
@@ -2887,12 +3037,514 @@ varexo
 ;
 // Endogenous
 var
+ EAGEAA_excy
+ EAGEAB_excy
+ EAGEAC_excy
+ EAGEAD_excy
+ EAGEAE_excy
+ EAGEAF_excy
+ EAGRW_excy
+ EAGUS_excy
+ EAGEAA_exiy
+ EAGEAB_exiy
+ EAGEAC_exiy
+ EAGEAD_exiy
+ EAGEAE_exiy
+ EAGEAF_exiy
+ EAGRW_exiy
+ EAGUS_exiy
+EAG_fx
+ EAGEAA_gammaimc
+ EAGEAB_gammaimc
+ EAGEAC_gammaimc
+ EAGEAD_gammaimc
+ EAGEAE_gammaimc
+ EAGEAF_gammaimc
+ EAGRW_gammaimc
+ EAGUS_gammaimc
+ EAGEAA_gammaimcdag
+ EAGEAB_gammaimcdag
+ EAGEAC_gammaimcdag
+ EAGEAD_gammaimcdag
+ EAGEAE_gammaimcdag
+ EAGEAF_gammaimcdag
+ EAGRW_gammaimcdag
+ EAGUS_gammaimcdag
+ EAGEAA_gammaimi
+ EAGEAB_gammaimi
+ EAGEAC_gammaimi
+ EAGEAD_gammaimi
+ EAGEAE_gammaimi
+ EAGEAF_gammaimi
+ EAGRW_gammaimi
+ EAGUS_gammaimi
+ EAGEAA_gammaimidag
+ EAGEAB_gammaimidag
+ EAGEAC_gammaimidag
+ EAGEAD_gammaimidag
+ EAGEAE_gammaimidag
+ EAGEAF_gammaimidag
+ EAGRW_gammaimidag
+ EAGUS_gammaimidag
+ EAGEAA_gammaimcg
+ EAGEAB_gammaimcg
+ EAGEAC_gammaimcg
+ EAGEAD_gammaimcg
+ EAGEAE_gammaimcg
+ EAGEAF_gammaimcg
+ EAGRW_gammaimcg
+ EAGUS_gammaimcg
+ EAGEAA_gammaimcgdag
+ EAGEAB_gammaimcgdag
+ EAGEAC_gammaimcgdag
+ EAGEAD_gammaimcgdag
+ EAGEAE_gammaimcgdag
+ EAGEAF_gammaimcgdag
+ EAGRW_gammaimcgdag
+ EAGUS_gammaimcgdag
+ EAGEAA_gammaimig
+ EAGEAB_gammaimig
+ EAGEAC_gammaimig
+ EAGEAD_gammaimig
+ EAGEAE_gammaimig
+ EAGEAF_gammaimig
+ EAGRW_gammaimig
+ EAGUS_gammaimig
+ EAGEAA_gammaimigdag
+ EAGEAB_gammaimigdag
+ EAGEAC_gammaimigdag
+ EAGEAD_gammaimigdag
+ EAGEAE_gammaimigdag
+ EAGEAF_gammaimigdag
+ EAGRW_gammaimigdag
+ EAGUS_gammaimigdag
+EAG_gx
+ EAGEAA_im
+ EAGEAB_im
+ EAGEAC_im
+ EAGEAD_im
+ EAGEAE_im
+ EAGEAF_im
+ EAGRW_im
+ EAGUS_im
+ EAGEAA_imc
+ EAGEAB_imc
+ EAGEAC_imc
+ EAGEAD_imc
+ EAGEAE_imc
+ EAGEAF_imc
+ EAGRW_imc
+ EAGUS_imc
+ EAGEAA_imcy
+ EAGEAB_imcy
+ EAGEAC_imcy
+ EAGEAD_imcy
+ EAGEAE_imcy
+ EAGEAF_imcy
+ EAGRW_imcy
+ EAGUS_imcy
+ EAGEAA_imi
+ EAGEAB_imi
+ EAGEAC_imi
+ EAGEAD_imi
+ EAGEAE_imi
+ EAGEAF_imi
+ EAGRW_imi
+ EAGUS_imi
+ EAGEAA_imiy
+ EAGEAB_imiy
+ EAGEAC_imiy
+ EAGEAD_imiy
+ EAGEAE_imiy
+ EAGEAF_imiy
+ EAGRW_imiy
+ EAGUS_imiy
+ EAGEAA_imcg
+ EAGEAB_imcg
+ EAGEAC_imcg
+ EAGEAD_imcg
+ EAGEAE_imcg
+ EAGEAF_imcg
+ EAGRW_imcg
+ EAGUS_imcg
+ EAGEAA_imcgy
+ EAGEAB_imcgy
+ EAGEAC_imcgy
+ EAGEAD_imcgy
+ EAGEAE_imcgy
+ EAGEAF_imcgy
+ EAGRW_imcgy
+ EAGUS_imcgy
+ EAGEAA_imig
+ EAGEAB_imig
+ EAGEAC_imig
+ EAGEAD_imig
+ EAGEAE_imig
+ EAGEAF_imig
+ EAGRW_imig
+ EAGUS_imig
+ EAGEAA_imigy
+ EAGEAB_imigy
+ EAGEAC_imigy
+ EAGEAD_imigy
+ EAGEAE_imigy
+ EAGEAF_imigy
+ EAGRW_imigy
+ EAGUS_imigy
+EAG_piex
+EAG_pextilde
+ EAGEAA_rer
+ EAGEAB_rer
+ EAGEAC_rer
+ EAGEAD_rer
+ EAGEAE_rer
+ EAGEAF_rer
+ EAGRW_rer
+ EAGUS_rer
+EAG_sx
+ EAGEAA_tot
+ EAGEAB_tot
+ EAGEAC_tot
+ EAGEAD_tot
+ EAGEAE_tot
+ EAGEAF_tot
+ EAGRW_tot
+ EAGUS_tot
+ EAGEAA_weight
+ EAGEAB_weight
+ EAGEAC_weight
+ EAGEAD_weight
+ EAGEAE_weight
+ EAGEAF_weight
+ EAGRW_weight
+ EAGUS_weight
+ EAGEAA_weightex
+ EAGEAB_weightex
+ EAGEAC_weightex
+ EAGEAD_weightex
+ EAGEAE_weightex
+ EAGEAF_weightex
+ EAGRW_weightex
+ EAGUS_weightex
+ EAGEAA_weightim
+ EAGEAB_weightim
+ EAGEAC_weightim
+ EAGEAD_weightim
+ EAGEAE_weightim
+ EAGEAF_weightim
+ EAGRW_weightim
+ EAGUS_weightim
+ EAG_b
+ EAG_bf
+ EAG_by
+ EAG_c
+ EAG_ci
+ EAG_cj
+ EAG_cy
+ EAG_d
+ EAG_dn
+ EAG_dt
+ EAG_epsilonm
+ EAG_etot
+ EAG_ex
+ EAG_fh
+ EAG_fi
+ EAG_fj
+ EAG_fn
+ EAG_cg
+ EAG_gammab
+ EAG_gammai
+ EAG_gammaider
+ EAG_gammau
+ EAG_gammauder
+ EAG_gammav
+ EAG_gammavi
+ EAG_gammavider
+ EAG_gammavj
+ EAG_gammavjder
+ EAG_gh
+ EAG_gi
+ EAG_gj
+ EAG_gn
+ EAG_cgy
+ EAG_ht
+ EAG_htc
+ EAG_hti
+ EAG_htcg
+ EAG_htig
+ EAG_i
+ EAG_ig
+ EAG_ii
+ EAG_im
+ EAG_imc
+ EAG_imcy
+ EAG_imi
+ EAG_imiy
+ EAG_imcg
+ EAG_imcgy
+ EAG_imig
+ EAG_imigy
+ EAG_imy
+ EAG_internalrer
+ EAG_iy
+ EAG_igy
+ EAG_k
+ EAG_kd
+ EAG_kdn
+ EAG_kdt
+ EAG_ki
+ EAG_lambdai
+ EAG_lambdaj
+ EAG_lcy
+ EAG_m
+ EAG_mcn
+ EAG_mct
+ EAG_mi
+ EAG_mj
+ EAG_nd
+ EAG_ndi
+ EAG_ndj
+ EAG_ndn
+ EAG_ndt
+ EAG_ni
+ EAG_nj
+ EAG_nt
+ EAG_ntc
+ EAG_nti
+ EAG_ntcg
+ EAG_ntig
+ EAG_pex
+ EAG_pht
+ EAG_phttilde
+ EAG_pi
+ EAG_pcg
+ EAG_pig
+ EAG_pic
+ EAG_pic4
+ EAG_piex4
+ EAG_piht
+ EAG_piimc
+ EAG_piimi
+ EAG_piimcg
+ EAG_piimig
+ EAG_piimc4
+ EAG_pim
+ EAG_pimc
+ EAG_pimi
+ EAG_pimcg
+ EAG_pimig
+ EAG_pint
+ EAG_piw
+ EAG_piw4
+ EAG_pnt
+ EAG_pnttilde
+ EAG_pttc
+ EAG_ptti
+ EAG_pttcg
+ EAG_pttig
+ EAG_py
+ EAG_q
+ EAG_qc
+ EAG_qi
+ EAG_qcg
+ EAG_qig
+ EAG_r
+ EAG_reer
+ EAG_rer
+ EAG_rerdep
+ EAG_rk
+ EAG_rp
+ EAG_rr
+ EAG_rrstar
+ EAG_sh
+ EAG_si
+ EAG_sj
+ EAG_snt
+ EAG_t
+ EAG_tauc
+ EAG_taud
+ EAG_tauk
+ EAG_taun
+ EAG_tauwf
+ EAG_tauwh
+ EAG_tb
+ EAG_tby
+ EAG_ti
+ EAG_tj
+ EAG_tot
+ EAG_tr
+ EAG_tri
+ EAG_trj
+ EAG_try
+ EAG_ttc
+ EAG_tti
+ EAG_ttcg
+ EAG_ttig
+ EAG_ty
+ EAG_u
+ EAG_utili
+ EAG_utilj
+ EAG_vi
+ EAG_vj
+ EAG_w
+ EAG_wcst
+ EAG_whty
+ EAG_wi
+ EAG_witilde
+ EAG_wj
+ EAG_wjtilde
+ EAG_wnty
+ EAG_wy
+ EAG_y
+ EAG_ygap
+ EAG_ygrowth
+ EAG_ygrowth4
+ EAG_yhty
+ EAG_ynty
+ EAG_yshare
+ EAG_ysn
+ EAG_yst
+ EAG_zcon
+ EAG_zinv
+ EAG_zn
+ EAG_zt
+;
+// Parameters
+parameters
+ EAG_alphan
+ EAG_alphat
+ EAG_beta
+ EAG_bfytarget
+ EAG_bhytarget
+ EAG_bytarget
+ EAG_chin
+ EAG_chih
+ EAG_chii
+ EAG_chij
+ EAG_chix
+ EAG_delta
+ EAG_gammab1
+ EAG_gammai1
+ EAG_gammaimc1
+ EAG_gammaimi1
+ EAG_gammaimcg1
+ EAG_gammaimig1
+ EAG_gammau2
+ EAG_gammav1
+ EAG_gammav2
+ EAG_kappa
+ EAG_muc
+ EAG_mumc
+ EAG_mutc
+ EAG_nuc
+ EAG_nutc
+ EAG_mui
+ EAG_mumi
+ EAG_muti
+ EAG_nui
+ EAG_nuti
+ EAG_mucg
+ EAG_mumcg
+ EAG_mutcg
+ EAG_nucg
+ EAG_nutcg
+ EAG_muig
+ EAG_mumig
+ EAG_mutig
+ EAG_nuig
+ EAG_nutig
+ EAG_omega
+ EAG_phitb
+ EAG_pi4target
+ EAG_psin
+ EAG_psit
+ EAG_rhocg
+ EAG_rhoig
+ EAG_rhorp
+ EAG_rhotauc
+ EAG_rhotaud
+ EAG_rhotauk
+ EAG_rhotaun
+ EAG_rhotauwf
+ EAG_rhotauwh
+ EAG_rhotr
+ EAG_rhowcst
+ EAG_rhozcon
+ EAG_rhozinv
+ EAG_rhozn
+ EAG_rhozt
+ EAG_sigma
+ EAG_size
+ EAG_xin
+ EAG_xih
+ EAG_xii
+ EAG_xij
+ EAG_xix
+ EAG_zeta
+ EAG_eta
+ EAG_etai
+ EAG_etaj
+ EAG_thetan
+ EAG_thetat
+ EAG_upsilont
+ EAG_upsilontr
+ EAGEAA_rerbar
+ EAGEAB_rerbar
+ EAGEAC_rerbar
+ EAGEAD_rerbar
+ EAGEAE_rerbar
+ EAGEAF_rerbar
+ EAGRW_rerbar
+ EAGUS_rerbar
+ EAG_pibar
+ EAG_psinbar
+ EAG_psitbar
+ EAG_pybar
+ EAG_qbar
+ EAG_trybar
+ EAG_ybar
+ EAG_ynbar
+ EAG_ytbar
+;
+// Exogenous
+varexo
+ EAG_cgybar
+ EAG_igybar
+ EAG_taucbar
+ EAG_taudbar
+ EAG_taukbar
+ EAG_taunbar
+ EAG_tauwfbar
+ EAG_tauwhbar
+ EAG_wcstbar
+ EAG_zconbar
+ EAG_zinvbar
+ EAG_znbar
+ EAG_ztbar
+ EAG_epsgc
+ EAG_epsgi
+ EAG_epstauc
+ EAG_epstaud
+ EAG_epstauk
+ EAG_epstaun
+ EAG_epstauwf
+ EAG_epstauwh
+ EAG_epstr
+ EAG_epswcst
+ EAG_epszcon
+ EAG_epszinv
+ EAG_epszn
+ EAG_epszt
+;
+// Endogenous
+var
  RWEAA_excy
  RWEAB_excy
  RWEAC_excy
  RWEAD_excy
  RWEAE_excy
  RWEAF_excy
+ RWEAG_excy
  RWUS_excy
  RWEAA_exiy
  RWEAB_exiy
@@ -2900,6 +3552,7 @@ var
  RWEAD_exiy
  RWEAE_exiy
  RWEAF_exiy
+ RWEAG_exiy
  RWUS_exiy
 RW_fx
  RWEAA_gammaimc
@@ -2908,6 +3561,7 @@ RW_fx
  RWEAD_gammaimc
  RWEAE_gammaimc
  RWEAF_gammaimc
+ RWEAG_gammaimc
  RWUS_gammaimc
  RWEAA_gammaimcdag
  RWEAB_gammaimcdag
@@ -2915,6 +3569,7 @@ RW_fx
  RWEAD_gammaimcdag
  RWEAE_gammaimcdag
  RWEAF_gammaimcdag
+ RWEAG_gammaimcdag
  RWUS_gammaimcdag
  RWEAA_gammaimi
  RWEAB_gammaimi
@@ -2922,6 +3577,7 @@ RW_fx
  RWEAD_gammaimi
  RWEAE_gammaimi
  RWEAF_gammaimi
+ RWEAG_gammaimi
  RWUS_gammaimi
  RWEAA_gammaimidag
  RWEAB_gammaimidag
@@ -2929,6 +3585,7 @@ RW_fx
  RWEAD_gammaimidag
  RWEAE_gammaimidag
  RWEAF_gammaimidag
+ RWEAG_gammaimidag
  RWUS_gammaimidag
  RWEAA_gammaimcg
  RWEAB_gammaimcg
@@ -2936,6 +3593,7 @@ RW_fx
  RWEAD_gammaimcg
  RWEAE_gammaimcg
  RWEAF_gammaimcg
+ RWEAG_gammaimcg
  RWUS_gammaimcg
  RWEAA_gammaimcgdag
  RWEAB_gammaimcgdag
@@ -2943,6 +3601,7 @@ RW_fx
  RWEAD_gammaimcgdag
  RWEAE_gammaimcgdag
  RWEAF_gammaimcgdag
+ RWEAG_gammaimcgdag
  RWUS_gammaimcgdag
  RWEAA_gammaimig
  RWEAB_gammaimig
@@ -2950,6 +3609,7 @@ RW_fx
  RWEAD_gammaimig
  RWEAE_gammaimig
  RWEAF_gammaimig
+ RWEAG_gammaimig
  RWUS_gammaimig
  RWEAA_gammaimigdag
  RWEAB_gammaimigdag
@@ -2957,6 +3617,7 @@ RW_fx
  RWEAD_gammaimigdag
  RWEAE_gammaimigdag
  RWEAF_gammaimigdag
+ RWEAG_gammaimigdag
  RWUS_gammaimigdag
 RW_gx
  RWEAA_im
@@ -2965,6 +3626,7 @@ RW_gx
  RWEAD_im
  RWEAE_im
  RWEAF_im
+ RWEAG_im
  RWUS_im
  RWEAA_imc
  RWEAB_imc
@@ -2972,6 +3634,7 @@ RW_gx
  RWEAD_imc
  RWEAE_imc
  RWEAF_imc
+ RWEAG_imc
  RWUS_imc
  RWEAA_imcy
  RWEAB_imcy
@@ -2979,6 +3642,7 @@ RW_gx
  RWEAD_imcy
  RWEAE_imcy
  RWEAF_imcy
+ RWEAG_imcy
  RWUS_imcy
  RWEAA_imi
  RWEAB_imi
@@ -2986,6 +3650,7 @@ RW_gx
  RWEAD_imi
  RWEAE_imi
  RWEAF_imi
+ RWEAG_imi
  RWUS_imi
  RWEAA_imiy
  RWEAB_imiy
@@ -2993,6 +3658,7 @@ RW_gx
  RWEAD_imiy
  RWEAE_imiy
  RWEAF_imiy
+ RWEAG_imiy
  RWUS_imiy
  RWEAA_imcg
  RWEAB_imcg
@@ -3000,6 +3666,7 @@ RW_gx
  RWEAD_imcg
  RWEAE_imcg
  RWEAF_imcg
+ RWEAG_imcg
  RWUS_imcg
  RWEAA_imcgy
  RWEAB_imcgy
@@ -3007,6 +3674,7 @@ RW_gx
  RWEAD_imcgy
  RWEAE_imcgy
  RWEAF_imcgy
+ RWEAG_imcgy
  RWUS_imcgy
  RWEAA_imig
  RWEAB_imig
@@ -3014,6 +3682,7 @@ RW_gx
  RWEAD_imig
  RWEAE_imig
  RWEAF_imig
+ RWEAG_imig
  RWUS_imig
  RWEAA_imigy
  RWEAB_imigy
@@ -3021,6 +3690,7 @@ RW_gx
  RWEAD_imigy
  RWEAE_imigy
  RWEAF_imigy
+ RWEAG_imigy
  RWUS_imigy
 RW_piex
 RW_pextilde
@@ -3030,6 +3700,7 @@ RW_pextilde
  RWEAD_rer
  RWEAE_rer
  RWEAF_rer
+ RWEAG_rer
  RWUS_rer
 RW_sx
  RWEAA_tot
@@ -3038,6 +3709,7 @@ RW_sx
  RWEAD_tot
  RWEAE_tot
  RWEAF_tot
+ RWEAG_tot
  RWUS_tot
  RWEAA_weight
  RWEAB_weight
@@ -3045,6 +3717,7 @@ RW_sx
  RWEAD_weight
  RWEAE_weight
  RWEAF_weight
+ RWEAG_weight
  RWUS_weight
  RWEAA_weightex
  RWEAB_weightex
@@ -3052,6 +3725,7 @@ RW_sx
  RWEAD_weightex
  RWEAE_weightex
  RWEAF_weightex
+ RWEAG_weightex
  RWUS_weightex
  RWEAA_weightim
  RWEAB_weightim
@@ -3059,6 +3733,7 @@ RW_sx
  RWEAD_weightim
  RWEAE_weightim
  RWEAF_weightim
+ RWEAG_weightim
  RWUS_weightim
  RW_b
  RW_bf
@@ -3323,6 +3998,7 @@ parameters
  RWEAD_rerbar
  RWEAE_rerbar
  RWEAF_rerbar
+ RWEAG_rerbar
  RWUS_rerbar
  RW_pibar
  RW_psinbar
@@ -3372,6 +4048,7 @@ var
  USEAD_excy
  USEAE_excy
  USEAF_excy
+ USEAG_excy
  USRW_excy
  USEAA_exiy
  USEAB_exiy
@@ -3379,6 +4056,7 @@ var
  USEAD_exiy
  USEAE_exiy
  USEAF_exiy
+ USEAG_exiy
  USRW_exiy
 US_fx
  USEAA_gammaimc
@@ -3387,6 +4065,7 @@ US_fx
  USEAD_gammaimc
  USEAE_gammaimc
  USEAF_gammaimc
+ USEAG_gammaimc
  USRW_gammaimc
  USEAA_gammaimcdag
  USEAB_gammaimcdag
@@ -3394,6 +4073,7 @@ US_fx
  USEAD_gammaimcdag
  USEAE_gammaimcdag
  USEAF_gammaimcdag
+ USEAG_gammaimcdag
  USRW_gammaimcdag
  USEAA_gammaimi
  USEAB_gammaimi
@@ -3401,6 +4081,7 @@ US_fx
  USEAD_gammaimi
  USEAE_gammaimi
  USEAF_gammaimi
+ USEAG_gammaimi
  USRW_gammaimi
  USEAA_gammaimidag
  USEAB_gammaimidag
@@ -3408,6 +4089,7 @@ US_fx
  USEAD_gammaimidag
  USEAE_gammaimidag
  USEAF_gammaimidag
+ USEAG_gammaimidag
  USRW_gammaimidag
  USEAA_gammaimcg
  USEAB_gammaimcg
@@ -3415,6 +4097,7 @@ US_fx
  USEAD_gammaimcg
  USEAE_gammaimcg
  USEAF_gammaimcg
+ USEAG_gammaimcg
  USRW_gammaimcg
  USEAA_gammaimcgdag
  USEAB_gammaimcgdag
@@ -3422,6 +4105,7 @@ US_fx
  USEAD_gammaimcgdag
  USEAE_gammaimcgdag
  USEAF_gammaimcgdag
+ USEAG_gammaimcgdag
  USRW_gammaimcgdag
  USEAA_gammaimig
  USEAB_gammaimig
@@ -3429,6 +4113,7 @@ US_fx
  USEAD_gammaimig
  USEAE_gammaimig
  USEAF_gammaimig
+ USEAG_gammaimig
  USRW_gammaimig
  USEAA_gammaimigdag
  USEAB_gammaimigdag
@@ -3436,6 +4121,7 @@ US_fx
  USEAD_gammaimigdag
  USEAE_gammaimigdag
  USEAF_gammaimigdag
+ USEAG_gammaimigdag
  USRW_gammaimigdag
 US_gx
  USEAA_im
@@ -3444,6 +4130,7 @@ US_gx
  USEAD_im
  USEAE_im
  USEAF_im
+ USEAG_im
  USRW_im
  USEAA_imc
  USEAB_imc
@@ -3451,6 +4138,7 @@ US_gx
  USEAD_imc
  USEAE_imc
  USEAF_imc
+ USEAG_imc
  USRW_imc
  USEAA_imcy
  USEAB_imcy
@@ -3458,6 +4146,7 @@ US_gx
  USEAD_imcy
  USEAE_imcy
  USEAF_imcy
+ USEAG_imcy
  USRW_imcy
  USEAA_imi
  USEAB_imi
@@ -3465,6 +4154,7 @@ US_gx
  USEAD_imi
  USEAE_imi
  USEAF_imi
+ USEAG_imi
  USRW_imi
  USEAA_imiy
  USEAB_imiy
@@ -3472,6 +4162,7 @@ US_gx
  USEAD_imiy
  USEAE_imiy
  USEAF_imiy
+ USEAG_imiy
  USRW_imiy
  USEAA_imcg
  USEAB_imcg
@@ -3479,6 +4170,7 @@ US_gx
  USEAD_imcg
  USEAE_imcg
  USEAF_imcg
+ USEAG_imcg
  USRW_imcg
  USEAA_imcgy
  USEAB_imcgy
@@ -3486,6 +4178,7 @@ US_gx
  USEAD_imcgy
  USEAE_imcgy
  USEAF_imcgy
+ USEAG_imcgy
  USRW_imcgy
  USEAA_imig
  USEAB_imig
@@ -3493,6 +4186,7 @@ US_gx
  USEAD_imig
  USEAE_imig
  USEAF_imig
+ USEAG_imig
  USRW_imig
  USEAA_imigy
  USEAB_imigy
@@ -3500,6 +4194,7 @@ US_gx
  USEAD_imigy
  USEAE_imigy
  USEAF_imigy
+ USEAG_imigy
  USRW_imigy
 US_piex
 US_pextilde
@@ -3509,6 +4204,7 @@ US_pextilde
  USEAD_rer
  USEAE_rer
  USEAF_rer
+ USEAG_rer
  USRW_rer
 US_sx
  USEAA_tot
@@ -3517,6 +4213,7 @@ US_sx
  USEAD_tot
  USEAE_tot
  USEAF_tot
+ USEAG_tot
  USRW_tot
  USEAA_weight
  USEAB_weight
@@ -3524,6 +4221,7 @@ US_sx
  USEAD_weight
  USEAE_weight
  USEAF_weight
+ USEAG_weight
  USRW_weight
  USEAA_weightex
  USEAB_weightex
@@ -3531,6 +4229,7 @@ US_sx
  USEAD_weightex
  USEAE_weightex
  USEAF_weightex
+ USEAG_weightex
  USRW_weightex
  USEAA_weightim
  USEAB_weightim
@@ -3538,6 +4237,7 @@ US_sx
  USEAD_weightim
  USEAE_weightim
  USEAF_weightim
+ USEAG_weightim
  USRW_weightim
  US_b
  US_bf
@@ -3794,6 +4494,7 @@ parameters
  USEAD_rerbar
  USEAE_rerbar
  USEAF_rerbar
+ USEAG_rerbar
  USRW_rerbar
  US_pibar
  US_psinbar
@@ -3856,6 +4557,10 @@ parameters
  EAAEAF_numi
  EAAEAF_numcg
  EAAEAF_numig
+ EAAEAG_numc
+ EAAEAG_numi
+ EAAEAG_numcg
+ EAAEAG_numig
  EAAUS_numc
  EAAUS_numi
  EAAUS_numcg
@@ -3880,6 +4585,10 @@ parameters
  EABEAF_numi
  EABEAF_numcg
  EABEAF_numig
+ EABEAG_numc
+ EABEAG_numi
+ EABEAG_numcg
+ EABEAG_numig
  EABRW_numc
  EABRW_numi
  EABRW_numcg
@@ -3900,6 +4609,10 @@ parameters
  EACEAF_numi
  EACEAF_numcg
  EACEAF_numig
+ EACEAG_numc
+ EACEAG_numi
+ EACEAG_numcg
+ EACEAG_numig
  EACRW_numc
  EACRW_numi
  EACRW_numcg
@@ -3924,6 +4637,10 @@ parameters
  EADEAF_numi
  EADEAF_numcg
  EADEAF_numig
+ EADEAG_numc
+ EADEAG_numi
+ EADEAG_numcg
+ EADEAG_numig
  EADRW_numc
  EADRW_numi
  EADRW_numcg
@@ -3948,6 +4665,10 @@ parameters
  EAEEAF_numi
  EAEEAF_numcg
  EAEEAF_numig
+ EAEEAG_numc
+ EAEEAG_numi
+ EAEEAG_numcg
+ EAEEAG_numig
  EAERW_numc
  EAERW_numi
  EAERW_numcg
@@ -3972,6 +4693,10 @@ parameters
  EAFEAE_numi
  EAFEAE_numcg
  EAFEAE_numig
+ EAFEAG_numc
+ EAFEAG_numi
+ EAFEAG_numcg
+ EAFEAG_numig
  EAFRW_numc
  EAFRW_numi
  EAFRW_numcg
@@ -3980,6 +4705,34 @@ parameters
  EAFUS_numi
  EAFUS_numcg
  EAFUS_numig
+ EAGEAA_numc
+ EAGEAA_numi
+ EAGEAA_numcg
+ EAGEAA_numig
+ EAGEAB_numc
+ EAGEAB_numi
+ EAGEAB_numcg
+ EAGEAB_numig
+ EAGEAC_numc
+ EAGEAC_numi
+ EAGEAC_numcg
+ EAGEAC_numig
+ EAGEAD_numc
+ EAGEAD_numi
+ EAGEAD_numcg
+ EAGEAD_numig
+ EAGEAF_numc
+ EAGEAF_numi
+ EAGEAF_numcg
+ EAGEAF_numig
+ EAGRW_numc
+ EAGRW_numi
+ EAGRW_numcg
+ EAGRW_numig
+ EAGUS_numc
+ EAGUS_numi
+ EAGUS_numcg
+ EAGUS_numig
  RWEAA_numc
  RWEAA_numi
  RWEAA_numcg
@@ -3996,10 +4749,14 @@ parameters
  RWEAD_numi
  RWEAD_numcg
  RWEAD_numig
- RWEAF_numc
- RWEAF_numi
- RWEAF_numcg
- RWEAF_numig
+ RWEAE_numc
+ RWEAE_numi
+ RWEAE_numcg
+ RWEAE_numig
+ RWEAG_numc
+ RWEAG_numi
+ RWEAG_numcg
+ RWEAG_numig
  RWUS_numc
  RWUS_numi
  RWUS_numcg
@@ -4024,21 +4781,27 @@ parameters
  USEAE_numi
  USEAE_numcg
  USEAE_numig
+ USEAF_numc
+ USEAF_numi
+ USEAF_numcg
+ USEAF_numig
  USRW_numc
  USRW_numi
  USRW_numcg
  USRW_numig
 ;
-        var EAAEAF_nerdep;
+        var EAAEAG_nerdep;
         var EAA_gammabh;
-        var EABEAF_nerdep;
+        var EABEAG_nerdep;
         var EAB_gammabh;
-        var EACEAF_nerdep;
+        var EACEAG_nerdep;
         var EAC_gammabh;
-        var EADEAF_nerdep;
+        var EADEAG_nerdep;
         var EAD_gammabh;
-        var EAEEAF_nerdep;
+        var EAEEAG_nerdep;
         var EAE_gammabh;
+        var EAFEAG_nerdep;
+        var EAF_gammabh;
 var
  EAA_bh
  EAB_bh
@@ -4046,6 +4809,7 @@ var
  EAD_bh
  EAE_bh
  EAF_bh
+ EAG_bh
 ;
 // Flip some variables
 change_type(var)
@@ -4055,6 +4819,7 @@ change_type(var)
  EAAEAD_rerbar
  EAAEAE_rerbar
  EAAEAF_rerbar
+ EAAEAG_rerbar
  EAARW_rerbar
  EAAUS_rerbar
  EAA_pibar
@@ -4071,6 +4836,7 @@ change_type(var)
  EABEAD_rerbar
  EABEAE_rerbar
  EABEAF_rerbar
+ EABEAG_rerbar
  EABRW_rerbar
  EABUS_rerbar
  EAB_pibar
@@ -4087,6 +4853,7 @@ change_type(var)
  EACEAD_rerbar
  EACEAE_rerbar
  EACEAF_rerbar
+ EACEAG_rerbar
  EACRW_rerbar
  EACUS_rerbar
  EAC_pibar
@@ -4103,6 +4870,7 @@ change_type(var)
  EADEAC_rerbar
  EADEAE_rerbar
  EADEAF_rerbar
+ EADEAG_rerbar
  EADRW_rerbar
  EADUS_rerbar
  EAD_pibar
@@ -4119,6 +4887,7 @@ change_type(var)
  EAEEAC_rerbar
  EAEEAD_rerbar
  EAEEAF_rerbar
+ EAEEAG_rerbar
  EAERW_rerbar
  EAEUS_rerbar
  EAE_pibar
@@ -4135,6 +4904,7 @@ change_type(var)
  EAFEAC_rerbar
  EAFEAD_rerbar
  EAFEAE_rerbar
+ EAFEAG_rerbar
  EAFRW_rerbar
  EAFUS_rerbar
  EAF_pibar
@@ -4146,12 +4916,30 @@ change_type(var)
  EAF_ybar
  EAF_ynbar
  EAF_ytbar
+ EAGEAA_rerbar
+ EAGEAB_rerbar
+ EAGEAC_rerbar
+ EAGEAD_rerbar
+ EAGEAE_rerbar
+ EAGEAF_rerbar
+ EAGRW_rerbar
+ EAGUS_rerbar
+ EAG_pibar
+ EAG_psinbar
+ EAG_psitbar
+ EAG_pybar
+ EAG_qbar
+ EAG_trybar
+ EAG_ybar
+ EAG_ynbar
+ EAG_ytbar
  RWEAA_rerbar
  RWEAB_rerbar
  RWEAC_rerbar
  RWEAD_rerbar
  RWEAE_rerbar
  RWEAF_rerbar
+ RWEAG_rerbar
  RWUS_rerbar
  RW_pibar
  RW_psinbar
@@ -4168,6 +4956,7 @@ change_type(var)
  USEAD_rerbar
  USEAE_rerbar
  USEAF_rerbar
+ USEAG_rerbar
  USRW_rerbar
  US_pibar
  US_psinbar
@@ -4186,6 +4975,7 @@ var
         EAD_ccesi EAD_ccesj EAD_dcci EAD_dccj
         EAE_ccesi EAE_ccesj EAE_dcci EAE_dccj
         EAF_ccesi EAF_ccesj EAF_dcci EAF_dccj
+        EAG_ccesi EAG_ccesj EAG_dcci EAG_dccj
         RW_ccesi RW_ccesj RW_dcci RW_dccj
         US_ccesi US_ccesj US_dcci US_dccj
 ;
@@ -4196,6 +4986,7 @@ parameters
         EAD_mucces EAD_nucces
         EAE_mucces EAE_nucces
         EAF_mucces EAF_nucces
+        EAG_mucces EAG_nucces
         RW_mucces RW_nucces
         US_mucces US_nucces
 ;
@@ -4206,6 +4997,7 @@ var
         EAD_kg
         EAE_kg
         EAF_kg
+        EAG_kg
         RW_kg
         US_kg
 ;
@@ -4216,6 +5008,7 @@ parameters
         EAD_alphag EAD_deltag
         EAE_alphag EAE_deltag
         EAF_alphag EAF_deltag
+        EAG_alphag EAG_deltag
         RW_alphag RW_deltag
         US_alphag US_deltag
 ;
@@ -4462,6 +5255,22 @@ EAAEAF_rer = EAA_rer/EAF_rer;
 EAAEAF_rerbar = EAAEAF_rer;
 //Terms of Trade
 EAAEAF_tot = EAF_pex*EAAEAF_rer/EAA_pex;
+// Optimal price contract set in foreign markets (FOC), using EAA_pxtilde = EAG_pimtilde
+// EAGEAA_pimtilde/EAGEAA_pim = EAA_cpim*EAA_thetat/(EAA_thetat-1)*EAAEAG_fx/EAAEAG_gx;
+// Definition of fx
+// EAAEAG_fx = EAG_size/EAA_size*EAGEAA_im*EAA_mct+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAGEAA_piim(+1)/(EAGEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^EAA_thetat*EAAEAG_fx(+1);
+// Definition of gx   
+// EAAEAG_gx = EAAEAG_rer*EAGEAA_pim*EAG_size/EAA_size*EAGEAA_im+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAGEAA_piim(+1)/(EAGEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^(EAA_thetat-1)*EAAEAG_gx(+1);
+// Aggregate intermediate-good price dynamics, using EAA_px = EAG_pim
+// EAGEAA_pim^(1-EAA_thetat) = (1-EAA_xix)*EAGEAA_pimtilde^(1-EAA_thetat)+EAA_xix*(EAGEAA_pim(-1)/EAG_pic)^(1-EAA_thetat)*(EAGEAA_piim(-1)^EAA_chix*EAG_pi4target^(1/4*(1-EAA_chih)))^(1-EAA_thetat);
+// Intermediate-good price inflation, using EAA_pix = EAG_piim
+// EAGEAA_piim = EAGEAA_pim/EAGEAA_pim(-1)*EAG_pic;
+// Bilateral real exchange rate
+EAAEAG_rer = EAA_rer/EAG_rer;
+// Auxiliary equation for steady-state output
+EAAEAG_rerbar = EAAEAG_rer;
+//Terms of Trade
+EAAEAG_tot = EAG_pex*EAAEAG_rer/EAA_pex;
 // Optimal price contract set in foreign markets (FOC), using EAA_pxtilde = RW_pimtilde
 // RWEAA_pimtilde/RWEAA_pim = EAA_cpim*EAA_thetat/(EAA_thetat-1)*EAARW_fx/EAARW_gx;
 // Definition of fx
@@ -4516,6 +5325,7 @@ EAAEAB_weightex = EAB_size/EAA_size*EABEAA_im/EAA_ex*EAAEAB_rer*EAB_py*EAB_y/(EA
 +EAAEAD_rer*EAD_pex*EABEAD_im
 +EAAEAE_rer*EAE_pex*EABEAE_im
 +EAAEAF_rer*EAF_pex*EABEAF_im
++EAAEAG_rer*EAG_pex*EABEAG_im
 +EAARW_rer*RW_pex*EABRW_im
 +EAAUS_rer*US_pex*EABUS_im
 )+
@@ -4524,6 +5334,7 @@ EAAEAB_weightex = EAB_size/EAA_size*EABEAA_im/EAA_ex*EAAEAB_rer*EAB_py*EAB_y/(EA
 +EAAEAD_rer*EAD_pex*EACEAD_im
 +EAAEAE_rer*EAE_pex*EACEAE_im
 +EAAEAF_rer*EAF_pex*EACEAF_im
++EAAEAG_rer*EAG_pex*EACEAG_im
 +EAARW_rer*RW_pex*EACRW_im
 +EAAUS_rer*US_pex*EACUS_im
 )
@@ -4532,6 +5343,7 @@ EAAEAB_weightex = EAB_size/EAA_size*EABEAA_im/EAA_ex*EAAEAB_rer*EAB_py*EAB_y/(EA
 +EAAEAC_rer*EAC_pex*EADEAC_im
 +EAAEAE_rer*EAE_pex*EADEAE_im
 +EAAEAF_rer*EAF_pex*EADEAF_im
++EAAEAG_rer*EAG_pex*EADEAG_im
 +EAARW_rer*RW_pex*EADRW_im
 +EAAUS_rer*US_pex*EADUS_im
 )
@@ -4540,6 +5352,7 @@ EAAEAB_weightex = EAB_size/EAA_size*EABEAA_im/EAA_ex*EAAEAB_rer*EAB_py*EAB_y/(EA
 +EAAEAC_rer*EAC_pex*EAEEAC_im
 +EAAEAD_rer*EAD_pex*EAEEAD_im
 +EAAEAF_rer*EAF_pex*EAEEAF_im
++EAAEAG_rer*EAG_pex*EAEEAG_im
 +EAARW_rer*RW_pex*EAERW_im
 +EAAUS_rer*US_pex*EAEUS_im
 )
@@ -4548,8 +5361,18 @@ EAAEAB_weightex = EAB_size/EAA_size*EABEAA_im/EAA_ex*EAAEAB_rer*EAB_py*EAB_y/(EA
 +EAAEAC_rer*EAC_pex*EAFEAC_im
 +EAAEAD_rer*EAD_pex*EAFEAD_im
 +EAAEAE_rer*EAE_pex*EAFEAE_im
++EAAEAG_rer*EAG_pex*EAFEAG_im
 +EAARW_rer*RW_pex*EAFRW_im
 +EAAUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAA_size*EAGEAA_im/EAA_ex*EAAEAB_rer*EAB_pex*EAGEAB_im/(EAAEAG_rer*EAG_py*EAG_y
++EAAEAB_rer*EAB_pex*EAGEAB_im
++EAAEAC_rer*EAC_pex*EAGEAC_im
++EAAEAD_rer*EAD_pex*EAGEAD_im
++EAAEAE_rer*EAE_pex*EAGEAE_im
++EAAEAF_rer*EAF_pex*EAGEAF_im
++EAARW_rer*RW_pex*EAGRW_im
++EAAUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAA_size*RWEAA_im/EAA_ex*EAAEAB_rer*EAB_pex*RWEAB_im/(EAARW_rer*RW_py*RW_y
 +EAAEAB_rer*EAB_pex*RWEAB_im
@@ -4557,6 +5380,7 @@ EAAEAB_weightex = EAB_size/EAA_size*EABEAA_im/EAA_ex*EAAEAB_rer*EAB_py*EAB_y/(EA
 +EAAEAD_rer*EAD_pex*RWEAD_im
 +EAAEAE_rer*EAE_pex*RWEAE_im
 +EAAEAF_rer*EAF_pex*RWEAF_im
++EAAEAG_rer*EAG_pex*RWEAG_im
 +EAAUS_rer*US_pex*RWUS_im
 )
 +US_size/EAA_size*USEAA_im/EAA_ex*EAAEAB_rer*EAB_pex*USEAB_im/(EAAUS_rer*US_py*US_y
@@ -4565,6 +5389,7 @@ EAAEAB_weightex = EAB_size/EAA_size*EABEAA_im/EAA_ex*EAAEAB_rer*EAB_py*EAB_y/(EA
 +EAAEAD_rer*EAD_pex*USEAD_im
 +EAAEAE_rer*EAE_pex*USEAE_im
 +EAAEAF_rer*EAF_pex*USEAF_im
++EAAEAG_rer*EAG_pex*USEAG_im
 +EAARW_rer*RW_pex*USRW_im
 )
 ;
@@ -4578,6 +5403,7 @@ EAAEAC_weightex = EAC_size/EAA_size*EACEAA_im/EAA_ex*EAAEAC_rer*EAC_py*EAC_y/(EA
 +EAAEAD_rer*EAD_pex*EACEAD_im
 +EAAEAE_rer*EAE_pex*EACEAE_im
 +EAAEAF_rer*EAF_pex*EACEAF_im
++EAAEAG_rer*EAG_pex*EACEAG_im
 +EAARW_rer*RW_pex*EACRW_im
 +EAAUS_rer*US_pex*EACUS_im
 )+
@@ -4586,6 +5412,7 @@ EAAEAC_weightex = EAC_size/EAA_size*EACEAA_im/EAA_ex*EAAEAC_rer*EAC_py*EAC_y/(EA
 +EAAEAD_rer*EAD_pex*EABEAD_im
 +EAAEAE_rer*EAE_pex*EABEAE_im
 +EAAEAF_rer*EAF_pex*EABEAF_im
++EAAEAG_rer*EAG_pex*EABEAG_im
 +EAARW_rer*RW_pex*EABRW_im
 +EAAUS_rer*US_pex*EABUS_im
 )
@@ -4594,6 +5421,7 @@ EAAEAC_weightex = EAC_size/EAA_size*EACEAA_im/EAA_ex*EAAEAC_rer*EAC_py*EAC_y/(EA
 +EAAEAC_rer*EAC_pex*EADEAC_im
 +EAAEAE_rer*EAE_pex*EADEAE_im
 +EAAEAF_rer*EAF_pex*EADEAF_im
++EAAEAG_rer*EAG_pex*EADEAG_im
 +EAARW_rer*RW_pex*EADRW_im
 +EAAUS_rer*US_pex*EADUS_im
 )
@@ -4602,6 +5430,7 @@ EAAEAC_weightex = EAC_size/EAA_size*EACEAA_im/EAA_ex*EAAEAC_rer*EAC_py*EAC_y/(EA
 +EAAEAC_rer*EAC_pex*EAEEAC_im
 +EAAEAD_rer*EAD_pex*EAEEAD_im
 +EAAEAF_rer*EAF_pex*EAEEAF_im
++EAAEAG_rer*EAG_pex*EAEEAG_im
 +EAARW_rer*RW_pex*EAERW_im
 +EAAUS_rer*US_pex*EAEUS_im
 )
@@ -4610,8 +5439,18 @@ EAAEAC_weightex = EAC_size/EAA_size*EACEAA_im/EAA_ex*EAAEAC_rer*EAC_py*EAC_y/(EA
 +EAAEAC_rer*EAC_pex*EAFEAC_im
 +EAAEAD_rer*EAD_pex*EAFEAD_im
 +EAAEAE_rer*EAE_pex*EAFEAE_im
++EAAEAG_rer*EAG_pex*EAFEAG_im
 +EAARW_rer*RW_pex*EAFRW_im
 +EAAUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAA_size*EAGEAA_im/EAA_ex*EAAEAC_rer*EAC_pex*EAGEAC_im/(EAAEAG_rer*EAG_py*EAG_y
++EAAEAB_rer*EAB_pex*EAGEAB_im
++EAAEAC_rer*EAC_pex*EAGEAC_im
++EAAEAD_rer*EAD_pex*EAGEAD_im
++EAAEAE_rer*EAE_pex*EAGEAE_im
++EAAEAF_rer*EAF_pex*EAGEAF_im
++EAARW_rer*RW_pex*EAGRW_im
++EAAUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAA_size*RWEAA_im/EAA_ex*EAAEAC_rer*EAC_pex*RWEAC_im/(EAARW_rer*RW_py*RW_y
 +EAAEAB_rer*EAB_pex*RWEAB_im
@@ -4619,6 +5458,7 @@ EAAEAC_weightex = EAC_size/EAA_size*EACEAA_im/EAA_ex*EAAEAC_rer*EAC_py*EAC_y/(EA
 +EAAEAD_rer*EAD_pex*RWEAD_im
 +EAAEAE_rer*EAE_pex*RWEAE_im
 +EAAEAF_rer*EAF_pex*RWEAF_im
++EAAEAG_rer*EAG_pex*RWEAG_im
 +EAAUS_rer*US_pex*RWUS_im
 )
 +US_size/EAA_size*USEAA_im/EAA_ex*EAAEAC_rer*EAC_pex*USEAC_im/(EAAUS_rer*US_py*US_y
@@ -4627,6 +5467,7 @@ EAAEAC_weightex = EAC_size/EAA_size*EACEAA_im/EAA_ex*EAAEAC_rer*EAC_py*EAC_y/(EA
 +EAAEAD_rer*EAD_pex*USEAD_im
 +EAAEAE_rer*EAE_pex*USEAE_im
 +EAAEAF_rer*EAF_pex*USEAF_im
++EAAEAG_rer*EAG_pex*USEAG_im
 +EAARW_rer*RW_pex*USRW_im
 )
 ;
@@ -4640,6 +5481,7 @@ EAAEAD_weightex = EAD_size/EAA_size*EADEAA_im/EAA_ex*EAAEAD_rer*EAD_py*EAD_y/(EA
 +EAAEAC_rer*EAC_pex*EADEAC_im
 +EAAEAE_rer*EAE_pex*EADEAE_im
 +EAAEAF_rer*EAF_pex*EADEAF_im
++EAAEAG_rer*EAG_pex*EADEAG_im
 +EAARW_rer*RW_pex*EADRW_im
 +EAAUS_rer*US_pex*EADUS_im
 )+
@@ -4648,6 +5490,7 @@ EAAEAD_weightex = EAD_size/EAA_size*EADEAA_im/EAA_ex*EAAEAD_rer*EAD_py*EAD_y/(EA
 +EAAEAD_rer*EAD_pex*EABEAD_im
 +EAAEAE_rer*EAE_pex*EABEAE_im
 +EAAEAF_rer*EAF_pex*EABEAF_im
++EAAEAG_rer*EAG_pex*EABEAG_im
 +EAARW_rer*RW_pex*EABRW_im
 +EAAUS_rer*US_pex*EABUS_im
 )
@@ -4656,6 +5499,7 @@ EAAEAD_weightex = EAD_size/EAA_size*EADEAA_im/EAA_ex*EAAEAD_rer*EAD_py*EAD_y/(EA
 +EAAEAD_rer*EAD_pex*EACEAD_im
 +EAAEAE_rer*EAE_pex*EACEAE_im
 +EAAEAF_rer*EAF_pex*EACEAF_im
++EAAEAG_rer*EAG_pex*EACEAG_im
 +EAARW_rer*RW_pex*EACRW_im
 +EAAUS_rer*US_pex*EACUS_im
 )
@@ -4664,6 +5508,7 @@ EAAEAD_weightex = EAD_size/EAA_size*EADEAA_im/EAA_ex*EAAEAD_rer*EAD_py*EAD_y/(EA
 +EAAEAC_rer*EAC_pex*EAEEAC_im
 +EAAEAD_rer*EAD_pex*EAEEAD_im
 +EAAEAF_rer*EAF_pex*EAEEAF_im
++EAAEAG_rer*EAG_pex*EAEEAG_im
 +EAARW_rer*RW_pex*EAERW_im
 +EAAUS_rer*US_pex*EAEUS_im
 )
@@ -4672,8 +5517,18 @@ EAAEAD_weightex = EAD_size/EAA_size*EADEAA_im/EAA_ex*EAAEAD_rer*EAD_py*EAD_y/(EA
 +EAAEAC_rer*EAC_pex*EAFEAC_im
 +EAAEAD_rer*EAD_pex*EAFEAD_im
 +EAAEAE_rer*EAE_pex*EAFEAE_im
++EAAEAG_rer*EAG_pex*EAFEAG_im
 +EAARW_rer*RW_pex*EAFRW_im
 +EAAUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAA_size*EAGEAA_im/EAA_ex*EAAEAD_rer*EAD_pex*EAGEAD_im/(EAAEAG_rer*EAG_py*EAG_y
++EAAEAB_rer*EAB_pex*EAGEAB_im
++EAAEAC_rer*EAC_pex*EAGEAC_im
++EAAEAD_rer*EAD_pex*EAGEAD_im
++EAAEAE_rer*EAE_pex*EAGEAE_im
++EAAEAF_rer*EAF_pex*EAGEAF_im
++EAARW_rer*RW_pex*EAGRW_im
++EAAUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAA_size*RWEAA_im/EAA_ex*EAAEAD_rer*EAD_pex*RWEAD_im/(EAARW_rer*RW_py*RW_y
 +EAAEAB_rer*EAB_pex*RWEAB_im
@@ -4681,6 +5536,7 @@ EAAEAD_weightex = EAD_size/EAA_size*EADEAA_im/EAA_ex*EAAEAD_rer*EAD_py*EAD_y/(EA
 +EAAEAD_rer*EAD_pex*RWEAD_im
 +EAAEAE_rer*EAE_pex*RWEAE_im
 +EAAEAF_rer*EAF_pex*RWEAF_im
++EAAEAG_rer*EAG_pex*RWEAG_im
 +EAAUS_rer*US_pex*RWUS_im
 )
 +US_size/EAA_size*USEAA_im/EAA_ex*EAAEAD_rer*EAD_pex*USEAD_im/(EAAUS_rer*US_py*US_y
@@ -4689,6 +5545,7 @@ EAAEAD_weightex = EAD_size/EAA_size*EADEAA_im/EAA_ex*EAAEAD_rer*EAD_py*EAD_y/(EA
 +EAAEAD_rer*EAD_pex*USEAD_im
 +EAAEAE_rer*EAE_pex*USEAE_im
 +EAAEAF_rer*EAF_pex*USEAF_im
++EAAEAG_rer*EAG_pex*USEAG_im
 +EAARW_rer*RW_pex*USRW_im
 )
 ;
@@ -4702,6 +5559,7 @@ EAAEAE_weightex = EAE_size/EAA_size*EAEEAA_im/EAA_ex*EAAEAE_rer*EAE_py*EAE_y/(EA
 +EAAEAC_rer*EAC_pex*EAEEAC_im
 +EAAEAD_rer*EAD_pex*EAEEAD_im
 +EAAEAF_rer*EAF_pex*EAEEAF_im
++EAAEAG_rer*EAG_pex*EAEEAG_im
 +EAARW_rer*RW_pex*EAERW_im
 +EAAUS_rer*US_pex*EAEUS_im
 )+
@@ -4710,6 +5568,7 @@ EAAEAE_weightex = EAE_size/EAA_size*EAEEAA_im/EAA_ex*EAAEAE_rer*EAE_py*EAE_y/(EA
 +EAAEAD_rer*EAD_pex*EABEAD_im
 +EAAEAE_rer*EAE_pex*EABEAE_im
 +EAAEAF_rer*EAF_pex*EABEAF_im
++EAAEAG_rer*EAG_pex*EABEAG_im
 +EAARW_rer*RW_pex*EABRW_im
 +EAAUS_rer*US_pex*EABUS_im
 )
@@ -4718,6 +5577,7 @@ EAAEAE_weightex = EAE_size/EAA_size*EAEEAA_im/EAA_ex*EAAEAE_rer*EAE_py*EAE_y/(EA
 +EAAEAD_rer*EAD_pex*EACEAD_im
 +EAAEAE_rer*EAE_pex*EACEAE_im
 +EAAEAF_rer*EAF_pex*EACEAF_im
++EAAEAG_rer*EAG_pex*EACEAG_im
 +EAARW_rer*RW_pex*EACRW_im
 +EAAUS_rer*US_pex*EACUS_im
 )
@@ -4726,6 +5586,7 @@ EAAEAE_weightex = EAE_size/EAA_size*EAEEAA_im/EAA_ex*EAAEAE_rer*EAE_py*EAE_y/(EA
 +EAAEAC_rer*EAC_pex*EADEAC_im
 +EAAEAE_rer*EAE_pex*EADEAE_im
 +EAAEAF_rer*EAF_pex*EADEAF_im
++EAAEAG_rer*EAG_pex*EADEAG_im
 +EAARW_rer*RW_pex*EADRW_im
 +EAAUS_rer*US_pex*EADUS_im
 )
@@ -4734,8 +5595,18 @@ EAAEAE_weightex = EAE_size/EAA_size*EAEEAA_im/EAA_ex*EAAEAE_rer*EAE_py*EAE_y/(EA
 +EAAEAC_rer*EAC_pex*EAFEAC_im
 +EAAEAD_rer*EAD_pex*EAFEAD_im
 +EAAEAE_rer*EAE_pex*EAFEAE_im
++EAAEAG_rer*EAG_pex*EAFEAG_im
 +EAARW_rer*RW_pex*EAFRW_im
 +EAAUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAA_size*EAGEAA_im/EAA_ex*EAAEAE_rer*EAE_pex*EAGEAE_im/(EAAEAG_rer*EAG_py*EAG_y
++EAAEAB_rer*EAB_pex*EAGEAB_im
++EAAEAC_rer*EAC_pex*EAGEAC_im
++EAAEAD_rer*EAD_pex*EAGEAD_im
++EAAEAE_rer*EAE_pex*EAGEAE_im
++EAAEAF_rer*EAF_pex*EAGEAF_im
++EAARW_rer*RW_pex*EAGRW_im
++EAAUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAA_size*RWEAA_im/EAA_ex*EAAEAE_rer*EAE_pex*RWEAE_im/(EAARW_rer*RW_py*RW_y
 +EAAEAB_rer*EAB_pex*RWEAB_im
@@ -4743,6 +5614,7 @@ EAAEAE_weightex = EAE_size/EAA_size*EAEEAA_im/EAA_ex*EAAEAE_rer*EAE_py*EAE_y/(EA
 +EAAEAD_rer*EAD_pex*RWEAD_im
 +EAAEAE_rer*EAE_pex*RWEAE_im
 +EAAEAF_rer*EAF_pex*RWEAF_im
++EAAEAG_rer*EAG_pex*RWEAG_im
 +EAAUS_rer*US_pex*RWUS_im
 )
 +US_size/EAA_size*USEAA_im/EAA_ex*EAAEAE_rer*EAE_pex*USEAE_im/(EAAUS_rer*US_py*US_y
@@ -4751,6 +5623,7 @@ EAAEAE_weightex = EAE_size/EAA_size*EAEEAA_im/EAA_ex*EAAEAE_rer*EAE_py*EAE_y/(EA
 +EAAEAD_rer*EAD_pex*USEAD_im
 +EAAEAE_rer*EAE_pex*USEAE_im
 +EAAEAF_rer*EAF_pex*USEAF_im
++EAAEAG_rer*EAG_pex*USEAG_im
 +EAARW_rer*RW_pex*USRW_im
 )
 ;
@@ -4764,6 +5637,7 @@ EAAEAF_weightex = EAF_size/EAA_size*EAFEAA_im/EAA_ex*EAAEAF_rer*EAF_py*EAF_y/(EA
 +EAAEAC_rer*EAC_pex*EAFEAC_im
 +EAAEAD_rer*EAD_pex*EAFEAD_im
 +EAAEAE_rer*EAE_pex*EAFEAE_im
++EAAEAG_rer*EAG_pex*EAFEAG_im
 +EAARW_rer*RW_pex*EAFRW_im
 +EAAUS_rer*US_pex*EAFUS_im
 )+
@@ -4772,6 +5646,7 @@ EAAEAF_weightex = EAF_size/EAA_size*EAFEAA_im/EAA_ex*EAAEAF_rer*EAF_py*EAF_y/(EA
 +EAAEAD_rer*EAD_pex*EABEAD_im
 +EAAEAE_rer*EAE_pex*EABEAE_im
 +EAAEAF_rer*EAF_pex*EABEAF_im
++EAAEAG_rer*EAG_pex*EABEAG_im
 +EAARW_rer*RW_pex*EABRW_im
 +EAAUS_rer*US_pex*EABUS_im
 )
@@ -4780,6 +5655,7 @@ EAAEAF_weightex = EAF_size/EAA_size*EAFEAA_im/EAA_ex*EAAEAF_rer*EAF_py*EAF_y/(EA
 +EAAEAD_rer*EAD_pex*EACEAD_im
 +EAAEAE_rer*EAE_pex*EACEAE_im
 +EAAEAF_rer*EAF_pex*EACEAF_im
++EAAEAG_rer*EAG_pex*EACEAG_im
 +EAARW_rer*RW_pex*EACRW_im
 +EAAUS_rer*US_pex*EACUS_im
 )
@@ -4788,6 +5664,7 @@ EAAEAF_weightex = EAF_size/EAA_size*EAFEAA_im/EAA_ex*EAAEAF_rer*EAF_py*EAF_y/(EA
 +EAAEAC_rer*EAC_pex*EADEAC_im
 +EAAEAE_rer*EAE_pex*EADEAE_im
 +EAAEAF_rer*EAF_pex*EADEAF_im
++EAAEAG_rer*EAG_pex*EADEAG_im
 +EAARW_rer*RW_pex*EADRW_im
 +EAAUS_rer*US_pex*EADUS_im
 )
@@ -4796,8 +5673,18 @@ EAAEAF_weightex = EAF_size/EAA_size*EAFEAA_im/EAA_ex*EAAEAF_rer*EAF_py*EAF_y/(EA
 +EAAEAC_rer*EAC_pex*EAEEAC_im
 +EAAEAD_rer*EAD_pex*EAEEAD_im
 +EAAEAF_rer*EAF_pex*EAEEAF_im
++EAAEAG_rer*EAG_pex*EAEEAG_im
 +EAARW_rer*RW_pex*EAERW_im
 +EAAUS_rer*US_pex*EAEUS_im
+)
++EAG_size/EAA_size*EAGEAA_im/EAA_ex*EAAEAF_rer*EAF_pex*EAGEAF_im/(EAAEAG_rer*EAG_py*EAG_y
++EAAEAB_rer*EAB_pex*EAGEAB_im
++EAAEAC_rer*EAC_pex*EAGEAC_im
++EAAEAD_rer*EAD_pex*EAGEAD_im
++EAAEAE_rer*EAE_pex*EAGEAE_im
++EAAEAF_rer*EAF_pex*EAGEAF_im
++EAARW_rer*RW_pex*EAGRW_im
++EAAUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAA_size*RWEAA_im/EAA_ex*EAAEAF_rer*EAF_pex*RWEAF_im/(EAARW_rer*RW_py*RW_y
 +EAAEAB_rer*EAB_pex*RWEAB_im
@@ -4805,6 +5692,7 @@ EAAEAF_weightex = EAF_size/EAA_size*EAFEAA_im/EAA_ex*EAAEAF_rer*EAF_py*EAF_y/(EA
 +EAAEAD_rer*EAD_pex*RWEAD_im
 +EAAEAE_rer*EAE_pex*RWEAE_im
 +EAAEAF_rer*EAF_pex*RWEAF_im
++EAAEAG_rer*EAG_pex*RWEAG_im
 +EAAUS_rer*US_pex*RWUS_im
 )
 +US_size/EAA_size*USEAA_im/EAA_ex*EAAEAF_rer*EAF_pex*USEAF_im/(EAAUS_rer*US_py*US_y
@@ -4813,11 +5701,90 @@ EAAEAF_weightex = EAF_size/EAA_size*EAFEAA_im/EAA_ex*EAAEAF_rer*EAF_py*EAF_y/(EA
 +EAAEAD_rer*EAD_pex*USEAD_im
 +EAAEAE_rer*EAE_pex*USEAE_im
 +EAAEAF_rer*EAF_pex*USEAF_im
++EAAEAG_rer*EAG_pex*USEAG_im
 +EAARW_rer*RW_pex*USRW_im
 )
 ;
 // Effective real exchange rate: double weighting (overall)
 EAAEAF_weight = EAA_pim*EAA_im/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAF_weightim+EAA_pex*EAA_ex/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAF_weightex;
+// Effective real exchange rate: double weighting (imports)
+EAAEAG_weightim = EAAEAG_rer*EAG_pex*EAAEAG_im/(EAA_pim*EAA_im);
+// Effective real exchange rate: double weighting (exports)
+EAAEAG_weightex = EAG_size/EAA_size*EAGEAA_im/EAA_ex*EAAEAG_rer*EAG_py*EAG_y/(EAAEAG_rer*EAG_py*EAG_y
++EAAEAB_rer*EAB_pex*EAGEAB_im
++EAAEAC_rer*EAC_pex*EAGEAC_im
++EAAEAD_rer*EAD_pex*EAGEAD_im
++EAAEAE_rer*EAE_pex*EAGEAE_im
++EAAEAF_rer*EAF_pex*EAGEAF_im
++EAARW_rer*RW_pex*EAGRW_im
++EAAUS_rer*US_pex*EAGUS_im
+)+
++EAB_size/EAA_size*EABEAA_im/EAA_ex*EAAEAG_rer*EAG_pex*EABEAG_im/(EAAEAB_rer*EAB_py*EAB_y
++EAAEAC_rer*EAC_pex*EABEAC_im
++EAAEAD_rer*EAD_pex*EABEAD_im
++EAAEAE_rer*EAE_pex*EABEAE_im
++EAAEAF_rer*EAF_pex*EABEAF_im
++EAAEAG_rer*EAG_pex*EABEAG_im
++EAARW_rer*RW_pex*EABRW_im
++EAAUS_rer*US_pex*EABUS_im
+)
++EAC_size/EAA_size*EACEAA_im/EAA_ex*EAAEAG_rer*EAG_pex*EACEAG_im/(EAAEAC_rer*EAC_py*EAC_y
++EAAEAB_rer*EAB_pex*EACEAB_im
++EAAEAD_rer*EAD_pex*EACEAD_im
++EAAEAE_rer*EAE_pex*EACEAE_im
++EAAEAF_rer*EAF_pex*EACEAF_im
++EAAEAG_rer*EAG_pex*EACEAG_im
++EAARW_rer*RW_pex*EACRW_im
++EAAUS_rer*US_pex*EACUS_im
+)
++EAD_size/EAA_size*EADEAA_im/EAA_ex*EAAEAG_rer*EAG_pex*EADEAG_im/(EAAEAD_rer*EAD_py*EAD_y
++EAAEAB_rer*EAB_pex*EADEAB_im
++EAAEAC_rer*EAC_pex*EADEAC_im
++EAAEAE_rer*EAE_pex*EADEAE_im
++EAAEAF_rer*EAF_pex*EADEAF_im
++EAAEAG_rer*EAG_pex*EADEAG_im
++EAARW_rer*RW_pex*EADRW_im
++EAAUS_rer*US_pex*EADUS_im
+)
++EAE_size/EAA_size*EAEEAA_im/EAA_ex*EAAEAG_rer*EAG_pex*EAEEAG_im/(EAAEAE_rer*EAE_py*EAE_y
++EAAEAB_rer*EAB_pex*EAEEAB_im
++EAAEAC_rer*EAC_pex*EAEEAC_im
++EAAEAD_rer*EAD_pex*EAEEAD_im
++EAAEAF_rer*EAF_pex*EAEEAF_im
++EAAEAG_rer*EAG_pex*EAEEAG_im
++EAARW_rer*RW_pex*EAERW_im
++EAAUS_rer*US_pex*EAEUS_im
+)
++EAF_size/EAA_size*EAFEAA_im/EAA_ex*EAAEAG_rer*EAG_pex*EAFEAG_im/(EAAEAF_rer*EAF_py*EAF_y
++EAAEAB_rer*EAB_pex*EAFEAB_im
++EAAEAC_rer*EAC_pex*EAFEAC_im
++EAAEAD_rer*EAD_pex*EAFEAD_im
++EAAEAE_rer*EAE_pex*EAFEAE_im
++EAAEAG_rer*EAG_pex*EAFEAG_im
++EAARW_rer*RW_pex*EAFRW_im
++EAAUS_rer*US_pex*EAFUS_im
+)
++RW_size/EAA_size*RWEAA_im/EAA_ex*EAAEAG_rer*EAG_pex*RWEAG_im/(EAARW_rer*RW_py*RW_y
++EAAEAB_rer*EAB_pex*RWEAB_im
++EAAEAC_rer*EAC_pex*RWEAC_im
++EAAEAD_rer*EAD_pex*RWEAD_im
++EAAEAE_rer*EAE_pex*RWEAE_im
++EAAEAF_rer*EAF_pex*RWEAF_im
++EAAEAG_rer*EAG_pex*RWEAG_im
++EAAUS_rer*US_pex*RWUS_im
+)
++US_size/EAA_size*USEAA_im/EAA_ex*EAAEAG_rer*EAG_pex*USEAG_im/(EAAUS_rer*US_py*US_y
++EAAEAB_rer*EAB_pex*USEAB_im
++EAAEAC_rer*EAC_pex*USEAC_im
++EAAEAD_rer*EAD_pex*USEAD_im
++EAAEAE_rer*EAE_pex*USEAE_im
++EAAEAF_rer*EAF_pex*USEAF_im
++EAAEAG_rer*EAG_pex*USEAG_im
++EAARW_rer*RW_pex*USRW_im
+)
+;
+// Effective real exchange rate: double weighting (overall)
+EAAEAG_weight = EAA_pim*EAA_im/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAG_weightim+EAA_pex*EAA_ex/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAG_weightex;
 // Effective real exchange rate: double weighting (imports)
 EAARW_weightim = EAARW_rer*RW_pex*EAARW_im/(EAA_pim*EAA_im);
 // Effective real exchange rate: double weighting (exports)
@@ -4827,6 +5794,7 @@ EAARW_weightex = RW_size/EAA_size*RWEAA_im/EAA_ex*EAARW_rer*RW_py*RW_y/(EAARW_re
 +EAAEAD_rer*EAD_pex*RWEAD_im
 +EAAEAE_rer*EAE_pex*RWEAE_im
 +EAAEAF_rer*EAF_pex*RWEAF_im
++EAAEAG_rer*EAG_pex*RWEAG_im
 +EAAUS_rer*US_pex*RWUS_im
 )+
 +EAB_size/EAA_size*EABEAA_im/EAA_ex*EAARW_rer*RW_pex*EABRW_im/(EAAEAB_rer*EAB_py*EAB_y
@@ -4834,6 +5802,7 @@ EAARW_weightex = RW_size/EAA_size*RWEAA_im/EAA_ex*EAARW_rer*RW_py*RW_y/(EAARW_re
 +EAAEAD_rer*EAD_pex*EABEAD_im
 +EAAEAE_rer*EAE_pex*EABEAE_im
 +EAAEAF_rer*EAF_pex*EABEAF_im
++EAAEAG_rer*EAG_pex*EABEAG_im
 +EAARW_rer*RW_pex*EABRW_im
 +EAAUS_rer*US_pex*EABUS_im
 )
@@ -4842,6 +5811,7 @@ EAARW_weightex = RW_size/EAA_size*RWEAA_im/EAA_ex*EAARW_rer*RW_py*RW_y/(EAARW_re
 +EAAEAD_rer*EAD_pex*EACEAD_im
 +EAAEAE_rer*EAE_pex*EACEAE_im
 +EAAEAF_rer*EAF_pex*EACEAF_im
++EAAEAG_rer*EAG_pex*EACEAG_im
 +EAARW_rer*RW_pex*EACRW_im
 +EAAUS_rer*US_pex*EACUS_im
 )
@@ -4850,6 +5820,7 @@ EAARW_weightex = RW_size/EAA_size*RWEAA_im/EAA_ex*EAARW_rer*RW_py*RW_y/(EAARW_re
 +EAAEAC_rer*EAC_pex*EADEAC_im
 +EAAEAE_rer*EAE_pex*EADEAE_im
 +EAAEAF_rer*EAF_pex*EADEAF_im
++EAAEAG_rer*EAG_pex*EADEAG_im
 +EAARW_rer*RW_pex*EADRW_im
 +EAAUS_rer*US_pex*EADUS_im
 )
@@ -4858,6 +5829,7 @@ EAARW_weightex = RW_size/EAA_size*RWEAA_im/EAA_ex*EAARW_rer*RW_py*RW_y/(EAARW_re
 +EAAEAC_rer*EAC_pex*EAEEAC_im
 +EAAEAD_rer*EAD_pex*EAEEAD_im
 +EAAEAF_rer*EAF_pex*EAEEAF_im
++EAAEAG_rer*EAG_pex*EAEEAG_im
 +EAARW_rer*RW_pex*EAERW_im
 +EAAUS_rer*US_pex*EAEUS_im
 )
@@ -4866,8 +5838,18 @@ EAARW_weightex = RW_size/EAA_size*RWEAA_im/EAA_ex*EAARW_rer*RW_py*RW_y/(EAARW_re
 +EAAEAC_rer*EAC_pex*EAFEAC_im
 +EAAEAD_rer*EAD_pex*EAFEAD_im
 +EAAEAE_rer*EAE_pex*EAFEAE_im
++EAAEAG_rer*EAG_pex*EAFEAG_im
 +EAARW_rer*RW_pex*EAFRW_im
 +EAAUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAA_size*EAGEAA_im/EAA_ex*EAARW_rer*RW_pex*EAGRW_im/(EAAEAG_rer*EAG_py*EAG_y
++EAAEAB_rer*EAB_pex*EAGEAB_im
++EAAEAC_rer*EAC_pex*EAGEAC_im
++EAAEAD_rer*EAD_pex*EAGEAD_im
++EAAEAE_rer*EAE_pex*EAGEAE_im
++EAAEAF_rer*EAF_pex*EAGEAF_im
++EAARW_rer*RW_pex*EAGRW_im
++EAAUS_rer*US_pex*EAGUS_im
 )
 +US_size/EAA_size*USEAA_im/EAA_ex*EAARW_rer*RW_pex*USRW_im/(EAAUS_rer*US_py*US_y
 +EAAEAB_rer*EAB_pex*USEAB_im
@@ -4875,6 +5857,7 @@ EAARW_weightex = RW_size/EAA_size*RWEAA_im/EAA_ex*EAARW_rer*RW_py*RW_y/(EAARW_re
 +EAAEAD_rer*EAD_pex*USEAD_im
 +EAAEAE_rer*EAE_pex*USEAE_im
 +EAAEAF_rer*EAF_pex*USEAF_im
++EAAEAG_rer*EAG_pex*USEAG_im
 +EAARW_rer*RW_pex*USRW_im
 )
 ;
@@ -4889,6 +5872,7 @@ EAAUS_weightex = US_size/EAA_size*USEAA_im/EAA_ex*EAAUS_rer*US_py*US_y/(EAAUS_re
 +EAAEAD_rer*EAD_pex*USEAD_im
 +EAAEAE_rer*EAE_pex*USEAE_im
 +EAAEAF_rer*EAF_pex*USEAF_im
++EAAEAG_rer*EAG_pex*USEAG_im
 +EAARW_rer*RW_pex*USRW_im
 )+
 +EAB_size/EAA_size*EABEAA_im/EAA_ex*EAAUS_rer*US_pex*EABUS_im/(EAAEAB_rer*EAB_py*EAB_y
@@ -4896,6 +5880,7 @@ EAAUS_weightex = US_size/EAA_size*USEAA_im/EAA_ex*EAAUS_rer*US_py*US_y/(EAAUS_re
 +EAAEAD_rer*EAD_pex*EABEAD_im
 +EAAEAE_rer*EAE_pex*EABEAE_im
 +EAAEAF_rer*EAF_pex*EABEAF_im
++EAAEAG_rer*EAG_pex*EABEAG_im
 +EAARW_rer*RW_pex*EABRW_im
 +EAAUS_rer*US_pex*EABUS_im
 )
@@ -4904,6 +5889,7 @@ EAAUS_weightex = US_size/EAA_size*USEAA_im/EAA_ex*EAAUS_rer*US_py*US_y/(EAAUS_re
 +EAAEAD_rer*EAD_pex*EACEAD_im
 +EAAEAE_rer*EAE_pex*EACEAE_im
 +EAAEAF_rer*EAF_pex*EACEAF_im
++EAAEAG_rer*EAG_pex*EACEAG_im
 +EAARW_rer*RW_pex*EACRW_im
 +EAAUS_rer*US_pex*EACUS_im
 )
@@ -4912,6 +5898,7 @@ EAAUS_weightex = US_size/EAA_size*USEAA_im/EAA_ex*EAAUS_rer*US_py*US_y/(EAAUS_re
 +EAAEAC_rer*EAC_pex*EADEAC_im
 +EAAEAE_rer*EAE_pex*EADEAE_im
 +EAAEAF_rer*EAF_pex*EADEAF_im
++EAAEAG_rer*EAG_pex*EADEAG_im
 +EAARW_rer*RW_pex*EADRW_im
 +EAAUS_rer*US_pex*EADUS_im
 )
@@ -4920,6 +5907,7 @@ EAAUS_weightex = US_size/EAA_size*USEAA_im/EAA_ex*EAAUS_rer*US_py*US_y/(EAAUS_re
 +EAAEAC_rer*EAC_pex*EAEEAC_im
 +EAAEAD_rer*EAD_pex*EAEEAD_im
 +EAAEAF_rer*EAF_pex*EAEEAF_im
++EAAEAG_rer*EAG_pex*EAEEAG_im
 +EAARW_rer*RW_pex*EAERW_im
 +EAAUS_rer*US_pex*EAEUS_im
 )
@@ -4928,8 +5916,18 @@ EAAUS_weightex = US_size/EAA_size*USEAA_im/EAA_ex*EAAUS_rer*US_py*US_y/(EAAUS_re
 +EAAEAC_rer*EAC_pex*EAFEAC_im
 +EAAEAD_rer*EAD_pex*EAFEAD_im
 +EAAEAE_rer*EAE_pex*EAFEAE_im
++EAAEAG_rer*EAG_pex*EAFEAG_im
 +EAARW_rer*RW_pex*EAFRW_im
 +EAAUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAA_size*EAGEAA_im/EAA_ex*EAAUS_rer*US_pex*EAGUS_im/(EAAEAG_rer*EAG_py*EAG_y
++EAAEAB_rer*EAB_pex*EAGEAB_im
++EAAEAC_rer*EAC_pex*EAGEAC_im
++EAAEAD_rer*EAD_pex*EAGEAD_im
++EAAEAE_rer*EAE_pex*EAGEAE_im
++EAAEAF_rer*EAF_pex*EAGEAF_im
++EAARW_rer*RW_pex*EAGRW_im
++EAAUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAA_size*RWEAA_im/EAA_ex*EAAUS_rer*US_pex*RWUS_im/(EAARW_rer*RW_py*RW_y
 +EAAEAB_rer*EAB_pex*RWEAB_im
@@ -4937,6 +5935,7 @@ EAAUS_weightex = US_size/EAA_size*USEAA_im/EAA_ex*EAAUS_rer*US_py*US_y/(EAAUS_re
 +EAAEAD_rer*EAD_pex*RWEAD_im
 +EAAEAE_rer*EAE_pex*RWEAE_im
 +EAAEAF_rer*EAF_pex*RWEAF_im
++EAAEAG_rer*EAG_pex*RWEAG_im
 +EAAUS_rer*US_pex*RWUS_im
 )
 ;
@@ -4949,6 +5948,7 @@ EAA_reer = 1
 *EAAEAD_rer^EAAEAD_weight
 *EAAEAE_rer^EAAEAE_weight
 *EAAEAF_rer^EAAEAF_weight
+*EAAEAG_rer^EAAEAG_weight
 *EAARW_rer^EAARW_weight
 *EAAUS_rer^EAAUS_weight
 ;
@@ -4959,6 +5959,7 @@ EAA_etot = 1
 *EAAEAD_tot^EAAEAD_weight
 *EAAEAE_tot^EAAEAE_weight
 *EAAEAF_tot^EAAEAF_weight
+*EAAEAG_tot^EAAEAG_weight
 *EAARW_tot^EAARW_weight
 *EAAUS_tot^EAAUS_weight
 ;
@@ -4972,6 +5973,7 @@ EAA_imc^((EAA_mumc-1)/EAA_mumc) =
 +EAAEAD_numc ^(1/EAA_mumc)*EAAEAD_imc^(1-1/EAA_mumc)
 +EAAEAE_numc ^(1/EAA_mumc)*EAAEAE_imc^(1-1/EAA_mumc)
 +EAAEAF_numc ^(1/EAA_mumc)*EAAEAF_imc^(1-1/EAA_mumc)
++EAAEAG_numc ^(1/EAA_mumc)*EAAEAG_imc^(1-1/EAA_mumc)
 +EAAUS_numc ^(1/EAA_mumc)*EAAUS_imc^(1-1/EAA_mumc)
 +(1
 -EAAEAB_numc
@@ -4979,6 +5981,7 @@ EAA_imc^((EAA_mumc-1)/EAA_mumc) =
 -EAAEAD_numc
 -EAAEAE_numc
 -EAAEAF_numc
+-EAAEAG_numc
 -EAAUS_numc
 )^(1/EAA_mumc)*EAARW_imc^(1-1/EAA_mumc);
 // Demand for bilateral consumption import goods
@@ -4990,6 +5993,8 @@ EAAEAE_imc = EAAEAE_numc*((EAE_pex*EAAEAE_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
 // Demand for bilateral consumption import goods
 EAAEAF_imc = EAAEAF_numc*((EAF_pex*EAAEAF_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
 // Demand for bilateral consumption import goods
+EAAEAG_imc = EAAEAG_numc*((EAG_pex*EAAEAG_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
+// Demand for bilateral consumption import goods
 EAAUS_imc = EAAUS_numc*((US_pex*EAAUS_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
 EAARW_imc = (1
 -EAAEAB_numc
@@ -4997,6 +6002,7 @@ EAARW_imc = (1
 -EAAEAD_numc
 -EAAEAE_numc
 -EAAEAF_numc
+-EAAEAG_numc
 -EAAUS_numc
 )*((RW_pex*EAARW_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
 // Price of the consumption good (import)
@@ -5006,6 +6012,7 @@ EAA_pimc^(1-EAA_mumc) =
 +EAAEAD_numc * (EAD_pex*EAAEAD_rer)^(1-EAA_mumc)
 +EAAEAE_numc * (EAE_pex*EAAEAE_rer)^(1-EAA_mumc)
 +EAAEAF_numc * (EAF_pex*EAAEAF_rer)^(1-EAA_mumc)
++EAAEAG_numc * (EAG_pex*EAAEAG_rer)^(1-EAA_mumc)
 +EAAUS_numc * (US_pex*EAAUS_rer)^(1-EAA_mumc)
 +(1
 -EAAEAB_numc
@@ -5013,6 +6020,7 @@ EAA_pimc^(1-EAA_mumc) =
 -EAAEAD_numc
 -EAAEAE_numc
 -EAAEAF_numc
+-EAAEAG_numc
 -EAAUS_numc
 )*(RW_pex*EAARW_rer)^(1-EAA_mumc);
 // Private consumption good (import) inflation
@@ -5024,6 +6032,7 @@ EAA_imi^((EAA_mumi-1)/EAA_mumi) =
 +EAAEAD_numi ^(1/EAA_mumi)*EAAEAD_imi^(1-1/EAA_mumi)
 +EAAEAE_numi ^(1/EAA_mumi)*EAAEAE_imi^(1-1/EAA_mumi)
 +EAAEAF_numi ^(1/EAA_mumi)*EAAEAF_imi^(1-1/EAA_mumi)
++EAAEAG_numi ^(1/EAA_mumi)*EAAEAG_imi^(1-1/EAA_mumi)
 +EAAUS_numi ^(1/EAA_mumi)*EAAUS_imi^(1-1/EAA_mumi)
 +(1
 -EAAEAB_numi
@@ -5031,6 +6040,7 @@ EAA_imi^((EAA_mumi-1)/EAA_mumi) =
 -EAAEAD_numi
 -EAAEAE_numi
 -EAAEAF_numi
+-EAAEAG_numi
 -EAAUS_numi
 )^(1/EAA_mumi)*EAARW_imi^(1-1/EAA_mumi);
 // Demand for bilateral consumption import goods
@@ -5042,6 +6052,8 @@ EAAEAE_imi = EAAEAE_numi*((EAE_pex*EAAEAE_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
 // Demand for bilateral consumption import goods
 EAAEAF_imi = EAAEAF_numi*((EAF_pex*EAAEAF_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
 // Demand for bilateral consumption import goods
+EAAEAG_imi = EAAEAG_numi*((EAG_pex*EAAEAG_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
+// Demand for bilateral consumption import goods
 EAAUS_imi = EAAUS_numi*((US_pex*EAAUS_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
 EAARW_imi = (1
 -EAAEAB_numi
@@ -5049,6 +6061,7 @@ EAARW_imi = (1
 -EAAEAD_numi
 -EAAEAE_numi
 -EAAEAF_numi
+-EAAEAG_numi
 -EAAUS_numi
 )*((RW_pex*EAARW_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
 // Price of the consumption good (import)
@@ -5058,6 +6071,7 @@ EAA_pimi^(1-EAA_mumi) =
 +EAAEAD_numi * (EAD_pex*EAAEAD_rer)^(1-EAA_mumi)
 +EAAEAE_numi * (EAE_pex*EAAEAE_rer)^(1-EAA_mumi)
 +EAAEAF_numi * (EAF_pex*EAAEAF_rer)^(1-EAA_mumi)
++EAAEAG_numi * (EAG_pex*EAAEAG_rer)^(1-EAA_mumi)
 +EAAUS_numi * (US_pex*EAAUS_rer)^(1-EAA_mumi)
 +(1
 -EAAEAB_numi
@@ -5065,6 +6079,7 @@ EAA_pimi^(1-EAA_mumi) =
 -EAAEAD_numi
 -EAAEAE_numi
 -EAAEAF_numi
+-EAAEAG_numi
 -EAAUS_numi
 )*(RW_pex*EAARW_rer)^(1-EAA_mumi);
 // Private consumption good (import) inflation
@@ -5076,6 +6091,7 @@ EAA_imcg^((EAA_mumcg-1)/EAA_mumcg) =
 +EAAEAD_numcg ^(1/EAA_mumcg)*EAAEAD_imcg^(1-1/EAA_mumcg)
 +EAAEAE_numcg ^(1/EAA_mumcg)*EAAEAE_imcg^(1-1/EAA_mumcg)
 +EAAEAF_numcg ^(1/EAA_mumcg)*EAAEAF_imcg^(1-1/EAA_mumcg)
++EAAEAG_numcg ^(1/EAA_mumcg)*EAAEAG_imcg^(1-1/EAA_mumcg)
 +EAAUS_numcg ^(1/EAA_mumcg)*EAAUS_imcg^(1-1/EAA_mumcg)
 +(1
 -EAAEAB_numcg
@@ -5083,6 +6099,7 @@ EAA_imcg^((EAA_mumcg-1)/EAA_mumcg) =
 -EAAEAD_numcg
 -EAAEAE_numcg
 -EAAEAF_numcg
+-EAAEAG_numcg
 -EAAUS_numcg
 )^(1/EAA_mumcg)*EAARW_imcg^(1-1/EAA_mumcg);
 // Demand for bilateral consumption import goods
@@ -5094,6 +6111,8 @@ EAAEAE_imcg = EAAEAE_numcg*((EAE_pex*EAAEAE_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imc
 // Demand for bilateral consumption import goods
 EAAEAF_imcg = EAAEAF_numcg*((EAF_pex*EAAEAF_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
 // Demand for bilateral consumption import goods
+EAAEAG_imcg = EAAEAG_numcg*((EAG_pex*EAAEAG_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
+// Demand for bilateral consumption import goods
 EAAUS_imcg = EAAUS_numcg*((US_pex*EAAUS_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
 EAARW_imcg = (1
 -EAAEAB_numcg
@@ -5101,6 +6120,7 @@ EAARW_imcg = (1
 -EAAEAD_numcg
 -EAAEAE_numcg
 -EAAEAF_numcg
+-EAAEAG_numcg
 -EAAUS_numcg
 )*((RW_pex*EAARW_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
 // Price of the consumption good (import)
@@ -5110,6 +6130,7 @@ EAA_pimcg^(1-EAA_mumcg) =
 +EAAEAD_numcg * (EAD_pex*EAAEAD_rer)^(1-EAA_mumcg)
 +EAAEAE_numcg * (EAE_pex*EAAEAE_rer)^(1-EAA_mumcg)
 +EAAEAF_numcg * (EAF_pex*EAAEAF_rer)^(1-EAA_mumcg)
++EAAEAG_numcg * (EAG_pex*EAAEAG_rer)^(1-EAA_mumcg)
 +EAAUS_numcg * (US_pex*EAAUS_rer)^(1-EAA_mumcg)
 +(1
 -EAAEAB_numcg
@@ -5117,6 +6138,7 @@ EAA_pimcg^(1-EAA_mumcg) =
 -EAAEAD_numcg
 -EAAEAE_numcg
 -EAAEAF_numcg
+-EAAEAG_numcg
 -EAAUS_numcg
 )*(RW_pex*EAARW_rer)^(1-EAA_mumcg);
 // Private consumption good (import) inflation
@@ -5128,6 +6150,7 @@ EAA_imig^((EAA_mumig-1)/EAA_mumig) =
 +EAAEAD_numig ^(1/EAA_mumig)*EAAEAD_imig^(1-1/EAA_mumig)
 +EAAEAE_numig ^(1/EAA_mumig)*EAAEAE_imig^(1-1/EAA_mumig)
 +EAAEAF_numig ^(1/EAA_mumig)*EAAEAF_imig^(1-1/EAA_mumig)
++EAAEAG_numig ^(1/EAA_mumig)*EAAEAG_imig^(1-1/EAA_mumig)
 +EAAUS_numig ^(1/EAA_mumig)*EAAUS_imig^(1-1/EAA_mumig)
 +(1
 -EAAEAB_numig
@@ -5135,6 +6158,7 @@ EAA_imig^((EAA_mumig-1)/EAA_mumig) =
 -EAAEAD_numig
 -EAAEAE_numig
 -EAAEAF_numig
+-EAAEAG_numig
 -EAAUS_numig
 )^(1/EAA_mumig)*EAARW_imig^(1-1/EAA_mumig);
 // Demand for bilateral consumption import goods
@@ -5146,6 +6170,8 @@ EAAEAE_imig = EAAEAE_numig*((EAE_pex*EAAEAE_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imi
 // Demand for bilateral consumption import goods
 EAAEAF_imig = EAAEAF_numig*((EAF_pex*EAAEAF_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
 // Demand for bilateral consumption import goods
+EAAEAG_imig = EAAEAG_numig*((EAG_pex*EAAEAG_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
+// Demand for bilateral consumption import goods
 EAAUS_imig = EAAUS_numig*((US_pex*EAAUS_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
 EAARW_imig = (1
 -EAAEAB_numig
@@ -5153,6 +6179,7 @@ EAARW_imig = (1
 -EAAEAD_numig
 -EAAEAE_numig
 -EAAEAF_numig
+-EAAEAG_numig
 -EAAUS_numig
 )*((RW_pex*EAARW_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
 // Price of the consumption good (import)
@@ -5162,6 +6189,7 @@ EAA_pimig^(1-EAA_mumig) =
 +EAAEAD_numig * (EAD_pex*EAAEAD_rer)^(1-EAA_mumig)
 +EAAEAE_numig * (EAE_pex*EAAEAE_rer)^(1-EAA_mumig)
 +EAAEAF_numig * (EAF_pex*EAAEAF_rer)^(1-EAA_mumig)
++EAAEAG_numig * (EAG_pex*EAAEAG_rer)^(1-EAA_mumig)
 +EAAUS_numig * (US_pex*EAAUS_rer)^(1-EAA_mumig)
 +(1
 -EAAEAB_numig
@@ -5169,6 +6197,7 @@ EAA_pimig^(1-EAA_mumig) =
 -EAAEAD_numig
 -EAAEAE_numig
 -EAAEAF_numig
+-EAAEAG_numig
 -EAAUS_numig
 )*(RW_pex*EAARW_rer)^(1-EAA_mumig);
 // Private consumption good (import) inflation
@@ -5210,6 +6239,12 @@ EAAEAF_im =
 +EAAEAF_imcg
 +EAAEAF_imig
 ;
+EAAEAG_im = 
++EAAEAG_imc
++EAAEAG_imi
++EAAEAG_imcg
++EAAEAG_imig
+;
 EAARW_im = 
 +EAARW_imc
 +EAARW_imi
@@ -5245,6 +6280,8 @@ EAAEAE_gammaimc = 0;
 EAAEAE_gammaimcdag = 1;
 EAAEAF_gammaimc = 0;
 EAAEAF_gammaimcdag = 1;
+EAAEAG_gammaimc = 0;
+EAAEAG_gammaimcdag = 1;
 EAARW_gammaimc = 0;
 EAARW_gammaimcdag = 1;
 EAAUS_gammaimc = 0;
@@ -5274,6 +6311,8 @@ EAAEAE_gammaimi = 0;
 EAAEAE_gammaimidag = 1;
 EAAEAF_gammaimi = 0;
 EAAEAF_gammaimidag = 1;
+EAAEAG_gammaimi = 0;
+EAAEAG_gammaimidag = 1;
 EAARW_gammaimi = 0;
 EAARW_gammaimidag = 1;
 EAAUS_gammaimi = 0;
@@ -5300,6 +6339,8 @@ EAAEAE_gammaimcg = 0;
 EAAEAE_gammaimcgdag = 1;
 EAAEAF_gammaimcg = 0;
 EAAEAF_gammaimcgdag = 1;
+EAAEAG_gammaimcg = 0;
+EAAEAG_gammaimcgdag = 1;
 EAARW_gammaimcg = 0;
 EAARW_gammaimcgdag = 1;
 EAAUS_gammaimcg = 0;
@@ -5326,6 +6367,8 @@ EAAEAE_gammaimig = 0;
 EAAEAE_gammaimigdag = 1;
 EAAEAF_gammaimig = 0;
 EAAEAF_gammaimigdag = 1;
+EAAEAG_gammaimig = 0;
+EAAEAG_gammaimigdag = 1;
 EAARW_gammaimig = 0;
 EAARW_gammaimigdag = 1;
 EAAUS_gammaimig = 0;
@@ -5342,6 +6385,8 @@ EAA_tb =
 -EAE_pex*EAAEAE_rer*EAAEAE_im
 +EAA_pex*EAF_size/EAA_size*EAFEAA_im
 -EAF_pex*EAAEAF_rer*EAAEAF_im
++EAA_pex*EAG_size/EAA_size*EAGEAA_im
+-EAG_pex*EAAEAG_rer*EAAEAG_im
 +EAA_pex*RW_size/EAA_size*RWEAA_im
 -RW_pex*EAARW_rer*EAARW_im
 +EAA_pex*US_size/EAA_size*USEAA_im
@@ -5354,6 +6399,7 @@ EAA_ex =
 +EAD_size/EAA_size*EADEAA_im
 +EAE_size/EAA_size*EAEEAA_im
 +EAF_size/EAA_size*EAFEAA_im
++EAG_size/EAA_size*EAGEAA_im
 +RW_size/EAA_size*RWEAA_im
 +US_size/EAA_size*USEAA_im
 ;
@@ -5399,7 +6445,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAA_r = EAF_r;
+	EAA_r = EAG_r;
 EAA_pic4 = EAA_pi4target;
 EAA_rr-1 = EAA_r/EAA_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -5512,6 +6558,11 @@ EAA_py*EAA_y =
 -(EAF_pex*EAAEAF_rer)*EAAEAF_imi
 -(EAF_pex*EAAEAF_rer)*EAAEAF_imcg
 -(EAF_pex*EAAEAF_rer)*EAAEAF_imig
++EAA_pex*EAG_size/EAA_size*EAGEAA_im
+-(EAG_pex*EAAEAG_rer)*EAAEAG_imc
+-(EAG_pex*EAAEAG_rer)*EAAEAG_imi
+-(EAG_pex*EAAEAG_rer)*EAAEAG_imcg
+-(EAG_pex*EAAEAG_rer)*EAAEAG_imig
 +EAA_pex*RW_size/EAA_size*RWEAA_im
 -(RW_pex*EAARW_rer)*EAARW_imc
 -(RW_pex*EAARW_rer)*EAARW_imi
@@ -5607,6 +6658,7 @@ EAA_yshare  = EAA_size*EAA_py*EAA_y/EAA_rer/(
 +EAD_size*EAD_py*EAD_y/EAD_rer
 +EAE_size*EAE_py*EAE_y/EAE_rer
 +EAF_size*EAF_py*EAF_y/EAF_rer
++EAG_size*EAG_py*EAG_y/EAG_rer
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
@@ -5659,6 +6711,15 @@ EAAEAF_imigy = (EAF_pex*EAAEAF_rer)*EAAEAF_imig/(EAA_py*EAA_y);
 EAAEAF_excy  = EAF_size/EAA_size*EAA_pex*EAFEAA_imc/(EAA_py*EAA_y);
 // Exports of investment goods to gdp
 EAAEAF_exiy  = EAF_size/EAA_size*EAA_pex*EAFEAA_imi/(EAA_py*EAA_y);
+// Bilateral shares
+EAAEAG_imcy = (EAG_pex*EAAEAG_rer)*EAAEAG_imc/(EAA_py*EAA_y);
+EAAEAG_imiy = (EAG_pex*EAAEAG_rer)*EAAEAG_imi/(EAA_py*EAA_y);
+EAAEAG_imcgy = (EAG_pex*EAAEAG_rer)*EAAEAG_imcg/(EAA_py*EAA_y);
+EAAEAG_imigy = (EAG_pex*EAAEAG_rer)*EAAEAG_imig/(EAA_py*EAA_y);
+// Exports of consumption goods to gdp
+EAAEAG_excy  = EAG_size/EAA_size*EAA_pex*EAGEAA_imc/(EAA_py*EAA_y);
+// Exports of investment goods to gdp
+EAAEAG_exiy  = EAG_size/EAA_size*EAA_pex*EAGEAA_imi/(EAA_py*EAA_y);
 // Bilateral shares
 EAARW_imcy = (RW_pex*EAARW_rer)*EAARW_imc/(EAA_py*EAA_y);
 EAARW_imiy = (RW_pex*EAARW_rer)*EAARW_imi/(EAA_py*EAA_y);
@@ -5921,6 +6982,22 @@ EABEAF_rer = EAB_rer/EAF_rer;
 EABEAF_rerbar = EABEAF_rer;
 //Terms of Trade
 EABEAF_tot = EAF_pex*EABEAF_rer/EAB_pex;
+// Optimal price contract set in foreign markets (FOC), using EAB_pxtilde = EAG_pimtilde
+// EAGEAB_pimtilde/EAGEAB_pim = EAB_cpim*EAB_thetat/(EAB_thetat-1)*EABEAG_fx/EABEAG_gx;
+// Definition of fx
+// EABEAG_fx = EAG_size/EAB_size*EAGEAB_im*EAB_mct+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAGEAB_piim(+1)/(EAGEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^EAB_thetat*EABEAG_fx(+1);
+// Definition of gx   
+// EABEAG_gx = EABEAG_rer*EAGEAB_pim*EAG_size/EAB_size*EAGEAB_im+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAGEAB_piim(+1)/(EAGEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^(EAB_thetat-1)*EABEAG_gx(+1);
+// Aggregate intermediate-good price dynamics, using EAB_px = EAG_pim
+// EAGEAB_pim^(1-EAB_thetat) = (1-EAB_xix)*EAGEAB_pimtilde^(1-EAB_thetat)+EAB_xix*(EAGEAB_pim(-1)/EAG_pic)^(1-EAB_thetat)*(EAGEAB_piim(-1)^EAB_chix*EAG_pi4target^(1/4*(1-EAB_chih)))^(1-EAB_thetat);
+// Intermediate-good price inflation, using EAB_pix = EAG_piim
+// EAGEAB_piim = EAGEAB_pim/EAGEAB_pim(-1)*EAG_pic;
+// Bilateral real exchange rate
+EABEAG_rer = EAB_rer/EAG_rer;
+// Auxiliary equation for steady-state output
+EABEAG_rerbar = EABEAG_rer;
+//Terms of Trade
+EABEAG_tot = EAG_pex*EABEAG_rer/EAB_pex;
 // Optimal price contract set in foreign markets (FOC), using EAB_pxtilde = RW_pimtilde
 // RWEAB_pimtilde/RWEAB_pim = EAB_cpim*EAB_thetat/(EAB_thetat-1)*EABRW_fx/EABRW_gx;
 // Definition of fx
@@ -5975,6 +7052,7 @@ EABEAA_weightex = EAA_size/EAB_size*EAAEAB_im/EAB_ex*EABEAA_rer*EAA_py*EAA_y/(EA
 +EABEAD_rer*EAD_pex*EAAEAD_im
 +EABEAE_rer*EAE_pex*EAAEAE_im
 +EABEAF_rer*EAF_pex*EAAEAF_im
++EABEAG_rer*EAG_pex*EAAEAG_im
 +EABRW_rer*RW_pex*EAARW_im
 +EABUS_rer*US_pex*EAAUS_im
 )+
@@ -5983,6 +7061,7 @@ EABEAA_weightex = EAA_size/EAB_size*EAAEAB_im/EAB_ex*EABEAA_rer*EAA_py*EAA_y/(EA
 +EABEAD_rer*EAD_pex*EACEAD_im
 +EABEAE_rer*EAE_pex*EACEAE_im
 +EABEAF_rer*EAF_pex*EACEAF_im
++EABEAG_rer*EAG_pex*EACEAG_im
 +EABRW_rer*RW_pex*EACRW_im
 +EABUS_rer*US_pex*EACUS_im
 )
@@ -5991,6 +7070,7 @@ EABEAA_weightex = EAA_size/EAB_size*EAAEAB_im/EAB_ex*EABEAA_rer*EAA_py*EAA_y/(EA
 +EABEAC_rer*EAC_pex*EADEAC_im
 +EABEAE_rer*EAE_pex*EADEAE_im
 +EABEAF_rer*EAF_pex*EADEAF_im
++EABEAG_rer*EAG_pex*EADEAG_im
 +EABRW_rer*RW_pex*EADRW_im
 +EABUS_rer*US_pex*EADUS_im
 )
@@ -5999,6 +7079,7 @@ EABEAA_weightex = EAA_size/EAB_size*EAAEAB_im/EAB_ex*EABEAA_rer*EAA_py*EAA_y/(EA
 +EABEAC_rer*EAC_pex*EAEEAC_im
 +EABEAD_rer*EAD_pex*EAEEAD_im
 +EABEAF_rer*EAF_pex*EAEEAF_im
++EABEAG_rer*EAG_pex*EAEEAG_im
 +EABRW_rer*RW_pex*EAERW_im
 +EABUS_rer*US_pex*EAEUS_im
 )
@@ -6007,8 +7088,18 @@ EABEAA_weightex = EAA_size/EAB_size*EAAEAB_im/EAB_ex*EABEAA_rer*EAA_py*EAA_y/(EA
 +EABEAC_rer*EAC_pex*EAFEAC_im
 +EABEAD_rer*EAD_pex*EAFEAD_im
 +EABEAE_rer*EAE_pex*EAFEAE_im
++EABEAG_rer*EAG_pex*EAFEAG_im
 +EABRW_rer*RW_pex*EAFRW_im
 +EABUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAB_size*EAGEAB_im/EAB_ex*EABEAA_rer*EAA_pex*EAGEAA_im/(EABEAG_rer*EAG_py*EAG_y
++EABEAA_rer*EAA_pex*EAGEAA_im
++EABEAC_rer*EAC_pex*EAGEAC_im
++EABEAD_rer*EAD_pex*EAGEAD_im
++EABEAE_rer*EAE_pex*EAGEAE_im
++EABEAF_rer*EAF_pex*EAGEAF_im
++EABRW_rer*RW_pex*EAGRW_im
++EABUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAB_size*RWEAB_im/EAB_ex*EABEAA_rer*EAA_pex*RWEAA_im/(EABRW_rer*RW_py*RW_y
 +EABEAA_rer*EAA_pex*RWEAA_im
@@ -6016,6 +7107,7 @@ EABEAA_weightex = EAA_size/EAB_size*EAAEAB_im/EAB_ex*EABEAA_rer*EAA_py*EAA_y/(EA
 +EABEAD_rer*EAD_pex*RWEAD_im
 +EABEAE_rer*EAE_pex*RWEAE_im
 +EABEAF_rer*EAF_pex*RWEAF_im
++EABEAG_rer*EAG_pex*RWEAG_im
 +EABUS_rer*US_pex*RWUS_im
 )
 +US_size/EAB_size*USEAB_im/EAB_ex*EABEAA_rer*EAA_pex*USEAA_im/(EABUS_rer*US_py*US_y
@@ -6024,6 +7116,7 @@ EABEAA_weightex = EAA_size/EAB_size*EAAEAB_im/EAB_ex*EABEAA_rer*EAA_py*EAA_y/(EA
 +EABEAD_rer*EAD_pex*USEAD_im
 +EABEAE_rer*EAE_pex*USEAE_im
 +EABEAF_rer*EAF_pex*USEAF_im
++EABEAG_rer*EAG_pex*USEAG_im
 +EABRW_rer*RW_pex*USRW_im
 )
 ;
@@ -6037,6 +7130,7 @@ EABEAC_weightex = EAC_size/EAB_size*EACEAB_im/EAB_ex*EABEAC_rer*EAC_py*EAC_y/(EA
 +EABEAD_rer*EAD_pex*EACEAD_im
 +EABEAE_rer*EAE_pex*EACEAE_im
 +EABEAF_rer*EAF_pex*EACEAF_im
++EABEAG_rer*EAG_pex*EACEAG_im
 +EABRW_rer*RW_pex*EACRW_im
 +EABUS_rer*US_pex*EACUS_im
 )+
@@ -6045,6 +7139,7 @@ EABEAC_weightex = EAC_size/EAB_size*EACEAB_im/EAB_ex*EABEAC_rer*EAC_py*EAC_y/(EA
 +EABEAD_rer*EAD_pex*EAAEAD_im
 +EABEAE_rer*EAE_pex*EAAEAE_im
 +EABEAF_rer*EAF_pex*EAAEAF_im
++EABEAG_rer*EAG_pex*EAAEAG_im
 +EABRW_rer*RW_pex*EAARW_im
 +EABUS_rer*US_pex*EAAUS_im
 )
@@ -6053,6 +7148,7 @@ EABEAC_weightex = EAC_size/EAB_size*EACEAB_im/EAB_ex*EABEAC_rer*EAC_py*EAC_y/(EA
 +EABEAC_rer*EAC_pex*EADEAC_im
 +EABEAE_rer*EAE_pex*EADEAE_im
 +EABEAF_rer*EAF_pex*EADEAF_im
++EABEAG_rer*EAG_pex*EADEAG_im
 +EABRW_rer*RW_pex*EADRW_im
 +EABUS_rer*US_pex*EADUS_im
 )
@@ -6061,6 +7157,7 @@ EABEAC_weightex = EAC_size/EAB_size*EACEAB_im/EAB_ex*EABEAC_rer*EAC_py*EAC_y/(EA
 +EABEAC_rer*EAC_pex*EAEEAC_im
 +EABEAD_rer*EAD_pex*EAEEAD_im
 +EABEAF_rer*EAF_pex*EAEEAF_im
++EABEAG_rer*EAG_pex*EAEEAG_im
 +EABRW_rer*RW_pex*EAERW_im
 +EABUS_rer*US_pex*EAEUS_im
 )
@@ -6069,8 +7166,18 @@ EABEAC_weightex = EAC_size/EAB_size*EACEAB_im/EAB_ex*EABEAC_rer*EAC_py*EAC_y/(EA
 +EABEAC_rer*EAC_pex*EAFEAC_im
 +EABEAD_rer*EAD_pex*EAFEAD_im
 +EABEAE_rer*EAE_pex*EAFEAE_im
++EABEAG_rer*EAG_pex*EAFEAG_im
 +EABRW_rer*RW_pex*EAFRW_im
 +EABUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAB_size*EAGEAB_im/EAB_ex*EABEAC_rer*EAC_pex*EAGEAC_im/(EABEAG_rer*EAG_py*EAG_y
++EABEAA_rer*EAA_pex*EAGEAA_im
++EABEAC_rer*EAC_pex*EAGEAC_im
++EABEAD_rer*EAD_pex*EAGEAD_im
++EABEAE_rer*EAE_pex*EAGEAE_im
++EABEAF_rer*EAF_pex*EAGEAF_im
++EABRW_rer*RW_pex*EAGRW_im
++EABUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAB_size*RWEAB_im/EAB_ex*EABEAC_rer*EAC_pex*RWEAC_im/(EABRW_rer*RW_py*RW_y
 +EABEAA_rer*EAA_pex*RWEAA_im
@@ -6078,6 +7185,7 @@ EABEAC_weightex = EAC_size/EAB_size*EACEAB_im/EAB_ex*EABEAC_rer*EAC_py*EAC_y/(EA
 +EABEAD_rer*EAD_pex*RWEAD_im
 +EABEAE_rer*EAE_pex*RWEAE_im
 +EABEAF_rer*EAF_pex*RWEAF_im
++EABEAG_rer*EAG_pex*RWEAG_im
 +EABUS_rer*US_pex*RWUS_im
 )
 +US_size/EAB_size*USEAB_im/EAB_ex*EABEAC_rer*EAC_pex*USEAC_im/(EABUS_rer*US_py*US_y
@@ -6086,6 +7194,7 @@ EABEAC_weightex = EAC_size/EAB_size*EACEAB_im/EAB_ex*EABEAC_rer*EAC_py*EAC_y/(EA
 +EABEAD_rer*EAD_pex*USEAD_im
 +EABEAE_rer*EAE_pex*USEAE_im
 +EABEAF_rer*EAF_pex*USEAF_im
++EABEAG_rer*EAG_pex*USEAG_im
 +EABRW_rer*RW_pex*USRW_im
 )
 ;
@@ -6099,6 +7208,7 @@ EABEAD_weightex = EAD_size/EAB_size*EADEAB_im/EAB_ex*EABEAD_rer*EAD_py*EAD_y/(EA
 +EABEAC_rer*EAC_pex*EADEAC_im
 +EABEAE_rer*EAE_pex*EADEAE_im
 +EABEAF_rer*EAF_pex*EADEAF_im
++EABEAG_rer*EAG_pex*EADEAG_im
 +EABRW_rer*RW_pex*EADRW_im
 +EABUS_rer*US_pex*EADUS_im
 )+
@@ -6107,6 +7217,7 @@ EABEAD_weightex = EAD_size/EAB_size*EADEAB_im/EAB_ex*EABEAD_rer*EAD_py*EAD_y/(EA
 +EABEAD_rer*EAD_pex*EAAEAD_im
 +EABEAE_rer*EAE_pex*EAAEAE_im
 +EABEAF_rer*EAF_pex*EAAEAF_im
++EABEAG_rer*EAG_pex*EAAEAG_im
 +EABRW_rer*RW_pex*EAARW_im
 +EABUS_rer*US_pex*EAAUS_im
 )
@@ -6115,6 +7226,7 @@ EABEAD_weightex = EAD_size/EAB_size*EADEAB_im/EAB_ex*EABEAD_rer*EAD_py*EAD_y/(EA
 +EABEAD_rer*EAD_pex*EACEAD_im
 +EABEAE_rer*EAE_pex*EACEAE_im
 +EABEAF_rer*EAF_pex*EACEAF_im
++EABEAG_rer*EAG_pex*EACEAG_im
 +EABRW_rer*RW_pex*EACRW_im
 +EABUS_rer*US_pex*EACUS_im
 )
@@ -6123,6 +7235,7 @@ EABEAD_weightex = EAD_size/EAB_size*EADEAB_im/EAB_ex*EABEAD_rer*EAD_py*EAD_y/(EA
 +EABEAC_rer*EAC_pex*EAEEAC_im
 +EABEAD_rer*EAD_pex*EAEEAD_im
 +EABEAF_rer*EAF_pex*EAEEAF_im
++EABEAG_rer*EAG_pex*EAEEAG_im
 +EABRW_rer*RW_pex*EAERW_im
 +EABUS_rer*US_pex*EAEUS_im
 )
@@ -6131,8 +7244,18 @@ EABEAD_weightex = EAD_size/EAB_size*EADEAB_im/EAB_ex*EABEAD_rer*EAD_py*EAD_y/(EA
 +EABEAC_rer*EAC_pex*EAFEAC_im
 +EABEAD_rer*EAD_pex*EAFEAD_im
 +EABEAE_rer*EAE_pex*EAFEAE_im
++EABEAG_rer*EAG_pex*EAFEAG_im
 +EABRW_rer*RW_pex*EAFRW_im
 +EABUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAB_size*EAGEAB_im/EAB_ex*EABEAD_rer*EAD_pex*EAGEAD_im/(EABEAG_rer*EAG_py*EAG_y
++EABEAA_rer*EAA_pex*EAGEAA_im
++EABEAC_rer*EAC_pex*EAGEAC_im
++EABEAD_rer*EAD_pex*EAGEAD_im
++EABEAE_rer*EAE_pex*EAGEAE_im
++EABEAF_rer*EAF_pex*EAGEAF_im
++EABRW_rer*RW_pex*EAGRW_im
++EABUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAB_size*RWEAB_im/EAB_ex*EABEAD_rer*EAD_pex*RWEAD_im/(EABRW_rer*RW_py*RW_y
 +EABEAA_rer*EAA_pex*RWEAA_im
@@ -6140,6 +7263,7 @@ EABEAD_weightex = EAD_size/EAB_size*EADEAB_im/EAB_ex*EABEAD_rer*EAD_py*EAD_y/(EA
 +EABEAD_rer*EAD_pex*RWEAD_im
 +EABEAE_rer*EAE_pex*RWEAE_im
 +EABEAF_rer*EAF_pex*RWEAF_im
++EABEAG_rer*EAG_pex*RWEAG_im
 +EABUS_rer*US_pex*RWUS_im
 )
 +US_size/EAB_size*USEAB_im/EAB_ex*EABEAD_rer*EAD_pex*USEAD_im/(EABUS_rer*US_py*US_y
@@ -6148,6 +7272,7 @@ EABEAD_weightex = EAD_size/EAB_size*EADEAB_im/EAB_ex*EABEAD_rer*EAD_py*EAD_y/(EA
 +EABEAD_rer*EAD_pex*USEAD_im
 +EABEAE_rer*EAE_pex*USEAE_im
 +EABEAF_rer*EAF_pex*USEAF_im
++EABEAG_rer*EAG_pex*USEAG_im
 +EABRW_rer*RW_pex*USRW_im
 )
 ;
@@ -6161,6 +7286,7 @@ EABEAE_weightex = EAE_size/EAB_size*EAEEAB_im/EAB_ex*EABEAE_rer*EAE_py*EAE_y/(EA
 +EABEAC_rer*EAC_pex*EAEEAC_im
 +EABEAD_rer*EAD_pex*EAEEAD_im
 +EABEAF_rer*EAF_pex*EAEEAF_im
++EABEAG_rer*EAG_pex*EAEEAG_im
 +EABRW_rer*RW_pex*EAERW_im
 +EABUS_rer*US_pex*EAEUS_im
 )+
@@ -6169,6 +7295,7 @@ EABEAE_weightex = EAE_size/EAB_size*EAEEAB_im/EAB_ex*EABEAE_rer*EAE_py*EAE_y/(EA
 +EABEAD_rer*EAD_pex*EAAEAD_im
 +EABEAE_rer*EAE_pex*EAAEAE_im
 +EABEAF_rer*EAF_pex*EAAEAF_im
++EABEAG_rer*EAG_pex*EAAEAG_im
 +EABRW_rer*RW_pex*EAARW_im
 +EABUS_rer*US_pex*EAAUS_im
 )
@@ -6177,6 +7304,7 @@ EABEAE_weightex = EAE_size/EAB_size*EAEEAB_im/EAB_ex*EABEAE_rer*EAE_py*EAE_y/(EA
 +EABEAD_rer*EAD_pex*EACEAD_im
 +EABEAE_rer*EAE_pex*EACEAE_im
 +EABEAF_rer*EAF_pex*EACEAF_im
++EABEAG_rer*EAG_pex*EACEAG_im
 +EABRW_rer*RW_pex*EACRW_im
 +EABUS_rer*US_pex*EACUS_im
 )
@@ -6185,6 +7313,7 @@ EABEAE_weightex = EAE_size/EAB_size*EAEEAB_im/EAB_ex*EABEAE_rer*EAE_py*EAE_y/(EA
 +EABEAC_rer*EAC_pex*EADEAC_im
 +EABEAE_rer*EAE_pex*EADEAE_im
 +EABEAF_rer*EAF_pex*EADEAF_im
++EABEAG_rer*EAG_pex*EADEAG_im
 +EABRW_rer*RW_pex*EADRW_im
 +EABUS_rer*US_pex*EADUS_im
 )
@@ -6193,8 +7322,18 @@ EABEAE_weightex = EAE_size/EAB_size*EAEEAB_im/EAB_ex*EABEAE_rer*EAE_py*EAE_y/(EA
 +EABEAC_rer*EAC_pex*EAFEAC_im
 +EABEAD_rer*EAD_pex*EAFEAD_im
 +EABEAE_rer*EAE_pex*EAFEAE_im
++EABEAG_rer*EAG_pex*EAFEAG_im
 +EABRW_rer*RW_pex*EAFRW_im
 +EABUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAB_size*EAGEAB_im/EAB_ex*EABEAE_rer*EAE_pex*EAGEAE_im/(EABEAG_rer*EAG_py*EAG_y
++EABEAA_rer*EAA_pex*EAGEAA_im
++EABEAC_rer*EAC_pex*EAGEAC_im
++EABEAD_rer*EAD_pex*EAGEAD_im
++EABEAE_rer*EAE_pex*EAGEAE_im
++EABEAF_rer*EAF_pex*EAGEAF_im
++EABRW_rer*RW_pex*EAGRW_im
++EABUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAB_size*RWEAB_im/EAB_ex*EABEAE_rer*EAE_pex*RWEAE_im/(EABRW_rer*RW_py*RW_y
 +EABEAA_rer*EAA_pex*RWEAA_im
@@ -6202,6 +7341,7 @@ EABEAE_weightex = EAE_size/EAB_size*EAEEAB_im/EAB_ex*EABEAE_rer*EAE_py*EAE_y/(EA
 +EABEAD_rer*EAD_pex*RWEAD_im
 +EABEAE_rer*EAE_pex*RWEAE_im
 +EABEAF_rer*EAF_pex*RWEAF_im
++EABEAG_rer*EAG_pex*RWEAG_im
 +EABUS_rer*US_pex*RWUS_im
 )
 +US_size/EAB_size*USEAB_im/EAB_ex*EABEAE_rer*EAE_pex*USEAE_im/(EABUS_rer*US_py*US_y
@@ -6210,6 +7350,7 @@ EABEAE_weightex = EAE_size/EAB_size*EAEEAB_im/EAB_ex*EABEAE_rer*EAE_py*EAE_y/(EA
 +EABEAD_rer*EAD_pex*USEAD_im
 +EABEAE_rer*EAE_pex*USEAE_im
 +EABEAF_rer*EAF_pex*USEAF_im
++EABEAG_rer*EAG_pex*USEAG_im
 +EABRW_rer*RW_pex*USRW_im
 )
 ;
@@ -6223,6 +7364,7 @@ EABEAF_weightex = EAF_size/EAB_size*EAFEAB_im/EAB_ex*EABEAF_rer*EAF_py*EAF_y/(EA
 +EABEAC_rer*EAC_pex*EAFEAC_im
 +EABEAD_rer*EAD_pex*EAFEAD_im
 +EABEAE_rer*EAE_pex*EAFEAE_im
++EABEAG_rer*EAG_pex*EAFEAG_im
 +EABRW_rer*RW_pex*EAFRW_im
 +EABUS_rer*US_pex*EAFUS_im
 )+
@@ -6231,6 +7373,7 @@ EABEAF_weightex = EAF_size/EAB_size*EAFEAB_im/EAB_ex*EABEAF_rer*EAF_py*EAF_y/(EA
 +EABEAD_rer*EAD_pex*EAAEAD_im
 +EABEAE_rer*EAE_pex*EAAEAE_im
 +EABEAF_rer*EAF_pex*EAAEAF_im
++EABEAG_rer*EAG_pex*EAAEAG_im
 +EABRW_rer*RW_pex*EAARW_im
 +EABUS_rer*US_pex*EAAUS_im
 )
@@ -6239,6 +7382,7 @@ EABEAF_weightex = EAF_size/EAB_size*EAFEAB_im/EAB_ex*EABEAF_rer*EAF_py*EAF_y/(EA
 +EABEAD_rer*EAD_pex*EACEAD_im
 +EABEAE_rer*EAE_pex*EACEAE_im
 +EABEAF_rer*EAF_pex*EACEAF_im
++EABEAG_rer*EAG_pex*EACEAG_im
 +EABRW_rer*RW_pex*EACRW_im
 +EABUS_rer*US_pex*EACUS_im
 )
@@ -6247,6 +7391,7 @@ EABEAF_weightex = EAF_size/EAB_size*EAFEAB_im/EAB_ex*EABEAF_rer*EAF_py*EAF_y/(EA
 +EABEAC_rer*EAC_pex*EADEAC_im
 +EABEAE_rer*EAE_pex*EADEAE_im
 +EABEAF_rer*EAF_pex*EADEAF_im
++EABEAG_rer*EAG_pex*EADEAG_im
 +EABRW_rer*RW_pex*EADRW_im
 +EABUS_rer*US_pex*EADUS_im
 )
@@ -6255,8 +7400,18 @@ EABEAF_weightex = EAF_size/EAB_size*EAFEAB_im/EAB_ex*EABEAF_rer*EAF_py*EAF_y/(EA
 +EABEAC_rer*EAC_pex*EAEEAC_im
 +EABEAD_rer*EAD_pex*EAEEAD_im
 +EABEAF_rer*EAF_pex*EAEEAF_im
++EABEAG_rer*EAG_pex*EAEEAG_im
 +EABRW_rer*RW_pex*EAERW_im
 +EABUS_rer*US_pex*EAEUS_im
+)
++EAG_size/EAB_size*EAGEAB_im/EAB_ex*EABEAF_rer*EAF_pex*EAGEAF_im/(EABEAG_rer*EAG_py*EAG_y
++EABEAA_rer*EAA_pex*EAGEAA_im
++EABEAC_rer*EAC_pex*EAGEAC_im
++EABEAD_rer*EAD_pex*EAGEAD_im
++EABEAE_rer*EAE_pex*EAGEAE_im
++EABEAF_rer*EAF_pex*EAGEAF_im
++EABRW_rer*RW_pex*EAGRW_im
++EABUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAB_size*RWEAB_im/EAB_ex*EABEAF_rer*EAF_pex*RWEAF_im/(EABRW_rer*RW_py*RW_y
 +EABEAA_rer*EAA_pex*RWEAA_im
@@ -6264,6 +7419,7 @@ EABEAF_weightex = EAF_size/EAB_size*EAFEAB_im/EAB_ex*EABEAF_rer*EAF_py*EAF_y/(EA
 +EABEAD_rer*EAD_pex*RWEAD_im
 +EABEAE_rer*EAE_pex*RWEAE_im
 +EABEAF_rer*EAF_pex*RWEAF_im
++EABEAG_rer*EAG_pex*RWEAG_im
 +EABUS_rer*US_pex*RWUS_im
 )
 +US_size/EAB_size*USEAB_im/EAB_ex*EABEAF_rer*EAF_pex*USEAF_im/(EABUS_rer*US_py*US_y
@@ -6272,11 +7428,90 @@ EABEAF_weightex = EAF_size/EAB_size*EAFEAB_im/EAB_ex*EABEAF_rer*EAF_py*EAF_y/(EA
 +EABEAD_rer*EAD_pex*USEAD_im
 +EABEAE_rer*EAE_pex*USEAE_im
 +EABEAF_rer*EAF_pex*USEAF_im
++EABEAG_rer*EAG_pex*USEAG_im
 +EABRW_rer*RW_pex*USRW_im
 )
 ;
 // Effective real exchange rate: double weighting (overall)
 EABEAF_weight = EAB_pim*EAB_im/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAF_weightim+EAB_pex*EAB_ex/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAF_weightex;
+// Effective real exchange rate: double weighting (imports)
+EABEAG_weightim = EABEAG_rer*EAG_pex*EABEAG_im/(EAB_pim*EAB_im);
+// Effective real exchange rate: double weighting (exports)
+EABEAG_weightex = EAG_size/EAB_size*EAGEAB_im/EAB_ex*EABEAG_rer*EAG_py*EAG_y/(EABEAG_rer*EAG_py*EAG_y
++EABEAA_rer*EAA_pex*EAGEAA_im
++EABEAC_rer*EAC_pex*EAGEAC_im
++EABEAD_rer*EAD_pex*EAGEAD_im
++EABEAE_rer*EAE_pex*EAGEAE_im
++EABEAF_rer*EAF_pex*EAGEAF_im
++EABRW_rer*RW_pex*EAGRW_im
++EABUS_rer*US_pex*EAGUS_im
+)+
++EAA_size/EAB_size*EAAEAB_im/EAB_ex*EABEAG_rer*EAG_pex*EAAEAG_im/(EABEAA_rer*EAA_py*EAA_y
++EABEAC_rer*EAC_pex*EAAEAC_im
++EABEAD_rer*EAD_pex*EAAEAD_im
++EABEAE_rer*EAE_pex*EAAEAE_im
++EABEAF_rer*EAF_pex*EAAEAF_im
++EABEAG_rer*EAG_pex*EAAEAG_im
++EABRW_rer*RW_pex*EAARW_im
++EABUS_rer*US_pex*EAAUS_im
+)
++EAC_size/EAB_size*EACEAB_im/EAB_ex*EABEAG_rer*EAG_pex*EACEAG_im/(EABEAC_rer*EAC_py*EAC_y
++EABEAA_rer*EAA_pex*EACEAA_im
++EABEAD_rer*EAD_pex*EACEAD_im
++EABEAE_rer*EAE_pex*EACEAE_im
++EABEAF_rer*EAF_pex*EACEAF_im
++EABEAG_rer*EAG_pex*EACEAG_im
++EABRW_rer*RW_pex*EACRW_im
++EABUS_rer*US_pex*EACUS_im
+)
++EAD_size/EAB_size*EADEAB_im/EAB_ex*EABEAG_rer*EAG_pex*EADEAG_im/(EABEAD_rer*EAD_py*EAD_y
++EABEAA_rer*EAA_pex*EADEAA_im
++EABEAC_rer*EAC_pex*EADEAC_im
++EABEAE_rer*EAE_pex*EADEAE_im
++EABEAF_rer*EAF_pex*EADEAF_im
++EABEAG_rer*EAG_pex*EADEAG_im
++EABRW_rer*RW_pex*EADRW_im
++EABUS_rer*US_pex*EADUS_im
+)
++EAE_size/EAB_size*EAEEAB_im/EAB_ex*EABEAG_rer*EAG_pex*EAEEAG_im/(EABEAE_rer*EAE_py*EAE_y
++EABEAA_rer*EAA_pex*EAEEAA_im
++EABEAC_rer*EAC_pex*EAEEAC_im
++EABEAD_rer*EAD_pex*EAEEAD_im
++EABEAF_rer*EAF_pex*EAEEAF_im
++EABEAG_rer*EAG_pex*EAEEAG_im
++EABRW_rer*RW_pex*EAERW_im
++EABUS_rer*US_pex*EAEUS_im
+)
++EAF_size/EAB_size*EAFEAB_im/EAB_ex*EABEAG_rer*EAG_pex*EAFEAG_im/(EABEAF_rer*EAF_py*EAF_y
++EABEAA_rer*EAA_pex*EAFEAA_im
++EABEAC_rer*EAC_pex*EAFEAC_im
++EABEAD_rer*EAD_pex*EAFEAD_im
++EABEAE_rer*EAE_pex*EAFEAE_im
++EABEAG_rer*EAG_pex*EAFEAG_im
++EABRW_rer*RW_pex*EAFRW_im
++EABUS_rer*US_pex*EAFUS_im
+)
++RW_size/EAB_size*RWEAB_im/EAB_ex*EABEAG_rer*EAG_pex*RWEAG_im/(EABRW_rer*RW_py*RW_y
++EABEAA_rer*EAA_pex*RWEAA_im
++EABEAC_rer*EAC_pex*RWEAC_im
++EABEAD_rer*EAD_pex*RWEAD_im
++EABEAE_rer*EAE_pex*RWEAE_im
++EABEAF_rer*EAF_pex*RWEAF_im
++EABEAG_rer*EAG_pex*RWEAG_im
++EABUS_rer*US_pex*RWUS_im
+)
++US_size/EAB_size*USEAB_im/EAB_ex*EABEAG_rer*EAG_pex*USEAG_im/(EABUS_rer*US_py*US_y
++EABEAA_rer*EAA_pex*USEAA_im
++EABEAC_rer*EAC_pex*USEAC_im
++EABEAD_rer*EAD_pex*USEAD_im
++EABEAE_rer*EAE_pex*USEAE_im
++EABEAF_rer*EAF_pex*USEAF_im
++EABEAG_rer*EAG_pex*USEAG_im
++EABRW_rer*RW_pex*USRW_im
+)
+;
+// Effective real exchange rate: double weighting (overall)
+EABEAG_weight = EAB_pim*EAB_im/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAG_weightim+EAB_pex*EAB_ex/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAG_weightex;
 // Effective real exchange rate: double weighting (imports)
 EABRW_weightim = EABRW_rer*RW_pex*EABRW_im/(EAB_pim*EAB_im);
 // Effective real exchange rate: double weighting (exports)
@@ -6286,6 +7521,7 @@ EABRW_weightex = RW_size/EAB_size*RWEAB_im/EAB_ex*EABRW_rer*RW_py*RW_y/(EABRW_re
 +EABEAD_rer*EAD_pex*RWEAD_im
 +EABEAE_rer*EAE_pex*RWEAE_im
 +EABEAF_rer*EAF_pex*RWEAF_im
++EABEAG_rer*EAG_pex*RWEAG_im
 +EABUS_rer*US_pex*RWUS_im
 )+
 +EAA_size/EAB_size*EAAEAB_im/EAB_ex*EABRW_rer*RW_pex*EAARW_im/(EABEAA_rer*EAA_py*EAA_y
@@ -6293,6 +7529,7 @@ EABRW_weightex = RW_size/EAB_size*RWEAB_im/EAB_ex*EABRW_rer*RW_py*RW_y/(EABRW_re
 +EABEAD_rer*EAD_pex*EAAEAD_im
 +EABEAE_rer*EAE_pex*EAAEAE_im
 +EABEAF_rer*EAF_pex*EAAEAF_im
++EABEAG_rer*EAG_pex*EAAEAG_im
 +EABRW_rer*RW_pex*EAARW_im
 +EABUS_rer*US_pex*EAAUS_im
 )
@@ -6301,6 +7538,7 @@ EABRW_weightex = RW_size/EAB_size*RWEAB_im/EAB_ex*EABRW_rer*RW_py*RW_y/(EABRW_re
 +EABEAD_rer*EAD_pex*EACEAD_im
 +EABEAE_rer*EAE_pex*EACEAE_im
 +EABEAF_rer*EAF_pex*EACEAF_im
++EABEAG_rer*EAG_pex*EACEAG_im
 +EABRW_rer*RW_pex*EACRW_im
 +EABUS_rer*US_pex*EACUS_im
 )
@@ -6309,6 +7547,7 @@ EABRW_weightex = RW_size/EAB_size*RWEAB_im/EAB_ex*EABRW_rer*RW_py*RW_y/(EABRW_re
 +EABEAC_rer*EAC_pex*EADEAC_im
 +EABEAE_rer*EAE_pex*EADEAE_im
 +EABEAF_rer*EAF_pex*EADEAF_im
++EABEAG_rer*EAG_pex*EADEAG_im
 +EABRW_rer*RW_pex*EADRW_im
 +EABUS_rer*US_pex*EADUS_im
 )
@@ -6317,6 +7556,7 @@ EABRW_weightex = RW_size/EAB_size*RWEAB_im/EAB_ex*EABRW_rer*RW_py*RW_y/(EABRW_re
 +EABEAC_rer*EAC_pex*EAEEAC_im
 +EABEAD_rer*EAD_pex*EAEEAD_im
 +EABEAF_rer*EAF_pex*EAEEAF_im
++EABEAG_rer*EAG_pex*EAEEAG_im
 +EABRW_rer*RW_pex*EAERW_im
 +EABUS_rer*US_pex*EAEUS_im
 )
@@ -6325,8 +7565,18 @@ EABRW_weightex = RW_size/EAB_size*RWEAB_im/EAB_ex*EABRW_rer*RW_py*RW_y/(EABRW_re
 +EABEAC_rer*EAC_pex*EAFEAC_im
 +EABEAD_rer*EAD_pex*EAFEAD_im
 +EABEAE_rer*EAE_pex*EAFEAE_im
++EABEAG_rer*EAG_pex*EAFEAG_im
 +EABRW_rer*RW_pex*EAFRW_im
 +EABUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAB_size*EAGEAB_im/EAB_ex*EABRW_rer*RW_pex*EAGRW_im/(EABEAG_rer*EAG_py*EAG_y
++EABEAA_rer*EAA_pex*EAGEAA_im
++EABEAC_rer*EAC_pex*EAGEAC_im
++EABEAD_rer*EAD_pex*EAGEAD_im
++EABEAE_rer*EAE_pex*EAGEAE_im
++EABEAF_rer*EAF_pex*EAGEAF_im
++EABRW_rer*RW_pex*EAGRW_im
++EABUS_rer*US_pex*EAGUS_im
 )
 +US_size/EAB_size*USEAB_im/EAB_ex*EABRW_rer*RW_pex*USRW_im/(EABUS_rer*US_py*US_y
 +EABEAA_rer*EAA_pex*USEAA_im
@@ -6334,6 +7584,7 @@ EABRW_weightex = RW_size/EAB_size*RWEAB_im/EAB_ex*EABRW_rer*RW_py*RW_y/(EABRW_re
 +EABEAD_rer*EAD_pex*USEAD_im
 +EABEAE_rer*EAE_pex*USEAE_im
 +EABEAF_rer*EAF_pex*USEAF_im
++EABEAG_rer*EAG_pex*USEAG_im
 +EABRW_rer*RW_pex*USRW_im
 )
 ;
@@ -6348,6 +7599,7 @@ EABUS_weightex = US_size/EAB_size*USEAB_im/EAB_ex*EABUS_rer*US_py*US_y/(EABUS_re
 +EABEAD_rer*EAD_pex*USEAD_im
 +EABEAE_rer*EAE_pex*USEAE_im
 +EABEAF_rer*EAF_pex*USEAF_im
++EABEAG_rer*EAG_pex*USEAG_im
 +EABRW_rer*RW_pex*USRW_im
 )+
 +EAA_size/EAB_size*EAAEAB_im/EAB_ex*EABUS_rer*US_pex*EAAUS_im/(EABEAA_rer*EAA_py*EAA_y
@@ -6355,6 +7607,7 @@ EABUS_weightex = US_size/EAB_size*USEAB_im/EAB_ex*EABUS_rer*US_py*US_y/(EABUS_re
 +EABEAD_rer*EAD_pex*EAAEAD_im
 +EABEAE_rer*EAE_pex*EAAEAE_im
 +EABEAF_rer*EAF_pex*EAAEAF_im
++EABEAG_rer*EAG_pex*EAAEAG_im
 +EABRW_rer*RW_pex*EAARW_im
 +EABUS_rer*US_pex*EAAUS_im
 )
@@ -6363,6 +7616,7 @@ EABUS_weightex = US_size/EAB_size*USEAB_im/EAB_ex*EABUS_rer*US_py*US_y/(EABUS_re
 +EABEAD_rer*EAD_pex*EACEAD_im
 +EABEAE_rer*EAE_pex*EACEAE_im
 +EABEAF_rer*EAF_pex*EACEAF_im
++EABEAG_rer*EAG_pex*EACEAG_im
 +EABRW_rer*RW_pex*EACRW_im
 +EABUS_rer*US_pex*EACUS_im
 )
@@ -6371,6 +7625,7 @@ EABUS_weightex = US_size/EAB_size*USEAB_im/EAB_ex*EABUS_rer*US_py*US_y/(EABUS_re
 +EABEAC_rer*EAC_pex*EADEAC_im
 +EABEAE_rer*EAE_pex*EADEAE_im
 +EABEAF_rer*EAF_pex*EADEAF_im
++EABEAG_rer*EAG_pex*EADEAG_im
 +EABRW_rer*RW_pex*EADRW_im
 +EABUS_rer*US_pex*EADUS_im
 )
@@ -6379,6 +7634,7 @@ EABUS_weightex = US_size/EAB_size*USEAB_im/EAB_ex*EABUS_rer*US_py*US_y/(EABUS_re
 +EABEAC_rer*EAC_pex*EAEEAC_im
 +EABEAD_rer*EAD_pex*EAEEAD_im
 +EABEAF_rer*EAF_pex*EAEEAF_im
++EABEAG_rer*EAG_pex*EAEEAG_im
 +EABRW_rer*RW_pex*EAERW_im
 +EABUS_rer*US_pex*EAEUS_im
 )
@@ -6387,8 +7643,18 @@ EABUS_weightex = US_size/EAB_size*USEAB_im/EAB_ex*EABUS_rer*US_py*US_y/(EABUS_re
 +EABEAC_rer*EAC_pex*EAFEAC_im
 +EABEAD_rer*EAD_pex*EAFEAD_im
 +EABEAE_rer*EAE_pex*EAFEAE_im
++EABEAG_rer*EAG_pex*EAFEAG_im
 +EABRW_rer*RW_pex*EAFRW_im
 +EABUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAB_size*EAGEAB_im/EAB_ex*EABUS_rer*US_pex*EAGUS_im/(EABEAG_rer*EAG_py*EAG_y
++EABEAA_rer*EAA_pex*EAGEAA_im
++EABEAC_rer*EAC_pex*EAGEAC_im
++EABEAD_rer*EAD_pex*EAGEAD_im
++EABEAE_rer*EAE_pex*EAGEAE_im
++EABEAF_rer*EAF_pex*EAGEAF_im
++EABRW_rer*RW_pex*EAGRW_im
++EABUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAB_size*RWEAB_im/EAB_ex*EABUS_rer*US_pex*RWUS_im/(EABRW_rer*RW_py*RW_y
 +EABEAA_rer*EAA_pex*RWEAA_im
@@ -6396,6 +7662,7 @@ EABUS_weightex = US_size/EAB_size*USEAB_im/EAB_ex*EABUS_rer*US_py*US_y/(EABUS_re
 +EABEAD_rer*EAD_pex*RWEAD_im
 +EABEAE_rer*EAE_pex*RWEAE_im
 +EABEAF_rer*EAF_pex*RWEAF_im
++EABEAG_rer*EAG_pex*RWEAG_im
 +EABUS_rer*US_pex*RWUS_im
 )
 ;
@@ -6408,6 +7675,7 @@ EAB_reer = 1
 *EABEAD_rer^EABEAD_weight
 *EABEAE_rer^EABEAE_weight
 *EABEAF_rer^EABEAF_weight
+*EABEAG_rer^EABEAG_weight
 *EABRW_rer^EABRW_weight
 *EABUS_rer^EABUS_weight
 ;
@@ -6418,6 +7686,7 @@ EAB_etot = 1
 *EABEAD_tot^EABEAD_weight
 *EABEAE_tot^EABEAE_weight
 *EABEAF_tot^EABEAF_weight
+*EABEAG_tot^EABEAG_weight
 *EABRW_tot^EABRW_weight
 *EABUS_tot^EABUS_weight
 ;
@@ -6431,6 +7700,7 @@ EAB_imc^((EAB_mumc-1)/EAB_mumc) =
 +EABEAD_numc ^(1/EAB_mumc)*EABEAD_imc^(1-1/EAB_mumc)
 +EABEAE_numc ^(1/EAB_mumc)*EABEAE_imc^(1-1/EAB_mumc)
 +EABEAF_numc ^(1/EAB_mumc)*EABEAF_imc^(1-1/EAB_mumc)
++EABEAG_numc ^(1/EAB_mumc)*EABEAG_imc^(1-1/EAB_mumc)
 +EABRW_numc ^(1/EAB_mumc)*EABRW_imc^(1-1/EAB_mumc)
 +(1
 -EABEAA_numc
@@ -6438,6 +7708,7 @@ EAB_imc^((EAB_mumc-1)/EAB_mumc) =
 -EABEAD_numc
 -EABEAE_numc
 -EABEAF_numc
+-EABEAG_numc
 -EABRW_numc
 )^(1/EAB_mumc)*EABUS_imc^(1-1/EAB_mumc);
 // Demand for bilateral consumption import goods
@@ -6449,6 +7720,8 @@ EABEAE_imc = EABEAE_numc*((EAE_pex*EABEAE_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
 // Demand for bilateral consumption import goods
 EABEAF_imc = EABEAF_numc*((EAF_pex*EABEAF_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
 // Demand for bilateral consumption import goods
+EABEAG_imc = EABEAG_numc*((EAG_pex*EABEAG_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
+// Demand for bilateral consumption import goods
 EABRW_imc = EABRW_numc*((RW_pex*EABRW_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
 EABUS_imc = (1
 -EABEAA_numc
@@ -6456,6 +7729,7 @@ EABUS_imc = (1
 -EABEAD_numc
 -EABEAE_numc
 -EABEAF_numc
+-EABEAG_numc
 -EABRW_numc
 )*((US_pex*EABUS_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
 // Price of the consumption good (import)
@@ -6465,6 +7739,7 @@ EAB_pimc^(1-EAB_mumc) =
 +EABEAD_numc * (EAD_pex*EABEAD_rer)^(1-EAB_mumc)
 +EABEAE_numc * (EAE_pex*EABEAE_rer)^(1-EAB_mumc)
 +EABEAF_numc * (EAF_pex*EABEAF_rer)^(1-EAB_mumc)
++EABEAG_numc * (EAG_pex*EABEAG_rer)^(1-EAB_mumc)
 +EABRW_numc * (RW_pex*EABRW_rer)^(1-EAB_mumc)
 +(1
 -EABEAA_numc
@@ -6472,6 +7747,7 @@ EAB_pimc^(1-EAB_mumc) =
 -EABEAD_numc
 -EABEAE_numc
 -EABEAF_numc
+-EABEAG_numc
 -EABRW_numc
 )*(US_pex*EABUS_rer)^(1-EAB_mumc);
 // Private consumption good (import) inflation
@@ -6483,6 +7759,7 @@ EAB_imi^((EAB_mumi-1)/EAB_mumi) =
 +EABEAD_numi ^(1/EAB_mumi)*EABEAD_imi^(1-1/EAB_mumi)
 +EABEAE_numi ^(1/EAB_mumi)*EABEAE_imi^(1-1/EAB_mumi)
 +EABEAF_numi ^(1/EAB_mumi)*EABEAF_imi^(1-1/EAB_mumi)
++EABEAG_numi ^(1/EAB_mumi)*EABEAG_imi^(1-1/EAB_mumi)
 +EABRW_numi ^(1/EAB_mumi)*EABRW_imi^(1-1/EAB_mumi)
 +(1
 -EABEAA_numi
@@ -6490,6 +7767,7 @@ EAB_imi^((EAB_mumi-1)/EAB_mumi) =
 -EABEAD_numi
 -EABEAE_numi
 -EABEAF_numi
+-EABEAG_numi
 -EABRW_numi
 )^(1/EAB_mumi)*EABUS_imi^(1-1/EAB_mumi);
 // Demand for bilateral consumption import goods
@@ -6501,6 +7779,8 @@ EABEAE_imi = EABEAE_numi*((EAE_pex*EABEAE_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
 // Demand for bilateral consumption import goods
 EABEAF_imi = EABEAF_numi*((EAF_pex*EABEAF_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
 // Demand for bilateral consumption import goods
+EABEAG_imi = EABEAG_numi*((EAG_pex*EABEAG_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
+// Demand for bilateral consumption import goods
 EABRW_imi = EABRW_numi*((RW_pex*EABRW_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
 EABUS_imi = (1
 -EABEAA_numi
@@ -6508,6 +7788,7 @@ EABUS_imi = (1
 -EABEAD_numi
 -EABEAE_numi
 -EABEAF_numi
+-EABEAG_numi
 -EABRW_numi
 )*((US_pex*EABUS_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
 // Price of the consumption good (import)
@@ -6517,6 +7798,7 @@ EAB_pimi^(1-EAB_mumi) =
 +EABEAD_numi * (EAD_pex*EABEAD_rer)^(1-EAB_mumi)
 +EABEAE_numi * (EAE_pex*EABEAE_rer)^(1-EAB_mumi)
 +EABEAF_numi * (EAF_pex*EABEAF_rer)^(1-EAB_mumi)
++EABEAG_numi * (EAG_pex*EABEAG_rer)^(1-EAB_mumi)
 +EABRW_numi * (RW_pex*EABRW_rer)^(1-EAB_mumi)
 +(1
 -EABEAA_numi
@@ -6524,6 +7806,7 @@ EAB_pimi^(1-EAB_mumi) =
 -EABEAD_numi
 -EABEAE_numi
 -EABEAF_numi
+-EABEAG_numi
 -EABRW_numi
 )*(US_pex*EABUS_rer)^(1-EAB_mumi);
 // Private consumption good (import) inflation
@@ -6535,6 +7818,7 @@ EAB_imcg^((EAB_mumcg-1)/EAB_mumcg) =
 +EABEAD_numcg ^(1/EAB_mumcg)*EABEAD_imcg^(1-1/EAB_mumcg)
 +EABEAE_numcg ^(1/EAB_mumcg)*EABEAE_imcg^(1-1/EAB_mumcg)
 +EABEAF_numcg ^(1/EAB_mumcg)*EABEAF_imcg^(1-1/EAB_mumcg)
++EABEAG_numcg ^(1/EAB_mumcg)*EABEAG_imcg^(1-1/EAB_mumcg)
 +EABRW_numcg ^(1/EAB_mumcg)*EABRW_imcg^(1-1/EAB_mumcg)
 +(1
 -EABEAA_numcg
@@ -6542,6 +7826,7 @@ EAB_imcg^((EAB_mumcg-1)/EAB_mumcg) =
 -EABEAD_numcg
 -EABEAE_numcg
 -EABEAF_numcg
+-EABEAG_numcg
 -EABRW_numcg
 )^(1/EAB_mumcg)*EABUS_imcg^(1-1/EAB_mumcg);
 // Demand for bilateral consumption import goods
@@ -6553,6 +7838,8 @@ EABEAE_imcg = EABEAE_numcg*((EAE_pex*EABEAE_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imc
 // Demand for bilateral consumption import goods
 EABEAF_imcg = EABEAF_numcg*((EAF_pex*EABEAF_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
 // Demand for bilateral consumption import goods
+EABEAG_imcg = EABEAG_numcg*((EAG_pex*EABEAG_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
+// Demand for bilateral consumption import goods
 EABRW_imcg = EABRW_numcg*((RW_pex*EABRW_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
 EABUS_imcg = (1
 -EABEAA_numcg
@@ -6560,6 +7847,7 @@ EABUS_imcg = (1
 -EABEAD_numcg
 -EABEAE_numcg
 -EABEAF_numcg
+-EABEAG_numcg
 -EABRW_numcg
 )*((US_pex*EABUS_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
 // Price of the consumption good (import)
@@ -6569,6 +7857,7 @@ EAB_pimcg^(1-EAB_mumcg) =
 +EABEAD_numcg * (EAD_pex*EABEAD_rer)^(1-EAB_mumcg)
 +EABEAE_numcg * (EAE_pex*EABEAE_rer)^(1-EAB_mumcg)
 +EABEAF_numcg * (EAF_pex*EABEAF_rer)^(1-EAB_mumcg)
++EABEAG_numcg * (EAG_pex*EABEAG_rer)^(1-EAB_mumcg)
 +EABRW_numcg * (RW_pex*EABRW_rer)^(1-EAB_mumcg)
 +(1
 -EABEAA_numcg
@@ -6576,6 +7865,7 @@ EAB_pimcg^(1-EAB_mumcg) =
 -EABEAD_numcg
 -EABEAE_numcg
 -EABEAF_numcg
+-EABEAG_numcg
 -EABRW_numcg
 )*(US_pex*EABUS_rer)^(1-EAB_mumcg);
 // Private consumption good (import) inflation
@@ -6587,6 +7877,7 @@ EAB_imig^((EAB_mumig-1)/EAB_mumig) =
 +EABEAD_numig ^(1/EAB_mumig)*EABEAD_imig^(1-1/EAB_mumig)
 +EABEAE_numig ^(1/EAB_mumig)*EABEAE_imig^(1-1/EAB_mumig)
 +EABEAF_numig ^(1/EAB_mumig)*EABEAF_imig^(1-1/EAB_mumig)
++EABEAG_numig ^(1/EAB_mumig)*EABEAG_imig^(1-1/EAB_mumig)
 +EABRW_numig ^(1/EAB_mumig)*EABRW_imig^(1-1/EAB_mumig)
 +(1
 -EABEAA_numig
@@ -6594,6 +7885,7 @@ EAB_imig^((EAB_mumig-1)/EAB_mumig) =
 -EABEAD_numig
 -EABEAE_numig
 -EABEAF_numig
+-EABEAG_numig
 -EABRW_numig
 )^(1/EAB_mumig)*EABUS_imig^(1-1/EAB_mumig);
 // Demand for bilateral consumption import goods
@@ -6605,6 +7897,8 @@ EABEAE_imig = EABEAE_numig*((EAE_pex*EABEAE_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imi
 // Demand for bilateral consumption import goods
 EABEAF_imig = EABEAF_numig*((EAF_pex*EABEAF_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
 // Demand for bilateral consumption import goods
+EABEAG_imig = EABEAG_numig*((EAG_pex*EABEAG_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
+// Demand for bilateral consumption import goods
 EABRW_imig = EABRW_numig*((RW_pex*EABRW_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
 EABUS_imig = (1
 -EABEAA_numig
@@ -6612,6 +7906,7 @@ EABUS_imig = (1
 -EABEAD_numig
 -EABEAE_numig
 -EABEAF_numig
+-EABEAG_numig
 -EABRW_numig
 )*((US_pex*EABUS_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
 // Price of the consumption good (import)
@@ -6621,6 +7916,7 @@ EAB_pimig^(1-EAB_mumig) =
 +EABEAD_numig * (EAD_pex*EABEAD_rer)^(1-EAB_mumig)
 +EABEAE_numig * (EAE_pex*EABEAE_rer)^(1-EAB_mumig)
 +EABEAF_numig * (EAF_pex*EABEAF_rer)^(1-EAB_mumig)
++EABEAG_numig * (EAG_pex*EABEAG_rer)^(1-EAB_mumig)
 +EABRW_numig * (RW_pex*EABRW_rer)^(1-EAB_mumig)
 +(1
 -EABEAA_numig
@@ -6628,6 +7924,7 @@ EAB_pimig^(1-EAB_mumig) =
 -EABEAD_numig
 -EABEAE_numig
 -EABEAF_numig
+-EABEAG_numig
 -EABRW_numig
 )*(US_pex*EABUS_rer)^(1-EAB_mumig);
 // Private consumption good (import) inflation
@@ -6669,6 +7966,12 @@ EABEAF_im =
 +EABEAF_imcg
 +EABEAF_imig
 ;
+EABEAG_im = 
++EABEAG_imc
++EABEAG_imi
++EABEAG_imcg
++EABEAG_imig
+;
 EABRW_im = 
 +EABRW_imc
 +EABRW_imi
@@ -6704,6 +8007,8 @@ EABEAE_gammaimc = 0;
 EABEAE_gammaimcdag = 1;
 EABEAF_gammaimc = 0;
 EABEAF_gammaimcdag = 1;
+EABEAG_gammaimc = 0;
+EABEAG_gammaimcdag = 1;
 EABRW_gammaimc = 0;
 EABRW_gammaimcdag = 1;
 EABUS_gammaimc = 0;
@@ -6733,6 +8038,8 @@ EABEAE_gammaimi = 0;
 EABEAE_gammaimidag = 1;
 EABEAF_gammaimi = 0;
 EABEAF_gammaimidag = 1;
+EABEAG_gammaimi = 0;
+EABEAG_gammaimidag = 1;
 EABRW_gammaimi = 0;
 EABRW_gammaimidag = 1;
 EABUS_gammaimi = 0;
@@ -6759,6 +8066,8 @@ EABEAE_gammaimcg = 0;
 EABEAE_gammaimcgdag = 1;
 EABEAF_gammaimcg = 0;
 EABEAF_gammaimcgdag = 1;
+EABEAG_gammaimcg = 0;
+EABEAG_gammaimcgdag = 1;
 EABRW_gammaimcg = 0;
 EABRW_gammaimcgdag = 1;
 EABUS_gammaimcg = 0;
@@ -6785,6 +8094,8 @@ EABEAE_gammaimig = 0;
 EABEAE_gammaimigdag = 1;
 EABEAF_gammaimig = 0;
 EABEAF_gammaimigdag = 1;
+EABEAG_gammaimig = 0;
+EABEAG_gammaimigdag = 1;
 EABRW_gammaimig = 0;
 EABRW_gammaimigdag = 1;
 EABUS_gammaimig = 0;
@@ -6801,6 +8112,8 @@ EAB_tb =
 -EAE_pex*EABEAE_rer*EABEAE_im
 +EAB_pex*EAF_size/EAB_size*EAFEAB_im
 -EAF_pex*EABEAF_rer*EABEAF_im
++EAB_pex*EAG_size/EAB_size*EAGEAB_im
+-EAG_pex*EABEAG_rer*EABEAG_im
 +EAB_pex*RW_size/EAB_size*RWEAB_im
 -RW_pex*EABRW_rer*EABRW_im
 +EAB_pex*US_size/EAB_size*USEAB_im
@@ -6813,6 +8126,7 @@ EAB_ex =
 +EAD_size/EAB_size*EADEAB_im
 +EAE_size/EAB_size*EAEEAB_im
 +EAF_size/EAB_size*EAFEAB_im
++EAG_size/EAB_size*EAGEAB_im
 +RW_size/EAB_size*RWEAB_im
 +US_size/EAB_size*USEAB_im
 ;
@@ -6858,7 +8172,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAB_r = EAF_r;
+	EAB_r = EAG_r;
 EAB_pic4 = EAB_pi4target;
 EAB_rr-1 = EAB_r/EAB_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -6971,6 +8285,11 @@ EAB_py*EAB_y =
 -(EAF_pex*EABEAF_rer)*EABEAF_imi
 -(EAF_pex*EABEAF_rer)*EABEAF_imcg
 -(EAF_pex*EABEAF_rer)*EABEAF_imig
++EAB_pex*EAG_size/EAB_size*EAGEAB_im
+-(EAG_pex*EABEAG_rer)*EABEAG_imc
+-(EAG_pex*EABEAG_rer)*EABEAG_imi
+-(EAG_pex*EABEAG_rer)*EABEAG_imcg
+-(EAG_pex*EABEAG_rer)*EABEAG_imig
 +EAB_pex*RW_size/EAB_size*RWEAB_im
 -(RW_pex*EABRW_rer)*EABRW_imc
 -(RW_pex*EABRW_rer)*EABRW_imi
@@ -7066,6 +8385,7 @@ EAB_yshare  = EAB_size*EAB_py*EAB_y/EAB_rer/(
 +EAD_size*EAD_py*EAD_y/EAD_rer
 +EAE_size*EAE_py*EAE_y/EAE_rer
 +EAF_size*EAF_py*EAF_y/EAF_rer
++EAG_size*EAG_py*EAG_y/EAG_rer
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
@@ -7118,6 +8438,15 @@ EABEAF_imigy = (EAF_pex*EABEAF_rer)*EABEAF_imig/(EAB_py*EAB_y);
 EABEAF_excy  = EAF_size/EAB_size*EAB_pex*EAFEAB_imc/(EAB_py*EAB_y);
 // Exports of investment goods to gdp
 EABEAF_exiy  = EAF_size/EAB_size*EAB_pex*EAFEAB_imi/(EAB_py*EAB_y);
+// Bilateral shares
+EABEAG_imcy = (EAG_pex*EABEAG_rer)*EABEAG_imc/(EAB_py*EAB_y);
+EABEAG_imiy = (EAG_pex*EABEAG_rer)*EABEAG_imi/(EAB_py*EAB_y);
+EABEAG_imcgy = (EAG_pex*EABEAG_rer)*EABEAG_imcg/(EAB_py*EAB_y);
+EABEAG_imigy = (EAG_pex*EABEAG_rer)*EABEAG_imig/(EAB_py*EAB_y);
+// Exports of consumption goods to gdp
+EABEAG_excy  = EAG_size/EAB_size*EAB_pex*EAGEAB_imc/(EAB_py*EAB_y);
+// Exports of investment goods to gdp
+EABEAG_exiy  = EAG_size/EAB_size*EAB_pex*EAGEAB_imi/(EAB_py*EAB_y);
 // Bilateral shares
 EABRW_imcy = (RW_pex*EABRW_rer)*EABRW_imc/(EAB_py*EAB_y);
 EABRW_imiy = (RW_pex*EABRW_rer)*EABRW_imi/(EAB_py*EAB_y);
@@ -7380,6 +8709,22 @@ EACEAF_rer = EAC_rer/EAF_rer;
 EACEAF_rerbar = EACEAF_rer;
 //Terms of Trade
 EACEAF_tot = EAF_pex*EACEAF_rer/EAC_pex;
+// Optimal price contract set in foreign markets (FOC), using EAC_pxtilde = EAG_pimtilde
+// EAGEAC_pimtilde/EAGEAC_pim = EAC_cpim*EAC_thetat/(EAC_thetat-1)*EACEAG_fx/EACEAG_gx;
+// Definition of fx
+// EACEAG_fx = EAG_size/EAC_size*EAGEAC_im*EAC_mct+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAGEAC_piim(+1)/(EAGEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^EAC_thetat*EACEAG_fx(+1);
+// Definition of gx   
+// EACEAG_gx = EACEAG_rer*EAGEAC_pim*EAG_size/EAC_size*EAGEAC_im+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAGEAC_piim(+1)/(EAGEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^(EAC_thetat-1)*EACEAG_gx(+1);
+// Aggregate intermediate-good price dynamics, using EAC_px = EAG_pim
+// EAGEAC_pim^(1-EAC_thetat) = (1-EAC_xix)*EAGEAC_pimtilde^(1-EAC_thetat)+EAC_xix*(EAGEAC_pim(-1)/EAG_pic)^(1-EAC_thetat)*(EAGEAC_piim(-1)^EAC_chix*EAG_pi4target^(1/4*(1-EAC_chih)))^(1-EAC_thetat);
+// Intermediate-good price inflation, using EAC_pix = EAG_piim
+// EAGEAC_piim = EAGEAC_pim/EAGEAC_pim(-1)*EAG_pic;
+// Bilateral real exchange rate
+EACEAG_rer = EAC_rer/EAG_rer;
+// Auxiliary equation for steady-state output
+EACEAG_rerbar = EACEAG_rer;
+//Terms of Trade
+EACEAG_tot = EAG_pex*EACEAG_rer/EAC_pex;
 // Optimal price contract set in foreign markets (FOC), using EAC_pxtilde = RW_pimtilde
 // RWEAC_pimtilde/RWEAC_pim = EAC_cpim*EAC_thetat/(EAC_thetat-1)*EACRW_fx/EACRW_gx;
 // Definition of fx
@@ -7434,6 +8779,7 @@ EACEAA_weightex = EAA_size/EAC_size*EAAEAC_im/EAC_ex*EACEAA_rer*EAA_py*EAA_y/(EA
 +EACEAD_rer*EAD_pex*EAAEAD_im
 +EACEAE_rer*EAE_pex*EAAEAE_im
 +EACEAF_rer*EAF_pex*EAAEAF_im
++EACEAG_rer*EAG_pex*EAAEAG_im
 +EACRW_rer*RW_pex*EAARW_im
 +EACUS_rer*US_pex*EAAUS_im
 )+
@@ -7442,6 +8788,7 @@ EACEAA_weightex = EAA_size/EAC_size*EAAEAC_im/EAC_ex*EACEAA_rer*EAA_py*EAA_y/(EA
 +EACEAD_rer*EAD_pex*EABEAD_im
 +EACEAE_rer*EAE_pex*EABEAE_im
 +EACEAF_rer*EAF_pex*EABEAF_im
++EACEAG_rer*EAG_pex*EABEAG_im
 +EACRW_rer*RW_pex*EABRW_im
 +EACUS_rer*US_pex*EABUS_im
 )
@@ -7450,6 +8797,7 @@ EACEAA_weightex = EAA_size/EAC_size*EAAEAC_im/EAC_ex*EACEAA_rer*EAA_py*EAA_y/(EA
 +EACEAB_rer*EAB_pex*EADEAB_im
 +EACEAE_rer*EAE_pex*EADEAE_im
 +EACEAF_rer*EAF_pex*EADEAF_im
++EACEAG_rer*EAG_pex*EADEAG_im
 +EACRW_rer*RW_pex*EADRW_im
 +EACUS_rer*US_pex*EADUS_im
 )
@@ -7458,6 +8806,7 @@ EACEAA_weightex = EAA_size/EAC_size*EAAEAC_im/EAC_ex*EACEAA_rer*EAA_py*EAA_y/(EA
 +EACEAB_rer*EAB_pex*EAEEAB_im
 +EACEAD_rer*EAD_pex*EAEEAD_im
 +EACEAF_rer*EAF_pex*EAEEAF_im
++EACEAG_rer*EAG_pex*EAEEAG_im
 +EACRW_rer*RW_pex*EAERW_im
 +EACUS_rer*US_pex*EAEUS_im
 )
@@ -7466,8 +8815,18 @@ EACEAA_weightex = EAA_size/EAC_size*EAAEAC_im/EAC_ex*EACEAA_rer*EAA_py*EAA_y/(EA
 +EACEAB_rer*EAB_pex*EAFEAB_im
 +EACEAD_rer*EAD_pex*EAFEAD_im
 +EACEAE_rer*EAE_pex*EAFEAE_im
++EACEAG_rer*EAG_pex*EAFEAG_im
 +EACRW_rer*RW_pex*EAFRW_im
 +EACUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAC_size*EAGEAC_im/EAC_ex*EACEAA_rer*EAA_pex*EAGEAA_im/(EACEAG_rer*EAG_py*EAG_y
++EACEAA_rer*EAA_pex*EAGEAA_im
++EACEAB_rer*EAB_pex*EAGEAB_im
++EACEAD_rer*EAD_pex*EAGEAD_im
++EACEAE_rer*EAE_pex*EAGEAE_im
++EACEAF_rer*EAF_pex*EAGEAF_im
++EACRW_rer*RW_pex*EAGRW_im
++EACUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAC_size*RWEAC_im/EAC_ex*EACEAA_rer*EAA_pex*RWEAA_im/(EACRW_rer*RW_py*RW_y
 +EACEAA_rer*EAA_pex*RWEAA_im
@@ -7475,6 +8834,7 @@ EACEAA_weightex = EAA_size/EAC_size*EAAEAC_im/EAC_ex*EACEAA_rer*EAA_py*EAA_y/(EA
 +EACEAD_rer*EAD_pex*RWEAD_im
 +EACEAE_rer*EAE_pex*RWEAE_im
 +EACEAF_rer*EAF_pex*RWEAF_im
++EACEAG_rer*EAG_pex*RWEAG_im
 +EACUS_rer*US_pex*RWUS_im
 )
 +US_size/EAC_size*USEAC_im/EAC_ex*EACEAA_rer*EAA_pex*USEAA_im/(EACUS_rer*US_py*US_y
@@ -7483,6 +8843,7 @@ EACEAA_weightex = EAA_size/EAC_size*EAAEAC_im/EAC_ex*EACEAA_rer*EAA_py*EAA_y/(EA
 +EACEAD_rer*EAD_pex*USEAD_im
 +EACEAE_rer*EAE_pex*USEAE_im
 +EACEAF_rer*EAF_pex*USEAF_im
++EACEAG_rer*EAG_pex*USEAG_im
 +EACRW_rer*RW_pex*USRW_im
 )
 ;
@@ -7496,6 +8857,7 @@ EACEAB_weightex = EAB_size/EAC_size*EABEAC_im/EAC_ex*EACEAB_rer*EAB_py*EAB_y/(EA
 +EACEAD_rer*EAD_pex*EABEAD_im
 +EACEAE_rer*EAE_pex*EABEAE_im
 +EACEAF_rer*EAF_pex*EABEAF_im
++EACEAG_rer*EAG_pex*EABEAG_im
 +EACRW_rer*RW_pex*EABRW_im
 +EACUS_rer*US_pex*EABUS_im
 )+
@@ -7504,6 +8866,7 @@ EACEAB_weightex = EAB_size/EAC_size*EABEAC_im/EAC_ex*EACEAB_rer*EAB_py*EAB_y/(EA
 +EACEAD_rer*EAD_pex*EAAEAD_im
 +EACEAE_rer*EAE_pex*EAAEAE_im
 +EACEAF_rer*EAF_pex*EAAEAF_im
++EACEAG_rer*EAG_pex*EAAEAG_im
 +EACRW_rer*RW_pex*EAARW_im
 +EACUS_rer*US_pex*EAAUS_im
 )
@@ -7512,6 +8875,7 @@ EACEAB_weightex = EAB_size/EAC_size*EABEAC_im/EAC_ex*EACEAB_rer*EAB_py*EAB_y/(EA
 +EACEAB_rer*EAB_pex*EADEAB_im
 +EACEAE_rer*EAE_pex*EADEAE_im
 +EACEAF_rer*EAF_pex*EADEAF_im
++EACEAG_rer*EAG_pex*EADEAG_im
 +EACRW_rer*RW_pex*EADRW_im
 +EACUS_rer*US_pex*EADUS_im
 )
@@ -7520,6 +8884,7 @@ EACEAB_weightex = EAB_size/EAC_size*EABEAC_im/EAC_ex*EACEAB_rer*EAB_py*EAB_y/(EA
 +EACEAB_rer*EAB_pex*EAEEAB_im
 +EACEAD_rer*EAD_pex*EAEEAD_im
 +EACEAF_rer*EAF_pex*EAEEAF_im
++EACEAG_rer*EAG_pex*EAEEAG_im
 +EACRW_rer*RW_pex*EAERW_im
 +EACUS_rer*US_pex*EAEUS_im
 )
@@ -7528,8 +8893,18 @@ EACEAB_weightex = EAB_size/EAC_size*EABEAC_im/EAC_ex*EACEAB_rer*EAB_py*EAB_y/(EA
 +EACEAB_rer*EAB_pex*EAFEAB_im
 +EACEAD_rer*EAD_pex*EAFEAD_im
 +EACEAE_rer*EAE_pex*EAFEAE_im
++EACEAG_rer*EAG_pex*EAFEAG_im
 +EACRW_rer*RW_pex*EAFRW_im
 +EACUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAC_size*EAGEAC_im/EAC_ex*EACEAB_rer*EAB_pex*EAGEAB_im/(EACEAG_rer*EAG_py*EAG_y
++EACEAA_rer*EAA_pex*EAGEAA_im
++EACEAB_rer*EAB_pex*EAGEAB_im
++EACEAD_rer*EAD_pex*EAGEAD_im
++EACEAE_rer*EAE_pex*EAGEAE_im
++EACEAF_rer*EAF_pex*EAGEAF_im
++EACRW_rer*RW_pex*EAGRW_im
++EACUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAC_size*RWEAC_im/EAC_ex*EACEAB_rer*EAB_pex*RWEAB_im/(EACRW_rer*RW_py*RW_y
 +EACEAA_rer*EAA_pex*RWEAA_im
@@ -7537,6 +8912,7 @@ EACEAB_weightex = EAB_size/EAC_size*EABEAC_im/EAC_ex*EACEAB_rer*EAB_py*EAB_y/(EA
 +EACEAD_rer*EAD_pex*RWEAD_im
 +EACEAE_rer*EAE_pex*RWEAE_im
 +EACEAF_rer*EAF_pex*RWEAF_im
++EACEAG_rer*EAG_pex*RWEAG_im
 +EACUS_rer*US_pex*RWUS_im
 )
 +US_size/EAC_size*USEAC_im/EAC_ex*EACEAB_rer*EAB_pex*USEAB_im/(EACUS_rer*US_py*US_y
@@ -7545,6 +8921,7 @@ EACEAB_weightex = EAB_size/EAC_size*EABEAC_im/EAC_ex*EACEAB_rer*EAB_py*EAB_y/(EA
 +EACEAD_rer*EAD_pex*USEAD_im
 +EACEAE_rer*EAE_pex*USEAE_im
 +EACEAF_rer*EAF_pex*USEAF_im
++EACEAG_rer*EAG_pex*USEAG_im
 +EACRW_rer*RW_pex*USRW_im
 )
 ;
@@ -7558,6 +8935,7 @@ EACEAD_weightex = EAD_size/EAC_size*EADEAC_im/EAC_ex*EACEAD_rer*EAD_py*EAD_y/(EA
 +EACEAB_rer*EAB_pex*EADEAB_im
 +EACEAE_rer*EAE_pex*EADEAE_im
 +EACEAF_rer*EAF_pex*EADEAF_im
++EACEAG_rer*EAG_pex*EADEAG_im
 +EACRW_rer*RW_pex*EADRW_im
 +EACUS_rer*US_pex*EADUS_im
 )+
@@ -7566,6 +8944,7 @@ EACEAD_weightex = EAD_size/EAC_size*EADEAC_im/EAC_ex*EACEAD_rer*EAD_py*EAD_y/(EA
 +EACEAD_rer*EAD_pex*EAAEAD_im
 +EACEAE_rer*EAE_pex*EAAEAE_im
 +EACEAF_rer*EAF_pex*EAAEAF_im
++EACEAG_rer*EAG_pex*EAAEAG_im
 +EACRW_rer*RW_pex*EAARW_im
 +EACUS_rer*US_pex*EAAUS_im
 )
@@ -7574,6 +8953,7 @@ EACEAD_weightex = EAD_size/EAC_size*EADEAC_im/EAC_ex*EACEAD_rer*EAD_py*EAD_y/(EA
 +EACEAD_rer*EAD_pex*EABEAD_im
 +EACEAE_rer*EAE_pex*EABEAE_im
 +EACEAF_rer*EAF_pex*EABEAF_im
++EACEAG_rer*EAG_pex*EABEAG_im
 +EACRW_rer*RW_pex*EABRW_im
 +EACUS_rer*US_pex*EABUS_im
 )
@@ -7582,6 +8962,7 @@ EACEAD_weightex = EAD_size/EAC_size*EADEAC_im/EAC_ex*EACEAD_rer*EAD_py*EAD_y/(EA
 +EACEAB_rer*EAB_pex*EAEEAB_im
 +EACEAD_rer*EAD_pex*EAEEAD_im
 +EACEAF_rer*EAF_pex*EAEEAF_im
++EACEAG_rer*EAG_pex*EAEEAG_im
 +EACRW_rer*RW_pex*EAERW_im
 +EACUS_rer*US_pex*EAEUS_im
 )
@@ -7590,8 +8971,18 @@ EACEAD_weightex = EAD_size/EAC_size*EADEAC_im/EAC_ex*EACEAD_rer*EAD_py*EAD_y/(EA
 +EACEAB_rer*EAB_pex*EAFEAB_im
 +EACEAD_rer*EAD_pex*EAFEAD_im
 +EACEAE_rer*EAE_pex*EAFEAE_im
++EACEAG_rer*EAG_pex*EAFEAG_im
 +EACRW_rer*RW_pex*EAFRW_im
 +EACUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAC_size*EAGEAC_im/EAC_ex*EACEAD_rer*EAD_pex*EAGEAD_im/(EACEAG_rer*EAG_py*EAG_y
++EACEAA_rer*EAA_pex*EAGEAA_im
++EACEAB_rer*EAB_pex*EAGEAB_im
++EACEAD_rer*EAD_pex*EAGEAD_im
++EACEAE_rer*EAE_pex*EAGEAE_im
++EACEAF_rer*EAF_pex*EAGEAF_im
++EACRW_rer*RW_pex*EAGRW_im
++EACUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAC_size*RWEAC_im/EAC_ex*EACEAD_rer*EAD_pex*RWEAD_im/(EACRW_rer*RW_py*RW_y
 +EACEAA_rer*EAA_pex*RWEAA_im
@@ -7599,6 +8990,7 @@ EACEAD_weightex = EAD_size/EAC_size*EADEAC_im/EAC_ex*EACEAD_rer*EAD_py*EAD_y/(EA
 +EACEAD_rer*EAD_pex*RWEAD_im
 +EACEAE_rer*EAE_pex*RWEAE_im
 +EACEAF_rer*EAF_pex*RWEAF_im
++EACEAG_rer*EAG_pex*RWEAG_im
 +EACUS_rer*US_pex*RWUS_im
 )
 +US_size/EAC_size*USEAC_im/EAC_ex*EACEAD_rer*EAD_pex*USEAD_im/(EACUS_rer*US_py*US_y
@@ -7607,6 +8999,7 @@ EACEAD_weightex = EAD_size/EAC_size*EADEAC_im/EAC_ex*EACEAD_rer*EAD_py*EAD_y/(EA
 +EACEAD_rer*EAD_pex*USEAD_im
 +EACEAE_rer*EAE_pex*USEAE_im
 +EACEAF_rer*EAF_pex*USEAF_im
++EACEAG_rer*EAG_pex*USEAG_im
 +EACRW_rer*RW_pex*USRW_im
 )
 ;
@@ -7620,6 +9013,7 @@ EACEAE_weightex = EAE_size/EAC_size*EAEEAC_im/EAC_ex*EACEAE_rer*EAE_py*EAE_y/(EA
 +EACEAB_rer*EAB_pex*EAEEAB_im
 +EACEAD_rer*EAD_pex*EAEEAD_im
 +EACEAF_rer*EAF_pex*EAEEAF_im
++EACEAG_rer*EAG_pex*EAEEAG_im
 +EACRW_rer*RW_pex*EAERW_im
 +EACUS_rer*US_pex*EAEUS_im
 )+
@@ -7628,6 +9022,7 @@ EACEAE_weightex = EAE_size/EAC_size*EAEEAC_im/EAC_ex*EACEAE_rer*EAE_py*EAE_y/(EA
 +EACEAD_rer*EAD_pex*EAAEAD_im
 +EACEAE_rer*EAE_pex*EAAEAE_im
 +EACEAF_rer*EAF_pex*EAAEAF_im
++EACEAG_rer*EAG_pex*EAAEAG_im
 +EACRW_rer*RW_pex*EAARW_im
 +EACUS_rer*US_pex*EAAUS_im
 )
@@ -7636,6 +9031,7 @@ EACEAE_weightex = EAE_size/EAC_size*EAEEAC_im/EAC_ex*EACEAE_rer*EAE_py*EAE_y/(EA
 +EACEAD_rer*EAD_pex*EABEAD_im
 +EACEAE_rer*EAE_pex*EABEAE_im
 +EACEAF_rer*EAF_pex*EABEAF_im
++EACEAG_rer*EAG_pex*EABEAG_im
 +EACRW_rer*RW_pex*EABRW_im
 +EACUS_rer*US_pex*EABUS_im
 )
@@ -7644,6 +9040,7 @@ EACEAE_weightex = EAE_size/EAC_size*EAEEAC_im/EAC_ex*EACEAE_rer*EAE_py*EAE_y/(EA
 +EACEAB_rer*EAB_pex*EADEAB_im
 +EACEAE_rer*EAE_pex*EADEAE_im
 +EACEAF_rer*EAF_pex*EADEAF_im
++EACEAG_rer*EAG_pex*EADEAG_im
 +EACRW_rer*RW_pex*EADRW_im
 +EACUS_rer*US_pex*EADUS_im
 )
@@ -7652,8 +9049,18 @@ EACEAE_weightex = EAE_size/EAC_size*EAEEAC_im/EAC_ex*EACEAE_rer*EAE_py*EAE_y/(EA
 +EACEAB_rer*EAB_pex*EAFEAB_im
 +EACEAD_rer*EAD_pex*EAFEAD_im
 +EACEAE_rer*EAE_pex*EAFEAE_im
++EACEAG_rer*EAG_pex*EAFEAG_im
 +EACRW_rer*RW_pex*EAFRW_im
 +EACUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAC_size*EAGEAC_im/EAC_ex*EACEAE_rer*EAE_pex*EAGEAE_im/(EACEAG_rer*EAG_py*EAG_y
++EACEAA_rer*EAA_pex*EAGEAA_im
++EACEAB_rer*EAB_pex*EAGEAB_im
++EACEAD_rer*EAD_pex*EAGEAD_im
++EACEAE_rer*EAE_pex*EAGEAE_im
++EACEAF_rer*EAF_pex*EAGEAF_im
++EACRW_rer*RW_pex*EAGRW_im
++EACUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAC_size*RWEAC_im/EAC_ex*EACEAE_rer*EAE_pex*RWEAE_im/(EACRW_rer*RW_py*RW_y
 +EACEAA_rer*EAA_pex*RWEAA_im
@@ -7661,6 +9068,7 @@ EACEAE_weightex = EAE_size/EAC_size*EAEEAC_im/EAC_ex*EACEAE_rer*EAE_py*EAE_y/(EA
 +EACEAD_rer*EAD_pex*RWEAD_im
 +EACEAE_rer*EAE_pex*RWEAE_im
 +EACEAF_rer*EAF_pex*RWEAF_im
++EACEAG_rer*EAG_pex*RWEAG_im
 +EACUS_rer*US_pex*RWUS_im
 )
 +US_size/EAC_size*USEAC_im/EAC_ex*EACEAE_rer*EAE_pex*USEAE_im/(EACUS_rer*US_py*US_y
@@ -7669,6 +9077,7 @@ EACEAE_weightex = EAE_size/EAC_size*EAEEAC_im/EAC_ex*EACEAE_rer*EAE_py*EAE_y/(EA
 +EACEAD_rer*EAD_pex*USEAD_im
 +EACEAE_rer*EAE_pex*USEAE_im
 +EACEAF_rer*EAF_pex*USEAF_im
++EACEAG_rer*EAG_pex*USEAG_im
 +EACRW_rer*RW_pex*USRW_im
 )
 ;
@@ -7682,6 +9091,7 @@ EACEAF_weightex = EAF_size/EAC_size*EAFEAC_im/EAC_ex*EACEAF_rer*EAF_py*EAF_y/(EA
 +EACEAB_rer*EAB_pex*EAFEAB_im
 +EACEAD_rer*EAD_pex*EAFEAD_im
 +EACEAE_rer*EAE_pex*EAFEAE_im
++EACEAG_rer*EAG_pex*EAFEAG_im
 +EACRW_rer*RW_pex*EAFRW_im
 +EACUS_rer*US_pex*EAFUS_im
 )+
@@ -7690,6 +9100,7 @@ EACEAF_weightex = EAF_size/EAC_size*EAFEAC_im/EAC_ex*EACEAF_rer*EAF_py*EAF_y/(EA
 +EACEAD_rer*EAD_pex*EAAEAD_im
 +EACEAE_rer*EAE_pex*EAAEAE_im
 +EACEAF_rer*EAF_pex*EAAEAF_im
++EACEAG_rer*EAG_pex*EAAEAG_im
 +EACRW_rer*RW_pex*EAARW_im
 +EACUS_rer*US_pex*EAAUS_im
 )
@@ -7698,6 +9109,7 @@ EACEAF_weightex = EAF_size/EAC_size*EAFEAC_im/EAC_ex*EACEAF_rer*EAF_py*EAF_y/(EA
 +EACEAD_rer*EAD_pex*EABEAD_im
 +EACEAE_rer*EAE_pex*EABEAE_im
 +EACEAF_rer*EAF_pex*EABEAF_im
++EACEAG_rer*EAG_pex*EABEAG_im
 +EACRW_rer*RW_pex*EABRW_im
 +EACUS_rer*US_pex*EABUS_im
 )
@@ -7706,6 +9118,7 @@ EACEAF_weightex = EAF_size/EAC_size*EAFEAC_im/EAC_ex*EACEAF_rer*EAF_py*EAF_y/(EA
 +EACEAB_rer*EAB_pex*EADEAB_im
 +EACEAE_rer*EAE_pex*EADEAE_im
 +EACEAF_rer*EAF_pex*EADEAF_im
++EACEAG_rer*EAG_pex*EADEAG_im
 +EACRW_rer*RW_pex*EADRW_im
 +EACUS_rer*US_pex*EADUS_im
 )
@@ -7714,8 +9127,18 @@ EACEAF_weightex = EAF_size/EAC_size*EAFEAC_im/EAC_ex*EACEAF_rer*EAF_py*EAF_y/(EA
 +EACEAB_rer*EAB_pex*EAEEAB_im
 +EACEAD_rer*EAD_pex*EAEEAD_im
 +EACEAF_rer*EAF_pex*EAEEAF_im
++EACEAG_rer*EAG_pex*EAEEAG_im
 +EACRW_rer*RW_pex*EAERW_im
 +EACUS_rer*US_pex*EAEUS_im
+)
++EAG_size/EAC_size*EAGEAC_im/EAC_ex*EACEAF_rer*EAF_pex*EAGEAF_im/(EACEAG_rer*EAG_py*EAG_y
++EACEAA_rer*EAA_pex*EAGEAA_im
++EACEAB_rer*EAB_pex*EAGEAB_im
++EACEAD_rer*EAD_pex*EAGEAD_im
++EACEAE_rer*EAE_pex*EAGEAE_im
++EACEAF_rer*EAF_pex*EAGEAF_im
++EACRW_rer*RW_pex*EAGRW_im
++EACUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAC_size*RWEAC_im/EAC_ex*EACEAF_rer*EAF_pex*RWEAF_im/(EACRW_rer*RW_py*RW_y
 +EACEAA_rer*EAA_pex*RWEAA_im
@@ -7723,6 +9146,7 @@ EACEAF_weightex = EAF_size/EAC_size*EAFEAC_im/EAC_ex*EACEAF_rer*EAF_py*EAF_y/(EA
 +EACEAD_rer*EAD_pex*RWEAD_im
 +EACEAE_rer*EAE_pex*RWEAE_im
 +EACEAF_rer*EAF_pex*RWEAF_im
++EACEAG_rer*EAG_pex*RWEAG_im
 +EACUS_rer*US_pex*RWUS_im
 )
 +US_size/EAC_size*USEAC_im/EAC_ex*EACEAF_rer*EAF_pex*USEAF_im/(EACUS_rer*US_py*US_y
@@ -7731,11 +9155,90 @@ EACEAF_weightex = EAF_size/EAC_size*EAFEAC_im/EAC_ex*EACEAF_rer*EAF_py*EAF_y/(EA
 +EACEAD_rer*EAD_pex*USEAD_im
 +EACEAE_rer*EAE_pex*USEAE_im
 +EACEAF_rer*EAF_pex*USEAF_im
++EACEAG_rer*EAG_pex*USEAG_im
 +EACRW_rer*RW_pex*USRW_im
 )
 ;
 // Effective real exchange rate: double weighting (overall)
 EACEAF_weight = EAC_pim*EAC_im/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAF_weightim+EAC_pex*EAC_ex/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAF_weightex;
+// Effective real exchange rate: double weighting (imports)
+EACEAG_weightim = EACEAG_rer*EAG_pex*EACEAG_im/(EAC_pim*EAC_im);
+// Effective real exchange rate: double weighting (exports)
+EACEAG_weightex = EAG_size/EAC_size*EAGEAC_im/EAC_ex*EACEAG_rer*EAG_py*EAG_y/(EACEAG_rer*EAG_py*EAG_y
++EACEAA_rer*EAA_pex*EAGEAA_im
++EACEAB_rer*EAB_pex*EAGEAB_im
++EACEAD_rer*EAD_pex*EAGEAD_im
++EACEAE_rer*EAE_pex*EAGEAE_im
++EACEAF_rer*EAF_pex*EAGEAF_im
++EACRW_rer*RW_pex*EAGRW_im
++EACUS_rer*US_pex*EAGUS_im
+)+
++EAA_size/EAC_size*EAAEAC_im/EAC_ex*EACEAG_rer*EAG_pex*EAAEAG_im/(EACEAA_rer*EAA_py*EAA_y
++EACEAB_rer*EAB_pex*EAAEAB_im
++EACEAD_rer*EAD_pex*EAAEAD_im
++EACEAE_rer*EAE_pex*EAAEAE_im
++EACEAF_rer*EAF_pex*EAAEAF_im
++EACEAG_rer*EAG_pex*EAAEAG_im
++EACRW_rer*RW_pex*EAARW_im
++EACUS_rer*US_pex*EAAUS_im
+)
++EAB_size/EAC_size*EABEAC_im/EAC_ex*EACEAG_rer*EAG_pex*EABEAG_im/(EACEAB_rer*EAB_py*EAB_y
++EACEAA_rer*EAA_pex*EABEAA_im
++EACEAD_rer*EAD_pex*EABEAD_im
++EACEAE_rer*EAE_pex*EABEAE_im
++EACEAF_rer*EAF_pex*EABEAF_im
++EACEAG_rer*EAG_pex*EABEAG_im
++EACRW_rer*RW_pex*EABRW_im
++EACUS_rer*US_pex*EABUS_im
+)
++EAD_size/EAC_size*EADEAC_im/EAC_ex*EACEAG_rer*EAG_pex*EADEAG_im/(EACEAD_rer*EAD_py*EAD_y
++EACEAA_rer*EAA_pex*EADEAA_im
++EACEAB_rer*EAB_pex*EADEAB_im
++EACEAE_rer*EAE_pex*EADEAE_im
++EACEAF_rer*EAF_pex*EADEAF_im
++EACEAG_rer*EAG_pex*EADEAG_im
++EACRW_rer*RW_pex*EADRW_im
++EACUS_rer*US_pex*EADUS_im
+)
++EAE_size/EAC_size*EAEEAC_im/EAC_ex*EACEAG_rer*EAG_pex*EAEEAG_im/(EACEAE_rer*EAE_py*EAE_y
++EACEAA_rer*EAA_pex*EAEEAA_im
++EACEAB_rer*EAB_pex*EAEEAB_im
++EACEAD_rer*EAD_pex*EAEEAD_im
++EACEAF_rer*EAF_pex*EAEEAF_im
++EACEAG_rer*EAG_pex*EAEEAG_im
++EACRW_rer*RW_pex*EAERW_im
++EACUS_rer*US_pex*EAEUS_im
+)
++EAF_size/EAC_size*EAFEAC_im/EAC_ex*EACEAG_rer*EAG_pex*EAFEAG_im/(EACEAF_rer*EAF_py*EAF_y
++EACEAA_rer*EAA_pex*EAFEAA_im
++EACEAB_rer*EAB_pex*EAFEAB_im
++EACEAD_rer*EAD_pex*EAFEAD_im
++EACEAE_rer*EAE_pex*EAFEAE_im
++EACEAG_rer*EAG_pex*EAFEAG_im
++EACRW_rer*RW_pex*EAFRW_im
++EACUS_rer*US_pex*EAFUS_im
+)
++RW_size/EAC_size*RWEAC_im/EAC_ex*EACEAG_rer*EAG_pex*RWEAG_im/(EACRW_rer*RW_py*RW_y
++EACEAA_rer*EAA_pex*RWEAA_im
++EACEAB_rer*EAB_pex*RWEAB_im
++EACEAD_rer*EAD_pex*RWEAD_im
++EACEAE_rer*EAE_pex*RWEAE_im
++EACEAF_rer*EAF_pex*RWEAF_im
++EACEAG_rer*EAG_pex*RWEAG_im
++EACUS_rer*US_pex*RWUS_im
+)
++US_size/EAC_size*USEAC_im/EAC_ex*EACEAG_rer*EAG_pex*USEAG_im/(EACUS_rer*US_py*US_y
++EACEAA_rer*EAA_pex*USEAA_im
++EACEAB_rer*EAB_pex*USEAB_im
++EACEAD_rer*EAD_pex*USEAD_im
++EACEAE_rer*EAE_pex*USEAE_im
++EACEAF_rer*EAF_pex*USEAF_im
++EACEAG_rer*EAG_pex*USEAG_im
++EACRW_rer*RW_pex*USRW_im
+)
+;
+// Effective real exchange rate: double weighting (overall)
+EACEAG_weight = EAC_pim*EAC_im/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAG_weightim+EAC_pex*EAC_ex/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAG_weightex;
 // Effective real exchange rate: double weighting (imports)
 EACRW_weightim = EACRW_rer*RW_pex*EACRW_im/(EAC_pim*EAC_im);
 // Effective real exchange rate: double weighting (exports)
@@ -7745,6 +9248,7 @@ EACRW_weightex = RW_size/EAC_size*RWEAC_im/EAC_ex*EACRW_rer*RW_py*RW_y/(EACRW_re
 +EACEAD_rer*EAD_pex*RWEAD_im
 +EACEAE_rer*EAE_pex*RWEAE_im
 +EACEAF_rer*EAF_pex*RWEAF_im
++EACEAG_rer*EAG_pex*RWEAG_im
 +EACUS_rer*US_pex*RWUS_im
 )+
 +EAA_size/EAC_size*EAAEAC_im/EAC_ex*EACRW_rer*RW_pex*EAARW_im/(EACEAA_rer*EAA_py*EAA_y
@@ -7752,6 +9256,7 @@ EACRW_weightex = RW_size/EAC_size*RWEAC_im/EAC_ex*EACRW_rer*RW_py*RW_y/(EACRW_re
 +EACEAD_rer*EAD_pex*EAAEAD_im
 +EACEAE_rer*EAE_pex*EAAEAE_im
 +EACEAF_rer*EAF_pex*EAAEAF_im
++EACEAG_rer*EAG_pex*EAAEAG_im
 +EACRW_rer*RW_pex*EAARW_im
 +EACUS_rer*US_pex*EAAUS_im
 )
@@ -7760,6 +9265,7 @@ EACRW_weightex = RW_size/EAC_size*RWEAC_im/EAC_ex*EACRW_rer*RW_py*RW_y/(EACRW_re
 +EACEAD_rer*EAD_pex*EABEAD_im
 +EACEAE_rer*EAE_pex*EABEAE_im
 +EACEAF_rer*EAF_pex*EABEAF_im
++EACEAG_rer*EAG_pex*EABEAG_im
 +EACRW_rer*RW_pex*EABRW_im
 +EACUS_rer*US_pex*EABUS_im
 )
@@ -7768,6 +9274,7 @@ EACRW_weightex = RW_size/EAC_size*RWEAC_im/EAC_ex*EACRW_rer*RW_py*RW_y/(EACRW_re
 +EACEAB_rer*EAB_pex*EADEAB_im
 +EACEAE_rer*EAE_pex*EADEAE_im
 +EACEAF_rer*EAF_pex*EADEAF_im
++EACEAG_rer*EAG_pex*EADEAG_im
 +EACRW_rer*RW_pex*EADRW_im
 +EACUS_rer*US_pex*EADUS_im
 )
@@ -7776,6 +9283,7 @@ EACRW_weightex = RW_size/EAC_size*RWEAC_im/EAC_ex*EACRW_rer*RW_py*RW_y/(EACRW_re
 +EACEAB_rer*EAB_pex*EAEEAB_im
 +EACEAD_rer*EAD_pex*EAEEAD_im
 +EACEAF_rer*EAF_pex*EAEEAF_im
++EACEAG_rer*EAG_pex*EAEEAG_im
 +EACRW_rer*RW_pex*EAERW_im
 +EACUS_rer*US_pex*EAEUS_im
 )
@@ -7784,8 +9292,18 @@ EACRW_weightex = RW_size/EAC_size*RWEAC_im/EAC_ex*EACRW_rer*RW_py*RW_y/(EACRW_re
 +EACEAB_rer*EAB_pex*EAFEAB_im
 +EACEAD_rer*EAD_pex*EAFEAD_im
 +EACEAE_rer*EAE_pex*EAFEAE_im
++EACEAG_rer*EAG_pex*EAFEAG_im
 +EACRW_rer*RW_pex*EAFRW_im
 +EACUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAC_size*EAGEAC_im/EAC_ex*EACRW_rer*RW_pex*EAGRW_im/(EACEAG_rer*EAG_py*EAG_y
++EACEAA_rer*EAA_pex*EAGEAA_im
++EACEAB_rer*EAB_pex*EAGEAB_im
++EACEAD_rer*EAD_pex*EAGEAD_im
++EACEAE_rer*EAE_pex*EAGEAE_im
++EACEAF_rer*EAF_pex*EAGEAF_im
++EACRW_rer*RW_pex*EAGRW_im
++EACUS_rer*US_pex*EAGUS_im
 )
 +US_size/EAC_size*USEAC_im/EAC_ex*EACRW_rer*RW_pex*USRW_im/(EACUS_rer*US_py*US_y
 +EACEAA_rer*EAA_pex*USEAA_im
@@ -7793,6 +9311,7 @@ EACRW_weightex = RW_size/EAC_size*RWEAC_im/EAC_ex*EACRW_rer*RW_py*RW_y/(EACRW_re
 +EACEAD_rer*EAD_pex*USEAD_im
 +EACEAE_rer*EAE_pex*USEAE_im
 +EACEAF_rer*EAF_pex*USEAF_im
++EACEAG_rer*EAG_pex*USEAG_im
 +EACRW_rer*RW_pex*USRW_im
 )
 ;
@@ -7807,6 +9326,7 @@ EACUS_weightex = US_size/EAC_size*USEAC_im/EAC_ex*EACUS_rer*US_py*US_y/(EACUS_re
 +EACEAD_rer*EAD_pex*USEAD_im
 +EACEAE_rer*EAE_pex*USEAE_im
 +EACEAF_rer*EAF_pex*USEAF_im
++EACEAG_rer*EAG_pex*USEAG_im
 +EACRW_rer*RW_pex*USRW_im
 )+
 +EAA_size/EAC_size*EAAEAC_im/EAC_ex*EACUS_rer*US_pex*EAAUS_im/(EACEAA_rer*EAA_py*EAA_y
@@ -7814,6 +9334,7 @@ EACUS_weightex = US_size/EAC_size*USEAC_im/EAC_ex*EACUS_rer*US_py*US_y/(EACUS_re
 +EACEAD_rer*EAD_pex*EAAEAD_im
 +EACEAE_rer*EAE_pex*EAAEAE_im
 +EACEAF_rer*EAF_pex*EAAEAF_im
++EACEAG_rer*EAG_pex*EAAEAG_im
 +EACRW_rer*RW_pex*EAARW_im
 +EACUS_rer*US_pex*EAAUS_im
 )
@@ -7822,6 +9343,7 @@ EACUS_weightex = US_size/EAC_size*USEAC_im/EAC_ex*EACUS_rer*US_py*US_y/(EACUS_re
 +EACEAD_rer*EAD_pex*EABEAD_im
 +EACEAE_rer*EAE_pex*EABEAE_im
 +EACEAF_rer*EAF_pex*EABEAF_im
++EACEAG_rer*EAG_pex*EABEAG_im
 +EACRW_rer*RW_pex*EABRW_im
 +EACUS_rer*US_pex*EABUS_im
 )
@@ -7830,6 +9352,7 @@ EACUS_weightex = US_size/EAC_size*USEAC_im/EAC_ex*EACUS_rer*US_py*US_y/(EACUS_re
 +EACEAB_rer*EAB_pex*EADEAB_im
 +EACEAE_rer*EAE_pex*EADEAE_im
 +EACEAF_rer*EAF_pex*EADEAF_im
++EACEAG_rer*EAG_pex*EADEAG_im
 +EACRW_rer*RW_pex*EADRW_im
 +EACUS_rer*US_pex*EADUS_im
 )
@@ -7838,6 +9361,7 @@ EACUS_weightex = US_size/EAC_size*USEAC_im/EAC_ex*EACUS_rer*US_py*US_y/(EACUS_re
 +EACEAB_rer*EAB_pex*EAEEAB_im
 +EACEAD_rer*EAD_pex*EAEEAD_im
 +EACEAF_rer*EAF_pex*EAEEAF_im
++EACEAG_rer*EAG_pex*EAEEAG_im
 +EACRW_rer*RW_pex*EAERW_im
 +EACUS_rer*US_pex*EAEUS_im
 )
@@ -7846,8 +9370,18 @@ EACUS_weightex = US_size/EAC_size*USEAC_im/EAC_ex*EACUS_rer*US_py*US_y/(EACUS_re
 +EACEAB_rer*EAB_pex*EAFEAB_im
 +EACEAD_rer*EAD_pex*EAFEAD_im
 +EACEAE_rer*EAE_pex*EAFEAE_im
++EACEAG_rer*EAG_pex*EAFEAG_im
 +EACRW_rer*RW_pex*EAFRW_im
 +EACUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAC_size*EAGEAC_im/EAC_ex*EACUS_rer*US_pex*EAGUS_im/(EACEAG_rer*EAG_py*EAG_y
++EACEAA_rer*EAA_pex*EAGEAA_im
++EACEAB_rer*EAB_pex*EAGEAB_im
++EACEAD_rer*EAD_pex*EAGEAD_im
++EACEAE_rer*EAE_pex*EAGEAE_im
++EACEAF_rer*EAF_pex*EAGEAF_im
++EACRW_rer*RW_pex*EAGRW_im
++EACUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAC_size*RWEAC_im/EAC_ex*EACUS_rer*US_pex*RWUS_im/(EACRW_rer*RW_py*RW_y
 +EACEAA_rer*EAA_pex*RWEAA_im
@@ -7855,6 +9389,7 @@ EACUS_weightex = US_size/EAC_size*USEAC_im/EAC_ex*EACUS_rer*US_py*US_y/(EACUS_re
 +EACEAD_rer*EAD_pex*RWEAD_im
 +EACEAE_rer*EAE_pex*RWEAE_im
 +EACEAF_rer*EAF_pex*RWEAF_im
++EACEAG_rer*EAG_pex*RWEAG_im
 +EACUS_rer*US_pex*RWUS_im
 )
 ;
@@ -7867,6 +9402,7 @@ EAC_reer = 1
 *EACEAD_rer^EACEAD_weight
 *EACEAE_rer^EACEAE_weight
 *EACEAF_rer^EACEAF_weight
+*EACEAG_rer^EACEAG_weight
 *EACRW_rer^EACRW_weight
 *EACUS_rer^EACUS_weight
 ;
@@ -7877,6 +9413,7 @@ EAC_etot = 1
 *EACEAD_tot^EACEAD_weight
 *EACEAE_tot^EACEAE_weight
 *EACEAF_tot^EACEAF_weight
+*EACEAG_tot^EACEAG_weight
 *EACRW_tot^EACRW_weight
 *EACUS_tot^EACUS_weight
 ;
@@ -7889,6 +9426,7 @@ EAC_imc^((EAC_mumc-1)/EAC_mumc) =
 +EACEAD_numc ^(1/EAC_mumc)*EACEAD_imc^(1-1/EAC_mumc)
 +EACEAE_numc ^(1/EAC_mumc)*EACEAE_imc^(1-1/EAC_mumc)
 +EACEAF_numc ^(1/EAC_mumc)*EACEAF_imc^(1-1/EAC_mumc)
++EACEAG_numc ^(1/EAC_mumc)*EACEAG_imc^(1-1/EAC_mumc)
 +EACRW_numc ^(1/EAC_mumc)*EACRW_imc^(1-1/EAC_mumc)
 +EACUS_numc ^(1/EAC_mumc)*EACUS_imc^(1-1/EAC_mumc)
 +(1
@@ -7896,6 +9434,7 @@ EAC_imc^((EAC_mumc-1)/EAC_mumc) =
 -EACEAD_numc
 -EACEAE_numc
 -EACEAF_numc
+-EACEAG_numc
 -EACRW_numc
 -EACUS_numc
 )^(1/EAC_mumc)*EACEAA_imc^(1-1/EAC_mumc);
@@ -7906,6 +9445,8 @@ EACEAE_imc = EACEAE_numc*((EAE_pex*EACEAE_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
 // Demand for bilateral consumption import goods
 EACEAF_imc = EACEAF_numc*((EAF_pex*EACEAF_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
 // Demand for bilateral consumption import goods
+EACEAG_imc = EACEAG_numc*((EAG_pex*EACEAG_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
+// Demand for bilateral consumption import goods
 EACRW_imc = EACRW_numc*((RW_pex*EACRW_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
 // Demand for bilateral consumption import goods
 EACUS_imc = EACUS_numc*((US_pex*EACUS_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
@@ -7914,6 +9455,7 @@ EACEAA_imc = (1
 -EACEAD_numc
 -EACEAE_numc
 -EACEAF_numc
+-EACEAG_numc
 -EACRW_numc
 -EACUS_numc
 )*((EAA_pex*EACEAA_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
@@ -7923,6 +9465,7 @@ EAC_pimc^(1-EAC_mumc) =
 +EACEAD_numc * (EAD_pex*EACEAD_rer)^(1-EAC_mumc)
 +EACEAE_numc * (EAE_pex*EACEAE_rer)^(1-EAC_mumc)
 +EACEAF_numc * (EAF_pex*EACEAF_rer)^(1-EAC_mumc)
++EACEAG_numc * (EAG_pex*EACEAG_rer)^(1-EAC_mumc)
 +EACRW_numc * (RW_pex*EACRW_rer)^(1-EAC_mumc)
 +EACUS_numc * (US_pex*EACUS_rer)^(1-EAC_mumc)
 +(1
@@ -7930,6 +9473,7 @@ EAC_pimc^(1-EAC_mumc) =
 -EACEAD_numc
 -EACEAE_numc
 -EACEAF_numc
+-EACEAG_numc
 -EACRW_numc
 -EACUS_numc
 )*(EAA_pex*EACEAA_rer)^(1-EAC_mumc);
@@ -7941,6 +9485,7 @@ EAC_imi^((EAC_mumi-1)/EAC_mumi) =
 +EACEAD_numi ^(1/EAC_mumi)*EACEAD_imi^(1-1/EAC_mumi)
 +EACEAE_numi ^(1/EAC_mumi)*EACEAE_imi^(1-1/EAC_mumi)
 +EACEAF_numi ^(1/EAC_mumi)*EACEAF_imi^(1-1/EAC_mumi)
++EACEAG_numi ^(1/EAC_mumi)*EACEAG_imi^(1-1/EAC_mumi)
 +EACRW_numi ^(1/EAC_mumi)*EACRW_imi^(1-1/EAC_mumi)
 +EACUS_numi ^(1/EAC_mumi)*EACUS_imi^(1-1/EAC_mumi)
 +(1
@@ -7948,6 +9493,7 @@ EAC_imi^((EAC_mumi-1)/EAC_mumi) =
 -EACEAD_numi
 -EACEAE_numi
 -EACEAF_numi
+-EACEAG_numi
 -EACRW_numi
 -EACUS_numi
 )^(1/EAC_mumi)*EACEAA_imi^(1-1/EAC_mumi);
@@ -7958,6 +9504,8 @@ EACEAE_imi = EACEAE_numi*((EAE_pex*EACEAE_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
 // Demand for bilateral consumption import goods
 EACEAF_imi = EACEAF_numi*((EAF_pex*EACEAF_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
 // Demand for bilateral consumption import goods
+EACEAG_imi = EACEAG_numi*((EAG_pex*EACEAG_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
+// Demand for bilateral consumption import goods
 EACRW_imi = EACRW_numi*((RW_pex*EACRW_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
 // Demand for bilateral consumption import goods
 EACUS_imi = EACUS_numi*((US_pex*EACUS_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
@@ -7966,6 +9514,7 @@ EACEAA_imi = (1
 -EACEAD_numi
 -EACEAE_numi
 -EACEAF_numi
+-EACEAG_numi
 -EACRW_numi
 -EACUS_numi
 )*((EAA_pex*EACEAA_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
@@ -7975,6 +9524,7 @@ EAC_pimi^(1-EAC_mumi) =
 +EACEAD_numi * (EAD_pex*EACEAD_rer)^(1-EAC_mumi)
 +EACEAE_numi * (EAE_pex*EACEAE_rer)^(1-EAC_mumi)
 +EACEAF_numi * (EAF_pex*EACEAF_rer)^(1-EAC_mumi)
++EACEAG_numi * (EAG_pex*EACEAG_rer)^(1-EAC_mumi)
 +EACRW_numi * (RW_pex*EACRW_rer)^(1-EAC_mumi)
 +EACUS_numi * (US_pex*EACUS_rer)^(1-EAC_mumi)
 +(1
@@ -7982,6 +9532,7 @@ EAC_pimi^(1-EAC_mumi) =
 -EACEAD_numi
 -EACEAE_numi
 -EACEAF_numi
+-EACEAG_numi
 -EACRW_numi
 -EACUS_numi
 )*(EAA_pex*EACEAA_rer)^(1-EAC_mumi);
@@ -7993,6 +9544,7 @@ EAC_imcg^((EAC_mumcg-1)/EAC_mumcg) =
 +EACEAD_numcg ^(1/EAC_mumcg)*EACEAD_imcg^(1-1/EAC_mumcg)
 +EACEAE_numcg ^(1/EAC_mumcg)*EACEAE_imcg^(1-1/EAC_mumcg)
 +EACEAF_numcg ^(1/EAC_mumcg)*EACEAF_imcg^(1-1/EAC_mumcg)
++EACEAG_numcg ^(1/EAC_mumcg)*EACEAG_imcg^(1-1/EAC_mumcg)
 +EACRW_numcg ^(1/EAC_mumcg)*EACRW_imcg^(1-1/EAC_mumcg)
 +EACUS_numcg ^(1/EAC_mumcg)*EACUS_imcg^(1-1/EAC_mumcg)
 +(1
@@ -8000,6 +9552,7 @@ EAC_imcg^((EAC_mumcg-1)/EAC_mumcg) =
 -EACEAD_numcg
 -EACEAE_numcg
 -EACEAF_numcg
+-EACEAG_numcg
 -EACRW_numcg
 -EACUS_numcg
 )^(1/EAC_mumcg)*EACEAA_imcg^(1-1/EAC_mumcg);
@@ -8010,6 +9563,8 @@ EACEAE_imcg = EACEAE_numcg*((EAE_pex*EACEAE_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imc
 // Demand for bilateral consumption import goods
 EACEAF_imcg = EACEAF_numcg*((EAF_pex*EACEAF_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
 // Demand for bilateral consumption import goods
+EACEAG_imcg = EACEAG_numcg*((EAG_pex*EACEAG_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
+// Demand for bilateral consumption import goods
 EACRW_imcg = EACRW_numcg*((RW_pex*EACRW_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
 // Demand for bilateral consumption import goods
 EACUS_imcg = EACUS_numcg*((US_pex*EACUS_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
@@ -8018,6 +9573,7 @@ EACEAA_imcg = (1
 -EACEAD_numcg
 -EACEAE_numcg
 -EACEAF_numcg
+-EACEAG_numcg
 -EACRW_numcg
 -EACUS_numcg
 )*((EAA_pex*EACEAA_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
@@ -8027,6 +9583,7 @@ EAC_pimcg^(1-EAC_mumcg) =
 +EACEAD_numcg * (EAD_pex*EACEAD_rer)^(1-EAC_mumcg)
 +EACEAE_numcg * (EAE_pex*EACEAE_rer)^(1-EAC_mumcg)
 +EACEAF_numcg * (EAF_pex*EACEAF_rer)^(1-EAC_mumcg)
++EACEAG_numcg * (EAG_pex*EACEAG_rer)^(1-EAC_mumcg)
 +EACRW_numcg * (RW_pex*EACRW_rer)^(1-EAC_mumcg)
 +EACUS_numcg * (US_pex*EACUS_rer)^(1-EAC_mumcg)
 +(1
@@ -8034,6 +9591,7 @@ EAC_pimcg^(1-EAC_mumcg) =
 -EACEAD_numcg
 -EACEAE_numcg
 -EACEAF_numcg
+-EACEAG_numcg
 -EACRW_numcg
 -EACUS_numcg
 )*(EAA_pex*EACEAA_rer)^(1-EAC_mumcg);
@@ -8045,6 +9603,7 @@ EAC_imig^((EAC_mumig-1)/EAC_mumig) =
 +EACEAD_numig ^(1/EAC_mumig)*EACEAD_imig^(1-1/EAC_mumig)
 +EACEAE_numig ^(1/EAC_mumig)*EACEAE_imig^(1-1/EAC_mumig)
 +EACEAF_numig ^(1/EAC_mumig)*EACEAF_imig^(1-1/EAC_mumig)
++EACEAG_numig ^(1/EAC_mumig)*EACEAG_imig^(1-1/EAC_mumig)
 +EACRW_numig ^(1/EAC_mumig)*EACRW_imig^(1-1/EAC_mumig)
 +EACUS_numig ^(1/EAC_mumig)*EACUS_imig^(1-1/EAC_mumig)
 +(1
@@ -8052,6 +9611,7 @@ EAC_imig^((EAC_mumig-1)/EAC_mumig) =
 -EACEAD_numig
 -EACEAE_numig
 -EACEAF_numig
+-EACEAG_numig
 -EACRW_numig
 -EACUS_numig
 )^(1/EAC_mumig)*EACEAA_imig^(1-1/EAC_mumig);
@@ -8062,6 +9622,8 @@ EACEAE_imig = EACEAE_numig*((EAE_pex*EACEAE_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imi
 // Demand for bilateral consumption import goods
 EACEAF_imig = EACEAF_numig*((EAF_pex*EACEAF_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
 // Demand for bilateral consumption import goods
+EACEAG_imig = EACEAG_numig*((EAG_pex*EACEAG_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
+// Demand for bilateral consumption import goods
 EACRW_imig = EACRW_numig*((RW_pex*EACRW_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
 // Demand for bilateral consumption import goods
 EACUS_imig = EACUS_numig*((US_pex*EACUS_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
@@ -8070,6 +9632,7 @@ EACEAA_imig = (1
 -EACEAD_numig
 -EACEAE_numig
 -EACEAF_numig
+-EACEAG_numig
 -EACRW_numig
 -EACUS_numig
 )*((EAA_pex*EACEAA_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
@@ -8079,6 +9642,7 @@ EAC_pimig^(1-EAC_mumig) =
 +EACEAD_numig * (EAD_pex*EACEAD_rer)^(1-EAC_mumig)
 +EACEAE_numig * (EAE_pex*EACEAE_rer)^(1-EAC_mumig)
 +EACEAF_numig * (EAF_pex*EACEAF_rer)^(1-EAC_mumig)
++EACEAG_numig * (EAG_pex*EACEAG_rer)^(1-EAC_mumig)
 +EACRW_numig * (RW_pex*EACRW_rer)^(1-EAC_mumig)
 +EACUS_numig * (US_pex*EACUS_rer)^(1-EAC_mumig)
 +(1
@@ -8086,6 +9650,7 @@ EAC_pimig^(1-EAC_mumig) =
 -EACEAD_numig
 -EACEAE_numig
 -EACEAF_numig
+-EACEAG_numig
 -EACRW_numig
 -EACUS_numig
 )*(EAA_pex*EACEAA_rer)^(1-EAC_mumig);
@@ -8128,6 +9693,12 @@ EACEAF_im =
 +EACEAF_imcg
 +EACEAF_imig
 ;
+EACEAG_im = 
++EACEAG_imc
++EACEAG_imi
++EACEAG_imcg
++EACEAG_imig
+;
 EACRW_im = 
 +EACRW_imc
 +EACRW_imi
@@ -8163,6 +9734,8 @@ EACEAE_gammaimc = 0;
 EACEAE_gammaimcdag = 1;
 EACEAF_gammaimc = 0;
 EACEAF_gammaimcdag = 1;
+EACEAG_gammaimc = 0;
+EACEAG_gammaimcdag = 1;
 EACRW_gammaimc = 0;
 EACRW_gammaimcdag = 1;
 EACUS_gammaimc = 0;
@@ -8192,6 +9765,8 @@ EACEAE_gammaimi = 0;
 EACEAE_gammaimidag = 1;
 EACEAF_gammaimi = 0;
 EACEAF_gammaimidag = 1;
+EACEAG_gammaimi = 0;
+EACEAG_gammaimidag = 1;
 EACRW_gammaimi = 0;
 EACRW_gammaimidag = 1;
 EACUS_gammaimi = 0;
@@ -8218,6 +9793,8 @@ EACEAE_gammaimcg = 0;
 EACEAE_gammaimcgdag = 1;
 EACEAF_gammaimcg = 0;
 EACEAF_gammaimcgdag = 1;
+EACEAG_gammaimcg = 0;
+EACEAG_gammaimcgdag = 1;
 EACRW_gammaimcg = 0;
 EACRW_gammaimcgdag = 1;
 EACUS_gammaimcg = 0;
@@ -8244,6 +9821,8 @@ EACEAE_gammaimig = 0;
 EACEAE_gammaimigdag = 1;
 EACEAF_gammaimig = 0;
 EACEAF_gammaimigdag = 1;
+EACEAG_gammaimig = 0;
+EACEAG_gammaimigdag = 1;
 EACRW_gammaimig = 0;
 EACRW_gammaimigdag = 1;
 EACUS_gammaimig = 0;
@@ -8260,6 +9839,8 @@ EAC_tb =
 -EAE_pex*EACEAE_rer*EACEAE_im
 +EAC_pex*EAF_size/EAC_size*EAFEAC_im
 -EAF_pex*EACEAF_rer*EACEAF_im
++EAC_pex*EAG_size/EAC_size*EAGEAC_im
+-EAG_pex*EACEAG_rer*EACEAG_im
 +EAC_pex*RW_size/EAC_size*RWEAC_im
 -RW_pex*EACRW_rer*EACRW_im
 +EAC_pex*US_size/EAC_size*USEAC_im
@@ -8272,6 +9853,7 @@ EAC_ex =
 +EAD_size/EAC_size*EADEAC_im
 +EAE_size/EAC_size*EAEEAC_im
 +EAF_size/EAC_size*EAFEAC_im
++EAG_size/EAC_size*EAGEAC_im
 +RW_size/EAC_size*RWEAC_im
 +US_size/EAC_size*USEAC_im
 ;
@@ -8317,7 +9899,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAC_r = EAF_r;
+	EAC_r = EAG_r;
 EAC_pic4 = EAC_pi4target;
 EAC_rr-1 = EAC_r/EAC_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -8430,6 +10012,11 @@ EAC_py*EAC_y =
 -(EAF_pex*EACEAF_rer)*EACEAF_imi
 -(EAF_pex*EACEAF_rer)*EACEAF_imcg
 -(EAF_pex*EACEAF_rer)*EACEAF_imig
++EAC_pex*EAG_size/EAC_size*EAGEAC_im
+-(EAG_pex*EACEAG_rer)*EACEAG_imc
+-(EAG_pex*EACEAG_rer)*EACEAG_imi
+-(EAG_pex*EACEAG_rer)*EACEAG_imcg
+-(EAG_pex*EACEAG_rer)*EACEAG_imig
 +EAC_pex*RW_size/EAC_size*RWEAC_im
 -(RW_pex*EACRW_rer)*EACRW_imc
 -(RW_pex*EACRW_rer)*EACRW_imi
@@ -8525,6 +10112,7 @@ EAC_yshare  = EAC_size*EAC_py*EAC_y/EAC_rer/(
 +EAD_size*EAD_py*EAD_y/EAD_rer
 +EAE_size*EAE_py*EAE_y/EAE_rer
 +EAF_size*EAF_py*EAF_y/EAF_rer
++EAG_size*EAG_py*EAG_y/EAG_rer
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
@@ -8577,6 +10165,15 @@ EACEAF_imigy = (EAF_pex*EACEAF_rer)*EACEAF_imig/(EAC_py*EAC_y);
 EACEAF_excy  = EAF_size/EAC_size*EAC_pex*EAFEAC_imc/(EAC_py*EAC_y);
 // Exports of investment goods to gdp
 EACEAF_exiy  = EAF_size/EAC_size*EAC_pex*EAFEAC_imi/(EAC_py*EAC_y);
+// Bilateral shares
+EACEAG_imcy = (EAG_pex*EACEAG_rer)*EACEAG_imc/(EAC_py*EAC_y);
+EACEAG_imiy = (EAG_pex*EACEAG_rer)*EACEAG_imi/(EAC_py*EAC_y);
+EACEAG_imcgy = (EAG_pex*EACEAG_rer)*EACEAG_imcg/(EAC_py*EAC_y);
+EACEAG_imigy = (EAG_pex*EACEAG_rer)*EACEAG_imig/(EAC_py*EAC_y);
+// Exports of consumption goods to gdp
+EACEAG_excy  = EAG_size/EAC_size*EAC_pex*EAGEAC_imc/(EAC_py*EAC_y);
+// Exports of investment goods to gdp
+EACEAG_exiy  = EAG_size/EAC_size*EAC_pex*EAGEAC_imi/(EAC_py*EAC_y);
 // Bilateral shares
 EACRW_imcy = (RW_pex*EACRW_rer)*EACRW_imc/(EAC_py*EAC_y);
 EACRW_imiy = (RW_pex*EACRW_rer)*EACRW_imi/(EAC_py*EAC_y);
@@ -8839,6 +10436,22 @@ EADEAF_rer = EAD_rer/EAF_rer;
 EADEAF_rerbar = EADEAF_rer;
 //Terms of Trade
 EADEAF_tot = EAF_pex*EADEAF_rer/EAD_pex;
+// Optimal price contract set in foreign markets (FOC), using EAD_pxtilde = EAG_pimtilde
+// EAGEAD_pimtilde/EAGEAD_pim = EAD_cpim*EAD_thetat/(EAD_thetat-1)*EADEAG_fx/EADEAG_gx;
+// Definition of fx
+// EADEAG_fx = EAG_size/EAD_size*EAGEAD_im*EAD_mct+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAGEAD_piim(+1)/(EAGEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^EAD_thetat*EADEAG_fx(+1);
+// Definition of gx   
+// EADEAG_gx = EADEAG_rer*EAGEAD_pim*EAG_size/EAD_size*EAGEAD_im+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAGEAD_piim(+1)/(EAGEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^(EAD_thetat-1)*EADEAG_gx(+1);
+// Aggregate intermediate-good price dynamics, using EAD_px = EAG_pim
+// EAGEAD_pim^(1-EAD_thetat) = (1-EAD_xix)*EAGEAD_pimtilde^(1-EAD_thetat)+EAD_xix*(EAGEAD_pim(-1)/EAG_pic)^(1-EAD_thetat)*(EAGEAD_piim(-1)^EAD_chix*EAG_pi4target^(1/4*(1-EAD_chih)))^(1-EAD_thetat);
+// Intermediate-good price inflation, using EAD_pix = EAG_piim
+// EAGEAD_piim = EAGEAD_pim/EAGEAD_pim(-1)*EAG_pic;
+// Bilateral real exchange rate
+EADEAG_rer = EAD_rer/EAG_rer;
+// Auxiliary equation for steady-state output
+EADEAG_rerbar = EADEAG_rer;
+//Terms of Trade
+EADEAG_tot = EAG_pex*EADEAG_rer/EAD_pex;
 // Optimal price contract set in foreign markets (FOC), using EAD_pxtilde = RW_pimtilde
 // RWEAD_pimtilde/RWEAD_pim = EAD_cpim*EAD_thetat/(EAD_thetat-1)*EADRW_fx/EADRW_gx;
 // Definition of fx
@@ -8893,6 +10506,7 @@ EADEAA_weightex = EAA_size/EAD_size*EAAEAD_im/EAD_ex*EADEAA_rer*EAA_py*EAA_y/(EA
 +EADEAC_rer*EAC_pex*EAAEAC_im
 +EADEAE_rer*EAE_pex*EAAEAE_im
 +EADEAF_rer*EAF_pex*EAAEAF_im
++EADEAG_rer*EAG_pex*EAAEAG_im
 +EADRW_rer*RW_pex*EAARW_im
 +EADUS_rer*US_pex*EAAUS_im
 )+
@@ -8901,6 +10515,7 @@ EADEAA_weightex = EAA_size/EAD_size*EAAEAD_im/EAD_ex*EADEAA_rer*EAA_py*EAA_y/(EA
 +EADEAC_rer*EAC_pex*EABEAC_im
 +EADEAE_rer*EAE_pex*EABEAE_im
 +EADEAF_rer*EAF_pex*EABEAF_im
++EADEAG_rer*EAG_pex*EABEAG_im
 +EADRW_rer*RW_pex*EABRW_im
 +EADUS_rer*US_pex*EABUS_im
 )
@@ -8909,6 +10524,7 @@ EADEAA_weightex = EAA_size/EAD_size*EAAEAD_im/EAD_ex*EADEAA_rer*EAA_py*EAA_y/(EA
 +EADEAB_rer*EAB_pex*EACEAB_im
 +EADEAE_rer*EAE_pex*EACEAE_im
 +EADEAF_rer*EAF_pex*EACEAF_im
++EADEAG_rer*EAG_pex*EACEAG_im
 +EADRW_rer*RW_pex*EACRW_im
 +EADUS_rer*US_pex*EACUS_im
 )
@@ -8917,6 +10533,7 @@ EADEAA_weightex = EAA_size/EAD_size*EAAEAD_im/EAD_ex*EADEAA_rer*EAA_py*EAA_y/(EA
 +EADEAB_rer*EAB_pex*EAEEAB_im
 +EADEAC_rer*EAC_pex*EAEEAC_im
 +EADEAF_rer*EAF_pex*EAEEAF_im
++EADEAG_rer*EAG_pex*EAEEAG_im
 +EADRW_rer*RW_pex*EAERW_im
 +EADUS_rer*US_pex*EAEUS_im
 )
@@ -8925,8 +10542,18 @@ EADEAA_weightex = EAA_size/EAD_size*EAAEAD_im/EAD_ex*EADEAA_rer*EAA_py*EAA_y/(EA
 +EADEAB_rer*EAB_pex*EAFEAB_im
 +EADEAC_rer*EAC_pex*EAFEAC_im
 +EADEAE_rer*EAE_pex*EAFEAE_im
++EADEAG_rer*EAG_pex*EAFEAG_im
 +EADRW_rer*RW_pex*EAFRW_im
 +EADUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAD_size*EAGEAD_im/EAD_ex*EADEAA_rer*EAA_pex*EAGEAA_im/(EADEAG_rer*EAG_py*EAG_y
++EADEAA_rer*EAA_pex*EAGEAA_im
++EADEAB_rer*EAB_pex*EAGEAB_im
++EADEAC_rer*EAC_pex*EAGEAC_im
++EADEAE_rer*EAE_pex*EAGEAE_im
++EADEAF_rer*EAF_pex*EAGEAF_im
++EADRW_rer*RW_pex*EAGRW_im
++EADUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAD_size*RWEAD_im/EAD_ex*EADEAA_rer*EAA_pex*RWEAA_im/(EADRW_rer*RW_py*RW_y
 +EADEAA_rer*EAA_pex*RWEAA_im
@@ -8934,6 +10561,7 @@ EADEAA_weightex = EAA_size/EAD_size*EAAEAD_im/EAD_ex*EADEAA_rer*EAA_py*EAA_y/(EA
 +EADEAC_rer*EAC_pex*RWEAC_im
 +EADEAE_rer*EAE_pex*RWEAE_im
 +EADEAF_rer*EAF_pex*RWEAF_im
++EADEAG_rer*EAG_pex*RWEAG_im
 +EADUS_rer*US_pex*RWUS_im
 )
 +US_size/EAD_size*USEAD_im/EAD_ex*EADEAA_rer*EAA_pex*USEAA_im/(EADUS_rer*US_py*US_y
@@ -8942,6 +10570,7 @@ EADEAA_weightex = EAA_size/EAD_size*EAAEAD_im/EAD_ex*EADEAA_rer*EAA_py*EAA_y/(EA
 +EADEAC_rer*EAC_pex*USEAC_im
 +EADEAE_rer*EAE_pex*USEAE_im
 +EADEAF_rer*EAF_pex*USEAF_im
++EADEAG_rer*EAG_pex*USEAG_im
 +EADRW_rer*RW_pex*USRW_im
 )
 ;
@@ -8955,6 +10584,7 @@ EADEAB_weightex = EAB_size/EAD_size*EABEAD_im/EAD_ex*EADEAB_rer*EAB_py*EAB_y/(EA
 +EADEAC_rer*EAC_pex*EABEAC_im
 +EADEAE_rer*EAE_pex*EABEAE_im
 +EADEAF_rer*EAF_pex*EABEAF_im
++EADEAG_rer*EAG_pex*EABEAG_im
 +EADRW_rer*RW_pex*EABRW_im
 +EADUS_rer*US_pex*EABUS_im
 )+
@@ -8963,6 +10593,7 @@ EADEAB_weightex = EAB_size/EAD_size*EABEAD_im/EAD_ex*EADEAB_rer*EAB_py*EAB_y/(EA
 +EADEAC_rer*EAC_pex*EAAEAC_im
 +EADEAE_rer*EAE_pex*EAAEAE_im
 +EADEAF_rer*EAF_pex*EAAEAF_im
++EADEAG_rer*EAG_pex*EAAEAG_im
 +EADRW_rer*RW_pex*EAARW_im
 +EADUS_rer*US_pex*EAAUS_im
 )
@@ -8971,6 +10602,7 @@ EADEAB_weightex = EAB_size/EAD_size*EABEAD_im/EAD_ex*EADEAB_rer*EAB_py*EAB_y/(EA
 +EADEAB_rer*EAB_pex*EACEAB_im
 +EADEAE_rer*EAE_pex*EACEAE_im
 +EADEAF_rer*EAF_pex*EACEAF_im
++EADEAG_rer*EAG_pex*EACEAG_im
 +EADRW_rer*RW_pex*EACRW_im
 +EADUS_rer*US_pex*EACUS_im
 )
@@ -8979,6 +10611,7 @@ EADEAB_weightex = EAB_size/EAD_size*EABEAD_im/EAD_ex*EADEAB_rer*EAB_py*EAB_y/(EA
 +EADEAB_rer*EAB_pex*EAEEAB_im
 +EADEAC_rer*EAC_pex*EAEEAC_im
 +EADEAF_rer*EAF_pex*EAEEAF_im
++EADEAG_rer*EAG_pex*EAEEAG_im
 +EADRW_rer*RW_pex*EAERW_im
 +EADUS_rer*US_pex*EAEUS_im
 )
@@ -8987,8 +10620,18 @@ EADEAB_weightex = EAB_size/EAD_size*EABEAD_im/EAD_ex*EADEAB_rer*EAB_py*EAB_y/(EA
 +EADEAB_rer*EAB_pex*EAFEAB_im
 +EADEAC_rer*EAC_pex*EAFEAC_im
 +EADEAE_rer*EAE_pex*EAFEAE_im
++EADEAG_rer*EAG_pex*EAFEAG_im
 +EADRW_rer*RW_pex*EAFRW_im
 +EADUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAD_size*EAGEAD_im/EAD_ex*EADEAB_rer*EAB_pex*EAGEAB_im/(EADEAG_rer*EAG_py*EAG_y
++EADEAA_rer*EAA_pex*EAGEAA_im
++EADEAB_rer*EAB_pex*EAGEAB_im
++EADEAC_rer*EAC_pex*EAGEAC_im
++EADEAE_rer*EAE_pex*EAGEAE_im
++EADEAF_rer*EAF_pex*EAGEAF_im
++EADRW_rer*RW_pex*EAGRW_im
++EADUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAD_size*RWEAD_im/EAD_ex*EADEAB_rer*EAB_pex*RWEAB_im/(EADRW_rer*RW_py*RW_y
 +EADEAA_rer*EAA_pex*RWEAA_im
@@ -8996,6 +10639,7 @@ EADEAB_weightex = EAB_size/EAD_size*EABEAD_im/EAD_ex*EADEAB_rer*EAB_py*EAB_y/(EA
 +EADEAC_rer*EAC_pex*RWEAC_im
 +EADEAE_rer*EAE_pex*RWEAE_im
 +EADEAF_rer*EAF_pex*RWEAF_im
++EADEAG_rer*EAG_pex*RWEAG_im
 +EADUS_rer*US_pex*RWUS_im
 )
 +US_size/EAD_size*USEAD_im/EAD_ex*EADEAB_rer*EAB_pex*USEAB_im/(EADUS_rer*US_py*US_y
@@ -9004,6 +10648,7 @@ EADEAB_weightex = EAB_size/EAD_size*EABEAD_im/EAD_ex*EADEAB_rer*EAB_py*EAB_y/(EA
 +EADEAC_rer*EAC_pex*USEAC_im
 +EADEAE_rer*EAE_pex*USEAE_im
 +EADEAF_rer*EAF_pex*USEAF_im
++EADEAG_rer*EAG_pex*USEAG_im
 +EADRW_rer*RW_pex*USRW_im
 )
 ;
@@ -9017,6 +10662,7 @@ EADEAC_weightex = EAC_size/EAD_size*EACEAD_im/EAD_ex*EADEAC_rer*EAC_py*EAC_y/(EA
 +EADEAB_rer*EAB_pex*EACEAB_im
 +EADEAE_rer*EAE_pex*EACEAE_im
 +EADEAF_rer*EAF_pex*EACEAF_im
++EADEAG_rer*EAG_pex*EACEAG_im
 +EADRW_rer*RW_pex*EACRW_im
 +EADUS_rer*US_pex*EACUS_im
 )+
@@ -9025,6 +10671,7 @@ EADEAC_weightex = EAC_size/EAD_size*EACEAD_im/EAD_ex*EADEAC_rer*EAC_py*EAC_y/(EA
 +EADEAC_rer*EAC_pex*EAAEAC_im
 +EADEAE_rer*EAE_pex*EAAEAE_im
 +EADEAF_rer*EAF_pex*EAAEAF_im
++EADEAG_rer*EAG_pex*EAAEAG_im
 +EADRW_rer*RW_pex*EAARW_im
 +EADUS_rer*US_pex*EAAUS_im
 )
@@ -9033,6 +10680,7 @@ EADEAC_weightex = EAC_size/EAD_size*EACEAD_im/EAD_ex*EADEAC_rer*EAC_py*EAC_y/(EA
 +EADEAC_rer*EAC_pex*EABEAC_im
 +EADEAE_rer*EAE_pex*EABEAE_im
 +EADEAF_rer*EAF_pex*EABEAF_im
++EADEAG_rer*EAG_pex*EABEAG_im
 +EADRW_rer*RW_pex*EABRW_im
 +EADUS_rer*US_pex*EABUS_im
 )
@@ -9041,6 +10689,7 @@ EADEAC_weightex = EAC_size/EAD_size*EACEAD_im/EAD_ex*EADEAC_rer*EAC_py*EAC_y/(EA
 +EADEAB_rer*EAB_pex*EAEEAB_im
 +EADEAC_rer*EAC_pex*EAEEAC_im
 +EADEAF_rer*EAF_pex*EAEEAF_im
++EADEAG_rer*EAG_pex*EAEEAG_im
 +EADRW_rer*RW_pex*EAERW_im
 +EADUS_rer*US_pex*EAEUS_im
 )
@@ -9049,8 +10698,18 @@ EADEAC_weightex = EAC_size/EAD_size*EACEAD_im/EAD_ex*EADEAC_rer*EAC_py*EAC_y/(EA
 +EADEAB_rer*EAB_pex*EAFEAB_im
 +EADEAC_rer*EAC_pex*EAFEAC_im
 +EADEAE_rer*EAE_pex*EAFEAE_im
++EADEAG_rer*EAG_pex*EAFEAG_im
 +EADRW_rer*RW_pex*EAFRW_im
 +EADUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAD_size*EAGEAD_im/EAD_ex*EADEAC_rer*EAC_pex*EAGEAC_im/(EADEAG_rer*EAG_py*EAG_y
++EADEAA_rer*EAA_pex*EAGEAA_im
++EADEAB_rer*EAB_pex*EAGEAB_im
++EADEAC_rer*EAC_pex*EAGEAC_im
++EADEAE_rer*EAE_pex*EAGEAE_im
++EADEAF_rer*EAF_pex*EAGEAF_im
++EADRW_rer*RW_pex*EAGRW_im
++EADUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAD_size*RWEAD_im/EAD_ex*EADEAC_rer*EAC_pex*RWEAC_im/(EADRW_rer*RW_py*RW_y
 +EADEAA_rer*EAA_pex*RWEAA_im
@@ -9058,6 +10717,7 @@ EADEAC_weightex = EAC_size/EAD_size*EACEAD_im/EAD_ex*EADEAC_rer*EAC_py*EAC_y/(EA
 +EADEAC_rer*EAC_pex*RWEAC_im
 +EADEAE_rer*EAE_pex*RWEAE_im
 +EADEAF_rer*EAF_pex*RWEAF_im
++EADEAG_rer*EAG_pex*RWEAG_im
 +EADUS_rer*US_pex*RWUS_im
 )
 +US_size/EAD_size*USEAD_im/EAD_ex*EADEAC_rer*EAC_pex*USEAC_im/(EADUS_rer*US_py*US_y
@@ -9066,6 +10726,7 @@ EADEAC_weightex = EAC_size/EAD_size*EACEAD_im/EAD_ex*EADEAC_rer*EAC_py*EAC_y/(EA
 +EADEAC_rer*EAC_pex*USEAC_im
 +EADEAE_rer*EAE_pex*USEAE_im
 +EADEAF_rer*EAF_pex*USEAF_im
++EADEAG_rer*EAG_pex*USEAG_im
 +EADRW_rer*RW_pex*USRW_im
 )
 ;
@@ -9079,6 +10740,7 @@ EADEAE_weightex = EAE_size/EAD_size*EAEEAD_im/EAD_ex*EADEAE_rer*EAE_py*EAE_y/(EA
 +EADEAB_rer*EAB_pex*EAEEAB_im
 +EADEAC_rer*EAC_pex*EAEEAC_im
 +EADEAF_rer*EAF_pex*EAEEAF_im
++EADEAG_rer*EAG_pex*EAEEAG_im
 +EADRW_rer*RW_pex*EAERW_im
 +EADUS_rer*US_pex*EAEUS_im
 )+
@@ -9087,6 +10749,7 @@ EADEAE_weightex = EAE_size/EAD_size*EAEEAD_im/EAD_ex*EADEAE_rer*EAE_py*EAE_y/(EA
 +EADEAC_rer*EAC_pex*EAAEAC_im
 +EADEAE_rer*EAE_pex*EAAEAE_im
 +EADEAF_rer*EAF_pex*EAAEAF_im
++EADEAG_rer*EAG_pex*EAAEAG_im
 +EADRW_rer*RW_pex*EAARW_im
 +EADUS_rer*US_pex*EAAUS_im
 )
@@ -9095,6 +10758,7 @@ EADEAE_weightex = EAE_size/EAD_size*EAEEAD_im/EAD_ex*EADEAE_rer*EAE_py*EAE_y/(EA
 +EADEAC_rer*EAC_pex*EABEAC_im
 +EADEAE_rer*EAE_pex*EABEAE_im
 +EADEAF_rer*EAF_pex*EABEAF_im
++EADEAG_rer*EAG_pex*EABEAG_im
 +EADRW_rer*RW_pex*EABRW_im
 +EADUS_rer*US_pex*EABUS_im
 )
@@ -9103,6 +10767,7 @@ EADEAE_weightex = EAE_size/EAD_size*EAEEAD_im/EAD_ex*EADEAE_rer*EAE_py*EAE_y/(EA
 +EADEAB_rer*EAB_pex*EACEAB_im
 +EADEAE_rer*EAE_pex*EACEAE_im
 +EADEAF_rer*EAF_pex*EACEAF_im
++EADEAG_rer*EAG_pex*EACEAG_im
 +EADRW_rer*RW_pex*EACRW_im
 +EADUS_rer*US_pex*EACUS_im
 )
@@ -9111,8 +10776,18 @@ EADEAE_weightex = EAE_size/EAD_size*EAEEAD_im/EAD_ex*EADEAE_rer*EAE_py*EAE_y/(EA
 +EADEAB_rer*EAB_pex*EAFEAB_im
 +EADEAC_rer*EAC_pex*EAFEAC_im
 +EADEAE_rer*EAE_pex*EAFEAE_im
++EADEAG_rer*EAG_pex*EAFEAG_im
 +EADRW_rer*RW_pex*EAFRW_im
 +EADUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAD_size*EAGEAD_im/EAD_ex*EADEAE_rer*EAE_pex*EAGEAE_im/(EADEAG_rer*EAG_py*EAG_y
++EADEAA_rer*EAA_pex*EAGEAA_im
++EADEAB_rer*EAB_pex*EAGEAB_im
++EADEAC_rer*EAC_pex*EAGEAC_im
++EADEAE_rer*EAE_pex*EAGEAE_im
++EADEAF_rer*EAF_pex*EAGEAF_im
++EADRW_rer*RW_pex*EAGRW_im
++EADUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAD_size*RWEAD_im/EAD_ex*EADEAE_rer*EAE_pex*RWEAE_im/(EADRW_rer*RW_py*RW_y
 +EADEAA_rer*EAA_pex*RWEAA_im
@@ -9120,6 +10795,7 @@ EADEAE_weightex = EAE_size/EAD_size*EAEEAD_im/EAD_ex*EADEAE_rer*EAE_py*EAE_y/(EA
 +EADEAC_rer*EAC_pex*RWEAC_im
 +EADEAE_rer*EAE_pex*RWEAE_im
 +EADEAF_rer*EAF_pex*RWEAF_im
++EADEAG_rer*EAG_pex*RWEAG_im
 +EADUS_rer*US_pex*RWUS_im
 )
 +US_size/EAD_size*USEAD_im/EAD_ex*EADEAE_rer*EAE_pex*USEAE_im/(EADUS_rer*US_py*US_y
@@ -9128,6 +10804,7 @@ EADEAE_weightex = EAE_size/EAD_size*EAEEAD_im/EAD_ex*EADEAE_rer*EAE_py*EAE_y/(EA
 +EADEAC_rer*EAC_pex*USEAC_im
 +EADEAE_rer*EAE_pex*USEAE_im
 +EADEAF_rer*EAF_pex*USEAF_im
++EADEAG_rer*EAG_pex*USEAG_im
 +EADRW_rer*RW_pex*USRW_im
 )
 ;
@@ -9141,6 +10818,7 @@ EADEAF_weightex = EAF_size/EAD_size*EAFEAD_im/EAD_ex*EADEAF_rer*EAF_py*EAF_y/(EA
 +EADEAB_rer*EAB_pex*EAFEAB_im
 +EADEAC_rer*EAC_pex*EAFEAC_im
 +EADEAE_rer*EAE_pex*EAFEAE_im
++EADEAG_rer*EAG_pex*EAFEAG_im
 +EADRW_rer*RW_pex*EAFRW_im
 +EADUS_rer*US_pex*EAFUS_im
 )+
@@ -9149,6 +10827,7 @@ EADEAF_weightex = EAF_size/EAD_size*EAFEAD_im/EAD_ex*EADEAF_rer*EAF_py*EAF_y/(EA
 +EADEAC_rer*EAC_pex*EAAEAC_im
 +EADEAE_rer*EAE_pex*EAAEAE_im
 +EADEAF_rer*EAF_pex*EAAEAF_im
++EADEAG_rer*EAG_pex*EAAEAG_im
 +EADRW_rer*RW_pex*EAARW_im
 +EADUS_rer*US_pex*EAAUS_im
 )
@@ -9157,6 +10836,7 @@ EADEAF_weightex = EAF_size/EAD_size*EAFEAD_im/EAD_ex*EADEAF_rer*EAF_py*EAF_y/(EA
 +EADEAC_rer*EAC_pex*EABEAC_im
 +EADEAE_rer*EAE_pex*EABEAE_im
 +EADEAF_rer*EAF_pex*EABEAF_im
++EADEAG_rer*EAG_pex*EABEAG_im
 +EADRW_rer*RW_pex*EABRW_im
 +EADUS_rer*US_pex*EABUS_im
 )
@@ -9165,6 +10845,7 @@ EADEAF_weightex = EAF_size/EAD_size*EAFEAD_im/EAD_ex*EADEAF_rer*EAF_py*EAF_y/(EA
 +EADEAB_rer*EAB_pex*EACEAB_im
 +EADEAE_rer*EAE_pex*EACEAE_im
 +EADEAF_rer*EAF_pex*EACEAF_im
++EADEAG_rer*EAG_pex*EACEAG_im
 +EADRW_rer*RW_pex*EACRW_im
 +EADUS_rer*US_pex*EACUS_im
 )
@@ -9173,8 +10854,18 @@ EADEAF_weightex = EAF_size/EAD_size*EAFEAD_im/EAD_ex*EADEAF_rer*EAF_py*EAF_y/(EA
 +EADEAB_rer*EAB_pex*EAEEAB_im
 +EADEAC_rer*EAC_pex*EAEEAC_im
 +EADEAF_rer*EAF_pex*EAEEAF_im
++EADEAG_rer*EAG_pex*EAEEAG_im
 +EADRW_rer*RW_pex*EAERW_im
 +EADUS_rer*US_pex*EAEUS_im
+)
++EAG_size/EAD_size*EAGEAD_im/EAD_ex*EADEAF_rer*EAF_pex*EAGEAF_im/(EADEAG_rer*EAG_py*EAG_y
++EADEAA_rer*EAA_pex*EAGEAA_im
++EADEAB_rer*EAB_pex*EAGEAB_im
++EADEAC_rer*EAC_pex*EAGEAC_im
++EADEAE_rer*EAE_pex*EAGEAE_im
++EADEAF_rer*EAF_pex*EAGEAF_im
++EADRW_rer*RW_pex*EAGRW_im
++EADUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAD_size*RWEAD_im/EAD_ex*EADEAF_rer*EAF_pex*RWEAF_im/(EADRW_rer*RW_py*RW_y
 +EADEAA_rer*EAA_pex*RWEAA_im
@@ -9182,6 +10873,7 @@ EADEAF_weightex = EAF_size/EAD_size*EAFEAD_im/EAD_ex*EADEAF_rer*EAF_py*EAF_y/(EA
 +EADEAC_rer*EAC_pex*RWEAC_im
 +EADEAE_rer*EAE_pex*RWEAE_im
 +EADEAF_rer*EAF_pex*RWEAF_im
++EADEAG_rer*EAG_pex*RWEAG_im
 +EADUS_rer*US_pex*RWUS_im
 )
 +US_size/EAD_size*USEAD_im/EAD_ex*EADEAF_rer*EAF_pex*USEAF_im/(EADUS_rer*US_py*US_y
@@ -9190,11 +10882,90 @@ EADEAF_weightex = EAF_size/EAD_size*EAFEAD_im/EAD_ex*EADEAF_rer*EAF_py*EAF_y/(EA
 +EADEAC_rer*EAC_pex*USEAC_im
 +EADEAE_rer*EAE_pex*USEAE_im
 +EADEAF_rer*EAF_pex*USEAF_im
++EADEAG_rer*EAG_pex*USEAG_im
 +EADRW_rer*RW_pex*USRW_im
 )
 ;
 // Effective real exchange rate: double weighting (overall)
 EADEAF_weight = EAD_pim*EAD_im/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAF_weightim+EAD_pex*EAD_ex/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAF_weightex;
+// Effective real exchange rate: double weighting (imports)
+EADEAG_weightim = EADEAG_rer*EAG_pex*EADEAG_im/(EAD_pim*EAD_im);
+// Effective real exchange rate: double weighting (exports)
+EADEAG_weightex = EAG_size/EAD_size*EAGEAD_im/EAD_ex*EADEAG_rer*EAG_py*EAG_y/(EADEAG_rer*EAG_py*EAG_y
++EADEAA_rer*EAA_pex*EAGEAA_im
++EADEAB_rer*EAB_pex*EAGEAB_im
++EADEAC_rer*EAC_pex*EAGEAC_im
++EADEAE_rer*EAE_pex*EAGEAE_im
++EADEAF_rer*EAF_pex*EAGEAF_im
++EADRW_rer*RW_pex*EAGRW_im
++EADUS_rer*US_pex*EAGUS_im
+)+
++EAA_size/EAD_size*EAAEAD_im/EAD_ex*EADEAG_rer*EAG_pex*EAAEAG_im/(EADEAA_rer*EAA_py*EAA_y
++EADEAB_rer*EAB_pex*EAAEAB_im
++EADEAC_rer*EAC_pex*EAAEAC_im
++EADEAE_rer*EAE_pex*EAAEAE_im
++EADEAF_rer*EAF_pex*EAAEAF_im
++EADEAG_rer*EAG_pex*EAAEAG_im
++EADRW_rer*RW_pex*EAARW_im
++EADUS_rer*US_pex*EAAUS_im
+)
++EAB_size/EAD_size*EABEAD_im/EAD_ex*EADEAG_rer*EAG_pex*EABEAG_im/(EADEAB_rer*EAB_py*EAB_y
++EADEAA_rer*EAA_pex*EABEAA_im
++EADEAC_rer*EAC_pex*EABEAC_im
++EADEAE_rer*EAE_pex*EABEAE_im
++EADEAF_rer*EAF_pex*EABEAF_im
++EADEAG_rer*EAG_pex*EABEAG_im
++EADRW_rer*RW_pex*EABRW_im
++EADUS_rer*US_pex*EABUS_im
+)
++EAC_size/EAD_size*EACEAD_im/EAD_ex*EADEAG_rer*EAG_pex*EACEAG_im/(EADEAC_rer*EAC_py*EAC_y
++EADEAA_rer*EAA_pex*EACEAA_im
++EADEAB_rer*EAB_pex*EACEAB_im
++EADEAE_rer*EAE_pex*EACEAE_im
++EADEAF_rer*EAF_pex*EACEAF_im
++EADEAG_rer*EAG_pex*EACEAG_im
++EADRW_rer*RW_pex*EACRW_im
++EADUS_rer*US_pex*EACUS_im
+)
++EAE_size/EAD_size*EAEEAD_im/EAD_ex*EADEAG_rer*EAG_pex*EAEEAG_im/(EADEAE_rer*EAE_py*EAE_y
++EADEAA_rer*EAA_pex*EAEEAA_im
++EADEAB_rer*EAB_pex*EAEEAB_im
++EADEAC_rer*EAC_pex*EAEEAC_im
++EADEAF_rer*EAF_pex*EAEEAF_im
++EADEAG_rer*EAG_pex*EAEEAG_im
++EADRW_rer*RW_pex*EAERW_im
++EADUS_rer*US_pex*EAEUS_im
+)
++EAF_size/EAD_size*EAFEAD_im/EAD_ex*EADEAG_rer*EAG_pex*EAFEAG_im/(EADEAF_rer*EAF_py*EAF_y
++EADEAA_rer*EAA_pex*EAFEAA_im
++EADEAB_rer*EAB_pex*EAFEAB_im
++EADEAC_rer*EAC_pex*EAFEAC_im
++EADEAE_rer*EAE_pex*EAFEAE_im
++EADEAG_rer*EAG_pex*EAFEAG_im
++EADRW_rer*RW_pex*EAFRW_im
++EADUS_rer*US_pex*EAFUS_im
+)
++RW_size/EAD_size*RWEAD_im/EAD_ex*EADEAG_rer*EAG_pex*RWEAG_im/(EADRW_rer*RW_py*RW_y
++EADEAA_rer*EAA_pex*RWEAA_im
++EADEAB_rer*EAB_pex*RWEAB_im
++EADEAC_rer*EAC_pex*RWEAC_im
++EADEAE_rer*EAE_pex*RWEAE_im
++EADEAF_rer*EAF_pex*RWEAF_im
++EADEAG_rer*EAG_pex*RWEAG_im
++EADUS_rer*US_pex*RWUS_im
+)
++US_size/EAD_size*USEAD_im/EAD_ex*EADEAG_rer*EAG_pex*USEAG_im/(EADUS_rer*US_py*US_y
++EADEAA_rer*EAA_pex*USEAA_im
++EADEAB_rer*EAB_pex*USEAB_im
++EADEAC_rer*EAC_pex*USEAC_im
++EADEAE_rer*EAE_pex*USEAE_im
++EADEAF_rer*EAF_pex*USEAF_im
++EADEAG_rer*EAG_pex*USEAG_im
++EADRW_rer*RW_pex*USRW_im
+)
+;
+// Effective real exchange rate: double weighting (overall)
+EADEAG_weight = EAD_pim*EAD_im/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAG_weightim+EAD_pex*EAD_ex/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAG_weightex;
 // Effective real exchange rate: double weighting (imports)
 EADRW_weightim = EADRW_rer*RW_pex*EADRW_im/(EAD_pim*EAD_im);
 // Effective real exchange rate: double weighting (exports)
@@ -9204,6 +10975,7 @@ EADRW_weightex = RW_size/EAD_size*RWEAD_im/EAD_ex*EADRW_rer*RW_py*RW_y/(EADRW_re
 +EADEAC_rer*EAC_pex*RWEAC_im
 +EADEAE_rer*EAE_pex*RWEAE_im
 +EADEAF_rer*EAF_pex*RWEAF_im
++EADEAG_rer*EAG_pex*RWEAG_im
 +EADUS_rer*US_pex*RWUS_im
 )+
 +EAA_size/EAD_size*EAAEAD_im/EAD_ex*EADRW_rer*RW_pex*EAARW_im/(EADEAA_rer*EAA_py*EAA_y
@@ -9211,6 +10983,7 @@ EADRW_weightex = RW_size/EAD_size*RWEAD_im/EAD_ex*EADRW_rer*RW_py*RW_y/(EADRW_re
 +EADEAC_rer*EAC_pex*EAAEAC_im
 +EADEAE_rer*EAE_pex*EAAEAE_im
 +EADEAF_rer*EAF_pex*EAAEAF_im
++EADEAG_rer*EAG_pex*EAAEAG_im
 +EADRW_rer*RW_pex*EAARW_im
 +EADUS_rer*US_pex*EAAUS_im
 )
@@ -9219,6 +10992,7 @@ EADRW_weightex = RW_size/EAD_size*RWEAD_im/EAD_ex*EADRW_rer*RW_py*RW_y/(EADRW_re
 +EADEAC_rer*EAC_pex*EABEAC_im
 +EADEAE_rer*EAE_pex*EABEAE_im
 +EADEAF_rer*EAF_pex*EABEAF_im
++EADEAG_rer*EAG_pex*EABEAG_im
 +EADRW_rer*RW_pex*EABRW_im
 +EADUS_rer*US_pex*EABUS_im
 )
@@ -9227,6 +11001,7 @@ EADRW_weightex = RW_size/EAD_size*RWEAD_im/EAD_ex*EADRW_rer*RW_py*RW_y/(EADRW_re
 +EADEAB_rer*EAB_pex*EACEAB_im
 +EADEAE_rer*EAE_pex*EACEAE_im
 +EADEAF_rer*EAF_pex*EACEAF_im
++EADEAG_rer*EAG_pex*EACEAG_im
 +EADRW_rer*RW_pex*EACRW_im
 +EADUS_rer*US_pex*EACUS_im
 )
@@ -9235,6 +11010,7 @@ EADRW_weightex = RW_size/EAD_size*RWEAD_im/EAD_ex*EADRW_rer*RW_py*RW_y/(EADRW_re
 +EADEAB_rer*EAB_pex*EAEEAB_im
 +EADEAC_rer*EAC_pex*EAEEAC_im
 +EADEAF_rer*EAF_pex*EAEEAF_im
++EADEAG_rer*EAG_pex*EAEEAG_im
 +EADRW_rer*RW_pex*EAERW_im
 +EADUS_rer*US_pex*EAEUS_im
 )
@@ -9243,8 +11019,18 @@ EADRW_weightex = RW_size/EAD_size*RWEAD_im/EAD_ex*EADRW_rer*RW_py*RW_y/(EADRW_re
 +EADEAB_rer*EAB_pex*EAFEAB_im
 +EADEAC_rer*EAC_pex*EAFEAC_im
 +EADEAE_rer*EAE_pex*EAFEAE_im
++EADEAG_rer*EAG_pex*EAFEAG_im
 +EADRW_rer*RW_pex*EAFRW_im
 +EADUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAD_size*EAGEAD_im/EAD_ex*EADRW_rer*RW_pex*EAGRW_im/(EADEAG_rer*EAG_py*EAG_y
++EADEAA_rer*EAA_pex*EAGEAA_im
++EADEAB_rer*EAB_pex*EAGEAB_im
++EADEAC_rer*EAC_pex*EAGEAC_im
++EADEAE_rer*EAE_pex*EAGEAE_im
++EADEAF_rer*EAF_pex*EAGEAF_im
++EADRW_rer*RW_pex*EAGRW_im
++EADUS_rer*US_pex*EAGUS_im
 )
 +US_size/EAD_size*USEAD_im/EAD_ex*EADRW_rer*RW_pex*USRW_im/(EADUS_rer*US_py*US_y
 +EADEAA_rer*EAA_pex*USEAA_im
@@ -9252,6 +11038,7 @@ EADRW_weightex = RW_size/EAD_size*RWEAD_im/EAD_ex*EADRW_rer*RW_py*RW_y/(EADRW_re
 +EADEAC_rer*EAC_pex*USEAC_im
 +EADEAE_rer*EAE_pex*USEAE_im
 +EADEAF_rer*EAF_pex*USEAF_im
++EADEAG_rer*EAG_pex*USEAG_im
 +EADRW_rer*RW_pex*USRW_im
 )
 ;
@@ -9266,6 +11053,7 @@ EADUS_weightex = US_size/EAD_size*USEAD_im/EAD_ex*EADUS_rer*US_py*US_y/(EADUS_re
 +EADEAC_rer*EAC_pex*USEAC_im
 +EADEAE_rer*EAE_pex*USEAE_im
 +EADEAF_rer*EAF_pex*USEAF_im
++EADEAG_rer*EAG_pex*USEAG_im
 +EADRW_rer*RW_pex*USRW_im
 )+
 +EAA_size/EAD_size*EAAEAD_im/EAD_ex*EADUS_rer*US_pex*EAAUS_im/(EADEAA_rer*EAA_py*EAA_y
@@ -9273,6 +11061,7 @@ EADUS_weightex = US_size/EAD_size*USEAD_im/EAD_ex*EADUS_rer*US_py*US_y/(EADUS_re
 +EADEAC_rer*EAC_pex*EAAEAC_im
 +EADEAE_rer*EAE_pex*EAAEAE_im
 +EADEAF_rer*EAF_pex*EAAEAF_im
++EADEAG_rer*EAG_pex*EAAEAG_im
 +EADRW_rer*RW_pex*EAARW_im
 +EADUS_rer*US_pex*EAAUS_im
 )
@@ -9281,6 +11070,7 @@ EADUS_weightex = US_size/EAD_size*USEAD_im/EAD_ex*EADUS_rer*US_py*US_y/(EADUS_re
 +EADEAC_rer*EAC_pex*EABEAC_im
 +EADEAE_rer*EAE_pex*EABEAE_im
 +EADEAF_rer*EAF_pex*EABEAF_im
++EADEAG_rer*EAG_pex*EABEAG_im
 +EADRW_rer*RW_pex*EABRW_im
 +EADUS_rer*US_pex*EABUS_im
 )
@@ -9289,6 +11079,7 @@ EADUS_weightex = US_size/EAD_size*USEAD_im/EAD_ex*EADUS_rer*US_py*US_y/(EADUS_re
 +EADEAB_rer*EAB_pex*EACEAB_im
 +EADEAE_rer*EAE_pex*EACEAE_im
 +EADEAF_rer*EAF_pex*EACEAF_im
++EADEAG_rer*EAG_pex*EACEAG_im
 +EADRW_rer*RW_pex*EACRW_im
 +EADUS_rer*US_pex*EACUS_im
 )
@@ -9297,6 +11088,7 @@ EADUS_weightex = US_size/EAD_size*USEAD_im/EAD_ex*EADUS_rer*US_py*US_y/(EADUS_re
 +EADEAB_rer*EAB_pex*EAEEAB_im
 +EADEAC_rer*EAC_pex*EAEEAC_im
 +EADEAF_rer*EAF_pex*EAEEAF_im
++EADEAG_rer*EAG_pex*EAEEAG_im
 +EADRW_rer*RW_pex*EAERW_im
 +EADUS_rer*US_pex*EAEUS_im
 )
@@ -9305,8 +11097,18 @@ EADUS_weightex = US_size/EAD_size*USEAD_im/EAD_ex*EADUS_rer*US_py*US_y/(EADUS_re
 +EADEAB_rer*EAB_pex*EAFEAB_im
 +EADEAC_rer*EAC_pex*EAFEAC_im
 +EADEAE_rer*EAE_pex*EAFEAE_im
++EADEAG_rer*EAG_pex*EAFEAG_im
 +EADRW_rer*RW_pex*EAFRW_im
 +EADUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAD_size*EAGEAD_im/EAD_ex*EADUS_rer*US_pex*EAGUS_im/(EADEAG_rer*EAG_py*EAG_y
++EADEAA_rer*EAA_pex*EAGEAA_im
++EADEAB_rer*EAB_pex*EAGEAB_im
++EADEAC_rer*EAC_pex*EAGEAC_im
++EADEAE_rer*EAE_pex*EAGEAE_im
++EADEAF_rer*EAF_pex*EAGEAF_im
++EADRW_rer*RW_pex*EAGRW_im
++EADUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAD_size*RWEAD_im/EAD_ex*EADUS_rer*US_pex*RWUS_im/(EADRW_rer*RW_py*RW_y
 +EADEAA_rer*EAA_pex*RWEAA_im
@@ -9314,6 +11116,7 @@ EADUS_weightex = US_size/EAD_size*USEAD_im/EAD_ex*EADUS_rer*US_py*US_y/(EADUS_re
 +EADEAC_rer*EAC_pex*RWEAC_im
 +EADEAE_rer*EAE_pex*RWEAE_im
 +EADEAF_rer*EAF_pex*RWEAF_im
++EADEAG_rer*EAG_pex*RWEAG_im
 +EADUS_rer*US_pex*RWUS_im
 )
 ;
@@ -9326,6 +11129,7 @@ EAD_reer = 1
 *EADEAC_rer^EADEAC_weight
 *EADEAE_rer^EADEAE_weight
 *EADEAF_rer^EADEAF_weight
+*EADEAG_rer^EADEAG_weight
 *EADRW_rer^EADRW_weight
 *EADUS_rer^EADUS_weight
 ;
@@ -9336,6 +11140,7 @@ EAD_etot = 1
 *EADEAC_tot^EADEAC_weight
 *EADEAE_tot^EADEAE_weight
 *EADEAF_tot^EADEAF_weight
+*EADEAG_tot^EADEAG_weight
 *EADRW_tot^EADRW_weight
 *EADUS_tot^EADUS_weight
 ;
@@ -9348,6 +11153,7 @@ EAD_imc^((EAD_mumc-1)/EAD_mumc) =
 +EADEAC_numc ^(1/EAD_mumc)*EADEAC_imc^(1-1/EAD_mumc)
 +EADEAE_numc ^(1/EAD_mumc)*EADEAE_imc^(1-1/EAD_mumc)
 +EADEAF_numc ^(1/EAD_mumc)*EADEAF_imc^(1-1/EAD_mumc)
++EADEAG_numc ^(1/EAD_mumc)*EADEAG_imc^(1-1/EAD_mumc)
 +EADRW_numc ^(1/EAD_mumc)*EADRW_imc^(1-1/EAD_mumc)
 +EADUS_numc ^(1/EAD_mumc)*EADUS_imc^(1-1/EAD_mumc)
 +(1
@@ -9355,6 +11161,7 @@ EAD_imc^((EAD_mumc-1)/EAD_mumc) =
 -EADEAC_numc
 -EADEAE_numc
 -EADEAF_numc
+-EADEAG_numc
 -EADRW_numc
 -EADUS_numc
 )^(1/EAD_mumc)*EADEAB_imc^(1-1/EAD_mumc);
@@ -9365,6 +11172,8 @@ EADEAC_imc = EADEAC_numc*((EAC_pex*EADEAC_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
 // Demand for bilateral consumption import goods
 EADEAF_imc = EADEAF_numc*((EAF_pex*EADEAF_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
 // Demand for bilateral consumption import goods
+EADEAG_imc = EADEAG_numc*((EAG_pex*EADEAG_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
+// Demand for bilateral consumption import goods
 EADRW_imc = EADRW_numc*((RW_pex*EADRW_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
 // Demand for bilateral consumption import goods
 EADUS_imc = EADUS_numc*((US_pex*EADUS_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
@@ -9373,6 +11182,7 @@ EADEAB_imc = (1
 -EADEAC_numc
 -EADEAE_numc
 -EADEAF_numc
+-EADEAG_numc
 -EADRW_numc
 -EADUS_numc
 )*((EAB_pex*EADEAB_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
@@ -9382,6 +11192,7 @@ EAD_pimc^(1-EAD_mumc) =
 +EADEAC_numc * (EAC_pex*EADEAC_rer)^(1-EAD_mumc)
 +EADEAE_numc * (EAE_pex*EADEAE_rer)^(1-EAD_mumc)
 +EADEAF_numc * (EAF_pex*EADEAF_rer)^(1-EAD_mumc)
++EADEAG_numc * (EAG_pex*EADEAG_rer)^(1-EAD_mumc)
 +EADRW_numc * (RW_pex*EADRW_rer)^(1-EAD_mumc)
 +EADUS_numc * (US_pex*EADUS_rer)^(1-EAD_mumc)
 +(1
@@ -9389,6 +11200,7 @@ EAD_pimc^(1-EAD_mumc) =
 -EADEAC_numc
 -EADEAE_numc
 -EADEAF_numc
+-EADEAG_numc
 -EADRW_numc
 -EADUS_numc
 )*(EAB_pex*EADEAB_rer)^(1-EAD_mumc);
@@ -9400,6 +11212,7 @@ EAD_imi^((EAD_mumi-1)/EAD_mumi) =
 +EADEAC_numi ^(1/EAD_mumi)*EADEAC_imi^(1-1/EAD_mumi)
 +EADEAE_numi ^(1/EAD_mumi)*EADEAE_imi^(1-1/EAD_mumi)
 +EADEAF_numi ^(1/EAD_mumi)*EADEAF_imi^(1-1/EAD_mumi)
++EADEAG_numi ^(1/EAD_mumi)*EADEAG_imi^(1-1/EAD_mumi)
 +EADRW_numi ^(1/EAD_mumi)*EADRW_imi^(1-1/EAD_mumi)
 +EADUS_numi ^(1/EAD_mumi)*EADUS_imi^(1-1/EAD_mumi)
 +(1
@@ -9407,6 +11220,7 @@ EAD_imi^((EAD_mumi-1)/EAD_mumi) =
 -EADEAC_numi
 -EADEAE_numi
 -EADEAF_numi
+-EADEAG_numi
 -EADRW_numi
 -EADUS_numi
 )^(1/EAD_mumi)*EADEAB_imi^(1-1/EAD_mumi);
@@ -9417,6 +11231,8 @@ EADEAC_imi = EADEAC_numi*((EAC_pex*EADEAC_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
 // Demand for bilateral consumption import goods
 EADEAF_imi = EADEAF_numi*((EAF_pex*EADEAF_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
 // Demand for bilateral consumption import goods
+EADEAG_imi = EADEAG_numi*((EAG_pex*EADEAG_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
+// Demand for bilateral consumption import goods
 EADRW_imi = EADRW_numi*((RW_pex*EADRW_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
 // Demand for bilateral consumption import goods
 EADUS_imi = EADUS_numi*((US_pex*EADUS_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
@@ -9425,6 +11241,7 @@ EADEAB_imi = (1
 -EADEAC_numi
 -EADEAE_numi
 -EADEAF_numi
+-EADEAG_numi
 -EADRW_numi
 -EADUS_numi
 )*((EAB_pex*EADEAB_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
@@ -9434,6 +11251,7 @@ EAD_pimi^(1-EAD_mumi) =
 +EADEAC_numi * (EAC_pex*EADEAC_rer)^(1-EAD_mumi)
 +EADEAE_numi * (EAE_pex*EADEAE_rer)^(1-EAD_mumi)
 +EADEAF_numi * (EAF_pex*EADEAF_rer)^(1-EAD_mumi)
++EADEAG_numi * (EAG_pex*EADEAG_rer)^(1-EAD_mumi)
 +EADRW_numi * (RW_pex*EADRW_rer)^(1-EAD_mumi)
 +EADUS_numi * (US_pex*EADUS_rer)^(1-EAD_mumi)
 +(1
@@ -9441,6 +11259,7 @@ EAD_pimi^(1-EAD_mumi) =
 -EADEAC_numi
 -EADEAE_numi
 -EADEAF_numi
+-EADEAG_numi
 -EADRW_numi
 -EADUS_numi
 )*(EAB_pex*EADEAB_rer)^(1-EAD_mumi);
@@ -9452,6 +11271,7 @@ EAD_imcg^((EAD_mumcg-1)/EAD_mumcg) =
 +EADEAC_numcg ^(1/EAD_mumcg)*EADEAC_imcg^(1-1/EAD_mumcg)
 +EADEAE_numcg ^(1/EAD_mumcg)*EADEAE_imcg^(1-1/EAD_mumcg)
 +EADEAF_numcg ^(1/EAD_mumcg)*EADEAF_imcg^(1-1/EAD_mumcg)
++EADEAG_numcg ^(1/EAD_mumcg)*EADEAG_imcg^(1-1/EAD_mumcg)
 +EADRW_numcg ^(1/EAD_mumcg)*EADRW_imcg^(1-1/EAD_mumcg)
 +EADUS_numcg ^(1/EAD_mumcg)*EADUS_imcg^(1-1/EAD_mumcg)
 +(1
@@ -9459,6 +11279,7 @@ EAD_imcg^((EAD_mumcg-1)/EAD_mumcg) =
 -EADEAC_numcg
 -EADEAE_numcg
 -EADEAF_numcg
+-EADEAG_numcg
 -EADRW_numcg
 -EADUS_numcg
 )^(1/EAD_mumcg)*EADEAB_imcg^(1-1/EAD_mumcg);
@@ -9469,6 +11290,8 @@ EADEAC_imcg = EADEAC_numcg*((EAC_pex*EADEAC_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imc
 // Demand for bilateral consumption import goods
 EADEAF_imcg = EADEAF_numcg*((EAF_pex*EADEAF_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
 // Demand for bilateral consumption import goods
+EADEAG_imcg = EADEAG_numcg*((EAG_pex*EADEAG_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
+// Demand for bilateral consumption import goods
 EADRW_imcg = EADRW_numcg*((RW_pex*EADRW_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
 // Demand for bilateral consumption import goods
 EADUS_imcg = EADUS_numcg*((US_pex*EADUS_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
@@ -9477,6 +11300,7 @@ EADEAB_imcg = (1
 -EADEAC_numcg
 -EADEAE_numcg
 -EADEAF_numcg
+-EADEAG_numcg
 -EADRW_numcg
 -EADUS_numcg
 )*((EAB_pex*EADEAB_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
@@ -9486,6 +11310,7 @@ EAD_pimcg^(1-EAD_mumcg) =
 +EADEAC_numcg * (EAC_pex*EADEAC_rer)^(1-EAD_mumcg)
 +EADEAE_numcg * (EAE_pex*EADEAE_rer)^(1-EAD_mumcg)
 +EADEAF_numcg * (EAF_pex*EADEAF_rer)^(1-EAD_mumcg)
++EADEAG_numcg * (EAG_pex*EADEAG_rer)^(1-EAD_mumcg)
 +EADRW_numcg * (RW_pex*EADRW_rer)^(1-EAD_mumcg)
 +EADUS_numcg * (US_pex*EADUS_rer)^(1-EAD_mumcg)
 +(1
@@ -9493,6 +11318,7 @@ EAD_pimcg^(1-EAD_mumcg) =
 -EADEAC_numcg
 -EADEAE_numcg
 -EADEAF_numcg
+-EADEAG_numcg
 -EADRW_numcg
 -EADUS_numcg
 )*(EAB_pex*EADEAB_rer)^(1-EAD_mumcg);
@@ -9504,6 +11330,7 @@ EAD_imig^((EAD_mumig-1)/EAD_mumig) =
 +EADEAC_numig ^(1/EAD_mumig)*EADEAC_imig^(1-1/EAD_mumig)
 +EADEAE_numig ^(1/EAD_mumig)*EADEAE_imig^(1-1/EAD_mumig)
 +EADEAF_numig ^(1/EAD_mumig)*EADEAF_imig^(1-1/EAD_mumig)
++EADEAG_numig ^(1/EAD_mumig)*EADEAG_imig^(1-1/EAD_mumig)
 +EADRW_numig ^(1/EAD_mumig)*EADRW_imig^(1-1/EAD_mumig)
 +EADUS_numig ^(1/EAD_mumig)*EADUS_imig^(1-1/EAD_mumig)
 +(1
@@ -9511,6 +11338,7 @@ EAD_imig^((EAD_mumig-1)/EAD_mumig) =
 -EADEAC_numig
 -EADEAE_numig
 -EADEAF_numig
+-EADEAG_numig
 -EADRW_numig
 -EADUS_numig
 )^(1/EAD_mumig)*EADEAB_imig^(1-1/EAD_mumig);
@@ -9521,6 +11349,8 @@ EADEAC_imig = EADEAC_numig*((EAC_pex*EADEAC_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imi
 // Demand for bilateral consumption import goods
 EADEAF_imig = EADEAF_numig*((EAF_pex*EADEAF_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
 // Demand for bilateral consumption import goods
+EADEAG_imig = EADEAG_numig*((EAG_pex*EADEAG_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
+// Demand for bilateral consumption import goods
 EADRW_imig = EADRW_numig*((RW_pex*EADRW_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
 // Demand for bilateral consumption import goods
 EADUS_imig = EADUS_numig*((US_pex*EADUS_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
@@ -9529,6 +11359,7 @@ EADEAB_imig = (1
 -EADEAC_numig
 -EADEAE_numig
 -EADEAF_numig
+-EADEAG_numig
 -EADRW_numig
 -EADUS_numig
 )*((EAB_pex*EADEAB_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
@@ -9538,6 +11369,7 @@ EAD_pimig^(1-EAD_mumig) =
 +EADEAC_numig * (EAC_pex*EADEAC_rer)^(1-EAD_mumig)
 +EADEAE_numig * (EAE_pex*EADEAE_rer)^(1-EAD_mumig)
 +EADEAF_numig * (EAF_pex*EADEAF_rer)^(1-EAD_mumig)
++EADEAG_numig * (EAG_pex*EADEAG_rer)^(1-EAD_mumig)
 +EADRW_numig * (RW_pex*EADRW_rer)^(1-EAD_mumig)
 +EADUS_numig * (US_pex*EADUS_rer)^(1-EAD_mumig)
 +(1
@@ -9545,6 +11377,7 @@ EAD_pimig^(1-EAD_mumig) =
 -EADEAC_numig
 -EADEAE_numig
 -EADEAF_numig
+-EADEAG_numig
 -EADRW_numig
 -EADUS_numig
 )*(EAB_pex*EADEAB_rer)^(1-EAD_mumig);
@@ -9587,6 +11420,12 @@ EADEAF_im =
 +EADEAF_imcg
 +EADEAF_imig
 ;
+EADEAG_im = 
++EADEAG_imc
++EADEAG_imi
++EADEAG_imcg
++EADEAG_imig
+;
 EADRW_im = 
 +EADRW_imc
 +EADRW_imi
@@ -9622,6 +11461,8 @@ EADEAE_gammaimc = 0;
 EADEAE_gammaimcdag = 1;
 EADEAF_gammaimc = 0;
 EADEAF_gammaimcdag = 1;
+EADEAG_gammaimc = 0;
+EADEAG_gammaimcdag = 1;
 EADRW_gammaimc = 0;
 EADRW_gammaimcdag = 1;
 EADUS_gammaimc = 0;
@@ -9651,6 +11492,8 @@ EADEAE_gammaimi = 0;
 EADEAE_gammaimidag = 1;
 EADEAF_gammaimi = 0;
 EADEAF_gammaimidag = 1;
+EADEAG_gammaimi = 0;
+EADEAG_gammaimidag = 1;
 EADRW_gammaimi = 0;
 EADRW_gammaimidag = 1;
 EADUS_gammaimi = 0;
@@ -9677,6 +11520,8 @@ EADEAE_gammaimcg = 0;
 EADEAE_gammaimcgdag = 1;
 EADEAF_gammaimcg = 0;
 EADEAF_gammaimcgdag = 1;
+EADEAG_gammaimcg = 0;
+EADEAG_gammaimcgdag = 1;
 EADRW_gammaimcg = 0;
 EADRW_gammaimcgdag = 1;
 EADUS_gammaimcg = 0;
@@ -9703,6 +11548,8 @@ EADEAE_gammaimig = 0;
 EADEAE_gammaimigdag = 1;
 EADEAF_gammaimig = 0;
 EADEAF_gammaimigdag = 1;
+EADEAG_gammaimig = 0;
+EADEAG_gammaimigdag = 1;
 EADRW_gammaimig = 0;
 EADRW_gammaimigdag = 1;
 EADUS_gammaimig = 0;
@@ -9719,6 +11566,8 @@ EAD_tb =
 -EAE_pex*EADEAE_rer*EADEAE_im
 +EAD_pex*EAF_size/EAD_size*EAFEAD_im
 -EAF_pex*EADEAF_rer*EADEAF_im
++EAD_pex*EAG_size/EAD_size*EAGEAD_im
+-EAG_pex*EADEAG_rer*EADEAG_im
 +EAD_pex*RW_size/EAD_size*RWEAD_im
 -RW_pex*EADRW_rer*EADRW_im
 +EAD_pex*US_size/EAD_size*USEAD_im
@@ -9731,6 +11580,7 @@ EAD_ex =
 +EAC_size/EAD_size*EACEAD_im
 +EAE_size/EAD_size*EAEEAD_im
 +EAF_size/EAD_size*EAFEAD_im
++EAG_size/EAD_size*EAGEAD_im
 +RW_size/EAD_size*RWEAD_im
 +US_size/EAD_size*USEAD_im
 ;
@@ -9776,7 +11626,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAD_r = EAF_r;
+	EAD_r = EAG_r;
 EAD_pic4 = EAD_pi4target;
 EAD_rr-1 = EAD_r/EAD_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -9889,6 +11739,11 @@ EAD_py*EAD_y =
 -(EAF_pex*EADEAF_rer)*EADEAF_imi
 -(EAF_pex*EADEAF_rer)*EADEAF_imcg
 -(EAF_pex*EADEAF_rer)*EADEAF_imig
++EAD_pex*EAG_size/EAD_size*EAGEAD_im
+-(EAG_pex*EADEAG_rer)*EADEAG_imc
+-(EAG_pex*EADEAG_rer)*EADEAG_imi
+-(EAG_pex*EADEAG_rer)*EADEAG_imcg
+-(EAG_pex*EADEAG_rer)*EADEAG_imig
 +EAD_pex*RW_size/EAD_size*RWEAD_im
 -(RW_pex*EADRW_rer)*EADRW_imc
 -(RW_pex*EADRW_rer)*EADRW_imi
@@ -9984,6 +11839,7 @@ EAD_yshare  = EAD_size*EAD_py*EAD_y/EAD_rer/(
 +EAD_size*EAD_py*EAD_y/EAD_rer
 +EAE_size*EAE_py*EAE_y/EAE_rer
 +EAF_size*EAF_py*EAF_y/EAF_rer
++EAG_size*EAG_py*EAG_y/EAG_rer
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
@@ -10036,6 +11892,15 @@ EADEAF_imigy = (EAF_pex*EADEAF_rer)*EADEAF_imig/(EAD_py*EAD_y);
 EADEAF_excy  = EAF_size/EAD_size*EAD_pex*EAFEAD_imc/(EAD_py*EAD_y);
 // Exports of investment goods to gdp
 EADEAF_exiy  = EAF_size/EAD_size*EAD_pex*EAFEAD_imi/(EAD_py*EAD_y);
+// Bilateral shares
+EADEAG_imcy = (EAG_pex*EADEAG_rer)*EADEAG_imc/(EAD_py*EAD_y);
+EADEAG_imiy = (EAG_pex*EADEAG_rer)*EADEAG_imi/(EAD_py*EAD_y);
+EADEAG_imcgy = (EAG_pex*EADEAG_rer)*EADEAG_imcg/(EAD_py*EAD_y);
+EADEAG_imigy = (EAG_pex*EADEAG_rer)*EADEAG_imig/(EAD_py*EAD_y);
+// Exports of consumption goods to gdp
+EADEAG_excy  = EAG_size/EAD_size*EAD_pex*EAGEAD_imc/(EAD_py*EAD_y);
+// Exports of investment goods to gdp
+EADEAG_exiy  = EAG_size/EAD_size*EAD_pex*EAGEAD_imi/(EAD_py*EAD_y);
 // Bilateral shares
 EADRW_imcy = (RW_pex*EADRW_rer)*EADRW_imc/(EAD_py*EAD_y);
 EADRW_imiy = (RW_pex*EADRW_rer)*EADRW_imi/(EAD_py*EAD_y);
@@ -10298,6 +12163,22 @@ EAEEAF_rer = EAE_rer/EAF_rer;
 EAEEAF_rerbar = EAEEAF_rer;
 //Terms of Trade
 EAEEAF_tot = EAF_pex*EAEEAF_rer/EAE_pex;
+// Optimal price contract set in foreign markets (FOC), using EAE_pxtilde = EAG_pimtilde
+// EAGEAE_pimtilde/EAGEAE_pim = EAE_cpim*EAE_thetat/(EAE_thetat-1)*EAEEAG_fx/EAEEAG_gx;
+// Definition of fx
+// EAEEAG_fx = EAG_size/EAE_size*EAGEAE_im*EAE_mct+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAGEAE_piim(+1)/(EAGEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^EAE_thetat*EAEEAG_fx(+1);
+// Definition of gx   
+// EAEEAG_gx = EAEEAG_rer*EAGEAE_pim*EAG_size/EAE_size*EAGEAE_im+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAGEAE_piim(+1)/(EAGEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^(EAE_thetat-1)*EAEEAG_gx(+1);
+// Aggregate intermediate-good price dynamics, using EAE_px = EAG_pim
+// EAGEAE_pim^(1-EAE_thetat) = (1-EAE_xix)*EAGEAE_pimtilde^(1-EAE_thetat)+EAE_xix*(EAGEAE_pim(-1)/EAG_pic)^(1-EAE_thetat)*(EAGEAE_piim(-1)^EAE_chix*EAG_pi4target^(1/4*(1-EAE_chih)))^(1-EAE_thetat);
+// Intermediate-good price inflation, using EAE_pix = EAG_piim
+// EAGEAE_piim = EAGEAE_pim/EAGEAE_pim(-1)*EAG_pic;
+// Bilateral real exchange rate
+EAEEAG_rer = EAE_rer/EAG_rer;
+// Auxiliary equation for steady-state output
+EAEEAG_rerbar = EAEEAG_rer;
+//Terms of Trade
+EAEEAG_tot = EAG_pex*EAEEAG_rer/EAE_pex;
 // Optimal price contract set in foreign markets (FOC), using EAE_pxtilde = RW_pimtilde
 // RWEAE_pimtilde/RWEAE_pim = EAE_cpim*EAE_thetat/(EAE_thetat-1)*EAERW_fx/EAERW_gx;
 // Definition of fx
@@ -10352,6 +12233,7 @@ EAEEAA_weightex = EAA_size/EAE_size*EAAEAE_im/EAE_ex*EAEEAA_rer*EAA_py*EAA_y/(EA
 +EAEEAC_rer*EAC_pex*EAAEAC_im
 +EAEEAD_rer*EAD_pex*EAAEAD_im
 +EAEEAF_rer*EAF_pex*EAAEAF_im
++EAEEAG_rer*EAG_pex*EAAEAG_im
 +EAERW_rer*RW_pex*EAARW_im
 +EAEUS_rer*US_pex*EAAUS_im
 )+
@@ -10360,6 +12242,7 @@ EAEEAA_weightex = EAA_size/EAE_size*EAAEAE_im/EAE_ex*EAEEAA_rer*EAA_py*EAA_y/(EA
 +EAEEAC_rer*EAC_pex*EABEAC_im
 +EAEEAD_rer*EAD_pex*EABEAD_im
 +EAEEAF_rer*EAF_pex*EABEAF_im
++EAEEAG_rer*EAG_pex*EABEAG_im
 +EAERW_rer*RW_pex*EABRW_im
 +EAEUS_rer*US_pex*EABUS_im
 )
@@ -10368,6 +12251,7 @@ EAEEAA_weightex = EAA_size/EAE_size*EAAEAE_im/EAE_ex*EAEEAA_rer*EAA_py*EAA_y/(EA
 +EAEEAB_rer*EAB_pex*EACEAB_im
 +EAEEAD_rer*EAD_pex*EACEAD_im
 +EAEEAF_rer*EAF_pex*EACEAF_im
++EAEEAG_rer*EAG_pex*EACEAG_im
 +EAERW_rer*RW_pex*EACRW_im
 +EAEUS_rer*US_pex*EACUS_im
 )
@@ -10376,6 +12260,7 @@ EAEEAA_weightex = EAA_size/EAE_size*EAAEAE_im/EAE_ex*EAEEAA_rer*EAA_py*EAA_y/(EA
 +EAEEAB_rer*EAB_pex*EADEAB_im
 +EAEEAC_rer*EAC_pex*EADEAC_im
 +EAEEAF_rer*EAF_pex*EADEAF_im
++EAEEAG_rer*EAG_pex*EADEAG_im
 +EAERW_rer*RW_pex*EADRW_im
 +EAEUS_rer*US_pex*EADUS_im
 )
@@ -10384,8 +12269,18 @@ EAEEAA_weightex = EAA_size/EAE_size*EAAEAE_im/EAE_ex*EAEEAA_rer*EAA_py*EAA_y/(EA
 +EAEEAB_rer*EAB_pex*EAFEAB_im
 +EAEEAC_rer*EAC_pex*EAFEAC_im
 +EAEEAD_rer*EAD_pex*EAFEAD_im
++EAEEAG_rer*EAG_pex*EAFEAG_im
 +EAERW_rer*RW_pex*EAFRW_im
 +EAEUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAE_size*EAGEAE_im/EAE_ex*EAEEAA_rer*EAA_pex*EAGEAA_im/(EAEEAG_rer*EAG_py*EAG_y
++EAEEAA_rer*EAA_pex*EAGEAA_im
++EAEEAB_rer*EAB_pex*EAGEAB_im
++EAEEAC_rer*EAC_pex*EAGEAC_im
++EAEEAD_rer*EAD_pex*EAGEAD_im
++EAEEAF_rer*EAF_pex*EAGEAF_im
++EAERW_rer*RW_pex*EAGRW_im
++EAEUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAE_size*RWEAE_im/EAE_ex*EAEEAA_rer*EAA_pex*RWEAA_im/(EAERW_rer*RW_py*RW_y
 +EAEEAA_rer*EAA_pex*RWEAA_im
@@ -10393,6 +12288,7 @@ EAEEAA_weightex = EAA_size/EAE_size*EAAEAE_im/EAE_ex*EAEEAA_rer*EAA_py*EAA_y/(EA
 +EAEEAC_rer*EAC_pex*RWEAC_im
 +EAEEAD_rer*EAD_pex*RWEAD_im
 +EAEEAF_rer*EAF_pex*RWEAF_im
++EAEEAG_rer*EAG_pex*RWEAG_im
 +EAEUS_rer*US_pex*RWUS_im
 )
 +US_size/EAE_size*USEAE_im/EAE_ex*EAEEAA_rer*EAA_pex*USEAA_im/(EAEUS_rer*US_py*US_y
@@ -10401,6 +12297,7 @@ EAEEAA_weightex = EAA_size/EAE_size*EAAEAE_im/EAE_ex*EAEEAA_rer*EAA_py*EAA_y/(EA
 +EAEEAC_rer*EAC_pex*USEAC_im
 +EAEEAD_rer*EAD_pex*USEAD_im
 +EAEEAF_rer*EAF_pex*USEAF_im
++EAEEAG_rer*EAG_pex*USEAG_im
 +EAERW_rer*RW_pex*USRW_im
 )
 ;
@@ -10414,6 +12311,7 @@ EAEEAB_weightex = EAB_size/EAE_size*EABEAE_im/EAE_ex*EAEEAB_rer*EAB_py*EAB_y/(EA
 +EAEEAC_rer*EAC_pex*EABEAC_im
 +EAEEAD_rer*EAD_pex*EABEAD_im
 +EAEEAF_rer*EAF_pex*EABEAF_im
++EAEEAG_rer*EAG_pex*EABEAG_im
 +EAERW_rer*RW_pex*EABRW_im
 +EAEUS_rer*US_pex*EABUS_im
 )+
@@ -10422,6 +12320,7 @@ EAEEAB_weightex = EAB_size/EAE_size*EABEAE_im/EAE_ex*EAEEAB_rer*EAB_py*EAB_y/(EA
 +EAEEAC_rer*EAC_pex*EAAEAC_im
 +EAEEAD_rer*EAD_pex*EAAEAD_im
 +EAEEAF_rer*EAF_pex*EAAEAF_im
++EAEEAG_rer*EAG_pex*EAAEAG_im
 +EAERW_rer*RW_pex*EAARW_im
 +EAEUS_rer*US_pex*EAAUS_im
 )
@@ -10430,6 +12329,7 @@ EAEEAB_weightex = EAB_size/EAE_size*EABEAE_im/EAE_ex*EAEEAB_rer*EAB_py*EAB_y/(EA
 +EAEEAB_rer*EAB_pex*EACEAB_im
 +EAEEAD_rer*EAD_pex*EACEAD_im
 +EAEEAF_rer*EAF_pex*EACEAF_im
++EAEEAG_rer*EAG_pex*EACEAG_im
 +EAERW_rer*RW_pex*EACRW_im
 +EAEUS_rer*US_pex*EACUS_im
 )
@@ -10438,6 +12338,7 @@ EAEEAB_weightex = EAB_size/EAE_size*EABEAE_im/EAE_ex*EAEEAB_rer*EAB_py*EAB_y/(EA
 +EAEEAB_rer*EAB_pex*EADEAB_im
 +EAEEAC_rer*EAC_pex*EADEAC_im
 +EAEEAF_rer*EAF_pex*EADEAF_im
++EAEEAG_rer*EAG_pex*EADEAG_im
 +EAERW_rer*RW_pex*EADRW_im
 +EAEUS_rer*US_pex*EADUS_im
 )
@@ -10446,8 +12347,18 @@ EAEEAB_weightex = EAB_size/EAE_size*EABEAE_im/EAE_ex*EAEEAB_rer*EAB_py*EAB_y/(EA
 +EAEEAB_rer*EAB_pex*EAFEAB_im
 +EAEEAC_rer*EAC_pex*EAFEAC_im
 +EAEEAD_rer*EAD_pex*EAFEAD_im
++EAEEAG_rer*EAG_pex*EAFEAG_im
 +EAERW_rer*RW_pex*EAFRW_im
 +EAEUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAE_size*EAGEAE_im/EAE_ex*EAEEAB_rer*EAB_pex*EAGEAB_im/(EAEEAG_rer*EAG_py*EAG_y
++EAEEAA_rer*EAA_pex*EAGEAA_im
++EAEEAB_rer*EAB_pex*EAGEAB_im
++EAEEAC_rer*EAC_pex*EAGEAC_im
++EAEEAD_rer*EAD_pex*EAGEAD_im
++EAEEAF_rer*EAF_pex*EAGEAF_im
++EAERW_rer*RW_pex*EAGRW_im
++EAEUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAE_size*RWEAE_im/EAE_ex*EAEEAB_rer*EAB_pex*RWEAB_im/(EAERW_rer*RW_py*RW_y
 +EAEEAA_rer*EAA_pex*RWEAA_im
@@ -10455,6 +12366,7 @@ EAEEAB_weightex = EAB_size/EAE_size*EABEAE_im/EAE_ex*EAEEAB_rer*EAB_py*EAB_y/(EA
 +EAEEAC_rer*EAC_pex*RWEAC_im
 +EAEEAD_rer*EAD_pex*RWEAD_im
 +EAEEAF_rer*EAF_pex*RWEAF_im
++EAEEAG_rer*EAG_pex*RWEAG_im
 +EAEUS_rer*US_pex*RWUS_im
 )
 +US_size/EAE_size*USEAE_im/EAE_ex*EAEEAB_rer*EAB_pex*USEAB_im/(EAEUS_rer*US_py*US_y
@@ -10463,6 +12375,7 @@ EAEEAB_weightex = EAB_size/EAE_size*EABEAE_im/EAE_ex*EAEEAB_rer*EAB_py*EAB_y/(EA
 +EAEEAC_rer*EAC_pex*USEAC_im
 +EAEEAD_rer*EAD_pex*USEAD_im
 +EAEEAF_rer*EAF_pex*USEAF_im
++EAEEAG_rer*EAG_pex*USEAG_im
 +EAERW_rer*RW_pex*USRW_im
 )
 ;
@@ -10476,6 +12389,7 @@ EAEEAC_weightex = EAC_size/EAE_size*EACEAE_im/EAE_ex*EAEEAC_rer*EAC_py*EAC_y/(EA
 +EAEEAB_rer*EAB_pex*EACEAB_im
 +EAEEAD_rer*EAD_pex*EACEAD_im
 +EAEEAF_rer*EAF_pex*EACEAF_im
++EAEEAG_rer*EAG_pex*EACEAG_im
 +EAERW_rer*RW_pex*EACRW_im
 +EAEUS_rer*US_pex*EACUS_im
 )+
@@ -10484,6 +12398,7 @@ EAEEAC_weightex = EAC_size/EAE_size*EACEAE_im/EAE_ex*EAEEAC_rer*EAC_py*EAC_y/(EA
 +EAEEAC_rer*EAC_pex*EAAEAC_im
 +EAEEAD_rer*EAD_pex*EAAEAD_im
 +EAEEAF_rer*EAF_pex*EAAEAF_im
++EAEEAG_rer*EAG_pex*EAAEAG_im
 +EAERW_rer*RW_pex*EAARW_im
 +EAEUS_rer*US_pex*EAAUS_im
 )
@@ -10492,6 +12407,7 @@ EAEEAC_weightex = EAC_size/EAE_size*EACEAE_im/EAE_ex*EAEEAC_rer*EAC_py*EAC_y/(EA
 +EAEEAC_rer*EAC_pex*EABEAC_im
 +EAEEAD_rer*EAD_pex*EABEAD_im
 +EAEEAF_rer*EAF_pex*EABEAF_im
++EAEEAG_rer*EAG_pex*EABEAG_im
 +EAERW_rer*RW_pex*EABRW_im
 +EAEUS_rer*US_pex*EABUS_im
 )
@@ -10500,6 +12416,7 @@ EAEEAC_weightex = EAC_size/EAE_size*EACEAE_im/EAE_ex*EAEEAC_rer*EAC_py*EAC_y/(EA
 +EAEEAB_rer*EAB_pex*EADEAB_im
 +EAEEAC_rer*EAC_pex*EADEAC_im
 +EAEEAF_rer*EAF_pex*EADEAF_im
++EAEEAG_rer*EAG_pex*EADEAG_im
 +EAERW_rer*RW_pex*EADRW_im
 +EAEUS_rer*US_pex*EADUS_im
 )
@@ -10508,8 +12425,18 @@ EAEEAC_weightex = EAC_size/EAE_size*EACEAE_im/EAE_ex*EAEEAC_rer*EAC_py*EAC_y/(EA
 +EAEEAB_rer*EAB_pex*EAFEAB_im
 +EAEEAC_rer*EAC_pex*EAFEAC_im
 +EAEEAD_rer*EAD_pex*EAFEAD_im
++EAEEAG_rer*EAG_pex*EAFEAG_im
 +EAERW_rer*RW_pex*EAFRW_im
 +EAEUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAE_size*EAGEAE_im/EAE_ex*EAEEAC_rer*EAC_pex*EAGEAC_im/(EAEEAG_rer*EAG_py*EAG_y
++EAEEAA_rer*EAA_pex*EAGEAA_im
++EAEEAB_rer*EAB_pex*EAGEAB_im
++EAEEAC_rer*EAC_pex*EAGEAC_im
++EAEEAD_rer*EAD_pex*EAGEAD_im
++EAEEAF_rer*EAF_pex*EAGEAF_im
++EAERW_rer*RW_pex*EAGRW_im
++EAEUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAE_size*RWEAE_im/EAE_ex*EAEEAC_rer*EAC_pex*RWEAC_im/(EAERW_rer*RW_py*RW_y
 +EAEEAA_rer*EAA_pex*RWEAA_im
@@ -10517,6 +12444,7 @@ EAEEAC_weightex = EAC_size/EAE_size*EACEAE_im/EAE_ex*EAEEAC_rer*EAC_py*EAC_y/(EA
 +EAEEAC_rer*EAC_pex*RWEAC_im
 +EAEEAD_rer*EAD_pex*RWEAD_im
 +EAEEAF_rer*EAF_pex*RWEAF_im
++EAEEAG_rer*EAG_pex*RWEAG_im
 +EAEUS_rer*US_pex*RWUS_im
 )
 +US_size/EAE_size*USEAE_im/EAE_ex*EAEEAC_rer*EAC_pex*USEAC_im/(EAEUS_rer*US_py*US_y
@@ -10525,6 +12453,7 @@ EAEEAC_weightex = EAC_size/EAE_size*EACEAE_im/EAE_ex*EAEEAC_rer*EAC_py*EAC_y/(EA
 +EAEEAC_rer*EAC_pex*USEAC_im
 +EAEEAD_rer*EAD_pex*USEAD_im
 +EAEEAF_rer*EAF_pex*USEAF_im
++EAEEAG_rer*EAG_pex*USEAG_im
 +EAERW_rer*RW_pex*USRW_im
 )
 ;
@@ -10538,6 +12467,7 @@ EAEEAD_weightex = EAD_size/EAE_size*EADEAE_im/EAE_ex*EAEEAD_rer*EAD_py*EAD_y/(EA
 +EAEEAB_rer*EAB_pex*EADEAB_im
 +EAEEAC_rer*EAC_pex*EADEAC_im
 +EAEEAF_rer*EAF_pex*EADEAF_im
++EAEEAG_rer*EAG_pex*EADEAG_im
 +EAERW_rer*RW_pex*EADRW_im
 +EAEUS_rer*US_pex*EADUS_im
 )+
@@ -10546,6 +12476,7 @@ EAEEAD_weightex = EAD_size/EAE_size*EADEAE_im/EAE_ex*EAEEAD_rer*EAD_py*EAD_y/(EA
 +EAEEAC_rer*EAC_pex*EAAEAC_im
 +EAEEAD_rer*EAD_pex*EAAEAD_im
 +EAEEAF_rer*EAF_pex*EAAEAF_im
++EAEEAG_rer*EAG_pex*EAAEAG_im
 +EAERW_rer*RW_pex*EAARW_im
 +EAEUS_rer*US_pex*EAAUS_im
 )
@@ -10554,6 +12485,7 @@ EAEEAD_weightex = EAD_size/EAE_size*EADEAE_im/EAE_ex*EAEEAD_rer*EAD_py*EAD_y/(EA
 +EAEEAC_rer*EAC_pex*EABEAC_im
 +EAEEAD_rer*EAD_pex*EABEAD_im
 +EAEEAF_rer*EAF_pex*EABEAF_im
++EAEEAG_rer*EAG_pex*EABEAG_im
 +EAERW_rer*RW_pex*EABRW_im
 +EAEUS_rer*US_pex*EABUS_im
 )
@@ -10562,6 +12494,7 @@ EAEEAD_weightex = EAD_size/EAE_size*EADEAE_im/EAE_ex*EAEEAD_rer*EAD_py*EAD_y/(EA
 +EAEEAB_rer*EAB_pex*EACEAB_im
 +EAEEAD_rer*EAD_pex*EACEAD_im
 +EAEEAF_rer*EAF_pex*EACEAF_im
++EAEEAG_rer*EAG_pex*EACEAG_im
 +EAERW_rer*RW_pex*EACRW_im
 +EAEUS_rer*US_pex*EACUS_im
 )
@@ -10570,8 +12503,18 @@ EAEEAD_weightex = EAD_size/EAE_size*EADEAE_im/EAE_ex*EAEEAD_rer*EAD_py*EAD_y/(EA
 +EAEEAB_rer*EAB_pex*EAFEAB_im
 +EAEEAC_rer*EAC_pex*EAFEAC_im
 +EAEEAD_rer*EAD_pex*EAFEAD_im
++EAEEAG_rer*EAG_pex*EAFEAG_im
 +EAERW_rer*RW_pex*EAFRW_im
 +EAEUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAE_size*EAGEAE_im/EAE_ex*EAEEAD_rer*EAD_pex*EAGEAD_im/(EAEEAG_rer*EAG_py*EAG_y
++EAEEAA_rer*EAA_pex*EAGEAA_im
++EAEEAB_rer*EAB_pex*EAGEAB_im
++EAEEAC_rer*EAC_pex*EAGEAC_im
++EAEEAD_rer*EAD_pex*EAGEAD_im
++EAEEAF_rer*EAF_pex*EAGEAF_im
++EAERW_rer*RW_pex*EAGRW_im
++EAEUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAE_size*RWEAE_im/EAE_ex*EAEEAD_rer*EAD_pex*RWEAD_im/(EAERW_rer*RW_py*RW_y
 +EAEEAA_rer*EAA_pex*RWEAA_im
@@ -10579,6 +12522,7 @@ EAEEAD_weightex = EAD_size/EAE_size*EADEAE_im/EAE_ex*EAEEAD_rer*EAD_py*EAD_y/(EA
 +EAEEAC_rer*EAC_pex*RWEAC_im
 +EAEEAD_rer*EAD_pex*RWEAD_im
 +EAEEAF_rer*EAF_pex*RWEAF_im
++EAEEAG_rer*EAG_pex*RWEAG_im
 +EAEUS_rer*US_pex*RWUS_im
 )
 +US_size/EAE_size*USEAE_im/EAE_ex*EAEEAD_rer*EAD_pex*USEAD_im/(EAEUS_rer*US_py*US_y
@@ -10587,6 +12531,7 @@ EAEEAD_weightex = EAD_size/EAE_size*EADEAE_im/EAE_ex*EAEEAD_rer*EAD_py*EAD_y/(EA
 +EAEEAC_rer*EAC_pex*USEAC_im
 +EAEEAD_rer*EAD_pex*USEAD_im
 +EAEEAF_rer*EAF_pex*USEAF_im
++EAEEAG_rer*EAG_pex*USEAG_im
 +EAERW_rer*RW_pex*USRW_im
 )
 ;
@@ -10600,6 +12545,7 @@ EAEEAF_weightex = EAF_size/EAE_size*EAFEAE_im/EAE_ex*EAEEAF_rer*EAF_py*EAF_y/(EA
 +EAEEAB_rer*EAB_pex*EAFEAB_im
 +EAEEAC_rer*EAC_pex*EAFEAC_im
 +EAEEAD_rer*EAD_pex*EAFEAD_im
++EAEEAG_rer*EAG_pex*EAFEAG_im
 +EAERW_rer*RW_pex*EAFRW_im
 +EAEUS_rer*US_pex*EAFUS_im
 )+
@@ -10608,6 +12554,7 @@ EAEEAF_weightex = EAF_size/EAE_size*EAFEAE_im/EAE_ex*EAEEAF_rer*EAF_py*EAF_y/(EA
 +EAEEAC_rer*EAC_pex*EAAEAC_im
 +EAEEAD_rer*EAD_pex*EAAEAD_im
 +EAEEAF_rer*EAF_pex*EAAEAF_im
++EAEEAG_rer*EAG_pex*EAAEAG_im
 +EAERW_rer*RW_pex*EAARW_im
 +EAEUS_rer*US_pex*EAAUS_im
 )
@@ -10616,6 +12563,7 @@ EAEEAF_weightex = EAF_size/EAE_size*EAFEAE_im/EAE_ex*EAEEAF_rer*EAF_py*EAF_y/(EA
 +EAEEAC_rer*EAC_pex*EABEAC_im
 +EAEEAD_rer*EAD_pex*EABEAD_im
 +EAEEAF_rer*EAF_pex*EABEAF_im
++EAEEAG_rer*EAG_pex*EABEAG_im
 +EAERW_rer*RW_pex*EABRW_im
 +EAEUS_rer*US_pex*EABUS_im
 )
@@ -10624,6 +12572,7 @@ EAEEAF_weightex = EAF_size/EAE_size*EAFEAE_im/EAE_ex*EAEEAF_rer*EAF_py*EAF_y/(EA
 +EAEEAB_rer*EAB_pex*EACEAB_im
 +EAEEAD_rer*EAD_pex*EACEAD_im
 +EAEEAF_rer*EAF_pex*EACEAF_im
++EAEEAG_rer*EAG_pex*EACEAG_im
 +EAERW_rer*RW_pex*EACRW_im
 +EAEUS_rer*US_pex*EACUS_im
 )
@@ -10632,8 +12581,18 @@ EAEEAF_weightex = EAF_size/EAE_size*EAFEAE_im/EAE_ex*EAEEAF_rer*EAF_py*EAF_y/(EA
 +EAEEAB_rer*EAB_pex*EADEAB_im
 +EAEEAC_rer*EAC_pex*EADEAC_im
 +EAEEAF_rer*EAF_pex*EADEAF_im
++EAEEAG_rer*EAG_pex*EADEAG_im
 +EAERW_rer*RW_pex*EADRW_im
 +EAEUS_rer*US_pex*EADUS_im
+)
++EAG_size/EAE_size*EAGEAE_im/EAE_ex*EAEEAF_rer*EAF_pex*EAGEAF_im/(EAEEAG_rer*EAG_py*EAG_y
++EAEEAA_rer*EAA_pex*EAGEAA_im
++EAEEAB_rer*EAB_pex*EAGEAB_im
++EAEEAC_rer*EAC_pex*EAGEAC_im
++EAEEAD_rer*EAD_pex*EAGEAD_im
++EAEEAF_rer*EAF_pex*EAGEAF_im
++EAERW_rer*RW_pex*EAGRW_im
++EAEUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAE_size*RWEAE_im/EAE_ex*EAEEAF_rer*EAF_pex*RWEAF_im/(EAERW_rer*RW_py*RW_y
 +EAEEAA_rer*EAA_pex*RWEAA_im
@@ -10641,6 +12600,7 @@ EAEEAF_weightex = EAF_size/EAE_size*EAFEAE_im/EAE_ex*EAEEAF_rer*EAF_py*EAF_y/(EA
 +EAEEAC_rer*EAC_pex*RWEAC_im
 +EAEEAD_rer*EAD_pex*RWEAD_im
 +EAEEAF_rer*EAF_pex*RWEAF_im
++EAEEAG_rer*EAG_pex*RWEAG_im
 +EAEUS_rer*US_pex*RWUS_im
 )
 +US_size/EAE_size*USEAE_im/EAE_ex*EAEEAF_rer*EAF_pex*USEAF_im/(EAEUS_rer*US_py*US_y
@@ -10649,11 +12609,90 @@ EAEEAF_weightex = EAF_size/EAE_size*EAFEAE_im/EAE_ex*EAEEAF_rer*EAF_py*EAF_y/(EA
 +EAEEAC_rer*EAC_pex*USEAC_im
 +EAEEAD_rer*EAD_pex*USEAD_im
 +EAEEAF_rer*EAF_pex*USEAF_im
++EAEEAG_rer*EAG_pex*USEAG_im
 +EAERW_rer*RW_pex*USRW_im
 )
 ;
 // Effective real exchange rate: double weighting (overall)
 EAEEAF_weight = EAE_pim*EAE_im/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAF_weightim+EAE_pex*EAE_ex/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAF_weightex;
+// Effective real exchange rate: double weighting (imports)
+EAEEAG_weightim = EAEEAG_rer*EAG_pex*EAEEAG_im/(EAE_pim*EAE_im);
+// Effective real exchange rate: double weighting (exports)
+EAEEAG_weightex = EAG_size/EAE_size*EAGEAE_im/EAE_ex*EAEEAG_rer*EAG_py*EAG_y/(EAEEAG_rer*EAG_py*EAG_y
++EAEEAA_rer*EAA_pex*EAGEAA_im
++EAEEAB_rer*EAB_pex*EAGEAB_im
++EAEEAC_rer*EAC_pex*EAGEAC_im
++EAEEAD_rer*EAD_pex*EAGEAD_im
++EAEEAF_rer*EAF_pex*EAGEAF_im
++EAERW_rer*RW_pex*EAGRW_im
++EAEUS_rer*US_pex*EAGUS_im
+)+
++EAA_size/EAE_size*EAAEAE_im/EAE_ex*EAEEAG_rer*EAG_pex*EAAEAG_im/(EAEEAA_rer*EAA_py*EAA_y
++EAEEAB_rer*EAB_pex*EAAEAB_im
++EAEEAC_rer*EAC_pex*EAAEAC_im
++EAEEAD_rer*EAD_pex*EAAEAD_im
++EAEEAF_rer*EAF_pex*EAAEAF_im
++EAEEAG_rer*EAG_pex*EAAEAG_im
++EAERW_rer*RW_pex*EAARW_im
++EAEUS_rer*US_pex*EAAUS_im
+)
++EAB_size/EAE_size*EABEAE_im/EAE_ex*EAEEAG_rer*EAG_pex*EABEAG_im/(EAEEAB_rer*EAB_py*EAB_y
++EAEEAA_rer*EAA_pex*EABEAA_im
++EAEEAC_rer*EAC_pex*EABEAC_im
++EAEEAD_rer*EAD_pex*EABEAD_im
++EAEEAF_rer*EAF_pex*EABEAF_im
++EAEEAG_rer*EAG_pex*EABEAG_im
++EAERW_rer*RW_pex*EABRW_im
++EAEUS_rer*US_pex*EABUS_im
+)
++EAC_size/EAE_size*EACEAE_im/EAE_ex*EAEEAG_rer*EAG_pex*EACEAG_im/(EAEEAC_rer*EAC_py*EAC_y
++EAEEAA_rer*EAA_pex*EACEAA_im
++EAEEAB_rer*EAB_pex*EACEAB_im
++EAEEAD_rer*EAD_pex*EACEAD_im
++EAEEAF_rer*EAF_pex*EACEAF_im
++EAEEAG_rer*EAG_pex*EACEAG_im
++EAERW_rer*RW_pex*EACRW_im
++EAEUS_rer*US_pex*EACUS_im
+)
++EAD_size/EAE_size*EADEAE_im/EAE_ex*EAEEAG_rer*EAG_pex*EADEAG_im/(EAEEAD_rer*EAD_py*EAD_y
++EAEEAA_rer*EAA_pex*EADEAA_im
++EAEEAB_rer*EAB_pex*EADEAB_im
++EAEEAC_rer*EAC_pex*EADEAC_im
++EAEEAF_rer*EAF_pex*EADEAF_im
++EAEEAG_rer*EAG_pex*EADEAG_im
++EAERW_rer*RW_pex*EADRW_im
++EAEUS_rer*US_pex*EADUS_im
+)
++EAF_size/EAE_size*EAFEAE_im/EAE_ex*EAEEAG_rer*EAG_pex*EAFEAG_im/(EAEEAF_rer*EAF_py*EAF_y
++EAEEAA_rer*EAA_pex*EAFEAA_im
++EAEEAB_rer*EAB_pex*EAFEAB_im
++EAEEAC_rer*EAC_pex*EAFEAC_im
++EAEEAD_rer*EAD_pex*EAFEAD_im
++EAEEAG_rer*EAG_pex*EAFEAG_im
++EAERW_rer*RW_pex*EAFRW_im
++EAEUS_rer*US_pex*EAFUS_im
+)
++RW_size/EAE_size*RWEAE_im/EAE_ex*EAEEAG_rer*EAG_pex*RWEAG_im/(EAERW_rer*RW_py*RW_y
++EAEEAA_rer*EAA_pex*RWEAA_im
++EAEEAB_rer*EAB_pex*RWEAB_im
++EAEEAC_rer*EAC_pex*RWEAC_im
++EAEEAD_rer*EAD_pex*RWEAD_im
++EAEEAF_rer*EAF_pex*RWEAF_im
++EAEEAG_rer*EAG_pex*RWEAG_im
++EAEUS_rer*US_pex*RWUS_im
+)
++US_size/EAE_size*USEAE_im/EAE_ex*EAEEAG_rer*EAG_pex*USEAG_im/(EAEUS_rer*US_py*US_y
++EAEEAA_rer*EAA_pex*USEAA_im
++EAEEAB_rer*EAB_pex*USEAB_im
++EAEEAC_rer*EAC_pex*USEAC_im
++EAEEAD_rer*EAD_pex*USEAD_im
++EAEEAF_rer*EAF_pex*USEAF_im
++EAEEAG_rer*EAG_pex*USEAG_im
++EAERW_rer*RW_pex*USRW_im
+)
+;
+// Effective real exchange rate: double weighting (overall)
+EAEEAG_weight = EAE_pim*EAE_im/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAG_weightim+EAE_pex*EAE_ex/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAG_weightex;
 // Effective real exchange rate: double weighting (imports)
 EAERW_weightim = EAERW_rer*RW_pex*EAERW_im/(EAE_pim*EAE_im);
 // Effective real exchange rate: double weighting (exports)
@@ -10663,6 +12702,7 @@ EAERW_weightex = RW_size/EAE_size*RWEAE_im/EAE_ex*EAERW_rer*RW_py*RW_y/(EAERW_re
 +EAEEAC_rer*EAC_pex*RWEAC_im
 +EAEEAD_rer*EAD_pex*RWEAD_im
 +EAEEAF_rer*EAF_pex*RWEAF_im
++EAEEAG_rer*EAG_pex*RWEAG_im
 +EAEUS_rer*US_pex*RWUS_im
 )+
 +EAA_size/EAE_size*EAAEAE_im/EAE_ex*EAERW_rer*RW_pex*EAARW_im/(EAEEAA_rer*EAA_py*EAA_y
@@ -10670,6 +12710,7 @@ EAERW_weightex = RW_size/EAE_size*RWEAE_im/EAE_ex*EAERW_rer*RW_py*RW_y/(EAERW_re
 +EAEEAC_rer*EAC_pex*EAAEAC_im
 +EAEEAD_rer*EAD_pex*EAAEAD_im
 +EAEEAF_rer*EAF_pex*EAAEAF_im
++EAEEAG_rer*EAG_pex*EAAEAG_im
 +EAERW_rer*RW_pex*EAARW_im
 +EAEUS_rer*US_pex*EAAUS_im
 )
@@ -10678,6 +12719,7 @@ EAERW_weightex = RW_size/EAE_size*RWEAE_im/EAE_ex*EAERW_rer*RW_py*RW_y/(EAERW_re
 +EAEEAC_rer*EAC_pex*EABEAC_im
 +EAEEAD_rer*EAD_pex*EABEAD_im
 +EAEEAF_rer*EAF_pex*EABEAF_im
++EAEEAG_rer*EAG_pex*EABEAG_im
 +EAERW_rer*RW_pex*EABRW_im
 +EAEUS_rer*US_pex*EABUS_im
 )
@@ -10686,6 +12728,7 @@ EAERW_weightex = RW_size/EAE_size*RWEAE_im/EAE_ex*EAERW_rer*RW_py*RW_y/(EAERW_re
 +EAEEAB_rer*EAB_pex*EACEAB_im
 +EAEEAD_rer*EAD_pex*EACEAD_im
 +EAEEAF_rer*EAF_pex*EACEAF_im
++EAEEAG_rer*EAG_pex*EACEAG_im
 +EAERW_rer*RW_pex*EACRW_im
 +EAEUS_rer*US_pex*EACUS_im
 )
@@ -10694,6 +12737,7 @@ EAERW_weightex = RW_size/EAE_size*RWEAE_im/EAE_ex*EAERW_rer*RW_py*RW_y/(EAERW_re
 +EAEEAB_rer*EAB_pex*EADEAB_im
 +EAEEAC_rer*EAC_pex*EADEAC_im
 +EAEEAF_rer*EAF_pex*EADEAF_im
++EAEEAG_rer*EAG_pex*EADEAG_im
 +EAERW_rer*RW_pex*EADRW_im
 +EAEUS_rer*US_pex*EADUS_im
 )
@@ -10702,8 +12746,18 @@ EAERW_weightex = RW_size/EAE_size*RWEAE_im/EAE_ex*EAERW_rer*RW_py*RW_y/(EAERW_re
 +EAEEAB_rer*EAB_pex*EAFEAB_im
 +EAEEAC_rer*EAC_pex*EAFEAC_im
 +EAEEAD_rer*EAD_pex*EAFEAD_im
++EAEEAG_rer*EAG_pex*EAFEAG_im
 +EAERW_rer*RW_pex*EAFRW_im
 +EAEUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAE_size*EAGEAE_im/EAE_ex*EAERW_rer*RW_pex*EAGRW_im/(EAEEAG_rer*EAG_py*EAG_y
++EAEEAA_rer*EAA_pex*EAGEAA_im
++EAEEAB_rer*EAB_pex*EAGEAB_im
++EAEEAC_rer*EAC_pex*EAGEAC_im
++EAEEAD_rer*EAD_pex*EAGEAD_im
++EAEEAF_rer*EAF_pex*EAGEAF_im
++EAERW_rer*RW_pex*EAGRW_im
++EAEUS_rer*US_pex*EAGUS_im
 )
 +US_size/EAE_size*USEAE_im/EAE_ex*EAERW_rer*RW_pex*USRW_im/(EAEUS_rer*US_py*US_y
 +EAEEAA_rer*EAA_pex*USEAA_im
@@ -10711,6 +12765,7 @@ EAERW_weightex = RW_size/EAE_size*RWEAE_im/EAE_ex*EAERW_rer*RW_py*RW_y/(EAERW_re
 +EAEEAC_rer*EAC_pex*USEAC_im
 +EAEEAD_rer*EAD_pex*USEAD_im
 +EAEEAF_rer*EAF_pex*USEAF_im
++EAEEAG_rer*EAG_pex*USEAG_im
 +EAERW_rer*RW_pex*USRW_im
 )
 ;
@@ -10725,6 +12780,7 @@ EAEUS_weightex = US_size/EAE_size*USEAE_im/EAE_ex*EAEUS_rer*US_py*US_y/(EAEUS_re
 +EAEEAC_rer*EAC_pex*USEAC_im
 +EAEEAD_rer*EAD_pex*USEAD_im
 +EAEEAF_rer*EAF_pex*USEAF_im
++EAEEAG_rer*EAG_pex*USEAG_im
 +EAERW_rer*RW_pex*USRW_im
 )+
 +EAA_size/EAE_size*EAAEAE_im/EAE_ex*EAEUS_rer*US_pex*EAAUS_im/(EAEEAA_rer*EAA_py*EAA_y
@@ -10732,6 +12788,7 @@ EAEUS_weightex = US_size/EAE_size*USEAE_im/EAE_ex*EAEUS_rer*US_py*US_y/(EAEUS_re
 +EAEEAC_rer*EAC_pex*EAAEAC_im
 +EAEEAD_rer*EAD_pex*EAAEAD_im
 +EAEEAF_rer*EAF_pex*EAAEAF_im
++EAEEAG_rer*EAG_pex*EAAEAG_im
 +EAERW_rer*RW_pex*EAARW_im
 +EAEUS_rer*US_pex*EAAUS_im
 )
@@ -10740,6 +12797,7 @@ EAEUS_weightex = US_size/EAE_size*USEAE_im/EAE_ex*EAEUS_rer*US_py*US_y/(EAEUS_re
 +EAEEAC_rer*EAC_pex*EABEAC_im
 +EAEEAD_rer*EAD_pex*EABEAD_im
 +EAEEAF_rer*EAF_pex*EABEAF_im
++EAEEAG_rer*EAG_pex*EABEAG_im
 +EAERW_rer*RW_pex*EABRW_im
 +EAEUS_rer*US_pex*EABUS_im
 )
@@ -10748,6 +12806,7 @@ EAEUS_weightex = US_size/EAE_size*USEAE_im/EAE_ex*EAEUS_rer*US_py*US_y/(EAEUS_re
 +EAEEAB_rer*EAB_pex*EACEAB_im
 +EAEEAD_rer*EAD_pex*EACEAD_im
 +EAEEAF_rer*EAF_pex*EACEAF_im
++EAEEAG_rer*EAG_pex*EACEAG_im
 +EAERW_rer*RW_pex*EACRW_im
 +EAEUS_rer*US_pex*EACUS_im
 )
@@ -10756,6 +12815,7 @@ EAEUS_weightex = US_size/EAE_size*USEAE_im/EAE_ex*EAEUS_rer*US_py*US_y/(EAEUS_re
 +EAEEAB_rer*EAB_pex*EADEAB_im
 +EAEEAC_rer*EAC_pex*EADEAC_im
 +EAEEAF_rer*EAF_pex*EADEAF_im
++EAEEAG_rer*EAG_pex*EADEAG_im
 +EAERW_rer*RW_pex*EADRW_im
 +EAEUS_rer*US_pex*EADUS_im
 )
@@ -10764,8 +12824,18 @@ EAEUS_weightex = US_size/EAE_size*USEAE_im/EAE_ex*EAEUS_rer*US_py*US_y/(EAEUS_re
 +EAEEAB_rer*EAB_pex*EAFEAB_im
 +EAEEAC_rer*EAC_pex*EAFEAC_im
 +EAEEAD_rer*EAD_pex*EAFEAD_im
++EAEEAG_rer*EAG_pex*EAFEAG_im
 +EAERW_rer*RW_pex*EAFRW_im
 +EAEUS_rer*US_pex*EAFUS_im
+)
++EAG_size/EAE_size*EAGEAE_im/EAE_ex*EAEUS_rer*US_pex*EAGUS_im/(EAEEAG_rer*EAG_py*EAG_y
++EAEEAA_rer*EAA_pex*EAGEAA_im
++EAEEAB_rer*EAB_pex*EAGEAB_im
++EAEEAC_rer*EAC_pex*EAGEAC_im
++EAEEAD_rer*EAD_pex*EAGEAD_im
++EAEEAF_rer*EAF_pex*EAGEAF_im
++EAERW_rer*RW_pex*EAGRW_im
++EAEUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAE_size*RWEAE_im/EAE_ex*EAEUS_rer*US_pex*RWUS_im/(EAERW_rer*RW_py*RW_y
 +EAEEAA_rer*EAA_pex*RWEAA_im
@@ -10773,6 +12843,7 @@ EAEUS_weightex = US_size/EAE_size*USEAE_im/EAE_ex*EAEUS_rer*US_py*US_y/(EAEUS_re
 +EAEEAC_rer*EAC_pex*RWEAC_im
 +EAEEAD_rer*EAD_pex*RWEAD_im
 +EAEEAF_rer*EAF_pex*RWEAF_im
++EAEEAG_rer*EAG_pex*RWEAG_im
 +EAEUS_rer*US_pex*RWUS_im
 )
 ;
@@ -10785,6 +12856,7 @@ EAE_reer = 1
 *EAEEAC_rer^EAEEAC_weight
 *EAEEAD_rer^EAEEAD_weight
 *EAEEAF_rer^EAEEAF_weight
+*EAEEAG_rer^EAEEAG_weight
 *EAERW_rer^EAERW_weight
 *EAEUS_rer^EAEUS_weight
 ;
@@ -10795,6 +12867,7 @@ EAE_etot = 1
 *EAEEAC_tot^EAEEAC_weight
 *EAEEAD_tot^EAEEAD_weight
 *EAEEAF_tot^EAEEAF_weight
+*EAEEAG_tot^EAEEAG_weight
 *EAERW_tot^EAERW_weight
 *EAEUS_tot^EAEUS_weight
 ;
@@ -10807,6 +12880,7 @@ EAE_imc^((EAE_mumc-1)/EAE_mumc) =
 +EAEEAB_numc ^(1/EAE_mumc)*EAEEAB_imc^(1-1/EAE_mumc)
 +EAEEAD_numc ^(1/EAE_mumc)*EAEEAD_imc^(1-1/EAE_mumc)
 +EAEEAF_numc ^(1/EAE_mumc)*EAEEAF_imc^(1-1/EAE_mumc)
++EAEEAG_numc ^(1/EAE_mumc)*EAEEAG_imc^(1-1/EAE_mumc)
 +EAERW_numc ^(1/EAE_mumc)*EAERW_imc^(1-1/EAE_mumc)
 +EAEUS_numc ^(1/EAE_mumc)*EAEUS_imc^(1-1/EAE_mumc)
 +(1
@@ -10814,6 +12888,7 @@ EAE_imc^((EAE_mumc-1)/EAE_mumc) =
 -EAEEAB_numc
 -EAEEAD_numc
 -EAEEAF_numc
+-EAEEAG_numc
 -EAERW_numc
 -EAEUS_numc
 )^(1/EAE_mumc)*EAEEAC_imc^(1-1/EAE_mumc);
@@ -10824,6 +12899,8 @@ EAEEAB_imc = EAEEAB_numc*((EAB_pex*EAEEAB_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
 // Demand for bilateral consumption import goods
 EAEEAD_imc = EAEEAD_numc*((EAD_pex*EAEEAD_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
 // Demand for bilateral consumption import goods
+EAEEAG_imc = EAEEAG_numc*((EAG_pex*EAEEAG_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
+// Demand for bilateral consumption import goods
 EAERW_imc = EAERW_numc*((RW_pex*EAERW_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
 // Demand for bilateral consumption import goods
 EAEUS_imc = EAEUS_numc*((US_pex*EAEUS_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
@@ -10832,6 +12909,7 @@ EAEEAC_imc = (1
 -EAEEAB_numc
 -EAEEAD_numc
 -EAEEAF_numc
+-EAEEAG_numc
 -EAERW_numc
 -EAEUS_numc
 )*((EAC_pex*EAEEAC_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
@@ -10841,6 +12919,7 @@ EAE_pimc^(1-EAE_mumc) =
 +EAEEAB_numc * (EAB_pex*EAEEAB_rer)^(1-EAE_mumc)
 +EAEEAD_numc * (EAD_pex*EAEEAD_rer)^(1-EAE_mumc)
 +EAEEAF_numc * (EAF_pex*EAEEAF_rer)^(1-EAE_mumc)
++EAEEAG_numc * (EAG_pex*EAEEAG_rer)^(1-EAE_mumc)
 +EAERW_numc * (RW_pex*EAERW_rer)^(1-EAE_mumc)
 +EAEUS_numc * (US_pex*EAEUS_rer)^(1-EAE_mumc)
 +(1
@@ -10848,6 +12927,7 @@ EAE_pimc^(1-EAE_mumc) =
 -EAEEAB_numc
 -EAEEAD_numc
 -EAEEAF_numc
+-EAEEAG_numc
 -EAERW_numc
 -EAEUS_numc
 )*(EAC_pex*EAEEAC_rer)^(1-EAE_mumc);
@@ -10859,6 +12939,7 @@ EAE_imi^((EAE_mumi-1)/EAE_mumi) =
 +EAEEAB_numi ^(1/EAE_mumi)*EAEEAB_imi^(1-1/EAE_mumi)
 +EAEEAD_numi ^(1/EAE_mumi)*EAEEAD_imi^(1-1/EAE_mumi)
 +EAEEAF_numi ^(1/EAE_mumi)*EAEEAF_imi^(1-1/EAE_mumi)
++EAEEAG_numi ^(1/EAE_mumi)*EAEEAG_imi^(1-1/EAE_mumi)
 +EAERW_numi ^(1/EAE_mumi)*EAERW_imi^(1-1/EAE_mumi)
 +EAEUS_numi ^(1/EAE_mumi)*EAEUS_imi^(1-1/EAE_mumi)
 +(1
@@ -10866,6 +12947,7 @@ EAE_imi^((EAE_mumi-1)/EAE_mumi) =
 -EAEEAB_numi
 -EAEEAD_numi
 -EAEEAF_numi
+-EAEEAG_numi
 -EAERW_numi
 -EAEUS_numi
 )^(1/EAE_mumi)*EAEEAC_imi^(1-1/EAE_mumi);
@@ -10876,6 +12958,8 @@ EAEEAB_imi = EAEEAB_numi*((EAB_pex*EAEEAB_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
 // Demand for bilateral consumption import goods
 EAEEAD_imi = EAEEAD_numi*((EAD_pex*EAEEAD_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
 // Demand for bilateral consumption import goods
+EAEEAG_imi = EAEEAG_numi*((EAG_pex*EAEEAG_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
+// Demand for bilateral consumption import goods
 EAERW_imi = EAERW_numi*((RW_pex*EAERW_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
 // Demand for bilateral consumption import goods
 EAEUS_imi = EAEUS_numi*((US_pex*EAEUS_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
@@ -10884,6 +12968,7 @@ EAEEAC_imi = (1
 -EAEEAB_numi
 -EAEEAD_numi
 -EAEEAF_numi
+-EAEEAG_numi
 -EAERW_numi
 -EAEUS_numi
 )*((EAC_pex*EAEEAC_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
@@ -10893,6 +12978,7 @@ EAE_pimi^(1-EAE_mumi) =
 +EAEEAB_numi * (EAB_pex*EAEEAB_rer)^(1-EAE_mumi)
 +EAEEAD_numi * (EAD_pex*EAEEAD_rer)^(1-EAE_mumi)
 +EAEEAF_numi * (EAF_pex*EAEEAF_rer)^(1-EAE_mumi)
++EAEEAG_numi * (EAG_pex*EAEEAG_rer)^(1-EAE_mumi)
 +EAERW_numi * (RW_pex*EAERW_rer)^(1-EAE_mumi)
 +EAEUS_numi * (US_pex*EAEUS_rer)^(1-EAE_mumi)
 +(1
@@ -10900,6 +12986,7 @@ EAE_pimi^(1-EAE_mumi) =
 -EAEEAB_numi
 -EAEEAD_numi
 -EAEEAF_numi
+-EAEEAG_numi
 -EAERW_numi
 -EAEUS_numi
 )*(EAC_pex*EAEEAC_rer)^(1-EAE_mumi);
@@ -10911,6 +12998,7 @@ EAE_imcg^((EAE_mumcg-1)/EAE_mumcg) =
 +EAEEAB_numcg ^(1/EAE_mumcg)*EAEEAB_imcg^(1-1/EAE_mumcg)
 +EAEEAD_numcg ^(1/EAE_mumcg)*EAEEAD_imcg^(1-1/EAE_mumcg)
 +EAEEAF_numcg ^(1/EAE_mumcg)*EAEEAF_imcg^(1-1/EAE_mumcg)
++EAEEAG_numcg ^(1/EAE_mumcg)*EAEEAG_imcg^(1-1/EAE_mumcg)
 +EAERW_numcg ^(1/EAE_mumcg)*EAERW_imcg^(1-1/EAE_mumcg)
 +EAEUS_numcg ^(1/EAE_mumcg)*EAEUS_imcg^(1-1/EAE_mumcg)
 +(1
@@ -10918,6 +13006,7 @@ EAE_imcg^((EAE_mumcg-1)/EAE_mumcg) =
 -EAEEAB_numcg
 -EAEEAD_numcg
 -EAEEAF_numcg
+-EAEEAG_numcg
 -EAERW_numcg
 -EAEUS_numcg
 )^(1/EAE_mumcg)*EAEEAC_imcg^(1-1/EAE_mumcg);
@@ -10928,6 +13017,8 @@ EAEEAB_imcg = EAEEAB_numcg*((EAB_pex*EAEEAB_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imc
 // Demand for bilateral consumption import goods
 EAEEAD_imcg = EAEEAD_numcg*((EAD_pex*EAEEAD_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
 // Demand for bilateral consumption import goods
+EAEEAG_imcg = EAEEAG_numcg*((EAG_pex*EAEEAG_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
+// Demand for bilateral consumption import goods
 EAERW_imcg = EAERW_numcg*((RW_pex*EAERW_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
 // Demand for bilateral consumption import goods
 EAEUS_imcg = EAEUS_numcg*((US_pex*EAEUS_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
@@ -10936,6 +13027,7 @@ EAEEAC_imcg = (1
 -EAEEAB_numcg
 -EAEEAD_numcg
 -EAEEAF_numcg
+-EAEEAG_numcg
 -EAERW_numcg
 -EAEUS_numcg
 )*((EAC_pex*EAEEAC_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
@@ -10945,6 +13037,7 @@ EAE_pimcg^(1-EAE_mumcg) =
 +EAEEAB_numcg * (EAB_pex*EAEEAB_rer)^(1-EAE_mumcg)
 +EAEEAD_numcg * (EAD_pex*EAEEAD_rer)^(1-EAE_mumcg)
 +EAEEAF_numcg * (EAF_pex*EAEEAF_rer)^(1-EAE_mumcg)
++EAEEAG_numcg * (EAG_pex*EAEEAG_rer)^(1-EAE_mumcg)
 +EAERW_numcg * (RW_pex*EAERW_rer)^(1-EAE_mumcg)
 +EAEUS_numcg * (US_pex*EAEUS_rer)^(1-EAE_mumcg)
 +(1
@@ -10952,6 +13045,7 @@ EAE_pimcg^(1-EAE_mumcg) =
 -EAEEAB_numcg
 -EAEEAD_numcg
 -EAEEAF_numcg
+-EAEEAG_numcg
 -EAERW_numcg
 -EAEUS_numcg
 )*(EAC_pex*EAEEAC_rer)^(1-EAE_mumcg);
@@ -10963,6 +13057,7 @@ EAE_imig^((EAE_mumig-1)/EAE_mumig) =
 +EAEEAB_numig ^(1/EAE_mumig)*EAEEAB_imig^(1-1/EAE_mumig)
 +EAEEAD_numig ^(1/EAE_mumig)*EAEEAD_imig^(1-1/EAE_mumig)
 +EAEEAF_numig ^(1/EAE_mumig)*EAEEAF_imig^(1-1/EAE_mumig)
++EAEEAG_numig ^(1/EAE_mumig)*EAEEAG_imig^(1-1/EAE_mumig)
 +EAERW_numig ^(1/EAE_mumig)*EAERW_imig^(1-1/EAE_mumig)
 +EAEUS_numig ^(1/EAE_mumig)*EAEUS_imig^(1-1/EAE_mumig)
 +(1
@@ -10970,6 +13065,7 @@ EAE_imig^((EAE_mumig-1)/EAE_mumig) =
 -EAEEAB_numig
 -EAEEAD_numig
 -EAEEAF_numig
+-EAEEAG_numig
 -EAERW_numig
 -EAEUS_numig
 )^(1/EAE_mumig)*EAEEAC_imig^(1-1/EAE_mumig);
@@ -10980,6 +13076,8 @@ EAEEAB_imig = EAEEAB_numig*((EAB_pex*EAEEAB_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imi
 // Demand for bilateral consumption import goods
 EAEEAD_imig = EAEEAD_numig*((EAD_pex*EAEEAD_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
 // Demand for bilateral consumption import goods
+EAEEAG_imig = EAEEAG_numig*((EAG_pex*EAEEAG_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
+// Demand for bilateral consumption import goods
 EAERW_imig = EAERW_numig*((RW_pex*EAERW_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
 // Demand for bilateral consumption import goods
 EAEUS_imig = EAEUS_numig*((US_pex*EAEUS_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
@@ -10988,6 +13086,7 @@ EAEEAC_imig = (1
 -EAEEAB_numig
 -EAEEAD_numig
 -EAEEAF_numig
+-EAEEAG_numig
 -EAERW_numig
 -EAEUS_numig
 )*((EAC_pex*EAEEAC_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
@@ -10997,6 +13096,7 @@ EAE_pimig^(1-EAE_mumig) =
 +EAEEAB_numig * (EAB_pex*EAEEAB_rer)^(1-EAE_mumig)
 +EAEEAD_numig * (EAD_pex*EAEEAD_rer)^(1-EAE_mumig)
 +EAEEAF_numig * (EAF_pex*EAEEAF_rer)^(1-EAE_mumig)
++EAEEAG_numig * (EAG_pex*EAEEAG_rer)^(1-EAE_mumig)
 +EAERW_numig * (RW_pex*EAERW_rer)^(1-EAE_mumig)
 +EAEUS_numig * (US_pex*EAEUS_rer)^(1-EAE_mumig)
 +(1
@@ -11004,6 +13104,7 @@ EAE_pimig^(1-EAE_mumig) =
 -EAEEAB_numig
 -EAEEAD_numig
 -EAEEAF_numig
+-EAEEAG_numig
 -EAERW_numig
 -EAEUS_numig
 )*(EAC_pex*EAEEAC_rer)^(1-EAE_mumig);
@@ -11046,6 +13147,12 @@ EAEEAF_im =
 +EAEEAF_imcg
 +EAEEAF_imig
 ;
+EAEEAG_im = 
++EAEEAG_imc
++EAEEAG_imi
++EAEEAG_imcg
++EAEEAG_imig
+;
 EAERW_im = 
 +EAERW_imc
 +EAERW_imi
@@ -11081,6 +13188,8 @@ EAEEAD_gammaimc = 0;
 EAEEAD_gammaimcdag = 1;
 EAEEAF_gammaimc = 0;
 EAEEAF_gammaimcdag = 1;
+EAEEAG_gammaimc = 0;
+EAEEAG_gammaimcdag = 1;
 EAERW_gammaimc = 0;
 EAERW_gammaimcdag = 1;
 EAEUS_gammaimc = 0;
@@ -11110,6 +13219,8 @@ EAEEAD_gammaimi = 0;
 EAEEAD_gammaimidag = 1;
 EAEEAF_gammaimi = 0;
 EAEEAF_gammaimidag = 1;
+EAEEAG_gammaimi = 0;
+EAEEAG_gammaimidag = 1;
 EAERW_gammaimi = 0;
 EAERW_gammaimidag = 1;
 EAEUS_gammaimi = 0;
@@ -11136,6 +13247,8 @@ EAEEAD_gammaimcg = 0;
 EAEEAD_gammaimcgdag = 1;
 EAEEAF_gammaimcg = 0;
 EAEEAF_gammaimcgdag = 1;
+EAEEAG_gammaimcg = 0;
+EAEEAG_gammaimcgdag = 1;
 EAERW_gammaimcg = 0;
 EAERW_gammaimcgdag = 1;
 EAEUS_gammaimcg = 0;
@@ -11162,6 +13275,8 @@ EAEEAD_gammaimig = 0;
 EAEEAD_gammaimigdag = 1;
 EAEEAF_gammaimig = 0;
 EAEEAF_gammaimigdag = 1;
+EAEEAG_gammaimig = 0;
+EAEEAG_gammaimigdag = 1;
 EAERW_gammaimig = 0;
 EAERW_gammaimigdag = 1;
 EAEUS_gammaimig = 0;
@@ -11178,6 +13293,8 @@ EAE_tb =
 -EAD_pex*EAEEAD_rer*EAEEAD_im
 +EAE_pex*EAF_size/EAE_size*EAFEAE_im
 -EAF_pex*EAEEAF_rer*EAEEAF_im
++EAE_pex*EAG_size/EAE_size*EAGEAE_im
+-EAG_pex*EAEEAG_rer*EAEEAG_im
 +EAE_pex*RW_size/EAE_size*RWEAE_im
 -RW_pex*EAERW_rer*EAERW_im
 +EAE_pex*US_size/EAE_size*USEAE_im
@@ -11190,6 +13307,7 @@ EAE_ex =
 +EAC_size/EAE_size*EACEAE_im
 +EAD_size/EAE_size*EADEAE_im
 +EAF_size/EAE_size*EAFEAE_im
++EAG_size/EAE_size*EAGEAE_im
 +RW_size/EAE_size*RWEAE_im
 +US_size/EAE_size*USEAE_im
 ;
@@ -11235,7 +13353,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAE_r = EAF_r;
+	EAE_r = EAG_r;
 EAE_pic4 = EAE_pi4target;
 EAE_rr-1 = EAE_r/EAE_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -11348,6 +13466,11 @@ EAE_py*EAE_y =
 -(EAF_pex*EAEEAF_rer)*EAEEAF_imi
 -(EAF_pex*EAEEAF_rer)*EAEEAF_imcg
 -(EAF_pex*EAEEAF_rer)*EAEEAF_imig
++EAE_pex*EAG_size/EAE_size*EAGEAE_im
+-(EAG_pex*EAEEAG_rer)*EAEEAG_imc
+-(EAG_pex*EAEEAG_rer)*EAEEAG_imi
+-(EAG_pex*EAEEAG_rer)*EAEEAG_imcg
+-(EAG_pex*EAEEAG_rer)*EAEEAG_imig
 +EAE_pex*RW_size/EAE_size*RWEAE_im
 -(RW_pex*EAERW_rer)*EAERW_imc
 -(RW_pex*EAERW_rer)*EAERW_imi
@@ -11443,6 +13566,7 @@ EAE_yshare  = EAE_size*EAE_py*EAE_y/EAE_rer/(
 +EAD_size*EAD_py*EAD_y/EAD_rer
 +EAE_size*EAE_py*EAE_y/EAE_rer
 +EAF_size*EAF_py*EAF_y/EAF_rer
++EAG_size*EAG_py*EAG_y/EAG_rer
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
@@ -11496,6 +13620,15 @@ EAEEAF_excy  = EAF_size/EAE_size*EAE_pex*EAFEAE_imc/(EAE_py*EAE_y);
 // Exports of investment goods to gdp
 EAEEAF_exiy  = EAF_size/EAE_size*EAE_pex*EAFEAE_imi/(EAE_py*EAE_y);
 // Bilateral shares
+EAEEAG_imcy = (EAG_pex*EAEEAG_rer)*EAEEAG_imc/(EAE_py*EAE_y);
+EAEEAG_imiy = (EAG_pex*EAEEAG_rer)*EAEEAG_imi/(EAE_py*EAE_y);
+EAEEAG_imcgy = (EAG_pex*EAEEAG_rer)*EAEEAG_imcg/(EAE_py*EAE_y);
+EAEEAG_imigy = (EAG_pex*EAEEAG_rer)*EAEEAG_imig/(EAE_py*EAE_y);
+// Exports of consumption goods to gdp
+EAEEAG_excy  = EAG_size/EAE_size*EAE_pex*EAGEAE_imc/(EAE_py*EAE_y);
+// Exports of investment goods to gdp
+EAEEAG_exiy  = EAG_size/EAE_size*EAE_pex*EAGEAE_imi/(EAE_py*EAE_y);
+// Bilateral shares
 EAERW_imcy = (RW_pex*EAERW_rer)*EAERW_imc/(EAE_py*EAE_y);
 EAERW_imiy = (RW_pex*EAERW_rer)*EAERW_imi/(EAE_py*EAE_y);
 EAERW_imcgy = (RW_pex*EAERW_rer)*EAERW_imcg/(EAE_py*EAE_y);
@@ -11533,7 +13666,7 @@ EAF_zcon*log(EAF_ccesi-EAF_kappa*EAF_ccesi(-1))-1/(1+EAF_zeta)*(EAF_ni)^(1+EAF_z
 EAF_dcci = ((EAF_nucces)^(1/EAF_mucces)*EAF_ci^(1-1/EAF_mucces)+(1-EAF_nucces)^(1/EAF_mucces)*EAF_cg^(1-1/EAF_mucces))^(1/(EAF_mucces-1))*(EAF_nucces^(1/EAF_mucces))*(EAF_ci^(-1/EAF_mucces));
 EAF_lambdai*(1+EAF_tauc+EAF_gammavi+EAF_vi*EAF_gammavider) = EAF_zcon*(EAF_ccesi-EAF_kappa*EAF_ccesi(-1))^(-EAF_sigma)*EAF_dcci;
 // Euler equation for government bonds
-EAF_r = EAF_beta^(-1)*EAF_lambdai/EAF_lambdai(+1)*EAF_pic(+1);
+EAF_r                   = EAF_beta^(-1)*EAF_lambdai/EAF_lambdai    *EAF_pic;
 // Euler equation for money
 EAF_vi^(2)*EAF_gammavider = 1-EAF_beta*EAF_lambdai(+1)/(EAF_lambdai*EAF_pic(+1));
 // Consumption-based velocity
@@ -11757,6 +13890,22 @@ EAFEAE_rer = EAF_rer/EAE_rer;
 EAFEAE_rerbar = EAFEAE_rer;
 //Terms of Trade
 EAFEAE_tot = EAE_pex*EAFEAE_rer/EAF_pex;
+// Optimal price contract set in foreign markets (FOC), using EAF_pxtilde = EAG_pimtilde
+// EAGEAF_pimtilde/EAGEAF_pim = EAF_cpim*EAF_thetat/(EAF_thetat-1)*EAFEAG_fx/EAFEAG_gx;
+// Definition of fx
+// EAFEAG_fx = EAG_size/EAF_size*EAGEAF_im*EAF_mct+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAGEAF_piim(+1)/(EAGEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^EAF_thetat*EAFEAG_fx(+1);
+// Definition of gx   
+// EAFEAG_gx = EAFEAG_rer*EAGEAF_pim*EAG_size/EAF_size*EAGEAF_im+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAGEAF_piim(+1)/(EAGEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^(EAF_thetat-1)*EAFEAG_gx(+1);
+// Aggregate intermediate-good price dynamics, using EAF_px = EAG_pim
+// EAGEAF_pim^(1-EAF_thetat) = (1-EAF_xix)*EAGEAF_pimtilde^(1-EAF_thetat)+EAF_xix*(EAGEAF_pim(-1)/EAG_pic)^(1-EAF_thetat)*(EAGEAF_piim(-1)^EAF_chix*EAG_pi4target^(1/4*(1-EAF_chih)))^(1-EAF_thetat);
+// Intermediate-good price inflation, using EAF_pix = EAG_piim
+// EAGEAF_piim = EAGEAF_pim/EAGEAF_pim(-1)*EAG_pic;
+// Bilateral real exchange rate
+EAFEAG_rer = EAF_rer/EAG_rer;
+// Auxiliary equation for steady-state output
+EAFEAG_rerbar = EAFEAG_rer;
+//Terms of Trade
+EAFEAG_tot = EAG_pex*EAFEAG_rer/EAF_pex;
 // Optimal price contract set in foreign markets (FOC), using EAF_pxtilde = RW_pimtilde
 // RWEAF_pimtilde/RWEAF_pim = EAF_cpim*EAF_thetat/(EAF_thetat-1)*EAFRW_fx/EAFRW_gx;
 // Definition of fx
@@ -11811,6 +13960,7 @@ EAFEAA_weightex = EAA_size/EAF_size*EAAEAF_im/EAF_ex*EAFEAA_rer*EAA_py*EAA_y/(EA
 +EAFEAC_rer*EAC_pex*EAAEAC_im
 +EAFEAD_rer*EAD_pex*EAAEAD_im
 +EAFEAE_rer*EAE_pex*EAAEAE_im
++EAFEAG_rer*EAG_pex*EAAEAG_im
 +EAFRW_rer*RW_pex*EAARW_im
 +EAFUS_rer*US_pex*EAAUS_im
 )+
@@ -11819,6 +13969,7 @@ EAFEAA_weightex = EAA_size/EAF_size*EAAEAF_im/EAF_ex*EAFEAA_rer*EAA_py*EAA_y/(EA
 +EAFEAC_rer*EAC_pex*EABEAC_im
 +EAFEAD_rer*EAD_pex*EABEAD_im
 +EAFEAE_rer*EAE_pex*EABEAE_im
++EAFEAG_rer*EAG_pex*EABEAG_im
 +EAFRW_rer*RW_pex*EABRW_im
 +EAFUS_rer*US_pex*EABUS_im
 )
@@ -11827,6 +13978,7 @@ EAFEAA_weightex = EAA_size/EAF_size*EAAEAF_im/EAF_ex*EAFEAA_rer*EAA_py*EAA_y/(EA
 +EAFEAB_rer*EAB_pex*EACEAB_im
 +EAFEAD_rer*EAD_pex*EACEAD_im
 +EAFEAE_rer*EAE_pex*EACEAE_im
++EAFEAG_rer*EAG_pex*EACEAG_im
 +EAFRW_rer*RW_pex*EACRW_im
 +EAFUS_rer*US_pex*EACUS_im
 )
@@ -11835,6 +13987,7 @@ EAFEAA_weightex = EAA_size/EAF_size*EAAEAF_im/EAF_ex*EAFEAA_rer*EAA_py*EAA_y/(EA
 +EAFEAB_rer*EAB_pex*EADEAB_im
 +EAFEAC_rer*EAC_pex*EADEAC_im
 +EAFEAE_rer*EAE_pex*EADEAE_im
++EAFEAG_rer*EAG_pex*EADEAG_im
 +EAFRW_rer*RW_pex*EADRW_im
 +EAFUS_rer*US_pex*EADUS_im
 )
@@ -11843,8 +13996,18 @@ EAFEAA_weightex = EAA_size/EAF_size*EAAEAF_im/EAF_ex*EAFEAA_rer*EAA_py*EAA_y/(EA
 +EAFEAB_rer*EAB_pex*EAEEAB_im
 +EAFEAC_rer*EAC_pex*EAEEAC_im
 +EAFEAD_rer*EAD_pex*EAEEAD_im
++EAFEAG_rer*EAG_pex*EAEEAG_im
 +EAFRW_rer*RW_pex*EAERW_im
 +EAFUS_rer*US_pex*EAEUS_im
+)
++EAG_size/EAF_size*EAGEAF_im/EAF_ex*EAFEAA_rer*EAA_pex*EAGEAA_im/(EAFEAG_rer*EAG_py*EAG_y
++EAFEAA_rer*EAA_pex*EAGEAA_im
++EAFEAB_rer*EAB_pex*EAGEAB_im
++EAFEAC_rer*EAC_pex*EAGEAC_im
++EAFEAD_rer*EAD_pex*EAGEAD_im
++EAFEAE_rer*EAE_pex*EAGEAE_im
++EAFRW_rer*RW_pex*EAGRW_im
++EAFUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAF_size*RWEAF_im/EAF_ex*EAFEAA_rer*EAA_pex*RWEAA_im/(EAFRW_rer*RW_py*RW_y
 +EAFEAA_rer*EAA_pex*RWEAA_im
@@ -11852,6 +14015,7 @@ EAFEAA_weightex = EAA_size/EAF_size*EAAEAF_im/EAF_ex*EAFEAA_rer*EAA_py*EAA_y/(EA
 +EAFEAC_rer*EAC_pex*RWEAC_im
 +EAFEAD_rer*EAD_pex*RWEAD_im
 +EAFEAE_rer*EAE_pex*RWEAE_im
++EAFEAG_rer*EAG_pex*RWEAG_im
 +EAFUS_rer*US_pex*RWUS_im
 )
 +US_size/EAF_size*USEAF_im/EAF_ex*EAFEAA_rer*EAA_pex*USEAA_im/(EAFUS_rer*US_py*US_y
@@ -11860,6 +14024,7 @@ EAFEAA_weightex = EAA_size/EAF_size*EAAEAF_im/EAF_ex*EAFEAA_rer*EAA_py*EAA_y/(EA
 +EAFEAC_rer*EAC_pex*USEAC_im
 +EAFEAD_rer*EAD_pex*USEAD_im
 +EAFEAE_rer*EAE_pex*USEAE_im
++EAFEAG_rer*EAG_pex*USEAG_im
 +EAFRW_rer*RW_pex*USRW_im
 )
 ;
@@ -11873,6 +14038,7 @@ EAFEAB_weightex = EAB_size/EAF_size*EABEAF_im/EAF_ex*EAFEAB_rer*EAB_py*EAB_y/(EA
 +EAFEAC_rer*EAC_pex*EABEAC_im
 +EAFEAD_rer*EAD_pex*EABEAD_im
 +EAFEAE_rer*EAE_pex*EABEAE_im
++EAFEAG_rer*EAG_pex*EABEAG_im
 +EAFRW_rer*RW_pex*EABRW_im
 +EAFUS_rer*US_pex*EABUS_im
 )+
@@ -11881,6 +14047,7 @@ EAFEAB_weightex = EAB_size/EAF_size*EABEAF_im/EAF_ex*EAFEAB_rer*EAB_py*EAB_y/(EA
 +EAFEAC_rer*EAC_pex*EAAEAC_im
 +EAFEAD_rer*EAD_pex*EAAEAD_im
 +EAFEAE_rer*EAE_pex*EAAEAE_im
++EAFEAG_rer*EAG_pex*EAAEAG_im
 +EAFRW_rer*RW_pex*EAARW_im
 +EAFUS_rer*US_pex*EAAUS_im
 )
@@ -11889,6 +14056,7 @@ EAFEAB_weightex = EAB_size/EAF_size*EABEAF_im/EAF_ex*EAFEAB_rer*EAB_py*EAB_y/(EA
 +EAFEAB_rer*EAB_pex*EACEAB_im
 +EAFEAD_rer*EAD_pex*EACEAD_im
 +EAFEAE_rer*EAE_pex*EACEAE_im
++EAFEAG_rer*EAG_pex*EACEAG_im
 +EAFRW_rer*RW_pex*EACRW_im
 +EAFUS_rer*US_pex*EACUS_im
 )
@@ -11897,6 +14065,7 @@ EAFEAB_weightex = EAB_size/EAF_size*EABEAF_im/EAF_ex*EAFEAB_rer*EAB_py*EAB_y/(EA
 +EAFEAB_rer*EAB_pex*EADEAB_im
 +EAFEAC_rer*EAC_pex*EADEAC_im
 +EAFEAE_rer*EAE_pex*EADEAE_im
++EAFEAG_rer*EAG_pex*EADEAG_im
 +EAFRW_rer*RW_pex*EADRW_im
 +EAFUS_rer*US_pex*EADUS_im
 )
@@ -11905,8 +14074,18 @@ EAFEAB_weightex = EAB_size/EAF_size*EABEAF_im/EAF_ex*EAFEAB_rer*EAB_py*EAB_y/(EA
 +EAFEAB_rer*EAB_pex*EAEEAB_im
 +EAFEAC_rer*EAC_pex*EAEEAC_im
 +EAFEAD_rer*EAD_pex*EAEEAD_im
++EAFEAG_rer*EAG_pex*EAEEAG_im
 +EAFRW_rer*RW_pex*EAERW_im
 +EAFUS_rer*US_pex*EAEUS_im
+)
++EAG_size/EAF_size*EAGEAF_im/EAF_ex*EAFEAB_rer*EAB_pex*EAGEAB_im/(EAFEAG_rer*EAG_py*EAG_y
++EAFEAA_rer*EAA_pex*EAGEAA_im
++EAFEAB_rer*EAB_pex*EAGEAB_im
++EAFEAC_rer*EAC_pex*EAGEAC_im
++EAFEAD_rer*EAD_pex*EAGEAD_im
++EAFEAE_rer*EAE_pex*EAGEAE_im
++EAFRW_rer*RW_pex*EAGRW_im
++EAFUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAF_size*RWEAF_im/EAF_ex*EAFEAB_rer*EAB_pex*RWEAB_im/(EAFRW_rer*RW_py*RW_y
 +EAFEAA_rer*EAA_pex*RWEAA_im
@@ -11914,6 +14093,7 @@ EAFEAB_weightex = EAB_size/EAF_size*EABEAF_im/EAF_ex*EAFEAB_rer*EAB_py*EAB_y/(EA
 +EAFEAC_rer*EAC_pex*RWEAC_im
 +EAFEAD_rer*EAD_pex*RWEAD_im
 +EAFEAE_rer*EAE_pex*RWEAE_im
++EAFEAG_rer*EAG_pex*RWEAG_im
 +EAFUS_rer*US_pex*RWUS_im
 )
 +US_size/EAF_size*USEAF_im/EAF_ex*EAFEAB_rer*EAB_pex*USEAB_im/(EAFUS_rer*US_py*US_y
@@ -11922,6 +14102,7 @@ EAFEAB_weightex = EAB_size/EAF_size*EABEAF_im/EAF_ex*EAFEAB_rer*EAB_py*EAB_y/(EA
 +EAFEAC_rer*EAC_pex*USEAC_im
 +EAFEAD_rer*EAD_pex*USEAD_im
 +EAFEAE_rer*EAE_pex*USEAE_im
++EAFEAG_rer*EAG_pex*USEAG_im
 +EAFRW_rer*RW_pex*USRW_im
 )
 ;
@@ -11935,6 +14116,7 @@ EAFEAC_weightex = EAC_size/EAF_size*EACEAF_im/EAF_ex*EAFEAC_rer*EAC_py*EAC_y/(EA
 +EAFEAB_rer*EAB_pex*EACEAB_im
 +EAFEAD_rer*EAD_pex*EACEAD_im
 +EAFEAE_rer*EAE_pex*EACEAE_im
++EAFEAG_rer*EAG_pex*EACEAG_im
 +EAFRW_rer*RW_pex*EACRW_im
 +EAFUS_rer*US_pex*EACUS_im
 )+
@@ -11943,6 +14125,7 @@ EAFEAC_weightex = EAC_size/EAF_size*EACEAF_im/EAF_ex*EAFEAC_rer*EAC_py*EAC_y/(EA
 +EAFEAC_rer*EAC_pex*EAAEAC_im
 +EAFEAD_rer*EAD_pex*EAAEAD_im
 +EAFEAE_rer*EAE_pex*EAAEAE_im
++EAFEAG_rer*EAG_pex*EAAEAG_im
 +EAFRW_rer*RW_pex*EAARW_im
 +EAFUS_rer*US_pex*EAAUS_im
 )
@@ -11951,6 +14134,7 @@ EAFEAC_weightex = EAC_size/EAF_size*EACEAF_im/EAF_ex*EAFEAC_rer*EAC_py*EAC_y/(EA
 +EAFEAC_rer*EAC_pex*EABEAC_im
 +EAFEAD_rer*EAD_pex*EABEAD_im
 +EAFEAE_rer*EAE_pex*EABEAE_im
++EAFEAG_rer*EAG_pex*EABEAG_im
 +EAFRW_rer*RW_pex*EABRW_im
 +EAFUS_rer*US_pex*EABUS_im
 )
@@ -11959,6 +14143,7 @@ EAFEAC_weightex = EAC_size/EAF_size*EACEAF_im/EAF_ex*EAFEAC_rer*EAC_py*EAC_y/(EA
 +EAFEAB_rer*EAB_pex*EADEAB_im
 +EAFEAC_rer*EAC_pex*EADEAC_im
 +EAFEAE_rer*EAE_pex*EADEAE_im
++EAFEAG_rer*EAG_pex*EADEAG_im
 +EAFRW_rer*RW_pex*EADRW_im
 +EAFUS_rer*US_pex*EADUS_im
 )
@@ -11967,8 +14152,18 @@ EAFEAC_weightex = EAC_size/EAF_size*EACEAF_im/EAF_ex*EAFEAC_rer*EAC_py*EAC_y/(EA
 +EAFEAB_rer*EAB_pex*EAEEAB_im
 +EAFEAC_rer*EAC_pex*EAEEAC_im
 +EAFEAD_rer*EAD_pex*EAEEAD_im
++EAFEAG_rer*EAG_pex*EAEEAG_im
 +EAFRW_rer*RW_pex*EAERW_im
 +EAFUS_rer*US_pex*EAEUS_im
+)
++EAG_size/EAF_size*EAGEAF_im/EAF_ex*EAFEAC_rer*EAC_pex*EAGEAC_im/(EAFEAG_rer*EAG_py*EAG_y
++EAFEAA_rer*EAA_pex*EAGEAA_im
++EAFEAB_rer*EAB_pex*EAGEAB_im
++EAFEAC_rer*EAC_pex*EAGEAC_im
++EAFEAD_rer*EAD_pex*EAGEAD_im
++EAFEAE_rer*EAE_pex*EAGEAE_im
++EAFRW_rer*RW_pex*EAGRW_im
++EAFUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAF_size*RWEAF_im/EAF_ex*EAFEAC_rer*EAC_pex*RWEAC_im/(EAFRW_rer*RW_py*RW_y
 +EAFEAA_rer*EAA_pex*RWEAA_im
@@ -11976,6 +14171,7 @@ EAFEAC_weightex = EAC_size/EAF_size*EACEAF_im/EAF_ex*EAFEAC_rer*EAC_py*EAC_y/(EA
 +EAFEAC_rer*EAC_pex*RWEAC_im
 +EAFEAD_rer*EAD_pex*RWEAD_im
 +EAFEAE_rer*EAE_pex*RWEAE_im
++EAFEAG_rer*EAG_pex*RWEAG_im
 +EAFUS_rer*US_pex*RWUS_im
 )
 +US_size/EAF_size*USEAF_im/EAF_ex*EAFEAC_rer*EAC_pex*USEAC_im/(EAFUS_rer*US_py*US_y
@@ -11984,6 +14180,7 @@ EAFEAC_weightex = EAC_size/EAF_size*EACEAF_im/EAF_ex*EAFEAC_rer*EAC_py*EAC_y/(EA
 +EAFEAC_rer*EAC_pex*USEAC_im
 +EAFEAD_rer*EAD_pex*USEAD_im
 +EAFEAE_rer*EAE_pex*USEAE_im
++EAFEAG_rer*EAG_pex*USEAG_im
 +EAFRW_rer*RW_pex*USRW_im
 )
 ;
@@ -11997,6 +14194,7 @@ EAFEAD_weightex = EAD_size/EAF_size*EADEAF_im/EAF_ex*EAFEAD_rer*EAD_py*EAD_y/(EA
 +EAFEAB_rer*EAB_pex*EADEAB_im
 +EAFEAC_rer*EAC_pex*EADEAC_im
 +EAFEAE_rer*EAE_pex*EADEAE_im
++EAFEAG_rer*EAG_pex*EADEAG_im
 +EAFRW_rer*RW_pex*EADRW_im
 +EAFUS_rer*US_pex*EADUS_im
 )+
@@ -12005,6 +14203,7 @@ EAFEAD_weightex = EAD_size/EAF_size*EADEAF_im/EAF_ex*EAFEAD_rer*EAD_py*EAD_y/(EA
 +EAFEAC_rer*EAC_pex*EAAEAC_im
 +EAFEAD_rer*EAD_pex*EAAEAD_im
 +EAFEAE_rer*EAE_pex*EAAEAE_im
++EAFEAG_rer*EAG_pex*EAAEAG_im
 +EAFRW_rer*RW_pex*EAARW_im
 +EAFUS_rer*US_pex*EAAUS_im
 )
@@ -12013,6 +14212,7 @@ EAFEAD_weightex = EAD_size/EAF_size*EADEAF_im/EAF_ex*EAFEAD_rer*EAD_py*EAD_y/(EA
 +EAFEAC_rer*EAC_pex*EABEAC_im
 +EAFEAD_rer*EAD_pex*EABEAD_im
 +EAFEAE_rer*EAE_pex*EABEAE_im
++EAFEAG_rer*EAG_pex*EABEAG_im
 +EAFRW_rer*RW_pex*EABRW_im
 +EAFUS_rer*US_pex*EABUS_im
 )
@@ -12021,6 +14221,7 @@ EAFEAD_weightex = EAD_size/EAF_size*EADEAF_im/EAF_ex*EAFEAD_rer*EAD_py*EAD_y/(EA
 +EAFEAB_rer*EAB_pex*EACEAB_im
 +EAFEAD_rer*EAD_pex*EACEAD_im
 +EAFEAE_rer*EAE_pex*EACEAE_im
++EAFEAG_rer*EAG_pex*EACEAG_im
 +EAFRW_rer*RW_pex*EACRW_im
 +EAFUS_rer*US_pex*EACUS_im
 )
@@ -12029,8 +14230,18 @@ EAFEAD_weightex = EAD_size/EAF_size*EADEAF_im/EAF_ex*EAFEAD_rer*EAD_py*EAD_y/(EA
 +EAFEAB_rer*EAB_pex*EAEEAB_im
 +EAFEAC_rer*EAC_pex*EAEEAC_im
 +EAFEAD_rer*EAD_pex*EAEEAD_im
++EAFEAG_rer*EAG_pex*EAEEAG_im
 +EAFRW_rer*RW_pex*EAERW_im
 +EAFUS_rer*US_pex*EAEUS_im
+)
++EAG_size/EAF_size*EAGEAF_im/EAF_ex*EAFEAD_rer*EAD_pex*EAGEAD_im/(EAFEAG_rer*EAG_py*EAG_y
++EAFEAA_rer*EAA_pex*EAGEAA_im
++EAFEAB_rer*EAB_pex*EAGEAB_im
++EAFEAC_rer*EAC_pex*EAGEAC_im
++EAFEAD_rer*EAD_pex*EAGEAD_im
++EAFEAE_rer*EAE_pex*EAGEAE_im
++EAFRW_rer*RW_pex*EAGRW_im
++EAFUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAF_size*RWEAF_im/EAF_ex*EAFEAD_rer*EAD_pex*RWEAD_im/(EAFRW_rer*RW_py*RW_y
 +EAFEAA_rer*EAA_pex*RWEAA_im
@@ -12038,6 +14249,7 @@ EAFEAD_weightex = EAD_size/EAF_size*EADEAF_im/EAF_ex*EAFEAD_rer*EAD_py*EAD_y/(EA
 +EAFEAC_rer*EAC_pex*RWEAC_im
 +EAFEAD_rer*EAD_pex*RWEAD_im
 +EAFEAE_rer*EAE_pex*RWEAE_im
++EAFEAG_rer*EAG_pex*RWEAG_im
 +EAFUS_rer*US_pex*RWUS_im
 )
 +US_size/EAF_size*USEAF_im/EAF_ex*EAFEAD_rer*EAD_pex*USEAD_im/(EAFUS_rer*US_py*US_y
@@ -12046,6 +14258,7 @@ EAFEAD_weightex = EAD_size/EAF_size*EADEAF_im/EAF_ex*EAFEAD_rer*EAD_py*EAD_y/(EA
 +EAFEAC_rer*EAC_pex*USEAC_im
 +EAFEAD_rer*EAD_pex*USEAD_im
 +EAFEAE_rer*EAE_pex*USEAE_im
++EAFEAG_rer*EAG_pex*USEAG_im
 +EAFRW_rer*RW_pex*USRW_im
 )
 ;
@@ -12059,6 +14272,7 @@ EAFEAE_weightex = EAE_size/EAF_size*EAEEAF_im/EAF_ex*EAFEAE_rer*EAE_py*EAE_y/(EA
 +EAFEAB_rer*EAB_pex*EAEEAB_im
 +EAFEAC_rer*EAC_pex*EAEEAC_im
 +EAFEAD_rer*EAD_pex*EAEEAD_im
++EAFEAG_rer*EAG_pex*EAEEAG_im
 +EAFRW_rer*RW_pex*EAERW_im
 +EAFUS_rer*US_pex*EAEUS_im
 )+
@@ -12067,6 +14281,7 @@ EAFEAE_weightex = EAE_size/EAF_size*EAEEAF_im/EAF_ex*EAFEAE_rer*EAE_py*EAE_y/(EA
 +EAFEAC_rer*EAC_pex*EAAEAC_im
 +EAFEAD_rer*EAD_pex*EAAEAD_im
 +EAFEAE_rer*EAE_pex*EAAEAE_im
++EAFEAG_rer*EAG_pex*EAAEAG_im
 +EAFRW_rer*RW_pex*EAARW_im
 +EAFUS_rer*US_pex*EAAUS_im
 )
@@ -12075,6 +14290,7 @@ EAFEAE_weightex = EAE_size/EAF_size*EAEEAF_im/EAF_ex*EAFEAE_rer*EAE_py*EAE_y/(EA
 +EAFEAC_rer*EAC_pex*EABEAC_im
 +EAFEAD_rer*EAD_pex*EABEAD_im
 +EAFEAE_rer*EAE_pex*EABEAE_im
++EAFEAG_rer*EAG_pex*EABEAG_im
 +EAFRW_rer*RW_pex*EABRW_im
 +EAFUS_rer*US_pex*EABUS_im
 )
@@ -12083,6 +14299,7 @@ EAFEAE_weightex = EAE_size/EAF_size*EAEEAF_im/EAF_ex*EAFEAE_rer*EAE_py*EAE_y/(EA
 +EAFEAB_rer*EAB_pex*EACEAB_im
 +EAFEAD_rer*EAD_pex*EACEAD_im
 +EAFEAE_rer*EAE_pex*EACEAE_im
++EAFEAG_rer*EAG_pex*EACEAG_im
 +EAFRW_rer*RW_pex*EACRW_im
 +EAFUS_rer*US_pex*EACUS_im
 )
@@ -12091,8 +14308,18 @@ EAFEAE_weightex = EAE_size/EAF_size*EAEEAF_im/EAF_ex*EAFEAE_rer*EAE_py*EAE_y/(EA
 +EAFEAB_rer*EAB_pex*EADEAB_im
 +EAFEAC_rer*EAC_pex*EADEAC_im
 +EAFEAE_rer*EAE_pex*EADEAE_im
++EAFEAG_rer*EAG_pex*EADEAG_im
 +EAFRW_rer*RW_pex*EADRW_im
 +EAFUS_rer*US_pex*EADUS_im
+)
++EAG_size/EAF_size*EAGEAF_im/EAF_ex*EAFEAE_rer*EAE_pex*EAGEAE_im/(EAFEAG_rer*EAG_py*EAG_y
++EAFEAA_rer*EAA_pex*EAGEAA_im
++EAFEAB_rer*EAB_pex*EAGEAB_im
++EAFEAC_rer*EAC_pex*EAGEAC_im
++EAFEAD_rer*EAD_pex*EAGEAD_im
++EAFEAE_rer*EAE_pex*EAGEAE_im
++EAFRW_rer*RW_pex*EAGRW_im
++EAFUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAF_size*RWEAF_im/EAF_ex*EAFEAE_rer*EAE_pex*RWEAE_im/(EAFRW_rer*RW_py*RW_y
 +EAFEAA_rer*EAA_pex*RWEAA_im
@@ -12100,6 +14327,7 @@ EAFEAE_weightex = EAE_size/EAF_size*EAEEAF_im/EAF_ex*EAFEAE_rer*EAE_py*EAE_y/(EA
 +EAFEAC_rer*EAC_pex*RWEAC_im
 +EAFEAD_rer*EAD_pex*RWEAD_im
 +EAFEAE_rer*EAE_pex*RWEAE_im
++EAFEAG_rer*EAG_pex*RWEAG_im
 +EAFUS_rer*US_pex*RWUS_im
 )
 +US_size/EAF_size*USEAF_im/EAF_ex*EAFEAE_rer*EAE_pex*USEAE_im/(EAFUS_rer*US_py*US_y
@@ -12108,11 +14336,90 @@ EAFEAE_weightex = EAE_size/EAF_size*EAEEAF_im/EAF_ex*EAFEAE_rer*EAE_py*EAE_y/(EA
 +EAFEAC_rer*EAC_pex*USEAC_im
 +EAFEAD_rer*EAD_pex*USEAD_im
 +EAFEAE_rer*EAE_pex*USEAE_im
++EAFEAG_rer*EAG_pex*USEAG_im
 +EAFRW_rer*RW_pex*USRW_im
 )
 ;
 // Effective real exchange rate: double weighting (overall)
 EAFEAE_weight = EAF_pim*EAF_im/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAE_weightim+EAF_pex*EAF_ex/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAE_weightex;
+// Effective real exchange rate: double weighting (imports)
+EAFEAG_weightim = EAFEAG_rer*EAG_pex*EAFEAG_im/(EAF_pim*EAF_im);
+// Effective real exchange rate: double weighting (exports)
+EAFEAG_weightex = EAG_size/EAF_size*EAGEAF_im/EAF_ex*EAFEAG_rer*EAG_py*EAG_y/(EAFEAG_rer*EAG_py*EAG_y
++EAFEAA_rer*EAA_pex*EAGEAA_im
++EAFEAB_rer*EAB_pex*EAGEAB_im
++EAFEAC_rer*EAC_pex*EAGEAC_im
++EAFEAD_rer*EAD_pex*EAGEAD_im
++EAFEAE_rer*EAE_pex*EAGEAE_im
++EAFRW_rer*RW_pex*EAGRW_im
++EAFUS_rer*US_pex*EAGUS_im
+)+
++EAA_size/EAF_size*EAAEAF_im/EAF_ex*EAFEAG_rer*EAG_pex*EAAEAG_im/(EAFEAA_rer*EAA_py*EAA_y
++EAFEAB_rer*EAB_pex*EAAEAB_im
++EAFEAC_rer*EAC_pex*EAAEAC_im
++EAFEAD_rer*EAD_pex*EAAEAD_im
++EAFEAE_rer*EAE_pex*EAAEAE_im
++EAFEAG_rer*EAG_pex*EAAEAG_im
++EAFRW_rer*RW_pex*EAARW_im
++EAFUS_rer*US_pex*EAAUS_im
+)
++EAB_size/EAF_size*EABEAF_im/EAF_ex*EAFEAG_rer*EAG_pex*EABEAG_im/(EAFEAB_rer*EAB_py*EAB_y
++EAFEAA_rer*EAA_pex*EABEAA_im
++EAFEAC_rer*EAC_pex*EABEAC_im
++EAFEAD_rer*EAD_pex*EABEAD_im
++EAFEAE_rer*EAE_pex*EABEAE_im
++EAFEAG_rer*EAG_pex*EABEAG_im
++EAFRW_rer*RW_pex*EABRW_im
++EAFUS_rer*US_pex*EABUS_im
+)
++EAC_size/EAF_size*EACEAF_im/EAF_ex*EAFEAG_rer*EAG_pex*EACEAG_im/(EAFEAC_rer*EAC_py*EAC_y
++EAFEAA_rer*EAA_pex*EACEAA_im
++EAFEAB_rer*EAB_pex*EACEAB_im
++EAFEAD_rer*EAD_pex*EACEAD_im
++EAFEAE_rer*EAE_pex*EACEAE_im
++EAFEAG_rer*EAG_pex*EACEAG_im
++EAFRW_rer*RW_pex*EACRW_im
++EAFUS_rer*US_pex*EACUS_im
+)
++EAD_size/EAF_size*EADEAF_im/EAF_ex*EAFEAG_rer*EAG_pex*EADEAG_im/(EAFEAD_rer*EAD_py*EAD_y
++EAFEAA_rer*EAA_pex*EADEAA_im
++EAFEAB_rer*EAB_pex*EADEAB_im
++EAFEAC_rer*EAC_pex*EADEAC_im
++EAFEAE_rer*EAE_pex*EADEAE_im
++EAFEAG_rer*EAG_pex*EADEAG_im
++EAFRW_rer*RW_pex*EADRW_im
++EAFUS_rer*US_pex*EADUS_im
+)
++EAE_size/EAF_size*EAEEAF_im/EAF_ex*EAFEAG_rer*EAG_pex*EAEEAG_im/(EAFEAE_rer*EAE_py*EAE_y
++EAFEAA_rer*EAA_pex*EAEEAA_im
++EAFEAB_rer*EAB_pex*EAEEAB_im
++EAFEAC_rer*EAC_pex*EAEEAC_im
++EAFEAD_rer*EAD_pex*EAEEAD_im
++EAFEAG_rer*EAG_pex*EAEEAG_im
++EAFRW_rer*RW_pex*EAERW_im
++EAFUS_rer*US_pex*EAEUS_im
+)
++RW_size/EAF_size*RWEAF_im/EAF_ex*EAFEAG_rer*EAG_pex*RWEAG_im/(EAFRW_rer*RW_py*RW_y
++EAFEAA_rer*EAA_pex*RWEAA_im
++EAFEAB_rer*EAB_pex*RWEAB_im
++EAFEAC_rer*EAC_pex*RWEAC_im
++EAFEAD_rer*EAD_pex*RWEAD_im
++EAFEAE_rer*EAE_pex*RWEAE_im
++EAFEAG_rer*EAG_pex*RWEAG_im
++EAFUS_rer*US_pex*RWUS_im
+)
++US_size/EAF_size*USEAF_im/EAF_ex*EAFEAG_rer*EAG_pex*USEAG_im/(EAFUS_rer*US_py*US_y
++EAFEAA_rer*EAA_pex*USEAA_im
++EAFEAB_rer*EAB_pex*USEAB_im
++EAFEAC_rer*EAC_pex*USEAC_im
++EAFEAD_rer*EAD_pex*USEAD_im
++EAFEAE_rer*EAE_pex*USEAE_im
++EAFEAG_rer*EAG_pex*USEAG_im
++EAFRW_rer*RW_pex*USRW_im
+)
+;
+// Effective real exchange rate: double weighting (overall)
+EAFEAG_weight = EAF_pim*EAF_im/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAG_weightim+EAF_pex*EAF_ex/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAG_weightex;
 // Effective real exchange rate: double weighting (imports)
 EAFRW_weightim = EAFRW_rer*RW_pex*EAFRW_im/(EAF_pim*EAF_im);
 // Effective real exchange rate: double weighting (exports)
@@ -12122,6 +14429,7 @@ EAFRW_weightex = RW_size/EAF_size*RWEAF_im/EAF_ex*EAFRW_rer*RW_py*RW_y/(EAFRW_re
 +EAFEAC_rer*EAC_pex*RWEAC_im
 +EAFEAD_rer*EAD_pex*RWEAD_im
 +EAFEAE_rer*EAE_pex*RWEAE_im
++EAFEAG_rer*EAG_pex*RWEAG_im
 +EAFUS_rer*US_pex*RWUS_im
 )+
 +EAA_size/EAF_size*EAAEAF_im/EAF_ex*EAFRW_rer*RW_pex*EAARW_im/(EAFEAA_rer*EAA_py*EAA_y
@@ -12129,6 +14437,7 @@ EAFRW_weightex = RW_size/EAF_size*RWEAF_im/EAF_ex*EAFRW_rer*RW_py*RW_y/(EAFRW_re
 +EAFEAC_rer*EAC_pex*EAAEAC_im
 +EAFEAD_rer*EAD_pex*EAAEAD_im
 +EAFEAE_rer*EAE_pex*EAAEAE_im
++EAFEAG_rer*EAG_pex*EAAEAG_im
 +EAFRW_rer*RW_pex*EAARW_im
 +EAFUS_rer*US_pex*EAAUS_im
 )
@@ -12137,6 +14446,7 @@ EAFRW_weightex = RW_size/EAF_size*RWEAF_im/EAF_ex*EAFRW_rer*RW_py*RW_y/(EAFRW_re
 +EAFEAC_rer*EAC_pex*EABEAC_im
 +EAFEAD_rer*EAD_pex*EABEAD_im
 +EAFEAE_rer*EAE_pex*EABEAE_im
++EAFEAG_rer*EAG_pex*EABEAG_im
 +EAFRW_rer*RW_pex*EABRW_im
 +EAFUS_rer*US_pex*EABUS_im
 )
@@ -12145,6 +14455,7 @@ EAFRW_weightex = RW_size/EAF_size*RWEAF_im/EAF_ex*EAFRW_rer*RW_py*RW_y/(EAFRW_re
 +EAFEAB_rer*EAB_pex*EACEAB_im
 +EAFEAD_rer*EAD_pex*EACEAD_im
 +EAFEAE_rer*EAE_pex*EACEAE_im
++EAFEAG_rer*EAG_pex*EACEAG_im
 +EAFRW_rer*RW_pex*EACRW_im
 +EAFUS_rer*US_pex*EACUS_im
 )
@@ -12153,6 +14464,7 @@ EAFRW_weightex = RW_size/EAF_size*RWEAF_im/EAF_ex*EAFRW_rer*RW_py*RW_y/(EAFRW_re
 +EAFEAB_rer*EAB_pex*EADEAB_im
 +EAFEAC_rer*EAC_pex*EADEAC_im
 +EAFEAE_rer*EAE_pex*EADEAE_im
++EAFEAG_rer*EAG_pex*EADEAG_im
 +EAFRW_rer*RW_pex*EADRW_im
 +EAFUS_rer*US_pex*EADUS_im
 )
@@ -12161,8 +14473,18 @@ EAFRW_weightex = RW_size/EAF_size*RWEAF_im/EAF_ex*EAFRW_rer*RW_py*RW_y/(EAFRW_re
 +EAFEAB_rer*EAB_pex*EAEEAB_im
 +EAFEAC_rer*EAC_pex*EAEEAC_im
 +EAFEAD_rer*EAD_pex*EAEEAD_im
++EAFEAG_rer*EAG_pex*EAEEAG_im
 +EAFRW_rer*RW_pex*EAERW_im
 +EAFUS_rer*US_pex*EAEUS_im
+)
++EAG_size/EAF_size*EAGEAF_im/EAF_ex*EAFRW_rer*RW_pex*EAGRW_im/(EAFEAG_rer*EAG_py*EAG_y
++EAFEAA_rer*EAA_pex*EAGEAA_im
++EAFEAB_rer*EAB_pex*EAGEAB_im
++EAFEAC_rer*EAC_pex*EAGEAC_im
++EAFEAD_rer*EAD_pex*EAGEAD_im
++EAFEAE_rer*EAE_pex*EAGEAE_im
++EAFRW_rer*RW_pex*EAGRW_im
++EAFUS_rer*US_pex*EAGUS_im
 )
 +US_size/EAF_size*USEAF_im/EAF_ex*EAFRW_rer*RW_pex*USRW_im/(EAFUS_rer*US_py*US_y
 +EAFEAA_rer*EAA_pex*USEAA_im
@@ -12170,6 +14492,7 @@ EAFRW_weightex = RW_size/EAF_size*RWEAF_im/EAF_ex*EAFRW_rer*RW_py*RW_y/(EAFRW_re
 +EAFEAC_rer*EAC_pex*USEAC_im
 +EAFEAD_rer*EAD_pex*USEAD_im
 +EAFEAE_rer*EAE_pex*USEAE_im
++EAFEAG_rer*EAG_pex*USEAG_im
 +EAFRW_rer*RW_pex*USRW_im
 )
 ;
@@ -12184,6 +14507,7 @@ EAFUS_weightex = US_size/EAF_size*USEAF_im/EAF_ex*EAFUS_rer*US_py*US_y/(EAFUS_re
 +EAFEAC_rer*EAC_pex*USEAC_im
 +EAFEAD_rer*EAD_pex*USEAD_im
 +EAFEAE_rer*EAE_pex*USEAE_im
++EAFEAG_rer*EAG_pex*USEAG_im
 +EAFRW_rer*RW_pex*USRW_im
 )+
 +EAA_size/EAF_size*EAAEAF_im/EAF_ex*EAFUS_rer*US_pex*EAAUS_im/(EAFEAA_rer*EAA_py*EAA_y
@@ -12191,6 +14515,7 @@ EAFUS_weightex = US_size/EAF_size*USEAF_im/EAF_ex*EAFUS_rer*US_py*US_y/(EAFUS_re
 +EAFEAC_rer*EAC_pex*EAAEAC_im
 +EAFEAD_rer*EAD_pex*EAAEAD_im
 +EAFEAE_rer*EAE_pex*EAAEAE_im
++EAFEAG_rer*EAG_pex*EAAEAG_im
 +EAFRW_rer*RW_pex*EAARW_im
 +EAFUS_rer*US_pex*EAAUS_im
 )
@@ -12199,6 +14524,7 @@ EAFUS_weightex = US_size/EAF_size*USEAF_im/EAF_ex*EAFUS_rer*US_py*US_y/(EAFUS_re
 +EAFEAC_rer*EAC_pex*EABEAC_im
 +EAFEAD_rer*EAD_pex*EABEAD_im
 +EAFEAE_rer*EAE_pex*EABEAE_im
++EAFEAG_rer*EAG_pex*EABEAG_im
 +EAFRW_rer*RW_pex*EABRW_im
 +EAFUS_rer*US_pex*EABUS_im
 )
@@ -12207,6 +14533,7 @@ EAFUS_weightex = US_size/EAF_size*USEAF_im/EAF_ex*EAFUS_rer*US_py*US_y/(EAFUS_re
 +EAFEAB_rer*EAB_pex*EACEAB_im
 +EAFEAD_rer*EAD_pex*EACEAD_im
 +EAFEAE_rer*EAE_pex*EACEAE_im
++EAFEAG_rer*EAG_pex*EACEAG_im
 +EAFRW_rer*RW_pex*EACRW_im
 +EAFUS_rer*US_pex*EACUS_im
 )
@@ -12215,6 +14542,7 @@ EAFUS_weightex = US_size/EAF_size*USEAF_im/EAF_ex*EAFUS_rer*US_py*US_y/(EAFUS_re
 +EAFEAB_rer*EAB_pex*EADEAB_im
 +EAFEAC_rer*EAC_pex*EADEAC_im
 +EAFEAE_rer*EAE_pex*EADEAE_im
++EAFEAG_rer*EAG_pex*EADEAG_im
 +EAFRW_rer*RW_pex*EADRW_im
 +EAFUS_rer*US_pex*EADUS_im
 )
@@ -12223,8 +14551,18 @@ EAFUS_weightex = US_size/EAF_size*USEAF_im/EAF_ex*EAFUS_rer*US_py*US_y/(EAFUS_re
 +EAFEAB_rer*EAB_pex*EAEEAB_im
 +EAFEAC_rer*EAC_pex*EAEEAC_im
 +EAFEAD_rer*EAD_pex*EAEEAD_im
++EAFEAG_rer*EAG_pex*EAEEAG_im
 +EAFRW_rer*RW_pex*EAERW_im
 +EAFUS_rer*US_pex*EAEUS_im
+)
++EAG_size/EAF_size*EAGEAF_im/EAF_ex*EAFUS_rer*US_pex*EAGUS_im/(EAFEAG_rer*EAG_py*EAG_y
++EAFEAA_rer*EAA_pex*EAGEAA_im
++EAFEAB_rer*EAB_pex*EAGEAB_im
++EAFEAC_rer*EAC_pex*EAGEAC_im
++EAFEAD_rer*EAD_pex*EAGEAD_im
++EAFEAE_rer*EAE_pex*EAGEAE_im
++EAFRW_rer*RW_pex*EAGRW_im
++EAFUS_rer*US_pex*EAGUS_im
 )
 +RW_size/EAF_size*RWEAF_im/EAF_ex*EAFUS_rer*US_pex*RWUS_im/(EAFRW_rer*RW_py*RW_y
 +EAFEAA_rer*EAA_pex*RWEAA_im
@@ -12232,6 +14570,7 @@ EAFUS_weightex = US_size/EAF_size*USEAF_im/EAF_ex*EAFUS_rer*US_py*US_y/(EAFUS_re
 +EAFEAC_rer*EAC_pex*RWEAC_im
 +EAFEAD_rer*EAD_pex*RWEAD_im
 +EAFEAE_rer*EAE_pex*RWEAE_im
++EAFEAG_rer*EAG_pex*RWEAG_im
 +EAFUS_rer*US_pex*RWUS_im
 )
 ;
@@ -12244,6 +14583,7 @@ EAF_reer = 1
 *EAFEAC_rer^EAFEAC_weight
 *EAFEAD_rer^EAFEAD_weight
 *EAFEAE_rer^EAFEAE_weight
+*EAFEAG_rer^EAFEAG_weight
 *EAFRW_rer^EAFRW_weight
 *EAFUS_rer^EAFUS_weight
 ;
@@ -12254,6 +14594,7 @@ EAF_etot = 1
 *EAFEAC_tot^EAFEAC_weight
 *EAFEAD_tot^EAFEAD_weight
 *EAFEAE_tot^EAFEAE_weight
+*EAFEAG_tot^EAFEAG_weight
 *EAFRW_tot^EAFRW_weight
 *EAFUS_tot^EAFUS_weight
 ;
@@ -12266,6 +14607,7 @@ EAF_imc^((EAF_mumc-1)/EAF_mumc) =
 +EAFEAB_numc ^(1/EAF_mumc)*EAFEAB_imc^(1-1/EAF_mumc)
 +EAFEAC_numc ^(1/EAF_mumc)*EAFEAC_imc^(1-1/EAF_mumc)
 +EAFEAE_numc ^(1/EAF_mumc)*EAFEAE_imc^(1-1/EAF_mumc)
++EAFEAG_numc ^(1/EAF_mumc)*EAFEAG_imc^(1-1/EAF_mumc)
 +EAFRW_numc ^(1/EAF_mumc)*EAFRW_imc^(1-1/EAF_mumc)
 +EAFUS_numc ^(1/EAF_mumc)*EAFUS_imc^(1-1/EAF_mumc)
 +(1
@@ -12273,6 +14615,7 @@ EAF_imc^((EAF_mumc-1)/EAF_mumc) =
 -EAFEAB_numc
 -EAFEAC_numc
 -EAFEAE_numc
+-EAFEAG_numc
 -EAFRW_numc
 -EAFUS_numc
 )^(1/EAF_mumc)*EAFEAD_imc^(1-1/EAF_mumc);
@@ -12285,12 +14628,15 @@ EAFEAC_imc = EAFEAC_numc*((EAC_pex*EAFEAC_rer)/EAF_pimc)^(-EAF_mumc)*EAF_imc;
 // Demand for bilateral consumption import goods
 EAFEAE_imc = EAFEAE_numc*((EAE_pex*EAFEAE_rer)/EAF_pimc)^(-EAF_mumc)*EAF_imc;
 // Demand for bilateral consumption import goods
+EAFRW_imc = EAFRW_numc*((RW_pex*EAFRW_rer)/EAF_pimc)^(-EAF_mumc)*EAF_imc;
+// Demand for bilateral consumption import goods
 EAFUS_imc = EAFUS_numc*((US_pex*EAFUS_rer)/EAF_pimc)^(-EAF_mumc)*EAF_imc;
 EAFEAD_imc = (1
 -EAFEAA_numc
 -EAFEAB_numc
 -EAFEAC_numc
 -EAFEAE_numc
+-EAFEAG_numc
 -EAFRW_numc
 -EAFUS_numc
 )*((EAD_pex*EAFEAD_rer)/EAF_pimc)^(-EAF_mumc)*EAF_imc;
@@ -12300,6 +14646,7 @@ EAF_pimc^(1-EAF_mumc) =
 +EAFEAB_numc * (EAB_pex*EAFEAB_rer)^(1-EAF_mumc)
 +EAFEAC_numc * (EAC_pex*EAFEAC_rer)^(1-EAF_mumc)
 +EAFEAE_numc * (EAE_pex*EAFEAE_rer)^(1-EAF_mumc)
++EAFEAG_numc * (EAG_pex*EAFEAG_rer)^(1-EAF_mumc)
 +EAFRW_numc * (RW_pex*EAFRW_rer)^(1-EAF_mumc)
 +EAFUS_numc * (US_pex*EAFUS_rer)^(1-EAF_mumc)
 +(1
@@ -12307,6 +14654,7 @@ EAF_pimc^(1-EAF_mumc) =
 -EAFEAB_numc
 -EAFEAC_numc
 -EAFEAE_numc
+-EAFEAG_numc
 -EAFRW_numc
 -EAFUS_numc
 )*(EAD_pex*EAFEAD_rer)^(1-EAF_mumc);
@@ -12318,6 +14666,7 @@ EAF_imi^((EAF_mumi-1)/EAF_mumi) =
 +EAFEAB_numi ^(1/EAF_mumi)*EAFEAB_imi^(1-1/EAF_mumi)
 +EAFEAC_numi ^(1/EAF_mumi)*EAFEAC_imi^(1-1/EAF_mumi)
 +EAFEAE_numi ^(1/EAF_mumi)*EAFEAE_imi^(1-1/EAF_mumi)
++EAFEAG_numi ^(1/EAF_mumi)*EAFEAG_imi^(1-1/EAF_mumi)
 +EAFRW_numi ^(1/EAF_mumi)*EAFRW_imi^(1-1/EAF_mumi)
 +EAFUS_numi ^(1/EAF_mumi)*EAFUS_imi^(1-1/EAF_mumi)
 +(1
@@ -12325,6 +14674,7 @@ EAF_imi^((EAF_mumi-1)/EAF_mumi) =
 -EAFEAB_numi
 -EAFEAC_numi
 -EAFEAE_numi
+-EAFEAG_numi
 -EAFRW_numi
 -EAFUS_numi
 )^(1/EAF_mumi)*EAFEAD_imi^(1-1/EAF_mumi);
@@ -12337,12 +14687,15 @@ EAFEAC_imi = EAFEAC_numi*((EAC_pex*EAFEAC_rer)/EAF_pimi)^(-EAF_mumi)*EAF_imi;
 // Demand for bilateral consumption import goods
 EAFEAE_imi = EAFEAE_numi*((EAE_pex*EAFEAE_rer)/EAF_pimi)^(-EAF_mumi)*EAF_imi;
 // Demand for bilateral consumption import goods
+EAFRW_imi = EAFRW_numi*((RW_pex*EAFRW_rer)/EAF_pimi)^(-EAF_mumi)*EAF_imi;
+// Demand for bilateral consumption import goods
 EAFUS_imi = EAFUS_numi*((US_pex*EAFUS_rer)/EAF_pimi)^(-EAF_mumi)*EAF_imi;
 EAFEAD_imi = (1
 -EAFEAA_numi
 -EAFEAB_numi
 -EAFEAC_numi
 -EAFEAE_numi
+-EAFEAG_numi
 -EAFRW_numi
 -EAFUS_numi
 )*((EAD_pex*EAFEAD_rer)/EAF_pimi)^(-EAF_mumi)*EAF_imi;
@@ -12352,6 +14705,7 @@ EAF_pimi^(1-EAF_mumi) =
 +EAFEAB_numi * (EAB_pex*EAFEAB_rer)^(1-EAF_mumi)
 +EAFEAC_numi * (EAC_pex*EAFEAC_rer)^(1-EAF_mumi)
 +EAFEAE_numi * (EAE_pex*EAFEAE_rer)^(1-EAF_mumi)
++EAFEAG_numi * (EAG_pex*EAFEAG_rer)^(1-EAF_mumi)
 +EAFRW_numi * (RW_pex*EAFRW_rer)^(1-EAF_mumi)
 +EAFUS_numi * (US_pex*EAFUS_rer)^(1-EAF_mumi)
 +(1
@@ -12359,6 +14713,7 @@ EAF_pimi^(1-EAF_mumi) =
 -EAFEAB_numi
 -EAFEAC_numi
 -EAFEAE_numi
+-EAFEAG_numi
 -EAFRW_numi
 -EAFUS_numi
 )*(EAD_pex*EAFEAD_rer)^(1-EAF_mumi);
@@ -12370,6 +14725,7 @@ EAF_imcg^((EAF_mumcg-1)/EAF_mumcg) =
 +EAFEAB_numcg ^(1/EAF_mumcg)*EAFEAB_imcg^(1-1/EAF_mumcg)
 +EAFEAC_numcg ^(1/EAF_mumcg)*EAFEAC_imcg^(1-1/EAF_mumcg)
 +EAFEAE_numcg ^(1/EAF_mumcg)*EAFEAE_imcg^(1-1/EAF_mumcg)
++EAFEAG_numcg ^(1/EAF_mumcg)*EAFEAG_imcg^(1-1/EAF_mumcg)
 +EAFRW_numcg ^(1/EAF_mumcg)*EAFRW_imcg^(1-1/EAF_mumcg)
 +EAFUS_numcg ^(1/EAF_mumcg)*EAFUS_imcg^(1-1/EAF_mumcg)
 +(1
@@ -12377,6 +14733,7 @@ EAF_imcg^((EAF_mumcg-1)/EAF_mumcg) =
 -EAFEAB_numcg
 -EAFEAC_numcg
 -EAFEAE_numcg
+-EAFEAG_numcg
 -EAFRW_numcg
 -EAFUS_numcg
 )^(1/EAF_mumcg)*EAFEAD_imcg^(1-1/EAF_mumcg);
@@ -12389,12 +14746,15 @@ EAFEAC_imcg = EAFEAC_numcg*((EAC_pex*EAFEAC_rer)/EAF_pimcg)^(-EAF_mumcg)*EAF_imc
 // Demand for bilateral consumption import goods
 EAFEAE_imcg = EAFEAE_numcg*((EAE_pex*EAFEAE_rer)/EAF_pimcg)^(-EAF_mumcg)*EAF_imcg;
 // Demand for bilateral consumption import goods
+EAFRW_imcg = EAFRW_numcg*((RW_pex*EAFRW_rer)/EAF_pimcg)^(-EAF_mumcg)*EAF_imcg;
+// Demand for bilateral consumption import goods
 EAFUS_imcg = EAFUS_numcg*((US_pex*EAFUS_rer)/EAF_pimcg)^(-EAF_mumcg)*EAF_imcg;
 EAFEAD_imcg = (1
 -EAFEAA_numcg
 -EAFEAB_numcg
 -EAFEAC_numcg
 -EAFEAE_numcg
+-EAFEAG_numcg
 -EAFRW_numcg
 -EAFUS_numcg
 )*((EAD_pex*EAFEAD_rer)/EAF_pimcg)^(-EAF_mumcg)*EAF_imcg;
@@ -12404,6 +14764,7 @@ EAF_pimcg^(1-EAF_mumcg) =
 +EAFEAB_numcg * (EAB_pex*EAFEAB_rer)^(1-EAF_mumcg)
 +EAFEAC_numcg * (EAC_pex*EAFEAC_rer)^(1-EAF_mumcg)
 +EAFEAE_numcg * (EAE_pex*EAFEAE_rer)^(1-EAF_mumcg)
++EAFEAG_numcg * (EAG_pex*EAFEAG_rer)^(1-EAF_mumcg)
 +EAFRW_numcg * (RW_pex*EAFRW_rer)^(1-EAF_mumcg)
 +EAFUS_numcg * (US_pex*EAFUS_rer)^(1-EAF_mumcg)
 +(1
@@ -12411,6 +14772,7 @@ EAF_pimcg^(1-EAF_mumcg) =
 -EAFEAB_numcg
 -EAFEAC_numcg
 -EAFEAE_numcg
+-EAFEAG_numcg
 -EAFRW_numcg
 -EAFUS_numcg
 )*(EAD_pex*EAFEAD_rer)^(1-EAF_mumcg);
@@ -12422,6 +14784,7 @@ EAF_imig^((EAF_mumig-1)/EAF_mumig) =
 +EAFEAB_numig ^(1/EAF_mumig)*EAFEAB_imig^(1-1/EAF_mumig)
 +EAFEAC_numig ^(1/EAF_mumig)*EAFEAC_imig^(1-1/EAF_mumig)
 +EAFEAE_numig ^(1/EAF_mumig)*EAFEAE_imig^(1-1/EAF_mumig)
++EAFEAG_numig ^(1/EAF_mumig)*EAFEAG_imig^(1-1/EAF_mumig)
 +EAFRW_numig ^(1/EAF_mumig)*EAFRW_imig^(1-1/EAF_mumig)
 +EAFUS_numig ^(1/EAF_mumig)*EAFUS_imig^(1-1/EAF_mumig)
 +(1
@@ -12429,6 +14792,7 @@ EAF_imig^((EAF_mumig-1)/EAF_mumig) =
 -EAFEAB_numig
 -EAFEAC_numig
 -EAFEAE_numig
+-EAFEAG_numig
 -EAFRW_numig
 -EAFUS_numig
 )^(1/EAF_mumig)*EAFEAD_imig^(1-1/EAF_mumig);
@@ -12441,12 +14805,15 @@ EAFEAC_imig = EAFEAC_numig*((EAC_pex*EAFEAC_rer)/EAF_pimig)^(-EAF_mumig)*EAF_imi
 // Demand for bilateral consumption import goods
 EAFEAE_imig = EAFEAE_numig*((EAE_pex*EAFEAE_rer)/EAF_pimig)^(-EAF_mumig)*EAF_imig;
 // Demand for bilateral consumption import goods
+EAFRW_imig = EAFRW_numig*((RW_pex*EAFRW_rer)/EAF_pimig)^(-EAF_mumig)*EAF_imig;
+// Demand for bilateral consumption import goods
 EAFUS_imig = EAFUS_numig*((US_pex*EAFUS_rer)/EAF_pimig)^(-EAF_mumig)*EAF_imig;
 EAFEAD_imig = (1
 -EAFEAA_numig
 -EAFEAB_numig
 -EAFEAC_numig
 -EAFEAE_numig
+-EAFEAG_numig
 -EAFRW_numig
 -EAFUS_numig
 )*((EAD_pex*EAFEAD_rer)/EAF_pimig)^(-EAF_mumig)*EAF_imig;
@@ -12456,6 +14823,7 @@ EAF_pimig^(1-EAF_mumig) =
 +EAFEAB_numig * (EAB_pex*EAFEAB_rer)^(1-EAF_mumig)
 +EAFEAC_numig * (EAC_pex*EAFEAC_rer)^(1-EAF_mumig)
 +EAFEAE_numig * (EAE_pex*EAFEAE_rer)^(1-EAF_mumig)
++EAFEAG_numig * (EAG_pex*EAFEAG_rer)^(1-EAF_mumig)
 +EAFRW_numig * (RW_pex*EAFRW_rer)^(1-EAF_mumig)
 +EAFUS_numig * (US_pex*EAFUS_rer)^(1-EAF_mumig)
 +(1
@@ -12463,6 +14831,7 @@ EAF_pimig^(1-EAF_mumig) =
 -EAFEAB_numig
 -EAFEAC_numig
 -EAFEAE_numig
+-EAFEAG_numig
 -EAFRW_numig
 -EAFUS_numig
 )*(EAD_pex*EAFEAD_rer)^(1-EAF_mumig);
@@ -12472,7 +14841,7 @@ EAF_piimig = EAF_pimig/EAF_pimig(-1)*EAF_pic;
 EAF_piimc4 = EAF_pimc/EAF_pimc(-4)*EAF_pic4;
 // Private consumption good (import) inflation
 EAF_piex4 = EAF_pex/EAF_pex(-4)*EAF_pic4;
-// Wedge between aggregate demand and production, using EAF_x = RW_size/EAF_size*RW_im
+// Wedge between aggregate demand and production, using EAF_x = EAG_size/EAF_size*EAG_im
 EAF_yst = EAF_sh*EAF_ht+EAF_sx*EAF_ex;
 // Aggregate demand for bilateral imported intermediate goods
 EAFEAA_im = 
@@ -12504,6 +14873,12 @@ EAFEAE_im =
 +EAFEAE_imi
 +EAFEAE_imcg
 +EAFEAE_imig
+;
+EAFEAG_im = 
++EAFEAG_imc
++EAFEAG_imi
++EAFEAG_imcg
++EAFEAG_imig
 ;
 EAFRW_im = 
 +EAFRW_imc
@@ -12540,6 +14915,8 @@ EAFEAD_gammaimc = 0;
 EAFEAD_gammaimcdag = 1;
 EAFEAE_gammaimc = 0;
 EAFEAE_gammaimcdag = 1;
+EAFEAG_gammaimc = 0;
+EAFEAG_gammaimcdag = 1;
 EAFRW_gammaimc = 0;
 EAFRW_gammaimcdag = 1;
 EAFUS_gammaimc = 0;
@@ -12569,6 +14946,8 @@ EAFEAD_gammaimi = 0;
 EAFEAD_gammaimidag = 1;
 EAFEAE_gammaimi = 0;
 EAFEAE_gammaimidag = 1;
+EAFEAG_gammaimi = 0;
+EAFEAG_gammaimidag = 1;
 EAFRW_gammaimi = 0;
 EAFRW_gammaimidag = 1;
 EAFUS_gammaimi = 0;
@@ -12595,6 +14974,8 @@ EAFEAD_gammaimcg = 0;
 EAFEAD_gammaimcgdag = 1;
 EAFEAE_gammaimcg = 0;
 EAFEAE_gammaimcgdag = 1;
+EAFEAG_gammaimcg = 0;
+EAFEAG_gammaimcgdag = 1;
 EAFRW_gammaimcg = 0;
 EAFRW_gammaimcgdag = 1;
 EAFUS_gammaimcg = 0;
@@ -12621,6 +15002,8 @@ EAFEAD_gammaimig = 0;
 EAFEAD_gammaimigdag = 1;
 EAFEAE_gammaimig = 0;
 EAFEAE_gammaimigdag = 1;
+EAFEAG_gammaimig = 0;
+EAFEAG_gammaimigdag = 1;
 EAFRW_gammaimig = 0;
 EAFRW_gammaimigdag = 1;
 EAFUS_gammaimig = 0;
@@ -12637,6 +15020,8 @@ EAF_tb =
 -EAD_pex*EAFEAD_rer*EAFEAD_im
 +EAF_pex*EAE_size/EAF_size*EAEEAF_im
 -EAE_pex*EAFEAE_rer*EAFEAE_im
++EAF_pex*EAG_size/EAF_size*EAGEAF_im
+-EAG_pex*EAFEAG_rer*EAFEAG_im
 +EAF_pex*RW_size/EAF_size*RWEAF_im
 -RW_pex*EAFRW_rer*EAFRW_im
 +EAF_pex*US_size/EAF_size*USEAF_im
@@ -12649,6 +15034,7 @@ EAF_ex =
 +EAC_size/EAF_size*EACEAF_im
 +EAD_size/EAF_size*EADEAF_im
 +EAE_size/EAF_size*EAEEAF_im
++EAG_size/EAF_size*EAGEAF_im
 +RW_size/EAF_size*RWEAF_im
 +US_size/EAF_size*USEAF_im
 ;
@@ -12694,7 +15080,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAF_r^4-1 = EAF_rrstar^4*EAF_pi4target-1;
+	EAF_r = EAG_r;
 EAF_pic4 = EAF_pi4target;
 EAF_rr-1 = EAF_r/EAF_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -12742,7 +15128,7 @@ EAF_sj = (1-EAF_xij)*(EAF_wjtilde/EAF_wj)^(-EAF_etaj)+EAF_xij*(EAF_wj(-1)/EAF_wj
 // Equality of capital input and effective capital services
 EAF_u*EAF_k = EAF_kd;
 // Intermediate-good markets
-// Wedge between aggregate demand and production, using EAF_x = RW_size/EAF_size*RW_im
+// Wedge between aggregate demand and production, using EAF_x = EAG_size/EAF_size*EAG_im
 EAF_ysn = EAF_snt*EAF_nt;
 //  nontradables aggregate demand
 EAF_nt = 
@@ -12807,6 +15193,11 @@ EAF_py*EAF_y =
 -(EAE_pex*EAFEAE_rer)*EAFEAE_imi
 -(EAE_pex*EAFEAE_rer)*EAFEAE_imcg
 -(EAE_pex*EAFEAE_rer)*EAFEAE_imig
++EAF_pex*EAG_size/EAF_size*EAGEAF_im
+-(EAG_pex*EAFEAG_rer)*EAFEAG_imc
+-(EAG_pex*EAFEAG_rer)*EAFEAG_imi
+-(EAG_pex*EAFEAG_rer)*EAFEAG_imcg
+-(EAG_pex*EAFEAG_rer)*EAFEAG_imig
 +EAF_pex*RW_size/EAF_size*RWEAF_im
 -(RW_pex*EAFRW_rer)*EAFRW_imc
 -(RW_pex*EAFRW_rer)*EAFRW_imi
@@ -12902,6 +15293,7 @@ EAF_yshare  = EAF_size*EAF_py*EAF_y/EAF_rer/(
 +EAD_size*EAD_py*EAD_y/EAD_rer
 +EAE_size*EAE_py*EAE_y/EAE_rer
 +EAF_size*EAF_py*EAF_y/EAF_rer
++EAG_size*EAG_py*EAG_y/EAG_rer
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
@@ -12955,6 +15347,15 @@ EAFEAE_excy  = EAE_size/EAF_size*EAF_pex*EAEEAF_imc/(EAF_py*EAF_y);
 // Exports of investment goods to gdp
 EAFEAE_exiy  = EAE_size/EAF_size*EAF_pex*EAEEAF_imi/(EAF_py*EAF_y);
 // Bilateral shares
+EAFEAG_imcy = (EAG_pex*EAFEAG_rer)*EAFEAG_imc/(EAF_py*EAF_y);
+EAFEAG_imiy = (EAG_pex*EAFEAG_rer)*EAFEAG_imi/(EAF_py*EAF_y);
+EAFEAG_imcgy = (EAG_pex*EAFEAG_rer)*EAFEAG_imcg/(EAF_py*EAF_y);
+EAFEAG_imigy = (EAG_pex*EAFEAG_rer)*EAFEAG_imig/(EAF_py*EAF_y);
+// Exports of consumption goods to gdp
+EAFEAG_excy  = EAG_size/EAF_size*EAF_pex*EAGEAF_imc/(EAF_py*EAF_y);
+// Exports of investment goods to gdp
+EAFEAG_exiy  = EAG_size/EAF_size*EAF_pex*EAGEAF_imi/(EAF_py*EAF_y);
+// Bilateral shares
 EAFRW_imcy = (RW_pex*EAFRW_rer)*EAFRW_imc/(EAF_py*EAF_y);
 EAFRW_imiy = (RW_pex*EAFRW_rer)*EAFRW_imi/(EAF_py*EAF_y);
 EAFRW_imcgy = (RW_pex*EAFRW_rer)*EAFRW_imcg/(EAF_py*EAF_y);
@@ -12974,6 +15375,1733 @@ EAFUS_excy  = US_size/EAF_size*EAF_pex*USEAF_imc/(EAF_py*EAF_y);
 EAFUS_exiy  = US_size/EAF_size*EAF_pex*USEAF_imi/(EAF_py*EAF_y);
 // Internal real exchange rate
 EAF_internalrer = EAF_pnt/EAF_pttc;
+// Core model begins
+//-------------
+//-------------
+// Households
+//-------------
+//-------------
+//-------------
+// Household I
+//-------------
+EAG_ccesi^(1-1/EAG_mucces) = (EAG_nucces)^(1/EAG_mucces)*EAG_ci^(1-1/EAG_mucces)+(1-EAG_nucces)^(1/EAG_mucces)*EAG_cg^(1-1/EAG_mucces);
+// Utility
+EAG_utili = 
+EAG_zcon*log(EAG_ccesi-EAG_kappa*EAG_ccesi(-1))-1/(1+EAG_zeta)*(EAG_ni)^(1+EAG_zeta)+EAG_beta*EAG_utili(+1)
+;
+// Marginal utility of consumption
+EAG_dcci = ((EAG_nucces)^(1/EAG_mucces)*EAG_ci^(1-1/EAG_mucces)+(1-EAG_nucces)^(1/EAG_mucces)*EAG_cg^(1-1/EAG_mucces))^(1/(EAG_mucces-1))*(EAG_nucces^(1/EAG_mucces))*(EAG_ci^(-1/EAG_mucces));
+EAG_lambdai*(1+EAG_tauc+EAG_gammavi+EAG_vi*EAG_gammavider) = EAG_zcon*(EAG_ccesi-EAG_kappa*EAG_ccesi(-1))^(-EAG_sigma)*EAG_dcci;
+// Euler equation for government bonds
+EAG_r = EAG_beta^(-1)*EAG_lambdai/EAG_lambdai(+1)*EAG_pic(+1);
+// Euler equation for money
+EAG_vi^(2)*EAG_gammavider = 1-EAG_beta*EAG_lambdai(+1)/(EAG_lambdai*EAG_pic(+1));
+// Consumption-based velocity
+EAG_vi = EAG_ci/EAG_mi;
+// Transaction cost
+EAG_gammavi = EAG_gammav1*EAG_vi+EAG_gammav2/EAG_vi-2*(EAG_gammav1*EAG_gammav2)^(1/2);
+// Derivative of transaction cost
+EAG_gammavider = EAG_gammav1-EAG_gammav2*EAG_vi^(-2);
+EAG_delta = EAG_ii/EAG_ki;
+EAG_gammai = 0;
+EAG_gammaider = 0;
+EAG_gammau = 0;
+EAG_gammauder = ((EAG_beta^(-1)-1+EAG_delta)*EAG_qbar-EAG_delta*EAG_taukbar*EAG_pibar)/((1-EAG_taukbar)*EAG_pibar);
+EAG_u = 1;
+EAG_pi = EAG_q;
+// Auxiliary equation for Tobin's Q in steady state
+EAG_qbar = EAG_q;
+// Rate of return on capital
+EAG_q = EAG_beta*((1-EAG_tauk)*EAG_rk+(EAG_tauk*EAG_delta)*EAG_pi+(1-EAG_delta)*EAG_q);
+// Optimal wage contract (FOC)
+EAG_witilde^(1+EAG_etai*EAG_zeta) = EAG_etai/(EAG_etai-1)*EAG_fi/EAG_gi+EAG_wcst;
+// Definition of fi
+EAG_fi = EAG_wi^(EAG_etai*(1+EAG_zeta))*EAG_ndi^(1+EAG_zeta)+EAG_xii*EAG_beta*(EAG_pic(+1)/(EAG_pic^EAG_chii*EAG_pi4target^(1/4*(1-EAG_chii))))^(EAG_etai*(1+EAG_zeta))*EAG_fi(+1);
+// Definition of gi
+EAG_gi = EAG_lambdai*(1-EAG_taun-EAG_tauwh)*EAG_wi^EAG_etai*EAG_ndi+EAG_xii*EAG_beta*(EAG_pic(+1)/(EAG_pic^EAG_chii*EAG_pi4target^(1/4*(1-EAG_chii))))^(EAG_etai-1)*EAG_gi(+1);
+// Aggregate wage rate
+EAG_wi^(1-EAG_etai) = (1-EAG_xii)*EAG_witilde^(1-EAG_etai)+EAG_xii*EAG_wi(-1)^(1-EAG_etai)*(EAG_pic(-1)^EAG_chii*EAG_pi4target^(1/4*(1-EAG_chii))/EAG_pic)^(1-EAG_etai);
+//-------------
+// Household J
+//-------------
+EAG_ccesj^(1-1/EAG_mucces) = (EAG_nucces)^(1/EAG_mucces)*EAG_cj^(1-1/EAG_mucces)+(1-EAG_nucces)^(1/EAG_mucces)*EAG_cg^(1-1/EAG_mucces);
+// Utility
+EAG_utilj = 
+EAG_zcon*log(EAG_ccesj-EAG_kappa*EAG_ccesj(-1))-1/(1+EAG_zeta)*(EAG_nj)^(1+EAG_zeta)+EAG_beta*EAG_utilj(+1)
+;
+// Marginal utility of consumption
+EAG_dccj = ((EAG_nucces)^(1/EAG_mucces)*EAG_cj^(1-1/EAG_mucces)+(1-EAG_nucces)^(1/EAG_mucces)*EAG_cg^(1-1/EAG_mucces))^(1/(EAG_mucces-1))*(EAG_nucces^(1/EAG_mucces))*(EAG_cj^(-1/EAG_mucces));
+EAG_lambdaj*(1+EAG_tauc+EAG_gammavj+EAG_vj*EAG_gammavjder) = EAG_zcon*(EAG_ccesj-EAG_kappa*EAG_ccesj(-1))^(-EAG_sigma)*EAG_dccj;
+// Budget constraint
+(1+EAG_tauc+EAG_gammavj)*EAG_cj+EAG_mj = (1-EAG_taun-EAG_tauwh)*EAG_wj*EAG_nj+EAG_trj-EAG_tj+EAG_mj(-1)*EAG_pic^(-1);
+// Euler equation for money
+EAG_vj^(2)*EAG_gammavjder = 1-EAG_beta*EAG_lambdaj(+1)/(EAG_lambdaj*EAG_pic(+1));
+// Consumption-based velocity
+EAG_vj = EAG_cj/EAG_mj;
+// Transaction technology
+EAG_gammavj = EAG_gammav1*EAG_vj+EAG_gammav2/EAG_vj-2*(EAG_gammav1*EAG_gammav2)^(1/2);
+// Derivative of transaction technology
+EAG_gammavjder = EAG_gammav1-EAG_gammav2*EAG_vj^(-2);
+// Optimal wage contract (FOC)
+EAG_wjtilde^(1+EAG_etaj*EAG_zeta) = EAG_etaj/(EAG_etaj-1)*EAG_fj/EAG_gj+EAG_wcst;
+// Definition of fj
+EAG_fj = EAG_wj^(EAG_etaj*(1+EAG_zeta))*EAG_ndj^(1+EAG_zeta)+EAG_xij*EAG_beta*(EAG_pic(+1)/(EAG_pic^EAG_chij*EAG_pi4target^(1/4*(1-EAG_chij))))^(EAG_etaj*(1+EAG_zeta))*EAG_fj(+1);
+// Definition of gj
+EAG_gj = EAG_lambdaj*(1-EAG_taun-EAG_tauwh)*EAG_wj^EAG_etaj*EAG_ndj+EAG_xij*EAG_beta*(EAG_pic(+1)/(EAG_pic^EAG_chij*EAG_pi4target^(1/4*(1-EAG_chij))))^(EAG_etaj-1)*EAG_gj(+1);
+// Aggregate wage rate
+EAG_wj^(1-EAG_etaj) = (1-EAG_xij)*EAG_wjtilde^(1-EAG_etaj)+EAG_xij*EAG_wj(-1)^(1-EAG_etaj)*(EAG_pic(-1)^EAG_chij*EAG_pi4target^(1/4*(1-EAG_chij))/EAG_pic)^(1-EAG_etaj);
+//-------------
+//-------------
+// Firms
+//-------------
+//-------------
+//-------------
+// Intermediate-good firms
+//-------------
+// Government capital accumulation:
+EAG_kg = (1-EAG_deltag)*EAG_kg(-1)+EAG_ig(-1);
+// Production function tradable
+EAG_yst = EAG_zt*EAG_kg^EAG_alphag*EAG_kdt^EAG_alphat*EAG_ndt^(1-EAG_alphat)-EAG_psitbar;
+// Production function nontradable
+EAG_ysn = EAG_zn*EAG_kg^EAG_alphag*EAG_kdn^EAG_alphan*EAG_ndn^(1-EAG_alphan)-EAG_psinbar;
+// Real marginal cost tradable
+EAG_mct = 1/(EAG_zt*EAG_kg^EAG_alphag*(EAG_alphat)^(EAG_alphat)*(1-EAG_alphat)^(1-EAG_alphat))*EAG_rk^(EAG_alphat)*((1+EAG_tauwf)*EAG_w)^(1-EAG_alphat);
+// Real marginal cost nontradable
+EAG_mcn = 1/(EAG_zn*EAG_kg^EAG_alphag*(EAG_alphan)^(EAG_alphan)*(1-EAG_alphan)^(1-EAG_alphan))*EAG_rk^(EAG_alphan)*((1+EAG_tauwf)*EAG_w)^(1-EAG_alphan);
+// Wage Inflation (qoq)
+EAG_piw = EAG_w/EAG_w(-1)*EAG_pic;
+// Wage Inflation (yoy)
+EAG_piw4 = EAG_pic4;
+// Auxiliary equation for steady-state fixed cost
+EAG_psitbar = EAG_psit*EAG_ytbar;
+// Auxiliary equation for steady-state fixed cost
+EAG_psinbar = EAG_psin*EAG_ynbar;
+// Capital input (FOC)
+EAG_rk = EAG_alphat*(EAG_yst+EAG_psitbar)/EAG_kdt*EAG_mct;
+// Capital input (FOC)
+EAG_rk = EAG_alphan*(EAG_ysn+EAG_psinbar)/EAG_kdn*EAG_mcn;
+// Total capital demand
+EAG_kd = EAG_kdt+EAG_kdn;
+// Demand for labour services by household I
+EAG_ndi = 
+(1-EAG_omega)*(EAG_wi/EAG_w)^(-EAG_eta)*EAG_nd
+;
+// Demand for labour services by household J
+EAG_ndj = 
+EAG_omega*(EAG_wj/EAG_w)^(-EAG_eta)*EAG_nd
+;
+// Aggregate labour demand
+EAG_nd^(1-1/EAG_eta) = 
+(1-EAG_omega)^(1/EAG_eta)*EAG_ndi^(1-1/EAG_eta)+EAG_omega^(1/EAG_eta)*EAG_ndj^(1-1/EAG_eta)
+;
+// Total demand 
+EAG_nd = EAG_ndt+EAG_ndn;
+// Aggregate dividends
+EAG_d = EAG_py*EAG_y-EAG_rk*EAG_kd-(1+EAG_tauwf)*EAG_w*EAG_nd;
+// Non-tradable sector dividends
+EAG_dn = EAG_pnt*EAG_ysn-EAG_rk*EAG_kdn-(1+EAG_tauwf)*EAG_w*EAG_ndn;
+// Tradable sector dividends
+EAG_dt = EAG_pht*EAG_ht
++EAG_pex*EAG_ex
+-EAG_rk*EAG_kdt-(1+EAG_tauwf)*EAG_w*EAG_ndt;
+// Optimal price contract set in domestic markets (FOC)
+EAG_phttilde/EAG_pht = EAG_thetat/(EAG_thetat-1)*EAG_fh/EAG_gh;
+// Definition of fh
+EAG_fh = EAG_mct*EAG_ht+EAG_xih*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAG_piht(+1)/(EAG_piht^EAG_chih*EAG_pi4target^(1/4*(1-EAG_chih))))^EAG_thetat*EAG_fh(+1);
+// Definition of gh
+EAG_gh = EAG_pht*EAG_ht+EAG_xih*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAG_piht(+1)/(EAG_piht^EAG_chih*EAG_pi4target^(1/4*(1-EAG_chih))))^(EAG_thetat-1)*EAG_gh(+1);
+// Aggregate intermediate-good price dynamics
+EAG_pht^(1-EAG_thetat) = (1-EAG_xih)*EAG_phttilde^(1-EAG_thetat)+EAG_xih*(EAG_pht(-1)/EAG_pic)^(1-EAG_thetat)*(EAG_piht(-1)^EAG_chih*EAG_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
+// Intermediate-good price inflation
+EAG_piht = EAG_pht/EAG_pht(-1)*EAG_pic;
+// Optimal price contract set in domestic markets (FOC)
+EAG_pnttilde/EAG_pnt = EAG_thetan/(EAG_thetan-1)*EAG_fn/EAG_gn;
+// Definition of fn
+EAG_fn = EAG_mcn*EAG_nt+EAG_xin*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAG_pint(+1)/(EAG_pint^EAG_chin*EAG_pi4target^(1/4*(1-EAG_chin))))^EAG_thetan*EAG_fn(+1);
+// Definition of gn
+EAG_gn = EAG_pnt*EAG_nt+EAG_xin*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAG_pint(+1)/(EAG_pint^EAG_chin*EAG_pi4target^(1/4*(1-EAG_chin))))^(EAG_thetan-1)*EAG_gn(+1);
+// Aggregate intermediate-good price dynamics
+EAG_pnt^(1-EAG_thetan) = (1-EAG_xin)*EAG_pnttilde^(1-EAG_thetan)+EAG_xin*(EAG_pnt(-1)/EAG_pic)^(1-EAG_thetan)*(EAG_pint(-1)^EAG_chin*EAG_pi4target^(1/4*(1-EAG_chin)))^(1-EAG_thetan);
+// Intermediate-good price inflation
+EAG_pint = EAG_pnt/EAG_pnt(-1)*EAG_pic;
+// Optimal price contract set in domestic markets (FOC)
+EAG_pextilde/EAG_pex = EAG_thetat/(EAG_thetat-1)*EAG_fx/EAG_gx;
+// Definition of fh
+EAG_fx = EAG_mct*EAG_ex+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAG_piex(+1)/(EAG_piex^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAG_fx(+1);
+// Definition of gh
+EAG_gx = EAG_pex*EAG_ex+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAG_piex(+1)/(EAG_piex^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAG_gx(+1);
+// Aggregate intermediate-good price dynamics
+EAG_pex^(1-EAG_thetat) = (1-EAG_xix)*EAG_pextilde^(1-EAG_thetat)+EAG_xix*(EAG_pex(-1)/EAG_pic)^(1-EAG_thetat)*(EAG_piex(-1)^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix)))^(1-EAG_thetat);
+// Intermediate-good price inflation
+EAG_piex = EAG_pex/EAG_pex(-1)*EAG_pic;
+//---------------
+// import pricing
+//---------------
+// Optimal price contract set in foreign markets (FOC), using EAG_pxtilde = EAA_pimtilde
+// EAAEAG_pimtilde/EAAEAG_pim = EAG_cpim*EAG_thetat/(EAG_thetat-1)*EAGEAA_fx/EAGEAA_gx;
+// Definition of fx
+// EAGEAA_fx = EAA_size/EAG_size*EAAEAG_im*EAG_mct+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAAEAG_piim(+1)/(EAAEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAGEAA_fx(+1);
+// Definition of gx   
+// EAGEAA_gx = EAGEAA_rer*EAAEAG_pim*EAA_size/EAG_size*EAAEAG_im+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAAEAG_piim(+1)/(EAAEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAGEAA_gx(+1);
+// Aggregate intermediate-good price dynamics, using EAG_px = EAA_pim
+// EAAEAG_pim^(1-EAG_thetat) = (1-EAG_xix)*EAAEAG_pimtilde^(1-EAG_thetat)+EAG_xix*(EAAEAG_pim(-1)/EAA_pic)^(1-EAG_thetat)*(EAAEAG_piim(-1)^EAG_chix*EAA_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
+// Intermediate-good price inflation, using EAG_pix = EAA_piim
+// EAAEAG_piim = EAAEAG_pim/EAAEAG_pim(-1)*EAA_pic;
+// Bilateral real exchange rate
+EAGEAA_rer = EAG_rer/EAA_rer;
+// Auxiliary equation for steady-state output
+EAGEAA_rerbar = EAGEAA_rer;
+//Terms of Trade
+EAGEAA_tot = EAA_pex*EAGEAA_rer/EAG_pex;
+// Optimal price contract set in foreign markets (FOC), using EAG_pxtilde = EAB_pimtilde
+// EABEAG_pimtilde/EABEAG_pim = EAG_cpim*EAG_thetat/(EAG_thetat-1)*EAGEAB_fx/EAGEAB_gx;
+// Definition of fx
+// EAGEAB_fx = EAB_size/EAG_size*EABEAG_im*EAG_mct+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EABEAG_piim(+1)/(EABEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAGEAB_fx(+1);
+// Definition of gx   
+// EAGEAB_gx = EAGEAB_rer*EABEAG_pim*EAB_size/EAG_size*EABEAG_im+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EABEAG_piim(+1)/(EABEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAGEAB_gx(+1);
+// Aggregate intermediate-good price dynamics, using EAG_px = EAB_pim
+// EABEAG_pim^(1-EAG_thetat) = (1-EAG_xix)*EABEAG_pimtilde^(1-EAG_thetat)+EAG_xix*(EABEAG_pim(-1)/EAB_pic)^(1-EAG_thetat)*(EABEAG_piim(-1)^EAG_chix*EAB_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
+// Intermediate-good price inflation, using EAG_pix = EAB_piim
+// EABEAG_piim = EABEAG_pim/EABEAG_pim(-1)*EAB_pic;
+// Bilateral real exchange rate
+EAGEAB_rer = EAG_rer/EAB_rer;
+// Auxiliary equation for steady-state output
+EAGEAB_rerbar = EAGEAB_rer;
+//Terms of Trade
+EAGEAB_tot = EAB_pex*EAGEAB_rer/EAG_pex;
+// Optimal price contract set in foreign markets (FOC), using EAG_pxtilde = EAC_pimtilde
+// EACEAG_pimtilde/EACEAG_pim = EAG_cpim*EAG_thetat/(EAG_thetat-1)*EAGEAC_fx/EAGEAC_gx;
+// Definition of fx
+// EAGEAC_fx = EAC_size/EAG_size*EACEAG_im*EAG_mct+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EACEAG_piim(+1)/(EACEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAGEAC_fx(+1);
+// Definition of gx   
+// EAGEAC_gx = EAGEAC_rer*EACEAG_pim*EAC_size/EAG_size*EACEAG_im+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EACEAG_piim(+1)/(EACEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAGEAC_gx(+1);
+// Aggregate intermediate-good price dynamics, using EAG_px = EAC_pim
+// EACEAG_pim^(1-EAG_thetat) = (1-EAG_xix)*EACEAG_pimtilde^(1-EAG_thetat)+EAG_xix*(EACEAG_pim(-1)/EAC_pic)^(1-EAG_thetat)*(EACEAG_piim(-1)^EAG_chix*EAC_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
+// Intermediate-good price inflation, using EAG_pix = EAC_piim
+// EACEAG_piim = EACEAG_pim/EACEAG_pim(-1)*EAC_pic;
+// Bilateral real exchange rate
+EAGEAC_rer = EAG_rer/EAC_rer;
+// Auxiliary equation for steady-state output
+EAGEAC_rerbar = EAGEAC_rer;
+//Terms of Trade
+EAGEAC_tot = EAC_pex*EAGEAC_rer/EAG_pex;
+// Optimal price contract set in foreign markets (FOC), using EAG_pxtilde = EAD_pimtilde
+// EADEAG_pimtilde/EADEAG_pim = EAG_cpim*EAG_thetat/(EAG_thetat-1)*EAGEAD_fx/EAGEAD_gx;
+// Definition of fx
+// EAGEAD_fx = EAD_size/EAG_size*EADEAG_im*EAG_mct+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EADEAG_piim(+1)/(EADEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAGEAD_fx(+1);
+// Definition of gx   
+// EAGEAD_gx = EAGEAD_rer*EADEAG_pim*EAD_size/EAG_size*EADEAG_im+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EADEAG_piim(+1)/(EADEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAGEAD_gx(+1);
+// Aggregate intermediate-good price dynamics, using EAG_px = EAD_pim
+// EADEAG_pim^(1-EAG_thetat) = (1-EAG_xix)*EADEAG_pimtilde^(1-EAG_thetat)+EAG_xix*(EADEAG_pim(-1)/EAD_pic)^(1-EAG_thetat)*(EADEAG_piim(-1)^EAG_chix*EAD_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
+// Intermediate-good price inflation, using EAG_pix = EAD_piim
+// EADEAG_piim = EADEAG_pim/EADEAG_pim(-1)*EAD_pic;
+// Bilateral real exchange rate
+EAGEAD_rer = EAG_rer/EAD_rer;
+// Auxiliary equation for steady-state output
+EAGEAD_rerbar = EAGEAD_rer;
+//Terms of Trade
+EAGEAD_tot = EAD_pex*EAGEAD_rer/EAG_pex;
+// Optimal price contract set in foreign markets (FOC), using EAG_pxtilde = EAE_pimtilde
+// EAEEAG_pimtilde/EAEEAG_pim = EAG_cpim*EAG_thetat/(EAG_thetat-1)*EAGEAE_fx/EAGEAE_gx;
+// Definition of fx
+// EAGEAE_fx = EAE_size/EAG_size*EAEEAG_im*EAG_mct+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAEEAG_piim(+1)/(EAEEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAGEAE_fx(+1);
+// Definition of gx   
+// EAGEAE_gx = EAGEAE_rer*EAEEAG_pim*EAE_size/EAG_size*EAEEAG_im+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAEEAG_piim(+1)/(EAEEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAGEAE_gx(+1);
+// Aggregate intermediate-good price dynamics, using EAG_px = EAE_pim
+// EAEEAG_pim^(1-EAG_thetat) = (1-EAG_xix)*EAEEAG_pimtilde^(1-EAG_thetat)+EAG_xix*(EAEEAG_pim(-1)/EAE_pic)^(1-EAG_thetat)*(EAEEAG_piim(-1)^EAG_chix*EAE_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
+// Intermediate-good price inflation, using EAG_pix = EAE_piim
+// EAEEAG_piim = EAEEAG_pim/EAEEAG_pim(-1)*EAE_pic;
+// Bilateral real exchange rate
+EAGEAE_rer = EAG_rer/EAE_rer;
+// Auxiliary equation for steady-state output
+EAGEAE_rerbar = EAGEAE_rer;
+//Terms of Trade
+EAGEAE_tot = EAE_pex*EAGEAE_rer/EAG_pex;
+// Optimal price contract set in foreign markets (FOC), using EAG_pxtilde = EAF_pimtilde
+// EAFEAG_pimtilde/EAFEAG_pim = EAG_cpim*EAG_thetat/(EAG_thetat-1)*EAGEAF_fx/EAGEAF_gx;
+// Definition of fx
+// EAGEAF_fx = EAF_size/EAG_size*EAFEAG_im*EAG_mct+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAFEAG_piim(+1)/(EAFEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAGEAF_fx(+1);
+// Definition of gx   
+// EAGEAF_gx = EAGEAF_rer*EAFEAG_pim*EAF_size/EAG_size*EAFEAG_im+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAFEAG_piim(+1)/(EAFEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAGEAF_gx(+1);
+// Aggregate intermediate-good price dynamics, using EAG_px = EAF_pim
+// EAFEAG_pim^(1-EAG_thetat) = (1-EAG_xix)*EAFEAG_pimtilde^(1-EAG_thetat)+EAG_xix*(EAFEAG_pim(-1)/EAF_pic)^(1-EAG_thetat)*(EAFEAG_piim(-1)^EAG_chix*EAF_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
+// Intermediate-good price inflation, using EAG_pix = EAF_piim
+// EAFEAG_piim = EAFEAG_pim/EAFEAG_pim(-1)*EAF_pic;
+// Bilateral real exchange rate
+EAGEAF_rer = EAG_rer/EAF_rer;
+// Auxiliary equation for steady-state output
+EAGEAF_rerbar = EAGEAF_rer;
+//Terms of Trade
+EAGEAF_tot = EAF_pex*EAGEAF_rer/EAG_pex;
+// Optimal price contract set in foreign markets (FOC), using EAG_pxtilde = RW_pimtilde
+// RWEAG_pimtilde/RWEAG_pim = EAG_cpim*EAG_thetat/(EAG_thetat-1)*EAGRW_fx/EAGRW_gx;
+// Definition of fx
+// EAGRW_fx = RW_size/EAG_size*RWEAG_im*EAG_mct+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(RWEAG_piim(+1)/(RWEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAGRW_fx(+1);
+// Definition of gx   
+// EAGRW_gx = EAGRW_rer*RWEAG_pim*RW_size/EAG_size*RWEAG_im+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(RWEAG_piim(+1)/(RWEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAGRW_gx(+1);
+// Aggregate intermediate-good price dynamics, using EAG_px = RW_pim
+// RWEAG_pim^(1-EAG_thetat) = (1-EAG_xix)*RWEAG_pimtilde^(1-EAG_thetat)+EAG_xix*(RWEAG_pim(-1)/RW_pic)^(1-EAG_thetat)*(RWEAG_piim(-1)^EAG_chix*RW_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
+// Intermediate-good price inflation, using EAG_pix = RW_piim
+// RWEAG_piim = RWEAG_pim/RWEAG_pim(-1)*RW_pic;
+// Bilateral real exchange rate
+EAGRW_rer = EAG_rer/RW_rer;
+// Auxiliary equation for steady-state output
+EAGRW_rerbar = EAGRW_rer;
+//Terms of Trade
+EAGRW_tot = RW_pex*EAGRW_rer/EAG_pex;
+// Optimal price contract set in foreign markets (FOC), using EAG_pxtilde = US_pimtilde
+// USEAG_pimtilde/USEAG_pim = EAG_cpim*EAG_thetat/(EAG_thetat-1)*EAGUS_fx/EAGUS_gx;
+// Definition of fx
+// EAGUS_fx = US_size/EAG_size*USEAG_im*EAG_mct+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(USEAG_piim(+1)/(USEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAGUS_fx(+1);
+// Definition of gx   
+// EAGUS_gx = EAGUS_rer*USEAG_pim*US_size/EAG_size*USEAG_im+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(USEAG_piim(+1)/(USEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAGUS_gx(+1);
+// Aggregate intermediate-good price dynamics, using EAG_px = US_pim
+// USEAG_pim^(1-EAG_thetat) = (1-EAG_xix)*USEAG_pimtilde^(1-EAG_thetat)+EAG_xix*(USEAG_pim(-1)/US_pic)^(1-EAG_thetat)*(USEAG_piim(-1)^EAG_chix*US_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
+// Intermediate-good price inflation, using EAG_pix = US_piim
+// USEAG_piim = USEAG_pim/USEAG_pim(-1)*US_pic;
+// Bilateral real exchange rate
+EAGUS_rer = EAG_rer/US_rer;
+// Auxiliary equation for steady-state output
+EAGUS_rerbar = EAGUS_rer;
+//Terms of Trade
+EAGUS_tot = US_pex*EAGUS_rer/EAG_pex;
+// Total imports 
+EAG_im = 
++EAG_imc
++EAG_imi
++EAG_imcg
++EAG_imig
+;
+// Total import deflator
+EAG_im*EAG_pim  = 
++EAG_pimc*EAG_imc
++EAG_pimi*EAG_imi
++EAG_pimcg*EAG_imcg
++EAG_pimig*EAG_imig
+;
+// Effective real exchange rate: double weighting (imports)
+EAGEAA_weightim = EAGEAA_rer*EAA_pex*EAGEAA_im/(EAG_pim*EAG_im);
+// Effective real exchange rate: double weighting (exports)
+EAGEAA_weightex = EAA_size/EAG_size*EAAEAG_im/EAG_ex*EAGEAA_rer*EAA_py*EAA_y/(EAGEAA_rer*EAA_py*EAA_y
++EAGEAB_rer*EAB_pex*EAAEAB_im
++EAGEAC_rer*EAC_pex*EAAEAC_im
++EAGEAD_rer*EAD_pex*EAAEAD_im
++EAGEAE_rer*EAE_pex*EAAEAE_im
++EAGEAF_rer*EAF_pex*EAAEAF_im
++EAGRW_rer*RW_pex*EAARW_im
++EAGUS_rer*US_pex*EAAUS_im
+)+
++EAB_size/EAG_size*EABEAG_im/EAG_ex*EAGEAA_rer*EAA_pex*EABEAA_im/(EAGEAB_rer*EAB_py*EAB_y
++EAGEAA_rer*EAA_pex*EABEAA_im
++EAGEAC_rer*EAC_pex*EABEAC_im
++EAGEAD_rer*EAD_pex*EABEAD_im
++EAGEAE_rer*EAE_pex*EABEAE_im
++EAGEAF_rer*EAF_pex*EABEAF_im
++EAGRW_rer*RW_pex*EABRW_im
++EAGUS_rer*US_pex*EABUS_im
+)
++EAC_size/EAG_size*EACEAG_im/EAG_ex*EAGEAA_rer*EAA_pex*EACEAA_im/(EAGEAC_rer*EAC_py*EAC_y
++EAGEAA_rer*EAA_pex*EACEAA_im
++EAGEAB_rer*EAB_pex*EACEAB_im
++EAGEAD_rer*EAD_pex*EACEAD_im
++EAGEAE_rer*EAE_pex*EACEAE_im
++EAGEAF_rer*EAF_pex*EACEAF_im
++EAGRW_rer*RW_pex*EACRW_im
++EAGUS_rer*US_pex*EACUS_im
+)
++EAD_size/EAG_size*EADEAG_im/EAG_ex*EAGEAA_rer*EAA_pex*EADEAA_im/(EAGEAD_rer*EAD_py*EAD_y
++EAGEAA_rer*EAA_pex*EADEAA_im
++EAGEAB_rer*EAB_pex*EADEAB_im
++EAGEAC_rer*EAC_pex*EADEAC_im
++EAGEAE_rer*EAE_pex*EADEAE_im
++EAGEAF_rer*EAF_pex*EADEAF_im
++EAGRW_rer*RW_pex*EADRW_im
++EAGUS_rer*US_pex*EADUS_im
+)
++EAE_size/EAG_size*EAEEAG_im/EAG_ex*EAGEAA_rer*EAA_pex*EAEEAA_im/(EAGEAE_rer*EAE_py*EAE_y
++EAGEAA_rer*EAA_pex*EAEEAA_im
++EAGEAB_rer*EAB_pex*EAEEAB_im
++EAGEAC_rer*EAC_pex*EAEEAC_im
++EAGEAD_rer*EAD_pex*EAEEAD_im
++EAGEAF_rer*EAF_pex*EAEEAF_im
++EAGRW_rer*RW_pex*EAERW_im
++EAGUS_rer*US_pex*EAEUS_im
+)
++EAF_size/EAG_size*EAFEAG_im/EAG_ex*EAGEAA_rer*EAA_pex*EAFEAA_im/(EAGEAF_rer*EAF_py*EAF_y
++EAGEAA_rer*EAA_pex*EAFEAA_im
++EAGEAB_rer*EAB_pex*EAFEAB_im
++EAGEAC_rer*EAC_pex*EAFEAC_im
++EAGEAD_rer*EAD_pex*EAFEAD_im
++EAGEAE_rer*EAE_pex*EAFEAE_im
++EAGRW_rer*RW_pex*EAFRW_im
++EAGUS_rer*US_pex*EAFUS_im
+)
++RW_size/EAG_size*RWEAG_im/EAG_ex*EAGEAA_rer*EAA_pex*RWEAA_im/(EAGRW_rer*RW_py*RW_y
++EAGEAA_rer*EAA_pex*RWEAA_im
++EAGEAB_rer*EAB_pex*RWEAB_im
++EAGEAC_rer*EAC_pex*RWEAC_im
++EAGEAD_rer*EAD_pex*RWEAD_im
++EAGEAE_rer*EAE_pex*RWEAE_im
++EAGEAF_rer*EAF_pex*RWEAF_im
++EAGUS_rer*US_pex*RWUS_im
+)
++US_size/EAG_size*USEAG_im/EAG_ex*EAGEAA_rer*EAA_pex*USEAA_im/(EAGUS_rer*US_py*US_y
++EAGEAA_rer*EAA_pex*USEAA_im
++EAGEAB_rer*EAB_pex*USEAB_im
++EAGEAC_rer*EAC_pex*USEAC_im
++EAGEAD_rer*EAD_pex*USEAD_im
++EAGEAE_rer*EAE_pex*USEAE_im
++EAGEAF_rer*EAF_pex*USEAF_im
++EAGRW_rer*RW_pex*USRW_im
+)
+;
+// Effective real exchange rate: double weighting (overall)
+EAGEAA_weight = EAG_pim*EAG_im/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAA_weightim+EAG_pex*EAG_ex/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAA_weightex;
+// Effective real exchange rate: double weighting (imports)
+EAGEAB_weightim = EAGEAB_rer*EAB_pex*EAGEAB_im/(EAG_pim*EAG_im);
+// Effective real exchange rate: double weighting (exports)
+EAGEAB_weightex = EAB_size/EAG_size*EABEAG_im/EAG_ex*EAGEAB_rer*EAB_py*EAB_y/(EAGEAB_rer*EAB_py*EAB_y
++EAGEAA_rer*EAA_pex*EABEAA_im
++EAGEAC_rer*EAC_pex*EABEAC_im
++EAGEAD_rer*EAD_pex*EABEAD_im
++EAGEAE_rer*EAE_pex*EABEAE_im
++EAGEAF_rer*EAF_pex*EABEAF_im
++EAGRW_rer*RW_pex*EABRW_im
++EAGUS_rer*US_pex*EABUS_im
+)+
++EAA_size/EAG_size*EAAEAG_im/EAG_ex*EAGEAB_rer*EAB_pex*EAAEAB_im/(EAGEAA_rer*EAA_py*EAA_y
++EAGEAB_rer*EAB_pex*EAAEAB_im
++EAGEAC_rer*EAC_pex*EAAEAC_im
++EAGEAD_rer*EAD_pex*EAAEAD_im
++EAGEAE_rer*EAE_pex*EAAEAE_im
++EAGEAF_rer*EAF_pex*EAAEAF_im
++EAGRW_rer*RW_pex*EAARW_im
++EAGUS_rer*US_pex*EAAUS_im
+)
++EAC_size/EAG_size*EACEAG_im/EAG_ex*EAGEAB_rer*EAB_pex*EACEAB_im/(EAGEAC_rer*EAC_py*EAC_y
++EAGEAA_rer*EAA_pex*EACEAA_im
++EAGEAB_rer*EAB_pex*EACEAB_im
++EAGEAD_rer*EAD_pex*EACEAD_im
++EAGEAE_rer*EAE_pex*EACEAE_im
++EAGEAF_rer*EAF_pex*EACEAF_im
++EAGRW_rer*RW_pex*EACRW_im
++EAGUS_rer*US_pex*EACUS_im
+)
++EAD_size/EAG_size*EADEAG_im/EAG_ex*EAGEAB_rer*EAB_pex*EADEAB_im/(EAGEAD_rer*EAD_py*EAD_y
++EAGEAA_rer*EAA_pex*EADEAA_im
++EAGEAB_rer*EAB_pex*EADEAB_im
++EAGEAC_rer*EAC_pex*EADEAC_im
++EAGEAE_rer*EAE_pex*EADEAE_im
++EAGEAF_rer*EAF_pex*EADEAF_im
++EAGRW_rer*RW_pex*EADRW_im
++EAGUS_rer*US_pex*EADUS_im
+)
++EAE_size/EAG_size*EAEEAG_im/EAG_ex*EAGEAB_rer*EAB_pex*EAEEAB_im/(EAGEAE_rer*EAE_py*EAE_y
++EAGEAA_rer*EAA_pex*EAEEAA_im
++EAGEAB_rer*EAB_pex*EAEEAB_im
++EAGEAC_rer*EAC_pex*EAEEAC_im
++EAGEAD_rer*EAD_pex*EAEEAD_im
++EAGEAF_rer*EAF_pex*EAEEAF_im
++EAGRW_rer*RW_pex*EAERW_im
++EAGUS_rer*US_pex*EAEUS_im
+)
++EAF_size/EAG_size*EAFEAG_im/EAG_ex*EAGEAB_rer*EAB_pex*EAFEAB_im/(EAGEAF_rer*EAF_py*EAF_y
++EAGEAA_rer*EAA_pex*EAFEAA_im
++EAGEAB_rer*EAB_pex*EAFEAB_im
++EAGEAC_rer*EAC_pex*EAFEAC_im
++EAGEAD_rer*EAD_pex*EAFEAD_im
++EAGEAE_rer*EAE_pex*EAFEAE_im
++EAGRW_rer*RW_pex*EAFRW_im
++EAGUS_rer*US_pex*EAFUS_im
+)
++RW_size/EAG_size*RWEAG_im/EAG_ex*EAGEAB_rer*EAB_pex*RWEAB_im/(EAGRW_rer*RW_py*RW_y
++EAGEAA_rer*EAA_pex*RWEAA_im
++EAGEAB_rer*EAB_pex*RWEAB_im
++EAGEAC_rer*EAC_pex*RWEAC_im
++EAGEAD_rer*EAD_pex*RWEAD_im
++EAGEAE_rer*EAE_pex*RWEAE_im
++EAGEAF_rer*EAF_pex*RWEAF_im
++EAGUS_rer*US_pex*RWUS_im
+)
++US_size/EAG_size*USEAG_im/EAG_ex*EAGEAB_rer*EAB_pex*USEAB_im/(EAGUS_rer*US_py*US_y
++EAGEAA_rer*EAA_pex*USEAA_im
++EAGEAB_rer*EAB_pex*USEAB_im
++EAGEAC_rer*EAC_pex*USEAC_im
++EAGEAD_rer*EAD_pex*USEAD_im
++EAGEAE_rer*EAE_pex*USEAE_im
++EAGEAF_rer*EAF_pex*USEAF_im
++EAGRW_rer*RW_pex*USRW_im
+)
+;
+// Effective real exchange rate: double weighting (overall)
+EAGEAB_weight = EAG_pim*EAG_im/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAB_weightim+EAG_pex*EAG_ex/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAB_weightex;
+// Effective real exchange rate: double weighting (imports)
+EAGEAC_weightim = EAGEAC_rer*EAC_pex*EAGEAC_im/(EAG_pim*EAG_im);
+// Effective real exchange rate: double weighting (exports)
+EAGEAC_weightex = EAC_size/EAG_size*EACEAG_im/EAG_ex*EAGEAC_rer*EAC_py*EAC_y/(EAGEAC_rer*EAC_py*EAC_y
++EAGEAA_rer*EAA_pex*EACEAA_im
++EAGEAB_rer*EAB_pex*EACEAB_im
++EAGEAD_rer*EAD_pex*EACEAD_im
++EAGEAE_rer*EAE_pex*EACEAE_im
++EAGEAF_rer*EAF_pex*EACEAF_im
++EAGRW_rer*RW_pex*EACRW_im
++EAGUS_rer*US_pex*EACUS_im
+)+
++EAA_size/EAG_size*EAAEAG_im/EAG_ex*EAGEAC_rer*EAC_pex*EAAEAC_im/(EAGEAA_rer*EAA_py*EAA_y
++EAGEAB_rer*EAB_pex*EAAEAB_im
++EAGEAC_rer*EAC_pex*EAAEAC_im
++EAGEAD_rer*EAD_pex*EAAEAD_im
++EAGEAE_rer*EAE_pex*EAAEAE_im
++EAGEAF_rer*EAF_pex*EAAEAF_im
++EAGRW_rer*RW_pex*EAARW_im
++EAGUS_rer*US_pex*EAAUS_im
+)
++EAB_size/EAG_size*EABEAG_im/EAG_ex*EAGEAC_rer*EAC_pex*EABEAC_im/(EAGEAB_rer*EAB_py*EAB_y
++EAGEAA_rer*EAA_pex*EABEAA_im
++EAGEAC_rer*EAC_pex*EABEAC_im
++EAGEAD_rer*EAD_pex*EABEAD_im
++EAGEAE_rer*EAE_pex*EABEAE_im
++EAGEAF_rer*EAF_pex*EABEAF_im
++EAGRW_rer*RW_pex*EABRW_im
++EAGUS_rer*US_pex*EABUS_im
+)
++EAD_size/EAG_size*EADEAG_im/EAG_ex*EAGEAC_rer*EAC_pex*EADEAC_im/(EAGEAD_rer*EAD_py*EAD_y
++EAGEAA_rer*EAA_pex*EADEAA_im
++EAGEAB_rer*EAB_pex*EADEAB_im
++EAGEAC_rer*EAC_pex*EADEAC_im
++EAGEAE_rer*EAE_pex*EADEAE_im
++EAGEAF_rer*EAF_pex*EADEAF_im
++EAGRW_rer*RW_pex*EADRW_im
++EAGUS_rer*US_pex*EADUS_im
+)
++EAE_size/EAG_size*EAEEAG_im/EAG_ex*EAGEAC_rer*EAC_pex*EAEEAC_im/(EAGEAE_rer*EAE_py*EAE_y
++EAGEAA_rer*EAA_pex*EAEEAA_im
++EAGEAB_rer*EAB_pex*EAEEAB_im
++EAGEAC_rer*EAC_pex*EAEEAC_im
++EAGEAD_rer*EAD_pex*EAEEAD_im
++EAGEAF_rer*EAF_pex*EAEEAF_im
++EAGRW_rer*RW_pex*EAERW_im
++EAGUS_rer*US_pex*EAEUS_im
+)
++EAF_size/EAG_size*EAFEAG_im/EAG_ex*EAGEAC_rer*EAC_pex*EAFEAC_im/(EAGEAF_rer*EAF_py*EAF_y
++EAGEAA_rer*EAA_pex*EAFEAA_im
++EAGEAB_rer*EAB_pex*EAFEAB_im
++EAGEAC_rer*EAC_pex*EAFEAC_im
++EAGEAD_rer*EAD_pex*EAFEAD_im
++EAGEAE_rer*EAE_pex*EAFEAE_im
++EAGRW_rer*RW_pex*EAFRW_im
++EAGUS_rer*US_pex*EAFUS_im
+)
++RW_size/EAG_size*RWEAG_im/EAG_ex*EAGEAC_rer*EAC_pex*RWEAC_im/(EAGRW_rer*RW_py*RW_y
++EAGEAA_rer*EAA_pex*RWEAA_im
++EAGEAB_rer*EAB_pex*RWEAB_im
++EAGEAC_rer*EAC_pex*RWEAC_im
++EAGEAD_rer*EAD_pex*RWEAD_im
++EAGEAE_rer*EAE_pex*RWEAE_im
++EAGEAF_rer*EAF_pex*RWEAF_im
++EAGUS_rer*US_pex*RWUS_im
+)
++US_size/EAG_size*USEAG_im/EAG_ex*EAGEAC_rer*EAC_pex*USEAC_im/(EAGUS_rer*US_py*US_y
++EAGEAA_rer*EAA_pex*USEAA_im
++EAGEAB_rer*EAB_pex*USEAB_im
++EAGEAC_rer*EAC_pex*USEAC_im
++EAGEAD_rer*EAD_pex*USEAD_im
++EAGEAE_rer*EAE_pex*USEAE_im
++EAGEAF_rer*EAF_pex*USEAF_im
++EAGRW_rer*RW_pex*USRW_im
+)
+;
+// Effective real exchange rate: double weighting (overall)
+EAGEAC_weight = EAG_pim*EAG_im/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAC_weightim+EAG_pex*EAG_ex/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAC_weightex;
+// Effective real exchange rate: double weighting (imports)
+EAGEAD_weightim = EAGEAD_rer*EAD_pex*EAGEAD_im/(EAG_pim*EAG_im);
+// Effective real exchange rate: double weighting (exports)
+EAGEAD_weightex = EAD_size/EAG_size*EADEAG_im/EAG_ex*EAGEAD_rer*EAD_py*EAD_y/(EAGEAD_rer*EAD_py*EAD_y
++EAGEAA_rer*EAA_pex*EADEAA_im
++EAGEAB_rer*EAB_pex*EADEAB_im
++EAGEAC_rer*EAC_pex*EADEAC_im
++EAGEAE_rer*EAE_pex*EADEAE_im
++EAGEAF_rer*EAF_pex*EADEAF_im
++EAGRW_rer*RW_pex*EADRW_im
++EAGUS_rer*US_pex*EADUS_im
+)+
++EAA_size/EAG_size*EAAEAG_im/EAG_ex*EAGEAD_rer*EAD_pex*EAAEAD_im/(EAGEAA_rer*EAA_py*EAA_y
++EAGEAB_rer*EAB_pex*EAAEAB_im
++EAGEAC_rer*EAC_pex*EAAEAC_im
++EAGEAD_rer*EAD_pex*EAAEAD_im
++EAGEAE_rer*EAE_pex*EAAEAE_im
++EAGEAF_rer*EAF_pex*EAAEAF_im
++EAGRW_rer*RW_pex*EAARW_im
++EAGUS_rer*US_pex*EAAUS_im
+)
++EAB_size/EAG_size*EABEAG_im/EAG_ex*EAGEAD_rer*EAD_pex*EABEAD_im/(EAGEAB_rer*EAB_py*EAB_y
++EAGEAA_rer*EAA_pex*EABEAA_im
++EAGEAC_rer*EAC_pex*EABEAC_im
++EAGEAD_rer*EAD_pex*EABEAD_im
++EAGEAE_rer*EAE_pex*EABEAE_im
++EAGEAF_rer*EAF_pex*EABEAF_im
++EAGRW_rer*RW_pex*EABRW_im
++EAGUS_rer*US_pex*EABUS_im
+)
++EAC_size/EAG_size*EACEAG_im/EAG_ex*EAGEAD_rer*EAD_pex*EACEAD_im/(EAGEAC_rer*EAC_py*EAC_y
++EAGEAA_rer*EAA_pex*EACEAA_im
++EAGEAB_rer*EAB_pex*EACEAB_im
++EAGEAD_rer*EAD_pex*EACEAD_im
++EAGEAE_rer*EAE_pex*EACEAE_im
++EAGEAF_rer*EAF_pex*EACEAF_im
++EAGRW_rer*RW_pex*EACRW_im
++EAGUS_rer*US_pex*EACUS_im
+)
++EAE_size/EAG_size*EAEEAG_im/EAG_ex*EAGEAD_rer*EAD_pex*EAEEAD_im/(EAGEAE_rer*EAE_py*EAE_y
++EAGEAA_rer*EAA_pex*EAEEAA_im
++EAGEAB_rer*EAB_pex*EAEEAB_im
++EAGEAC_rer*EAC_pex*EAEEAC_im
++EAGEAD_rer*EAD_pex*EAEEAD_im
++EAGEAF_rer*EAF_pex*EAEEAF_im
++EAGRW_rer*RW_pex*EAERW_im
++EAGUS_rer*US_pex*EAEUS_im
+)
++EAF_size/EAG_size*EAFEAG_im/EAG_ex*EAGEAD_rer*EAD_pex*EAFEAD_im/(EAGEAF_rer*EAF_py*EAF_y
++EAGEAA_rer*EAA_pex*EAFEAA_im
++EAGEAB_rer*EAB_pex*EAFEAB_im
++EAGEAC_rer*EAC_pex*EAFEAC_im
++EAGEAD_rer*EAD_pex*EAFEAD_im
++EAGEAE_rer*EAE_pex*EAFEAE_im
++EAGRW_rer*RW_pex*EAFRW_im
++EAGUS_rer*US_pex*EAFUS_im
+)
++RW_size/EAG_size*RWEAG_im/EAG_ex*EAGEAD_rer*EAD_pex*RWEAD_im/(EAGRW_rer*RW_py*RW_y
++EAGEAA_rer*EAA_pex*RWEAA_im
++EAGEAB_rer*EAB_pex*RWEAB_im
++EAGEAC_rer*EAC_pex*RWEAC_im
++EAGEAD_rer*EAD_pex*RWEAD_im
++EAGEAE_rer*EAE_pex*RWEAE_im
++EAGEAF_rer*EAF_pex*RWEAF_im
++EAGUS_rer*US_pex*RWUS_im
+)
++US_size/EAG_size*USEAG_im/EAG_ex*EAGEAD_rer*EAD_pex*USEAD_im/(EAGUS_rer*US_py*US_y
++EAGEAA_rer*EAA_pex*USEAA_im
++EAGEAB_rer*EAB_pex*USEAB_im
++EAGEAC_rer*EAC_pex*USEAC_im
++EAGEAD_rer*EAD_pex*USEAD_im
++EAGEAE_rer*EAE_pex*USEAE_im
++EAGEAF_rer*EAF_pex*USEAF_im
++EAGRW_rer*RW_pex*USRW_im
+)
+;
+// Effective real exchange rate: double weighting (overall)
+EAGEAD_weight = EAG_pim*EAG_im/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAD_weightim+EAG_pex*EAG_ex/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAD_weightex;
+// Effective real exchange rate: double weighting (imports)
+EAGEAE_weightim = EAGEAE_rer*EAE_pex*EAGEAE_im/(EAG_pim*EAG_im);
+// Effective real exchange rate: double weighting (exports)
+EAGEAE_weightex = EAE_size/EAG_size*EAEEAG_im/EAG_ex*EAGEAE_rer*EAE_py*EAE_y/(EAGEAE_rer*EAE_py*EAE_y
++EAGEAA_rer*EAA_pex*EAEEAA_im
++EAGEAB_rer*EAB_pex*EAEEAB_im
++EAGEAC_rer*EAC_pex*EAEEAC_im
++EAGEAD_rer*EAD_pex*EAEEAD_im
++EAGEAF_rer*EAF_pex*EAEEAF_im
++EAGRW_rer*RW_pex*EAERW_im
++EAGUS_rer*US_pex*EAEUS_im
+)+
++EAA_size/EAG_size*EAAEAG_im/EAG_ex*EAGEAE_rer*EAE_pex*EAAEAE_im/(EAGEAA_rer*EAA_py*EAA_y
++EAGEAB_rer*EAB_pex*EAAEAB_im
++EAGEAC_rer*EAC_pex*EAAEAC_im
++EAGEAD_rer*EAD_pex*EAAEAD_im
++EAGEAE_rer*EAE_pex*EAAEAE_im
++EAGEAF_rer*EAF_pex*EAAEAF_im
++EAGRW_rer*RW_pex*EAARW_im
++EAGUS_rer*US_pex*EAAUS_im
+)
++EAB_size/EAG_size*EABEAG_im/EAG_ex*EAGEAE_rer*EAE_pex*EABEAE_im/(EAGEAB_rer*EAB_py*EAB_y
++EAGEAA_rer*EAA_pex*EABEAA_im
++EAGEAC_rer*EAC_pex*EABEAC_im
++EAGEAD_rer*EAD_pex*EABEAD_im
++EAGEAE_rer*EAE_pex*EABEAE_im
++EAGEAF_rer*EAF_pex*EABEAF_im
++EAGRW_rer*RW_pex*EABRW_im
++EAGUS_rer*US_pex*EABUS_im
+)
++EAC_size/EAG_size*EACEAG_im/EAG_ex*EAGEAE_rer*EAE_pex*EACEAE_im/(EAGEAC_rer*EAC_py*EAC_y
++EAGEAA_rer*EAA_pex*EACEAA_im
++EAGEAB_rer*EAB_pex*EACEAB_im
++EAGEAD_rer*EAD_pex*EACEAD_im
++EAGEAE_rer*EAE_pex*EACEAE_im
++EAGEAF_rer*EAF_pex*EACEAF_im
++EAGRW_rer*RW_pex*EACRW_im
++EAGUS_rer*US_pex*EACUS_im
+)
++EAD_size/EAG_size*EADEAG_im/EAG_ex*EAGEAE_rer*EAE_pex*EADEAE_im/(EAGEAD_rer*EAD_py*EAD_y
++EAGEAA_rer*EAA_pex*EADEAA_im
++EAGEAB_rer*EAB_pex*EADEAB_im
++EAGEAC_rer*EAC_pex*EADEAC_im
++EAGEAE_rer*EAE_pex*EADEAE_im
++EAGEAF_rer*EAF_pex*EADEAF_im
++EAGRW_rer*RW_pex*EADRW_im
++EAGUS_rer*US_pex*EADUS_im
+)
++EAF_size/EAG_size*EAFEAG_im/EAG_ex*EAGEAE_rer*EAE_pex*EAFEAE_im/(EAGEAF_rer*EAF_py*EAF_y
++EAGEAA_rer*EAA_pex*EAFEAA_im
++EAGEAB_rer*EAB_pex*EAFEAB_im
++EAGEAC_rer*EAC_pex*EAFEAC_im
++EAGEAD_rer*EAD_pex*EAFEAD_im
++EAGEAE_rer*EAE_pex*EAFEAE_im
++EAGRW_rer*RW_pex*EAFRW_im
++EAGUS_rer*US_pex*EAFUS_im
+)
++RW_size/EAG_size*RWEAG_im/EAG_ex*EAGEAE_rer*EAE_pex*RWEAE_im/(EAGRW_rer*RW_py*RW_y
++EAGEAA_rer*EAA_pex*RWEAA_im
++EAGEAB_rer*EAB_pex*RWEAB_im
++EAGEAC_rer*EAC_pex*RWEAC_im
++EAGEAD_rer*EAD_pex*RWEAD_im
++EAGEAE_rer*EAE_pex*RWEAE_im
++EAGEAF_rer*EAF_pex*RWEAF_im
++EAGUS_rer*US_pex*RWUS_im
+)
++US_size/EAG_size*USEAG_im/EAG_ex*EAGEAE_rer*EAE_pex*USEAE_im/(EAGUS_rer*US_py*US_y
++EAGEAA_rer*EAA_pex*USEAA_im
++EAGEAB_rer*EAB_pex*USEAB_im
++EAGEAC_rer*EAC_pex*USEAC_im
++EAGEAD_rer*EAD_pex*USEAD_im
++EAGEAE_rer*EAE_pex*USEAE_im
++EAGEAF_rer*EAF_pex*USEAF_im
++EAGRW_rer*RW_pex*USRW_im
+)
+;
+// Effective real exchange rate: double weighting (overall)
+EAGEAE_weight = EAG_pim*EAG_im/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAE_weightim+EAG_pex*EAG_ex/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAE_weightex;
+// Effective real exchange rate: double weighting (imports)
+EAGEAF_weightim = EAGEAF_rer*EAF_pex*EAGEAF_im/(EAG_pim*EAG_im);
+// Effective real exchange rate: double weighting (exports)
+EAGEAF_weightex = EAF_size/EAG_size*EAFEAG_im/EAG_ex*EAGEAF_rer*EAF_py*EAF_y/(EAGEAF_rer*EAF_py*EAF_y
++EAGEAA_rer*EAA_pex*EAFEAA_im
++EAGEAB_rer*EAB_pex*EAFEAB_im
++EAGEAC_rer*EAC_pex*EAFEAC_im
++EAGEAD_rer*EAD_pex*EAFEAD_im
++EAGEAE_rer*EAE_pex*EAFEAE_im
++EAGRW_rer*RW_pex*EAFRW_im
++EAGUS_rer*US_pex*EAFUS_im
+)+
++EAA_size/EAG_size*EAAEAG_im/EAG_ex*EAGEAF_rer*EAF_pex*EAAEAF_im/(EAGEAA_rer*EAA_py*EAA_y
++EAGEAB_rer*EAB_pex*EAAEAB_im
++EAGEAC_rer*EAC_pex*EAAEAC_im
++EAGEAD_rer*EAD_pex*EAAEAD_im
++EAGEAE_rer*EAE_pex*EAAEAE_im
++EAGEAF_rer*EAF_pex*EAAEAF_im
++EAGRW_rer*RW_pex*EAARW_im
++EAGUS_rer*US_pex*EAAUS_im
+)
++EAB_size/EAG_size*EABEAG_im/EAG_ex*EAGEAF_rer*EAF_pex*EABEAF_im/(EAGEAB_rer*EAB_py*EAB_y
++EAGEAA_rer*EAA_pex*EABEAA_im
++EAGEAC_rer*EAC_pex*EABEAC_im
++EAGEAD_rer*EAD_pex*EABEAD_im
++EAGEAE_rer*EAE_pex*EABEAE_im
++EAGEAF_rer*EAF_pex*EABEAF_im
++EAGRW_rer*RW_pex*EABRW_im
++EAGUS_rer*US_pex*EABUS_im
+)
++EAC_size/EAG_size*EACEAG_im/EAG_ex*EAGEAF_rer*EAF_pex*EACEAF_im/(EAGEAC_rer*EAC_py*EAC_y
++EAGEAA_rer*EAA_pex*EACEAA_im
++EAGEAB_rer*EAB_pex*EACEAB_im
++EAGEAD_rer*EAD_pex*EACEAD_im
++EAGEAE_rer*EAE_pex*EACEAE_im
++EAGEAF_rer*EAF_pex*EACEAF_im
++EAGRW_rer*RW_pex*EACRW_im
++EAGUS_rer*US_pex*EACUS_im
+)
++EAD_size/EAG_size*EADEAG_im/EAG_ex*EAGEAF_rer*EAF_pex*EADEAF_im/(EAGEAD_rer*EAD_py*EAD_y
++EAGEAA_rer*EAA_pex*EADEAA_im
++EAGEAB_rer*EAB_pex*EADEAB_im
++EAGEAC_rer*EAC_pex*EADEAC_im
++EAGEAE_rer*EAE_pex*EADEAE_im
++EAGEAF_rer*EAF_pex*EADEAF_im
++EAGRW_rer*RW_pex*EADRW_im
++EAGUS_rer*US_pex*EADUS_im
+)
++EAE_size/EAG_size*EAEEAG_im/EAG_ex*EAGEAF_rer*EAF_pex*EAEEAF_im/(EAGEAE_rer*EAE_py*EAE_y
++EAGEAA_rer*EAA_pex*EAEEAA_im
++EAGEAB_rer*EAB_pex*EAEEAB_im
++EAGEAC_rer*EAC_pex*EAEEAC_im
++EAGEAD_rer*EAD_pex*EAEEAD_im
++EAGEAF_rer*EAF_pex*EAEEAF_im
++EAGRW_rer*RW_pex*EAERW_im
++EAGUS_rer*US_pex*EAEUS_im
+)
++RW_size/EAG_size*RWEAG_im/EAG_ex*EAGEAF_rer*EAF_pex*RWEAF_im/(EAGRW_rer*RW_py*RW_y
++EAGEAA_rer*EAA_pex*RWEAA_im
++EAGEAB_rer*EAB_pex*RWEAB_im
++EAGEAC_rer*EAC_pex*RWEAC_im
++EAGEAD_rer*EAD_pex*RWEAD_im
++EAGEAE_rer*EAE_pex*RWEAE_im
++EAGEAF_rer*EAF_pex*RWEAF_im
++EAGUS_rer*US_pex*RWUS_im
+)
++US_size/EAG_size*USEAG_im/EAG_ex*EAGEAF_rer*EAF_pex*USEAF_im/(EAGUS_rer*US_py*US_y
++EAGEAA_rer*EAA_pex*USEAA_im
++EAGEAB_rer*EAB_pex*USEAB_im
++EAGEAC_rer*EAC_pex*USEAC_im
++EAGEAD_rer*EAD_pex*USEAD_im
++EAGEAE_rer*EAE_pex*USEAE_im
++EAGEAF_rer*EAF_pex*USEAF_im
++EAGRW_rer*RW_pex*USRW_im
+)
+;
+// Effective real exchange rate: double weighting (overall)
+EAGEAF_weight = EAG_pim*EAG_im/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAF_weightim+EAG_pex*EAG_ex/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAF_weightex;
+// Effective real exchange rate: double weighting (imports)
+EAGRW_weightim = EAGRW_rer*RW_pex*EAGRW_im/(EAG_pim*EAG_im);
+// Effective real exchange rate: double weighting (exports)
+EAGRW_weightex = RW_size/EAG_size*RWEAG_im/EAG_ex*EAGRW_rer*RW_py*RW_y/(EAGRW_rer*RW_py*RW_y
++EAGEAA_rer*EAA_pex*RWEAA_im
++EAGEAB_rer*EAB_pex*RWEAB_im
++EAGEAC_rer*EAC_pex*RWEAC_im
++EAGEAD_rer*EAD_pex*RWEAD_im
++EAGEAE_rer*EAE_pex*RWEAE_im
++EAGEAF_rer*EAF_pex*RWEAF_im
++EAGUS_rer*US_pex*RWUS_im
+)+
++EAA_size/EAG_size*EAAEAG_im/EAG_ex*EAGRW_rer*RW_pex*EAARW_im/(EAGEAA_rer*EAA_py*EAA_y
++EAGEAB_rer*EAB_pex*EAAEAB_im
++EAGEAC_rer*EAC_pex*EAAEAC_im
++EAGEAD_rer*EAD_pex*EAAEAD_im
++EAGEAE_rer*EAE_pex*EAAEAE_im
++EAGEAF_rer*EAF_pex*EAAEAF_im
++EAGRW_rer*RW_pex*EAARW_im
++EAGUS_rer*US_pex*EAAUS_im
+)
++EAB_size/EAG_size*EABEAG_im/EAG_ex*EAGRW_rer*RW_pex*EABRW_im/(EAGEAB_rer*EAB_py*EAB_y
++EAGEAA_rer*EAA_pex*EABEAA_im
++EAGEAC_rer*EAC_pex*EABEAC_im
++EAGEAD_rer*EAD_pex*EABEAD_im
++EAGEAE_rer*EAE_pex*EABEAE_im
++EAGEAF_rer*EAF_pex*EABEAF_im
++EAGRW_rer*RW_pex*EABRW_im
++EAGUS_rer*US_pex*EABUS_im
+)
++EAC_size/EAG_size*EACEAG_im/EAG_ex*EAGRW_rer*RW_pex*EACRW_im/(EAGEAC_rer*EAC_py*EAC_y
++EAGEAA_rer*EAA_pex*EACEAA_im
++EAGEAB_rer*EAB_pex*EACEAB_im
++EAGEAD_rer*EAD_pex*EACEAD_im
++EAGEAE_rer*EAE_pex*EACEAE_im
++EAGEAF_rer*EAF_pex*EACEAF_im
++EAGRW_rer*RW_pex*EACRW_im
++EAGUS_rer*US_pex*EACUS_im
+)
++EAD_size/EAG_size*EADEAG_im/EAG_ex*EAGRW_rer*RW_pex*EADRW_im/(EAGEAD_rer*EAD_py*EAD_y
++EAGEAA_rer*EAA_pex*EADEAA_im
++EAGEAB_rer*EAB_pex*EADEAB_im
++EAGEAC_rer*EAC_pex*EADEAC_im
++EAGEAE_rer*EAE_pex*EADEAE_im
++EAGEAF_rer*EAF_pex*EADEAF_im
++EAGRW_rer*RW_pex*EADRW_im
++EAGUS_rer*US_pex*EADUS_im
+)
++EAE_size/EAG_size*EAEEAG_im/EAG_ex*EAGRW_rer*RW_pex*EAERW_im/(EAGEAE_rer*EAE_py*EAE_y
++EAGEAA_rer*EAA_pex*EAEEAA_im
++EAGEAB_rer*EAB_pex*EAEEAB_im
++EAGEAC_rer*EAC_pex*EAEEAC_im
++EAGEAD_rer*EAD_pex*EAEEAD_im
++EAGEAF_rer*EAF_pex*EAEEAF_im
++EAGRW_rer*RW_pex*EAERW_im
++EAGUS_rer*US_pex*EAEUS_im
+)
++EAF_size/EAG_size*EAFEAG_im/EAG_ex*EAGRW_rer*RW_pex*EAFRW_im/(EAGEAF_rer*EAF_py*EAF_y
++EAGEAA_rer*EAA_pex*EAFEAA_im
++EAGEAB_rer*EAB_pex*EAFEAB_im
++EAGEAC_rer*EAC_pex*EAFEAC_im
++EAGEAD_rer*EAD_pex*EAFEAD_im
++EAGEAE_rer*EAE_pex*EAFEAE_im
++EAGRW_rer*RW_pex*EAFRW_im
++EAGUS_rer*US_pex*EAFUS_im
+)
++US_size/EAG_size*USEAG_im/EAG_ex*EAGRW_rer*RW_pex*USRW_im/(EAGUS_rer*US_py*US_y
++EAGEAA_rer*EAA_pex*USEAA_im
++EAGEAB_rer*EAB_pex*USEAB_im
++EAGEAC_rer*EAC_pex*USEAC_im
++EAGEAD_rer*EAD_pex*USEAD_im
++EAGEAE_rer*EAE_pex*USEAE_im
++EAGEAF_rer*EAF_pex*USEAF_im
++EAGRW_rer*RW_pex*USRW_im
+)
+;
+// Effective real exchange rate: double weighting (overall)
+EAGRW_weight = EAG_pim*EAG_im/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGRW_weightim+EAG_pex*EAG_ex/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGRW_weightex;
+// Effective real exchange rate: double weighting (imports)
+EAGUS_weightim = EAGUS_rer*US_pex*EAGUS_im/(EAG_pim*EAG_im);
+// Effective real exchange rate: double weighting (exports)
+EAGUS_weightex = US_size/EAG_size*USEAG_im/EAG_ex*EAGUS_rer*US_py*US_y/(EAGUS_rer*US_py*US_y
++EAGEAA_rer*EAA_pex*USEAA_im
++EAGEAB_rer*EAB_pex*USEAB_im
++EAGEAC_rer*EAC_pex*USEAC_im
++EAGEAD_rer*EAD_pex*USEAD_im
++EAGEAE_rer*EAE_pex*USEAE_im
++EAGEAF_rer*EAF_pex*USEAF_im
++EAGRW_rer*RW_pex*USRW_im
+)+
++EAA_size/EAG_size*EAAEAG_im/EAG_ex*EAGUS_rer*US_pex*EAAUS_im/(EAGEAA_rer*EAA_py*EAA_y
++EAGEAB_rer*EAB_pex*EAAEAB_im
++EAGEAC_rer*EAC_pex*EAAEAC_im
++EAGEAD_rer*EAD_pex*EAAEAD_im
++EAGEAE_rer*EAE_pex*EAAEAE_im
++EAGEAF_rer*EAF_pex*EAAEAF_im
++EAGRW_rer*RW_pex*EAARW_im
++EAGUS_rer*US_pex*EAAUS_im
+)
++EAB_size/EAG_size*EABEAG_im/EAG_ex*EAGUS_rer*US_pex*EABUS_im/(EAGEAB_rer*EAB_py*EAB_y
++EAGEAA_rer*EAA_pex*EABEAA_im
++EAGEAC_rer*EAC_pex*EABEAC_im
++EAGEAD_rer*EAD_pex*EABEAD_im
++EAGEAE_rer*EAE_pex*EABEAE_im
++EAGEAF_rer*EAF_pex*EABEAF_im
++EAGRW_rer*RW_pex*EABRW_im
++EAGUS_rer*US_pex*EABUS_im
+)
++EAC_size/EAG_size*EACEAG_im/EAG_ex*EAGUS_rer*US_pex*EACUS_im/(EAGEAC_rer*EAC_py*EAC_y
++EAGEAA_rer*EAA_pex*EACEAA_im
++EAGEAB_rer*EAB_pex*EACEAB_im
++EAGEAD_rer*EAD_pex*EACEAD_im
++EAGEAE_rer*EAE_pex*EACEAE_im
++EAGEAF_rer*EAF_pex*EACEAF_im
++EAGRW_rer*RW_pex*EACRW_im
++EAGUS_rer*US_pex*EACUS_im
+)
++EAD_size/EAG_size*EADEAG_im/EAG_ex*EAGUS_rer*US_pex*EADUS_im/(EAGEAD_rer*EAD_py*EAD_y
++EAGEAA_rer*EAA_pex*EADEAA_im
++EAGEAB_rer*EAB_pex*EADEAB_im
++EAGEAC_rer*EAC_pex*EADEAC_im
++EAGEAE_rer*EAE_pex*EADEAE_im
++EAGEAF_rer*EAF_pex*EADEAF_im
++EAGRW_rer*RW_pex*EADRW_im
++EAGUS_rer*US_pex*EADUS_im
+)
++EAE_size/EAG_size*EAEEAG_im/EAG_ex*EAGUS_rer*US_pex*EAEUS_im/(EAGEAE_rer*EAE_py*EAE_y
++EAGEAA_rer*EAA_pex*EAEEAA_im
++EAGEAB_rer*EAB_pex*EAEEAB_im
++EAGEAC_rer*EAC_pex*EAEEAC_im
++EAGEAD_rer*EAD_pex*EAEEAD_im
++EAGEAF_rer*EAF_pex*EAEEAF_im
++EAGRW_rer*RW_pex*EAERW_im
++EAGUS_rer*US_pex*EAEUS_im
+)
++EAF_size/EAG_size*EAFEAG_im/EAG_ex*EAGUS_rer*US_pex*EAFUS_im/(EAGEAF_rer*EAF_py*EAF_y
++EAGEAA_rer*EAA_pex*EAFEAA_im
++EAGEAB_rer*EAB_pex*EAFEAB_im
++EAGEAC_rer*EAC_pex*EAFEAC_im
++EAGEAD_rer*EAD_pex*EAFEAD_im
++EAGEAE_rer*EAE_pex*EAFEAE_im
++EAGRW_rer*RW_pex*EAFRW_im
++EAGUS_rer*US_pex*EAFUS_im
+)
++RW_size/EAG_size*RWEAG_im/EAG_ex*EAGUS_rer*US_pex*RWUS_im/(EAGRW_rer*RW_py*RW_y
++EAGEAA_rer*EAA_pex*RWEAA_im
++EAGEAB_rer*EAB_pex*RWEAB_im
++EAGEAC_rer*EAC_pex*RWEAC_im
++EAGEAD_rer*EAD_pex*RWEAD_im
++EAGEAE_rer*EAE_pex*RWEAE_im
++EAGEAF_rer*EAF_pex*RWEAF_im
++EAGUS_rer*US_pex*RWUS_im
+)
+;
+// Effective real exchange rate: double weighting (overall)
+EAGUS_weight = EAG_pim*EAG_im/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGUS_weightim+EAG_pex*EAG_ex/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGUS_weightex;
+// Effective real exchange rate
+EAG_reer = 1
+*EAGEAA_rer^EAGEAA_weight
+*EAGEAB_rer^EAGEAB_weight
+*EAGEAC_rer^EAGEAC_weight
+*EAGEAD_rer^EAGEAD_weight
+*EAGEAE_rer^EAGEAE_weight
+*EAGEAF_rer^EAGEAF_weight
+*EAGRW_rer^EAGRW_weight
+*EAGUS_rer^EAGUS_weight
+;
+// Effective terms of trade
+EAG_etot = 1
+*EAGEAA_tot^EAGEAA_weight
+*EAGEAB_tot^EAGEAB_weight
+*EAGEAC_tot^EAGEAC_weight
+*EAGEAD_tot^EAGEAD_weight
+*EAGEAE_tot^EAGEAE_weight
+*EAGEAF_tot^EAGEAF_weight
+*EAGRW_tot^EAGRW_weight
+*EAGUS_tot^EAGUS_weight
+;
+//-----------------
+// Final-good firms
+//-----------------
+// Private consumption good (import)
+EAG_imc^((EAG_mumc-1)/EAG_mumc) =
++EAGEAA_numc ^(1/EAG_mumc)*EAGEAA_imc^(1-1/EAG_mumc)
++EAGEAB_numc ^(1/EAG_mumc)*EAGEAB_imc^(1-1/EAG_mumc)
++EAGEAC_numc ^(1/EAG_mumc)*EAGEAC_imc^(1-1/EAG_mumc)
++EAGEAD_numc ^(1/EAG_mumc)*EAGEAD_imc^(1-1/EAG_mumc)
++EAGEAF_numc ^(1/EAG_mumc)*EAGEAF_imc^(1-1/EAG_mumc)
++EAGRW_numc ^(1/EAG_mumc)*EAGRW_imc^(1-1/EAG_mumc)
++EAGUS_numc ^(1/EAG_mumc)*EAGUS_imc^(1-1/EAG_mumc)
++(1
+-EAGEAA_numc
+-EAGEAB_numc
+-EAGEAC_numc
+-EAGEAD_numc
+-EAGEAF_numc
+-EAGRW_numc
+-EAGUS_numc
+)^(1/EAG_mumc)*EAGEAE_imc^(1-1/EAG_mumc);
+// Demand for bilateral consumption import goods
+EAGEAA_imc = EAGEAA_numc*((EAA_pex*EAGEAA_rer)/EAG_pimc)^(-EAG_mumc)*EAG_imc;
+// Demand for bilateral consumption import goods
+EAGEAB_imc = EAGEAB_numc*((EAB_pex*EAGEAB_rer)/EAG_pimc)^(-EAG_mumc)*EAG_imc;
+// Demand for bilateral consumption import goods
+EAGEAC_imc = EAGEAC_numc*((EAC_pex*EAGEAC_rer)/EAG_pimc)^(-EAG_mumc)*EAG_imc;
+// Demand for bilateral consumption import goods
+EAGEAD_imc = EAGEAD_numc*((EAD_pex*EAGEAD_rer)/EAG_pimc)^(-EAG_mumc)*EAG_imc;
+// Demand for bilateral consumption import goods
+EAGEAF_imc = EAGEAF_numc*((EAF_pex*EAGEAF_rer)/EAG_pimc)^(-EAG_mumc)*EAG_imc;
+// Demand for bilateral consumption import goods
+EAGUS_imc = EAGUS_numc*((US_pex*EAGUS_rer)/EAG_pimc)^(-EAG_mumc)*EAG_imc;
+EAGEAE_imc = (1
+-EAGEAA_numc
+-EAGEAB_numc
+-EAGEAC_numc
+-EAGEAD_numc
+-EAGEAF_numc
+-EAGRW_numc
+-EAGUS_numc
+)*((EAE_pex*EAGEAE_rer)/EAG_pimc)^(-EAG_mumc)*EAG_imc;
+// Price of the consumption good (import)
+EAG_pimc^(1-EAG_mumc) =
++EAGEAA_numc * (EAA_pex*EAGEAA_rer)^(1-EAG_mumc)
++EAGEAB_numc * (EAB_pex*EAGEAB_rer)^(1-EAG_mumc)
++EAGEAC_numc * (EAC_pex*EAGEAC_rer)^(1-EAG_mumc)
++EAGEAD_numc * (EAD_pex*EAGEAD_rer)^(1-EAG_mumc)
++EAGEAF_numc * (EAF_pex*EAGEAF_rer)^(1-EAG_mumc)
++EAGRW_numc * (RW_pex*EAGRW_rer)^(1-EAG_mumc)
++EAGUS_numc * (US_pex*EAGUS_rer)^(1-EAG_mumc)
++(1
+-EAGEAA_numc
+-EAGEAB_numc
+-EAGEAC_numc
+-EAGEAD_numc
+-EAGEAF_numc
+-EAGRW_numc
+-EAGUS_numc
+)*(EAE_pex*EAGEAE_rer)^(1-EAG_mumc);
+// Private consumption good (import) inflation
+EAG_piimc = EAG_pimc/EAG_pimc(-1)*EAG_pic;
+// Private consumption good (import)
+EAG_imi^((EAG_mumi-1)/EAG_mumi) =
++EAGEAA_numi ^(1/EAG_mumi)*EAGEAA_imi^(1-1/EAG_mumi)
++EAGEAB_numi ^(1/EAG_mumi)*EAGEAB_imi^(1-1/EAG_mumi)
++EAGEAC_numi ^(1/EAG_mumi)*EAGEAC_imi^(1-1/EAG_mumi)
++EAGEAD_numi ^(1/EAG_mumi)*EAGEAD_imi^(1-1/EAG_mumi)
++EAGEAF_numi ^(1/EAG_mumi)*EAGEAF_imi^(1-1/EAG_mumi)
++EAGRW_numi ^(1/EAG_mumi)*EAGRW_imi^(1-1/EAG_mumi)
++EAGUS_numi ^(1/EAG_mumi)*EAGUS_imi^(1-1/EAG_mumi)
++(1
+-EAGEAA_numi
+-EAGEAB_numi
+-EAGEAC_numi
+-EAGEAD_numi
+-EAGEAF_numi
+-EAGRW_numi
+-EAGUS_numi
+)^(1/EAG_mumi)*EAGEAE_imi^(1-1/EAG_mumi);
+// Demand for bilateral consumption import goods
+EAGEAA_imi = EAGEAA_numi*((EAA_pex*EAGEAA_rer)/EAG_pimi)^(-EAG_mumi)*EAG_imi;
+// Demand for bilateral consumption import goods
+EAGEAB_imi = EAGEAB_numi*((EAB_pex*EAGEAB_rer)/EAG_pimi)^(-EAG_mumi)*EAG_imi;
+// Demand for bilateral consumption import goods
+EAGEAC_imi = EAGEAC_numi*((EAC_pex*EAGEAC_rer)/EAG_pimi)^(-EAG_mumi)*EAG_imi;
+// Demand for bilateral consumption import goods
+EAGEAD_imi = EAGEAD_numi*((EAD_pex*EAGEAD_rer)/EAG_pimi)^(-EAG_mumi)*EAG_imi;
+// Demand for bilateral consumption import goods
+EAGEAF_imi = EAGEAF_numi*((EAF_pex*EAGEAF_rer)/EAG_pimi)^(-EAG_mumi)*EAG_imi;
+// Demand for bilateral consumption import goods
+EAGUS_imi = EAGUS_numi*((US_pex*EAGUS_rer)/EAG_pimi)^(-EAG_mumi)*EAG_imi;
+EAGEAE_imi = (1
+-EAGEAA_numi
+-EAGEAB_numi
+-EAGEAC_numi
+-EAGEAD_numi
+-EAGEAF_numi
+-EAGRW_numi
+-EAGUS_numi
+)*((EAE_pex*EAGEAE_rer)/EAG_pimi)^(-EAG_mumi)*EAG_imi;
+// Price of the consumption good (import)
+EAG_pimi^(1-EAG_mumi) =
++EAGEAA_numi * (EAA_pex*EAGEAA_rer)^(1-EAG_mumi)
++EAGEAB_numi * (EAB_pex*EAGEAB_rer)^(1-EAG_mumi)
++EAGEAC_numi * (EAC_pex*EAGEAC_rer)^(1-EAG_mumi)
++EAGEAD_numi * (EAD_pex*EAGEAD_rer)^(1-EAG_mumi)
++EAGEAF_numi * (EAF_pex*EAGEAF_rer)^(1-EAG_mumi)
++EAGRW_numi * (RW_pex*EAGRW_rer)^(1-EAG_mumi)
++EAGUS_numi * (US_pex*EAGUS_rer)^(1-EAG_mumi)
++(1
+-EAGEAA_numi
+-EAGEAB_numi
+-EAGEAC_numi
+-EAGEAD_numi
+-EAGEAF_numi
+-EAGRW_numi
+-EAGUS_numi
+)*(EAE_pex*EAGEAE_rer)^(1-EAG_mumi);
+// Private consumption good (import) inflation
+EAG_piimi = EAG_pimi/EAG_pimi(-1)*EAG_pic;
+// Private consumption good (import)
+EAG_imcg^((EAG_mumcg-1)/EAG_mumcg) =
++EAGEAA_numcg ^(1/EAG_mumcg)*EAGEAA_imcg^(1-1/EAG_mumcg)
++EAGEAB_numcg ^(1/EAG_mumcg)*EAGEAB_imcg^(1-1/EAG_mumcg)
++EAGEAC_numcg ^(1/EAG_mumcg)*EAGEAC_imcg^(1-1/EAG_mumcg)
++EAGEAD_numcg ^(1/EAG_mumcg)*EAGEAD_imcg^(1-1/EAG_mumcg)
++EAGEAF_numcg ^(1/EAG_mumcg)*EAGEAF_imcg^(1-1/EAG_mumcg)
++EAGRW_numcg ^(1/EAG_mumcg)*EAGRW_imcg^(1-1/EAG_mumcg)
++EAGUS_numcg ^(1/EAG_mumcg)*EAGUS_imcg^(1-1/EAG_mumcg)
++(1
+-EAGEAA_numcg
+-EAGEAB_numcg
+-EAGEAC_numcg
+-EAGEAD_numcg
+-EAGEAF_numcg
+-EAGRW_numcg
+-EAGUS_numcg
+)^(1/EAG_mumcg)*EAGEAE_imcg^(1-1/EAG_mumcg);
+// Demand for bilateral consumption import goods
+EAGEAA_imcg = EAGEAA_numcg*((EAA_pex*EAGEAA_rer)/EAG_pimcg)^(-EAG_mumcg)*EAG_imcg;
+// Demand for bilateral consumption import goods
+EAGEAB_imcg = EAGEAB_numcg*((EAB_pex*EAGEAB_rer)/EAG_pimcg)^(-EAG_mumcg)*EAG_imcg;
+// Demand for bilateral consumption import goods
+EAGEAC_imcg = EAGEAC_numcg*((EAC_pex*EAGEAC_rer)/EAG_pimcg)^(-EAG_mumcg)*EAG_imcg;
+// Demand for bilateral consumption import goods
+EAGEAD_imcg = EAGEAD_numcg*((EAD_pex*EAGEAD_rer)/EAG_pimcg)^(-EAG_mumcg)*EAG_imcg;
+// Demand for bilateral consumption import goods
+EAGEAF_imcg = EAGEAF_numcg*((EAF_pex*EAGEAF_rer)/EAG_pimcg)^(-EAG_mumcg)*EAG_imcg;
+// Demand for bilateral consumption import goods
+EAGUS_imcg = EAGUS_numcg*((US_pex*EAGUS_rer)/EAG_pimcg)^(-EAG_mumcg)*EAG_imcg;
+EAGEAE_imcg = (1
+-EAGEAA_numcg
+-EAGEAB_numcg
+-EAGEAC_numcg
+-EAGEAD_numcg
+-EAGEAF_numcg
+-EAGRW_numcg
+-EAGUS_numcg
+)*((EAE_pex*EAGEAE_rer)/EAG_pimcg)^(-EAG_mumcg)*EAG_imcg;
+// Price of the consumption good (import)
+EAG_pimcg^(1-EAG_mumcg) =
++EAGEAA_numcg * (EAA_pex*EAGEAA_rer)^(1-EAG_mumcg)
++EAGEAB_numcg * (EAB_pex*EAGEAB_rer)^(1-EAG_mumcg)
++EAGEAC_numcg * (EAC_pex*EAGEAC_rer)^(1-EAG_mumcg)
++EAGEAD_numcg * (EAD_pex*EAGEAD_rer)^(1-EAG_mumcg)
++EAGEAF_numcg * (EAF_pex*EAGEAF_rer)^(1-EAG_mumcg)
++EAGRW_numcg * (RW_pex*EAGRW_rer)^(1-EAG_mumcg)
++EAGUS_numcg * (US_pex*EAGUS_rer)^(1-EAG_mumcg)
++(1
+-EAGEAA_numcg
+-EAGEAB_numcg
+-EAGEAC_numcg
+-EAGEAD_numcg
+-EAGEAF_numcg
+-EAGRW_numcg
+-EAGUS_numcg
+)*(EAE_pex*EAGEAE_rer)^(1-EAG_mumcg);
+// Private consumption good (import) inflation
+EAG_piimcg = EAG_pimcg/EAG_pimcg(-1)*EAG_pic;
+// Private consumption good (import)
+EAG_imig^((EAG_mumig-1)/EAG_mumig) =
++EAGEAA_numig ^(1/EAG_mumig)*EAGEAA_imig^(1-1/EAG_mumig)
++EAGEAB_numig ^(1/EAG_mumig)*EAGEAB_imig^(1-1/EAG_mumig)
++EAGEAC_numig ^(1/EAG_mumig)*EAGEAC_imig^(1-1/EAG_mumig)
++EAGEAD_numig ^(1/EAG_mumig)*EAGEAD_imig^(1-1/EAG_mumig)
++EAGEAF_numig ^(1/EAG_mumig)*EAGEAF_imig^(1-1/EAG_mumig)
++EAGRW_numig ^(1/EAG_mumig)*EAGRW_imig^(1-1/EAG_mumig)
++EAGUS_numig ^(1/EAG_mumig)*EAGUS_imig^(1-1/EAG_mumig)
++(1
+-EAGEAA_numig
+-EAGEAB_numig
+-EAGEAC_numig
+-EAGEAD_numig
+-EAGEAF_numig
+-EAGRW_numig
+-EAGUS_numig
+)^(1/EAG_mumig)*EAGEAE_imig^(1-1/EAG_mumig);
+// Demand for bilateral consumption import goods
+EAGEAA_imig = EAGEAA_numig*((EAA_pex*EAGEAA_rer)/EAG_pimig)^(-EAG_mumig)*EAG_imig;
+// Demand for bilateral consumption import goods
+EAGEAB_imig = EAGEAB_numig*((EAB_pex*EAGEAB_rer)/EAG_pimig)^(-EAG_mumig)*EAG_imig;
+// Demand for bilateral consumption import goods
+EAGEAC_imig = EAGEAC_numig*((EAC_pex*EAGEAC_rer)/EAG_pimig)^(-EAG_mumig)*EAG_imig;
+// Demand for bilateral consumption import goods
+EAGEAD_imig = EAGEAD_numig*((EAD_pex*EAGEAD_rer)/EAG_pimig)^(-EAG_mumig)*EAG_imig;
+// Demand for bilateral consumption import goods
+EAGEAF_imig = EAGEAF_numig*((EAF_pex*EAGEAF_rer)/EAG_pimig)^(-EAG_mumig)*EAG_imig;
+// Demand for bilateral consumption import goods
+EAGUS_imig = EAGUS_numig*((US_pex*EAGUS_rer)/EAG_pimig)^(-EAG_mumig)*EAG_imig;
+EAGEAE_imig = (1
+-EAGEAA_numig
+-EAGEAB_numig
+-EAGEAC_numig
+-EAGEAD_numig
+-EAGEAF_numig
+-EAGRW_numig
+-EAGUS_numig
+)*((EAE_pex*EAGEAE_rer)/EAG_pimig)^(-EAG_mumig)*EAG_imig;
+// Price of the consumption good (import)
+EAG_pimig^(1-EAG_mumig) =
++EAGEAA_numig * (EAA_pex*EAGEAA_rer)^(1-EAG_mumig)
++EAGEAB_numig * (EAB_pex*EAGEAB_rer)^(1-EAG_mumig)
++EAGEAC_numig * (EAC_pex*EAGEAC_rer)^(1-EAG_mumig)
++EAGEAD_numig * (EAD_pex*EAGEAD_rer)^(1-EAG_mumig)
++EAGEAF_numig * (EAF_pex*EAGEAF_rer)^(1-EAG_mumig)
++EAGRW_numig * (RW_pex*EAGRW_rer)^(1-EAG_mumig)
++EAGUS_numig * (US_pex*EAGUS_rer)^(1-EAG_mumig)
++(1
+-EAGEAA_numig
+-EAGEAB_numig
+-EAGEAC_numig
+-EAGEAD_numig
+-EAGEAF_numig
+-EAGRW_numig
+-EAGUS_numig
+)*(EAE_pex*EAGEAE_rer)^(1-EAG_mumig);
+// Private consumption good (import) inflation
+EAG_piimig = EAG_pimig/EAG_pimig(-1)*EAG_pic;
+// Private consumption good (import) inflation
+EAG_piimc4 = EAG_pimc/EAG_pimc(-4)*EAG_pic4;
+// Private consumption good (import) inflation
+EAG_piex4 = EAG_pex/EAG_pex(-4)*EAG_pic4;
+// Wedge between aggregate demand and production, using EAG_x = RW_size/EAG_size*RW_im
+EAG_yst = EAG_sh*EAG_ht+EAG_sx*EAG_ex;
+// Aggregate demand for bilateral imported intermediate goods
+EAGEAA_im = 
++EAGEAA_imc
++EAGEAA_imi
++EAGEAA_imcg
++EAGEAA_imig
+;
+EAGEAB_im = 
++EAGEAB_imc
++EAGEAB_imi
++EAGEAB_imcg
++EAGEAB_imig
+;
+EAGEAC_im = 
++EAGEAC_imc
++EAGEAC_imi
++EAGEAC_imcg
++EAGEAC_imig
+;
+EAGEAD_im = 
++EAGEAD_imc
++EAGEAD_imi
++EAGEAD_imcg
++EAGEAD_imig
+;
+EAGEAE_im = 
++EAGEAE_imc
++EAGEAE_imi
++EAGEAE_imcg
++EAGEAE_imig
+;
+EAGEAF_im = 
++EAGEAF_imc
++EAGEAF_imi
++EAGEAF_imcg
++EAGEAF_imig
+;
+EAGRW_im = 
++EAGRW_imc
++EAGRW_imi
++EAGRW_imcg
++EAGRW_imig
+;
+EAGUS_im = 
++EAGUS_imc
++EAGUS_imi
++EAGUS_imcg
++EAGUS_imig
+;
+// Private consumption good firm
+// Private consumption good (tradable)
+EAG_ttc^((EAG_mutc-1)/EAG_mutc) = (EAG_nutc)^(1/EAG_mutc)*EAG_htc^(1-1/EAG_mutc)+(1-EAG_nutc)^(1/EAG_mutc)*EAG_imc^(1-1/EAG_mutc);
+// Private consumption good  (total)
+EAG_qc^((EAG_muc-1)/EAG_muc) = (EAG_nuc)^(1/EAG_muc)*EAG_ttc^(1-1/EAG_muc)+(1-EAG_nuc)^(1/EAG_muc)*EAG_ntc^(1-1/EAG_muc);
+// Demand for domestic intermediate goods - NONTRADABLE
+EAG_ntc = (1-EAG_nuc)*(EAG_pnt)^(-EAG_muc)*EAG_qc;
+// Price of the consumption good (tradable)  
+EAG_pttc^(1-EAG_mutc) = (EAG_nutc)*EAG_pht^(1-EAG_mutc)+(1-EAG_nutc)*EAG_pimc^(1-EAG_mutc);
+// Price of the consumption good 
+1^(1-EAG_muc) = (EAG_nuc)*EAG_pttc^(1-EAG_muc)+(1-EAG_nuc)*EAG_pnt^(1-EAG_muc);
+// Demand for domestic intermediate goods
+EAG_htc = EAG_nutc*(EAG_pht/EAG_pttc)^(-EAG_mutc)*EAG_ttc;
+EAGEAA_gammaimc = 0;
+EAGEAA_gammaimcdag = 1;
+EAGEAB_gammaimc = 0;
+EAGEAB_gammaimcdag = 1;
+EAGEAC_gammaimc = 0;
+EAGEAC_gammaimcdag = 1;
+EAGEAD_gammaimc = 0;
+EAGEAD_gammaimcdag = 1;
+EAGEAE_gammaimc = 0;
+EAGEAE_gammaimcdag = 1;
+EAGEAF_gammaimc = 0;
+EAGEAF_gammaimcdag = 1;
+EAGRW_gammaimc = 0;
+EAGRW_gammaimcdag = 1;
+EAGUS_gammaimc = 0;
+EAGUS_gammaimcdag = 1;
+// Private consumption good (tradable)
+EAG_tti^((EAG_muti-1)/EAG_muti) = (EAG_nuti)^(1/EAG_muti)*EAG_hti^(1-1/EAG_muti)+(1-EAG_nuti)^(1/EAG_muti)*EAG_imi^(1-1/EAG_muti);
+// Private consumption good  (total)
+EAG_qi^((EAG_mui-1)/EAG_mui) = (EAG_nui)^(1/EAG_mui)*EAG_tti^(1-1/EAG_mui)+(1-EAG_nui)^(1/EAG_mui)*EAG_nti^(1-1/EAG_mui);
+// Demand for domestic intermediate goods - NONTRADABLE
+EAG_nti = (1-EAG_nui)*(EAG_pnt/EAG_pi)^(-EAG_mui)*EAG_qi;
+// Price of the consumption good (tradable)  
+EAG_ptti^(1-EAG_muti) = (EAG_nuti)*EAG_pht^(1-EAG_muti)+(1-EAG_nuti)*EAG_pimi^(1-EAG_muti);
+// Price of the consumption good 
+EAG_pi^(1-EAG_mui) = (EAG_nui)*EAG_ptti^(1-EAG_mui)+(1-EAG_nui)*EAG_pnt^(1-EAG_mui);
+// Auxiliary equation for the price of the investment good in steady state
+// this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
+EAG_pibar = EAG_pi;
+// Demand for domestic intermediate goods
+EAG_hti = EAG_nuti*(EAG_pht/EAG_ptti)^(-EAG_muti)*EAG_tti;
+EAGEAA_gammaimi = 0;
+EAGEAA_gammaimidag = 1;
+EAGEAB_gammaimi = 0;
+EAGEAB_gammaimidag = 1;
+EAGEAC_gammaimi = 0;
+EAGEAC_gammaimidag = 1;
+EAGEAD_gammaimi = 0;
+EAGEAD_gammaimidag = 1;
+EAGEAE_gammaimi = 0;
+EAGEAE_gammaimidag = 1;
+EAGEAF_gammaimi = 0;
+EAGEAF_gammaimidag = 1;
+EAGRW_gammaimi = 0;
+EAGRW_gammaimidag = 1;
+EAGUS_gammaimi = 0;
+EAGUS_gammaimidag = 1;
+// Private consumption good (tradable)
+EAG_ttcg^((EAG_mutcg-1)/EAG_mutcg) = (EAG_nutcg)^(1/EAG_mutcg)*EAG_htcg^(1-1/EAG_mutcg)+(1-EAG_nutcg)^(1/EAG_mutcg)*EAG_imcg^(1-1/EAG_mutcg);
+// Private consumption good  (total)
+EAG_qcg^((EAG_mucg-1)/EAG_mucg) = (EAG_nucg)^(1/EAG_mucg)*EAG_ttcg^(1-1/EAG_mucg)+(1-EAG_nucg)^(1/EAG_mucg)*EAG_ntcg^(1-1/EAG_mucg);
+// Demand for domestic intermediate goods - NONTRADABLE
+EAG_ntcg = (1-EAG_nucg)*(EAG_pnt/EAG_pcg)^(-EAG_mucg)*EAG_qcg;
+// Price of the consumption good (tradable)  
+EAG_pttcg^(1-EAG_mutcg) = (EAG_nutcg)*EAG_pht^(1-EAG_mutcg)+(1-EAG_nutcg)*EAG_pimcg^(1-EAG_mutcg);
+// Price of the consumption good 
+EAG_pcg^(1-EAG_mucg) = (EAG_nucg)*EAG_pttcg^(1-EAG_mucg)+(1-EAG_nucg)*EAG_pnt^(1-EAG_mucg);
+// Demand for domestic intermediate goods
+EAG_htcg = EAG_nutcg*(EAG_pht/EAG_pttcg)^(-EAG_mutcg)*EAG_ttcg;
+EAGEAA_gammaimcg = 0;
+EAGEAA_gammaimcgdag = 1;
+EAGEAB_gammaimcg = 0;
+EAGEAB_gammaimcgdag = 1;
+EAGEAC_gammaimcg = 0;
+EAGEAC_gammaimcgdag = 1;
+EAGEAD_gammaimcg = 0;
+EAGEAD_gammaimcgdag = 1;
+EAGEAE_gammaimcg = 0;
+EAGEAE_gammaimcgdag = 1;
+EAGEAF_gammaimcg = 0;
+EAGEAF_gammaimcgdag = 1;
+EAGRW_gammaimcg = 0;
+EAGRW_gammaimcgdag = 1;
+EAGUS_gammaimcg = 0;
+EAGUS_gammaimcgdag = 1;
+// Private consumption good (tradable)
+EAG_ttig^((EAG_mutig-1)/EAG_mutig) = (EAG_nutig)^(1/EAG_mutig)*EAG_htig^(1-1/EAG_mutig)+(1-EAG_nutig)^(1/EAG_mutig)*EAG_imig^(1-1/EAG_mutig);
+// Private consumption good  (total)
+EAG_qig^((EAG_muig-1)/EAG_muig) = (EAG_nuig)^(1/EAG_muig)*EAG_ttig^(1-1/EAG_muig)+(1-EAG_nuig)^(1/EAG_muig)*EAG_ntig^(1-1/EAG_muig);
+// Demand for domestic intermediate goods - NONTRADABLE
+EAG_ntig = (1-EAG_nuig)*(EAG_pnt/EAG_pig)^(-EAG_muig)*EAG_qig;
+// Price of the consumption good (tradable)  
+EAG_pttig^(1-EAG_mutig) = (EAG_nutig)*EAG_pht^(1-EAG_mutig)+(1-EAG_nutig)*EAG_pimig^(1-EAG_mutig);
+// Price of the consumption good 
+EAG_pig^(1-EAG_muig) = (EAG_nuig)*EAG_pttig^(1-EAG_muig)+(1-EAG_nuig)*EAG_pnt^(1-EAG_muig);
+// Demand for domestic intermediate goods
+EAG_htig = EAG_nutig*(EAG_pht/EAG_pttig)^(-EAG_mutig)*EAG_ttig;
+EAGEAA_gammaimig = 0;
+EAGEAA_gammaimigdag = 1;
+EAGEAB_gammaimig = 0;
+EAGEAB_gammaimigdag = 1;
+EAGEAC_gammaimig = 0;
+EAGEAC_gammaimigdag = 1;
+EAGEAD_gammaimig = 0;
+EAGEAD_gammaimigdag = 1;
+EAGEAE_gammaimig = 0;
+EAGEAE_gammaimigdag = 1;
+EAGEAF_gammaimig = 0;
+EAGEAF_gammaimigdag = 1;
+EAGRW_gammaimig = 0;
+EAGRW_gammaimigdag = 1;
+EAGUS_gammaimig = 0;
+EAGUS_gammaimigdag = 1;
+// Trade balance
+EAG_tb =
++EAG_pex*EAA_size/EAG_size*EAAEAG_im
+-EAA_pex*EAGEAA_rer*EAGEAA_im
++EAG_pex*EAB_size/EAG_size*EABEAG_im
+-EAB_pex*EAGEAB_rer*EAGEAB_im
++EAG_pex*EAC_size/EAG_size*EACEAG_im
+-EAC_pex*EAGEAC_rer*EAGEAC_im
++EAG_pex*EAD_size/EAG_size*EADEAG_im
+-EAD_pex*EAGEAD_rer*EAGEAD_im
++EAG_pex*EAE_size/EAG_size*EAEEAG_im
+-EAE_pex*EAGEAE_rer*EAGEAE_im
++EAG_pex*EAF_size/EAG_size*EAFEAG_im
+-EAF_pex*EAGEAF_rer*EAGEAF_im
++EAG_pex*RW_size/EAG_size*RWEAG_im
+-RW_pex*EAGRW_rer*EAGRW_im
++EAG_pex*US_size/EAG_size*USEAG_im
+-US_pex*EAGUS_rer*EAGUS_im
+;
+// Aggregate exports (volume)
+EAG_ex =
++EAA_size/EAG_size*EAAEAG_im
++EAB_size/EAG_size*EABEAG_im
++EAC_size/EAG_size*EACEAG_im
++EAD_size/EAG_size*EADEAG_im
++EAE_size/EAG_size*EAEEAG_im
++EAF_size/EAG_size*EAFEAG_im
++RW_size/EAG_size*RWEAG_im
++US_size/EAG_size*USEAG_im
+;
+//-------------
+//-------------
+// Fiscal and monetary authorities
+//-------------
+//-------------
+//-------------
+// Fiscal authority
+//-------------
+// Government budget constraint, using EAG_pg = EAG_pht
+// TODO: check the (1-EAG_gammab(-1)) adjustment here, which is not in the fiscal extention
+	EAG_pcg(-1)*EAG_cg(-1)+EAG_pig(-1)*EAG_ig(-1)+EAG_tr(-1)
+	+EAG_b(-1)*EAG_pic(-1)^(-1)+EAG_m(-2)*EAG_pic(-1)^(-1) = EAG_tauc(-1)*EAG_c(-1)+(EAG_taun(-1)+EAG_tauwh(-1))*(EAG_wi(-1)*EAG_ndi(-1)+EAG_wj(-1)*EAG_ndj(-1))+EAG_tauwf(-1)*EAG_w(-1)*EAG_nd(-1)+EAG_tauk(-1)*(EAG_rk(-1)*EAG_u(-1)-(EAG_gammau(-1)+EAG_delta)*EAG_pi(-1))*EAG_k(-1)+EAG_taud(-1)*EAG_d(-1)+EAG_t(-1)+(EAG_r(-1)*(1-EAG_gammab(-1)))^(-1)*EAG_b+EAG_m(-1);
+// Government spending, using EAG_pg = EAG_pht
+EAG_pcg*EAG_cg = EAG_cgy*EAG_pybar*EAG_ybar;
+EAG_pig*EAG_ig = EAG_igy*EAG_pybar*EAG_ybar;
+EAG_t = 0;
+EAG_b = EAG_bytarget*EAG_pybar*EAG_ybar;
+// Auxiliary equation for steady-state output
+EAG_ybar = EAG_y;
+// Auxiliary equation for steady-state output
+EAG_ytbar = EAG_yst;
+// Auxiliary equation for steady-state output
+EAG_ynbar = EAG_ysn;
+// Auxiliary equation for steady-state output deflator
+EAG_pybar = EAG_py;
+// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
+EAG_trybar = EAG_tr/(EAG_pybar*EAG_ybar);
+// Auxiliary equation for determining the distribution of lump-sum taxes
+EAG_ti = EAG_upsilont*EAG_t;
+/* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
+upsilont = 0:            ti = 0, tj = 1/omega t
+upsilont = 1:            ti = tj = t
+upsilont = 1/(1-omega):  ti = 1/(1-omega) t, tj = 0. */
+// Auxiliary equation for determining the distribution of lump-sum transfers
+EAG_tri = EAG_upsilontr*EAG_tr;
+/* Note: Valid parameter space: 0 <= upsilontr <= 1/(1-omega) with
+upsilontr = 0:            tri = 0, trj = 1/omega tr
+upsilontr = 1:            tri = trj = tr
+upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
+//-------------
+// Monetary authority
+//-------------
+	EAG_r^4-1 = EAG_rrstar^4*EAG_pi4target-1;
+EAG_pic4 = EAG_pi4target;
+EAG_rr-1 = EAG_r/EAG_pi4target^(1/4)-1;
+// Equilibrium real interest rate
+EAG_rrstar-1 = 1/EAG_beta-1;
+//-------------
+//-------------
+// Aggregation, market clearing and resource constraint
+//-------------
+//-------------
+//-------------
+// Aggregation
+//-------------
+// Aggregate consumption
+EAG_c = (1-EAG_omega)*EAG_ci+EAG_omega*EAG_cj;
+// Aggregate money holdings
+EAG_m = (1-EAG_omega)*EAG_mi+EAG_omega*EAG_mj;
+// Aggregate capital stock
+EAG_k = (1-EAG_omega)*EAG_ki;
+// Aggregate investment
+EAG_i = (1-EAG_omega)*EAG_ii;
+// Aggregate lump-sum transfers
+EAG_trj = 
+1/EAG_omega*EAG_tr-(1-EAG_omega)/EAG_omega*EAG_tri
+;
+// Aggregate lump-sum taxes
+EAG_tj = 
+1/EAG_omega*EAG_t-(1-EAG_omega)/EAG_omega*EAG_ti
+;
+// Aggregate transaction costs
+EAG_gammav = (1-EAG_omega)*EAG_ci*EAG_gammavi+EAG_omega*EAG_cj*EAG_gammavj;
+//-------------
+// Market clearing
+//-------------
+// Labour markets for household I
+// Wedge between labour demand/hours worked and labour supply
+EAG_ni = EAG_si*EAG_ndi;
+// Wage dispersion
+EAG_si = (1-EAG_xii)*(EAG_witilde/EAG_wi)^(-EAG_etai)+EAG_xii*(EAG_wi(-1)/EAG_wi)^(-EAG_etai)*(EAG_pic/(EAG_pic(-1)^EAG_chii*EAG_pi4target^(1/4*(1-EAG_chii))))^(EAG_etai)*EAG_si(-1);
+// Labour markets for household J
+// Wedge between labour demand/hours worked and labour supply
+EAG_nj = EAG_sj*EAG_ndj;
+// Wage dispersion
+EAG_sj = (1-EAG_xij)*(EAG_wjtilde/EAG_wj)^(-EAG_etaj)+EAG_xij*(EAG_wj(-1)/EAG_wj)^(-EAG_etaj)*(EAG_pic/(EAG_pic(-1)^EAG_chij*EAG_pi4target^(1/4*(1-EAG_chij))))^(EAG_etaj)*EAG_sj(-1);
+// Rental market for capital
+// Equality of capital input and effective capital services
+EAG_u*EAG_k = EAG_kd;
+// Intermediate-good markets
+// Wedge between aggregate demand and production, using EAG_x = RW_size/EAG_size*RW_im
+EAG_ysn = EAG_snt*EAG_nt;
+//  nontradables aggregate demand
+EAG_nt = 
++EAG_ntc
++EAG_nti
++EAG_ntcg
++EAG_ntig
+;
+// Aggregate demand for domestic intermediate goods, using EAG_hg = EAG_cg
+EAG_ht =
++EAG_htc
++EAG_hti
++EAG_htcg
++EAG_htig
+;
+// Price dispersion in the domestic markets
+EAG_sh = (1-EAG_xih)*(EAG_phttilde/EAG_pht)^(-EAG_thetat)+EAG_xih*(EAG_piht/(EAG_piht(-1)^EAG_chih*EAG_pi4target^(1/4*(1-EAG_chih))))^EAG_thetat*EAG_sh(-1);
+// Price dispersion in the foreign markets
+EAG_sx = (1-EAG_xix)*(EAG_pextilde/EAG_pex)^(-EAG_thetat)+EAG_xix*(EAG_piex/(EAG_piex(-1)^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAG_sx(-1);
+// Price dispersion in the domestic markets
+EAG_snt = (1-EAG_xin)*(EAG_pnttilde/EAG_pnt)^(-EAG_thetan)+EAG_xin*(EAG_pint/(EAG_pint(-1)^EAG_chin*EAG_pi4target^(1/4*(1-EAG_chin))))^EAG_thetan*EAG_snt(-1);
+// Final-good markets
+// Aggregate consumption and transaction cost
+EAG_qc = EAG_c+EAG_gammav;
+// Aggregate investment and capital utilisation cost
+EAG_qi = EAG_i+EAG_k*EAG_gammau;
+// Aggregate gov demand components added to use the same structure like in private components
+EAG_qcg = EAG_cg;
+EAG_qig = EAG_ig;
+//-------------
+// Resource constraint
+//-------------
+// TODO: why there is no adjustment cost for gov components
+// Aggregate nominal demand
+EAG_py*EAG_y = 
++EAG_qc
++EAG_pi*EAG_qi
++EAG_pcg*EAG_qcg
++EAG_pig*EAG_qig
++EAG_pex*EAA_size/EAG_size*EAAEAG_im
+-(EAA_pex*EAGEAA_rer)*EAGEAA_imc
+-(EAA_pex*EAGEAA_rer)*EAGEAA_imi
+-(EAA_pex*EAGEAA_rer)*EAGEAA_imcg
+-(EAA_pex*EAGEAA_rer)*EAGEAA_imig
++EAG_pex*EAB_size/EAG_size*EABEAG_im
+-(EAB_pex*EAGEAB_rer)*EAGEAB_imc
+-(EAB_pex*EAGEAB_rer)*EAGEAB_imi
+-(EAB_pex*EAGEAB_rer)*EAGEAB_imcg
+-(EAB_pex*EAGEAB_rer)*EAGEAB_imig
++EAG_pex*EAC_size/EAG_size*EACEAG_im
+-(EAC_pex*EAGEAC_rer)*EAGEAC_imc
+-(EAC_pex*EAGEAC_rer)*EAGEAC_imi
+-(EAC_pex*EAGEAC_rer)*EAGEAC_imcg
+-(EAC_pex*EAGEAC_rer)*EAGEAC_imig
++EAG_pex*EAD_size/EAG_size*EADEAG_im
+-(EAD_pex*EAGEAD_rer)*EAGEAD_imc
+-(EAD_pex*EAGEAD_rer)*EAGEAD_imi
+-(EAD_pex*EAGEAD_rer)*EAGEAD_imcg
+-(EAD_pex*EAGEAD_rer)*EAGEAD_imig
++EAG_pex*EAE_size/EAG_size*EAEEAG_im
+-(EAE_pex*EAGEAE_rer)*EAGEAE_imc
+-(EAE_pex*EAGEAE_rer)*EAGEAE_imi
+-(EAE_pex*EAGEAE_rer)*EAGEAE_imcg
+-(EAE_pex*EAGEAE_rer)*EAGEAE_imig
++EAG_pex*EAF_size/EAG_size*EAFEAG_im
+-(EAF_pex*EAGEAF_rer)*EAGEAF_imc
+-(EAF_pex*EAGEAF_rer)*EAGEAF_imi
+-(EAF_pex*EAGEAF_rer)*EAGEAF_imcg
+-(EAF_pex*EAGEAF_rer)*EAGEAF_imig
++EAG_pex*RW_size/EAG_size*RWEAG_im
+-(RW_pex*EAGRW_rer)*EAGRW_imc
+-(RW_pex*EAGRW_rer)*EAGRW_imi
+-(RW_pex*EAGRW_rer)*EAGRW_imcg
+-(RW_pex*EAGRW_rer)*EAGRW_imig
++EAG_pex*US_size/EAG_size*USEAG_im
+-(US_pex*EAGUS_rer)*EAGUS_imc
+-(US_pex*EAGUS_rer)*EAGUS_imi
+-(US_pex*EAGUS_rer)*EAGUS_imcg
+-(US_pex*EAGUS_rer)*EAGUS_imig
+;
+// Aggregate real demand
+EAG_y = EAG_yst+EAG_ysn;
+//-------------
+//-------------
+// Autoregressive shocks
+//-------------
+//-------------
+// Productivity shocks
+log(EAG_zt) = (1-EAG_rhozt)*log(EAG_ztbar)+EAG_rhozt*log(EAG_zt(-1))+EAG_epszt;
+log(EAG_zn) = (1-EAG_rhozn)*log(EAG_znbar)+EAG_rhozn*log(EAG_zn(-1))+EAG_epszn;
+// Government spending shock
+EAG_cgy = (1-EAG_rhocg)*EAG_cgybar+EAG_rhocg*EAG_cgy(-1)+EAG_epsgc;
+EAG_igy = (1-EAG_rhoig)*EAG_igybar+EAG_rhoig*EAG_igy(-1)+EAG_epsgi;
+// Transfer shock
+EAG_try = (1-EAG_rhotr)*EAG_trybar+EAG_rhotr*EAG_try(-1)+EAG_epstr;
+// Consumption tax shock
+EAG_tauc = (1-EAG_rhotauc)*EAG_taucbar+EAG_rhotauc*EAG_tauc(-1)+EAG_epstauc;
+// Dividend income tax shock
+EAG_taud = (1-EAG_rhotaud)*EAG_taudbar+EAG_rhotaud*EAG_taud(-1)+EAG_epstaud;
+// Capital income tax shock
+EAG_tauk = (1-EAG_rhotauk)*EAG_taukbar+EAG_rhotauk*EAG_tauk(-1)+EAG_epstauk;
+// Labour income tax shock
+EAG_taun = (1-EAG_rhotaun)*EAG_taunbar+EAG_rhotaun*EAG_taun(-1)+EAG_epstaun;
+// Payroll tax shock: households
+EAG_tauwh = (1-EAG_rhotauwh)*EAG_tauwhbar+EAG_rhotauwh*EAG_tauwh(-1)+EAG_epstauwh;
+// Payroll tax shock: firms
+EAG_tauwf = (1-EAG_rhotauwf)*EAG_tauwfbar+EAG_rhotauwf*EAG_tauwf(-1)+EAG_epstauwf;
+// Wage cost push shock
+EAG_wcst = (1-EAG_rhowcst)*EAG_wcstbar+EAG_rhowcst*EAG_wcst(-1)+EAG_epswcst;
+// Preference shock
+log(EAG_zcon) = (1-EAG_rhozcon)*log(EAG_zconbar)+EAG_rhozcon*log(EAG_zcon(-1))+EAG_epszcon;
+// Investment specific shock
+log(EAG_zinv) = (1-EAG_rhozinv)*log(EAG_zinvbar)+EAG_rhozinv*log(EAG_zinv(-1))+EAG_epszinv;
+//-------------
+//-------------
+// Conditions for calibration and reporting
+//-------------
+//-------------
+// Aggregate nominal consumption share
+EAG_cy = EAG_c/(EAG_py*EAG_y);
+// Aggregate nominal investment share
+EAG_iy = EAG_pi*EAG_i/(EAG_py*EAG_y);
+// Aggregate nominal import share  
+EAG_imy = (
++EAG_pimc*EAG_imc
++EAG_pimi*EAG_imi
++EAG_pimcg*EAG_imcg
++EAG_pimig*EAG_imig
+)/(EAG_py*EAG_y);
+// Aggregate nominal import share
+EAG_imcy = EAG_pimc*EAG_imc/(EAG_py*EAG_y);
+EAG_imiy = EAG_pimi*EAG_imi/(EAG_py*EAG_y);
+EAG_imcgy = EAG_pimcg*EAG_imcg/(EAG_py*EAG_y);
+EAG_imigy = EAG_pimig*EAG_imig/(EAG_py*EAG_y);
+// Aggregate debt-to-output ratio
+EAG_by = EAG_b/(EAG_pybar*EAG_ybar);
+// Aggregate lump-sum tax-to-output ratio
+EAG_ty = EAG_t/(EAG_pybar*EAG_ybar);
+// Aggregate labour cost share
+EAG_lcy = ((1+EAG_tauwf)*EAG_w*EAG_nd)/(EAG_py*EAG_y);
+// Aggregate nominal Wage share
+EAG_wy = (EAG_w*EAG_nd)/(EAG_py*EAG_y);
+// NT sector nominal Wage share
+EAG_wnty = (EAG_w*EAG_ndn)/(EAG_pnt*EAG_ysn);
+// T sector nominal Wage share
+EAG_whty = (EAG_w*EAG_ndt)/(EAG_pht*EAG_yst);
+// T sector share
+EAG_yhty = EAG_pht*EAG_yst/(EAG_py*EAG_y);
+// NT sector share
+EAG_ynty = EAG_pnt*EAG_ysn/(EAG_py*EAG_y);
+// Output gap
+EAG_ygap = 0;
+// Output growth (gross rate)
+EAG_ygrowth = EAG_y/EAG_y(-1);
+// Output growth (gross rate yoy)
+EAG_ygrowth4 = EAG_y/EAG_y(-4);
+// Domestic nominal output as a share of world nominal output
+EAG_yshare  = EAG_size*EAG_py*EAG_y/EAG_rer/(
++EAA_size*EAA_py*EAA_y/EAA_rer
++EAB_size*EAB_py*EAB_y/EAB_rer
++EAC_size*EAC_py*EAC_y/EAC_rer
++EAD_size*EAD_py*EAD_y/EAD_rer
++EAE_size*EAE_py*EAE_y/EAE_rer
++EAF_size*EAF_py*EAF_y/EAF_rer
++EAG_size*EAG_py*EAG_y/EAG_rer
++RW_size*RW_py*RW_y/RW_rer
++US_size*US_py*US_y/US_rer
+);
+// Interest (semi-)elasticity of money demand
+EAG_epsilonm = -1/8*1/(EAG_r*(EAG_gammav2*EAG_r+EAG_r-1));
+// Trade balance-to-GDP ratio
+EAG_tby = EAG_tb/(EAG_py*EAG_y);
+// Bilateral shares
+EAGEAA_imcy = (EAA_pex*EAGEAA_rer)*EAGEAA_imc/(EAG_py*EAG_y);
+EAGEAA_imiy = (EAA_pex*EAGEAA_rer)*EAGEAA_imi/(EAG_py*EAG_y);
+EAGEAA_imcgy = (EAA_pex*EAGEAA_rer)*EAGEAA_imcg/(EAG_py*EAG_y);
+EAGEAA_imigy = (EAA_pex*EAGEAA_rer)*EAGEAA_imig/(EAG_py*EAG_y);
+// Exports of consumption goods to gdp
+EAGEAA_excy  = EAA_size/EAG_size*EAG_pex*EAAEAG_imc/(EAG_py*EAG_y);
+// Exports of investment goods to gdp
+EAGEAA_exiy  = EAA_size/EAG_size*EAG_pex*EAAEAG_imi/(EAG_py*EAG_y);
+// Bilateral shares
+EAGEAB_imcy = (EAB_pex*EAGEAB_rer)*EAGEAB_imc/(EAG_py*EAG_y);
+EAGEAB_imiy = (EAB_pex*EAGEAB_rer)*EAGEAB_imi/(EAG_py*EAG_y);
+EAGEAB_imcgy = (EAB_pex*EAGEAB_rer)*EAGEAB_imcg/(EAG_py*EAG_y);
+EAGEAB_imigy = (EAB_pex*EAGEAB_rer)*EAGEAB_imig/(EAG_py*EAG_y);
+// Exports of consumption goods to gdp
+EAGEAB_excy  = EAB_size/EAG_size*EAG_pex*EABEAG_imc/(EAG_py*EAG_y);
+// Exports of investment goods to gdp
+EAGEAB_exiy  = EAB_size/EAG_size*EAG_pex*EABEAG_imi/(EAG_py*EAG_y);
+// Bilateral shares
+EAGEAC_imcy = (EAC_pex*EAGEAC_rer)*EAGEAC_imc/(EAG_py*EAG_y);
+EAGEAC_imiy = (EAC_pex*EAGEAC_rer)*EAGEAC_imi/(EAG_py*EAG_y);
+EAGEAC_imcgy = (EAC_pex*EAGEAC_rer)*EAGEAC_imcg/(EAG_py*EAG_y);
+EAGEAC_imigy = (EAC_pex*EAGEAC_rer)*EAGEAC_imig/(EAG_py*EAG_y);
+// Exports of consumption goods to gdp
+EAGEAC_excy  = EAC_size/EAG_size*EAG_pex*EACEAG_imc/(EAG_py*EAG_y);
+// Exports of investment goods to gdp
+EAGEAC_exiy  = EAC_size/EAG_size*EAG_pex*EACEAG_imi/(EAG_py*EAG_y);
+// Bilateral shares
+EAGEAD_imcy = (EAD_pex*EAGEAD_rer)*EAGEAD_imc/(EAG_py*EAG_y);
+EAGEAD_imiy = (EAD_pex*EAGEAD_rer)*EAGEAD_imi/(EAG_py*EAG_y);
+EAGEAD_imcgy = (EAD_pex*EAGEAD_rer)*EAGEAD_imcg/(EAG_py*EAG_y);
+EAGEAD_imigy = (EAD_pex*EAGEAD_rer)*EAGEAD_imig/(EAG_py*EAG_y);
+// Exports of consumption goods to gdp
+EAGEAD_excy  = EAD_size/EAG_size*EAG_pex*EADEAG_imc/(EAG_py*EAG_y);
+// Exports of investment goods to gdp
+EAGEAD_exiy  = EAD_size/EAG_size*EAG_pex*EADEAG_imi/(EAG_py*EAG_y);
+// Bilateral shares
+EAGEAE_imcy = (EAE_pex*EAGEAE_rer)*EAGEAE_imc/(EAG_py*EAG_y);
+EAGEAE_imiy = (EAE_pex*EAGEAE_rer)*EAGEAE_imi/(EAG_py*EAG_y);
+EAGEAE_imcgy = (EAE_pex*EAGEAE_rer)*EAGEAE_imcg/(EAG_py*EAG_y);
+EAGEAE_imigy = (EAE_pex*EAGEAE_rer)*EAGEAE_imig/(EAG_py*EAG_y);
+// Exports of consumption goods to gdp
+EAGEAE_excy  = EAE_size/EAG_size*EAG_pex*EAEEAG_imc/(EAG_py*EAG_y);
+// Exports of investment goods to gdp
+EAGEAE_exiy  = EAE_size/EAG_size*EAG_pex*EAEEAG_imi/(EAG_py*EAG_y);
+// Bilateral shares
+EAGEAF_imcy = (EAF_pex*EAGEAF_rer)*EAGEAF_imc/(EAG_py*EAG_y);
+EAGEAF_imiy = (EAF_pex*EAGEAF_rer)*EAGEAF_imi/(EAG_py*EAG_y);
+EAGEAF_imcgy = (EAF_pex*EAGEAF_rer)*EAGEAF_imcg/(EAG_py*EAG_y);
+EAGEAF_imigy = (EAF_pex*EAGEAF_rer)*EAGEAF_imig/(EAG_py*EAG_y);
+// Exports of consumption goods to gdp
+EAGEAF_excy  = EAF_size/EAG_size*EAG_pex*EAFEAG_imc/(EAG_py*EAG_y);
+// Exports of investment goods to gdp
+EAGEAF_exiy  = EAF_size/EAG_size*EAG_pex*EAFEAG_imi/(EAG_py*EAG_y);
+// Bilateral shares
+EAGRW_imcy = (RW_pex*EAGRW_rer)*EAGRW_imc/(EAG_py*EAG_y);
+EAGRW_imiy = (RW_pex*EAGRW_rer)*EAGRW_imi/(EAG_py*EAG_y);
+EAGRW_imcgy = (RW_pex*EAGRW_rer)*EAGRW_imcg/(EAG_py*EAG_y);
+EAGRW_imigy = (RW_pex*EAGRW_rer)*EAGRW_imig/(EAG_py*EAG_y);
+// Exports of consumption goods to gdp
+EAGRW_excy  = RW_size/EAG_size*EAG_pex*RWEAG_imc/(EAG_py*EAG_y);
+// Exports of investment goods to gdp
+EAGRW_exiy  = RW_size/EAG_size*EAG_pex*RWEAG_imi/(EAG_py*EAG_y);
+// Bilateral shares
+EAGUS_imcy = (US_pex*EAGUS_rer)*EAGUS_imc/(EAG_py*EAG_y);
+EAGUS_imiy = (US_pex*EAGUS_rer)*EAGUS_imi/(EAG_py*EAG_y);
+EAGUS_imcgy = (US_pex*EAGUS_rer)*EAGUS_imcg/(EAG_py*EAG_y);
+EAGUS_imigy = (US_pex*EAGUS_rer)*EAGUS_imig/(EAG_py*EAG_y);
+// Exports of consumption goods to gdp
+EAGUS_excy  = US_size/EAG_size*EAG_pex*USEAG_imc/(EAG_py*EAG_y);
+// Exports of investment goods to gdp
+EAGUS_exiy  = US_size/EAG_size*EAG_pex*USEAG_imi/(EAG_py*EAG_y);
+// Internal real exchange rate
+EAG_internalrer = EAG_pnt/EAG_pttc;
 // Core model begins
 //-------------
 //-------------
@@ -13232,6 +17360,22 @@ RWEAF_rer = RW_rer/EAF_rer;
 RWEAF_rerbar = RWEAF_rer;
 //Terms of Trade
 RWEAF_tot = EAF_pex*RWEAF_rer/RW_pex;
+// Optimal price contract set in foreign markets (FOC), using RW_pxtilde = EAG_pimtilde
+// EAGRW_pimtilde/EAGRW_pim = RW_cpim*RW_thetat/(RW_thetat-1)*RWEAG_fx/RWEAG_gx;
+// Definition of fx
+// RWEAG_fx = EAG_size/RW_size*EAGRW_im*RW_mct+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EAGRW_piim(+1)/(EAGRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^RW_thetat*RWEAG_fx(+1);
+// Definition of gx   
+// RWEAG_gx = RWEAG_rer*EAGRW_pim*EAG_size/RW_size*EAGRW_im+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EAGRW_piim(+1)/(EAGRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^(RW_thetat-1)*RWEAG_gx(+1);
+// Aggregate intermediate-good price dynamics, using RW_px = EAG_pim
+// EAGRW_pim^(1-RW_thetat) = (1-RW_xix)*EAGRW_pimtilde^(1-RW_thetat)+RW_xix*(EAGRW_pim(-1)/EAG_pic)^(1-RW_thetat)*(EAGRW_piim(-1)^RW_chix*EAG_pi4target^(1/4*(1-RW_chih)))^(1-RW_thetat);
+// Intermediate-good price inflation, using RW_pix = EAG_piim
+// EAGRW_piim = EAGRW_pim/EAGRW_pim(-1)*EAG_pic;
+// Bilateral real exchange rate
+RWEAG_rer = RW_rer/EAG_rer;
+// Auxiliary equation for steady-state output
+RWEAG_rerbar = RWEAG_rer;
+//Terms of Trade
+RWEAG_tot = EAG_pex*RWEAG_rer/RW_pex;
 // Optimal price contract set in foreign markets (FOC), using RW_pxtilde = US_pimtilde
 // USRW_pimtilde/USRW_pim = RW_cpim*RW_thetat/(RW_thetat-1)*RWUS_fx/RWUS_gx;
 // Definition of fx
@@ -13271,6 +17415,7 @@ RWEAA_weightex = EAA_size/RW_size*EAARW_im/RW_ex*RWEAA_rer*EAA_py*EAA_y/(RWEAA_r
 +RWEAD_rer*EAD_pex*EAAEAD_im
 +RWEAE_rer*EAE_pex*EAAEAE_im
 +RWEAF_rer*EAF_pex*EAAEAF_im
++RWEAG_rer*EAG_pex*EAAEAG_im
 +RWUS_rer*US_pex*EAAUS_im
 )+
 +EAB_size/RW_size*EABRW_im/RW_ex*RWEAA_rer*EAA_pex*EABEAA_im/(RWEAB_rer*EAB_py*EAB_y
@@ -13279,6 +17424,7 @@ RWEAA_weightex = EAA_size/RW_size*EAARW_im/RW_ex*RWEAA_rer*EAA_py*EAA_y/(RWEAA_r
 +RWEAD_rer*EAD_pex*EABEAD_im
 +RWEAE_rer*EAE_pex*EABEAE_im
 +RWEAF_rer*EAF_pex*EABEAF_im
++RWEAG_rer*EAG_pex*EABEAG_im
 +RWUS_rer*US_pex*EABUS_im
 )
 +EAC_size/RW_size*EACRW_im/RW_ex*RWEAA_rer*EAA_pex*EACEAA_im/(RWEAC_rer*EAC_py*EAC_y
@@ -13287,6 +17433,7 @@ RWEAA_weightex = EAA_size/RW_size*EAARW_im/RW_ex*RWEAA_rer*EAA_py*EAA_y/(RWEAA_r
 +RWEAD_rer*EAD_pex*EACEAD_im
 +RWEAE_rer*EAE_pex*EACEAE_im
 +RWEAF_rer*EAF_pex*EACEAF_im
++RWEAG_rer*EAG_pex*EACEAG_im
 +RWUS_rer*US_pex*EACUS_im
 )
 +EAD_size/RW_size*EADRW_im/RW_ex*RWEAA_rer*EAA_pex*EADEAA_im/(RWEAD_rer*EAD_py*EAD_y
@@ -13295,6 +17442,7 @@ RWEAA_weightex = EAA_size/RW_size*EAARW_im/RW_ex*RWEAA_rer*EAA_py*EAA_y/(RWEAA_r
 +RWEAC_rer*EAC_pex*EADEAC_im
 +RWEAE_rer*EAE_pex*EADEAE_im
 +RWEAF_rer*EAF_pex*EADEAF_im
++RWEAG_rer*EAG_pex*EADEAG_im
 +RWUS_rer*US_pex*EADUS_im
 )
 +EAE_size/RW_size*EAERW_im/RW_ex*RWEAA_rer*EAA_pex*EAEEAA_im/(RWEAE_rer*EAE_py*EAE_y
@@ -13303,6 +17451,7 @@ RWEAA_weightex = EAA_size/RW_size*EAARW_im/RW_ex*RWEAA_rer*EAA_py*EAA_y/(RWEAA_r
 +RWEAC_rer*EAC_pex*EAEEAC_im
 +RWEAD_rer*EAD_pex*EAEEAD_im
 +RWEAF_rer*EAF_pex*EAEEAF_im
++RWEAG_rer*EAG_pex*EAEEAG_im
 +RWUS_rer*US_pex*EAEUS_im
 )
 +EAF_size/RW_size*EAFRW_im/RW_ex*RWEAA_rer*EAA_pex*EAFEAA_im/(RWEAF_rer*EAF_py*EAF_y
@@ -13311,7 +17460,17 @@ RWEAA_weightex = EAA_size/RW_size*EAARW_im/RW_ex*RWEAA_rer*EAA_py*EAA_y/(RWEAA_r
 +RWEAC_rer*EAC_pex*EAFEAC_im
 +RWEAD_rer*EAD_pex*EAFEAD_im
 +RWEAE_rer*EAE_pex*EAFEAE_im
++RWEAG_rer*EAG_pex*EAFEAG_im
 +RWUS_rer*US_pex*EAFUS_im
+)
++EAG_size/RW_size*EAGRW_im/RW_ex*RWEAA_rer*EAA_pex*EAGEAA_im/(RWEAG_rer*EAG_py*EAG_y
++RWEAA_rer*EAA_pex*EAGEAA_im
++RWEAB_rer*EAB_pex*EAGEAB_im
++RWEAC_rer*EAC_pex*EAGEAC_im
++RWEAD_rer*EAD_pex*EAGEAD_im
++RWEAE_rer*EAE_pex*EAGEAE_im
++RWEAF_rer*EAF_pex*EAGEAF_im
++RWUS_rer*US_pex*EAGUS_im
 )
 +US_size/RW_size*USRW_im/RW_ex*RWEAA_rer*EAA_pex*USEAA_im/(RWUS_rer*US_py*US_y
 +RWEAA_rer*EAA_pex*USEAA_im
@@ -13320,6 +17479,7 @@ RWEAA_weightex = EAA_size/RW_size*EAARW_im/RW_ex*RWEAA_rer*EAA_py*EAA_y/(RWEAA_r
 +RWEAD_rer*EAD_pex*USEAD_im
 +RWEAE_rer*EAE_pex*USEAE_im
 +RWEAF_rer*EAF_pex*USEAF_im
++RWEAG_rer*EAG_pex*USEAG_im
 )
 ;
 // Effective real exchange rate: double weighting (overall)
@@ -13333,6 +17493,7 @@ RWEAB_weightex = EAB_size/RW_size*EABRW_im/RW_ex*RWEAB_rer*EAB_py*EAB_y/(RWEAB_r
 +RWEAD_rer*EAD_pex*EABEAD_im
 +RWEAE_rer*EAE_pex*EABEAE_im
 +RWEAF_rer*EAF_pex*EABEAF_im
++RWEAG_rer*EAG_pex*EABEAG_im
 +RWUS_rer*US_pex*EABUS_im
 )+
 +EAA_size/RW_size*EAARW_im/RW_ex*RWEAB_rer*EAB_pex*EAAEAB_im/(RWEAA_rer*EAA_py*EAA_y
@@ -13341,6 +17502,7 @@ RWEAB_weightex = EAB_size/RW_size*EABRW_im/RW_ex*RWEAB_rer*EAB_py*EAB_y/(RWEAB_r
 +RWEAD_rer*EAD_pex*EAAEAD_im
 +RWEAE_rer*EAE_pex*EAAEAE_im
 +RWEAF_rer*EAF_pex*EAAEAF_im
++RWEAG_rer*EAG_pex*EAAEAG_im
 +RWUS_rer*US_pex*EAAUS_im
 )
 +EAC_size/RW_size*EACRW_im/RW_ex*RWEAB_rer*EAB_pex*EACEAB_im/(RWEAC_rer*EAC_py*EAC_y
@@ -13349,6 +17511,7 @@ RWEAB_weightex = EAB_size/RW_size*EABRW_im/RW_ex*RWEAB_rer*EAB_py*EAB_y/(RWEAB_r
 +RWEAD_rer*EAD_pex*EACEAD_im
 +RWEAE_rer*EAE_pex*EACEAE_im
 +RWEAF_rer*EAF_pex*EACEAF_im
++RWEAG_rer*EAG_pex*EACEAG_im
 +RWUS_rer*US_pex*EACUS_im
 )
 +EAD_size/RW_size*EADRW_im/RW_ex*RWEAB_rer*EAB_pex*EADEAB_im/(RWEAD_rer*EAD_py*EAD_y
@@ -13357,6 +17520,7 @@ RWEAB_weightex = EAB_size/RW_size*EABRW_im/RW_ex*RWEAB_rer*EAB_py*EAB_y/(RWEAB_r
 +RWEAC_rer*EAC_pex*EADEAC_im
 +RWEAE_rer*EAE_pex*EADEAE_im
 +RWEAF_rer*EAF_pex*EADEAF_im
++RWEAG_rer*EAG_pex*EADEAG_im
 +RWUS_rer*US_pex*EADUS_im
 )
 +EAE_size/RW_size*EAERW_im/RW_ex*RWEAB_rer*EAB_pex*EAEEAB_im/(RWEAE_rer*EAE_py*EAE_y
@@ -13365,6 +17529,7 @@ RWEAB_weightex = EAB_size/RW_size*EABRW_im/RW_ex*RWEAB_rer*EAB_py*EAB_y/(RWEAB_r
 +RWEAC_rer*EAC_pex*EAEEAC_im
 +RWEAD_rer*EAD_pex*EAEEAD_im
 +RWEAF_rer*EAF_pex*EAEEAF_im
++RWEAG_rer*EAG_pex*EAEEAG_im
 +RWUS_rer*US_pex*EAEUS_im
 )
 +EAF_size/RW_size*EAFRW_im/RW_ex*RWEAB_rer*EAB_pex*EAFEAB_im/(RWEAF_rer*EAF_py*EAF_y
@@ -13373,7 +17538,17 @@ RWEAB_weightex = EAB_size/RW_size*EABRW_im/RW_ex*RWEAB_rer*EAB_py*EAB_y/(RWEAB_r
 +RWEAC_rer*EAC_pex*EAFEAC_im
 +RWEAD_rer*EAD_pex*EAFEAD_im
 +RWEAE_rer*EAE_pex*EAFEAE_im
++RWEAG_rer*EAG_pex*EAFEAG_im
 +RWUS_rer*US_pex*EAFUS_im
+)
++EAG_size/RW_size*EAGRW_im/RW_ex*RWEAB_rer*EAB_pex*EAGEAB_im/(RWEAG_rer*EAG_py*EAG_y
++RWEAA_rer*EAA_pex*EAGEAA_im
++RWEAB_rer*EAB_pex*EAGEAB_im
++RWEAC_rer*EAC_pex*EAGEAC_im
++RWEAD_rer*EAD_pex*EAGEAD_im
++RWEAE_rer*EAE_pex*EAGEAE_im
++RWEAF_rer*EAF_pex*EAGEAF_im
++RWUS_rer*US_pex*EAGUS_im
 )
 +US_size/RW_size*USRW_im/RW_ex*RWEAB_rer*EAB_pex*USEAB_im/(RWUS_rer*US_py*US_y
 +RWEAA_rer*EAA_pex*USEAA_im
@@ -13382,6 +17557,7 @@ RWEAB_weightex = EAB_size/RW_size*EABRW_im/RW_ex*RWEAB_rer*EAB_py*EAB_y/(RWEAB_r
 +RWEAD_rer*EAD_pex*USEAD_im
 +RWEAE_rer*EAE_pex*USEAE_im
 +RWEAF_rer*EAF_pex*USEAF_im
++RWEAG_rer*EAG_pex*USEAG_im
 )
 ;
 // Effective real exchange rate: double weighting (overall)
@@ -13395,6 +17571,7 @@ RWEAC_weightex = EAC_size/RW_size*EACRW_im/RW_ex*RWEAC_rer*EAC_py*EAC_y/(RWEAC_r
 +RWEAD_rer*EAD_pex*EACEAD_im
 +RWEAE_rer*EAE_pex*EACEAE_im
 +RWEAF_rer*EAF_pex*EACEAF_im
++RWEAG_rer*EAG_pex*EACEAG_im
 +RWUS_rer*US_pex*EACUS_im
 )+
 +EAA_size/RW_size*EAARW_im/RW_ex*RWEAC_rer*EAC_pex*EAAEAC_im/(RWEAA_rer*EAA_py*EAA_y
@@ -13403,6 +17580,7 @@ RWEAC_weightex = EAC_size/RW_size*EACRW_im/RW_ex*RWEAC_rer*EAC_py*EAC_y/(RWEAC_r
 +RWEAD_rer*EAD_pex*EAAEAD_im
 +RWEAE_rer*EAE_pex*EAAEAE_im
 +RWEAF_rer*EAF_pex*EAAEAF_im
++RWEAG_rer*EAG_pex*EAAEAG_im
 +RWUS_rer*US_pex*EAAUS_im
 )
 +EAB_size/RW_size*EABRW_im/RW_ex*RWEAC_rer*EAC_pex*EABEAC_im/(RWEAB_rer*EAB_py*EAB_y
@@ -13411,6 +17589,7 @@ RWEAC_weightex = EAC_size/RW_size*EACRW_im/RW_ex*RWEAC_rer*EAC_py*EAC_y/(RWEAC_r
 +RWEAD_rer*EAD_pex*EABEAD_im
 +RWEAE_rer*EAE_pex*EABEAE_im
 +RWEAF_rer*EAF_pex*EABEAF_im
++RWEAG_rer*EAG_pex*EABEAG_im
 +RWUS_rer*US_pex*EABUS_im
 )
 +EAD_size/RW_size*EADRW_im/RW_ex*RWEAC_rer*EAC_pex*EADEAC_im/(RWEAD_rer*EAD_py*EAD_y
@@ -13419,6 +17598,7 @@ RWEAC_weightex = EAC_size/RW_size*EACRW_im/RW_ex*RWEAC_rer*EAC_py*EAC_y/(RWEAC_r
 +RWEAC_rer*EAC_pex*EADEAC_im
 +RWEAE_rer*EAE_pex*EADEAE_im
 +RWEAF_rer*EAF_pex*EADEAF_im
++RWEAG_rer*EAG_pex*EADEAG_im
 +RWUS_rer*US_pex*EADUS_im
 )
 +EAE_size/RW_size*EAERW_im/RW_ex*RWEAC_rer*EAC_pex*EAEEAC_im/(RWEAE_rer*EAE_py*EAE_y
@@ -13427,6 +17607,7 @@ RWEAC_weightex = EAC_size/RW_size*EACRW_im/RW_ex*RWEAC_rer*EAC_py*EAC_y/(RWEAC_r
 +RWEAC_rer*EAC_pex*EAEEAC_im
 +RWEAD_rer*EAD_pex*EAEEAD_im
 +RWEAF_rer*EAF_pex*EAEEAF_im
++RWEAG_rer*EAG_pex*EAEEAG_im
 +RWUS_rer*US_pex*EAEUS_im
 )
 +EAF_size/RW_size*EAFRW_im/RW_ex*RWEAC_rer*EAC_pex*EAFEAC_im/(RWEAF_rer*EAF_py*EAF_y
@@ -13435,7 +17616,17 @@ RWEAC_weightex = EAC_size/RW_size*EACRW_im/RW_ex*RWEAC_rer*EAC_py*EAC_y/(RWEAC_r
 +RWEAC_rer*EAC_pex*EAFEAC_im
 +RWEAD_rer*EAD_pex*EAFEAD_im
 +RWEAE_rer*EAE_pex*EAFEAE_im
++RWEAG_rer*EAG_pex*EAFEAG_im
 +RWUS_rer*US_pex*EAFUS_im
+)
++EAG_size/RW_size*EAGRW_im/RW_ex*RWEAC_rer*EAC_pex*EAGEAC_im/(RWEAG_rer*EAG_py*EAG_y
++RWEAA_rer*EAA_pex*EAGEAA_im
++RWEAB_rer*EAB_pex*EAGEAB_im
++RWEAC_rer*EAC_pex*EAGEAC_im
++RWEAD_rer*EAD_pex*EAGEAD_im
++RWEAE_rer*EAE_pex*EAGEAE_im
++RWEAF_rer*EAF_pex*EAGEAF_im
++RWUS_rer*US_pex*EAGUS_im
 )
 +US_size/RW_size*USRW_im/RW_ex*RWEAC_rer*EAC_pex*USEAC_im/(RWUS_rer*US_py*US_y
 +RWEAA_rer*EAA_pex*USEAA_im
@@ -13444,6 +17635,7 @@ RWEAC_weightex = EAC_size/RW_size*EACRW_im/RW_ex*RWEAC_rer*EAC_py*EAC_y/(RWEAC_r
 +RWEAD_rer*EAD_pex*USEAD_im
 +RWEAE_rer*EAE_pex*USEAE_im
 +RWEAF_rer*EAF_pex*USEAF_im
++RWEAG_rer*EAG_pex*USEAG_im
 )
 ;
 // Effective real exchange rate: double weighting (overall)
@@ -13457,6 +17649,7 @@ RWEAD_weightex = EAD_size/RW_size*EADRW_im/RW_ex*RWEAD_rer*EAD_py*EAD_y/(RWEAD_r
 +RWEAC_rer*EAC_pex*EADEAC_im
 +RWEAE_rer*EAE_pex*EADEAE_im
 +RWEAF_rer*EAF_pex*EADEAF_im
++RWEAG_rer*EAG_pex*EADEAG_im
 +RWUS_rer*US_pex*EADUS_im
 )+
 +EAA_size/RW_size*EAARW_im/RW_ex*RWEAD_rer*EAD_pex*EAAEAD_im/(RWEAA_rer*EAA_py*EAA_y
@@ -13465,6 +17658,7 @@ RWEAD_weightex = EAD_size/RW_size*EADRW_im/RW_ex*RWEAD_rer*EAD_py*EAD_y/(RWEAD_r
 +RWEAD_rer*EAD_pex*EAAEAD_im
 +RWEAE_rer*EAE_pex*EAAEAE_im
 +RWEAF_rer*EAF_pex*EAAEAF_im
++RWEAG_rer*EAG_pex*EAAEAG_im
 +RWUS_rer*US_pex*EAAUS_im
 )
 +EAB_size/RW_size*EABRW_im/RW_ex*RWEAD_rer*EAD_pex*EABEAD_im/(RWEAB_rer*EAB_py*EAB_y
@@ -13473,6 +17667,7 @@ RWEAD_weightex = EAD_size/RW_size*EADRW_im/RW_ex*RWEAD_rer*EAD_py*EAD_y/(RWEAD_r
 +RWEAD_rer*EAD_pex*EABEAD_im
 +RWEAE_rer*EAE_pex*EABEAE_im
 +RWEAF_rer*EAF_pex*EABEAF_im
++RWEAG_rer*EAG_pex*EABEAG_im
 +RWUS_rer*US_pex*EABUS_im
 )
 +EAC_size/RW_size*EACRW_im/RW_ex*RWEAD_rer*EAD_pex*EACEAD_im/(RWEAC_rer*EAC_py*EAC_y
@@ -13481,6 +17676,7 @@ RWEAD_weightex = EAD_size/RW_size*EADRW_im/RW_ex*RWEAD_rer*EAD_py*EAD_y/(RWEAD_r
 +RWEAD_rer*EAD_pex*EACEAD_im
 +RWEAE_rer*EAE_pex*EACEAE_im
 +RWEAF_rer*EAF_pex*EACEAF_im
++RWEAG_rer*EAG_pex*EACEAG_im
 +RWUS_rer*US_pex*EACUS_im
 )
 +EAE_size/RW_size*EAERW_im/RW_ex*RWEAD_rer*EAD_pex*EAEEAD_im/(RWEAE_rer*EAE_py*EAE_y
@@ -13489,6 +17685,7 @@ RWEAD_weightex = EAD_size/RW_size*EADRW_im/RW_ex*RWEAD_rer*EAD_py*EAD_y/(RWEAD_r
 +RWEAC_rer*EAC_pex*EAEEAC_im
 +RWEAD_rer*EAD_pex*EAEEAD_im
 +RWEAF_rer*EAF_pex*EAEEAF_im
++RWEAG_rer*EAG_pex*EAEEAG_im
 +RWUS_rer*US_pex*EAEUS_im
 )
 +EAF_size/RW_size*EAFRW_im/RW_ex*RWEAD_rer*EAD_pex*EAFEAD_im/(RWEAF_rer*EAF_py*EAF_y
@@ -13497,7 +17694,17 @@ RWEAD_weightex = EAD_size/RW_size*EADRW_im/RW_ex*RWEAD_rer*EAD_py*EAD_y/(RWEAD_r
 +RWEAC_rer*EAC_pex*EAFEAC_im
 +RWEAD_rer*EAD_pex*EAFEAD_im
 +RWEAE_rer*EAE_pex*EAFEAE_im
++RWEAG_rer*EAG_pex*EAFEAG_im
 +RWUS_rer*US_pex*EAFUS_im
+)
++EAG_size/RW_size*EAGRW_im/RW_ex*RWEAD_rer*EAD_pex*EAGEAD_im/(RWEAG_rer*EAG_py*EAG_y
++RWEAA_rer*EAA_pex*EAGEAA_im
++RWEAB_rer*EAB_pex*EAGEAB_im
++RWEAC_rer*EAC_pex*EAGEAC_im
++RWEAD_rer*EAD_pex*EAGEAD_im
++RWEAE_rer*EAE_pex*EAGEAE_im
++RWEAF_rer*EAF_pex*EAGEAF_im
++RWUS_rer*US_pex*EAGUS_im
 )
 +US_size/RW_size*USRW_im/RW_ex*RWEAD_rer*EAD_pex*USEAD_im/(RWUS_rer*US_py*US_y
 +RWEAA_rer*EAA_pex*USEAA_im
@@ -13506,6 +17713,7 @@ RWEAD_weightex = EAD_size/RW_size*EADRW_im/RW_ex*RWEAD_rer*EAD_py*EAD_y/(RWEAD_r
 +RWEAD_rer*EAD_pex*USEAD_im
 +RWEAE_rer*EAE_pex*USEAE_im
 +RWEAF_rer*EAF_pex*USEAF_im
++RWEAG_rer*EAG_pex*USEAG_im
 )
 ;
 // Effective real exchange rate: double weighting (overall)
@@ -13519,6 +17727,7 @@ RWEAE_weightex = EAE_size/RW_size*EAERW_im/RW_ex*RWEAE_rer*EAE_py*EAE_y/(RWEAE_r
 +RWEAC_rer*EAC_pex*EAEEAC_im
 +RWEAD_rer*EAD_pex*EAEEAD_im
 +RWEAF_rer*EAF_pex*EAEEAF_im
++RWEAG_rer*EAG_pex*EAEEAG_im
 +RWUS_rer*US_pex*EAEUS_im
 )+
 +EAA_size/RW_size*EAARW_im/RW_ex*RWEAE_rer*EAE_pex*EAAEAE_im/(RWEAA_rer*EAA_py*EAA_y
@@ -13527,6 +17736,7 @@ RWEAE_weightex = EAE_size/RW_size*EAERW_im/RW_ex*RWEAE_rer*EAE_py*EAE_y/(RWEAE_r
 +RWEAD_rer*EAD_pex*EAAEAD_im
 +RWEAE_rer*EAE_pex*EAAEAE_im
 +RWEAF_rer*EAF_pex*EAAEAF_im
++RWEAG_rer*EAG_pex*EAAEAG_im
 +RWUS_rer*US_pex*EAAUS_im
 )
 +EAB_size/RW_size*EABRW_im/RW_ex*RWEAE_rer*EAE_pex*EABEAE_im/(RWEAB_rer*EAB_py*EAB_y
@@ -13535,6 +17745,7 @@ RWEAE_weightex = EAE_size/RW_size*EAERW_im/RW_ex*RWEAE_rer*EAE_py*EAE_y/(RWEAE_r
 +RWEAD_rer*EAD_pex*EABEAD_im
 +RWEAE_rer*EAE_pex*EABEAE_im
 +RWEAF_rer*EAF_pex*EABEAF_im
++RWEAG_rer*EAG_pex*EABEAG_im
 +RWUS_rer*US_pex*EABUS_im
 )
 +EAC_size/RW_size*EACRW_im/RW_ex*RWEAE_rer*EAE_pex*EACEAE_im/(RWEAC_rer*EAC_py*EAC_y
@@ -13543,6 +17754,7 @@ RWEAE_weightex = EAE_size/RW_size*EAERW_im/RW_ex*RWEAE_rer*EAE_py*EAE_y/(RWEAE_r
 +RWEAD_rer*EAD_pex*EACEAD_im
 +RWEAE_rer*EAE_pex*EACEAE_im
 +RWEAF_rer*EAF_pex*EACEAF_im
++RWEAG_rer*EAG_pex*EACEAG_im
 +RWUS_rer*US_pex*EACUS_im
 )
 +EAD_size/RW_size*EADRW_im/RW_ex*RWEAE_rer*EAE_pex*EADEAE_im/(RWEAD_rer*EAD_py*EAD_y
@@ -13551,6 +17763,7 @@ RWEAE_weightex = EAE_size/RW_size*EAERW_im/RW_ex*RWEAE_rer*EAE_py*EAE_y/(RWEAE_r
 +RWEAC_rer*EAC_pex*EADEAC_im
 +RWEAE_rer*EAE_pex*EADEAE_im
 +RWEAF_rer*EAF_pex*EADEAF_im
++RWEAG_rer*EAG_pex*EADEAG_im
 +RWUS_rer*US_pex*EADUS_im
 )
 +EAF_size/RW_size*EAFRW_im/RW_ex*RWEAE_rer*EAE_pex*EAFEAE_im/(RWEAF_rer*EAF_py*EAF_y
@@ -13559,7 +17772,17 @@ RWEAE_weightex = EAE_size/RW_size*EAERW_im/RW_ex*RWEAE_rer*EAE_py*EAE_y/(RWEAE_r
 +RWEAC_rer*EAC_pex*EAFEAC_im
 +RWEAD_rer*EAD_pex*EAFEAD_im
 +RWEAE_rer*EAE_pex*EAFEAE_im
++RWEAG_rer*EAG_pex*EAFEAG_im
 +RWUS_rer*US_pex*EAFUS_im
+)
++EAG_size/RW_size*EAGRW_im/RW_ex*RWEAE_rer*EAE_pex*EAGEAE_im/(RWEAG_rer*EAG_py*EAG_y
++RWEAA_rer*EAA_pex*EAGEAA_im
++RWEAB_rer*EAB_pex*EAGEAB_im
++RWEAC_rer*EAC_pex*EAGEAC_im
++RWEAD_rer*EAD_pex*EAGEAD_im
++RWEAE_rer*EAE_pex*EAGEAE_im
++RWEAF_rer*EAF_pex*EAGEAF_im
++RWUS_rer*US_pex*EAGUS_im
 )
 +US_size/RW_size*USRW_im/RW_ex*RWEAE_rer*EAE_pex*USEAE_im/(RWUS_rer*US_py*US_y
 +RWEAA_rer*EAA_pex*USEAA_im
@@ -13568,6 +17791,7 @@ RWEAE_weightex = EAE_size/RW_size*EAERW_im/RW_ex*RWEAE_rer*EAE_py*EAE_y/(RWEAE_r
 +RWEAD_rer*EAD_pex*USEAD_im
 +RWEAE_rer*EAE_pex*USEAE_im
 +RWEAF_rer*EAF_pex*USEAF_im
++RWEAG_rer*EAG_pex*USEAG_im
 )
 ;
 // Effective real exchange rate: double weighting (overall)
@@ -13581,6 +17805,7 @@ RWEAF_weightex = EAF_size/RW_size*EAFRW_im/RW_ex*RWEAF_rer*EAF_py*EAF_y/(RWEAF_r
 +RWEAC_rer*EAC_pex*EAFEAC_im
 +RWEAD_rer*EAD_pex*EAFEAD_im
 +RWEAE_rer*EAE_pex*EAFEAE_im
++RWEAG_rer*EAG_pex*EAFEAG_im
 +RWUS_rer*US_pex*EAFUS_im
 )+
 +EAA_size/RW_size*EAARW_im/RW_ex*RWEAF_rer*EAF_pex*EAAEAF_im/(RWEAA_rer*EAA_py*EAA_y
@@ -13589,6 +17814,7 @@ RWEAF_weightex = EAF_size/RW_size*EAFRW_im/RW_ex*RWEAF_rer*EAF_py*EAF_y/(RWEAF_r
 +RWEAD_rer*EAD_pex*EAAEAD_im
 +RWEAE_rer*EAE_pex*EAAEAE_im
 +RWEAF_rer*EAF_pex*EAAEAF_im
++RWEAG_rer*EAG_pex*EAAEAG_im
 +RWUS_rer*US_pex*EAAUS_im
 )
 +EAB_size/RW_size*EABRW_im/RW_ex*RWEAF_rer*EAF_pex*EABEAF_im/(RWEAB_rer*EAB_py*EAB_y
@@ -13597,6 +17823,7 @@ RWEAF_weightex = EAF_size/RW_size*EAFRW_im/RW_ex*RWEAF_rer*EAF_py*EAF_y/(RWEAF_r
 +RWEAD_rer*EAD_pex*EABEAD_im
 +RWEAE_rer*EAE_pex*EABEAE_im
 +RWEAF_rer*EAF_pex*EABEAF_im
++RWEAG_rer*EAG_pex*EABEAG_im
 +RWUS_rer*US_pex*EABUS_im
 )
 +EAC_size/RW_size*EACRW_im/RW_ex*RWEAF_rer*EAF_pex*EACEAF_im/(RWEAC_rer*EAC_py*EAC_y
@@ -13605,6 +17832,7 @@ RWEAF_weightex = EAF_size/RW_size*EAFRW_im/RW_ex*RWEAF_rer*EAF_py*EAF_y/(RWEAF_r
 +RWEAD_rer*EAD_pex*EACEAD_im
 +RWEAE_rer*EAE_pex*EACEAE_im
 +RWEAF_rer*EAF_pex*EACEAF_im
++RWEAG_rer*EAG_pex*EACEAG_im
 +RWUS_rer*US_pex*EACUS_im
 )
 +EAD_size/RW_size*EADRW_im/RW_ex*RWEAF_rer*EAF_pex*EADEAF_im/(RWEAD_rer*EAD_py*EAD_y
@@ -13613,6 +17841,7 @@ RWEAF_weightex = EAF_size/RW_size*EAFRW_im/RW_ex*RWEAF_rer*EAF_py*EAF_y/(RWEAF_r
 +RWEAC_rer*EAC_pex*EADEAC_im
 +RWEAE_rer*EAE_pex*EADEAE_im
 +RWEAF_rer*EAF_pex*EADEAF_im
++RWEAG_rer*EAG_pex*EADEAG_im
 +RWUS_rer*US_pex*EADUS_im
 )
 +EAE_size/RW_size*EAERW_im/RW_ex*RWEAF_rer*EAF_pex*EAEEAF_im/(RWEAE_rer*EAE_py*EAE_y
@@ -13621,7 +17850,17 @@ RWEAF_weightex = EAF_size/RW_size*EAFRW_im/RW_ex*RWEAF_rer*EAF_py*EAF_y/(RWEAF_r
 +RWEAC_rer*EAC_pex*EAEEAC_im
 +RWEAD_rer*EAD_pex*EAEEAD_im
 +RWEAF_rer*EAF_pex*EAEEAF_im
++RWEAG_rer*EAG_pex*EAEEAG_im
 +RWUS_rer*US_pex*EAEUS_im
+)
++EAG_size/RW_size*EAGRW_im/RW_ex*RWEAF_rer*EAF_pex*EAGEAF_im/(RWEAG_rer*EAG_py*EAG_y
++RWEAA_rer*EAA_pex*EAGEAA_im
++RWEAB_rer*EAB_pex*EAGEAB_im
++RWEAC_rer*EAC_pex*EAGEAC_im
++RWEAD_rer*EAD_pex*EAGEAD_im
++RWEAE_rer*EAE_pex*EAGEAE_im
++RWEAF_rer*EAF_pex*EAGEAF_im
++RWUS_rer*US_pex*EAGUS_im
 )
 +US_size/RW_size*USRW_im/RW_ex*RWEAF_rer*EAF_pex*USEAF_im/(RWUS_rer*US_py*US_y
 +RWEAA_rer*EAA_pex*USEAA_im
@@ -13630,10 +17869,89 @@ RWEAF_weightex = EAF_size/RW_size*EAFRW_im/RW_ex*RWEAF_rer*EAF_py*EAF_y/(RWEAF_r
 +RWEAD_rer*EAD_pex*USEAD_im
 +RWEAE_rer*EAE_pex*USEAE_im
 +RWEAF_rer*EAF_pex*USEAF_im
++RWEAG_rer*EAG_pex*USEAG_im
 )
 ;
 // Effective real exchange rate: double weighting (overall)
 RWEAF_weight = RW_pim*RW_im/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAF_weightim+RW_pex*RW_ex/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAF_weightex;
+// Effective real exchange rate: double weighting (imports)
+RWEAG_weightim = RWEAG_rer*EAG_pex*RWEAG_im/(RW_pim*RW_im);
+// Effective real exchange rate: double weighting (exports)
+RWEAG_weightex = EAG_size/RW_size*EAGRW_im/RW_ex*RWEAG_rer*EAG_py*EAG_y/(RWEAG_rer*EAG_py*EAG_y
++RWEAA_rer*EAA_pex*EAGEAA_im
++RWEAB_rer*EAB_pex*EAGEAB_im
++RWEAC_rer*EAC_pex*EAGEAC_im
++RWEAD_rer*EAD_pex*EAGEAD_im
++RWEAE_rer*EAE_pex*EAGEAE_im
++RWEAF_rer*EAF_pex*EAGEAF_im
++RWUS_rer*US_pex*EAGUS_im
+)+
++EAA_size/RW_size*EAARW_im/RW_ex*RWEAG_rer*EAG_pex*EAAEAG_im/(RWEAA_rer*EAA_py*EAA_y
++RWEAB_rer*EAB_pex*EAAEAB_im
++RWEAC_rer*EAC_pex*EAAEAC_im
++RWEAD_rer*EAD_pex*EAAEAD_im
++RWEAE_rer*EAE_pex*EAAEAE_im
++RWEAF_rer*EAF_pex*EAAEAF_im
++RWEAG_rer*EAG_pex*EAAEAG_im
++RWUS_rer*US_pex*EAAUS_im
+)
++EAB_size/RW_size*EABRW_im/RW_ex*RWEAG_rer*EAG_pex*EABEAG_im/(RWEAB_rer*EAB_py*EAB_y
++RWEAA_rer*EAA_pex*EABEAA_im
++RWEAC_rer*EAC_pex*EABEAC_im
++RWEAD_rer*EAD_pex*EABEAD_im
++RWEAE_rer*EAE_pex*EABEAE_im
++RWEAF_rer*EAF_pex*EABEAF_im
++RWEAG_rer*EAG_pex*EABEAG_im
++RWUS_rer*US_pex*EABUS_im
+)
++EAC_size/RW_size*EACRW_im/RW_ex*RWEAG_rer*EAG_pex*EACEAG_im/(RWEAC_rer*EAC_py*EAC_y
++RWEAA_rer*EAA_pex*EACEAA_im
++RWEAB_rer*EAB_pex*EACEAB_im
++RWEAD_rer*EAD_pex*EACEAD_im
++RWEAE_rer*EAE_pex*EACEAE_im
++RWEAF_rer*EAF_pex*EACEAF_im
++RWEAG_rer*EAG_pex*EACEAG_im
++RWUS_rer*US_pex*EACUS_im
+)
++EAD_size/RW_size*EADRW_im/RW_ex*RWEAG_rer*EAG_pex*EADEAG_im/(RWEAD_rer*EAD_py*EAD_y
++RWEAA_rer*EAA_pex*EADEAA_im
++RWEAB_rer*EAB_pex*EADEAB_im
++RWEAC_rer*EAC_pex*EADEAC_im
++RWEAE_rer*EAE_pex*EADEAE_im
++RWEAF_rer*EAF_pex*EADEAF_im
++RWEAG_rer*EAG_pex*EADEAG_im
++RWUS_rer*US_pex*EADUS_im
+)
++EAE_size/RW_size*EAERW_im/RW_ex*RWEAG_rer*EAG_pex*EAEEAG_im/(RWEAE_rer*EAE_py*EAE_y
++RWEAA_rer*EAA_pex*EAEEAA_im
++RWEAB_rer*EAB_pex*EAEEAB_im
++RWEAC_rer*EAC_pex*EAEEAC_im
++RWEAD_rer*EAD_pex*EAEEAD_im
++RWEAF_rer*EAF_pex*EAEEAF_im
++RWEAG_rer*EAG_pex*EAEEAG_im
++RWUS_rer*US_pex*EAEUS_im
+)
++EAF_size/RW_size*EAFRW_im/RW_ex*RWEAG_rer*EAG_pex*EAFEAG_im/(RWEAF_rer*EAF_py*EAF_y
++RWEAA_rer*EAA_pex*EAFEAA_im
++RWEAB_rer*EAB_pex*EAFEAB_im
++RWEAC_rer*EAC_pex*EAFEAC_im
++RWEAD_rer*EAD_pex*EAFEAD_im
++RWEAE_rer*EAE_pex*EAFEAE_im
++RWEAG_rer*EAG_pex*EAFEAG_im
++RWUS_rer*US_pex*EAFUS_im
+)
++US_size/RW_size*USRW_im/RW_ex*RWEAG_rer*EAG_pex*USEAG_im/(RWUS_rer*US_py*US_y
++RWEAA_rer*EAA_pex*USEAA_im
++RWEAB_rer*EAB_pex*USEAB_im
++RWEAC_rer*EAC_pex*USEAC_im
++RWEAD_rer*EAD_pex*USEAD_im
++RWEAE_rer*EAE_pex*USEAE_im
++RWEAF_rer*EAF_pex*USEAF_im
++RWEAG_rer*EAG_pex*USEAG_im
+)
+;
+// Effective real exchange rate: double weighting (overall)
+RWEAG_weight = RW_pim*RW_im/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAG_weightim+RW_pex*RW_ex/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAG_weightex;
 // Effective real exchange rate: double weighting (imports)
 RWUS_weightim = RWUS_rer*US_pex*RWUS_im/(RW_pim*RW_im);
 // Effective real exchange rate: double weighting (exports)
@@ -13644,6 +17962,7 @@ RWUS_weightex = US_size/RW_size*USRW_im/RW_ex*RWUS_rer*US_py*US_y/(RWUS_rer*US_p
 +RWEAD_rer*EAD_pex*USEAD_im
 +RWEAE_rer*EAE_pex*USEAE_im
 +RWEAF_rer*EAF_pex*USEAF_im
++RWEAG_rer*EAG_pex*USEAG_im
 )+
 +EAA_size/RW_size*EAARW_im/RW_ex*RWUS_rer*US_pex*EAAUS_im/(RWEAA_rer*EAA_py*EAA_y
 +RWEAB_rer*EAB_pex*EAAEAB_im
@@ -13651,6 +17970,7 @@ RWUS_weightex = US_size/RW_size*USRW_im/RW_ex*RWUS_rer*US_py*US_y/(RWUS_rer*US_p
 +RWEAD_rer*EAD_pex*EAAEAD_im
 +RWEAE_rer*EAE_pex*EAAEAE_im
 +RWEAF_rer*EAF_pex*EAAEAF_im
++RWEAG_rer*EAG_pex*EAAEAG_im
 +RWUS_rer*US_pex*EAAUS_im
 )
 +EAB_size/RW_size*EABRW_im/RW_ex*RWUS_rer*US_pex*EABUS_im/(RWEAB_rer*EAB_py*EAB_y
@@ -13659,6 +17979,7 @@ RWUS_weightex = US_size/RW_size*USRW_im/RW_ex*RWUS_rer*US_py*US_y/(RWUS_rer*US_p
 +RWEAD_rer*EAD_pex*EABEAD_im
 +RWEAE_rer*EAE_pex*EABEAE_im
 +RWEAF_rer*EAF_pex*EABEAF_im
++RWEAG_rer*EAG_pex*EABEAG_im
 +RWUS_rer*US_pex*EABUS_im
 )
 +EAC_size/RW_size*EACRW_im/RW_ex*RWUS_rer*US_pex*EACUS_im/(RWEAC_rer*EAC_py*EAC_y
@@ -13667,6 +17988,7 @@ RWUS_weightex = US_size/RW_size*USRW_im/RW_ex*RWUS_rer*US_py*US_y/(RWUS_rer*US_p
 +RWEAD_rer*EAD_pex*EACEAD_im
 +RWEAE_rer*EAE_pex*EACEAE_im
 +RWEAF_rer*EAF_pex*EACEAF_im
++RWEAG_rer*EAG_pex*EACEAG_im
 +RWUS_rer*US_pex*EACUS_im
 )
 +EAD_size/RW_size*EADRW_im/RW_ex*RWUS_rer*US_pex*EADUS_im/(RWEAD_rer*EAD_py*EAD_y
@@ -13675,6 +17997,7 @@ RWUS_weightex = US_size/RW_size*USRW_im/RW_ex*RWUS_rer*US_py*US_y/(RWUS_rer*US_p
 +RWEAC_rer*EAC_pex*EADEAC_im
 +RWEAE_rer*EAE_pex*EADEAE_im
 +RWEAF_rer*EAF_pex*EADEAF_im
++RWEAG_rer*EAG_pex*EADEAG_im
 +RWUS_rer*US_pex*EADUS_im
 )
 +EAE_size/RW_size*EAERW_im/RW_ex*RWUS_rer*US_pex*EAEUS_im/(RWEAE_rer*EAE_py*EAE_y
@@ -13683,6 +18006,7 @@ RWUS_weightex = US_size/RW_size*USRW_im/RW_ex*RWUS_rer*US_py*US_y/(RWUS_rer*US_p
 +RWEAC_rer*EAC_pex*EAEEAC_im
 +RWEAD_rer*EAD_pex*EAEEAD_im
 +RWEAF_rer*EAF_pex*EAEEAF_im
++RWEAG_rer*EAG_pex*EAEEAG_im
 +RWUS_rer*US_pex*EAEUS_im
 )
 +EAF_size/RW_size*EAFRW_im/RW_ex*RWUS_rer*US_pex*EAFUS_im/(RWEAF_rer*EAF_py*EAF_y
@@ -13691,7 +18015,17 @@ RWUS_weightex = US_size/RW_size*USRW_im/RW_ex*RWUS_rer*US_py*US_y/(RWUS_rer*US_p
 +RWEAC_rer*EAC_pex*EAFEAC_im
 +RWEAD_rer*EAD_pex*EAFEAD_im
 +RWEAE_rer*EAE_pex*EAFEAE_im
++RWEAG_rer*EAG_pex*EAFEAG_im
 +RWUS_rer*US_pex*EAFUS_im
+)
++EAG_size/RW_size*EAGRW_im/RW_ex*RWUS_rer*US_pex*EAGUS_im/(RWEAG_rer*EAG_py*EAG_y
++RWEAA_rer*EAA_pex*EAGEAA_im
++RWEAB_rer*EAB_pex*EAGEAB_im
++RWEAC_rer*EAC_pex*EAGEAC_im
++RWEAD_rer*EAD_pex*EAGEAD_im
++RWEAE_rer*EAE_pex*EAGEAE_im
++RWEAF_rer*EAF_pex*EAGEAF_im
++RWUS_rer*US_pex*EAGUS_im
 )
 ;
 // Effective real exchange rate: double weighting (overall)
@@ -13704,6 +18038,7 @@ RW_reer = 1
 *RWEAD_rer^RWEAD_weight
 *RWEAE_rer^RWEAE_weight
 *RWEAF_rer^RWEAF_weight
+*RWEAG_rer^RWEAG_weight
 *RWUS_rer^RWUS_weight
 ;
 // Effective terms of trade
@@ -13714,6 +18049,7 @@ RW_etot = 1
 *RWEAD_tot^RWEAD_weight
 *RWEAE_tot^RWEAE_weight
 *RWEAF_tot^RWEAF_weight
+*RWEAG_tot^RWEAG_weight
 *RWUS_tot^RWUS_weight
 ;
 //-----------------
@@ -13725,16 +18061,18 @@ RW_imc^((RW_mumc-1)/RW_mumc) =
 +RWEAB_numc ^(1/RW_mumc)*RWEAB_imc^(1-1/RW_mumc)
 +RWEAC_numc ^(1/RW_mumc)*RWEAC_imc^(1-1/RW_mumc)
 +RWEAD_numc ^(1/RW_mumc)*RWEAD_imc^(1-1/RW_mumc)
-+RWEAF_numc ^(1/RW_mumc)*RWEAF_imc^(1-1/RW_mumc)
++RWEAE_numc ^(1/RW_mumc)*RWEAE_imc^(1-1/RW_mumc)
++RWEAG_numc ^(1/RW_mumc)*RWEAG_imc^(1-1/RW_mumc)
 +RWUS_numc ^(1/RW_mumc)*RWUS_imc^(1-1/RW_mumc)
 +(1
 -RWEAA_numc
 -RWEAB_numc
 -RWEAC_numc
 -RWEAD_numc
--RWEAF_numc
+-RWEAE_numc
+-RWEAG_numc
 -RWUS_numc
-)^(1/RW_mumc)*RWEAE_imc^(1-1/RW_mumc);
+)^(1/RW_mumc)*RWEAF_imc^(1-1/RW_mumc);
 // Demand for bilateral consumption import goods
 RWEAA_imc = RWEAA_numc*((EAA_pex*RWEAA_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
 // Demand for bilateral consumption import goods
@@ -13744,31 +18082,36 @@ RWEAC_imc = RWEAC_numc*((EAC_pex*RWEAC_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
 // Demand for bilateral consumption import goods
 RWEAD_imc = RWEAD_numc*((EAD_pex*RWEAD_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
 // Demand for bilateral consumption import goods
-RWEAF_imc = RWEAF_numc*((EAF_pex*RWEAF_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
-RWEAE_imc = (1
+RWEAE_imc = RWEAE_numc*((EAE_pex*RWEAE_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+// Demand for bilateral consumption import goods
+RWEAG_imc = RWEAG_numc*((EAG_pex*RWEAG_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+RWEAF_imc = (1
 -RWEAA_numc
 -RWEAB_numc
 -RWEAC_numc
 -RWEAD_numc
--RWEAF_numc
+-RWEAE_numc
+-RWEAG_numc
 -RWUS_numc
-)*((EAE_pex*RWEAE_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+)*((EAF_pex*RWEAF_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
 // Price of the consumption good (import)
 RW_pimc^(1-RW_mumc) =
 +RWEAA_numc * (EAA_pex*RWEAA_rer)^(1-RW_mumc)
 +RWEAB_numc * (EAB_pex*RWEAB_rer)^(1-RW_mumc)
 +RWEAC_numc * (EAC_pex*RWEAC_rer)^(1-RW_mumc)
 +RWEAD_numc * (EAD_pex*RWEAD_rer)^(1-RW_mumc)
-+RWEAF_numc * (EAF_pex*RWEAF_rer)^(1-RW_mumc)
++RWEAE_numc * (EAE_pex*RWEAE_rer)^(1-RW_mumc)
++RWEAG_numc * (EAG_pex*RWEAG_rer)^(1-RW_mumc)
 +RWUS_numc * (US_pex*RWUS_rer)^(1-RW_mumc)
 +(1
 -RWEAA_numc
 -RWEAB_numc
 -RWEAC_numc
 -RWEAD_numc
--RWEAF_numc
+-RWEAE_numc
+-RWEAG_numc
 -RWUS_numc
-)*(EAE_pex*RWEAE_rer)^(1-RW_mumc);
+)*(EAF_pex*RWEAF_rer)^(1-RW_mumc);
 // Private consumption good (import) inflation
 RW_piimc = RW_pimc/RW_pimc(-1)*RW_pic;
 // Private consumption good (import)
@@ -13777,16 +18120,18 @@ RW_imi^((RW_mumi-1)/RW_mumi) =
 +RWEAB_numi ^(1/RW_mumi)*RWEAB_imi^(1-1/RW_mumi)
 +RWEAC_numi ^(1/RW_mumi)*RWEAC_imi^(1-1/RW_mumi)
 +RWEAD_numi ^(1/RW_mumi)*RWEAD_imi^(1-1/RW_mumi)
-+RWEAF_numi ^(1/RW_mumi)*RWEAF_imi^(1-1/RW_mumi)
++RWEAE_numi ^(1/RW_mumi)*RWEAE_imi^(1-1/RW_mumi)
++RWEAG_numi ^(1/RW_mumi)*RWEAG_imi^(1-1/RW_mumi)
 +RWUS_numi ^(1/RW_mumi)*RWUS_imi^(1-1/RW_mumi)
 +(1
 -RWEAA_numi
 -RWEAB_numi
 -RWEAC_numi
 -RWEAD_numi
--RWEAF_numi
+-RWEAE_numi
+-RWEAG_numi
 -RWUS_numi
-)^(1/RW_mumi)*RWEAE_imi^(1-1/RW_mumi);
+)^(1/RW_mumi)*RWEAF_imi^(1-1/RW_mumi);
 // Demand for bilateral consumption import goods
 RWEAA_imi = RWEAA_numi*((EAA_pex*RWEAA_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
 // Demand for bilateral consumption import goods
@@ -13796,31 +18141,36 @@ RWEAC_imi = RWEAC_numi*((EAC_pex*RWEAC_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
 // Demand for bilateral consumption import goods
 RWEAD_imi = RWEAD_numi*((EAD_pex*RWEAD_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
 // Demand for bilateral consumption import goods
-RWEAF_imi = RWEAF_numi*((EAF_pex*RWEAF_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
-RWEAE_imi = (1
+RWEAE_imi = RWEAE_numi*((EAE_pex*RWEAE_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+// Demand for bilateral consumption import goods
+RWEAG_imi = RWEAG_numi*((EAG_pex*RWEAG_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+RWEAF_imi = (1
 -RWEAA_numi
 -RWEAB_numi
 -RWEAC_numi
 -RWEAD_numi
--RWEAF_numi
+-RWEAE_numi
+-RWEAG_numi
 -RWUS_numi
-)*((EAE_pex*RWEAE_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+)*((EAF_pex*RWEAF_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
 // Price of the consumption good (import)
 RW_pimi^(1-RW_mumi) =
 +RWEAA_numi * (EAA_pex*RWEAA_rer)^(1-RW_mumi)
 +RWEAB_numi * (EAB_pex*RWEAB_rer)^(1-RW_mumi)
 +RWEAC_numi * (EAC_pex*RWEAC_rer)^(1-RW_mumi)
 +RWEAD_numi * (EAD_pex*RWEAD_rer)^(1-RW_mumi)
-+RWEAF_numi * (EAF_pex*RWEAF_rer)^(1-RW_mumi)
++RWEAE_numi * (EAE_pex*RWEAE_rer)^(1-RW_mumi)
++RWEAG_numi * (EAG_pex*RWEAG_rer)^(1-RW_mumi)
 +RWUS_numi * (US_pex*RWUS_rer)^(1-RW_mumi)
 +(1
 -RWEAA_numi
 -RWEAB_numi
 -RWEAC_numi
 -RWEAD_numi
--RWEAF_numi
+-RWEAE_numi
+-RWEAG_numi
 -RWUS_numi
-)*(EAE_pex*RWEAE_rer)^(1-RW_mumi);
+)*(EAF_pex*RWEAF_rer)^(1-RW_mumi);
 // Private consumption good (import) inflation
 RW_piimi = RW_pimi/RW_pimi(-1)*RW_pic;
 // Private consumption good (import)
@@ -13829,16 +18179,18 @@ RW_imcg^((RW_mumcg-1)/RW_mumcg) =
 +RWEAB_numcg ^(1/RW_mumcg)*RWEAB_imcg^(1-1/RW_mumcg)
 +RWEAC_numcg ^(1/RW_mumcg)*RWEAC_imcg^(1-1/RW_mumcg)
 +RWEAD_numcg ^(1/RW_mumcg)*RWEAD_imcg^(1-1/RW_mumcg)
-+RWEAF_numcg ^(1/RW_mumcg)*RWEAF_imcg^(1-1/RW_mumcg)
++RWEAE_numcg ^(1/RW_mumcg)*RWEAE_imcg^(1-1/RW_mumcg)
++RWEAG_numcg ^(1/RW_mumcg)*RWEAG_imcg^(1-1/RW_mumcg)
 +RWUS_numcg ^(1/RW_mumcg)*RWUS_imcg^(1-1/RW_mumcg)
 +(1
 -RWEAA_numcg
 -RWEAB_numcg
 -RWEAC_numcg
 -RWEAD_numcg
--RWEAF_numcg
+-RWEAE_numcg
+-RWEAG_numcg
 -RWUS_numcg
-)^(1/RW_mumcg)*RWEAE_imcg^(1-1/RW_mumcg);
+)^(1/RW_mumcg)*RWEAF_imcg^(1-1/RW_mumcg);
 // Demand for bilateral consumption import goods
 RWEAA_imcg = RWEAA_numcg*((EAA_pex*RWEAA_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
 // Demand for bilateral consumption import goods
@@ -13848,31 +18200,36 @@ RWEAC_imcg = RWEAC_numcg*((EAC_pex*RWEAC_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
 // Demand for bilateral consumption import goods
 RWEAD_imcg = RWEAD_numcg*((EAD_pex*RWEAD_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
 // Demand for bilateral consumption import goods
-RWEAF_imcg = RWEAF_numcg*((EAF_pex*RWEAF_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
-RWEAE_imcg = (1
+RWEAE_imcg = RWEAE_numcg*((EAE_pex*RWEAE_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+// Demand for bilateral consumption import goods
+RWEAG_imcg = RWEAG_numcg*((EAG_pex*RWEAG_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+RWEAF_imcg = (1
 -RWEAA_numcg
 -RWEAB_numcg
 -RWEAC_numcg
 -RWEAD_numcg
--RWEAF_numcg
+-RWEAE_numcg
+-RWEAG_numcg
 -RWUS_numcg
-)*((EAE_pex*RWEAE_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+)*((EAF_pex*RWEAF_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
 // Price of the consumption good (import)
 RW_pimcg^(1-RW_mumcg) =
 +RWEAA_numcg * (EAA_pex*RWEAA_rer)^(1-RW_mumcg)
 +RWEAB_numcg * (EAB_pex*RWEAB_rer)^(1-RW_mumcg)
 +RWEAC_numcg * (EAC_pex*RWEAC_rer)^(1-RW_mumcg)
 +RWEAD_numcg * (EAD_pex*RWEAD_rer)^(1-RW_mumcg)
-+RWEAF_numcg * (EAF_pex*RWEAF_rer)^(1-RW_mumcg)
++RWEAE_numcg * (EAE_pex*RWEAE_rer)^(1-RW_mumcg)
++RWEAG_numcg * (EAG_pex*RWEAG_rer)^(1-RW_mumcg)
 +RWUS_numcg * (US_pex*RWUS_rer)^(1-RW_mumcg)
 +(1
 -RWEAA_numcg
 -RWEAB_numcg
 -RWEAC_numcg
 -RWEAD_numcg
--RWEAF_numcg
+-RWEAE_numcg
+-RWEAG_numcg
 -RWUS_numcg
-)*(EAE_pex*RWEAE_rer)^(1-RW_mumcg);
+)*(EAF_pex*RWEAF_rer)^(1-RW_mumcg);
 // Private consumption good (import) inflation
 RW_piimcg = RW_pimcg/RW_pimcg(-1)*RW_pic;
 // Private consumption good (import)
@@ -13881,16 +18238,18 @@ RW_imig^((RW_mumig-1)/RW_mumig) =
 +RWEAB_numig ^(1/RW_mumig)*RWEAB_imig^(1-1/RW_mumig)
 +RWEAC_numig ^(1/RW_mumig)*RWEAC_imig^(1-1/RW_mumig)
 +RWEAD_numig ^(1/RW_mumig)*RWEAD_imig^(1-1/RW_mumig)
-+RWEAF_numig ^(1/RW_mumig)*RWEAF_imig^(1-1/RW_mumig)
++RWEAE_numig ^(1/RW_mumig)*RWEAE_imig^(1-1/RW_mumig)
++RWEAG_numig ^(1/RW_mumig)*RWEAG_imig^(1-1/RW_mumig)
 +RWUS_numig ^(1/RW_mumig)*RWUS_imig^(1-1/RW_mumig)
 +(1
 -RWEAA_numig
 -RWEAB_numig
 -RWEAC_numig
 -RWEAD_numig
--RWEAF_numig
+-RWEAE_numig
+-RWEAG_numig
 -RWUS_numig
-)^(1/RW_mumig)*RWEAE_imig^(1-1/RW_mumig);
+)^(1/RW_mumig)*RWEAF_imig^(1-1/RW_mumig);
 // Demand for bilateral consumption import goods
 RWEAA_imig = RWEAA_numig*((EAA_pex*RWEAA_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
 // Demand for bilateral consumption import goods
@@ -13900,31 +18259,36 @@ RWEAC_imig = RWEAC_numig*((EAC_pex*RWEAC_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
 // Demand for bilateral consumption import goods
 RWEAD_imig = RWEAD_numig*((EAD_pex*RWEAD_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
 // Demand for bilateral consumption import goods
-RWEAF_imig = RWEAF_numig*((EAF_pex*RWEAF_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
-RWEAE_imig = (1
+RWEAE_imig = RWEAE_numig*((EAE_pex*RWEAE_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+// Demand for bilateral consumption import goods
+RWEAG_imig = RWEAG_numig*((EAG_pex*RWEAG_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+RWEAF_imig = (1
 -RWEAA_numig
 -RWEAB_numig
 -RWEAC_numig
 -RWEAD_numig
--RWEAF_numig
+-RWEAE_numig
+-RWEAG_numig
 -RWUS_numig
-)*((EAE_pex*RWEAE_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+)*((EAF_pex*RWEAF_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
 // Price of the consumption good (import)
 RW_pimig^(1-RW_mumig) =
 +RWEAA_numig * (EAA_pex*RWEAA_rer)^(1-RW_mumig)
 +RWEAB_numig * (EAB_pex*RWEAB_rer)^(1-RW_mumig)
 +RWEAC_numig * (EAC_pex*RWEAC_rer)^(1-RW_mumig)
 +RWEAD_numig * (EAD_pex*RWEAD_rer)^(1-RW_mumig)
-+RWEAF_numig * (EAF_pex*RWEAF_rer)^(1-RW_mumig)
++RWEAE_numig * (EAE_pex*RWEAE_rer)^(1-RW_mumig)
++RWEAG_numig * (EAG_pex*RWEAG_rer)^(1-RW_mumig)
 +RWUS_numig * (US_pex*RWUS_rer)^(1-RW_mumig)
 +(1
 -RWEAA_numig
 -RWEAB_numig
 -RWEAC_numig
 -RWEAD_numig
--RWEAF_numig
+-RWEAE_numig
+-RWEAG_numig
 -RWUS_numig
-)*(EAE_pex*RWEAE_rer)^(1-RW_mumig);
+)*(EAF_pex*RWEAF_rer)^(1-RW_mumig);
 // Private consumption good (import) inflation
 RW_piimig = RW_pimig/RW_pimig(-1)*RW_pic;
 // Private consumption good (import) inflation
@@ -13970,6 +18334,12 @@ RWEAF_im =
 +RWEAF_imcg
 +RWEAF_imig
 ;
+RWEAG_im = 
++RWEAG_imc
++RWEAG_imi
++RWEAG_imcg
++RWEAG_imig
+;
 RWUS_im = 
 +RWUS_imc
 +RWUS_imi
@@ -14001,6 +18371,8 @@ RWEAE_gammaimc = 0;
 RWEAE_gammaimcdag = 1;
 RWEAF_gammaimc = 0;
 RWEAF_gammaimcdag = 1;
+RWEAG_gammaimc = 0;
+RWEAG_gammaimcdag = 1;
 RWUS_gammaimc = 0;
 RWUS_gammaimcdag = 1;
 // Private consumption good (tradable)
@@ -14030,6 +18402,8 @@ RWEAE_gammaimi = 0;
 RWEAE_gammaimidag = 1;
 RWEAF_gammaimi = 0;
 RWEAF_gammaimidag = 1;
+RWEAG_gammaimi = 0;
+RWEAG_gammaimidag = 1;
 RWUS_gammaimi = 0;
 RWUS_gammaimidag = 1;
 // Private consumption good (tradable)
@@ -14056,6 +18430,8 @@ RWEAE_gammaimcg = 0;
 RWEAE_gammaimcgdag = 1;
 RWEAF_gammaimcg = 0;
 RWEAF_gammaimcgdag = 1;
+RWEAG_gammaimcg = 0;
+RWEAG_gammaimcgdag = 1;
 RWUS_gammaimcg = 0;
 RWUS_gammaimcgdag = 1;
 // Private consumption good (tradable)
@@ -14082,6 +18458,8 @@ RWEAE_gammaimig = 0;
 RWEAE_gammaimigdag = 1;
 RWEAF_gammaimig = 0;
 RWEAF_gammaimigdag = 1;
+RWEAG_gammaimig = 0;
+RWEAG_gammaimigdag = 1;
 RWUS_gammaimig = 0;
 RWUS_gammaimigdag = 1;
 // Trade balance
@@ -14098,6 +18476,8 @@ RW_tb =
 -EAE_pex*RWEAE_rer*RWEAE_im
 +RW_pex*EAF_size/RW_size*EAFRW_im
 -EAF_pex*RWEAF_rer*RWEAF_im
++RW_pex*EAG_size/RW_size*EAGRW_im
+-EAG_pex*RWEAG_rer*RWEAG_im
 +RW_pex*US_size/RW_size*USRW_im
 -US_pex*RWUS_rer*RWUS_im
 ;
@@ -14109,6 +18489,7 @@ RW_ex =
 +EAD_size/RW_size*EADRW_im
 +EAE_size/RW_size*EAERW_im
 +EAF_size/RW_size*EAFRW_im
++EAG_size/RW_size*EAGRW_im
 +US_size/RW_size*USRW_im
 ;
 //-------------
@@ -14271,6 +18652,11 @@ RW_py*RW_y =
 -(EAF_pex*RWEAF_rer)*RWEAF_imi
 -(EAF_pex*RWEAF_rer)*RWEAF_imcg
 -(EAF_pex*RWEAF_rer)*RWEAF_imig
++RW_pex*EAG_size/RW_size*EAGRW_im
+-(EAG_pex*RWEAG_rer)*RWEAG_imc
+-(EAG_pex*RWEAG_rer)*RWEAG_imi
+-(EAG_pex*RWEAG_rer)*RWEAG_imcg
+-(EAG_pex*RWEAG_rer)*RWEAG_imig
 +RW_pex*US_size/RW_size*USRW_im
 -(US_pex*RWUS_rer)*RWUS_imc
 -(US_pex*RWUS_rer)*RWUS_imi
@@ -14361,6 +18747,7 @@ RW_yshare  = RW_size*RW_py*RW_y/RW_rer/(
 +EAD_size*EAD_py*EAD_y/EAD_rer
 +EAE_size*EAE_py*EAE_y/EAE_rer
 +EAF_size*EAF_py*EAF_y/EAF_rer
++EAG_size*EAG_py*EAG_y/EAG_rer
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
@@ -14422,6 +18809,15 @@ RWEAF_imigy = (EAF_pex*RWEAF_rer)*RWEAF_imig/(RW_py*RW_y);
 RWEAF_excy  = EAF_size/RW_size*RW_pex*EAFRW_imc/(RW_py*RW_y);
 // Exports of investment goods to gdp
 RWEAF_exiy  = EAF_size/RW_size*RW_pex*EAFRW_imi/(RW_py*RW_y);
+// Bilateral shares
+RWEAG_imcy = (EAG_pex*RWEAG_rer)*RWEAG_imc/(RW_py*RW_y);
+RWEAG_imiy = (EAG_pex*RWEAG_rer)*RWEAG_imi/(RW_py*RW_y);
+RWEAG_imcgy = (EAG_pex*RWEAG_rer)*RWEAG_imcg/(RW_py*RW_y);
+RWEAG_imigy = (EAG_pex*RWEAG_rer)*RWEAG_imig/(RW_py*RW_y);
+// Exports of consumption goods to gdp
+RWEAG_excy  = EAG_size/RW_size*RW_pex*EAGRW_imc/(RW_py*RW_y);
+// Exports of investment goods to gdp
+RWEAG_exiy  = EAG_size/RW_size*RW_pex*EAGRW_imi/(RW_py*RW_y);
 // Bilateral shares
 RWUS_imcy = (US_pex*RWUS_rer)*RWUS_imc/(RW_py*RW_y);
 RWUS_imiy = (US_pex*RWUS_rer)*RWUS_imi/(RW_py*RW_y);
@@ -14691,6 +19087,22 @@ USEAF_rer = US_rer/EAF_rer;
 USEAF_rerbar = USEAF_rer;
 //Terms of Trade
 USEAF_tot = EAF_pex*USEAF_rer/US_pex;
+// Optimal price contract set in foreign markets (FOC), using US_pxtilde = EAG_pimtilde
+// EAGUS_pimtilde/EAGUS_pim = US_cpim*US_thetat/(US_thetat-1)*USEAG_fx/USEAG_gx;
+// Definition of fx
+// USEAG_fx = EAG_size/US_size*EAGUS_im*US_mct+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EAGUS_piim(+1)/(EAGUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^US_thetat*USEAG_fx(+1);
+// Definition of gx   
+// USEAG_gx = USEAG_rer*EAGUS_pim*EAG_size/US_size*EAGUS_im+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EAGUS_piim(+1)/(EAGUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^(US_thetat-1)*USEAG_gx(+1);
+// Aggregate intermediate-good price dynamics, using US_px = EAG_pim
+// EAGUS_pim^(1-US_thetat) = (1-US_xix)*EAGUS_pimtilde^(1-US_thetat)+US_xix*(EAGUS_pim(-1)/EAG_pic)^(1-US_thetat)*(EAGUS_piim(-1)^US_chix*EAG_pi4target^(1/4*(1-US_chih)))^(1-US_thetat);
+// Intermediate-good price inflation, using US_pix = EAG_piim
+// EAGUS_piim = EAGUS_pim/EAGUS_pim(-1)*EAG_pic;
+// Bilateral real exchange rate
+USEAG_rer = US_rer/EAG_rer;
+// Auxiliary equation for steady-state output
+USEAG_rerbar = USEAG_rer;
+//Terms of Trade
+USEAG_tot = EAG_pex*USEAG_rer/US_pex;
 // Optimal price contract set in foreign markets (FOC), using US_pxtilde = RW_pimtilde
 // RWUS_pimtilde/RWUS_pim = US_cpim*US_thetat/(US_thetat-1)*USRW_fx/USRW_gx;
 // Definition of fx
@@ -14730,6 +19142,7 @@ USEAA_weightex = EAA_size/US_size*EAAUS_im/US_ex*USEAA_rer*EAA_py*EAA_y/(USEAA_r
 +USEAD_rer*EAD_pex*EAAEAD_im
 +USEAE_rer*EAE_pex*EAAEAE_im
 +USEAF_rer*EAF_pex*EAAEAF_im
++USEAG_rer*EAG_pex*EAAEAG_im
 +USRW_rer*RW_pex*EAARW_im
 )+
 +EAB_size/US_size*EABUS_im/US_ex*USEAA_rer*EAA_pex*EABEAA_im/(USEAB_rer*EAB_py*EAB_y
@@ -14738,6 +19151,7 @@ USEAA_weightex = EAA_size/US_size*EAAUS_im/US_ex*USEAA_rer*EAA_py*EAA_y/(USEAA_r
 +USEAD_rer*EAD_pex*EABEAD_im
 +USEAE_rer*EAE_pex*EABEAE_im
 +USEAF_rer*EAF_pex*EABEAF_im
++USEAG_rer*EAG_pex*EABEAG_im
 +USRW_rer*RW_pex*EABRW_im
 )
 +EAC_size/US_size*EACUS_im/US_ex*USEAA_rer*EAA_pex*EACEAA_im/(USEAC_rer*EAC_py*EAC_y
@@ -14746,6 +19160,7 @@ USEAA_weightex = EAA_size/US_size*EAAUS_im/US_ex*USEAA_rer*EAA_py*EAA_y/(USEAA_r
 +USEAD_rer*EAD_pex*EACEAD_im
 +USEAE_rer*EAE_pex*EACEAE_im
 +USEAF_rer*EAF_pex*EACEAF_im
++USEAG_rer*EAG_pex*EACEAG_im
 +USRW_rer*RW_pex*EACRW_im
 )
 +EAD_size/US_size*EADUS_im/US_ex*USEAA_rer*EAA_pex*EADEAA_im/(USEAD_rer*EAD_py*EAD_y
@@ -14754,6 +19169,7 @@ USEAA_weightex = EAA_size/US_size*EAAUS_im/US_ex*USEAA_rer*EAA_py*EAA_y/(USEAA_r
 +USEAC_rer*EAC_pex*EADEAC_im
 +USEAE_rer*EAE_pex*EADEAE_im
 +USEAF_rer*EAF_pex*EADEAF_im
++USEAG_rer*EAG_pex*EADEAG_im
 +USRW_rer*RW_pex*EADRW_im
 )
 +EAE_size/US_size*EAEUS_im/US_ex*USEAA_rer*EAA_pex*EAEEAA_im/(USEAE_rer*EAE_py*EAE_y
@@ -14762,6 +19178,7 @@ USEAA_weightex = EAA_size/US_size*EAAUS_im/US_ex*USEAA_rer*EAA_py*EAA_y/(USEAA_r
 +USEAC_rer*EAC_pex*EAEEAC_im
 +USEAD_rer*EAD_pex*EAEEAD_im
 +USEAF_rer*EAF_pex*EAEEAF_im
++USEAG_rer*EAG_pex*EAEEAG_im
 +USRW_rer*RW_pex*EAERW_im
 )
 +EAF_size/US_size*EAFUS_im/US_ex*USEAA_rer*EAA_pex*EAFEAA_im/(USEAF_rer*EAF_py*EAF_y
@@ -14770,7 +19187,17 @@ USEAA_weightex = EAA_size/US_size*EAAUS_im/US_ex*USEAA_rer*EAA_py*EAA_y/(USEAA_r
 +USEAC_rer*EAC_pex*EAFEAC_im
 +USEAD_rer*EAD_pex*EAFEAD_im
 +USEAE_rer*EAE_pex*EAFEAE_im
++USEAG_rer*EAG_pex*EAFEAG_im
 +USRW_rer*RW_pex*EAFRW_im
+)
++EAG_size/US_size*EAGUS_im/US_ex*USEAA_rer*EAA_pex*EAGEAA_im/(USEAG_rer*EAG_py*EAG_y
++USEAA_rer*EAA_pex*EAGEAA_im
++USEAB_rer*EAB_pex*EAGEAB_im
++USEAC_rer*EAC_pex*EAGEAC_im
++USEAD_rer*EAD_pex*EAGEAD_im
++USEAE_rer*EAE_pex*EAGEAE_im
++USEAF_rer*EAF_pex*EAGEAF_im
++USRW_rer*RW_pex*EAGRW_im
 )
 +RW_size/US_size*RWUS_im/US_ex*USEAA_rer*EAA_pex*RWEAA_im/(USRW_rer*RW_py*RW_y
 +USEAA_rer*EAA_pex*RWEAA_im
@@ -14779,6 +19206,7 @@ USEAA_weightex = EAA_size/US_size*EAAUS_im/US_ex*USEAA_rer*EAA_py*EAA_y/(USEAA_r
 +USEAD_rer*EAD_pex*RWEAD_im
 +USEAE_rer*EAE_pex*RWEAE_im
 +USEAF_rer*EAF_pex*RWEAF_im
++USEAG_rer*EAG_pex*RWEAG_im
 )
 ;
 // Effective real exchange rate: double weighting (overall)
@@ -14792,6 +19220,7 @@ USEAB_weightex = EAB_size/US_size*EABUS_im/US_ex*USEAB_rer*EAB_py*EAB_y/(USEAB_r
 +USEAD_rer*EAD_pex*EABEAD_im
 +USEAE_rer*EAE_pex*EABEAE_im
 +USEAF_rer*EAF_pex*EABEAF_im
++USEAG_rer*EAG_pex*EABEAG_im
 +USRW_rer*RW_pex*EABRW_im
 )+
 +EAA_size/US_size*EAAUS_im/US_ex*USEAB_rer*EAB_pex*EAAEAB_im/(USEAA_rer*EAA_py*EAA_y
@@ -14800,6 +19229,7 @@ USEAB_weightex = EAB_size/US_size*EABUS_im/US_ex*USEAB_rer*EAB_py*EAB_y/(USEAB_r
 +USEAD_rer*EAD_pex*EAAEAD_im
 +USEAE_rer*EAE_pex*EAAEAE_im
 +USEAF_rer*EAF_pex*EAAEAF_im
++USEAG_rer*EAG_pex*EAAEAG_im
 +USRW_rer*RW_pex*EAARW_im
 )
 +EAC_size/US_size*EACUS_im/US_ex*USEAB_rer*EAB_pex*EACEAB_im/(USEAC_rer*EAC_py*EAC_y
@@ -14808,6 +19238,7 @@ USEAB_weightex = EAB_size/US_size*EABUS_im/US_ex*USEAB_rer*EAB_py*EAB_y/(USEAB_r
 +USEAD_rer*EAD_pex*EACEAD_im
 +USEAE_rer*EAE_pex*EACEAE_im
 +USEAF_rer*EAF_pex*EACEAF_im
++USEAG_rer*EAG_pex*EACEAG_im
 +USRW_rer*RW_pex*EACRW_im
 )
 +EAD_size/US_size*EADUS_im/US_ex*USEAB_rer*EAB_pex*EADEAB_im/(USEAD_rer*EAD_py*EAD_y
@@ -14816,6 +19247,7 @@ USEAB_weightex = EAB_size/US_size*EABUS_im/US_ex*USEAB_rer*EAB_py*EAB_y/(USEAB_r
 +USEAC_rer*EAC_pex*EADEAC_im
 +USEAE_rer*EAE_pex*EADEAE_im
 +USEAF_rer*EAF_pex*EADEAF_im
++USEAG_rer*EAG_pex*EADEAG_im
 +USRW_rer*RW_pex*EADRW_im
 )
 +EAE_size/US_size*EAEUS_im/US_ex*USEAB_rer*EAB_pex*EAEEAB_im/(USEAE_rer*EAE_py*EAE_y
@@ -14824,6 +19256,7 @@ USEAB_weightex = EAB_size/US_size*EABUS_im/US_ex*USEAB_rer*EAB_py*EAB_y/(USEAB_r
 +USEAC_rer*EAC_pex*EAEEAC_im
 +USEAD_rer*EAD_pex*EAEEAD_im
 +USEAF_rer*EAF_pex*EAEEAF_im
++USEAG_rer*EAG_pex*EAEEAG_im
 +USRW_rer*RW_pex*EAERW_im
 )
 +EAF_size/US_size*EAFUS_im/US_ex*USEAB_rer*EAB_pex*EAFEAB_im/(USEAF_rer*EAF_py*EAF_y
@@ -14832,7 +19265,17 @@ USEAB_weightex = EAB_size/US_size*EABUS_im/US_ex*USEAB_rer*EAB_py*EAB_y/(USEAB_r
 +USEAC_rer*EAC_pex*EAFEAC_im
 +USEAD_rer*EAD_pex*EAFEAD_im
 +USEAE_rer*EAE_pex*EAFEAE_im
++USEAG_rer*EAG_pex*EAFEAG_im
 +USRW_rer*RW_pex*EAFRW_im
+)
++EAG_size/US_size*EAGUS_im/US_ex*USEAB_rer*EAB_pex*EAGEAB_im/(USEAG_rer*EAG_py*EAG_y
++USEAA_rer*EAA_pex*EAGEAA_im
++USEAB_rer*EAB_pex*EAGEAB_im
++USEAC_rer*EAC_pex*EAGEAC_im
++USEAD_rer*EAD_pex*EAGEAD_im
++USEAE_rer*EAE_pex*EAGEAE_im
++USEAF_rer*EAF_pex*EAGEAF_im
++USRW_rer*RW_pex*EAGRW_im
 )
 +RW_size/US_size*RWUS_im/US_ex*USEAB_rer*EAB_pex*RWEAB_im/(USRW_rer*RW_py*RW_y
 +USEAA_rer*EAA_pex*RWEAA_im
@@ -14841,6 +19284,7 @@ USEAB_weightex = EAB_size/US_size*EABUS_im/US_ex*USEAB_rer*EAB_py*EAB_y/(USEAB_r
 +USEAD_rer*EAD_pex*RWEAD_im
 +USEAE_rer*EAE_pex*RWEAE_im
 +USEAF_rer*EAF_pex*RWEAF_im
++USEAG_rer*EAG_pex*RWEAG_im
 )
 ;
 // Effective real exchange rate: double weighting (overall)
@@ -14854,6 +19298,7 @@ USEAC_weightex = EAC_size/US_size*EACUS_im/US_ex*USEAC_rer*EAC_py*EAC_y/(USEAC_r
 +USEAD_rer*EAD_pex*EACEAD_im
 +USEAE_rer*EAE_pex*EACEAE_im
 +USEAF_rer*EAF_pex*EACEAF_im
++USEAG_rer*EAG_pex*EACEAG_im
 +USRW_rer*RW_pex*EACRW_im
 )+
 +EAA_size/US_size*EAAUS_im/US_ex*USEAC_rer*EAC_pex*EAAEAC_im/(USEAA_rer*EAA_py*EAA_y
@@ -14862,6 +19307,7 @@ USEAC_weightex = EAC_size/US_size*EACUS_im/US_ex*USEAC_rer*EAC_py*EAC_y/(USEAC_r
 +USEAD_rer*EAD_pex*EAAEAD_im
 +USEAE_rer*EAE_pex*EAAEAE_im
 +USEAF_rer*EAF_pex*EAAEAF_im
++USEAG_rer*EAG_pex*EAAEAG_im
 +USRW_rer*RW_pex*EAARW_im
 )
 +EAB_size/US_size*EABUS_im/US_ex*USEAC_rer*EAC_pex*EABEAC_im/(USEAB_rer*EAB_py*EAB_y
@@ -14870,6 +19316,7 @@ USEAC_weightex = EAC_size/US_size*EACUS_im/US_ex*USEAC_rer*EAC_py*EAC_y/(USEAC_r
 +USEAD_rer*EAD_pex*EABEAD_im
 +USEAE_rer*EAE_pex*EABEAE_im
 +USEAF_rer*EAF_pex*EABEAF_im
++USEAG_rer*EAG_pex*EABEAG_im
 +USRW_rer*RW_pex*EABRW_im
 )
 +EAD_size/US_size*EADUS_im/US_ex*USEAC_rer*EAC_pex*EADEAC_im/(USEAD_rer*EAD_py*EAD_y
@@ -14878,6 +19325,7 @@ USEAC_weightex = EAC_size/US_size*EACUS_im/US_ex*USEAC_rer*EAC_py*EAC_y/(USEAC_r
 +USEAC_rer*EAC_pex*EADEAC_im
 +USEAE_rer*EAE_pex*EADEAE_im
 +USEAF_rer*EAF_pex*EADEAF_im
++USEAG_rer*EAG_pex*EADEAG_im
 +USRW_rer*RW_pex*EADRW_im
 )
 +EAE_size/US_size*EAEUS_im/US_ex*USEAC_rer*EAC_pex*EAEEAC_im/(USEAE_rer*EAE_py*EAE_y
@@ -14886,6 +19334,7 @@ USEAC_weightex = EAC_size/US_size*EACUS_im/US_ex*USEAC_rer*EAC_py*EAC_y/(USEAC_r
 +USEAC_rer*EAC_pex*EAEEAC_im
 +USEAD_rer*EAD_pex*EAEEAD_im
 +USEAF_rer*EAF_pex*EAEEAF_im
++USEAG_rer*EAG_pex*EAEEAG_im
 +USRW_rer*RW_pex*EAERW_im
 )
 +EAF_size/US_size*EAFUS_im/US_ex*USEAC_rer*EAC_pex*EAFEAC_im/(USEAF_rer*EAF_py*EAF_y
@@ -14894,7 +19343,17 @@ USEAC_weightex = EAC_size/US_size*EACUS_im/US_ex*USEAC_rer*EAC_py*EAC_y/(USEAC_r
 +USEAC_rer*EAC_pex*EAFEAC_im
 +USEAD_rer*EAD_pex*EAFEAD_im
 +USEAE_rer*EAE_pex*EAFEAE_im
++USEAG_rer*EAG_pex*EAFEAG_im
 +USRW_rer*RW_pex*EAFRW_im
+)
++EAG_size/US_size*EAGUS_im/US_ex*USEAC_rer*EAC_pex*EAGEAC_im/(USEAG_rer*EAG_py*EAG_y
++USEAA_rer*EAA_pex*EAGEAA_im
++USEAB_rer*EAB_pex*EAGEAB_im
++USEAC_rer*EAC_pex*EAGEAC_im
++USEAD_rer*EAD_pex*EAGEAD_im
++USEAE_rer*EAE_pex*EAGEAE_im
++USEAF_rer*EAF_pex*EAGEAF_im
++USRW_rer*RW_pex*EAGRW_im
 )
 +RW_size/US_size*RWUS_im/US_ex*USEAC_rer*EAC_pex*RWEAC_im/(USRW_rer*RW_py*RW_y
 +USEAA_rer*EAA_pex*RWEAA_im
@@ -14903,6 +19362,7 @@ USEAC_weightex = EAC_size/US_size*EACUS_im/US_ex*USEAC_rer*EAC_py*EAC_y/(USEAC_r
 +USEAD_rer*EAD_pex*RWEAD_im
 +USEAE_rer*EAE_pex*RWEAE_im
 +USEAF_rer*EAF_pex*RWEAF_im
++USEAG_rer*EAG_pex*RWEAG_im
 )
 ;
 // Effective real exchange rate: double weighting (overall)
@@ -14916,6 +19376,7 @@ USEAD_weightex = EAD_size/US_size*EADUS_im/US_ex*USEAD_rer*EAD_py*EAD_y/(USEAD_r
 +USEAC_rer*EAC_pex*EADEAC_im
 +USEAE_rer*EAE_pex*EADEAE_im
 +USEAF_rer*EAF_pex*EADEAF_im
++USEAG_rer*EAG_pex*EADEAG_im
 +USRW_rer*RW_pex*EADRW_im
 )+
 +EAA_size/US_size*EAAUS_im/US_ex*USEAD_rer*EAD_pex*EAAEAD_im/(USEAA_rer*EAA_py*EAA_y
@@ -14924,6 +19385,7 @@ USEAD_weightex = EAD_size/US_size*EADUS_im/US_ex*USEAD_rer*EAD_py*EAD_y/(USEAD_r
 +USEAD_rer*EAD_pex*EAAEAD_im
 +USEAE_rer*EAE_pex*EAAEAE_im
 +USEAF_rer*EAF_pex*EAAEAF_im
++USEAG_rer*EAG_pex*EAAEAG_im
 +USRW_rer*RW_pex*EAARW_im
 )
 +EAB_size/US_size*EABUS_im/US_ex*USEAD_rer*EAD_pex*EABEAD_im/(USEAB_rer*EAB_py*EAB_y
@@ -14932,6 +19394,7 @@ USEAD_weightex = EAD_size/US_size*EADUS_im/US_ex*USEAD_rer*EAD_py*EAD_y/(USEAD_r
 +USEAD_rer*EAD_pex*EABEAD_im
 +USEAE_rer*EAE_pex*EABEAE_im
 +USEAF_rer*EAF_pex*EABEAF_im
++USEAG_rer*EAG_pex*EABEAG_im
 +USRW_rer*RW_pex*EABRW_im
 )
 +EAC_size/US_size*EACUS_im/US_ex*USEAD_rer*EAD_pex*EACEAD_im/(USEAC_rer*EAC_py*EAC_y
@@ -14940,6 +19403,7 @@ USEAD_weightex = EAD_size/US_size*EADUS_im/US_ex*USEAD_rer*EAD_py*EAD_y/(USEAD_r
 +USEAD_rer*EAD_pex*EACEAD_im
 +USEAE_rer*EAE_pex*EACEAE_im
 +USEAF_rer*EAF_pex*EACEAF_im
++USEAG_rer*EAG_pex*EACEAG_im
 +USRW_rer*RW_pex*EACRW_im
 )
 +EAE_size/US_size*EAEUS_im/US_ex*USEAD_rer*EAD_pex*EAEEAD_im/(USEAE_rer*EAE_py*EAE_y
@@ -14948,6 +19412,7 @@ USEAD_weightex = EAD_size/US_size*EADUS_im/US_ex*USEAD_rer*EAD_py*EAD_y/(USEAD_r
 +USEAC_rer*EAC_pex*EAEEAC_im
 +USEAD_rer*EAD_pex*EAEEAD_im
 +USEAF_rer*EAF_pex*EAEEAF_im
++USEAG_rer*EAG_pex*EAEEAG_im
 +USRW_rer*RW_pex*EAERW_im
 )
 +EAF_size/US_size*EAFUS_im/US_ex*USEAD_rer*EAD_pex*EAFEAD_im/(USEAF_rer*EAF_py*EAF_y
@@ -14956,7 +19421,17 @@ USEAD_weightex = EAD_size/US_size*EADUS_im/US_ex*USEAD_rer*EAD_py*EAD_y/(USEAD_r
 +USEAC_rer*EAC_pex*EAFEAC_im
 +USEAD_rer*EAD_pex*EAFEAD_im
 +USEAE_rer*EAE_pex*EAFEAE_im
++USEAG_rer*EAG_pex*EAFEAG_im
 +USRW_rer*RW_pex*EAFRW_im
+)
++EAG_size/US_size*EAGUS_im/US_ex*USEAD_rer*EAD_pex*EAGEAD_im/(USEAG_rer*EAG_py*EAG_y
++USEAA_rer*EAA_pex*EAGEAA_im
++USEAB_rer*EAB_pex*EAGEAB_im
++USEAC_rer*EAC_pex*EAGEAC_im
++USEAD_rer*EAD_pex*EAGEAD_im
++USEAE_rer*EAE_pex*EAGEAE_im
++USEAF_rer*EAF_pex*EAGEAF_im
++USRW_rer*RW_pex*EAGRW_im
 )
 +RW_size/US_size*RWUS_im/US_ex*USEAD_rer*EAD_pex*RWEAD_im/(USRW_rer*RW_py*RW_y
 +USEAA_rer*EAA_pex*RWEAA_im
@@ -14965,6 +19440,7 @@ USEAD_weightex = EAD_size/US_size*EADUS_im/US_ex*USEAD_rer*EAD_py*EAD_y/(USEAD_r
 +USEAD_rer*EAD_pex*RWEAD_im
 +USEAE_rer*EAE_pex*RWEAE_im
 +USEAF_rer*EAF_pex*RWEAF_im
++USEAG_rer*EAG_pex*RWEAG_im
 )
 ;
 // Effective real exchange rate: double weighting (overall)
@@ -14978,6 +19454,7 @@ USEAE_weightex = EAE_size/US_size*EAEUS_im/US_ex*USEAE_rer*EAE_py*EAE_y/(USEAE_r
 +USEAC_rer*EAC_pex*EAEEAC_im
 +USEAD_rer*EAD_pex*EAEEAD_im
 +USEAF_rer*EAF_pex*EAEEAF_im
++USEAG_rer*EAG_pex*EAEEAG_im
 +USRW_rer*RW_pex*EAERW_im
 )+
 +EAA_size/US_size*EAAUS_im/US_ex*USEAE_rer*EAE_pex*EAAEAE_im/(USEAA_rer*EAA_py*EAA_y
@@ -14986,6 +19463,7 @@ USEAE_weightex = EAE_size/US_size*EAEUS_im/US_ex*USEAE_rer*EAE_py*EAE_y/(USEAE_r
 +USEAD_rer*EAD_pex*EAAEAD_im
 +USEAE_rer*EAE_pex*EAAEAE_im
 +USEAF_rer*EAF_pex*EAAEAF_im
++USEAG_rer*EAG_pex*EAAEAG_im
 +USRW_rer*RW_pex*EAARW_im
 )
 +EAB_size/US_size*EABUS_im/US_ex*USEAE_rer*EAE_pex*EABEAE_im/(USEAB_rer*EAB_py*EAB_y
@@ -14994,6 +19472,7 @@ USEAE_weightex = EAE_size/US_size*EAEUS_im/US_ex*USEAE_rer*EAE_py*EAE_y/(USEAE_r
 +USEAD_rer*EAD_pex*EABEAD_im
 +USEAE_rer*EAE_pex*EABEAE_im
 +USEAF_rer*EAF_pex*EABEAF_im
++USEAG_rer*EAG_pex*EABEAG_im
 +USRW_rer*RW_pex*EABRW_im
 )
 +EAC_size/US_size*EACUS_im/US_ex*USEAE_rer*EAE_pex*EACEAE_im/(USEAC_rer*EAC_py*EAC_y
@@ -15002,6 +19481,7 @@ USEAE_weightex = EAE_size/US_size*EAEUS_im/US_ex*USEAE_rer*EAE_py*EAE_y/(USEAE_r
 +USEAD_rer*EAD_pex*EACEAD_im
 +USEAE_rer*EAE_pex*EACEAE_im
 +USEAF_rer*EAF_pex*EACEAF_im
++USEAG_rer*EAG_pex*EACEAG_im
 +USRW_rer*RW_pex*EACRW_im
 )
 +EAD_size/US_size*EADUS_im/US_ex*USEAE_rer*EAE_pex*EADEAE_im/(USEAD_rer*EAD_py*EAD_y
@@ -15010,6 +19490,7 @@ USEAE_weightex = EAE_size/US_size*EAEUS_im/US_ex*USEAE_rer*EAE_py*EAE_y/(USEAE_r
 +USEAC_rer*EAC_pex*EADEAC_im
 +USEAE_rer*EAE_pex*EADEAE_im
 +USEAF_rer*EAF_pex*EADEAF_im
++USEAG_rer*EAG_pex*EADEAG_im
 +USRW_rer*RW_pex*EADRW_im
 )
 +EAF_size/US_size*EAFUS_im/US_ex*USEAE_rer*EAE_pex*EAFEAE_im/(USEAF_rer*EAF_py*EAF_y
@@ -15018,7 +19499,17 @@ USEAE_weightex = EAE_size/US_size*EAEUS_im/US_ex*USEAE_rer*EAE_py*EAE_y/(USEAE_r
 +USEAC_rer*EAC_pex*EAFEAC_im
 +USEAD_rer*EAD_pex*EAFEAD_im
 +USEAE_rer*EAE_pex*EAFEAE_im
++USEAG_rer*EAG_pex*EAFEAG_im
 +USRW_rer*RW_pex*EAFRW_im
+)
++EAG_size/US_size*EAGUS_im/US_ex*USEAE_rer*EAE_pex*EAGEAE_im/(USEAG_rer*EAG_py*EAG_y
++USEAA_rer*EAA_pex*EAGEAA_im
++USEAB_rer*EAB_pex*EAGEAB_im
++USEAC_rer*EAC_pex*EAGEAC_im
++USEAD_rer*EAD_pex*EAGEAD_im
++USEAE_rer*EAE_pex*EAGEAE_im
++USEAF_rer*EAF_pex*EAGEAF_im
++USRW_rer*RW_pex*EAGRW_im
 )
 +RW_size/US_size*RWUS_im/US_ex*USEAE_rer*EAE_pex*RWEAE_im/(USRW_rer*RW_py*RW_y
 +USEAA_rer*EAA_pex*RWEAA_im
@@ -15027,6 +19518,7 @@ USEAE_weightex = EAE_size/US_size*EAEUS_im/US_ex*USEAE_rer*EAE_py*EAE_y/(USEAE_r
 +USEAD_rer*EAD_pex*RWEAD_im
 +USEAE_rer*EAE_pex*RWEAE_im
 +USEAF_rer*EAF_pex*RWEAF_im
++USEAG_rer*EAG_pex*RWEAG_im
 )
 ;
 // Effective real exchange rate: double weighting (overall)
@@ -15040,6 +19532,7 @@ USEAF_weightex = EAF_size/US_size*EAFUS_im/US_ex*USEAF_rer*EAF_py*EAF_y/(USEAF_r
 +USEAC_rer*EAC_pex*EAFEAC_im
 +USEAD_rer*EAD_pex*EAFEAD_im
 +USEAE_rer*EAE_pex*EAFEAE_im
++USEAG_rer*EAG_pex*EAFEAG_im
 +USRW_rer*RW_pex*EAFRW_im
 )+
 +EAA_size/US_size*EAAUS_im/US_ex*USEAF_rer*EAF_pex*EAAEAF_im/(USEAA_rer*EAA_py*EAA_y
@@ -15048,6 +19541,7 @@ USEAF_weightex = EAF_size/US_size*EAFUS_im/US_ex*USEAF_rer*EAF_py*EAF_y/(USEAF_r
 +USEAD_rer*EAD_pex*EAAEAD_im
 +USEAE_rer*EAE_pex*EAAEAE_im
 +USEAF_rer*EAF_pex*EAAEAF_im
++USEAG_rer*EAG_pex*EAAEAG_im
 +USRW_rer*RW_pex*EAARW_im
 )
 +EAB_size/US_size*EABUS_im/US_ex*USEAF_rer*EAF_pex*EABEAF_im/(USEAB_rer*EAB_py*EAB_y
@@ -15056,6 +19550,7 @@ USEAF_weightex = EAF_size/US_size*EAFUS_im/US_ex*USEAF_rer*EAF_py*EAF_y/(USEAF_r
 +USEAD_rer*EAD_pex*EABEAD_im
 +USEAE_rer*EAE_pex*EABEAE_im
 +USEAF_rer*EAF_pex*EABEAF_im
++USEAG_rer*EAG_pex*EABEAG_im
 +USRW_rer*RW_pex*EABRW_im
 )
 +EAC_size/US_size*EACUS_im/US_ex*USEAF_rer*EAF_pex*EACEAF_im/(USEAC_rer*EAC_py*EAC_y
@@ -15064,6 +19559,7 @@ USEAF_weightex = EAF_size/US_size*EAFUS_im/US_ex*USEAF_rer*EAF_py*EAF_y/(USEAF_r
 +USEAD_rer*EAD_pex*EACEAD_im
 +USEAE_rer*EAE_pex*EACEAE_im
 +USEAF_rer*EAF_pex*EACEAF_im
++USEAG_rer*EAG_pex*EACEAG_im
 +USRW_rer*RW_pex*EACRW_im
 )
 +EAD_size/US_size*EADUS_im/US_ex*USEAF_rer*EAF_pex*EADEAF_im/(USEAD_rer*EAD_py*EAD_y
@@ -15072,6 +19568,7 @@ USEAF_weightex = EAF_size/US_size*EAFUS_im/US_ex*USEAF_rer*EAF_py*EAF_y/(USEAF_r
 +USEAC_rer*EAC_pex*EADEAC_im
 +USEAE_rer*EAE_pex*EADEAE_im
 +USEAF_rer*EAF_pex*EADEAF_im
++USEAG_rer*EAG_pex*EADEAG_im
 +USRW_rer*RW_pex*EADRW_im
 )
 +EAE_size/US_size*EAEUS_im/US_ex*USEAF_rer*EAF_pex*EAEEAF_im/(USEAE_rer*EAE_py*EAE_y
@@ -15080,7 +19577,17 @@ USEAF_weightex = EAF_size/US_size*EAFUS_im/US_ex*USEAF_rer*EAF_py*EAF_y/(USEAF_r
 +USEAC_rer*EAC_pex*EAEEAC_im
 +USEAD_rer*EAD_pex*EAEEAD_im
 +USEAF_rer*EAF_pex*EAEEAF_im
++USEAG_rer*EAG_pex*EAEEAG_im
 +USRW_rer*RW_pex*EAERW_im
+)
++EAG_size/US_size*EAGUS_im/US_ex*USEAF_rer*EAF_pex*EAGEAF_im/(USEAG_rer*EAG_py*EAG_y
++USEAA_rer*EAA_pex*EAGEAA_im
++USEAB_rer*EAB_pex*EAGEAB_im
++USEAC_rer*EAC_pex*EAGEAC_im
++USEAD_rer*EAD_pex*EAGEAD_im
++USEAE_rer*EAE_pex*EAGEAE_im
++USEAF_rer*EAF_pex*EAGEAF_im
++USRW_rer*RW_pex*EAGRW_im
 )
 +RW_size/US_size*RWUS_im/US_ex*USEAF_rer*EAF_pex*RWEAF_im/(USRW_rer*RW_py*RW_y
 +USEAA_rer*EAA_pex*RWEAA_im
@@ -15089,10 +19596,89 @@ USEAF_weightex = EAF_size/US_size*EAFUS_im/US_ex*USEAF_rer*EAF_py*EAF_y/(USEAF_r
 +USEAD_rer*EAD_pex*RWEAD_im
 +USEAE_rer*EAE_pex*RWEAE_im
 +USEAF_rer*EAF_pex*RWEAF_im
++USEAG_rer*EAG_pex*RWEAG_im
 )
 ;
 // Effective real exchange rate: double weighting (overall)
 USEAF_weight = US_pim*US_im/(US_pim*US_im+US_pex*US_ex)*USEAF_weightim+US_pex*US_ex/(US_pim*US_im+US_pex*US_ex)*USEAF_weightex;
+// Effective real exchange rate: double weighting (imports)
+USEAG_weightim = USEAG_rer*EAG_pex*USEAG_im/(US_pim*US_im);
+// Effective real exchange rate: double weighting (exports)
+USEAG_weightex = EAG_size/US_size*EAGUS_im/US_ex*USEAG_rer*EAG_py*EAG_y/(USEAG_rer*EAG_py*EAG_y
++USEAA_rer*EAA_pex*EAGEAA_im
++USEAB_rer*EAB_pex*EAGEAB_im
++USEAC_rer*EAC_pex*EAGEAC_im
++USEAD_rer*EAD_pex*EAGEAD_im
++USEAE_rer*EAE_pex*EAGEAE_im
++USEAF_rer*EAF_pex*EAGEAF_im
++USRW_rer*RW_pex*EAGRW_im
+)+
++EAA_size/US_size*EAAUS_im/US_ex*USEAG_rer*EAG_pex*EAAEAG_im/(USEAA_rer*EAA_py*EAA_y
++USEAB_rer*EAB_pex*EAAEAB_im
++USEAC_rer*EAC_pex*EAAEAC_im
++USEAD_rer*EAD_pex*EAAEAD_im
++USEAE_rer*EAE_pex*EAAEAE_im
++USEAF_rer*EAF_pex*EAAEAF_im
++USEAG_rer*EAG_pex*EAAEAG_im
++USRW_rer*RW_pex*EAARW_im
+)
++EAB_size/US_size*EABUS_im/US_ex*USEAG_rer*EAG_pex*EABEAG_im/(USEAB_rer*EAB_py*EAB_y
++USEAA_rer*EAA_pex*EABEAA_im
++USEAC_rer*EAC_pex*EABEAC_im
++USEAD_rer*EAD_pex*EABEAD_im
++USEAE_rer*EAE_pex*EABEAE_im
++USEAF_rer*EAF_pex*EABEAF_im
++USEAG_rer*EAG_pex*EABEAG_im
++USRW_rer*RW_pex*EABRW_im
+)
++EAC_size/US_size*EACUS_im/US_ex*USEAG_rer*EAG_pex*EACEAG_im/(USEAC_rer*EAC_py*EAC_y
++USEAA_rer*EAA_pex*EACEAA_im
++USEAB_rer*EAB_pex*EACEAB_im
++USEAD_rer*EAD_pex*EACEAD_im
++USEAE_rer*EAE_pex*EACEAE_im
++USEAF_rer*EAF_pex*EACEAF_im
++USEAG_rer*EAG_pex*EACEAG_im
++USRW_rer*RW_pex*EACRW_im
+)
++EAD_size/US_size*EADUS_im/US_ex*USEAG_rer*EAG_pex*EADEAG_im/(USEAD_rer*EAD_py*EAD_y
++USEAA_rer*EAA_pex*EADEAA_im
++USEAB_rer*EAB_pex*EADEAB_im
++USEAC_rer*EAC_pex*EADEAC_im
++USEAE_rer*EAE_pex*EADEAE_im
++USEAF_rer*EAF_pex*EADEAF_im
++USEAG_rer*EAG_pex*EADEAG_im
++USRW_rer*RW_pex*EADRW_im
+)
++EAE_size/US_size*EAEUS_im/US_ex*USEAG_rer*EAG_pex*EAEEAG_im/(USEAE_rer*EAE_py*EAE_y
++USEAA_rer*EAA_pex*EAEEAA_im
++USEAB_rer*EAB_pex*EAEEAB_im
++USEAC_rer*EAC_pex*EAEEAC_im
++USEAD_rer*EAD_pex*EAEEAD_im
++USEAF_rer*EAF_pex*EAEEAF_im
++USEAG_rer*EAG_pex*EAEEAG_im
++USRW_rer*RW_pex*EAERW_im
+)
++EAF_size/US_size*EAFUS_im/US_ex*USEAG_rer*EAG_pex*EAFEAG_im/(USEAF_rer*EAF_py*EAF_y
++USEAA_rer*EAA_pex*EAFEAA_im
++USEAB_rer*EAB_pex*EAFEAB_im
++USEAC_rer*EAC_pex*EAFEAC_im
++USEAD_rer*EAD_pex*EAFEAD_im
++USEAE_rer*EAE_pex*EAFEAE_im
++USEAG_rer*EAG_pex*EAFEAG_im
++USRW_rer*RW_pex*EAFRW_im
+)
++RW_size/US_size*RWUS_im/US_ex*USEAG_rer*EAG_pex*RWEAG_im/(USRW_rer*RW_py*RW_y
++USEAA_rer*EAA_pex*RWEAA_im
++USEAB_rer*EAB_pex*RWEAB_im
++USEAC_rer*EAC_pex*RWEAC_im
++USEAD_rer*EAD_pex*RWEAD_im
++USEAE_rer*EAE_pex*RWEAE_im
++USEAF_rer*EAF_pex*RWEAF_im
++USEAG_rer*EAG_pex*RWEAG_im
+)
+;
+// Effective real exchange rate: double weighting (overall)
+USEAG_weight = US_pim*US_im/(US_pim*US_im+US_pex*US_ex)*USEAG_weightim+US_pex*US_ex/(US_pim*US_im+US_pex*US_ex)*USEAG_weightex;
 // Effective real exchange rate: double weighting (imports)
 USRW_weightim = USRW_rer*RW_pex*USRW_im/(US_pim*US_im);
 // Effective real exchange rate: double weighting (exports)
@@ -15103,6 +19689,7 @@ USRW_weightex = RW_size/US_size*RWUS_im/US_ex*USRW_rer*RW_py*RW_y/(USRW_rer*RW_p
 +USEAD_rer*EAD_pex*RWEAD_im
 +USEAE_rer*EAE_pex*RWEAE_im
 +USEAF_rer*EAF_pex*RWEAF_im
++USEAG_rer*EAG_pex*RWEAG_im
 )+
 +EAA_size/US_size*EAAUS_im/US_ex*USRW_rer*RW_pex*EAARW_im/(USEAA_rer*EAA_py*EAA_y
 +USEAB_rer*EAB_pex*EAAEAB_im
@@ -15110,6 +19697,7 @@ USRW_weightex = RW_size/US_size*RWUS_im/US_ex*USRW_rer*RW_py*RW_y/(USRW_rer*RW_p
 +USEAD_rer*EAD_pex*EAAEAD_im
 +USEAE_rer*EAE_pex*EAAEAE_im
 +USEAF_rer*EAF_pex*EAAEAF_im
++USEAG_rer*EAG_pex*EAAEAG_im
 +USRW_rer*RW_pex*EAARW_im
 )
 +EAB_size/US_size*EABUS_im/US_ex*USRW_rer*RW_pex*EABRW_im/(USEAB_rer*EAB_py*EAB_y
@@ -15118,6 +19706,7 @@ USRW_weightex = RW_size/US_size*RWUS_im/US_ex*USRW_rer*RW_py*RW_y/(USRW_rer*RW_p
 +USEAD_rer*EAD_pex*EABEAD_im
 +USEAE_rer*EAE_pex*EABEAE_im
 +USEAF_rer*EAF_pex*EABEAF_im
++USEAG_rer*EAG_pex*EABEAG_im
 +USRW_rer*RW_pex*EABRW_im
 )
 +EAC_size/US_size*EACUS_im/US_ex*USRW_rer*RW_pex*EACRW_im/(USEAC_rer*EAC_py*EAC_y
@@ -15126,6 +19715,7 @@ USRW_weightex = RW_size/US_size*RWUS_im/US_ex*USRW_rer*RW_py*RW_y/(USRW_rer*RW_p
 +USEAD_rer*EAD_pex*EACEAD_im
 +USEAE_rer*EAE_pex*EACEAE_im
 +USEAF_rer*EAF_pex*EACEAF_im
++USEAG_rer*EAG_pex*EACEAG_im
 +USRW_rer*RW_pex*EACRW_im
 )
 +EAD_size/US_size*EADUS_im/US_ex*USRW_rer*RW_pex*EADRW_im/(USEAD_rer*EAD_py*EAD_y
@@ -15134,6 +19724,7 @@ USRW_weightex = RW_size/US_size*RWUS_im/US_ex*USRW_rer*RW_py*RW_y/(USRW_rer*RW_p
 +USEAC_rer*EAC_pex*EADEAC_im
 +USEAE_rer*EAE_pex*EADEAE_im
 +USEAF_rer*EAF_pex*EADEAF_im
++USEAG_rer*EAG_pex*EADEAG_im
 +USRW_rer*RW_pex*EADRW_im
 )
 +EAE_size/US_size*EAEUS_im/US_ex*USRW_rer*RW_pex*EAERW_im/(USEAE_rer*EAE_py*EAE_y
@@ -15142,6 +19733,7 @@ USRW_weightex = RW_size/US_size*RWUS_im/US_ex*USRW_rer*RW_py*RW_y/(USRW_rer*RW_p
 +USEAC_rer*EAC_pex*EAEEAC_im
 +USEAD_rer*EAD_pex*EAEEAD_im
 +USEAF_rer*EAF_pex*EAEEAF_im
++USEAG_rer*EAG_pex*EAEEAG_im
 +USRW_rer*RW_pex*EAERW_im
 )
 +EAF_size/US_size*EAFUS_im/US_ex*USRW_rer*RW_pex*EAFRW_im/(USEAF_rer*EAF_py*EAF_y
@@ -15150,7 +19742,17 @@ USRW_weightex = RW_size/US_size*RWUS_im/US_ex*USRW_rer*RW_py*RW_y/(USRW_rer*RW_p
 +USEAC_rer*EAC_pex*EAFEAC_im
 +USEAD_rer*EAD_pex*EAFEAD_im
 +USEAE_rer*EAE_pex*EAFEAE_im
++USEAG_rer*EAG_pex*EAFEAG_im
 +USRW_rer*RW_pex*EAFRW_im
+)
++EAG_size/US_size*EAGUS_im/US_ex*USRW_rer*RW_pex*EAGRW_im/(USEAG_rer*EAG_py*EAG_y
++USEAA_rer*EAA_pex*EAGEAA_im
++USEAB_rer*EAB_pex*EAGEAB_im
++USEAC_rer*EAC_pex*EAGEAC_im
++USEAD_rer*EAD_pex*EAGEAD_im
++USEAE_rer*EAE_pex*EAGEAE_im
++USEAF_rer*EAF_pex*EAGEAF_im
++USRW_rer*RW_pex*EAGRW_im
 )
 ;
 // Effective real exchange rate: double weighting (overall)
@@ -15163,6 +19765,7 @@ US_reer = 1
 *USEAD_rer^USEAD_weight
 *USEAE_rer^USEAE_weight
 *USEAF_rer^USEAF_weight
+*USEAG_rer^USEAG_weight
 *USRW_rer^USRW_weight
 ;
 // Effective terms of trade
@@ -15173,6 +19776,7 @@ US_etot = 1
 *USEAD_tot^USEAD_weight
 *USEAE_tot^USEAE_weight
 *USEAF_tot^USEAF_weight
+*USEAG_tot^USEAG_weight
 *USRW_tot^USRW_weight
 ;
 //-----------------
@@ -15185,6 +19789,7 @@ US_imc^((US_mumc-1)/US_mumc) =
 +USEAC_numc ^(1/US_mumc)*USEAC_imc^(1-1/US_mumc)
 +USEAD_numc ^(1/US_mumc)*USEAD_imc^(1-1/US_mumc)
 +USEAE_numc ^(1/US_mumc)*USEAE_imc^(1-1/US_mumc)
++USEAF_numc ^(1/US_mumc)*USEAF_imc^(1-1/US_mumc)
 +USRW_numc ^(1/US_mumc)*USRW_imc^(1-1/US_mumc)
 +(1
 -USEAA_numc
@@ -15192,8 +19797,9 @@ US_imc^((US_mumc-1)/US_mumc) =
 -USEAC_numc
 -USEAD_numc
 -USEAE_numc
+-USEAF_numc
 -USRW_numc
-)^(1/US_mumc)*USEAF_imc^(1-1/US_mumc);
+)^(1/US_mumc)*USEAG_imc^(1-1/US_mumc);
 // Demand for bilateral consumption import goods
 USEAB_imc = USEAB_numc*((EAB_pex*USEAB_rer)/US_pimc)^(-US_mumc)*US_imc;
 // Demand for bilateral consumption import goods
@@ -15203,15 +19809,18 @@ USEAD_imc = USEAD_numc*((EAD_pex*USEAD_rer)/US_pimc)^(-US_mumc)*US_imc;
 // Demand for bilateral consumption import goods
 USEAE_imc = USEAE_numc*((EAE_pex*USEAE_rer)/US_pimc)^(-US_mumc)*US_imc;
 // Demand for bilateral consumption import goods
+USEAF_imc = USEAF_numc*((EAF_pex*USEAF_rer)/US_pimc)^(-US_mumc)*US_imc;
+// Demand for bilateral consumption import goods
 USRW_imc = USRW_numc*((RW_pex*USRW_rer)/US_pimc)^(-US_mumc)*US_imc;
-USEAF_imc = (1
+USEAG_imc = (1
 -USEAA_numc
 -USEAB_numc
 -USEAC_numc
 -USEAD_numc
 -USEAE_numc
+-USEAF_numc
 -USRW_numc
-)*((EAF_pex*USEAF_rer)/US_pimc)^(-US_mumc)*US_imc;
+)*((EAG_pex*USEAG_rer)/US_pimc)^(-US_mumc)*US_imc;
 // Price of the consumption good (import)
 US_pimc^(1-US_mumc) =
 +USEAA_numc * (EAA_pex*USEAA_rer)^(1-US_mumc)
@@ -15219,6 +19828,7 @@ US_pimc^(1-US_mumc) =
 +USEAC_numc * (EAC_pex*USEAC_rer)^(1-US_mumc)
 +USEAD_numc * (EAD_pex*USEAD_rer)^(1-US_mumc)
 +USEAE_numc * (EAE_pex*USEAE_rer)^(1-US_mumc)
++USEAF_numc * (EAF_pex*USEAF_rer)^(1-US_mumc)
 +USRW_numc * (RW_pex*USRW_rer)^(1-US_mumc)
 +(1
 -USEAA_numc
@@ -15226,8 +19836,9 @@ US_pimc^(1-US_mumc) =
 -USEAC_numc
 -USEAD_numc
 -USEAE_numc
+-USEAF_numc
 -USRW_numc
-)*(EAF_pex*USEAF_rer)^(1-US_mumc);
+)*(EAG_pex*USEAG_rer)^(1-US_mumc);
 // Private consumption good (import) inflation
 US_piimc = US_pimc/US_pimc(-1)*US_pic;
 // Private consumption good (import)
@@ -15237,6 +19848,7 @@ US_imi^((US_mumi-1)/US_mumi) =
 +USEAC_numi ^(1/US_mumi)*USEAC_imi^(1-1/US_mumi)
 +USEAD_numi ^(1/US_mumi)*USEAD_imi^(1-1/US_mumi)
 +USEAE_numi ^(1/US_mumi)*USEAE_imi^(1-1/US_mumi)
++USEAF_numi ^(1/US_mumi)*USEAF_imi^(1-1/US_mumi)
 +USRW_numi ^(1/US_mumi)*USRW_imi^(1-1/US_mumi)
 +(1
 -USEAA_numi
@@ -15244,8 +19856,9 @@ US_imi^((US_mumi-1)/US_mumi) =
 -USEAC_numi
 -USEAD_numi
 -USEAE_numi
+-USEAF_numi
 -USRW_numi
-)^(1/US_mumi)*USEAF_imi^(1-1/US_mumi);
+)^(1/US_mumi)*USEAG_imi^(1-1/US_mumi);
 // Demand for bilateral consumption import goods
 USEAB_imi = USEAB_numi*((EAB_pex*USEAB_rer)/US_pimi)^(-US_mumi)*US_imi;
 // Demand for bilateral consumption import goods
@@ -15255,15 +19868,18 @@ USEAD_imi = USEAD_numi*((EAD_pex*USEAD_rer)/US_pimi)^(-US_mumi)*US_imi;
 // Demand for bilateral consumption import goods
 USEAE_imi = USEAE_numi*((EAE_pex*USEAE_rer)/US_pimi)^(-US_mumi)*US_imi;
 // Demand for bilateral consumption import goods
+USEAF_imi = USEAF_numi*((EAF_pex*USEAF_rer)/US_pimi)^(-US_mumi)*US_imi;
+// Demand for bilateral consumption import goods
 USRW_imi = USRW_numi*((RW_pex*USRW_rer)/US_pimi)^(-US_mumi)*US_imi;
-USEAF_imi = (1
+USEAG_imi = (1
 -USEAA_numi
 -USEAB_numi
 -USEAC_numi
 -USEAD_numi
 -USEAE_numi
+-USEAF_numi
 -USRW_numi
-)*((EAF_pex*USEAF_rer)/US_pimi)^(-US_mumi)*US_imi;
+)*((EAG_pex*USEAG_rer)/US_pimi)^(-US_mumi)*US_imi;
 // Price of the consumption good (import)
 US_pimi^(1-US_mumi) =
 +USEAA_numi * (EAA_pex*USEAA_rer)^(1-US_mumi)
@@ -15271,6 +19887,7 @@ US_pimi^(1-US_mumi) =
 +USEAC_numi * (EAC_pex*USEAC_rer)^(1-US_mumi)
 +USEAD_numi * (EAD_pex*USEAD_rer)^(1-US_mumi)
 +USEAE_numi * (EAE_pex*USEAE_rer)^(1-US_mumi)
++USEAF_numi * (EAF_pex*USEAF_rer)^(1-US_mumi)
 +USRW_numi * (RW_pex*USRW_rer)^(1-US_mumi)
 +(1
 -USEAA_numi
@@ -15278,8 +19895,9 @@ US_pimi^(1-US_mumi) =
 -USEAC_numi
 -USEAD_numi
 -USEAE_numi
+-USEAF_numi
 -USRW_numi
-)*(EAF_pex*USEAF_rer)^(1-US_mumi);
+)*(EAG_pex*USEAG_rer)^(1-US_mumi);
 // Private consumption good (import) inflation
 US_piimi = US_pimi/US_pimi(-1)*US_pic;
 // Private consumption good (import)
@@ -15289,6 +19907,7 @@ US_imcg^((US_mumcg-1)/US_mumcg) =
 +USEAC_numcg ^(1/US_mumcg)*USEAC_imcg^(1-1/US_mumcg)
 +USEAD_numcg ^(1/US_mumcg)*USEAD_imcg^(1-1/US_mumcg)
 +USEAE_numcg ^(1/US_mumcg)*USEAE_imcg^(1-1/US_mumcg)
++USEAF_numcg ^(1/US_mumcg)*USEAF_imcg^(1-1/US_mumcg)
 +USRW_numcg ^(1/US_mumcg)*USRW_imcg^(1-1/US_mumcg)
 +(1
 -USEAA_numcg
@@ -15296,8 +19915,9 @@ US_imcg^((US_mumcg-1)/US_mumcg) =
 -USEAC_numcg
 -USEAD_numcg
 -USEAE_numcg
+-USEAF_numcg
 -USRW_numcg
-)^(1/US_mumcg)*USEAF_imcg^(1-1/US_mumcg);
+)^(1/US_mumcg)*USEAG_imcg^(1-1/US_mumcg);
 // Demand for bilateral consumption import goods
 USEAB_imcg = USEAB_numcg*((EAB_pex*USEAB_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
 // Demand for bilateral consumption import goods
@@ -15307,15 +19927,18 @@ USEAD_imcg = USEAD_numcg*((EAD_pex*USEAD_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
 // Demand for bilateral consumption import goods
 USEAE_imcg = USEAE_numcg*((EAE_pex*USEAE_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
 // Demand for bilateral consumption import goods
+USEAF_imcg = USEAF_numcg*((EAF_pex*USEAF_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
+// Demand for bilateral consumption import goods
 USRW_imcg = USRW_numcg*((RW_pex*USRW_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
-USEAF_imcg = (1
+USEAG_imcg = (1
 -USEAA_numcg
 -USEAB_numcg
 -USEAC_numcg
 -USEAD_numcg
 -USEAE_numcg
+-USEAF_numcg
 -USRW_numcg
-)*((EAF_pex*USEAF_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
+)*((EAG_pex*USEAG_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
 // Price of the consumption good (import)
 US_pimcg^(1-US_mumcg) =
 +USEAA_numcg * (EAA_pex*USEAA_rer)^(1-US_mumcg)
@@ -15323,6 +19946,7 @@ US_pimcg^(1-US_mumcg) =
 +USEAC_numcg * (EAC_pex*USEAC_rer)^(1-US_mumcg)
 +USEAD_numcg * (EAD_pex*USEAD_rer)^(1-US_mumcg)
 +USEAE_numcg * (EAE_pex*USEAE_rer)^(1-US_mumcg)
++USEAF_numcg * (EAF_pex*USEAF_rer)^(1-US_mumcg)
 +USRW_numcg * (RW_pex*USRW_rer)^(1-US_mumcg)
 +(1
 -USEAA_numcg
@@ -15330,8 +19954,9 @@ US_pimcg^(1-US_mumcg) =
 -USEAC_numcg
 -USEAD_numcg
 -USEAE_numcg
+-USEAF_numcg
 -USRW_numcg
-)*(EAF_pex*USEAF_rer)^(1-US_mumcg);
+)*(EAG_pex*USEAG_rer)^(1-US_mumcg);
 // Private consumption good (import) inflation
 US_piimcg = US_pimcg/US_pimcg(-1)*US_pic;
 // Private consumption good (import)
@@ -15341,6 +19966,7 @@ US_imig^((US_mumig-1)/US_mumig) =
 +USEAC_numig ^(1/US_mumig)*USEAC_imig^(1-1/US_mumig)
 +USEAD_numig ^(1/US_mumig)*USEAD_imig^(1-1/US_mumig)
 +USEAE_numig ^(1/US_mumig)*USEAE_imig^(1-1/US_mumig)
++USEAF_numig ^(1/US_mumig)*USEAF_imig^(1-1/US_mumig)
 +USRW_numig ^(1/US_mumig)*USRW_imig^(1-1/US_mumig)
 +(1
 -USEAA_numig
@@ -15348,8 +19974,9 @@ US_imig^((US_mumig-1)/US_mumig) =
 -USEAC_numig
 -USEAD_numig
 -USEAE_numig
+-USEAF_numig
 -USRW_numig
-)^(1/US_mumig)*USEAF_imig^(1-1/US_mumig);
+)^(1/US_mumig)*USEAG_imig^(1-1/US_mumig);
 // Demand for bilateral consumption import goods
 USEAB_imig = USEAB_numig*((EAB_pex*USEAB_rer)/US_pimig)^(-US_mumig)*US_imig;
 // Demand for bilateral consumption import goods
@@ -15359,15 +19986,18 @@ USEAD_imig = USEAD_numig*((EAD_pex*USEAD_rer)/US_pimig)^(-US_mumig)*US_imig;
 // Demand for bilateral consumption import goods
 USEAE_imig = USEAE_numig*((EAE_pex*USEAE_rer)/US_pimig)^(-US_mumig)*US_imig;
 // Demand for bilateral consumption import goods
+USEAF_imig = USEAF_numig*((EAF_pex*USEAF_rer)/US_pimig)^(-US_mumig)*US_imig;
+// Demand for bilateral consumption import goods
 USRW_imig = USRW_numig*((RW_pex*USRW_rer)/US_pimig)^(-US_mumig)*US_imig;
-USEAF_imig = (1
+USEAG_imig = (1
 -USEAA_numig
 -USEAB_numig
 -USEAC_numig
 -USEAD_numig
 -USEAE_numig
+-USEAF_numig
 -USRW_numig
-)*((EAF_pex*USEAF_rer)/US_pimig)^(-US_mumig)*US_imig;
+)*((EAG_pex*USEAG_rer)/US_pimig)^(-US_mumig)*US_imig;
 // Price of the consumption good (import)
 US_pimig^(1-US_mumig) =
 +USEAA_numig * (EAA_pex*USEAA_rer)^(1-US_mumig)
@@ -15375,6 +20005,7 @@ US_pimig^(1-US_mumig) =
 +USEAC_numig * (EAC_pex*USEAC_rer)^(1-US_mumig)
 +USEAD_numig * (EAD_pex*USEAD_rer)^(1-US_mumig)
 +USEAE_numig * (EAE_pex*USEAE_rer)^(1-US_mumig)
++USEAF_numig * (EAF_pex*USEAF_rer)^(1-US_mumig)
 +USRW_numig * (RW_pex*USRW_rer)^(1-US_mumig)
 +(1
 -USEAA_numig
@@ -15382,8 +20013,9 @@ US_pimig^(1-US_mumig) =
 -USEAC_numig
 -USEAD_numig
 -USEAE_numig
+-USEAF_numig
 -USRW_numig
-)*(EAF_pex*USEAF_rer)^(1-US_mumig);
+)*(EAG_pex*USEAG_rer)^(1-US_mumig);
 // Private consumption good (import) inflation
 US_piimig = US_pimig/US_pimig(-1)*US_pic;
 // Private consumption good (import) inflation
@@ -15429,6 +20061,12 @@ USEAF_im =
 +USEAF_imcg
 +USEAF_imig
 ;
+USEAG_im = 
++USEAG_imc
++USEAG_imi
++USEAG_imcg
++USEAG_imig
+;
 USRW_im = 
 +USRW_imc
 +USRW_imi
@@ -15460,6 +20098,8 @@ USEAE_gammaimc = 0;
 USEAE_gammaimcdag = 1;
 USEAF_gammaimc = 0;
 USEAF_gammaimcdag = 1;
+USEAG_gammaimc = 0;
+USEAG_gammaimcdag = 1;
 USRW_gammaimc = 0;
 USRW_gammaimcdag = 1;
 // Private consumption good (tradable)
@@ -15489,6 +20129,8 @@ USEAE_gammaimi = 0;
 USEAE_gammaimidag = 1;
 USEAF_gammaimi = 0;
 USEAF_gammaimidag = 1;
+USEAG_gammaimi = 0;
+USEAG_gammaimidag = 1;
 USRW_gammaimi = 0;
 USRW_gammaimidag = 1;
 // Private consumption good (tradable)
@@ -15515,6 +20157,8 @@ USEAE_gammaimcg = 0;
 USEAE_gammaimcgdag = 1;
 USEAF_gammaimcg = 0;
 USEAF_gammaimcgdag = 1;
+USEAG_gammaimcg = 0;
+USEAG_gammaimcgdag = 1;
 USRW_gammaimcg = 0;
 USRW_gammaimcgdag = 1;
 // Private consumption good (tradable)
@@ -15541,6 +20185,8 @@ USEAE_gammaimig = 0;
 USEAE_gammaimigdag = 1;
 USEAF_gammaimig = 0;
 USEAF_gammaimigdag = 1;
+USEAG_gammaimig = 0;
+USEAG_gammaimigdag = 1;
 USRW_gammaimig = 0;
 USRW_gammaimigdag = 1;
 // Trade balance
@@ -15557,6 +20203,8 @@ US_tb =
 -EAE_pex*USEAE_rer*USEAE_im
 +US_pex*EAF_size/US_size*EAFUS_im
 -EAF_pex*USEAF_rer*USEAF_im
++US_pex*EAG_size/US_size*EAGUS_im
+-EAG_pex*USEAG_rer*USEAG_im
 +US_pex*RW_size/US_size*RWUS_im
 -RW_pex*USRW_rer*USRW_im
 ;
@@ -15568,6 +20216,7 @@ US_ex =
 +EAD_size/US_size*EADUS_im
 +EAE_size/US_size*EAEUS_im
 +EAF_size/US_size*EAFUS_im
++EAG_size/US_size*EAGUS_im
 +RW_size/US_size*RWUS_im
 ;
 //-------------
@@ -15730,6 +20379,11 @@ US_py*US_y =
 -(EAF_pex*USEAF_rer)*USEAF_imi
 -(EAF_pex*USEAF_rer)*USEAF_imcg
 -(EAF_pex*USEAF_rer)*USEAF_imig
++US_pex*EAG_size/US_size*EAGUS_im
+-(EAG_pex*USEAG_rer)*USEAG_imc
+-(EAG_pex*USEAG_rer)*USEAG_imi
+-(EAG_pex*USEAG_rer)*USEAG_imcg
+-(EAG_pex*USEAG_rer)*USEAG_imig
 +US_pex*RW_size/US_size*RWUS_im
 -(RW_pex*USRW_rer)*USRW_imc
 -(RW_pex*USRW_rer)*USRW_imi
@@ -15820,6 +20474,7 @@ US_yshare  = US_size*US_py*US_y/US_rer/(
 +EAD_size*EAD_py*EAD_y/EAD_rer
 +EAE_size*EAE_py*EAE_y/EAE_rer
 +EAF_size*EAF_py*EAF_y/EAF_rer
++EAG_size*EAG_py*EAG_y/EAG_rer
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
@@ -15881,6 +20536,15 @@ USEAF_imigy = (EAF_pex*USEAF_rer)*USEAF_imig/(US_py*US_y);
 USEAF_excy  = EAF_size/US_size*US_pex*EAFUS_imc/(US_py*US_y);
 // Exports of investment goods to gdp
 USEAF_exiy  = EAF_size/US_size*US_pex*EAFUS_imi/(US_py*US_y);
+// Bilateral shares
+USEAG_imcy = (EAG_pex*USEAG_rer)*USEAG_imc/(US_py*US_y);
+USEAG_imiy = (EAG_pex*USEAG_rer)*USEAG_imi/(US_py*US_y);
+USEAG_imcgy = (EAG_pex*USEAG_rer)*USEAG_imcg/(US_py*US_y);
+USEAG_imigy = (EAG_pex*USEAG_rer)*USEAG_imig/(US_py*US_y);
+// Exports of consumption goods to gdp
+USEAG_excy  = EAG_size/US_size*US_pex*EAGUS_imc/(US_py*US_y);
+// Exports of investment goods to gdp
+USEAG_exiy  = EAG_size/US_size*US_pex*EAGUS_imi/(US_py*US_y);
 // Bilateral shares
 USRW_imcy = (RW_pex*USRW_rer)*USRW_imc/(US_py*US_y);
 USRW_imiy = (RW_pex*USRW_rer)*USRW_imi/(US_py*US_y);
@@ -15974,6 +20638,19 @@ EAF_tot = US_pex*EAF_rer/EAF_pex;
 // Bilateral equations versus country N
 //-------------
 // Euler equation for internationally traded bonds
+EAG_gammab = 0;
+// International transaction cost ('risk premium')
+EAG_bf = (EAG_bfytarget*EAG_py*EAG_y)/EAG_rer*US_pic;
+// Risk premium shock
+EAG_rp = 0;
+// Definition of the rate of real exchange-rate depreciation
+EAG_rerdep = EAG_rer/EAG_rer(-1);
+// Definition of the terms of trade
+EAG_tot = US_pex*EAG_rer/EAG_pex;
+//-------------
+// Bilateral equations versus country N
+//-------------
+// Euler equation for internationally traded bonds
 RW_gammab = 0;
 // International transaction cost ('risk premium')
 RW_bf = (RW_bfytarget*RW_py*RW_y)/RW_rer*US_pic;
@@ -15993,61 +20670,71 @@ US_size*US_bf =
 -EAD_size*EAD_bf
 -EAE_size*EAE_bf
 -EAF_size*EAF_bf
+-EAG_size*EAG_bf
 -RW_size*RW_bf
 ;
 // Net foreign asset position
 	
 		
-			EAA_bf/US_r(-1) = -EAA_bh/EAF_r(-1)*EAAEAF_rer(-1)/EAA_rer(-1) + EAA_bh(-1)*EAAEAF_rer(-2) / EAA_rer(-2) + EAA_bf(-1) + EAA_tb(-1)/EAA_rer(-1);
+			EAA_bf/US_r(-1) = -EAA_bh/EAG_r(-1)*EAAEAG_rer(-1)/EAA_rer(-1) + EAA_bh(-1)*EAAEAG_rer(-2) / EAA_rer(-2) + EAA_bf(-1) + EAA_tb(-1)/EAA_rer(-1);
 		
 	
 	
 		
-			EAB_bf/US_r(-1) = -EAB_bh/EAF_r(-1)*EABEAF_rer(-1)/EAB_rer(-1) + EAB_bh(-1)*EABEAF_rer(-2) / EAB_rer(-2) + EAB_bf(-1) + EAB_tb(-1)/EAB_rer(-1);
+			EAB_bf/US_r(-1) = -EAB_bh/EAG_r(-1)*EABEAG_rer(-1)/EAB_rer(-1) + EAB_bh(-1)*EABEAG_rer(-2) / EAB_rer(-2) + EAB_bf(-1) + EAB_tb(-1)/EAB_rer(-1);
 		
 	
 	
 		
-			EAC_bf/US_r(-1) = -EAC_bh/EAF_r(-1)*EACEAF_rer(-1)/EAC_rer(-1) + EAC_bh(-1)*EACEAF_rer(-2) / EAC_rer(-2) + EAC_bf(-1) + EAC_tb(-1)/EAC_rer(-1);
+			EAC_bf/US_r(-1) = -EAC_bh/EAG_r(-1)*EACEAG_rer(-1)/EAC_rer(-1) + EAC_bh(-1)*EACEAG_rer(-2) / EAC_rer(-2) + EAC_bf(-1) + EAC_tb(-1)/EAC_rer(-1);
 		
 	
 	
 		
-			EAD_bf/US_r(-1) = -EAD_bh/EAF_r(-1)*EADEAF_rer(-1)/EAD_rer(-1) + EAD_bh(-1)*EADEAF_rer(-2) / EAD_rer(-2) + EAD_bf(-1) + EAD_tb(-1)/EAD_rer(-1);
+			EAD_bf/US_r(-1) = -EAD_bh/EAG_r(-1)*EADEAG_rer(-1)/EAD_rer(-1) + EAD_bh(-1)*EADEAG_rer(-2) / EAD_rer(-2) + EAD_bf(-1) + EAD_tb(-1)/EAD_rer(-1);
 		
 	
 	
 		
-			EAE_bf/US_r(-1) = -EAE_bh/EAF_r(-1)*EAEEAF_rer(-1)/EAE_rer(-1) + EAE_bh(-1)*EAEEAF_rer(-2) / EAE_rer(-2) + EAE_bf(-1) + EAE_tb(-1)/EAE_rer(-1);
+			EAE_bf/US_r(-1) = -EAE_bh/EAG_r(-1)*EAEEAG_rer(-1)/EAE_rer(-1) + EAE_bh(-1)*EAEEAG_rer(-2) / EAE_rer(-2) + EAE_bf(-1) + EAE_tb(-1)/EAE_rer(-1);
 		
 	
 	
-			EAF_bf/US_r(-1) = -EAF_bh/EAA_r(-1) / EAF_rer(-1) + EAF_bh(-1) / EAF_rer(-2) + EAF_bf(-1) + EAF_tb(-1)/EAF_rer(-1);
+		
+			EAF_bf/US_r(-1) = -EAF_bh/EAG_r(-1)*EAFEAG_rer(-1)/EAF_rer(-1) + EAF_bh(-1)*EAFEAG_rer(-2) / EAF_rer(-2) + EAF_bf(-1) + EAF_tb(-1)/EAF_rer(-1);
+		
+	
+	
+			EAG_bf/US_r(-1) = -EAG_bh/EAA_r(-1) / EAG_rer(-1) + EAG_bh(-1) / EAG_rer(-2) + EAG_bf(-1) + EAG_tb(-1)/EAG_rer(-1);
 		
 	
 		RW_bf/US_r(-1) = RW_bf(-1)+RW_tb(-1)/RW_rer(-1);
 	
 US_rer = 1;
-		EAAEAF_nerdep = EAA_rerdep/EAF_rerdep*EAA_pic/EAF_pic;
+		EAAEAG_nerdep = EAA_rerdep/EAG_rerdep*EAA_pic/EAG_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAA_gammabh = 0;
-			EAA_bh = (EAA_bhytarget*EAA_py*EAA_y)/EAAEAF_rer*EAF_pic;
-		EABEAF_nerdep = EAB_rerdep/EAF_rerdep*EAB_pic/EAF_pic;
+			EAA_bh = (EAA_bhytarget*EAA_py*EAA_y)/EAAEAG_rer*EAG_pic;
+		EABEAG_nerdep = EAB_rerdep/EAG_rerdep*EAB_pic/EAG_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAB_gammabh = 0;
-			EAB_bh = (EAB_bhytarget*EAB_py*EAB_y)/EABEAF_rer*EAF_pic;
-		EACEAF_nerdep = EAC_rerdep/EAF_rerdep*EAC_pic/EAF_pic;
+			EAB_bh = (EAB_bhytarget*EAB_py*EAB_y)/EABEAG_rer*EAG_pic;
+		EACEAG_nerdep = EAC_rerdep/EAG_rerdep*EAC_pic/EAG_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAC_gammabh = 0;
-			EAC_bh = (EAC_bhytarget*EAC_py*EAC_y)/EACEAF_rer*EAF_pic;
-		EADEAF_nerdep = EAD_rerdep/EAF_rerdep*EAD_pic/EAF_pic;
+			EAC_bh = (EAC_bhytarget*EAC_py*EAC_y)/EACEAG_rer*EAG_pic;
+		EADEAG_nerdep = EAD_rerdep/EAG_rerdep*EAD_pic/EAG_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAD_gammabh = 0;
-			EAD_bh = (EAD_bhytarget*EAD_py*EAD_y)/EADEAF_rer*EAF_pic;
-		EAEEAF_nerdep = EAE_rerdep/EAF_rerdep*EAE_pic/EAF_pic;
+			EAD_bh = (EAD_bhytarget*EAD_py*EAD_y)/EADEAG_rer*EAG_pic;
+		EAEEAG_nerdep = EAE_rerdep/EAG_rerdep*EAE_pic/EAG_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAE_gammabh = 0;
-			EAE_bh = (EAE_bhytarget*EAE_py*EAE_y)/EAEEAF_rer*EAF_pic;
+			EAE_bh = (EAE_bhytarget*EAE_py*EAE_y)/EAEEAG_rer*EAG_pic;
+		EAFEAG_nerdep = EAF_rerdep/EAG_rerdep*EAF_pic/EAG_pic;
+		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
+			EAF_gammabh = 0;
+			EAF_bh = (EAF_bhytarget*EAF_py*EAF_y)/EAFEAG_rer*EAG_pic;
 0 =
 	+ EAA_size*EAA_bh
 	+ EAB_size*EAB_bh
@@ -16055,6 +20742,7 @@ US_rer = 1;
 	+ EAD_size*EAD_bh
 	+ EAE_size*EAE_bh
 	+ EAF_size*EAF_bh
+	+ EAG_size*EAG_bh
 ;
 //-------------
 // Euroarea-wide variables
@@ -16068,6 +20756,7 @@ EA_y =
 			+ EAD_size*EAAEAD_rerbar*EAD_pybar *EAD_y	
 			+ EAE_size*EAAEAE_rerbar*EAE_pybar *EAE_y	
 			+ EAF_size*EAAEAF_rerbar*EAF_pybar *EAF_y	
+			+ EAG_size*EAAEAG_rerbar*EAG_pybar *EAG_y	
 	)
 	/
 	(
@@ -16077,6 +20766,7 @@ EA_y =
 	+ EAD_size
 	+ EAE_size
 	+ EAF_size
+	+ EAG_size
 );
 // GDP growth
 EA_ygrowth= EA_y/EA_y(-1);
@@ -16091,6 +20781,7 @@ EA_m =
 			+ EAD_size*EAAEAD_rerbar*EAD_m	
 			+ EAE_size*EAAEAE_rerbar*EAE_m	
 			+ EAF_size*EAAEAF_rerbar*EAF_m	
+			+ EAG_size*EAAEAG_rerbar*EAG_m	
 	)
 	/
 	(
@@ -16100,6 +20791,7 @@ EA_m =
 	+ EAD_size
 	+ EAE_size
 	+ EAF_size
+	+ EAG_size
 );
 	
 EA_bf = 
@@ -16110,6 +20802,7 @@ EA_bf =
 		+ EAD_size*EAD_bf	
 		+ EAE_size*EAE_bf	
 		+ EAF_size*EAF_bf	
+		+ EAG_size*EAG_bf	
 	)
 	/
 	(
@@ -16119,6 +20812,7 @@ EA_bf =
 	+ EAD_size
 	+ EAE_size
 	+ EAF_size
+	+ EAG_size
 );
 // Annual inflation
 EA_pic4 = 1 
@@ -16129,6 +20823,7 @@ EA_pic4 = 1
 				+ EAD_size
 				+ EAE_size
 				+ EAF_size
+				+ EAG_size
 			)) 
 		* EAB_pic4^(EAB_size/(
 				+ EAA_size
@@ -16137,6 +20832,7 @@ EA_pic4 = 1
 				+ EAD_size
 				+ EAE_size
 				+ EAF_size
+				+ EAG_size
 			)) 
 		* EAC_pic4^(EAC_size/(
 				+ EAA_size
@@ -16145,6 +20841,7 @@ EA_pic4 = 1
 				+ EAD_size
 				+ EAE_size
 				+ EAF_size
+				+ EAG_size
 			)) 
 		* EAD_pic4^(EAD_size/(
 				+ EAA_size
@@ -16153,6 +20850,7 @@ EA_pic4 = 1
 				+ EAD_size
 				+ EAE_size
 				+ EAF_size
+				+ EAG_size
 			)) 
 		* EAE_pic4^(EAE_size/(
 				+ EAA_size
@@ -16161,6 +20859,7 @@ EA_pic4 = 1
 				+ EAD_size
 				+ EAE_size
 				+ EAF_size
+				+ EAG_size
 			)) 
 		* EAF_pic4^(EAF_size/(
 				+ EAA_size
@@ -16169,6 +20868,16 @@ EA_pic4 = 1
 				+ EAD_size
 				+ EAE_size
 				+ EAF_size
+				+ EAG_size
+			)) 
+		* EAG_pic4^(EAG_size/(
+				+ EAA_size
+				+ EAB_size
+				+ EAC_size
+				+ EAD_size
+				+ EAE_size
+				+ EAF_size
+				+ EAG_size
 			)) 
 ;
 // Productivity
@@ -16187,6 +20896,7 @@ EAC_alphat, 0.3;
 EAD_alphat, 0.3;
 EAE_alphat, 0.3;
 EAF_alphat, 0.3;
+EAG_alphat, 0.3;
 RW_alphat, 0.3;
 US_alphat, 0.3;
 end;
@@ -16200,6 +20910,7 @@ EAC_alphag, 0.05;
 EAD_alphag, 0.05;
 EAE_alphag, 0.05;
 EAF_alphag, 0.05;
+EAG_alphag, 0.05;
 RW_alphag, 0.05;
 US_alphag, 0.05;
 end;

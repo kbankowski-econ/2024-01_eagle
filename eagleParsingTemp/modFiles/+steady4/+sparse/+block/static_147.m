@@ -1,4 +1,8 @@
 function [y, T] = static_147(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(192)=(-0.125)/(y(296)*(y(296)+y(296)*params(26)-1));
-  y(1281)=(-0.125)/(y(1385)*(y(1385)+y(1385)*params(257)-1));
+  y(307)=y(292);
+  y(1471)=y(1456);
+  y(1859)=y(1844);
+  y(695)=y(680);
+  y(2247)=y(2232);
+  y(2635)=y(2620);
 end

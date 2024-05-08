@@ -1,6 +1,3 @@
 function [y, T] = dynamic_136(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(3421)=y(3322);
-  y(3425)=y(3349);
-  y(4147)=y(4048);
-  y(3262)=((params(17)+T(4)-1)*y(3425)-params(17)*x(6)*y(3421))/(y(3421)*(1-x(6)));
+  y(6349)=y(6370)*log(y(7207)-params(489)*y(3541))-1/(1+params(537))*y(6273)^(1+params(537))+params(470)*y(10015);
 end
