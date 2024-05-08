@@ -1,0 +1,4 @@
+function [y, T] = static_178(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
+  y(943)=y(869);
+  y(782)=((params(171)+T(30)-1)*y(943)-params(171)*x(60)*y(939))/(y(939)*(1-x(60)));
+end
