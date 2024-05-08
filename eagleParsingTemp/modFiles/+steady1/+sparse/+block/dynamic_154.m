@@ -1,5 +1,5 @@
 function [y, T] = dynamic_154(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(7582)=y(7504);
-  y(4596)=y(4589)*y(4602)/y(328);
-  y(7417)=((params(556)+T(1939)-1)*y(7582)-params(556)*x(195)*y(7578))/(y(7578)*(1-x(195)));
+  y(9361)=y(9282);
+  y(9195)=((params(710)+T(2195)-1)*y(9361)-params(710)*x(249)*y(9357))/(y(9357)*(1-x(249)));
+  y(6284)=y(6059);
 end
