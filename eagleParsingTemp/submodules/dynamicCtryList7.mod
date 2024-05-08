@@ -3,5 +3,6 @@
 @#define co3 = countries3[i]
 @#define co4 = countries4[i]
 @#define co5 = countries5[i]
+@#define co6 = countries6[i]
 
-@#define coResid = countries4[i]
+@#define coResid = countries5[i]
