@@ -1,9 +1,14 @@
-function [y, T] = dynamic_73(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(1994)=y(1993)/y(484);
-  y(2014)=y(1993)*y(2783)/y(1956);
-  y(2270)=y(2269)/y(760);
-  y(2290)=y(2269)*y(2783)/y(2232);
-  y(2342)=y(2291)/(y(2340)*y(2343));
-  y(2546)=y(2545)/y(1036);
-  y(2566)=y(2545)*y(2783)/y(2508);
+function [y, T, residual, g1] = dynamic_73(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
+residual=NaN(1, 1);
+  T(2)=params(217)^(-1);
+  residual(1)=(y(2782))-(T(2)*y(2753));
+if nargout > 3
+    g1_v = NaN(1, 1);
+g1_v(1)=(-T(2));
+    if ~isoctave && matlab_ver_less_than('9.8')
+        sparse_rowval = double(sparse_rowval);
+        sparse_colval = double(sparse_colval);
+    end
+    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
+end
 end

@@ -1,3 +1,26 @@
 function [y, T] = static_97(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(482)=y(758);
+  y(1739)=0;
+  y(1754)=0;
+  y(1755)=1;
+  y(135)=0;
+  y(231)=0;
+  y(229)=1;
+  y(432)=0;
+  y(528)=0;
+  y(526)=1;
+  y(729)=0;
+  y(825)=0;
+  y(823)=1;
+  y(1026)=0;
+  y(1122)=0;
+  y(1120)=1;
+  y(1323)=0;
+  y(1419)=0;
+  y(1417)=1;
+  y(1712)=1;
+  y(1884)=0;
+  y(1886)=0;
+  y(1888)=0;
+  y(5)=1;
+  y(3)=y(198)^(params(85)/(params(364)+params(271)+params(178)+params(85)))*y(495)^(params(178)/(params(364)+params(271)+params(178)+params(85)))*y(792)^(params(271)/(params(364)+params(271)+params(178)+params(85)))*y(1089)^(params(364)/(params(364)+params(271)+params(178)+params(85)));
 end
