@@ -1,13 +1,32 @@
-function [y, T, residual, g1] = dynamic_63(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-residual=NaN(1, 1);
-  residual(1)=(y(5233)*y(5286))-(y(5234)*y(5287)+y(5236)*y(5288)+y(5238)*y(5289)+y(5240)*y(5290));
-if nargout > 3
-    g1_v = NaN(1, 1);
-g1_v(1)=y(5233);
-    if ~isoctave && matlab_ver_less_than('9.8')
-        sparse_rowval = double(sparse_rowval);
-        sparse_colval = double(sparse_colval);
-    end
-    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
-end
+function [y, T] = dynamic_63(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
+  y(4500)=params(99)*params(96)*y(4503);
+  y(4501)=y(4500)*params(83);
+  y(4502)=y(4500)*1/params(49)-y(4501)*(1-params(49))/params(49);
+  y(4895)=params(194)*params(191)*y(4898);
+  y(4896)=y(4895)*params(178);
+  y(4897)=y(4895)*1/params(144)-y(4896)*(1-params(144))/params(144);
+  y(5290)=params(289)*params(286)*y(5293);
+  y(5291)=y(5290)*params(273);
+  y(5292)=y(5290)*1/params(239)-y(5291)*(1-params(239))/params(239);
+  y(5685)=params(384)*params(381)*y(5688);
+  y(5686)=y(5685)*params(368);
+  y(5687)=y(5685)*1/params(334)-y(5686)*(1-params(334))/params(334);
+  y(6080)=params(479)*params(476)*y(6083);
+  y(6081)=y(6080)*params(463);
+  y(6082)=y(6080)*1/params(429)-y(6081)*(1-params(429))/params(429);
+  y(6475)=params(574)*params(571)*y(6478);
+  y(6476)=y(6475)*params(558);
+  y(6477)=y(6475)*1/params(524)-y(6476)*(1-params(524))/params(524);
+  y(6870)=params(669)*params(666)*y(6873);
+  y(6871)=y(6870)*params(653);
+  y(6872)=y(6870)*1/params(619)-y(6871)*(1-params(619))/params(619);
+  y(7265)=params(764)*params(761)*y(7268);
+  y(7266)=y(7265)*params(748);
+  y(7267)=y(7265)*1/params(714)-y(7266)*(1-params(714))/params(714);
+  y(7660)=params(862)*params(859)*y(7663);
+  y(7661)=y(7660)*params(846);
+  y(7662)=y(7660)*1/params(809)-y(7661)*(1-params(809))/params(809);
+  y(8051)=params(956)*params(953)*y(8054);
+  y(8052)=y(8051)*params(940);
+  y(8053)=y(8051)*1/params(904)-y(8052)*(1-params(904))/params(904);
 end
