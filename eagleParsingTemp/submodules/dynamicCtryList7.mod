@@ -9,5 +9,6 @@
 @#define co9 = countries9[i]
 @#define co10 = countries10[i]
 @#define co11 = countries11[i]
+@#define co12 = countries12[i]
 
-@#define coResid = countries10[i]
+@#define coResid = countries11[i]

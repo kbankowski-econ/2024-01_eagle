@@ -9,3 +9,4 @@
 @#define co9 = countries[9]
 @#define co10 = countries[10]
 @#define co11 = countries[11]
+@#define co12 = countries[12]

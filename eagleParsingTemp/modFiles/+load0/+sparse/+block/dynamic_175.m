@@ -1,3 +1,3 @@
 function [y, T] = dynamic_175(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(8007)=y(8029)*log(y(7863)-params(489)*y(2886))-1/(1+params(537))*y(7931)^(1+params(537))+params(470)*y(12984);
+  y(10324)=y(10345)*log(y(10180)-params(720)*y(4450))-1/(1+params(768))*y(10248)^(1+params(768))+params(701)*y(16054);
 end
