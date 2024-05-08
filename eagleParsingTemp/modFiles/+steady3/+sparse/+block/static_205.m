@@ -1,13 +1,38 @@
-function [y, T, residual, g1] = static_205(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-residual=NaN(1, 1);
-  residual(1)=(y(2508))-(y(2530)*log(y(2949)-y(2949)*params(489))-1/(1+params(540))*y(2432)^(1+params(540))+y(2508)*params(470));
-if nargout > 3
-    g1_v = NaN(1, 1);
-g1_v(1)=1-params(470);
-    if ~isoctave && matlab_ver_less_than('9.8')
-        sparse_rowval = double(sparse_rowval);
-        sparse_colval = double(sparse_colval);
-    end
-    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
-end
+function [y, T] = static_205(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
+  y(2973)=y(3024)/y(3026);
+  y(2740)=y(3001)*params(687)/params(611)*y(3226)/T(324);
+  y(2732)=y(3001)*params(687)/params(611)*y(3210)/T(324);
+  y(2878)=y(3388)*y(2888)*y(2870)/T(324);
+  y(2862)=y(3388)*y(2888)*y(2854)/T(324);
+  y(2846)=y(3388)*y(2888)*y(2838)/T(324);
+  y(2830)=y(3388)*y(2888)*y(2822)/T(324);
+  y(2739)=y(2449)*y(3001)*params(531)/params(611)/T(324);
+  y(2731)=y(2433)*y(3001)*params(531)/params(611)/T(324);
+  y(2877)=y(2613)*y(2887)*y(2869)/T(324);
+  y(2861)=y(2613)*y(2887)*y(2853)/T(324);
+  y(2845)=y(2837)*y(2613)*y(2887)/T(324);
+  y(2829)=y(2821)*y(2613)*y(2887)/T(324);
+  y(2738)=y(2061)*y(3001)*params(454)/params(611)/T(324);
+  y(2730)=y(2045)*y(3001)*params(454)/params(611)/T(324);
+  y(2876)=y(2225)*y(2886)*y(2868)/T(324);
+  y(2860)=y(2225)*y(2886)*y(2852)/T(324);
+  y(2844)=y(2836)*y(2225)*y(2886)/T(324);
+  y(2828)=y(2820)*y(2225)*y(2886)/T(324);
+  y(2737)=y(1673)*y(3001)*params(377)/params(611)/T(324);
+  y(2729)=y(1657)*y(3001)*params(377)/params(611)/T(324);
+  y(2875)=y(1837)*y(2885)*y(2867)/T(324);
+  y(2859)=y(1837)*y(2885)*y(2851)/T(324);
+  y(2843)=y(2835)*y(1837)*y(2885)/T(324);
+  y(2827)=y(2819)*y(1837)*y(2885)/T(324);
+  y(2736)=y(1285)*y(3001)*params(300)/params(611)/T(324);
+  y(2728)=y(1269)*y(3001)*params(300)/params(611)/T(324);
+  y(3632)=y(3404);
+  y(3633)=y(3632);
+  y(3634)=y(3633);
+  y(3635)=y(3388);
+  y(3636)=y(3635);
+  y(3637)=y(3636);
+  y(3639)=y(3467);
+  y(3640)=y(3639);
+  y(3641)=y(3640);
 end
