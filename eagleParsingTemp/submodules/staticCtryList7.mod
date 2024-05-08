@@ -7,3 +7,4 @@
 @#define co7 = countries[7]
 @#define co8 = countries[8]
 @#define co9 = countries[9]
+@#define co10 = countries[10]

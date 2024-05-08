@@ -32,8 +32,8 @@ function [rp, gp, rpp, gpp, hp] = static_params_derivs(y, x, params)
 %           from model file (.mod)
 
 T = NaN(0,1);
-rp = zeros(3621, 952);
-gp = zeros(3621, 3621, 952);
+rp = zeros(4274, 1097);
+gp = zeros(4274, 4274, 1097);
 if nargout >= 3
 rpp = zeros(0,4);
 gpp = zeros(0,5);

@@ -33,8 +33,8 @@ dynare('steady1.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingT
 
 %%
 % Define countries list 
-countries = ["EAA", "EAB","EAC","EAD","EAE","EAF","EAG", "RW", "US"];
-countriesResidual = [countries(8) , countries(9) , countries(1) , countries(2), countries(3), countries(4), countries(5), countries(6), countries(7)];
+countries = ["EAA", "EAB","EAC","EAD","EAE","EAF","EAG","EAH", "RW", "US"];
+countriesResidual = [countries(9) , countries(10) , countries(1) , countries(2), countries(3), countries(4), countries(5), countries(6), countries(7), countries(8)];
 
 run('tradeMatrix.m');
 
