@@ -1,35 +1,13 @@
-function [y, T] = dynamic_69(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(5257)=params(100)*params(97)*y(5260);
-  y(5258)=y(5257)*params(83);
-  y(5259)=y(5257)*1/params(49)-y(5258)*(1-params(49))/params(49);
-  y(5676)=params(196)*params(193)*y(5679);
-  y(5677)=y(5676)*params(179);
-  y(5678)=y(5676)*1/params(145)-y(5677)*(1-params(145))/params(145);
-  y(6095)=params(292)*params(289)*y(6098);
-  y(6096)=y(6095)*params(275);
-  y(6097)=y(6095)*1/params(241)-y(6096)*(1-params(241))/params(241);
-  y(6514)=params(388)*params(385)*y(6517);
-  y(6515)=y(6514)*params(371);
-  y(6516)=y(6514)*1/params(337)-y(6515)*(1-params(337))/params(337);
-  y(6933)=params(484)*params(481)*y(6936);
-  y(6934)=y(6933)*params(467);
-  y(6935)=y(6933)*1/params(433)-y(6934)*(1-params(433))/params(433);
-  y(7352)=params(580)*params(577)*y(7355);
-  y(7353)=y(7352)*params(563);
-  y(7354)=y(7352)*1/params(529)-y(7353)*(1-params(529))/params(529);
-  y(7771)=params(676)*params(673)*y(7774);
-  y(7772)=y(7771)*params(659);
-  y(7773)=y(7771)*1/params(625)-y(7772)*(1-params(625))/params(625);
-  y(8190)=params(772)*params(769)*y(8193);
-  y(8191)=y(8190)*params(755);
-  y(8192)=y(8190)*1/params(721)-y(8191)*(1-params(721))/params(721);
-  y(8609)=params(868)*params(865)*y(8612);
-  y(8610)=y(8609)*params(851);
-  y(8611)=y(8609)*1/params(817)-y(8610)*(1-params(817))/params(817);
-  y(9028)=params(967)*params(964)*y(9031);
-  y(9029)=y(9028)*params(950);
-  y(9030)=y(9028)*1/params(913)-y(9029)*(1-params(913))/params(913);
-  y(9443)=params(1062)*params(1059)*y(9446);
-  y(9444)=y(9443)*params(1045);
-  y(9445)=y(9443)*1/params(1009)-y(9444)*(1-params(1009))/params(1009);
+function [y, T, residual, g1] = dynamic_69(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
+residual=NaN(1, 1);
+  residual(1)=(log(y(10915)))-((1-params(1136))*log(x(323))+params(1136)*log(y(5318))+x(338));
+if nargout > 3
+    g1_v = NaN(1, 1);
+g1_v(1)=1/y(10915);
+    if ~isoctave && matlab_ver_less_than('9.8')
+        sparse_rowval = double(sparse_rowval);
+        sparse_colval = double(sparse_colval);
+    end
+    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
+end
 end
