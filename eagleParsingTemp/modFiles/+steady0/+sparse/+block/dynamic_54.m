@@ -1,9 +1,9 @@
 function [y, T, residual, g1] = dynamic_54(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
 residual=NaN(1, 1);
-  residual(1)=(y(2021)*y(2074))-(y(2022)*y(2075)+y(2024)*y(2076)+y(2026)*y(2077)+y(2028)*y(2078));
+  residual(1)=(y(2027)-1)-(y(2021)/params(127)^0.25-1);
 if nargout > 3
     g1_v = NaN(1, 1);
-g1_v(1)=y(2021);
+g1_v(1)=1;
     if ~isoctave && matlab_ver_less_than('9.8')
         sparse_rowval = double(sparse_rowval);
         sparse_colval = double(sparse_colval);
