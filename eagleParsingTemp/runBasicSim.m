@@ -14,9 +14,6 @@ addpath(genpath(parentFolder));
 fprintf('\n\n\n+++ Initialising the project ...\n');
 % calling a specific user input not tracked by GIT
 utils.call.paths;
-% Call Iris
-addpath(iris_path);
-iris.startup
 % Call Dynare
 addpath(dynare_6_0);
 dynare_config
@@ -36,8 +33,8 @@ dynare('steady1.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingT
 
 %%
 % Define countries list 
-countries = ["EAA", "EAB", "RW", "US"];
-countriesResidual = [countries(3) , countries(4) , countries(1) , countries(2)];
+countries = ["EAA", "EAB","EAC", "RW", "US"];
+countriesResidual = [countries(4) , countries(5) , countries(1) , countries(2), countries(3)];
 
 run('tradeMatrix.m');
 
