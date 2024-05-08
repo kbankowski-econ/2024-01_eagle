@@ -13,7 +13,7 @@ function T = static_g2_tt(T, y, x, params)
 %   T         [#temp variables by 1]  double   vector of temporary terms
 %
 
-assert(length(T) >= 1021);
+assert(length(T) >= 1471);
 
 T = eagleModel.static_g1_tt(T, y, x, params);
 
