@@ -8,3 +8,4 @@
 @#define co8 = countries[8]
 @#define co9 = countries[9]
 @#define co10 = countries[10]
+@#define co11 = countries[11]
