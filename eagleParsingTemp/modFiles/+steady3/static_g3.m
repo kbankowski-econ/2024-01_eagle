@@ -18,6 +18,6 @@ function g3 = static_g3(T, y, x, params, T_flag)
 if T_flag
     T = steady3.static_g3_tt(T, y, x, params);
 end
-g3 = sparse([],[],[],3657,1662794137);
+g3 = sparse([],[],[],4314,-1318267480);
 
 end
