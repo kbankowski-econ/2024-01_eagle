@@ -1,4 +1,3 @@
 function [y, T] = dynamic_217(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(9530)=y(9449);
-  y(9362)=((params(402)+T(7)-1)*y(9530)-params(402)*x(141)*y(9526))/(y(9526)*(1-x(141)));
+  y(7931)=y(7952)*log(y(14678)-params(27)*y(7222))-1/(1+params(75))*y(7855)^(1+params(75))+params(8)*y(15387);
 end
