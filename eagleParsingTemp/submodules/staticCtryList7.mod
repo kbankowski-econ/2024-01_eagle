@@ -5,3 +5,4 @@
 @#define co5 = countries[5]
 @#define co6 = countries[6]
 @#define co7 = countries[7]
+@#define co8 = countries[8]
