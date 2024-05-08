@@ -1,13 +1,35 @@
-function [y, T, residual, g1] = static_225(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-residual=NaN(1, 1);
-  residual(1)=(y(956))-(y(947)*y(962));
-if nargout > 3
-    g1_v = NaN(1, 1);
-g1_v(1)=(-y(962));
-    if ~isoctave && matlab_ver_less_than('9.8')
-        sparse_rowval = double(sparse_rowval);
-        sparse_colval = double(sparse_colval);
-    end
-    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
-end
+function [y, T] = static_225(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
+  y(1560)=y(1610)/y(1612);
+  y(1378)=y(1587)*params(802)/params(497)*y(2473)/T(911);
+  y(1371)=y(1587)*params(802)/params(497)*y(2465)/T(911);
+  y(1377)=y(1587)*params(702)/params(497)*y(2134)/T(911);
+  y(1370)=y(1587)*params(702)/params(497)*y(2126)/T(911);
+  y(1376)=y(1587)*params(598)/params(497)*y(1795)/T(911);
+  y(1369)=y(1587)*params(598)/params(497)*y(1787)/T(911);
+  y(1375)=y(1116)*y(1587)*params(396)/params(497)/T(911);
+  y(1368)=y(1108)*y(1587)*params(396)/params(497)/T(911);
+  y(1374)=y(777)*y(1587)*params(295)/params(497)/T(911);
+  y(1367)=y(769)*y(1587)*params(295)/params(497)/T(911);
+  y(1475)=y(909)*y(1480)*y(1470)/T(911);
+  y(1467)=y(909)*y(1480)*y(1462)/T(911);
+  y(1459)=y(1454)*y(909)*y(1480)/T(911);
+  y(1451)=y(1446)*y(909)*y(1480)/T(911);
+  y(1373)=y(438)*y(1587)*params(194)/params(497)/T(911);
+  y(1366)=y(430)*y(1587)*params(194)/params(497)/T(911);
+  y(1372)=y(99)*y(1587)*params(93)/params(497)/T(911);
+  y(1365)=y(91)*y(1587)*params(93)/params(497)/T(911);
+  y(1642)=y(1641)/T(911);
+  y(354)=y(570)*params(802)/params(194)*y(2462)/T(285);
+  y(1674)=y(1668)*params(497)*y(1616)/y(1624)/T(2523);
+  y(1671)=y(1668)/y(2974);
+  y(505)=y(658)*y(593)-y(609)*y(547)-y(561)*(1+y(622))*y(642);
+  y(1673)=y(1675)*y(1610)/T(911);
+  y(1672)=y(1676)*y(1588)/T(911);
+  y(1661)=y(1579)*y(1659)/(y(1676)*y(1588));
+  y(1666)=y(1578)*y(1659)/(y(1675)*y(1610));
+  y(1667)=y(1659)*y(1575)/T(911);
+  y(1569)=(1+y(1639))*y(1659)*y(1575)/T(911);
+  y(1516)=y(1514)/(y(1698)*y(1701));
+  y(1559)=(y(1555)*y(1603)+y(1556)*y(1604)+y(1557)*y(1605)+y(1558)*y(1606))/T(911);
+  y(1520)=y(1517)/T(911);
 end

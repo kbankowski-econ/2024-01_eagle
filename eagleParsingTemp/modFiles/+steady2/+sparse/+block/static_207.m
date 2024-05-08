@@ -1,6 +1,13 @@
-function [y, T] = static_207(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(1158)=y(1154)*y(1209);
-  y(144)=y(141)/T(451);
-  y(1280)=y(1254);
-  y(616)=y(610)*params(186)*y(558)/y(566)/T(2004);
+function [y, T, residual, g1] = static_207(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
+residual=NaN(1, 1);
+  residual(1)=(y(979))-(y(999)*log(y(841)-params(258)*y(841))-1/(1+params(301))*y(903)^(1+params(301))+params(241)*y(979));
+if nargout > 3
+    g1_v = NaN(1, 1);
+g1_v(1)=1-params(241);
+    if ~isoctave && matlab_ver_less_than('9.8')
+        sparse_rowval = double(sparse_rowval);
+        sparse_colval = double(sparse_colval);
+    end
+    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
+end
 end

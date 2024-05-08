@@ -1,13 +1,25 @@
-function [y, T, residual, g1] = static_217(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-residual=NaN(1, 1);
-  residual(1)=(y(909))-(y(959)*(1-params(276))+y(909)*params(276)+x(77));
-if nargout > 3
-    g1_v = NaN(1, 1);
-g1_v(1)=1-params(276);
-    if ~isoctave && matlab_ver_less_than('9.8')
-        sparse_rowval = double(sparse_rowval);
-        sparse_colval = double(sparse_colval);
-    end
-    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
-end
+function [y, T] = static_217(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
+  y(1919)=y(1915)*y(1970);
+  y(507)=y(469)^y(476)*y(470)^y(477)*y(471)^y(478)*y(472)^y(479)*y(473)^y(480)*y(474)^y(481)*y(475)^y(482);
+  y(2042)=y(2015);
+  y(606)=y(461)^y(476)*y(462)^y(477)*y(463)^y(478)*y(464)^y(479)*y(465)^y(480)*y(466)^y(481)*y(467)^y(482);
+  y(677)=y(467);
+  y(676)=y(466);
+  y(675)=y(465);
+  y(674)=y(464);
+  y(673)=y(463);
+  y(672)=y(462);
+  y(2034)=y(1929);
+  y(671)=y(461);
+  y(1934)=y(1933)*y(1926)/y(2980);
+  y(1940)=y(1933)*y(1942)/y(2977);
+  y(1863)=y(1825)^y(1832)*y(1826)^y(1833)*y(1827)^y(1834)*y(1828)^y(1835)*y(1829)^y(1836)*y(1830)^y(1837)*y(1831)^y(1838);
+  y(1962)=y(1817)^y(1832)*y(1818)^y(1833)*y(1819)^y(1834)*y(1820)^y(1835)*y(1821)^y(1836)*y(1822)^y(1837)*y(1823)^y(1838);
+  y(2033)=y(1823);
+  y(2032)=y(1822);
+  y(2031)=y(1821);
+  y(2030)=y(1820);
+  y(2029)=y(1819);
+  y(2028)=y(1818);
+  y(2027)=y(1817);
 end
