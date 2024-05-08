@@ -18,6 +18,6 @@ function g3 = static_g3(T, y, x, params, T_flag)
 if T_flag
     T = eagleModel.static_g3_tt(T, y, x, params);
 end
-g3 = sparse([],[],[],1463,-1163607449);
+g3 = sparse([],[],[],1901,-1720098891);
 
 end
