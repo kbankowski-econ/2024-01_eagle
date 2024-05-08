@@ -1,5 +1,5 @@
 function [residual, g1, g2, g3] = dynamic(y, x, params, steady_state, it_)
-    T = NaN(65030, 1);
+    T = NaN(86881, 1);
     if nargout <= 1
         residual = load0.dynamic_resid(T, y, x, params, steady_state, it_, true);
     elseif nargout == 2
