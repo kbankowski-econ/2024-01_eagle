@@ -1,13 +1,34 @@
-function [y, T, residual, g1] = static_300(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-residual=NaN(1, 1);
-  residual(1)=(y(722))-(y(742)*log(y(584)-params(173)*y(584))-1/(1+params(216))*y(646)^(1+params(216))+params(156)*y(722));
-if nargout > 3
-    g1_v = NaN(1, 1);
-g1_v(1)=1-params(156);
-    if ~isoctave && matlab_ver_less_than('9.8')
-        sparse_rowval = double(sparse_rowval);
-        sparse_colval = double(sparse_colval);
-    end
-    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
-end
+function [y, T] = static_300(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
+  y(3618)=y(3510);
+  y(666)=y(716)/y(718);
+  y(430)=y(693)*params(1237)/params(218)*y(4153)/T(742);
+  y(420)=y(693)*params(1237)/params(218)*y(4142)/T(742);
+  y(566)=y(4310)*y(578)*y(565)/T(742);
+  y(555)=y(4310)*y(578)*y(554)/T(742);
+  y(544)=y(4310)*y(578)*y(543)/T(742);
+  y(533)=y(4310)*y(578)*y(532)/T(742);
+  y(429)=y(693)*params(1125)/params(218)*y(3751)/T(742);
+  y(419)=y(693)*params(1125)/params(218)*y(3740)/T(742);
+  y(428)=y(693)*params(1009)/params(218)*y(3349)/T(742);
+  y(418)=y(693)*params(1009)/params(218)*y(3338)/T(742);
+  y(427)=y(693)*params(896)/params(218)*y(2947)/T(742);
+  y(3515)=y(3514)*y(3507)/y(4933);
+  y(3521)=y(3514)*y(3523)/y(4930);
+  y(824)=y(535)*y(1095)*params(218)/params(331)/T(60);
+  y(814)=y(524)*y(1095)*params(218)/params(331)/T(60);
+  y(3444)=y(3394)^y(3404)*y(3395)^y(3405)*y(3396)^y(3406)*y(3397)^y(3407)*y(3398)^y(3408)*y(3399)^y(3409)*y(3400)^y(3410)*y(3401)^y(3411)*y(3402)^y(3412)*y(3403)^y(3413);
+  y(3543)=y(3383)^y(3404)*y(3384)^y(3405)*y(3385)^y(3406)*y(3386)^y(3407)*y(3387)^y(3408)*y(3388)^y(3409)*y(3389)^y(3410)*y(3390)^y(3411)*y(3391)^y(3412)*y(3392)^y(3413);
+  y(3617)=y(3392);
+  y(3616)=y(3391);
+  y(3615)=y(3390);
+  y(3614)=y(3389);
+  y(3613)=y(3388);
+  y(3612)=y(3387);
+  y(3611)=y(3386);
+  y(3610)=y(3385);
+  y(3609)=y(3384);
+  y(3608)=y(3383);
+  y(823)=y(133)*y(1095)*params(105)/params(331)/T(60);
+  y(3443)=y(3508)*y(3466)+y(3507)*y(3445)-y(3546)*y(3485)-y(3499)*(1+y(3559))*y(3579);
+  y(3442)=y(3595)*y(3530)-y(3546)*y(3484)-y(3498)*(1+y(3559))*y(3579);
 end
