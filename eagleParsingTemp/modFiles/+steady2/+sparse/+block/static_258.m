@@ -1,13 +1,36 @@
-function [y, T, residual, g1] = static_258(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-residual=NaN(1, 1);
-  residual(1)=(y(301))-(y(321)*log(y(163)-params(56)*y(163))-1/(1+params(99))*y(225)^(1+params(99))+params(39)*y(301));
-if nargout > 3
-    g1_v = NaN(1, 1);
-g1_v(1)=1-params(39);
-    if ~isoctave && matlab_ver_less_than('9.8')
-        sparse_rowval = double(sparse_rowval);
-        sparse_colval = double(sparse_colval);
-    end
-    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
-end
+function [y, T] = static_258(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
+  y(2024)=y(2074)/y(2076);
+  y(1824)=y(2051)*params(939)/params(622)*y(2993)/T(1149);
+  y(1816)=y(2051)*params(939)/params(622)*y(2984)/T(1149);
+  y(1823)=y(2051)*params(835)/params(622)*y(2633)/T(1149);
+  y(1815)=y(2051)*params(835)/params(622)*y(2624)/T(1149);
+  y(1822)=y(2051)*params(727)/params(622)*y(2273)/T(1149);
+  y(1814)=y(2051)*params(727)/params(622)*y(2264)/T(1149);
+  y(1821)=y(1552)*y(2051)*params(517)/params(622)/T(1149);
+  y(1813)=y(1543)*y(2051)*params(517)/params(622)/T(1149);
+  y(1820)=y(1192)*y(2051)*params(412)/params(622)/T(1149);
+  y(1812)=y(1183)*y(2051)*params(412)/params(622)/T(1149);
+  y(1934)=y(1331)*y(1940)*y(1929)/T(1149);
+  y(1925)=y(1331)*y(1940)*y(1920)/T(1149);
+  y(1916)=y(1911)*y(1331)*y(1940)/T(1149);
+  y(1907)=y(1902)*y(1331)*y(1940)/T(1149);
+  y(1819)=y(832)*y(2051)*params(307)/params(622)/T(1149);
+  y(1811)=y(823)*y(2051)*params(307)/params(622)/T(1149);
+  y(1818)=y(472)*y(2051)*params(202)/params(622)/T(1149);
+  y(1810)=y(463)*y(2051)*params(202)/params(622)/T(1149);
+  y(1817)=y(112)*y(2051)*params(97)/params(622)/T(1149);
+  y(1809)=y(103)*y(2051)*params(97)/params(622)/T(1149);
+  y(2106)=y(2105)/T(1149);
+  y(1007)=y(857)^y(874)*y(858)^y(875)*y(859)^y(876)*y(860)^y(877)*y(861)^y(878)*y(862)^y(879)*y(863)^y(880)*y(864)^y(881);
+  y(2138)=y(2132)*params(622)*y(2080)/y(2088)/T(3066);
+  y(2135)=y(2132)/y(3575);
+  y(2137)=y(2139)*y(2074)/T(1149);
+  y(2136)=y(2140)*y(2052)/T(1149);
+  y(2125)=y(2043)*y(2123)/(y(2140)*y(2052));
+  y(2130)=y(2042)*y(2123)/(y(2139)*y(2074));
+  y(2131)=y(2123)*y(2039)/T(1149);
+  y(2033)=(1+y(2103))*y(2123)*y(2039)/T(1149);
+  y(1980)=y(1978)/(y(2163)*y(2166));
+  y(2023)=(y(2019)*y(2067)+y(2020)*y(2068)+y(2021)*y(2069)+y(2022)*y(2070))/T(1149);
+  y(1984)=y(1981)/T(1149);
 end

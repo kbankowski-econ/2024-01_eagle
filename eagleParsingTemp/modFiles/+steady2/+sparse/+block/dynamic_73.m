@@ -1,13 +1,29 @@
-function [y, T, residual, g1] = dynamic_73(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-residual=NaN(1, 1);
-  residual(1)=(y(5324)-1)-(y(5318)/params(684)^0.25-1);
-if nargout > 3
-    g1_v = NaN(1, 1);
-g1_v(1)=1;
-    if ~isoctave && matlab_ver_less_than('9.8')
-        sparse_rowval = double(sparse_rowval);
-        sparse_colval = double(sparse_colval);
-    end
-    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
-end
+function [y, T] = dynamic_73(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
+  y(6815)=0;
+  y(6830)=0;
+  y(3816)=0;
+  y(3912)=0;
+  y(4176)=0;
+  y(4272)=0;
+  y(4536)=0;
+  y(4632)=0;
+  y(4896)=0;
+  y(4992)=0;
+  y(5256)=0;
+  y(5352)=0;
+  y(5616)=0;
+  y(5712)=0;
+  y(5976)=0;
+  y(6072)=0;
+  y(6336)=0;
+  y(6432)=0;
+  y(6788)=1;
+  y(7119)=0;
+  y(7121)=0;
+  y(7123)=0;
+  y(7125)=0;
+  y(7127)=0;
+  y(7129)=0;
+  T(1)=params(727)+params(622)+params(517)+params(412)+params(307)+params(202)+params(97);
+  y(3624)=y(3879)^(params(97)/T(1))*y(4239)^(params(202)/T(1))*y(4599)^(params(307)/T(1))*y(4959)^(params(412)/T(1))*y(5319)^(params(517)/T(1))*y(5679)^(params(622)/T(1))*y(6039)^(params(727)/T(1));
 end
