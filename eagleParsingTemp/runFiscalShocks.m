@@ -14,9 +14,6 @@ addpath(genpath(parentFolder));
 fprintf('\n\n\n+++ Initialising the project ...\n');
 % calling a specific user input not tracked by GIT
 utils.call.paths;
-% Call Iris
-addpath(iris_path);
-iris.startup
 % Call Dynare
 addpath(dynare_6_0);
 dynare_config
