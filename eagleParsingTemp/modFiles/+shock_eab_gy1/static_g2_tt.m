@@ -13,7 +13,7 @@ function T = static_g2_tt(T, y, x, params)
 %   T         [#temp variables by 1]  double   vector of temporary terms
 %
 
-assert(length(T) >= 9770);
+assert(length(T) >= 11365);
 
 T = shock_eab_gy1.static_g1_tt(T, y, x, params);
 

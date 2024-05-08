@@ -1,9 +1,9 @@
 function [y, T, residual, g1] = dynamic_71(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
 residual=NaN(1, 1);
-  residual(1)=(log(y(11984)))-((1-params(1146))*log(x(320))+params(1146)*log(y(5608))+x(336));
+  residual(1)=(log(y(13099)))-((1-params(1154))*log(x(320))+params(1154)*log(y(5896))+x(335));
 if nargout > 3
     g1_v = NaN(1, 1);
-g1_v(1)=1/y(11984);
+g1_v(1)=1/y(13099);
     if ~isoctave && matlab_ver_less_than('9.8')
         sparse_rowval = double(sparse_rowval);
         sparse_colval = double(sparse_colval);

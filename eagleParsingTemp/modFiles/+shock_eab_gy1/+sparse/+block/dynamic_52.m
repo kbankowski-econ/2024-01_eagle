@@ -1,12 +1,12 @@
 function [y, T] = dynamic_52(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(10445)=(1-params(838))*x(227)+params(838)*y(4069)+x(240);
-  y(10466)=(1-params(839))*x(228)+params(839)*y(4090)+x(241);
-  y(10554)=(1-params(847))*params(885)+params(847)*y(4178)+x(249);
-  y(10540)=(1-params(841))*x(229)+y(4164)*params(841)+x(243);
-  y(10541)=(1-params(842))*x(230)+y(4165)*params(842)+x(244);
-  y(10542)=x(231)*(1-params(843))+y(4166)*params(843)+x(245);
-  y(10543)=(1-params(844))*x(232)+y(4167)*params(844)+x(246);
-  y(10545)=(1-params(846))*x(234)+y(4169)*params(846)+x(248);
-  y(10544)=(1-params(845))*x(233)+y(4168)*params(845)+x(247);
-  y(10566)=(1-params(848))*x(235)+params(848)*y(4190)+x(250);
+  y(11488)=(1-params(846))*x(227)+params(846)*y(4285)+x(240);
+  y(11509)=(1-params(847))*x(228)+params(847)*y(4306)+x(241);
+  y(11597)=(1-params(855))*params(894)+params(855)*y(4394)+x(249);
+  y(11583)=(1-params(849))*x(229)+y(4380)*params(849)+x(243);
+  y(11584)=(1-params(850))*x(230)+y(4381)*params(850)+x(244);
+  y(11585)=x(231)*(1-params(851))+y(4382)*params(851)+x(245);
+  y(11586)=(1-params(852))*x(232)+y(4383)*params(852)+x(246);
+  y(11588)=(1-params(854))*x(234)+y(4385)*params(854)+x(248);
+  y(11587)=(1-params(853))*x(233)+y(4384)*params(853)+x(247);
+  y(11609)=(1-params(856))*x(235)+params(856)*y(4406)+x(250);
 end

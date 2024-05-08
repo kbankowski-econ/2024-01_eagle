@@ -22,6 +22,6 @@ function g3 = dynamic_g3(T, y, x, params, steady_state, it_, T_flag)
 if T_flag
     T = shock_eab_gy1.dynamic_g3_tt(T, y, x, params, steady_state, it_);
 end
-g3 = sparse([],[],[],6376,-1507234631);
+g3 = sparse([],[],[],7203,1230386565);
 
 end
