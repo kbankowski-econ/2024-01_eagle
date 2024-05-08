@@ -1,4 +1,5 @@
 function [y, T] = dynamic_220(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(7869)=y(7782);
-  y(7700)=((params(310)+T(3)-1)*y(7869)-params(310)*x(60)*y(7865))/(y(7865)*(1-x(60)));
+  y(12970)=y(12882);
+  y(8729)=y(8786)*(1-params(360))+params(360)*y(1343)+x(77);
+  y(12800)=((params(1447)+T(4936)-1)*y(12970)-params(1447)*x(303)*y(12966))/(y(12966)*(1-x(303)));
 end
