@@ -1,31 +1,29 @@
-function [y, T, residual, g1] = static_163(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-residual=NaN(5, 1);
-  residual(1)=(y(2890))-(y(2889));
-  residual(2)=(y(2889))-(y(2348));
-  residual(3)=(y(2349))-(y(2348)*y(2348)*y(2889)*y(2890));
-  T(50)=params(567)^(-1);
-  residual(4)=(y(2377))-(T(50)*y(2348));
-  T(51)=y(2377)^4-1;
-  residual(5)=(T(51))-(T(51)*params(610)+(1-params(610))*(params(612)*y(2384)^4-1+params(609)*(y(2349)-params(612)))+x(186));
-  T(52)=4*y(2377)^3;
-if nargout > 3
-    g1_v = NaN(12, 1);
-g1_v(1)=(-1);
-g1_v(2)=1;
-g1_v(3)=(-(y(2348)*y(2348)*y(2890)));
-g1_v(4)=(-1);
-g1_v(5)=(-(y(2890)*y(2889)*(y(2348)+y(2348))));
-g1_v(6)=(-T(50));
-g1_v(7)=1;
-g1_v(8)=(-(y(2348)*y(2348)*y(2889)));
-g1_v(9)=1;
-g1_v(10)=T(52)-params(610)*T(52);
-g1_v(11)=1;
-g1_v(12)=(-((1-params(610))*params(609)));
-    if ~isoctave && matlab_ver_less_than('9.8')
-        sparse_rowval = double(sparse_rowval);
-        sparse_colval = double(sparse_colval);
-    end
-    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 5, 5);
-end
+function [y, T] = static_163(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
+  y(1085)=params(286)*params(283)*y(1088);
+  y(1086)=y(1085)*params(271);
+  y(1087)=y(1085)*1/params(237)-y(1086)*(1-params(237))/params(237);
+  y(343)=params(98)*params(95)*y(346);
+  y(344)=y(343)*params(83);
+  y(345)=y(343)*1/params(49)-y(344)*(1-params(49))/params(49);
+  y(1456)=params(380)*params(377)*y(1459);
+  y(1457)=y(1456)*params(365);
+  y(1458)=y(1456)*1/params(331)-y(1457)*(1-params(331))/params(331);
+  y(1827)=params(474)*params(471)*y(1830);
+  y(1828)=y(1827)*params(459);
+  y(1829)=y(1827)*1/params(425)-y(1828)*(1-params(425))/params(425);
+  y(2198)=params(568)*params(565)*y(2201);
+  y(2199)=y(2198)*params(553);
+  y(2200)=y(2198)*1/params(519)-y(2199)*(1-params(519))/params(519);
+  y(2569)=params(662)*params(659)*y(2572);
+  y(2570)=y(2569)*params(647);
+  y(2571)=y(2569)*1/params(613)-y(2570)*(1-params(613))/params(613);
+  y(714)=params(192)*params(189)*y(717);
+  y(715)=y(714)*params(177);
+  y(716)=y(714)*1/params(143)-y(715)*(1-params(143))/params(143);
+  y(2940)=params(759)*params(756)*y(2943);
+  y(2941)=y(2940)*params(744);
+  y(2942)=y(2940)*1/params(707)-y(2941)*(1-params(707))/params(707);
+  y(3307)=params(852)*params(849)*y(3310);
+  y(3308)=y(3307)*params(837);
+  y(3309)=y(3307)*1/params(801)-y(3308)*(1-params(801))/params(801);
 end
