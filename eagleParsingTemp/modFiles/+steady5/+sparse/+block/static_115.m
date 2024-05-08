@@ -1,3 +1,3 @@
 function [y, T] = static_115(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(2855)=0;
+  y(3057)=0;
 end
