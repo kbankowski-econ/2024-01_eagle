@@ -1,5 +1,13 @@
-function [y, T] = dynamic_35(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(2463)=y(2464)+y(2466)+y(2468)+y(2470);
-  y(2188)=y(2189)+y(2191)+y(2193)+y(2195);
-  y(1913)=y(1914)+y(1916)+y(1918)+y(1920);
+function [y, T, residual, g1] = dynamic_35(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
+residual=NaN(1, 1);
+  residual(1)=(log(y(3725)))-((1-params(522))*log(x(153))+params(522)*log(y(1794))+x(168));
+if nargout > 3
+    g1_v = NaN(1, 1);
+g1_v(1)=1/y(3725);
+    if ~isoctave && matlab_ver_less_than('9.8')
+        sparse_rowval = double(sparse_rowval);
+        sparse_colval = double(sparse_colval);
+    end
+    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
+end
 end
