@@ -1,3 +1,4 @@
 function [y, T] = dynamic_221(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(10951)=y(10973)*log(y(13010)-params(644)*y(6412))-1/(1+params(691))*y(10875)^(1+params(691))+params(625)*y(17549);
+  y(7625)=T(980)*y(7612)/T(1584);
+  y(12498)=y(12483)*y(12550)/y(5094);
 end

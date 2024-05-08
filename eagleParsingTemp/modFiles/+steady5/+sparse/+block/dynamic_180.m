@@ -1,7 +1,13 @@
-function [y, T] = dynamic_180(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(7591)=y(7954)*T(1158)*y(11135)/T(1046);
-  y(7603)=y(7954)*T(1158)*y(11159)/T(1046);
-  y(7738)=T(535)*y(7726)/T(1046);
-  y(12777)=((params(943)+T(3269)-1)*y(12942)-params(943)*x(330)*y(12938))/(y(12938)*(1-x(330)));
-  y(7762)=T(535)*y(7750)/T(1046);
+function [y, T, residual, g1] = dynamic_180(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
+residual=NaN(1, 1);
+  residual(1)=(y(14127))-(y(14111)*y(14133));
+if nargout > 3
+    g1_v = NaN(1, 1);
+g1_v(1)=(-y(14133));
+    if ~isoctave && matlab_ver_less_than('9.8')
+        sparse_rowval = double(sparse_rowval);
+        sparse_colval = double(sparse_colval);
+    end
+    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
+end
 end

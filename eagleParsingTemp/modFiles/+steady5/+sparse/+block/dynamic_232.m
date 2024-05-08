@@ -1,3 +1,3 @@
 function [y, T] = dynamic_232(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(9927)=y(9912)*y(9979)/y(3381);
+  y(12034)=y(12055)*log(y(14710)-params(644)*y(7254))-1/(1+params(691))*y(11958)^(1+params(691))+params(625)*y(19490);
 end

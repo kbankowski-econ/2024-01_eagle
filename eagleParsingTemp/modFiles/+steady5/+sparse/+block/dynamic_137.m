@@ -1,6 +1,6 @@
 function [y, T, residual, g1] = dynamic_137(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
 residual=NaN(1, 1);
-  residual(1)=(y(10923)-1)-(y(10917)/params(667)^0.25-1);
+  residual(1)=(y(12005)-1)-(y(11999)/params(667)^0.25-1);
 if nargout > 3
     g1_v = NaN(1, 1);
 g1_v(1)=1;

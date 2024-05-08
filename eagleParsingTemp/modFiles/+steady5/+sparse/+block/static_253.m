@@ -1,10 +1,3 @@
 function [y, T] = static_253(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(2353)=y(2338);
-  y(2341)=y(2338);
-  y(2352)=y(2338);
-  y(2191)=y(2338);
-  y(2342)=y(2338);
-  y(2343)=y(2338);
-  y(2344)=y(2338);
-  y(2345)=y(2338);
+  y(5569)=y(6082);
 end

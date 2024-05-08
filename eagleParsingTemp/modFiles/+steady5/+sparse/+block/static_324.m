@@ -1,9 +1,9 @@
 function [y, T, residual, g1] = static_324(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
 residual=NaN(1, 1);
-  residual(1)=(y(5322))-(y(5373)*(1-params(832))+y(5322)*params(832)+x(293));
+  residual(1)=(y(6622))-(y(6674)*(1-params(989))+y(6622)*params(989)+x(347));
 if nargout > 3
     g1_v = NaN(1, 1);
-g1_v(1)=1-params(832);
+g1_v(1)=1-params(989);
     if ~isoctave && matlab_ver_less_than('9.8')
         sparse_rowval = double(sparse_rowval);
         sparse_colval = double(sparse_colval);
