@@ -1,38 +1,13 @@
-function [y, T] = dynamic_75(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(6012)=params(101)*params(98)*y(6015);
-  y(6013)=y(6012)*params(83);
-  y(6014)=y(6012)*1/params(49)-y(6013)*(1-params(49))/params(49);
-  y(6455)=params(198)*params(195)*y(6458);
-  y(6456)=y(6455)*params(180);
-  y(6457)=y(6455)*1/params(146)-y(6456)*(1-params(146))/params(146);
-  y(6898)=params(295)*params(292)*y(6901);
-  y(6899)=y(6898)*params(277);
-  y(6900)=y(6898)*1/params(243)-y(6899)*(1-params(243))/params(243);
-  y(7341)=params(392)*params(389)*y(7344);
-  y(7342)=y(7341)*params(374);
-  y(7343)=y(7341)*1/params(340)-y(7342)*(1-params(340))/params(340);
-  y(7784)=params(489)*params(486)*y(7787);
-  y(7785)=y(7784)*params(471);
-  y(7786)=y(7784)*1/params(437)-y(7785)*(1-params(437))/params(437);
-  y(8227)=params(586)*params(583)*y(8230);
-  y(8228)=y(8227)*params(568);
-  y(8229)=y(8227)*1/params(534)-y(8228)*(1-params(534))/params(534);
-  y(8670)=params(683)*params(680)*y(8673);
-  y(8671)=y(8670)*params(665);
-  y(8672)=y(8670)*1/params(631)-y(8671)*(1-params(631))/params(631);
-  y(9113)=params(780)*params(777)*y(9116);
-  y(9114)=y(9113)*params(762);
-  y(9115)=y(9113)*1/params(728)-y(9114)*(1-params(728))/params(728);
-  y(9556)=params(877)*params(874)*y(9559);
-  y(9557)=y(9556)*params(859);
-  y(9558)=y(9556)*1/params(825)-y(9557)*(1-params(825))/params(825);
-  y(9999)=params(974)*params(971)*y(10002);
-  y(10000)=y(9999)*params(956);
-  y(10001)=y(9999)*1/params(922)-y(10000)*(1-params(922))/params(922);
-  y(10442)=params(1074)*params(1071)*y(10445);
-  y(10443)=y(10442)*params(1056);
-  y(10444)=y(10442)*1/params(1019)-y(10443)*(1-params(1019))/params(1019);
-  y(10881)=params(1170)*params(1167)*y(10884);
-  y(10882)=y(10881)*params(1152);
-  y(10883)=y(10881)*1/params(1116)-y(10882)*(1-params(1116))/params(1116);
+function [y, T, residual, g1] = dynamic_75(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
+residual=NaN(1, 1);
+  residual(1)=(log(y(12449)))-((1-params(1245))*log(x(351))+params(1245)*log(y(6073))+x(366));
+if nargout > 3
+    g1_v = NaN(1, 1);
+g1_v(1)=1/y(12449);
+    if ~isoctave && matlab_ver_less_than('9.8')
+        sparse_rowval = double(sparse_rowval);
+        sparse_colval = double(sparse_colval);
+    end
+    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
+end
 end

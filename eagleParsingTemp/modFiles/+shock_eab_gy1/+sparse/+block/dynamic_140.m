@@ -1,4 +1,4 @@
 function [y, T] = dynamic_140(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(6909)=y(6930)*log(y(10954)-params(222)*y(5357))-1/(1+params(270))*y(6833)^(1+params(270))+params(203)*y(12506);
-  y(6908)=y(6930)*log(y(10953)-params(222)*y(5356))-1/(1+params(270))*y(6832)^(1+params(270))+params(203)*y(12505);
+  y(9161)=y(9182)*log(y(12503)-params(518)*y(6127))-1/(1+params(566))*y(9085)^(1+params(566))+params(499)*y(15537);
+  y(9160)=y(9182)*log(y(12502)-params(518)*y(6126))-1/(1+params(566))*y(9084)^(1+params(566))+params(499)*y(15536);
 end
