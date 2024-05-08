@@ -1,6 +1,6 @@
 function [y, T, residual, g1] = dynamic_125(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
 residual=NaN(1, 1);
-  residual(1)=(y(8149)-1)-(y(8143)/y(13651)-1);
+  residual(1)=(y(10468)-1)-(y(10462)/y(16744)-1);
 if nargout > 3
     g1_v = NaN(1, 1);
 g1_v(1)=1;

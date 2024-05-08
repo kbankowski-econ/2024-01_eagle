@@ -1,13 +1,41 @@
-function [y, T, residual, g1] = dynamic_81(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-residual=NaN(1, 1);
-  residual(1)=(y(8513)*y(8566))-(y(8514)*y(8567)+y(8516)*y(8568)+y(8518)*y(8569)+y(8520)*y(8570));
-if nargout > 3
-    g1_v = NaN(1, 1);
-g1_v(1)=y(8513);
-    if ~isoctave && matlab_ver_less_than('9.8')
-        sparse_rowval = double(sparse_rowval);
-        sparse_colval = double(sparse_colval);
-    end
-    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
-end
+function [y, T] = dynamic_81(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
+  y(6750)=params(102)*params(99)*y(6753);
+  y(6751)=y(6750)*params(83);
+  y(6752)=y(6750)*1/params(49)-y(6751)*(1-params(49))/params(49);
+  y(7217)=params(200)*params(197)*y(7220);
+  y(7218)=y(7217)*params(181);
+  y(7219)=y(7217)*1/params(147)-y(7218)*(1-params(147))/params(147);
+  y(7684)=params(298)*params(295)*y(7687);
+  y(7685)=y(7684)*params(279);
+  y(7686)=y(7684)*1/params(245)-y(7685)*(1-params(245))/params(245);
+  y(8151)=params(396)*params(393)*y(8154);
+  y(8152)=y(8151)*params(377);
+  y(8153)=y(8151)*1/params(343)-y(8152)*(1-params(343))/params(343);
+  y(8618)=params(494)*params(491)*y(8621);
+  y(8619)=y(8618)*params(475);
+  y(8620)=y(8618)*1/params(441)-y(8619)*(1-params(441))/params(441);
+  y(9085)=params(592)*params(589)*y(9088);
+  y(9086)=y(9085)*params(573);
+  y(9087)=y(9085)*1/params(539)-y(9086)*(1-params(539))/params(539);
+  y(9552)=params(690)*params(687)*y(9555);
+  y(9553)=y(9552)*params(671);
+  y(9554)=y(9552)*1/params(637)-y(9553)*(1-params(637))/params(637);
+  y(10019)=params(788)*params(785)*y(10022);
+  y(10020)=y(10019)*params(769);
+  y(10021)=y(10019)*1/params(735)-y(10020)*(1-params(735))/params(735);
+  y(10486)=params(886)*params(883)*y(10489);
+  y(10487)=y(10486)*params(867);
+  y(10488)=y(10486)*1/params(833)-y(10487)*(1-params(833))/params(833);
+  y(10953)=params(984)*params(981)*y(10956);
+  y(10954)=y(10953)*params(965);
+  y(10955)=y(10953)*1/params(931)-y(10954)*(1-params(931))/params(931);
+  y(11420)=params(1082)*params(1079)*y(11423);
+  y(11421)=y(11420)*params(1063);
+  y(11422)=y(11420)*1/params(1029)-y(11421)*(1-params(1029))/params(1029);
+  y(11887)=params(1183)*params(1180)*y(11890);
+  y(11888)=y(11887)*params(1164);
+  y(11889)=y(11887)*1/params(1127)-y(11888)*(1-params(1127))/params(1127);
+  y(12350)=params(1280)*params(1277)*y(12353);
+  y(12351)=y(12350)*params(1261);
+  y(12352)=y(12350)*1/params(1225)-y(12351)*(1-params(1225))/params(1225);
 end

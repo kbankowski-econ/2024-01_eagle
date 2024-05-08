@@ -1,4 +1,4 @@
 function [y, T] = dynamic_115(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(9507)=y(9528)*log(y(9363)-params(804)*y(3826))-1/(1+params(852))*y(9431)^(1+params(852))+params(785)*y(15044);
-  y(9506)=y(9528)*log(y(9362)-params(804)*y(3825))-1/(1+params(852))*y(9430)^(1+params(852))+params(785)*y(15043);
+  y(11898)=y(11919)*log(y(11754)-params(1106)*y(5443))-1/(1+params(1157))*y(11822)^(1+params(1157))+params(1087)*y(18209);
+  y(11897)=y(11919)*log(y(11753)-params(1106)*y(5442))-1/(1+params(1157))*y(11821)^(1+params(1157))+params(1087)*y(18208);
 end
