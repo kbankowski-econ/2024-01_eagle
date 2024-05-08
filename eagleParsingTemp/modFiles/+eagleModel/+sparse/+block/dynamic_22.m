@@ -1,12 +1,12 @@
 function [y, T] = dynamic_22(y, x, params, steady_state, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(8045)=(1-params(348))*x(87)+params(348)*y(1734)+x(100);
-  y(8066)=(1-params(349))*x(88)+params(349)*y(1755)+x(101);
-  y(8154)=(1-params(357))*params(395)+params(357)*y(1843)+x(109);
-  y(8140)=(1-params(351))*x(89)+y(1829)*params(351)+x(103);
-  y(8141)=(1-params(352))*x(90)+y(1830)*params(352)+x(104);
-  y(8142)=x(91)*(1-params(353))+y(1831)*params(353)+x(105);
-  y(8143)=(1-params(354))*x(92)+y(1832)*params(354)+x(106);
-  y(8145)=(1-params(356))*x(94)+y(1834)*params(356)+x(108);
-  y(8144)=(1-params(355))*x(93)+y(1833)*params(355)+x(107);
-  y(8166)=(1-params(358))*x(95)+params(358)*y(1855)+x(110);
+  y(8963)=(1-params(351))*x(87)+params(351)*y(1830)+x(100);
+  y(8984)=(1-params(352))*x(88)+params(352)*y(1851)+x(101);
+  y(9072)=(1-params(360))*params(399)+params(360)*y(1939)+x(109);
+  y(9058)=(1-params(354))*x(89)+y(1925)*params(354)+x(103);
+  y(9059)=(1-params(355))*x(90)+y(1926)*params(355)+x(104);
+  y(9060)=x(91)*(1-params(356))+y(1927)*params(356)+x(105);
+  y(9061)=(1-params(357))*x(92)+y(1928)*params(357)+x(106);
+  y(9063)=(1-params(359))*x(94)+y(1930)*params(359)+x(108);
+  y(9062)=(1-params(358))*x(93)+y(1929)*params(358)+x(107);
+  y(9084)=(1-params(361))*x(95)+params(361)*y(1951)+x(110);
 end

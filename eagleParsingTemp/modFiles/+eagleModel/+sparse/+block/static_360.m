@@ -1,9 +1,10 @@
 function [y, T, residual, g1] = static_360(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
 residual=NaN(1, 1);
-  residual(1)=(y(4186))-(y(4207)*log(y(4042)-params(812)*y(4042))-1/(1+params(860))*y(4110)^(1+params(860))+params(793)*y(4186));
+  T(4866)=params(73)*T(1587)^params(78);
+  residual(1)=(y(448))-((1-params(73))*(y(481)/y(480))^(-params(78))+y(448)*T(4866));
 if nargout > 3
     g1_v = NaN(1, 1);
-g1_v(1)=1-params(793);
+g1_v(1)=1-T(4866);
     if ~isoctave && matlab_ver_less_than('9.8')
         sparse_rowval = double(sparse_rowval);
         sparse_colval = double(sparse_colval);

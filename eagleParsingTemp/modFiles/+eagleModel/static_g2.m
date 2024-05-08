@@ -18,6 +18,6 @@ function g2 = static_g2(T, y, x, params, T_flag)
 if T_flag
     T = eagleModel.static_g2_tt(T, y, x, params);
 end
-g2 = sparse([],[],[],6311,39828721);
+g2 = sparse([],[],[],7133,50879689);
 
 end
