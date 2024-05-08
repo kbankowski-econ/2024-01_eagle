@@ -1,13 +1,37 @@
-function [y, T, residual, g1] = static_371(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-residual=NaN(1, 1);
-  residual(1)=(y(2065))-(y(2120)*(1-params(570))+y(2065)*params(570)+x(131));
-if nargout > 3
-    g1_v = NaN(1, 1);
-g1_v(1)=1-params(570);
-    if ~isoctave && matlab_ver_less_than('9.8')
-        sparse_rowval = double(sparse_rowval);
-        sparse_colval = double(sparse_colval);
-    end
-    g1 = sparse(sparse_rowval, sparse_colval, g1_v, 1, 1);
-end
+function [y, T] = static_371(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
+  y(3432)=y(3428)*y(3483);
+  y(474)=y(775)*params(1323)/params(234)*y(4597)/T(429);
+  y(462)=y(775)*params(1323)/params(234)*y(4584)/T(429);
+  y(3560)=y(3528);
+  y(473)=y(775)*params(1202)/params(234)*y(4153)/T(429);
+  y(461)=y(775)*params(1202)/params(234)*y(4140)/T(429);
+  y(472)=y(775)*params(1081)/params(234)*y(3709)/T(429);
+  y(460)=y(775)*params(1081)/params(234)*y(3696)/T(429);
+  y(471)=y(775)*params(960)/params(234)*y(3265)/T(429);
+  y(459)=y(775)*params(960)/params(234)*y(3252)/T(429);
+  y(470)=y(775)*params(839)/params(234)*y(2821)/T(429);
+  y(458)=y(775)*params(839)/params(234)*y(2808)/T(429);
+  y(469)=y(775)*params(718)/params(234)*y(2377)/T(429);
+  y(457)=y(775)*params(718)/params(234)*y(2364)/T(429);
+  y(468)=y(775)*params(597)/params(234)*y(1933)/T(429);
+  y(456)=y(775)*params(597)/params(234)*y(1920)/T(429);
+  y(467)=y(775)*params(476)/params(234)*y(1489)/T(429);
+  y(455)=y(775)*params(476)/params(234)*y(1476)/T(429);
+  y(466)=y(775)*params(355)/params(234)*y(1045)/T(429);
+  y(454)=y(775)*params(355)/params(234)*y(1032)/T(429);
+  y(465)=y(156)*y(775)*params(113)/params(234)/T(429);
+  y(453)=y(143)*y(775)*params(113)/params(234)/T(429);
+  y(830)=y(829)/T(429);
+  y(862)=y(856)*params(234)*y(804)/y(812)/T(5900);
+  y(859)=y(856)/y(6399);
+  y(861)=y(863)*y(798)/T(429);
+  y(860)=y(864)*y(776)/T(429);
+  y(849)=y(767)*y(847)/(y(864)*y(776));
+  y(854)=y(766)*y(847)/(y(863)*y(798));
+  y(855)=y(847)*y(763)/T(429);
+  y(757)=(1+y(827))*y(847)*y(763)/T(429);
+  y(704)=y(702)/(y(891)*y(894));
+  y(3552)=y(3442);
+  y(747)=(y(743)*y(791)+y(744)*y(792)+y(745)*y(793)+y(746)*y(794))/T(429);
+  y(708)=y(705)/T(429);
 end
