@@ -12,7 +12,6 @@ EAB_rhocg=0; //if we don't want persistent shock
 
 steady(solve_algo = 5, markowitz = 5);
 
-/*
 shocks;
 var EAA_epsgc;
 periods 1:4;
@@ -57,4 +56,3 @@ end;
 
 perfect_foresight_setup(periods = 100);
 perfect_foresight_solver(stack_solve_algo=4);
-*/
