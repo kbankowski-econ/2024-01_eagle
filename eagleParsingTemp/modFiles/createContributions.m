@@ -40,8 +40,8 @@ function [lineSeries, contributionSeries, aLHS] = createContributions(equationna
 % along with Dynare.  If not, see <https://www.gnu.org/licenses/>.
 
 global M_
-% //TODO: change it back to modfile-original
-jsonfile = [M_.fname filesep() 'model' filesep() 'json' filesep() 'modfile.json'];
+
+jsonfile = [M_.fname filesep() 'model' filesep() 'json' filesep() 'modfile-original.json'];
 if exist(jsonfile, 'file') ~= 2
     error('Could not find %s! Please use the json option (See the Dynare invocation section in the reference manual).', jsonfile);
 end
