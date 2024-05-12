@@ -43,12 +43,25 @@ ssStruct = databank.fromArray( ...
     , M_.endo_names ...
     , dataRange ...
 );
+for aParam = string(reshape(fiscalSimOutput.M_.param_names, 1, []))
+    paramStruct.(aParam) = fiscalSimOutput.M_.params(strcmp(aParam, fiscalSimOutput.M_.param_names));
+end
+
+[endoStruct.EAE_y, ssStruct.EAE_y]
+[endoStruct.EAE_yst, ssStruct.EAE_yst]
+[endoStruct.EAE_ysn, ssStruct.EAE_ysn]
+[endoStruct.EAA_ysn, ssStruct.EAA_ysn]
+[endoStruct.EAE_pic4, ssStruct.EAE_pic4]
+[endoStruct.EAE_cgy, ssStruct.EAE_cgy]
+[endoStruct.EAB_cgy, ssStruct.EAB_cgy]
+[endoStruct.EAB_y, ssStruct.EAB_y]
+
 
 aEndoVar = "EA_y";
 irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)/ssStruct.(aEndoVar)-1)*100;
 irfStruct.(aEndoVar) 
 
-aItemList = ["EA_y"];
+aItemList = ["EA_y", "EA_pic4"];
 
 allItemList = aItemList;
 % //TODO: move createContributions, Series2Dseries to some function folder
@@ -73,11 +86,14 @@ colorTable = table( ...
     , 'VariableNames',{'colorIndex'} ...
     , 'RowNames',unique(allItemList) ...
     );
-colormapSaved = subroutines.linspecer(numel(unique(allItemList)));
+colormapSaved = linspecer(numel(unique(allItemList)));
 for aItemIndex = 1:numel(unique(allItemList))
     colorTable{aItemIndex, 1} = {colormapSaved(aItemIndex, :)};
 end
 contributionSeries.colorTable = colorTable;
+
+%% investigating interest rate reaction upon the request from Sandra
+panelContributions(contributionSeries, project_path);
 
 %% stochastic simulation
 dynare('eagleModelFiscalShocksStoch.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
@@ -98,7 +114,7 @@ function panelContributions(contributionSeries, projectPath, subProjectPath)
     figure
     
     % Defining the shape of the figure
-    tiledlayout_width = 3; %Specify the # of columns desired
+    tiledlayout_width = 1; %Specify the # of columns desired
     tiledlayout_height = 2;
     
     t = tiledlayout(tiledlayout_height, tiledlayout_width, 'TileSpacing', 'compact','Padding','compact');
@@ -138,8 +154,8 @@ function panelContributions(contributionSeries, projectPath, subProjectPath)
                 , 'color', cell2mat(contributionSeries.colorTable{aItem, :}) ...
                 , 'linewidth', 2 ...
                 , 'Marker', '_' ...
-                , 'MarkerFaceColor', subroutines.rgb('black') ...
-                , 'MarkerEdgeColor', subroutines.rgb('black') ...
+                , 'MarkerFaceColor', rgb('black') ...
+                , 'MarkerEdgeColor', rgb('black') ...
                 , 'MarkerSize', 4 ...
                 );
         catch
@@ -171,6 +187,6 @@ function panelContributions(contributionSeries, projectPath, subProjectPath)
     end 
         
     % Save graph
-    fileName = fullfile(projectPath, subProjectPath, "docs/figures/fiscalContributions");
+    fileName = fullfile(projectPath, "docs/fiscalContributions");
     exportgraphics(t, sprintf('%s.png',fileName),'BackgroundColor','none');
 end
