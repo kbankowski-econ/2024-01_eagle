@@ -1,6 +1,6 @@
 function [y, T, residual, g1] = static_10(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
 residual=NaN(1, 1);
-  residual(1)=(y(454))-(x(7)*(1-params(59))+y(454)*params(59)+x(21));
+  residual(1)=(y(478))-(x(7)*(1-params(59))+y(478)*params(59)+x(21));
 if nargout > 3
     g1_v = NaN(1, 1);
 g1_v(1)=1-params(59);
