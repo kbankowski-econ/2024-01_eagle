@@ -190,7 +190,7 @@ Finding the optimal block decomposition of the static model...
   462 recursive block(s) and 4 simultaneous block(s).
   the largest simultaneous block has 3005 equation(s)
                                  and 3005 feedback variable(s).
-Computing dynamic model derivatives (order 2).
+Computing dynamic model derivatives (order 1).
 Normalizing the dynamic model...
 Finding the optimal block decomposition of the dynamic model...
 185 block(s) found:
@@ -199,7 +199,7 @@ Finding the optimal block decomposition of the dynamic model...
                                  and 4239 feedback variable(s).
 JSON written after Computing step.
 Preprocessing completed.
-Preprocessing time: 0h04m43s.
+Preprocessing time: 0h00m45s.
 
 STEADY-STATE RESULTS:
 
@@ -8043,5 +8043,39 @@ EAL_kg              		 7.89793
 EAM_kg              		 8.62551
 RW_kg               		 7.42462
 US_kg               		 12.1303
-Total computing time : 0h00m01s
+MODEL SIMULATION: (method=Sparse LU solver with optimal path length on stacked system)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 5.207e-02
+      2-norm error   = 3.304e-01
+      1-norm error   = 2.384e+00
+------------------------------------
+(** 690.14 seconds **)
+(** 2.39 seconds **)
+------------------------------------
+      Iteration no. 2
+      Inf-norm error = 2.560e-01
+      2-norm error   = 6.927e-01
+      1-norm error   = 7.106e+00
+------------------------------------
+(** 643.16 seconds **)
+(** 2.45 seconds **)
+------------------------------------
+      Iteration no. 3
+      Inf-norm error = 1.867e-04
+      2-norm error   = 2.617e-04
+      1-norm error   = 1.850e-03
+------------------------------------
+(** 255.21 seconds **)
+(** 0.91 seconds **)
+------------------------------------
+      Iteration no. 4
+      Inf-norm error = 9.134e-08
+      2-norm error   = 1.330e-07
+      1-norm error   = 3.767e-07
+------------------------------------
+
+Perfect foresight solution found.
+
+Total computing time : 0h15m48s
 Note: 178 warning(s) encountered in the preprocessor
