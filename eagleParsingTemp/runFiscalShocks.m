@@ -24,6 +24,10 @@ dynare_config
 %% cding to a proper folder
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 
+%% calibrating sgp shocks
+sgpShocks = load(fullfile(project_path, 'databases', 'CalcsDb_V_20210915_1135.mat'));
+sgpShocks.CalcsDb.
+
 %% deterministic simulation
 dynare('shock_eab_gy1.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
 
