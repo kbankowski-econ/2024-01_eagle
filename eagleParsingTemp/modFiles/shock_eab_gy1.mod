@@ -8,60 +8,60 @@
 
 load_params_and_steady_state('eagle_steady_govInv_refined.txt');
 
-EAA_rhocg=0; //if we don't want persistent shock
-EAB_rhocg=0; //if we don't want persistent shock
-EAC_rhocg=0; //if we don't want persistent shock
-EAD_rhocg=0; //if we don't want persistent shock
-EAE_rhocg=0; //if we don't want persistent shock
-EAF_rhocg=0; //if we don't want persistent shock
-EAG_rhocg=0; //if we don't want persistent shock
-EAH_rhocg=0; //if we don't want persistent shock
-EAI_rhocg=0; //if we don't want persistent shock
-EAJ_rhocg=0; //if we don't want persistent shock
-EAK_rhocg=0; //if we don't want persistent shock
-EAL_rhocg=0; //if we don't want persistent shock
-EAM_rhocg=0; //if we don't want persistent shock
+EAA_rhoig=0; //if we don't want persistent shock
+EAB_rhoig=0; //if we don't want persistent shock
+EAC_rhoig=0; //if we don't want persistent shock
+EAD_rhoig=0; //if we don't want persistent shock
+EAE_rhoig=0; //if we don't want persistent shock
+EAF_rhoig=0; //if we don't want persistent shock
+EAG_rhoig=0; //if we don't want persistent shock
+EAH_rhoig=0; //if we don't want persistent shock
+EAI_rhoig=0; //if we don't want persistent shock
+EAJ_rhoig=0; //if we don't want persistent shock
+EAK_rhoig=0; //if we don't want persistent shock
+EAL_rhoig=0; //if we don't want persistent shock
+EAM_rhoig=0; //if we don't want persistent shock
 
 steady(solve_algo = 5, markowitz = 5);
 
 shocks;
-var EAA_epsgc;
+var EAA_epsgi;
 periods 1:4;
 values 0.01;
-var EAB_epsgc;
+var EAB_epsgi;
 periods 1:4;
 values 0.01;
-var EAC_epsgc;
+var EAC_epsgi;
 periods 1:4;
 values 0.01;
-var EAD_epsgc;
+var EAD_epsgi;
 periods 1:4;
 values 0.01;
-var EAE_epsgc;
+var EAE_epsgi;
 periods 1:4;
 values 0.01;
-var EAF_epsgc;
+var EAF_epsgi;
 periods 1:4;
 values 0.01;
-var EAG_epsgc;
+var EAG_epsgi;
 periods 1:4;
 values 0.01;
-var EAH_epsgc;
+var EAH_epsgi;
 periods 1:4;
 values 0.01;
-var EAI_epsgc;
+var EAI_epsgi;
 periods 1:4;
 values 0.01;
-var EAJ_epsgc;
+var EAJ_epsgi;
 periods 1:4;
 values 0.01;
-var EAK_epsgc;
+var EAK_epsgi;
 periods 1:4;
 values 0.01;
-var EAL_epsgc;
+var EAL_epsgi;
 periods 1:4;
 values 0.01;
-var EAM_epsgc;
+var EAM_epsgi;
 periods 1:4;
 values 0.01;
 end;
