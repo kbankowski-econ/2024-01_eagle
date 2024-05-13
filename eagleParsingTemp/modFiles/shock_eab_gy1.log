@@ -199,7 +199,7 @@ Finding the optimal block decomposition of the dynamic model...
                                  and 4239 feedback variable(s).
 JSON written after Computing step.
 Preprocessing completed.
-Preprocessing time: 0h00m40s.
+Preprocessing time: 0h00m42s.
 
 STEADY-STATE RESULTS:
 
@@ -8046,47 +8046,33 @@ US_kg               		 12.1303
 MODEL SIMULATION: (method=Sparse LU solver on stacked system)
 ------------------------------------
       Iteration no. 1
-      Inf-norm error = 5.207e-02
-      2-norm error   = 3.304e-01
-      1-norm error   = 2.384e+00
+      Inf-norm error = 1.041e-01
+      2-norm error   = 7.389e-01
+      1-norm error   = 7.145e+00
 ------------------------------------
-(** 235.87 seconds **)
+(** 252.36 seconds **)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 2.360e-02
-      2-norm error   = 3.204e-01
-      1-norm error   = 1.388e+01
+      Inf-norm error = 6.622e-02
+      2-norm error   = 3.175e-01
+      1-norm error   = 3.657e+00
 ------------------------------------
-(** 235.62 seconds **)
+(** 254.90 seconds **)
 ------------------------------------
       Iteration no. 3
-      Inf-norm error = 6.852e-02
-      2-norm error   = 7.658e-02
-      1-norm error   = 1.805e-01
+      Inf-norm error = 3.699e-04
+      2-norm error   = 1.958e-03
+      1-norm error   = 2.279e-02
 ------------------------------------
-(** 255.32 seconds **)
+(** 256.22 seconds **)
 ------------------------------------
       Iteration no. 4
-      Inf-norm error = 6.082e-02
-      2-norm error   = 6.791e-02
-      1-norm error   = 1.152e-01
-------------------------------------
-(** 226.90 seconds **)
-------------------------------------
-      Iteration no. 5
-      Inf-norm error = 1.190e-03
-      2-norm error   = 1.562e-03
-      1-norm error   = 3.206e-03
-------------------------------------
-(** 238.23 seconds **)
-------------------------------------
-      Iteration no. 6
-      Inf-norm error = 6.740e-07
-      2-norm error   = 8.466e-07
-      1-norm error   = 1.917e-06
+      Inf-norm error = 1.857e-07
+      2-norm error   = 7.599e-07
+      1-norm error   = 7.528e-06
 ------------------------------------
 
 Perfect foresight solution found.
 
-Total computing time : 0h20m01s
+Total computing time : 0h12m50s
 Note: 178 warning(s) encountered in the preprocessor
