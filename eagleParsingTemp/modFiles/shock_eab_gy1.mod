@@ -8,11 +8,61 @@
 
 load_params_and_steady_state('eagle_steady_govInv_refined.txt');
 
+EAA_rhocg=0; //if we don't want persistent shock
+EAB_rhocg=0; //if we don't want persistent shock
+EAC_rhocg=0; //if we don't want persistent shock
+EAD_rhocg=0; //if we don't want persistent shock
+EAE_rhocg=0; //if we don't want persistent shock
+EAF_rhocg=0; //if we don't want persistent shock
+EAG_rhocg=0; //if we don't want persistent shock
+EAH_rhocg=0; //if we don't want persistent shock
+EAI_rhocg=0; //if we don't want persistent shock
+EAJ_rhocg=0; //if we don't want persistent shock
+EAK_rhocg=0; //if we don't want persistent shock
+EAL_rhocg=0; //if we don't want persistent shock
+EAM_rhocg=0; //if we don't want persistent shock
+
 steady(solve_algo = 5, markowitz = 5);
 
 shocks;
+var EAA_epsgc;
+periods 1:4;
+values 0.01;
+var EAB_epsgc;
+periods 1:4;
+values 0.01;
+var EAC_epsgc;
+periods 1:4;
+values 0.01;
+var EAD_epsgc;
+periods 1:4;
+values 0.01;
 var EAE_epsgc;
-periods 1:1;
+periods 1:4;
+values 0.01;
+var EAF_epsgc;
+periods 1:4;
+values 0.01;
+var EAG_epsgc;
+periods 1:4;
+values 0.01;
+var EAH_epsgc;
+periods 1:4;
+values 0.01;
+var EAI_epsgc;
+periods 1:4;
+values 0.01;
+var EAJ_epsgc;
+periods 1:4;
+values 0.01;
+var EAK_epsgc;
+periods 1:4;
+values 0.01;
+var EAL_epsgc;
+periods 1:4;
+values 0.01;
+var EAM_epsgc;
+periods 1:4;
 values 0.01;
 end;
 

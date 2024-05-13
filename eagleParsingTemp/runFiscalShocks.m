@@ -25,7 +25,7 @@ dynare_config
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 
 %% deterministic simulation
-dynare('shock_eab_gy1.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+dynare('shock_eab_gy1.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
 
 %% analying the output of the simulation
 fiscalSimOutput = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'shock_eab_gy1', 'Output', 'shock_eab_gy1_results.mat'));
