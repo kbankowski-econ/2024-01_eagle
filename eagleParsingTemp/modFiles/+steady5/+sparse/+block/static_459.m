@@ -1,4 +1,0 @@
-function [y, T] = static_459(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T)
-  y(3770)=y(3686);
-  y(3600)=((params(480)+T(69)-1)*y(3770)-params(480)*x(168)*y(3766))/(y(3766)*(1-x(168)));
-end
