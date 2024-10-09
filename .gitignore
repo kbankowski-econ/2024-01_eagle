@@ -13,6 +13,7 @@ Fiscal_ext/modFiles/+shock_eab_gy1/*
 Fiscal_ext/modFiles/+steady1_EAGLE_Fiscal/*
 Fiscal_ext/modFiles/+steady2/*
 eagleParsingTemp/modFiles/+*/
+eagleParsingTemp_sim_BIG1/modFiles/+*/
 
 # Dismissing abundant files automatically generated
 * 2.*
