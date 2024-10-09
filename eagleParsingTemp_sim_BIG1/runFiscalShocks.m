@@ -25,7 +25,7 @@ dynare_config
 cd(fullfile(project_path, 'eagleParsingTemp_sim_BIG1','modFiles'));
 
 %% deterministic simulation
-dynare('shock_eab_gy1.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp_sim_BIG1'), 'savemacro');
+dynare('shock_eab_gy1.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp_sim_BIG1'), 'savemacro', 'json=compute');
 
 eabGy1Databank = databank.fromArray(oo_.endo_simul', M_.endo_names, qq(0,4));
 serToPlot = (eabGy1Databank.EAB_cgy-eabGy1Databank.EAB_cgy(qq(0,4)))*100;
