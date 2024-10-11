@@ -1,0 +1,3310 @@
+Starting Dynare (version 6.1).
+Calling Dynare with arguments: -ID:\2024-01_eagle/eagleParsingTemp/submodules
+Starting preprocessing of the model file ... 
+Reading eagle_steady_govInv_refined.txt. 
+WARNING: Unknown symbol EAAEAB_nerdep in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_186_1 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_186_2 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_186_3 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_170_1 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_170_2 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_170_3 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_153_1 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_252_1 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_252_2 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_252_3 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_553_1 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_553_2 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_553_3 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_537_1 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_537_2 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_537_3 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_520_1 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_619_1 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_619_2 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_619_3 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_920_1 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_920_2 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_920_3 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_904_1 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_904_2 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_904_3 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_887_1 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_986_1 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_986_2 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_986_3 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1289_1 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1289_2 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1289_3 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1273_1 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1273_2 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1273_3 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1256_1 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1352_1 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1352_2 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1352_3 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_75_1 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_207_1 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_574_1 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3_1 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3_2 in eagle_steady_govInv_refined.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3_3 in eagle_steady_govInv_refined.txt 
+Substitution of endo lags >= 2: added 238 auxiliary variables and equations. 
+Found 8078 equation(s). 
+Evaluating expressions... 
+Computing static model derivatives (order 1). 
+Normalizing the static model... 
+Finding the optimal block decomposition of the static model... 
+466 block(s) found: 
+  462 recursive block(s) and 4 simultaneous block(s). 
+  the largest simultaneous block has 3005 equation(s) 
+                                 and 3005 feedback variable(s). 
+Computing dynamic model derivatives (order 1). 
+Normalizing the dynamic model... 
+Finding the optimal block decomposition of the dynamic model... 
+[Warning: [IrisToolbox] Warning
+*** Function Series/barcon is deprecated, and will be remove in the near future
+    Use the standard bar(___, "stacked") instead.
+] 
+> In C:\Users\petravi\AppData\Local\Temp\Editor_tguvr\LiveEditorEvaluationHelperE195850773.m>panelContributions (line 145)
+  In C:\Users\petravi\AppData\Local\Temp\Editor_tguvr\LiveEditorEvaluationHelperE195850773.m (line 99)
+
+[Warning: [IrisToolbox] Warning
+*** Function Series/barcon is deprecated, and will be remove in the near future
+    Use the standard bar(___, "stacked") instead.
+] 
+> In C:\Users\petravi\AppData\Local\Temp\Editor_tguvr\LiveEditorEvaluationHelperE195850773.m>panelContributions (line 145)
+  In C:\Users\petravi\AppData\Local\Temp\Editor_tguvr\LiveEditorEvaluationHelperE195850773.m (line 99)
+
+[Warning: Background transparency is not supported; using white instead.] 
+
+ans = 
+
+    Series Object: 102-by-2
+    Class of Data: double
+
+               <strong>1</strong>         <strong>2</strong>   
+             <strong>______</strong>    <strong>______</strong>
+
+    <strong> 0Q4:</strong>    1.8813    1.8813
+    <strong> 1Q1:</strong>    1.8828    1.8813
+    <strong> 1Q2:</strong>    1.8834    1.8813
+    <strong> 1Q3:</strong>    1.8836    1.8813
+    <strong> 1Q4:</strong>    1.8835    1.8813
+    <strong> 2Q1:</strong>    1.8834    1.8813
+    <strong> 2Q2:</strong>    1.8832    1.8813
+    <strong> 2Q3:</strong>    1.8831    1.8813
+    <strong> 2Q4:</strong>    1.8829    1.8813
+    <strong> 3Q1:</strong>    1.8827    1.8813
+    <strong> 3Q2:</strong>    1.8827    1.8813
+    <strong> 3Q3:</strong>    1.8826    1.8813
+    <strong> 3Q4:</strong>    1.8826    1.8813
+    <strong> 4Q1:</strong>    1.8826    1.8813
+    <strong> 4Q2:</strong>    1.8826    1.8813
+    <strong> 4Q3:</strong>    1.8827    1.8813
+    <strong> 4Q4:</strong>    1.8827    1.8813
+    <strong> 5Q1:</strong>    1.8828    1.8813
+    <strong> 5Q2:</strong>    1.8828    1.8813
+    <strong> 5Q3:</strong>    1.8829    1.8813
+    <strong> 5Q4:</strong>    1.8829    1.8813
+    <strong> 6Q1:</strong>    1.8829    1.8813
+    <strong> 6Q2:</strong>     1.883    1.8813
+    <strong> 6Q3:</strong>     1.883    1.8813
+    <strong> 6Q4:</strong>     1.883    1.8813
+    <strong> 7Q1:</strong>    1.8831    1.8813
+    <strong> 7Q2:</strong>    1.8831    1.8813
+    <strong> 7Q3:</strong>    1.8831    1.8813
+    <strong> 7Q4:</strong>    1.8831    1.8813
+    <strong> 8Q1:</strong>    1.8831    1.8813
+    <strong> 8Q2:</strong>    1.8831    1.8813
+    <strong> 8Q3:</strong>    1.8832    1.8813
+    <strong> 8Q4:</strong>    1.8832    1.8813
+    <strong> 9Q1:</strong>    1.8832    1.8813
+    <strong> 9Q2:</strong>    1.8832    1.8813
+    <strong> 9Q3:</strong>    1.8832    1.8813
+    <strong> 9Q4:</strong>    1.8832    1.8813
+    <strong>10Q1:</strong>    1.8832    1.8813
+    <strong>10Q2:</strong>    1.8832    1.8813
+    <strong>10Q3:</strong>    1.8832    1.8813
+    <strong>10Q4:</strong>    1.8832    1.8813
+    <strong>11Q1:</strong>    1.8832    1.8813
+    <strong>11Q2:</strong>    1.8832    1.8813
+    <strong>11Q3:</strong>    1.8832    1.8813
+    <strong>11Q4:</strong>    1.8833    1.8813
+    <strong>12Q1:</strong>    1.8833    1.8813
+    <strong>12Q2:</strong>    1.8833    1.8813
+    <strong>12Q3:</strong>    1.8833    1.8813
+    <strong>12Q4:</strong>    1.8833    1.8813
+    <strong>13Q1:</strong>    1.8833    1.8813
+    <strong>13Q2:</strong>    1.8833    1.8813
+    <strong>13Q3:</strong>    1.8833    1.8813
+    <strong>13Q4:</strong>    1.8833    1.8813
+    <strong>14Q1:</strong>    1.8833    1.8813
+    <strong>14Q2:</strong>    1.8833    1.8813
+    <strong>14Q3:</strong>    1.8833    1.8813
+    <strong>14Q4:</strong>    1.8833    1.8813
+    <strong>15Q1:</strong>    1.8833    1.8813
+    <strong>15Q2:</strong>    1.8833    1.8813
+    <strong>15Q3:</strong>    1.8833    1.8813
+    <strong>15Q4:</strong>    1.8833    1.8813
+    <strong>16Q1:</strong>    1.8833    1.8813
+    <strong>16Q2:</strong>    1.8833    1.8813
+    <strong>16Q3:</strong>    1.8833    1.8813
+    <strong>16Q4:</strong>    1.8833    1.8813
+    <strong>17Q1:</strong>    1.8833    1.8813
+    <strong>17Q2:</strong>    1.8833    1.8813
+    <strong>17Q3:</strong>    1.8833    1.8813
+    <strong>17Q4:</strong>    1.8833    1.8813
+    <strong>18Q1:</strong>    1.8834    1.8813
+    <strong>18Q2:</strong>    1.8834    1.8813
+    <strong>18Q3:</strong>    1.8834    1.8813
+    <strong>18Q4:</strong>    1.8834    1.8813
+    <strong>19Q1:</strong>    1.8834    1.8813
+    <strong>19Q2:</strong>    1.8835    1.8813
+    <strong>19Q3:</strong>    1.8835    1.8813
+    <strong>19Q4:</strong>    1.8835    1.8813
+    <strong>20Q1:</strong>    1.8835    1.8813
+    <strong>20Q2:</strong>    1.8835    1.8813
+    <strong>20Q3:</strong>    1.8835    1.8813
+    <strong>20Q4:</strong>    1.8835    1.8813
+    <strong>21Q1:</strong>    1.8835    1.8813
+    <strong>21Q2:</strong>    1.8835    1.8813
+    <strong>21Q3:</strong>    1.8835    1.8813
+    <strong>21Q4:</strong>    1.8835    1.8813
+    <strong>22Q1:</strong>    1.8834    1.8813
+    <strong>22Q2:</strong>    1.8833    1.8813
+    <strong>22Q3:</strong>    1.8833    1.8813
+    <strong>22Q4:</strong>    1.8832    1.8813
+    <strong>23Q1:</strong>     1.883    1.8813
+    <strong>23Q2:</strong>    1.8829    1.8813
+    <strong>23Q3:</strong>    1.8827    1.8813
+    <strong>23Q4:</strong>    1.8825    1.8813
+    <strong>24Q1:</strong>    1.8823    1.8813
+    <strong>24Q2:</strong>    1.8821    1.8813
+    <strong>24Q3:</strong>    1.8818    1.8813
+    <strong>24Q4:</strong>    1.8815    1.8813
+    <strong>25Q1:</strong>    1.8812    1.8813
+    <strong>25Q2:</strong>    1.8809    1.8813
+    <strong>25Q3:</strong>    1.8805    1.8813
+    <strong>25Q4:</strong>    1.8801    1.8813
+    <strong>26Q1:</strong>    1.8813    1.8813
+
+
+ans = 
+
+    Series Object: 102-by-2
+    Class of Data: double
+
+              <strong>1</strong>       <strong>2</strong> 
+             <strong>____</strong>    <strong>___</strong>
+
+    <strong> 0Q4:</strong>     0.2    0.2
+    <strong> 1Q1:</strong>    0.21    0.2
+    <strong> 1Q2:</strong>    0.21    0.2
+    <strong> 1Q3:</strong>    0.21    0.2
+    <strong> 1Q4:</strong>    0.21    0.2
+    <strong> 2Q1:</strong>     0.2    0.2
+    <strong> 2Q2:</strong>     0.2    0.2
+    <strong> 2Q3:</strong>     0.2    0.2
+    <strong> 2Q4:</strong>     0.2    0.2
+    <strong> 3Q1:</strong>     0.2    0.2
+    <strong> 3Q2:</strong>     0.2    0.2
+    <strong> 3Q3:</strong>     0.2    0.2
+    <strong> 3Q4:</strong>     0.2    0.2
+    <strong> 4Q1:</strong>     0.2    0.2
+    <strong> 4Q2:</strong>     0.2    0.2
+    <strong> 4Q3:</strong>     0.2    0.2
+    <strong> 4Q4:</strong>     0.2    0.2
+    <strong> 5Q1:</strong>     0.2    0.2
+    <strong> 5Q2:</strong>     0.2    0.2
+    <strong> 5Q3:</strong>     0.2    0.2
+    <strong> 5Q4:</strong>     0.2    0.2
+    <strong> 6Q1:</strong>     0.2    0.2
+    <strong> 6Q2:</strong>     0.2    0.2
+    <strong> 6Q3:</strong>     0.2    0.2
+    <strong> 6Q4:</strong>     0.2    0.2
+    <strong> 7Q1:</strong>     0.2    0.2
+    <strong> 7Q2:</strong>     0.2    0.2
+    <strong> 7Q3:</strong>     0.2    0.2
+    <strong> 7Q4:</strong>     0.2    0.2
+    <strong> 8Q1:</strong>     0.2    0.2
+    <strong> 8Q2:</strong>     0.2    0.2
+    <strong> 8Q3:</strong>     0.2    0.2
+    <strong> 8Q4:</strong>     0.2    0.2
+    <strong> 9Q1:</strong>     0.2    0.2
+    <strong> 9Q2:</strong>     0.2    0.2
+    <strong> 9Q3:</strong>     0.2    0.2
+    <strong> 9Q4:</strong>     0.2    0.2
+    <strong>10Q1:</strong>     0.2    0.2
+    <strong>10Q2:</strong>     0.2    0.2
+    <strong>10Q3:</strong>     0.2    0.2
+    <strong>10Q4:</strong>     0.2    0.2
+    <strong>11Q1:</strong>     0.2    0.2
+    <strong>11Q2:</strong>     0.2    0.2
+    <strong>11Q3:</strong>     0.2    0.2
+    <strong>11Q4:</strong>     0.2    0.2
+    <strong>12Q1:</strong>     0.2    0.2
+    <strong>12Q2:</strong>     0.2    0.2
+    <strong>12Q3:</strong>     0.2    0.2
+    <strong>12Q4:</strong>     0.2    0.2
+    <strong>13Q1:</strong>     0.2    0.2
+    <strong>13Q2:</strong>     0.2    0.2
+    <strong>13Q3:</strong>     0.2    0.2
+    <strong>13Q4:</strong>     0.2    0.2
+    <strong>14Q1:</strong>     0.2    0.2
+    <strong>14Q2:</strong>     0.2    0.2
+    <strong>14Q3:</strong>     0.2    0.2
+    <strong>14Q4:</strong>     0.2    0.2
+    <strong>15Q1:</strong>     0.2    0.2
+    <strong>15Q2:</strong>     0.2    0.2
+    <strong>15Q3:</strong>     0.2    0.2
+    <strong>15Q4:</strong>     0.2    0.2
+    <strong>16Q1:</strong>     0.2    0.2
+    <strong>16Q2:</strong>     0.2    0.2
+    <strong>16Q3:</strong>     0.2    0.2
+    <strong>16Q4:</strong>     0.2    0.2
+    <strong>17Q1:</strong>     0.2    0.2
+    <strong>17Q2:</strong>     0.2    0.2
+    <strong>17Q3:</strong>     0.2    0.2
+    <strong>17Q4:</strong>     0.2    0.2
+    <strong>18Q1:</strong>     0.2    0.2
+    <strong>18Q2:</strong>     0.2    0.2
+    <strong>18Q3:</strong>     0.2    0.2
+    <strong>18Q4:</strong>     0.2    0.2
+    <strong>19Q1:</strong>     0.2    0.2
+    <strong>19Q2:</strong>     0.2    0.2
+    <strong>19Q3:</strong>     0.2    0.2
+    <strong>19Q4:</strong>     0.2    0.2
+    <strong>20Q1:</strong>     0.2    0.2
+    <strong>20Q2:</strong>     0.2    0.2
+    <strong>20Q3:</strong>     0.2    0.2
+    <strong>20Q4:</strong>     0.2    0.2
+    <strong>21Q1:</strong>     0.2    0.2
+    <strong>21Q2:</strong>     0.2    0.2
+    <strong>21Q3:</strong>     0.2    0.2
+    <strong>21Q4:</strong>     0.2    0.2
+    <strong>22Q1:</strong>     0.2    0.2
+    <strong>22Q2:</strong>     0.2    0.2
+    <strong>22Q3:</strong>     0.2    0.2
+    <strong>22Q4:</strong>     0.2    0.2
+    <strong>23Q1:</strong>     0.2    0.2
+    <strong>23Q2:</strong>     0.2    0.2
+    <strong>23Q3:</strong>     0.2    0.2
+    <strong>23Q4:</strong>     0.2    0.2
+    <strong>24Q1:</strong>     0.2    0.2
+    <strong>24Q2:</strong>     0.2    0.2
+    <strong>24Q3:</strong>     0.2    0.2
+    <strong>24Q4:</strong>     0.2    0.2
+    <strong>25Q1:</strong>     0.2    0.2
+    <strong>25Q2:</strong>     0.2    0.2
+    <strong>25Q3:</strong>     0.2    0.2
+    <strong>25Q4:</strong>     0.2    0.2
+    <strong>26Q1:</strong>     0.2    0.2
+
+
+ans = 
+
+    Series Object: 102-by-2
+    Class of Data: double
+
+               <strong>1</strong>         <strong>2</strong>   
+             <strong>______</strong>    <strong>______</strong>
+
+    <strong> 0Q4:</strong>    5.4737    5.4737
+    <strong> 1Q1:</strong>    5.4737    5.4737
+    <strong> 1Q2:</strong>    5.4737    5.4737
+    <strong> 1Q3:</strong>    5.4737    5.4737
+    <strong> 1Q4:</strong>    5.4737    5.4737
+    <strong> 2Q1:</strong>    5.4737    5.4737
+    <strong> 2Q2:</strong>    5.4737    5.4737
+    <strong> 2Q3:</strong>    5.4737    5.4737
+    <strong> 2Q4:</strong>    5.4737    5.4737
+    <strong> 3Q1:</strong>    5.4737    5.4737
+    <strong> 3Q2:</strong>    5.4737    5.4737
+    <strong> 3Q3:</strong>    5.4737    5.4737
+    <strong> 3Q4:</strong>    5.4737    5.4737
+    <strong> 4Q1:</strong>    5.4737    5.4737
+    <strong> 4Q2:</strong>    5.4737    5.4737
+    <strong> 4Q3:</strong>    5.4737    5.4737
+    <strong> 4Q4:</strong>    5.4737    5.4737
+    <strong> 5Q1:</strong>    5.4737    5.4737
+    <strong> 5Q2:</strong>    5.4737    5.4737
+    <strong> 5Q3:</strong>    5.4737    5.4737
+    <strong> 5Q4:</strong>    5.4737    5.4737
+    <strong> 6Q1:</strong>    5.4737    5.4737
+    <strong> 6Q2:</strong>    5.4737    5.4737
+    <strong> 6Q3:</strong>    5.4737    5.4737
+    <strong> 6Q4:</strong>    5.4737    5.4737
+    <strong> 7Q1:</strong>    5.4737    5.4737
+    <strong> 7Q2:</strong>    5.4737    5.4737
+    <strong> 7Q3:</strong>    5.4737    5.4737
+    <strong> 7Q4:</strong>    5.4737    5.4737
+    <strong> 8Q1:</strong>    5.4737    5.4737
+    <strong> 8Q2:</strong>    5.4737    5.4737
+    <strong> 8Q3:</strong>    5.4737    5.4737
+    <strong> 8Q4:</strong>    5.4737    5.4737
+    <strong> 9Q1:</strong>    5.4737    5.4737
+    <strong> 9Q2:</strong>    5.4737    5.4737
+    <strong> 9Q3:</strong>    5.4737    5.4737
+    <strong> 9Q4:</strong>    5.4737    5.4737
+    <strong>10Q1:</strong>    5.4737    5.4737
+    <strong>10Q2:</strong>    5.4737    5.4737
+    <strong>10Q3:</strong>    5.4737    5.4737
+    <strong>10Q4:</strong>    5.4737    5.4737
+    <strong>11Q1:</strong>    5.4737    5.4737
+    <strong>11Q2:</strong>    5.4737    5.4737
+    <strong>11Q3:</strong>    5.4737    5.4737
+    <strong>11Q4:</strong>    5.4737    5.4737
+    <strong>12Q1:</strong>    5.4737    5.4737
+    <strong>12Q2:</strong>    5.4737    5.4737
+    <strong>12Q3:</strong>    5.4737    5.4737
+    <strong>12Q4:</strong>    5.4737    5.4737
+    <strong>13Q1:</strong>    5.4737    5.4737
+    <strong>13Q2:</strong>    5.4737    5.4737
+    <strong>13Q3:</strong>    5.4737    5.4737
+    <strong>13Q4:</strong>    5.4737    5.4737
+    <strong>14Q1:</strong>    5.4737    5.4737
+    <strong>14Q2:</strong>    5.4737    5.4737
+    <strong>14Q3:</strong>    5.4737    5.4737
+    <strong>14Q4:</strong>    5.4737    5.4737
+    <strong>15Q1:</strong>    5.4737    5.4737
+    <strong>15Q2:</strong>    5.4737    5.4737
+    <strong>15Q3:</strong>    5.4737    5.4737
+    <strong>15Q4:</strong>    5.4737    5.4737
+    <strong>16Q1:</strong>    5.4737    5.4737
+    <strong>16Q2:</strong>    5.4737    5.4737
+    <strong>16Q3:</strong>    5.4737    5.4737
+    <strong>16Q4:</strong>    5.4737    5.4737
+    <strong>17Q1:</strong>    5.4737    5.4737
+    <strong>17Q2:</strong>    5.4737    5.4737
+    <strong>17Q3:</strong>    5.4737    5.4737
+    <strong>17Q4:</strong>    5.4737    5.4737
+    <strong>18Q1:</strong>    5.4737    5.4737
+    <strong>18Q2:</strong>    5.4737    5.4737
+    <strong>18Q3:</strong>    5.4737    5.4737
+    <strong>18Q4:</strong>    5.4737    5.4737
+    <strong>19Q1:</strong>    5.4737    5.4737
+    <strong>19Q2:</strong>    5.4737    5.4737
+    <strong>19Q3:</strong>    5.4737    5.4737
+    <strong>19Q4:</strong>    5.4737    5.4737
+    <strong>20Q1:</strong>    5.4737    5.4737
+    <strong>20Q2:</strong>    5.4737    5.4737
+    <strong>20Q3:</strong>    5.4737    5.4737
+    <strong>20Q4:</strong>    5.4737    5.4737
+    <strong>21Q1:</strong>    5.4737    5.4737
+    <strong>21Q2:</strong>    5.4737    5.4737
+    <strong>21Q3:</strong>    5.4737    5.4737
+    <strong>21Q4:</strong>    5.4737    5.4737
+    <strong>22Q1:</strong>    5.4737    5.4737
+    <strong>22Q2:</strong>    5.4737    5.4737
+    <strong>22Q3:</strong>    5.4737    5.4737
+    <strong>22Q4:</strong>    5.4737    5.4737
+    <strong>23Q1:</strong>    5.4737    5.4737
+    <strong>23Q2:</strong>    5.4737    5.4737
+    <strong>23Q3:</strong>    5.4737    5.4737
+    <strong>23Q4:</strong>    5.4737    5.4737
+    <strong>24Q1:</strong>    5.4737    5.4737
+    <strong>24Q2:</strong>    5.4737    5.4737
+    <strong>24Q3:</strong>    5.4737    5.4737
+    <strong>24Q4:</strong>    5.4737    5.4737
+    <strong>25Q1:</strong>    5.4737    5.4737
+    <strong>25Q2:</strong>    5.4737    5.4737
+    <strong>25Q3:</strong>    5.4737    5.4737
+    <strong>25Q4:</strong>    5.4737    5.4737
+    <strong>26Q1:</strong>    5.4737    5.4737
+
+
+ans = 
+
+    Series Object: 102-by-1
+    Class of Data: double
+
+                <strong>1</strong>    
+             <strong>________</strong>
+
+    <strong> 0Q4:</strong>           0
+    <strong> 1Q1:</strong>     0.65462
+    <strong> 1Q2:</strong>      1.0577
+    <strong> 1Q3:</strong>      1.3188
+    <strong> 1Q4:</strong>      1.4993
+    <strong> 2Q1:</strong>      1.0491
+    <strong> 2Q2:</strong>     0.75605
+    <strong> 2Q3:</strong>     0.56862
+    <strong> 2Q4:</strong>     0.44382
+    <strong> 3Q1:</strong>     0.36042
+    <strong> 3Q2:</strong>     0.30602
+    <strong> 3Q3:</strong>     0.27235
+    <strong> 3Q4:</strong>     0.25341
+    <strong> 4Q1:</strong>     0.24471
+    <strong> 4Q2:</strong>     0.24283
+    <strong> 4Q3:</strong>     0.24521
+    <strong> 4Q4:</strong>     0.24999
+    <strong> 5Q1:</strong>     0.25583
+    <strong> 5Q2:</strong>     0.26178
+    <strong> 5Q3:</strong>     0.26724
+    <strong> 5Q4:</strong>     0.27183
+    <strong> 6Q1:</strong>     0.27535
+    <strong> 6Q2:</strong>     0.27774
+    <strong> 6Q3:</strong>     0.27899
+    <strong> 6Q4:</strong>     0.27919
+    <strong> 7Q1:</strong>     0.27844
+    <strong> 7Q2:</strong>     0.27687
+    <strong> 7Q3:</strong>      0.2746
+    <strong> 7Q4:</strong>     0.27176
+    <strong> 8Q1:</strong>     0.26847
+    <strong> 8Q2:</strong>     0.26485
+    <strong> 8Q3:</strong>     0.26098
+    <strong> 8Q4:</strong>     0.25694
+    <strong> 9Q1:</strong>      0.2528
+    <strong> 9Q2:</strong>     0.24862
+    <strong> 9Q3:</strong>     0.24443
+    <strong> 9Q4:</strong>     0.24027
+    <strong>10Q1:</strong>     0.23617
+    <strong>10Q2:</strong>     0.23213
+    <strong>10Q3:</strong>     0.22818
+    <strong>10Q4:</strong>     0.22431
+    <strong>11Q1:</strong>     0.22054
+    <strong>11Q2:</strong>     0.21685
+    <strong>11Q3:</strong>     0.21326
+    <strong>11Q4:</strong>     0.20975
+    <strong>12Q1:</strong>     0.20632
+    <strong>12Q2:</strong>     0.20298
+    <strong>12Q3:</strong>     0.19972
+    <strong>12Q4:</strong>     0.19653
+    <strong>13Q1:</strong>     0.19343
+    <strong>13Q2:</strong>      0.1904
+    <strong>13Q3:</strong>     0.18744
+    <strong>13Q4:</strong>     0.18457
+    <strong>14Q1:</strong>     0.18178
+    <strong>14Q2:</strong>     0.17907
+    <strong>14Q3:</strong>     0.17645
+    <strong>14Q4:</strong>     0.17393
+    <strong>15Q1:</strong>     0.17151
+    <strong>15Q2:</strong>      0.1692
+    <strong>15Q3:</strong>     0.16701
+    <strong>15Q4:</strong>     0.16494
+    <strong>16Q1:</strong>       0.163
+    <strong>16Q2:</strong>     0.16121
+    <strong>16Q3:</strong>     0.15956
+    <strong>16Q4:</strong>     0.15807
+    <strong>17Q1:</strong>     0.15675
+    <strong>17Q2:</strong>      0.1556
+    <strong>17Q3:</strong>     0.15463
+    <strong>17Q4:</strong>     0.15384
+    <strong>18Q1:</strong>     0.15324
+    <strong>18Q2:</strong>     0.15282
+    <strong>18Q3:</strong>     0.15259
+    <strong>18Q4:</strong>     0.15255
+    <strong>19Q1:</strong>     0.15267
+    <strong>19Q2:</strong>     0.15296
+    <strong>19Q3:</strong>     0.15339
+    <strong>19Q4:</strong>     0.15395
+    <strong>20Q1:</strong>      0.1546
+    <strong>20Q2:</strong>      0.1553
+    <strong>20Q3:</strong>     0.15603
+    <strong>20Q4:</strong>     0.15672
+    <strong>21Q1:</strong>     0.15733
+    <strong>21Q2:</strong>     0.15778
+    <strong>21Q3:</strong>       0.158
+    <strong>21Q4:</strong>     0.15791
+    <strong>22Q1:</strong>      0.1574
+    <strong>22Q2:</strong>     0.15639
+    <strong>22Q3:</strong>     0.15475
+    <strong>22Q4:</strong>     0.15236
+    <strong>23Q1:</strong>     0.14909
+    <strong>23Q2:</strong>      0.1448
+    <strong>23Q3:</strong>     0.13935
+    <strong>23Q4:</strong>     0.13259
+    <strong>24Q1:</strong>     0.12437
+    <strong>24Q2:</strong>     0.11453
+    <strong>24Q3:</strong>     0.10292
+    <strong>24Q4:</strong>    0.089382
+    <strong>25Q1:</strong>     0.07378
+    <strong>25Q2:</strong>    0.055976
+    <strong>25Q3:</strong>     0.03585
+    <strong>25Q4:</strong>    0.011798
+    <strong>26Q1:</strong>           0
+
+Not enough input arguments.
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('functions.plotting1.createContributions', 'D:\2024-01_eagle\subroutines\+functions\+plotting1\createContributions.m', 55)" style="font-weight:bold">functions.plotting1.createContributions</a> (<a href="matlab: opentoline('D:\2024-01_eagle\subroutines\+functions\+plotting1\createContributions.m',55,0)">line 55</a>)
+if ~ischar(equationname)
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('runFiscalShocks', 'D:\2024-01_eagle\eagleParsingTemp_sim_BIG1\runFiscalShocks.m', 70)" style="font-weight:bold">runFiscalShocks</a> (<a href="matlab: opentoline('D:\2024-01_eagle\eagleParsingTemp_sim_BIG1\runFiscalShocks.m',70,0)">line 70</a>)
+functions.plotting1.createContributions
+
+
+ans = 
+
+    Series Object: 102-by-2
+    Class of Data: double
+
+               <strong>1</strong>         <strong>2</strong>   
+             <strong>______</strong>    <strong>______</strong>
+
+    <strong> 0Q4:</strong>    1.8813    1.8813
+    <strong> 1Q1:</strong>    1.8828    1.8813
+    <strong> 1Q2:</strong>    1.8834    1.8813
+    <strong> 1Q3:</strong>    1.8836    1.8813
+    <strong> 1Q4:</strong>    1.8835    1.8813
+    <strong> 2Q1:</strong>    1.8834    1.8813
+    <strong> 2Q2:</strong>    1.8832    1.8813
+    <strong> 2Q3:</strong>    1.8831    1.8813
+    <strong> 2Q4:</strong>    1.8829    1.8813
+    <strong> 3Q1:</strong>    1.8827    1.8813
+    <strong> 3Q2:</strong>    1.8827    1.8813
+    <strong> 3Q3:</strong>    1.8826    1.8813
+    <strong> 3Q4:</strong>    1.8826    1.8813
+    <strong> 4Q1:</strong>    1.8826    1.8813
+    <strong> 4Q2:</strong>    1.8826    1.8813
+    <strong> 4Q3:</strong>    1.8827    1.8813
+    <strong> 4Q4:</strong>    1.8827    1.8813
+    <strong> 5Q1:</strong>    1.8828    1.8813
+    <strong> 5Q2:</strong>    1.8828    1.8813
+    <strong> 5Q3:</strong>    1.8829    1.8813
+    <strong> 5Q4:</strong>    1.8829    1.8813
+    <strong> 6Q1:</strong>    1.8829    1.8813
+    <strong> 6Q2:</strong>     1.883    1.8813
+    <strong> 6Q3:</strong>     1.883    1.8813
+    <strong> 6Q4:</strong>     1.883    1.8813
+    <strong> 7Q1:</strong>    1.8831    1.8813
+    <strong> 7Q2:</strong>    1.8831    1.8813
+    <strong> 7Q3:</strong>    1.8831    1.8813
+    <strong> 7Q4:</strong>    1.8831    1.8813
+    <strong> 8Q1:</strong>    1.8831    1.8813
+    <strong> 8Q2:</strong>    1.8831    1.8813
+    <strong> 8Q3:</strong>    1.8832    1.8813
+    <strong> 8Q4:</strong>    1.8832    1.8813
+    <strong> 9Q1:</strong>    1.8832    1.8813
+    <strong> 9Q2:</strong>    1.8832    1.8813
+    <strong> 9Q3:</strong>    1.8832    1.8813
+    <strong> 9Q4:</strong>    1.8832    1.8813
+    <strong>10Q1:</strong>    1.8832    1.8813
+    <strong>10Q2:</strong>    1.8832    1.8813
+    <strong>10Q3:</strong>    1.8832    1.8813
+    <strong>10Q4:</strong>    1.8832    1.8813
+    <strong>11Q1:</strong>    1.8832    1.8813
+    <strong>11Q2:</strong>    1.8832    1.8813
+    <strong>11Q3:</strong>    1.8832    1.8813
+    <strong>11Q4:</strong>    1.8833    1.8813
+    <strong>12Q1:</strong>    1.8833    1.8813
+    <strong>12Q2:</strong>    1.8833    1.8813
+    <strong>12Q3:</strong>    1.8833    1.8813
+    <strong>12Q4:</strong>    1.8833    1.8813
+    <strong>13Q1:</strong>    1.8833    1.8813
+    <strong>13Q2:</strong>    1.8833    1.8813
+    <strong>13Q3:</strong>    1.8833    1.8813
+    <strong>13Q4:</strong>    1.8833    1.8813
+    <strong>14Q1:</strong>    1.8833    1.8813
+    <strong>14Q2:</strong>    1.8833    1.8813
+    <strong>14Q3:</strong>    1.8833    1.8813
+    <strong>14Q4:</strong>    1.8833    1.8813
+    <strong>15Q1:</strong>    1.8833    1.8813
+    <strong>15Q2:</strong>    1.8833    1.8813
+    <strong>15Q3:</strong>    1.8833    1.8813
+    <strong>15Q4:</strong>    1.8833    1.8813
+    <strong>16Q1:</strong>    1.8833    1.8813
+    <strong>16Q2:</strong>    1.8833    1.8813
+    <strong>16Q3:</strong>    1.8833    1.8813
+    <strong>16Q4:</strong>    1.8833    1.8813
+    <strong>17Q1:</strong>    1.8833    1.8813
+    <strong>17Q2:</strong>    1.8833    1.8813
+    <strong>17Q3:</strong>    1.8833    1.8813
+    <strong>17Q4:</strong>    1.8833    1.8813
+    <strong>18Q1:</strong>    1.8834    1.8813
+    <strong>18Q2:</strong>    1.8834    1.8813
+    <strong>18Q3:</strong>    1.8834    1.8813
+    <strong>18Q4:</strong>    1.8834    1.8813
+    <strong>19Q1:</strong>    1.8834    1.8813
+    <strong>19Q2:</strong>    1.8835    1.8813
+    <strong>19Q3:</strong>    1.8835    1.8813
+    <strong>19Q4:</strong>    1.8835    1.8813
+    <strong>20Q1:</strong>    1.8835    1.8813
+    <strong>20Q2:</strong>    1.8835    1.8813
+    <strong>20Q3:</strong>    1.8835    1.8813
+    <strong>20Q4:</strong>    1.8835    1.8813
+    <strong>21Q1:</strong>    1.8835    1.8813
+    <strong>21Q2:</strong>    1.8835    1.8813
+    <strong>21Q3:</strong>    1.8835    1.8813
+    <strong>21Q4:</strong>    1.8835    1.8813
+    <strong>22Q1:</strong>    1.8834    1.8813
+    <strong>22Q2:</strong>    1.8833    1.8813
+    <strong>22Q3:</strong>    1.8833    1.8813
+    <strong>22Q4:</strong>    1.8832    1.8813
+    <strong>23Q1:</strong>     1.883    1.8813
+    <strong>23Q2:</strong>    1.8829    1.8813
+    <strong>23Q3:</strong>    1.8827    1.8813
+    <strong>23Q4:</strong>    1.8825    1.8813
+    <strong>24Q1:</strong>    1.8823    1.8813
+    <strong>24Q2:</strong>    1.8821    1.8813
+    <strong>24Q3:</strong>    1.8818    1.8813
+    <strong>24Q4:</strong>    1.8815    1.8813
+    <strong>25Q1:</strong>    1.8812    1.8813
+    <strong>25Q2:</strong>    1.8809    1.8813
+    <strong>25Q3:</strong>    1.8805    1.8813
+    <strong>25Q4:</strong>    1.8801    1.8813
+    <strong>26Q1:</strong>    1.8813    1.8813
+
+
+ans = 
+
+    Series Object: 102-by-2
+    Class of Data: double
+
+              <strong>1</strong>       <strong>2</strong> 
+             <strong>____</strong>    <strong>___</strong>
+
+    <strong> 0Q4:</strong>     0.2    0.2
+    <strong> 1Q1:</strong>    0.21    0.2
+    <strong> 1Q2:</strong>    0.21    0.2
+    <strong> 1Q3:</strong>    0.21    0.2
+    <strong> 1Q4:</strong>    0.21    0.2
+    <strong> 2Q1:</strong>     0.2    0.2
+    <strong> 2Q2:</strong>     0.2    0.2
+    <strong> 2Q3:</strong>     0.2    0.2
+    <strong> 2Q4:</strong>     0.2    0.2
+    <strong> 3Q1:</strong>     0.2    0.2
+    <strong> 3Q2:</strong>     0.2    0.2
+    <strong> 3Q3:</strong>     0.2    0.2
+    <strong> 3Q4:</strong>     0.2    0.2
+    <strong> 4Q1:</strong>     0.2    0.2
+    <strong> 4Q2:</strong>     0.2    0.2
+    <strong> 4Q3:</strong>     0.2    0.2
+    <strong> 4Q4:</strong>     0.2    0.2
+    <strong> 5Q1:</strong>     0.2    0.2
+    <strong> 5Q2:</strong>     0.2    0.2
+    <strong> 5Q3:</strong>     0.2    0.2
+    <strong> 5Q4:</strong>     0.2    0.2
+    <strong> 6Q1:</strong>     0.2    0.2
+    <strong> 6Q2:</strong>     0.2    0.2
+    <strong> 6Q3:</strong>     0.2    0.2
+    <strong> 6Q4:</strong>     0.2    0.2
+    <strong> 7Q1:</strong>     0.2    0.2
+    <strong> 7Q2:</strong>     0.2    0.2
+    <strong> 7Q3:</strong>     0.2    0.2
+    <strong> 7Q4:</strong>     0.2    0.2
+    <strong> 8Q1:</strong>     0.2    0.2
+    <strong> 8Q2:</strong>     0.2    0.2
+    <strong> 8Q3:</strong>     0.2    0.2
+    <strong> 8Q4:</strong>     0.2    0.2
+    <strong> 9Q1:</strong>     0.2    0.2
+    <strong> 9Q2:</strong>     0.2    0.2
+    <strong> 9Q3:</strong>     0.2    0.2
+    <strong> 9Q4:</strong>     0.2    0.2
+    <strong>10Q1:</strong>     0.2    0.2
+    <strong>10Q2:</strong>     0.2    0.2
+    <strong>10Q3:</strong>     0.2    0.2
+    <strong>10Q4:</strong>     0.2    0.2
+    <strong>11Q1:</strong>     0.2    0.2
+    <strong>11Q2:</strong>     0.2    0.2
+    <strong>11Q3:</strong>     0.2    0.2
+    <strong>11Q4:</strong>     0.2    0.2
+    <strong>12Q1:</strong>     0.2    0.2
+    <strong>12Q2:</strong>     0.2    0.2
+    <strong>12Q3:</strong>     0.2    0.2
+    <strong>12Q4:</strong>     0.2    0.2
+    <strong>13Q1:</strong>     0.2    0.2
+    <strong>13Q2:</strong>     0.2    0.2
+    <strong>13Q3:</strong>     0.2    0.2
+    <strong>13Q4:</strong>     0.2    0.2
+    <strong>14Q1:</strong>     0.2    0.2
+    <strong>14Q2:</strong>     0.2    0.2
+    <strong>14Q3:</strong>     0.2    0.2
+    <strong>14Q4:</strong>     0.2    0.2
+    <strong>15Q1:</strong>     0.2    0.2
+    <strong>15Q2:</strong>     0.2    0.2
+    <strong>15Q3:</strong>     0.2    0.2
+    <strong>15Q4:</strong>     0.2    0.2
+    <strong>16Q1:</strong>     0.2    0.2
+    <strong>16Q2:</strong>     0.2    0.2
+    <strong>16Q3:</strong>     0.2    0.2
+    <strong>16Q4:</strong>     0.2    0.2
+    <strong>17Q1:</strong>     0.2    0.2
+    <strong>17Q2:</strong>     0.2    0.2
+    <strong>17Q3:</strong>     0.2    0.2
+    <strong>17Q4:</strong>     0.2    0.2
+    <strong>18Q1:</strong>     0.2    0.2
+    <strong>18Q2:</strong>     0.2    0.2
+    <strong>18Q3:</strong>     0.2    0.2
+    <strong>18Q4:</strong>     0.2    0.2
+    <strong>19Q1:</strong>     0.2    0.2
+    <strong>19Q2:</strong>     0.2    0.2
+    <strong>19Q3:</strong>     0.2    0.2
+    <strong>19Q4:</strong>     0.2    0.2
+    <strong>20Q1:</strong>     0.2    0.2
+    <strong>20Q2:</strong>     0.2    0.2
+    <strong>20Q3:</strong>     0.2    0.2
+    <strong>20Q4:</strong>     0.2    0.2
+    <strong>21Q1:</strong>     0.2    0.2
+    <strong>21Q2:</strong>     0.2    0.2
+    <strong>21Q3:</strong>     0.2    0.2
+    <strong>21Q4:</strong>     0.2    0.2
+    <strong>22Q1:</strong>     0.2    0.2
+    <strong>22Q2:</strong>     0.2    0.2
+    <strong>22Q3:</strong>     0.2    0.2
+    <strong>22Q4:</strong>     0.2    0.2
+    <strong>23Q1:</strong>     0.2    0.2
+    <strong>23Q2:</strong>     0.2    0.2
+    <strong>23Q3:</strong>     0.2    0.2
+    <strong>23Q4:</strong>     0.2    0.2
+    <strong>24Q1:</strong>     0.2    0.2
+    <strong>24Q2:</strong>     0.2    0.2
+    <strong>24Q3:</strong>     0.2    0.2
+    <strong>24Q4:</strong>     0.2    0.2
+    <strong>25Q1:</strong>     0.2    0.2
+    <strong>25Q2:</strong>     0.2    0.2
+    <strong>25Q3:</strong>     0.2    0.2
+    <strong>25Q4:</strong>     0.2    0.2
+    <strong>26Q1:</strong>     0.2    0.2
+
+
+ans = 
+
+    Series Object: 102-by-2
+    Class of Data: double
+
+               <strong>1</strong>         <strong>2</strong>   
+             <strong>______</strong>    <strong>______</strong>
+
+    <strong> 0Q4:</strong>    5.4737    5.4737
+    <strong> 1Q1:</strong>    5.4737    5.4737
+    <strong> 1Q2:</strong>    5.4737    5.4737
+    <strong> 1Q3:</strong>    5.4737    5.4737
+    <strong> 1Q4:</strong>    5.4737    5.4737
+    <strong> 2Q1:</strong>    5.4737    5.4737
+    <strong> 2Q2:</strong>    5.4737    5.4737
+    <strong> 2Q3:</strong>    5.4737    5.4737
+    <strong> 2Q4:</strong>    5.4737    5.4737
+    <strong> 3Q1:</strong>    5.4737    5.4737
+    <strong> 3Q2:</strong>    5.4737    5.4737
+    <strong> 3Q3:</strong>    5.4737    5.4737
+    <strong> 3Q4:</strong>    5.4737    5.4737
+    <strong> 4Q1:</strong>    5.4737    5.4737
+    <strong> 4Q2:</strong>    5.4737    5.4737
+    <strong> 4Q3:</strong>    5.4737    5.4737
+    <strong> 4Q4:</strong>    5.4737    5.4737
+    <strong> 5Q1:</strong>    5.4737    5.4737
+    <strong> 5Q2:</strong>    5.4737    5.4737
+    <strong> 5Q3:</strong>    5.4737    5.4737
+    <strong> 5Q4:</strong>    5.4737    5.4737
+    <strong> 6Q1:</strong>    5.4737    5.4737
+    <strong> 6Q2:</strong>    5.4737    5.4737
+    <strong> 6Q3:</strong>    5.4737    5.4737
+    <strong> 6Q4:</strong>    5.4737    5.4737
+    <strong> 7Q1:</strong>    5.4737    5.4737
+    <strong> 7Q2:</strong>    5.4737    5.4737
+    <strong> 7Q3:</strong>    5.4737    5.4737
+    <strong> 7Q4:</strong>    5.4737    5.4737
+    <strong> 8Q1:</strong>    5.4737    5.4737
+    <strong> 8Q2:</strong>    5.4737    5.4737
+    <strong> 8Q3:</strong>    5.4737    5.4737
+    <strong> 8Q4:</strong>    5.4737    5.4737
+    <strong> 9Q1:</strong>    5.4737    5.4737
+    <strong> 9Q2:</strong>    5.4737    5.4737
+    <strong> 9Q3:</strong>    5.4737    5.4737
+    <strong> 9Q4:</strong>    5.4737    5.4737
+    <strong>10Q1:</strong>    5.4737    5.4737
+    <strong>10Q2:</strong>    5.4737    5.4737
+    <strong>10Q3:</strong>    5.4737    5.4737
+    <strong>10Q4:</strong>    5.4737    5.4737
+    <strong>11Q1:</strong>    5.4737    5.4737
+    <strong>11Q2:</strong>    5.4737    5.4737
+    <strong>11Q3:</strong>    5.4737    5.4737
+    <strong>11Q4:</strong>    5.4737    5.4737
+    <strong>12Q1:</strong>    5.4737    5.4737
+    <strong>12Q2:</strong>    5.4737    5.4737
+    <strong>12Q3:</strong>    5.4737    5.4737
+    <strong>12Q4:</strong>    5.4737    5.4737
+    <strong>13Q1:</strong>    5.4737    5.4737
+    <strong>13Q2:</strong>    5.4737    5.4737
+    <strong>13Q3:</strong>    5.4737    5.4737
+    <strong>13Q4:</strong>    5.4737    5.4737
+    <strong>14Q1:</strong>    5.4737    5.4737
+    <strong>14Q2:</strong>    5.4737    5.4737
+    <strong>14Q3:</strong>    5.4737    5.4737
+    <strong>14Q4:</strong>    5.4737    5.4737
+    <strong>15Q1:</strong>    5.4737    5.4737
+    <strong>15Q2:</strong>    5.4737    5.4737
+    <strong>15Q3:</strong>    5.4737    5.4737
+    <strong>15Q4:</strong>    5.4737    5.4737
+    <strong>16Q1:</strong>    5.4737    5.4737
+    <strong>16Q2:</strong>    5.4737    5.4737
+    <strong>16Q3:</strong>    5.4737    5.4737
+    <strong>16Q4:</strong>    5.4737    5.4737
+    <strong>17Q1:</strong>    5.4737    5.4737
+    <strong>17Q2:</strong>    5.4737    5.4737
+    <strong>17Q3:</strong>    5.4737    5.4737
+    <strong>17Q4:</strong>    5.4737    5.4737
+    <strong>18Q1:</strong>    5.4737    5.4737
+    <strong>18Q2:</strong>    5.4737    5.4737
+    <strong>18Q3:</strong>    5.4737    5.4737
+    <strong>18Q4:</strong>    5.4737    5.4737
+    <strong>19Q1:</strong>    5.4737    5.4737
+    <strong>19Q2:</strong>    5.4737    5.4737
+    <strong>19Q3:</strong>    5.4737    5.4737
+    <strong>19Q4:</strong>    5.4737    5.4737
+    <strong>20Q1:</strong>    5.4737    5.4737
+    <strong>20Q2:</strong>    5.4737    5.4737
+    <strong>20Q3:</strong>    5.4737    5.4737
+    <strong>20Q4:</strong>    5.4737    5.4737
+    <strong>21Q1:</strong>    5.4737    5.4737
+    <strong>21Q2:</strong>    5.4737    5.4737
+    <strong>21Q3:</strong>    5.4737    5.4737
+    <strong>21Q4:</strong>    5.4737    5.4737
+    <strong>22Q1:</strong>    5.4737    5.4737
+    <strong>22Q2:</strong>    5.4737    5.4737
+    <strong>22Q3:</strong>    5.4737    5.4737
+    <strong>22Q4:</strong>    5.4737    5.4737
+    <strong>23Q1:</strong>    5.4737    5.4737
+    <strong>23Q2:</strong>    5.4737    5.4737
+    <strong>23Q3:</strong>    5.4737    5.4737
+    <strong>23Q4:</strong>    5.4737    5.4737
+    <strong>24Q1:</strong>    5.4737    5.4737
+    <strong>24Q2:</strong>    5.4737    5.4737
+    <strong>24Q3:</strong>    5.4737    5.4737
+    <strong>24Q4:</strong>    5.4737    5.4737
+    <strong>25Q1:</strong>    5.4737    5.4737
+    <strong>25Q2:</strong>    5.4737    5.4737
+    <strong>25Q3:</strong>    5.4737    5.4737
+    <strong>25Q4:</strong>    5.4737    5.4737
+    <strong>26Q1:</strong>    5.4737    5.4737
+
+
+ans = 
+
+    Series Object: 102-by-1
+    Class of Data: double
+
+                <strong>1</strong>    
+             <strong>________</strong>
+
+    <strong> 0Q4:</strong>           0
+    <strong> 1Q1:</strong>     0.65462
+    <strong> 1Q2:</strong>      1.0577
+    <strong> 1Q3:</strong>      1.3188
+    <strong> 1Q4:</strong>      1.4993
+    <strong> 2Q1:</strong>      1.0491
+    <strong> 2Q2:</strong>     0.75605
+    <strong> 2Q3:</strong>     0.56862
+    <strong> 2Q4:</strong>     0.44382
+    <strong> 3Q1:</strong>     0.36042
+    <strong> 3Q2:</strong>     0.30602
+    <strong> 3Q3:</strong>     0.27235
+    <strong> 3Q4:</strong>     0.25341
+    <strong> 4Q1:</strong>     0.24471
+    <strong> 4Q2:</strong>     0.24283
+    <strong> 4Q3:</strong>     0.24521
+    <strong> 4Q4:</strong>     0.24999
+    <strong> 5Q1:</strong>     0.25583
+    <strong> 5Q2:</strong>     0.26178
+    <strong> 5Q3:</strong>     0.26724
+    <strong> 5Q4:</strong>     0.27183
+    <strong> 6Q1:</strong>     0.27535
+    <strong> 6Q2:</strong>     0.27774
+    <strong> 6Q3:</strong>     0.27899
+    <strong> 6Q4:</strong>     0.27919
+    <strong> 7Q1:</strong>     0.27844
+    <strong> 7Q2:</strong>     0.27687
+    <strong> 7Q3:</strong>      0.2746
+    <strong> 7Q4:</strong>     0.27176
+    <strong> 8Q1:</strong>     0.26847
+    <strong> 8Q2:</strong>     0.26485
+    <strong> 8Q3:</strong>     0.26098
+    <strong> 8Q4:</strong>     0.25694
+    <strong> 9Q1:</strong>      0.2528
+    <strong> 9Q2:</strong>     0.24862
+    <strong> 9Q3:</strong>     0.24443
+    <strong> 9Q4:</strong>     0.24027
+    <strong>10Q1:</strong>     0.23617
+    <strong>10Q2:</strong>     0.23213
+    <strong>10Q3:</strong>     0.22818
+    <strong>10Q4:</strong>     0.22431
+    <strong>11Q1:</strong>     0.22054
+    <strong>11Q2:</strong>     0.21685
+    <strong>11Q3:</strong>     0.21326
+    <strong>11Q4:</strong>     0.20975
+    <strong>12Q1:</strong>     0.20632
+    <strong>12Q2:</strong>     0.20298
+    <strong>12Q3:</strong>     0.19972
+    <strong>12Q4:</strong>     0.19653
+    <strong>13Q1:</strong>     0.19343
+    <strong>13Q2:</strong>      0.1904
+    <strong>13Q3:</strong>     0.18744
+    <strong>13Q4:</strong>     0.18457
+    <strong>14Q1:</strong>     0.18178
+    <strong>14Q2:</strong>     0.17907
+    <strong>14Q3:</strong>     0.17645
+    <strong>14Q4:</strong>     0.17393
+    <strong>15Q1:</strong>     0.17151
+    <strong>15Q2:</strong>      0.1692
+    <strong>15Q3:</strong>     0.16701
+    <strong>15Q4:</strong>     0.16494
+    <strong>16Q1:</strong>       0.163
+    <strong>16Q2:</strong>     0.16121
+    <strong>16Q3:</strong>     0.15956
+    <strong>16Q4:</strong>     0.15807
+    <strong>17Q1:</strong>     0.15675
+    <strong>17Q2:</strong>      0.1556
+    <strong>17Q3:</strong>     0.15463
+    <strong>17Q4:</strong>     0.15384
+    <strong>18Q1:</strong>     0.15324
+    <strong>18Q2:</strong>     0.15282
+    <strong>18Q3:</strong>     0.15259
+    <strong>18Q4:</strong>     0.15255
+    <strong>19Q1:</strong>     0.15267
+    <strong>19Q2:</strong>     0.15296
+    <strong>19Q3:</strong>     0.15339
+    <strong>19Q4:</strong>     0.15395
+    <strong>20Q1:</strong>      0.1546
+    <strong>20Q2:</strong>      0.1553
+    <strong>20Q3:</strong>     0.15603
+    <strong>20Q4:</strong>     0.15672
+    <strong>21Q1:</strong>     0.15733
+    <strong>21Q2:</strong>     0.15778
+    <strong>21Q3:</strong>       0.158
+    <strong>21Q4:</strong>     0.15791
+    <strong>22Q1:</strong>      0.1574
+    <strong>22Q2:</strong>     0.15639
+    <strong>22Q3:</strong>     0.15475
+    <strong>22Q4:</strong>     0.15236
+    <strong>23Q1:</strong>     0.14909
+    <strong>23Q2:</strong>      0.1448
+    <strong>23Q3:</strong>     0.13935
+    <strong>23Q4:</strong>     0.13259
+    <strong>24Q1:</strong>     0.12437
+    <strong>24Q2:</strong>     0.11453
+    <strong>24Q3:</strong>     0.10292
+    <strong>24Q4:</strong>    0.089382
+    <strong>25Q1:</strong>     0.07378
+    <strong>25Q2:</strong>    0.055976
+    <strong>25Q3:</strong>     0.03585
+    <strong>25Q4:</strong>    0.011798
+    <strong>26Q1:</strong>           0
+
+Not enough input arguments.
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('functions.plotting1.createContributions', 'D:\2024-01_eagle\subroutines\+functions\+plotting1\createContributions.m', 55)" style="font-weight:bold">functions.plotting1.createContributions</a> (<a href="matlab: opentoline('D:\2024-01_eagle\subroutines\+functions\+plotting1\createContributions.m',55,0)">line 55</a>)
+if ~ischar(equationname)
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('runFiscalShocks', 'D:\2024-01_eagle\eagleParsingTemp_sim_BIG1\runFiscalShocks.m', 70)" style="font-weight:bold">runFiscalShocks</a> (<a href="matlab: opentoline('D:\2024-01_eagle\eagleParsingTemp_sim_BIG1\runFiscalShocks.m',70,0)">line 70</a>)
+functions.plotting1.createContributions;
+
+
+ans = 
+
+    Series Object: 102-by-2
+    Class of Data: double
+
+               <strong>1</strong>         <strong>2</strong>   
+             <strong>______</strong>    <strong>______</strong>
+
+    <strong> 0Q4:</strong>    1.8813    1.8813
+    <strong> 1Q1:</strong>    1.8828    1.8813
+    <strong> 1Q2:</strong>    1.8834    1.8813
+    <strong> 1Q3:</strong>    1.8836    1.8813
+    <strong> 1Q4:</strong>    1.8835    1.8813
+    <strong> 2Q1:</strong>    1.8834    1.8813
+    <strong> 2Q2:</strong>    1.8832    1.8813
+    <strong> 2Q3:</strong>    1.8831    1.8813
+    <strong> 2Q4:</strong>    1.8829    1.8813
+    <strong> 3Q1:</strong>    1.8827    1.8813
+    <strong> 3Q2:</strong>    1.8827    1.8813
+    <strong> 3Q3:</strong>    1.8826    1.8813
+    <strong> 3Q4:</strong>    1.8826    1.8813
+    <strong> 4Q1:</strong>    1.8826    1.8813
+    <strong> 4Q2:</strong>    1.8826    1.8813
+    <strong> 4Q3:</strong>    1.8827    1.8813
+    <strong> 4Q4:</strong>    1.8827    1.8813
+    <strong> 5Q1:</strong>    1.8828    1.8813
+    <strong> 5Q2:</strong>    1.8828    1.8813
+    <strong> 5Q3:</strong>    1.8829    1.8813
+    <strong> 5Q4:</strong>    1.8829    1.8813
+    <strong> 6Q1:</strong>    1.8829    1.8813
+    <strong> 6Q2:</strong>     1.883    1.8813
+    <strong> 6Q3:</strong>     1.883    1.8813
+    <strong> 6Q4:</strong>     1.883    1.8813
+    <strong> 7Q1:</strong>    1.8831    1.8813
+    <strong> 7Q2:</strong>    1.8831    1.8813
+    <strong> 7Q3:</strong>    1.8831    1.8813
+    <strong> 7Q4:</strong>    1.8831    1.8813
+    <strong> 8Q1:</strong>    1.8831    1.8813
+    <strong> 8Q2:</strong>    1.8831    1.8813
+    <strong> 8Q3:</strong>    1.8832    1.8813
+    <strong> 8Q4:</strong>    1.8832    1.8813
+    <strong> 9Q1:</strong>    1.8832    1.8813
+    <strong> 9Q2:</strong>    1.8832    1.8813
+    <strong> 9Q3:</strong>    1.8832    1.8813
+    <strong> 9Q4:</strong>    1.8832    1.8813
+    <strong>10Q1:</strong>    1.8832    1.8813
+    <strong>10Q2:</strong>    1.8832    1.8813
+    <strong>10Q3:</strong>    1.8832    1.8813
+    <strong>10Q4:</strong>    1.8832    1.8813
+    <strong>11Q1:</strong>    1.8832    1.8813
+    <strong>11Q2:</strong>    1.8832    1.8813
+    <strong>11Q3:</strong>    1.8832    1.8813
+    <strong>11Q4:</strong>    1.8833    1.8813
+    <strong>12Q1:</strong>    1.8833    1.8813
+    <strong>12Q2:</strong>    1.8833    1.8813
+    <strong>12Q3:</strong>    1.8833    1.8813
+    <strong>12Q4:</strong>    1.8833    1.8813
+    <strong>13Q1:</strong>    1.8833    1.8813
+    <strong>13Q2:</strong>    1.8833    1.8813
+    <strong>13Q3:</strong>    1.8833    1.8813
+    <strong>13Q4:</strong>    1.8833    1.8813
+    <strong>14Q1:</strong>    1.8833    1.8813
+    <strong>14Q2:</strong>    1.8833    1.8813
+    <strong>14Q3:</strong>    1.8833    1.8813
+    <strong>14Q4:</strong>    1.8833    1.8813
+    <strong>15Q1:</strong>    1.8833    1.8813
+    <strong>15Q2:</strong>    1.8833    1.8813
+    <strong>15Q3:</strong>    1.8833    1.8813
+    <strong>15Q4:</strong>    1.8833    1.8813
+    <strong>16Q1:</strong>    1.8833    1.8813
+    <strong>16Q2:</strong>    1.8833    1.8813
+    <strong>16Q3:</strong>    1.8833    1.8813
+    <strong>16Q4:</strong>    1.8833    1.8813
+    <strong>17Q1:</strong>    1.8833    1.8813
+    <strong>17Q2:</strong>    1.8833    1.8813
+    <strong>17Q3:</strong>    1.8833    1.8813
+    <strong>17Q4:</strong>    1.8833    1.8813
+    <strong>18Q1:</strong>    1.8834    1.8813
+    <strong>18Q2:</strong>    1.8834    1.8813
+    <strong>18Q3:</strong>    1.8834    1.8813
+    <strong>18Q4:</strong>    1.8834    1.8813
+    <strong>19Q1:</strong>    1.8834    1.8813
+    <strong>19Q2:</strong>    1.8835    1.8813
+    <strong>19Q3:</strong>    1.8835    1.8813
+    <strong>19Q4:</strong>    1.8835    1.8813
+    <strong>20Q1:</strong>    1.8835    1.8813
+    <strong>20Q2:</strong>    1.8835    1.8813
+    <strong>20Q3:</strong>    1.8835    1.8813
+    <strong>20Q4:</strong>    1.8835    1.8813
+    <strong>21Q1:</strong>    1.8835    1.8813
+    <strong>21Q2:</strong>    1.8835    1.8813
+    <strong>21Q3:</strong>    1.8835    1.8813
+    <strong>21Q4:</strong>    1.8835    1.8813
+    <strong>22Q1:</strong>    1.8834    1.8813
+    <strong>22Q2:</strong>    1.8833    1.8813
+    <strong>22Q3:</strong>    1.8833    1.8813
+    <strong>22Q4:</strong>    1.8832    1.8813
+    <strong>23Q1:</strong>     1.883    1.8813
+    <strong>23Q2:</strong>    1.8829    1.8813
+    <strong>23Q3:</strong>    1.8827    1.8813
+    <strong>23Q4:</strong>    1.8825    1.8813
+    <strong>24Q1:</strong>    1.8823    1.8813
+    <strong>24Q2:</strong>    1.8821    1.8813
+    <strong>24Q3:</strong>    1.8818    1.8813
+    <strong>24Q4:</strong>    1.8815    1.8813
+    <strong>25Q1:</strong>    1.8812    1.8813
+    <strong>25Q2:</strong>    1.8809    1.8813
+    <strong>25Q3:</strong>    1.8805    1.8813
+    <strong>25Q4:</strong>    1.8801    1.8813
+    <strong>26Q1:</strong>    1.8813    1.8813
+
+
+ans = 
+
+    Series Object: 102-by-2
+    Class of Data: double
+
+              <strong>1</strong>       <strong>2</strong> 
+             <strong>____</strong>    <strong>___</strong>
+
+    <strong> 0Q4:</strong>     0.2    0.2
+    <strong> 1Q1:</strong>    0.21    0.2
+    <strong> 1Q2:</strong>    0.21    0.2
+    <strong> 1Q3:</strong>    0.21    0.2
+    <strong> 1Q4:</strong>    0.21    0.2
+    <strong> 2Q1:</strong>     0.2    0.2
+    <strong> 2Q2:</strong>     0.2    0.2
+    <strong> 2Q3:</strong>     0.2    0.2
+    <strong> 2Q4:</strong>     0.2    0.2
+    <strong> 3Q1:</strong>     0.2    0.2
+    <strong> 3Q2:</strong>     0.2    0.2
+    <strong> 3Q3:</strong>     0.2    0.2
+    <strong> 3Q4:</strong>     0.2    0.2
+    <strong> 4Q1:</strong>     0.2    0.2
+    <strong> 4Q2:</strong>     0.2    0.2
+    <strong> 4Q3:</strong>     0.2    0.2
+    <strong> 4Q4:</strong>     0.2    0.2
+    <strong> 5Q1:</strong>     0.2    0.2
+    <strong> 5Q2:</strong>     0.2    0.2
+    <strong> 5Q3:</strong>     0.2    0.2
+    <strong> 5Q4:</strong>     0.2    0.2
+    <strong> 6Q1:</strong>     0.2    0.2
+    <strong> 6Q2:</strong>     0.2    0.2
+    <strong> 6Q3:</strong>     0.2    0.2
+    <strong> 6Q4:</strong>     0.2    0.2
+    <strong> 7Q1:</strong>     0.2    0.2
+    <strong> 7Q2:</strong>     0.2    0.2
+    <strong> 7Q3:</strong>     0.2    0.2
+    <strong> 7Q4:</strong>     0.2    0.2
+    <strong> 8Q1:</strong>     0.2    0.2
+    <strong> 8Q2:</strong>     0.2    0.2
+    <strong> 8Q3:</strong>     0.2    0.2
+    <strong> 8Q4:</strong>     0.2    0.2
+    <strong> 9Q1:</strong>     0.2    0.2
+    <strong> 9Q2:</strong>     0.2    0.2
+    <strong> 9Q3:</strong>     0.2    0.2
+    <strong> 9Q4:</strong>     0.2    0.2
+    <strong>10Q1:</strong>     0.2    0.2
+    <strong>10Q2:</strong>     0.2    0.2
+    <strong>10Q3:</strong>     0.2    0.2
+    <strong>10Q4:</strong>     0.2    0.2
+    <strong>11Q1:</strong>     0.2    0.2
+    <strong>11Q2:</strong>     0.2    0.2
+    <strong>11Q3:</strong>     0.2    0.2
+    <strong>11Q4:</strong>     0.2    0.2
+    <strong>12Q1:</strong>     0.2    0.2
+    <strong>12Q2:</strong>     0.2    0.2
+    <strong>12Q3:</strong>     0.2    0.2
+    <strong>12Q4:</strong>     0.2    0.2
+    <strong>13Q1:</strong>     0.2    0.2
+    <strong>13Q2:</strong>     0.2    0.2
+    <strong>13Q3:</strong>     0.2    0.2
+    <strong>13Q4:</strong>     0.2    0.2
+    <strong>14Q1:</strong>     0.2    0.2
+    <strong>14Q2:</strong>     0.2    0.2
+    <strong>14Q3:</strong>     0.2    0.2
+    <strong>14Q4:</strong>     0.2    0.2
+    <strong>15Q1:</strong>     0.2    0.2
+    <strong>15Q2:</strong>     0.2    0.2
+    <strong>15Q3:</strong>     0.2    0.2
+    <strong>15Q4:</strong>     0.2    0.2
+    <strong>16Q1:</strong>     0.2    0.2
+    <strong>16Q2:</strong>     0.2    0.2
+    <strong>16Q3:</strong>     0.2    0.2
+    <strong>16Q4:</strong>     0.2    0.2
+    <strong>17Q1:</strong>     0.2    0.2
+    <strong>17Q2:</strong>     0.2    0.2
+    <strong>17Q3:</strong>     0.2    0.2
+    <strong>17Q4:</strong>     0.2    0.2
+    <strong>18Q1:</strong>     0.2    0.2
+    <strong>18Q2:</strong>     0.2    0.2
+    <strong>18Q3:</strong>     0.2    0.2
+    <strong>18Q4:</strong>     0.2    0.2
+    <strong>19Q1:</strong>     0.2    0.2
+    <strong>19Q2:</strong>     0.2    0.2
+    <strong>19Q3:</strong>     0.2    0.2
+    <strong>19Q4:</strong>     0.2    0.2
+    <strong>20Q1:</strong>     0.2    0.2
+    <strong>20Q2:</strong>     0.2    0.2
+    <strong>20Q3:</strong>     0.2    0.2
+    <strong>20Q4:</strong>     0.2    0.2
+    <strong>21Q1:</strong>     0.2    0.2
+    <strong>21Q2:</strong>     0.2    0.2
+    <strong>21Q3:</strong>     0.2    0.2
+    <strong>21Q4:</strong>     0.2    0.2
+    <strong>22Q1:</strong>     0.2    0.2
+    <strong>22Q2:</strong>     0.2    0.2
+    <strong>22Q3:</strong>     0.2    0.2
+    <strong>22Q4:</strong>     0.2    0.2
+    <strong>23Q1:</strong>     0.2    0.2
+    <strong>23Q2:</strong>     0.2    0.2
+    <strong>23Q3:</strong>     0.2    0.2
+    <strong>23Q4:</strong>     0.2    0.2
+    <strong>24Q1:</strong>     0.2    0.2
+    <strong>24Q2:</strong>     0.2    0.2
+    <strong>24Q3:</strong>     0.2    0.2
+    <strong>24Q4:</strong>     0.2    0.2
+    <strong>25Q1:</strong>     0.2    0.2
+    <strong>25Q2:</strong>     0.2    0.2
+    <strong>25Q3:</strong>     0.2    0.2
+    <strong>25Q4:</strong>     0.2    0.2
+    <strong>26Q1:</strong>     0.2    0.2
+
+
+ans = 
+
+    Series Object: 102-by-2
+    Class of Data: double
+
+               <strong>1</strong>         <strong>2</strong>   
+             <strong>______</strong>    <strong>______</strong>
+
+    <strong> 0Q4:</strong>    5.4737    5.4737
+    <strong> 1Q1:</strong>    5.4737    5.4737
+    <strong> 1Q2:</strong>    5.4737    5.4737
+    <strong> 1Q3:</strong>    5.4737    5.4737
+    <strong> 1Q4:</strong>    5.4737    5.4737
+    <strong> 2Q1:</strong>    5.4737    5.4737
+    <strong> 2Q2:</strong>    5.4737    5.4737
+    <strong> 2Q3:</strong>    5.4737    5.4737
+    <strong> 2Q4:</strong>    5.4737    5.4737
+    <strong> 3Q1:</strong>    5.4737    5.4737
+    <strong> 3Q2:</strong>    5.4737    5.4737
+    <strong> 3Q3:</strong>    5.4737    5.4737
+    <strong> 3Q4:</strong>    5.4737    5.4737
+    <strong> 4Q1:</strong>    5.4737    5.4737
+    <strong> 4Q2:</strong>    5.4737    5.4737
+    <strong> 4Q3:</strong>    5.4737    5.4737
+    <strong> 4Q4:</strong>    5.4737    5.4737
+    <strong> 5Q1:</strong>    5.4737    5.4737
+    <strong> 5Q2:</strong>    5.4737    5.4737
+    <strong> 5Q3:</strong>    5.4737    5.4737
+    <strong> 5Q4:</strong>    5.4737    5.4737
+    <strong> 6Q1:</strong>    5.4737    5.4737
+    <strong> 6Q2:</strong>    5.4737    5.4737
+    <strong> 6Q3:</strong>    5.4737    5.4737
+    <strong> 6Q4:</strong>    5.4737    5.4737
+    <strong> 7Q1:</strong>    5.4737    5.4737
+    <strong> 7Q2:</strong>    5.4737    5.4737
+    <strong> 7Q3:</strong>    5.4737    5.4737
+    <strong> 7Q4:</strong>    5.4737    5.4737
+    <strong> 8Q1:</strong>    5.4737    5.4737
+    <strong> 8Q2:</strong>    5.4737    5.4737
+    <strong> 8Q3:</strong>    5.4737    5.4737
+    <strong> 8Q4:</strong>    5.4737    5.4737
+    <strong> 9Q1:</strong>    5.4737    5.4737
+    <strong> 9Q2:</strong>    5.4737    5.4737
+    <strong> 9Q3:</strong>    5.4737    5.4737
+    <strong> 9Q4:</strong>    5.4737    5.4737
+    <strong>10Q1:</strong>    5.4737    5.4737
+    <strong>10Q2:</strong>    5.4737    5.4737
+    <strong>10Q3:</strong>    5.4737    5.4737
+    <strong>10Q4:</strong>    5.4737    5.4737
+    <strong>11Q1:</strong>    5.4737    5.4737
+    <strong>11Q2:</strong>    5.4737    5.4737
+    <strong>11Q3:</strong>    5.4737    5.4737
+    <strong>11Q4:</strong>    5.4737    5.4737
+    <strong>12Q1:</strong>    5.4737    5.4737
+    <strong>12Q2:</strong>    5.4737    5.4737
+    <strong>12Q3:</strong>    5.4737    5.4737
+    <strong>12Q4:</strong>    5.4737    5.4737
+    <strong>13Q1:</strong>    5.4737    5.4737
+    <strong>13Q2:</strong>    5.4737    5.4737
+    <strong>13Q3:</strong>    5.4737    5.4737
+    <strong>13Q4:</strong>    5.4737    5.4737
+    <strong>14Q1:</strong>    5.4737    5.4737
+    <strong>14Q2:</strong>    5.4737    5.4737
+    <strong>14Q3:</strong>    5.4737    5.4737
+    <strong>14Q4:</strong>    5.4737    5.4737
+    <strong>15Q1:</strong>    5.4737    5.4737
+    <strong>15Q2:</strong>    5.4737    5.4737
+    <strong>15Q3:</strong>    5.4737    5.4737
+    <strong>15Q4:</strong>    5.4737    5.4737
+    <strong>16Q1:</strong>    5.4737    5.4737
+    <strong>16Q2:</strong>    5.4737    5.4737
+    <strong>16Q3:</strong>    5.4737    5.4737
+    <strong>16Q4:</strong>    5.4737    5.4737
+    <strong>17Q1:</strong>    5.4737    5.4737
+    <strong>17Q2:</strong>    5.4737    5.4737
+    <strong>17Q3:</strong>    5.4737    5.4737
+    <strong>17Q4:</strong>    5.4737    5.4737
+    <strong>18Q1:</strong>    5.4737    5.4737
+    <strong>18Q2:</strong>    5.4737    5.4737
+    <strong>18Q3:</strong>    5.4737    5.4737
+    <strong>18Q4:</strong>    5.4737    5.4737
+    <strong>19Q1:</strong>    5.4737    5.4737
+    <strong>19Q2:</strong>    5.4737    5.4737
+    <strong>19Q3:</strong>    5.4737    5.4737
+    <strong>19Q4:</strong>    5.4737    5.4737
+    <strong>20Q1:</strong>    5.4737    5.4737
+    <strong>20Q2:</strong>    5.4737    5.4737
+    <strong>20Q3:</strong>    5.4737    5.4737
+    <strong>20Q4:</strong>    5.4737    5.4737
+    <strong>21Q1:</strong>    5.4737    5.4737
+    <strong>21Q2:</strong>    5.4737    5.4737
+    <strong>21Q3:</strong>    5.4737    5.4737
+    <strong>21Q4:</strong>    5.4737    5.4737
+    <strong>22Q1:</strong>    5.4737    5.4737
+    <strong>22Q2:</strong>    5.4737    5.4737
+    <strong>22Q3:</strong>    5.4737    5.4737
+    <strong>22Q4:</strong>    5.4737    5.4737
+    <strong>23Q1:</strong>    5.4737    5.4737
+    <strong>23Q2:</strong>    5.4737    5.4737
+    <strong>23Q3:</strong>    5.4737    5.4737
+    <strong>23Q4:</strong>    5.4737    5.4737
+    <strong>24Q1:</strong>    5.4737    5.4737
+    <strong>24Q2:</strong>    5.4737    5.4737
+    <strong>24Q3:</strong>    5.4737    5.4737
+    <strong>24Q4:</strong>    5.4737    5.4737
+    <strong>25Q1:</strong>    5.4737    5.4737
+    <strong>25Q2:</strong>    5.4737    5.4737
+    <strong>25Q3:</strong>    5.4737    5.4737
+    <strong>25Q4:</strong>    5.4737    5.4737
+    <strong>26Q1:</strong>    5.4737    5.4737
+
+
+ans = 
+
+    Series Object: 102-by-1
+    Class of Data: double
+
+                <strong>1</strong>    
+             <strong>________</strong>
+
+    <strong> 0Q4:</strong>           0
+    <strong> 1Q1:</strong>     0.65462
+    <strong> 1Q2:</strong>      1.0577
+    <strong> 1Q3:</strong>      1.3188
+    <strong> 1Q4:</strong>      1.4993
+    <strong> 2Q1:</strong>      1.0491
+    <strong> 2Q2:</strong>     0.75605
+    <strong> 2Q3:</strong>     0.56862
+    <strong> 2Q4:</strong>     0.44382
+    <strong> 3Q1:</strong>     0.36042
+    <strong> 3Q2:</strong>     0.30602
+    <strong> 3Q3:</strong>     0.27235
+    <strong> 3Q4:</strong>     0.25341
+    <strong> 4Q1:</strong>     0.24471
+    <strong> 4Q2:</strong>     0.24283
+    <strong> 4Q3:</strong>     0.24521
+    <strong> 4Q4:</strong>     0.24999
+    <strong> 5Q1:</strong>     0.25583
+    <strong> 5Q2:</strong>     0.26178
+    <strong> 5Q3:</strong>     0.26724
+    <strong> 5Q4:</strong>     0.27183
+    <strong> 6Q1:</strong>     0.27535
+    <strong> 6Q2:</strong>     0.27774
+    <strong> 6Q3:</strong>     0.27899
+    <strong> 6Q4:</strong>     0.27919
+    <strong> 7Q1:</strong>     0.27844
+    <strong> 7Q2:</strong>     0.27687
+    <strong> 7Q3:</strong>      0.2746
+    <strong> 7Q4:</strong>     0.27176
+    <strong> 8Q1:</strong>     0.26847
+    <strong> 8Q2:</strong>     0.26485
+    <strong> 8Q3:</strong>     0.26098
+    <strong> 8Q4:</strong>     0.25694
+    <strong> 9Q1:</strong>      0.2528
+    <strong> 9Q2:</strong>     0.24862
+    <strong> 9Q3:</strong>     0.24443
+    <strong> 9Q4:</strong>     0.24027
+    <strong>10Q1:</strong>     0.23617
+    <strong>10Q2:</strong>     0.23213
+    <strong>10Q3:</strong>     0.22818
+    <strong>10Q4:</strong>     0.22431
+    <strong>11Q1:</strong>     0.22054
+    <strong>11Q2:</strong>     0.21685
+    <strong>11Q3:</strong>     0.21326
+    <strong>11Q4:</strong>     0.20975
+    <strong>12Q1:</strong>     0.20632
+    <strong>12Q2:</strong>     0.20298
+    <strong>12Q3:</strong>     0.19972
+    <strong>12Q4:</strong>     0.19653
+    <strong>13Q1:</strong>     0.19343
+    <strong>13Q2:</strong>      0.1904
+    <strong>13Q3:</strong>     0.18744
+    <strong>13Q4:</strong>     0.18457
+    <strong>14Q1:</strong>     0.18178
+    <strong>14Q2:</strong>     0.17907
+    <strong>14Q3:</strong>     0.17645
+    <strong>14Q4:</strong>     0.17393
+    <strong>15Q1:</strong>     0.17151
+    <strong>15Q2:</strong>      0.1692
+    <strong>15Q3:</strong>     0.16701
+    <strong>15Q4:</strong>     0.16494
+    <strong>16Q1:</strong>       0.163
+    <strong>16Q2:</strong>     0.16121
+    <strong>16Q3:</strong>     0.15956
+    <strong>16Q4:</strong>     0.15807
+    <strong>17Q1:</strong>     0.15675
+    <strong>17Q2:</strong>      0.1556
+    <strong>17Q3:</strong>     0.15463
+    <strong>17Q4:</strong>     0.15384
+    <strong>18Q1:</strong>     0.15324
+    <strong>18Q2:</strong>     0.15282
+    <strong>18Q3:</strong>     0.15259
+    <strong>18Q4:</strong>     0.15255
+    <strong>19Q1:</strong>     0.15267
+    <strong>19Q2:</strong>     0.15296
+    <strong>19Q3:</strong>     0.15339
+    <strong>19Q4:</strong>     0.15395
+    <strong>20Q1:</strong>      0.1546
+    <strong>20Q2:</strong>      0.1553
+    <strong>20Q3:</strong>     0.15603
+    <strong>20Q4:</strong>     0.15672
+    <strong>21Q1:</strong>     0.15733
+    <strong>21Q2:</strong>     0.15778
+    <strong>21Q3:</strong>       0.158
+    <strong>21Q4:</strong>     0.15791
+    <strong>22Q1:</strong>      0.1574
+    <strong>22Q2:</strong>     0.15639
+    <strong>22Q3:</strong>     0.15475
+    <strong>22Q4:</strong>     0.15236
+    <strong>23Q1:</strong>     0.14909
+    <strong>23Q2:</strong>      0.1448
+    <strong>23Q3:</strong>     0.13935
+    <strong>23Q4:</strong>     0.13259
+    <strong>24Q1:</strong>     0.12437
+    <strong>24Q2:</strong>     0.11453
+    <strong>24Q3:</strong>     0.10292
+    <strong>24Q4:</strong>    0.089382
+    <strong>25Q1:</strong>     0.07378
+    <strong>25Q2:</strong>    0.055976
+    <strong>25Q3:</strong>     0.03585
+    <strong>25Q4:</strong>    0.011798
+    <strong>26Q1:</strong>           0
+
+Unable to resolve the name 'subroutines.functions.plotting1.createContributions'.
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('runFiscalShocks', 'D:\2024-01_eagle\eagleParsingTemp_sim_BIG1\runFiscalShocks.m', 70)" style="font-weight:bold">runFiscalShocks</a> (<a href="matlab: opentoline('D:\2024-01_eagle\eagleParsingTemp_sim_BIG1\runFiscalShocks.m',70,0)">line 70</a>)
+subroutines.functions.plotting1.createContributions;
+
+
+
+
++++ Initialising the project ...
+Unable to resolve the name 'utils.call.paths'.
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('runFiscalShocks', 'D:\2024-01_eagle\eagleParsingTemp_sim_BIG1\runFiscalShocks.m', 16)" style="font-weight:bold">runFiscalShocks</a> (<a href="matlab: opentoline('D:\2024-01_eagle\eagleParsingTemp_sim_BIG1\runFiscalShocks.m',16,0)">line 16</a>)
+utils.call.paths;
+
+
+
+
++++ Initialising the project ...
+Unable to resolve the name 'utils.call.paths'.
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('runFiscalShocks', 'D:\2024-01_eagle\eagleParsingTemp_sim_BIG1\runFiscalShocks.m', 16)" style="font-weight:bold">runFiscalShocks</a> (<a href="matlab: opentoline('D:\2024-01_eagle\eagleParsingTemp_sim_BIG1\runFiscalShocks.m',16,0)">line 16</a>)
+utils.call.paths;
+
+utils.call.paths
+
+
+
++++ Initialising the project ...
+
+	[IrisToolbox] for Macroeconomic Modeling Release 20230622
+	Copyright (c) 2007-2024 [IrisToolbox] Solutions Team
+
+	Matlab requirements: R2018a or later
+	Root folder: D:\iris_live
+	LaTeX Engine: C:\Apps\MiKTeX22.3\miktex\bin\x64\pdflatex.exe
+	Ghostscript engine: No Ghostscript engine configured
+	X13-ARIMA-SEATS: Version 1.1 Build 39 (March 10, 2017)
+
+
+ans =
+
+    'C:\Apps\dynare\6.1\matlab\'
+
+
+ans = 
+
+    Series Object: 102-by-2
+    Class of Data: double
+
+               <strong>1</strong>         <strong>2</strong>   
+             <strong>______</strong>    <strong>______</strong>
+
+    <strong> 0Q4:</strong>    1.8813    1.8813
+    <strong> 1Q1:</strong>    1.8828    1.8813
+    <strong> 1Q2:</strong>    1.8834    1.8813
+    <strong> 1Q3:</strong>    1.8836    1.8813
+    <strong> 1Q4:</strong>    1.8835    1.8813
+    <strong> 2Q1:</strong>    1.8834    1.8813
+    <strong> 2Q2:</strong>    1.8832    1.8813
+    <strong> 2Q3:</strong>    1.8831    1.8813
+    <strong> 2Q4:</strong>    1.8829    1.8813
+    <strong> 3Q1:</strong>    1.8827    1.8813
+    <strong> 3Q2:</strong>    1.8827    1.8813
+    <strong> 3Q3:</strong>    1.8826    1.8813
+    <strong> 3Q4:</strong>    1.8826    1.8813
+    <strong> 4Q1:</strong>    1.8826    1.8813
+    <strong> 4Q2:</strong>    1.8826    1.8813
+    <strong> 4Q3:</strong>    1.8827    1.8813
+    <strong> 4Q4:</strong>    1.8827    1.8813
+    <strong> 5Q1:</strong>    1.8828    1.8813
+    <strong> 5Q2:</strong>    1.8828    1.8813
+    <strong> 5Q3:</strong>    1.8829    1.8813
+    <strong> 5Q4:</strong>    1.8829    1.8813
+    <strong> 6Q1:</strong>    1.8829    1.8813
+    <strong> 6Q2:</strong>     1.883    1.8813
+    <strong> 6Q3:</strong>     1.883    1.8813
+    <strong> 6Q4:</strong>     1.883    1.8813
+    <strong> 7Q1:</strong>    1.8831    1.8813
+    <strong> 7Q2:</strong>    1.8831    1.8813
+    <strong> 7Q3:</strong>    1.8831    1.8813
+    <strong> 7Q4:</strong>    1.8831    1.8813
+    <strong> 8Q1:</strong>    1.8831    1.8813
+    <strong> 8Q2:</strong>    1.8831    1.8813
+    <strong> 8Q3:</strong>    1.8832    1.8813
+    <strong> 8Q4:</strong>    1.8832    1.8813
+    <strong> 9Q1:</strong>    1.8832    1.8813
+    <strong> 9Q2:</strong>    1.8832    1.8813
+    <strong> 9Q3:</strong>    1.8832    1.8813
+    <strong> 9Q4:</strong>    1.8832    1.8813
+    <strong>10Q1:</strong>    1.8832    1.8813
+    <strong>10Q2:</strong>    1.8832    1.8813
+    <strong>10Q3:</strong>    1.8832    1.8813
+    <strong>10Q4:</strong>    1.8832    1.8813
+    <strong>11Q1:</strong>    1.8832    1.8813
+    <strong>11Q2:</strong>    1.8832    1.8813
+    <strong>11Q3:</strong>    1.8832    1.8813
+    <strong>11Q4:</strong>    1.8833    1.8813
+    <strong>12Q1:</strong>    1.8833    1.8813
+    <strong>12Q2:</strong>    1.8833    1.8813
+    <strong>12Q3:</strong>    1.8833    1.8813
+    <strong>12Q4:</strong>    1.8833    1.8813
+    <strong>13Q1:</strong>    1.8833    1.8813
+    <strong>13Q2:</strong>    1.8833    1.8813
+    <strong>13Q3:</strong>    1.8833    1.8813
+    <strong>13Q4:</strong>    1.8833    1.8813
+    <strong>14Q1:</strong>    1.8833    1.8813
+    <strong>14Q2:</strong>    1.8833    1.8813
+    <strong>14Q3:</strong>    1.8833    1.8813
+    <strong>14Q4:</strong>    1.8833    1.8813
+    <strong>15Q1:</strong>    1.8833    1.8813
+    <strong>15Q2:</strong>    1.8833    1.8813
+    <strong>15Q3:</strong>    1.8833    1.8813
+    <strong>15Q4:</strong>    1.8833    1.8813
+    <strong>16Q1:</strong>    1.8833    1.8813
+    <strong>16Q2:</strong>    1.8833    1.8813
+    <strong>16Q3:</strong>    1.8833    1.8813
+    <strong>16Q4:</strong>    1.8833    1.8813
+    <strong>17Q1:</strong>    1.8833    1.8813
+    <strong>17Q2:</strong>    1.8833    1.8813
+    <strong>17Q3:</strong>    1.8833    1.8813
+    <strong>17Q4:</strong>    1.8833    1.8813
+    <strong>18Q1:</strong>    1.8834    1.8813
+    <strong>18Q2:</strong>    1.8834    1.8813
+    <strong>18Q3:</strong>    1.8834    1.8813
+    <strong>18Q4:</strong>    1.8834    1.8813
+    <strong>19Q1:</strong>    1.8834    1.8813
+    <strong>19Q2:</strong>    1.8835    1.8813
+    <strong>19Q3:</strong>    1.8835    1.8813
+    <strong>19Q4:</strong>    1.8835    1.8813
+    <strong>20Q1:</strong>    1.8835    1.8813
+    <strong>20Q2:</strong>    1.8835    1.8813
+    <strong>20Q3:</strong>    1.8835    1.8813
+    <strong>20Q4:</strong>    1.8835    1.8813
+    <strong>21Q1:</strong>    1.8835    1.8813
+    <strong>21Q2:</strong>    1.8835    1.8813
+    <strong>21Q3:</strong>    1.8835    1.8813
+    <strong>21Q4:</strong>    1.8835    1.8813
+    <strong>22Q1:</strong>    1.8834    1.8813
+    <strong>22Q2:</strong>    1.8833    1.8813
+    <strong>22Q3:</strong>    1.8833    1.8813
+    <strong>22Q4:</strong>    1.8832    1.8813
+    <strong>23Q1:</strong>     1.883    1.8813
+    <strong>23Q2:</strong>    1.8829    1.8813
+    <strong>23Q3:</strong>    1.8827    1.8813
+    <strong>23Q4:</strong>    1.8825    1.8813
+    <strong>24Q1:</strong>    1.8823    1.8813
+    <strong>24Q2:</strong>    1.8821    1.8813
+    <strong>24Q3:</strong>    1.8818    1.8813
+    <strong>24Q4:</strong>    1.8815    1.8813
+    <strong>25Q1:</strong>    1.8812    1.8813
+    <strong>25Q2:</strong>    1.8809    1.8813
+    <strong>25Q3:</strong>    1.8805    1.8813
+    <strong>25Q4:</strong>    1.8801    1.8813
+    <strong>26Q1:</strong>    1.8813    1.8813
+
+
+ans = 
+
+    Series Object: 102-by-2
+    Class of Data: double
+
+              <strong>1</strong>       <strong>2</strong> 
+             <strong>____</strong>    <strong>___</strong>
+
+    <strong> 0Q4:</strong>     0.2    0.2
+    <strong> 1Q1:</strong>    0.21    0.2
+    <strong> 1Q2:</strong>    0.21    0.2
+    <strong> 1Q3:</strong>    0.21    0.2
+    <strong> 1Q4:</strong>    0.21    0.2
+    <strong> 2Q1:</strong>     0.2    0.2
+    <strong> 2Q2:</strong>     0.2    0.2
+    <strong> 2Q3:</strong>     0.2    0.2
+    <strong> 2Q4:</strong>     0.2    0.2
+    <strong> 3Q1:</strong>     0.2    0.2
+    <strong> 3Q2:</strong>     0.2    0.2
+    <strong> 3Q3:</strong>     0.2    0.2
+    <strong> 3Q4:</strong>     0.2    0.2
+    <strong> 4Q1:</strong>     0.2    0.2
+    <strong> 4Q2:</strong>     0.2    0.2
+    <strong> 4Q3:</strong>     0.2    0.2
+    <strong> 4Q4:</strong>     0.2    0.2
+    <strong> 5Q1:</strong>     0.2    0.2
+    <strong> 5Q2:</strong>     0.2    0.2
+    <strong> 5Q3:</strong>     0.2    0.2
+    <strong> 5Q4:</strong>     0.2    0.2
+    <strong> 6Q1:</strong>     0.2    0.2
+    <strong> 6Q2:</strong>     0.2    0.2
+    <strong> 6Q3:</strong>     0.2    0.2
+    <strong> 6Q4:</strong>     0.2    0.2
+    <strong> 7Q1:</strong>     0.2    0.2
+    <strong> 7Q2:</strong>     0.2    0.2
+    <strong> 7Q3:</strong>     0.2    0.2
+    <strong> 7Q4:</strong>     0.2    0.2
+    <strong> 8Q1:</strong>     0.2    0.2
+    <strong> 8Q2:</strong>     0.2    0.2
+    <strong> 8Q3:</strong>     0.2    0.2
+    <strong> 8Q4:</strong>     0.2    0.2
+    <strong> 9Q1:</strong>     0.2    0.2
+    <strong> 9Q2:</strong>     0.2    0.2
+    <strong> 9Q3:</strong>     0.2    0.2
+    <strong> 9Q4:</strong>     0.2    0.2
+    <strong>10Q1:</strong>     0.2    0.2
+    <strong>10Q2:</strong>     0.2    0.2
+    <strong>10Q3:</strong>     0.2    0.2
+    <strong>10Q4:</strong>     0.2    0.2
+    <strong>11Q1:</strong>     0.2    0.2
+    <strong>11Q2:</strong>     0.2    0.2
+    <strong>11Q3:</strong>     0.2    0.2
+    <strong>11Q4:</strong>     0.2    0.2
+    <strong>12Q1:</strong>     0.2    0.2
+    <strong>12Q2:</strong>     0.2    0.2
+    <strong>12Q3:</strong>     0.2    0.2
+    <strong>12Q4:</strong>     0.2    0.2
+    <strong>13Q1:</strong>     0.2    0.2
+    <strong>13Q2:</strong>     0.2    0.2
+    <strong>13Q3:</strong>     0.2    0.2
+    <strong>13Q4:</strong>     0.2    0.2
+    <strong>14Q1:</strong>     0.2    0.2
+    <strong>14Q2:</strong>     0.2    0.2
+    <strong>14Q3:</strong>     0.2    0.2
+    <strong>14Q4:</strong>     0.2    0.2
+    <strong>15Q1:</strong>     0.2    0.2
+    <strong>15Q2:</strong>     0.2    0.2
+    <strong>15Q3:</strong>     0.2    0.2
+    <strong>15Q4:</strong>     0.2    0.2
+    <strong>16Q1:</strong>     0.2    0.2
+    <strong>16Q2:</strong>     0.2    0.2
+    <strong>16Q3:</strong>     0.2    0.2
+    <strong>16Q4:</strong>     0.2    0.2
+    <strong>17Q1:</strong>     0.2    0.2
+    <strong>17Q2:</strong>     0.2    0.2
+    <strong>17Q3:</strong>     0.2    0.2
+    <strong>17Q4:</strong>     0.2    0.2
+    <strong>18Q1:</strong>     0.2    0.2
+    <strong>18Q2:</strong>     0.2    0.2
+    <strong>18Q3:</strong>     0.2    0.2
+    <strong>18Q4:</strong>     0.2    0.2
+    <strong>19Q1:</strong>     0.2    0.2
+    <strong>19Q2:</strong>     0.2    0.2
+    <strong>19Q3:</strong>     0.2    0.2
+    <strong>19Q4:</strong>     0.2    0.2
+    <strong>20Q1:</strong>     0.2    0.2
+    <strong>20Q2:</strong>     0.2    0.2
+    <strong>20Q3:</strong>     0.2    0.2
+    <strong>20Q4:</strong>     0.2    0.2
+    <strong>21Q1:</strong>     0.2    0.2
+    <strong>21Q2:</strong>     0.2    0.2
+    <strong>21Q3:</strong>     0.2    0.2
+    <strong>21Q4:</strong>     0.2    0.2
+    <strong>22Q1:</strong>     0.2    0.2
+    <strong>22Q2:</strong>     0.2    0.2
+    <strong>22Q3:</strong>     0.2    0.2
+    <strong>22Q4:</strong>     0.2    0.2
+    <strong>23Q1:</strong>     0.2    0.2
+    <strong>23Q2:</strong>     0.2    0.2
+    <strong>23Q3:</strong>     0.2    0.2
+    <strong>23Q4:</strong>     0.2    0.2
+    <strong>24Q1:</strong>     0.2    0.2
+    <strong>24Q2:</strong>     0.2    0.2
+    <strong>24Q3:</strong>     0.2    0.2
+    <strong>24Q4:</strong>     0.2    0.2
+    <strong>25Q1:</strong>     0.2    0.2
+    <strong>25Q2:</strong>     0.2    0.2
+    <strong>25Q3:</strong>     0.2    0.2
+    <strong>25Q4:</strong>     0.2    0.2
+    <strong>26Q1:</strong>     0.2    0.2
+
+
+ans = 
+
+    Series Object: 102-by-2
+    Class of Data: double
+
+               <strong>1</strong>         <strong>2</strong>   
+             <strong>______</strong>    <strong>______</strong>
+
+    <strong> 0Q4:</strong>    5.4737    5.4737
+    <strong> 1Q1:</strong>    5.4737    5.4737
+    <strong> 1Q2:</strong>    5.4737    5.4737
+    <strong> 1Q3:</strong>    5.4737    5.4737
+    <strong> 1Q4:</strong>    5.4737    5.4737
+    <strong> 2Q1:</strong>    5.4737    5.4737
+    <strong> 2Q2:</strong>    5.4737    5.4737
+    <strong> 2Q3:</strong>    5.4737    5.4737
+    <strong> 2Q4:</strong>    5.4737    5.4737
+    <strong> 3Q1:</strong>    5.4737    5.4737
+    <strong> 3Q2:</strong>    5.4737    5.4737
+    <strong> 3Q3:</strong>    5.4737    5.4737
+    <strong> 3Q4:</strong>    5.4737    5.4737
+    <strong> 4Q1:</strong>    5.4737    5.4737
+    <strong> 4Q2:</strong>    5.4737    5.4737
+    <strong> 4Q3:</strong>    5.4737    5.4737
+    <strong> 4Q4:</strong>    5.4737    5.4737
+    <strong> 5Q1:</strong>    5.4737    5.4737
+    <strong> 5Q2:</strong>    5.4737    5.4737
+    <strong> 5Q3:</strong>    5.4737    5.4737
+    <strong> 5Q4:</strong>    5.4737    5.4737
+    <strong> 6Q1:</strong>    5.4737    5.4737
+    <strong> 6Q2:</strong>    5.4737    5.4737
+    <strong> 6Q3:</strong>    5.4737    5.4737
+    <strong> 6Q4:</strong>    5.4737    5.4737
+    <strong> 7Q1:</strong>    5.4737    5.4737
+    <strong> 7Q2:</strong>    5.4737    5.4737
+    <strong> 7Q3:</strong>    5.4737    5.4737
+    <strong> 7Q4:</strong>    5.4737    5.4737
+    <strong> 8Q1:</strong>    5.4737    5.4737
+    <strong> 8Q2:</strong>    5.4737    5.4737
+    <strong> 8Q3:</strong>    5.4737    5.4737
+    <strong> 8Q4:</strong>    5.4737    5.4737
+    <strong> 9Q1:</strong>    5.4737    5.4737
+    <strong> 9Q2:</strong>    5.4737    5.4737
+    <strong> 9Q3:</strong>    5.4737    5.4737
+    <strong> 9Q4:</strong>    5.4737    5.4737
+    <strong>10Q1:</strong>    5.4737    5.4737
+    <strong>10Q2:</strong>    5.4737    5.4737
+    <strong>10Q3:</strong>    5.4737    5.4737
+    <strong>10Q4:</strong>    5.4737    5.4737
+    <strong>11Q1:</strong>    5.4737    5.4737
+    <strong>11Q2:</strong>    5.4737    5.4737
+    <strong>11Q3:</strong>    5.4737    5.4737
+    <strong>11Q4:</strong>    5.4737    5.4737
+    <strong>12Q1:</strong>    5.4737    5.4737
+    <strong>12Q2:</strong>    5.4737    5.4737
+    <strong>12Q3:</strong>    5.4737    5.4737
+    <strong>12Q4:</strong>    5.4737    5.4737
+    <strong>13Q1:</strong>    5.4737    5.4737
+    <strong>13Q2:</strong>    5.4737    5.4737
+    <strong>13Q3:</strong>    5.4737    5.4737
+    <strong>13Q4:</strong>    5.4737    5.4737
+    <strong>14Q1:</strong>    5.4737    5.4737
+    <strong>14Q2:</strong>    5.4737    5.4737
+    <strong>14Q3:</strong>    5.4737    5.4737
+    <strong>14Q4:</strong>    5.4737    5.4737
+    <strong>15Q1:</strong>    5.4737    5.4737
+    <strong>15Q2:</strong>    5.4737    5.4737
+    <strong>15Q3:</strong>    5.4737    5.4737
+    <strong>15Q4:</strong>    5.4737    5.4737
+    <strong>16Q1:</strong>    5.4737    5.4737
+    <strong>16Q2:</strong>    5.4737    5.4737
+    <strong>16Q3:</strong>    5.4737    5.4737
+    <strong>16Q4:</strong>    5.4737    5.4737
+    <strong>17Q1:</strong>    5.4737    5.4737
+    <strong>17Q2:</strong>    5.4737    5.4737
+    <strong>17Q3:</strong>    5.4737    5.4737
+    <strong>17Q4:</strong>    5.4737    5.4737
+    <strong>18Q1:</strong>    5.4737    5.4737
+    <strong>18Q2:</strong>    5.4737    5.4737
+    <strong>18Q3:</strong>    5.4737    5.4737
+    <strong>18Q4:</strong>    5.4737    5.4737
+    <strong>19Q1:</strong>    5.4737    5.4737
+    <strong>19Q2:</strong>    5.4737    5.4737
+    <strong>19Q3:</strong>    5.4737    5.4737
+    <strong>19Q4:</strong>    5.4737    5.4737
+    <strong>20Q1:</strong>    5.4737    5.4737
+    <strong>20Q2:</strong>    5.4737    5.4737
+    <strong>20Q3:</strong>    5.4737    5.4737
+    <strong>20Q4:</strong>    5.4737    5.4737
+    <strong>21Q1:</strong>    5.4737    5.4737
+    <strong>21Q2:</strong>    5.4737    5.4737
+    <strong>21Q3:</strong>    5.4737    5.4737
+    <strong>21Q4:</strong>    5.4737    5.4737
+    <strong>22Q1:</strong>    5.4737    5.4737
+    <strong>22Q2:</strong>    5.4737    5.4737
+    <strong>22Q3:</strong>    5.4737    5.4737
+    <strong>22Q4:</strong>    5.4737    5.4737
+    <strong>23Q1:</strong>    5.4737    5.4737
+    <strong>23Q2:</strong>    5.4737    5.4737
+    <strong>23Q3:</strong>    5.4737    5.4737
+    <strong>23Q4:</strong>    5.4737    5.4737
+    <strong>24Q1:</strong>    5.4737    5.4737
+    <strong>24Q2:</strong>    5.4737    5.4737
+    <strong>24Q3:</strong>    5.4737    5.4737
+    <strong>24Q4:</strong>    5.4737    5.4737
+    <strong>25Q1:</strong>    5.4737    5.4737
+    <strong>25Q2:</strong>    5.4737    5.4737
+    <strong>25Q3:</strong>    5.4737    5.4737
+    <strong>25Q4:</strong>    5.4737    5.4737
+    <strong>26Q1:</strong>    5.4737    5.4737
+
+
+ans = 
+
+    Series Object: 102-by-1
+    Class of Data: double
+
+                <strong>1</strong>    
+             <strong>________</strong>
+
+    <strong> 0Q4:</strong>           0
+    <strong> 1Q1:</strong>     0.65462
+    <strong> 1Q2:</strong>      1.0577
+    <strong> 1Q3:</strong>      1.3188
+    <strong> 1Q4:</strong>      1.4993
+    <strong> 2Q1:</strong>      1.0491
+    <strong> 2Q2:</strong>     0.75605
+    <strong> 2Q3:</strong>     0.56862
+    <strong> 2Q4:</strong>     0.44382
+    <strong> 3Q1:</strong>     0.36042
+    <strong> 3Q2:</strong>     0.30602
+    <strong> 3Q3:</strong>     0.27235
+    <strong> 3Q4:</strong>     0.25341
+    <strong> 4Q1:</strong>     0.24471
+    <strong> 4Q2:</strong>     0.24283
+    <strong> 4Q3:</strong>     0.24521
+    <strong> 4Q4:</strong>     0.24999
+    <strong> 5Q1:</strong>     0.25583
+    <strong> 5Q2:</strong>     0.26178
+    <strong> 5Q3:</strong>     0.26724
+    <strong> 5Q4:</strong>     0.27183
+    <strong> 6Q1:</strong>     0.27535
+    <strong> 6Q2:</strong>     0.27774
+    <strong> 6Q3:</strong>     0.27899
+    <strong> 6Q4:</strong>     0.27919
+    <strong> 7Q1:</strong>     0.27844
+    <strong> 7Q2:</strong>     0.27687
+    <strong> 7Q3:</strong>      0.2746
+    <strong> 7Q4:</strong>     0.27176
+    <strong> 8Q1:</strong>     0.26847
+    <strong> 8Q2:</strong>     0.26485
+    <strong> 8Q3:</strong>     0.26098
+    <strong> 8Q4:</strong>     0.25694
+    <strong> 9Q1:</strong>      0.2528
+    <strong> 9Q2:</strong>     0.24862
+    <strong> 9Q3:</strong>     0.24443
+    <strong> 9Q4:</strong>     0.24027
+    <strong>10Q1:</strong>     0.23617
+    <strong>10Q2:</strong>     0.23213
+    <strong>10Q3:</strong>     0.22818
+    <strong>10Q4:</strong>     0.22431
+    <strong>11Q1:</strong>     0.22054
+    <strong>11Q2:</strong>     0.21685
+    <strong>11Q3:</strong>     0.21326
+    <strong>11Q4:</strong>     0.20975
+    <strong>12Q1:</strong>     0.20632
+    <strong>12Q2:</strong>     0.20298
+    <strong>12Q3:</strong>     0.19972
+    <strong>12Q4:</strong>     0.19653
+    <strong>13Q1:</strong>     0.19343
+    <strong>13Q2:</strong>      0.1904
+    <strong>13Q3:</strong>     0.18744
+    <strong>13Q4:</strong>     0.18457
+    <strong>14Q1:</strong>     0.18178
+    <strong>14Q2:</strong>     0.17907
+    <strong>14Q3:</strong>     0.17645
+    <strong>14Q4:</strong>     0.17393
+    <strong>15Q1:</strong>     0.17151
+    <strong>15Q2:</strong>      0.1692
+    <strong>15Q3:</strong>     0.16701
+    <strong>15Q4:</strong>     0.16494
+    <strong>16Q1:</strong>       0.163
+    <strong>16Q2:</strong>     0.16121
+    <strong>16Q3:</strong>     0.15956
+    <strong>16Q4:</strong>     0.15807
+    <strong>17Q1:</strong>     0.15675
+    <strong>17Q2:</strong>      0.1556
+    <strong>17Q3:</strong>     0.15463
+    <strong>17Q4:</strong>     0.15384
+    <strong>18Q1:</strong>     0.15324
+    <strong>18Q2:</strong>     0.15282
+    <strong>18Q3:</strong>     0.15259
+    <strong>18Q4:</strong>     0.15255
+    <strong>19Q1:</strong>     0.15267
+    <strong>19Q2:</strong>     0.15296
+    <strong>19Q3:</strong>     0.15339
+    <strong>19Q4:</strong>     0.15395
+    <strong>20Q1:</strong>      0.1546
+    <strong>20Q2:</strong>      0.1553
+    <strong>20Q3:</strong>     0.15603
+    <strong>20Q4:</strong>     0.15672
+    <strong>21Q1:</strong>     0.15733
+    <strong>21Q2:</strong>     0.15778
+    <strong>21Q3:</strong>       0.158
+    <strong>21Q4:</strong>     0.15791
+    <strong>22Q1:</strong>      0.1574
+    <strong>22Q2:</strong>     0.15639
+    <strong>22Q3:</strong>     0.15475
+    <strong>22Q4:</strong>     0.15236
+    <strong>23Q1:</strong>     0.14909
+    <strong>23Q2:</strong>      0.1448
+    <strong>23Q3:</strong>     0.13935
+    <strong>23Q4:</strong>     0.13259
+    <strong>24Q1:</strong>     0.12437
+    <strong>24Q2:</strong>     0.11453
+    <strong>24Q3:</strong>     0.10292
+    <strong>24Q4:</strong>    0.089382
+    <strong>25Q1:</strong>     0.07378
+    <strong>25Q2:</strong>    0.055976
+    <strong>25Q3:</strong>     0.03585
+    <strong>25Q4:</strong>    0.011798
+    <strong>26Q1:</strong>           0
+
+Dot indexing is not supported for variables of this type.
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('functions.plotting1.createContributions', 'D:\2024-01_eagle\subroutines\+functions\+plotting1\createContributions.m', 44)" style="font-weight:bold">functions.plotting1.createContributions</a> (<a href="matlab: opentoline('D:\2024-01_eagle\subroutines\+functions\+plotting1\createContributions.m',44,0)">line 44</a>)
+jsonfile = [M_.fname filesep() 'model' filesep() 'json' filesep()
+'modfile-original.json'];
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('runFiscalShocks', 'D:\2024-01_eagle\eagleParsingTemp_sim_BIG1\runFiscalShocks.m', 70)" style="font-weight:bold">runFiscalShocks</a> (<a href="matlab: opentoline('D:\2024-01_eagle\eagleParsingTemp_sim_BIG1\runFiscalShocks.m',70,0)">line 70</a>)
+functions.plotting1.createContributions;
+
+
+ans = 
+
+    Series Object: 102-by-2
+    Class of Data: double
+
+               <strong>1</strong>         <strong>2</strong>   
+             <strong>______</strong>    <strong>______</strong>
+
+    <strong> 0Q4:</strong>    1.8813    1.8813
+    <strong> 1Q1:</strong>    1.8828    1.8813
+    <strong> 1Q2:</strong>    1.8834    1.8813
+    <strong> 1Q3:</strong>    1.8836    1.8813
+    <strong> 1Q4:</strong>    1.8835    1.8813
+    <strong> 2Q1:</strong>    1.8834    1.8813
+    <strong> 2Q2:</strong>    1.8832    1.8813
+    <strong> 2Q3:</strong>    1.8831    1.8813
+    <strong> 2Q4:</strong>    1.8829    1.8813
+    <strong> 3Q1:</strong>    1.8827    1.8813
+    <strong> 3Q2:</strong>    1.8827    1.8813
+    <strong> 3Q3:</strong>    1.8826    1.8813
+    <strong> 3Q4:</strong>    1.8826    1.8813
+    <strong> 4Q1:</strong>    1.8826    1.8813
+    <strong> 4Q2:</strong>    1.8826    1.8813
+    <strong> 4Q3:</strong>    1.8827    1.8813
+    <strong> 4Q4:</strong>    1.8827    1.8813
+    <strong> 5Q1:</strong>    1.8828    1.8813
+    <strong> 5Q2:</strong>    1.8828    1.8813
+    <strong> 5Q3:</strong>    1.8829    1.8813
+    <strong> 5Q4:</strong>    1.8829    1.8813
+    <strong> 6Q1:</strong>    1.8829    1.8813
+    <strong> 6Q2:</strong>     1.883    1.8813
+    <strong> 6Q3:</strong>     1.883    1.8813
+    <strong> 6Q4:</strong>     1.883    1.8813
+    <strong> 7Q1:</strong>    1.8831    1.8813
+    <strong> 7Q2:</strong>    1.8831    1.8813
+    <strong> 7Q3:</strong>    1.8831    1.8813
+    <strong> 7Q4:</strong>    1.8831    1.8813
+    <strong> 8Q1:</strong>    1.8831    1.8813
+    <strong> 8Q2:</strong>    1.8831    1.8813
+    <strong> 8Q3:</strong>    1.8832    1.8813
+    <strong> 8Q4:</strong>    1.8832    1.8813
+    <strong> 9Q1:</strong>    1.8832    1.8813
+    <strong> 9Q2:</strong>    1.8832    1.8813
+    <strong> 9Q3:</strong>    1.8832    1.8813
+    <strong> 9Q4:</strong>    1.8832    1.8813
+    <strong>10Q1:</strong>    1.8832    1.8813
+    <strong>10Q2:</strong>    1.8832    1.8813
+    <strong>10Q3:</strong>    1.8832    1.8813
+    <strong>10Q4:</strong>    1.8832    1.8813
+    <strong>11Q1:</strong>    1.8832    1.8813
+    <strong>11Q2:</strong>    1.8832    1.8813
+    <strong>11Q3:</strong>    1.8832    1.8813
+    <strong>11Q4:</strong>    1.8833    1.8813
+    <strong>12Q1:</strong>    1.8833    1.8813
+    <strong>12Q2:</strong>    1.8833    1.8813
+    <strong>12Q3:</strong>    1.8833    1.8813
+    <strong>12Q4:</strong>    1.8833    1.8813
+    <strong>13Q1:</strong>    1.8833    1.8813
+    <strong>13Q2:</strong>    1.8833    1.8813
+    <strong>13Q3:</strong>    1.8833    1.8813
+    <strong>13Q4:</strong>    1.8833    1.8813
+    <strong>14Q1:</strong>    1.8833    1.8813
+    <strong>14Q2:</strong>    1.8833    1.8813
+    <strong>14Q3:</strong>    1.8833    1.8813
+    <strong>14Q4:</strong>    1.8833    1.8813
+    <strong>15Q1:</strong>    1.8833    1.8813
+    <strong>15Q2:</strong>    1.8833    1.8813
+    <strong>15Q3:</strong>    1.8833    1.8813
+    <strong>15Q4:</strong>    1.8833    1.8813
+    <strong>16Q1:</strong>    1.8833    1.8813
+    <strong>16Q2:</strong>    1.8833    1.8813
+    <strong>16Q3:</strong>    1.8833    1.8813
+    <strong>16Q4:</strong>    1.8833    1.8813
+    <strong>17Q1:</strong>    1.8833    1.8813
+    <strong>17Q2:</strong>    1.8833    1.8813
+    <strong>17Q3:</strong>    1.8833    1.8813
+    <strong>17Q4:</strong>    1.8833    1.8813
+    <strong>18Q1:</strong>    1.8834    1.8813
+    <strong>18Q2:</strong>    1.8834    1.8813
+    <strong>18Q3:</strong>    1.8834    1.8813
+    <strong>18Q4:</strong>    1.8834    1.8813
+    <strong>19Q1:</strong>    1.8834    1.8813
+    <strong>19Q2:</strong>    1.8835    1.8813
+    <strong>19Q3:</strong>    1.8835    1.8813
+    <strong>19Q4:</strong>    1.8835    1.8813
+    <strong>20Q1:</strong>    1.8835    1.8813
+    <strong>20Q2:</strong>    1.8835    1.8813
+    <strong>20Q3:</strong>    1.8835    1.8813
+    <strong>20Q4:</strong>    1.8835    1.8813
+    <strong>21Q1:</strong>    1.8835    1.8813
+    <strong>21Q2:</strong>    1.8835    1.8813
+    <strong>21Q3:</strong>    1.8835    1.8813
+    <strong>21Q4:</strong>    1.8835    1.8813
+    <strong>22Q1:</strong>    1.8834    1.8813
+    <strong>22Q2:</strong>    1.8833    1.8813
+    <strong>22Q3:</strong>    1.8833    1.8813
+    <strong>22Q4:</strong>    1.8832    1.8813
+    <strong>23Q1:</strong>     1.883    1.8813
+    <strong>23Q2:</strong>    1.8829    1.8813
+    <strong>23Q3:</strong>    1.8827    1.8813
+    <strong>23Q4:</strong>    1.8825    1.8813
+    <strong>24Q1:</strong>    1.8823    1.8813
+    <strong>24Q2:</strong>    1.8821    1.8813
+    <strong>24Q3:</strong>    1.8818    1.8813
+    <strong>24Q4:</strong>    1.8815    1.8813
+    <strong>25Q1:</strong>    1.8812    1.8813
+    <strong>25Q2:</strong>    1.8809    1.8813
+    <strong>25Q3:</strong>    1.8805    1.8813
+    <strong>25Q4:</strong>    1.8801    1.8813
+    <strong>26Q1:</strong>    1.8813    1.8813
+
+
+ans = 
+
+    Series Object: 102-by-2
+    Class of Data: double
+
+              <strong>1</strong>       <strong>2</strong> 
+             <strong>____</strong>    <strong>___</strong>
+
+    <strong> 0Q4:</strong>     0.2    0.2
+    <strong> 1Q1:</strong>    0.21    0.2
+    <strong> 1Q2:</strong>    0.21    0.2
+    <strong> 1Q3:</strong>    0.21    0.2
+    <strong> 1Q4:</strong>    0.21    0.2
+    <strong> 2Q1:</strong>     0.2    0.2
+    <strong> 2Q2:</strong>     0.2    0.2
+    <strong> 2Q3:</strong>     0.2    0.2
+    <strong> 2Q4:</strong>     0.2    0.2
+    <strong> 3Q1:</strong>     0.2    0.2
+    <strong> 3Q2:</strong>     0.2    0.2
+    <strong> 3Q3:</strong>     0.2    0.2
+    <strong> 3Q4:</strong>     0.2    0.2
+    <strong> 4Q1:</strong>     0.2    0.2
+    <strong> 4Q2:</strong>     0.2    0.2
+    <strong> 4Q3:</strong>     0.2    0.2
+    <strong> 4Q4:</strong>     0.2    0.2
+    <strong> 5Q1:</strong>     0.2    0.2
+    <strong> 5Q2:</strong>     0.2    0.2
+    <strong> 5Q3:</strong>     0.2    0.2
+    <strong> 5Q4:</strong>     0.2    0.2
+    <strong> 6Q1:</strong>     0.2    0.2
+    <strong> 6Q2:</strong>     0.2    0.2
+    <strong> 6Q3:</strong>     0.2    0.2
+    <strong> 6Q4:</strong>     0.2    0.2
+    <strong> 7Q1:</strong>     0.2    0.2
+    <strong> 7Q2:</strong>     0.2    0.2
+    <strong> 7Q3:</strong>     0.2    0.2
+    <strong> 7Q4:</strong>     0.2    0.2
+    <strong> 8Q1:</strong>     0.2    0.2
+    <strong> 8Q2:</strong>     0.2    0.2
+    <strong> 8Q3:</strong>     0.2    0.2
+    <strong> 8Q4:</strong>     0.2    0.2
+    <strong> 9Q1:</strong>     0.2    0.2
+    <strong> 9Q2:</strong>     0.2    0.2
+    <strong> 9Q3:</strong>     0.2    0.2
+    <strong> 9Q4:</strong>     0.2    0.2
+    <strong>10Q1:</strong>     0.2    0.2
+    <strong>10Q2:</strong>     0.2    0.2
+    <strong>10Q3:</strong>     0.2    0.2
+    <strong>10Q4:</strong>     0.2    0.2
+    <strong>11Q1:</strong>     0.2    0.2
+    <strong>11Q2:</strong>     0.2    0.2
+    <strong>11Q3:</strong>     0.2    0.2
+    <strong>11Q4:</strong>     0.2    0.2
+    <strong>12Q1:</strong>     0.2    0.2
+    <strong>12Q2:</strong>     0.2    0.2
+    <strong>12Q3:</strong>     0.2    0.2
+    <strong>12Q4:</strong>     0.2    0.2
+    <strong>13Q1:</strong>     0.2    0.2
+    <strong>13Q2:</strong>     0.2    0.2
+    <strong>13Q3:</strong>     0.2    0.2
+    <strong>13Q4:</strong>     0.2    0.2
+    <strong>14Q1:</strong>     0.2    0.2
+    <strong>14Q2:</strong>     0.2    0.2
+    <strong>14Q3:</strong>     0.2    0.2
+    <strong>14Q4:</strong>     0.2    0.2
+    <strong>15Q1:</strong>     0.2    0.2
+    <strong>15Q2:</strong>     0.2    0.2
+    <strong>15Q3:</strong>     0.2    0.2
+    <strong>15Q4:</strong>     0.2    0.2
+    <strong>16Q1:</strong>     0.2    0.2
+    <strong>16Q2:</strong>     0.2    0.2
+    <strong>16Q3:</strong>     0.2    0.2
+    <strong>16Q4:</strong>     0.2    0.2
+    <strong>17Q1:</strong>     0.2    0.2
+    <strong>17Q2:</strong>     0.2    0.2
+    <strong>17Q3:</strong>     0.2    0.2
+    <strong>17Q4:</strong>     0.2    0.2
+    <strong>18Q1:</strong>     0.2    0.2
+    <strong>18Q2:</strong>     0.2    0.2
+    <strong>18Q3:</strong>     0.2    0.2
+    <strong>18Q4:</strong>     0.2    0.2
+    <strong>19Q1:</strong>     0.2    0.2
+    <strong>19Q2:</strong>     0.2    0.2
+    <strong>19Q3:</strong>     0.2    0.2
+    <strong>19Q4:</strong>     0.2    0.2
+    <strong>20Q1:</strong>     0.2    0.2
+    <strong>20Q2:</strong>     0.2    0.2
+    <strong>20Q3:</strong>     0.2    0.2
+    <strong>20Q4:</strong>     0.2    0.2
+    <strong>21Q1:</strong>     0.2    0.2
+    <strong>21Q2:</strong>     0.2    0.2
+    <strong>21Q3:</strong>     0.2    0.2
+    <strong>21Q4:</strong>     0.2    0.2
+    <strong>22Q1:</strong>     0.2    0.2
+    <strong>22Q2:</strong>     0.2    0.2
+    <strong>22Q3:</strong>     0.2    0.2
+    <strong>22Q4:</strong>     0.2    0.2
+    <strong>23Q1:</strong>     0.2    0.2
+    <strong>23Q2:</strong>     0.2    0.2
+    <strong>23Q3:</strong>     0.2    0.2
+    <strong>23Q4:</strong>     0.2    0.2
+    <strong>24Q1:</strong>     0.2    0.2
+    <strong>24Q2:</strong>     0.2    0.2
+    <strong>24Q3:</strong>     0.2    0.2
+    <strong>24Q4:</strong>     0.2    0.2
+    <strong>25Q1:</strong>     0.2    0.2
+    <strong>25Q2:</strong>     0.2    0.2
+    <strong>25Q3:</strong>     0.2    0.2
+    <strong>25Q4:</strong>     0.2    0.2
+    <strong>26Q1:</strong>     0.2    0.2
+
+
+ans = 
+
+    Series Object: 102-by-2
+    Class of Data: double
+
+               <strong>1</strong>         <strong>2</strong>   
+             <strong>______</strong>    <strong>______</strong>
+
+    <strong> 0Q4:</strong>    5.4737    5.4737
+    <strong> 1Q1:</strong>    5.4737    5.4737
+    <strong> 1Q2:</strong>    5.4737    5.4737
+    <strong> 1Q3:</strong>    5.4737    5.4737
+    <strong> 1Q4:</strong>    5.4737    5.4737
+    <strong> 2Q1:</strong>    5.4737    5.4737
+    <strong> 2Q2:</strong>    5.4737    5.4737
+    <strong> 2Q3:</strong>    5.4737    5.4737
+    <strong> 2Q4:</strong>    5.4737    5.4737
+    <strong> 3Q1:</strong>    5.4737    5.4737
+    <strong> 3Q2:</strong>    5.4737    5.4737
+    <strong> 3Q3:</strong>    5.4737    5.4737
+    <strong> 3Q4:</strong>    5.4737    5.4737
+    <strong> 4Q1:</strong>    5.4737    5.4737
+    <strong> 4Q2:</strong>    5.4737    5.4737
+    <strong> 4Q3:</strong>    5.4737    5.4737
+    <strong> 4Q4:</strong>    5.4737    5.4737
+    <strong> 5Q1:</strong>    5.4737    5.4737
+    <strong> 5Q2:</strong>    5.4737    5.4737
+    <strong> 5Q3:</strong>    5.4737    5.4737
+    <strong> 5Q4:</strong>    5.4737    5.4737
+    <strong> 6Q1:</strong>    5.4737    5.4737
+    <strong> 6Q2:</strong>    5.4737    5.4737
+    <strong> 6Q3:</strong>    5.4737    5.4737
+    <strong> 6Q4:</strong>    5.4737    5.4737
+    <strong> 7Q1:</strong>    5.4737    5.4737
+    <strong> 7Q2:</strong>    5.4737    5.4737
+    <strong> 7Q3:</strong>    5.4737    5.4737
+    <strong> 7Q4:</strong>    5.4737    5.4737
+    <strong> 8Q1:</strong>    5.4737    5.4737
+    <strong> 8Q2:</strong>    5.4737    5.4737
+    <strong> 8Q3:</strong>    5.4737    5.4737
+    <strong> 8Q4:</strong>    5.4737    5.4737
+    <strong> 9Q1:</strong>    5.4737    5.4737
+    <strong> 9Q2:</strong>    5.4737    5.4737
+    <strong> 9Q3:</strong>    5.4737    5.4737
+    <strong> 9Q4:</strong>    5.4737    5.4737
+    <strong>10Q1:</strong>    5.4737    5.4737
+    <strong>10Q2:</strong>    5.4737    5.4737
+    <strong>10Q3:</strong>    5.4737    5.4737
+    <strong>10Q4:</strong>    5.4737    5.4737
+    <strong>11Q1:</strong>    5.4737    5.4737
+    <strong>11Q2:</strong>    5.4737    5.4737
+    <strong>11Q3:</strong>    5.4737    5.4737
+    <strong>11Q4:</strong>    5.4737    5.4737
+    <strong>12Q1:</strong>    5.4737    5.4737
+    <strong>12Q2:</strong>    5.4737    5.4737
+    <strong>12Q3:</strong>    5.4737    5.4737
+    <strong>12Q4:</strong>    5.4737    5.4737
+    <strong>13Q1:</strong>    5.4737    5.4737
+    <strong>13Q2:</strong>    5.4737    5.4737
+    <strong>13Q3:</strong>    5.4737    5.4737
+    <strong>13Q4:</strong>    5.4737    5.4737
+    <strong>14Q1:</strong>    5.4737    5.4737
+    <strong>14Q2:</strong>    5.4737    5.4737
+    <strong>14Q3:</strong>    5.4737    5.4737
+    <strong>14Q4:</strong>    5.4737    5.4737
+    <strong>15Q1:</strong>    5.4737    5.4737
+    <strong>15Q2:</strong>    5.4737    5.4737
+    <strong>15Q3:</strong>    5.4737    5.4737
+    <strong>15Q4:</strong>    5.4737    5.4737
+    <strong>16Q1:</strong>    5.4737    5.4737
+    <strong>16Q2:</strong>    5.4737    5.4737
+    <strong>16Q3:</strong>    5.4737    5.4737
+    <strong>16Q4:</strong>    5.4737    5.4737
+    <strong>17Q1:</strong>    5.4737    5.4737
+    <strong>17Q2:</strong>    5.4737    5.4737
+    <strong>17Q3:</strong>    5.4737    5.4737
+    <strong>17Q4:</strong>    5.4737    5.4737
+    <strong>18Q1:</strong>    5.4737    5.4737
+    <strong>18Q2:</strong>    5.4737    5.4737
+    <strong>18Q3:</strong>    5.4737    5.4737
+    <strong>18Q4:</strong>    5.4737    5.4737
+    <strong>19Q1:</strong>    5.4737    5.4737
+    <strong>19Q2:</strong>    5.4737    5.4737
+    <strong>19Q3:</strong>    5.4737    5.4737
+    <strong>19Q4:</strong>    5.4737    5.4737
+    <strong>20Q1:</strong>    5.4737    5.4737
+    <strong>20Q2:</strong>    5.4737    5.4737
+    <strong>20Q3:</strong>    5.4737    5.4737
+    <strong>20Q4:</strong>    5.4737    5.4737
+    <strong>21Q1:</strong>    5.4737    5.4737
+    <strong>21Q2:</strong>    5.4737    5.4737
+    <strong>21Q3:</strong>    5.4737    5.4737
+    <strong>21Q4:</strong>    5.4737    5.4737
+    <strong>22Q1:</strong>    5.4737    5.4737
+    <strong>22Q2:</strong>    5.4737    5.4737
+    <strong>22Q3:</strong>    5.4737    5.4737
+    <strong>22Q4:</strong>    5.4737    5.4737
+    <strong>23Q1:</strong>    5.4737    5.4737
+    <strong>23Q2:</strong>    5.4737    5.4737
+    <strong>23Q3:</strong>    5.4737    5.4737
+    <strong>23Q4:</strong>    5.4737    5.4737
+    <strong>24Q1:</strong>    5.4737    5.4737
+    <strong>24Q2:</strong>    5.4737    5.4737
+    <strong>24Q3:</strong>    5.4737    5.4737
+    <strong>24Q4:</strong>    5.4737    5.4737
+    <strong>25Q1:</strong>    5.4737    5.4737
+    <strong>25Q2:</strong>    5.4737    5.4737
+    <strong>25Q3:</strong>    5.4737    5.4737
+    <strong>25Q4:</strong>    5.4737    5.4737
+    <strong>26Q1:</strong>    5.4737    5.4737
+
+
+ans = 
+
+    Series Object: 102-by-1
+    Class of Data: double
+
+                <strong>1</strong>    
+             <strong>________</strong>
+
+    <strong> 0Q4:</strong>           0
+    <strong> 1Q1:</strong>     0.65462
+    <strong> 1Q2:</strong>      1.0577
+    <strong> 1Q3:</strong>      1.3188
+    <strong> 1Q4:</strong>      1.4993
+    <strong> 2Q1:</strong>      1.0491
+    <strong> 2Q2:</strong>     0.75605
+    <strong> 2Q3:</strong>     0.56862
+    <strong> 2Q4:</strong>     0.44382
+    <strong> 3Q1:</strong>     0.36042
+    <strong> 3Q2:</strong>     0.30602
+    <strong> 3Q3:</strong>     0.27235
+    <strong> 3Q4:</strong>     0.25341
+    <strong> 4Q1:</strong>     0.24471
+    <strong> 4Q2:</strong>     0.24283
+    <strong> 4Q3:</strong>     0.24521
+    <strong> 4Q4:</strong>     0.24999
+    <strong> 5Q1:</strong>     0.25583
+    <strong> 5Q2:</strong>     0.26178
+    <strong> 5Q3:</strong>     0.26724
+    <strong> 5Q4:</strong>     0.27183
+    <strong> 6Q1:</strong>     0.27535
+    <strong> 6Q2:</strong>     0.27774
+    <strong> 6Q3:</strong>     0.27899
+    <strong> 6Q4:</strong>     0.27919
+    <strong> 7Q1:</strong>     0.27844
+    <strong> 7Q2:</strong>     0.27687
+    <strong> 7Q3:</strong>      0.2746
+    <strong> 7Q4:</strong>     0.27176
+    <strong> 8Q1:</strong>     0.26847
+    <strong> 8Q2:</strong>     0.26485
+    <strong> 8Q3:</strong>     0.26098
+    <strong> 8Q4:</strong>     0.25694
+    <strong> 9Q1:</strong>      0.2528
+    <strong> 9Q2:</strong>     0.24862
+    <strong> 9Q3:</strong>     0.24443
+    <strong> 9Q4:</strong>     0.24027
+    <strong>10Q1:</strong>     0.23617
+    <strong>10Q2:</strong>     0.23213
+    <strong>10Q3:</strong>     0.22818
+    <strong>10Q4:</strong>     0.22431
+    <strong>11Q1:</strong>     0.22054
+    <strong>11Q2:</strong>     0.21685
+    <strong>11Q3:</strong>     0.21326
+    <strong>11Q4:</strong>     0.20975
+    <strong>12Q1:</strong>     0.20632
+    <strong>12Q2:</strong>     0.20298
+    <strong>12Q3:</strong>     0.19972
+    <strong>12Q4:</strong>     0.19653
+    <strong>13Q1:</strong>     0.19343
+    <strong>13Q2:</strong>      0.1904
+    <strong>13Q3:</strong>     0.18744
+    <strong>13Q4:</strong>     0.18457
+    <strong>14Q1:</strong>     0.18178
+    <strong>14Q2:</strong>     0.17907
+    <strong>14Q3:</strong>     0.17645
+    <strong>14Q4:</strong>     0.17393
+    <strong>15Q1:</strong>     0.17151
+    <strong>15Q2:</strong>      0.1692
+    <strong>15Q3:</strong>     0.16701
+    <strong>15Q4:</strong>     0.16494
+    <strong>16Q1:</strong>       0.163
+    <strong>16Q2:</strong>     0.16121
+    <strong>16Q3:</strong>     0.15956
+    <strong>16Q4:</strong>     0.15807
+    <strong>17Q1:</strong>     0.15675
+    <strong>17Q2:</strong>      0.1556
+    <strong>17Q3:</strong>     0.15463
+    <strong>17Q4:</strong>     0.15384
+    <strong>18Q1:</strong>     0.15324
+    <strong>18Q2:</strong>     0.15282
+    <strong>18Q3:</strong>     0.15259
+    <strong>18Q4:</strong>     0.15255
+    <strong>19Q1:</strong>     0.15267
+    <strong>19Q2:</strong>     0.15296
+    <strong>19Q3:</strong>     0.15339
+    <strong>19Q4:</strong>     0.15395
+    <strong>20Q1:</strong>      0.1546
+    <strong>20Q2:</strong>      0.1553
+    <strong>20Q3:</strong>     0.15603
+    <strong>20Q4:</strong>     0.15672
+    <strong>21Q1:</strong>     0.15733
+    <strong>21Q2:</strong>     0.15778
+    <strong>21Q3:</strong>       0.158
+    <strong>21Q4:</strong>     0.15791
+    <strong>22Q1:</strong>      0.1574
+    <strong>22Q2:</strong>     0.15639
+    <strong>22Q3:</strong>     0.15475
+    <strong>22Q4:</strong>     0.15236
+    <strong>23Q1:</strong>     0.14909
+    <strong>23Q2:</strong>      0.1448
+    <strong>23Q3:</strong>     0.13935
+    <strong>23Q4:</strong>     0.13259
+    <strong>24Q1:</strong>     0.12437
+    <strong>24Q2:</strong>     0.11453
+    <strong>24Q3:</strong>     0.10292
+    <strong>24Q4:</strong>    0.089382
+    <strong>25Q1:</strong>     0.07378
+    <strong>25Q2:</strong>    0.055976
+    <strong>25Q3:</strong>     0.03585
+    <strong>25Q4:</strong>    0.011798
+    <strong>26Q1:</strong>           0
+
+Dot indexing is not supported for variables of this type.
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('functions.plotting1.createContributions', 'D:\2024-01_eagle\subroutines\+functions\+plotting1\createContributions.m', 44)" style="font-weight:bold">functions.plotting1.createContributions</a> (<a href="matlab: opentoline('D:\2024-01_eagle\subroutines\+functions\+plotting1\createContributions.m',44,0)">line 44</a>)
+jsonfile = [M_.fname filesep() 'model' filesep() 'json' filesep()
+'modfile-original.json'];
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('runFiscalShocks', 'D:\2024-01_eagle\eagleParsingTemp_sim_BIG1\runFiscalShocks.m', 70)" style="font-weight:bold">runFiscalShocks</a> (<a href="matlab: opentoline('D:\2024-01_eagle\eagleParsingTemp_sim_BIG1\runFiscalShocks.m',70,0)">line 70</a>)
+functions.plotting1.createContributions();
+
+
+ans = 
+
+    Series Object: 102-by-2
+    Class of Data: double
+
+               <strong>1</strong>         <strong>2</strong>   
+             <strong>______</strong>    <strong>______</strong>
+
+    <strong> 0Q4:</strong>    1.8813    1.8813
+    <strong> 1Q1:</strong>    1.8828    1.8813
+    <strong> 1Q2:</strong>    1.8834    1.8813
+    <strong> 1Q3:</strong>    1.8836    1.8813
+    <strong> 1Q4:</strong>    1.8835    1.8813
+    <strong> 2Q1:</strong>    1.8834    1.8813
+    <strong> 2Q2:</strong>    1.8832    1.8813
+    <strong> 2Q3:</strong>    1.8831    1.8813
+    <strong> 2Q4:</strong>    1.8829    1.8813
+    <strong> 3Q1:</strong>    1.8827    1.8813
+    <strong> 3Q2:</strong>    1.8827    1.8813
+    <strong> 3Q3:</strong>    1.8826    1.8813
+    <strong> 3Q4:</strong>    1.8826    1.8813
+    <strong> 4Q1:</strong>    1.8826    1.8813
+    <strong> 4Q2:</strong>    1.8826    1.8813
+    <strong> 4Q3:</strong>    1.8827    1.8813
+    <strong> 4Q4:</strong>    1.8827    1.8813
+    <strong> 5Q1:</strong>    1.8828    1.8813
+    <strong> 5Q2:</strong>    1.8828    1.8813
+    <strong> 5Q3:</strong>    1.8829    1.8813
+    <strong> 5Q4:</strong>    1.8829    1.8813
+    <strong> 6Q1:</strong>    1.8829    1.8813
+    <strong> 6Q2:</strong>     1.883    1.8813
+    <strong> 6Q3:</strong>     1.883    1.8813
+    <strong> 6Q4:</strong>     1.883    1.8813
+    <strong> 7Q1:</strong>    1.8831    1.8813
+    <strong> 7Q2:</strong>    1.8831    1.8813
+    <strong> 7Q3:</strong>    1.8831    1.8813
+    <strong> 7Q4:</strong>    1.8831    1.8813
+    <strong> 8Q1:</strong>    1.8831    1.8813
+    <strong> 8Q2:</strong>    1.8831    1.8813
+    <strong> 8Q3:</strong>    1.8832    1.8813
+    <strong> 8Q4:</strong>    1.8832    1.8813
+    <strong> 9Q1:</strong>    1.8832    1.8813
+    <strong> 9Q2:</strong>    1.8832    1.8813
+    <strong> 9Q3:</strong>    1.8832    1.8813
+    <strong> 9Q4:</strong>    1.8832    1.8813
+    <strong>10Q1:</strong>    1.8832    1.8813
+    <strong>10Q2:</strong>    1.8832    1.8813
+    <strong>10Q3:</strong>    1.8832    1.8813
+    <strong>10Q4:</strong>    1.8832    1.8813
+    <strong>11Q1:</strong>    1.8832    1.8813
+    <strong>11Q2:</strong>    1.8832    1.8813
+    <strong>11Q3:</strong>    1.8832    1.8813
+    <strong>11Q4:</strong>    1.8833    1.8813
+    <strong>12Q1:</strong>    1.8833    1.8813
+    <strong>12Q2:</strong>    1.8833    1.8813
+    <strong>12Q3:</strong>    1.8833    1.8813
+    <strong>12Q4:</strong>    1.8833    1.8813
+    <strong>13Q1:</strong>    1.8833    1.8813
+    <strong>13Q2:</strong>    1.8833    1.8813
+    <strong>13Q3:</strong>    1.8833    1.8813
+    <strong>13Q4:</strong>    1.8833    1.8813
+    <strong>14Q1:</strong>    1.8833    1.8813
+    <strong>14Q2:</strong>    1.8833    1.8813
+    <strong>14Q3:</strong>    1.8833    1.8813
+    <strong>14Q4:</strong>    1.8833    1.8813
+    <strong>15Q1:</strong>    1.8833    1.8813
+    <strong>15Q2:</strong>    1.8833    1.8813
+    <strong>15Q3:</strong>    1.8833    1.8813
+    <strong>15Q4:</strong>    1.8833    1.8813
+    <strong>16Q1:</strong>    1.8833    1.8813
+    <strong>16Q2:</strong>    1.8833    1.8813
+    <strong>16Q3:</strong>    1.8833    1.8813
+    <strong>16Q4:</strong>    1.8833    1.8813
+    <strong>17Q1:</strong>    1.8833    1.8813
+    <strong>17Q2:</strong>    1.8833    1.8813
+    <strong>17Q3:</strong>    1.8833    1.8813
+    <strong>17Q4:</strong>    1.8833    1.8813
+    <strong>18Q1:</strong>    1.8834    1.8813
+    <strong>18Q2:</strong>    1.8834    1.8813
+    <strong>18Q3:</strong>    1.8834    1.8813
+    <strong>18Q4:</strong>    1.8834    1.8813
+    <strong>19Q1:</strong>    1.8834    1.8813
+    <strong>19Q2:</strong>    1.8835    1.8813
+    <strong>19Q3:</strong>    1.8835    1.8813
+    <strong>19Q4:</strong>    1.8835    1.8813
+    <strong>20Q1:</strong>    1.8835    1.8813
+    <strong>20Q2:</strong>    1.8835    1.8813
+    <strong>20Q3:</strong>    1.8835    1.8813
+    <strong>20Q4:</strong>    1.8835    1.8813
+    <strong>21Q1:</strong>    1.8835    1.8813
+    <strong>21Q2:</strong>    1.8835    1.8813
+    <strong>21Q3:</strong>    1.8835    1.8813
+    <strong>21Q4:</strong>    1.8835    1.8813
+    <strong>22Q1:</strong>    1.8834    1.8813
+    <strong>22Q2:</strong>    1.8833    1.8813
+    <strong>22Q3:</strong>    1.8833    1.8813
+    <strong>22Q4:</strong>    1.8832    1.8813
+    <strong>23Q1:</strong>     1.883    1.8813
+    <strong>23Q2:</strong>    1.8829    1.8813
+    <strong>23Q3:</strong>    1.8827    1.8813
+    <strong>23Q4:</strong>    1.8825    1.8813
+    <strong>24Q1:</strong>    1.8823    1.8813
+    <strong>24Q2:</strong>    1.8821    1.8813
+    <strong>24Q3:</strong>    1.8818    1.8813
+    <strong>24Q4:</strong>    1.8815    1.8813
+    <strong>25Q1:</strong>    1.8812    1.8813
+    <strong>25Q2:</strong>    1.8809    1.8813
+    <strong>25Q3:</strong>    1.8805    1.8813
+    <strong>25Q4:</strong>    1.8801    1.8813
+    <strong>26Q1:</strong>    1.8813    1.8813
+
+
+ans = 
+
+    Series Object: 102-by-2
+    Class of Data: double
+
+              <strong>1</strong>       <strong>2</strong> 
+             <strong>____</strong>    <strong>___</strong>
+
+    <strong> 0Q4:</strong>     0.2    0.2
+    <strong> 1Q1:</strong>    0.21    0.2
+    <strong> 1Q2:</strong>    0.21    0.2
+    <strong> 1Q3:</strong>    0.21    0.2
+    <strong> 1Q4:</strong>    0.21    0.2
+    <strong> 2Q1:</strong>     0.2    0.2
+    <strong> 2Q2:</strong>     0.2    0.2
+    <strong> 2Q3:</strong>     0.2    0.2
+    <strong> 2Q4:</strong>     0.2    0.2
+    <strong> 3Q1:</strong>     0.2    0.2
+    <strong> 3Q2:</strong>     0.2    0.2
+    <strong> 3Q3:</strong>     0.2    0.2
+    <strong> 3Q4:</strong>     0.2    0.2
+    <strong> 4Q1:</strong>     0.2    0.2
+    <strong> 4Q2:</strong>     0.2    0.2
+    <strong> 4Q3:</strong>     0.2    0.2
+    <strong> 4Q4:</strong>     0.2    0.2
+    <strong> 5Q1:</strong>     0.2    0.2
+    <strong> 5Q2:</strong>     0.2    0.2
+    <strong> 5Q3:</strong>     0.2    0.2
+    <strong> 5Q4:</strong>     0.2    0.2
+    <strong> 6Q1:</strong>     0.2    0.2
+    <strong> 6Q2:</strong>     0.2    0.2
+    <strong> 6Q3:</strong>     0.2    0.2
+    <strong> 6Q4:</strong>     0.2    0.2
+    <strong> 7Q1:</strong>     0.2    0.2
+    <strong> 7Q2:</strong>     0.2    0.2
+    <strong> 7Q3:</strong>     0.2    0.2
+    <strong> 7Q4:</strong>     0.2    0.2
+    <strong> 8Q1:</strong>     0.2    0.2
+    <strong> 8Q2:</strong>     0.2    0.2
+    <strong> 8Q3:</strong>     0.2    0.2
+    <strong> 8Q4:</strong>     0.2    0.2
+    <strong> 9Q1:</strong>     0.2    0.2
+    <strong> 9Q2:</strong>     0.2    0.2
+    <strong> 9Q3:</strong>     0.2    0.2
+    <strong> 9Q4:</strong>     0.2    0.2
+    <strong>10Q1:</strong>     0.2    0.2
+    <strong>10Q2:</strong>     0.2    0.2
+    <strong>10Q3:</strong>     0.2    0.2
+    <strong>10Q4:</strong>     0.2    0.2
+    <strong>11Q1:</strong>     0.2    0.2
+    <strong>11Q2:</strong>     0.2    0.2
+    <strong>11Q3:</strong>     0.2    0.2
+    <strong>11Q4:</strong>     0.2    0.2
+    <strong>12Q1:</strong>     0.2    0.2
+    <strong>12Q2:</strong>     0.2    0.2
+    <strong>12Q3:</strong>     0.2    0.2
+    <strong>12Q4:</strong>     0.2    0.2
+    <strong>13Q1:</strong>     0.2    0.2
+    <strong>13Q2:</strong>     0.2    0.2
+    <strong>13Q3:</strong>     0.2    0.2
+    <strong>13Q4:</strong>     0.2    0.2
+    <strong>14Q1:</strong>     0.2    0.2
+    <strong>14Q2:</strong>     0.2    0.2
+    <strong>14Q3:</strong>     0.2    0.2
+    <strong>14Q4:</strong>     0.2    0.2
+    <strong>15Q1:</strong>     0.2    0.2
+    <strong>15Q2:</strong>     0.2    0.2
+    <strong>15Q3:</strong>     0.2    0.2
+    <strong>15Q4:</strong>     0.2    0.2
+    <strong>16Q1:</strong>     0.2    0.2
+    <strong>16Q2:</strong>     0.2    0.2
+    <strong>16Q3:</strong>     0.2    0.2
+    <strong>16Q4:</strong>     0.2    0.2
+    <strong>17Q1:</strong>     0.2    0.2
+    <strong>17Q2:</strong>     0.2    0.2
+    <strong>17Q3:</strong>     0.2    0.2
+    <strong>17Q4:</strong>     0.2    0.2
+    <strong>18Q1:</strong>     0.2    0.2
+    <strong>18Q2:</strong>     0.2    0.2
+    <strong>18Q3:</strong>     0.2    0.2
+    <strong>18Q4:</strong>     0.2    0.2
+    <strong>19Q1:</strong>     0.2    0.2
+    <strong>19Q2:</strong>     0.2    0.2
+    <strong>19Q3:</strong>     0.2    0.2
+    <strong>19Q4:</strong>     0.2    0.2
+    <strong>20Q1:</strong>     0.2    0.2
+    <strong>20Q2:</strong>     0.2    0.2
+    <strong>20Q3:</strong>     0.2    0.2
+    <strong>20Q4:</strong>     0.2    0.2
+    <strong>21Q1:</strong>     0.2    0.2
+    <strong>21Q2:</strong>     0.2    0.2
+    <strong>21Q3:</strong>     0.2    0.2
+    <strong>21Q4:</strong>     0.2    0.2
+    <strong>22Q1:</strong>     0.2    0.2
+    <strong>22Q2:</strong>     0.2    0.2
+    <strong>22Q3:</strong>     0.2    0.2
+    <strong>22Q4:</strong>     0.2    0.2
+    <strong>23Q1:</strong>     0.2    0.2
+    <strong>23Q2:</strong>     0.2    0.2
+    <strong>23Q3:</strong>     0.2    0.2
+    <strong>23Q4:</strong>     0.2    0.2
+    <strong>24Q1:</strong>     0.2    0.2
+    <strong>24Q2:</strong>     0.2    0.2
+    <strong>24Q3:</strong>     0.2    0.2
+    <strong>24Q4:</strong>     0.2    0.2
+    <strong>25Q1:</strong>     0.2    0.2
+    <strong>25Q2:</strong>     0.2    0.2
+    <strong>25Q3:</strong>     0.2    0.2
+    <strong>25Q4:</strong>     0.2    0.2
+    <strong>26Q1:</strong>     0.2    0.2
+
+
+ans = 
+
+    Series Object: 102-by-2
+    Class of Data: double
+
+               <strong>1</strong>         <strong>2</strong>   
+             <strong>______</strong>    <strong>______</strong>
+
+    <strong> 0Q4:</strong>    5.4737    5.4737
+    <strong> 1Q1:</strong>    5.4737    5.4737
+    <strong> 1Q2:</strong>    5.4737    5.4737
+    <strong> 1Q3:</strong>    5.4737    5.4737
+    <strong> 1Q4:</strong>    5.4737    5.4737
+    <strong> 2Q1:</strong>    5.4737    5.4737
+    <strong> 2Q2:</strong>    5.4737    5.4737
+    <strong> 2Q3:</strong>    5.4737    5.4737
+    <strong> 2Q4:</strong>    5.4737    5.4737
+    <strong> 3Q1:</strong>    5.4737    5.4737
+    <strong> 3Q2:</strong>    5.4737    5.4737
+    <strong> 3Q3:</strong>    5.4737    5.4737
+    <strong> 3Q4:</strong>    5.4737    5.4737
+    <strong> 4Q1:</strong>    5.4737    5.4737
+    <strong> 4Q2:</strong>    5.4737    5.4737
+    <strong> 4Q3:</strong>    5.4737    5.4737
+    <strong> 4Q4:</strong>    5.4737    5.4737
+    <strong> 5Q1:</strong>    5.4737    5.4737
+    <strong> 5Q2:</strong>    5.4737    5.4737
+    <strong> 5Q3:</strong>    5.4737    5.4737
+    <strong> 5Q4:</strong>    5.4737    5.4737
+    <strong> 6Q1:</strong>    5.4737    5.4737
+    <strong> 6Q2:</strong>    5.4737    5.4737
+    <strong> 6Q3:</strong>    5.4737    5.4737
+    <strong> 6Q4:</strong>    5.4737    5.4737
+    <strong> 7Q1:</strong>    5.4737    5.4737
+    <strong> 7Q2:</strong>    5.4737    5.4737
+    <strong> 7Q3:</strong>    5.4737    5.4737
+    <strong> 7Q4:</strong>    5.4737    5.4737
+    <strong> 8Q1:</strong>    5.4737    5.4737
+    <strong> 8Q2:</strong>    5.4737    5.4737
+    <strong> 8Q3:</strong>    5.4737    5.4737
+    <strong> 8Q4:</strong>    5.4737    5.4737
+    <strong> 9Q1:</strong>    5.4737    5.4737
+    <strong> 9Q2:</strong>    5.4737    5.4737
+    <strong> 9Q3:</strong>    5.4737    5.4737
+    <strong> 9Q4:</strong>    5.4737    5.4737
+    <strong>10Q1:</strong>    5.4737    5.4737
+    <strong>10Q2:</strong>    5.4737    5.4737
+    <strong>10Q3:</strong>    5.4737    5.4737
+    <strong>10Q4:</strong>    5.4737    5.4737
+    <strong>11Q1:</strong>    5.4737    5.4737
+    <strong>11Q2:</strong>    5.4737    5.4737
+    <strong>11Q3:</strong>    5.4737    5.4737
+    <strong>11Q4:</strong>    5.4737    5.4737
+    <strong>12Q1:</strong>    5.4737    5.4737
+    <strong>12Q2:</strong>    5.4737    5.4737
+    <strong>12Q3:</strong>    5.4737    5.4737
+    <strong>12Q4:</strong>    5.4737    5.4737
+    <strong>13Q1:</strong>    5.4737    5.4737
+    <strong>13Q2:</strong>    5.4737    5.4737
+    <strong>13Q3:</strong>    5.4737    5.4737
+    <strong>13Q4:</strong>    5.4737    5.4737
+    <strong>14Q1:</strong>    5.4737    5.4737
+    <strong>14Q2:</strong>    5.4737    5.4737
+    <strong>14Q3:</strong>    5.4737    5.4737
+    <strong>14Q4:</strong>    5.4737    5.4737
+    <strong>15Q1:</strong>    5.4737    5.4737
+    <strong>15Q2:</strong>    5.4737    5.4737
+    <strong>15Q3:</strong>    5.4737    5.4737
+    <strong>15Q4:</strong>    5.4737    5.4737
+    <strong>16Q1:</strong>    5.4737    5.4737
+    <strong>16Q2:</strong>    5.4737    5.4737
+    <strong>16Q3:</strong>    5.4737    5.4737
+    <strong>16Q4:</strong>    5.4737    5.4737
+    <strong>17Q1:</strong>    5.4737    5.4737
+    <strong>17Q2:</strong>    5.4737    5.4737
+    <strong>17Q3:</strong>    5.4737    5.4737
+    <strong>17Q4:</strong>    5.4737    5.4737
+    <strong>18Q1:</strong>    5.4737    5.4737
+    <strong>18Q2:</strong>    5.4737    5.4737
+    <strong>18Q3:</strong>    5.4737    5.4737
+    <strong>18Q4:</strong>    5.4737    5.4737
+    <strong>19Q1:</strong>    5.4737    5.4737
+    <strong>19Q2:</strong>    5.4737    5.4737
+    <strong>19Q3:</strong>    5.4737    5.4737
+    <strong>19Q4:</strong>    5.4737    5.4737
+    <strong>20Q1:</strong>    5.4737    5.4737
+    <strong>20Q2:</strong>    5.4737    5.4737
+    <strong>20Q3:</strong>    5.4737    5.4737
+    <strong>20Q4:</strong>    5.4737    5.4737
+    <strong>21Q1:</strong>    5.4737    5.4737
+    <strong>21Q2:</strong>    5.4737    5.4737
+    <strong>21Q3:</strong>    5.4737    5.4737
+    <strong>21Q4:</strong>    5.4737    5.4737
+    <strong>22Q1:</strong>    5.4737    5.4737
+    <strong>22Q2:</strong>    5.4737    5.4737
+    <strong>22Q3:</strong>    5.4737    5.4737
+    <strong>22Q4:</strong>    5.4737    5.4737
+    <strong>23Q1:</strong>    5.4737    5.4737
+    <strong>23Q2:</strong>    5.4737    5.4737
+    <strong>23Q3:</strong>    5.4737    5.4737
+    <strong>23Q4:</strong>    5.4737    5.4737
+    <strong>24Q1:</strong>    5.4737    5.4737
+    <strong>24Q2:</strong>    5.4737    5.4737
+    <strong>24Q3:</strong>    5.4737    5.4737
+    <strong>24Q4:</strong>    5.4737    5.4737
+    <strong>25Q1:</strong>    5.4737    5.4737
+    <strong>25Q2:</strong>    5.4737    5.4737
+    <strong>25Q3:</strong>    5.4737    5.4737
+    <strong>25Q4:</strong>    5.4737    5.4737
+    <strong>26Q1:</strong>    5.4737    5.4737
+
+
+ans = 
+
+    Series Object: 102-by-1
+    Class of Data: double
+
+                <strong>1</strong>    
+             <strong>________</strong>
+
+    <strong> 0Q4:</strong>           0
+    <strong> 1Q1:</strong>     0.65462
+    <strong> 1Q2:</strong>      1.0577
+    <strong> 1Q3:</strong>      1.3188
+    <strong> 1Q4:</strong>      1.4993
+    <strong> 2Q1:</strong>      1.0491
+    <strong> 2Q2:</strong>     0.75605
+    <strong> 2Q3:</strong>     0.56862
+    <strong> 2Q4:</strong>     0.44382
+    <strong> 3Q1:</strong>     0.36042
+    <strong> 3Q2:</strong>     0.30602
+    <strong> 3Q3:</strong>     0.27235
+    <strong> 3Q4:</strong>     0.25341
+    <strong> 4Q1:</strong>     0.24471
+    <strong> 4Q2:</strong>     0.24283
+    <strong> 4Q3:</strong>     0.24521
+    <strong> 4Q4:</strong>     0.24999
+    <strong> 5Q1:</strong>     0.25583
+    <strong> 5Q2:</strong>     0.26178
+    <strong> 5Q3:</strong>     0.26724
+    <strong> 5Q4:</strong>     0.27183
+    <strong> 6Q1:</strong>     0.27535
+    <strong> 6Q2:</strong>     0.27774
+    <strong> 6Q3:</strong>     0.27899
+    <strong> 6Q4:</strong>     0.27919
+    <strong> 7Q1:</strong>     0.27844
+    <strong> 7Q2:</strong>     0.27687
+    <strong> 7Q3:</strong>      0.2746
+    <strong> 7Q4:</strong>     0.27176
+    <strong> 8Q1:</strong>     0.26847
+    <strong> 8Q2:</strong>     0.26485
+    <strong> 8Q3:</strong>     0.26098
+    <strong> 8Q4:</strong>     0.25694
+    <strong> 9Q1:</strong>      0.2528
+    <strong> 9Q2:</strong>     0.24862
+    <strong> 9Q3:</strong>     0.24443
+    <strong> 9Q4:</strong>     0.24027
+    <strong>10Q1:</strong>     0.23617
+    <strong>10Q2:</strong>     0.23213
+    <strong>10Q3:</strong>     0.22818
+    <strong>10Q4:</strong>     0.22431
+    <strong>11Q1:</strong>     0.22054
+    <strong>11Q2:</strong>     0.21685
+    <strong>11Q3:</strong>     0.21326
+    <strong>11Q4:</strong>     0.20975
+    <strong>12Q1:</strong>     0.20632
+    <strong>12Q2:</strong>     0.20298
+    <strong>12Q3:</strong>     0.19972
+    <strong>12Q4:</strong>     0.19653
+    <strong>13Q1:</strong>     0.19343
+    <strong>13Q2:</strong>      0.1904
+    <strong>13Q3:</strong>     0.18744
+    <strong>13Q4:</strong>     0.18457
+    <strong>14Q1:</strong>     0.18178
+    <strong>14Q2:</strong>     0.17907
+    <strong>14Q3:</strong>     0.17645
+    <strong>14Q4:</strong>     0.17393
+    <strong>15Q1:</strong>     0.17151
+    <strong>15Q2:</strong>      0.1692
+    <strong>15Q3:</strong>     0.16701
+    <strong>15Q4:</strong>     0.16494
+    <strong>16Q1:</strong>       0.163
+    <strong>16Q2:</strong>     0.16121
+    <strong>16Q3:</strong>     0.15956
+    <strong>16Q4:</strong>     0.15807
+    <strong>17Q1:</strong>     0.15675
+    <strong>17Q2:</strong>      0.1556
+    <strong>17Q3:</strong>     0.15463
+    <strong>17Q4:</strong>     0.15384
+    <strong>18Q1:</strong>     0.15324
+    <strong>18Q2:</strong>     0.15282
+    <strong>18Q3:</strong>     0.15259
+    <strong>18Q4:</strong>     0.15255
+    <strong>19Q1:</strong>     0.15267
+    <strong>19Q2:</strong>     0.15296
+    <strong>19Q3:</strong>     0.15339
+    <strong>19Q4:</strong>     0.15395
+    <strong>20Q1:</strong>      0.1546
+    <strong>20Q2:</strong>      0.1553
+    <strong>20Q3:</strong>     0.15603
+    <strong>20Q4:</strong>     0.15672
+    <strong>21Q1:</strong>     0.15733
+    <strong>21Q2:</strong>     0.15778
+    <strong>21Q3:</strong>       0.158
+    <strong>21Q4:</strong>     0.15791
+    <strong>22Q1:</strong>      0.1574
+    <strong>22Q2:</strong>     0.15639
+    <strong>22Q3:</strong>     0.15475
+    <strong>22Q4:</strong>     0.15236
+    <strong>23Q1:</strong>     0.14909
+    <strong>23Q2:</strong>      0.1448
+    <strong>23Q3:</strong>     0.13935
+    <strong>23Q4:</strong>     0.13259
+    <strong>24Q1:</strong>     0.12437
+    <strong>24Q2:</strong>     0.11453
+    <strong>24Q3:</strong>     0.10292
+    <strong>24Q4:</strong>    0.089382
+    <strong>25Q1:</strong>     0.07378
+    <strong>25Q2:</strong>    0.055976
+    <strong>25Q3:</strong>     0.03585
+    <strong>25Q4:</strong>    0.011798
+    <strong>26Q1:</strong>           0
+
+Dot indexing is not supported for variables of this type.
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('functions.plotting1.createContributions', 'D:\2024-01_eagle\subroutines\+functions\+plotting1\createContributions.m', 44)" style="font-weight:bold">functions.plotting1.createContributions</a> (<a href="matlab: opentoline('D:\2024-01_eagle\subroutines\+functions\+plotting1\createContributions.m',44,0)">line 44</a>)
+jsonfile = [M_.fname filesep() 'model' filesep() 'json' filesep()
+'modfile-original.json'];
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('runFiscalShocks', 'D:\2024-01_eagle\eagleParsingTemp_sim_BIG1\runFiscalShocks.m', 71)" style="font-weight:bold">runFiscalShocks</a> (<a href="matlab: opentoline('D:\2024-01_eagle\eagleParsingTemp_sim_BIG1\runFiscalShocks.m',71,0)">line 71</a>)
+functions.plotting1.createContributions();
+
+
+ans = 
+
+    Series Object: 102-by-2
+    Class of Data: double
+
+               <strong>1</strong>         <strong>2</strong>   
+             <strong>______</strong>    <strong>______</strong>
+
+    <strong> 0Q4:</strong>    1.8813    1.8813
+    <strong> 1Q1:</strong>    1.8828    1.8813
+    <strong> 1Q2:</strong>    1.8834    1.8813
+    <strong> 1Q3:</strong>    1.8836    1.8813
+    <strong> 1Q4:</strong>    1.8835    1.8813
+    <strong> 2Q1:</strong>    1.8834    1.8813
+    <strong> 2Q2:</strong>    1.8832    1.8813
+    <strong> 2Q3:</strong>    1.8831    1.8813
+    <strong> 2Q4:</strong>    1.8829    1.8813
+    <strong> 3Q1:</strong>    1.8827    1.8813
+    <strong> 3Q2:</strong>    1.8827    1.8813
+    <strong> 3Q3:</strong>    1.8826    1.8813
+    <strong> 3Q4:</strong>    1.8826    1.8813
+    <strong> 4Q1:</strong>    1.8826    1.8813
+    <strong> 4Q2:</strong>    1.8826    1.8813
+    <strong> 4Q3:</strong>    1.8827    1.8813
+    <strong> 4Q4:</strong>    1.8827    1.8813
+    <strong> 5Q1:</strong>    1.8828    1.8813
+    <strong> 5Q2:</strong>    1.8828    1.8813
+    <strong> 5Q3:</strong>    1.8829    1.8813
+    <strong> 5Q4:</strong>    1.8829    1.8813
+    <strong> 6Q1:</strong>    1.8829    1.8813
+    <strong> 6Q2:</strong>     1.883    1.8813
+    <strong> 6Q3:</strong>     1.883    1.8813
+    <strong> 6Q4:</strong>     1.883    1.8813
+    <strong> 7Q1:</strong>    1.8831    1.8813
+    <strong> 7Q2:</strong>    1.8831    1.8813
+    <strong> 7Q3:</strong>    1.8831    1.8813
+    <strong> 7Q4:</strong>    1.8831    1.8813
+    <strong> 8Q1:</strong>    1.8831    1.8813
+    <strong> 8Q2:</strong>    1.8831    1.8813
+    <strong> 8Q3:</strong>    1.8832    1.8813
+    <strong> 8Q4:</strong>    1.8832    1.8813
+    <strong> 9Q1:</strong>    1.8832    1.8813
+    <strong> 9Q2:</strong>    1.8832    1.8813
+    <strong> 9Q3:</strong>    1.8832    1.8813
+    <strong> 9Q4:</strong>    1.8832    1.8813
+    <strong>10Q1:</strong>    1.8832    1.8813
+    <strong>10Q2:</strong>    1.8832    1.8813
+    <strong>10Q3:</strong>    1.8832    1.8813
+    <strong>10Q4:</strong>    1.8832    1.8813
+    <strong>11Q1:</strong>    1.8832    1.8813
+    <strong>11Q2:</strong>    1.8832    1.8813
+    <strong>11Q3:</strong>    1.8832    1.8813
+    <strong>11Q4:</strong>    1.8833    1.8813
+    <strong>12Q1:</strong>    1.8833    1.8813
+    <strong>12Q2:</strong>    1.8833    1.8813
+    <strong>12Q3:</strong>    1.8833    1.8813
+    <strong>12Q4:</strong>    1.8833    1.8813
+    <strong>13Q1:</strong>    1.8833    1.8813
+    <strong>13Q2:</strong>    1.8833    1.8813
+    <strong>13Q3:</strong>    1.8833    1.8813
+    <strong>13Q4:</strong>    1.8833    1.8813
+    <strong>14Q1:</strong>    1.8833    1.8813
+    <strong>14Q2:</strong>    1.8833    1.8813
+    <strong>14Q3:</strong>    1.8833    1.8813
+    <strong>14Q4:</strong>    1.8833    1.8813
+    <strong>15Q1:</strong>    1.8833    1.8813
+    <strong>15Q2:</strong>    1.8833    1.8813
+    <strong>15Q3:</strong>    1.8833    1.8813
+    <strong>15Q4:</strong>    1.8833    1.8813
+    <strong>16Q1:</strong>    1.8833    1.8813
+    <strong>16Q2:</strong>    1.8833    1.8813
+    <strong>16Q3:</strong>    1.8833    1.8813
+    <strong>16Q4:</strong>    1.8833    1.8813
+    <strong>17Q1:</strong>    1.8833    1.8813
+    <strong>17Q2:</strong>    1.8833    1.8813
+    <strong>17Q3:</strong>    1.8833    1.8813
+    <strong>17Q4:</strong>    1.8833    1.8813
+    <strong>18Q1:</strong>    1.8834    1.8813
+    <strong>18Q2:</strong>    1.8834    1.8813
+    <strong>18Q3:</strong>    1.8834    1.8813
+    <strong>18Q4:</strong>    1.8834    1.8813
+    <strong>19Q1:</strong>    1.8834    1.8813
+    <strong>19Q2:</strong>    1.8835    1.8813
+    <strong>19Q3:</strong>    1.8835    1.8813
+    <strong>19Q4:</strong>    1.8835    1.8813
+    <strong>20Q1:</strong>    1.8835    1.8813
+    <strong>20Q2:</strong>    1.8835    1.8813
+    <strong>20Q3:</strong>    1.8835    1.8813
+    <strong>20Q4:</strong>    1.8835    1.8813
+    <strong>21Q1:</strong>    1.8835    1.8813
+    <strong>21Q2:</strong>    1.8835    1.8813
+    <strong>21Q3:</strong>    1.8835    1.8813
+    <strong>21Q4:</strong>    1.8835    1.8813
+    <strong>22Q1:</strong>    1.8834    1.8813
+    <strong>22Q2:</strong>    1.8833    1.8813
+    <strong>22Q3:</strong>    1.8833    1.8813
+    <strong>22Q4:</strong>    1.8832    1.8813
+    <strong>23Q1:</strong>     1.883    1.8813
+    <strong>23Q2:</strong>    1.8829    1.8813
+    <strong>23Q3:</strong>    1.8827    1.8813
+    <strong>23Q4:</strong>    1.8825    1.8813
+    <strong>24Q1:</strong>    1.8823    1.8813
+    <strong>24Q2:</strong>    1.8821    1.8813
+    <strong>24Q3:</strong>    1.8818    1.8813
+    <strong>24Q4:</strong>    1.8815    1.8813
+    <strong>25Q1:</strong>    1.8812    1.8813
+    <strong>25Q2:</strong>    1.8809    1.8813
+    <strong>25Q3:</strong>    1.8805    1.8813
+    <strong>25Q4:</strong>    1.8801    1.8813
+    <strong>26Q1:</strong>    1.8813    1.8813
+
+
+ans = 
+
+    Series Object: 102-by-2
+    Class of Data: double
+
+              <strong>1</strong>       <strong>2</strong> 
+             <strong>____</strong>    <strong>___</strong>
+
+    <strong> 0Q4:</strong>     0.2    0.2
+    <strong> 1Q1:</strong>    0.21    0.2
+    <strong> 1Q2:</strong>    0.21    0.2
+    <strong> 1Q3:</strong>    0.21    0.2
+    <strong> 1Q4:</strong>    0.21    0.2
+    <strong> 2Q1:</strong>     0.2    0.2
+    <strong> 2Q2:</strong>     0.2    0.2
+    <strong> 2Q3:</strong>     0.2    0.2
+    <strong> 2Q4:</strong>     0.2    0.2
+    <strong> 3Q1:</strong>     0.2    0.2
+    <strong> 3Q2:</strong>     0.2    0.2
+    <strong> 3Q3:</strong>     0.2    0.2
+    <strong> 3Q4:</strong>     0.2    0.2
+    <strong> 4Q1:</strong>     0.2    0.2
+    <strong> 4Q2:</strong>     0.2    0.2
+    <strong> 4Q3:</strong>     0.2    0.2
+    <strong> 4Q4:</strong>     0.2    0.2
+    <strong> 5Q1:</strong>     0.2    0.2
+    <strong> 5Q2:</strong>     0.2    0.2
+    <strong> 5Q3:</strong>     0.2    0.2
+    <strong> 5Q4:</strong>     0.2    0.2
+    <strong> 6Q1:</strong>     0.2    0.2
+    <strong> 6Q2:</strong>     0.2    0.2
+    <strong> 6Q3:</strong>     0.2    0.2
+    <strong> 6Q4:</strong>     0.2    0.2
+    <strong> 7Q1:</strong>     0.2    0.2
+    <strong> 7Q2:</strong>     0.2    0.2
+    <strong> 7Q3:</strong>     0.2    0.2
+    <strong> 7Q4:</strong>     0.2    0.2
+    <strong> 8Q1:</strong>     0.2    0.2
+    <strong> 8Q2:</strong>     0.2    0.2
+    <strong> 8Q3:</strong>     0.2    0.2
+    <strong> 8Q4:</strong>     0.2    0.2
+    <strong> 9Q1:</strong>     0.2    0.2
+    <strong> 9Q2:</strong>     0.2    0.2
+    <strong> 9Q3:</strong>     0.2    0.2
+    <strong> 9Q4:</strong>     0.2    0.2
+    <strong>10Q1:</strong>     0.2    0.2
+    <strong>10Q2:</strong>     0.2    0.2
+    <strong>10Q3:</strong>     0.2    0.2
+    <strong>10Q4:</strong>     0.2    0.2
+    <strong>11Q1:</strong>     0.2    0.2
+    <strong>11Q2:</strong>     0.2    0.2
+    <strong>11Q3:</strong>     0.2    0.2
+    <strong>11Q4:</strong>     0.2    0.2
+    <strong>12Q1:</strong>     0.2    0.2
+    <strong>12Q2:</strong>     0.2    0.2
+    <strong>12Q3:</strong>     0.2    0.2
+    <strong>12Q4:</strong>     0.2    0.2
+    <strong>13Q1:</strong>     0.2    0.2
+    <strong>13Q2:</strong>     0.2    0.2
+    <strong>13Q3:</strong>     0.2    0.2
+    <strong>13Q4:</strong>     0.2    0.2
+    <strong>14Q1:</strong>     0.2    0.2
+    <strong>14Q2:</strong>     0.2    0.2
+    <strong>14Q3:</strong>     0.2    0.2
+    <strong>14Q4:</strong>     0.2    0.2
+    <strong>15Q1:</strong>     0.2    0.2
+    <strong>15Q2:</strong>     0.2    0.2
+    <strong>15Q3:</strong>     0.2    0.2
+    <strong>15Q4:</strong>     0.2    0.2
+    <strong>16Q1:</strong>     0.2    0.2
+    <strong>16Q2:</strong>     0.2    0.2
+    <strong>16Q3:</strong>     0.2    0.2
+    <strong>16Q4:</strong>     0.2    0.2
+    <strong>17Q1:</strong>     0.2    0.2
+    <strong>17Q2:</strong>     0.2    0.2
+    <strong>17Q3:</strong>     0.2    0.2
+    <strong>17Q4:</strong>     0.2    0.2
+    <strong>18Q1:</strong>     0.2    0.2
+    <strong>18Q2:</strong>     0.2    0.2
+    <strong>18Q3:</strong>     0.2    0.2
+    <strong>18Q4:</strong>     0.2    0.2
+    <strong>19Q1:</strong>     0.2    0.2
+    <strong>19Q2:</strong>     0.2    0.2
+    <strong>19Q3:</strong>     0.2    0.2
+    <strong>19Q4:</strong>     0.2    0.2
+    <strong>20Q1:</strong>     0.2    0.2
+    <strong>20Q2:</strong>     0.2    0.2
+    <strong>20Q3:</strong>     0.2    0.2
+    <strong>20Q4:</strong>     0.2    0.2
+    <strong>21Q1:</strong>     0.2    0.2
+    <strong>21Q2:</strong>     0.2    0.2
+    <strong>21Q3:</strong>     0.2    0.2
+    <strong>21Q4:</strong>     0.2    0.2
+    <strong>22Q1:</strong>     0.2    0.2
+    <strong>22Q2:</strong>     0.2    0.2
+    <strong>22Q3:</strong>     0.2    0.2
+    <strong>22Q4:</strong>     0.2    0.2
+    <strong>23Q1:</strong>     0.2    0.2
+    <strong>23Q2:</strong>     0.2    0.2
+    <strong>23Q3:</strong>     0.2    0.2
+    <strong>23Q4:</strong>     0.2    0.2
+    <strong>24Q1:</strong>     0.2    0.2
+    <strong>24Q2:</strong>     0.2    0.2
+    <strong>24Q3:</strong>     0.2    0.2
+    <strong>24Q4:</strong>     0.2    0.2
+    <strong>25Q1:</strong>     0.2    0.2
+    <strong>25Q2:</strong>     0.2    0.2
+    <strong>25Q3:</strong>     0.2    0.2
+    <strong>25Q4:</strong>     0.2    0.2
+    <strong>26Q1:</strong>     0.2    0.2
+
+
+ans = 
+
+    Series Object: 102-by-2
+    Class of Data: double
+
+               <strong>1</strong>         <strong>2</strong>   
+             <strong>______</strong>    <strong>______</strong>
+
+    <strong> 0Q4:</strong>    5.4737    5.4737
+    <strong> 1Q1:</strong>    5.4737    5.4737
+    <strong> 1Q2:</strong>    5.4737    5.4737
+    <strong> 1Q3:</strong>    5.4737    5.4737
+    <strong> 1Q4:</strong>    5.4737    5.4737
+    <strong> 2Q1:</strong>    5.4737    5.4737
+    <strong> 2Q2:</strong>    5.4737    5.4737
+    <strong> 2Q3:</strong>    5.4737    5.4737
+    <strong> 2Q4:</strong>    5.4737    5.4737
+    <strong> 3Q1:</strong>    5.4737    5.4737
+    <strong> 3Q2:</strong>    5.4737    5.4737
+    <strong> 3Q3:</strong>    5.4737    5.4737
+    <strong> 3Q4:</strong>    5.4737    5.4737
+    <strong> 4Q1:</strong>    5.4737    5.4737
+    <strong> 4Q2:</strong>    5.4737    5.4737
+    <strong> 4Q3:</strong>    5.4737    5.4737
+    <strong> 4Q4:</strong>    5.4737    5.4737
+    <strong> 5Q1:</strong>    5.4737    5.4737
+    <strong> 5Q2:</strong>    5.4737    5.4737
+    <strong> 5Q3:</strong>    5.4737    5.4737
+    <strong> 5Q4:</strong>    5.4737    5.4737
+    <strong> 6Q1:</strong>    5.4737    5.4737
+    <strong> 6Q2:</strong>    5.4737    5.4737
+    <strong> 6Q3:</strong>    5.4737    5.4737
+    <strong> 6Q4:</strong>    5.4737    5.4737
+    <strong> 7Q1:</strong>    5.4737    5.4737
+    <strong> 7Q2:</strong>    5.4737    5.4737
+    <strong> 7Q3:</strong>    5.4737    5.4737
+    <strong> 7Q4:</strong>    5.4737    5.4737
+    <strong> 8Q1:</strong>    5.4737    5.4737
+    <strong> 8Q2:</strong>    5.4737    5.4737
+    <strong> 8Q3:</strong>    5.4737    5.4737
+    <strong> 8Q4:</strong>    5.4737    5.4737
+    <strong> 9Q1:</strong>    5.4737    5.4737
+    <strong> 9Q2:</strong>    5.4737    5.4737
+    <strong> 9Q3:</strong>    5.4737    5.4737
+    <strong> 9Q4:</strong>    5.4737    5.4737
+    <strong>10Q1:</strong>    5.4737    5.4737
+    <strong>10Q2:</strong>    5.4737    5.4737
+    <strong>10Q3:</strong>    5.4737    5.4737
+    <strong>10Q4:</strong>    5.4737    5.4737
+    <strong>11Q1:</strong>    5.4737    5.4737
+    <strong>11Q2:</strong>    5.4737    5.4737
+    <strong>11Q3:</strong>    5.4737    5.4737
+    <strong>11Q4:</strong>    5.4737    5.4737
+    <strong>12Q1:</strong>    5.4737    5.4737
+    <strong>12Q2:</strong>    5.4737    5.4737
+    <strong>12Q3:</strong>    5.4737    5.4737
+    <strong>12Q4:</strong>    5.4737    5.4737
+    <strong>13Q1:</strong>    5.4737    5.4737
+    <strong>13Q2:</strong>    5.4737    5.4737
+    <strong>13Q3:</strong>    5.4737    5.4737
+    <strong>13Q4:</strong>    5.4737    5.4737
+    <strong>14Q1:</strong>    5.4737    5.4737
+    <strong>14Q2:</strong>    5.4737    5.4737
+    <strong>14Q3:</strong>    5.4737    5.4737
+    <strong>14Q4:</strong>    5.4737    5.4737
+    <strong>15Q1:</strong>    5.4737    5.4737
+    <strong>15Q2:</strong>    5.4737    5.4737
+    <strong>15Q3:</strong>    5.4737    5.4737
+    <strong>15Q4:</strong>    5.4737    5.4737
+    <strong>16Q1:</strong>    5.4737    5.4737
+    <strong>16Q2:</strong>    5.4737    5.4737
+    <strong>16Q3:</strong>    5.4737    5.4737
+    <strong>16Q4:</strong>    5.4737    5.4737
+    <strong>17Q1:</strong>    5.4737    5.4737
+    <strong>17Q2:</strong>    5.4737    5.4737
+    <strong>17Q3:</strong>    5.4737    5.4737
+    <strong>17Q4:</strong>    5.4737    5.4737
+    <strong>18Q1:</strong>    5.4737    5.4737
+    <strong>18Q2:</strong>    5.4737    5.4737
+    <strong>18Q3:</strong>    5.4737    5.4737
+    <strong>18Q4:</strong>    5.4737    5.4737
+    <strong>19Q1:</strong>    5.4737    5.4737
+    <strong>19Q2:</strong>    5.4737    5.4737
+    <strong>19Q3:</strong>    5.4737    5.4737
+    <strong>19Q4:</strong>    5.4737    5.4737
+    <strong>20Q1:</strong>    5.4737    5.4737
+    <strong>20Q2:</strong>    5.4737    5.4737
+    <strong>20Q3:</strong>    5.4737    5.4737
+    <strong>20Q4:</strong>    5.4737    5.4737
+    <strong>21Q1:</strong>    5.4737    5.4737
+    <strong>21Q2:</strong>    5.4737    5.4737
+    <strong>21Q3:</strong>    5.4737    5.4737
+    <strong>21Q4:</strong>    5.4737    5.4737
+    <strong>22Q1:</strong>    5.4737    5.4737
+    <strong>22Q2:</strong>    5.4737    5.4737
+    <strong>22Q3:</strong>    5.4737    5.4737
+    <strong>22Q4:</strong>    5.4737    5.4737
+    <strong>23Q1:</strong>    5.4737    5.4737
+    <strong>23Q2:</strong>    5.4737    5.4737
+    <strong>23Q3:</strong>    5.4737    5.4737
+    <strong>23Q4:</strong>    5.4737    5.4737
+    <strong>24Q1:</strong>    5.4737    5.4737
+    <strong>24Q2:</strong>    5.4737    5.4737
+    <strong>24Q3:</strong>    5.4737    5.4737
+    <strong>24Q4:</strong>    5.4737    5.4737
+    <strong>25Q1:</strong>    5.4737    5.4737
+    <strong>25Q2:</strong>    5.4737    5.4737
+    <strong>25Q3:</strong>    5.4737    5.4737
+    <strong>25Q4:</strong>    5.4737    5.4737
+    <strong>26Q1:</strong>    5.4737    5.4737
+
+
+ans = 
+
+    Series Object: 102-by-1
+    Class of Data: double
+
+                <strong>1</strong>    
+             <strong>________</strong>
+
+    <strong> 0Q4:</strong>           0
+    <strong> 1Q1:</strong>     0.65462
+    <strong> 1Q2:</strong>      1.0577
+    <strong> 1Q3:</strong>      1.3188
+    <strong> 1Q4:</strong>      1.4993
+    <strong> 2Q1:</strong>      1.0491
+    <strong> 2Q2:</strong>     0.75605
+    <strong> 2Q3:</strong>     0.56862
+    <strong> 2Q4:</strong>     0.44382
+    <strong> 3Q1:</strong>     0.36042
+    <strong> 3Q2:</strong>     0.30602
+    <strong> 3Q3:</strong>     0.27235
+    <strong> 3Q4:</strong>     0.25341
+    <strong> 4Q1:</strong>     0.24471
+    <strong> 4Q2:</strong>     0.24283
+    <strong> 4Q3:</strong>     0.24521
+    <strong> 4Q4:</strong>     0.24999
+    <strong> 5Q1:</strong>     0.25583
+    <strong> 5Q2:</strong>     0.26178
+    <strong> 5Q3:</strong>     0.26724
+    <strong> 5Q4:</strong>     0.27183
+    <strong> 6Q1:</strong>     0.27535
+    <strong> 6Q2:</strong>     0.27774
+    <strong> 6Q3:</strong>     0.27899
+    <strong> 6Q4:</strong>     0.27919
+    <strong> 7Q1:</strong>     0.27844
+    <strong> 7Q2:</strong>     0.27687
+    <strong> 7Q3:</strong>      0.2746
+    <strong> 7Q4:</strong>     0.27176
+    <strong> 8Q1:</strong>     0.26847
+    <strong> 8Q2:</strong>     0.26485
+    <strong> 8Q3:</strong>     0.26098
+    <strong> 8Q4:</strong>     0.25694
+    <strong> 9Q1:</strong>      0.2528
+    <strong> 9Q2:</strong>     0.24862
+    <strong> 9Q3:</strong>     0.24443
+    <strong> 9Q4:</strong>     0.24027
+    <strong>10Q1:</strong>     0.23617
+    <strong>10Q2:</strong>     0.23213
+    <strong>10Q3:</strong>     0.22818
+    <strong>10Q4:</strong>     0.22431
+    <strong>11Q1:</strong>     0.22054
+    <strong>11Q2:</strong>     0.21685
+    <strong>11Q3:</strong>     0.21326
+    <strong>11Q4:</strong>     0.20975
+    <strong>12Q1:</strong>     0.20632
+    <strong>12Q2:</strong>     0.20298
+    <strong>12Q3:</strong>     0.19972
+    <strong>12Q4:</strong>     0.19653
+    <strong>13Q1:</strong>     0.19343
+    <strong>13Q2:</strong>      0.1904
+    <strong>13Q3:</strong>     0.18744
+    <strong>13Q4:</strong>     0.18457
+    <strong>14Q1:</strong>     0.18178
+    <strong>14Q2:</strong>     0.17907
+    <strong>14Q3:</strong>     0.17645
+    <strong>14Q4:</strong>     0.17393
+    <strong>15Q1:</strong>     0.17151
+    <strong>15Q2:</strong>      0.1692
+    <strong>15Q3:</strong>     0.16701
+    <strong>15Q4:</strong>     0.16494
+    <strong>16Q1:</strong>       0.163
+    <strong>16Q2:</strong>     0.16121
+    <strong>16Q3:</strong>     0.15956
+    <strong>16Q4:</strong>     0.15807
+    <strong>17Q1:</strong>     0.15675
+    <strong>17Q2:</strong>      0.1556
+    <strong>17Q3:</strong>     0.15463
+    <strong>17Q4:</strong>     0.15384
+    <strong>18Q1:</strong>     0.15324
+    <strong>18Q2:</strong>     0.15282
+    <strong>18Q3:</strong>     0.15259
+    <strong>18Q4:</strong>     0.15255
+    <strong>19Q1:</strong>     0.15267
+    <strong>19Q2:</strong>     0.15296
+    <strong>19Q3:</strong>     0.15339
+    <strong>19Q4:</strong>     0.15395
+    <strong>20Q1:</strong>      0.1546
+    <strong>20Q2:</strong>      0.1553
+    <strong>20Q3:</strong>     0.15603
+    <strong>20Q4:</strong>     0.15672
+    <strong>21Q1:</strong>     0.15733
+    <strong>21Q2:</strong>     0.15778
+    <strong>21Q3:</strong>       0.158
+    <strong>21Q4:</strong>     0.15791
+    <strong>22Q1:</strong>      0.1574
+    <strong>22Q2:</strong>     0.15639
+    <strong>22Q3:</strong>     0.15475
+    <strong>22Q4:</strong>     0.15236
+    <strong>23Q1:</strong>     0.14909
+    <strong>23Q2:</strong>      0.1448
+    <strong>23Q3:</strong>     0.13935
+    <strong>23Q4:</strong>     0.13259
+    <strong>24Q1:</strong>     0.12437
+    <strong>24Q2:</strong>     0.11453
+    <strong>24Q3:</strong>     0.10292
+    <strong>24Q4:</strong>    0.089382
+    <strong>25Q1:</strong>     0.07378
+    <strong>25Q2:</strong>    0.055976
+    <strong>25Q3:</strong>     0.03585
+    <strong>25Q4:</strong>    0.011798
+    <strong>26Q1:</strong>           0
+
+Dot indexing is not supported for variables of this type.
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('functions.plotting1.createContributions', 'D:\2024-01_eagle\subroutines\+functions\+plotting1\createContributions.m', 44)" style="font-weight:bold">functions.plotting1.createContributions</a> (<a href="matlab: opentoline('D:\2024-01_eagle\subroutines\+functions\+plotting1\createContributions.m',44,0)">line 44</a>)
+jsonfile = [M_.fname filesep() 'model' filesep() 'json' filesep()
+'modfile-original.json'];
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('runFiscalShocks', 'D:\2024-01_eagle\eagleParsingTemp_sim_BIG1\runFiscalShocks.m', 74)" style="font-weight:bold">runFiscalShocks</a> (<a href="matlab: opentoline('D:\2024-01_eagle\eagleParsingTemp_sim_BIG1\runFiscalShocks.m',74,0)">line 74</a>)
+        ] = functions.plotting1.createContributions( ...
+

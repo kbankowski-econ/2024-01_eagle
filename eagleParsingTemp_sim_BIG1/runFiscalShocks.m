@@ -33,6 +33,31 @@ plot(serToPlot{qq(1,1): qq(50,4)});
 title('EAB GY')
 ylabel('p.p. deviation from steady state')
 
+%%
+serToPlot= (eabGy1Databank.EAA_yst-eabGy1Databank.EAA_yst(qq(0,4)))*100;
+plot(serToPlot1{qq(1,1): qq(50,4)});
+title('EAA YST')
+ylabel('p.p. deviation from steady state')
+
+%%
+serToPlot= (eabGy1Databank.EAA_ysn-eabGy1Databank.EAA_ysn(qq(0,4)))*100;
+plot(serToPlot2{qq(1,1): qq(50,4)});
+title('EAA YSN')
+ylabel('p.p. deviation from steady state')
+
+%%
+serToPlot= (eabGy1Databank.EAB_yst-eabGy1Databank.EAB_yst(qq(0,4)))*100;
+plot(serToPlot1{qq(1,1): qq(50,4)});
+title('EAB YST')
+ylabel('p.p. deviation from steady state')
+
+%%
+serToPlot= (eabGy1Databank.EAB_ysn-eabGy1Databank.EAB_ysn(qq(0,4)))*100;
+plot(serToPlot1{qq(1,1): qq(50,4)});
+title('EAB YSN')
+ylabel('p.p. deviation from steady state')
+
+
 %% analying the output of the simulation
 fiscalSimOutput = load(fullfile(project_path, 'eagleParsingTemp_sim_BIG1', 'modFiles', 'shock_eab_gy1', 'Output', 'shock_eab_gy1_results.mat'));
 M_ = fiscalSimOutput.M_;
@@ -66,7 +91,6 @@ irfStruct.(aEndoVar)
 aItemList = ["EA_y", "EA_pic4"];
 allItemList = aItemList;
 
-% //TODO: move createContributions, Series2Dseries to some function folder
 for aItem = aItemList
     [ ...
         contributionSeries.total.(aItem) ...
@@ -95,5 +119,101 @@ for aItemIndex = 1:numel(unique(allItemList))
 end
 contributionSeries.colorTable = colorTable;
 
+%% investigating interest rate reaction upon the request from Sandra
+panelContributions(contributionSeries, project_path);
+
 %% stochastic simulation
-dynare('eagleModelFiscalShocksStoch.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
+dynare('eagleModelFiscalShocksStoch.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp_sim_BIG1'));
+
+%%
+function panelContributions(contributionSeries, projectPath, subProjectPath)
+
+    % Please specify the list of the variables to plot   
+    VarListToPlot = string(reshape(fieldnames(contributionSeries.total), 1, []));
+    
+    % Please specify the date range of the series
+    DateRange = qq(1,1):qq(5,4);
+    aShift = 0;
+    DateRangeNorm = DateRange - aShift;
+    DateRangeDateTime = dater.toMatlab(DateRangeNorm);
+    
+    % Plotting
+    figure
+    
+    % Defining the shape of the figure
+    tiledlayout_width = 1; %Specify the # of columns desired
+    tiledlayout_height = 2;
+    
+    t = tiledlayout(tiledlayout_height, tiledlayout_width, 'TileSpacing', 'compact','Padding','compact');
+    
+    h = gcf;
+    FigureHeight = min(29.7, tiledlayout_height*6.5);
+    set(h, 'Units','centimeters', 'Position',[0 0 21-2*2.5 20-2*2.5])
+    set(h,'defaulttextinterpreter','latex');
+    
+    for aItem = VarListToPlot %for each panel
+        nexttile;
+        grid on
+        hold on 
+    
+        % Seeting of the title
+        aTitle = sprintf('Decomposition of %s', contributionSeries.lhs.(aItem));        
+        title( ...
+            aTitle ...
+            , 'Fontsize', 7 ...
+            , 'Fontweight', 'normal' ...
+        );
+    
+        % actual data
+        try
+            bars_ = barcon( ...
+                DateRange ...
+                , contributionSeries.contrib.(aItem) ...
+                , "ColorMap", cell2mat(contributionSeries.colorTable{contributionSeries.contrib.(aItem).Comment, :}) ...
+                , 'EdgeColor', 'none');
+        catch
+        end  
+        % targets
+        try
+            line_ = plot( ...
+                DateRange ...
+                , contributionSeries.total.(aItem) ...
+                , 'color', cell2mat(contributionSeries.colorTable{aItem, :}) ...
+                , 'linewidth', 2 ...
+                , 'Marker', '_' ...
+                , 'MarkerFaceColor', rgb('black') ...
+                , 'MarkerEdgeColor', rgb('black') ...
+                , 'MarkerSize', 4 ...
+                );
+        catch
+        end
+        
+        hold off
+    
+        % Setting of the x and y axis
+        xtickformat(gca,'yyQQQ')
+    
+        set(gca ...
+            , 'Xtick', DateRangeDateTime(1:4:end) ...
+            , 'Fontsize', 7 ...
+            , 'Box', 'off' ...
+            , 'TickLabelInterpreter','latex' ...
+        );
+    
+        legendLabels = replace([contributionSeries.contrib.(aItem).Comment, aItem], "_", "\_");
+        legend( ...
+            [bars_, line_] ...
+            , legendLabels ...
+            , 'location', 'northoutside' ...
+            , 'Interpreter','latex' ...
+            , 'Fontsize', 6 ...
+            , 'NumColumns', 2 ...
+            );
+    
+    
+    end 
+        
+    % Save graph
+    fileName = fullfile(projectPath, "docs/fiscalContributions_Big1");
+    exportgraphics(t, sprintf('%s.png',fileName),'BackgroundColor','none');
+end

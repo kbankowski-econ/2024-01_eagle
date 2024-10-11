@@ -4817,7 +4817,6 @@ US_rer = 1;
 // Euroarea-wide variables
 //-------------
 // GDP
-[name='EA_y']
 EA_y = 
 	(
 	EAA_size*EAA_pybar*EAA_y
@@ -4855,7 +4854,6 @@ EA_bf =
 	+ EAB_size
 );
 // Annual inflation
-[name='EA_pic4']
 EA_pic4 = 1 
 		* EAA_pic4^(EAA_size/(
 				+ EAA_size
@@ -4871,10 +4869,11 @@ log(EA_z) = (1-EA_rhoz)*log(EA_zbar)+EA_rhoz*log(EA_z(-1))+EA_epsz;
 // Auxiliary equation for steady-state output
 end;
 load_params_and_steady_state('eagle_steady_govInv_refined.txt');
+EAA_rhocg=0; //if we don't want persistent shock
 EAB_rhocg=0; //if we don't want persistent shock
 steady(solve_algo = 5, markowitz = 5);
 shocks;
-var EAB_epsgi;
+var EAA_epsgc;
 periods 1:4;
 values 0.01;
 var EAB_epsgc;
