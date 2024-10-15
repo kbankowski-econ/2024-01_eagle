@@ -1,0 +1,56 @@
+\documentclass{article} 
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{caption}
+
+\begin{document}
+\title{EAGLE BIG1 and BIG12 comparison}
+\date{\today}
+\maketitle
+
+\section{Introduction}
+The graphs below present impact of fiscal and monetary shocks in the version of the EAGLE model: One with four regions, and one with 15 regions. 
+
+\section{Fiscal Shock}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{D:/2024-01_eagle/docs/fiscalContributions_Big1.png}
+        \caption{Fiscal shock -  4 regions}
+        \label{fig:picture1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{D:/2024-01_eagle/docs/fiscalContributions_Big12.png}
+        \caption{Fiscal shock - 15 regions}
+        \label{fig:picture2}
+    \end{subfigure}
+    \caption{Fiscal shock - Output and inflation, difference from baseline}
+    \label{fig:comparison}
+\end{figure}
+
+\section{Monetary Shock}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+       \includegraphics[width=\textwidth]{D:/2024-01_eagle/docs/monetaryContributions_Big1.png}
+        \caption{Fiscal shock - 4 regions}
+        \label{fig:picture1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+       \includegraphics[width=\textwidth]{D:/2024-01_eagle/docs/monetaryContributions_Big12.png}
+        \caption{Fiscal shock - 15 regions}
+        \label{fig:picture2}
+    \end{subfigure}
+    \caption{Comparison of Picture 1 and Picture 2}
+    \label{fig:comparison}
+\end{figure}
+
+\end{document}
