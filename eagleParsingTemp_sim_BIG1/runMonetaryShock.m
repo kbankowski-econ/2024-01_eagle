@@ -25,33 +25,34 @@ dynare_config
 cd(fullfile(project_path, 'eagleParsingTemp_sim_BIG1','modFiles'));
 
 %% deterministic simulation
-dynare('shock_eab_gy1.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp_sim_BIG1'), 'savemacro', 'json=compute');
+dynare('shock_ea_epsr1.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp_sim_BIG1'), 'savemacro', 'json=compute');
 
-eabGy1Databank = databank.fromArray(oo_.endo_simul', M_.endo_names, qq(0,4));
-serToPlot = (eabGy1Databank.EAB_cgy-eabGy1Databank.EAB_cgy(qq(0,4)))*100;
+%%
+eaepsrDatabank = databank.fromArray(oo_.endo_simul', M_.endo_names, qq(0,4));
+serToPlot = (eaepsrDatabank.EAA_r-eaepsrDatabank.EAA_r(qq(0,4)))*100;
 plot(serToPlot{qq(1,1): qq(50,4)});
-title('EAB GY')
+title('EAA r')
 ylabel('p.p. deviation from steady state')
 
 %% analying the output of the simulation
-fiscalSimOutput = load(fullfile(project_path, 'eagleParsingTemp_sim_BIG1', 'modFiles', 'shock_eab_gy1', 'Output', 'shock_eab_gy1_results.mat'));
-M_ = fiscalSimOutput.M_;
+monetarySimOutput = load(fullfile(project_path, 'eagleParsingTemp_sim_BIG1', 'modFiles', 'shock_ea_epsr1', 'Output', 'shock_ea_epsr1_results.mat'));
+M_ = monetarySimOutput.M_;
 
-dataRange = qq(0, 4): qq(0, 4)+size(fiscalSimOutput.oo_.endo_simul', 1) - 1;
+dataRange = qq(0, 4): qq(0, 4)+size(monetarySimOutput.oo_.endo_simul', 1) - 1;
 endoStruct = struct(); ssStruct = struct(); irfStruct = struct();
 
 endoStruct = databank.fromArray( ...
-    fiscalSimOutput.oo_.endo_simul' ...
+    monetarySimOutput.oo_.endo_simul' ...
     , M_.endo_names ...
     , dataRange(1) ...
 );
 ssStruct = databank.fromArray( ...
-    repmat(fiscalSimOutput.oo_.steady_state', numel(dataRange), 1) ...
+    repmat(monetarySimOutput.oo_.steady_state', numel(dataRange), 1) ...
     , M_.endo_names ...
     , dataRange(1) ...
 );
-for aParam = string(reshape(fiscalSimOutput.M_.param_names, 1, []))
-    paramStruct.(aParam) = fiscalSimOutput.M_.params(strcmp(aParam, fiscalSimOutput.M_.param_names));
+for aParam = string(reshape(monetarySimOutput.M_.param_names, 1, []))
+    paramStruct.(aParam) = monetarySimOutput.M_.params(strcmp(aParam, monetarySimOutput.M_.param_names));
 end
 
 [endoStruct.EAA_ysn, ssStruct.EAA_ysn]
@@ -192,6 +193,6 @@ function panelContributions(contributionSeries, projectPath, subProjectPath)
     end 
         
     % Save graph
-    fileName = fullfile(projectPath, "docs/fiscalContributions_Big1");
+    fileName = fullfile(projectPath, "docs/monetaryContributions_Big1");
     exportgraphics(t, sprintf('%s.png',fileName),'BackgroundColor','none');
 end

@@ -1021,6 +1021,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 //-------------
 
 // GDP
+[name = 'EA_y']
 @{ea}_y = 
 	(
 	@{co}_size*@{co}_pybar*@{co}_y

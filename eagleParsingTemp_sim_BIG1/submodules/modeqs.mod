@@ -1021,6 +1021,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 //-------------
 
 // GDP
+[name = 'EA_y']
 @{ea}_y = 
 	(
 	@{co}_size*@{co}_pybar*@{co}_y
@@ -1038,12 +1039,15 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 );
 
 // GDP growth
+[name = 'EA_ygrowth']
 @{ea}_ygrowth= @{ea}_y/@{ea}_y(-1);
 
 // GDP growth (yoy)
+[name = 'EA_ygrowth4']
 @{ea}_ygrowth4= @{ea}_y/@{ea}_y(-4);
 
 // Money
+[name = 'EA_m']
 @{ea}_m = 
 	(
 	@{co}_size*@{co}_m
@@ -1060,6 +1064,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 	@#endfor
 );
 	
+[name = 'EA_bf']
 @{ea}_bf = 
 	(
 	@#for it in countries[1: ctryNumber-2]
@@ -1074,6 +1079,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 );
 
 // Annual inflation
+[name = 'EA_pic4']
 @{ea}_pic4 = 1 
 	@#for it in countries[1: ctryNumber-2]
 		* @{it}_pic4^(@{it}_size/(
@@ -1086,6 +1092,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 
 
 // Productivity
+[name = 'EA_z']
 log(@{ea}_z) = (1-@{ea}_rhoz)*log(@{ea}_zbar)+@{ea}_rhoz*log(@{ea}_z(-1))+@{ea}_epsz;
 
 // Auxiliary equation for steady-state output

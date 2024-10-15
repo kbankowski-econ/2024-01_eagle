@@ -8,16 +8,13 @@
 
 load_params_and_steady_state('eagle_steady_govInv_refined.txt');
 
-EAA_rhocg=0; //if we don't want persistent shock
-EAB_rhocg=0; //if we don't want persistent shock
+EAA_phirr_=0; //if we don't want persistent shock
+EAB_phirr_=0; //if we don't want persistent shock
 
 steady(solve_algo = 5, markowitz = 5);
 
 shocks;
-var EAA_epsgc;
-periods 1:4;
-values 0.01;
-var EAB_epsgc;
+var EA_epsr;
 periods 1:4;
 values 0.01;
 end;
