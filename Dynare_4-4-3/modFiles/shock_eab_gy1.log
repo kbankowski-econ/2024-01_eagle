@@ -964,14 +964,14 @@ MODEL SIMULATION: (method=LBJ with Sparse Gaussian Elimination)
       2-norm error   = 7.260e-02
       1-norm error   = 2.382e-01
 ------------------------------------
-(** 1.62 seconds **)
+(** 1.75 seconds **)
 ------------------------------------
       Iteration no. 2
       Inf-norm error = 3.049e-03
       2-norm error   = 5.957e-03
       1-norm error   = 1.845e-02
 ------------------------------------
-(** 1.60 seconds **)
+(** 1.61 seconds **)
 ------------------------------------
       Iteration no. 3
       Inf-norm error = 1.306e-06
