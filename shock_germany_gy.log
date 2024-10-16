@@ -1,0 +1,4 @@
+Starting Dynare (version 6.1).
+Calling Dynare with arguments: -ID:\2024-01_eagle/eagleParsingTemp_sim_BIG1/submodules savemacro json=compute
+ERROR: Could not open file: shock_germany_gy.mod 
+Preprocessing time: 0h00m00s.
