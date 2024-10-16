@@ -618,6 +618,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 @#endif
 
 // Definition of annual inflation
+[name = '@{co}_pic4']
 @{co}_pic4 = @{co}_pic*@{co}_pic(-1)*@{co}_pic(-2)*@{co}_pic(-3);
 
 // Real interest rate

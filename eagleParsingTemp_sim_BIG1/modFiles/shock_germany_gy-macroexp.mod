@@ -2164,6 +2164,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 		EAA_rerdep/EAB_rerdep*EAA_pic/EAB_pic-1=0;
 // Definition of annual inflation
+[name = 'EAA_pic4']
 EAA_pic4 = EAA_pic*EAA_pic(-1)*EAA_pic(-2)*EAA_pic(-3);
 // Real interest rate
 EAA_rr-1 = EAA_r/EAA_pic(+1)-1;
@@ -2951,6 +2952,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 		+EA_phirpi*(EA_pic4-EAB_pi4target))
 		+EA_phirgy*(EA_ygrowth-1)+EA_epsr;
 // Definition of annual inflation
+[name = 'EAB_pic4']
 EAB_pic4 = EAB_pic*EAB_pic(-1)*EAB_pic(-2)*EAB_pic(-3);
 // Real interest rate
 EAB_rr-1 = EAB_r/EAB_pic(+1)-1;
@@ -3736,6 +3738,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 	RW_r^4-1 = RW_phirr*(RW_r(-1)^4-1)+(1-RW_phirr)*(RW_rrstar^4*RW_pi4target-1+RW_phirpi*(RW_pic4-RW_pi4target))+RW_phirgy*(RW_y/RW_y(-1)-1)+RW_epsr;
 // Definition of annual inflation
+[name = 'RW_pic4']
 RW_pic4 = RW_pic*RW_pic(-1)*RW_pic(-2)*RW_pic(-3);
 // Real interest rate
 RW_rr-1 = RW_r/RW_pic(+1)-1;
@@ -4521,6 +4524,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 	US_r^4-1 = US_phirr*(US_r(-1)^4-1)+(1-US_phirr)*(US_rrstar^4*US_pi4target-1+US_phirpi*(US_pic4-US_pi4target))+US_phirgy*(US_y/US_y(-1)-1)+US_epsr;
 // Definition of annual inflation
+[name = 'US_pic4']
 US_pic4 = US_pic*US_pic(-1)*US_pic(-2)*US_pic(-3);
 // Real interest rate
 US_rr-1 = US_r/US_pic(+1)-1;

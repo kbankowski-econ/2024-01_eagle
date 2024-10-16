@@ -1,73 +1,73 @@
-Starting Dynare (version 6.1).
-Calling Dynare with arguments: -ID:\2024-01_eagle/eagleParsingTemp_sim_BIG1/submodules savemacro json=compute
-Starting preprocessing of the model file ... 
-Reading eagle_steady_govInv_refined.txt. 
-WARNING: Unknown symbol AUX_ENDO_LAG_186_1 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_186_2 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_186_3 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_170_1 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_170_2 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_170_3 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_153_1 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_252_1 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_252_2 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_252_3 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_553_1 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_553_2 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_553_3 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_537_1 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_537_2 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_537_3 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_520_1 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_619_1 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_619_2 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_619_3 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_920_1 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_920_2 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_920_3 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_904_1 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_904_2 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_904_3 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_887_1 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_986_1 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_986_2 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_986_3 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1289_1 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1289_2 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1289_3 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1273_1 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1273_2 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1273_3 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1256_1 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1352_1 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1352_2 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1352_3 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_75_1 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_207_1 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_574_1 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_3_1 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_3_2 in eagle_steady_govInv_refined.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_3_3 in eagle_steady_govInv_refined.txt 
-Substitution of endo lags >= 2: added 62 auxiliary variables and equations. 
-Found 1093 equation(s). 
-Evaluating expressions... 
-Computing static model derivatives (order 1). 
-Normalizing the static model... 
-Finding the optimal block decomposition of the static model... 
-125 block(s) found: 
-  121 recursive block(s) and 4 simultaneous block(s). 
-  the largest simultaneous block has 530 equation(s) 
-                                 and 530 feedback variable(s). 
-Computing dynamic model derivatives (order 1). 
-Normalizing the dynamic model... 
-Finding the optimal block decomposition of the dynamic model... 
-56 block(s) found: 
-  55 recursive block(s) and 1 simultaneous block(s). 
-  the largest simultaneous block has 676 equation(s) 
-                                 and 587 feedback variable(s). 
-JSON written after Computing step. 
-Preprocessing completed. 
-Preprocessing time: 0h00m03s.
+Starting Dynare (version 6.0).
+Calling Dynare with arguments: -I/Users/kk/Documents/0000-00_work/2024-01_eagle/eagleParsingTemp_sim_BIG1/submodules savemacro json=compute
+Starting preprocessing of the model file ...
+Reading eagle_steady_govInv_refined.txt.
+WARNING: Unknown symbol AUX_ENDO_LAG_186_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_186_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_186_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_170_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_170_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_170_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_153_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_252_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_252_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_252_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_553_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_553_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_553_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_537_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_537_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_537_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_520_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_619_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_619_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_619_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_920_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_920_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_920_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_904_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_904_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_904_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_887_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_986_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_986_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_986_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1289_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1289_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1289_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1273_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1273_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1273_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1256_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1352_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1352_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1352_3 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_75_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_207_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_574_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_3_1 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_3_2 in eagle_steady_govInv_refined.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_3_3 in eagle_steady_govInv_refined.txt
+Substitution of endo lags >= 2: added 62 auxiliary variables and equations.
+Found 1093 equation(s).
+Evaluating expressions...
+Computing static model derivatives (order 1).
+Normalizing the static model...
+Finding the optimal block decomposition of the static model...
+125 block(s) found:
+  121 recursive block(s) and 4 simultaneous block(s).
+  the largest simultaneous block has 530 equation(s)
+                                 and 530 feedback variable(s).
+Computing dynamic model derivatives (order 1).
+Normalizing the dynamic model...
+Finding the optimal block decomposition of the dynamic model...
+56 block(s) found:
+  55 recursive block(s) and 1 simultaneous block(s).
+  the largest simultaneous block has 676 equation(s)
+                                 and 587 feedback variable(s).
+JSON written after Computing step.
+Preprocessing completed.
+Preprocessing time: 0h00m02s.
 
 STEADY-STATE RESULTS:
 
@@ -1109,29 +1109,29 @@ MODEL SIMULATION: (method=Sparse LU solver on stacked system)
       2-norm error   = 1.101e-01
       1-norm error   = 2.207e-01
 ------------------------------------
-(** 2.44 seconds **)
+(** 0.65 seconds **)
 ------------------------------------
       Iteration no. 2
       Inf-norm error = 1.200e-01
       2-norm error   = 2.210e-01
       1-norm error   = 9.259e-01
 ------------------------------------
-(** 1.27 seconds **)
+(** 0.58 seconds **)
 ------------------------------------
       Iteration no. 3
       Inf-norm error = 1.584e-05
       2-norm error   = 3.045e-05
       1-norm error   = 1.773e-04
 ------------------------------------
-(** 1.20 seconds **)
+(** 0.53 seconds **)
 ------------------------------------
       Iteration no. 4
-      Inf-norm error = 4.147e-10
-      2-norm error   = 1.962e-09
-      1-norm error   = 2.366e-08
+      Inf-norm error = 3.783e-10
+      2-norm error   = 1.823e-09
+      1-norm error   = 2.197e-08
 ------------------------------------
 
 Perfect foresight solution found.
 
-Total computing time : 0h00m10s
+Total computing time : 0h00m02s
 Note: 46 warning(s) encountered in the preprocessor
