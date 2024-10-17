@@ -19,6 +19,7 @@ dynare_config
 %% ----------------
 % Loading the databases
 %  ----------------
+
 plotDatabank.model = load(fullfile(project_path, 'eagleParsingTemp_sim_BIG1', 'modFiles', 'shock_eab_gy1', 'Output', 'shock_eab_gy1_results.mat'));
 M_ = plotDatabank.model.M_;
 
@@ -39,54 +40,17 @@ for aParam = string(reshape(plotDatabank.model.M_.param_names, 1, []))
     paramStruct.model.(aParam) = plotDatabank.model.M_.params(strcmp(aParam, plotDatabank.model.M_.param_names));
 end
 
-%% Plotting for the paper draft
-plotting.dataSection1(MainDb);
-plotting.dataSection2(MainDb);
-plotting.dataSection3(MainDb);
-plotting.sgpTargets(CalcsDb);
-plotting.complianceGap(CalcsDb);
-plotting.adjNeeds(CalcsDb);
-plotting.cyclicalityAll(Db2SimulateSeries);
-plotting.IRFsBASEshocks(envi, baseCalcsDb.CalcsDb);
-plotting.sgpCounterfactuals(CalcsDb, CalcsDbBASE_st, CalcsDbBASE_rt);
+serIndex = cellfun(@(x) any(endsWith(x, {'_pic4', '_pic'})), M_.endo_names);
 
-%% Plotting for the paper draft (appendix)
-plotting.varOverviewEA(envi, CalcsDb, MainDb, CalcsDbBASE_st, "EA", "Standard");
-plotting.varOverviewEA(envi, CalcsDb, MainDb, CalcsDbBASE_rt, "EA", "RealTime");
+irfStruct.model = databank.copy( ...
+    endoStruct.model ...
+    , "Transform", @(x) (x/x(qq(0, 4))-1)*100 ...
+    , "SourceNames", M_.endo_names(~serIndex) ...
+);
 
-for aCountry = [reshape(string(Meta.Lists.Countries.D2), 1,[])]
-    plotting.varOverview(CalcsDb, MainDb, aCountry, "Standard");
-    plotting.varOverview(CalcsDb, MainDb, aCountry, "RealTime");
-end
-
-%% Plotting for the presentation
-varOverviewTable = envi.varOverview;
-
-plotting.dataSection1PPT(MainDb);
-plotting.dataSection2PPT(MainDb);
-plotting.dataSection3PPT(MainDb);
-plotting.sgpTargetsPPT(varOverviewTable, CalcsDb);
-plotting.complianceGapPPT(varOverviewTable, CalcsDb);
-plotting.adjNeedsPPT(varOverviewTable, CalcsDb);
-plotting.sgpCounterfactualsPPT(CalcsDb, CalcsDbBASE_st, CalcsDbBASE_rt, false);
-plotting.sgpCounterfactualsPPT(CalcsDb, CalcsDbBASE_st, CalcsDbBASE_rt, true);
-plotting.varOverviewPPTexample(varOverviewTable, CalcsDb, MainDb, "IT", "Standard");
-
-%% Printing the databases to csv files to track the changes
-writeDatabankToCSV(MainDb.Standard, "MainDb.Standard");
-writeDatabankToCSV(MainDb.RealTime, "MainDb.RealTime");
-writeDatabankToCSV(CalcsDb.Standard.Plan, "CalcsDb.Standard.Plan");
-writeDatabankToCSV(CalcsDb.Standard.SGP.NoPlan, "CalcsDb.Standard.SGP.NoPlan");
-writeDatabankToCSV(CalcsDb.Standard.AR.NoPlan, "CalcsDb.Standard.AR.NoPlan");
-writeDatabankToCSV(CalcsDb.Standard.Perm.NoPlan, "CalcsDb.Standard.Perm.NoPlan");
-writeDatabankToCSV(CalcsDb.RealTime.Plan, "CalcsDb.RealTime.SGP.Plan");
-writeDatabankToCSV(CalcsDb.RealTime.SGP.NoPlan, "CalcsDb.RealTime.SGP.NoPlan");
-writeDatabankToCSV(CalcsDb.RealTime.AR.NoPlan, "CalcsDb.RealTime.AR.NoPlan");
-writeDatabankToCSV(CalcsDb.RealTime.Perm.NoPlan, "CalcsDb.RealTime.Perm.NoPlan");
-
-%% charts, which are not used for the paper for now
-plotting.eaOverview(varOverviewTable, CalcsDb, MainDb, CalcsDbBASE, "Standard");
-plotting.eaOverview(varOverviewTable, CalcsDb, MainDb, CalcsDbBASE, "RealTime");
-plotting.eaSummary(varOverviewTable, CalcsDb, MainDb, CalcsDbBASE, "Standard");
-plotting.plotIRFs(varOverviewTable, CalcsDb, CalcsDbBASE,CalcsDbBME, "Perm");
-plotting.plotIRFs(varOverviewTable, CalcsDb, CalcsDbBASE,CalcsDbBME, "AR");
+irfStruct.model = databank.copy( ...
+    endoStruct.model ...
+    , "SourceNames", M_.endo_names(serIndex) ...
+    , "Transform", @(x) (x-x(qq(0, 4)))*100 ...
+    , "TargetDb", irfStruct.model ...
+);
