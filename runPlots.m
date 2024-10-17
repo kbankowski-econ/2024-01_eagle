@@ -1,0 +1,59 @@
+%% preamble
+clear all; close all; clc; restoredefaultpath
+% Add some paths
+currentFolder = pwd; % Get current directory
+[parentFolder, ~, ~] = fileparts(currentFolder);
+addpath(genpath(parentFolder));
+
+%% performing data transformation
+fprintf('\n\n\n+++ Initialising the project ...\n');
+% calling a specific user input not tracked by GIT
+utils.call.paths;
+% Call Iris
+addpath(iris_path);
+iris.startup
+% Call Dynare
+addpath(dynare_6_0);
+dynare_config
+
+%% ----------------
+% Loading the databases
+%  ----------------
+
+plotDatabank.model = load(fullfile(project_path, 'eagleParsingTemp_sim_BIG1', 'modFiles', 'shock_eab_gy1', 'Output', 'shock_eab_gy1_results.mat'));
+M_ = plotDatabank.model.M_;
+
+dataRange = qq(0, 4): qq(0, 4)+size(plotDatabank.model.oo_.endo_simul', 1) - 1;
+endoStruct.model = struct(); ssStruct.model = struct(); irfStruct.model = struct();
+
+endoStruct.model = databank.fromArray( ...
+    plotDatabank.model.oo_.endo_simul' ...
+    , M_.endo_names ...
+    , dataRange(1) ...
+);
+ssStruct.model = databank.fromArray( ...
+    repmat(plotDatabank.model.oo_.steady_state', numel(dataRange), 1) ...
+    , M_.endo_names ...
+    , dataRange(1) ...
+);
+for aParam = string(reshape(plotDatabank.model.M_.param_names, 1, []))
+    paramStruct.model.(aParam) = plotDatabank.model.M_.params(strcmp(aParam, plotDatabank.model.M_.param_names));
+end
+
+serIndex = cellfun(@(x) any(endsWith(x, {'_pic4', '_pic'})), M_.endo_names);
+
+irfStruct.model = databank.copy( ...
+    endoStruct.model ...
+    , "Transform", @(x) (x/x(qq(0, 4))-1)*100 ...
+    , "SourceNames", M_.endo_names(~serIndex) ...
+);
+
+irfStruct.model = databank.copy( ...
+    endoStruct.model ...
+    , "SourceNames", M_.endo_names(serIndex) ...
+    , "Transform", @(x) (x-x(qq(0, 4)))*100 ...
+    , "TargetDb", irfStruct.model ...
+);
+
+%% Plot comparison
+plotting.vertModelComparison(irfStruct);
