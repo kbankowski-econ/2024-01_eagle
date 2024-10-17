@@ -1,0 +1,34 @@
+function iniProject()
+    
+    % the initiation file has to remain in the main home directory of the
+    % project; this is becuase it calls credential and paths functions,
+    % which are specified as packages and they have to be visible to the
+    % current session (ideally) without adding paths
+    
+    % restoring default paths just in case project has to be re-initiated
+    restoredefaultpath;
+
+    % cleaning evenrything
+    close all;
+    clear all;
+    clc;
+
+    % reading in local variables
+    % utils.call.credential;
+    utils.call.paths;
+
+    % adding paths
+    % project
+    addpath(genpath(project_path));
+    % iris
+    addpath(iris_path);
+
+    % initiating toolboxes
+    % iris
+    iris.startup();
+
+    % Call Dynare
+    addpath(dynare_6_0);
+    dynare_config
+
+end

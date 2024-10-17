@@ -1,22 +1,6 @@
-%% preamble
-clear all; close all; clc; restoredefaultpath
-% Add some paths
-currentFolder = pwd; % Get current directory
-[parentFolder, ~, ~] = fileparts(currentFolder);
-addpath(genpath(parentFolder));
-
-%% performing data transformation
-fprintf('\n\n\n+++ Initialising the project ...\n');
-% calling a specific user input not tracked by GIT
-utils.call.paths;
-% Call Iris
-addpath(iris_path);
-iris.startup
-% Call Dynare
-addpath(dynare_6_0);
-dynare_config
-
 %%
+clear all; close all; clc;
+utils.call.paths;
 cd(fullfile(project_path, 'Dynare_4-4-3','modFiles'));
 
 % just loading the models (both nonSS and SS) to have a macro-exp version
