@@ -43,6 +43,7 @@ ylabel('p.p. deviation from steady state')
 
 return
 
+%%
 % shock simulation: 4-period g shock in EAB region (with some nuanced shock
 % values)
 dynare shock_eab_gy2.mod
