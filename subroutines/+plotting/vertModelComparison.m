@@ -1,4 +1,4 @@
-function vertModelComparison(envi, CalcsDb)
+function vertModelComparison(aPlotDb)
     % Load objects and adjust settings
     utils.call.paths;
     % Please include the needed environments components
@@ -91,7 +91,7 @@ function vertModelComparison(envi, CalcsDb)
             % build a legend based on this
             pp = struct();
             for aShock = shockList
-                pp.(aShock) = plot(redate(CalcsDb.(aShock).irf_dev.(aVar){DateRangeBASE}, DateRangeBASE(1), dateRangeNormalised(1)), ...
+                pp.(aShock) = plot(redate(aPlotDb.(aShock).irf_dev.(aVar){DateRangeBASE}, DateRangeBASE(1), dateRangeNormalised(1)), ...
                                    'Color', cmap(aShock==shockList), ...
                                    'Linewidth', 1.5);
             end
