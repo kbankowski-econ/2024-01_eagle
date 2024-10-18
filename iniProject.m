@@ -13,6 +13,9 @@ function iniProject()
     clear all;
     clc;
 
+    % Add some paths
+    addpath(genpath(pwd));
+
     % reading in local variables
     % utils.call.credential;
     utils.call.paths;
