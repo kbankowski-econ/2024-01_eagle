@@ -20,9 +20,10 @@ end
 dynare shock_eab_gy1.mod
 
 eabGy1Databank = databank.fromArray(oo_.endo_simul', M_.endo_names, qq(0,4));
-serToPlot = (eabGy1Databank.EAB_gy-eabGy1Databank.EAB_gy(qq(0,4)))*100;
+%%
+serToPlot = (eabGy1Databank.EA_pic4-eabGy1Databank.EA_pic4(qq(0,4)))*100;
 plot(serToPlot{qq(1,1): qq(50,4)});
-title('EAB GY')
+title('EA Inflation')
 ylabel('p.p. deviation from steady state')
 
 return

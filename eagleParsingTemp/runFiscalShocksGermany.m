@@ -26,7 +26,6 @@ cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 
 %% deterministic simulation
 dynare('shock_germany_gy.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
-
 eabGyDatabank = databank.fromArray(oo_.endo_simul', M_.endo_names, qq(0,4));
 %%
 serToPlot = (eabGyDatabank.EAA_cgy-eabGyDatabank.EAA_cgy(qq(0,4)))*100;

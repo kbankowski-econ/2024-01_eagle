@@ -18,7 +18,4 @@ end;
 
 simul(periods = 600, stack_solve_algo = 5, markowitz = 2);
 
-plot((EAA_r(1:200,1)-EAA_r(1,1))*100);
-title('EA interest rate')
-ylabel('p.p. deviation from steady state')
 
