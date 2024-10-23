@@ -132,15 +132,18 @@ for i = 1:length(modelNames)
     end
 end
 
-%% Plot comparison
-[additionalData, results.origPaper.irfStruct.model] = plotting.addPaperGraph();
+%% Plot comparison monetary shock 
+[additionalData, results.origPaper.irfStruct.model] = plotting.addPaperGraphMonetary();
 results.origPaper.irfStruct.model.EAB_tby = results.origPaper.irfStruct.model.EAB_tby*100
 results.origPaper.irfStruct.model.EAB_r = results.origPaper.irfStruct.model.EAB_r/4
 results.origPaper.irfStruct.model.EAB_rr = results.origPaper.irfStruct.model.EAB_rr/4
-figureHandle1 = plotting.OriginModelComparison(results, varConfig, 'BIG1, Dynare_4_4_3 and Original');
+plotting.OriginModelComparison(results, varConfig, 'BIG1, Dynare_4_4_3 and Original Monetary Shock');
 
-%% Plotting paper data
-additionalData = plotting.addPaperGraph();
-figureHandle2=plotting.plotOnlyPaperData(additionalData, project_path);
+%% Plot comparison fiscal shock
+[additionalData, results.origPaper.irfStruct.model] = plotting.addPaperGraphFiscal();
+results.origPaper.irfStruct.model.EAB_tby = results.origPaper.irfStruct.model.EAB_tby*100
+results.origPaper.irfStruct.model.EAB_r = results.origPaper.irfStruct.model.EAB_r/4
+results.origPaper.irfStruct.model.EAB_rr = results.origPaper.irfStruct.model.EAB_rr/4
+plotting.OriginModelComparison(results, varConfig, 'Big1, Dynare_4_4_3 and Original Fiscal Shock'); 
 
 

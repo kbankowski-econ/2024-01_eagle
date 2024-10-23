@@ -1,4 +1,4 @@
-function [additionalData, outDatabank] = addPaperGraph()
+function [additionalData, outDatabank] = addPaperGraphMonetary()
     % Define the time range (10 years, quarterly data)
     timeRange = qq(0,1):qq(10,1);
 
