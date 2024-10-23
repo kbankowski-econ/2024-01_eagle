@@ -10,12 +10,14 @@ cd(fullfile(project_path, 'Dynare_4-4-3','modFiles'));
 % just a test in the context for solving the extended model
 % dynare steady0.mod
 
+%%
 % calculating the steady state
 if false
     dynare steady1.mod
     dynare steady2.mod
 end
 
+%%
 % shock simulation: 4-period g shock in EAB region
 dynare shock_eab_gy1.mod
 
@@ -47,3 +49,7 @@ dynare ea_epsrp.mod
 
 % shock simulation: monetary policy shock
 dynare shock_ea_monpol.mod
+
+%%
+%shock simulation: expansionary monetary policy shock 
+dynare shock_ea_monpol_exp.mod

@@ -1,5 +1,6 @@
 # Specify filepatterns you want git to ignore.
 subroutines/+utils/+call/paths.m
++utils/+call/paths.m
 *.bin
 *.cod
 *.asv
@@ -12,6 +13,7 @@ Dynare_4-4-3/modFiles/+steady2/*
 Fiscal_ext/modFiles/+shock_eab_gy1/*
 Fiscal_ext/modFiles/+steady1_EAGLE_Fiscal/*
 Fiscal_ext/modFiles/+steady2/*
+Fiscal_ext/modFiles/+*/
 eagleParsingTemp/modFiles/+*/
 eagleParsingTemp_sim_BIG1/modFiles/+*/
 Dynare_4-4-3/modFiles/+*/

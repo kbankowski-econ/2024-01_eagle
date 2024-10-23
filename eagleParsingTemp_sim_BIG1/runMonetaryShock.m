@@ -25,7 +25,7 @@ dynare_config
 cd(fullfile(project_path, 'eagleParsingTemp_sim_BIG1','modFiles'));
 
 %% deterministic simulation
-dynare('shock_ea_epsr1.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp_sim_BIG1'), 'savemacro', 'json=compute');
+dynare('shock_ea_monpol_exp.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp_sim_BIG1'), 'savemacro', 'json=compute');
 
 %%
 eaepsrDatabank = databank.fromArray(oo_.endo_simul', M_.endo_names, qq(0,4));
@@ -35,7 +35,7 @@ title('EAA r')
 ylabel('p.p. deviation from steady state')
 
 %% analying the output of the simulation
-monetarySimOutput = load(fullfile(project_path, 'eagleParsingTemp_sim_BIG1', 'modFiles', 'shock_ea_epsr1', 'Output', 'shock_ea_epsr1_results.mat'));
+monetarySimOutput = load(fullfile(project_path, 'eagleParsingTemp_sim_BIG1', 'modFiles', 'shock_ea_monpol_exp', 'Output', 'shock_ea_monpol_exp_results.mat'));
 M_ = monetarySimOutput.M_;
 
 dataRange = qq(0, 4): qq(0, 4)+size(monetarySimOutput.oo_.endo_simul', 1) - 1;

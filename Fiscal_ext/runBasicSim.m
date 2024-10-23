@@ -19,6 +19,8 @@ dynare_config
 %%
 cd(fullfile(project_path, 'Fiscal_ext','modFiles'));
 
+%%
+
 dynare steady0_EAGLE_Fiscal.mod
 
 % calculating the steady state
@@ -32,3 +34,6 @@ dynare EAB_EAGLE_Fiscal_epsgc.mod
 
 % shock simulation: gi
 dynare EAB_EAGLE_Fiscal_epsgi.mod
+
+%%
+dynare('shock_ea_monpol_exp.mod', sprintf('-I%s/%s/submodules', project_path, 'Fiscal_ext'), 'savemacro', 'json=compute');
