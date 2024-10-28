@@ -1,13 +1,83 @@
-MODEL STEADY STATE: (method=ByteCode own solver)
------------------------------------
-      Simulate iteration no 1     
-      max. error=1.9622540927e-04       
-      sqr. error=4.8135553042e-08       
-      abs. error=2.9710840897e-04       
------------------------------------
- 
+Starting Dynare (version 6.0).
+Calling Dynare with arguments: none
+Starting preprocessing of the model file ...
+Reading eagle_steady_EAGLE_Fiscal.txt.
+WARNING: Unknown symbol AUX_ENDO_LAG_206_1 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_206_2 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_206_3 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_193_1 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_193_2 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_193_3 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_174_1 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_271_1 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_271_2 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_271_3 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_602_1 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_602_2 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_602_3 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_589_1 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_589_2 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_589_3 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_570_1 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_667_1 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_667_2 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_667_3 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_997_1 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_997_2 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_997_3 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_984_1 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_984_2 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_984_3 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_965_1 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1062_1 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1062_2 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1062_3 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1394_1 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1394_2 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1394_3 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1381_1 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1381_2 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1381_3 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1362_1 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1456_1 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1456_2 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_1456_3 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_86_1 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_226_1 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_622_1 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_3_1 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_3_2 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: Unknown symbol AUX_ENDO_LAG_3_3 in eagle_steady_EAGLE_Fiscal.txt
+WARNING: EAB_EAGLE_Fiscal_epsgc.mod:22.1-22: The 'simul' statement is deprecated. Please use 'perfect_foresight_setup' and 'perfect_foresight_solver' instead.
+Substitution of endo lags >= 2: added 62 auxiliary variables and equations.
+Found 1149 equation(s).
+Evaluating expressions...
+Computing static model derivatives (order 1).
+Normalizing the static model...
+Finding the optimal block decomposition of the static model...
+125 block(s) found:
+  121 recursive block(s) and 4 simultaneous block(s).
+  the largest simultaneous block has 590 equation(s)
+                                 and 590 feedback variable(s).
+Computing dynamic model derivatives (order 1).
+Normalizing the dynamic model...
+Finding the optimal block decomposition of the dynamic model...
+59 block(s) found:
+  58 recursive block(s) and 1 simultaneous block(s).
+  the largest simultaneous block has 720 equation(s)
+                                 and 613 feedback variable(s).
+Preprocessing completed.
+Preprocessing time: 0h00m02s.
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 1.962e-04
+      2-norm error   = 2.194e-04
+      1-norm error   = 2.971e-04
+------------------------------------
+
 STEADY-STATE RESULTS:
- 
+
 EA_bf               		 -0.41581
 EA_m                		 0.808377
 EA_pic4             		 1.02
@@ -131,7 +201,7 @@ EAA_fn              		 5.21558
 EAA_gammab          		 0
 EAA_gammai          		 0
 EAA_gammaider       		 0
-EAA_gammau          		 -1.11022e-16
+EAA_gammau          		 5.55112e-17
 EAA_gammauder       		 0.0341569
 EAA_gammav          		 0.000190228
 EAA_gammavi         		 0.000101021
@@ -401,7 +471,7 @@ EAB_fn              		 35.3767
 EAB_gammab          		 0
 EAB_gammai          		 0
 EAB_gammaider       		 0
-EAB_gammau          		 4.50681e-15
+EAB_gammau          		 2.41282e-16
 EAB_gammauder       		 0.0335876
 EAB_gammav          		 0.000536247
 EAB_gammavi         		 0.000101021
@@ -507,7 +577,7 @@ EAB_sh              		 1
 EAB_si              		 1
 EAB_sj              		 1
 EAB_snt             		 1
-EAB_t               		 -4.44403e-07
+EAB_t               		 -4.44404e-07
 EAB_tauc            		 0.1535
 EAB_taud            		 0
 EAB_tauk            		 0.1363
@@ -516,8 +586,8 @@ EAB_tauwf           		 0.1388
 EAB_tauwh           		 0.15185
 EAB_tb              		 0.300032
 EAB_tby             		 0.0321704
-EAB_ti              		 -5.33284e-07
-EAB_tj              		 -1.77761e-07
+EAB_ti              		 -5.33285e-07
+EAB_tj              		 -1.77762e-07
 EAB_tot             		 0.686468
 EAB_tr              		 -0.343842
 EAB_tri             		 -0.229228
@@ -527,7 +597,7 @@ EAB_ttc             		 4.04924
 EAB_ttcg            		 0.348297
 EAB_tti             		 1.40021
 EAB_ttig            		 0.143526
-EAB_ty              		 -4.76504e-08
+EAB_ty              		 -4.76505e-08
 EAB_u               		 1
 EAB_utili           		 149.026
 EAB_utilj           		 -291.694
@@ -543,7 +613,7 @@ EAB_wjtilde         		 1.33324
 EAB_wnty            		 0.413886
 EAB_wy              		 0.317312
 EAB_y               		 8.55769
-EAB_ygap            		 -6.50454e-08
+EAB_ygap            		 -6.50455e-08
 EAB_ygrowth         		 1
 EAB_ygrowth4        		 1
 EAB_yhty            		 0.493725
@@ -671,7 +741,7 @@ RW_fn               		 8.17731
 RW_gammab           		 0
 RW_gammai           		 0
 RW_gammaider        		 0
-RW_gammau           		 -1.08594e-15
+RW_gammau           		 -6.9865e-17
 RW_gammauder        		 0.0338298
 RW_gammav           		 0.000264095
 RW_gammavi          		 0.000101021
@@ -786,8 +856,8 @@ RW_tauwf            		 0.071
 RW_tauwh            		 0.071
 RW_tb               		 -0.01099
 RW_tby              		 -0.00246516
-RW_ti               		 5.69335e-07
-RW_tj               		 1.89778e-07
+RW_ti               		 5.69336e-07
+RW_tj               		 1.89779e-07
 RW_tot              		 0.680002
 RW_tr               		 0.0798456
 RW_tri              		 0.0532304
@@ -940,7 +1010,7 @@ US_fj               		 19.2345
 US_fn               		 9.00631
 US_gammai           		 0
 US_gammaider        		 0
-US_gammau           		 5.55112e-16
+US_gammau           		 -5.55112e-17
 US_gammauder        		 0.0338298
 US_gammav           		 0.000328339
 US_gammavi          		 0.000101021
@@ -1093,98 +1163,115 @@ US_zn               		 1
 US_zt               		 1
 EAAEAB_nerdep       		 1
 EAA_gammabh         		 0
-EAA_bh              		 5.83367e-13
-EAB_bh              		 -5.77529e-11
-MODEL SIMULATION: (method=ByteCode own solver)
------------------------------------
-      Simulate iteration no 1     
-      max. error=3.7113169349e-02       
-      sqr. error=7.2697933247e-03       
-      abs. error=5.2422179129e-01       
------------------------------------
-(** 23237.000000 milliseconds **)
-Sim : 1320.000000 ms
-Sim : 1480.000000 ms
-Divergence or slowdown occured during simulation.
-In the next iteration, pivoting method will be applied for a longer period.
------------------------------------
-      Simulate iteration no 2     
-      max. error=7.0380906668e-01       
-      sqr. error=1.7615281825e+00       
-      abs. error=4.6626008932e+00       
------------------------------------
-(** 27038.000000 milliseconds **)
-Sim : 1302.000000 ms
-Divergence or slowdown occured during simulation.
-In the next iteration, pivoting method will be applied for a longer period.
------------------------------------
-      Simulate iteration no 3     
-      max. error=9.5619269979e-02       
-      sqr. error=7.5400222919e-01       
-      abs. error=1.6210619084e+01       
------------------------------------
-(** 30832.000000 milliseconds **)
-Sim : 1627.000000 ms
------------------------------------
-      Simulate iteration no 4     
-      max. error=5.1538753839e-05       
-      sqr. error=1.1885642476e-08       
-      abs. error=1.2575477250e-03       
------------------------------------
-(** 26588.000000 milliseconds **)
-Sim : 1404.000000 ms
------------------------------------
-      Simulate iteration no 5     
-      max. error=2.4246015124e-08       
-      sqr. error=6.8372705653e-14       
-      abs. error=1.0481977192e-05       
------------------------------------
-Total computing time : 0h01m58s
+EAA_bh              		 -1.01973e-12
+EAB_bh              		 1.00954e-10
+MODEL SIMULATION: (method=LBJ with Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 9.326e-02
+      2-norm error   = 2.141e-01
+      1-norm error   = 1.230e+00
+------------------------------------
+(** 7.74 seconds **)
+------------------------------------
+      Iteration no. 2
+      Inf-norm error = 4.918e+02
+      2-norm error   = 4.926e+02
+      1-norm error   = 5.844e+02
+------------------------------------
+(** 8.46 seconds **)
+------------------------------------
+      Iteration no. 3
+      Inf-norm error = 4.795e+00
+      2-norm error   = 1.144e+01
+      1-norm error   = 2.526e+02
+------------------------------------
+(** 7.46 seconds **)
+------------------------------------
+      Iteration no. 4
+      Inf-norm error = 3.548e-03
+      2-norm error   = 3.899e-03
+      1-norm error   = 2.260e-02
+------------------------------------
+(** 7.26 seconds **)
+------------------------------------
+      Iteration no. 5
+      Inf-norm error = 4.134e-05
+      2-norm error   = 8.295e-05
+      1-norm error   = 3.264e-03
+------------------------------------
+(** 7.24 seconds **)
+------------------------------------
+      Iteration no. 6
+      Inf-norm error = 4.885e+02
+      2-norm error   = 5.206e+02
+      1-norm error   = 7.430e+02
+------------------------------------
+(** 7.74 seconds **)
+------------------------------------
+      Iteration no. 7
+      Inf-norm error = 5.130e+00
+      2-norm error   = 7.661e+00
+      1-norm error   = 1.747e+01
+------------------------------------
+(** 7.25 seconds **)
+------------------------------------
+      Iteration no. 8
+      Inf-norm error = 6.370e-03
+      2-norm error   = 9.080e-03
+      1-norm error   = 6.843e-02
+------------------------------------
+(** 7.25 seconds **)
+------------------------------------
+      Iteration no. 9
+      Inf-norm error = 6.693e-05
+      2-norm error   = 1.120e-04
+      1-norm error   = 3.410e-03
+------------------------------------
+(** 8.41 seconds **)
+------------------------------------
+      Iteration no. 10
+      Inf-norm error = 5.133e+02
+      2-norm error   = 5.490e+02
+      1-norm error   = 7.474e+02
+------------------------------------
+(** 8.10 seconds **)
+------------------------------------
+      Iteration no. 11
+      Inf-norm error = 4.792e+00
+      2-norm error   = 7.143e+00
+      1-norm error   = 1.651e+01
+------------------------------------
+(** 7.27 seconds **)
+------------------------------------
+      Iteration no. 12
+      Inf-norm error = 6.523e-03
+      2-norm error   = 9.276e-03
+      1-norm error   = 7.105e-02
+------------------------------------
+(** 8.42 seconds **)
+------------------------------------
+      Iteration no. 13
+      Inf-norm error = 9.651e-05
+      2-norm error   = 1.379e-04
+      1-norm error   = 3.744e-03
+------------------------------------
+(** 7.27 seconds **)
+------------------------------------
+      Iteration no. 14
+      Inf-norm error = 1.161e-05
+      2-norm error   = 5.456e-05
+      1-norm error   = 3.062e-03
+------------------------------------
+(** 8.05 seconds **)
+------------------------------------
+      Iteration no. 15
+      Inf-norm error = 1.862e-07
+      2-norm error   = 1.074e-06
+      1-norm error   = 4.734e-05
+------------------------------------
 
-Dynare Preprocessor Warning(s) Encountered:
-     WARNING: Unknown symbol AUX_ENDO_LAG_207_1 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_207_2 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_207_3 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_194_1 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_194_2 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_194_3 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_175_1 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_272_1 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_272_2 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_272_3 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_605_1 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_605_2 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_605_3 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_592_1 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_592_2 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_592_3 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_573_1 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_670_1 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_670_2 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_670_3 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1002_1 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1002_2 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1002_3 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_989_1 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_989_2 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_989_3 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_970_1 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1067_1 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1067_2 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1067_3 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1402_1 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1402_2 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1402_3 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1389_1 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1389_2 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1389_3 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1370_1 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1464_1 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1464_2 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_1464_3 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_87_1 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_227_1 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_625_1 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_3_1 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_3_2 in eagle_steady_EAGLE_Fiscal.txt
-     WARNING: Unknown symbol AUX_ENDO_LAG_3_3 in eagle_steady_EAGLE_Fiscal.txt
+Perfect foresight solution found.
+
+Total computing time : 0h02m00s
+Note: 47 warning(s) encountered in the preprocessor

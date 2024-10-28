@@ -504,9 +504,9 @@ varexo
  @{co}_epszinv
  @{co}_epszn
  @{co}_epszt
-@#if !steady
-    @{co}_epsbfy
-@#endif
+// @#if !steady
+//     @{co}_epsbfy
+// @#endif
 ;
 @#endfor
 
