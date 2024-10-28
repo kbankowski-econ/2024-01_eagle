@@ -1,7 +1,6 @@
 @#define steady = 0
 
 @#include "init_EAGLE_Fiscal.mod"
-
 options_.maxit_ = 50;
 options_.stack_solve_algo = 5;
 
@@ -11,7 +10,7 @@ options_.stack_solve_algo = 5;
 
 load_params_and_steady_state('eagle_steady_EAGLE_Fiscal.txt');
 
-steady(solve_algo = 5, markowitz = 5);
+steady(solve_algo = 5, markowitz = 3);
 
 shocks;
 var EA_epsr;
@@ -19,4 +18,5 @@ periods 1;
 values 0.01;
 end;
 
-simul(periods = 50, stack_solve_algo = 5, markowitz = 2);
+simul(periods = 1000);
+
