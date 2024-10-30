@@ -19,7 +19,7 @@ end
 
 %%
 % shock simulation: 4-period g shock in EAB region
-dynare shock_eab_gy1.mod
+dynare ('shock_eab_gy1.mod', 'savemacro')
 
 eabGy1Databank = databank.fromArray(oo_.endo_simul', M_.endo_names, qq(0,4));
 %%

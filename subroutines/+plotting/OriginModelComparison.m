@@ -12,7 +12,7 @@ function figureHandle = OriginModelComparison(results, varConfig, outputFileName
     dataRange = qq(0,1): qq(10, 1);
 
     % Define colors for each model
-    colorList = {'r', 'g','b'};
+    colorList = {'r', 'g', 'm', 'b'};
 
     % Plotting
     figureHandle = figure('Position', [100, 100, 1500, 1000]);

@@ -9,10 +9,11 @@ if false
 end
 
 % shock simulation: gc
-dynare EAB_EAGLE_Fiscal_epsgc.mod
+dynare ('EAB_EAGLE_Fiscal_epsgc.mod', 'savemacro', 'json=compute');
 
 % shock simulation: gi
 dynare EAB_EAGLE_Fiscal_epsgi.mod
 
+%%
 % monetary policy shock
 dynare('shock_ea_monpol.mod', 'savemacro', 'json=compute');
