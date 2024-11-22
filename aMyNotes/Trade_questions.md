@@ -16,7 +16,7 @@ adjust.
 Uses the same methodology as 2010 paper, but the mismatch between the two papers might be due to usage of updated data for share of imports as percentage of GDP. 
 Data for matching the main economic ratios of the regions are taken from the IMF World Economic Outlook database.
 ### Import values 
-<img src="images/2012.png" alt="alt" width="400px" height = '300px' >
+<img src="images/2012.PNG" alt="alt" width="400px" height = '300px' >
 
 ## EAGLE calibration tool 
 
@@ -35,7 +35,7 @@ terms of their share in imports in national accounts.
 
 
 ### Import values 
-<img src="images/calib.png" alt="alt" width="400px">
+<img src="images/calib.PNG" alt="alt" width="400px">
 
 
 
@@ -46,7 +46,7 @@ Available only for Ireland and Slovenia.
 The parameters governing the trade linkages between the model blocs are based on a mix of national accounts data (for the volume of trade) and input-output tables (for the composition, consumption or investment, of traded goods and the bilateral components of trade) available from the countries’ respective national statistical agencies. The remaining parameters in the model are either based on country-specific empirical evidence, where available, or kept consistent with the original model which uses standard values, prevalent in the literature (see Gomes et al. (2012) ).
 
 ### Import values 
-<img src="images/2016.png" alt="alt" width="400px" >
+<img src="images/2016.PNG" alt="alt" width="400px" >
 
 
 ## 12 country model 
