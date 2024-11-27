@@ -18,7 +18,7 @@ utils.call.paths;
 addpath(iris_path);
 iris.startup
 % Call Dynare
-addpath(dynare_6_1_official);
+addpath(dynare_6_1_official, '-frozen');
 dynare_config
 
 %% SS version of the model
