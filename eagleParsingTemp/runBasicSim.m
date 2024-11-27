@@ -18,7 +18,7 @@ utils.call.paths;
 addpath(iris_path);
 iris.startup
 % Call Dynare
-addpath(dynare_6_0);
+addpath(dynare_6_1_official);
 dynare_config
 
 %% SS version of the model
