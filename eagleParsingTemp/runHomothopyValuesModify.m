@@ -1,5 +1,5 @@
 
-fid = fopen('trade_matrix_values_calibrated_old.mod', 'r');
+fid = fopen('trade_matrix_values_calibrated_interim.mod', 'r');
 
 % Initialize an empty vector to store the values
 values = [];

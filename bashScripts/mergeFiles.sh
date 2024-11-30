@@ -17,7 +17,7 @@ while IFS= read -r old_line <&4 || [ -n "$old_line" ]; do
     # Read from new file
     IFS= read -r new_line <&3 || true
     
-    if [[ $old_line == EAA* ]]; then
+    if [[ $old_line == EAB* ]]; then
         # If line starts with EAA, use the line from new.txt
         echo "$new_line" >> "$temp_file"
     else
