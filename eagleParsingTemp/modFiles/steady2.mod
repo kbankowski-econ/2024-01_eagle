@@ -64,7 +64,7 @@ steady(homotopy_steps = 5, maxit=20);
 disp('Trade matrix')
 homotopy_setup;
 
-@#include "trade_matrix_values_calibrated.mod"
+@#include "trade_matrix_values_calibrated_old.mod"
 
 end;
 steady(homotopy_steps = 15);
