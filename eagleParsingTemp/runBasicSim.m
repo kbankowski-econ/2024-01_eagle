@@ -20,9 +20,10 @@ iris.startup
 % Call Dynare
 addpath(dynare_6_0);
 dynare_config
+% Cding to a relevant directory
+cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 
 %% SS version of the model
-cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 dynare('load0.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
 %% non-SS version of the model
