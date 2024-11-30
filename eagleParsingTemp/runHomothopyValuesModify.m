@@ -27,3 +27,91 @@ options_.homotopy_values(:, 4) = values;
 
 % Running steady state
 steady();
+
+%% trying the see the failed resutls
+M_.endo_nbr
+
+T = array2table(oo_.steady_state, 'RowNames', M_.endo_names, 'VariableNames', "failed");
+
+aaa = load('steady2/Output/steady2_results.mat');
+Told = array2table(aaa.oo_.steady_state, 'RowNames', aaa.M_.endo_names, 'VariableNames', "solved");
+
+Tbig = [T, Told];
+filtered_table = Tbig(contains(Tbig.Properties.RowNames, "_nu"), :);
+
+% value of EAB_nutc goes to zero, which is potentially a problem
+% (1) by looking at the below equation this means that imports appraoch
+% tradables
+% EAB_ttc^((EAB_mutc-1)/EAB_mutc) = (EAB_nutc)^(1/EAB_mutc)*EAB_htc^(1-1/EAB_mutc)+(1-EAB_nutc)^(1/EAB_mutc)*EAB_imc^(1-1/EAB_mutc);
+% S.EAB_ttc^((S.EAB_mutc-1)/S.EAB_mutc) = (S.EAB_nutc)^(1/S.EAB_mutc)*S.EAB_htc^(1-1/S.EAB_mutc)+(1-S.EAB_nutc)^(1/S.EAB_mutc)*S.EAB_imc^(1-1/S.EAB_mutc);
+% and tradables most likely apprach total consumption, which is bound by
+% the calibrated ratio
+% EAB_qc^((EAB_muc-1)/EAB_muc) = (EAB_nuc)^(1/EAB_muc)*EAB_ttc^(1-1/EAB_muc)+(1-EAB_nuc)^(1/EAB_muc)*EAB_ntc^(1-1/EAB_muc);
+% S.EAB_qc^((S.EAB_muc-1)/S.EAB_muc) = (S.EAB_nuc)^(1/S.EAB_muc)*S.EAB_ttc^(1-1/S.EAB_muc)+(1-S.EAB_nuc)^(1/S.EAB_muc)*S.EAB_ntc^(1-1/S.EAB_muc)
+
+% saving S structure and checking my hypothesis
+S = struct();
+for i = 1:height(T)
+    S.(T(i, :).Properties.RowNames{:}) = T{i, "failed"};
+end
+for i = 1:length(M_.param_names)
+    S.(M_.param_names{i}) = M_.params(i);
+end
+S.EAB_imc
+% ans =
+% 
+%     0.6116
+S.EAB_ttc
+% ans =
+% 
+%     0.6125
+S.EAB_qc
+% ans =
+% 
+%     1.4619
+S.EAB_c
+% ans =
+% 
+%     1.4617
+
+% Below is the maximum that can be reached; and we are pushing it to 30%;
+% no way this will work
+EAB_imcy = S.EAB_pimc*S.EAB_imc/(S.EAB_py*S.EAB_y);
+% ans =
+% 
+%     0.2695
+S.EAB_cy % 0.5581
+S.EAB_qc/(S.EAB_py*S.EAB_y) % 0.5582 (0.2698 + 0.2884)
+S.EAB_ttc*S.EAB_pttc/(S.EAB_py*S.EAB_y) % 0.2698
+S.EAB_ntc*S.EAB_pnt/(S.EAB_py*S.EAB_y) % 0.2884
+S.EAB_nuc % 0.4500
+S.EAB_pnt % 0.8825
+
+%%
+% the upper ceiling for imports is the amount of tradables
+% Q: let's see whether the tradables ratio to GDP from the previous ss is the latest import
+% ratio where the solution breaks
+S1 = struct();
+for i = 1:height(Told)
+    S1.(Told(i, :).Properties.RowNames{:}) = Told{i, "solved"};
+end
+for i = 1:length(aaa.M_.param_names)
+    S1.(aaa.M_.param_names{i}) = aaa.M_.params(i);
+end
+
+S1.EAB_cy % 0.5581
+S1.EAB_qc/(S1.EAB_py*S1.EAB_y) % 0.5582 (0.2382 + 0.3199)
+S1.EAB_ttc*S1.EAB_pttc/(S1.EAB_py*S1.EAB_y) % 0.2382
+S1.EAB_ntc*S1.EAB_pnt/(S1.EAB_py*S1.EAB_y) % 0.3199
+S1.EAB_nuc %0.4500
+S1.EAB_pnt % 1.0860
+% A: one can't think in these terms because relative prices change; it hard
+% to pin down the tradables ratio; with consupmtion goods its is much
+% easier because the price is a numeraire so it is the same for all steady
+% states
+
+%%
+% what we can do is to reduce the numbers in the modi file at least the
+% values of the old steady state and see whether solution will be found
+S1.EAB_ttc*S1.EAB_pttc/(S1.EAB_py*S1.EAB_y) % 0.2382
+S1.EAB_tti*S1.EAB_ptti/(S1.EAB_py*S1.EAB_y) % 0.1463
