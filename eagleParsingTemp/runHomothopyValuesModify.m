@@ -32,8 +32,7 @@ steady();
 M_.endo_nbr
 
 T = array2table(oo_.steady_state, 'RowNames', M_.endo_names, 'VariableNames', "failed");
-
-aaa = load('steady2/Output/steady2_results.mat');
+aaa = load(fullfile(project_path, "eagleParsingTemp", "modFiles", "steady2/Output/steady2_results.mat"));
 Told = array2table(aaa.oo_.steady_state, 'RowNames', aaa.M_.endo_names, 'VariableNames', "solved");
 
 Tbig = [T, Told];
