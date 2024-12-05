@@ -3,23 +3,7 @@
 % some TODO items; first to load the model and then later to
 % solve for its SS)
 
-%% preamble
-clear all; close all; clc; restoredefaultpath
-% Add some paths
-currentFolder = pwd; % Get current directory
-[parentFolder, ~, ~] = fileparts(currentFolder);
-addpath(genpath(parentFolder));
-
-%% performing data transformation
-fprintf('\n\n\n+++ Initialising the project ...\n');
-% calling a specific user input not tracked by GIT
 utils.call.paths;
-% Call Iris
-addpath(iris_path);
-iris.startup
-% Call Dynare
-addpath(dynare_6_0);
-dynare_config
 % Cding to a relevant directory
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 
