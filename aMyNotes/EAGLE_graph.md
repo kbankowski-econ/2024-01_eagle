@@ -17,11 +17,11 @@ graph TD
   tti[<b>tti</b>]:::floatStyle
   nti[<b>nti</b>]:::floatStyle
 
-  J[Domestic tradable intermediate consumption goods, <b>HT<sup>c</sup></b>]:::floatStyle
-  K[Imported tradable intermediate consumption goods, <b>IM<sup>c</sup></b>]:::floatStyle
+  htc[<b>htc</b>]:::floatStyle
+  imc[<b>imc</b>]:::floatStyle
 
-  L[Domestic tradable intermediate investment goods, <b>HT<sup>i</sup></b>]:::floatStyle
-  M[Imported tradable intermediate investment goods, <b>IM<sup>i</sup></b>]:::floatStyle
+  hti[<b>hti</b>]:::floatStyle
+  imi[<b>imi</b>]:::floatStyle
 
   yst[<b>yst=sh\*ht+sx\*ex</b>]:::floatStyle
   ysn[<b>ysn=nt+snt</b>]:::floatStyle
@@ -39,11 +39,11 @@ graph TD
   qc --> |<span style="font-size:28px;">&nu;<sub>qc</sub></span>| ttc
   qc --> |<span style="font-size:28px;">1-&nu;<sub>qc</sub></span>| ntc
   qi --> |<span style="font-size:28px;">&nu;<sub>I</sub></span>| nti
-  qi --> |<span style="font-size:28px;">1-&nu;<sub>I</sub></span>| I
-  ttc --> |<span style="font-size:28px;">&nu;<sub>TC</sub></span>| J
-  ttc --> |<span style="font-size:28px;">1-&nu;<sub>TC</sub></span>| K
-  nti --> |<span style="font-size:28px;">&nu;<sub>TI</sub></span>| L
-  nti --> |<span style="font-size:28px;">1-&nu;<sub>TI</sub></span>| M
+  qi --> |<span style="font-size:28px;">1-&nu;<sub>I</sub></span>| tti
+  ttc --> |<span style="font-size:28px;">&nu;<sub>TC</sub></span>| htc
+  ttc --> |<span style="font-size:28px;">1-&nu;<sub>TC</sub></span>| imc
+  nti --> |<span style="font-size:28px;">&nu;<sub>TI</sub></span>| hti
+  nti --> |<span style="font-size:28px;">1-&nu;<sub>TI</sub></span>| imi
   y --> yst
   y --> ysn
   yst --> |<span style="font-size:28px;">&alpha;<sub>T</sub></span>| kdt 
