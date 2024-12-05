@@ -54,10 +54,22 @@ steady(homotopy_steps = 5);
 disp('iy')
 homotopy_setup;
 @#for co in countries
-@{co}_iy, 0.2;
+    @#if co== coGermany
+        @{co}_iy, 0.1906-@{co}_igybar;  
+    @#else
+        @#if co== coUSA
+            @{co}_iy,  0.19-@{co}_igybar; 
+        @#else
+            @#if co== "RW"
+                @{co}_iy,  0.25-@{co}_igybar; 
+            @#else
+                @{co}_iy,  0.21-@{co}_igybar;
+            @#endif
+        @#endif
+    @#endif         
 @#endfor
 end;
-steady(homotopy_steps = 5, maxit=20);
+steady(homotopy_steps = 5);
 
 // Trade matrix
 

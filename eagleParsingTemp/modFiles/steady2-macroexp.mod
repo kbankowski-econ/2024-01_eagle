@@ -80906,23 +80906,23 @@ steady(homotopy_steps = 5);
 // Calibration of nominal investment-to-output ratio
 disp('iy')
 homotopy_setup;
-EAA_iy, 0.2;
-EAB_iy, 0.2;
-EAC_iy, 0.2;
-EAD_iy, 0.2;
-EAE_iy, 0.2;
-EAF_iy, 0.2;
-EAG_iy, 0.2;
-EAH_iy, 0.2;
-EAI_iy, 0.2;
-EAJ_iy, 0.2;
-EAK_iy, 0.2;
-EAL_iy, 0.2;
-EAM_iy, 0.2;
-RW_iy, 0.2;
-US_iy, 0.2;
+                EAA_iy,  0.21-EAA_igybar;
+                EAB_iy,  0.21-EAB_igybar;
+                EAC_iy,  0.21-EAC_igybar;
+                EAD_iy,  0.21-EAD_igybar;
+                EAE_iy,  0.21-EAE_igybar;
+                EAF_iy,  0.21-EAF_igybar;
+                EAG_iy,  0.21-EAG_igybar;
+                EAH_iy,  0.21-EAH_igybar;
+                EAI_iy,  0.21-EAI_igybar;
+                EAJ_iy,  0.21-EAJ_igybar;
+                EAK_iy,  0.21-EAK_igybar;
+                EAL_iy,  0.21-EAL_igybar;
+        EAM_iy, 0.1906-EAM_igybar;  
+                RW_iy,  0.25-RW_igybar; 
+            US_iy,  0.19-US_igybar; 
 end;
-steady(homotopy_steps = 5, maxit=20);
+steady(homotopy_steps = 5);
 // Trade matrix
 disp('Trade matrix')
 homotopy_setup;
