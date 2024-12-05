@@ -6,47 +6,47 @@ graph TD
   A[Output]:::floatStyle
 
   B[Final goods]:::floatStyle
-  C[<b>Q<sup>c</sup></b>]:::floatStyle
-  D[<b>Q<sup>i</sup></b>]:::floatStyle
+  qc[<b>qc</b>]:::floatStyle
+  qi[<b>qi</b>]:::floatStyle
 
-  E[Intermediate goods]:::floatStyle
+  y[y]:::floatStyle
 
-  F[<b>TT<sup>c</sup></b>]:::floatStyle
-  G[<b>NT<sup>c</sup></b>]:::floatStyle
+  ttc[<b>ttc</b>]:::floatStyle
+  ntc[<b>ntc</b>]:::floatStyle
 
-  H[<b>TT<sup>i</sup></b>]:::floatStyle
-  I[<b>NT<sup>i</sup></b>]:::floatStyle
+  tti[<b>tti</b>]:::floatStyle
+  nti[<b>nti</b>]:::floatStyle
 
-  J[<b>HT<sup>c</sup></b>]:::floatStyle
-  K[<b>IM<sup>c</sup></b>]:::floatStyle
+  J[Domestic tradable intermediate consumption goods, <b>HT<sup>c</sup></b>]:::floatStyle
+  K[Imported tradable intermediate consumption goods, <b>IM<sup>c</sup></b>]:::floatStyle
 
-  L[<b>HT<sup>i</sup></b>]:::floatStyle
-  M[<b>IM<sup>i</sup></b>]:::floatStyle
+  L[Domestic tradable intermediate investment goods, <b>HT<sup>i</sup></b>]:::floatStyle
+  M[Imported tradable intermediate investment goods, <b>IM<sup>i</sup></b>]:::floatStyle
 
-  N[<b>Y<sub>T</sub></b>]:::floatStyle
-  O[<b>Y<sub>N</sub></b>]:::floatStyle
+  yst[<b>yst=sh\*ht+sx\*ex</b>]:::floatStyle
+  ysn[<b>ysn=nt+snt</b>]:::floatStyle
 
-  P["<b>K(h)</b>"]:::floatStyle
-  Q["<b>N(h)</b>"]:::floatStyle
+  kdt["<b>kdt</b>"]:::floatStyle
+  ndt["<b>ndt</b>"]:::floatStyle
 
-  R["<b>K(n)</b>"]:::floatStyle
-  S["<b>N(n)</b>"]:::floatStyle
+  kdn["<b>kdn</b>"]:::floatStyle
+  ndn["<b>ndn</b>"]:::floatStyle
 
   A --> B
-  A --> E
-  B --> C
-  B --> D
-  C --> |<span style="font-size:28px;">&nu;<sub>C</sub></span>| F
-  C --> |<span style="font-size:28px;">1-&nu;<sub>C</sub></span>| G
-  D --> |<span style="font-size:28px;">&nu;<sub>I</sub></span>| H
-  D --> |<span style="font-size:28px;">1-&nu;<sub>I</sub></span>| I
-  F --> |<span style="font-size:28px;">&nu;<sub>TC</sub></span>| J
-  F --> |<span style="font-size:28px;">1-&nu;<sub>TC</sub></span>| K
-  H --> |<span style="font-size:28px;">&nu;<sub>TI</sub></span>| L
-  H --> |<span style="font-size:28px;">1-&nu;<sub>TI</sub></span>| M
-  E --> N
-  E --> O
-  N --> |<span style="font-size:28px;">&alpha;<sub>T</sub></span>| P 
-  N --> |<span style="font-size:28px;">1-&alpha;<sub>T</sub></span>| Q
-  O --> |<span style="font-size:28px;">&alpha;<sub>N</sub></span>| R
-  O --> |<span style="font-size:28px;">1-&alpha;<sub>N</sub></span>| S
+  A --> y
+  B --> qc
+  B --> qi
+  qc --> |<span style="font-size:28px;">&nu;<sub>qc</sub></span>| ttc
+  qc --> |<span style="font-size:28px;">1-&nu;<sub>qc</sub></span>| ntc
+  qi --> |<span style="font-size:28px;">&nu;<sub>I</sub></span>| nti
+  qi --> |<span style="font-size:28px;">1-&nu;<sub>I</sub></span>| I
+  ttc --> |<span style="font-size:28px;">&nu;<sub>TC</sub></span>| J
+  ttc --> |<span style="font-size:28px;">1-&nu;<sub>TC</sub></span>| K
+  nti --> |<span style="font-size:28px;">&nu;<sub>TI</sub></span>| L
+  nti --> |<span style="font-size:28px;">1-&nu;<sub>TI</sub></span>| M
+  y --> yst
+  y --> ysn
+  yst --> |<span style="font-size:28px;">&alpha;<sub>T</sub></span>| kdt 
+  yst --> |<span style="font-size:28px;">1-&alpha;<sub>T</sub></span>| ndt
+  ysn --> |<span style="font-size:28px;">&alpha;<sub>N</sub></span>| kdn
+  ysn --> |<span style="font-size:28px;">1-&alpha;<sub>N</sub></span>| ndn
