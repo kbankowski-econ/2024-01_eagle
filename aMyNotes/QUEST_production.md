@@ -25,7 +25,7 @@ graph TD
   B -->|<span style="font-size:28px;">&alpha;</span>|E
 
   C --> |<span style="font-size:28px;">s<sup>J</sup><sub>int</sub></span>| F
-  C --> |<span style="font-size:28px;">1-s;<sup>J</sup><sub>int</sub></span>| G
+  C --> |<span style="font-size:28px;">1-s<sup>J</sup><sub>int</sub></span>| G
 
   F --> |<span style="font-size:28px;">1-s<sub>m</sub></span>| H
   F --> |<span style="font-size:28px;">s<sub>m</sub></span>| I
