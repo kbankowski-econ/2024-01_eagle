@@ -4740,6 +4740,7 @@ US_rer = 1;
 // Euroarea-wide variables
 //-------------
 // GDP
+[name = 'EA_y']
 EA_y = 
 	(
 	EAA_size*EAA_pybar*EAA_y
@@ -4751,10 +4752,13 @@ EA_y =
 	+ EAB_size
 );
 // GDP growth
+[name = 'EA_ygrowth']
 EA_ygrowth= EA_y/EA_y(-1);
 // GDP growth (yoy)
+[name = 'EA_ygrowth4']
 EA_ygrowth4= EA_y/EA_y(-4);
 // Money
+[name = 'EA_m']
 EA_m = 
 	(
 	EAA_size*EAA_m
@@ -4766,6 +4770,7 @@ EA_m =
 	+ EAB_size
 );
 	
+[name = 'EA_bf']
 EA_bf = 
 	(
 		+ EAA_size*EAA_bf	
@@ -4777,6 +4782,7 @@ EA_bf =
 	+ EAB_size
 );
 // Annual inflation
+[name = 'EA_pic4']
 EA_pic4 = 1 
 		* EAA_pic4^(EAA_size/(
 				+ EAA_size
@@ -4788,6 +4794,7 @@ EA_pic4 = 1
 			)) 
 ;
 // Productivity
+[name = 'EA_z']
 log(EA_z) = (1-EA_rhoz)*log(EA_zbar)+EA_rhoz*log(EA_z(-1))+EA_epsz;
 // Auxiliary equation for steady-state output
 EA_ybar = EA_y;
