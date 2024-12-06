@@ -18,9 +18,11 @@ graph TD
  nti[nti: 0.0578]:::nontradable
  ntcg[ntcg: 0.0432]:::nontradable
  ntig[ntig: 0.0169]:::nontradable
- htc[htc]
+ htc[htc: 0.0507]
+ htcg[htcg: 0.0821]
+ hti[hti: 0.0343]
+ htig[htig: 0.0121]
  imc[imc]
- hti[hti]
  imi[imi]
  ysn["ysn=snt\*nt: 0.4310"]:::nontradable
  yst["yst=sh\*ht+sx\*ex: 0.5690"]

@@ -55,6 +55,10 @@ function createDiagram()
         'ttcgy'
         'ttiy'
         'ttigy'
+        'htcy'
+        'htcgy'
+        'htiy'
+        'htigy'
     };
     
     % Read content
@@ -109,6 +113,14 @@ function newTable = calculateSomeRatios(inputTable)
         tempTable = table(s.(aCtry).(aItem+"y"), 'RowNames', aCtry+ "_" +aItem+"y", 'VariableNames', {'ssValue'});
         newTable = [newTable; tempTable];
     end
+
+    % ratios for home tradables
+    for aItem = ["htc", "htcg", "hti", "htig"]
+        s.(aCtry).(aItem+"y") = (s.(aCtry).(aItem)*s.(aCtry).pht)/(s.(aCtry).py*s.(aCtry).y);
+        tempTable = table(s.(aCtry).(aItem+"y"), 'RowNames', aCtry+ "_" +aItem+"y", 'VariableNames', {'ssValue'});
+        newTable = [newTable; tempTable];
+    end
+    
 
 end
 
