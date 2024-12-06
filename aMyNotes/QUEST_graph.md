@@ -12,7 +12,7 @@
             F[Tradable intermediates, <b>INT<sup>T,J</sup></b>]:::floatStyle
             G[Non-tradable intermediates, <b>INT<sup>NT,J</sup></b>]:::floatStyle
             H[Domestic tradable intermediates, <b>INT<sup>T,D,J</sup></b>]:::floatStyle
-            I[Imported tradable intermediates, <b>M<sup>T,J</sup></b>]:::floatStyle
+            I[Imported tradable intermediates, <b>INT<sup>T,M,J</sup></b>]:::floatStyle
             
             A -->|<span style=font-size:28px;>1-s<sup>J</sup><sub>in</sub></span>| B
             A -->|<span style=font-size:28px;>s<sup>J</sup><sub>in</sub></span>| C
@@ -30,11 +30,15 @@
             K[Tradable goods, <b>Z<sup>T</sup></b>]:::floatStyle
             L[Non-tradable goods, <b>Z<sup>NT</sup></b> ]:::floatStyle
             M[Domestically produced tradable goods, <b>Z<sup>T,D</sup></b>]:::floatStyle
-            N[Imported tradable goods, <b>M<sup>T</sup></b>]:::floatStyle
+            N[Imported tradable goods, <b>Z<sup>T, M</sup></b>]:::floatStyle
             
             J -->|<span style=font-size:28px;>s<sup>T</sup></span>| K
             J -->|<span style=font-size:28px;>1-s<sup>T</sup></span>| L
             K -->|<span style=font-size:28px;>1-s<sub>m</sub></span>| M
             K -->|<span style=font-size:28px;>s<sub>m</sub></span>| N
         end
+        O["Total Imports, <b>M<sup>H</sup> = {Z<sup>T,M</sup>, I<sup>J,M</sup>, INT<sup>T,J,M</sup>}"]:::floatStyle
+        N --> O 
+        I --> O
+
 
