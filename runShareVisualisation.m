@@ -59,6 +59,10 @@ function createDiagram()
         'htcgy'
         'htiy'
         'htigy'
+        'imcy'
+        'imcgy'
+        'imiy'
+        'imigy'
     };
     
     % Read content

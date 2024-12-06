@@ -22,8 +22,10 @@ graph TD
  htcg[htcg: 0.0821]
  hti[hti: 0.0343]
  htig[htig: 0.0121]
- imc[imc]
- imi[imi]
+ imc[imc: 0.1843]
+ imcg[imcg: 0.0747]
+ imi[imi: 0.1247]
+ imig[imig: 0.0110]
  ysn["ysn=snt\*nt: 0.4310"]:::nontradable
  yst["yst=sh\*ht+sx\*ex: 0.5690"]
  kdt[kdt]

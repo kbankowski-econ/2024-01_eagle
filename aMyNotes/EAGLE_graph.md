@@ -22,8 +22,10 @@ graph TD
  htcg[htcg: #htcgyValue#]
  hti[hti: #htiyValue#]
  htig[htig: #htigyValue#]
- imc[imc]
- imi[imi]
+ imc[imc: #imcyValue#]
+ imcg[imcg: #imcgyValue#]
+ imi[imi: #imiyValue#]
+ imig[imig: #imigyValue#]
  ysn["ysn=snt\*nt: #yntyValue#"]:::nontradable
  yst["yst=sh\*ht+sx\*ex: #yhtyValue#"]
  kdt[kdt]
