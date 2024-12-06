@@ -5,8 +5,10 @@ graph TD
  classDef nontradable fill:#e6ffe6,stroke:none,color:black,font-size:20px;
  A[Trade balance]
  demand["demand = (ntc+nti+ntcg+ntig)+(htc+hti+htcg+htig)+(imc+imi+imcg+imig)"]
- qc["qc 19.2"]
- qi[qi]
+ qc["qc: 0.55"]
+ qcg["qcg: 0.20"]
+ qi["qi: 0.22"]
+ qig["qig: 0.04"]
  y[y]
  ttc[ttc]
  ntc[ntc]:::nontradable
@@ -18,8 +20,8 @@ graph TD
  imc[imc]
  hti[hti]
  imi[imi]
- ysn[ysn=nt+snt]:::nontradable
- yst[yst=sh\*ht+sx\*ex]
+ ysn["ysn=nt+snt: 0.43"]:::nontradable
+ yst["yst=sh\*ht+sx\*ex: 0.57"]
  kdt[kdt]
  ndt[ndt]
  kdn[kdn]
