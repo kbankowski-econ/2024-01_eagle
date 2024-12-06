@@ -22,8 +22,12 @@ function createDiagram()
         'RowNames', modStruct.M_.param_names, ...
         'VariableNames', "ssValue");
     ssParamTable = [ssTable; paramTable];
+
     % Calculating the total demand, which is not in the model
     ssParamTable = calculateTotalDemand(ssParamTable);
+
+    % Calculating some other ratios, which are not in the model
+    ssParamTable = calculateSomeRatios(ssParamTable);
     
     % Define variables to replace
     varsToReplace = {
@@ -43,6 +47,10 @@ function createDiagram()
         'nutcg'
         'nuti'
         'nutig'
+        'ntcy'
+        'ntiy'
+        'ntcgy'
+        'ntigy'
     };
     
     % Read content
@@ -51,6 +59,7 @@ function createDiagram()
     
     % Replace all variables
     for i = 1:size(varsToReplace, 1)
+        varsToReplace{i}
         placeholder = ['#' varsToReplace{i} 'Value#'];
         value = sprintf('%.4f', ssParamTable{['EAB_', varsToReplace{i}], "ssValue"});
         newContent = regexprep(newContent, placeholder, value);
@@ -72,8 +81,44 @@ function newTable = calculateTotalDemand(inputTable)
     sumSelected = sum(inputTable.ssValue(isDemand));
     
     % Create the new row
-    newRow = table(sumSelected, 'RowNames', strcat({'EAB'}, {'_'}, {'demandy'}), 'VariableNames', {'ssValue'});
+    demandRow = table(sumSelected, 'RowNames', strcat({'EAB'}, {'_'}, {'demandy'}), 'VariableNames', {'ssValue'});
     
     % Append the new row to the original table
-    newTable = [inputTable; newRow];
+    newTable = [inputTable; demandRow];
+end
+
+function newTable = calculateSomeRatios(inputTable)
+    
+    aCtry = "EAB";
+    newTable = inputTable;
+    s = tableToStruct(inputTable);
+
+    for aItem = ["ntc", "ntcg", "nti", "ntig"]
+        s.(aCtry).(aItem+"y") = (s.(aCtry).(aItem)*s.(aCtry).pnt)/(s.(aCtry).py*s.(aCtry).y);
+        tempTable = table(s.(aCtry).(aItem+"y"), 'RowNames', aCtry+ "_" +aItem+"y", 'VariableNames', {'ssValue'});
+        newTable = [newTable; tempTable];
+    end
+
+end
+
+function outStructure = tableToStruct(inputTable)
+
+    % Extract field names and values
+    fieldNames = inputTable.Properties.RowNames;
+    fieldValues = inputTable.ssValue;
+    
+    % Initialize the main structure
+    outStructure = struct();
+    
+    % Create nested structures
+    for i = 1:length(fieldNames)
+        parts = strsplit(fieldNames{i}, '_');
+        if length(parts) == 2
+            if ~isfield(outStructure, parts{1})
+                outStructure.(parts{1}) = struct();
+            end
+            outStructure.(parts{1}).(parts{2}) = fieldValues(i);
+        end
+    end
+
 end
