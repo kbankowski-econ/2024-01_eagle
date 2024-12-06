@@ -10,9 +10,11 @@ graph TD
  qi["qi: #iyValue#"]
  qig["qig: #igyValue#"]
  y[y]
- ttc[ttc]
+ ttc[ttc: #ttcyValue#]
+ ttcg[ttcg: #ttcgyValue#]
+ tti[tti: #ttiyValue#]
+ ttig[ttig: #ttigyValue#]
  ntc[ntc: #ntcyValue#]:::nontradable
- tti[tti]
  nti[nti: #ntiyValue#]:::nontradable
  ntcg[ntcg: #ntcgyValue#]:::nontradable
  ntig[ntig: #ntigyValue#]:::nontradable

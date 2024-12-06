@@ -10,9 +10,11 @@ graph TD
  qi["qi: 0.2167"]
  qig["qig: 0.0400"]
  y[y]
- ttc[ttc]
+ ttc[ttc: 0.2350]
+ ttcg[ttcg: 0.1568]
+ tti[tti: 0.1590]
+ ttig[ttig: 0.0231]
  ntc[ntc: 0.3132]:::nontradable
- tti[tti]
  nti[nti: 0.0578]:::nontradable
  ntcg[ntcg: 0.0432]:::nontradable
  ntig[ntig: 0.0169]:::nontradable

@@ -51,6 +51,10 @@ function createDiagram()
         'ntiy'
         'ntcgy'
         'ntigy'
+        'ttcy'
+        'ttcgy'
+        'ttiy'
+        'ttigy'
     };
     
     % Read content
@@ -59,7 +63,6 @@ function createDiagram()
     
     % Replace all variables
     for i = 1:size(varsToReplace, 1)
-        varsToReplace{i}
         placeholder = ['#' varsToReplace{i} 'Value#'];
         value = sprintf('%.4f', ssParamTable{['EAB_', varsToReplace{i}], "ssValue"});
         newContent = regexprep(newContent, placeholder, value);
@@ -93,8 +96,16 @@ function newTable = calculateSomeRatios(inputTable)
     newTable = inputTable;
     s = tableToStruct(inputTable);
 
+    % ratios for non-tradables
     for aItem = ["ntc", "ntcg", "nti", "ntig"]
         s.(aCtry).(aItem+"y") = (s.(aCtry).(aItem)*s.(aCtry).pnt)/(s.(aCtry).py*s.(aCtry).y);
+        tempTable = table(s.(aCtry).(aItem+"y"), 'RowNames', aCtry+ "_" +aItem+"y", 'VariableNames', {'ssValue'});
+        newTable = [newTable; tempTable];
+    end
+
+    % ratios for tradables
+    for aItem = ["ttc", "ttcg", "tti", "ttig"]
+        s.(aCtry).(aItem+"y") = (s.(aCtry).(aItem)*s.(aCtry).("p"+aItem))/(s.(aCtry).py*s.(aCtry).y);
         tempTable = table(s.(aCtry).(aItem+"y"), 'RowNames', aCtry+ "_" +aItem+"y", 'VariableNames', {'ssValue'});
         newTable = [newTable; tempTable];
     end
