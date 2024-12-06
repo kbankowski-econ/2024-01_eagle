@@ -1,8 +1,9 @@
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '20px' }}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '20px', 'edgeLabelBackground': '#e6e6e6' }}}%%
 graph TD
  classDef default fill:none,stroke:none,color:black,font-size:20px;
  classDef nontradable fill:#e6ffe6,stroke:none,color:black,font-size:20px;
+ classDef imported fill:#ffffe6,stroke:none,color:black,font-size:20px;
  tby["tby: -0.0049"]
  demand["demand = (ntc+nti+ntcg+ntig)+(htc+hti+htcg+htig)+(imc+imi+imcg+imig): 1.0049"]
  qc["qc: 0.5481"]
@@ -22,10 +23,10 @@ graph TD
  htcg[htcg: 0.0821]
  hti[hti: 0.0343]
  htig[htig: 0.0121]
- imc[imc: 0.1843]
- imcg[imcg: 0.0747]
- imi[imi: 0.1247]
- imig[imig: 0.0110]
+ imc[imc: 0.1843]:::imported
+ imcg[imcg: 0.0747]:::imported
+ imi[imi: 0.1247]:::imported
+ imig[imig: 0.0110]:::imported
  ysn["ysn=snt\*nt: 0.4310"]:::nontradable
  yst["yst=sh\*ht+sx\*ex: 0.5690"]
  kdt[kdt]
