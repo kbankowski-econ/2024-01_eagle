@@ -4,7 +4,7 @@ graph TD
  classDef default fill:none,stroke:none,color:black,font-size:20px;
  classDef nontradable fill:#e6ffe6,stroke:none,color:black,font-size:20px;
  A[Trade balance]
- demand["demand = (ntc+nti+ntcg+ntig)+(htc+hti+htcg+htig)+(imc+imi+imcg+imig)"]
+ demand["demand = (ntc+nti+ntcg+ntig)+(htc+hti+htcg+htig)+(imc+imi+imcg+imig): 1.00"]
  qc["qc: 0.55"]
  qcg["qcg: 0.20"]
  qi["qi: 0.22"]
