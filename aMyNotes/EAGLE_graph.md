@@ -1,52 +1,43 @@
 ```mermaid
-%%{init: {themeVariables: {primaryColor: 'transparent', edgeLabelBackground: 'white', fontFamily: 'Times New Roman', nodeBorder: 'transparent', background: 'transparent'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '20px' }}}%%
 graph TD
-  classDef floatStyle fill:none,stroke:none,color:black,font-size:28px,font-family:'Times New Roman';
-
-  A[Output]:::floatStyle
-
-  B[Final goods]:::floatStyle
-  qc[<b>qc</b>]:::floatStyle
-  qi[<b>qi</b>]:::floatStyle
-
-  y[y]:::floatStyle
-
-  ttc[<b>ttc</b>]:::floatStyle
-  ntc[<b>ntc</b>]:::floatStyle
-
-  tti[<b>tti</b>]:::floatStyle
-  nti[<b>nti</b>]:::floatStyle
-
-  htc[<b>htc</b>]:::floatStyle
-  imc[<b>imc</b>]:::floatStyle
-
-  hti[<b>hti</b>]:::floatStyle
-  imi[<b>imi</b>]:::floatStyle
-
-  yst[<b>yst=sh\*ht+sx\*ex</b>]:::floatStyle
-  ysn[<b>ysn=nt+snt</b>]:::floatStyle
-
-  kdt["<b>kdt</b>"]:::floatStyle
-  ndt["<b>ndt</b>"]:::floatStyle
-
-  kdn["<b>kdn</b>"]:::floatStyle
-  ndn["<b>ndn</b>"]:::floatStyle
-
-  A --> B
-  A --> y
-  B --> qc
-  B --> qi
-  qc --> |<span style="font-size:28px;">&nu;<sub>qc</sub></span>| ttc
-  qc --> |<span style="font-size:28px;">1-&nu;<sub>qc</sub></span>| ntc
-  qi --> |<span style="font-size:28px;">&nu;<sub>I</sub></span>| nti
-  qi --> |<span style="font-size:28px;">1-&nu;<sub>I</sub></span>| tti
-  ttc --> |<span style="font-size:28px;">&nu;<sub>TC</sub></span>| htc
-  ttc --> |<span style="font-size:28px;">1-&nu;<sub>TC</sub></span>| imc
-  nti --> |<span style="font-size:28px;">&nu;<sub>TI</sub></span>| hti
-  nti --> |<span style="font-size:28px;">1-&nu;<sub>TI</sub></span>| imi
-  y --> yst
-  y --> ysn
-  yst --> |<span style="font-size:28px;">&alpha;<sub>T</sub></span>| kdt 
-  yst --> |<span style="font-size:28px;">1-&alpha;<sub>T</sub></span>| ndt
-  ysn --> |<span style="font-size:28px;">&alpha;<sub>N</sub></span>| kdn
-  ysn --> |<span style="font-size:28px;">1-&alpha;<sub>N</sub></span>| ndn
+    classDef default fill:none,stroke:none,color:black,font-size:20px;
+    
+    A[Output]
+    B[Final goods]
+    qc[qc]
+    qi[qi]
+    y[y]
+    ttc[ttc]
+    ntc[ntc]
+    tti[tti]
+    nti[nti]
+    htc[htc]
+    imc[imc]
+    hti[hti]
+    imi[imi]
+    yst[yst=sh\*ht+sx\*ex]
+    ysn[ysn=nt+snt]
+    kdt[kdt]
+    ndt[ndt]
+    kdn[kdn]
+    ndn[ndn]
+    
+    A --> B
+    A --> y
+    B --> qc
+    B --> qi
+    qc --> |nuc| ttc
+    qc --> |1-nuc| ntc
+    ttc --> |nutc| htc
+    ttc --> |1-nutc| imc
+    qi --> |nui| nti
+    qi --> |1-nui| tti
+    tti --> |nuti| hti
+    tti --> |1-nuti| imi
+    y --> yst
+    y --> ysn
+    yst --> |αT| kdt
+    yst --> |1-αT| ndt
+    ysn --> |αN| kdn
+    ysn --> |1-αN| ndn
