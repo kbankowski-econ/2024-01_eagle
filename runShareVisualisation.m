@@ -18,9 +18,12 @@ function createDiagram()
     ssTable = array2table(modStruct.oo_.steady_state, ...
         'RowNames', modStruct.M_.endo_names, ...
         'VariableNames', "ssValue");
-
+    paramTable = array2table(modStruct.M_.params, ...
+        'RowNames', modStruct.M_.param_names, ...
+        'VariableNames', "ssValue");
+    ssParamTable = [ssTable; paramTable];
     % Calculating the total demand, which is not in the model
-    ssTable = calculateTotalDemand(ssTable);
+    ssParamTable = calculateTotalDemand(ssParamTable);
     
     % Define variables to replace
     varsToReplace = {
@@ -30,7 +33,16 @@ function createDiagram()
         'igy'
         'ynty'
         'yhty'
+        'tby'
         'demandy'
+        'nuc'
+        'nucg'
+        'nui'
+        'nuig'
+        'nutc'
+        'nutcg'
+        'nuti'
+        'nutig'
     };
     
     % Read content
@@ -40,7 +52,7 @@ function createDiagram()
     % Replace all variables
     for i = 1:size(varsToReplace, 1)
         placeholder = ['#' varsToReplace{i} 'Value#'];
-        value = sprintf('%.2f', ssTable{['EAB_', varsToReplace{i}], "ssValue"});
+        value = sprintf('%.4f', ssParamTable{['EAB_', varsToReplace{i}], "ssValue"});
         newContent = regexprep(newContent, placeholder, value);
     end
     

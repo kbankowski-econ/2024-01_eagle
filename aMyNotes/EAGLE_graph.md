@@ -3,7 +3,7 @@
 graph TD
  classDef default fill:none,stroke:none,color:black,font-size:20px;
  classDef nontradable fill:#e6ffe6,stroke:none,color:black,font-size:20px;
- A[Trade balance]
+ tby["tby: #tbyValue#"]
  demand["demand = (ntc+nti+ntcg+ntig)+(htc+hti+htcg+htig)+(imc+imi+imcg+imig): #demandyValue#"]
  qc["qc: #cyValue#"]
  qcg["qcg: #cgyValue#"]
@@ -20,34 +20,34 @@ graph TD
  imc[imc]
  hti[hti]
  imi[imi]
- ysn["ysn=nt+snt: #yntyValue#"]:::nontradable
+ ysn["ysn=snt\*nt: #yntyValue#"]:::nontradable
  yst["yst=sh\*ht+sx\*ex: #yhtyValue#"]
  kdt[kdt]
  ndt[ndt]
  kdn[kdn]
  ndn[ndn]
- A --> demand
- A --> y
+ tby --> demand
+ tby --> y
  demand --> qc
  demand --> qcg
  demand --> qi
  demand --> qig
- qc --> |nuc| ttc
+ qc --> |nuc: #nucValue#| ttc
  qc --> |1-nuc| ntc
- ttc --> |nutc| htc
+ ttc --> |nutc: #nutcValue#| htc
  ttc --> |1-nutc| imc
- qcg --> |nucg| ttcg
+ qcg --> |nucg: #nucgValue#| ttcg
  qcg --> |1-nucg| ntcg
- ttcg --> |nutc| htcg
- ttcg --> |1-nutc| imcg
- qi --> |nui| nti
+ ttcg --> |nutcg: #nutcgValue#| htcg
+ ttcg --> |1-nutcg| imcg
+ qi --> |nui: #nuiValue#| nti
  qi --> |1-nui| tti
- tti --> |nuti| hti
+ tti --> |nuti: #nutiValue#| hti
  tti --> |1-nuti| imi
- qig --> |nui| ntig
- qig --> |1-nui| ttig
- ttig --> |nuti| htig
- ttig --> |1-nuti| imig
+ qig --> |nuig: #nuigValue#| ntig
+ qig --> |1-nuig| ttig
+ ttig --> |nutig: #nutigValue#| htig
+ ttig --> |1-nutig| imig
  y --> yst
  y --> ysn
  yst --> |alphat| kdt
