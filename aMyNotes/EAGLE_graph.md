@@ -1,8 +1,8 @@
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '20px' }}}%%
-graph TD
- classDef default fill:none,stroke:none,color:black,font-size:20px;
- classDef nontradable fill:#e6ffe6,stroke:none,color:black,font-size:20px;
+graph LR
+ classDef default fill:none,stroke:none,color:black,font-size:28;
+ classDef nontradable fill:#e6ffe6,stroke:none,color:black,font-size:28px;
  tby["tby: #tbyValue#"]
  demand["demand = (ntc+nti+ntcg+ntig)+(htc+hti+htcg+htig)+(imc+imi+imcg+imig): #demandyValue#"]
  qc["qc: #cyValue#"]
@@ -32,6 +32,13 @@ graph TD
  ndt[ndt]
  kdn[kdn]
  ndn[ndn]
+
+ subgraph subTotals
+    nt
+    ht
+    im
+ end
+
  tby --> demand
  tby --> y
  demand --> qc
@@ -60,3 +67,15 @@ graph TD
  yst --> |1-alphat| ndt
  ysn --> |alphan| kdn
  ysn --> |1-alphan| ndn
+ imc --> im
+ imcg --> im
+ imi --> im
+ imig --> im
+ htc --> ht
+ htcg --> ht
+ hti --> ht
+ htig --> ht
+ ntc --> nt
+ ntcg --> nt
+ nti --> nt
+ ntig --> nt 
