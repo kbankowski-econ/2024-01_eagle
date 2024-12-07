@@ -1,163 +1,164 @@
-createDiagram("eagleParsingTemp_sim_BIG1", "steady0");
-createDiagram("eagleParsingTemp_sim_BIG1", "steady1");
-createDiagram("eagleParsingTemp_sim_BIG1", "steady2");
-createDiagram("eagleParsingTemp_sim_BIG1", "steady3");
-createDiagram("eagleParsingTemp_sim_BIG1", "steady4");
-createDiagram("eagleParsingTemp_sim_BIG1", "steady5");
+% execution
+createDiagrams('eagleParsingTemp_sim_BIG1', {'steady0', 'steady1', 'steady2', 'steady3', 'steady4', 'steady5'});
 
-%% local functions
+function createDiagrams(modelFolder, steadyStates)
+    % CREATEDIAGRAMS Creates multiple diagrams for different steady states
+    % 
+    % Inputs:
+    %   modelFolder - String, name of the model folder
+    %   steadyStates - Cell array or string array of steady state names
+    %
+    % Example:
+    %   createDiagrams('eagleParsingTemp_sim_BIG1', {'steady0', 'steady1'})
+    
+    % Input validation
+    validateattributes(modelFolder, {'char', 'string'}, {'nonempty'});
+    if ischar(steadyStates) || isstring(steadyStates)
+        steadyStates = {steadyStates};
+    end
+    validateattributes(steadyStates, {'cell'}, {'nonempty'});
+    
+    % Process each steady state
+    cellfun(@(x) createDiagram(modelFolder, x), steadyStates);
+end
+
 function createDiagram(modelFolder, aSteady)
-
-    % reading in project variables
-    utils.call.paths;
-
-    % Define paths and names
-    baseDir = fullfile(project_path, modelFolder, "modFiles");
+    % CREATEDIAGRAM Creates a single diagram for a specific steady state
+    %
+    % Inputs:
+    %   modelFolder - String, name of the model folder
+    %   aSteady - String, name of the steady state
     
-    % Define input/output files
-    inputFile = fullfile(project_path, 'aMyNotes/EAGLE_graph.md');
-    outputFile = fullfile(baseDir, aSteady + "-diagram.md");
-    outputFilePng = fullfile(baseDir, aSteady + "-diagram.png");
-    
-    % Load steady state results
-    resultsFile = fullfile(baseDir, aSteady, "Output", aSteady + "_results.mat");
+    try
+        % Reading in project variables
+        utils.call.paths;
+        
+        % Define paths and names using platform-independent path construction
+        paths = definePaths(project_path, modelFolder, aSteady);
+        
+        % Validate file existence
+        validateFiles(paths);
+        
+        % Load and process steady state results
+        [ssTable, paramTable] = loadSteadyStateResults(paths.resultsFile);
+        ssParamTable = [ssTable; paramTable];
+        
+        % Calculate additional metrics
+        ssParamTable = calculateAdditionalMetrics(ssParamTable);
+        
+        % Process and update content
+        updateContent(paths, ssParamTable);
+        
+        % Export to PNG
+        exportToPNG(paths.outputFile, paths.outputFilePng);
+        
+    catch ME
+        handleError(ME);
+    end
+end
+
+function paths = definePaths(projectPath, modelFolder, steadyState)
+    % Define all necessary paths in a structured way
+    paths = struct();
+    paths.baseDir = fullfile(projectPath, modelFolder, "modFiles");
+    paths.inputFile = fullfile(projectPath, 'aMyNotes', 'EAGLE_graph.md');
+    paths.outputFile = fullfile(paths.baseDir, steadyState + "-diagram.md");
+    paths.outputFilePng = fullfile(paths.baseDir, steadyState + "-diagram.png");
+    paths.resultsFile = fullfile(paths.baseDir, steadyState, "Output", ...
+        steadyState + "_results.mat");
+end
+
+function validateFiles(paths)
+    % Validate existence of required files
+    requiredFiles = {paths.inputFile, paths.resultsFile};
+    for i = 1:length(requiredFiles)
+        if ~isfile(requiredFiles{i})
+            error('Required file does not exist: %s', requiredFiles{i});
+        end
+    end
+end
+
+function [ssTable, paramTable] = loadSteadyStateResults(resultsFile)
+    % Load steady state results and convert to tables
     modStruct = load(resultsFile);
+    
     ssTable = array2table(modStruct.oo_.steady_state, ...
         'RowNames', modStruct.M_.endo_names, ...
         'VariableNames', "ssValue");
+    
     paramTable = array2table(modStruct.M_.params, ...
         'RowNames', modStruct.M_.param_names, ...
         'VariableNames', "ssValue");
-    ssParamTable = [ssTable; paramTable];
+end
 
-    % Calculating the total demand, which is not in the model
-    ssParamTable = calculateTotalDemand(ssParamTable);
-
-    % Calculating some other ratios, which are not in the model
-    ssParamTable = calculateSomeRatios(ssParamTable);
-    
-    % Define variables to replace
-    varsToReplace = {
-        'cy'
-        'cgy'
-        'iy'
-        'igy'
-        'ynty'
-        'yhty'
-        'tby'
-        'demandy'
-        'nuc'
-        'nucg'
-        'nui'
-        'nuig'
-        'nutc'
-        'nutcg'
-        'nuti'
-        'nutig'
-        'ntcy'
-        'ntiy'
-        'ntcgy'
-        'ntigy'
-        'ttcy'
-        'ttcgy'
-        'ttiy'
-        'ttigy'
-        'htcy'
-        'htcgy'
-        'htiy'
-        'htigy'
-        'imcy'
-        'imcgy'
-        'imiy'
-        'imigy'
-        'hty'
-        'nty'
-        'imy'
-        'exy'
-    };
-    
-    % Read content
-    content = fileread(inputFile);
-    newContent = content;
-    
-    % Replace all variables
-    for i = 1:size(varsToReplace, 1)
-        placeholder = ['#' varsToReplace{i} 'Value#'];
-        value = sprintf('%.4f', ssParamTable{['EAB_', varsToReplace{i}], "ssValue"});
-        newContent = regexprep(newContent, placeholder, value);
-    end
-    
-    % Write output
-    fid = fopen(outputFile, 'w');
-    fprintf(fid, '%s', newContent);
-    fclose(fid);
-
-    % Exporting md file into png file
-    system(['mmdc -i ', char(outputFile), ' -o ', char(outputFilePng)]);
-
+function newTable = calculateAdditionalMetrics(inputTable)
+    % Calculate all additional metrics
+    newTable = calculateTotalDemand(inputTable);
+    newTable = calculateEconomicRatios(newTable);
 end
 
 function newTable = calculateTotalDemand(inputTable)
-    % This function takes a table with a 'Quantity' column
-    % and adds a new row with the sum of 'Apple' and 'Banana' quantities
+    % Calculate total demand from components
+    demandComponents = {'cy', 'cgy', 'iy', 'igy'};
+    isDemand = ismember(inputTable.Properties.RowNames, ...
+        strcat({'EAB'}, {'_'}, demandComponents));
     
-    % Calculate sum of Apple and Banana quantities
-    isDemand = ismember(inputTable.Properties.RowNames, strcat({'EAB'}, {'_'}, {'cy', 'cgy', 'iy', 'igy'}));
-    sumSelected = sum(inputTable.ssValue(isDemand));
+    sumDemand = sum(inputTable.ssValue(isDemand));
+    demandRow = table(sumDemand, ...
+        'RowNames', {'EAB_demandy'}, ...
+        'VariableNames', {'ssValue'});
     
-    % Create the new row
-    demandRow = table(sumSelected, 'RowNames', strcat({'EAB'}, {'_'}, {'demandy'}), 'VariableNames', {'ssValue'});
-    
-    % Append the new row to the original table
     newTable = [inputTable; demandRow];
 end
 
-function newTable = calculateSomeRatios(inputTable)
-    
+function newTable = calculateEconomicRatios(inputTable)
+    % Calculate various economic ratios
     aCtry = "EAB";
     newTable = inputTable;
     s = tableToStruct(inputTable);
-
-    % ratios for non-tradables
-    for aItem = ["ntc", "ntcg", "nti", "ntig", "nt"]
-        s.(aCtry).(aItem+"y") = (s.(aCtry).(aItem)*s.(aCtry).pnt)/(s.(aCtry).py*s.(aCtry).y);
-        tempTable = table(s.(aCtry).(aItem+"y"), 'RowNames', aCtry+ "_" +aItem+"y", 'VariableNames', {'ssValue'});
-        newTable = [newTable; tempTable];
-    end
-
-    % ratios for tradables
-    for aItem = ["ttc", "ttcg", "tti", "ttig"]
-        s.(aCtry).(aItem+"y") = (s.(aCtry).(aItem)*s.(aCtry).("p"+aItem))/(s.(aCtry).py*s.(aCtry).y);
-        tempTable = table(s.(aCtry).(aItem+"y"), 'RowNames', aCtry+ "_" +aItem+"y", 'VariableNames', {'ssValue'});
-        newTable = [newTable; tempTable];
-    end
-
-    % ratios for home tradables
-    for aItem = ["htc", "htcg", "hti", "htig", "ht"]
-        s.(aCtry).(aItem+"y") = (s.(aCtry).(aItem)*s.(aCtry).pht)/(s.(aCtry).py*s.(aCtry).y);
-        tempTable = table(s.(aCtry).(aItem+"y"), 'RowNames', aCtry+ "_" +aItem+"y", 'VariableNames', {'ssValue'});
-        newTable = [newTable; tempTable];
-    end
     
-    % ratios for exports
-    for aItem = ["ex"]
-        s.(aCtry).(aItem+"y") = (s.(aCtry).(aItem)*s.(aCtry).("p"+aItem))/(s.(aCtry).py*s.(aCtry).y);
-        tempTable = table(s.(aCtry).(aItem+"y"), 'RowNames', aCtry+ "_" +aItem+"y", 'VariableNames', {'ssValue'});
-        newTable = [newTable; tempTable];
-    end
+    ratioCategories = struct(...
+        'non_tradables', ["ntc", "ntcg", "nti", "ntig", "nt"], ...
+        'tradables', ["ttc", "ttcg", "tti", "ttig"], ...
+        'home_tradables', ["htc", "htcg", "hti", "htig", "ht"], ...
+        'exports', ["ex"]);
+    
+    newTable = calculateRatiosByCategory(newTable, s, aCtry, ratioCategories);
+end
 
+function newTable = calculateRatiosByCategory(baseTable, s, country, categories)
+    newTable = baseTable;
+    fields = fieldnames(categories);
+    
+    for i = 1:length(fields)
+        items = categories.(fields{i});
+        for j = 1:length(items)
+            aItem = items(j);
+            if strcmp(fields{i}, 'non_tradables')
+                price = s.(country).pnt;
+            elseif strcmp(fields{i}, 'home_tradables')
+                price = s.(country).pht;
+            elseif strcmp(fields{i}, 'exports')
+                price = s.(country).pex;
+            else % tradables and imports
+                price = s.(country).("p" + aItem);
+            end
+            
+            ratio = (s.(country).(aItem) * price) / (s.(country).py * s.(country).y);
+            tempTable = table(ratio, ...
+                'RowNames', country + "_" + aItem + "y", ...
+                'VariableNames', {'ssValue'});
+            newTable = [newTable; tempTable];
+        end
+    end
 end
 
 function outStructure = tableToStruct(inputTable)
-
-    % Extract field names and values
-    fieldNames = inputTable.Properties.RowNames;
-    fieldValues = inputTable.ssValue;
-    
-    % Initialize the main structure
+    % Convert table to nested structure
     outStructure = struct();
+    [fieldNames, fieldValues] = deal(inputTable.Properties.RowNames, ...
+        inputTable.ssValue);
     
-    % Create nested structures
     for i = 1:length(fieldNames)
         parts = strsplit(fieldNames{i}, '_');
         if length(parts) == 2
@@ -167,5 +168,65 @@ function outStructure = tableToStruct(inputTable)
             outStructure.(parts{1}).(parts{2}) = fieldValues(i);
         end
     end
+end
 
+function updateContent(paths, ssParamTable)
+    % Update content with calculated values
+    content = fileread(paths.inputFile);
+    newContent = content;
+    
+    varsToReplace = getVariablesToReplace();
+    for i = 1:length(varsToReplace)
+        placeholder = ['#' varsToReplace{i} 'Value#'];
+        value = sprintf('%.4f', ...
+            ssParamTable{['EAB_', varsToReplace{i}], "ssValue"});
+        newContent = regexprep(newContent, placeholder, value);
+    end
+    
+    writeContent(paths.outputFile, newContent);
+end
+
+function vars = getVariablesToReplace()
+    % Define variables to replace
+    vars = {
+        'cy', 'cgy', 'iy', 'igy', 'ynty', 'yhty', 'tby', 'demandy', ...
+        'nuc', 'nucg', 'nui', 'nuig', 'nutc', 'nutcg', 'nuti', 'nutig', ...
+        'ntcy', 'ntiy', 'ntcgy', 'ntigy', 'ttcy', 'ttcgy', 'ttiy', ...
+        'ttigy', 'htcy', 'htcgy', 'htiy', 'htigy', 'imcy', 'imcgy', ...
+        'imiy', 'imigy', 'hty', 'nty', 'imy', 'exy'
+    };
+end
+
+function writeContent(outputFile, content)
+    % Write content to file with error handling
+    [fid, errmsg] = fopen(outputFile, 'w');
+    if fid == -1
+        error('Failed to open output file: %s', errmsg);
+    end
+    
+    try
+        fprintf(fid, '%s', content);
+    catch ME
+        fclose(fid);
+        rethrow(ME);
+    end
+    
+    fclose(fid);
+end
+
+function exportToPNG(inputFile, outputFile)
+    % Export markdown to PNG with error handling
+    [status, cmdout] = system(...
+        sprintf('mmdc -i %s -o %s', inputFile, outputFile))
+    
+    if status ~= 0
+        error('Failed to export to PNG: %s', cmdout);
+    end
+end
+
+function handleError(errorObj)
+    % Centralized error handling
+    errorMessage = sprintf('Error in %s: %s', ...
+        errorObj.stack(1).name, errorObj.message);
+    error('EAGLE:DiagramCreation:Error', errorMessage);
 end
