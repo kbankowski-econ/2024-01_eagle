@@ -1,5 +1,9 @@
 createDiagram("eagleParsingTemp_sim_BIG1", "steady0");
 createDiagram("eagleParsingTemp_sim_BIG1", "steady1");
+createDiagram("eagleParsingTemp_sim_BIG1", "steady2");
+createDiagram("eagleParsingTemp_sim_BIG1", "steady3");
+createDiagram("eagleParsingTemp_sim_BIG1", "steady4");
+createDiagram("eagleParsingTemp_sim_BIG1", "steady5");
 
 %% local functions
 function createDiagram(modelFolder, aSteady)
@@ -13,6 +17,7 @@ function createDiagram(modelFolder, aSteady)
     % Define input/output files
     inputFile = fullfile(project_path, 'aMyNotes/EAGLE_graph.md');
     outputFile = fullfile(baseDir, aSteady + "-diagram.md");
+    outputFilePng = fullfile(baseDir, aSteady + "-diagram.png");
     
     % Load steady state results
     resultsFile = fullfile(baseDir, aSteady, "Output", aSteady + "_results.mat");
@@ -86,6 +91,9 @@ function createDiagram(modelFolder, aSteady)
     fid = fopen(outputFile, 'w');
     fprintf(fid, '%s', newContent);
     fclose(fid);
+
+    % Exporting md file into png file
+    system(['mmdc -i ', char(outputFile), ' -o ', char(outputFilePng)]);
 
 end
 

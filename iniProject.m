@@ -20,6 +20,12 @@ function iniProject()
     % utils.call.credential;
     utils.call.paths;
 
+    % system path to some packages needed for mermaid
+    setenv('PATH', matlabEnv_path);
+    setenv('PATH', [getenv('PATH') [':', node_path]])
+    % this command displays the environment paths
+    % disp(getenv('PATH'))
+    
     % adding paths
     % project
     addpath(genpath(project_path));
