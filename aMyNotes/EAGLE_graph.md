@@ -1,8 +1,11 @@
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '20px' }}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '20px', 'edgeLabelBackground': '#e6e6e6' }}}%%
 graph LR
- classDef default fill:none,stroke:none,color:black,font-size:28;
- classDef nontradable fill:#e6ffe6,stroke:none,color:black,font-size:28px;
+ classDef default fill:none,stroke:none,color:black,font-size:24px;
+classDef nontradable fill:#ccffcc,stroke:none,color:black,font-size:24px;  %% A slightly darker green
+classDef imported fill:#fff2cc,stroke:none,color:black,font-size:24px;    %% A warm, slightly deeper yellow
+classDef hometradable fill:#cce6ff,stroke:none,color:black,font-size:24px; %% A more vibrant blue
+classDef exportable fill:#ffd6cc,stroke:none,color:black,font-size:24px;  %% A soft coral orange
  tby["tby: #tbyValue#"]
  demand["demand = (ntc+nti+ntcg+ntig)+(htc+hti+htcg+htig)+(imc+imi+imcg+imig): #demandyValue#"]
  qc["qc: #cyValue#"]
@@ -14,24 +17,25 @@ graph LR
  ttcg[ttcg: #ttcgyValue#]
  tti[tti: #ttiyValue#]
  ttig[ttig: #ttigyValue#]
+ nt[nt: #ntyValue#]:::nontradable
  ntc[ntc: #ntcyValue#]:::nontradable
  nti[nti: #ntiyValue#]:::nontradable
  ntcg[ntcg: #ntcgyValue#]:::nontradable
  ntig[ntig: #ntigyValue#]:::nontradable
- htc[htc: #htcyValue#]
- htcg[htcg: #htcgyValue#]
- hti[hti: #htiyValue#]
- htig[htig: #htigyValue#]
- imc[imc: #imcyValue#]
- imcg[imcg: #imcgyValue#]
- imi[imi: #imiyValue#]
- imig[imig: #imigyValue#]
+ ht[ht: #htyValue#]:::hometradable
+ htc[htc: #htcyValue#]:::hometradable
+ htcg[htcg: #htcgyValue#]:::hometradable
+ hti[hti: #htiyValue#]:::hometradable
+ htig[htig: #htigyValue#]:::hometradable
+ sh\*ht[sh\*ht: #htyValue#]:::hometradable
+ im[im: #imyValue#]:::imported
+ imc[imc: #imcyValue#]:::imported
+ imcg[imcg: #imcgyValue#]:::imported
+ imi[imi: #imiyValue#]:::imported
+ imig[imig: #imigyValue#]:::imported
+ imig[imig: #imigyValue#]:::imported
  ysn["ysn=snt\*nt: #yntyValue#"]:::nontradable
- yst["yst=sh\*ht+sx\*ex: #yhtyValue#"]
- kdt[kdt]
- ndt[ndt]
- kdn[kdn]
- ndn[ndn]
+ sx\*ex["sx\*ex: #exyValue#"]:::exportable
 
  subgraph subTotals
     nt
@@ -63,10 +67,8 @@ graph LR
  ttig --> |1-nutig| imig
  y --> yst
  y --> ysn
- yst --> |alphat| kdt
- yst --> |1-alphat| ndt
- ysn --> |alphan| kdn
- ysn --> |1-alphan| ndn
+ yst --> sh\*ht
+ yst --> sx\*ex
  imc --> im
  imcg --> im
  imi --> im
@@ -79,3 +81,4 @@ graph LR
  ntcg --> nt
  nti --> nt
  ntig --> nt 
+ ```

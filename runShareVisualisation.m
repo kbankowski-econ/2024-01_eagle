@@ -1,11 +1,13 @@
-function createDiagram()
+createDiagram("eagleParsingTemp_sim_BIG1", "steady0");
+createDiagram("eagleParsingTemp_sim_BIG1", "steady1");
+
+%% local functions
+function createDiagram(modelFolder, aSteady)
 
     % reading in project variables
     utils.call.paths;
 
     % Define paths and names
-    modelFolder = "eagleParsingTemp_sim_BIG1";
-    aSteady = "steady1";
     baseDir = fullfile(project_path, modelFolder, "modFiles");
     
     % Define input/output files
@@ -63,6 +65,10 @@ function createDiagram()
         'imcgy'
         'imiy'
         'imigy'
+        'hty'
+        'nty'
+        'imy'
+        'exy'
     };
     
     % Read content
@@ -105,7 +111,7 @@ function newTable = calculateSomeRatios(inputTable)
     s = tableToStruct(inputTable);
 
     % ratios for non-tradables
-    for aItem = ["ntc", "ntcg", "nti", "ntig"]
+    for aItem = ["ntc", "ntcg", "nti", "ntig", "nt"]
         s.(aCtry).(aItem+"y") = (s.(aCtry).(aItem)*s.(aCtry).pnt)/(s.(aCtry).py*s.(aCtry).y);
         tempTable = table(s.(aCtry).(aItem+"y"), 'RowNames', aCtry+ "_" +aItem+"y", 'VariableNames', {'ssValue'});
         newTable = [newTable; tempTable];
@@ -119,12 +125,18 @@ function newTable = calculateSomeRatios(inputTable)
     end
 
     % ratios for home tradables
-    for aItem = ["htc", "htcg", "hti", "htig"]
+    for aItem = ["htc", "htcg", "hti", "htig", "ht"]
         s.(aCtry).(aItem+"y") = (s.(aCtry).(aItem)*s.(aCtry).pht)/(s.(aCtry).py*s.(aCtry).y);
         tempTable = table(s.(aCtry).(aItem+"y"), 'RowNames', aCtry+ "_" +aItem+"y", 'VariableNames', {'ssValue'});
         newTable = [newTable; tempTable];
     end
     
+    % ratios for exports
+    for aItem = ["ex"]
+        s.(aCtry).(aItem+"y") = (s.(aCtry).(aItem)*s.(aCtry).("p"+aItem))/(s.(aCtry).py*s.(aCtry).y);
+        tempTable = table(s.(aCtry).(aItem+"y"), 'RowNames', aCtry+ "_" +aItem+"y", 'VariableNames', {'ssValue'});
+        newTable = [newTable; tempTable];
+    end
 
 end
 
