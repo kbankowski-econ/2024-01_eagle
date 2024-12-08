@@ -1,7 +1,7 @@
 % execution
-createDiagrams('eagleParsingTemp_sim_BIG1', {'steady0', 'steady1', 'steady2', 'steady3', 'steady4', 'steady5'});
+createDiagrams('eagleParsingTemp_sim_BIG1', {'steady0', 'steady1', 'steady2', 'steady3', 'steady4', 'steady5'}, "EAB");
 
-function createDiagrams(modelFolder, steadyStates)
+function createDiagrams(modelFolder, steadyStates, aCtry)
     % CREATEDIAGRAMS Creates multiple diagrams for different steady states
     % 
     % Inputs:
@@ -19,10 +19,10 @@ function createDiagrams(modelFolder, steadyStates)
     validateattributes(steadyStates, {'cell'}, {'nonempty'});
     
     % Process each steady state
-    cellfun(@(x) createDiagram(modelFolder, x), steadyStates);
+    cellfun(@(x) createDiagram(modelFolder, x, aCtry), steadyStates);
 end
 
-function createDiagram(modelFolder, aSteady)
+function createDiagram(modelFolder, aSteady, aCtry)
     % CREATEDIAGRAM Creates a single diagram for a specific steady state
     %
     % Inputs:
@@ -34,7 +34,7 @@ function createDiagram(modelFolder, aSteady)
         utils.call.paths;
         
         % Define paths and names using platform-independent path construction
-        paths = definePaths(project_path, modelFolder, aSteady);
+        paths = definePaths(project_path, modelFolder, aSteady, aCtry);
         
         % Validate file existence
         validateFiles(paths);
@@ -44,7 +44,7 @@ function createDiagram(modelFolder, aSteady)
         ssParamTable = [ssTable; paramTable];
         
         % Calculate additional metrics
-        ssParamTable = calculateAdditionalMetrics(ssParamTable);
+        ssParamTable = calculateAdditionalMetrics(ssParamTable, aCtry);
         
         % Process and update content
         updateContent(paths, ssParamTable);
@@ -57,13 +57,13 @@ function createDiagram(modelFolder, aSteady)
     end
 end
 
-function paths = definePaths(projectPath, modelFolder, steadyState)
+function paths = definePaths(projectPath, modelFolder, steadyState, aCtry)
     % Define all necessary paths in a structured way
     paths = struct();
     paths.baseDir = fullfile(projectPath, modelFolder, "modFiles");
     paths.inputFile = fullfile(projectPath, 'aMyNotes', 'EAGLE_graph.md');
-    paths.outputFile = fullfile(paths.baseDir, steadyState + "-diagram.md");
-    paths.outputFilePng = fullfile(paths.baseDir, steadyState + "-diagram.png");
+    paths.outputFile = fullfile(paths.baseDir, steadyState + "_" + aCtry + "-diagram.md");
+    paths.outputFilePng = fullfile(paths.baseDir, steadyState + "_" + aCtry + "-diagram.png");
     paths.resultsFile = fullfile(paths.baseDir, steadyState, "Output", ...
         steadyState + "_results.mat");
 end
@@ -91,17 +91,17 @@ function [ssTable, paramTable] = loadSteadyStateResults(resultsFile)
         'VariableNames', "ssValue");
 end
 
-function newTable = calculateAdditionalMetrics(inputTable)
+function newTable = calculateAdditionalMetrics(inputTable, aCtry)
     % Calculate all additional metrics
-    newTable = calculateTotalDemand(inputTable);
-    newTable = calculateEconomicRatios(newTable);
+    newTable = calculateTotalDemand(inputTable, aCtry);
+    newTable = calculateEconomicRatios(newTable, aCtry);
 end
 
-function newTable = calculateTotalDemand(inputTable)
+function newTable = calculateTotalDemand(inputTable, aCtry)
     % Calculate total demand from components
     demandComponents = {'cy', 'cgy', 'iy', 'igy'};
     isDemand = ismember(inputTable.Properties.RowNames, ...
-        strcat({'EAB'}, {'_'}, demandComponents));
+        strcat(aCtry, {'_'}, demandComponents));
     
     sumDemand = sum(inputTable.ssValue(isDemand));
     demandRow = table(sumDemand, ...
@@ -111,9 +111,8 @@ function newTable = calculateTotalDemand(inputTable)
     newTable = [inputTable; demandRow];
 end
 
-function newTable = calculateEconomicRatios(inputTable)
+function newTable = calculateEconomicRatios(inputTable, aCtry)
     % Calculate various economic ratios
-    aCtry = "EAB";
     newTable = inputTable;
     s = tableToStruct(inputTable);
     
