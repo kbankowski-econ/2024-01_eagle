@@ -9,7 +9,7 @@ classDef exportable fill:#ffd6cc,stroke:none,color:black,font-size:24px;  %% A s
  tby["tby: #tbyValue#"]
  demand["demand = (ntc+nti+g)+(htc+hti)+(imc+imi): #demandyValue#"]
  qc["qc: #cyValue#"]
- g["g: #gyValue#"]
+ g["g: #gyValue#"]:::nontradable
  qi["qi: #iyValue#"]
  y[y]
  ttc[ttc: #ttcyValue#]

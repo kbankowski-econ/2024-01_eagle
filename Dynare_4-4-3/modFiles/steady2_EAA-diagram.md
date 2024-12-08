@@ -6,26 +6,26 @@ classDef nontradable fill:#ccffcc,stroke:none,color:black,font-size:24px;  %% A 
 classDef imported fill:#fff2cc,stroke:none,color:black,font-size:24px;    %% A warm, slightly deeper yellow
 classDef hometradable fill:#cce6ff,stroke:none,color:black,font-size:24px; %% A more vibrant blue
 classDef exportable fill:#ffd6cc,stroke:none,color:black,font-size:24px;  %% A soft coral orange
- tby["tby: -0.0049"]
- demand["demand = (ntc+nti+g)+(htc+hti)+(imc+imi): 1.0049"]
- qc["qc: 0.6049"]
+ tby["tby: 0.0018"]
+ demand["demand = (ntc+nti+g)+(htc+hti)+(imc+imi): 0.9981"]
+ qc["qc: 0.5981"]
  g["g: 0.2000"]:::nontradable
  qi["qi: 0.2000"]
  y[y]
- ttc[ttc: 0.2466]
- tti[tti: 0.1436]
- nt[nt: 0.6148]:::nontradable
- ntc[ntc: 0.3584]:::nontradable
- nti[nti: 0.0564]:::nontradable
- ht[ht: 0.1143]:::hometradable
- htc[htc: 0.0627]:::hometradable
- hti[hti: 0.0516]:::hometradable
- sh\*ht[sh\*ht: 0.1143]:::hometradable
- im[im: 0.2759]:::imported
- imc[imc: 0.1839]:::imported
- imi[imi: 0.0920]:::imported
- ysn["ysn=snt\*nt: 0.6148"]:::nontradable
- sx\*ex["sx\*ex: 0.2710"]:::exportable
+ ttc[ttc: 0.2444]
+ tti[tti: 0.1456]
+ nt[nt: 0.6081]:::nontradable
+ ntc[ntc: 0.3538]:::nontradable
+ nti[nti: 0.0544]:::nontradable
+ ht[ht: 0.1524]:::hometradable
+ htc[htc: 0.0434]:::hometradable
+ hti[hti: 0.1090]:::hometradable
+ sh\*ht[sh\*ht: 0.1524]:::hometradable
+ im[im: 0.2376]:::imported
+ imc[imc: 0.2010]:::imported
+ imi[imi: 0.0366]:::imported
+ ysn["ysn=snt\*nt: 0.6081"]:::nontradable
+ sx\*ex["sx\*ex: 0.2394"]:::exportable
 
  subgraph subTotals
     nt
@@ -40,11 +40,11 @@ classDef exportable fill:#ffd6cc,stroke:none,color:black,font-size:24px;  %% A s
  demand --> g
  qc --> |nuc: 0.4500| ttc
  qc --> |1-nuc| ntc
- ttc --> |nutc: 0.3058| htc
+ ttc --> |nutc: 0.2110| htc
  ttc --> |1-nutc| imc
  qi --> |nui: 0.7500| nti
  qi --> |1-nui| tti
- tti --> |nuti: 0.4204| hti
+ tti --> |nuti: 0.7539| hti
  tti --> |1-nuti| imi
  g --> nt
  y --> yst

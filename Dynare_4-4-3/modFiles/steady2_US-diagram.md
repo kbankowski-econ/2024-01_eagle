@@ -6,26 +6,26 @@ classDef nontradable fill:#ccffcc,stroke:none,color:black,font-size:24px;  %% A 
 classDef imported fill:#fff2cc,stroke:none,color:black,font-size:24px;    %% A warm, slightly deeper yellow
 classDef hometradable fill:#cce6ff,stroke:none,color:black,font-size:24px; %% A more vibrant blue
 classDef exportable fill:#ffd6cc,stroke:none,color:black,font-size:24px;  %% A soft coral orange
- tby["tby: -0.0049"]
- demand["demand = (ntc+nti+g)+(htc+hti)+(imc+imi): 1.0049"]
- qc["qc: 0.6049"]
- g["g: 0.2000"]:::nontradable
+ tby["tby: 0.0076"]
+ demand["demand = (ntc+nti+g)+(htc+hti)+(imc+imi): 0.9923"]
+ qc["qc: 0.6323"]
+ g["g: 0.1600"]:::nontradable
  qi["qi: 0.2000"]
  y[y]
- ttc[ttc: 0.2466]
- tti[tti: 0.1436]
- nt[nt: 0.6148]:::nontradable
- ntc[ntc: 0.3584]:::nontradable
- nti[nti: 0.0564]:::nontradable
- ht[ht: 0.1143]:::hometradable
- htc[htc: 0.0627]:::hometradable
- hti[hti: 0.0516]:::hometradable
- sh\*ht[sh\*ht: 0.1143]:::hometradable
- im[im: 0.2759]:::imported
- imc[imc: 0.1839]:::imported
- imi[imi: 0.0920]:::imported
- ysn["ysn=snt\*nt: 0.6148"]:::nontradable
- sx\*ex["sx\*ex: 0.2710"]:::exportable
+ ttc[ttc: 0.2181]
+ tti[tti: 0.1491]
+ nt[nt: 0.6251]:::nontradable
+ ntc[ntc: 0.4142]:::nontradable
+ nti[nti: 0.0509]:::nontradable
+ ht[ht: 0.2526]:::hometradable
+ htc[htc: 0.1455]:::hometradable
+ hti[hti: 0.1071]:::hometradable
+ sh\*ht[sh\*ht: 0.2526]:::hometradable
+ im[im: 0.1146]:::imported
+ imc[imc: 0.0726]:::imported
+ imi[imi: 0.0420]:::imported
+ ysn["ysn=snt\*nt: 0.6251"]:::nontradable
+ sx\*ex["sx\*ex: 0.1222"]:::exportable
 
  subgraph subTotals
     nt
@@ -38,13 +38,13 @@ classDef exportable fill:#ffd6cc,stroke:none,color:black,font-size:24px;  %% A s
  demand --> qc
  demand --> qi
  demand --> g
- qc --> |nuc: 0.4500| ttc
+ qc --> |nuc: 0.3500| ttc
  qc --> |1-nuc| ntc
- ttc --> |nutc: 0.3058| htc
+ ttc --> |nutc: 0.6491| htc
  ttc --> |1-nutc| imc
  qi --> |nui: 0.7500| nti
  qi --> |1-nui| tti
- tti --> |nuti: 0.4204| hti
+ tti --> |nuti: 0.7028| hti
  tti --> |1-nuti| imi
  g --> nt
  y --> yst
