@@ -13,8 +13,8 @@ cd(fullfile(project_path, 'Dynare_4-4-3','modFiles'));
 %%
 % calculating the steady state
 if false
-    dynare steady1.mod
-    dynare steady2.mod
+    dynare('steady1.mod', 'savemacro');
+    dynare('steady2.mod', 'savemacro');
 end
 
 %%

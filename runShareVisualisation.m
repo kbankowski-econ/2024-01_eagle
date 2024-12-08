@@ -1,6 +1,10 @@
-% execution
+%% execution
 createDiagrams('eagleParsingTemp_sim_BIG1', {'steady0', 'steady1', 'steady2', 'steady3', 'steady4', 'steady5'}, "EAB");
 
+%% 
+createDiagrams('Dynare_4-4-3', {'steady0', 'steady1', 'steady2'}, "EAB");
+
+%% local functions
 function createDiagrams(modelFolder, steadyStates, aCtry)
     % CREATEDIAGRAMS Creates multiple diagrams for different steady states
     % 
