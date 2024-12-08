@@ -50,7 +50,7 @@ function createDiagram(modelFolder, aSteady, aCtry)
     ssParamTable = calculateAdditionalMetrics(ssParamTable, aCtry, modelFolder);
     
     % Process and update content
-    updateContent(paths, ssParamTable, modelFolder);
+    updateContent(paths, ssParamTable, modelFolder, aCtry);
     
     % Export to PNG
     exportToPNG(paths.outputFile, paths.outputFilePng);
@@ -117,7 +117,7 @@ function newTable = calculateTotalDemand(inputTable, aCtry, modelFolder)
     
     sumDemand = sum(inputTable.ssValue(isDemand));
     demandRow = table(sumDemand, ...
-        'RowNames', {'EAB_demandy'}, ...
+        'RowNames', aCtry + "_demandy", ...
         'VariableNames', {'ssValue'});
     
     newTable = [inputTable; demandRow];
@@ -190,7 +190,7 @@ function outStructure = tableToStruct(inputTable)
     end
 end
 
-function updateContent(paths, ssParamTable, modelFolder)
+function updateContent(paths, ssParamTable, modelFolder, aCtry)
     % Update content with calculated values
     content = fileread(paths.inputFile);
     newContent = content;
@@ -199,7 +199,7 @@ function updateContent(paths, ssParamTable, modelFolder)
     for i = 1:length(varsToReplace)
         placeholder = ['#' varsToReplace{i} 'Value#'];
         value = sprintf('%.4f', ...
-            ssParamTable{['EAB_', varsToReplace{i}], "ssValue"});
+            ssParamTable{aCtry + "_" + string(varsToReplace{i}), "ssValue"});
         newContent = regexprep(newContent, placeholder, value);
     end
     
