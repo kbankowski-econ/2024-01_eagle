@@ -9,7 +9,12 @@ subroutines/+utils/+call/paths.m
 *.fls
 docs/**/*.log
 *.fdb_latexmk
-
+*.nav
+*.snm
+*.synctex.gz
+*.aux
+*.toc
+*.out
 Dynare_4-4-3/modFiles/+shock_eab_gy1/*
 Dynare_4-4-3/modFiles/+steady1/*
 Dynare_4-4-3/modFiles/+steady2/*

@@ -18,9 +18,9 @@
 \captionsetup{labelformat=empty}
 \usetheme{Boadilla}
 \usecolortheme{orchid}
-\title[Compliance with fiscal rules]{Evaluating full compliance with fiscal rules: Insights from the old regime for the new EU economic governance framework}
-\author[K. Ba\'nkowski, S. Haroutunian, N. Leiner-Killinger]{Krzysztof Ba\'nkowski \and Stephan Haroutunian \and Nadine Leiner-Killinger}
-
+\title[EAGLE with individual countries]{The EAGLE model with individual euro area countries: a framework for fiscal policy analysis}
+\author[K. Ba\'nkowski, S. Petraviciute]{Krzysztof Ba\'nkowski \and Emile Petraviciute}
+%//TODO: Put special signs in the names
 \institute[] % (optional)
 {
   Fiscal Policies Division\\
@@ -28,8 +28,8 @@
 }
 
 
-\date[September 2024] % (optional)
-{XXII Banca d'Italia Public Finance Workshop \\ 5-6 September 2024}
+\date[December 2024] % (optional)
+{RCC2 Mini-Workshop \\ 13 December 2024}
 
 % Set the outer theme and options for the navigation bar
 \useoutertheme[footline=empty,subsection=false]{miniframes}
@@ -49,43 +49,15 @@
 
 \section{Introduction}
 
+%//TODO: what is special about the trade in the euro area
 \begin{frame}
   \frametitle{Evaluating Full Compliance with Fiscal Rules}
   \framesubtitle{Main Question: What if countries complied with the SGP fully?}
   
-  \vspace{-2ex}
-  
-  \captionsetup{justification=centering, singlelinecheck=off}
-
-  \begin{columns}[t,onlytextwidth]
-  
-    % Column for the first figure
-    \begin{column}{0.48\textwidth}
-      \begin{figure}
-        \centering
-        \caption{\scriptsize Average Compliance with Fiscal Rules (1998-2021)}
-        \includegraphics[height=0.5\textheight]{pictures/complianceOverall.pdf} % Adjust the path
-      \end{figure}
-    \end{column}
-  
-    % Column for the second figure
-    \begin{column}{0.48\textwidth}
-      \begin{figure}
-        \centering
-        \caption{\scriptsize Average Compliance with Fiscal Rules and Output Gap Developments}
-        \includegraphics[height=0.5\textheight]{pictures/complianceByRules.pdf} % Adjust the path
-      \end{figure}
-    \end{column}
-  
-  \end{columns}
-  
-  \vspace{0ex}
-    \scriptsize Source: Larch, M., J. Malzubris, and S. Santacroce (2023): “Numerical Compliance with EU Fiscal Rules: Facts and Figures from a New Database,” \emph{Intereconomics}, 58, 32-42.
-  
-  \vspace{-3ex}
 
 \end{frame}
 
+%//TODO: very quickly on what we do
 \begin{frame}
   \frametitle{Evaluating Full Compliance with Fiscal Rules}
   \framesubtitle{What We Do in This Project}
@@ -112,6 +84,8 @@
 
 \end{frame}
 
+
+%//TODO: on what we build, EAGLE, QUEST, GIMF
 \section{Context \& Literature}
 \begin{frame}
   \frametitle{Context \& Related Literature}
@@ -138,272 +112,87 @@
 \end{frame}
 
 
-\section{SGP requirements}
+\section{Model specification}
 
 \begin{frame}
-  \frametitle{SGP Requirements in the Analysis}
-  \framesubtitle{Essential Assumptions}
-  
-  \begin{columns}[t,onlytextwidth]
-  
-    % Column for the first set of points
-    \begin{column}{0.5\textwidth}
-      \begin{itemize}
-        \item Initial uniform requirement: maintain a broadly balanced budget in cyclically adjusted terms.
-        \item 2005 reform introduced flexibility in setting medium-term objectives (MTOs).
-        \item 2015 EC communication refined the 0.5\% of GDP adjustment benchmark with a flexibility matrix.
-        \item Structural loosening allowed during the GFC, consistently with the European Economic Recovery Plan (EERP).
-      \end{itemize}
-    \end{column}
-    
-    % Column for the figure
-    \begin{column}{0.5\textwidth}
-        \begin{figure}
-          \centering
-          \caption{\scriptsize 2015 Matrix of Structural Effort Requirements}
-          \includegraphics[width=0.95\textwidth]{pictures/flexibilityMatrix.pdf} % Adjust the path
-        \end{figure}
-    \end{column}
-    
-  \end{columns}
-  
+  \frametitle{How do countries trade?}
+%//TODO: Distinguish trade of intermediate and non-intermediate  
 \end{frame}
 
 \begin{frame}
-  \captionsetup{font=scriptsize,justification=raggedright,singlelinecheck=off}
-  
-  \frametitle{SGP Requirements in the Analysis}
-  \framesubtitle{SGP Targets}
-  
-  \vspace{1ex}
-  \begin{figure}
-      \centering % Ensure the image is centered
-      \includegraphics[width=0.9\textwidth]{figures/sgpTargets.png} % Adjust the path and ensure the image fits the slide
-      \caption{\scriptsize Source: Own calculations. \\ Note: Variables expressed as a percentage of GDP.}
-  \end{figure}
-  
+  \frametitle{How imported goods enter the?}
+%//TODO: Distinguish trade of intermediate and non-intermediate  
 \end{frame}
 
-\section{Fiscal adjustments}
 \begin{frame}
-  \frametitle{Country-Specific Models}
+  \frametitle{What are the trade aggregators?}
+%//TODO: Distinguish trade of intermediate and non-intermediate  
+\end{frame}
+
+\section{Model calibration}
+
+\begin{frame}
+  \frametitle{Graph with import intensities}
   \framesubtitle{Behavioural Equations}
   
-  \begin{itemize}
-    \item \textbf{Structural balance:}
-    \begin{equation*}
-      SBB_{t} = F\left(SBB_{t-1}, YEG_{t-1}, MAL_{t-1}, INP_{t}\right) + e_{t}^{SBB}
-    \end{equation*}
+\end{frame}
 
-    \item \textbf{Real GDP growth:}
-    \begin{equation*}
-      YER_{t} = 0.5YER_{t-1} + 0.5YET_{t} - 0.55\Delta SPB_{t} - 0.4YEG_{t-1} + e_{t}^{YER}
-    \end{equation*}
-
-    \item \textbf{Cyclical component of the budget balance:}
-    \begin{equation*}
-      CYC_{t} = \epsilon YEG_{t} + e_{t}^{CYC}
-    \end{equation*}
-  \end{itemize}
+\begin{frame}
+  \frametitle{Graph with bilateral trade}
+  \framesubtitle{Behavioural Equations}
   
 \end{frame}
 
 \begin{frame}
-  \frametitle{Country-Specific Models}
-  \framesubtitle{Identities}
-
-    \begin{itemize}
-      \item Primary budget balance: $PBB_{t}=SPB_{t}+CYC_{t}+OFF_{t}$ 
-      \item Interest payments: $INP_{t}=\left(\frac{IIR_{t}}{100}\frac{MAL_{t-1}}{100}\frac{1}{1+\nicefrac{YEN_{t}}{100}}\right)\times100$
-      \item Overall budget balance: $B9N_{t}=PBB_{t}-INP_{t}$
-      \item Debt accumulation: $MAL_{t}=\frac{MAL_{t-1}}{1+\nicefrac{YEN_{t}}{100}}-B9N_{t}+SFA_{t}$
-      \item Structural primary balance: $SPB_{t}=SBB_{t}+INP_{t}$
-      \item Nominal output growth: $YEN_{t}=\left[\left(1+\frac{YER_{t}}{100}\right)\left(1+\frac{YED_{t}}{100}\right)-1\right]\times100$
-      \item Output gap: $YEG_{t}=\left[\left(1+\frac{YEG_{t-1}}{100}\right)\frac{1+\nicefrac{YER_{t}}{100}}{1+\nicefrac{YET_{t}}{100}}-1\right]\times100$
+  \frametitle{Graph with final demand structure}
+  \framesubtitle{Behavioural Equations}
   
-      \end{itemize}
+\end{frame}
+  
+\section[Model properties]{Model properties}
+
+\begin{frame}
+  \frametitle{Some IRFs: national and for Europe}
 
 \end{frame}
+
+\begin{frame}
+  \frametitle{Some IRFs illustrating spill-overs}
+
+\end{frame}
+
+\section[Policy application]{NGEU eveluation}
+  
+\begin{frame}
+  \captionsetup{font=scriptsize,justification=raggedright,singlelinecheck=off}
+  
+  \frametitle{NGEU characteristics}
+  
+\end{frame}
+
+
 
 \begin{frame}
   \captionsetup{font=scriptsize,justification=raggedright,singlelinecheck=off}
   
-  \frametitle{Data for the Model}
-  \framesubtitle{Observable Variables}
-  
-  \vspace{2ex}
-  \begin{figure}
-      \centering
-      \includegraphics[width=0.9\textwidth]{figures/dataSubSec1.png} % Ensure the image fits the slide
-      \caption{\scriptsize Note: Main observable variables for country-specific models, retrieved from the EC's AMECO database. All values are expressed as percentages; marker size reflects the country size.}
-  \end{figure}
+  \frametitle{The overall effect; country decomposition of output and inflation}
+
   
 \end{frame}
 
 \begin{frame}
   \captionsetup{font=scriptsize,justification=raggedright,singlelinecheck=off}
   
-  \frametitle{Data for the Model}
-  \framesubtitle{Non-Observable Variables, Euro Area}
-  
-  \vspace{2ex}
-  \begin{figure}
-      \centering
-      \includegraphics[width=0.9\textwidth]{figures/dataSubSec3.png} % Ensure the image fits the slide
-      \caption{\scriptsize Note: Unobservable variables for country-specific models, retrieved from the EC's AMECO past vintages. All values expressed as percentages of GDP.}
-  \end{figure}
+  \frametitle{Spill-over effects}
+
   
 \end{frame}
-
-\begin{frame}
-  \captionsetup{font=scriptsize,justification=raggedright,singlelinecheck=off}
-  
-  \frametitle{Data for the Model}
-  \framesubtitle{Non-Observable Variables, Country Level}
-  
-  \vspace{2ex}
-  \begin{figure}
-      \centering
-      \includegraphics[width=0.9\textwidth]{figures/dataSubSec2.png} % Ensure the image fits the slide
-      \caption{\scriptsize Note: Unobservable variables for country-specific models, retrieved from the EC's AMECO past vintages. All values expressed as percentages of GDP.}
-  \end{figure}
-  
-\end{frame}
-
-\begin{frame}
-  \captionsetup{font=scriptsize,justification=raggedright,singlelinecheck=off}
-  
-  \frametitle{Small Country-Specific Model in Action}
-  \framesubtitle{Example: Italy}
-  
-  \vspace{2ex}
-  \begin{figure}
-      \centering
-      \includegraphics[width=0.9\textwidth]{figures/panel_IT.png} % Ensure the image fits the slide
-      \caption{\scriptsize Note: Own calculations using country-specific models with data from the EC's AMECO database.}
-  \end{figure}
-  
-\end{frame}
-
-
-\begin{frame}
-  \captionsetup{font=scriptsize,justification=raggedright,singlelinecheck=off}
-  
-  \frametitle{Structural Balance Deviations}
-  \framesubtitle{Ex-post \& Real-Time for the Euro Area}
-  
-  \vspace{2ex}
-  \begin{figure}
-      \centering
-      \includegraphics[width=0.9\textwidth]{figures/complianceGap.png} % Ensure the image fits the slide
-      \caption{\scriptsize Notes: Main variables are expressed as a percentage of GDP. Country contributions are expressed in percentage points.}
-  \end{figure}
-  
-\end{frame}
-
-\begin{frame}
-  \captionsetup{font=scriptsize,justification=raggedright,singlelinecheck=off}
-  
-  \frametitle{Fiscal Adjustment Needs}
-  \framesubtitle{Cumulative Adjustment in Structural Primary Balance}
-  
-  \vspace{2ex}
-  \begin{figure}
-      \centering
-      \includegraphics[width=0.9\textwidth]{figures/adjNeeds.png} % Ensure the image fits the slide
-      \caption{\scriptsize Notes: Main variables are expressed as a percentage of GDP. Country contributions are expressed in percentage points.}
-  \end{figure}
-  
-\end{frame}
-
-  
-\section[Macro effects]{Macroeconomic effects}
-
-\begin{frame}
-  \frametitle{Macroeconomic Effects of Fiscal Shocks in ECB-BASE}
-  \framesubtitle{Various fiscal shocks with distinct propagation mechanisms and macroeconomic effects}
-  \captionsetup{justification=centering,singlelinecheck=off}
-
-  \vspace{-2ex}
-
-  \begin{columns}[T] % Ensure top alignment of columns
-  
-    % Column for the first figure
-    \begin{column}{0.5\textwidth}
-      \begin{figure}
-        \centering
-        \caption{\scriptsize Revenue shocks (temp. 1\% of GDP ex-ante expansion)}
-        \includegraphics[width=0.9\textwidth]{/Users/kk/Documents/0000-00_work/2021-03_ECB-BASE/U2_ECBMC_V0/docu/WPfiscal/WPdraft/IMFtechPresent/figures/IRFs_allRevenueShocks.eps} % Adjust the path
-      \end{figure}
-    \end{column}
-  
-    % Column for the second figure
-    \begin{column}{0.5\textwidth}
-      \begin{figure}
-        \centering
-        \caption{\scriptsize Expenditure shocks (temp. 1\% of GDP ex-ante expansion)}
-        \includegraphics[width=0.9\textwidth]{/Users/kk/Documents/0000-00_work/2021-03_ECB-BASE/U2_ECBMC_V0/docu/WPfiscal/WPdraft/IMFtechPresent/figures/IRFs_allSpendingShocks.eps} % Adjust the path
-      \end{figure}
-    \end{column}
-  
-  \end{columns}
-
-\end{frame}
-  
-\begin{frame}
-  \captionsetup{font=scriptsize,justification=raggedright,singlelinecheck=off}
-  
-  \frametitle{Distribution of the Adjustment}
-  \framesubtitle{Flexible vs. Sticky Fiscal Instruments}
-  
-  \begin{figure}
-      \centering
-      \includegraphics[width=0.9\textwidth]{/Users/kk/Documents/0000-00_work/2021-03_ECB-BASE/U2_ECBMC_V0/docu/WPfiscal/WPdraft/figures/cyclicalityAll.png} % Ensure the image fits the slide
-      \caption{\scriptsize Note: Fiscal gaps are calculated by detrending data series with the HP filter. The gaps are rescaled to be presented as a share of potential GDP, allowing comparability across instruments and to the output gap.}
-  \end{figure}
-
-\end{frame}
-
-  
-\begin{frame}
-  \captionsetup{font=scriptsize,justification=raggedright,singlelinecheck=off}
-  
-  \frametitle{Macroeconomic Effects of SGP Compliance}
-  \framesubtitle{Effect on Main Macro/Fiscal Variables}
-  
-  \vspace{2ex}
-  \begin{figure}
-      \centering
-      \includegraphics[width=0.9\textwidth]{figures/sgpCounterfactuals.png} % Adjust the path and ensure the image fits the slide
-      \caption{\scriptsize Notes: Growth variables are year-on-year changes and expressed as percentages. Budget balance and debt are expressed as percentages of GDP.}
-  \end{figure}
-  
-\end{frame}
-
-
-\begin{frame}
-  \captionsetup{font=scriptsize,justification=raggedright,singlelinecheck=off}
-  
-  \frametitle{Macroeconomic Effects of SGP Compliance}
-  \framesubtitle{Effect on Main Macro/Fiscal Variables (Including Real-Time Estimates of Unobservables)}
-  
-  \vspace{2ex}
-  \begin{figure}
-      \centering
-      \includegraphics[width=0.9\textwidth]{figures/sgpCounterfactualsInclRt.png} % Ensure the image fits the slide
-      \caption{\scriptsize Notes: Growth variables are year-on-year changes and expressed as percentages. Budget balance and debt are expressed as percentages of GDP.}
-  \end{figure}
-  
-\end{frame}
-
 
 \section{Conclusions}
 \begin{frame}
   \frametitle{Conclusions}
   \begin{itemize}
-      \item Our paper does not attempt to defend the pre-reformed SGP. However, we emphasize that compliance issues significantly contributed to the SGP's failure to achieve its objectives.
-      \item Had the fiscal rules been fully adhered to and enforced, the euro area could have achieved more favourable fiscal outcomes (i.e., smoothing the cycle and building fiscal buffers).
-      \item Critical lesson for the future: the success of the newly reformed framework will depend on adherence to its provisions from the outset.
+      \item ...
   \end{itemize}
 \end{frame}
 
