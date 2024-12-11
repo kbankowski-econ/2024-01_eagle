@@ -9,7 +9,8 @@ valuesEnd = readHomothopyValuesFromModFile('trade_matrix_values_calibrated_EABEA
 % The value that will go into ss calculation
 options_.homotopy_values(:, 3) = valuesIni;
 options_.homotopy_values(:, 4) = valuesEnd;
-
+options_.homotopy_steps = 50;
+options_.steady.maxit = 20;
 % Running steady state
 steady();
 
