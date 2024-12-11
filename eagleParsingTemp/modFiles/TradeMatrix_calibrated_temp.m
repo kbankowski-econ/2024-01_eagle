@@ -105,7 +105,7 @@ steady1struct = load(fullfile(project_path, "eagleParsingTemp/modFiles/steady1/O
 steady1struct.myStruct = cell2struct(num2cell(steady1struct.oo_.steady_state), steady1struct.M_.endo_names, 1);
 
 % updating the myTables
-for aCtryModName = "EAB"
+for aCtryModName = calibCtryListModNames
     for aItem = importItemListModNames
         aItemDemand = demandItemListModNames(aItem == importItemListModNames);
         myTable.(aItem){aCtryModName, :} = ...
