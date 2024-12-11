@@ -3,7 +3,7 @@ load(fullfile(project_path, "eagleParsingTemp/modFiles/steady2/Output/steady2_re
 aaa = load(fullfile(project_path, "eagleParsingTemp/modFiles/steady9/Output/steady9_results.mat"));
 options_.homotopy_values = aaa.options_.homotopy_values;
 
-fid = fopen('trade_matrix_values_calibrated_my.mod', 'r');
+fid = fopen('trade_matrix_values_calibrated_old.mod', 'r');
 
 % Initialize an empty vector to store the values
 values = [];
