@@ -93,7 +93,7 @@ load(fullfile(project_path_io, "/databases/CalcDb_importWeights.mat"), 'WeightsD
 
 % creating a structure with import contant
 importContentStruct = struct();
-for aCtryModName = calibCtryListModNames(1:8)
+for aCtryModName = calibCtryListModNames(1:1)
     for aDemandItem = demandItemListModNames
         importContentStruct.(aCtryModName).(aDemandItem) = ...
             mean(WeightsDb.(calibCtryListStdNames(aCtryModName == calibCtryListModNames)).(demandItemListIoNames(aDemandItem == demandItemListModNames)).data, 'omitnan');
@@ -105,7 +105,7 @@ steady1struct = load(fullfile(project_path, "eagleParsingTemp/modFiles/steady1/O
 steady1struct.myStruct = cell2struct(num2cell(steady1struct.oo_.steady_state), steady1struct.M_.endo_names, 1);
 
 % updating the myTables
-for aCtryModName = calibCtryListModNames(1:8)
+for aCtryModName = calibCtryListModNames(1:1)
     for aItem = importItemListModNames
         aItemDemand = demandItemListModNames(aItem == importItemListModNames);
         myTable.(aItem){aCtryModName, :} = ...
