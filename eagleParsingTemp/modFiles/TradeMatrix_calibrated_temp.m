@@ -93,7 +93,7 @@ load(fullfile(project_path_io, "/databases/CalcDb_importWeights.mat"), 'WeightsD
 
 % creating a structure with import contant
 importContentStruct = struct();
-for aCtryModName = calibCtryListModNames(1:2)
+for aCtryModName = calibCtryListModNames(1:4)
     for aDemandItem = demandItemListModNames
         importContentStruct.(aCtryModName).(aDemandItem) = ...
             mean(WeightsDb.(calibCtryListStdNames(aCtryModName == calibCtryListModNames)).(demandItemListIoNames(aDemandItem == demandItemListModNames)).data, 'omitnan');
@@ -105,7 +105,7 @@ steady1struct = load(fullfile(project_path, "eagleParsingTemp/modFiles/steady1/O
 steady1struct.myStruct = cell2struct(num2cell(steady1struct.oo_.steady_state), steady1struct.M_.endo_names, 1);
 
 % updating the myTables
-for aCtryModName = calibCtryListModNames(1:2)
+for aCtryModName = calibCtryListModNames(1:4)
     for aItem = importItemListModNames
         aItemDemand = demandItemListModNames(aItem == importItemListModNames);
         myTable.(aItem){aCtryModName, :} = ...
@@ -118,7 +118,7 @@ end
 %% writing mod trade calibration file
 writeTradeModFile('trade_matrix_values_calibrated_new.mod', newTable, sizeStruct, countries, countriesAux, shiftAmount)
 writeTradeModFile('trade_matrix_values_calibrated_oldReprinted.mod', origTable, sizeStruct, countries, countriesAux, shiftAmount)
-writeTradeModFile('trade_matrix_values_calibrated_EABEAC.mod', myTable, sizeStruct, countries, countriesAux, shiftAmount)
+writeTradeModFile('trade_matrix_values_calibrated_EABEAE.mod', myTable, sizeStruct, countries, countriesAux, shiftAmount)
 
 %% local functions
 function writeTradeModFile(aFileName, aTable, sizeStruct, countries, countriesAux, shiftAmount)
