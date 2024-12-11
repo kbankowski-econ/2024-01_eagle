@@ -53,7 +53,7 @@ for aItem = ["imcy", "imcgy", "imiy", "imigy"]
 end
 
 
-%% Creating new tables
+%% Creating new tables (based on the ECHT tool)
     xlsFileName = fullfile(project_path_echt, "import_shares_test.xlsx");
     newTable.imcy = table();
     newTable.imcy = readtable(xlsFileName, 'Sheet', 'Sheet1', 'Range', 'B44:P58');
@@ -76,6 +76,8 @@ end
     newTable.imigy = table();
     newTable.imigy = newTable.imiy.*0.1;
     newTable.imiy = newTable.imiy.*0.9;
+
+%% Creating new tables (based on the import content; this ammends the old table with the new information )
 
 
 %% writing mod trade calibration file
