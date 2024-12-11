@@ -1,5 +1,11 @@
 % Define country array
 countries = ["EAA", "EAB", "EAC", "EAD", "EAE", "EAF", "EAG", "EAH", "EAI", "EAJ", "EAK", "EAL", "EAM", "RW", "US"];
+calibCtryListModNames = ["EAB", "EAC", "EAD", "EAE", "EAG", "EAH", "EAI", "EAJ", "EAK", "EAL", "EAM"];
+calibCtryListStdNames = ["AT", "BE", "FI", "FR", "NL", "ES", "GR", "IE", "IT", "PT", "DE"];
+importItemListModNames = ["imcy", "imcgy", "imiy", "imigy"];
+demandItemListModNames = ["cy", "cgy", "iy", "igy"];
+demandItemListIoNames = ["FinalConHH", "FinalConGov", "PrivateInv", "GovInv"];
+
 % Create circular array for residual countries
 shiftAmount = 13;  % Making the shift amount explicit as a variable
 countriesAux = [countries, countries];  % Double array for circular indexing
@@ -77,12 +83,42 @@ end
     newTable.imigy = newTable.imiy.*0.1;
     newTable.imiy = newTable.imiy.*0.9;
 
-%% Creating new tables (based on the import content; this ammends the old table with the new information )
+%% Creating new tables (based on the import content; this ammends the old table with the new information)
+
+% starting with the orignal table
+myTable = origTable;
+
+% importing import content values from the i-o project
+load(fullfile(project_path_io, "/databases/CalcDb_importWeights.mat"), 'WeightsDb');
+
+% creating a structure with import contant
+importContentStruct = struct();
+for aCtryModName = calibCtryListModNames
+    for aDemandItem = demandItemListModNames
+        importContentStruct.(aCtryModName).(aDemandItem) = ...
+            mean(WeightsDb.(calibCtryListStdNames(aCtryModName == calibCtryListModNames)).(demandItemListIoNames(aDemandItem == demandItemListModNames)).data, 'omitnan');
+    end
+end
+
+% creating a structure with steady1 ss values
+steady1struct = load(fullfile(project_path, "eagleParsingTemp/modFiles/steady1/Output/steady1_results.mat"));
+steady1struct.myStruct = cell2struct(num2cell(steady1struct.oo_.steady_state), steady1struct.M_.endo_names, 1);
+
+% updating the myTables
+for aCtryModName = "EAB"
+    for aItem = importItemListModNames
+        aItemDemand = demandItemListModNames(aItem == importItemListModNames);
+        myTable.(aItem){aCtryModName, :} = ...
+            newTable.(aItem){aCtryModName, :}/sum(newTable.(aItem){aCtryModName, :}, "omitmissing") ...
+            *importContentStruct.(aCtryModName).(aItemDemand)*steady1struct.myStruct.(aCtryModName + "_" + aItemDemand);
+    end
+end
 
 
 %% writing mod trade calibration file
 writeTradeModFile('trade_matrix_values_calibrated_new.mod', newTable, sizeStruct, countries, countriesAux, shiftAmount)
 writeTradeModFile('trade_matrix_values_calibrated_oldReprinted.mod', origTable, sizeStruct, countries, countriesAux, shiftAmount)
+writeTradeModFile('trade_matrix_values_calibrated_my.mod', myTable, sizeStruct, countries, countriesAux, shiftAmount)
 
 %% local functions
 function writeTradeModFile(aFileName, aTable, sizeStruct, countries, countriesAux, shiftAmount)

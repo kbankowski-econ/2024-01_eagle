@@ -29,7 +29,8 @@ function createDiagrams(modelFolder, steadyStates, countries)
     steadyStates = convertToCell(steadyStates);
     countries = convertToCell(countries);
     
-    % Create diagrams for each combination of steady state and country
+    % Create diagrams for each combination of steady state and countryagain
+    %
     for country = countries
         for steadyState = steadyStates
             processConfiguration(modelFolder, steadyState{1}, country{1});
