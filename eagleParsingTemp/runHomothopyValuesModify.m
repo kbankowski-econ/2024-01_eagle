@@ -1,30 +1,16 @@
 
-fid = fopen('trade_matrix_values_calibrated_old.mod', 'r');
+% steady state in the matfile contains homothopy values after the EAB has
+% been calibrated only
+load(fullfile(project_path, "eagleParsingTemp/modFiles/steady2/Output/steady2_results.mat"));
 
-% Initialize an empty vector to store the values
-values = [];
-
-% Read the file line by line
-while ~feof(fid)
-    % Read a line
-    line = fgetl(fid);
-    
-    % Split the line at the comma
-    parts = strsplit(line, ',');
-    
-    % Extract the value, remove the semicolon, and convert to number
-    value = str2double(strtrim(parts{2}(1:end-1)));
-    
-    % Append the value to the vector
-    values = [values; value];
-end
-
-% Close the file
-fclose(fid);
+valuesIni = readHomothopyValuesFromModFile('trade_matrix_values_calibrated_EAB.mod');
+valuesEnd = readHomothopyValuesFromModFile('trade_matrix_values_calibrated_EABEAJ.mod');
 
 % The value that will go into ss calculation
-options_.homotopy_values(:, 4) = values;
-
+options_.homotopy_values(:, 3) = valuesIni;
+options_.homotopy_values(:, 4) = valuesEnd;
+options_.homotopy_steps = 50;
+options_.steady.maxit = 20;
 % Running steady state
 steady();
 
@@ -114,3 +100,31 @@ S1.EAB_pnt % 1.0860
 % values of the old steady state and see whether solution will be found
 S1.EAB_ttc*S1.EAB_pttc/(S1.EAB_py*S1.EAB_y) % 0.2382
 S1.EAB_tti*S1.EAB_ptti/(S1.EAB_py*S1.EAB_y) % 0.1463
+
+%% local function
+function values = readHomothopyValuesFromModFile(fileName)
+
+    fid = fopen(fileName, 'r');
+
+    % Initialize an empty vector to store the values
+    values = [];
+    
+    % Read the file line by line
+    while ~feof(fid)
+        % Read a line
+        line = fgetl(fid);
+        
+        % Split the line at the comma
+        parts = strsplit(line, ',');
+        
+        % Extract the value, remove the semicolon, and convert to number
+        value = str2double(strtrim(parts{2}(1:end-1)));
+        
+        % Append the value to the vector
+        values = [values; value];
+    end
+    
+    % Close the file
+    fclose(fid);
+
+end
