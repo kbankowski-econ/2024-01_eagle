@@ -61,18 +61,10 @@ steady(homotopy_steps = 5, maxit=20);
 
 // Trade matrix
 
-disp('Trade matrixStylised')
+disp('Trade matrix')
 homotopy_setup;
 
-@#include "trade_matrix_values_calibrated_old.mod"
-
-end;
-steady(homotopy_steps = 15);
-
-disp('Trade matrix2')
-homotopy_setup;
-
-@#include "trade_matrix_values_calibrated_EABEAE.mod"
+@#include "trade_matrix_values_calibrated_EABEAM.mod"
 
 end;
 steady(homotopy_steps = 15);
