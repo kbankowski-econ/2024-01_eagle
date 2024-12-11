@@ -3,9 +3,8 @@
 % been calibrated only
 load(fullfile(project_path, "eagleParsingTemp/modFiles/steady2/Output/steady2_results.mat"));
 
-%%
 valuesIni = readHomothopyValuesFromModFile('trade_matrix_values_calibrated_EAB.mod');
-valuesEnd = readHomothopyValuesFromModFile('trade_matrix_values_calibrated_my.mod');
+valuesEnd = readHomothopyValuesFromModFile('trade_matrix_values_calibrated_EABEAJ.mod');
 
 % The value that will go into ss calculation
 options_.homotopy_values(:, 3) = valuesIni;
