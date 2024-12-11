@@ -39,18 +39,16 @@ end
 
 % alocate the values from the structure
 for aItem = ["imcy", "imcgy", "imiy", "imigy"]
-    tableOrig.(aItem) = array2table(nan(length(countries), length(countries)), 'RowNames', countries, 'VariableNames', countries);
+    origTable.(aItem) = array2table(nan(length(countries), length(countries)), 'RowNames', countries, 'VariableNames', countries);
     for i = 1:length(countries)
         aCtry1 = countries(i);
         % Get residual country with circular indexing
         aCtryResid = countriesAux(i + shiftAmount);
-        for aCtry2 = countries
-            aField = aCtry1+aCtry2+"_"+aItem;
-            if isfield(s, aField)
-                tableOrig.imcy{aCtry1, aCtry2} = s.(aCtry1+aCtry2+"_"+aItem);
-            end
+        validCountries = countries ~= aCtry1 & countries ~= aCtryResid;
+        for aCtry2 = countries(validCountries)
+                origTable.(aItem){aCtry1, aCtry2} = s.(aCtry1+aCtry2+"_"+aItem);
         end
-        tableOrig.imcy{aCtry1, aCtryResid} = s.(aCtry1+"_"+aItem) - sum(tableOrig.imcy{aCtry1, :}, 'omitnan');
+        origTable.(aItem){aCtry1, aCtryResid} = s.(aCtry1+"_"+aItem) - sum(origTable.(aItem){aCtry1, :}, 'omitnan');
     end
 end
 
@@ -82,6 +80,7 @@ end
 
 %% writing mod trade calibration file
 writeTradeModFile('trade_matrix_values_calibrated_new.mod', newTable, sizeStruct, countries, countriesAux, shiftAmount)
+writeTradeModFile('trade_matrix_values_calibrated_oldReprinted.mod', origTable, sizeStruct, countries, countriesAux, shiftAmount)
 
 %% local functions
 function writeTradeModFile(aFileName, aTable, sizeStruct, countries, countriesAux, shiftAmount)
