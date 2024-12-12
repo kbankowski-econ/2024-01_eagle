@@ -51,17 +51,6 @@ function contributionSeries = brignSimulationResults(simName)
         paramStruct.(aParam) = structSimul.M_.params(strcmp(aParam, structSimul.M_.param_names));
     end
     
-    %{
-    [endoStruct.EAE_y, ssStruct.EAE_y]
-    [endoStruct.EAE_yst, ssStruct.EAE_yst]
-    [endoStruct.EAE_ysn, ssStruct.EAE_ysn]
-    [endoStruct.EAA_ysn, ssStruct.EAA_ysn]
-    [endoStruct.EAE_pic4, ssStruct.EAE_pic4]
-    [endoStruct.EAE_cgy, ssStruct.EAE_cgy]
-    [endoStruct.EAB_cgy, ssStruct.EAB_cgy]
-    [endoStruct.EAB_y, ssStruct.EAB_y]
-    %}
-    
     aEndoVar = "EA_y";
     irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)/ssStruct.(aEndoVar)-1)*100;
     aEndoVar = "EAH_y";
@@ -91,6 +80,15 @@ function contributionSeries = brignSimulationResults(simName)
                 , Series2Dseries(ssStruct) ...
             );
         allItemList = [allItemList, contributionSeries.contrib.(aItem).Comment];
+
+        % Dynare decomposition is always an absolute difference; for this
+        % reason we need this transformation with rescaling of
+        % contributions
+        tempComment = contributionSeries.contrib.(aItem).Comment;
+        contributionSeries.total.(aItem) = irfStruct.(aItem);
+        contributionSeries.contrib.(aItem) = contributionSeries.contrib.(aItem)/sum(contributionSeries.contrib.(aItem), 2)*irfStruct.(aItem);
+        % we have to do it because it is overwritten and blank
+        contributionSeries.contrib.(aItem).Comment = tempComment;
     end
     
     meta.allItemList = unique(allItemList);
@@ -182,7 +180,7 @@ function panelContributions(contribStructure, projectPath, shockedCtry)
 
             ax = gca;
             ax.YAxis.Exponent = 0;
-            ax.YAxis.TickLabelFormat = '%.4f';
+            ax.YAxis.TickLabelFormat = '%.2f';
         
         end 
     end
