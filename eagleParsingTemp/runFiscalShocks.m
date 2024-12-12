@@ -25,6 +25,9 @@ contribStructureEa.Gi = brignSimulationResults('shock_eab_gy3');
 panelContributions(contribStructureEs, project_path, "ES");
 
 %%
+panelContributions(contribStructureEa, project_path, "EA");
+
+%%
 function contributionSeries = brignSimulationResults(simName)
 
     utils.call.paths;
