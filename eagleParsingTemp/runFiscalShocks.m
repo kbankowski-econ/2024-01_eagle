@@ -7,8 +7,11 @@ dynare('shock_eab_gy1.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleP
 %% deterministic simulation
 dynare('shock_eab_gy2.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
 
+%% deterministic simulation
+dynare('shock_eab_gy4.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+
 %% analying the output of the simulation
-fiscalSimOutput = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'shock_eab_gy1', 'Output', 'shock_eab_gy1_results.mat'));
+fiscalSimOutput = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'shock_eab_gy2', 'Output', 'shock_eab_gy2_results.mat'));
 M_ = fiscalSimOutput.M_;
 
 dataRange = qq(0, 4): qq(0, 4)+size(fiscalSimOutput.oo_.endo_simul', 1) - 1;
