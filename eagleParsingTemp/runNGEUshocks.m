@@ -84,6 +84,16 @@ for aItem = aItemList
             , Series2Dseries(ssStruct) ...
         );
     allItemList = [allItemList, contributionSeries.contrib.(aItem).Comment];
+
+    % Dynare decomposition is always an absolute difference; for this
+    % reason we need this transformation with rescaling of
+    % contributions
+    tempComment = contributionSeries.contrib.(aItem).Comment;
+    contributionSeries.total.(aItem) = irfStruct.(aItem);
+    contributionSeries.contrib.(aItem) = contributionSeries.contrib.(aItem)/sum(contributionSeries.contrib.(aItem), 2)*irfStruct.(aItem);
+    % we have to do it because it is overwritten and blank
+    contributionSeries.contrib.(aItem).Comment = tempComment;
+
 end
 
 meta.allItemList = unique(allItemList);
