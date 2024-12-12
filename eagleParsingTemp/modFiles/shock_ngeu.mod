@@ -70,5 +70,5 @@ values 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 
 end;
 
-perfect_foresight_setup(periods = 200);
+perfect_foresight_setup(periods = 100);
 perfect_foresight_solver(stack_solve_algo=0);

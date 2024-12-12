@@ -199,7 +199,7 @@ Finding the optimal block decomposition of the dynamic model...
                                  and 4239 feedback variable(s).
 JSON written after Computing step.
 Preprocessing completed.
-Preprocessing time: 0h00m39s.
+Preprocessing time: 0h00m40s.
 
 STEADY-STATE RESULTS:
 
@@ -8046,58 +8046,7 @@ US_kg               		 12.1303
 MODEL SIMULATION: (method=Sparse LU solver on stacked system)
 ------------------------------------
       Iteration no. 1
-      Inf-norm error = 1.260e+01
-      2-norm error   = 5.123e+01
-      1-norm error   = 4.482e+02
+      Inf-norm error = 1.260e-01
+      2-norm error   = 5.123e-01
+      1-norm error   = 4.485e+00
 ------------------------------------
-(** 1451.68 seconds **)
-------------------------------------
-      Iteration no. 2
-      Inf-norm error = 5.376e+01
-      2-norm error   = 7.601e+01
-      1-norm error   = 8.486e+02
-------------------------------------
-(** 558.61 seconds **)
-------------------------------------
-      Iteration no. 3
-      Inf-norm error = 7.328e+01
-      2-norm error   = 1.114e+02
-      1-norm error   = 9.612e+02
-------------------------------------
-(** 630.08 seconds **)
-------------------------------------
-      Iteration no. 4
-      Inf-norm error = 9.213e+01
-      2-norm error   = 1.281e+02
-      1-norm error   = 1.011e+03
-------------------------------------
-(** 704.47 seconds **)
-------------------------------------
-      Iteration no. 5
-      Inf-norm error = 9.489e+01
-      2-norm error   = 1.309e+02
-      1-norm error   = 1.019e+03
-------------------------------------
-(** 718.15 seconds **)
-------------------------------------
-      Iteration no. 6
-      Inf-norm error = 9.488e+01
-      2-norm error   = 1.309e+02
-      1-norm error   = 1.019e+03
-------------------------------------
-(** 654.44 seconds **)
-------------------------------------
-      Iteration no. 7
-      Inf-norm error = 9.488e+01
-      2-norm error   = 1.309e+02
-      1-norm error   = 1.019e+03
-------------------------------------
-(** 653.76 seconds **)
-------------------------------------
-      Iteration no. 8
-      Inf-norm error = 9.488e+01
-      2-norm error   = 1.309e+02
-      1-norm error   = 1.019e+03
-------------------------------------
-(** 648.85 seconds **)
-Fatal error: In Simulate_Newton_Two_Boundaries, dynare cannot improve the simulation in block 94 at time 22 (variable 4553 = 8.335354)
