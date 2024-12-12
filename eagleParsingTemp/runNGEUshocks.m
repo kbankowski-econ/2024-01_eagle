@@ -59,6 +59,8 @@ aEndoVar = "EAM_ex";
 irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)/ssStruct.(aEndoVar)-1)*100;
 aEndoVar = "EAM_r";
 irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)-ssStruct.(aEndoVar))*100;
+aEndoVar = "EA_pic4";
+irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)-ssStruct.(aEndoVar))*100;
 
 
 aItemList = ["EA_y", "EA_pic4"];
@@ -97,6 +99,9 @@ panelContributions(contributionSeries, project_path);
 
 %% chart with spill-overs
 panelSpillOvers(irfStruct, project_path)
+
+%% chart with spill-overs
+panelTotal(irfStruct, project_path)
 
 %% stochastic simulation
 dynare('eagleModelFiscalShocksStoch.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
@@ -254,5 +259,71 @@ function panelSpillOvers(irfStruct, projectPath)
 
     % Save graph
     fileName = fullfile(projectPath, "docs/2024-12_RCC-workshop/figures/effectNGEUspillovers");
+    exportgraphics(t, sprintf('%s.png',fileName),'BackgroundColor','none');
+end
+
+function panelTotal(irfStruct, projectPath)
+
+    % Redating
+    irfStruct = databank.redate(irfStruct, qq(1, 1), qq(2021, 1));
+    
+    % Please specify the list of the variables to plot   
+    VarListToPlot = ["EA_y", "EA_pic4"];
+    TitleList = ["EA GDP", "EA Inflation"];
+    
+    % Please specify the date range of the series
+    DateRange = qq(2021,1):qq(2031,4);
+    aShift = 0;
+    DateRangeNorm = DateRange - aShift;
+    DateRangeDateTime = dater.toMatlab(DateRangeNorm);
+    
+    % Plotting
+    figure
+    
+    % Defining the shape of the figure
+    tiledlayout_width = 2; %Specify the # of columns desired
+    tiledlayout_height = 1;
+    
+    t = tiledlayout(tiledlayout_height, tiledlayout_width, 'TileSpacing', 'compact','Padding','compact');
+    
+    h = gcf;
+    set(h, 'Units','centimeters', 'Position',[0 0 14 5.5])
+    set(h,'defaulttextinterpreter','latex');
+    
+    for aItem = VarListToPlot %for each panel
+        nexttile;
+        grid on
+        hold on 
+    
+        % Seeting of the title
+        aTitle = TitleList(aItem == VarListToPlot);        
+        title( ...
+            aTitle ...
+            , 'Fontsize', 7 ...
+            , 'Fontweight', 'normal' ...
+        );
+    
+        % targets
+            line_ = plot( ...
+                irfStruct.(aItem){DateRange} ...
+                , 'linewidth', 2 ...
+                );
+        
+        hold off
+    
+        % Setting of the x and y axis
+        xtickformat(gca,'yy')
+    
+        set(gca ...
+            , 'Xtick', DateRangeDateTime(1:12:end) ...
+            , 'Fontsize', 6 ...
+            , 'Box', 'off' ...
+            , 'TickLabelInterpreter','latex' ...
+        );
+    
+    end 
+
+    % Save graph
+    fileName = fullfile(projectPath, "docs/2024-12_RCC-workshop/figures/effectNGEUtotal");
     exportgraphics(t, sprintf('%s.png',fileName),'BackgroundColor','none');
 end
