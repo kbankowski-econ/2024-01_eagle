@@ -14,26 +14,27 @@ dynare('shock_eab_gy3.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleP
 dynare('shock_eab_gy4.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
 
 %% analying the output of the simulation
-fiscalSimOutput = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'shock_eab_gy2', 'Output', 'shock_eab_gy2_results.mat'));
-M_ = fiscalSimOutput.M_;
+structSimul = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'shock_eab_gy1', 'Output', 'shock_eab_gy1_results.mat'));
+M_ = structSimul.M_;
 
-dataRange = qq(0, 4): qq(0, 4)+size(fiscalSimOutput.oo_.endo_simul', 1) - 1;
+dataRange = qq(0, 4): qq(0, 4)+size(structSimul.oo_.endo_simul', 1) - 1;
 endoStruct = struct(); ssStruct = struct(); irfStruct = struct();
 
 endoStruct = databank.fromArray( ...
-    fiscalSimOutput.oo_.endo_simul' ...
-    , M_.endo_names ...
+    structSimul.oo_.endo_simul' ...
+    , structSimul.M_.endo_names ...
     , dataRange(1) ...
 );
 ssStruct = databank.fromArray( ...
-    repmat(fiscalSimOutput.oo_.steady_state', numel(dataRange), 1) ...
-    , M_.endo_names ...
+    repmat(structSimul.oo_.steady_state', numel(dataRange), 1) ...
+    , structSimul.M_.endo_names ...
     , dataRange(1) ...
 );
-for aParam = string(reshape(fiscalSimOutput.M_.param_names, 1, []))
-    paramStruct.(aParam) = fiscalSimOutput.M_.params(strcmp(aParam, fiscalSimOutput.M_.param_names));
+for aParam = string(reshape(structSimul.M_.param_names, 1, []))
+    paramStruct.(aParam) = structSimul.M_.params(strcmp(aParam, structSimul.M_.param_names));
 end
 
+%{
 [endoStruct.EAE_y, ssStruct.EAE_y]
 [endoStruct.EAE_yst, ssStruct.EAE_yst]
 [endoStruct.EAE_ysn, ssStruct.EAE_ysn]
@@ -42,11 +43,21 @@ end
 [endoStruct.EAE_cgy, ssStruct.EAE_cgy]
 [endoStruct.EAB_cgy, ssStruct.EAB_cgy]
 [endoStruct.EAB_y, ssStruct.EAB_y]
-
+%}
 
 aEndoVar = "EA_y";
 irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)/ssStruct.(aEndoVar)-1)*100;
-irfStruct.(aEndoVar) 
+aEndoVar = "EAH_y";
+irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)/ssStruct.(aEndoVar)-1)*100;
+aEndoVar = "EAM_y";
+irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)/ssStruct.(aEndoVar)-1)*100;
+aEndoVar = "EAM_ex";
+irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)/ssStruct.(aEndoVar)-1)*100;
+aEndoVar = "EAM_r";
+irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)-ssStruct.(aEndoVar))*100;
+aEndoVar = "EA_pic4";
+irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)-ssStruct.(aEndoVar))*100;
+
 
 aItemList = ["EA_y", "EA_pic4"];
 
@@ -80,19 +91,22 @@ end
 contributionSeries.colorTable = colorTable;
 
 %% investigating interest rate reaction upon the request from Sandra
-panelContributions(contributionSeries, project_path);
-
-%% stochastic simulation
-dynare('eagleModelFiscalShocksStoch.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
+panelContributions(contributionSeries, contributionSeries, project_path);
 
 %%
-function panelContributions(contributionSeries, projectPath, subProjectPath)
+function panelContributions(contributionSeriesGc, contributionSeriesGi, projectPath)
+
+    % ctry lists
+    ctryListModNames = ["EAA", "EAB", "EAC", "EAD", "EAE", "EAF", "EAG", "EAH", "EAI", "EAJ", "EAK", "EAL", "EAM"];
+    ctryListStdNames = ["EA rest", "AT", "BE", "FI", "FR", "LU", "NL", "ES", "GR", "IE", "IT", "PT", "DE"]; 
+    contributionSeriesGc.contrib = databank.redate(contributionSeriesGc.contrib, qq(1, 1), qq(2021, 1));
+    contributionSeriesGc.total = databank.redate(contributionSeriesGc.total, qq(1, 1), qq(2021, 1));
 
     % Please specify the list of the variables to plot   
-    VarListToPlot = string(reshape(fieldnames(contributionSeries.total), 1, []));
+    VarListToPlot = string(reshape(fieldnames(contributionSeriesGc.total), 1, []));
     
     % Please specify the date range of the series
-    DateRange = qq(1,1):qq(5,4);
+    DateRange = qq(2021,1):qq(2039,4);
     aShift = 0;
     DateRangeNorm = DateRange - aShift;
     DateRangeDateTime = dater.toMatlab(DateRangeNorm);
@@ -101,14 +115,13 @@ function panelContributions(contributionSeries, projectPath, subProjectPath)
     figure
     
     % Defining the shape of the figure
-    tiledlayout_width = 1; %Specify the # of columns desired
-    tiledlayout_height = 2;
+    tiledlayout_width = 2; %Specify the # of columns desired
+    tiledlayout_height = 1;
     
     t = tiledlayout(tiledlayout_height, tiledlayout_width, 'TileSpacing', 'compact','Padding','compact');
     
     h = gcf;
-    FigureHeight = min(29.7, tiledlayout_height*6.5);
-    set(h, 'Units','centimeters', 'Position',[0 0 21-2*2.5 20-2*2.5])
+    set(h, 'Units','centimeters', 'Position',[0 0 14 5.5])
     set(h,'defaulttextinterpreter','latex');
     
     for aItem = VarListToPlot %for each panel
@@ -117,7 +130,7 @@ function panelContributions(contributionSeries, projectPath, subProjectPath)
         hold on 
     
         % Seeting of the title
-        aTitle = sprintf('Decomposition of %s', contributionSeries.lhs.(aItem));        
+        aTitle = sprintf('Decomposition of %s', contributionSeriesGc.lhs.(aItem));        
         title( ...
             aTitle ...
             , 'Fontsize', 7 ...
@@ -125,55 +138,47 @@ function panelContributions(contributionSeries, projectPath, subProjectPath)
         );
     
         % actual data
-        try
             bars_ = barcon( ...
-                DateRange ...
-                , contributionSeries.contrib.(aItem) ...
-                , "ColorMap", cell2mat(contributionSeries.colorTable{contributionSeries.contrib.(aItem).Comment, :}) ...
+                contributionSeriesGc.contrib.(aItem){DateRange} ...
+                , "ColorMap", cell2mat(contributionSeriesGc.colorTable{contributionSeriesGc.contrib.(aItem).Comment, :}) ...
                 , 'EdgeColor', 'none');
-        catch
-        end  
         % targets
-        try
             line_ = plot( ...
-                DateRange ...
-                , contributionSeries.total.(aItem) ...
-                , 'color', cell2mat(contributionSeries.colorTable{aItem, :}) ...
+                contributionSeriesGc.total.(aItem){DateRange} ...
+                , 'color', cell2mat(contributionSeriesGc.colorTable{aItem, :}) ...
                 , 'linewidth', 2 ...
                 , 'Marker', '_' ...
                 , 'MarkerFaceColor', rgb('black') ...
                 , 'MarkerEdgeColor', rgb('black') ...
                 , 'MarkerSize', 4 ...
                 );
-        catch
-        end
         
         hold off
     
         % Setting of the x and y axis
-        xtickformat(gca,'yyQQQ')
+        xtickformat(gca,'yy')
     
         set(gca ...
-            , 'Xtick', DateRangeDateTime(1:4:end) ...
-            , 'Fontsize', 7 ...
+            , 'Xtick', DateRangeDateTime(1:12:end) ...
+            , 'Fontsize', 6 ...
             , 'Box', 'off' ...
             , 'TickLabelInterpreter','latex' ...
         );
     
-        legendLabels = replace([contributionSeries.contrib.(aItem).Comment, aItem], "_", "\_");
-        legend( ...
-            [bars_, line_] ...
-            , legendLabels ...
-            , 'location', 'northoutside' ...
-            , 'Interpreter','latex' ...
-            , 'Fontsize', 6 ...
-            , 'NumColumns', 2 ...
-            );
-    
-    
     end 
-        
+
+    legendLabels = [ctryListStdNames, "EA total"];
+    leg = legend( ...
+        [bars_, line_] ...
+        , legendLabels ...
+        , 'location', 'northoutside' ...
+        , 'Interpreter','latex' ...
+        , 'Fontsize', 5 ...
+        , 'NumColumns', 3 ...
+        );
+    leg.Layout.Tile = 'north'; 
+
     % Save graph
-    fileName = fullfile(projectPath, "docs/fiscalContributions");
+    fileName = fullfile(projectPath, "docs/2024-12_RCC-workshop/figures/effectGovInvES");
     exportgraphics(t, sprintf('%s.png',fileName),'BackgroundColor','none');
 end
