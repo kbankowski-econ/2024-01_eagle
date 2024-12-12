@@ -81401,7 +81401,6 @@ US_rer = 1;
 // Euroarea-wide variables
 //-------------
 // GDP
-[name='EA_y']
 EA_y = 
 	(
 	EAA_size*EAA_pybar*EAA_y
@@ -81505,7 +81504,6 @@ EA_bf =
 	+ EAM_size
 );
 // Annual inflation
-[name='EA_pic4']
 EA_pic4 = 1 
 		* EAA_pic4^(EAA_size/(
 				+ EAA_size
@@ -81708,60 +81706,60 @@ log(EA_z) = (1-EA_rhoz)*log(EA_zbar)+EA_rhoz*log(EA_z(-1))+EA_epsz;
 // Auxiliary equation for steady-state output
 end;
 load_params_and_steady_state('eagle_steady_govInv_refined.txt');
-EAA_rhocg=0; //if we don't want persistent shock
-EAB_rhocg=0; //if we don't want persistent shock
-EAC_rhocg=0; //if we don't want persistent shock
-EAD_rhocg=0; //if we don't want persistent shock
-EAE_rhocg=0; //if we don't want persistent shock
-EAF_rhocg=0; //if we don't want persistent shock
-EAG_rhocg=0; //if we don't want persistent shock
-EAH_rhocg=0; //if we don't want persistent shock
-EAI_rhocg=0; //if we don't want persistent shock
-EAJ_rhocg=0; //if we don't want persistent shock
-EAK_rhocg=0; //if we don't want persistent shock
-EAL_rhocg=0; //if we don't want persistent shock
-EAM_rhocg=0; //if we don't want persistent shock
+// EAA_rhocg=0; //if we don't want persistent shock
+// EAB_rhocg=0; //if we don't want persistent shock
+// EAC_rhocg=0; //if we don't want persistent shock
+// EAD_rhocg=0; //if we don't want persistent shock
+// EAE_rhocg=0; //if we don't want persistent shock
+// EAF_rhocg=0; //if we don't want persistent shock
+// EAG_rhocg=0; //if we don't want persistent shock
+EAH_rhoig = 0; //if we don't want persistent shock
+// EAI_rhocg=0; //if we don't want persistent shock
+// EAJ_rhocg=0; //if we don't want persistent shock
+// EAK_rhocg=0; //if we don't want persistent shock
+// EAL_rhocg=0; //if we don't want persistent shock
+// EAM_rhocg=0; //if we don't want persistent shock
 steady(solve_algo = 5, markowitz = 5);
 shocks;
-var EAA_epsgc;
+// var EAA_epsgc;
+// periods 1:4;
+// values 0.01;
+// var EAB_epsgc;
+// periods 1:4;
+// values 0.01;
+// var EAC_epsgc;
+// periods 1:4;
+// values 0.01;
+// var EAD_epsgc;
+// periods 1:4;
+// values 0.01;
+// var EAE_epsgc;
+// periods 1:4;
+// values 0.01;
+// var EAF_epsgc;
+// periods 1:4;
+// values 0.01;
+// var EAG_epsgc;
+// periods 1:4;
+// values 0.01;
+var EAH_epsgi;
 periods 1:4;
 values 0.01;
-var EAB_epsgc;
-periods 1:4;
-values 0.01;
-var EAC_epsgc;
-periods 1:4;
-values 0.01;
-var EAD_epsgc;
-periods 1:4;
-values 0.01;
-var EAE_epsgc;
-periods 1:4;
-values 0.01;
-var EAF_epsgc;
-periods 1:4;
-values 0.01;
-var EAG_epsgc;
-periods 1:4;
-values 0.01;
-var EAH_epsgc;
-periods 1:4;
-values 0.01;
-var EAI_epsgc;
-periods 1:4;
-values 0.01;
-var EAJ_epsgc;
-periods 1:4;
-values 0.01;
-var EAK_epsgc;
-periods 1:4;
-values 0.01;
-var EAL_epsgc;
-periods 1:4;
-values 0.01;
-var EAM_epsgc;
-periods 1:4;
-values 0.01;
+// var EAI_epsgc;
+// periods 1:4;
+// values 0.01;
+// var EAJ_epsgc;
+// periods 1:4;
+// values 0.01;
+// var EAK_epsgc;
+// periods 1:4;
+// values 0.01;
+// var EAL_epsgc;
+// periods 1:4;
+// values 0.01;
+// var EAM_epsgc;
+// periods 1:4;
+// values 0.01;
 end;
 perfect_foresight_setup(periods = 100);
 perfect_foresight_solver(stack_solve_algo=0);

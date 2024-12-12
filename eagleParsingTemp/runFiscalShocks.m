@@ -1,27 +1,4 @@
-%// NOTE: next step is to introduce the missing elements of the
-% import content that may be not covered in the loops (see also
-% some TODO items; first to load the model and then later to
-% solve for its SS)
-
-%% preamble
-clear all; close all; clc; restoredefaultpath
-% Add some paths
-currentFolder = pwd; % Get current directory
-[parentFolder, ~, ~] = fileparts(currentFolder);
-addpath(genpath(parentFolder));
-
-%% performing data transformation
-fprintf('\n\n\n+++ Initialising the project ...\n');
-% calling a specific user input not tracked by GIT
-utils.call.paths;
-% Call Iris
-addpath(iris_path);
-iris.startup
-% Call Dynare
-addpath(dynare_6_0);
-dynare_config
-
-%% cding to a proper folder
+% cding to a proper folder
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 
 %% deterministic simulation
