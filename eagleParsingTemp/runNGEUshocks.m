@@ -1,5 +1,16 @@
+ngeuCtryListModNames = ["EAB", "EAC", "EAD", "EAE", "EAG", "EAH", "EAI", "EAJ", "EAK", "EAL", "EAM"];
+ngeuCtryListStdNames = ["AT", "BE", "FI", "FR", "NL", "ES", "GR", "IE", "IT", "PT", "DE"];
+
 % cding to a proper folder
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
+
+%%
+ngeuInput = load("/Users/kk/Documents/0000-00_work/2021-05_ECB-MC/ecb-mc/databases/FiscalBMENote/shockInput_NGEU_24repFQ_AEJun24.mat");
+
+for aCtry = ngeuCtryListStdNames
+    ngeuEagleInput.(ngeuCtryListModNames(aCtry == ngeuCtryListStdNames)) = ngeuInput.shockInput.Qrat.(aCtry).GovInv;
+end
+
 
 %% deterministic simulation
 dynare('shock_ngeu.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
