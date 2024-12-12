@@ -52,37 +52,32 @@
 
 \section{Introduction}
 
-%//TODO: what is special about the trade in the euro area
 \begin{frame}
-  \frametitle{Evaluating Full Compliance with Fiscal Rules}
-  \framesubtitle{Main Question: What if countries complied with the SGP fully?}
-  
-
+  \frametitle{How do euro area countries trade?}
+  \centering
+  \includegraphics[width=0.85\textwidth]{figures/ea_imports_chart.png} 
 \end{frame}
 
 %//TODO: very quickly on what we do
 \begin{frame}
-  \frametitle{Evaluating Full Compliance with Fiscal Rules}
+  \frametitle{The EAGLE model with individual countries}
   \framesubtitle{What We Do in This Project}
   
   \vspace{-1ex}
   
   \begin{itemize}
-    \item We assess whether macroeconomic outcomes in the euro area would differ with full adherence to the fiscal framework.
+    \item We recognise the importance of heterogenity and interdependence in the euro area.
     
-    \item We construct counterfactual scenarios using macroeconomic models:
-      \begin{itemize}
-          \item Estimating the fiscal adjustments needed for full SGP compliance using simple country-specific models.
-          \item Simulating alternative macroeconomic trajectories with a large-scale model for the euro area.
-      \end{itemize}
+    \item Against this background, we establish a more country granular version of the seminal EAGLE model:
     
-    \item Full compliance with the SGP would require significant early fiscal adjustments in EMU countries.
+    \item In our version EAGLE we distinguish the 12 ea countries (i.e. the early adopters) (and we push Dynare to its limit).
     
-    \item Adhering to the SGP would moderate early 2000s growth and reduce the need for post-GFC fiscal consolidation, which aggravated the second downturn.
+    \item The model embeds meaningful fiscal policy (notably, complementary government consumption and productive government investment), which makes it a suitable tool to analyse fiscal initiatives.
     
-    \item Sound fiscal positions would prevent the debt accumulation that was observed.
+    \item This presentation is mostly focuses on trade, which is a major challange in the contex of the model extention.
     
-    \item Our results hold with both ex-post and real-time cyclical estimates.
+    \item After briefly looking at properties of main fiscal shock we investigate NGEU programme in our set up, as a policy application.
+    
   \end{itemize}
 
 \end{frame}
@@ -93,35 +88,23 @@
 \begin{frame}
   \frametitle{Context \& Related Literature}
   
-  \textbf{Context}
-  \begin{itemize}
-    \item Major reform of EU fiscal rules took effect on 30 April 2024.
-    \item Now is the final chance to draw lessons from the past to improve the new framework's success.
-  \end{itemize}
-  
   \textbf{Related Literature}
   \begin{itemize}
-    \item Benefits: fiscal discipline, lower borrowing costs, reduced volatility (\textcolor{royalblue}{Potrafke (2023)}; \textcolor{royalblue}{Brändle et al. (2023)}).
-    \item However, SGP largely failed to meet its goals (\textcolor{royalblue}{Haroutunian et al. (2024)}).
-    \item Failures due to design flaws, noted by \textcolor{royalblue}{Eyraud \& Wu (2015)}; \textcolor{royalblue}{Kamps \& Leiner-Killinger (2019)}.
-    \item Weak enforcement also hindered success (\textcolor{royalblue}{Larch et al. (2023)}).
+    \item Multitude of papers documenting and applying \textcolor{royalblue}{EAGLE} by Pascal Jaquinot and members of EAGLE network.
+    \item Variiety of applications of \textcolor{royalblue}{QUEST} model by the colleagues from the EC.
+    \item \textcolor{royalblue}{ECB-MC} already existing in the form of linked version at the ECB.
+    \item Other models like \textcolor{royalblue}{GIMF} at the IMF documented in Kumhof et al. 2010.
   \end{itemize}
   
   \textbf{Our Contribution}
   \begin{itemize}
-    \item We analyse the role of compliance in the SGP's effectiveness.
+    \item More granular version of the model operating in Dynare (given no Troll availability as of 2025 at the ECB).
   \end{itemize}
 
 \end{frame}
 
 
 \section{Model specification}
-
-\begin{frame}
-  \frametitle{How do countries trade?}
-  \centering
-  \includegraphics[width=0.85\textwidth]{figures/ea_imports_chart.png} 
-\end{frame}
 
 \begin{frame}
     \frametitle{How imported goods enter the model?}
