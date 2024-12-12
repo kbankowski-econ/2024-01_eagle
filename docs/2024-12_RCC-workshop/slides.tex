@@ -134,7 +134,26 @@
 
 \begin{frame}
   \frametitle{What are the trade aggregators?}
-%//TODO: Distinguish trade of intermediate and non-intermediate  
+
+  \begin{itemize}
+    \item \faLandmark~Tradable goods:
+    \begin{equation*}
+      T T_t^C(x)=\left[\eqnmarkbox[Plum]{p3}{v_{T C}}^{\frac{1}{u_{T C}}} \eqnmarkbox[LightNavyBlue]{p1}{H T_t^C(x)}^{\frac{\mu_{T C}-1}{\mu_{T C}}}+\left(1-v_{T C}\right)^{\frac{1}{\mu_{T C}}} \eqnmarkbox[LightGreen]{p2}{I M_t^C(x)}^{\frac{\mu_{T C}-1}{\mu_{T C}}}\right]^{\frac{\mu_{T C}}{\mu_{T C-1}}}
+    \end{equation*}
+    \annotate[yshift=-0.5em]{below,right}{p1}{Home tradables}
+    \annotate[yshift=-0.5em]{below,right}{p2}{Imported goods}
+    \annotate[yshift=-0.5em]{below,left}{p3}{Home bias parameter}
+
+    \item \faLandmark~Imported goods:
+    {\small
+    \begin{equation*}
+      I M_t^C(x)=\left[\sum_{C O \neq H}\left(\eqnmarkbox[Plum]{p4}{v_{I M^C}^{H, C O}}\right)^{\frac{1}{\mu_{M C}}}\left(\eqnmarkbox[LightGreen]{p5}{I M_t^{C, C O}(x)}\left(1-\Gamma_{I M^C}^{H, C O}\left(\frac{I M_t^{C, C O}(x)}{Q_t^C(x)}\right)\right)\right)^{\frac{\mu_{I M C}-1}{\mu_{I M C}}}\right]^{\frac{\mu_{I M C}}{\mu_{I M C}-1}}    
+    \end{equation*}
+    }
+      \annotate[yshift=-1.5em]{below,left}{p4}{Bias towards CO country}
+      \annotate[yshift=-1.5em]{below,right}{p5}{Imported goods from CO country}
+  \end{itemize}
+
 \end{frame}
 
 \section{Model calibration}
