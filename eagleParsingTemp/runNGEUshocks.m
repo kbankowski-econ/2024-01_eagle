@@ -15,9 +15,10 @@ for aCtry = ngeuCtryListStdNames
 end
 
 for aCtryName = databank.fieldNames(ngeuInput.shockInput.A)
-    ngeuChartInput.(aCtryName) = ngeuInput.shockInput.A.(aCtryName).GovInv/gdpInput.ltGDP.A.U9*100;
+    ngeuChartInput.(aCtryName) = ngeuInput.shockInput.A.(aCtryName).GovInv/gdpInput.ltGDP.A.U2*100;
 end
 
+databank.toCSV(ngeuChartInput, fullfile(project_path, "databases/inputNGEUchart.csv"), "Decimal", 3, "Comments", false, "Class", false);
 
 %% deterministic simulation
 dynare('shock_ngeu.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
