@@ -90,20 +90,23 @@ for aItemIndex = 1:numel(unique(allItemList))
 end
 contributionSeries.colorTable = colorTable;
 
+contribStructure.Gc = contributionSeries;
+
+
 %% investigating interest rate reaction upon the request from Sandra
-panelContributions(contributionSeries, contributionSeries, project_path);
+panelContributions(contribStructure, project_path);
 
 %%
-function panelContributions(contributionSeriesGc, contributionSeriesGi, projectPath)
+function panelContributions(contribStructure, projectPath)
 
     % ctry lists
     ctryListModNames = ["EAA", "EAB", "EAC", "EAD", "EAE", "EAF", "EAG", "EAH", "EAI", "EAJ", "EAK", "EAL", "EAM"];
     ctryListStdNames = ["EA rest", "AT", "BE", "FI", "FR", "LU", "NL", "ES", "GR", "IE", "IT", "PT", "DE"]; 
-    contributionSeriesGc.contrib = databank.redate(contributionSeriesGc.contrib, qq(1, 1), qq(2021, 1));
-    contributionSeriesGc.total = databank.redate(contributionSeriesGc.total, qq(1, 1), qq(2021, 1));
+    contribStructure.Gc.contrib = databank.redate(contribStructure.Gc.contrib, qq(1, 1), qq(2021, 1));
+    contribStructure.Gc.total = databank.redate(contribStructure.Gc.total, qq(1, 1), qq(2021, 1));
 
     % Please specify the list of the variables to plot   
-    VarListToPlot = string(reshape(fieldnames(contributionSeriesGc.total), 1, []));
+    VarListToPlot = string(reshape(fieldnames(contribStructure.Gc.total), 1, []));
     
     % Please specify the date range of the series
     DateRange = qq(2021,1):qq(2039,4);
@@ -130,7 +133,7 @@ function panelContributions(contributionSeriesGc, contributionSeriesGi, projectP
         hold on 
     
         % Seeting of the title
-        aTitle = sprintf('Decomposition of %s', contributionSeriesGc.lhs.(aItem));        
+        aTitle = sprintf('Decomposition of %s', contribStructure.Gc.lhs.(aItem));        
         title( ...
             aTitle ...
             , 'Fontsize', 7 ...
@@ -139,13 +142,13 @@ function panelContributions(contributionSeriesGc, contributionSeriesGi, projectP
     
         % actual data
             bars_ = barcon( ...
-                contributionSeriesGc.contrib.(aItem){DateRange} ...
-                , "ColorMap", cell2mat(contributionSeriesGc.colorTable{contributionSeriesGc.contrib.(aItem).Comment, :}) ...
+                contribStructure.Gc.contrib.(aItem){DateRange} ...
+                , "ColorMap", cell2mat(contribStructure.Gc.colorTable{contribStructure.Gc.contrib.(aItem).Comment, :}) ...
                 , 'EdgeColor', 'none');
         % targets
             line_ = plot( ...
-                contributionSeriesGc.total.(aItem){DateRange} ...
-                , 'color', cell2mat(contributionSeriesGc.colorTable{aItem, :}) ...
+                contribStructure.Gc.total.(aItem){DateRange} ...
+                , 'color', cell2mat(contribStructure.Gc.colorTable{aItem, :}) ...
                 , 'linewidth', 2 ...
                 , 'Marker', '_' ...
                 , 'MarkerFaceColor', rgb('black') ...
