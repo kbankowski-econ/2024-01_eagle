@@ -22,7 +22,7 @@
 \usetheme{Boadilla}
 \usecolortheme{orchid}
 \title[EAGLE with individual countries]{The EAGLE model with individual euro area countries: a framework for fiscal policy analysis}
-\author[K. Ba\'nkowski, E. Petraviciute]{Krzysztof Ba\'nkowski \and Emile Petraviciute}
+\author[K. Ba\'nkowski, E. Petravičiūtė]{Krzysztof Ba\'nkowski \and Emilė Petravičiūtė}
 %//TODO: Put special signs in the names
 \institute[] % (optional)
 {
@@ -53,127 +53,128 @@
 \section{Introduction}
 
 \begin{frame}
-  \frametitle{How do euro area countries trade?}
-  \centering
-  \includegraphics[width=0.85\textwidth]{figures/ea_imports_chart.png} 
+  \frametitle{How much euro area countries trade}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/ea_imports_chart.png} % Ensure the image fits the slide
+    \caption{\scriptsize Note: This chart shows the magnitude of imports across euro area countries, compared to Japan and the US.}
+    %TODO: if we have time, add source and adjust the size
+  \end{figure}
 \end{frame}
 
-%//TODO: very quickly on what we do
 \begin{frame}
   \frametitle{The EAGLE model with individual countries}
   \framesubtitle{What We Do in This Project}
-  
   \vspace{-1ex}
-  
   \begin{itemize}
-    \item We recognise the importance of heterogenity and interdependence in the euro area.
-    
-    \item Against this background, we establish a more country granular version of the seminal EAGLE model:
-    
-    \item In our version EAGLE we distinguish the 12 ea countries (i.e. the early adopters) (and we push Dynare to its limit).
-    
-    \item The model embeds meaningful fiscal policy (notably, complementary government consumption and productive government investment), which makes it a suitable tool to analyse fiscal initiatives.
-    
-    \item This presentation is mostly focuses on trade, which is a major challange in the contex of the model extention.
-    
-    \item After briefly looking at properties of main fiscal shock we investigate NGEU programme in our set up, as a policy application.
-    
+  \item We recognize the importance of heterogeneity and interdependence in the euro area.
+  \item Against this background, we establish a more country-granular version of the seminal EAGLE model.
+  \item In our version of EAGLE, we distinguish the 12 EA countries (i.e., the early adopters) (and we push Dynare to its limits).
+  \item The model embeds meaningful fiscal policy (notably, complementary government consumption and productive government investment), which makes it a suitable tool to analyze fiscal initiatives.
+  \item This presentation mostly focuses on trade, which is a major challenge in the context of the model extension.
+  \item After briefly looking at properties of main fiscal shocks, we study the NGEU programme in our setup as a policy application.
   \end{itemize}
+  \end{frame}
 
-\end{frame}
 
-
-%//TODO: on what we build, EAGLE, QUEST, GIMF
-\section{Context \& Literature}
+\section{Literature \& contribution of the project}
 \begin{frame}
-  \frametitle{Context \& Related Literature}
-  
+  \frametitle{Related literature \& Contribution}
   \textbf{Related Literature}
   \begin{itemize}
-    \item Multitude of papers documenting and applying \textcolor{royalblue}{EAGLE} by Pascal Jaquinot and members of EAGLE network.
-    \item Variiety of applications of \textcolor{royalblue}{QUEST} model by the colleagues from the EC.
-    \item \textcolor{royalblue}{ECB-MC} already existing in the form of linked version at the ECB.
-    \item Other models like \textcolor{royalblue}{GIMF} at the IMF documented in Kumhof et al. 2010.
+  \item Multitude of papers documenting and applying \textcolor{royalblue}{EAGLE} by Pascal Jacquinot and members of EAGLE network.
+  \item Variety of applications of \textcolor{royalblue}{QUEST} model by colleagues from the EC.
+  \item \textcolor{royalblue}{ECB-MC} already exists in the form of a linked version at the ECB.
+  \item Other models like \textcolor{royalblue}{GIMF} at the IMF documented in Kumhof et al. (2010).
   \end{itemize}
-  
   \textbf{Our Contribution}
   \begin{itemize}
-    \item More granular version of the model operating in Dynare (given no Troll availability as of 2025 at the ECB).
+  \item More granular version of the model operating in Dynare (given no Troll availability as of 2025 at the ECB).
   \end{itemize}
-
-\end{frame}
+  \end{frame}
 
 
 \section{Model specification}
 
 \begin{frame}
-    \frametitle{How imported goods enter the model?}
-    \centering
-    \includegraphics[width=\linewidth]{figures/eagle_chart3.png}
-    %//TODO: Distinguish trade of intermediate and non-intermediate
-\end{frame}
+  \frametitle{How do imported goods enter the model?}
+  \centering
+  \begin{figure}
+  \includegraphics[width=\linewidth]{figures/eagle_chart3.png}
+  \caption{\scriptsize Source: Own illustration.}
+  \end{figure}
+  %TODO: Distinguish trade of intermediate and non-intermediate
+  \end{frame}
 
-\begin{frame}
-  \frametitle{What are the trade aggregators?}
-
-  \begin{itemize}
-    \item \faLandmark~Tradable goods:
+  \begin{frame}
+    \frametitle{What are the trade aggregators?}
+    \begin{itemize}
+    \item \faBoxes~Tradable goods: % Changed from \faLandmark to \faBoxes to represent tradable goods
     \begin{equation*}
-      T T_t^C(x)=\left[\eqnmarkbox[Plum]{p3}{v_{T C}}^{\frac{1}{u_{T C}}} \eqnmarkbox[LightNavyBlue]{p1}{H T_t^C(x)}^{\frac{\mu_{T C}-1}{\mu_{T C}}}+\left(1-v_{T C}\right)^{\frac{1}{\mu_{T C}}} \eqnmarkbox[LightGreen]{p2}{I M_t^C(x)}^{\frac{\mu_{T C}-1}{\mu_{T C}}}\right]^{\frac{\mu_{T C}}{\mu_{T C-1}}}
+    TT_t^C(x)=\left[\eqnmarkbox[Plum]{p3}{v_{TC}}^{\frac{1}{\mu_{TC}}} \eqnmarkbox[LightNavyBlue]{p1}{HT_t^C(x)}^{\frac{\mu_{TC}-1}{\mu_{TC}}}+\left(1-v_{TC}\right)^{\frac{1}{\mu_{TC}}} \eqnmarkbox[LightGreen]{p2}{IM_t^C(x)}^{\frac{\mu_{TC}-1}{\mu_{TC}}}\right]^{\frac{\mu_{TC}}{\mu_{TC-1}}}
     \end{equation*}
     \annotate[yshift=-0.5em]{below,right}{p1}{Home tradables}
     \annotate[yshift=-0.5em]{below,right}{p2}{Imported goods}
     \annotate[yshift=-0.5em]{below,left}{p3}{Home bias parameter}
-
-    \item \faLandmark~Imported goods:
+    \item \faShip~Imported goods: % Changed from \faLandmark to \faShip to represent imports
     {\small
     \begin{equation*}
-      I M_t^C(x)=\left[\sum_{C O \neq H}\left(\eqnmarkbox[Plum]{p4}{v_{I M^C}^{H, C O}}\right)^{\frac{1}{\mu_{M C}}}\left(\eqnmarkbox[LightGreen]{p5}{I M_t^{C, C O}(x)}\left(1-\Gamma_{I M^C}^{H, C O}\left(\frac{I M_t^{C, C O}(x)}{Q_t^C(x)}\right)\right)\right)^{\frac{\mu_{I M C}-1}{\mu_{I M C}}}\right]^{\frac{\mu_{I M C}}{\mu_{I M C}-1}}    
+    IM_t^C(x)=\left[\sum_{CO \neq H}\left(\eqnmarkbox[Plum]{p4}{v_{IM^C}^{H,CO}}\right)^{\frac{1}{\mu_{IMC}}}\left(\eqnmarkbox[LightGreen]{p5}{IM_t^{C,CO}(x)}\left(1-\Gamma_{IM^C}^{H,CO}\left(\frac{IM_t^{C,CO}(x)}{Q_t^C(x)}\right)\right)\right)^{\frac{\mu_{IMC}-1}{\mu_{IMC}}}\right]^{\frac{\mu_{IMC}}{\mu_{IMC}-1}}
     \end{equation*}
     }
-      \annotate[yshift=-1.5em]{below,left}{p4}{Bias towards CO country}
-      \annotate[yshift=-1.5em]{below,right}{p5}{Imported goods from CO country}
-  \end{itemize}
-
-\end{frame}
+    \annotate[yshift=-1.5em]{below,left}{p4}{Bias towards CO country}
+    \annotate[yshift=-1.5em]{below,right}{p5}{Imported goods from CO country}
+    \end{itemize}
+    \end{frame}
 
 \section{Model calibration}
 
 \begin{frame}
-  \frametitle{Graph with import intensities}
-  \framesubtitle{Behavioural Equations}
+  \frametitle{Import content of final demand components}
+  \framesubtitle{Following the methodology of Bussière et al. (2013)}
+  \begin{figure}
   \centering
-  \includegraphics[width=1\textwidth]{figures/import_content2.png} 
-  
+  \includegraphics[width=0.9\textwidth]{figures/import_content2.png}
+  \caption{\scriptsize Source: Own calculations based on the Eurostat Input-Output annual data.}
+  \end{figure}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Graph with final demand structure}
- \centering
-  \includegraphics[width=\textwidth, height=0.85\textheight]{figures/trade_values.png} 
-  \framesubtitle{Behavioural Equations}
-  
-\end{frame}
+  \frametitle{Import structure in EAGLE}
+  \framesubtitle{Example for Spain}
+  \vspace{-3ex}  % Added negative vertical space
+  \begin{figure}
+  \includegraphics[width=\textwidth, height=0.85\textheight]{figures/trade_values.png}
+  \vspace{-9ex}  % Added negative vertical space
+  \caption{\scriptsize Note: The numbers in grey are parameter values in trade aggregators. Otherwise, the figures are GDP shares of relevant components.}
+  \end{figure}
+  \end{frame}
 
 \section[Model properties]{Model properties}
 
+
 \begin{frame}
   \frametitle{EA-wide fiscal stimulus}
+  \framesubtitle{1\% of ex-ante GDP fiscal expansion during 4 quarters in all euro area countries}
+  \vspace{1ex}  % Added negative positive space
   \begin{figure}
-    \centering
-    \includegraphics[]{figures/effectGovEA.png} % Ensure the image fits the slide
-    \caption{\scriptsize Note: The GDP values and interest rate for the purpose of the decomposition are expressed as an absolute deviation.}
-\end{figure}
-
-\end{frame}
+  \centering
+  \includegraphics[]{figures/effectGovEA.png} % Ensure the image fits the slide
+  \caption{\scriptsize Note: The GDP values are in percentage deviation from the steady state. Inflation values are absolute deviations in percentage points.}
+  \end{figure}
+  \end{frame}
 
 \begin{frame}
-  \frametitle{National fiscal stimulus in Spain}
+  \frametitle{National fiscal stimulus}
+  \framesubtitle{1\% of ex-ante GDP fiscal expansion during 4 quarters in Spain only}
+
+  \vspace{1ex}  % Added negative positive space
   \begin{figure}
     \centering
     \includegraphics[]{figures/effectGovES.png} % Ensure the image fits the slide
-    \caption{\scriptsize Note: The GDP values and interest rate for the purpose of the decomposition are expressed as an absolute deviation.}
-\end{figure}
+    \caption{\scriptsize Note: The GDP values are in percentage deviation from the steady state. Inflation values are absolute deviations in percentage points.}
+  \end{figure}
 
 \end{frame}
 
@@ -181,21 +182,38 @@
   
 \begin{frame}
   \captionsetup{font=scriptsize,justification=raggedright,singlelinecheck=off}
-  
-  \frametitle{NGEU characteristics}
-  \centering 
-  \includegraphics[width=\textwidth]{figures/NGEU_input.png} % Ensure the image fits the slide
-  
-\end{frame}
+  \frametitle{NGEU-financed investment in the euro area}
+  \framesubtitle{\% of the euro area GDP}
+  \vspace{1ex}  % Added negative positive space
+
+
+  \begin{figure}
+  \centering
+  \includegraphics[width=0.85\textwidth]{figures/NGEU_input.png}
+  \vspace{-2ex}  % Added negative positive space
+  \caption{Source: Own calculations based on the ESCB WGPF data.}  % Added caption
+  \end{figure}
+  \end{frame}
+
+  \begin{frame}
+    \captionsetup{font=scriptsize,justification=raggedright,singlelinecheck=off}
+    \frametitle{The estimated overall NGEU effect}
+    \vspace{1ex}  % Added negative vertical space to reduce gap
+    \begin{figure}
+    \centering
+    \includegraphics[]{figures/effectNGEUtotal.png} % Ensure the image fits the slide
+    \caption{\scriptsize Note: The GDP values are expressed as a percentage deviation from the baseline values. The inflation rate is an absolute deviation in percentage points.}
+    \end{figure}
+    \end{frame}
 
 \begin{frame}
   \captionsetup{font=scriptsize,justification=raggedright,singlelinecheck=off}
   
-  \frametitle{The overall effect}
+  \frametitle{The estimated overall NGEU effect, country decomposition}
 
   \begin{figure}
     \centering
-    \includegraphics[]{figures/effectNGEUtotal.png} % Ensure the image fits the slide
+    \includegraphics[]{figures/effectNGEU.png} % Ensure the image fits the slide
     \caption{\scriptsize Note: The GDP values are expressed as a percentage deviation from the baseline values. The inflation rate is an absolute deviation in percentage points.}
 \end{figure}
   
@@ -203,38 +221,26 @@
 
 \begin{frame}
   \captionsetup{font=scriptsize,justification=raggedright,singlelinecheck=off}
-  
-  \frametitle{The overall effect; country decomposition of output and inflation}
-
+  \frametitle{The estimated overall NGEU effect, spill-overs}
+  \framesubtitle{Will NGEU-financed investment in Spain boost German economy?}
   \begin{figure}
-    \centering
-    \includegraphics[]{figures/effectNGEU.png} % Ensure the image fits the slide
-    \caption{\scriptsize Note: The GDP values and interest rate for the purpose of the decomposition are expressed as an absolute deviation.}
-\end{figure}
-  
-\end{frame}
-
-\begin{frame}
-  \captionsetup{font=scriptsize,justification=raggedright,singlelinecheck=off}
-  
-  \frametitle{Spill-over effects}
-
-  \begin{figure}
-    \centering
-    \includegraphics[]{figures/effectNGEUspillovers.png} % Ensure the image fits the slide
-    \caption{\scriptsize Note: The GDP and export values are expressed as a percentage deviation from the baseline values. The interest rate is an absolute deviation in percentage points.}
-\end{figure}
-
-  
+  \centering
+  \includegraphics[]{figures/effectNGEUspillovers.png} % Ensure the image fits the slide
+  \caption{\scriptsize Note: The GDP and export values are expressed as a percentage deviation from the baseline values. The interest rate is an absolute deviation in percentage points.}
+  \end{figure}
+ 
 \end{frame}
 
 \section{Way forward}
 \begin{frame}
-  \frametitle{Way forward}
+  \frametitle{Way Forward}
   \begin{itemize}
-      \item ...
+      \item Dynare is reaching its limits; scaling to include 1–2 additional countries could be sensible.
+      \item Trade calibration remains a major challenge, and efforts to find a robust procedure are still ongoing.
+      \item Introducing country heterogeneity across different dimensions, such as debt-to-GDP levels, could enhance economic analysis.
   \end{itemize}
 \end{frame}
+
 
 \begin{frame}
     \centering
