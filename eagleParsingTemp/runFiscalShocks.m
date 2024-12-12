@@ -7,7 +7,10 @@ dynare('shock_eab_gy1.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleP
 %% deterministic simulation
 dynare('shock_eab_gy2.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
 
-%% deterministic simulation
+%% deterministic simulation (ea investment)
+dynare('shock_eab_gy3.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+
+%% deterministic simulation (ea consumption)
 dynare('shock_eab_gy4.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
 
 %% analying the output of the simulation
