@@ -18,26 +18,27 @@ end
 dynare('shock_ngeu.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
 
 %% analying the output of the simulation
-fiscalSimOutput = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'shock_eab_gy1', 'Output', 'shock_eab_gy1_results.mat'));
-M_ = fiscalSimOutput.M_;
+ngeuSimOutput = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'shock_ngeu', 'Output', 'shock_ngeu_results.mat'));
+M_ = ngeuSimOutput.M_;
 
-dataRange = qq(0, 4): qq(0, 4)+size(fiscalSimOutput.oo_.endo_simul', 1) - 1;
+dataRange = qq(0, 4): qq(0, 4)+size(ngeuSimOutput.oo_.endo_simul', 1) - 1;
 endoStruct = struct(); ssStruct = struct(); irfStruct = struct();
 
 endoStruct = databank.fromArray( ...
-    fiscalSimOutput.oo_.endo_simul' ...
-    , M_.endo_names ...
+    ngeuSimOutput.oo_.endo_simul' ...
+    , ngeuSimOutput.M_.endo_names ...
     , dataRange(1) ...
 );
 ssStruct = databank.fromArray( ...
-    repmat(fiscalSimOutput.oo_.steady_state', numel(dataRange), 1) ...
-    , M_.endo_names ...
+    repmat(ngeuSimOutput.oo_.steady_state', numel(dataRange), 1) ...
+    , ngeuSimOutput.M_.endo_names ...
     , dataRange(1) ...
 );
-for aParam = string(reshape(fiscalSimOutput.M_.param_names, 1, []))
-    paramStruct.(aParam) = fiscalSimOutput.M_.params(strcmp(aParam, fiscalSimOutput.M_.param_names));
+for aParam = string(reshape(ngeuSimOutput.M_.param_names, 1, []))
+    paramStruct.(aParam) = ngeuSimOutput.M_.params(strcmp(aParam, ngeuSimOutput.M_.param_names));
 end
 
+%{
 [endoStruct.EAE_y, ssStruct.EAE_y]
 [endoStruct.EAE_yst, ssStruct.EAE_yst]
 [endoStruct.EAE_ysn, ssStruct.EAE_ysn]
@@ -46,7 +47,7 @@ end
 [endoStruct.EAE_cgy, ssStruct.EAE_cgy]
 [endoStruct.EAB_cgy, ssStruct.EAB_cgy]
 [endoStruct.EAB_y, ssStruct.EAB_y]
-
+%}
 
 aEndoVar = "EA_y";
 irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)/ssStruct.(aEndoVar)-1)*100;
@@ -90,7 +91,7 @@ panelContributions(contributionSeries, project_path);
 dynare('eagleModelFiscalShocksStoch.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
 
 %%
-function panelContributions(contributionSeries, projectPath, subProjectPath)
+function panelContributions(contributionSeries, projectPath)
 
     % Please specify the list of the variables to plot   
     VarListToPlot = string(reshape(fieldnames(contributionSeries.total), 1, []));
@@ -178,6 +179,6 @@ function panelContributions(contributionSeries, projectPath, subProjectPath)
     end 
         
     % Save graph
-    fileName = fullfile(projectPath, "docs/fiscalContributions");
+    fileName = fullfile(projectPath, "docs/2024-12_RCC-workshop/figures/effectNGEU");
     exportgraphics(t, sprintf('%s.png',fileName),'BackgroundColor','none');
 end
