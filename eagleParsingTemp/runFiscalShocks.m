@@ -179,6 +179,10 @@ function panelContributions(contribStructure, projectPath, shockedCtry)
                 , 'Box', 'off' ...
                 , 'TickLabelInterpreter','latex' ...
             );
+
+            ax = gca;
+            ax.YAxis.Exponent = 0;
+            ax.YAxis.TickLabelFormat = '%.4f';
         
         end 
     end
