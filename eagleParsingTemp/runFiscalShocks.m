@@ -112,7 +112,8 @@ function panelContributions(contribStructure, projectPath, shockedCtry)
     % ctry lists
     ctryListModNames = ["EAA", "EAB", "EAC", "EAD", "EAE", "EAF", "EAG", "EAH", "EAI", "EAJ", "EAK", "EAL", "EAM"];
     ctryListStdNames = ["EA rest", "AT", "BE", "FI", "FR", "LU", "NL", "ES", "GR", "IE", "IT", "PT", "DE"]; 
-
+    simulationList = ["Gc", "Gi"];
+    simulationTitles = ["gov. consumption", "gov. investment"]
     % Please specify the list of the variables to plot   
     VarListToPlot = string(reshape(fieldnames(contribStructure.Gc.total), 1, []));
     
@@ -135,7 +136,7 @@ function panelContributions(contribStructure, projectPath, shockedCtry)
     set(h, 'Units','centimeters', 'Position',[0 0 14 5.5])
     set(h,'defaulttextinterpreter','latex');
     
-    for aSimulation = ["Gc", "Gi"]
+    for aSimulation = simulationList
 
         for aItem = VarListToPlot %for each panel
             nexttile;
@@ -143,7 +144,7 @@ function panelContributions(contribStructure, projectPath, shockedCtry)
             hold on 
         
             % Seeting of the title
-            aTitle = sprintf('Decomposition of %s', contribStructure.(aSimulation).lhs.(aItem));        
+            aTitle = sprintf('%s (decomposition of %s)', simulationTitles(aSimulation == simulationList), contribStructure.(aSimulation).lhs.(aItem));        
             title( ...
                 aTitle ...
                 , 'Fontsize', 7 ...
