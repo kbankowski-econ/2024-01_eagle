@@ -12,4 +12,3 @@
 @#define co12 = countries[12]
 @#define co13 = countries[13]
 @#define co14 = countries[14]
-@#define co15 = countries[15]
