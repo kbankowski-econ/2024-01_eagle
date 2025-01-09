@@ -52,6 +52,9 @@ end
 run('TradeMatrix_calibrated.m');
 
 %%
+dynare('steady2b.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
+
+%%
 dynare('steady2.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
 %%
