@@ -19,6 +19,9 @@ dynare('steady0.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingT
 %% 
 dynare('steady1.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
+%% 
+dynare('steady2a.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
+
 %%
 % % Define countries list 
 countries = ["EAA", "EAB", "EAC", "EAD", "EAE","EAF","EAG","EAH","EAI","EAJ","EAK","EAL", "RW", "US"];
