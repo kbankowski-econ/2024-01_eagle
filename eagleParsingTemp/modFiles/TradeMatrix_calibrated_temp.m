@@ -10,21 +10,14 @@ demandItemListIoNames = ["FinalConHH", "FinalConGov", "PrivateInv", "GovInv"];
 shiftAmount = 12;  % Making the shift amount explicit as a variable
 countriesAux = [countries, countries];  % Double array for circular indexing
 
-sizeStruct = struct(...
-    'EAA', 0.014545, ...
-    'EAB', 0.014545, ...
-    'EAC', 0.014545, ...
-    'EAD', 0.014545, ...
-    'EAE', 0.014545, ...
-    'EAF', 0.014545, ...
-    'EAG', 0.014545, ...
-    'EAH', 0.014545, ...
-    'EAI', 0.014545, ...
-    'EAJ', 0.014545, ...
-    'EAK', 0.014545, ...
-    'EAL', 0.060000, ...
-    'RW', 0.470000, ...
-    'US', 0.310000);    
+% loading the size structure, but first as a table
+sizeStruct = struct();
+csvFileName = fullfile(project_path_io, "databases/tables/oecd", "size.csv");
+sizeTable = table();
+sizeTable = readtable(csvFileName, 'ReadRowNames', true, 'Range', 'A1:b15');
+% Convert table to structure
+sizeStruct = table2struct(sizeTable);
+sizeStruct = cell2struct(struct2cell(sizeStruct)', sizeTable.Properties.RowNames);
 
 
 %% Creating orignal trade tables
@@ -82,6 +75,15 @@ end
     newTable.imigy = newTable.imiy.*0.1;
     newTable.imiy = newTable.imiy.*0.9;
 
+%% Creating new tables (based on the IO tool)
+
+newTable = struct();
+for aItem = ["imcy", "imiy", "imcgy", "imigy"]
+    csvFileName = fullfile(project_path_io, "databases/tables/oecd", aItem+".csv");
+    newTable.(aItem) = table();
+    newTable.(aItem) = readtable(csvFileName, 'ReadRowNames', true, 'Range', 'A1:o15');
+end
+
 %% Creating new tables (based on the import content; this ammends the old table with the new information)
 
 % starting with the orignal table
@@ -115,7 +117,7 @@ end
 
 
 %% writing mod trade calibration file
-% writeTradeModFile('trade_matrix_values_calibrated_new.mod', newTable, sizeStruct, countries, countriesAux, shiftAmount)
+writeTradeModFile('trade_matrix_values_calibrated_new.mod', newTable, sizeStruct, countries, countriesAux, shiftAmount)
 writeTradeModFile('trade_matrix_values_calibrated_oldReprinted.mod', origTable, sizeStruct, countries, countriesAux, shiftAmount)
 % writeTradeModFile('trade_matrix_values_calibrated_EABEAM.mod', myTable, sizeStruct, countries, countriesAux, shiftAmount)
 
