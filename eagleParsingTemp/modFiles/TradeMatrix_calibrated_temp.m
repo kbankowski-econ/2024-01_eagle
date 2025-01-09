@@ -137,7 +137,7 @@ function writeTradeModFile(aFileName, aTable, sizeStruct, countries, countriesAu
             % Inner loop excluding both current and residual countries
             validCountries = countries ~= aCtry1 & countries ~= aCtryResid;
             for aCtry2 = countries(validCountries)
-                fprintf(fileID, '%s%s_%s, %f;\n', aCtry1, aCtry2, aItem, aTable.(aItem){aCtry1, aCtry2});
+                fprintf(fileID, '%s%s_%s, %f;\n', aCtry1, aCtry2, aItem, aTable.(aItem){aCtry2, aCtry1});
             end
         end
     end
@@ -145,9 +145,9 @@ function writeTradeModFile(aFileName, aTable, sizeStruct, countries, countriesAu
     % Item loop
         % Outer loop
         for i = 1:length(countries)
-            aCtry1 = countries(i);
+            aCtry2 = countries(i);
     for aItem = ["imcy", "imcgy", "imiy", "imigy"]
-            fprintf(fileID, '%s_%s, %f;\n', aCtry1, aItem, sum(aTable.(aItem){aCtry1, :}, 'omitnan'));
+            fprintf(fileID, '%s_%s, %f;\n', aCtry2, aItem, sum(aTable.(aItem){:, aCtry2}, 'omitnan'));
         end
         end
     
