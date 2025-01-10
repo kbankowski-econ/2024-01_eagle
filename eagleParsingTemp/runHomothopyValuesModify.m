@@ -23,7 +23,20 @@ options_.homotopy_steps = 15;
 options_.steady.maxit = 20;
 
 % Running steady state and saving it
+logname_ = 'steady2b.log';
+if exist(logname_, 'file')
+    delete(logname_)
+end
+diary(logname_)
+
+% Start the timer
+tic;
+% Executing steady function
 steady();
+% Stop the timer and get the elapsed time
+elapsed_time = toc;
+
+reportTimeToLogFile(logname_, elapsed_time);
 save_params_and_steady_state('eagle_steady_stage2b.txt');
 
 %% trying the see the failed resutls
@@ -140,6 +153,23 @@ function [paramIdentifs, values] = readHomothopyValuesFromModFile(fileName, M_)
     end
     
     % Close the file
+    fclose(fid);
+
+end
+
+function reportTimeToLogFile(log_file, elapsed_time)
+
+    % Format the time
+    hours = floor(elapsed_time / 3600);
+    minutes = floor((elapsed_time - hours * 3600) / 60);
+    seconds = round(elapsed_time - hours * 3600 - minutes * 60);
+    
+    % Create the time string
+    time_str = sprintf('%dh%02dm%02ds', hours, minutes, seconds);
+    
+    % Append the computing time to your log file
+    fid = fopen(log_file, 'a');
+    fprintf(fid, 'Total computing time : %s\n', time_str);
     fclose(fid);
 
 end
