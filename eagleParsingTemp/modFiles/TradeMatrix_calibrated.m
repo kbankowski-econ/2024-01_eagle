@@ -58,7 +58,6 @@ end
 
 % Add the total amount of import per country
 
-fprintf(fid, '\n');
 % Loop to print additional lines
 for i = 1:length(countries)
     co = countries(i);
