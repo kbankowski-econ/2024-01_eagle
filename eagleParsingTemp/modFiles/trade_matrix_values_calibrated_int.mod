@@ -670,7 +670,6 @@ USEAI_imigy, 0.000114;
 USEAJ_imigy, 0.000046;
 USEAK_imigy, 0.000013;
 USRW_imigy, 0.002704;
-
 EAA_imcy, 0.154080;
 EAA_imcgy, 0.017120;
 EAA_imiy, 0.059220;
