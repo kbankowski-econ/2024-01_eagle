@@ -1,18 +1,30 @@
 
 % steady state in the matfile contains homothopy values after the EAB has
 % been calibrated only
-load(fullfile(project_path, "eagleParsingTemp/modFiles/steady2/Output/steady2_results.mat"));
+load(sprintf("%s/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results.mat", project_path));
 
-valuesIni = readHomothopyValuesFromModFile('trade_matrix_values_calibrated_EAB.mod');
-valuesEnd = readHomothopyValuesFromModFile('trade_matrix_values_calibrated_EABEAJ.mod');
+%% loading the homothopy values from mod files
+[paramIdentif, valuesEnd] = readHomothopyValuesFromModFile('trade_matrix_values_calibrated.mod', M_);
 
-% The value that will go into ss calculation
-options_.homotopy_values(:, 3) = valuesIni;
+%% running steady command
+% creating the matrix containing the homothopy values
+% first a placeholder
+options_.homotopy_values = NaN(length(valuesEnd), 4);
+% column 1 with 4 value specifying that this is a parameter
+options_.homotopy_values(:, 1) = 4;
+% column 2 with identifiers for parameters
+options_.homotopy_values(:, 2) = paramIdentif;
+% column 3 with initial values left unchanged with NaN 
+% column 4 with end values spedified in line with trade matrix
 options_.homotopy_values(:, 4) = valuesEnd;
-options_.homotopy_steps = 50;
+
+% some options for solution
+options_.homotopy_steps = 15;
 options_.steady.maxit = 20;
-% Running steady state
+
+% Running steady state and saving it
 steady();
+save_params_and_steady_state('eagle_steady_stage2b.txt');
 
 %% trying the see the failed resutls
 M_.endo_nbr
@@ -102,11 +114,12 @@ S1.EAB_ttc*S1.EAB_pttc/(S1.EAB_py*S1.EAB_y) % 0.2382
 S1.EAB_tti*S1.EAB_ptti/(S1.EAB_py*S1.EAB_y) % 0.1463
 
 %% local function
-function values = readHomothopyValuesFromModFile(fileName)
+function [paramIdentifs, values] = readHomothopyValuesFromModFile(fileName, M_)
 
     fid = fopen(fileName, 'r');
 
     % Initialize an empty vector to store the values
+    paramIdentifs = [];
     values = [];
     
     % Read the file line by line
@@ -118,9 +131,11 @@ function values = readHomothopyValuesFromModFile(fileName)
         parts = strsplit(line, ',');
         
         % Extract the value, remove the semicolon, and convert to number
+        paramIdentif = find(strcmp(M_.param_names, parts{1}));
         value = str2double(strtrim(parts{2}(1:end-1)));
         
         % Append the value to the vector
+        paramIdentifs = [paramIdentifs; paramIdentif];
         values = [values; value];
     end
     
