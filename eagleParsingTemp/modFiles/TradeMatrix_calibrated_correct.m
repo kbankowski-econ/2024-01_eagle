@@ -1,17 +1,17 @@
 %% Trade Matrix Calculations (with calibrated population sizes)
 
-EA_idx = length(countries) - 2;
+EA_idx = length(countries) - 3;
 EA = countries(EA_idx);
 
 % Given total imports of consumption and investment goods
-consumption_values = [0.1712 * ones(1, length(countries)-3), 0.1904, 0.0538, 0.0854]; % European Countries, RW, US
-investment_values = [0.0658 * ones(1, length(countries)-3), 0.0799, 0.0500, 0.0342]; % European Countries, RW, US
+consumption_values = [0.2010 * ones(1, length(countries)-3),0.1839, 0.0860, 0.0726]; % European Countries, RW, US
+investment_values = [0.0366 * ones(1, length(countries)-3),0.0920, 0.0630, 0.0420]; % European Countries, RW, US
 
 % Suffixes
 suffixes = ["_imcy", "_imcgy", "_imiy", "_imigy"];
 
 % Open the file for writing
-fid = fopen('trade_matrix_values_calibrated_int.mod', 'w');
+fid = fopen('trade_matrix_values_calibrated_correct.mod', 'w');
 
 % Loop over origin and destination countries
 for i = 1:length(countries)
@@ -56,6 +56,8 @@ for i = 1:length(countries)
 
 end
 
+% Add the total amount of import per country
+
 % Loop to print additional lines
 for i = 1:length(countries)
     co = countries(i);
@@ -65,25 +67,25 @@ for i = 1:length(countries)
         suffix = suffixes(sufIdx);
         
         if strcmp(co, "RW")
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.0538);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.0538);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0500);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 * 0.0500);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.0860);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.0860);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0630);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 * 0.0630);
         elseif strcmp(co, EA)
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.1904);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.1904);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0799);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 * 0.0799);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.2010);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.2010);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0366);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 * 0.0366);
         elseif strcmp(co, "US")
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.0854);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.0854);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0342);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 * 0.0342);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.0726);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.0726);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0420);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 * 0.0420);
         else
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.1712);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.1712);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0658);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 * 0.0658);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.1839);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.1839);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0920);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 * 0.0920);
         end
     
     end
