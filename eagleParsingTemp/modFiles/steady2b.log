@@ -1,19 +1,719 @@
 HOMOTOPY mode 1: computing step 0/15...
 HOMOTOPY mode 1: computing step 1/15...
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 6.532e-01
+      2-norm error   = 1.252e+00
+      1-norm error   = 6.057e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 2
+      Inf-norm error = 3.341e+00
+      2-norm error   = 3.624e+00
+      1-norm error   = 9.943e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 3
+      Inf-norm error = 5.390e+00
+      2-norm error   = 5.650e+00
+      1-norm error   = 1.218e+01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 4
+      Inf-norm error = 6.579e+00
+      2-norm error   = 6.850e+00
+      1-norm error   = 1.333e+01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 5
+      Inf-norm error = 7.194e+00
+      2-norm error   = 7.474e+00
+      1-norm error   = 1.375e+01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 6
+      Inf-norm error = 7.427e+00
+      2-norm error   = 7.709e+00
+      1-norm error   = 1.370e+01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 7
+      Inf-norm error = 7.408e+00
+      2-norm error   = 7.685e+00
+      1-norm error   = 1.335e+01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 8
+      Inf-norm error = 7.224e+00
+      2-norm error   = 7.494e+00
+      1-norm error   = 1.280e+01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 9
+      Inf-norm error = 7.045e+00
+      2-norm error   = 7.309e+00
+      1-norm error   = 1.216e+01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 10
+      Inf-norm error = 6.762e+00
+      2-norm error   = 7.018e+00
+      1-norm error   = 1.126e+01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 11
+      Inf-norm error = 6.578e+00
+      2-norm error   = 6.850e+00
+      1-norm error   = 1.013e+01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 12
+      Inf-norm error = 2.707e+00
+      2-norm error   = 2.818e+00
+      1-norm error   = 3.800e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 13
+      Inf-norm error = 2.427e-02
+      2-norm error   = 3.555e-02
+      1-norm error   = 6.477e-02
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 14
+      Inf-norm error = 4.167e-05
+      2-norm error   = 4.941e-05
+      1-norm error   = 7.286e-05
+------------------------------------
 HOMOTOPY mode 1: computing step 2/15...
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 4.749e-01
+      2-norm error   = 9.677e-01
+      1-norm error   = 5.273e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 2
+      Inf-norm error = 4.332e-01
+      2-norm error   = 9.167e-01
+      1-norm error   = 5.188e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 3
+      Inf-norm error = 3.952e-01
+      2-norm error   = 9.031e-01
+      1-norm error   = 5.011e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 4
+      Inf-norm error = 4.731e-01
+      2-norm error   = 8.942e-01
+      1-norm error   = 4.777e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 5
+      Inf-norm error = 5.274e-01
+      2-norm error   = 8.786e-01
+      1-norm error   = 4.512e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 6
+      Inf-norm error = 5.540e-01
+      2-norm error   = 8.542e-01
+      1-norm error   = 4.232e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 7
+      Inf-norm error = 6.056e-01
+      2-norm error   = 8.409e-01
+      1-norm error   = 3.873e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 8
+      Inf-norm error = 6.727e-01
+      2-norm error   = 8.405e-01
+      1-norm error   = 3.403e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 9
+      Inf-norm error = 7.033e-01
+      2-norm error   = 8.149e-01
+      1-norm error   = 2.755e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 10
+      Inf-norm error = 6.967e-01
+      2-norm error   = 7.593e-01
+      1-norm error   = 1.637e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 11
+      Inf-norm error = 7.211e-02
+      2-norm error   = 7.642e-02
+      1-norm error   = 1.150e-01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 12
+      Inf-norm error = 1.692e-04
+      2-norm error   = 2.016e-04
+      1-norm error   = 3.663e-04
+------------------------------------
 HOMOTOPY mode 1: computing step 3/15...
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 3.738e-01
+      2-norm error   = 8.338e-01
+      1-norm error   = 4.943e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 2
+      Inf-norm error = 3.000e-01
+      2-norm error   = 7.204e-01
+      1-norm error   = 4.466e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 3
+      Inf-norm error = 3.604e-01
+      2-norm error   = 6.790e-01
+      1-norm error   = 3.712e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 4
+      Inf-norm error = 3.928e-01
+      2-norm error   = 5.743e-01
+      1-norm error   = 2.519e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 5
+      Inf-norm error = 2.129e-01
+      2-norm error   = 2.453e-01
+      1-norm error   = 4.616e-01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 6
+      Inf-norm error = 4.426e-03
+      2-norm error   = 4.636e-03
+      1-norm error   = 7.249e-03
+------------------------------------
 HOMOTOPY mode 1: computing step 4/15...
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 3.086e-01
+      2-norm error   = 7.701e-01
+      1-norm error   = 4.828e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 2
+      Inf-norm error = 3.558e-01
+      2-norm error   = 6.630e-01
+      1-norm error   = 4.029e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 3
+      Inf-norm error = 4.824e-01
+      2-norm error   = 6.010e-01
+      1-norm error   = 2.765e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 4
+      Inf-norm error = 2.727e-01
+      2-norm error   = 3.005e-01
+      1-norm error   = 5.570e-01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 5
+      Inf-norm error = 4.109e-03
+      2-norm error   = 4.213e-03
+      1-norm error   = 6.137e-03
+------------------------------------
 HOMOTOPY mode 1: computing step 5/15...
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 2.630e-01
+      2-norm error   = 7.475e-01
+      1-norm error   = 4.846e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 2
+      Inf-norm error = 3.823e-01
+      2-norm error   = 6.545e-01
+      1-norm error   = 3.952e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 3
+      Inf-norm error = 5.618e-01
+      2-norm error   = 6.421e-01
+      1-norm error   = 2.696e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 4
+      Inf-norm error = 4.173e-01
+      2-norm error   = 4.242e-01
+      1-norm error   = 6.126e-01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 5
+      Inf-norm error = 1.801e-03
+      2-norm error   = 1.835e-03
+      1-norm error   = 2.610e-03
+------------------------------------
 HOMOTOPY mode 1: computing step 6/15...
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 2.294e-01
+      2-norm error   = 7.538e-01
+      1-norm error   = 4.970e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 2
+      Inf-norm error = 4.273e-01
+      2-norm error   = 6.844e-01
+      1-norm error   = 4.052e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 3
+      Inf-norm error = 4.878e-01
+      2-norm error   = 6.189e-01
+      1-norm error   = 3.095e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 4
+      Inf-norm error = 5.935e-01
+      2-norm error   = 6.131e-01
+      1-norm error   = 1.596e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 5
+      Inf-norm error = 8.273e-02
+      2-norm error   = 8.366e-02
+      1-norm error   = 1.114e-01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 6
+      Inf-norm error = 2.533e-05
+      2-norm error   = 2.582e-05
+      1-norm error   = 3.816e-05
+------------------------------------
 HOMOTOPY mode 1: computing step 7/15...
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 2.036e-01
+      2-norm error   = 7.843e-01
+      1-norm error   = 5.191e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 2
+      Inf-norm error = 4.853e-01
+      2-norm error   = 7.384e-01
+      1-norm error   = 4.259e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 3
+      Inf-norm error = 5.644e-01
+      2-norm error   = 6.902e-01
+      1-norm error   = 3.277e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 4
+      Inf-norm error = 5.497e-01
+      2-norm error   = 5.959e-01
+      1-norm error   = 2.117e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 5
+      Inf-norm error = 3.459e-01
+      2-norm error   = 3.495e-01
+      1-norm error   = 4.375e-01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 6
+      Inf-norm error = 1.055e-04
+      2-norm error   = 1.072e-04
+      1-norm error   = 1.586e-04
+------------------------------------
 HOMOTOPY mode 1: computing step 8/15...
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 1.831e-01
+      2-norm error   = 8.391e-01
+      1-norm error   = 5.520e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 2
+      Inf-norm error = 5.546e-01
+      2-norm error   = 8.139e-01
+      1-norm error   = 4.564e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 3
+      Inf-norm error = 6.533e-01
+      2-norm error   = 7.798e-01
+      1-norm error   = 3.535e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 4
+      Inf-norm error = 6.479e-01
+      2-norm error   = 6.939e-01
+      1-norm error   = 2.315e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 5
+      Inf-norm error = 4.299e-01
+      2-norm error   = 4.341e-01
+      1-norm error   = 5.318e-01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 6
+      Inf-norm error = 5.402e-05
+      2-norm error   = 5.494e-05
+      1-norm error   = 8.589e-05
+------------------------------------
 HOMOTOPY mode 1: computing step 9/15...
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 1.978e-01
+      2-norm error   = 9.220e-01
+      1-norm error   = 5.983e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 2
+      Inf-norm error = 6.352e-01
+      2-norm error   = 9.123e-01
+      1-norm error   = 4.980e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 3
+      Inf-norm error = 7.549e-01
+      2-norm error   = 8.885e-01
+      1-norm error   = 3.878e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 4
+      Inf-norm error = 7.583e-01
+      2-norm error   = 8.065e-01
+      1-norm error   = 2.567e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 5
+      Inf-norm error = 5.213e-01
+      2-norm error   = 5.263e-01
+      1-norm error   = 6.362e-01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 6
+      Inf-norm error = 2.627e-05
+      2-norm error   = 2.687e-05
+      1-norm error   = 4.654e-05
+------------------------------------
 HOMOTOPY mode 1: computing step 10/15...
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 2.304e-01
+      2-norm error   = 1.043e+00
+      1-norm error   = 6.632e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 2
+      Inf-norm error = 7.277e-01
+      2-norm error   = 1.038e+00
+      1-norm error   = 5.541e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 3
+      Inf-norm error = 8.705e-01
+      2-norm error   = 1.019e+00
+      1-norm error   = 4.331e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 4
+      Inf-norm error = 8.828e-01
+      2-norm error   = 9.359e-01
+      1-norm error   = 2.886e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 5
+      Inf-norm error = 6.228e-01
+      2-norm error   = 6.284e-01
+      1-norm error   = 7.520e-01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 6
+      Inf-norm error = 1.069e-05
+      2-norm error   = 1.123e-05
+      1-norm error   = 2.408e-05
+------------------------------------
 HOMOTOPY mode 1: computing step 11/15...
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 2.775e-01
+      2-norm error   = 1.220e+00
+      1-norm error   = 7.562e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 2
+      Inf-norm error = 8.329e-01
+      2-norm error   = 1.201e+00
+      1-norm error   = 6.315e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 3
+      Inf-norm error = 1.002e+00
+      2-norm error   = 1.177e+00
+      1-norm error   = 4.940e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 4
+      Inf-norm error = 1.024e+00
+      2-norm error   = 1.086e+00
+      1-norm error   = 3.302e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 5
+      Inf-norm error = 7.371e-01
+      2-norm error   = 7.435e-01
+      1-norm error   = 8.820e-01
+------------------------------------
 HOMOTOPY mode 1: computing step 12/15...
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 3.510e-01
+      2-norm error   = 1.494e+00
+      1-norm error   = 8.973e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 2
+      Inf-norm error = 9.518e-01
+      2-norm error   = 1.424e+00
+      1-norm error   = 7.442e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 3
+      Inf-norm error = 1.150e+00
+      2-norm error   = 1.376e+00
+      1-norm error   = 5.806e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 4
+      Inf-norm error = 1.184e+00
+      2-norm error   = 1.262e+00
+      1-norm error   = 3.871e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 5
+      Inf-norm error = 8.685e-01
+      2-norm error   = 8.756e-01
+      1-norm error   = 1.031e+00
+------------------------------------
 HOMOTOPY mode 1: computing step 13/15...
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 4.812e-01
+      2-norm error   = 1.965e+00
+      1-norm error   = 1.133e+01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 2
+      Inf-norm error = 1.084e+00
+      2-norm error   = 1.763e+00
+      1-norm error   = 9.255e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 3
+      Inf-norm error = 1.317e+00
+      2-norm error   = 1.646e+00
+      1-norm error   = 7.167e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 4
+      Inf-norm error = 1.366e+00
+      2-norm error   = 1.479e+00
+      1-norm error   = 4.730e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 5
+      Inf-norm error = 1.024e+00
+      2-norm error   = 1.032e+00
+      1-norm error   = 1.211e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 6
+      Inf-norm error = 1.200e-05
+      2-norm error   = 1.547e-05
+      1-norm error   = 6.466e-05
+------------------------------------
 HOMOTOPY mode 1: computing step 14/15...
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 7.735e-01
+      2-norm error   = 2.957e+00
+      1-norm error   = 1.613e+01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 2
+      Inf-norm error = 1.226e+00
+      2-norm error   = 2.420e+00
+      1-norm error   = 1.280e+01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 3
+      Inf-norm error = 1.502e+00
+      2-norm error   = 2.106e+00
+      1-norm error   = 9.769e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 4
+      Inf-norm error = 1.577e+00
+      2-norm error   = 1.785e+00
+      1-norm error   = 6.315e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 5
+      Inf-norm error = 1.226e+00
+      2-norm error   = 1.235e+00
+      1-norm error   = 1.481e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 6
+      Inf-norm error = 1.075e-04
+      2-norm error   = 1.569e-04
+      1-norm error   = 7.231e-04
+------------------------------------
 HOMOTOPY mode 1: computing step 15/15...
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 1
+      Inf-norm error = 2.031e+00
+      2-norm error   = 6.634e+00
+      1-norm error   = 3.242e+01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 2
+      Inf-norm error = 3.060e+00
+      2-norm error   = 4.811e+00
+      1-norm error   = 2.197e+01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 3
+      Inf-norm error = 3.521e+00
+      2-norm error   = 3.761e+00
+      1-norm error   = 1.105e+01
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 4
+      Inf-norm error = 8.373e-01
+      2-norm error   = 8.655e-01
+      1-norm error   = 1.844e+00
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 5
+      Inf-norm error = 3.417e-03
+      2-norm error   = 5.727e-03
+      1-norm error   = 2.092e-02
+------------------------------------
+MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
+------------------------------------
+      Iteration no. 6
+      Inf-norm error = 1.369e-05
+      2-norm error   = 1.445e-05
+      1-norm error   = 2.801e-05
+------------------------------------
 
 STEADY-STATE RESULTS:
 
@@ -7237,4 +7937,4 @@ EAI_bh              		 0
 EAJ_bh              		 0
 EAK_bh              		 0
 EAL_bh              		 -1.06556e-15
-Total computing time : 0h00m00s
+Total computing time : 0h00m31s
