@@ -4,8 +4,8 @@ EA_idx = length(countries) - 2;
 EAL = countries(EA_idx);
 
 % Given total imports of consumption and investment goods
-consumption_values = [0.1904 * ones(1, length(countries)-3), 0.1712, 0.0538, 0.0854]; % European Countries, RW, US
-investment_values = [0.0799 * ones(1, length(countries)-3), 0.0658, 0.0500, 0.0342]; % European Countries, RW, US
+consumption_values = [0.2363, 0.208, 0.2441, 0.1503, 0.1882, 0.1639, 0.2056, 0.1775, 0.1556, 0.2029, 0.2076, 0.1712, 0.0538, 0.0854]; % European Countries, RW, US
+investment_values = [0.0918, 0.1019, 0.109, 0.0551, 0.0822, 0.0591, 0.0417, 0.1546, 0.0469, 0.0777, 0.0587, 0.0658, 0.028, 0.0342]; % European Countries, RW, US
 
 % Suffixes
 suffixes = ["_imcy", "_imcgy", "_imiy", "_imigy"];
@@ -67,8 +67,8 @@ for i = 1:length(countries)
         if strcmp(co, "RW")
             fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.0538);
             fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.0538);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0500);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 * 0.0500);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.028);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 * 0.028);
         elseif strcmp(co, EAL)
             fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.1712);
             fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.1712);
@@ -79,11 +79,61 @@ for i = 1:length(countries)
             fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.0854);
             fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0342);
             fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 * 0.0342);
-        else
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.1904);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.1904);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0799);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 * 0.0799);
+        elseif strcmp(co, "EAA")
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.2363);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.2363);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0918);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.0918);
+        elseif strcmp(co, "EAB")
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.208);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.208);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.1019);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.1019);
+        elseif strcmp(co, "EAC")
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.2441);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.2441);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.109);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.109);  
+        elseif strcmp(co, "EAD")
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.1503);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.1503);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0551);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.0551);
+        elseif strcmp(co, "EAE")
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.1882);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.1882);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0822);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.0822);
+        elseif strcmp(co, "EAF")
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.1639);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.1639);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0591);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.0591);
+        elseif strcmp(co, "EAG")
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.2056);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.2056);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0417);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.0417);
+        elseif strcmp(co, "EAH")
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.1775);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.1775);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.1546);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.1546); 
+        elseif strcmp(co, "EAI")
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.1556);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.1556);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0469);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.0469);
+        elseif strcmp(co, "EAJ")
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.2029);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.2029);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0777);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.0777);
+        else 
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.2076);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.2076);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0587);
+            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.0587);            
         end
     
     end
