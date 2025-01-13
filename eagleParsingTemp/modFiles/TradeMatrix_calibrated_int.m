@@ -4,8 +4,10 @@ EA_idx = length(countries) - 2;
 EAL = countries(EA_idx);
 
 % Given total imports of consumption and investment goods
-consumption_values = [0.2363, 0.208, 0.2441, 0.1503, 0.1882, 0.1639, 0.2056, 0.1775, 0.1556, 0.2029, 0.2076, 0.1712, 0.0538, 0.0854]; % European Countries, RW, US
-investment_values = [0.0918, 0.1019, 0.109, 0.0551, 0.0822, 0.0591, 0.0417, 0.1546, 0.0469, 0.0777, 0.0587, 0.0658, 0.028, 0.0342]; % European Countries, RW, US
+consumption_values_private = [0.2016, 0.1776, 0.1995, 0.1286, 0.1512, 0.1414, 0.1797, 0.1499, 0.1385, 0.1666, 0.186, 0.1505, 0.0472, 0.0773]; % European Countries, RW, US
+investment_values_private = [0.0826, 0.0917, 0.0981, 0.0496, 0.074, 0.0532, 0.0375, 0.1391, 0.0422, 0.0699, 0.0528, 0.0592, 0.0252, 0.0308]; % European Countries, RW, US 
+consumption_values_public = [0.0347, 0.0304, 0.0446, 0.0217, 0.037, 0.0225, 0.0259, 0.0276, 0.0171, 0.0363, 0.0216, 0.0207, 0.0066, 0.0081] % European Countries, RW, US
+investment_values_public = [0.0092, 0.0102, 0.0109, 0.0055, 0.0082, 0.0059, 0.0042, 0.0155, 0.0047, 0.0078, 0.0059, 0.0066, 0.0028, 0.0034] % European Countries, RW, US
 
 % Suffixes
 suffixes = ["_imcy", "_imcgy", "_imiy", "_imigy"];
@@ -24,13 +26,6 @@ for i = 1:length(countries)
     % Loop over suffixes
     for sufIdx = 1:length(suffixes)
         suffix = suffixes(sufIdx);
-        
-        % Determine multiplier based on suffix
-        if suffix == "_imcy" || suffix == "_imiy"
-            multiplier = 0.9; % Multiplier for imcy and imiy
-        elseif suffix == "_imcgy" || suffix == "_imigy"
-            multiplier = 0.1; % Multiplier for imcgy and imigy
-        end
 
         % Loop over possible origins
         for j = 1:length(possible_origins)
@@ -38,10 +33,14 @@ for i = 1:length(countries)
             foreign_population = sizes.(orig_country+"_size");
                    
             % Calculate value based on rules
-            if suffix == "_imcy" || suffix == "_imcgy" % Rest of EU consumption imports
-                value = consumption_values(i) * foreign_population / (1 - domestic_population) * multiplier;
-            elseif suffix == "_imiy" || suffix == "_imigy"
-                value = investment_values(i) * foreign_population / (1 - domestic_population) * multiplier;
+            if suffix == "_imcy"  % Rest of EU consumption imports
+                value = consumption_values_private(i) * foreign_population / (1 - domestic_population);
+            elseif suffix == "_imcgy"
+                value = consumption_values_public(i) * foreign_population / (1-domestic_population);
+            elseif suffix == "_imiy" 
+                value = investment_values_private(i) * foreign_population / (1 - domestic_population);
+            elseif suffix == "_imigy"
+                value = investment_values_public(i) * foreign_population / (1 - domestic_population); 
             end
 
            % Create label
@@ -60,84 +59,11 @@ end
 for i = 1:length(countries)
     co = countries(i);
     
-    % Loop over suffixes
-    for sufIdx = 1:length(suffixes)
-        suffix = suffixes(sufIdx);
-        
-        if strcmp(co, "RW")
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.0538);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.0538);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.028);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 * 0.028);
-        elseif strcmp(co, EAL)
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.1712);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.1712);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0658);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 * 0.0658);
-        elseif strcmp(co, "US")
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.0854);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.0854);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0342);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 * 0.0342);
-        elseif strcmp(co, "EAA")
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.2363);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.2363);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0918);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.0918);
-        elseif strcmp(co, "EAB")
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.208);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.208);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.1019);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.1019);
-        elseif strcmp(co, "EAC")
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.2441);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.2441);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.109);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.109);  
-        elseif strcmp(co, "EAD")
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.1503);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.1503);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0551);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.0551);
-        elseif strcmp(co, "EAE")
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.1882);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.1882);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0822);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.0822);
-        elseif strcmp(co, "EAF")
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.1639);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.1639);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0591);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.0591);
-        elseif strcmp(co, "EAG")
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.2056);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.2056);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0417);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.0417);
-        elseif strcmp(co, "EAH")
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.1775);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.1775);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.1546);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.1546); 
-        elseif strcmp(co, "EAI")
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.1556);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.1556);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0469);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.0469);
-        elseif strcmp(co, "EAJ")
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.2029);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.2029);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0777);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.0777);
-        else 
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcy"), 0.9 * 0.2076);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imcgy"), 0.1 * 0.2076);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imiy"), 0.9 * 0.0587);
-            fprintf(fid, '%s, %f;\n', strcat(co, "_imigy"), 0.1 *  0.0587);            
-        end
-    
-    end
-
+    % Print values for each type directly
+    fprintf(fid, '%s_imcy, %f;\n', co, consumption_values_private(i));
+    fprintf(fid, '%s_imcgy, %f;\n', co, consumption_values_public(i));
+    fprintf(fid, '%s_imiy, %f;\n', co, investment_values_private(i));
+    fprintf(fid, '%s_imigy, %f;\n', co, investment_values_public(i));
 end
 
 % Add country sizes
@@ -158,6 +84,5 @@ end
 
 % Close the mod file
 fclose(fid);
-
 
 
