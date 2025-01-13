@@ -4,10 +4,10 @@ EA_idx = length(countries) - 2;
 EAL = countries(EA_idx);
 
 % Given total imports of consumption and investment goods
-consumption_values_private = [0.2016, 0.1776, 0.1995, 0.1286, 0.1512, 0.1414, 0.1797, 0.1499, 0.1385, 0.1666, 0.186, 0.1505, 0.0472, 0.0773]; % European Countries, RW, US
-investment_values_private = [0.0826, 0.0917, 0.0981, 0.0496, 0.074, 0.0532, 0.0375, 0.1391, 0.0422, 0.0699, 0.0528, 0.0592, 0.0252, 0.0308]; % European Countries, RW, US 
-consumption_values_public = [0.0347, 0.0304, 0.0446, 0.0217, 0.037, 0.0225, 0.0259, 0.0276, 0.0171, 0.0363, 0.0216, 0.0207, 0.0066, 0.0081] % European Countries, RW, US
-investment_values_public = [0.0092, 0.0102, 0.0109, 0.0055, 0.0082, 0.0059, 0.0042, 0.0155, 0.0047, 0.0078, 0.0059, 0.0066, 0.0028, 0.0034] % European Countries, RW, US
+consumption_values_private = [0.2015, 0.1775, 0.1996, 0.1287, 0.1513, 0.1414, 0.1796, 0.1497, 0.1386, 0.1666, 0.1861, 0.1507, 0.0472, 0.0774]; % European Countries, RW, US
+investment_values_private = [0.0826, 0.0915, 0.098, 0.0496, 0.0741, 0.0533, 0.0373, 0.1393, 0.0423, 0.0699, 0.0529, 0.0594, 0.0252, 0.0308]; % European Countries, RW, US 
+consumption_values_public = [0.0347, 0.0305, 0.0446, 0.0218, 0.0369, 0.0224, 0.0259, 0.0277, 0.0173, 0.0364, 0.0216, 0.0208, 0.0065, 0.0081] % European Countries, RW, US
+investment_values_public = [0.0092, 0.0101, 0.0108, 0.0057, 0.0083, 0.0060, 0.0041, 0.0154, 0.0046, 0.0077, 0.0058, 0.0066, 0.0028, 0.0033] % European Countries, RW, US
 
 % Suffixes
 suffixes = ["_imcy", "_imcgy", "_imiy", "_imigy"];
