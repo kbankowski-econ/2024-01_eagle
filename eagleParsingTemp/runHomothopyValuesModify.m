@@ -43,10 +43,23 @@ save_params_and_steady_state('eagle_steady_stage2b.txt');
 M_.endo_nbr
 
 T = array2table(oo_.steady_state, 'RowNames', M_.endo_names, 'VariableNames', "failed");
-aaa = load(fullfile(project_path, "eagleParsingTemp", "modFiles", "steady2/Output/steady2_results.mat"));
+aaa = load(sprintf("%s/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results.mat", project_path));
 Told = array2table(aaa.oo_.steady_state, 'RowNames', aaa.M_.endo_names, 'VariableNames', "solved");
 
-Tbig = [T, Told];
+Tbig = [Told, T];
+filteredTable = Tbig(isnan(Tbig.failed), :)
+% Create the structure
+s = cell2struct(num2cell(Tbig.failed), Tbig.Properties.RowNames, 1);
+aParam = cell2struct(num2cell(M_.params), M_.param_names, 1);
+
+
+(1-EAA_xii)*(EAA_witilde/EAA_wi)^(-EAA_etai)+EAA_xii*(EAA_wi/EAA_wi)^(-EAA_etai)*(EAA_pic/(EAA_pic^EAA_chii*EAA_pi4target^(1/4*(1-EAA_chii))))^(EAA_etai)*EAA_si
+
+(1-aParam.EAA_xii)*(s.EAA_witilde/s.EAA_wi)^(-aParam.EAA_etai)+aParam.EAA_xii*(s.EAA_wi/s.EAA_wi)^(-aParam.EAA_etai)*(s.EAA_pic/(s.EAA_pic^aParam.EAA_chii*aParam.EAA_pi4target^(1/4*(1-aParam.EAA_chii))))^(aParam.EAA_etai)*s.EAA_si
+
+EAA_witilde^(1+EAA_etai*EAA_zeta) = aParam.EAA_etai/(aParam.EAA_etai-1)*s.EAA_fi/s.EAA_gi+s.EAA_wcst;
+
+
 filtered_table = Tbig(contains(Tbig.Properties.RowNames, "_nu"), :);
 
 % value of EAB_nutc goes to zero, which is potentially a problem
