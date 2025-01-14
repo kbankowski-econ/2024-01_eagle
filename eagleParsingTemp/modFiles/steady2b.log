@@ -116329,3 +116329,6 @@ Homotopy step failed
 Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('runHomothopyValuesModify', 'D:\BIG12-Calibrated\eagleParsingTemp\runHomothopyValuesModify.m', 35)" style="font-weight:bold">runHomothopyValuesModify</a> (<a href="matlab: opentoline('D:\BIG12-Calibrated\eagleParsingTemp\runHomothopyValuesModify.m',35,0)">line 35</a>)
 steady();
 
+[Warning: File not found or permission denied] 
+HOMOTOPY mode 1: computing step 0/15...
+HOMOTOPY mode 1: computing step 1/15...
