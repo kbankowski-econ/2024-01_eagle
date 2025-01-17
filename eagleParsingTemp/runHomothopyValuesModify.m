@@ -4,7 +4,7 @@
 load(sprintf("%s/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results.mat", project_path));
 
 %% loading the homothopy values from mod files
-[paramIdentif, valuesEnd] = readHomothopyValuesFromModFile('trade_matrix_values_calibrated_int_RW.mod', M_);
+[paramIdentif, valuesEnd] = readHomothopyValuesFromModFile('trade_matrix_values_calibrated_int_RW2.mod', M_);
 
 %% running steady command
 % creating the matrix containing the homothopy values
@@ -50,8 +50,11 @@ Tbig = [Told, T];
 filteredTable = Tbig(isnan(Tbig.failed), :)
 % Create the structure
 s = cell2struct(num2cell(Told.solved), Told.Properties.RowNames, 1);
+t = cell2struct(num2cell(T.failed), T.Properties.RowNames, 1);
 aParam = cell2struct(num2cell(aaa.M_.params), aaa.M_.param_names, 1);
+aParam = cell2struct(num2cell(M_.params), M_.param_names, 1);
 
+openvar aParam.EADEAA_imcy
 
 (1-EAA_xii)*(EAA_witilde/EAA_wi)^(-EAA_etai)+EAA_xii*(EAA_wi/EAA_wi)^(-EAA_etai)*(EAA_pic/(EAA_pic^EAA_chii*EAA_pi4target^(1/4*(1-EAA_chii))))^(EAA_etai)*EAA_si
 
@@ -59,9 +62,17 @@ aParam = cell2struct(num2cell(aaa.M_.params), aaa.M_.param_names, 1);
 
 EAA_witilde^(1+EAA_etai*EAA_zeta) = aParam.EAA_etai/(aParam.EAA_etai-1)*s.EAA_fi/s.EAA_gi+s.EAA_wcst;
 
-s.EAB_pex*s.EAAEAB_rer*s.EAAEAB_im/(s.EAA_py*s.EAA_y)
+EACEAA_imcy = (s.EAA_pex*s.EACEAA_rer)*s.EACEAA_imc/(s.EAC_py*s.EAC_y);
+EACEAA_imcy*(s.EAC_py*s.EAC_y)/(s.EAA_pex*s.EACEAA_rer)
+s.EAB_pex*(aParam.US_size/aParam.EAB_size)*s.USEAB_im
 
 filtered_table = Tbig(contains(Tbig.Properties.RowNames, "_nu"), :);
+
+vec_rer = {'vec_rer_EAA', 'vec_rer_EAB', 'vec_rer_EAC', 'vec_rer_EAD', 'vec_rer_EAE', 'vec_rer_EAF', 'vec_rer_EAG', 'vec_rer_EAH', 'vec_rer_EAI', 'vec_rer_EAJ', 'vec_rer_EAK', 'vec_rer_EAL', 'vec_rer_RW', 'vec_rer_US'};
+for i = 1:length(vec_rer)
+    openvar(vec_rer{i});
+end
+
 
 % value of EAB_nutc goes to zero, which is potentially a problem
 % (1) by looking at the below equation this means that imports appraoch
