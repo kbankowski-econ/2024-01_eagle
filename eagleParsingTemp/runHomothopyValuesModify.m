@@ -4,7 +4,7 @@
 load(sprintf("%s/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results.mat", project_path));
 
 %% loading the homothopy values from mod files
-[paramIdentif, valuesEnd] = readHomothopyValuesFromModFile('trade_matrix_values_calibrated_int_RW2.mod', M_);
+[paramIdentif, valuesEnd] = readHomothopyValuesFromModFile('trade_matrix_values_calibrated_new.mod', M_);
 
 %% running steady command
 % creating the matrix containing the homothopy values
@@ -54,7 +54,6 @@ t = cell2struct(num2cell(T.failed), T.Properties.RowNames, 1);
 aParam = cell2struct(num2cell(aaa.M_.params), aaa.M_.param_names, 1);
 aParam = cell2struct(num2cell(M_.params), M_.param_names, 1);
 
-openvar aParam.EADEAA_imcy
 
 (1-EAA_xii)*(EAA_witilde/EAA_wi)^(-EAA_etai)+EAA_xii*(EAA_wi/EAA_wi)^(-EAA_etai)*(EAA_pic/(EAA_pic^EAA_chii*EAA_pi4target^(1/4*(1-EAA_chii))))^(EAA_etai)*EAA_si
 
@@ -72,6 +71,16 @@ vec_rer = {'vec_rer_EAA', 'vec_rer_EAB', 'vec_rer_EAC', 'vec_rer_EAD', 'vec_rer_
 for i = 1:length(vec_rer)
     openvar(vec_rer{i});
 end
+
+
+
+
+
+
+
+
+
+
 
 
 % value of EAB_nutc goes to zero, which is potentially a problem

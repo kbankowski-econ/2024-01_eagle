@@ -1,6 +1,6 @@
 % Define the input and output file paths
-inputFilePath = 'trade_matrix_values_calibrated_int.mod';
-outputFilePath = 'version3.csv';
+inputFilePath = 'output.mod';
+outputFilePath = 'version_new.csv';
 
 % Read the entire content of the .mod file
 fileContent = fileread(inputFilePath);
@@ -23,7 +23,7 @@ for i = 1:length(dataPairs)
     end
     
     % Split the data pair by comma to separate variable and value
-    parts = strsplit(dataPair, ',');
+    parts = strsplit(dataPair, '=');
     
     % Store the variable name and value
     variables{end+1} = strtrim(parts{1});  % Variable name
