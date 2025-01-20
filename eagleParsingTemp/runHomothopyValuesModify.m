@@ -52,10 +52,10 @@ countries = ["EAA", "EAB", "EAC", "EAD", "EAE", "EAF", "EAG", "EAH", "EAI", "EAJ
 shiftAmount = 12;  % Making the shift amount explicit as a variable
 countriesAux = [countries, countries];  % Double array for circular indexing
 
-rangeMatrix = "A"+["3", "21", "39", "57", "93"];
+rangeMatrix = "Q"+["3", "21", "39", "57", "93"];
 rangeStruct = struct('imcy', rangeMatrix(1), 'imcgy', rangeMatrix(2), 'imiy', rangeMatrix(3), 'imigy', rangeMatrix(4), 'rer', rangeMatrix(5));
 
-rangeFlatMatrix = "A"+["110", "114", "122", "127"];
+rangeFlatMatrix = "Q"+["110", "114", "122", "127"];
 rangeFlatStruct = struct('y', rangeFlatMatrix(1), 'py', rangeFlatMatrix(2), 'size', rangeFlatMatrix(3), 'pex', rangeFlatMatrix(4));
 
 
@@ -77,7 +77,7 @@ for aItem = ["imcy", "imcgy", "imiy", "imigy", "rer"]
             tableForXls.(aItem){"Total", aCtry1} = paramStruct.(aCtry1+"_"+aItem);
         end
     end
-    writetable(tableForXls.(aItem), xlsFilePath, 'Sheet', 'EAL_RW', 'Range', rangeStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
+    writetable(tableForXls.(aItem), xlsFilePath, 'Sheet', 'EAA-recomp', 'Range', rangeStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
 end
 
 
@@ -91,7 +91,7 @@ for aItem = ["y", "py", "size", "pex"]
             tableFlatForXls.(aItem){"Row", aCtry1} = ssStruct.(aCtry1+"_"+aItem);
         end
     end
-    writetable(tableFlatForXls.(aItem), xlsFilePath, 'Sheet', 'EAL_RW', 'Range', rangeFlatStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
+    writetable(tableFlatForXls.(aItem), xlsFilePath, 'Sheet', 'EAA-recomp', 'Range', rangeFlatStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
 end
 
 %%
