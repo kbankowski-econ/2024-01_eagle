@@ -95,22 +95,16 @@ for aItem = ["y", "py", "size", "pex"]
 end
 
 %%
-(1-EAA_xii)*(EAA_witilde/EAA_wi)^(-EAA_etai)+EAA_xii*(EAA_wi/EAA_wi)^(-EAA_etai)*(EAA_pic/(EAA_pic^EAA_chii*EAA_pi4target^(1/4*(1-EAA_chii))))^(EAA_etai)*EAA_si
-
-(1-aParam.EAA_xii)*(s.EAA_witilde/s.EAA_wi)^(-aParam.EAA_etai)+aParam.EAA_xii*(s.EAA_wi/s.EAA_wi)^(-aParam.EAA_etai)*(s.EAA_pic/(s.EAA_pic^aParam.EAA_chii*aParam.EAA_pi4target^(1/4*(1-aParam.EAA_chii))))^(aParam.EAA_etai)*s.EAA_si
-
-
-EACEAA_imcy = (s.EAA_pex*s.EACEAA_rer)*s.EACEAA_imc/(s.EAC_py*s.EAC_y);
-EACEAA_imcy*(s.EAC_py*s.EAC_y)/(s.EAA_pex*s.EACEAA_rer)
-s.EAB_pex*(aParam.US_size/aParam.EAB_size)*s.USEAB_im
-
-filtered_table = Tbig(contains(Tbig.Properties.RowNames, "_nu"), :);
-
-vec_rer = {'vec_rer_EAA', 'vec_rer_EAB', 'vec_rer_EAC', 'vec_rer_EAD', 'vec_rer_EAE', 'vec_rer_EAF', 'vec_rer_EAG', 'vec_rer_EAH', 'vec_rer_EAI', 'vec_rer_EAJ', 'vec_rer_EAK', 'vec_rer_EAL', 'vec_rer_RW', 'vec_rer_US'};
-for i = 1:length(vec_rer)
-    openvar(vec_rer{i});
+tableTby = table();
+for aItem = ["tby"]
+    tableTby = array2table(nan(length(countries), 1), 'RowNames', countries, 'VariableNames', {'tby'});
+    for i = 1:length(countries)
+        aCtry1 = countries(i);
+            tableTby{aCtry1, "tby"} = ssStruct.(aCtry1+"_"+aItem);
+    end
 end
 
+openvar tableTby
 
 
 
@@ -120,9 +114,7 @@ end
 
 
 
-
-
-% value of EAB_nutc goes to zero, which is potentially a problem
+%% value of EAB_nutc goes to zero, which is potentially a problem
 % (1) by looking at the below equation this means that imports appraoch
 % tradables
 % EAB_ttc^((EAB_mutc-1)/EAB_mutc) = (EAB_nutc)^(1/EAB_mutc)*EAB_htc^(1-1/EAB_mutc)+(1-EAB_nutc)^(1/EAB_mutc)*EAB_imc^(1-1/EAB_mutc);
