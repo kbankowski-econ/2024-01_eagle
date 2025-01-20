@@ -95,6 +95,35 @@ for aItem = ["y", "py", "size", "pex"]
 end
 
 %%
+rangeMatrix = "AH"+["131", "148", "165", "182", "199"];
+rangeStruct = struct('imc', rangeMatrix(1), 'imcg', rangeMatrix(2), 'imi', rangeMatrix(3), 'imig', rangeMatrix(4), 'im', rangeMatrix(5));
+
+for aItem = ["imc", "imcg", "imi", "imig", "im"]
+    tableForXls.(aItem) = array2table(nan(length(countries), length(countries)), 'RowNames', countries, 'VariableNames', countries);
+    for i = 1:length(countries)
+        aCtry1 = countries(i);
+        % Get residual country with circular indexing
+        aCtryResid = countriesAux(i + shiftAmount);
+        validCountries = countries ~= aCtry1;
+        for aCtry2 = countries(validCountries)
+            try
+                tableForXls.(aItem){aCtry2, aCtry1} = paramStruct.(aCtry1+aCtry2+"_"+aItem);
+            catch
+                tableForXls.(aItem){aCtry2, aCtry1} = ssStruct.(aCtry1+aCtry2+"_"+aItem);
+            end
+        end
+    end
+    writetable(tableForXls.(aItem), xlsFilePath, 'Sheet', 'EAA-recomp', 'Range', rangeStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
+end
+
+%%
+US_ex = ssStruct.US_pex*paramStruct.EAA_size/paramStruct.US_size*ssStruct.EAAUS_im+ssStruct.US_pex*paramStruct.EAB_size/paramStruct.US_size*ssStruct.EABUS_im+ssStruct.US_pex*paramStruct.EAC_size/paramStruct.US_size*ssStruct.EACUS_im+ssStruct.US_pex*paramStruct.EAD_size/paramStruct.US_size*ssStruct.EADUS_im+ssStruct.US_pex*paramStruct.EAE_size/paramStruct.US_size*ssStruct.EAEUS_im+ssStruct.US_pex*paramStruct.EAF_size/paramStruct.US_size*ssStruct.EAFUS_im+ssStruct.US_pex*paramStruct.EAG_size/paramStruct.US_size*ssStruct.EAGUS_im+ssStruct.US_pex*paramStruct.EAH_size/paramStruct.US_size*ssStruct.EAHUS_im+ssStruct.US_pex*paramStruct.EAI_size/paramStruct.US_size*ssStruct.EAIUS_im+ssStruct.US_pex*paramStruct.EAJ_size/paramStruct.US_size*ssStruct.EAJUS_im+ssStruct.US_pex*paramStruct.EAK_size/paramStruct.US_size*ssStruct.EAKUS_im+ssStruct.US_pex*paramStruct.EAL_size/paramStruct.US_size*ssStruct.EALUS_im+ssStruct.US_pex*paramStruct.RW_size/paramStruct.US_size*ssStruct.RWUS_im
+US_exy = US_ex/(ssStruct.US_y*ssStruct.US_py)
+US_tby = US_exy - ssStruct.US_imy
+ssStruct.US_tby - US_tby
+
+
+%%
 tableTby = table();
 for aItem = ["tby"]
     tableTby = array2table(nan(length(countries), 1), 'RowNames', countries, 'VariableNames', {'tby'});
@@ -105,7 +134,6 @@ for aItem = ["tby"]
 end
 
 openvar tableTby
-
 
 
 
