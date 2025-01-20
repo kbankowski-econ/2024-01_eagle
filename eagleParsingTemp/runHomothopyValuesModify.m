@@ -4,7 +4,7 @@
 load(sprintf("%s/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results.mat", project_path));
 
 %% loading the homothopy values from mod files
-[paramIdentif, valuesEnd] = readHomothopyValuesFromModFile('trade_matrix_values_calibrated_int_RW2.mod', M_);
+[paramIdentif, valuesEnd] = readHomothopyValuesFromModFile('trade_matrix_values_calibrated_int_RW.mod', M_);
 
 %% running steady command
 % creating the matrix containing the homothopy values
@@ -40,26 +40,65 @@ reportTimeToLogFile(logname_, elapsed_time);
 save_params_and_steady_state('eagle_steady_stage2b.txt');
 
 %% trying the see the failed resutls
-M_.endo_nbr
+ssTable = table(); ssStruct = struct();
 
-T = array2table(oo_.steady_state, 'RowNames', M_.endo_names, 'VariableNames', "failed");
-aaa = load(sprintf("%s/eagleParsingTemp/modFiles/steady2b/Output/steady2b_results.mat", project_path));
-Told = array2table(aaa.oo_.steady_state, 'RowNames', aaa.M_.endo_names, 'VariableNames', "solved");
+ssTable = array2table(oo_.steady_state, 'RowNames', M_.endo_names, 'VariableNames', "ss");
+ssStruct = cell2struct(num2cell(ssTable.ss), ssTable.Properties.RowNames, 1);
+paramStruct = cell2struct(num2cell(M_.params), M_.param_names, 1);
+xlsFilePath = fullfile(project_path, "aMyNotes/version_RW.xlsx");
 
-Tbig = [Told, T];
-filteredTable = Tbig(isnan(Tbig.failed), :)
-% Create the structure
-s = cell2struct(num2cell(Told.solved), Told.Properties.RowNames, 1);
-t = cell2struct(num2cell(T.failed), T.Properties.RowNames, 1);
-aParam = cell2struct(num2cell(aaa.M_.params), aaa.M_.param_names, 1);
-aParam = cell2struct(num2cell(M_.params), M_.param_names, 1);
+% alocate the values from the structure
+countries = ["EAA", "EAB", "EAC", "EAD", "EAE", "EAF", "EAG", "EAH", "EAI", "EAJ", "EAK", "EAL", "RW", "US"];
+shiftAmount = 12;  % Making the shift amount explicit as a variable
+countriesAux = [countries, countries];  % Double array for circular indexing
+
+rangeMatrix = "A"+["3", "21", "39", "57", "93"];
+rangeStruct = struct('imcy', rangeMatrix(1), 'imcgy', rangeMatrix(2), 'imiy', rangeMatrix(3), 'imigy', rangeMatrix(4), 'rer', rangeMatrix(5));
+
+rangeFlatMatrix = "A"+["110", "114", "122", "127"];
+rangeFlatStruct = struct('y', rangeFlatMatrix(1), 'py', rangeFlatMatrix(2), 'size', rangeFlatMatrix(3), 'pex', rangeFlatMatrix(4));
 
 
+for aItem = ["imcy", "imcgy", "imiy", "imigy", "rer"]
+    tableForXls.(aItem) = array2table(nan(length(countries), length(countries)), 'RowNames', countries, 'VariableNames', countries);
+    for i = 1:length(countries)
+        aCtry1 = countries(i);
+        % Get residual country with circular indexing
+        aCtryResid = countriesAux(i + shiftAmount);
+        validCountries = countries ~= aCtry1;
+        for aCtry2 = countries(validCountries)
+            try
+                tableForXls.(aItem){aCtry2, aCtry1} = paramStruct.(aCtry1+aCtry2+"_"+aItem);
+            catch
+                tableForXls.(aItem){aCtry2, aCtry1} = ssStruct.(aCtry1+aCtry2+"_"+aItem);
+            end
+        end
+        if ~strcmp(aItem, "rer")
+            tableForXls.(aItem){"Total", aCtry1} = paramStruct.(aCtry1+"_"+aItem);
+        end
+    end
+    writetable(tableForXls.(aItem), xlsFilePath, 'Sheet', 'version_RW', 'Range', rangeStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
+end
+
+
+for aItem = ["y", "py", "size", "pex"]
+    tableFlatForXls.(aItem) = array2table(nan(1, length(countries)), 'VariableNames', countries, 'RowNames', {'Row'});
+    for i = 1:length(countries)
+        aCtry1 = countries(i);
+        try
+            tableFlatForXls.(aItem){"Row", aCtry1} = paramStruct.(aCtry1+"_"+aItem);
+        catch
+            tableFlatForXls.(aItem){"Row", aCtry1} = ssStruct.(aCtry1+"_"+aItem);
+        end
+    end
+    writetable(tableFlatForXls.(aItem), xlsFilePath, 'Sheet', 'version_RW', 'Range', rangeFlatStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
+end
+
+%%
 (1-EAA_xii)*(EAA_witilde/EAA_wi)^(-EAA_etai)+EAA_xii*(EAA_wi/EAA_wi)^(-EAA_etai)*(EAA_pic/(EAA_pic^EAA_chii*EAA_pi4target^(1/4*(1-EAA_chii))))^(EAA_etai)*EAA_si
 
 (1-aParam.EAA_xii)*(s.EAA_witilde/s.EAA_wi)^(-aParam.EAA_etai)+aParam.EAA_xii*(s.EAA_wi/s.EAA_wi)^(-aParam.EAA_etai)*(s.EAA_pic/(s.EAA_pic^aParam.EAA_chii*aParam.EAA_pi4target^(1/4*(1-aParam.EAA_chii))))^(aParam.EAA_etai)*s.EAA_si
 
-EAA_witilde^(1+EAA_etai*EAA_zeta) = aParam.EAA_etai/(aParam.EAA_etai-1)*s.EAA_fi/s.EAA_gi+s.EAA_wcst;
 
 EACEAA_imcy = (s.EAA_pex*s.EACEAA_rer)*s.EACEAA_imc/(s.EAC_py*s.EAC_y);
 EACEAA_imcy*(s.EAC_py*s.EAC_y)/(s.EAA_pex*s.EACEAA_rer)
