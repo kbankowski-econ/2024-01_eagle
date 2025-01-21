@@ -77,7 +77,7 @@ for aItem = ["imcy", "imcgy", "imiy", "imigy", "rer"]
             tableForXls.(aItem){"Total", aCtry1} = paramStruct.(aCtry1+"_"+aItem);
         end
     end
-    writetable(tableForXls.(aItem), xlsFilePath, 'Sheet', 'calibRW2', 'Range', rangeStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
+    writetable(tableForXls.(aItem), xlsFilePath, 'Sheet', 'calibRW3', 'Range', rangeStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
 end
 
 
@@ -91,7 +91,7 @@ for aItem = ["y", "py", "size", "pex"]
             tableFlatForXls.(aItem){"Row", aCtry1} = ssStruct.(aCtry1+"_"+aItem);
         end
     end
-    writetable(tableFlatForXls.(aItem), xlsFilePath, 'Sheet', 'calibRW2', 'Range', rangeFlatStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
+    writetable(tableFlatForXls.(aItem), xlsFilePath, 'Sheet', 'calibRW3', 'Range', rangeFlatStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
 end
 
 %%

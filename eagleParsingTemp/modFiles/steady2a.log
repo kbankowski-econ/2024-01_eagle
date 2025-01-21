@@ -1,192 +1,192 @@
 Starting Dynare (version 6.1).
-Calling Dynare with arguments: -I/Users/kk/Documents/0000-00_work/2024-01_eagle/eagleParsingTemp/submodules savemacro
-Starting preprocessing of the model file ...
-Reading eagle_steady_stage1.txt.
-WARNING: Unknown symbol AUX_ENDO_LAG_426_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_426_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_426_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_410_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_410_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_410_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_393_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_492_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_492_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_492_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1043_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1043_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1043_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1027_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1027_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1027_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1010_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1109_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1109_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1109_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1660_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1660_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1660_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1644_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1644_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1644_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1627_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1726_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1726_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1726_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2277_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2277_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2277_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2261_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2261_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2261_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2244_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2343_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2343_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2343_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2894_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2894_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2894_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2878_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2878_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2878_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2861_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2960_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2960_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2960_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3511_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3511_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3511_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3495_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3495_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3495_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3478_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3577_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3577_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3577_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4128_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4128_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4128_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4112_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4112_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4112_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4095_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4194_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4194_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4194_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4745_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4745_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4745_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4729_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4729_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4729_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4712_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4811_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4811_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4811_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5362_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5362_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5362_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5346_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5346_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5346_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5329_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5428_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5428_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5428_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5979_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5979_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5979_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5963_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5963_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5963_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5946_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6045_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6045_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6045_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6596_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6596_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6596_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6580_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6580_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6580_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6563_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6662_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6662_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6662_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7213_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7213_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7213_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7197_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7197_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7197_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7180_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7279_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7279_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7279_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7830_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7830_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7830_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7814_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7814_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7814_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7797_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7896_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7896_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7896_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_8449_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_8449_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_8449_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_8433_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_8433_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_8433_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_8416_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_8512_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_8512_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_8512_3 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_275_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_447_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_892_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1064_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1509_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1681_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2126_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2298_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2743_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2915_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3360_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3532_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3977_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4149_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4594_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4766_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5211_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5383_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5828_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6000_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6445_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6617_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7234_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3_1 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3_2 in eagle_steady_stage1.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3_3 in eagle_steady_stage1.txt
-Substitution of endo lags >= 2: added 166 auxiliary variables and equations.
-Found 7386 equation(s).
-Evaluating expressions...
-Computing static model derivatives (order 1).
-Normalizing the static model...
-Finding the optimal block decomposition of the static model...
-449 block(s) found:
-  448 recursive block(s) and 1 simultaneous block(s).
-  the largest simultaneous block has 3406 equation(s)
-                                 and 3406 feedback variable(s).
-Computing dynamic model derivatives (order 2).
-Normalizing the dynamic model...
-Finding the optimal block decomposition of the dynamic model...
-282 block(s) found:
-  281 recursive block(s) and 1 simultaneous block(s).
-  the largest simultaneous block has 3451 equation(s)
-                                 and 2949 feedback variable(s).
-Preprocessing completed.
-Preprocessing time: 0h03m04s.
+Calling Dynare with arguments: -ID:\BIG12-Calibrated/eagleParsingTemp/submodules savemacro
+Starting preprocessing of the model file ... 
+Reading eagle_steady_stage1.txt. 
+WARNING: Unknown symbol AUX_ENDO_LAG_426_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_426_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_426_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_410_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_410_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_410_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_393_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_492_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_492_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_492_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1043_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1043_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1043_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1027_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1027_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1027_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1010_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1109_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1109_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1109_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1660_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1660_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1660_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1644_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1644_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1644_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1627_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1726_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1726_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1726_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2277_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2277_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2277_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2261_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2261_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2261_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2244_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2343_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2343_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2343_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2894_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2894_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2894_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2878_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2878_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2878_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2861_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2960_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2960_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2960_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3511_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3511_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3511_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3495_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3495_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3495_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3478_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3577_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3577_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3577_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4128_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4128_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4128_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4112_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4112_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4112_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4095_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4194_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4194_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4194_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4745_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4745_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4745_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4729_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4729_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4729_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4712_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4811_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4811_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4811_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_5362_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_5362_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_5362_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_5346_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_5346_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_5346_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_5329_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_5428_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_5428_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_5428_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_5979_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_5979_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_5979_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_5963_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_5963_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_5963_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_5946_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_6045_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_6045_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_6045_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_6596_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_6596_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_6596_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_6580_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_6580_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_6580_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_6563_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_6662_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_6662_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_6662_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_7213_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_7213_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_7213_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_7197_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_7197_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_7197_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_7180_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_7279_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_7279_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_7279_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_7830_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_7830_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_7830_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_7814_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_7814_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_7814_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_7797_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_7896_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_7896_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_7896_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_8449_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_8449_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_8449_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_8433_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_8433_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_8433_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_8416_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_8512_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_8512_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_8512_3 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_275_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_447_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_892_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1064_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1509_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_1681_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2126_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2298_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2743_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_2915_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3360_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3532_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3977_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4149_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4594_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_4766_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_5211_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_5383_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_5828_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_6000_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_6445_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_6617_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_7234_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3_1 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3_2 in eagle_steady_stage1.txt 
+WARNING: Unknown symbol AUX_ENDO_LAG_3_3 in eagle_steady_stage1.txt 
+Substitution of endo lags >= 2: added 166 auxiliary variables and equations. 
+Found 7386 equation(s). 
+Evaluating expressions... 
+Computing static model derivatives (order 1). 
+Normalizing the static model... 
+Finding the optimal block decomposition of the static model... 
+449 block(s) found: 
+  448 recursive block(s) and 1 simultaneous block(s). 
+  the largest simultaneous block has 3406 equation(s) 
+                                 and 3406 feedback variable(s). 
+Computing dynamic model derivatives (order 2). 
+Normalizing the dynamic model... 
+Finding the optimal block decomposition of the dynamic model... 
+282 block(s) found: 
+  281 recursive block(s) and 1 simultaneous block(s). 
+  the largest simultaneous block has 3451 equation(s) 
+                                 and 2949 feedback variable(s). 
+Preprocessing completed. 
+Preprocessing time: 0h03m03s.
 epsilonm
 HOMOTOPY mode 1: computing step 0/5...
 HOMOTOPY mode 1: computing step 1/5...
@@ -553,7 +553,7 @@ EAA_cj              		 1.09759
 EAA_cy              		 0.541071
 EAA_d               		 0.216018
 EAA_dn              		 0.216018
-EAA_dt              		 -3.0839e-09
+EAA_dt              		 -3.08429e-09
 EAA_etot            		 1.01442
 EAA_ex              		 1.60352
 EAA_fh              		 5.83127
@@ -1018,7 +1018,7 @@ EAB_cj              		 1.09759
 EAB_cy              		 0.541071
 EAB_d               		 0.216018
 EAB_dn              		 0.216018
-EAB_dt              		 -3.08414e-09
+EAB_dt              		 -3.08417e-09
 EAB_etot            		 1.01442
 EAB_ex              		 1.60352
 EAB_fh              		 5.83127
@@ -1483,7 +1483,7 @@ EAC_cj              		 1.09759
 EAC_cy              		 0.541071
 EAC_d               		 0.216018
 EAC_dn              		 0.216018
-EAC_dt              		 -3.0841e-09
+EAC_dt              		 -3.08415e-09
 EAC_etot            		 1.01442
 EAC_ex              		 1.60352
 EAC_fh              		 5.83127
@@ -1948,7 +1948,7 @@ EAD_cj              		 1.09759
 EAD_cy              		 0.541071
 EAD_d               		 0.216018
 EAD_dn              		 0.216018
-EAD_dt              		 -3.08406e-09
+EAD_dt              		 -3.08416e-09
 EAD_etot            		 1.01442
 EAD_ex              		 1.60352
 EAD_fh              		 5.83127
@@ -2413,7 +2413,7 @@ EAE_cj              		 1.09759
 EAE_cy              		 0.541071
 EAE_d               		 0.216018
 EAE_dn              		 0.216018
-EAE_dt              		 -3.08435e-09
+EAE_dt              		 -3.08401e-09
 EAE_etot            		 1.01442
 EAE_ex              		 1.60352
 EAE_fh              		 5.83127
@@ -2878,7 +2878,7 @@ EAF_cj              		 1.09759
 EAF_cy              		 0.541071
 EAF_d               		 0.216018
 EAF_dn              		 0.216018
-EAF_dt              		 -3.08415e-09
+EAF_dt              		 -3.08408e-09
 EAF_etot            		 1.01442
 EAF_ex              		 1.60352
 EAF_fh              		 5.83127
@@ -3343,7 +3343,7 @@ EAG_cj              		 1.09759
 EAG_cy              		 0.541071
 EAG_d               		 0.216018
 EAG_dn              		 0.216018
-EAG_dt              		 -3.08407e-09
+EAG_dt              		 -3.08405e-09
 EAG_etot            		 1.01442
 EAG_ex              		 1.60352
 EAG_fh              		 5.83127
@@ -3808,7 +3808,7 @@ EAH_cj              		 1.09759
 EAH_cy              		 0.541071
 EAH_d               		 0.216018
 EAH_dn              		 0.216018
-EAH_dt              		 -3.08417e-09
+EAH_dt              		 -3.08413e-09
 EAH_etot            		 1.01442
 EAH_ex              		 1.60352
 EAH_fh              		 5.83127
@@ -4273,7 +4273,7 @@ EAI_cj              		 1.09759
 EAI_cy              		 0.541071
 EAI_d               		 0.216018
 EAI_dn              		 0.216018
-EAI_dt              		 -3.08418e-09
+EAI_dt              		 -3.08419e-09
 EAI_etot            		 1.01442
 EAI_ex              		 1.60352
 EAI_fh              		 5.83127
@@ -4738,7 +4738,7 @@ EAJ_cj              		 1.09759
 EAJ_cy              		 0.541071
 EAJ_d               		 0.216018
 EAJ_dn              		 0.216018
-EAJ_dt              		 -3.08409e-09
+EAJ_dt              		 -3.08411e-09
 EAJ_etot            		 1.01442
 EAJ_ex              		 1.60352
 EAJ_fh              		 5.83127
@@ -5203,7 +5203,7 @@ EAK_cj              		 1.09759
 EAK_cy              		 0.541071
 EAK_d               		 0.216018
 EAK_dn              		 0.216018
-EAK_dt              		 -3.08408e-09
+EAK_dt              		 -3.08405e-09
 EAK_etot            		 1.01442
 EAK_ex              		 1.60352
 EAK_fh              		 5.83127
@@ -5668,7 +5668,7 @@ EAL_cj              		 1.10566
 EAL_cy              		 0.548292
 EAL_d               		 0.223346
 EAL_dn              		 0.223346
-EAL_dt              		 -3.6457e-09
+EAL_dt              		 -3.64478e-09
 EAL_etot            		 1.00602
 EAL_ex              		 1.57243
 EAL_fh              		 5.67499
@@ -6133,7 +6133,7 @@ RW_cj               		 1.1403
 RW_cy               		 0.590717
 RW_d                		 0.334012
 RW_dn               		 0.334012
-RW_dt               		 2.23966e-08
+RW_dt               		 2.23967e-08
 RW_etot             		 1.04401
 RW_ex               		 1.70553
 RW_fh               		 2.33482
@@ -6598,7 +6598,7 @@ US_cj               		 1.20674
 US_cy               		 0.592108
 US_d                		 0.362818
 US_dn               		 0.362818
-US_dt               		 8.12268e-09
+US_dt               		 8.12287e-09
 US_etot             		 0.75054
 US_ex               		 0.805533
 US_fh               		 5.32764
@@ -7479,14 +7479,14 @@ EAA_bh              		 0
 EAB_bh              		 0
 EAC_bh              		 0
 EAD_bh              		 0
-EAE_bh              		 8.27846e-19
-EAF_bh              		 9.00829e-17
+EAE_bh              		 -1.35741e-16
+EAF_bh              		 5.55112e-17
 EAG_bh              		 0
 EAH_bh              		 0
 EAI_bh              		 0
 EAJ_bh              		 0
 EAK_bh              		 0
-EAL_bh              		 2.00613e-16
+EAL_bh              		 -2.77556e-16
 vi
 HOMOTOPY mode 1: computing step 0/5...
 HOMOTOPY mode 1: computing step 1/5...
@@ -13433,7 +13433,7 @@ RW_cj               		 1.14015
 RW_cy               		 0.590719
 RW_d                		 0.334041
 RW_dn               		 0.33404
-RW_dt               		 9.06344e-07
+RW_dt               		 9.06345e-07
 RW_etot             		 1.04403
 RW_ex               		 1.70568
 RW_fh               		 2.33503
@@ -14779,14 +14779,14 @@ EAA_bh              		 0
 EAB_bh              		 0
 EAC_bh              		 0
 EAD_bh              		 0
-EAE_bh              		 -2.10845e-16
-EAF_bh              		 -2.09394e-17
+EAE_bh              		 2.06627e-16
+EAF_bh              		 5.55112e-17
 EAG_bh              		 0
 EAH_bh              		 0
 EAI_bh              		 0
 EAJ_bh              		 0
 EAK_bh              		 0
-EAL_bh              		 -2.43477e-16
+EAL_bh              		 -2.77556e-16
 iy
 HOMOTOPY mode 1: computing step 0/5...
 HOMOTOPY mode 1: computing step 1/5...
@@ -22338,14 +22338,13 @@ EAA_bh              		 0
 EAB_bh              		 0
 EAC_bh              		 0
 EAD_bh              		 0
-EAE_bh              		 1.17391e-16
-EAF_bh              		 3.66277e-17
+EAE_bh              		 -4.44394e-17
+EAF_bh              		 -9.89149e-17
 EAG_bh              		 0
 EAH_bh              		 0
 EAI_bh              		 0
 EAJ_bh              		 0
 EAK_bh              		 0
-EAL_bh              		 2.76455e-16
-Total computing time : 0h00m28s
+EAL_bh              		 2.25014e-16
+Total computing time : 0h01m01s
 Note: 166 warning(s) encountered in the preprocessor
-Note: warning(s) encountered in MATLAB/Octave code
