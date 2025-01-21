@@ -8078,3 +8078,237 @@ EAJ_bh              		 0
 EAK_bh              		 0
 EAL_bh              		 1.09541e-16
 Total computing time : 0h00m49s
+
+status =
+
+     0
+
+
+cmdout =
+
+    'Found 1 mermaid charts in Markdown input
+      ✅ ./steady2a_EAA-diagram-1.png
+     '
+
+who
+
+Your variables are:
+
+M_                        dynare_5_5_official       matlabEnv_path            shiftAmount               
+aCtry1                    dynare_6_0_official       node_path                 ssStruct                  
+aCtry2                    dynare_6_1_official       oo_                       ssTable                   
+aCtryResid                dynare_6_2_official       options_                  tableFlatForXls           
+aItem                     dynare_7_2024_04_12_1835  paramIdentif              tableForXls               
+ans                       elapsed_time              paramStruct               tableTby                  
+bayestopt_                estim_params_             project_path              validCountries            
+countries                 estimation_info           project_path_echt         valuesEnd                 
+countriesAux              i                         project_path_io           xlsFilePath               
+dataset_                  iris_path                 rangeFlatMatrix           
+dataset_info              iris_path_20210802        rangeFlatStruct           
+dynare_4_5_official       iris_path_20211222        rangeMatrix               
+dynare_5_1_official       logname_                  rangeStruct               
+
+theworkspace = ws2struct();
+{Unrecognized function or variable 'ws2struct'.
+} 
+theworkspace = ws2struct();
+{Unrecognized function or variable 'ws2struct'.
+} 
+theworkspace = ws2struct();
+{Unrecognized function or variable 'ws2struct'.
+} 
+try open('ws2struct'); catch edit('ws2struct'); end
+try open('ws2struct'); catch edit('ws2struct'); end
+theworkspace = utils.ws2struct();
+theworkspace
+
+theworkspace = 
+
+  <a href="matlab:helpPopup('struct')" style="font-weight:bold">struct</a> with fields:
+
+                          M_: [1×1 struct]
+                      aCtry1: "US"
+                      aCtry2: "RW"
+                  aCtryResid: "EAL"
+                       aItem: "pex"
+                         ans: [15×15 table]
+                  bayestopt_: []
+                   countries: ["EAA"    "EAB"    "EAC"    "EAD"    "EAE"    "EAF"    …    ] (1×14 string)
+                countriesAux: ["EAA"    "EAB"    "EAC"    "EAD"    "EAE"    "EAF"    …    ] (1×28 string)
+                    dataset_: []
+                dataset_info: []
+         dynare_4_5_official: "/Applications/Dynare/4.5.0/matlab"
+         dynare_5_1_official: "/Users/kk/Documents/0000-00_work/2021-03_dynare/dynareversion/5.1/matlab"
+         dynare_5_5_official: "/Applications/Dynare/5.5-arm64/matlab"
+         dynare_6_0_official: "/Applications/Dynare/6.0-arm64/matlab"
+         dynare_6_1_official: "/Applications/Dynare/6.1-arm64/matlab"
+         dynare_6_2_official: "/Applications/Dynare/6.2-arm64/matlab"
+    dynare_7_2024_04_12_1835: "/Applications/Dynare/7-2024-04-12-1835-arm64/matlab"
+                elapsed_time: 48.7692
+               estim_params_: []
+             estimation_info: [1×1 struct]
+                           i: 14
+                   iris_path: "/Users/kk/Documents/0000-00_work/2021-03_iris/iris_live"
+          iris_path_20210802: "/Users/kk/Documents/0000-00_work/2021-03_iris/iris_20210802"
+          iris_path_20211222: "/Users/kk/Documents/0000-00_work/2021-03_iris/iris_20211222"
+                    logname_: 'steady2b.log'
+              matlabEnv_path: '/usr/bin:/bin:/usr/sbin:/sbin'
+                   node_path: '/Users/kk/.nvm/versions/node/v22.12.0/bin'
+                         oo_: [1×1 struct]
+                    options_: [1×1 struct]
+                paramIdentif: [742×1 double]
+                 paramStruct: [1×1 struct]
+                project_path: "/Users/kk/Documents/0000-00_work/2024-01_eagle"
+           project_path_echt: "/Users/kk/Documents/0000-00_work/2024-11_echt-calibration-tool"
+             project_path_io: "/Users/kk/Documents/0000-00_work/2022-01_input-output-import-content/io"
+             rangeFlatMatrix: ["Q110"    "Q114"    "Q122"    "Q127"]
+             rangeFlatStruct: [1×1 struct]
+                 rangeMatrix: ["Q3"    "Q21"    "Q39"    "Q57"    "Q93"]
+                 rangeStruct: [1×1 struct]
+                 shiftAmount: 12
+                    ssStruct: [1×1 struct]
+                     ssTable: [7386×1 table]
+             tableFlatForXls: [1×1 struct]
+                 tableForXls: [1×1 struct]
+                    tableTby: [14×1 table]
+              validCountries: [1 1 1 1 1 1 1 1 1 1 1 1 1 0]
+                   valuesEnd: [742×1 double]
+                 xlsFilePath: "/Users/kk/Documents/0000-00_work/2024-01_eagle/aMyNotes/version_RW.xlsx"
+
+if system_dependent('IsDebugMode')==1, dbcont; end
+{Error using <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('runShareVisualisation>loadModelResults', '/Users/kk/Documents/0000-00_work/2024-01_eagle/runShareVisualisation.m', 151)" style="font-weight:bold">runShareVisualisation>loadModelResults</a> (<a href="matlab: opentoline('/Users/kk/Documents/0000-00_work/2024-01_eagle/runShareVisualisation.m',151,0)">line 151</a>)
+Failed to load model results: Unrecognized field name "oo_".
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('runShareVisualisation>generateDiagram', '/Users/kk/Documents/0000-00_work/2024-01_eagle/runShareVisualisation.m', 122)" style="font-weight:bold">runShareVisualisation>generateDiagram</a> (<a href="matlab: opentoline('/Users/kk/Documents/0000-00_work/2024-01_eagle/runShareVisualisation.m',122,0)">line 122</a>)
+    [ssTable, paramTable] = loadModelResults(config.paths.resultsFile);
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('runShareVisualisation>processConfiguration', '/Users/kk/Documents/0000-00_work/2024-01_eagle/runShareVisualisation.m', 76)" style="font-weight:bold">runShareVisualisation>processConfiguration</a> (<a href="matlab: opentoline('/Users/kk/Documents/0000-00_work/2024-01_eagle/runShareVisualisation.m',76,0)">line 76</a>)
+    generateDiagram(config);
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('runShareVisualisation>createDiagrams', '/Users/kk/Documents/0000-00_work/2024-01_eagle/runShareVisualisation.m', 36)" style="font-weight:bold">runShareVisualisation>createDiagrams</a> (<a href="matlab: opentoline('/Users/kk/Documents/0000-00_work/2024-01_eagle/runShareVisualisation.m',36,0)">line 36</a>)
+            processConfiguration(modelFolder, steadyState{1}, country{1});
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('runShareVisualisation', '/Users/kk/Documents/0000-00_work/2024-01_eagle/runShareVisualisation.m', 2)" style="font-weight:bold">runShareVisualisation</a> (<a href="matlab: opentoline('/Users/kk/Documents/0000-00_work/2024-01_eagle/runShareVisualisation.m',2,0)">line 2</a>)
+createDiagrams('eagleParsingTemp', ...
+}
+opentoline('/Users/kk/Documents/0000-00_work/2024-01_eagle/runShareVisualisation.m',122,0)
+opentoline('/Users/kk/Documents/0000-00_work/2024-01_eagle/runShareVisualisation.m',122,0)
+opentoline('/Users/kk/Documents/0000-00_work/2024-01_eagle/runShareVisualisation.m',122,0)
+modStruct
+
+modStruct = 
+
+  <a href="matlab:helpPopup('struct')" style="font-weight:bold">struct</a> with fields:
+
+    resultsFile: "/Users/kk/Documents/0000-00_work/2024-01_eagle/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results.mat"
+
+utils.ws2struct()
+
+ans = 
+
+  <a href="matlab:helpPopup('struct')" style="font-weight:bold">struct</a> with fields:
+
+      modStruct: [1×1 struct]
+    resultsFile: "/Users/kk/Documents/0000-00_work/2024-01_eagle/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results.mat"
+
+utils.ws2struct()
+
+ans = 
+
+  <a href="matlab:helpPopup('struct')" style="font-weight:bold">struct</a> with fields:
+
+            ans: [1×1 struct]
+      modStruct: [1×1 struct]
+    resultsFile: "/Users/kk/Documents/0000-00_work/2024-01_eagle/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results.mat"
+
+ans
+
+ans = 
+
+  <a href="matlab:helpPopup('struct')" style="font-weight:bold">struct</a> with fields:
+
+            ans: [1×1 struct]
+      modStruct: [1×1 struct]
+    resultsFile: "/Users/kk/Documents/0000-00_work/2024-01_eagle/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results.mat"
+
+if system_dependent('IsDebugMode')==1, dbquit; end
+theworkspace = ws2struct();
+{Unrecognized function or variable 'ws2struct'.
+} 
+theworkspace = utils.ws2struct();
+theworkspace
+
+theworkspace = 
+
+  <a href="matlab:helpPopup('struct')" style="font-weight:bold">struct</a> with fields:
+
+                          M_: [1×1 struct]
+                      aCtry1: "US"
+                      aCtry2: "RW"
+                  aCtryResid: "EAL"
+                       aItem: "pex"
+                         ans: [15×15 table]
+                  bayestopt_: []
+                   countries: ["EAA"    "EAB"    "EAC"    "EAD"    "EAE"    "EAF"    …    ] (1×14 string)
+                countriesAux: ["EAA"    "EAB"    "EAC"    "EAD"    "EAE"    "EAF"    …    ] (1×28 string)
+                    dataset_: []
+                dataset_info: []
+         dynare_4_5_official: "/Applications/Dynare/4.5.0/matlab"
+         dynare_5_1_official: "/Users/kk/Documents/0000-00_work/2021-03_dynare/dynareversion/5.1/matlab"
+         dynare_5_5_official: "/Applications/Dynare/5.5-arm64/matlab"
+         dynare_6_0_official: "/Applications/Dynare/6.0-arm64/matlab"
+         dynare_6_1_official: "/Applications/Dynare/6.1-arm64/matlab"
+         dynare_6_2_official: "/Applications/Dynare/6.2-arm64/matlab"
+    dynare_7_2024_04_12_1835: "/Applications/Dynare/7-2024-04-12-1835-arm64/matlab"
+                elapsed_time: 48.7692
+               estim_params_: []
+             estimation_info: [1×1 struct]
+                           i: 14
+                   iris_path: "/Users/kk/Documents/0000-00_work/2021-03_iris/iris_live"
+          iris_path_20210802: "/Users/kk/Documents/0000-00_work/2021-03_iris/iris_20210802"
+          iris_path_20211222: "/Users/kk/Documents/0000-00_work/2021-03_iris/iris_20211222"
+                    logname_: 'steady2b.log'
+              matlabEnv_path: '/usr/bin:/bin:/usr/sbin:/sbin'
+                   node_path: '/Users/kk/.nvm/versions/node/v22.12.0/bin'
+                         oo_: [1×1 struct]
+                    options_: [1×1 struct]
+                paramIdentif: [742×1 double]
+                 paramStruct: [1×1 struct]
+                project_path: "/Users/kk/Documents/0000-00_work/2024-01_eagle"
+           project_path_echt: "/Users/kk/Documents/0000-00_work/2024-11_echt-calibration-tool"
+             project_path_io: "/Users/kk/Documents/0000-00_work/2022-01_input-output-import-content/io"
+             rangeFlatMatrix: ["Q110"    "Q114"    "Q122"    "Q127"]
+             rangeFlatStruct: [1×1 struct]
+                 rangeMatrix: ["Q3"    "Q21"    "Q39"    "Q57"    "Q93"]
+                 rangeStruct: [1×1 struct]
+                 shiftAmount: 12
+                    ssStruct: [1×1 struct]
+                     ssTable: [7386×1 table]
+             tableFlatForXls: [1×1 struct]
+                 tableForXls: [1×1 struct]
+                    tableTby: [14×1 table]
+                theworkspace: [1×1 struct]
+              validCountries: [1 1 1 1 1 1 1 1 1 1 1 1 1 0]
+                   valuesEnd: [742×1 double]
+                 xlsFilePath: "/Users/kk/Documents/0000-00_work/2024-01_eagle/aMyNotes/version_RW.xlsx"
+
+resultsFile
+
+resultsFile = 
+
+    "/Users/kk/Documents/0000-00_work/2024-01_eagle/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results.mat"
+
+if system_dependent('IsDebugMode')==1, dbquit; end
+save('/Users/kk/Documents/0000-00_work/2024-01_eagle/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results.mat', 'M_', 'oo_')
+
+status =
+
+     0
+
+
+cmdout =
+
+    'Found 1 mermaid charts in Markdown input
+      ✅ ./steady2b_EAA-diagram-1.png
+     '
+
