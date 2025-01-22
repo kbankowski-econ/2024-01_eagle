@@ -5,6 +5,7 @@ subroutines/+utils/+call/paths.m
 *.cod
 *.asv
 ~*.xlsx
+~*.xlsm
 *.icloud
 *.fls
 docs/**/*.log
