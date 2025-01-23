@@ -691,7 +691,7 @@ US_imcgy, 0.008141;
 US_imcy, 0.077315;
 US_imigy, 0.003421;
 US_imiy, 0.030788;
-US_size, 0.238805;
+US_size, 0.238807;
 USEAA_imcgy, 0.000055;
 USEAA_imcy, 0.000523;
 USEAA_imigy, 0.000023;
