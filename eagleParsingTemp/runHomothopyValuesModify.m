@@ -45,7 +45,7 @@ ssTable = table(); ssStruct = struct();
 ssTable = array2table(oo_.steady_state, 'RowNames', M_.endo_names, 'VariableNames', "ss");
 ssStruct = cell2struct(num2cell(ssTable.ss), ssTable.Properties.RowNames, 1);
 paramStruct = cell2struct(num2cell(M_.params), M_.param_names, 1);
-xlsFilePath = fullfile(project_path, "aMyNotes/version_RW.xlsx");
+xlsFilePath = fullfile(project_path, "aMyNotes/investigCloseLookTradeBalance.xlsx");
 
 % alocate the values from the structure
 countries = ["EAA", "EAB", "EAC", "EAD", "EAE", "EAF", "EAG", "EAH", "EAI", "EAJ", "EAK", "EAL", "RW", "US"];
@@ -77,7 +77,7 @@ for aItem = ["imcy", "imcgy", "imiy", "imigy", "rer"]
             tableForXls.(aItem){"Total", aCtry1} = paramStruct.(aCtry1+"_"+aItem);
         end
     end
-    writetable(tableForXls.(aItem), xlsFilePath, 'Sheet', 'calibRW7', 'Range', rangeStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
+    writetable(tableForXls.(aItem), xlsFilePath, 'Sheet', 'calcs', 'Range', rangeStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
 end
 
 
@@ -91,7 +91,7 @@ for aItem = ["y", "py", "size", "pex"]
             tableFlatForXls.(aItem){"Row", aCtry1} = ssStruct.(aCtry1+"_"+aItem);
         end
     end
-    writetable(tableFlatForXls.(aItem), xlsFilePath, 'Sheet', 'calibRW7', 'Range', rangeFlatStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
+    writetable(tableFlatForXls.(aItem), xlsFilePath, 'Sheet', 'calcs', 'Range', rangeFlatStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
 end
 
 %%
@@ -126,10 +126,10 @@ ssStruct.US_tby - US_tby
 %%
 tableTby = table();
 for aItem = ["tby"]
-    tableTby = array2table(nan(length(countries), 1), 'RowNames', countries, 'VariableNames', {'tby'});
+    tableTby = array2table(nan(1, length(countries)), 'VariableNames', countries);
     for i = 1:length(countries)
         aCtry1 = countries(i);
-            tableTby{aCtry1, "tby"} = ssStruct.(aCtry1+"_"+aItem);
+            tableTby{:, aCtry1} = ssStruct.(aCtry1+"_"+aItem);
     end
 end
 
