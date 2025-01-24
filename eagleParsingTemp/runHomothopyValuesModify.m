@@ -4,7 +4,7 @@
 load(sprintf("%s/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results.mat", project_path));
 
 %% loading the homothopy values from mod files
-[paramIdentif, valuesEnd] = readHomothopyValuesFromModFile('trade_matrix_values_calibrated_int_EAL.mod', M_);
+[paramIdentif, valuesEnd] = readHomothopyValuesFromModFile('trade_matrix_values_calibrated_int.mod', M_);
 
 %% running steady command
 % creating the matrix containing the homothopy values
@@ -52,10 +52,10 @@ countries = ["EAA", "EAB", "EAC", "EAD", "EAE", "EAF", "EAG", "EAH", "EAI", "EAJ
 shiftAmount = 12;  % Making the shift amount explicit as a variable
 countriesAux = [countries, countries];  % Double array for circular indexing
 
-rangeMatrix = "Q"+["3", "21", "39", "57", "93"];
+rangeMatrix = "A"+["3", "21", "39", "57", "93"];
 rangeStruct = struct('imcy', rangeMatrix(1), 'imcgy', rangeMatrix(2), 'imiy', rangeMatrix(3), 'imigy', rangeMatrix(4), 'rer', rangeMatrix(5));
 
-rangeFlatMatrix = "Q"+["110", "114", "122", "127"];
+rangeFlatMatrix = "A"+["110", "114", "122", "127"];
 rangeFlatStruct = struct('y', rangeFlatMatrix(1), 'py', rangeFlatMatrix(2), 'size', rangeFlatMatrix(3), 'pex', rangeFlatMatrix(4));
 
 
