@@ -32,11 +32,11 @@ newTable = struct();
 for aItem = ["imcy", "imiy", "imcgy", "imigy"]
     xlsFilePath = fullfile(project_path, "aMyNotes/investigCloseLookTradeBalance.xlsx");
     newTable.(aItem) = table();
-    newTable.(aItem) = readtable(xlsFilePath, 'Sheet', 'shareCalc', 'ReadRowNames', true, 'Range', rangeStruct.(aItem));
+    newTable.(aItem) = readtable(xlsFilePath, 'Sheet', 'ssMyProportion', 'ReadRowNames', true, 'Range', rangeStruct.(aItem));
 end
 
 %% writing mod trade calibration file
-writeTradeModFile('tradeMatrixFabio.mod', newTable, sizeStruct, countries, countriesAux, shiftAmount)
+writeTradeModFile('tradeMatrixMyProportion.mod', newTable, sizeStruct, countries, countriesAux, shiftAmount)
 % writeTradeModFile('trade_matrix_values_calibrated_oldReprinted.mod', origTable, sizeStruct, countries, countriesAux, shiftAmount)
 % writeTradeModFile('trade_matrix_values_calibrated_EABEAM.mod', myTable, sizeStruct, countries, countriesAux, shiftAmount)
 
