@@ -4,7 +4,7 @@
 load(sprintf("%s/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results.mat", project_path));
 
 %% loading the homothopy values from mod files
-[paramIdentif, valuesEnd] = readHomothopyValuesFromModFile('tradeMatrixRWadjust.mod', M_);
+[paramIdentif, valuesEnd] = readHomothopyValuesFromModFile('tradeMatrixUSadjust.mod', M_);
 
 %% running steady command
 % creating the matrix containing the homothopy values
@@ -38,6 +38,8 @@ elapsed_time = toc;
 
 reportTimeToLogFile(logname_, elapsed_time);
 save_params_and_steady_state('eagle_steady_stage2b.txt');
+
+return
 
 %% trying the see the failed resutls
 ssTable = table(); ssStruct = struct();
@@ -77,7 +79,7 @@ for aItem = ["imcy", "imcgy", "imiy", "imigy", "rer"]
             tableForXls.(aItem){"Total", aCtry1} = paramStruct.(aCtry1+"_"+aItem);
         end
     end
-    writetable(tableForXls.(aItem), xlsFilePath, 'Sheet', 'ssRWadjust', 'Range', rangeStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
+    writetable(tableForXls.(aItem), xlsFilePath, 'Sheet', 'ssUSadjust', 'Range', rangeStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
 end
 
 
@@ -91,7 +93,7 @@ for aItem = ["y", "py", "size", "pex"]
             tableFlatForXls.(aItem){"Row", aCtry1} = ssStruct.(aCtry1+"_"+aItem);
         end
     end
-    writetable(tableFlatForXls.(aItem), xlsFilePath, 'Sheet', 'ssRWadjust', 'Range', rangeFlatStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
+    writetable(tableFlatForXls.(aItem), xlsFilePath, 'Sheet', 'ssUSadjust', 'Range', rangeFlatStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
 end
 
 %%
