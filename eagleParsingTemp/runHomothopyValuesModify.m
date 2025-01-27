@@ -4,7 +4,7 @@
 load(sprintf("%s/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results.mat", project_path));
 
 %% loading the homothopy values from mod files
-[paramIdentif, valuesEnd] = readHomothopyValuesFromModFile('tradeMatrixMyProportion.mod', M_);
+[paramIdentif, valuesEnd] = readHomothopyValuesFromModFile('tradeMatrixRWadjust.mod', M_);
 
 %% running steady command
 % creating the matrix containing the homothopy values
@@ -77,7 +77,7 @@ for aItem = ["imcy", "imcgy", "imiy", "imigy", "rer"]
             tableForXls.(aItem){"Total", aCtry1} = paramStruct.(aCtry1+"_"+aItem);
         end
     end
-    writetable(tableForXls.(aItem), xlsFilePath, 'Sheet', 'ssMyProportion', 'Range', rangeStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
+    writetable(tableForXls.(aItem), xlsFilePath, 'Sheet', 'ssRWadjust', 'Range', rangeStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
 end
 
 
@@ -91,7 +91,7 @@ for aItem = ["y", "py", "size", "pex"]
             tableFlatForXls.(aItem){"Row", aCtry1} = ssStruct.(aCtry1+"_"+aItem);
         end
     end
-    writetable(tableFlatForXls.(aItem), xlsFilePath, 'Sheet', 'ssMyProportion', 'Range', rangeFlatStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
+    writetable(tableFlatForXls.(aItem), xlsFilePath, 'Sheet', 'ssRWadjust', 'Range', rangeFlatStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
 end
 
 %%
