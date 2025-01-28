@@ -32,7 +32,7 @@ newTable = struct();
 for aItem = ["imcy", "imiy", "imcgy", "imigy"]
     xlsFilePath = fullfile(project_path, "aMyNotes/investigCloseLookTradeBalance.xlsx");
     newTable.(aItem) = table();
-    newTable.(aItem) = readtable(xlsFilePath, 'Sheet', 'ssUSadjust', 'ReadRowNames', true, 'Range', rangeStruct.(aItem));
+    newTable.(aItem) = readtable(xlsFilePath, 'Sheet', 'sharesInput', 'ReadRowNames', true, 'Range', rangeStruct.(aItem));
 end
 
 %% writing mod trade calibration file
