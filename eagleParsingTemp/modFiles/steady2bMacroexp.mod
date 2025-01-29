@@ -1,101 +1,101 @@
-//options_.maxit_ = 20
+
 options_.homotopy_mode = 1;
 options_.solve_algo = 5;
 options_.markowitz = 5;
 ctryNumberDouble = 14;
 save("paramsToBeSaved", 'ctryNumberDouble')
-//
-// Is sigma equal to one for any country ?
-// Is omega equal to zero for any country ?
-// Endogenous
 
-// Parameters
 
-// Exogenous
 
-// Endogenous
 
-// Parameters
 
-// Exogenous
 
-// Endogenous
 
-// Parameters
 
-// Exogenous
 
-// Endogenous
 
-// Parameters
 
-// Exogenous
 
-// Endogenous
 
-// Parameters
 
-// Exogenous
 
-// Endogenous
 
-// Parameters
 
-// Exogenous
 
-// Endogenous
 
-// Parameters
 
-// Exogenous
 
-// Endogenous
 
-// Parameters
 
-// Exogenous
 
-// Endogenous
 
-// Parameters
 
-// Exogenous
 
-// Endogenous
 
-// Parameters
 
-// Exogenous
 
-// Endogenous
 
-// Parameters
 
-// Exogenous
 
-// Endogenous
 
-// Parameters
 
-// Exogenous
 
-// Endogenous
 
-// Parameters
 
-// Exogenous
 
-// Endogenous
 
-// Parameters
 
-// Exogenous
 
-// Endogenous
 
-// Parameters
 
-// Exogenous
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         
@@ -121,9 +121,9 @@ save("paramsToBeSaved", 'ctryNumberDouble')
         
         
 
-// Flip some variables
 
-// Flip variables
+
+
 
 
 
@@ -489,30 +489,30 @@ save("paramsToBeSaved", 'ctryNumberDouble')
 
 
 model(block, bytecode, cutoff = 0);
-// Core model begins
-//-------------
-//-------------
-// Households
-//-------------
-//-------------
-//-------------
-// Household I
-//-------------
-// Utility
+
+
+
+
+
+
+
+
+
+
 EAA_utili = 
 EAA_zcon*log(EAA_ci-EAA_kappa*EAA_ci(-1))-1/(1+EAA_zeta)*(EAA_ni)^(1+EAA_zeta)+EAA_beta*EAA_utili(+1)
 ;
-// Marginal utility of consumption
+
 EAA_lambdai*(1+EAA_tauc+EAA_gammavi+EAA_vi*EAA_gammavider) = EAA_zcon*(EAA_ci-EAA_kappa*EAA_ci(-1))^(-EAA_sigma);
-// Euler equation for government bonds
+
 EAA_r                   = EAA_beta^(-1)*EAA_lambdai/EAA_lambdai    *EAA_pic;
-// Euler equation for money
+
 EAA_vi^(2)*EAA_gammavider = 1-EAA_beta*EAA_lambdai(+1)/(EAA_lambdai*EAA_pic(+1));
-// Consumption-based velocity
+
 EAA_vi = EAA_ci/EAA_mi;
-// Transaction cost
+
 EAA_gammavi = EAA_gammav1*EAA_vi+EAA_gammav2/EAA_vi-2*(EAA_gammav1*EAA_gammav2)^(1/2);
-// Derivative of transaction cost
+
 EAA_gammavider = EAA_gammav1-EAA_gammav2*EAA_vi^(-2);
 EAA_delta = EAA_ii/EAA_ki;
 EAA_gammai = 0;
@@ -521,355 +521,355 @@ EAA_gammau = 0;
 EAA_gammauder = ((EAA_beta^(-1)-1+EAA_delta)*EAA_qbar-EAA_delta*EAA_taukbar*EAA_pibar)/((1-EAA_taukbar)*EAA_pibar);
 EAA_u = 1;
 EAA_pi = EAA_q;
-// Auxiliary equation for Tobin's Q in steady state
+
 EAA_qbar = EAA_q;
-// Rate of return on capital
+
 EAA_q = EAA_beta*((1-EAA_tauk)*EAA_rk+(EAA_tauk*EAA_delta)*EAA_pi+(1-EAA_delta)*EAA_q);
-// Optimal wage contract (FOC)
+
 EAA_witilde^(1+EAA_etai*EAA_zeta) = EAA_etai/(EAA_etai-1)*EAA_fi/EAA_gi+EAA_wcst;
-// Definition of fi
+
 EAA_fi = EAA_wi^(EAA_etai*(1+EAA_zeta))*EAA_ndi^(1+EAA_zeta)+EAA_xii*EAA_beta*(EAA_pic(+1)/(EAA_pic^EAA_chii*EAA_pi4target^(1/4*(1-EAA_chii))))^(EAA_etai*(1+EAA_zeta))*EAA_fi(+1);
-// Definition of gi
+
 EAA_gi = EAA_lambdai*(1-EAA_taun-EAA_tauwh)*EAA_wi^EAA_etai*EAA_ndi+EAA_xii*EAA_beta*(EAA_pic(+1)/(EAA_pic^EAA_chii*EAA_pi4target^(1/4*(1-EAA_chii))))^(EAA_etai-1)*EAA_gi(+1);
-// Aggregate wage rate
+
 EAA_wi^(1-EAA_etai) = (1-EAA_xii)*EAA_witilde^(1-EAA_etai)+EAA_xii*EAA_wi(-1)^(1-EAA_etai)*(EAA_pic(-1)^EAA_chii*EAA_pi4target^(1/4*(1-EAA_chii))/EAA_pic)^(1-EAA_etai);
-//-------------
-// Household J
-//-------------
-// Utility
+
+
+
+
 EAA_utilj = 
 EAA_zcon*log(EAA_cj-EAA_kappa*EAA_cj(-1))-1/(1+EAA_zeta)*EAA_nj^(1+EAA_zeta)+EAA_beta*EAA_utilj(+1)
 ;
-// Marginal utility of consumption
+
 EAA_lambdaj*(1+EAA_tauc+EAA_gammavj+EAA_vj*EAA_gammavjder) = EAA_zcon*(EAA_cj-EAA_kappa*EAA_cj(-1))^(-EAA_sigma);
-// Budget constraint
+
 (1+EAA_tauc+EAA_gammavj)*EAA_cj+EAA_mj = (1-EAA_taun-EAA_tauwh)*EAA_wj*EAA_nj+EAA_trj-EAA_tj+EAA_mj(-1)*EAA_pic^(-1);
-// Euler equation for money
+
 EAA_vj^(2)*EAA_gammavjder = 1-EAA_beta*EAA_lambdaj(+1)/(EAA_lambdaj*EAA_pic(+1));
-// Consumption-based velocity
+
 EAA_vj = EAA_cj/EAA_mj;
-// Transaction technology
+
 EAA_gammavj = EAA_gammav1*EAA_vj+EAA_gammav2/EAA_vj-2*(EAA_gammav1*EAA_gammav2)^(1/2);
-// Derivative of transaction technology
+
 EAA_gammavjder = EAA_gammav1-EAA_gammav2*EAA_vj^(-2);
-// Optimal wage contract (FOC)
+
 EAA_wjtilde^(1+EAA_etaj*EAA_zeta) = EAA_etaj/(EAA_etaj-1)*EAA_fj/EAA_gj+EAA_wcst;
-// Definition of fj
+
 EAA_fj = EAA_wj^(EAA_etaj*(1+EAA_zeta))*EAA_ndj^(1+EAA_zeta)+EAA_xij*EAA_beta*(EAA_pic(+1)/(EAA_pic^EAA_chij*EAA_pi4target^(1/4*(1-EAA_chij))))^(EAA_etaj*(1+EAA_zeta))*EAA_fj(+1);
-// Definition of gj
+
 EAA_gj = EAA_lambdaj*(1-EAA_taun-EAA_tauwh)*EAA_wj^EAA_etaj*EAA_ndj+EAA_xij*EAA_beta*(EAA_pic(+1)/(EAA_pic^EAA_chij*EAA_pi4target^(1/4*(1-EAA_chij))))^(EAA_etaj-1)*EAA_gj(+1);
-// Aggregate wage rate
+
 EAA_wj^(1-EAA_etaj) = (1-EAA_xij)*EAA_wjtilde^(1-EAA_etaj)+EAA_xij*EAA_wj(-1)^(1-EAA_etaj)*(EAA_pic(-1)^EAA_chij*EAA_pi4target^(1/4*(1-EAA_chij))/EAA_pic)^(1-EAA_etaj);
-//-------------
-//-------------
-// Firms
-//-------------
-//-------------
-//-------------
-// Intermediate-good firms
-//-------------
-// Production function tradable
+
+
+
+
+
+
+
+
+
 EAA_yst = EA_z*EAA_zt*EAA_kdt^EAA_alphat*EAA_ndt^(1-EAA_alphat)-EAA_psitbar;
-// Production function nontradable
+
 EAA_ysn = EA_z*EAA_zn*EAA_kdn^EAA_alphan*EAA_ndn^(1-EAA_alphan)-EAA_psinbar;
-// Real marginal cost tradable
+
 EAA_mct = 1/(EA_z*EAA_zt*(EAA_alphat)^(EAA_alphat)*(1-EAA_alphat)^(1-EAA_alphat))*EAA_rk^(EAA_alphat)*((1+EAA_tauwf)*EAA_w)^(1-EAA_alphat);
-// Real marginal cost nontradable
+
 EAA_mcn = 1/(EA_z*EAA_zn*(EAA_alphan)^(EAA_alphan)*(1-EAA_alphan)^(1-EAA_alphan))*EAA_rk^(EAA_alphan)*((1+EAA_tauwf)*EAA_w)^(1-EAA_alphan);
-// Wage Inflation (qoq)
+
 EAA_piw = EAA_w/EAA_w(-1)*EAA_pic;
-// Wage Inflation (yoy)
+
 EAA_piw4 = EAA_pic4;
-// Auxiliary equation for steady-state fixed cost
+
 EAA_psitbar = EAA_psit*EAA_ytbar;
-// Auxiliary equation for steady-state fixed cost
+
 EAA_psinbar = EAA_psin*EAA_ynbar;
-// Capital input (FOC)
+
 EAA_rk = EAA_alphat*(EAA_yst+EAA_psitbar)/EAA_kdt*EAA_mct;
-// Capital input (FOC)
+
 EAA_rk = EAA_alphan*(EAA_ysn+EAA_psinbar)/EAA_kdn*EAA_mcn;
-// Total capital demand
+
 EAA_kd = EAA_kdt+EAA_kdn;
-// Demand for labour services by household I
+
 EAA_ndi = 
 (1-EAA_omega)*(EAA_wi/EAA_w)^(-EAA_eta)*EAA_nd
 ;
-// Demand for labour services by household J
+
 EAA_ndj = 
 EAA_omega*(EAA_wj/EAA_w)^(-EAA_eta)*EAA_nd
 ;
-// Aggregate labour demand
+
 EAA_nd^(1-1/EAA_eta) = 
 (1-EAA_omega)^(1/EAA_eta)*EAA_ndi^(1-1/EAA_eta)+EAA_omega^(1/EAA_eta)*EAA_ndj^(1-1/EAA_eta)
 ;
-// Total demand 
+
 EAA_nd = EAA_ndt+EAA_ndn;
-// Aggregate dividends
+
 EAA_d = EAA_py*EAA_y-EAA_rk*EAA_kd-(1+EAA_tauwf)*EAA_w*EAA_nd;
-// Non-tradable sector dividends
+
 EAA_dn = EAA_pnt*EAA_ysn-EAA_rk*EAA_kdn-(1+EAA_tauwf)*EAA_w*EAA_ndn;
-// Tradable sector dividends
+
 EAA_dt = EAA_pht*EAA_ht
 +EAA_pex*EAA_ex
 -EAA_rk*EAA_kdt-(1+EAA_tauwf)*EAA_w*EAA_ndt;
-// Optimal price contract set in domestic markets (FOC)
+
 EAA_phttilde/EAA_pht = EAA_thetat/(EAA_thetat-1)*EAA_fh/EAA_gh;
-// Definition of fh
+
 EAA_fh = EAA_mct*EAA_ht+EAA_xih*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAA_piht(+1)/(EAA_piht^EAA_chih*EAA_pi4target^(1/4*(1-EAA_chih))))^EAA_thetat*EAA_fh(+1);
-// Definition of gh
+
 EAA_gh = EAA_pht*EAA_ht+EAA_xih*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAA_piht(+1)/(EAA_piht^EAA_chih*EAA_pi4target^(1/4*(1-EAA_chih))))^(EAA_thetat-1)*EAA_gh(+1);
-// Aggregate intermediate-good price dynamics
+
 EAA_pht^(1-EAA_thetat) = (1-EAA_xih)*EAA_phttilde^(1-EAA_thetat)+EAA_xih*(EAA_pht(-1)/EAA_pic)^(1-EAA_thetat)*(EAA_piht(-1)^EAA_chih*EAA_pi4target^(1/4*(1-EAA_chih)))^(1-EAA_thetat);
-// Intermediate-good price inflation
+
 EAA_piht = EAA_pht/EAA_pht(-1)*EAA_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAA_pnttilde/EAA_pnt = EAA_thetan/(EAA_thetan-1)*EAA_fn/EAA_gn;
-// Definition of fn
+
 EAA_fn = EAA_mcn*EAA_nt+EAA_xin*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAA_pint(+1)/(EAA_pint^EAA_chin*EAA_pi4target^(1/4*(1-EAA_chin))))^EAA_thetan*EAA_fn(+1);
-// Definition of gn
+
 EAA_gn = EAA_pnt*EAA_nt+EAA_xin*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAA_pint(+1)/(EAA_pint^EAA_chin*EAA_pi4target^(1/4*(1-EAA_chin))))^(EAA_thetan-1)*EAA_gn(+1);
-// Aggregate intermediate-good price dynamics
+
 EAA_pnt^(1-EAA_thetan) = (1-EAA_xin)*EAA_pnttilde^(1-EAA_thetan)+EAA_xin*(EAA_pnt(-1)/EAA_pic)^(1-EAA_thetan)*(EAA_pint(-1)^EAA_chin*EAA_pi4target^(1/4*(1-EAA_chin)))^(1-EAA_thetan);
-// Intermediate-good price inflation
+
 EAA_pint = EAA_pnt/EAA_pnt(-1)*EAA_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAA_pextilde/EAA_pex = EAA_thetat/(EAA_thetat-1)*EAA_fx/EAA_gx;
-// Definition of fh
+
 EAA_fx = EAA_mct*EAA_ex+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAA_piex(+1)/(EAA_piex^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^EAA_thetat*EAA_fx(+1);
-// Definition of gh
+
 EAA_gx = EAA_pex*EAA_ex+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAA_piex(+1)/(EAA_piex^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^(EAA_thetat-1)*EAA_gx(+1);
-// Aggregate intermediate-good price dynamics
+
 EAA_pex^(1-EAA_thetat) = (1-EAA_xix)*EAA_pextilde^(1-EAA_thetat)+EAA_xix*(EAA_pex(-1)/EAA_pic)^(1-EAA_thetat)*(EAA_piex(-1)^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix)))^(1-EAA_thetat);
-// Intermediate-good price inflation
+
 EAA_piex = EAA_pex/EAA_pex(-1)*EAA_pic;
-//---------------
-// import pricing
-//---------------
-// Optimal price contract set in foreign markets (FOC), using EAA_pxtilde = EAB_pimtilde
-// EABEAA_pimtilde/EABEAA_pim = EAA_cpim*EAA_thetat/(EAA_thetat-1)*EAAEAB_fx/EAAEAB_gx;
-// Definition of fx
-// EAAEAB_fx = EAB_size/EAA_size*EABEAA_im*EAA_mct+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EABEAA_piim(+1)/(EABEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^EAA_thetat*EAAEAB_fx(+1);
-// Definition of gx   
-// EAAEAB_gx = EAAEAB_rer*EABEAA_pim*EAB_size/EAA_size*EABEAA_im+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EABEAA_piim(+1)/(EABEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^(EAA_thetat-1)*EAAEAB_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAA_px = EAB_pim
-// EABEAA_pim^(1-EAA_thetat) = (1-EAA_xix)*EABEAA_pimtilde^(1-EAA_thetat)+EAA_xix*(EABEAA_pim(-1)/EAB_pic)^(1-EAA_thetat)*(EABEAA_piim(-1)^EAA_chix*EAB_pi4target^(1/4*(1-EAA_chih)))^(1-EAA_thetat);
-// Intermediate-good price inflation, using EAA_pix = EAB_piim
-// EABEAA_piim = EABEAA_pim/EABEAA_pim(-1)*EAB_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 EAAEAB_rer = EAA_rer/EAB_rer;
-// Auxiliary equation for steady-state output
+
 EAAEAB_rerbar = EAAEAB_rer;
-//Terms of Trade
+
 EAAEAB_tot = EAB_pex*EAAEAB_rer/EAA_pex;
-// Optimal price contract set in foreign markets (FOC), using EAA_pxtilde = EAC_pimtilde
-// EACEAA_pimtilde/EACEAA_pim = EAA_cpim*EAA_thetat/(EAA_thetat-1)*EAAEAC_fx/EAAEAC_gx;
-// Definition of fx
-// EAAEAC_fx = EAC_size/EAA_size*EACEAA_im*EAA_mct+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EACEAA_piim(+1)/(EACEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^EAA_thetat*EAAEAC_fx(+1);
-// Definition of gx   
-// EAAEAC_gx = EAAEAC_rer*EACEAA_pim*EAC_size/EAA_size*EACEAA_im+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EACEAA_piim(+1)/(EACEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^(EAA_thetat-1)*EAAEAC_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAA_px = EAC_pim
-// EACEAA_pim^(1-EAA_thetat) = (1-EAA_xix)*EACEAA_pimtilde^(1-EAA_thetat)+EAA_xix*(EACEAA_pim(-1)/EAC_pic)^(1-EAA_thetat)*(EACEAA_piim(-1)^EAA_chix*EAC_pi4target^(1/4*(1-EAA_chih)))^(1-EAA_thetat);
-// Intermediate-good price inflation, using EAA_pix = EAC_piim
-// EACEAA_piim = EACEAA_pim/EACEAA_pim(-1)*EAC_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAAEAC_rer = EAA_rer/EAC_rer;
-// Auxiliary equation for steady-state output
+
 EAAEAC_rerbar = EAAEAC_rer;
-//Terms of Trade
+
 EAAEAC_tot = EAC_pex*EAAEAC_rer/EAA_pex;
-// Optimal price contract set in foreign markets (FOC), using EAA_pxtilde = EAD_pimtilde
-// EADEAA_pimtilde/EADEAA_pim = EAA_cpim*EAA_thetat/(EAA_thetat-1)*EAAEAD_fx/EAAEAD_gx;
-// Definition of fx
-// EAAEAD_fx = EAD_size/EAA_size*EADEAA_im*EAA_mct+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EADEAA_piim(+1)/(EADEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^EAA_thetat*EAAEAD_fx(+1);
-// Definition of gx   
-// EAAEAD_gx = EAAEAD_rer*EADEAA_pim*EAD_size/EAA_size*EADEAA_im+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EADEAA_piim(+1)/(EADEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^(EAA_thetat-1)*EAAEAD_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAA_px = EAD_pim
-// EADEAA_pim^(1-EAA_thetat) = (1-EAA_xix)*EADEAA_pimtilde^(1-EAA_thetat)+EAA_xix*(EADEAA_pim(-1)/EAD_pic)^(1-EAA_thetat)*(EADEAA_piim(-1)^EAA_chix*EAD_pi4target^(1/4*(1-EAA_chih)))^(1-EAA_thetat);
-// Intermediate-good price inflation, using EAA_pix = EAD_piim
-// EADEAA_piim = EADEAA_pim/EADEAA_pim(-1)*EAD_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAAEAD_rer = EAA_rer/EAD_rer;
-// Auxiliary equation for steady-state output
+
 EAAEAD_rerbar = EAAEAD_rer;
-//Terms of Trade
+
 EAAEAD_tot = EAD_pex*EAAEAD_rer/EAA_pex;
-// Optimal price contract set in foreign markets (FOC), using EAA_pxtilde = EAE_pimtilde
-// EAEEAA_pimtilde/EAEEAA_pim = EAA_cpim*EAA_thetat/(EAA_thetat-1)*EAAEAE_fx/EAAEAE_gx;
-// Definition of fx
-// EAAEAE_fx = EAE_size/EAA_size*EAEEAA_im*EAA_mct+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAEEAA_piim(+1)/(EAEEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^EAA_thetat*EAAEAE_fx(+1);
-// Definition of gx   
-// EAAEAE_gx = EAAEAE_rer*EAEEAA_pim*EAE_size/EAA_size*EAEEAA_im+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAEEAA_piim(+1)/(EAEEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^(EAA_thetat-1)*EAAEAE_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAA_px = EAE_pim
-// EAEEAA_pim^(1-EAA_thetat) = (1-EAA_xix)*EAEEAA_pimtilde^(1-EAA_thetat)+EAA_xix*(EAEEAA_pim(-1)/EAE_pic)^(1-EAA_thetat)*(EAEEAA_piim(-1)^EAA_chix*EAE_pi4target^(1/4*(1-EAA_chih)))^(1-EAA_thetat);
-// Intermediate-good price inflation, using EAA_pix = EAE_piim
-// EAEEAA_piim = EAEEAA_pim/EAEEAA_pim(-1)*EAE_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAAEAE_rer = EAA_rer/EAE_rer;
-// Auxiliary equation for steady-state output
+
 EAAEAE_rerbar = EAAEAE_rer;
-//Terms of Trade
+
 EAAEAE_tot = EAE_pex*EAAEAE_rer/EAA_pex;
-// Optimal price contract set in foreign markets (FOC), using EAA_pxtilde = EAF_pimtilde
-// EAFEAA_pimtilde/EAFEAA_pim = EAA_cpim*EAA_thetat/(EAA_thetat-1)*EAAEAF_fx/EAAEAF_gx;
-// Definition of fx
-// EAAEAF_fx = EAF_size/EAA_size*EAFEAA_im*EAA_mct+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAFEAA_piim(+1)/(EAFEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^EAA_thetat*EAAEAF_fx(+1);
-// Definition of gx   
-// EAAEAF_gx = EAAEAF_rer*EAFEAA_pim*EAF_size/EAA_size*EAFEAA_im+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAFEAA_piim(+1)/(EAFEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^(EAA_thetat-1)*EAAEAF_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAA_px = EAF_pim
-// EAFEAA_pim^(1-EAA_thetat) = (1-EAA_xix)*EAFEAA_pimtilde^(1-EAA_thetat)+EAA_xix*(EAFEAA_pim(-1)/EAF_pic)^(1-EAA_thetat)*(EAFEAA_piim(-1)^EAA_chix*EAF_pi4target^(1/4*(1-EAA_chih)))^(1-EAA_thetat);
-// Intermediate-good price inflation, using EAA_pix = EAF_piim
-// EAFEAA_piim = EAFEAA_pim/EAFEAA_pim(-1)*EAF_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAAEAF_rer = EAA_rer/EAF_rer;
-// Auxiliary equation for steady-state output
+
 EAAEAF_rerbar = EAAEAF_rer;
-//Terms of Trade
+
 EAAEAF_tot = EAF_pex*EAAEAF_rer/EAA_pex;
-// Optimal price contract set in foreign markets (FOC), using EAA_pxtilde = EAG_pimtilde
-// EAGEAA_pimtilde/EAGEAA_pim = EAA_cpim*EAA_thetat/(EAA_thetat-1)*EAAEAG_fx/EAAEAG_gx;
-// Definition of fx
-// EAAEAG_fx = EAG_size/EAA_size*EAGEAA_im*EAA_mct+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAGEAA_piim(+1)/(EAGEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^EAA_thetat*EAAEAG_fx(+1);
-// Definition of gx   
-// EAAEAG_gx = EAAEAG_rer*EAGEAA_pim*EAG_size/EAA_size*EAGEAA_im+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAGEAA_piim(+1)/(EAGEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^(EAA_thetat-1)*EAAEAG_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAA_px = EAG_pim
-// EAGEAA_pim^(1-EAA_thetat) = (1-EAA_xix)*EAGEAA_pimtilde^(1-EAA_thetat)+EAA_xix*(EAGEAA_pim(-1)/EAG_pic)^(1-EAA_thetat)*(EAGEAA_piim(-1)^EAA_chix*EAG_pi4target^(1/4*(1-EAA_chih)))^(1-EAA_thetat);
-// Intermediate-good price inflation, using EAA_pix = EAG_piim
-// EAGEAA_piim = EAGEAA_pim/EAGEAA_pim(-1)*EAG_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAAEAG_rer = EAA_rer/EAG_rer;
-// Auxiliary equation for steady-state output
+
 EAAEAG_rerbar = EAAEAG_rer;
-//Terms of Trade
+
 EAAEAG_tot = EAG_pex*EAAEAG_rer/EAA_pex;
-// Optimal price contract set in foreign markets (FOC), using EAA_pxtilde = EAH_pimtilde
-// EAHEAA_pimtilde/EAHEAA_pim = EAA_cpim*EAA_thetat/(EAA_thetat-1)*EAAEAH_fx/EAAEAH_gx;
-// Definition of fx
-// EAAEAH_fx = EAH_size/EAA_size*EAHEAA_im*EAA_mct+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAHEAA_piim(+1)/(EAHEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^EAA_thetat*EAAEAH_fx(+1);
-// Definition of gx   
-// EAAEAH_gx = EAAEAH_rer*EAHEAA_pim*EAH_size/EAA_size*EAHEAA_im+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAHEAA_piim(+1)/(EAHEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^(EAA_thetat-1)*EAAEAH_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAA_px = EAH_pim
-// EAHEAA_pim^(1-EAA_thetat) = (1-EAA_xix)*EAHEAA_pimtilde^(1-EAA_thetat)+EAA_xix*(EAHEAA_pim(-1)/EAH_pic)^(1-EAA_thetat)*(EAHEAA_piim(-1)^EAA_chix*EAH_pi4target^(1/4*(1-EAA_chih)))^(1-EAA_thetat);
-// Intermediate-good price inflation, using EAA_pix = EAH_piim
-// EAHEAA_piim = EAHEAA_pim/EAHEAA_pim(-1)*EAH_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAAEAH_rer = EAA_rer/EAH_rer;
-// Auxiliary equation for steady-state output
+
 EAAEAH_rerbar = EAAEAH_rer;
-//Terms of Trade
+
 EAAEAH_tot = EAH_pex*EAAEAH_rer/EAA_pex;
-// Optimal price contract set in foreign markets (FOC), using EAA_pxtilde = EAI_pimtilde
-// EAIEAA_pimtilde/EAIEAA_pim = EAA_cpim*EAA_thetat/(EAA_thetat-1)*EAAEAI_fx/EAAEAI_gx;
-// Definition of fx
-// EAAEAI_fx = EAI_size/EAA_size*EAIEAA_im*EAA_mct+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAIEAA_piim(+1)/(EAIEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^EAA_thetat*EAAEAI_fx(+1);
-// Definition of gx   
-// EAAEAI_gx = EAAEAI_rer*EAIEAA_pim*EAI_size/EAA_size*EAIEAA_im+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAIEAA_piim(+1)/(EAIEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^(EAA_thetat-1)*EAAEAI_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAA_px = EAI_pim
-// EAIEAA_pim^(1-EAA_thetat) = (1-EAA_xix)*EAIEAA_pimtilde^(1-EAA_thetat)+EAA_xix*(EAIEAA_pim(-1)/EAI_pic)^(1-EAA_thetat)*(EAIEAA_piim(-1)^EAA_chix*EAI_pi4target^(1/4*(1-EAA_chih)))^(1-EAA_thetat);
-// Intermediate-good price inflation, using EAA_pix = EAI_piim
-// EAIEAA_piim = EAIEAA_pim/EAIEAA_pim(-1)*EAI_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAAEAI_rer = EAA_rer/EAI_rer;
-// Auxiliary equation for steady-state output
+
 EAAEAI_rerbar = EAAEAI_rer;
-//Terms of Trade
+
 EAAEAI_tot = EAI_pex*EAAEAI_rer/EAA_pex;
-// Optimal price contract set in foreign markets (FOC), using EAA_pxtilde = EAJ_pimtilde
-// EAJEAA_pimtilde/EAJEAA_pim = EAA_cpim*EAA_thetat/(EAA_thetat-1)*EAAEAJ_fx/EAAEAJ_gx;
-// Definition of fx
-// EAAEAJ_fx = EAJ_size/EAA_size*EAJEAA_im*EAA_mct+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAJEAA_piim(+1)/(EAJEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^EAA_thetat*EAAEAJ_fx(+1);
-// Definition of gx   
-// EAAEAJ_gx = EAAEAJ_rer*EAJEAA_pim*EAJ_size/EAA_size*EAJEAA_im+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAJEAA_piim(+1)/(EAJEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^(EAA_thetat-1)*EAAEAJ_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAA_px = EAJ_pim
-// EAJEAA_pim^(1-EAA_thetat) = (1-EAA_xix)*EAJEAA_pimtilde^(1-EAA_thetat)+EAA_xix*(EAJEAA_pim(-1)/EAJ_pic)^(1-EAA_thetat)*(EAJEAA_piim(-1)^EAA_chix*EAJ_pi4target^(1/4*(1-EAA_chih)))^(1-EAA_thetat);
-// Intermediate-good price inflation, using EAA_pix = EAJ_piim
-// EAJEAA_piim = EAJEAA_pim/EAJEAA_pim(-1)*EAJ_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAAEAJ_rer = EAA_rer/EAJ_rer;
-// Auxiliary equation for steady-state output
+
 EAAEAJ_rerbar = EAAEAJ_rer;
-//Terms of Trade
+
 EAAEAJ_tot = EAJ_pex*EAAEAJ_rer/EAA_pex;
-// Optimal price contract set in foreign markets (FOC), using EAA_pxtilde = EAK_pimtilde
-// EAKEAA_pimtilde/EAKEAA_pim = EAA_cpim*EAA_thetat/(EAA_thetat-1)*EAAEAK_fx/EAAEAK_gx;
-// Definition of fx
-// EAAEAK_fx = EAK_size/EAA_size*EAKEAA_im*EAA_mct+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAKEAA_piim(+1)/(EAKEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^EAA_thetat*EAAEAK_fx(+1);
-// Definition of gx   
-// EAAEAK_gx = EAAEAK_rer*EAKEAA_pim*EAK_size/EAA_size*EAKEAA_im+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EAKEAA_piim(+1)/(EAKEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^(EAA_thetat-1)*EAAEAK_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAA_px = EAK_pim
-// EAKEAA_pim^(1-EAA_thetat) = (1-EAA_xix)*EAKEAA_pimtilde^(1-EAA_thetat)+EAA_xix*(EAKEAA_pim(-1)/EAK_pic)^(1-EAA_thetat)*(EAKEAA_piim(-1)^EAA_chix*EAK_pi4target^(1/4*(1-EAA_chih)))^(1-EAA_thetat);
-// Intermediate-good price inflation, using EAA_pix = EAK_piim
-// EAKEAA_piim = EAKEAA_pim/EAKEAA_pim(-1)*EAK_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAAEAK_rer = EAA_rer/EAK_rer;
-// Auxiliary equation for steady-state output
+
 EAAEAK_rerbar = EAAEAK_rer;
-//Terms of Trade
+
 EAAEAK_tot = EAK_pex*EAAEAK_rer/EAA_pex;
-// Optimal price contract set in foreign markets (FOC), using EAA_pxtilde = EAL_pimtilde
-// EALEAA_pimtilde/EALEAA_pim = EAA_cpim*EAA_thetat/(EAA_thetat-1)*EAAEAL_fx/EAAEAL_gx;
-// Definition of fx
-// EAAEAL_fx = EAL_size/EAA_size*EALEAA_im*EAA_mct+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EALEAA_piim(+1)/(EALEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^EAA_thetat*EAAEAL_fx(+1);
-// Definition of gx   
-// EAAEAL_gx = EAAEAL_rer*EALEAA_pim*EAL_size/EAA_size*EALEAA_im+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(EALEAA_piim(+1)/(EALEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^(EAA_thetat-1)*EAAEAL_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAA_px = EAL_pim
-// EALEAA_pim^(1-EAA_thetat) = (1-EAA_xix)*EALEAA_pimtilde^(1-EAA_thetat)+EAA_xix*(EALEAA_pim(-1)/EAL_pic)^(1-EAA_thetat)*(EALEAA_piim(-1)^EAA_chix*EAL_pi4target^(1/4*(1-EAA_chih)))^(1-EAA_thetat);
-// Intermediate-good price inflation, using EAA_pix = EAL_piim
-// EALEAA_piim = EALEAA_pim/EALEAA_pim(-1)*EAL_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAAEAL_rer = EAA_rer/EAL_rer;
-// Auxiliary equation for steady-state output
+
 EAAEAL_rerbar = EAAEAL_rer;
-//Terms of Trade
+
 EAAEAL_tot = EAL_pex*EAAEAL_rer/EAA_pex;
-// Optimal price contract set in foreign markets (FOC), using EAA_pxtilde = RW_pimtilde
-// RWEAA_pimtilde/RWEAA_pim = EAA_cpim*EAA_thetat/(EAA_thetat-1)*EAARW_fx/EAARW_gx;
-// Definition of fx
-// EAARW_fx = RW_size/EAA_size*RWEAA_im*EAA_mct+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(RWEAA_piim(+1)/(RWEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^EAA_thetat*EAARW_fx(+1);
-// Definition of gx   
-// EAARW_gx = EAARW_rer*RWEAA_pim*RW_size/EAA_size*RWEAA_im+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(RWEAA_piim(+1)/(RWEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^(EAA_thetat-1)*EAARW_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAA_px = RW_pim
-// RWEAA_pim^(1-EAA_thetat) = (1-EAA_xix)*RWEAA_pimtilde^(1-EAA_thetat)+EAA_xix*(RWEAA_pim(-1)/RW_pic)^(1-EAA_thetat)*(RWEAA_piim(-1)^EAA_chix*RW_pi4target^(1/4*(1-EAA_chih)))^(1-EAA_thetat);
-// Intermediate-good price inflation, using EAA_pix = RW_piim
-// RWEAA_piim = RWEAA_pim/RWEAA_pim(-1)*RW_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAARW_rer = EAA_rer/RW_rer;
-// Auxiliary equation for steady-state output
+
 EAARW_rerbar = EAARW_rer;
-//Terms of Trade
+
 EAARW_tot = RW_pex*EAARW_rer/EAA_pex;
-// Optimal price contract set in foreign markets (FOC), using EAA_pxtilde = US_pimtilde
-// USEAA_pimtilde/USEAA_pim = EAA_cpim*EAA_thetat/(EAA_thetat-1)*EAAUS_fx/EAAUS_gx;
-// Definition of fx
-// EAAUS_fx = US_size/EAA_size*USEAA_im*EAA_mct+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(USEAA_piim(+1)/(USEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^EAA_thetat*EAAUS_fx(+1);
-// Definition of gx   
-// EAAUS_gx = EAAUS_rer*USEAA_pim*US_size/EAA_size*USEAA_im+EAA_xix*EAA_beta*EAA_lambdai(+1)/EAA_lambdai*(USEAA_piim(+1)/(USEAA_piim^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^(EAA_thetat-1)*EAAUS_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAA_px = US_pim
-// USEAA_pim^(1-EAA_thetat) = (1-EAA_xix)*USEAA_pimtilde^(1-EAA_thetat)+EAA_xix*(USEAA_pim(-1)/US_pic)^(1-EAA_thetat)*(USEAA_piim(-1)^EAA_chix*US_pi4target^(1/4*(1-EAA_chih)))^(1-EAA_thetat);
-// Intermediate-good price inflation, using EAA_pix = US_piim
-// USEAA_piim = USEAA_pim/USEAA_pim(-1)*US_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAAUS_rer = EAA_rer/US_rer;
-// Auxiliary equation for steady-state output
+
 EAAUS_rerbar = EAAUS_rer;
-//Terms of Trade
+
 EAAUS_tot = US_pex*EAAUS_rer/EAA_pex;
-// Total imports 
+
 EAA_im = 
 +EAA_imc
 +EAA_imi
 +EAA_imcg
 +EAA_imig
 ;
-// Total import deflator
+
 EAA_im*EAA_pim  = 
 +EAA_pimc*EAA_imc
 +EAA_pimi*EAA_imi
 +EAA_pimcg*EAA_imcg
 +EAA_pimig*EAA_imig
 ;
-// Effective real exchange rate: double weighting (imports)
+
 EAAEAB_weightim = EAAEAB_rer*EAB_pex*EAAEAB_im/(EAA_pim*EAA_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAAEAB_weightex = EAB_size/EAA_size*EABEAA_im/EAA_ex*EAAEAB_rer*EAB_py*EAB_y/(EAAEAB_rer*EAB_py*EAB_y
 +EAAEAC_rer*EAC_pex*EABEAC_im
 +EAAEAD_rer*EAD_pex*EABEAD_im
@@ -1053,11 +1053,11 @@ EAAEAB_weightex = EAB_size/EAA_size*EABEAA_im/EAA_ex*EAAEAB_rer*EAB_py*EAB_y/(EA
 +EAARW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAAEAB_weight = EAA_pim*EAA_im/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAB_weightim+EAA_pex*EAA_ex/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAB_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAAEAC_weightim = EAAEAC_rer*EAC_pex*EAAEAC_im/(EAA_pim*EAA_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAAEAC_weightex = EAC_size/EAA_size*EACEAA_im/EAA_ex*EAAEAC_rer*EAC_py*EAC_y/(EAAEAC_rer*EAC_py*EAC_y
 +EAAEAB_rer*EAB_pex*EACEAB_im
 +EAAEAD_rer*EAD_pex*EACEAD_im
@@ -1241,11 +1241,11 @@ EAAEAC_weightex = EAC_size/EAA_size*EACEAA_im/EAA_ex*EAAEAC_rer*EAC_py*EAC_y/(EA
 +EAARW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAAEAC_weight = EAA_pim*EAA_im/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAC_weightim+EAA_pex*EAA_ex/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAC_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAAEAD_weightim = EAAEAD_rer*EAD_pex*EAAEAD_im/(EAA_pim*EAA_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAAEAD_weightex = EAD_size/EAA_size*EADEAA_im/EAA_ex*EAAEAD_rer*EAD_py*EAD_y/(EAAEAD_rer*EAD_py*EAD_y
 +EAAEAB_rer*EAB_pex*EADEAB_im
 +EAAEAC_rer*EAC_pex*EADEAC_im
@@ -1429,11 +1429,11 @@ EAAEAD_weightex = EAD_size/EAA_size*EADEAA_im/EAA_ex*EAAEAD_rer*EAD_py*EAD_y/(EA
 +EAARW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAAEAD_weight = EAA_pim*EAA_im/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAD_weightim+EAA_pex*EAA_ex/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAD_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAAEAE_weightim = EAAEAE_rer*EAE_pex*EAAEAE_im/(EAA_pim*EAA_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAAEAE_weightex = EAE_size/EAA_size*EAEEAA_im/EAA_ex*EAAEAE_rer*EAE_py*EAE_y/(EAAEAE_rer*EAE_py*EAE_y
 +EAAEAB_rer*EAB_pex*EAEEAB_im
 +EAAEAC_rer*EAC_pex*EAEEAC_im
@@ -1617,11 +1617,11 @@ EAAEAE_weightex = EAE_size/EAA_size*EAEEAA_im/EAA_ex*EAAEAE_rer*EAE_py*EAE_y/(EA
 +EAARW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAAEAE_weight = EAA_pim*EAA_im/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAE_weightim+EAA_pex*EAA_ex/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAE_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAAEAF_weightim = EAAEAF_rer*EAF_pex*EAAEAF_im/(EAA_pim*EAA_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAAEAF_weightex = EAF_size/EAA_size*EAFEAA_im/EAA_ex*EAAEAF_rer*EAF_py*EAF_y/(EAAEAF_rer*EAF_py*EAF_y
 +EAAEAB_rer*EAB_pex*EAFEAB_im
 +EAAEAC_rer*EAC_pex*EAFEAC_im
@@ -1805,11 +1805,11 @@ EAAEAF_weightex = EAF_size/EAA_size*EAFEAA_im/EAA_ex*EAAEAF_rer*EAF_py*EAF_y/(EA
 +EAARW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAAEAF_weight = EAA_pim*EAA_im/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAF_weightim+EAA_pex*EAA_ex/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAF_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAAEAG_weightim = EAAEAG_rer*EAG_pex*EAAEAG_im/(EAA_pim*EAA_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAAEAG_weightex = EAG_size/EAA_size*EAGEAA_im/EAA_ex*EAAEAG_rer*EAG_py*EAG_y/(EAAEAG_rer*EAG_py*EAG_y
 +EAAEAB_rer*EAB_pex*EAGEAB_im
 +EAAEAC_rer*EAC_pex*EAGEAC_im
@@ -1993,11 +1993,11 @@ EAAEAG_weightex = EAG_size/EAA_size*EAGEAA_im/EAA_ex*EAAEAG_rer*EAG_py*EAG_y/(EA
 +EAARW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAAEAG_weight = EAA_pim*EAA_im/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAG_weightim+EAA_pex*EAA_ex/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAG_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAAEAH_weightim = EAAEAH_rer*EAH_pex*EAAEAH_im/(EAA_pim*EAA_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAAEAH_weightex = EAH_size/EAA_size*EAHEAA_im/EAA_ex*EAAEAH_rer*EAH_py*EAH_y/(EAAEAH_rer*EAH_py*EAH_y
 +EAAEAB_rer*EAB_pex*EAHEAB_im
 +EAAEAC_rer*EAC_pex*EAHEAC_im
@@ -2181,11 +2181,11 @@ EAAEAH_weightex = EAH_size/EAA_size*EAHEAA_im/EAA_ex*EAAEAH_rer*EAH_py*EAH_y/(EA
 +EAARW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAAEAH_weight = EAA_pim*EAA_im/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAH_weightim+EAA_pex*EAA_ex/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAH_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAAEAI_weightim = EAAEAI_rer*EAI_pex*EAAEAI_im/(EAA_pim*EAA_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAAEAI_weightex = EAI_size/EAA_size*EAIEAA_im/EAA_ex*EAAEAI_rer*EAI_py*EAI_y/(EAAEAI_rer*EAI_py*EAI_y
 +EAAEAB_rer*EAB_pex*EAIEAB_im
 +EAAEAC_rer*EAC_pex*EAIEAC_im
@@ -2369,11 +2369,11 @@ EAAEAI_weightex = EAI_size/EAA_size*EAIEAA_im/EAA_ex*EAAEAI_rer*EAI_py*EAI_y/(EA
 +EAARW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAAEAI_weight = EAA_pim*EAA_im/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAI_weightim+EAA_pex*EAA_ex/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAI_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAAEAJ_weightim = EAAEAJ_rer*EAJ_pex*EAAEAJ_im/(EAA_pim*EAA_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAAEAJ_weightex = EAJ_size/EAA_size*EAJEAA_im/EAA_ex*EAAEAJ_rer*EAJ_py*EAJ_y/(EAAEAJ_rer*EAJ_py*EAJ_y
 +EAAEAB_rer*EAB_pex*EAJEAB_im
 +EAAEAC_rer*EAC_pex*EAJEAC_im
@@ -2557,11 +2557,11 @@ EAAEAJ_weightex = EAJ_size/EAA_size*EAJEAA_im/EAA_ex*EAAEAJ_rer*EAJ_py*EAJ_y/(EA
 +EAARW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAAEAJ_weight = EAA_pim*EAA_im/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAJ_weightim+EAA_pex*EAA_ex/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAJ_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAAEAK_weightim = EAAEAK_rer*EAK_pex*EAAEAK_im/(EAA_pim*EAA_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAAEAK_weightex = EAK_size/EAA_size*EAKEAA_im/EAA_ex*EAAEAK_rer*EAK_py*EAK_y/(EAAEAK_rer*EAK_py*EAK_y
 +EAAEAB_rer*EAB_pex*EAKEAB_im
 +EAAEAC_rer*EAC_pex*EAKEAC_im
@@ -2745,11 +2745,11 @@ EAAEAK_weightex = EAK_size/EAA_size*EAKEAA_im/EAA_ex*EAAEAK_rer*EAK_py*EAK_y/(EA
 +EAARW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAAEAK_weight = EAA_pim*EAA_im/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAK_weightim+EAA_pex*EAA_ex/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAK_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAAEAL_weightim = EAAEAL_rer*EAL_pex*EAAEAL_im/(EAA_pim*EAA_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAAEAL_weightex = EAL_size/EAA_size*EALEAA_im/EAA_ex*EAAEAL_rer*EAL_py*EAL_y/(EAAEAL_rer*EAL_py*EAL_y
 +EAAEAB_rer*EAB_pex*EALEAB_im
 +EAAEAC_rer*EAC_pex*EALEAC_im
@@ -2933,11 +2933,11 @@ EAAEAL_weightex = EAL_size/EAA_size*EALEAA_im/EAA_ex*EAAEAL_rer*EAL_py*EAL_y/(EA
 +EAARW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAAEAL_weight = EAA_pim*EAA_im/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAL_weightim+EAA_pex*EAA_ex/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAEAL_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAARW_weightim = EAARW_rer*RW_pex*EAARW_im/(EAA_pim*EAA_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAARW_weightex = RW_size/EAA_size*RWEAA_im/EAA_ex*EAARW_rer*RW_py*RW_y/(EAARW_rer*RW_py*RW_y
 +EAAEAB_rer*EAB_pex*RWEAB_im
 +EAAEAC_rer*EAC_pex*RWEAC_im
@@ -3121,11 +3121,11 @@ EAARW_weightex = RW_size/EAA_size*RWEAA_im/EAA_ex*EAARW_rer*RW_py*RW_y/(EAARW_re
 +EAARW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAARW_weight = EAA_pim*EAA_im/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAARW_weightim+EAA_pex*EAA_ex/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAARW_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAAUS_weightim = EAAUS_rer*US_pex*EAAUS_im/(EAA_pim*EAA_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAAUS_weightex = US_size/EAA_size*USEAA_im/EAA_ex*EAAUS_rer*US_py*US_y/(EAAUS_rer*US_py*US_y
 +EAAEAB_rer*EAB_pex*USEAB_im
 +EAAEAC_rer*EAC_pex*USEAC_im
@@ -3309,9 +3309,9 @@ EAAUS_weightex = US_size/EAA_size*USEAA_im/EAA_ex*EAAUS_rer*US_py*US_y/(EAAUS_re
 +EAAUS_rer*US_pex*RWUS_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAAUS_weight = EAA_pim*EAA_im/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAUS_weightim+EAA_pex*EAA_ex/(EAA_pim*EAA_im+EAA_pex*EAA_ex)*EAAUS_weightex;
-// Effective real exchange rate
+
 EAA_reer = 1
 *EAAEAB_rer^EAAEAB_weight
 *EAAEAC_rer^EAAEAC_weight
@@ -3327,7 +3327,7 @@ EAA_reer = 1
 *EAARW_rer^EAARW_weight
 *EAAUS_rer^EAAUS_weight
 ;
-// Effective terms of trade
+
 EAA_etot = 1
 *EAAEAB_tot^EAAEAB_weight
 *EAAEAC_tot^EAAEAC_weight
@@ -3343,10 +3343,10 @@ EAA_etot = 1
 *EAARW_tot^EAARW_weight
 *EAAUS_tot^EAAUS_weight
 ;
-//-----------------
-// Final-good firms
-//-----------------
-// Private consumption good (import)
+
+
+
+
 EAA_imc^((EAA_mumc-1)/EAA_mumc) =
 +EAAEAB_numc ^(1/EAA_mumc)*EAAEAB_imc^(1-1/EAA_mumc)
 +EAAEAC_numc ^(1/EAA_mumc)*EAAEAC_imc^(1-1/EAA_mumc)
@@ -3374,27 +3374,27 @@ EAA_imc^((EAA_mumc-1)/EAA_mumc) =
 -EAAEAL_numc
 -EAAUS_numc
 )^(1/EAA_mumc)*EAARW_imc^(1-1/EAA_mumc);
-// Demand for bilateral consumption import goods
+
 EAAEAC_imc = EAAEAC_numc*((EAC_pex*EAAEAC_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
-// Demand for bilateral consumption import goods
+
 EAAEAD_imc = EAAEAD_numc*((EAD_pex*EAAEAD_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
-// Demand for bilateral consumption import goods
+
 EAAEAE_imc = EAAEAE_numc*((EAE_pex*EAAEAE_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
-// Demand for bilateral consumption import goods
+
 EAAEAF_imc = EAAEAF_numc*((EAF_pex*EAAEAF_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
-// Demand for bilateral consumption import goods
+
 EAAEAG_imc = EAAEAG_numc*((EAG_pex*EAAEAG_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
-// Demand for bilateral consumption import goods
+
 EAAEAH_imc = EAAEAH_numc*((EAH_pex*EAAEAH_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
-// Demand for bilateral consumption import goods
+
 EAAEAI_imc = EAAEAI_numc*((EAI_pex*EAAEAI_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
-// Demand for bilateral consumption import goods
+
 EAAEAJ_imc = EAAEAJ_numc*((EAJ_pex*EAAEAJ_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
-// Demand for bilateral consumption import goods
+
 EAAEAK_imc = EAAEAK_numc*((EAK_pex*EAAEAK_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
-// Demand for bilateral consumption import goods
+
 EAAEAL_imc = EAAEAL_numc*((EAL_pex*EAAEAL_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
-// Demand for bilateral consumption import goods
+
 EAAUS_imc = EAAUS_numc*((US_pex*EAAUS_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
 EAARW_imc = (1
 -EAAEAB_numc
@@ -3410,7 +3410,7 @@ EAARW_imc = (1
 -EAAEAL_numc
 -EAAUS_numc
 )*((RW_pex*EAARW_rer)/EAA_pimc)^(-EAA_mumc)*EAA_imc;
-// Price of the consumption good (import)
+
 EAA_pimc^(1-EAA_mumc) =
 +EAAEAB_numc * (EAB_pex*EAAEAB_rer)^(1-EAA_mumc)
 +EAAEAC_numc * (EAC_pex*EAAEAC_rer)^(1-EAA_mumc)
@@ -3438,9 +3438,9 @@ EAA_pimc^(1-EAA_mumc) =
 -EAAEAL_numc
 -EAAUS_numc
 )*(RW_pex*EAARW_rer)^(1-EAA_mumc);
-// Private consumption good (import) inflation
+
 EAA_piimc = EAA_pimc/EAA_pimc(-1)*EAA_pic;
-// Private consumption good (import)
+
 EAA_imi^((EAA_mumi-1)/EAA_mumi) =
 +EAAEAB_numi ^(1/EAA_mumi)*EAAEAB_imi^(1-1/EAA_mumi)
 +EAAEAC_numi ^(1/EAA_mumi)*EAAEAC_imi^(1-1/EAA_mumi)
@@ -3468,27 +3468,27 @@ EAA_imi^((EAA_mumi-1)/EAA_mumi) =
 -EAAEAL_numi
 -EAAUS_numi
 )^(1/EAA_mumi)*EAARW_imi^(1-1/EAA_mumi);
-// Demand for bilateral consumption import goods
+
 EAAEAC_imi = EAAEAC_numi*((EAC_pex*EAAEAC_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
-// Demand for bilateral consumption import goods
+
 EAAEAD_imi = EAAEAD_numi*((EAD_pex*EAAEAD_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
-// Demand for bilateral consumption import goods
+
 EAAEAE_imi = EAAEAE_numi*((EAE_pex*EAAEAE_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
-// Demand for bilateral consumption import goods
+
 EAAEAF_imi = EAAEAF_numi*((EAF_pex*EAAEAF_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
-// Demand for bilateral consumption import goods
+
 EAAEAG_imi = EAAEAG_numi*((EAG_pex*EAAEAG_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
-// Demand for bilateral consumption import goods
+
 EAAEAH_imi = EAAEAH_numi*((EAH_pex*EAAEAH_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
-// Demand for bilateral consumption import goods
+
 EAAEAI_imi = EAAEAI_numi*((EAI_pex*EAAEAI_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
-// Demand for bilateral consumption import goods
+
 EAAEAJ_imi = EAAEAJ_numi*((EAJ_pex*EAAEAJ_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
-// Demand for bilateral consumption import goods
+
 EAAEAK_imi = EAAEAK_numi*((EAK_pex*EAAEAK_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
-// Demand for bilateral consumption import goods
+
 EAAEAL_imi = EAAEAL_numi*((EAL_pex*EAAEAL_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
-// Demand for bilateral consumption import goods
+
 EAAUS_imi = EAAUS_numi*((US_pex*EAAUS_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
 EAARW_imi = (1
 -EAAEAB_numi
@@ -3504,7 +3504,7 @@ EAARW_imi = (1
 -EAAEAL_numi
 -EAAUS_numi
 )*((RW_pex*EAARW_rer)/EAA_pimi)^(-EAA_mumi)*EAA_imi;
-// Price of the consumption good (import)
+
 EAA_pimi^(1-EAA_mumi) =
 +EAAEAB_numi * (EAB_pex*EAAEAB_rer)^(1-EAA_mumi)
 +EAAEAC_numi * (EAC_pex*EAAEAC_rer)^(1-EAA_mumi)
@@ -3532,9 +3532,9 @@ EAA_pimi^(1-EAA_mumi) =
 -EAAEAL_numi
 -EAAUS_numi
 )*(RW_pex*EAARW_rer)^(1-EAA_mumi);
-// Private consumption good (import) inflation
+
 EAA_piimi = EAA_pimi/EAA_pimi(-1)*EAA_pic;
-// Private consumption good (import)
+
 EAA_imcg^((EAA_mumcg-1)/EAA_mumcg) =
 +EAAEAB_numcg ^(1/EAA_mumcg)*EAAEAB_imcg^(1-1/EAA_mumcg)
 +EAAEAC_numcg ^(1/EAA_mumcg)*EAAEAC_imcg^(1-1/EAA_mumcg)
@@ -3562,27 +3562,27 @@ EAA_imcg^((EAA_mumcg-1)/EAA_mumcg) =
 -EAAEAL_numcg
 -EAAUS_numcg
 )^(1/EAA_mumcg)*EAARW_imcg^(1-1/EAA_mumcg);
-// Demand for bilateral consumption import goods
+
 EAAEAC_imcg = EAAEAC_numcg*((EAC_pex*EAAEAC_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
-// Demand for bilateral consumption import goods
+
 EAAEAD_imcg = EAAEAD_numcg*((EAD_pex*EAAEAD_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
-// Demand for bilateral consumption import goods
+
 EAAEAE_imcg = EAAEAE_numcg*((EAE_pex*EAAEAE_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
-// Demand for bilateral consumption import goods
+
 EAAEAF_imcg = EAAEAF_numcg*((EAF_pex*EAAEAF_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
-// Demand for bilateral consumption import goods
+
 EAAEAG_imcg = EAAEAG_numcg*((EAG_pex*EAAEAG_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
-// Demand for bilateral consumption import goods
+
 EAAEAH_imcg = EAAEAH_numcg*((EAH_pex*EAAEAH_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
-// Demand for bilateral consumption import goods
+
 EAAEAI_imcg = EAAEAI_numcg*((EAI_pex*EAAEAI_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
-// Demand for bilateral consumption import goods
+
 EAAEAJ_imcg = EAAEAJ_numcg*((EAJ_pex*EAAEAJ_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
-// Demand for bilateral consumption import goods
+
 EAAEAK_imcg = EAAEAK_numcg*((EAK_pex*EAAEAK_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
-// Demand for bilateral consumption import goods
+
 EAAEAL_imcg = EAAEAL_numcg*((EAL_pex*EAAEAL_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
-// Demand for bilateral consumption import goods
+
 EAAUS_imcg = EAAUS_numcg*((US_pex*EAAUS_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
 EAARW_imcg = (1
 -EAAEAB_numcg
@@ -3598,7 +3598,7 @@ EAARW_imcg = (1
 -EAAEAL_numcg
 -EAAUS_numcg
 )*((RW_pex*EAARW_rer)/EAA_pimcg)^(-EAA_mumcg)*EAA_imcg;
-// Price of the consumption good (import)
+
 EAA_pimcg^(1-EAA_mumcg) =
 +EAAEAB_numcg * (EAB_pex*EAAEAB_rer)^(1-EAA_mumcg)
 +EAAEAC_numcg * (EAC_pex*EAAEAC_rer)^(1-EAA_mumcg)
@@ -3626,9 +3626,9 @@ EAA_pimcg^(1-EAA_mumcg) =
 -EAAEAL_numcg
 -EAAUS_numcg
 )*(RW_pex*EAARW_rer)^(1-EAA_mumcg);
-// Private consumption good (import) inflation
+
 EAA_piimcg = EAA_pimcg/EAA_pimcg(-1)*EAA_pic;
-// Private consumption good (import)
+
 EAA_imig^((EAA_mumig-1)/EAA_mumig) =
 +EAAEAB_numig ^(1/EAA_mumig)*EAAEAB_imig^(1-1/EAA_mumig)
 +EAAEAC_numig ^(1/EAA_mumig)*EAAEAC_imig^(1-1/EAA_mumig)
@@ -3656,27 +3656,27 @@ EAA_imig^((EAA_mumig-1)/EAA_mumig) =
 -EAAEAL_numig
 -EAAUS_numig
 )^(1/EAA_mumig)*EAARW_imig^(1-1/EAA_mumig);
-// Demand for bilateral consumption import goods
+
 EAAEAC_imig = EAAEAC_numig*((EAC_pex*EAAEAC_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
-// Demand for bilateral consumption import goods
+
 EAAEAD_imig = EAAEAD_numig*((EAD_pex*EAAEAD_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
-// Demand for bilateral consumption import goods
+
 EAAEAE_imig = EAAEAE_numig*((EAE_pex*EAAEAE_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
-// Demand for bilateral consumption import goods
+
 EAAEAF_imig = EAAEAF_numig*((EAF_pex*EAAEAF_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
-// Demand for bilateral consumption import goods
+
 EAAEAG_imig = EAAEAG_numig*((EAG_pex*EAAEAG_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
-// Demand for bilateral consumption import goods
+
 EAAEAH_imig = EAAEAH_numig*((EAH_pex*EAAEAH_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
-// Demand for bilateral consumption import goods
+
 EAAEAI_imig = EAAEAI_numig*((EAI_pex*EAAEAI_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
-// Demand for bilateral consumption import goods
+
 EAAEAJ_imig = EAAEAJ_numig*((EAJ_pex*EAAEAJ_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
-// Demand for bilateral consumption import goods
+
 EAAEAK_imig = EAAEAK_numig*((EAK_pex*EAAEAK_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
-// Demand for bilateral consumption import goods
+
 EAAEAL_imig = EAAEAL_numig*((EAL_pex*EAAEAL_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
-// Demand for bilateral consumption import goods
+
 EAAUS_imig = EAAUS_numig*((US_pex*EAAUS_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
 EAARW_imig = (1
 -EAAEAB_numig
@@ -3692,7 +3692,7 @@ EAARW_imig = (1
 -EAAEAL_numig
 -EAAUS_numig
 )*((RW_pex*EAARW_rer)/EAA_pimig)^(-EAA_mumig)*EAA_imig;
-// Price of the consumption good (import)
+
 EAA_pimig^(1-EAA_mumig) =
 +EAAEAB_numig * (EAB_pex*EAAEAB_rer)^(1-EAA_mumig)
 +EAAEAC_numig * (EAC_pex*EAAEAC_rer)^(1-EAA_mumig)
@@ -3720,15 +3720,15 @@ EAA_pimig^(1-EAA_mumig) =
 -EAAEAL_numig
 -EAAUS_numig
 )*(RW_pex*EAARW_rer)^(1-EAA_mumig);
-// Private consumption good (import) inflation
+
 EAA_piimig = EAA_pimig/EAA_pimig(-1)*EAA_pic;
-// Private consumption good (import) inflation
+
 EAA_piimc4 = EAA_pimc/EAA_pimc(-4)*EAA_pic4;
-// Private consumption good (import) inflation
+
 EAA_piex4 = EAA_pex/EAA_pex(-4)*EAA_pic4;
-// Wedge between aggregate demand and production, using EAA_x = EAB_size/EAA_size*EAB_im
+
 EAA_yst = EAA_sh*EAA_ht+EAA_sx*EAA_ex;
-// Aggregate demand for bilateral imported intermediate goods
+
 EAAEAB_im = 
 +EAAEAB_imc
 +EAAEAB_imi
@@ -3807,18 +3807,18 @@ EAAUS_im =
 +EAAUS_imcg
 +EAAUS_imig
 ;
-// Private consumption good firm
-// Private consumption good (tradable)
+
+
 EAA_ttc^((EAA_mutc-1)/EAA_mutc) = (EAA_nutc)^(1/EAA_mutc)*EAA_htc^(1-1/EAA_mutc)+(1-EAA_nutc)^(1/EAA_mutc)*EAA_imc^(1-1/EAA_mutc);
-// Private consumption good  (total)
+
 EAA_qc^((EAA_muc-1)/EAA_muc) = (EAA_nuc)^(1/EAA_muc)*EAA_ttc^(1-1/EAA_muc)+(1-EAA_nuc)^(1/EAA_muc)*EAA_ntc^(1-1/EAA_muc);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAA_ntc = (1-EAA_nuc)*(EAA_pnt)^(-EAA_muc)*EAA_qc;
-// Price of the consumption good (tradable)  
+
 EAA_pttc^(1-EAA_mutc) = (EAA_nutc)*EAA_pht^(1-EAA_mutc)+(1-EAA_nutc)*EAA_pimc^(1-EAA_mutc);
-// Price of the consumption good 
+
 1^(1-EAA_muc) = (EAA_nuc)*EAA_pttc^(1-EAA_muc)+(1-EAA_nuc)*EAA_pnt^(1-EAA_muc);
-// Demand for domestic intermediate goods
+
 EAA_htc = EAA_nutc*(EAA_pht/EAA_pttc)^(-EAA_mutc)*EAA_ttc;
 EAAEAB_gammaimc = 0;
 EAAEAB_gammaimcdag = 1;
@@ -3846,20 +3846,20 @@ EAARW_gammaimc = 0;
 EAARW_gammaimcdag = 1;
 EAAUS_gammaimc = 0;
 EAAUS_gammaimcdag = 1;
-// Private consumption good (tradable)
+
 EAA_tti^((EAA_muti-1)/EAA_muti) = (EAA_nuti)^(1/EAA_muti)*EAA_hti^(1-1/EAA_muti)+(1-EAA_nuti)^(1/EAA_muti)*EAA_imi^(1-1/EAA_muti);
-// Private consumption good  (total)
+
 EAA_qi^((EAA_mui-1)/EAA_mui) = (EAA_nui)^(1/EAA_mui)*EAA_tti^(1-1/EAA_mui)+(1-EAA_nui)^(1/EAA_mui)*EAA_nti^(1-1/EAA_mui);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAA_nti = (1-EAA_nui)*(EAA_pnt/EAA_pi)^(-EAA_mui)*EAA_qi;
-// Price of the consumption good (tradable)  
+
 EAA_ptti^(1-EAA_muti) = (EAA_nuti)*EAA_pht^(1-EAA_muti)+(1-EAA_nuti)*EAA_pimi^(1-EAA_muti);
-// Price of the consumption good 
+
 EAA_pi^(1-EAA_mui) = (EAA_nui)*EAA_ptti^(1-EAA_mui)+(1-EAA_nui)*EAA_pnt^(1-EAA_mui);
-// Auxiliary equation for the price of the investment good in steady state
-// this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
+
+
 EAA_pibar = EAA_pi;
-// Demand for domestic intermediate goods
+
 EAA_hti = EAA_nuti*(EAA_pht/EAA_ptti)^(-EAA_muti)*EAA_tti;
 EAAEAB_gammaimi = 0;
 EAAEAB_gammaimidag = 1;
@@ -3887,17 +3887,17 @@ EAARW_gammaimi = 0;
 EAARW_gammaimidag = 1;
 EAAUS_gammaimi = 0;
 EAAUS_gammaimidag = 1;
-// Private consumption good (tradable)
+
 EAA_ttcg^((EAA_mutcg-1)/EAA_mutcg) = (EAA_nutcg)^(1/EAA_mutcg)*EAA_htcg^(1-1/EAA_mutcg)+(1-EAA_nutcg)^(1/EAA_mutcg)*EAA_imcg^(1-1/EAA_mutcg);
-// Private consumption good  (total)
+
 EAA_qcg^((EAA_mucg-1)/EAA_mucg) = (EAA_nucg)^(1/EAA_mucg)*EAA_ttcg^(1-1/EAA_mucg)+(1-EAA_nucg)^(1/EAA_mucg)*EAA_ntcg^(1-1/EAA_mucg);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAA_ntcg = (1-EAA_nucg)*(EAA_pnt/EAA_pcg)^(-EAA_mucg)*EAA_qcg;
-// Price of the consumption good (tradable)  
+
 EAA_pttcg^(1-EAA_mutcg) = (EAA_nutcg)*EAA_pht^(1-EAA_mutcg)+(1-EAA_nutcg)*EAA_pimcg^(1-EAA_mutcg);
-// Price of the consumption good 
+
 EAA_pcg^(1-EAA_mucg) = (EAA_nucg)*EAA_pttcg^(1-EAA_mucg)+(1-EAA_nucg)*EAA_pnt^(1-EAA_mucg);
-// Demand for domestic intermediate goods
+
 EAA_htcg = EAA_nutcg*(EAA_pht/EAA_pttcg)^(-EAA_mutcg)*EAA_ttcg;
 EAAEAB_gammaimcg = 0;
 EAAEAB_gammaimcgdag = 1;
@@ -3925,17 +3925,17 @@ EAARW_gammaimcg = 0;
 EAARW_gammaimcgdag = 1;
 EAAUS_gammaimcg = 0;
 EAAUS_gammaimcgdag = 1;
-// Private consumption good (tradable)
+
 EAA_ttig^((EAA_mutig-1)/EAA_mutig) = (EAA_nutig)^(1/EAA_mutig)*EAA_htig^(1-1/EAA_mutig)+(1-EAA_nutig)^(1/EAA_mutig)*EAA_imig^(1-1/EAA_mutig);
-// Private consumption good  (total)
+
 EAA_qig^((EAA_muig-1)/EAA_muig) = (EAA_nuig)^(1/EAA_muig)*EAA_ttig^(1-1/EAA_muig)+(1-EAA_nuig)^(1/EAA_muig)*EAA_ntig^(1-1/EAA_muig);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAA_ntig = (1-EAA_nuig)*(EAA_pnt/EAA_pig)^(-EAA_muig)*EAA_qig;
-// Price of the consumption good (tradable)  
+
 EAA_pttig^(1-EAA_mutig) = (EAA_nutig)*EAA_pht^(1-EAA_mutig)+(1-EAA_nutig)*EAA_pimig^(1-EAA_mutig);
-// Price of the consumption good 
+
 EAA_pig^(1-EAA_muig) = (EAA_nuig)*EAA_pttig^(1-EAA_muig)+(1-EAA_nuig)*EAA_pnt^(1-EAA_muig);
-// Demand for domestic intermediate goods
+
 EAA_htig = EAA_nutig*(EAA_pht/EAA_pttig)^(-EAA_mutig)*EAA_ttig;
 EAAEAB_gammaimig = 0;
 EAAEAB_gammaimigdag = 1;
@@ -3963,7 +3963,7 @@ EAARW_gammaimig = 0;
 EAARW_gammaimigdag = 1;
 EAAUS_gammaimig = 0;
 EAAUS_gammaimigdag = 1;
-// Trade balance
+
 EAA_tb =
 +EAA_pex*EAB_size/EAA_size*EABEAA_im
 -EAB_pex*EAAEAB_rer*EAAEAB_im
@@ -3992,7 +3992,7 @@ EAA_tb =
 +EAA_pex*US_size/EAA_size*USEAA_im
 -US_pex*EAAUS_rer*EAAUS_im
 ;
-// Aggregate exports (volume)
+
 EAA_ex =
 +EAB_size/EAA_size*EABEAA_im
 +EAC_size/EAA_size*EACEAA_im
@@ -4008,131 +4008,131 @@ EAA_ex =
 +RW_size/EAA_size*RWEAA_im
 +US_size/EAA_size*USEAA_im
 ;
-//-------------
-//-------------
-// Fiscal and monetary authorities
-//-------------
-//-------------
-//-------------
-// Fiscal authority
-//-------------
-// Government budget constraint, using EAA_pg = EAA_pht
-// TODO: check the (1-EAA_gammab(-1)) adjustment here, which is not in the fiscal extention
+
+
+
+
+
+
+
+
+
+
 	EAA_pcg(-1)*EAA_cg(-1)+EAA_pig(-1)*EAA_ig(-1)+EAA_tr(-1)
 	+EAA_b(-1)*EAA_pic(-1)^(-1)+EAA_m(-2)*EAA_pic(-1)^(-1) = EAA_tauc(-1)*EAA_c(-1)+(EAA_taun(-1)+EAA_tauwh(-1))*(EAA_wi(-1)*EAA_ndi(-1)+EAA_wj(-1)*EAA_ndj(-1))+EAA_tauwf(-1)*EAA_w(-1)*EAA_nd(-1)+EAA_tauk(-1)*(EAA_rk(-1)*EAA_u(-1)-(EAA_gammau(-1)+EAA_delta)*EAA_pi(-1))*EAA_k(-1)+EAA_taud(-1)*EAA_d(-1)+EAA_t(-1)+(EAA_r(-1)*(1-EAA_gammab(-1)))^(-1)*EAA_b+EAA_m(-1);
-// Government spending, using EAA_pg = EAA_pht
+
 EAA_pcg*EAA_cg = EAA_cgy*EAA_pybar*EAA_ybar;
 EAA_pig*EAA_ig = EAA_igy*EAA_pybar*EAA_ybar;
 EAA_t = 0;
 EAA_b = EAA_bytarget*EAA_pybar*EAA_ybar;
-// Auxiliary equation for steady-state output
+
 EAA_ybar = EAA_y;
-// Auxiliary equation for steady-state output
+
 EAA_ytbar = EAA_yst;
-// Auxiliary equation for steady-state output
+
 EAA_ynbar = EAA_ysn;
-// Auxiliary equation for steady-state output deflator
+
 EAA_pybar = EAA_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
+
 EAA_trybar = EAA_tr/(EAA_pybar*EAA_ybar);
-// Auxiliary equation for determining the distribution of lump-sum taxes
+
 EAA_ti = EAA_upsilont*EAA_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
 upsilont = 0:            ti = 0, tj = 1/omega t
 upsilont = 1:            ti = tj = t
 upsilont = 1/(1-omega):  ti = 1/(1-omega) t, tj = 0. */
-// Auxiliary equation for determining the distribution of lump-sum transfers
+
 EAA_tri = EAA_upsilontr*EAA_tr;
 /* Note: Valid parameter space: 0 <= upsilontr <= 1/(1-omega) with
 upsilontr = 0:            tri = 0, trj = 1/omega tr
 upsilontr = 1:            tri = trj = tr
 upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
-//-------------
-// Monetary authority
-//-------------
+
+
+
 	EAA_r = EAL_r;
 EAA_pic4 = EAA_pi4target;
 EAA_rr-1 = EAA_r/EAA_pi4target^(1/4)-1;
-// Equilibrium real interest rate
+
 EAA_rrstar-1 = 1/EAA_beta-1;
-//-------------
-//-------------
-// Aggregation, market clearing and resource constraint
-//-------------
-//-------------
-//-------------
-// Aggregation
-//-------------
-// Aggregate consumption
+
+
+
+
+
+
+
+
+
 EAA_c = (1-EAA_omega)*EAA_ci+EAA_omega*EAA_cj;
-// Aggregate money holdings
+
 EAA_m = (1-EAA_omega)*EAA_mi+EAA_omega*EAA_mj;
-// Aggregate capital stock
+
 EAA_k = (1-EAA_omega)*EAA_ki;
-// Aggregate investment
+
 EAA_i = (1-EAA_omega)*EAA_ii;
-// Aggregate lump-sum transfers
+
 EAA_trj = 
 1/EAA_omega*EAA_tr-(1-EAA_omega)/EAA_omega*EAA_tri
 ;
-// Aggregate lump-sum taxes
+
 EAA_tj = 
 1/EAA_omega*EAA_t-(1-EAA_omega)/EAA_omega*EAA_ti
 ;
-// Aggregate transaction costs
+
 EAA_gammav = (1-EAA_omega)*EAA_ci*EAA_gammavi+EAA_omega*EAA_cj*EAA_gammavj;
-//-------------
-// Market clearing
-//-------------
-// Labour markets for household I
-// Wedge between labour demand/hours worked and labour supply
+
+
+
+
+
 EAA_ni = EAA_si*EAA_ndi;
-// Wage dispersion
+
 EAA_si = (1-EAA_xii)*(EAA_witilde/EAA_wi)^(-EAA_etai)+EAA_xii*(EAA_wi(-1)/EAA_wi)^(-EAA_etai)*(EAA_pic/(EAA_pic(-1)^EAA_chii*EAA_pi4target^(1/4*(1-EAA_chii))))^(EAA_etai)*EAA_si(-1);
-// Labour markets for household J
-// Wedge between labour demand/hours worked and labour supply
+
+
 EAA_nj = EAA_sj*EAA_ndj;
-// Wage dispersion
+
 EAA_sj = (1-EAA_xij)*(EAA_wjtilde/EAA_wj)^(-EAA_etaj)+EAA_xij*(EAA_wj(-1)/EAA_wj)^(-EAA_etaj)*(EAA_pic/(EAA_pic(-1)^EAA_chij*EAA_pi4target^(1/4*(1-EAA_chij))))^(EAA_etaj)*EAA_sj(-1);
-// Rental market for capital
-// Equality of capital input and effective capital services
+
+
 EAA_u*EAA_k = EAA_kd;
-// Intermediate-good markets
-// Wedge between aggregate demand and production, using EAA_x = EAB_size/EAA_size*EAB_im
+
+
 EAA_ysn = EAA_snt*EAA_nt;
-//  nontradables aggregate demand
+
 EAA_nt = 
 +EAA_ntc
 +EAA_nti
 +EAA_ntcg
 +EAA_ntig
 ;
-// Aggregate demand for domestic intermediate goods, using EAA_hg = EAA_cg
+
 EAA_ht =
 +EAA_htc
 +EAA_hti
 +EAA_htcg
 +EAA_htig
 ;
-// Price dispersion in the domestic markets
+
 EAA_sh = (1-EAA_xih)*(EAA_phttilde/EAA_pht)^(-EAA_thetat)+EAA_xih*(EAA_piht/(EAA_piht(-1)^EAA_chih*EAA_pi4target^(1/4*(1-EAA_chih))))^EAA_thetat*EAA_sh(-1);
-// Price dispersion in the foreign markets
+
 EAA_sx = (1-EAA_xix)*(EAA_pextilde/EAA_pex)^(-EAA_thetat)+EAA_xix*(EAA_piex/(EAA_piex(-1)^EAA_chix*EAA_pi4target^(1/4*(1-EAA_chix))))^EAA_thetat*EAA_sx(-1);
-// Price dispersion in the domestic markets
+
 EAA_snt = (1-EAA_xin)*(EAA_pnttilde/EAA_pnt)^(-EAA_thetan)+EAA_xin*(EAA_pint/(EAA_pint(-1)^EAA_chin*EAA_pi4target^(1/4*(1-EAA_chin))))^EAA_thetan*EAA_snt(-1);
-// Final-good markets
-// Aggregate consumption and transaction cost
+
+
 EAA_qc = EAA_c+EAA_gammav;
-// Aggregate investment and capital utilisation cost
+
 EAA_qi = EAA_i+EAA_k*EAA_gammau;
-// Aggregate gov demand components added to use the same structure like in private components
+
 EAA_qcg = EAA_cg;
 EAA_qig = EAA_ig;
-//-------------
-// Resource constraint
-//-------------
-// TODO: why there is no adjustment cost for gov components
-// Aggregate nominal demand
+
+
+
+
+
 EAA_py*EAA_y = 
 +EAA_qc
 +EAA_pi*EAA_qi
@@ -4204,83 +4204,83 @@ EAA_py*EAA_y =
 -(US_pex*EAAUS_rer)*EAAUS_imcg
 -(US_pex*EAAUS_rer)*EAAUS_imig
 ;
-// Aggregate real demand
+
 EAA_y = EAA_yst+EAA_ysn;
-//-------------
-//-------------
-// Autoregressive shocks
-//-------------
-//-------------
-// Productivity shocks
+
+
+
+
+
+
 log(EAA_zt) = (1-EAA_rhozt)*log(EAA_ztbar)+EAA_rhozt*log(EAA_zt(-1))+EAA_epszt;
 log(EAA_zn) = (1-EAA_rhozn)*log(EAA_znbar)+EAA_rhozn*log(EAA_zn(-1))+EAA_epszn;
-// Government spending shock
+
 EAA_cgy = (1-EAA_rhocg)*EAA_cgybar+EAA_rhocg*EAA_cgy(-1)+EAA_epsgc;
 EAA_igy = (1-EAA_rhoig)*EAA_igybar+EAA_rhoig*EAA_igy(-1)+EAA_epsgi;
-// Transfer shock
+
 EAA_try = (1-EAA_rhotr)*EAA_trybar+EAA_rhotr*EAA_try(-1)+EAA_epstr;
-// Consumption tax shock
+
 EAA_tauc = (1-EAA_rhotauc)*EAA_taucbar+EAA_rhotauc*EAA_tauc(-1)+EAA_epstauc;
-// Dividend income tax shock
+
 EAA_taud = (1-EAA_rhotaud)*EAA_taudbar+EAA_rhotaud*EAA_taud(-1)+EAA_epstaud;
-// Capital income tax shock
+
 EAA_tauk = (1-EAA_rhotauk)*EAA_taukbar+EAA_rhotauk*EAA_tauk(-1)+EAA_epstauk;
-// Labour income tax shock
+
 EAA_taun = (1-EAA_rhotaun)*EAA_taunbar+EAA_rhotaun*EAA_taun(-1)+EAA_epstaun;
-// Payroll tax shock: households
+
 EAA_tauwh = (1-EAA_rhotauwh)*EAA_tauwhbar+EAA_rhotauwh*EAA_tauwh(-1)+EAA_epstauwh;
-// Payroll tax shock: firms
+
 EAA_tauwf = (1-EAA_rhotauwf)*EAA_tauwfbar+EAA_rhotauwf*EAA_tauwf(-1)+EAA_epstauwf;
-// Wage cost push shock
+
 EAA_wcst = (1-EAA_rhowcst)*EAA_wcstbar+EAA_rhowcst*EAA_wcst(-1)+EAA_epswcst;
-// Preference shock
+
 log(EAA_zcon) = (1-EAA_rhozcon)*log(EAA_zconbar)+EAA_rhozcon*log(EAA_zcon(-1))+EAA_epszcon;
-// Investment specific shock
+
 log(EAA_zinv) = (1-EAA_rhozinv)*log(EAA_zinvbar)+EAA_rhozinv*log(EAA_zinv(-1))+EAA_epszinv;
-//-------------
-//-------------
-// Conditions for calibration and reporting
-//-------------
-//-------------
-// Aggregate nominal consumption share
+
+
+
+
+
+
 EAA_cy = EAA_c/(EAA_py*EAA_y);
-// Aggregate nominal investment share
+
 EAA_iy = EAA_pi*EAA_i/(EAA_py*EAA_y);
-// Aggregate nominal import share  
+
 EAA_imy = (
 +EAA_pimc*EAA_imc
 +EAA_pimi*EAA_imi
 +EAA_pimcg*EAA_imcg
 +EAA_pimig*EAA_imig
 )/(EAA_py*EAA_y);
-// Aggregate nominal import share
+
 EAA_imcy = EAA_pimc*EAA_imc/(EAA_py*EAA_y);
 EAA_imiy = EAA_pimi*EAA_imi/(EAA_py*EAA_y);
 EAA_imcgy = EAA_pimcg*EAA_imcg/(EAA_py*EAA_y);
 EAA_imigy = EAA_pimig*EAA_imig/(EAA_py*EAA_y);
-// Aggregate debt-to-output ratio
+
 EAA_by = EAA_b/(EAA_pybar*EAA_ybar);
-// Aggregate lump-sum tax-to-output ratio
+
 EAA_ty = EAA_t/(EAA_pybar*EAA_ybar);
-// Aggregate labour cost share
+
 EAA_lcy = ((1+EAA_tauwf)*EAA_w*EAA_nd)/(EAA_py*EAA_y);
-// Aggregate nominal Wage share
+
 EAA_wy = (EAA_w*EAA_nd)/(EAA_py*EAA_y);
-// NT sector nominal Wage share
+
 EAA_wnty = (EAA_w*EAA_ndn)/(EAA_pnt*EAA_ysn);
-// T sector nominal Wage share
+
 EAA_whty = (EAA_w*EAA_ndt)/(EAA_pht*EAA_yst);
-// T sector share
+
 EAA_yhty = EAA_pht*EAA_yst/(EAA_py*EAA_y);
-// NT sector share
+
 EAA_ynty = EAA_pnt*EAA_ysn/(EAA_py*EAA_y);
-// Output gap
+
 EAA_ygap = 0;
-// Output growth (gross rate)
+
 EAA_ygrowth = EAA_y/EAA_y(-1);
-// Output growth (gross rate yoy)
+
 EAA_ygrowth4 = EAA_y/EAA_y(-4);
-// Domestic nominal output as a share of world nominal output
+
 EAA_yshare  = EAA_size*EAA_py*EAA_y/EAA_rer/(
 +EAA_size*EAA_py*EAA_y/EAA_rer
 +EAB_size*EAB_py*EAB_y/EAB_rer
@@ -4297,153 +4297,153 @@ EAA_yshare  = EAA_size*EAA_py*EAA_y/EAA_rer/(
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
-// Interest (semi-)elasticity of money demand
+
 EAA_epsilonm = -1/8*1/(EAA_r*(EAA_gammav2*EAA_r+EAA_r-1));
-// Trade balance-to-GDP ratio
+
 EAA_tby = EAA_tb/(EAA_py*EAA_y);
-// Bilateral shares
+
 EAAEAB_imcy = (EAB_pex*EAAEAB_rer)*EAAEAB_imc/(EAA_py*EAA_y);
 EAAEAB_imiy = (EAB_pex*EAAEAB_rer)*EAAEAB_imi/(EAA_py*EAA_y);
 EAAEAB_imcgy = (EAB_pex*EAAEAB_rer)*EAAEAB_imcg/(EAA_py*EAA_y);
 EAAEAB_imigy = (EAB_pex*EAAEAB_rer)*EAAEAB_imig/(EAA_py*EAA_y);
-// Exports of consumption goods to gdp
+
 EAAEAB_excy  = EAB_size/EAA_size*EAA_pex*EABEAA_imc/(EAA_py*EAA_y);
-// Exports of investment goods to gdp
+
 EAAEAB_exiy  = EAB_size/EAA_size*EAA_pex*EABEAA_imi/(EAA_py*EAA_y);
-// Bilateral shares
+
 EAAEAC_imcy = (EAC_pex*EAAEAC_rer)*EAAEAC_imc/(EAA_py*EAA_y);
 EAAEAC_imiy = (EAC_pex*EAAEAC_rer)*EAAEAC_imi/(EAA_py*EAA_y);
 EAAEAC_imcgy = (EAC_pex*EAAEAC_rer)*EAAEAC_imcg/(EAA_py*EAA_y);
 EAAEAC_imigy = (EAC_pex*EAAEAC_rer)*EAAEAC_imig/(EAA_py*EAA_y);
-// Exports of consumption goods to gdp
+
 EAAEAC_excy  = EAC_size/EAA_size*EAA_pex*EACEAA_imc/(EAA_py*EAA_y);
-// Exports of investment goods to gdp
+
 EAAEAC_exiy  = EAC_size/EAA_size*EAA_pex*EACEAA_imi/(EAA_py*EAA_y);
-// Bilateral shares
+
 EAAEAD_imcy = (EAD_pex*EAAEAD_rer)*EAAEAD_imc/(EAA_py*EAA_y);
 EAAEAD_imiy = (EAD_pex*EAAEAD_rer)*EAAEAD_imi/(EAA_py*EAA_y);
 EAAEAD_imcgy = (EAD_pex*EAAEAD_rer)*EAAEAD_imcg/(EAA_py*EAA_y);
 EAAEAD_imigy = (EAD_pex*EAAEAD_rer)*EAAEAD_imig/(EAA_py*EAA_y);
-// Exports of consumption goods to gdp
+
 EAAEAD_excy  = EAD_size/EAA_size*EAA_pex*EADEAA_imc/(EAA_py*EAA_y);
-// Exports of investment goods to gdp
+
 EAAEAD_exiy  = EAD_size/EAA_size*EAA_pex*EADEAA_imi/(EAA_py*EAA_y);
-// Bilateral shares
+
 EAAEAE_imcy = (EAE_pex*EAAEAE_rer)*EAAEAE_imc/(EAA_py*EAA_y);
 EAAEAE_imiy = (EAE_pex*EAAEAE_rer)*EAAEAE_imi/(EAA_py*EAA_y);
 EAAEAE_imcgy = (EAE_pex*EAAEAE_rer)*EAAEAE_imcg/(EAA_py*EAA_y);
 EAAEAE_imigy = (EAE_pex*EAAEAE_rer)*EAAEAE_imig/(EAA_py*EAA_y);
-// Exports of consumption goods to gdp
+
 EAAEAE_excy  = EAE_size/EAA_size*EAA_pex*EAEEAA_imc/(EAA_py*EAA_y);
-// Exports of investment goods to gdp
+
 EAAEAE_exiy  = EAE_size/EAA_size*EAA_pex*EAEEAA_imi/(EAA_py*EAA_y);
-// Bilateral shares
+
 EAAEAF_imcy = (EAF_pex*EAAEAF_rer)*EAAEAF_imc/(EAA_py*EAA_y);
 EAAEAF_imiy = (EAF_pex*EAAEAF_rer)*EAAEAF_imi/(EAA_py*EAA_y);
 EAAEAF_imcgy = (EAF_pex*EAAEAF_rer)*EAAEAF_imcg/(EAA_py*EAA_y);
 EAAEAF_imigy = (EAF_pex*EAAEAF_rer)*EAAEAF_imig/(EAA_py*EAA_y);
-// Exports of consumption goods to gdp
+
 EAAEAF_excy  = EAF_size/EAA_size*EAA_pex*EAFEAA_imc/(EAA_py*EAA_y);
-// Exports of investment goods to gdp
+
 EAAEAF_exiy  = EAF_size/EAA_size*EAA_pex*EAFEAA_imi/(EAA_py*EAA_y);
-// Bilateral shares
+
 EAAEAG_imcy = (EAG_pex*EAAEAG_rer)*EAAEAG_imc/(EAA_py*EAA_y);
 EAAEAG_imiy = (EAG_pex*EAAEAG_rer)*EAAEAG_imi/(EAA_py*EAA_y);
 EAAEAG_imcgy = (EAG_pex*EAAEAG_rer)*EAAEAG_imcg/(EAA_py*EAA_y);
 EAAEAG_imigy = (EAG_pex*EAAEAG_rer)*EAAEAG_imig/(EAA_py*EAA_y);
-// Exports of consumption goods to gdp
+
 EAAEAG_excy  = EAG_size/EAA_size*EAA_pex*EAGEAA_imc/(EAA_py*EAA_y);
-// Exports of investment goods to gdp
+
 EAAEAG_exiy  = EAG_size/EAA_size*EAA_pex*EAGEAA_imi/(EAA_py*EAA_y);
-// Bilateral shares
+
 EAAEAH_imcy = (EAH_pex*EAAEAH_rer)*EAAEAH_imc/(EAA_py*EAA_y);
 EAAEAH_imiy = (EAH_pex*EAAEAH_rer)*EAAEAH_imi/(EAA_py*EAA_y);
 EAAEAH_imcgy = (EAH_pex*EAAEAH_rer)*EAAEAH_imcg/(EAA_py*EAA_y);
 EAAEAH_imigy = (EAH_pex*EAAEAH_rer)*EAAEAH_imig/(EAA_py*EAA_y);
-// Exports of consumption goods to gdp
+
 EAAEAH_excy  = EAH_size/EAA_size*EAA_pex*EAHEAA_imc/(EAA_py*EAA_y);
-// Exports of investment goods to gdp
+
 EAAEAH_exiy  = EAH_size/EAA_size*EAA_pex*EAHEAA_imi/(EAA_py*EAA_y);
-// Bilateral shares
+
 EAAEAI_imcy = (EAI_pex*EAAEAI_rer)*EAAEAI_imc/(EAA_py*EAA_y);
 EAAEAI_imiy = (EAI_pex*EAAEAI_rer)*EAAEAI_imi/(EAA_py*EAA_y);
 EAAEAI_imcgy = (EAI_pex*EAAEAI_rer)*EAAEAI_imcg/(EAA_py*EAA_y);
 EAAEAI_imigy = (EAI_pex*EAAEAI_rer)*EAAEAI_imig/(EAA_py*EAA_y);
-// Exports of consumption goods to gdp
+
 EAAEAI_excy  = EAI_size/EAA_size*EAA_pex*EAIEAA_imc/(EAA_py*EAA_y);
-// Exports of investment goods to gdp
+
 EAAEAI_exiy  = EAI_size/EAA_size*EAA_pex*EAIEAA_imi/(EAA_py*EAA_y);
-// Bilateral shares
+
 EAAEAJ_imcy = (EAJ_pex*EAAEAJ_rer)*EAAEAJ_imc/(EAA_py*EAA_y);
 EAAEAJ_imiy = (EAJ_pex*EAAEAJ_rer)*EAAEAJ_imi/(EAA_py*EAA_y);
 EAAEAJ_imcgy = (EAJ_pex*EAAEAJ_rer)*EAAEAJ_imcg/(EAA_py*EAA_y);
 EAAEAJ_imigy = (EAJ_pex*EAAEAJ_rer)*EAAEAJ_imig/(EAA_py*EAA_y);
-// Exports of consumption goods to gdp
+
 EAAEAJ_excy  = EAJ_size/EAA_size*EAA_pex*EAJEAA_imc/(EAA_py*EAA_y);
-// Exports of investment goods to gdp
+
 EAAEAJ_exiy  = EAJ_size/EAA_size*EAA_pex*EAJEAA_imi/(EAA_py*EAA_y);
-// Bilateral shares
+
 EAAEAK_imcy = (EAK_pex*EAAEAK_rer)*EAAEAK_imc/(EAA_py*EAA_y);
 EAAEAK_imiy = (EAK_pex*EAAEAK_rer)*EAAEAK_imi/(EAA_py*EAA_y);
 EAAEAK_imcgy = (EAK_pex*EAAEAK_rer)*EAAEAK_imcg/(EAA_py*EAA_y);
 EAAEAK_imigy = (EAK_pex*EAAEAK_rer)*EAAEAK_imig/(EAA_py*EAA_y);
-// Exports of consumption goods to gdp
+
 EAAEAK_excy  = EAK_size/EAA_size*EAA_pex*EAKEAA_imc/(EAA_py*EAA_y);
-// Exports of investment goods to gdp
+
 EAAEAK_exiy  = EAK_size/EAA_size*EAA_pex*EAKEAA_imi/(EAA_py*EAA_y);
-// Bilateral shares
+
 EAAEAL_imcy = (EAL_pex*EAAEAL_rer)*EAAEAL_imc/(EAA_py*EAA_y);
 EAAEAL_imiy = (EAL_pex*EAAEAL_rer)*EAAEAL_imi/(EAA_py*EAA_y);
 EAAEAL_imcgy = (EAL_pex*EAAEAL_rer)*EAAEAL_imcg/(EAA_py*EAA_y);
 EAAEAL_imigy = (EAL_pex*EAAEAL_rer)*EAAEAL_imig/(EAA_py*EAA_y);
-// Exports of consumption goods to gdp
+
 EAAEAL_excy  = EAL_size/EAA_size*EAA_pex*EALEAA_imc/(EAA_py*EAA_y);
-// Exports of investment goods to gdp
+
 EAAEAL_exiy  = EAL_size/EAA_size*EAA_pex*EALEAA_imi/(EAA_py*EAA_y);
-// Bilateral shares
+
 EAARW_imcy = (RW_pex*EAARW_rer)*EAARW_imc/(EAA_py*EAA_y);
 EAARW_imiy = (RW_pex*EAARW_rer)*EAARW_imi/(EAA_py*EAA_y);
 EAARW_imcgy = (RW_pex*EAARW_rer)*EAARW_imcg/(EAA_py*EAA_y);
 EAARW_imigy = (RW_pex*EAARW_rer)*EAARW_imig/(EAA_py*EAA_y);
-// Exports of consumption goods to gdp
+
 EAARW_excy  = RW_size/EAA_size*EAA_pex*RWEAA_imc/(EAA_py*EAA_y);
-// Exports of investment goods to gdp
+
 EAARW_exiy  = RW_size/EAA_size*EAA_pex*RWEAA_imi/(EAA_py*EAA_y);
-// Bilateral shares
+
 EAAUS_imcy = (US_pex*EAAUS_rer)*EAAUS_imc/(EAA_py*EAA_y);
 EAAUS_imiy = (US_pex*EAAUS_rer)*EAAUS_imi/(EAA_py*EAA_y);
 EAAUS_imcgy = (US_pex*EAAUS_rer)*EAAUS_imcg/(EAA_py*EAA_y);
 EAAUS_imigy = (US_pex*EAAUS_rer)*EAAUS_imig/(EAA_py*EAA_y);
-// Exports of consumption goods to gdp
+
 EAAUS_excy  = US_size/EAA_size*EAA_pex*USEAA_imc/(EAA_py*EAA_y);
-// Exports of investment goods to gdp
+
 EAAUS_exiy  = US_size/EAA_size*EAA_pex*USEAA_imi/(EAA_py*EAA_y);
-// Internal real exchange rate
+
 EAA_internalrer = EAA_pnt/EAA_pttc;
-// Core model begins
-//-------------
-//-------------
-// Households
-//-------------
-//-------------
-//-------------
-// Household I
-//-------------
-// Utility
+
+
+
+
+
+
+
+
+
+
 EAB_utili = 
 EAB_zcon*log(EAB_ci-EAB_kappa*EAB_ci(-1))-1/(1+EAB_zeta)*(EAB_ni)^(1+EAB_zeta)+EAB_beta*EAB_utili(+1)
 ;
-// Marginal utility of consumption
+
 EAB_lambdai*(1+EAB_tauc+EAB_gammavi+EAB_vi*EAB_gammavider) = EAB_zcon*(EAB_ci-EAB_kappa*EAB_ci(-1))^(-EAB_sigma);
-// Euler equation for government bonds
+
 EAB_r                   = EAB_beta^(-1)*EAB_lambdai/EAB_lambdai    *EAB_pic;
-// Euler equation for money
+
 EAB_vi^(2)*EAB_gammavider = 1-EAB_beta*EAB_lambdai(+1)/(EAB_lambdai*EAB_pic(+1));
-// Consumption-based velocity
+
 EAB_vi = EAB_ci/EAB_mi;
-// Transaction cost
+
 EAB_gammavi = EAB_gammav1*EAB_vi+EAB_gammav2/EAB_vi-2*(EAB_gammav1*EAB_gammav2)^(1/2);
-// Derivative of transaction cost
+
 EAB_gammavider = EAB_gammav1-EAB_gammav2*EAB_vi^(-2);
 EAB_delta = EAB_ii/EAB_ki;
 EAB_gammai = 0;
@@ -4452,355 +4452,355 @@ EAB_gammau = 0;
 EAB_gammauder = ((EAB_beta^(-1)-1+EAB_delta)*EAB_qbar-EAB_delta*EAB_taukbar*EAB_pibar)/((1-EAB_taukbar)*EAB_pibar);
 EAB_u = 1;
 EAB_pi = EAB_q;
-// Auxiliary equation for Tobin's Q in steady state
+
 EAB_qbar = EAB_q;
-// Rate of return on capital
+
 EAB_q = EAB_beta*((1-EAB_tauk)*EAB_rk+(EAB_tauk*EAB_delta)*EAB_pi+(1-EAB_delta)*EAB_q);
-// Optimal wage contract (FOC)
+
 EAB_witilde^(1+EAB_etai*EAB_zeta) = EAB_etai/(EAB_etai-1)*EAB_fi/EAB_gi+EAB_wcst;
-// Definition of fi
+
 EAB_fi = EAB_wi^(EAB_etai*(1+EAB_zeta))*EAB_ndi^(1+EAB_zeta)+EAB_xii*EAB_beta*(EAB_pic(+1)/(EAB_pic^EAB_chii*EAB_pi4target^(1/4*(1-EAB_chii))))^(EAB_etai*(1+EAB_zeta))*EAB_fi(+1);
-// Definition of gi
+
 EAB_gi = EAB_lambdai*(1-EAB_taun-EAB_tauwh)*EAB_wi^EAB_etai*EAB_ndi+EAB_xii*EAB_beta*(EAB_pic(+1)/(EAB_pic^EAB_chii*EAB_pi4target^(1/4*(1-EAB_chii))))^(EAB_etai-1)*EAB_gi(+1);
-// Aggregate wage rate
+
 EAB_wi^(1-EAB_etai) = (1-EAB_xii)*EAB_witilde^(1-EAB_etai)+EAB_xii*EAB_wi(-1)^(1-EAB_etai)*(EAB_pic(-1)^EAB_chii*EAB_pi4target^(1/4*(1-EAB_chii))/EAB_pic)^(1-EAB_etai);
-//-------------
-// Household J
-//-------------
-// Utility
+
+
+
+
 EAB_utilj = 
 EAB_zcon*log(EAB_cj-EAB_kappa*EAB_cj(-1))-1/(1+EAB_zeta)*EAB_nj^(1+EAB_zeta)+EAB_beta*EAB_utilj(+1)
 ;
-// Marginal utility of consumption
+
 EAB_lambdaj*(1+EAB_tauc+EAB_gammavj+EAB_vj*EAB_gammavjder) = EAB_zcon*(EAB_cj-EAB_kappa*EAB_cj(-1))^(-EAB_sigma);
-// Budget constraint
+
 (1+EAB_tauc+EAB_gammavj)*EAB_cj+EAB_mj = (1-EAB_taun-EAB_tauwh)*EAB_wj*EAB_nj+EAB_trj-EAB_tj+EAB_mj(-1)*EAB_pic^(-1);
-// Euler equation for money
+
 EAB_vj^(2)*EAB_gammavjder = 1-EAB_beta*EAB_lambdaj(+1)/(EAB_lambdaj*EAB_pic(+1));
-// Consumption-based velocity
+
 EAB_vj = EAB_cj/EAB_mj;
-// Transaction technology
+
 EAB_gammavj = EAB_gammav1*EAB_vj+EAB_gammav2/EAB_vj-2*(EAB_gammav1*EAB_gammav2)^(1/2);
-// Derivative of transaction technology
+
 EAB_gammavjder = EAB_gammav1-EAB_gammav2*EAB_vj^(-2);
-// Optimal wage contract (FOC)
+
 EAB_wjtilde^(1+EAB_etaj*EAB_zeta) = EAB_etaj/(EAB_etaj-1)*EAB_fj/EAB_gj+EAB_wcst;
-// Definition of fj
+
 EAB_fj = EAB_wj^(EAB_etaj*(1+EAB_zeta))*EAB_ndj^(1+EAB_zeta)+EAB_xij*EAB_beta*(EAB_pic(+1)/(EAB_pic^EAB_chij*EAB_pi4target^(1/4*(1-EAB_chij))))^(EAB_etaj*(1+EAB_zeta))*EAB_fj(+1);
-// Definition of gj
+
 EAB_gj = EAB_lambdaj*(1-EAB_taun-EAB_tauwh)*EAB_wj^EAB_etaj*EAB_ndj+EAB_xij*EAB_beta*(EAB_pic(+1)/(EAB_pic^EAB_chij*EAB_pi4target^(1/4*(1-EAB_chij))))^(EAB_etaj-1)*EAB_gj(+1);
-// Aggregate wage rate
+
 EAB_wj^(1-EAB_etaj) = (1-EAB_xij)*EAB_wjtilde^(1-EAB_etaj)+EAB_xij*EAB_wj(-1)^(1-EAB_etaj)*(EAB_pic(-1)^EAB_chij*EAB_pi4target^(1/4*(1-EAB_chij))/EAB_pic)^(1-EAB_etaj);
-//-------------
-//-------------
-// Firms
-//-------------
-//-------------
-//-------------
-// Intermediate-good firms
-//-------------
-// Production function tradable
+
+
+
+
+
+
+
+
+
 EAB_yst = EA_z*EAB_zt*EAB_kdt^EAB_alphat*EAB_ndt^(1-EAB_alphat)-EAB_psitbar;
-// Production function nontradable
+
 EAB_ysn = EA_z*EAB_zn*EAB_kdn^EAB_alphan*EAB_ndn^(1-EAB_alphan)-EAB_psinbar;
-// Real marginal cost tradable
+
 EAB_mct = 1/(EA_z*EAB_zt*(EAB_alphat)^(EAB_alphat)*(1-EAB_alphat)^(1-EAB_alphat))*EAB_rk^(EAB_alphat)*((1+EAB_tauwf)*EAB_w)^(1-EAB_alphat);
-// Real marginal cost nontradable
+
 EAB_mcn = 1/(EA_z*EAB_zn*(EAB_alphan)^(EAB_alphan)*(1-EAB_alphan)^(1-EAB_alphan))*EAB_rk^(EAB_alphan)*((1+EAB_tauwf)*EAB_w)^(1-EAB_alphan);
-// Wage Inflation (qoq)
+
 EAB_piw = EAB_w/EAB_w(-1)*EAB_pic;
-// Wage Inflation (yoy)
+
 EAB_piw4 = EAB_pic4;
-// Auxiliary equation for steady-state fixed cost
+
 EAB_psitbar = EAB_psit*EAB_ytbar;
-// Auxiliary equation for steady-state fixed cost
+
 EAB_psinbar = EAB_psin*EAB_ynbar;
-// Capital input (FOC)
+
 EAB_rk = EAB_alphat*(EAB_yst+EAB_psitbar)/EAB_kdt*EAB_mct;
-// Capital input (FOC)
+
 EAB_rk = EAB_alphan*(EAB_ysn+EAB_psinbar)/EAB_kdn*EAB_mcn;
-// Total capital demand
+
 EAB_kd = EAB_kdt+EAB_kdn;
-// Demand for labour services by household I
+
 EAB_ndi = 
 (1-EAB_omega)*(EAB_wi/EAB_w)^(-EAB_eta)*EAB_nd
 ;
-// Demand for labour services by household J
+
 EAB_ndj = 
 EAB_omega*(EAB_wj/EAB_w)^(-EAB_eta)*EAB_nd
 ;
-// Aggregate labour demand
+
 EAB_nd^(1-1/EAB_eta) = 
 (1-EAB_omega)^(1/EAB_eta)*EAB_ndi^(1-1/EAB_eta)+EAB_omega^(1/EAB_eta)*EAB_ndj^(1-1/EAB_eta)
 ;
-// Total demand 
+
 EAB_nd = EAB_ndt+EAB_ndn;
-// Aggregate dividends
+
 EAB_d = EAB_py*EAB_y-EAB_rk*EAB_kd-(1+EAB_tauwf)*EAB_w*EAB_nd;
-// Non-tradable sector dividends
+
 EAB_dn = EAB_pnt*EAB_ysn-EAB_rk*EAB_kdn-(1+EAB_tauwf)*EAB_w*EAB_ndn;
-// Tradable sector dividends
+
 EAB_dt = EAB_pht*EAB_ht
 +EAB_pex*EAB_ex
 -EAB_rk*EAB_kdt-(1+EAB_tauwf)*EAB_w*EAB_ndt;
-// Optimal price contract set in domestic markets (FOC)
+
 EAB_phttilde/EAB_pht = EAB_thetat/(EAB_thetat-1)*EAB_fh/EAB_gh;
-// Definition of fh
+
 EAB_fh = EAB_mct*EAB_ht+EAB_xih*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAB_piht(+1)/(EAB_piht^EAB_chih*EAB_pi4target^(1/4*(1-EAB_chih))))^EAB_thetat*EAB_fh(+1);
-// Definition of gh
+
 EAB_gh = EAB_pht*EAB_ht+EAB_xih*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAB_piht(+1)/(EAB_piht^EAB_chih*EAB_pi4target^(1/4*(1-EAB_chih))))^(EAB_thetat-1)*EAB_gh(+1);
-// Aggregate intermediate-good price dynamics
+
 EAB_pht^(1-EAB_thetat) = (1-EAB_xih)*EAB_phttilde^(1-EAB_thetat)+EAB_xih*(EAB_pht(-1)/EAB_pic)^(1-EAB_thetat)*(EAB_piht(-1)^EAB_chih*EAB_pi4target^(1/4*(1-EAB_chih)))^(1-EAB_thetat);
-// Intermediate-good price inflation
+
 EAB_piht = EAB_pht/EAB_pht(-1)*EAB_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAB_pnttilde/EAB_pnt = EAB_thetan/(EAB_thetan-1)*EAB_fn/EAB_gn;
-// Definition of fn
+
 EAB_fn = EAB_mcn*EAB_nt+EAB_xin*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAB_pint(+1)/(EAB_pint^EAB_chin*EAB_pi4target^(1/4*(1-EAB_chin))))^EAB_thetan*EAB_fn(+1);
-// Definition of gn
+
 EAB_gn = EAB_pnt*EAB_nt+EAB_xin*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAB_pint(+1)/(EAB_pint^EAB_chin*EAB_pi4target^(1/4*(1-EAB_chin))))^(EAB_thetan-1)*EAB_gn(+1);
-// Aggregate intermediate-good price dynamics
+
 EAB_pnt^(1-EAB_thetan) = (1-EAB_xin)*EAB_pnttilde^(1-EAB_thetan)+EAB_xin*(EAB_pnt(-1)/EAB_pic)^(1-EAB_thetan)*(EAB_pint(-1)^EAB_chin*EAB_pi4target^(1/4*(1-EAB_chin)))^(1-EAB_thetan);
-// Intermediate-good price inflation
+
 EAB_pint = EAB_pnt/EAB_pnt(-1)*EAB_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAB_pextilde/EAB_pex = EAB_thetat/(EAB_thetat-1)*EAB_fx/EAB_gx;
-// Definition of fh
+
 EAB_fx = EAB_mct*EAB_ex+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAB_piex(+1)/(EAB_piex^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^EAB_thetat*EAB_fx(+1);
-// Definition of gh
+
 EAB_gx = EAB_pex*EAB_ex+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAB_piex(+1)/(EAB_piex^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^(EAB_thetat-1)*EAB_gx(+1);
-// Aggregate intermediate-good price dynamics
+
 EAB_pex^(1-EAB_thetat) = (1-EAB_xix)*EAB_pextilde^(1-EAB_thetat)+EAB_xix*(EAB_pex(-1)/EAB_pic)^(1-EAB_thetat)*(EAB_piex(-1)^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix)))^(1-EAB_thetat);
-// Intermediate-good price inflation
+
 EAB_piex = EAB_pex/EAB_pex(-1)*EAB_pic;
-//---------------
-// import pricing
-//---------------
-// Optimal price contract set in foreign markets (FOC), using EAB_pxtilde = EAA_pimtilde
-// EAAEAB_pimtilde/EAAEAB_pim = EAB_cpim*EAB_thetat/(EAB_thetat-1)*EABEAA_fx/EABEAA_gx;
-// Definition of fx
-// EABEAA_fx = EAA_size/EAB_size*EAAEAB_im*EAB_mct+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAAEAB_piim(+1)/(EAAEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^EAB_thetat*EABEAA_fx(+1);
-// Definition of gx   
-// EABEAA_gx = EABEAA_rer*EAAEAB_pim*EAA_size/EAB_size*EAAEAB_im+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAAEAB_piim(+1)/(EAAEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^(EAB_thetat-1)*EABEAA_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAB_px = EAA_pim
-// EAAEAB_pim^(1-EAB_thetat) = (1-EAB_xix)*EAAEAB_pimtilde^(1-EAB_thetat)+EAB_xix*(EAAEAB_pim(-1)/EAA_pic)^(1-EAB_thetat)*(EAAEAB_piim(-1)^EAB_chix*EAA_pi4target^(1/4*(1-EAB_chih)))^(1-EAB_thetat);
-// Intermediate-good price inflation, using EAB_pix = EAA_piim
-// EAAEAB_piim = EAAEAB_pim/EAAEAB_pim(-1)*EAA_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 EABEAA_rer = EAB_rer/EAA_rer;
-// Auxiliary equation for steady-state output
+
 EABEAA_rerbar = EABEAA_rer;
-//Terms of Trade
+
 EABEAA_tot = EAA_pex*EABEAA_rer/EAB_pex;
-// Optimal price contract set in foreign markets (FOC), using EAB_pxtilde = EAC_pimtilde
-// EACEAB_pimtilde/EACEAB_pim = EAB_cpim*EAB_thetat/(EAB_thetat-1)*EABEAC_fx/EABEAC_gx;
-// Definition of fx
-// EABEAC_fx = EAC_size/EAB_size*EACEAB_im*EAB_mct+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EACEAB_piim(+1)/(EACEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^EAB_thetat*EABEAC_fx(+1);
-// Definition of gx   
-// EABEAC_gx = EABEAC_rer*EACEAB_pim*EAC_size/EAB_size*EACEAB_im+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EACEAB_piim(+1)/(EACEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^(EAB_thetat-1)*EABEAC_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAB_px = EAC_pim
-// EACEAB_pim^(1-EAB_thetat) = (1-EAB_xix)*EACEAB_pimtilde^(1-EAB_thetat)+EAB_xix*(EACEAB_pim(-1)/EAC_pic)^(1-EAB_thetat)*(EACEAB_piim(-1)^EAB_chix*EAC_pi4target^(1/4*(1-EAB_chih)))^(1-EAB_thetat);
-// Intermediate-good price inflation, using EAB_pix = EAC_piim
-// EACEAB_piim = EACEAB_pim/EACEAB_pim(-1)*EAC_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EABEAC_rer = EAB_rer/EAC_rer;
-// Auxiliary equation for steady-state output
+
 EABEAC_rerbar = EABEAC_rer;
-//Terms of Trade
+
 EABEAC_tot = EAC_pex*EABEAC_rer/EAB_pex;
-// Optimal price contract set in foreign markets (FOC), using EAB_pxtilde = EAD_pimtilde
-// EADEAB_pimtilde/EADEAB_pim = EAB_cpim*EAB_thetat/(EAB_thetat-1)*EABEAD_fx/EABEAD_gx;
-// Definition of fx
-// EABEAD_fx = EAD_size/EAB_size*EADEAB_im*EAB_mct+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EADEAB_piim(+1)/(EADEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^EAB_thetat*EABEAD_fx(+1);
-// Definition of gx   
-// EABEAD_gx = EABEAD_rer*EADEAB_pim*EAD_size/EAB_size*EADEAB_im+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EADEAB_piim(+1)/(EADEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^(EAB_thetat-1)*EABEAD_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAB_px = EAD_pim
-// EADEAB_pim^(1-EAB_thetat) = (1-EAB_xix)*EADEAB_pimtilde^(1-EAB_thetat)+EAB_xix*(EADEAB_pim(-1)/EAD_pic)^(1-EAB_thetat)*(EADEAB_piim(-1)^EAB_chix*EAD_pi4target^(1/4*(1-EAB_chih)))^(1-EAB_thetat);
-// Intermediate-good price inflation, using EAB_pix = EAD_piim
-// EADEAB_piim = EADEAB_pim/EADEAB_pim(-1)*EAD_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EABEAD_rer = EAB_rer/EAD_rer;
-// Auxiliary equation for steady-state output
+
 EABEAD_rerbar = EABEAD_rer;
-//Terms of Trade
+
 EABEAD_tot = EAD_pex*EABEAD_rer/EAB_pex;
-// Optimal price contract set in foreign markets (FOC), using EAB_pxtilde = EAE_pimtilde
-// EAEEAB_pimtilde/EAEEAB_pim = EAB_cpim*EAB_thetat/(EAB_thetat-1)*EABEAE_fx/EABEAE_gx;
-// Definition of fx
-// EABEAE_fx = EAE_size/EAB_size*EAEEAB_im*EAB_mct+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAEEAB_piim(+1)/(EAEEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^EAB_thetat*EABEAE_fx(+1);
-// Definition of gx   
-// EABEAE_gx = EABEAE_rer*EAEEAB_pim*EAE_size/EAB_size*EAEEAB_im+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAEEAB_piim(+1)/(EAEEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^(EAB_thetat-1)*EABEAE_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAB_px = EAE_pim
-// EAEEAB_pim^(1-EAB_thetat) = (1-EAB_xix)*EAEEAB_pimtilde^(1-EAB_thetat)+EAB_xix*(EAEEAB_pim(-1)/EAE_pic)^(1-EAB_thetat)*(EAEEAB_piim(-1)^EAB_chix*EAE_pi4target^(1/4*(1-EAB_chih)))^(1-EAB_thetat);
-// Intermediate-good price inflation, using EAB_pix = EAE_piim
-// EAEEAB_piim = EAEEAB_pim/EAEEAB_pim(-1)*EAE_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EABEAE_rer = EAB_rer/EAE_rer;
-// Auxiliary equation for steady-state output
+
 EABEAE_rerbar = EABEAE_rer;
-//Terms of Trade
+
 EABEAE_tot = EAE_pex*EABEAE_rer/EAB_pex;
-// Optimal price contract set in foreign markets (FOC), using EAB_pxtilde = EAF_pimtilde
-// EAFEAB_pimtilde/EAFEAB_pim = EAB_cpim*EAB_thetat/(EAB_thetat-1)*EABEAF_fx/EABEAF_gx;
-// Definition of fx
-// EABEAF_fx = EAF_size/EAB_size*EAFEAB_im*EAB_mct+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAFEAB_piim(+1)/(EAFEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^EAB_thetat*EABEAF_fx(+1);
-// Definition of gx   
-// EABEAF_gx = EABEAF_rer*EAFEAB_pim*EAF_size/EAB_size*EAFEAB_im+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAFEAB_piim(+1)/(EAFEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^(EAB_thetat-1)*EABEAF_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAB_px = EAF_pim
-// EAFEAB_pim^(1-EAB_thetat) = (1-EAB_xix)*EAFEAB_pimtilde^(1-EAB_thetat)+EAB_xix*(EAFEAB_pim(-1)/EAF_pic)^(1-EAB_thetat)*(EAFEAB_piim(-1)^EAB_chix*EAF_pi4target^(1/4*(1-EAB_chih)))^(1-EAB_thetat);
-// Intermediate-good price inflation, using EAB_pix = EAF_piim
-// EAFEAB_piim = EAFEAB_pim/EAFEAB_pim(-1)*EAF_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EABEAF_rer = EAB_rer/EAF_rer;
-// Auxiliary equation for steady-state output
+
 EABEAF_rerbar = EABEAF_rer;
-//Terms of Trade
+
 EABEAF_tot = EAF_pex*EABEAF_rer/EAB_pex;
-// Optimal price contract set in foreign markets (FOC), using EAB_pxtilde = EAG_pimtilde
-// EAGEAB_pimtilde/EAGEAB_pim = EAB_cpim*EAB_thetat/(EAB_thetat-1)*EABEAG_fx/EABEAG_gx;
-// Definition of fx
-// EABEAG_fx = EAG_size/EAB_size*EAGEAB_im*EAB_mct+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAGEAB_piim(+1)/(EAGEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^EAB_thetat*EABEAG_fx(+1);
-// Definition of gx   
-// EABEAG_gx = EABEAG_rer*EAGEAB_pim*EAG_size/EAB_size*EAGEAB_im+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAGEAB_piim(+1)/(EAGEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^(EAB_thetat-1)*EABEAG_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAB_px = EAG_pim
-// EAGEAB_pim^(1-EAB_thetat) = (1-EAB_xix)*EAGEAB_pimtilde^(1-EAB_thetat)+EAB_xix*(EAGEAB_pim(-1)/EAG_pic)^(1-EAB_thetat)*(EAGEAB_piim(-1)^EAB_chix*EAG_pi4target^(1/4*(1-EAB_chih)))^(1-EAB_thetat);
-// Intermediate-good price inflation, using EAB_pix = EAG_piim
-// EAGEAB_piim = EAGEAB_pim/EAGEAB_pim(-1)*EAG_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EABEAG_rer = EAB_rer/EAG_rer;
-// Auxiliary equation for steady-state output
+
 EABEAG_rerbar = EABEAG_rer;
-//Terms of Trade
+
 EABEAG_tot = EAG_pex*EABEAG_rer/EAB_pex;
-// Optimal price contract set in foreign markets (FOC), using EAB_pxtilde = EAH_pimtilde
-// EAHEAB_pimtilde/EAHEAB_pim = EAB_cpim*EAB_thetat/(EAB_thetat-1)*EABEAH_fx/EABEAH_gx;
-// Definition of fx
-// EABEAH_fx = EAH_size/EAB_size*EAHEAB_im*EAB_mct+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAHEAB_piim(+1)/(EAHEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^EAB_thetat*EABEAH_fx(+1);
-// Definition of gx   
-// EABEAH_gx = EABEAH_rer*EAHEAB_pim*EAH_size/EAB_size*EAHEAB_im+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAHEAB_piim(+1)/(EAHEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^(EAB_thetat-1)*EABEAH_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAB_px = EAH_pim
-// EAHEAB_pim^(1-EAB_thetat) = (1-EAB_xix)*EAHEAB_pimtilde^(1-EAB_thetat)+EAB_xix*(EAHEAB_pim(-1)/EAH_pic)^(1-EAB_thetat)*(EAHEAB_piim(-1)^EAB_chix*EAH_pi4target^(1/4*(1-EAB_chih)))^(1-EAB_thetat);
-// Intermediate-good price inflation, using EAB_pix = EAH_piim
-// EAHEAB_piim = EAHEAB_pim/EAHEAB_pim(-1)*EAH_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EABEAH_rer = EAB_rer/EAH_rer;
-// Auxiliary equation for steady-state output
+
 EABEAH_rerbar = EABEAH_rer;
-//Terms of Trade
+
 EABEAH_tot = EAH_pex*EABEAH_rer/EAB_pex;
-// Optimal price contract set in foreign markets (FOC), using EAB_pxtilde = EAI_pimtilde
-// EAIEAB_pimtilde/EAIEAB_pim = EAB_cpim*EAB_thetat/(EAB_thetat-1)*EABEAI_fx/EABEAI_gx;
-// Definition of fx
-// EABEAI_fx = EAI_size/EAB_size*EAIEAB_im*EAB_mct+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAIEAB_piim(+1)/(EAIEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^EAB_thetat*EABEAI_fx(+1);
-// Definition of gx   
-// EABEAI_gx = EABEAI_rer*EAIEAB_pim*EAI_size/EAB_size*EAIEAB_im+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAIEAB_piim(+1)/(EAIEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^(EAB_thetat-1)*EABEAI_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAB_px = EAI_pim
-// EAIEAB_pim^(1-EAB_thetat) = (1-EAB_xix)*EAIEAB_pimtilde^(1-EAB_thetat)+EAB_xix*(EAIEAB_pim(-1)/EAI_pic)^(1-EAB_thetat)*(EAIEAB_piim(-1)^EAB_chix*EAI_pi4target^(1/4*(1-EAB_chih)))^(1-EAB_thetat);
-// Intermediate-good price inflation, using EAB_pix = EAI_piim
-// EAIEAB_piim = EAIEAB_pim/EAIEAB_pim(-1)*EAI_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EABEAI_rer = EAB_rer/EAI_rer;
-// Auxiliary equation for steady-state output
+
 EABEAI_rerbar = EABEAI_rer;
-//Terms of Trade
+
 EABEAI_tot = EAI_pex*EABEAI_rer/EAB_pex;
-// Optimal price contract set in foreign markets (FOC), using EAB_pxtilde = EAJ_pimtilde
-// EAJEAB_pimtilde/EAJEAB_pim = EAB_cpim*EAB_thetat/(EAB_thetat-1)*EABEAJ_fx/EABEAJ_gx;
-// Definition of fx
-// EABEAJ_fx = EAJ_size/EAB_size*EAJEAB_im*EAB_mct+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAJEAB_piim(+1)/(EAJEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^EAB_thetat*EABEAJ_fx(+1);
-// Definition of gx   
-// EABEAJ_gx = EABEAJ_rer*EAJEAB_pim*EAJ_size/EAB_size*EAJEAB_im+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAJEAB_piim(+1)/(EAJEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^(EAB_thetat-1)*EABEAJ_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAB_px = EAJ_pim
-// EAJEAB_pim^(1-EAB_thetat) = (1-EAB_xix)*EAJEAB_pimtilde^(1-EAB_thetat)+EAB_xix*(EAJEAB_pim(-1)/EAJ_pic)^(1-EAB_thetat)*(EAJEAB_piim(-1)^EAB_chix*EAJ_pi4target^(1/4*(1-EAB_chih)))^(1-EAB_thetat);
-// Intermediate-good price inflation, using EAB_pix = EAJ_piim
-// EAJEAB_piim = EAJEAB_pim/EAJEAB_pim(-1)*EAJ_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EABEAJ_rer = EAB_rer/EAJ_rer;
-// Auxiliary equation for steady-state output
+
 EABEAJ_rerbar = EABEAJ_rer;
-//Terms of Trade
+
 EABEAJ_tot = EAJ_pex*EABEAJ_rer/EAB_pex;
-// Optimal price contract set in foreign markets (FOC), using EAB_pxtilde = EAK_pimtilde
-// EAKEAB_pimtilde/EAKEAB_pim = EAB_cpim*EAB_thetat/(EAB_thetat-1)*EABEAK_fx/EABEAK_gx;
-// Definition of fx
-// EABEAK_fx = EAK_size/EAB_size*EAKEAB_im*EAB_mct+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAKEAB_piim(+1)/(EAKEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^EAB_thetat*EABEAK_fx(+1);
-// Definition of gx   
-// EABEAK_gx = EABEAK_rer*EAKEAB_pim*EAK_size/EAB_size*EAKEAB_im+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EAKEAB_piim(+1)/(EAKEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^(EAB_thetat-1)*EABEAK_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAB_px = EAK_pim
-// EAKEAB_pim^(1-EAB_thetat) = (1-EAB_xix)*EAKEAB_pimtilde^(1-EAB_thetat)+EAB_xix*(EAKEAB_pim(-1)/EAK_pic)^(1-EAB_thetat)*(EAKEAB_piim(-1)^EAB_chix*EAK_pi4target^(1/4*(1-EAB_chih)))^(1-EAB_thetat);
-// Intermediate-good price inflation, using EAB_pix = EAK_piim
-// EAKEAB_piim = EAKEAB_pim/EAKEAB_pim(-1)*EAK_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EABEAK_rer = EAB_rer/EAK_rer;
-// Auxiliary equation for steady-state output
+
 EABEAK_rerbar = EABEAK_rer;
-//Terms of Trade
+
 EABEAK_tot = EAK_pex*EABEAK_rer/EAB_pex;
-// Optimal price contract set in foreign markets (FOC), using EAB_pxtilde = EAL_pimtilde
-// EALEAB_pimtilde/EALEAB_pim = EAB_cpim*EAB_thetat/(EAB_thetat-1)*EABEAL_fx/EABEAL_gx;
-// Definition of fx
-// EABEAL_fx = EAL_size/EAB_size*EALEAB_im*EAB_mct+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EALEAB_piim(+1)/(EALEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^EAB_thetat*EABEAL_fx(+1);
-// Definition of gx   
-// EABEAL_gx = EABEAL_rer*EALEAB_pim*EAL_size/EAB_size*EALEAB_im+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(EALEAB_piim(+1)/(EALEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^(EAB_thetat-1)*EABEAL_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAB_px = EAL_pim
-// EALEAB_pim^(1-EAB_thetat) = (1-EAB_xix)*EALEAB_pimtilde^(1-EAB_thetat)+EAB_xix*(EALEAB_pim(-1)/EAL_pic)^(1-EAB_thetat)*(EALEAB_piim(-1)^EAB_chix*EAL_pi4target^(1/4*(1-EAB_chih)))^(1-EAB_thetat);
-// Intermediate-good price inflation, using EAB_pix = EAL_piim
-// EALEAB_piim = EALEAB_pim/EALEAB_pim(-1)*EAL_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EABEAL_rer = EAB_rer/EAL_rer;
-// Auxiliary equation for steady-state output
+
 EABEAL_rerbar = EABEAL_rer;
-//Terms of Trade
+
 EABEAL_tot = EAL_pex*EABEAL_rer/EAB_pex;
-// Optimal price contract set in foreign markets (FOC), using EAB_pxtilde = RW_pimtilde
-// RWEAB_pimtilde/RWEAB_pim = EAB_cpim*EAB_thetat/(EAB_thetat-1)*EABRW_fx/EABRW_gx;
-// Definition of fx
-// EABRW_fx = RW_size/EAB_size*RWEAB_im*EAB_mct+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(RWEAB_piim(+1)/(RWEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^EAB_thetat*EABRW_fx(+1);
-// Definition of gx   
-// EABRW_gx = EABRW_rer*RWEAB_pim*RW_size/EAB_size*RWEAB_im+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(RWEAB_piim(+1)/(RWEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^(EAB_thetat-1)*EABRW_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAB_px = RW_pim
-// RWEAB_pim^(1-EAB_thetat) = (1-EAB_xix)*RWEAB_pimtilde^(1-EAB_thetat)+EAB_xix*(RWEAB_pim(-1)/RW_pic)^(1-EAB_thetat)*(RWEAB_piim(-1)^EAB_chix*RW_pi4target^(1/4*(1-EAB_chih)))^(1-EAB_thetat);
-// Intermediate-good price inflation, using EAB_pix = RW_piim
-// RWEAB_piim = RWEAB_pim/RWEAB_pim(-1)*RW_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EABRW_rer = EAB_rer/RW_rer;
-// Auxiliary equation for steady-state output
+
 EABRW_rerbar = EABRW_rer;
-//Terms of Trade
+
 EABRW_tot = RW_pex*EABRW_rer/EAB_pex;
-// Optimal price contract set in foreign markets (FOC), using EAB_pxtilde = US_pimtilde
-// USEAB_pimtilde/USEAB_pim = EAB_cpim*EAB_thetat/(EAB_thetat-1)*EABUS_fx/EABUS_gx;
-// Definition of fx
-// EABUS_fx = US_size/EAB_size*USEAB_im*EAB_mct+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(USEAB_piim(+1)/(USEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^EAB_thetat*EABUS_fx(+1);
-// Definition of gx   
-// EABUS_gx = EABUS_rer*USEAB_pim*US_size/EAB_size*USEAB_im+EAB_xix*EAB_beta*EAB_lambdai(+1)/EAB_lambdai*(USEAB_piim(+1)/(USEAB_piim^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^(EAB_thetat-1)*EABUS_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAB_px = US_pim
-// USEAB_pim^(1-EAB_thetat) = (1-EAB_xix)*USEAB_pimtilde^(1-EAB_thetat)+EAB_xix*(USEAB_pim(-1)/US_pic)^(1-EAB_thetat)*(USEAB_piim(-1)^EAB_chix*US_pi4target^(1/4*(1-EAB_chih)))^(1-EAB_thetat);
-// Intermediate-good price inflation, using EAB_pix = US_piim
-// USEAB_piim = USEAB_pim/USEAB_pim(-1)*US_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EABUS_rer = EAB_rer/US_rer;
-// Auxiliary equation for steady-state output
+
 EABUS_rerbar = EABUS_rer;
-//Terms of Trade
+
 EABUS_tot = US_pex*EABUS_rer/EAB_pex;
-// Total imports 
+
 EAB_im = 
 +EAB_imc
 +EAB_imi
 +EAB_imcg
 +EAB_imig
 ;
-// Total import deflator
+
 EAB_im*EAB_pim  = 
 +EAB_pimc*EAB_imc
 +EAB_pimi*EAB_imi
 +EAB_pimcg*EAB_imcg
 +EAB_pimig*EAB_imig
 ;
-// Effective real exchange rate: double weighting (imports)
+
 EABEAA_weightim = EABEAA_rer*EAA_pex*EABEAA_im/(EAB_pim*EAB_im);
-// Effective real exchange rate: double weighting (exports)
+
 EABEAA_weightex = EAA_size/EAB_size*EAAEAB_im/EAB_ex*EABEAA_rer*EAA_py*EAA_y/(EABEAA_rer*EAA_py*EAA_y
 +EABEAC_rer*EAC_pex*EAAEAC_im
 +EABEAD_rer*EAD_pex*EAAEAD_im
@@ -4984,11 +4984,11 @@ EABEAA_weightex = EAA_size/EAB_size*EAAEAB_im/EAB_ex*EABEAA_rer*EAA_py*EAA_y/(EA
 +EABRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EABEAA_weight = EAB_pim*EAB_im/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAA_weightim+EAB_pex*EAB_ex/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAA_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EABEAC_weightim = EABEAC_rer*EAC_pex*EABEAC_im/(EAB_pim*EAB_im);
-// Effective real exchange rate: double weighting (exports)
+
 EABEAC_weightex = EAC_size/EAB_size*EACEAB_im/EAB_ex*EABEAC_rer*EAC_py*EAC_y/(EABEAC_rer*EAC_py*EAC_y
 +EABEAA_rer*EAA_pex*EACEAA_im
 +EABEAD_rer*EAD_pex*EACEAD_im
@@ -5172,11 +5172,11 @@ EABEAC_weightex = EAC_size/EAB_size*EACEAB_im/EAB_ex*EABEAC_rer*EAC_py*EAC_y/(EA
 +EABRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EABEAC_weight = EAB_pim*EAB_im/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAC_weightim+EAB_pex*EAB_ex/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAC_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EABEAD_weightim = EABEAD_rer*EAD_pex*EABEAD_im/(EAB_pim*EAB_im);
-// Effective real exchange rate: double weighting (exports)
+
 EABEAD_weightex = EAD_size/EAB_size*EADEAB_im/EAB_ex*EABEAD_rer*EAD_py*EAD_y/(EABEAD_rer*EAD_py*EAD_y
 +EABEAA_rer*EAA_pex*EADEAA_im
 +EABEAC_rer*EAC_pex*EADEAC_im
@@ -5360,11 +5360,11 @@ EABEAD_weightex = EAD_size/EAB_size*EADEAB_im/EAB_ex*EABEAD_rer*EAD_py*EAD_y/(EA
 +EABRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EABEAD_weight = EAB_pim*EAB_im/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAD_weightim+EAB_pex*EAB_ex/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAD_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EABEAE_weightim = EABEAE_rer*EAE_pex*EABEAE_im/(EAB_pim*EAB_im);
-// Effective real exchange rate: double weighting (exports)
+
 EABEAE_weightex = EAE_size/EAB_size*EAEEAB_im/EAB_ex*EABEAE_rer*EAE_py*EAE_y/(EABEAE_rer*EAE_py*EAE_y
 +EABEAA_rer*EAA_pex*EAEEAA_im
 +EABEAC_rer*EAC_pex*EAEEAC_im
@@ -5548,11 +5548,11 @@ EABEAE_weightex = EAE_size/EAB_size*EAEEAB_im/EAB_ex*EABEAE_rer*EAE_py*EAE_y/(EA
 +EABRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EABEAE_weight = EAB_pim*EAB_im/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAE_weightim+EAB_pex*EAB_ex/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAE_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EABEAF_weightim = EABEAF_rer*EAF_pex*EABEAF_im/(EAB_pim*EAB_im);
-// Effective real exchange rate: double weighting (exports)
+
 EABEAF_weightex = EAF_size/EAB_size*EAFEAB_im/EAB_ex*EABEAF_rer*EAF_py*EAF_y/(EABEAF_rer*EAF_py*EAF_y
 +EABEAA_rer*EAA_pex*EAFEAA_im
 +EABEAC_rer*EAC_pex*EAFEAC_im
@@ -5736,11 +5736,11 @@ EABEAF_weightex = EAF_size/EAB_size*EAFEAB_im/EAB_ex*EABEAF_rer*EAF_py*EAF_y/(EA
 +EABRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EABEAF_weight = EAB_pim*EAB_im/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAF_weightim+EAB_pex*EAB_ex/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAF_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EABEAG_weightim = EABEAG_rer*EAG_pex*EABEAG_im/(EAB_pim*EAB_im);
-// Effective real exchange rate: double weighting (exports)
+
 EABEAG_weightex = EAG_size/EAB_size*EAGEAB_im/EAB_ex*EABEAG_rer*EAG_py*EAG_y/(EABEAG_rer*EAG_py*EAG_y
 +EABEAA_rer*EAA_pex*EAGEAA_im
 +EABEAC_rer*EAC_pex*EAGEAC_im
@@ -5924,11 +5924,11 @@ EABEAG_weightex = EAG_size/EAB_size*EAGEAB_im/EAB_ex*EABEAG_rer*EAG_py*EAG_y/(EA
 +EABRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EABEAG_weight = EAB_pim*EAB_im/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAG_weightim+EAB_pex*EAB_ex/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAG_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EABEAH_weightim = EABEAH_rer*EAH_pex*EABEAH_im/(EAB_pim*EAB_im);
-// Effective real exchange rate: double weighting (exports)
+
 EABEAH_weightex = EAH_size/EAB_size*EAHEAB_im/EAB_ex*EABEAH_rer*EAH_py*EAH_y/(EABEAH_rer*EAH_py*EAH_y
 +EABEAA_rer*EAA_pex*EAHEAA_im
 +EABEAC_rer*EAC_pex*EAHEAC_im
@@ -6112,11 +6112,11 @@ EABEAH_weightex = EAH_size/EAB_size*EAHEAB_im/EAB_ex*EABEAH_rer*EAH_py*EAH_y/(EA
 +EABRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EABEAH_weight = EAB_pim*EAB_im/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAH_weightim+EAB_pex*EAB_ex/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAH_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EABEAI_weightim = EABEAI_rer*EAI_pex*EABEAI_im/(EAB_pim*EAB_im);
-// Effective real exchange rate: double weighting (exports)
+
 EABEAI_weightex = EAI_size/EAB_size*EAIEAB_im/EAB_ex*EABEAI_rer*EAI_py*EAI_y/(EABEAI_rer*EAI_py*EAI_y
 +EABEAA_rer*EAA_pex*EAIEAA_im
 +EABEAC_rer*EAC_pex*EAIEAC_im
@@ -6300,11 +6300,11 @@ EABEAI_weightex = EAI_size/EAB_size*EAIEAB_im/EAB_ex*EABEAI_rer*EAI_py*EAI_y/(EA
 +EABRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EABEAI_weight = EAB_pim*EAB_im/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAI_weightim+EAB_pex*EAB_ex/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAI_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EABEAJ_weightim = EABEAJ_rer*EAJ_pex*EABEAJ_im/(EAB_pim*EAB_im);
-// Effective real exchange rate: double weighting (exports)
+
 EABEAJ_weightex = EAJ_size/EAB_size*EAJEAB_im/EAB_ex*EABEAJ_rer*EAJ_py*EAJ_y/(EABEAJ_rer*EAJ_py*EAJ_y
 +EABEAA_rer*EAA_pex*EAJEAA_im
 +EABEAC_rer*EAC_pex*EAJEAC_im
@@ -6488,11 +6488,11 @@ EABEAJ_weightex = EAJ_size/EAB_size*EAJEAB_im/EAB_ex*EABEAJ_rer*EAJ_py*EAJ_y/(EA
 +EABRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EABEAJ_weight = EAB_pim*EAB_im/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAJ_weightim+EAB_pex*EAB_ex/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAJ_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EABEAK_weightim = EABEAK_rer*EAK_pex*EABEAK_im/(EAB_pim*EAB_im);
-// Effective real exchange rate: double weighting (exports)
+
 EABEAK_weightex = EAK_size/EAB_size*EAKEAB_im/EAB_ex*EABEAK_rer*EAK_py*EAK_y/(EABEAK_rer*EAK_py*EAK_y
 +EABEAA_rer*EAA_pex*EAKEAA_im
 +EABEAC_rer*EAC_pex*EAKEAC_im
@@ -6676,11 +6676,11 @@ EABEAK_weightex = EAK_size/EAB_size*EAKEAB_im/EAB_ex*EABEAK_rer*EAK_py*EAK_y/(EA
 +EABRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EABEAK_weight = EAB_pim*EAB_im/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAK_weightim+EAB_pex*EAB_ex/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAK_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EABEAL_weightim = EABEAL_rer*EAL_pex*EABEAL_im/(EAB_pim*EAB_im);
-// Effective real exchange rate: double weighting (exports)
+
 EABEAL_weightex = EAL_size/EAB_size*EALEAB_im/EAB_ex*EABEAL_rer*EAL_py*EAL_y/(EABEAL_rer*EAL_py*EAL_y
 +EABEAA_rer*EAA_pex*EALEAA_im
 +EABEAC_rer*EAC_pex*EALEAC_im
@@ -6864,11 +6864,11 @@ EABEAL_weightex = EAL_size/EAB_size*EALEAB_im/EAB_ex*EABEAL_rer*EAL_py*EAL_y/(EA
 +EABRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EABEAL_weight = EAB_pim*EAB_im/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAL_weightim+EAB_pex*EAB_ex/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABEAL_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EABRW_weightim = EABRW_rer*RW_pex*EABRW_im/(EAB_pim*EAB_im);
-// Effective real exchange rate: double weighting (exports)
+
 EABRW_weightex = RW_size/EAB_size*RWEAB_im/EAB_ex*EABRW_rer*RW_py*RW_y/(EABRW_rer*RW_py*RW_y
 +EABEAA_rer*EAA_pex*RWEAA_im
 +EABEAC_rer*EAC_pex*RWEAC_im
@@ -7052,11 +7052,11 @@ EABRW_weightex = RW_size/EAB_size*RWEAB_im/EAB_ex*EABRW_rer*RW_py*RW_y/(EABRW_re
 +EABRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EABRW_weight = EAB_pim*EAB_im/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABRW_weightim+EAB_pex*EAB_ex/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABRW_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EABUS_weightim = EABUS_rer*US_pex*EABUS_im/(EAB_pim*EAB_im);
-// Effective real exchange rate: double weighting (exports)
+
 EABUS_weightex = US_size/EAB_size*USEAB_im/EAB_ex*EABUS_rer*US_py*US_y/(EABUS_rer*US_py*US_y
 +EABEAA_rer*EAA_pex*USEAA_im
 +EABEAC_rer*EAC_pex*USEAC_im
@@ -7240,9 +7240,9 @@ EABUS_weightex = US_size/EAB_size*USEAB_im/EAB_ex*EABUS_rer*US_py*US_y/(EABUS_re
 +EABUS_rer*US_pex*RWUS_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EABUS_weight = EAB_pim*EAB_im/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABUS_weightim+EAB_pex*EAB_ex/(EAB_pim*EAB_im+EAB_pex*EAB_ex)*EABUS_weightex;
-// Effective real exchange rate
+
 EAB_reer = 1
 *EABEAA_rer^EABEAA_weight
 *EABEAC_rer^EABEAC_weight
@@ -7258,7 +7258,7 @@ EAB_reer = 1
 *EABRW_rer^EABRW_weight
 *EABUS_rer^EABUS_weight
 ;
-// Effective terms of trade
+
 EAB_etot = 1
 *EABEAA_tot^EABEAA_weight
 *EABEAC_tot^EABEAC_weight
@@ -7274,10 +7274,10 @@ EAB_etot = 1
 *EABRW_tot^EABRW_weight
 *EABUS_tot^EABUS_weight
 ;
-//-----------------
-// Final-good firms
-//-----------------
-// Private consumption good (import)
+
+
+
+
 EAB_imc^((EAB_mumc-1)/EAB_mumc) =
 +EABEAA_numc ^(1/EAB_mumc)*EABEAA_imc^(1-1/EAB_mumc)
 +EABEAC_numc ^(1/EAB_mumc)*EABEAC_imc^(1-1/EAB_mumc)
@@ -7305,27 +7305,27 @@ EAB_imc^((EAB_mumc-1)/EAB_mumc) =
 -EABEAL_numc
 -EABRW_numc
 )^(1/EAB_mumc)*EABUS_imc^(1-1/EAB_mumc);
-// Demand for bilateral consumption import goods
+
 EABEAA_imc = EABEAA_numc*((EAA_pex*EABEAA_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
-// Demand for bilateral consumption import goods
+
 EABEAD_imc = EABEAD_numc*((EAD_pex*EABEAD_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
-// Demand for bilateral consumption import goods
+
 EABEAE_imc = EABEAE_numc*((EAE_pex*EABEAE_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
-// Demand for bilateral consumption import goods
+
 EABEAF_imc = EABEAF_numc*((EAF_pex*EABEAF_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
-// Demand for bilateral consumption import goods
+
 EABEAG_imc = EABEAG_numc*((EAG_pex*EABEAG_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
-// Demand for bilateral consumption import goods
+
 EABEAH_imc = EABEAH_numc*((EAH_pex*EABEAH_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
-// Demand for bilateral consumption import goods
+
 EABEAI_imc = EABEAI_numc*((EAI_pex*EABEAI_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
-// Demand for bilateral consumption import goods
+
 EABEAJ_imc = EABEAJ_numc*((EAJ_pex*EABEAJ_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
-// Demand for bilateral consumption import goods
+
 EABEAK_imc = EABEAK_numc*((EAK_pex*EABEAK_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
-// Demand for bilateral consumption import goods
+
 EABEAL_imc = EABEAL_numc*((EAL_pex*EABEAL_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
-// Demand for bilateral consumption import goods
+
 EABRW_imc = EABRW_numc*((RW_pex*EABRW_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
 EABUS_imc = (1
 -EABEAA_numc
@@ -7341,7 +7341,7 @@ EABUS_imc = (1
 -EABEAL_numc
 -EABRW_numc
 )*((US_pex*EABUS_rer)/EAB_pimc)^(-EAB_mumc)*EAB_imc;
-// Price of the consumption good (import)
+
 EAB_pimc^(1-EAB_mumc) =
 +EABEAA_numc * (EAA_pex*EABEAA_rer)^(1-EAB_mumc)
 +EABEAC_numc * (EAC_pex*EABEAC_rer)^(1-EAB_mumc)
@@ -7369,9 +7369,9 @@ EAB_pimc^(1-EAB_mumc) =
 -EABEAL_numc
 -EABRW_numc
 )*(US_pex*EABUS_rer)^(1-EAB_mumc);
-// Private consumption good (import) inflation
+
 EAB_piimc = EAB_pimc/EAB_pimc(-1)*EAB_pic;
-// Private consumption good (import)
+
 EAB_imi^((EAB_mumi-1)/EAB_mumi) =
 +EABEAA_numi ^(1/EAB_mumi)*EABEAA_imi^(1-1/EAB_mumi)
 +EABEAC_numi ^(1/EAB_mumi)*EABEAC_imi^(1-1/EAB_mumi)
@@ -7399,27 +7399,27 @@ EAB_imi^((EAB_mumi-1)/EAB_mumi) =
 -EABEAL_numi
 -EABRW_numi
 )^(1/EAB_mumi)*EABUS_imi^(1-1/EAB_mumi);
-// Demand for bilateral consumption import goods
+
 EABEAA_imi = EABEAA_numi*((EAA_pex*EABEAA_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
-// Demand for bilateral consumption import goods
+
 EABEAD_imi = EABEAD_numi*((EAD_pex*EABEAD_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
-// Demand for bilateral consumption import goods
+
 EABEAE_imi = EABEAE_numi*((EAE_pex*EABEAE_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
-// Demand for bilateral consumption import goods
+
 EABEAF_imi = EABEAF_numi*((EAF_pex*EABEAF_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
-// Demand for bilateral consumption import goods
+
 EABEAG_imi = EABEAG_numi*((EAG_pex*EABEAG_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
-// Demand for bilateral consumption import goods
+
 EABEAH_imi = EABEAH_numi*((EAH_pex*EABEAH_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
-// Demand for bilateral consumption import goods
+
 EABEAI_imi = EABEAI_numi*((EAI_pex*EABEAI_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
-// Demand for bilateral consumption import goods
+
 EABEAJ_imi = EABEAJ_numi*((EAJ_pex*EABEAJ_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
-// Demand for bilateral consumption import goods
+
 EABEAK_imi = EABEAK_numi*((EAK_pex*EABEAK_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
-// Demand for bilateral consumption import goods
+
 EABEAL_imi = EABEAL_numi*((EAL_pex*EABEAL_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
-// Demand for bilateral consumption import goods
+
 EABRW_imi = EABRW_numi*((RW_pex*EABRW_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
 EABUS_imi = (1
 -EABEAA_numi
@@ -7435,7 +7435,7 @@ EABUS_imi = (1
 -EABEAL_numi
 -EABRW_numi
 )*((US_pex*EABUS_rer)/EAB_pimi)^(-EAB_mumi)*EAB_imi;
-// Price of the consumption good (import)
+
 EAB_pimi^(1-EAB_mumi) =
 +EABEAA_numi * (EAA_pex*EABEAA_rer)^(1-EAB_mumi)
 +EABEAC_numi * (EAC_pex*EABEAC_rer)^(1-EAB_mumi)
@@ -7463,9 +7463,9 @@ EAB_pimi^(1-EAB_mumi) =
 -EABEAL_numi
 -EABRW_numi
 )*(US_pex*EABUS_rer)^(1-EAB_mumi);
-// Private consumption good (import) inflation
+
 EAB_piimi = EAB_pimi/EAB_pimi(-1)*EAB_pic;
-// Private consumption good (import)
+
 EAB_imcg^((EAB_mumcg-1)/EAB_mumcg) =
 +EABEAA_numcg ^(1/EAB_mumcg)*EABEAA_imcg^(1-1/EAB_mumcg)
 +EABEAC_numcg ^(1/EAB_mumcg)*EABEAC_imcg^(1-1/EAB_mumcg)
@@ -7493,27 +7493,27 @@ EAB_imcg^((EAB_mumcg-1)/EAB_mumcg) =
 -EABEAL_numcg
 -EABRW_numcg
 )^(1/EAB_mumcg)*EABUS_imcg^(1-1/EAB_mumcg);
-// Demand for bilateral consumption import goods
+
 EABEAA_imcg = EABEAA_numcg*((EAA_pex*EABEAA_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
-// Demand for bilateral consumption import goods
+
 EABEAD_imcg = EABEAD_numcg*((EAD_pex*EABEAD_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
-// Demand for bilateral consumption import goods
+
 EABEAE_imcg = EABEAE_numcg*((EAE_pex*EABEAE_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
-// Demand for bilateral consumption import goods
+
 EABEAF_imcg = EABEAF_numcg*((EAF_pex*EABEAF_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
-// Demand for bilateral consumption import goods
+
 EABEAG_imcg = EABEAG_numcg*((EAG_pex*EABEAG_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
-// Demand for bilateral consumption import goods
+
 EABEAH_imcg = EABEAH_numcg*((EAH_pex*EABEAH_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
-// Demand for bilateral consumption import goods
+
 EABEAI_imcg = EABEAI_numcg*((EAI_pex*EABEAI_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
-// Demand for bilateral consumption import goods
+
 EABEAJ_imcg = EABEAJ_numcg*((EAJ_pex*EABEAJ_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
-// Demand for bilateral consumption import goods
+
 EABEAK_imcg = EABEAK_numcg*((EAK_pex*EABEAK_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
-// Demand for bilateral consumption import goods
+
 EABEAL_imcg = EABEAL_numcg*((EAL_pex*EABEAL_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
-// Demand for bilateral consumption import goods
+
 EABRW_imcg = EABRW_numcg*((RW_pex*EABRW_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
 EABUS_imcg = (1
 -EABEAA_numcg
@@ -7529,7 +7529,7 @@ EABUS_imcg = (1
 -EABEAL_numcg
 -EABRW_numcg
 )*((US_pex*EABUS_rer)/EAB_pimcg)^(-EAB_mumcg)*EAB_imcg;
-// Price of the consumption good (import)
+
 EAB_pimcg^(1-EAB_mumcg) =
 +EABEAA_numcg * (EAA_pex*EABEAA_rer)^(1-EAB_mumcg)
 +EABEAC_numcg * (EAC_pex*EABEAC_rer)^(1-EAB_mumcg)
@@ -7557,9 +7557,9 @@ EAB_pimcg^(1-EAB_mumcg) =
 -EABEAL_numcg
 -EABRW_numcg
 )*(US_pex*EABUS_rer)^(1-EAB_mumcg);
-// Private consumption good (import) inflation
+
 EAB_piimcg = EAB_pimcg/EAB_pimcg(-1)*EAB_pic;
-// Private consumption good (import)
+
 EAB_imig^((EAB_mumig-1)/EAB_mumig) =
 +EABEAA_numig ^(1/EAB_mumig)*EABEAA_imig^(1-1/EAB_mumig)
 +EABEAC_numig ^(1/EAB_mumig)*EABEAC_imig^(1-1/EAB_mumig)
@@ -7587,27 +7587,27 @@ EAB_imig^((EAB_mumig-1)/EAB_mumig) =
 -EABEAL_numig
 -EABRW_numig
 )^(1/EAB_mumig)*EABUS_imig^(1-1/EAB_mumig);
-// Demand for bilateral consumption import goods
+
 EABEAA_imig = EABEAA_numig*((EAA_pex*EABEAA_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
-// Demand for bilateral consumption import goods
+
 EABEAD_imig = EABEAD_numig*((EAD_pex*EABEAD_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
-// Demand for bilateral consumption import goods
+
 EABEAE_imig = EABEAE_numig*((EAE_pex*EABEAE_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
-// Demand for bilateral consumption import goods
+
 EABEAF_imig = EABEAF_numig*((EAF_pex*EABEAF_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
-// Demand for bilateral consumption import goods
+
 EABEAG_imig = EABEAG_numig*((EAG_pex*EABEAG_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
-// Demand for bilateral consumption import goods
+
 EABEAH_imig = EABEAH_numig*((EAH_pex*EABEAH_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
-// Demand for bilateral consumption import goods
+
 EABEAI_imig = EABEAI_numig*((EAI_pex*EABEAI_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
-// Demand for bilateral consumption import goods
+
 EABEAJ_imig = EABEAJ_numig*((EAJ_pex*EABEAJ_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
-// Demand for bilateral consumption import goods
+
 EABEAK_imig = EABEAK_numig*((EAK_pex*EABEAK_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
-// Demand for bilateral consumption import goods
+
 EABEAL_imig = EABEAL_numig*((EAL_pex*EABEAL_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
-// Demand for bilateral consumption import goods
+
 EABRW_imig = EABRW_numig*((RW_pex*EABRW_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
 EABUS_imig = (1
 -EABEAA_numig
@@ -7623,7 +7623,7 @@ EABUS_imig = (1
 -EABEAL_numig
 -EABRW_numig
 )*((US_pex*EABUS_rer)/EAB_pimig)^(-EAB_mumig)*EAB_imig;
-// Price of the consumption good (import)
+
 EAB_pimig^(1-EAB_mumig) =
 +EABEAA_numig * (EAA_pex*EABEAA_rer)^(1-EAB_mumig)
 +EABEAC_numig * (EAC_pex*EABEAC_rer)^(1-EAB_mumig)
@@ -7651,15 +7651,15 @@ EAB_pimig^(1-EAB_mumig) =
 -EABEAL_numig
 -EABRW_numig
 )*(US_pex*EABUS_rer)^(1-EAB_mumig);
-// Private consumption good (import) inflation
+
 EAB_piimig = EAB_pimig/EAB_pimig(-1)*EAB_pic;
-// Private consumption good (import) inflation
+
 EAB_piimc4 = EAB_pimc/EAB_pimc(-4)*EAB_pic4;
-// Private consumption good (import) inflation
+
 EAB_piex4 = EAB_pex/EAB_pex(-4)*EAB_pic4;
-// Wedge between aggregate demand and production, using EAB_x = EAC_size/EAB_size*EAC_im
+
 EAB_yst = EAB_sh*EAB_ht+EAB_sx*EAB_ex;
-// Aggregate demand for bilateral imported intermediate goods
+
 EABEAA_im = 
 +EABEAA_imc
 +EABEAA_imi
@@ -7738,18 +7738,18 @@ EABUS_im =
 +EABUS_imcg
 +EABUS_imig
 ;
-// Private consumption good firm
-// Private consumption good (tradable)
+
+
 EAB_ttc^((EAB_mutc-1)/EAB_mutc) = (EAB_nutc)^(1/EAB_mutc)*EAB_htc^(1-1/EAB_mutc)+(1-EAB_nutc)^(1/EAB_mutc)*EAB_imc^(1-1/EAB_mutc);
-// Private consumption good  (total)
+
 EAB_qc^((EAB_muc-1)/EAB_muc) = (EAB_nuc)^(1/EAB_muc)*EAB_ttc^(1-1/EAB_muc)+(1-EAB_nuc)^(1/EAB_muc)*EAB_ntc^(1-1/EAB_muc);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAB_ntc = (1-EAB_nuc)*(EAB_pnt)^(-EAB_muc)*EAB_qc;
-// Price of the consumption good (tradable)  
+
 EAB_pttc^(1-EAB_mutc) = (EAB_nutc)*EAB_pht^(1-EAB_mutc)+(1-EAB_nutc)*EAB_pimc^(1-EAB_mutc);
-// Price of the consumption good 
+
 1^(1-EAB_muc) = (EAB_nuc)*EAB_pttc^(1-EAB_muc)+(1-EAB_nuc)*EAB_pnt^(1-EAB_muc);
-// Demand for domestic intermediate goods
+
 EAB_htc = EAB_nutc*(EAB_pht/EAB_pttc)^(-EAB_mutc)*EAB_ttc;
 EABEAA_gammaimc = 0;
 EABEAA_gammaimcdag = 1;
@@ -7777,20 +7777,20 @@ EABRW_gammaimc = 0;
 EABRW_gammaimcdag = 1;
 EABUS_gammaimc = 0;
 EABUS_gammaimcdag = 1;
-// Private consumption good (tradable)
+
 EAB_tti^((EAB_muti-1)/EAB_muti) = (EAB_nuti)^(1/EAB_muti)*EAB_hti^(1-1/EAB_muti)+(1-EAB_nuti)^(1/EAB_muti)*EAB_imi^(1-1/EAB_muti);
-// Private consumption good  (total)
+
 EAB_qi^((EAB_mui-1)/EAB_mui) = (EAB_nui)^(1/EAB_mui)*EAB_tti^(1-1/EAB_mui)+(1-EAB_nui)^(1/EAB_mui)*EAB_nti^(1-1/EAB_mui);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAB_nti = (1-EAB_nui)*(EAB_pnt/EAB_pi)^(-EAB_mui)*EAB_qi;
-// Price of the consumption good (tradable)  
+
 EAB_ptti^(1-EAB_muti) = (EAB_nuti)*EAB_pht^(1-EAB_muti)+(1-EAB_nuti)*EAB_pimi^(1-EAB_muti);
-// Price of the consumption good 
+
 EAB_pi^(1-EAB_mui) = (EAB_nui)*EAB_ptti^(1-EAB_mui)+(1-EAB_nui)*EAB_pnt^(1-EAB_mui);
-// Auxiliary equation for the price of the investment good in steady state
-// this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
+
+
 EAB_pibar = EAB_pi;
-// Demand for domestic intermediate goods
+
 EAB_hti = EAB_nuti*(EAB_pht/EAB_ptti)^(-EAB_muti)*EAB_tti;
 EABEAA_gammaimi = 0;
 EABEAA_gammaimidag = 1;
@@ -7818,17 +7818,17 @@ EABRW_gammaimi = 0;
 EABRW_gammaimidag = 1;
 EABUS_gammaimi = 0;
 EABUS_gammaimidag = 1;
-// Private consumption good (tradable)
+
 EAB_ttcg^((EAB_mutcg-1)/EAB_mutcg) = (EAB_nutcg)^(1/EAB_mutcg)*EAB_htcg^(1-1/EAB_mutcg)+(1-EAB_nutcg)^(1/EAB_mutcg)*EAB_imcg^(1-1/EAB_mutcg);
-// Private consumption good  (total)
+
 EAB_qcg^((EAB_mucg-1)/EAB_mucg) = (EAB_nucg)^(1/EAB_mucg)*EAB_ttcg^(1-1/EAB_mucg)+(1-EAB_nucg)^(1/EAB_mucg)*EAB_ntcg^(1-1/EAB_mucg);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAB_ntcg = (1-EAB_nucg)*(EAB_pnt/EAB_pcg)^(-EAB_mucg)*EAB_qcg;
-// Price of the consumption good (tradable)  
+
 EAB_pttcg^(1-EAB_mutcg) = (EAB_nutcg)*EAB_pht^(1-EAB_mutcg)+(1-EAB_nutcg)*EAB_pimcg^(1-EAB_mutcg);
-// Price of the consumption good 
+
 EAB_pcg^(1-EAB_mucg) = (EAB_nucg)*EAB_pttcg^(1-EAB_mucg)+(1-EAB_nucg)*EAB_pnt^(1-EAB_mucg);
-// Demand for domestic intermediate goods
+
 EAB_htcg = EAB_nutcg*(EAB_pht/EAB_pttcg)^(-EAB_mutcg)*EAB_ttcg;
 EABEAA_gammaimcg = 0;
 EABEAA_gammaimcgdag = 1;
@@ -7856,17 +7856,17 @@ EABRW_gammaimcg = 0;
 EABRW_gammaimcgdag = 1;
 EABUS_gammaimcg = 0;
 EABUS_gammaimcgdag = 1;
-// Private consumption good (tradable)
+
 EAB_ttig^((EAB_mutig-1)/EAB_mutig) = (EAB_nutig)^(1/EAB_mutig)*EAB_htig^(1-1/EAB_mutig)+(1-EAB_nutig)^(1/EAB_mutig)*EAB_imig^(1-1/EAB_mutig);
-// Private consumption good  (total)
+
 EAB_qig^((EAB_muig-1)/EAB_muig) = (EAB_nuig)^(1/EAB_muig)*EAB_ttig^(1-1/EAB_muig)+(1-EAB_nuig)^(1/EAB_muig)*EAB_ntig^(1-1/EAB_muig);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAB_ntig = (1-EAB_nuig)*(EAB_pnt/EAB_pig)^(-EAB_muig)*EAB_qig;
-// Price of the consumption good (tradable)  
+
 EAB_pttig^(1-EAB_mutig) = (EAB_nutig)*EAB_pht^(1-EAB_mutig)+(1-EAB_nutig)*EAB_pimig^(1-EAB_mutig);
-// Price of the consumption good 
+
 EAB_pig^(1-EAB_muig) = (EAB_nuig)*EAB_pttig^(1-EAB_muig)+(1-EAB_nuig)*EAB_pnt^(1-EAB_muig);
-// Demand for domestic intermediate goods
+
 EAB_htig = EAB_nutig*(EAB_pht/EAB_pttig)^(-EAB_mutig)*EAB_ttig;
 EABEAA_gammaimig = 0;
 EABEAA_gammaimigdag = 1;
@@ -7894,7 +7894,7 @@ EABRW_gammaimig = 0;
 EABRW_gammaimigdag = 1;
 EABUS_gammaimig = 0;
 EABUS_gammaimigdag = 1;
-// Trade balance
+
 EAB_tb =
 +EAB_pex*EAA_size/EAB_size*EAAEAB_im
 -EAA_pex*EABEAA_rer*EABEAA_im
@@ -7923,7 +7923,7 @@ EAB_tb =
 +EAB_pex*US_size/EAB_size*USEAB_im
 -US_pex*EABUS_rer*EABUS_im
 ;
-// Aggregate exports (volume)
+
 EAB_ex =
 +EAA_size/EAB_size*EAAEAB_im
 +EAC_size/EAB_size*EACEAB_im
@@ -7939,131 +7939,131 @@ EAB_ex =
 +RW_size/EAB_size*RWEAB_im
 +US_size/EAB_size*USEAB_im
 ;
-//-------------
-//-------------
-// Fiscal and monetary authorities
-//-------------
-//-------------
-//-------------
-// Fiscal authority
-//-------------
-// Government budget constraint, using EAB_pg = EAB_pht
-// TODO: check the (1-EAB_gammab(-1)) adjustment here, which is not in the fiscal extention
+
+
+
+
+
+
+
+
+
+
 	EAB_pcg(-1)*EAB_cg(-1)+EAB_pig(-1)*EAB_ig(-1)+EAB_tr(-1)
 	+EAB_b(-1)*EAB_pic(-1)^(-1)+EAB_m(-2)*EAB_pic(-1)^(-1) = EAB_tauc(-1)*EAB_c(-1)+(EAB_taun(-1)+EAB_tauwh(-1))*(EAB_wi(-1)*EAB_ndi(-1)+EAB_wj(-1)*EAB_ndj(-1))+EAB_tauwf(-1)*EAB_w(-1)*EAB_nd(-1)+EAB_tauk(-1)*(EAB_rk(-1)*EAB_u(-1)-(EAB_gammau(-1)+EAB_delta)*EAB_pi(-1))*EAB_k(-1)+EAB_taud(-1)*EAB_d(-1)+EAB_t(-1)+(EAB_r(-1)*(1-EAB_gammab(-1)))^(-1)*EAB_b+EAB_m(-1);
-// Government spending, using EAB_pg = EAB_pht
+
 EAB_pcg*EAB_cg = EAB_cgy*EAB_pybar*EAB_ybar;
 EAB_pig*EAB_ig = EAB_igy*EAB_pybar*EAB_ybar;
 EAB_t = 0;
 EAB_b = EAB_bytarget*EAB_pybar*EAB_ybar;
-// Auxiliary equation for steady-state output
+
 EAB_ybar = EAB_y;
-// Auxiliary equation for steady-state output
+
 EAB_ytbar = EAB_yst;
-// Auxiliary equation for steady-state output
+
 EAB_ynbar = EAB_ysn;
-// Auxiliary equation for steady-state output deflator
+
 EAB_pybar = EAB_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
+
 EAB_trybar = EAB_tr/(EAB_pybar*EAB_ybar);
-// Auxiliary equation for determining the distribution of lump-sum taxes
+
 EAB_ti = EAB_upsilont*EAB_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
 upsilont = 0:            ti = 0, tj = 1/omega t
 upsilont = 1:            ti = tj = t
 upsilont = 1/(1-omega):  ti = 1/(1-omega) t, tj = 0. */
-// Auxiliary equation for determining the distribution of lump-sum transfers
+
 EAB_tri = EAB_upsilontr*EAB_tr;
 /* Note: Valid parameter space: 0 <= upsilontr <= 1/(1-omega) with
 upsilontr = 0:            tri = 0, trj = 1/omega tr
 upsilontr = 1:            tri = trj = tr
 upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
-//-------------
-// Monetary authority
-//-------------
+
+
+
 	EAB_r = EAL_r;
 EAB_pic4 = EAB_pi4target;
 EAB_rr-1 = EAB_r/EAB_pi4target^(1/4)-1;
-// Equilibrium real interest rate
+
 EAB_rrstar-1 = 1/EAB_beta-1;
-//-------------
-//-------------
-// Aggregation, market clearing and resource constraint
-//-------------
-//-------------
-//-------------
-// Aggregation
-//-------------
-// Aggregate consumption
+
+
+
+
+
+
+
+
+
 EAB_c = (1-EAB_omega)*EAB_ci+EAB_omega*EAB_cj;
-// Aggregate money holdings
+
 EAB_m = (1-EAB_omega)*EAB_mi+EAB_omega*EAB_mj;
-// Aggregate capital stock
+
 EAB_k = (1-EAB_omega)*EAB_ki;
-// Aggregate investment
+
 EAB_i = (1-EAB_omega)*EAB_ii;
-// Aggregate lump-sum transfers
+
 EAB_trj = 
 1/EAB_omega*EAB_tr-(1-EAB_omega)/EAB_omega*EAB_tri
 ;
-// Aggregate lump-sum taxes
+
 EAB_tj = 
 1/EAB_omega*EAB_t-(1-EAB_omega)/EAB_omega*EAB_ti
 ;
-// Aggregate transaction costs
+
 EAB_gammav = (1-EAB_omega)*EAB_ci*EAB_gammavi+EAB_omega*EAB_cj*EAB_gammavj;
-//-------------
-// Market clearing
-//-------------
-// Labour markets for household I
-// Wedge between labour demand/hours worked and labour supply
+
+
+
+
+
 EAB_ni = EAB_si*EAB_ndi;
-// Wage dispersion
+
 EAB_si = (1-EAB_xii)*(EAB_witilde/EAB_wi)^(-EAB_etai)+EAB_xii*(EAB_wi(-1)/EAB_wi)^(-EAB_etai)*(EAB_pic/(EAB_pic(-1)^EAB_chii*EAB_pi4target^(1/4*(1-EAB_chii))))^(EAB_etai)*EAB_si(-1);
-// Labour markets for household J
-// Wedge between labour demand/hours worked and labour supply
+
+
 EAB_nj = EAB_sj*EAB_ndj;
-// Wage dispersion
+
 EAB_sj = (1-EAB_xij)*(EAB_wjtilde/EAB_wj)^(-EAB_etaj)+EAB_xij*(EAB_wj(-1)/EAB_wj)^(-EAB_etaj)*(EAB_pic/(EAB_pic(-1)^EAB_chij*EAB_pi4target^(1/4*(1-EAB_chij))))^(EAB_etaj)*EAB_sj(-1);
-// Rental market for capital
-// Equality of capital input and effective capital services
+
+
 EAB_u*EAB_k = EAB_kd;
-// Intermediate-good markets
-// Wedge between aggregate demand and production, using EAB_x = EAC_size/EAB_size*EAC_im
+
+
 EAB_ysn = EAB_snt*EAB_nt;
-//  nontradables aggregate demand
+
 EAB_nt = 
 +EAB_ntc
 +EAB_nti
 +EAB_ntcg
 +EAB_ntig
 ;
-// Aggregate demand for domestic intermediate goods, using EAB_hg = EAB_cg
+
 EAB_ht =
 +EAB_htc
 +EAB_hti
 +EAB_htcg
 +EAB_htig
 ;
-// Price dispersion in the domestic markets
+
 EAB_sh = (1-EAB_xih)*(EAB_phttilde/EAB_pht)^(-EAB_thetat)+EAB_xih*(EAB_piht/(EAB_piht(-1)^EAB_chih*EAB_pi4target^(1/4*(1-EAB_chih))))^EAB_thetat*EAB_sh(-1);
-// Price dispersion in the foreign markets
+
 EAB_sx = (1-EAB_xix)*(EAB_pextilde/EAB_pex)^(-EAB_thetat)+EAB_xix*(EAB_piex/(EAB_piex(-1)^EAB_chix*EAB_pi4target^(1/4*(1-EAB_chix))))^EAB_thetat*EAB_sx(-1);
-// Price dispersion in the domestic markets
+
 EAB_snt = (1-EAB_xin)*(EAB_pnttilde/EAB_pnt)^(-EAB_thetan)+EAB_xin*(EAB_pint/(EAB_pint(-1)^EAB_chin*EAB_pi4target^(1/4*(1-EAB_chin))))^EAB_thetan*EAB_snt(-1);
-// Final-good markets
-// Aggregate consumption and transaction cost
+
+
 EAB_qc = EAB_c+EAB_gammav;
-// Aggregate investment and capital utilisation cost
+
 EAB_qi = EAB_i+EAB_k*EAB_gammau;
-// Aggregate gov demand components added to use the same structure like in private components
+
 EAB_qcg = EAB_cg;
 EAB_qig = EAB_ig;
-//-------------
-// Resource constraint
-//-------------
-// TODO: why there is no adjustment cost for gov components
-// Aggregate nominal demand
+
+
+
+
+
 EAB_py*EAB_y = 
 +EAB_qc
 +EAB_pi*EAB_qi
@@ -8135,83 +8135,83 @@ EAB_py*EAB_y =
 -(US_pex*EABUS_rer)*EABUS_imcg
 -(US_pex*EABUS_rer)*EABUS_imig
 ;
-// Aggregate real demand
+
 EAB_y = EAB_yst+EAB_ysn;
-//-------------
-//-------------
-// Autoregressive shocks
-//-------------
-//-------------
-// Productivity shocks
+
+
+
+
+
+
 log(EAB_zt) = (1-EAB_rhozt)*log(EAB_ztbar)+EAB_rhozt*log(EAB_zt(-1))+EAB_epszt;
 log(EAB_zn) = (1-EAB_rhozn)*log(EAB_znbar)+EAB_rhozn*log(EAB_zn(-1))+EAB_epszn;
-// Government spending shock
+
 EAB_cgy = (1-EAB_rhocg)*EAB_cgybar+EAB_rhocg*EAB_cgy(-1)+EAB_epsgc;
 EAB_igy = (1-EAB_rhoig)*EAB_igybar+EAB_rhoig*EAB_igy(-1)+EAB_epsgi;
-// Transfer shock
+
 EAB_try = (1-EAB_rhotr)*EAB_trybar+EAB_rhotr*EAB_try(-1)+EAB_epstr;
-// Consumption tax shock
+
 EAB_tauc = (1-EAB_rhotauc)*EAB_taucbar+EAB_rhotauc*EAB_tauc(-1)+EAB_epstauc;
-// Dividend income tax shock
+
 EAB_taud = (1-EAB_rhotaud)*EAB_taudbar+EAB_rhotaud*EAB_taud(-1)+EAB_epstaud;
-// Capital income tax shock
+
 EAB_tauk = (1-EAB_rhotauk)*EAB_taukbar+EAB_rhotauk*EAB_tauk(-1)+EAB_epstauk;
-// Labour income tax shock
+
 EAB_taun = (1-EAB_rhotaun)*EAB_taunbar+EAB_rhotaun*EAB_taun(-1)+EAB_epstaun;
-// Payroll tax shock: households
+
 EAB_tauwh = (1-EAB_rhotauwh)*EAB_tauwhbar+EAB_rhotauwh*EAB_tauwh(-1)+EAB_epstauwh;
-// Payroll tax shock: firms
+
 EAB_tauwf = (1-EAB_rhotauwf)*EAB_tauwfbar+EAB_rhotauwf*EAB_tauwf(-1)+EAB_epstauwf;
-// Wage cost push shock
+
 EAB_wcst = (1-EAB_rhowcst)*EAB_wcstbar+EAB_rhowcst*EAB_wcst(-1)+EAB_epswcst;
-// Preference shock
+
 log(EAB_zcon) = (1-EAB_rhozcon)*log(EAB_zconbar)+EAB_rhozcon*log(EAB_zcon(-1))+EAB_epszcon;
-// Investment specific shock
+
 log(EAB_zinv) = (1-EAB_rhozinv)*log(EAB_zinvbar)+EAB_rhozinv*log(EAB_zinv(-1))+EAB_epszinv;
-//-------------
-//-------------
-// Conditions for calibration and reporting
-//-------------
-//-------------
-// Aggregate nominal consumption share
+
+
+
+
+
+
 EAB_cy = EAB_c/(EAB_py*EAB_y);
-// Aggregate nominal investment share
+
 EAB_iy = EAB_pi*EAB_i/(EAB_py*EAB_y);
-// Aggregate nominal import share  
+
 EAB_imy = (
 +EAB_pimc*EAB_imc
 +EAB_pimi*EAB_imi
 +EAB_pimcg*EAB_imcg
 +EAB_pimig*EAB_imig
 )/(EAB_py*EAB_y);
-// Aggregate nominal import share
+
 EAB_imcy = EAB_pimc*EAB_imc/(EAB_py*EAB_y);
 EAB_imiy = EAB_pimi*EAB_imi/(EAB_py*EAB_y);
 EAB_imcgy = EAB_pimcg*EAB_imcg/(EAB_py*EAB_y);
 EAB_imigy = EAB_pimig*EAB_imig/(EAB_py*EAB_y);
-// Aggregate debt-to-output ratio
+
 EAB_by = EAB_b/(EAB_pybar*EAB_ybar);
-// Aggregate lump-sum tax-to-output ratio
+
 EAB_ty = EAB_t/(EAB_pybar*EAB_ybar);
-// Aggregate labour cost share
+
 EAB_lcy = ((1+EAB_tauwf)*EAB_w*EAB_nd)/(EAB_py*EAB_y);
-// Aggregate nominal Wage share
+
 EAB_wy = (EAB_w*EAB_nd)/(EAB_py*EAB_y);
-// NT sector nominal Wage share
+
 EAB_wnty = (EAB_w*EAB_ndn)/(EAB_pnt*EAB_ysn);
-// T sector nominal Wage share
+
 EAB_whty = (EAB_w*EAB_ndt)/(EAB_pht*EAB_yst);
-// T sector share
+
 EAB_yhty = EAB_pht*EAB_yst/(EAB_py*EAB_y);
-// NT sector share
+
 EAB_ynty = EAB_pnt*EAB_ysn/(EAB_py*EAB_y);
-// Output gap
+
 EAB_ygap = 0;
-// Output growth (gross rate)
+
 EAB_ygrowth = EAB_y/EAB_y(-1);
-// Output growth (gross rate yoy)
+
 EAB_ygrowth4 = EAB_y/EAB_y(-4);
-// Domestic nominal output as a share of world nominal output
+
 EAB_yshare  = EAB_size*EAB_py*EAB_y/EAB_rer/(
 +EAA_size*EAA_py*EAA_y/EAA_rer
 +EAB_size*EAB_py*EAB_y/EAB_rer
@@ -8228,153 +8228,153 @@ EAB_yshare  = EAB_size*EAB_py*EAB_y/EAB_rer/(
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
-// Interest (semi-)elasticity of money demand
+
 EAB_epsilonm = -1/8*1/(EAB_r*(EAB_gammav2*EAB_r+EAB_r-1));
-// Trade balance-to-GDP ratio
+
 EAB_tby = EAB_tb/(EAB_py*EAB_y);
-// Bilateral shares
+
 EABEAA_imcy = (EAA_pex*EABEAA_rer)*EABEAA_imc/(EAB_py*EAB_y);
 EABEAA_imiy = (EAA_pex*EABEAA_rer)*EABEAA_imi/(EAB_py*EAB_y);
 EABEAA_imcgy = (EAA_pex*EABEAA_rer)*EABEAA_imcg/(EAB_py*EAB_y);
 EABEAA_imigy = (EAA_pex*EABEAA_rer)*EABEAA_imig/(EAB_py*EAB_y);
-// Exports of consumption goods to gdp
+
 EABEAA_excy  = EAA_size/EAB_size*EAB_pex*EAAEAB_imc/(EAB_py*EAB_y);
-// Exports of investment goods to gdp
+
 EABEAA_exiy  = EAA_size/EAB_size*EAB_pex*EAAEAB_imi/(EAB_py*EAB_y);
-// Bilateral shares
+
 EABEAC_imcy = (EAC_pex*EABEAC_rer)*EABEAC_imc/(EAB_py*EAB_y);
 EABEAC_imiy = (EAC_pex*EABEAC_rer)*EABEAC_imi/(EAB_py*EAB_y);
 EABEAC_imcgy = (EAC_pex*EABEAC_rer)*EABEAC_imcg/(EAB_py*EAB_y);
 EABEAC_imigy = (EAC_pex*EABEAC_rer)*EABEAC_imig/(EAB_py*EAB_y);
-// Exports of consumption goods to gdp
+
 EABEAC_excy  = EAC_size/EAB_size*EAB_pex*EACEAB_imc/(EAB_py*EAB_y);
-// Exports of investment goods to gdp
+
 EABEAC_exiy  = EAC_size/EAB_size*EAB_pex*EACEAB_imi/(EAB_py*EAB_y);
-// Bilateral shares
+
 EABEAD_imcy = (EAD_pex*EABEAD_rer)*EABEAD_imc/(EAB_py*EAB_y);
 EABEAD_imiy = (EAD_pex*EABEAD_rer)*EABEAD_imi/(EAB_py*EAB_y);
 EABEAD_imcgy = (EAD_pex*EABEAD_rer)*EABEAD_imcg/(EAB_py*EAB_y);
 EABEAD_imigy = (EAD_pex*EABEAD_rer)*EABEAD_imig/(EAB_py*EAB_y);
-// Exports of consumption goods to gdp
+
 EABEAD_excy  = EAD_size/EAB_size*EAB_pex*EADEAB_imc/(EAB_py*EAB_y);
-// Exports of investment goods to gdp
+
 EABEAD_exiy  = EAD_size/EAB_size*EAB_pex*EADEAB_imi/(EAB_py*EAB_y);
-// Bilateral shares
+
 EABEAE_imcy = (EAE_pex*EABEAE_rer)*EABEAE_imc/(EAB_py*EAB_y);
 EABEAE_imiy = (EAE_pex*EABEAE_rer)*EABEAE_imi/(EAB_py*EAB_y);
 EABEAE_imcgy = (EAE_pex*EABEAE_rer)*EABEAE_imcg/(EAB_py*EAB_y);
 EABEAE_imigy = (EAE_pex*EABEAE_rer)*EABEAE_imig/(EAB_py*EAB_y);
-// Exports of consumption goods to gdp
+
 EABEAE_excy  = EAE_size/EAB_size*EAB_pex*EAEEAB_imc/(EAB_py*EAB_y);
-// Exports of investment goods to gdp
+
 EABEAE_exiy  = EAE_size/EAB_size*EAB_pex*EAEEAB_imi/(EAB_py*EAB_y);
-// Bilateral shares
+
 EABEAF_imcy = (EAF_pex*EABEAF_rer)*EABEAF_imc/(EAB_py*EAB_y);
 EABEAF_imiy = (EAF_pex*EABEAF_rer)*EABEAF_imi/(EAB_py*EAB_y);
 EABEAF_imcgy = (EAF_pex*EABEAF_rer)*EABEAF_imcg/(EAB_py*EAB_y);
 EABEAF_imigy = (EAF_pex*EABEAF_rer)*EABEAF_imig/(EAB_py*EAB_y);
-// Exports of consumption goods to gdp
+
 EABEAF_excy  = EAF_size/EAB_size*EAB_pex*EAFEAB_imc/(EAB_py*EAB_y);
-// Exports of investment goods to gdp
+
 EABEAF_exiy  = EAF_size/EAB_size*EAB_pex*EAFEAB_imi/(EAB_py*EAB_y);
-// Bilateral shares
+
 EABEAG_imcy = (EAG_pex*EABEAG_rer)*EABEAG_imc/(EAB_py*EAB_y);
 EABEAG_imiy = (EAG_pex*EABEAG_rer)*EABEAG_imi/(EAB_py*EAB_y);
 EABEAG_imcgy = (EAG_pex*EABEAG_rer)*EABEAG_imcg/(EAB_py*EAB_y);
 EABEAG_imigy = (EAG_pex*EABEAG_rer)*EABEAG_imig/(EAB_py*EAB_y);
-// Exports of consumption goods to gdp
+
 EABEAG_excy  = EAG_size/EAB_size*EAB_pex*EAGEAB_imc/(EAB_py*EAB_y);
-// Exports of investment goods to gdp
+
 EABEAG_exiy  = EAG_size/EAB_size*EAB_pex*EAGEAB_imi/(EAB_py*EAB_y);
-// Bilateral shares
+
 EABEAH_imcy = (EAH_pex*EABEAH_rer)*EABEAH_imc/(EAB_py*EAB_y);
 EABEAH_imiy = (EAH_pex*EABEAH_rer)*EABEAH_imi/(EAB_py*EAB_y);
 EABEAH_imcgy = (EAH_pex*EABEAH_rer)*EABEAH_imcg/(EAB_py*EAB_y);
 EABEAH_imigy = (EAH_pex*EABEAH_rer)*EABEAH_imig/(EAB_py*EAB_y);
-// Exports of consumption goods to gdp
+
 EABEAH_excy  = EAH_size/EAB_size*EAB_pex*EAHEAB_imc/(EAB_py*EAB_y);
-// Exports of investment goods to gdp
+
 EABEAH_exiy  = EAH_size/EAB_size*EAB_pex*EAHEAB_imi/(EAB_py*EAB_y);
-// Bilateral shares
+
 EABEAI_imcy = (EAI_pex*EABEAI_rer)*EABEAI_imc/(EAB_py*EAB_y);
 EABEAI_imiy = (EAI_pex*EABEAI_rer)*EABEAI_imi/(EAB_py*EAB_y);
 EABEAI_imcgy = (EAI_pex*EABEAI_rer)*EABEAI_imcg/(EAB_py*EAB_y);
 EABEAI_imigy = (EAI_pex*EABEAI_rer)*EABEAI_imig/(EAB_py*EAB_y);
-// Exports of consumption goods to gdp
+
 EABEAI_excy  = EAI_size/EAB_size*EAB_pex*EAIEAB_imc/(EAB_py*EAB_y);
-// Exports of investment goods to gdp
+
 EABEAI_exiy  = EAI_size/EAB_size*EAB_pex*EAIEAB_imi/(EAB_py*EAB_y);
-// Bilateral shares
+
 EABEAJ_imcy = (EAJ_pex*EABEAJ_rer)*EABEAJ_imc/(EAB_py*EAB_y);
 EABEAJ_imiy = (EAJ_pex*EABEAJ_rer)*EABEAJ_imi/(EAB_py*EAB_y);
 EABEAJ_imcgy = (EAJ_pex*EABEAJ_rer)*EABEAJ_imcg/(EAB_py*EAB_y);
 EABEAJ_imigy = (EAJ_pex*EABEAJ_rer)*EABEAJ_imig/(EAB_py*EAB_y);
-// Exports of consumption goods to gdp
+
 EABEAJ_excy  = EAJ_size/EAB_size*EAB_pex*EAJEAB_imc/(EAB_py*EAB_y);
-// Exports of investment goods to gdp
+
 EABEAJ_exiy  = EAJ_size/EAB_size*EAB_pex*EAJEAB_imi/(EAB_py*EAB_y);
-// Bilateral shares
+
 EABEAK_imcy = (EAK_pex*EABEAK_rer)*EABEAK_imc/(EAB_py*EAB_y);
 EABEAK_imiy = (EAK_pex*EABEAK_rer)*EABEAK_imi/(EAB_py*EAB_y);
 EABEAK_imcgy = (EAK_pex*EABEAK_rer)*EABEAK_imcg/(EAB_py*EAB_y);
 EABEAK_imigy = (EAK_pex*EABEAK_rer)*EABEAK_imig/(EAB_py*EAB_y);
-// Exports of consumption goods to gdp
+
 EABEAK_excy  = EAK_size/EAB_size*EAB_pex*EAKEAB_imc/(EAB_py*EAB_y);
-// Exports of investment goods to gdp
+
 EABEAK_exiy  = EAK_size/EAB_size*EAB_pex*EAKEAB_imi/(EAB_py*EAB_y);
-// Bilateral shares
+
 EABEAL_imcy = (EAL_pex*EABEAL_rer)*EABEAL_imc/(EAB_py*EAB_y);
 EABEAL_imiy = (EAL_pex*EABEAL_rer)*EABEAL_imi/(EAB_py*EAB_y);
 EABEAL_imcgy = (EAL_pex*EABEAL_rer)*EABEAL_imcg/(EAB_py*EAB_y);
 EABEAL_imigy = (EAL_pex*EABEAL_rer)*EABEAL_imig/(EAB_py*EAB_y);
-// Exports of consumption goods to gdp
+
 EABEAL_excy  = EAL_size/EAB_size*EAB_pex*EALEAB_imc/(EAB_py*EAB_y);
-// Exports of investment goods to gdp
+
 EABEAL_exiy  = EAL_size/EAB_size*EAB_pex*EALEAB_imi/(EAB_py*EAB_y);
-// Bilateral shares
+
 EABRW_imcy = (RW_pex*EABRW_rer)*EABRW_imc/(EAB_py*EAB_y);
 EABRW_imiy = (RW_pex*EABRW_rer)*EABRW_imi/(EAB_py*EAB_y);
 EABRW_imcgy = (RW_pex*EABRW_rer)*EABRW_imcg/(EAB_py*EAB_y);
 EABRW_imigy = (RW_pex*EABRW_rer)*EABRW_imig/(EAB_py*EAB_y);
-// Exports of consumption goods to gdp
+
 EABRW_excy  = RW_size/EAB_size*EAB_pex*RWEAB_imc/(EAB_py*EAB_y);
-// Exports of investment goods to gdp
+
 EABRW_exiy  = RW_size/EAB_size*EAB_pex*RWEAB_imi/(EAB_py*EAB_y);
-// Bilateral shares
+
 EABUS_imcy = (US_pex*EABUS_rer)*EABUS_imc/(EAB_py*EAB_y);
 EABUS_imiy = (US_pex*EABUS_rer)*EABUS_imi/(EAB_py*EAB_y);
 EABUS_imcgy = (US_pex*EABUS_rer)*EABUS_imcg/(EAB_py*EAB_y);
 EABUS_imigy = (US_pex*EABUS_rer)*EABUS_imig/(EAB_py*EAB_y);
-// Exports of consumption goods to gdp
+
 EABUS_excy  = US_size/EAB_size*EAB_pex*USEAB_imc/(EAB_py*EAB_y);
-// Exports of investment goods to gdp
+
 EABUS_exiy  = US_size/EAB_size*EAB_pex*USEAB_imi/(EAB_py*EAB_y);
-// Internal real exchange rate
+
 EAB_internalrer = EAB_pnt/EAB_pttc;
-// Core model begins
-//-------------
-//-------------
-// Households
-//-------------
-//-------------
-//-------------
-// Household I
-//-------------
-// Utility
+
+
+
+
+
+
+
+
+
+
 EAC_utili = 
 EAC_zcon*log(EAC_ci-EAC_kappa*EAC_ci(-1))-1/(1+EAC_zeta)*(EAC_ni)^(1+EAC_zeta)+EAC_beta*EAC_utili(+1)
 ;
-// Marginal utility of consumption
+
 EAC_lambdai*(1+EAC_tauc+EAC_gammavi+EAC_vi*EAC_gammavider) = EAC_zcon*(EAC_ci-EAC_kappa*EAC_ci(-1))^(-EAC_sigma);
-// Euler equation for government bonds
+
 EAC_r                   = EAC_beta^(-1)*EAC_lambdai/EAC_lambdai    *EAC_pic;
-// Euler equation for money
+
 EAC_vi^(2)*EAC_gammavider = 1-EAC_beta*EAC_lambdai(+1)/(EAC_lambdai*EAC_pic(+1));
-// Consumption-based velocity
+
 EAC_vi = EAC_ci/EAC_mi;
-// Transaction cost
+
 EAC_gammavi = EAC_gammav1*EAC_vi+EAC_gammav2/EAC_vi-2*(EAC_gammav1*EAC_gammav2)^(1/2);
-// Derivative of transaction cost
+
 EAC_gammavider = EAC_gammav1-EAC_gammav2*EAC_vi^(-2);
 EAC_delta = EAC_ii/EAC_ki;
 EAC_gammai = 0;
@@ -8383,355 +8383,355 @@ EAC_gammau = 0;
 EAC_gammauder = ((EAC_beta^(-1)-1+EAC_delta)*EAC_qbar-EAC_delta*EAC_taukbar*EAC_pibar)/((1-EAC_taukbar)*EAC_pibar);
 EAC_u = 1;
 EAC_pi = EAC_q;
-// Auxiliary equation for Tobin's Q in steady state
+
 EAC_qbar = EAC_q;
-// Rate of return on capital
+
 EAC_q = EAC_beta*((1-EAC_tauk)*EAC_rk+(EAC_tauk*EAC_delta)*EAC_pi+(1-EAC_delta)*EAC_q);
-// Optimal wage contract (FOC)
+
 EAC_witilde^(1+EAC_etai*EAC_zeta) = EAC_etai/(EAC_etai-1)*EAC_fi/EAC_gi+EAC_wcst;
-// Definition of fi
+
 EAC_fi = EAC_wi^(EAC_etai*(1+EAC_zeta))*EAC_ndi^(1+EAC_zeta)+EAC_xii*EAC_beta*(EAC_pic(+1)/(EAC_pic^EAC_chii*EAC_pi4target^(1/4*(1-EAC_chii))))^(EAC_etai*(1+EAC_zeta))*EAC_fi(+1);
-// Definition of gi
+
 EAC_gi = EAC_lambdai*(1-EAC_taun-EAC_tauwh)*EAC_wi^EAC_etai*EAC_ndi+EAC_xii*EAC_beta*(EAC_pic(+1)/(EAC_pic^EAC_chii*EAC_pi4target^(1/4*(1-EAC_chii))))^(EAC_etai-1)*EAC_gi(+1);
-// Aggregate wage rate
+
 EAC_wi^(1-EAC_etai) = (1-EAC_xii)*EAC_witilde^(1-EAC_etai)+EAC_xii*EAC_wi(-1)^(1-EAC_etai)*(EAC_pic(-1)^EAC_chii*EAC_pi4target^(1/4*(1-EAC_chii))/EAC_pic)^(1-EAC_etai);
-//-------------
-// Household J
-//-------------
-// Utility
+
+
+
+
 EAC_utilj = 
 EAC_zcon*log(EAC_cj-EAC_kappa*EAC_cj(-1))-1/(1+EAC_zeta)*EAC_nj^(1+EAC_zeta)+EAC_beta*EAC_utilj(+1)
 ;
-// Marginal utility of consumption
+
 EAC_lambdaj*(1+EAC_tauc+EAC_gammavj+EAC_vj*EAC_gammavjder) = EAC_zcon*(EAC_cj-EAC_kappa*EAC_cj(-1))^(-EAC_sigma);
-// Budget constraint
+
 (1+EAC_tauc+EAC_gammavj)*EAC_cj+EAC_mj = (1-EAC_taun-EAC_tauwh)*EAC_wj*EAC_nj+EAC_trj-EAC_tj+EAC_mj(-1)*EAC_pic^(-1);
-// Euler equation for money
+
 EAC_vj^(2)*EAC_gammavjder = 1-EAC_beta*EAC_lambdaj(+1)/(EAC_lambdaj*EAC_pic(+1));
-// Consumption-based velocity
+
 EAC_vj = EAC_cj/EAC_mj;
-// Transaction technology
+
 EAC_gammavj = EAC_gammav1*EAC_vj+EAC_gammav2/EAC_vj-2*(EAC_gammav1*EAC_gammav2)^(1/2);
-// Derivative of transaction technology
+
 EAC_gammavjder = EAC_gammav1-EAC_gammav2*EAC_vj^(-2);
-// Optimal wage contract (FOC)
+
 EAC_wjtilde^(1+EAC_etaj*EAC_zeta) = EAC_etaj/(EAC_etaj-1)*EAC_fj/EAC_gj+EAC_wcst;
-// Definition of fj
+
 EAC_fj = EAC_wj^(EAC_etaj*(1+EAC_zeta))*EAC_ndj^(1+EAC_zeta)+EAC_xij*EAC_beta*(EAC_pic(+1)/(EAC_pic^EAC_chij*EAC_pi4target^(1/4*(1-EAC_chij))))^(EAC_etaj*(1+EAC_zeta))*EAC_fj(+1);
-// Definition of gj
+
 EAC_gj = EAC_lambdaj*(1-EAC_taun-EAC_tauwh)*EAC_wj^EAC_etaj*EAC_ndj+EAC_xij*EAC_beta*(EAC_pic(+1)/(EAC_pic^EAC_chij*EAC_pi4target^(1/4*(1-EAC_chij))))^(EAC_etaj-1)*EAC_gj(+1);
-// Aggregate wage rate
+
 EAC_wj^(1-EAC_etaj) = (1-EAC_xij)*EAC_wjtilde^(1-EAC_etaj)+EAC_xij*EAC_wj(-1)^(1-EAC_etaj)*(EAC_pic(-1)^EAC_chij*EAC_pi4target^(1/4*(1-EAC_chij))/EAC_pic)^(1-EAC_etaj);
-//-------------
-//-------------
-// Firms
-//-------------
-//-------------
-//-------------
-// Intermediate-good firms
-//-------------
-// Production function tradable
+
+
+
+
+
+
+
+
+
 EAC_yst = EA_z*EAC_zt*EAC_kdt^EAC_alphat*EAC_ndt^(1-EAC_alphat)-EAC_psitbar;
-// Production function nontradable
+
 EAC_ysn = EA_z*EAC_zn*EAC_kdn^EAC_alphan*EAC_ndn^(1-EAC_alphan)-EAC_psinbar;
-// Real marginal cost tradable
+
 EAC_mct = 1/(EA_z*EAC_zt*(EAC_alphat)^(EAC_alphat)*(1-EAC_alphat)^(1-EAC_alphat))*EAC_rk^(EAC_alphat)*((1+EAC_tauwf)*EAC_w)^(1-EAC_alphat);
-// Real marginal cost nontradable
+
 EAC_mcn = 1/(EA_z*EAC_zn*(EAC_alphan)^(EAC_alphan)*(1-EAC_alphan)^(1-EAC_alphan))*EAC_rk^(EAC_alphan)*((1+EAC_tauwf)*EAC_w)^(1-EAC_alphan);
-// Wage Inflation (qoq)
+
 EAC_piw = EAC_w/EAC_w(-1)*EAC_pic;
-// Wage Inflation (yoy)
+
 EAC_piw4 = EAC_pic4;
-// Auxiliary equation for steady-state fixed cost
+
 EAC_psitbar = EAC_psit*EAC_ytbar;
-// Auxiliary equation for steady-state fixed cost
+
 EAC_psinbar = EAC_psin*EAC_ynbar;
-// Capital input (FOC)
+
 EAC_rk = EAC_alphat*(EAC_yst+EAC_psitbar)/EAC_kdt*EAC_mct;
-// Capital input (FOC)
+
 EAC_rk = EAC_alphan*(EAC_ysn+EAC_psinbar)/EAC_kdn*EAC_mcn;
-// Total capital demand
+
 EAC_kd = EAC_kdt+EAC_kdn;
-// Demand for labour services by household I
+
 EAC_ndi = 
 (1-EAC_omega)*(EAC_wi/EAC_w)^(-EAC_eta)*EAC_nd
 ;
-// Demand for labour services by household J
+
 EAC_ndj = 
 EAC_omega*(EAC_wj/EAC_w)^(-EAC_eta)*EAC_nd
 ;
-// Aggregate labour demand
+
 EAC_nd^(1-1/EAC_eta) = 
 (1-EAC_omega)^(1/EAC_eta)*EAC_ndi^(1-1/EAC_eta)+EAC_omega^(1/EAC_eta)*EAC_ndj^(1-1/EAC_eta)
 ;
-// Total demand 
+
 EAC_nd = EAC_ndt+EAC_ndn;
-// Aggregate dividends
+
 EAC_d = EAC_py*EAC_y-EAC_rk*EAC_kd-(1+EAC_tauwf)*EAC_w*EAC_nd;
-// Non-tradable sector dividends
+
 EAC_dn = EAC_pnt*EAC_ysn-EAC_rk*EAC_kdn-(1+EAC_tauwf)*EAC_w*EAC_ndn;
-// Tradable sector dividends
+
 EAC_dt = EAC_pht*EAC_ht
 +EAC_pex*EAC_ex
 -EAC_rk*EAC_kdt-(1+EAC_tauwf)*EAC_w*EAC_ndt;
-// Optimal price contract set in domestic markets (FOC)
+
 EAC_phttilde/EAC_pht = EAC_thetat/(EAC_thetat-1)*EAC_fh/EAC_gh;
-// Definition of fh
+
 EAC_fh = EAC_mct*EAC_ht+EAC_xih*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAC_piht(+1)/(EAC_piht^EAC_chih*EAC_pi4target^(1/4*(1-EAC_chih))))^EAC_thetat*EAC_fh(+1);
-// Definition of gh
+
 EAC_gh = EAC_pht*EAC_ht+EAC_xih*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAC_piht(+1)/(EAC_piht^EAC_chih*EAC_pi4target^(1/4*(1-EAC_chih))))^(EAC_thetat-1)*EAC_gh(+1);
-// Aggregate intermediate-good price dynamics
+
 EAC_pht^(1-EAC_thetat) = (1-EAC_xih)*EAC_phttilde^(1-EAC_thetat)+EAC_xih*(EAC_pht(-1)/EAC_pic)^(1-EAC_thetat)*(EAC_piht(-1)^EAC_chih*EAC_pi4target^(1/4*(1-EAC_chih)))^(1-EAC_thetat);
-// Intermediate-good price inflation
+
 EAC_piht = EAC_pht/EAC_pht(-1)*EAC_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAC_pnttilde/EAC_pnt = EAC_thetan/(EAC_thetan-1)*EAC_fn/EAC_gn;
-// Definition of fn
+
 EAC_fn = EAC_mcn*EAC_nt+EAC_xin*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAC_pint(+1)/(EAC_pint^EAC_chin*EAC_pi4target^(1/4*(1-EAC_chin))))^EAC_thetan*EAC_fn(+1);
-// Definition of gn
+
 EAC_gn = EAC_pnt*EAC_nt+EAC_xin*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAC_pint(+1)/(EAC_pint^EAC_chin*EAC_pi4target^(1/4*(1-EAC_chin))))^(EAC_thetan-1)*EAC_gn(+1);
-// Aggregate intermediate-good price dynamics
+
 EAC_pnt^(1-EAC_thetan) = (1-EAC_xin)*EAC_pnttilde^(1-EAC_thetan)+EAC_xin*(EAC_pnt(-1)/EAC_pic)^(1-EAC_thetan)*(EAC_pint(-1)^EAC_chin*EAC_pi4target^(1/4*(1-EAC_chin)))^(1-EAC_thetan);
-// Intermediate-good price inflation
+
 EAC_pint = EAC_pnt/EAC_pnt(-1)*EAC_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAC_pextilde/EAC_pex = EAC_thetat/(EAC_thetat-1)*EAC_fx/EAC_gx;
-// Definition of fh
+
 EAC_fx = EAC_mct*EAC_ex+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAC_piex(+1)/(EAC_piex^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^EAC_thetat*EAC_fx(+1);
-// Definition of gh
+
 EAC_gx = EAC_pex*EAC_ex+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAC_piex(+1)/(EAC_piex^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^(EAC_thetat-1)*EAC_gx(+1);
-// Aggregate intermediate-good price dynamics
+
 EAC_pex^(1-EAC_thetat) = (1-EAC_xix)*EAC_pextilde^(1-EAC_thetat)+EAC_xix*(EAC_pex(-1)/EAC_pic)^(1-EAC_thetat)*(EAC_piex(-1)^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix)))^(1-EAC_thetat);
-// Intermediate-good price inflation
+
 EAC_piex = EAC_pex/EAC_pex(-1)*EAC_pic;
-//---------------
-// import pricing
-//---------------
-// Optimal price contract set in foreign markets (FOC), using EAC_pxtilde = EAA_pimtilde
-// EAAEAC_pimtilde/EAAEAC_pim = EAC_cpim*EAC_thetat/(EAC_thetat-1)*EACEAA_fx/EACEAA_gx;
-// Definition of fx
-// EACEAA_fx = EAA_size/EAC_size*EAAEAC_im*EAC_mct+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAAEAC_piim(+1)/(EAAEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^EAC_thetat*EACEAA_fx(+1);
-// Definition of gx   
-// EACEAA_gx = EACEAA_rer*EAAEAC_pim*EAA_size/EAC_size*EAAEAC_im+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAAEAC_piim(+1)/(EAAEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^(EAC_thetat-1)*EACEAA_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAC_px = EAA_pim
-// EAAEAC_pim^(1-EAC_thetat) = (1-EAC_xix)*EAAEAC_pimtilde^(1-EAC_thetat)+EAC_xix*(EAAEAC_pim(-1)/EAA_pic)^(1-EAC_thetat)*(EAAEAC_piim(-1)^EAC_chix*EAA_pi4target^(1/4*(1-EAC_chih)))^(1-EAC_thetat);
-// Intermediate-good price inflation, using EAC_pix = EAA_piim
-// EAAEAC_piim = EAAEAC_pim/EAAEAC_pim(-1)*EAA_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 EACEAA_rer = EAC_rer/EAA_rer;
-// Auxiliary equation for steady-state output
+
 EACEAA_rerbar = EACEAA_rer;
-//Terms of Trade
+
 EACEAA_tot = EAA_pex*EACEAA_rer/EAC_pex;
-// Optimal price contract set in foreign markets (FOC), using EAC_pxtilde = EAB_pimtilde
-// EABEAC_pimtilde/EABEAC_pim = EAC_cpim*EAC_thetat/(EAC_thetat-1)*EACEAB_fx/EACEAB_gx;
-// Definition of fx
-// EACEAB_fx = EAB_size/EAC_size*EABEAC_im*EAC_mct+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EABEAC_piim(+1)/(EABEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^EAC_thetat*EACEAB_fx(+1);
-// Definition of gx   
-// EACEAB_gx = EACEAB_rer*EABEAC_pim*EAB_size/EAC_size*EABEAC_im+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EABEAC_piim(+1)/(EABEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^(EAC_thetat-1)*EACEAB_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAC_px = EAB_pim
-// EABEAC_pim^(1-EAC_thetat) = (1-EAC_xix)*EABEAC_pimtilde^(1-EAC_thetat)+EAC_xix*(EABEAC_pim(-1)/EAB_pic)^(1-EAC_thetat)*(EABEAC_piim(-1)^EAC_chix*EAB_pi4target^(1/4*(1-EAC_chih)))^(1-EAC_thetat);
-// Intermediate-good price inflation, using EAC_pix = EAB_piim
-// EABEAC_piim = EABEAC_pim/EABEAC_pim(-1)*EAB_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EACEAB_rer = EAC_rer/EAB_rer;
-// Auxiliary equation for steady-state output
+
 EACEAB_rerbar = EACEAB_rer;
-//Terms of Trade
+
 EACEAB_tot = EAB_pex*EACEAB_rer/EAC_pex;
-// Optimal price contract set in foreign markets (FOC), using EAC_pxtilde = EAD_pimtilde
-// EADEAC_pimtilde/EADEAC_pim = EAC_cpim*EAC_thetat/(EAC_thetat-1)*EACEAD_fx/EACEAD_gx;
-// Definition of fx
-// EACEAD_fx = EAD_size/EAC_size*EADEAC_im*EAC_mct+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EADEAC_piim(+1)/(EADEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^EAC_thetat*EACEAD_fx(+1);
-// Definition of gx   
-// EACEAD_gx = EACEAD_rer*EADEAC_pim*EAD_size/EAC_size*EADEAC_im+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EADEAC_piim(+1)/(EADEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^(EAC_thetat-1)*EACEAD_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAC_px = EAD_pim
-// EADEAC_pim^(1-EAC_thetat) = (1-EAC_xix)*EADEAC_pimtilde^(1-EAC_thetat)+EAC_xix*(EADEAC_pim(-1)/EAD_pic)^(1-EAC_thetat)*(EADEAC_piim(-1)^EAC_chix*EAD_pi4target^(1/4*(1-EAC_chih)))^(1-EAC_thetat);
-// Intermediate-good price inflation, using EAC_pix = EAD_piim
-// EADEAC_piim = EADEAC_pim/EADEAC_pim(-1)*EAD_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EACEAD_rer = EAC_rer/EAD_rer;
-// Auxiliary equation for steady-state output
+
 EACEAD_rerbar = EACEAD_rer;
-//Terms of Trade
+
 EACEAD_tot = EAD_pex*EACEAD_rer/EAC_pex;
-// Optimal price contract set in foreign markets (FOC), using EAC_pxtilde = EAE_pimtilde
-// EAEEAC_pimtilde/EAEEAC_pim = EAC_cpim*EAC_thetat/(EAC_thetat-1)*EACEAE_fx/EACEAE_gx;
-// Definition of fx
-// EACEAE_fx = EAE_size/EAC_size*EAEEAC_im*EAC_mct+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAEEAC_piim(+1)/(EAEEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^EAC_thetat*EACEAE_fx(+1);
-// Definition of gx   
-// EACEAE_gx = EACEAE_rer*EAEEAC_pim*EAE_size/EAC_size*EAEEAC_im+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAEEAC_piim(+1)/(EAEEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^(EAC_thetat-1)*EACEAE_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAC_px = EAE_pim
-// EAEEAC_pim^(1-EAC_thetat) = (1-EAC_xix)*EAEEAC_pimtilde^(1-EAC_thetat)+EAC_xix*(EAEEAC_pim(-1)/EAE_pic)^(1-EAC_thetat)*(EAEEAC_piim(-1)^EAC_chix*EAE_pi4target^(1/4*(1-EAC_chih)))^(1-EAC_thetat);
-// Intermediate-good price inflation, using EAC_pix = EAE_piim
-// EAEEAC_piim = EAEEAC_pim/EAEEAC_pim(-1)*EAE_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EACEAE_rer = EAC_rer/EAE_rer;
-// Auxiliary equation for steady-state output
+
 EACEAE_rerbar = EACEAE_rer;
-//Terms of Trade
+
 EACEAE_tot = EAE_pex*EACEAE_rer/EAC_pex;
-// Optimal price contract set in foreign markets (FOC), using EAC_pxtilde = EAF_pimtilde
-// EAFEAC_pimtilde/EAFEAC_pim = EAC_cpim*EAC_thetat/(EAC_thetat-1)*EACEAF_fx/EACEAF_gx;
-// Definition of fx
-// EACEAF_fx = EAF_size/EAC_size*EAFEAC_im*EAC_mct+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAFEAC_piim(+1)/(EAFEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^EAC_thetat*EACEAF_fx(+1);
-// Definition of gx   
-// EACEAF_gx = EACEAF_rer*EAFEAC_pim*EAF_size/EAC_size*EAFEAC_im+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAFEAC_piim(+1)/(EAFEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^(EAC_thetat-1)*EACEAF_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAC_px = EAF_pim
-// EAFEAC_pim^(1-EAC_thetat) = (1-EAC_xix)*EAFEAC_pimtilde^(1-EAC_thetat)+EAC_xix*(EAFEAC_pim(-1)/EAF_pic)^(1-EAC_thetat)*(EAFEAC_piim(-1)^EAC_chix*EAF_pi4target^(1/4*(1-EAC_chih)))^(1-EAC_thetat);
-// Intermediate-good price inflation, using EAC_pix = EAF_piim
-// EAFEAC_piim = EAFEAC_pim/EAFEAC_pim(-1)*EAF_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EACEAF_rer = EAC_rer/EAF_rer;
-// Auxiliary equation for steady-state output
+
 EACEAF_rerbar = EACEAF_rer;
-//Terms of Trade
+
 EACEAF_tot = EAF_pex*EACEAF_rer/EAC_pex;
-// Optimal price contract set in foreign markets (FOC), using EAC_pxtilde = EAG_pimtilde
-// EAGEAC_pimtilde/EAGEAC_pim = EAC_cpim*EAC_thetat/(EAC_thetat-1)*EACEAG_fx/EACEAG_gx;
-// Definition of fx
-// EACEAG_fx = EAG_size/EAC_size*EAGEAC_im*EAC_mct+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAGEAC_piim(+1)/(EAGEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^EAC_thetat*EACEAG_fx(+1);
-// Definition of gx   
-// EACEAG_gx = EACEAG_rer*EAGEAC_pim*EAG_size/EAC_size*EAGEAC_im+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAGEAC_piim(+1)/(EAGEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^(EAC_thetat-1)*EACEAG_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAC_px = EAG_pim
-// EAGEAC_pim^(1-EAC_thetat) = (1-EAC_xix)*EAGEAC_pimtilde^(1-EAC_thetat)+EAC_xix*(EAGEAC_pim(-1)/EAG_pic)^(1-EAC_thetat)*(EAGEAC_piim(-1)^EAC_chix*EAG_pi4target^(1/4*(1-EAC_chih)))^(1-EAC_thetat);
-// Intermediate-good price inflation, using EAC_pix = EAG_piim
-// EAGEAC_piim = EAGEAC_pim/EAGEAC_pim(-1)*EAG_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EACEAG_rer = EAC_rer/EAG_rer;
-// Auxiliary equation for steady-state output
+
 EACEAG_rerbar = EACEAG_rer;
-//Terms of Trade
+
 EACEAG_tot = EAG_pex*EACEAG_rer/EAC_pex;
-// Optimal price contract set in foreign markets (FOC), using EAC_pxtilde = EAH_pimtilde
-// EAHEAC_pimtilde/EAHEAC_pim = EAC_cpim*EAC_thetat/(EAC_thetat-1)*EACEAH_fx/EACEAH_gx;
-// Definition of fx
-// EACEAH_fx = EAH_size/EAC_size*EAHEAC_im*EAC_mct+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAHEAC_piim(+1)/(EAHEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^EAC_thetat*EACEAH_fx(+1);
-// Definition of gx   
-// EACEAH_gx = EACEAH_rer*EAHEAC_pim*EAH_size/EAC_size*EAHEAC_im+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAHEAC_piim(+1)/(EAHEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^(EAC_thetat-1)*EACEAH_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAC_px = EAH_pim
-// EAHEAC_pim^(1-EAC_thetat) = (1-EAC_xix)*EAHEAC_pimtilde^(1-EAC_thetat)+EAC_xix*(EAHEAC_pim(-1)/EAH_pic)^(1-EAC_thetat)*(EAHEAC_piim(-1)^EAC_chix*EAH_pi4target^(1/4*(1-EAC_chih)))^(1-EAC_thetat);
-// Intermediate-good price inflation, using EAC_pix = EAH_piim
-// EAHEAC_piim = EAHEAC_pim/EAHEAC_pim(-1)*EAH_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EACEAH_rer = EAC_rer/EAH_rer;
-// Auxiliary equation for steady-state output
+
 EACEAH_rerbar = EACEAH_rer;
-//Terms of Trade
+
 EACEAH_tot = EAH_pex*EACEAH_rer/EAC_pex;
-// Optimal price contract set in foreign markets (FOC), using EAC_pxtilde = EAI_pimtilde
-// EAIEAC_pimtilde/EAIEAC_pim = EAC_cpim*EAC_thetat/(EAC_thetat-1)*EACEAI_fx/EACEAI_gx;
-// Definition of fx
-// EACEAI_fx = EAI_size/EAC_size*EAIEAC_im*EAC_mct+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAIEAC_piim(+1)/(EAIEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^EAC_thetat*EACEAI_fx(+1);
-// Definition of gx   
-// EACEAI_gx = EACEAI_rer*EAIEAC_pim*EAI_size/EAC_size*EAIEAC_im+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAIEAC_piim(+1)/(EAIEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^(EAC_thetat-1)*EACEAI_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAC_px = EAI_pim
-// EAIEAC_pim^(1-EAC_thetat) = (1-EAC_xix)*EAIEAC_pimtilde^(1-EAC_thetat)+EAC_xix*(EAIEAC_pim(-1)/EAI_pic)^(1-EAC_thetat)*(EAIEAC_piim(-1)^EAC_chix*EAI_pi4target^(1/4*(1-EAC_chih)))^(1-EAC_thetat);
-// Intermediate-good price inflation, using EAC_pix = EAI_piim
-// EAIEAC_piim = EAIEAC_pim/EAIEAC_pim(-1)*EAI_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EACEAI_rer = EAC_rer/EAI_rer;
-// Auxiliary equation for steady-state output
+
 EACEAI_rerbar = EACEAI_rer;
-//Terms of Trade
+
 EACEAI_tot = EAI_pex*EACEAI_rer/EAC_pex;
-// Optimal price contract set in foreign markets (FOC), using EAC_pxtilde = EAJ_pimtilde
-// EAJEAC_pimtilde/EAJEAC_pim = EAC_cpim*EAC_thetat/(EAC_thetat-1)*EACEAJ_fx/EACEAJ_gx;
-// Definition of fx
-// EACEAJ_fx = EAJ_size/EAC_size*EAJEAC_im*EAC_mct+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAJEAC_piim(+1)/(EAJEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^EAC_thetat*EACEAJ_fx(+1);
-// Definition of gx   
-// EACEAJ_gx = EACEAJ_rer*EAJEAC_pim*EAJ_size/EAC_size*EAJEAC_im+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAJEAC_piim(+1)/(EAJEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^(EAC_thetat-1)*EACEAJ_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAC_px = EAJ_pim
-// EAJEAC_pim^(1-EAC_thetat) = (1-EAC_xix)*EAJEAC_pimtilde^(1-EAC_thetat)+EAC_xix*(EAJEAC_pim(-1)/EAJ_pic)^(1-EAC_thetat)*(EAJEAC_piim(-1)^EAC_chix*EAJ_pi4target^(1/4*(1-EAC_chih)))^(1-EAC_thetat);
-// Intermediate-good price inflation, using EAC_pix = EAJ_piim
-// EAJEAC_piim = EAJEAC_pim/EAJEAC_pim(-1)*EAJ_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EACEAJ_rer = EAC_rer/EAJ_rer;
-// Auxiliary equation for steady-state output
+
 EACEAJ_rerbar = EACEAJ_rer;
-//Terms of Trade
+
 EACEAJ_tot = EAJ_pex*EACEAJ_rer/EAC_pex;
-// Optimal price contract set in foreign markets (FOC), using EAC_pxtilde = EAK_pimtilde
-// EAKEAC_pimtilde/EAKEAC_pim = EAC_cpim*EAC_thetat/(EAC_thetat-1)*EACEAK_fx/EACEAK_gx;
-// Definition of fx
-// EACEAK_fx = EAK_size/EAC_size*EAKEAC_im*EAC_mct+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAKEAC_piim(+1)/(EAKEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^EAC_thetat*EACEAK_fx(+1);
-// Definition of gx   
-// EACEAK_gx = EACEAK_rer*EAKEAC_pim*EAK_size/EAC_size*EAKEAC_im+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EAKEAC_piim(+1)/(EAKEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^(EAC_thetat-1)*EACEAK_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAC_px = EAK_pim
-// EAKEAC_pim^(1-EAC_thetat) = (1-EAC_xix)*EAKEAC_pimtilde^(1-EAC_thetat)+EAC_xix*(EAKEAC_pim(-1)/EAK_pic)^(1-EAC_thetat)*(EAKEAC_piim(-1)^EAC_chix*EAK_pi4target^(1/4*(1-EAC_chih)))^(1-EAC_thetat);
-// Intermediate-good price inflation, using EAC_pix = EAK_piim
-// EAKEAC_piim = EAKEAC_pim/EAKEAC_pim(-1)*EAK_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EACEAK_rer = EAC_rer/EAK_rer;
-// Auxiliary equation for steady-state output
+
 EACEAK_rerbar = EACEAK_rer;
-//Terms of Trade
+
 EACEAK_tot = EAK_pex*EACEAK_rer/EAC_pex;
-// Optimal price contract set in foreign markets (FOC), using EAC_pxtilde = EAL_pimtilde
-// EALEAC_pimtilde/EALEAC_pim = EAC_cpim*EAC_thetat/(EAC_thetat-1)*EACEAL_fx/EACEAL_gx;
-// Definition of fx
-// EACEAL_fx = EAL_size/EAC_size*EALEAC_im*EAC_mct+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EALEAC_piim(+1)/(EALEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^EAC_thetat*EACEAL_fx(+1);
-// Definition of gx   
-// EACEAL_gx = EACEAL_rer*EALEAC_pim*EAL_size/EAC_size*EALEAC_im+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(EALEAC_piim(+1)/(EALEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^(EAC_thetat-1)*EACEAL_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAC_px = EAL_pim
-// EALEAC_pim^(1-EAC_thetat) = (1-EAC_xix)*EALEAC_pimtilde^(1-EAC_thetat)+EAC_xix*(EALEAC_pim(-1)/EAL_pic)^(1-EAC_thetat)*(EALEAC_piim(-1)^EAC_chix*EAL_pi4target^(1/4*(1-EAC_chih)))^(1-EAC_thetat);
-// Intermediate-good price inflation, using EAC_pix = EAL_piim
-// EALEAC_piim = EALEAC_pim/EALEAC_pim(-1)*EAL_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EACEAL_rer = EAC_rer/EAL_rer;
-// Auxiliary equation for steady-state output
+
 EACEAL_rerbar = EACEAL_rer;
-//Terms of Trade
+
 EACEAL_tot = EAL_pex*EACEAL_rer/EAC_pex;
-// Optimal price contract set in foreign markets (FOC), using EAC_pxtilde = RW_pimtilde
-// RWEAC_pimtilde/RWEAC_pim = EAC_cpim*EAC_thetat/(EAC_thetat-1)*EACRW_fx/EACRW_gx;
-// Definition of fx
-// EACRW_fx = RW_size/EAC_size*RWEAC_im*EAC_mct+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(RWEAC_piim(+1)/(RWEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^EAC_thetat*EACRW_fx(+1);
-// Definition of gx   
-// EACRW_gx = EACRW_rer*RWEAC_pim*RW_size/EAC_size*RWEAC_im+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(RWEAC_piim(+1)/(RWEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^(EAC_thetat-1)*EACRW_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAC_px = RW_pim
-// RWEAC_pim^(1-EAC_thetat) = (1-EAC_xix)*RWEAC_pimtilde^(1-EAC_thetat)+EAC_xix*(RWEAC_pim(-1)/RW_pic)^(1-EAC_thetat)*(RWEAC_piim(-1)^EAC_chix*RW_pi4target^(1/4*(1-EAC_chih)))^(1-EAC_thetat);
-// Intermediate-good price inflation, using EAC_pix = RW_piim
-// RWEAC_piim = RWEAC_pim/RWEAC_pim(-1)*RW_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EACRW_rer = EAC_rer/RW_rer;
-// Auxiliary equation for steady-state output
+
 EACRW_rerbar = EACRW_rer;
-//Terms of Trade
+
 EACRW_tot = RW_pex*EACRW_rer/EAC_pex;
-// Optimal price contract set in foreign markets (FOC), using EAC_pxtilde = US_pimtilde
-// USEAC_pimtilde/USEAC_pim = EAC_cpim*EAC_thetat/(EAC_thetat-1)*EACUS_fx/EACUS_gx;
-// Definition of fx
-// EACUS_fx = US_size/EAC_size*USEAC_im*EAC_mct+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(USEAC_piim(+1)/(USEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^EAC_thetat*EACUS_fx(+1);
-// Definition of gx   
-// EACUS_gx = EACUS_rer*USEAC_pim*US_size/EAC_size*USEAC_im+EAC_xix*EAC_beta*EAC_lambdai(+1)/EAC_lambdai*(USEAC_piim(+1)/(USEAC_piim^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^(EAC_thetat-1)*EACUS_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAC_px = US_pim
-// USEAC_pim^(1-EAC_thetat) = (1-EAC_xix)*USEAC_pimtilde^(1-EAC_thetat)+EAC_xix*(USEAC_pim(-1)/US_pic)^(1-EAC_thetat)*(USEAC_piim(-1)^EAC_chix*US_pi4target^(1/4*(1-EAC_chih)))^(1-EAC_thetat);
-// Intermediate-good price inflation, using EAC_pix = US_piim
-// USEAC_piim = USEAC_pim/USEAC_pim(-1)*US_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EACUS_rer = EAC_rer/US_rer;
-// Auxiliary equation for steady-state output
+
 EACUS_rerbar = EACUS_rer;
-//Terms of Trade
+
 EACUS_tot = US_pex*EACUS_rer/EAC_pex;
-// Total imports 
+
 EAC_im = 
 +EAC_imc
 +EAC_imi
 +EAC_imcg
 +EAC_imig
 ;
-// Total import deflator
+
 EAC_im*EAC_pim  = 
 +EAC_pimc*EAC_imc
 +EAC_pimi*EAC_imi
 +EAC_pimcg*EAC_imcg
 +EAC_pimig*EAC_imig
 ;
-// Effective real exchange rate: double weighting (imports)
+
 EACEAA_weightim = EACEAA_rer*EAA_pex*EACEAA_im/(EAC_pim*EAC_im);
-// Effective real exchange rate: double weighting (exports)
+
 EACEAA_weightex = EAA_size/EAC_size*EAAEAC_im/EAC_ex*EACEAA_rer*EAA_py*EAA_y/(EACEAA_rer*EAA_py*EAA_y
 +EACEAB_rer*EAB_pex*EAAEAB_im
 +EACEAD_rer*EAD_pex*EAAEAD_im
@@ -8915,11 +8915,11 @@ EACEAA_weightex = EAA_size/EAC_size*EAAEAC_im/EAC_ex*EACEAA_rer*EAA_py*EAA_y/(EA
 +EACRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EACEAA_weight = EAC_pim*EAC_im/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAA_weightim+EAC_pex*EAC_ex/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAA_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EACEAB_weightim = EACEAB_rer*EAB_pex*EACEAB_im/(EAC_pim*EAC_im);
-// Effective real exchange rate: double weighting (exports)
+
 EACEAB_weightex = EAB_size/EAC_size*EABEAC_im/EAC_ex*EACEAB_rer*EAB_py*EAB_y/(EACEAB_rer*EAB_py*EAB_y
 +EACEAA_rer*EAA_pex*EABEAA_im
 +EACEAD_rer*EAD_pex*EABEAD_im
@@ -9103,11 +9103,11 @@ EACEAB_weightex = EAB_size/EAC_size*EABEAC_im/EAC_ex*EACEAB_rer*EAB_py*EAB_y/(EA
 +EACRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EACEAB_weight = EAC_pim*EAC_im/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAB_weightim+EAC_pex*EAC_ex/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAB_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EACEAD_weightim = EACEAD_rer*EAD_pex*EACEAD_im/(EAC_pim*EAC_im);
-// Effective real exchange rate: double weighting (exports)
+
 EACEAD_weightex = EAD_size/EAC_size*EADEAC_im/EAC_ex*EACEAD_rer*EAD_py*EAD_y/(EACEAD_rer*EAD_py*EAD_y
 +EACEAA_rer*EAA_pex*EADEAA_im
 +EACEAB_rer*EAB_pex*EADEAB_im
@@ -9291,11 +9291,11 @@ EACEAD_weightex = EAD_size/EAC_size*EADEAC_im/EAC_ex*EACEAD_rer*EAD_py*EAD_y/(EA
 +EACRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EACEAD_weight = EAC_pim*EAC_im/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAD_weightim+EAC_pex*EAC_ex/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAD_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EACEAE_weightim = EACEAE_rer*EAE_pex*EACEAE_im/(EAC_pim*EAC_im);
-// Effective real exchange rate: double weighting (exports)
+
 EACEAE_weightex = EAE_size/EAC_size*EAEEAC_im/EAC_ex*EACEAE_rer*EAE_py*EAE_y/(EACEAE_rer*EAE_py*EAE_y
 +EACEAA_rer*EAA_pex*EAEEAA_im
 +EACEAB_rer*EAB_pex*EAEEAB_im
@@ -9479,11 +9479,11 @@ EACEAE_weightex = EAE_size/EAC_size*EAEEAC_im/EAC_ex*EACEAE_rer*EAE_py*EAE_y/(EA
 +EACRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EACEAE_weight = EAC_pim*EAC_im/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAE_weightim+EAC_pex*EAC_ex/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAE_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EACEAF_weightim = EACEAF_rer*EAF_pex*EACEAF_im/(EAC_pim*EAC_im);
-// Effective real exchange rate: double weighting (exports)
+
 EACEAF_weightex = EAF_size/EAC_size*EAFEAC_im/EAC_ex*EACEAF_rer*EAF_py*EAF_y/(EACEAF_rer*EAF_py*EAF_y
 +EACEAA_rer*EAA_pex*EAFEAA_im
 +EACEAB_rer*EAB_pex*EAFEAB_im
@@ -9667,11 +9667,11 @@ EACEAF_weightex = EAF_size/EAC_size*EAFEAC_im/EAC_ex*EACEAF_rer*EAF_py*EAF_y/(EA
 +EACRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EACEAF_weight = EAC_pim*EAC_im/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAF_weightim+EAC_pex*EAC_ex/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAF_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EACEAG_weightim = EACEAG_rer*EAG_pex*EACEAG_im/(EAC_pim*EAC_im);
-// Effective real exchange rate: double weighting (exports)
+
 EACEAG_weightex = EAG_size/EAC_size*EAGEAC_im/EAC_ex*EACEAG_rer*EAG_py*EAG_y/(EACEAG_rer*EAG_py*EAG_y
 +EACEAA_rer*EAA_pex*EAGEAA_im
 +EACEAB_rer*EAB_pex*EAGEAB_im
@@ -9855,11 +9855,11 @@ EACEAG_weightex = EAG_size/EAC_size*EAGEAC_im/EAC_ex*EACEAG_rer*EAG_py*EAG_y/(EA
 +EACRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EACEAG_weight = EAC_pim*EAC_im/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAG_weightim+EAC_pex*EAC_ex/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAG_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EACEAH_weightim = EACEAH_rer*EAH_pex*EACEAH_im/(EAC_pim*EAC_im);
-// Effective real exchange rate: double weighting (exports)
+
 EACEAH_weightex = EAH_size/EAC_size*EAHEAC_im/EAC_ex*EACEAH_rer*EAH_py*EAH_y/(EACEAH_rer*EAH_py*EAH_y
 +EACEAA_rer*EAA_pex*EAHEAA_im
 +EACEAB_rer*EAB_pex*EAHEAB_im
@@ -10043,11 +10043,11 @@ EACEAH_weightex = EAH_size/EAC_size*EAHEAC_im/EAC_ex*EACEAH_rer*EAH_py*EAH_y/(EA
 +EACRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EACEAH_weight = EAC_pim*EAC_im/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAH_weightim+EAC_pex*EAC_ex/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAH_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EACEAI_weightim = EACEAI_rer*EAI_pex*EACEAI_im/(EAC_pim*EAC_im);
-// Effective real exchange rate: double weighting (exports)
+
 EACEAI_weightex = EAI_size/EAC_size*EAIEAC_im/EAC_ex*EACEAI_rer*EAI_py*EAI_y/(EACEAI_rer*EAI_py*EAI_y
 +EACEAA_rer*EAA_pex*EAIEAA_im
 +EACEAB_rer*EAB_pex*EAIEAB_im
@@ -10231,11 +10231,11 @@ EACEAI_weightex = EAI_size/EAC_size*EAIEAC_im/EAC_ex*EACEAI_rer*EAI_py*EAI_y/(EA
 +EACRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EACEAI_weight = EAC_pim*EAC_im/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAI_weightim+EAC_pex*EAC_ex/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAI_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EACEAJ_weightim = EACEAJ_rer*EAJ_pex*EACEAJ_im/(EAC_pim*EAC_im);
-// Effective real exchange rate: double weighting (exports)
+
 EACEAJ_weightex = EAJ_size/EAC_size*EAJEAC_im/EAC_ex*EACEAJ_rer*EAJ_py*EAJ_y/(EACEAJ_rer*EAJ_py*EAJ_y
 +EACEAA_rer*EAA_pex*EAJEAA_im
 +EACEAB_rer*EAB_pex*EAJEAB_im
@@ -10419,11 +10419,11 @@ EACEAJ_weightex = EAJ_size/EAC_size*EAJEAC_im/EAC_ex*EACEAJ_rer*EAJ_py*EAJ_y/(EA
 +EACRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EACEAJ_weight = EAC_pim*EAC_im/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAJ_weightim+EAC_pex*EAC_ex/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAJ_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EACEAK_weightim = EACEAK_rer*EAK_pex*EACEAK_im/(EAC_pim*EAC_im);
-// Effective real exchange rate: double weighting (exports)
+
 EACEAK_weightex = EAK_size/EAC_size*EAKEAC_im/EAC_ex*EACEAK_rer*EAK_py*EAK_y/(EACEAK_rer*EAK_py*EAK_y
 +EACEAA_rer*EAA_pex*EAKEAA_im
 +EACEAB_rer*EAB_pex*EAKEAB_im
@@ -10607,11 +10607,11 @@ EACEAK_weightex = EAK_size/EAC_size*EAKEAC_im/EAC_ex*EACEAK_rer*EAK_py*EAK_y/(EA
 +EACRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EACEAK_weight = EAC_pim*EAC_im/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAK_weightim+EAC_pex*EAC_ex/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAK_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EACEAL_weightim = EACEAL_rer*EAL_pex*EACEAL_im/(EAC_pim*EAC_im);
-// Effective real exchange rate: double weighting (exports)
+
 EACEAL_weightex = EAL_size/EAC_size*EALEAC_im/EAC_ex*EACEAL_rer*EAL_py*EAL_y/(EACEAL_rer*EAL_py*EAL_y
 +EACEAA_rer*EAA_pex*EALEAA_im
 +EACEAB_rer*EAB_pex*EALEAB_im
@@ -10795,11 +10795,11 @@ EACEAL_weightex = EAL_size/EAC_size*EALEAC_im/EAC_ex*EACEAL_rer*EAL_py*EAL_y/(EA
 +EACRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EACEAL_weight = EAC_pim*EAC_im/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAL_weightim+EAC_pex*EAC_ex/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACEAL_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EACRW_weightim = EACRW_rer*RW_pex*EACRW_im/(EAC_pim*EAC_im);
-// Effective real exchange rate: double weighting (exports)
+
 EACRW_weightex = RW_size/EAC_size*RWEAC_im/EAC_ex*EACRW_rer*RW_py*RW_y/(EACRW_rer*RW_py*RW_y
 +EACEAA_rer*EAA_pex*RWEAA_im
 +EACEAB_rer*EAB_pex*RWEAB_im
@@ -10983,11 +10983,11 @@ EACRW_weightex = RW_size/EAC_size*RWEAC_im/EAC_ex*EACRW_rer*RW_py*RW_y/(EACRW_re
 +EACRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EACRW_weight = EAC_pim*EAC_im/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACRW_weightim+EAC_pex*EAC_ex/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACRW_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EACUS_weightim = EACUS_rer*US_pex*EACUS_im/(EAC_pim*EAC_im);
-// Effective real exchange rate: double weighting (exports)
+
 EACUS_weightex = US_size/EAC_size*USEAC_im/EAC_ex*EACUS_rer*US_py*US_y/(EACUS_rer*US_py*US_y
 +EACEAA_rer*EAA_pex*USEAA_im
 +EACEAB_rer*EAB_pex*USEAB_im
@@ -11171,9 +11171,9 @@ EACUS_weightex = US_size/EAC_size*USEAC_im/EAC_ex*EACUS_rer*US_py*US_y/(EACUS_re
 +EACUS_rer*US_pex*RWUS_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EACUS_weight = EAC_pim*EAC_im/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACUS_weightim+EAC_pex*EAC_ex/(EAC_pim*EAC_im+EAC_pex*EAC_ex)*EACUS_weightex;
-// Effective real exchange rate
+
 EAC_reer = 1
 *EACEAA_rer^EACEAA_weight
 *EACEAB_rer^EACEAB_weight
@@ -11189,7 +11189,7 @@ EAC_reer = 1
 *EACRW_rer^EACRW_weight
 *EACUS_rer^EACUS_weight
 ;
-// Effective terms of trade
+
 EAC_etot = 1
 *EACEAA_tot^EACEAA_weight
 *EACEAB_tot^EACEAB_weight
@@ -11205,10 +11205,10 @@ EAC_etot = 1
 *EACRW_tot^EACRW_weight
 *EACUS_tot^EACUS_weight
 ;
-//-----------------
-// Final-good firms
-//-----------------
-// Private consumption good (import)
+
+
+
+
 EAC_imc^((EAC_mumc-1)/EAC_mumc) =
 +EACEAB_numc ^(1/EAC_mumc)*EACEAB_imc^(1-1/EAC_mumc)
 +EACEAD_numc ^(1/EAC_mumc)*EACEAD_imc^(1-1/EAC_mumc)
@@ -11236,27 +11236,27 @@ EAC_imc^((EAC_mumc-1)/EAC_mumc) =
 -EACRW_numc
 -EACUS_numc
 )^(1/EAC_mumc)*EACEAA_imc^(1-1/EAC_mumc);
-// Demand for bilateral consumption import goods
+
 EACEAB_imc = EACEAB_numc*((EAB_pex*EACEAB_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
-// Demand for bilateral consumption import goods
+
 EACEAE_imc = EACEAE_numc*((EAE_pex*EACEAE_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
-// Demand for bilateral consumption import goods
+
 EACEAF_imc = EACEAF_numc*((EAF_pex*EACEAF_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
-// Demand for bilateral consumption import goods
+
 EACEAG_imc = EACEAG_numc*((EAG_pex*EACEAG_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
-// Demand for bilateral consumption import goods
+
 EACEAH_imc = EACEAH_numc*((EAH_pex*EACEAH_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
-// Demand for bilateral consumption import goods
+
 EACEAI_imc = EACEAI_numc*((EAI_pex*EACEAI_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
-// Demand for bilateral consumption import goods
+
 EACEAJ_imc = EACEAJ_numc*((EAJ_pex*EACEAJ_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
-// Demand for bilateral consumption import goods
+
 EACEAK_imc = EACEAK_numc*((EAK_pex*EACEAK_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
-// Demand for bilateral consumption import goods
+
 EACEAL_imc = EACEAL_numc*((EAL_pex*EACEAL_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
-// Demand for bilateral consumption import goods
+
 EACRW_imc = EACRW_numc*((RW_pex*EACRW_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
-// Demand for bilateral consumption import goods
+
 EACUS_imc = EACUS_numc*((US_pex*EACUS_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
 EACEAA_imc = (1
 -EACEAB_numc
@@ -11272,7 +11272,7 @@ EACEAA_imc = (1
 -EACRW_numc
 -EACUS_numc
 )*((EAA_pex*EACEAA_rer)/EAC_pimc)^(-EAC_mumc)*EAC_imc;
-// Price of the consumption good (import)
+
 EAC_pimc^(1-EAC_mumc) =
 +EACEAB_numc * (EAB_pex*EACEAB_rer)^(1-EAC_mumc)
 +EACEAD_numc * (EAD_pex*EACEAD_rer)^(1-EAC_mumc)
@@ -11300,9 +11300,9 @@ EAC_pimc^(1-EAC_mumc) =
 -EACRW_numc
 -EACUS_numc
 )*(EAA_pex*EACEAA_rer)^(1-EAC_mumc);
-// Private consumption good (import) inflation
+
 EAC_piimc = EAC_pimc/EAC_pimc(-1)*EAC_pic;
-// Private consumption good (import)
+
 EAC_imi^((EAC_mumi-1)/EAC_mumi) =
 +EACEAB_numi ^(1/EAC_mumi)*EACEAB_imi^(1-1/EAC_mumi)
 +EACEAD_numi ^(1/EAC_mumi)*EACEAD_imi^(1-1/EAC_mumi)
@@ -11330,27 +11330,27 @@ EAC_imi^((EAC_mumi-1)/EAC_mumi) =
 -EACRW_numi
 -EACUS_numi
 )^(1/EAC_mumi)*EACEAA_imi^(1-1/EAC_mumi);
-// Demand for bilateral consumption import goods
+
 EACEAB_imi = EACEAB_numi*((EAB_pex*EACEAB_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
-// Demand for bilateral consumption import goods
+
 EACEAE_imi = EACEAE_numi*((EAE_pex*EACEAE_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
-// Demand for bilateral consumption import goods
+
 EACEAF_imi = EACEAF_numi*((EAF_pex*EACEAF_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
-// Demand for bilateral consumption import goods
+
 EACEAG_imi = EACEAG_numi*((EAG_pex*EACEAG_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
-// Demand for bilateral consumption import goods
+
 EACEAH_imi = EACEAH_numi*((EAH_pex*EACEAH_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
-// Demand for bilateral consumption import goods
+
 EACEAI_imi = EACEAI_numi*((EAI_pex*EACEAI_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
-// Demand for bilateral consumption import goods
+
 EACEAJ_imi = EACEAJ_numi*((EAJ_pex*EACEAJ_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
-// Demand for bilateral consumption import goods
+
 EACEAK_imi = EACEAK_numi*((EAK_pex*EACEAK_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
-// Demand for bilateral consumption import goods
+
 EACEAL_imi = EACEAL_numi*((EAL_pex*EACEAL_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
-// Demand for bilateral consumption import goods
+
 EACRW_imi = EACRW_numi*((RW_pex*EACRW_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
-// Demand for bilateral consumption import goods
+
 EACUS_imi = EACUS_numi*((US_pex*EACUS_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
 EACEAA_imi = (1
 -EACEAB_numi
@@ -11366,7 +11366,7 @@ EACEAA_imi = (1
 -EACRW_numi
 -EACUS_numi
 )*((EAA_pex*EACEAA_rer)/EAC_pimi)^(-EAC_mumi)*EAC_imi;
-// Price of the consumption good (import)
+
 EAC_pimi^(1-EAC_mumi) =
 +EACEAB_numi * (EAB_pex*EACEAB_rer)^(1-EAC_mumi)
 +EACEAD_numi * (EAD_pex*EACEAD_rer)^(1-EAC_mumi)
@@ -11394,9 +11394,9 @@ EAC_pimi^(1-EAC_mumi) =
 -EACRW_numi
 -EACUS_numi
 )*(EAA_pex*EACEAA_rer)^(1-EAC_mumi);
-// Private consumption good (import) inflation
+
 EAC_piimi = EAC_pimi/EAC_pimi(-1)*EAC_pic;
-// Private consumption good (import)
+
 EAC_imcg^((EAC_mumcg-1)/EAC_mumcg) =
 +EACEAB_numcg ^(1/EAC_mumcg)*EACEAB_imcg^(1-1/EAC_mumcg)
 +EACEAD_numcg ^(1/EAC_mumcg)*EACEAD_imcg^(1-1/EAC_mumcg)
@@ -11424,27 +11424,27 @@ EAC_imcg^((EAC_mumcg-1)/EAC_mumcg) =
 -EACRW_numcg
 -EACUS_numcg
 )^(1/EAC_mumcg)*EACEAA_imcg^(1-1/EAC_mumcg);
-// Demand for bilateral consumption import goods
+
 EACEAB_imcg = EACEAB_numcg*((EAB_pex*EACEAB_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
-// Demand for bilateral consumption import goods
+
 EACEAE_imcg = EACEAE_numcg*((EAE_pex*EACEAE_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
-// Demand for bilateral consumption import goods
+
 EACEAF_imcg = EACEAF_numcg*((EAF_pex*EACEAF_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
-// Demand for bilateral consumption import goods
+
 EACEAG_imcg = EACEAG_numcg*((EAG_pex*EACEAG_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
-// Demand for bilateral consumption import goods
+
 EACEAH_imcg = EACEAH_numcg*((EAH_pex*EACEAH_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
-// Demand for bilateral consumption import goods
+
 EACEAI_imcg = EACEAI_numcg*((EAI_pex*EACEAI_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
-// Demand for bilateral consumption import goods
+
 EACEAJ_imcg = EACEAJ_numcg*((EAJ_pex*EACEAJ_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
-// Demand for bilateral consumption import goods
+
 EACEAK_imcg = EACEAK_numcg*((EAK_pex*EACEAK_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
-// Demand for bilateral consumption import goods
+
 EACEAL_imcg = EACEAL_numcg*((EAL_pex*EACEAL_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
-// Demand for bilateral consumption import goods
+
 EACRW_imcg = EACRW_numcg*((RW_pex*EACRW_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
-// Demand for bilateral consumption import goods
+
 EACUS_imcg = EACUS_numcg*((US_pex*EACUS_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
 EACEAA_imcg = (1
 -EACEAB_numcg
@@ -11460,7 +11460,7 @@ EACEAA_imcg = (1
 -EACRW_numcg
 -EACUS_numcg
 )*((EAA_pex*EACEAA_rer)/EAC_pimcg)^(-EAC_mumcg)*EAC_imcg;
-// Price of the consumption good (import)
+
 EAC_pimcg^(1-EAC_mumcg) =
 +EACEAB_numcg * (EAB_pex*EACEAB_rer)^(1-EAC_mumcg)
 +EACEAD_numcg * (EAD_pex*EACEAD_rer)^(1-EAC_mumcg)
@@ -11488,9 +11488,9 @@ EAC_pimcg^(1-EAC_mumcg) =
 -EACRW_numcg
 -EACUS_numcg
 )*(EAA_pex*EACEAA_rer)^(1-EAC_mumcg);
-// Private consumption good (import) inflation
+
 EAC_piimcg = EAC_pimcg/EAC_pimcg(-1)*EAC_pic;
-// Private consumption good (import)
+
 EAC_imig^((EAC_mumig-1)/EAC_mumig) =
 +EACEAB_numig ^(1/EAC_mumig)*EACEAB_imig^(1-1/EAC_mumig)
 +EACEAD_numig ^(1/EAC_mumig)*EACEAD_imig^(1-1/EAC_mumig)
@@ -11518,27 +11518,27 @@ EAC_imig^((EAC_mumig-1)/EAC_mumig) =
 -EACRW_numig
 -EACUS_numig
 )^(1/EAC_mumig)*EACEAA_imig^(1-1/EAC_mumig);
-// Demand for bilateral consumption import goods
+
 EACEAB_imig = EACEAB_numig*((EAB_pex*EACEAB_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
-// Demand for bilateral consumption import goods
+
 EACEAE_imig = EACEAE_numig*((EAE_pex*EACEAE_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
-// Demand for bilateral consumption import goods
+
 EACEAF_imig = EACEAF_numig*((EAF_pex*EACEAF_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
-// Demand for bilateral consumption import goods
+
 EACEAG_imig = EACEAG_numig*((EAG_pex*EACEAG_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
-// Demand for bilateral consumption import goods
+
 EACEAH_imig = EACEAH_numig*((EAH_pex*EACEAH_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
-// Demand for bilateral consumption import goods
+
 EACEAI_imig = EACEAI_numig*((EAI_pex*EACEAI_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
-// Demand for bilateral consumption import goods
+
 EACEAJ_imig = EACEAJ_numig*((EAJ_pex*EACEAJ_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
-// Demand for bilateral consumption import goods
+
 EACEAK_imig = EACEAK_numig*((EAK_pex*EACEAK_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
-// Demand for bilateral consumption import goods
+
 EACEAL_imig = EACEAL_numig*((EAL_pex*EACEAL_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
-// Demand for bilateral consumption import goods
+
 EACRW_imig = EACRW_numig*((RW_pex*EACRW_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
-// Demand for bilateral consumption import goods
+
 EACUS_imig = EACUS_numig*((US_pex*EACUS_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
 EACEAA_imig = (1
 -EACEAB_numig
@@ -11554,7 +11554,7 @@ EACEAA_imig = (1
 -EACRW_numig
 -EACUS_numig
 )*((EAA_pex*EACEAA_rer)/EAC_pimig)^(-EAC_mumig)*EAC_imig;
-// Price of the consumption good (import)
+
 EAC_pimig^(1-EAC_mumig) =
 +EACEAB_numig * (EAB_pex*EACEAB_rer)^(1-EAC_mumig)
 +EACEAD_numig * (EAD_pex*EACEAD_rer)^(1-EAC_mumig)
@@ -11582,15 +11582,15 @@ EAC_pimig^(1-EAC_mumig) =
 -EACRW_numig
 -EACUS_numig
 )*(EAA_pex*EACEAA_rer)^(1-EAC_mumig);
-// Private consumption good (import) inflation
+
 EAC_piimig = EAC_pimig/EAC_pimig(-1)*EAC_pic;
-// Private consumption good (import) inflation
+
 EAC_piimc4 = EAC_pimc/EAC_pimc(-4)*EAC_pic4;
-// Private consumption good (import) inflation
+
 EAC_piex4 = EAC_pex/EAC_pex(-4)*EAC_pic4;
-// Wedge between aggregate demand and production, using EAC_x = EAD_size/EAC_size*EAD_im
+
 EAC_yst = EAC_sh*EAC_ht+EAC_sx*EAC_ex;
-// Aggregate demand for bilateral imported intermediate goods
+
 EACEAA_im = 
 +EACEAA_imc
 +EACEAA_imi
@@ -11669,18 +11669,18 @@ EACUS_im =
 +EACUS_imcg
 +EACUS_imig
 ;
-// Private consumption good firm
-// Private consumption good (tradable)
+
+
 EAC_ttc^((EAC_mutc-1)/EAC_mutc) = (EAC_nutc)^(1/EAC_mutc)*EAC_htc^(1-1/EAC_mutc)+(1-EAC_nutc)^(1/EAC_mutc)*EAC_imc^(1-1/EAC_mutc);
-// Private consumption good  (total)
+
 EAC_qc^((EAC_muc-1)/EAC_muc) = (EAC_nuc)^(1/EAC_muc)*EAC_ttc^(1-1/EAC_muc)+(1-EAC_nuc)^(1/EAC_muc)*EAC_ntc^(1-1/EAC_muc);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAC_ntc = (1-EAC_nuc)*(EAC_pnt)^(-EAC_muc)*EAC_qc;
-// Price of the consumption good (tradable)  
+
 EAC_pttc^(1-EAC_mutc) = (EAC_nutc)*EAC_pht^(1-EAC_mutc)+(1-EAC_nutc)*EAC_pimc^(1-EAC_mutc);
-// Price of the consumption good 
+
 1^(1-EAC_muc) = (EAC_nuc)*EAC_pttc^(1-EAC_muc)+(1-EAC_nuc)*EAC_pnt^(1-EAC_muc);
-// Demand for domestic intermediate goods
+
 EAC_htc = EAC_nutc*(EAC_pht/EAC_pttc)^(-EAC_mutc)*EAC_ttc;
 EACEAA_gammaimc = 0;
 EACEAA_gammaimcdag = 1;
@@ -11708,20 +11708,20 @@ EACRW_gammaimc = 0;
 EACRW_gammaimcdag = 1;
 EACUS_gammaimc = 0;
 EACUS_gammaimcdag = 1;
-// Private consumption good (tradable)
+
 EAC_tti^((EAC_muti-1)/EAC_muti) = (EAC_nuti)^(1/EAC_muti)*EAC_hti^(1-1/EAC_muti)+(1-EAC_nuti)^(1/EAC_muti)*EAC_imi^(1-1/EAC_muti);
-// Private consumption good  (total)
+
 EAC_qi^((EAC_mui-1)/EAC_mui) = (EAC_nui)^(1/EAC_mui)*EAC_tti^(1-1/EAC_mui)+(1-EAC_nui)^(1/EAC_mui)*EAC_nti^(1-1/EAC_mui);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAC_nti = (1-EAC_nui)*(EAC_pnt/EAC_pi)^(-EAC_mui)*EAC_qi;
-// Price of the consumption good (tradable)  
+
 EAC_ptti^(1-EAC_muti) = (EAC_nuti)*EAC_pht^(1-EAC_muti)+(1-EAC_nuti)*EAC_pimi^(1-EAC_muti);
-// Price of the consumption good 
+
 EAC_pi^(1-EAC_mui) = (EAC_nui)*EAC_ptti^(1-EAC_mui)+(1-EAC_nui)*EAC_pnt^(1-EAC_mui);
-// Auxiliary equation for the price of the investment good in steady state
-// this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
+
+
 EAC_pibar = EAC_pi;
-// Demand for domestic intermediate goods
+
 EAC_hti = EAC_nuti*(EAC_pht/EAC_ptti)^(-EAC_muti)*EAC_tti;
 EACEAA_gammaimi = 0;
 EACEAA_gammaimidag = 1;
@@ -11749,17 +11749,17 @@ EACRW_gammaimi = 0;
 EACRW_gammaimidag = 1;
 EACUS_gammaimi = 0;
 EACUS_gammaimidag = 1;
-// Private consumption good (tradable)
+
 EAC_ttcg^((EAC_mutcg-1)/EAC_mutcg) = (EAC_nutcg)^(1/EAC_mutcg)*EAC_htcg^(1-1/EAC_mutcg)+(1-EAC_nutcg)^(1/EAC_mutcg)*EAC_imcg^(1-1/EAC_mutcg);
-// Private consumption good  (total)
+
 EAC_qcg^((EAC_mucg-1)/EAC_mucg) = (EAC_nucg)^(1/EAC_mucg)*EAC_ttcg^(1-1/EAC_mucg)+(1-EAC_nucg)^(1/EAC_mucg)*EAC_ntcg^(1-1/EAC_mucg);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAC_ntcg = (1-EAC_nucg)*(EAC_pnt/EAC_pcg)^(-EAC_mucg)*EAC_qcg;
-// Price of the consumption good (tradable)  
+
 EAC_pttcg^(1-EAC_mutcg) = (EAC_nutcg)*EAC_pht^(1-EAC_mutcg)+(1-EAC_nutcg)*EAC_pimcg^(1-EAC_mutcg);
-// Price of the consumption good 
+
 EAC_pcg^(1-EAC_mucg) = (EAC_nucg)*EAC_pttcg^(1-EAC_mucg)+(1-EAC_nucg)*EAC_pnt^(1-EAC_mucg);
-// Demand for domestic intermediate goods
+
 EAC_htcg = EAC_nutcg*(EAC_pht/EAC_pttcg)^(-EAC_mutcg)*EAC_ttcg;
 EACEAA_gammaimcg = 0;
 EACEAA_gammaimcgdag = 1;
@@ -11787,17 +11787,17 @@ EACRW_gammaimcg = 0;
 EACRW_gammaimcgdag = 1;
 EACUS_gammaimcg = 0;
 EACUS_gammaimcgdag = 1;
-// Private consumption good (tradable)
+
 EAC_ttig^((EAC_mutig-1)/EAC_mutig) = (EAC_nutig)^(1/EAC_mutig)*EAC_htig^(1-1/EAC_mutig)+(1-EAC_nutig)^(1/EAC_mutig)*EAC_imig^(1-1/EAC_mutig);
-// Private consumption good  (total)
+
 EAC_qig^((EAC_muig-1)/EAC_muig) = (EAC_nuig)^(1/EAC_muig)*EAC_ttig^(1-1/EAC_muig)+(1-EAC_nuig)^(1/EAC_muig)*EAC_ntig^(1-1/EAC_muig);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAC_ntig = (1-EAC_nuig)*(EAC_pnt/EAC_pig)^(-EAC_muig)*EAC_qig;
-// Price of the consumption good (tradable)  
+
 EAC_pttig^(1-EAC_mutig) = (EAC_nutig)*EAC_pht^(1-EAC_mutig)+(1-EAC_nutig)*EAC_pimig^(1-EAC_mutig);
-// Price of the consumption good 
+
 EAC_pig^(1-EAC_muig) = (EAC_nuig)*EAC_pttig^(1-EAC_muig)+(1-EAC_nuig)*EAC_pnt^(1-EAC_muig);
-// Demand for domestic intermediate goods
+
 EAC_htig = EAC_nutig*(EAC_pht/EAC_pttig)^(-EAC_mutig)*EAC_ttig;
 EACEAA_gammaimig = 0;
 EACEAA_gammaimigdag = 1;
@@ -11825,7 +11825,7 @@ EACRW_gammaimig = 0;
 EACRW_gammaimigdag = 1;
 EACUS_gammaimig = 0;
 EACUS_gammaimigdag = 1;
-// Trade balance
+
 EAC_tb =
 +EAC_pex*EAA_size/EAC_size*EAAEAC_im
 -EAA_pex*EACEAA_rer*EACEAA_im
@@ -11854,7 +11854,7 @@ EAC_tb =
 +EAC_pex*US_size/EAC_size*USEAC_im
 -US_pex*EACUS_rer*EACUS_im
 ;
-// Aggregate exports (volume)
+
 EAC_ex =
 +EAA_size/EAC_size*EAAEAC_im
 +EAB_size/EAC_size*EABEAC_im
@@ -11870,131 +11870,131 @@ EAC_ex =
 +RW_size/EAC_size*RWEAC_im
 +US_size/EAC_size*USEAC_im
 ;
-//-------------
-//-------------
-// Fiscal and monetary authorities
-//-------------
-//-------------
-//-------------
-// Fiscal authority
-//-------------
-// Government budget constraint, using EAC_pg = EAC_pht
-// TODO: check the (1-EAC_gammab(-1)) adjustment here, which is not in the fiscal extention
+
+
+
+
+
+
+
+
+
+
 	EAC_pcg(-1)*EAC_cg(-1)+EAC_pig(-1)*EAC_ig(-1)+EAC_tr(-1)
 	+EAC_b(-1)*EAC_pic(-1)^(-1)+EAC_m(-2)*EAC_pic(-1)^(-1) = EAC_tauc(-1)*EAC_c(-1)+(EAC_taun(-1)+EAC_tauwh(-1))*(EAC_wi(-1)*EAC_ndi(-1)+EAC_wj(-1)*EAC_ndj(-1))+EAC_tauwf(-1)*EAC_w(-1)*EAC_nd(-1)+EAC_tauk(-1)*(EAC_rk(-1)*EAC_u(-1)-(EAC_gammau(-1)+EAC_delta)*EAC_pi(-1))*EAC_k(-1)+EAC_taud(-1)*EAC_d(-1)+EAC_t(-1)+(EAC_r(-1)*(1-EAC_gammab(-1)))^(-1)*EAC_b+EAC_m(-1);
-// Government spending, using EAC_pg = EAC_pht
+
 EAC_pcg*EAC_cg = EAC_cgy*EAC_pybar*EAC_ybar;
 EAC_pig*EAC_ig = EAC_igy*EAC_pybar*EAC_ybar;
 EAC_t = 0;
 EAC_b = EAC_bytarget*EAC_pybar*EAC_ybar;
-// Auxiliary equation for steady-state output
+
 EAC_ybar = EAC_y;
-// Auxiliary equation for steady-state output
+
 EAC_ytbar = EAC_yst;
-// Auxiliary equation for steady-state output
+
 EAC_ynbar = EAC_ysn;
-// Auxiliary equation for steady-state output deflator
+
 EAC_pybar = EAC_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
+
 EAC_trybar = EAC_tr/(EAC_pybar*EAC_ybar);
-// Auxiliary equation for determining the distribution of lump-sum taxes
+
 EAC_ti = EAC_upsilont*EAC_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
 upsilont = 0:            ti = 0, tj = 1/omega t
 upsilont = 1:            ti = tj = t
 upsilont = 1/(1-omega):  ti = 1/(1-omega) t, tj = 0. */
-// Auxiliary equation for determining the distribution of lump-sum transfers
+
 EAC_tri = EAC_upsilontr*EAC_tr;
 /* Note: Valid parameter space: 0 <= upsilontr <= 1/(1-omega) with
 upsilontr = 0:            tri = 0, trj = 1/omega tr
 upsilontr = 1:            tri = trj = tr
 upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
-//-------------
-// Monetary authority
-//-------------
+
+
+
 	EAC_r = EAL_r;
 EAC_pic4 = EAC_pi4target;
 EAC_rr-1 = EAC_r/EAC_pi4target^(1/4)-1;
-// Equilibrium real interest rate
+
 EAC_rrstar-1 = 1/EAC_beta-1;
-//-------------
-//-------------
-// Aggregation, market clearing and resource constraint
-//-------------
-//-------------
-//-------------
-// Aggregation
-//-------------
-// Aggregate consumption
+
+
+
+
+
+
+
+
+
 EAC_c = (1-EAC_omega)*EAC_ci+EAC_omega*EAC_cj;
-// Aggregate money holdings
+
 EAC_m = (1-EAC_omega)*EAC_mi+EAC_omega*EAC_mj;
-// Aggregate capital stock
+
 EAC_k = (1-EAC_omega)*EAC_ki;
-// Aggregate investment
+
 EAC_i = (1-EAC_omega)*EAC_ii;
-// Aggregate lump-sum transfers
+
 EAC_trj = 
 1/EAC_omega*EAC_tr-(1-EAC_omega)/EAC_omega*EAC_tri
 ;
-// Aggregate lump-sum taxes
+
 EAC_tj = 
 1/EAC_omega*EAC_t-(1-EAC_omega)/EAC_omega*EAC_ti
 ;
-// Aggregate transaction costs
+
 EAC_gammav = (1-EAC_omega)*EAC_ci*EAC_gammavi+EAC_omega*EAC_cj*EAC_gammavj;
-//-------------
-// Market clearing
-//-------------
-// Labour markets for household I
-// Wedge between labour demand/hours worked and labour supply
+
+
+
+
+
 EAC_ni = EAC_si*EAC_ndi;
-// Wage dispersion
+
 EAC_si = (1-EAC_xii)*(EAC_witilde/EAC_wi)^(-EAC_etai)+EAC_xii*(EAC_wi(-1)/EAC_wi)^(-EAC_etai)*(EAC_pic/(EAC_pic(-1)^EAC_chii*EAC_pi4target^(1/4*(1-EAC_chii))))^(EAC_etai)*EAC_si(-1);
-// Labour markets for household J
-// Wedge between labour demand/hours worked and labour supply
+
+
 EAC_nj = EAC_sj*EAC_ndj;
-// Wage dispersion
+
 EAC_sj = (1-EAC_xij)*(EAC_wjtilde/EAC_wj)^(-EAC_etaj)+EAC_xij*(EAC_wj(-1)/EAC_wj)^(-EAC_etaj)*(EAC_pic/(EAC_pic(-1)^EAC_chij*EAC_pi4target^(1/4*(1-EAC_chij))))^(EAC_etaj)*EAC_sj(-1);
-// Rental market for capital
-// Equality of capital input and effective capital services
+
+
 EAC_u*EAC_k = EAC_kd;
-// Intermediate-good markets
-// Wedge between aggregate demand and production, using EAC_x = EAD_size/EAC_size*EAD_im
+
+
 EAC_ysn = EAC_snt*EAC_nt;
-//  nontradables aggregate demand
+
 EAC_nt = 
 +EAC_ntc
 +EAC_nti
 +EAC_ntcg
 +EAC_ntig
 ;
-// Aggregate demand for domestic intermediate goods, using EAC_hg = EAC_cg
+
 EAC_ht =
 +EAC_htc
 +EAC_hti
 +EAC_htcg
 +EAC_htig
 ;
-// Price dispersion in the domestic markets
+
 EAC_sh = (1-EAC_xih)*(EAC_phttilde/EAC_pht)^(-EAC_thetat)+EAC_xih*(EAC_piht/(EAC_piht(-1)^EAC_chih*EAC_pi4target^(1/4*(1-EAC_chih))))^EAC_thetat*EAC_sh(-1);
-// Price dispersion in the foreign markets
+
 EAC_sx = (1-EAC_xix)*(EAC_pextilde/EAC_pex)^(-EAC_thetat)+EAC_xix*(EAC_piex/(EAC_piex(-1)^EAC_chix*EAC_pi4target^(1/4*(1-EAC_chix))))^EAC_thetat*EAC_sx(-1);
-// Price dispersion in the domestic markets
+
 EAC_snt = (1-EAC_xin)*(EAC_pnttilde/EAC_pnt)^(-EAC_thetan)+EAC_xin*(EAC_pint/(EAC_pint(-1)^EAC_chin*EAC_pi4target^(1/4*(1-EAC_chin))))^EAC_thetan*EAC_snt(-1);
-// Final-good markets
-// Aggregate consumption and transaction cost
+
+
 EAC_qc = EAC_c+EAC_gammav;
-// Aggregate investment and capital utilisation cost
+
 EAC_qi = EAC_i+EAC_k*EAC_gammau;
-// Aggregate gov demand components added to use the same structure like in private components
+
 EAC_qcg = EAC_cg;
 EAC_qig = EAC_ig;
-//-------------
-// Resource constraint
-//-------------
-// TODO: why there is no adjustment cost for gov components
-// Aggregate nominal demand
+
+
+
+
+
 EAC_py*EAC_y = 
 +EAC_qc
 +EAC_pi*EAC_qi
@@ -12066,83 +12066,83 @@ EAC_py*EAC_y =
 -(US_pex*EACUS_rer)*EACUS_imcg
 -(US_pex*EACUS_rer)*EACUS_imig
 ;
-// Aggregate real demand
+
 EAC_y = EAC_yst+EAC_ysn;
-//-------------
-//-------------
-// Autoregressive shocks
-//-------------
-//-------------
-// Productivity shocks
+
+
+
+
+
+
 log(EAC_zt) = (1-EAC_rhozt)*log(EAC_ztbar)+EAC_rhozt*log(EAC_zt(-1))+EAC_epszt;
 log(EAC_zn) = (1-EAC_rhozn)*log(EAC_znbar)+EAC_rhozn*log(EAC_zn(-1))+EAC_epszn;
-// Government spending shock
+
 EAC_cgy = (1-EAC_rhocg)*EAC_cgybar+EAC_rhocg*EAC_cgy(-1)+EAC_epsgc;
 EAC_igy = (1-EAC_rhoig)*EAC_igybar+EAC_rhoig*EAC_igy(-1)+EAC_epsgi;
-// Transfer shock
+
 EAC_try = (1-EAC_rhotr)*EAC_trybar+EAC_rhotr*EAC_try(-1)+EAC_epstr;
-// Consumption tax shock
+
 EAC_tauc = (1-EAC_rhotauc)*EAC_taucbar+EAC_rhotauc*EAC_tauc(-1)+EAC_epstauc;
-// Dividend income tax shock
+
 EAC_taud = (1-EAC_rhotaud)*EAC_taudbar+EAC_rhotaud*EAC_taud(-1)+EAC_epstaud;
-// Capital income tax shock
+
 EAC_tauk = (1-EAC_rhotauk)*EAC_taukbar+EAC_rhotauk*EAC_tauk(-1)+EAC_epstauk;
-// Labour income tax shock
+
 EAC_taun = (1-EAC_rhotaun)*EAC_taunbar+EAC_rhotaun*EAC_taun(-1)+EAC_epstaun;
-// Payroll tax shock: households
+
 EAC_tauwh = (1-EAC_rhotauwh)*EAC_tauwhbar+EAC_rhotauwh*EAC_tauwh(-1)+EAC_epstauwh;
-// Payroll tax shock: firms
+
 EAC_tauwf = (1-EAC_rhotauwf)*EAC_tauwfbar+EAC_rhotauwf*EAC_tauwf(-1)+EAC_epstauwf;
-// Wage cost push shock
+
 EAC_wcst = (1-EAC_rhowcst)*EAC_wcstbar+EAC_rhowcst*EAC_wcst(-1)+EAC_epswcst;
-// Preference shock
+
 log(EAC_zcon) = (1-EAC_rhozcon)*log(EAC_zconbar)+EAC_rhozcon*log(EAC_zcon(-1))+EAC_epszcon;
-// Investment specific shock
+
 log(EAC_zinv) = (1-EAC_rhozinv)*log(EAC_zinvbar)+EAC_rhozinv*log(EAC_zinv(-1))+EAC_epszinv;
-//-------------
-//-------------
-// Conditions for calibration and reporting
-//-------------
-//-------------
-// Aggregate nominal consumption share
+
+
+
+
+
+
 EAC_cy = EAC_c/(EAC_py*EAC_y);
-// Aggregate nominal investment share
+
 EAC_iy = EAC_pi*EAC_i/(EAC_py*EAC_y);
-// Aggregate nominal import share  
+
 EAC_imy = (
 +EAC_pimc*EAC_imc
 +EAC_pimi*EAC_imi
 +EAC_pimcg*EAC_imcg
 +EAC_pimig*EAC_imig
 )/(EAC_py*EAC_y);
-// Aggregate nominal import share
+
 EAC_imcy = EAC_pimc*EAC_imc/(EAC_py*EAC_y);
 EAC_imiy = EAC_pimi*EAC_imi/(EAC_py*EAC_y);
 EAC_imcgy = EAC_pimcg*EAC_imcg/(EAC_py*EAC_y);
 EAC_imigy = EAC_pimig*EAC_imig/(EAC_py*EAC_y);
-// Aggregate debt-to-output ratio
+
 EAC_by = EAC_b/(EAC_pybar*EAC_ybar);
-// Aggregate lump-sum tax-to-output ratio
+
 EAC_ty = EAC_t/(EAC_pybar*EAC_ybar);
-// Aggregate labour cost share
+
 EAC_lcy = ((1+EAC_tauwf)*EAC_w*EAC_nd)/(EAC_py*EAC_y);
-// Aggregate nominal Wage share
+
 EAC_wy = (EAC_w*EAC_nd)/(EAC_py*EAC_y);
-// NT sector nominal Wage share
+
 EAC_wnty = (EAC_w*EAC_ndn)/(EAC_pnt*EAC_ysn);
-// T sector nominal Wage share
+
 EAC_whty = (EAC_w*EAC_ndt)/(EAC_pht*EAC_yst);
-// T sector share
+
 EAC_yhty = EAC_pht*EAC_yst/(EAC_py*EAC_y);
-// NT sector share
+
 EAC_ynty = EAC_pnt*EAC_ysn/(EAC_py*EAC_y);
-// Output gap
+
 EAC_ygap = 0;
-// Output growth (gross rate)
+
 EAC_ygrowth = EAC_y/EAC_y(-1);
-// Output growth (gross rate yoy)
+
 EAC_ygrowth4 = EAC_y/EAC_y(-4);
-// Domestic nominal output as a share of world nominal output
+
 EAC_yshare  = EAC_size*EAC_py*EAC_y/EAC_rer/(
 +EAA_size*EAA_py*EAA_y/EAA_rer
 +EAB_size*EAB_py*EAB_y/EAB_rer
@@ -12159,153 +12159,153 @@ EAC_yshare  = EAC_size*EAC_py*EAC_y/EAC_rer/(
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
-// Interest (semi-)elasticity of money demand
+
 EAC_epsilonm = -1/8*1/(EAC_r*(EAC_gammav2*EAC_r+EAC_r-1));
-// Trade balance-to-GDP ratio
+
 EAC_tby = EAC_tb/(EAC_py*EAC_y);
-// Bilateral shares
+
 EACEAA_imcy = (EAA_pex*EACEAA_rer)*EACEAA_imc/(EAC_py*EAC_y);
 EACEAA_imiy = (EAA_pex*EACEAA_rer)*EACEAA_imi/(EAC_py*EAC_y);
 EACEAA_imcgy = (EAA_pex*EACEAA_rer)*EACEAA_imcg/(EAC_py*EAC_y);
 EACEAA_imigy = (EAA_pex*EACEAA_rer)*EACEAA_imig/(EAC_py*EAC_y);
-// Exports of consumption goods to gdp
+
 EACEAA_excy  = EAA_size/EAC_size*EAC_pex*EAAEAC_imc/(EAC_py*EAC_y);
-// Exports of investment goods to gdp
+
 EACEAA_exiy  = EAA_size/EAC_size*EAC_pex*EAAEAC_imi/(EAC_py*EAC_y);
-// Bilateral shares
+
 EACEAB_imcy = (EAB_pex*EACEAB_rer)*EACEAB_imc/(EAC_py*EAC_y);
 EACEAB_imiy = (EAB_pex*EACEAB_rer)*EACEAB_imi/(EAC_py*EAC_y);
 EACEAB_imcgy = (EAB_pex*EACEAB_rer)*EACEAB_imcg/(EAC_py*EAC_y);
 EACEAB_imigy = (EAB_pex*EACEAB_rer)*EACEAB_imig/(EAC_py*EAC_y);
-// Exports of consumption goods to gdp
+
 EACEAB_excy  = EAB_size/EAC_size*EAC_pex*EABEAC_imc/(EAC_py*EAC_y);
-// Exports of investment goods to gdp
+
 EACEAB_exiy  = EAB_size/EAC_size*EAC_pex*EABEAC_imi/(EAC_py*EAC_y);
-// Bilateral shares
+
 EACEAD_imcy = (EAD_pex*EACEAD_rer)*EACEAD_imc/(EAC_py*EAC_y);
 EACEAD_imiy = (EAD_pex*EACEAD_rer)*EACEAD_imi/(EAC_py*EAC_y);
 EACEAD_imcgy = (EAD_pex*EACEAD_rer)*EACEAD_imcg/(EAC_py*EAC_y);
 EACEAD_imigy = (EAD_pex*EACEAD_rer)*EACEAD_imig/(EAC_py*EAC_y);
-// Exports of consumption goods to gdp
+
 EACEAD_excy  = EAD_size/EAC_size*EAC_pex*EADEAC_imc/(EAC_py*EAC_y);
-// Exports of investment goods to gdp
+
 EACEAD_exiy  = EAD_size/EAC_size*EAC_pex*EADEAC_imi/(EAC_py*EAC_y);
-// Bilateral shares
+
 EACEAE_imcy = (EAE_pex*EACEAE_rer)*EACEAE_imc/(EAC_py*EAC_y);
 EACEAE_imiy = (EAE_pex*EACEAE_rer)*EACEAE_imi/(EAC_py*EAC_y);
 EACEAE_imcgy = (EAE_pex*EACEAE_rer)*EACEAE_imcg/(EAC_py*EAC_y);
 EACEAE_imigy = (EAE_pex*EACEAE_rer)*EACEAE_imig/(EAC_py*EAC_y);
-// Exports of consumption goods to gdp
+
 EACEAE_excy  = EAE_size/EAC_size*EAC_pex*EAEEAC_imc/(EAC_py*EAC_y);
-// Exports of investment goods to gdp
+
 EACEAE_exiy  = EAE_size/EAC_size*EAC_pex*EAEEAC_imi/(EAC_py*EAC_y);
-// Bilateral shares
+
 EACEAF_imcy = (EAF_pex*EACEAF_rer)*EACEAF_imc/(EAC_py*EAC_y);
 EACEAF_imiy = (EAF_pex*EACEAF_rer)*EACEAF_imi/(EAC_py*EAC_y);
 EACEAF_imcgy = (EAF_pex*EACEAF_rer)*EACEAF_imcg/(EAC_py*EAC_y);
 EACEAF_imigy = (EAF_pex*EACEAF_rer)*EACEAF_imig/(EAC_py*EAC_y);
-// Exports of consumption goods to gdp
+
 EACEAF_excy  = EAF_size/EAC_size*EAC_pex*EAFEAC_imc/(EAC_py*EAC_y);
-// Exports of investment goods to gdp
+
 EACEAF_exiy  = EAF_size/EAC_size*EAC_pex*EAFEAC_imi/(EAC_py*EAC_y);
-// Bilateral shares
+
 EACEAG_imcy = (EAG_pex*EACEAG_rer)*EACEAG_imc/(EAC_py*EAC_y);
 EACEAG_imiy = (EAG_pex*EACEAG_rer)*EACEAG_imi/(EAC_py*EAC_y);
 EACEAG_imcgy = (EAG_pex*EACEAG_rer)*EACEAG_imcg/(EAC_py*EAC_y);
 EACEAG_imigy = (EAG_pex*EACEAG_rer)*EACEAG_imig/(EAC_py*EAC_y);
-// Exports of consumption goods to gdp
+
 EACEAG_excy  = EAG_size/EAC_size*EAC_pex*EAGEAC_imc/(EAC_py*EAC_y);
-// Exports of investment goods to gdp
+
 EACEAG_exiy  = EAG_size/EAC_size*EAC_pex*EAGEAC_imi/(EAC_py*EAC_y);
-// Bilateral shares
+
 EACEAH_imcy = (EAH_pex*EACEAH_rer)*EACEAH_imc/(EAC_py*EAC_y);
 EACEAH_imiy = (EAH_pex*EACEAH_rer)*EACEAH_imi/(EAC_py*EAC_y);
 EACEAH_imcgy = (EAH_pex*EACEAH_rer)*EACEAH_imcg/(EAC_py*EAC_y);
 EACEAH_imigy = (EAH_pex*EACEAH_rer)*EACEAH_imig/(EAC_py*EAC_y);
-// Exports of consumption goods to gdp
+
 EACEAH_excy  = EAH_size/EAC_size*EAC_pex*EAHEAC_imc/(EAC_py*EAC_y);
-// Exports of investment goods to gdp
+
 EACEAH_exiy  = EAH_size/EAC_size*EAC_pex*EAHEAC_imi/(EAC_py*EAC_y);
-// Bilateral shares
+
 EACEAI_imcy = (EAI_pex*EACEAI_rer)*EACEAI_imc/(EAC_py*EAC_y);
 EACEAI_imiy = (EAI_pex*EACEAI_rer)*EACEAI_imi/(EAC_py*EAC_y);
 EACEAI_imcgy = (EAI_pex*EACEAI_rer)*EACEAI_imcg/(EAC_py*EAC_y);
 EACEAI_imigy = (EAI_pex*EACEAI_rer)*EACEAI_imig/(EAC_py*EAC_y);
-// Exports of consumption goods to gdp
+
 EACEAI_excy  = EAI_size/EAC_size*EAC_pex*EAIEAC_imc/(EAC_py*EAC_y);
-// Exports of investment goods to gdp
+
 EACEAI_exiy  = EAI_size/EAC_size*EAC_pex*EAIEAC_imi/(EAC_py*EAC_y);
-// Bilateral shares
+
 EACEAJ_imcy = (EAJ_pex*EACEAJ_rer)*EACEAJ_imc/(EAC_py*EAC_y);
 EACEAJ_imiy = (EAJ_pex*EACEAJ_rer)*EACEAJ_imi/(EAC_py*EAC_y);
 EACEAJ_imcgy = (EAJ_pex*EACEAJ_rer)*EACEAJ_imcg/(EAC_py*EAC_y);
 EACEAJ_imigy = (EAJ_pex*EACEAJ_rer)*EACEAJ_imig/(EAC_py*EAC_y);
-// Exports of consumption goods to gdp
+
 EACEAJ_excy  = EAJ_size/EAC_size*EAC_pex*EAJEAC_imc/(EAC_py*EAC_y);
-// Exports of investment goods to gdp
+
 EACEAJ_exiy  = EAJ_size/EAC_size*EAC_pex*EAJEAC_imi/(EAC_py*EAC_y);
-// Bilateral shares
+
 EACEAK_imcy = (EAK_pex*EACEAK_rer)*EACEAK_imc/(EAC_py*EAC_y);
 EACEAK_imiy = (EAK_pex*EACEAK_rer)*EACEAK_imi/(EAC_py*EAC_y);
 EACEAK_imcgy = (EAK_pex*EACEAK_rer)*EACEAK_imcg/(EAC_py*EAC_y);
 EACEAK_imigy = (EAK_pex*EACEAK_rer)*EACEAK_imig/(EAC_py*EAC_y);
-// Exports of consumption goods to gdp
+
 EACEAK_excy  = EAK_size/EAC_size*EAC_pex*EAKEAC_imc/(EAC_py*EAC_y);
-// Exports of investment goods to gdp
+
 EACEAK_exiy  = EAK_size/EAC_size*EAC_pex*EAKEAC_imi/(EAC_py*EAC_y);
-// Bilateral shares
+
 EACEAL_imcy = (EAL_pex*EACEAL_rer)*EACEAL_imc/(EAC_py*EAC_y);
 EACEAL_imiy = (EAL_pex*EACEAL_rer)*EACEAL_imi/(EAC_py*EAC_y);
 EACEAL_imcgy = (EAL_pex*EACEAL_rer)*EACEAL_imcg/(EAC_py*EAC_y);
 EACEAL_imigy = (EAL_pex*EACEAL_rer)*EACEAL_imig/(EAC_py*EAC_y);
-// Exports of consumption goods to gdp
+
 EACEAL_excy  = EAL_size/EAC_size*EAC_pex*EALEAC_imc/(EAC_py*EAC_y);
-// Exports of investment goods to gdp
+
 EACEAL_exiy  = EAL_size/EAC_size*EAC_pex*EALEAC_imi/(EAC_py*EAC_y);
-// Bilateral shares
+
 EACRW_imcy = (RW_pex*EACRW_rer)*EACRW_imc/(EAC_py*EAC_y);
 EACRW_imiy = (RW_pex*EACRW_rer)*EACRW_imi/(EAC_py*EAC_y);
 EACRW_imcgy = (RW_pex*EACRW_rer)*EACRW_imcg/(EAC_py*EAC_y);
 EACRW_imigy = (RW_pex*EACRW_rer)*EACRW_imig/(EAC_py*EAC_y);
-// Exports of consumption goods to gdp
+
 EACRW_excy  = RW_size/EAC_size*EAC_pex*RWEAC_imc/(EAC_py*EAC_y);
-// Exports of investment goods to gdp
+
 EACRW_exiy  = RW_size/EAC_size*EAC_pex*RWEAC_imi/(EAC_py*EAC_y);
-// Bilateral shares
+
 EACUS_imcy = (US_pex*EACUS_rer)*EACUS_imc/(EAC_py*EAC_y);
 EACUS_imiy = (US_pex*EACUS_rer)*EACUS_imi/(EAC_py*EAC_y);
 EACUS_imcgy = (US_pex*EACUS_rer)*EACUS_imcg/(EAC_py*EAC_y);
 EACUS_imigy = (US_pex*EACUS_rer)*EACUS_imig/(EAC_py*EAC_y);
-// Exports of consumption goods to gdp
+
 EACUS_excy  = US_size/EAC_size*EAC_pex*USEAC_imc/(EAC_py*EAC_y);
-// Exports of investment goods to gdp
+
 EACUS_exiy  = US_size/EAC_size*EAC_pex*USEAC_imi/(EAC_py*EAC_y);
-// Internal real exchange rate
+
 EAC_internalrer = EAC_pnt/EAC_pttc;
-// Core model begins
-//-------------
-//-------------
-// Households
-//-------------
-//-------------
-//-------------
-// Household I
-//-------------
-// Utility
+
+
+
+
+
+
+
+
+
+
 EAD_utili = 
 EAD_zcon*log(EAD_ci-EAD_kappa*EAD_ci(-1))-1/(1+EAD_zeta)*(EAD_ni)^(1+EAD_zeta)+EAD_beta*EAD_utili(+1)
 ;
-// Marginal utility of consumption
+
 EAD_lambdai*(1+EAD_tauc+EAD_gammavi+EAD_vi*EAD_gammavider) = EAD_zcon*(EAD_ci-EAD_kappa*EAD_ci(-1))^(-EAD_sigma);
-// Euler equation for government bonds
+
 EAD_r                   = EAD_beta^(-1)*EAD_lambdai/EAD_lambdai    *EAD_pic;
-// Euler equation for money
+
 EAD_vi^(2)*EAD_gammavider = 1-EAD_beta*EAD_lambdai(+1)/(EAD_lambdai*EAD_pic(+1));
-// Consumption-based velocity
+
 EAD_vi = EAD_ci/EAD_mi;
-// Transaction cost
+
 EAD_gammavi = EAD_gammav1*EAD_vi+EAD_gammav2/EAD_vi-2*(EAD_gammav1*EAD_gammav2)^(1/2);
-// Derivative of transaction cost
+
 EAD_gammavider = EAD_gammav1-EAD_gammav2*EAD_vi^(-2);
 EAD_delta = EAD_ii/EAD_ki;
 EAD_gammai = 0;
@@ -12314,355 +12314,355 @@ EAD_gammau = 0;
 EAD_gammauder = ((EAD_beta^(-1)-1+EAD_delta)*EAD_qbar-EAD_delta*EAD_taukbar*EAD_pibar)/((1-EAD_taukbar)*EAD_pibar);
 EAD_u = 1;
 EAD_pi = EAD_q;
-// Auxiliary equation for Tobin's Q in steady state
+
 EAD_qbar = EAD_q;
-// Rate of return on capital
+
 EAD_q = EAD_beta*((1-EAD_tauk)*EAD_rk+(EAD_tauk*EAD_delta)*EAD_pi+(1-EAD_delta)*EAD_q);
-// Optimal wage contract (FOC)
+
 EAD_witilde^(1+EAD_etai*EAD_zeta) = EAD_etai/(EAD_etai-1)*EAD_fi/EAD_gi+EAD_wcst;
-// Definition of fi
+
 EAD_fi = EAD_wi^(EAD_etai*(1+EAD_zeta))*EAD_ndi^(1+EAD_zeta)+EAD_xii*EAD_beta*(EAD_pic(+1)/(EAD_pic^EAD_chii*EAD_pi4target^(1/4*(1-EAD_chii))))^(EAD_etai*(1+EAD_zeta))*EAD_fi(+1);
-// Definition of gi
+
 EAD_gi = EAD_lambdai*(1-EAD_taun-EAD_tauwh)*EAD_wi^EAD_etai*EAD_ndi+EAD_xii*EAD_beta*(EAD_pic(+1)/(EAD_pic^EAD_chii*EAD_pi4target^(1/4*(1-EAD_chii))))^(EAD_etai-1)*EAD_gi(+1);
-// Aggregate wage rate
+
 EAD_wi^(1-EAD_etai) = (1-EAD_xii)*EAD_witilde^(1-EAD_etai)+EAD_xii*EAD_wi(-1)^(1-EAD_etai)*(EAD_pic(-1)^EAD_chii*EAD_pi4target^(1/4*(1-EAD_chii))/EAD_pic)^(1-EAD_etai);
-//-------------
-// Household J
-//-------------
-// Utility
+
+
+
+
 EAD_utilj = 
 EAD_zcon*log(EAD_cj-EAD_kappa*EAD_cj(-1))-1/(1+EAD_zeta)*EAD_nj^(1+EAD_zeta)+EAD_beta*EAD_utilj(+1)
 ;
-// Marginal utility of consumption
+
 EAD_lambdaj*(1+EAD_tauc+EAD_gammavj+EAD_vj*EAD_gammavjder) = EAD_zcon*(EAD_cj-EAD_kappa*EAD_cj(-1))^(-EAD_sigma);
-// Budget constraint
+
 (1+EAD_tauc+EAD_gammavj)*EAD_cj+EAD_mj = (1-EAD_taun-EAD_tauwh)*EAD_wj*EAD_nj+EAD_trj-EAD_tj+EAD_mj(-1)*EAD_pic^(-1);
-// Euler equation for money
+
 EAD_vj^(2)*EAD_gammavjder = 1-EAD_beta*EAD_lambdaj(+1)/(EAD_lambdaj*EAD_pic(+1));
-// Consumption-based velocity
+
 EAD_vj = EAD_cj/EAD_mj;
-// Transaction technology
+
 EAD_gammavj = EAD_gammav1*EAD_vj+EAD_gammav2/EAD_vj-2*(EAD_gammav1*EAD_gammav2)^(1/2);
-// Derivative of transaction technology
+
 EAD_gammavjder = EAD_gammav1-EAD_gammav2*EAD_vj^(-2);
-// Optimal wage contract (FOC)
+
 EAD_wjtilde^(1+EAD_etaj*EAD_zeta) = EAD_etaj/(EAD_etaj-1)*EAD_fj/EAD_gj+EAD_wcst;
-// Definition of fj
+
 EAD_fj = EAD_wj^(EAD_etaj*(1+EAD_zeta))*EAD_ndj^(1+EAD_zeta)+EAD_xij*EAD_beta*(EAD_pic(+1)/(EAD_pic^EAD_chij*EAD_pi4target^(1/4*(1-EAD_chij))))^(EAD_etaj*(1+EAD_zeta))*EAD_fj(+1);
-// Definition of gj
+
 EAD_gj = EAD_lambdaj*(1-EAD_taun-EAD_tauwh)*EAD_wj^EAD_etaj*EAD_ndj+EAD_xij*EAD_beta*(EAD_pic(+1)/(EAD_pic^EAD_chij*EAD_pi4target^(1/4*(1-EAD_chij))))^(EAD_etaj-1)*EAD_gj(+1);
-// Aggregate wage rate
+
 EAD_wj^(1-EAD_etaj) = (1-EAD_xij)*EAD_wjtilde^(1-EAD_etaj)+EAD_xij*EAD_wj(-1)^(1-EAD_etaj)*(EAD_pic(-1)^EAD_chij*EAD_pi4target^(1/4*(1-EAD_chij))/EAD_pic)^(1-EAD_etaj);
-//-------------
-//-------------
-// Firms
-//-------------
-//-------------
-//-------------
-// Intermediate-good firms
-//-------------
-// Production function tradable
+
+
+
+
+
+
+
+
+
 EAD_yst = EA_z*EAD_zt*EAD_kdt^EAD_alphat*EAD_ndt^(1-EAD_alphat)-EAD_psitbar;
-// Production function nontradable
+
 EAD_ysn = EA_z*EAD_zn*EAD_kdn^EAD_alphan*EAD_ndn^(1-EAD_alphan)-EAD_psinbar;
-// Real marginal cost tradable
+
 EAD_mct = 1/(EA_z*EAD_zt*(EAD_alphat)^(EAD_alphat)*(1-EAD_alphat)^(1-EAD_alphat))*EAD_rk^(EAD_alphat)*((1+EAD_tauwf)*EAD_w)^(1-EAD_alphat);
-// Real marginal cost nontradable
+
 EAD_mcn = 1/(EA_z*EAD_zn*(EAD_alphan)^(EAD_alphan)*(1-EAD_alphan)^(1-EAD_alphan))*EAD_rk^(EAD_alphan)*((1+EAD_tauwf)*EAD_w)^(1-EAD_alphan);
-// Wage Inflation (qoq)
+
 EAD_piw = EAD_w/EAD_w(-1)*EAD_pic;
-// Wage Inflation (yoy)
+
 EAD_piw4 = EAD_pic4;
-// Auxiliary equation for steady-state fixed cost
+
 EAD_psitbar = EAD_psit*EAD_ytbar;
-// Auxiliary equation for steady-state fixed cost
+
 EAD_psinbar = EAD_psin*EAD_ynbar;
-// Capital input (FOC)
+
 EAD_rk = EAD_alphat*(EAD_yst+EAD_psitbar)/EAD_kdt*EAD_mct;
-// Capital input (FOC)
+
 EAD_rk = EAD_alphan*(EAD_ysn+EAD_psinbar)/EAD_kdn*EAD_mcn;
-// Total capital demand
+
 EAD_kd = EAD_kdt+EAD_kdn;
-// Demand for labour services by household I
+
 EAD_ndi = 
 (1-EAD_omega)*(EAD_wi/EAD_w)^(-EAD_eta)*EAD_nd
 ;
-// Demand for labour services by household J
+
 EAD_ndj = 
 EAD_omega*(EAD_wj/EAD_w)^(-EAD_eta)*EAD_nd
 ;
-// Aggregate labour demand
+
 EAD_nd^(1-1/EAD_eta) = 
 (1-EAD_omega)^(1/EAD_eta)*EAD_ndi^(1-1/EAD_eta)+EAD_omega^(1/EAD_eta)*EAD_ndj^(1-1/EAD_eta)
 ;
-// Total demand 
+
 EAD_nd = EAD_ndt+EAD_ndn;
-// Aggregate dividends
+
 EAD_d = EAD_py*EAD_y-EAD_rk*EAD_kd-(1+EAD_tauwf)*EAD_w*EAD_nd;
-// Non-tradable sector dividends
+
 EAD_dn = EAD_pnt*EAD_ysn-EAD_rk*EAD_kdn-(1+EAD_tauwf)*EAD_w*EAD_ndn;
-// Tradable sector dividends
+
 EAD_dt = EAD_pht*EAD_ht
 +EAD_pex*EAD_ex
 -EAD_rk*EAD_kdt-(1+EAD_tauwf)*EAD_w*EAD_ndt;
-// Optimal price contract set in domestic markets (FOC)
+
 EAD_phttilde/EAD_pht = EAD_thetat/(EAD_thetat-1)*EAD_fh/EAD_gh;
-// Definition of fh
+
 EAD_fh = EAD_mct*EAD_ht+EAD_xih*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAD_piht(+1)/(EAD_piht^EAD_chih*EAD_pi4target^(1/4*(1-EAD_chih))))^EAD_thetat*EAD_fh(+1);
-// Definition of gh
+
 EAD_gh = EAD_pht*EAD_ht+EAD_xih*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAD_piht(+1)/(EAD_piht^EAD_chih*EAD_pi4target^(1/4*(1-EAD_chih))))^(EAD_thetat-1)*EAD_gh(+1);
-// Aggregate intermediate-good price dynamics
+
 EAD_pht^(1-EAD_thetat) = (1-EAD_xih)*EAD_phttilde^(1-EAD_thetat)+EAD_xih*(EAD_pht(-1)/EAD_pic)^(1-EAD_thetat)*(EAD_piht(-1)^EAD_chih*EAD_pi4target^(1/4*(1-EAD_chih)))^(1-EAD_thetat);
-// Intermediate-good price inflation
+
 EAD_piht = EAD_pht/EAD_pht(-1)*EAD_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAD_pnttilde/EAD_pnt = EAD_thetan/(EAD_thetan-1)*EAD_fn/EAD_gn;
-// Definition of fn
+
 EAD_fn = EAD_mcn*EAD_nt+EAD_xin*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAD_pint(+1)/(EAD_pint^EAD_chin*EAD_pi4target^(1/4*(1-EAD_chin))))^EAD_thetan*EAD_fn(+1);
-// Definition of gn
+
 EAD_gn = EAD_pnt*EAD_nt+EAD_xin*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAD_pint(+1)/(EAD_pint^EAD_chin*EAD_pi4target^(1/4*(1-EAD_chin))))^(EAD_thetan-1)*EAD_gn(+1);
-// Aggregate intermediate-good price dynamics
+
 EAD_pnt^(1-EAD_thetan) = (1-EAD_xin)*EAD_pnttilde^(1-EAD_thetan)+EAD_xin*(EAD_pnt(-1)/EAD_pic)^(1-EAD_thetan)*(EAD_pint(-1)^EAD_chin*EAD_pi4target^(1/4*(1-EAD_chin)))^(1-EAD_thetan);
-// Intermediate-good price inflation
+
 EAD_pint = EAD_pnt/EAD_pnt(-1)*EAD_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAD_pextilde/EAD_pex = EAD_thetat/(EAD_thetat-1)*EAD_fx/EAD_gx;
-// Definition of fh
+
 EAD_fx = EAD_mct*EAD_ex+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAD_piex(+1)/(EAD_piex^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^EAD_thetat*EAD_fx(+1);
-// Definition of gh
+
 EAD_gx = EAD_pex*EAD_ex+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAD_piex(+1)/(EAD_piex^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^(EAD_thetat-1)*EAD_gx(+1);
-// Aggregate intermediate-good price dynamics
+
 EAD_pex^(1-EAD_thetat) = (1-EAD_xix)*EAD_pextilde^(1-EAD_thetat)+EAD_xix*(EAD_pex(-1)/EAD_pic)^(1-EAD_thetat)*(EAD_piex(-1)^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix)))^(1-EAD_thetat);
-// Intermediate-good price inflation
+
 EAD_piex = EAD_pex/EAD_pex(-1)*EAD_pic;
-//---------------
-// import pricing
-//---------------
-// Optimal price contract set in foreign markets (FOC), using EAD_pxtilde = EAA_pimtilde
-// EAAEAD_pimtilde/EAAEAD_pim = EAD_cpim*EAD_thetat/(EAD_thetat-1)*EADEAA_fx/EADEAA_gx;
-// Definition of fx
-// EADEAA_fx = EAA_size/EAD_size*EAAEAD_im*EAD_mct+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAAEAD_piim(+1)/(EAAEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^EAD_thetat*EADEAA_fx(+1);
-// Definition of gx   
-// EADEAA_gx = EADEAA_rer*EAAEAD_pim*EAA_size/EAD_size*EAAEAD_im+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAAEAD_piim(+1)/(EAAEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^(EAD_thetat-1)*EADEAA_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAD_px = EAA_pim
-// EAAEAD_pim^(1-EAD_thetat) = (1-EAD_xix)*EAAEAD_pimtilde^(1-EAD_thetat)+EAD_xix*(EAAEAD_pim(-1)/EAA_pic)^(1-EAD_thetat)*(EAAEAD_piim(-1)^EAD_chix*EAA_pi4target^(1/4*(1-EAD_chih)))^(1-EAD_thetat);
-// Intermediate-good price inflation, using EAD_pix = EAA_piim
-// EAAEAD_piim = EAAEAD_pim/EAAEAD_pim(-1)*EAA_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 EADEAA_rer = EAD_rer/EAA_rer;
-// Auxiliary equation for steady-state output
+
 EADEAA_rerbar = EADEAA_rer;
-//Terms of Trade
+
 EADEAA_tot = EAA_pex*EADEAA_rer/EAD_pex;
-// Optimal price contract set in foreign markets (FOC), using EAD_pxtilde = EAB_pimtilde
-// EABEAD_pimtilde/EABEAD_pim = EAD_cpim*EAD_thetat/(EAD_thetat-1)*EADEAB_fx/EADEAB_gx;
-// Definition of fx
-// EADEAB_fx = EAB_size/EAD_size*EABEAD_im*EAD_mct+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EABEAD_piim(+1)/(EABEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^EAD_thetat*EADEAB_fx(+1);
-// Definition of gx   
-// EADEAB_gx = EADEAB_rer*EABEAD_pim*EAB_size/EAD_size*EABEAD_im+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EABEAD_piim(+1)/(EABEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^(EAD_thetat-1)*EADEAB_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAD_px = EAB_pim
-// EABEAD_pim^(1-EAD_thetat) = (1-EAD_xix)*EABEAD_pimtilde^(1-EAD_thetat)+EAD_xix*(EABEAD_pim(-1)/EAB_pic)^(1-EAD_thetat)*(EABEAD_piim(-1)^EAD_chix*EAB_pi4target^(1/4*(1-EAD_chih)))^(1-EAD_thetat);
-// Intermediate-good price inflation, using EAD_pix = EAB_piim
-// EABEAD_piim = EABEAD_pim/EABEAD_pim(-1)*EAB_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EADEAB_rer = EAD_rer/EAB_rer;
-// Auxiliary equation for steady-state output
+
 EADEAB_rerbar = EADEAB_rer;
-//Terms of Trade
+
 EADEAB_tot = EAB_pex*EADEAB_rer/EAD_pex;
-// Optimal price contract set in foreign markets (FOC), using EAD_pxtilde = EAC_pimtilde
-// EACEAD_pimtilde/EACEAD_pim = EAD_cpim*EAD_thetat/(EAD_thetat-1)*EADEAC_fx/EADEAC_gx;
-// Definition of fx
-// EADEAC_fx = EAC_size/EAD_size*EACEAD_im*EAD_mct+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EACEAD_piim(+1)/(EACEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^EAD_thetat*EADEAC_fx(+1);
-// Definition of gx   
-// EADEAC_gx = EADEAC_rer*EACEAD_pim*EAC_size/EAD_size*EACEAD_im+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EACEAD_piim(+1)/(EACEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^(EAD_thetat-1)*EADEAC_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAD_px = EAC_pim
-// EACEAD_pim^(1-EAD_thetat) = (1-EAD_xix)*EACEAD_pimtilde^(1-EAD_thetat)+EAD_xix*(EACEAD_pim(-1)/EAC_pic)^(1-EAD_thetat)*(EACEAD_piim(-1)^EAD_chix*EAC_pi4target^(1/4*(1-EAD_chih)))^(1-EAD_thetat);
-// Intermediate-good price inflation, using EAD_pix = EAC_piim
-// EACEAD_piim = EACEAD_pim/EACEAD_pim(-1)*EAC_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EADEAC_rer = EAD_rer/EAC_rer;
-// Auxiliary equation for steady-state output
+
 EADEAC_rerbar = EADEAC_rer;
-//Terms of Trade
+
 EADEAC_tot = EAC_pex*EADEAC_rer/EAD_pex;
-// Optimal price contract set in foreign markets (FOC), using EAD_pxtilde = EAE_pimtilde
-// EAEEAD_pimtilde/EAEEAD_pim = EAD_cpim*EAD_thetat/(EAD_thetat-1)*EADEAE_fx/EADEAE_gx;
-// Definition of fx
-// EADEAE_fx = EAE_size/EAD_size*EAEEAD_im*EAD_mct+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAEEAD_piim(+1)/(EAEEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^EAD_thetat*EADEAE_fx(+1);
-// Definition of gx   
-// EADEAE_gx = EADEAE_rer*EAEEAD_pim*EAE_size/EAD_size*EAEEAD_im+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAEEAD_piim(+1)/(EAEEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^(EAD_thetat-1)*EADEAE_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAD_px = EAE_pim
-// EAEEAD_pim^(1-EAD_thetat) = (1-EAD_xix)*EAEEAD_pimtilde^(1-EAD_thetat)+EAD_xix*(EAEEAD_pim(-1)/EAE_pic)^(1-EAD_thetat)*(EAEEAD_piim(-1)^EAD_chix*EAE_pi4target^(1/4*(1-EAD_chih)))^(1-EAD_thetat);
-// Intermediate-good price inflation, using EAD_pix = EAE_piim
-// EAEEAD_piim = EAEEAD_pim/EAEEAD_pim(-1)*EAE_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EADEAE_rer = EAD_rer/EAE_rer;
-// Auxiliary equation for steady-state output
+
 EADEAE_rerbar = EADEAE_rer;
-//Terms of Trade
+
 EADEAE_tot = EAE_pex*EADEAE_rer/EAD_pex;
-// Optimal price contract set in foreign markets (FOC), using EAD_pxtilde = EAF_pimtilde
-// EAFEAD_pimtilde/EAFEAD_pim = EAD_cpim*EAD_thetat/(EAD_thetat-1)*EADEAF_fx/EADEAF_gx;
-// Definition of fx
-// EADEAF_fx = EAF_size/EAD_size*EAFEAD_im*EAD_mct+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAFEAD_piim(+1)/(EAFEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^EAD_thetat*EADEAF_fx(+1);
-// Definition of gx   
-// EADEAF_gx = EADEAF_rer*EAFEAD_pim*EAF_size/EAD_size*EAFEAD_im+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAFEAD_piim(+1)/(EAFEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^(EAD_thetat-1)*EADEAF_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAD_px = EAF_pim
-// EAFEAD_pim^(1-EAD_thetat) = (1-EAD_xix)*EAFEAD_pimtilde^(1-EAD_thetat)+EAD_xix*(EAFEAD_pim(-1)/EAF_pic)^(1-EAD_thetat)*(EAFEAD_piim(-1)^EAD_chix*EAF_pi4target^(1/4*(1-EAD_chih)))^(1-EAD_thetat);
-// Intermediate-good price inflation, using EAD_pix = EAF_piim
-// EAFEAD_piim = EAFEAD_pim/EAFEAD_pim(-1)*EAF_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EADEAF_rer = EAD_rer/EAF_rer;
-// Auxiliary equation for steady-state output
+
 EADEAF_rerbar = EADEAF_rer;
-//Terms of Trade
+
 EADEAF_tot = EAF_pex*EADEAF_rer/EAD_pex;
-// Optimal price contract set in foreign markets (FOC), using EAD_pxtilde = EAG_pimtilde
-// EAGEAD_pimtilde/EAGEAD_pim = EAD_cpim*EAD_thetat/(EAD_thetat-1)*EADEAG_fx/EADEAG_gx;
-// Definition of fx
-// EADEAG_fx = EAG_size/EAD_size*EAGEAD_im*EAD_mct+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAGEAD_piim(+1)/(EAGEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^EAD_thetat*EADEAG_fx(+1);
-// Definition of gx   
-// EADEAG_gx = EADEAG_rer*EAGEAD_pim*EAG_size/EAD_size*EAGEAD_im+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAGEAD_piim(+1)/(EAGEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^(EAD_thetat-1)*EADEAG_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAD_px = EAG_pim
-// EAGEAD_pim^(1-EAD_thetat) = (1-EAD_xix)*EAGEAD_pimtilde^(1-EAD_thetat)+EAD_xix*(EAGEAD_pim(-1)/EAG_pic)^(1-EAD_thetat)*(EAGEAD_piim(-1)^EAD_chix*EAG_pi4target^(1/4*(1-EAD_chih)))^(1-EAD_thetat);
-// Intermediate-good price inflation, using EAD_pix = EAG_piim
-// EAGEAD_piim = EAGEAD_pim/EAGEAD_pim(-1)*EAG_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EADEAG_rer = EAD_rer/EAG_rer;
-// Auxiliary equation for steady-state output
+
 EADEAG_rerbar = EADEAG_rer;
-//Terms of Trade
+
 EADEAG_tot = EAG_pex*EADEAG_rer/EAD_pex;
-// Optimal price contract set in foreign markets (FOC), using EAD_pxtilde = EAH_pimtilde
-// EAHEAD_pimtilde/EAHEAD_pim = EAD_cpim*EAD_thetat/(EAD_thetat-1)*EADEAH_fx/EADEAH_gx;
-// Definition of fx
-// EADEAH_fx = EAH_size/EAD_size*EAHEAD_im*EAD_mct+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAHEAD_piim(+1)/(EAHEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^EAD_thetat*EADEAH_fx(+1);
-// Definition of gx   
-// EADEAH_gx = EADEAH_rer*EAHEAD_pim*EAH_size/EAD_size*EAHEAD_im+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAHEAD_piim(+1)/(EAHEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^(EAD_thetat-1)*EADEAH_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAD_px = EAH_pim
-// EAHEAD_pim^(1-EAD_thetat) = (1-EAD_xix)*EAHEAD_pimtilde^(1-EAD_thetat)+EAD_xix*(EAHEAD_pim(-1)/EAH_pic)^(1-EAD_thetat)*(EAHEAD_piim(-1)^EAD_chix*EAH_pi4target^(1/4*(1-EAD_chih)))^(1-EAD_thetat);
-// Intermediate-good price inflation, using EAD_pix = EAH_piim
-// EAHEAD_piim = EAHEAD_pim/EAHEAD_pim(-1)*EAH_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EADEAH_rer = EAD_rer/EAH_rer;
-// Auxiliary equation for steady-state output
+
 EADEAH_rerbar = EADEAH_rer;
-//Terms of Trade
+
 EADEAH_tot = EAH_pex*EADEAH_rer/EAD_pex;
-// Optimal price contract set in foreign markets (FOC), using EAD_pxtilde = EAI_pimtilde
-// EAIEAD_pimtilde/EAIEAD_pim = EAD_cpim*EAD_thetat/(EAD_thetat-1)*EADEAI_fx/EADEAI_gx;
-// Definition of fx
-// EADEAI_fx = EAI_size/EAD_size*EAIEAD_im*EAD_mct+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAIEAD_piim(+1)/(EAIEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^EAD_thetat*EADEAI_fx(+1);
-// Definition of gx   
-// EADEAI_gx = EADEAI_rer*EAIEAD_pim*EAI_size/EAD_size*EAIEAD_im+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAIEAD_piim(+1)/(EAIEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^(EAD_thetat-1)*EADEAI_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAD_px = EAI_pim
-// EAIEAD_pim^(1-EAD_thetat) = (1-EAD_xix)*EAIEAD_pimtilde^(1-EAD_thetat)+EAD_xix*(EAIEAD_pim(-1)/EAI_pic)^(1-EAD_thetat)*(EAIEAD_piim(-1)^EAD_chix*EAI_pi4target^(1/4*(1-EAD_chih)))^(1-EAD_thetat);
-// Intermediate-good price inflation, using EAD_pix = EAI_piim
-// EAIEAD_piim = EAIEAD_pim/EAIEAD_pim(-1)*EAI_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EADEAI_rer = EAD_rer/EAI_rer;
-// Auxiliary equation for steady-state output
+
 EADEAI_rerbar = EADEAI_rer;
-//Terms of Trade
+
 EADEAI_tot = EAI_pex*EADEAI_rer/EAD_pex;
-// Optimal price contract set in foreign markets (FOC), using EAD_pxtilde = EAJ_pimtilde
-// EAJEAD_pimtilde/EAJEAD_pim = EAD_cpim*EAD_thetat/(EAD_thetat-1)*EADEAJ_fx/EADEAJ_gx;
-// Definition of fx
-// EADEAJ_fx = EAJ_size/EAD_size*EAJEAD_im*EAD_mct+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAJEAD_piim(+1)/(EAJEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^EAD_thetat*EADEAJ_fx(+1);
-// Definition of gx   
-// EADEAJ_gx = EADEAJ_rer*EAJEAD_pim*EAJ_size/EAD_size*EAJEAD_im+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAJEAD_piim(+1)/(EAJEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^(EAD_thetat-1)*EADEAJ_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAD_px = EAJ_pim
-// EAJEAD_pim^(1-EAD_thetat) = (1-EAD_xix)*EAJEAD_pimtilde^(1-EAD_thetat)+EAD_xix*(EAJEAD_pim(-1)/EAJ_pic)^(1-EAD_thetat)*(EAJEAD_piim(-1)^EAD_chix*EAJ_pi4target^(1/4*(1-EAD_chih)))^(1-EAD_thetat);
-// Intermediate-good price inflation, using EAD_pix = EAJ_piim
-// EAJEAD_piim = EAJEAD_pim/EAJEAD_pim(-1)*EAJ_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EADEAJ_rer = EAD_rer/EAJ_rer;
-// Auxiliary equation for steady-state output
+
 EADEAJ_rerbar = EADEAJ_rer;
-//Terms of Trade
+
 EADEAJ_tot = EAJ_pex*EADEAJ_rer/EAD_pex;
-// Optimal price contract set in foreign markets (FOC), using EAD_pxtilde = EAK_pimtilde
-// EAKEAD_pimtilde/EAKEAD_pim = EAD_cpim*EAD_thetat/(EAD_thetat-1)*EADEAK_fx/EADEAK_gx;
-// Definition of fx
-// EADEAK_fx = EAK_size/EAD_size*EAKEAD_im*EAD_mct+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAKEAD_piim(+1)/(EAKEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^EAD_thetat*EADEAK_fx(+1);
-// Definition of gx   
-// EADEAK_gx = EADEAK_rer*EAKEAD_pim*EAK_size/EAD_size*EAKEAD_im+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EAKEAD_piim(+1)/(EAKEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^(EAD_thetat-1)*EADEAK_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAD_px = EAK_pim
-// EAKEAD_pim^(1-EAD_thetat) = (1-EAD_xix)*EAKEAD_pimtilde^(1-EAD_thetat)+EAD_xix*(EAKEAD_pim(-1)/EAK_pic)^(1-EAD_thetat)*(EAKEAD_piim(-1)^EAD_chix*EAK_pi4target^(1/4*(1-EAD_chih)))^(1-EAD_thetat);
-// Intermediate-good price inflation, using EAD_pix = EAK_piim
-// EAKEAD_piim = EAKEAD_pim/EAKEAD_pim(-1)*EAK_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EADEAK_rer = EAD_rer/EAK_rer;
-// Auxiliary equation for steady-state output
+
 EADEAK_rerbar = EADEAK_rer;
-//Terms of Trade
+
 EADEAK_tot = EAK_pex*EADEAK_rer/EAD_pex;
-// Optimal price contract set in foreign markets (FOC), using EAD_pxtilde = EAL_pimtilde
-// EALEAD_pimtilde/EALEAD_pim = EAD_cpim*EAD_thetat/(EAD_thetat-1)*EADEAL_fx/EADEAL_gx;
-// Definition of fx
-// EADEAL_fx = EAL_size/EAD_size*EALEAD_im*EAD_mct+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EALEAD_piim(+1)/(EALEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^EAD_thetat*EADEAL_fx(+1);
-// Definition of gx   
-// EADEAL_gx = EADEAL_rer*EALEAD_pim*EAL_size/EAD_size*EALEAD_im+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(EALEAD_piim(+1)/(EALEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^(EAD_thetat-1)*EADEAL_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAD_px = EAL_pim
-// EALEAD_pim^(1-EAD_thetat) = (1-EAD_xix)*EALEAD_pimtilde^(1-EAD_thetat)+EAD_xix*(EALEAD_pim(-1)/EAL_pic)^(1-EAD_thetat)*(EALEAD_piim(-1)^EAD_chix*EAL_pi4target^(1/4*(1-EAD_chih)))^(1-EAD_thetat);
-// Intermediate-good price inflation, using EAD_pix = EAL_piim
-// EALEAD_piim = EALEAD_pim/EALEAD_pim(-1)*EAL_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EADEAL_rer = EAD_rer/EAL_rer;
-// Auxiliary equation for steady-state output
+
 EADEAL_rerbar = EADEAL_rer;
-//Terms of Trade
+
 EADEAL_tot = EAL_pex*EADEAL_rer/EAD_pex;
-// Optimal price contract set in foreign markets (FOC), using EAD_pxtilde = RW_pimtilde
-// RWEAD_pimtilde/RWEAD_pim = EAD_cpim*EAD_thetat/(EAD_thetat-1)*EADRW_fx/EADRW_gx;
-// Definition of fx
-// EADRW_fx = RW_size/EAD_size*RWEAD_im*EAD_mct+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(RWEAD_piim(+1)/(RWEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^EAD_thetat*EADRW_fx(+1);
-// Definition of gx   
-// EADRW_gx = EADRW_rer*RWEAD_pim*RW_size/EAD_size*RWEAD_im+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(RWEAD_piim(+1)/(RWEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^(EAD_thetat-1)*EADRW_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAD_px = RW_pim
-// RWEAD_pim^(1-EAD_thetat) = (1-EAD_xix)*RWEAD_pimtilde^(1-EAD_thetat)+EAD_xix*(RWEAD_pim(-1)/RW_pic)^(1-EAD_thetat)*(RWEAD_piim(-1)^EAD_chix*RW_pi4target^(1/4*(1-EAD_chih)))^(1-EAD_thetat);
-// Intermediate-good price inflation, using EAD_pix = RW_piim
-// RWEAD_piim = RWEAD_pim/RWEAD_pim(-1)*RW_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EADRW_rer = EAD_rer/RW_rer;
-// Auxiliary equation for steady-state output
+
 EADRW_rerbar = EADRW_rer;
-//Terms of Trade
+
 EADRW_tot = RW_pex*EADRW_rer/EAD_pex;
-// Optimal price contract set in foreign markets (FOC), using EAD_pxtilde = US_pimtilde
-// USEAD_pimtilde/USEAD_pim = EAD_cpim*EAD_thetat/(EAD_thetat-1)*EADUS_fx/EADUS_gx;
-// Definition of fx
-// EADUS_fx = US_size/EAD_size*USEAD_im*EAD_mct+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(USEAD_piim(+1)/(USEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^EAD_thetat*EADUS_fx(+1);
-// Definition of gx   
-// EADUS_gx = EADUS_rer*USEAD_pim*US_size/EAD_size*USEAD_im+EAD_xix*EAD_beta*EAD_lambdai(+1)/EAD_lambdai*(USEAD_piim(+1)/(USEAD_piim^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^(EAD_thetat-1)*EADUS_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAD_px = US_pim
-// USEAD_pim^(1-EAD_thetat) = (1-EAD_xix)*USEAD_pimtilde^(1-EAD_thetat)+EAD_xix*(USEAD_pim(-1)/US_pic)^(1-EAD_thetat)*(USEAD_piim(-1)^EAD_chix*US_pi4target^(1/4*(1-EAD_chih)))^(1-EAD_thetat);
-// Intermediate-good price inflation, using EAD_pix = US_piim
-// USEAD_piim = USEAD_pim/USEAD_pim(-1)*US_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EADUS_rer = EAD_rer/US_rer;
-// Auxiliary equation for steady-state output
+
 EADUS_rerbar = EADUS_rer;
-//Terms of Trade
+
 EADUS_tot = US_pex*EADUS_rer/EAD_pex;
-// Total imports 
+
 EAD_im = 
 +EAD_imc
 +EAD_imi
 +EAD_imcg
 +EAD_imig
 ;
-// Total import deflator
+
 EAD_im*EAD_pim  = 
 +EAD_pimc*EAD_imc
 +EAD_pimi*EAD_imi
 +EAD_pimcg*EAD_imcg
 +EAD_pimig*EAD_imig
 ;
-// Effective real exchange rate: double weighting (imports)
+
 EADEAA_weightim = EADEAA_rer*EAA_pex*EADEAA_im/(EAD_pim*EAD_im);
-// Effective real exchange rate: double weighting (exports)
+
 EADEAA_weightex = EAA_size/EAD_size*EAAEAD_im/EAD_ex*EADEAA_rer*EAA_py*EAA_y/(EADEAA_rer*EAA_py*EAA_y
 +EADEAB_rer*EAB_pex*EAAEAB_im
 +EADEAC_rer*EAC_pex*EAAEAC_im
@@ -12846,11 +12846,11 @@ EADEAA_weightex = EAA_size/EAD_size*EAAEAD_im/EAD_ex*EADEAA_rer*EAA_py*EAA_y/(EA
 +EADRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EADEAA_weight = EAD_pim*EAD_im/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAA_weightim+EAD_pex*EAD_ex/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAA_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EADEAB_weightim = EADEAB_rer*EAB_pex*EADEAB_im/(EAD_pim*EAD_im);
-// Effective real exchange rate: double weighting (exports)
+
 EADEAB_weightex = EAB_size/EAD_size*EABEAD_im/EAD_ex*EADEAB_rer*EAB_py*EAB_y/(EADEAB_rer*EAB_py*EAB_y
 +EADEAA_rer*EAA_pex*EABEAA_im
 +EADEAC_rer*EAC_pex*EABEAC_im
@@ -13034,11 +13034,11 @@ EADEAB_weightex = EAB_size/EAD_size*EABEAD_im/EAD_ex*EADEAB_rer*EAB_py*EAB_y/(EA
 +EADRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EADEAB_weight = EAD_pim*EAD_im/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAB_weightim+EAD_pex*EAD_ex/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAB_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EADEAC_weightim = EADEAC_rer*EAC_pex*EADEAC_im/(EAD_pim*EAD_im);
-// Effective real exchange rate: double weighting (exports)
+
 EADEAC_weightex = EAC_size/EAD_size*EACEAD_im/EAD_ex*EADEAC_rer*EAC_py*EAC_y/(EADEAC_rer*EAC_py*EAC_y
 +EADEAA_rer*EAA_pex*EACEAA_im
 +EADEAB_rer*EAB_pex*EACEAB_im
@@ -13222,11 +13222,11 @@ EADEAC_weightex = EAC_size/EAD_size*EACEAD_im/EAD_ex*EADEAC_rer*EAC_py*EAC_y/(EA
 +EADRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EADEAC_weight = EAD_pim*EAD_im/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAC_weightim+EAD_pex*EAD_ex/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAC_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EADEAE_weightim = EADEAE_rer*EAE_pex*EADEAE_im/(EAD_pim*EAD_im);
-// Effective real exchange rate: double weighting (exports)
+
 EADEAE_weightex = EAE_size/EAD_size*EAEEAD_im/EAD_ex*EADEAE_rer*EAE_py*EAE_y/(EADEAE_rer*EAE_py*EAE_y
 +EADEAA_rer*EAA_pex*EAEEAA_im
 +EADEAB_rer*EAB_pex*EAEEAB_im
@@ -13410,11 +13410,11 @@ EADEAE_weightex = EAE_size/EAD_size*EAEEAD_im/EAD_ex*EADEAE_rer*EAE_py*EAE_y/(EA
 +EADRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EADEAE_weight = EAD_pim*EAD_im/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAE_weightim+EAD_pex*EAD_ex/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAE_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EADEAF_weightim = EADEAF_rer*EAF_pex*EADEAF_im/(EAD_pim*EAD_im);
-// Effective real exchange rate: double weighting (exports)
+
 EADEAF_weightex = EAF_size/EAD_size*EAFEAD_im/EAD_ex*EADEAF_rer*EAF_py*EAF_y/(EADEAF_rer*EAF_py*EAF_y
 +EADEAA_rer*EAA_pex*EAFEAA_im
 +EADEAB_rer*EAB_pex*EAFEAB_im
@@ -13598,11 +13598,11 @@ EADEAF_weightex = EAF_size/EAD_size*EAFEAD_im/EAD_ex*EADEAF_rer*EAF_py*EAF_y/(EA
 +EADRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EADEAF_weight = EAD_pim*EAD_im/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAF_weightim+EAD_pex*EAD_ex/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAF_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EADEAG_weightim = EADEAG_rer*EAG_pex*EADEAG_im/(EAD_pim*EAD_im);
-// Effective real exchange rate: double weighting (exports)
+
 EADEAG_weightex = EAG_size/EAD_size*EAGEAD_im/EAD_ex*EADEAG_rer*EAG_py*EAG_y/(EADEAG_rer*EAG_py*EAG_y
 +EADEAA_rer*EAA_pex*EAGEAA_im
 +EADEAB_rer*EAB_pex*EAGEAB_im
@@ -13786,11 +13786,11 @@ EADEAG_weightex = EAG_size/EAD_size*EAGEAD_im/EAD_ex*EADEAG_rer*EAG_py*EAG_y/(EA
 +EADRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EADEAG_weight = EAD_pim*EAD_im/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAG_weightim+EAD_pex*EAD_ex/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAG_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EADEAH_weightim = EADEAH_rer*EAH_pex*EADEAH_im/(EAD_pim*EAD_im);
-// Effective real exchange rate: double weighting (exports)
+
 EADEAH_weightex = EAH_size/EAD_size*EAHEAD_im/EAD_ex*EADEAH_rer*EAH_py*EAH_y/(EADEAH_rer*EAH_py*EAH_y
 +EADEAA_rer*EAA_pex*EAHEAA_im
 +EADEAB_rer*EAB_pex*EAHEAB_im
@@ -13974,11 +13974,11 @@ EADEAH_weightex = EAH_size/EAD_size*EAHEAD_im/EAD_ex*EADEAH_rer*EAH_py*EAH_y/(EA
 +EADRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EADEAH_weight = EAD_pim*EAD_im/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAH_weightim+EAD_pex*EAD_ex/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAH_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EADEAI_weightim = EADEAI_rer*EAI_pex*EADEAI_im/(EAD_pim*EAD_im);
-// Effective real exchange rate: double weighting (exports)
+
 EADEAI_weightex = EAI_size/EAD_size*EAIEAD_im/EAD_ex*EADEAI_rer*EAI_py*EAI_y/(EADEAI_rer*EAI_py*EAI_y
 +EADEAA_rer*EAA_pex*EAIEAA_im
 +EADEAB_rer*EAB_pex*EAIEAB_im
@@ -14162,11 +14162,11 @@ EADEAI_weightex = EAI_size/EAD_size*EAIEAD_im/EAD_ex*EADEAI_rer*EAI_py*EAI_y/(EA
 +EADRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EADEAI_weight = EAD_pim*EAD_im/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAI_weightim+EAD_pex*EAD_ex/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAI_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EADEAJ_weightim = EADEAJ_rer*EAJ_pex*EADEAJ_im/(EAD_pim*EAD_im);
-// Effective real exchange rate: double weighting (exports)
+
 EADEAJ_weightex = EAJ_size/EAD_size*EAJEAD_im/EAD_ex*EADEAJ_rer*EAJ_py*EAJ_y/(EADEAJ_rer*EAJ_py*EAJ_y
 +EADEAA_rer*EAA_pex*EAJEAA_im
 +EADEAB_rer*EAB_pex*EAJEAB_im
@@ -14350,11 +14350,11 @@ EADEAJ_weightex = EAJ_size/EAD_size*EAJEAD_im/EAD_ex*EADEAJ_rer*EAJ_py*EAJ_y/(EA
 +EADRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EADEAJ_weight = EAD_pim*EAD_im/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAJ_weightim+EAD_pex*EAD_ex/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAJ_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EADEAK_weightim = EADEAK_rer*EAK_pex*EADEAK_im/(EAD_pim*EAD_im);
-// Effective real exchange rate: double weighting (exports)
+
 EADEAK_weightex = EAK_size/EAD_size*EAKEAD_im/EAD_ex*EADEAK_rer*EAK_py*EAK_y/(EADEAK_rer*EAK_py*EAK_y
 +EADEAA_rer*EAA_pex*EAKEAA_im
 +EADEAB_rer*EAB_pex*EAKEAB_im
@@ -14538,11 +14538,11 @@ EADEAK_weightex = EAK_size/EAD_size*EAKEAD_im/EAD_ex*EADEAK_rer*EAK_py*EAK_y/(EA
 +EADRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EADEAK_weight = EAD_pim*EAD_im/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAK_weightim+EAD_pex*EAD_ex/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAK_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EADEAL_weightim = EADEAL_rer*EAL_pex*EADEAL_im/(EAD_pim*EAD_im);
-// Effective real exchange rate: double weighting (exports)
+
 EADEAL_weightex = EAL_size/EAD_size*EALEAD_im/EAD_ex*EADEAL_rer*EAL_py*EAL_y/(EADEAL_rer*EAL_py*EAL_y
 +EADEAA_rer*EAA_pex*EALEAA_im
 +EADEAB_rer*EAB_pex*EALEAB_im
@@ -14726,11 +14726,11 @@ EADEAL_weightex = EAL_size/EAD_size*EALEAD_im/EAD_ex*EADEAL_rer*EAL_py*EAL_y/(EA
 +EADRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EADEAL_weight = EAD_pim*EAD_im/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAL_weightim+EAD_pex*EAD_ex/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADEAL_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EADRW_weightim = EADRW_rer*RW_pex*EADRW_im/(EAD_pim*EAD_im);
-// Effective real exchange rate: double weighting (exports)
+
 EADRW_weightex = RW_size/EAD_size*RWEAD_im/EAD_ex*EADRW_rer*RW_py*RW_y/(EADRW_rer*RW_py*RW_y
 +EADEAA_rer*EAA_pex*RWEAA_im
 +EADEAB_rer*EAB_pex*RWEAB_im
@@ -14914,11 +14914,11 @@ EADRW_weightex = RW_size/EAD_size*RWEAD_im/EAD_ex*EADRW_rer*RW_py*RW_y/(EADRW_re
 +EADRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EADRW_weight = EAD_pim*EAD_im/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADRW_weightim+EAD_pex*EAD_ex/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADRW_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EADUS_weightim = EADUS_rer*US_pex*EADUS_im/(EAD_pim*EAD_im);
-// Effective real exchange rate: double weighting (exports)
+
 EADUS_weightex = US_size/EAD_size*USEAD_im/EAD_ex*EADUS_rer*US_py*US_y/(EADUS_rer*US_py*US_y
 +EADEAA_rer*EAA_pex*USEAA_im
 +EADEAB_rer*EAB_pex*USEAB_im
@@ -15102,9 +15102,9 @@ EADUS_weightex = US_size/EAD_size*USEAD_im/EAD_ex*EADUS_rer*US_py*US_y/(EADUS_re
 +EADUS_rer*US_pex*RWUS_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EADUS_weight = EAD_pim*EAD_im/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADUS_weightim+EAD_pex*EAD_ex/(EAD_pim*EAD_im+EAD_pex*EAD_ex)*EADUS_weightex;
-// Effective real exchange rate
+
 EAD_reer = 1
 *EADEAA_rer^EADEAA_weight
 *EADEAB_rer^EADEAB_weight
@@ -15120,7 +15120,7 @@ EAD_reer = 1
 *EADRW_rer^EADRW_weight
 *EADUS_rer^EADUS_weight
 ;
-// Effective terms of trade
+
 EAD_etot = 1
 *EADEAA_tot^EADEAA_weight
 *EADEAB_tot^EADEAB_weight
@@ -15136,10 +15136,10 @@ EAD_etot = 1
 *EADRW_tot^EADRW_weight
 *EADUS_tot^EADUS_weight
 ;
-//-----------------
-// Final-good firms
-//-----------------
-// Private consumption good (import)
+
+
+
+
 EAD_imc^((EAD_mumc-1)/EAD_mumc) =
 +EADEAA_numc ^(1/EAD_mumc)*EADEAA_imc^(1-1/EAD_mumc)
 +EADEAC_numc ^(1/EAD_mumc)*EADEAC_imc^(1-1/EAD_mumc)
@@ -15167,27 +15167,27 @@ EAD_imc^((EAD_mumc-1)/EAD_mumc) =
 -EADRW_numc
 -EADUS_numc
 )^(1/EAD_mumc)*EADEAB_imc^(1-1/EAD_mumc);
-// Demand for bilateral consumption import goods
+
 EADEAA_imc = EADEAA_numc*((EAA_pex*EADEAA_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
-// Demand for bilateral consumption import goods
+
 EADEAC_imc = EADEAC_numc*((EAC_pex*EADEAC_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
-// Demand for bilateral consumption import goods
+
 EADEAF_imc = EADEAF_numc*((EAF_pex*EADEAF_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
-// Demand for bilateral consumption import goods
+
 EADEAG_imc = EADEAG_numc*((EAG_pex*EADEAG_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
-// Demand for bilateral consumption import goods
+
 EADEAH_imc = EADEAH_numc*((EAH_pex*EADEAH_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
-// Demand for bilateral consumption import goods
+
 EADEAI_imc = EADEAI_numc*((EAI_pex*EADEAI_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
-// Demand for bilateral consumption import goods
+
 EADEAJ_imc = EADEAJ_numc*((EAJ_pex*EADEAJ_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
-// Demand for bilateral consumption import goods
+
 EADEAK_imc = EADEAK_numc*((EAK_pex*EADEAK_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
-// Demand for bilateral consumption import goods
+
 EADEAL_imc = EADEAL_numc*((EAL_pex*EADEAL_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
-// Demand for bilateral consumption import goods
+
 EADRW_imc = EADRW_numc*((RW_pex*EADRW_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
-// Demand for bilateral consumption import goods
+
 EADUS_imc = EADUS_numc*((US_pex*EADUS_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
 EADEAB_imc = (1
 -EADEAA_numc
@@ -15203,7 +15203,7 @@ EADEAB_imc = (1
 -EADRW_numc
 -EADUS_numc
 )*((EAB_pex*EADEAB_rer)/EAD_pimc)^(-EAD_mumc)*EAD_imc;
-// Price of the consumption good (import)
+
 EAD_pimc^(1-EAD_mumc) =
 +EADEAA_numc * (EAA_pex*EADEAA_rer)^(1-EAD_mumc)
 +EADEAC_numc * (EAC_pex*EADEAC_rer)^(1-EAD_mumc)
@@ -15231,9 +15231,9 @@ EAD_pimc^(1-EAD_mumc) =
 -EADRW_numc
 -EADUS_numc
 )*(EAB_pex*EADEAB_rer)^(1-EAD_mumc);
-// Private consumption good (import) inflation
+
 EAD_piimc = EAD_pimc/EAD_pimc(-1)*EAD_pic;
-// Private consumption good (import)
+
 EAD_imi^((EAD_mumi-1)/EAD_mumi) =
 +EADEAA_numi ^(1/EAD_mumi)*EADEAA_imi^(1-1/EAD_mumi)
 +EADEAC_numi ^(1/EAD_mumi)*EADEAC_imi^(1-1/EAD_mumi)
@@ -15261,27 +15261,27 @@ EAD_imi^((EAD_mumi-1)/EAD_mumi) =
 -EADRW_numi
 -EADUS_numi
 )^(1/EAD_mumi)*EADEAB_imi^(1-1/EAD_mumi);
-// Demand for bilateral consumption import goods
+
 EADEAA_imi = EADEAA_numi*((EAA_pex*EADEAA_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
-// Demand for bilateral consumption import goods
+
 EADEAC_imi = EADEAC_numi*((EAC_pex*EADEAC_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
-// Demand for bilateral consumption import goods
+
 EADEAF_imi = EADEAF_numi*((EAF_pex*EADEAF_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
-// Demand for bilateral consumption import goods
+
 EADEAG_imi = EADEAG_numi*((EAG_pex*EADEAG_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
-// Demand for bilateral consumption import goods
+
 EADEAH_imi = EADEAH_numi*((EAH_pex*EADEAH_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
-// Demand for bilateral consumption import goods
+
 EADEAI_imi = EADEAI_numi*((EAI_pex*EADEAI_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
-// Demand for bilateral consumption import goods
+
 EADEAJ_imi = EADEAJ_numi*((EAJ_pex*EADEAJ_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
-// Demand for bilateral consumption import goods
+
 EADEAK_imi = EADEAK_numi*((EAK_pex*EADEAK_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
-// Demand for bilateral consumption import goods
+
 EADEAL_imi = EADEAL_numi*((EAL_pex*EADEAL_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
-// Demand for bilateral consumption import goods
+
 EADRW_imi = EADRW_numi*((RW_pex*EADRW_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
-// Demand for bilateral consumption import goods
+
 EADUS_imi = EADUS_numi*((US_pex*EADUS_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
 EADEAB_imi = (1
 -EADEAA_numi
@@ -15297,7 +15297,7 @@ EADEAB_imi = (1
 -EADRW_numi
 -EADUS_numi
 )*((EAB_pex*EADEAB_rer)/EAD_pimi)^(-EAD_mumi)*EAD_imi;
-// Price of the consumption good (import)
+
 EAD_pimi^(1-EAD_mumi) =
 +EADEAA_numi * (EAA_pex*EADEAA_rer)^(1-EAD_mumi)
 +EADEAC_numi * (EAC_pex*EADEAC_rer)^(1-EAD_mumi)
@@ -15325,9 +15325,9 @@ EAD_pimi^(1-EAD_mumi) =
 -EADRW_numi
 -EADUS_numi
 )*(EAB_pex*EADEAB_rer)^(1-EAD_mumi);
-// Private consumption good (import) inflation
+
 EAD_piimi = EAD_pimi/EAD_pimi(-1)*EAD_pic;
-// Private consumption good (import)
+
 EAD_imcg^((EAD_mumcg-1)/EAD_mumcg) =
 +EADEAA_numcg ^(1/EAD_mumcg)*EADEAA_imcg^(1-1/EAD_mumcg)
 +EADEAC_numcg ^(1/EAD_mumcg)*EADEAC_imcg^(1-1/EAD_mumcg)
@@ -15355,27 +15355,27 @@ EAD_imcg^((EAD_mumcg-1)/EAD_mumcg) =
 -EADRW_numcg
 -EADUS_numcg
 )^(1/EAD_mumcg)*EADEAB_imcg^(1-1/EAD_mumcg);
-// Demand for bilateral consumption import goods
+
 EADEAA_imcg = EADEAA_numcg*((EAA_pex*EADEAA_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
-// Demand for bilateral consumption import goods
+
 EADEAC_imcg = EADEAC_numcg*((EAC_pex*EADEAC_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
-// Demand for bilateral consumption import goods
+
 EADEAF_imcg = EADEAF_numcg*((EAF_pex*EADEAF_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
-// Demand for bilateral consumption import goods
+
 EADEAG_imcg = EADEAG_numcg*((EAG_pex*EADEAG_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
-// Demand for bilateral consumption import goods
+
 EADEAH_imcg = EADEAH_numcg*((EAH_pex*EADEAH_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
-// Demand for bilateral consumption import goods
+
 EADEAI_imcg = EADEAI_numcg*((EAI_pex*EADEAI_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
-// Demand for bilateral consumption import goods
+
 EADEAJ_imcg = EADEAJ_numcg*((EAJ_pex*EADEAJ_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
-// Demand for bilateral consumption import goods
+
 EADEAK_imcg = EADEAK_numcg*((EAK_pex*EADEAK_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
-// Demand for bilateral consumption import goods
+
 EADEAL_imcg = EADEAL_numcg*((EAL_pex*EADEAL_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
-// Demand for bilateral consumption import goods
+
 EADRW_imcg = EADRW_numcg*((RW_pex*EADRW_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
-// Demand for bilateral consumption import goods
+
 EADUS_imcg = EADUS_numcg*((US_pex*EADUS_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
 EADEAB_imcg = (1
 -EADEAA_numcg
@@ -15391,7 +15391,7 @@ EADEAB_imcg = (1
 -EADRW_numcg
 -EADUS_numcg
 )*((EAB_pex*EADEAB_rer)/EAD_pimcg)^(-EAD_mumcg)*EAD_imcg;
-// Price of the consumption good (import)
+
 EAD_pimcg^(1-EAD_mumcg) =
 +EADEAA_numcg * (EAA_pex*EADEAA_rer)^(1-EAD_mumcg)
 +EADEAC_numcg * (EAC_pex*EADEAC_rer)^(1-EAD_mumcg)
@@ -15419,9 +15419,9 @@ EAD_pimcg^(1-EAD_mumcg) =
 -EADRW_numcg
 -EADUS_numcg
 )*(EAB_pex*EADEAB_rer)^(1-EAD_mumcg);
-// Private consumption good (import) inflation
+
 EAD_piimcg = EAD_pimcg/EAD_pimcg(-1)*EAD_pic;
-// Private consumption good (import)
+
 EAD_imig^((EAD_mumig-1)/EAD_mumig) =
 +EADEAA_numig ^(1/EAD_mumig)*EADEAA_imig^(1-1/EAD_mumig)
 +EADEAC_numig ^(1/EAD_mumig)*EADEAC_imig^(1-1/EAD_mumig)
@@ -15449,27 +15449,27 @@ EAD_imig^((EAD_mumig-1)/EAD_mumig) =
 -EADRW_numig
 -EADUS_numig
 )^(1/EAD_mumig)*EADEAB_imig^(1-1/EAD_mumig);
-// Demand for bilateral consumption import goods
+
 EADEAA_imig = EADEAA_numig*((EAA_pex*EADEAA_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
-// Demand for bilateral consumption import goods
+
 EADEAC_imig = EADEAC_numig*((EAC_pex*EADEAC_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
-// Demand for bilateral consumption import goods
+
 EADEAF_imig = EADEAF_numig*((EAF_pex*EADEAF_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
-// Demand for bilateral consumption import goods
+
 EADEAG_imig = EADEAG_numig*((EAG_pex*EADEAG_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
-// Demand for bilateral consumption import goods
+
 EADEAH_imig = EADEAH_numig*((EAH_pex*EADEAH_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
-// Demand for bilateral consumption import goods
+
 EADEAI_imig = EADEAI_numig*((EAI_pex*EADEAI_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
-// Demand for bilateral consumption import goods
+
 EADEAJ_imig = EADEAJ_numig*((EAJ_pex*EADEAJ_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
-// Demand for bilateral consumption import goods
+
 EADEAK_imig = EADEAK_numig*((EAK_pex*EADEAK_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
-// Demand for bilateral consumption import goods
+
 EADEAL_imig = EADEAL_numig*((EAL_pex*EADEAL_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
-// Demand for bilateral consumption import goods
+
 EADRW_imig = EADRW_numig*((RW_pex*EADRW_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
-// Demand for bilateral consumption import goods
+
 EADUS_imig = EADUS_numig*((US_pex*EADUS_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
 EADEAB_imig = (1
 -EADEAA_numig
@@ -15485,7 +15485,7 @@ EADEAB_imig = (1
 -EADRW_numig
 -EADUS_numig
 )*((EAB_pex*EADEAB_rer)/EAD_pimig)^(-EAD_mumig)*EAD_imig;
-// Price of the consumption good (import)
+
 EAD_pimig^(1-EAD_mumig) =
 +EADEAA_numig * (EAA_pex*EADEAA_rer)^(1-EAD_mumig)
 +EADEAC_numig * (EAC_pex*EADEAC_rer)^(1-EAD_mumig)
@@ -15513,15 +15513,15 @@ EAD_pimig^(1-EAD_mumig) =
 -EADRW_numig
 -EADUS_numig
 )*(EAB_pex*EADEAB_rer)^(1-EAD_mumig);
-// Private consumption good (import) inflation
+
 EAD_piimig = EAD_pimig/EAD_pimig(-1)*EAD_pic;
-// Private consumption good (import) inflation
+
 EAD_piimc4 = EAD_pimc/EAD_pimc(-4)*EAD_pic4;
-// Private consumption good (import) inflation
+
 EAD_piex4 = EAD_pex/EAD_pex(-4)*EAD_pic4;
-// Wedge between aggregate demand and production, using EAD_x = EAE_size/EAD_size*EAE_im
+
 EAD_yst = EAD_sh*EAD_ht+EAD_sx*EAD_ex;
-// Aggregate demand for bilateral imported intermediate goods
+
 EADEAA_im = 
 +EADEAA_imc
 +EADEAA_imi
@@ -15600,18 +15600,18 @@ EADUS_im =
 +EADUS_imcg
 +EADUS_imig
 ;
-// Private consumption good firm
-// Private consumption good (tradable)
+
+
 EAD_ttc^((EAD_mutc-1)/EAD_mutc) = (EAD_nutc)^(1/EAD_mutc)*EAD_htc^(1-1/EAD_mutc)+(1-EAD_nutc)^(1/EAD_mutc)*EAD_imc^(1-1/EAD_mutc);
-// Private consumption good  (total)
+
 EAD_qc^((EAD_muc-1)/EAD_muc) = (EAD_nuc)^(1/EAD_muc)*EAD_ttc^(1-1/EAD_muc)+(1-EAD_nuc)^(1/EAD_muc)*EAD_ntc^(1-1/EAD_muc);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAD_ntc = (1-EAD_nuc)*(EAD_pnt)^(-EAD_muc)*EAD_qc;
-// Price of the consumption good (tradable)  
+
 EAD_pttc^(1-EAD_mutc) = (EAD_nutc)*EAD_pht^(1-EAD_mutc)+(1-EAD_nutc)*EAD_pimc^(1-EAD_mutc);
-// Price of the consumption good 
+
 1^(1-EAD_muc) = (EAD_nuc)*EAD_pttc^(1-EAD_muc)+(1-EAD_nuc)*EAD_pnt^(1-EAD_muc);
-// Demand for domestic intermediate goods
+
 EAD_htc = EAD_nutc*(EAD_pht/EAD_pttc)^(-EAD_mutc)*EAD_ttc;
 EADEAA_gammaimc = 0;
 EADEAA_gammaimcdag = 1;
@@ -15639,20 +15639,20 @@ EADRW_gammaimc = 0;
 EADRW_gammaimcdag = 1;
 EADUS_gammaimc = 0;
 EADUS_gammaimcdag = 1;
-// Private consumption good (tradable)
+
 EAD_tti^((EAD_muti-1)/EAD_muti) = (EAD_nuti)^(1/EAD_muti)*EAD_hti^(1-1/EAD_muti)+(1-EAD_nuti)^(1/EAD_muti)*EAD_imi^(1-1/EAD_muti);
-// Private consumption good  (total)
+
 EAD_qi^((EAD_mui-1)/EAD_mui) = (EAD_nui)^(1/EAD_mui)*EAD_tti^(1-1/EAD_mui)+(1-EAD_nui)^(1/EAD_mui)*EAD_nti^(1-1/EAD_mui);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAD_nti = (1-EAD_nui)*(EAD_pnt/EAD_pi)^(-EAD_mui)*EAD_qi;
-// Price of the consumption good (tradable)  
+
 EAD_ptti^(1-EAD_muti) = (EAD_nuti)*EAD_pht^(1-EAD_muti)+(1-EAD_nuti)*EAD_pimi^(1-EAD_muti);
-// Price of the consumption good 
+
 EAD_pi^(1-EAD_mui) = (EAD_nui)*EAD_ptti^(1-EAD_mui)+(1-EAD_nui)*EAD_pnt^(1-EAD_mui);
-// Auxiliary equation for the price of the investment good in steady state
-// this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
+
+
 EAD_pibar = EAD_pi;
-// Demand for domestic intermediate goods
+
 EAD_hti = EAD_nuti*(EAD_pht/EAD_ptti)^(-EAD_muti)*EAD_tti;
 EADEAA_gammaimi = 0;
 EADEAA_gammaimidag = 1;
@@ -15680,17 +15680,17 @@ EADRW_gammaimi = 0;
 EADRW_gammaimidag = 1;
 EADUS_gammaimi = 0;
 EADUS_gammaimidag = 1;
-// Private consumption good (tradable)
+
 EAD_ttcg^((EAD_mutcg-1)/EAD_mutcg) = (EAD_nutcg)^(1/EAD_mutcg)*EAD_htcg^(1-1/EAD_mutcg)+(1-EAD_nutcg)^(1/EAD_mutcg)*EAD_imcg^(1-1/EAD_mutcg);
-// Private consumption good  (total)
+
 EAD_qcg^((EAD_mucg-1)/EAD_mucg) = (EAD_nucg)^(1/EAD_mucg)*EAD_ttcg^(1-1/EAD_mucg)+(1-EAD_nucg)^(1/EAD_mucg)*EAD_ntcg^(1-1/EAD_mucg);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAD_ntcg = (1-EAD_nucg)*(EAD_pnt/EAD_pcg)^(-EAD_mucg)*EAD_qcg;
-// Price of the consumption good (tradable)  
+
 EAD_pttcg^(1-EAD_mutcg) = (EAD_nutcg)*EAD_pht^(1-EAD_mutcg)+(1-EAD_nutcg)*EAD_pimcg^(1-EAD_mutcg);
-// Price of the consumption good 
+
 EAD_pcg^(1-EAD_mucg) = (EAD_nucg)*EAD_pttcg^(1-EAD_mucg)+(1-EAD_nucg)*EAD_pnt^(1-EAD_mucg);
-// Demand for domestic intermediate goods
+
 EAD_htcg = EAD_nutcg*(EAD_pht/EAD_pttcg)^(-EAD_mutcg)*EAD_ttcg;
 EADEAA_gammaimcg = 0;
 EADEAA_gammaimcgdag = 1;
@@ -15718,17 +15718,17 @@ EADRW_gammaimcg = 0;
 EADRW_gammaimcgdag = 1;
 EADUS_gammaimcg = 0;
 EADUS_gammaimcgdag = 1;
-// Private consumption good (tradable)
+
 EAD_ttig^((EAD_mutig-1)/EAD_mutig) = (EAD_nutig)^(1/EAD_mutig)*EAD_htig^(1-1/EAD_mutig)+(1-EAD_nutig)^(1/EAD_mutig)*EAD_imig^(1-1/EAD_mutig);
-// Private consumption good  (total)
+
 EAD_qig^((EAD_muig-1)/EAD_muig) = (EAD_nuig)^(1/EAD_muig)*EAD_ttig^(1-1/EAD_muig)+(1-EAD_nuig)^(1/EAD_muig)*EAD_ntig^(1-1/EAD_muig);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAD_ntig = (1-EAD_nuig)*(EAD_pnt/EAD_pig)^(-EAD_muig)*EAD_qig;
-// Price of the consumption good (tradable)  
+
 EAD_pttig^(1-EAD_mutig) = (EAD_nutig)*EAD_pht^(1-EAD_mutig)+(1-EAD_nutig)*EAD_pimig^(1-EAD_mutig);
-// Price of the consumption good 
+
 EAD_pig^(1-EAD_muig) = (EAD_nuig)*EAD_pttig^(1-EAD_muig)+(1-EAD_nuig)*EAD_pnt^(1-EAD_muig);
-// Demand for domestic intermediate goods
+
 EAD_htig = EAD_nutig*(EAD_pht/EAD_pttig)^(-EAD_mutig)*EAD_ttig;
 EADEAA_gammaimig = 0;
 EADEAA_gammaimigdag = 1;
@@ -15756,7 +15756,7 @@ EADRW_gammaimig = 0;
 EADRW_gammaimigdag = 1;
 EADUS_gammaimig = 0;
 EADUS_gammaimigdag = 1;
-// Trade balance
+
 EAD_tb =
 +EAD_pex*EAA_size/EAD_size*EAAEAD_im
 -EAA_pex*EADEAA_rer*EADEAA_im
@@ -15785,7 +15785,7 @@ EAD_tb =
 +EAD_pex*US_size/EAD_size*USEAD_im
 -US_pex*EADUS_rer*EADUS_im
 ;
-// Aggregate exports (volume)
+
 EAD_ex =
 +EAA_size/EAD_size*EAAEAD_im
 +EAB_size/EAD_size*EABEAD_im
@@ -15801,131 +15801,131 @@ EAD_ex =
 +RW_size/EAD_size*RWEAD_im
 +US_size/EAD_size*USEAD_im
 ;
-//-------------
-//-------------
-// Fiscal and monetary authorities
-//-------------
-//-------------
-//-------------
-// Fiscal authority
-//-------------
-// Government budget constraint, using EAD_pg = EAD_pht
-// TODO: check the (1-EAD_gammab(-1)) adjustment here, which is not in the fiscal extention
+
+
+
+
+
+
+
+
+
+
 	EAD_pcg(-1)*EAD_cg(-1)+EAD_pig(-1)*EAD_ig(-1)+EAD_tr(-1)
 	+EAD_b(-1)*EAD_pic(-1)^(-1)+EAD_m(-2)*EAD_pic(-1)^(-1) = EAD_tauc(-1)*EAD_c(-1)+(EAD_taun(-1)+EAD_tauwh(-1))*(EAD_wi(-1)*EAD_ndi(-1)+EAD_wj(-1)*EAD_ndj(-1))+EAD_tauwf(-1)*EAD_w(-1)*EAD_nd(-1)+EAD_tauk(-1)*(EAD_rk(-1)*EAD_u(-1)-(EAD_gammau(-1)+EAD_delta)*EAD_pi(-1))*EAD_k(-1)+EAD_taud(-1)*EAD_d(-1)+EAD_t(-1)+(EAD_r(-1)*(1-EAD_gammab(-1)))^(-1)*EAD_b+EAD_m(-1);
-// Government spending, using EAD_pg = EAD_pht
+
 EAD_pcg*EAD_cg = EAD_cgy*EAD_pybar*EAD_ybar;
 EAD_pig*EAD_ig = EAD_igy*EAD_pybar*EAD_ybar;
 EAD_t = 0;
 EAD_b = EAD_bytarget*EAD_pybar*EAD_ybar;
-// Auxiliary equation for steady-state output
+
 EAD_ybar = EAD_y;
-// Auxiliary equation for steady-state output
+
 EAD_ytbar = EAD_yst;
-// Auxiliary equation for steady-state output
+
 EAD_ynbar = EAD_ysn;
-// Auxiliary equation for steady-state output deflator
+
 EAD_pybar = EAD_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
+
 EAD_trybar = EAD_tr/(EAD_pybar*EAD_ybar);
-// Auxiliary equation for determining the distribution of lump-sum taxes
+
 EAD_ti = EAD_upsilont*EAD_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
 upsilont = 0:            ti = 0, tj = 1/omega t
 upsilont = 1:            ti = tj = t
 upsilont = 1/(1-omega):  ti = 1/(1-omega) t, tj = 0. */
-// Auxiliary equation for determining the distribution of lump-sum transfers
+
 EAD_tri = EAD_upsilontr*EAD_tr;
 /* Note: Valid parameter space: 0 <= upsilontr <= 1/(1-omega) with
 upsilontr = 0:            tri = 0, trj = 1/omega tr
 upsilontr = 1:            tri = trj = tr
 upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
-//-------------
-// Monetary authority
-//-------------
+
+
+
 	EAD_r = EAL_r;
 EAD_pic4 = EAD_pi4target;
 EAD_rr-1 = EAD_r/EAD_pi4target^(1/4)-1;
-// Equilibrium real interest rate
+
 EAD_rrstar-1 = 1/EAD_beta-1;
-//-------------
-//-------------
-// Aggregation, market clearing and resource constraint
-//-------------
-//-------------
-//-------------
-// Aggregation
-//-------------
-// Aggregate consumption
+
+
+
+
+
+
+
+
+
 EAD_c = (1-EAD_omega)*EAD_ci+EAD_omega*EAD_cj;
-// Aggregate money holdings
+
 EAD_m = (1-EAD_omega)*EAD_mi+EAD_omega*EAD_mj;
-// Aggregate capital stock
+
 EAD_k = (1-EAD_omega)*EAD_ki;
-// Aggregate investment
+
 EAD_i = (1-EAD_omega)*EAD_ii;
-// Aggregate lump-sum transfers
+
 EAD_trj = 
 1/EAD_omega*EAD_tr-(1-EAD_omega)/EAD_omega*EAD_tri
 ;
-// Aggregate lump-sum taxes
+
 EAD_tj = 
 1/EAD_omega*EAD_t-(1-EAD_omega)/EAD_omega*EAD_ti
 ;
-// Aggregate transaction costs
+
 EAD_gammav = (1-EAD_omega)*EAD_ci*EAD_gammavi+EAD_omega*EAD_cj*EAD_gammavj;
-//-------------
-// Market clearing
-//-------------
-// Labour markets for household I
-// Wedge between labour demand/hours worked and labour supply
+
+
+
+
+
 EAD_ni = EAD_si*EAD_ndi;
-// Wage dispersion
+
 EAD_si = (1-EAD_xii)*(EAD_witilde/EAD_wi)^(-EAD_etai)+EAD_xii*(EAD_wi(-1)/EAD_wi)^(-EAD_etai)*(EAD_pic/(EAD_pic(-1)^EAD_chii*EAD_pi4target^(1/4*(1-EAD_chii))))^(EAD_etai)*EAD_si(-1);
-// Labour markets for household J
-// Wedge between labour demand/hours worked and labour supply
+
+
 EAD_nj = EAD_sj*EAD_ndj;
-// Wage dispersion
+
 EAD_sj = (1-EAD_xij)*(EAD_wjtilde/EAD_wj)^(-EAD_etaj)+EAD_xij*(EAD_wj(-1)/EAD_wj)^(-EAD_etaj)*(EAD_pic/(EAD_pic(-1)^EAD_chij*EAD_pi4target^(1/4*(1-EAD_chij))))^(EAD_etaj)*EAD_sj(-1);
-// Rental market for capital
-// Equality of capital input and effective capital services
+
+
 EAD_u*EAD_k = EAD_kd;
-// Intermediate-good markets
-// Wedge between aggregate demand and production, using EAD_x = EAE_size/EAD_size*EAE_im
+
+
 EAD_ysn = EAD_snt*EAD_nt;
-//  nontradables aggregate demand
+
 EAD_nt = 
 +EAD_ntc
 +EAD_nti
 +EAD_ntcg
 +EAD_ntig
 ;
-// Aggregate demand for domestic intermediate goods, using EAD_hg = EAD_cg
+
 EAD_ht =
 +EAD_htc
 +EAD_hti
 +EAD_htcg
 +EAD_htig
 ;
-// Price dispersion in the domestic markets
+
 EAD_sh = (1-EAD_xih)*(EAD_phttilde/EAD_pht)^(-EAD_thetat)+EAD_xih*(EAD_piht/(EAD_piht(-1)^EAD_chih*EAD_pi4target^(1/4*(1-EAD_chih))))^EAD_thetat*EAD_sh(-1);
-// Price dispersion in the foreign markets
+
 EAD_sx = (1-EAD_xix)*(EAD_pextilde/EAD_pex)^(-EAD_thetat)+EAD_xix*(EAD_piex/(EAD_piex(-1)^EAD_chix*EAD_pi4target^(1/4*(1-EAD_chix))))^EAD_thetat*EAD_sx(-1);
-// Price dispersion in the domestic markets
+
 EAD_snt = (1-EAD_xin)*(EAD_pnttilde/EAD_pnt)^(-EAD_thetan)+EAD_xin*(EAD_pint/(EAD_pint(-1)^EAD_chin*EAD_pi4target^(1/4*(1-EAD_chin))))^EAD_thetan*EAD_snt(-1);
-// Final-good markets
-// Aggregate consumption and transaction cost
+
+
 EAD_qc = EAD_c+EAD_gammav;
-// Aggregate investment and capital utilisation cost
+
 EAD_qi = EAD_i+EAD_k*EAD_gammau;
-// Aggregate gov demand components added to use the same structure like in private components
+
 EAD_qcg = EAD_cg;
 EAD_qig = EAD_ig;
-//-------------
-// Resource constraint
-//-------------
-// TODO: why there is no adjustment cost for gov components
-// Aggregate nominal demand
+
+
+
+
+
 EAD_py*EAD_y = 
 +EAD_qc
 +EAD_pi*EAD_qi
@@ -15997,83 +15997,83 @@ EAD_py*EAD_y =
 -(US_pex*EADUS_rer)*EADUS_imcg
 -(US_pex*EADUS_rer)*EADUS_imig
 ;
-// Aggregate real demand
+
 EAD_y = EAD_yst+EAD_ysn;
-//-------------
-//-------------
-// Autoregressive shocks
-//-------------
-//-------------
-// Productivity shocks
+
+
+
+
+
+
 log(EAD_zt) = (1-EAD_rhozt)*log(EAD_ztbar)+EAD_rhozt*log(EAD_zt(-1))+EAD_epszt;
 log(EAD_zn) = (1-EAD_rhozn)*log(EAD_znbar)+EAD_rhozn*log(EAD_zn(-1))+EAD_epszn;
-// Government spending shock
+
 EAD_cgy = (1-EAD_rhocg)*EAD_cgybar+EAD_rhocg*EAD_cgy(-1)+EAD_epsgc;
 EAD_igy = (1-EAD_rhoig)*EAD_igybar+EAD_rhoig*EAD_igy(-1)+EAD_epsgi;
-// Transfer shock
+
 EAD_try = (1-EAD_rhotr)*EAD_trybar+EAD_rhotr*EAD_try(-1)+EAD_epstr;
-// Consumption tax shock
+
 EAD_tauc = (1-EAD_rhotauc)*EAD_taucbar+EAD_rhotauc*EAD_tauc(-1)+EAD_epstauc;
-// Dividend income tax shock
+
 EAD_taud = (1-EAD_rhotaud)*EAD_taudbar+EAD_rhotaud*EAD_taud(-1)+EAD_epstaud;
-// Capital income tax shock
+
 EAD_tauk = (1-EAD_rhotauk)*EAD_taukbar+EAD_rhotauk*EAD_tauk(-1)+EAD_epstauk;
-// Labour income tax shock
+
 EAD_taun = (1-EAD_rhotaun)*EAD_taunbar+EAD_rhotaun*EAD_taun(-1)+EAD_epstaun;
-// Payroll tax shock: households
+
 EAD_tauwh = (1-EAD_rhotauwh)*EAD_tauwhbar+EAD_rhotauwh*EAD_tauwh(-1)+EAD_epstauwh;
-// Payroll tax shock: firms
+
 EAD_tauwf = (1-EAD_rhotauwf)*EAD_tauwfbar+EAD_rhotauwf*EAD_tauwf(-1)+EAD_epstauwf;
-// Wage cost push shock
+
 EAD_wcst = (1-EAD_rhowcst)*EAD_wcstbar+EAD_rhowcst*EAD_wcst(-1)+EAD_epswcst;
-// Preference shock
+
 log(EAD_zcon) = (1-EAD_rhozcon)*log(EAD_zconbar)+EAD_rhozcon*log(EAD_zcon(-1))+EAD_epszcon;
-// Investment specific shock
+
 log(EAD_zinv) = (1-EAD_rhozinv)*log(EAD_zinvbar)+EAD_rhozinv*log(EAD_zinv(-1))+EAD_epszinv;
-//-------------
-//-------------
-// Conditions for calibration and reporting
-//-------------
-//-------------
-// Aggregate nominal consumption share
+
+
+
+
+
+
 EAD_cy = EAD_c/(EAD_py*EAD_y);
-// Aggregate nominal investment share
+
 EAD_iy = EAD_pi*EAD_i/(EAD_py*EAD_y);
-// Aggregate nominal import share  
+
 EAD_imy = (
 +EAD_pimc*EAD_imc
 +EAD_pimi*EAD_imi
 +EAD_pimcg*EAD_imcg
 +EAD_pimig*EAD_imig
 )/(EAD_py*EAD_y);
-// Aggregate nominal import share
+
 EAD_imcy = EAD_pimc*EAD_imc/(EAD_py*EAD_y);
 EAD_imiy = EAD_pimi*EAD_imi/(EAD_py*EAD_y);
 EAD_imcgy = EAD_pimcg*EAD_imcg/(EAD_py*EAD_y);
 EAD_imigy = EAD_pimig*EAD_imig/(EAD_py*EAD_y);
-// Aggregate debt-to-output ratio
+
 EAD_by = EAD_b/(EAD_pybar*EAD_ybar);
-// Aggregate lump-sum tax-to-output ratio
+
 EAD_ty = EAD_t/(EAD_pybar*EAD_ybar);
-// Aggregate labour cost share
+
 EAD_lcy = ((1+EAD_tauwf)*EAD_w*EAD_nd)/(EAD_py*EAD_y);
-// Aggregate nominal Wage share
+
 EAD_wy = (EAD_w*EAD_nd)/(EAD_py*EAD_y);
-// NT sector nominal Wage share
+
 EAD_wnty = (EAD_w*EAD_ndn)/(EAD_pnt*EAD_ysn);
-// T sector nominal Wage share
+
 EAD_whty = (EAD_w*EAD_ndt)/(EAD_pht*EAD_yst);
-// T sector share
+
 EAD_yhty = EAD_pht*EAD_yst/(EAD_py*EAD_y);
-// NT sector share
+
 EAD_ynty = EAD_pnt*EAD_ysn/(EAD_py*EAD_y);
-// Output gap
+
 EAD_ygap = 0;
-// Output growth (gross rate)
+
 EAD_ygrowth = EAD_y/EAD_y(-1);
-// Output growth (gross rate yoy)
+
 EAD_ygrowth4 = EAD_y/EAD_y(-4);
-// Domestic nominal output as a share of world nominal output
+
 EAD_yshare  = EAD_size*EAD_py*EAD_y/EAD_rer/(
 +EAA_size*EAA_py*EAA_y/EAA_rer
 +EAB_size*EAB_py*EAB_y/EAB_rer
@@ -16090,153 +16090,153 @@ EAD_yshare  = EAD_size*EAD_py*EAD_y/EAD_rer/(
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
-// Interest (semi-)elasticity of money demand
+
 EAD_epsilonm = -1/8*1/(EAD_r*(EAD_gammav2*EAD_r+EAD_r-1));
-// Trade balance-to-GDP ratio
+
 EAD_tby = EAD_tb/(EAD_py*EAD_y);
-// Bilateral shares
+
 EADEAA_imcy = (EAA_pex*EADEAA_rer)*EADEAA_imc/(EAD_py*EAD_y);
 EADEAA_imiy = (EAA_pex*EADEAA_rer)*EADEAA_imi/(EAD_py*EAD_y);
 EADEAA_imcgy = (EAA_pex*EADEAA_rer)*EADEAA_imcg/(EAD_py*EAD_y);
 EADEAA_imigy = (EAA_pex*EADEAA_rer)*EADEAA_imig/(EAD_py*EAD_y);
-// Exports of consumption goods to gdp
+
 EADEAA_excy  = EAA_size/EAD_size*EAD_pex*EAAEAD_imc/(EAD_py*EAD_y);
-// Exports of investment goods to gdp
+
 EADEAA_exiy  = EAA_size/EAD_size*EAD_pex*EAAEAD_imi/(EAD_py*EAD_y);
-// Bilateral shares
+
 EADEAB_imcy = (EAB_pex*EADEAB_rer)*EADEAB_imc/(EAD_py*EAD_y);
 EADEAB_imiy = (EAB_pex*EADEAB_rer)*EADEAB_imi/(EAD_py*EAD_y);
 EADEAB_imcgy = (EAB_pex*EADEAB_rer)*EADEAB_imcg/(EAD_py*EAD_y);
 EADEAB_imigy = (EAB_pex*EADEAB_rer)*EADEAB_imig/(EAD_py*EAD_y);
-// Exports of consumption goods to gdp
+
 EADEAB_excy  = EAB_size/EAD_size*EAD_pex*EABEAD_imc/(EAD_py*EAD_y);
-// Exports of investment goods to gdp
+
 EADEAB_exiy  = EAB_size/EAD_size*EAD_pex*EABEAD_imi/(EAD_py*EAD_y);
-// Bilateral shares
+
 EADEAC_imcy = (EAC_pex*EADEAC_rer)*EADEAC_imc/(EAD_py*EAD_y);
 EADEAC_imiy = (EAC_pex*EADEAC_rer)*EADEAC_imi/(EAD_py*EAD_y);
 EADEAC_imcgy = (EAC_pex*EADEAC_rer)*EADEAC_imcg/(EAD_py*EAD_y);
 EADEAC_imigy = (EAC_pex*EADEAC_rer)*EADEAC_imig/(EAD_py*EAD_y);
-// Exports of consumption goods to gdp
+
 EADEAC_excy  = EAC_size/EAD_size*EAD_pex*EACEAD_imc/(EAD_py*EAD_y);
-// Exports of investment goods to gdp
+
 EADEAC_exiy  = EAC_size/EAD_size*EAD_pex*EACEAD_imi/(EAD_py*EAD_y);
-// Bilateral shares
+
 EADEAE_imcy = (EAE_pex*EADEAE_rer)*EADEAE_imc/(EAD_py*EAD_y);
 EADEAE_imiy = (EAE_pex*EADEAE_rer)*EADEAE_imi/(EAD_py*EAD_y);
 EADEAE_imcgy = (EAE_pex*EADEAE_rer)*EADEAE_imcg/(EAD_py*EAD_y);
 EADEAE_imigy = (EAE_pex*EADEAE_rer)*EADEAE_imig/(EAD_py*EAD_y);
-// Exports of consumption goods to gdp
+
 EADEAE_excy  = EAE_size/EAD_size*EAD_pex*EAEEAD_imc/(EAD_py*EAD_y);
-// Exports of investment goods to gdp
+
 EADEAE_exiy  = EAE_size/EAD_size*EAD_pex*EAEEAD_imi/(EAD_py*EAD_y);
-// Bilateral shares
+
 EADEAF_imcy = (EAF_pex*EADEAF_rer)*EADEAF_imc/(EAD_py*EAD_y);
 EADEAF_imiy = (EAF_pex*EADEAF_rer)*EADEAF_imi/(EAD_py*EAD_y);
 EADEAF_imcgy = (EAF_pex*EADEAF_rer)*EADEAF_imcg/(EAD_py*EAD_y);
 EADEAF_imigy = (EAF_pex*EADEAF_rer)*EADEAF_imig/(EAD_py*EAD_y);
-// Exports of consumption goods to gdp
+
 EADEAF_excy  = EAF_size/EAD_size*EAD_pex*EAFEAD_imc/(EAD_py*EAD_y);
-// Exports of investment goods to gdp
+
 EADEAF_exiy  = EAF_size/EAD_size*EAD_pex*EAFEAD_imi/(EAD_py*EAD_y);
-// Bilateral shares
+
 EADEAG_imcy = (EAG_pex*EADEAG_rer)*EADEAG_imc/(EAD_py*EAD_y);
 EADEAG_imiy = (EAG_pex*EADEAG_rer)*EADEAG_imi/(EAD_py*EAD_y);
 EADEAG_imcgy = (EAG_pex*EADEAG_rer)*EADEAG_imcg/(EAD_py*EAD_y);
 EADEAG_imigy = (EAG_pex*EADEAG_rer)*EADEAG_imig/(EAD_py*EAD_y);
-// Exports of consumption goods to gdp
+
 EADEAG_excy  = EAG_size/EAD_size*EAD_pex*EAGEAD_imc/(EAD_py*EAD_y);
-// Exports of investment goods to gdp
+
 EADEAG_exiy  = EAG_size/EAD_size*EAD_pex*EAGEAD_imi/(EAD_py*EAD_y);
-// Bilateral shares
+
 EADEAH_imcy = (EAH_pex*EADEAH_rer)*EADEAH_imc/(EAD_py*EAD_y);
 EADEAH_imiy = (EAH_pex*EADEAH_rer)*EADEAH_imi/(EAD_py*EAD_y);
 EADEAH_imcgy = (EAH_pex*EADEAH_rer)*EADEAH_imcg/(EAD_py*EAD_y);
 EADEAH_imigy = (EAH_pex*EADEAH_rer)*EADEAH_imig/(EAD_py*EAD_y);
-// Exports of consumption goods to gdp
+
 EADEAH_excy  = EAH_size/EAD_size*EAD_pex*EAHEAD_imc/(EAD_py*EAD_y);
-// Exports of investment goods to gdp
+
 EADEAH_exiy  = EAH_size/EAD_size*EAD_pex*EAHEAD_imi/(EAD_py*EAD_y);
-// Bilateral shares
+
 EADEAI_imcy = (EAI_pex*EADEAI_rer)*EADEAI_imc/(EAD_py*EAD_y);
 EADEAI_imiy = (EAI_pex*EADEAI_rer)*EADEAI_imi/(EAD_py*EAD_y);
 EADEAI_imcgy = (EAI_pex*EADEAI_rer)*EADEAI_imcg/(EAD_py*EAD_y);
 EADEAI_imigy = (EAI_pex*EADEAI_rer)*EADEAI_imig/(EAD_py*EAD_y);
-// Exports of consumption goods to gdp
+
 EADEAI_excy  = EAI_size/EAD_size*EAD_pex*EAIEAD_imc/(EAD_py*EAD_y);
-// Exports of investment goods to gdp
+
 EADEAI_exiy  = EAI_size/EAD_size*EAD_pex*EAIEAD_imi/(EAD_py*EAD_y);
-// Bilateral shares
+
 EADEAJ_imcy = (EAJ_pex*EADEAJ_rer)*EADEAJ_imc/(EAD_py*EAD_y);
 EADEAJ_imiy = (EAJ_pex*EADEAJ_rer)*EADEAJ_imi/(EAD_py*EAD_y);
 EADEAJ_imcgy = (EAJ_pex*EADEAJ_rer)*EADEAJ_imcg/(EAD_py*EAD_y);
 EADEAJ_imigy = (EAJ_pex*EADEAJ_rer)*EADEAJ_imig/(EAD_py*EAD_y);
-// Exports of consumption goods to gdp
+
 EADEAJ_excy  = EAJ_size/EAD_size*EAD_pex*EAJEAD_imc/(EAD_py*EAD_y);
-// Exports of investment goods to gdp
+
 EADEAJ_exiy  = EAJ_size/EAD_size*EAD_pex*EAJEAD_imi/(EAD_py*EAD_y);
-// Bilateral shares
+
 EADEAK_imcy = (EAK_pex*EADEAK_rer)*EADEAK_imc/(EAD_py*EAD_y);
 EADEAK_imiy = (EAK_pex*EADEAK_rer)*EADEAK_imi/(EAD_py*EAD_y);
 EADEAK_imcgy = (EAK_pex*EADEAK_rer)*EADEAK_imcg/(EAD_py*EAD_y);
 EADEAK_imigy = (EAK_pex*EADEAK_rer)*EADEAK_imig/(EAD_py*EAD_y);
-// Exports of consumption goods to gdp
+
 EADEAK_excy  = EAK_size/EAD_size*EAD_pex*EAKEAD_imc/(EAD_py*EAD_y);
-// Exports of investment goods to gdp
+
 EADEAK_exiy  = EAK_size/EAD_size*EAD_pex*EAKEAD_imi/(EAD_py*EAD_y);
-// Bilateral shares
+
 EADEAL_imcy = (EAL_pex*EADEAL_rer)*EADEAL_imc/(EAD_py*EAD_y);
 EADEAL_imiy = (EAL_pex*EADEAL_rer)*EADEAL_imi/(EAD_py*EAD_y);
 EADEAL_imcgy = (EAL_pex*EADEAL_rer)*EADEAL_imcg/(EAD_py*EAD_y);
 EADEAL_imigy = (EAL_pex*EADEAL_rer)*EADEAL_imig/(EAD_py*EAD_y);
-// Exports of consumption goods to gdp
+
 EADEAL_excy  = EAL_size/EAD_size*EAD_pex*EALEAD_imc/(EAD_py*EAD_y);
-// Exports of investment goods to gdp
+
 EADEAL_exiy  = EAL_size/EAD_size*EAD_pex*EALEAD_imi/(EAD_py*EAD_y);
-// Bilateral shares
+
 EADRW_imcy = (RW_pex*EADRW_rer)*EADRW_imc/(EAD_py*EAD_y);
 EADRW_imiy = (RW_pex*EADRW_rer)*EADRW_imi/(EAD_py*EAD_y);
 EADRW_imcgy = (RW_pex*EADRW_rer)*EADRW_imcg/(EAD_py*EAD_y);
 EADRW_imigy = (RW_pex*EADRW_rer)*EADRW_imig/(EAD_py*EAD_y);
-// Exports of consumption goods to gdp
+
 EADRW_excy  = RW_size/EAD_size*EAD_pex*RWEAD_imc/(EAD_py*EAD_y);
-// Exports of investment goods to gdp
+
 EADRW_exiy  = RW_size/EAD_size*EAD_pex*RWEAD_imi/(EAD_py*EAD_y);
-// Bilateral shares
+
 EADUS_imcy = (US_pex*EADUS_rer)*EADUS_imc/(EAD_py*EAD_y);
 EADUS_imiy = (US_pex*EADUS_rer)*EADUS_imi/(EAD_py*EAD_y);
 EADUS_imcgy = (US_pex*EADUS_rer)*EADUS_imcg/(EAD_py*EAD_y);
 EADUS_imigy = (US_pex*EADUS_rer)*EADUS_imig/(EAD_py*EAD_y);
-// Exports of consumption goods to gdp
+
 EADUS_excy  = US_size/EAD_size*EAD_pex*USEAD_imc/(EAD_py*EAD_y);
-// Exports of investment goods to gdp
+
 EADUS_exiy  = US_size/EAD_size*EAD_pex*USEAD_imi/(EAD_py*EAD_y);
-// Internal real exchange rate
+
 EAD_internalrer = EAD_pnt/EAD_pttc;
-// Core model begins
-//-------------
-//-------------
-// Households
-//-------------
-//-------------
-//-------------
-// Household I
-//-------------
-// Utility
+
+
+
+
+
+
+
+
+
+
 EAE_utili = 
 EAE_zcon*log(EAE_ci-EAE_kappa*EAE_ci(-1))-1/(1+EAE_zeta)*(EAE_ni)^(1+EAE_zeta)+EAE_beta*EAE_utili(+1)
 ;
-// Marginal utility of consumption
+
 EAE_lambdai*(1+EAE_tauc+EAE_gammavi+EAE_vi*EAE_gammavider) = EAE_zcon*(EAE_ci-EAE_kappa*EAE_ci(-1))^(-EAE_sigma);
-// Euler equation for government bonds
+
 EAE_r                   = EAE_beta^(-1)*EAE_lambdai/EAE_lambdai    *EAE_pic;
-// Euler equation for money
+
 EAE_vi^(2)*EAE_gammavider = 1-EAE_beta*EAE_lambdai(+1)/(EAE_lambdai*EAE_pic(+1));
-// Consumption-based velocity
+
 EAE_vi = EAE_ci/EAE_mi;
-// Transaction cost
+
 EAE_gammavi = EAE_gammav1*EAE_vi+EAE_gammav2/EAE_vi-2*(EAE_gammav1*EAE_gammav2)^(1/2);
-// Derivative of transaction cost
+
 EAE_gammavider = EAE_gammav1-EAE_gammav2*EAE_vi^(-2);
 EAE_delta = EAE_ii/EAE_ki;
 EAE_gammai = 0;
@@ -16245,355 +16245,355 @@ EAE_gammau = 0;
 EAE_gammauder = ((EAE_beta^(-1)-1+EAE_delta)*EAE_qbar-EAE_delta*EAE_taukbar*EAE_pibar)/((1-EAE_taukbar)*EAE_pibar);
 EAE_u = 1;
 EAE_pi = EAE_q;
-// Auxiliary equation for Tobin's Q in steady state
+
 EAE_qbar = EAE_q;
-// Rate of return on capital
+
 EAE_q = EAE_beta*((1-EAE_tauk)*EAE_rk+(EAE_tauk*EAE_delta)*EAE_pi+(1-EAE_delta)*EAE_q);
-// Optimal wage contract (FOC)
+
 EAE_witilde^(1+EAE_etai*EAE_zeta) = EAE_etai/(EAE_etai-1)*EAE_fi/EAE_gi+EAE_wcst;
-// Definition of fi
+
 EAE_fi = EAE_wi^(EAE_etai*(1+EAE_zeta))*EAE_ndi^(1+EAE_zeta)+EAE_xii*EAE_beta*(EAE_pic(+1)/(EAE_pic^EAE_chii*EAE_pi4target^(1/4*(1-EAE_chii))))^(EAE_etai*(1+EAE_zeta))*EAE_fi(+1);
-// Definition of gi
+
 EAE_gi = EAE_lambdai*(1-EAE_taun-EAE_tauwh)*EAE_wi^EAE_etai*EAE_ndi+EAE_xii*EAE_beta*(EAE_pic(+1)/(EAE_pic^EAE_chii*EAE_pi4target^(1/4*(1-EAE_chii))))^(EAE_etai-1)*EAE_gi(+1);
-// Aggregate wage rate
+
 EAE_wi^(1-EAE_etai) = (1-EAE_xii)*EAE_witilde^(1-EAE_etai)+EAE_xii*EAE_wi(-1)^(1-EAE_etai)*(EAE_pic(-1)^EAE_chii*EAE_pi4target^(1/4*(1-EAE_chii))/EAE_pic)^(1-EAE_etai);
-//-------------
-// Household J
-//-------------
-// Utility
+
+
+
+
 EAE_utilj = 
 EAE_zcon*log(EAE_cj-EAE_kappa*EAE_cj(-1))-1/(1+EAE_zeta)*EAE_nj^(1+EAE_zeta)+EAE_beta*EAE_utilj(+1)
 ;
-// Marginal utility of consumption
+
 EAE_lambdaj*(1+EAE_tauc+EAE_gammavj+EAE_vj*EAE_gammavjder) = EAE_zcon*(EAE_cj-EAE_kappa*EAE_cj(-1))^(-EAE_sigma);
-// Budget constraint
+
 (1+EAE_tauc+EAE_gammavj)*EAE_cj+EAE_mj = (1-EAE_taun-EAE_tauwh)*EAE_wj*EAE_nj+EAE_trj-EAE_tj+EAE_mj(-1)*EAE_pic^(-1);
-// Euler equation for money
+
 EAE_vj^(2)*EAE_gammavjder = 1-EAE_beta*EAE_lambdaj(+1)/(EAE_lambdaj*EAE_pic(+1));
-// Consumption-based velocity
+
 EAE_vj = EAE_cj/EAE_mj;
-// Transaction technology
+
 EAE_gammavj = EAE_gammav1*EAE_vj+EAE_gammav2/EAE_vj-2*(EAE_gammav1*EAE_gammav2)^(1/2);
-// Derivative of transaction technology
+
 EAE_gammavjder = EAE_gammav1-EAE_gammav2*EAE_vj^(-2);
-// Optimal wage contract (FOC)
+
 EAE_wjtilde^(1+EAE_etaj*EAE_zeta) = EAE_etaj/(EAE_etaj-1)*EAE_fj/EAE_gj+EAE_wcst;
-// Definition of fj
+
 EAE_fj = EAE_wj^(EAE_etaj*(1+EAE_zeta))*EAE_ndj^(1+EAE_zeta)+EAE_xij*EAE_beta*(EAE_pic(+1)/(EAE_pic^EAE_chij*EAE_pi4target^(1/4*(1-EAE_chij))))^(EAE_etaj*(1+EAE_zeta))*EAE_fj(+1);
-// Definition of gj
+
 EAE_gj = EAE_lambdaj*(1-EAE_taun-EAE_tauwh)*EAE_wj^EAE_etaj*EAE_ndj+EAE_xij*EAE_beta*(EAE_pic(+1)/(EAE_pic^EAE_chij*EAE_pi4target^(1/4*(1-EAE_chij))))^(EAE_etaj-1)*EAE_gj(+1);
-// Aggregate wage rate
+
 EAE_wj^(1-EAE_etaj) = (1-EAE_xij)*EAE_wjtilde^(1-EAE_etaj)+EAE_xij*EAE_wj(-1)^(1-EAE_etaj)*(EAE_pic(-1)^EAE_chij*EAE_pi4target^(1/4*(1-EAE_chij))/EAE_pic)^(1-EAE_etaj);
-//-------------
-//-------------
-// Firms
-//-------------
-//-------------
-//-------------
-// Intermediate-good firms
-//-------------
-// Production function tradable
+
+
+
+
+
+
+
+
+
 EAE_yst = EA_z*EAE_zt*EAE_kdt^EAE_alphat*EAE_ndt^(1-EAE_alphat)-EAE_psitbar;
-// Production function nontradable
+
 EAE_ysn = EA_z*EAE_zn*EAE_kdn^EAE_alphan*EAE_ndn^(1-EAE_alphan)-EAE_psinbar;
-// Real marginal cost tradable
+
 EAE_mct = 1/(EA_z*EAE_zt*(EAE_alphat)^(EAE_alphat)*(1-EAE_alphat)^(1-EAE_alphat))*EAE_rk^(EAE_alphat)*((1+EAE_tauwf)*EAE_w)^(1-EAE_alphat);
-// Real marginal cost nontradable
+
 EAE_mcn = 1/(EA_z*EAE_zn*(EAE_alphan)^(EAE_alphan)*(1-EAE_alphan)^(1-EAE_alphan))*EAE_rk^(EAE_alphan)*((1+EAE_tauwf)*EAE_w)^(1-EAE_alphan);
-// Wage Inflation (qoq)
+
 EAE_piw = EAE_w/EAE_w(-1)*EAE_pic;
-// Wage Inflation (yoy)
+
 EAE_piw4 = EAE_pic4;
-// Auxiliary equation for steady-state fixed cost
+
 EAE_psitbar = EAE_psit*EAE_ytbar;
-// Auxiliary equation for steady-state fixed cost
+
 EAE_psinbar = EAE_psin*EAE_ynbar;
-// Capital input (FOC)
+
 EAE_rk = EAE_alphat*(EAE_yst+EAE_psitbar)/EAE_kdt*EAE_mct;
-// Capital input (FOC)
+
 EAE_rk = EAE_alphan*(EAE_ysn+EAE_psinbar)/EAE_kdn*EAE_mcn;
-// Total capital demand
+
 EAE_kd = EAE_kdt+EAE_kdn;
-// Demand for labour services by household I
+
 EAE_ndi = 
 (1-EAE_omega)*(EAE_wi/EAE_w)^(-EAE_eta)*EAE_nd
 ;
-// Demand for labour services by household J
+
 EAE_ndj = 
 EAE_omega*(EAE_wj/EAE_w)^(-EAE_eta)*EAE_nd
 ;
-// Aggregate labour demand
+
 EAE_nd^(1-1/EAE_eta) = 
 (1-EAE_omega)^(1/EAE_eta)*EAE_ndi^(1-1/EAE_eta)+EAE_omega^(1/EAE_eta)*EAE_ndj^(1-1/EAE_eta)
 ;
-// Total demand 
+
 EAE_nd = EAE_ndt+EAE_ndn;
-// Aggregate dividends
+
 EAE_d = EAE_py*EAE_y-EAE_rk*EAE_kd-(1+EAE_tauwf)*EAE_w*EAE_nd;
-// Non-tradable sector dividends
+
 EAE_dn = EAE_pnt*EAE_ysn-EAE_rk*EAE_kdn-(1+EAE_tauwf)*EAE_w*EAE_ndn;
-// Tradable sector dividends
+
 EAE_dt = EAE_pht*EAE_ht
 +EAE_pex*EAE_ex
 -EAE_rk*EAE_kdt-(1+EAE_tauwf)*EAE_w*EAE_ndt;
-// Optimal price contract set in domestic markets (FOC)
+
 EAE_phttilde/EAE_pht = EAE_thetat/(EAE_thetat-1)*EAE_fh/EAE_gh;
-// Definition of fh
+
 EAE_fh = EAE_mct*EAE_ht+EAE_xih*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAE_piht(+1)/(EAE_piht^EAE_chih*EAE_pi4target^(1/4*(1-EAE_chih))))^EAE_thetat*EAE_fh(+1);
-// Definition of gh
+
 EAE_gh = EAE_pht*EAE_ht+EAE_xih*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAE_piht(+1)/(EAE_piht^EAE_chih*EAE_pi4target^(1/4*(1-EAE_chih))))^(EAE_thetat-1)*EAE_gh(+1);
-// Aggregate intermediate-good price dynamics
+
 EAE_pht^(1-EAE_thetat) = (1-EAE_xih)*EAE_phttilde^(1-EAE_thetat)+EAE_xih*(EAE_pht(-1)/EAE_pic)^(1-EAE_thetat)*(EAE_piht(-1)^EAE_chih*EAE_pi4target^(1/4*(1-EAE_chih)))^(1-EAE_thetat);
-// Intermediate-good price inflation
+
 EAE_piht = EAE_pht/EAE_pht(-1)*EAE_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAE_pnttilde/EAE_pnt = EAE_thetan/(EAE_thetan-1)*EAE_fn/EAE_gn;
-// Definition of fn
+
 EAE_fn = EAE_mcn*EAE_nt+EAE_xin*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAE_pint(+1)/(EAE_pint^EAE_chin*EAE_pi4target^(1/4*(1-EAE_chin))))^EAE_thetan*EAE_fn(+1);
-// Definition of gn
+
 EAE_gn = EAE_pnt*EAE_nt+EAE_xin*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAE_pint(+1)/(EAE_pint^EAE_chin*EAE_pi4target^(1/4*(1-EAE_chin))))^(EAE_thetan-1)*EAE_gn(+1);
-// Aggregate intermediate-good price dynamics
+
 EAE_pnt^(1-EAE_thetan) = (1-EAE_xin)*EAE_pnttilde^(1-EAE_thetan)+EAE_xin*(EAE_pnt(-1)/EAE_pic)^(1-EAE_thetan)*(EAE_pint(-1)^EAE_chin*EAE_pi4target^(1/4*(1-EAE_chin)))^(1-EAE_thetan);
-// Intermediate-good price inflation
+
 EAE_pint = EAE_pnt/EAE_pnt(-1)*EAE_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAE_pextilde/EAE_pex = EAE_thetat/(EAE_thetat-1)*EAE_fx/EAE_gx;
-// Definition of fh
+
 EAE_fx = EAE_mct*EAE_ex+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAE_piex(+1)/(EAE_piex^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^EAE_thetat*EAE_fx(+1);
-// Definition of gh
+
 EAE_gx = EAE_pex*EAE_ex+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAE_piex(+1)/(EAE_piex^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^(EAE_thetat-1)*EAE_gx(+1);
-// Aggregate intermediate-good price dynamics
+
 EAE_pex^(1-EAE_thetat) = (1-EAE_xix)*EAE_pextilde^(1-EAE_thetat)+EAE_xix*(EAE_pex(-1)/EAE_pic)^(1-EAE_thetat)*(EAE_piex(-1)^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix)))^(1-EAE_thetat);
-// Intermediate-good price inflation
+
 EAE_piex = EAE_pex/EAE_pex(-1)*EAE_pic;
-//---------------
-// import pricing
-//---------------
-// Optimal price contract set in foreign markets (FOC), using EAE_pxtilde = EAA_pimtilde
-// EAAEAE_pimtilde/EAAEAE_pim = EAE_cpim*EAE_thetat/(EAE_thetat-1)*EAEEAA_fx/EAEEAA_gx;
-// Definition of fx
-// EAEEAA_fx = EAA_size/EAE_size*EAAEAE_im*EAE_mct+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAAEAE_piim(+1)/(EAAEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^EAE_thetat*EAEEAA_fx(+1);
-// Definition of gx   
-// EAEEAA_gx = EAEEAA_rer*EAAEAE_pim*EAA_size/EAE_size*EAAEAE_im+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAAEAE_piim(+1)/(EAAEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^(EAE_thetat-1)*EAEEAA_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAE_px = EAA_pim
-// EAAEAE_pim^(1-EAE_thetat) = (1-EAE_xix)*EAAEAE_pimtilde^(1-EAE_thetat)+EAE_xix*(EAAEAE_pim(-1)/EAA_pic)^(1-EAE_thetat)*(EAAEAE_piim(-1)^EAE_chix*EAA_pi4target^(1/4*(1-EAE_chih)))^(1-EAE_thetat);
-// Intermediate-good price inflation, using EAE_pix = EAA_piim
-// EAAEAE_piim = EAAEAE_pim/EAAEAE_pim(-1)*EAA_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 EAEEAA_rer = EAE_rer/EAA_rer;
-// Auxiliary equation for steady-state output
+
 EAEEAA_rerbar = EAEEAA_rer;
-//Terms of Trade
+
 EAEEAA_tot = EAA_pex*EAEEAA_rer/EAE_pex;
-// Optimal price contract set in foreign markets (FOC), using EAE_pxtilde = EAB_pimtilde
-// EABEAE_pimtilde/EABEAE_pim = EAE_cpim*EAE_thetat/(EAE_thetat-1)*EAEEAB_fx/EAEEAB_gx;
-// Definition of fx
-// EAEEAB_fx = EAB_size/EAE_size*EABEAE_im*EAE_mct+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EABEAE_piim(+1)/(EABEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^EAE_thetat*EAEEAB_fx(+1);
-// Definition of gx   
-// EAEEAB_gx = EAEEAB_rer*EABEAE_pim*EAB_size/EAE_size*EABEAE_im+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EABEAE_piim(+1)/(EABEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^(EAE_thetat-1)*EAEEAB_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAE_px = EAB_pim
-// EABEAE_pim^(1-EAE_thetat) = (1-EAE_xix)*EABEAE_pimtilde^(1-EAE_thetat)+EAE_xix*(EABEAE_pim(-1)/EAB_pic)^(1-EAE_thetat)*(EABEAE_piim(-1)^EAE_chix*EAB_pi4target^(1/4*(1-EAE_chih)))^(1-EAE_thetat);
-// Intermediate-good price inflation, using EAE_pix = EAB_piim
-// EABEAE_piim = EABEAE_pim/EABEAE_pim(-1)*EAB_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAEEAB_rer = EAE_rer/EAB_rer;
-// Auxiliary equation for steady-state output
+
 EAEEAB_rerbar = EAEEAB_rer;
-//Terms of Trade
+
 EAEEAB_tot = EAB_pex*EAEEAB_rer/EAE_pex;
-// Optimal price contract set in foreign markets (FOC), using EAE_pxtilde = EAC_pimtilde
-// EACEAE_pimtilde/EACEAE_pim = EAE_cpim*EAE_thetat/(EAE_thetat-1)*EAEEAC_fx/EAEEAC_gx;
-// Definition of fx
-// EAEEAC_fx = EAC_size/EAE_size*EACEAE_im*EAE_mct+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EACEAE_piim(+1)/(EACEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^EAE_thetat*EAEEAC_fx(+1);
-// Definition of gx   
-// EAEEAC_gx = EAEEAC_rer*EACEAE_pim*EAC_size/EAE_size*EACEAE_im+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EACEAE_piim(+1)/(EACEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^(EAE_thetat-1)*EAEEAC_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAE_px = EAC_pim
-// EACEAE_pim^(1-EAE_thetat) = (1-EAE_xix)*EACEAE_pimtilde^(1-EAE_thetat)+EAE_xix*(EACEAE_pim(-1)/EAC_pic)^(1-EAE_thetat)*(EACEAE_piim(-1)^EAE_chix*EAC_pi4target^(1/4*(1-EAE_chih)))^(1-EAE_thetat);
-// Intermediate-good price inflation, using EAE_pix = EAC_piim
-// EACEAE_piim = EACEAE_pim/EACEAE_pim(-1)*EAC_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAEEAC_rer = EAE_rer/EAC_rer;
-// Auxiliary equation for steady-state output
+
 EAEEAC_rerbar = EAEEAC_rer;
-//Terms of Trade
+
 EAEEAC_tot = EAC_pex*EAEEAC_rer/EAE_pex;
-// Optimal price contract set in foreign markets (FOC), using EAE_pxtilde = EAD_pimtilde
-// EADEAE_pimtilde/EADEAE_pim = EAE_cpim*EAE_thetat/(EAE_thetat-1)*EAEEAD_fx/EAEEAD_gx;
-// Definition of fx
-// EAEEAD_fx = EAD_size/EAE_size*EADEAE_im*EAE_mct+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EADEAE_piim(+1)/(EADEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^EAE_thetat*EAEEAD_fx(+1);
-// Definition of gx   
-// EAEEAD_gx = EAEEAD_rer*EADEAE_pim*EAD_size/EAE_size*EADEAE_im+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EADEAE_piim(+1)/(EADEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^(EAE_thetat-1)*EAEEAD_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAE_px = EAD_pim
-// EADEAE_pim^(1-EAE_thetat) = (1-EAE_xix)*EADEAE_pimtilde^(1-EAE_thetat)+EAE_xix*(EADEAE_pim(-1)/EAD_pic)^(1-EAE_thetat)*(EADEAE_piim(-1)^EAE_chix*EAD_pi4target^(1/4*(1-EAE_chih)))^(1-EAE_thetat);
-// Intermediate-good price inflation, using EAE_pix = EAD_piim
-// EADEAE_piim = EADEAE_pim/EADEAE_pim(-1)*EAD_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAEEAD_rer = EAE_rer/EAD_rer;
-// Auxiliary equation for steady-state output
+
 EAEEAD_rerbar = EAEEAD_rer;
-//Terms of Trade
+
 EAEEAD_tot = EAD_pex*EAEEAD_rer/EAE_pex;
-// Optimal price contract set in foreign markets (FOC), using EAE_pxtilde = EAF_pimtilde
-// EAFEAE_pimtilde/EAFEAE_pim = EAE_cpim*EAE_thetat/(EAE_thetat-1)*EAEEAF_fx/EAEEAF_gx;
-// Definition of fx
-// EAEEAF_fx = EAF_size/EAE_size*EAFEAE_im*EAE_mct+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAFEAE_piim(+1)/(EAFEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^EAE_thetat*EAEEAF_fx(+1);
-// Definition of gx   
-// EAEEAF_gx = EAEEAF_rer*EAFEAE_pim*EAF_size/EAE_size*EAFEAE_im+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAFEAE_piim(+1)/(EAFEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^(EAE_thetat-1)*EAEEAF_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAE_px = EAF_pim
-// EAFEAE_pim^(1-EAE_thetat) = (1-EAE_xix)*EAFEAE_pimtilde^(1-EAE_thetat)+EAE_xix*(EAFEAE_pim(-1)/EAF_pic)^(1-EAE_thetat)*(EAFEAE_piim(-1)^EAE_chix*EAF_pi4target^(1/4*(1-EAE_chih)))^(1-EAE_thetat);
-// Intermediate-good price inflation, using EAE_pix = EAF_piim
-// EAFEAE_piim = EAFEAE_pim/EAFEAE_pim(-1)*EAF_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAEEAF_rer = EAE_rer/EAF_rer;
-// Auxiliary equation for steady-state output
+
 EAEEAF_rerbar = EAEEAF_rer;
-//Terms of Trade
+
 EAEEAF_tot = EAF_pex*EAEEAF_rer/EAE_pex;
-// Optimal price contract set in foreign markets (FOC), using EAE_pxtilde = EAG_pimtilde
-// EAGEAE_pimtilde/EAGEAE_pim = EAE_cpim*EAE_thetat/(EAE_thetat-1)*EAEEAG_fx/EAEEAG_gx;
-// Definition of fx
-// EAEEAG_fx = EAG_size/EAE_size*EAGEAE_im*EAE_mct+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAGEAE_piim(+1)/(EAGEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^EAE_thetat*EAEEAG_fx(+1);
-// Definition of gx   
-// EAEEAG_gx = EAEEAG_rer*EAGEAE_pim*EAG_size/EAE_size*EAGEAE_im+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAGEAE_piim(+1)/(EAGEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^(EAE_thetat-1)*EAEEAG_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAE_px = EAG_pim
-// EAGEAE_pim^(1-EAE_thetat) = (1-EAE_xix)*EAGEAE_pimtilde^(1-EAE_thetat)+EAE_xix*(EAGEAE_pim(-1)/EAG_pic)^(1-EAE_thetat)*(EAGEAE_piim(-1)^EAE_chix*EAG_pi4target^(1/4*(1-EAE_chih)))^(1-EAE_thetat);
-// Intermediate-good price inflation, using EAE_pix = EAG_piim
-// EAGEAE_piim = EAGEAE_pim/EAGEAE_pim(-1)*EAG_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAEEAG_rer = EAE_rer/EAG_rer;
-// Auxiliary equation for steady-state output
+
 EAEEAG_rerbar = EAEEAG_rer;
-//Terms of Trade
+
 EAEEAG_tot = EAG_pex*EAEEAG_rer/EAE_pex;
-// Optimal price contract set in foreign markets (FOC), using EAE_pxtilde = EAH_pimtilde
-// EAHEAE_pimtilde/EAHEAE_pim = EAE_cpim*EAE_thetat/(EAE_thetat-1)*EAEEAH_fx/EAEEAH_gx;
-// Definition of fx
-// EAEEAH_fx = EAH_size/EAE_size*EAHEAE_im*EAE_mct+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAHEAE_piim(+1)/(EAHEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^EAE_thetat*EAEEAH_fx(+1);
-// Definition of gx   
-// EAEEAH_gx = EAEEAH_rer*EAHEAE_pim*EAH_size/EAE_size*EAHEAE_im+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAHEAE_piim(+1)/(EAHEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^(EAE_thetat-1)*EAEEAH_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAE_px = EAH_pim
-// EAHEAE_pim^(1-EAE_thetat) = (1-EAE_xix)*EAHEAE_pimtilde^(1-EAE_thetat)+EAE_xix*(EAHEAE_pim(-1)/EAH_pic)^(1-EAE_thetat)*(EAHEAE_piim(-1)^EAE_chix*EAH_pi4target^(1/4*(1-EAE_chih)))^(1-EAE_thetat);
-// Intermediate-good price inflation, using EAE_pix = EAH_piim
-// EAHEAE_piim = EAHEAE_pim/EAHEAE_pim(-1)*EAH_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAEEAH_rer = EAE_rer/EAH_rer;
-// Auxiliary equation for steady-state output
+
 EAEEAH_rerbar = EAEEAH_rer;
-//Terms of Trade
+
 EAEEAH_tot = EAH_pex*EAEEAH_rer/EAE_pex;
-// Optimal price contract set in foreign markets (FOC), using EAE_pxtilde = EAI_pimtilde
-// EAIEAE_pimtilde/EAIEAE_pim = EAE_cpim*EAE_thetat/(EAE_thetat-1)*EAEEAI_fx/EAEEAI_gx;
-// Definition of fx
-// EAEEAI_fx = EAI_size/EAE_size*EAIEAE_im*EAE_mct+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAIEAE_piim(+1)/(EAIEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^EAE_thetat*EAEEAI_fx(+1);
-// Definition of gx   
-// EAEEAI_gx = EAEEAI_rer*EAIEAE_pim*EAI_size/EAE_size*EAIEAE_im+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAIEAE_piim(+1)/(EAIEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^(EAE_thetat-1)*EAEEAI_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAE_px = EAI_pim
-// EAIEAE_pim^(1-EAE_thetat) = (1-EAE_xix)*EAIEAE_pimtilde^(1-EAE_thetat)+EAE_xix*(EAIEAE_pim(-1)/EAI_pic)^(1-EAE_thetat)*(EAIEAE_piim(-1)^EAE_chix*EAI_pi4target^(1/4*(1-EAE_chih)))^(1-EAE_thetat);
-// Intermediate-good price inflation, using EAE_pix = EAI_piim
-// EAIEAE_piim = EAIEAE_pim/EAIEAE_pim(-1)*EAI_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAEEAI_rer = EAE_rer/EAI_rer;
-// Auxiliary equation for steady-state output
+
 EAEEAI_rerbar = EAEEAI_rer;
-//Terms of Trade
+
 EAEEAI_tot = EAI_pex*EAEEAI_rer/EAE_pex;
-// Optimal price contract set in foreign markets (FOC), using EAE_pxtilde = EAJ_pimtilde
-// EAJEAE_pimtilde/EAJEAE_pim = EAE_cpim*EAE_thetat/(EAE_thetat-1)*EAEEAJ_fx/EAEEAJ_gx;
-// Definition of fx
-// EAEEAJ_fx = EAJ_size/EAE_size*EAJEAE_im*EAE_mct+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAJEAE_piim(+1)/(EAJEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^EAE_thetat*EAEEAJ_fx(+1);
-// Definition of gx   
-// EAEEAJ_gx = EAEEAJ_rer*EAJEAE_pim*EAJ_size/EAE_size*EAJEAE_im+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAJEAE_piim(+1)/(EAJEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^(EAE_thetat-1)*EAEEAJ_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAE_px = EAJ_pim
-// EAJEAE_pim^(1-EAE_thetat) = (1-EAE_xix)*EAJEAE_pimtilde^(1-EAE_thetat)+EAE_xix*(EAJEAE_pim(-1)/EAJ_pic)^(1-EAE_thetat)*(EAJEAE_piim(-1)^EAE_chix*EAJ_pi4target^(1/4*(1-EAE_chih)))^(1-EAE_thetat);
-// Intermediate-good price inflation, using EAE_pix = EAJ_piim
-// EAJEAE_piim = EAJEAE_pim/EAJEAE_pim(-1)*EAJ_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAEEAJ_rer = EAE_rer/EAJ_rer;
-// Auxiliary equation for steady-state output
+
 EAEEAJ_rerbar = EAEEAJ_rer;
-//Terms of Trade
+
 EAEEAJ_tot = EAJ_pex*EAEEAJ_rer/EAE_pex;
-// Optimal price contract set in foreign markets (FOC), using EAE_pxtilde = EAK_pimtilde
-// EAKEAE_pimtilde/EAKEAE_pim = EAE_cpim*EAE_thetat/(EAE_thetat-1)*EAEEAK_fx/EAEEAK_gx;
-// Definition of fx
-// EAEEAK_fx = EAK_size/EAE_size*EAKEAE_im*EAE_mct+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAKEAE_piim(+1)/(EAKEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^EAE_thetat*EAEEAK_fx(+1);
-// Definition of gx   
-// EAEEAK_gx = EAEEAK_rer*EAKEAE_pim*EAK_size/EAE_size*EAKEAE_im+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EAKEAE_piim(+1)/(EAKEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^(EAE_thetat-1)*EAEEAK_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAE_px = EAK_pim
-// EAKEAE_pim^(1-EAE_thetat) = (1-EAE_xix)*EAKEAE_pimtilde^(1-EAE_thetat)+EAE_xix*(EAKEAE_pim(-1)/EAK_pic)^(1-EAE_thetat)*(EAKEAE_piim(-1)^EAE_chix*EAK_pi4target^(1/4*(1-EAE_chih)))^(1-EAE_thetat);
-// Intermediate-good price inflation, using EAE_pix = EAK_piim
-// EAKEAE_piim = EAKEAE_pim/EAKEAE_pim(-1)*EAK_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAEEAK_rer = EAE_rer/EAK_rer;
-// Auxiliary equation for steady-state output
+
 EAEEAK_rerbar = EAEEAK_rer;
-//Terms of Trade
+
 EAEEAK_tot = EAK_pex*EAEEAK_rer/EAE_pex;
-// Optimal price contract set in foreign markets (FOC), using EAE_pxtilde = EAL_pimtilde
-// EALEAE_pimtilde/EALEAE_pim = EAE_cpim*EAE_thetat/(EAE_thetat-1)*EAEEAL_fx/EAEEAL_gx;
-// Definition of fx
-// EAEEAL_fx = EAL_size/EAE_size*EALEAE_im*EAE_mct+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EALEAE_piim(+1)/(EALEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^EAE_thetat*EAEEAL_fx(+1);
-// Definition of gx   
-// EAEEAL_gx = EAEEAL_rer*EALEAE_pim*EAL_size/EAE_size*EALEAE_im+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(EALEAE_piim(+1)/(EALEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^(EAE_thetat-1)*EAEEAL_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAE_px = EAL_pim
-// EALEAE_pim^(1-EAE_thetat) = (1-EAE_xix)*EALEAE_pimtilde^(1-EAE_thetat)+EAE_xix*(EALEAE_pim(-1)/EAL_pic)^(1-EAE_thetat)*(EALEAE_piim(-1)^EAE_chix*EAL_pi4target^(1/4*(1-EAE_chih)))^(1-EAE_thetat);
-// Intermediate-good price inflation, using EAE_pix = EAL_piim
-// EALEAE_piim = EALEAE_pim/EALEAE_pim(-1)*EAL_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAEEAL_rer = EAE_rer/EAL_rer;
-// Auxiliary equation for steady-state output
+
 EAEEAL_rerbar = EAEEAL_rer;
-//Terms of Trade
+
 EAEEAL_tot = EAL_pex*EAEEAL_rer/EAE_pex;
-// Optimal price contract set in foreign markets (FOC), using EAE_pxtilde = RW_pimtilde
-// RWEAE_pimtilde/RWEAE_pim = EAE_cpim*EAE_thetat/(EAE_thetat-1)*EAERW_fx/EAERW_gx;
-// Definition of fx
-// EAERW_fx = RW_size/EAE_size*RWEAE_im*EAE_mct+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(RWEAE_piim(+1)/(RWEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^EAE_thetat*EAERW_fx(+1);
-// Definition of gx   
-// EAERW_gx = EAERW_rer*RWEAE_pim*RW_size/EAE_size*RWEAE_im+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(RWEAE_piim(+1)/(RWEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^(EAE_thetat-1)*EAERW_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAE_px = RW_pim
-// RWEAE_pim^(1-EAE_thetat) = (1-EAE_xix)*RWEAE_pimtilde^(1-EAE_thetat)+EAE_xix*(RWEAE_pim(-1)/RW_pic)^(1-EAE_thetat)*(RWEAE_piim(-1)^EAE_chix*RW_pi4target^(1/4*(1-EAE_chih)))^(1-EAE_thetat);
-// Intermediate-good price inflation, using EAE_pix = RW_piim
-// RWEAE_piim = RWEAE_pim/RWEAE_pim(-1)*RW_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAERW_rer = EAE_rer/RW_rer;
-// Auxiliary equation for steady-state output
+
 EAERW_rerbar = EAERW_rer;
-//Terms of Trade
+
 EAERW_tot = RW_pex*EAERW_rer/EAE_pex;
-// Optimal price contract set in foreign markets (FOC), using EAE_pxtilde = US_pimtilde
-// USEAE_pimtilde/USEAE_pim = EAE_cpim*EAE_thetat/(EAE_thetat-1)*EAEUS_fx/EAEUS_gx;
-// Definition of fx
-// EAEUS_fx = US_size/EAE_size*USEAE_im*EAE_mct+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(USEAE_piim(+1)/(USEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^EAE_thetat*EAEUS_fx(+1);
-// Definition of gx   
-// EAEUS_gx = EAEUS_rer*USEAE_pim*US_size/EAE_size*USEAE_im+EAE_xix*EAE_beta*EAE_lambdai(+1)/EAE_lambdai*(USEAE_piim(+1)/(USEAE_piim^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^(EAE_thetat-1)*EAEUS_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAE_px = US_pim
-// USEAE_pim^(1-EAE_thetat) = (1-EAE_xix)*USEAE_pimtilde^(1-EAE_thetat)+EAE_xix*(USEAE_pim(-1)/US_pic)^(1-EAE_thetat)*(USEAE_piim(-1)^EAE_chix*US_pi4target^(1/4*(1-EAE_chih)))^(1-EAE_thetat);
-// Intermediate-good price inflation, using EAE_pix = US_piim
-// USEAE_piim = USEAE_pim/USEAE_pim(-1)*US_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAEUS_rer = EAE_rer/US_rer;
-// Auxiliary equation for steady-state output
+
 EAEUS_rerbar = EAEUS_rer;
-//Terms of Trade
+
 EAEUS_tot = US_pex*EAEUS_rer/EAE_pex;
-// Total imports 
+
 EAE_im = 
 +EAE_imc
 +EAE_imi
 +EAE_imcg
 +EAE_imig
 ;
-// Total import deflator
+
 EAE_im*EAE_pim  = 
 +EAE_pimc*EAE_imc
 +EAE_pimi*EAE_imi
 +EAE_pimcg*EAE_imcg
 +EAE_pimig*EAE_imig
 ;
-// Effective real exchange rate: double weighting (imports)
+
 EAEEAA_weightim = EAEEAA_rer*EAA_pex*EAEEAA_im/(EAE_pim*EAE_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAEEAA_weightex = EAA_size/EAE_size*EAAEAE_im/EAE_ex*EAEEAA_rer*EAA_py*EAA_y/(EAEEAA_rer*EAA_py*EAA_y
 +EAEEAB_rer*EAB_pex*EAAEAB_im
 +EAEEAC_rer*EAC_pex*EAAEAC_im
@@ -16777,11 +16777,11 @@ EAEEAA_weightex = EAA_size/EAE_size*EAAEAE_im/EAE_ex*EAEEAA_rer*EAA_py*EAA_y/(EA
 +EAERW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAEEAA_weight = EAE_pim*EAE_im/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAA_weightim+EAE_pex*EAE_ex/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAA_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAEEAB_weightim = EAEEAB_rer*EAB_pex*EAEEAB_im/(EAE_pim*EAE_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAEEAB_weightex = EAB_size/EAE_size*EABEAE_im/EAE_ex*EAEEAB_rer*EAB_py*EAB_y/(EAEEAB_rer*EAB_py*EAB_y
 +EAEEAA_rer*EAA_pex*EABEAA_im
 +EAEEAC_rer*EAC_pex*EABEAC_im
@@ -16965,11 +16965,11 @@ EAEEAB_weightex = EAB_size/EAE_size*EABEAE_im/EAE_ex*EAEEAB_rer*EAB_py*EAB_y/(EA
 +EAERW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAEEAB_weight = EAE_pim*EAE_im/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAB_weightim+EAE_pex*EAE_ex/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAB_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAEEAC_weightim = EAEEAC_rer*EAC_pex*EAEEAC_im/(EAE_pim*EAE_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAEEAC_weightex = EAC_size/EAE_size*EACEAE_im/EAE_ex*EAEEAC_rer*EAC_py*EAC_y/(EAEEAC_rer*EAC_py*EAC_y
 +EAEEAA_rer*EAA_pex*EACEAA_im
 +EAEEAB_rer*EAB_pex*EACEAB_im
@@ -17153,11 +17153,11 @@ EAEEAC_weightex = EAC_size/EAE_size*EACEAE_im/EAE_ex*EAEEAC_rer*EAC_py*EAC_y/(EA
 +EAERW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAEEAC_weight = EAE_pim*EAE_im/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAC_weightim+EAE_pex*EAE_ex/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAC_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAEEAD_weightim = EAEEAD_rer*EAD_pex*EAEEAD_im/(EAE_pim*EAE_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAEEAD_weightex = EAD_size/EAE_size*EADEAE_im/EAE_ex*EAEEAD_rer*EAD_py*EAD_y/(EAEEAD_rer*EAD_py*EAD_y
 +EAEEAA_rer*EAA_pex*EADEAA_im
 +EAEEAB_rer*EAB_pex*EADEAB_im
@@ -17341,11 +17341,11 @@ EAEEAD_weightex = EAD_size/EAE_size*EADEAE_im/EAE_ex*EAEEAD_rer*EAD_py*EAD_y/(EA
 +EAERW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAEEAD_weight = EAE_pim*EAE_im/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAD_weightim+EAE_pex*EAE_ex/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAD_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAEEAF_weightim = EAEEAF_rer*EAF_pex*EAEEAF_im/(EAE_pim*EAE_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAEEAF_weightex = EAF_size/EAE_size*EAFEAE_im/EAE_ex*EAEEAF_rer*EAF_py*EAF_y/(EAEEAF_rer*EAF_py*EAF_y
 +EAEEAA_rer*EAA_pex*EAFEAA_im
 +EAEEAB_rer*EAB_pex*EAFEAB_im
@@ -17529,11 +17529,11 @@ EAEEAF_weightex = EAF_size/EAE_size*EAFEAE_im/EAE_ex*EAEEAF_rer*EAF_py*EAF_y/(EA
 +EAERW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAEEAF_weight = EAE_pim*EAE_im/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAF_weightim+EAE_pex*EAE_ex/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAF_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAEEAG_weightim = EAEEAG_rer*EAG_pex*EAEEAG_im/(EAE_pim*EAE_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAEEAG_weightex = EAG_size/EAE_size*EAGEAE_im/EAE_ex*EAEEAG_rer*EAG_py*EAG_y/(EAEEAG_rer*EAG_py*EAG_y
 +EAEEAA_rer*EAA_pex*EAGEAA_im
 +EAEEAB_rer*EAB_pex*EAGEAB_im
@@ -17717,11 +17717,11 @@ EAEEAG_weightex = EAG_size/EAE_size*EAGEAE_im/EAE_ex*EAEEAG_rer*EAG_py*EAG_y/(EA
 +EAERW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAEEAG_weight = EAE_pim*EAE_im/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAG_weightim+EAE_pex*EAE_ex/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAG_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAEEAH_weightim = EAEEAH_rer*EAH_pex*EAEEAH_im/(EAE_pim*EAE_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAEEAH_weightex = EAH_size/EAE_size*EAHEAE_im/EAE_ex*EAEEAH_rer*EAH_py*EAH_y/(EAEEAH_rer*EAH_py*EAH_y
 +EAEEAA_rer*EAA_pex*EAHEAA_im
 +EAEEAB_rer*EAB_pex*EAHEAB_im
@@ -17905,11 +17905,11 @@ EAEEAH_weightex = EAH_size/EAE_size*EAHEAE_im/EAE_ex*EAEEAH_rer*EAH_py*EAH_y/(EA
 +EAERW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAEEAH_weight = EAE_pim*EAE_im/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAH_weightim+EAE_pex*EAE_ex/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAH_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAEEAI_weightim = EAEEAI_rer*EAI_pex*EAEEAI_im/(EAE_pim*EAE_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAEEAI_weightex = EAI_size/EAE_size*EAIEAE_im/EAE_ex*EAEEAI_rer*EAI_py*EAI_y/(EAEEAI_rer*EAI_py*EAI_y
 +EAEEAA_rer*EAA_pex*EAIEAA_im
 +EAEEAB_rer*EAB_pex*EAIEAB_im
@@ -18093,11 +18093,11 @@ EAEEAI_weightex = EAI_size/EAE_size*EAIEAE_im/EAE_ex*EAEEAI_rer*EAI_py*EAI_y/(EA
 +EAERW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAEEAI_weight = EAE_pim*EAE_im/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAI_weightim+EAE_pex*EAE_ex/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAI_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAEEAJ_weightim = EAEEAJ_rer*EAJ_pex*EAEEAJ_im/(EAE_pim*EAE_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAEEAJ_weightex = EAJ_size/EAE_size*EAJEAE_im/EAE_ex*EAEEAJ_rer*EAJ_py*EAJ_y/(EAEEAJ_rer*EAJ_py*EAJ_y
 +EAEEAA_rer*EAA_pex*EAJEAA_im
 +EAEEAB_rer*EAB_pex*EAJEAB_im
@@ -18281,11 +18281,11 @@ EAEEAJ_weightex = EAJ_size/EAE_size*EAJEAE_im/EAE_ex*EAEEAJ_rer*EAJ_py*EAJ_y/(EA
 +EAERW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAEEAJ_weight = EAE_pim*EAE_im/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAJ_weightim+EAE_pex*EAE_ex/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAJ_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAEEAK_weightim = EAEEAK_rer*EAK_pex*EAEEAK_im/(EAE_pim*EAE_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAEEAK_weightex = EAK_size/EAE_size*EAKEAE_im/EAE_ex*EAEEAK_rer*EAK_py*EAK_y/(EAEEAK_rer*EAK_py*EAK_y
 +EAEEAA_rer*EAA_pex*EAKEAA_im
 +EAEEAB_rer*EAB_pex*EAKEAB_im
@@ -18469,11 +18469,11 @@ EAEEAK_weightex = EAK_size/EAE_size*EAKEAE_im/EAE_ex*EAEEAK_rer*EAK_py*EAK_y/(EA
 +EAERW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAEEAK_weight = EAE_pim*EAE_im/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAK_weightim+EAE_pex*EAE_ex/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAK_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAEEAL_weightim = EAEEAL_rer*EAL_pex*EAEEAL_im/(EAE_pim*EAE_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAEEAL_weightex = EAL_size/EAE_size*EALEAE_im/EAE_ex*EAEEAL_rer*EAL_py*EAL_y/(EAEEAL_rer*EAL_py*EAL_y
 +EAEEAA_rer*EAA_pex*EALEAA_im
 +EAEEAB_rer*EAB_pex*EALEAB_im
@@ -18657,11 +18657,11 @@ EAEEAL_weightex = EAL_size/EAE_size*EALEAE_im/EAE_ex*EAEEAL_rer*EAL_py*EAL_y/(EA
 +EAERW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAEEAL_weight = EAE_pim*EAE_im/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAL_weightim+EAE_pex*EAE_ex/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEEAL_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAERW_weightim = EAERW_rer*RW_pex*EAERW_im/(EAE_pim*EAE_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAERW_weightex = RW_size/EAE_size*RWEAE_im/EAE_ex*EAERW_rer*RW_py*RW_y/(EAERW_rer*RW_py*RW_y
 +EAEEAA_rer*EAA_pex*RWEAA_im
 +EAEEAB_rer*EAB_pex*RWEAB_im
@@ -18845,11 +18845,11 @@ EAERW_weightex = RW_size/EAE_size*RWEAE_im/EAE_ex*EAERW_rer*RW_py*RW_y/(EAERW_re
 +EAERW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAERW_weight = EAE_pim*EAE_im/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAERW_weightim+EAE_pex*EAE_ex/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAERW_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAEUS_weightim = EAEUS_rer*US_pex*EAEUS_im/(EAE_pim*EAE_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAEUS_weightex = US_size/EAE_size*USEAE_im/EAE_ex*EAEUS_rer*US_py*US_y/(EAEUS_rer*US_py*US_y
 +EAEEAA_rer*EAA_pex*USEAA_im
 +EAEEAB_rer*EAB_pex*USEAB_im
@@ -19033,9 +19033,9 @@ EAEUS_weightex = US_size/EAE_size*USEAE_im/EAE_ex*EAEUS_rer*US_py*US_y/(EAEUS_re
 +EAEUS_rer*US_pex*RWUS_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAEUS_weight = EAE_pim*EAE_im/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEUS_weightim+EAE_pex*EAE_ex/(EAE_pim*EAE_im+EAE_pex*EAE_ex)*EAEUS_weightex;
-// Effective real exchange rate
+
 EAE_reer = 1
 *EAEEAA_rer^EAEEAA_weight
 *EAEEAB_rer^EAEEAB_weight
@@ -19051,7 +19051,7 @@ EAE_reer = 1
 *EAERW_rer^EAERW_weight
 *EAEUS_rer^EAEUS_weight
 ;
-// Effective terms of trade
+
 EAE_etot = 1
 *EAEEAA_tot^EAEEAA_weight
 *EAEEAB_tot^EAEEAB_weight
@@ -19067,10 +19067,10 @@ EAE_etot = 1
 *EAERW_tot^EAERW_weight
 *EAEUS_tot^EAEUS_weight
 ;
-//-----------------
-// Final-good firms
-//-----------------
-// Private consumption good (import)
+
+
+
+
 EAE_imc^((EAE_mumc-1)/EAE_mumc) =
 +EAEEAA_numc ^(1/EAE_mumc)*EAEEAA_imc^(1-1/EAE_mumc)
 +EAEEAB_numc ^(1/EAE_mumc)*EAEEAB_imc^(1-1/EAE_mumc)
@@ -19098,27 +19098,27 @@ EAE_imc^((EAE_mumc-1)/EAE_mumc) =
 -EAERW_numc
 -EAEUS_numc
 )^(1/EAE_mumc)*EAEEAC_imc^(1-1/EAE_mumc);
-// Demand for bilateral consumption import goods
+
 EAEEAA_imc = EAEEAA_numc*((EAA_pex*EAEEAA_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
-// Demand for bilateral consumption import goods
+
 EAEEAB_imc = EAEEAB_numc*((EAB_pex*EAEEAB_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
-// Demand for bilateral consumption import goods
+
 EAEEAD_imc = EAEEAD_numc*((EAD_pex*EAEEAD_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
-// Demand for bilateral consumption import goods
+
 EAEEAG_imc = EAEEAG_numc*((EAG_pex*EAEEAG_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
-// Demand for bilateral consumption import goods
+
 EAEEAH_imc = EAEEAH_numc*((EAH_pex*EAEEAH_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
-// Demand for bilateral consumption import goods
+
 EAEEAI_imc = EAEEAI_numc*((EAI_pex*EAEEAI_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
-// Demand for bilateral consumption import goods
+
 EAEEAJ_imc = EAEEAJ_numc*((EAJ_pex*EAEEAJ_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
-// Demand for bilateral consumption import goods
+
 EAEEAK_imc = EAEEAK_numc*((EAK_pex*EAEEAK_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
-// Demand for bilateral consumption import goods
+
 EAEEAL_imc = EAEEAL_numc*((EAL_pex*EAEEAL_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
-// Demand for bilateral consumption import goods
+
 EAERW_imc = EAERW_numc*((RW_pex*EAERW_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
-// Demand for bilateral consumption import goods
+
 EAEUS_imc = EAEUS_numc*((US_pex*EAEUS_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
 EAEEAC_imc = (1
 -EAEEAA_numc
@@ -19134,7 +19134,7 @@ EAEEAC_imc = (1
 -EAERW_numc
 -EAEUS_numc
 )*((EAC_pex*EAEEAC_rer)/EAE_pimc)^(-EAE_mumc)*EAE_imc;
-// Price of the consumption good (import)
+
 EAE_pimc^(1-EAE_mumc) =
 +EAEEAA_numc * (EAA_pex*EAEEAA_rer)^(1-EAE_mumc)
 +EAEEAB_numc * (EAB_pex*EAEEAB_rer)^(1-EAE_mumc)
@@ -19162,9 +19162,9 @@ EAE_pimc^(1-EAE_mumc) =
 -EAERW_numc
 -EAEUS_numc
 )*(EAC_pex*EAEEAC_rer)^(1-EAE_mumc);
-// Private consumption good (import) inflation
+
 EAE_piimc = EAE_pimc/EAE_pimc(-1)*EAE_pic;
-// Private consumption good (import)
+
 EAE_imi^((EAE_mumi-1)/EAE_mumi) =
 +EAEEAA_numi ^(1/EAE_mumi)*EAEEAA_imi^(1-1/EAE_mumi)
 +EAEEAB_numi ^(1/EAE_mumi)*EAEEAB_imi^(1-1/EAE_mumi)
@@ -19192,27 +19192,27 @@ EAE_imi^((EAE_mumi-1)/EAE_mumi) =
 -EAERW_numi
 -EAEUS_numi
 )^(1/EAE_mumi)*EAEEAC_imi^(1-1/EAE_mumi);
-// Demand for bilateral consumption import goods
+
 EAEEAA_imi = EAEEAA_numi*((EAA_pex*EAEEAA_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
-// Demand for bilateral consumption import goods
+
 EAEEAB_imi = EAEEAB_numi*((EAB_pex*EAEEAB_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
-// Demand for bilateral consumption import goods
+
 EAEEAD_imi = EAEEAD_numi*((EAD_pex*EAEEAD_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
-// Demand for bilateral consumption import goods
+
 EAEEAG_imi = EAEEAG_numi*((EAG_pex*EAEEAG_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
-// Demand for bilateral consumption import goods
+
 EAEEAH_imi = EAEEAH_numi*((EAH_pex*EAEEAH_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
-// Demand for bilateral consumption import goods
+
 EAEEAI_imi = EAEEAI_numi*((EAI_pex*EAEEAI_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
-// Demand for bilateral consumption import goods
+
 EAEEAJ_imi = EAEEAJ_numi*((EAJ_pex*EAEEAJ_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
-// Demand for bilateral consumption import goods
+
 EAEEAK_imi = EAEEAK_numi*((EAK_pex*EAEEAK_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
-// Demand for bilateral consumption import goods
+
 EAEEAL_imi = EAEEAL_numi*((EAL_pex*EAEEAL_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
-// Demand for bilateral consumption import goods
+
 EAERW_imi = EAERW_numi*((RW_pex*EAERW_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
-// Demand for bilateral consumption import goods
+
 EAEUS_imi = EAEUS_numi*((US_pex*EAEUS_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
 EAEEAC_imi = (1
 -EAEEAA_numi
@@ -19228,7 +19228,7 @@ EAEEAC_imi = (1
 -EAERW_numi
 -EAEUS_numi
 )*((EAC_pex*EAEEAC_rer)/EAE_pimi)^(-EAE_mumi)*EAE_imi;
-// Price of the consumption good (import)
+
 EAE_pimi^(1-EAE_mumi) =
 +EAEEAA_numi * (EAA_pex*EAEEAA_rer)^(1-EAE_mumi)
 +EAEEAB_numi * (EAB_pex*EAEEAB_rer)^(1-EAE_mumi)
@@ -19256,9 +19256,9 @@ EAE_pimi^(1-EAE_mumi) =
 -EAERW_numi
 -EAEUS_numi
 )*(EAC_pex*EAEEAC_rer)^(1-EAE_mumi);
-// Private consumption good (import) inflation
+
 EAE_piimi = EAE_pimi/EAE_pimi(-1)*EAE_pic;
-// Private consumption good (import)
+
 EAE_imcg^((EAE_mumcg-1)/EAE_mumcg) =
 +EAEEAA_numcg ^(1/EAE_mumcg)*EAEEAA_imcg^(1-1/EAE_mumcg)
 +EAEEAB_numcg ^(1/EAE_mumcg)*EAEEAB_imcg^(1-1/EAE_mumcg)
@@ -19286,27 +19286,27 @@ EAE_imcg^((EAE_mumcg-1)/EAE_mumcg) =
 -EAERW_numcg
 -EAEUS_numcg
 )^(1/EAE_mumcg)*EAEEAC_imcg^(1-1/EAE_mumcg);
-// Demand for bilateral consumption import goods
+
 EAEEAA_imcg = EAEEAA_numcg*((EAA_pex*EAEEAA_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
-// Demand for bilateral consumption import goods
+
 EAEEAB_imcg = EAEEAB_numcg*((EAB_pex*EAEEAB_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
-// Demand for bilateral consumption import goods
+
 EAEEAD_imcg = EAEEAD_numcg*((EAD_pex*EAEEAD_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
-// Demand for bilateral consumption import goods
+
 EAEEAG_imcg = EAEEAG_numcg*((EAG_pex*EAEEAG_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
-// Demand for bilateral consumption import goods
+
 EAEEAH_imcg = EAEEAH_numcg*((EAH_pex*EAEEAH_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
-// Demand for bilateral consumption import goods
+
 EAEEAI_imcg = EAEEAI_numcg*((EAI_pex*EAEEAI_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
-// Demand for bilateral consumption import goods
+
 EAEEAJ_imcg = EAEEAJ_numcg*((EAJ_pex*EAEEAJ_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
-// Demand for bilateral consumption import goods
+
 EAEEAK_imcg = EAEEAK_numcg*((EAK_pex*EAEEAK_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
-// Demand for bilateral consumption import goods
+
 EAEEAL_imcg = EAEEAL_numcg*((EAL_pex*EAEEAL_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
-// Demand for bilateral consumption import goods
+
 EAERW_imcg = EAERW_numcg*((RW_pex*EAERW_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
-// Demand for bilateral consumption import goods
+
 EAEUS_imcg = EAEUS_numcg*((US_pex*EAEUS_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
 EAEEAC_imcg = (1
 -EAEEAA_numcg
@@ -19322,7 +19322,7 @@ EAEEAC_imcg = (1
 -EAERW_numcg
 -EAEUS_numcg
 )*((EAC_pex*EAEEAC_rer)/EAE_pimcg)^(-EAE_mumcg)*EAE_imcg;
-// Price of the consumption good (import)
+
 EAE_pimcg^(1-EAE_mumcg) =
 +EAEEAA_numcg * (EAA_pex*EAEEAA_rer)^(1-EAE_mumcg)
 +EAEEAB_numcg * (EAB_pex*EAEEAB_rer)^(1-EAE_mumcg)
@@ -19350,9 +19350,9 @@ EAE_pimcg^(1-EAE_mumcg) =
 -EAERW_numcg
 -EAEUS_numcg
 )*(EAC_pex*EAEEAC_rer)^(1-EAE_mumcg);
-// Private consumption good (import) inflation
+
 EAE_piimcg = EAE_pimcg/EAE_pimcg(-1)*EAE_pic;
-// Private consumption good (import)
+
 EAE_imig^((EAE_mumig-1)/EAE_mumig) =
 +EAEEAA_numig ^(1/EAE_mumig)*EAEEAA_imig^(1-1/EAE_mumig)
 +EAEEAB_numig ^(1/EAE_mumig)*EAEEAB_imig^(1-1/EAE_mumig)
@@ -19380,27 +19380,27 @@ EAE_imig^((EAE_mumig-1)/EAE_mumig) =
 -EAERW_numig
 -EAEUS_numig
 )^(1/EAE_mumig)*EAEEAC_imig^(1-1/EAE_mumig);
-// Demand for bilateral consumption import goods
+
 EAEEAA_imig = EAEEAA_numig*((EAA_pex*EAEEAA_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
-// Demand for bilateral consumption import goods
+
 EAEEAB_imig = EAEEAB_numig*((EAB_pex*EAEEAB_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
-// Demand for bilateral consumption import goods
+
 EAEEAD_imig = EAEEAD_numig*((EAD_pex*EAEEAD_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
-// Demand for bilateral consumption import goods
+
 EAEEAG_imig = EAEEAG_numig*((EAG_pex*EAEEAG_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
-// Demand for bilateral consumption import goods
+
 EAEEAH_imig = EAEEAH_numig*((EAH_pex*EAEEAH_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
-// Demand for bilateral consumption import goods
+
 EAEEAI_imig = EAEEAI_numig*((EAI_pex*EAEEAI_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
-// Demand for bilateral consumption import goods
+
 EAEEAJ_imig = EAEEAJ_numig*((EAJ_pex*EAEEAJ_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
-// Demand for bilateral consumption import goods
+
 EAEEAK_imig = EAEEAK_numig*((EAK_pex*EAEEAK_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
-// Demand for bilateral consumption import goods
+
 EAEEAL_imig = EAEEAL_numig*((EAL_pex*EAEEAL_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
-// Demand for bilateral consumption import goods
+
 EAERW_imig = EAERW_numig*((RW_pex*EAERW_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
-// Demand for bilateral consumption import goods
+
 EAEUS_imig = EAEUS_numig*((US_pex*EAEUS_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
 EAEEAC_imig = (1
 -EAEEAA_numig
@@ -19416,7 +19416,7 @@ EAEEAC_imig = (1
 -EAERW_numig
 -EAEUS_numig
 )*((EAC_pex*EAEEAC_rer)/EAE_pimig)^(-EAE_mumig)*EAE_imig;
-// Price of the consumption good (import)
+
 EAE_pimig^(1-EAE_mumig) =
 +EAEEAA_numig * (EAA_pex*EAEEAA_rer)^(1-EAE_mumig)
 +EAEEAB_numig * (EAB_pex*EAEEAB_rer)^(1-EAE_mumig)
@@ -19444,15 +19444,15 @@ EAE_pimig^(1-EAE_mumig) =
 -EAERW_numig
 -EAEUS_numig
 )*(EAC_pex*EAEEAC_rer)^(1-EAE_mumig);
-// Private consumption good (import) inflation
+
 EAE_piimig = EAE_pimig/EAE_pimig(-1)*EAE_pic;
-// Private consumption good (import) inflation
+
 EAE_piimc4 = EAE_pimc/EAE_pimc(-4)*EAE_pic4;
-// Private consumption good (import) inflation
+
 EAE_piex4 = EAE_pex/EAE_pex(-4)*EAE_pic4;
-// Wedge between aggregate demand and production, using EAE_x = EAF_size/EAE_size*EAF_im
+
 EAE_yst = EAE_sh*EAE_ht+EAE_sx*EAE_ex;
-// Aggregate demand for bilateral imported intermediate goods
+
 EAEEAA_im = 
 +EAEEAA_imc
 +EAEEAA_imi
@@ -19531,18 +19531,18 @@ EAEUS_im =
 +EAEUS_imcg
 +EAEUS_imig
 ;
-// Private consumption good firm
-// Private consumption good (tradable)
+
+
 EAE_ttc^((EAE_mutc-1)/EAE_mutc) = (EAE_nutc)^(1/EAE_mutc)*EAE_htc^(1-1/EAE_mutc)+(1-EAE_nutc)^(1/EAE_mutc)*EAE_imc^(1-1/EAE_mutc);
-// Private consumption good  (total)
+
 EAE_qc^((EAE_muc-1)/EAE_muc) = (EAE_nuc)^(1/EAE_muc)*EAE_ttc^(1-1/EAE_muc)+(1-EAE_nuc)^(1/EAE_muc)*EAE_ntc^(1-1/EAE_muc);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAE_ntc = (1-EAE_nuc)*(EAE_pnt)^(-EAE_muc)*EAE_qc;
-// Price of the consumption good (tradable)  
+
 EAE_pttc^(1-EAE_mutc) = (EAE_nutc)*EAE_pht^(1-EAE_mutc)+(1-EAE_nutc)*EAE_pimc^(1-EAE_mutc);
-// Price of the consumption good 
+
 1^(1-EAE_muc) = (EAE_nuc)*EAE_pttc^(1-EAE_muc)+(1-EAE_nuc)*EAE_pnt^(1-EAE_muc);
-// Demand for domestic intermediate goods
+
 EAE_htc = EAE_nutc*(EAE_pht/EAE_pttc)^(-EAE_mutc)*EAE_ttc;
 EAEEAA_gammaimc = 0;
 EAEEAA_gammaimcdag = 1;
@@ -19570,20 +19570,20 @@ EAERW_gammaimc = 0;
 EAERW_gammaimcdag = 1;
 EAEUS_gammaimc = 0;
 EAEUS_gammaimcdag = 1;
-// Private consumption good (tradable)
+
 EAE_tti^((EAE_muti-1)/EAE_muti) = (EAE_nuti)^(1/EAE_muti)*EAE_hti^(1-1/EAE_muti)+(1-EAE_nuti)^(1/EAE_muti)*EAE_imi^(1-1/EAE_muti);
-// Private consumption good  (total)
+
 EAE_qi^((EAE_mui-1)/EAE_mui) = (EAE_nui)^(1/EAE_mui)*EAE_tti^(1-1/EAE_mui)+(1-EAE_nui)^(1/EAE_mui)*EAE_nti^(1-1/EAE_mui);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAE_nti = (1-EAE_nui)*(EAE_pnt/EAE_pi)^(-EAE_mui)*EAE_qi;
-// Price of the consumption good (tradable)  
+
 EAE_ptti^(1-EAE_muti) = (EAE_nuti)*EAE_pht^(1-EAE_muti)+(1-EAE_nuti)*EAE_pimi^(1-EAE_muti);
-// Price of the consumption good 
+
 EAE_pi^(1-EAE_mui) = (EAE_nui)*EAE_ptti^(1-EAE_mui)+(1-EAE_nui)*EAE_pnt^(1-EAE_mui);
-// Auxiliary equation for the price of the investment good in steady state
-// this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
+
+
 EAE_pibar = EAE_pi;
-// Demand for domestic intermediate goods
+
 EAE_hti = EAE_nuti*(EAE_pht/EAE_ptti)^(-EAE_muti)*EAE_tti;
 EAEEAA_gammaimi = 0;
 EAEEAA_gammaimidag = 1;
@@ -19611,17 +19611,17 @@ EAERW_gammaimi = 0;
 EAERW_gammaimidag = 1;
 EAEUS_gammaimi = 0;
 EAEUS_gammaimidag = 1;
-// Private consumption good (tradable)
+
 EAE_ttcg^((EAE_mutcg-1)/EAE_mutcg) = (EAE_nutcg)^(1/EAE_mutcg)*EAE_htcg^(1-1/EAE_mutcg)+(1-EAE_nutcg)^(1/EAE_mutcg)*EAE_imcg^(1-1/EAE_mutcg);
-// Private consumption good  (total)
+
 EAE_qcg^((EAE_mucg-1)/EAE_mucg) = (EAE_nucg)^(1/EAE_mucg)*EAE_ttcg^(1-1/EAE_mucg)+(1-EAE_nucg)^(1/EAE_mucg)*EAE_ntcg^(1-1/EAE_mucg);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAE_ntcg = (1-EAE_nucg)*(EAE_pnt/EAE_pcg)^(-EAE_mucg)*EAE_qcg;
-// Price of the consumption good (tradable)  
+
 EAE_pttcg^(1-EAE_mutcg) = (EAE_nutcg)*EAE_pht^(1-EAE_mutcg)+(1-EAE_nutcg)*EAE_pimcg^(1-EAE_mutcg);
-// Price of the consumption good 
+
 EAE_pcg^(1-EAE_mucg) = (EAE_nucg)*EAE_pttcg^(1-EAE_mucg)+(1-EAE_nucg)*EAE_pnt^(1-EAE_mucg);
-// Demand for domestic intermediate goods
+
 EAE_htcg = EAE_nutcg*(EAE_pht/EAE_pttcg)^(-EAE_mutcg)*EAE_ttcg;
 EAEEAA_gammaimcg = 0;
 EAEEAA_gammaimcgdag = 1;
@@ -19649,17 +19649,17 @@ EAERW_gammaimcg = 0;
 EAERW_gammaimcgdag = 1;
 EAEUS_gammaimcg = 0;
 EAEUS_gammaimcgdag = 1;
-// Private consumption good (tradable)
+
 EAE_ttig^((EAE_mutig-1)/EAE_mutig) = (EAE_nutig)^(1/EAE_mutig)*EAE_htig^(1-1/EAE_mutig)+(1-EAE_nutig)^(1/EAE_mutig)*EAE_imig^(1-1/EAE_mutig);
-// Private consumption good  (total)
+
 EAE_qig^((EAE_muig-1)/EAE_muig) = (EAE_nuig)^(1/EAE_muig)*EAE_ttig^(1-1/EAE_muig)+(1-EAE_nuig)^(1/EAE_muig)*EAE_ntig^(1-1/EAE_muig);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAE_ntig = (1-EAE_nuig)*(EAE_pnt/EAE_pig)^(-EAE_muig)*EAE_qig;
-// Price of the consumption good (tradable)  
+
 EAE_pttig^(1-EAE_mutig) = (EAE_nutig)*EAE_pht^(1-EAE_mutig)+(1-EAE_nutig)*EAE_pimig^(1-EAE_mutig);
-// Price of the consumption good 
+
 EAE_pig^(1-EAE_muig) = (EAE_nuig)*EAE_pttig^(1-EAE_muig)+(1-EAE_nuig)*EAE_pnt^(1-EAE_muig);
-// Demand for domestic intermediate goods
+
 EAE_htig = EAE_nutig*(EAE_pht/EAE_pttig)^(-EAE_mutig)*EAE_ttig;
 EAEEAA_gammaimig = 0;
 EAEEAA_gammaimigdag = 1;
@@ -19687,7 +19687,7 @@ EAERW_gammaimig = 0;
 EAERW_gammaimigdag = 1;
 EAEUS_gammaimig = 0;
 EAEUS_gammaimigdag = 1;
-// Trade balance
+
 EAE_tb =
 +EAE_pex*EAA_size/EAE_size*EAAEAE_im
 -EAA_pex*EAEEAA_rer*EAEEAA_im
@@ -19716,7 +19716,7 @@ EAE_tb =
 +EAE_pex*US_size/EAE_size*USEAE_im
 -US_pex*EAEUS_rer*EAEUS_im
 ;
-// Aggregate exports (volume)
+
 EAE_ex =
 +EAA_size/EAE_size*EAAEAE_im
 +EAB_size/EAE_size*EABEAE_im
@@ -19732,131 +19732,131 @@ EAE_ex =
 +RW_size/EAE_size*RWEAE_im
 +US_size/EAE_size*USEAE_im
 ;
-//-------------
-//-------------
-// Fiscal and monetary authorities
-//-------------
-//-------------
-//-------------
-// Fiscal authority
-//-------------
-// Government budget constraint, using EAE_pg = EAE_pht
-// TODO: check the (1-EAE_gammab(-1)) adjustment here, which is not in the fiscal extention
+
+
+
+
+
+
+
+
+
+
 	EAE_pcg(-1)*EAE_cg(-1)+EAE_pig(-1)*EAE_ig(-1)+EAE_tr(-1)
 	+EAE_b(-1)*EAE_pic(-1)^(-1)+EAE_m(-2)*EAE_pic(-1)^(-1) = EAE_tauc(-1)*EAE_c(-1)+(EAE_taun(-1)+EAE_tauwh(-1))*(EAE_wi(-1)*EAE_ndi(-1)+EAE_wj(-1)*EAE_ndj(-1))+EAE_tauwf(-1)*EAE_w(-1)*EAE_nd(-1)+EAE_tauk(-1)*(EAE_rk(-1)*EAE_u(-1)-(EAE_gammau(-1)+EAE_delta)*EAE_pi(-1))*EAE_k(-1)+EAE_taud(-1)*EAE_d(-1)+EAE_t(-1)+(EAE_r(-1)*(1-EAE_gammab(-1)))^(-1)*EAE_b+EAE_m(-1);
-// Government spending, using EAE_pg = EAE_pht
+
 EAE_pcg*EAE_cg = EAE_cgy*EAE_pybar*EAE_ybar;
 EAE_pig*EAE_ig = EAE_igy*EAE_pybar*EAE_ybar;
 EAE_t = 0;
 EAE_b = EAE_bytarget*EAE_pybar*EAE_ybar;
-// Auxiliary equation for steady-state output
+
 EAE_ybar = EAE_y;
-// Auxiliary equation for steady-state output
+
 EAE_ytbar = EAE_yst;
-// Auxiliary equation for steady-state output
+
 EAE_ynbar = EAE_ysn;
-// Auxiliary equation for steady-state output deflator
+
 EAE_pybar = EAE_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
+
 EAE_trybar = EAE_tr/(EAE_pybar*EAE_ybar);
-// Auxiliary equation for determining the distribution of lump-sum taxes
+
 EAE_ti = EAE_upsilont*EAE_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
 upsilont = 0:            ti = 0, tj = 1/omega t
 upsilont = 1:            ti = tj = t
 upsilont = 1/(1-omega):  ti = 1/(1-omega) t, tj = 0. */
-// Auxiliary equation for determining the distribution of lump-sum transfers
+
 EAE_tri = EAE_upsilontr*EAE_tr;
 /* Note: Valid parameter space: 0 <= upsilontr <= 1/(1-omega) with
 upsilontr = 0:            tri = 0, trj = 1/omega tr
 upsilontr = 1:            tri = trj = tr
 upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
-//-------------
-// Monetary authority
-//-------------
+
+
+
 	EAE_r = EAL_r;
 EAE_pic4 = EAE_pi4target;
 EAE_rr-1 = EAE_r/EAE_pi4target^(1/4)-1;
-// Equilibrium real interest rate
+
 EAE_rrstar-1 = 1/EAE_beta-1;
-//-------------
-//-------------
-// Aggregation, market clearing and resource constraint
-//-------------
-//-------------
-//-------------
-// Aggregation
-//-------------
-// Aggregate consumption
+
+
+
+
+
+
+
+
+
 EAE_c = (1-EAE_omega)*EAE_ci+EAE_omega*EAE_cj;
-// Aggregate money holdings
+
 EAE_m = (1-EAE_omega)*EAE_mi+EAE_omega*EAE_mj;
-// Aggregate capital stock
+
 EAE_k = (1-EAE_omega)*EAE_ki;
-// Aggregate investment
+
 EAE_i = (1-EAE_omega)*EAE_ii;
-// Aggregate lump-sum transfers
+
 EAE_trj = 
 1/EAE_omega*EAE_tr-(1-EAE_omega)/EAE_omega*EAE_tri
 ;
-// Aggregate lump-sum taxes
+
 EAE_tj = 
 1/EAE_omega*EAE_t-(1-EAE_omega)/EAE_omega*EAE_ti
 ;
-// Aggregate transaction costs
+
 EAE_gammav = (1-EAE_omega)*EAE_ci*EAE_gammavi+EAE_omega*EAE_cj*EAE_gammavj;
-//-------------
-// Market clearing
-//-------------
-// Labour markets for household I
-// Wedge between labour demand/hours worked and labour supply
+
+
+
+
+
 EAE_ni = EAE_si*EAE_ndi;
-// Wage dispersion
+
 EAE_si = (1-EAE_xii)*(EAE_witilde/EAE_wi)^(-EAE_etai)+EAE_xii*(EAE_wi(-1)/EAE_wi)^(-EAE_etai)*(EAE_pic/(EAE_pic(-1)^EAE_chii*EAE_pi4target^(1/4*(1-EAE_chii))))^(EAE_etai)*EAE_si(-1);
-// Labour markets for household J
-// Wedge between labour demand/hours worked and labour supply
+
+
 EAE_nj = EAE_sj*EAE_ndj;
-// Wage dispersion
+
 EAE_sj = (1-EAE_xij)*(EAE_wjtilde/EAE_wj)^(-EAE_etaj)+EAE_xij*(EAE_wj(-1)/EAE_wj)^(-EAE_etaj)*(EAE_pic/(EAE_pic(-1)^EAE_chij*EAE_pi4target^(1/4*(1-EAE_chij))))^(EAE_etaj)*EAE_sj(-1);
-// Rental market for capital
-// Equality of capital input and effective capital services
+
+
 EAE_u*EAE_k = EAE_kd;
-// Intermediate-good markets
-// Wedge between aggregate demand and production, using EAE_x = EAF_size/EAE_size*EAF_im
+
+
 EAE_ysn = EAE_snt*EAE_nt;
-//  nontradables aggregate demand
+
 EAE_nt = 
 +EAE_ntc
 +EAE_nti
 +EAE_ntcg
 +EAE_ntig
 ;
-// Aggregate demand for domestic intermediate goods, using EAE_hg = EAE_cg
+
 EAE_ht =
 +EAE_htc
 +EAE_hti
 +EAE_htcg
 +EAE_htig
 ;
-// Price dispersion in the domestic markets
+
 EAE_sh = (1-EAE_xih)*(EAE_phttilde/EAE_pht)^(-EAE_thetat)+EAE_xih*(EAE_piht/(EAE_piht(-1)^EAE_chih*EAE_pi4target^(1/4*(1-EAE_chih))))^EAE_thetat*EAE_sh(-1);
-// Price dispersion in the foreign markets
+
 EAE_sx = (1-EAE_xix)*(EAE_pextilde/EAE_pex)^(-EAE_thetat)+EAE_xix*(EAE_piex/(EAE_piex(-1)^EAE_chix*EAE_pi4target^(1/4*(1-EAE_chix))))^EAE_thetat*EAE_sx(-1);
-// Price dispersion in the domestic markets
+
 EAE_snt = (1-EAE_xin)*(EAE_pnttilde/EAE_pnt)^(-EAE_thetan)+EAE_xin*(EAE_pint/(EAE_pint(-1)^EAE_chin*EAE_pi4target^(1/4*(1-EAE_chin))))^EAE_thetan*EAE_snt(-1);
-// Final-good markets
-// Aggregate consumption and transaction cost
+
+
 EAE_qc = EAE_c+EAE_gammav;
-// Aggregate investment and capital utilisation cost
+
 EAE_qi = EAE_i+EAE_k*EAE_gammau;
-// Aggregate gov demand components added to use the same structure like in private components
+
 EAE_qcg = EAE_cg;
 EAE_qig = EAE_ig;
-//-------------
-// Resource constraint
-//-------------
-// TODO: why there is no adjustment cost for gov components
-// Aggregate nominal demand
+
+
+
+
+
 EAE_py*EAE_y = 
 +EAE_qc
 +EAE_pi*EAE_qi
@@ -19928,83 +19928,83 @@ EAE_py*EAE_y =
 -(US_pex*EAEUS_rer)*EAEUS_imcg
 -(US_pex*EAEUS_rer)*EAEUS_imig
 ;
-// Aggregate real demand
+
 EAE_y = EAE_yst+EAE_ysn;
-//-------------
-//-------------
-// Autoregressive shocks
-//-------------
-//-------------
-// Productivity shocks
+
+
+
+
+
+
 log(EAE_zt) = (1-EAE_rhozt)*log(EAE_ztbar)+EAE_rhozt*log(EAE_zt(-1))+EAE_epszt;
 log(EAE_zn) = (1-EAE_rhozn)*log(EAE_znbar)+EAE_rhozn*log(EAE_zn(-1))+EAE_epszn;
-// Government spending shock
+
 EAE_cgy = (1-EAE_rhocg)*EAE_cgybar+EAE_rhocg*EAE_cgy(-1)+EAE_epsgc;
 EAE_igy = (1-EAE_rhoig)*EAE_igybar+EAE_rhoig*EAE_igy(-1)+EAE_epsgi;
-// Transfer shock
+
 EAE_try = (1-EAE_rhotr)*EAE_trybar+EAE_rhotr*EAE_try(-1)+EAE_epstr;
-// Consumption tax shock
+
 EAE_tauc = (1-EAE_rhotauc)*EAE_taucbar+EAE_rhotauc*EAE_tauc(-1)+EAE_epstauc;
-// Dividend income tax shock
+
 EAE_taud = (1-EAE_rhotaud)*EAE_taudbar+EAE_rhotaud*EAE_taud(-1)+EAE_epstaud;
-// Capital income tax shock
+
 EAE_tauk = (1-EAE_rhotauk)*EAE_taukbar+EAE_rhotauk*EAE_tauk(-1)+EAE_epstauk;
-// Labour income tax shock
+
 EAE_taun = (1-EAE_rhotaun)*EAE_taunbar+EAE_rhotaun*EAE_taun(-1)+EAE_epstaun;
-// Payroll tax shock: households
+
 EAE_tauwh = (1-EAE_rhotauwh)*EAE_tauwhbar+EAE_rhotauwh*EAE_tauwh(-1)+EAE_epstauwh;
-// Payroll tax shock: firms
+
 EAE_tauwf = (1-EAE_rhotauwf)*EAE_tauwfbar+EAE_rhotauwf*EAE_tauwf(-1)+EAE_epstauwf;
-// Wage cost push shock
+
 EAE_wcst = (1-EAE_rhowcst)*EAE_wcstbar+EAE_rhowcst*EAE_wcst(-1)+EAE_epswcst;
-// Preference shock
+
 log(EAE_zcon) = (1-EAE_rhozcon)*log(EAE_zconbar)+EAE_rhozcon*log(EAE_zcon(-1))+EAE_epszcon;
-// Investment specific shock
+
 log(EAE_zinv) = (1-EAE_rhozinv)*log(EAE_zinvbar)+EAE_rhozinv*log(EAE_zinv(-1))+EAE_epszinv;
-//-------------
-//-------------
-// Conditions for calibration and reporting
-//-------------
-//-------------
-// Aggregate nominal consumption share
+
+
+
+
+
+
 EAE_cy = EAE_c/(EAE_py*EAE_y);
-// Aggregate nominal investment share
+
 EAE_iy = EAE_pi*EAE_i/(EAE_py*EAE_y);
-// Aggregate nominal import share  
+
 EAE_imy = (
 +EAE_pimc*EAE_imc
 +EAE_pimi*EAE_imi
 +EAE_pimcg*EAE_imcg
 +EAE_pimig*EAE_imig
 )/(EAE_py*EAE_y);
-// Aggregate nominal import share
+
 EAE_imcy = EAE_pimc*EAE_imc/(EAE_py*EAE_y);
 EAE_imiy = EAE_pimi*EAE_imi/(EAE_py*EAE_y);
 EAE_imcgy = EAE_pimcg*EAE_imcg/(EAE_py*EAE_y);
 EAE_imigy = EAE_pimig*EAE_imig/(EAE_py*EAE_y);
-// Aggregate debt-to-output ratio
+
 EAE_by = EAE_b/(EAE_pybar*EAE_ybar);
-// Aggregate lump-sum tax-to-output ratio
+
 EAE_ty = EAE_t/(EAE_pybar*EAE_ybar);
-// Aggregate labour cost share
+
 EAE_lcy = ((1+EAE_tauwf)*EAE_w*EAE_nd)/(EAE_py*EAE_y);
-// Aggregate nominal Wage share
+
 EAE_wy = (EAE_w*EAE_nd)/(EAE_py*EAE_y);
-// NT sector nominal Wage share
+
 EAE_wnty = (EAE_w*EAE_ndn)/(EAE_pnt*EAE_ysn);
-// T sector nominal Wage share
+
 EAE_whty = (EAE_w*EAE_ndt)/(EAE_pht*EAE_yst);
-// T sector share
+
 EAE_yhty = EAE_pht*EAE_yst/(EAE_py*EAE_y);
-// NT sector share
+
 EAE_ynty = EAE_pnt*EAE_ysn/(EAE_py*EAE_y);
-// Output gap
+
 EAE_ygap = 0;
-// Output growth (gross rate)
+
 EAE_ygrowth = EAE_y/EAE_y(-1);
-// Output growth (gross rate yoy)
+
 EAE_ygrowth4 = EAE_y/EAE_y(-4);
-// Domestic nominal output as a share of world nominal output
+
 EAE_yshare  = EAE_size*EAE_py*EAE_y/EAE_rer/(
 +EAA_size*EAA_py*EAA_y/EAA_rer
 +EAB_size*EAB_py*EAB_y/EAB_rer
@@ -20021,153 +20021,153 @@ EAE_yshare  = EAE_size*EAE_py*EAE_y/EAE_rer/(
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
-// Interest (semi-)elasticity of money demand
+
 EAE_epsilonm = -1/8*1/(EAE_r*(EAE_gammav2*EAE_r+EAE_r-1));
-// Trade balance-to-GDP ratio
+
 EAE_tby = EAE_tb/(EAE_py*EAE_y);
-// Bilateral shares
+
 EAEEAA_imcy = (EAA_pex*EAEEAA_rer)*EAEEAA_imc/(EAE_py*EAE_y);
 EAEEAA_imiy = (EAA_pex*EAEEAA_rer)*EAEEAA_imi/(EAE_py*EAE_y);
 EAEEAA_imcgy = (EAA_pex*EAEEAA_rer)*EAEEAA_imcg/(EAE_py*EAE_y);
 EAEEAA_imigy = (EAA_pex*EAEEAA_rer)*EAEEAA_imig/(EAE_py*EAE_y);
-// Exports of consumption goods to gdp
+
 EAEEAA_excy  = EAA_size/EAE_size*EAE_pex*EAAEAE_imc/(EAE_py*EAE_y);
-// Exports of investment goods to gdp
+
 EAEEAA_exiy  = EAA_size/EAE_size*EAE_pex*EAAEAE_imi/(EAE_py*EAE_y);
-// Bilateral shares
+
 EAEEAB_imcy = (EAB_pex*EAEEAB_rer)*EAEEAB_imc/(EAE_py*EAE_y);
 EAEEAB_imiy = (EAB_pex*EAEEAB_rer)*EAEEAB_imi/(EAE_py*EAE_y);
 EAEEAB_imcgy = (EAB_pex*EAEEAB_rer)*EAEEAB_imcg/(EAE_py*EAE_y);
 EAEEAB_imigy = (EAB_pex*EAEEAB_rer)*EAEEAB_imig/(EAE_py*EAE_y);
-// Exports of consumption goods to gdp
+
 EAEEAB_excy  = EAB_size/EAE_size*EAE_pex*EABEAE_imc/(EAE_py*EAE_y);
-// Exports of investment goods to gdp
+
 EAEEAB_exiy  = EAB_size/EAE_size*EAE_pex*EABEAE_imi/(EAE_py*EAE_y);
-// Bilateral shares
+
 EAEEAC_imcy = (EAC_pex*EAEEAC_rer)*EAEEAC_imc/(EAE_py*EAE_y);
 EAEEAC_imiy = (EAC_pex*EAEEAC_rer)*EAEEAC_imi/(EAE_py*EAE_y);
 EAEEAC_imcgy = (EAC_pex*EAEEAC_rer)*EAEEAC_imcg/(EAE_py*EAE_y);
 EAEEAC_imigy = (EAC_pex*EAEEAC_rer)*EAEEAC_imig/(EAE_py*EAE_y);
-// Exports of consumption goods to gdp
+
 EAEEAC_excy  = EAC_size/EAE_size*EAE_pex*EACEAE_imc/(EAE_py*EAE_y);
-// Exports of investment goods to gdp
+
 EAEEAC_exiy  = EAC_size/EAE_size*EAE_pex*EACEAE_imi/(EAE_py*EAE_y);
-// Bilateral shares
+
 EAEEAD_imcy = (EAD_pex*EAEEAD_rer)*EAEEAD_imc/(EAE_py*EAE_y);
 EAEEAD_imiy = (EAD_pex*EAEEAD_rer)*EAEEAD_imi/(EAE_py*EAE_y);
 EAEEAD_imcgy = (EAD_pex*EAEEAD_rer)*EAEEAD_imcg/(EAE_py*EAE_y);
 EAEEAD_imigy = (EAD_pex*EAEEAD_rer)*EAEEAD_imig/(EAE_py*EAE_y);
-// Exports of consumption goods to gdp
+
 EAEEAD_excy  = EAD_size/EAE_size*EAE_pex*EADEAE_imc/(EAE_py*EAE_y);
-// Exports of investment goods to gdp
+
 EAEEAD_exiy  = EAD_size/EAE_size*EAE_pex*EADEAE_imi/(EAE_py*EAE_y);
-// Bilateral shares
+
 EAEEAF_imcy = (EAF_pex*EAEEAF_rer)*EAEEAF_imc/(EAE_py*EAE_y);
 EAEEAF_imiy = (EAF_pex*EAEEAF_rer)*EAEEAF_imi/(EAE_py*EAE_y);
 EAEEAF_imcgy = (EAF_pex*EAEEAF_rer)*EAEEAF_imcg/(EAE_py*EAE_y);
 EAEEAF_imigy = (EAF_pex*EAEEAF_rer)*EAEEAF_imig/(EAE_py*EAE_y);
-// Exports of consumption goods to gdp
+
 EAEEAF_excy  = EAF_size/EAE_size*EAE_pex*EAFEAE_imc/(EAE_py*EAE_y);
-// Exports of investment goods to gdp
+
 EAEEAF_exiy  = EAF_size/EAE_size*EAE_pex*EAFEAE_imi/(EAE_py*EAE_y);
-// Bilateral shares
+
 EAEEAG_imcy = (EAG_pex*EAEEAG_rer)*EAEEAG_imc/(EAE_py*EAE_y);
 EAEEAG_imiy = (EAG_pex*EAEEAG_rer)*EAEEAG_imi/(EAE_py*EAE_y);
 EAEEAG_imcgy = (EAG_pex*EAEEAG_rer)*EAEEAG_imcg/(EAE_py*EAE_y);
 EAEEAG_imigy = (EAG_pex*EAEEAG_rer)*EAEEAG_imig/(EAE_py*EAE_y);
-// Exports of consumption goods to gdp
+
 EAEEAG_excy  = EAG_size/EAE_size*EAE_pex*EAGEAE_imc/(EAE_py*EAE_y);
-// Exports of investment goods to gdp
+
 EAEEAG_exiy  = EAG_size/EAE_size*EAE_pex*EAGEAE_imi/(EAE_py*EAE_y);
-// Bilateral shares
+
 EAEEAH_imcy = (EAH_pex*EAEEAH_rer)*EAEEAH_imc/(EAE_py*EAE_y);
 EAEEAH_imiy = (EAH_pex*EAEEAH_rer)*EAEEAH_imi/(EAE_py*EAE_y);
 EAEEAH_imcgy = (EAH_pex*EAEEAH_rer)*EAEEAH_imcg/(EAE_py*EAE_y);
 EAEEAH_imigy = (EAH_pex*EAEEAH_rer)*EAEEAH_imig/(EAE_py*EAE_y);
-// Exports of consumption goods to gdp
+
 EAEEAH_excy  = EAH_size/EAE_size*EAE_pex*EAHEAE_imc/(EAE_py*EAE_y);
-// Exports of investment goods to gdp
+
 EAEEAH_exiy  = EAH_size/EAE_size*EAE_pex*EAHEAE_imi/(EAE_py*EAE_y);
-// Bilateral shares
+
 EAEEAI_imcy = (EAI_pex*EAEEAI_rer)*EAEEAI_imc/(EAE_py*EAE_y);
 EAEEAI_imiy = (EAI_pex*EAEEAI_rer)*EAEEAI_imi/(EAE_py*EAE_y);
 EAEEAI_imcgy = (EAI_pex*EAEEAI_rer)*EAEEAI_imcg/(EAE_py*EAE_y);
 EAEEAI_imigy = (EAI_pex*EAEEAI_rer)*EAEEAI_imig/(EAE_py*EAE_y);
-// Exports of consumption goods to gdp
+
 EAEEAI_excy  = EAI_size/EAE_size*EAE_pex*EAIEAE_imc/(EAE_py*EAE_y);
-// Exports of investment goods to gdp
+
 EAEEAI_exiy  = EAI_size/EAE_size*EAE_pex*EAIEAE_imi/(EAE_py*EAE_y);
-// Bilateral shares
+
 EAEEAJ_imcy = (EAJ_pex*EAEEAJ_rer)*EAEEAJ_imc/(EAE_py*EAE_y);
 EAEEAJ_imiy = (EAJ_pex*EAEEAJ_rer)*EAEEAJ_imi/(EAE_py*EAE_y);
 EAEEAJ_imcgy = (EAJ_pex*EAEEAJ_rer)*EAEEAJ_imcg/(EAE_py*EAE_y);
 EAEEAJ_imigy = (EAJ_pex*EAEEAJ_rer)*EAEEAJ_imig/(EAE_py*EAE_y);
-// Exports of consumption goods to gdp
+
 EAEEAJ_excy  = EAJ_size/EAE_size*EAE_pex*EAJEAE_imc/(EAE_py*EAE_y);
-// Exports of investment goods to gdp
+
 EAEEAJ_exiy  = EAJ_size/EAE_size*EAE_pex*EAJEAE_imi/(EAE_py*EAE_y);
-// Bilateral shares
+
 EAEEAK_imcy = (EAK_pex*EAEEAK_rer)*EAEEAK_imc/(EAE_py*EAE_y);
 EAEEAK_imiy = (EAK_pex*EAEEAK_rer)*EAEEAK_imi/(EAE_py*EAE_y);
 EAEEAK_imcgy = (EAK_pex*EAEEAK_rer)*EAEEAK_imcg/(EAE_py*EAE_y);
 EAEEAK_imigy = (EAK_pex*EAEEAK_rer)*EAEEAK_imig/(EAE_py*EAE_y);
-// Exports of consumption goods to gdp
+
 EAEEAK_excy  = EAK_size/EAE_size*EAE_pex*EAKEAE_imc/(EAE_py*EAE_y);
-// Exports of investment goods to gdp
+
 EAEEAK_exiy  = EAK_size/EAE_size*EAE_pex*EAKEAE_imi/(EAE_py*EAE_y);
-// Bilateral shares
+
 EAEEAL_imcy = (EAL_pex*EAEEAL_rer)*EAEEAL_imc/(EAE_py*EAE_y);
 EAEEAL_imiy = (EAL_pex*EAEEAL_rer)*EAEEAL_imi/(EAE_py*EAE_y);
 EAEEAL_imcgy = (EAL_pex*EAEEAL_rer)*EAEEAL_imcg/(EAE_py*EAE_y);
 EAEEAL_imigy = (EAL_pex*EAEEAL_rer)*EAEEAL_imig/(EAE_py*EAE_y);
-// Exports of consumption goods to gdp
+
 EAEEAL_excy  = EAL_size/EAE_size*EAE_pex*EALEAE_imc/(EAE_py*EAE_y);
-// Exports of investment goods to gdp
+
 EAEEAL_exiy  = EAL_size/EAE_size*EAE_pex*EALEAE_imi/(EAE_py*EAE_y);
-// Bilateral shares
+
 EAERW_imcy = (RW_pex*EAERW_rer)*EAERW_imc/(EAE_py*EAE_y);
 EAERW_imiy = (RW_pex*EAERW_rer)*EAERW_imi/(EAE_py*EAE_y);
 EAERW_imcgy = (RW_pex*EAERW_rer)*EAERW_imcg/(EAE_py*EAE_y);
 EAERW_imigy = (RW_pex*EAERW_rer)*EAERW_imig/(EAE_py*EAE_y);
-// Exports of consumption goods to gdp
+
 EAERW_excy  = RW_size/EAE_size*EAE_pex*RWEAE_imc/(EAE_py*EAE_y);
-// Exports of investment goods to gdp
+
 EAERW_exiy  = RW_size/EAE_size*EAE_pex*RWEAE_imi/(EAE_py*EAE_y);
-// Bilateral shares
+
 EAEUS_imcy = (US_pex*EAEUS_rer)*EAEUS_imc/(EAE_py*EAE_y);
 EAEUS_imiy = (US_pex*EAEUS_rer)*EAEUS_imi/(EAE_py*EAE_y);
 EAEUS_imcgy = (US_pex*EAEUS_rer)*EAEUS_imcg/(EAE_py*EAE_y);
 EAEUS_imigy = (US_pex*EAEUS_rer)*EAEUS_imig/(EAE_py*EAE_y);
-// Exports of consumption goods to gdp
+
 EAEUS_excy  = US_size/EAE_size*EAE_pex*USEAE_imc/(EAE_py*EAE_y);
-// Exports of investment goods to gdp
+
 EAEUS_exiy  = US_size/EAE_size*EAE_pex*USEAE_imi/(EAE_py*EAE_y);
-// Internal real exchange rate
+
 EAE_internalrer = EAE_pnt/EAE_pttc;
-// Core model begins
-//-------------
-//-------------
-// Households
-//-------------
-//-------------
-//-------------
-// Household I
-//-------------
-// Utility
+
+
+
+
+
+
+
+
+
+
 EAF_utili = 
 EAF_zcon*log(EAF_ci-EAF_kappa*EAF_ci(-1))-1/(1+EAF_zeta)*(EAF_ni)^(1+EAF_zeta)+EAF_beta*EAF_utili(+1)
 ;
-// Marginal utility of consumption
+
 EAF_lambdai*(1+EAF_tauc+EAF_gammavi+EAF_vi*EAF_gammavider) = EAF_zcon*(EAF_ci-EAF_kappa*EAF_ci(-1))^(-EAF_sigma);
-// Euler equation for government bonds
+
 EAF_r                   = EAF_beta^(-1)*EAF_lambdai/EAF_lambdai    *EAF_pic;
-// Euler equation for money
+
 EAF_vi^(2)*EAF_gammavider = 1-EAF_beta*EAF_lambdai(+1)/(EAF_lambdai*EAF_pic(+1));
-// Consumption-based velocity
+
 EAF_vi = EAF_ci/EAF_mi;
-// Transaction cost
+
 EAF_gammavi = EAF_gammav1*EAF_vi+EAF_gammav2/EAF_vi-2*(EAF_gammav1*EAF_gammav2)^(1/2);
-// Derivative of transaction cost
+
 EAF_gammavider = EAF_gammav1-EAF_gammav2*EAF_vi^(-2);
 EAF_delta = EAF_ii/EAF_ki;
 EAF_gammai = 0;
@@ -20176,355 +20176,355 @@ EAF_gammau = 0;
 EAF_gammauder = ((EAF_beta^(-1)-1+EAF_delta)*EAF_qbar-EAF_delta*EAF_taukbar*EAF_pibar)/((1-EAF_taukbar)*EAF_pibar);
 EAF_u = 1;
 EAF_pi = EAF_q;
-// Auxiliary equation for Tobin's Q in steady state
+
 EAF_qbar = EAF_q;
-// Rate of return on capital
+
 EAF_q = EAF_beta*((1-EAF_tauk)*EAF_rk+(EAF_tauk*EAF_delta)*EAF_pi+(1-EAF_delta)*EAF_q);
-// Optimal wage contract (FOC)
+
 EAF_witilde^(1+EAF_etai*EAF_zeta) = EAF_etai/(EAF_etai-1)*EAF_fi/EAF_gi+EAF_wcst;
-// Definition of fi
+
 EAF_fi = EAF_wi^(EAF_etai*(1+EAF_zeta))*EAF_ndi^(1+EAF_zeta)+EAF_xii*EAF_beta*(EAF_pic(+1)/(EAF_pic^EAF_chii*EAF_pi4target^(1/4*(1-EAF_chii))))^(EAF_etai*(1+EAF_zeta))*EAF_fi(+1);
-// Definition of gi
+
 EAF_gi = EAF_lambdai*(1-EAF_taun-EAF_tauwh)*EAF_wi^EAF_etai*EAF_ndi+EAF_xii*EAF_beta*(EAF_pic(+1)/(EAF_pic^EAF_chii*EAF_pi4target^(1/4*(1-EAF_chii))))^(EAF_etai-1)*EAF_gi(+1);
-// Aggregate wage rate
+
 EAF_wi^(1-EAF_etai) = (1-EAF_xii)*EAF_witilde^(1-EAF_etai)+EAF_xii*EAF_wi(-1)^(1-EAF_etai)*(EAF_pic(-1)^EAF_chii*EAF_pi4target^(1/4*(1-EAF_chii))/EAF_pic)^(1-EAF_etai);
-//-------------
-// Household J
-//-------------
-// Utility
+
+
+
+
 EAF_utilj = 
 EAF_zcon*log(EAF_cj-EAF_kappa*EAF_cj(-1))-1/(1+EAF_zeta)*EAF_nj^(1+EAF_zeta)+EAF_beta*EAF_utilj(+1)
 ;
-// Marginal utility of consumption
+
 EAF_lambdaj*(1+EAF_tauc+EAF_gammavj+EAF_vj*EAF_gammavjder) = EAF_zcon*(EAF_cj-EAF_kappa*EAF_cj(-1))^(-EAF_sigma);
-// Budget constraint
+
 (1+EAF_tauc+EAF_gammavj)*EAF_cj+EAF_mj = (1-EAF_taun-EAF_tauwh)*EAF_wj*EAF_nj+EAF_trj-EAF_tj+EAF_mj(-1)*EAF_pic^(-1);
-// Euler equation for money
+
 EAF_vj^(2)*EAF_gammavjder = 1-EAF_beta*EAF_lambdaj(+1)/(EAF_lambdaj*EAF_pic(+1));
-// Consumption-based velocity
+
 EAF_vj = EAF_cj/EAF_mj;
-// Transaction technology
+
 EAF_gammavj = EAF_gammav1*EAF_vj+EAF_gammav2/EAF_vj-2*(EAF_gammav1*EAF_gammav2)^(1/2);
-// Derivative of transaction technology
+
 EAF_gammavjder = EAF_gammav1-EAF_gammav2*EAF_vj^(-2);
-// Optimal wage contract (FOC)
+
 EAF_wjtilde^(1+EAF_etaj*EAF_zeta) = EAF_etaj/(EAF_etaj-1)*EAF_fj/EAF_gj+EAF_wcst;
-// Definition of fj
+
 EAF_fj = EAF_wj^(EAF_etaj*(1+EAF_zeta))*EAF_ndj^(1+EAF_zeta)+EAF_xij*EAF_beta*(EAF_pic(+1)/(EAF_pic^EAF_chij*EAF_pi4target^(1/4*(1-EAF_chij))))^(EAF_etaj*(1+EAF_zeta))*EAF_fj(+1);
-// Definition of gj
+
 EAF_gj = EAF_lambdaj*(1-EAF_taun-EAF_tauwh)*EAF_wj^EAF_etaj*EAF_ndj+EAF_xij*EAF_beta*(EAF_pic(+1)/(EAF_pic^EAF_chij*EAF_pi4target^(1/4*(1-EAF_chij))))^(EAF_etaj-1)*EAF_gj(+1);
-// Aggregate wage rate
+
 EAF_wj^(1-EAF_etaj) = (1-EAF_xij)*EAF_wjtilde^(1-EAF_etaj)+EAF_xij*EAF_wj(-1)^(1-EAF_etaj)*(EAF_pic(-1)^EAF_chij*EAF_pi4target^(1/4*(1-EAF_chij))/EAF_pic)^(1-EAF_etaj);
-//-------------
-//-------------
-// Firms
-//-------------
-//-------------
-//-------------
-// Intermediate-good firms
-//-------------
-// Production function tradable
+
+
+
+
+
+
+
+
+
 EAF_yst = EAF_zt*EAF_kdt^EAF_alphat*EAF_ndt^(1-EAF_alphat)-EAF_psitbar;
-// Production function nontradable
+
 EAF_ysn = EAF_zn*EAF_kdn^EAF_alphan*EAF_ndn^(1-EAF_alphan)-EAF_psinbar;
-// Real marginal cost tradable
+
 EAF_mct = 1/(EAF_zt*(EAF_alphat)^(EAF_alphat)*(1-EAF_alphat)^(1-EAF_alphat))*EAF_rk^(EAF_alphat)*((1+EAF_tauwf)*EAF_w)^(1-EAF_alphat);
-// Real marginal cost nontradable
+
 EAF_mcn = 1/(EAF_zn*(EAF_alphan)^(EAF_alphan)*(1-EAF_alphan)^(1-EAF_alphan))*EAF_rk^(EAF_alphan)*((1+EAF_tauwf)*EAF_w)^(1-EAF_alphan);
-// Wage Inflation (qoq)
+
 EAF_piw = EAF_w/EAF_w(-1)*EAF_pic;
-// Wage Inflation (yoy)
+
 EAF_piw4 = EAF_pic4;
-// Auxiliary equation for steady-state fixed cost
+
 EAF_psitbar = EAF_psit*EAF_ytbar;
-// Auxiliary equation for steady-state fixed cost
+
 EAF_psinbar = EAF_psin*EAF_ynbar;
-// Capital input (FOC)
+
 EAF_rk = EAF_alphat*(EAF_yst+EAF_psitbar)/EAF_kdt*EAF_mct;
-// Capital input (FOC)
+
 EAF_rk = EAF_alphan*(EAF_ysn+EAF_psinbar)/EAF_kdn*EAF_mcn;
-// Total capital demand
+
 EAF_kd = EAF_kdt+EAF_kdn;
-// Demand for labour services by household I
+
 EAF_ndi = 
 (1-EAF_omega)*(EAF_wi/EAF_w)^(-EAF_eta)*EAF_nd
 ;
-// Demand for labour services by household J
+
 EAF_ndj = 
 EAF_omega*(EAF_wj/EAF_w)^(-EAF_eta)*EAF_nd
 ;
-// Aggregate labour demand
+
 EAF_nd^(1-1/EAF_eta) = 
 (1-EAF_omega)^(1/EAF_eta)*EAF_ndi^(1-1/EAF_eta)+EAF_omega^(1/EAF_eta)*EAF_ndj^(1-1/EAF_eta)
 ;
-// Total demand 
+
 EAF_nd = EAF_ndt+EAF_ndn;
-// Aggregate dividends
+
 EAF_d = EAF_py*EAF_y-EAF_rk*EAF_kd-(1+EAF_tauwf)*EAF_w*EAF_nd;
-// Non-tradable sector dividends
+
 EAF_dn = EAF_pnt*EAF_ysn-EAF_rk*EAF_kdn-(1+EAF_tauwf)*EAF_w*EAF_ndn;
-// Tradable sector dividends
+
 EAF_dt = EAF_pht*EAF_ht
 +EAF_pex*EAF_ex
 -EAF_rk*EAF_kdt-(1+EAF_tauwf)*EAF_w*EAF_ndt;
-// Optimal price contract set in domestic markets (FOC)
+
 EAF_phttilde/EAF_pht = EAF_thetat/(EAF_thetat-1)*EAF_fh/EAF_gh;
-// Definition of fh
+
 EAF_fh = EAF_mct*EAF_ht+EAF_xih*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAF_piht(+1)/(EAF_piht^EAF_chih*EAF_pi4target^(1/4*(1-EAF_chih))))^EAF_thetat*EAF_fh(+1);
-// Definition of gh
+
 EAF_gh = EAF_pht*EAF_ht+EAF_xih*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAF_piht(+1)/(EAF_piht^EAF_chih*EAF_pi4target^(1/4*(1-EAF_chih))))^(EAF_thetat-1)*EAF_gh(+1);
-// Aggregate intermediate-good price dynamics
+
 EAF_pht^(1-EAF_thetat) = (1-EAF_xih)*EAF_phttilde^(1-EAF_thetat)+EAF_xih*(EAF_pht(-1)/EAF_pic)^(1-EAF_thetat)*(EAF_piht(-1)^EAF_chih*EAF_pi4target^(1/4*(1-EAF_chih)))^(1-EAF_thetat);
-// Intermediate-good price inflation
+
 EAF_piht = EAF_pht/EAF_pht(-1)*EAF_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAF_pnttilde/EAF_pnt = EAF_thetan/(EAF_thetan-1)*EAF_fn/EAF_gn;
-// Definition of fn
+
 EAF_fn = EAF_mcn*EAF_nt+EAF_xin*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAF_pint(+1)/(EAF_pint^EAF_chin*EAF_pi4target^(1/4*(1-EAF_chin))))^EAF_thetan*EAF_fn(+1);
-// Definition of gn
+
 EAF_gn = EAF_pnt*EAF_nt+EAF_xin*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAF_pint(+1)/(EAF_pint^EAF_chin*EAF_pi4target^(1/4*(1-EAF_chin))))^(EAF_thetan-1)*EAF_gn(+1);
-// Aggregate intermediate-good price dynamics
+
 EAF_pnt^(1-EAF_thetan) = (1-EAF_xin)*EAF_pnttilde^(1-EAF_thetan)+EAF_xin*(EAF_pnt(-1)/EAF_pic)^(1-EAF_thetan)*(EAF_pint(-1)^EAF_chin*EAF_pi4target^(1/4*(1-EAF_chin)))^(1-EAF_thetan);
-// Intermediate-good price inflation
+
 EAF_pint = EAF_pnt/EAF_pnt(-1)*EAF_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAF_pextilde/EAF_pex = EAF_thetat/(EAF_thetat-1)*EAF_fx/EAF_gx;
-// Definition of fh
+
 EAF_fx = EAF_mct*EAF_ex+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAF_piex(+1)/(EAF_piex^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^EAF_thetat*EAF_fx(+1);
-// Definition of gh
+
 EAF_gx = EAF_pex*EAF_ex+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAF_piex(+1)/(EAF_piex^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^(EAF_thetat-1)*EAF_gx(+1);
-// Aggregate intermediate-good price dynamics
+
 EAF_pex^(1-EAF_thetat) = (1-EAF_xix)*EAF_pextilde^(1-EAF_thetat)+EAF_xix*(EAF_pex(-1)/EAF_pic)^(1-EAF_thetat)*(EAF_piex(-1)^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix)))^(1-EAF_thetat);
-// Intermediate-good price inflation
+
 EAF_piex = EAF_pex/EAF_pex(-1)*EAF_pic;
-//---------------
-// import pricing
-//---------------
-// Optimal price contract set in foreign markets (FOC), using EAF_pxtilde = EAA_pimtilde
-// EAAEAF_pimtilde/EAAEAF_pim = EAF_cpim*EAF_thetat/(EAF_thetat-1)*EAFEAA_fx/EAFEAA_gx;
-// Definition of fx
-// EAFEAA_fx = EAA_size/EAF_size*EAAEAF_im*EAF_mct+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAAEAF_piim(+1)/(EAAEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^EAF_thetat*EAFEAA_fx(+1);
-// Definition of gx   
-// EAFEAA_gx = EAFEAA_rer*EAAEAF_pim*EAA_size/EAF_size*EAAEAF_im+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAAEAF_piim(+1)/(EAAEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^(EAF_thetat-1)*EAFEAA_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAF_px = EAA_pim
-// EAAEAF_pim^(1-EAF_thetat) = (1-EAF_xix)*EAAEAF_pimtilde^(1-EAF_thetat)+EAF_xix*(EAAEAF_pim(-1)/EAA_pic)^(1-EAF_thetat)*(EAAEAF_piim(-1)^EAF_chix*EAA_pi4target^(1/4*(1-EAF_chih)))^(1-EAF_thetat);
-// Intermediate-good price inflation, using EAF_pix = EAA_piim
-// EAAEAF_piim = EAAEAF_pim/EAAEAF_pim(-1)*EAA_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 EAFEAA_rer = EAF_rer/EAA_rer;
-// Auxiliary equation for steady-state output
+
 EAFEAA_rerbar = EAFEAA_rer;
-//Terms of Trade
+
 EAFEAA_tot = EAA_pex*EAFEAA_rer/EAF_pex;
-// Optimal price contract set in foreign markets (FOC), using EAF_pxtilde = EAB_pimtilde
-// EABEAF_pimtilde/EABEAF_pim = EAF_cpim*EAF_thetat/(EAF_thetat-1)*EAFEAB_fx/EAFEAB_gx;
-// Definition of fx
-// EAFEAB_fx = EAB_size/EAF_size*EABEAF_im*EAF_mct+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EABEAF_piim(+1)/(EABEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^EAF_thetat*EAFEAB_fx(+1);
-// Definition of gx   
-// EAFEAB_gx = EAFEAB_rer*EABEAF_pim*EAB_size/EAF_size*EABEAF_im+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EABEAF_piim(+1)/(EABEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^(EAF_thetat-1)*EAFEAB_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAF_px = EAB_pim
-// EABEAF_pim^(1-EAF_thetat) = (1-EAF_xix)*EABEAF_pimtilde^(1-EAF_thetat)+EAF_xix*(EABEAF_pim(-1)/EAB_pic)^(1-EAF_thetat)*(EABEAF_piim(-1)^EAF_chix*EAB_pi4target^(1/4*(1-EAF_chih)))^(1-EAF_thetat);
-// Intermediate-good price inflation, using EAF_pix = EAB_piim
-// EABEAF_piim = EABEAF_pim/EABEAF_pim(-1)*EAB_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAFEAB_rer = EAF_rer/EAB_rer;
-// Auxiliary equation for steady-state output
+
 EAFEAB_rerbar = EAFEAB_rer;
-//Terms of Trade
+
 EAFEAB_tot = EAB_pex*EAFEAB_rer/EAF_pex;
-// Optimal price contract set in foreign markets (FOC), using EAF_pxtilde = EAC_pimtilde
-// EACEAF_pimtilde/EACEAF_pim = EAF_cpim*EAF_thetat/(EAF_thetat-1)*EAFEAC_fx/EAFEAC_gx;
-// Definition of fx
-// EAFEAC_fx = EAC_size/EAF_size*EACEAF_im*EAF_mct+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EACEAF_piim(+1)/(EACEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^EAF_thetat*EAFEAC_fx(+1);
-// Definition of gx   
-// EAFEAC_gx = EAFEAC_rer*EACEAF_pim*EAC_size/EAF_size*EACEAF_im+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EACEAF_piim(+1)/(EACEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^(EAF_thetat-1)*EAFEAC_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAF_px = EAC_pim
-// EACEAF_pim^(1-EAF_thetat) = (1-EAF_xix)*EACEAF_pimtilde^(1-EAF_thetat)+EAF_xix*(EACEAF_pim(-1)/EAC_pic)^(1-EAF_thetat)*(EACEAF_piim(-1)^EAF_chix*EAC_pi4target^(1/4*(1-EAF_chih)))^(1-EAF_thetat);
-// Intermediate-good price inflation, using EAF_pix = EAC_piim
-// EACEAF_piim = EACEAF_pim/EACEAF_pim(-1)*EAC_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAFEAC_rer = EAF_rer/EAC_rer;
-// Auxiliary equation for steady-state output
+
 EAFEAC_rerbar = EAFEAC_rer;
-//Terms of Trade
+
 EAFEAC_tot = EAC_pex*EAFEAC_rer/EAF_pex;
-// Optimal price contract set in foreign markets (FOC), using EAF_pxtilde = EAD_pimtilde
-// EADEAF_pimtilde/EADEAF_pim = EAF_cpim*EAF_thetat/(EAF_thetat-1)*EAFEAD_fx/EAFEAD_gx;
-// Definition of fx
-// EAFEAD_fx = EAD_size/EAF_size*EADEAF_im*EAF_mct+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EADEAF_piim(+1)/(EADEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^EAF_thetat*EAFEAD_fx(+1);
-// Definition of gx   
-// EAFEAD_gx = EAFEAD_rer*EADEAF_pim*EAD_size/EAF_size*EADEAF_im+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EADEAF_piim(+1)/(EADEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^(EAF_thetat-1)*EAFEAD_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAF_px = EAD_pim
-// EADEAF_pim^(1-EAF_thetat) = (1-EAF_xix)*EADEAF_pimtilde^(1-EAF_thetat)+EAF_xix*(EADEAF_pim(-1)/EAD_pic)^(1-EAF_thetat)*(EADEAF_piim(-1)^EAF_chix*EAD_pi4target^(1/4*(1-EAF_chih)))^(1-EAF_thetat);
-// Intermediate-good price inflation, using EAF_pix = EAD_piim
-// EADEAF_piim = EADEAF_pim/EADEAF_pim(-1)*EAD_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAFEAD_rer = EAF_rer/EAD_rer;
-// Auxiliary equation for steady-state output
+
 EAFEAD_rerbar = EAFEAD_rer;
-//Terms of Trade
+
 EAFEAD_tot = EAD_pex*EAFEAD_rer/EAF_pex;
-// Optimal price contract set in foreign markets (FOC), using EAF_pxtilde = EAE_pimtilde
-// EAEEAF_pimtilde/EAEEAF_pim = EAF_cpim*EAF_thetat/(EAF_thetat-1)*EAFEAE_fx/EAFEAE_gx;
-// Definition of fx
-// EAFEAE_fx = EAE_size/EAF_size*EAEEAF_im*EAF_mct+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAEEAF_piim(+1)/(EAEEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^EAF_thetat*EAFEAE_fx(+1);
-// Definition of gx   
-// EAFEAE_gx = EAFEAE_rer*EAEEAF_pim*EAE_size/EAF_size*EAEEAF_im+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAEEAF_piim(+1)/(EAEEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^(EAF_thetat-1)*EAFEAE_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAF_px = EAE_pim
-// EAEEAF_pim^(1-EAF_thetat) = (1-EAF_xix)*EAEEAF_pimtilde^(1-EAF_thetat)+EAF_xix*(EAEEAF_pim(-1)/EAE_pic)^(1-EAF_thetat)*(EAEEAF_piim(-1)^EAF_chix*EAE_pi4target^(1/4*(1-EAF_chih)))^(1-EAF_thetat);
-// Intermediate-good price inflation, using EAF_pix = EAE_piim
-// EAEEAF_piim = EAEEAF_pim/EAEEAF_pim(-1)*EAE_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAFEAE_rer = EAF_rer/EAE_rer;
-// Auxiliary equation for steady-state output
+
 EAFEAE_rerbar = EAFEAE_rer;
-//Terms of Trade
+
 EAFEAE_tot = EAE_pex*EAFEAE_rer/EAF_pex;
-// Optimal price contract set in foreign markets (FOC), using EAF_pxtilde = EAG_pimtilde
-// EAGEAF_pimtilde/EAGEAF_pim = EAF_cpim*EAF_thetat/(EAF_thetat-1)*EAFEAG_fx/EAFEAG_gx;
-// Definition of fx
-// EAFEAG_fx = EAG_size/EAF_size*EAGEAF_im*EAF_mct+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAGEAF_piim(+1)/(EAGEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^EAF_thetat*EAFEAG_fx(+1);
-// Definition of gx   
-// EAFEAG_gx = EAFEAG_rer*EAGEAF_pim*EAG_size/EAF_size*EAGEAF_im+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAGEAF_piim(+1)/(EAGEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^(EAF_thetat-1)*EAFEAG_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAF_px = EAG_pim
-// EAGEAF_pim^(1-EAF_thetat) = (1-EAF_xix)*EAGEAF_pimtilde^(1-EAF_thetat)+EAF_xix*(EAGEAF_pim(-1)/EAG_pic)^(1-EAF_thetat)*(EAGEAF_piim(-1)^EAF_chix*EAG_pi4target^(1/4*(1-EAF_chih)))^(1-EAF_thetat);
-// Intermediate-good price inflation, using EAF_pix = EAG_piim
-// EAGEAF_piim = EAGEAF_pim/EAGEAF_pim(-1)*EAG_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAFEAG_rer = EAF_rer/EAG_rer;
-// Auxiliary equation for steady-state output
+
 EAFEAG_rerbar = EAFEAG_rer;
-//Terms of Trade
+
 EAFEAG_tot = EAG_pex*EAFEAG_rer/EAF_pex;
-// Optimal price contract set in foreign markets (FOC), using EAF_pxtilde = EAH_pimtilde
-// EAHEAF_pimtilde/EAHEAF_pim = EAF_cpim*EAF_thetat/(EAF_thetat-1)*EAFEAH_fx/EAFEAH_gx;
-// Definition of fx
-// EAFEAH_fx = EAH_size/EAF_size*EAHEAF_im*EAF_mct+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAHEAF_piim(+1)/(EAHEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^EAF_thetat*EAFEAH_fx(+1);
-// Definition of gx   
-// EAFEAH_gx = EAFEAH_rer*EAHEAF_pim*EAH_size/EAF_size*EAHEAF_im+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAHEAF_piim(+1)/(EAHEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^(EAF_thetat-1)*EAFEAH_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAF_px = EAH_pim
-// EAHEAF_pim^(1-EAF_thetat) = (1-EAF_xix)*EAHEAF_pimtilde^(1-EAF_thetat)+EAF_xix*(EAHEAF_pim(-1)/EAH_pic)^(1-EAF_thetat)*(EAHEAF_piim(-1)^EAF_chix*EAH_pi4target^(1/4*(1-EAF_chih)))^(1-EAF_thetat);
-// Intermediate-good price inflation, using EAF_pix = EAH_piim
-// EAHEAF_piim = EAHEAF_pim/EAHEAF_pim(-1)*EAH_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAFEAH_rer = EAF_rer/EAH_rer;
-// Auxiliary equation for steady-state output
+
 EAFEAH_rerbar = EAFEAH_rer;
-//Terms of Trade
+
 EAFEAH_tot = EAH_pex*EAFEAH_rer/EAF_pex;
-// Optimal price contract set in foreign markets (FOC), using EAF_pxtilde = EAI_pimtilde
-// EAIEAF_pimtilde/EAIEAF_pim = EAF_cpim*EAF_thetat/(EAF_thetat-1)*EAFEAI_fx/EAFEAI_gx;
-// Definition of fx
-// EAFEAI_fx = EAI_size/EAF_size*EAIEAF_im*EAF_mct+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAIEAF_piim(+1)/(EAIEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^EAF_thetat*EAFEAI_fx(+1);
-// Definition of gx   
-// EAFEAI_gx = EAFEAI_rer*EAIEAF_pim*EAI_size/EAF_size*EAIEAF_im+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAIEAF_piim(+1)/(EAIEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^(EAF_thetat-1)*EAFEAI_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAF_px = EAI_pim
-// EAIEAF_pim^(1-EAF_thetat) = (1-EAF_xix)*EAIEAF_pimtilde^(1-EAF_thetat)+EAF_xix*(EAIEAF_pim(-1)/EAI_pic)^(1-EAF_thetat)*(EAIEAF_piim(-1)^EAF_chix*EAI_pi4target^(1/4*(1-EAF_chih)))^(1-EAF_thetat);
-// Intermediate-good price inflation, using EAF_pix = EAI_piim
-// EAIEAF_piim = EAIEAF_pim/EAIEAF_pim(-1)*EAI_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAFEAI_rer = EAF_rer/EAI_rer;
-// Auxiliary equation for steady-state output
+
 EAFEAI_rerbar = EAFEAI_rer;
-//Terms of Trade
+
 EAFEAI_tot = EAI_pex*EAFEAI_rer/EAF_pex;
-// Optimal price contract set in foreign markets (FOC), using EAF_pxtilde = EAJ_pimtilde
-// EAJEAF_pimtilde/EAJEAF_pim = EAF_cpim*EAF_thetat/(EAF_thetat-1)*EAFEAJ_fx/EAFEAJ_gx;
-// Definition of fx
-// EAFEAJ_fx = EAJ_size/EAF_size*EAJEAF_im*EAF_mct+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAJEAF_piim(+1)/(EAJEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^EAF_thetat*EAFEAJ_fx(+1);
-// Definition of gx   
-// EAFEAJ_gx = EAFEAJ_rer*EAJEAF_pim*EAJ_size/EAF_size*EAJEAF_im+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAJEAF_piim(+1)/(EAJEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^(EAF_thetat-1)*EAFEAJ_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAF_px = EAJ_pim
-// EAJEAF_pim^(1-EAF_thetat) = (1-EAF_xix)*EAJEAF_pimtilde^(1-EAF_thetat)+EAF_xix*(EAJEAF_pim(-1)/EAJ_pic)^(1-EAF_thetat)*(EAJEAF_piim(-1)^EAF_chix*EAJ_pi4target^(1/4*(1-EAF_chih)))^(1-EAF_thetat);
-// Intermediate-good price inflation, using EAF_pix = EAJ_piim
-// EAJEAF_piim = EAJEAF_pim/EAJEAF_pim(-1)*EAJ_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAFEAJ_rer = EAF_rer/EAJ_rer;
-// Auxiliary equation for steady-state output
+
 EAFEAJ_rerbar = EAFEAJ_rer;
-//Terms of Trade
+
 EAFEAJ_tot = EAJ_pex*EAFEAJ_rer/EAF_pex;
-// Optimal price contract set in foreign markets (FOC), using EAF_pxtilde = EAK_pimtilde
-// EAKEAF_pimtilde/EAKEAF_pim = EAF_cpim*EAF_thetat/(EAF_thetat-1)*EAFEAK_fx/EAFEAK_gx;
-// Definition of fx
-// EAFEAK_fx = EAK_size/EAF_size*EAKEAF_im*EAF_mct+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAKEAF_piim(+1)/(EAKEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^EAF_thetat*EAFEAK_fx(+1);
-// Definition of gx   
-// EAFEAK_gx = EAFEAK_rer*EAKEAF_pim*EAK_size/EAF_size*EAKEAF_im+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EAKEAF_piim(+1)/(EAKEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^(EAF_thetat-1)*EAFEAK_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAF_px = EAK_pim
-// EAKEAF_pim^(1-EAF_thetat) = (1-EAF_xix)*EAKEAF_pimtilde^(1-EAF_thetat)+EAF_xix*(EAKEAF_pim(-1)/EAK_pic)^(1-EAF_thetat)*(EAKEAF_piim(-1)^EAF_chix*EAK_pi4target^(1/4*(1-EAF_chih)))^(1-EAF_thetat);
-// Intermediate-good price inflation, using EAF_pix = EAK_piim
-// EAKEAF_piim = EAKEAF_pim/EAKEAF_pim(-1)*EAK_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAFEAK_rer = EAF_rer/EAK_rer;
-// Auxiliary equation for steady-state output
+
 EAFEAK_rerbar = EAFEAK_rer;
-//Terms of Trade
+
 EAFEAK_tot = EAK_pex*EAFEAK_rer/EAF_pex;
-// Optimal price contract set in foreign markets (FOC), using EAF_pxtilde = EAL_pimtilde
-// EALEAF_pimtilde/EALEAF_pim = EAF_cpim*EAF_thetat/(EAF_thetat-1)*EAFEAL_fx/EAFEAL_gx;
-// Definition of fx
-// EAFEAL_fx = EAL_size/EAF_size*EALEAF_im*EAF_mct+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EALEAF_piim(+1)/(EALEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^EAF_thetat*EAFEAL_fx(+1);
-// Definition of gx   
-// EAFEAL_gx = EAFEAL_rer*EALEAF_pim*EAL_size/EAF_size*EALEAF_im+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(EALEAF_piim(+1)/(EALEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^(EAF_thetat-1)*EAFEAL_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAF_px = EAL_pim
-// EALEAF_pim^(1-EAF_thetat) = (1-EAF_xix)*EALEAF_pimtilde^(1-EAF_thetat)+EAF_xix*(EALEAF_pim(-1)/EAL_pic)^(1-EAF_thetat)*(EALEAF_piim(-1)^EAF_chix*EAL_pi4target^(1/4*(1-EAF_chih)))^(1-EAF_thetat);
-// Intermediate-good price inflation, using EAF_pix = EAL_piim
-// EALEAF_piim = EALEAF_pim/EALEAF_pim(-1)*EAL_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAFEAL_rer = EAF_rer/EAL_rer;
-// Auxiliary equation for steady-state output
+
 EAFEAL_rerbar = EAFEAL_rer;
-//Terms of Trade
+
 EAFEAL_tot = EAL_pex*EAFEAL_rer/EAF_pex;
-// Optimal price contract set in foreign markets (FOC), using EAF_pxtilde = RW_pimtilde
-// RWEAF_pimtilde/RWEAF_pim = EAF_cpim*EAF_thetat/(EAF_thetat-1)*EAFRW_fx/EAFRW_gx;
-// Definition of fx
-// EAFRW_fx = RW_size/EAF_size*RWEAF_im*EAF_mct+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(RWEAF_piim(+1)/(RWEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^EAF_thetat*EAFRW_fx(+1);
-// Definition of gx   
-// EAFRW_gx = EAFRW_rer*RWEAF_pim*RW_size/EAF_size*RWEAF_im+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(RWEAF_piim(+1)/(RWEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^(EAF_thetat-1)*EAFRW_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAF_px = RW_pim
-// RWEAF_pim^(1-EAF_thetat) = (1-EAF_xix)*RWEAF_pimtilde^(1-EAF_thetat)+EAF_xix*(RWEAF_pim(-1)/RW_pic)^(1-EAF_thetat)*(RWEAF_piim(-1)^EAF_chix*RW_pi4target^(1/4*(1-EAF_chih)))^(1-EAF_thetat);
-// Intermediate-good price inflation, using EAF_pix = RW_piim
-// RWEAF_piim = RWEAF_pim/RWEAF_pim(-1)*RW_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAFRW_rer = EAF_rer/RW_rer;
-// Auxiliary equation for steady-state output
+
 EAFRW_rerbar = EAFRW_rer;
-//Terms of Trade
+
 EAFRW_tot = RW_pex*EAFRW_rer/EAF_pex;
-// Optimal price contract set in foreign markets (FOC), using EAF_pxtilde = US_pimtilde
-// USEAF_pimtilde/USEAF_pim = EAF_cpim*EAF_thetat/(EAF_thetat-1)*EAFUS_fx/EAFUS_gx;
-// Definition of fx
-// EAFUS_fx = US_size/EAF_size*USEAF_im*EAF_mct+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(USEAF_piim(+1)/(USEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^EAF_thetat*EAFUS_fx(+1);
-// Definition of gx   
-// EAFUS_gx = EAFUS_rer*USEAF_pim*US_size/EAF_size*USEAF_im+EAF_xix*EAF_beta*EAF_lambdai(+1)/EAF_lambdai*(USEAF_piim(+1)/(USEAF_piim^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^(EAF_thetat-1)*EAFUS_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAF_px = US_pim
-// USEAF_pim^(1-EAF_thetat) = (1-EAF_xix)*USEAF_pimtilde^(1-EAF_thetat)+EAF_xix*(USEAF_pim(-1)/US_pic)^(1-EAF_thetat)*(USEAF_piim(-1)^EAF_chix*US_pi4target^(1/4*(1-EAF_chih)))^(1-EAF_thetat);
-// Intermediate-good price inflation, using EAF_pix = US_piim
-// USEAF_piim = USEAF_pim/USEAF_pim(-1)*US_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAFUS_rer = EAF_rer/US_rer;
-// Auxiliary equation for steady-state output
+
 EAFUS_rerbar = EAFUS_rer;
-//Terms of Trade
+
 EAFUS_tot = US_pex*EAFUS_rer/EAF_pex;
-// Total imports 
+
 EAF_im = 
 +EAF_imc
 +EAF_imi
 +EAF_imcg
 +EAF_imig
 ;
-// Total import deflator
+
 EAF_im*EAF_pim  = 
 +EAF_pimc*EAF_imc
 +EAF_pimi*EAF_imi
 +EAF_pimcg*EAF_imcg
 +EAF_pimig*EAF_imig
 ;
-// Effective real exchange rate: double weighting (imports)
+
 EAFEAA_weightim = EAFEAA_rer*EAA_pex*EAFEAA_im/(EAF_pim*EAF_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAFEAA_weightex = EAA_size/EAF_size*EAAEAF_im/EAF_ex*EAFEAA_rer*EAA_py*EAA_y/(EAFEAA_rer*EAA_py*EAA_y
 +EAFEAB_rer*EAB_pex*EAAEAB_im
 +EAFEAC_rer*EAC_pex*EAAEAC_im
@@ -20708,11 +20708,11 @@ EAFEAA_weightex = EAA_size/EAF_size*EAAEAF_im/EAF_ex*EAFEAA_rer*EAA_py*EAA_y/(EA
 +EAFRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAFEAA_weight = EAF_pim*EAF_im/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAA_weightim+EAF_pex*EAF_ex/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAA_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAFEAB_weightim = EAFEAB_rer*EAB_pex*EAFEAB_im/(EAF_pim*EAF_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAFEAB_weightex = EAB_size/EAF_size*EABEAF_im/EAF_ex*EAFEAB_rer*EAB_py*EAB_y/(EAFEAB_rer*EAB_py*EAB_y
 +EAFEAA_rer*EAA_pex*EABEAA_im
 +EAFEAC_rer*EAC_pex*EABEAC_im
@@ -20896,11 +20896,11 @@ EAFEAB_weightex = EAB_size/EAF_size*EABEAF_im/EAF_ex*EAFEAB_rer*EAB_py*EAB_y/(EA
 +EAFRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAFEAB_weight = EAF_pim*EAF_im/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAB_weightim+EAF_pex*EAF_ex/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAB_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAFEAC_weightim = EAFEAC_rer*EAC_pex*EAFEAC_im/(EAF_pim*EAF_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAFEAC_weightex = EAC_size/EAF_size*EACEAF_im/EAF_ex*EAFEAC_rer*EAC_py*EAC_y/(EAFEAC_rer*EAC_py*EAC_y
 +EAFEAA_rer*EAA_pex*EACEAA_im
 +EAFEAB_rer*EAB_pex*EACEAB_im
@@ -21084,11 +21084,11 @@ EAFEAC_weightex = EAC_size/EAF_size*EACEAF_im/EAF_ex*EAFEAC_rer*EAC_py*EAC_y/(EA
 +EAFRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAFEAC_weight = EAF_pim*EAF_im/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAC_weightim+EAF_pex*EAF_ex/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAC_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAFEAD_weightim = EAFEAD_rer*EAD_pex*EAFEAD_im/(EAF_pim*EAF_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAFEAD_weightex = EAD_size/EAF_size*EADEAF_im/EAF_ex*EAFEAD_rer*EAD_py*EAD_y/(EAFEAD_rer*EAD_py*EAD_y
 +EAFEAA_rer*EAA_pex*EADEAA_im
 +EAFEAB_rer*EAB_pex*EADEAB_im
@@ -21272,11 +21272,11 @@ EAFEAD_weightex = EAD_size/EAF_size*EADEAF_im/EAF_ex*EAFEAD_rer*EAD_py*EAD_y/(EA
 +EAFRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAFEAD_weight = EAF_pim*EAF_im/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAD_weightim+EAF_pex*EAF_ex/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAD_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAFEAE_weightim = EAFEAE_rer*EAE_pex*EAFEAE_im/(EAF_pim*EAF_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAFEAE_weightex = EAE_size/EAF_size*EAEEAF_im/EAF_ex*EAFEAE_rer*EAE_py*EAE_y/(EAFEAE_rer*EAE_py*EAE_y
 +EAFEAA_rer*EAA_pex*EAEEAA_im
 +EAFEAB_rer*EAB_pex*EAEEAB_im
@@ -21460,11 +21460,11 @@ EAFEAE_weightex = EAE_size/EAF_size*EAEEAF_im/EAF_ex*EAFEAE_rer*EAE_py*EAE_y/(EA
 +EAFRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAFEAE_weight = EAF_pim*EAF_im/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAE_weightim+EAF_pex*EAF_ex/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAE_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAFEAG_weightim = EAFEAG_rer*EAG_pex*EAFEAG_im/(EAF_pim*EAF_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAFEAG_weightex = EAG_size/EAF_size*EAGEAF_im/EAF_ex*EAFEAG_rer*EAG_py*EAG_y/(EAFEAG_rer*EAG_py*EAG_y
 +EAFEAA_rer*EAA_pex*EAGEAA_im
 +EAFEAB_rer*EAB_pex*EAGEAB_im
@@ -21648,11 +21648,11 @@ EAFEAG_weightex = EAG_size/EAF_size*EAGEAF_im/EAF_ex*EAFEAG_rer*EAG_py*EAG_y/(EA
 +EAFRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAFEAG_weight = EAF_pim*EAF_im/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAG_weightim+EAF_pex*EAF_ex/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAG_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAFEAH_weightim = EAFEAH_rer*EAH_pex*EAFEAH_im/(EAF_pim*EAF_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAFEAH_weightex = EAH_size/EAF_size*EAHEAF_im/EAF_ex*EAFEAH_rer*EAH_py*EAH_y/(EAFEAH_rer*EAH_py*EAH_y
 +EAFEAA_rer*EAA_pex*EAHEAA_im
 +EAFEAB_rer*EAB_pex*EAHEAB_im
@@ -21836,11 +21836,11 @@ EAFEAH_weightex = EAH_size/EAF_size*EAHEAF_im/EAF_ex*EAFEAH_rer*EAH_py*EAH_y/(EA
 +EAFRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAFEAH_weight = EAF_pim*EAF_im/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAH_weightim+EAF_pex*EAF_ex/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAH_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAFEAI_weightim = EAFEAI_rer*EAI_pex*EAFEAI_im/(EAF_pim*EAF_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAFEAI_weightex = EAI_size/EAF_size*EAIEAF_im/EAF_ex*EAFEAI_rer*EAI_py*EAI_y/(EAFEAI_rer*EAI_py*EAI_y
 +EAFEAA_rer*EAA_pex*EAIEAA_im
 +EAFEAB_rer*EAB_pex*EAIEAB_im
@@ -22024,11 +22024,11 @@ EAFEAI_weightex = EAI_size/EAF_size*EAIEAF_im/EAF_ex*EAFEAI_rer*EAI_py*EAI_y/(EA
 +EAFRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAFEAI_weight = EAF_pim*EAF_im/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAI_weightim+EAF_pex*EAF_ex/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAI_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAFEAJ_weightim = EAFEAJ_rer*EAJ_pex*EAFEAJ_im/(EAF_pim*EAF_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAFEAJ_weightex = EAJ_size/EAF_size*EAJEAF_im/EAF_ex*EAFEAJ_rer*EAJ_py*EAJ_y/(EAFEAJ_rer*EAJ_py*EAJ_y
 +EAFEAA_rer*EAA_pex*EAJEAA_im
 +EAFEAB_rer*EAB_pex*EAJEAB_im
@@ -22212,11 +22212,11 @@ EAFEAJ_weightex = EAJ_size/EAF_size*EAJEAF_im/EAF_ex*EAFEAJ_rer*EAJ_py*EAJ_y/(EA
 +EAFRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAFEAJ_weight = EAF_pim*EAF_im/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAJ_weightim+EAF_pex*EAF_ex/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAJ_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAFEAK_weightim = EAFEAK_rer*EAK_pex*EAFEAK_im/(EAF_pim*EAF_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAFEAK_weightex = EAK_size/EAF_size*EAKEAF_im/EAF_ex*EAFEAK_rer*EAK_py*EAK_y/(EAFEAK_rer*EAK_py*EAK_y
 +EAFEAA_rer*EAA_pex*EAKEAA_im
 +EAFEAB_rer*EAB_pex*EAKEAB_im
@@ -22400,11 +22400,11 @@ EAFEAK_weightex = EAK_size/EAF_size*EAKEAF_im/EAF_ex*EAFEAK_rer*EAK_py*EAK_y/(EA
 +EAFRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAFEAK_weight = EAF_pim*EAF_im/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAK_weightim+EAF_pex*EAF_ex/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAK_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAFEAL_weightim = EAFEAL_rer*EAL_pex*EAFEAL_im/(EAF_pim*EAF_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAFEAL_weightex = EAL_size/EAF_size*EALEAF_im/EAF_ex*EAFEAL_rer*EAL_py*EAL_y/(EAFEAL_rer*EAL_py*EAL_y
 +EAFEAA_rer*EAA_pex*EALEAA_im
 +EAFEAB_rer*EAB_pex*EALEAB_im
@@ -22588,11 +22588,11 @@ EAFEAL_weightex = EAL_size/EAF_size*EALEAF_im/EAF_ex*EAFEAL_rer*EAL_py*EAL_y/(EA
 +EAFRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAFEAL_weight = EAF_pim*EAF_im/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAL_weightim+EAF_pex*EAF_ex/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFEAL_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAFRW_weightim = EAFRW_rer*RW_pex*EAFRW_im/(EAF_pim*EAF_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAFRW_weightex = RW_size/EAF_size*RWEAF_im/EAF_ex*EAFRW_rer*RW_py*RW_y/(EAFRW_rer*RW_py*RW_y
 +EAFEAA_rer*EAA_pex*RWEAA_im
 +EAFEAB_rer*EAB_pex*RWEAB_im
@@ -22776,11 +22776,11 @@ EAFRW_weightex = RW_size/EAF_size*RWEAF_im/EAF_ex*EAFRW_rer*RW_py*RW_y/(EAFRW_re
 +EAFRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAFRW_weight = EAF_pim*EAF_im/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFRW_weightim+EAF_pex*EAF_ex/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFRW_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAFUS_weightim = EAFUS_rer*US_pex*EAFUS_im/(EAF_pim*EAF_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAFUS_weightex = US_size/EAF_size*USEAF_im/EAF_ex*EAFUS_rer*US_py*US_y/(EAFUS_rer*US_py*US_y
 +EAFEAA_rer*EAA_pex*USEAA_im
 +EAFEAB_rer*EAB_pex*USEAB_im
@@ -22964,9 +22964,9 @@ EAFUS_weightex = US_size/EAF_size*USEAF_im/EAF_ex*EAFUS_rer*US_py*US_y/(EAFUS_re
 +EAFUS_rer*US_pex*RWUS_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAFUS_weight = EAF_pim*EAF_im/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFUS_weightim+EAF_pex*EAF_ex/(EAF_pim*EAF_im+EAF_pex*EAF_ex)*EAFUS_weightex;
-// Effective real exchange rate
+
 EAF_reer = 1
 *EAFEAA_rer^EAFEAA_weight
 *EAFEAB_rer^EAFEAB_weight
@@ -22982,7 +22982,7 @@ EAF_reer = 1
 *EAFRW_rer^EAFRW_weight
 *EAFUS_rer^EAFUS_weight
 ;
-// Effective terms of trade
+
 EAF_etot = 1
 *EAFEAA_tot^EAFEAA_weight
 *EAFEAB_tot^EAFEAB_weight
@@ -22998,10 +22998,10 @@ EAF_etot = 1
 *EAFRW_tot^EAFRW_weight
 *EAFUS_tot^EAFUS_weight
 ;
-//-----------------
-// Final-good firms
-//-----------------
-// Private consumption good (import)
+
+
+
+
 EAF_imc^((EAF_mumc-1)/EAF_mumc) =
 +EAFEAA_numc ^(1/EAF_mumc)*EAFEAA_imc^(1-1/EAF_mumc)
 +EAFEAB_numc ^(1/EAF_mumc)*EAFEAB_imc^(1-1/EAF_mumc)
@@ -23029,27 +23029,27 @@ EAF_imc^((EAF_mumc-1)/EAF_mumc) =
 -EAFRW_numc
 -EAFUS_numc
 )^(1/EAF_mumc)*EAFEAD_imc^(1-1/EAF_mumc);
-// Demand for bilateral consumption import goods
+
 EAFEAA_imc = EAFEAA_numc*((EAA_pex*EAFEAA_rer)/EAF_pimc)^(-EAF_mumc)*EAF_imc;
-// Demand for bilateral consumption import goods
+
 EAFEAB_imc = EAFEAB_numc*((EAB_pex*EAFEAB_rer)/EAF_pimc)^(-EAF_mumc)*EAF_imc;
-// Demand for bilateral consumption import goods
+
 EAFEAC_imc = EAFEAC_numc*((EAC_pex*EAFEAC_rer)/EAF_pimc)^(-EAF_mumc)*EAF_imc;
-// Demand for bilateral consumption import goods
+
 EAFEAE_imc = EAFEAE_numc*((EAE_pex*EAFEAE_rer)/EAF_pimc)^(-EAF_mumc)*EAF_imc;
-// Demand for bilateral consumption import goods
+
 EAFEAH_imc = EAFEAH_numc*((EAH_pex*EAFEAH_rer)/EAF_pimc)^(-EAF_mumc)*EAF_imc;
-// Demand for bilateral consumption import goods
+
 EAFEAI_imc = EAFEAI_numc*((EAI_pex*EAFEAI_rer)/EAF_pimc)^(-EAF_mumc)*EAF_imc;
-// Demand for bilateral consumption import goods
+
 EAFEAJ_imc = EAFEAJ_numc*((EAJ_pex*EAFEAJ_rer)/EAF_pimc)^(-EAF_mumc)*EAF_imc;
-// Demand for bilateral consumption import goods
+
 EAFEAK_imc = EAFEAK_numc*((EAK_pex*EAFEAK_rer)/EAF_pimc)^(-EAF_mumc)*EAF_imc;
-// Demand for bilateral consumption import goods
+
 EAFEAL_imc = EAFEAL_numc*((EAL_pex*EAFEAL_rer)/EAF_pimc)^(-EAF_mumc)*EAF_imc;
-// Demand for bilateral consumption import goods
+
 EAFRW_imc = EAFRW_numc*((RW_pex*EAFRW_rer)/EAF_pimc)^(-EAF_mumc)*EAF_imc;
-// Demand for bilateral consumption import goods
+
 EAFUS_imc = EAFUS_numc*((US_pex*EAFUS_rer)/EAF_pimc)^(-EAF_mumc)*EAF_imc;
 EAFEAD_imc = (1
 -EAFEAA_numc
@@ -23065,7 +23065,7 @@ EAFEAD_imc = (1
 -EAFRW_numc
 -EAFUS_numc
 )*((EAD_pex*EAFEAD_rer)/EAF_pimc)^(-EAF_mumc)*EAF_imc;
-// Price of the consumption good (import)
+
 EAF_pimc^(1-EAF_mumc) =
 +EAFEAA_numc * (EAA_pex*EAFEAA_rer)^(1-EAF_mumc)
 +EAFEAB_numc * (EAB_pex*EAFEAB_rer)^(1-EAF_mumc)
@@ -23093,9 +23093,9 @@ EAF_pimc^(1-EAF_mumc) =
 -EAFRW_numc
 -EAFUS_numc
 )*(EAD_pex*EAFEAD_rer)^(1-EAF_mumc);
-// Private consumption good (import) inflation
+
 EAF_piimc = EAF_pimc/EAF_pimc(-1)*EAF_pic;
-// Private consumption good (import)
+
 EAF_imi^((EAF_mumi-1)/EAF_mumi) =
 +EAFEAA_numi ^(1/EAF_mumi)*EAFEAA_imi^(1-1/EAF_mumi)
 +EAFEAB_numi ^(1/EAF_mumi)*EAFEAB_imi^(1-1/EAF_mumi)
@@ -23123,27 +23123,27 @@ EAF_imi^((EAF_mumi-1)/EAF_mumi) =
 -EAFRW_numi
 -EAFUS_numi
 )^(1/EAF_mumi)*EAFEAD_imi^(1-1/EAF_mumi);
-// Demand for bilateral consumption import goods
+
 EAFEAA_imi = EAFEAA_numi*((EAA_pex*EAFEAA_rer)/EAF_pimi)^(-EAF_mumi)*EAF_imi;
-// Demand for bilateral consumption import goods
+
 EAFEAB_imi = EAFEAB_numi*((EAB_pex*EAFEAB_rer)/EAF_pimi)^(-EAF_mumi)*EAF_imi;
-// Demand for bilateral consumption import goods
+
 EAFEAC_imi = EAFEAC_numi*((EAC_pex*EAFEAC_rer)/EAF_pimi)^(-EAF_mumi)*EAF_imi;
-// Demand for bilateral consumption import goods
+
 EAFEAE_imi = EAFEAE_numi*((EAE_pex*EAFEAE_rer)/EAF_pimi)^(-EAF_mumi)*EAF_imi;
-// Demand for bilateral consumption import goods
+
 EAFEAH_imi = EAFEAH_numi*((EAH_pex*EAFEAH_rer)/EAF_pimi)^(-EAF_mumi)*EAF_imi;
-// Demand for bilateral consumption import goods
+
 EAFEAI_imi = EAFEAI_numi*((EAI_pex*EAFEAI_rer)/EAF_pimi)^(-EAF_mumi)*EAF_imi;
-// Demand for bilateral consumption import goods
+
 EAFEAJ_imi = EAFEAJ_numi*((EAJ_pex*EAFEAJ_rer)/EAF_pimi)^(-EAF_mumi)*EAF_imi;
-// Demand for bilateral consumption import goods
+
 EAFEAK_imi = EAFEAK_numi*((EAK_pex*EAFEAK_rer)/EAF_pimi)^(-EAF_mumi)*EAF_imi;
-// Demand for bilateral consumption import goods
+
 EAFEAL_imi = EAFEAL_numi*((EAL_pex*EAFEAL_rer)/EAF_pimi)^(-EAF_mumi)*EAF_imi;
-// Demand for bilateral consumption import goods
+
 EAFRW_imi = EAFRW_numi*((RW_pex*EAFRW_rer)/EAF_pimi)^(-EAF_mumi)*EAF_imi;
-// Demand for bilateral consumption import goods
+
 EAFUS_imi = EAFUS_numi*((US_pex*EAFUS_rer)/EAF_pimi)^(-EAF_mumi)*EAF_imi;
 EAFEAD_imi = (1
 -EAFEAA_numi
@@ -23159,7 +23159,7 @@ EAFEAD_imi = (1
 -EAFRW_numi
 -EAFUS_numi
 )*((EAD_pex*EAFEAD_rer)/EAF_pimi)^(-EAF_mumi)*EAF_imi;
-// Price of the consumption good (import)
+
 EAF_pimi^(1-EAF_mumi) =
 +EAFEAA_numi * (EAA_pex*EAFEAA_rer)^(1-EAF_mumi)
 +EAFEAB_numi * (EAB_pex*EAFEAB_rer)^(1-EAF_mumi)
@@ -23187,9 +23187,9 @@ EAF_pimi^(1-EAF_mumi) =
 -EAFRW_numi
 -EAFUS_numi
 )*(EAD_pex*EAFEAD_rer)^(1-EAF_mumi);
-// Private consumption good (import) inflation
+
 EAF_piimi = EAF_pimi/EAF_pimi(-1)*EAF_pic;
-// Private consumption good (import)
+
 EAF_imcg^((EAF_mumcg-1)/EAF_mumcg) =
 +EAFEAA_numcg ^(1/EAF_mumcg)*EAFEAA_imcg^(1-1/EAF_mumcg)
 +EAFEAB_numcg ^(1/EAF_mumcg)*EAFEAB_imcg^(1-1/EAF_mumcg)
@@ -23217,27 +23217,27 @@ EAF_imcg^((EAF_mumcg-1)/EAF_mumcg) =
 -EAFRW_numcg
 -EAFUS_numcg
 )^(1/EAF_mumcg)*EAFEAD_imcg^(1-1/EAF_mumcg);
-// Demand for bilateral consumption import goods
+
 EAFEAA_imcg = EAFEAA_numcg*((EAA_pex*EAFEAA_rer)/EAF_pimcg)^(-EAF_mumcg)*EAF_imcg;
-// Demand for bilateral consumption import goods
+
 EAFEAB_imcg = EAFEAB_numcg*((EAB_pex*EAFEAB_rer)/EAF_pimcg)^(-EAF_mumcg)*EAF_imcg;
-// Demand for bilateral consumption import goods
+
 EAFEAC_imcg = EAFEAC_numcg*((EAC_pex*EAFEAC_rer)/EAF_pimcg)^(-EAF_mumcg)*EAF_imcg;
-// Demand for bilateral consumption import goods
+
 EAFEAE_imcg = EAFEAE_numcg*((EAE_pex*EAFEAE_rer)/EAF_pimcg)^(-EAF_mumcg)*EAF_imcg;
-// Demand for bilateral consumption import goods
+
 EAFEAH_imcg = EAFEAH_numcg*((EAH_pex*EAFEAH_rer)/EAF_pimcg)^(-EAF_mumcg)*EAF_imcg;
-// Demand for bilateral consumption import goods
+
 EAFEAI_imcg = EAFEAI_numcg*((EAI_pex*EAFEAI_rer)/EAF_pimcg)^(-EAF_mumcg)*EAF_imcg;
-// Demand for bilateral consumption import goods
+
 EAFEAJ_imcg = EAFEAJ_numcg*((EAJ_pex*EAFEAJ_rer)/EAF_pimcg)^(-EAF_mumcg)*EAF_imcg;
-// Demand for bilateral consumption import goods
+
 EAFEAK_imcg = EAFEAK_numcg*((EAK_pex*EAFEAK_rer)/EAF_pimcg)^(-EAF_mumcg)*EAF_imcg;
-// Demand for bilateral consumption import goods
+
 EAFEAL_imcg = EAFEAL_numcg*((EAL_pex*EAFEAL_rer)/EAF_pimcg)^(-EAF_mumcg)*EAF_imcg;
-// Demand for bilateral consumption import goods
+
 EAFRW_imcg = EAFRW_numcg*((RW_pex*EAFRW_rer)/EAF_pimcg)^(-EAF_mumcg)*EAF_imcg;
-// Demand for bilateral consumption import goods
+
 EAFUS_imcg = EAFUS_numcg*((US_pex*EAFUS_rer)/EAF_pimcg)^(-EAF_mumcg)*EAF_imcg;
 EAFEAD_imcg = (1
 -EAFEAA_numcg
@@ -23253,7 +23253,7 @@ EAFEAD_imcg = (1
 -EAFRW_numcg
 -EAFUS_numcg
 )*((EAD_pex*EAFEAD_rer)/EAF_pimcg)^(-EAF_mumcg)*EAF_imcg;
-// Price of the consumption good (import)
+
 EAF_pimcg^(1-EAF_mumcg) =
 +EAFEAA_numcg * (EAA_pex*EAFEAA_rer)^(1-EAF_mumcg)
 +EAFEAB_numcg * (EAB_pex*EAFEAB_rer)^(1-EAF_mumcg)
@@ -23281,9 +23281,9 @@ EAF_pimcg^(1-EAF_mumcg) =
 -EAFRW_numcg
 -EAFUS_numcg
 )*(EAD_pex*EAFEAD_rer)^(1-EAF_mumcg);
-// Private consumption good (import) inflation
+
 EAF_piimcg = EAF_pimcg/EAF_pimcg(-1)*EAF_pic;
-// Private consumption good (import)
+
 EAF_imig^((EAF_mumig-1)/EAF_mumig) =
 +EAFEAA_numig ^(1/EAF_mumig)*EAFEAA_imig^(1-1/EAF_mumig)
 +EAFEAB_numig ^(1/EAF_mumig)*EAFEAB_imig^(1-1/EAF_mumig)
@@ -23311,27 +23311,27 @@ EAF_imig^((EAF_mumig-1)/EAF_mumig) =
 -EAFRW_numig
 -EAFUS_numig
 )^(1/EAF_mumig)*EAFEAD_imig^(1-1/EAF_mumig);
-// Demand for bilateral consumption import goods
+
 EAFEAA_imig = EAFEAA_numig*((EAA_pex*EAFEAA_rer)/EAF_pimig)^(-EAF_mumig)*EAF_imig;
-// Demand for bilateral consumption import goods
+
 EAFEAB_imig = EAFEAB_numig*((EAB_pex*EAFEAB_rer)/EAF_pimig)^(-EAF_mumig)*EAF_imig;
-// Demand for bilateral consumption import goods
+
 EAFEAC_imig = EAFEAC_numig*((EAC_pex*EAFEAC_rer)/EAF_pimig)^(-EAF_mumig)*EAF_imig;
-// Demand for bilateral consumption import goods
+
 EAFEAE_imig = EAFEAE_numig*((EAE_pex*EAFEAE_rer)/EAF_pimig)^(-EAF_mumig)*EAF_imig;
-// Demand for bilateral consumption import goods
+
 EAFEAH_imig = EAFEAH_numig*((EAH_pex*EAFEAH_rer)/EAF_pimig)^(-EAF_mumig)*EAF_imig;
-// Demand for bilateral consumption import goods
+
 EAFEAI_imig = EAFEAI_numig*((EAI_pex*EAFEAI_rer)/EAF_pimig)^(-EAF_mumig)*EAF_imig;
-// Demand for bilateral consumption import goods
+
 EAFEAJ_imig = EAFEAJ_numig*((EAJ_pex*EAFEAJ_rer)/EAF_pimig)^(-EAF_mumig)*EAF_imig;
-// Demand for bilateral consumption import goods
+
 EAFEAK_imig = EAFEAK_numig*((EAK_pex*EAFEAK_rer)/EAF_pimig)^(-EAF_mumig)*EAF_imig;
-// Demand for bilateral consumption import goods
+
 EAFEAL_imig = EAFEAL_numig*((EAL_pex*EAFEAL_rer)/EAF_pimig)^(-EAF_mumig)*EAF_imig;
-// Demand for bilateral consumption import goods
+
 EAFRW_imig = EAFRW_numig*((RW_pex*EAFRW_rer)/EAF_pimig)^(-EAF_mumig)*EAF_imig;
-// Demand for bilateral consumption import goods
+
 EAFUS_imig = EAFUS_numig*((US_pex*EAFUS_rer)/EAF_pimig)^(-EAF_mumig)*EAF_imig;
 EAFEAD_imig = (1
 -EAFEAA_numig
@@ -23347,7 +23347,7 @@ EAFEAD_imig = (1
 -EAFRW_numig
 -EAFUS_numig
 )*((EAD_pex*EAFEAD_rer)/EAF_pimig)^(-EAF_mumig)*EAF_imig;
-// Price of the consumption good (import)
+
 EAF_pimig^(1-EAF_mumig) =
 +EAFEAA_numig * (EAA_pex*EAFEAA_rer)^(1-EAF_mumig)
 +EAFEAB_numig * (EAB_pex*EAFEAB_rer)^(1-EAF_mumig)
@@ -23375,15 +23375,15 @@ EAF_pimig^(1-EAF_mumig) =
 -EAFRW_numig
 -EAFUS_numig
 )*(EAD_pex*EAFEAD_rer)^(1-EAF_mumig);
-// Private consumption good (import) inflation
+
 EAF_piimig = EAF_pimig/EAF_pimig(-1)*EAF_pic;
-// Private consumption good (import) inflation
+
 EAF_piimc4 = EAF_pimc/EAF_pimc(-4)*EAF_pic4;
-// Private consumption good (import) inflation
+
 EAF_piex4 = EAF_pex/EAF_pex(-4)*EAF_pic4;
-// Wedge between aggregate demand and production, using EAF_x = EAG_size/EAF_size*EAG_im
+
 EAF_yst = EAF_sh*EAF_ht+EAF_sx*EAF_ex;
-// Aggregate demand for bilateral imported intermediate goods
+
 EAFEAA_im = 
 +EAFEAA_imc
 +EAFEAA_imi
@@ -23462,18 +23462,18 @@ EAFUS_im =
 +EAFUS_imcg
 +EAFUS_imig
 ;
-// Private consumption good firm
-// Private consumption good (tradable)
+
+
 EAF_ttc^((EAF_mutc-1)/EAF_mutc) = (EAF_nutc)^(1/EAF_mutc)*EAF_htc^(1-1/EAF_mutc)+(1-EAF_nutc)^(1/EAF_mutc)*EAF_imc^(1-1/EAF_mutc);
-// Private consumption good  (total)
+
 EAF_qc^((EAF_muc-1)/EAF_muc) = (EAF_nuc)^(1/EAF_muc)*EAF_ttc^(1-1/EAF_muc)+(1-EAF_nuc)^(1/EAF_muc)*EAF_ntc^(1-1/EAF_muc);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAF_ntc = (1-EAF_nuc)*(EAF_pnt)^(-EAF_muc)*EAF_qc;
-// Price of the consumption good (tradable)  
+
 EAF_pttc^(1-EAF_mutc) = (EAF_nutc)*EAF_pht^(1-EAF_mutc)+(1-EAF_nutc)*EAF_pimc^(1-EAF_mutc);
-// Price of the consumption good 
+
 1^(1-EAF_muc) = (EAF_nuc)*EAF_pttc^(1-EAF_muc)+(1-EAF_nuc)*EAF_pnt^(1-EAF_muc);
-// Demand for domestic intermediate goods
+
 EAF_htc = EAF_nutc*(EAF_pht/EAF_pttc)^(-EAF_mutc)*EAF_ttc;
 EAFEAA_gammaimc = 0;
 EAFEAA_gammaimcdag = 1;
@@ -23501,20 +23501,20 @@ EAFRW_gammaimc = 0;
 EAFRW_gammaimcdag = 1;
 EAFUS_gammaimc = 0;
 EAFUS_gammaimcdag = 1;
-// Private consumption good (tradable)
+
 EAF_tti^((EAF_muti-1)/EAF_muti) = (EAF_nuti)^(1/EAF_muti)*EAF_hti^(1-1/EAF_muti)+(1-EAF_nuti)^(1/EAF_muti)*EAF_imi^(1-1/EAF_muti);
-// Private consumption good  (total)
+
 EAF_qi^((EAF_mui-1)/EAF_mui) = (EAF_nui)^(1/EAF_mui)*EAF_tti^(1-1/EAF_mui)+(1-EAF_nui)^(1/EAF_mui)*EAF_nti^(1-1/EAF_mui);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAF_nti = (1-EAF_nui)*(EAF_pnt/EAF_pi)^(-EAF_mui)*EAF_qi;
-// Price of the consumption good (tradable)  
+
 EAF_ptti^(1-EAF_muti) = (EAF_nuti)*EAF_pht^(1-EAF_muti)+(1-EAF_nuti)*EAF_pimi^(1-EAF_muti);
-// Price of the consumption good 
+
 EAF_pi^(1-EAF_mui) = (EAF_nui)*EAF_ptti^(1-EAF_mui)+(1-EAF_nui)*EAF_pnt^(1-EAF_mui);
-// Auxiliary equation for the price of the investment good in steady state
-// this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
+
+
 EAF_pibar = EAF_pi;
-// Demand for domestic intermediate goods
+
 EAF_hti = EAF_nuti*(EAF_pht/EAF_ptti)^(-EAF_muti)*EAF_tti;
 EAFEAA_gammaimi = 0;
 EAFEAA_gammaimidag = 1;
@@ -23542,17 +23542,17 @@ EAFRW_gammaimi = 0;
 EAFRW_gammaimidag = 1;
 EAFUS_gammaimi = 0;
 EAFUS_gammaimidag = 1;
-// Private consumption good (tradable)
+
 EAF_ttcg^((EAF_mutcg-1)/EAF_mutcg) = (EAF_nutcg)^(1/EAF_mutcg)*EAF_htcg^(1-1/EAF_mutcg)+(1-EAF_nutcg)^(1/EAF_mutcg)*EAF_imcg^(1-1/EAF_mutcg);
-// Private consumption good  (total)
+
 EAF_qcg^((EAF_mucg-1)/EAF_mucg) = (EAF_nucg)^(1/EAF_mucg)*EAF_ttcg^(1-1/EAF_mucg)+(1-EAF_nucg)^(1/EAF_mucg)*EAF_ntcg^(1-1/EAF_mucg);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAF_ntcg = (1-EAF_nucg)*(EAF_pnt/EAF_pcg)^(-EAF_mucg)*EAF_qcg;
-// Price of the consumption good (tradable)  
+
 EAF_pttcg^(1-EAF_mutcg) = (EAF_nutcg)*EAF_pht^(1-EAF_mutcg)+(1-EAF_nutcg)*EAF_pimcg^(1-EAF_mutcg);
-// Price of the consumption good 
+
 EAF_pcg^(1-EAF_mucg) = (EAF_nucg)*EAF_pttcg^(1-EAF_mucg)+(1-EAF_nucg)*EAF_pnt^(1-EAF_mucg);
-// Demand for domestic intermediate goods
+
 EAF_htcg = EAF_nutcg*(EAF_pht/EAF_pttcg)^(-EAF_mutcg)*EAF_ttcg;
 EAFEAA_gammaimcg = 0;
 EAFEAA_gammaimcgdag = 1;
@@ -23580,17 +23580,17 @@ EAFRW_gammaimcg = 0;
 EAFRW_gammaimcgdag = 1;
 EAFUS_gammaimcg = 0;
 EAFUS_gammaimcgdag = 1;
-// Private consumption good (tradable)
+
 EAF_ttig^((EAF_mutig-1)/EAF_mutig) = (EAF_nutig)^(1/EAF_mutig)*EAF_htig^(1-1/EAF_mutig)+(1-EAF_nutig)^(1/EAF_mutig)*EAF_imig^(1-1/EAF_mutig);
-// Private consumption good  (total)
+
 EAF_qig^((EAF_muig-1)/EAF_muig) = (EAF_nuig)^(1/EAF_muig)*EAF_ttig^(1-1/EAF_muig)+(1-EAF_nuig)^(1/EAF_muig)*EAF_ntig^(1-1/EAF_muig);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAF_ntig = (1-EAF_nuig)*(EAF_pnt/EAF_pig)^(-EAF_muig)*EAF_qig;
-// Price of the consumption good (tradable)  
+
 EAF_pttig^(1-EAF_mutig) = (EAF_nutig)*EAF_pht^(1-EAF_mutig)+(1-EAF_nutig)*EAF_pimig^(1-EAF_mutig);
-// Price of the consumption good 
+
 EAF_pig^(1-EAF_muig) = (EAF_nuig)*EAF_pttig^(1-EAF_muig)+(1-EAF_nuig)*EAF_pnt^(1-EAF_muig);
-// Demand for domestic intermediate goods
+
 EAF_htig = EAF_nutig*(EAF_pht/EAF_pttig)^(-EAF_mutig)*EAF_ttig;
 EAFEAA_gammaimig = 0;
 EAFEAA_gammaimigdag = 1;
@@ -23618,7 +23618,7 @@ EAFRW_gammaimig = 0;
 EAFRW_gammaimigdag = 1;
 EAFUS_gammaimig = 0;
 EAFUS_gammaimigdag = 1;
-// Trade balance
+
 EAF_tb =
 +EAF_pex*EAA_size/EAF_size*EAAEAF_im
 -EAA_pex*EAFEAA_rer*EAFEAA_im
@@ -23647,7 +23647,7 @@ EAF_tb =
 +EAF_pex*US_size/EAF_size*USEAF_im
 -US_pex*EAFUS_rer*EAFUS_im
 ;
-// Aggregate exports (volume)
+
 EAF_ex =
 +EAA_size/EAF_size*EAAEAF_im
 +EAB_size/EAF_size*EABEAF_im
@@ -23663,131 +23663,131 @@ EAF_ex =
 +RW_size/EAF_size*RWEAF_im
 +US_size/EAF_size*USEAF_im
 ;
-//-------------
-//-------------
-// Fiscal and monetary authorities
-//-------------
-//-------------
-//-------------
-// Fiscal authority
-//-------------
-// Government budget constraint, using EAF_pg = EAF_pht
-// TODO: check the (1-EAF_gammab(-1)) adjustment here, which is not in the fiscal extention
+
+
+
+
+
+
+
+
+
+
 	EAF_pcg(-1)*EAF_cg(-1)+EAF_pig(-1)*EAF_ig(-1)+EAF_tr(-1)
 	+EAF_b(-1)*EAF_pic(-1)^(-1)+EAF_m(-2)*EAF_pic(-1)^(-1) = EAF_tauc(-1)*EAF_c(-1)+(EAF_taun(-1)+EAF_tauwh(-1))*(EAF_wi(-1)*EAF_ndi(-1)+EAF_wj(-1)*EAF_ndj(-1))+EAF_tauwf(-1)*EAF_w(-1)*EAF_nd(-1)+EAF_tauk(-1)*(EAF_rk(-1)*EAF_u(-1)-(EAF_gammau(-1)+EAF_delta)*EAF_pi(-1))*EAF_k(-1)+EAF_taud(-1)*EAF_d(-1)+EAF_t(-1)+(EAF_r(-1)*(1-EAF_gammab(-1)))^(-1)*EAF_b+EAF_m(-1);
-// Government spending, using EAF_pg = EAF_pht
+
 EAF_pcg*EAF_cg = EAF_cgy*EAF_pybar*EAF_ybar;
 EAF_pig*EAF_ig = EAF_igy*EAF_pybar*EAF_ybar;
 EAF_t = 0;
 EAF_b = EAF_bytarget*EAF_pybar*EAF_ybar;
-// Auxiliary equation for steady-state output
+
 EAF_ybar = EAF_y;
-// Auxiliary equation for steady-state output
+
 EAF_ytbar = EAF_yst;
-// Auxiliary equation for steady-state output
+
 EAF_ynbar = EAF_ysn;
-// Auxiliary equation for steady-state output deflator
+
 EAF_pybar = EAF_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
+
 EAF_trybar = EAF_tr/(EAF_pybar*EAF_ybar);
-// Auxiliary equation for determining the distribution of lump-sum taxes
+
 EAF_ti = EAF_upsilont*EAF_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
 upsilont = 0:            ti = 0, tj = 1/omega t
 upsilont = 1:            ti = tj = t
 upsilont = 1/(1-omega):  ti = 1/(1-omega) t, tj = 0. */
-// Auxiliary equation for determining the distribution of lump-sum transfers
+
 EAF_tri = EAF_upsilontr*EAF_tr;
 /* Note: Valid parameter space: 0 <= upsilontr <= 1/(1-omega) with
 upsilontr = 0:            tri = 0, trj = 1/omega tr
 upsilontr = 1:            tri = trj = tr
 upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
-//-------------
-// Monetary authority
-//-------------
+
+
+
 	EAF_r = EAL_r;
 EAF_pic4 = EAF_pi4target;
 EAF_rr-1 = EAF_r/EAF_pi4target^(1/4)-1;
-// Equilibrium real interest rate
+
 EAF_rrstar-1 = 1/EAF_beta-1;
-//-------------
-//-------------
-// Aggregation, market clearing and resource constraint
-//-------------
-//-------------
-//-------------
-// Aggregation
-//-------------
-// Aggregate consumption
+
+
+
+
+
+
+
+
+
 EAF_c = (1-EAF_omega)*EAF_ci+EAF_omega*EAF_cj;
-// Aggregate money holdings
+
 EAF_m = (1-EAF_omega)*EAF_mi+EAF_omega*EAF_mj;
-// Aggregate capital stock
+
 EAF_k = (1-EAF_omega)*EAF_ki;
-// Aggregate investment
+
 EAF_i = (1-EAF_omega)*EAF_ii;
-// Aggregate lump-sum transfers
+
 EAF_trj = 
 1/EAF_omega*EAF_tr-(1-EAF_omega)/EAF_omega*EAF_tri
 ;
-// Aggregate lump-sum taxes
+
 EAF_tj = 
 1/EAF_omega*EAF_t-(1-EAF_omega)/EAF_omega*EAF_ti
 ;
-// Aggregate transaction costs
+
 EAF_gammav = (1-EAF_omega)*EAF_ci*EAF_gammavi+EAF_omega*EAF_cj*EAF_gammavj;
-//-------------
-// Market clearing
-//-------------
-// Labour markets for household I
-// Wedge between labour demand/hours worked and labour supply
+
+
+
+
+
 EAF_ni = EAF_si*EAF_ndi;
-// Wage dispersion
+
 EAF_si = (1-EAF_xii)*(EAF_witilde/EAF_wi)^(-EAF_etai)+EAF_xii*(EAF_wi(-1)/EAF_wi)^(-EAF_etai)*(EAF_pic/(EAF_pic(-1)^EAF_chii*EAF_pi4target^(1/4*(1-EAF_chii))))^(EAF_etai)*EAF_si(-1);
-// Labour markets for household J
-// Wedge between labour demand/hours worked and labour supply
+
+
 EAF_nj = EAF_sj*EAF_ndj;
-// Wage dispersion
+
 EAF_sj = (1-EAF_xij)*(EAF_wjtilde/EAF_wj)^(-EAF_etaj)+EAF_xij*(EAF_wj(-1)/EAF_wj)^(-EAF_etaj)*(EAF_pic/(EAF_pic(-1)^EAF_chij*EAF_pi4target^(1/4*(1-EAF_chij))))^(EAF_etaj)*EAF_sj(-1);
-// Rental market for capital
-// Equality of capital input and effective capital services
+
+
 EAF_u*EAF_k = EAF_kd;
-// Intermediate-good markets
-// Wedge between aggregate demand and production, using EAF_x = EAG_size/EAF_size*EAG_im
+
+
 EAF_ysn = EAF_snt*EAF_nt;
-//  nontradables aggregate demand
+
 EAF_nt = 
 +EAF_ntc
 +EAF_nti
 +EAF_ntcg
 +EAF_ntig
 ;
-// Aggregate demand for domestic intermediate goods, using EAF_hg = EAF_cg
+
 EAF_ht =
 +EAF_htc
 +EAF_hti
 +EAF_htcg
 +EAF_htig
 ;
-// Price dispersion in the domestic markets
+
 EAF_sh = (1-EAF_xih)*(EAF_phttilde/EAF_pht)^(-EAF_thetat)+EAF_xih*(EAF_piht/(EAF_piht(-1)^EAF_chih*EAF_pi4target^(1/4*(1-EAF_chih))))^EAF_thetat*EAF_sh(-1);
-// Price dispersion in the foreign markets
+
 EAF_sx = (1-EAF_xix)*(EAF_pextilde/EAF_pex)^(-EAF_thetat)+EAF_xix*(EAF_piex/(EAF_piex(-1)^EAF_chix*EAF_pi4target^(1/4*(1-EAF_chix))))^EAF_thetat*EAF_sx(-1);
-// Price dispersion in the domestic markets
+
 EAF_snt = (1-EAF_xin)*(EAF_pnttilde/EAF_pnt)^(-EAF_thetan)+EAF_xin*(EAF_pint/(EAF_pint(-1)^EAF_chin*EAF_pi4target^(1/4*(1-EAF_chin))))^EAF_thetan*EAF_snt(-1);
-// Final-good markets
-// Aggregate consumption and transaction cost
+
+
 EAF_qc = EAF_c+EAF_gammav;
-// Aggregate investment and capital utilisation cost
+
 EAF_qi = EAF_i+EAF_k*EAF_gammau;
-// Aggregate gov demand components added to use the same structure like in private components
+
 EAF_qcg = EAF_cg;
 EAF_qig = EAF_ig;
-//-------------
-// Resource constraint
-//-------------
-// TODO: why there is no adjustment cost for gov components
-// Aggregate nominal demand
+
+
+
+
+
 EAF_py*EAF_y = 
 +EAF_qc
 +EAF_pi*EAF_qi
@@ -23859,83 +23859,83 @@ EAF_py*EAF_y =
 -(US_pex*EAFUS_rer)*EAFUS_imcg
 -(US_pex*EAFUS_rer)*EAFUS_imig
 ;
-// Aggregate real demand
+
 EAF_y = EAF_yst+EAF_ysn;
-//-------------
-//-------------
-// Autoregressive shocks
-//-------------
-//-------------
-// Productivity shocks
+
+
+
+
+
+
 log(EAF_zt) = (1-EAF_rhozt)*log(EAF_ztbar)+EAF_rhozt*log(EAF_zt(-1))+EAF_epszt;
 log(EAF_zn) = (1-EAF_rhozn)*log(EAF_znbar)+EAF_rhozn*log(EAF_zn(-1))+EAF_epszn;
-// Government spending shock
+
 EAF_cgy = (1-EAF_rhocg)*EAF_cgybar+EAF_rhocg*EAF_cgy(-1)+EAF_epsgc;
 EAF_igy = (1-EAF_rhoig)*EAF_igybar+EAF_rhoig*EAF_igy(-1)+EAF_epsgi;
-// Transfer shock
+
 EAF_try = (1-EAF_rhotr)*EAF_trybar+EAF_rhotr*EAF_try(-1)+EAF_epstr;
-// Consumption tax shock
+
 EAF_tauc = (1-EAF_rhotauc)*EAF_taucbar+EAF_rhotauc*EAF_tauc(-1)+EAF_epstauc;
-// Dividend income tax shock
+
 EAF_taud = (1-EAF_rhotaud)*EAF_taudbar+EAF_rhotaud*EAF_taud(-1)+EAF_epstaud;
-// Capital income tax shock
+
 EAF_tauk = (1-EAF_rhotauk)*EAF_taukbar+EAF_rhotauk*EAF_tauk(-1)+EAF_epstauk;
-// Labour income tax shock
+
 EAF_taun = (1-EAF_rhotaun)*EAF_taunbar+EAF_rhotaun*EAF_taun(-1)+EAF_epstaun;
-// Payroll tax shock: households
+
 EAF_tauwh = (1-EAF_rhotauwh)*EAF_tauwhbar+EAF_rhotauwh*EAF_tauwh(-1)+EAF_epstauwh;
-// Payroll tax shock: firms
+
 EAF_tauwf = (1-EAF_rhotauwf)*EAF_tauwfbar+EAF_rhotauwf*EAF_tauwf(-1)+EAF_epstauwf;
-// Wage cost push shock
+
 EAF_wcst = (1-EAF_rhowcst)*EAF_wcstbar+EAF_rhowcst*EAF_wcst(-1)+EAF_epswcst;
-// Preference shock
+
 log(EAF_zcon) = (1-EAF_rhozcon)*log(EAF_zconbar)+EAF_rhozcon*log(EAF_zcon(-1))+EAF_epszcon;
-// Investment specific shock
+
 log(EAF_zinv) = (1-EAF_rhozinv)*log(EAF_zinvbar)+EAF_rhozinv*log(EAF_zinv(-1))+EAF_epszinv;
-//-------------
-//-------------
-// Conditions for calibration and reporting
-//-------------
-//-------------
-// Aggregate nominal consumption share
+
+
+
+
+
+
 EAF_cy = EAF_c/(EAF_py*EAF_y);
-// Aggregate nominal investment share
+
 EAF_iy = EAF_pi*EAF_i/(EAF_py*EAF_y);
-// Aggregate nominal import share  
+
 EAF_imy = (
 +EAF_pimc*EAF_imc
 +EAF_pimi*EAF_imi
 +EAF_pimcg*EAF_imcg
 +EAF_pimig*EAF_imig
 )/(EAF_py*EAF_y);
-// Aggregate nominal import share
+
 EAF_imcy = EAF_pimc*EAF_imc/(EAF_py*EAF_y);
 EAF_imiy = EAF_pimi*EAF_imi/(EAF_py*EAF_y);
 EAF_imcgy = EAF_pimcg*EAF_imcg/(EAF_py*EAF_y);
 EAF_imigy = EAF_pimig*EAF_imig/(EAF_py*EAF_y);
-// Aggregate debt-to-output ratio
+
 EAF_by = EAF_b/(EAF_pybar*EAF_ybar);
-// Aggregate lump-sum tax-to-output ratio
+
 EAF_ty = EAF_t/(EAF_pybar*EAF_ybar);
-// Aggregate labour cost share
+
 EAF_lcy = ((1+EAF_tauwf)*EAF_w*EAF_nd)/(EAF_py*EAF_y);
-// Aggregate nominal Wage share
+
 EAF_wy = (EAF_w*EAF_nd)/(EAF_py*EAF_y);
-// NT sector nominal Wage share
+
 EAF_wnty = (EAF_w*EAF_ndn)/(EAF_pnt*EAF_ysn);
-// T sector nominal Wage share
+
 EAF_whty = (EAF_w*EAF_ndt)/(EAF_pht*EAF_yst);
-// T sector share
+
 EAF_yhty = EAF_pht*EAF_yst/(EAF_py*EAF_y);
-// NT sector share
+
 EAF_ynty = EAF_pnt*EAF_ysn/(EAF_py*EAF_y);
-// Output gap
+
 EAF_ygap = 0;
-// Output growth (gross rate)
+
 EAF_ygrowth = EAF_y/EAF_y(-1);
-// Output growth (gross rate yoy)
+
 EAF_ygrowth4 = EAF_y/EAF_y(-4);
-// Domestic nominal output as a share of world nominal output
+
 EAF_yshare  = EAF_size*EAF_py*EAF_y/EAF_rer/(
 +EAA_size*EAA_py*EAA_y/EAA_rer
 +EAB_size*EAB_py*EAB_y/EAB_rer
@@ -23952,153 +23952,153 @@ EAF_yshare  = EAF_size*EAF_py*EAF_y/EAF_rer/(
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
-// Interest (semi-)elasticity of money demand
+
 EAF_epsilonm = -1/8*1/(EAF_r*(EAF_gammav2*EAF_r+EAF_r-1));
-// Trade balance-to-GDP ratio
+
 EAF_tby = EAF_tb/(EAF_py*EAF_y);
-// Bilateral shares
+
 EAFEAA_imcy = (EAA_pex*EAFEAA_rer)*EAFEAA_imc/(EAF_py*EAF_y);
 EAFEAA_imiy = (EAA_pex*EAFEAA_rer)*EAFEAA_imi/(EAF_py*EAF_y);
 EAFEAA_imcgy = (EAA_pex*EAFEAA_rer)*EAFEAA_imcg/(EAF_py*EAF_y);
 EAFEAA_imigy = (EAA_pex*EAFEAA_rer)*EAFEAA_imig/(EAF_py*EAF_y);
-// Exports of consumption goods to gdp
+
 EAFEAA_excy  = EAA_size/EAF_size*EAF_pex*EAAEAF_imc/(EAF_py*EAF_y);
-// Exports of investment goods to gdp
+
 EAFEAA_exiy  = EAA_size/EAF_size*EAF_pex*EAAEAF_imi/(EAF_py*EAF_y);
-// Bilateral shares
+
 EAFEAB_imcy = (EAB_pex*EAFEAB_rer)*EAFEAB_imc/(EAF_py*EAF_y);
 EAFEAB_imiy = (EAB_pex*EAFEAB_rer)*EAFEAB_imi/(EAF_py*EAF_y);
 EAFEAB_imcgy = (EAB_pex*EAFEAB_rer)*EAFEAB_imcg/(EAF_py*EAF_y);
 EAFEAB_imigy = (EAB_pex*EAFEAB_rer)*EAFEAB_imig/(EAF_py*EAF_y);
-// Exports of consumption goods to gdp
+
 EAFEAB_excy  = EAB_size/EAF_size*EAF_pex*EABEAF_imc/(EAF_py*EAF_y);
-// Exports of investment goods to gdp
+
 EAFEAB_exiy  = EAB_size/EAF_size*EAF_pex*EABEAF_imi/(EAF_py*EAF_y);
-// Bilateral shares
+
 EAFEAC_imcy = (EAC_pex*EAFEAC_rer)*EAFEAC_imc/(EAF_py*EAF_y);
 EAFEAC_imiy = (EAC_pex*EAFEAC_rer)*EAFEAC_imi/(EAF_py*EAF_y);
 EAFEAC_imcgy = (EAC_pex*EAFEAC_rer)*EAFEAC_imcg/(EAF_py*EAF_y);
 EAFEAC_imigy = (EAC_pex*EAFEAC_rer)*EAFEAC_imig/(EAF_py*EAF_y);
-// Exports of consumption goods to gdp
+
 EAFEAC_excy  = EAC_size/EAF_size*EAF_pex*EACEAF_imc/(EAF_py*EAF_y);
-// Exports of investment goods to gdp
+
 EAFEAC_exiy  = EAC_size/EAF_size*EAF_pex*EACEAF_imi/(EAF_py*EAF_y);
-// Bilateral shares
+
 EAFEAD_imcy = (EAD_pex*EAFEAD_rer)*EAFEAD_imc/(EAF_py*EAF_y);
 EAFEAD_imiy = (EAD_pex*EAFEAD_rer)*EAFEAD_imi/(EAF_py*EAF_y);
 EAFEAD_imcgy = (EAD_pex*EAFEAD_rer)*EAFEAD_imcg/(EAF_py*EAF_y);
 EAFEAD_imigy = (EAD_pex*EAFEAD_rer)*EAFEAD_imig/(EAF_py*EAF_y);
-// Exports of consumption goods to gdp
+
 EAFEAD_excy  = EAD_size/EAF_size*EAF_pex*EADEAF_imc/(EAF_py*EAF_y);
-// Exports of investment goods to gdp
+
 EAFEAD_exiy  = EAD_size/EAF_size*EAF_pex*EADEAF_imi/(EAF_py*EAF_y);
-// Bilateral shares
+
 EAFEAE_imcy = (EAE_pex*EAFEAE_rer)*EAFEAE_imc/(EAF_py*EAF_y);
 EAFEAE_imiy = (EAE_pex*EAFEAE_rer)*EAFEAE_imi/(EAF_py*EAF_y);
 EAFEAE_imcgy = (EAE_pex*EAFEAE_rer)*EAFEAE_imcg/(EAF_py*EAF_y);
 EAFEAE_imigy = (EAE_pex*EAFEAE_rer)*EAFEAE_imig/(EAF_py*EAF_y);
-// Exports of consumption goods to gdp
+
 EAFEAE_excy  = EAE_size/EAF_size*EAF_pex*EAEEAF_imc/(EAF_py*EAF_y);
-// Exports of investment goods to gdp
+
 EAFEAE_exiy  = EAE_size/EAF_size*EAF_pex*EAEEAF_imi/(EAF_py*EAF_y);
-// Bilateral shares
+
 EAFEAG_imcy = (EAG_pex*EAFEAG_rer)*EAFEAG_imc/(EAF_py*EAF_y);
 EAFEAG_imiy = (EAG_pex*EAFEAG_rer)*EAFEAG_imi/(EAF_py*EAF_y);
 EAFEAG_imcgy = (EAG_pex*EAFEAG_rer)*EAFEAG_imcg/(EAF_py*EAF_y);
 EAFEAG_imigy = (EAG_pex*EAFEAG_rer)*EAFEAG_imig/(EAF_py*EAF_y);
-// Exports of consumption goods to gdp
+
 EAFEAG_excy  = EAG_size/EAF_size*EAF_pex*EAGEAF_imc/(EAF_py*EAF_y);
-// Exports of investment goods to gdp
+
 EAFEAG_exiy  = EAG_size/EAF_size*EAF_pex*EAGEAF_imi/(EAF_py*EAF_y);
-// Bilateral shares
+
 EAFEAH_imcy = (EAH_pex*EAFEAH_rer)*EAFEAH_imc/(EAF_py*EAF_y);
 EAFEAH_imiy = (EAH_pex*EAFEAH_rer)*EAFEAH_imi/(EAF_py*EAF_y);
 EAFEAH_imcgy = (EAH_pex*EAFEAH_rer)*EAFEAH_imcg/(EAF_py*EAF_y);
 EAFEAH_imigy = (EAH_pex*EAFEAH_rer)*EAFEAH_imig/(EAF_py*EAF_y);
-// Exports of consumption goods to gdp
+
 EAFEAH_excy  = EAH_size/EAF_size*EAF_pex*EAHEAF_imc/(EAF_py*EAF_y);
-// Exports of investment goods to gdp
+
 EAFEAH_exiy  = EAH_size/EAF_size*EAF_pex*EAHEAF_imi/(EAF_py*EAF_y);
-// Bilateral shares
+
 EAFEAI_imcy = (EAI_pex*EAFEAI_rer)*EAFEAI_imc/(EAF_py*EAF_y);
 EAFEAI_imiy = (EAI_pex*EAFEAI_rer)*EAFEAI_imi/(EAF_py*EAF_y);
 EAFEAI_imcgy = (EAI_pex*EAFEAI_rer)*EAFEAI_imcg/(EAF_py*EAF_y);
 EAFEAI_imigy = (EAI_pex*EAFEAI_rer)*EAFEAI_imig/(EAF_py*EAF_y);
-// Exports of consumption goods to gdp
+
 EAFEAI_excy  = EAI_size/EAF_size*EAF_pex*EAIEAF_imc/(EAF_py*EAF_y);
-// Exports of investment goods to gdp
+
 EAFEAI_exiy  = EAI_size/EAF_size*EAF_pex*EAIEAF_imi/(EAF_py*EAF_y);
-// Bilateral shares
+
 EAFEAJ_imcy = (EAJ_pex*EAFEAJ_rer)*EAFEAJ_imc/(EAF_py*EAF_y);
 EAFEAJ_imiy = (EAJ_pex*EAFEAJ_rer)*EAFEAJ_imi/(EAF_py*EAF_y);
 EAFEAJ_imcgy = (EAJ_pex*EAFEAJ_rer)*EAFEAJ_imcg/(EAF_py*EAF_y);
 EAFEAJ_imigy = (EAJ_pex*EAFEAJ_rer)*EAFEAJ_imig/(EAF_py*EAF_y);
-// Exports of consumption goods to gdp
+
 EAFEAJ_excy  = EAJ_size/EAF_size*EAF_pex*EAJEAF_imc/(EAF_py*EAF_y);
-// Exports of investment goods to gdp
+
 EAFEAJ_exiy  = EAJ_size/EAF_size*EAF_pex*EAJEAF_imi/(EAF_py*EAF_y);
-// Bilateral shares
+
 EAFEAK_imcy = (EAK_pex*EAFEAK_rer)*EAFEAK_imc/(EAF_py*EAF_y);
 EAFEAK_imiy = (EAK_pex*EAFEAK_rer)*EAFEAK_imi/(EAF_py*EAF_y);
 EAFEAK_imcgy = (EAK_pex*EAFEAK_rer)*EAFEAK_imcg/(EAF_py*EAF_y);
 EAFEAK_imigy = (EAK_pex*EAFEAK_rer)*EAFEAK_imig/(EAF_py*EAF_y);
-// Exports of consumption goods to gdp
+
 EAFEAK_excy  = EAK_size/EAF_size*EAF_pex*EAKEAF_imc/(EAF_py*EAF_y);
-// Exports of investment goods to gdp
+
 EAFEAK_exiy  = EAK_size/EAF_size*EAF_pex*EAKEAF_imi/(EAF_py*EAF_y);
-// Bilateral shares
+
 EAFEAL_imcy = (EAL_pex*EAFEAL_rer)*EAFEAL_imc/(EAF_py*EAF_y);
 EAFEAL_imiy = (EAL_pex*EAFEAL_rer)*EAFEAL_imi/(EAF_py*EAF_y);
 EAFEAL_imcgy = (EAL_pex*EAFEAL_rer)*EAFEAL_imcg/(EAF_py*EAF_y);
 EAFEAL_imigy = (EAL_pex*EAFEAL_rer)*EAFEAL_imig/(EAF_py*EAF_y);
-// Exports of consumption goods to gdp
+
 EAFEAL_excy  = EAL_size/EAF_size*EAF_pex*EALEAF_imc/(EAF_py*EAF_y);
-// Exports of investment goods to gdp
+
 EAFEAL_exiy  = EAL_size/EAF_size*EAF_pex*EALEAF_imi/(EAF_py*EAF_y);
-// Bilateral shares
+
 EAFRW_imcy = (RW_pex*EAFRW_rer)*EAFRW_imc/(EAF_py*EAF_y);
 EAFRW_imiy = (RW_pex*EAFRW_rer)*EAFRW_imi/(EAF_py*EAF_y);
 EAFRW_imcgy = (RW_pex*EAFRW_rer)*EAFRW_imcg/(EAF_py*EAF_y);
 EAFRW_imigy = (RW_pex*EAFRW_rer)*EAFRW_imig/(EAF_py*EAF_y);
-// Exports of consumption goods to gdp
+
 EAFRW_excy  = RW_size/EAF_size*EAF_pex*RWEAF_imc/(EAF_py*EAF_y);
-// Exports of investment goods to gdp
+
 EAFRW_exiy  = RW_size/EAF_size*EAF_pex*RWEAF_imi/(EAF_py*EAF_y);
-// Bilateral shares
+
 EAFUS_imcy = (US_pex*EAFUS_rer)*EAFUS_imc/(EAF_py*EAF_y);
 EAFUS_imiy = (US_pex*EAFUS_rer)*EAFUS_imi/(EAF_py*EAF_y);
 EAFUS_imcgy = (US_pex*EAFUS_rer)*EAFUS_imcg/(EAF_py*EAF_y);
 EAFUS_imigy = (US_pex*EAFUS_rer)*EAFUS_imig/(EAF_py*EAF_y);
-// Exports of consumption goods to gdp
+
 EAFUS_excy  = US_size/EAF_size*EAF_pex*USEAF_imc/(EAF_py*EAF_y);
-// Exports of investment goods to gdp
+
 EAFUS_exiy  = US_size/EAF_size*EAF_pex*USEAF_imi/(EAF_py*EAF_y);
-// Internal real exchange rate
+
 EAF_internalrer = EAF_pnt/EAF_pttc;
-// Core model begins
-//-------------
-//-------------
-// Households
-//-------------
-//-------------
-//-------------
-// Household I
-//-------------
-// Utility
+
+
+
+
+
+
+
+
+
+
 EAG_utili = 
 EAG_zcon*log(EAG_ci-EAG_kappa*EAG_ci(-1))-1/(1+EAG_zeta)*(EAG_ni)^(1+EAG_zeta)+EAG_beta*EAG_utili(+1)
 ;
-// Marginal utility of consumption
+
 EAG_lambdai*(1+EAG_tauc+EAG_gammavi+EAG_vi*EAG_gammavider) = EAG_zcon*(EAG_ci-EAG_kappa*EAG_ci(-1))^(-EAG_sigma);
-// Euler equation for government bonds
+
 EAG_r                   = EAG_beta^(-1)*EAG_lambdai/EAG_lambdai    *EAG_pic;
-// Euler equation for money
+
 EAG_vi^(2)*EAG_gammavider = 1-EAG_beta*EAG_lambdai(+1)/(EAG_lambdai*EAG_pic(+1));
-// Consumption-based velocity
+
 EAG_vi = EAG_ci/EAG_mi;
-// Transaction cost
+
 EAG_gammavi = EAG_gammav1*EAG_vi+EAG_gammav2/EAG_vi-2*(EAG_gammav1*EAG_gammav2)^(1/2);
-// Derivative of transaction cost
+
 EAG_gammavider = EAG_gammav1-EAG_gammav2*EAG_vi^(-2);
 EAG_delta = EAG_ii/EAG_ki;
 EAG_gammai = 0;
@@ -24107,355 +24107,355 @@ EAG_gammau = 0;
 EAG_gammauder = ((EAG_beta^(-1)-1+EAG_delta)*EAG_qbar-EAG_delta*EAG_taukbar*EAG_pibar)/((1-EAG_taukbar)*EAG_pibar);
 EAG_u = 1;
 EAG_pi = EAG_q;
-// Auxiliary equation for Tobin's Q in steady state
+
 EAG_qbar = EAG_q;
-// Rate of return on capital
+
 EAG_q = EAG_beta*((1-EAG_tauk)*EAG_rk+(EAG_tauk*EAG_delta)*EAG_pi+(1-EAG_delta)*EAG_q);
-// Optimal wage contract (FOC)
+
 EAG_witilde^(1+EAG_etai*EAG_zeta) = EAG_etai/(EAG_etai-1)*EAG_fi/EAG_gi+EAG_wcst;
-// Definition of fi
+
 EAG_fi = EAG_wi^(EAG_etai*(1+EAG_zeta))*EAG_ndi^(1+EAG_zeta)+EAG_xii*EAG_beta*(EAG_pic(+1)/(EAG_pic^EAG_chii*EAG_pi4target^(1/4*(1-EAG_chii))))^(EAG_etai*(1+EAG_zeta))*EAG_fi(+1);
-// Definition of gi
+
 EAG_gi = EAG_lambdai*(1-EAG_taun-EAG_tauwh)*EAG_wi^EAG_etai*EAG_ndi+EAG_xii*EAG_beta*(EAG_pic(+1)/(EAG_pic^EAG_chii*EAG_pi4target^(1/4*(1-EAG_chii))))^(EAG_etai-1)*EAG_gi(+1);
-// Aggregate wage rate
+
 EAG_wi^(1-EAG_etai) = (1-EAG_xii)*EAG_witilde^(1-EAG_etai)+EAG_xii*EAG_wi(-1)^(1-EAG_etai)*(EAG_pic(-1)^EAG_chii*EAG_pi4target^(1/4*(1-EAG_chii))/EAG_pic)^(1-EAG_etai);
-//-------------
-// Household J
-//-------------
-// Utility
+
+
+
+
 EAG_utilj = 
 EAG_zcon*log(EAG_cj-EAG_kappa*EAG_cj(-1))-1/(1+EAG_zeta)*EAG_nj^(1+EAG_zeta)+EAG_beta*EAG_utilj(+1)
 ;
-// Marginal utility of consumption
+
 EAG_lambdaj*(1+EAG_tauc+EAG_gammavj+EAG_vj*EAG_gammavjder) = EAG_zcon*(EAG_cj-EAG_kappa*EAG_cj(-1))^(-EAG_sigma);
-// Budget constraint
+
 (1+EAG_tauc+EAG_gammavj)*EAG_cj+EAG_mj = (1-EAG_taun-EAG_tauwh)*EAG_wj*EAG_nj+EAG_trj-EAG_tj+EAG_mj(-1)*EAG_pic^(-1);
-// Euler equation for money
+
 EAG_vj^(2)*EAG_gammavjder = 1-EAG_beta*EAG_lambdaj(+1)/(EAG_lambdaj*EAG_pic(+1));
-// Consumption-based velocity
+
 EAG_vj = EAG_cj/EAG_mj;
-// Transaction technology
+
 EAG_gammavj = EAG_gammav1*EAG_vj+EAG_gammav2/EAG_vj-2*(EAG_gammav1*EAG_gammav2)^(1/2);
-// Derivative of transaction technology
+
 EAG_gammavjder = EAG_gammav1-EAG_gammav2*EAG_vj^(-2);
-// Optimal wage contract (FOC)
+
 EAG_wjtilde^(1+EAG_etaj*EAG_zeta) = EAG_etaj/(EAG_etaj-1)*EAG_fj/EAG_gj+EAG_wcst;
-// Definition of fj
+
 EAG_fj = EAG_wj^(EAG_etaj*(1+EAG_zeta))*EAG_ndj^(1+EAG_zeta)+EAG_xij*EAG_beta*(EAG_pic(+1)/(EAG_pic^EAG_chij*EAG_pi4target^(1/4*(1-EAG_chij))))^(EAG_etaj*(1+EAG_zeta))*EAG_fj(+1);
-// Definition of gj
+
 EAG_gj = EAG_lambdaj*(1-EAG_taun-EAG_tauwh)*EAG_wj^EAG_etaj*EAG_ndj+EAG_xij*EAG_beta*(EAG_pic(+1)/(EAG_pic^EAG_chij*EAG_pi4target^(1/4*(1-EAG_chij))))^(EAG_etaj-1)*EAG_gj(+1);
-// Aggregate wage rate
+
 EAG_wj^(1-EAG_etaj) = (1-EAG_xij)*EAG_wjtilde^(1-EAG_etaj)+EAG_xij*EAG_wj(-1)^(1-EAG_etaj)*(EAG_pic(-1)^EAG_chij*EAG_pi4target^(1/4*(1-EAG_chij))/EAG_pic)^(1-EAG_etaj);
-//-------------
-//-------------
-// Firms
-//-------------
-//-------------
-//-------------
-// Intermediate-good firms
-//-------------
-// Production function tradable
+
+
+
+
+
+
+
+
+
 EAG_yst = EAG_zt*EAG_kdt^EAG_alphat*EAG_ndt^(1-EAG_alphat)-EAG_psitbar;
-// Production function nontradable
+
 EAG_ysn = EAG_zn*EAG_kdn^EAG_alphan*EAG_ndn^(1-EAG_alphan)-EAG_psinbar;
-// Real marginal cost tradable
+
 EAG_mct = 1/(EAG_zt*(EAG_alphat)^(EAG_alphat)*(1-EAG_alphat)^(1-EAG_alphat))*EAG_rk^(EAG_alphat)*((1+EAG_tauwf)*EAG_w)^(1-EAG_alphat);
-// Real marginal cost nontradable
+
 EAG_mcn = 1/(EAG_zn*(EAG_alphan)^(EAG_alphan)*(1-EAG_alphan)^(1-EAG_alphan))*EAG_rk^(EAG_alphan)*((1+EAG_tauwf)*EAG_w)^(1-EAG_alphan);
-// Wage Inflation (qoq)
+
 EAG_piw = EAG_w/EAG_w(-1)*EAG_pic;
-// Wage Inflation (yoy)
+
 EAG_piw4 = EAG_pic4;
-// Auxiliary equation for steady-state fixed cost
+
 EAG_psitbar = EAG_psit*EAG_ytbar;
-// Auxiliary equation for steady-state fixed cost
+
 EAG_psinbar = EAG_psin*EAG_ynbar;
-// Capital input (FOC)
+
 EAG_rk = EAG_alphat*(EAG_yst+EAG_psitbar)/EAG_kdt*EAG_mct;
-// Capital input (FOC)
+
 EAG_rk = EAG_alphan*(EAG_ysn+EAG_psinbar)/EAG_kdn*EAG_mcn;
-// Total capital demand
+
 EAG_kd = EAG_kdt+EAG_kdn;
-// Demand for labour services by household I
+
 EAG_ndi = 
 (1-EAG_omega)*(EAG_wi/EAG_w)^(-EAG_eta)*EAG_nd
 ;
-// Demand for labour services by household J
+
 EAG_ndj = 
 EAG_omega*(EAG_wj/EAG_w)^(-EAG_eta)*EAG_nd
 ;
-// Aggregate labour demand
+
 EAG_nd^(1-1/EAG_eta) = 
 (1-EAG_omega)^(1/EAG_eta)*EAG_ndi^(1-1/EAG_eta)+EAG_omega^(1/EAG_eta)*EAG_ndj^(1-1/EAG_eta)
 ;
-// Total demand 
+
 EAG_nd = EAG_ndt+EAG_ndn;
-// Aggregate dividends
+
 EAG_d = EAG_py*EAG_y-EAG_rk*EAG_kd-(1+EAG_tauwf)*EAG_w*EAG_nd;
-// Non-tradable sector dividends
+
 EAG_dn = EAG_pnt*EAG_ysn-EAG_rk*EAG_kdn-(1+EAG_tauwf)*EAG_w*EAG_ndn;
-// Tradable sector dividends
+
 EAG_dt = EAG_pht*EAG_ht
 +EAG_pex*EAG_ex
 -EAG_rk*EAG_kdt-(1+EAG_tauwf)*EAG_w*EAG_ndt;
-// Optimal price contract set in domestic markets (FOC)
+
 EAG_phttilde/EAG_pht = EAG_thetat/(EAG_thetat-1)*EAG_fh/EAG_gh;
-// Definition of fh
+
 EAG_fh = EAG_mct*EAG_ht+EAG_xih*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAG_piht(+1)/(EAG_piht^EAG_chih*EAG_pi4target^(1/4*(1-EAG_chih))))^EAG_thetat*EAG_fh(+1);
-// Definition of gh
+
 EAG_gh = EAG_pht*EAG_ht+EAG_xih*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAG_piht(+1)/(EAG_piht^EAG_chih*EAG_pi4target^(1/4*(1-EAG_chih))))^(EAG_thetat-1)*EAG_gh(+1);
-// Aggregate intermediate-good price dynamics
+
 EAG_pht^(1-EAG_thetat) = (1-EAG_xih)*EAG_phttilde^(1-EAG_thetat)+EAG_xih*(EAG_pht(-1)/EAG_pic)^(1-EAG_thetat)*(EAG_piht(-1)^EAG_chih*EAG_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
-// Intermediate-good price inflation
+
 EAG_piht = EAG_pht/EAG_pht(-1)*EAG_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAG_pnttilde/EAG_pnt = EAG_thetan/(EAG_thetan-1)*EAG_fn/EAG_gn;
-// Definition of fn
+
 EAG_fn = EAG_mcn*EAG_nt+EAG_xin*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAG_pint(+1)/(EAG_pint^EAG_chin*EAG_pi4target^(1/4*(1-EAG_chin))))^EAG_thetan*EAG_fn(+1);
-// Definition of gn
+
 EAG_gn = EAG_pnt*EAG_nt+EAG_xin*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAG_pint(+1)/(EAG_pint^EAG_chin*EAG_pi4target^(1/4*(1-EAG_chin))))^(EAG_thetan-1)*EAG_gn(+1);
-// Aggregate intermediate-good price dynamics
+
 EAG_pnt^(1-EAG_thetan) = (1-EAG_xin)*EAG_pnttilde^(1-EAG_thetan)+EAG_xin*(EAG_pnt(-1)/EAG_pic)^(1-EAG_thetan)*(EAG_pint(-1)^EAG_chin*EAG_pi4target^(1/4*(1-EAG_chin)))^(1-EAG_thetan);
-// Intermediate-good price inflation
+
 EAG_pint = EAG_pnt/EAG_pnt(-1)*EAG_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAG_pextilde/EAG_pex = EAG_thetat/(EAG_thetat-1)*EAG_fx/EAG_gx;
-// Definition of fh
+
 EAG_fx = EAG_mct*EAG_ex+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAG_piex(+1)/(EAG_piex^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAG_fx(+1);
-// Definition of gh
+
 EAG_gx = EAG_pex*EAG_ex+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAG_piex(+1)/(EAG_piex^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAG_gx(+1);
-// Aggregate intermediate-good price dynamics
+
 EAG_pex^(1-EAG_thetat) = (1-EAG_xix)*EAG_pextilde^(1-EAG_thetat)+EAG_xix*(EAG_pex(-1)/EAG_pic)^(1-EAG_thetat)*(EAG_piex(-1)^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix)))^(1-EAG_thetat);
-// Intermediate-good price inflation
+
 EAG_piex = EAG_pex/EAG_pex(-1)*EAG_pic;
-//---------------
-// import pricing
-//---------------
-// Optimal price contract set in foreign markets (FOC), using EAG_pxtilde = EAA_pimtilde
-// EAAEAG_pimtilde/EAAEAG_pim = EAG_cpim*EAG_thetat/(EAG_thetat-1)*EAGEAA_fx/EAGEAA_gx;
-// Definition of fx
-// EAGEAA_fx = EAA_size/EAG_size*EAAEAG_im*EAG_mct+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAAEAG_piim(+1)/(EAAEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAGEAA_fx(+1);
-// Definition of gx   
-// EAGEAA_gx = EAGEAA_rer*EAAEAG_pim*EAA_size/EAG_size*EAAEAG_im+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAAEAG_piim(+1)/(EAAEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAGEAA_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAG_px = EAA_pim
-// EAAEAG_pim^(1-EAG_thetat) = (1-EAG_xix)*EAAEAG_pimtilde^(1-EAG_thetat)+EAG_xix*(EAAEAG_pim(-1)/EAA_pic)^(1-EAG_thetat)*(EAAEAG_piim(-1)^EAG_chix*EAA_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
-// Intermediate-good price inflation, using EAG_pix = EAA_piim
-// EAAEAG_piim = EAAEAG_pim/EAAEAG_pim(-1)*EAA_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 EAGEAA_rer = EAG_rer/EAA_rer;
-// Auxiliary equation for steady-state output
+
 EAGEAA_rerbar = EAGEAA_rer;
-//Terms of Trade
+
 EAGEAA_tot = EAA_pex*EAGEAA_rer/EAG_pex;
-// Optimal price contract set in foreign markets (FOC), using EAG_pxtilde = EAB_pimtilde
-// EABEAG_pimtilde/EABEAG_pim = EAG_cpim*EAG_thetat/(EAG_thetat-1)*EAGEAB_fx/EAGEAB_gx;
-// Definition of fx
-// EAGEAB_fx = EAB_size/EAG_size*EABEAG_im*EAG_mct+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EABEAG_piim(+1)/(EABEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAGEAB_fx(+1);
-// Definition of gx   
-// EAGEAB_gx = EAGEAB_rer*EABEAG_pim*EAB_size/EAG_size*EABEAG_im+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EABEAG_piim(+1)/(EABEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAGEAB_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAG_px = EAB_pim
-// EABEAG_pim^(1-EAG_thetat) = (1-EAG_xix)*EABEAG_pimtilde^(1-EAG_thetat)+EAG_xix*(EABEAG_pim(-1)/EAB_pic)^(1-EAG_thetat)*(EABEAG_piim(-1)^EAG_chix*EAB_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
-// Intermediate-good price inflation, using EAG_pix = EAB_piim
-// EABEAG_piim = EABEAG_pim/EABEAG_pim(-1)*EAB_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAGEAB_rer = EAG_rer/EAB_rer;
-// Auxiliary equation for steady-state output
+
 EAGEAB_rerbar = EAGEAB_rer;
-//Terms of Trade
+
 EAGEAB_tot = EAB_pex*EAGEAB_rer/EAG_pex;
-// Optimal price contract set in foreign markets (FOC), using EAG_pxtilde = EAC_pimtilde
-// EACEAG_pimtilde/EACEAG_pim = EAG_cpim*EAG_thetat/(EAG_thetat-1)*EAGEAC_fx/EAGEAC_gx;
-// Definition of fx
-// EAGEAC_fx = EAC_size/EAG_size*EACEAG_im*EAG_mct+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EACEAG_piim(+1)/(EACEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAGEAC_fx(+1);
-// Definition of gx   
-// EAGEAC_gx = EAGEAC_rer*EACEAG_pim*EAC_size/EAG_size*EACEAG_im+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EACEAG_piim(+1)/(EACEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAGEAC_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAG_px = EAC_pim
-// EACEAG_pim^(1-EAG_thetat) = (1-EAG_xix)*EACEAG_pimtilde^(1-EAG_thetat)+EAG_xix*(EACEAG_pim(-1)/EAC_pic)^(1-EAG_thetat)*(EACEAG_piim(-1)^EAG_chix*EAC_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
-// Intermediate-good price inflation, using EAG_pix = EAC_piim
-// EACEAG_piim = EACEAG_pim/EACEAG_pim(-1)*EAC_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAGEAC_rer = EAG_rer/EAC_rer;
-// Auxiliary equation for steady-state output
+
 EAGEAC_rerbar = EAGEAC_rer;
-//Terms of Trade
+
 EAGEAC_tot = EAC_pex*EAGEAC_rer/EAG_pex;
-// Optimal price contract set in foreign markets (FOC), using EAG_pxtilde = EAD_pimtilde
-// EADEAG_pimtilde/EADEAG_pim = EAG_cpim*EAG_thetat/(EAG_thetat-1)*EAGEAD_fx/EAGEAD_gx;
-// Definition of fx
-// EAGEAD_fx = EAD_size/EAG_size*EADEAG_im*EAG_mct+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EADEAG_piim(+1)/(EADEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAGEAD_fx(+1);
-// Definition of gx   
-// EAGEAD_gx = EAGEAD_rer*EADEAG_pim*EAD_size/EAG_size*EADEAG_im+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EADEAG_piim(+1)/(EADEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAGEAD_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAG_px = EAD_pim
-// EADEAG_pim^(1-EAG_thetat) = (1-EAG_xix)*EADEAG_pimtilde^(1-EAG_thetat)+EAG_xix*(EADEAG_pim(-1)/EAD_pic)^(1-EAG_thetat)*(EADEAG_piim(-1)^EAG_chix*EAD_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
-// Intermediate-good price inflation, using EAG_pix = EAD_piim
-// EADEAG_piim = EADEAG_pim/EADEAG_pim(-1)*EAD_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAGEAD_rer = EAG_rer/EAD_rer;
-// Auxiliary equation for steady-state output
+
 EAGEAD_rerbar = EAGEAD_rer;
-//Terms of Trade
+
 EAGEAD_tot = EAD_pex*EAGEAD_rer/EAG_pex;
-// Optimal price contract set in foreign markets (FOC), using EAG_pxtilde = EAE_pimtilde
-// EAEEAG_pimtilde/EAEEAG_pim = EAG_cpim*EAG_thetat/(EAG_thetat-1)*EAGEAE_fx/EAGEAE_gx;
-// Definition of fx
-// EAGEAE_fx = EAE_size/EAG_size*EAEEAG_im*EAG_mct+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAEEAG_piim(+1)/(EAEEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAGEAE_fx(+1);
-// Definition of gx   
-// EAGEAE_gx = EAGEAE_rer*EAEEAG_pim*EAE_size/EAG_size*EAEEAG_im+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAEEAG_piim(+1)/(EAEEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAGEAE_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAG_px = EAE_pim
-// EAEEAG_pim^(1-EAG_thetat) = (1-EAG_xix)*EAEEAG_pimtilde^(1-EAG_thetat)+EAG_xix*(EAEEAG_pim(-1)/EAE_pic)^(1-EAG_thetat)*(EAEEAG_piim(-1)^EAG_chix*EAE_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
-// Intermediate-good price inflation, using EAG_pix = EAE_piim
-// EAEEAG_piim = EAEEAG_pim/EAEEAG_pim(-1)*EAE_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAGEAE_rer = EAG_rer/EAE_rer;
-// Auxiliary equation for steady-state output
+
 EAGEAE_rerbar = EAGEAE_rer;
-//Terms of Trade
+
 EAGEAE_tot = EAE_pex*EAGEAE_rer/EAG_pex;
-// Optimal price contract set in foreign markets (FOC), using EAG_pxtilde = EAF_pimtilde
-// EAFEAG_pimtilde/EAFEAG_pim = EAG_cpim*EAG_thetat/(EAG_thetat-1)*EAGEAF_fx/EAGEAF_gx;
-// Definition of fx
-// EAGEAF_fx = EAF_size/EAG_size*EAFEAG_im*EAG_mct+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAFEAG_piim(+1)/(EAFEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAGEAF_fx(+1);
-// Definition of gx   
-// EAGEAF_gx = EAGEAF_rer*EAFEAG_pim*EAF_size/EAG_size*EAFEAG_im+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAFEAG_piim(+1)/(EAFEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAGEAF_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAG_px = EAF_pim
-// EAFEAG_pim^(1-EAG_thetat) = (1-EAG_xix)*EAFEAG_pimtilde^(1-EAG_thetat)+EAG_xix*(EAFEAG_pim(-1)/EAF_pic)^(1-EAG_thetat)*(EAFEAG_piim(-1)^EAG_chix*EAF_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
-// Intermediate-good price inflation, using EAG_pix = EAF_piim
-// EAFEAG_piim = EAFEAG_pim/EAFEAG_pim(-1)*EAF_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAGEAF_rer = EAG_rer/EAF_rer;
-// Auxiliary equation for steady-state output
+
 EAGEAF_rerbar = EAGEAF_rer;
-//Terms of Trade
+
 EAGEAF_tot = EAF_pex*EAGEAF_rer/EAG_pex;
-// Optimal price contract set in foreign markets (FOC), using EAG_pxtilde = EAH_pimtilde
-// EAHEAG_pimtilde/EAHEAG_pim = EAG_cpim*EAG_thetat/(EAG_thetat-1)*EAGEAH_fx/EAGEAH_gx;
-// Definition of fx
-// EAGEAH_fx = EAH_size/EAG_size*EAHEAG_im*EAG_mct+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAHEAG_piim(+1)/(EAHEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAGEAH_fx(+1);
-// Definition of gx   
-// EAGEAH_gx = EAGEAH_rer*EAHEAG_pim*EAH_size/EAG_size*EAHEAG_im+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAHEAG_piim(+1)/(EAHEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAGEAH_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAG_px = EAH_pim
-// EAHEAG_pim^(1-EAG_thetat) = (1-EAG_xix)*EAHEAG_pimtilde^(1-EAG_thetat)+EAG_xix*(EAHEAG_pim(-1)/EAH_pic)^(1-EAG_thetat)*(EAHEAG_piim(-1)^EAG_chix*EAH_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
-// Intermediate-good price inflation, using EAG_pix = EAH_piim
-// EAHEAG_piim = EAHEAG_pim/EAHEAG_pim(-1)*EAH_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAGEAH_rer = EAG_rer/EAH_rer;
-// Auxiliary equation for steady-state output
+
 EAGEAH_rerbar = EAGEAH_rer;
-//Terms of Trade
+
 EAGEAH_tot = EAH_pex*EAGEAH_rer/EAG_pex;
-// Optimal price contract set in foreign markets (FOC), using EAG_pxtilde = EAI_pimtilde
-// EAIEAG_pimtilde/EAIEAG_pim = EAG_cpim*EAG_thetat/(EAG_thetat-1)*EAGEAI_fx/EAGEAI_gx;
-// Definition of fx
-// EAGEAI_fx = EAI_size/EAG_size*EAIEAG_im*EAG_mct+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAIEAG_piim(+1)/(EAIEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAGEAI_fx(+1);
-// Definition of gx   
-// EAGEAI_gx = EAGEAI_rer*EAIEAG_pim*EAI_size/EAG_size*EAIEAG_im+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAIEAG_piim(+1)/(EAIEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAGEAI_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAG_px = EAI_pim
-// EAIEAG_pim^(1-EAG_thetat) = (1-EAG_xix)*EAIEAG_pimtilde^(1-EAG_thetat)+EAG_xix*(EAIEAG_pim(-1)/EAI_pic)^(1-EAG_thetat)*(EAIEAG_piim(-1)^EAG_chix*EAI_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
-// Intermediate-good price inflation, using EAG_pix = EAI_piim
-// EAIEAG_piim = EAIEAG_pim/EAIEAG_pim(-1)*EAI_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAGEAI_rer = EAG_rer/EAI_rer;
-// Auxiliary equation for steady-state output
+
 EAGEAI_rerbar = EAGEAI_rer;
-//Terms of Trade
+
 EAGEAI_tot = EAI_pex*EAGEAI_rer/EAG_pex;
-// Optimal price contract set in foreign markets (FOC), using EAG_pxtilde = EAJ_pimtilde
-// EAJEAG_pimtilde/EAJEAG_pim = EAG_cpim*EAG_thetat/(EAG_thetat-1)*EAGEAJ_fx/EAGEAJ_gx;
-// Definition of fx
-// EAGEAJ_fx = EAJ_size/EAG_size*EAJEAG_im*EAG_mct+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAJEAG_piim(+1)/(EAJEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAGEAJ_fx(+1);
-// Definition of gx   
-// EAGEAJ_gx = EAGEAJ_rer*EAJEAG_pim*EAJ_size/EAG_size*EAJEAG_im+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAJEAG_piim(+1)/(EAJEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAGEAJ_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAG_px = EAJ_pim
-// EAJEAG_pim^(1-EAG_thetat) = (1-EAG_xix)*EAJEAG_pimtilde^(1-EAG_thetat)+EAG_xix*(EAJEAG_pim(-1)/EAJ_pic)^(1-EAG_thetat)*(EAJEAG_piim(-1)^EAG_chix*EAJ_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
-// Intermediate-good price inflation, using EAG_pix = EAJ_piim
-// EAJEAG_piim = EAJEAG_pim/EAJEAG_pim(-1)*EAJ_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAGEAJ_rer = EAG_rer/EAJ_rer;
-// Auxiliary equation for steady-state output
+
 EAGEAJ_rerbar = EAGEAJ_rer;
-//Terms of Trade
+
 EAGEAJ_tot = EAJ_pex*EAGEAJ_rer/EAG_pex;
-// Optimal price contract set in foreign markets (FOC), using EAG_pxtilde = EAK_pimtilde
-// EAKEAG_pimtilde/EAKEAG_pim = EAG_cpim*EAG_thetat/(EAG_thetat-1)*EAGEAK_fx/EAGEAK_gx;
-// Definition of fx
-// EAGEAK_fx = EAK_size/EAG_size*EAKEAG_im*EAG_mct+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAKEAG_piim(+1)/(EAKEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAGEAK_fx(+1);
-// Definition of gx   
-// EAGEAK_gx = EAGEAK_rer*EAKEAG_pim*EAK_size/EAG_size*EAKEAG_im+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EAKEAG_piim(+1)/(EAKEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAGEAK_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAG_px = EAK_pim
-// EAKEAG_pim^(1-EAG_thetat) = (1-EAG_xix)*EAKEAG_pimtilde^(1-EAG_thetat)+EAG_xix*(EAKEAG_pim(-1)/EAK_pic)^(1-EAG_thetat)*(EAKEAG_piim(-1)^EAG_chix*EAK_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
-// Intermediate-good price inflation, using EAG_pix = EAK_piim
-// EAKEAG_piim = EAKEAG_pim/EAKEAG_pim(-1)*EAK_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAGEAK_rer = EAG_rer/EAK_rer;
-// Auxiliary equation for steady-state output
+
 EAGEAK_rerbar = EAGEAK_rer;
-//Terms of Trade
+
 EAGEAK_tot = EAK_pex*EAGEAK_rer/EAG_pex;
-// Optimal price contract set in foreign markets (FOC), using EAG_pxtilde = EAL_pimtilde
-// EALEAG_pimtilde/EALEAG_pim = EAG_cpim*EAG_thetat/(EAG_thetat-1)*EAGEAL_fx/EAGEAL_gx;
-// Definition of fx
-// EAGEAL_fx = EAL_size/EAG_size*EALEAG_im*EAG_mct+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EALEAG_piim(+1)/(EALEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAGEAL_fx(+1);
-// Definition of gx   
-// EAGEAL_gx = EAGEAL_rer*EALEAG_pim*EAL_size/EAG_size*EALEAG_im+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(EALEAG_piim(+1)/(EALEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAGEAL_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAG_px = EAL_pim
-// EALEAG_pim^(1-EAG_thetat) = (1-EAG_xix)*EALEAG_pimtilde^(1-EAG_thetat)+EAG_xix*(EALEAG_pim(-1)/EAL_pic)^(1-EAG_thetat)*(EALEAG_piim(-1)^EAG_chix*EAL_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
-// Intermediate-good price inflation, using EAG_pix = EAL_piim
-// EALEAG_piim = EALEAG_pim/EALEAG_pim(-1)*EAL_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAGEAL_rer = EAG_rer/EAL_rer;
-// Auxiliary equation for steady-state output
+
 EAGEAL_rerbar = EAGEAL_rer;
-//Terms of Trade
+
 EAGEAL_tot = EAL_pex*EAGEAL_rer/EAG_pex;
-// Optimal price contract set in foreign markets (FOC), using EAG_pxtilde = RW_pimtilde
-// RWEAG_pimtilde/RWEAG_pim = EAG_cpim*EAG_thetat/(EAG_thetat-1)*EAGRW_fx/EAGRW_gx;
-// Definition of fx
-// EAGRW_fx = RW_size/EAG_size*RWEAG_im*EAG_mct+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(RWEAG_piim(+1)/(RWEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAGRW_fx(+1);
-// Definition of gx   
-// EAGRW_gx = EAGRW_rer*RWEAG_pim*RW_size/EAG_size*RWEAG_im+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(RWEAG_piim(+1)/(RWEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAGRW_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAG_px = RW_pim
-// RWEAG_pim^(1-EAG_thetat) = (1-EAG_xix)*RWEAG_pimtilde^(1-EAG_thetat)+EAG_xix*(RWEAG_pim(-1)/RW_pic)^(1-EAG_thetat)*(RWEAG_piim(-1)^EAG_chix*RW_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
-// Intermediate-good price inflation, using EAG_pix = RW_piim
-// RWEAG_piim = RWEAG_pim/RWEAG_pim(-1)*RW_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAGRW_rer = EAG_rer/RW_rer;
-// Auxiliary equation for steady-state output
+
 EAGRW_rerbar = EAGRW_rer;
-//Terms of Trade
+
 EAGRW_tot = RW_pex*EAGRW_rer/EAG_pex;
-// Optimal price contract set in foreign markets (FOC), using EAG_pxtilde = US_pimtilde
-// USEAG_pimtilde/USEAG_pim = EAG_cpim*EAG_thetat/(EAG_thetat-1)*EAGUS_fx/EAGUS_gx;
-// Definition of fx
-// EAGUS_fx = US_size/EAG_size*USEAG_im*EAG_mct+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(USEAG_piim(+1)/(USEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAGUS_fx(+1);
-// Definition of gx   
-// EAGUS_gx = EAGUS_rer*USEAG_pim*US_size/EAG_size*USEAG_im+EAG_xix*EAG_beta*EAG_lambdai(+1)/EAG_lambdai*(USEAG_piim(+1)/(USEAG_piim^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^(EAG_thetat-1)*EAGUS_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAG_px = US_pim
-// USEAG_pim^(1-EAG_thetat) = (1-EAG_xix)*USEAG_pimtilde^(1-EAG_thetat)+EAG_xix*(USEAG_pim(-1)/US_pic)^(1-EAG_thetat)*(USEAG_piim(-1)^EAG_chix*US_pi4target^(1/4*(1-EAG_chih)))^(1-EAG_thetat);
-// Intermediate-good price inflation, using EAG_pix = US_piim
-// USEAG_piim = USEAG_pim/USEAG_pim(-1)*US_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAGUS_rer = EAG_rer/US_rer;
-// Auxiliary equation for steady-state output
+
 EAGUS_rerbar = EAGUS_rer;
-//Terms of Trade
+
 EAGUS_tot = US_pex*EAGUS_rer/EAG_pex;
-// Total imports 
+
 EAG_im = 
 +EAG_imc
 +EAG_imi
 +EAG_imcg
 +EAG_imig
 ;
-// Total import deflator
+
 EAG_im*EAG_pim  = 
 +EAG_pimc*EAG_imc
 +EAG_pimi*EAG_imi
 +EAG_pimcg*EAG_imcg
 +EAG_pimig*EAG_imig
 ;
-// Effective real exchange rate: double weighting (imports)
+
 EAGEAA_weightim = EAGEAA_rer*EAA_pex*EAGEAA_im/(EAG_pim*EAG_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAGEAA_weightex = EAA_size/EAG_size*EAAEAG_im/EAG_ex*EAGEAA_rer*EAA_py*EAA_y/(EAGEAA_rer*EAA_py*EAA_y
 +EAGEAB_rer*EAB_pex*EAAEAB_im
 +EAGEAC_rer*EAC_pex*EAAEAC_im
@@ -24639,11 +24639,11 @@ EAGEAA_weightex = EAA_size/EAG_size*EAAEAG_im/EAG_ex*EAGEAA_rer*EAA_py*EAA_y/(EA
 +EAGRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAGEAA_weight = EAG_pim*EAG_im/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAA_weightim+EAG_pex*EAG_ex/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAA_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAGEAB_weightim = EAGEAB_rer*EAB_pex*EAGEAB_im/(EAG_pim*EAG_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAGEAB_weightex = EAB_size/EAG_size*EABEAG_im/EAG_ex*EAGEAB_rer*EAB_py*EAB_y/(EAGEAB_rer*EAB_py*EAB_y
 +EAGEAA_rer*EAA_pex*EABEAA_im
 +EAGEAC_rer*EAC_pex*EABEAC_im
@@ -24827,11 +24827,11 @@ EAGEAB_weightex = EAB_size/EAG_size*EABEAG_im/EAG_ex*EAGEAB_rer*EAB_py*EAB_y/(EA
 +EAGRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAGEAB_weight = EAG_pim*EAG_im/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAB_weightim+EAG_pex*EAG_ex/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAB_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAGEAC_weightim = EAGEAC_rer*EAC_pex*EAGEAC_im/(EAG_pim*EAG_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAGEAC_weightex = EAC_size/EAG_size*EACEAG_im/EAG_ex*EAGEAC_rer*EAC_py*EAC_y/(EAGEAC_rer*EAC_py*EAC_y
 +EAGEAA_rer*EAA_pex*EACEAA_im
 +EAGEAB_rer*EAB_pex*EACEAB_im
@@ -25015,11 +25015,11 @@ EAGEAC_weightex = EAC_size/EAG_size*EACEAG_im/EAG_ex*EAGEAC_rer*EAC_py*EAC_y/(EA
 +EAGRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAGEAC_weight = EAG_pim*EAG_im/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAC_weightim+EAG_pex*EAG_ex/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAC_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAGEAD_weightim = EAGEAD_rer*EAD_pex*EAGEAD_im/(EAG_pim*EAG_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAGEAD_weightex = EAD_size/EAG_size*EADEAG_im/EAG_ex*EAGEAD_rer*EAD_py*EAD_y/(EAGEAD_rer*EAD_py*EAD_y
 +EAGEAA_rer*EAA_pex*EADEAA_im
 +EAGEAB_rer*EAB_pex*EADEAB_im
@@ -25203,11 +25203,11 @@ EAGEAD_weightex = EAD_size/EAG_size*EADEAG_im/EAG_ex*EAGEAD_rer*EAD_py*EAD_y/(EA
 +EAGRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAGEAD_weight = EAG_pim*EAG_im/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAD_weightim+EAG_pex*EAG_ex/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAD_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAGEAE_weightim = EAGEAE_rer*EAE_pex*EAGEAE_im/(EAG_pim*EAG_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAGEAE_weightex = EAE_size/EAG_size*EAEEAG_im/EAG_ex*EAGEAE_rer*EAE_py*EAE_y/(EAGEAE_rer*EAE_py*EAE_y
 +EAGEAA_rer*EAA_pex*EAEEAA_im
 +EAGEAB_rer*EAB_pex*EAEEAB_im
@@ -25391,11 +25391,11 @@ EAGEAE_weightex = EAE_size/EAG_size*EAEEAG_im/EAG_ex*EAGEAE_rer*EAE_py*EAE_y/(EA
 +EAGRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAGEAE_weight = EAG_pim*EAG_im/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAE_weightim+EAG_pex*EAG_ex/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAE_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAGEAF_weightim = EAGEAF_rer*EAF_pex*EAGEAF_im/(EAG_pim*EAG_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAGEAF_weightex = EAF_size/EAG_size*EAFEAG_im/EAG_ex*EAGEAF_rer*EAF_py*EAF_y/(EAGEAF_rer*EAF_py*EAF_y
 +EAGEAA_rer*EAA_pex*EAFEAA_im
 +EAGEAB_rer*EAB_pex*EAFEAB_im
@@ -25579,11 +25579,11 @@ EAGEAF_weightex = EAF_size/EAG_size*EAFEAG_im/EAG_ex*EAGEAF_rer*EAF_py*EAF_y/(EA
 +EAGRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAGEAF_weight = EAG_pim*EAG_im/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAF_weightim+EAG_pex*EAG_ex/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAF_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAGEAH_weightim = EAGEAH_rer*EAH_pex*EAGEAH_im/(EAG_pim*EAG_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAGEAH_weightex = EAH_size/EAG_size*EAHEAG_im/EAG_ex*EAGEAH_rer*EAH_py*EAH_y/(EAGEAH_rer*EAH_py*EAH_y
 +EAGEAA_rer*EAA_pex*EAHEAA_im
 +EAGEAB_rer*EAB_pex*EAHEAB_im
@@ -25767,11 +25767,11 @@ EAGEAH_weightex = EAH_size/EAG_size*EAHEAG_im/EAG_ex*EAGEAH_rer*EAH_py*EAH_y/(EA
 +EAGRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAGEAH_weight = EAG_pim*EAG_im/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAH_weightim+EAG_pex*EAG_ex/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAH_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAGEAI_weightim = EAGEAI_rer*EAI_pex*EAGEAI_im/(EAG_pim*EAG_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAGEAI_weightex = EAI_size/EAG_size*EAIEAG_im/EAG_ex*EAGEAI_rer*EAI_py*EAI_y/(EAGEAI_rer*EAI_py*EAI_y
 +EAGEAA_rer*EAA_pex*EAIEAA_im
 +EAGEAB_rer*EAB_pex*EAIEAB_im
@@ -25955,11 +25955,11 @@ EAGEAI_weightex = EAI_size/EAG_size*EAIEAG_im/EAG_ex*EAGEAI_rer*EAI_py*EAI_y/(EA
 +EAGRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAGEAI_weight = EAG_pim*EAG_im/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAI_weightim+EAG_pex*EAG_ex/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAI_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAGEAJ_weightim = EAGEAJ_rer*EAJ_pex*EAGEAJ_im/(EAG_pim*EAG_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAGEAJ_weightex = EAJ_size/EAG_size*EAJEAG_im/EAG_ex*EAGEAJ_rer*EAJ_py*EAJ_y/(EAGEAJ_rer*EAJ_py*EAJ_y
 +EAGEAA_rer*EAA_pex*EAJEAA_im
 +EAGEAB_rer*EAB_pex*EAJEAB_im
@@ -26143,11 +26143,11 @@ EAGEAJ_weightex = EAJ_size/EAG_size*EAJEAG_im/EAG_ex*EAGEAJ_rer*EAJ_py*EAJ_y/(EA
 +EAGRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAGEAJ_weight = EAG_pim*EAG_im/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAJ_weightim+EAG_pex*EAG_ex/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAJ_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAGEAK_weightim = EAGEAK_rer*EAK_pex*EAGEAK_im/(EAG_pim*EAG_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAGEAK_weightex = EAK_size/EAG_size*EAKEAG_im/EAG_ex*EAGEAK_rer*EAK_py*EAK_y/(EAGEAK_rer*EAK_py*EAK_y
 +EAGEAA_rer*EAA_pex*EAKEAA_im
 +EAGEAB_rer*EAB_pex*EAKEAB_im
@@ -26331,11 +26331,11 @@ EAGEAK_weightex = EAK_size/EAG_size*EAKEAG_im/EAG_ex*EAGEAK_rer*EAK_py*EAK_y/(EA
 +EAGRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAGEAK_weight = EAG_pim*EAG_im/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAK_weightim+EAG_pex*EAG_ex/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAK_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAGEAL_weightim = EAGEAL_rer*EAL_pex*EAGEAL_im/(EAG_pim*EAG_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAGEAL_weightex = EAL_size/EAG_size*EALEAG_im/EAG_ex*EAGEAL_rer*EAL_py*EAL_y/(EAGEAL_rer*EAL_py*EAL_y
 +EAGEAA_rer*EAA_pex*EALEAA_im
 +EAGEAB_rer*EAB_pex*EALEAB_im
@@ -26519,11 +26519,11 @@ EAGEAL_weightex = EAL_size/EAG_size*EALEAG_im/EAG_ex*EAGEAL_rer*EAL_py*EAL_y/(EA
 +EAGRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAGEAL_weight = EAG_pim*EAG_im/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAL_weightim+EAG_pex*EAG_ex/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGEAL_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAGRW_weightim = EAGRW_rer*RW_pex*EAGRW_im/(EAG_pim*EAG_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAGRW_weightex = RW_size/EAG_size*RWEAG_im/EAG_ex*EAGRW_rer*RW_py*RW_y/(EAGRW_rer*RW_py*RW_y
 +EAGEAA_rer*EAA_pex*RWEAA_im
 +EAGEAB_rer*EAB_pex*RWEAB_im
@@ -26707,11 +26707,11 @@ EAGRW_weightex = RW_size/EAG_size*RWEAG_im/EAG_ex*EAGRW_rer*RW_py*RW_y/(EAGRW_re
 +EAGRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAGRW_weight = EAG_pim*EAG_im/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGRW_weightim+EAG_pex*EAG_ex/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGRW_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAGUS_weightim = EAGUS_rer*US_pex*EAGUS_im/(EAG_pim*EAG_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAGUS_weightex = US_size/EAG_size*USEAG_im/EAG_ex*EAGUS_rer*US_py*US_y/(EAGUS_rer*US_py*US_y
 +EAGEAA_rer*EAA_pex*USEAA_im
 +EAGEAB_rer*EAB_pex*USEAB_im
@@ -26895,9 +26895,9 @@ EAGUS_weightex = US_size/EAG_size*USEAG_im/EAG_ex*EAGUS_rer*US_py*US_y/(EAGUS_re
 +EAGUS_rer*US_pex*RWUS_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAGUS_weight = EAG_pim*EAG_im/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGUS_weightim+EAG_pex*EAG_ex/(EAG_pim*EAG_im+EAG_pex*EAG_ex)*EAGUS_weightex;
-// Effective real exchange rate
+
 EAG_reer = 1
 *EAGEAA_rer^EAGEAA_weight
 *EAGEAB_rer^EAGEAB_weight
@@ -26913,7 +26913,7 @@ EAG_reer = 1
 *EAGRW_rer^EAGRW_weight
 *EAGUS_rer^EAGUS_weight
 ;
-// Effective terms of trade
+
 EAG_etot = 1
 *EAGEAA_tot^EAGEAA_weight
 *EAGEAB_tot^EAGEAB_weight
@@ -26929,10 +26929,10 @@ EAG_etot = 1
 *EAGRW_tot^EAGRW_weight
 *EAGUS_tot^EAGUS_weight
 ;
-//-----------------
-// Final-good firms
-//-----------------
-// Private consumption good (import)
+
+
+
+
 EAG_imc^((EAG_mumc-1)/EAG_mumc) =
 +EAGEAA_numc ^(1/EAG_mumc)*EAGEAA_imc^(1-1/EAG_mumc)
 +EAGEAB_numc ^(1/EAG_mumc)*EAGEAB_imc^(1-1/EAG_mumc)
@@ -26960,27 +26960,27 @@ EAG_imc^((EAG_mumc-1)/EAG_mumc) =
 -EAGRW_numc
 -EAGUS_numc
 )^(1/EAG_mumc)*EAGEAE_imc^(1-1/EAG_mumc);
-// Demand for bilateral consumption import goods
+
 EAGEAA_imc = EAGEAA_numc*((EAA_pex*EAGEAA_rer)/EAG_pimc)^(-EAG_mumc)*EAG_imc;
-// Demand for bilateral consumption import goods
+
 EAGEAB_imc = EAGEAB_numc*((EAB_pex*EAGEAB_rer)/EAG_pimc)^(-EAG_mumc)*EAG_imc;
-// Demand for bilateral consumption import goods
+
 EAGEAC_imc = EAGEAC_numc*((EAC_pex*EAGEAC_rer)/EAG_pimc)^(-EAG_mumc)*EAG_imc;
-// Demand for bilateral consumption import goods
+
 EAGEAD_imc = EAGEAD_numc*((EAD_pex*EAGEAD_rer)/EAG_pimc)^(-EAG_mumc)*EAG_imc;
-// Demand for bilateral consumption import goods
+
 EAGEAF_imc = EAGEAF_numc*((EAF_pex*EAGEAF_rer)/EAG_pimc)^(-EAG_mumc)*EAG_imc;
-// Demand for bilateral consumption import goods
+
 EAGEAI_imc = EAGEAI_numc*((EAI_pex*EAGEAI_rer)/EAG_pimc)^(-EAG_mumc)*EAG_imc;
-// Demand for bilateral consumption import goods
+
 EAGEAJ_imc = EAGEAJ_numc*((EAJ_pex*EAGEAJ_rer)/EAG_pimc)^(-EAG_mumc)*EAG_imc;
-// Demand for bilateral consumption import goods
+
 EAGEAK_imc = EAGEAK_numc*((EAK_pex*EAGEAK_rer)/EAG_pimc)^(-EAG_mumc)*EAG_imc;
-// Demand for bilateral consumption import goods
+
 EAGEAL_imc = EAGEAL_numc*((EAL_pex*EAGEAL_rer)/EAG_pimc)^(-EAG_mumc)*EAG_imc;
-// Demand for bilateral consumption import goods
+
 EAGRW_imc = EAGRW_numc*((RW_pex*EAGRW_rer)/EAG_pimc)^(-EAG_mumc)*EAG_imc;
-// Demand for bilateral consumption import goods
+
 EAGUS_imc = EAGUS_numc*((US_pex*EAGUS_rer)/EAG_pimc)^(-EAG_mumc)*EAG_imc;
 EAGEAE_imc = (1
 -EAGEAA_numc
@@ -26996,7 +26996,7 @@ EAGEAE_imc = (1
 -EAGRW_numc
 -EAGUS_numc
 )*((EAE_pex*EAGEAE_rer)/EAG_pimc)^(-EAG_mumc)*EAG_imc;
-// Price of the consumption good (import)
+
 EAG_pimc^(1-EAG_mumc) =
 +EAGEAA_numc * (EAA_pex*EAGEAA_rer)^(1-EAG_mumc)
 +EAGEAB_numc * (EAB_pex*EAGEAB_rer)^(1-EAG_mumc)
@@ -27024,9 +27024,9 @@ EAG_pimc^(1-EAG_mumc) =
 -EAGRW_numc
 -EAGUS_numc
 )*(EAE_pex*EAGEAE_rer)^(1-EAG_mumc);
-// Private consumption good (import) inflation
+
 EAG_piimc = EAG_pimc/EAG_pimc(-1)*EAG_pic;
-// Private consumption good (import)
+
 EAG_imi^((EAG_mumi-1)/EAG_mumi) =
 +EAGEAA_numi ^(1/EAG_mumi)*EAGEAA_imi^(1-1/EAG_mumi)
 +EAGEAB_numi ^(1/EAG_mumi)*EAGEAB_imi^(1-1/EAG_mumi)
@@ -27054,27 +27054,27 @@ EAG_imi^((EAG_mumi-1)/EAG_mumi) =
 -EAGRW_numi
 -EAGUS_numi
 )^(1/EAG_mumi)*EAGEAE_imi^(1-1/EAG_mumi);
-// Demand for bilateral consumption import goods
+
 EAGEAA_imi = EAGEAA_numi*((EAA_pex*EAGEAA_rer)/EAG_pimi)^(-EAG_mumi)*EAG_imi;
-// Demand for bilateral consumption import goods
+
 EAGEAB_imi = EAGEAB_numi*((EAB_pex*EAGEAB_rer)/EAG_pimi)^(-EAG_mumi)*EAG_imi;
-// Demand for bilateral consumption import goods
+
 EAGEAC_imi = EAGEAC_numi*((EAC_pex*EAGEAC_rer)/EAG_pimi)^(-EAG_mumi)*EAG_imi;
-// Demand for bilateral consumption import goods
+
 EAGEAD_imi = EAGEAD_numi*((EAD_pex*EAGEAD_rer)/EAG_pimi)^(-EAG_mumi)*EAG_imi;
-// Demand for bilateral consumption import goods
+
 EAGEAF_imi = EAGEAF_numi*((EAF_pex*EAGEAF_rer)/EAG_pimi)^(-EAG_mumi)*EAG_imi;
-// Demand for bilateral consumption import goods
+
 EAGEAI_imi = EAGEAI_numi*((EAI_pex*EAGEAI_rer)/EAG_pimi)^(-EAG_mumi)*EAG_imi;
-// Demand for bilateral consumption import goods
+
 EAGEAJ_imi = EAGEAJ_numi*((EAJ_pex*EAGEAJ_rer)/EAG_pimi)^(-EAG_mumi)*EAG_imi;
-// Demand for bilateral consumption import goods
+
 EAGEAK_imi = EAGEAK_numi*((EAK_pex*EAGEAK_rer)/EAG_pimi)^(-EAG_mumi)*EAG_imi;
-// Demand for bilateral consumption import goods
+
 EAGEAL_imi = EAGEAL_numi*((EAL_pex*EAGEAL_rer)/EAG_pimi)^(-EAG_mumi)*EAG_imi;
-// Demand for bilateral consumption import goods
+
 EAGRW_imi = EAGRW_numi*((RW_pex*EAGRW_rer)/EAG_pimi)^(-EAG_mumi)*EAG_imi;
-// Demand for bilateral consumption import goods
+
 EAGUS_imi = EAGUS_numi*((US_pex*EAGUS_rer)/EAG_pimi)^(-EAG_mumi)*EAG_imi;
 EAGEAE_imi = (1
 -EAGEAA_numi
@@ -27090,7 +27090,7 @@ EAGEAE_imi = (1
 -EAGRW_numi
 -EAGUS_numi
 )*((EAE_pex*EAGEAE_rer)/EAG_pimi)^(-EAG_mumi)*EAG_imi;
-// Price of the consumption good (import)
+
 EAG_pimi^(1-EAG_mumi) =
 +EAGEAA_numi * (EAA_pex*EAGEAA_rer)^(1-EAG_mumi)
 +EAGEAB_numi * (EAB_pex*EAGEAB_rer)^(1-EAG_mumi)
@@ -27118,9 +27118,9 @@ EAG_pimi^(1-EAG_mumi) =
 -EAGRW_numi
 -EAGUS_numi
 )*(EAE_pex*EAGEAE_rer)^(1-EAG_mumi);
-// Private consumption good (import) inflation
+
 EAG_piimi = EAG_pimi/EAG_pimi(-1)*EAG_pic;
-// Private consumption good (import)
+
 EAG_imcg^((EAG_mumcg-1)/EAG_mumcg) =
 +EAGEAA_numcg ^(1/EAG_mumcg)*EAGEAA_imcg^(1-1/EAG_mumcg)
 +EAGEAB_numcg ^(1/EAG_mumcg)*EAGEAB_imcg^(1-1/EAG_mumcg)
@@ -27148,27 +27148,27 @@ EAG_imcg^((EAG_mumcg-1)/EAG_mumcg) =
 -EAGRW_numcg
 -EAGUS_numcg
 )^(1/EAG_mumcg)*EAGEAE_imcg^(1-1/EAG_mumcg);
-// Demand for bilateral consumption import goods
+
 EAGEAA_imcg = EAGEAA_numcg*((EAA_pex*EAGEAA_rer)/EAG_pimcg)^(-EAG_mumcg)*EAG_imcg;
-// Demand for bilateral consumption import goods
+
 EAGEAB_imcg = EAGEAB_numcg*((EAB_pex*EAGEAB_rer)/EAG_pimcg)^(-EAG_mumcg)*EAG_imcg;
-// Demand for bilateral consumption import goods
+
 EAGEAC_imcg = EAGEAC_numcg*((EAC_pex*EAGEAC_rer)/EAG_pimcg)^(-EAG_mumcg)*EAG_imcg;
-// Demand for bilateral consumption import goods
+
 EAGEAD_imcg = EAGEAD_numcg*((EAD_pex*EAGEAD_rer)/EAG_pimcg)^(-EAG_mumcg)*EAG_imcg;
-// Demand for bilateral consumption import goods
+
 EAGEAF_imcg = EAGEAF_numcg*((EAF_pex*EAGEAF_rer)/EAG_pimcg)^(-EAG_mumcg)*EAG_imcg;
-// Demand for bilateral consumption import goods
+
 EAGEAI_imcg = EAGEAI_numcg*((EAI_pex*EAGEAI_rer)/EAG_pimcg)^(-EAG_mumcg)*EAG_imcg;
-// Demand for bilateral consumption import goods
+
 EAGEAJ_imcg = EAGEAJ_numcg*((EAJ_pex*EAGEAJ_rer)/EAG_pimcg)^(-EAG_mumcg)*EAG_imcg;
-// Demand for bilateral consumption import goods
+
 EAGEAK_imcg = EAGEAK_numcg*((EAK_pex*EAGEAK_rer)/EAG_pimcg)^(-EAG_mumcg)*EAG_imcg;
-// Demand for bilateral consumption import goods
+
 EAGEAL_imcg = EAGEAL_numcg*((EAL_pex*EAGEAL_rer)/EAG_pimcg)^(-EAG_mumcg)*EAG_imcg;
-// Demand for bilateral consumption import goods
+
 EAGRW_imcg = EAGRW_numcg*((RW_pex*EAGRW_rer)/EAG_pimcg)^(-EAG_mumcg)*EAG_imcg;
-// Demand for bilateral consumption import goods
+
 EAGUS_imcg = EAGUS_numcg*((US_pex*EAGUS_rer)/EAG_pimcg)^(-EAG_mumcg)*EAG_imcg;
 EAGEAE_imcg = (1
 -EAGEAA_numcg
@@ -27184,7 +27184,7 @@ EAGEAE_imcg = (1
 -EAGRW_numcg
 -EAGUS_numcg
 )*((EAE_pex*EAGEAE_rer)/EAG_pimcg)^(-EAG_mumcg)*EAG_imcg;
-// Price of the consumption good (import)
+
 EAG_pimcg^(1-EAG_mumcg) =
 +EAGEAA_numcg * (EAA_pex*EAGEAA_rer)^(1-EAG_mumcg)
 +EAGEAB_numcg * (EAB_pex*EAGEAB_rer)^(1-EAG_mumcg)
@@ -27212,9 +27212,9 @@ EAG_pimcg^(1-EAG_mumcg) =
 -EAGRW_numcg
 -EAGUS_numcg
 )*(EAE_pex*EAGEAE_rer)^(1-EAG_mumcg);
-// Private consumption good (import) inflation
+
 EAG_piimcg = EAG_pimcg/EAG_pimcg(-1)*EAG_pic;
-// Private consumption good (import)
+
 EAG_imig^((EAG_mumig-1)/EAG_mumig) =
 +EAGEAA_numig ^(1/EAG_mumig)*EAGEAA_imig^(1-1/EAG_mumig)
 +EAGEAB_numig ^(1/EAG_mumig)*EAGEAB_imig^(1-1/EAG_mumig)
@@ -27242,27 +27242,27 @@ EAG_imig^((EAG_mumig-1)/EAG_mumig) =
 -EAGRW_numig
 -EAGUS_numig
 )^(1/EAG_mumig)*EAGEAE_imig^(1-1/EAG_mumig);
-// Demand for bilateral consumption import goods
+
 EAGEAA_imig = EAGEAA_numig*((EAA_pex*EAGEAA_rer)/EAG_pimig)^(-EAG_mumig)*EAG_imig;
-// Demand for bilateral consumption import goods
+
 EAGEAB_imig = EAGEAB_numig*((EAB_pex*EAGEAB_rer)/EAG_pimig)^(-EAG_mumig)*EAG_imig;
-// Demand for bilateral consumption import goods
+
 EAGEAC_imig = EAGEAC_numig*((EAC_pex*EAGEAC_rer)/EAG_pimig)^(-EAG_mumig)*EAG_imig;
-// Demand for bilateral consumption import goods
+
 EAGEAD_imig = EAGEAD_numig*((EAD_pex*EAGEAD_rer)/EAG_pimig)^(-EAG_mumig)*EAG_imig;
-// Demand for bilateral consumption import goods
+
 EAGEAF_imig = EAGEAF_numig*((EAF_pex*EAGEAF_rer)/EAG_pimig)^(-EAG_mumig)*EAG_imig;
-// Demand for bilateral consumption import goods
+
 EAGEAI_imig = EAGEAI_numig*((EAI_pex*EAGEAI_rer)/EAG_pimig)^(-EAG_mumig)*EAG_imig;
-// Demand for bilateral consumption import goods
+
 EAGEAJ_imig = EAGEAJ_numig*((EAJ_pex*EAGEAJ_rer)/EAG_pimig)^(-EAG_mumig)*EAG_imig;
-// Demand for bilateral consumption import goods
+
 EAGEAK_imig = EAGEAK_numig*((EAK_pex*EAGEAK_rer)/EAG_pimig)^(-EAG_mumig)*EAG_imig;
-// Demand for bilateral consumption import goods
+
 EAGEAL_imig = EAGEAL_numig*((EAL_pex*EAGEAL_rer)/EAG_pimig)^(-EAG_mumig)*EAG_imig;
-// Demand for bilateral consumption import goods
+
 EAGRW_imig = EAGRW_numig*((RW_pex*EAGRW_rer)/EAG_pimig)^(-EAG_mumig)*EAG_imig;
-// Demand for bilateral consumption import goods
+
 EAGUS_imig = EAGUS_numig*((US_pex*EAGUS_rer)/EAG_pimig)^(-EAG_mumig)*EAG_imig;
 EAGEAE_imig = (1
 -EAGEAA_numig
@@ -27278,7 +27278,7 @@ EAGEAE_imig = (1
 -EAGRW_numig
 -EAGUS_numig
 )*((EAE_pex*EAGEAE_rer)/EAG_pimig)^(-EAG_mumig)*EAG_imig;
-// Price of the consumption good (import)
+
 EAG_pimig^(1-EAG_mumig) =
 +EAGEAA_numig * (EAA_pex*EAGEAA_rer)^(1-EAG_mumig)
 +EAGEAB_numig * (EAB_pex*EAGEAB_rer)^(1-EAG_mumig)
@@ -27306,15 +27306,15 @@ EAG_pimig^(1-EAG_mumig) =
 -EAGRW_numig
 -EAGUS_numig
 )*(EAE_pex*EAGEAE_rer)^(1-EAG_mumig);
-// Private consumption good (import) inflation
+
 EAG_piimig = EAG_pimig/EAG_pimig(-1)*EAG_pic;
-// Private consumption good (import) inflation
+
 EAG_piimc4 = EAG_pimc/EAG_pimc(-4)*EAG_pic4;
-// Private consumption good (import) inflation
+
 EAG_piex4 = EAG_pex/EAG_pex(-4)*EAG_pic4;
-// Wedge between aggregate demand and production, using EAG_x = EAH_size/EAG_size*EAH_im
+
 EAG_yst = EAG_sh*EAG_ht+EAG_sx*EAG_ex;
-// Aggregate demand for bilateral imported intermediate goods
+
 EAGEAA_im = 
 +EAGEAA_imc
 +EAGEAA_imi
@@ -27393,18 +27393,18 @@ EAGUS_im =
 +EAGUS_imcg
 +EAGUS_imig
 ;
-// Private consumption good firm
-// Private consumption good (tradable)
+
+
 EAG_ttc^((EAG_mutc-1)/EAG_mutc) = (EAG_nutc)^(1/EAG_mutc)*EAG_htc^(1-1/EAG_mutc)+(1-EAG_nutc)^(1/EAG_mutc)*EAG_imc^(1-1/EAG_mutc);
-// Private consumption good  (total)
+
 EAG_qc^((EAG_muc-1)/EAG_muc) = (EAG_nuc)^(1/EAG_muc)*EAG_ttc^(1-1/EAG_muc)+(1-EAG_nuc)^(1/EAG_muc)*EAG_ntc^(1-1/EAG_muc);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAG_ntc = (1-EAG_nuc)*(EAG_pnt)^(-EAG_muc)*EAG_qc;
-// Price of the consumption good (tradable)  
+
 EAG_pttc^(1-EAG_mutc) = (EAG_nutc)*EAG_pht^(1-EAG_mutc)+(1-EAG_nutc)*EAG_pimc^(1-EAG_mutc);
-// Price of the consumption good 
+
 1^(1-EAG_muc) = (EAG_nuc)*EAG_pttc^(1-EAG_muc)+(1-EAG_nuc)*EAG_pnt^(1-EAG_muc);
-// Demand for domestic intermediate goods
+
 EAG_htc = EAG_nutc*(EAG_pht/EAG_pttc)^(-EAG_mutc)*EAG_ttc;
 EAGEAA_gammaimc = 0;
 EAGEAA_gammaimcdag = 1;
@@ -27432,20 +27432,20 @@ EAGRW_gammaimc = 0;
 EAGRW_gammaimcdag = 1;
 EAGUS_gammaimc = 0;
 EAGUS_gammaimcdag = 1;
-// Private consumption good (tradable)
+
 EAG_tti^((EAG_muti-1)/EAG_muti) = (EAG_nuti)^(1/EAG_muti)*EAG_hti^(1-1/EAG_muti)+(1-EAG_nuti)^(1/EAG_muti)*EAG_imi^(1-1/EAG_muti);
-// Private consumption good  (total)
+
 EAG_qi^((EAG_mui-1)/EAG_mui) = (EAG_nui)^(1/EAG_mui)*EAG_tti^(1-1/EAG_mui)+(1-EAG_nui)^(1/EAG_mui)*EAG_nti^(1-1/EAG_mui);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAG_nti = (1-EAG_nui)*(EAG_pnt/EAG_pi)^(-EAG_mui)*EAG_qi;
-// Price of the consumption good (tradable)  
+
 EAG_ptti^(1-EAG_muti) = (EAG_nuti)*EAG_pht^(1-EAG_muti)+(1-EAG_nuti)*EAG_pimi^(1-EAG_muti);
-// Price of the consumption good 
+
 EAG_pi^(1-EAG_mui) = (EAG_nui)*EAG_ptti^(1-EAG_mui)+(1-EAG_nui)*EAG_pnt^(1-EAG_mui);
-// Auxiliary equation for the price of the investment good in steady state
-// this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
+
+
 EAG_pibar = EAG_pi;
-// Demand for domestic intermediate goods
+
 EAG_hti = EAG_nuti*(EAG_pht/EAG_ptti)^(-EAG_muti)*EAG_tti;
 EAGEAA_gammaimi = 0;
 EAGEAA_gammaimidag = 1;
@@ -27473,17 +27473,17 @@ EAGRW_gammaimi = 0;
 EAGRW_gammaimidag = 1;
 EAGUS_gammaimi = 0;
 EAGUS_gammaimidag = 1;
-// Private consumption good (tradable)
+
 EAG_ttcg^((EAG_mutcg-1)/EAG_mutcg) = (EAG_nutcg)^(1/EAG_mutcg)*EAG_htcg^(1-1/EAG_mutcg)+(1-EAG_nutcg)^(1/EAG_mutcg)*EAG_imcg^(1-1/EAG_mutcg);
-// Private consumption good  (total)
+
 EAG_qcg^((EAG_mucg-1)/EAG_mucg) = (EAG_nucg)^(1/EAG_mucg)*EAG_ttcg^(1-1/EAG_mucg)+(1-EAG_nucg)^(1/EAG_mucg)*EAG_ntcg^(1-1/EAG_mucg);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAG_ntcg = (1-EAG_nucg)*(EAG_pnt/EAG_pcg)^(-EAG_mucg)*EAG_qcg;
-// Price of the consumption good (tradable)  
+
 EAG_pttcg^(1-EAG_mutcg) = (EAG_nutcg)*EAG_pht^(1-EAG_mutcg)+(1-EAG_nutcg)*EAG_pimcg^(1-EAG_mutcg);
-// Price of the consumption good 
+
 EAG_pcg^(1-EAG_mucg) = (EAG_nucg)*EAG_pttcg^(1-EAG_mucg)+(1-EAG_nucg)*EAG_pnt^(1-EAG_mucg);
-// Demand for domestic intermediate goods
+
 EAG_htcg = EAG_nutcg*(EAG_pht/EAG_pttcg)^(-EAG_mutcg)*EAG_ttcg;
 EAGEAA_gammaimcg = 0;
 EAGEAA_gammaimcgdag = 1;
@@ -27511,17 +27511,17 @@ EAGRW_gammaimcg = 0;
 EAGRW_gammaimcgdag = 1;
 EAGUS_gammaimcg = 0;
 EAGUS_gammaimcgdag = 1;
-// Private consumption good (tradable)
+
 EAG_ttig^((EAG_mutig-1)/EAG_mutig) = (EAG_nutig)^(1/EAG_mutig)*EAG_htig^(1-1/EAG_mutig)+(1-EAG_nutig)^(1/EAG_mutig)*EAG_imig^(1-1/EAG_mutig);
-// Private consumption good  (total)
+
 EAG_qig^((EAG_muig-1)/EAG_muig) = (EAG_nuig)^(1/EAG_muig)*EAG_ttig^(1-1/EAG_muig)+(1-EAG_nuig)^(1/EAG_muig)*EAG_ntig^(1-1/EAG_muig);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAG_ntig = (1-EAG_nuig)*(EAG_pnt/EAG_pig)^(-EAG_muig)*EAG_qig;
-// Price of the consumption good (tradable)  
+
 EAG_pttig^(1-EAG_mutig) = (EAG_nutig)*EAG_pht^(1-EAG_mutig)+(1-EAG_nutig)*EAG_pimig^(1-EAG_mutig);
-// Price of the consumption good 
+
 EAG_pig^(1-EAG_muig) = (EAG_nuig)*EAG_pttig^(1-EAG_muig)+(1-EAG_nuig)*EAG_pnt^(1-EAG_muig);
-// Demand for domestic intermediate goods
+
 EAG_htig = EAG_nutig*(EAG_pht/EAG_pttig)^(-EAG_mutig)*EAG_ttig;
 EAGEAA_gammaimig = 0;
 EAGEAA_gammaimigdag = 1;
@@ -27549,7 +27549,7 @@ EAGRW_gammaimig = 0;
 EAGRW_gammaimigdag = 1;
 EAGUS_gammaimig = 0;
 EAGUS_gammaimigdag = 1;
-// Trade balance
+
 EAG_tb =
 +EAG_pex*EAA_size/EAG_size*EAAEAG_im
 -EAA_pex*EAGEAA_rer*EAGEAA_im
@@ -27578,7 +27578,7 @@ EAG_tb =
 +EAG_pex*US_size/EAG_size*USEAG_im
 -US_pex*EAGUS_rer*EAGUS_im
 ;
-// Aggregate exports (volume)
+
 EAG_ex =
 +EAA_size/EAG_size*EAAEAG_im
 +EAB_size/EAG_size*EABEAG_im
@@ -27594,131 +27594,131 @@ EAG_ex =
 +RW_size/EAG_size*RWEAG_im
 +US_size/EAG_size*USEAG_im
 ;
-//-------------
-//-------------
-// Fiscal and monetary authorities
-//-------------
-//-------------
-//-------------
-// Fiscal authority
-//-------------
-// Government budget constraint, using EAG_pg = EAG_pht
-// TODO: check the (1-EAG_gammab(-1)) adjustment here, which is not in the fiscal extention
+
+
+
+
+
+
+
+
+
+
 	EAG_pcg(-1)*EAG_cg(-1)+EAG_pig(-1)*EAG_ig(-1)+EAG_tr(-1)
 	+EAG_b(-1)*EAG_pic(-1)^(-1)+EAG_m(-2)*EAG_pic(-1)^(-1) = EAG_tauc(-1)*EAG_c(-1)+(EAG_taun(-1)+EAG_tauwh(-1))*(EAG_wi(-1)*EAG_ndi(-1)+EAG_wj(-1)*EAG_ndj(-1))+EAG_tauwf(-1)*EAG_w(-1)*EAG_nd(-1)+EAG_tauk(-1)*(EAG_rk(-1)*EAG_u(-1)-(EAG_gammau(-1)+EAG_delta)*EAG_pi(-1))*EAG_k(-1)+EAG_taud(-1)*EAG_d(-1)+EAG_t(-1)+(EAG_r(-1)*(1-EAG_gammab(-1)))^(-1)*EAG_b+EAG_m(-1);
-// Government spending, using EAG_pg = EAG_pht
+
 EAG_pcg*EAG_cg = EAG_cgy*EAG_pybar*EAG_ybar;
 EAG_pig*EAG_ig = EAG_igy*EAG_pybar*EAG_ybar;
 EAG_t = 0;
 EAG_b = EAG_bytarget*EAG_pybar*EAG_ybar;
-// Auxiliary equation for steady-state output
+
 EAG_ybar = EAG_y;
-// Auxiliary equation for steady-state output
+
 EAG_ytbar = EAG_yst;
-// Auxiliary equation for steady-state output
+
 EAG_ynbar = EAG_ysn;
-// Auxiliary equation for steady-state output deflator
+
 EAG_pybar = EAG_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
+
 EAG_trybar = EAG_tr/(EAG_pybar*EAG_ybar);
-// Auxiliary equation for determining the distribution of lump-sum taxes
+
 EAG_ti = EAG_upsilont*EAG_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
 upsilont = 0:            ti = 0, tj = 1/omega t
 upsilont = 1:            ti = tj = t
 upsilont = 1/(1-omega):  ti = 1/(1-omega) t, tj = 0. */
-// Auxiliary equation for determining the distribution of lump-sum transfers
+
 EAG_tri = EAG_upsilontr*EAG_tr;
 /* Note: Valid parameter space: 0 <= upsilontr <= 1/(1-omega) with
 upsilontr = 0:            tri = 0, trj = 1/omega tr
 upsilontr = 1:            tri = trj = tr
 upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
-//-------------
-// Monetary authority
-//-------------
+
+
+
 	EAG_r = EAL_r;
 EAG_pic4 = EAG_pi4target;
 EAG_rr-1 = EAG_r/EAG_pi4target^(1/4)-1;
-// Equilibrium real interest rate
+
 EAG_rrstar-1 = 1/EAG_beta-1;
-//-------------
-//-------------
-// Aggregation, market clearing and resource constraint
-//-------------
-//-------------
-//-------------
-// Aggregation
-//-------------
-// Aggregate consumption
+
+
+
+
+
+
+
+
+
 EAG_c = (1-EAG_omega)*EAG_ci+EAG_omega*EAG_cj;
-// Aggregate money holdings
+
 EAG_m = (1-EAG_omega)*EAG_mi+EAG_omega*EAG_mj;
-// Aggregate capital stock
+
 EAG_k = (1-EAG_omega)*EAG_ki;
-// Aggregate investment
+
 EAG_i = (1-EAG_omega)*EAG_ii;
-// Aggregate lump-sum transfers
+
 EAG_trj = 
 1/EAG_omega*EAG_tr-(1-EAG_omega)/EAG_omega*EAG_tri
 ;
-// Aggregate lump-sum taxes
+
 EAG_tj = 
 1/EAG_omega*EAG_t-(1-EAG_omega)/EAG_omega*EAG_ti
 ;
-// Aggregate transaction costs
+
 EAG_gammav = (1-EAG_omega)*EAG_ci*EAG_gammavi+EAG_omega*EAG_cj*EAG_gammavj;
-//-------------
-// Market clearing
-//-------------
-// Labour markets for household I
-// Wedge between labour demand/hours worked and labour supply
+
+
+
+
+
 EAG_ni = EAG_si*EAG_ndi;
-// Wage dispersion
+
 EAG_si = (1-EAG_xii)*(EAG_witilde/EAG_wi)^(-EAG_etai)+EAG_xii*(EAG_wi(-1)/EAG_wi)^(-EAG_etai)*(EAG_pic/(EAG_pic(-1)^EAG_chii*EAG_pi4target^(1/4*(1-EAG_chii))))^(EAG_etai)*EAG_si(-1);
-// Labour markets for household J
-// Wedge between labour demand/hours worked and labour supply
+
+
 EAG_nj = EAG_sj*EAG_ndj;
-// Wage dispersion
+
 EAG_sj = (1-EAG_xij)*(EAG_wjtilde/EAG_wj)^(-EAG_etaj)+EAG_xij*(EAG_wj(-1)/EAG_wj)^(-EAG_etaj)*(EAG_pic/(EAG_pic(-1)^EAG_chij*EAG_pi4target^(1/4*(1-EAG_chij))))^(EAG_etaj)*EAG_sj(-1);
-// Rental market for capital
-// Equality of capital input and effective capital services
+
+
 EAG_u*EAG_k = EAG_kd;
-// Intermediate-good markets
-// Wedge between aggregate demand and production, using EAG_x = EAH_size/EAG_size*EAH_im
+
+
 EAG_ysn = EAG_snt*EAG_nt;
-//  nontradables aggregate demand
+
 EAG_nt = 
 +EAG_ntc
 +EAG_nti
 +EAG_ntcg
 +EAG_ntig
 ;
-// Aggregate demand for domestic intermediate goods, using EAG_hg = EAG_cg
+
 EAG_ht =
 +EAG_htc
 +EAG_hti
 +EAG_htcg
 +EAG_htig
 ;
-// Price dispersion in the domestic markets
+
 EAG_sh = (1-EAG_xih)*(EAG_phttilde/EAG_pht)^(-EAG_thetat)+EAG_xih*(EAG_piht/(EAG_piht(-1)^EAG_chih*EAG_pi4target^(1/4*(1-EAG_chih))))^EAG_thetat*EAG_sh(-1);
-// Price dispersion in the foreign markets
+
 EAG_sx = (1-EAG_xix)*(EAG_pextilde/EAG_pex)^(-EAG_thetat)+EAG_xix*(EAG_piex/(EAG_piex(-1)^EAG_chix*EAG_pi4target^(1/4*(1-EAG_chix))))^EAG_thetat*EAG_sx(-1);
-// Price dispersion in the domestic markets
+
 EAG_snt = (1-EAG_xin)*(EAG_pnttilde/EAG_pnt)^(-EAG_thetan)+EAG_xin*(EAG_pint/(EAG_pint(-1)^EAG_chin*EAG_pi4target^(1/4*(1-EAG_chin))))^EAG_thetan*EAG_snt(-1);
-// Final-good markets
-// Aggregate consumption and transaction cost
+
+
 EAG_qc = EAG_c+EAG_gammav;
-// Aggregate investment and capital utilisation cost
+
 EAG_qi = EAG_i+EAG_k*EAG_gammau;
-// Aggregate gov demand components added to use the same structure like in private components
+
 EAG_qcg = EAG_cg;
 EAG_qig = EAG_ig;
-//-------------
-// Resource constraint
-//-------------
-// TODO: why there is no adjustment cost for gov components
-// Aggregate nominal demand
+
+
+
+
+
 EAG_py*EAG_y = 
 +EAG_qc
 +EAG_pi*EAG_qi
@@ -27790,83 +27790,83 @@ EAG_py*EAG_y =
 -(US_pex*EAGUS_rer)*EAGUS_imcg
 -(US_pex*EAGUS_rer)*EAGUS_imig
 ;
-// Aggregate real demand
+
 EAG_y = EAG_yst+EAG_ysn;
-//-------------
-//-------------
-// Autoregressive shocks
-//-------------
-//-------------
-// Productivity shocks
+
+
+
+
+
+
 log(EAG_zt) = (1-EAG_rhozt)*log(EAG_ztbar)+EAG_rhozt*log(EAG_zt(-1))+EAG_epszt;
 log(EAG_zn) = (1-EAG_rhozn)*log(EAG_znbar)+EAG_rhozn*log(EAG_zn(-1))+EAG_epszn;
-// Government spending shock
+
 EAG_cgy = (1-EAG_rhocg)*EAG_cgybar+EAG_rhocg*EAG_cgy(-1)+EAG_epsgc;
 EAG_igy = (1-EAG_rhoig)*EAG_igybar+EAG_rhoig*EAG_igy(-1)+EAG_epsgi;
-// Transfer shock
+
 EAG_try = (1-EAG_rhotr)*EAG_trybar+EAG_rhotr*EAG_try(-1)+EAG_epstr;
-// Consumption tax shock
+
 EAG_tauc = (1-EAG_rhotauc)*EAG_taucbar+EAG_rhotauc*EAG_tauc(-1)+EAG_epstauc;
-// Dividend income tax shock
+
 EAG_taud = (1-EAG_rhotaud)*EAG_taudbar+EAG_rhotaud*EAG_taud(-1)+EAG_epstaud;
-// Capital income tax shock
+
 EAG_tauk = (1-EAG_rhotauk)*EAG_taukbar+EAG_rhotauk*EAG_tauk(-1)+EAG_epstauk;
-// Labour income tax shock
+
 EAG_taun = (1-EAG_rhotaun)*EAG_taunbar+EAG_rhotaun*EAG_taun(-1)+EAG_epstaun;
-// Payroll tax shock: households
+
 EAG_tauwh = (1-EAG_rhotauwh)*EAG_tauwhbar+EAG_rhotauwh*EAG_tauwh(-1)+EAG_epstauwh;
-// Payroll tax shock: firms
+
 EAG_tauwf = (1-EAG_rhotauwf)*EAG_tauwfbar+EAG_rhotauwf*EAG_tauwf(-1)+EAG_epstauwf;
-// Wage cost push shock
+
 EAG_wcst = (1-EAG_rhowcst)*EAG_wcstbar+EAG_rhowcst*EAG_wcst(-1)+EAG_epswcst;
-// Preference shock
+
 log(EAG_zcon) = (1-EAG_rhozcon)*log(EAG_zconbar)+EAG_rhozcon*log(EAG_zcon(-1))+EAG_epszcon;
-// Investment specific shock
+
 log(EAG_zinv) = (1-EAG_rhozinv)*log(EAG_zinvbar)+EAG_rhozinv*log(EAG_zinv(-1))+EAG_epszinv;
-//-------------
-//-------------
-// Conditions for calibration and reporting
-//-------------
-//-------------
-// Aggregate nominal consumption share
+
+
+
+
+
+
 EAG_cy = EAG_c/(EAG_py*EAG_y);
-// Aggregate nominal investment share
+
 EAG_iy = EAG_pi*EAG_i/(EAG_py*EAG_y);
-// Aggregate nominal import share  
+
 EAG_imy = (
 +EAG_pimc*EAG_imc
 +EAG_pimi*EAG_imi
 +EAG_pimcg*EAG_imcg
 +EAG_pimig*EAG_imig
 )/(EAG_py*EAG_y);
-// Aggregate nominal import share
+
 EAG_imcy = EAG_pimc*EAG_imc/(EAG_py*EAG_y);
 EAG_imiy = EAG_pimi*EAG_imi/(EAG_py*EAG_y);
 EAG_imcgy = EAG_pimcg*EAG_imcg/(EAG_py*EAG_y);
 EAG_imigy = EAG_pimig*EAG_imig/(EAG_py*EAG_y);
-// Aggregate debt-to-output ratio
+
 EAG_by = EAG_b/(EAG_pybar*EAG_ybar);
-// Aggregate lump-sum tax-to-output ratio
+
 EAG_ty = EAG_t/(EAG_pybar*EAG_ybar);
-// Aggregate labour cost share
+
 EAG_lcy = ((1+EAG_tauwf)*EAG_w*EAG_nd)/(EAG_py*EAG_y);
-// Aggregate nominal Wage share
+
 EAG_wy = (EAG_w*EAG_nd)/(EAG_py*EAG_y);
-// NT sector nominal Wage share
+
 EAG_wnty = (EAG_w*EAG_ndn)/(EAG_pnt*EAG_ysn);
-// T sector nominal Wage share
+
 EAG_whty = (EAG_w*EAG_ndt)/(EAG_pht*EAG_yst);
-// T sector share
+
 EAG_yhty = EAG_pht*EAG_yst/(EAG_py*EAG_y);
-// NT sector share
+
 EAG_ynty = EAG_pnt*EAG_ysn/(EAG_py*EAG_y);
-// Output gap
+
 EAG_ygap = 0;
-// Output growth (gross rate)
+
 EAG_ygrowth = EAG_y/EAG_y(-1);
-// Output growth (gross rate yoy)
+
 EAG_ygrowth4 = EAG_y/EAG_y(-4);
-// Domestic nominal output as a share of world nominal output
+
 EAG_yshare  = EAG_size*EAG_py*EAG_y/EAG_rer/(
 +EAA_size*EAA_py*EAA_y/EAA_rer
 +EAB_size*EAB_py*EAB_y/EAB_rer
@@ -27883,153 +27883,153 @@ EAG_yshare  = EAG_size*EAG_py*EAG_y/EAG_rer/(
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
-// Interest (semi-)elasticity of money demand
+
 EAG_epsilonm = -1/8*1/(EAG_r*(EAG_gammav2*EAG_r+EAG_r-1));
-// Trade balance-to-GDP ratio
+
 EAG_tby = EAG_tb/(EAG_py*EAG_y);
-// Bilateral shares
+
 EAGEAA_imcy = (EAA_pex*EAGEAA_rer)*EAGEAA_imc/(EAG_py*EAG_y);
 EAGEAA_imiy = (EAA_pex*EAGEAA_rer)*EAGEAA_imi/(EAG_py*EAG_y);
 EAGEAA_imcgy = (EAA_pex*EAGEAA_rer)*EAGEAA_imcg/(EAG_py*EAG_y);
 EAGEAA_imigy = (EAA_pex*EAGEAA_rer)*EAGEAA_imig/(EAG_py*EAG_y);
-// Exports of consumption goods to gdp
+
 EAGEAA_excy  = EAA_size/EAG_size*EAG_pex*EAAEAG_imc/(EAG_py*EAG_y);
-// Exports of investment goods to gdp
+
 EAGEAA_exiy  = EAA_size/EAG_size*EAG_pex*EAAEAG_imi/(EAG_py*EAG_y);
-// Bilateral shares
+
 EAGEAB_imcy = (EAB_pex*EAGEAB_rer)*EAGEAB_imc/(EAG_py*EAG_y);
 EAGEAB_imiy = (EAB_pex*EAGEAB_rer)*EAGEAB_imi/(EAG_py*EAG_y);
 EAGEAB_imcgy = (EAB_pex*EAGEAB_rer)*EAGEAB_imcg/(EAG_py*EAG_y);
 EAGEAB_imigy = (EAB_pex*EAGEAB_rer)*EAGEAB_imig/(EAG_py*EAG_y);
-// Exports of consumption goods to gdp
+
 EAGEAB_excy  = EAB_size/EAG_size*EAG_pex*EABEAG_imc/(EAG_py*EAG_y);
-// Exports of investment goods to gdp
+
 EAGEAB_exiy  = EAB_size/EAG_size*EAG_pex*EABEAG_imi/(EAG_py*EAG_y);
-// Bilateral shares
+
 EAGEAC_imcy = (EAC_pex*EAGEAC_rer)*EAGEAC_imc/(EAG_py*EAG_y);
 EAGEAC_imiy = (EAC_pex*EAGEAC_rer)*EAGEAC_imi/(EAG_py*EAG_y);
 EAGEAC_imcgy = (EAC_pex*EAGEAC_rer)*EAGEAC_imcg/(EAG_py*EAG_y);
 EAGEAC_imigy = (EAC_pex*EAGEAC_rer)*EAGEAC_imig/(EAG_py*EAG_y);
-// Exports of consumption goods to gdp
+
 EAGEAC_excy  = EAC_size/EAG_size*EAG_pex*EACEAG_imc/(EAG_py*EAG_y);
-// Exports of investment goods to gdp
+
 EAGEAC_exiy  = EAC_size/EAG_size*EAG_pex*EACEAG_imi/(EAG_py*EAG_y);
-// Bilateral shares
+
 EAGEAD_imcy = (EAD_pex*EAGEAD_rer)*EAGEAD_imc/(EAG_py*EAG_y);
 EAGEAD_imiy = (EAD_pex*EAGEAD_rer)*EAGEAD_imi/(EAG_py*EAG_y);
 EAGEAD_imcgy = (EAD_pex*EAGEAD_rer)*EAGEAD_imcg/(EAG_py*EAG_y);
 EAGEAD_imigy = (EAD_pex*EAGEAD_rer)*EAGEAD_imig/(EAG_py*EAG_y);
-// Exports of consumption goods to gdp
+
 EAGEAD_excy  = EAD_size/EAG_size*EAG_pex*EADEAG_imc/(EAG_py*EAG_y);
-// Exports of investment goods to gdp
+
 EAGEAD_exiy  = EAD_size/EAG_size*EAG_pex*EADEAG_imi/(EAG_py*EAG_y);
-// Bilateral shares
+
 EAGEAE_imcy = (EAE_pex*EAGEAE_rer)*EAGEAE_imc/(EAG_py*EAG_y);
 EAGEAE_imiy = (EAE_pex*EAGEAE_rer)*EAGEAE_imi/(EAG_py*EAG_y);
 EAGEAE_imcgy = (EAE_pex*EAGEAE_rer)*EAGEAE_imcg/(EAG_py*EAG_y);
 EAGEAE_imigy = (EAE_pex*EAGEAE_rer)*EAGEAE_imig/(EAG_py*EAG_y);
-// Exports of consumption goods to gdp
+
 EAGEAE_excy  = EAE_size/EAG_size*EAG_pex*EAEEAG_imc/(EAG_py*EAG_y);
-// Exports of investment goods to gdp
+
 EAGEAE_exiy  = EAE_size/EAG_size*EAG_pex*EAEEAG_imi/(EAG_py*EAG_y);
-// Bilateral shares
+
 EAGEAF_imcy = (EAF_pex*EAGEAF_rer)*EAGEAF_imc/(EAG_py*EAG_y);
 EAGEAF_imiy = (EAF_pex*EAGEAF_rer)*EAGEAF_imi/(EAG_py*EAG_y);
 EAGEAF_imcgy = (EAF_pex*EAGEAF_rer)*EAGEAF_imcg/(EAG_py*EAG_y);
 EAGEAF_imigy = (EAF_pex*EAGEAF_rer)*EAGEAF_imig/(EAG_py*EAG_y);
-// Exports of consumption goods to gdp
+
 EAGEAF_excy  = EAF_size/EAG_size*EAG_pex*EAFEAG_imc/(EAG_py*EAG_y);
-// Exports of investment goods to gdp
+
 EAGEAF_exiy  = EAF_size/EAG_size*EAG_pex*EAFEAG_imi/(EAG_py*EAG_y);
-// Bilateral shares
+
 EAGEAH_imcy = (EAH_pex*EAGEAH_rer)*EAGEAH_imc/(EAG_py*EAG_y);
 EAGEAH_imiy = (EAH_pex*EAGEAH_rer)*EAGEAH_imi/(EAG_py*EAG_y);
 EAGEAH_imcgy = (EAH_pex*EAGEAH_rer)*EAGEAH_imcg/(EAG_py*EAG_y);
 EAGEAH_imigy = (EAH_pex*EAGEAH_rer)*EAGEAH_imig/(EAG_py*EAG_y);
-// Exports of consumption goods to gdp
+
 EAGEAH_excy  = EAH_size/EAG_size*EAG_pex*EAHEAG_imc/(EAG_py*EAG_y);
-// Exports of investment goods to gdp
+
 EAGEAH_exiy  = EAH_size/EAG_size*EAG_pex*EAHEAG_imi/(EAG_py*EAG_y);
-// Bilateral shares
+
 EAGEAI_imcy = (EAI_pex*EAGEAI_rer)*EAGEAI_imc/(EAG_py*EAG_y);
 EAGEAI_imiy = (EAI_pex*EAGEAI_rer)*EAGEAI_imi/(EAG_py*EAG_y);
 EAGEAI_imcgy = (EAI_pex*EAGEAI_rer)*EAGEAI_imcg/(EAG_py*EAG_y);
 EAGEAI_imigy = (EAI_pex*EAGEAI_rer)*EAGEAI_imig/(EAG_py*EAG_y);
-// Exports of consumption goods to gdp
+
 EAGEAI_excy  = EAI_size/EAG_size*EAG_pex*EAIEAG_imc/(EAG_py*EAG_y);
-// Exports of investment goods to gdp
+
 EAGEAI_exiy  = EAI_size/EAG_size*EAG_pex*EAIEAG_imi/(EAG_py*EAG_y);
-// Bilateral shares
+
 EAGEAJ_imcy = (EAJ_pex*EAGEAJ_rer)*EAGEAJ_imc/(EAG_py*EAG_y);
 EAGEAJ_imiy = (EAJ_pex*EAGEAJ_rer)*EAGEAJ_imi/(EAG_py*EAG_y);
 EAGEAJ_imcgy = (EAJ_pex*EAGEAJ_rer)*EAGEAJ_imcg/(EAG_py*EAG_y);
 EAGEAJ_imigy = (EAJ_pex*EAGEAJ_rer)*EAGEAJ_imig/(EAG_py*EAG_y);
-// Exports of consumption goods to gdp
+
 EAGEAJ_excy  = EAJ_size/EAG_size*EAG_pex*EAJEAG_imc/(EAG_py*EAG_y);
-// Exports of investment goods to gdp
+
 EAGEAJ_exiy  = EAJ_size/EAG_size*EAG_pex*EAJEAG_imi/(EAG_py*EAG_y);
-// Bilateral shares
+
 EAGEAK_imcy = (EAK_pex*EAGEAK_rer)*EAGEAK_imc/(EAG_py*EAG_y);
 EAGEAK_imiy = (EAK_pex*EAGEAK_rer)*EAGEAK_imi/(EAG_py*EAG_y);
 EAGEAK_imcgy = (EAK_pex*EAGEAK_rer)*EAGEAK_imcg/(EAG_py*EAG_y);
 EAGEAK_imigy = (EAK_pex*EAGEAK_rer)*EAGEAK_imig/(EAG_py*EAG_y);
-// Exports of consumption goods to gdp
+
 EAGEAK_excy  = EAK_size/EAG_size*EAG_pex*EAKEAG_imc/(EAG_py*EAG_y);
-// Exports of investment goods to gdp
+
 EAGEAK_exiy  = EAK_size/EAG_size*EAG_pex*EAKEAG_imi/(EAG_py*EAG_y);
-// Bilateral shares
+
 EAGEAL_imcy = (EAL_pex*EAGEAL_rer)*EAGEAL_imc/(EAG_py*EAG_y);
 EAGEAL_imiy = (EAL_pex*EAGEAL_rer)*EAGEAL_imi/(EAG_py*EAG_y);
 EAGEAL_imcgy = (EAL_pex*EAGEAL_rer)*EAGEAL_imcg/(EAG_py*EAG_y);
 EAGEAL_imigy = (EAL_pex*EAGEAL_rer)*EAGEAL_imig/(EAG_py*EAG_y);
-// Exports of consumption goods to gdp
+
 EAGEAL_excy  = EAL_size/EAG_size*EAG_pex*EALEAG_imc/(EAG_py*EAG_y);
-// Exports of investment goods to gdp
+
 EAGEAL_exiy  = EAL_size/EAG_size*EAG_pex*EALEAG_imi/(EAG_py*EAG_y);
-// Bilateral shares
+
 EAGRW_imcy = (RW_pex*EAGRW_rer)*EAGRW_imc/(EAG_py*EAG_y);
 EAGRW_imiy = (RW_pex*EAGRW_rer)*EAGRW_imi/(EAG_py*EAG_y);
 EAGRW_imcgy = (RW_pex*EAGRW_rer)*EAGRW_imcg/(EAG_py*EAG_y);
 EAGRW_imigy = (RW_pex*EAGRW_rer)*EAGRW_imig/(EAG_py*EAG_y);
-// Exports of consumption goods to gdp
+
 EAGRW_excy  = RW_size/EAG_size*EAG_pex*RWEAG_imc/(EAG_py*EAG_y);
-// Exports of investment goods to gdp
+
 EAGRW_exiy  = RW_size/EAG_size*EAG_pex*RWEAG_imi/(EAG_py*EAG_y);
-// Bilateral shares
+
 EAGUS_imcy = (US_pex*EAGUS_rer)*EAGUS_imc/(EAG_py*EAG_y);
 EAGUS_imiy = (US_pex*EAGUS_rer)*EAGUS_imi/(EAG_py*EAG_y);
 EAGUS_imcgy = (US_pex*EAGUS_rer)*EAGUS_imcg/(EAG_py*EAG_y);
 EAGUS_imigy = (US_pex*EAGUS_rer)*EAGUS_imig/(EAG_py*EAG_y);
-// Exports of consumption goods to gdp
+
 EAGUS_excy  = US_size/EAG_size*EAG_pex*USEAG_imc/(EAG_py*EAG_y);
-// Exports of investment goods to gdp
+
 EAGUS_exiy  = US_size/EAG_size*EAG_pex*USEAG_imi/(EAG_py*EAG_y);
-// Internal real exchange rate
+
 EAG_internalrer = EAG_pnt/EAG_pttc;
-// Core model begins
-//-------------
-//-------------
-// Households
-//-------------
-//-------------
-//-------------
-// Household I
-//-------------
-// Utility
+
+
+
+
+
+
+
+
+
+
 EAH_utili = 
 EAH_zcon*log(EAH_ci-EAH_kappa*EAH_ci(-1))-1/(1+EAH_zeta)*(EAH_ni)^(1+EAH_zeta)+EAH_beta*EAH_utili(+1)
 ;
-// Marginal utility of consumption
+
 EAH_lambdai*(1+EAH_tauc+EAH_gammavi+EAH_vi*EAH_gammavider) = EAH_zcon*(EAH_ci-EAH_kappa*EAH_ci(-1))^(-EAH_sigma);
-// Euler equation for government bonds
+
 EAH_r                   = EAH_beta^(-1)*EAH_lambdai/EAH_lambdai    *EAH_pic;
-// Euler equation for money
+
 EAH_vi^(2)*EAH_gammavider = 1-EAH_beta*EAH_lambdai(+1)/(EAH_lambdai*EAH_pic(+1));
-// Consumption-based velocity
+
 EAH_vi = EAH_ci/EAH_mi;
-// Transaction cost
+
 EAH_gammavi = EAH_gammav1*EAH_vi+EAH_gammav2/EAH_vi-2*(EAH_gammav1*EAH_gammav2)^(1/2);
-// Derivative of transaction cost
+
 EAH_gammavider = EAH_gammav1-EAH_gammav2*EAH_vi^(-2);
 EAH_delta = EAH_ii/EAH_ki;
 EAH_gammai = 0;
@@ -28038,355 +28038,355 @@ EAH_gammau = 0;
 EAH_gammauder = ((EAH_beta^(-1)-1+EAH_delta)*EAH_qbar-EAH_delta*EAH_taukbar*EAH_pibar)/((1-EAH_taukbar)*EAH_pibar);
 EAH_u = 1;
 EAH_pi = EAH_q;
-// Auxiliary equation for Tobin's Q in steady state
+
 EAH_qbar = EAH_q;
-// Rate of return on capital
+
 EAH_q = EAH_beta*((1-EAH_tauk)*EAH_rk+(EAH_tauk*EAH_delta)*EAH_pi+(1-EAH_delta)*EAH_q);
-// Optimal wage contract (FOC)
+
 EAH_witilde^(1+EAH_etai*EAH_zeta) = EAH_etai/(EAH_etai-1)*EAH_fi/EAH_gi+EAH_wcst;
-// Definition of fi
+
 EAH_fi = EAH_wi^(EAH_etai*(1+EAH_zeta))*EAH_ndi^(1+EAH_zeta)+EAH_xii*EAH_beta*(EAH_pic(+1)/(EAH_pic^EAH_chii*EAH_pi4target^(1/4*(1-EAH_chii))))^(EAH_etai*(1+EAH_zeta))*EAH_fi(+1);
-// Definition of gi
+
 EAH_gi = EAH_lambdai*(1-EAH_taun-EAH_tauwh)*EAH_wi^EAH_etai*EAH_ndi+EAH_xii*EAH_beta*(EAH_pic(+1)/(EAH_pic^EAH_chii*EAH_pi4target^(1/4*(1-EAH_chii))))^(EAH_etai-1)*EAH_gi(+1);
-// Aggregate wage rate
+
 EAH_wi^(1-EAH_etai) = (1-EAH_xii)*EAH_witilde^(1-EAH_etai)+EAH_xii*EAH_wi(-1)^(1-EAH_etai)*(EAH_pic(-1)^EAH_chii*EAH_pi4target^(1/4*(1-EAH_chii))/EAH_pic)^(1-EAH_etai);
-//-------------
-// Household J
-//-------------
-// Utility
+
+
+
+
 EAH_utilj = 
 EAH_zcon*log(EAH_cj-EAH_kappa*EAH_cj(-1))-1/(1+EAH_zeta)*EAH_nj^(1+EAH_zeta)+EAH_beta*EAH_utilj(+1)
 ;
-// Marginal utility of consumption
+
 EAH_lambdaj*(1+EAH_tauc+EAH_gammavj+EAH_vj*EAH_gammavjder) = EAH_zcon*(EAH_cj-EAH_kappa*EAH_cj(-1))^(-EAH_sigma);
-// Budget constraint
+
 (1+EAH_tauc+EAH_gammavj)*EAH_cj+EAH_mj = (1-EAH_taun-EAH_tauwh)*EAH_wj*EAH_nj+EAH_trj-EAH_tj+EAH_mj(-1)*EAH_pic^(-1);
-// Euler equation for money
+
 EAH_vj^(2)*EAH_gammavjder = 1-EAH_beta*EAH_lambdaj(+1)/(EAH_lambdaj*EAH_pic(+1));
-// Consumption-based velocity
+
 EAH_vj = EAH_cj/EAH_mj;
-// Transaction technology
+
 EAH_gammavj = EAH_gammav1*EAH_vj+EAH_gammav2/EAH_vj-2*(EAH_gammav1*EAH_gammav2)^(1/2);
-// Derivative of transaction technology
+
 EAH_gammavjder = EAH_gammav1-EAH_gammav2*EAH_vj^(-2);
-// Optimal wage contract (FOC)
+
 EAH_wjtilde^(1+EAH_etaj*EAH_zeta) = EAH_etaj/(EAH_etaj-1)*EAH_fj/EAH_gj+EAH_wcst;
-// Definition of fj
+
 EAH_fj = EAH_wj^(EAH_etaj*(1+EAH_zeta))*EAH_ndj^(1+EAH_zeta)+EAH_xij*EAH_beta*(EAH_pic(+1)/(EAH_pic^EAH_chij*EAH_pi4target^(1/4*(1-EAH_chij))))^(EAH_etaj*(1+EAH_zeta))*EAH_fj(+1);
-// Definition of gj
+
 EAH_gj = EAH_lambdaj*(1-EAH_taun-EAH_tauwh)*EAH_wj^EAH_etaj*EAH_ndj+EAH_xij*EAH_beta*(EAH_pic(+1)/(EAH_pic^EAH_chij*EAH_pi4target^(1/4*(1-EAH_chij))))^(EAH_etaj-1)*EAH_gj(+1);
-// Aggregate wage rate
+
 EAH_wj^(1-EAH_etaj) = (1-EAH_xij)*EAH_wjtilde^(1-EAH_etaj)+EAH_xij*EAH_wj(-1)^(1-EAH_etaj)*(EAH_pic(-1)^EAH_chij*EAH_pi4target^(1/4*(1-EAH_chij))/EAH_pic)^(1-EAH_etaj);
-//-------------
-//-------------
-// Firms
-//-------------
-//-------------
-//-------------
-// Intermediate-good firms
-//-------------
-// Production function tradable
+
+
+
+
+
+
+
+
+
 EAH_yst = EAH_zt*EAH_kdt^EAH_alphat*EAH_ndt^(1-EAH_alphat)-EAH_psitbar;
-// Production function nontradable
+
 EAH_ysn = EAH_zn*EAH_kdn^EAH_alphan*EAH_ndn^(1-EAH_alphan)-EAH_psinbar;
-// Real marginal cost tradable
+
 EAH_mct = 1/(EAH_zt*(EAH_alphat)^(EAH_alphat)*(1-EAH_alphat)^(1-EAH_alphat))*EAH_rk^(EAH_alphat)*((1+EAH_tauwf)*EAH_w)^(1-EAH_alphat);
-// Real marginal cost nontradable
+
 EAH_mcn = 1/(EAH_zn*(EAH_alphan)^(EAH_alphan)*(1-EAH_alphan)^(1-EAH_alphan))*EAH_rk^(EAH_alphan)*((1+EAH_tauwf)*EAH_w)^(1-EAH_alphan);
-// Wage Inflation (qoq)
+
 EAH_piw = EAH_w/EAH_w(-1)*EAH_pic;
-// Wage Inflation (yoy)
+
 EAH_piw4 = EAH_pic4;
-// Auxiliary equation for steady-state fixed cost
+
 EAH_psitbar = EAH_psit*EAH_ytbar;
-// Auxiliary equation for steady-state fixed cost
+
 EAH_psinbar = EAH_psin*EAH_ynbar;
-// Capital input (FOC)
+
 EAH_rk = EAH_alphat*(EAH_yst+EAH_psitbar)/EAH_kdt*EAH_mct;
-// Capital input (FOC)
+
 EAH_rk = EAH_alphan*(EAH_ysn+EAH_psinbar)/EAH_kdn*EAH_mcn;
-// Total capital demand
+
 EAH_kd = EAH_kdt+EAH_kdn;
-// Demand for labour services by household I
+
 EAH_ndi = 
 (1-EAH_omega)*(EAH_wi/EAH_w)^(-EAH_eta)*EAH_nd
 ;
-// Demand for labour services by household J
+
 EAH_ndj = 
 EAH_omega*(EAH_wj/EAH_w)^(-EAH_eta)*EAH_nd
 ;
-// Aggregate labour demand
+
 EAH_nd^(1-1/EAH_eta) = 
 (1-EAH_omega)^(1/EAH_eta)*EAH_ndi^(1-1/EAH_eta)+EAH_omega^(1/EAH_eta)*EAH_ndj^(1-1/EAH_eta)
 ;
-// Total demand 
+
 EAH_nd = EAH_ndt+EAH_ndn;
-// Aggregate dividends
+
 EAH_d = EAH_py*EAH_y-EAH_rk*EAH_kd-(1+EAH_tauwf)*EAH_w*EAH_nd;
-// Non-tradable sector dividends
+
 EAH_dn = EAH_pnt*EAH_ysn-EAH_rk*EAH_kdn-(1+EAH_tauwf)*EAH_w*EAH_ndn;
-// Tradable sector dividends
+
 EAH_dt = EAH_pht*EAH_ht
 +EAH_pex*EAH_ex
 -EAH_rk*EAH_kdt-(1+EAH_tauwf)*EAH_w*EAH_ndt;
-// Optimal price contract set in domestic markets (FOC)
+
 EAH_phttilde/EAH_pht = EAH_thetat/(EAH_thetat-1)*EAH_fh/EAH_gh;
-// Definition of fh
+
 EAH_fh = EAH_mct*EAH_ht+EAH_xih*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EAH_piht(+1)/(EAH_piht^EAH_chih*EAH_pi4target^(1/4*(1-EAH_chih))))^EAH_thetat*EAH_fh(+1);
-// Definition of gh
+
 EAH_gh = EAH_pht*EAH_ht+EAH_xih*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EAH_piht(+1)/(EAH_piht^EAH_chih*EAH_pi4target^(1/4*(1-EAH_chih))))^(EAH_thetat-1)*EAH_gh(+1);
-// Aggregate intermediate-good price dynamics
+
 EAH_pht^(1-EAH_thetat) = (1-EAH_xih)*EAH_phttilde^(1-EAH_thetat)+EAH_xih*(EAH_pht(-1)/EAH_pic)^(1-EAH_thetat)*(EAH_piht(-1)^EAH_chih*EAH_pi4target^(1/4*(1-EAH_chih)))^(1-EAH_thetat);
-// Intermediate-good price inflation
+
 EAH_piht = EAH_pht/EAH_pht(-1)*EAH_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAH_pnttilde/EAH_pnt = EAH_thetan/(EAH_thetan-1)*EAH_fn/EAH_gn;
-// Definition of fn
+
 EAH_fn = EAH_mcn*EAH_nt+EAH_xin*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EAH_pint(+1)/(EAH_pint^EAH_chin*EAH_pi4target^(1/4*(1-EAH_chin))))^EAH_thetan*EAH_fn(+1);
-// Definition of gn
+
 EAH_gn = EAH_pnt*EAH_nt+EAH_xin*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EAH_pint(+1)/(EAH_pint^EAH_chin*EAH_pi4target^(1/4*(1-EAH_chin))))^(EAH_thetan-1)*EAH_gn(+1);
-// Aggregate intermediate-good price dynamics
+
 EAH_pnt^(1-EAH_thetan) = (1-EAH_xin)*EAH_pnttilde^(1-EAH_thetan)+EAH_xin*(EAH_pnt(-1)/EAH_pic)^(1-EAH_thetan)*(EAH_pint(-1)^EAH_chin*EAH_pi4target^(1/4*(1-EAH_chin)))^(1-EAH_thetan);
-// Intermediate-good price inflation
+
 EAH_pint = EAH_pnt/EAH_pnt(-1)*EAH_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAH_pextilde/EAH_pex = EAH_thetat/(EAH_thetat-1)*EAH_fx/EAH_gx;
-// Definition of fh
+
 EAH_fx = EAH_mct*EAH_ex+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EAH_piex(+1)/(EAH_piex^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^EAH_thetat*EAH_fx(+1);
-// Definition of gh
+
 EAH_gx = EAH_pex*EAH_ex+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EAH_piex(+1)/(EAH_piex^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^(EAH_thetat-1)*EAH_gx(+1);
-// Aggregate intermediate-good price dynamics
+
 EAH_pex^(1-EAH_thetat) = (1-EAH_xix)*EAH_pextilde^(1-EAH_thetat)+EAH_xix*(EAH_pex(-1)/EAH_pic)^(1-EAH_thetat)*(EAH_piex(-1)^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix)))^(1-EAH_thetat);
-// Intermediate-good price inflation
+
 EAH_piex = EAH_pex/EAH_pex(-1)*EAH_pic;
-//---------------
-// import pricing
-//---------------
-// Optimal price contract set in foreign markets (FOC), using EAH_pxtilde = EAA_pimtilde
-// EAAEAH_pimtilde/EAAEAH_pim = EAH_cpim*EAH_thetat/(EAH_thetat-1)*EAHEAA_fx/EAHEAA_gx;
-// Definition of fx
-// EAHEAA_fx = EAA_size/EAH_size*EAAEAH_im*EAH_mct+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EAAEAH_piim(+1)/(EAAEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^EAH_thetat*EAHEAA_fx(+1);
-// Definition of gx   
-// EAHEAA_gx = EAHEAA_rer*EAAEAH_pim*EAA_size/EAH_size*EAAEAH_im+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EAAEAH_piim(+1)/(EAAEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^(EAH_thetat-1)*EAHEAA_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAH_px = EAA_pim
-// EAAEAH_pim^(1-EAH_thetat) = (1-EAH_xix)*EAAEAH_pimtilde^(1-EAH_thetat)+EAH_xix*(EAAEAH_pim(-1)/EAA_pic)^(1-EAH_thetat)*(EAAEAH_piim(-1)^EAH_chix*EAA_pi4target^(1/4*(1-EAH_chih)))^(1-EAH_thetat);
-// Intermediate-good price inflation, using EAH_pix = EAA_piim
-// EAAEAH_piim = EAAEAH_pim/EAAEAH_pim(-1)*EAA_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 EAHEAA_rer = EAH_rer/EAA_rer;
-// Auxiliary equation for steady-state output
+
 EAHEAA_rerbar = EAHEAA_rer;
-//Terms of Trade
+
 EAHEAA_tot = EAA_pex*EAHEAA_rer/EAH_pex;
-// Optimal price contract set in foreign markets (FOC), using EAH_pxtilde = EAB_pimtilde
-// EABEAH_pimtilde/EABEAH_pim = EAH_cpim*EAH_thetat/(EAH_thetat-1)*EAHEAB_fx/EAHEAB_gx;
-// Definition of fx
-// EAHEAB_fx = EAB_size/EAH_size*EABEAH_im*EAH_mct+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EABEAH_piim(+1)/(EABEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^EAH_thetat*EAHEAB_fx(+1);
-// Definition of gx   
-// EAHEAB_gx = EAHEAB_rer*EABEAH_pim*EAB_size/EAH_size*EABEAH_im+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EABEAH_piim(+1)/(EABEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^(EAH_thetat-1)*EAHEAB_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAH_px = EAB_pim
-// EABEAH_pim^(1-EAH_thetat) = (1-EAH_xix)*EABEAH_pimtilde^(1-EAH_thetat)+EAH_xix*(EABEAH_pim(-1)/EAB_pic)^(1-EAH_thetat)*(EABEAH_piim(-1)^EAH_chix*EAB_pi4target^(1/4*(1-EAH_chih)))^(1-EAH_thetat);
-// Intermediate-good price inflation, using EAH_pix = EAB_piim
-// EABEAH_piim = EABEAH_pim/EABEAH_pim(-1)*EAB_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAHEAB_rer = EAH_rer/EAB_rer;
-// Auxiliary equation for steady-state output
+
 EAHEAB_rerbar = EAHEAB_rer;
-//Terms of Trade
+
 EAHEAB_tot = EAB_pex*EAHEAB_rer/EAH_pex;
-// Optimal price contract set in foreign markets (FOC), using EAH_pxtilde = EAC_pimtilde
-// EACEAH_pimtilde/EACEAH_pim = EAH_cpim*EAH_thetat/(EAH_thetat-1)*EAHEAC_fx/EAHEAC_gx;
-// Definition of fx
-// EAHEAC_fx = EAC_size/EAH_size*EACEAH_im*EAH_mct+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EACEAH_piim(+1)/(EACEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^EAH_thetat*EAHEAC_fx(+1);
-// Definition of gx   
-// EAHEAC_gx = EAHEAC_rer*EACEAH_pim*EAC_size/EAH_size*EACEAH_im+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EACEAH_piim(+1)/(EACEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^(EAH_thetat-1)*EAHEAC_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAH_px = EAC_pim
-// EACEAH_pim^(1-EAH_thetat) = (1-EAH_xix)*EACEAH_pimtilde^(1-EAH_thetat)+EAH_xix*(EACEAH_pim(-1)/EAC_pic)^(1-EAH_thetat)*(EACEAH_piim(-1)^EAH_chix*EAC_pi4target^(1/4*(1-EAH_chih)))^(1-EAH_thetat);
-// Intermediate-good price inflation, using EAH_pix = EAC_piim
-// EACEAH_piim = EACEAH_pim/EACEAH_pim(-1)*EAC_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAHEAC_rer = EAH_rer/EAC_rer;
-// Auxiliary equation for steady-state output
+
 EAHEAC_rerbar = EAHEAC_rer;
-//Terms of Trade
+
 EAHEAC_tot = EAC_pex*EAHEAC_rer/EAH_pex;
-// Optimal price contract set in foreign markets (FOC), using EAH_pxtilde = EAD_pimtilde
-// EADEAH_pimtilde/EADEAH_pim = EAH_cpim*EAH_thetat/(EAH_thetat-1)*EAHEAD_fx/EAHEAD_gx;
-// Definition of fx
-// EAHEAD_fx = EAD_size/EAH_size*EADEAH_im*EAH_mct+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EADEAH_piim(+1)/(EADEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^EAH_thetat*EAHEAD_fx(+1);
-// Definition of gx   
-// EAHEAD_gx = EAHEAD_rer*EADEAH_pim*EAD_size/EAH_size*EADEAH_im+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EADEAH_piim(+1)/(EADEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^(EAH_thetat-1)*EAHEAD_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAH_px = EAD_pim
-// EADEAH_pim^(1-EAH_thetat) = (1-EAH_xix)*EADEAH_pimtilde^(1-EAH_thetat)+EAH_xix*(EADEAH_pim(-1)/EAD_pic)^(1-EAH_thetat)*(EADEAH_piim(-1)^EAH_chix*EAD_pi4target^(1/4*(1-EAH_chih)))^(1-EAH_thetat);
-// Intermediate-good price inflation, using EAH_pix = EAD_piim
-// EADEAH_piim = EADEAH_pim/EADEAH_pim(-1)*EAD_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAHEAD_rer = EAH_rer/EAD_rer;
-// Auxiliary equation for steady-state output
+
 EAHEAD_rerbar = EAHEAD_rer;
-//Terms of Trade
+
 EAHEAD_tot = EAD_pex*EAHEAD_rer/EAH_pex;
-// Optimal price contract set in foreign markets (FOC), using EAH_pxtilde = EAE_pimtilde
-// EAEEAH_pimtilde/EAEEAH_pim = EAH_cpim*EAH_thetat/(EAH_thetat-1)*EAHEAE_fx/EAHEAE_gx;
-// Definition of fx
-// EAHEAE_fx = EAE_size/EAH_size*EAEEAH_im*EAH_mct+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EAEEAH_piim(+1)/(EAEEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^EAH_thetat*EAHEAE_fx(+1);
-// Definition of gx   
-// EAHEAE_gx = EAHEAE_rer*EAEEAH_pim*EAE_size/EAH_size*EAEEAH_im+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EAEEAH_piim(+1)/(EAEEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^(EAH_thetat-1)*EAHEAE_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAH_px = EAE_pim
-// EAEEAH_pim^(1-EAH_thetat) = (1-EAH_xix)*EAEEAH_pimtilde^(1-EAH_thetat)+EAH_xix*(EAEEAH_pim(-1)/EAE_pic)^(1-EAH_thetat)*(EAEEAH_piim(-1)^EAH_chix*EAE_pi4target^(1/4*(1-EAH_chih)))^(1-EAH_thetat);
-// Intermediate-good price inflation, using EAH_pix = EAE_piim
-// EAEEAH_piim = EAEEAH_pim/EAEEAH_pim(-1)*EAE_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAHEAE_rer = EAH_rer/EAE_rer;
-// Auxiliary equation for steady-state output
+
 EAHEAE_rerbar = EAHEAE_rer;
-//Terms of Trade
+
 EAHEAE_tot = EAE_pex*EAHEAE_rer/EAH_pex;
-// Optimal price contract set in foreign markets (FOC), using EAH_pxtilde = EAF_pimtilde
-// EAFEAH_pimtilde/EAFEAH_pim = EAH_cpim*EAH_thetat/(EAH_thetat-1)*EAHEAF_fx/EAHEAF_gx;
-// Definition of fx
-// EAHEAF_fx = EAF_size/EAH_size*EAFEAH_im*EAH_mct+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EAFEAH_piim(+1)/(EAFEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^EAH_thetat*EAHEAF_fx(+1);
-// Definition of gx   
-// EAHEAF_gx = EAHEAF_rer*EAFEAH_pim*EAF_size/EAH_size*EAFEAH_im+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EAFEAH_piim(+1)/(EAFEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^(EAH_thetat-1)*EAHEAF_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAH_px = EAF_pim
-// EAFEAH_pim^(1-EAH_thetat) = (1-EAH_xix)*EAFEAH_pimtilde^(1-EAH_thetat)+EAH_xix*(EAFEAH_pim(-1)/EAF_pic)^(1-EAH_thetat)*(EAFEAH_piim(-1)^EAH_chix*EAF_pi4target^(1/4*(1-EAH_chih)))^(1-EAH_thetat);
-// Intermediate-good price inflation, using EAH_pix = EAF_piim
-// EAFEAH_piim = EAFEAH_pim/EAFEAH_pim(-1)*EAF_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAHEAF_rer = EAH_rer/EAF_rer;
-// Auxiliary equation for steady-state output
+
 EAHEAF_rerbar = EAHEAF_rer;
-//Terms of Trade
+
 EAHEAF_tot = EAF_pex*EAHEAF_rer/EAH_pex;
-// Optimal price contract set in foreign markets (FOC), using EAH_pxtilde = EAG_pimtilde
-// EAGEAH_pimtilde/EAGEAH_pim = EAH_cpim*EAH_thetat/(EAH_thetat-1)*EAHEAG_fx/EAHEAG_gx;
-// Definition of fx
-// EAHEAG_fx = EAG_size/EAH_size*EAGEAH_im*EAH_mct+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EAGEAH_piim(+1)/(EAGEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^EAH_thetat*EAHEAG_fx(+1);
-// Definition of gx   
-// EAHEAG_gx = EAHEAG_rer*EAGEAH_pim*EAG_size/EAH_size*EAGEAH_im+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EAGEAH_piim(+1)/(EAGEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^(EAH_thetat-1)*EAHEAG_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAH_px = EAG_pim
-// EAGEAH_pim^(1-EAH_thetat) = (1-EAH_xix)*EAGEAH_pimtilde^(1-EAH_thetat)+EAH_xix*(EAGEAH_pim(-1)/EAG_pic)^(1-EAH_thetat)*(EAGEAH_piim(-1)^EAH_chix*EAG_pi4target^(1/4*(1-EAH_chih)))^(1-EAH_thetat);
-// Intermediate-good price inflation, using EAH_pix = EAG_piim
-// EAGEAH_piim = EAGEAH_pim/EAGEAH_pim(-1)*EAG_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAHEAG_rer = EAH_rer/EAG_rer;
-// Auxiliary equation for steady-state output
+
 EAHEAG_rerbar = EAHEAG_rer;
-//Terms of Trade
+
 EAHEAG_tot = EAG_pex*EAHEAG_rer/EAH_pex;
-// Optimal price contract set in foreign markets (FOC), using EAH_pxtilde = EAI_pimtilde
-// EAIEAH_pimtilde/EAIEAH_pim = EAH_cpim*EAH_thetat/(EAH_thetat-1)*EAHEAI_fx/EAHEAI_gx;
-// Definition of fx
-// EAHEAI_fx = EAI_size/EAH_size*EAIEAH_im*EAH_mct+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EAIEAH_piim(+1)/(EAIEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^EAH_thetat*EAHEAI_fx(+1);
-// Definition of gx   
-// EAHEAI_gx = EAHEAI_rer*EAIEAH_pim*EAI_size/EAH_size*EAIEAH_im+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EAIEAH_piim(+1)/(EAIEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^(EAH_thetat-1)*EAHEAI_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAH_px = EAI_pim
-// EAIEAH_pim^(1-EAH_thetat) = (1-EAH_xix)*EAIEAH_pimtilde^(1-EAH_thetat)+EAH_xix*(EAIEAH_pim(-1)/EAI_pic)^(1-EAH_thetat)*(EAIEAH_piim(-1)^EAH_chix*EAI_pi4target^(1/4*(1-EAH_chih)))^(1-EAH_thetat);
-// Intermediate-good price inflation, using EAH_pix = EAI_piim
-// EAIEAH_piim = EAIEAH_pim/EAIEAH_pim(-1)*EAI_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAHEAI_rer = EAH_rer/EAI_rer;
-// Auxiliary equation for steady-state output
+
 EAHEAI_rerbar = EAHEAI_rer;
-//Terms of Trade
+
 EAHEAI_tot = EAI_pex*EAHEAI_rer/EAH_pex;
-// Optimal price contract set in foreign markets (FOC), using EAH_pxtilde = EAJ_pimtilde
-// EAJEAH_pimtilde/EAJEAH_pim = EAH_cpim*EAH_thetat/(EAH_thetat-1)*EAHEAJ_fx/EAHEAJ_gx;
-// Definition of fx
-// EAHEAJ_fx = EAJ_size/EAH_size*EAJEAH_im*EAH_mct+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EAJEAH_piim(+1)/(EAJEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^EAH_thetat*EAHEAJ_fx(+1);
-// Definition of gx   
-// EAHEAJ_gx = EAHEAJ_rer*EAJEAH_pim*EAJ_size/EAH_size*EAJEAH_im+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EAJEAH_piim(+1)/(EAJEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^(EAH_thetat-1)*EAHEAJ_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAH_px = EAJ_pim
-// EAJEAH_pim^(1-EAH_thetat) = (1-EAH_xix)*EAJEAH_pimtilde^(1-EAH_thetat)+EAH_xix*(EAJEAH_pim(-1)/EAJ_pic)^(1-EAH_thetat)*(EAJEAH_piim(-1)^EAH_chix*EAJ_pi4target^(1/4*(1-EAH_chih)))^(1-EAH_thetat);
-// Intermediate-good price inflation, using EAH_pix = EAJ_piim
-// EAJEAH_piim = EAJEAH_pim/EAJEAH_pim(-1)*EAJ_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAHEAJ_rer = EAH_rer/EAJ_rer;
-// Auxiliary equation for steady-state output
+
 EAHEAJ_rerbar = EAHEAJ_rer;
-//Terms of Trade
+
 EAHEAJ_tot = EAJ_pex*EAHEAJ_rer/EAH_pex;
-// Optimal price contract set in foreign markets (FOC), using EAH_pxtilde = EAK_pimtilde
-// EAKEAH_pimtilde/EAKEAH_pim = EAH_cpim*EAH_thetat/(EAH_thetat-1)*EAHEAK_fx/EAHEAK_gx;
-// Definition of fx
-// EAHEAK_fx = EAK_size/EAH_size*EAKEAH_im*EAH_mct+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EAKEAH_piim(+1)/(EAKEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^EAH_thetat*EAHEAK_fx(+1);
-// Definition of gx   
-// EAHEAK_gx = EAHEAK_rer*EAKEAH_pim*EAK_size/EAH_size*EAKEAH_im+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EAKEAH_piim(+1)/(EAKEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^(EAH_thetat-1)*EAHEAK_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAH_px = EAK_pim
-// EAKEAH_pim^(1-EAH_thetat) = (1-EAH_xix)*EAKEAH_pimtilde^(1-EAH_thetat)+EAH_xix*(EAKEAH_pim(-1)/EAK_pic)^(1-EAH_thetat)*(EAKEAH_piim(-1)^EAH_chix*EAK_pi4target^(1/4*(1-EAH_chih)))^(1-EAH_thetat);
-// Intermediate-good price inflation, using EAH_pix = EAK_piim
-// EAKEAH_piim = EAKEAH_pim/EAKEAH_pim(-1)*EAK_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAHEAK_rer = EAH_rer/EAK_rer;
-// Auxiliary equation for steady-state output
+
 EAHEAK_rerbar = EAHEAK_rer;
-//Terms of Trade
+
 EAHEAK_tot = EAK_pex*EAHEAK_rer/EAH_pex;
-// Optimal price contract set in foreign markets (FOC), using EAH_pxtilde = EAL_pimtilde
-// EALEAH_pimtilde/EALEAH_pim = EAH_cpim*EAH_thetat/(EAH_thetat-1)*EAHEAL_fx/EAHEAL_gx;
-// Definition of fx
-// EAHEAL_fx = EAL_size/EAH_size*EALEAH_im*EAH_mct+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EALEAH_piim(+1)/(EALEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^EAH_thetat*EAHEAL_fx(+1);
-// Definition of gx   
-// EAHEAL_gx = EAHEAL_rer*EALEAH_pim*EAL_size/EAH_size*EALEAH_im+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(EALEAH_piim(+1)/(EALEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^(EAH_thetat-1)*EAHEAL_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAH_px = EAL_pim
-// EALEAH_pim^(1-EAH_thetat) = (1-EAH_xix)*EALEAH_pimtilde^(1-EAH_thetat)+EAH_xix*(EALEAH_pim(-1)/EAL_pic)^(1-EAH_thetat)*(EALEAH_piim(-1)^EAH_chix*EAL_pi4target^(1/4*(1-EAH_chih)))^(1-EAH_thetat);
-// Intermediate-good price inflation, using EAH_pix = EAL_piim
-// EALEAH_piim = EALEAH_pim/EALEAH_pim(-1)*EAL_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAHEAL_rer = EAH_rer/EAL_rer;
-// Auxiliary equation for steady-state output
+
 EAHEAL_rerbar = EAHEAL_rer;
-//Terms of Trade
+
 EAHEAL_tot = EAL_pex*EAHEAL_rer/EAH_pex;
-// Optimal price contract set in foreign markets (FOC), using EAH_pxtilde = RW_pimtilde
-// RWEAH_pimtilde/RWEAH_pim = EAH_cpim*EAH_thetat/(EAH_thetat-1)*EAHRW_fx/EAHRW_gx;
-// Definition of fx
-// EAHRW_fx = RW_size/EAH_size*RWEAH_im*EAH_mct+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(RWEAH_piim(+1)/(RWEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^EAH_thetat*EAHRW_fx(+1);
-// Definition of gx   
-// EAHRW_gx = EAHRW_rer*RWEAH_pim*RW_size/EAH_size*RWEAH_im+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(RWEAH_piim(+1)/(RWEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^(EAH_thetat-1)*EAHRW_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAH_px = RW_pim
-// RWEAH_pim^(1-EAH_thetat) = (1-EAH_xix)*RWEAH_pimtilde^(1-EAH_thetat)+EAH_xix*(RWEAH_pim(-1)/RW_pic)^(1-EAH_thetat)*(RWEAH_piim(-1)^EAH_chix*RW_pi4target^(1/4*(1-EAH_chih)))^(1-EAH_thetat);
-// Intermediate-good price inflation, using EAH_pix = RW_piim
-// RWEAH_piim = RWEAH_pim/RWEAH_pim(-1)*RW_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAHRW_rer = EAH_rer/RW_rer;
-// Auxiliary equation for steady-state output
+
 EAHRW_rerbar = EAHRW_rer;
-//Terms of Trade
+
 EAHRW_tot = RW_pex*EAHRW_rer/EAH_pex;
-// Optimal price contract set in foreign markets (FOC), using EAH_pxtilde = US_pimtilde
-// USEAH_pimtilde/USEAH_pim = EAH_cpim*EAH_thetat/(EAH_thetat-1)*EAHUS_fx/EAHUS_gx;
-// Definition of fx
-// EAHUS_fx = US_size/EAH_size*USEAH_im*EAH_mct+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(USEAH_piim(+1)/(USEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^EAH_thetat*EAHUS_fx(+1);
-// Definition of gx   
-// EAHUS_gx = EAHUS_rer*USEAH_pim*US_size/EAH_size*USEAH_im+EAH_xix*EAH_beta*EAH_lambdai(+1)/EAH_lambdai*(USEAH_piim(+1)/(USEAH_piim^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^(EAH_thetat-1)*EAHUS_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAH_px = US_pim
-// USEAH_pim^(1-EAH_thetat) = (1-EAH_xix)*USEAH_pimtilde^(1-EAH_thetat)+EAH_xix*(USEAH_pim(-1)/US_pic)^(1-EAH_thetat)*(USEAH_piim(-1)^EAH_chix*US_pi4target^(1/4*(1-EAH_chih)))^(1-EAH_thetat);
-// Intermediate-good price inflation, using EAH_pix = US_piim
-// USEAH_piim = USEAH_pim/USEAH_pim(-1)*US_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAHUS_rer = EAH_rer/US_rer;
-// Auxiliary equation for steady-state output
+
 EAHUS_rerbar = EAHUS_rer;
-//Terms of Trade
+
 EAHUS_tot = US_pex*EAHUS_rer/EAH_pex;
-// Total imports 
+
 EAH_im = 
 +EAH_imc
 +EAH_imi
 +EAH_imcg
 +EAH_imig
 ;
-// Total import deflator
+
 EAH_im*EAH_pim  = 
 +EAH_pimc*EAH_imc
 +EAH_pimi*EAH_imi
 +EAH_pimcg*EAH_imcg
 +EAH_pimig*EAH_imig
 ;
-// Effective real exchange rate: double weighting (imports)
+
 EAHEAA_weightim = EAHEAA_rer*EAA_pex*EAHEAA_im/(EAH_pim*EAH_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAHEAA_weightex = EAA_size/EAH_size*EAAEAH_im/EAH_ex*EAHEAA_rer*EAA_py*EAA_y/(EAHEAA_rer*EAA_py*EAA_y
 +EAHEAB_rer*EAB_pex*EAAEAB_im
 +EAHEAC_rer*EAC_pex*EAAEAC_im
@@ -28570,11 +28570,11 @@ EAHEAA_weightex = EAA_size/EAH_size*EAAEAH_im/EAH_ex*EAHEAA_rer*EAA_py*EAA_y/(EA
 +EAHRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAHEAA_weight = EAH_pim*EAH_im/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAA_weightim+EAH_pex*EAH_ex/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAA_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAHEAB_weightim = EAHEAB_rer*EAB_pex*EAHEAB_im/(EAH_pim*EAH_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAHEAB_weightex = EAB_size/EAH_size*EABEAH_im/EAH_ex*EAHEAB_rer*EAB_py*EAB_y/(EAHEAB_rer*EAB_py*EAB_y
 +EAHEAA_rer*EAA_pex*EABEAA_im
 +EAHEAC_rer*EAC_pex*EABEAC_im
@@ -28758,11 +28758,11 @@ EAHEAB_weightex = EAB_size/EAH_size*EABEAH_im/EAH_ex*EAHEAB_rer*EAB_py*EAB_y/(EA
 +EAHRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAHEAB_weight = EAH_pim*EAH_im/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAB_weightim+EAH_pex*EAH_ex/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAB_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAHEAC_weightim = EAHEAC_rer*EAC_pex*EAHEAC_im/(EAH_pim*EAH_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAHEAC_weightex = EAC_size/EAH_size*EACEAH_im/EAH_ex*EAHEAC_rer*EAC_py*EAC_y/(EAHEAC_rer*EAC_py*EAC_y
 +EAHEAA_rer*EAA_pex*EACEAA_im
 +EAHEAB_rer*EAB_pex*EACEAB_im
@@ -28946,11 +28946,11 @@ EAHEAC_weightex = EAC_size/EAH_size*EACEAH_im/EAH_ex*EAHEAC_rer*EAC_py*EAC_y/(EA
 +EAHRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAHEAC_weight = EAH_pim*EAH_im/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAC_weightim+EAH_pex*EAH_ex/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAC_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAHEAD_weightim = EAHEAD_rer*EAD_pex*EAHEAD_im/(EAH_pim*EAH_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAHEAD_weightex = EAD_size/EAH_size*EADEAH_im/EAH_ex*EAHEAD_rer*EAD_py*EAD_y/(EAHEAD_rer*EAD_py*EAD_y
 +EAHEAA_rer*EAA_pex*EADEAA_im
 +EAHEAB_rer*EAB_pex*EADEAB_im
@@ -29134,11 +29134,11 @@ EAHEAD_weightex = EAD_size/EAH_size*EADEAH_im/EAH_ex*EAHEAD_rer*EAD_py*EAD_y/(EA
 +EAHRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAHEAD_weight = EAH_pim*EAH_im/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAD_weightim+EAH_pex*EAH_ex/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAD_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAHEAE_weightim = EAHEAE_rer*EAE_pex*EAHEAE_im/(EAH_pim*EAH_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAHEAE_weightex = EAE_size/EAH_size*EAEEAH_im/EAH_ex*EAHEAE_rer*EAE_py*EAE_y/(EAHEAE_rer*EAE_py*EAE_y
 +EAHEAA_rer*EAA_pex*EAEEAA_im
 +EAHEAB_rer*EAB_pex*EAEEAB_im
@@ -29322,11 +29322,11 @@ EAHEAE_weightex = EAE_size/EAH_size*EAEEAH_im/EAH_ex*EAHEAE_rer*EAE_py*EAE_y/(EA
 +EAHRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAHEAE_weight = EAH_pim*EAH_im/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAE_weightim+EAH_pex*EAH_ex/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAE_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAHEAF_weightim = EAHEAF_rer*EAF_pex*EAHEAF_im/(EAH_pim*EAH_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAHEAF_weightex = EAF_size/EAH_size*EAFEAH_im/EAH_ex*EAHEAF_rer*EAF_py*EAF_y/(EAHEAF_rer*EAF_py*EAF_y
 +EAHEAA_rer*EAA_pex*EAFEAA_im
 +EAHEAB_rer*EAB_pex*EAFEAB_im
@@ -29510,11 +29510,11 @@ EAHEAF_weightex = EAF_size/EAH_size*EAFEAH_im/EAH_ex*EAHEAF_rer*EAF_py*EAF_y/(EA
 +EAHRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAHEAF_weight = EAH_pim*EAH_im/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAF_weightim+EAH_pex*EAH_ex/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAF_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAHEAG_weightim = EAHEAG_rer*EAG_pex*EAHEAG_im/(EAH_pim*EAH_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAHEAG_weightex = EAG_size/EAH_size*EAGEAH_im/EAH_ex*EAHEAG_rer*EAG_py*EAG_y/(EAHEAG_rer*EAG_py*EAG_y
 +EAHEAA_rer*EAA_pex*EAGEAA_im
 +EAHEAB_rer*EAB_pex*EAGEAB_im
@@ -29698,11 +29698,11 @@ EAHEAG_weightex = EAG_size/EAH_size*EAGEAH_im/EAH_ex*EAHEAG_rer*EAG_py*EAG_y/(EA
 +EAHRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAHEAG_weight = EAH_pim*EAH_im/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAG_weightim+EAH_pex*EAH_ex/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAG_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAHEAI_weightim = EAHEAI_rer*EAI_pex*EAHEAI_im/(EAH_pim*EAH_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAHEAI_weightex = EAI_size/EAH_size*EAIEAH_im/EAH_ex*EAHEAI_rer*EAI_py*EAI_y/(EAHEAI_rer*EAI_py*EAI_y
 +EAHEAA_rer*EAA_pex*EAIEAA_im
 +EAHEAB_rer*EAB_pex*EAIEAB_im
@@ -29886,11 +29886,11 @@ EAHEAI_weightex = EAI_size/EAH_size*EAIEAH_im/EAH_ex*EAHEAI_rer*EAI_py*EAI_y/(EA
 +EAHRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAHEAI_weight = EAH_pim*EAH_im/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAI_weightim+EAH_pex*EAH_ex/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAI_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAHEAJ_weightim = EAHEAJ_rer*EAJ_pex*EAHEAJ_im/(EAH_pim*EAH_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAHEAJ_weightex = EAJ_size/EAH_size*EAJEAH_im/EAH_ex*EAHEAJ_rer*EAJ_py*EAJ_y/(EAHEAJ_rer*EAJ_py*EAJ_y
 +EAHEAA_rer*EAA_pex*EAJEAA_im
 +EAHEAB_rer*EAB_pex*EAJEAB_im
@@ -30074,11 +30074,11 @@ EAHEAJ_weightex = EAJ_size/EAH_size*EAJEAH_im/EAH_ex*EAHEAJ_rer*EAJ_py*EAJ_y/(EA
 +EAHRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAHEAJ_weight = EAH_pim*EAH_im/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAJ_weightim+EAH_pex*EAH_ex/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAJ_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAHEAK_weightim = EAHEAK_rer*EAK_pex*EAHEAK_im/(EAH_pim*EAH_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAHEAK_weightex = EAK_size/EAH_size*EAKEAH_im/EAH_ex*EAHEAK_rer*EAK_py*EAK_y/(EAHEAK_rer*EAK_py*EAK_y
 +EAHEAA_rer*EAA_pex*EAKEAA_im
 +EAHEAB_rer*EAB_pex*EAKEAB_im
@@ -30262,11 +30262,11 @@ EAHEAK_weightex = EAK_size/EAH_size*EAKEAH_im/EAH_ex*EAHEAK_rer*EAK_py*EAK_y/(EA
 +EAHRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAHEAK_weight = EAH_pim*EAH_im/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAK_weightim+EAH_pex*EAH_ex/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAK_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAHEAL_weightim = EAHEAL_rer*EAL_pex*EAHEAL_im/(EAH_pim*EAH_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAHEAL_weightex = EAL_size/EAH_size*EALEAH_im/EAH_ex*EAHEAL_rer*EAL_py*EAL_y/(EAHEAL_rer*EAL_py*EAL_y
 +EAHEAA_rer*EAA_pex*EALEAA_im
 +EAHEAB_rer*EAB_pex*EALEAB_im
@@ -30450,11 +30450,11 @@ EAHEAL_weightex = EAL_size/EAH_size*EALEAH_im/EAH_ex*EAHEAL_rer*EAL_py*EAL_y/(EA
 +EAHRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAHEAL_weight = EAH_pim*EAH_im/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAL_weightim+EAH_pex*EAH_ex/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHEAL_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAHRW_weightim = EAHRW_rer*RW_pex*EAHRW_im/(EAH_pim*EAH_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAHRW_weightex = RW_size/EAH_size*RWEAH_im/EAH_ex*EAHRW_rer*RW_py*RW_y/(EAHRW_rer*RW_py*RW_y
 +EAHEAA_rer*EAA_pex*RWEAA_im
 +EAHEAB_rer*EAB_pex*RWEAB_im
@@ -30638,11 +30638,11 @@ EAHRW_weightex = RW_size/EAH_size*RWEAH_im/EAH_ex*EAHRW_rer*RW_py*RW_y/(EAHRW_re
 +EAHRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAHRW_weight = EAH_pim*EAH_im/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHRW_weightim+EAH_pex*EAH_ex/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHRW_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAHUS_weightim = EAHUS_rer*US_pex*EAHUS_im/(EAH_pim*EAH_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAHUS_weightex = US_size/EAH_size*USEAH_im/EAH_ex*EAHUS_rer*US_py*US_y/(EAHUS_rer*US_py*US_y
 +EAHEAA_rer*EAA_pex*USEAA_im
 +EAHEAB_rer*EAB_pex*USEAB_im
@@ -30826,9 +30826,9 @@ EAHUS_weightex = US_size/EAH_size*USEAH_im/EAH_ex*EAHUS_rer*US_py*US_y/(EAHUS_re
 +EAHUS_rer*US_pex*RWUS_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAHUS_weight = EAH_pim*EAH_im/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHUS_weightim+EAH_pex*EAH_ex/(EAH_pim*EAH_im+EAH_pex*EAH_ex)*EAHUS_weightex;
-// Effective real exchange rate
+
 EAH_reer = 1
 *EAHEAA_rer^EAHEAA_weight
 *EAHEAB_rer^EAHEAB_weight
@@ -30844,7 +30844,7 @@ EAH_reer = 1
 *EAHRW_rer^EAHRW_weight
 *EAHUS_rer^EAHUS_weight
 ;
-// Effective terms of trade
+
 EAH_etot = 1
 *EAHEAA_tot^EAHEAA_weight
 *EAHEAB_tot^EAHEAB_weight
@@ -30860,10 +30860,10 @@ EAH_etot = 1
 *EAHRW_tot^EAHRW_weight
 *EAHUS_tot^EAHUS_weight
 ;
-//-----------------
-// Final-good firms
-//-----------------
-// Private consumption good (import)
+
+
+
+
 EAH_imc^((EAH_mumc-1)/EAH_mumc) =
 +EAHEAA_numc ^(1/EAH_mumc)*EAHEAA_imc^(1-1/EAH_mumc)
 +EAHEAB_numc ^(1/EAH_mumc)*EAHEAB_imc^(1-1/EAH_mumc)
@@ -30891,27 +30891,27 @@ EAH_imc^((EAH_mumc-1)/EAH_mumc) =
 -EAHRW_numc
 -EAHUS_numc
 )^(1/EAH_mumc)*EAHEAF_imc^(1-1/EAH_mumc);
-// Demand for bilateral consumption import goods
+
 EAHEAA_imc = EAHEAA_numc*((EAA_pex*EAHEAA_rer)/EAH_pimc)^(-EAH_mumc)*EAH_imc;
-// Demand for bilateral consumption import goods
+
 EAHEAB_imc = EAHEAB_numc*((EAB_pex*EAHEAB_rer)/EAH_pimc)^(-EAH_mumc)*EAH_imc;
-// Demand for bilateral consumption import goods
+
 EAHEAC_imc = EAHEAC_numc*((EAC_pex*EAHEAC_rer)/EAH_pimc)^(-EAH_mumc)*EAH_imc;
-// Demand for bilateral consumption import goods
+
 EAHEAD_imc = EAHEAD_numc*((EAD_pex*EAHEAD_rer)/EAH_pimc)^(-EAH_mumc)*EAH_imc;
-// Demand for bilateral consumption import goods
+
 EAHEAE_imc = EAHEAE_numc*((EAE_pex*EAHEAE_rer)/EAH_pimc)^(-EAH_mumc)*EAH_imc;
-// Demand for bilateral consumption import goods
+
 EAHEAG_imc = EAHEAG_numc*((EAG_pex*EAHEAG_rer)/EAH_pimc)^(-EAH_mumc)*EAH_imc;
-// Demand for bilateral consumption import goods
+
 EAHEAJ_imc = EAHEAJ_numc*((EAJ_pex*EAHEAJ_rer)/EAH_pimc)^(-EAH_mumc)*EAH_imc;
-// Demand for bilateral consumption import goods
+
 EAHEAK_imc = EAHEAK_numc*((EAK_pex*EAHEAK_rer)/EAH_pimc)^(-EAH_mumc)*EAH_imc;
-// Demand for bilateral consumption import goods
+
 EAHEAL_imc = EAHEAL_numc*((EAL_pex*EAHEAL_rer)/EAH_pimc)^(-EAH_mumc)*EAH_imc;
-// Demand for bilateral consumption import goods
+
 EAHRW_imc = EAHRW_numc*((RW_pex*EAHRW_rer)/EAH_pimc)^(-EAH_mumc)*EAH_imc;
-// Demand for bilateral consumption import goods
+
 EAHUS_imc = EAHUS_numc*((US_pex*EAHUS_rer)/EAH_pimc)^(-EAH_mumc)*EAH_imc;
 EAHEAF_imc = (1
 -EAHEAA_numc
@@ -30927,7 +30927,7 @@ EAHEAF_imc = (1
 -EAHRW_numc
 -EAHUS_numc
 )*((EAF_pex*EAHEAF_rer)/EAH_pimc)^(-EAH_mumc)*EAH_imc;
-// Price of the consumption good (import)
+
 EAH_pimc^(1-EAH_mumc) =
 +EAHEAA_numc * (EAA_pex*EAHEAA_rer)^(1-EAH_mumc)
 +EAHEAB_numc * (EAB_pex*EAHEAB_rer)^(1-EAH_mumc)
@@ -30955,9 +30955,9 @@ EAH_pimc^(1-EAH_mumc) =
 -EAHRW_numc
 -EAHUS_numc
 )*(EAF_pex*EAHEAF_rer)^(1-EAH_mumc);
-// Private consumption good (import) inflation
+
 EAH_piimc = EAH_pimc/EAH_pimc(-1)*EAH_pic;
-// Private consumption good (import)
+
 EAH_imi^((EAH_mumi-1)/EAH_mumi) =
 +EAHEAA_numi ^(1/EAH_mumi)*EAHEAA_imi^(1-1/EAH_mumi)
 +EAHEAB_numi ^(1/EAH_mumi)*EAHEAB_imi^(1-1/EAH_mumi)
@@ -30985,27 +30985,27 @@ EAH_imi^((EAH_mumi-1)/EAH_mumi) =
 -EAHRW_numi
 -EAHUS_numi
 )^(1/EAH_mumi)*EAHEAF_imi^(1-1/EAH_mumi);
-// Demand for bilateral consumption import goods
+
 EAHEAA_imi = EAHEAA_numi*((EAA_pex*EAHEAA_rer)/EAH_pimi)^(-EAH_mumi)*EAH_imi;
-// Demand for bilateral consumption import goods
+
 EAHEAB_imi = EAHEAB_numi*((EAB_pex*EAHEAB_rer)/EAH_pimi)^(-EAH_mumi)*EAH_imi;
-// Demand for bilateral consumption import goods
+
 EAHEAC_imi = EAHEAC_numi*((EAC_pex*EAHEAC_rer)/EAH_pimi)^(-EAH_mumi)*EAH_imi;
-// Demand for bilateral consumption import goods
+
 EAHEAD_imi = EAHEAD_numi*((EAD_pex*EAHEAD_rer)/EAH_pimi)^(-EAH_mumi)*EAH_imi;
-// Demand for bilateral consumption import goods
+
 EAHEAE_imi = EAHEAE_numi*((EAE_pex*EAHEAE_rer)/EAH_pimi)^(-EAH_mumi)*EAH_imi;
-// Demand for bilateral consumption import goods
+
 EAHEAG_imi = EAHEAG_numi*((EAG_pex*EAHEAG_rer)/EAH_pimi)^(-EAH_mumi)*EAH_imi;
-// Demand for bilateral consumption import goods
+
 EAHEAJ_imi = EAHEAJ_numi*((EAJ_pex*EAHEAJ_rer)/EAH_pimi)^(-EAH_mumi)*EAH_imi;
-// Demand for bilateral consumption import goods
+
 EAHEAK_imi = EAHEAK_numi*((EAK_pex*EAHEAK_rer)/EAH_pimi)^(-EAH_mumi)*EAH_imi;
-// Demand for bilateral consumption import goods
+
 EAHEAL_imi = EAHEAL_numi*((EAL_pex*EAHEAL_rer)/EAH_pimi)^(-EAH_mumi)*EAH_imi;
-// Demand for bilateral consumption import goods
+
 EAHRW_imi = EAHRW_numi*((RW_pex*EAHRW_rer)/EAH_pimi)^(-EAH_mumi)*EAH_imi;
-// Demand for bilateral consumption import goods
+
 EAHUS_imi = EAHUS_numi*((US_pex*EAHUS_rer)/EAH_pimi)^(-EAH_mumi)*EAH_imi;
 EAHEAF_imi = (1
 -EAHEAA_numi
@@ -31021,7 +31021,7 @@ EAHEAF_imi = (1
 -EAHRW_numi
 -EAHUS_numi
 )*((EAF_pex*EAHEAF_rer)/EAH_pimi)^(-EAH_mumi)*EAH_imi;
-// Price of the consumption good (import)
+
 EAH_pimi^(1-EAH_mumi) =
 +EAHEAA_numi * (EAA_pex*EAHEAA_rer)^(1-EAH_mumi)
 +EAHEAB_numi * (EAB_pex*EAHEAB_rer)^(1-EAH_mumi)
@@ -31049,9 +31049,9 @@ EAH_pimi^(1-EAH_mumi) =
 -EAHRW_numi
 -EAHUS_numi
 )*(EAF_pex*EAHEAF_rer)^(1-EAH_mumi);
-// Private consumption good (import) inflation
+
 EAH_piimi = EAH_pimi/EAH_pimi(-1)*EAH_pic;
-// Private consumption good (import)
+
 EAH_imcg^((EAH_mumcg-1)/EAH_mumcg) =
 +EAHEAA_numcg ^(1/EAH_mumcg)*EAHEAA_imcg^(1-1/EAH_mumcg)
 +EAHEAB_numcg ^(1/EAH_mumcg)*EAHEAB_imcg^(1-1/EAH_mumcg)
@@ -31079,27 +31079,27 @@ EAH_imcg^((EAH_mumcg-1)/EAH_mumcg) =
 -EAHRW_numcg
 -EAHUS_numcg
 )^(1/EAH_mumcg)*EAHEAF_imcg^(1-1/EAH_mumcg);
-// Demand for bilateral consumption import goods
+
 EAHEAA_imcg = EAHEAA_numcg*((EAA_pex*EAHEAA_rer)/EAH_pimcg)^(-EAH_mumcg)*EAH_imcg;
-// Demand for bilateral consumption import goods
+
 EAHEAB_imcg = EAHEAB_numcg*((EAB_pex*EAHEAB_rer)/EAH_pimcg)^(-EAH_mumcg)*EAH_imcg;
-// Demand for bilateral consumption import goods
+
 EAHEAC_imcg = EAHEAC_numcg*((EAC_pex*EAHEAC_rer)/EAH_pimcg)^(-EAH_mumcg)*EAH_imcg;
-// Demand for bilateral consumption import goods
+
 EAHEAD_imcg = EAHEAD_numcg*((EAD_pex*EAHEAD_rer)/EAH_pimcg)^(-EAH_mumcg)*EAH_imcg;
-// Demand for bilateral consumption import goods
+
 EAHEAE_imcg = EAHEAE_numcg*((EAE_pex*EAHEAE_rer)/EAH_pimcg)^(-EAH_mumcg)*EAH_imcg;
-// Demand for bilateral consumption import goods
+
 EAHEAG_imcg = EAHEAG_numcg*((EAG_pex*EAHEAG_rer)/EAH_pimcg)^(-EAH_mumcg)*EAH_imcg;
-// Demand for bilateral consumption import goods
+
 EAHEAJ_imcg = EAHEAJ_numcg*((EAJ_pex*EAHEAJ_rer)/EAH_pimcg)^(-EAH_mumcg)*EAH_imcg;
-// Demand for bilateral consumption import goods
+
 EAHEAK_imcg = EAHEAK_numcg*((EAK_pex*EAHEAK_rer)/EAH_pimcg)^(-EAH_mumcg)*EAH_imcg;
-// Demand for bilateral consumption import goods
+
 EAHEAL_imcg = EAHEAL_numcg*((EAL_pex*EAHEAL_rer)/EAH_pimcg)^(-EAH_mumcg)*EAH_imcg;
-// Demand for bilateral consumption import goods
+
 EAHRW_imcg = EAHRW_numcg*((RW_pex*EAHRW_rer)/EAH_pimcg)^(-EAH_mumcg)*EAH_imcg;
-// Demand for bilateral consumption import goods
+
 EAHUS_imcg = EAHUS_numcg*((US_pex*EAHUS_rer)/EAH_pimcg)^(-EAH_mumcg)*EAH_imcg;
 EAHEAF_imcg = (1
 -EAHEAA_numcg
@@ -31115,7 +31115,7 @@ EAHEAF_imcg = (1
 -EAHRW_numcg
 -EAHUS_numcg
 )*((EAF_pex*EAHEAF_rer)/EAH_pimcg)^(-EAH_mumcg)*EAH_imcg;
-// Price of the consumption good (import)
+
 EAH_pimcg^(1-EAH_mumcg) =
 +EAHEAA_numcg * (EAA_pex*EAHEAA_rer)^(1-EAH_mumcg)
 +EAHEAB_numcg * (EAB_pex*EAHEAB_rer)^(1-EAH_mumcg)
@@ -31143,9 +31143,9 @@ EAH_pimcg^(1-EAH_mumcg) =
 -EAHRW_numcg
 -EAHUS_numcg
 )*(EAF_pex*EAHEAF_rer)^(1-EAH_mumcg);
-// Private consumption good (import) inflation
+
 EAH_piimcg = EAH_pimcg/EAH_pimcg(-1)*EAH_pic;
-// Private consumption good (import)
+
 EAH_imig^((EAH_mumig-1)/EAH_mumig) =
 +EAHEAA_numig ^(1/EAH_mumig)*EAHEAA_imig^(1-1/EAH_mumig)
 +EAHEAB_numig ^(1/EAH_mumig)*EAHEAB_imig^(1-1/EAH_mumig)
@@ -31173,27 +31173,27 @@ EAH_imig^((EAH_mumig-1)/EAH_mumig) =
 -EAHRW_numig
 -EAHUS_numig
 )^(1/EAH_mumig)*EAHEAF_imig^(1-1/EAH_mumig);
-// Demand for bilateral consumption import goods
+
 EAHEAA_imig = EAHEAA_numig*((EAA_pex*EAHEAA_rer)/EAH_pimig)^(-EAH_mumig)*EAH_imig;
-// Demand for bilateral consumption import goods
+
 EAHEAB_imig = EAHEAB_numig*((EAB_pex*EAHEAB_rer)/EAH_pimig)^(-EAH_mumig)*EAH_imig;
-// Demand for bilateral consumption import goods
+
 EAHEAC_imig = EAHEAC_numig*((EAC_pex*EAHEAC_rer)/EAH_pimig)^(-EAH_mumig)*EAH_imig;
-// Demand for bilateral consumption import goods
+
 EAHEAD_imig = EAHEAD_numig*((EAD_pex*EAHEAD_rer)/EAH_pimig)^(-EAH_mumig)*EAH_imig;
-// Demand for bilateral consumption import goods
+
 EAHEAE_imig = EAHEAE_numig*((EAE_pex*EAHEAE_rer)/EAH_pimig)^(-EAH_mumig)*EAH_imig;
-// Demand for bilateral consumption import goods
+
 EAHEAG_imig = EAHEAG_numig*((EAG_pex*EAHEAG_rer)/EAH_pimig)^(-EAH_mumig)*EAH_imig;
-// Demand for bilateral consumption import goods
+
 EAHEAJ_imig = EAHEAJ_numig*((EAJ_pex*EAHEAJ_rer)/EAH_pimig)^(-EAH_mumig)*EAH_imig;
-// Demand for bilateral consumption import goods
+
 EAHEAK_imig = EAHEAK_numig*((EAK_pex*EAHEAK_rer)/EAH_pimig)^(-EAH_mumig)*EAH_imig;
-// Demand for bilateral consumption import goods
+
 EAHEAL_imig = EAHEAL_numig*((EAL_pex*EAHEAL_rer)/EAH_pimig)^(-EAH_mumig)*EAH_imig;
-// Demand for bilateral consumption import goods
+
 EAHRW_imig = EAHRW_numig*((RW_pex*EAHRW_rer)/EAH_pimig)^(-EAH_mumig)*EAH_imig;
-// Demand for bilateral consumption import goods
+
 EAHUS_imig = EAHUS_numig*((US_pex*EAHUS_rer)/EAH_pimig)^(-EAH_mumig)*EAH_imig;
 EAHEAF_imig = (1
 -EAHEAA_numig
@@ -31209,7 +31209,7 @@ EAHEAF_imig = (1
 -EAHRW_numig
 -EAHUS_numig
 )*((EAF_pex*EAHEAF_rer)/EAH_pimig)^(-EAH_mumig)*EAH_imig;
-// Price of the consumption good (import)
+
 EAH_pimig^(1-EAH_mumig) =
 +EAHEAA_numig * (EAA_pex*EAHEAA_rer)^(1-EAH_mumig)
 +EAHEAB_numig * (EAB_pex*EAHEAB_rer)^(1-EAH_mumig)
@@ -31237,15 +31237,15 @@ EAH_pimig^(1-EAH_mumig) =
 -EAHRW_numig
 -EAHUS_numig
 )*(EAF_pex*EAHEAF_rer)^(1-EAH_mumig);
-// Private consumption good (import) inflation
+
 EAH_piimig = EAH_pimig/EAH_pimig(-1)*EAH_pic;
-// Private consumption good (import) inflation
+
 EAH_piimc4 = EAH_pimc/EAH_pimc(-4)*EAH_pic4;
-// Private consumption good (import) inflation
+
 EAH_piex4 = EAH_pex/EAH_pex(-4)*EAH_pic4;
-// Wedge between aggregate demand and production, using EAH_x = EAI_size/EAH_size*EAI_im
+
 EAH_yst = EAH_sh*EAH_ht+EAH_sx*EAH_ex;
-// Aggregate demand for bilateral imported intermediate goods
+
 EAHEAA_im = 
 +EAHEAA_imc
 +EAHEAA_imi
@@ -31324,18 +31324,18 @@ EAHUS_im =
 +EAHUS_imcg
 +EAHUS_imig
 ;
-// Private consumption good firm
-// Private consumption good (tradable)
+
+
 EAH_ttc^((EAH_mutc-1)/EAH_mutc) = (EAH_nutc)^(1/EAH_mutc)*EAH_htc^(1-1/EAH_mutc)+(1-EAH_nutc)^(1/EAH_mutc)*EAH_imc^(1-1/EAH_mutc);
-// Private consumption good  (total)
+
 EAH_qc^((EAH_muc-1)/EAH_muc) = (EAH_nuc)^(1/EAH_muc)*EAH_ttc^(1-1/EAH_muc)+(1-EAH_nuc)^(1/EAH_muc)*EAH_ntc^(1-1/EAH_muc);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAH_ntc = (1-EAH_nuc)*(EAH_pnt)^(-EAH_muc)*EAH_qc;
-// Price of the consumption good (tradable)  
+
 EAH_pttc^(1-EAH_mutc) = (EAH_nutc)*EAH_pht^(1-EAH_mutc)+(1-EAH_nutc)*EAH_pimc^(1-EAH_mutc);
-// Price of the consumption good 
+
 1^(1-EAH_muc) = (EAH_nuc)*EAH_pttc^(1-EAH_muc)+(1-EAH_nuc)*EAH_pnt^(1-EAH_muc);
-// Demand for domestic intermediate goods
+
 EAH_htc = EAH_nutc*(EAH_pht/EAH_pttc)^(-EAH_mutc)*EAH_ttc;
 EAHEAA_gammaimc = 0;
 EAHEAA_gammaimcdag = 1;
@@ -31363,20 +31363,20 @@ EAHRW_gammaimc = 0;
 EAHRW_gammaimcdag = 1;
 EAHUS_gammaimc = 0;
 EAHUS_gammaimcdag = 1;
-// Private consumption good (tradable)
+
 EAH_tti^((EAH_muti-1)/EAH_muti) = (EAH_nuti)^(1/EAH_muti)*EAH_hti^(1-1/EAH_muti)+(1-EAH_nuti)^(1/EAH_muti)*EAH_imi^(1-1/EAH_muti);
-// Private consumption good  (total)
+
 EAH_qi^((EAH_mui-1)/EAH_mui) = (EAH_nui)^(1/EAH_mui)*EAH_tti^(1-1/EAH_mui)+(1-EAH_nui)^(1/EAH_mui)*EAH_nti^(1-1/EAH_mui);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAH_nti = (1-EAH_nui)*(EAH_pnt/EAH_pi)^(-EAH_mui)*EAH_qi;
-// Price of the consumption good (tradable)  
+
 EAH_ptti^(1-EAH_muti) = (EAH_nuti)*EAH_pht^(1-EAH_muti)+(1-EAH_nuti)*EAH_pimi^(1-EAH_muti);
-// Price of the consumption good 
+
 EAH_pi^(1-EAH_mui) = (EAH_nui)*EAH_ptti^(1-EAH_mui)+(1-EAH_nui)*EAH_pnt^(1-EAH_mui);
-// Auxiliary equation for the price of the investment good in steady state
-// this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
+
+
 EAH_pibar = EAH_pi;
-// Demand for domestic intermediate goods
+
 EAH_hti = EAH_nuti*(EAH_pht/EAH_ptti)^(-EAH_muti)*EAH_tti;
 EAHEAA_gammaimi = 0;
 EAHEAA_gammaimidag = 1;
@@ -31404,17 +31404,17 @@ EAHRW_gammaimi = 0;
 EAHRW_gammaimidag = 1;
 EAHUS_gammaimi = 0;
 EAHUS_gammaimidag = 1;
-// Private consumption good (tradable)
+
 EAH_ttcg^((EAH_mutcg-1)/EAH_mutcg) = (EAH_nutcg)^(1/EAH_mutcg)*EAH_htcg^(1-1/EAH_mutcg)+(1-EAH_nutcg)^(1/EAH_mutcg)*EAH_imcg^(1-1/EAH_mutcg);
-// Private consumption good  (total)
+
 EAH_qcg^((EAH_mucg-1)/EAH_mucg) = (EAH_nucg)^(1/EAH_mucg)*EAH_ttcg^(1-1/EAH_mucg)+(1-EAH_nucg)^(1/EAH_mucg)*EAH_ntcg^(1-1/EAH_mucg);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAH_ntcg = (1-EAH_nucg)*(EAH_pnt/EAH_pcg)^(-EAH_mucg)*EAH_qcg;
-// Price of the consumption good (tradable)  
+
 EAH_pttcg^(1-EAH_mutcg) = (EAH_nutcg)*EAH_pht^(1-EAH_mutcg)+(1-EAH_nutcg)*EAH_pimcg^(1-EAH_mutcg);
-// Price of the consumption good 
+
 EAH_pcg^(1-EAH_mucg) = (EAH_nucg)*EAH_pttcg^(1-EAH_mucg)+(1-EAH_nucg)*EAH_pnt^(1-EAH_mucg);
-// Demand for domestic intermediate goods
+
 EAH_htcg = EAH_nutcg*(EAH_pht/EAH_pttcg)^(-EAH_mutcg)*EAH_ttcg;
 EAHEAA_gammaimcg = 0;
 EAHEAA_gammaimcgdag = 1;
@@ -31442,17 +31442,17 @@ EAHRW_gammaimcg = 0;
 EAHRW_gammaimcgdag = 1;
 EAHUS_gammaimcg = 0;
 EAHUS_gammaimcgdag = 1;
-// Private consumption good (tradable)
+
 EAH_ttig^((EAH_mutig-1)/EAH_mutig) = (EAH_nutig)^(1/EAH_mutig)*EAH_htig^(1-1/EAH_mutig)+(1-EAH_nutig)^(1/EAH_mutig)*EAH_imig^(1-1/EAH_mutig);
-// Private consumption good  (total)
+
 EAH_qig^((EAH_muig-1)/EAH_muig) = (EAH_nuig)^(1/EAH_muig)*EAH_ttig^(1-1/EAH_muig)+(1-EAH_nuig)^(1/EAH_muig)*EAH_ntig^(1-1/EAH_muig);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAH_ntig = (1-EAH_nuig)*(EAH_pnt/EAH_pig)^(-EAH_muig)*EAH_qig;
-// Price of the consumption good (tradable)  
+
 EAH_pttig^(1-EAH_mutig) = (EAH_nutig)*EAH_pht^(1-EAH_mutig)+(1-EAH_nutig)*EAH_pimig^(1-EAH_mutig);
-// Price of the consumption good 
+
 EAH_pig^(1-EAH_muig) = (EAH_nuig)*EAH_pttig^(1-EAH_muig)+(1-EAH_nuig)*EAH_pnt^(1-EAH_muig);
-// Demand for domestic intermediate goods
+
 EAH_htig = EAH_nutig*(EAH_pht/EAH_pttig)^(-EAH_mutig)*EAH_ttig;
 EAHEAA_gammaimig = 0;
 EAHEAA_gammaimigdag = 1;
@@ -31480,7 +31480,7 @@ EAHRW_gammaimig = 0;
 EAHRW_gammaimigdag = 1;
 EAHUS_gammaimig = 0;
 EAHUS_gammaimigdag = 1;
-// Trade balance
+
 EAH_tb =
 +EAH_pex*EAA_size/EAH_size*EAAEAH_im
 -EAA_pex*EAHEAA_rer*EAHEAA_im
@@ -31509,7 +31509,7 @@ EAH_tb =
 +EAH_pex*US_size/EAH_size*USEAH_im
 -US_pex*EAHUS_rer*EAHUS_im
 ;
-// Aggregate exports (volume)
+
 EAH_ex =
 +EAA_size/EAH_size*EAAEAH_im
 +EAB_size/EAH_size*EABEAH_im
@@ -31525,131 +31525,131 @@ EAH_ex =
 +RW_size/EAH_size*RWEAH_im
 +US_size/EAH_size*USEAH_im
 ;
-//-------------
-//-------------
-// Fiscal and monetary authorities
-//-------------
-//-------------
-//-------------
-// Fiscal authority
-//-------------
-// Government budget constraint, using EAH_pg = EAH_pht
-// TODO: check the (1-EAH_gammab(-1)) adjustment here, which is not in the fiscal extention
+
+
+
+
+
+
+
+
+
+
 	EAH_pcg(-1)*EAH_cg(-1)+EAH_pig(-1)*EAH_ig(-1)+EAH_tr(-1)
 	+EAH_b(-1)*EAH_pic(-1)^(-1)+EAH_m(-2)*EAH_pic(-1)^(-1) = EAH_tauc(-1)*EAH_c(-1)+(EAH_taun(-1)+EAH_tauwh(-1))*(EAH_wi(-1)*EAH_ndi(-1)+EAH_wj(-1)*EAH_ndj(-1))+EAH_tauwf(-1)*EAH_w(-1)*EAH_nd(-1)+EAH_tauk(-1)*(EAH_rk(-1)*EAH_u(-1)-(EAH_gammau(-1)+EAH_delta)*EAH_pi(-1))*EAH_k(-1)+EAH_taud(-1)*EAH_d(-1)+EAH_t(-1)+(EAH_r(-1)*(1-EAH_gammab(-1)))^(-1)*EAH_b+EAH_m(-1);
-// Government spending, using EAH_pg = EAH_pht
+
 EAH_pcg*EAH_cg = EAH_cgy*EAH_pybar*EAH_ybar;
 EAH_pig*EAH_ig = EAH_igy*EAH_pybar*EAH_ybar;
 EAH_t = 0;
 EAH_b = EAH_bytarget*EAH_pybar*EAH_ybar;
-// Auxiliary equation for steady-state output
+
 EAH_ybar = EAH_y;
-// Auxiliary equation for steady-state output
+
 EAH_ytbar = EAH_yst;
-// Auxiliary equation for steady-state output
+
 EAH_ynbar = EAH_ysn;
-// Auxiliary equation for steady-state output deflator
+
 EAH_pybar = EAH_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
+
 EAH_trybar = EAH_tr/(EAH_pybar*EAH_ybar);
-// Auxiliary equation for determining the distribution of lump-sum taxes
+
 EAH_ti = EAH_upsilont*EAH_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
 upsilont = 0:            ti = 0, tj = 1/omega t
 upsilont = 1:            ti = tj = t
 upsilont = 1/(1-omega):  ti = 1/(1-omega) t, tj = 0. */
-// Auxiliary equation for determining the distribution of lump-sum transfers
+
 EAH_tri = EAH_upsilontr*EAH_tr;
 /* Note: Valid parameter space: 0 <= upsilontr <= 1/(1-omega) with
 upsilontr = 0:            tri = 0, trj = 1/omega tr
 upsilontr = 1:            tri = trj = tr
 upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
-//-------------
-// Monetary authority
-//-------------
+
+
+
 	EAH_r = EAL_r;
 EAH_pic4 = EAH_pi4target;
 EAH_rr-1 = EAH_r/EAH_pi4target^(1/4)-1;
-// Equilibrium real interest rate
+
 EAH_rrstar-1 = 1/EAH_beta-1;
-//-------------
-//-------------
-// Aggregation, market clearing and resource constraint
-//-------------
-//-------------
-//-------------
-// Aggregation
-//-------------
-// Aggregate consumption
+
+
+
+
+
+
+
+
+
 EAH_c = (1-EAH_omega)*EAH_ci+EAH_omega*EAH_cj;
-// Aggregate money holdings
+
 EAH_m = (1-EAH_omega)*EAH_mi+EAH_omega*EAH_mj;
-// Aggregate capital stock
+
 EAH_k = (1-EAH_omega)*EAH_ki;
-// Aggregate investment
+
 EAH_i = (1-EAH_omega)*EAH_ii;
-// Aggregate lump-sum transfers
+
 EAH_trj = 
 1/EAH_omega*EAH_tr-(1-EAH_omega)/EAH_omega*EAH_tri
 ;
-// Aggregate lump-sum taxes
+
 EAH_tj = 
 1/EAH_omega*EAH_t-(1-EAH_omega)/EAH_omega*EAH_ti
 ;
-// Aggregate transaction costs
+
 EAH_gammav = (1-EAH_omega)*EAH_ci*EAH_gammavi+EAH_omega*EAH_cj*EAH_gammavj;
-//-------------
-// Market clearing
-//-------------
-// Labour markets for household I
-// Wedge between labour demand/hours worked and labour supply
+
+
+
+
+
 EAH_ni = EAH_si*EAH_ndi;
-// Wage dispersion
+
 EAH_si = (1-EAH_xii)*(EAH_witilde/EAH_wi)^(-EAH_etai)+EAH_xii*(EAH_wi(-1)/EAH_wi)^(-EAH_etai)*(EAH_pic/(EAH_pic(-1)^EAH_chii*EAH_pi4target^(1/4*(1-EAH_chii))))^(EAH_etai)*EAH_si(-1);
-// Labour markets for household J
-// Wedge between labour demand/hours worked and labour supply
+
+
 EAH_nj = EAH_sj*EAH_ndj;
-// Wage dispersion
+
 EAH_sj = (1-EAH_xij)*(EAH_wjtilde/EAH_wj)^(-EAH_etaj)+EAH_xij*(EAH_wj(-1)/EAH_wj)^(-EAH_etaj)*(EAH_pic/(EAH_pic(-1)^EAH_chij*EAH_pi4target^(1/4*(1-EAH_chij))))^(EAH_etaj)*EAH_sj(-1);
-// Rental market for capital
-// Equality of capital input and effective capital services
+
+
 EAH_u*EAH_k = EAH_kd;
-// Intermediate-good markets
-// Wedge between aggregate demand and production, using EAH_x = EAI_size/EAH_size*EAI_im
+
+
 EAH_ysn = EAH_snt*EAH_nt;
-//  nontradables aggregate demand
+
 EAH_nt = 
 +EAH_ntc
 +EAH_nti
 +EAH_ntcg
 +EAH_ntig
 ;
-// Aggregate demand for domestic intermediate goods, using EAH_hg = EAH_cg
+
 EAH_ht =
 +EAH_htc
 +EAH_hti
 +EAH_htcg
 +EAH_htig
 ;
-// Price dispersion in the domestic markets
+
 EAH_sh = (1-EAH_xih)*(EAH_phttilde/EAH_pht)^(-EAH_thetat)+EAH_xih*(EAH_piht/(EAH_piht(-1)^EAH_chih*EAH_pi4target^(1/4*(1-EAH_chih))))^EAH_thetat*EAH_sh(-1);
-// Price dispersion in the foreign markets
+
 EAH_sx = (1-EAH_xix)*(EAH_pextilde/EAH_pex)^(-EAH_thetat)+EAH_xix*(EAH_piex/(EAH_piex(-1)^EAH_chix*EAH_pi4target^(1/4*(1-EAH_chix))))^EAH_thetat*EAH_sx(-1);
-// Price dispersion in the domestic markets
+
 EAH_snt = (1-EAH_xin)*(EAH_pnttilde/EAH_pnt)^(-EAH_thetan)+EAH_xin*(EAH_pint/(EAH_pint(-1)^EAH_chin*EAH_pi4target^(1/4*(1-EAH_chin))))^EAH_thetan*EAH_snt(-1);
-// Final-good markets
-// Aggregate consumption and transaction cost
+
+
 EAH_qc = EAH_c+EAH_gammav;
-// Aggregate investment and capital utilisation cost
+
 EAH_qi = EAH_i+EAH_k*EAH_gammau;
-// Aggregate gov demand components added to use the same structure like in private components
+
 EAH_qcg = EAH_cg;
 EAH_qig = EAH_ig;
-//-------------
-// Resource constraint
-//-------------
-// TODO: why there is no adjustment cost for gov components
-// Aggregate nominal demand
+
+
+
+
+
 EAH_py*EAH_y = 
 +EAH_qc
 +EAH_pi*EAH_qi
@@ -31721,83 +31721,83 @@ EAH_py*EAH_y =
 -(US_pex*EAHUS_rer)*EAHUS_imcg
 -(US_pex*EAHUS_rer)*EAHUS_imig
 ;
-// Aggregate real demand
+
 EAH_y = EAH_yst+EAH_ysn;
-//-------------
-//-------------
-// Autoregressive shocks
-//-------------
-//-------------
-// Productivity shocks
+
+
+
+
+
+
 log(EAH_zt) = (1-EAH_rhozt)*log(EAH_ztbar)+EAH_rhozt*log(EAH_zt(-1))+EAH_epszt;
 log(EAH_zn) = (1-EAH_rhozn)*log(EAH_znbar)+EAH_rhozn*log(EAH_zn(-1))+EAH_epszn;
-// Government spending shock
+
 EAH_cgy = (1-EAH_rhocg)*EAH_cgybar+EAH_rhocg*EAH_cgy(-1)+EAH_epsgc;
 EAH_igy = (1-EAH_rhoig)*EAH_igybar+EAH_rhoig*EAH_igy(-1)+EAH_epsgi;
-// Transfer shock
+
 EAH_try = (1-EAH_rhotr)*EAH_trybar+EAH_rhotr*EAH_try(-1)+EAH_epstr;
-// Consumption tax shock
+
 EAH_tauc = (1-EAH_rhotauc)*EAH_taucbar+EAH_rhotauc*EAH_tauc(-1)+EAH_epstauc;
-// Dividend income tax shock
+
 EAH_taud = (1-EAH_rhotaud)*EAH_taudbar+EAH_rhotaud*EAH_taud(-1)+EAH_epstaud;
-// Capital income tax shock
+
 EAH_tauk = (1-EAH_rhotauk)*EAH_taukbar+EAH_rhotauk*EAH_tauk(-1)+EAH_epstauk;
-// Labour income tax shock
+
 EAH_taun = (1-EAH_rhotaun)*EAH_taunbar+EAH_rhotaun*EAH_taun(-1)+EAH_epstaun;
-// Payroll tax shock: households
+
 EAH_tauwh = (1-EAH_rhotauwh)*EAH_tauwhbar+EAH_rhotauwh*EAH_tauwh(-1)+EAH_epstauwh;
-// Payroll tax shock: firms
+
 EAH_tauwf = (1-EAH_rhotauwf)*EAH_tauwfbar+EAH_rhotauwf*EAH_tauwf(-1)+EAH_epstauwf;
-// Wage cost push shock
+
 EAH_wcst = (1-EAH_rhowcst)*EAH_wcstbar+EAH_rhowcst*EAH_wcst(-1)+EAH_epswcst;
-// Preference shock
+
 log(EAH_zcon) = (1-EAH_rhozcon)*log(EAH_zconbar)+EAH_rhozcon*log(EAH_zcon(-1))+EAH_epszcon;
-// Investment specific shock
+
 log(EAH_zinv) = (1-EAH_rhozinv)*log(EAH_zinvbar)+EAH_rhozinv*log(EAH_zinv(-1))+EAH_epszinv;
-//-------------
-//-------------
-// Conditions for calibration and reporting
-//-------------
-//-------------
-// Aggregate nominal consumption share
+
+
+
+
+
+
 EAH_cy = EAH_c/(EAH_py*EAH_y);
-// Aggregate nominal investment share
+
 EAH_iy = EAH_pi*EAH_i/(EAH_py*EAH_y);
-// Aggregate nominal import share  
+
 EAH_imy = (
 +EAH_pimc*EAH_imc
 +EAH_pimi*EAH_imi
 +EAH_pimcg*EAH_imcg
 +EAH_pimig*EAH_imig
 )/(EAH_py*EAH_y);
-// Aggregate nominal import share
+
 EAH_imcy = EAH_pimc*EAH_imc/(EAH_py*EAH_y);
 EAH_imiy = EAH_pimi*EAH_imi/(EAH_py*EAH_y);
 EAH_imcgy = EAH_pimcg*EAH_imcg/(EAH_py*EAH_y);
 EAH_imigy = EAH_pimig*EAH_imig/(EAH_py*EAH_y);
-// Aggregate debt-to-output ratio
+
 EAH_by = EAH_b/(EAH_pybar*EAH_ybar);
-// Aggregate lump-sum tax-to-output ratio
+
 EAH_ty = EAH_t/(EAH_pybar*EAH_ybar);
-// Aggregate labour cost share
+
 EAH_lcy = ((1+EAH_tauwf)*EAH_w*EAH_nd)/(EAH_py*EAH_y);
-// Aggregate nominal Wage share
+
 EAH_wy = (EAH_w*EAH_nd)/(EAH_py*EAH_y);
-// NT sector nominal Wage share
+
 EAH_wnty = (EAH_w*EAH_ndn)/(EAH_pnt*EAH_ysn);
-// T sector nominal Wage share
+
 EAH_whty = (EAH_w*EAH_ndt)/(EAH_pht*EAH_yst);
-// T sector share
+
 EAH_yhty = EAH_pht*EAH_yst/(EAH_py*EAH_y);
-// NT sector share
+
 EAH_ynty = EAH_pnt*EAH_ysn/(EAH_py*EAH_y);
-// Output gap
+
 EAH_ygap = 0;
-// Output growth (gross rate)
+
 EAH_ygrowth = EAH_y/EAH_y(-1);
-// Output growth (gross rate yoy)
+
 EAH_ygrowth4 = EAH_y/EAH_y(-4);
-// Domestic nominal output as a share of world nominal output
+
 EAH_yshare  = EAH_size*EAH_py*EAH_y/EAH_rer/(
 +EAA_size*EAA_py*EAA_y/EAA_rer
 +EAB_size*EAB_py*EAB_y/EAB_rer
@@ -31814,153 +31814,153 @@ EAH_yshare  = EAH_size*EAH_py*EAH_y/EAH_rer/(
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
-// Interest (semi-)elasticity of money demand
+
 EAH_epsilonm = -1/8*1/(EAH_r*(EAH_gammav2*EAH_r+EAH_r-1));
-// Trade balance-to-GDP ratio
+
 EAH_tby = EAH_tb/(EAH_py*EAH_y);
-// Bilateral shares
+
 EAHEAA_imcy = (EAA_pex*EAHEAA_rer)*EAHEAA_imc/(EAH_py*EAH_y);
 EAHEAA_imiy = (EAA_pex*EAHEAA_rer)*EAHEAA_imi/(EAH_py*EAH_y);
 EAHEAA_imcgy = (EAA_pex*EAHEAA_rer)*EAHEAA_imcg/(EAH_py*EAH_y);
 EAHEAA_imigy = (EAA_pex*EAHEAA_rer)*EAHEAA_imig/(EAH_py*EAH_y);
-// Exports of consumption goods to gdp
+
 EAHEAA_excy  = EAA_size/EAH_size*EAH_pex*EAAEAH_imc/(EAH_py*EAH_y);
-// Exports of investment goods to gdp
+
 EAHEAA_exiy  = EAA_size/EAH_size*EAH_pex*EAAEAH_imi/(EAH_py*EAH_y);
-// Bilateral shares
+
 EAHEAB_imcy = (EAB_pex*EAHEAB_rer)*EAHEAB_imc/(EAH_py*EAH_y);
 EAHEAB_imiy = (EAB_pex*EAHEAB_rer)*EAHEAB_imi/(EAH_py*EAH_y);
 EAHEAB_imcgy = (EAB_pex*EAHEAB_rer)*EAHEAB_imcg/(EAH_py*EAH_y);
 EAHEAB_imigy = (EAB_pex*EAHEAB_rer)*EAHEAB_imig/(EAH_py*EAH_y);
-// Exports of consumption goods to gdp
+
 EAHEAB_excy  = EAB_size/EAH_size*EAH_pex*EABEAH_imc/(EAH_py*EAH_y);
-// Exports of investment goods to gdp
+
 EAHEAB_exiy  = EAB_size/EAH_size*EAH_pex*EABEAH_imi/(EAH_py*EAH_y);
-// Bilateral shares
+
 EAHEAC_imcy = (EAC_pex*EAHEAC_rer)*EAHEAC_imc/(EAH_py*EAH_y);
 EAHEAC_imiy = (EAC_pex*EAHEAC_rer)*EAHEAC_imi/(EAH_py*EAH_y);
 EAHEAC_imcgy = (EAC_pex*EAHEAC_rer)*EAHEAC_imcg/(EAH_py*EAH_y);
 EAHEAC_imigy = (EAC_pex*EAHEAC_rer)*EAHEAC_imig/(EAH_py*EAH_y);
-// Exports of consumption goods to gdp
+
 EAHEAC_excy  = EAC_size/EAH_size*EAH_pex*EACEAH_imc/(EAH_py*EAH_y);
-// Exports of investment goods to gdp
+
 EAHEAC_exiy  = EAC_size/EAH_size*EAH_pex*EACEAH_imi/(EAH_py*EAH_y);
-// Bilateral shares
+
 EAHEAD_imcy = (EAD_pex*EAHEAD_rer)*EAHEAD_imc/(EAH_py*EAH_y);
 EAHEAD_imiy = (EAD_pex*EAHEAD_rer)*EAHEAD_imi/(EAH_py*EAH_y);
 EAHEAD_imcgy = (EAD_pex*EAHEAD_rer)*EAHEAD_imcg/(EAH_py*EAH_y);
 EAHEAD_imigy = (EAD_pex*EAHEAD_rer)*EAHEAD_imig/(EAH_py*EAH_y);
-// Exports of consumption goods to gdp
+
 EAHEAD_excy  = EAD_size/EAH_size*EAH_pex*EADEAH_imc/(EAH_py*EAH_y);
-// Exports of investment goods to gdp
+
 EAHEAD_exiy  = EAD_size/EAH_size*EAH_pex*EADEAH_imi/(EAH_py*EAH_y);
-// Bilateral shares
+
 EAHEAE_imcy = (EAE_pex*EAHEAE_rer)*EAHEAE_imc/(EAH_py*EAH_y);
 EAHEAE_imiy = (EAE_pex*EAHEAE_rer)*EAHEAE_imi/(EAH_py*EAH_y);
 EAHEAE_imcgy = (EAE_pex*EAHEAE_rer)*EAHEAE_imcg/(EAH_py*EAH_y);
 EAHEAE_imigy = (EAE_pex*EAHEAE_rer)*EAHEAE_imig/(EAH_py*EAH_y);
-// Exports of consumption goods to gdp
+
 EAHEAE_excy  = EAE_size/EAH_size*EAH_pex*EAEEAH_imc/(EAH_py*EAH_y);
-// Exports of investment goods to gdp
+
 EAHEAE_exiy  = EAE_size/EAH_size*EAH_pex*EAEEAH_imi/(EAH_py*EAH_y);
-// Bilateral shares
+
 EAHEAF_imcy = (EAF_pex*EAHEAF_rer)*EAHEAF_imc/(EAH_py*EAH_y);
 EAHEAF_imiy = (EAF_pex*EAHEAF_rer)*EAHEAF_imi/(EAH_py*EAH_y);
 EAHEAF_imcgy = (EAF_pex*EAHEAF_rer)*EAHEAF_imcg/(EAH_py*EAH_y);
 EAHEAF_imigy = (EAF_pex*EAHEAF_rer)*EAHEAF_imig/(EAH_py*EAH_y);
-// Exports of consumption goods to gdp
+
 EAHEAF_excy  = EAF_size/EAH_size*EAH_pex*EAFEAH_imc/(EAH_py*EAH_y);
-// Exports of investment goods to gdp
+
 EAHEAF_exiy  = EAF_size/EAH_size*EAH_pex*EAFEAH_imi/(EAH_py*EAH_y);
-// Bilateral shares
+
 EAHEAG_imcy = (EAG_pex*EAHEAG_rer)*EAHEAG_imc/(EAH_py*EAH_y);
 EAHEAG_imiy = (EAG_pex*EAHEAG_rer)*EAHEAG_imi/(EAH_py*EAH_y);
 EAHEAG_imcgy = (EAG_pex*EAHEAG_rer)*EAHEAG_imcg/(EAH_py*EAH_y);
 EAHEAG_imigy = (EAG_pex*EAHEAG_rer)*EAHEAG_imig/(EAH_py*EAH_y);
-// Exports of consumption goods to gdp
+
 EAHEAG_excy  = EAG_size/EAH_size*EAH_pex*EAGEAH_imc/(EAH_py*EAH_y);
-// Exports of investment goods to gdp
+
 EAHEAG_exiy  = EAG_size/EAH_size*EAH_pex*EAGEAH_imi/(EAH_py*EAH_y);
-// Bilateral shares
+
 EAHEAI_imcy = (EAI_pex*EAHEAI_rer)*EAHEAI_imc/(EAH_py*EAH_y);
 EAHEAI_imiy = (EAI_pex*EAHEAI_rer)*EAHEAI_imi/(EAH_py*EAH_y);
 EAHEAI_imcgy = (EAI_pex*EAHEAI_rer)*EAHEAI_imcg/(EAH_py*EAH_y);
 EAHEAI_imigy = (EAI_pex*EAHEAI_rer)*EAHEAI_imig/(EAH_py*EAH_y);
-// Exports of consumption goods to gdp
+
 EAHEAI_excy  = EAI_size/EAH_size*EAH_pex*EAIEAH_imc/(EAH_py*EAH_y);
-// Exports of investment goods to gdp
+
 EAHEAI_exiy  = EAI_size/EAH_size*EAH_pex*EAIEAH_imi/(EAH_py*EAH_y);
-// Bilateral shares
+
 EAHEAJ_imcy = (EAJ_pex*EAHEAJ_rer)*EAHEAJ_imc/(EAH_py*EAH_y);
 EAHEAJ_imiy = (EAJ_pex*EAHEAJ_rer)*EAHEAJ_imi/(EAH_py*EAH_y);
 EAHEAJ_imcgy = (EAJ_pex*EAHEAJ_rer)*EAHEAJ_imcg/(EAH_py*EAH_y);
 EAHEAJ_imigy = (EAJ_pex*EAHEAJ_rer)*EAHEAJ_imig/(EAH_py*EAH_y);
-// Exports of consumption goods to gdp
+
 EAHEAJ_excy  = EAJ_size/EAH_size*EAH_pex*EAJEAH_imc/(EAH_py*EAH_y);
-// Exports of investment goods to gdp
+
 EAHEAJ_exiy  = EAJ_size/EAH_size*EAH_pex*EAJEAH_imi/(EAH_py*EAH_y);
-// Bilateral shares
+
 EAHEAK_imcy = (EAK_pex*EAHEAK_rer)*EAHEAK_imc/(EAH_py*EAH_y);
 EAHEAK_imiy = (EAK_pex*EAHEAK_rer)*EAHEAK_imi/(EAH_py*EAH_y);
 EAHEAK_imcgy = (EAK_pex*EAHEAK_rer)*EAHEAK_imcg/(EAH_py*EAH_y);
 EAHEAK_imigy = (EAK_pex*EAHEAK_rer)*EAHEAK_imig/(EAH_py*EAH_y);
-// Exports of consumption goods to gdp
+
 EAHEAK_excy  = EAK_size/EAH_size*EAH_pex*EAKEAH_imc/(EAH_py*EAH_y);
-// Exports of investment goods to gdp
+
 EAHEAK_exiy  = EAK_size/EAH_size*EAH_pex*EAKEAH_imi/(EAH_py*EAH_y);
-// Bilateral shares
+
 EAHEAL_imcy = (EAL_pex*EAHEAL_rer)*EAHEAL_imc/(EAH_py*EAH_y);
 EAHEAL_imiy = (EAL_pex*EAHEAL_rer)*EAHEAL_imi/(EAH_py*EAH_y);
 EAHEAL_imcgy = (EAL_pex*EAHEAL_rer)*EAHEAL_imcg/(EAH_py*EAH_y);
 EAHEAL_imigy = (EAL_pex*EAHEAL_rer)*EAHEAL_imig/(EAH_py*EAH_y);
-// Exports of consumption goods to gdp
+
 EAHEAL_excy  = EAL_size/EAH_size*EAH_pex*EALEAH_imc/(EAH_py*EAH_y);
-// Exports of investment goods to gdp
+
 EAHEAL_exiy  = EAL_size/EAH_size*EAH_pex*EALEAH_imi/(EAH_py*EAH_y);
-// Bilateral shares
+
 EAHRW_imcy = (RW_pex*EAHRW_rer)*EAHRW_imc/(EAH_py*EAH_y);
 EAHRW_imiy = (RW_pex*EAHRW_rer)*EAHRW_imi/(EAH_py*EAH_y);
 EAHRW_imcgy = (RW_pex*EAHRW_rer)*EAHRW_imcg/(EAH_py*EAH_y);
 EAHRW_imigy = (RW_pex*EAHRW_rer)*EAHRW_imig/(EAH_py*EAH_y);
-// Exports of consumption goods to gdp
+
 EAHRW_excy  = RW_size/EAH_size*EAH_pex*RWEAH_imc/(EAH_py*EAH_y);
-// Exports of investment goods to gdp
+
 EAHRW_exiy  = RW_size/EAH_size*EAH_pex*RWEAH_imi/(EAH_py*EAH_y);
-// Bilateral shares
+
 EAHUS_imcy = (US_pex*EAHUS_rer)*EAHUS_imc/(EAH_py*EAH_y);
 EAHUS_imiy = (US_pex*EAHUS_rer)*EAHUS_imi/(EAH_py*EAH_y);
 EAHUS_imcgy = (US_pex*EAHUS_rer)*EAHUS_imcg/(EAH_py*EAH_y);
 EAHUS_imigy = (US_pex*EAHUS_rer)*EAHUS_imig/(EAH_py*EAH_y);
-// Exports of consumption goods to gdp
+
 EAHUS_excy  = US_size/EAH_size*EAH_pex*USEAH_imc/(EAH_py*EAH_y);
-// Exports of investment goods to gdp
+
 EAHUS_exiy  = US_size/EAH_size*EAH_pex*USEAH_imi/(EAH_py*EAH_y);
-// Internal real exchange rate
+
 EAH_internalrer = EAH_pnt/EAH_pttc;
-// Core model begins
-//-------------
-//-------------
-// Households
-//-------------
-//-------------
-//-------------
-// Household I
-//-------------
-// Utility
+
+
+
+
+
+
+
+
+
+
 EAI_utili = 
 EAI_zcon*log(EAI_ci-EAI_kappa*EAI_ci(-1))-1/(1+EAI_zeta)*(EAI_ni)^(1+EAI_zeta)+EAI_beta*EAI_utili(+1)
 ;
-// Marginal utility of consumption
+
 EAI_lambdai*(1+EAI_tauc+EAI_gammavi+EAI_vi*EAI_gammavider) = EAI_zcon*(EAI_ci-EAI_kappa*EAI_ci(-1))^(-EAI_sigma);
-// Euler equation for government bonds
+
 EAI_r                   = EAI_beta^(-1)*EAI_lambdai/EAI_lambdai    *EAI_pic;
-// Euler equation for money
+
 EAI_vi^(2)*EAI_gammavider = 1-EAI_beta*EAI_lambdai(+1)/(EAI_lambdai*EAI_pic(+1));
-// Consumption-based velocity
+
 EAI_vi = EAI_ci/EAI_mi;
-// Transaction cost
+
 EAI_gammavi = EAI_gammav1*EAI_vi+EAI_gammav2/EAI_vi-2*(EAI_gammav1*EAI_gammav2)^(1/2);
-// Derivative of transaction cost
+
 EAI_gammavider = EAI_gammav1-EAI_gammav2*EAI_vi^(-2);
 EAI_delta = EAI_ii/EAI_ki;
 EAI_gammai = 0;
@@ -31969,355 +31969,355 @@ EAI_gammau = 0;
 EAI_gammauder = ((EAI_beta^(-1)-1+EAI_delta)*EAI_qbar-EAI_delta*EAI_taukbar*EAI_pibar)/((1-EAI_taukbar)*EAI_pibar);
 EAI_u = 1;
 EAI_pi = EAI_q;
-// Auxiliary equation for Tobin's Q in steady state
+
 EAI_qbar = EAI_q;
-// Rate of return on capital
+
 EAI_q = EAI_beta*((1-EAI_tauk)*EAI_rk+(EAI_tauk*EAI_delta)*EAI_pi+(1-EAI_delta)*EAI_q);
-// Optimal wage contract (FOC)
+
 EAI_witilde^(1+EAI_etai*EAI_zeta) = EAI_etai/(EAI_etai-1)*EAI_fi/EAI_gi+EAI_wcst;
-// Definition of fi
+
 EAI_fi = EAI_wi^(EAI_etai*(1+EAI_zeta))*EAI_ndi^(1+EAI_zeta)+EAI_xii*EAI_beta*(EAI_pic(+1)/(EAI_pic^EAI_chii*EAI_pi4target^(1/4*(1-EAI_chii))))^(EAI_etai*(1+EAI_zeta))*EAI_fi(+1);
-// Definition of gi
+
 EAI_gi = EAI_lambdai*(1-EAI_taun-EAI_tauwh)*EAI_wi^EAI_etai*EAI_ndi+EAI_xii*EAI_beta*(EAI_pic(+1)/(EAI_pic^EAI_chii*EAI_pi4target^(1/4*(1-EAI_chii))))^(EAI_etai-1)*EAI_gi(+1);
-// Aggregate wage rate
+
 EAI_wi^(1-EAI_etai) = (1-EAI_xii)*EAI_witilde^(1-EAI_etai)+EAI_xii*EAI_wi(-1)^(1-EAI_etai)*(EAI_pic(-1)^EAI_chii*EAI_pi4target^(1/4*(1-EAI_chii))/EAI_pic)^(1-EAI_etai);
-//-------------
-// Household J
-//-------------
-// Utility
+
+
+
+
 EAI_utilj = 
 EAI_zcon*log(EAI_cj-EAI_kappa*EAI_cj(-1))-1/(1+EAI_zeta)*EAI_nj^(1+EAI_zeta)+EAI_beta*EAI_utilj(+1)
 ;
-// Marginal utility of consumption
+
 EAI_lambdaj*(1+EAI_tauc+EAI_gammavj+EAI_vj*EAI_gammavjder) = EAI_zcon*(EAI_cj-EAI_kappa*EAI_cj(-1))^(-EAI_sigma);
-// Budget constraint
+
 (1+EAI_tauc+EAI_gammavj)*EAI_cj+EAI_mj = (1-EAI_taun-EAI_tauwh)*EAI_wj*EAI_nj+EAI_trj-EAI_tj+EAI_mj(-1)*EAI_pic^(-1);
-// Euler equation for money
+
 EAI_vj^(2)*EAI_gammavjder = 1-EAI_beta*EAI_lambdaj(+1)/(EAI_lambdaj*EAI_pic(+1));
-// Consumption-based velocity
+
 EAI_vj = EAI_cj/EAI_mj;
-// Transaction technology
+
 EAI_gammavj = EAI_gammav1*EAI_vj+EAI_gammav2/EAI_vj-2*(EAI_gammav1*EAI_gammav2)^(1/2);
-// Derivative of transaction technology
+
 EAI_gammavjder = EAI_gammav1-EAI_gammav2*EAI_vj^(-2);
-// Optimal wage contract (FOC)
+
 EAI_wjtilde^(1+EAI_etaj*EAI_zeta) = EAI_etaj/(EAI_etaj-1)*EAI_fj/EAI_gj+EAI_wcst;
-// Definition of fj
+
 EAI_fj = EAI_wj^(EAI_etaj*(1+EAI_zeta))*EAI_ndj^(1+EAI_zeta)+EAI_xij*EAI_beta*(EAI_pic(+1)/(EAI_pic^EAI_chij*EAI_pi4target^(1/4*(1-EAI_chij))))^(EAI_etaj*(1+EAI_zeta))*EAI_fj(+1);
-// Definition of gj
+
 EAI_gj = EAI_lambdaj*(1-EAI_taun-EAI_tauwh)*EAI_wj^EAI_etaj*EAI_ndj+EAI_xij*EAI_beta*(EAI_pic(+1)/(EAI_pic^EAI_chij*EAI_pi4target^(1/4*(1-EAI_chij))))^(EAI_etaj-1)*EAI_gj(+1);
-// Aggregate wage rate
+
 EAI_wj^(1-EAI_etaj) = (1-EAI_xij)*EAI_wjtilde^(1-EAI_etaj)+EAI_xij*EAI_wj(-1)^(1-EAI_etaj)*(EAI_pic(-1)^EAI_chij*EAI_pi4target^(1/4*(1-EAI_chij))/EAI_pic)^(1-EAI_etaj);
-//-------------
-//-------------
-// Firms
-//-------------
-//-------------
-//-------------
-// Intermediate-good firms
-//-------------
-// Production function tradable
+
+
+
+
+
+
+
+
+
 EAI_yst = EAI_zt*EAI_kdt^EAI_alphat*EAI_ndt^(1-EAI_alphat)-EAI_psitbar;
-// Production function nontradable
+
 EAI_ysn = EAI_zn*EAI_kdn^EAI_alphan*EAI_ndn^(1-EAI_alphan)-EAI_psinbar;
-// Real marginal cost tradable
+
 EAI_mct = 1/(EAI_zt*(EAI_alphat)^(EAI_alphat)*(1-EAI_alphat)^(1-EAI_alphat))*EAI_rk^(EAI_alphat)*((1+EAI_tauwf)*EAI_w)^(1-EAI_alphat);
-// Real marginal cost nontradable
+
 EAI_mcn = 1/(EAI_zn*(EAI_alphan)^(EAI_alphan)*(1-EAI_alphan)^(1-EAI_alphan))*EAI_rk^(EAI_alphan)*((1+EAI_tauwf)*EAI_w)^(1-EAI_alphan);
-// Wage Inflation (qoq)
+
 EAI_piw = EAI_w/EAI_w(-1)*EAI_pic;
-// Wage Inflation (yoy)
+
 EAI_piw4 = EAI_pic4;
-// Auxiliary equation for steady-state fixed cost
+
 EAI_psitbar = EAI_psit*EAI_ytbar;
-// Auxiliary equation for steady-state fixed cost
+
 EAI_psinbar = EAI_psin*EAI_ynbar;
-// Capital input (FOC)
+
 EAI_rk = EAI_alphat*(EAI_yst+EAI_psitbar)/EAI_kdt*EAI_mct;
-// Capital input (FOC)
+
 EAI_rk = EAI_alphan*(EAI_ysn+EAI_psinbar)/EAI_kdn*EAI_mcn;
-// Total capital demand
+
 EAI_kd = EAI_kdt+EAI_kdn;
-// Demand for labour services by household I
+
 EAI_ndi = 
 (1-EAI_omega)*(EAI_wi/EAI_w)^(-EAI_eta)*EAI_nd
 ;
-// Demand for labour services by household J
+
 EAI_ndj = 
 EAI_omega*(EAI_wj/EAI_w)^(-EAI_eta)*EAI_nd
 ;
-// Aggregate labour demand
+
 EAI_nd^(1-1/EAI_eta) = 
 (1-EAI_omega)^(1/EAI_eta)*EAI_ndi^(1-1/EAI_eta)+EAI_omega^(1/EAI_eta)*EAI_ndj^(1-1/EAI_eta)
 ;
-// Total demand 
+
 EAI_nd = EAI_ndt+EAI_ndn;
-// Aggregate dividends
+
 EAI_d = EAI_py*EAI_y-EAI_rk*EAI_kd-(1+EAI_tauwf)*EAI_w*EAI_nd;
-// Non-tradable sector dividends
+
 EAI_dn = EAI_pnt*EAI_ysn-EAI_rk*EAI_kdn-(1+EAI_tauwf)*EAI_w*EAI_ndn;
-// Tradable sector dividends
+
 EAI_dt = EAI_pht*EAI_ht
 +EAI_pex*EAI_ex
 -EAI_rk*EAI_kdt-(1+EAI_tauwf)*EAI_w*EAI_ndt;
-// Optimal price contract set in domestic markets (FOC)
+
 EAI_phttilde/EAI_pht = EAI_thetat/(EAI_thetat-1)*EAI_fh/EAI_gh;
-// Definition of fh
+
 EAI_fh = EAI_mct*EAI_ht+EAI_xih*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EAI_piht(+1)/(EAI_piht^EAI_chih*EAI_pi4target^(1/4*(1-EAI_chih))))^EAI_thetat*EAI_fh(+1);
-// Definition of gh
+
 EAI_gh = EAI_pht*EAI_ht+EAI_xih*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EAI_piht(+1)/(EAI_piht^EAI_chih*EAI_pi4target^(1/4*(1-EAI_chih))))^(EAI_thetat-1)*EAI_gh(+1);
-// Aggregate intermediate-good price dynamics
+
 EAI_pht^(1-EAI_thetat) = (1-EAI_xih)*EAI_phttilde^(1-EAI_thetat)+EAI_xih*(EAI_pht(-1)/EAI_pic)^(1-EAI_thetat)*(EAI_piht(-1)^EAI_chih*EAI_pi4target^(1/4*(1-EAI_chih)))^(1-EAI_thetat);
-// Intermediate-good price inflation
+
 EAI_piht = EAI_pht/EAI_pht(-1)*EAI_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAI_pnttilde/EAI_pnt = EAI_thetan/(EAI_thetan-1)*EAI_fn/EAI_gn;
-// Definition of fn
+
 EAI_fn = EAI_mcn*EAI_nt+EAI_xin*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EAI_pint(+1)/(EAI_pint^EAI_chin*EAI_pi4target^(1/4*(1-EAI_chin))))^EAI_thetan*EAI_fn(+1);
-// Definition of gn
+
 EAI_gn = EAI_pnt*EAI_nt+EAI_xin*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EAI_pint(+1)/(EAI_pint^EAI_chin*EAI_pi4target^(1/4*(1-EAI_chin))))^(EAI_thetan-1)*EAI_gn(+1);
-// Aggregate intermediate-good price dynamics
+
 EAI_pnt^(1-EAI_thetan) = (1-EAI_xin)*EAI_pnttilde^(1-EAI_thetan)+EAI_xin*(EAI_pnt(-1)/EAI_pic)^(1-EAI_thetan)*(EAI_pint(-1)^EAI_chin*EAI_pi4target^(1/4*(1-EAI_chin)))^(1-EAI_thetan);
-// Intermediate-good price inflation
+
 EAI_pint = EAI_pnt/EAI_pnt(-1)*EAI_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAI_pextilde/EAI_pex = EAI_thetat/(EAI_thetat-1)*EAI_fx/EAI_gx;
-// Definition of fh
+
 EAI_fx = EAI_mct*EAI_ex+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EAI_piex(+1)/(EAI_piex^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^EAI_thetat*EAI_fx(+1);
-// Definition of gh
+
 EAI_gx = EAI_pex*EAI_ex+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EAI_piex(+1)/(EAI_piex^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^(EAI_thetat-1)*EAI_gx(+1);
-// Aggregate intermediate-good price dynamics
+
 EAI_pex^(1-EAI_thetat) = (1-EAI_xix)*EAI_pextilde^(1-EAI_thetat)+EAI_xix*(EAI_pex(-1)/EAI_pic)^(1-EAI_thetat)*(EAI_piex(-1)^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix)))^(1-EAI_thetat);
-// Intermediate-good price inflation
+
 EAI_piex = EAI_pex/EAI_pex(-1)*EAI_pic;
-//---------------
-// import pricing
-//---------------
-// Optimal price contract set in foreign markets (FOC), using EAI_pxtilde = EAA_pimtilde
-// EAAEAI_pimtilde/EAAEAI_pim = EAI_cpim*EAI_thetat/(EAI_thetat-1)*EAIEAA_fx/EAIEAA_gx;
-// Definition of fx
-// EAIEAA_fx = EAA_size/EAI_size*EAAEAI_im*EAI_mct+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EAAEAI_piim(+1)/(EAAEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^EAI_thetat*EAIEAA_fx(+1);
-// Definition of gx   
-// EAIEAA_gx = EAIEAA_rer*EAAEAI_pim*EAA_size/EAI_size*EAAEAI_im+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EAAEAI_piim(+1)/(EAAEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^(EAI_thetat-1)*EAIEAA_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAI_px = EAA_pim
-// EAAEAI_pim^(1-EAI_thetat) = (1-EAI_xix)*EAAEAI_pimtilde^(1-EAI_thetat)+EAI_xix*(EAAEAI_pim(-1)/EAA_pic)^(1-EAI_thetat)*(EAAEAI_piim(-1)^EAI_chix*EAA_pi4target^(1/4*(1-EAI_chih)))^(1-EAI_thetat);
-// Intermediate-good price inflation, using EAI_pix = EAA_piim
-// EAAEAI_piim = EAAEAI_pim/EAAEAI_pim(-1)*EAA_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 EAIEAA_rer = EAI_rer/EAA_rer;
-// Auxiliary equation for steady-state output
+
 EAIEAA_rerbar = EAIEAA_rer;
-//Terms of Trade
+
 EAIEAA_tot = EAA_pex*EAIEAA_rer/EAI_pex;
-// Optimal price contract set in foreign markets (FOC), using EAI_pxtilde = EAB_pimtilde
-// EABEAI_pimtilde/EABEAI_pim = EAI_cpim*EAI_thetat/(EAI_thetat-1)*EAIEAB_fx/EAIEAB_gx;
-// Definition of fx
-// EAIEAB_fx = EAB_size/EAI_size*EABEAI_im*EAI_mct+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EABEAI_piim(+1)/(EABEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^EAI_thetat*EAIEAB_fx(+1);
-// Definition of gx   
-// EAIEAB_gx = EAIEAB_rer*EABEAI_pim*EAB_size/EAI_size*EABEAI_im+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EABEAI_piim(+1)/(EABEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^(EAI_thetat-1)*EAIEAB_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAI_px = EAB_pim
-// EABEAI_pim^(1-EAI_thetat) = (1-EAI_xix)*EABEAI_pimtilde^(1-EAI_thetat)+EAI_xix*(EABEAI_pim(-1)/EAB_pic)^(1-EAI_thetat)*(EABEAI_piim(-1)^EAI_chix*EAB_pi4target^(1/4*(1-EAI_chih)))^(1-EAI_thetat);
-// Intermediate-good price inflation, using EAI_pix = EAB_piim
-// EABEAI_piim = EABEAI_pim/EABEAI_pim(-1)*EAB_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAIEAB_rer = EAI_rer/EAB_rer;
-// Auxiliary equation for steady-state output
+
 EAIEAB_rerbar = EAIEAB_rer;
-//Terms of Trade
+
 EAIEAB_tot = EAB_pex*EAIEAB_rer/EAI_pex;
-// Optimal price contract set in foreign markets (FOC), using EAI_pxtilde = EAC_pimtilde
-// EACEAI_pimtilde/EACEAI_pim = EAI_cpim*EAI_thetat/(EAI_thetat-1)*EAIEAC_fx/EAIEAC_gx;
-// Definition of fx
-// EAIEAC_fx = EAC_size/EAI_size*EACEAI_im*EAI_mct+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EACEAI_piim(+1)/(EACEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^EAI_thetat*EAIEAC_fx(+1);
-// Definition of gx   
-// EAIEAC_gx = EAIEAC_rer*EACEAI_pim*EAC_size/EAI_size*EACEAI_im+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EACEAI_piim(+1)/(EACEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^(EAI_thetat-1)*EAIEAC_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAI_px = EAC_pim
-// EACEAI_pim^(1-EAI_thetat) = (1-EAI_xix)*EACEAI_pimtilde^(1-EAI_thetat)+EAI_xix*(EACEAI_pim(-1)/EAC_pic)^(1-EAI_thetat)*(EACEAI_piim(-1)^EAI_chix*EAC_pi4target^(1/4*(1-EAI_chih)))^(1-EAI_thetat);
-// Intermediate-good price inflation, using EAI_pix = EAC_piim
-// EACEAI_piim = EACEAI_pim/EACEAI_pim(-1)*EAC_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAIEAC_rer = EAI_rer/EAC_rer;
-// Auxiliary equation for steady-state output
+
 EAIEAC_rerbar = EAIEAC_rer;
-//Terms of Trade
+
 EAIEAC_tot = EAC_pex*EAIEAC_rer/EAI_pex;
-// Optimal price contract set in foreign markets (FOC), using EAI_pxtilde = EAD_pimtilde
-// EADEAI_pimtilde/EADEAI_pim = EAI_cpim*EAI_thetat/(EAI_thetat-1)*EAIEAD_fx/EAIEAD_gx;
-// Definition of fx
-// EAIEAD_fx = EAD_size/EAI_size*EADEAI_im*EAI_mct+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EADEAI_piim(+1)/(EADEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^EAI_thetat*EAIEAD_fx(+1);
-// Definition of gx   
-// EAIEAD_gx = EAIEAD_rer*EADEAI_pim*EAD_size/EAI_size*EADEAI_im+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EADEAI_piim(+1)/(EADEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^(EAI_thetat-1)*EAIEAD_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAI_px = EAD_pim
-// EADEAI_pim^(1-EAI_thetat) = (1-EAI_xix)*EADEAI_pimtilde^(1-EAI_thetat)+EAI_xix*(EADEAI_pim(-1)/EAD_pic)^(1-EAI_thetat)*(EADEAI_piim(-1)^EAI_chix*EAD_pi4target^(1/4*(1-EAI_chih)))^(1-EAI_thetat);
-// Intermediate-good price inflation, using EAI_pix = EAD_piim
-// EADEAI_piim = EADEAI_pim/EADEAI_pim(-1)*EAD_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAIEAD_rer = EAI_rer/EAD_rer;
-// Auxiliary equation for steady-state output
+
 EAIEAD_rerbar = EAIEAD_rer;
-//Terms of Trade
+
 EAIEAD_tot = EAD_pex*EAIEAD_rer/EAI_pex;
-// Optimal price contract set in foreign markets (FOC), using EAI_pxtilde = EAE_pimtilde
-// EAEEAI_pimtilde/EAEEAI_pim = EAI_cpim*EAI_thetat/(EAI_thetat-1)*EAIEAE_fx/EAIEAE_gx;
-// Definition of fx
-// EAIEAE_fx = EAE_size/EAI_size*EAEEAI_im*EAI_mct+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EAEEAI_piim(+1)/(EAEEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^EAI_thetat*EAIEAE_fx(+1);
-// Definition of gx   
-// EAIEAE_gx = EAIEAE_rer*EAEEAI_pim*EAE_size/EAI_size*EAEEAI_im+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EAEEAI_piim(+1)/(EAEEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^(EAI_thetat-1)*EAIEAE_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAI_px = EAE_pim
-// EAEEAI_pim^(1-EAI_thetat) = (1-EAI_xix)*EAEEAI_pimtilde^(1-EAI_thetat)+EAI_xix*(EAEEAI_pim(-1)/EAE_pic)^(1-EAI_thetat)*(EAEEAI_piim(-1)^EAI_chix*EAE_pi4target^(1/4*(1-EAI_chih)))^(1-EAI_thetat);
-// Intermediate-good price inflation, using EAI_pix = EAE_piim
-// EAEEAI_piim = EAEEAI_pim/EAEEAI_pim(-1)*EAE_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAIEAE_rer = EAI_rer/EAE_rer;
-// Auxiliary equation for steady-state output
+
 EAIEAE_rerbar = EAIEAE_rer;
-//Terms of Trade
+
 EAIEAE_tot = EAE_pex*EAIEAE_rer/EAI_pex;
-// Optimal price contract set in foreign markets (FOC), using EAI_pxtilde = EAF_pimtilde
-// EAFEAI_pimtilde/EAFEAI_pim = EAI_cpim*EAI_thetat/(EAI_thetat-1)*EAIEAF_fx/EAIEAF_gx;
-// Definition of fx
-// EAIEAF_fx = EAF_size/EAI_size*EAFEAI_im*EAI_mct+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EAFEAI_piim(+1)/(EAFEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^EAI_thetat*EAIEAF_fx(+1);
-// Definition of gx   
-// EAIEAF_gx = EAIEAF_rer*EAFEAI_pim*EAF_size/EAI_size*EAFEAI_im+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EAFEAI_piim(+1)/(EAFEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^(EAI_thetat-1)*EAIEAF_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAI_px = EAF_pim
-// EAFEAI_pim^(1-EAI_thetat) = (1-EAI_xix)*EAFEAI_pimtilde^(1-EAI_thetat)+EAI_xix*(EAFEAI_pim(-1)/EAF_pic)^(1-EAI_thetat)*(EAFEAI_piim(-1)^EAI_chix*EAF_pi4target^(1/4*(1-EAI_chih)))^(1-EAI_thetat);
-// Intermediate-good price inflation, using EAI_pix = EAF_piim
-// EAFEAI_piim = EAFEAI_pim/EAFEAI_pim(-1)*EAF_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAIEAF_rer = EAI_rer/EAF_rer;
-// Auxiliary equation for steady-state output
+
 EAIEAF_rerbar = EAIEAF_rer;
-//Terms of Trade
+
 EAIEAF_tot = EAF_pex*EAIEAF_rer/EAI_pex;
-// Optimal price contract set in foreign markets (FOC), using EAI_pxtilde = EAG_pimtilde
-// EAGEAI_pimtilde/EAGEAI_pim = EAI_cpim*EAI_thetat/(EAI_thetat-1)*EAIEAG_fx/EAIEAG_gx;
-// Definition of fx
-// EAIEAG_fx = EAG_size/EAI_size*EAGEAI_im*EAI_mct+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EAGEAI_piim(+1)/(EAGEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^EAI_thetat*EAIEAG_fx(+1);
-// Definition of gx   
-// EAIEAG_gx = EAIEAG_rer*EAGEAI_pim*EAG_size/EAI_size*EAGEAI_im+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EAGEAI_piim(+1)/(EAGEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^(EAI_thetat-1)*EAIEAG_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAI_px = EAG_pim
-// EAGEAI_pim^(1-EAI_thetat) = (1-EAI_xix)*EAGEAI_pimtilde^(1-EAI_thetat)+EAI_xix*(EAGEAI_pim(-1)/EAG_pic)^(1-EAI_thetat)*(EAGEAI_piim(-1)^EAI_chix*EAG_pi4target^(1/4*(1-EAI_chih)))^(1-EAI_thetat);
-// Intermediate-good price inflation, using EAI_pix = EAG_piim
-// EAGEAI_piim = EAGEAI_pim/EAGEAI_pim(-1)*EAG_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAIEAG_rer = EAI_rer/EAG_rer;
-// Auxiliary equation for steady-state output
+
 EAIEAG_rerbar = EAIEAG_rer;
-//Terms of Trade
+
 EAIEAG_tot = EAG_pex*EAIEAG_rer/EAI_pex;
-// Optimal price contract set in foreign markets (FOC), using EAI_pxtilde = EAH_pimtilde
-// EAHEAI_pimtilde/EAHEAI_pim = EAI_cpim*EAI_thetat/(EAI_thetat-1)*EAIEAH_fx/EAIEAH_gx;
-// Definition of fx
-// EAIEAH_fx = EAH_size/EAI_size*EAHEAI_im*EAI_mct+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EAHEAI_piim(+1)/(EAHEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^EAI_thetat*EAIEAH_fx(+1);
-// Definition of gx   
-// EAIEAH_gx = EAIEAH_rer*EAHEAI_pim*EAH_size/EAI_size*EAHEAI_im+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EAHEAI_piim(+1)/(EAHEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^(EAI_thetat-1)*EAIEAH_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAI_px = EAH_pim
-// EAHEAI_pim^(1-EAI_thetat) = (1-EAI_xix)*EAHEAI_pimtilde^(1-EAI_thetat)+EAI_xix*(EAHEAI_pim(-1)/EAH_pic)^(1-EAI_thetat)*(EAHEAI_piim(-1)^EAI_chix*EAH_pi4target^(1/4*(1-EAI_chih)))^(1-EAI_thetat);
-// Intermediate-good price inflation, using EAI_pix = EAH_piim
-// EAHEAI_piim = EAHEAI_pim/EAHEAI_pim(-1)*EAH_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAIEAH_rer = EAI_rer/EAH_rer;
-// Auxiliary equation for steady-state output
+
 EAIEAH_rerbar = EAIEAH_rer;
-//Terms of Trade
+
 EAIEAH_tot = EAH_pex*EAIEAH_rer/EAI_pex;
-// Optimal price contract set in foreign markets (FOC), using EAI_pxtilde = EAJ_pimtilde
-// EAJEAI_pimtilde/EAJEAI_pim = EAI_cpim*EAI_thetat/(EAI_thetat-1)*EAIEAJ_fx/EAIEAJ_gx;
-// Definition of fx
-// EAIEAJ_fx = EAJ_size/EAI_size*EAJEAI_im*EAI_mct+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EAJEAI_piim(+1)/(EAJEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^EAI_thetat*EAIEAJ_fx(+1);
-// Definition of gx   
-// EAIEAJ_gx = EAIEAJ_rer*EAJEAI_pim*EAJ_size/EAI_size*EAJEAI_im+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EAJEAI_piim(+1)/(EAJEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^(EAI_thetat-1)*EAIEAJ_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAI_px = EAJ_pim
-// EAJEAI_pim^(1-EAI_thetat) = (1-EAI_xix)*EAJEAI_pimtilde^(1-EAI_thetat)+EAI_xix*(EAJEAI_pim(-1)/EAJ_pic)^(1-EAI_thetat)*(EAJEAI_piim(-1)^EAI_chix*EAJ_pi4target^(1/4*(1-EAI_chih)))^(1-EAI_thetat);
-// Intermediate-good price inflation, using EAI_pix = EAJ_piim
-// EAJEAI_piim = EAJEAI_pim/EAJEAI_pim(-1)*EAJ_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAIEAJ_rer = EAI_rer/EAJ_rer;
-// Auxiliary equation for steady-state output
+
 EAIEAJ_rerbar = EAIEAJ_rer;
-//Terms of Trade
+
 EAIEAJ_tot = EAJ_pex*EAIEAJ_rer/EAI_pex;
-// Optimal price contract set in foreign markets (FOC), using EAI_pxtilde = EAK_pimtilde
-// EAKEAI_pimtilde/EAKEAI_pim = EAI_cpim*EAI_thetat/(EAI_thetat-1)*EAIEAK_fx/EAIEAK_gx;
-// Definition of fx
-// EAIEAK_fx = EAK_size/EAI_size*EAKEAI_im*EAI_mct+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EAKEAI_piim(+1)/(EAKEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^EAI_thetat*EAIEAK_fx(+1);
-// Definition of gx   
-// EAIEAK_gx = EAIEAK_rer*EAKEAI_pim*EAK_size/EAI_size*EAKEAI_im+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EAKEAI_piim(+1)/(EAKEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^(EAI_thetat-1)*EAIEAK_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAI_px = EAK_pim
-// EAKEAI_pim^(1-EAI_thetat) = (1-EAI_xix)*EAKEAI_pimtilde^(1-EAI_thetat)+EAI_xix*(EAKEAI_pim(-1)/EAK_pic)^(1-EAI_thetat)*(EAKEAI_piim(-1)^EAI_chix*EAK_pi4target^(1/4*(1-EAI_chih)))^(1-EAI_thetat);
-// Intermediate-good price inflation, using EAI_pix = EAK_piim
-// EAKEAI_piim = EAKEAI_pim/EAKEAI_pim(-1)*EAK_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAIEAK_rer = EAI_rer/EAK_rer;
-// Auxiliary equation for steady-state output
+
 EAIEAK_rerbar = EAIEAK_rer;
-//Terms of Trade
+
 EAIEAK_tot = EAK_pex*EAIEAK_rer/EAI_pex;
-// Optimal price contract set in foreign markets (FOC), using EAI_pxtilde = EAL_pimtilde
-// EALEAI_pimtilde/EALEAI_pim = EAI_cpim*EAI_thetat/(EAI_thetat-1)*EAIEAL_fx/EAIEAL_gx;
-// Definition of fx
-// EAIEAL_fx = EAL_size/EAI_size*EALEAI_im*EAI_mct+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EALEAI_piim(+1)/(EALEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^EAI_thetat*EAIEAL_fx(+1);
-// Definition of gx   
-// EAIEAL_gx = EAIEAL_rer*EALEAI_pim*EAL_size/EAI_size*EALEAI_im+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(EALEAI_piim(+1)/(EALEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^(EAI_thetat-1)*EAIEAL_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAI_px = EAL_pim
-// EALEAI_pim^(1-EAI_thetat) = (1-EAI_xix)*EALEAI_pimtilde^(1-EAI_thetat)+EAI_xix*(EALEAI_pim(-1)/EAL_pic)^(1-EAI_thetat)*(EALEAI_piim(-1)^EAI_chix*EAL_pi4target^(1/4*(1-EAI_chih)))^(1-EAI_thetat);
-// Intermediate-good price inflation, using EAI_pix = EAL_piim
-// EALEAI_piim = EALEAI_pim/EALEAI_pim(-1)*EAL_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAIEAL_rer = EAI_rer/EAL_rer;
-// Auxiliary equation for steady-state output
+
 EAIEAL_rerbar = EAIEAL_rer;
-//Terms of Trade
+
 EAIEAL_tot = EAL_pex*EAIEAL_rer/EAI_pex;
-// Optimal price contract set in foreign markets (FOC), using EAI_pxtilde = RW_pimtilde
-// RWEAI_pimtilde/RWEAI_pim = EAI_cpim*EAI_thetat/(EAI_thetat-1)*EAIRW_fx/EAIRW_gx;
-// Definition of fx
-// EAIRW_fx = RW_size/EAI_size*RWEAI_im*EAI_mct+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(RWEAI_piim(+1)/(RWEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^EAI_thetat*EAIRW_fx(+1);
-// Definition of gx   
-// EAIRW_gx = EAIRW_rer*RWEAI_pim*RW_size/EAI_size*RWEAI_im+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(RWEAI_piim(+1)/(RWEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^(EAI_thetat-1)*EAIRW_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAI_px = RW_pim
-// RWEAI_pim^(1-EAI_thetat) = (1-EAI_xix)*RWEAI_pimtilde^(1-EAI_thetat)+EAI_xix*(RWEAI_pim(-1)/RW_pic)^(1-EAI_thetat)*(RWEAI_piim(-1)^EAI_chix*RW_pi4target^(1/4*(1-EAI_chih)))^(1-EAI_thetat);
-// Intermediate-good price inflation, using EAI_pix = RW_piim
-// RWEAI_piim = RWEAI_pim/RWEAI_pim(-1)*RW_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAIRW_rer = EAI_rer/RW_rer;
-// Auxiliary equation for steady-state output
+
 EAIRW_rerbar = EAIRW_rer;
-//Terms of Trade
+
 EAIRW_tot = RW_pex*EAIRW_rer/EAI_pex;
-// Optimal price contract set in foreign markets (FOC), using EAI_pxtilde = US_pimtilde
-// USEAI_pimtilde/USEAI_pim = EAI_cpim*EAI_thetat/(EAI_thetat-1)*EAIUS_fx/EAIUS_gx;
-// Definition of fx
-// EAIUS_fx = US_size/EAI_size*USEAI_im*EAI_mct+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(USEAI_piim(+1)/(USEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^EAI_thetat*EAIUS_fx(+1);
-// Definition of gx   
-// EAIUS_gx = EAIUS_rer*USEAI_pim*US_size/EAI_size*USEAI_im+EAI_xix*EAI_beta*EAI_lambdai(+1)/EAI_lambdai*(USEAI_piim(+1)/(USEAI_piim^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^(EAI_thetat-1)*EAIUS_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAI_px = US_pim
-// USEAI_pim^(1-EAI_thetat) = (1-EAI_xix)*USEAI_pimtilde^(1-EAI_thetat)+EAI_xix*(USEAI_pim(-1)/US_pic)^(1-EAI_thetat)*(USEAI_piim(-1)^EAI_chix*US_pi4target^(1/4*(1-EAI_chih)))^(1-EAI_thetat);
-// Intermediate-good price inflation, using EAI_pix = US_piim
-// USEAI_piim = USEAI_pim/USEAI_pim(-1)*US_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAIUS_rer = EAI_rer/US_rer;
-// Auxiliary equation for steady-state output
+
 EAIUS_rerbar = EAIUS_rer;
-//Terms of Trade
+
 EAIUS_tot = US_pex*EAIUS_rer/EAI_pex;
-// Total imports 
+
 EAI_im = 
 +EAI_imc
 +EAI_imi
 +EAI_imcg
 +EAI_imig
 ;
-// Total import deflator
+
 EAI_im*EAI_pim  = 
 +EAI_pimc*EAI_imc
 +EAI_pimi*EAI_imi
 +EAI_pimcg*EAI_imcg
 +EAI_pimig*EAI_imig
 ;
-// Effective real exchange rate: double weighting (imports)
+
 EAIEAA_weightim = EAIEAA_rer*EAA_pex*EAIEAA_im/(EAI_pim*EAI_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAIEAA_weightex = EAA_size/EAI_size*EAAEAI_im/EAI_ex*EAIEAA_rer*EAA_py*EAA_y/(EAIEAA_rer*EAA_py*EAA_y
 +EAIEAB_rer*EAB_pex*EAAEAB_im
 +EAIEAC_rer*EAC_pex*EAAEAC_im
@@ -32501,11 +32501,11 @@ EAIEAA_weightex = EAA_size/EAI_size*EAAEAI_im/EAI_ex*EAIEAA_rer*EAA_py*EAA_y/(EA
 +EAIRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAIEAA_weight = EAI_pim*EAI_im/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAA_weightim+EAI_pex*EAI_ex/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAA_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAIEAB_weightim = EAIEAB_rer*EAB_pex*EAIEAB_im/(EAI_pim*EAI_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAIEAB_weightex = EAB_size/EAI_size*EABEAI_im/EAI_ex*EAIEAB_rer*EAB_py*EAB_y/(EAIEAB_rer*EAB_py*EAB_y
 +EAIEAA_rer*EAA_pex*EABEAA_im
 +EAIEAC_rer*EAC_pex*EABEAC_im
@@ -32689,11 +32689,11 @@ EAIEAB_weightex = EAB_size/EAI_size*EABEAI_im/EAI_ex*EAIEAB_rer*EAB_py*EAB_y/(EA
 +EAIRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAIEAB_weight = EAI_pim*EAI_im/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAB_weightim+EAI_pex*EAI_ex/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAB_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAIEAC_weightim = EAIEAC_rer*EAC_pex*EAIEAC_im/(EAI_pim*EAI_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAIEAC_weightex = EAC_size/EAI_size*EACEAI_im/EAI_ex*EAIEAC_rer*EAC_py*EAC_y/(EAIEAC_rer*EAC_py*EAC_y
 +EAIEAA_rer*EAA_pex*EACEAA_im
 +EAIEAB_rer*EAB_pex*EACEAB_im
@@ -32877,11 +32877,11 @@ EAIEAC_weightex = EAC_size/EAI_size*EACEAI_im/EAI_ex*EAIEAC_rer*EAC_py*EAC_y/(EA
 +EAIRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAIEAC_weight = EAI_pim*EAI_im/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAC_weightim+EAI_pex*EAI_ex/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAC_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAIEAD_weightim = EAIEAD_rer*EAD_pex*EAIEAD_im/(EAI_pim*EAI_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAIEAD_weightex = EAD_size/EAI_size*EADEAI_im/EAI_ex*EAIEAD_rer*EAD_py*EAD_y/(EAIEAD_rer*EAD_py*EAD_y
 +EAIEAA_rer*EAA_pex*EADEAA_im
 +EAIEAB_rer*EAB_pex*EADEAB_im
@@ -33065,11 +33065,11 @@ EAIEAD_weightex = EAD_size/EAI_size*EADEAI_im/EAI_ex*EAIEAD_rer*EAD_py*EAD_y/(EA
 +EAIRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAIEAD_weight = EAI_pim*EAI_im/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAD_weightim+EAI_pex*EAI_ex/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAD_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAIEAE_weightim = EAIEAE_rer*EAE_pex*EAIEAE_im/(EAI_pim*EAI_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAIEAE_weightex = EAE_size/EAI_size*EAEEAI_im/EAI_ex*EAIEAE_rer*EAE_py*EAE_y/(EAIEAE_rer*EAE_py*EAE_y
 +EAIEAA_rer*EAA_pex*EAEEAA_im
 +EAIEAB_rer*EAB_pex*EAEEAB_im
@@ -33253,11 +33253,11 @@ EAIEAE_weightex = EAE_size/EAI_size*EAEEAI_im/EAI_ex*EAIEAE_rer*EAE_py*EAE_y/(EA
 +EAIRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAIEAE_weight = EAI_pim*EAI_im/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAE_weightim+EAI_pex*EAI_ex/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAE_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAIEAF_weightim = EAIEAF_rer*EAF_pex*EAIEAF_im/(EAI_pim*EAI_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAIEAF_weightex = EAF_size/EAI_size*EAFEAI_im/EAI_ex*EAIEAF_rer*EAF_py*EAF_y/(EAIEAF_rer*EAF_py*EAF_y
 +EAIEAA_rer*EAA_pex*EAFEAA_im
 +EAIEAB_rer*EAB_pex*EAFEAB_im
@@ -33441,11 +33441,11 @@ EAIEAF_weightex = EAF_size/EAI_size*EAFEAI_im/EAI_ex*EAIEAF_rer*EAF_py*EAF_y/(EA
 +EAIRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAIEAF_weight = EAI_pim*EAI_im/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAF_weightim+EAI_pex*EAI_ex/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAF_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAIEAG_weightim = EAIEAG_rer*EAG_pex*EAIEAG_im/(EAI_pim*EAI_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAIEAG_weightex = EAG_size/EAI_size*EAGEAI_im/EAI_ex*EAIEAG_rer*EAG_py*EAG_y/(EAIEAG_rer*EAG_py*EAG_y
 +EAIEAA_rer*EAA_pex*EAGEAA_im
 +EAIEAB_rer*EAB_pex*EAGEAB_im
@@ -33629,11 +33629,11 @@ EAIEAG_weightex = EAG_size/EAI_size*EAGEAI_im/EAI_ex*EAIEAG_rer*EAG_py*EAG_y/(EA
 +EAIRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAIEAG_weight = EAI_pim*EAI_im/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAG_weightim+EAI_pex*EAI_ex/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAG_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAIEAH_weightim = EAIEAH_rer*EAH_pex*EAIEAH_im/(EAI_pim*EAI_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAIEAH_weightex = EAH_size/EAI_size*EAHEAI_im/EAI_ex*EAIEAH_rer*EAH_py*EAH_y/(EAIEAH_rer*EAH_py*EAH_y
 +EAIEAA_rer*EAA_pex*EAHEAA_im
 +EAIEAB_rer*EAB_pex*EAHEAB_im
@@ -33817,11 +33817,11 @@ EAIEAH_weightex = EAH_size/EAI_size*EAHEAI_im/EAI_ex*EAIEAH_rer*EAH_py*EAH_y/(EA
 +EAIRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAIEAH_weight = EAI_pim*EAI_im/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAH_weightim+EAI_pex*EAI_ex/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAH_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAIEAJ_weightim = EAIEAJ_rer*EAJ_pex*EAIEAJ_im/(EAI_pim*EAI_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAIEAJ_weightex = EAJ_size/EAI_size*EAJEAI_im/EAI_ex*EAIEAJ_rer*EAJ_py*EAJ_y/(EAIEAJ_rer*EAJ_py*EAJ_y
 +EAIEAA_rer*EAA_pex*EAJEAA_im
 +EAIEAB_rer*EAB_pex*EAJEAB_im
@@ -34005,11 +34005,11 @@ EAIEAJ_weightex = EAJ_size/EAI_size*EAJEAI_im/EAI_ex*EAIEAJ_rer*EAJ_py*EAJ_y/(EA
 +EAIRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAIEAJ_weight = EAI_pim*EAI_im/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAJ_weightim+EAI_pex*EAI_ex/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAJ_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAIEAK_weightim = EAIEAK_rer*EAK_pex*EAIEAK_im/(EAI_pim*EAI_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAIEAK_weightex = EAK_size/EAI_size*EAKEAI_im/EAI_ex*EAIEAK_rer*EAK_py*EAK_y/(EAIEAK_rer*EAK_py*EAK_y
 +EAIEAA_rer*EAA_pex*EAKEAA_im
 +EAIEAB_rer*EAB_pex*EAKEAB_im
@@ -34193,11 +34193,11 @@ EAIEAK_weightex = EAK_size/EAI_size*EAKEAI_im/EAI_ex*EAIEAK_rer*EAK_py*EAK_y/(EA
 +EAIRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAIEAK_weight = EAI_pim*EAI_im/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAK_weightim+EAI_pex*EAI_ex/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAK_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAIEAL_weightim = EAIEAL_rer*EAL_pex*EAIEAL_im/(EAI_pim*EAI_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAIEAL_weightex = EAL_size/EAI_size*EALEAI_im/EAI_ex*EAIEAL_rer*EAL_py*EAL_y/(EAIEAL_rer*EAL_py*EAL_y
 +EAIEAA_rer*EAA_pex*EALEAA_im
 +EAIEAB_rer*EAB_pex*EALEAB_im
@@ -34381,11 +34381,11 @@ EAIEAL_weightex = EAL_size/EAI_size*EALEAI_im/EAI_ex*EAIEAL_rer*EAL_py*EAL_y/(EA
 +EAIRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAIEAL_weight = EAI_pim*EAI_im/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAL_weightim+EAI_pex*EAI_ex/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIEAL_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAIRW_weightim = EAIRW_rer*RW_pex*EAIRW_im/(EAI_pim*EAI_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAIRW_weightex = RW_size/EAI_size*RWEAI_im/EAI_ex*EAIRW_rer*RW_py*RW_y/(EAIRW_rer*RW_py*RW_y
 +EAIEAA_rer*EAA_pex*RWEAA_im
 +EAIEAB_rer*EAB_pex*RWEAB_im
@@ -34569,11 +34569,11 @@ EAIRW_weightex = RW_size/EAI_size*RWEAI_im/EAI_ex*EAIRW_rer*RW_py*RW_y/(EAIRW_re
 +EAIRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAIRW_weight = EAI_pim*EAI_im/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIRW_weightim+EAI_pex*EAI_ex/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIRW_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAIUS_weightim = EAIUS_rer*US_pex*EAIUS_im/(EAI_pim*EAI_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAIUS_weightex = US_size/EAI_size*USEAI_im/EAI_ex*EAIUS_rer*US_py*US_y/(EAIUS_rer*US_py*US_y
 +EAIEAA_rer*EAA_pex*USEAA_im
 +EAIEAB_rer*EAB_pex*USEAB_im
@@ -34757,9 +34757,9 @@ EAIUS_weightex = US_size/EAI_size*USEAI_im/EAI_ex*EAIUS_rer*US_py*US_y/(EAIUS_re
 +EAIUS_rer*US_pex*RWUS_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAIUS_weight = EAI_pim*EAI_im/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIUS_weightim+EAI_pex*EAI_ex/(EAI_pim*EAI_im+EAI_pex*EAI_ex)*EAIUS_weightex;
-// Effective real exchange rate
+
 EAI_reer = 1
 *EAIEAA_rer^EAIEAA_weight
 *EAIEAB_rer^EAIEAB_weight
@@ -34775,7 +34775,7 @@ EAI_reer = 1
 *EAIRW_rer^EAIRW_weight
 *EAIUS_rer^EAIUS_weight
 ;
-// Effective terms of trade
+
 EAI_etot = 1
 *EAIEAA_tot^EAIEAA_weight
 *EAIEAB_tot^EAIEAB_weight
@@ -34791,10 +34791,10 @@ EAI_etot = 1
 *EAIRW_tot^EAIRW_weight
 *EAIUS_tot^EAIUS_weight
 ;
-//-----------------
-// Final-good firms
-//-----------------
-// Private consumption good (import)
+
+
+
+
 EAI_imc^((EAI_mumc-1)/EAI_mumc) =
 +EAIEAA_numc ^(1/EAI_mumc)*EAIEAA_imc^(1-1/EAI_mumc)
 +EAIEAB_numc ^(1/EAI_mumc)*EAIEAB_imc^(1-1/EAI_mumc)
@@ -34822,27 +34822,27 @@ EAI_imc^((EAI_mumc-1)/EAI_mumc) =
 -EAIRW_numc
 -EAIUS_numc
 )^(1/EAI_mumc)*EAIEAG_imc^(1-1/EAI_mumc);
-// Demand for bilateral consumption import goods
+
 EAIEAA_imc = EAIEAA_numc*((EAA_pex*EAIEAA_rer)/EAI_pimc)^(-EAI_mumc)*EAI_imc;
-// Demand for bilateral consumption import goods
+
 EAIEAB_imc = EAIEAB_numc*((EAB_pex*EAIEAB_rer)/EAI_pimc)^(-EAI_mumc)*EAI_imc;
-// Demand for bilateral consumption import goods
+
 EAIEAC_imc = EAIEAC_numc*((EAC_pex*EAIEAC_rer)/EAI_pimc)^(-EAI_mumc)*EAI_imc;
-// Demand for bilateral consumption import goods
+
 EAIEAD_imc = EAIEAD_numc*((EAD_pex*EAIEAD_rer)/EAI_pimc)^(-EAI_mumc)*EAI_imc;
-// Demand for bilateral consumption import goods
+
 EAIEAE_imc = EAIEAE_numc*((EAE_pex*EAIEAE_rer)/EAI_pimc)^(-EAI_mumc)*EAI_imc;
-// Demand for bilateral consumption import goods
+
 EAIEAF_imc = EAIEAF_numc*((EAF_pex*EAIEAF_rer)/EAI_pimc)^(-EAI_mumc)*EAI_imc;
-// Demand for bilateral consumption import goods
+
 EAIEAH_imc = EAIEAH_numc*((EAH_pex*EAIEAH_rer)/EAI_pimc)^(-EAI_mumc)*EAI_imc;
-// Demand for bilateral consumption import goods
+
 EAIEAK_imc = EAIEAK_numc*((EAK_pex*EAIEAK_rer)/EAI_pimc)^(-EAI_mumc)*EAI_imc;
-// Demand for bilateral consumption import goods
+
 EAIEAL_imc = EAIEAL_numc*((EAL_pex*EAIEAL_rer)/EAI_pimc)^(-EAI_mumc)*EAI_imc;
-// Demand for bilateral consumption import goods
+
 EAIRW_imc = EAIRW_numc*((RW_pex*EAIRW_rer)/EAI_pimc)^(-EAI_mumc)*EAI_imc;
-// Demand for bilateral consumption import goods
+
 EAIUS_imc = EAIUS_numc*((US_pex*EAIUS_rer)/EAI_pimc)^(-EAI_mumc)*EAI_imc;
 EAIEAG_imc = (1
 -EAIEAA_numc
@@ -34858,7 +34858,7 @@ EAIEAG_imc = (1
 -EAIRW_numc
 -EAIUS_numc
 )*((EAG_pex*EAIEAG_rer)/EAI_pimc)^(-EAI_mumc)*EAI_imc;
-// Price of the consumption good (import)
+
 EAI_pimc^(1-EAI_mumc) =
 +EAIEAA_numc * (EAA_pex*EAIEAA_rer)^(1-EAI_mumc)
 +EAIEAB_numc * (EAB_pex*EAIEAB_rer)^(1-EAI_mumc)
@@ -34886,9 +34886,9 @@ EAI_pimc^(1-EAI_mumc) =
 -EAIRW_numc
 -EAIUS_numc
 )*(EAG_pex*EAIEAG_rer)^(1-EAI_mumc);
-// Private consumption good (import) inflation
+
 EAI_piimc = EAI_pimc/EAI_pimc(-1)*EAI_pic;
-// Private consumption good (import)
+
 EAI_imi^((EAI_mumi-1)/EAI_mumi) =
 +EAIEAA_numi ^(1/EAI_mumi)*EAIEAA_imi^(1-1/EAI_mumi)
 +EAIEAB_numi ^(1/EAI_mumi)*EAIEAB_imi^(1-1/EAI_mumi)
@@ -34916,27 +34916,27 @@ EAI_imi^((EAI_mumi-1)/EAI_mumi) =
 -EAIRW_numi
 -EAIUS_numi
 )^(1/EAI_mumi)*EAIEAG_imi^(1-1/EAI_mumi);
-// Demand for bilateral consumption import goods
+
 EAIEAA_imi = EAIEAA_numi*((EAA_pex*EAIEAA_rer)/EAI_pimi)^(-EAI_mumi)*EAI_imi;
-// Demand for bilateral consumption import goods
+
 EAIEAB_imi = EAIEAB_numi*((EAB_pex*EAIEAB_rer)/EAI_pimi)^(-EAI_mumi)*EAI_imi;
-// Demand for bilateral consumption import goods
+
 EAIEAC_imi = EAIEAC_numi*((EAC_pex*EAIEAC_rer)/EAI_pimi)^(-EAI_mumi)*EAI_imi;
-// Demand for bilateral consumption import goods
+
 EAIEAD_imi = EAIEAD_numi*((EAD_pex*EAIEAD_rer)/EAI_pimi)^(-EAI_mumi)*EAI_imi;
-// Demand for bilateral consumption import goods
+
 EAIEAE_imi = EAIEAE_numi*((EAE_pex*EAIEAE_rer)/EAI_pimi)^(-EAI_mumi)*EAI_imi;
-// Demand for bilateral consumption import goods
+
 EAIEAF_imi = EAIEAF_numi*((EAF_pex*EAIEAF_rer)/EAI_pimi)^(-EAI_mumi)*EAI_imi;
-// Demand for bilateral consumption import goods
+
 EAIEAH_imi = EAIEAH_numi*((EAH_pex*EAIEAH_rer)/EAI_pimi)^(-EAI_mumi)*EAI_imi;
-// Demand for bilateral consumption import goods
+
 EAIEAK_imi = EAIEAK_numi*((EAK_pex*EAIEAK_rer)/EAI_pimi)^(-EAI_mumi)*EAI_imi;
-// Demand for bilateral consumption import goods
+
 EAIEAL_imi = EAIEAL_numi*((EAL_pex*EAIEAL_rer)/EAI_pimi)^(-EAI_mumi)*EAI_imi;
-// Demand for bilateral consumption import goods
+
 EAIRW_imi = EAIRW_numi*((RW_pex*EAIRW_rer)/EAI_pimi)^(-EAI_mumi)*EAI_imi;
-// Demand for bilateral consumption import goods
+
 EAIUS_imi = EAIUS_numi*((US_pex*EAIUS_rer)/EAI_pimi)^(-EAI_mumi)*EAI_imi;
 EAIEAG_imi = (1
 -EAIEAA_numi
@@ -34952,7 +34952,7 @@ EAIEAG_imi = (1
 -EAIRW_numi
 -EAIUS_numi
 )*((EAG_pex*EAIEAG_rer)/EAI_pimi)^(-EAI_mumi)*EAI_imi;
-// Price of the consumption good (import)
+
 EAI_pimi^(1-EAI_mumi) =
 +EAIEAA_numi * (EAA_pex*EAIEAA_rer)^(1-EAI_mumi)
 +EAIEAB_numi * (EAB_pex*EAIEAB_rer)^(1-EAI_mumi)
@@ -34980,9 +34980,9 @@ EAI_pimi^(1-EAI_mumi) =
 -EAIRW_numi
 -EAIUS_numi
 )*(EAG_pex*EAIEAG_rer)^(1-EAI_mumi);
-// Private consumption good (import) inflation
+
 EAI_piimi = EAI_pimi/EAI_pimi(-1)*EAI_pic;
-// Private consumption good (import)
+
 EAI_imcg^((EAI_mumcg-1)/EAI_mumcg) =
 +EAIEAA_numcg ^(1/EAI_mumcg)*EAIEAA_imcg^(1-1/EAI_mumcg)
 +EAIEAB_numcg ^(1/EAI_mumcg)*EAIEAB_imcg^(1-1/EAI_mumcg)
@@ -35010,27 +35010,27 @@ EAI_imcg^((EAI_mumcg-1)/EAI_mumcg) =
 -EAIRW_numcg
 -EAIUS_numcg
 )^(1/EAI_mumcg)*EAIEAG_imcg^(1-1/EAI_mumcg);
-// Demand for bilateral consumption import goods
+
 EAIEAA_imcg = EAIEAA_numcg*((EAA_pex*EAIEAA_rer)/EAI_pimcg)^(-EAI_mumcg)*EAI_imcg;
-// Demand for bilateral consumption import goods
+
 EAIEAB_imcg = EAIEAB_numcg*((EAB_pex*EAIEAB_rer)/EAI_pimcg)^(-EAI_mumcg)*EAI_imcg;
-// Demand for bilateral consumption import goods
+
 EAIEAC_imcg = EAIEAC_numcg*((EAC_pex*EAIEAC_rer)/EAI_pimcg)^(-EAI_mumcg)*EAI_imcg;
-// Demand for bilateral consumption import goods
+
 EAIEAD_imcg = EAIEAD_numcg*((EAD_pex*EAIEAD_rer)/EAI_pimcg)^(-EAI_mumcg)*EAI_imcg;
-// Demand for bilateral consumption import goods
+
 EAIEAE_imcg = EAIEAE_numcg*((EAE_pex*EAIEAE_rer)/EAI_pimcg)^(-EAI_mumcg)*EAI_imcg;
-// Demand for bilateral consumption import goods
+
 EAIEAF_imcg = EAIEAF_numcg*((EAF_pex*EAIEAF_rer)/EAI_pimcg)^(-EAI_mumcg)*EAI_imcg;
-// Demand for bilateral consumption import goods
+
 EAIEAH_imcg = EAIEAH_numcg*((EAH_pex*EAIEAH_rer)/EAI_pimcg)^(-EAI_mumcg)*EAI_imcg;
-// Demand for bilateral consumption import goods
+
 EAIEAK_imcg = EAIEAK_numcg*((EAK_pex*EAIEAK_rer)/EAI_pimcg)^(-EAI_mumcg)*EAI_imcg;
-// Demand for bilateral consumption import goods
+
 EAIEAL_imcg = EAIEAL_numcg*((EAL_pex*EAIEAL_rer)/EAI_pimcg)^(-EAI_mumcg)*EAI_imcg;
-// Demand for bilateral consumption import goods
+
 EAIRW_imcg = EAIRW_numcg*((RW_pex*EAIRW_rer)/EAI_pimcg)^(-EAI_mumcg)*EAI_imcg;
-// Demand for bilateral consumption import goods
+
 EAIUS_imcg = EAIUS_numcg*((US_pex*EAIUS_rer)/EAI_pimcg)^(-EAI_mumcg)*EAI_imcg;
 EAIEAG_imcg = (1
 -EAIEAA_numcg
@@ -35046,7 +35046,7 @@ EAIEAG_imcg = (1
 -EAIRW_numcg
 -EAIUS_numcg
 )*((EAG_pex*EAIEAG_rer)/EAI_pimcg)^(-EAI_mumcg)*EAI_imcg;
-// Price of the consumption good (import)
+
 EAI_pimcg^(1-EAI_mumcg) =
 +EAIEAA_numcg * (EAA_pex*EAIEAA_rer)^(1-EAI_mumcg)
 +EAIEAB_numcg * (EAB_pex*EAIEAB_rer)^(1-EAI_mumcg)
@@ -35074,9 +35074,9 @@ EAI_pimcg^(1-EAI_mumcg) =
 -EAIRW_numcg
 -EAIUS_numcg
 )*(EAG_pex*EAIEAG_rer)^(1-EAI_mumcg);
-// Private consumption good (import) inflation
+
 EAI_piimcg = EAI_pimcg/EAI_pimcg(-1)*EAI_pic;
-// Private consumption good (import)
+
 EAI_imig^((EAI_mumig-1)/EAI_mumig) =
 +EAIEAA_numig ^(1/EAI_mumig)*EAIEAA_imig^(1-1/EAI_mumig)
 +EAIEAB_numig ^(1/EAI_mumig)*EAIEAB_imig^(1-1/EAI_mumig)
@@ -35104,27 +35104,27 @@ EAI_imig^((EAI_mumig-1)/EAI_mumig) =
 -EAIRW_numig
 -EAIUS_numig
 )^(1/EAI_mumig)*EAIEAG_imig^(1-1/EAI_mumig);
-// Demand for bilateral consumption import goods
+
 EAIEAA_imig = EAIEAA_numig*((EAA_pex*EAIEAA_rer)/EAI_pimig)^(-EAI_mumig)*EAI_imig;
-// Demand for bilateral consumption import goods
+
 EAIEAB_imig = EAIEAB_numig*((EAB_pex*EAIEAB_rer)/EAI_pimig)^(-EAI_mumig)*EAI_imig;
-// Demand for bilateral consumption import goods
+
 EAIEAC_imig = EAIEAC_numig*((EAC_pex*EAIEAC_rer)/EAI_pimig)^(-EAI_mumig)*EAI_imig;
-// Demand for bilateral consumption import goods
+
 EAIEAD_imig = EAIEAD_numig*((EAD_pex*EAIEAD_rer)/EAI_pimig)^(-EAI_mumig)*EAI_imig;
-// Demand for bilateral consumption import goods
+
 EAIEAE_imig = EAIEAE_numig*((EAE_pex*EAIEAE_rer)/EAI_pimig)^(-EAI_mumig)*EAI_imig;
-// Demand for bilateral consumption import goods
+
 EAIEAF_imig = EAIEAF_numig*((EAF_pex*EAIEAF_rer)/EAI_pimig)^(-EAI_mumig)*EAI_imig;
-// Demand for bilateral consumption import goods
+
 EAIEAH_imig = EAIEAH_numig*((EAH_pex*EAIEAH_rer)/EAI_pimig)^(-EAI_mumig)*EAI_imig;
-// Demand for bilateral consumption import goods
+
 EAIEAK_imig = EAIEAK_numig*((EAK_pex*EAIEAK_rer)/EAI_pimig)^(-EAI_mumig)*EAI_imig;
-// Demand for bilateral consumption import goods
+
 EAIEAL_imig = EAIEAL_numig*((EAL_pex*EAIEAL_rer)/EAI_pimig)^(-EAI_mumig)*EAI_imig;
-// Demand for bilateral consumption import goods
+
 EAIRW_imig = EAIRW_numig*((RW_pex*EAIRW_rer)/EAI_pimig)^(-EAI_mumig)*EAI_imig;
-// Demand for bilateral consumption import goods
+
 EAIUS_imig = EAIUS_numig*((US_pex*EAIUS_rer)/EAI_pimig)^(-EAI_mumig)*EAI_imig;
 EAIEAG_imig = (1
 -EAIEAA_numig
@@ -35140,7 +35140,7 @@ EAIEAG_imig = (1
 -EAIRW_numig
 -EAIUS_numig
 )*((EAG_pex*EAIEAG_rer)/EAI_pimig)^(-EAI_mumig)*EAI_imig;
-// Price of the consumption good (import)
+
 EAI_pimig^(1-EAI_mumig) =
 +EAIEAA_numig * (EAA_pex*EAIEAA_rer)^(1-EAI_mumig)
 +EAIEAB_numig * (EAB_pex*EAIEAB_rer)^(1-EAI_mumig)
@@ -35168,15 +35168,15 @@ EAI_pimig^(1-EAI_mumig) =
 -EAIRW_numig
 -EAIUS_numig
 )*(EAG_pex*EAIEAG_rer)^(1-EAI_mumig);
-// Private consumption good (import) inflation
+
 EAI_piimig = EAI_pimig/EAI_pimig(-1)*EAI_pic;
-// Private consumption good (import) inflation
+
 EAI_piimc4 = EAI_pimc/EAI_pimc(-4)*EAI_pic4;
-// Private consumption good (import) inflation
+
 EAI_piex4 = EAI_pex/EAI_pex(-4)*EAI_pic4;
-// Wedge between aggregate demand and production, using EAI_x = EAJ_size/EAI_size*EAJ_im
+
 EAI_yst = EAI_sh*EAI_ht+EAI_sx*EAI_ex;
-// Aggregate demand for bilateral imported intermediate goods
+
 EAIEAA_im = 
 +EAIEAA_imc
 +EAIEAA_imi
@@ -35255,18 +35255,18 @@ EAIUS_im =
 +EAIUS_imcg
 +EAIUS_imig
 ;
-// Private consumption good firm
-// Private consumption good (tradable)
+
+
 EAI_ttc^((EAI_mutc-1)/EAI_mutc) = (EAI_nutc)^(1/EAI_mutc)*EAI_htc^(1-1/EAI_mutc)+(1-EAI_nutc)^(1/EAI_mutc)*EAI_imc^(1-1/EAI_mutc);
-// Private consumption good  (total)
+
 EAI_qc^((EAI_muc-1)/EAI_muc) = (EAI_nuc)^(1/EAI_muc)*EAI_ttc^(1-1/EAI_muc)+(1-EAI_nuc)^(1/EAI_muc)*EAI_ntc^(1-1/EAI_muc);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAI_ntc = (1-EAI_nuc)*(EAI_pnt)^(-EAI_muc)*EAI_qc;
-// Price of the consumption good (tradable)  
+
 EAI_pttc^(1-EAI_mutc) = (EAI_nutc)*EAI_pht^(1-EAI_mutc)+(1-EAI_nutc)*EAI_pimc^(1-EAI_mutc);
-// Price of the consumption good 
+
 1^(1-EAI_muc) = (EAI_nuc)*EAI_pttc^(1-EAI_muc)+(1-EAI_nuc)*EAI_pnt^(1-EAI_muc);
-// Demand for domestic intermediate goods
+
 EAI_htc = EAI_nutc*(EAI_pht/EAI_pttc)^(-EAI_mutc)*EAI_ttc;
 EAIEAA_gammaimc = 0;
 EAIEAA_gammaimcdag = 1;
@@ -35294,20 +35294,20 @@ EAIRW_gammaimc = 0;
 EAIRW_gammaimcdag = 1;
 EAIUS_gammaimc = 0;
 EAIUS_gammaimcdag = 1;
-// Private consumption good (tradable)
+
 EAI_tti^((EAI_muti-1)/EAI_muti) = (EAI_nuti)^(1/EAI_muti)*EAI_hti^(1-1/EAI_muti)+(1-EAI_nuti)^(1/EAI_muti)*EAI_imi^(1-1/EAI_muti);
-// Private consumption good  (total)
+
 EAI_qi^((EAI_mui-1)/EAI_mui) = (EAI_nui)^(1/EAI_mui)*EAI_tti^(1-1/EAI_mui)+(1-EAI_nui)^(1/EAI_mui)*EAI_nti^(1-1/EAI_mui);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAI_nti = (1-EAI_nui)*(EAI_pnt/EAI_pi)^(-EAI_mui)*EAI_qi;
-// Price of the consumption good (tradable)  
+
 EAI_ptti^(1-EAI_muti) = (EAI_nuti)*EAI_pht^(1-EAI_muti)+(1-EAI_nuti)*EAI_pimi^(1-EAI_muti);
-// Price of the consumption good 
+
 EAI_pi^(1-EAI_mui) = (EAI_nui)*EAI_ptti^(1-EAI_mui)+(1-EAI_nui)*EAI_pnt^(1-EAI_mui);
-// Auxiliary equation for the price of the investment good in steady state
-// this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
+
+
 EAI_pibar = EAI_pi;
-// Demand for domestic intermediate goods
+
 EAI_hti = EAI_nuti*(EAI_pht/EAI_ptti)^(-EAI_muti)*EAI_tti;
 EAIEAA_gammaimi = 0;
 EAIEAA_gammaimidag = 1;
@@ -35335,17 +35335,17 @@ EAIRW_gammaimi = 0;
 EAIRW_gammaimidag = 1;
 EAIUS_gammaimi = 0;
 EAIUS_gammaimidag = 1;
-// Private consumption good (tradable)
+
 EAI_ttcg^((EAI_mutcg-1)/EAI_mutcg) = (EAI_nutcg)^(1/EAI_mutcg)*EAI_htcg^(1-1/EAI_mutcg)+(1-EAI_nutcg)^(1/EAI_mutcg)*EAI_imcg^(1-1/EAI_mutcg);
-// Private consumption good  (total)
+
 EAI_qcg^((EAI_mucg-1)/EAI_mucg) = (EAI_nucg)^(1/EAI_mucg)*EAI_ttcg^(1-1/EAI_mucg)+(1-EAI_nucg)^(1/EAI_mucg)*EAI_ntcg^(1-1/EAI_mucg);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAI_ntcg = (1-EAI_nucg)*(EAI_pnt/EAI_pcg)^(-EAI_mucg)*EAI_qcg;
-// Price of the consumption good (tradable)  
+
 EAI_pttcg^(1-EAI_mutcg) = (EAI_nutcg)*EAI_pht^(1-EAI_mutcg)+(1-EAI_nutcg)*EAI_pimcg^(1-EAI_mutcg);
-// Price of the consumption good 
+
 EAI_pcg^(1-EAI_mucg) = (EAI_nucg)*EAI_pttcg^(1-EAI_mucg)+(1-EAI_nucg)*EAI_pnt^(1-EAI_mucg);
-// Demand for domestic intermediate goods
+
 EAI_htcg = EAI_nutcg*(EAI_pht/EAI_pttcg)^(-EAI_mutcg)*EAI_ttcg;
 EAIEAA_gammaimcg = 0;
 EAIEAA_gammaimcgdag = 1;
@@ -35373,17 +35373,17 @@ EAIRW_gammaimcg = 0;
 EAIRW_gammaimcgdag = 1;
 EAIUS_gammaimcg = 0;
 EAIUS_gammaimcgdag = 1;
-// Private consumption good (tradable)
+
 EAI_ttig^((EAI_mutig-1)/EAI_mutig) = (EAI_nutig)^(1/EAI_mutig)*EAI_htig^(1-1/EAI_mutig)+(1-EAI_nutig)^(1/EAI_mutig)*EAI_imig^(1-1/EAI_mutig);
-// Private consumption good  (total)
+
 EAI_qig^((EAI_muig-1)/EAI_muig) = (EAI_nuig)^(1/EAI_muig)*EAI_ttig^(1-1/EAI_muig)+(1-EAI_nuig)^(1/EAI_muig)*EAI_ntig^(1-1/EAI_muig);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAI_ntig = (1-EAI_nuig)*(EAI_pnt/EAI_pig)^(-EAI_muig)*EAI_qig;
-// Price of the consumption good (tradable)  
+
 EAI_pttig^(1-EAI_mutig) = (EAI_nutig)*EAI_pht^(1-EAI_mutig)+(1-EAI_nutig)*EAI_pimig^(1-EAI_mutig);
-// Price of the consumption good 
+
 EAI_pig^(1-EAI_muig) = (EAI_nuig)*EAI_pttig^(1-EAI_muig)+(1-EAI_nuig)*EAI_pnt^(1-EAI_muig);
-// Demand for domestic intermediate goods
+
 EAI_htig = EAI_nutig*(EAI_pht/EAI_pttig)^(-EAI_mutig)*EAI_ttig;
 EAIEAA_gammaimig = 0;
 EAIEAA_gammaimigdag = 1;
@@ -35411,7 +35411,7 @@ EAIRW_gammaimig = 0;
 EAIRW_gammaimigdag = 1;
 EAIUS_gammaimig = 0;
 EAIUS_gammaimigdag = 1;
-// Trade balance
+
 EAI_tb =
 +EAI_pex*EAA_size/EAI_size*EAAEAI_im
 -EAA_pex*EAIEAA_rer*EAIEAA_im
@@ -35440,7 +35440,7 @@ EAI_tb =
 +EAI_pex*US_size/EAI_size*USEAI_im
 -US_pex*EAIUS_rer*EAIUS_im
 ;
-// Aggregate exports (volume)
+
 EAI_ex =
 +EAA_size/EAI_size*EAAEAI_im
 +EAB_size/EAI_size*EABEAI_im
@@ -35456,131 +35456,131 @@ EAI_ex =
 +RW_size/EAI_size*RWEAI_im
 +US_size/EAI_size*USEAI_im
 ;
-//-------------
-//-------------
-// Fiscal and monetary authorities
-//-------------
-//-------------
-//-------------
-// Fiscal authority
-//-------------
-// Government budget constraint, using EAI_pg = EAI_pht
-// TODO: check the (1-EAI_gammab(-1)) adjustment here, which is not in the fiscal extention
+
+
+
+
+
+
+
+
+
+
 	EAI_pcg(-1)*EAI_cg(-1)+EAI_pig(-1)*EAI_ig(-1)+EAI_tr(-1)
 	+EAI_b(-1)*EAI_pic(-1)^(-1)+EAI_m(-2)*EAI_pic(-1)^(-1) = EAI_tauc(-1)*EAI_c(-1)+(EAI_taun(-1)+EAI_tauwh(-1))*(EAI_wi(-1)*EAI_ndi(-1)+EAI_wj(-1)*EAI_ndj(-1))+EAI_tauwf(-1)*EAI_w(-1)*EAI_nd(-1)+EAI_tauk(-1)*(EAI_rk(-1)*EAI_u(-1)-(EAI_gammau(-1)+EAI_delta)*EAI_pi(-1))*EAI_k(-1)+EAI_taud(-1)*EAI_d(-1)+EAI_t(-1)+(EAI_r(-1)*(1-EAI_gammab(-1)))^(-1)*EAI_b+EAI_m(-1);
-// Government spending, using EAI_pg = EAI_pht
+
 EAI_pcg*EAI_cg = EAI_cgy*EAI_pybar*EAI_ybar;
 EAI_pig*EAI_ig = EAI_igy*EAI_pybar*EAI_ybar;
 EAI_t = 0;
 EAI_b = EAI_bytarget*EAI_pybar*EAI_ybar;
-// Auxiliary equation for steady-state output
+
 EAI_ybar = EAI_y;
-// Auxiliary equation for steady-state output
+
 EAI_ytbar = EAI_yst;
-// Auxiliary equation for steady-state output
+
 EAI_ynbar = EAI_ysn;
-// Auxiliary equation for steady-state output deflator
+
 EAI_pybar = EAI_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
+
 EAI_trybar = EAI_tr/(EAI_pybar*EAI_ybar);
-// Auxiliary equation for determining the distribution of lump-sum taxes
+
 EAI_ti = EAI_upsilont*EAI_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
 upsilont = 0:            ti = 0, tj = 1/omega t
 upsilont = 1:            ti = tj = t
 upsilont = 1/(1-omega):  ti = 1/(1-omega) t, tj = 0. */
-// Auxiliary equation for determining the distribution of lump-sum transfers
+
 EAI_tri = EAI_upsilontr*EAI_tr;
 /* Note: Valid parameter space: 0 <= upsilontr <= 1/(1-omega) with
 upsilontr = 0:            tri = 0, trj = 1/omega tr
 upsilontr = 1:            tri = trj = tr
 upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
-//-------------
-// Monetary authority
-//-------------
+
+
+
 	EAI_r = EAL_r;
 EAI_pic4 = EAI_pi4target;
 EAI_rr-1 = EAI_r/EAI_pi4target^(1/4)-1;
-// Equilibrium real interest rate
+
 EAI_rrstar-1 = 1/EAI_beta-1;
-//-------------
-//-------------
-// Aggregation, market clearing and resource constraint
-//-------------
-//-------------
-//-------------
-// Aggregation
-//-------------
-// Aggregate consumption
+
+
+
+
+
+
+
+
+
 EAI_c = (1-EAI_omega)*EAI_ci+EAI_omega*EAI_cj;
-// Aggregate money holdings
+
 EAI_m = (1-EAI_omega)*EAI_mi+EAI_omega*EAI_mj;
-// Aggregate capital stock
+
 EAI_k = (1-EAI_omega)*EAI_ki;
-// Aggregate investment
+
 EAI_i = (1-EAI_omega)*EAI_ii;
-// Aggregate lump-sum transfers
+
 EAI_trj = 
 1/EAI_omega*EAI_tr-(1-EAI_omega)/EAI_omega*EAI_tri
 ;
-// Aggregate lump-sum taxes
+
 EAI_tj = 
 1/EAI_omega*EAI_t-(1-EAI_omega)/EAI_omega*EAI_ti
 ;
-// Aggregate transaction costs
+
 EAI_gammav = (1-EAI_omega)*EAI_ci*EAI_gammavi+EAI_omega*EAI_cj*EAI_gammavj;
-//-------------
-// Market clearing
-//-------------
-// Labour markets for household I
-// Wedge between labour demand/hours worked and labour supply
+
+
+
+
+
 EAI_ni = EAI_si*EAI_ndi;
-// Wage dispersion
+
 EAI_si = (1-EAI_xii)*(EAI_witilde/EAI_wi)^(-EAI_etai)+EAI_xii*(EAI_wi(-1)/EAI_wi)^(-EAI_etai)*(EAI_pic/(EAI_pic(-1)^EAI_chii*EAI_pi4target^(1/4*(1-EAI_chii))))^(EAI_etai)*EAI_si(-1);
-// Labour markets for household J
-// Wedge between labour demand/hours worked and labour supply
+
+
 EAI_nj = EAI_sj*EAI_ndj;
-// Wage dispersion
+
 EAI_sj = (1-EAI_xij)*(EAI_wjtilde/EAI_wj)^(-EAI_etaj)+EAI_xij*(EAI_wj(-1)/EAI_wj)^(-EAI_etaj)*(EAI_pic/(EAI_pic(-1)^EAI_chij*EAI_pi4target^(1/4*(1-EAI_chij))))^(EAI_etaj)*EAI_sj(-1);
-// Rental market for capital
-// Equality of capital input and effective capital services
+
+
 EAI_u*EAI_k = EAI_kd;
-// Intermediate-good markets
-// Wedge between aggregate demand and production, using EAI_x = EAJ_size/EAI_size*EAJ_im
+
+
 EAI_ysn = EAI_snt*EAI_nt;
-//  nontradables aggregate demand
+
 EAI_nt = 
 +EAI_ntc
 +EAI_nti
 +EAI_ntcg
 +EAI_ntig
 ;
-// Aggregate demand for domestic intermediate goods, using EAI_hg = EAI_cg
+
 EAI_ht =
 +EAI_htc
 +EAI_hti
 +EAI_htcg
 +EAI_htig
 ;
-// Price dispersion in the domestic markets
+
 EAI_sh = (1-EAI_xih)*(EAI_phttilde/EAI_pht)^(-EAI_thetat)+EAI_xih*(EAI_piht/(EAI_piht(-1)^EAI_chih*EAI_pi4target^(1/4*(1-EAI_chih))))^EAI_thetat*EAI_sh(-1);
-// Price dispersion in the foreign markets
+
 EAI_sx = (1-EAI_xix)*(EAI_pextilde/EAI_pex)^(-EAI_thetat)+EAI_xix*(EAI_piex/(EAI_piex(-1)^EAI_chix*EAI_pi4target^(1/4*(1-EAI_chix))))^EAI_thetat*EAI_sx(-1);
-// Price dispersion in the domestic markets
+
 EAI_snt = (1-EAI_xin)*(EAI_pnttilde/EAI_pnt)^(-EAI_thetan)+EAI_xin*(EAI_pint/(EAI_pint(-1)^EAI_chin*EAI_pi4target^(1/4*(1-EAI_chin))))^EAI_thetan*EAI_snt(-1);
-// Final-good markets
-// Aggregate consumption and transaction cost
+
+
 EAI_qc = EAI_c+EAI_gammav;
-// Aggregate investment and capital utilisation cost
+
 EAI_qi = EAI_i+EAI_k*EAI_gammau;
-// Aggregate gov demand components added to use the same structure like in private components
+
 EAI_qcg = EAI_cg;
 EAI_qig = EAI_ig;
-//-------------
-// Resource constraint
-//-------------
-// TODO: why there is no adjustment cost for gov components
-// Aggregate nominal demand
+
+
+
+
+
 EAI_py*EAI_y = 
 +EAI_qc
 +EAI_pi*EAI_qi
@@ -35652,83 +35652,83 @@ EAI_py*EAI_y =
 -(US_pex*EAIUS_rer)*EAIUS_imcg
 -(US_pex*EAIUS_rer)*EAIUS_imig
 ;
-// Aggregate real demand
+
 EAI_y = EAI_yst+EAI_ysn;
-//-------------
-//-------------
-// Autoregressive shocks
-//-------------
-//-------------
-// Productivity shocks
+
+
+
+
+
+
 log(EAI_zt) = (1-EAI_rhozt)*log(EAI_ztbar)+EAI_rhozt*log(EAI_zt(-1))+EAI_epszt;
 log(EAI_zn) = (1-EAI_rhozn)*log(EAI_znbar)+EAI_rhozn*log(EAI_zn(-1))+EAI_epszn;
-// Government spending shock
+
 EAI_cgy = (1-EAI_rhocg)*EAI_cgybar+EAI_rhocg*EAI_cgy(-1)+EAI_epsgc;
 EAI_igy = (1-EAI_rhoig)*EAI_igybar+EAI_rhoig*EAI_igy(-1)+EAI_epsgi;
-// Transfer shock
+
 EAI_try = (1-EAI_rhotr)*EAI_trybar+EAI_rhotr*EAI_try(-1)+EAI_epstr;
-// Consumption tax shock
+
 EAI_tauc = (1-EAI_rhotauc)*EAI_taucbar+EAI_rhotauc*EAI_tauc(-1)+EAI_epstauc;
-// Dividend income tax shock
+
 EAI_taud = (1-EAI_rhotaud)*EAI_taudbar+EAI_rhotaud*EAI_taud(-1)+EAI_epstaud;
-// Capital income tax shock
+
 EAI_tauk = (1-EAI_rhotauk)*EAI_taukbar+EAI_rhotauk*EAI_tauk(-1)+EAI_epstauk;
-// Labour income tax shock
+
 EAI_taun = (1-EAI_rhotaun)*EAI_taunbar+EAI_rhotaun*EAI_taun(-1)+EAI_epstaun;
-// Payroll tax shock: households
+
 EAI_tauwh = (1-EAI_rhotauwh)*EAI_tauwhbar+EAI_rhotauwh*EAI_tauwh(-1)+EAI_epstauwh;
-// Payroll tax shock: firms
+
 EAI_tauwf = (1-EAI_rhotauwf)*EAI_tauwfbar+EAI_rhotauwf*EAI_tauwf(-1)+EAI_epstauwf;
-// Wage cost push shock
+
 EAI_wcst = (1-EAI_rhowcst)*EAI_wcstbar+EAI_rhowcst*EAI_wcst(-1)+EAI_epswcst;
-// Preference shock
+
 log(EAI_zcon) = (1-EAI_rhozcon)*log(EAI_zconbar)+EAI_rhozcon*log(EAI_zcon(-1))+EAI_epszcon;
-// Investment specific shock
+
 log(EAI_zinv) = (1-EAI_rhozinv)*log(EAI_zinvbar)+EAI_rhozinv*log(EAI_zinv(-1))+EAI_epszinv;
-//-------------
-//-------------
-// Conditions for calibration and reporting
-//-------------
-//-------------
-// Aggregate nominal consumption share
+
+
+
+
+
+
 EAI_cy = EAI_c/(EAI_py*EAI_y);
-// Aggregate nominal investment share
+
 EAI_iy = EAI_pi*EAI_i/(EAI_py*EAI_y);
-// Aggregate nominal import share  
+
 EAI_imy = (
 +EAI_pimc*EAI_imc
 +EAI_pimi*EAI_imi
 +EAI_pimcg*EAI_imcg
 +EAI_pimig*EAI_imig
 )/(EAI_py*EAI_y);
-// Aggregate nominal import share
+
 EAI_imcy = EAI_pimc*EAI_imc/(EAI_py*EAI_y);
 EAI_imiy = EAI_pimi*EAI_imi/(EAI_py*EAI_y);
 EAI_imcgy = EAI_pimcg*EAI_imcg/(EAI_py*EAI_y);
 EAI_imigy = EAI_pimig*EAI_imig/(EAI_py*EAI_y);
-// Aggregate debt-to-output ratio
+
 EAI_by = EAI_b/(EAI_pybar*EAI_ybar);
-// Aggregate lump-sum tax-to-output ratio
+
 EAI_ty = EAI_t/(EAI_pybar*EAI_ybar);
-// Aggregate labour cost share
+
 EAI_lcy = ((1+EAI_tauwf)*EAI_w*EAI_nd)/(EAI_py*EAI_y);
-// Aggregate nominal Wage share
+
 EAI_wy = (EAI_w*EAI_nd)/(EAI_py*EAI_y);
-// NT sector nominal Wage share
+
 EAI_wnty = (EAI_w*EAI_ndn)/(EAI_pnt*EAI_ysn);
-// T sector nominal Wage share
+
 EAI_whty = (EAI_w*EAI_ndt)/(EAI_pht*EAI_yst);
-// T sector share
+
 EAI_yhty = EAI_pht*EAI_yst/(EAI_py*EAI_y);
-// NT sector share
+
 EAI_ynty = EAI_pnt*EAI_ysn/(EAI_py*EAI_y);
-// Output gap
+
 EAI_ygap = 0;
-// Output growth (gross rate)
+
 EAI_ygrowth = EAI_y/EAI_y(-1);
-// Output growth (gross rate yoy)
+
 EAI_ygrowth4 = EAI_y/EAI_y(-4);
-// Domestic nominal output as a share of world nominal output
+
 EAI_yshare  = EAI_size*EAI_py*EAI_y/EAI_rer/(
 +EAA_size*EAA_py*EAA_y/EAA_rer
 +EAB_size*EAB_py*EAB_y/EAB_rer
@@ -35745,153 +35745,153 @@ EAI_yshare  = EAI_size*EAI_py*EAI_y/EAI_rer/(
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
-// Interest (semi-)elasticity of money demand
+
 EAI_epsilonm = -1/8*1/(EAI_r*(EAI_gammav2*EAI_r+EAI_r-1));
-// Trade balance-to-GDP ratio
+
 EAI_tby = EAI_tb/(EAI_py*EAI_y);
-// Bilateral shares
+
 EAIEAA_imcy = (EAA_pex*EAIEAA_rer)*EAIEAA_imc/(EAI_py*EAI_y);
 EAIEAA_imiy = (EAA_pex*EAIEAA_rer)*EAIEAA_imi/(EAI_py*EAI_y);
 EAIEAA_imcgy = (EAA_pex*EAIEAA_rer)*EAIEAA_imcg/(EAI_py*EAI_y);
 EAIEAA_imigy = (EAA_pex*EAIEAA_rer)*EAIEAA_imig/(EAI_py*EAI_y);
-// Exports of consumption goods to gdp
+
 EAIEAA_excy  = EAA_size/EAI_size*EAI_pex*EAAEAI_imc/(EAI_py*EAI_y);
-// Exports of investment goods to gdp
+
 EAIEAA_exiy  = EAA_size/EAI_size*EAI_pex*EAAEAI_imi/(EAI_py*EAI_y);
-// Bilateral shares
+
 EAIEAB_imcy = (EAB_pex*EAIEAB_rer)*EAIEAB_imc/(EAI_py*EAI_y);
 EAIEAB_imiy = (EAB_pex*EAIEAB_rer)*EAIEAB_imi/(EAI_py*EAI_y);
 EAIEAB_imcgy = (EAB_pex*EAIEAB_rer)*EAIEAB_imcg/(EAI_py*EAI_y);
 EAIEAB_imigy = (EAB_pex*EAIEAB_rer)*EAIEAB_imig/(EAI_py*EAI_y);
-// Exports of consumption goods to gdp
+
 EAIEAB_excy  = EAB_size/EAI_size*EAI_pex*EABEAI_imc/(EAI_py*EAI_y);
-// Exports of investment goods to gdp
+
 EAIEAB_exiy  = EAB_size/EAI_size*EAI_pex*EABEAI_imi/(EAI_py*EAI_y);
-// Bilateral shares
+
 EAIEAC_imcy = (EAC_pex*EAIEAC_rer)*EAIEAC_imc/(EAI_py*EAI_y);
 EAIEAC_imiy = (EAC_pex*EAIEAC_rer)*EAIEAC_imi/(EAI_py*EAI_y);
 EAIEAC_imcgy = (EAC_pex*EAIEAC_rer)*EAIEAC_imcg/(EAI_py*EAI_y);
 EAIEAC_imigy = (EAC_pex*EAIEAC_rer)*EAIEAC_imig/(EAI_py*EAI_y);
-// Exports of consumption goods to gdp
+
 EAIEAC_excy  = EAC_size/EAI_size*EAI_pex*EACEAI_imc/(EAI_py*EAI_y);
-// Exports of investment goods to gdp
+
 EAIEAC_exiy  = EAC_size/EAI_size*EAI_pex*EACEAI_imi/(EAI_py*EAI_y);
-// Bilateral shares
+
 EAIEAD_imcy = (EAD_pex*EAIEAD_rer)*EAIEAD_imc/(EAI_py*EAI_y);
 EAIEAD_imiy = (EAD_pex*EAIEAD_rer)*EAIEAD_imi/(EAI_py*EAI_y);
 EAIEAD_imcgy = (EAD_pex*EAIEAD_rer)*EAIEAD_imcg/(EAI_py*EAI_y);
 EAIEAD_imigy = (EAD_pex*EAIEAD_rer)*EAIEAD_imig/(EAI_py*EAI_y);
-// Exports of consumption goods to gdp
+
 EAIEAD_excy  = EAD_size/EAI_size*EAI_pex*EADEAI_imc/(EAI_py*EAI_y);
-// Exports of investment goods to gdp
+
 EAIEAD_exiy  = EAD_size/EAI_size*EAI_pex*EADEAI_imi/(EAI_py*EAI_y);
-// Bilateral shares
+
 EAIEAE_imcy = (EAE_pex*EAIEAE_rer)*EAIEAE_imc/(EAI_py*EAI_y);
 EAIEAE_imiy = (EAE_pex*EAIEAE_rer)*EAIEAE_imi/(EAI_py*EAI_y);
 EAIEAE_imcgy = (EAE_pex*EAIEAE_rer)*EAIEAE_imcg/(EAI_py*EAI_y);
 EAIEAE_imigy = (EAE_pex*EAIEAE_rer)*EAIEAE_imig/(EAI_py*EAI_y);
-// Exports of consumption goods to gdp
+
 EAIEAE_excy  = EAE_size/EAI_size*EAI_pex*EAEEAI_imc/(EAI_py*EAI_y);
-// Exports of investment goods to gdp
+
 EAIEAE_exiy  = EAE_size/EAI_size*EAI_pex*EAEEAI_imi/(EAI_py*EAI_y);
-// Bilateral shares
+
 EAIEAF_imcy = (EAF_pex*EAIEAF_rer)*EAIEAF_imc/(EAI_py*EAI_y);
 EAIEAF_imiy = (EAF_pex*EAIEAF_rer)*EAIEAF_imi/(EAI_py*EAI_y);
 EAIEAF_imcgy = (EAF_pex*EAIEAF_rer)*EAIEAF_imcg/(EAI_py*EAI_y);
 EAIEAF_imigy = (EAF_pex*EAIEAF_rer)*EAIEAF_imig/(EAI_py*EAI_y);
-// Exports of consumption goods to gdp
+
 EAIEAF_excy  = EAF_size/EAI_size*EAI_pex*EAFEAI_imc/(EAI_py*EAI_y);
-// Exports of investment goods to gdp
+
 EAIEAF_exiy  = EAF_size/EAI_size*EAI_pex*EAFEAI_imi/(EAI_py*EAI_y);
-// Bilateral shares
+
 EAIEAG_imcy = (EAG_pex*EAIEAG_rer)*EAIEAG_imc/(EAI_py*EAI_y);
 EAIEAG_imiy = (EAG_pex*EAIEAG_rer)*EAIEAG_imi/(EAI_py*EAI_y);
 EAIEAG_imcgy = (EAG_pex*EAIEAG_rer)*EAIEAG_imcg/(EAI_py*EAI_y);
 EAIEAG_imigy = (EAG_pex*EAIEAG_rer)*EAIEAG_imig/(EAI_py*EAI_y);
-// Exports of consumption goods to gdp
+
 EAIEAG_excy  = EAG_size/EAI_size*EAI_pex*EAGEAI_imc/(EAI_py*EAI_y);
-// Exports of investment goods to gdp
+
 EAIEAG_exiy  = EAG_size/EAI_size*EAI_pex*EAGEAI_imi/(EAI_py*EAI_y);
-// Bilateral shares
+
 EAIEAH_imcy = (EAH_pex*EAIEAH_rer)*EAIEAH_imc/(EAI_py*EAI_y);
 EAIEAH_imiy = (EAH_pex*EAIEAH_rer)*EAIEAH_imi/(EAI_py*EAI_y);
 EAIEAH_imcgy = (EAH_pex*EAIEAH_rer)*EAIEAH_imcg/(EAI_py*EAI_y);
 EAIEAH_imigy = (EAH_pex*EAIEAH_rer)*EAIEAH_imig/(EAI_py*EAI_y);
-// Exports of consumption goods to gdp
+
 EAIEAH_excy  = EAH_size/EAI_size*EAI_pex*EAHEAI_imc/(EAI_py*EAI_y);
-// Exports of investment goods to gdp
+
 EAIEAH_exiy  = EAH_size/EAI_size*EAI_pex*EAHEAI_imi/(EAI_py*EAI_y);
-// Bilateral shares
+
 EAIEAJ_imcy = (EAJ_pex*EAIEAJ_rer)*EAIEAJ_imc/(EAI_py*EAI_y);
 EAIEAJ_imiy = (EAJ_pex*EAIEAJ_rer)*EAIEAJ_imi/(EAI_py*EAI_y);
 EAIEAJ_imcgy = (EAJ_pex*EAIEAJ_rer)*EAIEAJ_imcg/(EAI_py*EAI_y);
 EAIEAJ_imigy = (EAJ_pex*EAIEAJ_rer)*EAIEAJ_imig/(EAI_py*EAI_y);
-// Exports of consumption goods to gdp
+
 EAIEAJ_excy  = EAJ_size/EAI_size*EAI_pex*EAJEAI_imc/(EAI_py*EAI_y);
-// Exports of investment goods to gdp
+
 EAIEAJ_exiy  = EAJ_size/EAI_size*EAI_pex*EAJEAI_imi/(EAI_py*EAI_y);
-// Bilateral shares
+
 EAIEAK_imcy = (EAK_pex*EAIEAK_rer)*EAIEAK_imc/(EAI_py*EAI_y);
 EAIEAK_imiy = (EAK_pex*EAIEAK_rer)*EAIEAK_imi/(EAI_py*EAI_y);
 EAIEAK_imcgy = (EAK_pex*EAIEAK_rer)*EAIEAK_imcg/(EAI_py*EAI_y);
 EAIEAK_imigy = (EAK_pex*EAIEAK_rer)*EAIEAK_imig/(EAI_py*EAI_y);
-// Exports of consumption goods to gdp
+
 EAIEAK_excy  = EAK_size/EAI_size*EAI_pex*EAKEAI_imc/(EAI_py*EAI_y);
-// Exports of investment goods to gdp
+
 EAIEAK_exiy  = EAK_size/EAI_size*EAI_pex*EAKEAI_imi/(EAI_py*EAI_y);
-// Bilateral shares
+
 EAIEAL_imcy = (EAL_pex*EAIEAL_rer)*EAIEAL_imc/(EAI_py*EAI_y);
 EAIEAL_imiy = (EAL_pex*EAIEAL_rer)*EAIEAL_imi/(EAI_py*EAI_y);
 EAIEAL_imcgy = (EAL_pex*EAIEAL_rer)*EAIEAL_imcg/(EAI_py*EAI_y);
 EAIEAL_imigy = (EAL_pex*EAIEAL_rer)*EAIEAL_imig/(EAI_py*EAI_y);
-// Exports of consumption goods to gdp
+
 EAIEAL_excy  = EAL_size/EAI_size*EAI_pex*EALEAI_imc/(EAI_py*EAI_y);
-// Exports of investment goods to gdp
+
 EAIEAL_exiy  = EAL_size/EAI_size*EAI_pex*EALEAI_imi/(EAI_py*EAI_y);
-// Bilateral shares
+
 EAIRW_imcy = (RW_pex*EAIRW_rer)*EAIRW_imc/(EAI_py*EAI_y);
 EAIRW_imiy = (RW_pex*EAIRW_rer)*EAIRW_imi/(EAI_py*EAI_y);
 EAIRW_imcgy = (RW_pex*EAIRW_rer)*EAIRW_imcg/(EAI_py*EAI_y);
 EAIRW_imigy = (RW_pex*EAIRW_rer)*EAIRW_imig/(EAI_py*EAI_y);
-// Exports of consumption goods to gdp
+
 EAIRW_excy  = RW_size/EAI_size*EAI_pex*RWEAI_imc/(EAI_py*EAI_y);
-// Exports of investment goods to gdp
+
 EAIRW_exiy  = RW_size/EAI_size*EAI_pex*RWEAI_imi/(EAI_py*EAI_y);
-// Bilateral shares
+
 EAIUS_imcy = (US_pex*EAIUS_rer)*EAIUS_imc/(EAI_py*EAI_y);
 EAIUS_imiy = (US_pex*EAIUS_rer)*EAIUS_imi/(EAI_py*EAI_y);
 EAIUS_imcgy = (US_pex*EAIUS_rer)*EAIUS_imcg/(EAI_py*EAI_y);
 EAIUS_imigy = (US_pex*EAIUS_rer)*EAIUS_imig/(EAI_py*EAI_y);
-// Exports of consumption goods to gdp
+
 EAIUS_excy  = US_size/EAI_size*EAI_pex*USEAI_imc/(EAI_py*EAI_y);
-// Exports of investment goods to gdp
+
 EAIUS_exiy  = US_size/EAI_size*EAI_pex*USEAI_imi/(EAI_py*EAI_y);
-// Internal real exchange rate
+
 EAI_internalrer = EAI_pnt/EAI_pttc;
-// Core model begins
-//-------------
-//-------------
-// Households
-//-------------
-//-------------
-//-------------
-// Household I
-//-------------
-// Utility
+
+
+
+
+
+
+
+
+
+
 EAJ_utili = 
 EAJ_zcon*log(EAJ_ci-EAJ_kappa*EAJ_ci(-1))-1/(1+EAJ_zeta)*(EAJ_ni)^(1+EAJ_zeta)+EAJ_beta*EAJ_utili(+1)
 ;
-// Marginal utility of consumption
+
 EAJ_lambdai*(1+EAJ_tauc+EAJ_gammavi+EAJ_vi*EAJ_gammavider) = EAJ_zcon*(EAJ_ci-EAJ_kappa*EAJ_ci(-1))^(-EAJ_sigma);
-// Euler equation for government bonds
+
 EAJ_r                   = EAJ_beta^(-1)*EAJ_lambdai/EAJ_lambdai    *EAJ_pic;
-// Euler equation for money
+
 EAJ_vi^(2)*EAJ_gammavider = 1-EAJ_beta*EAJ_lambdai(+1)/(EAJ_lambdai*EAJ_pic(+1));
-// Consumption-based velocity
+
 EAJ_vi = EAJ_ci/EAJ_mi;
-// Transaction cost
+
 EAJ_gammavi = EAJ_gammav1*EAJ_vi+EAJ_gammav2/EAJ_vi-2*(EAJ_gammav1*EAJ_gammav2)^(1/2);
-// Derivative of transaction cost
+
 EAJ_gammavider = EAJ_gammav1-EAJ_gammav2*EAJ_vi^(-2);
 EAJ_delta = EAJ_ii/EAJ_ki;
 EAJ_gammai = 0;
@@ -35900,355 +35900,355 @@ EAJ_gammau = 0;
 EAJ_gammauder = ((EAJ_beta^(-1)-1+EAJ_delta)*EAJ_qbar-EAJ_delta*EAJ_taukbar*EAJ_pibar)/((1-EAJ_taukbar)*EAJ_pibar);
 EAJ_u = 1;
 EAJ_pi = EAJ_q;
-// Auxiliary equation for Tobin's Q in steady state
+
 EAJ_qbar = EAJ_q;
-// Rate of return on capital
+
 EAJ_q = EAJ_beta*((1-EAJ_tauk)*EAJ_rk+(EAJ_tauk*EAJ_delta)*EAJ_pi+(1-EAJ_delta)*EAJ_q);
-// Optimal wage contract (FOC)
+
 EAJ_witilde^(1+EAJ_etai*EAJ_zeta) = EAJ_etai/(EAJ_etai-1)*EAJ_fi/EAJ_gi+EAJ_wcst;
-// Definition of fi
+
 EAJ_fi = EAJ_wi^(EAJ_etai*(1+EAJ_zeta))*EAJ_ndi^(1+EAJ_zeta)+EAJ_xii*EAJ_beta*(EAJ_pic(+1)/(EAJ_pic^EAJ_chii*EAJ_pi4target^(1/4*(1-EAJ_chii))))^(EAJ_etai*(1+EAJ_zeta))*EAJ_fi(+1);
-// Definition of gi
+
 EAJ_gi = EAJ_lambdai*(1-EAJ_taun-EAJ_tauwh)*EAJ_wi^EAJ_etai*EAJ_ndi+EAJ_xii*EAJ_beta*(EAJ_pic(+1)/(EAJ_pic^EAJ_chii*EAJ_pi4target^(1/4*(1-EAJ_chii))))^(EAJ_etai-1)*EAJ_gi(+1);
-// Aggregate wage rate
+
 EAJ_wi^(1-EAJ_etai) = (1-EAJ_xii)*EAJ_witilde^(1-EAJ_etai)+EAJ_xii*EAJ_wi(-1)^(1-EAJ_etai)*(EAJ_pic(-1)^EAJ_chii*EAJ_pi4target^(1/4*(1-EAJ_chii))/EAJ_pic)^(1-EAJ_etai);
-//-------------
-// Household J
-//-------------
-// Utility
+
+
+
+
 EAJ_utilj = 
 EAJ_zcon*log(EAJ_cj-EAJ_kappa*EAJ_cj(-1))-1/(1+EAJ_zeta)*EAJ_nj^(1+EAJ_zeta)+EAJ_beta*EAJ_utilj(+1)
 ;
-// Marginal utility of consumption
+
 EAJ_lambdaj*(1+EAJ_tauc+EAJ_gammavj+EAJ_vj*EAJ_gammavjder) = EAJ_zcon*(EAJ_cj-EAJ_kappa*EAJ_cj(-1))^(-EAJ_sigma);
-// Budget constraint
+
 (1+EAJ_tauc+EAJ_gammavj)*EAJ_cj+EAJ_mj = (1-EAJ_taun-EAJ_tauwh)*EAJ_wj*EAJ_nj+EAJ_trj-EAJ_tj+EAJ_mj(-1)*EAJ_pic^(-1);
-// Euler equation for money
+
 EAJ_vj^(2)*EAJ_gammavjder = 1-EAJ_beta*EAJ_lambdaj(+1)/(EAJ_lambdaj*EAJ_pic(+1));
-// Consumption-based velocity
+
 EAJ_vj = EAJ_cj/EAJ_mj;
-// Transaction technology
+
 EAJ_gammavj = EAJ_gammav1*EAJ_vj+EAJ_gammav2/EAJ_vj-2*(EAJ_gammav1*EAJ_gammav2)^(1/2);
-// Derivative of transaction technology
+
 EAJ_gammavjder = EAJ_gammav1-EAJ_gammav2*EAJ_vj^(-2);
-// Optimal wage contract (FOC)
+
 EAJ_wjtilde^(1+EAJ_etaj*EAJ_zeta) = EAJ_etaj/(EAJ_etaj-1)*EAJ_fj/EAJ_gj+EAJ_wcst;
-// Definition of fj
+
 EAJ_fj = EAJ_wj^(EAJ_etaj*(1+EAJ_zeta))*EAJ_ndj^(1+EAJ_zeta)+EAJ_xij*EAJ_beta*(EAJ_pic(+1)/(EAJ_pic^EAJ_chij*EAJ_pi4target^(1/4*(1-EAJ_chij))))^(EAJ_etaj*(1+EAJ_zeta))*EAJ_fj(+1);
-// Definition of gj
+
 EAJ_gj = EAJ_lambdaj*(1-EAJ_taun-EAJ_tauwh)*EAJ_wj^EAJ_etaj*EAJ_ndj+EAJ_xij*EAJ_beta*(EAJ_pic(+1)/(EAJ_pic^EAJ_chij*EAJ_pi4target^(1/4*(1-EAJ_chij))))^(EAJ_etaj-1)*EAJ_gj(+1);
-// Aggregate wage rate
+
 EAJ_wj^(1-EAJ_etaj) = (1-EAJ_xij)*EAJ_wjtilde^(1-EAJ_etaj)+EAJ_xij*EAJ_wj(-1)^(1-EAJ_etaj)*(EAJ_pic(-1)^EAJ_chij*EAJ_pi4target^(1/4*(1-EAJ_chij))/EAJ_pic)^(1-EAJ_etaj);
-//-------------
-//-------------
-// Firms
-//-------------
-//-------------
-//-------------
-// Intermediate-good firms
-//-------------
-// Production function tradable
+
+
+
+
+
+
+
+
+
 EAJ_yst = EAJ_zt*EAJ_kdt^EAJ_alphat*EAJ_ndt^(1-EAJ_alphat)-EAJ_psitbar;
-// Production function nontradable
+
 EAJ_ysn = EAJ_zn*EAJ_kdn^EAJ_alphan*EAJ_ndn^(1-EAJ_alphan)-EAJ_psinbar;
-// Real marginal cost tradable
+
 EAJ_mct = 1/(EAJ_zt*(EAJ_alphat)^(EAJ_alphat)*(1-EAJ_alphat)^(1-EAJ_alphat))*EAJ_rk^(EAJ_alphat)*((1+EAJ_tauwf)*EAJ_w)^(1-EAJ_alphat);
-// Real marginal cost nontradable
+
 EAJ_mcn = 1/(EAJ_zn*(EAJ_alphan)^(EAJ_alphan)*(1-EAJ_alphan)^(1-EAJ_alphan))*EAJ_rk^(EAJ_alphan)*((1+EAJ_tauwf)*EAJ_w)^(1-EAJ_alphan);
-// Wage Inflation (qoq)
+
 EAJ_piw = EAJ_w/EAJ_w(-1)*EAJ_pic;
-// Wage Inflation (yoy)
+
 EAJ_piw4 = EAJ_pic4;
-// Auxiliary equation for steady-state fixed cost
+
 EAJ_psitbar = EAJ_psit*EAJ_ytbar;
-// Auxiliary equation for steady-state fixed cost
+
 EAJ_psinbar = EAJ_psin*EAJ_ynbar;
-// Capital input (FOC)
+
 EAJ_rk = EAJ_alphat*(EAJ_yst+EAJ_psitbar)/EAJ_kdt*EAJ_mct;
-// Capital input (FOC)
+
 EAJ_rk = EAJ_alphan*(EAJ_ysn+EAJ_psinbar)/EAJ_kdn*EAJ_mcn;
-// Total capital demand
+
 EAJ_kd = EAJ_kdt+EAJ_kdn;
-// Demand for labour services by household I
+
 EAJ_ndi = 
 (1-EAJ_omega)*(EAJ_wi/EAJ_w)^(-EAJ_eta)*EAJ_nd
 ;
-// Demand for labour services by household J
+
 EAJ_ndj = 
 EAJ_omega*(EAJ_wj/EAJ_w)^(-EAJ_eta)*EAJ_nd
 ;
-// Aggregate labour demand
+
 EAJ_nd^(1-1/EAJ_eta) = 
 (1-EAJ_omega)^(1/EAJ_eta)*EAJ_ndi^(1-1/EAJ_eta)+EAJ_omega^(1/EAJ_eta)*EAJ_ndj^(1-1/EAJ_eta)
 ;
-// Total demand 
+
 EAJ_nd = EAJ_ndt+EAJ_ndn;
-// Aggregate dividends
+
 EAJ_d = EAJ_py*EAJ_y-EAJ_rk*EAJ_kd-(1+EAJ_tauwf)*EAJ_w*EAJ_nd;
-// Non-tradable sector dividends
+
 EAJ_dn = EAJ_pnt*EAJ_ysn-EAJ_rk*EAJ_kdn-(1+EAJ_tauwf)*EAJ_w*EAJ_ndn;
-// Tradable sector dividends
+
 EAJ_dt = EAJ_pht*EAJ_ht
 +EAJ_pex*EAJ_ex
 -EAJ_rk*EAJ_kdt-(1+EAJ_tauwf)*EAJ_w*EAJ_ndt;
-// Optimal price contract set in domestic markets (FOC)
+
 EAJ_phttilde/EAJ_pht = EAJ_thetat/(EAJ_thetat-1)*EAJ_fh/EAJ_gh;
-// Definition of fh
+
 EAJ_fh = EAJ_mct*EAJ_ht+EAJ_xih*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EAJ_piht(+1)/(EAJ_piht^EAJ_chih*EAJ_pi4target^(1/4*(1-EAJ_chih))))^EAJ_thetat*EAJ_fh(+1);
-// Definition of gh
+
 EAJ_gh = EAJ_pht*EAJ_ht+EAJ_xih*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EAJ_piht(+1)/(EAJ_piht^EAJ_chih*EAJ_pi4target^(1/4*(1-EAJ_chih))))^(EAJ_thetat-1)*EAJ_gh(+1);
-// Aggregate intermediate-good price dynamics
+
 EAJ_pht^(1-EAJ_thetat) = (1-EAJ_xih)*EAJ_phttilde^(1-EAJ_thetat)+EAJ_xih*(EAJ_pht(-1)/EAJ_pic)^(1-EAJ_thetat)*(EAJ_piht(-1)^EAJ_chih*EAJ_pi4target^(1/4*(1-EAJ_chih)))^(1-EAJ_thetat);
-// Intermediate-good price inflation
+
 EAJ_piht = EAJ_pht/EAJ_pht(-1)*EAJ_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAJ_pnttilde/EAJ_pnt = EAJ_thetan/(EAJ_thetan-1)*EAJ_fn/EAJ_gn;
-// Definition of fn
+
 EAJ_fn = EAJ_mcn*EAJ_nt+EAJ_xin*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EAJ_pint(+1)/(EAJ_pint^EAJ_chin*EAJ_pi4target^(1/4*(1-EAJ_chin))))^EAJ_thetan*EAJ_fn(+1);
-// Definition of gn
+
 EAJ_gn = EAJ_pnt*EAJ_nt+EAJ_xin*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EAJ_pint(+1)/(EAJ_pint^EAJ_chin*EAJ_pi4target^(1/4*(1-EAJ_chin))))^(EAJ_thetan-1)*EAJ_gn(+1);
-// Aggregate intermediate-good price dynamics
+
 EAJ_pnt^(1-EAJ_thetan) = (1-EAJ_xin)*EAJ_pnttilde^(1-EAJ_thetan)+EAJ_xin*(EAJ_pnt(-1)/EAJ_pic)^(1-EAJ_thetan)*(EAJ_pint(-1)^EAJ_chin*EAJ_pi4target^(1/4*(1-EAJ_chin)))^(1-EAJ_thetan);
-// Intermediate-good price inflation
+
 EAJ_pint = EAJ_pnt/EAJ_pnt(-1)*EAJ_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAJ_pextilde/EAJ_pex = EAJ_thetat/(EAJ_thetat-1)*EAJ_fx/EAJ_gx;
-// Definition of fh
+
 EAJ_fx = EAJ_mct*EAJ_ex+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EAJ_piex(+1)/(EAJ_piex^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^EAJ_thetat*EAJ_fx(+1);
-// Definition of gh
+
 EAJ_gx = EAJ_pex*EAJ_ex+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EAJ_piex(+1)/(EAJ_piex^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^(EAJ_thetat-1)*EAJ_gx(+1);
-// Aggregate intermediate-good price dynamics
+
 EAJ_pex^(1-EAJ_thetat) = (1-EAJ_xix)*EAJ_pextilde^(1-EAJ_thetat)+EAJ_xix*(EAJ_pex(-1)/EAJ_pic)^(1-EAJ_thetat)*(EAJ_piex(-1)^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix)))^(1-EAJ_thetat);
-// Intermediate-good price inflation
+
 EAJ_piex = EAJ_pex/EAJ_pex(-1)*EAJ_pic;
-//---------------
-// import pricing
-//---------------
-// Optimal price contract set in foreign markets (FOC), using EAJ_pxtilde = EAA_pimtilde
-// EAAEAJ_pimtilde/EAAEAJ_pim = EAJ_cpim*EAJ_thetat/(EAJ_thetat-1)*EAJEAA_fx/EAJEAA_gx;
-// Definition of fx
-// EAJEAA_fx = EAA_size/EAJ_size*EAAEAJ_im*EAJ_mct+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EAAEAJ_piim(+1)/(EAAEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^EAJ_thetat*EAJEAA_fx(+1);
-// Definition of gx   
-// EAJEAA_gx = EAJEAA_rer*EAAEAJ_pim*EAA_size/EAJ_size*EAAEAJ_im+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EAAEAJ_piim(+1)/(EAAEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^(EAJ_thetat-1)*EAJEAA_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAJ_px = EAA_pim
-// EAAEAJ_pim^(1-EAJ_thetat) = (1-EAJ_xix)*EAAEAJ_pimtilde^(1-EAJ_thetat)+EAJ_xix*(EAAEAJ_pim(-1)/EAA_pic)^(1-EAJ_thetat)*(EAAEAJ_piim(-1)^EAJ_chix*EAA_pi4target^(1/4*(1-EAJ_chih)))^(1-EAJ_thetat);
-// Intermediate-good price inflation, using EAJ_pix = EAA_piim
-// EAAEAJ_piim = EAAEAJ_pim/EAAEAJ_pim(-1)*EAA_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 EAJEAA_rer = EAJ_rer/EAA_rer;
-// Auxiliary equation for steady-state output
+
 EAJEAA_rerbar = EAJEAA_rer;
-//Terms of Trade
+
 EAJEAA_tot = EAA_pex*EAJEAA_rer/EAJ_pex;
-// Optimal price contract set in foreign markets (FOC), using EAJ_pxtilde = EAB_pimtilde
-// EABEAJ_pimtilde/EABEAJ_pim = EAJ_cpim*EAJ_thetat/(EAJ_thetat-1)*EAJEAB_fx/EAJEAB_gx;
-// Definition of fx
-// EAJEAB_fx = EAB_size/EAJ_size*EABEAJ_im*EAJ_mct+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EABEAJ_piim(+1)/(EABEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^EAJ_thetat*EAJEAB_fx(+1);
-// Definition of gx   
-// EAJEAB_gx = EAJEAB_rer*EABEAJ_pim*EAB_size/EAJ_size*EABEAJ_im+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EABEAJ_piim(+1)/(EABEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^(EAJ_thetat-1)*EAJEAB_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAJ_px = EAB_pim
-// EABEAJ_pim^(1-EAJ_thetat) = (1-EAJ_xix)*EABEAJ_pimtilde^(1-EAJ_thetat)+EAJ_xix*(EABEAJ_pim(-1)/EAB_pic)^(1-EAJ_thetat)*(EABEAJ_piim(-1)^EAJ_chix*EAB_pi4target^(1/4*(1-EAJ_chih)))^(1-EAJ_thetat);
-// Intermediate-good price inflation, using EAJ_pix = EAB_piim
-// EABEAJ_piim = EABEAJ_pim/EABEAJ_pim(-1)*EAB_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAJEAB_rer = EAJ_rer/EAB_rer;
-// Auxiliary equation for steady-state output
+
 EAJEAB_rerbar = EAJEAB_rer;
-//Terms of Trade
+
 EAJEAB_tot = EAB_pex*EAJEAB_rer/EAJ_pex;
-// Optimal price contract set in foreign markets (FOC), using EAJ_pxtilde = EAC_pimtilde
-// EACEAJ_pimtilde/EACEAJ_pim = EAJ_cpim*EAJ_thetat/(EAJ_thetat-1)*EAJEAC_fx/EAJEAC_gx;
-// Definition of fx
-// EAJEAC_fx = EAC_size/EAJ_size*EACEAJ_im*EAJ_mct+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EACEAJ_piim(+1)/(EACEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^EAJ_thetat*EAJEAC_fx(+1);
-// Definition of gx   
-// EAJEAC_gx = EAJEAC_rer*EACEAJ_pim*EAC_size/EAJ_size*EACEAJ_im+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EACEAJ_piim(+1)/(EACEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^(EAJ_thetat-1)*EAJEAC_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAJ_px = EAC_pim
-// EACEAJ_pim^(1-EAJ_thetat) = (1-EAJ_xix)*EACEAJ_pimtilde^(1-EAJ_thetat)+EAJ_xix*(EACEAJ_pim(-1)/EAC_pic)^(1-EAJ_thetat)*(EACEAJ_piim(-1)^EAJ_chix*EAC_pi4target^(1/4*(1-EAJ_chih)))^(1-EAJ_thetat);
-// Intermediate-good price inflation, using EAJ_pix = EAC_piim
-// EACEAJ_piim = EACEAJ_pim/EACEAJ_pim(-1)*EAC_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAJEAC_rer = EAJ_rer/EAC_rer;
-// Auxiliary equation for steady-state output
+
 EAJEAC_rerbar = EAJEAC_rer;
-//Terms of Trade
+
 EAJEAC_tot = EAC_pex*EAJEAC_rer/EAJ_pex;
-// Optimal price contract set in foreign markets (FOC), using EAJ_pxtilde = EAD_pimtilde
-// EADEAJ_pimtilde/EADEAJ_pim = EAJ_cpim*EAJ_thetat/(EAJ_thetat-1)*EAJEAD_fx/EAJEAD_gx;
-// Definition of fx
-// EAJEAD_fx = EAD_size/EAJ_size*EADEAJ_im*EAJ_mct+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EADEAJ_piim(+1)/(EADEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^EAJ_thetat*EAJEAD_fx(+1);
-// Definition of gx   
-// EAJEAD_gx = EAJEAD_rer*EADEAJ_pim*EAD_size/EAJ_size*EADEAJ_im+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EADEAJ_piim(+1)/(EADEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^(EAJ_thetat-1)*EAJEAD_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAJ_px = EAD_pim
-// EADEAJ_pim^(1-EAJ_thetat) = (1-EAJ_xix)*EADEAJ_pimtilde^(1-EAJ_thetat)+EAJ_xix*(EADEAJ_pim(-1)/EAD_pic)^(1-EAJ_thetat)*(EADEAJ_piim(-1)^EAJ_chix*EAD_pi4target^(1/4*(1-EAJ_chih)))^(1-EAJ_thetat);
-// Intermediate-good price inflation, using EAJ_pix = EAD_piim
-// EADEAJ_piim = EADEAJ_pim/EADEAJ_pim(-1)*EAD_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAJEAD_rer = EAJ_rer/EAD_rer;
-// Auxiliary equation for steady-state output
+
 EAJEAD_rerbar = EAJEAD_rer;
-//Terms of Trade
+
 EAJEAD_tot = EAD_pex*EAJEAD_rer/EAJ_pex;
-// Optimal price contract set in foreign markets (FOC), using EAJ_pxtilde = EAE_pimtilde
-// EAEEAJ_pimtilde/EAEEAJ_pim = EAJ_cpim*EAJ_thetat/(EAJ_thetat-1)*EAJEAE_fx/EAJEAE_gx;
-// Definition of fx
-// EAJEAE_fx = EAE_size/EAJ_size*EAEEAJ_im*EAJ_mct+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EAEEAJ_piim(+1)/(EAEEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^EAJ_thetat*EAJEAE_fx(+1);
-// Definition of gx   
-// EAJEAE_gx = EAJEAE_rer*EAEEAJ_pim*EAE_size/EAJ_size*EAEEAJ_im+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EAEEAJ_piim(+1)/(EAEEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^(EAJ_thetat-1)*EAJEAE_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAJ_px = EAE_pim
-// EAEEAJ_pim^(1-EAJ_thetat) = (1-EAJ_xix)*EAEEAJ_pimtilde^(1-EAJ_thetat)+EAJ_xix*(EAEEAJ_pim(-1)/EAE_pic)^(1-EAJ_thetat)*(EAEEAJ_piim(-1)^EAJ_chix*EAE_pi4target^(1/4*(1-EAJ_chih)))^(1-EAJ_thetat);
-// Intermediate-good price inflation, using EAJ_pix = EAE_piim
-// EAEEAJ_piim = EAEEAJ_pim/EAEEAJ_pim(-1)*EAE_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAJEAE_rer = EAJ_rer/EAE_rer;
-// Auxiliary equation for steady-state output
+
 EAJEAE_rerbar = EAJEAE_rer;
-//Terms of Trade
+
 EAJEAE_tot = EAE_pex*EAJEAE_rer/EAJ_pex;
-// Optimal price contract set in foreign markets (FOC), using EAJ_pxtilde = EAF_pimtilde
-// EAFEAJ_pimtilde/EAFEAJ_pim = EAJ_cpim*EAJ_thetat/(EAJ_thetat-1)*EAJEAF_fx/EAJEAF_gx;
-// Definition of fx
-// EAJEAF_fx = EAF_size/EAJ_size*EAFEAJ_im*EAJ_mct+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EAFEAJ_piim(+1)/(EAFEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^EAJ_thetat*EAJEAF_fx(+1);
-// Definition of gx   
-// EAJEAF_gx = EAJEAF_rer*EAFEAJ_pim*EAF_size/EAJ_size*EAFEAJ_im+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EAFEAJ_piim(+1)/(EAFEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^(EAJ_thetat-1)*EAJEAF_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAJ_px = EAF_pim
-// EAFEAJ_pim^(1-EAJ_thetat) = (1-EAJ_xix)*EAFEAJ_pimtilde^(1-EAJ_thetat)+EAJ_xix*(EAFEAJ_pim(-1)/EAF_pic)^(1-EAJ_thetat)*(EAFEAJ_piim(-1)^EAJ_chix*EAF_pi4target^(1/4*(1-EAJ_chih)))^(1-EAJ_thetat);
-// Intermediate-good price inflation, using EAJ_pix = EAF_piim
-// EAFEAJ_piim = EAFEAJ_pim/EAFEAJ_pim(-1)*EAF_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAJEAF_rer = EAJ_rer/EAF_rer;
-// Auxiliary equation for steady-state output
+
 EAJEAF_rerbar = EAJEAF_rer;
-//Terms of Trade
+
 EAJEAF_tot = EAF_pex*EAJEAF_rer/EAJ_pex;
-// Optimal price contract set in foreign markets (FOC), using EAJ_pxtilde = EAG_pimtilde
-// EAGEAJ_pimtilde/EAGEAJ_pim = EAJ_cpim*EAJ_thetat/(EAJ_thetat-1)*EAJEAG_fx/EAJEAG_gx;
-// Definition of fx
-// EAJEAG_fx = EAG_size/EAJ_size*EAGEAJ_im*EAJ_mct+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EAGEAJ_piim(+1)/(EAGEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^EAJ_thetat*EAJEAG_fx(+1);
-// Definition of gx   
-// EAJEAG_gx = EAJEAG_rer*EAGEAJ_pim*EAG_size/EAJ_size*EAGEAJ_im+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EAGEAJ_piim(+1)/(EAGEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^(EAJ_thetat-1)*EAJEAG_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAJ_px = EAG_pim
-// EAGEAJ_pim^(1-EAJ_thetat) = (1-EAJ_xix)*EAGEAJ_pimtilde^(1-EAJ_thetat)+EAJ_xix*(EAGEAJ_pim(-1)/EAG_pic)^(1-EAJ_thetat)*(EAGEAJ_piim(-1)^EAJ_chix*EAG_pi4target^(1/4*(1-EAJ_chih)))^(1-EAJ_thetat);
-// Intermediate-good price inflation, using EAJ_pix = EAG_piim
-// EAGEAJ_piim = EAGEAJ_pim/EAGEAJ_pim(-1)*EAG_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAJEAG_rer = EAJ_rer/EAG_rer;
-// Auxiliary equation for steady-state output
+
 EAJEAG_rerbar = EAJEAG_rer;
-//Terms of Trade
+
 EAJEAG_tot = EAG_pex*EAJEAG_rer/EAJ_pex;
-// Optimal price contract set in foreign markets (FOC), using EAJ_pxtilde = EAH_pimtilde
-// EAHEAJ_pimtilde/EAHEAJ_pim = EAJ_cpim*EAJ_thetat/(EAJ_thetat-1)*EAJEAH_fx/EAJEAH_gx;
-// Definition of fx
-// EAJEAH_fx = EAH_size/EAJ_size*EAHEAJ_im*EAJ_mct+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EAHEAJ_piim(+1)/(EAHEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^EAJ_thetat*EAJEAH_fx(+1);
-// Definition of gx   
-// EAJEAH_gx = EAJEAH_rer*EAHEAJ_pim*EAH_size/EAJ_size*EAHEAJ_im+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EAHEAJ_piim(+1)/(EAHEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^(EAJ_thetat-1)*EAJEAH_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAJ_px = EAH_pim
-// EAHEAJ_pim^(1-EAJ_thetat) = (1-EAJ_xix)*EAHEAJ_pimtilde^(1-EAJ_thetat)+EAJ_xix*(EAHEAJ_pim(-1)/EAH_pic)^(1-EAJ_thetat)*(EAHEAJ_piim(-1)^EAJ_chix*EAH_pi4target^(1/4*(1-EAJ_chih)))^(1-EAJ_thetat);
-// Intermediate-good price inflation, using EAJ_pix = EAH_piim
-// EAHEAJ_piim = EAHEAJ_pim/EAHEAJ_pim(-1)*EAH_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAJEAH_rer = EAJ_rer/EAH_rer;
-// Auxiliary equation for steady-state output
+
 EAJEAH_rerbar = EAJEAH_rer;
-//Terms of Trade
+
 EAJEAH_tot = EAH_pex*EAJEAH_rer/EAJ_pex;
-// Optimal price contract set in foreign markets (FOC), using EAJ_pxtilde = EAI_pimtilde
-// EAIEAJ_pimtilde/EAIEAJ_pim = EAJ_cpim*EAJ_thetat/(EAJ_thetat-1)*EAJEAI_fx/EAJEAI_gx;
-// Definition of fx
-// EAJEAI_fx = EAI_size/EAJ_size*EAIEAJ_im*EAJ_mct+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EAIEAJ_piim(+1)/(EAIEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^EAJ_thetat*EAJEAI_fx(+1);
-// Definition of gx   
-// EAJEAI_gx = EAJEAI_rer*EAIEAJ_pim*EAI_size/EAJ_size*EAIEAJ_im+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EAIEAJ_piim(+1)/(EAIEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^(EAJ_thetat-1)*EAJEAI_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAJ_px = EAI_pim
-// EAIEAJ_pim^(1-EAJ_thetat) = (1-EAJ_xix)*EAIEAJ_pimtilde^(1-EAJ_thetat)+EAJ_xix*(EAIEAJ_pim(-1)/EAI_pic)^(1-EAJ_thetat)*(EAIEAJ_piim(-1)^EAJ_chix*EAI_pi4target^(1/4*(1-EAJ_chih)))^(1-EAJ_thetat);
-// Intermediate-good price inflation, using EAJ_pix = EAI_piim
-// EAIEAJ_piim = EAIEAJ_pim/EAIEAJ_pim(-1)*EAI_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAJEAI_rer = EAJ_rer/EAI_rer;
-// Auxiliary equation for steady-state output
+
 EAJEAI_rerbar = EAJEAI_rer;
-//Terms of Trade
+
 EAJEAI_tot = EAI_pex*EAJEAI_rer/EAJ_pex;
-// Optimal price contract set in foreign markets (FOC), using EAJ_pxtilde = EAK_pimtilde
-// EAKEAJ_pimtilde/EAKEAJ_pim = EAJ_cpim*EAJ_thetat/(EAJ_thetat-1)*EAJEAK_fx/EAJEAK_gx;
-// Definition of fx
-// EAJEAK_fx = EAK_size/EAJ_size*EAKEAJ_im*EAJ_mct+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EAKEAJ_piim(+1)/(EAKEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^EAJ_thetat*EAJEAK_fx(+1);
-// Definition of gx   
-// EAJEAK_gx = EAJEAK_rer*EAKEAJ_pim*EAK_size/EAJ_size*EAKEAJ_im+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EAKEAJ_piim(+1)/(EAKEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^(EAJ_thetat-1)*EAJEAK_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAJ_px = EAK_pim
-// EAKEAJ_pim^(1-EAJ_thetat) = (1-EAJ_xix)*EAKEAJ_pimtilde^(1-EAJ_thetat)+EAJ_xix*(EAKEAJ_pim(-1)/EAK_pic)^(1-EAJ_thetat)*(EAKEAJ_piim(-1)^EAJ_chix*EAK_pi4target^(1/4*(1-EAJ_chih)))^(1-EAJ_thetat);
-// Intermediate-good price inflation, using EAJ_pix = EAK_piim
-// EAKEAJ_piim = EAKEAJ_pim/EAKEAJ_pim(-1)*EAK_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAJEAK_rer = EAJ_rer/EAK_rer;
-// Auxiliary equation for steady-state output
+
 EAJEAK_rerbar = EAJEAK_rer;
-//Terms of Trade
+
 EAJEAK_tot = EAK_pex*EAJEAK_rer/EAJ_pex;
-// Optimal price contract set in foreign markets (FOC), using EAJ_pxtilde = EAL_pimtilde
-// EALEAJ_pimtilde/EALEAJ_pim = EAJ_cpim*EAJ_thetat/(EAJ_thetat-1)*EAJEAL_fx/EAJEAL_gx;
-// Definition of fx
-// EAJEAL_fx = EAL_size/EAJ_size*EALEAJ_im*EAJ_mct+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EALEAJ_piim(+1)/(EALEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^EAJ_thetat*EAJEAL_fx(+1);
-// Definition of gx   
-// EAJEAL_gx = EAJEAL_rer*EALEAJ_pim*EAL_size/EAJ_size*EALEAJ_im+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(EALEAJ_piim(+1)/(EALEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^(EAJ_thetat-1)*EAJEAL_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAJ_px = EAL_pim
-// EALEAJ_pim^(1-EAJ_thetat) = (1-EAJ_xix)*EALEAJ_pimtilde^(1-EAJ_thetat)+EAJ_xix*(EALEAJ_pim(-1)/EAL_pic)^(1-EAJ_thetat)*(EALEAJ_piim(-1)^EAJ_chix*EAL_pi4target^(1/4*(1-EAJ_chih)))^(1-EAJ_thetat);
-// Intermediate-good price inflation, using EAJ_pix = EAL_piim
-// EALEAJ_piim = EALEAJ_pim/EALEAJ_pim(-1)*EAL_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAJEAL_rer = EAJ_rer/EAL_rer;
-// Auxiliary equation for steady-state output
+
 EAJEAL_rerbar = EAJEAL_rer;
-//Terms of Trade
+
 EAJEAL_tot = EAL_pex*EAJEAL_rer/EAJ_pex;
-// Optimal price contract set in foreign markets (FOC), using EAJ_pxtilde = RW_pimtilde
-// RWEAJ_pimtilde/RWEAJ_pim = EAJ_cpim*EAJ_thetat/(EAJ_thetat-1)*EAJRW_fx/EAJRW_gx;
-// Definition of fx
-// EAJRW_fx = RW_size/EAJ_size*RWEAJ_im*EAJ_mct+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(RWEAJ_piim(+1)/(RWEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^EAJ_thetat*EAJRW_fx(+1);
-// Definition of gx   
-// EAJRW_gx = EAJRW_rer*RWEAJ_pim*RW_size/EAJ_size*RWEAJ_im+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(RWEAJ_piim(+1)/(RWEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^(EAJ_thetat-1)*EAJRW_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAJ_px = RW_pim
-// RWEAJ_pim^(1-EAJ_thetat) = (1-EAJ_xix)*RWEAJ_pimtilde^(1-EAJ_thetat)+EAJ_xix*(RWEAJ_pim(-1)/RW_pic)^(1-EAJ_thetat)*(RWEAJ_piim(-1)^EAJ_chix*RW_pi4target^(1/4*(1-EAJ_chih)))^(1-EAJ_thetat);
-// Intermediate-good price inflation, using EAJ_pix = RW_piim
-// RWEAJ_piim = RWEAJ_pim/RWEAJ_pim(-1)*RW_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAJRW_rer = EAJ_rer/RW_rer;
-// Auxiliary equation for steady-state output
+
 EAJRW_rerbar = EAJRW_rer;
-//Terms of Trade
+
 EAJRW_tot = RW_pex*EAJRW_rer/EAJ_pex;
-// Optimal price contract set in foreign markets (FOC), using EAJ_pxtilde = US_pimtilde
-// USEAJ_pimtilde/USEAJ_pim = EAJ_cpim*EAJ_thetat/(EAJ_thetat-1)*EAJUS_fx/EAJUS_gx;
-// Definition of fx
-// EAJUS_fx = US_size/EAJ_size*USEAJ_im*EAJ_mct+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(USEAJ_piim(+1)/(USEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^EAJ_thetat*EAJUS_fx(+1);
-// Definition of gx   
-// EAJUS_gx = EAJUS_rer*USEAJ_pim*US_size/EAJ_size*USEAJ_im+EAJ_xix*EAJ_beta*EAJ_lambdai(+1)/EAJ_lambdai*(USEAJ_piim(+1)/(USEAJ_piim^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^(EAJ_thetat-1)*EAJUS_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAJ_px = US_pim
-// USEAJ_pim^(1-EAJ_thetat) = (1-EAJ_xix)*USEAJ_pimtilde^(1-EAJ_thetat)+EAJ_xix*(USEAJ_pim(-1)/US_pic)^(1-EAJ_thetat)*(USEAJ_piim(-1)^EAJ_chix*US_pi4target^(1/4*(1-EAJ_chih)))^(1-EAJ_thetat);
-// Intermediate-good price inflation, using EAJ_pix = US_piim
-// USEAJ_piim = USEAJ_pim/USEAJ_pim(-1)*US_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAJUS_rer = EAJ_rer/US_rer;
-// Auxiliary equation for steady-state output
+
 EAJUS_rerbar = EAJUS_rer;
-//Terms of Trade
+
 EAJUS_tot = US_pex*EAJUS_rer/EAJ_pex;
-// Total imports 
+
 EAJ_im = 
 +EAJ_imc
 +EAJ_imi
 +EAJ_imcg
 +EAJ_imig
 ;
-// Total import deflator
+
 EAJ_im*EAJ_pim  = 
 +EAJ_pimc*EAJ_imc
 +EAJ_pimi*EAJ_imi
 +EAJ_pimcg*EAJ_imcg
 +EAJ_pimig*EAJ_imig
 ;
-// Effective real exchange rate: double weighting (imports)
+
 EAJEAA_weightim = EAJEAA_rer*EAA_pex*EAJEAA_im/(EAJ_pim*EAJ_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAJEAA_weightex = EAA_size/EAJ_size*EAAEAJ_im/EAJ_ex*EAJEAA_rer*EAA_py*EAA_y/(EAJEAA_rer*EAA_py*EAA_y
 +EAJEAB_rer*EAB_pex*EAAEAB_im
 +EAJEAC_rer*EAC_pex*EAAEAC_im
@@ -36432,11 +36432,11 @@ EAJEAA_weightex = EAA_size/EAJ_size*EAAEAJ_im/EAJ_ex*EAJEAA_rer*EAA_py*EAA_y/(EA
 +EAJRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAJEAA_weight = EAJ_pim*EAJ_im/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAA_weightim+EAJ_pex*EAJ_ex/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAA_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAJEAB_weightim = EAJEAB_rer*EAB_pex*EAJEAB_im/(EAJ_pim*EAJ_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAJEAB_weightex = EAB_size/EAJ_size*EABEAJ_im/EAJ_ex*EAJEAB_rer*EAB_py*EAB_y/(EAJEAB_rer*EAB_py*EAB_y
 +EAJEAA_rer*EAA_pex*EABEAA_im
 +EAJEAC_rer*EAC_pex*EABEAC_im
@@ -36620,11 +36620,11 @@ EAJEAB_weightex = EAB_size/EAJ_size*EABEAJ_im/EAJ_ex*EAJEAB_rer*EAB_py*EAB_y/(EA
 +EAJRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAJEAB_weight = EAJ_pim*EAJ_im/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAB_weightim+EAJ_pex*EAJ_ex/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAB_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAJEAC_weightim = EAJEAC_rer*EAC_pex*EAJEAC_im/(EAJ_pim*EAJ_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAJEAC_weightex = EAC_size/EAJ_size*EACEAJ_im/EAJ_ex*EAJEAC_rer*EAC_py*EAC_y/(EAJEAC_rer*EAC_py*EAC_y
 +EAJEAA_rer*EAA_pex*EACEAA_im
 +EAJEAB_rer*EAB_pex*EACEAB_im
@@ -36808,11 +36808,11 @@ EAJEAC_weightex = EAC_size/EAJ_size*EACEAJ_im/EAJ_ex*EAJEAC_rer*EAC_py*EAC_y/(EA
 +EAJRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAJEAC_weight = EAJ_pim*EAJ_im/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAC_weightim+EAJ_pex*EAJ_ex/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAC_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAJEAD_weightim = EAJEAD_rer*EAD_pex*EAJEAD_im/(EAJ_pim*EAJ_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAJEAD_weightex = EAD_size/EAJ_size*EADEAJ_im/EAJ_ex*EAJEAD_rer*EAD_py*EAD_y/(EAJEAD_rer*EAD_py*EAD_y
 +EAJEAA_rer*EAA_pex*EADEAA_im
 +EAJEAB_rer*EAB_pex*EADEAB_im
@@ -36996,11 +36996,11 @@ EAJEAD_weightex = EAD_size/EAJ_size*EADEAJ_im/EAJ_ex*EAJEAD_rer*EAD_py*EAD_y/(EA
 +EAJRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAJEAD_weight = EAJ_pim*EAJ_im/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAD_weightim+EAJ_pex*EAJ_ex/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAD_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAJEAE_weightim = EAJEAE_rer*EAE_pex*EAJEAE_im/(EAJ_pim*EAJ_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAJEAE_weightex = EAE_size/EAJ_size*EAEEAJ_im/EAJ_ex*EAJEAE_rer*EAE_py*EAE_y/(EAJEAE_rer*EAE_py*EAE_y
 +EAJEAA_rer*EAA_pex*EAEEAA_im
 +EAJEAB_rer*EAB_pex*EAEEAB_im
@@ -37184,11 +37184,11 @@ EAJEAE_weightex = EAE_size/EAJ_size*EAEEAJ_im/EAJ_ex*EAJEAE_rer*EAE_py*EAE_y/(EA
 +EAJRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAJEAE_weight = EAJ_pim*EAJ_im/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAE_weightim+EAJ_pex*EAJ_ex/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAE_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAJEAF_weightim = EAJEAF_rer*EAF_pex*EAJEAF_im/(EAJ_pim*EAJ_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAJEAF_weightex = EAF_size/EAJ_size*EAFEAJ_im/EAJ_ex*EAJEAF_rer*EAF_py*EAF_y/(EAJEAF_rer*EAF_py*EAF_y
 +EAJEAA_rer*EAA_pex*EAFEAA_im
 +EAJEAB_rer*EAB_pex*EAFEAB_im
@@ -37372,11 +37372,11 @@ EAJEAF_weightex = EAF_size/EAJ_size*EAFEAJ_im/EAJ_ex*EAJEAF_rer*EAF_py*EAF_y/(EA
 +EAJRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAJEAF_weight = EAJ_pim*EAJ_im/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAF_weightim+EAJ_pex*EAJ_ex/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAF_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAJEAG_weightim = EAJEAG_rer*EAG_pex*EAJEAG_im/(EAJ_pim*EAJ_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAJEAG_weightex = EAG_size/EAJ_size*EAGEAJ_im/EAJ_ex*EAJEAG_rer*EAG_py*EAG_y/(EAJEAG_rer*EAG_py*EAG_y
 +EAJEAA_rer*EAA_pex*EAGEAA_im
 +EAJEAB_rer*EAB_pex*EAGEAB_im
@@ -37560,11 +37560,11 @@ EAJEAG_weightex = EAG_size/EAJ_size*EAGEAJ_im/EAJ_ex*EAJEAG_rer*EAG_py*EAG_y/(EA
 +EAJRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAJEAG_weight = EAJ_pim*EAJ_im/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAG_weightim+EAJ_pex*EAJ_ex/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAG_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAJEAH_weightim = EAJEAH_rer*EAH_pex*EAJEAH_im/(EAJ_pim*EAJ_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAJEAH_weightex = EAH_size/EAJ_size*EAHEAJ_im/EAJ_ex*EAJEAH_rer*EAH_py*EAH_y/(EAJEAH_rer*EAH_py*EAH_y
 +EAJEAA_rer*EAA_pex*EAHEAA_im
 +EAJEAB_rer*EAB_pex*EAHEAB_im
@@ -37748,11 +37748,11 @@ EAJEAH_weightex = EAH_size/EAJ_size*EAHEAJ_im/EAJ_ex*EAJEAH_rer*EAH_py*EAH_y/(EA
 +EAJRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAJEAH_weight = EAJ_pim*EAJ_im/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAH_weightim+EAJ_pex*EAJ_ex/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAH_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAJEAI_weightim = EAJEAI_rer*EAI_pex*EAJEAI_im/(EAJ_pim*EAJ_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAJEAI_weightex = EAI_size/EAJ_size*EAIEAJ_im/EAJ_ex*EAJEAI_rer*EAI_py*EAI_y/(EAJEAI_rer*EAI_py*EAI_y
 +EAJEAA_rer*EAA_pex*EAIEAA_im
 +EAJEAB_rer*EAB_pex*EAIEAB_im
@@ -37936,11 +37936,11 @@ EAJEAI_weightex = EAI_size/EAJ_size*EAIEAJ_im/EAJ_ex*EAJEAI_rer*EAI_py*EAI_y/(EA
 +EAJRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAJEAI_weight = EAJ_pim*EAJ_im/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAI_weightim+EAJ_pex*EAJ_ex/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAI_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAJEAK_weightim = EAJEAK_rer*EAK_pex*EAJEAK_im/(EAJ_pim*EAJ_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAJEAK_weightex = EAK_size/EAJ_size*EAKEAJ_im/EAJ_ex*EAJEAK_rer*EAK_py*EAK_y/(EAJEAK_rer*EAK_py*EAK_y
 +EAJEAA_rer*EAA_pex*EAKEAA_im
 +EAJEAB_rer*EAB_pex*EAKEAB_im
@@ -38124,11 +38124,11 @@ EAJEAK_weightex = EAK_size/EAJ_size*EAKEAJ_im/EAJ_ex*EAJEAK_rer*EAK_py*EAK_y/(EA
 +EAJRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAJEAK_weight = EAJ_pim*EAJ_im/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAK_weightim+EAJ_pex*EAJ_ex/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAK_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAJEAL_weightim = EAJEAL_rer*EAL_pex*EAJEAL_im/(EAJ_pim*EAJ_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAJEAL_weightex = EAL_size/EAJ_size*EALEAJ_im/EAJ_ex*EAJEAL_rer*EAL_py*EAL_y/(EAJEAL_rer*EAL_py*EAL_y
 +EAJEAA_rer*EAA_pex*EALEAA_im
 +EAJEAB_rer*EAB_pex*EALEAB_im
@@ -38312,11 +38312,11 @@ EAJEAL_weightex = EAL_size/EAJ_size*EALEAJ_im/EAJ_ex*EAJEAL_rer*EAL_py*EAL_y/(EA
 +EAJRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAJEAL_weight = EAJ_pim*EAJ_im/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAL_weightim+EAJ_pex*EAJ_ex/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJEAL_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAJRW_weightim = EAJRW_rer*RW_pex*EAJRW_im/(EAJ_pim*EAJ_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAJRW_weightex = RW_size/EAJ_size*RWEAJ_im/EAJ_ex*EAJRW_rer*RW_py*RW_y/(EAJRW_rer*RW_py*RW_y
 +EAJEAA_rer*EAA_pex*RWEAA_im
 +EAJEAB_rer*EAB_pex*RWEAB_im
@@ -38500,11 +38500,11 @@ EAJRW_weightex = RW_size/EAJ_size*RWEAJ_im/EAJ_ex*EAJRW_rer*RW_py*RW_y/(EAJRW_re
 +EAJRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAJRW_weight = EAJ_pim*EAJ_im/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJRW_weightim+EAJ_pex*EAJ_ex/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJRW_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAJUS_weightim = EAJUS_rer*US_pex*EAJUS_im/(EAJ_pim*EAJ_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAJUS_weightex = US_size/EAJ_size*USEAJ_im/EAJ_ex*EAJUS_rer*US_py*US_y/(EAJUS_rer*US_py*US_y
 +EAJEAA_rer*EAA_pex*USEAA_im
 +EAJEAB_rer*EAB_pex*USEAB_im
@@ -38688,9 +38688,9 @@ EAJUS_weightex = US_size/EAJ_size*USEAJ_im/EAJ_ex*EAJUS_rer*US_py*US_y/(EAJUS_re
 +EAJUS_rer*US_pex*RWUS_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAJUS_weight = EAJ_pim*EAJ_im/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJUS_weightim+EAJ_pex*EAJ_ex/(EAJ_pim*EAJ_im+EAJ_pex*EAJ_ex)*EAJUS_weightex;
-// Effective real exchange rate
+
 EAJ_reer = 1
 *EAJEAA_rer^EAJEAA_weight
 *EAJEAB_rer^EAJEAB_weight
@@ -38706,7 +38706,7 @@ EAJ_reer = 1
 *EAJRW_rer^EAJRW_weight
 *EAJUS_rer^EAJUS_weight
 ;
-// Effective terms of trade
+
 EAJ_etot = 1
 *EAJEAA_tot^EAJEAA_weight
 *EAJEAB_tot^EAJEAB_weight
@@ -38722,10 +38722,10 @@ EAJ_etot = 1
 *EAJRW_tot^EAJRW_weight
 *EAJUS_tot^EAJUS_weight
 ;
-//-----------------
-// Final-good firms
-//-----------------
-// Private consumption good (import)
+
+
+
+
 EAJ_imc^((EAJ_mumc-1)/EAJ_mumc) =
 +EAJEAA_numc ^(1/EAJ_mumc)*EAJEAA_imc^(1-1/EAJ_mumc)
 +EAJEAB_numc ^(1/EAJ_mumc)*EAJEAB_imc^(1-1/EAJ_mumc)
@@ -38753,27 +38753,27 @@ EAJ_imc^((EAJ_mumc-1)/EAJ_mumc) =
 -EAJRW_numc
 -EAJUS_numc
 )^(1/EAJ_mumc)*EAJEAH_imc^(1-1/EAJ_mumc);
-// Demand for bilateral consumption import goods
+
 EAJEAA_imc = EAJEAA_numc*((EAA_pex*EAJEAA_rer)/EAJ_pimc)^(-EAJ_mumc)*EAJ_imc;
-// Demand for bilateral consumption import goods
+
 EAJEAB_imc = EAJEAB_numc*((EAB_pex*EAJEAB_rer)/EAJ_pimc)^(-EAJ_mumc)*EAJ_imc;
-// Demand for bilateral consumption import goods
+
 EAJEAC_imc = EAJEAC_numc*((EAC_pex*EAJEAC_rer)/EAJ_pimc)^(-EAJ_mumc)*EAJ_imc;
-// Demand for bilateral consumption import goods
+
 EAJEAD_imc = EAJEAD_numc*((EAD_pex*EAJEAD_rer)/EAJ_pimc)^(-EAJ_mumc)*EAJ_imc;
-// Demand for bilateral consumption import goods
+
 EAJEAE_imc = EAJEAE_numc*((EAE_pex*EAJEAE_rer)/EAJ_pimc)^(-EAJ_mumc)*EAJ_imc;
-// Demand for bilateral consumption import goods
+
 EAJEAF_imc = EAJEAF_numc*((EAF_pex*EAJEAF_rer)/EAJ_pimc)^(-EAJ_mumc)*EAJ_imc;
-// Demand for bilateral consumption import goods
+
 EAJEAG_imc = EAJEAG_numc*((EAG_pex*EAJEAG_rer)/EAJ_pimc)^(-EAJ_mumc)*EAJ_imc;
-// Demand for bilateral consumption import goods
+
 EAJEAI_imc = EAJEAI_numc*((EAI_pex*EAJEAI_rer)/EAJ_pimc)^(-EAJ_mumc)*EAJ_imc;
-// Demand for bilateral consumption import goods
+
 EAJEAL_imc = EAJEAL_numc*((EAL_pex*EAJEAL_rer)/EAJ_pimc)^(-EAJ_mumc)*EAJ_imc;
-// Demand for bilateral consumption import goods
+
 EAJRW_imc = EAJRW_numc*((RW_pex*EAJRW_rer)/EAJ_pimc)^(-EAJ_mumc)*EAJ_imc;
-// Demand for bilateral consumption import goods
+
 EAJUS_imc = EAJUS_numc*((US_pex*EAJUS_rer)/EAJ_pimc)^(-EAJ_mumc)*EAJ_imc;
 EAJEAH_imc = (1
 -EAJEAA_numc
@@ -38789,7 +38789,7 @@ EAJEAH_imc = (1
 -EAJRW_numc
 -EAJUS_numc
 )*((EAH_pex*EAJEAH_rer)/EAJ_pimc)^(-EAJ_mumc)*EAJ_imc;
-// Price of the consumption good (import)
+
 EAJ_pimc^(1-EAJ_mumc) =
 +EAJEAA_numc * (EAA_pex*EAJEAA_rer)^(1-EAJ_mumc)
 +EAJEAB_numc * (EAB_pex*EAJEAB_rer)^(1-EAJ_mumc)
@@ -38817,9 +38817,9 @@ EAJ_pimc^(1-EAJ_mumc) =
 -EAJRW_numc
 -EAJUS_numc
 )*(EAH_pex*EAJEAH_rer)^(1-EAJ_mumc);
-// Private consumption good (import) inflation
+
 EAJ_piimc = EAJ_pimc/EAJ_pimc(-1)*EAJ_pic;
-// Private consumption good (import)
+
 EAJ_imi^((EAJ_mumi-1)/EAJ_mumi) =
 +EAJEAA_numi ^(1/EAJ_mumi)*EAJEAA_imi^(1-1/EAJ_mumi)
 +EAJEAB_numi ^(1/EAJ_mumi)*EAJEAB_imi^(1-1/EAJ_mumi)
@@ -38847,27 +38847,27 @@ EAJ_imi^((EAJ_mumi-1)/EAJ_mumi) =
 -EAJRW_numi
 -EAJUS_numi
 )^(1/EAJ_mumi)*EAJEAH_imi^(1-1/EAJ_mumi);
-// Demand for bilateral consumption import goods
+
 EAJEAA_imi = EAJEAA_numi*((EAA_pex*EAJEAA_rer)/EAJ_pimi)^(-EAJ_mumi)*EAJ_imi;
-// Demand for bilateral consumption import goods
+
 EAJEAB_imi = EAJEAB_numi*((EAB_pex*EAJEAB_rer)/EAJ_pimi)^(-EAJ_mumi)*EAJ_imi;
-// Demand for bilateral consumption import goods
+
 EAJEAC_imi = EAJEAC_numi*((EAC_pex*EAJEAC_rer)/EAJ_pimi)^(-EAJ_mumi)*EAJ_imi;
-// Demand for bilateral consumption import goods
+
 EAJEAD_imi = EAJEAD_numi*((EAD_pex*EAJEAD_rer)/EAJ_pimi)^(-EAJ_mumi)*EAJ_imi;
-// Demand for bilateral consumption import goods
+
 EAJEAE_imi = EAJEAE_numi*((EAE_pex*EAJEAE_rer)/EAJ_pimi)^(-EAJ_mumi)*EAJ_imi;
-// Demand for bilateral consumption import goods
+
 EAJEAF_imi = EAJEAF_numi*((EAF_pex*EAJEAF_rer)/EAJ_pimi)^(-EAJ_mumi)*EAJ_imi;
-// Demand for bilateral consumption import goods
+
 EAJEAG_imi = EAJEAG_numi*((EAG_pex*EAJEAG_rer)/EAJ_pimi)^(-EAJ_mumi)*EAJ_imi;
-// Demand for bilateral consumption import goods
+
 EAJEAI_imi = EAJEAI_numi*((EAI_pex*EAJEAI_rer)/EAJ_pimi)^(-EAJ_mumi)*EAJ_imi;
-// Demand for bilateral consumption import goods
+
 EAJEAL_imi = EAJEAL_numi*((EAL_pex*EAJEAL_rer)/EAJ_pimi)^(-EAJ_mumi)*EAJ_imi;
-// Demand for bilateral consumption import goods
+
 EAJRW_imi = EAJRW_numi*((RW_pex*EAJRW_rer)/EAJ_pimi)^(-EAJ_mumi)*EAJ_imi;
-// Demand for bilateral consumption import goods
+
 EAJUS_imi = EAJUS_numi*((US_pex*EAJUS_rer)/EAJ_pimi)^(-EAJ_mumi)*EAJ_imi;
 EAJEAH_imi = (1
 -EAJEAA_numi
@@ -38883,7 +38883,7 @@ EAJEAH_imi = (1
 -EAJRW_numi
 -EAJUS_numi
 )*((EAH_pex*EAJEAH_rer)/EAJ_pimi)^(-EAJ_mumi)*EAJ_imi;
-// Price of the consumption good (import)
+
 EAJ_pimi^(1-EAJ_mumi) =
 +EAJEAA_numi * (EAA_pex*EAJEAA_rer)^(1-EAJ_mumi)
 +EAJEAB_numi * (EAB_pex*EAJEAB_rer)^(1-EAJ_mumi)
@@ -38911,9 +38911,9 @@ EAJ_pimi^(1-EAJ_mumi) =
 -EAJRW_numi
 -EAJUS_numi
 )*(EAH_pex*EAJEAH_rer)^(1-EAJ_mumi);
-// Private consumption good (import) inflation
+
 EAJ_piimi = EAJ_pimi/EAJ_pimi(-1)*EAJ_pic;
-// Private consumption good (import)
+
 EAJ_imcg^((EAJ_mumcg-1)/EAJ_mumcg) =
 +EAJEAA_numcg ^(1/EAJ_mumcg)*EAJEAA_imcg^(1-1/EAJ_mumcg)
 +EAJEAB_numcg ^(1/EAJ_mumcg)*EAJEAB_imcg^(1-1/EAJ_mumcg)
@@ -38941,27 +38941,27 @@ EAJ_imcg^((EAJ_mumcg-1)/EAJ_mumcg) =
 -EAJRW_numcg
 -EAJUS_numcg
 )^(1/EAJ_mumcg)*EAJEAH_imcg^(1-1/EAJ_mumcg);
-// Demand for bilateral consumption import goods
+
 EAJEAA_imcg = EAJEAA_numcg*((EAA_pex*EAJEAA_rer)/EAJ_pimcg)^(-EAJ_mumcg)*EAJ_imcg;
-// Demand for bilateral consumption import goods
+
 EAJEAB_imcg = EAJEAB_numcg*((EAB_pex*EAJEAB_rer)/EAJ_pimcg)^(-EAJ_mumcg)*EAJ_imcg;
-// Demand for bilateral consumption import goods
+
 EAJEAC_imcg = EAJEAC_numcg*((EAC_pex*EAJEAC_rer)/EAJ_pimcg)^(-EAJ_mumcg)*EAJ_imcg;
-// Demand for bilateral consumption import goods
+
 EAJEAD_imcg = EAJEAD_numcg*((EAD_pex*EAJEAD_rer)/EAJ_pimcg)^(-EAJ_mumcg)*EAJ_imcg;
-// Demand for bilateral consumption import goods
+
 EAJEAE_imcg = EAJEAE_numcg*((EAE_pex*EAJEAE_rer)/EAJ_pimcg)^(-EAJ_mumcg)*EAJ_imcg;
-// Demand for bilateral consumption import goods
+
 EAJEAF_imcg = EAJEAF_numcg*((EAF_pex*EAJEAF_rer)/EAJ_pimcg)^(-EAJ_mumcg)*EAJ_imcg;
-// Demand for bilateral consumption import goods
+
 EAJEAG_imcg = EAJEAG_numcg*((EAG_pex*EAJEAG_rer)/EAJ_pimcg)^(-EAJ_mumcg)*EAJ_imcg;
-// Demand for bilateral consumption import goods
+
 EAJEAI_imcg = EAJEAI_numcg*((EAI_pex*EAJEAI_rer)/EAJ_pimcg)^(-EAJ_mumcg)*EAJ_imcg;
-// Demand for bilateral consumption import goods
+
 EAJEAL_imcg = EAJEAL_numcg*((EAL_pex*EAJEAL_rer)/EAJ_pimcg)^(-EAJ_mumcg)*EAJ_imcg;
-// Demand for bilateral consumption import goods
+
 EAJRW_imcg = EAJRW_numcg*((RW_pex*EAJRW_rer)/EAJ_pimcg)^(-EAJ_mumcg)*EAJ_imcg;
-// Demand for bilateral consumption import goods
+
 EAJUS_imcg = EAJUS_numcg*((US_pex*EAJUS_rer)/EAJ_pimcg)^(-EAJ_mumcg)*EAJ_imcg;
 EAJEAH_imcg = (1
 -EAJEAA_numcg
@@ -38977,7 +38977,7 @@ EAJEAH_imcg = (1
 -EAJRW_numcg
 -EAJUS_numcg
 )*((EAH_pex*EAJEAH_rer)/EAJ_pimcg)^(-EAJ_mumcg)*EAJ_imcg;
-// Price of the consumption good (import)
+
 EAJ_pimcg^(1-EAJ_mumcg) =
 +EAJEAA_numcg * (EAA_pex*EAJEAA_rer)^(1-EAJ_mumcg)
 +EAJEAB_numcg * (EAB_pex*EAJEAB_rer)^(1-EAJ_mumcg)
@@ -39005,9 +39005,9 @@ EAJ_pimcg^(1-EAJ_mumcg) =
 -EAJRW_numcg
 -EAJUS_numcg
 )*(EAH_pex*EAJEAH_rer)^(1-EAJ_mumcg);
-// Private consumption good (import) inflation
+
 EAJ_piimcg = EAJ_pimcg/EAJ_pimcg(-1)*EAJ_pic;
-// Private consumption good (import)
+
 EAJ_imig^((EAJ_mumig-1)/EAJ_mumig) =
 +EAJEAA_numig ^(1/EAJ_mumig)*EAJEAA_imig^(1-1/EAJ_mumig)
 +EAJEAB_numig ^(1/EAJ_mumig)*EAJEAB_imig^(1-1/EAJ_mumig)
@@ -39035,27 +39035,27 @@ EAJ_imig^((EAJ_mumig-1)/EAJ_mumig) =
 -EAJRW_numig
 -EAJUS_numig
 )^(1/EAJ_mumig)*EAJEAH_imig^(1-1/EAJ_mumig);
-// Demand for bilateral consumption import goods
+
 EAJEAA_imig = EAJEAA_numig*((EAA_pex*EAJEAA_rer)/EAJ_pimig)^(-EAJ_mumig)*EAJ_imig;
-// Demand for bilateral consumption import goods
+
 EAJEAB_imig = EAJEAB_numig*((EAB_pex*EAJEAB_rer)/EAJ_pimig)^(-EAJ_mumig)*EAJ_imig;
-// Demand for bilateral consumption import goods
+
 EAJEAC_imig = EAJEAC_numig*((EAC_pex*EAJEAC_rer)/EAJ_pimig)^(-EAJ_mumig)*EAJ_imig;
-// Demand for bilateral consumption import goods
+
 EAJEAD_imig = EAJEAD_numig*((EAD_pex*EAJEAD_rer)/EAJ_pimig)^(-EAJ_mumig)*EAJ_imig;
-// Demand for bilateral consumption import goods
+
 EAJEAE_imig = EAJEAE_numig*((EAE_pex*EAJEAE_rer)/EAJ_pimig)^(-EAJ_mumig)*EAJ_imig;
-// Demand for bilateral consumption import goods
+
 EAJEAF_imig = EAJEAF_numig*((EAF_pex*EAJEAF_rer)/EAJ_pimig)^(-EAJ_mumig)*EAJ_imig;
-// Demand for bilateral consumption import goods
+
 EAJEAG_imig = EAJEAG_numig*((EAG_pex*EAJEAG_rer)/EAJ_pimig)^(-EAJ_mumig)*EAJ_imig;
-// Demand for bilateral consumption import goods
+
 EAJEAI_imig = EAJEAI_numig*((EAI_pex*EAJEAI_rer)/EAJ_pimig)^(-EAJ_mumig)*EAJ_imig;
-// Demand for bilateral consumption import goods
+
 EAJEAL_imig = EAJEAL_numig*((EAL_pex*EAJEAL_rer)/EAJ_pimig)^(-EAJ_mumig)*EAJ_imig;
-// Demand for bilateral consumption import goods
+
 EAJRW_imig = EAJRW_numig*((RW_pex*EAJRW_rer)/EAJ_pimig)^(-EAJ_mumig)*EAJ_imig;
-// Demand for bilateral consumption import goods
+
 EAJUS_imig = EAJUS_numig*((US_pex*EAJUS_rer)/EAJ_pimig)^(-EAJ_mumig)*EAJ_imig;
 EAJEAH_imig = (1
 -EAJEAA_numig
@@ -39071,7 +39071,7 @@ EAJEAH_imig = (1
 -EAJRW_numig
 -EAJUS_numig
 )*((EAH_pex*EAJEAH_rer)/EAJ_pimig)^(-EAJ_mumig)*EAJ_imig;
-// Price of the consumption good (import)
+
 EAJ_pimig^(1-EAJ_mumig) =
 +EAJEAA_numig * (EAA_pex*EAJEAA_rer)^(1-EAJ_mumig)
 +EAJEAB_numig * (EAB_pex*EAJEAB_rer)^(1-EAJ_mumig)
@@ -39099,15 +39099,15 @@ EAJ_pimig^(1-EAJ_mumig) =
 -EAJRW_numig
 -EAJUS_numig
 )*(EAH_pex*EAJEAH_rer)^(1-EAJ_mumig);
-// Private consumption good (import) inflation
+
 EAJ_piimig = EAJ_pimig/EAJ_pimig(-1)*EAJ_pic;
-// Private consumption good (import) inflation
+
 EAJ_piimc4 = EAJ_pimc/EAJ_pimc(-4)*EAJ_pic4;
-// Private consumption good (import) inflation
+
 EAJ_piex4 = EAJ_pex/EAJ_pex(-4)*EAJ_pic4;
-// Wedge between aggregate demand and production, using EAJ_x = EAK_size/EAJ_size*EAK_im
+
 EAJ_yst = EAJ_sh*EAJ_ht+EAJ_sx*EAJ_ex;
-// Aggregate demand for bilateral imported intermediate goods
+
 EAJEAA_im = 
 +EAJEAA_imc
 +EAJEAA_imi
@@ -39186,18 +39186,18 @@ EAJUS_im =
 +EAJUS_imcg
 +EAJUS_imig
 ;
-// Private consumption good firm
-// Private consumption good (tradable)
+
+
 EAJ_ttc^((EAJ_mutc-1)/EAJ_mutc) = (EAJ_nutc)^(1/EAJ_mutc)*EAJ_htc^(1-1/EAJ_mutc)+(1-EAJ_nutc)^(1/EAJ_mutc)*EAJ_imc^(1-1/EAJ_mutc);
-// Private consumption good  (total)
+
 EAJ_qc^((EAJ_muc-1)/EAJ_muc) = (EAJ_nuc)^(1/EAJ_muc)*EAJ_ttc^(1-1/EAJ_muc)+(1-EAJ_nuc)^(1/EAJ_muc)*EAJ_ntc^(1-1/EAJ_muc);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAJ_ntc = (1-EAJ_nuc)*(EAJ_pnt)^(-EAJ_muc)*EAJ_qc;
-// Price of the consumption good (tradable)  
+
 EAJ_pttc^(1-EAJ_mutc) = (EAJ_nutc)*EAJ_pht^(1-EAJ_mutc)+(1-EAJ_nutc)*EAJ_pimc^(1-EAJ_mutc);
-// Price of the consumption good 
+
 1^(1-EAJ_muc) = (EAJ_nuc)*EAJ_pttc^(1-EAJ_muc)+(1-EAJ_nuc)*EAJ_pnt^(1-EAJ_muc);
-// Demand for domestic intermediate goods
+
 EAJ_htc = EAJ_nutc*(EAJ_pht/EAJ_pttc)^(-EAJ_mutc)*EAJ_ttc;
 EAJEAA_gammaimc = 0;
 EAJEAA_gammaimcdag = 1;
@@ -39225,20 +39225,20 @@ EAJRW_gammaimc = 0;
 EAJRW_gammaimcdag = 1;
 EAJUS_gammaimc = 0;
 EAJUS_gammaimcdag = 1;
-// Private consumption good (tradable)
+
 EAJ_tti^((EAJ_muti-1)/EAJ_muti) = (EAJ_nuti)^(1/EAJ_muti)*EAJ_hti^(1-1/EAJ_muti)+(1-EAJ_nuti)^(1/EAJ_muti)*EAJ_imi^(1-1/EAJ_muti);
-// Private consumption good  (total)
+
 EAJ_qi^((EAJ_mui-1)/EAJ_mui) = (EAJ_nui)^(1/EAJ_mui)*EAJ_tti^(1-1/EAJ_mui)+(1-EAJ_nui)^(1/EAJ_mui)*EAJ_nti^(1-1/EAJ_mui);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAJ_nti = (1-EAJ_nui)*(EAJ_pnt/EAJ_pi)^(-EAJ_mui)*EAJ_qi;
-// Price of the consumption good (tradable)  
+
 EAJ_ptti^(1-EAJ_muti) = (EAJ_nuti)*EAJ_pht^(1-EAJ_muti)+(1-EAJ_nuti)*EAJ_pimi^(1-EAJ_muti);
-// Price of the consumption good 
+
 EAJ_pi^(1-EAJ_mui) = (EAJ_nui)*EAJ_ptti^(1-EAJ_mui)+(1-EAJ_nui)*EAJ_pnt^(1-EAJ_mui);
-// Auxiliary equation for the price of the investment good in steady state
-// this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
+
+
 EAJ_pibar = EAJ_pi;
-// Demand for domestic intermediate goods
+
 EAJ_hti = EAJ_nuti*(EAJ_pht/EAJ_ptti)^(-EAJ_muti)*EAJ_tti;
 EAJEAA_gammaimi = 0;
 EAJEAA_gammaimidag = 1;
@@ -39266,17 +39266,17 @@ EAJRW_gammaimi = 0;
 EAJRW_gammaimidag = 1;
 EAJUS_gammaimi = 0;
 EAJUS_gammaimidag = 1;
-// Private consumption good (tradable)
+
 EAJ_ttcg^((EAJ_mutcg-1)/EAJ_mutcg) = (EAJ_nutcg)^(1/EAJ_mutcg)*EAJ_htcg^(1-1/EAJ_mutcg)+(1-EAJ_nutcg)^(1/EAJ_mutcg)*EAJ_imcg^(1-1/EAJ_mutcg);
-// Private consumption good  (total)
+
 EAJ_qcg^((EAJ_mucg-1)/EAJ_mucg) = (EAJ_nucg)^(1/EAJ_mucg)*EAJ_ttcg^(1-1/EAJ_mucg)+(1-EAJ_nucg)^(1/EAJ_mucg)*EAJ_ntcg^(1-1/EAJ_mucg);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAJ_ntcg = (1-EAJ_nucg)*(EAJ_pnt/EAJ_pcg)^(-EAJ_mucg)*EAJ_qcg;
-// Price of the consumption good (tradable)  
+
 EAJ_pttcg^(1-EAJ_mutcg) = (EAJ_nutcg)*EAJ_pht^(1-EAJ_mutcg)+(1-EAJ_nutcg)*EAJ_pimcg^(1-EAJ_mutcg);
-// Price of the consumption good 
+
 EAJ_pcg^(1-EAJ_mucg) = (EAJ_nucg)*EAJ_pttcg^(1-EAJ_mucg)+(1-EAJ_nucg)*EAJ_pnt^(1-EAJ_mucg);
-// Demand for domestic intermediate goods
+
 EAJ_htcg = EAJ_nutcg*(EAJ_pht/EAJ_pttcg)^(-EAJ_mutcg)*EAJ_ttcg;
 EAJEAA_gammaimcg = 0;
 EAJEAA_gammaimcgdag = 1;
@@ -39304,17 +39304,17 @@ EAJRW_gammaimcg = 0;
 EAJRW_gammaimcgdag = 1;
 EAJUS_gammaimcg = 0;
 EAJUS_gammaimcgdag = 1;
-// Private consumption good (tradable)
+
 EAJ_ttig^((EAJ_mutig-1)/EAJ_mutig) = (EAJ_nutig)^(1/EAJ_mutig)*EAJ_htig^(1-1/EAJ_mutig)+(1-EAJ_nutig)^(1/EAJ_mutig)*EAJ_imig^(1-1/EAJ_mutig);
-// Private consumption good  (total)
+
 EAJ_qig^((EAJ_muig-1)/EAJ_muig) = (EAJ_nuig)^(1/EAJ_muig)*EAJ_ttig^(1-1/EAJ_muig)+(1-EAJ_nuig)^(1/EAJ_muig)*EAJ_ntig^(1-1/EAJ_muig);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAJ_ntig = (1-EAJ_nuig)*(EAJ_pnt/EAJ_pig)^(-EAJ_muig)*EAJ_qig;
-// Price of the consumption good (tradable)  
+
 EAJ_pttig^(1-EAJ_mutig) = (EAJ_nutig)*EAJ_pht^(1-EAJ_mutig)+(1-EAJ_nutig)*EAJ_pimig^(1-EAJ_mutig);
-// Price of the consumption good 
+
 EAJ_pig^(1-EAJ_muig) = (EAJ_nuig)*EAJ_pttig^(1-EAJ_muig)+(1-EAJ_nuig)*EAJ_pnt^(1-EAJ_muig);
-// Demand for domestic intermediate goods
+
 EAJ_htig = EAJ_nutig*(EAJ_pht/EAJ_pttig)^(-EAJ_mutig)*EAJ_ttig;
 EAJEAA_gammaimig = 0;
 EAJEAA_gammaimigdag = 1;
@@ -39342,7 +39342,7 @@ EAJRW_gammaimig = 0;
 EAJRW_gammaimigdag = 1;
 EAJUS_gammaimig = 0;
 EAJUS_gammaimigdag = 1;
-// Trade balance
+
 EAJ_tb =
 +EAJ_pex*EAA_size/EAJ_size*EAAEAJ_im
 -EAA_pex*EAJEAA_rer*EAJEAA_im
@@ -39371,7 +39371,7 @@ EAJ_tb =
 +EAJ_pex*US_size/EAJ_size*USEAJ_im
 -US_pex*EAJUS_rer*EAJUS_im
 ;
-// Aggregate exports (volume)
+
 EAJ_ex =
 +EAA_size/EAJ_size*EAAEAJ_im
 +EAB_size/EAJ_size*EABEAJ_im
@@ -39387,131 +39387,131 @@ EAJ_ex =
 +RW_size/EAJ_size*RWEAJ_im
 +US_size/EAJ_size*USEAJ_im
 ;
-//-------------
-//-------------
-// Fiscal and monetary authorities
-//-------------
-//-------------
-//-------------
-// Fiscal authority
-//-------------
-// Government budget constraint, using EAJ_pg = EAJ_pht
-// TODO: check the (1-EAJ_gammab(-1)) adjustment here, which is not in the fiscal extention
+
+
+
+
+
+
+
+
+
+
 	EAJ_pcg(-1)*EAJ_cg(-1)+EAJ_pig(-1)*EAJ_ig(-1)+EAJ_tr(-1)
 	+EAJ_b(-1)*EAJ_pic(-1)^(-1)+EAJ_m(-2)*EAJ_pic(-1)^(-1) = EAJ_tauc(-1)*EAJ_c(-1)+(EAJ_taun(-1)+EAJ_tauwh(-1))*(EAJ_wi(-1)*EAJ_ndi(-1)+EAJ_wj(-1)*EAJ_ndj(-1))+EAJ_tauwf(-1)*EAJ_w(-1)*EAJ_nd(-1)+EAJ_tauk(-1)*(EAJ_rk(-1)*EAJ_u(-1)-(EAJ_gammau(-1)+EAJ_delta)*EAJ_pi(-1))*EAJ_k(-1)+EAJ_taud(-1)*EAJ_d(-1)+EAJ_t(-1)+(EAJ_r(-1)*(1-EAJ_gammab(-1)))^(-1)*EAJ_b+EAJ_m(-1);
-// Government spending, using EAJ_pg = EAJ_pht
+
 EAJ_pcg*EAJ_cg = EAJ_cgy*EAJ_pybar*EAJ_ybar;
 EAJ_pig*EAJ_ig = EAJ_igy*EAJ_pybar*EAJ_ybar;
 EAJ_t = 0;
 EAJ_b = EAJ_bytarget*EAJ_pybar*EAJ_ybar;
-// Auxiliary equation for steady-state output
+
 EAJ_ybar = EAJ_y;
-// Auxiliary equation for steady-state output
+
 EAJ_ytbar = EAJ_yst;
-// Auxiliary equation for steady-state output
+
 EAJ_ynbar = EAJ_ysn;
-// Auxiliary equation for steady-state output deflator
+
 EAJ_pybar = EAJ_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
+
 EAJ_trybar = EAJ_tr/(EAJ_pybar*EAJ_ybar);
-// Auxiliary equation for determining the distribution of lump-sum taxes
+
 EAJ_ti = EAJ_upsilont*EAJ_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
 upsilont = 0:            ti = 0, tj = 1/omega t
 upsilont = 1:            ti = tj = t
 upsilont = 1/(1-omega):  ti = 1/(1-omega) t, tj = 0. */
-// Auxiliary equation for determining the distribution of lump-sum transfers
+
 EAJ_tri = EAJ_upsilontr*EAJ_tr;
 /* Note: Valid parameter space: 0 <= upsilontr <= 1/(1-omega) with
 upsilontr = 0:            tri = 0, trj = 1/omega tr
 upsilontr = 1:            tri = trj = tr
 upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
-//-------------
-// Monetary authority
-//-------------
+
+
+
 	EAJ_r = EAL_r;
 EAJ_pic4 = EAJ_pi4target;
 EAJ_rr-1 = EAJ_r/EAJ_pi4target^(1/4)-1;
-// Equilibrium real interest rate
+
 EAJ_rrstar-1 = 1/EAJ_beta-1;
-//-------------
-//-------------
-// Aggregation, market clearing and resource constraint
-//-------------
-//-------------
-//-------------
-// Aggregation
-//-------------
-// Aggregate consumption
+
+
+
+
+
+
+
+
+
 EAJ_c = (1-EAJ_omega)*EAJ_ci+EAJ_omega*EAJ_cj;
-// Aggregate money holdings
+
 EAJ_m = (1-EAJ_omega)*EAJ_mi+EAJ_omega*EAJ_mj;
-// Aggregate capital stock
+
 EAJ_k = (1-EAJ_omega)*EAJ_ki;
-// Aggregate investment
+
 EAJ_i = (1-EAJ_omega)*EAJ_ii;
-// Aggregate lump-sum transfers
+
 EAJ_trj = 
 1/EAJ_omega*EAJ_tr-(1-EAJ_omega)/EAJ_omega*EAJ_tri
 ;
-// Aggregate lump-sum taxes
+
 EAJ_tj = 
 1/EAJ_omega*EAJ_t-(1-EAJ_omega)/EAJ_omega*EAJ_ti
 ;
-// Aggregate transaction costs
+
 EAJ_gammav = (1-EAJ_omega)*EAJ_ci*EAJ_gammavi+EAJ_omega*EAJ_cj*EAJ_gammavj;
-//-------------
-// Market clearing
-//-------------
-// Labour markets for household I
-// Wedge between labour demand/hours worked and labour supply
+
+
+
+
+
 EAJ_ni = EAJ_si*EAJ_ndi;
-// Wage dispersion
+
 EAJ_si = (1-EAJ_xii)*(EAJ_witilde/EAJ_wi)^(-EAJ_etai)+EAJ_xii*(EAJ_wi(-1)/EAJ_wi)^(-EAJ_etai)*(EAJ_pic/(EAJ_pic(-1)^EAJ_chii*EAJ_pi4target^(1/4*(1-EAJ_chii))))^(EAJ_etai)*EAJ_si(-1);
-// Labour markets for household J
-// Wedge between labour demand/hours worked and labour supply
+
+
 EAJ_nj = EAJ_sj*EAJ_ndj;
-// Wage dispersion
+
 EAJ_sj = (1-EAJ_xij)*(EAJ_wjtilde/EAJ_wj)^(-EAJ_etaj)+EAJ_xij*(EAJ_wj(-1)/EAJ_wj)^(-EAJ_etaj)*(EAJ_pic/(EAJ_pic(-1)^EAJ_chij*EAJ_pi4target^(1/4*(1-EAJ_chij))))^(EAJ_etaj)*EAJ_sj(-1);
-// Rental market for capital
-// Equality of capital input and effective capital services
+
+
 EAJ_u*EAJ_k = EAJ_kd;
-// Intermediate-good markets
-// Wedge between aggregate demand and production, using EAJ_x = EAK_size/EAJ_size*EAK_im
+
+
 EAJ_ysn = EAJ_snt*EAJ_nt;
-//  nontradables aggregate demand
+
 EAJ_nt = 
 +EAJ_ntc
 +EAJ_nti
 +EAJ_ntcg
 +EAJ_ntig
 ;
-// Aggregate demand for domestic intermediate goods, using EAJ_hg = EAJ_cg
+
 EAJ_ht =
 +EAJ_htc
 +EAJ_hti
 +EAJ_htcg
 +EAJ_htig
 ;
-// Price dispersion in the domestic markets
+
 EAJ_sh = (1-EAJ_xih)*(EAJ_phttilde/EAJ_pht)^(-EAJ_thetat)+EAJ_xih*(EAJ_piht/(EAJ_piht(-1)^EAJ_chih*EAJ_pi4target^(1/4*(1-EAJ_chih))))^EAJ_thetat*EAJ_sh(-1);
-// Price dispersion in the foreign markets
+
 EAJ_sx = (1-EAJ_xix)*(EAJ_pextilde/EAJ_pex)^(-EAJ_thetat)+EAJ_xix*(EAJ_piex/(EAJ_piex(-1)^EAJ_chix*EAJ_pi4target^(1/4*(1-EAJ_chix))))^EAJ_thetat*EAJ_sx(-1);
-// Price dispersion in the domestic markets
+
 EAJ_snt = (1-EAJ_xin)*(EAJ_pnttilde/EAJ_pnt)^(-EAJ_thetan)+EAJ_xin*(EAJ_pint/(EAJ_pint(-1)^EAJ_chin*EAJ_pi4target^(1/4*(1-EAJ_chin))))^EAJ_thetan*EAJ_snt(-1);
-// Final-good markets
-// Aggregate consumption and transaction cost
+
+
 EAJ_qc = EAJ_c+EAJ_gammav;
-// Aggregate investment and capital utilisation cost
+
 EAJ_qi = EAJ_i+EAJ_k*EAJ_gammau;
-// Aggregate gov demand components added to use the same structure like in private components
+
 EAJ_qcg = EAJ_cg;
 EAJ_qig = EAJ_ig;
-//-------------
-// Resource constraint
-//-------------
-// TODO: why there is no adjustment cost for gov components
-// Aggregate nominal demand
+
+
+
+
+
 EAJ_py*EAJ_y = 
 +EAJ_qc
 +EAJ_pi*EAJ_qi
@@ -39583,83 +39583,83 @@ EAJ_py*EAJ_y =
 -(US_pex*EAJUS_rer)*EAJUS_imcg
 -(US_pex*EAJUS_rer)*EAJUS_imig
 ;
-// Aggregate real demand
+
 EAJ_y = EAJ_yst+EAJ_ysn;
-//-------------
-//-------------
-// Autoregressive shocks
-//-------------
-//-------------
-// Productivity shocks
+
+
+
+
+
+
 log(EAJ_zt) = (1-EAJ_rhozt)*log(EAJ_ztbar)+EAJ_rhozt*log(EAJ_zt(-1))+EAJ_epszt;
 log(EAJ_zn) = (1-EAJ_rhozn)*log(EAJ_znbar)+EAJ_rhozn*log(EAJ_zn(-1))+EAJ_epszn;
-// Government spending shock
+
 EAJ_cgy = (1-EAJ_rhocg)*EAJ_cgybar+EAJ_rhocg*EAJ_cgy(-1)+EAJ_epsgc;
 EAJ_igy = (1-EAJ_rhoig)*EAJ_igybar+EAJ_rhoig*EAJ_igy(-1)+EAJ_epsgi;
-// Transfer shock
+
 EAJ_try = (1-EAJ_rhotr)*EAJ_trybar+EAJ_rhotr*EAJ_try(-1)+EAJ_epstr;
-// Consumption tax shock
+
 EAJ_tauc = (1-EAJ_rhotauc)*EAJ_taucbar+EAJ_rhotauc*EAJ_tauc(-1)+EAJ_epstauc;
-// Dividend income tax shock
+
 EAJ_taud = (1-EAJ_rhotaud)*EAJ_taudbar+EAJ_rhotaud*EAJ_taud(-1)+EAJ_epstaud;
-// Capital income tax shock
+
 EAJ_tauk = (1-EAJ_rhotauk)*EAJ_taukbar+EAJ_rhotauk*EAJ_tauk(-1)+EAJ_epstauk;
-// Labour income tax shock
+
 EAJ_taun = (1-EAJ_rhotaun)*EAJ_taunbar+EAJ_rhotaun*EAJ_taun(-1)+EAJ_epstaun;
-// Payroll tax shock: households
+
 EAJ_tauwh = (1-EAJ_rhotauwh)*EAJ_tauwhbar+EAJ_rhotauwh*EAJ_tauwh(-1)+EAJ_epstauwh;
-// Payroll tax shock: firms
+
 EAJ_tauwf = (1-EAJ_rhotauwf)*EAJ_tauwfbar+EAJ_rhotauwf*EAJ_tauwf(-1)+EAJ_epstauwf;
-// Wage cost push shock
+
 EAJ_wcst = (1-EAJ_rhowcst)*EAJ_wcstbar+EAJ_rhowcst*EAJ_wcst(-1)+EAJ_epswcst;
-// Preference shock
+
 log(EAJ_zcon) = (1-EAJ_rhozcon)*log(EAJ_zconbar)+EAJ_rhozcon*log(EAJ_zcon(-1))+EAJ_epszcon;
-// Investment specific shock
+
 log(EAJ_zinv) = (1-EAJ_rhozinv)*log(EAJ_zinvbar)+EAJ_rhozinv*log(EAJ_zinv(-1))+EAJ_epszinv;
-//-------------
-//-------------
-// Conditions for calibration and reporting
-//-------------
-//-------------
-// Aggregate nominal consumption share
+
+
+
+
+
+
 EAJ_cy = EAJ_c/(EAJ_py*EAJ_y);
-// Aggregate nominal investment share
+
 EAJ_iy = EAJ_pi*EAJ_i/(EAJ_py*EAJ_y);
-// Aggregate nominal import share  
+
 EAJ_imy = (
 +EAJ_pimc*EAJ_imc
 +EAJ_pimi*EAJ_imi
 +EAJ_pimcg*EAJ_imcg
 +EAJ_pimig*EAJ_imig
 )/(EAJ_py*EAJ_y);
-// Aggregate nominal import share
+
 EAJ_imcy = EAJ_pimc*EAJ_imc/(EAJ_py*EAJ_y);
 EAJ_imiy = EAJ_pimi*EAJ_imi/(EAJ_py*EAJ_y);
 EAJ_imcgy = EAJ_pimcg*EAJ_imcg/(EAJ_py*EAJ_y);
 EAJ_imigy = EAJ_pimig*EAJ_imig/(EAJ_py*EAJ_y);
-// Aggregate debt-to-output ratio
+
 EAJ_by = EAJ_b/(EAJ_pybar*EAJ_ybar);
-// Aggregate lump-sum tax-to-output ratio
+
 EAJ_ty = EAJ_t/(EAJ_pybar*EAJ_ybar);
-// Aggregate labour cost share
+
 EAJ_lcy = ((1+EAJ_tauwf)*EAJ_w*EAJ_nd)/(EAJ_py*EAJ_y);
-// Aggregate nominal Wage share
+
 EAJ_wy = (EAJ_w*EAJ_nd)/(EAJ_py*EAJ_y);
-// NT sector nominal Wage share
+
 EAJ_wnty = (EAJ_w*EAJ_ndn)/(EAJ_pnt*EAJ_ysn);
-// T sector nominal Wage share
+
 EAJ_whty = (EAJ_w*EAJ_ndt)/(EAJ_pht*EAJ_yst);
-// T sector share
+
 EAJ_yhty = EAJ_pht*EAJ_yst/(EAJ_py*EAJ_y);
-// NT sector share
+
 EAJ_ynty = EAJ_pnt*EAJ_ysn/(EAJ_py*EAJ_y);
-// Output gap
+
 EAJ_ygap = 0;
-// Output growth (gross rate)
+
 EAJ_ygrowth = EAJ_y/EAJ_y(-1);
-// Output growth (gross rate yoy)
+
 EAJ_ygrowth4 = EAJ_y/EAJ_y(-4);
-// Domestic nominal output as a share of world nominal output
+
 EAJ_yshare  = EAJ_size*EAJ_py*EAJ_y/EAJ_rer/(
 +EAA_size*EAA_py*EAA_y/EAA_rer
 +EAB_size*EAB_py*EAB_y/EAB_rer
@@ -39676,153 +39676,153 @@ EAJ_yshare  = EAJ_size*EAJ_py*EAJ_y/EAJ_rer/(
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
-// Interest (semi-)elasticity of money demand
+
 EAJ_epsilonm = -1/8*1/(EAJ_r*(EAJ_gammav2*EAJ_r+EAJ_r-1));
-// Trade balance-to-GDP ratio
+
 EAJ_tby = EAJ_tb/(EAJ_py*EAJ_y);
-// Bilateral shares
+
 EAJEAA_imcy = (EAA_pex*EAJEAA_rer)*EAJEAA_imc/(EAJ_py*EAJ_y);
 EAJEAA_imiy = (EAA_pex*EAJEAA_rer)*EAJEAA_imi/(EAJ_py*EAJ_y);
 EAJEAA_imcgy = (EAA_pex*EAJEAA_rer)*EAJEAA_imcg/(EAJ_py*EAJ_y);
 EAJEAA_imigy = (EAA_pex*EAJEAA_rer)*EAJEAA_imig/(EAJ_py*EAJ_y);
-// Exports of consumption goods to gdp
+
 EAJEAA_excy  = EAA_size/EAJ_size*EAJ_pex*EAAEAJ_imc/(EAJ_py*EAJ_y);
-// Exports of investment goods to gdp
+
 EAJEAA_exiy  = EAA_size/EAJ_size*EAJ_pex*EAAEAJ_imi/(EAJ_py*EAJ_y);
-// Bilateral shares
+
 EAJEAB_imcy = (EAB_pex*EAJEAB_rer)*EAJEAB_imc/(EAJ_py*EAJ_y);
 EAJEAB_imiy = (EAB_pex*EAJEAB_rer)*EAJEAB_imi/(EAJ_py*EAJ_y);
 EAJEAB_imcgy = (EAB_pex*EAJEAB_rer)*EAJEAB_imcg/(EAJ_py*EAJ_y);
 EAJEAB_imigy = (EAB_pex*EAJEAB_rer)*EAJEAB_imig/(EAJ_py*EAJ_y);
-// Exports of consumption goods to gdp
+
 EAJEAB_excy  = EAB_size/EAJ_size*EAJ_pex*EABEAJ_imc/(EAJ_py*EAJ_y);
-// Exports of investment goods to gdp
+
 EAJEAB_exiy  = EAB_size/EAJ_size*EAJ_pex*EABEAJ_imi/(EAJ_py*EAJ_y);
-// Bilateral shares
+
 EAJEAC_imcy = (EAC_pex*EAJEAC_rer)*EAJEAC_imc/(EAJ_py*EAJ_y);
 EAJEAC_imiy = (EAC_pex*EAJEAC_rer)*EAJEAC_imi/(EAJ_py*EAJ_y);
 EAJEAC_imcgy = (EAC_pex*EAJEAC_rer)*EAJEAC_imcg/(EAJ_py*EAJ_y);
 EAJEAC_imigy = (EAC_pex*EAJEAC_rer)*EAJEAC_imig/(EAJ_py*EAJ_y);
-// Exports of consumption goods to gdp
+
 EAJEAC_excy  = EAC_size/EAJ_size*EAJ_pex*EACEAJ_imc/(EAJ_py*EAJ_y);
-// Exports of investment goods to gdp
+
 EAJEAC_exiy  = EAC_size/EAJ_size*EAJ_pex*EACEAJ_imi/(EAJ_py*EAJ_y);
-// Bilateral shares
+
 EAJEAD_imcy = (EAD_pex*EAJEAD_rer)*EAJEAD_imc/(EAJ_py*EAJ_y);
 EAJEAD_imiy = (EAD_pex*EAJEAD_rer)*EAJEAD_imi/(EAJ_py*EAJ_y);
 EAJEAD_imcgy = (EAD_pex*EAJEAD_rer)*EAJEAD_imcg/(EAJ_py*EAJ_y);
 EAJEAD_imigy = (EAD_pex*EAJEAD_rer)*EAJEAD_imig/(EAJ_py*EAJ_y);
-// Exports of consumption goods to gdp
+
 EAJEAD_excy  = EAD_size/EAJ_size*EAJ_pex*EADEAJ_imc/(EAJ_py*EAJ_y);
-// Exports of investment goods to gdp
+
 EAJEAD_exiy  = EAD_size/EAJ_size*EAJ_pex*EADEAJ_imi/(EAJ_py*EAJ_y);
-// Bilateral shares
+
 EAJEAE_imcy = (EAE_pex*EAJEAE_rer)*EAJEAE_imc/(EAJ_py*EAJ_y);
 EAJEAE_imiy = (EAE_pex*EAJEAE_rer)*EAJEAE_imi/(EAJ_py*EAJ_y);
 EAJEAE_imcgy = (EAE_pex*EAJEAE_rer)*EAJEAE_imcg/(EAJ_py*EAJ_y);
 EAJEAE_imigy = (EAE_pex*EAJEAE_rer)*EAJEAE_imig/(EAJ_py*EAJ_y);
-// Exports of consumption goods to gdp
+
 EAJEAE_excy  = EAE_size/EAJ_size*EAJ_pex*EAEEAJ_imc/(EAJ_py*EAJ_y);
-// Exports of investment goods to gdp
+
 EAJEAE_exiy  = EAE_size/EAJ_size*EAJ_pex*EAEEAJ_imi/(EAJ_py*EAJ_y);
-// Bilateral shares
+
 EAJEAF_imcy = (EAF_pex*EAJEAF_rer)*EAJEAF_imc/(EAJ_py*EAJ_y);
 EAJEAF_imiy = (EAF_pex*EAJEAF_rer)*EAJEAF_imi/(EAJ_py*EAJ_y);
 EAJEAF_imcgy = (EAF_pex*EAJEAF_rer)*EAJEAF_imcg/(EAJ_py*EAJ_y);
 EAJEAF_imigy = (EAF_pex*EAJEAF_rer)*EAJEAF_imig/(EAJ_py*EAJ_y);
-// Exports of consumption goods to gdp
+
 EAJEAF_excy  = EAF_size/EAJ_size*EAJ_pex*EAFEAJ_imc/(EAJ_py*EAJ_y);
-// Exports of investment goods to gdp
+
 EAJEAF_exiy  = EAF_size/EAJ_size*EAJ_pex*EAFEAJ_imi/(EAJ_py*EAJ_y);
-// Bilateral shares
+
 EAJEAG_imcy = (EAG_pex*EAJEAG_rer)*EAJEAG_imc/(EAJ_py*EAJ_y);
 EAJEAG_imiy = (EAG_pex*EAJEAG_rer)*EAJEAG_imi/(EAJ_py*EAJ_y);
 EAJEAG_imcgy = (EAG_pex*EAJEAG_rer)*EAJEAG_imcg/(EAJ_py*EAJ_y);
 EAJEAG_imigy = (EAG_pex*EAJEAG_rer)*EAJEAG_imig/(EAJ_py*EAJ_y);
-// Exports of consumption goods to gdp
+
 EAJEAG_excy  = EAG_size/EAJ_size*EAJ_pex*EAGEAJ_imc/(EAJ_py*EAJ_y);
-// Exports of investment goods to gdp
+
 EAJEAG_exiy  = EAG_size/EAJ_size*EAJ_pex*EAGEAJ_imi/(EAJ_py*EAJ_y);
-// Bilateral shares
+
 EAJEAH_imcy = (EAH_pex*EAJEAH_rer)*EAJEAH_imc/(EAJ_py*EAJ_y);
 EAJEAH_imiy = (EAH_pex*EAJEAH_rer)*EAJEAH_imi/(EAJ_py*EAJ_y);
 EAJEAH_imcgy = (EAH_pex*EAJEAH_rer)*EAJEAH_imcg/(EAJ_py*EAJ_y);
 EAJEAH_imigy = (EAH_pex*EAJEAH_rer)*EAJEAH_imig/(EAJ_py*EAJ_y);
-// Exports of consumption goods to gdp
+
 EAJEAH_excy  = EAH_size/EAJ_size*EAJ_pex*EAHEAJ_imc/(EAJ_py*EAJ_y);
-// Exports of investment goods to gdp
+
 EAJEAH_exiy  = EAH_size/EAJ_size*EAJ_pex*EAHEAJ_imi/(EAJ_py*EAJ_y);
-// Bilateral shares
+
 EAJEAI_imcy = (EAI_pex*EAJEAI_rer)*EAJEAI_imc/(EAJ_py*EAJ_y);
 EAJEAI_imiy = (EAI_pex*EAJEAI_rer)*EAJEAI_imi/(EAJ_py*EAJ_y);
 EAJEAI_imcgy = (EAI_pex*EAJEAI_rer)*EAJEAI_imcg/(EAJ_py*EAJ_y);
 EAJEAI_imigy = (EAI_pex*EAJEAI_rer)*EAJEAI_imig/(EAJ_py*EAJ_y);
-// Exports of consumption goods to gdp
+
 EAJEAI_excy  = EAI_size/EAJ_size*EAJ_pex*EAIEAJ_imc/(EAJ_py*EAJ_y);
-// Exports of investment goods to gdp
+
 EAJEAI_exiy  = EAI_size/EAJ_size*EAJ_pex*EAIEAJ_imi/(EAJ_py*EAJ_y);
-// Bilateral shares
+
 EAJEAK_imcy = (EAK_pex*EAJEAK_rer)*EAJEAK_imc/(EAJ_py*EAJ_y);
 EAJEAK_imiy = (EAK_pex*EAJEAK_rer)*EAJEAK_imi/(EAJ_py*EAJ_y);
 EAJEAK_imcgy = (EAK_pex*EAJEAK_rer)*EAJEAK_imcg/(EAJ_py*EAJ_y);
 EAJEAK_imigy = (EAK_pex*EAJEAK_rer)*EAJEAK_imig/(EAJ_py*EAJ_y);
-// Exports of consumption goods to gdp
+
 EAJEAK_excy  = EAK_size/EAJ_size*EAJ_pex*EAKEAJ_imc/(EAJ_py*EAJ_y);
-// Exports of investment goods to gdp
+
 EAJEAK_exiy  = EAK_size/EAJ_size*EAJ_pex*EAKEAJ_imi/(EAJ_py*EAJ_y);
-// Bilateral shares
+
 EAJEAL_imcy = (EAL_pex*EAJEAL_rer)*EAJEAL_imc/(EAJ_py*EAJ_y);
 EAJEAL_imiy = (EAL_pex*EAJEAL_rer)*EAJEAL_imi/(EAJ_py*EAJ_y);
 EAJEAL_imcgy = (EAL_pex*EAJEAL_rer)*EAJEAL_imcg/(EAJ_py*EAJ_y);
 EAJEAL_imigy = (EAL_pex*EAJEAL_rer)*EAJEAL_imig/(EAJ_py*EAJ_y);
-// Exports of consumption goods to gdp
+
 EAJEAL_excy  = EAL_size/EAJ_size*EAJ_pex*EALEAJ_imc/(EAJ_py*EAJ_y);
-// Exports of investment goods to gdp
+
 EAJEAL_exiy  = EAL_size/EAJ_size*EAJ_pex*EALEAJ_imi/(EAJ_py*EAJ_y);
-// Bilateral shares
+
 EAJRW_imcy = (RW_pex*EAJRW_rer)*EAJRW_imc/(EAJ_py*EAJ_y);
 EAJRW_imiy = (RW_pex*EAJRW_rer)*EAJRW_imi/(EAJ_py*EAJ_y);
 EAJRW_imcgy = (RW_pex*EAJRW_rer)*EAJRW_imcg/(EAJ_py*EAJ_y);
 EAJRW_imigy = (RW_pex*EAJRW_rer)*EAJRW_imig/(EAJ_py*EAJ_y);
-// Exports of consumption goods to gdp
+
 EAJRW_excy  = RW_size/EAJ_size*EAJ_pex*RWEAJ_imc/(EAJ_py*EAJ_y);
-// Exports of investment goods to gdp
+
 EAJRW_exiy  = RW_size/EAJ_size*EAJ_pex*RWEAJ_imi/(EAJ_py*EAJ_y);
-// Bilateral shares
+
 EAJUS_imcy = (US_pex*EAJUS_rer)*EAJUS_imc/(EAJ_py*EAJ_y);
 EAJUS_imiy = (US_pex*EAJUS_rer)*EAJUS_imi/(EAJ_py*EAJ_y);
 EAJUS_imcgy = (US_pex*EAJUS_rer)*EAJUS_imcg/(EAJ_py*EAJ_y);
 EAJUS_imigy = (US_pex*EAJUS_rer)*EAJUS_imig/(EAJ_py*EAJ_y);
-// Exports of consumption goods to gdp
+
 EAJUS_excy  = US_size/EAJ_size*EAJ_pex*USEAJ_imc/(EAJ_py*EAJ_y);
-// Exports of investment goods to gdp
+
 EAJUS_exiy  = US_size/EAJ_size*EAJ_pex*USEAJ_imi/(EAJ_py*EAJ_y);
-// Internal real exchange rate
+
 EAJ_internalrer = EAJ_pnt/EAJ_pttc;
-// Core model begins
-//-------------
-//-------------
-// Households
-//-------------
-//-------------
-//-------------
-// Household I
-//-------------
-// Utility
+
+
+
+
+
+
+
+
+
+
 EAK_utili = 
 EAK_zcon*log(EAK_ci-EAK_kappa*EAK_ci(-1))-1/(1+EAK_zeta)*(EAK_ni)^(1+EAK_zeta)+EAK_beta*EAK_utili(+1)
 ;
-// Marginal utility of consumption
+
 EAK_lambdai*(1+EAK_tauc+EAK_gammavi+EAK_vi*EAK_gammavider) = EAK_zcon*(EAK_ci-EAK_kappa*EAK_ci(-1))^(-EAK_sigma);
-// Euler equation for government bonds
+
 EAK_r                   = EAK_beta^(-1)*EAK_lambdai/EAK_lambdai    *EAK_pic;
-// Euler equation for money
+
 EAK_vi^(2)*EAK_gammavider = 1-EAK_beta*EAK_lambdai(+1)/(EAK_lambdai*EAK_pic(+1));
-// Consumption-based velocity
+
 EAK_vi = EAK_ci/EAK_mi;
-// Transaction cost
+
 EAK_gammavi = EAK_gammav1*EAK_vi+EAK_gammav2/EAK_vi-2*(EAK_gammav1*EAK_gammav2)^(1/2);
-// Derivative of transaction cost
+
 EAK_gammavider = EAK_gammav1-EAK_gammav2*EAK_vi^(-2);
 EAK_delta = EAK_ii/EAK_ki;
 EAK_gammai = 0;
@@ -39831,355 +39831,355 @@ EAK_gammau = 0;
 EAK_gammauder = ((EAK_beta^(-1)-1+EAK_delta)*EAK_qbar-EAK_delta*EAK_taukbar*EAK_pibar)/((1-EAK_taukbar)*EAK_pibar);
 EAK_u = 1;
 EAK_pi = EAK_q;
-// Auxiliary equation for Tobin's Q in steady state
+
 EAK_qbar = EAK_q;
-// Rate of return on capital
+
 EAK_q = EAK_beta*((1-EAK_tauk)*EAK_rk+(EAK_tauk*EAK_delta)*EAK_pi+(1-EAK_delta)*EAK_q);
-// Optimal wage contract (FOC)
+
 EAK_witilde^(1+EAK_etai*EAK_zeta) = EAK_etai/(EAK_etai-1)*EAK_fi/EAK_gi+EAK_wcst;
-// Definition of fi
+
 EAK_fi = EAK_wi^(EAK_etai*(1+EAK_zeta))*EAK_ndi^(1+EAK_zeta)+EAK_xii*EAK_beta*(EAK_pic(+1)/(EAK_pic^EAK_chii*EAK_pi4target^(1/4*(1-EAK_chii))))^(EAK_etai*(1+EAK_zeta))*EAK_fi(+1);
-// Definition of gi
+
 EAK_gi = EAK_lambdai*(1-EAK_taun-EAK_tauwh)*EAK_wi^EAK_etai*EAK_ndi+EAK_xii*EAK_beta*(EAK_pic(+1)/(EAK_pic^EAK_chii*EAK_pi4target^(1/4*(1-EAK_chii))))^(EAK_etai-1)*EAK_gi(+1);
-// Aggregate wage rate
+
 EAK_wi^(1-EAK_etai) = (1-EAK_xii)*EAK_witilde^(1-EAK_etai)+EAK_xii*EAK_wi(-1)^(1-EAK_etai)*(EAK_pic(-1)^EAK_chii*EAK_pi4target^(1/4*(1-EAK_chii))/EAK_pic)^(1-EAK_etai);
-//-------------
-// Household J
-//-------------
-// Utility
+
+
+
+
 EAK_utilj = 
 EAK_zcon*log(EAK_cj-EAK_kappa*EAK_cj(-1))-1/(1+EAK_zeta)*EAK_nj^(1+EAK_zeta)+EAK_beta*EAK_utilj(+1)
 ;
-// Marginal utility of consumption
+
 EAK_lambdaj*(1+EAK_tauc+EAK_gammavj+EAK_vj*EAK_gammavjder) = EAK_zcon*(EAK_cj-EAK_kappa*EAK_cj(-1))^(-EAK_sigma);
-// Budget constraint
+
 (1+EAK_tauc+EAK_gammavj)*EAK_cj+EAK_mj = (1-EAK_taun-EAK_tauwh)*EAK_wj*EAK_nj+EAK_trj-EAK_tj+EAK_mj(-1)*EAK_pic^(-1);
-// Euler equation for money
+
 EAK_vj^(2)*EAK_gammavjder = 1-EAK_beta*EAK_lambdaj(+1)/(EAK_lambdaj*EAK_pic(+1));
-// Consumption-based velocity
+
 EAK_vj = EAK_cj/EAK_mj;
-// Transaction technology
+
 EAK_gammavj = EAK_gammav1*EAK_vj+EAK_gammav2/EAK_vj-2*(EAK_gammav1*EAK_gammav2)^(1/2);
-// Derivative of transaction technology
+
 EAK_gammavjder = EAK_gammav1-EAK_gammav2*EAK_vj^(-2);
-// Optimal wage contract (FOC)
+
 EAK_wjtilde^(1+EAK_etaj*EAK_zeta) = EAK_etaj/(EAK_etaj-1)*EAK_fj/EAK_gj+EAK_wcst;
-// Definition of fj
+
 EAK_fj = EAK_wj^(EAK_etaj*(1+EAK_zeta))*EAK_ndj^(1+EAK_zeta)+EAK_xij*EAK_beta*(EAK_pic(+1)/(EAK_pic^EAK_chij*EAK_pi4target^(1/4*(1-EAK_chij))))^(EAK_etaj*(1+EAK_zeta))*EAK_fj(+1);
-// Definition of gj
+
 EAK_gj = EAK_lambdaj*(1-EAK_taun-EAK_tauwh)*EAK_wj^EAK_etaj*EAK_ndj+EAK_xij*EAK_beta*(EAK_pic(+1)/(EAK_pic^EAK_chij*EAK_pi4target^(1/4*(1-EAK_chij))))^(EAK_etaj-1)*EAK_gj(+1);
-// Aggregate wage rate
+
 EAK_wj^(1-EAK_etaj) = (1-EAK_xij)*EAK_wjtilde^(1-EAK_etaj)+EAK_xij*EAK_wj(-1)^(1-EAK_etaj)*(EAK_pic(-1)^EAK_chij*EAK_pi4target^(1/4*(1-EAK_chij))/EAK_pic)^(1-EAK_etaj);
-//-------------
-//-------------
-// Firms
-//-------------
-//-------------
-//-------------
-// Intermediate-good firms
-//-------------
-// Production function tradable
+
+
+
+
+
+
+
+
+
 EAK_yst = EAK_zt*EAK_kdt^EAK_alphat*EAK_ndt^(1-EAK_alphat)-EAK_psitbar;
-// Production function nontradable
+
 EAK_ysn = EAK_zn*EAK_kdn^EAK_alphan*EAK_ndn^(1-EAK_alphan)-EAK_psinbar;
-// Real marginal cost tradable
+
 EAK_mct = 1/(EAK_zt*(EAK_alphat)^(EAK_alphat)*(1-EAK_alphat)^(1-EAK_alphat))*EAK_rk^(EAK_alphat)*((1+EAK_tauwf)*EAK_w)^(1-EAK_alphat);
-// Real marginal cost nontradable
+
 EAK_mcn = 1/(EAK_zn*(EAK_alphan)^(EAK_alphan)*(1-EAK_alphan)^(1-EAK_alphan))*EAK_rk^(EAK_alphan)*((1+EAK_tauwf)*EAK_w)^(1-EAK_alphan);
-// Wage Inflation (qoq)
+
 EAK_piw = EAK_w/EAK_w(-1)*EAK_pic;
-// Wage Inflation (yoy)
+
 EAK_piw4 = EAK_pic4;
-// Auxiliary equation for steady-state fixed cost
+
 EAK_psitbar = EAK_psit*EAK_ytbar;
-// Auxiliary equation for steady-state fixed cost
+
 EAK_psinbar = EAK_psin*EAK_ynbar;
-// Capital input (FOC)
+
 EAK_rk = EAK_alphat*(EAK_yst+EAK_psitbar)/EAK_kdt*EAK_mct;
-// Capital input (FOC)
+
 EAK_rk = EAK_alphan*(EAK_ysn+EAK_psinbar)/EAK_kdn*EAK_mcn;
-// Total capital demand
+
 EAK_kd = EAK_kdt+EAK_kdn;
-// Demand for labour services by household I
+
 EAK_ndi = 
 (1-EAK_omega)*(EAK_wi/EAK_w)^(-EAK_eta)*EAK_nd
 ;
-// Demand for labour services by household J
+
 EAK_ndj = 
 EAK_omega*(EAK_wj/EAK_w)^(-EAK_eta)*EAK_nd
 ;
-// Aggregate labour demand
+
 EAK_nd^(1-1/EAK_eta) = 
 (1-EAK_omega)^(1/EAK_eta)*EAK_ndi^(1-1/EAK_eta)+EAK_omega^(1/EAK_eta)*EAK_ndj^(1-1/EAK_eta)
 ;
-// Total demand 
+
 EAK_nd = EAK_ndt+EAK_ndn;
-// Aggregate dividends
+
 EAK_d = EAK_py*EAK_y-EAK_rk*EAK_kd-(1+EAK_tauwf)*EAK_w*EAK_nd;
-// Non-tradable sector dividends
+
 EAK_dn = EAK_pnt*EAK_ysn-EAK_rk*EAK_kdn-(1+EAK_tauwf)*EAK_w*EAK_ndn;
-// Tradable sector dividends
+
 EAK_dt = EAK_pht*EAK_ht
 +EAK_pex*EAK_ex
 -EAK_rk*EAK_kdt-(1+EAK_tauwf)*EAK_w*EAK_ndt;
-// Optimal price contract set in domestic markets (FOC)
+
 EAK_phttilde/EAK_pht = EAK_thetat/(EAK_thetat-1)*EAK_fh/EAK_gh;
-// Definition of fh
+
 EAK_fh = EAK_mct*EAK_ht+EAK_xih*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EAK_piht(+1)/(EAK_piht^EAK_chih*EAK_pi4target^(1/4*(1-EAK_chih))))^EAK_thetat*EAK_fh(+1);
-// Definition of gh
+
 EAK_gh = EAK_pht*EAK_ht+EAK_xih*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EAK_piht(+1)/(EAK_piht^EAK_chih*EAK_pi4target^(1/4*(1-EAK_chih))))^(EAK_thetat-1)*EAK_gh(+1);
-// Aggregate intermediate-good price dynamics
+
 EAK_pht^(1-EAK_thetat) = (1-EAK_xih)*EAK_phttilde^(1-EAK_thetat)+EAK_xih*(EAK_pht(-1)/EAK_pic)^(1-EAK_thetat)*(EAK_piht(-1)^EAK_chih*EAK_pi4target^(1/4*(1-EAK_chih)))^(1-EAK_thetat);
-// Intermediate-good price inflation
+
 EAK_piht = EAK_pht/EAK_pht(-1)*EAK_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAK_pnttilde/EAK_pnt = EAK_thetan/(EAK_thetan-1)*EAK_fn/EAK_gn;
-// Definition of fn
+
 EAK_fn = EAK_mcn*EAK_nt+EAK_xin*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EAK_pint(+1)/(EAK_pint^EAK_chin*EAK_pi4target^(1/4*(1-EAK_chin))))^EAK_thetan*EAK_fn(+1);
-// Definition of gn
+
 EAK_gn = EAK_pnt*EAK_nt+EAK_xin*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EAK_pint(+1)/(EAK_pint^EAK_chin*EAK_pi4target^(1/4*(1-EAK_chin))))^(EAK_thetan-1)*EAK_gn(+1);
-// Aggregate intermediate-good price dynamics
+
 EAK_pnt^(1-EAK_thetan) = (1-EAK_xin)*EAK_pnttilde^(1-EAK_thetan)+EAK_xin*(EAK_pnt(-1)/EAK_pic)^(1-EAK_thetan)*(EAK_pint(-1)^EAK_chin*EAK_pi4target^(1/4*(1-EAK_chin)))^(1-EAK_thetan);
-// Intermediate-good price inflation
+
 EAK_pint = EAK_pnt/EAK_pnt(-1)*EAK_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAK_pextilde/EAK_pex = EAK_thetat/(EAK_thetat-1)*EAK_fx/EAK_gx;
-// Definition of fh
+
 EAK_fx = EAK_mct*EAK_ex+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EAK_piex(+1)/(EAK_piex^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^EAK_thetat*EAK_fx(+1);
-// Definition of gh
+
 EAK_gx = EAK_pex*EAK_ex+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EAK_piex(+1)/(EAK_piex^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^(EAK_thetat-1)*EAK_gx(+1);
-// Aggregate intermediate-good price dynamics
+
 EAK_pex^(1-EAK_thetat) = (1-EAK_xix)*EAK_pextilde^(1-EAK_thetat)+EAK_xix*(EAK_pex(-1)/EAK_pic)^(1-EAK_thetat)*(EAK_piex(-1)^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix)))^(1-EAK_thetat);
-// Intermediate-good price inflation
+
 EAK_piex = EAK_pex/EAK_pex(-1)*EAK_pic;
-//---------------
-// import pricing
-//---------------
-// Optimal price contract set in foreign markets (FOC), using EAK_pxtilde = EAA_pimtilde
-// EAAEAK_pimtilde/EAAEAK_pim = EAK_cpim*EAK_thetat/(EAK_thetat-1)*EAKEAA_fx/EAKEAA_gx;
-// Definition of fx
-// EAKEAA_fx = EAA_size/EAK_size*EAAEAK_im*EAK_mct+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EAAEAK_piim(+1)/(EAAEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^EAK_thetat*EAKEAA_fx(+1);
-// Definition of gx   
-// EAKEAA_gx = EAKEAA_rer*EAAEAK_pim*EAA_size/EAK_size*EAAEAK_im+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EAAEAK_piim(+1)/(EAAEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^(EAK_thetat-1)*EAKEAA_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAK_px = EAA_pim
-// EAAEAK_pim^(1-EAK_thetat) = (1-EAK_xix)*EAAEAK_pimtilde^(1-EAK_thetat)+EAK_xix*(EAAEAK_pim(-1)/EAA_pic)^(1-EAK_thetat)*(EAAEAK_piim(-1)^EAK_chix*EAA_pi4target^(1/4*(1-EAK_chih)))^(1-EAK_thetat);
-// Intermediate-good price inflation, using EAK_pix = EAA_piim
-// EAAEAK_piim = EAAEAK_pim/EAAEAK_pim(-1)*EAA_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 EAKEAA_rer = EAK_rer/EAA_rer;
-// Auxiliary equation for steady-state output
+
 EAKEAA_rerbar = EAKEAA_rer;
-//Terms of Trade
+
 EAKEAA_tot = EAA_pex*EAKEAA_rer/EAK_pex;
-// Optimal price contract set in foreign markets (FOC), using EAK_pxtilde = EAB_pimtilde
-// EABEAK_pimtilde/EABEAK_pim = EAK_cpim*EAK_thetat/(EAK_thetat-1)*EAKEAB_fx/EAKEAB_gx;
-// Definition of fx
-// EAKEAB_fx = EAB_size/EAK_size*EABEAK_im*EAK_mct+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EABEAK_piim(+1)/(EABEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^EAK_thetat*EAKEAB_fx(+1);
-// Definition of gx   
-// EAKEAB_gx = EAKEAB_rer*EABEAK_pim*EAB_size/EAK_size*EABEAK_im+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EABEAK_piim(+1)/(EABEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^(EAK_thetat-1)*EAKEAB_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAK_px = EAB_pim
-// EABEAK_pim^(1-EAK_thetat) = (1-EAK_xix)*EABEAK_pimtilde^(1-EAK_thetat)+EAK_xix*(EABEAK_pim(-1)/EAB_pic)^(1-EAK_thetat)*(EABEAK_piim(-1)^EAK_chix*EAB_pi4target^(1/4*(1-EAK_chih)))^(1-EAK_thetat);
-// Intermediate-good price inflation, using EAK_pix = EAB_piim
-// EABEAK_piim = EABEAK_pim/EABEAK_pim(-1)*EAB_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAKEAB_rer = EAK_rer/EAB_rer;
-// Auxiliary equation for steady-state output
+
 EAKEAB_rerbar = EAKEAB_rer;
-//Terms of Trade
+
 EAKEAB_tot = EAB_pex*EAKEAB_rer/EAK_pex;
-// Optimal price contract set in foreign markets (FOC), using EAK_pxtilde = EAC_pimtilde
-// EACEAK_pimtilde/EACEAK_pim = EAK_cpim*EAK_thetat/(EAK_thetat-1)*EAKEAC_fx/EAKEAC_gx;
-// Definition of fx
-// EAKEAC_fx = EAC_size/EAK_size*EACEAK_im*EAK_mct+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EACEAK_piim(+1)/(EACEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^EAK_thetat*EAKEAC_fx(+1);
-// Definition of gx   
-// EAKEAC_gx = EAKEAC_rer*EACEAK_pim*EAC_size/EAK_size*EACEAK_im+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EACEAK_piim(+1)/(EACEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^(EAK_thetat-1)*EAKEAC_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAK_px = EAC_pim
-// EACEAK_pim^(1-EAK_thetat) = (1-EAK_xix)*EACEAK_pimtilde^(1-EAK_thetat)+EAK_xix*(EACEAK_pim(-1)/EAC_pic)^(1-EAK_thetat)*(EACEAK_piim(-1)^EAK_chix*EAC_pi4target^(1/4*(1-EAK_chih)))^(1-EAK_thetat);
-// Intermediate-good price inflation, using EAK_pix = EAC_piim
-// EACEAK_piim = EACEAK_pim/EACEAK_pim(-1)*EAC_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAKEAC_rer = EAK_rer/EAC_rer;
-// Auxiliary equation for steady-state output
+
 EAKEAC_rerbar = EAKEAC_rer;
-//Terms of Trade
+
 EAKEAC_tot = EAC_pex*EAKEAC_rer/EAK_pex;
-// Optimal price contract set in foreign markets (FOC), using EAK_pxtilde = EAD_pimtilde
-// EADEAK_pimtilde/EADEAK_pim = EAK_cpim*EAK_thetat/(EAK_thetat-1)*EAKEAD_fx/EAKEAD_gx;
-// Definition of fx
-// EAKEAD_fx = EAD_size/EAK_size*EADEAK_im*EAK_mct+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EADEAK_piim(+1)/(EADEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^EAK_thetat*EAKEAD_fx(+1);
-// Definition of gx   
-// EAKEAD_gx = EAKEAD_rer*EADEAK_pim*EAD_size/EAK_size*EADEAK_im+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EADEAK_piim(+1)/(EADEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^(EAK_thetat-1)*EAKEAD_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAK_px = EAD_pim
-// EADEAK_pim^(1-EAK_thetat) = (1-EAK_xix)*EADEAK_pimtilde^(1-EAK_thetat)+EAK_xix*(EADEAK_pim(-1)/EAD_pic)^(1-EAK_thetat)*(EADEAK_piim(-1)^EAK_chix*EAD_pi4target^(1/4*(1-EAK_chih)))^(1-EAK_thetat);
-// Intermediate-good price inflation, using EAK_pix = EAD_piim
-// EADEAK_piim = EADEAK_pim/EADEAK_pim(-1)*EAD_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAKEAD_rer = EAK_rer/EAD_rer;
-// Auxiliary equation for steady-state output
+
 EAKEAD_rerbar = EAKEAD_rer;
-//Terms of Trade
+
 EAKEAD_tot = EAD_pex*EAKEAD_rer/EAK_pex;
-// Optimal price contract set in foreign markets (FOC), using EAK_pxtilde = EAE_pimtilde
-// EAEEAK_pimtilde/EAEEAK_pim = EAK_cpim*EAK_thetat/(EAK_thetat-1)*EAKEAE_fx/EAKEAE_gx;
-// Definition of fx
-// EAKEAE_fx = EAE_size/EAK_size*EAEEAK_im*EAK_mct+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EAEEAK_piim(+1)/(EAEEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^EAK_thetat*EAKEAE_fx(+1);
-// Definition of gx   
-// EAKEAE_gx = EAKEAE_rer*EAEEAK_pim*EAE_size/EAK_size*EAEEAK_im+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EAEEAK_piim(+1)/(EAEEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^(EAK_thetat-1)*EAKEAE_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAK_px = EAE_pim
-// EAEEAK_pim^(1-EAK_thetat) = (1-EAK_xix)*EAEEAK_pimtilde^(1-EAK_thetat)+EAK_xix*(EAEEAK_pim(-1)/EAE_pic)^(1-EAK_thetat)*(EAEEAK_piim(-1)^EAK_chix*EAE_pi4target^(1/4*(1-EAK_chih)))^(1-EAK_thetat);
-// Intermediate-good price inflation, using EAK_pix = EAE_piim
-// EAEEAK_piim = EAEEAK_pim/EAEEAK_pim(-1)*EAE_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAKEAE_rer = EAK_rer/EAE_rer;
-// Auxiliary equation for steady-state output
+
 EAKEAE_rerbar = EAKEAE_rer;
-//Terms of Trade
+
 EAKEAE_tot = EAE_pex*EAKEAE_rer/EAK_pex;
-// Optimal price contract set in foreign markets (FOC), using EAK_pxtilde = EAF_pimtilde
-// EAFEAK_pimtilde/EAFEAK_pim = EAK_cpim*EAK_thetat/(EAK_thetat-1)*EAKEAF_fx/EAKEAF_gx;
-// Definition of fx
-// EAKEAF_fx = EAF_size/EAK_size*EAFEAK_im*EAK_mct+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EAFEAK_piim(+1)/(EAFEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^EAK_thetat*EAKEAF_fx(+1);
-// Definition of gx   
-// EAKEAF_gx = EAKEAF_rer*EAFEAK_pim*EAF_size/EAK_size*EAFEAK_im+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EAFEAK_piim(+1)/(EAFEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^(EAK_thetat-1)*EAKEAF_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAK_px = EAF_pim
-// EAFEAK_pim^(1-EAK_thetat) = (1-EAK_xix)*EAFEAK_pimtilde^(1-EAK_thetat)+EAK_xix*(EAFEAK_pim(-1)/EAF_pic)^(1-EAK_thetat)*(EAFEAK_piim(-1)^EAK_chix*EAF_pi4target^(1/4*(1-EAK_chih)))^(1-EAK_thetat);
-// Intermediate-good price inflation, using EAK_pix = EAF_piim
-// EAFEAK_piim = EAFEAK_pim/EAFEAK_pim(-1)*EAF_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAKEAF_rer = EAK_rer/EAF_rer;
-// Auxiliary equation for steady-state output
+
 EAKEAF_rerbar = EAKEAF_rer;
-//Terms of Trade
+
 EAKEAF_tot = EAF_pex*EAKEAF_rer/EAK_pex;
-// Optimal price contract set in foreign markets (FOC), using EAK_pxtilde = EAG_pimtilde
-// EAGEAK_pimtilde/EAGEAK_pim = EAK_cpim*EAK_thetat/(EAK_thetat-1)*EAKEAG_fx/EAKEAG_gx;
-// Definition of fx
-// EAKEAG_fx = EAG_size/EAK_size*EAGEAK_im*EAK_mct+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EAGEAK_piim(+1)/(EAGEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^EAK_thetat*EAKEAG_fx(+1);
-// Definition of gx   
-// EAKEAG_gx = EAKEAG_rer*EAGEAK_pim*EAG_size/EAK_size*EAGEAK_im+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EAGEAK_piim(+1)/(EAGEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^(EAK_thetat-1)*EAKEAG_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAK_px = EAG_pim
-// EAGEAK_pim^(1-EAK_thetat) = (1-EAK_xix)*EAGEAK_pimtilde^(1-EAK_thetat)+EAK_xix*(EAGEAK_pim(-1)/EAG_pic)^(1-EAK_thetat)*(EAGEAK_piim(-1)^EAK_chix*EAG_pi4target^(1/4*(1-EAK_chih)))^(1-EAK_thetat);
-// Intermediate-good price inflation, using EAK_pix = EAG_piim
-// EAGEAK_piim = EAGEAK_pim/EAGEAK_pim(-1)*EAG_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAKEAG_rer = EAK_rer/EAG_rer;
-// Auxiliary equation for steady-state output
+
 EAKEAG_rerbar = EAKEAG_rer;
-//Terms of Trade
+
 EAKEAG_tot = EAG_pex*EAKEAG_rer/EAK_pex;
-// Optimal price contract set in foreign markets (FOC), using EAK_pxtilde = EAH_pimtilde
-// EAHEAK_pimtilde/EAHEAK_pim = EAK_cpim*EAK_thetat/(EAK_thetat-1)*EAKEAH_fx/EAKEAH_gx;
-// Definition of fx
-// EAKEAH_fx = EAH_size/EAK_size*EAHEAK_im*EAK_mct+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EAHEAK_piim(+1)/(EAHEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^EAK_thetat*EAKEAH_fx(+1);
-// Definition of gx   
-// EAKEAH_gx = EAKEAH_rer*EAHEAK_pim*EAH_size/EAK_size*EAHEAK_im+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EAHEAK_piim(+1)/(EAHEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^(EAK_thetat-1)*EAKEAH_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAK_px = EAH_pim
-// EAHEAK_pim^(1-EAK_thetat) = (1-EAK_xix)*EAHEAK_pimtilde^(1-EAK_thetat)+EAK_xix*(EAHEAK_pim(-1)/EAH_pic)^(1-EAK_thetat)*(EAHEAK_piim(-1)^EAK_chix*EAH_pi4target^(1/4*(1-EAK_chih)))^(1-EAK_thetat);
-// Intermediate-good price inflation, using EAK_pix = EAH_piim
-// EAHEAK_piim = EAHEAK_pim/EAHEAK_pim(-1)*EAH_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAKEAH_rer = EAK_rer/EAH_rer;
-// Auxiliary equation for steady-state output
+
 EAKEAH_rerbar = EAKEAH_rer;
-//Terms of Trade
+
 EAKEAH_tot = EAH_pex*EAKEAH_rer/EAK_pex;
-// Optimal price contract set in foreign markets (FOC), using EAK_pxtilde = EAI_pimtilde
-// EAIEAK_pimtilde/EAIEAK_pim = EAK_cpim*EAK_thetat/(EAK_thetat-1)*EAKEAI_fx/EAKEAI_gx;
-// Definition of fx
-// EAKEAI_fx = EAI_size/EAK_size*EAIEAK_im*EAK_mct+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EAIEAK_piim(+1)/(EAIEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^EAK_thetat*EAKEAI_fx(+1);
-// Definition of gx   
-// EAKEAI_gx = EAKEAI_rer*EAIEAK_pim*EAI_size/EAK_size*EAIEAK_im+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EAIEAK_piim(+1)/(EAIEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^(EAK_thetat-1)*EAKEAI_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAK_px = EAI_pim
-// EAIEAK_pim^(1-EAK_thetat) = (1-EAK_xix)*EAIEAK_pimtilde^(1-EAK_thetat)+EAK_xix*(EAIEAK_pim(-1)/EAI_pic)^(1-EAK_thetat)*(EAIEAK_piim(-1)^EAK_chix*EAI_pi4target^(1/4*(1-EAK_chih)))^(1-EAK_thetat);
-// Intermediate-good price inflation, using EAK_pix = EAI_piim
-// EAIEAK_piim = EAIEAK_pim/EAIEAK_pim(-1)*EAI_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAKEAI_rer = EAK_rer/EAI_rer;
-// Auxiliary equation for steady-state output
+
 EAKEAI_rerbar = EAKEAI_rer;
-//Terms of Trade
+
 EAKEAI_tot = EAI_pex*EAKEAI_rer/EAK_pex;
-// Optimal price contract set in foreign markets (FOC), using EAK_pxtilde = EAJ_pimtilde
-// EAJEAK_pimtilde/EAJEAK_pim = EAK_cpim*EAK_thetat/(EAK_thetat-1)*EAKEAJ_fx/EAKEAJ_gx;
-// Definition of fx
-// EAKEAJ_fx = EAJ_size/EAK_size*EAJEAK_im*EAK_mct+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EAJEAK_piim(+1)/(EAJEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^EAK_thetat*EAKEAJ_fx(+1);
-// Definition of gx   
-// EAKEAJ_gx = EAKEAJ_rer*EAJEAK_pim*EAJ_size/EAK_size*EAJEAK_im+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EAJEAK_piim(+1)/(EAJEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^(EAK_thetat-1)*EAKEAJ_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAK_px = EAJ_pim
-// EAJEAK_pim^(1-EAK_thetat) = (1-EAK_xix)*EAJEAK_pimtilde^(1-EAK_thetat)+EAK_xix*(EAJEAK_pim(-1)/EAJ_pic)^(1-EAK_thetat)*(EAJEAK_piim(-1)^EAK_chix*EAJ_pi4target^(1/4*(1-EAK_chih)))^(1-EAK_thetat);
-// Intermediate-good price inflation, using EAK_pix = EAJ_piim
-// EAJEAK_piim = EAJEAK_pim/EAJEAK_pim(-1)*EAJ_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAKEAJ_rer = EAK_rer/EAJ_rer;
-// Auxiliary equation for steady-state output
+
 EAKEAJ_rerbar = EAKEAJ_rer;
-//Terms of Trade
+
 EAKEAJ_tot = EAJ_pex*EAKEAJ_rer/EAK_pex;
-// Optimal price contract set in foreign markets (FOC), using EAK_pxtilde = EAL_pimtilde
-// EALEAK_pimtilde/EALEAK_pim = EAK_cpim*EAK_thetat/(EAK_thetat-1)*EAKEAL_fx/EAKEAL_gx;
-// Definition of fx
-// EAKEAL_fx = EAL_size/EAK_size*EALEAK_im*EAK_mct+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EALEAK_piim(+1)/(EALEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^EAK_thetat*EAKEAL_fx(+1);
-// Definition of gx   
-// EAKEAL_gx = EAKEAL_rer*EALEAK_pim*EAL_size/EAK_size*EALEAK_im+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(EALEAK_piim(+1)/(EALEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^(EAK_thetat-1)*EAKEAL_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAK_px = EAL_pim
-// EALEAK_pim^(1-EAK_thetat) = (1-EAK_xix)*EALEAK_pimtilde^(1-EAK_thetat)+EAK_xix*(EALEAK_pim(-1)/EAL_pic)^(1-EAK_thetat)*(EALEAK_piim(-1)^EAK_chix*EAL_pi4target^(1/4*(1-EAK_chih)))^(1-EAK_thetat);
-// Intermediate-good price inflation, using EAK_pix = EAL_piim
-// EALEAK_piim = EALEAK_pim/EALEAK_pim(-1)*EAL_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAKEAL_rer = EAK_rer/EAL_rer;
-// Auxiliary equation for steady-state output
+
 EAKEAL_rerbar = EAKEAL_rer;
-//Terms of Trade
+
 EAKEAL_tot = EAL_pex*EAKEAL_rer/EAK_pex;
-// Optimal price contract set in foreign markets (FOC), using EAK_pxtilde = RW_pimtilde
-// RWEAK_pimtilde/RWEAK_pim = EAK_cpim*EAK_thetat/(EAK_thetat-1)*EAKRW_fx/EAKRW_gx;
-// Definition of fx
-// EAKRW_fx = RW_size/EAK_size*RWEAK_im*EAK_mct+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(RWEAK_piim(+1)/(RWEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^EAK_thetat*EAKRW_fx(+1);
-// Definition of gx   
-// EAKRW_gx = EAKRW_rer*RWEAK_pim*RW_size/EAK_size*RWEAK_im+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(RWEAK_piim(+1)/(RWEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^(EAK_thetat-1)*EAKRW_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAK_px = RW_pim
-// RWEAK_pim^(1-EAK_thetat) = (1-EAK_xix)*RWEAK_pimtilde^(1-EAK_thetat)+EAK_xix*(RWEAK_pim(-1)/RW_pic)^(1-EAK_thetat)*(RWEAK_piim(-1)^EAK_chix*RW_pi4target^(1/4*(1-EAK_chih)))^(1-EAK_thetat);
-// Intermediate-good price inflation, using EAK_pix = RW_piim
-// RWEAK_piim = RWEAK_pim/RWEAK_pim(-1)*RW_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAKRW_rer = EAK_rer/RW_rer;
-// Auxiliary equation for steady-state output
+
 EAKRW_rerbar = EAKRW_rer;
-//Terms of Trade
+
 EAKRW_tot = RW_pex*EAKRW_rer/EAK_pex;
-// Optimal price contract set in foreign markets (FOC), using EAK_pxtilde = US_pimtilde
-// USEAK_pimtilde/USEAK_pim = EAK_cpim*EAK_thetat/(EAK_thetat-1)*EAKUS_fx/EAKUS_gx;
-// Definition of fx
-// EAKUS_fx = US_size/EAK_size*USEAK_im*EAK_mct+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(USEAK_piim(+1)/(USEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^EAK_thetat*EAKUS_fx(+1);
-// Definition of gx   
-// EAKUS_gx = EAKUS_rer*USEAK_pim*US_size/EAK_size*USEAK_im+EAK_xix*EAK_beta*EAK_lambdai(+1)/EAK_lambdai*(USEAK_piim(+1)/(USEAK_piim^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^(EAK_thetat-1)*EAKUS_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAK_px = US_pim
-// USEAK_pim^(1-EAK_thetat) = (1-EAK_xix)*USEAK_pimtilde^(1-EAK_thetat)+EAK_xix*(USEAK_pim(-1)/US_pic)^(1-EAK_thetat)*(USEAK_piim(-1)^EAK_chix*US_pi4target^(1/4*(1-EAK_chih)))^(1-EAK_thetat);
-// Intermediate-good price inflation, using EAK_pix = US_piim
-// USEAK_piim = USEAK_pim/USEAK_pim(-1)*US_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EAKUS_rer = EAK_rer/US_rer;
-// Auxiliary equation for steady-state output
+
 EAKUS_rerbar = EAKUS_rer;
-//Terms of Trade
+
 EAKUS_tot = US_pex*EAKUS_rer/EAK_pex;
-// Total imports 
+
 EAK_im = 
 +EAK_imc
 +EAK_imi
 +EAK_imcg
 +EAK_imig
 ;
-// Total import deflator
+
 EAK_im*EAK_pim  = 
 +EAK_pimc*EAK_imc
 +EAK_pimi*EAK_imi
 +EAK_pimcg*EAK_imcg
 +EAK_pimig*EAK_imig
 ;
-// Effective real exchange rate: double weighting (imports)
+
 EAKEAA_weightim = EAKEAA_rer*EAA_pex*EAKEAA_im/(EAK_pim*EAK_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAKEAA_weightex = EAA_size/EAK_size*EAAEAK_im/EAK_ex*EAKEAA_rer*EAA_py*EAA_y/(EAKEAA_rer*EAA_py*EAA_y
 +EAKEAB_rer*EAB_pex*EAAEAB_im
 +EAKEAC_rer*EAC_pex*EAAEAC_im
@@ -40363,11 +40363,11 @@ EAKEAA_weightex = EAA_size/EAK_size*EAAEAK_im/EAK_ex*EAKEAA_rer*EAA_py*EAA_y/(EA
 +EAKRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAKEAA_weight = EAK_pim*EAK_im/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAA_weightim+EAK_pex*EAK_ex/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAA_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAKEAB_weightim = EAKEAB_rer*EAB_pex*EAKEAB_im/(EAK_pim*EAK_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAKEAB_weightex = EAB_size/EAK_size*EABEAK_im/EAK_ex*EAKEAB_rer*EAB_py*EAB_y/(EAKEAB_rer*EAB_py*EAB_y
 +EAKEAA_rer*EAA_pex*EABEAA_im
 +EAKEAC_rer*EAC_pex*EABEAC_im
@@ -40551,11 +40551,11 @@ EAKEAB_weightex = EAB_size/EAK_size*EABEAK_im/EAK_ex*EAKEAB_rer*EAB_py*EAB_y/(EA
 +EAKRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAKEAB_weight = EAK_pim*EAK_im/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAB_weightim+EAK_pex*EAK_ex/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAB_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAKEAC_weightim = EAKEAC_rer*EAC_pex*EAKEAC_im/(EAK_pim*EAK_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAKEAC_weightex = EAC_size/EAK_size*EACEAK_im/EAK_ex*EAKEAC_rer*EAC_py*EAC_y/(EAKEAC_rer*EAC_py*EAC_y
 +EAKEAA_rer*EAA_pex*EACEAA_im
 +EAKEAB_rer*EAB_pex*EACEAB_im
@@ -40739,11 +40739,11 @@ EAKEAC_weightex = EAC_size/EAK_size*EACEAK_im/EAK_ex*EAKEAC_rer*EAC_py*EAC_y/(EA
 +EAKRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAKEAC_weight = EAK_pim*EAK_im/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAC_weightim+EAK_pex*EAK_ex/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAC_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAKEAD_weightim = EAKEAD_rer*EAD_pex*EAKEAD_im/(EAK_pim*EAK_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAKEAD_weightex = EAD_size/EAK_size*EADEAK_im/EAK_ex*EAKEAD_rer*EAD_py*EAD_y/(EAKEAD_rer*EAD_py*EAD_y
 +EAKEAA_rer*EAA_pex*EADEAA_im
 +EAKEAB_rer*EAB_pex*EADEAB_im
@@ -40927,11 +40927,11 @@ EAKEAD_weightex = EAD_size/EAK_size*EADEAK_im/EAK_ex*EAKEAD_rer*EAD_py*EAD_y/(EA
 +EAKRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAKEAD_weight = EAK_pim*EAK_im/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAD_weightim+EAK_pex*EAK_ex/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAD_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAKEAE_weightim = EAKEAE_rer*EAE_pex*EAKEAE_im/(EAK_pim*EAK_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAKEAE_weightex = EAE_size/EAK_size*EAEEAK_im/EAK_ex*EAKEAE_rer*EAE_py*EAE_y/(EAKEAE_rer*EAE_py*EAE_y
 +EAKEAA_rer*EAA_pex*EAEEAA_im
 +EAKEAB_rer*EAB_pex*EAEEAB_im
@@ -41115,11 +41115,11 @@ EAKEAE_weightex = EAE_size/EAK_size*EAEEAK_im/EAK_ex*EAKEAE_rer*EAE_py*EAE_y/(EA
 +EAKRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAKEAE_weight = EAK_pim*EAK_im/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAE_weightim+EAK_pex*EAK_ex/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAE_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAKEAF_weightim = EAKEAF_rer*EAF_pex*EAKEAF_im/(EAK_pim*EAK_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAKEAF_weightex = EAF_size/EAK_size*EAFEAK_im/EAK_ex*EAKEAF_rer*EAF_py*EAF_y/(EAKEAF_rer*EAF_py*EAF_y
 +EAKEAA_rer*EAA_pex*EAFEAA_im
 +EAKEAB_rer*EAB_pex*EAFEAB_im
@@ -41303,11 +41303,11 @@ EAKEAF_weightex = EAF_size/EAK_size*EAFEAK_im/EAK_ex*EAKEAF_rer*EAF_py*EAF_y/(EA
 +EAKRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAKEAF_weight = EAK_pim*EAK_im/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAF_weightim+EAK_pex*EAK_ex/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAF_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAKEAG_weightim = EAKEAG_rer*EAG_pex*EAKEAG_im/(EAK_pim*EAK_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAKEAG_weightex = EAG_size/EAK_size*EAGEAK_im/EAK_ex*EAKEAG_rer*EAG_py*EAG_y/(EAKEAG_rer*EAG_py*EAG_y
 +EAKEAA_rer*EAA_pex*EAGEAA_im
 +EAKEAB_rer*EAB_pex*EAGEAB_im
@@ -41491,11 +41491,11 @@ EAKEAG_weightex = EAG_size/EAK_size*EAGEAK_im/EAK_ex*EAKEAG_rer*EAG_py*EAG_y/(EA
 +EAKRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAKEAG_weight = EAK_pim*EAK_im/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAG_weightim+EAK_pex*EAK_ex/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAG_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAKEAH_weightim = EAKEAH_rer*EAH_pex*EAKEAH_im/(EAK_pim*EAK_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAKEAH_weightex = EAH_size/EAK_size*EAHEAK_im/EAK_ex*EAKEAH_rer*EAH_py*EAH_y/(EAKEAH_rer*EAH_py*EAH_y
 +EAKEAA_rer*EAA_pex*EAHEAA_im
 +EAKEAB_rer*EAB_pex*EAHEAB_im
@@ -41679,11 +41679,11 @@ EAKEAH_weightex = EAH_size/EAK_size*EAHEAK_im/EAK_ex*EAKEAH_rer*EAH_py*EAH_y/(EA
 +EAKRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAKEAH_weight = EAK_pim*EAK_im/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAH_weightim+EAK_pex*EAK_ex/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAH_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAKEAI_weightim = EAKEAI_rer*EAI_pex*EAKEAI_im/(EAK_pim*EAK_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAKEAI_weightex = EAI_size/EAK_size*EAIEAK_im/EAK_ex*EAKEAI_rer*EAI_py*EAI_y/(EAKEAI_rer*EAI_py*EAI_y
 +EAKEAA_rer*EAA_pex*EAIEAA_im
 +EAKEAB_rer*EAB_pex*EAIEAB_im
@@ -41867,11 +41867,11 @@ EAKEAI_weightex = EAI_size/EAK_size*EAIEAK_im/EAK_ex*EAKEAI_rer*EAI_py*EAI_y/(EA
 +EAKRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAKEAI_weight = EAK_pim*EAK_im/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAI_weightim+EAK_pex*EAK_ex/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAI_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAKEAJ_weightim = EAKEAJ_rer*EAJ_pex*EAKEAJ_im/(EAK_pim*EAK_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAKEAJ_weightex = EAJ_size/EAK_size*EAJEAK_im/EAK_ex*EAKEAJ_rer*EAJ_py*EAJ_y/(EAKEAJ_rer*EAJ_py*EAJ_y
 +EAKEAA_rer*EAA_pex*EAJEAA_im
 +EAKEAB_rer*EAB_pex*EAJEAB_im
@@ -42055,11 +42055,11 @@ EAKEAJ_weightex = EAJ_size/EAK_size*EAJEAK_im/EAK_ex*EAKEAJ_rer*EAJ_py*EAJ_y/(EA
 +EAKRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAKEAJ_weight = EAK_pim*EAK_im/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAJ_weightim+EAK_pex*EAK_ex/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAJ_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAKEAL_weightim = EAKEAL_rer*EAL_pex*EAKEAL_im/(EAK_pim*EAK_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAKEAL_weightex = EAL_size/EAK_size*EALEAK_im/EAK_ex*EAKEAL_rer*EAL_py*EAL_y/(EAKEAL_rer*EAL_py*EAL_y
 +EAKEAA_rer*EAA_pex*EALEAA_im
 +EAKEAB_rer*EAB_pex*EALEAB_im
@@ -42243,11 +42243,11 @@ EAKEAL_weightex = EAL_size/EAK_size*EALEAK_im/EAK_ex*EAKEAL_rer*EAL_py*EAL_y/(EA
 +EAKRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAKEAL_weight = EAK_pim*EAK_im/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAL_weightim+EAK_pex*EAK_ex/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKEAL_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAKRW_weightim = EAKRW_rer*RW_pex*EAKRW_im/(EAK_pim*EAK_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAKRW_weightex = RW_size/EAK_size*RWEAK_im/EAK_ex*EAKRW_rer*RW_py*RW_y/(EAKRW_rer*RW_py*RW_y
 +EAKEAA_rer*EAA_pex*RWEAA_im
 +EAKEAB_rer*EAB_pex*RWEAB_im
@@ -42431,11 +42431,11 @@ EAKRW_weightex = RW_size/EAK_size*RWEAK_im/EAK_ex*EAKRW_rer*RW_py*RW_y/(EAKRW_re
 +EAKRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAKRW_weight = EAK_pim*EAK_im/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKRW_weightim+EAK_pex*EAK_ex/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKRW_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EAKUS_weightim = EAKUS_rer*US_pex*EAKUS_im/(EAK_pim*EAK_im);
-// Effective real exchange rate: double weighting (exports)
+
 EAKUS_weightex = US_size/EAK_size*USEAK_im/EAK_ex*EAKUS_rer*US_py*US_y/(EAKUS_rer*US_py*US_y
 +EAKEAA_rer*EAA_pex*USEAA_im
 +EAKEAB_rer*EAB_pex*USEAB_im
@@ -42619,9 +42619,9 @@ EAKUS_weightex = US_size/EAK_size*USEAK_im/EAK_ex*EAKUS_rer*US_py*US_y/(EAKUS_re
 +EAKUS_rer*US_pex*RWUS_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EAKUS_weight = EAK_pim*EAK_im/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKUS_weightim+EAK_pex*EAK_ex/(EAK_pim*EAK_im+EAK_pex*EAK_ex)*EAKUS_weightex;
-// Effective real exchange rate
+
 EAK_reer = 1
 *EAKEAA_rer^EAKEAA_weight
 *EAKEAB_rer^EAKEAB_weight
@@ -42637,7 +42637,7 @@ EAK_reer = 1
 *EAKRW_rer^EAKRW_weight
 *EAKUS_rer^EAKUS_weight
 ;
-// Effective terms of trade
+
 EAK_etot = 1
 *EAKEAA_tot^EAKEAA_weight
 *EAKEAB_tot^EAKEAB_weight
@@ -42653,10 +42653,10 @@ EAK_etot = 1
 *EAKRW_tot^EAKRW_weight
 *EAKUS_tot^EAKUS_weight
 ;
-//-----------------
-// Final-good firms
-//-----------------
-// Private consumption good (import)
+
+
+
+
 EAK_imc^((EAK_mumc-1)/EAK_mumc) =
 +EAKEAA_numc ^(1/EAK_mumc)*EAKEAA_imc^(1-1/EAK_mumc)
 +EAKEAB_numc ^(1/EAK_mumc)*EAKEAB_imc^(1-1/EAK_mumc)
@@ -42684,27 +42684,27 @@ EAK_imc^((EAK_mumc-1)/EAK_mumc) =
 -EAKRW_numc
 -EAKUS_numc
 )^(1/EAK_mumc)*EAKEAI_imc^(1-1/EAK_mumc);
-// Demand for bilateral consumption import goods
+
 EAKEAA_imc = EAKEAA_numc*((EAA_pex*EAKEAA_rer)/EAK_pimc)^(-EAK_mumc)*EAK_imc;
-// Demand for bilateral consumption import goods
+
 EAKEAB_imc = EAKEAB_numc*((EAB_pex*EAKEAB_rer)/EAK_pimc)^(-EAK_mumc)*EAK_imc;
-// Demand for bilateral consumption import goods
+
 EAKEAC_imc = EAKEAC_numc*((EAC_pex*EAKEAC_rer)/EAK_pimc)^(-EAK_mumc)*EAK_imc;
-// Demand for bilateral consumption import goods
+
 EAKEAD_imc = EAKEAD_numc*((EAD_pex*EAKEAD_rer)/EAK_pimc)^(-EAK_mumc)*EAK_imc;
-// Demand for bilateral consumption import goods
+
 EAKEAE_imc = EAKEAE_numc*((EAE_pex*EAKEAE_rer)/EAK_pimc)^(-EAK_mumc)*EAK_imc;
-// Demand for bilateral consumption import goods
+
 EAKEAF_imc = EAKEAF_numc*((EAF_pex*EAKEAF_rer)/EAK_pimc)^(-EAK_mumc)*EAK_imc;
-// Demand for bilateral consumption import goods
+
 EAKEAG_imc = EAKEAG_numc*((EAG_pex*EAKEAG_rer)/EAK_pimc)^(-EAK_mumc)*EAK_imc;
-// Demand for bilateral consumption import goods
+
 EAKEAH_imc = EAKEAH_numc*((EAH_pex*EAKEAH_rer)/EAK_pimc)^(-EAK_mumc)*EAK_imc;
-// Demand for bilateral consumption import goods
+
 EAKEAJ_imc = EAKEAJ_numc*((EAJ_pex*EAKEAJ_rer)/EAK_pimc)^(-EAK_mumc)*EAK_imc;
-// Demand for bilateral consumption import goods
+
 EAKRW_imc = EAKRW_numc*((RW_pex*EAKRW_rer)/EAK_pimc)^(-EAK_mumc)*EAK_imc;
-// Demand for bilateral consumption import goods
+
 EAKUS_imc = EAKUS_numc*((US_pex*EAKUS_rer)/EAK_pimc)^(-EAK_mumc)*EAK_imc;
 EAKEAI_imc = (1
 -EAKEAA_numc
@@ -42720,7 +42720,7 @@ EAKEAI_imc = (1
 -EAKRW_numc
 -EAKUS_numc
 )*((EAI_pex*EAKEAI_rer)/EAK_pimc)^(-EAK_mumc)*EAK_imc;
-// Price of the consumption good (import)
+
 EAK_pimc^(1-EAK_mumc) =
 +EAKEAA_numc * (EAA_pex*EAKEAA_rer)^(1-EAK_mumc)
 +EAKEAB_numc * (EAB_pex*EAKEAB_rer)^(1-EAK_mumc)
@@ -42748,9 +42748,9 @@ EAK_pimc^(1-EAK_mumc) =
 -EAKRW_numc
 -EAKUS_numc
 )*(EAI_pex*EAKEAI_rer)^(1-EAK_mumc);
-// Private consumption good (import) inflation
+
 EAK_piimc = EAK_pimc/EAK_pimc(-1)*EAK_pic;
-// Private consumption good (import)
+
 EAK_imi^((EAK_mumi-1)/EAK_mumi) =
 +EAKEAA_numi ^(1/EAK_mumi)*EAKEAA_imi^(1-1/EAK_mumi)
 +EAKEAB_numi ^(1/EAK_mumi)*EAKEAB_imi^(1-1/EAK_mumi)
@@ -42778,27 +42778,27 @@ EAK_imi^((EAK_mumi-1)/EAK_mumi) =
 -EAKRW_numi
 -EAKUS_numi
 )^(1/EAK_mumi)*EAKEAI_imi^(1-1/EAK_mumi);
-// Demand for bilateral consumption import goods
+
 EAKEAA_imi = EAKEAA_numi*((EAA_pex*EAKEAA_rer)/EAK_pimi)^(-EAK_mumi)*EAK_imi;
-// Demand for bilateral consumption import goods
+
 EAKEAB_imi = EAKEAB_numi*((EAB_pex*EAKEAB_rer)/EAK_pimi)^(-EAK_mumi)*EAK_imi;
-// Demand for bilateral consumption import goods
+
 EAKEAC_imi = EAKEAC_numi*((EAC_pex*EAKEAC_rer)/EAK_pimi)^(-EAK_mumi)*EAK_imi;
-// Demand for bilateral consumption import goods
+
 EAKEAD_imi = EAKEAD_numi*((EAD_pex*EAKEAD_rer)/EAK_pimi)^(-EAK_mumi)*EAK_imi;
-// Demand for bilateral consumption import goods
+
 EAKEAE_imi = EAKEAE_numi*((EAE_pex*EAKEAE_rer)/EAK_pimi)^(-EAK_mumi)*EAK_imi;
-// Demand for bilateral consumption import goods
+
 EAKEAF_imi = EAKEAF_numi*((EAF_pex*EAKEAF_rer)/EAK_pimi)^(-EAK_mumi)*EAK_imi;
-// Demand for bilateral consumption import goods
+
 EAKEAG_imi = EAKEAG_numi*((EAG_pex*EAKEAG_rer)/EAK_pimi)^(-EAK_mumi)*EAK_imi;
-// Demand for bilateral consumption import goods
+
 EAKEAH_imi = EAKEAH_numi*((EAH_pex*EAKEAH_rer)/EAK_pimi)^(-EAK_mumi)*EAK_imi;
-// Demand for bilateral consumption import goods
+
 EAKEAJ_imi = EAKEAJ_numi*((EAJ_pex*EAKEAJ_rer)/EAK_pimi)^(-EAK_mumi)*EAK_imi;
-// Demand for bilateral consumption import goods
+
 EAKRW_imi = EAKRW_numi*((RW_pex*EAKRW_rer)/EAK_pimi)^(-EAK_mumi)*EAK_imi;
-// Demand for bilateral consumption import goods
+
 EAKUS_imi = EAKUS_numi*((US_pex*EAKUS_rer)/EAK_pimi)^(-EAK_mumi)*EAK_imi;
 EAKEAI_imi = (1
 -EAKEAA_numi
@@ -42814,7 +42814,7 @@ EAKEAI_imi = (1
 -EAKRW_numi
 -EAKUS_numi
 )*((EAI_pex*EAKEAI_rer)/EAK_pimi)^(-EAK_mumi)*EAK_imi;
-// Price of the consumption good (import)
+
 EAK_pimi^(1-EAK_mumi) =
 +EAKEAA_numi * (EAA_pex*EAKEAA_rer)^(1-EAK_mumi)
 +EAKEAB_numi * (EAB_pex*EAKEAB_rer)^(1-EAK_mumi)
@@ -42842,9 +42842,9 @@ EAK_pimi^(1-EAK_mumi) =
 -EAKRW_numi
 -EAKUS_numi
 )*(EAI_pex*EAKEAI_rer)^(1-EAK_mumi);
-// Private consumption good (import) inflation
+
 EAK_piimi = EAK_pimi/EAK_pimi(-1)*EAK_pic;
-// Private consumption good (import)
+
 EAK_imcg^((EAK_mumcg-1)/EAK_mumcg) =
 +EAKEAA_numcg ^(1/EAK_mumcg)*EAKEAA_imcg^(1-1/EAK_mumcg)
 +EAKEAB_numcg ^(1/EAK_mumcg)*EAKEAB_imcg^(1-1/EAK_mumcg)
@@ -42872,27 +42872,27 @@ EAK_imcg^((EAK_mumcg-1)/EAK_mumcg) =
 -EAKRW_numcg
 -EAKUS_numcg
 )^(1/EAK_mumcg)*EAKEAI_imcg^(1-1/EAK_mumcg);
-// Demand for bilateral consumption import goods
+
 EAKEAA_imcg = EAKEAA_numcg*((EAA_pex*EAKEAA_rer)/EAK_pimcg)^(-EAK_mumcg)*EAK_imcg;
-// Demand for bilateral consumption import goods
+
 EAKEAB_imcg = EAKEAB_numcg*((EAB_pex*EAKEAB_rer)/EAK_pimcg)^(-EAK_mumcg)*EAK_imcg;
-// Demand for bilateral consumption import goods
+
 EAKEAC_imcg = EAKEAC_numcg*((EAC_pex*EAKEAC_rer)/EAK_pimcg)^(-EAK_mumcg)*EAK_imcg;
-// Demand for bilateral consumption import goods
+
 EAKEAD_imcg = EAKEAD_numcg*((EAD_pex*EAKEAD_rer)/EAK_pimcg)^(-EAK_mumcg)*EAK_imcg;
-// Demand for bilateral consumption import goods
+
 EAKEAE_imcg = EAKEAE_numcg*((EAE_pex*EAKEAE_rer)/EAK_pimcg)^(-EAK_mumcg)*EAK_imcg;
-// Demand for bilateral consumption import goods
+
 EAKEAF_imcg = EAKEAF_numcg*((EAF_pex*EAKEAF_rer)/EAK_pimcg)^(-EAK_mumcg)*EAK_imcg;
-// Demand for bilateral consumption import goods
+
 EAKEAG_imcg = EAKEAG_numcg*((EAG_pex*EAKEAG_rer)/EAK_pimcg)^(-EAK_mumcg)*EAK_imcg;
-// Demand for bilateral consumption import goods
+
 EAKEAH_imcg = EAKEAH_numcg*((EAH_pex*EAKEAH_rer)/EAK_pimcg)^(-EAK_mumcg)*EAK_imcg;
-// Demand for bilateral consumption import goods
+
 EAKEAJ_imcg = EAKEAJ_numcg*((EAJ_pex*EAKEAJ_rer)/EAK_pimcg)^(-EAK_mumcg)*EAK_imcg;
-// Demand for bilateral consumption import goods
+
 EAKRW_imcg = EAKRW_numcg*((RW_pex*EAKRW_rer)/EAK_pimcg)^(-EAK_mumcg)*EAK_imcg;
-// Demand for bilateral consumption import goods
+
 EAKUS_imcg = EAKUS_numcg*((US_pex*EAKUS_rer)/EAK_pimcg)^(-EAK_mumcg)*EAK_imcg;
 EAKEAI_imcg = (1
 -EAKEAA_numcg
@@ -42908,7 +42908,7 @@ EAKEAI_imcg = (1
 -EAKRW_numcg
 -EAKUS_numcg
 )*((EAI_pex*EAKEAI_rer)/EAK_pimcg)^(-EAK_mumcg)*EAK_imcg;
-// Price of the consumption good (import)
+
 EAK_pimcg^(1-EAK_mumcg) =
 +EAKEAA_numcg * (EAA_pex*EAKEAA_rer)^(1-EAK_mumcg)
 +EAKEAB_numcg * (EAB_pex*EAKEAB_rer)^(1-EAK_mumcg)
@@ -42936,9 +42936,9 @@ EAK_pimcg^(1-EAK_mumcg) =
 -EAKRW_numcg
 -EAKUS_numcg
 )*(EAI_pex*EAKEAI_rer)^(1-EAK_mumcg);
-// Private consumption good (import) inflation
+
 EAK_piimcg = EAK_pimcg/EAK_pimcg(-1)*EAK_pic;
-// Private consumption good (import)
+
 EAK_imig^((EAK_mumig-1)/EAK_mumig) =
 +EAKEAA_numig ^(1/EAK_mumig)*EAKEAA_imig^(1-1/EAK_mumig)
 +EAKEAB_numig ^(1/EAK_mumig)*EAKEAB_imig^(1-1/EAK_mumig)
@@ -42966,27 +42966,27 @@ EAK_imig^((EAK_mumig-1)/EAK_mumig) =
 -EAKRW_numig
 -EAKUS_numig
 )^(1/EAK_mumig)*EAKEAI_imig^(1-1/EAK_mumig);
-// Demand for bilateral consumption import goods
+
 EAKEAA_imig = EAKEAA_numig*((EAA_pex*EAKEAA_rer)/EAK_pimig)^(-EAK_mumig)*EAK_imig;
-// Demand for bilateral consumption import goods
+
 EAKEAB_imig = EAKEAB_numig*((EAB_pex*EAKEAB_rer)/EAK_pimig)^(-EAK_mumig)*EAK_imig;
-// Demand for bilateral consumption import goods
+
 EAKEAC_imig = EAKEAC_numig*((EAC_pex*EAKEAC_rer)/EAK_pimig)^(-EAK_mumig)*EAK_imig;
-// Demand for bilateral consumption import goods
+
 EAKEAD_imig = EAKEAD_numig*((EAD_pex*EAKEAD_rer)/EAK_pimig)^(-EAK_mumig)*EAK_imig;
-// Demand for bilateral consumption import goods
+
 EAKEAE_imig = EAKEAE_numig*((EAE_pex*EAKEAE_rer)/EAK_pimig)^(-EAK_mumig)*EAK_imig;
-// Demand for bilateral consumption import goods
+
 EAKEAF_imig = EAKEAF_numig*((EAF_pex*EAKEAF_rer)/EAK_pimig)^(-EAK_mumig)*EAK_imig;
-// Demand for bilateral consumption import goods
+
 EAKEAG_imig = EAKEAG_numig*((EAG_pex*EAKEAG_rer)/EAK_pimig)^(-EAK_mumig)*EAK_imig;
-// Demand for bilateral consumption import goods
+
 EAKEAH_imig = EAKEAH_numig*((EAH_pex*EAKEAH_rer)/EAK_pimig)^(-EAK_mumig)*EAK_imig;
-// Demand for bilateral consumption import goods
+
 EAKEAJ_imig = EAKEAJ_numig*((EAJ_pex*EAKEAJ_rer)/EAK_pimig)^(-EAK_mumig)*EAK_imig;
-// Demand for bilateral consumption import goods
+
 EAKRW_imig = EAKRW_numig*((RW_pex*EAKRW_rer)/EAK_pimig)^(-EAK_mumig)*EAK_imig;
-// Demand for bilateral consumption import goods
+
 EAKUS_imig = EAKUS_numig*((US_pex*EAKUS_rer)/EAK_pimig)^(-EAK_mumig)*EAK_imig;
 EAKEAI_imig = (1
 -EAKEAA_numig
@@ -43002,7 +43002,7 @@ EAKEAI_imig = (1
 -EAKRW_numig
 -EAKUS_numig
 )*((EAI_pex*EAKEAI_rer)/EAK_pimig)^(-EAK_mumig)*EAK_imig;
-// Price of the consumption good (import)
+
 EAK_pimig^(1-EAK_mumig) =
 +EAKEAA_numig * (EAA_pex*EAKEAA_rer)^(1-EAK_mumig)
 +EAKEAB_numig * (EAB_pex*EAKEAB_rer)^(1-EAK_mumig)
@@ -43030,15 +43030,15 @@ EAK_pimig^(1-EAK_mumig) =
 -EAKRW_numig
 -EAKUS_numig
 )*(EAI_pex*EAKEAI_rer)^(1-EAK_mumig);
-// Private consumption good (import) inflation
+
 EAK_piimig = EAK_pimig/EAK_pimig(-1)*EAK_pic;
-// Private consumption good (import) inflation
+
 EAK_piimc4 = EAK_pimc/EAK_pimc(-4)*EAK_pic4;
-// Private consumption good (import) inflation
+
 EAK_piex4 = EAK_pex/EAK_pex(-4)*EAK_pic4;
-// Wedge between aggregate demand and production, using EAK_x = EAL_size/EAK_size*EAL_im
+
 EAK_yst = EAK_sh*EAK_ht+EAK_sx*EAK_ex;
-// Aggregate demand for bilateral imported intermediate goods
+
 EAKEAA_im = 
 +EAKEAA_imc
 +EAKEAA_imi
@@ -43117,18 +43117,18 @@ EAKUS_im =
 +EAKUS_imcg
 +EAKUS_imig
 ;
-// Private consumption good firm
-// Private consumption good (tradable)
+
+
 EAK_ttc^((EAK_mutc-1)/EAK_mutc) = (EAK_nutc)^(1/EAK_mutc)*EAK_htc^(1-1/EAK_mutc)+(1-EAK_nutc)^(1/EAK_mutc)*EAK_imc^(1-1/EAK_mutc);
-// Private consumption good  (total)
+
 EAK_qc^((EAK_muc-1)/EAK_muc) = (EAK_nuc)^(1/EAK_muc)*EAK_ttc^(1-1/EAK_muc)+(1-EAK_nuc)^(1/EAK_muc)*EAK_ntc^(1-1/EAK_muc);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAK_ntc = (1-EAK_nuc)*(EAK_pnt)^(-EAK_muc)*EAK_qc;
-// Price of the consumption good (tradable)  
+
 EAK_pttc^(1-EAK_mutc) = (EAK_nutc)*EAK_pht^(1-EAK_mutc)+(1-EAK_nutc)*EAK_pimc^(1-EAK_mutc);
-// Price of the consumption good 
+
 1^(1-EAK_muc) = (EAK_nuc)*EAK_pttc^(1-EAK_muc)+(1-EAK_nuc)*EAK_pnt^(1-EAK_muc);
-// Demand for domestic intermediate goods
+
 EAK_htc = EAK_nutc*(EAK_pht/EAK_pttc)^(-EAK_mutc)*EAK_ttc;
 EAKEAA_gammaimc = 0;
 EAKEAA_gammaimcdag = 1;
@@ -43156,20 +43156,20 @@ EAKRW_gammaimc = 0;
 EAKRW_gammaimcdag = 1;
 EAKUS_gammaimc = 0;
 EAKUS_gammaimcdag = 1;
-// Private consumption good (tradable)
+
 EAK_tti^((EAK_muti-1)/EAK_muti) = (EAK_nuti)^(1/EAK_muti)*EAK_hti^(1-1/EAK_muti)+(1-EAK_nuti)^(1/EAK_muti)*EAK_imi^(1-1/EAK_muti);
-// Private consumption good  (total)
+
 EAK_qi^((EAK_mui-1)/EAK_mui) = (EAK_nui)^(1/EAK_mui)*EAK_tti^(1-1/EAK_mui)+(1-EAK_nui)^(1/EAK_mui)*EAK_nti^(1-1/EAK_mui);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAK_nti = (1-EAK_nui)*(EAK_pnt/EAK_pi)^(-EAK_mui)*EAK_qi;
-// Price of the consumption good (tradable)  
+
 EAK_ptti^(1-EAK_muti) = (EAK_nuti)*EAK_pht^(1-EAK_muti)+(1-EAK_nuti)*EAK_pimi^(1-EAK_muti);
-// Price of the consumption good 
+
 EAK_pi^(1-EAK_mui) = (EAK_nui)*EAK_ptti^(1-EAK_mui)+(1-EAK_nui)*EAK_pnt^(1-EAK_mui);
-// Auxiliary equation for the price of the investment good in steady state
-// this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
+
+
 EAK_pibar = EAK_pi;
-// Demand for domestic intermediate goods
+
 EAK_hti = EAK_nuti*(EAK_pht/EAK_ptti)^(-EAK_muti)*EAK_tti;
 EAKEAA_gammaimi = 0;
 EAKEAA_gammaimidag = 1;
@@ -43197,17 +43197,17 @@ EAKRW_gammaimi = 0;
 EAKRW_gammaimidag = 1;
 EAKUS_gammaimi = 0;
 EAKUS_gammaimidag = 1;
-// Private consumption good (tradable)
+
 EAK_ttcg^((EAK_mutcg-1)/EAK_mutcg) = (EAK_nutcg)^(1/EAK_mutcg)*EAK_htcg^(1-1/EAK_mutcg)+(1-EAK_nutcg)^(1/EAK_mutcg)*EAK_imcg^(1-1/EAK_mutcg);
-// Private consumption good  (total)
+
 EAK_qcg^((EAK_mucg-1)/EAK_mucg) = (EAK_nucg)^(1/EAK_mucg)*EAK_ttcg^(1-1/EAK_mucg)+(1-EAK_nucg)^(1/EAK_mucg)*EAK_ntcg^(1-1/EAK_mucg);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAK_ntcg = (1-EAK_nucg)*(EAK_pnt/EAK_pcg)^(-EAK_mucg)*EAK_qcg;
-// Price of the consumption good (tradable)  
+
 EAK_pttcg^(1-EAK_mutcg) = (EAK_nutcg)*EAK_pht^(1-EAK_mutcg)+(1-EAK_nutcg)*EAK_pimcg^(1-EAK_mutcg);
-// Price of the consumption good 
+
 EAK_pcg^(1-EAK_mucg) = (EAK_nucg)*EAK_pttcg^(1-EAK_mucg)+(1-EAK_nucg)*EAK_pnt^(1-EAK_mucg);
-// Demand for domestic intermediate goods
+
 EAK_htcg = EAK_nutcg*(EAK_pht/EAK_pttcg)^(-EAK_mutcg)*EAK_ttcg;
 EAKEAA_gammaimcg = 0;
 EAKEAA_gammaimcgdag = 1;
@@ -43235,17 +43235,17 @@ EAKRW_gammaimcg = 0;
 EAKRW_gammaimcgdag = 1;
 EAKUS_gammaimcg = 0;
 EAKUS_gammaimcgdag = 1;
-// Private consumption good (tradable)
+
 EAK_ttig^((EAK_mutig-1)/EAK_mutig) = (EAK_nutig)^(1/EAK_mutig)*EAK_htig^(1-1/EAK_mutig)+(1-EAK_nutig)^(1/EAK_mutig)*EAK_imig^(1-1/EAK_mutig);
-// Private consumption good  (total)
+
 EAK_qig^((EAK_muig-1)/EAK_muig) = (EAK_nuig)^(1/EAK_muig)*EAK_ttig^(1-1/EAK_muig)+(1-EAK_nuig)^(1/EAK_muig)*EAK_ntig^(1-1/EAK_muig);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAK_ntig = (1-EAK_nuig)*(EAK_pnt/EAK_pig)^(-EAK_muig)*EAK_qig;
-// Price of the consumption good (tradable)  
+
 EAK_pttig^(1-EAK_mutig) = (EAK_nutig)*EAK_pht^(1-EAK_mutig)+(1-EAK_nutig)*EAK_pimig^(1-EAK_mutig);
-// Price of the consumption good 
+
 EAK_pig^(1-EAK_muig) = (EAK_nuig)*EAK_pttig^(1-EAK_muig)+(1-EAK_nuig)*EAK_pnt^(1-EAK_muig);
-// Demand for domestic intermediate goods
+
 EAK_htig = EAK_nutig*(EAK_pht/EAK_pttig)^(-EAK_mutig)*EAK_ttig;
 EAKEAA_gammaimig = 0;
 EAKEAA_gammaimigdag = 1;
@@ -43273,7 +43273,7 @@ EAKRW_gammaimig = 0;
 EAKRW_gammaimigdag = 1;
 EAKUS_gammaimig = 0;
 EAKUS_gammaimigdag = 1;
-// Trade balance
+
 EAK_tb =
 +EAK_pex*EAA_size/EAK_size*EAAEAK_im
 -EAA_pex*EAKEAA_rer*EAKEAA_im
@@ -43302,7 +43302,7 @@ EAK_tb =
 +EAK_pex*US_size/EAK_size*USEAK_im
 -US_pex*EAKUS_rer*EAKUS_im
 ;
-// Aggregate exports (volume)
+
 EAK_ex =
 +EAA_size/EAK_size*EAAEAK_im
 +EAB_size/EAK_size*EABEAK_im
@@ -43318,131 +43318,131 @@ EAK_ex =
 +RW_size/EAK_size*RWEAK_im
 +US_size/EAK_size*USEAK_im
 ;
-//-------------
-//-------------
-// Fiscal and monetary authorities
-//-------------
-//-------------
-//-------------
-// Fiscal authority
-//-------------
-// Government budget constraint, using EAK_pg = EAK_pht
-// TODO: check the (1-EAK_gammab(-1)) adjustment here, which is not in the fiscal extention
+
+
+
+
+
+
+
+
+
+
 	EAK_pcg(-1)*EAK_cg(-1)+EAK_pig(-1)*EAK_ig(-1)+EAK_tr(-1)
 	+EAK_b(-1)*EAK_pic(-1)^(-1)+EAK_m(-2)*EAK_pic(-1)^(-1) = EAK_tauc(-1)*EAK_c(-1)+(EAK_taun(-1)+EAK_tauwh(-1))*(EAK_wi(-1)*EAK_ndi(-1)+EAK_wj(-1)*EAK_ndj(-1))+EAK_tauwf(-1)*EAK_w(-1)*EAK_nd(-1)+EAK_tauk(-1)*(EAK_rk(-1)*EAK_u(-1)-(EAK_gammau(-1)+EAK_delta)*EAK_pi(-1))*EAK_k(-1)+EAK_taud(-1)*EAK_d(-1)+EAK_t(-1)+(EAK_r(-1)*(1-EAK_gammab(-1)))^(-1)*EAK_b+EAK_m(-1);
-// Government spending, using EAK_pg = EAK_pht
+
 EAK_pcg*EAK_cg = EAK_cgy*EAK_pybar*EAK_ybar;
 EAK_pig*EAK_ig = EAK_igy*EAK_pybar*EAK_ybar;
 EAK_t = 0;
 EAK_b = EAK_bytarget*EAK_pybar*EAK_ybar;
-// Auxiliary equation for steady-state output
+
 EAK_ybar = EAK_y;
-// Auxiliary equation for steady-state output
+
 EAK_ytbar = EAK_yst;
-// Auxiliary equation for steady-state output
+
 EAK_ynbar = EAK_ysn;
-// Auxiliary equation for steady-state output deflator
+
 EAK_pybar = EAK_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
+
 EAK_trybar = EAK_tr/(EAK_pybar*EAK_ybar);
-// Auxiliary equation for determining the distribution of lump-sum taxes
+
 EAK_ti = EAK_upsilont*EAK_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
 upsilont = 0:            ti = 0, tj = 1/omega t
 upsilont = 1:            ti = tj = t
 upsilont = 1/(1-omega):  ti = 1/(1-omega) t, tj = 0. */
-// Auxiliary equation for determining the distribution of lump-sum transfers
+
 EAK_tri = EAK_upsilontr*EAK_tr;
 /* Note: Valid parameter space: 0 <= upsilontr <= 1/(1-omega) with
 upsilontr = 0:            tri = 0, trj = 1/omega tr
 upsilontr = 1:            tri = trj = tr
 upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
-//-------------
-// Monetary authority
-//-------------
+
+
+
 	EAK_r = EAL_r;
 EAK_pic4 = EAK_pi4target;
 EAK_rr-1 = EAK_r/EAK_pi4target^(1/4)-1;
-// Equilibrium real interest rate
+
 EAK_rrstar-1 = 1/EAK_beta-1;
-//-------------
-//-------------
-// Aggregation, market clearing and resource constraint
-//-------------
-//-------------
-//-------------
-// Aggregation
-//-------------
-// Aggregate consumption
+
+
+
+
+
+
+
+
+
 EAK_c = (1-EAK_omega)*EAK_ci+EAK_omega*EAK_cj;
-// Aggregate money holdings
+
 EAK_m = (1-EAK_omega)*EAK_mi+EAK_omega*EAK_mj;
-// Aggregate capital stock
+
 EAK_k = (1-EAK_omega)*EAK_ki;
-// Aggregate investment
+
 EAK_i = (1-EAK_omega)*EAK_ii;
-// Aggregate lump-sum transfers
+
 EAK_trj = 
 1/EAK_omega*EAK_tr-(1-EAK_omega)/EAK_omega*EAK_tri
 ;
-// Aggregate lump-sum taxes
+
 EAK_tj = 
 1/EAK_omega*EAK_t-(1-EAK_omega)/EAK_omega*EAK_ti
 ;
-// Aggregate transaction costs
+
 EAK_gammav = (1-EAK_omega)*EAK_ci*EAK_gammavi+EAK_omega*EAK_cj*EAK_gammavj;
-//-------------
-// Market clearing
-//-------------
-// Labour markets for household I
-// Wedge between labour demand/hours worked and labour supply
+
+
+
+
+
 EAK_ni = EAK_si*EAK_ndi;
-// Wage dispersion
+
 EAK_si = (1-EAK_xii)*(EAK_witilde/EAK_wi)^(-EAK_etai)+EAK_xii*(EAK_wi(-1)/EAK_wi)^(-EAK_etai)*(EAK_pic/(EAK_pic(-1)^EAK_chii*EAK_pi4target^(1/4*(1-EAK_chii))))^(EAK_etai)*EAK_si(-1);
-// Labour markets for household J
-// Wedge between labour demand/hours worked and labour supply
+
+
 EAK_nj = EAK_sj*EAK_ndj;
-// Wage dispersion
+
 EAK_sj = (1-EAK_xij)*(EAK_wjtilde/EAK_wj)^(-EAK_etaj)+EAK_xij*(EAK_wj(-1)/EAK_wj)^(-EAK_etaj)*(EAK_pic/(EAK_pic(-1)^EAK_chij*EAK_pi4target^(1/4*(1-EAK_chij))))^(EAK_etaj)*EAK_sj(-1);
-// Rental market for capital
-// Equality of capital input and effective capital services
+
+
 EAK_u*EAK_k = EAK_kd;
-// Intermediate-good markets
-// Wedge between aggregate demand and production, using EAK_x = EAL_size/EAK_size*EAL_im
+
+
 EAK_ysn = EAK_snt*EAK_nt;
-//  nontradables aggregate demand
+
 EAK_nt = 
 +EAK_ntc
 +EAK_nti
 +EAK_ntcg
 +EAK_ntig
 ;
-// Aggregate demand for domestic intermediate goods, using EAK_hg = EAK_cg
+
 EAK_ht =
 +EAK_htc
 +EAK_hti
 +EAK_htcg
 +EAK_htig
 ;
-// Price dispersion in the domestic markets
+
 EAK_sh = (1-EAK_xih)*(EAK_phttilde/EAK_pht)^(-EAK_thetat)+EAK_xih*(EAK_piht/(EAK_piht(-1)^EAK_chih*EAK_pi4target^(1/4*(1-EAK_chih))))^EAK_thetat*EAK_sh(-1);
-// Price dispersion in the foreign markets
+
 EAK_sx = (1-EAK_xix)*(EAK_pextilde/EAK_pex)^(-EAK_thetat)+EAK_xix*(EAK_piex/(EAK_piex(-1)^EAK_chix*EAK_pi4target^(1/4*(1-EAK_chix))))^EAK_thetat*EAK_sx(-1);
-// Price dispersion in the domestic markets
+
 EAK_snt = (1-EAK_xin)*(EAK_pnttilde/EAK_pnt)^(-EAK_thetan)+EAK_xin*(EAK_pint/(EAK_pint(-1)^EAK_chin*EAK_pi4target^(1/4*(1-EAK_chin))))^EAK_thetan*EAK_snt(-1);
-// Final-good markets
-// Aggregate consumption and transaction cost
+
+
 EAK_qc = EAK_c+EAK_gammav;
-// Aggregate investment and capital utilisation cost
+
 EAK_qi = EAK_i+EAK_k*EAK_gammau;
-// Aggregate gov demand components added to use the same structure like in private components
+
 EAK_qcg = EAK_cg;
 EAK_qig = EAK_ig;
-//-------------
-// Resource constraint
-//-------------
-// TODO: why there is no adjustment cost for gov components
-// Aggregate nominal demand
+
+
+
+
+
 EAK_py*EAK_y = 
 +EAK_qc
 +EAK_pi*EAK_qi
@@ -43514,83 +43514,83 @@ EAK_py*EAK_y =
 -(US_pex*EAKUS_rer)*EAKUS_imcg
 -(US_pex*EAKUS_rer)*EAKUS_imig
 ;
-// Aggregate real demand
+
 EAK_y = EAK_yst+EAK_ysn;
-//-------------
-//-------------
-// Autoregressive shocks
-//-------------
-//-------------
-// Productivity shocks
+
+
+
+
+
+
 log(EAK_zt) = (1-EAK_rhozt)*log(EAK_ztbar)+EAK_rhozt*log(EAK_zt(-1))+EAK_epszt;
 log(EAK_zn) = (1-EAK_rhozn)*log(EAK_znbar)+EAK_rhozn*log(EAK_zn(-1))+EAK_epszn;
-// Government spending shock
+
 EAK_cgy = (1-EAK_rhocg)*EAK_cgybar+EAK_rhocg*EAK_cgy(-1)+EAK_epsgc;
 EAK_igy = (1-EAK_rhoig)*EAK_igybar+EAK_rhoig*EAK_igy(-1)+EAK_epsgi;
-// Transfer shock
+
 EAK_try = (1-EAK_rhotr)*EAK_trybar+EAK_rhotr*EAK_try(-1)+EAK_epstr;
-// Consumption tax shock
+
 EAK_tauc = (1-EAK_rhotauc)*EAK_taucbar+EAK_rhotauc*EAK_tauc(-1)+EAK_epstauc;
-// Dividend income tax shock
+
 EAK_taud = (1-EAK_rhotaud)*EAK_taudbar+EAK_rhotaud*EAK_taud(-1)+EAK_epstaud;
-// Capital income tax shock
+
 EAK_tauk = (1-EAK_rhotauk)*EAK_taukbar+EAK_rhotauk*EAK_tauk(-1)+EAK_epstauk;
-// Labour income tax shock
+
 EAK_taun = (1-EAK_rhotaun)*EAK_taunbar+EAK_rhotaun*EAK_taun(-1)+EAK_epstaun;
-// Payroll tax shock: households
+
 EAK_tauwh = (1-EAK_rhotauwh)*EAK_tauwhbar+EAK_rhotauwh*EAK_tauwh(-1)+EAK_epstauwh;
-// Payroll tax shock: firms
+
 EAK_tauwf = (1-EAK_rhotauwf)*EAK_tauwfbar+EAK_rhotauwf*EAK_tauwf(-1)+EAK_epstauwf;
-// Wage cost push shock
+
 EAK_wcst = (1-EAK_rhowcst)*EAK_wcstbar+EAK_rhowcst*EAK_wcst(-1)+EAK_epswcst;
-// Preference shock
+
 log(EAK_zcon) = (1-EAK_rhozcon)*log(EAK_zconbar)+EAK_rhozcon*log(EAK_zcon(-1))+EAK_epszcon;
-// Investment specific shock
+
 log(EAK_zinv) = (1-EAK_rhozinv)*log(EAK_zinvbar)+EAK_rhozinv*log(EAK_zinv(-1))+EAK_epszinv;
-//-------------
-//-------------
-// Conditions for calibration and reporting
-//-------------
-//-------------
-// Aggregate nominal consumption share
+
+
+
+
+
+
 EAK_cy = EAK_c/(EAK_py*EAK_y);
-// Aggregate nominal investment share
+
 EAK_iy = EAK_pi*EAK_i/(EAK_py*EAK_y);
-// Aggregate nominal import share  
+
 EAK_imy = (
 +EAK_pimc*EAK_imc
 +EAK_pimi*EAK_imi
 +EAK_pimcg*EAK_imcg
 +EAK_pimig*EAK_imig
 )/(EAK_py*EAK_y);
-// Aggregate nominal import share
+
 EAK_imcy = EAK_pimc*EAK_imc/(EAK_py*EAK_y);
 EAK_imiy = EAK_pimi*EAK_imi/(EAK_py*EAK_y);
 EAK_imcgy = EAK_pimcg*EAK_imcg/(EAK_py*EAK_y);
 EAK_imigy = EAK_pimig*EAK_imig/(EAK_py*EAK_y);
-// Aggregate debt-to-output ratio
+
 EAK_by = EAK_b/(EAK_pybar*EAK_ybar);
-// Aggregate lump-sum tax-to-output ratio
+
 EAK_ty = EAK_t/(EAK_pybar*EAK_ybar);
-// Aggregate labour cost share
+
 EAK_lcy = ((1+EAK_tauwf)*EAK_w*EAK_nd)/(EAK_py*EAK_y);
-// Aggregate nominal Wage share
+
 EAK_wy = (EAK_w*EAK_nd)/(EAK_py*EAK_y);
-// NT sector nominal Wage share
+
 EAK_wnty = (EAK_w*EAK_ndn)/(EAK_pnt*EAK_ysn);
-// T sector nominal Wage share
+
 EAK_whty = (EAK_w*EAK_ndt)/(EAK_pht*EAK_yst);
-// T sector share
+
 EAK_yhty = EAK_pht*EAK_yst/(EAK_py*EAK_y);
-// NT sector share
+
 EAK_ynty = EAK_pnt*EAK_ysn/(EAK_py*EAK_y);
-// Output gap
+
 EAK_ygap = 0;
-// Output growth (gross rate)
+
 EAK_ygrowth = EAK_y/EAK_y(-1);
-// Output growth (gross rate yoy)
+
 EAK_ygrowth4 = EAK_y/EAK_y(-4);
-// Domestic nominal output as a share of world nominal output
+
 EAK_yshare  = EAK_size*EAK_py*EAK_y/EAK_rer/(
 +EAA_size*EAA_py*EAA_y/EAA_rer
 +EAB_size*EAB_py*EAB_y/EAB_rer
@@ -43607,153 +43607,153 @@ EAK_yshare  = EAK_size*EAK_py*EAK_y/EAK_rer/(
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
-// Interest (semi-)elasticity of money demand
+
 EAK_epsilonm = -1/8*1/(EAK_r*(EAK_gammav2*EAK_r+EAK_r-1));
-// Trade balance-to-GDP ratio
+
 EAK_tby = EAK_tb/(EAK_py*EAK_y);
-// Bilateral shares
+
 EAKEAA_imcy = (EAA_pex*EAKEAA_rer)*EAKEAA_imc/(EAK_py*EAK_y);
 EAKEAA_imiy = (EAA_pex*EAKEAA_rer)*EAKEAA_imi/(EAK_py*EAK_y);
 EAKEAA_imcgy = (EAA_pex*EAKEAA_rer)*EAKEAA_imcg/(EAK_py*EAK_y);
 EAKEAA_imigy = (EAA_pex*EAKEAA_rer)*EAKEAA_imig/(EAK_py*EAK_y);
-// Exports of consumption goods to gdp
+
 EAKEAA_excy  = EAA_size/EAK_size*EAK_pex*EAAEAK_imc/(EAK_py*EAK_y);
-// Exports of investment goods to gdp
+
 EAKEAA_exiy  = EAA_size/EAK_size*EAK_pex*EAAEAK_imi/(EAK_py*EAK_y);
-// Bilateral shares
+
 EAKEAB_imcy = (EAB_pex*EAKEAB_rer)*EAKEAB_imc/(EAK_py*EAK_y);
 EAKEAB_imiy = (EAB_pex*EAKEAB_rer)*EAKEAB_imi/(EAK_py*EAK_y);
 EAKEAB_imcgy = (EAB_pex*EAKEAB_rer)*EAKEAB_imcg/(EAK_py*EAK_y);
 EAKEAB_imigy = (EAB_pex*EAKEAB_rer)*EAKEAB_imig/(EAK_py*EAK_y);
-// Exports of consumption goods to gdp
+
 EAKEAB_excy  = EAB_size/EAK_size*EAK_pex*EABEAK_imc/(EAK_py*EAK_y);
-// Exports of investment goods to gdp
+
 EAKEAB_exiy  = EAB_size/EAK_size*EAK_pex*EABEAK_imi/(EAK_py*EAK_y);
-// Bilateral shares
+
 EAKEAC_imcy = (EAC_pex*EAKEAC_rer)*EAKEAC_imc/(EAK_py*EAK_y);
 EAKEAC_imiy = (EAC_pex*EAKEAC_rer)*EAKEAC_imi/(EAK_py*EAK_y);
 EAKEAC_imcgy = (EAC_pex*EAKEAC_rer)*EAKEAC_imcg/(EAK_py*EAK_y);
 EAKEAC_imigy = (EAC_pex*EAKEAC_rer)*EAKEAC_imig/(EAK_py*EAK_y);
-// Exports of consumption goods to gdp
+
 EAKEAC_excy  = EAC_size/EAK_size*EAK_pex*EACEAK_imc/(EAK_py*EAK_y);
-// Exports of investment goods to gdp
+
 EAKEAC_exiy  = EAC_size/EAK_size*EAK_pex*EACEAK_imi/(EAK_py*EAK_y);
-// Bilateral shares
+
 EAKEAD_imcy = (EAD_pex*EAKEAD_rer)*EAKEAD_imc/(EAK_py*EAK_y);
 EAKEAD_imiy = (EAD_pex*EAKEAD_rer)*EAKEAD_imi/(EAK_py*EAK_y);
 EAKEAD_imcgy = (EAD_pex*EAKEAD_rer)*EAKEAD_imcg/(EAK_py*EAK_y);
 EAKEAD_imigy = (EAD_pex*EAKEAD_rer)*EAKEAD_imig/(EAK_py*EAK_y);
-// Exports of consumption goods to gdp
+
 EAKEAD_excy  = EAD_size/EAK_size*EAK_pex*EADEAK_imc/(EAK_py*EAK_y);
-// Exports of investment goods to gdp
+
 EAKEAD_exiy  = EAD_size/EAK_size*EAK_pex*EADEAK_imi/(EAK_py*EAK_y);
-// Bilateral shares
+
 EAKEAE_imcy = (EAE_pex*EAKEAE_rer)*EAKEAE_imc/(EAK_py*EAK_y);
 EAKEAE_imiy = (EAE_pex*EAKEAE_rer)*EAKEAE_imi/(EAK_py*EAK_y);
 EAKEAE_imcgy = (EAE_pex*EAKEAE_rer)*EAKEAE_imcg/(EAK_py*EAK_y);
 EAKEAE_imigy = (EAE_pex*EAKEAE_rer)*EAKEAE_imig/(EAK_py*EAK_y);
-// Exports of consumption goods to gdp
+
 EAKEAE_excy  = EAE_size/EAK_size*EAK_pex*EAEEAK_imc/(EAK_py*EAK_y);
-// Exports of investment goods to gdp
+
 EAKEAE_exiy  = EAE_size/EAK_size*EAK_pex*EAEEAK_imi/(EAK_py*EAK_y);
-// Bilateral shares
+
 EAKEAF_imcy = (EAF_pex*EAKEAF_rer)*EAKEAF_imc/(EAK_py*EAK_y);
 EAKEAF_imiy = (EAF_pex*EAKEAF_rer)*EAKEAF_imi/(EAK_py*EAK_y);
 EAKEAF_imcgy = (EAF_pex*EAKEAF_rer)*EAKEAF_imcg/(EAK_py*EAK_y);
 EAKEAF_imigy = (EAF_pex*EAKEAF_rer)*EAKEAF_imig/(EAK_py*EAK_y);
-// Exports of consumption goods to gdp
+
 EAKEAF_excy  = EAF_size/EAK_size*EAK_pex*EAFEAK_imc/(EAK_py*EAK_y);
-// Exports of investment goods to gdp
+
 EAKEAF_exiy  = EAF_size/EAK_size*EAK_pex*EAFEAK_imi/(EAK_py*EAK_y);
-// Bilateral shares
+
 EAKEAG_imcy = (EAG_pex*EAKEAG_rer)*EAKEAG_imc/(EAK_py*EAK_y);
 EAKEAG_imiy = (EAG_pex*EAKEAG_rer)*EAKEAG_imi/(EAK_py*EAK_y);
 EAKEAG_imcgy = (EAG_pex*EAKEAG_rer)*EAKEAG_imcg/(EAK_py*EAK_y);
 EAKEAG_imigy = (EAG_pex*EAKEAG_rer)*EAKEAG_imig/(EAK_py*EAK_y);
-// Exports of consumption goods to gdp
+
 EAKEAG_excy  = EAG_size/EAK_size*EAK_pex*EAGEAK_imc/(EAK_py*EAK_y);
-// Exports of investment goods to gdp
+
 EAKEAG_exiy  = EAG_size/EAK_size*EAK_pex*EAGEAK_imi/(EAK_py*EAK_y);
-// Bilateral shares
+
 EAKEAH_imcy = (EAH_pex*EAKEAH_rer)*EAKEAH_imc/(EAK_py*EAK_y);
 EAKEAH_imiy = (EAH_pex*EAKEAH_rer)*EAKEAH_imi/(EAK_py*EAK_y);
 EAKEAH_imcgy = (EAH_pex*EAKEAH_rer)*EAKEAH_imcg/(EAK_py*EAK_y);
 EAKEAH_imigy = (EAH_pex*EAKEAH_rer)*EAKEAH_imig/(EAK_py*EAK_y);
-// Exports of consumption goods to gdp
+
 EAKEAH_excy  = EAH_size/EAK_size*EAK_pex*EAHEAK_imc/(EAK_py*EAK_y);
-// Exports of investment goods to gdp
+
 EAKEAH_exiy  = EAH_size/EAK_size*EAK_pex*EAHEAK_imi/(EAK_py*EAK_y);
-// Bilateral shares
+
 EAKEAI_imcy = (EAI_pex*EAKEAI_rer)*EAKEAI_imc/(EAK_py*EAK_y);
 EAKEAI_imiy = (EAI_pex*EAKEAI_rer)*EAKEAI_imi/(EAK_py*EAK_y);
 EAKEAI_imcgy = (EAI_pex*EAKEAI_rer)*EAKEAI_imcg/(EAK_py*EAK_y);
 EAKEAI_imigy = (EAI_pex*EAKEAI_rer)*EAKEAI_imig/(EAK_py*EAK_y);
-// Exports of consumption goods to gdp
+
 EAKEAI_excy  = EAI_size/EAK_size*EAK_pex*EAIEAK_imc/(EAK_py*EAK_y);
-// Exports of investment goods to gdp
+
 EAKEAI_exiy  = EAI_size/EAK_size*EAK_pex*EAIEAK_imi/(EAK_py*EAK_y);
-// Bilateral shares
+
 EAKEAJ_imcy = (EAJ_pex*EAKEAJ_rer)*EAKEAJ_imc/(EAK_py*EAK_y);
 EAKEAJ_imiy = (EAJ_pex*EAKEAJ_rer)*EAKEAJ_imi/(EAK_py*EAK_y);
 EAKEAJ_imcgy = (EAJ_pex*EAKEAJ_rer)*EAKEAJ_imcg/(EAK_py*EAK_y);
 EAKEAJ_imigy = (EAJ_pex*EAKEAJ_rer)*EAKEAJ_imig/(EAK_py*EAK_y);
-// Exports of consumption goods to gdp
+
 EAKEAJ_excy  = EAJ_size/EAK_size*EAK_pex*EAJEAK_imc/(EAK_py*EAK_y);
-// Exports of investment goods to gdp
+
 EAKEAJ_exiy  = EAJ_size/EAK_size*EAK_pex*EAJEAK_imi/(EAK_py*EAK_y);
-// Bilateral shares
+
 EAKEAL_imcy = (EAL_pex*EAKEAL_rer)*EAKEAL_imc/(EAK_py*EAK_y);
 EAKEAL_imiy = (EAL_pex*EAKEAL_rer)*EAKEAL_imi/(EAK_py*EAK_y);
 EAKEAL_imcgy = (EAL_pex*EAKEAL_rer)*EAKEAL_imcg/(EAK_py*EAK_y);
 EAKEAL_imigy = (EAL_pex*EAKEAL_rer)*EAKEAL_imig/(EAK_py*EAK_y);
-// Exports of consumption goods to gdp
+
 EAKEAL_excy  = EAL_size/EAK_size*EAK_pex*EALEAK_imc/(EAK_py*EAK_y);
-// Exports of investment goods to gdp
+
 EAKEAL_exiy  = EAL_size/EAK_size*EAK_pex*EALEAK_imi/(EAK_py*EAK_y);
-// Bilateral shares
+
 EAKRW_imcy = (RW_pex*EAKRW_rer)*EAKRW_imc/(EAK_py*EAK_y);
 EAKRW_imiy = (RW_pex*EAKRW_rer)*EAKRW_imi/(EAK_py*EAK_y);
 EAKRW_imcgy = (RW_pex*EAKRW_rer)*EAKRW_imcg/(EAK_py*EAK_y);
 EAKRW_imigy = (RW_pex*EAKRW_rer)*EAKRW_imig/(EAK_py*EAK_y);
-// Exports of consumption goods to gdp
+
 EAKRW_excy  = RW_size/EAK_size*EAK_pex*RWEAK_imc/(EAK_py*EAK_y);
-// Exports of investment goods to gdp
+
 EAKRW_exiy  = RW_size/EAK_size*EAK_pex*RWEAK_imi/(EAK_py*EAK_y);
-// Bilateral shares
+
 EAKUS_imcy = (US_pex*EAKUS_rer)*EAKUS_imc/(EAK_py*EAK_y);
 EAKUS_imiy = (US_pex*EAKUS_rer)*EAKUS_imi/(EAK_py*EAK_y);
 EAKUS_imcgy = (US_pex*EAKUS_rer)*EAKUS_imcg/(EAK_py*EAK_y);
 EAKUS_imigy = (US_pex*EAKUS_rer)*EAKUS_imig/(EAK_py*EAK_y);
-// Exports of consumption goods to gdp
+
 EAKUS_excy  = US_size/EAK_size*EAK_pex*USEAK_imc/(EAK_py*EAK_y);
-// Exports of investment goods to gdp
+
 EAKUS_exiy  = US_size/EAK_size*EAK_pex*USEAK_imi/(EAK_py*EAK_y);
-// Internal real exchange rate
+
 EAK_internalrer = EAK_pnt/EAK_pttc;
-// Core model begins
-//-------------
-//-------------
-// Households
-//-------------
-//-------------
-//-------------
-// Household I
-//-------------
-// Utility
+
+
+
+
+
+
+
+
+
+
 EAL_utili = 
 EAL_zcon*log(EAL_ci-EAL_kappa*EAL_ci(-1))-1/(1+EAL_zeta)*(EAL_ni)^(1+EAL_zeta)+EAL_beta*EAL_utili(+1)
 ;
-// Marginal utility of consumption
+
 EAL_lambdai*(1+EAL_tauc+EAL_gammavi+EAL_vi*EAL_gammavider) = EAL_zcon*(EAL_ci-EAL_kappa*EAL_ci(-1))^(-EAL_sigma);
-// Euler equation for government bonds
+
 EAL_r = EAL_beta^(-1)*EAL_lambdai/EAL_lambdai(+1)*EAL_pic(+1);
-// Euler equation for money
+
 EAL_vi^(2)*EAL_gammavider = 1-EAL_beta*EAL_lambdai(+1)/(EAL_lambdai*EAL_pic(+1));
-// Consumption-based velocity
+
 EAL_vi = EAL_ci/EAL_mi;
-// Transaction cost
+
 EAL_gammavi = EAL_gammav1*EAL_vi+EAL_gammav2/EAL_vi-2*(EAL_gammav1*EAL_gammav2)^(1/2);
-// Derivative of transaction cost
+
 EAL_gammavider = EAL_gammav1-EAL_gammav2*EAL_vi^(-2);
 EAL_delta = EAL_ii/EAL_ki;
 EAL_gammai = 0;
@@ -43762,355 +43762,355 @@ EAL_gammau = 0;
 EAL_gammauder = ((EAL_beta^(-1)-1+EAL_delta)*EAL_qbar-EAL_delta*EAL_taukbar*EAL_pibar)/((1-EAL_taukbar)*EAL_pibar);
 EAL_u = 1;
 EAL_pi = EAL_q;
-// Auxiliary equation for Tobin's Q in steady state
+
 EAL_qbar = EAL_q;
-// Rate of return on capital
+
 EAL_q = EAL_beta*((1-EAL_tauk)*EAL_rk+(EAL_tauk*EAL_delta)*EAL_pi+(1-EAL_delta)*EAL_q);
-// Optimal wage contract (FOC)
+
 EAL_witilde^(1+EAL_etai*EAL_zeta) = EAL_etai/(EAL_etai-1)*EAL_fi/EAL_gi+EAL_wcst;
-// Definition of fi
+
 EAL_fi = EAL_wi^(EAL_etai*(1+EAL_zeta))*EAL_ndi^(1+EAL_zeta)+EAL_xii*EAL_beta*(EAL_pic(+1)/(EAL_pic^EAL_chii*EAL_pi4target^(1/4*(1-EAL_chii))))^(EAL_etai*(1+EAL_zeta))*EAL_fi(+1);
-// Definition of gi
+
 EAL_gi = EAL_lambdai*(1-EAL_taun-EAL_tauwh)*EAL_wi^EAL_etai*EAL_ndi+EAL_xii*EAL_beta*(EAL_pic(+1)/(EAL_pic^EAL_chii*EAL_pi4target^(1/4*(1-EAL_chii))))^(EAL_etai-1)*EAL_gi(+1);
-// Aggregate wage rate
+
 EAL_wi^(1-EAL_etai) = (1-EAL_xii)*EAL_witilde^(1-EAL_etai)+EAL_xii*EAL_wi(-1)^(1-EAL_etai)*(EAL_pic(-1)^EAL_chii*EAL_pi4target^(1/4*(1-EAL_chii))/EAL_pic)^(1-EAL_etai);
-//-------------
-// Household J
-//-------------
-// Utility
+
+
+
+
 EAL_utilj = 
 EAL_zcon*log(EAL_cj-EAL_kappa*EAL_cj(-1))-1/(1+EAL_zeta)*EAL_nj^(1+EAL_zeta)+EAL_beta*EAL_utilj(+1)
 ;
-// Marginal utility of consumption
+
 EAL_lambdaj*(1+EAL_tauc+EAL_gammavj+EAL_vj*EAL_gammavjder) = EAL_zcon*(EAL_cj-EAL_kappa*EAL_cj(-1))^(-EAL_sigma);
-// Budget constraint
+
 (1+EAL_tauc+EAL_gammavj)*EAL_cj+EAL_mj = (1-EAL_taun-EAL_tauwh)*EAL_wj*EAL_nj+EAL_trj-EAL_tj+EAL_mj(-1)*EAL_pic^(-1);
-// Euler equation for money
+
 EAL_vj^(2)*EAL_gammavjder = 1-EAL_beta*EAL_lambdaj(+1)/(EAL_lambdaj*EAL_pic(+1));
-// Consumption-based velocity
+
 EAL_vj = EAL_cj/EAL_mj;
-// Transaction technology
+
 EAL_gammavj = EAL_gammav1*EAL_vj+EAL_gammav2/EAL_vj-2*(EAL_gammav1*EAL_gammav2)^(1/2);
-// Derivative of transaction technology
+
 EAL_gammavjder = EAL_gammav1-EAL_gammav2*EAL_vj^(-2);
-// Optimal wage contract (FOC)
+
 EAL_wjtilde^(1+EAL_etaj*EAL_zeta) = EAL_etaj/(EAL_etaj-1)*EAL_fj/EAL_gj+EAL_wcst;
-// Definition of fj
+
 EAL_fj = EAL_wj^(EAL_etaj*(1+EAL_zeta))*EAL_ndj^(1+EAL_zeta)+EAL_xij*EAL_beta*(EAL_pic(+1)/(EAL_pic^EAL_chij*EAL_pi4target^(1/4*(1-EAL_chij))))^(EAL_etaj*(1+EAL_zeta))*EAL_fj(+1);
-// Definition of gj
+
 EAL_gj = EAL_lambdaj*(1-EAL_taun-EAL_tauwh)*EAL_wj^EAL_etaj*EAL_ndj+EAL_xij*EAL_beta*(EAL_pic(+1)/(EAL_pic^EAL_chij*EAL_pi4target^(1/4*(1-EAL_chij))))^(EAL_etaj-1)*EAL_gj(+1);
-// Aggregate wage rate
+
 EAL_wj^(1-EAL_etaj) = (1-EAL_xij)*EAL_wjtilde^(1-EAL_etaj)+EAL_xij*EAL_wj(-1)^(1-EAL_etaj)*(EAL_pic(-1)^EAL_chij*EAL_pi4target^(1/4*(1-EAL_chij))/EAL_pic)^(1-EAL_etaj);
-//-------------
-//-------------
-// Firms
-//-------------
-//-------------
-//-------------
-// Intermediate-good firms
-//-------------
-// Production function tradable
+
+
+
+
+
+
+
+
+
 EAL_yst = EAL_zt*EAL_kdt^EAL_alphat*EAL_ndt^(1-EAL_alphat)-EAL_psitbar;
-// Production function nontradable
+
 EAL_ysn = EAL_zn*EAL_kdn^EAL_alphan*EAL_ndn^(1-EAL_alphan)-EAL_psinbar;
-// Real marginal cost tradable
+
 EAL_mct = 1/(EAL_zt*(EAL_alphat)^(EAL_alphat)*(1-EAL_alphat)^(1-EAL_alphat))*EAL_rk^(EAL_alphat)*((1+EAL_tauwf)*EAL_w)^(1-EAL_alphat);
-// Real marginal cost nontradable
+
 EAL_mcn = 1/(EAL_zn*(EAL_alphan)^(EAL_alphan)*(1-EAL_alphan)^(1-EAL_alphan))*EAL_rk^(EAL_alphan)*((1+EAL_tauwf)*EAL_w)^(1-EAL_alphan);
-// Wage Inflation (qoq)
+
 EAL_piw = EAL_w/EAL_w(-1)*EAL_pic;
-// Wage Inflation (yoy)
+
 EAL_piw4 = EAL_pic4;
-// Auxiliary equation for steady-state fixed cost
+
 EAL_psitbar = EAL_psit*EAL_ytbar;
-// Auxiliary equation for steady-state fixed cost
+
 EAL_psinbar = EAL_psin*EAL_ynbar;
-// Capital input (FOC)
+
 EAL_rk = EAL_alphat*(EAL_yst+EAL_psitbar)/EAL_kdt*EAL_mct;
-// Capital input (FOC)
+
 EAL_rk = EAL_alphan*(EAL_ysn+EAL_psinbar)/EAL_kdn*EAL_mcn;
-// Total capital demand
+
 EAL_kd = EAL_kdt+EAL_kdn;
-// Demand for labour services by household I
+
 EAL_ndi = 
 (1-EAL_omega)*(EAL_wi/EAL_w)^(-EAL_eta)*EAL_nd
 ;
-// Demand for labour services by household J
+
 EAL_ndj = 
 EAL_omega*(EAL_wj/EAL_w)^(-EAL_eta)*EAL_nd
 ;
-// Aggregate labour demand
+
 EAL_nd^(1-1/EAL_eta) = 
 (1-EAL_omega)^(1/EAL_eta)*EAL_ndi^(1-1/EAL_eta)+EAL_omega^(1/EAL_eta)*EAL_ndj^(1-1/EAL_eta)
 ;
-// Total demand 
+
 EAL_nd = EAL_ndt+EAL_ndn;
-// Aggregate dividends
+
 EAL_d = EAL_py*EAL_y-EAL_rk*EAL_kd-(1+EAL_tauwf)*EAL_w*EAL_nd;
-// Non-tradable sector dividends
+
 EAL_dn = EAL_pnt*EAL_ysn-EAL_rk*EAL_kdn-(1+EAL_tauwf)*EAL_w*EAL_ndn;
-// Tradable sector dividends
+
 EAL_dt = EAL_pht*EAL_ht
 +EAL_pex*EAL_ex
 -EAL_rk*EAL_kdt-(1+EAL_tauwf)*EAL_w*EAL_ndt;
-// Optimal price contract set in domestic markets (FOC)
+
 EAL_phttilde/EAL_pht = EAL_thetat/(EAL_thetat-1)*EAL_fh/EAL_gh;
-// Definition of fh
+
 EAL_fh = EAL_mct*EAL_ht+EAL_xih*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAL_piht(+1)/(EAL_piht^EAL_chih*EAL_pi4target^(1/4*(1-EAL_chih))))^EAL_thetat*EAL_fh(+1);
-// Definition of gh
+
 EAL_gh = EAL_pht*EAL_ht+EAL_xih*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAL_piht(+1)/(EAL_piht^EAL_chih*EAL_pi4target^(1/4*(1-EAL_chih))))^(EAL_thetat-1)*EAL_gh(+1);
-// Aggregate intermediate-good price dynamics
+
 EAL_pht^(1-EAL_thetat) = (1-EAL_xih)*EAL_phttilde^(1-EAL_thetat)+EAL_xih*(EAL_pht(-1)/EAL_pic)^(1-EAL_thetat)*(EAL_piht(-1)^EAL_chih*EAL_pi4target^(1/4*(1-EAL_chih)))^(1-EAL_thetat);
-// Intermediate-good price inflation
+
 EAL_piht = EAL_pht/EAL_pht(-1)*EAL_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAL_pnttilde/EAL_pnt = EAL_thetan/(EAL_thetan-1)*EAL_fn/EAL_gn;
-// Definition of fn
+
 EAL_fn = EAL_mcn*EAL_nt+EAL_xin*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAL_pint(+1)/(EAL_pint^EAL_chin*EAL_pi4target^(1/4*(1-EAL_chin))))^EAL_thetan*EAL_fn(+1);
-// Definition of gn
+
 EAL_gn = EAL_pnt*EAL_nt+EAL_xin*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAL_pint(+1)/(EAL_pint^EAL_chin*EAL_pi4target^(1/4*(1-EAL_chin))))^(EAL_thetan-1)*EAL_gn(+1);
-// Aggregate intermediate-good price dynamics
+
 EAL_pnt^(1-EAL_thetan) = (1-EAL_xin)*EAL_pnttilde^(1-EAL_thetan)+EAL_xin*(EAL_pnt(-1)/EAL_pic)^(1-EAL_thetan)*(EAL_pint(-1)^EAL_chin*EAL_pi4target^(1/4*(1-EAL_chin)))^(1-EAL_thetan);
-// Intermediate-good price inflation
+
 EAL_pint = EAL_pnt/EAL_pnt(-1)*EAL_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 EAL_pextilde/EAL_pex = EAL_thetat/(EAL_thetat-1)*EAL_fx/EAL_gx;
-// Definition of fh
+
 EAL_fx = EAL_mct*EAL_ex+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAL_piex(+1)/(EAL_piex^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^EAL_thetat*EAL_fx(+1);
-// Definition of gh
+
 EAL_gx = EAL_pex*EAL_ex+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAL_piex(+1)/(EAL_piex^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^(EAL_thetat-1)*EAL_gx(+1);
-// Aggregate intermediate-good price dynamics
+
 EAL_pex^(1-EAL_thetat) = (1-EAL_xix)*EAL_pextilde^(1-EAL_thetat)+EAL_xix*(EAL_pex(-1)/EAL_pic)^(1-EAL_thetat)*(EAL_piex(-1)^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix)))^(1-EAL_thetat);
-// Intermediate-good price inflation
+
 EAL_piex = EAL_pex/EAL_pex(-1)*EAL_pic;
-//---------------
-// import pricing
-//---------------
-// Optimal price contract set in foreign markets (FOC), using EAL_pxtilde = EAA_pimtilde
-// EAAEAL_pimtilde/EAAEAL_pim = EAL_cpim*EAL_thetat/(EAL_thetat-1)*EALEAA_fx/EALEAA_gx;
-// Definition of fx
-// EALEAA_fx = EAA_size/EAL_size*EAAEAL_im*EAL_mct+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAAEAL_piim(+1)/(EAAEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^EAL_thetat*EALEAA_fx(+1);
-// Definition of gx   
-// EALEAA_gx = EALEAA_rer*EAAEAL_pim*EAA_size/EAL_size*EAAEAL_im+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAAEAL_piim(+1)/(EAAEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^(EAL_thetat-1)*EALEAA_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAL_px = EAA_pim
-// EAAEAL_pim^(1-EAL_thetat) = (1-EAL_xix)*EAAEAL_pimtilde^(1-EAL_thetat)+EAL_xix*(EAAEAL_pim(-1)/EAA_pic)^(1-EAL_thetat)*(EAAEAL_piim(-1)^EAL_chix*EAA_pi4target^(1/4*(1-EAL_chih)))^(1-EAL_thetat);
-// Intermediate-good price inflation, using EAL_pix = EAA_piim
-// EAAEAL_piim = EAAEAL_pim/EAAEAL_pim(-1)*EAA_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 EALEAA_rer = EAL_rer/EAA_rer;
-// Auxiliary equation for steady-state output
+
 EALEAA_rerbar = EALEAA_rer;
-//Terms of Trade
+
 EALEAA_tot = EAA_pex*EALEAA_rer/EAL_pex;
-// Optimal price contract set in foreign markets (FOC), using EAL_pxtilde = EAB_pimtilde
-// EABEAL_pimtilde/EABEAL_pim = EAL_cpim*EAL_thetat/(EAL_thetat-1)*EALEAB_fx/EALEAB_gx;
-// Definition of fx
-// EALEAB_fx = EAB_size/EAL_size*EABEAL_im*EAL_mct+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EABEAL_piim(+1)/(EABEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^EAL_thetat*EALEAB_fx(+1);
-// Definition of gx   
-// EALEAB_gx = EALEAB_rer*EABEAL_pim*EAB_size/EAL_size*EABEAL_im+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EABEAL_piim(+1)/(EABEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^(EAL_thetat-1)*EALEAB_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAL_px = EAB_pim
-// EABEAL_pim^(1-EAL_thetat) = (1-EAL_xix)*EABEAL_pimtilde^(1-EAL_thetat)+EAL_xix*(EABEAL_pim(-1)/EAB_pic)^(1-EAL_thetat)*(EABEAL_piim(-1)^EAL_chix*EAB_pi4target^(1/4*(1-EAL_chih)))^(1-EAL_thetat);
-// Intermediate-good price inflation, using EAL_pix = EAB_piim
-// EABEAL_piim = EABEAL_pim/EABEAL_pim(-1)*EAB_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EALEAB_rer = EAL_rer/EAB_rer;
-// Auxiliary equation for steady-state output
+
 EALEAB_rerbar = EALEAB_rer;
-//Terms of Trade
+
 EALEAB_tot = EAB_pex*EALEAB_rer/EAL_pex;
-// Optimal price contract set in foreign markets (FOC), using EAL_pxtilde = EAC_pimtilde
-// EACEAL_pimtilde/EACEAL_pim = EAL_cpim*EAL_thetat/(EAL_thetat-1)*EALEAC_fx/EALEAC_gx;
-// Definition of fx
-// EALEAC_fx = EAC_size/EAL_size*EACEAL_im*EAL_mct+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EACEAL_piim(+1)/(EACEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^EAL_thetat*EALEAC_fx(+1);
-// Definition of gx   
-// EALEAC_gx = EALEAC_rer*EACEAL_pim*EAC_size/EAL_size*EACEAL_im+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EACEAL_piim(+1)/(EACEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^(EAL_thetat-1)*EALEAC_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAL_px = EAC_pim
-// EACEAL_pim^(1-EAL_thetat) = (1-EAL_xix)*EACEAL_pimtilde^(1-EAL_thetat)+EAL_xix*(EACEAL_pim(-1)/EAC_pic)^(1-EAL_thetat)*(EACEAL_piim(-1)^EAL_chix*EAC_pi4target^(1/4*(1-EAL_chih)))^(1-EAL_thetat);
-// Intermediate-good price inflation, using EAL_pix = EAC_piim
-// EACEAL_piim = EACEAL_pim/EACEAL_pim(-1)*EAC_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EALEAC_rer = EAL_rer/EAC_rer;
-// Auxiliary equation for steady-state output
+
 EALEAC_rerbar = EALEAC_rer;
-//Terms of Trade
+
 EALEAC_tot = EAC_pex*EALEAC_rer/EAL_pex;
-// Optimal price contract set in foreign markets (FOC), using EAL_pxtilde = EAD_pimtilde
-// EADEAL_pimtilde/EADEAL_pim = EAL_cpim*EAL_thetat/(EAL_thetat-1)*EALEAD_fx/EALEAD_gx;
-// Definition of fx
-// EALEAD_fx = EAD_size/EAL_size*EADEAL_im*EAL_mct+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EADEAL_piim(+1)/(EADEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^EAL_thetat*EALEAD_fx(+1);
-// Definition of gx   
-// EALEAD_gx = EALEAD_rer*EADEAL_pim*EAD_size/EAL_size*EADEAL_im+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EADEAL_piim(+1)/(EADEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^(EAL_thetat-1)*EALEAD_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAL_px = EAD_pim
-// EADEAL_pim^(1-EAL_thetat) = (1-EAL_xix)*EADEAL_pimtilde^(1-EAL_thetat)+EAL_xix*(EADEAL_pim(-1)/EAD_pic)^(1-EAL_thetat)*(EADEAL_piim(-1)^EAL_chix*EAD_pi4target^(1/4*(1-EAL_chih)))^(1-EAL_thetat);
-// Intermediate-good price inflation, using EAL_pix = EAD_piim
-// EADEAL_piim = EADEAL_pim/EADEAL_pim(-1)*EAD_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EALEAD_rer = EAL_rer/EAD_rer;
-// Auxiliary equation for steady-state output
+
 EALEAD_rerbar = EALEAD_rer;
-//Terms of Trade
+
 EALEAD_tot = EAD_pex*EALEAD_rer/EAL_pex;
-// Optimal price contract set in foreign markets (FOC), using EAL_pxtilde = EAE_pimtilde
-// EAEEAL_pimtilde/EAEEAL_pim = EAL_cpim*EAL_thetat/(EAL_thetat-1)*EALEAE_fx/EALEAE_gx;
-// Definition of fx
-// EALEAE_fx = EAE_size/EAL_size*EAEEAL_im*EAL_mct+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAEEAL_piim(+1)/(EAEEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^EAL_thetat*EALEAE_fx(+1);
-// Definition of gx   
-// EALEAE_gx = EALEAE_rer*EAEEAL_pim*EAE_size/EAL_size*EAEEAL_im+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAEEAL_piim(+1)/(EAEEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^(EAL_thetat-1)*EALEAE_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAL_px = EAE_pim
-// EAEEAL_pim^(1-EAL_thetat) = (1-EAL_xix)*EAEEAL_pimtilde^(1-EAL_thetat)+EAL_xix*(EAEEAL_pim(-1)/EAE_pic)^(1-EAL_thetat)*(EAEEAL_piim(-1)^EAL_chix*EAE_pi4target^(1/4*(1-EAL_chih)))^(1-EAL_thetat);
-// Intermediate-good price inflation, using EAL_pix = EAE_piim
-// EAEEAL_piim = EAEEAL_pim/EAEEAL_pim(-1)*EAE_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EALEAE_rer = EAL_rer/EAE_rer;
-// Auxiliary equation for steady-state output
+
 EALEAE_rerbar = EALEAE_rer;
-//Terms of Trade
+
 EALEAE_tot = EAE_pex*EALEAE_rer/EAL_pex;
-// Optimal price contract set in foreign markets (FOC), using EAL_pxtilde = EAF_pimtilde
-// EAFEAL_pimtilde/EAFEAL_pim = EAL_cpim*EAL_thetat/(EAL_thetat-1)*EALEAF_fx/EALEAF_gx;
-// Definition of fx
-// EALEAF_fx = EAF_size/EAL_size*EAFEAL_im*EAL_mct+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAFEAL_piim(+1)/(EAFEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^EAL_thetat*EALEAF_fx(+1);
-// Definition of gx   
-// EALEAF_gx = EALEAF_rer*EAFEAL_pim*EAF_size/EAL_size*EAFEAL_im+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAFEAL_piim(+1)/(EAFEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^(EAL_thetat-1)*EALEAF_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAL_px = EAF_pim
-// EAFEAL_pim^(1-EAL_thetat) = (1-EAL_xix)*EAFEAL_pimtilde^(1-EAL_thetat)+EAL_xix*(EAFEAL_pim(-1)/EAF_pic)^(1-EAL_thetat)*(EAFEAL_piim(-1)^EAL_chix*EAF_pi4target^(1/4*(1-EAL_chih)))^(1-EAL_thetat);
-// Intermediate-good price inflation, using EAL_pix = EAF_piim
-// EAFEAL_piim = EAFEAL_pim/EAFEAL_pim(-1)*EAF_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EALEAF_rer = EAL_rer/EAF_rer;
-// Auxiliary equation for steady-state output
+
 EALEAF_rerbar = EALEAF_rer;
-//Terms of Trade
+
 EALEAF_tot = EAF_pex*EALEAF_rer/EAL_pex;
-// Optimal price contract set in foreign markets (FOC), using EAL_pxtilde = EAG_pimtilde
-// EAGEAL_pimtilde/EAGEAL_pim = EAL_cpim*EAL_thetat/(EAL_thetat-1)*EALEAG_fx/EALEAG_gx;
-// Definition of fx
-// EALEAG_fx = EAG_size/EAL_size*EAGEAL_im*EAL_mct+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAGEAL_piim(+1)/(EAGEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^EAL_thetat*EALEAG_fx(+1);
-// Definition of gx   
-// EALEAG_gx = EALEAG_rer*EAGEAL_pim*EAG_size/EAL_size*EAGEAL_im+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAGEAL_piim(+1)/(EAGEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^(EAL_thetat-1)*EALEAG_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAL_px = EAG_pim
-// EAGEAL_pim^(1-EAL_thetat) = (1-EAL_xix)*EAGEAL_pimtilde^(1-EAL_thetat)+EAL_xix*(EAGEAL_pim(-1)/EAG_pic)^(1-EAL_thetat)*(EAGEAL_piim(-1)^EAL_chix*EAG_pi4target^(1/4*(1-EAL_chih)))^(1-EAL_thetat);
-// Intermediate-good price inflation, using EAL_pix = EAG_piim
-// EAGEAL_piim = EAGEAL_pim/EAGEAL_pim(-1)*EAG_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EALEAG_rer = EAL_rer/EAG_rer;
-// Auxiliary equation for steady-state output
+
 EALEAG_rerbar = EALEAG_rer;
-//Terms of Trade
+
 EALEAG_tot = EAG_pex*EALEAG_rer/EAL_pex;
-// Optimal price contract set in foreign markets (FOC), using EAL_pxtilde = EAH_pimtilde
-// EAHEAL_pimtilde/EAHEAL_pim = EAL_cpim*EAL_thetat/(EAL_thetat-1)*EALEAH_fx/EALEAH_gx;
-// Definition of fx
-// EALEAH_fx = EAH_size/EAL_size*EAHEAL_im*EAL_mct+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAHEAL_piim(+1)/(EAHEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^EAL_thetat*EALEAH_fx(+1);
-// Definition of gx   
-// EALEAH_gx = EALEAH_rer*EAHEAL_pim*EAH_size/EAL_size*EAHEAL_im+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAHEAL_piim(+1)/(EAHEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^(EAL_thetat-1)*EALEAH_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAL_px = EAH_pim
-// EAHEAL_pim^(1-EAL_thetat) = (1-EAL_xix)*EAHEAL_pimtilde^(1-EAL_thetat)+EAL_xix*(EAHEAL_pim(-1)/EAH_pic)^(1-EAL_thetat)*(EAHEAL_piim(-1)^EAL_chix*EAH_pi4target^(1/4*(1-EAL_chih)))^(1-EAL_thetat);
-// Intermediate-good price inflation, using EAL_pix = EAH_piim
-// EAHEAL_piim = EAHEAL_pim/EAHEAL_pim(-1)*EAH_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EALEAH_rer = EAL_rer/EAH_rer;
-// Auxiliary equation for steady-state output
+
 EALEAH_rerbar = EALEAH_rer;
-//Terms of Trade
+
 EALEAH_tot = EAH_pex*EALEAH_rer/EAL_pex;
-// Optimal price contract set in foreign markets (FOC), using EAL_pxtilde = EAI_pimtilde
-// EAIEAL_pimtilde/EAIEAL_pim = EAL_cpim*EAL_thetat/(EAL_thetat-1)*EALEAI_fx/EALEAI_gx;
-// Definition of fx
-// EALEAI_fx = EAI_size/EAL_size*EAIEAL_im*EAL_mct+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAIEAL_piim(+1)/(EAIEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^EAL_thetat*EALEAI_fx(+1);
-// Definition of gx   
-// EALEAI_gx = EALEAI_rer*EAIEAL_pim*EAI_size/EAL_size*EAIEAL_im+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAIEAL_piim(+1)/(EAIEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^(EAL_thetat-1)*EALEAI_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAL_px = EAI_pim
-// EAIEAL_pim^(1-EAL_thetat) = (1-EAL_xix)*EAIEAL_pimtilde^(1-EAL_thetat)+EAL_xix*(EAIEAL_pim(-1)/EAI_pic)^(1-EAL_thetat)*(EAIEAL_piim(-1)^EAL_chix*EAI_pi4target^(1/4*(1-EAL_chih)))^(1-EAL_thetat);
-// Intermediate-good price inflation, using EAL_pix = EAI_piim
-// EAIEAL_piim = EAIEAL_pim/EAIEAL_pim(-1)*EAI_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EALEAI_rer = EAL_rer/EAI_rer;
-// Auxiliary equation for steady-state output
+
 EALEAI_rerbar = EALEAI_rer;
-//Terms of Trade
+
 EALEAI_tot = EAI_pex*EALEAI_rer/EAL_pex;
-// Optimal price contract set in foreign markets (FOC), using EAL_pxtilde = EAJ_pimtilde
-// EAJEAL_pimtilde/EAJEAL_pim = EAL_cpim*EAL_thetat/(EAL_thetat-1)*EALEAJ_fx/EALEAJ_gx;
-// Definition of fx
-// EALEAJ_fx = EAJ_size/EAL_size*EAJEAL_im*EAL_mct+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAJEAL_piim(+1)/(EAJEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^EAL_thetat*EALEAJ_fx(+1);
-// Definition of gx   
-// EALEAJ_gx = EALEAJ_rer*EAJEAL_pim*EAJ_size/EAL_size*EAJEAL_im+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAJEAL_piim(+1)/(EAJEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^(EAL_thetat-1)*EALEAJ_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAL_px = EAJ_pim
-// EAJEAL_pim^(1-EAL_thetat) = (1-EAL_xix)*EAJEAL_pimtilde^(1-EAL_thetat)+EAL_xix*(EAJEAL_pim(-1)/EAJ_pic)^(1-EAL_thetat)*(EAJEAL_piim(-1)^EAL_chix*EAJ_pi4target^(1/4*(1-EAL_chih)))^(1-EAL_thetat);
-// Intermediate-good price inflation, using EAL_pix = EAJ_piim
-// EAJEAL_piim = EAJEAL_pim/EAJEAL_pim(-1)*EAJ_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EALEAJ_rer = EAL_rer/EAJ_rer;
-// Auxiliary equation for steady-state output
+
 EALEAJ_rerbar = EALEAJ_rer;
-//Terms of Trade
+
 EALEAJ_tot = EAJ_pex*EALEAJ_rer/EAL_pex;
-// Optimal price contract set in foreign markets (FOC), using EAL_pxtilde = EAK_pimtilde
-// EAKEAL_pimtilde/EAKEAL_pim = EAL_cpim*EAL_thetat/(EAL_thetat-1)*EALEAK_fx/EALEAK_gx;
-// Definition of fx
-// EALEAK_fx = EAK_size/EAL_size*EAKEAL_im*EAL_mct+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAKEAL_piim(+1)/(EAKEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^EAL_thetat*EALEAK_fx(+1);
-// Definition of gx   
-// EALEAK_gx = EALEAK_rer*EAKEAL_pim*EAK_size/EAL_size*EAKEAL_im+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(EAKEAL_piim(+1)/(EAKEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^(EAL_thetat-1)*EALEAK_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAL_px = EAK_pim
-// EAKEAL_pim^(1-EAL_thetat) = (1-EAL_xix)*EAKEAL_pimtilde^(1-EAL_thetat)+EAL_xix*(EAKEAL_pim(-1)/EAK_pic)^(1-EAL_thetat)*(EAKEAL_piim(-1)^EAL_chix*EAK_pi4target^(1/4*(1-EAL_chih)))^(1-EAL_thetat);
-// Intermediate-good price inflation, using EAL_pix = EAK_piim
-// EAKEAL_piim = EAKEAL_pim/EAKEAL_pim(-1)*EAK_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EALEAK_rer = EAL_rer/EAK_rer;
-// Auxiliary equation for steady-state output
+
 EALEAK_rerbar = EALEAK_rer;
-//Terms of Trade
+
 EALEAK_tot = EAK_pex*EALEAK_rer/EAL_pex;
-// Optimal price contract set in foreign markets (FOC), using EAL_pxtilde = RW_pimtilde
-// RWEAL_pimtilde/RWEAL_pim = EAL_cpim*EAL_thetat/(EAL_thetat-1)*EALRW_fx/EALRW_gx;
-// Definition of fx
-// EALRW_fx = RW_size/EAL_size*RWEAL_im*EAL_mct+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(RWEAL_piim(+1)/(RWEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^EAL_thetat*EALRW_fx(+1);
-// Definition of gx   
-// EALRW_gx = EALRW_rer*RWEAL_pim*RW_size/EAL_size*RWEAL_im+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(RWEAL_piim(+1)/(RWEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^(EAL_thetat-1)*EALRW_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAL_px = RW_pim
-// RWEAL_pim^(1-EAL_thetat) = (1-EAL_xix)*RWEAL_pimtilde^(1-EAL_thetat)+EAL_xix*(RWEAL_pim(-1)/RW_pic)^(1-EAL_thetat)*(RWEAL_piim(-1)^EAL_chix*RW_pi4target^(1/4*(1-EAL_chih)))^(1-EAL_thetat);
-// Intermediate-good price inflation, using EAL_pix = RW_piim
-// RWEAL_piim = RWEAL_pim/RWEAL_pim(-1)*RW_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EALRW_rer = EAL_rer/RW_rer;
-// Auxiliary equation for steady-state output
+
 EALRW_rerbar = EALRW_rer;
-//Terms of Trade
+
 EALRW_tot = RW_pex*EALRW_rer/EAL_pex;
-// Optimal price contract set in foreign markets (FOC), using EAL_pxtilde = US_pimtilde
-// USEAL_pimtilde/USEAL_pim = EAL_cpim*EAL_thetat/(EAL_thetat-1)*EALUS_fx/EALUS_gx;
-// Definition of fx
-// EALUS_fx = US_size/EAL_size*USEAL_im*EAL_mct+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(USEAL_piim(+1)/(USEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^EAL_thetat*EALUS_fx(+1);
-// Definition of gx   
-// EALUS_gx = EALUS_rer*USEAL_pim*US_size/EAL_size*USEAL_im+EAL_xix*EAL_beta*EAL_lambdai(+1)/EAL_lambdai*(USEAL_piim(+1)/(USEAL_piim^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^(EAL_thetat-1)*EALUS_gx(+1);
-// Aggregate intermediate-good price dynamics, using EAL_px = US_pim
-// USEAL_pim^(1-EAL_thetat) = (1-EAL_xix)*USEAL_pimtilde^(1-EAL_thetat)+EAL_xix*(USEAL_pim(-1)/US_pic)^(1-EAL_thetat)*(USEAL_piim(-1)^EAL_chix*US_pi4target^(1/4*(1-EAL_chih)))^(1-EAL_thetat);
-// Intermediate-good price inflation, using EAL_pix = US_piim
-// USEAL_piim = USEAL_pim/USEAL_pim(-1)*US_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 EALUS_rer = EAL_rer/US_rer;
-// Auxiliary equation for steady-state output
+
 EALUS_rerbar = EALUS_rer;
-//Terms of Trade
+
 EALUS_tot = US_pex*EALUS_rer/EAL_pex;
-// Total imports 
+
 EAL_im = 
 +EAL_imc
 +EAL_imi
 +EAL_imcg
 +EAL_imig
 ;
-// Total import deflator
+
 EAL_im*EAL_pim  = 
 +EAL_pimc*EAL_imc
 +EAL_pimi*EAL_imi
 +EAL_pimcg*EAL_imcg
 +EAL_pimig*EAL_imig
 ;
-// Effective real exchange rate: double weighting (imports)
+
 EALEAA_weightim = EALEAA_rer*EAA_pex*EALEAA_im/(EAL_pim*EAL_im);
-// Effective real exchange rate: double weighting (exports)
+
 EALEAA_weightex = EAA_size/EAL_size*EAAEAL_im/EAL_ex*EALEAA_rer*EAA_py*EAA_y/(EALEAA_rer*EAA_py*EAA_y
 +EALEAB_rer*EAB_pex*EAAEAB_im
 +EALEAC_rer*EAC_pex*EAAEAC_im
@@ -44294,11 +44294,11 @@ EALEAA_weightex = EAA_size/EAL_size*EAAEAL_im/EAL_ex*EALEAA_rer*EAA_py*EAA_y/(EA
 +EALRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EALEAA_weight = EAL_pim*EAL_im/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAA_weightim+EAL_pex*EAL_ex/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAA_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EALEAB_weightim = EALEAB_rer*EAB_pex*EALEAB_im/(EAL_pim*EAL_im);
-// Effective real exchange rate: double weighting (exports)
+
 EALEAB_weightex = EAB_size/EAL_size*EABEAL_im/EAL_ex*EALEAB_rer*EAB_py*EAB_y/(EALEAB_rer*EAB_py*EAB_y
 +EALEAA_rer*EAA_pex*EABEAA_im
 +EALEAC_rer*EAC_pex*EABEAC_im
@@ -44482,11 +44482,11 @@ EALEAB_weightex = EAB_size/EAL_size*EABEAL_im/EAL_ex*EALEAB_rer*EAB_py*EAB_y/(EA
 +EALRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EALEAB_weight = EAL_pim*EAL_im/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAB_weightim+EAL_pex*EAL_ex/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAB_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EALEAC_weightim = EALEAC_rer*EAC_pex*EALEAC_im/(EAL_pim*EAL_im);
-// Effective real exchange rate: double weighting (exports)
+
 EALEAC_weightex = EAC_size/EAL_size*EACEAL_im/EAL_ex*EALEAC_rer*EAC_py*EAC_y/(EALEAC_rer*EAC_py*EAC_y
 +EALEAA_rer*EAA_pex*EACEAA_im
 +EALEAB_rer*EAB_pex*EACEAB_im
@@ -44670,11 +44670,11 @@ EALEAC_weightex = EAC_size/EAL_size*EACEAL_im/EAL_ex*EALEAC_rer*EAC_py*EAC_y/(EA
 +EALRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EALEAC_weight = EAL_pim*EAL_im/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAC_weightim+EAL_pex*EAL_ex/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAC_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EALEAD_weightim = EALEAD_rer*EAD_pex*EALEAD_im/(EAL_pim*EAL_im);
-// Effective real exchange rate: double weighting (exports)
+
 EALEAD_weightex = EAD_size/EAL_size*EADEAL_im/EAL_ex*EALEAD_rer*EAD_py*EAD_y/(EALEAD_rer*EAD_py*EAD_y
 +EALEAA_rer*EAA_pex*EADEAA_im
 +EALEAB_rer*EAB_pex*EADEAB_im
@@ -44858,11 +44858,11 @@ EALEAD_weightex = EAD_size/EAL_size*EADEAL_im/EAL_ex*EALEAD_rer*EAD_py*EAD_y/(EA
 +EALRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EALEAD_weight = EAL_pim*EAL_im/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAD_weightim+EAL_pex*EAL_ex/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAD_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EALEAE_weightim = EALEAE_rer*EAE_pex*EALEAE_im/(EAL_pim*EAL_im);
-// Effective real exchange rate: double weighting (exports)
+
 EALEAE_weightex = EAE_size/EAL_size*EAEEAL_im/EAL_ex*EALEAE_rer*EAE_py*EAE_y/(EALEAE_rer*EAE_py*EAE_y
 +EALEAA_rer*EAA_pex*EAEEAA_im
 +EALEAB_rer*EAB_pex*EAEEAB_im
@@ -45046,11 +45046,11 @@ EALEAE_weightex = EAE_size/EAL_size*EAEEAL_im/EAL_ex*EALEAE_rer*EAE_py*EAE_y/(EA
 +EALRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EALEAE_weight = EAL_pim*EAL_im/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAE_weightim+EAL_pex*EAL_ex/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAE_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EALEAF_weightim = EALEAF_rer*EAF_pex*EALEAF_im/(EAL_pim*EAL_im);
-// Effective real exchange rate: double weighting (exports)
+
 EALEAF_weightex = EAF_size/EAL_size*EAFEAL_im/EAL_ex*EALEAF_rer*EAF_py*EAF_y/(EALEAF_rer*EAF_py*EAF_y
 +EALEAA_rer*EAA_pex*EAFEAA_im
 +EALEAB_rer*EAB_pex*EAFEAB_im
@@ -45234,11 +45234,11 @@ EALEAF_weightex = EAF_size/EAL_size*EAFEAL_im/EAL_ex*EALEAF_rer*EAF_py*EAF_y/(EA
 +EALRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EALEAF_weight = EAL_pim*EAL_im/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAF_weightim+EAL_pex*EAL_ex/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAF_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EALEAG_weightim = EALEAG_rer*EAG_pex*EALEAG_im/(EAL_pim*EAL_im);
-// Effective real exchange rate: double weighting (exports)
+
 EALEAG_weightex = EAG_size/EAL_size*EAGEAL_im/EAL_ex*EALEAG_rer*EAG_py*EAG_y/(EALEAG_rer*EAG_py*EAG_y
 +EALEAA_rer*EAA_pex*EAGEAA_im
 +EALEAB_rer*EAB_pex*EAGEAB_im
@@ -45422,11 +45422,11 @@ EALEAG_weightex = EAG_size/EAL_size*EAGEAL_im/EAL_ex*EALEAG_rer*EAG_py*EAG_y/(EA
 +EALRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EALEAG_weight = EAL_pim*EAL_im/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAG_weightim+EAL_pex*EAL_ex/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAG_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EALEAH_weightim = EALEAH_rer*EAH_pex*EALEAH_im/(EAL_pim*EAL_im);
-// Effective real exchange rate: double weighting (exports)
+
 EALEAH_weightex = EAH_size/EAL_size*EAHEAL_im/EAL_ex*EALEAH_rer*EAH_py*EAH_y/(EALEAH_rer*EAH_py*EAH_y
 +EALEAA_rer*EAA_pex*EAHEAA_im
 +EALEAB_rer*EAB_pex*EAHEAB_im
@@ -45610,11 +45610,11 @@ EALEAH_weightex = EAH_size/EAL_size*EAHEAL_im/EAL_ex*EALEAH_rer*EAH_py*EAH_y/(EA
 +EALRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EALEAH_weight = EAL_pim*EAL_im/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAH_weightim+EAL_pex*EAL_ex/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAH_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EALEAI_weightim = EALEAI_rer*EAI_pex*EALEAI_im/(EAL_pim*EAL_im);
-// Effective real exchange rate: double weighting (exports)
+
 EALEAI_weightex = EAI_size/EAL_size*EAIEAL_im/EAL_ex*EALEAI_rer*EAI_py*EAI_y/(EALEAI_rer*EAI_py*EAI_y
 +EALEAA_rer*EAA_pex*EAIEAA_im
 +EALEAB_rer*EAB_pex*EAIEAB_im
@@ -45798,11 +45798,11 @@ EALEAI_weightex = EAI_size/EAL_size*EAIEAL_im/EAL_ex*EALEAI_rer*EAI_py*EAI_y/(EA
 +EALRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EALEAI_weight = EAL_pim*EAL_im/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAI_weightim+EAL_pex*EAL_ex/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAI_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EALEAJ_weightim = EALEAJ_rer*EAJ_pex*EALEAJ_im/(EAL_pim*EAL_im);
-// Effective real exchange rate: double weighting (exports)
+
 EALEAJ_weightex = EAJ_size/EAL_size*EAJEAL_im/EAL_ex*EALEAJ_rer*EAJ_py*EAJ_y/(EALEAJ_rer*EAJ_py*EAJ_y
 +EALEAA_rer*EAA_pex*EAJEAA_im
 +EALEAB_rer*EAB_pex*EAJEAB_im
@@ -45986,11 +45986,11 @@ EALEAJ_weightex = EAJ_size/EAL_size*EAJEAL_im/EAL_ex*EALEAJ_rer*EAJ_py*EAJ_y/(EA
 +EALRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EALEAJ_weight = EAL_pim*EAL_im/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAJ_weightim+EAL_pex*EAL_ex/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAJ_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EALEAK_weightim = EALEAK_rer*EAK_pex*EALEAK_im/(EAL_pim*EAL_im);
-// Effective real exchange rate: double weighting (exports)
+
 EALEAK_weightex = EAK_size/EAL_size*EAKEAL_im/EAL_ex*EALEAK_rer*EAK_py*EAK_y/(EALEAK_rer*EAK_py*EAK_y
 +EALEAA_rer*EAA_pex*EAKEAA_im
 +EALEAB_rer*EAB_pex*EAKEAB_im
@@ -46174,11 +46174,11 @@ EALEAK_weightex = EAK_size/EAL_size*EAKEAL_im/EAL_ex*EALEAK_rer*EAK_py*EAK_y/(EA
 +EALRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EALEAK_weight = EAL_pim*EAL_im/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAK_weightim+EAL_pex*EAL_ex/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALEAK_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EALRW_weightim = EALRW_rer*RW_pex*EALRW_im/(EAL_pim*EAL_im);
-// Effective real exchange rate: double weighting (exports)
+
 EALRW_weightex = RW_size/EAL_size*RWEAL_im/EAL_ex*EALRW_rer*RW_py*RW_y/(EALRW_rer*RW_py*RW_y
 +EALEAA_rer*EAA_pex*RWEAA_im
 +EALEAB_rer*EAB_pex*RWEAB_im
@@ -46362,11 +46362,11 @@ EALRW_weightex = RW_size/EAL_size*RWEAL_im/EAL_ex*EALRW_rer*RW_py*RW_y/(EALRW_re
 +EALRW_rer*RW_pex*USRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EALRW_weight = EAL_pim*EAL_im/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALRW_weightim+EAL_pex*EAL_ex/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALRW_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 EALUS_weightim = EALUS_rer*US_pex*EALUS_im/(EAL_pim*EAL_im);
-// Effective real exchange rate: double weighting (exports)
+
 EALUS_weightex = US_size/EAL_size*USEAL_im/EAL_ex*EALUS_rer*US_py*US_y/(EALUS_rer*US_py*US_y
 +EALEAA_rer*EAA_pex*USEAA_im
 +EALEAB_rer*EAB_pex*USEAB_im
@@ -46550,9 +46550,9 @@ EALUS_weightex = US_size/EAL_size*USEAL_im/EAL_ex*EALUS_rer*US_py*US_y/(EALUS_re
 +EALUS_rer*US_pex*RWUS_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 EALUS_weight = EAL_pim*EAL_im/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALUS_weightim+EAL_pex*EAL_ex/(EAL_pim*EAL_im+EAL_pex*EAL_ex)*EALUS_weightex;
-// Effective real exchange rate
+
 EAL_reer = 1
 *EALEAA_rer^EALEAA_weight
 *EALEAB_rer^EALEAB_weight
@@ -46568,7 +46568,7 @@ EAL_reer = 1
 *EALRW_rer^EALRW_weight
 *EALUS_rer^EALUS_weight
 ;
-// Effective terms of trade
+
 EAL_etot = 1
 *EALEAA_tot^EALEAA_weight
 *EALEAB_tot^EALEAB_weight
@@ -46584,10 +46584,10 @@ EAL_etot = 1
 *EALRW_tot^EALRW_weight
 *EALUS_tot^EALUS_weight
 ;
-//-----------------
-// Final-good firms
-//-----------------
-// Private consumption good (import)
+
+
+
+
 EAL_imc^((EAL_mumc-1)/EAL_mumc) =
 +EALEAA_numc ^(1/EAL_mumc)*EALEAA_imc^(1-1/EAL_mumc)
 +EALEAB_numc ^(1/EAL_mumc)*EALEAB_imc^(1-1/EAL_mumc)
@@ -46615,27 +46615,27 @@ EAL_imc^((EAL_mumc-1)/EAL_mumc) =
 -EALRW_numc
 -EALUS_numc
 )^(1/EAL_mumc)*EALEAJ_imc^(1-1/EAL_mumc);
-// Demand for bilateral consumption import goods
+
 EALEAA_imc = EALEAA_numc*((EAA_pex*EALEAA_rer)/EAL_pimc)^(-EAL_mumc)*EAL_imc;
-// Demand for bilateral consumption import goods
+
 EALEAB_imc = EALEAB_numc*((EAB_pex*EALEAB_rer)/EAL_pimc)^(-EAL_mumc)*EAL_imc;
-// Demand for bilateral consumption import goods
+
 EALEAC_imc = EALEAC_numc*((EAC_pex*EALEAC_rer)/EAL_pimc)^(-EAL_mumc)*EAL_imc;
-// Demand for bilateral consumption import goods
+
 EALEAD_imc = EALEAD_numc*((EAD_pex*EALEAD_rer)/EAL_pimc)^(-EAL_mumc)*EAL_imc;
-// Demand for bilateral consumption import goods
+
 EALEAE_imc = EALEAE_numc*((EAE_pex*EALEAE_rer)/EAL_pimc)^(-EAL_mumc)*EAL_imc;
-// Demand for bilateral consumption import goods
+
 EALEAF_imc = EALEAF_numc*((EAF_pex*EALEAF_rer)/EAL_pimc)^(-EAL_mumc)*EAL_imc;
-// Demand for bilateral consumption import goods
+
 EALEAG_imc = EALEAG_numc*((EAG_pex*EALEAG_rer)/EAL_pimc)^(-EAL_mumc)*EAL_imc;
-// Demand for bilateral consumption import goods
+
 EALEAH_imc = EALEAH_numc*((EAH_pex*EALEAH_rer)/EAL_pimc)^(-EAL_mumc)*EAL_imc;
-// Demand for bilateral consumption import goods
+
 EALEAI_imc = EALEAI_numc*((EAI_pex*EALEAI_rer)/EAL_pimc)^(-EAL_mumc)*EAL_imc;
-// Demand for bilateral consumption import goods
+
 EALEAK_imc = EALEAK_numc*((EAK_pex*EALEAK_rer)/EAL_pimc)^(-EAL_mumc)*EAL_imc;
-// Demand for bilateral consumption import goods
+
 EALUS_imc = EALUS_numc*((US_pex*EALUS_rer)/EAL_pimc)^(-EAL_mumc)*EAL_imc;
 EALEAJ_imc = (1
 -EALEAA_numc
@@ -46651,7 +46651,7 @@ EALEAJ_imc = (1
 -EALRW_numc
 -EALUS_numc
 )*((EAJ_pex*EALEAJ_rer)/EAL_pimc)^(-EAL_mumc)*EAL_imc;
-// Price of the consumption good (import)
+
 EAL_pimc^(1-EAL_mumc) =
 +EALEAA_numc * (EAA_pex*EALEAA_rer)^(1-EAL_mumc)
 +EALEAB_numc * (EAB_pex*EALEAB_rer)^(1-EAL_mumc)
@@ -46679,9 +46679,9 @@ EAL_pimc^(1-EAL_mumc) =
 -EALRW_numc
 -EALUS_numc
 )*(EAJ_pex*EALEAJ_rer)^(1-EAL_mumc);
-// Private consumption good (import) inflation
+
 EAL_piimc = EAL_pimc/EAL_pimc(-1)*EAL_pic;
-// Private consumption good (import)
+
 EAL_imi^((EAL_mumi-1)/EAL_mumi) =
 +EALEAA_numi ^(1/EAL_mumi)*EALEAA_imi^(1-1/EAL_mumi)
 +EALEAB_numi ^(1/EAL_mumi)*EALEAB_imi^(1-1/EAL_mumi)
@@ -46709,27 +46709,27 @@ EAL_imi^((EAL_mumi-1)/EAL_mumi) =
 -EALRW_numi
 -EALUS_numi
 )^(1/EAL_mumi)*EALEAJ_imi^(1-1/EAL_mumi);
-// Demand for bilateral consumption import goods
+
 EALEAA_imi = EALEAA_numi*((EAA_pex*EALEAA_rer)/EAL_pimi)^(-EAL_mumi)*EAL_imi;
-// Demand for bilateral consumption import goods
+
 EALEAB_imi = EALEAB_numi*((EAB_pex*EALEAB_rer)/EAL_pimi)^(-EAL_mumi)*EAL_imi;
-// Demand for bilateral consumption import goods
+
 EALEAC_imi = EALEAC_numi*((EAC_pex*EALEAC_rer)/EAL_pimi)^(-EAL_mumi)*EAL_imi;
-// Demand for bilateral consumption import goods
+
 EALEAD_imi = EALEAD_numi*((EAD_pex*EALEAD_rer)/EAL_pimi)^(-EAL_mumi)*EAL_imi;
-// Demand for bilateral consumption import goods
+
 EALEAE_imi = EALEAE_numi*((EAE_pex*EALEAE_rer)/EAL_pimi)^(-EAL_mumi)*EAL_imi;
-// Demand for bilateral consumption import goods
+
 EALEAF_imi = EALEAF_numi*((EAF_pex*EALEAF_rer)/EAL_pimi)^(-EAL_mumi)*EAL_imi;
-// Demand for bilateral consumption import goods
+
 EALEAG_imi = EALEAG_numi*((EAG_pex*EALEAG_rer)/EAL_pimi)^(-EAL_mumi)*EAL_imi;
-// Demand for bilateral consumption import goods
+
 EALEAH_imi = EALEAH_numi*((EAH_pex*EALEAH_rer)/EAL_pimi)^(-EAL_mumi)*EAL_imi;
-// Demand for bilateral consumption import goods
+
 EALEAI_imi = EALEAI_numi*((EAI_pex*EALEAI_rer)/EAL_pimi)^(-EAL_mumi)*EAL_imi;
-// Demand for bilateral consumption import goods
+
 EALEAK_imi = EALEAK_numi*((EAK_pex*EALEAK_rer)/EAL_pimi)^(-EAL_mumi)*EAL_imi;
-// Demand for bilateral consumption import goods
+
 EALUS_imi = EALUS_numi*((US_pex*EALUS_rer)/EAL_pimi)^(-EAL_mumi)*EAL_imi;
 EALEAJ_imi = (1
 -EALEAA_numi
@@ -46745,7 +46745,7 @@ EALEAJ_imi = (1
 -EALRW_numi
 -EALUS_numi
 )*((EAJ_pex*EALEAJ_rer)/EAL_pimi)^(-EAL_mumi)*EAL_imi;
-// Price of the consumption good (import)
+
 EAL_pimi^(1-EAL_mumi) =
 +EALEAA_numi * (EAA_pex*EALEAA_rer)^(1-EAL_mumi)
 +EALEAB_numi * (EAB_pex*EALEAB_rer)^(1-EAL_mumi)
@@ -46773,9 +46773,9 @@ EAL_pimi^(1-EAL_mumi) =
 -EALRW_numi
 -EALUS_numi
 )*(EAJ_pex*EALEAJ_rer)^(1-EAL_mumi);
-// Private consumption good (import) inflation
+
 EAL_piimi = EAL_pimi/EAL_pimi(-1)*EAL_pic;
-// Private consumption good (import)
+
 EAL_imcg^((EAL_mumcg-1)/EAL_mumcg) =
 +EALEAA_numcg ^(1/EAL_mumcg)*EALEAA_imcg^(1-1/EAL_mumcg)
 +EALEAB_numcg ^(1/EAL_mumcg)*EALEAB_imcg^(1-1/EAL_mumcg)
@@ -46803,27 +46803,27 @@ EAL_imcg^((EAL_mumcg-1)/EAL_mumcg) =
 -EALRW_numcg
 -EALUS_numcg
 )^(1/EAL_mumcg)*EALEAJ_imcg^(1-1/EAL_mumcg);
-// Demand for bilateral consumption import goods
+
 EALEAA_imcg = EALEAA_numcg*((EAA_pex*EALEAA_rer)/EAL_pimcg)^(-EAL_mumcg)*EAL_imcg;
-// Demand for bilateral consumption import goods
+
 EALEAB_imcg = EALEAB_numcg*((EAB_pex*EALEAB_rer)/EAL_pimcg)^(-EAL_mumcg)*EAL_imcg;
-// Demand for bilateral consumption import goods
+
 EALEAC_imcg = EALEAC_numcg*((EAC_pex*EALEAC_rer)/EAL_pimcg)^(-EAL_mumcg)*EAL_imcg;
-// Demand for bilateral consumption import goods
+
 EALEAD_imcg = EALEAD_numcg*((EAD_pex*EALEAD_rer)/EAL_pimcg)^(-EAL_mumcg)*EAL_imcg;
-// Demand for bilateral consumption import goods
+
 EALEAE_imcg = EALEAE_numcg*((EAE_pex*EALEAE_rer)/EAL_pimcg)^(-EAL_mumcg)*EAL_imcg;
-// Demand for bilateral consumption import goods
+
 EALEAF_imcg = EALEAF_numcg*((EAF_pex*EALEAF_rer)/EAL_pimcg)^(-EAL_mumcg)*EAL_imcg;
-// Demand for bilateral consumption import goods
+
 EALEAG_imcg = EALEAG_numcg*((EAG_pex*EALEAG_rer)/EAL_pimcg)^(-EAL_mumcg)*EAL_imcg;
-// Demand for bilateral consumption import goods
+
 EALEAH_imcg = EALEAH_numcg*((EAH_pex*EALEAH_rer)/EAL_pimcg)^(-EAL_mumcg)*EAL_imcg;
-// Demand for bilateral consumption import goods
+
 EALEAI_imcg = EALEAI_numcg*((EAI_pex*EALEAI_rer)/EAL_pimcg)^(-EAL_mumcg)*EAL_imcg;
-// Demand for bilateral consumption import goods
+
 EALEAK_imcg = EALEAK_numcg*((EAK_pex*EALEAK_rer)/EAL_pimcg)^(-EAL_mumcg)*EAL_imcg;
-// Demand for bilateral consumption import goods
+
 EALUS_imcg = EALUS_numcg*((US_pex*EALUS_rer)/EAL_pimcg)^(-EAL_mumcg)*EAL_imcg;
 EALEAJ_imcg = (1
 -EALEAA_numcg
@@ -46839,7 +46839,7 @@ EALEAJ_imcg = (1
 -EALRW_numcg
 -EALUS_numcg
 )*((EAJ_pex*EALEAJ_rer)/EAL_pimcg)^(-EAL_mumcg)*EAL_imcg;
-// Price of the consumption good (import)
+
 EAL_pimcg^(1-EAL_mumcg) =
 +EALEAA_numcg * (EAA_pex*EALEAA_rer)^(1-EAL_mumcg)
 +EALEAB_numcg * (EAB_pex*EALEAB_rer)^(1-EAL_mumcg)
@@ -46867,9 +46867,9 @@ EAL_pimcg^(1-EAL_mumcg) =
 -EALRW_numcg
 -EALUS_numcg
 )*(EAJ_pex*EALEAJ_rer)^(1-EAL_mumcg);
-// Private consumption good (import) inflation
+
 EAL_piimcg = EAL_pimcg/EAL_pimcg(-1)*EAL_pic;
-// Private consumption good (import)
+
 EAL_imig^((EAL_mumig-1)/EAL_mumig) =
 +EALEAA_numig ^(1/EAL_mumig)*EALEAA_imig^(1-1/EAL_mumig)
 +EALEAB_numig ^(1/EAL_mumig)*EALEAB_imig^(1-1/EAL_mumig)
@@ -46897,27 +46897,27 @@ EAL_imig^((EAL_mumig-1)/EAL_mumig) =
 -EALRW_numig
 -EALUS_numig
 )^(1/EAL_mumig)*EALEAJ_imig^(1-1/EAL_mumig);
-// Demand for bilateral consumption import goods
+
 EALEAA_imig = EALEAA_numig*((EAA_pex*EALEAA_rer)/EAL_pimig)^(-EAL_mumig)*EAL_imig;
-// Demand for bilateral consumption import goods
+
 EALEAB_imig = EALEAB_numig*((EAB_pex*EALEAB_rer)/EAL_pimig)^(-EAL_mumig)*EAL_imig;
-// Demand for bilateral consumption import goods
+
 EALEAC_imig = EALEAC_numig*((EAC_pex*EALEAC_rer)/EAL_pimig)^(-EAL_mumig)*EAL_imig;
-// Demand for bilateral consumption import goods
+
 EALEAD_imig = EALEAD_numig*((EAD_pex*EALEAD_rer)/EAL_pimig)^(-EAL_mumig)*EAL_imig;
-// Demand for bilateral consumption import goods
+
 EALEAE_imig = EALEAE_numig*((EAE_pex*EALEAE_rer)/EAL_pimig)^(-EAL_mumig)*EAL_imig;
-// Demand for bilateral consumption import goods
+
 EALEAF_imig = EALEAF_numig*((EAF_pex*EALEAF_rer)/EAL_pimig)^(-EAL_mumig)*EAL_imig;
-// Demand for bilateral consumption import goods
+
 EALEAG_imig = EALEAG_numig*((EAG_pex*EALEAG_rer)/EAL_pimig)^(-EAL_mumig)*EAL_imig;
-// Demand for bilateral consumption import goods
+
 EALEAH_imig = EALEAH_numig*((EAH_pex*EALEAH_rer)/EAL_pimig)^(-EAL_mumig)*EAL_imig;
-// Demand for bilateral consumption import goods
+
 EALEAI_imig = EALEAI_numig*((EAI_pex*EALEAI_rer)/EAL_pimig)^(-EAL_mumig)*EAL_imig;
-// Demand for bilateral consumption import goods
+
 EALEAK_imig = EALEAK_numig*((EAK_pex*EALEAK_rer)/EAL_pimig)^(-EAL_mumig)*EAL_imig;
-// Demand for bilateral consumption import goods
+
 EALUS_imig = EALUS_numig*((US_pex*EALUS_rer)/EAL_pimig)^(-EAL_mumig)*EAL_imig;
 EALEAJ_imig = (1
 -EALEAA_numig
@@ -46933,7 +46933,7 @@ EALEAJ_imig = (1
 -EALRW_numig
 -EALUS_numig
 )*((EAJ_pex*EALEAJ_rer)/EAL_pimig)^(-EAL_mumig)*EAL_imig;
-// Price of the consumption good (import)
+
 EAL_pimig^(1-EAL_mumig) =
 +EALEAA_numig * (EAA_pex*EALEAA_rer)^(1-EAL_mumig)
 +EALEAB_numig * (EAB_pex*EALEAB_rer)^(1-EAL_mumig)
@@ -46961,15 +46961,15 @@ EAL_pimig^(1-EAL_mumig) =
 -EALRW_numig
 -EALUS_numig
 )*(EAJ_pex*EALEAJ_rer)^(1-EAL_mumig);
-// Private consumption good (import) inflation
+
 EAL_piimig = EAL_pimig/EAL_pimig(-1)*EAL_pic;
-// Private consumption good (import) inflation
+
 EAL_piimc4 = EAL_pimc/EAL_pimc(-4)*EAL_pic4;
-// Private consumption good (import) inflation
+
 EAL_piex4 = EAL_pex/EAL_pex(-4)*EAL_pic4;
-// Wedge between aggregate demand and production, using EAL_x = RW_size/EAL_size*RW_im
+
 EAL_yst = EAL_sh*EAL_ht+EAL_sx*EAL_ex;
-// Aggregate demand for bilateral imported intermediate goods
+
 EALEAA_im = 
 +EALEAA_imc
 +EALEAA_imi
@@ -47048,18 +47048,18 @@ EALUS_im =
 +EALUS_imcg
 +EALUS_imig
 ;
-// Private consumption good firm
-// Private consumption good (tradable)
+
+
 EAL_ttc^((EAL_mutc-1)/EAL_mutc) = (EAL_nutc)^(1/EAL_mutc)*EAL_htc^(1-1/EAL_mutc)+(1-EAL_nutc)^(1/EAL_mutc)*EAL_imc^(1-1/EAL_mutc);
-// Private consumption good  (total)
+
 EAL_qc^((EAL_muc-1)/EAL_muc) = (EAL_nuc)^(1/EAL_muc)*EAL_ttc^(1-1/EAL_muc)+(1-EAL_nuc)^(1/EAL_muc)*EAL_ntc^(1-1/EAL_muc);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAL_ntc = (1-EAL_nuc)*(EAL_pnt)^(-EAL_muc)*EAL_qc;
-// Price of the consumption good (tradable)  
+
 EAL_pttc^(1-EAL_mutc) = (EAL_nutc)*EAL_pht^(1-EAL_mutc)+(1-EAL_nutc)*EAL_pimc^(1-EAL_mutc);
-// Price of the consumption good 
+
 1^(1-EAL_muc) = (EAL_nuc)*EAL_pttc^(1-EAL_muc)+(1-EAL_nuc)*EAL_pnt^(1-EAL_muc);
-// Demand for domestic intermediate goods
+
 EAL_htc = EAL_nutc*(EAL_pht/EAL_pttc)^(-EAL_mutc)*EAL_ttc;
 EALEAA_gammaimc = 0;
 EALEAA_gammaimcdag = 1;
@@ -47087,20 +47087,20 @@ EALRW_gammaimc = 0;
 EALRW_gammaimcdag = 1;
 EALUS_gammaimc = 0;
 EALUS_gammaimcdag = 1;
-// Private consumption good (tradable)
+
 EAL_tti^((EAL_muti-1)/EAL_muti) = (EAL_nuti)^(1/EAL_muti)*EAL_hti^(1-1/EAL_muti)+(1-EAL_nuti)^(1/EAL_muti)*EAL_imi^(1-1/EAL_muti);
-// Private consumption good  (total)
+
 EAL_qi^((EAL_mui-1)/EAL_mui) = (EAL_nui)^(1/EAL_mui)*EAL_tti^(1-1/EAL_mui)+(1-EAL_nui)^(1/EAL_mui)*EAL_nti^(1-1/EAL_mui);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAL_nti = (1-EAL_nui)*(EAL_pnt/EAL_pi)^(-EAL_mui)*EAL_qi;
-// Price of the consumption good (tradable)  
+
 EAL_ptti^(1-EAL_muti) = (EAL_nuti)*EAL_pht^(1-EAL_muti)+(1-EAL_nuti)*EAL_pimi^(1-EAL_muti);
-// Price of the consumption good 
+
 EAL_pi^(1-EAL_mui) = (EAL_nui)*EAL_ptti^(1-EAL_mui)+(1-EAL_nui)*EAL_pnt^(1-EAL_mui);
-// Auxiliary equation for the price of the investment good in steady state
-// this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
+
+
 EAL_pibar = EAL_pi;
-// Demand for domestic intermediate goods
+
 EAL_hti = EAL_nuti*(EAL_pht/EAL_ptti)^(-EAL_muti)*EAL_tti;
 EALEAA_gammaimi = 0;
 EALEAA_gammaimidag = 1;
@@ -47128,17 +47128,17 @@ EALRW_gammaimi = 0;
 EALRW_gammaimidag = 1;
 EALUS_gammaimi = 0;
 EALUS_gammaimidag = 1;
-// Private consumption good (tradable)
+
 EAL_ttcg^((EAL_mutcg-1)/EAL_mutcg) = (EAL_nutcg)^(1/EAL_mutcg)*EAL_htcg^(1-1/EAL_mutcg)+(1-EAL_nutcg)^(1/EAL_mutcg)*EAL_imcg^(1-1/EAL_mutcg);
-// Private consumption good  (total)
+
 EAL_qcg^((EAL_mucg-1)/EAL_mucg) = (EAL_nucg)^(1/EAL_mucg)*EAL_ttcg^(1-1/EAL_mucg)+(1-EAL_nucg)^(1/EAL_mucg)*EAL_ntcg^(1-1/EAL_mucg);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAL_ntcg = (1-EAL_nucg)*(EAL_pnt/EAL_pcg)^(-EAL_mucg)*EAL_qcg;
-// Price of the consumption good (tradable)  
+
 EAL_pttcg^(1-EAL_mutcg) = (EAL_nutcg)*EAL_pht^(1-EAL_mutcg)+(1-EAL_nutcg)*EAL_pimcg^(1-EAL_mutcg);
-// Price of the consumption good 
+
 EAL_pcg^(1-EAL_mucg) = (EAL_nucg)*EAL_pttcg^(1-EAL_mucg)+(1-EAL_nucg)*EAL_pnt^(1-EAL_mucg);
-// Demand for domestic intermediate goods
+
 EAL_htcg = EAL_nutcg*(EAL_pht/EAL_pttcg)^(-EAL_mutcg)*EAL_ttcg;
 EALEAA_gammaimcg = 0;
 EALEAA_gammaimcgdag = 1;
@@ -47166,17 +47166,17 @@ EALRW_gammaimcg = 0;
 EALRW_gammaimcgdag = 1;
 EALUS_gammaimcg = 0;
 EALUS_gammaimcgdag = 1;
-// Private consumption good (tradable)
+
 EAL_ttig^((EAL_mutig-1)/EAL_mutig) = (EAL_nutig)^(1/EAL_mutig)*EAL_htig^(1-1/EAL_mutig)+(1-EAL_nutig)^(1/EAL_mutig)*EAL_imig^(1-1/EAL_mutig);
-// Private consumption good  (total)
+
 EAL_qig^((EAL_muig-1)/EAL_muig) = (EAL_nuig)^(1/EAL_muig)*EAL_ttig^(1-1/EAL_muig)+(1-EAL_nuig)^(1/EAL_muig)*EAL_ntig^(1-1/EAL_muig);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 EAL_ntig = (1-EAL_nuig)*(EAL_pnt/EAL_pig)^(-EAL_muig)*EAL_qig;
-// Price of the consumption good (tradable)  
+
 EAL_pttig^(1-EAL_mutig) = (EAL_nutig)*EAL_pht^(1-EAL_mutig)+(1-EAL_nutig)*EAL_pimig^(1-EAL_mutig);
-// Price of the consumption good 
+
 EAL_pig^(1-EAL_muig) = (EAL_nuig)*EAL_pttig^(1-EAL_muig)+(1-EAL_nuig)*EAL_pnt^(1-EAL_muig);
-// Demand for domestic intermediate goods
+
 EAL_htig = EAL_nutig*(EAL_pht/EAL_pttig)^(-EAL_mutig)*EAL_ttig;
 EALEAA_gammaimig = 0;
 EALEAA_gammaimigdag = 1;
@@ -47204,7 +47204,7 @@ EALRW_gammaimig = 0;
 EALRW_gammaimigdag = 1;
 EALUS_gammaimig = 0;
 EALUS_gammaimigdag = 1;
-// Trade balance
+
 EAL_tb =
 +EAL_pex*EAA_size/EAL_size*EAAEAL_im
 -EAA_pex*EALEAA_rer*EALEAA_im
@@ -47233,7 +47233,7 @@ EAL_tb =
 +EAL_pex*US_size/EAL_size*USEAL_im
 -US_pex*EALUS_rer*EALUS_im
 ;
-// Aggregate exports (volume)
+
 EAL_ex =
 +EAA_size/EAL_size*EAAEAL_im
 +EAB_size/EAL_size*EABEAL_im
@@ -47249,131 +47249,131 @@ EAL_ex =
 +RW_size/EAL_size*RWEAL_im
 +US_size/EAL_size*USEAL_im
 ;
-//-------------
-//-------------
-// Fiscal and monetary authorities
-//-------------
-//-------------
-//-------------
-// Fiscal authority
-//-------------
-// Government budget constraint, using EAL_pg = EAL_pht
-// TODO: check the (1-EAL_gammab(-1)) adjustment here, which is not in the fiscal extention
+
+
+
+
+
+
+
+
+
+
 	EAL_pcg(-1)*EAL_cg(-1)+EAL_pig(-1)*EAL_ig(-1)+EAL_tr(-1)
 	+EAL_b(-1)*EAL_pic(-1)^(-1)+EAL_m(-2)*EAL_pic(-1)^(-1) = EAL_tauc(-1)*EAL_c(-1)+(EAL_taun(-1)+EAL_tauwh(-1))*(EAL_wi(-1)*EAL_ndi(-1)+EAL_wj(-1)*EAL_ndj(-1))+EAL_tauwf(-1)*EAL_w(-1)*EAL_nd(-1)+EAL_tauk(-1)*(EAL_rk(-1)*EAL_u(-1)-(EAL_gammau(-1)+EAL_delta)*EAL_pi(-1))*EAL_k(-1)+EAL_taud(-1)*EAL_d(-1)+EAL_t(-1)+(EAL_r(-1)*(1-EAL_gammab(-1)))^(-1)*EAL_b+EAL_m(-1);
-// Government spending, using EAL_pg = EAL_pht
+
 EAL_pcg*EAL_cg = EAL_cgy*EAL_pybar*EAL_ybar;
 EAL_pig*EAL_ig = EAL_igy*EAL_pybar*EAL_ybar;
 EAL_t = 0;
 EAL_b = EAL_bytarget*EAL_pybar*EAL_ybar;
-// Auxiliary equation for steady-state output
+
 EAL_ybar = EAL_y;
-// Auxiliary equation for steady-state output
+
 EAL_ytbar = EAL_yst;
-// Auxiliary equation for steady-state output
+
 EAL_ynbar = EAL_ysn;
-// Auxiliary equation for steady-state output deflator
+
 EAL_pybar = EAL_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
+
 EAL_trybar = EAL_tr/(EAL_pybar*EAL_ybar);
-// Auxiliary equation for determining the distribution of lump-sum taxes
+
 EAL_ti = EAL_upsilont*EAL_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
 upsilont = 0:            ti = 0, tj = 1/omega t
 upsilont = 1:            ti = tj = t
 upsilont = 1/(1-omega):  ti = 1/(1-omega) t, tj = 0. */
-// Auxiliary equation for determining the distribution of lump-sum transfers
+
 EAL_tri = EAL_upsilontr*EAL_tr;
 /* Note: Valid parameter space: 0 <= upsilontr <= 1/(1-omega) with
 upsilontr = 0:            tri = 0, trj = 1/omega tr
 upsilontr = 1:            tri = trj = tr
 upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
-//-------------
-// Monetary authority
-//-------------
+
+
+
 	EAL_r^4-1 = EAL_rrstar^4*EAL_pi4target-1;
 EAL_pic4 = EAL_pi4target;
 EAL_rr-1 = EAL_r/EAL_pi4target^(1/4)-1;
-// Equilibrium real interest rate
+
 EAL_rrstar-1 = 1/EAL_beta-1;
-//-------------
-//-------------
-// Aggregation, market clearing and resource constraint
-//-------------
-//-------------
-//-------------
-// Aggregation
-//-------------
-// Aggregate consumption
+
+
+
+
+
+
+
+
+
 EAL_c = (1-EAL_omega)*EAL_ci+EAL_omega*EAL_cj;
-// Aggregate money holdings
+
 EAL_m = (1-EAL_omega)*EAL_mi+EAL_omega*EAL_mj;
-// Aggregate capital stock
+
 EAL_k = (1-EAL_omega)*EAL_ki;
-// Aggregate investment
+
 EAL_i = (1-EAL_omega)*EAL_ii;
-// Aggregate lump-sum transfers
+
 EAL_trj = 
 1/EAL_omega*EAL_tr-(1-EAL_omega)/EAL_omega*EAL_tri
 ;
-// Aggregate lump-sum taxes
+
 EAL_tj = 
 1/EAL_omega*EAL_t-(1-EAL_omega)/EAL_omega*EAL_ti
 ;
-// Aggregate transaction costs
+
 EAL_gammav = (1-EAL_omega)*EAL_ci*EAL_gammavi+EAL_omega*EAL_cj*EAL_gammavj;
-//-------------
-// Market clearing
-//-------------
-// Labour markets for household I
-// Wedge between labour demand/hours worked and labour supply
+
+
+
+
+
 EAL_ni = EAL_si*EAL_ndi;
-// Wage dispersion
+
 EAL_si = (1-EAL_xii)*(EAL_witilde/EAL_wi)^(-EAL_etai)+EAL_xii*(EAL_wi(-1)/EAL_wi)^(-EAL_etai)*(EAL_pic/(EAL_pic(-1)^EAL_chii*EAL_pi4target^(1/4*(1-EAL_chii))))^(EAL_etai)*EAL_si(-1);
-// Labour markets for household J
-// Wedge between labour demand/hours worked and labour supply
+
+
 EAL_nj = EAL_sj*EAL_ndj;
-// Wage dispersion
+
 EAL_sj = (1-EAL_xij)*(EAL_wjtilde/EAL_wj)^(-EAL_etaj)+EAL_xij*(EAL_wj(-1)/EAL_wj)^(-EAL_etaj)*(EAL_pic/(EAL_pic(-1)^EAL_chij*EAL_pi4target^(1/4*(1-EAL_chij))))^(EAL_etaj)*EAL_sj(-1);
-// Rental market for capital
-// Equality of capital input and effective capital services
+
+
 EAL_u*EAL_k = EAL_kd;
-// Intermediate-good markets
-// Wedge between aggregate demand and production, using EAL_x = RW_size/EAL_size*RW_im
+
+
 EAL_ysn = EAL_snt*EAL_nt;
-//  nontradables aggregate demand
+
 EAL_nt = 
 +EAL_ntc
 +EAL_nti
 +EAL_ntcg
 +EAL_ntig
 ;
-// Aggregate demand for domestic intermediate goods, using EAL_hg = EAL_cg
+
 EAL_ht =
 +EAL_htc
 +EAL_hti
 +EAL_htcg
 +EAL_htig
 ;
-// Price dispersion in the domestic markets
+
 EAL_sh = (1-EAL_xih)*(EAL_phttilde/EAL_pht)^(-EAL_thetat)+EAL_xih*(EAL_piht/(EAL_piht(-1)^EAL_chih*EAL_pi4target^(1/4*(1-EAL_chih))))^EAL_thetat*EAL_sh(-1);
-// Price dispersion in the foreign markets
+
 EAL_sx = (1-EAL_xix)*(EAL_pextilde/EAL_pex)^(-EAL_thetat)+EAL_xix*(EAL_piex/(EAL_piex(-1)^EAL_chix*EAL_pi4target^(1/4*(1-EAL_chix))))^EAL_thetat*EAL_sx(-1);
-// Price dispersion in the domestic markets
+
 EAL_snt = (1-EAL_xin)*(EAL_pnttilde/EAL_pnt)^(-EAL_thetan)+EAL_xin*(EAL_pint/(EAL_pint(-1)^EAL_chin*EAL_pi4target^(1/4*(1-EAL_chin))))^EAL_thetan*EAL_snt(-1);
-// Final-good markets
-// Aggregate consumption and transaction cost
+
+
 EAL_qc = EAL_c+EAL_gammav;
-// Aggregate investment and capital utilisation cost
+
 EAL_qi = EAL_i+EAL_k*EAL_gammau;
-// Aggregate gov demand components added to use the same structure like in private components
+
 EAL_qcg = EAL_cg;
 EAL_qig = EAL_ig;
-//-------------
-// Resource constraint
-//-------------
-// TODO: why there is no adjustment cost for gov components
-// Aggregate nominal demand
+
+
+
+
+
 EAL_py*EAL_y = 
 +EAL_qc
 +EAL_pi*EAL_qi
@@ -47445,83 +47445,83 @@ EAL_py*EAL_y =
 -(US_pex*EALUS_rer)*EALUS_imcg
 -(US_pex*EALUS_rer)*EALUS_imig
 ;
-// Aggregate real demand
+
 EAL_y = EAL_yst+EAL_ysn;
-//-------------
-//-------------
-// Autoregressive shocks
-//-------------
-//-------------
-// Productivity shocks
+
+
+
+
+
+
 log(EAL_zt) = (1-EAL_rhozt)*log(EAL_ztbar)+EAL_rhozt*log(EAL_zt(-1))+EAL_epszt;
 log(EAL_zn) = (1-EAL_rhozn)*log(EAL_znbar)+EAL_rhozn*log(EAL_zn(-1))+EAL_epszn;
-// Government spending shock
+
 EAL_cgy = (1-EAL_rhocg)*EAL_cgybar+EAL_rhocg*EAL_cgy(-1)+EAL_epsgc;
 EAL_igy = (1-EAL_rhoig)*EAL_igybar+EAL_rhoig*EAL_igy(-1)+EAL_epsgi;
-// Transfer shock
+
 EAL_try = (1-EAL_rhotr)*EAL_trybar+EAL_rhotr*EAL_try(-1)+EAL_epstr;
-// Consumption tax shock
+
 EAL_tauc = (1-EAL_rhotauc)*EAL_taucbar+EAL_rhotauc*EAL_tauc(-1)+EAL_epstauc;
-// Dividend income tax shock
+
 EAL_taud = (1-EAL_rhotaud)*EAL_taudbar+EAL_rhotaud*EAL_taud(-1)+EAL_epstaud;
-// Capital income tax shock
+
 EAL_tauk = (1-EAL_rhotauk)*EAL_taukbar+EAL_rhotauk*EAL_tauk(-1)+EAL_epstauk;
-// Labour income tax shock
+
 EAL_taun = (1-EAL_rhotaun)*EAL_taunbar+EAL_rhotaun*EAL_taun(-1)+EAL_epstaun;
-// Payroll tax shock: households
+
 EAL_tauwh = (1-EAL_rhotauwh)*EAL_tauwhbar+EAL_rhotauwh*EAL_tauwh(-1)+EAL_epstauwh;
-// Payroll tax shock: firms
+
 EAL_tauwf = (1-EAL_rhotauwf)*EAL_tauwfbar+EAL_rhotauwf*EAL_tauwf(-1)+EAL_epstauwf;
-// Wage cost push shock
+
 EAL_wcst = (1-EAL_rhowcst)*EAL_wcstbar+EAL_rhowcst*EAL_wcst(-1)+EAL_epswcst;
-// Preference shock
+
 log(EAL_zcon) = (1-EAL_rhozcon)*log(EAL_zconbar)+EAL_rhozcon*log(EAL_zcon(-1))+EAL_epszcon;
-// Investment specific shock
+
 log(EAL_zinv) = (1-EAL_rhozinv)*log(EAL_zinvbar)+EAL_rhozinv*log(EAL_zinv(-1))+EAL_epszinv;
-//-------------
-//-------------
-// Conditions for calibration and reporting
-//-------------
-//-------------
-// Aggregate nominal consumption share
+
+
+
+
+
+
 EAL_cy = EAL_c/(EAL_py*EAL_y);
-// Aggregate nominal investment share
+
 EAL_iy = EAL_pi*EAL_i/(EAL_py*EAL_y);
-// Aggregate nominal import share  
+
 EAL_imy = (
 +EAL_pimc*EAL_imc
 +EAL_pimi*EAL_imi
 +EAL_pimcg*EAL_imcg
 +EAL_pimig*EAL_imig
 )/(EAL_py*EAL_y);
-// Aggregate nominal import share
+
 EAL_imcy = EAL_pimc*EAL_imc/(EAL_py*EAL_y);
 EAL_imiy = EAL_pimi*EAL_imi/(EAL_py*EAL_y);
 EAL_imcgy = EAL_pimcg*EAL_imcg/(EAL_py*EAL_y);
 EAL_imigy = EAL_pimig*EAL_imig/(EAL_py*EAL_y);
-// Aggregate debt-to-output ratio
+
 EAL_by = EAL_b/(EAL_pybar*EAL_ybar);
-// Aggregate lump-sum tax-to-output ratio
+
 EAL_ty = EAL_t/(EAL_pybar*EAL_ybar);
-// Aggregate labour cost share
+
 EAL_lcy = ((1+EAL_tauwf)*EAL_w*EAL_nd)/(EAL_py*EAL_y);
-// Aggregate nominal Wage share
+
 EAL_wy = (EAL_w*EAL_nd)/(EAL_py*EAL_y);
-// NT sector nominal Wage share
+
 EAL_wnty = (EAL_w*EAL_ndn)/(EAL_pnt*EAL_ysn);
-// T sector nominal Wage share
+
 EAL_whty = (EAL_w*EAL_ndt)/(EAL_pht*EAL_yst);
-// T sector share
+
 EAL_yhty = EAL_pht*EAL_yst/(EAL_py*EAL_y);
-// NT sector share
+
 EAL_ynty = EAL_pnt*EAL_ysn/(EAL_py*EAL_y);
-// Output gap
+
 EAL_ygap = 0;
-// Output growth (gross rate)
+
 EAL_ygrowth = EAL_y/EAL_y(-1);
-// Output growth (gross rate yoy)
+
 EAL_ygrowth4 = EAL_y/EAL_y(-4);
-// Domestic nominal output as a share of world nominal output
+
 EAL_yshare  = EAL_size*EAL_py*EAL_y/EAL_rer/(
 +EAA_size*EAA_py*EAA_y/EAA_rer
 +EAB_size*EAB_py*EAB_y/EAB_rer
@@ -47538,153 +47538,153 @@ EAL_yshare  = EAL_size*EAL_py*EAL_y/EAL_rer/(
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
-// Interest (semi-)elasticity of money demand
+
 EAL_epsilonm = -1/8*1/(EAL_r*(EAL_gammav2*EAL_r+EAL_r-1));
-// Trade balance-to-GDP ratio
+
 EAL_tby = EAL_tb/(EAL_py*EAL_y);
-// Bilateral shares
+
 EALEAA_imcy = (EAA_pex*EALEAA_rer)*EALEAA_imc/(EAL_py*EAL_y);
 EALEAA_imiy = (EAA_pex*EALEAA_rer)*EALEAA_imi/(EAL_py*EAL_y);
 EALEAA_imcgy = (EAA_pex*EALEAA_rer)*EALEAA_imcg/(EAL_py*EAL_y);
 EALEAA_imigy = (EAA_pex*EALEAA_rer)*EALEAA_imig/(EAL_py*EAL_y);
-// Exports of consumption goods to gdp
+
 EALEAA_excy  = EAA_size/EAL_size*EAL_pex*EAAEAL_imc/(EAL_py*EAL_y);
-// Exports of investment goods to gdp
+
 EALEAA_exiy  = EAA_size/EAL_size*EAL_pex*EAAEAL_imi/(EAL_py*EAL_y);
-// Bilateral shares
+
 EALEAB_imcy = (EAB_pex*EALEAB_rer)*EALEAB_imc/(EAL_py*EAL_y);
 EALEAB_imiy = (EAB_pex*EALEAB_rer)*EALEAB_imi/(EAL_py*EAL_y);
 EALEAB_imcgy = (EAB_pex*EALEAB_rer)*EALEAB_imcg/(EAL_py*EAL_y);
 EALEAB_imigy = (EAB_pex*EALEAB_rer)*EALEAB_imig/(EAL_py*EAL_y);
-// Exports of consumption goods to gdp
+
 EALEAB_excy  = EAB_size/EAL_size*EAL_pex*EABEAL_imc/(EAL_py*EAL_y);
-// Exports of investment goods to gdp
+
 EALEAB_exiy  = EAB_size/EAL_size*EAL_pex*EABEAL_imi/(EAL_py*EAL_y);
-// Bilateral shares
+
 EALEAC_imcy = (EAC_pex*EALEAC_rer)*EALEAC_imc/(EAL_py*EAL_y);
 EALEAC_imiy = (EAC_pex*EALEAC_rer)*EALEAC_imi/(EAL_py*EAL_y);
 EALEAC_imcgy = (EAC_pex*EALEAC_rer)*EALEAC_imcg/(EAL_py*EAL_y);
 EALEAC_imigy = (EAC_pex*EALEAC_rer)*EALEAC_imig/(EAL_py*EAL_y);
-// Exports of consumption goods to gdp
+
 EALEAC_excy  = EAC_size/EAL_size*EAL_pex*EACEAL_imc/(EAL_py*EAL_y);
-// Exports of investment goods to gdp
+
 EALEAC_exiy  = EAC_size/EAL_size*EAL_pex*EACEAL_imi/(EAL_py*EAL_y);
-// Bilateral shares
+
 EALEAD_imcy = (EAD_pex*EALEAD_rer)*EALEAD_imc/(EAL_py*EAL_y);
 EALEAD_imiy = (EAD_pex*EALEAD_rer)*EALEAD_imi/(EAL_py*EAL_y);
 EALEAD_imcgy = (EAD_pex*EALEAD_rer)*EALEAD_imcg/(EAL_py*EAL_y);
 EALEAD_imigy = (EAD_pex*EALEAD_rer)*EALEAD_imig/(EAL_py*EAL_y);
-// Exports of consumption goods to gdp
+
 EALEAD_excy  = EAD_size/EAL_size*EAL_pex*EADEAL_imc/(EAL_py*EAL_y);
-// Exports of investment goods to gdp
+
 EALEAD_exiy  = EAD_size/EAL_size*EAL_pex*EADEAL_imi/(EAL_py*EAL_y);
-// Bilateral shares
+
 EALEAE_imcy = (EAE_pex*EALEAE_rer)*EALEAE_imc/(EAL_py*EAL_y);
 EALEAE_imiy = (EAE_pex*EALEAE_rer)*EALEAE_imi/(EAL_py*EAL_y);
 EALEAE_imcgy = (EAE_pex*EALEAE_rer)*EALEAE_imcg/(EAL_py*EAL_y);
 EALEAE_imigy = (EAE_pex*EALEAE_rer)*EALEAE_imig/(EAL_py*EAL_y);
-// Exports of consumption goods to gdp
+
 EALEAE_excy  = EAE_size/EAL_size*EAL_pex*EAEEAL_imc/(EAL_py*EAL_y);
-// Exports of investment goods to gdp
+
 EALEAE_exiy  = EAE_size/EAL_size*EAL_pex*EAEEAL_imi/(EAL_py*EAL_y);
-// Bilateral shares
+
 EALEAF_imcy = (EAF_pex*EALEAF_rer)*EALEAF_imc/(EAL_py*EAL_y);
 EALEAF_imiy = (EAF_pex*EALEAF_rer)*EALEAF_imi/(EAL_py*EAL_y);
 EALEAF_imcgy = (EAF_pex*EALEAF_rer)*EALEAF_imcg/(EAL_py*EAL_y);
 EALEAF_imigy = (EAF_pex*EALEAF_rer)*EALEAF_imig/(EAL_py*EAL_y);
-// Exports of consumption goods to gdp
+
 EALEAF_excy  = EAF_size/EAL_size*EAL_pex*EAFEAL_imc/(EAL_py*EAL_y);
-// Exports of investment goods to gdp
+
 EALEAF_exiy  = EAF_size/EAL_size*EAL_pex*EAFEAL_imi/(EAL_py*EAL_y);
-// Bilateral shares
+
 EALEAG_imcy = (EAG_pex*EALEAG_rer)*EALEAG_imc/(EAL_py*EAL_y);
 EALEAG_imiy = (EAG_pex*EALEAG_rer)*EALEAG_imi/(EAL_py*EAL_y);
 EALEAG_imcgy = (EAG_pex*EALEAG_rer)*EALEAG_imcg/(EAL_py*EAL_y);
 EALEAG_imigy = (EAG_pex*EALEAG_rer)*EALEAG_imig/(EAL_py*EAL_y);
-// Exports of consumption goods to gdp
+
 EALEAG_excy  = EAG_size/EAL_size*EAL_pex*EAGEAL_imc/(EAL_py*EAL_y);
-// Exports of investment goods to gdp
+
 EALEAG_exiy  = EAG_size/EAL_size*EAL_pex*EAGEAL_imi/(EAL_py*EAL_y);
-// Bilateral shares
+
 EALEAH_imcy = (EAH_pex*EALEAH_rer)*EALEAH_imc/(EAL_py*EAL_y);
 EALEAH_imiy = (EAH_pex*EALEAH_rer)*EALEAH_imi/(EAL_py*EAL_y);
 EALEAH_imcgy = (EAH_pex*EALEAH_rer)*EALEAH_imcg/(EAL_py*EAL_y);
 EALEAH_imigy = (EAH_pex*EALEAH_rer)*EALEAH_imig/(EAL_py*EAL_y);
-// Exports of consumption goods to gdp
+
 EALEAH_excy  = EAH_size/EAL_size*EAL_pex*EAHEAL_imc/(EAL_py*EAL_y);
-// Exports of investment goods to gdp
+
 EALEAH_exiy  = EAH_size/EAL_size*EAL_pex*EAHEAL_imi/(EAL_py*EAL_y);
-// Bilateral shares
+
 EALEAI_imcy = (EAI_pex*EALEAI_rer)*EALEAI_imc/(EAL_py*EAL_y);
 EALEAI_imiy = (EAI_pex*EALEAI_rer)*EALEAI_imi/(EAL_py*EAL_y);
 EALEAI_imcgy = (EAI_pex*EALEAI_rer)*EALEAI_imcg/(EAL_py*EAL_y);
 EALEAI_imigy = (EAI_pex*EALEAI_rer)*EALEAI_imig/(EAL_py*EAL_y);
-// Exports of consumption goods to gdp
+
 EALEAI_excy  = EAI_size/EAL_size*EAL_pex*EAIEAL_imc/(EAL_py*EAL_y);
-// Exports of investment goods to gdp
+
 EALEAI_exiy  = EAI_size/EAL_size*EAL_pex*EAIEAL_imi/(EAL_py*EAL_y);
-// Bilateral shares
+
 EALEAJ_imcy = (EAJ_pex*EALEAJ_rer)*EALEAJ_imc/(EAL_py*EAL_y);
 EALEAJ_imiy = (EAJ_pex*EALEAJ_rer)*EALEAJ_imi/(EAL_py*EAL_y);
 EALEAJ_imcgy = (EAJ_pex*EALEAJ_rer)*EALEAJ_imcg/(EAL_py*EAL_y);
 EALEAJ_imigy = (EAJ_pex*EALEAJ_rer)*EALEAJ_imig/(EAL_py*EAL_y);
-// Exports of consumption goods to gdp
+
 EALEAJ_excy  = EAJ_size/EAL_size*EAL_pex*EAJEAL_imc/(EAL_py*EAL_y);
-// Exports of investment goods to gdp
+
 EALEAJ_exiy  = EAJ_size/EAL_size*EAL_pex*EAJEAL_imi/(EAL_py*EAL_y);
-// Bilateral shares
+
 EALEAK_imcy = (EAK_pex*EALEAK_rer)*EALEAK_imc/(EAL_py*EAL_y);
 EALEAK_imiy = (EAK_pex*EALEAK_rer)*EALEAK_imi/(EAL_py*EAL_y);
 EALEAK_imcgy = (EAK_pex*EALEAK_rer)*EALEAK_imcg/(EAL_py*EAL_y);
 EALEAK_imigy = (EAK_pex*EALEAK_rer)*EALEAK_imig/(EAL_py*EAL_y);
-// Exports of consumption goods to gdp
+
 EALEAK_excy  = EAK_size/EAL_size*EAL_pex*EAKEAL_imc/(EAL_py*EAL_y);
-// Exports of investment goods to gdp
+
 EALEAK_exiy  = EAK_size/EAL_size*EAL_pex*EAKEAL_imi/(EAL_py*EAL_y);
-// Bilateral shares
+
 EALRW_imcy = (RW_pex*EALRW_rer)*EALRW_imc/(EAL_py*EAL_y);
 EALRW_imiy = (RW_pex*EALRW_rer)*EALRW_imi/(EAL_py*EAL_y);
 EALRW_imcgy = (RW_pex*EALRW_rer)*EALRW_imcg/(EAL_py*EAL_y);
 EALRW_imigy = (RW_pex*EALRW_rer)*EALRW_imig/(EAL_py*EAL_y);
-// Exports of consumption goods to gdp
+
 EALRW_excy  = RW_size/EAL_size*EAL_pex*RWEAL_imc/(EAL_py*EAL_y);
-// Exports of investment goods to gdp
+
 EALRW_exiy  = RW_size/EAL_size*EAL_pex*RWEAL_imi/(EAL_py*EAL_y);
-// Bilateral shares
+
 EALUS_imcy = (US_pex*EALUS_rer)*EALUS_imc/(EAL_py*EAL_y);
 EALUS_imiy = (US_pex*EALUS_rer)*EALUS_imi/(EAL_py*EAL_y);
 EALUS_imcgy = (US_pex*EALUS_rer)*EALUS_imcg/(EAL_py*EAL_y);
 EALUS_imigy = (US_pex*EALUS_rer)*EALUS_imig/(EAL_py*EAL_y);
-// Exports of consumption goods to gdp
+
 EALUS_excy  = US_size/EAL_size*EAL_pex*USEAL_imc/(EAL_py*EAL_y);
-// Exports of investment goods to gdp
+
 EALUS_exiy  = US_size/EAL_size*EAL_pex*USEAL_imi/(EAL_py*EAL_y);
-// Internal real exchange rate
+
 EAL_internalrer = EAL_pnt/EAL_pttc;
-// Core model begins
-//-------------
-//-------------
-// Households
-//-------------
-//-------------
-//-------------
-// Household I
-//-------------
-// Utility
+
+
+
+
+
+
+
+
+
+
 RW_utili = 
 RW_zcon*log(RW_ci-RW_kappa*RW_ci(-1))-1/(1+RW_zeta)*(RW_ni)^(1+RW_zeta)+RW_beta*RW_utili(+1)
 ;
-// Marginal utility of consumption
+
 RW_lambdai*(1+RW_tauc+RW_gammavi+RW_vi*RW_gammavider) = RW_zcon*(RW_ci-RW_kappa*RW_ci(-1))^(-RW_sigma);
-// Euler equation for government bonds
+
 RW_r = RW_beta^(-1)*RW_lambdai/RW_lambdai(+1)*RW_pic(+1);
-// Euler equation for money
+
 RW_vi^(2)*RW_gammavider = 1-RW_beta*RW_lambdai(+1)/(RW_lambdai*RW_pic(+1));
-// Consumption-based velocity
+
 RW_vi = RW_ci/RW_mi;
-// Transaction cost
+
 RW_gammavi = RW_gammav1*RW_vi+RW_gammav2/RW_vi-2*(RW_gammav1*RW_gammav2)^(1/2);
-// Derivative of transaction cost
+
 RW_gammavider = RW_gammav1-RW_gammav2*RW_vi^(-2);
 RW_delta = RW_ii/RW_ki;
 RW_gammai = 0;
@@ -47693,355 +47693,355 @@ RW_gammau = 0;
 RW_gammauder = ((RW_beta^(-1)-1+RW_delta)*RW_qbar-RW_delta*RW_taukbar*RW_pibar)/((1-RW_taukbar)*RW_pibar);
 RW_u = 1;
 RW_pi = RW_q;
-// Auxiliary equation for Tobin's Q in steady state
+
 RW_qbar = RW_q;
-// Rate of return on capital
+
 RW_q = RW_beta*((1-RW_tauk)*RW_rk+(RW_tauk*RW_delta)*RW_pi+(1-RW_delta)*RW_q);
-// Optimal wage contract (FOC)
+
 RW_witilde^(1+RW_etai*RW_zeta) = RW_etai/(RW_etai-1)*RW_fi/RW_gi+RW_wcst;
-// Definition of fi
+
 RW_fi = RW_wi^(RW_etai*(1+RW_zeta))*RW_ndi^(1+RW_zeta)+RW_xii*RW_beta*(RW_pic(+1)/(RW_pic^RW_chii*RW_pi4target^(1/4*(1-RW_chii))))^(RW_etai*(1+RW_zeta))*RW_fi(+1);
-// Definition of gi
+
 RW_gi = RW_lambdai*(1-RW_taun-RW_tauwh)*RW_wi^RW_etai*RW_ndi+RW_xii*RW_beta*(RW_pic(+1)/(RW_pic^RW_chii*RW_pi4target^(1/4*(1-RW_chii))))^(RW_etai-1)*RW_gi(+1);
-// Aggregate wage rate
+
 RW_wi^(1-RW_etai) = (1-RW_xii)*RW_witilde^(1-RW_etai)+RW_xii*RW_wi(-1)^(1-RW_etai)*(RW_pic(-1)^RW_chii*RW_pi4target^(1/4*(1-RW_chii))/RW_pic)^(1-RW_etai);
-//-------------
-// Household J
-//-------------
-// Utility
+
+
+
+
 RW_utilj = 
 RW_zcon*log(RW_cj-RW_kappa*RW_cj(-1))-1/(1+RW_zeta)*RW_nj^(1+RW_zeta)+RW_beta*RW_utilj(+1)
 ;
-// Marginal utility of consumption
+
 RW_lambdaj*(1+RW_tauc+RW_gammavj+RW_vj*RW_gammavjder) = RW_zcon*(RW_cj-RW_kappa*RW_cj(-1))^(-RW_sigma);
-// Budget constraint
+
 (1+RW_tauc+RW_gammavj)*RW_cj+RW_mj = (1-RW_taun-RW_tauwh)*RW_wj*RW_nj+RW_trj-RW_tj+RW_mj(-1)*RW_pic^(-1);
-// Euler equation for money
+
 RW_vj^(2)*RW_gammavjder = 1-RW_beta*RW_lambdaj(+1)/(RW_lambdaj*RW_pic(+1));
-// Consumption-based velocity
+
 RW_vj = RW_cj/RW_mj;
-// Transaction technology
+
 RW_gammavj = RW_gammav1*RW_vj+RW_gammav2/RW_vj-2*(RW_gammav1*RW_gammav2)^(1/2);
-// Derivative of transaction technology
+
 RW_gammavjder = RW_gammav1-RW_gammav2*RW_vj^(-2);
-// Optimal wage contract (FOC)
+
 RW_wjtilde^(1+RW_etaj*RW_zeta) = RW_etaj/(RW_etaj-1)*RW_fj/RW_gj+RW_wcst;
-// Definition of fj
+
 RW_fj = RW_wj^(RW_etaj*(1+RW_zeta))*RW_ndj^(1+RW_zeta)+RW_xij*RW_beta*(RW_pic(+1)/(RW_pic^RW_chij*RW_pi4target^(1/4*(1-RW_chij))))^(RW_etaj*(1+RW_zeta))*RW_fj(+1);
-// Definition of gj
+
 RW_gj = RW_lambdaj*(1-RW_taun-RW_tauwh)*RW_wj^RW_etaj*RW_ndj+RW_xij*RW_beta*(RW_pic(+1)/(RW_pic^RW_chij*RW_pi4target^(1/4*(1-RW_chij))))^(RW_etaj-1)*RW_gj(+1);
-// Aggregate wage rate
+
 RW_wj^(1-RW_etaj) = (1-RW_xij)*RW_wjtilde^(1-RW_etaj)+RW_xij*RW_wj(-1)^(1-RW_etaj)*(RW_pic(-1)^RW_chij*RW_pi4target^(1/4*(1-RW_chij))/RW_pic)^(1-RW_etaj);
-//-------------
-//-------------
-// Firms
-//-------------
-//-------------
-//-------------
-// Intermediate-good firms
-//-------------
-// Production function tradable
+
+
+
+
+
+
+
+
+
 RW_yst = RW_zt*RW_kdt^RW_alphat*RW_ndt^(1-RW_alphat)-RW_psitbar;
-// Production function nontradable
+
 RW_ysn = RW_zn*RW_kdn^RW_alphan*RW_ndn^(1-RW_alphan)-RW_psinbar;
-// Real marginal cost tradable
+
 RW_mct = 1/(RW_zt*(RW_alphat)^(RW_alphat)*(1-RW_alphat)^(1-RW_alphat))*RW_rk^(RW_alphat)*((1+RW_tauwf)*RW_w)^(1-RW_alphat);
-// Real marginal cost nontradable
+
 RW_mcn = 1/(RW_zn*(RW_alphan)^(RW_alphan)*(1-RW_alphan)^(1-RW_alphan))*RW_rk^(RW_alphan)*((1+RW_tauwf)*RW_w)^(1-RW_alphan);
-// Wage Inflation (qoq)
+
 RW_piw = RW_w/RW_w(-1)*RW_pic;
-// Wage Inflation (yoy)
+
 RW_piw4 = RW_pic4;
-// Auxiliary equation for steady-state fixed cost
+
 RW_psitbar = RW_psit*RW_ytbar;
-// Auxiliary equation for steady-state fixed cost
+
 RW_psinbar = RW_psin*RW_ynbar;
-// Capital input (FOC)
+
 RW_rk = RW_alphat*(RW_yst+RW_psitbar)/RW_kdt*RW_mct;
-// Capital input (FOC)
+
 RW_rk = RW_alphan*(RW_ysn+RW_psinbar)/RW_kdn*RW_mcn;
-// Total capital demand
+
 RW_kd = RW_kdt+RW_kdn;
-// Demand for labour services by household I
+
 RW_ndi = 
 (1-RW_omega)*(RW_wi/RW_w)^(-RW_eta)*RW_nd
 ;
-// Demand for labour services by household J
+
 RW_ndj = 
 RW_omega*(RW_wj/RW_w)^(-RW_eta)*RW_nd
 ;
-// Aggregate labour demand
+
 RW_nd^(1-1/RW_eta) = 
 (1-RW_omega)^(1/RW_eta)*RW_ndi^(1-1/RW_eta)+RW_omega^(1/RW_eta)*RW_ndj^(1-1/RW_eta)
 ;
-// Total demand 
+
 RW_nd = RW_ndt+RW_ndn;
-// Aggregate dividends
+
 RW_d = RW_py*RW_y-RW_rk*RW_kd-(1+RW_tauwf)*RW_w*RW_nd;
-// Non-tradable sector dividends
+
 RW_dn = RW_pnt*RW_ysn-RW_rk*RW_kdn-(1+RW_tauwf)*RW_w*RW_ndn;
-// Tradable sector dividends
+
 RW_dt = RW_pht*RW_ht
 +RW_pex*RW_ex
 -RW_rk*RW_kdt-(1+RW_tauwf)*RW_w*RW_ndt;
-// Optimal price contract set in domestic markets (FOC)
+
 RW_phttilde/RW_pht = RW_thetat/(RW_thetat-1)*RW_fh/RW_gh;
-// Definition of fh
+
 RW_fh = RW_mct*RW_ht+RW_xih*RW_beta*RW_lambdai(+1)/RW_lambdai*(RW_piht(+1)/(RW_piht^RW_chih*RW_pi4target^(1/4*(1-RW_chih))))^RW_thetat*RW_fh(+1);
-// Definition of gh
+
 RW_gh = RW_pht*RW_ht+RW_xih*RW_beta*RW_lambdai(+1)/RW_lambdai*(RW_piht(+1)/(RW_piht^RW_chih*RW_pi4target^(1/4*(1-RW_chih))))^(RW_thetat-1)*RW_gh(+1);
-// Aggregate intermediate-good price dynamics
+
 RW_pht^(1-RW_thetat) = (1-RW_xih)*RW_phttilde^(1-RW_thetat)+RW_xih*(RW_pht(-1)/RW_pic)^(1-RW_thetat)*(RW_piht(-1)^RW_chih*RW_pi4target^(1/4*(1-RW_chih)))^(1-RW_thetat);
-// Intermediate-good price inflation
+
 RW_piht = RW_pht/RW_pht(-1)*RW_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 RW_pnttilde/RW_pnt = RW_thetan/(RW_thetan-1)*RW_fn/RW_gn;
-// Definition of fn
+
 RW_fn = RW_mcn*RW_nt+RW_xin*RW_beta*RW_lambdai(+1)/RW_lambdai*(RW_pint(+1)/(RW_pint^RW_chin*RW_pi4target^(1/4*(1-RW_chin))))^RW_thetan*RW_fn(+1);
-// Definition of gn
+
 RW_gn = RW_pnt*RW_nt+RW_xin*RW_beta*RW_lambdai(+1)/RW_lambdai*(RW_pint(+1)/(RW_pint^RW_chin*RW_pi4target^(1/4*(1-RW_chin))))^(RW_thetan-1)*RW_gn(+1);
-// Aggregate intermediate-good price dynamics
+
 RW_pnt^(1-RW_thetan) = (1-RW_xin)*RW_pnttilde^(1-RW_thetan)+RW_xin*(RW_pnt(-1)/RW_pic)^(1-RW_thetan)*(RW_pint(-1)^RW_chin*RW_pi4target^(1/4*(1-RW_chin)))^(1-RW_thetan);
-// Intermediate-good price inflation
+
 RW_pint = RW_pnt/RW_pnt(-1)*RW_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 RW_pextilde/RW_pex = RW_thetat/(RW_thetat-1)*RW_fx/RW_gx;
-// Definition of fh
+
 RW_fx = RW_mct*RW_ex+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(RW_piex(+1)/(RW_piex^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^RW_thetat*RW_fx(+1);
-// Definition of gh
+
 RW_gx = RW_pex*RW_ex+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(RW_piex(+1)/(RW_piex^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^(RW_thetat-1)*RW_gx(+1);
-// Aggregate intermediate-good price dynamics
+
 RW_pex^(1-RW_thetat) = (1-RW_xix)*RW_pextilde^(1-RW_thetat)+RW_xix*(RW_pex(-1)/RW_pic)^(1-RW_thetat)*(RW_piex(-1)^RW_chix*RW_pi4target^(1/4*(1-RW_chix)))^(1-RW_thetat);
-// Intermediate-good price inflation
+
 RW_piex = RW_pex/RW_pex(-1)*RW_pic;
-//---------------
-// import pricing
-//---------------
-// Optimal price contract set in foreign markets (FOC), using RW_pxtilde = EAA_pimtilde
-// EAARW_pimtilde/EAARW_pim = RW_cpim*RW_thetat/(RW_thetat-1)*RWEAA_fx/RWEAA_gx;
-// Definition of fx
-// RWEAA_fx = EAA_size/RW_size*EAARW_im*RW_mct+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EAARW_piim(+1)/(EAARW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^RW_thetat*RWEAA_fx(+1);
-// Definition of gx   
-// RWEAA_gx = RWEAA_rer*EAARW_pim*EAA_size/RW_size*EAARW_im+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EAARW_piim(+1)/(EAARW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^(RW_thetat-1)*RWEAA_gx(+1);
-// Aggregate intermediate-good price dynamics, using RW_px = EAA_pim
-// EAARW_pim^(1-RW_thetat) = (1-RW_xix)*EAARW_pimtilde^(1-RW_thetat)+RW_xix*(EAARW_pim(-1)/EAA_pic)^(1-RW_thetat)*(EAARW_piim(-1)^RW_chix*EAA_pi4target^(1/4*(1-RW_chih)))^(1-RW_thetat);
-// Intermediate-good price inflation, using RW_pix = EAA_piim
-// EAARW_piim = EAARW_pim/EAARW_pim(-1)*EAA_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 RWEAA_rer = RW_rer/EAA_rer;
-// Auxiliary equation for steady-state output
+
 RWEAA_rerbar = RWEAA_rer;
-//Terms of Trade
+
 RWEAA_tot = EAA_pex*RWEAA_rer/RW_pex;
-// Optimal price contract set in foreign markets (FOC), using RW_pxtilde = EAB_pimtilde
-// EABRW_pimtilde/EABRW_pim = RW_cpim*RW_thetat/(RW_thetat-1)*RWEAB_fx/RWEAB_gx;
-// Definition of fx
-// RWEAB_fx = EAB_size/RW_size*EABRW_im*RW_mct+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EABRW_piim(+1)/(EABRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^RW_thetat*RWEAB_fx(+1);
-// Definition of gx   
-// RWEAB_gx = RWEAB_rer*EABRW_pim*EAB_size/RW_size*EABRW_im+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EABRW_piim(+1)/(EABRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^(RW_thetat-1)*RWEAB_gx(+1);
-// Aggregate intermediate-good price dynamics, using RW_px = EAB_pim
-// EABRW_pim^(1-RW_thetat) = (1-RW_xix)*EABRW_pimtilde^(1-RW_thetat)+RW_xix*(EABRW_pim(-1)/EAB_pic)^(1-RW_thetat)*(EABRW_piim(-1)^RW_chix*EAB_pi4target^(1/4*(1-RW_chih)))^(1-RW_thetat);
-// Intermediate-good price inflation, using RW_pix = EAB_piim
-// EABRW_piim = EABRW_pim/EABRW_pim(-1)*EAB_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 RWEAB_rer = RW_rer/EAB_rer;
-// Auxiliary equation for steady-state output
+
 RWEAB_rerbar = RWEAB_rer;
-//Terms of Trade
+
 RWEAB_tot = EAB_pex*RWEAB_rer/RW_pex;
-// Optimal price contract set in foreign markets (FOC), using RW_pxtilde = EAC_pimtilde
-// EACRW_pimtilde/EACRW_pim = RW_cpim*RW_thetat/(RW_thetat-1)*RWEAC_fx/RWEAC_gx;
-// Definition of fx
-// RWEAC_fx = EAC_size/RW_size*EACRW_im*RW_mct+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EACRW_piim(+1)/(EACRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^RW_thetat*RWEAC_fx(+1);
-// Definition of gx   
-// RWEAC_gx = RWEAC_rer*EACRW_pim*EAC_size/RW_size*EACRW_im+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EACRW_piim(+1)/(EACRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^(RW_thetat-1)*RWEAC_gx(+1);
-// Aggregate intermediate-good price dynamics, using RW_px = EAC_pim
-// EACRW_pim^(1-RW_thetat) = (1-RW_xix)*EACRW_pimtilde^(1-RW_thetat)+RW_xix*(EACRW_pim(-1)/EAC_pic)^(1-RW_thetat)*(EACRW_piim(-1)^RW_chix*EAC_pi4target^(1/4*(1-RW_chih)))^(1-RW_thetat);
-// Intermediate-good price inflation, using RW_pix = EAC_piim
-// EACRW_piim = EACRW_pim/EACRW_pim(-1)*EAC_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 RWEAC_rer = RW_rer/EAC_rer;
-// Auxiliary equation for steady-state output
+
 RWEAC_rerbar = RWEAC_rer;
-//Terms of Trade
+
 RWEAC_tot = EAC_pex*RWEAC_rer/RW_pex;
-// Optimal price contract set in foreign markets (FOC), using RW_pxtilde = EAD_pimtilde
-// EADRW_pimtilde/EADRW_pim = RW_cpim*RW_thetat/(RW_thetat-1)*RWEAD_fx/RWEAD_gx;
-// Definition of fx
-// RWEAD_fx = EAD_size/RW_size*EADRW_im*RW_mct+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EADRW_piim(+1)/(EADRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^RW_thetat*RWEAD_fx(+1);
-// Definition of gx   
-// RWEAD_gx = RWEAD_rer*EADRW_pim*EAD_size/RW_size*EADRW_im+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EADRW_piim(+1)/(EADRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^(RW_thetat-1)*RWEAD_gx(+1);
-// Aggregate intermediate-good price dynamics, using RW_px = EAD_pim
-// EADRW_pim^(1-RW_thetat) = (1-RW_xix)*EADRW_pimtilde^(1-RW_thetat)+RW_xix*(EADRW_pim(-1)/EAD_pic)^(1-RW_thetat)*(EADRW_piim(-1)^RW_chix*EAD_pi4target^(1/4*(1-RW_chih)))^(1-RW_thetat);
-// Intermediate-good price inflation, using RW_pix = EAD_piim
-// EADRW_piim = EADRW_pim/EADRW_pim(-1)*EAD_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 RWEAD_rer = RW_rer/EAD_rer;
-// Auxiliary equation for steady-state output
+
 RWEAD_rerbar = RWEAD_rer;
-//Terms of Trade
+
 RWEAD_tot = EAD_pex*RWEAD_rer/RW_pex;
-// Optimal price contract set in foreign markets (FOC), using RW_pxtilde = EAE_pimtilde
-// EAERW_pimtilde/EAERW_pim = RW_cpim*RW_thetat/(RW_thetat-1)*RWEAE_fx/RWEAE_gx;
-// Definition of fx
-// RWEAE_fx = EAE_size/RW_size*EAERW_im*RW_mct+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EAERW_piim(+1)/(EAERW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^RW_thetat*RWEAE_fx(+1);
-// Definition of gx   
-// RWEAE_gx = RWEAE_rer*EAERW_pim*EAE_size/RW_size*EAERW_im+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EAERW_piim(+1)/(EAERW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^(RW_thetat-1)*RWEAE_gx(+1);
-// Aggregate intermediate-good price dynamics, using RW_px = EAE_pim
-// EAERW_pim^(1-RW_thetat) = (1-RW_xix)*EAERW_pimtilde^(1-RW_thetat)+RW_xix*(EAERW_pim(-1)/EAE_pic)^(1-RW_thetat)*(EAERW_piim(-1)^RW_chix*EAE_pi4target^(1/4*(1-RW_chih)))^(1-RW_thetat);
-// Intermediate-good price inflation, using RW_pix = EAE_piim
-// EAERW_piim = EAERW_pim/EAERW_pim(-1)*EAE_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 RWEAE_rer = RW_rer/EAE_rer;
-// Auxiliary equation for steady-state output
+
 RWEAE_rerbar = RWEAE_rer;
-//Terms of Trade
+
 RWEAE_tot = EAE_pex*RWEAE_rer/RW_pex;
-// Optimal price contract set in foreign markets (FOC), using RW_pxtilde = EAF_pimtilde
-// EAFRW_pimtilde/EAFRW_pim = RW_cpim*RW_thetat/(RW_thetat-1)*RWEAF_fx/RWEAF_gx;
-// Definition of fx
-// RWEAF_fx = EAF_size/RW_size*EAFRW_im*RW_mct+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EAFRW_piim(+1)/(EAFRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^RW_thetat*RWEAF_fx(+1);
-// Definition of gx   
-// RWEAF_gx = RWEAF_rer*EAFRW_pim*EAF_size/RW_size*EAFRW_im+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EAFRW_piim(+1)/(EAFRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^(RW_thetat-1)*RWEAF_gx(+1);
-// Aggregate intermediate-good price dynamics, using RW_px = EAF_pim
-// EAFRW_pim^(1-RW_thetat) = (1-RW_xix)*EAFRW_pimtilde^(1-RW_thetat)+RW_xix*(EAFRW_pim(-1)/EAF_pic)^(1-RW_thetat)*(EAFRW_piim(-1)^RW_chix*EAF_pi4target^(1/4*(1-RW_chih)))^(1-RW_thetat);
-// Intermediate-good price inflation, using RW_pix = EAF_piim
-// EAFRW_piim = EAFRW_pim/EAFRW_pim(-1)*EAF_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 RWEAF_rer = RW_rer/EAF_rer;
-// Auxiliary equation for steady-state output
+
 RWEAF_rerbar = RWEAF_rer;
-//Terms of Trade
+
 RWEAF_tot = EAF_pex*RWEAF_rer/RW_pex;
-// Optimal price contract set in foreign markets (FOC), using RW_pxtilde = EAG_pimtilde
-// EAGRW_pimtilde/EAGRW_pim = RW_cpim*RW_thetat/(RW_thetat-1)*RWEAG_fx/RWEAG_gx;
-// Definition of fx
-// RWEAG_fx = EAG_size/RW_size*EAGRW_im*RW_mct+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EAGRW_piim(+1)/(EAGRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^RW_thetat*RWEAG_fx(+1);
-// Definition of gx   
-// RWEAG_gx = RWEAG_rer*EAGRW_pim*EAG_size/RW_size*EAGRW_im+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EAGRW_piim(+1)/(EAGRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^(RW_thetat-1)*RWEAG_gx(+1);
-// Aggregate intermediate-good price dynamics, using RW_px = EAG_pim
-// EAGRW_pim^(1-RW_thetat) = (1-RW_xix)*EAGRW_pimtilde^(1-RW_thetat)+RW_xix*(EAGRW_pim(-1)/EAG_pic)^(1-RW_thetat)*(EAGRW_piim(-1)^RW_chix*EAG_pi4target^(1/4*(1-RW_chih)))^(1-RW_thetat);
-// Intermediate-good price inflation, using RW_pix = EAG_piim
-// EAGRW_piim = EAGRW_pim/EAGRW_pim(-1)*EAG_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 RWEAG_rer = RW_rer/EAG_rer;
-// Auxiliary equation for steady-state output
+
 RWEAG_rerbar = RWEAG_rer;
-//Terms of Trade
+
 RWEAG_tot = EAG_pex*RWEAG_rer/RW_pex;
-// Optimal price contract set in foreign markets (FOC), using RW_pxtilde = EAH_pimtilde
-// EAHRW_pimtilde/EAHRW_pim = RW_cpim*RW_thetat/(RW_thetat-1)*RWEAH_fx/RWEAH_gx;
-// Definition of fx
-// RWEAH_fx = EAH_size/RW_size*EAHRW_im*RW_mct+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EAHRW_piim(+1)/(EAHRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^RW_thetat*RWEAH_fx(+1);
-// Definition of gx   
-// RWEAH_gx = RWEAH_rer*EAHRW_pim*EAH_size/RW_size*EAHRW_im+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EAHRW_piim(+1)/(EAHRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^(RW_thetat-1)*RWEAH_gx(+1);
-// Aggregate intermediate-good price dynamics, using RW_px = EAH_pim
-// EAHRW_pim^(1-RW_thetat) = (1-RW_xix)*EAHRW_pimtilde^(1-RW_thetat)+RW_xix*(EAHRW_pim(-1)/EAH_pic)^(1-RW_thetat)*(EAHRW_piim(-1)^RW_chix*EAH_pi4target^(1/4*(1-RW_chih)))^(1-RW_thetat);
-// Intermediate-good price inflation, using RW_pix = EAH_piim
-// EAHRW_piim = EAHRW_pim/EAHRW_pim(-1)*EAH_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 RWEAH_rer = RW_rer/EAH_rer;
-// Auxiliary equation for steady-state output
+
 RWEAH_rerbar = RWEAH_rer;
-//Terms of Trade
+
 RWEAH_tot = EAH_pex*RWEAH_rer/RW_pex;
-// Optimal price contract set in foreign markets (FOC), using RW_pxtilde = EAI_pimtilde
-// EAIRW_pimtilde/EAIRW_pim = RW_cpim*RW_thetat/(RW_thetat-1)*RWEAI_fx/RWEAI_gx;
-// Definition of fx
-// RWEAI_fx = EAI_size/RW_size*EAIRW_im*RW_mct+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EAIRW_piim(+1)/(EAIRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^RW_thetat*RWEAI_fx(+1);
-// Definition of gx   
-// RWEAI_gx = RWEAI_rer*EAIRW_pim*EAI_size/RW_size*EAIRW_im+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EAIRW_piim(+1)/(EAIRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^(RW_thetat-1)*RWEAI_gx(+1);
-// Aggregate intermediate-good price dynamics, using RW_px = EAI_pim
-// EAIRW_pim^(1-RW_thetat) = (1-RW_xix)*EAIRW_pimtilde^(1-RW_thetat)+RW_xix*(EAIRW_pim(-1)/EAI_pic)^(1-RW_thetat)*(EAIRW_piim(-1)^RW_chix*EAI_pi4target^(1/4*(1-RW_chih)))^(1-RW_thetat);
-// Intermediate-good price inflation, using RW_pix = EAI_piim
-// EAIRW_piim = EAIRW_pim/EAIRW_pim(-1)*EAI_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 RWEAI_rer = RW_rer/EAI_rer;
-// Auxiliary equation for steady-state output
+
 RWEAI_rerbar = RWEAI_rer;
-//Terms of Trade
+
 RWEAI_tot = EAI_pex*RWEAI_rer/RW_pex;
-// Optimal price contract set in foreign markets (FOC), using RW_pxtilde = EAJ_pimtilde
-// EAJRW_pimtilde/EAJRW_pim = RW_cpim*RW_thetat/(RW_thetat-1)*RWEAJ_fx/RWEAJ_gx;
-// Definition of fx
-// RWEAJ_fx = EAJ_size/RW_size*EAJRW_im*RW_mct+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EAJRW_piim(+1)/(EAJRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^RW_thetat*RWEAJ_fx(+1);
-// Definition of gx   
-// RWEAJ_gx = RWEAJ_rer*EAJRW_pim*EAJ_size/RW_size*EAJRW_im+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EAJRW_piim(+1)/(EAJRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^(RW_thetat-1)*RWEAJ_gx(+1);
-// Aggregate intermediate-good price dynamics, using RW_px = EAJ_pim
-// EAJRW_pim^(1-RW_thetat) = (1-RW_xix)*EAJRW_pimtilde^(1-RW_thetat)+RW_xix*(EAJRW_pim(-1)/EAJ_pic)^(1-RW_thetat)*(EAJRW_piim(-1)^RW_chix*EAJ_pi4target^(1/4*(1-RW_chih)))^(1-RW_thetat);
-// Intermediate-good price inflation, using RW_pix = EAJ_piim
-// EAJRW_piim = EAJRW_pim/EAJRW_pim(-1)*EAJ_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 RWEAJ_rer = RW_rer/EAJ_rer;
-// Auxiliary equation for steady-state output
+
 RWEAJ_rerbar = RWEAJ_rer;
-//Terms of Trade
+
 RWEAJ_tot = EAJ_pex*RWEAJ_rer/RW_pex;
-// Optimal price contract set in foreign markets (FOC), using RW_pxtilde = EAK_pimtilde
-// EAKRW_pimtilde/EAKRW_pim = RW_cpim*RW_thetat/(RW_thetat-1)*RWEAK_fx/RWEAK_gx;
-// Definition of fx
-// RWEAK_fx = EAK_size/RW_size*EAKRW_im*RW_mct+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EAKRW_piim(+1)/(EAKRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^RW_thetat*RWEAK_fx(+1);
-// Definition of gx   
-// RWEAK_gx = RWEAK_rer*EAKRW_pim*EAK_size/RW_size*EAKRW_im+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EAKRW_piim(+1)/(EAKRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^(RW_thetat-1)*RWEAK_gx(+1);
-// Aggregate intermediate-good price dynamics, using RW_px = EAK_pim
-// EAKRW_pim^(1-RW_thetat) = (1-RW_xix)*EAKRW_pimtilde^(1-RW_thetat)+RW_xix*(EAKRW_pim(-1)/EAK_pic)^(1-RW_thetat)*(EAKRW_piim(-1)^RW_chix*EAK_pi4target^(1/4*(1-RW_chih)))^(1-RW_thetat);
-// Intermediate-good price inflation, using RW_pix = EAK_piim
-// EAKRW_piim = EAKRW_pim/EAKRW_pim(-1)*EAK_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 RWEAK_rer = RW_rer/EAK_rer;
-// Auxiliary equation for steady-state output
+
 RWEAK_rerbar = RWEAK_rer;
-//Terms of Trade
+
 RWEAK_tot = EAK_pex*RWEAK_rer/RW_pex;
-// Optimal price contract set in foreign markets (FOC), using RW_pxtilde = EAL_pimtilde
-// EALRW_pimtilde/EALRW_pim = RW_cpim*RW_thetat/(RW_thetat-1)*RWEAL_fx/RWEAL_gx;
-// Definition of fx
-// RWEAL_fx = EAL_size/RW_size*EALRW_im*RW_mct+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EALRW_piim(+1)/(EALRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^RW_thetat*RWEAL_fx(+1);
-// Definition of gx   
-// RWEAL_gx = RWEAL_rer*EALRW_pim*EAL_size/RW_size*EALRW_im+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(EALRW_piim(+1)/(EALRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^(RW_thetat-1)*RWEAL_gx(+1);
-// Aggregate intermediate-good price dynamics, using RW_px = EAL_pim
-// EALRW_pim^(1-RW_thetat) = (1-RW_xix)*EALRW_pimtilde^(1-RW_thetat)+RW_xix*(EALRW_pim(-1)/EAL_pic)^(1-RW_thetat)*(EALRW_piim(-1)^RW_chix*EAL_pi4target^(1/4*(1-RW_chih)))^(1-RW_thetat);
-// Intermediate-good price inflation, using RW_pix = EAL_piim
-// EALRW_piim = EALRW_pim/EALRW_pim(-1)*EAL_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 RWEAL_rer = RW_rer/EAL_rer;
-// Auxiliary equation for steady-state output
+
 RWEAL_rerbar = RWEAL_rer;
-//Terms of Trade
+
 RWEAL_tot = EAL_pex*RWEAL_rer/RW_pex;
-// Optimal price contract set in foreign markets (FOC), using RW_pxtilde = US_pimtilde
-// USRW_pimtilde/USRW_pim = RW_cpim*RW_thetat/(RW_thetat-1)*RWUS_fx/RWUS_gx;
-// Definition of fx
-// RWUS_fx = US_size/RW_size*USRW_im*RW_mct+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(USRW_piim(+1)/(USRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^RW_thetat*RWUS_fx(+1);
-// Definition of gx   
-// RWUS_gx = RWUS_rer*USRW_pim*US_size/RW_size*USRW_im+RW_xix*RW_beta*RW_lambdai(+1)/RW_lambdai*(USRW_piim(+1)/(USRW_piim^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^(RW_thetat-1)*RWUS_gx(+1);
-// Aggregate intermediate-good price dynamics, using RW_px = US_pim
-// USRW_pim^(1-RW_thetat) = (1-RW_xix)*USRW_pimtilde^(1-RW_thetat)+RW_xix*(USRW_pim(-1)/US_pic)^(1-RW_thetat)*(USRW_piim(-1)^RW_chix*US_pi4target^(1/4*(1-RW_chih)))^(1-RW_thetat);
-// Intermediate-good price inflation, using RW_pix = US_piim
-// USRW_piim = USRW_pim/USRW_pim(-1)*US_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 RWUS_rer = RW_rer/US_rer;
-// Auxiliary equation for steady-state output
+
 RWUS_rerbar = RWUS_rer;
-//Terms of Trade
+
 RWUS_tot = US_pex*RWUS_rer/RW_pex;
-// Total imports 
+
 RW_im = 
 +RW_imc
 +RW_imi
 +RW_imcg
 +RW_imig
 ;
-// Total import deflator
+
 RW_im*RW_pim  = 
 +RW_pimc*RW_imc
 +RW_pimi*RW_imi
 +RW_pimcg*RW_imcg
 +RW_pimig*RW_imig
 ;
-// Effective real exchange rate: double weighting (imports)
+
 RWEAA_weightim = RWEAA_rer*EAA_pex*RWEAA_im/(RW_pim*RW_im);
-// Effective real exchange rate: double weighting (exports)
+
 RWEAA_weightex = EAA_size/RW_size*EAARW_im/RW_ex*RWEAA_rer*EAA_py*EAA_y/(RWEAA_rer*EAA_py*EAA_y
 +RWEAB_rer*EAB_pex*EAAEAB_im
 +RWEAC_rer*EAC_pex*EAAEAC_im
@@ -48225,11 +48225,11 @@ RWEAA_weightex = EAA_size/RW_size*EAARW_im/RW_ex*RWEAA_rer*EAA_py*EAA_y/(RWEAA_r
 +RWEAL_rer*EAL_pex*USEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 RWEAA_weight = RW_pim*RW_im/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAA_weightim+RW_pex*RW_ex/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAA_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 RWEAB_weightim = RWEAB_rer*EAB_pex*RWEAB_im/(RW_pim*RW_im);
-// Effective real exchange rate: double weighting (exports)
+
 RWEAB_weightex = EAB_size/RW_size*EABRW_im/RW_ex*RWEAB_rer*EAB_py*EAB_y/(RWEAB_rer*EAB_py*EAB_y
 +RWEAA_rer*EAA_pex*EABEAA_im
 +RWEAC_rer*EAC_pex*EABEAC_im
@@ -48413,11 +48413,11 @@ RWEAB_weightex = EAB_size/RW_size*EABRW_im/RW_ex*RWEAB_rer*EAB_py*EAB_y/(RWEAB_r
 +RWEAL_rer*EAL_pex*USEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 RWEAB_weight = RW_pim*RW_im/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAB_weightim+RW_pex*RW_ex/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAB_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 RWEAC_weightim = RWEAC_rer*EAC_pex*RWEAC_im/(RW_pim*RW_im);
-// Effective real exchange rate: double weighting (exports)
+
 RWEAC_weightex = EAC_size/RW_size*EACRW_im/RW_ex*RWEAC_rer*EAC_py*EAC_y/(RWEAC_rer*EAC_py*EAC_y
 +RWEAA_rer*EAA_pex*EACEAA_im
 +RWEAB_rer*EAB_pex*EACEAB_im
@@ -48601,11 +48601,11 @@ RWEAC_weightex = EAC_size/RW_size*EACRW_im/RW_ex*RWEAC_rer*EAC_py*EAC_y/(RWEAC_r
 +RWEAL_rer*EAL_pex*USEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 RWEAC_weight = RW_pim*RW_im/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAC_weightim+RW_pex*RW_ex/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAC_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 RWEAD_weightim = RWEAD_rer*EAD_pex*RWEAD_im/(RW_pim*RW_im);
-// Effective real exchange rate: double weighting (exports)
+
 RWEAD_weightex = EAD_size/RW_size*EADRW_im/RW_ex*RWEAD_rer*EAD_py*EAD_y/(RWEAD_rer*EAD_py*EAD_y
 +RWEAA_rer*EAA_pex*EADEAA_im
 +RWEAB_rer*EAB_pex*EADEAB_im
@@ -48789,11 +48789,11 @@ RWEAD_weightex = EAD_size/RW_size*EADRW_im/RW_ex*RWEAD_rer*EAD_py*EAD_y/(RWEAD_r
 +RWEAL_rer*EAL_pex*USEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 RWEAD_weight = RW_pim*RW_im/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAD_weightim+RW_pex*RW_ex/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAD_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 RWEAE_weightim = RWEAE_rer*EAE_pex*RWEAE_im/(RW_pim*RW_im);
-// Effective real exchange rate: double weighting (exports)
+
 RWEAE_weightex = EAE_size/RW_size*EAERW_im/RW_ex*RWEAE_rer*EAE_py*EAE_y/(RWEAE_rer*EAE_py*EAE_y
 +RWEAA_rer*EAA_pex*EAEEAA_im
 +RWEAB_rer*EAB_pex*EAEEAB_im
@@ -48977,11 +48977,11 @@ RWEAE_weightex = EAE_size/RW_size*EAERW_im/RW_ex*RWEAE_rer*EAE_py*EAE_y/(RWEAE_r
 +RWEAL_rer*EAL_pex*USEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 RWEAE_weight = RW_pim*RW_im/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAE_weightim+RW_pex*RW_ex/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAE_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 RWEAF_weightim = RWEAF_rer*EAF_pex*RWEAF_im/(RW_pim*RW_im);
-// Effective real exchange rate: double weighting (exports)
+
 RWEAF_weightex = EAF_size/RW_size*EAFRW_im/RW_ex*RWEAF_rer*EAF_py*EAF_y/(RWEAF_rer*EAF_py*EAF_y
 +RWEAA_rer*EAA_pex*EAFEAA_im
 +RWEAB_rer*EAB_pex*EAFEAB_im
@@ -49165,11 +49165,11 @@ RWEAF_weightex = EAF_size/RW_size*EAFRW_im/RW_ex*RWEAF_rer*EAF_py*EAF_y/(RWEAF_r
 +RWEAL_rer*EAL_pex*USEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 RWEAF_weight = RW_pim*RW_im/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAF_weightim+RW_pex*RW_ex/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAF_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 RWEAG_weightim = RWEAG_rer*EAG_pex*RWEAG_im/(RW_pim*RW_im);
-// Effective real exchange rate: double weighting (exports)
+
 RWEAG_weightex = EAG_size/RW_size*EAGRW_im/RW_ex*RWEAG_rer*EAG_py*EAG_y/(RWEAG_rer*EAG_py*EAG_y
 +RWEAA_rer*EAA_pex*EAGEAA_im
 +RWEAB_rer*EAB_pex*EAGEAB_im
@@ -49353,11 +49353,11 @@ RWEAG_weightex = EAG_size/RW_size*EAGRW_im/RW_ex*RWEAG_rer*EAG_py*EAG_y/(RWEAG_r
 +RWEAL_rer*EAL_pex*USEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 RWEAG_weight = RW_pim*RW_im/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAG_weightim+RW_pex*RW_ex/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAG_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 RWEAH_weightim = RWEAH_rer*EAH_pex*RWEAH_im/(RW_pim*RW_im);
-// Effective real exchange rate: double weighting (exports)
+
 RWEAH_weightex = EAH_size/RW_size*EAHRW_im/RW_ex*RWEAH_rer*EAH_py*EAH_y/(RWEAH_rer*EAH_py*EAH_y
 +RWEAA_rer*EAA_pex*EAHEAA_im
 +RWEAB_rer*EAB_pex*EAHEAB_im
@@ -49541,11 +49541,11 @@ RWEAH_weightex = EAH_size/RW_size*EAHRW_im/RW_ex*RWEAH_rer*EAH_py*EAH_y/(RWEAH_r
 +RWEAL_rer*EAL_pex*USEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 RWEAH_weight = RW_pim*RW_im/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAH_weightim+RW_pex*RW_ex/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAH_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 RWEAI_weightim = RWEAI_rer*EAI_pex*RWEAI_im/(RW_pim*RW_im);
-// Effective real exchange rate: double weighting (exports)
+
 RWEAI_weightex = EAI_size/RW_size*EAIRW_im/RW_ex*RWEAI_rer*EAI_py*EAI_y/(RWEAI_rer*EAI_py*EAI_y
 +RWEAA_rer*EAA_pex*EAIEAA_im
 +RWEAB_rer*EAB_pex*EAIEAB_im
@@ -49729,11 +49729,11 @@ RWEAI_weightex = EAI_size/RW_size*EAIRW_im/RW_ex*RWEAI_rer*EAI_py*EAI_y/(RWEAI_r
 +RWEAL_rer*EAL_pex*USEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 RWEAI_weight = RW_pim*RW_im/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAI_weightim+RW_pex*RW_ex/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAI_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 RWEAJ_weightim = RWEAJ_rer*EAJ_pex*RWEAJ_im/(RW_pim*RW_im);
-// Effective real exchange rate: double weighting (exports)
+
 RWEAJ_weightex = EAJ_size/RW_size*EAJRW_im/RW_ex*RWEAJ_rer*EAJ_py*EAJ_y/(RWEAJ_rer*EAJ_py*EAJ_y
 +RWEAA_rer*EAA_pex*EAJEAA_im
 +RWEAB_rer*EAB_pex*EAJEAB_im
@@ -49917,11 +49917,11 @@ RWEAJ_weightex = EAJ_size/RW_size*EAJRW_im/RW_ex*RWEAJ_rer*EAJ_py*EAJ_y/(RWEAJ_r
 +RWEAL_rer*EAL_pex*USEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 RWEAJ_weight = RW_pim*RW_im/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAJ_weightim+RW_pex*RW_ex/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAJ_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 RWEAK_weightim = RWEAK_rer*EAK_pex*RWEAK_im/(RW_pim*RW_im);
-// Effective real exchange rate: double weighting (exports)
+
 RWEAK_weightex = EAK_size/RW_size*EAKRW_im/RW_ex*RWEAK_rer*EAK_py*EAK_y/(RWEAK_rer*EAK_py*EAK_y
 +RWEAA_rer*EAA_pex*EAKEAA_im
 +RWEAB_rer*EAB_pex*EAKEAB_im
@@ -50105,11 +50105,11 @@ RWEAK_weightex = EAK_size/RW_size*EAKRW_im/RW_ex*RWEAK_rer*EAK_py*EAK_y/(RWEAK_r
 +RWEAL_rer*EAL_pex*USEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 RWEAK_weight = RW_pim*RW_im/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAK_weightim+RW_pex*RW_ex/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAK_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 RWEAL_weightim = RWEAL_rer*EAL_pex*RWEAL_im/(RW_pim*RW_im);
-// Effective real exchange rate: double weighting (exports)
+
 RWEAL_weightex = EAL_size/RW_size*EALRW_im/RW_ex*RWEAL_rer*EAL_py*EAL_y/(RWEAL_rer*EAL_py*EAL_y
 +RWEAA_rer*EAA_pex*EALEAA_im
 +RWEAB_rer*EAB_pex*EALEAB_im
@@ -50293,11 +50293,11 @@ RWEAL_weightex = EAL_size/RW_size*EALRW_im/RW_ex*RWEAL_rer*EAL_py*EAL_y/(RWEAL_r
 +RWEAL_rer*EAL_pex*USEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 RWEAL_weight = RW_pim*RW_im/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAL_weightim+RW_pex*RW_ex/(RW_pim*RW_im+RW_pex*RW_ex)*RWEAL_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 RWUS_weightim = RWUS_rer*US_pex*RWUS_im/(RW_pim*RW_im);
-// Effective real exchange rate: double weighting (exports)
+
 RWUS_weightex = US_size/RW_size*USRW_im/RW_ex*RWUS_rer*US_py*US_y/(RWUS_rer*US_py*US_y
 +RWEAA_rer*EAA_pex*USEAA_im
 +RWEAB_rer*EAB_pex*USEAB_im
@@ -50481,9 +50481,9 @@ RWUS_weightex = US_size/RW_size*USRW_im/RW_ex*RWUS_rer*US_py*US_y/(RWUS_rer*US_p
 +RWUS_rer*US_pex*EALUS_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 RWUS_weight = RW_pim*RW_im/(RW_pim*RW_im+RW_pex*RW_ex)*RWUS_weightim+RW_pex*RW_ex/(RW_pim*RW_im+RW_pex*RW_ex)*RWUS_weightex;
-// Effective real exchange rate
+
 RW_reer = 1
 *RWEAA_rer^RWEAA_weight
 *RWEAB_rer^RWEAB_weight
@@ -50499,7 +50499,7 @@ RW_reer = 1
 *RWEAL_rer^RWEAL_weight
 *RWUS_rer^RWUS_weight
 ;
-// Effective terms of trade
+
 RW_etot = 1
 *RWEAA_tot^RWEAA_weight
 *RWEAB_tot^RWEAB_weight
@@ -50515,10 +50515,10 @@ RW_etot = 1
 *RWEAL_tot^RWEAL_weight
 *RWUS_tot^RWUS_weight
 ;
-//-----------------
-// Final-good firms
-//-----------------
-// Private consumption good (import)
+
+
+
+
 RW_imc^((RW_mumc-1)/RW_mumc) =
 +RWEAA_numc ^(1/RW_mumc)*RWEAA_imc^(1-1/RW_mumc)
 +RWEAB_numc ^(1/RW_mumc)*RWEAB_imc^(1-1/RW_mumc)
@@ -50546,27 +50546,27 @@ RW_imc^((RW_mumc-1)/RW_mumc) =
 -RWEAL_numc
 -RWUS_numc
 )^(1/RW_mumc)*RWEAK_imc^(1-1/RW_mumc);
-// Demand for bilateral consumption import goods
+
 RWEAA_imc = RWEAA_numc*((EAA_pex*RWEAA_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
-// Demand for bilateral consumption import goods
+
 RWEAB_imc = RWEAB_numc*((EAB_pex*RWEAB_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
-// Demand for bilateral consumption import goods
+
 RWEAC_imc = RWEAC_numc*((EAC_pex*RWEAC_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
-// Demand for bilateral consumption import goods
+
 RWEAD_imc = RWEAD_numc*((EAD_pex*RWEAD_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
-// Demand for bilateral consumption import goods
+
 RWEAE_imc = RWEAE_numc*((EAE_pex*RWEAE_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
-// Demand for bilateral consumption import goods
+
 RWEAF_imc = RWEAF_numc*((EAF_pex*RWEAF_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
-// Demand for bilateral consumption import goods
+
 RWEAG_imc = RWEAG_numc*((EAG_pex*RWEAG_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
-// Demand for bilateral consumption import goods
+
 RWEAH_imc = RWEAH_numc*((EAH_pex*RWEAH_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
-// Demand for bilateral consumption import goods
+
 RWEAI_imc = RWEAI_numc*((EAI_pex*RWEAI_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
-// Demand for bilateral consumption import goods
+
 RWEAJ_imc = RWEAJ_numc*((EAJ_pex*RWEAJ_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
-// Demand for bilateral consumption import goods
+
 RWEAL_imc = RWEAL_numc*((EAL_pex*RWEAL_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
 RWEAK_imc = (1
 -RWEAA_numc
@@ -50582,7 +50582,7 @@ RWEAK_imc = (1
 -RWEAL_numc
 -RWUS_numc
 )*((EAK_pex*RWEAK_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
-// Price of the consumption good (import)
+
 RW_pimc^(1-RW_mumc) =
 +RWEAA_numc * (EAA_pex*RWEAA_rer)^(1-RW_mumc)
 +RWEAB_numc * (EAB_pex*RWEAB_rer)^(1-RW_mumc)
@@ -50610,9 +50610,9 @@ RW_pimc^(1-RW_mumc) =
 -RWEAL_numc
 -RWUS_numc
 )*(EAK_pex*RWEAK_rer)^(1-RW_mumc);
-// Private consumption good (import) inflation
+
 RW_piimc = RW_pimc/RW_pimc(-1)*RW_pic;
-// Private consumption good (import)
+
 RW_imi^((RW_mumi-1)/RW_mumi) =
 +RWEAA_numi ^(1/RW_mumi)*RWEAA_imi^(1-1/RW_mumi)
 +RWEAB_numi ^(1/RW_mumi)*RWEAB_imi^(1-1/RW_mumi)
@@ -50640,27 +50640,27 @@ RW_imi^((RW_mumi-1)/RW_mumi) =
 -RWEAL_numi
 -RWUS_numi
 )^(1/RW_mumi)*RWEAK_imi^(1-1/RW_mumi);
-// Demand for bilateral consumption import goods
+
 RWEAA_imi = RWEAA_numi*((EAA_pex*RWEAA_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
-// Demand for bilateral consumption import goods
+
 RWEAB_imi = RWEAB_numi*((EAB_pex*RWEAB_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
-// Demand for bilateral consumption import goods
+
 RWEAC_imi = RWEAC_numi*((EAC_pex*RWEAC_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
-// Demand for bilateral consumption import goods
+
 RWEAD_imi = RWEAD_numi*((EAD_pex*RWEAD_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
-// Demand for bilateral consumption import goods
+
 RWEAE_imi = RWEAE_numi*((EAE_pex*RWEAE_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
-// Demand for bilateral consumption import goods
+
 RWEAF_imi = RWEAF_numi*((EAF_pex*RWEAF_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
-// Demand for bilateral consumption import goods
+
 RWEAG_imi = RWEAG_numi*((EAG_pex*RWEAG_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
-// Demand for bilateral consumption import goods
+
 RWEAH_imi = RWEAH_numi*((EAH_pex*RWEAH_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
-// Demand for bilateral consumption import goods
+
 RWEAI_imi = RWEAI_numi*((EAI_pex*RWEAI_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
-// Demand for bilateral consumption import goods
+
 RWEAJ_imi = RWEAJ_numi*((EAJ_pex*RWEAJ_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
-// Demand for bilateral consumption import goods
+
 RWEAL_imi = RWEAL_numi*((EAL_pex*RWEAL_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
 RWEAK_imi = (1
 -RWEAA_numi
@@ -50676,7 +50676,7 @@ RWEAK_imi = (1
 -RWEAL_numi
 -RWUS_numi
 )*((EAK_pex*RWEAK_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
-// Price of the consumption good (import)
+
 RW_pimi^(1-RW_mumi) =
 +RWEAA_numi * (EAA_pex*RWEAA_rer)^(1-RW_mumi)
 +RWEAB_numi * (EAB_pex*RWEAB_rer)^(1-RW_mumi)
@@ -50704,9 +50704,9 @@ RW_pimi^(1-RW_mumi) =
 -RWEAL_numi
 -RWUS_numi
 )*(EAK_pex*RWEAK_rer)^(1-RW_mumi);
-// Private consumption good (import) inflation
+
 RW_piimi = RW_pimi/RW_pimi(-1)*RW_pic;
-// Private consumption good (import)
+
 RW_imcg^((RW_mumcg-1)/RW_mumcg) =
 +RWEAA_numcg ^(1/RW_mumcg)*RWEAA_imcg^(1-1/RW_mumcg)
 +RWEAB_numcg ^(1/RW_mumcg)*RWEAB_imcg^(1-1/RW_mumcg)
@@ -50734,27 +50734,27 @@ RW_imcg^((RW_mumcg-1)/RW_mumcg) =
 -RWEAL_numcg
 -RWUS_numcg
 )^(1/RW_mumcg)*RWEAK_imcg^(1-1/RW_mumcg);
-// Demand for bilateral consumption import goods
+
 RWEAA_imcg = RWEAA_numcg*((EAA_pex*RWEAA_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
-// Demand for bilateral consumption import goods
+
 RWEAB_imcg = RWEAB_numcg*((EAB_pex*RWEAB_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
-// Demand for bilateral consumption import goods
+
 RWEAC_imcg = RWEAC_numcg*((EAC_pex*RWEAC_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
-// Demand for bilateral consumption import goods
+
 RWEAD_imcg = RWEAD_numcg*((EAD_pex*RWEAD_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
-// Demand for bilateral consumption import goods
+
 RWEAE_imcg = RWEAE_numcg*((EAE_pex*RWEAE_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
-// Demand for bilateral consumption import goods
+
 RWEAF_imcg = RWEAF_numcg*((EAF_pex*RWEAF_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
-// Demand for bilateral consumption import goods
+
 RWEAG_imcg = RWEAG_numcg*((EAG_pex*RWEAG_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
-// Demand for bilateral consumption import goods
+
 RWEAH_imcg = RWEAH_numcg*((EAH_pex*RWEAH_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
-// Demand for bilateral consumption import goods
+
 RWEAI_imcg = RWEAI_numcg*((EAI_pex*RWEAI_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
-// Demand for bilateral consumption import goods
+
 RWEAJ_imcg = RWEAJ_numcg*((EAJ_pex*RWEAJ_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
-// Demand for bilateral consumption import goods
+
 RWEAL_imcg = RWEAL_numcg*((EAL_pex*RWEAL_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
 RWEAK_imcg = (1
 -RWEAA_numcg
@@ -50770,7 +50770,7 @@ RWEAK_imcg = (1
 -RWEAL_numcg
 -RWUS_numcg
 )*((EAK_pex*RWEAK_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
-// Price of the consumption good (import)
+
 RW_pimcg^(1-RW_mumcg) =
 +RWEAA_numcg * (EAA_pex*RWEAA_rer)^(1-RW_mumcg)
 +RWEAB_numcg * (EAB_pex*RWEAB_rer)^(1-RW_mumcg)
@@ -50798,9 +50798,9 @@ RW_pimcg^(1-RW_mumcg) =
 -RWEAL_numcg
 -RWUS_numcg
 )*(EAK_pex*RWEAK_rer)^(1-RW_mumcg);
-// Private consumption good (import) inflation
+
 RW_piimcg = RW_pimcg/RW_pimcg(-1)*RW_pic;
-// Private consumption good (import)
+
 RW_imig^((RW_mumig-1)/RW_mumig) =
 +RWEAA_numig ^(1/RW_mumig)*RWEAA_imig^(1-1/RW_mumig)
 +RWEAB_numig ^(1/RW_mumig)*RWEAB_imig^(1-1/RW_mumig)
@@ -50828,27 +50828,27 @@ RW_imig^((RW_mumig-1)/RW_mumig) =
 -RWEAL_numig
 -RWUS_numig
 )^(1/RW_mumig)*RWEAK_imig^(1-1/RW_mumig);
-// Demand for bilateral consumption import goods
+
 RWEAA_imig = RWEAA_numig*((EAA_pex*RWEAA_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
-// Demand for bilateral consumption import goods
+
 RWEAB_imig = RWEAB_numig*((EAB_pex*RWEAB_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
-// Demand for bilateral consumption import goods
+
 RWEAC_imig = RWEAC_numig*((EAC_pex*RWEAC_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
-// Demand for bilateral consumption import goods
+
 RWEAD_imig = RWEAD_numig*((EAD_pex*RWEAD_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
-// Demand for bilateral consumption import goods
+
 RWEAE_imig = RWEAE_numig*((EAE_pex*RWEAE_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
-// Demand for bilateral consumption import goods
+
 RWEAF_imig = RWEAF_numig*((EAF_pex*RWEAF_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
-// Demand for bilateral consumption import goods
+
 RWEAG_imig = RWEAG_numig*((EAG_pex*RWEAG_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
-// Demand for bilateral consumption import goods
+
 RWEAH_imig = RWEAH_numig*((EAH_pex*RWEAH_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
-// Demand for bilateral consumption import goods
+
 RWEAI_imig = RWEAI_numig*((EAI_pex*RWEAI_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
-// Demand for bilateral consumption import goods
+
 RWEAJ_imig = RWEAJ_numig*((EAJ_pex*RWEAJ_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
-// Demand for bilateral consumption import goods
+
 RWEAL_imig = RWEAL_numig*((EAL_pex*RWEAL_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
 RWEAK_imig = (1
 -RWEAA_numig
@@ -50864,7 +50864,7 @@ RWEAK_imig = (1
 -RWEAL_numig
 -RWUS_numig
 )*((EAK_pex*RWEAK_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
-// Price of the consumption good (import)
+
 RW_pimig^(1-RW_mumig) =
 +RWEAA_numig * (EAA_pex*RWEAA_rer)^(1-RW_mumig)
 +RWEAB_numig * (EAB_pex*RWEAB_rer)^(1-RW_mumig)
@@ -50892,15 +50892,15 @@ RW_pimig^(1-RW_mumig) =
 -RWEAL_numig
 -RWUS_numig
 )*(EAK_pex*RWEAK_rer)^(1-RW_mumig);
-// Private consumption good (import) inflation
+
 RW_piimig = RW_pimig/RW_pimig(-1)*RW_pic;
-// Private consumption good (import) inflation
+
 RW_piimc4 = RW_pimc/RW_pimc(-4)*RW_pic4;
-// Private consumption good (import) inflation
+
 RW_piex4 = RW_pex/RW_pex(-4)*RW_pic4;
-// Wedge between aggregate demand and production, using RW_x = US_size/RW_size*US_im
+
 RW_yst = RW_sh*RW_ht+RW_sx*RW_ex;
-// Aggregate demand for bilateral imported intermediate goods
+
 RWEAA_im = 
 +RWEAA_imc
 +RWEAA_imi
@@ -50979,18 +50979,18 @@ RWUS_im =
 +RWUS_imcg
 +RWUS_imig
 ;
-// Private consumption good firm
-// Private consumption good (tradable)
+
+
 RW_ttc^((RW_mutc-1)/RW_mutc) = (RW_nutc)^(1/RW_mutc)*RW_htc^(1-1/RW_mutc)+(1-RW_nutc)^(1/RW_mutc)*RW_imc^(1-1/RW_mutc);
-// Private consumption good  (total)
+
 RW_qc^((RW_muc-1)/RW_muc) = (RW_nuc)^(1/RW_muc)*RW_ttc^(1-1/RW_muc)+(1-RW_nuc)^(1/RW_muc)*RW_ntc^(1-1/RW_muc);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 RW_ntc = (1-RW_nuc)*(RW_pnt)^(-RW_muc)*RW_qc;
-// Price of the consumption good (tradable)  
+
 RW_pttc^(1-RW_mutc) = (RW_nutc)*RW_pht^(1-RW_mutc)+(1-RW_nutc)*RW_pimc^(1-RW_mutc);
-// Price of the consumption good 
+
 1^(1-RW_muc) = (RW_nuc)*RW_pttc^(1-RW_muc)+(1-RW_nuc)*RW_pnt^(1-RW_muc);
-// Demand for domestic intermediate goods
+
 RW_htc = RW_nutc*(RW_pht/RW_pttc)^(-RW_mutc)*RW_ttc;
 RWEAA_gammaimc = 0;
 RWEAA_gammaimcdag = 1;
@@ -51018,20 +51018,20 @@ RWEAL_gammaimc = 0;
 RWEAL_gammaimcdag = 1;
 RWUS_gammaimc = 0;
 RWUS_gammaimcdag = 1;
-// Private consumption good (tradable)
+
 RW_tti^((RW_muti-1)/RW_muti) = (RW_nuti)^(1/RW_muti)*RW_hti^(1-1/RW_muti)+(1-RW_nuti)^(1/RW_muti)*RW_imi^(1-1/RW_muti);
-// Private consumption good  (total)
+
 RW_qi^((RW_mui-1)/RW_mui) = (RW_nui)^(1/RW_mui)*RW_tti^(1-1/RW_mui)+(1-RW_nui)^(1/RW_mui)*RW_nti^(1-1/RW_mui);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 RW_nti = (1-RW_nui)*(RW_pnt/RW_pi)^(-RW_mui)*RW_qi;
-// Price of the consumption good (tradable)  
+
 RW_ptti^(1-RW_muti) = (RW_nuti)*RW_pht^(1-RW_muti)+(1-RW_nuti)*RW_pimi^(1-RW_muti);
-// Price of the consumption good 
+
 RW_pi^(1-RW_mui) = (RW_nui)*RW_ptti^(1-RW_mui)+(1-RW_nui)*RW_pnt^(1-RW_mui);
-// Auxiliary equation for the price of the investment good in steady state
-// this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
+
+
 RW_pibar = RW_pi;
-// Demand for domestic intermediate goods
+
 RW_hti = RW_nuti*(RW_pht/RW_ptti)^(-RW_muti)*RW_tti;
 RWEAA_gammaimi = 0;
 RWEAA_gammaimidag = 1;
@@ -51059,17 +51059,17 @@ RWEAL_gammaimi = 0;
 RWEAL_gammaimidag = 1;
 RWUS_gammaimi = 0;
 RWUS_gammaimidag = 1;
-// Private consumption good (tradable)
+
 RW_ttcg^((RW_mutcg-1)/RW_mutcg) = (RW_nutcg)^(1/RW_mutcg)*RW_htcg^(1-1/RW_mutcg)+(1-RW_nutcg)^(1/RW_mutcg)*RW_imcg^(1-1/RW_mutcg);
-// Private consumption good  (total)
+
 RW_qcg^((RW_mucg-1)/RW_mucg) = (RW_nucg)^(1/RW_mucg)*RW_ttcg^(1-1/RW_mucg)+(1-RW_nucg)^(1/RW_mucg)*RW_ntcg^(1-1/RW_mucg);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 RW_ntcg = (1-RW_nucg)*(RW_pnt/RW_pcg)^(-RW_mucg)*RW_qcg;
-// Price of the consumption good (tradable)  
+
 RW_pttcg^(1-RW_mutcg) = (RW_nutcg)*RW_pht^(1-RW_mutcg)+(1-RW_nutcg)*RW_pimcg^(1-RW_mutcg);
-// Price of the consumption good 
+
 RW_pcg^(1-RW_mucg) = (RW_nucg)*RW_pttcg^(1-RW_mucg)+(1-RW_nucg)*RW_pnt^(1-RW_mucg);
-// Demand for domestic intermediate goods
+
 RW_htcg = RW_nutcg*(RW_pht/RW_pttcg)^(-RW_mutcg)*RW_ttcg;
 RWEAA_gammaimcg = 0;
 RWEAA_gammaimcgdag = 1;
@@ -51097,17 +51097,17 @@ RWEAL_gammaimcg = 0;
 RWEAL_gammaimcgdag = 1;
 RWUS_gammaimcg = 0;
 RWUS_gammaimcgdag = 1;
-// Private consumption good (tradable)
+
 RW_ttig^((RW_mutig-1)/RW_mutig) = (RW_nutig)^(1/RW_mutig)*RW_htig^(1-1/RW_mutig)+(1-RW_nutig)^(1/RW_mutig)*RW_imig^(1-1/RW_mutig);
-// Private consumption good  (total)
+
 RW_qig^((RW_muig-1)/RW_muig) = (RW_nuig)^(1/RW_muig)*RW_ttig^(1-1/RW_muig)+(1-RW_nuig)^(1/RW_muig)*RW_ntig^(1-1/RW_muig);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 RW_ntig = (1-RW_nuig)*(RW_pnt/RW_pig)^(-RW_muig)*RW_qig;
-// Price of the consumption good (tradable)  
+
 RW_pttig^(1-RW_mutig) = (RW_nutig)*RW_pht^(1-RW_mutig)+(1-RW_nutig)*RW_pimig^(1-RW_mutig);
-// Price of the consumption good 
+
 RW_pig^(1-RW_muig) = (RW_nuig)*RW_pttig^(1-RW_muig)+(1-RW_nuig)*RW_pnt^(1-RW_muig);
-// Demand for domestic intermediate goods
+
 RW_htig = RW_nutig*(RW_pht/RW_pttig)^(-RW_mutig)*RW_ttig;
 RWEAA_gammaimig = 0;
 RWEAA_gammaimigdag = 1;
@@ -51135,7 +51135,7 @@ RWEAL_gammaimig = 0;
 RWEAL_gammaimigdag = 1;
 RWUS_gammaimig = 0;
 RWUS_gammaimigdag = 1;
-// Trade balance
+
 RW_tb =
 +RW_pex*EAA_size/RW_size*EAARW_im
 -EAA_pex*RWEAA_rer*RWEAA_im
@@ -51164,7 +51164,7 @@ RW_tb =
 +RW_pex*US_size/RW_size*USRW_im
 -US_pex*RWUS_rer*RWUS_im
 ;
-// Aggregate exports (volume)
+
 RW_ex =
 +EAA_size/RW_size*EAARW_im
 +EAB_size/RW_size*EABRW_im
@@ -51180,131 +51180,131 @@ RW_ex =
 +EAL_size/RW_size*EALRW_im
 +US_size/RW_size*USRW_im
 ;
-//-------------
-//-------------
-// Fiscal and monetary authorities
-//-------------
-//-------------
-//-------------
-// Fiscal authority
-//-------------
-// Government budget constraint, using RW_pg = RW_pht
-// TODO: check the (1-RW_gammab(-1)) adjustment here, which is not in the fiscal extention
+
+
+
+
+
+
+
+
+
+
 	RW_pcg(-1)*RW_cg(-1)+RW_pig(-1)*RW_ig(-1)+RW_tr(-1)
 	+RW_b(-1)*RW_pic(-1)^(-1)+RW_m(-2)*RW_pic(-1)^(-1) = RW_tauc(-1)*RW_c(-1)+(RW_taun(-1)+RW_tauwh(-1))*(RW_wi(-1)*RW_ndi(-1)+RW_wj(-1)*RW_ndj(-1))+RW_tauwf(-1)*RW_w(-1)*RW_nd(-1)+RW_tauk(-1)*(RW_rk(-1)*RW_u(-1)-(RW_gammau(-1)+RW_delta)*RW_pi(-1))*RW_k(-1)+RW_taud(-1)*RW_d(-1)+RW_t(-1)+(RW_r(-1))^(-1)*RW_b+RW_m(-1);
-// Government spending, using RW_pg = RW_pht
+
 RW_pcg*RW_cg = RW_cgy*RW_pybar*RW_ybar;
 RW_pig*RW_ig = RW_igy*RW_pybar*RW_ybar;
 RW_t = 0;
 RW_b = RW_bytarget*RW_pybar*RW_ybar;
-// Auxiliary equation for steady-state output
+
 RW_ybar = RW_y;
-// Auxiliary equation for steady-state output
+
 RW_ytbar = RW_yst;
-// Auxiliary equation for steady-state output
+
 RW_ynbar = RW_ysn;
-// Auxiliary equation for steady-state output deflator
+
 RW_pybar = RW_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
+
 RW_trybar = RW_tr/(RW_pybar*RW_ybar);
-// Auxiliary equation for determining the distribution of lump-sum taxes
+
 RW_ti = RW_upsilont*RW_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
 upsilont = 0:            ti = 0, tj = 1/omega t
 upsilont = 1:            ti = tj = t
 upsilont = 1/(1-omega):  ti = 1/(1-omega) t, tj = 0. */
-// Auxiliary equation for determining the distribution of lump-sum transfers
+
 RW_tri = RW_upsilontr*RW_tr;
 /* Note: Valid parameter space: 0 <= upsilontr <= 1/(1-omega) with
 upsilontr = 0:            tri = 0, trj = 1/omega tr
 upsilontr = 1:            tri = trj = tr
 upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
-//-------------
-// Monetary authority
-//-------------
+
+
+
 	RW_r^4-1 = RW_rrstar^4*RW_pi4target-1;
 RW_pic4 = RW_pi4target;
 RW_rr-1 = RW_r/RW_pi4target^(1/4)-1;
-// Equilibrium real interest rate
+
 RW_rrstar-1 = 1/RW_beta-1;
-//-------------
-//-------------
-// Aggregation, market clearing and resource constraint
-//-------------
-//-------------
-//-------------
-// Aggregation
-//-------------
-// Aggregate consumption
+
+
+
+
+
+
+
+
+
 RW_c = (1-RW_omega)*RW_ci+RW_omega*RW_cj;
-// Aggregate money holdings
+
 RW_m = (1-RW_omega)*RW_mi+RW_omega*RW_mj;
-// Aggregate capital stock
+
 RW_k = (1-RW_omega)*RW_ki;
-// Aggregate investment
+
 RW_i = (1-RW_omega)*RW_ii;
-// Aggregate lump-sum transfers
+
 RW_trj = 
 1/RW_omega*RW_tr-(1-RW_omega)/RW_omega*RW_tri
 ;
-// Aggregate lump-sum taxes
+
 RW_tj = 
 1/RW_omega*RW_t-(1-RW_omega)/RW_omega*RW_ti
 ;
-// Aggregate transaction costs
+
 RW_gammav = (1-RW_omega)*RW_ci*RW_gammavi+RW_omega*RW_cj*RW_gammavj;
-//-------------
-// Market clearing
-//-------------
-// Labour markets for household I
-// Wedge between labour demand/hours worked and labour supply
+
+
+
+
+
 RW_ni = RW_si*RW_ndi;
-// Wage dispersion
+
 RW_si = (1-RW_xii)*(RW_witilde/RW_wi)^(-RW_etai)+RW_xii*(RW_wi(-1)/RW_wi)^(-RW_etai)*(RW_pic/(RW_pic(-1)^RW_chii*RW_pi4target^(1/4*(1-RW_chii))))^(RW_etai)*RW_si(-1);
-// Labour markets for household J
-// Wedge between labour demand/hours worked and labour supply
+
+
 RW_nj = RW_sj*RW_ndj;
-// Wage dispersion
+
 RW_sj = (1-RW_xij)*(RW_wjtilde/RW_wj)^(-RW_etaj)+RW_xij*(RW_wj(-1)/RW_wj)^(-RW_etaj)*(RW_pic/(RW_pic(-1)^RW_chij*RW_pi4target^(1/4*(1-RW_chij))))^(RW_etaj)*RW_sj(-1);
-// Rental market for capital
-// Equality of capital input and effective capital services
+
+
 RW_u*RW_k = RW_kd;
-// Intermediate-good markets
-// Wedge between aggregate demand and production, using RW_x = US_size/RW_size*US_im
+
+
 RW_ysn = RW_snt*RW_nt;
-//  nontradables aggregate demand
+
 RW_nt = 
 +RW_ntc
 +RW_nti
 +RW_ntcg
 +RW_ntig
 ;
-// Aggregate demand for domestic intermediate goods, using RW_hg = RW_cg
+
 RW_ht =
 +RW_htc
 +RW_hti
 +RW_htcg
 +RW_htig
 ;
-// Price dispersion in the domestic markets
+
 RW_sh = (1-RW_xih)*(RW_phttilde/RW_pht)^(-RW_thetat)+RW_xih*(RW_piht/(RW_piht(-1)^RW_chih*RW_pi4target^(1/4*(1-RW_chih))))^RW_thetat*RW_sh(-1);
-// Price dispersion in the foreign markets
+
 RW_sx = (1-RW_xix)*(RW_pextilde/RW_pex)^(-RW_thetat)+RW_xix*(RW_piex/(RW_piex(-1)^RW_chix*RW_pi4target^(1/4*(1-RW_chix))))^RW_thetat*RW_sx(-1);
-// Price dispersion in the domestic markets
+
 RW_snt = (1-RW_xin)*(RW_pnttilde/RW_pnt)^(-RW_thetan)+RW_xin*(RW_pint/(RW_pint(-1)^RW_chin*RW_pi4target^(1/4*(1-RW_chin))))^RW_thetan*RW_snt(-1);
-// Final-good markets
-// Aggregate consumption and transaction cost
+
+
 RW_qc = RW_c+RW_gammav;
-// Aggregate investment and capital utilisation cost
+
 RW_qi = RW_i+RW_k*RW_gammau;
-// Aggregate gov demand components added to use the same structure like in private components
+
 RW_qcg = RW_cg;
 RW_qig = RW_ig;
-//-------------
-// Resource constraint
-//-------------
-// TODO: why there is no adjustment cost for gov components
-// Aggregate nominal demand
+
+
+
+
+
 RW_py*RW_y = 
 +RW_qc
 +RW_pi*RW_qi
@@ -51376,83 +51376,83 @@ RW_py*RW_y =
 -(US_pex*RWUS_rer)*RWUS_imcg
 -(US_pex*RWUS_rer)*RWUS_imig
 ;
-// Aggregate real demand
+
 RW_y = RW_yst+RW_ysn;
-//-------------
-//-------------
-// Autoregressive shocks
-//-------------
-//-------------
-// Productivity shocks
+
+
+
+
+
+
 log(RW_zt) = (1-RW_rhozt)*log(RW_ztbar)+RW_rhozt*log(RW_zt(-1))+RW_epszt;
 log(RW_zn) = (1-RW_rhozn)*log(RW_znbar)+RW_rhozn*log(RW_zn(-1))+RW_epszn;
-// Government spending shock
+
 RW_cgy = (1-RW_rhocg)*RW_cgybar+RW_rhocg*RW_cgy(-1)+RW_epsgc;
 RW_igy = (1-RW_rhoig)*RW_igybar+RW_rhoig*RW_igy(-1)+RW_epsgi;
-// Transfer shock
+
 RW_try = (1-RW_rhotr)*RW_trybar+RW_rhotr*RW_try(-1)+RW_epstr;
-// Consumption tax shock
+
 RW_tauc = (1-RW_rhotauc)*RW_taucbar+RW_rhotauc*RW_tauc(-1)+RW_epstauc;
-// Dividend income tax shock
+
 RW_taud = (1-RW_rhotaud)*RW_taudbar+RW_rhotaud*RW_taud(-1)+RW_epstaud;
-// Capital income tax shock
+
 RW_tauk = (1-RW_rhotauk)*RW_taukbar+RW_rhotauk*RW_tauk(-1)+RW_epstauk;
-// Labour income tax shock
+
 RW_taun = (1-RW_rhotaun)*RW_taunbar+RW_rhotaun*RW_taun(-1)+RW_epstaun;
-// Payroll tax shock: households
+
 RW_tauwh = (1-RW_rhotauwh)*RW_tauwhbar+RW_rhotauwh*RW_tauwh(-1)+RW_epstauwh;
-// Payroll tax shock: firms
+
 RW_tauwf = (1-RW_rhotauwf)*RW_tauwfbar+RW_rhotauwf*RW_tauwf(-1)+RW_epstauwf;
-// Wage cost push shock
+
 RW_wcst = (1-RW_rhowcst)*RW_wcstbar+RW_rhowcst*RW_wcst(-1)+RW_epswcst;
-// Preference shock
+
 log(RW_zcon) = (1-RW_rhozcon)*log(RW_zconbar)+RW_rhozcon*log(RW_zcon(-1))+RW_epszcon;
-// Investment specific shock
+
 log(RW_zinv) = (1-RW_rhozinv)*log(RW_zinvbar)+RW_rhozinv*log(RW_zinv(-1))+RW_epszinv;
-//-------------
-//-------------
-// Conditions for calibration and reporting
-//-------------
-//-------------
-// Aggregate nominal consumption share
+
+
+
+
+
+
 RW_cy = RW_c/(RW_py*RW_y);
-// Aggregate nominal investment share
+
 RW_iy = RW_pi*RW_i/(RW_py*RW_y);
-// Aggregate nominal import share  
+
 RW_imy = (
 +RW_pimc*RW_imc
 +RW_pimi*RW_imi
 +RW_pimcg*RW_imcg
 +RW_pimig*RW_imig
 )/(RW_py*RW_y);
-// Aggregate nominal import share
+
 RW_imcy = RW_pimc*RW_imc/(RW_py*RW_y);
 RW_imiy = RW_pimi*RW_imi/(RW_py*RW_y);
 RW_imcgy = RW_pimcg*RW_imcg/(RW_py*RW_y);
 RW_imigy = RW_pimig*RW_imig/(RW_py*RW_y);
-// Aggregate debt-to-output ratio
+
 RW_by = RW_b/(RW_pybar*RW_ybar);
-// Aggregate lump-sum tax-to-output ratio
+
 RW_ty = RW_t/(RW_pybar*RW_ybar);
-// Aggregate labour cost share
+
 RW_lcy = ((1+RW_tauwf)*RW_w*RW_nd)/(RW_py*RW_y);
-// Aggregate nominal Wage share
+
 RW_wy = (RW_w*RW_nd)/(RW_py*RW_y);
-// NT sector nominal Wage share
+
 RW_wnty = (RW_w*RW_ndn)/(RW_pnt*RW_ysn);
-// T sector nominal Wage share
+
 RW_whty = (RW_w*RW_ndt)/(RW_pht*RW_yst);
-// T sector share
+
 RW_yhty = RW_pht*RW_yst/(RW_py*RW_y);
-// NT sector share
+
 RW_ynty = RW_pnt*RW_ysn/(RW_py*RW_y);
-// Output gap
+
 RW_ygap = 0;
-// Output growth (gross rate)
+
 RW_ygrowth = RW_y/RW_y(-1);
-// Output growth (gross rate yoy)
+
 RW_ygrowth4 = RW_y/RW_y(-4);
-// Domestic nominal output as a share of world nominal output
+
 RW_yshare  = RW_size*RW_py*RW_y/RW_rer/(
 +EAA_size*EAA_py*EAA_y/EAA_rer
 +EAB_size*EAB_py*EAB_y/EAB_rer
@@ -51469,153 +51469,153 @@ RW_yshare  = RW_size*RW_py*RW_y/RW_rer/(
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
-// Interest (semi-)elasticity of money demand
+
 RW_epsilonm = -1/8*1/(RW_r*(RW_gammav2*RW_r+RW_r-1));
-// Trade balance-to-GDP ratio
+
 RW_tby = RW_tb/(RW_py*RW_y);
-// Bilateral shares
+
 RWEAA_imcy = (EAA_pex*RWEAA_rer)*RWEAA_imc/(RW_py*RW_y);
 RWEAA_imiy = (EAA_pex*RWEAA_rer)*RWEAA_imi/(RW_py*RW_y);
 RWEAA_imcgy = (EAA_pex*RWEAA_rer)*RWEAA_imcg/(RW_py*RW_y);
 RWEAA_imigy = (EAA_pex*RWEAA_rer)*RWEAA_imig/(RW_py*RW_y);
-// Exports of consumption goods to gdp
+
 RWEAA_excy  = EAA_size/RW_size*RW_pex*EAARW_imc/(RW_py*RW_y);
-// Exports of investment goods to gdp
+
 RWEAA_exiy  = EAA_size/RW_size*RW_pex*EAARW_imi/(RW_py*RW_y);
-// Bilateral shares
+
 RWEAB_imcy = (EAB_pex*RWEAB_rer)*RWEAB_imc/(RW_py*RW_y);
 RWEAB_imiy = (EAB_pex*RWEAB_rer)*RWEAB_imi/(RW_py*RW_y);
 RWEAB_imcgy = (EAB_pex*RWEAB_rer)*RWEAB_imcg/(RW_py*RW_y);
 RWEAB_imigy = (EAB_pex*RWEAB_rer)*RWEAB_imig/(RW_py*RW_y);
-// Exports of consumption goods to gdp
+
 RWEAB_excy  = EAB_size/RW_size*RW_pex*EABRW_imc/(RW_py*RW_y);
-// Exports of investment goods to gdp
+
 RWEAB_exiy  = EAB_size/RW_size*RW_pex*EABRW_imi/(RW_py*RW_y);
-// Bilateral shares
+
 RWEAC_imcy = (EAC_pex*RWEAC_rer)*RWEAC_imc/(RW_py*RW_y);
 RWEAC_imiy = (EAC_pex*RWEAC_rer)*RWEAC_imi/(RW_py*RW_y);
 RWEAC_imcgy = (EAC_pex*RWEAC_rer)*RWEAC_imcg/(RW_py*RW_y);
 RWEAC_imigy = (EAC_pex*RWEAC_rer)*RWEAC_imig/(RW_py*RW_y);
-// Exports of consumption goods to gdp
+
 RWEAC_excy  = EAC_size/RW_size*RW_pex*EACRW_imc/(RW_py*RW_y);
-// Exports of investment goods to gdp
+
 RWEAC_exiy  = EAC_size/RW_size*RW_pex*EACRW_imi/(RW_py*RW_y);
-// Bilateral shares
+
 RWEAD_imcy = (EAD_pex*RWEAD_rer)*RWEAD_imc/(RW_py*RW_y);
 RWEAD_imiy = (EAD_pex*RWEAD_rer)*RWEAD_imi/(RW_py*RW_y);
 RWEAD_imcgy = (EAD_pex*RWEAD_rer)*RWEAD_imcg/(RW_py*RW_y);
 RWEAD_imigy = (EAD_pex*RWEAD_rer)*RWEAD_imig/(RW_py*RW_y);
-// Exports of consumption goods to gdp
+
 RWEAD_excy  = EAD_size/RW_size*RW_pex*EADRW_imc/(RW_py*RW_y);
-// Exports of investment goods to gdp
+
 RWEAD_exiy  = EAD_size/RW_size*RW_pex*EADRW_imi/(RW_py*RW_y);
-// Bilateral shares
+
 RWEAE_imcy = (EAE_pex*RWEAE_rer)*RWEAE_imc/(RW_py*RW_y);
 RWEAE_imiy = (EAE_pex*RWEAE_rer)*RWEAE_imi/(RW_py*RW_y);
 RWEAE_imcgy = (EAE_pex*RWEAE_rer)*RWEAE_imcg/(RW_py*RW_y);
 RWEAE_imigy = (EAE_pex*RWEAE_rer)*RWEAE_imig/(RW_py*RW_y);
-// Exports of consumption goods to gdp
+
 RWEAE_excy  = EAE_size/RW_size*RW_pex*EAERW_imc/(RW_py*RW_y);
-// Exports of investment goods to gdp
+
 RWEAE_exiy  = EAE_size/RW_size*RW_pex*EAERW_imi/(RW_py*RW_y);
-// Bilateral shares
+
 RWEAF_imcy = (EAF_pex*RWEAF_rer)*RWEAF_imc/(RW_py*RW_y);
 RWEAF_imiy = (EAF_pex*RWEAF_rer)*RWEAF_imi/(RW_py*RW_y);
 RWEAF_imcgy = (EAF_pex*RWEAF_rer)*RWEAF_imcg/(RW_py*RW_y);
 RWEAF_imigy = (EAF_pex*RWEAF_rer)*RWEAF_imig/(RW_py*RW_y);
-// Exports of consumption goods to gdp
+
 RWEAF_excy  = EAF_size/RW_size*RW_pex*EAFRW_imc/(RW_py*RW_y);
-// Exports of investment goods to gdp
+
 RWEAF_exiy  = EAF_size/RW_size*RW_pex*EAFRW_imi/(RW_py*RW_y);
-// Bilateral shares
+
 RWEAG_imcy = (EAG_pex*RWEAG_rer)*RWEAG_imc/(RW_py*RW_y);
 RWEAG_imiy = (EAG_pex*RWEAG_rer)*RWEAG_imi/(RW_py*RW_y);
 RWEAG_imcgy = (EAG_pex*RWEAG_rer)*RWEAG_imcg/(RW_py*RW_y);
 RWEAG_imigy = (EAG_pex*RWEAG_rer)*RWEAG_imig/(RW_py*RW_y);
-// Exports of consumption goods to gdp
+
 RWEAG_excy  = EAG_size/RW_size*RW_pex*EAGRW_imc/(RW_py*RW_y);
-// Exports of investment goods to gdp
+
 RWEAG_exiy  = EAG_size/RW_size*RW_pex*EAGRW_imi/(RW_py*RW_y);
-// Bilateral shares
+
 RWEAH_imcy = (EAH_pex*RWEAH_rer)*RWEAH_imc/(RW_py*RW_y);
 RWEAH_imiy = (EAH_pex*RWEAH_rer)*RWEAH_imi/(RW_py*RW_y);
 RWEAH_imcgy = (EAH_pex*RWEAH_rer)*RWEAH_imcg/(RW_py*RW_y);
 RWEAH_imigy = (EAH_pex*RWEAH_rer)*RWEAH_imig/(RW_py*RW_y);
-// Exports of consumption goods to gdp
+
 RWEAH_excy  = EAH_size/RW_size*RW_pex*EAHRW_imc/(RW_py*RW_y);
-// Exports of investment goods to gdp
+
 RWEAH_exiy  = EAH_size/RW_size*RW_pex*EAHRW_imi/(RW_py*RW_y);
-// Bilateral shares
+
 RWEAI_imcy = (EAI_pex*RWEAI_rer)*RWEAI_imc/(RW_py*RW_y);
 RWEAI_imiy = (EAI_pex*RWEAI_rer)*RWEAI_imi/(RW_py*RW_y);
 RWEAI_imcgy = (EAI_pex*RWEAI_rer)*RWEAI_imcg/(RW_py*RW_y);
 RWEAI_imigy = (EAI_pex*RWEAI_rer)*RWEAI_imig/(RW_py*RW_y);
-// Exports of consumption goods to gdp
+
 RWEAI_excy  = EAI_size/RW_size*RW_pex*EAIRW_imc/(RW_py*RW_y);
-// Exports of investment goods to gdp
+
 RWEAI_exiy  = EAI_size/RW_size*RW_pex*EAIRW_imi/(RW_py*RW_y);
-// Bilateral shares
+
 RWEAJ_imcy = (EAJ_pex*RWEAJ_rer)*RWEAJ_imc/(RW_py*RW_y);
 RWEAJ_imiy = (EAJ_pex*RWEAJ_rer)*RWEAJ_imi/(RW_py*RW_y);
 RWEAJ_imcgy = (EAJ_pex*RWEAJ_rer)*RWEAJ_imcg/(RW_py*RW_y);
 RWEAJ_imigy = (EAJ_pex*RWEAJ_rer)*RWEAJ_imig/(RW_py*RW_y);
-// Exports of consumption goods to gdp
+
 RWEAJ_excy  = EAJ_size/RW_size*RW_pex*EAJRW_imc/(RW_py*RW_y);
-// Exports of investment goods to gdp
+
 RWEAJ_exiy  = EAJ_size/RW_size*RW_pex*EAJRW_imi/(RW_py*RW_y);
-// Bilateral shares
+
 RWEAK_imcy = (EAK_pex*RWEAK_rer)*RWEAK_imc/(RW_py*RW_y);
 RWEAK_imiy = (EAK_pex*RWEAK_rer)*RWEAK_imi/(RW_py*RW_y);
 RWEAK_imcgy = (EAK_pex*RWEAK_rer)*RWEAK_imcg/(RW_py*RW_y);
 RWEAK_imigy = (EAK_pex*RWEAK_rer)*RWEAK_imig/(RW_py*RW_y);
-// Exports of consumption goods to gdp
+
 RWEAK_excy  = EAK_size/RW_size*RW_pex*EAKRW_imc/(RW_py*RW_y);
-// Exports of investment goods to gdp
+
 RWEAK_exiy  = EAK_size/RW_size*RW_pex*EAKRW_imi/(RW_py*RW_y);
-// Bilateral shares
+
 RWEAL_imcy = (EAL_pex*RWEAL_rer)*RWEAL_imc/(RW_py*RW_y);
 RWEAL_imiy = (EAL_pex*RWEAL_rer)*RWEAL_imi/(RW_py*RW_y);
 RWEAL_imcgy = (EAL_pex*RWEAL_rer)*RWEAL_imcg/(RW_py*RW_y);
 RWEAL_imigy = (EAL_pex*RWEAL_rer)*RWEAL_imig/(RW_py*RW_y);
-// Exports of consumption goods to gdp
+
 RWEAL_excy  = EAL_size/RW_size*RW_pex*EALRW_imc/(RW_py*RW_y);
-// Exports of investment goods to gdp
+
 RWEAL_exiy  = EAL_size/RW_size*RW_pex*EALRW_imi/(RW_py*RW_y);
-// Bilateral shares
+
 RWUS_imcy = (US_pex*RWUS_rer)*RWUS_imc/(RW_py*RW_y);
 RWUS_imiy = (US_pex*RWUS_rer)*RWUS_imi/(RW_py*RW_y);
 RWUS_imcgy = (US_pex*RWUS_rer)*RWUS_imcg/(RW_py*RW_y);
 RWUS_imigy = (US_pex*RWUS_rer)*RWUS_imig/(RW_py*RW_y);
-// Exports of consumption goods to gdp
+
 RWUS_excy  = US_size/RW_size*RW_pex*USRW_imc/(RW_py*RW_y);
-// Exports of investment goods to gdp
+
 RWUS_exiy  = US_size/RW_size*RW_pex*USRW_imi/(RW_py*RW_y);
-// Internal real exchange rate
+
 RW_internalrer = RW_pnt/RW_pttc;
-// Core model begins
-//-------------
-//-------------
-// Households
-//-------------
-//-------------
-//-------------
-// Household I
-//-------------
-// Utility
+
+
+
+
+
+
+
+
+
+
 US_utili = 
 US_zcon*log(US_ci-US_kappa*US_ci(-1))-1/(1+US_zeta)*(US_ni)^(1+US_zeta)+US_beta*US_utili(+1)
 ;
-// Marginal utility of consumption
+
 US_lambdai*(1+US_tauc+US_gammavi+US_vi*US_gammavider) = US_zcon*(US_ci-US_kappa*US_ci(-1))^(-US_sigma);
-// Euler equation for government bonds
+
 US_r = US_beta^(-1)*US_lambdai/US_lambdai(+1)*US_pic(+1);
-// Euler equation for money
+
 US_vi^(2)*US_gammavider = 1-US_beta*US_lambdai(+1)/(US_lambdai*US_pic(+1));
-// Consumption-based velocity
+
 US_vi = US_ci/US_mi;
-// Transaction cost
+
 US_gammavi = US_gammav1*US_vi+US_gammav2/US_vi-2*(US_gammav1*US_gammav2)^(1/2);
-// Derivative of transaction cost
+
 US_gammavider = US_gammav1-US_gammav2*US_vi^(-2);
 US_delta = US_ii/US_ki;
 US_gammai = 0;
@@ -51624,355 +51624,355 @@ US_gammau = 0;
 US_gammauder = ((US_beta^(-1)-1+US_delta)*US_qbar-US_delta*US_taukbar*US_pibar)/((1-US_taukbar)*US_pibar);
 US_u = 1;
 US_pi = US_q;
-// Auxiliary equation for Tobin's Q in steady state
+
 US_qbar = US_q;
-// Rate of return on capital
+
 US_q = US_beta*((1-US_tauk)*US_rk+(US_tauk*US_delta)*US_pi+(1-US_delta)*US_q);
-// Optimal wage contract (FOC)
+
 US_witilde^(1+US_etai*US_zeta) = US_etai/(US_etai-1)*US_fi/US_gi+US_wcst;
-// Definition of fi
+
 US_fi = US_wi^(US_etai*(1+US_zeta))*US_ndi^(1+US_zeta)+US_xii*US_beta*(US_pic(+1)/(US_pic^US_chii*US_pi4target^(1/4*(1-US_chii))))^(US_etai*(1+US_zeta))*US_fi(+1);
-// Definition of gi
+
 US_gi = US_lambdai*(1-US_taun-US_tauwh)*US_wi^US_etai*US_ndi+US_xii*US_beta*(US_pic(+1)/(US_pic^US_chii*US_pi4target^(1/4*(1-US_chii))))^(US_etai-1)*US_gi(+1);
-// Aggregate wage rate
+
 US_wi^(1-US_etai) = (1-US_xii)*US_witilde^(1-US_etai)+US_xii*US_wi(-1)^(1-US_etai)*(US_pic(-1)^US_chii*US_pi4target^(1/4*(1-US_chii))/US_pic)^(1-US_etai);
-//-------------
-// Household J
-//-------------
-// Utility
+
+
+
+
 US_utilj = 
 US_zcon*log(US_cj-US_kappa*US_cj(-1))-1/(1+US_zeta)*US_nj^(1+US_zeta)+US_beta*US_utilj(+1)
 ;
-// Marginal utility of consumption
+
 US_lambdaj*(1+US_tauc+US_gammavj+US_vj*US_gammavjder) = US_zcon*(US_cj-US_kappa*US_cj(-1))^(-US_sigma);
-// Budget constraint
+
 (1+US_tauc+US_gammavj)*US_cj+US_mj = (1-US_taun-US_tauwh)*US_wj*US_nj+US_trj-US_tj+US_mj(-1)*US_pic^(-1);
-// Euler equation for money
+
 US_vj^(2)*US_gammavjder = 1-US_beta*US_lambdaj(+1)/(US_lambdaj*US_pic(+1));
-// Consumption-based velocity
+
 US_vj = US_cj/US_mj;
-// Transaction technology
+
 US_gammavj = US_gammav1*US_vj+US_gammav2/US_vj-2*(US_gammav1*US_gammav2)^(1/2);
-// Derivative of transaction technology
+
 US_gammavjder = US_gammav1-US_gammav2*US_vj^(-2);
-// Optimal wage contract (FOC)
+
 US_wjtilde^(1+US_etaj*US_zeta) = US_etaj/(US_etaj-1)*US_fj/US_gj+US_wcst;
-// Definition of fj
+
 US_fj = US_wj^(US_etaj*(1+US_zeta))*US_ndj^(1+US_zeta)+US_xij*US_beta*(US_pic(+1)/(US_pic^US_chij*US_pi4target^(1/4*(1-US_chij))))^(US_etaj*(1+US_zeta))*US_fj(+1);
-// Definition of gj
+
 US_gj = US_lambdaj*(1-US_taun-US_tauwh)*US_wj^US_etaj*US_ndj+US_xij*US_beta*(US_pic(+1)/(US_pic^US_chij*US_pi4target^(1/4*(1-US_chij))))^(US_etaj-1)*US_gj(+1);
-// Aggregate wage rate
+
 US_wj^(1-US_etaj) = (1-US_xij)*US_wjtilde^(1-US_etaj)+US_xij*US_wj(-1)^(1-US_etaj)*(US_pic(-1)^US_chij*US_pi4target^(1/4*(1-US_chij))/US_pic)^(1-US_etaj);
-//-------------
-//-------------
-// Firms
-//-------------
-//-------------
-//-------------
-// Intermediate-good firms
-//-------------
-// Production function tradable
+
+
+
+
+
+
+
+
+
 US_yst = US_zt*US_kdt^US_alphat*US_ndt^(1-US_alphat)-US_psitbar;
-// Production function nontradable
+
 US_ysn = US_zn*US_kdn^US_alphan*US_ndn^(1-US_alphan)-US_psinbar;
-// Real marginal cost tradable
+
 US_mct = 1/(US_zt*(US_alphat)^(US_alphat)*(1-US_alphat)^(1-US_alphat))*US_rk^(US_alphat)*((1+US_tauwf)*US_w)^(1-US_alphat);
-// Real marginal cost nontradable
+
 US_mcn = 1/(US_zn*(US_alphan)^(US_alphan)*(1-US_alphan)^(1-US_alphan))*US_rk^(US_alphan)*((1+US_tauwf)*US_w)^(1-US_alphan);
-// Wage Inflation (qoq)
+
 US_piw = US_w/US_w(-1)*US_pic;
-// Wage Inflation (yoy)
+
 US_piw4 = US_pic4;
-// Auxiliary equation for steady-state fixed cost
+
 US_psitbar = US_psit*US_ytbar;
-// Auxiliary equation for steady-state fixed cost
+
 US_psinbar = US_psin*US_ynbar;
-// Capital input (FOC)
+
 US_rk = US_alphat*(US_yst+US_psitbar)/US_kdt*US_mct;
-// Capital input (FOC)
+
 US_rk = US_alphan*(US_ysn+US_psinbar)/US_kdn*US_mcn;
-// Total capital demand
+
 US_kd = US_kdt+US_kdn;
-// Demand for labour services by household I
+
 US_ndi = 
 (1-US_omega)*(US_wi/US_w)^(-US_eta)*US_nd
 ;
-// Demand for labour services by household J
+
 US_ndj = 
 US_omega*(US_wj/US_w)^(-US_eta)*US_nd
 ;
-// Aggregate labour demand
+
 US_nd^(1-1/US_eta) = 
 (1-US_omega)^(1/US_eta)*US_ndi^(1-1/US_eta)+US_omega^(1/US_eta)*US_ndj^(1-1/US_eta)
 ;
-// Total demand 
+
 US_nd = US_ndt+US_ndn;
-// Aggregate dividends
+
 US_d = US_py*US_y-US_rk*US_kd-(1+US_tauwf)*US_w*US_nd;
-// Non-tradable sector dividends
+
 US_dn = US_pnt*US_ysn-US_rk*US_kdn-(1+US_tauwf)*US_w*US_ndn;
-// Tradable sector dividends
+
 US_dt = US_pht*US_ht
 +US_pex*US_ex
 -US_rk*US_kdt-(1+US_tauwf)*US_w*US_ndt;
-// Optimal price contract set in domestic markets (FOC)
+
 US_phttilde/US_pht = US_thetat/(US_thetat-1)*US_fh/US_gh;
-// Definition of fh
+
 US_fh = US_mct*US_ht+US_xih*US_beta*US_lambdai(+1)/US_lambdai*(US_piht(+1)/(US_piht^US_chih*US_pi4target^(1/4*(1-US_chih))))^US_thetat*US_fh(+1);
-// Definition of gh
+
 US_gh = US_pht*US_ht+US_xih*US_beta*US_lambdai(+1)/US_lambdai*(US_piht(+1)/(US_piht^US_chih*US_pi4target^(1/4*(1-US_chih))))^(US_thetat-1)*US_gh(+1);
-// Aggregate intermediate-good price dynamics
+
 US_pht^(1-US_thetat) = (1-US_xih)*US_phttilde^(1-US_thetat)+US_xih*(US_pht(-1)/US_pic)^(1-US_thetat)*(US_piht(-1)^US_chih*US_pi4target^(1/4*(1-US_chih)))^(1-US_thetat);
-// Intermediate-good price inflation
+
 US_piht = US_pht/US_pht(-1)*US_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 US_pnttilde/US_pnt = US_thetan/(US_thetan-1)*US_fn/US_gn;
-// Definition of fn
+
 US_fn = US_mcn*US_nt+US_xin*US_beta*US_lambdai(+1)/US_lambdai*(US_pint(+1)/(US_pint^US_chin*US_pi4target^(1/4*(1-US_chin))))^US_thetan*US_fn(+1);
-// Definition of gn
+
 US_gn = US_pnt*US_nt+US_xin*US_beta*US_lambdai(+1)/US_lambdai*(US_pint(+1)/(US_pint^US_chin*US_pi4target^(1/4*(1-US_chin))))^(US_thetan-1)*US_gn(+1);
-// Aggregate intermediate-good price dynamics
+
 US_pnt^(1-US_thetan) = (1-US_xin)*US_pnttilde^(1-US_thetan)+US_xin*(US_pnt(-1)/US_pic)^(1-US_thetan)*(US_pint(-1)^US_chin*US_pi4target^(1/4*(1-US_chin)))^(1-US_thetan);
-// Intermediate-good price inflation
+
 US_pint = US_pnt/US_pnt(-1)*US_pic;
-// Optimal price contract set in domestic markets (FOC)
+
 US_pextilde/US_pex = US_thetat/(US_thetat-1)*US_fx/US_gx;
-// Definition of fh
+
 US_fx = US_mct*US_ex+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(US_piex(+1)/(US_piex^US_chix*US_pi4target^(1/4*(1-US_chix))))^US_thetat*US_fx(+1);
-// Definition of gh
+
 US_gx = US_pex*US_ex+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(US_piex(+1)/(US_piex^US_chix*US_pi4target^(1/4*(1-US_chix))))^(US_thetat-1)*US_gx(+1);
-// Aggregate intermediate-good price dynamics
+
 US_pex^(1-US_thetat) = (1-US_xix)*US_pextilde^(1-US_thetat)+US_xix*(US_pex(-1)/US_pic)^(1-US_thetat)*(US_piex(-1)^US_chix*US_pi4target^(1/4*(1-US_chix)))^(1-US_thetat);
-// Intermediate-good price inflation
+
 US_piex = US_pex/US_pex(-1)*US_pic;
-//---------------
-// import pricing
-//---------------
-// Optimal price contract set in foreign markets (FOC), using US_pxtilde = EAA_pimtilde
-// EAAUS_pimtilde/EAAUS_pim = US_cpim*US_thetat/(US_thetat-1)*USEAA_fx/USEAA_gx;
-// Definition of fx
-// USEAA_fx = EAA_size/US_size*EAAUS_im*US_mct+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EAAUS_piim(+1)/(EAAUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^US_thetat*USEAA_fx(+1);
-// Definition of gx   
-// USEAA_gx = USEAA_rer*EAAUS_pim*EAA_size/US_size*EAAUS_im+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EAAUS_piim(+1)/(EAAUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^(US_thetat-1)*USEAA_gx(+1);
-// Aggregate intermediate-good price dynamics, using US_px = EAA_pim
-// EAAUS_pim^(1-US_thetat) = (1-US_xix)*EAAUS_pimtilde^(1-US_thetat)+US_xix*(EAAUS_pim(-1)/EAA_pic)^(1-US_thetat)*(EAAUS_piim(-1)^US_chix*EAA_pi4target^(1/4*(1-US_chih)))^(1-US_thetat);
-// Intermediate-good price inflation, using US_pix = EAA_piim
-// EAAUS_piim = EAAUS_pim/EAAUS_pim(-1)*EAA_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 USEAA_rer = US_rer/EAA_rer;
-// Auxiliary equation for steady-state output
+
 USEAA_rerbar = USEAA_rer;
-//Terms of Trade
+
 USEAA_tot = EAA_pex*USEAA_rer/US_pex;
-// Optimal price contract set in foreign markets (FOC), using US_pxtilde = EAB_pimtilde
-// EABUS_pimtilde/EABUS_pim = US_cpim*US_thetat/(US_thetat-1)*USEAB_fx/USEAB_gx;
-// Definition of fx
-// USEAB_fx = EAB_size/US_size*EABUS_im*US_mct+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EABUS_piim(+1)/(EABUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^US_thetat*USEAB_fx(+1);
-// Definition of gx   
-// USEAB_gx = USEAB_rer*EABUS_pim*EAB_size/US_size*EABUS_im+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EABUS_piim(+1)/(EABUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^(US_thetat-1)*USEAB_gx(+1);
-// Aggregate intermediate-good price dynamics, using US_px = EAB_pim
-// EABUS_pim^(1-US_thetat) = (1-US_xix)*EABUS_pimtilde^(1-US_thetat)+US_xix*(EABUS_pim(-1)/EAB_pic)^(1-US_thetat)*(EABUS_piim(-1)^US_chix*EAB_pi4target^(1/4*(1-US_chih)))^(1-US_thetat);
-// Intermediate-good price inflation, using US_pix = EAB_piim
-// EABUS_piim = EABUS_pim/EABUS_pim(-1)*EAB_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 USEAB_rer = US_rer/EAB_rer;
-// Auxiliary equation for steady-state output
+
 USEAB_rerbar = USEAB_rer;
-//Terms of Trade
+
 USEAB_tot = EAB_pex*USEAB_rer/US_pex;
-// Optimal price contract set in foreign markets (FOC), using US_pxtilde = EAC_pimtilde
-// EACUS_pimtilde/EACUS_pim = US_cpim*US_thetat/(US_thetat-1)*USEAC_fx/USEAC_gx;
-// Definition of fx
-// USEAC_fx = EAC_size/US_size*EACUS_im*US_mct+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EACUS_piim(+1)/(EACUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^US_thetat*USEAC_fx(+1);
-// Definition of gx   
-// USEAC_gx = USEAC_rer*EACUS_pim*EAC_size/US_size*EACUS_im+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EACUS_piim(+1)/(EACUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^(US_thetat-1)*USEAC_gx(+1);
-// Aggregate intermediate-good price dynamics, using US_px = EAC_pim
-// EACUS_pim^(1-US_thetat) = (1-US_xix)*EACUS_pimtilde^(1-US_thetat)+US_xix*(EACUS_pim(-1)/EAC_pic)^(1-US_thetat)*(EACUS_piim(-1)^US_chix*EAC_pi4target^(1/4*(1-US_chih)))^(1-US_thetat);
-// Intermediate-good price inflation, using US_pix = EAC_piim
-// EACUS_piim = EACUS_pim/EACUS_pim(-1)*EAC_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 USEAC_rer = US_rer/EAC_rer;
-// Auxiliary equation for steady-state output
+
 USEAC_rerbar = USEAC_rer;
-//Terms of Trade
+
 USEAC_tot = EAC_pex*USEAC_rer/US_pex;
-// Optimal price contract set in foreign markets (FOC), using US_pxtilde = EAD_pimtilde
-// EADUS_pimtilde/EADUS_pim = US_cpim*US_thetat/(US_thetat-1)*USEAD_fx/USEAD_gx;
-// Definition of fx
-// USEAD_fx = EAD_size/US_size*EADUS_im*US_mct+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EADUS_piim(+1)/(EADUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^US_thetat*USEAD_fx(+1);
-// Definition of gx   
-// USEAD_gx = USEAD_rer*EADUS_pim*EAD_size/US_size*EADUS_im+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EADUS_piim(+1)/(EADUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^(US_thetat-1)*USEAD_gx(+1);
-// Aggregate intermediate-good price dynamics, using US_px = EAD_pim
-// EADUS_pim^(1-US_thetat) = (1-US_xix)*EADUS_pimtilde^(1-US_thetat)+US_xix*(EADUS_pim(-1)/EAD_pic)^(1-US_thetat)*(EADUS_piim(-1)^US_chix*EAD_pi4target^(1/4*(1-US_chih)))^(1-US_thetat);
-// Intermediate-good price inflation, using US_pix = EAD_piim
-// EADUS_piim = EADUS_pim/EADUS_pim(-1)*EAD_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 USEAD_rer = US_rer/EAD_rer;
-// Auxiliary equation for steady-state output
+
 USEAD_rerbar = USEAD_rer;
-//Terms of Trade
+
 USEAD_tot = EAD_pex*USEAD_rer/US_pex;
-// Optimal price contract set in foreign markets (FOC), using US_pxtilde = EAE_pimtilde
-// EAEUS_pimtilde/EAEUS_pim = US_cpim*US_thetat/(US_thetat-1)*USEAE_fx/USEAE_gx;
-// Definition of fx
-// USEAE_fx = EAE_size/US_size*EAEUS_im*US_mct+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EAEUS_piim(+1)/(EAEUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^US_thetat*USEAE_fx(+1);
-// Definition of gx   
-// USEAE_gx = USEAE_rer*EAEUS_pim*EAE_size/US_size*EAEUS_im+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EAEUS_piim(+1)/(EAEUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^(US_thetat-1)*USEAE_gx(+1);
-// Aggregate intermediate-good price dynamics, using US_px = EAE_pim
-// EAEUS_pim^(1-US_thetat) = (1-US_xix)*EAEUS_pimtilde^(1-US_thetat)+US_xix*(EAEUS_pim(-1)/EAE_pic)^(1-US_thetat)*(EAEUS_piim(-1)^US_chix*EAE_pi4target^(1/4*(1-US_chih)))^(1-US_thetat);
-// Intermediate-good price inflation, using US_pix = EAE_piim
-// EAEUS_piim = EAEUS_pim/EAEUS_pim(-1)*EAE_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 USEAE_rer = US_rer/EAE_rer;
-// Auxiliary equation for steady-state output
+
 USEAE_rerbar = USEAE_rer;
-//Terms of Trade
+
 USEAE_tot = EAE_pex*USEAE_rer/US_pex;
-// Optimal price contract set in foreign markets (FOC), using US_pxtilde = EAF_pimtilde
-// EAFUS_pimtilde/EAFUS_pim = US_cpim*US_thetat/(US_thetat-1)*USEAF_fx/USEAF_gx;
-// Definition of fx
-// USEAF_fx = EAF_size/US_size*EAFUS_im*US_mct+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EAFUS_piim(+1)/(EAFUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^US_thetat*USEAF_fx(+1);
-// Definition of gx   
-// USEAF_gx = USEAF_rer*EAFUS_pim*EAF_size/US_size*EAFUS_im+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EAFUS_piim(+1)/(EAFUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^(US_thetat-1)*USEAF_gx(+1);
-// Aggregate intermediate-good price dynamics, using US_px = EAF_pim
-// EAFUS_pim^(1-US_thetat) = (1-US_xix)*EAFUS_pimtilde^(1-US_thetat)+US_xix*(EAFUS_pim(-1)/EAF_pic)^(1-US_thetat)*(EAFUS_piim(-1)^US_chix*EAF_pi4target^(1/4*(1-US_chih)))^(1-US_thetat);
-// Intermediate-good price inflation, using US_pix = EAF_piim
-// EAFUS_piim = EAFUS_pim/EAFUS_pim(-1)*EAF_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 USEAF_rer = US_rer/EAF_rer;
-// Auxiliary equation for steady-state output
+
 USEAF_rerbar = USEAF_rer;
-//Terms of Trade
+
 USEAF_tot = EAF_pex*USEAF_rer/US_pex;
-// Optimal price contract set in foreign markets (FOC), using US_pxtilde = EAG_pimtilde
-// EAGUS_pimtilde/EAGUS_pim = US_cpim*US_thetat/(US_thetat-1)*USEAG_fx/USEAG_gx;
-// Definition of fx
-// USEAG_fx = EAG_size/US_size*EAGUS_im*US_mct+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EAGUS_piim(+1)/(EAGUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^US_thetat*USEAG_fx(+1);
-// Definition of gx   
-// USEAG_gx = USEAG_rer*EAGUS_pim*EAG_size/US_size*EAGUS_im+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EAGUS_piim(+1)/(EAGUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^(US_thetat-1)*USEAG_gx(+1);
-// Aggregate intermediate-good price dynamics, using US_px = EAG_pim
-// EAGUS_pim^(1-US_thetat) = (1-US_xix)*EAGUS_pimtilde^(1-US_thetat)+US_xix*(EAGUS_pim(-1)/EAG_pic)^(1-US_thetat)*(EAGUS_piim(-1)^US_chix*EAG_pi4target^(1/4*(1-US_chih)))^(1-US_thetat);
-// Intermediate-good price inflation, using US_pix = EAG_piim
-// EAGUS_piim = EAGUS_pim/EAGUS_pim(-1)*EAG_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 USEAG_rer = US_rer/EAG_rer;
-// Auxiliary equation for steady-state output
+
 USEAG_rerbar = USEAG_rer;
-//Terms of Trade
+
 USEAG_tot = EAG_pex*USEAG_rer/US_pex;
-// Optimal price contract set in foreign markets (FOC), using US_pxtilde = EAH_pimtilde
-// EAHUS_pimtilde/EAHUS_pim = US_cpim*US_thetat/(US_thetat-1)*USEAH_fx/USEAH_gx;
-// Definition of fx
-// USEAH_fx = EAH_size/US_size*EAHUS_im*US_mct+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EAHUS_piim(+1)/(EAHUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^US_thetat*USEAH_fx(+1);
-// Definition of gx   
-// USEAH_gx = USEAH_rer*EAHUS_pim*EAH_size/US_size*EAHUS_im+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EAHUS_piim(+1)/(EAHUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^(US_thetat-1)*USEAH_gx(+1);
-// Aggregate intermediate-good price dynamics, using US_px = EAH_pim
-// EAHUS_pim^(1-US_thetat) = (1-US_xix)*EAHUS_pimtilde^(1-US_thetat)+US_xix*(EAHUS_pim(-1)/EAH_pic)^(1-US_thetat)*(EAHUS_piim(-1)^US_chix*EAH_pi4target^(1/4*(1-US_chih)))^(1-US_thetat);
-// Intermediate-good price inflation, using US_pix = EAH_piim
-// EAHUS_piim = EAHUS_pim/EAHUS_pim(-1)*EAH_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 USEAH_rer = US_rer/EAH_rer;
-// Auxiliary equation for steady-state output
+
 USEAH_rerbar = USEAH_rer;
-//Terms of Trade
+
 USEAH_tot = EAH_pex*USEAH_rer/US_pex;
-// Optimal price contract set in foreign markets (FOC), using US_pxtilde = EAI_pimtilde
-// EAIUS_pimtilde/EAIUS_pim = US_cpim*US_thetat/(US_thetat-1)*USEAI_fx/USEAI_gx;
-// Definition of fx
-// USEAI_fx = EAI_size/US_size*EAIUS_im*US_mct+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EAIUS_piim(+1)/(EAIUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^US_thetat*USEAI_fx(+1);
-// Definition of gx   
-// USEAI_gx = USEAI_rer*EAIUS_pim*EAI_size/US_size*EAIUS_im+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EAIUS_piim(+1)/(EAIUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^(US_thetat-1)*USEAI_gx(+1);
-// Aggregate intermediate-good price dynamics, using US_px = EAI_pim
-// EAIUS_pim^(1-US_thetat) = (1-US_xix)*EAIUS_pimtilde^(1-US_thetat)+US_xix*(EAIUS_pim(-1)/EAI_pic)^(1-US_thetat)*(EAIUS_piim(-1)^US_chix*EAI_pi4target^(1/4*(1-US_chih)))^(1-US_thetat);
-// Intermediate-good price inflation, using US_pix = EAI_piim
-// EAIUS_piim = EAIUS_pim/EAIUS_pim(-1)*EAI_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 USEAI_rer = US_rer/EAI_rer;
-// Auxiliary equation for steady-state output
+
 USEAI_rerbar = USEAI_rer;
-//Terms of Trade
+
 USEAI_tot = EAI_pex*USEAI_rer/US_pex;
-// Optimal price contract set in foreign markets (FOC), using US_pxtilde = EAJ_pimtilde
-// EAJUS_pimtilde/EAJUS_pim = US_cpim*US_thetat/(US_thetat-1)*USEAJ_fx/USEAJ_gx;
-// Definition of fx
-// USEAJ_fx = EAJ_size/US_size*EAJUS_im*US_mct+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EAJUS_piim(+1)/(EAJUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^US_thetat*USEAJ_fx(+1);
-// Definition of gx   
-// USEAJ_gx = USEAJ_rer*EAJUS_pim*EAJ_size/US_size*EAJUS_im+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EAJUS_piim(+1)/(EAJUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^(US_thetat-1)*USEAJ_gx(+1);
-// Aggregate intermediate-good price dynamics, using US_px = EAJ_pim
-// EAJUS_pim^(1-US_thetat) = (1-US_xix)*EAJUS_pimtilde^(1-US_thetat)+US_xix*(EAJUS_pim(-1)/EAJ_pic)^(1-US_thetat)*(EAJUS_piim(-1)^US_chix*EAJ_pi4target^(1/4*(1-US_chih)))^(1-US_thetat);
-// Intermediate-good price inflation, using US_pix = EAJ_piim
-// EAJUS_piim = EAJUS_pim/EAJUS_pim(-1)*EAJ_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 USEAJ_rer = US_rer/EAJ_rer;
-// Auxiliary equation for steady-state output
+
 USEAJ_rerbar = USEAJ_rer;
-//Terms of Trade
+
 USEAJ_tot = EAJ_pex*USEAJ_rer/US_pex;
-// Optimal price contract set in foreign markets (FOC), using US_pxtilde = EAK_pimtilde
-// EAKUS_pimtilde/EAKUS_pim = US_cpim*US_thetat/(US_thetat-1)*USEAK_fx/USEAK_gx;
-// Definition of fx
-// USEAK_fx = EAK_size/US_size*EAKUS_im*US_mct+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EAKUS_piim(+1)/(EAKUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^US_thetat*USEAK_fx(+1);
-// Definition of gx   
-// USEAK_gx = USEAK_rer*EAKUS_pim*EAK_size/US_size*EAKUS_im+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EAKUS_piim(+1)/(EAKUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^(US_thetat-1)*USEAK_gx(+1);
-// Aggregate intermediate-good price dynamics, using US_px = EAK_pim
-// EAKUS_pim^(1-US_thetat) = (1-US_xix)*EAKUS_pimtilde^(1-US_thetat)+US_xix*(EAKUS_pim(-1)/EAK_pic)^(1-US_thetat)*(EAKUS_piim(-1)^US_chix*EAK_pi4target^(1/4*(1-US_chih)))^(1-US_thetat);
-// Intermediate-good price inflation, using US_pix = EAK_piim
-// EAKUS_piim = EAKUS_pim/EAKUS_pim(-1)*EAK_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 USEAK_rer = US_rer/EAK_rer;
-// Auxiliary equation for steady-state output
+
 USEAK_rerbar = USEAK_rer;
-//Terms of Trade
+
 USEAK_tot = EAK_pex*USEAK_rer/US_pex;
-// Optimal price contract set in foreign markets (FOC), using US_pxtilde = EAL_pimtilde
-// EALUS_pimtilde/EALUS_pim = US_cpim*US_thetat/(US_thetat-1)*USEAL_fx/USEAL_gx;
-// Definition of fx
-// USEAL_fx = EAL_size/US_size*EALUS_im*US_mct+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EALUS_piim(+1)/(EALUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^US_thetat*USEAL_fx(+1);
-// Definition of gx   
-// USEAL_gx = USEAL_rer*EALUS_pim*EAL_size/US_size*EALUS_im+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(EALUS_piim(+1)/(EALUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^(US_thetat-1)*USEAL_gx(+1);
-// Aggregate intermediate-good price dynamics, using US_px = EAL_pim
-// EALUS_pim^(1-US_thetat) = (1-US_xix)*EALUS_pimtilde^(1-US_thetat)+US_xix*(EALUS_pim(-1)/EAL_pic)^(1-US_thetat)*(EALUS_piim(-1)^US_chix*EAL_pi4target^(1/4*(1-US_chih)))^(1-US_thetat);
-// Intermediate-good price inflation, using US_pix = EAL_piim
-// EALUS_piim = EALUS_pim/EALUS_pim(-1)*EAL_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 USEAL_rer = US_rer/EAL_rer;
-// Auxiliary equation for steady-state output
+
 USEAL_rerbar = USEAL_rer;
-//Terms of Trade
+
 USEAL_tot = EAL_pex*USEAL_rer/US_pex;
-// Optimal price contract set in foreign markets (FOC), using US_pxtilde = RW_pimtilde
-// RWUS_pimtilde/RWUS_pim = US_cpim*US_thetat/(US_thetat-1)*USRW_fx/USRW_gx;
-// Definition of fx
-// USRW_fx = RW_size/US_size*RWUS_im*US_mct+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(RWUS_piim(+1)/(RWUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^US_thetat*USRW_fx(+1);
-// Definition of gx   
-// USRW_gx = USRW_rer*RWUS_pim*RW_size/US_size*RWUS_im+US_xix*US_beta*US_lambdai(+1)/US_lambdai*(RWUS_piim(+1)/(RWUS_piim^US_chix*US_pi4target^(1/4*(1-US_chix))))^(US_thetat-1)*USRW_gx(+1);
-// Aggregate intermediate-good price dynamics, using US_px = RW_pim
-// RWUS_pim^(1-US_thetat) = (1-US_xix)*RWUS_pimtilde^(1-US_thetat)+US_xix*(RWUS_pim(-1)/RW_pic)^(1-US_thetat)*(RWUS_piim(-1)^US_chix*RW_pi4target^(1/4*(1-US_chih)))^(1-US_thetat);
-// Intermediate-good price inflation, using US_pix = RW_piim
-// RWUS_piim = RWUS_pim/RWUS_pim(-1)*RW_pic;
-// Bilateral real exchange rate
+
+
+
+
+
+
+
+
+
+
+
 USRW_rer = US_rer/RW_rer;
-// Auxiliary equation for steady-state output
+
 USRW_rerbar = USRW_rer;
-//Terms of Trade
+
 USRW_tot = RW_pex*USRW_rer/US_pex;
-// Total imports 
+
 US_im = 
 +US_imc
 +US_imi
 +US_imcg
 +US_imig
 ;
-// Total import deflator
+
 US_im*US_pim  = 
 +US_pimc*US_imc
 +US_pimi*US_imi
 +US_pimcg*US_imcg
 +US_pimig*US_imig
 ;
-// Effective real exchange rate: double weighting (imports)
+
 USEAA_weightim = USEAA_rer*EAA_pex*USEAA_im/(US_pim*US_im);
-// Effective real exchange rate: double weighting (exports)
+
 USEAA_weightex = EAA_size/US_size*EAAUS_im/US_ex*USEAA_rer*EAA_py*EAA_y/(USEAA_rer*EAA_py*EAA_y
 +USEAB_rer*EAB_pex*EAAEAB_im
 +USEAC_rer*EAC_pex*EAAEAC_im
@@ -52156,11 +52156,11 @@ USEAA_weightex = EAA_size/US_size*EAAUS_im/US_ex*USEAA_rer*EAA_py*EAA_y/(USEAA_r
 +USEAL_rer*EAL_pex*RWEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 USEAA_weight = US_pim*US_im/(US_pim*US_im+US_pex*US_ex)*USEAA_weightim+US_pex*US_ex/(US_pim*US_im+US_pex*US_ex)*USEAA_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 USEAB_weightim = USEAB_rer*EAB_pex*USEAB_im/(US_pim*US_im);
-// Effective real exchange rate: double weighting (exports)
+
 USEAB_weightex = EAB_size/US_size*EABUS_im/US_ex*USEAB_rer*EAB_py*EAB_y/(USEAB_rer*EAB_py*EAB_y
 +USEAA_rer*EAA_pex*EABEAA_im
 +USEAC_rer*EAC_pex*EABEAC_im
@@ -52344,11 +52344,11 @@ USEAB_weightex = EAB_size/US_size*EABUS_im/US_ex*USEAB_rer*EAB_py*EAB_y/(USEAB_r
 +USEAL_rer*EAL_pex*RWEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 USEAB_weight = US_pim*US_im/(US_pim*US_im+US_pex*US_ex)*USEAB_weightim+US_pex*US_ex/(US_pim*US_im+US_pex*US_ex)*USEAB_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 USEAC_weightim = USEAC_rer*EAC_pex*USEAC_im/(US_pim*US_im);
-// Effective real exchange rate: double weighting (exports)
+
 USEAC_weightex = EAC_size/US_size*EACUS_im/US_ex*USEAC_rer*EAC_py*EAC_y/(USEAC_rer*EAC_py*EAC_y
 +USEAA_rer*EAA_pex*EACEAA_im
 +USEAB_rer*EAB_pex*EACEAB_im
@@ -52532,11 +52532,11 @@ USEAC_weightex = EAC_size/US_size*EACUS_im/US_ex*USEAC_rer*EAC_py*EAC_y/(USEAC_r
 +USEAL_rer*EAL_pex*RWEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 USEAC_weight = US_pim*US_im/(US_pim*US_im+US_pex*US_ex)*USEAC_weightim+US_pex*US_ex/(US_pim*US_im+US_pex*US_ex)*USEAC_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 USEAD_weightim = USEAD_rer*EAD_pex*USEAD_im/(US_pim*US_im);
-// Effective real exchange rate: double weighting (exports)
+
 USEAD_weightex = EAD_size/US_size*EADUS_im/US_ex*USEAD_rer*EAD_py*EAD_y/(USEAD_rer*EAD_py*EAD_y
 +USEAA_rer*EAA_pex*EADEAA_im
 +USEAB_rer*EAB_pex*EADEAB_im
@@ -52720,11 +52720,11 @@ USEAD_weightex = EAD_size/US_size*EADUS_im/US_ex*USEAD_rer*EAD_py*EAD_y/(USEAD_r
 +USEAL_rer*EAL_pex*RWEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 USEAD_weight = US_pim*US_im/(US_pim*US_im+US_pex*US_ex)*USEAD_weightim+US_pex*US_ex/(US_pim*US_im+US_pex*US_ex)*USEAD_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 USEAE_weightim = USEAE_rer*EAE_pex*USEAE_im/(US_pim*US_im);
-// Effective real exchange rate: double weighting (exports)
+
 USEAE_weightex = EAE_size/US_size*EAEUS_im/US_ex*USEAE_rer*EAE_py*EAE_y/(USEAE_rer*EAE_py*EAE_y
 +USEAA_rer*EAA_pex*EAEEAA_im
 +USEAB_rer*EAB_pex*EAEEAB_im
@@ -52908,11 +52908,11 @@ USEAE_weightex = EAE_size/US_size*EAEUS_im/US_ex*USEAE_rer*EAE_py*EAE_y/(USEAE_r
 +USEAL_rer*EAL_pex*RWEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 USEAE_weight = US_pim*US_im/(US_pim*US_im+US_pex*US_ex)*USEAE_weightim+US_pex*US_ex/(US_pim*US_im+US_pex*US_ex)*USEAE_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 USEAF_weightim = USEAF_rer*EAF_pex*USEAF_im/(US_pim*US_im);
-// Effective real exchange rate: double weighting (exports)
+
 USEAF_weightex = EAF_size/US_size*EAFUS_im/US_ex*USEAF_rer*EAF_py*EAF_y/(USEAF_rer*EAF_py*EAF_y
 +USEAA_rer*EAA_pex*EAFEAA_im
 +USEAB_rer*EAB_pex*EAFEAB_im
@@ -53096,11 +53096,11 @@ USEAF_weightex = EAF_size/US_size*EAFUS_im/US_ex*USEAF_rer*EAF_py*EAF_y/(USEAF_r
 +USEAL_rer*EAL_pex*RWEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 USEAF_weight = US_pim*US_im/(US_pim*US_im+US_pex*US_ex)*USEAF_weightim+US_pex*US_ex/(US_pim*US_im+US_pex*US_ex)*USEAF_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 USEAG_weightim = USEAG_rer*EAG_pex*USEAG_im/(US_pim*US_im);
-// Effective real exchange rate: double weighting (exports)
+
 USEAG_weightex = EAG_size/US_size*EAGUS_im/US_ex*USEAG_rer*EAG_py*EAG_y/(USEAG_rer*EAG_py*EAG_y
 +USEAA_rer*EAA_pex*EAGEAA_im
 +USEAB_rer*EAB_pex*EAGEAB_im
@@ -53284,11 +53284,11 @@ USEAG_weightex = EAG_size/US_size*EAGUS_im/US_ex*USEAG_rer*EAG_py*EAG_y/(USEAG_r
 +USEAL_rer*EAL_pex*RWEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 USEAG_weight = US_pim*US_im/(US_pim*US_im+US_pex*US_ex)*USEAG_weightim+US_pex*US_ex/(US_pim*US_im+US_pex*US_ex)*USEAG_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 USEAH_weightim = USEAH_rer*EAH_pex*USEAH_im/(US_pim*US_im);
-// Effective real exchange rate: double weighting (exports)
+
 USEAH_weightex = EAH_size/US_size*EAHUS_im/US_ex*USEAH_rer*EAH_py*EAH_y/(USEAH_rer*EAH_py*EAH_y
 +USEAA_rer*EAA_pex*EAHEAA_im
 +USEAB_rer*EAB_pex*EAHEAB_im
@@ -53472,11 +53472,11 @@ USEAH_weightex = EAH_size/US_size*EAHUS_im/US_ex*USEAH_rer*EAH_py*EAH_y/(USEAH_r
 +USEAL_rer*EAL_pex*RWEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 USEAH_weight = US_pim*US_im/(US_pim*US_im+US_pex*US_ex)*USEAH_weightim+US_pex*US_ex/(US_pim*US_im+US_pex*US_ex)*USEAH_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 USEAI_weightim = USEAI_rer*EAI_pex*USEAI_im/(US_pim*US_im);
-// Effective real exchange rate: double weighting (exports)
+
 USEAI_weightex = EAI_size/US_size*EAIUS_im/US_ex*USEAI_rer*EAI_py*EAI_y/(USEAI_rer*EAI_py*EAI_y
 +USEAA_rer*EAA_pex*EAIEAA_im
 +USEAB_rer*EAB_pex*EAIEAB_im
@@ -53660,11 +53660,11 @@ USEAI_weightex = EAI_size/US_size*EAIUS_im/US_ex*USEAI_rer*EAI_py*EAI_y/(USEAI_r
 +USEAL_rer*EAL_pex*RWEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 USEAI_weight = US_pim*US_im/(US_pim*US_im+US_pex*US_ex)*USEAI_weightim+US_pex*US_ex/(US_pim*US_im+US_pex*US_ex)*USEAI_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 USEAJ_weightim = USEAJ_rer*EAJ_pex*USEAJ_im/(US_pim*US_im);
-// Effective real exchange rate: double weighting (exports)
+
 USEAJ_weightex = EAJ_size/US_size*EAJUS_im/US_ex*USEAJ_rer*EAJ_py*EAJ_y/(USEAJ_rer*EAJ_py*EAJ_y
 +USEAA_rer*EAA_pex*EAJEAA_im
 +USEAB_rer*EAB_pex*EAJEAB_im
@@ -53848,11 +53848,11 @@ USEAJ_weightex = EAJ_size/US_size*EAJUS_im/US_ex*USEAJ_rer*EAJ_py*EAJ_y/(USEAJ_r
 +USEAL_rer*EAL_pex*RWEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 USEAJ_weight = US_pim*US_im/(US_pim*US_im+US_pex*US_ex)*USEAJ_weightim+US_pex*US_ex/(US_pim*US_im+US_pex*US_ex)*USEAJ_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 USEAK_weightim = USEAK_rer*EAK_pex*USEAK_im/(US_pim*US_im);
-// Effective real exchange rate: double weighting (exports)
+
 USEAK_weightex = EAK_size/US_size*EAKUS_im/US_ex*USEAK_rer*EAK_py*EAK_y/(USEAK_rer*EAK_py*EAK_y
 +USEAA_rer*EAA_pex*EAKEAA_im
 +USEAB_rer*EAB_pex*EAKEAB_im
@@ -54036,11 +54036,11 @@ USEAK_weightex = EAK_size/US_size*EAKUS_im/US_ex*USEAK_rer*EAK_py*EAK_y/(USEAK_r
 +USEAL_rer*EAL_pex*RWEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 USEAK_weight = US_pim*US_im/(US_pim*US_im+US_pex*US_ex)*USEAK_weightim+US_pex*US_ex/(US_pim*US_im+US_pex*US_ex)*USEAK_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 USEAL_weightim = USEAL_rer*EAL_pex*USEAL_im/(US_pim*US_im);
-// Effective real exchange rate: double weighting (exports)
+
 USEAL_weightex = EAL_size/US_size*EALUS_im/US_ex*USEAL_rer*EAL_py*EAL_y/(USEAL_rer*EAL_py*EAL_y
 +USEAA_rer*EAA_pex*EALEAA_im
 +USEAB_rer*EAB_pex*EALEAB_im
@@ -54224,11 +54224,11 @@ USEAL_weightex = EAL_size/US_size*EALUS_im/US_ex*USEAL_rer*EAL_py*EAL_y/(USEAL_r
 +USEAL_rer*EAL_pex*RWEAL_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 USEAL_weight = US_pim*US_im/(US_pim*US_im+US_pex*US_ex)*USEAL_weightim+US_pex*US_ex/(US_pim*US_im+US_pex*US_ex)*USEAL_weightex;
-// Effective real exchange rate: double weighting (imports)
+
 USRW_weightim = USRW_rer*RW_pex*USRW_im/(US_pim*US_im);
-// Effective real exchange rate: double weighting (exports)
+
 USRW_weightex = RW_size/US_size*RWUS_im/US_ex*USRW_rer*RW_py*RW_y/(USRW_rer*RW_py*RW_y
 +USEAA_rer*EAA_pex*RWEAA_im
 +USEAB_rer*EAB_pex*RWEAB_im
@@ -54412,9 +54412,9 @@ USRW_weightex = RW_size/US_size*RWUS_im/US_ex*USRW_rer*RW_py*RW_y/(USRW_rer*RW_p
 +USRW_rer*RW_pex*EALRW_im
 )
 ;
-// Effective real exchange rate: double weighting (overall)
+
 USRW_weight = US_pim*US_im/(US_pim*US_im+US_pex*US_ex)*USRW_weightim+US_pex*US_ex/(US_pim*US_im+US_pex*US_ex)*USRW_weightex;
-// Effective real exchange rate
+
 US_reer = 1
 *USEAA_rer^USEAA_weight
 *USEAB_rer^USEAB_weight
@@ -54430,7 +54430,7 @@ US_reer = 1
 *USEAL_rer^USEAL_weight
 *USRW_rer^USRW_weight
 ;
-// Effective terms of trade
+
 US_etot = 1
 *USEAA_tot^USEAA_weight
 *USEAB_tot^USEAB_weight
@@ -54446,10 +54446,10 @@ US_etot = 1
 *USEAL_tot^USEAL_weight
 *USRW_tot^USRW_weight
 ;
-//-----------------
-// Final-good firms
-//-----------------
-// Private consumption good (import)
+
+
+
+
 US_imc^((US_mumc-1)/US_mumc) =
 +USEAA_numc ^(1/US_mumc)*USEAA_imc^(1-1/US_mumc)
 +USEAB_numc ^(1/US_mumc)*USEAB_imc^(1-1/US_mumc)
@@ -54477,27 +54477,27 @@ US_imc^((US_mumc-1)/US_mumc) =
 -USEAK_numc
 -USRW_numc
 )^(1/US_mumc)*USEAL_imc^(1-1/US_mumc);
-// Demand for bilateral consumption import goods
+
 USEAB_imc = USEAB_numc*((EAB_pex*USEAB_rer)/US_pimc)^(-US_mumc)*US_imc;
-// Demand for bilateral consumption import goods
+
 USEAC_imc = USEAC_numc*((EAC_pex*USEAC_rer)/US_pimc)^(-US_mumc)*US_imc;
-// Demand for bilateral consumption import goods
+
 USEAD_imc = USEAD_numc*((EAD_pex*USEAD_rer)/US_pimc)^(-US_mumc)*US_imc;
-// Demand for bilateral consumption import goods
+
 USEAE_imc = USEAE_numc*((EAE_pex*USEAE_rer)/US_pimc)^(-US_mumc)*US_imc;
-// Demand for bilateral consumption import goods
+
 USEAF_imc = USEAF_numc*((EAF_pex*USEAF_rer)/US_pimc)^(-US_mumc)*US_imc;
-// Demand for bilateral consumption import goods
+
 USEAG_imc = USEAG_numc*((EAG_pex*USEAG_rer)/US_pimc)^(-US_mumc)*US_imc;
-// Demand for bilateral consumption import goods
+
 USEAH_imc = USEAH_numc*((EAH_pex*USEAH_rer)/US_pimc)^(-US_mumc)*US_imc;
-// Demand for bilateral consumption import goods
+
 USEAI_imc = USEAI_numc*((EAI_pex*USEAI_rer)/US_pimc)^(-US_mumc)*US_imc;
-// Demand for bilateral consumption import goods
+
 USEAJ_imc = USEAJ_numc*((EAJ_pex*USEAJ_rer)/US_pimc)^(-US_mumc)*US_imc;
-// Demand for bilateral consumption import goods
+
 USEAK_imc = USEAK_numc*((EAK_pex*USEAK_rer)/US_pimc)^(-US_mumc)*US_imc;
-// Demand for bilateral consumption import goods
+
 USRW_imc = USRW_numc*((RW_pex*USRW_rer)/US_pimc)^(-US_mumc)*US_imc;
 USEAL_imc = (1
 -USEAA_numc
@@ -54513,7 +54513,7 @@ USEAL_imc = (1
 -USEAK_numc
 -USRW_numc
 )*((EAL_pex*USEAL_rer)/US_pimc)^(-US_mumc)*US_imc;
-// Price of the consumption good (import)
+
 US_pimc^(1-US_mumc) =
 +USEAA_numc * (EAA_pex*USEAA_rer)^(1-US_mumc)
 +USEAB_numc * (EAB_pex*USEAB_rer)^(1-US_mumc)
@@ -54541,9 +54541,9 @@ US_pimc^(1-US_mumc) =
 -USEAK_numc
 -USRW_numc
 )*(EAL_pex*USEAL_rer)^(1-US_mumc);
-// Private consumption good (import) inflation
+
 US_piimc = US_pimc/US_pimc(-1)*US_pic;
-// Private consumption good (import)
+
 US_imi^((US_mumi-1)/US_mumi) =
 +USEAA_numi ^(1/US_mumi)*USEAA_imi^(1-1/US_mumi)
 +USEAB_numi ^(1/US_mumi)*USEAB_imi^(1-1/US_mumi)
@@ -54571,27 +54571,27 @@ US_imi^((US_mumi-1)/US_mumi) =
 -USEAK_numi
 -USRW_numi
 )^(1/US_mumi)*USEAL_imi^(1-1/US_mumi);
-// Demand for bilateral consumption import goods
+
 USEAB_imi = USEAB_numi*((EAB_pex*USEAB_rer)/US_pimi)^(-US_mumi)*US_imi;
-// Demand for bilateral consumption import goods
+
 USEAC_imi = USEAC_numi*((EAC_pex*USEAC_rer)/US_pimi)^(-US_mumi)*US_imi;
-// Demand for bilateral consumption import goods
+
 USEAD_imi = USEAD_numi*((EAD_pex*USEAD_rer)/US_pimi)^(-US_mumi)*US_imi;
-// Demand for bilateral consumption import goods
+
 USEAE_imi = USEAE_numi*((EAE_pex*USEAE_rer)/US_pimi)^(-US_mumi)*US_imi;
-// Demand for bilateral consumption import goods
+
 USEAF_imi = USEAF_numi*((EAF_pex*USEAF_rer)/US_pimi)^(-US_mumi)*US_imi;
-// Demand for bilateral consumption import goods
+
 USEAG_imi = USEAG_numi*((EAG_pex*USEAG_rer)/US_pimi)^(-US_mumi)*US_imi;
-// Demand for bilateral consumption import goods
+
 USEAH_imi = USEAH_numi*((EAH_pex*USEAH_rer)/US_pimi)^(-US_mumi)*US_imi;
-// Demand for bilateral consumption import goods
+
 USEAI_imi = USEAI_numi*((EAI_pex*USEAI_rer)/US_pimi)^(-US_mumi)*US_imi;
-// Demand for bilateral consumption import goods
+
 USEAJ_imi = USEAJ_numi*((EAJ_pex*USEAJ_rer)/US_pimi)^(-US_mumi)*US_imi;
-// Demand for bilateral consumption import goods
+
 USEAK_imi = USEAK_numi*((EAK_pex*USEAK_rer)/US_pimi)^(-US_mumi)*US_imi;
-// Demand for bilateral consumption import goods
+
 USRW_imi = USRW_numi*((RW_pex*USRW_rer)/US_pimi)^(-US_mumi)*US_imi;
 USEAL_imi = (1
 -USEAA_numi
@@ -54607,7 +54607,7 @@ USEAL_imi = (1
 -USEAK_numi
 -USRW_numi
 )*((EAL_pex*USEAL_rer)/US_pimi)^(-US_mumi)*US_imi;
-// Price of the consumption good (import)
+
 US_pimi^(1-US_mumi) =
 +USEAA_numi * (EAA_pex*USEAA_rer)^(1-US_mumi)
 +USEAB_numi * (EAB_pex*USEAB_rer)^(1-US_mumi)
@@ -54635,9 +54635,9 @@ US_pimi^(1-US_mumi) =
 -USEAK_numi
 -USRW_numi
 )*(EAL_pex*USEAL_rer)^(1-US_mumi);
-// Private consumption good (import) inflation
+
 US_piimi = US_pimi/US_pimi(-1)*US_pic;
-// Private consumption good (import)
+
 US_imcg^((US_mumcg-1)/US_mumcg) =
 +USEAA_numcg ^(1/US_mumcg)*USEAA_imcg^(1-1/US_mumcg)
 +USEAB_numcg ^(1/US_mumcg)*USEAB_imcg^(1-1/US_mumcg)
@@ -54665,27 +54665,27 @@ US_imcg^((US_mumcg-1)/US_mumcg) =
 -USEAK_numcg
 -USRW_numcg
 )^(1/US_mumcg)*USEAL_imcg^(1-1/US_mumcg);
-// Demand for bilateral consumption import goods
+
 USEAB_imcg = USEAB_numcg*((EAB_pex*USEAB_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
-// Demand for bilateral consumption import goods
+
 USEAC_imcg = USEAC_numcg*((EAC_pex*USEAC_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
-// Demand for bilateral consumption import goods
+
 USEAD_imcg = USEAD_numcg*((EAD_pex*USEAD_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
-// Demand for bilateral consumption import goods
+
 USEAE_imcg = USEAE_numcg*((EAE_pex*USEAE_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
-// Demand for bilateral consumption import goods
+
 USEAF_imcg = USEAF_numcg*((EAF_pex*USEAF_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
-// Demand for bilateral consumption import goods
+
 USEAG_imcg = USEAG_numcg*((EAG_pex*USEAG_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
-// Demand for bilateral consumption import goods
+
 USEAH_imcg = USEAH_numcg*((EAH_pex*USEAH_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
-// Demand for bilateral consumption import goods
+
 USEAI_imcg = USEAI_numcg*((EAI_pex*USEAI_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
-// Demand for bilateral consumption import goods
+
 USEAJ_imcg = USEAJ_numcg*((EAJ_pex*USEAJ_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
-// Demand for bilateral consumption import goods
+
 USEAK_imcg = USEAK_numcg*((EAK_pex*USEAK_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
-// Demand for bilateral consumption import goods
+
 USRW_imcg = USRW_numcg*((RW_pex*USRW_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
 USEAL_imcg = (1
 -USEAA_numcg
@@ -54701,7 +54701,7 @@ USEAL_imcg = (1
 -USEAK_numcg
 -USRW_numcg
 )*((EAL_pex*USEAL_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
-// Price of the consumption good (import)
+
 US_pimcg^(1-US_mumcg) =
 +USEAA_numcg * (EAA_pex*USEAA_rer)^(1-US_mumcg)
 +USEAB_numcg * (EAB_pex*USEAB_rer)^(1-US_mumcg)
@@ -54729,9 +54729,9 @@ US_pimcg^(1-US_mumcg) =
 -USEAK_numcg
 -USRW_numcg
 )*(EAL_pex*USEAL_rer)^(1-US_mumcg);
-// Private consumption good (import) inflation
+
 US_piimcg = US_pimcg/US_pimcg(-1)*US_pic;
-// Private consumption good (import)
+
 US_imig^((US_mumig-1)/US_mumig) =
 +USEAA_numig ^(1/US_mumig)*USEAA_imig^(1-1/US_mumig)
 +USEAB_numig ^(1/US_mumig)*USEAB_imig^(1-1/US_mumig)
@@ -54759,27 +54759,27 @@ US_imig^((US_mumig-1)/US_mumig) =
 -USEAK_numig
 -USRW_numig
 )^(1/US_mumig)*USEAL_imig^(1-1/US_mumig);
-// Demand for bilateral consumption import goods
+
 USEAB_imig = USEAB_numig*((EAB_pex*USEAB_rer)/US_pimig)^(-US_mumig)*US_imig;
-// Demand for bilateral consumption import goods
+
 USEAC_imig = USEAC_numig*((EAC_pex*USEAC_rer)/US_pimig)^(-US_mumig)*US_imig;
-// Demand for bilateral consumption import goods
+
 USEAD_imig = USEAD_numig*((EAD_pex*USEAD_rer)/US_pimig)^(-US_mumig)*US_imig;
-// Demand for bilateral consumption import goods
+
 USEAE_imig = USEAE_numig*((EAE_pex*USEAE_rer)/US_pimig)^(-US_mumig)*US_imig;
-// Demand for bilateral consumption import goods
+
 USEAF_imig = USEAF_numig*((EAF_pex*USEAF_rer)/US_pimig)^(-US_mumig)*US_imig;
-// Demand for bilateral consumption import goods
+
 USEAG_imig = USEAG_numig*((EAG_pex*USEAG_rer)/US_pimig)^(-US_mumig)*US_imig;
-// Demand for bilateral consumption import goods
+
 USEAH_imig = USEAH_numig*((EAH_pex*USEAH_rer)/US_pimig)^(-US_mumig)*US_imig;
-// Demand for bilateral consumption import goods
+
 USEAI_imig = USEAI_numig*((EAI_pex*USEAI_rer)/US_pimig)^(-US_mumig)*US_imig;
-// Demand for bilateral consumption import goods
+
 USEAJ_imig = USEAJ_numig*((EAJ_pex*USEAJ_rer)/US_pimig)^(-US_mumig)*US_imig;
-// Demand for bilateral consumption import goods
+
 USEAK_imig = USEAK_numig*((EAK_pex*USEAK_rer)/US_pimig)^(-US_mumig)*US_imig;
-// Demand for bilateral consumption import goods
+
 USRW_imig = USRW_numig*((RW_pex*USRW_rer)/US_pimig)^(-US_mumig)*US_imig;
 USEAL_imig = (1
 -USEAA_numig
@@ -54795,7 +54795,7 @@ USEAL_imig = (1
 -USEAK_numig
 -USRW_numig
 )*((EAL_pex*USEAL_rer)/US_pimig)^(-US_mumig)*US_imig;
-// Price of the consumption good (import)
+
 US_pimig^(1-US_mumig) =
 +USEAA_numig * (EAA_pex*USEAA_rer)^(1-US_mumig)
 +USEAB_numig * (EAB_pex*USEAB_rer)^(1-US_mumig)
@@ -54823,15 +54823,15 @@ US_pimig^(1-US_mumig) =
 -USEAK_numig
 -USRW_numig
 )*(EAL_pex*USEAL_rer)^(1-US_mumig);
-// Private consumption good (import) inflation
+
 US_piimig = US_pimig/US_pimig(-1)*US_pic;
-// Private consumption good (import) inflation
+
 US_piimc4 = US_pimc/US_pimc(-4)*US_pic4;
-// Private consumption good (import) inflation
+
 US_piex4 = US_pex/US_pex(-4)*US_pic4;
-// Wedge between aggregate demand and production, using US_x = EAA_size/US_size*EAA_im
+
 US_yst = US_sh*US_ht+US_sx*US_ex;
-// Aggregate demand for bilateral imported intermediate goods
+
 USEAA_im = 
 +USEAA_imc
 +USEAA_imi
@@ -54910,18 +54910,18 @@ USRW_im =
 +USRW_imcg
 +USRW_imig
 ;
-// Private consumption good firm
-// Private consumption good (tradable)
+
+
 US_ttc^((US_mutc-1)/US_mutc) = (US_nutc)^(1/US_mutc)*US_htc^(1-1/US_mutc)+(1-US_nutc)^(1/US_mutc)*US_imc^(1-1/US_mutc);
-// Private consumption good  (total)
+
 US_qc^((US_muc-1)/US_muc) = (US_nuc)^(1/US_muc)*US_ttc^(1-1/US_muc)+(1-US_nuc)^(1/US_muc)*US_ntc^(1-1/US_muc);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 US_ntc = (1-US_nuc)*(US_pnt)^(-US_muc)*US_qc;
-// Price of the consumption good (tradable)  
+
 US_pttc^(1-US_mutc) = (US_nutc)*US_pht^(1-US_mutc)+(1-US_nutc)*US_pimc^(1-US_mutc);
-// Price of the consumption good 
+
 1^(1-US_muc) = (US_nuc)*US_pttc^(1-US_muc)+(1-US_nuc)*US_pnt^(1-US_muc);
-// Demand for domestic intermediate goods
+
 US_htc = US_nutc*(US_pht/US_pttc)^(-US_mutc)*US_ttc;
 USEAA_gammaimc = 0;
 USEAA_gammaimcdag = 1;
@@ -54949,20 +54949,20 @@ USEAL_gammaimc = 0;
 USEAL_gammaimcdag = 1;
 USRW_gammaimc = 0;
 USRW_gammaimcdag = 1;
-// Private consumption good (tradable)
+
 US_tti^((US_muti-1)/US_muti) = (US_nuti)^(1/US_muti)*US_hti^(1-1/US_muti)+(1-US_nuti)^(1/US_muti)*US_imi^(1-1/US_muti);
-// Private consumption good  (total)
+
 US_qi^((US_mui-1)/US_mui) = (US_nui)^(1/US_mui)*US_tti^(1-1/US_mui)+(1-US_nui)^(1/US_mui)*US_nti^(1-1/US_mui);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 US_nti = (1-US_nui)*(US_pnt/US_pi)^(-US_mui)*US_qi;
-// Price of the consumption good (tradable)  
+
 US_ptti^(1-US_muti) = (US_nuti)*US_pht^(1-US_muti)+(1-US_nuti)*US_pimi^(1-US_muti);
-// Price of the consumption good 
+
 US_pi^(1-US_mui) = (US_nui)*US_ptti^(1-US_mui)+(1-US_nui)*US_pnt^(1-US_mui);
-// Auxiliary equation for the price of the investment good in steady state
-// this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
+
+
 US_pibar = US_pi;
-// Demand for domestic intermediate goods
+
 US_hti = US_nuti*(US_pht/US_ptti)^(-US_muti)*US_tti;
 USEAA_gammaimi = 0;
 USEAA_gammaimidag = 1;
@@ -54990,17 +54990,17 @@ USEAL_gammaimi = 0;
 USEAL_gammaimidag = 1;
 USRW_gammaimi = 0;
 USRW_gammaimidag = 1;
-// Private consumption good (tradable)
+
 US_ttcg^((US_mutcg-1)/US_mutcg) = (US_nutcg)^(1/US_mutcg)*US_htcg^(1-1/US_mutcg)+(1-US_nutcg)^(1/US_mutcg)*US_imcg^(1-1/US_mutcg);
-// Private consumption good  (total)
+
 US_qcg^((US_mucg-1)/US_mucg) = (US_nucg)^(1/US_mucg)*US_ttcg^(1-1/US_mucg)+(1-US_nucg)^(1/US_mucg)*US_ntcg^(1-1/US_mucg);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 US_ntcg = (1-US_nucg)*(US_pnt/US_pcg)^(-US_mucg)*US_qcg;
-// Price of the consumption good (tradable)  
+
 US_pttcg^(1-US_mutcg) = (US_nutcg)*US_pht^(1-US_mutcg)+(1-US_nutcg)*US_pimcg^(1-US_mutcg);
-// Price of the consumption good 
+
 US_pcg^(1-US_mucg) = (US_nucg)*US_pttcg^(1-US_mucg)+(1-US_nucg)*US_pnt^(1-US_mucg);
-// Demand for domestic intermediate goods
+
 US_htcg = US_nutcg*(US_pht/US_pttcg)^(-US_mutcg)*US_ttcg;
 USEAA_gammaimcg = 0;
 USEAA_gammaimcgdag = 1;
@@ -55028,17 +55028,17 @@ USEAL_gammaimcg = 0;
 USEAL_gammaimcgdag = 1;
 USRW_gammaimcg = 0;
 USRW_gammaimcgdag = 1;
-// Private consumption good (tradable)
+
 US_ttig^((US_mutig-1)/US_mutig) = (US_nutig)^(1/US_mutig)*US_htig^(1-1/US_mutig)+(1-US_nutig)^(1/US_mutig)*US_imig^(1-1/US_mutig);
-// Private consumption good  (total)
+
 US_qig^((US_muig-1)/US_muig) = (US_nuig)^(1/US_muig)*US_ttig^(1-1/US_muig)+(1-US_nuig)^(1/US_muig)*US_ntig^(1-1/US_muig);
-// Demand for domestic intermediate goods - NONTRADABLE
+
 US_ntig = (1-US_nuig)*(US_pnt/US_pig)^(-US_muig)*US_qig;
-// Price of the consumption good (tradable)  
+
 US_pttig^(1-US_mutig) = (US_nutig)*US_pht^(1-US_mutig)+(1-US_nutig)*US_pimig^(1-US_mutig);
-// Price of the consumption good 
+
 US_pig^(1-US_muig) = (US_nuig)*US_pttig^(1-US_muig)+(1-US_nuig)*US_pnt^(1-US_muig);
-// Demand for domestic intermediate goods
+
 US_htig = US_nutig*(US_pht/US_pttig)^(-US_mutig)*US_ttig;
 USEAA_gammaimig = 0;
 USEAA_gammaimigdag = 1;
@@ -55066,7 +55066,7 @@ USEAL_gammaimig = 0;
 USEAL_gammaimigdag = 1;
 USRW_gammaimig = 0;
 USRW_gammaimigdag = 1;
-// Trade balance
+
 US_tb =
 +US_pex*EAA_size/US_size*EAAUS_im
 -EAA_pex*USEAA_rer*USEAA_im
@@ -55095,7 +55095,7 @@ US_tb =
 +US_pex*RW_size/US_size*RWUS_im
 -RW_pex*USRW_rer*USRW_im
 ;
-// Aggregate exports (volume)
+
 US_ex =
 +EAA_size/US_size*EAAUS_im
 +EAB_size/US_size*EABUS_im
@@ -55111,131 +55111,131 @@ US_ex =
 +EAL_size/US_size*EALUS_im
 +RW_size/US_size*RWUS_im
 ;
-//-------------
-//-------------
-// Fiscal and monetary authorities
-//-------------
-//-------------
-//-------------
-// Fiscal authority
-//-------------
-// Government budget constraint, using US_pg = US_pht
-// TODO: check the (1-US_gammab(-1)) adjustment here, which is not in the fiscal extention
+
+
+
+
+
+
+
+
+
+
 	US_pcg(-1)*US_cg(-1)+US_pig(-1)*US_ig(-1)+US_tr(-1)
 	+US_b(-1)*US_pic(-1)^(-1)+US_m(-2)*US_pic(-1)^(-1) = US_tauc(-1)*US_c(-1)+(US_taun(-1)+US_tauwh(-1))*(US_wi(-1)*US_ndi(-1)+US_wj(-1)*US_ndj(-1))+US_tauwf(-1)*US_w(-1)*US_nd(-1)+US_tauk(-1)*(US_rk(-1)*US_u(-1)-(US_gammau(-1)+US_delta)*US_pi(-1))*US_k(-1)+US_taud(-1)*US_d(-1)+US_t(-1)+(US_r(-1))^(-1)*US_b+US_m(-1);
-// Government spending, using US_pg = US_pht
+
 US_pcg*US_cg = US_cgy*US_pybar*US_ybar;
 US_pig*US_ig = US_igy*US_pybar*US_ybar;
 US_t = 0;
 US_b = US_bytarget*US_pybar*US_ybar;
-// Auxiliary equation for steady-state output
+
 US_ybar = US_y;
-// Auxiliary equation for steady-state output
+
 US_ytbar = US_yst;
-// Auxiliary equation for steady-state output
+
 US_ynbar = US_ysn;
-// Auxiliary equation for steady-state output deflator
+
 US_pybar = US_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
+
 US_trybar = US_tr/(US_pybar*US_ybar);
-// Auxiliary equation for determining the distribution of lump-sum taxes
+
 US_ti = US_upsilont*US_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
 upsilont = 0:            ti = 0, tj = 1/omega t
 upsilont = 1:            ti = tj = t
 upsilont = 1/(1-omega):  ti = 1/(1-omega) t, tj = 0. */
-// Auxiliary equation for determining the distribution of lump-sum transfers
+
 US_tri = US_upsilontr*US_tr;
 /* Note: Valid parameter space: 0 <= upsilontr <= 1/(1-omega) with
 upsilontr = 0:            tri = 0, trj = 1/omega tr
 upsilontr = 1:            tri = trj = tr
 upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
-//-------------
-// Monetary authority
-//-------------
+
+
+
 	US_r^4-1 = US_rrstar^4*US_pi4target-1;
 US_pic4 = US_pi4target;
 US_rr-1 = US_r/US_pi4target^(1/4)-1;
-// Equilibrium real interest rate
+
 US_rrstar-1 = 1/US_beta-1;
-//-------------
-//-------------
-// Aggregation, market clearing and resource constraint
-//-------------
-//-------------
-//-------------
-// Aggregation
-//-------------
-// Aggregate consumption
+
+
+
+
+
+
+
+
+
 US_c = (1-US_omega)*US_ci+US_omega*US_cj;
-// Aggregate money holdings
+
 US_m = (1-US_omega)*US_mi+US_omega*US_mj;
-// Aggregate capital stock
+
 US_k = (1-US_omega)*US_ki;
-// Aggregate investment
+
 US_i = (1-US_omega)*US_ii;
-// Aggregate lump-sum transfers
+
 US_trj = 
 1/US_omega*US_tr-(1-US_omega)/US_omega*US_tri
 ;
-// Aggregate lump-sum taxes
+
 US_tj = 
 1/US_omega*US_t-(1-US_omega)/US_omega*US_ti
 ;
-// Aggregate transaction costs
+
 US_gammav = (1-US_omega)*US_ci*US_gammavi+US_omega*US_cj*US_gammavj;
-//-------------
-// Market clearing
-//-------------
-// Labour markets for household I
-// Wedge between labour demand/hours worked and labour supply
+
+
+
+
+
 US_ni = US_si*US_ndi;
-// Wage dispersion
+
 US_si = (1-US_xii)*(US_witilde/US_wi)^(-US_etai)+US_xii*(US_wi(-1)/US_wi)^(-US_etai)*(US_pic/(US_pic(-1)^US_chii*US_pi4target^(1/4*(1-US_chii))))^(US_etai)*US_si(-1);
-// Labour markets for household J
-// Wedge between labour demand/hours worked and labour supply
+
+
 US_nj = US_sj*US_ndj;
-// Wage dispersion
+
 US_sj = (1-US_xij)*(US_wjtilde/US_wj)^(-US_etaj)+US_xij*(US_wj(-1)/US_wj)^(-US_etaj)*(US_pic/(US_pic(-1)^US_chij*US_pi4target^(1/4*(1-US_chij))))^(US_etaj)*US_sj(-1);
-// Rental market for capital
-// Equality of capital input and effective capital services
+
+
 US_u*US_k = US_kd;
-// Intermediate-good markets
-// Wedge between aggregate demand and production, using US_x = EAA_size/US_size*EAA_im
+
+
 US_ysn = US_snt*US_nt;
-//  nontradables aggregate demand
+
 US_nt = 
 +US_ntc
 +US_nti
 +US_ntcg
 +US_ntig
 ;
-// Aggregate demand for domestic intermediate goods, using US_hg = US_cg
+
 US_ht =
 +US_htc
 +US_hti
 +US_htcg
 +US_htig
 ;
-// Price dispersion in the domestic markets
+
 US_sh = (1-US_xih)*(US_phttilde/US_pht)^(-US_thetat)+US_xih*(US_piht/(US_piht(-1)^US_chih*US_pi4target^(1/4*(1-US_chih))))^US_thetat*US_sh(-1);
-// Price dispersion in the foreign markets
+
 US_sx = (1-US_xix)*(US_pextilde/US_pex)^(-US_thetat)+US_xix*(US_piex/(US_piex(-1)^US_chix*US_pi4target^(1/4*(1-US_chix))))^US_thetat*US_sx(-1);
-// Price dispersion in the domestic markets
+
 US_snt = (1-US_xin)*(US_pnttilde/US_pnt)^(-US_thetan)+US_xin*(US_pint/(US_pint(-1)^US_chin*US_pi4target^(1/4*(1-US_chin))))^US_thetan*US_snt(-1);
-// Final-good markets
-// Aggregate consumption and transaction cost
+
+
 US_qc = US_c+US_gammav;
-// Aggregate investment and capital utilisation cost
+
 US_qi = US_i+US_k*US_gammau;
-// Aggregate gov demand components added to use the same structure like in private components
+
 US_qcg = US_cg;
 US_qig = US_ig;
-//-------------
-// Resource constraint
-//-------------
-// TODO: why there is no adjustment cost for gov components
-// Aggregate nominal demand
+
+
+
+
+
 US_py*US_y = 
 +US_qc
 +US_pi*US_qi
@@ -55307,83 +55307,83 @@ US_py*US_y =
 -(RW_pex*USRW_rer)*USRW_imcg
 -(RW_pex*USRW_rer)*USRW_imig
 ;
-// Aggregate real demand
+
 US_y = US_yst+US_ysn;
-//-------------
-//-------------
-// Autoregressive shocks
-//-------------
-//-------------
-// Productivity shocks
+
+
+
+
+
+
 log(US_zt) = (1-US_rhozt)*log(US_ztbar)+US_rhozt*log(US_zt(-1))+US_epszt;
 log(US_zn) = (1-US_rhozn)*log(US_znbar)+US_rhozn*log(US_zn(-1))+US_epszn;
-// Government spending shock
+
 US_cgy = (1-US_rhocg)*US_cgybar+US_rhocg*US_cgy(-1)+US_epsgc;
 US_igy = (1-US_rhoig)*US_igybar+US_rhoig*US_igy(-1)+US_epsgi;
-// Transfer shock
+
 US_try = (1-US_rhotr)*US_trybar+US_rhotr*US_try(-1)+US_epstr;
-// Consumption tax shock
+
 US_tauc = (1-US_rhotauc)*US_taucbar+US_rhotauc*US_tauc(-1)+US_epstauc;
-// Dividend income tax shock
+
 US_taud = (1-US_rhotaud)*US_taudbar+US_rhotaud*US_taud(-1)+US_epstaud;
-// Capital income tax shock
+
 US_tauk = (1-US_rhotauk)*US_taukbar+US_rhotauk*US_tauk(-1)+US_epstauk;
-// Labour income tax shock
+
 US_taun = (1-US_rhotaun)*US_taunbar+US_rhotaun*US_taun(-1)+US_epstaun;
-// Payroll tax shock: households
+
 US_tauwh = (1-US_rhotauwh)*US_tauwhbar+US_rhotauwh*US_tauwh(-1)+US_epstauwh;
-// Payroll tax shock: firms
+
 US_tauwf = (1-US_rhotauwf)*US_tauwfbar+US_rhotauwf*US_tauwf(-1)+US_epstauwf;
-// Wage cost push shock
+
 US_wcst = (1-US_rhowcst)*US_wcstbar+US_rhowcst*US_wcst(-1)+US_epswcst;
-// Preference shock
+
 log(US_zcon) = (1-US_rhozcon)*log(US_zconbar)+US_rhozcon*log(US_zcon(-1))+US_epszcon;
-// Investment specific shock
+
 log(US_zinv) = (1-US_rhozinv)*log(US_zinvbar)+US_rhozinv*log(US_zinv(-1))+US_epszinv;
-//-------------
-//-------------
-// Conditions for calibration and reporting
-//-------------
-//-------------
-// Aggregate nominal consumption share
+
+
+
+
+
+
 US_cy = US_c/(US_py*US_y);
-// Aggregate nominal investment share
+
 US_iy = US_pi*US_i/(US_py*US_y);
-// Aggregate nominal import share  
+
 US_imy = (
 +US_pimc*US_imc
 +US_pimi*US_imi
 +US_pimcg*US_imcg
 +US_pimig*US_imig
 )/(US_py*US_y);
-// Aggregate nominal import share
+
 US_imcy = US_pimc*US_imc/(US_py*US_y);
 US_imiy = US_pimi*US_imi/(US_py*US_y);
 US_imcgy = US_pimcg*US_imcg/(US_py*US_y);
 US_imigy = US_pimig*US_imig/(US_py*US_y);
-// Aggregate debt-to-output ratio
+
 US_by = US_b/(US_pybar*US_ybar);
-// Aggregate lump-sum tax-to-output ratio
+
 US_ty = US_t/(US_pybar*US_ybar);
-// Aggregate labour cost share
+
 US_lcy = ((1+US_tauwf)*US_w*US_nd)/(US_py*US_y);
-// Aggregate nominal Wage share
+
 US_wy = (US_w*US_nd)/(US_py*US_y);
-// NT sector nominal Wage share
+
 US_wnty = (US_w*US_ndn)/(US_pnt*US_ysn);
-// T sector nominal Wage share
+
 US_whty = (US_w*US_ndt)/(US_pht*US_yst);
-// T sector share
+
 US_yhty = US_pht*US_yst/(US_py*US_y);
-// NT sector share
+
 US_ynty = US_pnt*US_ysn/(US_py*US_y);
-// Output gap
+
 US_ygap = 0;
-// Output growth (gross rate)
+
 US_ygrowth = US_y/US_y(-1);
-// Output growth (gross rate yoy)
+
 US_ygrowth4 = US_y/US_y(-4);
-// Domestic nominal output as a share of world nominal output
+
 US_yshare  = US_size*US_py*US_y/US_rer/(
 +EAA_size*EAA_py*EAA_y/EAA_rer
 +EAB_size*EAB_py*EAB_y/EAB_rer
@@ -55400,301 +55400,301 @@ US_yshare  = US_size*US_py*US_y/US_rer/(
 +RW_size*RW_py*RW_y/RW_rer
 +US_size*US_py*US_y/US_rer
 );
-// Interest (semi-)elasticity of money demand
+
 US_epsilonm = -1/8*1/(US_r*(US_gammav2*US_r+US_r-1));
-// Trade balance-to-GDP ratio
+
 US_tby = US_tb/(US_py*US_y);
-// Bilateral shares
+
 USEAA_imcy = (EAA_pex*USEAA_rer)*USEAA_imc/(US_py*US_y);
 USEAA_imiy = (EAA_pex*USEAA_rer)*USEAA_imi/(US_py*US_y);
 USEAA_imcgy = (EAA_pex*USEAA_rer)*USEAA_imcg/(US_py*US_y);
 USEAA_imigy = (EAA_pex*USEAA_rer)*USEAA_imig/(US_py*US_y);
-// Exports of consumption goods to gdp
+
 USEAA_excy  = EAA_size/US_size*US_pex*EAAUS_imc/(US_py*US_y);
-// Exports of investment goods to gdp
+
 USEAA_exiy  = EAA_size/US_size*US_pex*EAAUS_imi/(US_py*US_y);
-// Bilateral shares
+
 USEAB_imcy = (EAB_pex*USEAB_rer)*USEAB_imc/(US_py*US_y);
 USEAB_imiy = (EAB_pex*USEAB_rer)*USEAB_imi/(US_py*US_y);
 USEAB_imcgy = (EAB_pex*USEAB_rer)*USEAB_imcg/(US_py*US_y);
 USEAB_imigy = (EAB_pex*USEAB_rer)*USEAB_imig/(US_py*US_y);
-// Exports of consumption goods to gdp
+
 USEAB_excy  = EAB_size/US_size*US_pex*EABUS_imc/(US_py*US_y);
-// Exports of investment goods to gdp
+
 USEAB_exiy  = EAB_size/US_size*US_pex*EABUS_imi/(US_py*US_y);
-// Bilateral shares
+
 USEAC_imcy = (EAC_pex*USEAC_rer)*USEAC_imc/(US_py*US_y);
 USEAC_imiy = (EAC_pex*USEAC_rer)*USEAC_imi/(US_py*US_y);
 USEAC_imcgy = (EAC_pex*USEAC_rer)*USEAC_imcg/(US_py*US_y);
 USEAC_imigy = (EAC_pex*USEAC_rer)*USEAC_imig/(US_py*US_y);
-// Exports of consumption goods to gdp
+
 USEAC_excy  = EAC_size/US_size*US_pex*EACUS_imc/(US_py*US_y);
-// Exports of investment goods to gdp
+
 USEAC_exiy  = EAC_size/US_size*US_pex*EACUS_imi/(US_py*US_y);
-// Bilateral shares
+
 USEAD_imcy = (EAD_pex*USEAD_rer)*USEAD_imc/(US_py*US_y);
 USEAD_imiy = (EAD_pex*USEAD_rer)*USEAD_imi/(US_py*US_y);
 USEAD_imcgy = (EAD_pex*USEAD_rer)*USEAD_imcg/(US_py*US_y);
 USEAD_imigy = (EAD_pex*USEAD_rer)*USEAD_imig/(US_py*US_y);
-// Exports of consumption goods to gdp
+
 USEAD_excy  = EAD_size/US_size*US_pex*EADUS_imc/(US_py*US_y);
-// Exports of investment goods to gdp
+
 USEAD_exiy  = EAD_size/US_size*US_pex*EADUS_imi/(US_py*US_y);
-// Bilateral shares
+
 USEAE_imcy = (EAE_pex*USEAE_rer)*USEAE_imc/(US_py*US_y);
 USEAE_imiy = (EAE_pex*USEAE_rer)*USEAE_imi/(US_py*US_y);
 USEAE_imcgy = (EAE_pex*USEAE_rer)*USEAE_imcg/(US_py*US_y);
 USEAE_imigy = (EAE_pex*USEAE_rer)*USEAE_imig/(US_py*US_y);
-// Exports of consumption goods to gdp
+
 USEAE_excy  = EAE_size/US_size*US_pex*EAEUS_imc/(US_py*US_y);
-// Exports of investment goods to gdp
+
 USEAE_exiy  = EAE_size/US_size*US_pex*EAEUS_imi/(US_py*US_y);
-// Bilateral shares
+
 USEAF_imcy = (EAF_pex*USEAF_rer)*USEAF_imc/(US_py*US_y);
 USEAF_imiy = (EAF_pex*USEAF_rer)*USEAF_imi/(US_py*US_y);
 USEAF_imcgy = (EAF_pex*USEAF_rer)*USEAF_imcg/(US_py*US_y);
 USEAF_imigy = (EAF_pex*USEAF_rer)*USEAF_imig/(US_py*US_y);
-// Exports of consumption goods to gdp
+
 USEAF_excy  = EAF_size/US_size*US_pex*EAFUS_imc/(US_py*US_y);
-// Exports of investment goods to gdp
+
 USEAF_exiy  = EAF_size/US_size*US_pex*EAFUS_imi/(US_py*US_y);
-// Bilateral shares
+
 USEAG_imcy = (EAG_pex*USEAG_rer)*USEAG_imc/(US_py*US_y);
 USEAG_imiy = (EAG_pex*USEAG_rer)*USEAG_imi/(US_py*US_y);
 USEAG_imcgy = (EAG_pex*USEAG_rer)*USEAG_imcg/(US_py*US_y);
 USEAG_imigy = (EAG_pex*USEAG_rer)*USEAG_imig/(US_py*US_y);
-// Exports of consumption goods to gdp
+
 USEAG_excy  = EAG_size/US_size*US_pex*EAGUS_imc/(US_py*US_y);
-// Exports of investment goods to gdp
+
 USEAG_exiy  = EAG_size/US_size*US_pex*EAGUS_imi/(US_py*US_y);
-// Bilateral shares
+
 USEAH_imcy = (EAH_pex*USEAH_rer)*USEAH_imc/(US_py*US_y);
 USEAH_imiy = (EAH_pex*USEAH_rer)*USEAH_imi/(US_py*US_y);
 USEAH_imcgy = (EAH_pex*USEAH_rer)*USEAH_imcg/(US_py*US_y);
 USEAH_imigy = (EAH_pex*USEAH_rer)*USEAH_imig/(US_py*US_y);
-// Exports of consumption goods to gdp
+
 USEAH_excy  = EAH_size/US_size*US_pex*EAHUS_imc/(US_py*US_y);
-// Exports of investment goods to gdp
+
 USEAH_exiy  = EAH_size/US_size*US_pex*EAHUS_imi/(US_py*US_y);
-// Bilateral shares
+
 USEAI_imcy = (EAI_pex*USEAI_rer)*USEAI_imc/(US_py*US_y);
 USEAI_imiy = (EAI_pex*USEAI_rer)*USEAI_imi/(US_py*US_y);
 USEAI_imcgy = (EAI_pex*USEAI_rer)*USEAI_imcg/(US_py*US_y);
 USEAI_imigy = (EAI_pex*USEAI_rer)*USEAI_imig/(US_py*US_y);
-// Exports of consumption goods to gdp
+
 USEAI_excy  = EAI_size/US_size*US_pex*EAIUS_imc/(US_py*US_y);
-// Exports of investment goods to gdp
+
 USEAI_exiy  = EAI_size/US_size*US_pex*EAIUS_imi/(US_py*US_y);
-// Bilateral shares
+
 USEAJ_imcy = (EAJ_pex*USEAJ_rer)*USEAJ_imc/(US_py*US_y);
 USEAJ_imiy = (EAJ_pex*USEAJ_rer)*USEAJ_imi/(US_py*US_y);
 USEAJ_imcgy = (EAJ_pex*USEAJ_rer)*USEAJ_imcg/(US_py*US_y);
 USEAJ_imigy = (EAJ_pex*USEAJ_rer)*USEAJ_imig/(US_py*US_y);
-// Exports of consumption goods to gdp
+
 USEAJ_excy  = EAJ_size/US_size*US_pex*EAJUS_imc/(US_py*US_y);
-// Exports of investment goods to gdp
+
 USEAJ_exiy  = EAJ_size/US_size*US_pex*EAJUS_imi/(US_py*US_y);
-// Bilateral shares
+
 USEAK_imcy = (EAK_pex*USEAK_rer)*USEAK_imc/(US_py*US_y);
 USEAK_imiy = (EAK_pex*USEAK_rer)*USEAK_imi/(US_py*US_y);
 USEAK_imcgy = (EAK_pex*USEAK_rer)*USEAK_imcg/(US_py*US_y);
 USEAK_imigy = (EAK_pex*USEAK_rer)*USEAK_imig/(US_py*US_y);
-// Exports of consumption goods to gdp
+
 USEAK_excy  = EAK_size/US_size*US_pex*EAKUS_imc/(US_py*US_y);
-// Exports of investment goods to gdp
+
 USEAK_exiy  = EAK_size/US_size*US_pex*EAKUS_imi/(US_py*US_y);
-// Bilateral shares
+
 USEAL_imcy = (EAL_pex*USEAL_rer)*USEAL_imc/(US_py*US_y);
 USEAL_imiy = (EAL_pex*USEAL_rer)*USEAL_imi/(US_py*US_y);
 USEAL_imcgy = (EAL_pex*USEAL_rer)*USEAL_imcg/(US_py*US_y);
 USEAL_imigy = (EAL_pex*USEAL_rer)*USEAL_imig/(US_py*US_y);
-// Exports of consumption goods to gdp
+
 USEAL_excy  = EAL_size/US_size*US_pex*EALUS_imc/(US_py*US_y);
-// Exports of investment goods to gdp
+
 USEAL_exiy  = EAL_size/US_size*US_pex*EALUS_imi/(US_py*US_y);
-// Bilateral shares
+
 USRW_imcy = (RW_pex*USRW_rer)*USRW_imc/(US_py*US_y);
 USRW_imiy = (RW_pex*USRW_rer)*USRW_imi/(US_py*US_y);
 USRW_imcgy = (RW_pex*USRW_rer)*USRW_imcg/(US_py*US_y);
 USRW_imigy = (RW_pex*USRW_rer)*USRW_imig/(US_py*US_y);
-// Exports of consumption goods to gdp
+
 USRW_excy  = RW_size/US_size*US_pex*RWUS_imc/(US_py*US_y);
-// Exports of investment goods to gdp
+
 USRW_exiy  = RW_size/US_size*US_pex*RWUS_imi/(US_py*US_y);
-// Internal real exchange rate
+
 US_internalrer = US_pnt/US_pttc;
-//-------------
-// Bilateral equations versus country N
-//-------------
-// Euler equation for internationally traded bonds
+
+
+
+
 EAA_gammab = 0;
-// International transaction cost ('risk premium')
+
 EAA_bf = (EAA_bfytarget*EAA_py*EAA_y)/EAA_rer*US_pic;
-// Risk premium shock
+
 EAA_rp = 0;
-// Definition of the rate of real exchange-rate depreciation
+
 EAA_rerdep = EAA_rer/EAA_rer(-1);
-// Definition of the terms of trade
+
 EAA_tot = US_pex*EAA_rer/EAA_pex;
-//-------------
-// Bilateral equations versus country N
-//-------------
-// Euler equation for internationally traded bonds
+
+
+
+
 EAB_gammab = 0;
-// International transaction cost ('risk premium')
+
 EAB_bf = (EAB_bfytarget*EAB_py*EAB_y)/EAB_rer*US_pic;
-// Risk premium shock
+
 EAB_rp = 0;
-// Definition of the rate of real exchange-rate depreciation
+
 EAB_rerdep = EAB_rer/EAB_rer(-1);
-// Definition of the terms of trade
+
 EAB_tot = US_pex*EAB_rer/EAB_pex;
-//-------------
-// Bilateral equations versus country N
-//-------------
-// Euler equation for internationally traded bonds
+
+
+
+
 EAC_gammab = 0;
-// International transaction cost ('risk premium')
+
 EAC_bf = (EAC_bfytarget*EAC_py*EAC_y)/EAC_rer*US_pic;
-// Risk premium shock
+
 EAC_rp = 0;
-// Definition of the rate of real exchange-rate depreciation
+
 EAC_rerdep = EAC_rer/EAC_rer(-1);
-// Definition of the terms of trade
+
 EAC_tot = US_pex*EAC_rer/EAC_pex;
-//-------------
-// Bilateral equations versus country N
-//-------------
-// Euler equation for internationally traded bonds
+
+
+
+
 EAD_gammab = 0;
-// International transaction cost ('risk premium')
+
 EAD_bf = (EAD_bfytarget*EAD_py*EAD_y)/EAD_rer*US_pic;
-// Risk premium shock
+
 EAD_rp = 0;
-// Definition of the rate of real exchange-rate depreciation
+
 EAD_rerdep = EAD_rer/EAD_rer(-1);
-// Definition of the terms of trade
+
 EAD_tot = US_pex*EAD_rer/EAD_pex;
-//-------------
-// Bilateral equations versus country N
-//-------------
-// Euler equation for internationally traded bonds
+
+
+
+
 EAE_gammab = 0;
-// International transaction cost ('risk premium')
+
 EAE_bf = (EAE_bfytarget*EAE_py*EAE_y)/EAE_rer*US_pic;
-// Risk premium shock
+
 EAE_rp = 0;
-// Definition of the rate of real exchange-rate depreciation
+
 EAE_rerdep = EAE_rer/EAE_rer(-1);
-// Definition of the terms of trade
+
 EAE_tot = US_pex*EAE_rer/EAE_pex;
-//-------------
-// Bilateral equations versus country N
-//-------------
-// Euler equation for internationally traded bonds
+
+
+
+
 EAF_gammab = 0;
-// International transaction cost ('risk premium')
+
 EAF_bf = (EAF_bfytarget*EAF_py*EAF_y)/EAF_rer*US_pic;
-// Risk premium shock
+
 EAF_rp = 0;
-// Definition of the rate of real exchange-rate depreciation
+
 EAF_rerdep = EAF_rer/EAF_rer(-1);
-// Definition of the terms of trade
+
 EAF_tot = US_pex*EAF_rer/EAF_pex;
-//-------------
-// Bilateral equations versus country N
-//-------------
-// Euler equation for internationally traded bonds
+
+
+
+
 EAG_gammab = 0;
-// International transaction cost ('risk premium')
+
 EAG_bf = (EAG_bfytarget*EAG_py*EAG_y)/EAG_rer*US_pic;
-// Risk premium shock
+
 EAG_rp = 0;
-// Definition of the rate of real exchange-rate depreciation
+
 EAG_rerdep = EAG_rer/EAG_rer(-1);
-// Definition of the terms of trade
+
 EAG_tot = US_pex*EAG_rer/EAG_pex;
-//-------------
-// Bilateral equations versus country N
-//-------------
-// Euler equation for internationally traded bonds
+
+
+
+
 EAH_gammab = 0;
-// International transaction cost ('risk premium')
+
 EAH_bf = (EAH_bfytarget*EAH_py*EAH_y)/EAH_rer*US_pic;
-// Risk premium shock
+
 EAH_rp = 0;
-// Definition of the rate of real exchange-rate depreciation
+
 EAH_rerdep = EAH_rer/EAH_rer(-1);
-// Definition of the terms of trade
+
 EAH_tot = US_pex*EAH_rer/EAH_pex;
-//-------------
-// Bilateral equations versus country N
-//-------------
-// Euler equation for internationally traded bonds
+
+
+
+
 EAI_gammab = 0;
-// International transaction cost ('risk premium')
+
 EAI_bf = (EAI_bfytarget*EAI_py*EAI_y)/EAI_rer*US_pic;
-// Risk premium shock
+
 EAI_rp = 0;
-// Definition of the rate of real exchange-rate depreciation
+
 EAI_rerdep = EAI_rer/EAI_rer(-1);
-// Definition of the terms of trade
+
 EAI_tot = US_pex*EAI_rer/EAI_pex;
-//-------------
-// Bilateral equations versus country N
-//-------------
-// Euler equation for internationally traded bonds
+
+
+
+
 EAJ_gammab = 0;
-// International transaction cost ('risk premium')
+
 EAJ_bf = (EAJ_bfytarget*EAJ_py*EAJ_y)/EAJ_rer*US_pic;
-// Risk premium shock
+
 EAJ_rp = 0;
-// Definition of the rate of real exchange-rate depreciation
+
 EAJ_rerdep = EAJ_rer/EAJ_rer(-1);
-// Definition of the terms of trade
+
 EAJ_tot = US_pex*EAJ_rer/EAJ_pex;
-//-------------
-// Bilateral equations versus country N
-//-------------
-// Euler equation for internationally traded bonds
+
+
+
+
 EAK_gammab = 0;
-// International transaction cost ('risk premium')
+
 EAK_bf = (EAK_bfytarget*EAK_py*EAK_y)/EAK_rer*US_pic;
-// Risk premium shock
+
 EAK_rp = 0;
-// Definition of the rate of real exchange-rate depreciation
+
 EAK_rerdep = EAK_rer/EAK_rer(-1);
-// Definition of the terms of trade
+
 EAK_tot = US_pex*EAK_rer/EAK_pex;
-//-------------
-// Bilateral equations versus country N
-//-------------
-// Euler equation for internationally traded bonds
+
+
+
+
 EAL_gammab = 0;
-// International transaction cost ('risk premium')
+
 EAL_bf = (EAL_bfytarget*EAL_py*EAL_y)/EAL_rer*US_pic;
-// Risk premium shock
+
 EAL_rp = 0;
-// Definition of the rate of real exchange-rate depreciation
+
 EAL_rerdep = EAL_rer/EAL_rer(-1);
-// Definition of the terms of trade
+
 EAL_tot = US_pex*EAL_rer/EAL_pex;
-//-------------
-// Bilateral equations versus country N
-//-------------
-// Euler equation for internationally traded bonds
+
+
+
+
 RW_gammab = 0;
-// International transaction cost ('risk premium')
+
 RW_bf = (RW_bfytarget*RW_py*RW_y)/RW_rer*US_pic;
-// Risk premium shock
+
 RW_rp = 0;
-// Definition of the rate of real exchange-rate depreciation
+
 RW_rerdep = RW_rer/RW_rer(-1);
-// Definition of the terms of trade
+
 RW_tot = US_pex*RW_rer/RW_pex;
-//-------------
-// Closure conditions
-//-------------
+
+
+
 US_size*US_bf =
 -EAA_size*EAA_bf
 -EAB_size*EAB_bf
@@ -55710,7 +55710,7 @@ US_size*US_bf =
 -EAL_size*EAL_bf
 -RW_size*RW_bf
 ;
-// Net foreign asset position
+
 	
 		
 			EAA_bf/US_r(-1) = -EAA_bh/EAL_r(-1)*EAAEAL_rer(-1)/EAA_rer(-1) + EAA_bh(-1)*EAAEAL_rer(-2) / EAA_rer(-2) + EAA_bf(-1) + EAA_tb(-1)/EAA_rer(-1);
@@ -55831,10 +55831,10 @@ US_rer = 1;
 	+ EAK_size*EAK_bh
 	+ EAL_size*EAL_bh
 ;
-//-------------
-// Euroarea-wide variables
-//-------------
-// GDP
+
+
+
+
 EA_y = 
 	(
 	EAA_size*EAA_pybar*EAA_y
@@ -55865,11 +55865,11 @@ EA_y =
 	+ EAK_size
 	+ EAL_size
 );
-// GDP growth
+
 EA_ygrowth= EA_y/EA_y(-1);
-// GDP growth (yoy)
+
 EA_ygrowth4= EA_y/EA_y(-4);
-// Money
+
 EA_m = 
 	(
 	EAA_size*EAA_m
@@ -55931,7 +55931,7 @@ EA_bf =
 	+ EAK_size
 	+ EAL_size
 );
-// Annual inflation
+
 EA_pic4 = 1 
 		* EAA_pic4^(EAA_size/(
 				+ EAA_size
@@ -56102,13 +56102,13 @@ EA_pic4 = 1
 				+ EAL_size
 			)) 
 ;
-// Productivity
+
 log(EA_z) = (1-EA_rhoz)*log(EA_zbar)+EA_rhoz*log(EA_z(-1))+EA_epsz;
-// Auxiliary equation for steady-state output
+
 EA_ybar = EA_y;
 end;
 load_params_and_steady_state('eagle_steady_stage2a.txt');
-// Trade matrix
+
 disp('Trade matrix')
 homotopy_setup;
 EAAEAB_imcy, 0.001025;
