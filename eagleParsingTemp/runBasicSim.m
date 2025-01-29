@@ -72,6 +72,7 @@ copyfile(...
     , '/Users/kk/Documents/0000-00_work/2024-01_eagle/eagleParsingTemp/modFiles/steady2bMacroexp.mod' ...
 );
 dynare('steady2bMacroexp.mod');
+dynare('steady2bMacroexp1.mod');
 
 %%
 dynare('steady2.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
