@@ -67,6 +67,13 @@ run('TradeMatrix_calibrated_int.m');
 dynare('steady2b.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
 %%
+copyfile(...
+    '/Users/kk/Documents/0000-00_work/2024-01_eagle/eagleParsingTemp/modFiles/steady2a-macroexp.mod' ...
+    , '/Users/kk/Documents/0000-00_work/2024-01_eagle/eagleParsingTemp/modFiles/steady2aMacroexp.mod' ...
+);
+dynare('steady2aMacroexp.mod');
+
+%%
 dynare('steady2.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
 %%
