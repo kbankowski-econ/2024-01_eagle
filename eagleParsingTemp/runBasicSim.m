@@ -73,6 +73,7 @@ copyfile(...
 );
 dynare('steady2bMacroexp.mod');
 dynare('steady2bMacroexp1.mod');
+dynare('steady2bMacroexp2.mod');
 
 %%
 dynare('steady2.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
