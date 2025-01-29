@@ -26,6 +26,7 @@ Fiscal_ext/modFiles/+*/
 eagleParsingTemp/modFiles/+*/
 eagleParsingTemp_sim_BIG1/modFiles/+*/
 Dynare_4-4-3/modFiles/+*/
+eagleToy/+*/
 
 # Dismissing abundant files automatically generated
 * 2.*
