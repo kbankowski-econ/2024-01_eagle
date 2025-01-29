@@ -1,8 +1,6 @@
 options_.homotopy_mode = 1;
 options_.solve_algo = 5;
 options_.markowitz = 5;
-ctryNumberDouble = 14;
-save("paramsToBeSaved", 'ctryNumberDouble')
 
 var
 EA_bf
