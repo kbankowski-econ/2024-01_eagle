@@ -64,7 +64,7 @@ sizes = struct(...
     'US_size', 0.238805263);
 run('TradeMatrix_calibrated_int.m');
 %%
-dynare('steady2b.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
+dynare('steady2b.mod', sprintf ('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
 %%
 copyfile(...
