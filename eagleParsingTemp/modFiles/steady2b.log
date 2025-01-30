@@ -1,193 +1,3 @@
-Starting Dynare (version 6.1).
-Calling Dynare with arguments: -I/Users/kk/Documents/0000-00_work/2024-01_eagle/eagleParsingTemp/submodules savemacro
-Starting preprocessing of the model file ...
-Reading eagle_steady_stage2a.txt.
-WARNING: Unknown symbol AUX_ENDO_LAG_426_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_426_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_426_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_410_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_410_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_410_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_393_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_492_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_492_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_492_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1043_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1043_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1043_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1027_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1027_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1027_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1010_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1109_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1109_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1109_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1660_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1660_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1660_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1644_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1644_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1644_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1627_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1726_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1726_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1726_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2277_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2277_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2277_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2261_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2261_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2261_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2244_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2343_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2343_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2343_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2894_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2894_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2894_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2878_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2878_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2878_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2861_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2960_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2960_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2960_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3511_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3511_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3511_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3495_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3495_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3495_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3478_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3577_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3577_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3577_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4128_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4128_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4128_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4112_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4112_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4112_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4095_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4194_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4194_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4194_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4745_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4745_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4745_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4729_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4729_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4729_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4712_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4811_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4811_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4811_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5362_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5362_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5362_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5346_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5346_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5346_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5329_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5428_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5428_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5428_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5979_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5979_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5979_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5963_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5963_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5963_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5946_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6045_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6045_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6045_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6596_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6596_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6596_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6580_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6580_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6580_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6563_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6662_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6662_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6662_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7213_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7213_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7213_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7197_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7197_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7197_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7180_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7279_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7279_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7279_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7830_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7830_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7830_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7814_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7814_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7814_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7797_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7896_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7896_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7896_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_8449_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_8449_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_8449_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_8433_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_8433_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_8433_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_8416_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_8512_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_8512_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_8512_3 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_275_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_447_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_892_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1064_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1509_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_1681_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2126_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2298_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2743_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_2915_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3360_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3532_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3977_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4149_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4594_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_4766_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5211_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5383_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_5828_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6000_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6445_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_6617_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_7234_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3_1 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3_2 in eagle_steady_stage2a.txt
-WARNING: Unknown symbol AUX_ENDO_LAG_3_3 in eagle_steady_stage2a.txt
-Substitution of endo lags >= 2: added 166 auxiliary variables and equations.
-Found 7386 equation(s).
-Evaluating expressions...
-Computing static model derivatives (order 1).
-Normalizing the static model...
-Finding the optimal block decomposition of the static model...
-449 block(s) found:
-  448 recursive block(s) and 1 simultaneous block(s).
-  the largest simultaneous block has 3406 equation(s)
-                                 and 3406 feedback variable(s).
-Computing dynamic model derivatives (order 2).
-Normalizing the dynamic model...
-Finding the optimal block decomposition of the dynamic model...
-282 block(s) found:
-  281 recursive block(s) and 1 simultaneous block(s).
-  the largest simultaneous block has 3451 equation(s)
-                                 and 2952 feedback variable(s).
-Preprocessing completed.
-Preprocessing time: 0h03m22s.
-Trade matrix
 HOMOTOPY mode 1: computing step 0/15...
 HOMOTOPY mode 1: computing step 1/15...
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
@@ -364,7 +174,7 @@ MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
       Iteration no. 11
       Inf-norm error = 1.654e-04
       2-norm error   = 1.786e-04
-      1-norm error   = 2.952e-04
+      1-norm error   = 2.951e-04
 ------------------------------------
 HOMOTOPY mode 1: computing step 3/15...
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
@@ -422,7 +232,7 @@ MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
       Iteration no. 4
       Inf-norm error = 6.761e-06
       2-norm error   = 6.907e-06
-      1-norm error   = 9.549e-06
+      1-norm error   = 9.515e-06
 ------------------------------------
 HOMOTOPY mode 1: computing step 5/15...
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
@@ -539,7 +349,7 @@ MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
       Iteration no. 4
       Inf-norm error = 2.040e-05
       2-norm error   = 2.368e-05
-      1-norm error   = 6.050e-05
+      1-norm error   = 6.048e-05
 ------------------------------------
 HOMOTOPY mode 1: computing step 10/15...
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
@@ -604,7 +414,7 @@ MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
       Iteration no. 5
       Inf-norm error = 5.466e-05
       2-norm error   = 5.551e-05
-      1-norm error   = 8.299e-05
+      1-norm error   = 8.298e-05
 ------------------------------------
 HOMOTOPY mode 1: computing step 12/15...
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
@@ -3317,7 +3127,7 @@ EAFEAG_imig         		 7.71161e-05
 EAFEAH_imig         		 0.000134932
 EAFEAI_imig         		 0.000598844
 EAFEAJ_imig         		 0.000313861
-EAFEAK_imig         		 8.20741e-05
+EAFEAK_imig         		 8.2074e-05
 EAFEAL_imig         		 0.0011978
 EAFRW_imig          		 0.0161057
 EAFUS_imig          		 0.00545692
@@ -8000,13 +7810,12 @@ EAA_bh              		 0
 EAB_bh              		 0
 EAC_bh              		 0
 EAD_bh              		 0
-EAE_bh              		 3.66971e-17
-EAF_bh              		 5.20084e-17
+EAE_bh              		 2.15914e-17
+EAF_bh              		 -4.74396e-17
 EAG_bh              		 0
 EAH_bh              		 0
 EAI_bh              		 0
 EAJ_bh              		 0
 EAK_bh              		 0
-EAL_bh              		 -2.33695e-16
-Total computing time : 0h01m05s
-Note: 166 warning(s) encountered in the preprocessor
+EAL_bh              		 2.75881e-16
+Total computing time : 0h00m31s

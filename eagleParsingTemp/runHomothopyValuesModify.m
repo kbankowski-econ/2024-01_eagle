@@ -38,6 +38,7 @@ elapsed_time = toc;
 
 reportTimeToLogFile(logname_, elapsed_time);
 save_params_and_steady_state('eagle_steady_stage2b.txt');
+save(sprintf("%s/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results_temp0.mat", project_path), 'oo_');
 
 return
 
