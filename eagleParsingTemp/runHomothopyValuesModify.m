@@ -2,6 +2,11 @@
 % steady state in the matfile contains homothopy values after the EAB has
 % been calibrated only
 load(sprintf("%s/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results.mat", project_path));
+load(sprintf("%s/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results_temp1.mat", project_path), 'oo_', 'M_', 'options_');
+% tempStruc.dynaSav = load(sprintf("%s/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results.mat", project_path), 'oo_');
+% 
+% tempStruc.temp0 = load(sprintf("%s/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results_temp0.mat", project_path), 'oo_');
+% tempStruc.temp1 = load(sprintf("%s/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results_temp1.mat", project_path), 'oo_');
 
 %% loading the homothopy values from mod files
 [paramIdentif, valuesEnd] = readHomothopyValuesFromModFile('tradeMatrixUSadjust.mod', M_);
@@ -38,7 +43,8 @@ elapsed_time = toc;
 
 reportTimeToLogFile(logname_, elapsed_time);
 save_params_and_steady_state('eagle_steady_stage2b.txt');
-save(sprintf("%s/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results_temp0.mat", project_path), 'oo_');
+
+save(sprintf("%s/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results_temp1.mat", project_path), 'oo_', 'M_', 'options_');
 
 return
 
