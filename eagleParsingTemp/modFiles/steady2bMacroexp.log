@@ -19,7 +19,7 @@ Finding the optimal block decomposition of the dynamic model...
   the largest simultaneous block has 3451 equation(s)
                                  and 2932 feedback variable(s).
 Preprocessing completed.
-Preprocessing time: 0h03m12s.
+Preprocessing time: 0h03m10s.
 HOMOTOPY mode 1: computing step 0/15...
 HOMOTOPY mode 1: computing step 1/15...
 HOMOTOPY mode 1: computing step 2/15...
@@ -7259,4 +7259,4 @@ EAI_bh              		 0
 EAJ_bh              		 0
 EAK_bh              		 0
 EAL_bh              		 -2.33695e-16
-Total computing time : 0h00m01s
+Total computing time : 0h00m02s
