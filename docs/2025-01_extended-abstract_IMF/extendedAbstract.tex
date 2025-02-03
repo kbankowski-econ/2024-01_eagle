@@ -83,10 +83,16 @@ Interdependence and heterogeneity in the euro area are central to understanding 
 A key macroeconomic framework employed within the Eurosystem to analyze both interdependence and heterogeneity in the EMU has been the EAGLE model, developed in the 2010s (\cite[Gomes et al. (2012)]{Gomes}). This multi-country extension of the seminal New Area-Wide Model initially represented the euro area as a two-region economy—Germany and the rest of the euro area—alongside the United States and the rest of the world. While EAGLE has proven valuable for assessing economic policies within a multi-country setting, its structure limits its ability to evaluate large-scale initiatives such as the Next Generation EU (NGEU) program, which involves complex cross-country dimensions. Moreover, the model overlooks the role of smaller euro area economies, which, despite their size, contribute significantly to the system-wide dynamics of the union. To address these limitations, we build upon the EAGLE framework by further disaggregating the euro area into 11 early euro-adopting countries (Austria, Belgium, Finland, France, Germany, Greece, Ireland, Italy, Netherlands, Portugal, and Spain). This extension enhances the model's capacity to explicitly capture country-specific dynamics, providing a more granular representation of economic interdependencies within the EMU.
 
 % 3 The model embdes a meaningful fiscal policy
-
+Our model extension incorporates a meaningful role for fiscal policy, which was absent in the original EAGLE framework but introduced in later extensions (see \cite[Clancy et al. (2012)]{Clancy}). Specifically, government expenditure is disaggregated into government consumption and investment. Government consumption enters the utility function as part of a composite consumption basket alongside private consumption, thereby generating utility for households. In this setup, public consumption is not purely wasteful but exhibits complementarity with private consumption. Similarly, government investment brings benefits as it contributes to the accumulation of public capital, which enhances the productive capacity of the economy over time. Additionally, our model accounts for the direct import content of both types of government spending, recognizing that, a share of public purchases is allocated to imported goods, especially in small open economies.
 
 % 4 Trade calibration is a major challange
-The counterfactual scenarios underpinning the analysis of this paper are constructed through simulations using macroeconomic models. The first step of the analysis aims to gauge the additional amount of fiscal adjustment needed to fully comply with the SGP. Once this is determined, the second step involves simulating alternative paths of key macroeconomic variables that are consistent with the newly formulated fiscal policy.
+A crucial aspect to be incorporated into our model extension is the significant role of trade in interconnecting the euro area and linking it to the global economy. The euro area is characterized by deep regional integration, facilitated by the single currency and the European Single Market, which has significantly reduced trade barriers. Intra-euro area trade constitutes a substantial share of member states' total trade flows, with Germany often serving as a central node, both as a major exporter and importer. At the same time, the euro area maintains a strong trade presence globally, ranking among the world's largest trading blocs. Its openness to trade, with total trade exceeding 30\% of GDP, underscores its importance as a global trading hub. When measured by the import-to-GDP ratio, euro area economies exhibit significantly higher openness compared to other major advanced economies, such as Japan and the United States (see Figure \ref{fig1}). Additionally, the euro area has historically maintained sizable trade surpluses, largely driven by its strong manufacturing sector. These trade dynamics are critical for understanding macroeconomic shock transmission within the euro area and beyond, and we aim to incorporate these features comprehensively in our extended model.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=150mm]{/Users/kk/Documents/0000-00_work/2024-01_eagle/docs/2024-12_RCC-workshop/figures/ea_imports_chart.png}
+    \caption{The magnitude of imports across euro area countries, compared to Japan and the US. \label{fig1}}
+\end{figure}
 
 % 5 This is how we calibrate trade
 
@@ -101,11 +107,6 @@ The counterfactual scenarios underpinning the analysis of this paper are constru
 
 % 7(c) NGEU spill-overs
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=150mm]{/Users/kk/Documents/0000-00_work/2021-08_SGP-reform/SGP_Reform/docu/note/figures/panel_EA_box1.pdf}
-\caption{Additional fiscal adjustment, as captured by the euro area structural balance, needed to fully comply with the SGP (percentage of GDP). \label{fig1}}
-\end{figure}
 
 % 5
 Once known, the additional fiscal adjustment can be used in euro area macroeconomic simulations. The analysis of the second step makes use of the semi-structural model for the euro area ECB-BASE, which contains a rich specification of the general government. \footnote{For a description of the model, including its fiscal block, see \cite[Ba\'nkowski. (2023)]{Bankowski}} The actual fiscal policy is replaced in the model by the one consistent with full SGP compliance. The model is then re-simulated for the EMU period until 2019 and a counterfactual scenario is obtained. The simulations are conducted under the assumption of an exogenous monetary policy, notably with the policy rate remaining unchanged regardless of the fiscal policy course.
@@ -129,8 +130,8 @@ Our paper does not attempt to defend the pre-reformed SGP, as this would imply n
 \begin{thebibliography}{99}
 \bibitem [1]{Gomes} 
 S. Gomes, P. Jacquinot, and M. Pisani, 2012. "The EAGLE. A model for policy analysis of macroeconomic interdependence in the euro area." Economic Modelling, Volume 29, Issue 5, Pages 1686-1714.
-\bibitem [2]{Bouabdallah} 
-Bouabdallah, O., C. Checherita-Westphal, T. Warmedinger, R. De Stefani, F. Drudi, R. Setzer, and A. Westphal. 2017. "Debt sustainability analysis for euro area sovereigns: a methodological framework." Occasional Paper Series, No 185, European Central Bank.
+\bibitem [2]{Clancy} 
+D. Clancy, P. Jacquinot, M. Lozej, 2016. "Government expenditure composition and fiscal policy spillovers in small open economies within a monetary union." Journal of Macroeconomics, Volume 48, Pages 305-326.
 \bibitem [3]{EC} 
 EC. 2019. "Report on Public Finances in EMU 2019", Part II - Performance of spending rules at EU and national level - a quantitative assessment, European Commission.
 \bibitem [4]{Haroutunian} 
