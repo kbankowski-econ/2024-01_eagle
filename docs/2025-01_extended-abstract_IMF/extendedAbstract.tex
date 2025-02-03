@@ -1,0 +1,132 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Journal Article
+% LaTeX Template
+% Version 1.3 (9/9/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------------------------------------------------------
+%       PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[paper=letter, fontsize=12pt]{article}
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{lipsum} % Package to generate dummy text throughout this template
+\usepackage{blindtext}
+\usepackage{graphicx} 
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.30} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+\usepackage{multicol} % Used for the two-column layout of the document
+%\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they need to be placed in specific locations with the [H] (e.g. \begin{table}[H])
+\usepackage{hyperref} % For hyperlinks in the PDF
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+\usepackage{paralist} % Used for the compactitem environment which makes bullet points with less space between them
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+\usepackage{titlesec} % Allows customization of titles
+
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\Roman{subsection}} % Roman numerals for subsections
+
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+
+\fancyhead[C]{} % Custom header text
+
+\fancyfoot[RO,LE]{\thepage} % Custom footer text
+%----------------------------------------------------------------------------------------
+%       TITLE SECTION
+%----------------------------------------------------------------------------------------
+\title{\vspace{-15mm}\fontsize{24pt}{20pt}\selectfont\textbf{Full Compliance with the SGP: A Macroeconomic Evaluation}} % Article title
+\author{
+\large
+{\textsc{Krzysztof~Ba\'nkowski\footnote{European Central Bank, Fiscal Policies Division - DG Economic Developements, Sonnemannstraße 20, 60314 Frankfurt am Main, E-Mail: krzysztof.bankowski@ecb.europa.eu}}}\\[2mm]
+{\textsc{Stephan Haroutunian\footnote{European Central Bank, Fiscal Policies Division - DG Economic Developements, Sonnemannstraße 20, 60314 Frankfurt am Main, E-Mail: stephan.haroutunian@ecb.europa.eu}}}\\[2mm]
+{\textsc{Nadine Leiner-Killinger\footnote{European Central Bank, Fiscal Policies Division - DG Economic Developements, Sonnemannstraße 20, 60314 Frankfurt am Main, E-Mail: nadine.leiner-killinger@ecb.europa.eu}}}\\[2mm]
+%\thanks{A thank you or further information}\\ % Your name
+%\normalsize \href{mailto:marco.torres.810@gmail.com}{marco.torres.810@gmail.com}\\[2mm] % Your email address
+}
+\date{}
+
+%----------------------------------------------------------------------------------------
+\begin{document}
+\maketitle % Insert title
+\thispagestyle{fancy} % All pages have headers and footers
+
+% 1
+The Stability and Growth Pact (SGP), established by the European Union to ensure fiscal responsibility and stability among member states, has been a cornerstone of EU economic governance since its inception. The policy intentions of the framework were rooted in three fundamental objectives. First, the SGP aimed to promote a realistic, gradual, and sustained adjustment of public debt towards sound and sustainable levels. Second, it sought to support fiscal policy in becoming sufficiently countercyclical. Third, it intended to foster sound incentives for growth-friendly economic policies.
+
+% 2
+Following two decades of SGP operation, it became increasingly clear that the SGP fell short of achieving its main goals. It failed to prevent the emergence of excessive levels of public debt and overly heterogeneous debt ratios across the euro area. Additionally, it did not manage to avoid the tendency of fiscal policies to be pro-cyclical. Also, significant cuts in government investment following the Great Financial Crisis (GFC) and the sovereign debt crisis occurred, with likely detrimental long-term effects on growth. Ultimately, a consensus emerged about the need to reform the fiscal framework, leading to its major overhaul and the establishment of a new economic governance framework, which entered into force on 30 April 2024.
+
+% 3
+The failure to effectively deliver the main objectives of the framework cannot be attributed solely to its design but also to the degree of its implementation. In reality, there were numerous instances where member states did not adhere to the provisions of the Pact. With systematic non-compliance, the framework stood little chance to fulfill its main purpose. To fairly assess the SGP's modalities, our paper establishes and discusses macroeconomic scenarios that assume its full implementation.
+
+% 4
+The counterfactual scenarios underpinning the analysis of this paper are constructed through simulations using macroeconomic models. The first step of the analysis aims to gauge the additional amount of fiscal adjustment needed to fully comply with the SGP. Once this is determined, the second step involves simulating alternative paths of key macroeconomic variables that are consistent with the newly formulated fiscal policy.
+
+Complying with the SGP would have required non-negligible fiscal effort in the first years of the EMU and the maintenance of a broadly balanced structural fiscal position thereafter. This conclusion is reached by simulating small country-individual models, which embed SGP provisions.\footnote{The small individual-country models are similar to those featuring into the Eurosystem's debt sustainability analysis (see \cite[Bouabdallah et al. (2017)]{Bouabdallah}) or those used in the analysis of spending rules conducted by the European Commission (see \cite[EC. (2019)]{EC}). They feature the SGP provision in their most recent form, most notably the flexibility matrix.} \footnote{A crucial factor in determining an SGP-stipulated adjustment is the output gap, which is unobserved and subject to significant revisions. The analysis in this paper also includes calculations using real-time output gap estimates.} Given that the EMU's inception in 1999 is associated with a noticeable structural deficit, a structural adjustment is called for (see Figure \ref{fig1}). Importantly, the standard requirements are temporarily lifted amid the Great Financial Crisis so that the fiscal stimulus can be accommodated.\footnote{The extent of the deviation from the balanced structural budget requirement is based on the size of the European Economic Recovery Plan (EERP) implemented at the time to counter the effects of the economic downturn.} As fiscal positions differ across Member States, the contribution of countries to the euro area fiscal adjustment is uneven (see bars on Figure \ref{fig1}).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=150mm]{/Users/kk/Documents/0000-00_work/2021-08_SGP-reform/SGP_Reform/docu/note/figures/panel_EA_box1.pdf}
+\caption{Additional fiscal adjustment, as captured by the euro area structural balance, needed to fully comply with the SGP (percentage of GDP). \label{fig1}}
+\end{figure}
+
+% 5
+Once known, the additional fiscal adjustment can be used in euro area macroeconomic simulations. The analysis of the second step makes use of the semi-structural model for the euro area ECB-BASE, which contains a rich specification of the general government. \footnote{For a description of the model, including its fiscal block, see \cite[Ba\'nkowski. (2023)]{Bankowski}} The actual fiscal policy is replaced in the model by the one consistent with full SGP compliance. The model is then re-simulated for the EMU period until 2019 and a counterfactual scenario is obtained. The simulations are conducted under the assumption of an exogenous monetary policy, notably with the policy rate remaining unchanged regardless of the fiscal policy course.
+
+% 6
+According to the simulations, full compliance with the SGP would have markedly changed the past macroeconomic situation of the euro area. The initial fiscal adjustment would have tamed the brisk output growth seen during the early years of EMU (see Figure \ref{fig2}). Significantly, the SGP would have ensured that sufficient buffers were in place, thus enabling an unfettered fiscal counter-response to the Great Financial Crisis. Furthermore, maintaining a broadly balanced structural position throughout the EMU period would have done away with the need to consolidate public finances. In reality, a major fiscal retrenchment took place amid the sovereign debt crisis and it aggravated the downturn, as illustrated by the simulations.
+
+% 7
+Adherence to the SGP would have left public finances in a significantly sounder shape than the state they were in. The maintenance of a structurally balanced fiscal position would have implied consistently higher headline balances, even with surpluses having been reached in good times. This would have kept the government debt ratio on a much more stable trajectory than what ultimately transpired.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=150mm]{/Users/kk/Documents/0000-00_work/2021-08_SGP-reform/SGP_Reform/docu/note/figures/panel_EA_box2.pdf}
+    \caption{Counterfactual scenarios assuming full SGP compliance with ECB-BASE (percentage of GDP except real GDP growth and GDP deflator growth, which are expressed in percentage year-on-year rates). \label{fig2}}
+\end{figure}
+
+Our findings indicate that non-compliance with the SGP framework significantly contributed to its failure in achieving its objectives. Notably, adherence to the SGP would have facilitated the building of fiscal buffers in the euro area and mitigated the tendency towards pro-cyclical fiscal policies. Ultimately, the effectiveness of any framework is contingent upon its implementation.
+
+Our paper does not attempt to defend the pre-reformed SGP, as this would imply no need for reform of the governance framework. We acknowledge the numerous shortcomings of the SGP, as laid out in the recent ECB's Occasional Paper (see \cite[Haroutunian et al. (2024)]{Haroutunian}). Even with perfect implementation, the framework likely would not have ensured adequate government investment in the euro area. Additionally, it is improbable that it would have maintained a fiscal stance aligned with the monetary policy needs of the union. The reliance on unobservable indicators also likely contributed to non-compliance. Nevertheless, we emphasize that compliance issues contributed to the SGP's failure to achieve its objectives. This underscores a critical lesson for the future: the success of the newly reformed framework will depend on adherence to its provisions.
+
+\begin{thebibliography}{99}
+\bibitem [1]{Bankowski} 
+Ba\'nkowski, K., 2023. "Fiscal policy in the semi-structural model ECB-BASE." Working Paper Series, No 2802, European Central Bank.
+\bibitem [2]{Bouabdallah} 
+Bouabdallah, O., C. Checherita-Westphal, T. Warmedinger, R. De Stefani, F. Drudi, R. Setzer, and A. Westphal. 2017. "Debt sustainability analysis for euro area sovereigns: a methodological framework." Occasional Paper Series, No 185, European Central Bank.
+\bibitem [3]{EC} 
+EC. 2019. "Report on Public Finances in EMU 2019", Part II - Performance of spending rules at EU and national level - a quantitative assessment, European Commission.
+\bibitem [4]{Haroutunian} 
+Haroutunian, S., K. Ba\'nkowski, S. Bischl, O. Bouabdallah, S. Hauptmeier, N. Leiner-Killinger, M. O'Connell, I. Arruga Oleaga, L. Abraham, and A. Trzcinska. 2024. "The path to the reformed EU fiscal framework: a monetary policy perspective." Occasional Paper Series, No 349, European Central Bank.
+\end{thebibliography}
+
+
+%----------------------------------------------------------------------------------------
+%\end{multicols}
+\end{document}
