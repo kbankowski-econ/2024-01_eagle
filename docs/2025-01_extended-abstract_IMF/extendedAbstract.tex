@@ -75,12 +75,16 @@
 \maketitle % Insert title
 \thispagestyle{fancy} % All pages have headers and footers
 
+\section*{Introduction and motivation}
+
 % 1 Importance of heterogenity and interdependence
 Interdependence and heterogeneity in the euro area are central to understanding the region’s macroeconomic dynamics, given its unique institutional framework, where a common monetary policy operates alongside decentralized fiscal and structural policies. Interdependence arises primarily through strong trade linkages and the transmission of monetary policy, implying that shocks in one member state—such as fiscal adjustments—can propagate across the union, amplifying volatility and influencing policy effectiveness. At the same time, persistent heterogeneity, reflected in disparities in productivity, debt dynamics, and structural rigidities, stems from differentiated policy priorities, institutional legacies, and varying degrees of economic resilience. These asymmetries pose challenges for union-wide stabilization efforts and risk exacerbating economic fragmentation. A comprehensive understanding of both interdependence and heterogeneity within the Economic and Monetary Union (EMU) is therefore essential for designing policies that mitigate fragmentation risks, enhance shock absorption, and reconcile national policy autonomy with collective stability. In this context, the development of analytical tools to improve euro area-wide institutions' capacity—such as the European Central Bank (ECB)—to assess and address these dynamics is of critical importance.
 
 
 % 2 We establish a more granular version of EAGLE with 11 original member states
 A key macroeconomic framework employed within the Eurosystem to analyze both interdependence and heterogeneity in the EMU has been the EAGLE model, developed in the 2010s (\cite[Gomes et al. (2012)]{Gomes}). This multi-country extension of the seminal New Area-Wide Model initially represented the euro area as a two-region economy—Germany and the rest of the euro area—alongside the United States and the rest of the world. While EAGLE has proven valuable for assessing economic policies within a multi-country setting, its structure limits its ability to evaluate large-scale initiatives such as the Next Generation EU (NGEU) program, which involves complex cross-country dimensions. Moreover, the model overlooks the role of smaller euro area economies, which, despite their size, contribute significantly to the system-wide dynamics of the union. To address these limitations, we build upon the EAGLE framework by further disaggregating the euro area into 11 early euro-adopting countries (Austria, Belgium, Finland, France, Germany, Greece, Ireland, Italy, Netherlands, Portugal, and Spain). This extension enhances the model's capacity to explicitly capture country-specific dynamics, providing a more granular representation of economic interdependencies within the EMU.
+
+\section*{Model extension}
 
 % 3 The model embdes a meaningful fiscal policy
 Our model extension incorporates a meaningful role for fiscal policy, which was absent in the original EAGLE framework but introduced in later extensions (see \cite[Clancy et al. (2012)]{Clancy}). Specifically, government expenditure is disaggregated into government consumption and investment. Government consumption enters the utility function as part of a composite consumption basket alongside private consumption, thereby generating utility for households. In this setup, public consumption is not purely wasteful but exhibits complementarity with private consumption. Similarly, government investment brings benefits as it contributes to the accumulation of public capital, which enhances the productive capacity of the economy over time. Additionally, our model accounts for the direct import content of both types of government spending, recognizing that, a share of public purchases is allocated to imported goods, especially in small open economies.
@@ -94,38 +98,63 @@ A crucial aspect to be incorporated into our model extension is the significant 
     \caption{The magnitude of imports across euro area countries, compared to Japan and the US. \label{fig1}}
 \end{figure}
 
+Calibrating the trade matrix is a major technical challenge in extending the EAGLE framework. The expanded model, which includes 12 euro area countries, the rest of the world, and the United States, encompasses nearly 10,000 endogenous variables. Computing the steady state for a model of this scale remains a complex task, requiring the application of a "divide-and-conquer" algorithm, also known as homotopy in Dynare. We first solve for the steady state of a simplified version of the model, where all regions are symmetric and economic sectors are dominated by a single type of good. From this initial steady state, we gradually adjust parameters toward their target values, ensuring a smooth transition to an equilibrium where all economic ratios and trade specifications align with observed data. Among the various calibration steps, the adjustment of bilateral trade flows presents the greatest challenge. Successfully calibrating the model requires computing multiple intermediate steady states before converging on the final set of bilateral shares.
+
 % 5 This is how we calibrate trade
-
-
-% 6(a) Having the model we study fiscal shocks (union wide)
-
-% 6(b) National shocks
-
-% 7(a) NGEU description
-
-% 7(b) NGEU macro effects
-
-% 7(c) NGEU spill-overs
-
-
-% 5
-Once known, the additional fiscal adjustment can be used in euro area macroeconomic simulations. The analysis of the second step makes use of the semi-structural model for the euro area ECB-BASE, which contains a rich specification of the general government. \footnote{For a description of the model, including its fiscal block, see \cite[Ba\'nkowski. (2023)]{Bankowski}} The actual fiscal policy is replaced in the model by the one consistent with full SGP compliance. The model is then re-simulated for the EMU period until 2019 and a counterfactual scenario is obtained. The simulations are conducted under the assumption of an exogenous monetary policy, notably with the policy rate remaining unchanged regardless of the fiscal policy course.
-
-% 6
-According to the simulations, full compliance with the SGP would have markedly changed the past macroeconomic situation of the euro area. The initial fiscal adjustment would have tamed the brisk output growth seen during the early years of EMU (see Figure \ref{fig2}). Significantly, the SGP would have ensured that sufficient buffers were in place, thus enabling an unfettered fiscal counter-response to the Great Financial Crisis. Furthermore, maintaining a broadly balanced structural position throughout the EMU period would have done away with the need to consolidate public finances. In reality, a major fiscal retrenchment took place amid the sovereign debt crisis and it aggravated the downturn, as illustrated by the simulations.
-
-% 7
-Adherence to the SGP would have left public finances in a significantly sounder shape than the state they were in. The maintenance of a structurally balanced fiscal position would have implied consistently higher headline balances, even with surpluses having been reached in good times. This would have kept the government debt ratio on a much more stable trajectory than what ultimately transpired.
+All demand components in the EAGLE model (i.e., private consumption, government consumption, private investment, and government investment) consist of both tradable and non-tradable goods. Tradable goods, in turn, are further divided into domestically produced and imported goods. Accurately representing trade dynamics requires a precise estimation of the import content for each country and each demand component. To achieve this, we follow the methodology established by Bussière and utilize input-output tables published by the OECD. The trade data-based estimates reveal that the import content, expressed as a share of national GDP, varies across countries and demand components. First, small open economies such as Austria, Belgium, and Ireland exhibit higher import intensities compared to larger economies, implying a relatively greater leakage of national economic policies. Second, government demand components tend to be less import-intensive than private demand components, a pattern that holds consistently across all countries. The data suggest that government sectors display a relatively strong home bias in their spending preferences.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=150mm]{/Users/kk/Documents/0000-00_work/2021-08_SGP-reform/SGP_Reform/docu/note/figures/panel_EA_box2.pdf}
-    \caption{Counterfactual scenarios assuming full SGP compliance with ECB-BASE (percentage of GDP except real GDP growth and GDP deflator growth, which are expressed in percentage year-on-year rates). \label{fig2}}
+    \includegraphics[width=150mm]{/Users/kk/Documents/0000-00_work/2024-01_eagle/docs/2024-12_RCC-workshop/figures/import_content.png}
+    \caption{The magnitude of imports across euro area countries, compared to Japan and the US. \label{fig7}}
 \end{figure}
 
-Our findings indicate that non-compliance with the SGP framework significantly contributed to its failure in achieving its objectives. Notably, adherence to the SGP would have facilitated the building of fiscal buffers in the euro area and mitigated the tendency towards pro-cyclical fiscal policies. Ultimately, the effectiveness of any framework is contingent upon its implementation.
+\section*{Macroeconomic model properties}
 
-Our paper does not attempt to defend the pre-reformed SGP, as this would imply no need for reform of the governance framework. We acknowledge the numerous shortcomings of the SGP, as laid out in the recent ECB's Occasional Paper (see \cite[Haroutunian et al. (2024)]{Haroutunian}). Even with perfect implementation, the framework likely would not have ensured adequate government investment in the euro area. Additionally, it is improbable that it would have maintained a fiscal stance aligned with the monetary policy needs of the union. The reliance on unobservable indicators also likely contributed to non-compliance. Nevertheless, we emphasize that compliance issues contributed to the SGP's failure to achieve its objectives. This underscores a critical lesson for the future: the success of the newly reformed framework will depend on adherence to its provisions.
+% 6(a) Having the model we study fiscal shocks (union wide)
+With the model extension completed, we now turn to analyzing the dynamic effects of fiscal policy shocks within the framework. Specifically, we examine the impact of fiscal expansions equivalent to an ex-ante 1\% of GDP, implemented through government consumption and investment. We first consider union-wide fiscal expansions, in which all euro area countries experience a fiscal shock of equal magnitude relative to GDP, lasting for four quarters. Simulations based on the EAGLE framework indicate that a positive shock to government consumption leads to an immediate increase in output, which gains further momentum in subsequent quarters due to the crowding-in effect on private consumption. Overall, GDP rises by approximately 1.5\% relative to its steady-state baseline, implying a fiscal multiplier well above unity. This expansionary impulse also generates inflationary pressures, with inflation temporarily rising by 0.2 percentage points compared to the baseline, reflecting a tightening of economic slack. A shock to government investment, while also yielding a strong stimulus effect, results in a peak GDP increase of around 1\% during the implementation period. Moreover, government investment produces minor but persistent long-term gains, as it contributes to the accumulation of productive public capital. Inflationary pressures, while present, are more subdued compared to those generated by government consumption, as the enhanced productive capacity of the economy helps to offset demand-driven price increases.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=150mm]{/Users/kk/Documents/0000-00_work/2024-01_eagle/docs/2024-12_RCC-workshop/figures/effectGovEA.png}
+    \caption{The magnitude of imports across euro area countries, compared to Japan and the US. \label{fig2}}
+\end{figure}
+
+% 6(b) National shocks
+While union-wide fiscal shocks serve as a useful validation of the model, similar analyses could be conducted using single-country models for the euro area. The added value of the extended EAGLE framework lies in its ability to capture country-specific policies, allowing for an assessment of their domestic impact as well as their spillover effects on neighboring countries and the broader global economy. Given the close economic linkages among euro area member states, understanding the implications of national policies for the monetary union is of particular interest, as outlined above. To illustrate this, we examine the effects of a government spending shock in Spain, which accounts for approximately 10\% of the euro area's GDP (see Figure \ref{fig3}). The output response follows a similar dynamic to the union-wide stimulus, with effects roughly proportional to Spain's share in EMU GDP. Given the import content of Spanish government spending, the spillover effects on output in other euro area countries remain negligible. However, notable price spillovers emerge, contributing to higher inflation across the monetary union. As domestic demand in Spain increases, prices rise, leading to a transmission of higher costs to other countries through strong trade linkages.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=150mm]{/Users/kk/Documents/0000-00_work/2024-01_eagle/docs/2024-12_RCC-workshop/figures/effectGovES.png}
+    \caption{The magnitude of imports across euro area countries, compared to Japan and the US. \label{fig3}}
+\end{figure}
+
+\section*{NGEU evaluation as a policy application}
+
+% 7(a) NGEU description
+As a key policy application within the extended EAGLE framework in this paper, we assess the macroeconomic effects of government investment in the euro area financed through the Next Generation EU (NGEU) program. NGEU represents a landmark initiative in European economic policy, particularly for the euro area. Introduced in response to the COVID-19 pandemic, it constitutes a €750 billion recovery package, combining grants and loans, with implementation spanning from 2021 to 2026. The program's primary objectives include mitigating the immediate economic fallout from the pandemic, supporting the green and digital transitions, and fostering sustainable growth and job creation. Additionally, NGEU aims to reduce economic divergences within the euro area, with larger allocations directed toward countries with lower pre-pandemic GDP per capita. The program operates through three main channels: lowering risk premia, providing fiscal stimulus, and facilitating structural reforms. An overwhelming share of the fiscal stimulus takes the form of government investment, which, given its scale, is expected to generate substantial positive effects for both the euro area as a whole and its individual member states. These effects are likely to be particularly pronounced in the program's main beneficiaries, Italy and Spain, which receive the largest nominal allocations (see Figure \ref{fig4}).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=150mm]{/Users/kk/Documents/0000-00_work/2024-01_eagle/docs/2024-12_RCC-workshop/figures/NGEU_input.png}
+    \caption{The magnitude of imports across euro area countries, compared to Japan and the US. \label{fig4}}
+\end{figure}
+
+% 7(b) NGEU macro effects
+Macroeconomic simulations indicate that NGEU-financed investment will yield significant benefits for the euro area economy (see Figure \ref{fig5}). EMU output is projected to increase by up to 0.5\% relative to the non-program baseline. Given the nature of investment and its contribution to public capital accumulation, these effects are long-lasting, extending well beyond the program's implementation period, which concludes in 2026. The majority of the stimulus impact originates from member states with the largest spending allocations, most notably Spain and Italy. In addition to boosting output, the investment is expected to have implications for price dynamics, although these effects remain relatively contained, with inflationary pressures staying below 0.1\% of GDP. In the short term, prices rise slightly due to increased demand stemming from government investment expenditures. However, in the long run, minor deflationary pressures emerge as the accumulated public capital enhances the economy's productive capacity. Over time, the nature of government investment transitions from a demand-type shock to a supply-type shock.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=150mm]{/Users/kk/Documents/0000-00_work/2024-01_eagle/docs/2024-12_RCC-workshop/figures/effectNGEU.png}
+    \caption{The magnitude of imports across euro area countries, compared to Japan and the US. \label{fig5}}
+\end{figure}
+
+% 7(c) NGEU spill-overs
+A key advantage of our extended framework is its ability to analyze the spillover effects of NGEU-funded investment on other economies. A particularly relevant question in this context is whether additional government investment in Spain translates into higher German GDP through trade linkages. Such an effect would materialize if the import content of Spanish government investment were substantial and if a significant share of those imports originated from Germany. Analyzing trade data provides insight into this issue. Of the approximately 4\% of GDP allocated to government investment in Spain, only 0.5\% is covered by imported goods. This share is notably higher for smaller, more open economies such as Austria and Ireland, where it exceeds 1\% of GDP. In the case of Spain, only 0.1\% of GDP in German imports is utilized for government investment, suggesting that the impact on the German economy is likely to be minimal. Our macroeconomic simulations confirm this hypothesis, indicating limited spillover effects (see Figure \ref{fig6}). German exports increase slightly in the first year of the program but decline thereafter as the country’s price competitiveness weakens due to inflationary spillovers. Additionally, the German economy experiences a mild adverse effect from the monetary authority’s response to the NGEU stimulus, which involves a slight tightening of policy.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=150mm]{/Users/kk/Documents/0000-00_work/2024-01_eagle/docs/2024-12_RCC-workshop/figures/effectNGEUspillovers.png}
+    \caption{The magnitude of imports across euro area countries, compared to Japan and the US. \label{fig6}}
+\end{figure}
 
 \begin{thebibliography}{99}
 \bibitem [1]{Gomes} 
