@@ -7455,6 +7455,9 @@ parameters
  EAL_nuig
  EAL_nutig
  EAL_omega
+ EAL_phirgy
+ EAL_phirpi
+ EAL_phirr
  EAL_phitb
  EAL_pi4target
  EAL_psin
@@ -9466,28 +9469,26 @@ parameters
  USRW_numcg
  USRW_numig
 ;
-        var EAAEAL_nerdep;
+        var EAAEAK_nerdep;
         var EAA_gammabh;
-        var EABEAL_nerdep;
+        var EABEAK_nerdep;
         var EAB_gammabh;
-        var EACEAL_nerdep;
+        var EACEAK_nerdep;
         var EAC_gammabh;
-        var EADEAL_nerdep;
+        var EADEAK_nerdep;
         var EAD_gammabh;
-        var EAEEAL_nerdep;
+        var EAEEAK_nerdep;
         var EAE_gammabh;
-        var EAFEAL_nerdep;
+        var EAFEAK_nerdep;
         var EAF_gammabh;
-        var EAGEAL_nerdep;
+        var EAGEAK_nerdep;
         var EAG_gammabh;
-        var EAHEAL_nerdep;
+        var EAHEAK_nerdep;
         var EAH_gammabh;
-        var EAIEAL_nerdep;
+        var EAIEAK_nerdep;
         var EAI_gammabh;
-        var EAJEAL_nerdep;
+        var EAJEAK_nerdep;
         var EAJ_gammabh;
-        var EAKEAL_nerdep;
-        var EAK_gammabh;
 var
  EAA_bh
  EAB_bh
@@ -9500,7 +9501,6 @@ var
  EAI_bh
  EAJ_bh
  EAK_bh
- EAL_bh
 ;
 // Flip some variables
 change_type(var)
@@ -9831,7 +9831,10 @@ EAA_zcon*log(EAA_ci-EAA_kappa*EAA_ci(-1))-1/(1+EAA_zeta)*(EAA_ni)^(1+EAA_zeta)+E
 // Marginal utility of consumption
 EAA_lambdai*(1+EAA_tauc+EAA_gammavi+EAA_vi*EAA_gammavider) = EAA_zcon*(EAA_ci-EAA_kappa*EAA_ci(-1))^(-EAA_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
 EAA_r                   = EAA_beta^(-1)*EAA_lambdai/EAA_lambdai    *EAA_pic;
+// Germany
+// US and the RoW
 // Euler equation for money
 EAA_vi^(2)*EAA_gammavider = 1-EAA_beta*EAA_lambdai(+1)/(EAA_lambdai*EAA_pic(+1));
 // Consumption-based velocity
@@ -13376,7 +13379,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAA_r = EAL_r;
+	EAA_r = EAK_r;
 EAA_pic4 = EAA_pi4target;
 EAA_rr-1 = EAA_r/EAA_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -13762,7 +13765,10 @@ EAB_zcon*log(EAB_ci-EAB_kappa*EAB_ci(-1))-1/(1+EAB_zeta)*(EAB_ni)^(1+EAB_zeta)+E
 // Marginal utility of consumption
 EAB_lambdai*(1+EAB_tauc+EAB_gammavi+EAB_vi*EAB_gammavider) = EAB_zcon*(EAB_ci-EAB_kappa*EAB_ci(-1))^(-EAB_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
 EAB_r                   = EAB_beta^(-1)*EAB_lambdai/EAB_lambdai    *EAB_pic;
+// Germany
+// US and the RoW
 // Euler equation for money
 EAB_vi^(2)*EAB_gammavider = 1-EAB_beta*EAB_lambdai(+1)/(EAB_lambdai*EAB_pic(+1));
 // Consumption-based velocity
@@ -17307,7 +17313,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAB_r = EAL_r;
+	EAB_r = EAK_r;
 EAB_pic4 = EAB_pi4target;
 EAB_rr-1 = EAB_r/EAB_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -17693,7 +17699,10 @@ EAC_zcon*log(EAC_ci-EAC_kappa*EAC_ci(-1))-1/(1+EAC_zeta)*(EAC_ni)^(1+EAC_zeta)+E
 // Marginal utility of consumption
 EAC_lambdai*(1+EAC_tauc+EAC_gammavi+EAC_vi*EAC_gammavider) = EAC_zcon*(EAC_ci-EAC_kappa*EAC_ci(-1))^(-EAC_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
 EAC_r                   = EAC_beta^(-1)*EAC_lambdai/EAC_lambdai    *EAC_pic;
+// Germany
+// US and the RoW
 // Euler equation for money
 EAC_vi^(2)*EAC_gammavider = 1-EAC_beta*EAC_lambdai(+1)/(EAC_lambdai*EAC_pic(+1));
 // Consumption-based velocity
@@ -21238,7 +21247,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAC_r = EAL_r;
+	EAC_r = EAK_r;
 EAC_pic4 = EAC_pi4target;
 EAC_rr-1 = EAC_r/EAC_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -21624,7 +21633,10 @@ EAD_zcon*log(EAD_ci-EAD_kappa*EAD_ci(-1))-1/(1+EAD_zeta)*(EAD_ni)^(1+EAD_zeta)+E
 // Marginal utility of consumption
 EAD_lambdai*(1+EAD_tauc+EAD_gammavi+EAD_vi*EAD_gammavider) = EAD_zcon*(EAD_ci-EAD_kappa*EAD_ci(-1))^(-EAD_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
 EAD_r                   = EAD_beta^(-1)*EAD_lambdai/EAD_lambdai    *EAD_pic;
+// Germany
+// US and the RoW
 // Euler equation for money
 EAD_vi^(2)*EAD_gammavider = 1-EAD_beta*EAD_lambdai(+1)/(EAD_lambdai*EAD_pic(+1));
 // Consumption-based velocity
@@ -25169,7 +25181,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAD_r = EAL_r;
+	EAD_r = EAK_r;
 EAD_pic4 = EAD_pi4target;
 EAD_rr-1 = EAD_r/EAD_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -25555,7 +25567,10 @@ EAE_zcon*log(EAE_ci-EAE_kappa*EAE_ci(-1))-1/(1+EAE_zeta)*(EAE_ni)^(1+EAE_zeta)+E
 // Marginal utility of consumption
 EAE_lambdai*(1+EAE_tauc+EAE_gammavi+EAE_vi*EAE_gammavider) = EAE_zcon*(EAE_ci-EAE_kappa*EAE_ci(-1))^(-EAE_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
 EAE_r                   = EAE_beta^(-1)*EAE_lambdai/EAE_lambdai    *EAE_pic;
+// Germany
+// US and the RoW
 // Euler equation for money
 EAE_vi^(2)*EAE_gammavider = 1-EAE_beta*EAE_lambdai(+1)/(EAE_lambdai*EAE_pic(+1));
 // Consumption-based velocity
@@ -29100,7 +29115,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAE_r = EAL_r;
+	EAE_r = EAK_r;
 EAE_pic4 = EAE_pi4target;
 EAE_rr-1 = EAE_r/EAE_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -29486,7 +29501,10 @@ EAF_zcon*log(EAF_ci-EAF_kappa*EAF_ci(-1))-1/(1+EAF_zeta)*(EAF_ni)^(1+EAF_zeta)+E
 // Marginal utility of consumption
 EAF_lambdai*(1+EAF_tauc+EAF_gammavi+EAF_vi*EAF_gammavider) = EAF_zcon*(EAF_ci-EAF_kappa*EAF_ci(-1))^(-EAF_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
 EAF_r                   = EAF_beta^(-1)*EAF_lambdai/EAF_lambdai    *EAF_pic;
+// Germany
+// US and the RoW
 // Euler equation for money
 EAF_vi^(2)*EAF_gammavider = 1-EAF_beta*EAF_lambdai(+1)/(EAF_lambdai*EAF_pic(+1));
 // Consumption-based velocity
@@ -33031,7 +33049,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAF_r = EAL_r;
+	EAF_r = EAK_r;
 EAF_pic4 = EAF_pi4target;
 EAF_rr-1 = EAF_r/EAF_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -33417,7 +33435,10 @@ EAG_zcon*log(EAG_ci-EAG_kappa*EAG_ci(-1))-1/(1+EAG_zeta)*(EAG_ni)^(1+EAG_zeta)+E
 // Marginal utility of consumption
 EAG_lambdai*(1+EAG_tauc+EAG_gammavi+EAG_vi*EAG_gammavider) = EAG_zcon*(EAG_ci-EAG_kappa*EAG_ci(-1))^(-EAG_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
 EAG_r                   = EAG_beta^(-1)*EAG_lambdai/EAG_lambdai    *EAG_pic;
+// Germany
+// US and the RoW
 // Euler equation for money
 EAG_vi^(2)*EAG_gammavider = 1-EAG_beta*EAG_lambdai(+1)/(EAG_lambdai*EAG_pic(+1));
 // Consumption-based velocity
@@ -36962,7 +36983,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAG_r = EAL_r;
+	EAG_r = EAK_r;
 EAG_pic4 = EAG_pi4target;
 EAG_rr-1 = EAG_r/EAG_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -37348,7 +37369,10 @@ EAH_zcon*log(EAH_ci-EAH_kappa*EAH_ci(-1))-1/(1+EAH_zeta)*(EAH_ni)^(1+EAH_zeta)+E
 // Marginal utility of consumption
 EAH_lambdai*(1+EAH_tauc+EAH_gammavi+EAH_vi*EAH_gammavider) = EAH_zcon*(EAH_ci-EAH_kappa*EAH_ci(-1))^(-EAH_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
 EAH_r                   = EAH_beta^(-1)*EAH_lambdai/EAH_lambdai    *EAH_pic;
+// Germany
+// US and the RoW
 // Euler equation for money
 EAH_vi^(2)*EAH_gammavider = 1-EAH_beta*EAH_lambdai(+1)/(EAH_lambdai*EAH_pic(+1));
 // Consumption-based velocity
@@ -40893,7 +40917,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAH_r = EAL_r;
+	EAH_r = EAK_r;
 EAH_pic4 = EAH_pi4target;
 EAH_rr-1 = EAH_r/EAH_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -41279,7 +41303,10 @@ EAI_zcon*log(EAI_ci-EAI_kappa*EAI_ci(-1))-1/(1+EAI_zeta)*(EAI_ni)^(1+EAI_zeta)+E
 // Marginal utility of consumption
 EAI_lambdai*(1+EAI_tauc+EAI_gammavi+EAI_vi*EAI_gammavider) = EAI_zcon*(EAI_ci-EAI_kappa*EAI_ci(-1))^(-EAI_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
 EAI_r                   = EAI_beta^(-1)*EAI_lambdai/EAI_lambdai    *EAI_pic;
+// Germany
+// US and the RoW
 // Euler equation for money
 EAI_vi^(2)*EAI_gammavider = 1-EAI_beta*EAI_lambdai(+1)/(EAI_lambdai*EAI_pic(+1));
 // Consumption-based velocity
@@ -44824,7 +44851,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAI_r = EAL_r;
+	EAI_r = EAK_r;
 EAI_pic4 = EAI_pi4target;
 EAI_rr-1 = EAI_r/EAI_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -45210,7 +45237,10 @@ EAJ_zcon*log(EAJ_ci-EAJ_kappa*EAJ_ci(-1))-1/(1+EAJ_zeta)*(EAJ_ni)^(1+EAJ_zeta)+E
 // Marginal utility of consumption
 EAJ_lambdai*(1+EAJ_tauc+EAJ_gammavi+EAJ_vi*EAJ_gammavider) = EAJ_zcon*(EAJ_ci-EAJ_kappa*EAJ_ci(-1))^(-EAJ_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
 EAJ_r                   = EAJ_beta^(-1)*EAJ_lambdai/EAJ_lambdai    *EAJ_pic;
+// Germany
+// US and the RoW
 // Euler equation for money
 EAJ_vi^(2)*EAJ_gammavider = 1-EAJ_beta*EAJ_lambdai(+1)/(EAJ_lambdai*EAJ_pic(+1));
 // Consumption-based velocity
@@ -48755,7 +48785,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAJ_r = EAL_r;
+	EAJ_r = EAK_r;
 EAJ_pic4 = EAJ_pi4target;
 EAJ_rr-1 = EAJ_r/EAJ_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -49141,7 +49171,10 @@ EAK_zcon*log(EAK_ci-EAK_kappa*EAK_ci(-1))-1/(1+EAK_zeta)*(EAK_ni)^(1+EAK_zeta)+E
 // Marginal utility of consumption
 EAK_lambdai*(1+EAK_tauc+EAK_gammavi+EAK_vi*EAK_gammavider) = EAK_zcon*(EAK_ci-EAK_kappa*EAK_ci(-1))^(-EAK_sigma);
 // Euler equation for government bonds
-EAK_r                   = EAK_beta^(-1)*EAK_lambdai/EAK_lambdai    *EAK_pic;
+// all other that are not Germany, not US and not the RoW
+// Germany
+EAK_r = EAK_beta^(-1)*EAK_lambdai/EAK_lambdai(+1)*EAK_pic(+1);
+// US and the RoW
 // Euler equation for money
 EAK_vi^(2)*EAK_gammavider = 1-EAK_beta*EAK_lambdai(+1)/(EAK_lambdai*EAK_pic(+1));
 // Consumption-based velocity
@@ -52686,7 +52719,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAK_r = EAL_r;
+	EAK_r^4-1 = EAK_rrstar^4*EAK_pi4target-1;
 EAK_pic4 = EAK_pi4target;
 EAK_rr-1 = EAK_r/EAK_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -53072,6 +53105,9 @@ EAL_zcon*log(EAL_ci-EAL_kappa*EAL_ci(-1))-1/(1+EAL_zeta)*(EAL_ni)^(1+EAL_zeta)+E
 // Marginal utility of consumption
 EAL_lambdai*(1+EAL_tauc+EAL_gammavi+EAL_vi*EAL_gammavider) = EAL_zcon*(EAL_ci-EAL_kappa*EAL_ci(-1))^(-EAL_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
+// Germany
+// US and the RoW
 EAL_r = EAL_beta^(-1)*EAL_lambdai/EAL_lambdai(+1)*EAL_pic(+1);
 // Euler equation for money
 EAL_vi^(2)*EAL_gammavider = 1-EAL_beta*EAL_lambdai(+1)/(EAL_lambdai*EAL_pic(+1));
@@ -56586,7 +56622,7 @@ EAL_ex =
 // Government budget constraint, using EAL_pg = EAL_pht
 // TODO: check the (1-EAL_gammab(-1)) adjustment here, which is not in the fiscal extention
 	EAL_pcg(-1)*EAL_cg(-1)+EAL_pig(-1)*EAL_ig(-1)+EAL_tr(-1)
-	+EAL_b(-1)*EAL_pic(-1)^(-1)+EAL_m(-2)*EAL_pic(-1)^(-1) = EAL_tauc(-1)*EAL_c(-1)+(EAL_taun(-1)+EAL_tauwh(-1))*(EAL_wi(-1)*EAL_ndi(-1)+EAL_wj(-1)*EAL_ndj(-1))+EAL_tauwf(-1)*EAL_w(-1)*EAL_nd(-1)+EAL_tauk(-1)*(EAL_rk(-1)*EAL_u(-1)-(EAL_gammau(-1)+EAL_delta)*EAL_pi(-1))*EAL_k(-1)+EAL_taud(-1)*EAL_d(-1)+EAL_t(-1)+(EAL_r(-1)*(1-EAL_gammab(-1)))^(-1)*EAL_b+EAL_m(-1);
+	+EAL_b(-1)*EAL_pic(-1)^(-1)+EAL_m(-2)*EAL_pic(-1)^(-1) = EAL_tauc(-1)*EAL_c(-1)+(EAL_taun(-1)+EAL_tauwh(-1))*(EAL_wi(-1)*EAL_ndi(-1)+EAL_wj(-1)*EAL_ndj(-1))+EAL_tauwf(-1)*EAL_w(-1)*EAL_nd(-1)+EAL_tauk(-1)*(EAL_rk(-1)*EAL_u(-1)-(EAL_gammau(-1)+EAL_delta)*EAL_pi(-1))*EAL_k(-1)+EAL_taud(-1)*EAL_d(-1)+EAL_t(-1)+(EAL_r(-1))^(-1)*EAL_b+EAL_m(-1);
 // Government spending, using EAL_pg = EAL_pht
 EAL_pcg*EAL_cg = EAL_cgy*EAL_pybar*EAL_ybar;
 EAL_pig*EAL_ig = EAL_igy*EAL_pybar*EAL_ybar;
@@ -57003,6 +57039,9 @@ RW_zcon*log(RW_ci-RW_kappa*RW_ci(-1))-1/(1+RW_zeta)*(RW_ni)^(1+RW_zeta)+RW_beta*
 // Marginal utility of consumption
 RW_lambdai*(1+RW_tauc+RW_gammavi+RW_vi*RW_gammavider) = RW_zcon*(RW_ci-RW_kappa*RW_ci(-1))^(-RW_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
+// Germany
+// US and the RoW
 RW_r = RW_beta^(-1)*RW_lambdai/RW_lambdai(+1)*RW_pic(+1);
 // Euler equation for money
 RW_vi^(2)*RW_gammavider = 1-RW_beta*RW_lambdai(+1)/(RW_lambdai*RW_pic(+1));
@@ -60934,6 +60973,9 @@ US_zcon*log(US_ci-US_kappa*US_ci(-1))-1/(1+US_zeta)*(US_ni)^(1+US_zeta)+US_beta*
 // Marginal utility of consumption
 US_lambdai*(1+US_tauc+US_gammavi+US_vi*US_gammavider) = US_zcon*(US_ci-US_kappa*US_ci(-1))^(-US_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
+// Germany
+// US and the RoW
 US_r = US_beta^(-1)*US_lambdai/US_lambdai(+1)*US_pic(+1);
 // Euler equation for money
 US_vi^(2)*US_gammavider = 1-US_beta*US_lambdai(+1)/(US_lambdai*US_pic(+1));
@@ -65039,110 +65081,103 @@ US_size*US_bf =
 // Net foreign asset position
 	
 		
-			EAA_bf/US_r(-1) = -EAA_bh/EAL_r(-1)*EAAEAL_rer(-1)/EAA_rer(-1) + EAA_bh(-1)*EAAEAL_rer(-2) / EAA_rer(-2) + EAA_bf(-1) + EAA_tb(-1)/EAA_rer(-1);
+			EAA_bf/US_r(-1) = -EAA_bh/EAK_r(-1)*EAAEAK_rer(-1)/EAA_rer(-1) + EAA_bh(-1)*EAAEAK_rer(-2) / EAA_rer(-2) + EAA_bf(-1) + EAA_tb(-1)/EAA_rer(-1);
 		
 	
 	
 		
-			EAB_bf/US_r(-1) = -EAB_bh/EAL_r(-1)*EABEAL_rer(-1)/EAB_rer(-1) + EAB_bh(-1)*EABEAL_rer(-2) / EAB_rer(-2) + EAB_bf(-1) + EAB_tb(-1)/EAB_rer(-1);
+			EAB_bf/US_r(-1) = -EAB_bh/EAK_r(-1)*EABEAK_rer(-1)/EAB_rer(-1) + EAB_bh(-1)*EABEAK_rer(-2) / EAB_rer(-2) + EAB_bf(-1) + EAB_tb(-1)/EAB_rer(-1);
 		
 	
 	
 		
-			EAC_bf/US_r(-1) = -EAC_bh/EAL_r(-1)*EACEAL_rer(-1)/EAC_rer(-1) + EAC_bh(-1)*EACEAL_rer(-2) / EAC_rer(-2) + EAC_bf(-1) + EAC_tb(-1)/EAC_rer(-1);
+			EAC_bf/US_r(-1) = -EAC_bh/EAK_r(-1)*EACEAK_rer(-1)/EAC_rer(-1) + EAC_bh(-1)*EACEAK_rer(-2) / EAC_rer(-2) + EAC_bf(-1) + EAC_tb(-1)/EAC_rer(-1);
 		
 	
 	
 		
-			EAD_bf/US_r(-1) = -EAD_bh/EAL_r(-1)*EADEAL_rer(-1)/EAD_rer(-1) + EAD_bh(-1)*EADEAL_rer(-2) / EAD_rer(-2) + EAD_bf(-1) + EAD_tb(-1)/EAD_rer(-1);
+			EAD_bf/US_r(-1) = -EAD_bh/EAK_r(-1)*EADEAK_rer(-1)/EAD_rer(-1) + EAD_bh(-1)*EADEAK_rer(-2) / EAD_rer(-2) + EAD_bf(-1) + EAD_tb(-1)/EAD_rer(-1);
 		
 	
 	
 		
-			EAE_bf/US_r(-1) = -EAE_bh/EAL_r(-1)*EAEEAL_rer(-1)/EAE_rer(-1) + EAE_bh(-1)*EAEEAL_rer(-2) / EAE_rer(-2) + EAE_bf(-1) + EAE_tb(-1)/EAE_rer(-1);
+			EAE_bf/US_r(-1) = -EAE_bh/EAK_r(-1)*EAEEAK_rer(-1)/EAE_rer(-1) + EAE_bh(-1)*EAEEAK_rer(-2) / EAE_rer(-2) + EAE_bf(-1) + EAE_tb(-1)/EAE_rer(-1);
 		
 	
 	
 		
-			EAF_bf/US_r(-1) = -EAF_bh/EAL_r(-1)*EAFEAL_rer(-1)/EAF_rer(-1) + EAF_bh(-1)*EAFEAL_rer(-2) / EAF_rer(-2) + EAF_bf(-1) + EAF_tb(-1)/EAF_rer(-1);
+			EAF_bf/US_r(-1) = -EAF_bh/EAK_r(-1)*EAFEAK_rer(-1)/EAF_rer(-1) + EAF_bh(-1)*EAFEAK_rer(-2) / EAF_rer(-2) + EAF_bf(-1) + EAF_tb(-1)/EAF_rer(-1);
 		
 	
 	
 		
-			EAG_bf/US_r(-1) = -EAG_bh/EAL_r(-1)*EAGEAL_rer(-1)/EAG_rer(-1) + EAG_bh(-1)*EAGEAL_rer(-2) / EAG_rer(-2) + EAG_bf(-1) + EAG_tb(-1)/EAG_rer(-1);
+			EAG_bf/US_r(-1) = -EAG_bh/EAK_r(-1)*EAGEAK_rer(-1)/EAG_rer(-1) + EAG_bh(-1)*EAGEAK_rer(-2) / EAG_rer(-2) + EAG_bf(-1) + EAG_tb(-1)/EAG_rer(-1);
 		
 	
 	
 		
-			EAH_bf/US_r(-1) = -EAH_bh/EAL_r(-1)*EAHEAL_rer(-1)/EAH_rer(-1) + EAH_bh(-1)*EAHEAL_rer(-2) / EAH_rer(-2) + EAH_bf(-1) + EAH_tb(-1)/EAH_rer(-1);
+			EAH_bf/US_r(-1) = -EAH_bh/EAK_r(-1)*EAHEAK_rer(-1)/EAH_rer(-1) + EAH_bh(-1)*EAHEAK_rer(-2) / EAH_rer(-2) + EAH_bf(-1) + EAH_tb(-1)/EAH_rer(-1);
 		
 	
 	
 		
-			EAI_bf/US_r(-1) = -EAI_bh/EAL_r(-1)*EAIEAL_rer(-1)/EAI_rer(-1) + EAI_bh(-1)*EAIEAL_rer(-2) / EAI_rer(-2) + EAI_bf(-1) + EAI_tb(-1)/EAI_rer(-1);
+			EAI_bf/US_r(-1) = -EAI_bh/EAK_r(-1)*EAIEAK_rer(-1)/EAI_rer(-1) + EAI_bh(-1)*EAIEAK_rer(-2) / EAI_rer(-2) + EAI_bf(-1) + EAI_tb(-1)/EAI_rer(-1);
 		
 	
 	
 		
-			EAJ_bf/US_r(-1) = -EAJ_bh/EAL_r(-1)*EAJEAL_rer(-1)/EAJ_rer(-1) + EAJ_bh(-1)*EAJEAL_rer(-2) / EAJ_rer(-2) + EAJ_bf(-1) + EAJ_tb(-1)/EAJ_rer(-1);
+			EAJ_bf/US_r(-1) = -EAJ_bh/EAK_r(-1)*EAJEAK_rer(-1)/EAJ_rer(-1) + EAJ_bh(-1)*EAJEAK_rer(-2) / EAJ_rer(-2) + EAJ_bf(-1) + EAJ_tb(-1)/EAJ_rer(-1);
 		
 	
 	
-		
-			EAK_bf/US_r(-1) = -EAK_bh/EAL_r(-1)*EAKEAL_rer(-1)/EAK_rer(-1) + EAK_bh(-1)*EAKEAL_rer(-2) / EAK_rer(-2) + EAK_bf(-1) + EAK_tb(-1)/EAK_rer(-1);
+			EAK_bf/US_r(-1) = -EAK_bh/EAA_r(-1) / EAK_rer(-1) + EAK_bh(-1) / EAK_rer(-2) + EAK_bf(-1) + EAK_tb(-1)/EAK_rer(-1);
 		
 	
-	
-			EAL_bf/US_r(-1) = -EAL_bh/EAA_r(-1) / EAL_rer(-1) + EAL_bh(-1) / EAL_rer(-2) + EAL_bf(-1) + EAL_tb(-1)/EAL_rer(-1);
-		
+		EAL_bf/US_r(-1) = EAL_bf(-1)+EAL_tb(-1)/EAL_rer(-1);
 	
 		RW_bf/US_r(-1) = RW_bf(-1)+RW_tb(-1)/RW_rer(-1);
 	
 US_rer = 1;
-		EAAEAL_nerdep = EAA_rerdep/EAL_rerdep*EAA_pic/EAL_pic;
+		EAAEAK_nerdep = EAA_rerdep/EAK_rerdep*EAA_pic/EAK_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAA_gammabh = 0;
-			EAA_bh = (EAA_bhytarget*EAA_py*EAA_y)/EAAEAL_rer*EAL_pic;
-		EABEAL_nerdep = EAB_rerdep/EAL_rerdep*EAB_pic/EAL_pic;
+			EAA_bh = (EAA_bhytarget*EAA_py*EAA_y)/EAAEAK_rer*EAK_pic;
+		EABEAK_nerdep = EAB_rerdep/EAK_rerdep*EAB_pic/EAK_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAB_gammabh = 0;
-			EAB_bh = (EAB_bhytarget*EAB_py*EAB_y)/EABEAL_rer*EAL_pic;
-		EACEAL_nerdep = EAC_rerdep/EAL_rerdep*EAC_pic/EAL_pic;
+			EAB_bh = (EAB_bhytarget*EAB_py*EAB_y)/EABEAK_rer*EAK_pic;
+		EACEAK_nerdep = EAC_rerdep/EAK_rerdep*EAC_pic/EAK_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAC_gammabh = 0;
-			EAC_bh = (EAC_bhytarget*EAC_py*EAC_y)/EACEAL_rer*EAL_pic;
-		EADEAL_nerdep = EAD_rerdep/EAL_rerdep*EAD_pic/EAL_pic;
+			EAC_bh = (EAC_bhytarget*EAC_py*EAC_y)/EACEAK_rer*EAK_pic;
+		EADEAK_nerdep = EAD_rerdep/EAK_rerdep*EAD_pic/EAK_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAD_gammabh = 0;
-			EAD_bh = (EAD_bhytarget*EAD_py*EAD_y)/EADEAL_rer*EAL_pic;
-		EAEEAL_nerdep = EAE_rerdep/EAL_rerdep*EAE_pic/EAL_pic;
+			EAD_bh = (EAD_bhytarget*EAD_py*EAD_y)/EADEAK_rer*EAK_pic;
+		EAEEAK_nerdep = EAE_rerdep/EAK_rerdep*EAE_pic/EAK_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAE_gammabh = 0;
-			EAE_bh = (EAE_bhytarget*EAE_py*EAE_y)/EAEEAL_rer*EAL_pic;
-		EAFEAL_nerdep = EAF_rerdep/EAL_rerdep*EAF_pic/EAL_pic;
+			EAE_bh = (EAE_bhytarget*EAE_py*EAE_y)/EAEEAK_rer*EAK_pic;
+		EAFEAK_nerdep = EAF_rerdep/EAK_rerdep*EAF_pic/EAK_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAF_gammabh = 0;
-			EAF_bh = (EAF_bhytarget*EAF_py*EAF_y)/EAFEAL_rer*EAL_pic;
-		EAGEAL_nerdep = EAG_rerdep/EAL_rerdep*EAG_pic/EAL_pic;
+			EAF_bh = (EAF_bhytarget*EAF_py*EAF_y)/EAFEAK_rer*EAK_pic;
+		EAGEAK_nerdep = EAG_rerdep/EAK_rerdep*EAG_pic/EAK_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAG_gammabh = 0;
-			EAG_bh = (EAG_bhytarget*EAG_py*EAG_y)/EAGEAL_rer*EAL_pic;
-		EAHEAL_nerdep = EAH_rerdep/EAL_rerdep*EAH_pic/EAL_pic;
+			EAG_bh = (EAG_bhytarget*EAG_py*EAG_y)/EAGEAK_rer*EAK_pic;
+		EAHEAK_nerdep = EAH_rerdep/EAK_rerdep*EAH_pic/EAK_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAH_gammabh = 0;
-			EAH_bh = (EAH_bhytarget*EAH_py*EAH_y)/EAHEAL_rer*EAL_pic;
-		EAIEAL_nerdep = EAI_rerdep/EAL_rerdep*EAI_pic/EAL_pic;
+			EAH_bh = (EAH_bhytarget*EAH_py*EAH_y)/EAHEAK_rer*EAK_pic;
+		EAIEAK_nerdep = EAI_rerdep/EAK_rerdep*EAI_pic/EAK_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAI_gammabh = 0;
-			EAI_bh = (EAI_bhytarget*EAI_py*EAI_y)/EAIEAL_rer*EAL_pic;
-		EAJEAL_nerdep = EAJ_rerdep/EAL_rerdep*EAJ_pic/EAL_pic;
+			EAI_bh = (EAI_bhytarget*EAI_py*EAI_y)/EAIEAK_rer*EAK_pic;
+		EAJEAK_nerdep = EAJ_rerdep/EAK_rerdep*EAJ_pic/EAK_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAJ_gammabh = 0;
-			EAJ_bh = (EAJ_bhytarget*EAJ_py*EAJ_y)/EAJEAL_rer*EAL_pic;
-		EAKEAL_nerdep = EAK_rerdep/EAL_rerdep*EAK_pic/EAL_pic;
-		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
-			EAK_gammabh = 0;
-			EAK_bh = (EAK_bhytarget*EAK_py*EAK_y)/EAKEAL_rer*EAL_pic;
+			EAJ_bh = (EAJ_bhytarget*EAJ_py*EAJ_y)/EAJEAK_rer*EAK_pic;
 0 =
 	+ EAA_size*EAA_bh
 	+ EAB_size*EAB_bh
@@ -65155,7 +65190,6 @@ US_rer = 1;
 	+ EAI_size*EAI_bh
 	+ EAJ_size*EAJ_bh
 	+ EAK_size*EAK_bh
-	+ EAL_size*EAL_bh
 ;
 //-------------
 // Euroarea-wide variables
@@ -65174,7 +65208,6 @@ EA_y =
 			+ EAI_size*EAAEAI_rerbar*EAI_pybar *EAI_y	
 			+ EAJ_size*EAAEAJ_rerbar*EAJ_pybar *EAJ_y	
 			+ EAK_size*EAAEAK_rerbar*EAK_pybar *EAK_y	
-			+ EAL_size*EAAEAL_rerbar*EAL_pybar *EAL_y	
 	)
 	/
 	(
@@ -65189,7 +65222,6 @@ EA_y =
 	+ EAI_size
 	+ EAJ_size
 	+ EAK_size
-	+ EAL_size
 );
 // GDP growth
 EA_ygrowth= EA_y/EA_y(-1);
@@ -65209,7 +65241,6 @@ EA_m =
 			+ EAI_size*EAAEAI_rerbar*EAI_m	
 			+ EAJ_size*EAAEAJ_rerbar*EAJ_m	
 			+ EAK_size*EAAEAK_rerbar*EAK_m	
-			+ EAL_size*EAAEAL_rerbar*EAL_m	
 	)
 	/
 	(
@@ -65224,7 +65255,6 @@ EA_m =
 	+ EAI_size
 	+ EAJ_size
 	+ EAK_size
-	+ EAL_size
 );
 	
 EA_bf = 
@@ -65240,7 +65270,6 @@ EA_bf =
 		+ EAI_size*EAI_bf	
 		+ EAJ_size*EAJ_bf	
 		+ EAK_size*EAK_bf	
-		+ EAL_size*EAL_bf	
 	)
 	/
 	(
@@ -65255,7 +65284,6 @@ EA_bf =
 	+ EAI_size
 	+ EAJ_size
 	+ EAK_size
-	+ EAL_size
 );
 // Annual inflation
 EA_pic4 = 1 
@@ -65271,7 +65299,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
 			)) 
 		* EAB_pic4^(EAB_size/(
 				+ EAA_size
@@ -65285,7 +65312,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
 			)) 
 		* EAC_pic4^(EAC_size/(
 				+ EAA_size
@@ -65299,7 +65325,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
 			)) 
 		* EAD_pic4^(EAD_size/(
 				+ EAA_size
@@ -65313,7 +65338,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
 			)) 
 		* EAE_pic4^(EAE_size/(
 				+ EAA_size
@@ -65327,7 +65351,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
 			)) 
 		* EAF_pic4^(EAF_size/(
 				+ EAA_size
@@ -65341,7 +65364,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
 			)) 
 		* EAG_pic4^(EAG_size/(
 				+ EAA_size
@@ -65355,7 +65377,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
 			)) 
 		* EAH_pic4^(EAH_size/(
 				+ EAA_size
@@ -65369,7 +65390,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
 			)) 
 		* EAI_pic4^(EAI_size/(
 				+ EAA_size
@@ -65383,7 +65403,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
 			)) 
 		* EAJ_pic4^(EAJ_size/(
 				+ EAA_size
@@ -65397,7 +65416,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
 			)) 
 		* EAK_pic4^(EAK_size/(
 				+ EAA_size
@@ -65411,21 +65429,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
-			)) 
-		* EAL_pic4^(EAL_size/(
-				+ EAA_size
-				+ EAB_size
-				+ EAC_size
-				+ EAD_size
-				+ EAE_size
-				+ EAF_size
-				+ EAG_size
-				+ EAH_size
-				+ EAI_size
-				+ EAJ_size
-				+ EAK_size
-				+ EAL_size
 			)) 
 ;
 // Productivity
@@ -66500,6 +66503,8 @@ load("paramsToBeSaved", 'ctryNumberDouble')
    EAK_gammav1     = 0.02;
    EAK_gammav2     = 0.10;
    EAK_gammai1     = 1.00;
+// must equal steady-state value of rk
+     EAK_gammau1     = 0.00;  
    EAK_gammau2     = 1.00;
    EAK_gammaimc1   = 1.00;
    EAK_gammaimi1   = 1.00;
@@ -66513,6 +66518,9 @@ load("paramsToBeSaved", 'ctryNumberDouble')
    EAK_upsilontr   = 1.00;
 // Monetary policy
   EAK_pi4target   = 1.00;
+    EAK_phirr       = 0.75;
+    EAK_phirgy      = 0.00;
+    EAK_phirpi      = 1.50;
 // Net foreign asset position
     EAK_bfytarget   = 0.00;
     EAK_bhytarget   = 0.00;
@@ -78373,29 +78381,26 @@ US_igy = 0.01/10;
  EAI_bh = 0;
  EAJ_bh = 0;
  EAK_bh = 0;
- EAL_bh = 0;
       EAA_gammabh = 0;
-      EAAEAL_nerdep = 1;
+      EAAEAK_nerdep = 1;
       EAB_gammabh = 0;
-      EABEAL_nerdep = 1;
+      EABEAK_nerdep = 1;
       EAC_gammabh = 0;
-      EACEAL_nerdep = 1;
+      EACEAK_nerdep = 1;
       EAD_gammabh = 0;
-      EADEAL_nerdep = 1;
+      EADEAK_nerdep = 1;
       EAE_gammabh = 0;
-      EAEEAL_nerdep = 1;
+      EAEEAK_nerdep = 1;
       EAF_gammabh = 0;
-      EAFEAL_nerdep = 1;
+      EAFEAK_nerdep = 1;
       EAG_gammabh = 0;
-      EAGEAL_nerdep = 1;
+      EAGEAK_nerdep = 1;
       EAH_gammabh = 0;
-      EAHEAL_nerdep = 1;
+      EAHEAK_nerdep = 1;
       EAI_gammabh = 0;
-      EAIEAL_nerdep = 1;
+      EAIEAK_nerdep = 1;
       EAJ_gammabh = 0;
-      EAJEAL_nerdep = 1;
-      EAK_gammabh = 0;
-      EAKEAL_nerdep = 1;
+      EAJEAK_nerdep = 1;
 EA_bf = 0;
 EA_epsz =  0;
 EA_m = 0.132518;
@@ -78554,18 +78559,18 @@ end;
 steady(homotopy_steps = 5);
 disp('nuc')
 homotopy_setup;
-        EAA_nuc, 0.45;
-        EAB_nuc, 0.45;
-        EAC_nuc, 0.45;
-        EAD_nuc, 0.45;
-        EAE_nuc, 0.45;
-        EAF_nuc, 0.45;
-        EAG_nuc, 0.45;
-        EAH_nuc, 0.45;
-        EAI_nuc, 0.45;
-        EAJ_nuc, 0.45;
-        EAK_nuc, 0.45;
-        EAL_nuc, 0.45;
+        EAA_nuc, 0.65;
+        EAB_nuc, 0.65;
+        EAC_nuc, 0.65;
+        EAD_nuc, 0.65;
+        EAE_nuc, 0.65;
+        EAF_nuc, 0.65;
+        EAG_nuc, 0.65;
+        EAH_nuc, 0.65;
+        EAI_nuc, 0.65;
+        EAJ_nuc, 0.65;
+        EAK_nuc, 0.65;
+        EAL_nuc, 0.65;
         RW_nuc, 0.35;
         US_nuc, 0.35;
 end;
