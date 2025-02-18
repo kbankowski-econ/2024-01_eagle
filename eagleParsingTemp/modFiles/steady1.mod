@@ -89,7 +89,7 @@ homotopy_setup;
     @#if co=="RW" || co=="US"
         @{co}_nuc, 0.35;
     @#else
-        @{co}_nuc, 0.45;
+        @{co}_nuc, 0.65;
     @#endif
 @#endfor
 end;

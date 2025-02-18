@@ -16,6 +16,11 @@ change_type(parameters) @{co}_epsilonm @{co}_vi @{co}_iy @{co}_imcy @{co}_imiy @
 change_type(var) @{co}_gammav2 @{co}_gammav1 @{co}_psit @{co}_nutc @{co}_nuti @{co}_nutcg @{co}_nutig;
 @#endfor
 
+@#for co in countries  - [ countries[ctryNumber]]
+change_type(parameters) @{co}_tby;
+change_type(var) @{co}_bfytarget;
+@#endfor
+
 @#for i in 1:ctryNumber
 @#include "dynamicCtryList7.mod"
 @#for it in countries - [ countries[i], coResid]
