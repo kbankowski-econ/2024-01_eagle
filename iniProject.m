@@ -21,8 +21,8 @@ function iniProject()
     utils.call.paths;
 
     % system path to some packages needed for mermaid
-    setenv('PATH', matlabEnv_path);
-    setenv('PATH', [getenv('PATH') [':', node_path]])
+%     setenv('PATH', matlabEnv_path);
+%     setenv('PATH', [getenv('PATH') [':', node_path]])
     % this command displays the environment paths
     % disp(getenv('PATH'))
     
@@ -38,6 +38,6 @@ function iniProject()
 
     % Call Dynare
     addpath(dynare_6_1_official);
-    dynare_config
+    dynare_config()
 
 end
