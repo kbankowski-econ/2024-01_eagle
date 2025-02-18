@@ -1,4 +1,4 @@
 Starting Dynare (version 6.1).
-Calling Dynare with arguments: -I/Users/kk/Documents/0000-00_work/2024-01_eagle/eagleParsingTemp/submodules savemacro
-ERROR: Could not open file: steady2a.mod
+Calling Dynare with arguments: -ID:\BIG12-Calibrated-KB/eagleParsingTemp/submodules savemacro
+ERROR: Could not open file: steady2a.mod 
 Preprocessing time: 0h00m00s.
