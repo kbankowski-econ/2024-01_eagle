@@ -24,19 +24,20 @@ model(block, bytecode, cutoff=0);
 @#include "modeqs_hhI.mod"
 
 // Euler equation for government bonds
-@#if co != countries[ctryNumber] && co != countries[ctryNumber-1] && co != countries[ctryNumber-2] 
+// all other that are not Germany, not US and not the RoW
+@#if co != countries[ctryNumber] && co != countries[ctryNumber-1] && co != countries[ctryNumber-2]  && co != countries[ctryNumber-3] 
 @#if !steady
 @{co}_r*(1-@{co}_gammabh) = @{co}_beta^(-1)*@{co}_lambdai/@{co}_lambdai(+1)*@{co}_pic(+1);
 @#else
 @{co}_r                   = @{co}_beta^(-1)*@{co}_lambdai/@{co}_lambdai    *@{co}_pic;
 @#endif
 @#endif
-
-@#if co == countries[ctryNumber-2]
+// Germany
+@#if co == countries[ctryNumber-3]
 @{co}_r = @{co}_beta^(-1)*@{co}_lambdai/@{co}_lambdai(+1)*@{co}_pic(+1);
 @#endif
-
-@#if co == countries[ctryNumber] || co == countries[ctryNumber-1] 
+// US and the RoW
+@#if co == countries[ctryNumber] || co == countries[ctryNumber-1]  || co == countries[ctryNumber-2] 
 @{co}_r = @{co}_beta^(-1)*@{co}_lambdai/@{co}_lambdai(+1)*@{co}_pic(+1);
 @#endif
 
@@ -537,7 +538,7 @@ model(block, bytecode, cutoff=0);
 
 // Government budget constraint, using @{co}_pg = @{co}_pht
 // TODO: check the (1-@{co}_gammab(-1)) adjustment here, which is not in the fiscal extention
-@#if co != countries[ctryNumber] && co != countries[ctryNumber-1] 
+@#if co != countries[ctryNumber] && co != countries[ctryNumber-1]  && co != countries[ctryNumber-2] 
 
 	@{co}_pcg(-1)*@{co}_cg(-1)+@{co}_pig(-1)*@{co}_ig(-1)+@{co}_tr(-1)
 	+@{co}_b(-1)*@{co}_pic(-1)^(-1)+@{co}_m(-2)*@{co}_pic(-1)^(-1) = @{co}_tauc(-1)*@{co}_c(-1)+(@{co}_taun(-1)+@{co}_tauwh(-1))*(@{co}_wi(-1)*@{co}_ndi(-1)+@{co}_wj(-1)*@{co}_ndj(-1))+@{co}_tauwf(-1)*@{co}_w(-1)*@{co}_nd(-1)+@{co}_tauk(-1)*(@{co}_rk(-1)*@{co}_u(-1)-(@{co}_gammau(-1)+@{co}_delta)*@{co}_pi(-1))*@{co}_k(-1)+@{co}_taud(-1)*@{co}_d(-1)+@{co}_t(-1)+(@{co}_r(-1)*(1-@{co}_gammab(-1)))^(-1)*@{co}_b+@{co}_m(-1);
@@ -605,10 +606,10 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 
 @#if !steady
 
-@#if co == countries[ctryNumber] || co == countries[ctryNumber-1]
+@#if co == countries[ctryNumber] || co == countries[ctryNumber-1] || co == countries[ctryNumber-2]
 	@{co}_r^4-1 = @{co}_phirr*(@{co}_r(-1)^4-1)+(1-@{co}_phirr)*(@{co}_rrstar^4*@{co}_pi4target-1+@{co}_phirpi*(@{co}_pic4-@{co}_pi4target))+@{co}_phirgy*(@{co}_y/@{co}_y(-1)-1)+@{co}_epsr;
 @#else
-	@#if co == countries[ctryNumber-2]
+	@#if co == countries[ctryNumber-3]
 		@{co}_r^4-1 = @{ea}_phirr*(@{co}_r(-1)^4-1)+(1-@{ea}_phirr)*(@{co}_rrstar^4*@{co}_pi4target-1
 		+@{ea}_phirpi*(@{ea}_pic4-@{co}_pi4target))
 		+@{ea}_phirgy*(@{ea}_ygrowth-1)+@{ea}_epsr;
@@ -625,7 +626,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 
 @#else // !steady
 
-@#if co == countries[ctryNumber] || co == countries[ctryNumber-1] || co == countries[ctryNumber-2]
+@#if co == countries[ctryNumber] || co == countries[ctryNumber-1] || co == countries[ctryNumber-2] || co == countries[ctryNumber-3]
 	@{co}_r^4-1 = @{co}_rrstar^4*@{co}_pi4target-1;
 @#else
 	@{co}_r = @{coGermany}_r;
@@ -974,13 +975,13 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 // Net foreign asset position
 @#for it in countries[1:ctryNumber-1]
 
-	@#if it == countries[ctryNumber-1] || it == countries[ctryNumber]
+	@#if it == countries[ctryNumber-2] || it == countries[ctryNumber-1] || it == countries[ctryNumber]
 
 		@{it}_bf/@{coUSA}_r(-1) = @{it}_bf(-1)+@{it}_tb(-1)/@{it}_rer(-1);
 
 	@#else
 	
-		@#if it == countries[ctryNumber-2]
+		@#if it == countries[ctryNumber-3]
 
 			@{it}_bf/@{coUSA}_r(-1) = -@{it}_bh/@{co}_r(-1) / @{it}_rer(-1) + @{it}_bh(-1) / @{it}_rer(-2) + @{it}_bf(-1) + @{it}_tb(-1)/@{it}_rer(-1);
 
@@ -997,7 +998,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @{coUSA}_rer = 1;
 
 @#for it in countries
-    @#if it!=countries[ctryNumber] && it!=countries[ctryNumber-1] && it!=countries[ctryNumber-2]
+    @#if it!=countries[ctryNumber] && it!=countries[ctryNumber-1] && it!=countries[ctryNumber-2] && it!=countries[ctryNumber-3]
 		@{it}@{coGermany}_nerdep = @{it}_rerdep/@{coGermany}_rerdep*@{it}_pic/@{coGermany}_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 		@#if !steady
@@ -1011,7 +1012,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @#endfor
 
 0 =
-@#for it in countries[1: ctryNumber-2]
+@#for it in countries[1: ctryNumber-3]
 	+ @{it}_size*@{it}_bh
 @#endfor
 ;
@@ -1025,14 +1026,14 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 	(
 	@{co}_size*@{co}_pybar*@{co}_y
 	@#for it in countries[2: ctryNumber]
-		@#if it!= "RW" && it!= "US"
+		@#if it!= "RW" && it!= "US" && it!= "EAL"
 			+ @{it}_size*@{co}@{it}_rerbar*@{it}_pybar *@{it}_y	
 		@#endif
 	@#endfor	 	
 	)
 	/
 	(
-	@#for it in countries[1: ctryNumber-2]
+	@#for it in countries[1: ctryNumber-3]
 	+ @{it}_size
 	@#endfor
 );
@@ -1048,36 +1049,36 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 	(
 	@{co}_size*@{co}_m
 	@#for it in countries[2: ctryNumber]
-		@#if it!= "RW" && it!= "US"
+		@#if it!= "RW" && it!= "US" && it!= "EAL"
 			+ @{it}_size*@{co}@{it}_rerbar*@{it}_m	
 		@#endif
 	@#endfor	 	
 	)
 	/
 	(
-	@#for it in countries[1: ctryNumber-2]
+	@#for it in countries[1: ctryNumber-3]
 	+ @{it}_size
 	@#endfor
 );
 	
 @{ea}_bf = 
 	(
-	@#for it in countries[1: ctryNumber-2]
+	@#for it in countries[1: ctryNumber-3]
 		+ @{it}_size*@{it}_bf	
 	@#endfor	 	
 	)
 	/
 	(
-	@#for it in countries[1: ctryNumber-2]
+	@#for it in countries[1: ctryNumber-3]
 	+ @{it}_size
 	@#endfor
 );
 
 // Annual inflation
 @{ea}_pic4 = 1 
-	@#for it in countries[1: ctryNumber-2]
+	@#for it in countries[1: ctryNumber-3]
 		* @{it}_pic4^(@{it}_size/(
-			@#for it1 in countries[1: ctryNumber-2]
+			@#for it1 in countries[1: ctryNumber-3]
 				+ @{it1}_size
 			@#endfor	 	
 			)) 

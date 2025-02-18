@@ -71,7 +71,7 @@ load("paramsToBeSaved", 'ctryNumberDouble')
    @{COUNTRY}_gammav1     = 0.02;
    @{COUNTRY}_gammav2     = 0.10;
    @{COUNTRY}_gammai1     = 1.00;
-  @#if(COUNTRY == countries[ctryNumber] || COUNTRY == countries[ctryNumber-1] || COUNTRY == countries[ctryNumber-2])
+  @#if(COUNTRY == countries[ctryNumber] || COUNTRY == countries[ctryNumber-1] || COUNTRY == countries[ctryNumber-2] || COUNTRY == countries[ctryNumber-3])
 // must equal steady-state value of rk
      @{COUNTRY}_gammau1     = 0.00;  
    @#endif
@@ -91,7 +91,7 @@ load("paramsToBeSaved", 'ctryNumberDouble')
 // Monetary policy
 
   @{COUNTRY}_pi4target   = 1.00;
-  @#if(COUNTRY == countries[ctryNumber] || COUNTRY == countries[ctryNumber-1] || COUNTRY == countries[ctryNumber-2])
+  @#if(COUNTRY == countries[ctryNumber] || COUNTRY == countries[ctryNumber-1] || COUNTRY == countries[ctryNumber-2] || COUNTRY == countries[ctryNumber-3])
     @{COUNTRY}_phirr       = 0.75;
     @{COUNTRY}_phirgy      = 0.00;
     @{COUNTRY}_phirpi      = 1.50;

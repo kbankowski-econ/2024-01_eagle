@@ -207,7 +207,7 @@ initval;
   @{COUNTRY}_zn = 1;
   @{COUNTRY}_zt = 1;
     
-  @#if(COUNTRY == "RW" || COUNTRY == "US" )
+  @#if(COUNTRY == "RW" || COUNTRY == "US"  || COUNTRY == "EAL")
     @# if !steady
       @{COUNTRY}_epsr = 0;
     @#endif
@@ -365,12 +365,12 @@ initval;
 
  
 // Euro Area only
-@#for co in countries[1: ctryNumber-2]
+@#for co in countries[1: ctryNumber-3]
  @{co}_bh = 0;
 @#endfor
 
 @#for it in countries
-    @#if it!=countries[ctryNumber] && it!=countries[ctryNumber-1] && it!=countries[ctryNumber-2]
+    @#if it!=countries[ctryNumber] && it!=countries[ctryNumber-1] && it!=countries[ctryNumber-2] && it!=countries[ctryNumber-3]
       @{it}_gammabh = 0;
       @{it}@{coGermany}_nerdep = 1;
     @#endif
