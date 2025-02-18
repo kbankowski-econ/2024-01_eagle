@@ -38,7 +38,7 @@ load_params_and_steady_state('eagle_steady_stage2a.txt');
 disp('Trade matrix')
 homotopy_setup;
 
-@#include "tradeMatrixUSadjust.mod"
+@#include "trade_matrix_values_calibrated_int_EP.mod"
 
 end;
 steady(homotopy_steps = 15);

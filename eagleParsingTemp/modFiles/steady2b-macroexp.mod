@@ -7455,6 +7455,9 @@ parameters
  EAL_nuig
  EAL_nutig
  EAL_omega
+ EAL_phirgy
+ EAL_phirpi
+ EAL_phirr
  EAL_phitb
  EAL_pi4target
  EAL_psin
@@ -9466,28 +9469,26 @@ parameters
  USRW_numcg
  USRW_numig
 ;
-        var EAAEAL_nerdep;
+        var EAAEAK_nerdep;
         var EAA_gammabh;
-        var EABEAL_nerdep;
+        var EABEAK_nerdep;
         var EAB_gammabh;
-        var EACEAL_nerdep;
+        var EACEAK_nerdep;
         var EAC_gammabh;
-        var EADEAL_nerdep;
+        var EADEAK_nerdep;
         var EAD_gammabh;
-        var EAEEAL_nerdep;
+        var EAEEAK_nerdep;
         var EAE_gammabh;
-        var EAFEAL_nerdep;
+        var EAFEAK_nerdep;
         var EAF_gammabh;
-        var EAGEAL_nerdep;
+        var EAGEAK_nerdep;
         var EAG_gammabh;
-        var EAHEAL_nerdep;
+        var EAHEAK_nerdep;
         var EAH_gammabh;
-        var EAIEAL_nerdep;
+        var EAIEAK_nerdep;
         var EAI_gammabh;
-        var EAJEAL_nerdep;
+        var EAJEAK_nerdep;
         var EAJ_gammabh;
-        var EAKEAL_nerdep;
-        var EAK_gammabh;
 var
  EAA_bh
  EAB_bh
@@ -9500,7 +9501,6 @@ var
  EAI_bh
  EAJ_bh
  EAK_bh
- EAL_bh
 ;
 // Flip some variables
 change_type(var)
@@ -9843,6 +9843,32 @@ change_type(parameters) RW_epsilonm RW_vi RW_iy RW_imcy RW_imiy RW_imcgy RW_imig
 change_type(var) RW_gammav2 RW_gammav1 RW_psit RW_nutc RW_nuti RW_nutcg RW_nutig;
 change_type(parameters) US_epsilonm US_vi US_iy US_imcy US_imiy US_imcgy US_imigy;
 change_type(var) US_gammav2 US_gammav1 US_psit US_nutc US_nuti US_nutcg US_nutig;
+change_type(parameters) EAA_tby;
+change_type(var) EAA_bfytarget;
+change_type(parameters) EAB_tby;
+change_type(var) EAB_bfytarget;
+change_type(parameters) EAC_tby;
+change_type(var) EAC_bfytarget;
+change_type(parameters) EAD_tby;
+change_type(var) EAD_bfytarget;
+change_type(parameters) EAE_tby;
+change_type(var) EAE_bfytarget;
+change_type(parameters) EAF_tby;
+change_type(var) EAF_bfytarget;
+change_type(parameters) EAG_tby;
+change_type(var) EAG_bfytarget;
+change_type(parameters) EAH_tby;
+change_type(var) EAH_bfytarget;
+change_type(parameters) EAI_tby;
+change_type(var) EAI_bfytarget;
+change_type(parameters) EAJ_tby;
+change_type(var) EAJ_bfytarget;
+change_type(parameters) EAK_tby;
+change_type(var) EAK_bfytarget;
+change_type(parameters) EAL_tby;
+change_type(var) EAL_bfytarget;
+change_type(parameters) RW_tby;
+change_type(var) RW_bfytarget;
 change_type(parameters) EAAEAB_imcy EAAEAB_imiy EAAEAB_imcgy EAAEAB_imigy;
 change_type(var) EAAEAB_numc EAAEAB_numi EAAEAB_numcg EAAEAB_numig;
 change_type(parameters) EAAEAC_imcy EAAEAC_imiy EAAEAC_imcgy EAAEAC_imigy;
@@ -10196,7 +10222,10 @@ EAA_zcon*log(EAA_ci-EAA_kappa*EAA_ci(-1))-1/(1+EAA_zeta)*(EAA_ni)^(1+EAA_zeta)+E
 // Marginal utility of consumption
 EAA_lambdai*(1+EAA_tauc+EAA_gammavi+EAA_vi*EAA_gammavider) = EAA_zcon*(EAA_ci-EAA_kappa*EAA_ci(-1))^(-EAA_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
 EAA_r                   = EAA_beta^(-1)*EAA_lambdai/EAA_lambdai    *EAA_pic;
+// Germany
+// US and the RoW
 // Euler equation for money
 EAA_vi^(2)*EAA_gammavider = 1-EAA_beta*EAA_lambdai(+1)/(EAA_lambdai*EAA_pic(+1));
 // Consumption-based velocity
@@ -13741,7 +13770,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAA_r = EAL_r;
+	EAA_r = EAK_r;
 EAA_pic4 = EAA_pi4target;
 EAA_rr-1 = EAA_r/EAA_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -14127,7 +14156,10 @@ EAB_zcon*log(EAB_ci-EAB_kappa*EAB_ci(-1))-1/(1+EAB_zeta)*(EAB_ni)^(1+EAB_zeta)+E
 // Marginal utility of consumption
 EAB_lambdai*(1+EAB_tauc+EAB_gammavi+EAB_vi*EAB_gammavider) = EAB_zcon*(EAB_ci-EAB_kappa*EAB_ci(-1))^(-EAB_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
 EAB_r                   = EAB_beta^(-1)*EAB_lambdai/EAB_lambdai    *EAB_pic;
+// Germany
+// US and the RoW
 // Euler equation for money
 EAB_vi^(2)*EAB_gammavider = 1-EAB_beta*EAB_lambdai(+1)/(EAB_lambdai*EAB_pic(+1));
 // Consumption-based velocity
@@ -17672,7 +17704,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAB_r = EAL_r;
+	EAB_r = EAK_r;
 EAB_pic4 = EAB_pi4target;
 EAB_rr-1 = EAB_r/EAB_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -18058,7 +18090,10 @@ EAC_zcon*log(EAC_ci-EAC_kappa*EAC_ci(-1))-1/(1+EAC_zeta)*(EAC_ni)^(1+EAC_zeta)+E
 // Marginal utility of consumption
 EAC_lambdai*(1+EAC_tauc+EAC_gammavi+EAC_vi*EAC_gammavider) = EAC_zcon*(EAC_ci-EAC_kappa*EAC_ci(-1))^(-EAC_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
 EAC_r                   = EAC_beta^(-1)*EAC_lambdai/EAC_lambdai    *EAC_pic;
+// Germany
+// US and the RoW
 // Euler equation for money
 EAC_vi^(2)*EAC_gammavider = 1-EAC_beta*EAC_lambdai(+1)/(EAC_lambdai*EAC_pic(+1));
 // Consumption-based velocity
@@ -21603,7 +21638,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAC_r = EAL_r;
+	EAC_r = EAK_r;
 EAC_pic4 = EAC_pi4target;
 EAC_rr-1 = EAC_r/EAC_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -21989,7 +22024,10 @@ EAD_zcon*log(EAD_ci-EAD_kappa*EAD_ci(-1))-1/(1+EAD_zeta)*(EAD_ni)^(1+EAD_zeta)+E
 // Marginal utility of consumption
 EAD_lambdai*(1+EAD_tauc+EAD_gammavi+EAD_vi*EAD_gammavider) = EAD_zcon*(EAD_ci-EAD_kappa*EAD_ci(-1))^(-EAD_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
 EAD_r                   = EAD_beta^(-1)*EAD_lambdai/EAD_lambdai    *EAD_pic;
+// Germany
+// US and the RoW
 // Euler equation for money
 EAD_vi^(2)*EAD_gammavider = 1-EAD_beta*EAD_lambdai(+1)/(EAD_lambdai*EAD_pic(+1));
 // Consumption-based velocity
@@ -25534,7 +25572,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAD_r = EAL_r;
+	EAD_r = EAK_r;
 EAD_pic4 = EAD_pi4target;
 EAD_rr-1 = EAD_r/EAD_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -25920,7 +25958,10 @@ EAE_zcon*log(EAE_ci-EAE_kappa*EAE_ci(-1))-1/(1+EAE_zeta)*(EAE_ni)^(1+EAE_zeta)+E
 // Marginal utility of consumption
 EAE_lambdai*(1+EAE_tauc+EAE_gammavi+EAE_vi*EAE_gammavider) = EAE_zcon*(EAE_ci-EAE_kappa*EAE_ci(-1))^(-EAE_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
 EAE_r                   = EAE_beta^(-1)*EAE_lambdai/EAE_lambdai    *EAE_pic;
+// Germany
+// US and the RoW
 // Euler equation for money
 EAE_vi^(2)*EAE_gammavider = 1-EAE_beta*EAE_lambdai(+1)/(EAE_lambdai*EAE_pic(+1));
 // Consumption-based velocity
@@ -29465,7 +29506,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAE_r = EAL_r;
+	EAE_r = EAK_r;
 EAE_pic4 = EAE_pi4target;
 EAE_rr-1 = EAE_r/EAE_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -29851,7 +29892,10 @@ EAF_zcon*log(EAF_ci-EAF_kappa*EAF_ci(-1))-1/(1+EAF_zeta)*(EAF_ni)^(1+EAF_zeta)+E
 // Marginal utility of consumption
 EAF_lambdai*(1+EAF_tauc+EAF_gammavi+EAF_vi*EAF_gammavider) = EAF_zcon*(EAF_ci-EAF_kappa*EAF_ci(-1))^(-EAF_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
 EAF_r                   = EAF_beta^(-1)*EAF_lambdai/EAF_lambdai    *EAF_pic;
+// Germany
+// US and the RoW
 // Euler equation for money
 EAF_vi^(2)*EAF_gammavider = 1-EAF_beta*EAF_lambdai(+1)/(EAF_lambdai*EAF_pic(+1));
 // Consumption-based velocity
@@ -33396,7 +33440,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAF_r = EAL_r;
+	EAF_r = EAK_r;
 EAF_pic4 = EAF_pi4target;
 EAF_rr-1 = EAF_r/EAF_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -33782,7 +33826,10 @@ EAG_zcon*log(EAG_ci-EAG_kappa*EAG_ci(-1))-1/(1+EAG_zeta)*(EAG_ni)^(1+EAG_zeta)+E
 // Marginal utility of consumption
 EAG_lambdai*(1+EAG_tauc+EAG_gammavi+EAG_vi*EAG_gammavider) = EAG_zcon*(EAG_ci-EAG_kappa*EAG_ci(-1))^(-EAG_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
 EAG_r                   = EAG_beta^(-1)*EAG_lambdai/EAG_lambdai    *EAG_pic;
+// Germany
+// US and the RoW
 // Euler equation for money
 EAG_vi^(2)*EAG_gammavider = 1-EAG_beta*EAG_lambdai(+1)/(EAG_lambdai*EAG_pic(+1));
 // Consumption-based velocity
@@ -37327,7 +37374,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAG_r = EAL_r;
+	EAG_r = EAK_r;
 EAG_pic4 = EAG_pi4target;
 EAG_rr-1 = EAG_r/EAG_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -37713,7 +37760,10 @@ EAH_zcon*log(EAH_ci-EAH_kappa*EAH_ci(-1))-1/(1+EAH_zeta)*(EAH_ni)^(1+EAH_zeta)+E
 // Marginal utility of consumption
 EAH_lambdai*(1+EAH_tauc+EAH_gammavi+EAH_vi*EAH_gammavider) = EAH_zcon*(EAH_ci-EAH_kappa*EAH_ci(-1))^(-EAH_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
 EAH_r                   = EAH_beta^(-1)*EAH_lambdai/EAH_lambdai    *EAH_pic;
+// Germany
+// US and the RoW
 // Euler equation for money
 EAH_vi^(2)*EAH_gammavider = 1-EAH_beta*EAH_lambdai(+1)/(EAH_lambdai*EAH_pic(+1));
 // Consumption-based velocity
@@ -41258,7 +41308,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAH_r = EAL_r;
+	EAH_r = EAK_r;
 EAH_pic4 = EAH_pi4target;
 EAH_rr-1 = EAH_r/EAH_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -41644,7 +41694,10 @@ EAI_zcon*log(EAI_ci-EAI_kappa*EAI_ci(-1))-1/(1+EAI_zeta)*(EAI_ni)^(1+EAI_zeta)+E
 // Marginal utility of consumption
 EAI_lambdai*(1+EAI_tauc+EAI_gammavi+EAI_vi*EAI_gammavider) = EAI_zcon*(EAI_ci-EAI_kappa*EAI_ci(-1))^(-EAI_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
 EAI_r                   = EAI_beta^(-1)*EAI_lambdai/EAI_lambdai    *EAI_pic;
+// Germany
+// US and the RoW
 // Euler equation for money
 EAI_vi^(2)*EAI_gammavider = 1-EAI_beta*EAI_lambdai(+1)/(EAI_lambdai*EAI_pic(+1));
 // Consumption-based velocity
@@ -45189,7 +45242,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAI_r = EAL_r;
+	EAI_r = EAK_r;
 EAI_pic4 = EAI_pi4target;
 EAI_rr-1 = EAI_r/EAI_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -45575,7 +45628,10 @@ EAJ_zcon*log(EAJ_ci-EAJ_kappa*EAJ_ci(-1))-1/(1+EAJ_zeta)*(EAJ_ni)^(1+EAJ_zeta)+E
 // Marginal utility of consumption
 EAJ_lambdai*(1+EAJ_tauc+EAJ_gammavi+EAJ_vi*EAJ_gammavider) = EAJ_zcon*(EAJ_ci-EAJ_kappa*EAJ_ci(-1))^(-EAJ_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
 EAJ_r                   = EAJ_beta^(-1)*EAJ_lambdai/EAJ_lambdai    *EAJ_pic;
+// Germany
+// US and the RoW
 // Euler equation for money
 EAJ_vi^(2)*EAJ_gammavider = 1-EAJ_beta*EAJ_lambdai(+1)/(EAJ_lambdai*EAJ_pic(+1));
 // Consumption-based velocity
@@ -49120,7 +49176,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAJ_r = EAL_r;
+	EAJ_r = EAK_r;
 EAJ_pic4 = EAJ_pi4target;
 EAJ_rr-1 = EAJ_r/EAJ_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -49506,7 +49562,10 @@ EAK_zcon*log(EAK_ci-EAK_kappa*EAK_ci(-1))-1/(1+EAK_zeta)*(EAK_ni)^(1+EAK_zeta)+E
 // Marginal utility of consumption
 EAK_lambdai*(1+EAK_tauc+EAK_gammavi+EAK_vi*EAK_gammavider) = EAK_zcon*(EAK_ci-EAK_kappa*EAK_ci(-1))^(-EAK_sigma);
 // Euler equation for government bonds
-EAK_r                   = EAK_beta^(-1)*EAK_lambdai/EAK_lambdai    *EAK_pic;
+// all other that are not Germany, not US and not the RoW
+// Germany
+EAK_r = EAK_beta^(-1)*EAK_lambdai/EAK_lambdai(+1)*EAK_pic(+1);
+// US and the RoW
 // Euler equation for money
 EAK_vi^(2)*EAK_gammavider = 1-EAK_beta*EAK_lambdai(+1)/(EAK_lambdai*EAK_pic(+1));
 // Consumption-based velocity
@@ -53051,7 +53110,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	EAK_r = EAL_r;
+	EAK_r^4-1 = EAK_rrstar^4*EAK_pi4target-1;
 EAK_pic4 = EAK_pi4target;
 EAK_rr-1 = EAK_r/EAK_pi4target^(1/4)-1;
 // Equilibrium real interest rate
@@ -53437,6 +53496,9 @@ EAL_zcon*log(EAL_ci-EAL_kappa*EAL_ci(-1))-1/(1+EAL_zeta)*(EAL_ni)^(1+EAL_zeta)+E
 // Marginal utility of consumption
 EAL_lambdai*(1+EAL_tauc+EAL_gammavi+EAL_vi*EAL_gammavider) = EAL_zcon*(EAL_ci-EAL_kappa*EAL_ci(-1))^(-EAL_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
+// Germany
+// US and the RoW
 EAL_r = EAL_beta^(-1)*EAL_lambdai/EAL_lambdai(+1)*EAL_pic(+1);
 // Euler equation for money
 EAL_vi^(2)*EAL_gammavider = 1-EAL_beta*EAL_lambdai(+1)/(EAL_lambdai*EAL_pic(+1));
@@ -56951,7 +57013,7 @@ EAL_ex =
 // Government budget constraint, using EAL_pg = EAL_pht
 // TODO: check the (1-EAL_gammab(-1)) adjustment here, which is not in the fiscal extention
 	EAL_pcg(-1)*EAL_cg(-1)+EAL_pig(-1)*EAL_ig(-1)+EAL_tr(-1)
-	+EAL_b(-1)*EAL_pic(-1)^(-1)+EAL_m(-2)*EAL_pic(-1)^(-1) = EAL_tauc(-1)*EAL_c(-1)+(EAL_taun(-1)+EAL_tauwh(-1))*(EAL_wi(-1)*EAL_ndi(-1)+EAL_wj(-1)*EAL_ndj(-1))+EAL_tauwf(-1)*EAL_w(-1)*EAL_nd(-1)+EAL_tauk(-1)*(EAL_rk(-1)*EAL_u(-1)-(EAL_gammau(-1)+EAL_delta)*EAL_pi(-1))*EAL_k(-1)+EAL_taud(-1)*EAL_d(-1)+EAL_t(-1)+(EAL_r(-1)*(1-EAL_gammab(-1)))^(-1)*EAL_b+EAL_m(-1);
+	+EAL_b(-1)*EAL_pic(-1)^(-1)+EAL_m(-2)*EAL_pic(-1)^(-1) = EAL_tauc(-1)*EAL_c(-1)+(EAL_taun(-1)+EAL_tauwh(-1))*(EAL_wi(-1)*EAL_ndi(-1)+EAL_wj(-1)*EAL_ndj(-1))+EAL_tauwf(-1)*EAL_w(-1)*EAL_nd(-1)+EAL_tauk(-1)*(EAL_rk(-1)*EAL_u(-1)-(EAL_gammau(-1)+EAL_delta)*EAL_pi(-1))*EAL_k(-1)+EAL_taud(-1)*EAL_d(-1)+EAL_t(-1)+(EAL_r(-1))^(-1)*EAL_b+EAL_m(-1);
 // Government spending, using EAL_pg = EAL_pht
 EAL_pcg*EAL_cg = EAL_cgy*EAL_pybar*EAL_ybar;
 EAL_pig*EAL_ig = EAL_igy*EAL_pybar*EAL_ybar;
@@ -57368,6 +57430,9 @@ RW_zcon*log(RW_ci-RW_kappa*RW_ci(-1))-1/(1+RW_zeta)*(RW_ni)^(1+RW_zeta)+RW_beta*
 // Marginal utility of consumption
 RW_lambdai*(1+RW_tauc+RW_gammavi+RW_vi*RW_gammavider) = RW_zcon*(RW_ci-RW_kappa*RW_ci(-1))^(-RW_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
+// Germany
+// US and the RoW
 RW_r = RW_beta^(-1)*RW_lambdai/RW_lambdai(+1)*RW_pic(+1);
 // Euler equation for money
 RW_vi^(2)*RW_gammavider = 1-RW_beta*RW_lambdai(+1)/(RW_lambdai*RW_pic(+1));
@@ -61299,6 +61364,9 @@ US_zcon*log(US_ci-US_kappa*US_ci(-1))-1/(1+US_zeta)*(US_ni)^(1+US_zeta)+US_beta*
 // Marginal utility of consumption
 US_lambdai*(1+US_tauc+US_gammavi+US_vi*US_gammavider) = US_zcon*(US_ci-US_kappa*US_ci(-1))^(-US_sigma);
 // Euler equation for government bonds
+// all other that are not Germany, not US and not the RoW
+// Germany
+// US and the RoW
 US_r = US_beta^(-1)*US_lambdai/US_lambdai(+1)*US_pic(+1);
 // Euler equation for money
 US_vi^(2)*US_gammavider = 1-US_beta*US_lambdai(+1)/(US_lambdai*US_pic(+1));
@@ -65404,110 +65472,103 @@ US_size*US_bf =
 // Net foreign asset position
 	
 		
-			EAA_bf/US_r(-1) = -EAA_bh/EAL_r(-1)*EAAEAL_rer(-1)/EAA_rer(-1) + EAA_bh(-1)*EAAEAL_rer(-2) / EAA_rer(-2) + EAA_bf(-1) + EAA_tb(-1)/EAA_rer(-1);
+			EAA_bf/US_r(-1) = -EAA_bh/EAK_r(-1)*EAAEAK_rer(-1)/EAA_rer(-1) + EAA_bh(-1)*EAAEAK_rer(-2) / EAA_rer(-2) + EAA_bf(-1) + EAA_tb(-1)/EAA_rer(-1);
 		
 	
 	
 		
-			EAB_bf/US_r(-1) = -EAB_bh/EAL_r(-1)*EABEAL_rer(-1)/EAB_rer(-1) + EAB_bh(-1)*EABEAL_rer(-2) / EAB_rer(-2) + EAB_bf(-1) + EAB_tb(-1)/EAB_rer(-1);
+			EAB_bf/US_r(-1) = -EAB_bh/EAK_r(-1)*EABEAK_rer(-1)/EAB_rer(-1) + EAB_bh(-1)*EABEAK_rer(-2) / EAB_rer(-2) + EAB_bf(-1) + EAB_tb(-1)/EAB_rer(-1);
 		
 	
 	
 		
-			EAC_bf/US_r(-1) = -EAC_bh/EAL_r(-1)*EACEAL_rer(-1)/EAC_rer(-1) + EAC_bh(-1)*EACEAL_rer(-2) / EAC_rer(-2) + EAC_bf(-1) + EAC_tb(-1)/EAC_rer(-1);
+			EAC_bf/US_r(-1) = -EAC_bh/EAK_r(-1)*EACEAK_rer(-1)/EAC_rer(-1) + EAC_bh(-1)*EACEAK_rer(-2) / EAC_rer(-2) + EAC_bf(-1) + EAC_tb(-1)/EAC_rer(-1);
 		
 	
 	
 		
-			EAD_bf/US_r(-1) = -EAD_bh/EAL_r(-1)*EADEAL_rer(-1)/EAD_rer(-1) + EAD_bh(-1)*EADEAL_rer(-2) / EAD_rer(-2) + EAD_bf(-1) + EAD_tb(-1)/EAD_rer(-1);
+			EAD_bf/US_r(-1) = -EAD_bh/EAK_r(-1)*EADEAK_rer(-1)/EAD_rer(-1) + EAD_bh(-1)*EADEAK_rer(-2) / EAD_rer(-2) + EAD_bf(-1) + EAD_tb(-1)/EAD_rer(-1);
 		
 	
 	
 		
-			EAE_bf/US_r(-1) = -EAE_bh/EAL_r(-1)*EAEEAL_rer(-1)/EAE_rer(-1) + EAE_bh(-1)*EAEEAL_rer(-2) / EAE_rer(-2) + EAE_bf(-1) + EAE_tb(-1)/EAE_rer(-1);
+			EAE_bf/US_r(-1) = -EAE_bh/EAK_r(-1)*EAEEAK_rer(-1)/EAE_rer(-1) + EAE_bh(-1)*EAEEAK_rer(-2) / EAE_rer(-2) + EAE_bf(-1) + EAE_tb(-1)/EAE_rer(-1);
 		
 	
 	
 		
-			EAF_bf/US_r(-1) = -EAF_bh/EAL_r(-1)*EAFEAL_rer(-1)/EAF_rer(-1) + EAF_bh(-1)*EAFEAL_rer(-2) / EAF_rer(-2) + EAF_bf(-1) + EAF_tb(-1)/EAF_rer(-1);
+			EAF_bf/US_r(-1) = -EAF_bh/EAK_r(-1)*EAFEAK_rer(-1)/EAF_rer(-1) + EAF_bh(-1)*EAFEAK_rer(-2) / EAF_rer(-2) + EAF_bf(-1) + EAF_tb(-1)/EAF_rer(-1);
 		
 	
 	
 		
-			EAG_bf/US_r(-1) = -EAG_bh/EAL_r(-1)*EAGEAL_rer(-1)/EAG_rer(-1) + EAG_bh(-1)*EAGEAL_rer(-2) / EAG_rer(-2) + EAG_bf(-1) + EAG_tb(-1)/EAG_rer(-1);
+			EAG_bf/US_r(-1) = -EAG_bh/EAK_r(-1)*EAGEAK_rer(-1)/EAG_rer(-1) + EAG_bh(-1)*EAGEAK_rer(-2) / EAG_rer(-2) + EAG_bf(-1) + EAG_tb(-1)/EAG_rer(-1);
 		
 	
 	
 		
-			EAH_bf/US_r(-1) = -EAH_bh/EAL_r(-1)*EAHEAL_rer(-1)/EAH_rer(-1) + EAH_bh(-1)*EAHEAL_rer(-2) / EAH_rer(-2) + EAH_bf(-1) + EAH_tb(-1)/EAH_rer(-1);
+			EAH_bf/US_r(-1) = -EAH_bh/EAK_r(-1)*EAHEAK_rer(-1)/EAH_rer(-1) + EAH_bh(-1)*EAHEAK_rer(-2) / EAH_rer(-2) + EAH_bf(-1) + EAH_tb(-1)/EAH_rer(-1);
 		
 	
 	
 		
-			EAI_bf/US_r(-1) = -EAI_bh/EAL_r(-1)*EAIEAL_rer(-1)/EAI_rer(-1) + EAI_bh(-1)*EAIEAL_rer(-2) / EAI_rer(-2) + EAI_bf(-1) + EAI_tb(-1)/EAI_rer(-1);
+			EAI_bf/US_r(-1) = -EAI_bh/EAK_r(-1)*EAIEAK_rer(-1)/EAI_rer(-1) + EAI_bh(-1)*EAIEAK_rer(-2) / EAI_rer(-2) + EAI_bf(-1) + EAI_tb(-1)/EAI_rer(-1);
 		
 	
 	
 		
-			EAJ_bf/US_r(-1) = -EAJ_bh/EAL_r(-1)*EAJEAL_rer(-1)/EAJ_rer(-1) + EAJ_bh(-1)*EAJEAL_rer(-2) / EAJ_rer(-2) + EAJ_bf(-1) + EAJ_tb(-1)/EAJ_rer(-1);
+			EAJ_bf/US_r(-1) = -EAJ_bh/EAK_r(-1)*EAJEAK_rer(-1)/EAJ_rer(-1) + EAJ_bh(-1)*EAJEAK_rer(-2) / EAJ_rer(-2) + EAJ_bf(-1) + EAJ_tb(-1)/EAJ_rer(-1);
 		
 	
 	
-		
-			EAK_bf/US_r(-1) = -EAK_bh/EAL_r(-1)*EAKEAL_rer(-1)/EAK_rer(-1) + EAK_bh(-1)*EAKEAL_rer(-2) / EAK_rer(-2) + EAK_bf(-1) + EAK_tb(-1)/EAK_rer(-1);
+			EAK_bf/US_r(-1) = -EAK_bh/EAA_r(-1) / EAK_rer(-1) + EAK_bh(-1) / EAK_rer(-2) + EAK_bf(-1) + EAK_tb(-1)/EAK_rer(-1);
 		
 	
-	
-			EAL_bf/US_r(-1) = -EAL_bh/EAA_r(-1) / EAL_rer(-1) + EAL_bh(-1) / EAL_rer(-2) + EAL_bf(-1) + EAL_tb(-1)/EAL_rer(-1);
-		
+		EAL_bf/US_r(-1) = EAL_bf(-1)+EAL_tb(-1)/EAL_rer(-1);
 	
 		RW_bf/US_r(-1) = RW_bf(-1)+RW_tb(-1)/RW_rer(-1);
 	
 US_rer = 1;
-		EAAEAL_nerdep = EAA_rerdep/EAL_rerdep*EAA_pic/EAL_pic;
+		EAAEAK_nerdep = EAA_rerdep/EAK_rerdep*EAA_pic/EAK_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAA_gammabh = 0;
-			EAA_bh = (EAA_bhytarget*EAA_py*EAA_y)/EAAEAL_rer*EAL_pic;
-		EABEAL_nerdep = EAB_rerdep/EAL_rerdep*EAB_pic/EAL_pic;
+			EAA_bh = (EAA_bhytarget*EAA_py*EAA_y)/EAAEAK_rer*EAK_pic;
+		EABEAK_nerdep = EAB_rerdep/EAK_rerdep*EAB_pic/EAK_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAB_gammabh = 0;
-			EAB_bh = (EAB_bhytarget*EAB_py*EAB_y)/EABEAL_rer*EAL_pic;
-		EACEAL_nerdep = EAC_rerdep/EAL_rerdep*EAC_pic/EAL_pic;
+			EAB_bh = (EAB_bhytarget*EAB_py*EAB_y)/EABEAK_rer*EAK_pic;
+		EACEAK_nerdep = EAC_rerdep/EAK_rerdep*EAC_pic/EAK_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAC_gammabh = 0;
-			EAC_bh = (EAC_bhytarget*EAC_py*EAC_y)/EACEAL_rer*EAL_pic;
-		EADEAL_nerdep = EAD_rerdep/EAL_rerdep*EAD_pic/EAL_pic;
+			EAC_bh = (EAC_bhytarget*EAC_py*EAC_y)/EACEAK_rer*EAK_pic;
+		EADEAK_nerdep = EAD_rerdep/EAK_rerdep*EAD_pic/EAK_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAD_gammabh = 0;
-			EAD_bh = (EAD_bhytarget*EAD_py*EAD_y)/EADEAL_rer*EAL_pic;
-		EAEEAL_nerdep = EAE_rerdep/EAL_rerdep*EAE_pic/EAL_pic;
+			EAD_bh = (EAD_bhytarget*EAD_py*EAD_y)/EADEAK_rer*EAK_pic;
+		EAEEAK_nerdep = EAE_rerdep/EAK_rerdep*EAE_pic/EAK_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAE_gammabh = 0;
-			EAE_bh = (EAE_bhytarget*EAE_py*EAE_y)/EAEEAL_rer*EAL_pic;
-		EAFEAL_nerdep = EAF_rerdep/EAL_rerdep*EAF_pic/EAL_pic;
+			EAE_bh = (EAE_bhytarget*EAE_py*EAE_y)/EAEEAK_rer*EAK_pic;
+		EAFEAK_nerdep = EAF_rerdep/EAK_rerdep*EAF_pic/EAK_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAF_gammabh = 0;
-			EAF_bh = (EAF_bhytarget*EAF_py*EAF_y)/EAFEAL_rer*EAL_pic;
-		EAGEAL_nerdep = EAG_rerdep/EAL_rerdep*EAG_pic/EAL_pic;
+			EAF_bh = (EAF_bhytarget*EAF_py*EAF_y)/EAFEAK_rer*EAK_pic;
+		EAGEAK_nerdep = EAG_rerdep/EAK_rerdep*EAG_pic/EAK_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAG_gammabh = 0;
-			EAG_bh = (EAG_bhytarget*EAG_py*EAG_y)/EAGEAL_rer*EAL_pic;
-		EAHEAL_nerdep = EAH_rerdep/EAL_rerdep*EAH_pic/EAL_pic;
+			EAG_bh = (EAG_bhytarget*EAG_py*EAG_y)/EAGEAK_rer*EAK_pic;
+		EAHEAK_nerdep = EAH_rerdep/EAK_rerdep*EAH_pic/EAK_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAH_gammabh = 0;
-			EAH_bh = (EAH_bhytarget*EAH_py*EAH_y)/EAHEAL_rer*EAL_pic;
-		EAIEAL_nerdep = EAI_rerdep/EAL_rerdep*EAI_pic/EAL_pic;
+			EAH_bh = (EAH_bhytarget*EAH_py*EAH_y)/EAHEAK_rer*EAK_pic;
+		EAIEAK_nerdep = EAI_rerdep/EAK_rerdep*EAI_pic/EAK_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAI_gammabh = 0;
-			EAI_bh = (EAI_bhytarget*EAI_py*EAI_y)/EAIEAL_rer*EAL_pic;
-		EAJEAL_nerdep = EAJ_rerdep/EAL_rerdep*EAJ_pic/EAL_pic;
+			EAI_bh = (EAI_bhytarget*EAI_py*EAI_y)/EAIEAK_rer*EAK_pic;
+		EAJEAK_nerdep = EAJ_rerdep/EAK_rerdep*EAJ_pic/EAK_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
 			EAJ_gammabh = 0;
-			EAJ_bh = (EAJ_bhytarget*EAJ_py*EAJ_y)/EAJEAL_rer*EAL_pic;
-		EAKEAL_nerdep = EAK_rerdep/EAL_rerdep*EAK_pic/EAL_pic;
-		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
-			EAK_gammabh = 0;
-			EAK_bh = (EAK_bhytarget*EAK_py*EAK_y)/EAKEAL_rer*EAL_pic;
+			EAJ_bh = (EAJ_bhytarget*EAJ_py*EAJ_y)/EAJEAK_rer*EAK_pic;
 0 =
 	+ EAA_size*EAA_bh
 	+ EAB_size*EAB_bh
@@ -65520,7 +65581,6 @@ US_rer = 1;
 	+ EAI_size*EAI_bh
 	+ EAJ_size*EAJ_bh
 	+ EAK_size*EAK_bh
-	+ EAL_size*EAL_bh
 ;
 //-------------
 // Euroarea-wide variables
@@ -65539,7 +65599,6 @@ EA_y =
 			+ EAI_size*EAAEAI_rerbar*EAI_pybar *EAI_y	
 			+ EAJ_size*EAAEAJ_rerbar*EAJ_pybar *EAJ_y	
 			+ EAK_size*EAAEAK_rerbar*EAK_pybar *EAK_y	
-			+ EAL_size*EAAEAL_rerbar*EAL_pybar *EAL_y	
 	)
 	/
 	(
@@ -65554,7 +65613,6 @@ EA_y =
 	+ EAI_size
 	+ EAJ_size
 	+ EAK_size
-	+ EAL_size
 );
 // GDP growth
 EA_ygrowth= EA_y/EA_y(-1);
@@ -65574,7 +65632,6 @@ EA_m =
 			+ EAI_size*EAAEAI_rerbar*EAI_m	
 			+ EAJ_size*EAAEAJ_rerbar*EAJ_m	
 			+ EAK_size*EAAEAK_rerbar*EAK_m	
-			+ EAL_size*EAAEAL_rerbar*EAL_m	
 	)
 	/
 	(
@@ -65589,7 +65646,6 @@ EA_m =
 	+ EAI_size
 	+ EAJ_size
 	+ EAK_size
-	+ EAL_size
 );
 	
 EA_bf = 
@@ -65605,7 +65661,6 @@ EA_bf =
 		+ EAI_size*EAI_bf	
 		+ EAJ_size*EAJ_bf	
 		+ EAK_size*EAK_bf	
-		+ EAL_size*EAL_bf	
 	)
 	/
 	(
@@ -65620,7 +65675,6 @@ EA_bf =
 	+ EAI_size
 	+ EAJ_size
 	+ EAK_size
-	+ EAL_size
 );
 // Annual inflation
 EA_pic4 = 1 
@@ -65636,7 +65690,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
 			)) 
 		* EAB_pic4^(EAB_size/(
 				+ EAA_size
@@ -65650,7 +65703,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
 			)) 
 		* EAC_pic4^(EAC_size/(
 				+ EAA_size
@@ -65664,7 +65716,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
 			)) 
 		* EAD_pic4^(EAD_size/(
 				+ EAA_size
@@ -65678,7 +65729,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
 			)) 
 		* EAE_pic4^(EAE_size/(
 				+ EAA_size
@@ -65692,7 +65742,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
 			)) 
 		* EAF_pic4^(EAF_size/(
 				+ EAA_size
@@ -65706,7 +65755,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
 			)) 
 		* EAG_pic4^(EAG_size/(
 				+ EAA_size
@@ -65720,7 +65768,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
 			)) 
 		* EAH_pic4^(EAH_size/(
 				+ EAA_size
@@ -65734,7 +65781,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
 			)) 
 		* EAI_pic4^(EAI_size/(
 				+ EAA_size
@@ -65748,7 +65794,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
 			)) 
 		* EAJ_pic4^(EAJ_size/(
 				+ EAA_size
@@ -65762,7 +65807,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
 			)) 
 		* EAK_pic4^(EAK_size/(
 				+ EAA_size
@@ -65776,21 +65820,6 @@ EA_pic4 = 1
 				+ EAI_size
 				+ EAJ_size
 				+ EAK_size
-				+ EAL_size
-			)) 
-		* EAL_pic4^(EAL_size/(
-				+ EAA_size
-				+ EAB_size
-				+ EAC_size
-				+ EAD_size
-				+ EAE_size
-				+ EAF_size
-				+ EAG_size
-				+ EAH_size
-				+ EAI_size
-				+ EAJ_size
-				+ EAK_size
-				+ EAL_size
 			)) 
 ;
 // Productivity
@@ -65802,748 +65831,776 @@ load_params_and_steady_state('eagle_steady_stage2a.txt');
 // Trade matrix
 disp('Trade matrix')
 homotopy_setup;
-EAAEAB_imcy, 0.001025;
-EAAEAC_imcy, 0.001276;
-EAAEAD_imcy, 0.003392;
-EAAEAE_imcy, 0.000629;
-EAAEAF_imcy, 0.006804;
-EAAEAG_imcy, 0.000560;
-EAAEAH_imcy, 0.000801;
-EAAEAI_imcy, 0.005121;
-EAAEAJ_imcy, 0.002054;
-EAAEAK_imcy, 0.000574;
-EAAEAL_imcy, 0.008989;
-EAAUS_imcy, 0.048381;
-EABEAA_imcy, 0.000919;
-EABEAC_imcy, 0.001124;
-EABEAD_imcy, 0.002989;
-EABEAE_imcy, 0.000554;
-EABEAF_imcy, 0.005996;
-EABEAG_imcy, 0.000493;
-EABEAH_imcy, 0.000705;
-EABEAI_imcy, 0.004512;
-EABEAJ_imcy, 0.001809;
-EABEAK_imcy, 0.000506;
-EABEAL_imcy, 0.007920;
-EABRW_imcy, 0.107451;
-EACEAB_imcy, 0.001015;
-EACEAD_imcy, 0.003361;
-EACEAE_imcy, 0.000623;
-EACEAF_imcy, 0.006742;
-EACEAG_imcy, 0.000554;
-EACEAH_imcy, 0.000793;
-EACEAI_imcy, 0.005075;
-EACEAJ_imcy, 0.002035;
-EACEAK_imcy, 0.000569;
-EACEAL_imcy, 0.008907;
-EACRW_imcy, 0.120838;
-EACUS_imcy, 0.047941;
-EADEAA_imcy, 0.000673;
-EADEAC_imcy, 0.000824;
-EADEAE_imcy, 0.000406;
-EADEAF_imcy, 0.004392;
-EADEAG_imcy, 0.000361;
-EADEAH_imcy, 0.000517;
-EADEAI_imcy, 0.003306;
-EADEAJ_imcy, 0.001325;
-EADEAK_imcy, 0.000371;
-EADEAL_imcy, 0.005802;
-EADRW_imcy, 0.078713;
-EADUS_imcy, 0.031228;
-EAEEAA_imcy, 0.000781;
-EAEEAB_imcy, 0.000767;
-EAEEAD_imcy, 0.002539;
-EAEEAF_imcy, 0.005093;
-EAEEAG_imcy, 0.000419;
-EAEEAH_imcy, 0.000599;
-EAEEAI_imcy, 0.003833;
-EAEEAJ_imcy, 0.001537;
-EAEEAK_imcy, 0.000430;
-EAEEAL_imcy, 0.006728;
-EAERW_imcy, 0.091277;
-EAEUS_imcy, 0.036213;
-EAFEAA_imcy, 0.000754;
-EAFEAB_imcy, 0.000740;
-EAFEAC_imcy, 0.000922;
-EAFEAE_imcy, 0.000454;
-EAFEAG_imcy, 0.000404;
-EAFEAH_imcy, 0.000578;
-EAFEAI_imcy, 0.003700;
-EAFEAJ_imcy, 0.001483;
-EAFEAK_imcy, 0.000415;
-EAFEAL_imcy, 0.006494;
-EAFRW_imcy, 0.088097;
-EAFUS_imcy, 0.034951;
-EAGEAA_imcy, 0.000928;
-EAGEAB_imcy, 0.000911;
-EAGEAC_imcy, 0.001135;
-EAGEAD_imcy, 0.003017;
-EAGEAF_imcy, 0.006051;
-EAGEAH_imcy, 0.000712;
-EAGEAI_imcy, 0.004554;
-EAGEAJ_imcy, 0.001826;
-EAGEAK_imcy, 0.000511;
-EAGEAL_imcy, 0.007993;
-EAGRW_imcy, 0.108444;
-EAGUS_imcy, 0.043024;
-EAHEAA_imcy, 0.000775;
-EAHEAB_imcy, 0.000761;
-EAHEAC_imcy, 0.000948;
-EAHEAD_imcy, 0.002520;
-EAHEAE_imcy, 0.000467;
-EAHEAG_imcy, 0.000416;
-EAHEAI_imcy, 0.003804;
-EAHEAJ_imcy, 0.001525;
-EAHEAK_imcy, 0.000426;
-EAHEAL_imcy, 0.006676;
-EAHRW_imcy, 0.090573;
-EAHUS_imcy, 0.035933;
-EAIEAA_imcy, 0.000732;
-EAIEAB_imcy, 0.000719;
-EAIEAC_imcy, 0.000895;
-EAIEAD_imcy, 0.002380;
-EAIEAE_imcy, 0.000441;
-EAIEAF_imcy, 0.004773;
-EAIEAH_imcy, 0.000562;
-EAIEAJ_imcy, 0.001441;
-EAIEAK_imcy, 0.000403;
-EAIEAL_imcy, 0.006305;
-EAIRW_imcy, 0.085546;
-EAIUS_imcy, 0.033939;
-EAJEAA_imcy, 0.000867;
-EAJEAB_imcy, 0.000851;
-EAJEAC_imcy, 0.001060;
-EAJEAD_imcy, 0.002818;
-EAJEAE_imcy, 0.000522;
-EAJEAF_imcy, 0.005652;
-EAJEAG_imcy, 0.000465;
-EAJEAI_imcy, 0.004254;
-EAJEAK_imcy, 0.000477;
-EAJEAL_imcy, 0.007467;
-EAJRW_imcy, 0.101300;
-EAJUS_imcy, 0.040189;
-EAKEAA_imcy, 0.000961;
-EAKEAB_imcy, 0.000944;
-EAKEAC_imcy, 0.001175;
-EAKEAD_imcy, 0.003124;
-EAKEAE_imcy, 0.000579;
-EAKEAF_imcy, 0.006266;
-EAKEAG_imcy, 0.000515;
-EAKEAH_imcy, 0.000737;
-EAKEAJ_imcy, 0.001891;
-EAKEAL_imcy, 0.008277;
-EAKRW_imcy, 0.112299;
-EAKUS_imcy, 0.044553;
-EALEAA_imcy, 0.000811;
-EALEAB_imcy, 0.000797;
-EALEAC_imcy, 0.000992;
-EALEAD_imcy, 0.002638;
-EALEAE_imcy, 0.000489;
-EALEAF_imcy, 0.005291;
-EALEAG_imcy, 0.000435;
-EALEAH_imcy, 0.000623;
-EALEAI_imcy, 0.003982;
-EALEAK_imcy, 0.000446;
-EALRW_imcy, 0.094822;
-EALUS_imcy, 0.037619;
-RWEAA_imcy, 0.000611;
-RWEAB_imcy, 0.000600;
-RWEAC_imcy, 0.000747;
-RWEAD_imcy, 0.001986;
-RWEAE_imcy, 0.000368;
-RWEAF_imcy, 0.003983;
-RWEAG_imcy, 0.000328;
-RWEAH_imcy, 0.000469;
-RWEAI_imcy, 0.002998;
-RWEAJ_imcy, 0.001202;
-RWEAL_imcy, 0.005262;
-RWUS_imcy, 0.028323;
-USEAA_imcy, 0.000523;
-USEAB_imcy, 0.000514;
-USEAC_imcy, 0.000640;
-USEAD_imcy, 0.001701;
-USEAE_imcy, 0.000315;
-USEAF_imcy, 0.003411;
-USEAG_imcy, 0.000281;
-USEAH_imcy, 0.000401;
-USEAI_imcy, 0.002567;
-USEAJ_imcy, 0.001030;
-USEAK_imcy, 0.000288;
-USRW_imcy, 0.061138;
-EAAEAB_imcgy, 0.000176;
-EAAEAC_imcgy, 0.000220;
-EAAEAD_imcgy, 0.000584;
-EAAEAE_imcgy, 0.000108;
-EAAEAF_imcgy, 0.001172;
-EAAEAG_imcgy, 0.000096;
-EAAEAH_imcgy, 0.000138;
-EAAEAI_imcgy, 0.000882;
-EAAEAJ_imcgy, 0.000354;
-EAAEAK_imcgy, 0.000099;
-EAAEAL_imcgy, 0.001548;
-EAAUS_imcgy, 0.008331;
-EABEAA_imcgy, 0.000157;
-EABEAC_imcgy, 0.000193;
-EABEAD_imcgy, 0.000512;
-EABEAE_imcgy, 0.000095;
-EABEAF_imcgy, 0.001027;
-EABEAG_imcgy, 0.000084;
-EABEAH_imcgy, 0.000121;
-EABEAI_imcgy, 0.000773;
-EABEAJ_imcgy, 0.000310;
-EABEAK_imcgy, 0.000087;
-EABEAL_imcgy, 0.001357;
-EABRW_imcgy, 0.018404;
-EACEAB_imcgy, 0.000227;
-EACEAD_imcgy, 0.000751;
-EACEAE_imcgy, 0.000139;
-EACEAF_imcgy, 0.001507;
-EACEAG_imcgy, 0.000124;
-EACEAH_imcgy, 0.000177;
-EACEAI_imcgy, 0.001134;
-EACEAJ_imcgy, 0.000455;
-EACEAK_imcgy, 0.000127;
-EACEAL_imcgy, 0.001991;
-EACRW_imcgy, 0.027013;
-EACUS_imcgy, 0.010717;
-EADEAA_imcgy, 0.000114;
-EADEAC_imcgy, 0.000139;
-EADEAE_imcgy, 0.000069;
-EADEAF_imcgy, 0.000742;
-EADEAG_imcgy, 0.000061;
-EADEAH_imcgy, 0.000087;
-EADEAI_imcgy, 0.000558;
-EADEAJ_imcgy, 0.000224;
-EADEAK_imcgy, 0.000063;
-EADEAL_imcgy, 0.000980;
-EADRW_imcgy, 0.013298;
-EADUS_imcgy, 0.005276;
-EAEEAA_imcgy, 0.000191;
-EAEEAB_imcgy, 0.000188;
-EAEEAD_imcgy, 0.000622;
-EAEEAF_imcgy, 0.001247;
-EAEEAG_imcgy, 0.000103;
-EAEEAH_imcgy, 0.000147;
-EAEEAI_imcgy, 0.000938;
-EAEEAJ_imcgy, 0.000376;
-EAEEAK_imcgy, 0.000105;
-EAEEAL_imcgy, 0.001647;
-EAERW_imcgy, 0.022345;
-EAEUS_imcgy, 0.008865;
-EAFEAA_imcgy, 0.000120;
-EAFEAB_imcgy, 0.000118;
-EAFEAC_imcgy, 0.000146;
-EAFEAE_imcgy, 0.000072;
-EAFEAG_imcgy, 0.000064;
-EAFEAH_imcgy, 0.000092;
-EAFEAI_imcgy, 0.000587;
-EAFEAJ_imcgy, 0.000236;
-EAFEAK_imcgy, 0.000066;
-EAFEAL_imcgy, 0.001031;
-EAFRW_imcgy, 0.013987;
-EAFUS_imcgy, 0.005549;
-EAGEAA_imcgy, 0.000134;
-EAGEAB_imcgy, 0.000132;
-EAGEAC_imcgy, 0.000164;
-EAGEAD_imcgy, 0.000435;
-EAGEAF_imcgy, 0.000873;
-EAGEAH_imcgy, 0.000103;
-EAGEAI_imcgy, 0.000657;
-EAGEAJ_imcgy, 0.000264;
-EAGEAK_imcgy, 0.000074;
-EAGEAL_imcgy, 0.001154;
-EAGRW_imcgy, 0.015654;
-EAGUS_imcgy, 0.006210;
-EAHEAA_imcgy, 0.000143;
-EAHEAB_imcgy, 0.000140;
-EAHEAC_imcgy, 0.000175;
-EAHEAD_imcgy, 0.000465;
-EAHEAE_imcgy, 0.000086;
-EAHEAG_imcgy, 0.000077;
-EAHEAI_imcgy, 0.000702;
-EAHEAJ_imcgy, 0.000281;
-EAHEAK_imcgy, 0.000079;
-EAHEAL_imcgy, 0.001232;
-EAHRW_imcgy, 0.016709;
-EAHUS_imcgy, 0.006629;
-EAIEAA_imcgy, 0.000090;
-EAIEAB_imcgy, 0.000089;
-EAIEAC_imcgy, 0.000111;
-EAIEAD_imcgy, 0.000294;
-EAIEAE_imcgy, 0.000054;
-EAIEAF_imcgy, 0.000590;
-EAIEAH_imcgy, 0.000069;
-EAIEAJ_imcgy, 0.000178;
-EAIEAK_imcgy, 0.000050;
-EAIEAL_imcgy, 0.000779;
-EAIRW_imcgy, 0.010567;
-EAIUS_imcgy, 0.004192;
-EAJEAA_imcgy, 0.000189;
-EAJEAB_imcgy, 0.000185;
-EAJEAC_imcgy, 0.000231;
-EAJEAD_imcgy, 0.000613;
-EAJEAE_imcgy, 0.000114;
-EAJEAF_imcgy, 0.001231;
-EAJEAG_imcgy, 0.000101;
-EAJEAI_imcgy, 0.000926;
-EAJEAK_imcgy, 0.000104;
-EAJEAL_imcgy, 0.001625;
-EAJRW_imcgy, 0.022053;
-EAJUS_imcgy, 0.008749;
-EAKEAA_imcgy, 0.000112;
-EAKEAB_imcgy, 0.000110;
-EAKEAC_imcgy, 0.000137;
-EAKEAD_imcgy, 0.000363;
-EAKEAE_imcgy, 0.000067;
-EAKEAF_imcgy, 0.000728;
-EAKEAG_imcgy, 0.000060;
-EAKEAH_imcgy, 0.000086;
-EAKEAJ_imcgy, 0.000220;
-EAKEAL_imcgy, 0.000962;
-EAKRW_imcgy, 0.013051;
-EAKUS_imcgy, 0.005178;
-EALEAA_imcgy, 0.000112;
-EALEAB_imcgy, 0.000110;
-EALEAC_imcgy, 0.000137;
-EALEAD_imcgy, 0.000363;
-EALEAE_imcgy, 0.000067;
-EALEAF_imcgy, 0.000729;
-EALEAG_imcgy, 0.000060;
-EALEAH_imcgy, 0.000086;
-EALEAI_imcgy, 0.000549;
-EALEAK_imcgy, 0.000062;
-EALRW_imcgy, 0.013066;
-EALUS_imcgy, 0.005184;
-RWEAA_imcgy, 0.000085;
-RWEAB_imcgy, 0.000084;
-RWEAC_imcgy, 0.000104;
-RWEAD_imcgy, 0.000277;
-RWEAE_imcgy, 0.000051;
-RWEAF_imcgy, 0.000556;
-RWEAG_imcgy, 0.000046;
-RWEAH_imcgy, 0.000065;
-RWEAI_imcgy, 0.000419;
-RWEAJ_imcgy, 0.000168;
-RWEAL_imcgy, 0.000735;
-RWUS_imcgy, 0.003956;
-USEAA_imcgy, 0.000055;
-USEAB_imcgy, 0.000054;
-USEAC_imcgy, 0.000067;
-USEAD_imcgy, 0.000179;
-USEAE_imcgy, 0.000033;
-USEAF_imcgy, 0.000359;
-USEAG_imcgy, 0.000030;
-USEAH_imcgy, 0.000042;
-USEAI_imcgy, 0.000270;
-USEAJ_imcgy, 0.000108;
-USEAK_imcgy, 0.000030;
-USRW_imcgy, 0.006437;
-EAAEAB_imiy, 0.000420;
-EAAEAC_imiy, 0.000523;
-EAAEAD_imiy, 0.001389;
-EAAEAE_imiy, 0.000257;
-EAAEAF_imiy, 0.002787;
-EAAEAG_imiy, 0.000229;
-EAAEAH_imiy, 0.000328;
-EAAEAI_imiy, 0.002098;
-EAAEAJ_imiy, 0.000841;
-EAAEAK_imiy, 0.000235;
-EAAEAL_imiy, 0.003682;
-EAAUS_imiy, 0.019817;
-EABEAA_imiy, 0.000474;
-EABEAC_imiy, 0.000580;
-EABEAD_imiy, 0.001542;
-EABEAE_imiy, 0.000286;
-EABEAF_imiy, 0.003094;
-EABEAG_imiy, 0.000254;
-EABEAH_imiy, 0.000364;
-EABEAI_imiy, 0.002329;
-EABEAJ_imiy, 0.000934;
-EABEAK_imiy, 0.000261;
-EABEAL_imiy, 0.004087;
-EABRW_imiy, 0.055451;
-EACEAB_imiy, 0.000499;
-EACEAD_imiy, 0.001652;
-EACEAE_imiy, 0.000306;
-EACEAF_imiy, 0.003314;
-EACEAG_imiy, 0.000273;
-EACEAH_imiy, 0.000390;
-EACEAI_imiy, 0.002495;
-EACEAJ_imiy, 0.001000;
-EACEAK_imiy, 0.000280;
-EACEAL_imiy, 0.004378;
-EACRW_imiy, 0.059401;
-EACUS_imiy, 0.023567;
-EADEAA_imiy, 0.000260;
-EADEAC_imiy, 0.000318;
-EADEAE_imiy, 0.000157;
-EADEAF_imiy, 0.001695;
-EADEAG_imiy, 0.000139;
-EADEAH_imiy, 0.000199;
-EADEAI_imiy, 0.001276;
-EADEAJ_imiy, 0.000512;
-EADEAK_imiy, 0.000143;
-EADEAL_imiy, 0.002239;
-EADRW_imiy, 0.030376;
-EADUS_imiy, 0.012051;
-EAEEAA_imiy, 0.000382;
-EAEEAB_imiy, 0.000375;
-EAEEAD_imiy, 0.001242;
-EAEEAF_imiy, 0.002491;
-EAEEAG_imiy, 0.000205;
-EAEEAH_imiy, 0.000293;
-EAEEAI_imiy, 0.001875;
-EAEEAJ_imiy, 0.000752;
-EAEEAK_imiy, 0.000210;
-EAEEAL_imiy, 0.003291;
-EAERW_imiy, 0.044652;
-EAEUS_imiy, 0.017715;
-EAFEAA_imiy, 0.000284;
-EAFEAB_imiy, 0.000279;
-EAFEAC_imiy, 0.000347;
-EAFEAE_imiy, 0.000171;
-EAFEAG_imiy, 0.000152;
-EAFEAH_imiy, 0.000218;
-EAFEAI_imiy, 0.001393;
-EAFEAJ_imiy, 0.000558;
-EAFEAK_imiy, 0.000156;
-EAFEAL_imiy, 0.002444;
-EAFRW_imiy, 0.033160;
-EAFUS_imiy, 0.013156;
-EAGEAA_imiy, 0.000194;
-EAGEAB_imiy, 0.000190;
-EAGEAC_imiy, 0.000237;
-EAGEAD_imiy, 0.000629;
-EAGEAF_imiy, 0.001262;
-EAGEAH_imiy, 0.000148;
-EAGEAI_imiy, 0.000950;
-EAGEAJ_imiy, 0.000381;
-EAGEAK_imiy, 0.000106;
-EAGEAL_imiy, 0.001667;
-EAGRW_imiy, 0.022618;
-EAGUS_imiy, 0.008973;
-EAHEAA_imiy, 0.000719;
-EAHEAB_imiy, 0.000707;
-EAHEAC_imiy, 0.000880;
-EAHEAD_imiy, 0.002339;
-EAHEAE_imiy, 0.000433;
-EAHEAG_imiy, 0.000386;
-EAHEAI_imiy, 0.003531;
-EAHEAJ_imiy, 0.001416;
-EAHEAK_imiy, 0.000396;
-EAHEAL_imiy, 0.006197;
-EAHRW_imiy, 0.084080;
-EAHUS_imiy, 0.033358;
-EAIEAA_imiy, 0.000223;
-EAIEAB_imiy, 0.000219;
-EAIEAC_imiy, 0.000273;
-EAIEAD_imiy, 0.000725;
-EAIEAE_imiy, 0.000134;
-EAIEAF_imiy, 0.001454;
-EAIEAH_imiy, 0.000171;
-EAIEAJ_imiy, 0.000439;
-EAIEAK_imiy, 0.000123;
-EAIEAL_imiy, 0.001921;
-EAIRW_imiy, 0.026064;
-EAIUS_imiy, 0.010340;
-EAJEAA_imiy, 0.000364;
-EAJEAB_imiy, 0.000357;
-EAJEAC_imiy, 0.000445;
-EAJEAD_imiy, 0.001183;
-EAJEAE_imiy, 0.000219;
-EAJEAF_imiy, 0.002372;
-EAJEAG_imiy, 0.000195;
-EAJEAI_imiy, 0.001785;
-EAJEAK_imiy, 0.000200;
-EAJEAL_imiy, 0.003134;
-EAJRW_imiy, 0.042513;
-EAJUS_imiy, 0.016866;
-EAKEAA_imiy, 0.000273;
-EAKEAB_imiy, 0.000268;
-EAKEAC_imiy, 0.000334;
-EAKEAD_imiy, 0.000887;
-EAKEAE_imiy, 0.000164;
-EAKEAF_imiy, 0.001779;
-EAKEAG_imiy, 0.000146;
-EAKEAH_imiy, 0.000209;
-EAKEAJ_imiy, 0.000537;
-EAKEAL_imiy, 0.002351;
-EAKRW_imiy, 0.031891;
-EAKUS_imiy, 0.012652;
-EALEAA_imiy, 0.000319;
-EALEAB_imiy, 0.000313;
-EALEAC_imiy, 0.000390;
-EALEAD_imiy, 0.001037;
-EALEAE_imiy, 0.000192;
-EALEAF_imiy, 0.002081;
-EALEAG_imiy, 0.000171;
-EALEAH_imiy, 0.000245;
-EALEAI_imiy, 0.001566;
-EALEAK_imiy, 0.000176;
-EALRW_imiy, 0.037292;
-EALUS_imiy, 0.014795;
-RWEAA_imiy, 0.000326;
-RWEAB_imiy, 0.000320;
-RWEAC_imiy, 0.000399;
-RWEAD_imiy, 0.001060;
-RWEAE_imiy, 0.000196;
-RWEAF_imiy, 0.002126;
-RWEAG_imiy, 0.000175;
-RWEAH_imiy, 0.000250;
-RWEAI_imiy, 0.001600;
-RWEAJ_imiy, 0.000642;
-RWEAL_imiy, 0.002809;
-RWUS_imiy, 0.015118;
-USEAA_imiy, 0.000208;
-USEAB_imiy, 0.000205;
-USEAC_imiy, 0.000255;
-USEAD_imiy, 0.000677;
-USEAE_imiy, 0.000126;
-USEAF_imiy, 0.001358;
-USEAG_imiy, 0.000112;
-USEAH_imiy, 0.000160;
-USEAI_imiy, 0.001022;
-USEAJ_imiy, 0.000410;
-USEAK_imiy, 0.000115;
-USRW_imiy, 0.024346;
-EAAEAB_imigy, 0.000047;
-EAAEAC_imigy, 0.000058;
-EAAEAD_imigy, 0.000154;
-EAAEAE_imigy, 0.000029;
-EAAEAF_imigy, 0.000310;
-EAAEAG_imigy, 0.000025;
-EAAEAH_imigy, 0.000036;
-EAAEAI_imigy, 0.000233;
-EAAEAJ_imigy, 0.000093;
-EAAEAK_imigy, 0.000026;
-EAAEAL_imigy, 0.000409;
-EAAUS_imigy, 0.002202;
-EABEAA_imigy, 0.000053;
-EABEAC_imigy, 0.000064;
-EABEAD_imigy, 0.000171;
-EABEAE_imigy, 0.000032;
-EABEAF_imigy, 0.000344;
-EABEAG_imigy, 0.000028;
-EABEAH_imigy, 0.000040;
-EABEAI_imigy, 0.000259;
-EABEAJ_imigy, 0.000104;
-EABEAK_imigy, 0.000029;
-EABEAL_imigy, 0.000454;
-EABRW_imigy, 0.006161;
-EACEAB_imigy, 0.000055;
-EACEAD_imigy, 0.000184;
-EACEAE_imigy, 0.000034;
-EACEAF_imigy, 0.000368;
-EACEAG_imigy, 0.000030;
-EACEAH_imigy, 0.000043;
-EACEAI_imigy, 0.000277;
-EACEAJ_imigy, 0.000111;
-EACEAK_imigy, 0.000031;
-EACEAL_imigy, 0.000486;
-EACRW_imigy, 0.006600;
-EACUS_imigy, 0.002619;
-EADEAA_imigy, 0.000029;
-EADEAC_imigy, 0.000035;
-EADEAE_imigy, 0.000017;
-EADEAF_imigy, 0.000188;
-EADEAG_imigy, 0.000015;
-EADEAH_imigy, 0.000022;
-EADEAI_imigy, 0.000142;
-EADEAJ_imigy, 0.000057;
-EADEAK_imigy, 0.000016;
-EADEAL_imigy, 0.000249;
-EADRW_imigy, 0.003375;
-EADUS_imigy, 0.001339;
-EAEEAA_imigy, 0.000042;
-EAEEAB_imigy, 0.000042;
-EAEEAD_imigy, 0.000138;
-EAEEAF_imigy, 0.000277;
-EAEEAG_imigy, 0.000023;
-EAEEAH_imigy, 0.000033;
-EAEEAI_imigy, 0.000208;
-EAEEAJ_imigy, 0.000084;
-EAEEAK_imigy, 0.000023;
-EAEEAL_imigy, 0.000366;
-EAERW_imigy, 0.004961;
-EAEUS_imigy, 0.001968;
-EAFEAA_imigy, 0.000032;
-EAFEAB_imigy, 0.000031;
-EAFEAC_imigy, 0.000039;
-EAFEAE_imigy, 0.000019;
-EAFEAG_imigy, 0.000017;
-EAFEAH_imigy, 0.000024;
-EAFEAI_imigy, 0.000155;
-EAFEAJ_imigy, 0.000062;
-EAFEAK_imigy, 0.000017;
-EAFEAL_imigy, 0.000272;
-EAFRW_imigy, 0.003684;
-EAFUS_imigy, 0.001462;
-EAGEAA_imigy, 0.000022;
-EAGEAB_imigy, 0.000021;
-EAGEAC_imigy, 0.000026;
-EAGEAD_imigy, 0.000070;
-EAGEAF_imigy, 0.000140;
-EAGEAH_imigy, 0.000017;
-EAGEAI_imigy, 0.000106;
-EAGEAJ_imigy, 0.000042;
-EAGEAK_imigy, 0.000012;
-EAGEAL_imigy, 0.000185;
-EAGRW_imigy, 0.002513;
-EAGUS_imigy, 0.000997;
-EAHEAA_imigy, 0.000080;
-EAHEAB_imigy, 0.000079;
-EAHEAC_imigy, 0.000098;
-EAHEAD_imigy, 0.000260;
-EAHEAE_imigy, 0.000048;
-EAHEAG_imigy, 0.000043;
-EAHEAI_imigy, 0.000392;
-EAHEAJ_imigy, 0.000157;
-EAHEAK_imigy, 0.000044;
-EAHEAL_imigy, 0.000689;
-EAHRW_imigy, 0.009342;
-EAHUS_imigy, 0.003706;
-EAIEAA_imigy, 0.000025;
-EAIEAB_imigy, 0.000024;
-EAIEAC_imigy, 0.000030;
-EAIEAD_imigy, 0.000081;
-EAIEAE_imigy, 0.000015;
-EAIEAF_imigy, 0.000162;
-EAIEAH_imigy, 0.000019;
-EAIEAJ_imigy, 0.000049;
-EAIEAK_imigy, 0.000014;
-EAIEAL_imigy, 0.000213;
-EAIRW_imigy, 0.002896;
-EAIUS_imigy, 0.001149;
-EAJEAA_imigy, 0.000040;
-EAJEAB_imigy, 0.000040;
-EAJEAC_imigy, 0.000049;
-EAJEAD_imigy, 0.000131;
-EAJEAE_imigy, 0.000024;
-EAJEAF_imigy, 0.000264;
-EAJEAG_imigy, 0.000022;
-EAJEAI_imigy, 0.000198;
-EAJEAK_imigy, 0.000022;
-EAJEAL_imigy, 0.000348;
-EAJRW_imigy, 0.004724;
-EAJUS_imigy, 0.001874;
-EAKEAA_imigy, 0.000030;
-EAKEAB_imigy, 0.000030;
-EAKEAC_imigy, 0.000037;
-EAKEAD_imigy, 0.000099;
-EAKEAE_imigy, 0.000018;
-EAKEAF_imigy, 0.000198;
-EAKEAG_imigy, 0.000016;
-EAKEAH_imigy, 0.000023;
-EAKEAJ_imigy, 0.000060;
-EAKEAL_imigy, 0.000261;
-EAKRW_imigy, 0.003543;
-EAKUS_imigy, 0.001406;
-EALEAA_imigy, 0.000035;
-EALEAB_imigy, 0.000035;
-EALEAC_imigy, 0.000043;
-EALEAD_imigy, 0.000115;
-EALEAE_imigy, 0.000021;
-EALEAF_imigy, 0.000231;
-EALEAG_imigy, 0.000019;
-EALEAH_imigy, 0.000027;
-EALEAI_imigy, 0.000174;
-EALEAK_imigy, 0.000020;
-EALRW_imigy, 0.004143;
-EALUS_imigy, 0.001644;
-RWEAA_imigy, 0.000036;
-RWEAB_imigy, 0.000036;
-RWEAC_imigy, 0.000044;
-RWEAD_imigy, 0.000118;
-RWEAE_imigy, 0.000022;
-RWEAF_imigy, 0.000236;
-RWEAG_imigy, 0.000019;
-RWEAH_imigy, 0.000028;
-RWEAI_imigy, 0.000178;
-RWEAJ_imigy, 0.000071;
-RWEAL_imigy, 0.000312;
-RWUS_imigy, 0.001680;
-USEAA_imigy, 0.000023;
-USEAB_imigy, 0.000023;
-USEAC_imigy, 0.000028;
-USEAD_imigy, 0.000075;
-USEAE_imigy, 0.000014;
-USEAF_imigy, 0.000151;
-USEAG_imigy, 0.000012;
-USEAH_imigy, 0.000018;
-USEAI_imigy, 0.000114;
-USEAJ_imigy, 0.000046;
-USEAK_imigy, 0.000013;
-USRW_imigy, 0.002705;
-EAA_imcy, 0.201554;
-EAA_imcgy, 0.034706;
-EAA_imiy, 0.082556;
-EAA_imigy, 0.009173;
-EAB_imcy, 0.177609;
-EAB_imcgy, 0.030420;
-EAB_imiy, 0.091656;
-EAB_imigy, 0.010184;
-EAC_imcy, 0.199488;
-EAC_imcgy, 0.044595;
-EAC_imiy, 0.098064;
-EAC_imigy, 0.010896;
-EAD_imcy, 0.128579;
-EAD_imcgy, 0.021722;
-EAD_imiy, 0.049619;
-EAD_imigy, 0.005513;
-EAE_imcy, 0.151172;
-EAE_imcgy, 0.037008;
-EAE_imiy, 0.073951;
-EAE_imigy, 0.008217;
-EAF_imcy, 0.141443;
-EAF_imcgy, 0.022457;
-EAF_imiy, 0.053239;
-EAF_imigy, 0.005915;
-EAG_imcy, 0.179664;
-EAG_imcgy, 0.025934;
-EAG_imiy, 0.037472;
-EAG_imigy, 0.004164;
-EAH_imcy, 0.149877;
-EAH_imcgy, 0.027649;
-EAH_imiy, 0.139133;
-EAH_imigy, 0.015459;
-EAI_imcy, 0.138528;
-EAI_imcgy, 0.017111;
-EAI_imiy, 0.042206;
-EAI_imigy, 0.004690;
-EAJ_imcy, 0.166587;
-EAJ_imcgy, 0.036266;
-EAJ_imiy, 0.069912;
-EAJ_imigy, 0.007768;
-EAK_imcy, 0.186037;
-EAK_imcgy, 0.021621;
-EAK_imiy, 0.052831;
-EAK_imigy, 0.005870;
-EAL_imcy, 0.150542;
-EAL_imcgy, 0.020744;
-EAL_imiy, 0.059206;
-EAL_imigy, 0.006578;
-RW_imcy, 0.047212;
-RW_imcgy, 0.006595;
-RW_imiy, 0.025201;
-RW_imigy, 0.002800;
-US_imcy, 0.077315;
-US_imcgy, 0.008141;
-US_imiy, 0.030788;
-US_imigy, 0.003421;
+EAA_imcgy, 0.037038;
+EAA_imcy, 0.220985;
+EAA_imigy, 0.009768;
+EAA_imiy, 0.087915;
 EAA_size, 0.005150;
+EAAEAB_imcgy, 0.001433;
+EAAEAB_imcy, 0.008178;
+EAAEAB_imigy, 0.000359;
+EAAEAB_imiy, 0.003230;
+EAAEAC_imcgy, 0.002063;
+EAAEAC_imcy, 0.008494;
+EAAEAC_imigy, 0.000256;
+EAAEAC_imiy, 0.002300;
+EAAEAD_imcgy, 0.000702;
+EAAEAD_imcy, 0.005029;
+EAAEAD_imigy, 0.000182;
+EAAEAD_imiy, 0.001635;
+EAAEAE_imcgy, 0.000397;
+EAAEAE_imcy, 0.002735;
+EAAEAE_imigy, 0.000158;
+EAAEAE_imiy, 0.001422;
+EAAEAF_imcgy, 0.002129;
+EAAEAF_imcy, 0.011802;
+EAAEAF_imigy, 0.000557;
+EAAEAF_imiy, 0.005010;
+EAAEAG_imcgy, 0.000292;
+EAAEAG_imcy, 0.003191;
+EAAEAG_imigy, 0.000058;
+EAAEAG_imiy, 0.000523;
+EAAEAH_imcgy, 0.000844;
+EAAEAH_imcy, 0.002769;
+EAAEAH_imigy, 0.000153;
+EAAEAH_imiy, 0.001380;
+EAAEAI_imcgy, 0.001775;
+EAAEAI_imcy, 0.013927;
+EAAEAI_imigy, 0.000707;
+EAAEAI_imiy, 0.006359;
+EAAEAJ_imcgy, 0.000814;
+EAAEAJ_imcy, 0.005579;
+EAAEAJ_imigy, 0.000182;
+EAAEAJ_imiy, 0.001635;
+EAAEAK_imcgy, 0.000090;
+EAAEAK_imcy, 0.001104;
+EAAEAK_imigy, 0.000020;
+EAAEAK_imiy, 0.000178;
+EAAEAL_imcgy, 0.004974;
+EAAEAL_imcy, 0.028128;
+EAAEAL_imigy, 0.001891;
+EAAEAL_imiy, 0.017015;
+EAAUS_imcgy, 0.001895;
+EAAUS_imcy, 0.008829;
+EAAUS_imigy, 0.000479;
+EAAUS_imiy, 0.004309;
+EAB_imcgy, 0.030942;
+EAB_imcy, 0.177853;
+EAB_imigy, 0.010579;
+EAB_imiy, 0.095212;
 EAB_size, 0.005058;
+EABEAA_imcgy, 0.002024;
+EABEAA_imcy, 0.011492;
+EABEAA_imigy, 0.000550;
+EABEAA_imiy, 0.004947;
+EABEAC_imcgy, 0.000527;
+EABEAC_imcy, 0.002232;
+EABEAC_imigy, 0.000119;
+EABEAC_imiy, 0.001075;
+EABEAD_imcgy, 0.000446;
+EABEAD_imcy, 0.003502;
+EABEAD_imigy, 0.000185;
+EABEAD_imiy, 0.001661;
+EABEAE_imcgy, 0.000113;
+EABEAE_imcy, 0.000546;
+EABEAE_imigy, 0.000057;
+EABEAE_imiy, 0.000514;
+EABEAF_imcgy, 0.000753;
+EABEAF_imcy, 0.004932;
+EABEAF_imigy, 0.000285;
+EABEAF_imiy, 0.002566;
+EABEAG_imcgy, 0.000054;
+EABEAG_imcy, 0.000859;
+EABEAG_imigy, 0.000014;
+EABEAG_imiy, 0.000127;
+EABEAH_imcgy, 0.000457;
+EABEAH_imcy, 0.001456;
+EABEAH_imigy, 0.000166;
+EABEAH_imiy, 0.001493;
+EABEAI_imcgy, 0.001262;
+EABEAI_imcy, 0.012329;
+EABEAI_imigy, 0.000619;
+EABEAI_imiy, 0.005567;
+EABEAJ_imcgy, 0.000685;
+EABEAJ_imcy, 0.004301;
+EABEAJ_imigy, 0.000209;
+EABEAJ_imiy, 0.001877;
+EABEAK_imcgy, 0.000087;
+EABEAK_imcy, 0.000843;
+EABEAK_imigy, 0.000045;
+EABEAK_imiy, 0.000402;
+EABEAL_imcgy, 0.007507;
+EABEAL_imcy, 0.051586;
+EABEAL_imigy, 0.003824;
+EABEAL_imiy, 0.034414;
+EABRW_imcgy, 0.014598;
+EABRW_imcy, 0.077247;
+EABRW_imigy, 0.004130;
+EABRW_imiy, 0.037167;
+EAC_imcgy, 0.045979;
+EAC_imcy, 0.200294;
+EAC_imigy, 0.011201;
+EAC_imiy, 0.100811;
 EAC_size, 0.006299;
+EACEAB_imcgy, 0.000413;
+EACEAB_imcy, 0.001613;
+EACEAB_imigy, 0.000104;
+EACEAB_imiy, 0.000933;
+EACEAD_imcgy, 0.001386;
+EACEAD_imcy, 0.006951;
+EACEAD_imigy, 0.000305;
+EACEAD_imiy, 0.002744;
+EACEAE_imcgy, 0.000161;
+EACEAE_imcy, 0.000708;
+EACEAE_imigy, 0.000049;
+EACEAE_imiy, 0.000440;
+EACEAF_imcgy, 0.006620;
+EACEAF_imcy, 0.034770;
+EACEAF_imigy, 0.001469;
+EACEAF_imiy, 0.013218;
+EACEAG_imcgy, 0.000080;
+EACEAG_imcy, 0.000649;
+EACEAG_imigy, 0.000015;
+EACEAG_imiy, 0.000131;
+EACEAH_imcgy, 0.003258;
+EACEAH_imcy, 0.006378;
+EACEAH_imigy, 0.000249;
+EACEAH_imiy, 0.002239;
+EACEAI_imcgy, 0.002046;
+EACEAI_imcy, 0.006923;
+EACEAI_imigy, 0.000441;
+EACEAI_imiy, 0.003969;
+EACEAJ_imcgy, 0.005115;
+EACEAJ_imcy, 0.028183;
+EACEAJ_imigy, 0.001187;
+EACEAJ_imiy, 0.010684;
+EACEAK_imcgy, 0.000291;
+EACEAK_imcy, 0.001428;
+EACEAK_imigy, 0.000065;
+EACEAK_imiy, 0.000582;
+EACEAL_imcgy, 0.004198;
+EACEAL_imcy, 0.022545;
+EACEAL_imigy, 0.001742;
+EACEAL_imiy, 0.015679;
+EACRW_imcgy, 0.016193;
+EACRW_imcy, 0.069601;
+EACRW_imigy, 0.004447;
+EACRW_imiy, 0.040026;
+EACUS_imcgy, 0.004504;
+EACUS_imcy, 0.012206;
+EACUS_imigy, 0.000795;
+EACUS_imiy, 0.007153;
+EAD_imcgy, 0.021379;
+EAD_imcy, 0.130763;
+EAD_imigy, 0.005703;
+EAD_imiy, 0.051327;
 EAD_size, 0.016744;
+EADEAA_imcgy, 0.000319;
+EADEAA_imcy, 0.001950;
+EADEAA_imigy, 0.000097;
+EADEAA_imiy, 0.000877;
+EADEAC_imcgy, 0.000647;
+EADEAC_imcy, 0.002203;
+EADEAC_imigy, 0.000096;
+EADEAC_imiy, 0.000861;
+EADEAE_imcgy, 0.000098;
+EADEAE_imcy, 0.000465;
+EADEAE_imigy, 0.000039;
+EADEAE_imiy, 0.000351;
+EADEAF_imcgy, 0.002097;
+EADEAF_imcy, 0.014617;
+EADEAF_imigy, 0.000683;
+EADEAF_imiy, 0.006143;
+EADEAG_imcgy, 0.000057;
+EADEAG_imcy, 0.000453;
+EADEAG_imigy, 0.000008;
+EADEAG_imiy, 0.000075;
+EADEAH_imcgy, 0.000904;
+EADEAH_imcy, 0.002323;
+EADEAH_imigy, 0.000187;
+EADEAH_imiy, 0.001680;
+EADEAI_imcgy, 0.001102;
+EADEAI_imcy, 0.007724;
+EADEAI_imigy, 0.000453;
+EADEAI_imiy, 0.004080;
+EADEAJ_imcgy, 0.000636;
+EADEAJ_imcy, 0.003910;
+EADEAJ_imigy, 0.000173;
+EADEAJ_imiy, 0.001560;
+EADEAK_imcgy, 0.000578;
+EADEAK_imcy, 0.005438;
+EADEAK_imigy, 0.000184;
+EADEAK_imiy, 0.001652;
+EADEAL_imcgy, 0.002227;
+EADEAL_imcy, 0.012097;
+EADEAL_imigy, 0.000929;
+EADEAL_imiy, 0.008364;
+EADRW_imcgy, 0.010053;
+EADRW_imcy, 0.071120;
+EADRW_imigy, 0.002521;
+EADRW_imiy, 0.022690;
+EADUS_imcgy, 0.002530;
+EADUS_imcy, 0.007684;
+EADUS_imigy, 0.000274;
+EADUS_imiy, 0.002467;
+EAE_imcgy, 0.036733;
+EAE_imcy, 0.149329;
+EAE_imigy, 0.008293;
+EAE_imiy, 0.074636;
 EAE_size, 0.003103;
+EAEEAA_imcgy, 0.001550;
+EAEEAA_imcy, 0.008379;
+EAEEAA_imigy, 0.000411;
+EAEEAA_imiy, 0.003702;
+EAEEAB_imcgy, 0.000375;
+EAEEAB_imcy, 0.001392;
+EAEEAB_imigy, 0.000107;
+EAEEAB_imiy, 0.000966;
+EAEEAD_imcgy, 0.000565;
+EAEEAD_imcy, 0.003659;
+EAEEAD_imigy, 0.000123;
+EAEEAD_imiy, 0.001106;
+EAEEAF_imcgy, 0.001205;
+EAEEAF_imcy, 0.005008;
+EAEEAF_imigy, 0.000281;
+EAEEAF_imiy, 0.002526;
+EAEEAG_imcgy, 0.000050;
+EAEEAG_imcy, 0.000608;
+EAEEAG_imigy, 0.000007;
+EAEEAG_imiy, 0.000065;
+EAEEAH_imcgy, 0.001642;
+EAEEAH_imcy, 0.003517;
+EAEEAH_imigy, 0.000273;
+EAEEAH_imiy, 0.002456;
+EAEEAI_imcgy, 0.000735;
+EAEEAI_imcy, 0.003591;
+EAEEAI_imigy, 0.000271;
+EAEEAI_imiy, 0.002439;
+EAEEAJ_imcgy, 0.001496;
+EAEEAJ_imcy, 0.006343;
+EAEEAJ_imigy, 0.000285;
+EAEEAJ_imiy, 0.002565;
+EAEEAK_imcgy, 0.000147;
+EAEEAK_imcy, 0.000849;
+EAEEAK_imigy, 0.000030;
+EAEEAK_imiy, 0.000274;
+EAEEAL_imcgy, 0.003651;
+EAEEAL_imcy, 0.015483;
+EAEEAL_imigy, 0.001201;
+EAEEAL_imiy, 0.010807;
+EAERW_imcgy, 0.021290;
+EAERW_imcy, 0.088806;
+EAERW_imigy, 0.004575;
+EAERW_imiy, 0.041172;
+EAEUS_imcgy, 0.003176;
+EAEUS_imcy, 0.008944;
+EAEUS_imigy, 0.000576;
+EAEUS_imiy, 0.005186;
+EAF_imcgy, 0.022257;
+EAF_imcy, 0.140881;
+EAF_imigy, 0.006080;
+EAF_imiy, 0.054723;
 EAF_size, 0.033586;
+EAFEAA_imcgy, 0.000397;
+EAFEAA_imcy, 0.003389;
+EAFEAA_imigy, 0.000145;
+EAFEAA_imiy, 0.001305;
+EAFEAB_imcgy, 0.000233;
+EAFEAB_imcy, 0.001193;
+EAFEAB_imigy, 0.000073;
+EAFEAB_imiy, 0.000660;
+EAFEAC_imcgy, 0.001314;
+EAFEAC_imcy, 0.007130;
+EAFEAC_imigy, 0.000318;
+EAFEAC_imiy, 0.002865;
+EAFEAE_imcgy, 0.000096;
+EAFEAE_imcy, 0.000485;
+EAFEAE_imigy, 0.000036;
+EAFEAE_imiy, 0.000327;
+EAFEAG_imcgy, 0.000045;
+EAFEAG_imcy, 0.000515;
+EAFEAG_imigy, 0.000007;
+EAFEAG_imiy, 0.000059;
+EAFEAH_imcgy, 0.000971;
+EAFEAH_imcy, 0.002669;
+EAFEAH_imigy, 0.000179;
+EAFEAH_imiy, 0.001607;
+EAFEAI_imcgy, 0.001283;
+EAFEAI_imcy, 0.010290;
+EAFEAI_imigy, 0.000461;
+EAFEAI_imiy, 0.004145;
+EAFEAJ_imcgy, 0.000828;
+EAFEAJ_imcy, 0.005533;
+EAFEAJ_imigy, 0.000205;
+EAFEAJ_imiy, 0.001842;
+EAFEAK_imcgy, 0.000190;
+EAFEAK_imcy, 0.002132;
+EAFEAK_imigy, 0.000065;
+EAFEAK_imiy, 0.000588;
+EAFEAL_imcgy, 0.002820;
+EAFEAL_imcy, 0.017157;
+EAFEAL_imigy, 0.001043;
+EAFEAL_imiy, 0.009391;
+EAFRW_imcgy, 0.010389;
+EAFRW_imcy, 0.070141;
+EAFRW_imigy, 0.002648;
+EAFRW_imiy, 0.023830;
+EAFUS_imcgy, 0.002478;
+EAFUS_imcy, 0.008771;
+EAFUS_imigy, 0.000499;
+EAFUS_imiy, 0.004491;
+EAG_imcgy, 0.024424;
+EAG_imcy, 0.173602;
+EAG_imigy, 0.004122;
+EAG_imiy, 0.037100;
 EAG_size, 0.002762;
+EAGEAA_imcgy, 0.000716;
+EAGEAA_imcy, 0.004224;
+EAGEAA_imigy, 0.000097;
+EAGEAA_imiy, 0.000872;
+EAGEAB_imcgy, 0.000256;
+EAGEAB_imcy, 0.001944;
+EAGEAB_imigy, 0.000070;
+EAGEAB_imiy, 0.000627;
+EAGEAC_imcgy, 0.001005;
+EAGEAC_imcy, 0.003635;
+EAGEAC_imigy, 0.000081;
+EAGEAC_imiy, 0.000727;
+EAGEAD_imcgy, 0.000778;
+EAGEAD_imcy, 0.006296;
+EAGEAD_imigy, 0.000106;
+EAGEAD_imiy, 0.000951;
+EAGEAF_imcgy, 0.001540;
+EAGEAF_imcy, 0.008187;
+EAGEAF_imigy, 0.000251;
+EAGEAF_imiy, 0.002261;
+EAGEAH_imcgy, 0.000894;
+EAGEAH_imcy, 0.001910;
+EAGEAH_imigy, 0.000041;
+EAGEAH_imiy, 0.000373;
+EAGEAI_imcgy, 0.001800;
+EAGEAI_imcy, 0.013704;
+EAGEAI_imigy, 0.000532;
+EAGEAI_imiy, 0.004787;
+EAGEAJ_imcgy, 0.000704;
+EAGEAJ_imcy, 0.006362;
+EAGEAJ_imigy, 0.000145;
+EAGEAJ_imiy, 0.001301;
+EAGEAK_imcgy, 0.000070;
+EAGEAK_imcy, 0.000640;
+EAGEAK_imigy, 0.000011;
+EAGEAK_imiy, 0.000101;
+EAGEAL_imcgy, 0.003077;
+EAGEAL_imcy, 0.016919;
+EAGEAL_imigy, 0.000509;
+EAGEAL_imiy, 0.004584;
+EAGRW_imcgy, 0.012486;
+EAGRW_imcy, 0.101213;
+EAGRW_imigy, 0.002058;
+EAGRW_imiy, 0.018523;
+EAGUS_imcgy, 0.001041;
+EAGUS_imcy, 0.008088;
+EAGUS_imigy, 0.000206;
+EAGUS_imiy, 0.001856;
+EAH_imcgy, 0.030537;
+EAH_imcy, 0.158256;
+EAH_imigy, 0.021999;
+EAH_imiy, 0.197994;
 EAH_size, 0.003952;
+EAHEAA_imcgy, 0.001013;
+EAHEAA_imcy, 0.006854;
+EAHEAA_imigy, 0.000390;
+EAHEAA_imiy, 0.003513;
+EAHEAB_imcgy, 0.000141;
+EAHEAB_imcy, 0.000783;
+EAHEAB_imigy, 0.000092;
+EAHEAB_imiy, 0.000827;
+EAHEAC_imcgy, 0.001008;
+EAHEAC_imcy, 0.003471;
+EAHEAC_imigy, 0.000596;
+EAHEAC_imiy, 0.005366;
+EAHEAD_imcgy, 0.000995;
+EAHEAD_imcy, 0.006229;
+EAHEAD_imigy, 0.000320;
+EAHEAD_imiy, 0.002882;
+EAHEAE_imcgy, 0.000168;
+EAHEAE_imcy, 0.000697;
+EAHEAE_imigy, 0.000154;
+EAHEAE_imiy, 0.001386;
+EAHEAG_imcgy, 0.000034;
+EAHEAG_imcy, 0.000273;
+EAHEAG_imigy, 0.000015;
+EAHEAG_imiy, 0.000135;
+EAHEAI_imcgy, 0.001102;
+EAHEAI_imcy, 0.005169;
+EAHEAI_imigy, 0.000613;
+EAHEAI_imiy, 0.005517;
+EAHEAJ_imcgy, 0.001993;
+EAHEAJ_imcy, 0.007943;
+EAHEAJ_imigy, 0.000880;
+EAHEAJ_imiy, 0.007919;
+EAHEAK_imcgy, 0.000165;
+EAHEAK_imcy, 0.001651;
+EAHEAK_imigy, 0.000056;
+EAHEAK_imiy, 0.000508;
+EAHEAL_imcgy, 0.002289;
+EAHEAL_imcy, 0.010131;
+EAHEAL_imigy, 0.001769;
+EAHEAL_imiy, 0.015923;
+EAHRW_imcgy, 0.011989;
+EAHRW_imcy, 0.070992;
+EAHRW_imigy, 0.007517;
+EAHRW_imiy, 0.067657;
+EAHUS_imcgy, 0.008020;
+EAHUS_imcy, 0.034137;
+EAHUS_imigy, 0.006928;
+EAHUS_imiy, 0.062349;
+EAI_imcgy, 0.017032;
+EAI_imcy, 0.137889;
+EAI_imigy, 0.004703;
+EAI_imiy, 0.042323;
 EAI_size, 0.025278;
+EAIEAA_imcgy, 0.000869;
+EAIEAA_imcy, 0.006333;
+EAIEAA_imigy, 0.000192;
+EAIEAA_imiy, 0.001730;
+EAIEAB_imcgy, 0.000364;
+EAIEAB_imcy, 0.003180;
+EAIEAB_imigy, 0.000129;
+EAIEAB_imiy, 0.001164;
+EAIEAC_imcgy, 0.000751;
+EAIEAC_imcy, 0.003529;
+EAIEAC_imigy, 0.000115;
+EAIEAC_imiy, 0.001039;
+EAIEAD_imcgy, 0.000634;
+EAIEAD_imcy, 0.007751;
+EAIEAD_imigy, 0.000201;
+EAIEAD_imiy, 0.001811;
+EAIEAE_imcgy, 0.000051;
+EAIEAE_imcy, 0.000396;
+EAIEAE_imigy, 0.000026;
+EAIEAE_imiy, 0.000230;
+EAIEAF_imcgy, 0.001448;
+EAIEAF_imcy, 0.012647;
+EAIEAF_imigy, 0.000409;
+EAIEAF_imiy, 0.003682;
+EAIEAH_imcgy, 0.000950;
+EAIEAH_imcy, 0.003846;
+EAIEAH_imigy, 0.000184;
+EAIEAH_imiy, 0.001659;
+EAIEAJ_imcgy, 0.000547;
+EAIEAJ_imcy, 0.004801;
+EAIEAJ_imigy, 0.000184;
+EAIEAJ_imiy, 0.001659;
+EAIEAK_imcgy, 0.000068;
+EAIEAK_imcy, 0.000791;
+EAIEAK_imigy, 0.000020;
+EAIEAK_imiy, 0.000179;
+EAIEAL_imcgy, 0.001812;
+EAIEAL_imcy, 0.016628;
+EAIEAL_imigy, 0.000849;
+EAIEAL_imiy, 0.007641;
+EAIRW_imcgy, 0.008338;
+EAIRW_imcy, 0.070579;
+EAIRW_imigy, 0.002173;
+EAIRW_imiy, 0.019559;
+EAIUS_imcgy, 0.001127;
+EAIUS_imcy, 0.006095;
+EAIUS_imigy, 0.000199;
+EAIUS_imiy, 0.001793;
+EAJ_imcgy, 0.036043;
+EAJ_imcy, 0.166945;
+EAJ_imigy, 0.008046;
+EAJ_imiy, 0.072411;
 EAJ_size, 0.010136;
+EAJEAA_imcgy, 0.000620;
+EAJEAA_imcy, 0.002828;
+EAJEAA_imigy, 0.000131;
+EAJEAA_imiy, 0.001177;
+EAJEAB_imcgy, 0.000465;
+EAJEAB_imcy, 0.002355;
+EAJEAB_imigy, 0.000099;
+EAJEAB_imiy, 0.000889;
+EAJEAC_imcgy, 0.002953;
+EAJEAC_imcy, 0.013018;
+EAJEAC_imigy, 0.000562;
+EAJEAC_imiy, 0.005062;
+EAJEAD_imcgy, 0.000757;
+EAJEAD_imcy, 0.004895;
+EAJEAD_imigy, 0.000182;
+EAJEAD_imiy, 0.001639;
+EAJEAE_imcgy, 0.000251;
+EAJEAE_imcy, 0.000853;
+EAJEAE_imigy, 0.000071;
+EAJEAE_imiy, 0.000639;
+EAJEAF_imcgy, 0.001840;
+EAJEAF_imcy, 0.009344;
+EAJEAF_imigy, 0.000377;
+EAJEAF_imiy, 0.003397;
+EAJEAG_imcgy, 0.000055;
+EAJEAG_imcy, 0.000609;
+EAJEAG_imigy, 0.000009;
+EAJEAG_imiy, 0.000078;
+EAJEAI_imcgy, 0.000702;
+EAJEAI_imcy, 0.004032;
+EAJEAI_imigy, 0.000195;
+EAJEAI_imiy, 0.001758;
+EAJEAK_imcgy, 0.000153;
+EAJEAK_imcy, 0.001029;
+EAJEAK_imigy, 0.000026;
+EAJEAK_imiy, 0.000235;
+EAJEAL_imcgy, 0.004303;
+EAJEAL_imcy, 0.022118;
+EAJEAL_imigy, 0.001350;
+EAJEAL_imiy, 0.012151;
+EAJRW_imcgy, 0.017787;
+EAJRW_imcy, 0.084880;
+EAJRW_imigy, 0.003766;
+EAJRW_imiy, 0.033893;
+EAJUS_imcgy, 0.004908;
+EAJUS_imcy, 0.016349;
+EAJUS_imigy, 0.000943;
+EAJUS_imiy, 0.008483;
+EAK_imcgy, 0.021204;
+EAK_imcy, 0.189118;
+EAK_imigy, 0.006276;
+EAK_imiy, 0.056480;
 EAK_size, 0.002834;
+EAKEAA_imcgy, 0.000250;
+EAKEAA_imcy, 0.001857;
+EAKEAA_imigy, 0.000060;
+EAKEAA_imiy, 0.000538;
+EAKEAB_imcgy, 0.000123;
+EAKEAB_imcy, 0.000858;
+EAKEAB_imigy, 0.000053;
+EAKEAB_imiy, 0.000478;
+EAKEAC_imcgy, 0.000880;
+EAKEAC_imcy, 0.003855;
+EAKEAC_imigy, 0.000127;
+EAKEAC_imiy, 0.001139;
+EAKEAD_imcgy, 0.005363;
+EAKEAD_imcy, 0.059665;
+EAKEAD_imigy, 0.001865;
+EAKEAD_imiy, 0.016781;
+EAKEAE_imcgy, 0.000043;
+EAKEAE_imcy, 0.000332;
+EAKEAE_imigy, 0.000025;
+EAKEAE_imiy, 0.000229;
+EAKEAF_imcgy, 0.001715;
+EAKEAF_imcy, 0.015930;
+EAKEAF_imigy, 0.000557;
+EAKEAF_imiy, 0.005011;
+EAKEAG_imcgy, 0.000041;
+EAKEAG_imcy, 0.000399;
+EAKEAG_imigy, 0.000007;
+EAKEAG_imiy, 0.000064;
+EAKEAH_imcgy, 0.000973;
+EAKEAH_imcy, 0.003076;
+EAKEAH_imigy, 0.000134;
+EAKEAH_imiy, 0.001203;
+EAKEAJ_imcgy, 0.000794;
+EAKEAJ_imcy, 0.006711;
+EAKEAJ_imigy, 0.000242;
+EAKEAJ_imiy, 0.002181;
+EAKEAL_imcgy, 0.002099;
+EAKEAL_imcy, 0.019215;
+EAKEAL_imigy, 0.000989;
+EAKEAL_imiy, 0.008904;
+EAKRW_imcgy, 0.007383;
+EAKRW_imcy, 0.063706;
+EAKRW_imigy, 0.001601;
+EAKRW_imiy, 0.014412;
+EAKUS_imcgy, 0.000621;
+EAKUS_imcy, 0.005142;
+EAKUS_imigy, 0.000177;
+EAKUS_imiy, 0.001596;
+EAL_imcgy, 0.021552;
+EAL_imcy, 0.150908;
+EAL_imigy, 0.006739;
+EAL_imiy, 0.060653;
 EAL_size, 0.044367;
+EALEAA_imcgy, 0.000648;
+EALEAA_imcy, 0.005361;
+EALEAA_imigy, 0.000239;
+EALEAA_imiy, 0.002155;
+EALEAB_imcgy, 0.000810;
+EALEAB_imcy, 0.006551;
+EALEAB_imigy, 0.000347;
+EALEAB_imiy, 0.003124;
+EALEAC_imcgy, 0.000625;
+EALEAC_imcy, 0.004284;
+EALEAC_imigy, 0.000176;
+EALEAC_imiy, 0.001587;
+EALEAD_imcgy, 0.000559;
+EALEAD_imcy, 0.005388;
+EALEAD_imigy, 0.000199;
+EALEAD_imiy, 0.001790;
+EALEAE_imcgy, 0.000139;
+EALEAE_imcy, 0.000848;
+EALEAE_imigy, 0.000055;
+EALEAE_imiy, 0.000499;
+EALEAF_imcgy, 0.001288;
+EALEAF_imcy, 0.008910;
+EALEAF_imigy, 0.000482;
+EALEAF_imiy, 0.004341;
+EALEAG_imcgy, 0.000059;
+EALEAG_imcy, 0.000947;
+EALEAG_imigy, 0.000011;
+EALEAG_imiy, 0.000096;
+EALEAH_imcgy, 0.001213;
+EALEAH_imcy, 0.003282;
+EALEAH_imigy, 0.000211;
+EALEAH_imiy, 0.001899;
+EALEAI_imcgy, 0.000771;
+EALEAI_imcy, 0.007287;
+EALEAI_imigy, 0.000345;
+EALEAI_imiy, 0.003107;
+EALEAK_imcgy, 0.000092;
+EALEAK_imcy, 0.000977;
+EALEAK_imigy, 0.000037;
+EALEAK_imiy, 0.000335;
+EALRW_imcgy, 0.011801;
+EALRW_imcy, 0.086443;
+EALRW_imigy, 0.003838;
+EALRW_imiy, 0.034538;
+EALUS_imcgy, 0.002320;
+EALUS_imcy, 0.009876;
+EALUS_imigy, 0.000517;
+EALUS_imiy, 0.004656;
+RW_imcgy, 0.006681;
+RW_imcy, 0.048344;
+RW_imigy, 0.002839;
+RW_imiy, 0.025550;
 RW_size, 0.601924;
+RWEAA_imcgy, 0.000241;
+RWEAA_imcy, 0.002356;
+RWEAA_imigy, 0.000085;
+RWEAA_imiy, 0.000766;
+RWEAB_imcgy, 0.000131;
+RWEAB_imcy, 0.000925;
+RWEAB_imigy, 0.000069;
+RWEAB_imiy, 0.000623;
+RWEAC_imcgy, 0.000238;
+RWEAC_imcy, 0.001300;
+RWEAC_imigy, 0.000067;
+RWEAC_imiy, 0.000601;
+RWEAD_imcgy, 0.000284;
+RWEAD_imcy, 0.002502;
+RWEAD_imigy, 0.000111;
+RWEAD_imiy, 0.001002;
+RWEAE_imcgy, 0.000095;
+RWEAE_imcy, 0.000539;
+RWEAE_imigy, 0.000045;
+RWEAE_imiy, 0.000404;
+RWEAF_imcgy, 0.000633;
+RWEAF_imcy, 0.004259;
+RWEAF_imigy, 0.000233;
+RWEAF_imiy, 0.002097;
+RWEAG_imcgy, 0.000051;
+RWEAG_imcy, 0.000543;
+RWEAG_imigy, 0.000016;
+RWEAG_imiy, 0.000143;
+RWEAH_imcgy, 0.000445;
+RWEAH_imcy, 0.002040;
+RWEAH_imigy, 0.000092;
+RWEAH_imiy, 0.000832;
+RWEAI_imcgy, 0.000402;
+RWEAI_imcy, 0.003226;
+RWEAI_imigy, 0.000230;
+RWEAI_imiy, 0.002074;
+RWEAJ_imcgy, 0.000362;
+RWEAJ_imcy, 0.002307;
+RWEAJ_imigy, 0.000118;
+RWEAJ_imiy, 0.001062;
+RWEAL_imcgy, 0.001150;
+RWEAL_imcy, 0.007682;
+RWEAL_imigy, 0.000670;
+RWEAL_imiy, 0.006027;
+RWUS_imcgy, 0.002600;
+RWUS_imcy, 0.020207;
+RWUS_imigy, 0.001084;
+RWUS_imiy, 0.009754;
+US_imcgy, 0.007904;
+US_imcy, 0.079703;
+US_imigy, 0.003589;
+US_imiy, 0.032297;
 US_size, 0.238805;
+USEAA_imcgy, 0.000035;
+USEAA_imcy, 0.000400;
+USEAA_imigy, 0.000015;
+USEAA_imiy, 0.000137;
+USEAB_imcgy, 0.000029;
+USEAB_imcy, 0.000335;
+USEAB_imigy, 0.000021;
+USEAB_imiy, 0.000191;
+USEAC_imcgy, 0.000080;
+USEAC_imcy, 0.000770;
+USEAC_imigy, 0.000024;
+USEAC_imiy, 0.000219;
+USEAD_imcgy, 0.000082;
+USEAD_imcy, 0.000836;
+USEAD_imigy, 0.000027;
+USEAD_imiy, 0.000246;
+USEAE_imcgy, 0.000020;
+USEAE_imcy, 0.000161;
+USEAE_imigy, 0.000008;
+USEAE_imiy, 0.000076;
+USEAF_imcgy, 0.000178;
+USEAF_imcy, 0.001776;
+USEAF_imigy, 0.000070;
+USEAF_imiy, 0.000628;
+USEAG_imcgy, 0.000018;
+USEAG_imcy, 0.000303;
+USEAG_imigy, 0.000003;
+USEAG_imiy, 0.000023;
+USEAH_imcgy, 0.000186;
+USEAH_imcy, 0.002527;
+USEAH_imigy, 0.000038;
+USEAH_imiy, 0.000346;
+USEAI_imcgy, 0.000114;
+USEAI_imcy, 0.001778;
+USEAI_imigy, 0.000076;
+USEAI_imiy, 0.000684;
+USEAJ_imcgy, 0.000074;
+USEAJ_imcy, 0.000705;
+USEAJ_imigy, 0.000030;
+USEAJ_imiy, 0.000272;
+USEAK_imcgy, 0.000017;
+USEAK_imcy, 0.000212;
+USEAK_imigy, 0.000004;
+USEAK_imiy, 0.000039;
+USRW_imcgy, 0.006740;
+USRW_imcy, 0.066153;
+USRW_imigy, 0.003041;
+USRW_imiy, 0.027368;
+EAA_tby, 0.302994086528135;
+EAB_tby, 0.089743428110048;
+EAC_tby, 0.0976184492184515;
+EAD_tby, 0.0500832141905879;
+EAE_tby, 0.0272426923728765;
+EAF_tby, -0.00278120402640883;
+EAG_tby, 0.0148054362660648;
+EAH_tby, 0.40;
+EAI_tby, 0.0361335570120283;
+EAJ_tby, 0.142972908156596;
+EAK_tby, 0.030459150576472;
+EAL_tby, 0.0933624283366024;
+RW_tby, -0.00987669967406614;
+EAA_nuc, 0.95;
+EAB_nuc, 0.65;
+EAC_nuc, 0.65;
+EAD_nuc, 0.65;
+EAE_nuc, 0.65;
+EAG_nuc, 0.65;
+EAH_nuc, 0.999;
+EAH_nui, 0.999;
+EAH_nucg, 0.99;
+EAH_nuig, 0.99;
+EAI_nuc, 0.65;
+EAJ_nuc, 0.65;
+EAK_nuc, 0.65;
+EAL_nuc, 0.65;
+US_nuc, 0.45;
 end;
 steady(homotopy_steps = 15);
 save_params_and_steady_state('eagle_steady_stage2b.txt');
