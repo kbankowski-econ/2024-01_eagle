@@ -1,883 +1,254 @@
-Starting Dynare (version 6.1).
-Calling Dynare with arguments: -ID:\BIG12-Calibrated-KB/eagleParsingTemp/submodules savemacro
-Starting preprocessing of the model file ... 
-Reading eagle_steady_stage2a.txt. 
-WARNING: Unknown symbol AUX_ENDO_LAG_426_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_426_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_426_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_410_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_410_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_410_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_393_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_492_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_492_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_492_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1043_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1043_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1043_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1027_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1027_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1027_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1010_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1109_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1109_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1109_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1660_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1660_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1660_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1644_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1644_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1644_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1627_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1726_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1726_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1726_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2277_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2277_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2277_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2261_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2261_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2261_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2244_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2343_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2343_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2343_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2894_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2894_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2894_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2878_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2878_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2878_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2861_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2960_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2960_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2960_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_3511_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_3511_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_3511_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_3495_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_3495_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_3495_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_3478_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_3577_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_3577_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_3577_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4128_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4128_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4128_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4112_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4112_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4112_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4095_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4194_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4194_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4194_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4745_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4745_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4745_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4729_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4729_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4729_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4712_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4811_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4811_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4811_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_5362_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_5362_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_5362_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_5346_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_5346_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_5346_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_5329_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_5428_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_5428_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_5428_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_5979_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_5979_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_5979_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_5963_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_5963_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_5963_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_5946_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_6045_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_6045_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_6045_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_6596_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_6596_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_6596_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_6580_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_6580_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_6580_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_6563_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_6662_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_6662_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_6662_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_7213_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_7213_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_7213_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_7197_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_7197_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_7197_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_7180_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_7279_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_7279_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_7279_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_7833_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_7833_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_7833_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_7817_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_7817_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_7817_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_7800_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_7899_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_7899_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_7899_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_8452_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_8452_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_8452_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_8436_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_8436_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_8436_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_8419_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_8515_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_8515_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_8515_3 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_274_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_447_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_891_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1064_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1508_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_1681_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2125_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2298_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2742_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_2915_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_3359_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_3532_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_3976_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4149_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4593_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_4766_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_5210_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_5383_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_5827_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_6000_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_6617_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_3_1 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_3_2 in eagle_steady_stage2a.txt 
-WARNING: Unknown symbol AUX_ENDO_LAG_3_3 in eagle_steady_stage2a.txt 
-Substitution of endo lags >= 2: added 164 auxiliary variables and equations. 
-Found 7381 equation(s). 
-Evaluating expressions... 
-Computing static model derivatives (order 1). 
-Normalizing the static model... 
-Finding the optimal block decomposition of the static model... 
-489 block(s) found: 
-  488 recursive block(s) and 1 simultaneous block(s). 
-  the largest simultaneous block has 3358 equation(s) 
-                                 and 3358 feedback variable(s). 
-Computing dynamic model derivatives (order 2). 
-Normalizing the dynamic model... 
-Finding the optimal block decomposition of the dynamic model... 
-326 block(s) found: 
-  325 recursive block(s) and 1 simultaneous block(s). 
-  the largest simultaneous block has 3404 equation(s) 
-                                 and 2903 feedback variable(s). 
-Preprocessing completed. 
-Preprocessing time: 0h04m49s.
-Trade matrix
 HOMOTOPY mode 1: computing step 0/15...
 HOMOTOPY mode 1: computing step 1/15...
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 1
-      Inf-norm error = 6.547e-01
-      2-norm error   = 1.298e+00
-      1-norm error   = 6.561e+00
+      Inf-norm error = 7.258e-03
+      2-norm error   = 8.324e-03
+      1-norm error   = 1.196e-02
 ------------------------------------
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 1.480e+01
-      2-norm error   = 1.513e+01
-      1-norm error   = 2.454e+01
+      Inf-norm error = 4.877e-03
+      2-norm error   = 6.036e-03
+      1-norm error   = 9.902e-03
 ------------------------------------
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 3
-      Inf-norm error = 2.365e+01
-      2-norm error   = 2.416e+01
-      1-norm error   = 3.524e+01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 4
-      Inf-norm error = 2.864e+01
-      2-norm error   = 2.927e+01
-      1-norm error   = 4.119e+01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 5
-      Inf-norm error = 3.111e+01
-      2-norm error   = 3.182e+01
-      1-norm error   = 4.399e+01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 6
-      Inf-norm error = 3.193e+01
-      2-norm error   = 3.268e+01
-      1-norm error   = 4.474e+01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 7
-      Inf-norm error = 3.168e+01
-      2-norm error   = 3.243e+01
-      1-norm error   = 4.415e+01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 8
-      Inf-norm error = 3.157e+01
-      2-norm error   = 3.237e+01
-      1-norm error   = 4.370e+01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 9
-      Inf-norm error = 3.088e+01
-      2-norm error   = 3.172e+01
-      1-norm error   = 4.247e+01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 10
-      Inf-norm error = 2.994e+01
-      2-norm error   = 3.097e+01
-      1-norm error   = 4.098e+01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 11
-      Inf-norm error = 8.555e+00
-      2-norm error   = 8.745e+00
-      1-norm error   = 1.115e+01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 12
-      Inf-norm error = 6.368e-01
-      2-norm error   = 9.024e-01
-      1-norm error   = 1.423e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 13
-      Inf-norm error = 2.217e-02
-      2-norm error   = 2.652e-02
-      1-norm error   = 3.942e-02
+      Inf-norm error = 4.158e-05
+      2-norm error   = 6.707e-05
+      1-norm error   = 1.520e-04
 ------------------------------------
 HOMOTOPY mode 1: computing step 2/15...
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 1
-      Inf-norm error = 4.617e-01
-      2-norm error   = 9.676e-01
-      1-norm error   = 5.456e+00
+      Inf-norm error = 7.253e-03
+      2-norm error   = 7.842e-03
+      1-norm error   = 1.084e-02
 ------------------------------------
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 5.088e-01
-      2-norm error   = 1.036e+00
-      1-norm error   = 5.763e+00
+      Inf-norm error = 3.218e-03
+      2-norm error   = 4.281e-03
+      1-norm error   = 7.317e-03
 ------------------------------------
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 3
-      Inf-norm error = 8.359e-01
-      2-norm error   = 1.202e+00
-      1-norm error   = 5.833e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 4
-      Inf-norm error = 1.037e+00
-      2-norm error   = 1.329e+00
-      1-norm error   = 5.746e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 5
-      Inf-norm error = 1.150e+00
-      2-norm error   = 1.400e+00
-      1-norm error   = 5.558e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 6
-      Inf-norm error = 1.203e+00
-      2-norm error   = 1.425e+00
-      1-norm error   = 5.307e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 7
-      Inf-norm error = 1.213e+00
-      2-norm error   = 1.413e+00
-      1-norm error   = 5.021e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 8
-      Inf-norm error = 1.195e+00
-      2-norm error   = 1.377e+00
-      1-norm error   = 4.717e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 9
-      Inf-norm error = 1.189e+00
-      2-norm error   = 1.349e+00
-      1-norm error   = 4.330e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 10
-      Inf-norm error = 1.181e+00
-      2-norm error   = 1.318e+00
-      1-norm error   = 3.828e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 11
-      Inf-norm error = 1.111e+00
-      2-norm error   = 1.223e+00
-      1-norm error   = 3.131e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 12
-      Inf-norm error = 9.322e-01
-      2-norm error   = 1.017e+00
-      1-norm error   = 1.935e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 13
-      Inf-norm error = 8.979e-02
-      2-norm error   = 9.516e-02
-      1-norm error   = 1.507e-01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 14
-      Inf-norm error = 1.715e-04
-      2-norm error   = 2.530e-04
-      1-norm error   = 4.777e-04
+      Inf-norm error = 1.222e-05
+      2-norm error   = 1.965e-05
+      1-norm error   = 4.456e-05
 ------------------------------------
 HOMOTOPY mode 1: computing step 3/15...
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 1
-      Inf-norm error = 3.524e-01
-      2-norm error   = 8.141e-01
-      1-norm error   = 4.951e+00
+      Inf-norm error = 7.248e-03
+      2-norm error   = 7.664e-03
+      1-norm error   = 1.033e-02
 ------------------------------------
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 2.828e-01
-      2-norm error   = 7.148e-01
-      1-norm error   = 4.519e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 3
-      Inf-norm error = 4.540e-01
-      2-norm error   = 7.075e-01
-      1-norm error   = 3.806e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 4
-      Inf-norm error = 4.960e-01
-      2-norm error   = 6.310e-01
-      1-norm error   = 2.632e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 5
-      Inf-norm error = 2.706e-01
-      2-norm error   = 3.081e-01
-      1-norm error   = 5.872e-01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 6
-      Inf-norm error = 8.377e-03
-      2-norm error   = 8.704e-03
-      1-norm error   = 1.296e-02
+      Inf-norm error = 3.118e-03
+      2-norm error   = 3.728e-03
+      1-norm error   = 6.313e-03
 ------------------------------------
 HOMOTOPY mode 1: computing step 4/15...
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 1
-      Inf-norm error = 2.821e-01
-      2-norm error   = 7.426e-01
-      1-norm error   = 4.724e+00
+      Inf-norm error = 7.243e-03
+      2-norm error   = 7.575e-03
+      1-norm error   = 1.005e-02
 ------------------------------------
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 2.429e-01
-      2-norm error   = 5.226e-01
-      1-norm error   = 3.399e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 3
-      Inf-norm error = 1.777e-01
-      2-norm error   = 2.311e-01
-      1-norm error   = 7.483e-01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 4
-      Inf-norm error = 2.902e-02
-      2-norm error   = 2.948e-02
-      1-norm error   = 3.846e-02
+      Inf-norm error = 3.038e-03
+      2-norm error   = 3.464e-03
+      1-norm error   = 5.759e-03
 ------------------------------------
 HOMOTOPY mode 1: computing step 5/15...
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 1
-      Inf-norm error = 2.332e-01
-      2-norm error   = 7.184e-01
-      1-norm error   = 4.664e+00
+      Inf-norm error = 7.238e-03
+      2-norm error   = 7.520e-03
+      1-norm error   = 9.850e-03
 ------------------------------------
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 5.630e-01
-      2-norm error   = 6.083e-01
-      1-norm error   = 1.756e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 3
-      Inf-norm error = 1.224e-01
-      2-norm error   = 1.241e-01
-      1-norm error   = 1.561e-01
+      Inf-norm error = 2.968e-03
+      2-norm error   = 3.302e-03
+      1-norm error   = 5.395e-03
 ------------------------------------
 HOMOTOPY mode 1: computing step 6/15...
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 1
-      Inf-norm error = 1.970e-01
-      2-norm error   = 7.270e-01
-      1-norm error   = 4.755e+00
+      Inf-norm error = 7.233e-03
+      2-norm error   = 7.483e-03
+      1-norm error   = 9.710e-03
 ------------------------------------
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 1.851e-01
-      2-norm error   = 2.469e-01
-      1-norm error   = 1.049e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 3
-      Inf-norm error = 6.849e-02
-      2-norm error   = 6.944e-02
-      1-norm error   = 8.646e-02
+      Inf-norm error = 2.903e-03
+      2-norm error   = 3.184e-03
+      1-norm error   = 5.129e-03
 ------------------------------------
 HOMOTOPY mode 1: computing step 7/15...
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 1
-      Inf-norm error = 1.693e-01
-      2-norm error   = 7.626e-01
-      1-norm error   = 4.951e+00
+      Inf-norm error = 7.228e-03
+      2-norm error   = 7.455e-03
+      1-norm error   = 9.606e-03
 ------------------------------------
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 7.651e-02
-      2-norm error   = 1.759e-01
-      1-norm error   = 9.098e-01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 3
-      Inf-norm error = 4.681e-02
-      2-norm error   = 4.747e-02
-      1-norm error   = 5.910e-02
+      Inf-norm error = 2.841e-03
+      2-norm error   = 3.090e-03
+      1-norm error   = 4.919e-03
 ------------------------------------
 HOMOTOPY mode 1: computing step 8/15...
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 1
-      Inf-norm error = 1.905e-01
-      2-norm error   = 8.249e-01
-      1-norm error   = 5.258e+00
+      Inf-norm error = 7.223e-03
+      2-norm error   = 7.433e-03
+      1-norm error   = 9.525e-03
 ------------------------------------
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 2.780e-01
-      2-norm error   = 3.604e-01
-      1-norm error   = 1.261e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 3
-      Inf-norm error = 3.888e-02
-      2-norm error   = 3.944e-02
-      1-norm error   = 4.976e-02
+      Inf-norm error = 2.782e-03
+      2-norm error   = 3.008e-03
+      1-norm error   = 4.745e-03
 ------------------------------------
 HOMOTOPY mode 1: computing step 9/15...
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 1
-      Inf-norm error = 2.220e-01
-      2-norm error   = 9.183e-01
-      1-norm error   = 5.702e+00
+      Inf-norm error = 7.218e-03
+      2-norm error   = 7.416e-03
+      1-norm error   = 9.460e-03
 ------------------------------------
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 2.907e-01
-      2-norm error   = 5.045e-01
-      1-norm error   = 2.913e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 3
-      Inf-norm error = 1.639e-01
-      2-norm error   = 2.053e-01
-      1-norm error   = 4.558e-01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 4
-      Inf-norm error = 3.678e-04
-      2-norm error   = 3.727e-04
-      1-norm error   = 4.872e-04
+      Inf-norm error = 2.725e-03
+      2-norm error   = 2.935e-03
+      1-norm error   = 4.596e-03
 ------------------------------------
 HOMOTOPY mode 1: computing step 10/15...
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 1
-      Inf-norm error = 2.640e-01
-      2-norm error   = 1.053e+00
-      1-norm error   = 6.333e+00
+      Inf-norm error = 7.213e-03
+      2-norm error   = 7.401e-03
+      1-norm error   = 9.406e-03
 ------------------------------------
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 6.528e-01
-      2-norm error   = 1.028e+00
-      1-norm error   = 4.163e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 3
-      Inf-norm error = 3.555e-01
-      2-norm error   = 4.413e-01
-      1-norm error   = 8.747e-01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 4
-      Inf-norm error = 1.673e-04
-      2-norm error   = 1.706e-04
-      1-norm error   = 2.738e-04
+      Inf-norm error = 2.670e-03
+      2-norm error   = 2.868e-03
+      1-norm error   = 4.464e-03
 ------------------------------------
 HOMOTOPY mode 1: computing step 11/15...
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 1
-      Inf-norm error = 3.221e-01
-      2-norm error   = 1.251e+00
-      1-norm error   = 7.246e+00
+      Inf-norm error = 7.208e-03
+      2-norm error   = 7.388e-03
+      1-norm error   = 9.361e-03
 ------------------------------------
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 6.855e-01
-      2-norm error   = 1.162e+00
-      1-norm error   = 5.844e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 3
-      Inf-norm error = 6.673e-01
-      2-norm error   = 9.734e-01
-      1-norm error   = 3.968e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 4
-      Inf-norm error = 4.953e-01
-      2-norm error   = 6.556e-01
-      1-norm error   = 1.255e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 5
-      Inf-norm error = 2.845e-04
-      2-norm error   = 3.026e-04
-      1-norm error   = 4.636e-04
+      Inf-norm error = 2.616e-03
+      2-norm error   = 2.805e-03
+      1-norm error   = 4.345e-03
 ------------------------------------
 HOMOTOPY mode 1: computing step 12/15...
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 1
-      Inf-norm error = 4.059e-01
-      2-norm error   = 1.554e+00
-      1-norm error   = 8.637e+00
+      Inf-norm error = 7.202e-03
+      2-norm error   = 7.377e-03
+      1-norm error   = 9.322e-03
 ------------------------------------
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 6.337e-01
-      2-norm error   = 1.382e+00
-      1-norm error   = 7.667e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 3
-      Inf-norm error = 8.077e-01
-      2-norm error   = 1.326e+00
-      1-norm error   = 6.303e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 4
-      Inf-norm error = 8.813e-01
-      2-norm error   = 1.265e+00
-      1-norm error   = 4.603e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 5
-      Inf-norm error = 7.278e-01
-      2-norm error   = 1.015e+00
-      1-norm error   = 1.894e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 6
-      Inf-norm error = 2.061e-04
-      2-norm error   = 2.504e-04
-      1-norm error   = 4.169e-04
+      Inf-norm error = 2.564e-03
+      2-norm error   = 2.745e-03
+      1-norm error   = 4.236e-03
 ------------------------------------
 HOMOTOPY mode 1: computing step 13/15...
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 1
-      Inf-norm error = 5.349e-01
-      2-norm error   = 2.067e+00
-      1-norm error   = 1.096e+01
+      Inf-norm error = 7.197e-03
+      2-norm error   = 7.366e-03
+      1-norm error   = 9.288e-03
 ------------------------------------
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 5.476e-01
-      2-norm error   = 1.817e+00
-      1-norm error   = 1.018e+01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 3
-      Inf-norm error = 8.176e-01
-      2-norm error   = 1.739e+00
-      1-norm error   = 9.133e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 4
-      Inf-norm error = 9.106e-01
-      2-norm error   = 1.649e+00
-      1-norm error   = 7.990e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 5
-      Inf-norm error = 1.019e+00
-      2-norm error   = 1.614e+00
-      1-norm error   = 6.626e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 6
-      Inf-norm error = 1.002e+00
-      2-norm error   = 1.495e+00
-      1-norm error   = 4.863e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 7
-      Inf-norm error = 7.572e-01
-      2-norm error   = 1.068e+00
-      1-norm error   = 1.961e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 8
-      Inf-norm error = 7.811e-05
-      2-norm error   = 9.242e-05
-      1-norm error   = 1.749e-04
+      Inf-norm error = 2.513e-03
+      2-norm error   = 2.688e-03
+      1-norm error   = 4.135e-03
 ------------------------------------
 HOMOTOPY mode 1: computing step 14/15...
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 1
-      Inf-norm error = 8.017e-01
-      2-norm error   = 3.113e+00
-      1-norm error   = 1.564e+01
+      Inf-norm error = 7.192e-03
+      2-norm error   = 7.357e-03
+      1-norm error   = 9.258e-03
 ------------------------------------
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 1.027e+00
-      2-norm error   = 2.896e+00
-      1-norm error   = 1.526e+01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 3
-      Inf-norm error = 1.204e+00
-      2-norm error   = 2.772e+00
-      1-norm error   = 1.409e+01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 4
-      Inf-norm error = 1.284e+00
-      2-norm error   = 2.641e+00
-      1-norm error   = 1.289e+01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 5
-      Inf-norm error = 1.451e+00
-      2-norm error   = 2.591e+00
-      1-norm error   = 1.149e+01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 6
-      Inf-norm error = 1.465e+00
-      2-norm error   = 2.427e+00
-      1-norm error   = 9.979e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 7
-      Inf-norm error = 1.489e+00
-      2-norm error   = 2.262e+00
-      1-norm error   = 8.154e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 8
-      Inf-norm error = 1.367e+00
-      2-norm error   = 1.931e+00
-      1-norm error   = 5.828e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 9
-      Inf-norm error = 8.915e-01
-      2-norm error   = 1.143e+00
-      1-norm error   = 2.085e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 10
-      Inf-norm error = 3.026e-05
-      2-norm error   = 6.595e-05
-      1-norm error   = 2.857e-04
+      Inf-norm error = 2.463e-03
+      2-norm error   = 2.633e-03
+      1-norm error   = 4.041e-03
 ------------------------------------
 HOMOTOPY mode 1: computing step 15/15...
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 1
-      Inf-norm error = 2.073e+00
-      2-norm error   = 6.804e+00
-      1-norm error   = 3.109e+01
+      Inf-norm error = 7.187e-03
+      2-norm error   = 7.348e-03
+      1-norm error   = 9.231e-03
 ------------------------------------
 MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 1.701e+00
-      2-norm error   = 6.080e+00
-      1-norm error   = 3.022e+01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 3
-      Inf-norm error = 2.826e+00
-      2-norm error   = 6.012e+00
-      1-norm error   = 2.839e+01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 4
-      Inf-norm error = 3.279e+00
-      2-norm error   = 5.843e+00
-      1-norm error   = 2.561e+01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 5
-      Inf-norm error = 3.308e+00
-      2-norm error   = 5.435e+00
-      1-norm error   = 2.246e+01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 6
-      Inf-norm error = 3.341e+00
-      2-norm error   = 5.002e+00
-      1-norm error   = 1.869e+01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 7
-      Inf-norm error = 3.741e+00
-      2-norm error   = 4.922e+00
-      1-norm error   = 1.394e+01
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 8
-      Inf-norm error = 5.917e-01
-      2-norm error   = 8.638e-01
-      1-norm error   = 2.639e+00
-------------------------------------
-MODEL STEADY STATE: (method=Sparse Gaussian Elimination)
-------------------------------------
-      Iteration no. 9
-      Inf-norm error = 1.003e-02
-      2-norm error   = 1.180e-02
-      1-norm error   = 2.817e-02
+      Inf-norm error = 2.415e-03
+      2-norm error   = 2.579e-03
+      1-norm error   = 3.952e-03
 ------------------------------------
 
 STEADY-STATE RESULTS:
 
 EA_bf               		 -26.7959
-EA_m                		 0.990538
+EA_m                		 0.969854
 EA_pic4             		 1.02
-EA_y                		 4.7769
+EA_y                		 4.67714
 EA_ygrowth          		 1
 EA_ygrowth4         		 1
 EA_z                		 1
-EA_ybar             		 4.7769
+EA_ybar             		 4.67714
 EAAEAB_excy         		 0.0063237
 EAAEAC_excy         		 0.00895375
 EAAEAD_excy         		 0.006893
@@ -904,7 +275,7 @@ EAAEAK_exiy         		 0.0173349
 EAAEAL_exiy         		 0.0127761
 EAARW_exiy          		 0.0726678
 EAAUS_exiy          		 0.010984
-EAA_fx              		 11.4047
+EAA_fx              		 11.1665
 EAAEAB_gammaimc     		 0
 EAAEAC_gammaimc     		 0
 EAAEAD_gammaimc     		 0
@@ -1009,7 +380,7 @@ EAAEAK_gammaimigdag 		 1
 EAAEAL_gammaimigdag 		 1
 EAARW_gammaimigdag  		 1
 EAAUS_gammaimigdag  		 1
-EAA_gx              		 13.6856
+EAA_gx              		 13.3998
 EAAEAB_im           		 0.0382335
 EAAEAC_im           		 0.0576801
 EAAEAD_im           		 0.041642
@@ -1080,20 +451,20 @@ EAARW_imig          		 0.0260692
 EAAUS_imig          		 0.0181661
 EAARW_imigy         		 0.00465
 EAA_piex            		 1.00496
-EAA_pextilde        		 0.990226
-EAAEAB_rer          		 1.13535
-EAAEAC_rer          		 1.12791
-EAAEAD_rer          		 1.14857
-EAAEAE_rer          		 1.15845
-EAAEAF_rer          		 1.17193
-EAAEAG_rer          		 1.15897
-EAAEAH_rer          		 1.15676
-EAAEAI_rer          		 1.10001
-EAAEAJ_rer          		 1.16068
-EAAEAK_rer          		 1.12632
-EAAEAL_rer          		 1.13157
-EAARW_rer           		 0.97949
-EAAUS_rer           		 0.96559
+EAA_pextilde        		 0.969548
+EAAEAB_rer          		 1.11164
+EAAEAC_rer          		 1.10436
+EAAEAD_rer          		 1.12459
+EAAEAE_rer          		 1.13426
+EAAEAF_rer          		 1.14746
+EAAEAG_rer          		 1.13477
+EAAEAH_rer          		 1.1326
+EAAEAI_rer          		 1.07704
+EAAEAJ_rer          		 1.13644
+EAAEAK_rer          		 1.1028
+EAAEAL_rer          		 1.10794
+EAARW_rer           		 0.959036
+EAAUS_rer           		 0.945426
 EAA_sx              		 1
 EAAEAB_tot          		 1.07491
 EAAEAC_tot          		 1.06689
@@ -1147,40 +518,40 @@ EAAEAK_weightim     		 0.112079
 EAAEAL_weightim     		 0.101162
 EAARW_weightim      		 0.366406
 EAAUS_weightim      		 0.161678
-EAA_b               		 12.5686
+EAA_b               		 12.3061
 EAA_bf              		 -133.983
 EAA_by              		 2.4
-EAA_c               		 1.34578
-EAA_ci              		 1.48824
-EAA_cj              		 0.9184
+EAA_c               		 1.31768
+EAA_ci              		 1.45716
+EAA_cj              		 0.899222
 EAA_cy              		 0.25698
-EAA_d               		 0.709835
-EAA_dn              		 0.0840378
-EAA_dt              		 0.625797
+EAA_d               		 0.695012
+EAA_dn              		 0.10141
+EAA_dt              		 0.593601
 EAA_etot            		 0.996078
 EAA_ex              		 3.53149
-EAA_fh              		 11.2068
-EAA_fi              		 80.0219
-EAA_fj              		 2.96377
-EAA_fn              		 4.40215
+EAA_fh              		 9.72034
+EAA_fi              		 60.8354
+EAA_fj              		 2.25316
+EAA_fn              		 5.31217
 EAA_cg              		 1.00822
 EAA_gammab          		 0
 EAA_gammai          		 0
 EAA_gammaider       		 0
 EAA_gammau          		 0
 EAA_gammauder       		 0.0324171
-EAA_gammav          		 0.000135948
+EAA_gammav          		 0.000133109
 EAA_gammavi         		 0.000101018
 EAA_gammavider      		 0.00216519
 EAA_gammavj         		 0.000101018
 EAA_gammavjder      		 0.00216519
-EAA_gh              		 13.4481
-EAA_gi              		 15.3307
-EAA_gj              		 8.28097
-EAA_gn              		 6.60323
+EAA_gh              		 11.6644
+EAA_gi              		 14.2903
+EAA_gj              		 7.71901
+EAA_gn              		 7.96826
 EAA_cgy             		 0.2
-EAA_ht              		 1.17846
-EAA_htc             		 0.357998
+EAA_ht              		 1.04395
+EAA_htc             		 0.223488
 EAA_hti             		 0.0802996
 EAA_htcg            		 0.651542
 EAA_htig            		 0.088621
@@ -1193,39 +564,39 @@ EAA_imi             		 0.685754
 EAA_imcg            		 0.173935
 EAA_imig            		 0.0761967
 EAA_imy             		 0.364762
-EAA_internalrer     		 1.2406
+EAA_internalrer     		 1.23957
 EAA_igy             		 0.04
 EAA_k               		 39.7214
 EAA_kd              		 39.7214
-EAA_kdn             		 4.29013
-EAA_kdt             		 35.4313
+EAA_kdn             		 5.2874
+EAA_kdt             		 34.434
 EAA_ki              		 52.9619
-EAA_lambdai         		 1.88494
-EAA_lambdaj         		 3.05448
+EAA_lambdai         		 1.92514
+EAA_lambdaj         		 3.11963
 EAA_lcy             		 0.605119
-EAA_m               		 0.565453
-EAA_mcn             		 0.825188
-EAA_mct             		 0.825188
-EAA_mi              		 0.62531
-EAA_mj              		 0.385882
+EAA_m               		 0.553645
+EAA_mcn             		 0.807956
+EAA_mct             		 0.807956
+EAA_mi              		 0.612252
+EAA_mj              		 0.377824
 EAA_nd              		 2.34852
 EAA_ndi             		 1.159
 EAA_ndj             		 1.28428
-EAA_ndn             		 0.253653
-EAA_ndt             		 2.09487
+EAA_ndn             		 0.312617
+EAA_ndt             		 2.03591
 EAA_ni              		 1.159
 EAA_nj              		 1.28428
-EAA_nt              		 0.462913
-EAA_ntc             		 0.0120975
+EAA_nt              		 0.57052
+EAA_ntc             		 0.119705
 EAA_nti             		 0.229167
 EAA_ntcg            		 0.18473
 EAA_ntig            		 0.0369186
-EAA_pex             		 0.990226
-EAA_pht             		 0.990226
-EAA_phttilde        		 0.990226
-EAA_pi              		 1.05473
-EAA_pcg             		 1.03884
-EAA_pig             		 1.04039
+EAA_pex             		 0.969548
+EAA_pht             		 0.969548
+EAA_phttilde        		 0.969548
+EAA_pi              		 1.0327
+EAA_pcg             		 1.01715
+EAA_pig             		 1.01866
 EAA_pic             		 1.00496
 EAA_pic4            		 1.02
 EAA_piex4           		 1.02
@@ -1235,31 +606,31 @@ EAA_piimi           		 1.00496
 EAA_piimcg          		 1.00496
 EAA_piimig          		 1.00496
 EAA_piimc4          		 1.02
-EAA_pim             		 0.999126
-EAA_pimc            		 1.00044
-EAA_pimi            		 0.997742
-EAA_pimcg           		 0.997792
-EAA_pimig           		 0.997735
+EAA_pim             		 0.978262
+EAA_pimc            		 0.979553
+EAA_pimi            		 0.976907
+EAA_pimcg           		 0.976956
+EAA_pimig           		 0.9769
 EAA_pint            		 1.00496
 EAA_piw             		 1.00496
 EAA_piw4            		 1.02
-EAA_pnt             		 1.23778
-EAA_pnttilde        		 1.23778
-EAA_pttc            		 0.997727
-EAA_ptti            		 0.996961
-EAA_pttcg           		 0.991832
-EAA_pttig           		 0.993715
-EAA_py              		 1.01238
-EAA_q               		 1.05473
-EAA_qc              		 1.34591
+EAA_pnt             		 1.21193
+EAA_pnttilde        		 1.21193
+EAA_pttc            		 0.977708
+EAA_ptti            		 0.976142
+EAA_pttcg           		 0.971121
+EAA_pttig           		 0.972964
+EAA_py              		 0.996421
+EAA_q               		 1.0327
+EAA_qc              		 1.31781
 EAA_qi              		 0.993035
 EAA_qcg             		 1.00822
 EAA_qig             		 0.201344
 EAA_r               		 1.01242
-EAA_reer            		 1.03874
-EAA_rer             		 0.96559
+EAA_reer            		 1.01705
+EAA_rer             		 0.945426
 EAA_rerdep          		 1
-EAA_rk              		 0.0341911
+EAA_rk              		 0.0334771
 EAA_rp              		 0
 EAA_rr              		 1.00742
 EAA_rrstar          		 1.00742
@@ -1274,41 +645,41 @@ EAA_tauk            		 0
 EAA_taun            		 0.122
 EAA_tauwf           		 0.219
 EAA_tauwh           		 0.118
-EAA_tb              		 1.58675
+EAA_tb              		 1.55361
 EAA_ti              		 0
 EAA_tj              		 0
 EAA_tot             		 0.938001
-EAA_tr              		 0.0933589
-EAA_tri             		 0.0622393
-EAA_trj             		 0.186718
+EAA_tr              		 0.0914094
+EAA_tri             		 0.0609396
+EAA_trj             		 0.182819
 EAA_try             		 0.0178271
-EAA_ttc             		 1.33397
+EAA_ttc             		 1.19947
 EAA_tti             		 0.766049
 EAA_ttcg            		 0.825467
 EAA_ttig            		 0.164815
 EAA_ty              		 0
 EAA_u               		 1
-EAA_utili           		 -180.012
-EAA_utilj           		 -270.994
+EAA_utili           		 -182.878
+EAA_utilj           		 -273.86
 EAA_vj              		 2.38
-EAA_w               		 1.10692
+EAA_w               		 1.08381
 EAA_wcst            		 0
-EAA_whty            		 0.49719
-EAA_wi              		 1.21926
-EAA_witilde         		 1.21926
-EAA_wj              		 0.923872
-EAA_wjtilde         		 0.923872
+EAA_whty            		 0.497401
+EAA_wi              		 1.1938
+EAA_witilde         		 1.1938
+EAA_wj              		 0.904579
+EAA_wjtilde         		 0.904579
 EAA_wnty            		 0.490019
 EAA_wy              		 0.496406
-EAA_y               		 5.17286
+EAA_y               		 5.14596
 EAA_ygap            		 0
 EAA_ygrowth         		 1
 EAA_ygrowth4        		 1
-EAA_yhty            		 0.890587
-EAA_ynty            		 0.109413
+EAA_yhty            		 0.865153
+EAA_ynty            		 0.134847
 EAA_yshare          		 0.0104142
-EAA_ysn             		 0.462913
-EAA_yst             		 4.70995
+EAA_ysn             		 0.57052
+EAA_yst             		 4.57544
 EAA_zcon            		 1
 EAA_zinv            		 1
 EAA_zn              		 1
@@ -1316,33 +687,33 @@ EAA_zt              		 1
 EAA_bfytarget       		 -24.5821
 EAA_gammav1         		 0.0287061
 EAA_gammav2         		 0.150338
-EAA_nutc            		 0.263354
+EAA_nutc            		 0.182459
 EAA_nuti            		 0.103062
 EAA_nutcg           		 0.786109
 EAA_nutig           		 0.532993
-EAA_psit            		 0.0389858
-EAAEAB_rerbar       		 1.13535
-EAAEAC_rerbar       		 1.12791
-EAAEAD_rerbar       		 1.14857
-EAAEAE_rerbar       		 1.15845
-EAAEAF_rerbar       		 1.17193
-EAAEAG_rerbar       		 1.15897
-EAAEAH_rerbar       		 1.15676
-EAAEAI_rerbar       		 1.10001
-EAAEAJ_rerbar       		 1.16068
-EAAEAK_rerbar       		 1.12632
-EAAEAL_rerbar       		 1.13157
-EAARW_rerbar        		 0.97949
-EAAUS_rerbar        		 0.96559
-EAA_pibar           		 1.05473
-EAA_psinbar         		 0.129616
-EAA_psitbar         		 0.183621
-EAA_pybar           		 1.01238
-EAA_qbar            		 1.05473
+EAA_psit            		 0.0394265
+EAAEAB_rerbar       		 1.11164
+EAAEAC_rerbar       		 1.10436
+EAAEAD_rerbar       		 1.12459
+EAAEAE_rerbar       		 1.13426
+EAAEAF_rerbar       		 1.14746
+EAAEAG_rerbar       		 1.13477
+EAAEAH_rerbar       		 1.1326
+EAAEAI_rerbar       		 1.07704
+EAAEAJ_rerbar       		 1.13644
+EAAEAK_rerbar       		 1.1028
+EAAEAL_rerbar       		 1.10794
+EAARW_rerbar        		 0.959036
+EAAUS_rerbar        		 0.945426
+EAA_pibar           		 1.0327
+EAA_psinbar         		 0.159746
+EAA_psitbar         		 0.180393
+EAA_pybar           		 0.996421
+EAA_qbar            		 1.0327
 EAA_trybar          		 0.0178271
-EAA_ybar            		 5.17286
-EAA_ynbar           		 0.462913
-EAA_ytbar           		 4.70995
+EAA_ybar            		 5.14596
+EAA_ynbar           		 0.57052
+EAA_ytbar           		 4.57544
 EABEAA_excy         		 0.00940024
 EABEAC_excy         		 0.00200933
 EABEAD_excy         		 0.00257303
@@ -1546,7 +917,7 @@ EABUS_imig          		 0.00192457
 EABUS_imigy         		 0.000376
 EAB_piex            		 1.00496
 EAB_pextilde        		 0.937516
-EABEAA_rer          		 0.88079
+EABEAA_rer          		 0.899574
 EABEAC_rer          		 0.993451
 EABEAD_rer          		 1.01165
 EABEAE_rer          		 1.02035
@@ -1721,7 +1092,7 @@ EAB_qi              		 0.858968
 EAB_qcg             		 0.859563
 EAB_qig             		 0.172303
 EAB_r               		 1.01242
-EAB_reer            		 0.932789
+EAB_reer            		 0.933846
 EAB_rer             		 0.850481
 EAB_rerdep          		 1
 EAB_rk              		 0.031607
@@ -1786,7 +1157,7 @@ EAB_nuti            		 0.357916
 EAB_nutcg           		 0.814458
 EAB_nutig           		 0.674461
 EAB_psit            		 0.0428326
-EABEAA_rerbar       		 0.88079
+EABEAA_rerbar       		 0.899574
 EABEAC_rerbar       		 0.993451
 EABEAD_rerbar       		 1.01165
 EABEAE_rerbar       		 1.02035
@@ -2011,7 +1382,7 @@ EACUS_imig          		 0.00407041
 EACEAA_imigy        		 0.000582
 EAC_piex            		 1.00496
 EAC_pextilde        		 0.936651
-EACEAA_rer          		 0.886596
+EACEAA_rer          		 0.905505
 EACEAB_rer          		 1.00659
 EACEAD_rer          		 1.01832
 EACEAE_rer          		 1.02708
@@ -2186,7 +1557,7 @@ EAC_qi              		 0.866347
 EAC_qcg             		 0.867623
 EAC_qig             		 0.173722
 EAC_r               		 1.01242
-EAC_reer            		 0.936922
+EAC_reer            		 0.937984
 EAC_rer             		 0.856088
 EAC_rerdep          		 1
 EAC_rk              		 0.0315534
@@ -2251,7 +1622,7 @@ EAC_nuti            		 0.318216
 EAC_nutcg           		 0.718708
 EAC_nutig           		 0.654642
 EAC_psit            		 0.0427065
-EACEAA_rerbar       		 0.886596
+EACEAA_rerbar       		 0.905505
 EACEAB_rerbar       		 1.00659
 EACEAD_rerbar       		 1.01832
 EACEAE_rerbar       		 1.02708
@@ -2461,7 +1832,7 @@ EADRW_imcg          		 0.0449778
 EADUS_imcg          		 0.0129209
 EADEAB_imcgy        		 0.000131
 EADEAA_imig         		 0.00136049
-EADEAB_imig         		 0.000262939
+EADEAB_imig         		 0.00026294
 EADEAC_imig         		 0.000431052
 EADEAE_imig         		 0.000169042
 EADEAF_imig         		 0.00292432
@@ -2476,7 +1847,7 @@ EADUS_imig          		 0.00139934
 EADEAB_imigy        		 5.9e-05
 EAD_piex            		 1.00496
 EAD_pextilde        		 0.940649
-EADEAA_rer          		 0.870646
+EADEAA_rer          		 0.889214
 EADEAB_rer          		 0.988484
 EADEAC_rer          		 0.98201
 EADEAE_rer          		 1.0086
@@ -2504,7 +1875,7 @@ EADEAL_tot          		 0.984129
 EADRW_tot           		 0.864596
 EADUS_tot           		 0.859709
 EADEAA_weight       		 0.03061
-EADEAB_weight       		 0.00744047
+EADEAB_weight       		 0.00744048
 EADEAC_weight       		 0.0172126
 EADEAE_weight       		 0.00429095
 EADEAF_weight       		 0.114797
@@ -2542,7 +1913,7 @@ EADEAK_weightim     		 0.112907
 EADEAL_weightim     		 0.0583921
 EADRW_weightim      		 0.450204
 EADUS_weightim      		 0.0619347
-EAD_b               		 9.91204
+EAD_b               		 9.91205
 EAD_bf              		 -18.8341
 EAD_by              		 2.4
 EAD_c               		 2.1184
@@ -2651,7 +2022,7 @@ EAD_qi              		 0.841746
 EAD_qcg             		 0.845033
 EAD_qig             		 0.169087
 EAD_r               		 1.01242
-EAD_reer            		 0.911198
+EAD_reer            		 0.911787
 EAD_rer             		 0.840687
 EAD_rerdep          		 1
 EAD_rk              		 0.0318108
@@ -2716,7 +2087,7 @@ EAD_nuti            		 0.668168
 EAD_nutcg           		 0.876861
 EAD_nutig           		 0.831172
 EAD_psit            		 0.0431224
-EADEAA_rerbar       		 0.870646
+EADEAA_rerbar       		 0.889214
 EADEAB_rerbar       		 0.988484
 EADEAC_rerbar       		 0.98201
 EADEAE_rerbar       		 1.0086
@@ -2941,7 +2312,7 @@ EAEUS_imig          		 0.00294772
 EAEEAC_imigy        		 0.000153
 EAE_piex            		 1.00496
 EAE_pextilde        		 0.944719
-EAEEAA_rer          		 0.863219
+EAEEAA_rer          		 0.881629
 EAEEAB_rer          		 0.980051
 EAEEAC_rer          		 0.973633
 EAEEAD_rer          		 0.99147
@@ -3116,7 +2487,7 @@ EAE_qi              		 0.845508
 EAE_qcg             		 0.842436
 EAE_qig             		 0.168655
 EAE_r               		 1.01242
-EAE_reer            		 0.895724
+EAE_reer            		 0.896852
 EAE_rer             		 0.833515
 EAE_rerdep          		 1
 EAE_rk              		 0.0314636
@@ -3181,7 +2552,7 @@ EAE_nuti            		 0.516934
 EAE_nutcg           		 0.788353
 EAE_nutig           		 0.758475
 EAE_psit            		 0.0434934
-EAEEAA_rerbar       		 0.863219
+EAEEAA_rerbar       		 0.881629
 EAEEAB_rerbar       		 0.980051
 EAEEAC_rerbar       		 0.973633
 EAEEAD_rerbar       		 0.99147
@@ -3406,12 +2777,12 @@ EAFUS_imig          		 0.00255193
 EAFEAD_imigy        		 0.000402
 EAF_piex            		 1.00496
 EAF_pextilde        		 0.945372
-EAFEAA_rer          		 0.853291
+EAFEAA_rer          		 0.87149
 EAFEAB_rer          		 0.96878
 EAFEAC_rer          		 0.962435
 EAFEAD_rer          		 0.980067
 EAFEAE_rer          		 0.988499
-EAFEAG_rer          		 0.988942
+EAFEAG_rer          		 0.988941
 EAFEAH_rer          		 0.987052
 EAFEAI_rer          		 0.938626
 EAFEAJ_rer          		 0.990394
@@ -3581,7 +2952,7 @@ EAF_qi              		 0.830079
 EAF_qcg             		 0.827685
 EAF_qig             		 0.165997
 EAF_r               		 1.01242
-EAF_reer            		 0.886608
+EAF_reer            		 0.887395
 EAF_rer             		 0.823929
 EAF_rerdep          		 1
 EAF_rk              		 0.0316583
@@ -3646,12 +3017,12 @@ EAF_nuti            		 0.656477
 EAF_nutcg           		 0.876173
 EAF_nutig           		 0.827172
 EAF_psit            		 0.0437127
-EAFEAA_rerbar       		 0.853291
+EAFEAA_rerbar       		 0.87149
 EAFEAB_rerbar       		 0.96878
 EAFEAC_rerbar       		 0.962435
 EAFEAD_rerbar       		 0.980067
 EAFEAE_rerbar       		 0.988499
-EAFEAG_rerbar       		 0.988942
+EAFEAG_rerbar       		 0.988941
 EAFEAH_rerbar       		 0.987052
 EAFEAI_rerbar       		 0.938626
 EAFEAJ_rerbar       		 0.990394
@@ -3871,7 +3242,7 @@ EAGUS_imig          		 0.00105254
 EAGEAE_imigy        		 1.5e-05
 EAG_piex            		 1.00496
 EAG_pextilde        		 0.951269
-EAGEAA_rer          		 0.862833
+EAGEAA_rer          		 0.881235
 EAGEAB_rer          		 0.979613
 EAGEAC_rer          		 0.973197
 EAGEAD_rer          		 0.991026
@@ -3881,7 +3252,7 @@ EAGEAH_rer          		 0.998089
 EAGEAI_rer          		 0.949122
 EAGEAJ_rer          		 1.00147
 EAGEAK_rer          		 0.971823
-EAGEAL_rer          		 0.976356
+EAGEAL_rer          		 0.976357
 EAGRW_rer           		 0.845136
 EAGUS_rer           		 0.833143
 EAG_sx              		 1
@@ -3897,7 +3268,7 @@ EAGEAJ_tot          		 0.991591
 EAGEAK_tot          		 0.960145
 EAGEAL_tot          		 0.964409
 EAGRW_tot           		 0.847272
-EAGUS_tot           		 0.842482
+EAGUS_tot           		 0.842483
 EAGEAA_weight       		 0.035611
 EAGEAB_weight       		 0.0101725
 EAGEAC_weight       		 0.0156914
@@ -3970,7 +3341,7 @@ EAG_gj              		 4.73286
 EAG_gn              		 14.9731
 EAG_cgy             		 0.2
 EAG_ht              		 1.86518
-EAG_htc             		 0.716238
+EAG_htc             		 0.716239
 EAG_hti             		 0.465606
 EAG_htcg            		 0.566678
 EAG_htig            		 0.116661
@@ -4041,12 +3412,12 @@ EAG_pttcg           		 0.937954
 EAG_pttig           		 0.940607
 EAG_py              		 1.01573
 EAG_q               		 0.992245
-EAG_qc              		 2.25151
+EAG_qc              		 2.25152
 EAG_qi              		 0.825366
 EAG_qcg             		 0.830762
 EAG_qig             		 0.165787
 EAG_r               		 1.01242
-EAG_reer            		 0.891837
+EAG_reer            		 0.892508
 EAG_rer             		 0.833143
 EAG_rerdep          		 1
 EAG_rk              		 0.0321657
@@ -4067,10 +3438,10 @@ EAG_tauwh           		 0.118
 EAG_tb              		 0.0415891
 EAG_ti              		 0
 EAG_tj              		 0
-EAG_tot             		 0.842482
+EAG_tot             		 0.842483
 EAG_tr              		 0.294904
-EAG_tri             		 0.196602
-EAG_trj             		 0.589807
+EAG_tri             		 0.196603
+EAG_trj             		 0.589808
 EAG_try             		 0.0720186
 EAG_ttc             		 1.53841
 EAG_tti             		 0.639203
@@ -4111,7 +3482,7 @@ EAG_nuti            		 0.769564
 EAG_nutcg           		 0.861529
 EAG_nutig           		 0.882784
 EAG_psit            		 0.043549
-EAGEAA_rerbar       		 0.862833
+EAGEAA_rerbar       		 0.881235
 EAGEAB_rerbar       		 0.979613
 EAGEAC_rerbar       		 0.973197
 EAGEAD_rerbar       		 0.991026
@@ -4121,11 +3492,11 @@ EAGEAH_rerbar       		 0.998089
 EAGEAI_rerbar       		 0.949122
 EAGEAJ_rerbar       		 1.00147
 EAGEAK_rerbar       		 0.971823
-EAGEAL_rerbar       		 0.976356
+EAGEAL_rerbar       		 0.976357
 EAGRW_rerbar        		 0.845136
 EAGUS_rerbar        		 0.833143
 EAG_pibar           		 0.992245
-EAG_psinbar         		 0.305945
+EAG_psinbar         		 0.305946
 EAG_psitbar         		 0.12798
 EAG_pybar           		 1.01573
 EAG_qbar            		 0.992245
@@ -4336,7 +3707,7 @@ EAHUS_imig          		 0.00101691
 EAHEAF_imigy        		 0.00041
 EAH_piex            		 1.00496
 EAH_pextilde        		 0.942366
-EAHEAA_rer          		 0.864485
+EAHEAA_rer          		 0.882922
 EAHEAB_rer          		 0.981489
 EAHEAC_rer          		 0.975061
 EAHEAD_rer          		 0.992924
@@ -4511,7 +3882,7 @@ EAH_qi              		 0.834855
 EAH_qcg             		 0.837224
 EAH_qig             		 0.167694
 EAH_r               		 1.01242
-EAH_reer            		 0.898102
+EAH_reer            		 0.899098
 EAH_rer             		 0.834738
 EAH_rerdep          		 1
 EAH_rk              		 0.0318652
@@ -4576,7 +3947,7 @@ EAH_nuti            		 0.732378
 EAH_nutcg           		 0.903514
 EAH_nutig           		 0.86384
 EAH_psit            		 0.0432872
-EAHEAA_rerbar       		 0.864485
+EAHEAA_rerbar       		 0.882922
 EAHEAB_rerbar       		 0.981489
 EAHEAC_rerbar       		 0.975061
 EAHEAD_rerbar       		 0.992924
@@ -4801,7 +4172,7 @@ EAIUS_imig          		 0.00482426
 EAIEAG_imigy        		 1e-05
 EAI_piex            		 1.00496
 EAI_pextilde        		 0.93452
-EAIEAA_rer          		 0.909086
+EAIEAA_rer          		 0.928474
 EAIEAB_rer          		 1.03213
 EAIEAC_rer          		 1.02537
 EAIEAD_rer          		 1.04415
@@ -4976,7 +4347,7 @@ EAI_qi              		 0.88185
 EAI_qcg             		 0.888252
 EAI_qig             		 0.177538
 EAI_r               		 1.01242
-EAI_reer            		 0.948806
+EAI_reer            		 0.949608
 EAI_rer             		 0.877804
 EAI_rerdep          		 1
 EAI_rk              		 0.0317592
@@ -5041,7 +4412,7 @@ EAI_nuti            		 0.513446
 EAI_nutcg           		 0.779123
 EAI_nutig           		 0.751074
 EAI_psit            		 0.0422303
-EAIEAA_rerbar       		 0.909086
+EAIEAA_rerbar       		 0.928474
 EAIEAB_rerbar       		 1.03213
 EAIEAC_rerbar       		 1.02537
 EAIEAD_rerbar       		 1.04415
@@ -5086,7 +4457,7 @@ EAJEAG_exiy         		 9.8457e-05
 EAJEAH_exiy         		 0.00159719
 EAJEAI_exiy         		 0.000841751
 EAJEAK_exiy         		 0.00524659
-EAJEAL_exiy         		 0.00219156
+EAJEAL_exiy         		 0.00219157
 EAJRW_exiy          		 0.0312332
 EAJUS_exiy          		 0.00324763
 EAJ_fx              		 4.00697
@@ -5266,7 +4637,7 @@ EAJUS_imig          		 0.000904156
 EAJEAH_imigy        		 0.000438
 EAJ_piex            		 1.00496
 EAJ_pextilde        		 0.941886
-EAJEAA_rer          		 0.861567
+EAJEAA_rer          		 0.879942
 EAJEAB_rer          		 0.978176
 EAJEAC_rer          		 0.97177
 EAJEAD_rer          		 0.989573
@@ -5441,7 +4812,7 @@ EAJ_qi              		 0.830327
 EAJ_qcg             		 0.833969
 EAJ_qig             		 0.166951
 EAJ_r               		 1.01242
-EAJ_reer            		 0.918611
+EAJ_reer            		 0.919122
 EAJ_rer             		 0.831921
 EAJ_rerdep          		 1
 EAJ_rk              		 0.0319192
@@ -5506,7 +4877,7 @@ EAJ_nuti            		 0.62896
 EAJ_nutcg           		 0.875326
 EAJ_nutig           		 0.810767
 EAJ_psit            		 0.0433287
-EAJEAA_rerbar       		 0.861567
+EAJEAA_rerbar       		 0.879942
 EAJEAB_rerbar       		 0.978176
 EAJEAC_rerbar       		 0.97177
 EAJEAD_rerbar       		 0.989573
@@ -5731,7 +5102,7 @@ EAKUS_imig          		 0.002642
 EAKEAI_imigy        		 0.000282
 EAK_piex            		 1.00496
 EAK_pextilde        		 0.939838
-EAKEAA_rer          		 0.88785
+EAKEAA_rer          		 0.906786
 EAKEAB_rer          		 1.00802
 EAKEAC_rer          		 1.00141
 EAKEAD_rer          		 1.01976
@@ -5906,7 +5277,7 @@ EAK_qi              		 0.860543
 EAK_qcg             		 0.861946
 EAK_qig             		 0.172782
 EAK_r               		 1.01242
-EAK_reer            		 0.919566
+EAK_reer            		 0.920421
 EAK_rer             		 0.857299
 EAK_rerdep          		 1
 EAK_rk              		 0.0317505
@@ -5971,7 +5342,7 @@ EAK_nuti            		 0.603041
 EAK_nutcg           		 0.873689
 EAK_nutig           		 0.798281
 EAK_psit            		 0.0427554
-EAKEAA_rerbar       		 0.88785
+EAKEAA_rerbar       		 0.906786
 EAKEAB_rerbar       		 1.00802
 EAKEAC_rerbar       		 1.00141
 EAKEAD_rerbar       		 1.01976
@@ -6196,7 +5567,7 @@ EALUS_imig          		 0.00214983
 EALEAJ_imigy        		 2.9e-05
 EAL_piex            		 1.00496
 EAL_pextilde        		 0.939628
-EALEAA_rer          		 0.883727
+EALEAA_rer          		 0.902575
 EALEAB_rer          		 1.00334
 EALEAC_rer          		 0.996764
 EALEAD_rer          		 1.01502
@@ -6371,7 +5742,7 @@ EAL_qi              		 0.860284
 EAL_qcg             		 0.860403
 EAL_qig             		 0.164851
 EAL_r               		 1.01242
-EAL_reer            		 0.922012
+EAL_reer            		 0.923129
 EAL_rer             		 0.853318
 EAL_rerdep          		 1
 EAL_rk              		 0.0316644
@@ -6436,7 +5807,7 @@ EAL_nuti            		 0.50719
 EAL_nutcg           		 0.840278
 EAL_nutig           		 0.655861
 EAL_psit            		 0.0430481
-EALEAA_rerbar       		 0.883727
+EALEAA_rerbar       		 0.902575
 EALEAB_rerbar       		 1.00334
 EALEAC_rerbar       		 0.996764
 EALEAD_rerbar       		 1.01502
@@ -6661,7 +6032,7 @@ RWUS_imig           		 0.00566203
 RWEAK_imigy         		 0.000564
 RW_piex             		 1.00496
 RW_pextilde         		 0.953673
-RWEAA_rer           		 1.02094
+RWEAA_rer           		 1.04271
 RWEAB_rer           		 1.15912
 RWEAC_rer           		 1.15153
 RWEAD_rer           		 1.17262
@@ -6836,7 +6207,7 @@ RW_qi               		 0.985643
 RW_qcg              		 0.797031
 RW_qig              		 0.198724
 RW_r                		 1.01242
-RW_reer             		 1.06821
+RW_reer             		 1.06941
 RW_rer              		 0.985809
 RW_rerdep           		 1
 RW_rk               		 0.0317606
@@ -6901,7 +6272,7 @@ RW_nuti             		 0.807746
 RW_nutcg            		 0.940516
 RW_nutig            		 0.898835
 RW_psit             		 0.0597338
-RWEAA_rerbar        		 1.02094
+RWEAA_rerbar        		 1.04271
 RWEAB_rerbar        		 1.15912
 RWEAC_rerbar        		 1.15153
 RWEAD_rerbar        		 1.17262
@@ -7102,7 +6473,7 @@ USEAC_imcg          		 0.000355061
 USEAD_imcg          		 0.000355872
 USEAE_imcg          		 8.56868e-05
 USEAF_imcg          		 0.000753321
-USEAG_imcg          		 7.65528e-05
+USEAG_imcg          		 7.65529e-05
 USEAH_imcg          		 0.000490352
 USEAI_imcg          		 0.000337531
 USEAJ_imcg          		 7.2913e-05
@@ -7121,12 +6492,12 @@ USEAH_imig          		 0.000326901
 USEAI_imig          		 0.000136837
 USEAJ_imig          		 1.7156e-05
 USEAK_imig          		 0.00101878
-USEAL_imig          		 0.000330741
+USEAL_imig          		 0.000330742
 USRW_imig           		 0.014893
-USEAL_imigy         		 7.49999e-05
+USEAL_imigy         		 7.5e-05
 US_piex             		 1.00496
 US_pextilde         		 0.961933
-USEAA_rer           		 1.03564
+USEAA_rer           		 1.05772
 USEAB_rer           		 1.1758
 USEAC_rer           		 1.1681
 USEAD_rer           		 1.1895
@@ -7300,7 +6671,7 @@ US_qi               		 0.988826
 US_qcg              		 0.796362
 US_qig              		 0.198825
 US_r                		 1.01242
-US_reer             		 1.03842
+US_reer             		 1.03904
 US_rer              		 1
 US_rk               		 0.0318388
 US_rr               		 1.00742
@@ -7362,7 +6733,7 @@ US_nuti             		 0.775419
 US_nutcg            		 0.93537
 US_nutig            		 0.882585
 US_psit             		 0.0555001
-USEAA_rerbar        		 1.03564
+USEAA_rerbar        		 1.05772
 USEAB_rerbar        		 1.1758
 USEAC_rerbar        		 1.1681
 USEAD_rerbar        		 1.1895
@@ -7592,10 +6963,10 @@ EAEEAF_numc         		 0.0391603
 EAEEAF_numi         		 0.0392134
 EAEEAF_numcg        		 0.0383452
 EAEEAF_numig        		 0.0392593
-EAEEAG_numc         		 0.00471946
+EAEEAG_numc         		 0.00471945
 EAEEAG_numi         		 0.00100166
 EAEEAG_numcg        		 0.00157943
-EAEEAG_numig        		 0.000970826
+EAEEAG_numig        		 0.000970825
 EAEEAH_numc         		 0.0274052
 EAEEAH_numi         		 0.0369528
 EAEEAH_numcg        		 0.0228269
@@ -7623,7 +6994,7 @@ EAERW_numig         		 0.315186
 EAEUS_numc          		 0.053686
 EAEUS_numi          		 0.061799
 EAEUS_numcg         		 0.0775805
-EAEUS_numig         		 0.0617742
+EAEUS_numig         		 0.0617741
 EAFEAA_numc         		 0.042465
 EAFEAA_numi         		 0.0521044
 EAFEAA_numcg        		 0.0610818
@@ -7641,7 +7012,7 @@ EAFEAE_numi         		 0.00679599
 EAFEAE_numcg        		 0.00498409
 EAFEAE_numig        		 0.00673399
 EAFEAG_numc         		 0.00424104
-EAFEAG_numi         		 0.0012398
+EAFEAG_numi         		 0.00123979
 EAFEAG_numcg        		 0.00236222
 EAFEAG_numig        		 0.00132392
 EAFEAH_numc         		 0.0833123
@@ -7797,7 +7168,7 @@ EAIEAH_numi         		 0.0277541
 EAIEAH_numcg        		 0.0225108
 EAIEAH_numig        		 0.0277059
 EAIEAJ_numc         		 0.00711285
-EAIEAJ_numi         		 0.00372604
+EAIEAJ_numi         		 0.00372603
 EAIEAJ_numcg        		 0.00492738
 EAIEAJ_numig        		 0.00371006
 EAIEAK_numc         		 0.145673
@@ -7889,7 +7260,7 @@ EAKEAF_numi         		 0.0834788
 EAKEAF_numcg        		 0.0708696
 EAKEAF_numig        		 0.0834241
 EAKEAG_numc         		 0.0073093
-EAKEAG_numi         		 0.00183259
+EAKEAG_numi         		 0.00183258
 EAKEAG_numcg        		 0.00322257
 EAKEAG_numig        		 0.00188992
 EAKEAH_numc         		 0.0552972
@@ -7897,7 +7268,7 @@ EAKEAH_numi         		 0.0583126
 EAKEAH_numcg        		 0.0414032
 EAKEAH_numig        		 0.0582772
 EAKEAJ_numc         		 0.00744594
-EAKEAJ_numi         		 0.00631447
+EAKEAJ_numi         		 0.00631446
 EAKEAJ_numcg        		 0.00496178
 EAKEAJ_numig        		 0.00627699
 EAKEAL_numc         		 0.136324
@@ -7937,9 +7308,9 @@ EALEAF_numi         		 0.0601786
 EALEAF_numcg        		 0.0651012
 EALEAF_numig        		 0.0601608
 EALEAG_numc         		 0.0103249
-EALEAG_numi         		 0.004301
+EALEAG_numi         		 0.00430099
 EALEAG_numcg        		 0.00610555
-EALEAG_numig        		 0.00428547
+EALEAG_numig        		 0.00428546
 EALEAH_numc         		 0.0604339
 EALEAH_numi         		 0.0715994
 EALEAH_numcg        		 0.0491637
@@ -8033,9 +7404,9 @@ USEAF_numi          		 0.024217
 USEAF_numcg         		 0.0281287
 USEAF_numig         		 0.0242905
 USEAG_numc          		 0.00469198
-USEAG_numi          		 0.00088043
+USEAG_numi          		 0.000880429
 USEAG_numcg         		 0.00282364
-USEAG_numig         		 0.0010334
+USEAG_numig         		 0.00103339
 USEAH_numc          		 0.0270691
 USEAH_numi          		 0.0257425
 USEAH_numcg         		 0.0175821
@@ -8087,5 +7458,4 @@ EAH_bh              		 0
 EAI_bh              		 0
 EAJ_bh              		 0
 EAK_bh              		 1.11251e-16
-Total computing time : 0h07m18s
-Note: 164 warning(s) encountered in the preprocessor
+Total computing time : 0h02m41s
