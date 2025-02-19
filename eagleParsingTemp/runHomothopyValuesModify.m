@@ -1,7 +1,7 @@
 
 % steady state in the matfile contains homothopy values after the EAB has
 % been calibrated only
-load(sprintf("%s/eagleParsingTemp/modFiles/steady2b/Output/steady2b_results.mat", project_path));
+load(sprintf("%s/eagleParsingTemp/modFiles/steady2b/Output/steady2b_results_temp1.mat", project_path));
 % load(sprintf("%s/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results_temp1.mat", project_path), 'oo_', 'M_', 'options_');
 
 % load(sprintf("%s/eagleParsingTemp/modFiles/steady2a/Output/steady2a_results_temp1.mat", project_path), 'oo_', 'M_', 'options_');
@@ -46,7 +46,7 @@ elapsed_time = toc;
 reportTimeToLogFile(logname_, elapsed_time);
 save_params_and_steady_state('eagle_steady_stage2b.txt');
 
-save(sprintf("%s/eagleParsingTemp/modFiles/steady2b/Output/steady2b_results_temp1.mat", project_path), 'oo_', 'M_', 'options_');
+save(sprintf("%s/eagleParsingTemp/modFiles/steady2b/Output/steady2b_results_temp2.mat", project_path), 'oo_', 'M_', 'options_');
 
 return
 
