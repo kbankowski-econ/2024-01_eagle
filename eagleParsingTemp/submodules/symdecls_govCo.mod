@@ -285,7 +285,7 @@ parameters
  @{co}_nut@{aItem}
 @#endfor
  @{co}_omega
-@# if co == countries[ctryNumber] || co == countries[ctryNumber-1] 
+@# if co == countries[ctryNumber] || co == countries[ctryNumber-1]  || co == countries[ctryNumber-2] 
  @{co}_phirgy
  @{co}_phirpi
  @{co}_phirr
@@ -358,7 +358,7 @@ varexo
 
  @{co}_epsgc
  @{co}_epsgi
-@# if co == countries[ctryNumber] || co == countries[ctryNumber-1] 
+@# if co == countries[ctryNumber] || co == countries[ctryNumber-1]  || co == countries[ctryNumber-2] 
     @# if !steady
         @{co}_epsr
     @# endif
@@ -396,14 +396,14 @@ parameters
 ;
 
 @#for it in countries
-    @#if it!=countries[ctryNumber] && it!=countries[ctryNumber-1] && it!=countries[ctryNumber-2]
+    @#if it!=countries[ctryNumber] && it!=countries[ctryNumber-1] && it!=countries[ctryNumber-2] && it!=countries[ctryNumber-3]
         var @{it}@{coGermany}_nerdep;
         var @{it}_gammabh;
     @#endif
 @#endfor
 
 var
-@#for co in countries[1: ctryNumber-2]
+@#for co in countries[1: ctryNumber-3]
  @{co}_bh
 @#endfor
 ;

@@ -80,7 +80,7 @@ dynare('steady2bMacroexp3.mod');
 dynare('steady2.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
 %%
-countries = ["EAA", "EAB", "EAC", "EAD", "EAE","EAF","EAG","EAH","EAI","EAJ","EAK","EAL","EAM", "RW", "US"];
+countries = ["EAA", "EAB", "EAC", "EAD", "EAE","EAF","EAG","EAH","EAI","EAJ","EAK","EAL", "RW", "US"];
 
 replaceInTextFile( ...
     fullfile(project_path, "eagleParsingTemp", "submodules", "modeqs.mod") ...
