@@ -85,10 +85,10 @@ for aItem = ["imcy", "imcgy", "imiy", "imigy", "rer"]
             end
         end
         if ~strcmp(aItem, "rer")
-            tableForXls.(aItem){"Total", aCtry1} = paramStruct.(aCtry1+"_"+aItem);
+            tableForXls.(aItem){"Total", aCtry1} = ssStruct.(aCtry1+"_"+aItem);
         end
     end
-    writetable(tableForXls.(aItem), xlsFilePath, 'Sheet', 'simOutput', 'Range', rangeStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
+    writetable(tableForXls.(aItem), xlsFilePath, 'Sheet', 'steady5', 'Range', rangeStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
 end
 
 
@@ -102,7 +102,7 @@ for aItem = ["y", "py", "size", "pex"]
             tableFlatForXls.(aItem){"Row", aCtry1} = ssStruct.(aCtry1+"_"+aItem);
         end
     end
-    writetable(tableFlatForXls.(aItem), xlsFilePath, 'Sheet', 'simOutput', 'Range', rangeFlatStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
+    writetable(tableFlatForXls.(aItem), xlsFilePath, 'Sheet', 'steady5', 'Range', rangeFlatStruct.(aItem), 'WriteRowNames', true, 'WriteVariableNames', true);
 end
 
 %%
