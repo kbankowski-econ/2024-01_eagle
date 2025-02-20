@@ -16,6 +16,11 @@ change_type(parameters) @{co}_epsilonm @{co}_vi @{co}_iy @{co}_imcy @{co}_imiy @
 change_type(var) @{co}_gammav2 @{co}_gammav1 @{co}_psit @{co}_nutc @{co}_nuti @{co}_nutcg @{co}_nutig;
 @#endfor
 
+@#for co in countries  - [ countries[ctryNumber]]
+change_type(parameters) @{co}_tby;
+change_type(var) @{co}_bfytarget;
+@#endfor
+
 @#for i in 1:ctryNumber
 @#include "dynamicCtryList7.mod"
 @#for it in countries - [ countries[i], coResid]
@@ -64,7 +69,7 @@ steady(homotopy_steps = 5, maxit=20);
 disp('Trade matrix')
 homotopy_setup;
 
-@#include "trade_matrix_values_calibrated_int.mod"
+@#include "trade_matrix_values_calibrated_new.mod"
 
 end;
 steady(homotopy_steps = 15);

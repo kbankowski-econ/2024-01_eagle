@@ -11,15 +11,15 @@ shiftAmount = 12;  % Making the shift amount explicit as a variable
 countriesAux = [countries, countries];  % Double array for circular indexing
 
 % ranges to read the numbers from
-rangeMatrixBegin = "A"+["3", "21", "39", "57"];
-rangeMatrixEnd = "O"+["17", "35", "53", "71"];
+rangeMatrixBegin = "Q"+["3", "21", "39", "57"];
+rangeMatrixEnd = "AE"+["17", "35", "53", "71"];
 rangeMatrix = rangeMatrixBegin' + ":" + rangeMatrixEnd';
 rangeStruct = struct('imcy', rangeMatrix(1), 'imcgy', rangeMatrix(2), 'imiy', rangeMatrix(3), 'imigy', rangeMatrix(4));
 
 
 %% loading the size structure, but first as a table
 sizeStruct = struct();
-csvFileName = fullfile(project_path_io, "databases/tables/oecd", "size.csv");
+csvFileName = fullfile(project_path_io, "databases/tables/oecd/eu", "size.csv");
 sizeTable = table();
 sizeTable = readtable(csvFileName, 'ReadRowNames', true, 'Range', 'A1:b15');
 % Convert table to structure
@@ -36,7 +36,7 @@ for aItem = ["imcy", "imiy", "imcgy", "imigy"]
 end
 
 %% writing mod trade calibration file
-writeTradeModFile('tradeMatrixUSadjust.mod', newTable, sizeStruct, countries, countriesAux, shiftAmount)
+writeTradeModFile('tradeMatrixsteady5.mod', newTable, sizeStruct, countries, countriesAux, shiftAmount)
 % writeTradeModFile('trade_matrix_values_calibrated_oldReprinted.mod', origTable, sizeStruct, countries, countriesAux, shiftAmount)
 % writeTradeModFile('trade_matrix_values_calibrated_EABEAM.mod', myTable, sizeStruct, countries, countriesAux, shiftAmount)
 
