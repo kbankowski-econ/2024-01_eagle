@@ -9,11 +9,18 @@ options_.markowitz = 5;
 
 @#include "symdecls.mod"
 
-@#include "modeqs.mod"
-
 @#include "params.mod"
 
 @#include "initval.mod"
+
+// Flip variables
+
+@#for co in countries
+change_type(parameters) @{co}_iy;
+change_type(var) @{co}_psit;
+@#endfor
+
+@#include "modeqs.mod"
 
 // Technology
 
@@ -346,9 +353,27 @@ steady(homotopy_steps = 5);
 
 disp('igybar')
 homotopy_setup;
+
 @#for co in countries
 @{co}_igybar, 0.04;
 @#endfor
+
+@#for co in countries
+    @#if co== coGermany
+        @{co}_iy, 0.1906-@{co}_igybar;  
+    @#else
+        @#if co== coUSA
+            @{co}_iy,  0.19-@{co}_igybar; 
+        @#else
+            @#if co== "RW"
+                @{co}_iy,  0.25-@{co}_igybar; 
+            @#else
+                @{co}_iy,  0.21-@{co}_igybar;
+            @#endif
+        @#endif
+    @#endif         
+@#endfor
+
 end;
 steady(homotopy_steps = 5);
 
