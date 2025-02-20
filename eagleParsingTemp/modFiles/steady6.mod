@@ -31,16 +31,16 @@ change_type(var) @{countries[i]}@{it}_numc @{countries[i]}@{it}_numi @{countries
 
 @#include "modeqs.mod"
 
-load_params_and_steady_state('eagle_steady_govInv_refined.txt');
+load_params_and_steady_state('eagle_steady_govInv.txt');
 
 // Trade matrix
 
 disp('Trade matrix')
 homotopy_setup;
 
-@#include "tradeMatrixsteady5.mod"
+@#include "trade_matrix_values_calibrated_new.mod"
 
 end;
 steady(homotopy_steps = 15);
 
-save_params_and_steady_state('eagle_steady_stage6.txt');
+save_params_and_steady_state('eagle_steady_stage_trade.txt');
