@@ -11,16 +11,13 @@ options_.markowitz = 5;
 
 @#include "params.mod"
 
-@#include "initval.mod"
-
 // Flip variables
 
-@#for co in countries
-change_type(parameters) @{co}_iy;
-change_type(var) @{co}_psit;
-@#endfor
+@#include "initval.mod"
 
 @#include "modeqs.mod"
+
+
 
 // Technology
 
@@ -31,6 +28,11 @@ homotopy_setup;
 @#endfor
 end;
 steady(homotopy_steps = 5);
+
+@#for co in countries
+change_type(parameters) @{co}_iy;
+change_type(var) @{co}_psit;
+@#endfor
 
 disp('alphan')
 homotopy_setup;

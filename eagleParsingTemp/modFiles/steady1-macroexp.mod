@@ -13928,6 +13928,7 @@ load("paramsToBeSaved", 'ctryNumberDouble')
  EA_phirpi      = 1.50;
  EA_rhoz        = 0.90;
  EA_zbar        = 1; 
+// Flip variables
 load("paramsToBeSaved", 'ctryNumberDouble')
 initval;
   
@@ -22789,35 +22790,6 @@ EA_z = 1;
 EA_ygrowth = 1;
 EA_ygrowth4 = 1;
 end;
-// Flip variables
-change_type(parameters) EAA_iy;
-change_type(var) EAA_psit;
-change_type(parameters) EAB_iy;
-change_type(var) EAB_psit;
-change_type(parameters) EAC_iy;
-change_type(var) EAC_psit;
-change_type(parameters) EAD_iy;
-change_type(var) EAD_psit;
-change_type(parameters) EAE_iy;
-change_type(var) EAE_psit;
-change_type(parameters) EAF_iy;
-change_type(var) EAF_psit;
-change_type(parameters) EAG_iy;
-change_type(var) EAG_psit;
-change_type(parameters) EAH_iy;
-change_type(var) EAH_psit;
-change_type(parameters) EAI_iy;
-change_type(var) EAI_psit;
-change_type(parameters) EAJ_iy;
-change_type(var) EAJ_psit;
-change_type(parameters) EAK_iy;
-change_type(var) EAK_psit;
-change_type(parameters) EAL_iy;
-change_type(var) EAL_psit;
-change_type(parameters) RW_iy;
-change_type(var) RW_psit;
-change_type(parameters) US_iy;
-change_type(var) US_psit;
 model(block, bytecode, cutoff = 0);
 // Core model begins
 //-------------
@@ -78459,6 +78431,34 @@ RW_alphat, 0.3;
 US_alphat, 0.3;
 end;
 steady(homotopy_steps = 5);
+change_type(parameters) EAA_iy;
+change_type(var) EAA_psit;
+change_type(parameters) EAB_iy;
+change_type(var) EAB_psit;
+change_type(parameters) EAC_iy;
+change_type(var) EAC_psit;
+change_type(parameters) EAD_iy;
+change_type(var) EAD_psit;
+change_type(parameters) EAE_iy;
+change_type(var) EAE_psit;
+change_type(parameters) EAF_iy;
+change_type(var) EAF_psit;
+change_type(parameters) EAG_iy;
+change_type(var) EAG_psit;
+change_type(parameters) EAH_iy;
+change_type(var) EAH_psit;
+change_type(parameters) EAI_iy;
+change_type(var) EAI_psit;
+change_type(parameters) EAJ_iy;
+change_type(var) EAJ_psit;
+change_type(parameters) EAK_iy;
+change_type(var) EAK_psit;
+change_type(parameters) EAL_iy;
+change_type(var) EAL_psit;
+change_type(parameters) RW_iy;
+change_type(var) RW_psit;
+change_type(parameters) US_iy;
+change_type(var) US_psit;
 disp('alphan')
 homotopy_setup;
 EAA_alphan, 0.3;
@@ -78659,6 +78659,24 @@ homotopy_setup;
 end;
 steady(homotopy_steps = 5);
 // Price setting (domestic markets followed by foreign markets)
+disp('psit')
+homotopy_setup;
+EAA_psit, 0.2;
+EAB_psit, 0.2;
+EAC_psit, 0.2;
+EAD_psit, 0.2;
+EAE_psit, 0.2;
+EAF_psit, 0.2;
+EAG_psit, 0.2;
+EAH_psit, 0.2;
+EAI_psit, 0.2;
+EAJ_psit, 0.2;
+EAK_psit, 0.2;
+EAL_psit, 0.2;
+RW_psit, 0.2;
+US_psit, 0.2;
+end;
+steady(homotopy_steps = 5);
 disp('psin')
 homotopy_setup;
         EAA_psin, 0.28;
