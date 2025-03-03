@@ -9,16 +9,11 @@ options_.markowitz = 5;
 
 @#include "symdecls.mod"
 
-@#include "params.mod"
-
-// Flip variables
-
-@#include "initval.mod"
-
-
 @#include "modeqs.mod"
 
+@#include "params.mod"
 
+@#include "initval.mod"
 
 // Technology
 
@@ -351,12 +346,9 @@ steady(homotopy_steps = 5);
 
 disp('igybar')
 homotopy_setup;
-
 @#for co in countries
 @{co}_igybar, 0.04;
 @#endfor
-
-
 end;
 steady(homotopy_steps = 5);
 
