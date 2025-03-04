@@ -19,6 +19,9 @@ dynare('steady0.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingT
 %% 
 dynare('steady1a.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
+%% 
+dynare('steady1b.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
+
 % %% 
 % dynare('steady2a.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 % 
