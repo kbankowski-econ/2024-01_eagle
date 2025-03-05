@@ -54,16 +54,6 @@ homotopy_setup;
 end;
 steady(homotopy_steps = 5);
 
-// Trade matrix
-
-disp('Trade matrix')
-homotopy_setup;
-
-@#include "trade_matrix_values_calibrated_new.mod"
-
-end;
-steady(homotopy_steps = 15);
-
 //---------------------------------------------------------//
 // Change parameters that appear only in the dynamic model //
 //---------------------------------------------------------//
