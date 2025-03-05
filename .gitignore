@@ -16,6 +16,9 @@ docs/**/*.log
 *.aux
 *.toc
 *.out
+*.bbl
+*.ptc
+*.blg
 Dynare_4-4-3/modFiles/+shock_eab_gy1/*
 Dynare_4-4-3/modFiles/+steady1/*
 Dynare_4-4-3/modFiles/+steady2/*
