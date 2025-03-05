@@ -44,7 +44,21 @@ disp('igybar')
 homotopy_setup;
 @#for co in countries
 @{co}_igybar, 0.04;
-@{co}_iy, 0.2;
+
+@#if co== coGermany
+    @{co}_iy, 0.1906-0.04;  
+@#else
+    @#if co== coUSA
+        @{co}_iy,  0.19-0.04; 
+    @#else
+        @#if co== "RW"
+            @{co}_iy,  0.25-0.04; 
+        @#else
+            @{co}_iy,  0.21-0.04;
+        @#endif
+    @#endif
+@#endif         
+
 @#endfor
 end;
 steady(homotopy_steps = 5);
