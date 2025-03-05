@@ -9814,6 +9814,70 @@ change_type(var)
  US_ynbar
  US_ytbar
 ;
+var 
+        EAA_ccesi EAA_ccesj EAA_dcci EAA_dccj
+        EAB_ccesi EAB_ccesj EAB_dcci EAB_dccj
+        EAC_ccesi EAC_ccesj EAC_dcci EAC_dccj
+        EAD_ccesi EAD_ccesj EAD_dcci EAD_dccj
+        EAE_ccesi EAE_ccesj EAE_dcci EAE_dccj
+        EAF_ccesi EAF_ccesj EAF_dcci EAF_dccj
+        EAG_ccesi EAG_ccesj EAG_dcci EAG_dccj
+        EAH_ccesi EAH_ccesj EAH_dcci EAH_dccj
+        EAI_ccesi EAI_ccesj EAI_dcci EAI_dccj
+        EAJ_ccesi EAJ_ccesj EAJ_dcci EAJ_dccj
+        EAK_ccesi EAK_ccesj EAK_dcci EAK_dccj
+        EAL_ccesi EAL_ccesj EAL_dcci EAL_dccj
+        RW_ccesi RW_ccesj RW_dcci RW_dccj
+        US_ccesi US_ccesj US_dcci US_dccj
+;
+parameters 
+        EAA_mucces EAA_nucces
+        EAB_mucces EAB_nucces
+        EAC_mucces EAC_nucces
+        EAD_mucces EAD_nucces
+        EAE_mucces EAE_nucces
+        EAF_mucces EAF_nucces
+        EAG_mucces EAG_nucces
+        EAH_mucces EAH_nucces
+        EAI_mucces EAI_nucces
+        EAJ_mucces EAJ_nucces
+        EAK_mucces EAK_nucces
+        EAL_mucces EAL_nucces
+        RW_mucces RW_nucces
+        US_mucces US_nucces
+;
+var 
+        EAA_kg
+        EAB_kg
+        EAC_kg
+        EAD_kg
+        EAE_kg
+        EAF_kg
+        EAG_kg
+        EAH_kg
+        EAI_kg
+        EAJ_kg
+        EAK_kg
+        EAL_kg
+        RW_kg
+        US_kg
+;
+parameters 
+        EAA_alphag EAA_deltag
+        EAB_alphag EAB_deltag
+        EAC_alphag EAC_deltag
+        EAD_alphag EAD_deltag
+        EAE_alphag EAE_deltag
+        EAF_alphag EAF_deltag
+        EAG_alphag EAG_deltag
+        EAH_alphag EAH_deltag
+        EAI_alphag EAI_deltag
+        EAJ_alphag EAJ_deltag
+        EAK_alphag EAK_deltag
+        EAL_alphag EAL_deltag
+        RW_alphag RW_deltag
+        US_alphag US_deltag
+;
 // Flip variables
 change_type(parameters) EAA_epsilonm EAA_vi EAA_iy EAA_imcy EAA_imiy EAA_imcgy EAA_imigy;
 change_type(var) EAA_gammav2 EAA_gammav1 EAA_psit EAA_nutc EAA_nuti EAA_nutcg EAA_nutig;
@@ -10215,12 +10279,14 @@ model(block, bytecode, cutoff = 0);
 //-------------
 // Household I
 //-------------
+EAA_ccesi^(1-1/EAA_mucces) = (EAA_nucces)^(1/EAA_mucces)*EAA_ci^(1-1/EAA_mucces)+(1-EAA_nucces)^(1/EAA_mucces)*EAA_cg^(1-1/EAA_mucces);
 // Utility
 EAA_utili = 
-EAA_zcon*log(EAA_ci-EAA_kappa*EAA_ci(-1))-1/(1+EAA_zeta)*(EAA_ni)^(1+EAA_zeta)+EAA_beta*EAA_utili(+1)
+EAA_zcon*log(EAA_ccesi-EAA_kappa*EAA_ccesi(-1))-1/(1+EAA_zeta)*(EAA_ni)^(1+EAA_zeta)+EAA_beta*EAA_utili(+1)
 ;
 // Marginal utility of consumption
-EAA_lambdai*(1+EAA_tauc+EAA_gammavi+EAA_vi*EAA_gammavider) = EAA_zcon*(EAA_ci-EAA_kappa*EAA_ci(-1))^(-EAA_sigma);
+EAA_dcci = ((EAA_nucces)^(1/EAA_mucces)*EAA_ci^(1-1/EAA_mucces)+(1-EAA_nucces)^(1/EAA_mucces)*EAA_cg^(1-1/EAA_mucces))^(1/(EAA_mucces-1))*(EAA_nucces^(1/EAA_mucces))*(EAA_ci^(-1/EAA_mucces));
+EAA_lambdai*(1+EAA_tauc+EAA_gammavi+EAA_vi*EAA_gammavider) = EAA_zcon*(EAA_ccesi-EAA_kappa*EAA_ccesi(-1))^(-EAA_sigma)*EAA_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
 EAA_r                   = EAA_beta^(-1)*EAA_lambdai/EAA_lambdai    *EAA_pic;
@@ -10256,12 +10322,14 @@ EAA_wi^(1-EAA_etai) = (1-EAA_xii)*EAA_witilde^(1-EAA_etai)+EAA_xii*EAA_wi(-1)^(1
 //-------------
 // Household J
 //-------------
+EAA_ccesj^(1-1/EAA_mucces) = (EAA_nucces)^(1/EAA_mucces)*EAA_cj^(1-1/EAA_mucces)+(1-EAA_nucces)^(1/EAA_mucces)*EAA_cg^(1-1/EAA_mucces);
 // Utility
 EAA_utilj = 
-EAA_zcon*log(EAA_cj-EAA_kappa*EAA_cj(-1))-1/(1+EAA_zeta)*EAA_nj^(1+EAA_zeta)+EAA_beta*EAA_utilj(+1)
+EAA_zcon*log(EAA_ccesj-EAA_kappa*EAA_ccesj(-1))-1/(1+EAA_zeta)*(EAA_nj)^(1+EAA_zeta)+EAA_beta*EAA_utilj(+1)
 ;
 // Marginal utility of consumption
-EAA_lambdaj*(1+EAA_tauc+EAA_gammavj+EAA_vj*EAA_gammavjder) = EAA_zcon*(EAA_cj-EAA_kappa*EAA_cj(-1))^(-EAA_sigma);
+EAA_dccj = ((EAA_nucces)^(1/EAA_mucces)*EAA_cj^(1-1/EAA_mucces)+(1-EAA_nucces)^(1/EAA_mucces)*EAA_cg^(1-1/EAA_mucces))^(1/(EAA_mucces-1))*(EAA_nucces^(1/EAA_mucces))*(EAA_cj^(-1/EAA_mucces));
+EAA_lambdaj*(1+EAA_tauc+EAA_gammavj+EAA_vj*EAA_gammavjder) = EAA_zcon*(EAA_ccesj-EAA_kappa*EAA_ccesj(-1))^(-EAA_sigma)*EAA_dccj;
 // Budget constraint
 (1+EAA_tauc+EAA_gammavj)*EAA_cj+EAA_mj = (1-EAA_taun-EAA_tauwh)*EAA_wj*EAA_nj+EAA_trj-EAA_tj+EAA_mj(-1)*EAA_pic^(-1);
 // Euler equation for money
@@ -10288,14 +10356,16 @@ EAA_wj^(1-EAA_etaj) = (1-EAA_xij)*EAA_wjtilde^(1-EAA_etaj)+EAA_xij*EAA_wj(-1)^(1
 //-------------
 // Intermediate-good firms
 //-------------
+// Government capital accumulation:
+EAA_kg = (1-EAA_deltag)*EAA_kg(-1)+EAA_ig(-1);
 // Production function tradable
-EAA_yst = EA_z*EAA_zt*EAA_kdt^EAA_alphat*EAA_ndt^(1-EAA_alphat)-EAA_psitbar;
+EAA_yst = EA_z*EAA_zt*EAA_kg^EAA_alphag*EAA_kdt^EAA_alphat*EAA_ndt^(1-EAA_alphat)-EAA_psitbar;
 // Production function nontradable
-EAA_ysn = EA_z*EAA_zn*EAA_kdn^EAA_alphan*EAA_ndn^(1-EAA_alphan)-EAA_psinbar;
+EAA_ysn = EA_z*EAA_zn*EAA_kg^EAA_alphag*EAA_kdn^EAA_alphan*EAA_ndn^(1-EAA_alphan)-EAA_psinbar;
 // Real marginal cost tradable
-EAA_mct = 1/(EA_z*EAA_zt*(EAA_alphat)^(EAA_alphat)*(1-EAA_alphat)^(1-EAA_alphat))*EAA_rk^(EAA_alphat)*((1+EAA_tauwf)*EAA_w)^(1-EAA_alphat);
+EAA_mct = 1/(EA_z*EAA_zt*EAA_kg^EAA_alphag*(EAA_alphat)^(EAA_alphat)*(1-EAA_alphat)^(1-EAA_alphat))*EAA_rk^(EAA_alphat)*((1+EAA_tauwf)*EAA_w)^(1-EAA_alphat);
 // Real marginal cost nontradable
-EAA_mcn = 1/(EA_z*EAA_zn*(EAA_alphan)^(EAA_alphan)*(1-EAA_alphan)^(1-EAA_alphan))*EAA_rk^(EAA_alphan)*((1+EAA_tauwf)*EAA_w)^(1-EAA_alphan);
+EAA_mcn = 1/(EA_z*EAA_zn*EAA_kg^EAA_alphag*(EAA_alphan)^(EAA_alphan)*(1-EAA_alphan)^(1-EAA_alphan))*EAA_rk^(EAA_alphan)*((1+EAA_tauwf)*EAA_w)^(1-EAA_alphan);
 // Wage Inflation (qoq)
 EAA_piw = EAA_w/EAA_w(-1)*EAA_pic;
 // Wage Inflation (yoy)
@@ -14149,12 +14219,14 @@ EAA_internalrer = EAA_pnt/EAA_pttc;
 //-------------
 // Household I
 //-------------
+EAB_ccesi^(1-1/EAB_mucces) = (EAB_nucces)^(1/EAB_mucces)*EAB_ci^(1-1/EAB_mucces)+(1-EAB_nucces)^(1/EAB_mucces)*EAB_cg^(1-1/EAB_mucces);
 // Utility
 EAB_utili = 
-EAB_zcon*log(EAB_ci-EAB_kappa*EAB_ci(-1))-1/(1+EAB_zeta)*(EAB_ni)^(1+EAB_zeta)+EAB_beta*EAB_utili(+1)
+EAB_zcon*log(EAB_ccesi-EAB_kappa*EAB_ccesi(-1))-1/(1+EAB_zeta)*(EAB_ni)^(1+EAB_zeta)+EAB_beta*EAB_utili(+1)
 ;
 // Marginal utility of consumption
-EAB_lambdai*(1+EAB_tauc+EAB_gammavi+EAB_vi*EAB_gammavider) = EAB_zcon*(EAB_ci-EAB_kappa*EAB_ci(-1))^(-EAB_sigma);
+EAB_dcci = ((EAB_nucces)^(1/EAB_mucces)*EAB_ci^(1-1/EAB_mucces)+(1-EAB_nucces)^(1/EAB_mucces)*EAB_cg^(1-1/EAB_mucces))^(1/(EAB_mucces-1))*(EAB_nucces^(1/EAB_mucces))*(EAB_ci^(-1/EAB_mucces));
+EAB_lambdai*(1+EAB_tauc+EAB_gammavi+EAB_vi*EAB_gammavider) = EAB_zcon*(EAB_ccesi-EAB_kappa*EAB_ccesi(-1))^(-EAB_sigma)*EAB_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
 EAB_r                   = EAB_beta^(-1)*EAB_lambdai/EAB_lambdai    *EAB_pic;
@@ -14190,12 +14262,14 @@ EAB_wi^(1-EAB_etai) = (1-EAB_xii)*EAB_witilde^(1-EAB_etai)+EAB_xii*EAB_wi(-1)^(1
 //-------------
 // Household J
 //-------------
+EAB_ccesj^(1-1/EAB_mucces) = (EAB_nucces)^(1/EAB_mucces)*EAB_cj^(1-1/EAB_mucces)+(1-EAB_nucces)^(1/EAB_mucces)*EAB_cg^(1-1/EAB_mucces);
 // Utility
 EAB_utilj = 
-EAB_zcon*log(EAB_cj-EAB_kappa*EAB_cj(-1))-1/(1+EAB_zeta)*EAB_nj^(1+EAB_zeta)+EAB_beta*EAB_utilj(+1)
+EAB_zcon*log(EAB_ccesj-EAB_kappa*EAB_ccesj(-1))-1/(1+EAB_zeta)*(EAB_nj)^(1+EAB_zeta)+EAB_beta*EAB_utilj(+1)
 ;
 // Marginal utility of consumption
-EAB_lambdaj*(1+EAB_tauc+EAB_gammavj+EAB_vj*EAB_gammavjder) = EAB_zcon*(EAB_cj-EAB_kappa*EAB_cj(-1))^(-EAB_sigma);
+EAB_dccj = ((EAB_nucces)^(1/EAB_mucces)*EAB_cj^(1-1/EAB_mucces)+(1-EAB_nucces)^(1/EAB_mucces)*EAB_cg^(1-1/EAB_mucces))^(1/(EAB_mucces-1))*(EAB_nucces^(1/EAB_mucces))*(EAB_cj^(-1/EAB_mucces));
+EAB_lambdaj*(1+EAB_tauc+EAB_gammavj+EAB_vj*EAB_gammavjder) = EAB_zcon*(EAB_ccesj-EAB_kappa*EAB_ccesj(-1))^(-EAB_sigma)*EAB_dccj;
 // Budget constraint
 (1+EAB_tauc+EAB_gammavj)*EAB_cj+EAB_mj = (1-EAB_taun-EAB_tauwh)*EAB_wj*EAB_nj+EAB_trj-EAB_tj+EAB_mj(-1)*EAB_pic^(-1);
 // Euler equation for money
@@ -14222,14 +14296,16 @@ EAB_wj^(1-EAB_etaj) = (1-EAB_xij)*EAB_wjtilde^(1-EAB_etaj)+EAB_xij*EAB_wj(-1)^(1
 //-------------
 // Intermediate-good firms
 //-------------
+// Government capital accumulation:
+EAB_kg = (1-EAB_deltag)*EAB_kg(-1)+EAB_ig(-1);
 // Production function tradable
-EAB_yst = EA_z*EAB_zt*EAB_kdt^EAB_alphat*EAB_ndt^(1-EAB_alphat)-EAB_psitbar;
+EAB_yst = EA_z*EAB_zt*EAB_kg^EAB_alphag*EAB_kdt^EAB_alphat*EAB_ndt^(1-EAB_alphat)-EAB_psitbar;
 // Production function nontradable
-EAB_ysn = EA_z*EAB_zn*EAB_kdn^EAB_alphan*EAB_ndn^(1-EAB_alphan)-EAB_psinbar;
+EAB_ysn = EA_z*EAB_zn*EAB_kg^EAB_alphag*EAB_kdn^EAB_alphan*EAB_ndn^(1-EAB_alphan)-EAB_psinbar;
 // Real marginal cost tradable
-EAB_mct = 1/(EA_z*EAB_zt*(EAB_alphat)^(EAB_alphat)*(1-EAB_alphat)^(1-EAB_alphat))*EAB_rk^(EAB_alphat)*((1+EAB_tauwf)*EAB_w)^(1-EAB_alphat);
+EAB_mct = 1/(EA_z*EAB_zt*EAB_kg^EAB_alphag*(EAB_alphat)^(EAB_alphat)*(1-EAB_alphat)^(1-EAB_alphat))*EAB_rk^(EAB_alphat)*((1+EAB_tauwf)*EAB_w)^(1-EAB_alphat);
 // Real marginal cost nontradable
-EAB_mcn = 1/(EA_z*EAB_zn*(EAB_alphan)^(EAB_alphan)*(1-EAB_alphan)^(1-EAB_alphan))*EAB_rk^(EAB_alphan)*((1+EAB_tauwf)*EAB_w)^(1-EAB_alphan);
+EAB_mcn = 1/(EA_z*EAB_zn*EAB_kg^EAB_alphag*(EAB_alphan)^(EAB_alphan)*(1-EAB_alphan)^(1-EAB_alphan))*EAB_rk^(EAB_alphan)*((1+EAB_tauwf)*EAB_w)^(1-EAB_alphan);
 // Wage Inflation (qoq)
 EAB_piw = EAB_w/EAB_w(-1)*EAB_pic;
 // Wage Inflation (yoy)
@@ -18083,12 +18159,14 @@ EAB_internalrer = EAB_pnt/EAB_pttc;
 //-------------
 // Household I
 //-------------
+EAC_ccesi^(1-1/EAC_mucces) = (EAC_nucces)^(1/EAC_mucces)*EAC_ci^(1-1/EAC_mucces)+(1-EAC_nucces)^(1/EAC_mucces)*EAC_cg^(1-1/EAC_mucces);
 // Utility
 EAC_utili = 
-EAC_zcon*log(EAC_ci-EAC_kappa*EAC_ci(-1))-1/(1+EAC_zeta)*(EAC_ni)^(1+EAC_zeta)+EAC_beta*EAC_utili(+1)
+EAC_zcon*log(EAC_ccesi-EAC_kappa*EAC_ccesi(-1))-1/(1+EAC_zeta)*(EAC_ni)^(1+EAC_zeta)+EAC_beta*EAC_utili(+1)
 ;
 // Marginal utility of consumption
-EAC_lambdai*(1+EAC_tauc+EAC_gammavi+EAC_vi*EAC_gammavider) = EAC_zcon*(EAC_ci-EAC_kappa*EAC_ci(-1))^(-EAC_sigma);
+EAC_dcci = ((EAC_nucces)^(1/EAC_mucces)*EAC_ci^(1-1/EAC_mucces)+(1-EAC_nucces)^(1/EAC_mucces)*EAC_cg^(1-1/EAC_mucces))^(1/(EAC_mucces-1))*(EAC_nucces^(1/EAC_mucces))*(EAC_ci^(-1/EAC_mucces));
+EAC_lambdai*(1+EAC_tauc+EAC_gammavi+EAC_vi*EAC_gammavider) = EAC_zcon*(EAC_ccesi-EAC_kappa*EAC_ccesi(-1))^(-EAC_sigma)*EAC_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
 EAC_r                   = EAC_beta^(-1)*EAC_lambdai/EAC_lambdai    *EAC_pic;
@@ -18124,12 +18202,14 @@ EAC_wi^(1-EAC_etai) = (1-EAC_xii)*EAC_witilde^(1-EAC_etai)+EAC_xii*EAC_wi(-1)^(1
 //-------------
 // Household J
 //-------------
+EAC_ccesj^(1-1/EAC_mucces) = (EAC_nucces)^(1/EAC_mucces)*EAC_cj^(1-1/EAC_mucces)+(1-EAC_nucces)^(1/EAC_mucces)*EAC_cg^(1-1/EAC_mucces);
 // Utility
 EAC_utilj = 
-EAC_zcon*log(EAC_cj-EAC_kappa*EAC_cj(-1))-1/(1+EAC_zeta)*EAC_nj^(1+EAC_zeta)+EAC_beta*EAC_utilj(+1)
+EAC_zcon*log(EAC_ccesj-EAC_kappa*EAC_ccesj(-1))-1/(1+EAC_zeta)*(EAC_nj)^(1+EAC_zeta)+EAC_beta*EAC_utilj(+1)
 ;
 // Marginal utility of consumption
-EAC_lambdaj*(1+EAC_tauc+EAC_gammavj+EAC_vj*EAC_gammavjder) = EAC_zcon*(EAC_cj-EAC_kappa*EAC_cj(-1))^(-EAC_sigma);
+EAC_dccj = ((EAC_nucces)^(1/EAC_mucces)*EAC_cj^(1-1/EAC_mucces)+(1-EAC_nucces)^(1/EAC_mucces)*EAC_cg^(1-1/EAC_mucces))^(1/(EAC_mucces-1))*(EAC_nucces^(1/EAC_mucces))*(EAC_cj^(-1/EAC_mucces));
+EAC_lambdaj*(1+EAC_tauc+EAC_gammavj+EAC_vj*EAC_gammavjder) = EAC_zcon*(EAC_ccesj-EAC_kappa*EAC_ccesj(-1))^(-EAC_sigma)*EAC_dccj;
 // Budget constraint
 (1+EAC_tauc+EAC_gammavj)*EAC_cj+EAC_mj = (1-EAC_taun-EAC_tauwh)*EAC_wj*EAC_nj+EAC_trj-EAC_tj+EAC_mj(-1)*EAC_pic^(-1);
 // Euler equation for money
@@ -18156,14 +18236,16 @@ EAC_wj^(1-EAC_etaj) = (1-EAC_xij)*EAC_wjtilde^(1-EAC_etaj)+EAC_xij*EAC_wj(-1)^(1
 //-------------
 // Intermediate-good firms
 //-------------
+// Government capital accumulation:
+EAC_kg = (1-EAC_deltag)*EAC_kg(-1)+EAC_ig(-1);
 // Production function tradable
-EAC_yst = EA_z*EAC_zt*EAC_kdt^EAC_alphat*EAC_ndt^(1-EAC_alphat)-EAC_psitbar;
+EAC_yst = EA_z*EAC_zt*EAC_kg^EAC_alphag*EAC_kdt^EAC_alphat*EAC_ndt^(1-EAC_alphat)-EAC_psitbar;
 // Production function nontradable
-EAC_ysn = EA_z*EAC_zn*EAC_kdn^EAC_alphan*EAC_ndn^(1-EAC_alphan)-EAC_psinbar;
+EAC_ysn = EA_z*EAC_zn*EAC_kg^EAC_alphag*EAC_kdn^EAC_alphan*EAC_ndn^(1-EAC_alphan)-EAC_psinbar;
 // Real marginal cost tradable
-EAC_mct = 1/(EA_z*EAC_zt*(EAC_alphat)^(EAC_alphat)*(1-EAC_alphat)^(1-EAC_alphat))*EAC_rk^(EAC_alphat)*((1+EAC_tauwf)*EAC_w)^(1-EAC_alphat);
+EAC_mct = 1/(EA_z*EAC_zt*EAC_kg^EAC_alphag*(EAC_alphat)^(EAC_alphat)*(1-EAC_alphat)^(1-EAC_alphat))*EAC_rk^(EAC_alphat)*((1+EAC_tauwf)*EAC_w)^(1-EAC_alphat);
 // Real marginal cost nontradable
-EAC_mcn = 1/(EA_z*EAC_zn*(EAC_alphan)^(EAC_alphan)*(1-EAC_alphan)^(1-EAC_alphan))*EAC_rk^(EAC_alphan)*((1+EAC_tauwf)*EAC_w)^(1-EAC_alphan);
+EAC_mcn = 1/(EA_z*EAC_zn*EAC_kg^EAC_alphag*(EAC_alphan)^(EAC_alphan)*(1-EAC_alphan)^(1-EAC_alphan))*EAC_rk^(EAC_alphan)*((1+EAC_tauwf)*EAC_w)^(1-EAC_alphan);
 // Wage Inflation (qoq)
 EAC_piw = EAC_w/EAC_w(-1)*EAC_pic;
 // Wage Inflation (yoy)
@@ -22017,12 +22099,14 @@ EAC_internalrer = EAC_pnt/EAC_pttc;
 //-------------
 // Household I
 //-------------
+EAD_ccesi^(1-1/EAD_mucces) = (EAD_nucces)^(1/EAD_mucces)*EAD_ci^(1-1/EAD_mucces)+(1-EAD_nucces)^(1/EAD_mucces)*EAD_cg^(1-1/EAD_mucces);
 // Utility
 EAD_utili = 
-EAD_zcon*log(EAD_ci-EAD_kappa*EAD_ci(-1))-1/(1+EAD_zeta)*(EAD_ni)^(1+EAD_zeta)+EAD_beta*EAD_utili(+1)
+EAD_zcon*log(EAD_ccesi-EAD_kappa*EAD_ccesi(-1))-1/(1+EAD_zeta)*(EAD_ni)^(1+EAD_zeta)+EAD_beta*EAD_utili(+1)
 ;
 // Marginal utility of consumption
-EAD_lambdai*(1+EAD_tauc+EAD_gammavi+EAD_vi*EAD_gammavider) = EAD_zcon*(EAD_ci-EAD_kappa*EAD_ci(-1))^(-EAD_sigma);
+EAD_dcci = ((EAD_nucces)^(1/EAD_mucces)*EAD_ci^(1-1/EAD_mucces)+(1-EAD_nucces)^(1/EAD_mucces)*EAD_cg^(1-1/EAD_mucces))^(1/(EAD_mucces-1))*(EAD_nucces^(1/EAD_mucces))*(EAD_ci^(-1/EAD_mucces));
+EAD_lambdai*(1+EAD_tauc+EAD_gammavi+EAD_vi*EAD_gammavider) = EAD_zcon*(EAD_ccesi-EAD_kappa*EAD_ccesi(-1))^(-EAD_sigma)*EAD_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
 EAD_r                   = EAD_beta^(-1)*EAD_lambdai/EAD_lambdai    *EAD_pic;
@@ -22058,12 +22142,14 @@ EAD_wi^(1-EAD_etai) = (1-EAD_xii)*EAD_witilde^(1-EAD_etai)+EAD_xii*EAD_wi(-1)^(1
 //-------------
 // Household J
 //-------------
+EAD_ccesj^(1-1/EAD_mucces) = (EAD_nucces)^(1/EAD_mucces)*EAD_cj^(1-1/EAD_mucces)+(1-EAD_nucces)^(1/EAD_mucces)*EAD_cg^(1-1/EAD_mucces);
 // Utility
 EAD_utilj = 
-EAD_zcon*log(EAD_cj-EAD_kappa*EAD_cj(-1))-1/(1+EAD_zeta)*EAD_nj^(1+EAD_zeta)+EAD_beta*EAD_utilj(+1)
+EAD_zcon*log(EAD_ccesj-EAD_kappa*EAD_ccesj(-1))-1/(1+EAD_zeta)*(EAD_nj)^(1+EAD_zeta)+EAD_beta*EAD_utilj(+1)
 ;
 // Marginal utility of consumption
-EAD_lambdaj*(1+EAD_tauc+EAD_gammavj+EAD_vj*EAD_gammavjder) = EAD_zcon*(EAD_cj-EAD_kappa*EAD_cj(-1))^(-EAD_sigma);
+EAD_dccj = ((EAD_nucces)^(1/EAD_mucces)*EAD_cj^(1-1/EAD_mucces)+(1-EAD_nucces)^(1/EAD_mucces)*EAD_cg^(1-1/EAD_mucces))^(1/(EAD_mucces-1))*(EAD_nucces^(1/EAD_mucces))*(EAD_cj^(-1/EAD_mucces));
+EAD_lambdaj*(1+EAD_tauc+EAD_gammavj+EAD_vj*EAD_gammavjder) = EAD_zcon*(EAD_ccesj-EAD_kappa*EAD_ccesj(-1))^(-EAD_sigma)*EAD_dccj;
 // Budget constraint
 (1+EAD_tauc+EAD_gammavj)*EAD_cj+EAD_mj = (1-EAD_taun-EAD_tauwh)*EAD_wj*EAD_nj+EAD_trj-EAD_tj+EAD_mj(-1)*EAD_pic^(-1);
 // Euler equation for money
@@ -22090,14 +22176,16 @@ EAD_wj^(1-EAD_etaj) = (1-EAD_xij)*EAD_wjtilde^(1-EAD_etaj)+EAD_xij*EAD_wj(-1)^(1
 //-------------
 // Intermediate-good firms
 //-------------
+// Government capital accumulation:
+EAD_kg = (1-EAD_deltag)*EAD_kg(-1)+EAD_ig(-1);
 // Production function tradable
-EAD_yst = EA_z*EAD_zt*EAD_kdt^EAD_alphat*EAD_ndt^(1-EAD_alphat)-EAD_psitbar;
+EAD_yst = EA_z*EAD_zt*EAD_kg^EAD_alphag*EAD_kdt^EAD_alphat*EAD_ndt^(1-EAD_alphat)-EAD_psitbar;
 // Production function nontradable
-EAD_ysn = EA_z*EAD_zn*EAD_kdn^EAD_alphan*EAD_ndn^(1-EAD_alphan)-EAD_psinbar;
+EAD_ysn = EA_z*EAD_zn*EAD_kg^EAD_alphag*EAD_kdn^EAD_alphan*EAD_ndn^(1-EAD_alphan)-EAD_psinbar;
 // Real marginal cost tradable
-EAD_mct = 1/(EA_z*EAD_zt*(EAD_alphat)^(EAD_alphat)*(1-EAD_alphat)^(1-EAD_alphat))*EAD_rk^(EAD_alphat)*((1+EAD_tauwf)*EAD_w)^(1-EAD_alphat);
+EAD_mct = 1/(EA_z*EAD_zt*EAD_kg^EAD_alphag*(EAD_alphat)^(EAD_alphat)*(1-EAD_alphat)^(1-EAD_alphat))*EAD_rk^(EAD_alphat)*((1+EAD_tauwf)*EAD_w)^(1-EAD_alphat);
 // Real marginal cost nontradable
-EAD_mcn = 1/(EA_z*EAD_zn*(EAD_alphan)^(EAD_alphan)*(1-EAD_alphan)^(1-EAD_alphan))*EAD_rk^(EAD_alphan)*((1+EAD_tauwf)*EAD_w)^(1-EAD_alphan);
+EAD_mcn = 1/(EA_z*EAD_zn*EAD_kg^EAD_alphag*(EAD_alphan)^(EAD_alphan)*(1-EAD_alphan)^(1-EAD_alphan))*EAD_rk^(EAD_alphan)*((1+EAD_tauwf)*EAD_w)^(1-EAD_alphan);
 // Wage Inflation (qoq)
 EAD_piw = EAD_w/EAD_w(-1)*EAD_pic;
 // Wage Inflation (yoy)
@@ -25951,12 +26039,14 @@ EAD_internalrer = EAD_pnt/EAD_pttc;
 //-------------
 // Household I
 //-------------
+EAE_ccesi^(1-1/EAE_mucces) = (EAE_nucces)^(1/EAE_mucces)*EAE_ci^(1-1/EAE_mucces)+(1-EAE_nucces)^(1/EAE_mucces)*EAE_cg^(1-1/EAE_mucces);
 // Utility
 EAE_utili = 
-EAE_zcon*log(EAE_ci-EAE_kappa*EAE_ci(-1))-1/(1+EAE_zeta)*(EAE_ni)^(1+EAE_zeta)+EAE_beta*EAE_utili(+1)
+EAE_zcon*log(EAE_ccesi-EAE_kappa*EAE_ccesi(-1))-1/(1+EAE_zeta)*(EAE_ni)^(1+EAE_zeta)+EAE_beta*EAE_utili(+1)
 ;
 // Marginal utility of consumption
-EAE_lambdai*(1+EAE_tauc+EAE_gammavi+EAE_vi*EAE_gammavider) = EAE_zcon*(EAE_ci-EAE_kappa*EAE_ci(-1))^(-EAE_sigma);
+EAE_dcci = ((EAE_nucces)^(1/EAE_mucces)*EAE_ci^(1-1/EAE_mucces)+(1-EAE_nucces)^(1/EAE_mucces)*EAE_cg^(1-1/EAE_mucces))^(1/(EAE_mucces-1))*(EAE_nucces^(1/EAE_mucces))*(EAE_ci^(-1/EAE_mucces));
+EAE_lambdai*(1+EAE_tauc+EAE_gammavi+EAE_vi*EAE_gammavider) = EAE_zcon*(EAE_ccesi-EAE_kappa*EAE_ccesi(-1))^(-EAE_sigma)*EAE_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
 EAE_r                   = EAE_beta^(-1)*EAE_lambdai/EAE_lambdai    *EAE_pic;
@@ -25992,12 +26082,14 @@ EAE_wi^(1-EAE_etai) = (1-EAE_xii)*EAE_witilde^(1-EAE_etai)+EAE_xii*EAE_wi(-1)^(1
 //-------------
 // Household J
 //-------------
+EAE_ccesj^(1-1/EAE_mucces) = (EAE_nucces)^(1/EAE_mucces)*EAE_cj^(1-1/EAE_mucces)+(1-EAE_nucces)^(1/EAE_mucces)*EAE_cg^(1-1/EAE_mucces);
 // Utility
 EAE_utilj = 
-EAE_zcon*log(EAE_cj-EAE_kappa*EAE_cj(-1))-1/(1+EAE_zeta)*EAE_nj^(1+EAE_zeta)+EAE_beta*EAE_utilj(+1)
+EAE_zcon*log(EAE_ccesj-EAE_kappa*EAE_ccesj(-1))-1/(1+EAE_zeta)*(EAE_nj)^(1+EAE_zeta)+EAE_beta*EAE_utilj(+1)
 ;
 // Marginal utility of consumption
-EAE_lambdaj*(1+EAE_tauc+EAE_gammavj+EAE_vj*EAE_gammavjder) = EAE_zcon*(EAE_cj-EAE_kappa*EAE_cj(-1))^(-EAE_sigma);
+EAE_dccj = ((EAE_nucces)^(1/EAE_mucces)*EAE_cj^(1-1/EAE_mucces)+(1-EAE_nucces)^(1/EAE_mucces)*EAE_cg^(1-1/EAE_mucces))^(1/(EAE_mucces-1))*(EAE_nucces^(1/EAE_mucces))*(EAE_cj^(-1/EAE_mucces));
+EAE_lambdaj*(1+EAE_tauc+EAE_gammavj+EAE_vj*EAE_gammavjder) = EAE_zcon*(EAE_ccesj-EAE_kappa*EAE_ccesj(-1))^(-EAE_sigma)*EAE_dccj;
 // Budget constraint
 (1+EAE_tauc+EAE_gammavj)*EAE_cj+EAE_mj = (1-EAE_taun-EAE_tauwh)*EAE_wj*EAE_nj+EAE_trj-EAE_tj+EAE_mj(-1)*EAE_pic^(-1);
 // Euler equation for money
@@ -26024,14 +26116,16 @@ EAE_wj^(1-EAE_etaj) = (1-EAE_xij)*EAE_wjtilde^(1-EAE_etaj)+EAE_xij*EAE_wj(-1)^(1
 //-------------
 // Intermediate-good firms
 //-------------
+// Government capital accumulation:
+EAE_kg = (1-EAE_deltag)*EAE_kg(-1)+EAE_ig(-1);
 // Production function tradable
-EAE_yst = EA_z*EAE_zt*EAE_kdt^EAE_alphat*EAE_ndt^(1-EAE_alphat)-EAE_psitbar;
+EAE_yst = EA_z*EAE_zt*EAE_kg^EAE_alphag*EAE_kdt^EAE_alphat*EAE_ndt^(1-EAE_alphat)-EAE_psitbar;
 // Production function nontradable
-EAE_ysn = EA_z*EAE_zn*EAE_kdn^EAE_alphan*EAE_ndn^(1-EAE_alphan)-EAE_psinbar;
+EAE_ysn = EA_z*EAE_zn*EAE_kg^EAE_alphag*EAE_kdn^EAE_alphan*EAE_ndn^(1-EAE_alphan)-EAE_psinbar;
 // Real marginal cost tradable
-EAE_mct = 1/(EA_z*EAE_zt*(EAE_alphat)^(EAE_alphat)*(1-EAE_alphat)^(1-EAE_alphat))*EAE_rk^(EAE_alphat)*((1+EAE_tauwf)*EAE_w)^(1-EAE_alphat);
+EAE_mct = 1/(EA_z*EAE_zt*EAE_kg^EAE_alphag*(EAE_alphat)^(EAE_alphat)*(1-EAE_alphat)^(1-EAE_alphat))*EAE_rk^(EAE_alphat)*((1+EAE_tauwf)*EAE_w)^(1-EAE_alphat);
 // Real marginal cost nontradable
-EAE_mcn = 1/(EA_z*EAE_zn*(EAE_alphan)^(EAE_alphan)*(1-EAE_alphan)^(1-EAE_alphan))*EAE_rk^(EAE_alphan)*((1+EAE_tauwf)*EAE_w)^(1-EAE_alphan);
+EAE_mcn = 1/(EA_z*EAE_zn*EAE_kg^EAE_alphag*(EAE_alphan)^(EAE_alphan)*(1-EAE_alphan)^(1-EAE_alphan))*EAE_rk^(EAE_alphan)*((1+EAE_tauwf)*EAE_w)^(1-EAE_alphan);
 // Wage Inflation (qoq)
 EAE_piw = EAE_w/EAE_w(-1)*EAE_pic;
 // Wage Inflation (yoy)
@@ -29885,12 +29979,14 @@ EAE_internalrer = EAE_pnt/EAE_pttc;
 //-------------
 // Household I
 //-------------
+EAF_ccesi^(1-1/EAF_mucces) = (EAF_nucces)^(1/EAF_mucces)*EAF_ci^(1-1/EAF_mucces)+(1-EAF_nucces)^(1/EAF_mucces)*EAF_cg^(1-1/EAF_mucces);
 // Utility
 EAF_utili = 
-EAF_zcon*log(EAF_ci-EAF_kappa*EAF_ci(-1))-1/(1+EAF_zeta)*(EAF_ni)^(1+EAF_zeta)+EAF_beta*EAF_utili(+1)
+EAF_zcon*log(EAF_ccesi-EAF_kappa*EAF_ccesi(-1))-1/(1+EAF_zeta)*(EAF_ni)^(1+EAF_zeta)+EAF_beta*EAF_utili(+1)
 ;
 // Marginal utility of consumption
-EAF_lambdai*(1+EAF_tauc+EAF_gammavi+EAF_vi*EAF_gammavider) = EAF_zcon*(EAF_ci-EAF_kappa*EAF_ci(-1))^(-EAF_sigma);
+EAF_dcci = ((EAF_nucces)^(1/EAF_mucces)*EAF_ci^(1-1/EAF_mucces)+(1-EAF_nucces)^(1/EAF_mucces)*EAF_cg^(1-1/EAF_mucces))^(1/(EAF_mucces-1))*(EAF_nucces^(1/EAF_mucces))*(EAF_ci^(-1/EAF_mucces));
+EAF_lambdai*(1+EAF_tauc+EAF_gammavi+EAF_vi*EAF_gammavider) = EAF_zcon*(EAF_ccesi-EAF_kappa*EAF_ccesi(-1))^(-EAF_sigma)*EAF_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
 EAF_r                   = EAF_beta^(-1)*EAF_lambdai/EAF_lambdai    *EAF_pic;
@@ -29926,12 +30022,14 @@ EAF_wi^(1-EAF_etai) = (1-EAF_xii)*EAF_witilde^(1-EAF_etai)+EAF_xii*EAF_wi(-1)^(1
 //-------------
 // Household J
 //-------------
+EAF_ccesj^(1-1/EAF_mucces) = (EAF_nucces)^(1/EAF_mucces)*EAF_cj^(1-1/EAF_mucces)+(1-EAF_nucces)^(1/EAF_mucces)*EAF_cg^(1-1/EAF_mucces);
 // Utility
 EAF_utilj = 
-EAF_zcon*log(EAF_cj-EAF_kappa*EAF_cj(-1))-1/(1+EAF_zeta)*EAF_nj^(1+EAF_zeta)+EAF_beta*EAF_utilj(+1)
+EAF_zcon*log(EAF_ccesj-EAF_kappa*EAF_ccesj(-1))-1/(1+EAF_zeta)*(EAF_nj)^(1+EAF_zeta)+EAF_beta*EAF_utilj(+1)
 ;
 // Marginal utility of consumption
-EAF_lambdaj*(1+EAF_tauc+EAF_gammavj+EAF_vj*EAF_gammavjder) = EAF_zcon*(EAF_cj-EAF_kappa*EAF_cj(-1))^(-EAF_sigma);
+EAF_dccj = ((EAF_nucces)^(1/EAF_mucces)*EAF_cj^(1-1/EAF_mucces)+(1-EAF_nucces)^(1/EAF_mucces)*EAF_cg^(1-1/EAF_mucces))^(1/(EAF_mucces-1))*(EAF_nucces^(1/EAF_mucces))*(EAF_cj^(-1/EAF_mucces));
+EAF_lambdaj*(1+EAF_tauc+EAF_gammavj+EAF_vj*EAF_gammavjder) = EAF_zcon*(EAF_ccesj-EAF_kappa*EAF_ccesj(-1))^(-EAF_sigma)*EAF_dccj;
 // Budget constraint
 (1+EAF_tauc+EAF_gammavj)*EAF_cj+EAF_mj = (1-EAF_taun-EAF_tauwh)*EAF_wj*EAF_nj+EAF_trj-EAF_tj+EAF_mj(-1)*EAF_pic^(-1);
 // Euler equation for money
@@ -29958,14 +30056,16 @@ EAF_wj^(1-EAF_etaj) = (1-EAF_xij)*EAF_wjtilde^(1-EAF_etaj)+EAF_xij*EAF_wj(-1)^(1
 //-------------
 // Intermediate-good firms
 //-------------
+// Government capital accumulation:
+EAF_kg = (1-EAF_deltag)*EAF_kg(-1)+EAF_ig(-1);
 // Production function tradable
-EAF_yst = EAF_zt*EAF_kdt^EAF_alphat*EAF_ndt^(1-EAF_alphat)-EAF_psitbar;
+EAF_yst = EAF_zt*EAF_kg^EAF_alphag*EAF_kdt^EAF_alphat*EAF_ndt^(1-EAF_alphat)-EAF_psitbar;
 // Production function nontradable
-EAF_ysn = EAF_zn*EAF_kdn^EAF_alphan*EAF_ndn^(1-EAF_alphan)-EAF_psinbar;
+EAF_ysn = EAF_zn*EAF_kg^EAF_alphag*EAF_kdn^EAF_alphan*EAF_ndn^(1-EAF_alphan)-EAF_psinbar;
 // Real marginal cost tradable
-EAF_mct = 1/(EAF_zt*(EAF_alphat)^(EAF_alphat)*(1-EAF_alphat)^(1-EAF_alphat))*EAF_rk^(EAF_alphat)*((1+EAF_tauwf)*EAF_w)^(1-EAF_alphat);
+EAF_mct = 1/(EAF_zt*EAF_kg^EAF_alphag*(EAF_alphat)^(EAF_alphat)*(1-EAF_alphat)^(1-EAF_alphat))*EAF_rk^(EAF_alphat)*((1+EAF_tauwf)*EAF_w)^(1-EAF_alphat);
 // Real marginal cost nontradable
-EAF_mcn = 1/(EAF_zn*(EAF_alphan)^(EAF_alphan)*(1-EAF_alphan)^(1-EAF_alphan))*EAF_rk^(EAF_alphan)*((1+EAF_tauwf)*EAF_w)^(1-EAF_alphan);
+EAF_mcn = 1/(EAF_zn*EAF_kg^EAF_alphag*(EAF_alphan)^(EAF_alphan)*(1-EAF_alphan)^(1-EAF_alphan))*EAF_rk^(EAF_alphan)*((1+EAF_tauwf)*EAF_w)^(1-EAF_alphan);
 // Wage Inflation (qoq)
 EAF_piw = EAF_w/EAF_w(-1)*EAF_pic;
 // Wage Inflation (yoy)
@@ -33819,12 +33919,14 @@ EAF_internalrer = EAF_pnt/EAF_pttc;
 //-------------
 // Household I
 //-------------
+EAG_ccesi^(1-1/EAG_mucces) = (EAG_nucces)^(1/EAG_mucces)*EAG_ci^(1-1/EAG_mucces)+(1-EAG_nucces)^(1/EAG_mucces)*EAG_cg^(1-1/EAG_mucces);
 // Utility
 EAG_utili = 
-EAG_zcon*log(EAG_ci-EAG_kappa*EAG_ci(-1))-1/(1+EAG_zeta)*(EAG_ni)^(1+EAG_zeta)+EAG_beta*EAG_utili(+1)
+EAG_zcon*log(EAG_ccesi-EAG_kappa*EAG_ccesi(-1))-1/(1+EAG_zeta)*(EAG_ni)^(1+EAG_zeta)+EAG_beta*EAG_utili(+1)
 ;
 // Marginal utility of consumption
-EAG_lambdai*(1+EAG_tauc+EAG_gammavi+EAG_vi*EAG_gammavider) = EAG_zcon*(EAG_ci-EAG_kappa*EAG_ci(-1))^(-EAG_sigma);
+EAG_dcci = ((EAG_nucces)^(1/EAG_mucces)*EAG_ci^(1-1/EAG_mucces)+(1-EAG_nucces)^(1/EAG_mucces)*EAG_cg^(1-1/EAG_mucces))^(1/(EAG_mucces-1))*(EAG_nucces^(1/EAG_mucces))*(EAG_ci^(-1/EAG_mucces));
+EAG_lambdai*(1+EAG_tauc+EAG_gammavi+EAG_vi*EAG_gammavider) = EAG_zcon*(EAG_ccesi-EAG_kappa*EAG_ccesi(-1))^(-EAG_sigma)*EAG_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
 EAG_r                   = EAG_beta^(-1)*EAG_lambdai/EAG_lambdai    *EAG_pic;
@@ -33860,12 +33962,14 @@ EAG_wi^(1-EAG_etai) = (1-EAG_xii)*EAG_witilde^(1-EAG_etai)+EAG_xii*EAG_wi(-1)^(1
 //-------------
 // Household J
 //-------------
+EAG_ccesj^(1-1/EAG_mucces) = (EAG_nucces)^(1/EAG_mucces)*EAG_cj^(1-1/EAG_mucces)+(1-EAG_nucces)^(1/EAG_mucces)*EAG_cg^(1-1/EAG_mucces);
 // Utility
 EAG_utilj = 
-EAG_zcon*log(EAG_cj-EAG_kappa*EAG_cj(-1))-1/(1+EAG_zeta)*EAG_nj^(1+EAG_zeta)+EAG_beta*EAG_utilj(+1)
+EAG_zcon*log(EAG_ccesj-EAG_kappa*EAG_ccesj(-1))-1/(1+EAG_zeta)*(EAG_nj)^(1+EAG_zeta)+EAG_beta*EAG_utilj(+1)
 ;
 // Marginal utility of consumption
-EAG_lambdaj*(1+EAG_tauc+EAG_gammavj+EAG_vj*EAG_gammavjder) = EAG_zcon*(EAG_cj-EAG_kappa*EAG_cj(-1))^(-EAG_sigma);
+EAG_dccj = ((EAG_nucces)^(1/EAG_mucces)*EAG_cj^(1-1/EAG_mucces)+(1-EAG_nucces)^(1/EAG_mucces)*EAG_cg^(1-1/EAG_mucces))^(1/(EAG_mucces-1))*(EAG_nucces^(1/EAG_mucces))*(EAG_cj^(-1/EAG_mucces));
+EAG_lambdaj*(1+EAG_tauc+EAG_gammavj+EAG_vj*EAG_gammavjder) = EAG_zcon*(EAG_ccesj-EAG_kappa*EAG_ccesj(-1))^(-EAG_sigma)*EAG_dccj;
 // Budget constraint
 (1+EAG_tauc+EAG_gammavj)*EAG_cj+EAG_mj = (1-EAG_taun-EAG_tauwh)*EAG_wj*EAG_nj+EAG_trj-EAG_tj+EAG_mj(-1)*EAG_pic^(-1);
 // Euler equation for money
@@ -33892,14 +33996,16 @@ EAG_wj^(1-EAG_etaj) = (1-EAG_xij)*EAG_wjtilde^(1-EAG_etaj)+EAG_xij*EAG_wj(-1)^(1
 //-------------
 // Intermediate-good firms
 //-------------
+// Government capital accumulation:
+EAG_kg = (1-EAG_deltag)*EAG_kg(-1)+EAG_ig(-1);
 // Production function tradable
-EAG_yst = EAG_zt*EAG_kdt^EAG_alphat*EAG_ndt^(1-EAG_alphat)-EAG_psitbar;
+EAG_yst = EAG_zt*EAG_kg^EAG_alphag*EAG_kdt^EAG_alphat*EAG_ndt^(1-EAG_alphat)-EAG_psitbar;
 // Production function nontradable
-EAG_ysn = EAG_zn*EAG_kdn^EAG_alphan*EAG_ndn^(1-EAG_alphan)-EAG_psinbar;
+EAG_ysn = EAG_zn*EAG_kg^EAG_alphag*EAG_kdn^EAG_alphan*EAG_ndn^(1-EAG_alphan)-EAG_psinbar;
 // Real marginal cost tradable
-EAG_mct = 1/(EAG_zt*(EAG_alphat)^(EAG_alphat)*(1-EAG_alphat)^(1-EAG_alphat))*EAG_rk^(EAG_alphat)*((1+EAG_tauwf)*EAG_w)^(1-EAG_alphat);
+EAG_mct = 1/(EAG_zt*EAG_kg^EAG_alphag*(EAG_alphat)^(EAG_alphat)*(1-EAG_alphat)^(1-EAG_alphat))*EAG_rk^(EAG_alphat)*((1+EAG_tauwf)*EAG_w)^(1-EAG_alphat);
 // Real marginal cost nontradable
-EAG_mcn = 1/(EAG_zn*(EAG_alphan)^(EAG_alphan)*(1-EAG_alphan)^(1-EAG_alphan))*EAG_rk^(EAG_alphan)*((1+EAG_tauwf)*EAG_w)^(1-EAG_alphan);
+EAG_mcn = 1/(EAG_zn*EAG_kg^EAG_alphag*(EAG_alphan)^(EAG_alphan)*(1-EAG_alphan)^(1-EAG_alphan))*EAG_rk^(EAG_alphan)*((1+EAG_tauwf)*EAG_w)^(1-EAG_alphan);
 // Wage Inflation (qoq)
 EAG_piw = EAG_w/EAG_w(-1)*EAG_pic;
 // Wage Inflation (yoy)
@@ -37753,12 +37859,14 @@ EAG_internalrer = EAG_pnt/EAG_pttc;
 //-------------
 // Household I
 //-------------
+EAH_ccesi^(1-1/EAH_mucces) = (EAH_nucces)^(1/EAH_mucces)*EAH_ci^(1-1/EAH_mucces)+(1-EAH_nucces)^(1/EAH_mucces)*EAH_cg^(1-1/EAH_mucces);
 // Utility
 EAH_utili = 
-EAH_zcon*log(EAH_ci-EAH_kappa*EAH_ci(-1))-1/(1+EAH_zeta)*(EAH_ni)^(1+EAH_zeta)+EAH_beta*EAH_utili(+1)
+EAH_zcon*log(EAH_ccesi-EAH_kappa*EAH_ccesi(-1))-1/(1+EAH_zeta)*(EAH_ni)^(1+EAH_zeta)+EAH_beta*EAH_utili(+1)
 ;
 // Marginal utility of consumption
-EAH_lambdai*(1+EAH_tauc+EAH_gammavi+EAH_vi*EAH_gammavider) = EAH_zcon*(EAH_ci-EAH_kappa*EAH_ci(-1))^(-EAH_sigma);
+EAH_dcci = ((EAH_nucces)^(1/EAH_mucces)*EAH_ci^(1-1/EAH_mucces)+(1-EAH_nucces)^(1/EAH_mucces)*EAH_cg^(1-1/EAH_mucces))^(1/(EAH_mucces-1))*(EAH_nucces^(1/EAH_mucces))*(EAH_ci^(-1/EAH_mucces));
+EAH_lambdai*(1+EAH_tauc+EAH_gammavi+EAH_vi*EAH_gammavider) = EAH_zcon*(EAH_ccesi-EAH_kappa*EAH_ccesi(-1))^(-EAH_sigma)*EAH_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
 EAH_r                   = EAH_beta^(-1)*EAH_lambdai/EAH_lambdai    *EAH_pic;
@@ -37794,12 +37902,14 @@ EAH_wi^(1-EAH_etai) = (1-EAH_xii)*EAH_witilde^(1-EAH_etai)+EAH_xii*EAH_wi(-1)^(1
 //-------------
 // Household J
 //-------------
+EAH_ccesj^(1-1/EAH_mucces) = (EAH_nucces)^(1/EAH_mucces)*EAH_cj^(1-1/EAH_mucces)+(1-EAH_nucces)^(1/EAH_mucces)*EAH_cg^(1-1/EAH_mucces);
 // Utility
 EAH_utilj = 
-EAH_zcon*log(EAH_cj-EAH_kappa*EAH_cj(-1))-1/(1+EAH_zeta)*EAH_nj^(1+EAH_zeta)+EAH_beta*EAH_utilj(+1)
+EAH_zcon*log(EAH_ccesj-EAH_kappa*EAH_ccesj(-1))-1/(1+EAH_zeta)*(EAH_nj)^(1+EAH_zeta)+EAH_beta*EAH_utilj(+1)
 ;
 // Marginal utility of consumption
-EAH_lambdaj*(1+EAH_tauc+EAH_gammavj+EAH_vj*EAH_gammavjder) = EAH_zcon*(EAH_cj-EAH_kappa*EAH_cj(-1))^(-EAH_sigma);
+EAH_dccj = ((EAH_nucces)^(1/EAH_mucces)*EAH_cj^(1-1/EAH_mucces)+(1-EAH_nucces)^(1/EAH_mucces)*EAH_cg^(1-1/EAH_mucces))^(1/(EAH_mucces-1))*(EAH_nucces^(1/EAH_mucces))*(EAH_cj^(-1/EAH_mucces));
+EAH_lambdaj*(1+EAH_tauc+EAH_gammavj+EAH_vj*EAH_gammavjder) = EAH_zcon*(EAH_ccesj-EAH_kappa*EAH_ccesj(-1))^(-EAH_sigma)*EAH_dccj;
 // Budget constraint
 (1+EAH_tauc+EAH_gammavj)*EAH_cj+EAH_mj = (1-EAH_taun-EAH_tauwh)*EAH_wj*EAH_nj+EAH_trj-EAH_tj+EAH_mj(-1)*EAH_pic^(-1);
 // Euler equation for money
@@ -37826,14 +37936,16 @@ EAH_wj^(1-EAH_etaj) = (1-EAH_xij)*EAH_wjtilde^(1-EAH_etaj)+EAH_xij*EAH_wj(-1)^(1
 //-------------
 // Intermediate-good firms
 //-------------
+// Government capital accumulation:
+EAH_kg = (1-EAH_deltag)*EAH_kg(-1)+EAH_ig(-1);
 // Production function tradable
-EAH_yst = EAH_zt*EAH_kdt^EAH_alphat*EAH_ndt^(1-EAH_alphat)-EAH_psitbar;
+EAH_yst = EAH_zt*EAH_kg^EAH_alphag*EAH_kdt^EAH_alphat*EAH_ndt^(1-EAH_alphat)-EAH_psitbar;
 // Production function nontradable
-EAH_ysn = EAH_zn*EAH_kdn^EAH_alphan*EAH_ndn^(1-EAH_alphan)-EAH_psinbar;
+EAH_ysn = EAH_zn*EAH_kg^EAH_alphag*EAH_kdn^EAH_alphan*EAH_ndn^(1-EAH_alphan)-EAH_psinbar;
 // Real marginal cost tradable
-EAH_mct = 1/(EAH_zt*(EAH_alphat)^(EAH_alphat)*(1-EAH_alphat)^(1-EAH_alphat))*EAH_rk^(EAH_alphat)*((1+EAH_tauwf)*EAH_w)^(1-EAH_alphat);
+EAH_mct = 1/(EAH_zt*EAH_kg^EAH_alphag*(EAH_alphat)^(EAH_alphat)*(1-EAH_alphat)^(1-EAH_alphat))*EAH_rk^(EAH_alphat)*((1+EAH_tauwf)*EAH_w)^(1-EAH_alphat);
 // Real marginal cost nontradable
-EAH_mcn = 1/(EAH_zn*(EAH_alphan)^(EAH_alphan)*(1-EAH_alphan)^(1-EAH_alphan))*EAH_rk^(EAH_alphan)*((1+EAH_tauwf)*EAH_w)^(1-EAH_alphan);
+EAH_mcn = 1/(EAH_zn*EAH_kg^EAH_alphag*(EAH_alphan)^(EAH_alphan)*(1-EAH_alphan)^(1-EAH_alphan))*EAH_rk^(EAH_alphan)*((1+EAH_tauwf)*EAH_w)^(1-EAH_alphan);
 // Wage Inflation (qoq)
 EAH_piw = EAH_w/EAH_w(-1)*EAH_pic;
 // Wage Inflation (yoy)
@@ -41687,12 +41799,14 @@ EAH_internalrer = EAH_pnt/EAH_pttc;
 //-------------
 // Household I
 //-------------
+EAI_ccesi^(1-1/EAI_mucces) = (EAI_nucces)^(1/EAI_mucces)*EAI_ci^(1-1/EAI_mucces)+(1-EAI_nucces)^(1/EAI_mucces)*EAI_cg^(1-1/EAI_mucces);
 // Utility
 EAI_utili = 
-EAI_zcon*log(EAI_ci-EAI_kappa*EAI_ci(-1))-1/(1+EAI_zeta)*(EAI_ni)^(1+EAI_zeta)+EAI_beta*EAI_utili(+1)
+EAI_zcon*log(EAI_ccesi-EAI_kappa*EAI_ccesi(-1))-1/(1+EAI_zeta)*(EAI_ni)^(1+EAI_zeta)+EAI_beta*EAI_utili(+1)
 ;
 // Marginal utility of consumption
-EAI_lambdai*(1+EAI_tauc+EAI_gammavi+EAI_vi*EAI_gammavider) = EAI_zcon*(EAI_ci-EAI_kappa*EAI_ci(-1))^(-EAI_sigma);
+EAI_dcci = ((EAI_nucces)^(1/EAI_mucces)*EAI_ci^(1-1/EAI_mucces)+(1-EAI_nucces)^(1/EAI_mucces)*EAI_cg^(1-1/EAI_mucces))^(1/(EAI_mucces-1))*(EAI_nucces^(1/EAI_mucces))*(EAI_ci^(-1/EAI_mucces));
+EAI_lambdai*(1+EAI_tauc+EAI_gammavi+EAI_vi*EAI_gammavider) = EAI_zcon*(EAI_ccesi-EAI_kappa*EAI_ccesi(-1))^(-EAI_sigma)*EAI_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
 EAI_r                   = EAI_beta^(-1)*EAI_lambdai/EAI_lambdai    *EAI_pic;
@@ -41728,12 +41842,14 @@ EAI_wi^(1-EAI_etai) = (1-EAI_xii)*EAI_witilde^(1-EAI_etai)+EAI_xii*EAI_wi(-1)^(1
 //-------------
 // Household J
 //-------------
+EAI_ccesj^(1-1/EAI_mucces) = (EAI_nucces)^(1/EAI_mucces)*EAI_cj^(1-1/EAI_mucces)+(1-EAI_nucces)^(1/EAI_mucces)*EAI_cg^(1-1/EAI_mucces);
 // Utility
 EAI_utilj = 
-EAI_zcon*log(EAI_cj-EAI_kappa*EAI_cj(-1))-1/(1+EAI_zeta)*EAI_nj^(1+EAI_zeta)+EAI_beta*EAI_utilj(+1)
+EAI_zcon*log(EAI_ccesj-EAI_kappa*EAI_ccesj(-1))-1/(1+EAI_zeta)*(EAI_nj)^(1+EAI_zeta)+EAI_beta*EAI_utilj(+1)
 ;
 // Marginal utility of consumption
-EAI_lambdaj*(1+EAI_tauc+EAI_gammavj+EAI_vj*EAI_gammavjder) = EAI_zcon*(EAI_cj-EAI_kappa*EAI_cj(-1))^(-EAI_sigma);
+EAI_dccj = ((EAI_nucces)^(1/EAI_mucces)*EAI_cj^(1-1/EAI_mucces)+(1-EAI_nucces)^(1/EAI_mucces)*EAI_cg^(1-1/EAI_mucces))^(1/(EAI_mucces-1))*(EAI_nucces^(1/EAI_mucces))*(EAI_cj^(-1/EAI_mucces));
+EAI_lambdaj*(1+EAI_tauc+EAI_gammavj+EAI_vj*EAI_gammavjder) = EAI_zcon*(EAI_ccesj-EAI_kappa*EAI_ccesj(-1))^(-EAI_sigma)*EAI_dccj;
 // Budget constraint
 (1+EAI_tauc+EAI_gammavj)*EAI_cj+EAI_mj = (1-EAI_taun-EAI_tauwh)*EAI_wj*EAI_nj+EAI_trj-EAI_tj+EAI_mj(-1)*EAI_pic^(-1);
 // Euler equation for money
@@ -41760,14 +41876,16 @@ EAI_wj^(1-EAI_etaj) = (1-EAI_xij)*EAI_wjtilde^(1-EAI_etaj)+EAI_xij*EAI_wj(-1)^(1
 //-------------
 // Intermediate-good firms
 //-------------
+// Government capital accumulation:
+EAI_kg = (1-EAI_deltag)*EAI_kg(-1)+EAI_ig(-1);
 // Production function tradable
-EAI_yst = EAI_zt*EAI_kdt^EAI_alphat*EAI_ndt^(1-EAI_alphat)-EAI_psitbar;
+EAI_yst = EAI_zt*EAI_kg^EAI_alphag*EAI_kdt^EAI_alphat*EAI_ndt^(1-EAI_alphat)-EAI_psitbar;
 // Production function nontradable
-EAI_ysn = EAI_zn*EAI_kdn^EAI_alphan*EAI_ndn^(1-EAI_alphan)-EAI_psinbar;
+EAI_ysn = EAI_zn*EAI_kg^EAI_alphag*EAI_kdn^EAI_alphan*EAI_ndn^(1-EAI_alphan)-EAI_psinbar;
 // Real marginal cost tradable
-EAI_mct = 1/(EAI_zt*(EAI_alphat)^(EAI_alphat)*(1-EAI_alphat)^(1-EAI_alphat))*EAI_rk^(EAI_alphat)*((1+EAI_tauwf)*EAI_w)^(1-EAI_alphat);
+EAI_mct = 1/(EAI_zt*EAI_kg^EAI_alphag*(EAI_alphat)^(EAI_alphat)*(1-EAI_alphat)^(1-EAI_alphat))*EAI_rk^(EAI_alphat)*((1+EAI_tauwf)*EAI_w)^(1-EAI_alphat);
 // Real marginal cost nontradable
-EAI_mcn = 1/(EAI_zn*(EAI_alphan)^(EAI_alphan)*(1-EAI_alphan)^(1-EAI_alphan))*EAI_rk^(EAI_alphan)*((1+EAI_tauwf)*EAI_w)^(1-EAI_alphan);
+EAI_mcn = 1/(EAI_zn*EAI_kg^EAI_alphag*(EAI_alphan)^(EAI_alphan)*(1-EAI_alphan)^(1-EAI_alphan))*EAI_rk^(EAI_alphan)*((1+EAI_tauwf)*EAI_w)^(1-EAI_alphan);
 // Wage Inflation (qoq)
 EAI_piw = EAI_w/EAI_w(-1)*EAI_pic;
 // Wage Inflation (yoy)
@@ -45621,12 +45739,14 @@ EAI_internalrer = EAI_pnt/EAI_pttc;
 //-------------
 // Household I
 //-------------
+EAJ_ccesi^(1-1/EAJ_mucces) = (EAJ_nucces)^(1/EAJ_mucces)*EAJ_ci^(1-1/EAJ_mucces)+(1-EAJ_nucces)^(1/EAJ_mucces)*EAJ_cg^(1-1/EAJ_mucces);
 // Utility
 EAJ_utili = 
-EAJ_zcon*log(EAJ_ci-EAJ_kappa*EAJ_ci(-1))-1/(1+EAJ_zeta)*(EAJ_ni)^(1+EAJ_zeta)+EAJ_beta*EAJ_utili(+1)
+EAJ_zcon*log(EAJ_ccesi-EAJ_kappa*EAJ_ccesi(-1))-1/(1+EAJ_zeta)*(EAJ_ni)^(1+EAJ_zeta)+EAJ_beta*EAJ_utili(+1)
 ;
 // Marginal utility of consumption
-EAJ_lambdai*(1+EAJ_tauc+EAJ_gammavi+EAJ_vi*EAJ_gammavider) = EAJ_zcon*(EAJ_ci-EAJ_kappa*EAJ_ci(-1))^(-EAJ_sigma);
+EAJ_dcci = ((EAJ_nucces)^(1/EAJ_mucces)*EAJ_ci^(1-1/EAJ_mucces)+(1-EAJ_nucces)^(1/EAJ_mucces)*EAJ_cg^(1-1/EAJ_mucces))^(1/(EAJ_mucces-1))*(EAJ_nucces^(1/EAJ_mucces))*(EAJ_ci^(-1/EAJ_mucces));
+EAJ_lambdai*(1+EAJ_tauc+EAJ_gammavi+EAJ_vi*EAJ_gammavider) = EAJ_zcon*(EAJ_ccesi-EAJ_kappa*EAJ_ccesi(-1))^(-EAJ_sigma)*EAJ_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
 EAJ_r                   = EAJ_beta^(-1)*EAJ_lambdai/EAJ_lambdai    *EAJ_pic;
@@ -45662,12 +45782,14 @@ EAJ_wi^(1-EAJ_etai) = (1-EAJ_xii)*EAJ_witilde^(1-EAJ_etai)+EAJ_xii*EAJ_wi(-1)^(1
 //-------------
 // Household J
 //-------------
+EAJ_ccesj^(1-1/EAJ_mucces) = (EAJ_nucces)^(1/EAJ_mucces)*EAJ_cj^(1-1/EAJ_mucces)+(1-EAJ_nucces)^(1/EAJ_mucces)*EAJ_cg^(1-1/EAJ_mucces);
 // Utility
 EAJ_utilj = 
-EAJ_zcon*log(EAJ_cj-EAJ_kappa*EAJ_cj(-1))-1/(1+EAJ_zeta)*EAJ_nj^(1+EAJ_zeta)+EAJ_beta*EAJ_utilj(+1)
+EAJ_zcon*log(EAJ_ccesj-EAJ_kappa*EAJ_ccesj(-1))-1/(1+EAJ_zeta)*(EAJ_nj)^(1+EAJ_zeta)+EAJ_beta*EAJ_utilj(+1)
 ;
 // Marginal utility of consumption
-EAJ_lambdaj*(1+EAJ_tauc+EAJ_gammavj+EAJ_vj*EAJ_gammavjder) = EAJ_zcon*(EAJ_cj-EAJ_kappa*EAJ_cj(-1))^(-EAJ_sigma);
+EAJ_dccj = ((EAJ_nucces)^(1/EAJ_mucces)*EAJ_cj^(1-1/EAJ_mucces)+(1-EAJ_nucces)^(1/EAJ_mucces)*EAJ_cg^(1-1/EAJ_mucces))^(1/(EAJ_mucces-1))*(EAJ_nucces^(1/EAJ_mucces))*(EAJ_cj^(-1/EAJ_mucces));
+EAJ_lambdaj*(1+EAJ_tauc+EAJ_gammavj+EAJ_vj*EAJ_gammavjder) = EAJ_zcon*(EAJ_ccesj-EAJ_kappa*EAJ_ccesj(-1))^(-EAJ_sigma)*EAJ_dccj;
 // Budget constraint
 (1+EAJ_tauc+EAJ_gammavj)*EAJ_cj+EAJ_mj = (1-EAJ_taun-EAJ_tauwh)*EAJ_wj*EAJ_nj+EAJ_trj-EAJ_tj+EAJ_mj(-1)*EAJ_pic^(-1);
 // Euler equation for money
@@ -45694,14 +45816,16 @@ EAJ_wj^(1-EAJ_etaj) = (1-EAJ_xij)*EAJ_wjtilde^(1-EAJ_etaj)+EAJ_xij*EAJ_wj(-1)^(1
 //-------------
 // Intermediate-good firms
 //-------------
+// Government capital accumulation:
+EAJ_kg = (1-EAJ_deltag)*EAJ_kg(-1)+EAJ_ig(-1);
 // Production function tradable
-EAJ_yst = EAJ_zt*EAJ_kdt^EAJ_alphat*EAJ_ndt^(1-EAJ_alphat)-EAJ_psitbar;
+EAJ_yst = EAJ_zt*EAJ_kg^EAJ_alphag*EAJ_kdt^EAJ_alphat*EAJ_ndt^(1-EAJ_alphat)-EAJ_psitbar;
 // Production function nontradable
-EAJ_ysn = EAJ_zn*EAJ_kdn^EAJ_alphan*EAJ_ndn^(1-EAJ_alphan)-EAJ_psinbar;
+EAJ_ysn = EAJ_zn*EAJ_kg^EAJ_alphag*EAJ_kdn^EAJ_alphan*EAJ_ndn^(1-EAJ_alphan)-EAJ_psinbar;
 // Real marginal cost tradable
-EAJ_mct = 1/(EAJ_zt*(EAJ_alphat)^(EAJ_alphat)*(1-EAJ_alphat)^(1-EAJ_alphat))*EAJ_rk^(EAJ_alphat)*((1+EAJ_tauwf)*EAJ_w)^(1-EAJ_alphat);
+EAJ_mct = 1/(EAJ_zt*EAJ_kg^EAJ_alphag*(EAJ_alphat)^(EAJ_alphat)*(1-EAJ_alphat)^(1-EAJ_alphat))*EAJ_rk^(EAJ_alphat)*((1+EAJ_tauwf)*EAJ_w)^(1-EAJ_alphat);
 // Real marginal cost nontradable
-EAJ_mcn = 1/(EAJ_zn*(EAJ_alphan)^(EAJ_alphan)*(1-EAJ_alphan)^(1-EAJ_alphan))*EAJ_rk^(EAJ_alphan)*((1+EAJ_tauwf)*EAJ_w)^(1-EAJ_alphan);
+EAJ_mcn = 1/(EAJ_zn*EAJ_kg^EAJ_alphag*(EAJ_alphan)^(EAJ_alphan)*(1-EAJ_alphan)^(1-EAJ_alphan))*EAJ_rk^(EAJ_alphan)*((1+EAJ_tauwf)*EAJ_w)^(1-EAJ_alphan);
 // Wage Inflation (qoq)
 EAJ_piw = EAJ_w/EAJ_w(-1)*EAJ_pic;
 // Wage Inflation (yoy)
@@ -49555,12 +49679,14 @@ EAJ_internalrer = EAJ_pnt/EAJ_pttc;
 //-------------
 // Household I
 //-------------
+EAK_ccesi^(1-1/EAK_mucces) = (EAK_nucces)^(1/EAK_mucces)*EAK_ci^(1-1/EAK_mucces)+(1-EAK_nucces)^(1/EAK_mucces)*EAK_cg^(1-1/EAK_mucces);
 // Utility
 EAK_utili = 
-EAK_zcon*log(EAK_ci-EAK_kappa*EAK_ci(-1))-1/(1+EAK_zeta)*(EAK_ni)^(1+EAK_zeta)+EAK_beta*EAK_utili(+1)
+EAK_zcon*log(EAK_ccesi-EAK_kappa*EAK_ccesi(-1))-1/(1+EAK_zeta)*(EAK_ni)^(1+EAK_zeta)+EAK_beta*EAK_utili(+1)
 ;
 // Marginal utility of consumption
-EAK_lambdai*(1+EAK_tauc+EAK_gammavi+EAK_vi*EAK_gammavider) = EAK_zcon*(EAK_ci-EAK_kappa*EAK_ci(-1))^(-EAK_sigma);
+EAK_dcci = ((EAK_nucces)^(1/EAK_mucces)*EAK_ci^(1-1/EAK_mucces)+(1-EAK_nucces)^(1/EAK_mucces)*EAK_cg^(1-1/EAK_mucces))^(1/(EAK_mucces-1))*(EAK_nucces^(1/EAK_mucces))*(EAK_ci^(-1/EAK_mucces));
+EAK_lambdai*(1+EAK_tauc+EAK_gammavi+EAK_vi*EAK_gammavider) = EAK_zcon*(EAK_ccesi-EAK_kappa*EAK_ccesi(-1))^(-EAK_sigma)*EAK_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
 // Germany
@@ -49596,12 +49722,14 @@ EAK_wi^(1-EAK_etai) = (1-EAK_xii)*EAK_witilde^(1-EAK_etai)+EAK_xii*EAK_wi(-1)^(1
 //-------------
 // Household J
 //-------------
+EAK_ccesj^(1-1/EAK_mucces) = (EAK_nucces)^(1/EAK_mucces)*EAK_cj^(1-1/EAK_mucces)+(1-EAK_nucces)^(1/EAK_mucces)*EAK_cg^(1-1/EAK_mucces);
 // Utility
 EAK_utilj = 
-EAK_zcon*log(EAK_cj-EAK_kappa*EAK_cj(-1))-1/(1+EAK_zeta)*EAK_nj^(1+EAK_zeta)+EAK_beta*EAK_utilj(+1)
+EAK_zcon*log(EAK_ccesj-EAK_kappa*EAK_ccesj(-1))-1/(1+EAK_zeta)*(EAK_nj)^(1+EAK_zeta)+EAK_beta*EAK_utilj(+1)
 ;
 // Marginal utility of consumption
-EAK_lambdaj*(1+EAK_tauc+EAK_gammavj+EAK_vj*EAK_gammavjder) = EAK_zcon*(EAK_cj-EAK_kappa*EAK_cj(-1))^(-EAK_sigma);
+EAK_dccj = ((EAK_nucces)^(1/EAK_mucces)*EAK_cj^(1-1/EAK_mucces)+(1-EAK_nucces)^(1/EAK_mucces)*EAK_cg^(1-1/EAK_mucces))^(1/(EAK_mucces-1))*(EAK_nucces^(1/EAK_mucces))*(EAK_cj^(-1/EAK_mucces));
+EAK_lambdaj*(1+EAK_tauc+EAK_gammavj+EAK_vj*EAK_gammavjder) = EAK_zcon*(EAK_ccesj-EAK_kappa*EAK_ccesj(-1))^(-EAK_sigma)*EAK_dccj;
 // Budget constraint
 (1+EAK_tauc+EAK_gammavj)*EAK_cj+EAK_mj = (1-EAK_taun-EAK_tauwh)*EAK_wj*EAK_nj+EAK_trj-EAK_tj+EAK_mj(-1)*EAK_pic^(-1);
 // Euler equation for money
@@ -49628,14 +49756,16 @@ EAK_wj^(1-EAK_etaj) = (1-EAK_xij)*EAK_wjtilde^(1-EAK_etaj)+EAK_xij*EAK_wj(-1)^(1
 //-------------
 // Intermediate-good firms
 //-------------
+// Government capital accumulation:
+EAK_kg = (1-EAK_deltag)*EAK_kg(-1)+EAK_ig(-1);
 // Production function tradable
-EAK_yst = EAK_zt*EAK_kdt^EAK_alphat*EAK_ndt^(1-EAK_alphat)-EAK_psitbar;
+EAK_yst = EAK_zt*EAK_kg^EAK_alphag*EAK_kdt^EAK_alphat*EAK_ndt^(1-EAK_alphat)-EAK_psitbar;
 // Production function nontradable
-EAK_ysn = EAK_zn*EAK_kdn^EAK_alphan*EAK_ndn^(1-EAK_alphan)-EAK_psinbar;
+EAK_ysn = EAK_zn*EAK_kg^EAK_alphag*EAK_kdn^EAK_alphan*EAK_ndn^(1-EAK_alphan)-EAK_psinbar;
 // Real marginal cost tradable
-EAK_mct = 1/(EAK_zt*(EAK_alphat)^(EAK_alphat)*(1-EAK_alphat)^(1-EAK_alphat))*EAK_rk^(EAK_alphat)*((1+EAK_tauwf)*EAK_w)^(1-EAK_alphat);
+EAK_mct = 1/(EAK_zt*EAK_kg^EAK_alphag*(EAK_alphat)^(EAK_alphat)*(1-EAK_alphat)^(1-EAK_alphat))*EAK_rk^(EAK_alphat)*((1+EAK_tauwf)*EAK_w)^(1-EAK_alphat);
 // Real marginal cost nontradable
-EAK_mcn = 1/(EAK_zn*(EAK_alphan)^(EAK_alphan)*(1-EAK_alphan)^(1-EAK_alphan))*EAK_rk^(EAK_alphan)*((1+EAK_tauwf)*EAK_w)^(1-EAK_alphan);
+EAK_mcn = 1/(EAK_zn*EAK_kg^EAK_alphag*(EAK_alphan)^(EAK_alphan)*(1-EAK_alphan)^(1-EAK_alphan))*EAK_rk^(EAK_alphan)*((1+EAK_tauwf)*EAK_w)^(1-EAK_alphan);
 // Wage Inflation (qoq)
 EAK_piw = EAK_w/EAK_w(-1)*EAK_pic;
 // Wage Inflation (yoy)
@@ -53489,12 +53619,14 @@ EAK_internalrer = EAK_pnt/EAK_pttc;
 //-------------
 // Household I
 //-------------
+EAL_ccesi^(1-1/EAL_mucces) = (EAL_nucces)^(1/EAL_mucces)*EAL_ci^(1-1/EAL_mucces)+(1-EAL_nucces)^(1/EAL_mucces)*EAL_cg^(1-1/EAL_mucces);
 // Utility
 EAL_utili = 
-EAL_zcon*log(EAL_ci-EAL_kappa*EAL_ci(-1))-1/(1+EAL_zeta)*(EAL_ni)^(1+EAL_zeta)+EAL_beta*EAL_utili(+1)
+EAL_zcon*log(EAL_ccesi-EAL_kappa*EAL_ccesi(-1))-1/(1+EAL_zeta)*(EAL_ni)^(1+EAL_zeta)+EAL_beta*EAL_utili(+1)
 ;
 // Marginal utility of consumption
-EAL_lambdai*(1+EAL_tauc+EAL_gammavi+EAL_vi*EAL_gammavider) = EAL_zcon*(EAL_ci-EAL_kappa*EAL_ci(-1))^(-EAL_sigma);
+EAL_dcci = ((EAL_nucces)^(1/EAL_mucces)*EAL_ci^(1-1/EAL_mucces)+(1-EAL_nucces)^(1/EAL_mucces)*EAL_cg^(1-1/EAL_mucces))^(1/(EAL_mucces-1))*(EAL_nucces^(1/EAL_mucces))*(EAL_ci^(-1/EAL_mucces));
+EAL_lambdai*(1+EAL_tauc+EAL_gammavi+EAL_vi*EAL_gammavider) = EAL_zcon*(EAL_ccesi-EAL_kappa*EAL_ccesi(-1))^(-EAL_sigma)*EAL_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
 // Germany
@@ -53530,12 +53662,14 @@ EAL_wi^(1-EAL_etai) = (1-EAL_xii)*EAL_witilde^(1-EAL_etai)+EAL_xii*EAL_wi(-1)^(1
 //-------------
 // Household J
 //-------------
+EAL_ccesj^(1-1/EAL_mucces) = (EAL_nucces)^(1/EAL_mucces)*EAL_cj^(1-1/EAL_mucces)+(1-EAL_nucces)^(1/EAL_mucces)*EAL_cg^(1-1/EAL_mucces);
 // Utility
 EAL_utilj = 
-EAL_zcon*log(EAL_cj-EAL_kappa*EAL_cj(-1))-1/(1+EAL_zeta)*EAL_nj^(1+EAL_zeta)+EAL_beta*EAL_utilj(+1)
+EAL_zcon*log(EAL_ccesj-EAL_kappa*EAL_ccesj(-1))-1/(1+EAL_zeta)*(EAL_nj)^(1+EAL_zeta)+EAL_beta*EAL_utilj(+1)
 ;
 // Marginal utility of consumption
-EAL_lambdaj*(1+EAL_tauc+EAL_gammavj+EAL_vj*EAL_gammavjder) = EAL_zcon*(EAL_cj-EAL_kappa*EAL_cj(-1))^(-EAL_sigma);
+EAL_dccj = ((EAL_nucces)^(1/EAL_mucces)*EAL_cj^(1-1/EAL_mucces)+(1-EAL_nucces)^(1/EAL_mucces)*EAL_cg^(1-1/EAL_mucces))^(1/(EAL_mucces-1))*(EAL_nucces^(1/EAL_mucces))*(EAL_cj^(-1/EAL_mucces));
+EAL_lambdaj*(1+EAL_tauc+EAL_gammavj+EAL_vj*EAL_gammavjder) = EAL_zcon*(EAL_ccesj-EAL_kappa*EAL_ccesj(-1))^(-EAL_sigma)*EAL_dccj;
 // Budget constraint
 (1+EAL_tauc+EAL_gammavj)*EAL_cj+EAL_mj = (1-EAL_taun-EAL_tauwh)*EAL_wj*EAL_nj+EAL_trj-EAL_tj+EAL_mj(-1)*EAL_pic^(-1);
 // Euler equation for money
@@ -53562,14 +53696,16 @@ EAL_wj^(1-EAL_etaj) = (1-EAL_xij)*EAL_wjtilde^(1-EAL_etaj)+EAL_xij*EAL_wj(-1)^(1
 //-------------
 // Intermediate-good firms
 //-------------
+// Government capital accumulation:
+EAL_kg = (1-EAL_deltag)*EAL_kg(-1)+EAL_ig(-1);
 // Production function tradable
-EAL_yst = EAL_zt*EAL_kdt^EAL_alphat*EAL_ndt^(1-EAL_alphat)-EAL_psitbar;
+EAL_yst = EAL_zt*EAL_kg^EAL_alphag*EAL_kdt^EAL_alphat*EAL_ndt^(1-EAL_alphat)-EAL_psitbar;
 // Production function nontradable
-EAL_ysn = EAL_zn*EAL_kdn^EAL_alphan*EAL_ndn^(1-EAL_alphan)-EAL_psinbar;
+EAL_ysn = EAL_zn*EAL_kg^EAL_alphag*EAL_kdn^EAL_alphan*EAL_ndn^(1-EAL_alphan)-EAL_psinbar;
 // Real marginal cost tradable
-EAL_mct = 1/(EAL_zt*(EAL_alphat)^(EAL_alphat)*(1-EAL_alphat)^(1-EAL_alphat))*EAL_rk^(EAL_alphat)*((1+EAL_tauwf)*EAL_w)^(1-EAL_alphat);
+EAL_mct = 1/(EAL_zt*EAL_kg^EAL_alphag*(EAL_alphat)^(EAL_alphat)*(1-EAL_alphat)^(1-EAL_alphat))*EAL_rk^(EAL_alphat)*((1+EAL_tauwf)*EAL_w)^(1-EAL_alphat);
 // Real marginal cost nontradable
-EAL_mcn = 1/(EAL_zn*(EAL_alphan)^(EAL_alphan)*(1-EAL_alphan)^(1-EAL_alphan))*EAL_rk^(EAL_alphan)*((1+EAL_tauwf)*EAL_w)^(1-EAL_alphan);
+EAL_mcn = 1/(EAL_zn*EAL_kg^EAL_alphag*(EAL_alphan)^(EAL_alphan)*(1-EAL_alphan)^(1-EAL_alphan))*EAL_rk^(EAL_alphan)*((1+EAL_tauwf)*EAL_w)^(1-EAL_alphan);
 // Wage Inflation (qoq)
 EAL_piw = EAL_w/EAL_w(-1)*EAL_pic;
 // Wage Inflation (yoy)
@@ -57423,12 +57559,14 @@ EAL_internalrer = EAL_pnt/EAL_pttc;
 //-------------
 // Household I
 //-------------
+RW_ccesi^(1-1/RW_mucces) = (RW_nucces)^(1/RW_mucces)*RW_ci^(1-1/RW_mucces)+(1-RW_nucces)^(1/RW_mucces)*RW_cg^(1-1/RW_mucces);
 // Utility
 RW_utili = 
-RW_zcon*log(RW_ci-RW_kappa*RW_ci(-1))-1/(1+RW_zeta)*(RW_ni)^(1+RW_zeta)+RW_beta*RW_utili(+1)
+RW_zcon*log(RW_ccesi-RW_kappa*RW_ccesi(-1))-1/(1+RW_zeta)*(RW_ni)^(1+RW_zeta)+RW_beta*RW_utili(+1)
 ;
 // Marginal utility of consumption
-RW_lambdai*(1+RW_tauc+RW_gammavi+RW_vi*RW_gammavider) = RW_zcon*(RW_ci-RW_kappa*RW_ci(-1))^(-RW_sigma);
+RW_dcci = ((RW_nucces)^(1/RW_mucces)*RW_ci^(1-1/RW_mucces)+(1-RW_nucces)^(1/RW_mucces)*RW_cg^(1-1/RW_mucces))^(1/(RW_mucces-1))*(RW_nucces^(1/RW_mucces))*(RW_ci^(-1/RW_mucces));
+RW_lambdai*(1+RW_tauc+RW_gammavi+RW_vi*RW_gammavider) = RW_zcon*(RW_ccesi-RW_kappa*RW_ccesi(-1))^(-RW_sigma)*RW_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
 // Germany
@@ -57464,12 +57602,14 @@ RW_wi^(1-RW_etai) = (1-RW_xii)*RW_witilde^(1-RW_etai)+RW_xii*RW_wi(-1)^(1-RW_eta
 //-------------
 // Household J
 //-------------
+RW_ccesj^(1-1/RW_mucces) = (RW_nucces)^(1/RW_mucces)*RW_cj^(1-1/RW_mucces)+(1-RW_nucces)^(1/RW_mucces)*RW_cg^(1-1/RW_mucces);
 // Utility
 RW_utilj = 
-RW_zcon*log(RW_cj-RW_kappa*RW_cj(-1))-1/(1+RW_zeta)*RW_nj^(1+RW_zeta)+RW_beta*RW_utilj(+1)
+RW_zcon*log(RW_ccesj-RW_kappa*RW_ccesj(-1))-1/(1+RW_zeta)*(RW_nj)^(1+RW_zeta)+RW_beta*RW_utilj(+1)
 ;
 // Marginal utility of consumption
-RW_lambdaj*(1+RW_tauc+RW_gammavj+RW_vj*RW_gammavjder) = RW_zcon*(RW_cj-RW_kappa*RW_cj(-1))^(-RW_sigma);
+RW_dccj = ((RW_nucces)^(1/RW_mucces)*RW_cj^(1-1/RW_mucces)+(1-RW_nucces)^(1/RW_mucces)*RW_cg^(1-1/RW_mucces))^(1/(RW_mucces-1))*(RW_nucces^(1/RW_mucces))*(RW_cj^(-1/RW_mucces));
+RW_lambdaj*(1+RW_tauc+RW_gammavj+RW_vj*RW_gammavjder) = RW_zcon*(RW_ccesj-RW_kappa*RW_ccesj(-1))^(-RW_sigma)*RW_dccj;
 // Budget constraint
 (1+RW_tauc+RW_gammavj)*RW_cj+RW_mj = (1-RW_taun-RW_tauwh)*RW_wj*RW_nj+RW_trj-RW_tj+RW_mj(-1)*RW_pic^(-1);
 // Euler equation for money
@@ -57496,14 +57636,16 @@ RW_wj^(1-RW_etaj) = (1-RW_xij)*RW_wjtilde^(1-RW_etaj)+RW_xij*RW_wj(-1)^(1-RW_eta
 //-------------
 // Intermediate-good firms
 //-------------
+// Government capital accumulation:
+RW_kg = (1-RW_deltag)*RW_kg(-1)+RW_ig(-1);
 // Production function tradable
-RW_yst = RW_zt*RW_kdt^RW_alphat*RW_ndt^(1-RW_alphat)-RW_psitbar;
+RW_yst = RW_zt*RW_kg^RW_alphag*RW_kdt^RW_alphat*RW_ndt^(1-RW_alphat)-RW_psitbar;
 // Production function nontradable
-RW_ysn = RW_zn*RW_kdn^RW_alphan*RW_ndn^(1-RW_alphan)-RW_psinbar;
+RW_ysn = RW_zn*RW_kg^RW_alphag*RW_kdn^RW_alphan*RW_ndn^(1-RW_alphan)-RW_psinbar;
 // Real marginal cost tradable
-RW_mct = 1/(RW_zt*(RW_alphat)^(RW_alphat)*(1-RW_alphat)^(1-RW_alphat))*RW_rk^(RW_alphat)*((1+RW_tauwf)*RW_w)^(1-RW_alphat);
+RW_mct = 1/(RW_zt*RW_kg^RW_alphag*(RW_alphat)^(RW_alphat)*(1-RW_alphat)^(1-RW_alphat))*RW_rk^(RW_alphat)*((1+RW_tauwf)*RW_w)^(1-RW_alphat);
 // Real marginal cost nontradable
-RW_mcn = 1/(RW_zn*(RW_alphan)^(RW_alphan)*(1-RW_alphan)^(1-RW_alphan))*RW_rk^(RW_alphan)*((1+RW_tauwf)*RW_w)^(1-RW_alphan);
+RW_mcn = 1/(RW_zn*RW_kg^RW_alphag*(RW_alphan)^(RW_alphan)*(1-RW_alphan)^(1-RW_alphan))*RW_rk^(RW_alphan)*((1+RW_tauwf)*RW_w)^(1-RW_alphan);
 // Wage Inflation (qoq)
 RW_piw = RW_w/RW_w(-1)*RW_pic;
 // Wage Inflation (yoy)
@@ -61357,12 +61499,14 @@ RW_internalrer = RW_pnt/RW_pttc;
 //-------------
 // Household I
 //-------------
+US_ccesi^(1-1/US_mucces) = (US_nucces)^(1/US_mucces)*US_ci^(1-1/US_mucces)+(1-US_nucces)^(1/US_mucces)*US_cg^(1-1/US_mucces);
 // Utility
 US_utili = 
-US_zcon*log(US_ci-US_kappa*US_ci(-1))-1/(1+US_zeta)*(US_ni)^(1+US_zeta)+US_beta*US_utili(+1)
+US_zcon*log(US_ccesi-US_kappa*US_ccesi(-1))-1/(1+US_zeta)*(US_ni)^(1+US_zeta)+US_beta*US_utili(+1)
 ;
 // Marginal utility of consumption
-US_lambdai*(1+US_tauc+US_gammavi+US_vi*US_gammavider) = US_zcon*(US_ci-US_kappa*US_ci(-1))^(-US_sigma);
+US_dcci = ((US_nucces)^(1/US_mucces)*US_ci^(1-1/US_mucces)+(1-US_nucces)^(1/US_mucces)*US_cg^(1-1/US_mucces))^(1/(US_mucces-1))*(US_nucces^(1/US_mucces))*(US_ci^(-1/US_mucces));
+US_lambdai*(1+US_tauc+US_gammavi+US_vi*US_gammavider) = US_zcon*(US_ccesi-US_kappa*US_ccesi(-1))^(-US_sigma)*US_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
 // Germany
@@ -61398,12 +61542,14 @@ US_wi^(1-US_etai) = (1-US_xii)*US_witilde^(1-US_etai)+US_xii*US_wi(-1)^(1-US_eta
 //-------------
 // Household J
 //-------------
+US_ccesj^(1-1/US_mucces) = (US_nucces)^(1/US_mucces)*US_cj^(1-1/US_mucces)+(1-US_nucces)^(1/US_mucces)*US_cg^(1-1/US_mucces);
 // Utility
 US_utilj = 
-US_zcon*log(US_cj-US_kappa*US_cj(-1))-1/(1+US_zeta)*US_nj^(1+US_zeta)+US_beta*US_utilj(+1)
+US_zcon*log(US_ccesj-US_kappa*US_ccesj(-1))-1/(1+US_zeta)*(US_nj)^(1+US_zeta)+US_beta*US_utilj(+1)
 ;
 // Marginal utility of consumption
-US_lambdaj*(1+US_tauc+US_gammavj+US_vj*US_gammavjder) = US_zcon*(US_cj-US_kappa*US_cj(-1))^(-US_sigma);
+US_dccj = ((US_nucces)^(1/US_mucces)*US_cj^(1-1/US_mucces)+(1-US_nucces)^(1/US_mucces)*US_cg^(1-1/US_mucces))^(1/(US_mucces-1))*(US_nucces^(1/US_mucces))*(US_cj^(-1/US_mucces));
+US_lambdaj*(1+US_tauc+US_gammavj+US_vj*US_gammavjder) = US_zcon*(US_ccesj-US_kappa*US_ccesj(-1))^(-US_sigma)*US_dccj;
 // Budget constraint
 (1+US_tauc+US_gammavj)*US_cj+US_mj = (1-US_taun-US_tauwh)*US_wj*US_nj+US_trj-US_tj+US_mj(-1)*US_pic^(-1);
 // Euler equation for money
@@ -61430,14 +61576,16 @@ US_wj^(1-US_etaj) = (1-US_xij)*US_wjtilde^(1-US_etaj)+US_xij*US_wj(-1)^(1-US_eta
 //-------------
 // Intermediate-good firms
 //-------------
+// Government capital accumulation:
+US_kg = (1-US_deltag)*US_kg(-1)+US_ig(-1);
 // Production function tradable
-US_yst = US_zt*US_kdt^US_alphat*US_ndt^(1-US_alphat)-US_psitbar;
+US_yst = US_zt*US_kg^US_alphag*US_kdt^US_alphat*US_ndt^(1-US_alphat)-US_psitbar;
 // Production function nontradable
-US_ysn = US_zn*US_kdn^US_alphan*US_ndn^(1-US_alphan)-US_psinbar;
+US_ysn = US_zn*US_kg^US_alphag*US_kdn^US_alphan*US_ndn^(1-US_alphan)-US_psinbar;
 // Real marginal cost tradable
-US_mct = 1/(US_zt*(US_alphat)^(US_alphat)*(1-US_alphat)^(1-US_alphat))*US_rk^(US_alphat)*((1+US_tauwf)*US_w)^(1-US_alphat);
+US_mct = 1/(US_zt*US_kg^US_alphag*(US_alphat)^(US_alphat)*(1-US_alphat)^(1-US_alphat))*US_rk^(US_alphat)*((1+US_tauwf)*US_w)^(1-US_alphat);
 // Real marginal cost nontradable
-US_mcn = 1/(US_zn*(US_alphan)^(US_alphan)*(1-US_alphan)^(1-US_alphan))*US_rk^(US_alphan)*((1+US_tauwf)*US_w)^(1-US_alphan);
+US_mcn = 1/(US_zn*US_kg^US_alphag*(US_alphan)^(US_alphan)*(1-US_alphan)^(1-US_alphan))*US_rk^(US_alphan)*((1+US_tauwf)*US_w)^(1-US_alphan);
 // Wage Inflation (qoq)
 US_piw = US_w/US_w(-1)*US_pic;
 // Wage Inflation (yoy)

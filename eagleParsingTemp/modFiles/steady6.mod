@@ -7,7 +7,7 @@ options_.markowitz = 5;
 
 @#include "init.mod"
 
-@#include "symdecls.mod"
+@#include "symdecls_govInv.mod"
 
 // Flip variables
 
@@ -29,7 +29,7 @@ change_type(var) @{countries[i]}@{it}_numc @{countries[i]}@{it}_numi @{countries
 @#endfor
 @#endfor
 
-@#include "modeqs.mod"
+@#include "modeqs_govInv.mod"
 
 load_params_and_steady_state('eagle_steady_govInv.txt');
 
