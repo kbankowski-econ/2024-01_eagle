@@ -54,6 +54,7 @@
 \usepackage{appendix} % For appendices
 \usepackage{pgffor}    % For the loop
 \usepackage{eurosym}
+\usepackage{pdflscape} % Added package for landscape pages
 
 
 \titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
@@ -127,7 +128,9 @@ A key macroeconomic framework employed within the Eurosystem to analyze both int
 
 \section{Model extension}
 
-\input{tables/placeholder.tex}
+\begin{landscape}
+    \input{tables/placeholder.tex}
+\end{landscape}
 
 % 3 The model embdes a meaningful fiscal policy
 Our model extension incorporates a meaningful role for fiscal policy, which was absent in the original EAGLE framework but introduced in later extensions (see \citet{Clancyetal2016}). Specifically, government expenditure is disaggregated into government consumption and investment. Government consumption enters the utility function as part of a composite consumption basket alongside private consumption, thereby generating utility for households. In this setup, public consumption is not wasteful but exhibits complementarity with private consumption. Similarly, government investment brings benefits as it contributes to the accumulation of public capital, which enhances the productive capacity of the economy over time. Additionally, our model accounts for the direct import content of both types of government spending, recognizing that, a share of public purchases is allocated to imported goods, especially in small open economies.
