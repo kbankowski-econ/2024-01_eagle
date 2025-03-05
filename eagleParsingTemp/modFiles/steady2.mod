@@ -54,16 +54,6 @@ homotopy_setup;
 end;
 steady(homotopy_steps = 5);
 
-// Calibration of nominal investment-to-output ratio
-
-disp('iy')
-homotopy_setup;
-@#for co in countries
-@{co}_iy, 0.2;
-@#endfor
-end;
-steady(homotopy_steps = 5, maxit=20);
-
 // Trade matrix
 
 disp('Trade matrix')

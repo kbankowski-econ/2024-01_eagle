@@ -65866,25 +65866,6 @@ RW_vi, 2.38;
 US_vi, 2.38;
 end;
 steady(homotopy_steps = 5);
-// Calibration of nominal investment-to-output ratio
-disp('iy')
-homotopy_setup;
-EAA_iy, 0.2;
-EAB_iy, 0.2;
-EAC_iy, 0.2;
-EAD_iy, 0.2;
-EAE_iy, 0.2;
-EAF_iy, 0.2;
-EAG_iy, 0.2;
-EAH_iy, 0.2;
-EAI_iy, 0.2;
-EAJ_iy, 0.2;
-EAK_iy, 0.2;
-EAL_iy, 0.2;
-RW_iy, 0.2;
-US_iy, 0.2;
-end;
-steady(homotopy_steps = 5, maxit=20);
 // Trade matrix
 disp('Trade matrix')
 homotopy_setup;
