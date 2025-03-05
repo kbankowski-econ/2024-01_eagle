@@ -65827,7 +65827,7 @@ log(EA_z) = (1-EA_rhoz)*log(EA_zbar)+EA_rhoz*log(EA_z(-1))+EA_epsz;
 // Auxiliary equation for steady-state output
 EA_ybar = EA_y;
 end;
-load_params_and_steady_state('eagle_steady_stage1.txt');
+load_params_and_steady_state('eagle_steady_stage1b.txt');
 // Calibration of interest (semi-)elasticity of money demand
 disp('epsilonm')
 homotopy_setup;

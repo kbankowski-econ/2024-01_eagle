@@ -31,7 +31,7 @@ change_type(var) @{countries[i]}@{it}_numc @{countries[i]}@{it}_numi @{countries
 
 @#include "modeqs.mod"
 
-load_params_and_steady_state('eagle_steady_stage1.txt');
+load_params_and_steady_state('eagle_steady_stage1b.txt');
 
 // Calibration of interest (semi-)elasticity of money demand
 
