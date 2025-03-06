@@ -26,7 +26,7 @@ dynare('steady1b.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsing
 dynare('steady2.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
 %%
-countries = ["EAA", "EAB", "EAC", "EAD", "EAE","EAF","EAG","EAH","EAI","EAJ","EAK","EAL", "RW", "US"];
+countries = [ "RA", "AT", "BE", "ES", "FI", "FR", "GR", "IT", "NL", "PT", "DE", "RU", "RW", "US"];
 
 replaceInTextFile( ...
     fullfile(project_path, "eagleParsingTemp", "submodules", "modeqs.mod") ...
@@ -83,26 +83,6 @@ for i = 1:length(countries)
     steady2struct.ssValues.(aCountry+"_ccesj") = ((0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cj")^(1-1/0.3)+(1-0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cg")^(1-1/0.3))^(1/(1-1/0.3));
     steady2struct.ssValues.(aCountry+"_dcci") = ((0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_ci")^(1-1/0.3)+(1-0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cg")^(1-1/0.3))^(1/(0.3-1))*(0.75^(1/0.3))*(steady2struct.ssValues.(aCountry+"_ci")^(-1/0.3));
     steady2struct.ssValues.(aCountry+"_dccj") = ((0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cj")^(1-1/0.3)+(1-0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cg")^(1-1/0.3))^(1/(0.3-1))*(0.75^(1/0.3))*(steady2struct.ssValues.(aCountry+"_cj")^(-1/0.3));
-
-    %{
-    % Steps to calculate SS utility
-    % EAB_utilj = EAB_zcon*log(EAB_ccesj-EAB_kappa*EAB_ccesj(-1))-1/(1+EAB_zeta)*(EAB_nj)^(1+EAB_zeta)+EAB_beta*EAB_utilj(+1)
-    % EAB_utilj - EAB_beta*EAB_utilj(+1) = EAB_zcon*log(EAB_ccesj-EAB_kappa*EAB_ccesj(-1))-1/(1+EAB_zeta)*(EAB_nj)^(1+EAB_zeta)
-    % EAB_utilj - EAB_beta*EAB_utilj = EAB_zcon*log(EAB_ccesj-EAB_kappa*EAB_ccesj)-1/(1+EAB_zeta)*(EAB_nj)^(1+EAB_zeta)
-    % EAB_utilj * (1-EAB_beta) = EAB_zcon*log(EAB_ccesj-EAB_kappa*EAB_ccesj)-1/(1+EAB_zeta)*(EAB_nj)^(1+EAB_zeta)
-    % EAB_utilj = (EAB_zcon*log(EAB_ccesj-EAB_kappa*EAB_ccesj)-1/(1+EAB_zeta)*(EAB_nj)^(1+EAB_zeta))/(1-EAB_beta)
-     
-    
-    steady2struct.ssValues.(aCountry+"_utili") = (steady2struct.ssValues.(aCountry+"_zcon")*log(steady2struct.ssValues.(aCountry+"_ccesi")-steady2struct.params.(aCountry+"_kappa")*steady2struct.ssValues.(aCountry+"_ccesi"))-1/(1+steady2struct.params.(aCountry+"_zeta"))*(steady2struct.ssValues.(aCountry+"_ni"))^(1+steady2struct.params.(aCountry+"_zeta")))/(1-steady2struct.params.(aCountry+"_beta"));
-    steady2struct.ssValues.(aCountry+"_utilj") = (steady2struct.ssValues.(aCountry+"_zcon")*log(steady2struct.ssValues.(aCountry+"_ccesj")-steady2struct.params.(aCountry+"_kappa")*steady2struct.ssValues.(aCountry+"_ccesj"))-1/(1+steady2struct.params.(aCountry+"_zeta"))*(steady2struct.ssValues.(aCountry+"_nj"))^(1+steady2struct.params.(aCountry+"_zeta")))/(1-steady2struct.params.(aCountry+"_beta"));
-
-    % Steps to calculate SS lambda
-    % EAA_lambdai*(1+EAA_tauc+EAA_gammavi+EAA_vi*EAA_gammavider) = EAA_zcon*(EAA_ccesi-EAA_kappa*EAA_ccesi(-1))^(-EAA_sigma)*EAA_dcci;
-    % EAA_lambdai = EAA_zcon*(EAA_ccesi-EAA_kappa*EAA_ccesi(-1))^(-EAA_sigma)*EAA_dcci/(1+EAA_tauc+EAA_gammavi+EAA_vi*EAA_gammavider);
-
-    steady2struct.ssValues.(aCountry+"_lambdai") = steady2struct.ssValues.(aCountry+"_zcon")*(steady2struct.ssValues.(aCountry+"_ccesi")-steady2struct.params.(aCountry+"_kappa")*steady2struct.ssValues.(aCountry+"_ccesi"))^(-steady2struct.params.(aCountry+"_sigma"))*steady2struct.ssValues.(aCountry+"_dcci")/(1+steady2struct.ssValues.(aCountry+"_tauc")+steady2struct.ssValues.(aCountry+"_gammavi")+steady2struct.params.(aCountry+"_vi")*steady2struct.ssValues.(aCountry+"_gammavider"));
-    steady2struct.ssValues.(aCountry+"_lambdaj") = steady2struct.ssValues.(aCountry+"_zcon")*(steady2struct.ssValues.(aCountry+"_ccesj")-steady2struct.params.(aCountry+"_kappa")*steady2struct.ssValues.(aCountry+"_ccesj"))^(-steady2struct.params.(aCountry+"_sigma"))*steady2struct.ssValues.(aCountry+"_dcci")/(1+steady2struct.ssValues.(aCountry+"_tauc")+steady2struct.ssValues.(aCountry+"_gammavj")+steady2struct.ssValues.(aCountry+"_vj")*steady2struct.ssValues.(aCountry+"_gammavjder"));
-    %}
 
 end
 
