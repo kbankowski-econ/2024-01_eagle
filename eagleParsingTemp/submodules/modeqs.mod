@@ -1026,7 +1026,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 	(
 	@{co}_size*@{co}_pybar*@{co}_y
 	@#for it in countries[2: ctryNumber]
-		@#if it!= "RW" && it!= "US" && it!= "EAL"
+		@#if it!= "RW" && it!= "US" && it!= "RU"
 			+ @{it}_size*@{co}@{it}_rerbar*@{it}_pybar *@{it}_y	
 		@#endif
 	@#endfor	 	
@@ -1049,7 +1049,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 	(
 	@{co}_size*@{co}_m
 	@#for it in countries[2: ctryNumber]
-		@#if it!= "RW" && it!= "US" && it!= "EAL"
+		@#if it!= "RW" && it!= "US" && it!= "RU"
 			+ @{it}_size*@{co}@{it}_rerbar*@{it}_m	
 		@#endif
 	@#endfor	 	

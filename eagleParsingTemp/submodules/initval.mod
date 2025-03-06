@@ -207,7 +207,7 @@ initval;
   @{COUNTRY}_zn = 1;
   @{COUNTRY}_zt = 1;
     
-  @#if(COUNTRY == "RW" || COUNTRY == "US"  || COUNTRY == "EAL")
+  @#if(COUNTRY == "RW" || COUNTRY == "US"  || COUNTRY == "RU")
     @# if !steady
       @{COUNTRY}_epsr = 0;
     @#endif

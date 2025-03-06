@@ -1,4 +1,4 @@
-@#define countries = [ "EAA", "EAB", "EAC", "EAD", "EAE", "EAF", "EAG", "EAH", "EAI", "EAJ", "EAK", "EAL", "RW", "US" ]
+@#define countries = [ "RA", "AT", "BE", "ES", "FI", "FR", "GR", "IT", "NL", "PT", "DE", "RU", "RW", "US" ]
 @#define ctryNumber = 14
 ctryNumberDouble = 14;
 save("paramsToBeSaved", 'ctryNumberDouble')
