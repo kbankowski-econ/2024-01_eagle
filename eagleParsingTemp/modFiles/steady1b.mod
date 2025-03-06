@@ -54,7 +54,7 @@ homotopy_setup;
         @#if co== "RW"
             @{co}_iy,  0.25-0.04; 
         @#else
-            @#if co== "EAA"
+            @#if co== "RA"
                 @{co}_iy,  0.2;
             @#else
                 @{co}_iy,  0.21-0.04;
