@@ -117,15 +117,13 @@ end
 % 
 
 %% writing mod trade calibration file
-writeTradeModFile('trade_matrix_values_calibrated_new.mod', newTable, sizeStruct, countries, countriesAux, shiftAmount)
+writeTradeModFile(fullfile(project_path, 'eagleParsingTemp/modFiles', 'trade_matrix_values_calibrated_new.mod'), newTable, sizeStruct, countries, countriesAux, shiftAmount)
 % writeTradeModFile('trade_matrix_values_calibrated_oldReprinted.mod', origTable, sizeStruct, countries, countriesAux, shiftAmount)
 % writeTradeModFile('trade_matrix_values_calibrated_EABEAM.mod', myTable, sizeStruct, countries, countriesAux, shiftAmount)
 
 %% local functions
 function writeTradeModFile(aFileName, aTable, sizeStruct, countries, countriesAux, shiftAmount)
-
     fileID = fopen(aFileName, 'w');
-    
     % Item loop
     for aItem = ["imcy", "imcgy", "imiy", "imigy"]
         % Outer loop
@@ -133,7 +131,6 @@ function writeTradeModFile(aFileName, aTable, sizeStruct, countries, countriesAu
             aCtry1 = countries(i);
             % Get residual country with circular indexing
             aCtryResid = countriesAux(i + shiftAmount);
-            
             % Inner loop excluding both current and residual countries
             validCountries = countries ~= aCtry1 & countries ~= aCtryResid;
             for aCtry2 = countries(validCountries)
@@ -143,22 +140,50 @@ function writeTradeModFile(aFileName, aTable, sizeStruct, countries, countriesAu
     end
     
     % Item loop
-        % Outer loop
-        for i = 1:length(countries)
-            aCtry2 = countries(i);
-    for aItem = ["imcy", "imcgy", "imiy", "imigy"]
+    % Outer loop
+    for i = 1:length(countries)
+        aCtry2 = countries(i);
+        for aItem = ["imcy", "imcgy", "imiy", "imigy"]
             fprintf(fileID, '%s_%s, %f;\n', aCtry2, aItem, sum(aTable.(aItem){:, aCtry2}, 'omitnan'));
         end
-        end
+    end
     
     % Item loop
-        % Outer loop
-        for i = 1:length(countries)
-            aCtry1 = countries(i);
-            fprintf(fileID, '%s_size, %f;\n', aCtry1, sizeStruct.(aCtry1));
-        end
+    % Outer loop
+    for i = 1:length(countries)
+        aCtry1 = countries(i);
+        fprintf(fileID, '%s_size, %f;\n', aCtry1, sizeStruct.(aCtry1));
+    end
+    
+    % Append the additional text at the end of the file
+    % //TODO: to be delted at some point once we have a more elegant way to
+    % do it
+    fprintf(fileID, 'RA_tby, 0.373208996454428;\n');
+    fprintf(fileID, 'AT_tby, 0.0747460664920413;\n');
+    fprintf(fileID, 'BE_tby, 0.0872880171282875;\n');
+    fprintf(fileID, 'ES_tby, 0.0470211082952423;\n');
+    fprintf(fileID, 'FI_tby, 0.0148495040011288;\n');
+    fprintf(fileID, 'FR_tby, -0.00568074534380902;\n');
+    fprintf(fileID, 'GR_tby, 0.0101564903814751;\n');
+    fprintf(fileID, 'IT_tby, 0.0317390329437055;\n');
+    fprintf(fileID, 'NL_tby, 0.135151581391313;\n');
+    fprintf(fileID, 'PT_tby, 0.0274803612158965;\n');
+    fprintf(fileID, 'DE_tby, 0.0828120982419315;\n');
+    fprintf(fileID, 'RU_tby, 0.076296025979859;\n');
+    fprintf(fileID, 'RW_tby, -0.0114282752350795;\n');
+    fprintf(fileID, 'RA_nuc, 0.9999;\n');
+    fprintf(fileID, 'AT_nuc, 0.65;\n');
+    fprintf(fileID, 'BE_nuc, 0.65;\n');
+    fprintf(fileID, 'ES_nuc, 0.65;\n');
+    fprintf(fileID, 'FI_nuc, 0.65;\n');
+    fprintf(fileID, 'GR_nuc, 0.65;\n');
+    fprintf(fileID, 'IT_nuc, 0.65;\n');
+    fprintf(fileID, 'NL_nuc, 0.65;\n');
+    fprintf(fileID, 'PT_nuc, 0.65;\n');
+    fprintf(fileID, 'DE_nuc, 0.65;\n');
+    fprintf(fileID, 'RU_nuc, 0.65;\n');
+    fprintf(fileID, 'US_nuc, 0.45;');
     
     % Close the file
     fclose(fileID);
-
 end
