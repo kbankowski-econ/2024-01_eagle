@@ -1,0 +1,14 @@
+RA_cgybar, 0.1659;
+AT_cgybar, 0.2161;
+BE_cgybar, 0.2528;
+ES_cgybar, 0.2047;
+FI_cgybar, 0.2603;
+FR_cgybar, 0.2495;
+GR_cgybar, 0.2172;
+IT_cgybar, 0.2035;
+NL_cgybar, 0.2788;
+PT_cgybar, 0.1874;
+DE_cgybar, 0.2170;
+RU_cgybar, 0.2282;
+RW_cgybar, 0.1717;
+US_cgybar, 0.1488;
