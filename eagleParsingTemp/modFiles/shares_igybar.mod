@@ -1,0 +1,14 @@
+RA_igybar, 0.0439;
+AT_igybar, 0.0463;
+BE_igybar, 0.0452;
+ES_igybar, 0.0346;
+FI_igybar, 0.0426;
+FR_igybar, 0.0406;
+GR_igybar, 0.0208;
+IT_igybar, 0.0320;
+NL_igybar, 0.0372;
+PT_igybar, 0.0301;
+DE_igybar, 0.0394;
+RU_igybar, 0.0410;
+RW_igybar, 0.0529;
+US_igybar, 0.0406;

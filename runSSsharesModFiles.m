@@ -1,7 +1,8 @@
 % Define country and item arrays
 ctryList = ["RA", "AT", "BE", "ES", "FI", "FR", "GR", "IT", "NL", "PT", "DE", "RU", "RW", "US"];
-ctry3LetterList = ["REA", "AUT", "BEL", "ESP", "FIN", "FRA", "GRC", "ITA", "NLD", "PRT", "DEU", "REU", "RoW", "USA"];
-itemList = ["public_consumption", "private_consumption", "investment"];
+itemList = ["public_consumption", "private_consumption", "private_investment", "public_investment"];
+itemModelList = ["cgybar", "cy", "iy", "igybar"];
+
 
 % Load shares from CSV
 csvFileName = fullfile(project_path_io, "databases/tables/oecd/eu", "shares.csv");
@@ -13,12 +14,12 @@ for j = 1:numel(itemList)
     item = itemList(j);
     shareStructure.(item) = struct();
     for i = 1:numel(ctryList)
-        shareStructure.(item).(ctryList(i)) = shareTable{item, ctry3LetterList(i)};
+        shareStructure.(item).(ctryList(i)) = shareTable{item, ctryList(i)};
     end
-end
 
-% Export public consumption shares
-exportShareStructure(shareStructure.public_consumption, 'cgybar', ctryList);
+    % Export public consumption shares
+    exportShareStructure(shareStructure.(itemList(j)), itemModelList(j), ctryList);
+end
 
 %% Local function
 function exportShareStructure(shareStructure, aItem, ctryList)
