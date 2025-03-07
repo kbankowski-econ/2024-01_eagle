@@ -30,13 +30,7 @@ steady(homotopy_steps = 5);
 
 disp('cgybar')
 homotopy_setup;
-@#for co in countries
-    @#if co=="RW" || co=="US"
-        @{co}_cgybar, 0.16;
-    @#else
-        @{co}_cgybar, 0.20;
-    @#endif
-@#endfor
+    @#include "shares_cgybar.mod"
 end;
 steady(homotopy_steps = 5);
 
