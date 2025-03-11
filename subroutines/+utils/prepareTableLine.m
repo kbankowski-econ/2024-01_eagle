@@ -13,6 +13,8 @@ function outputString = prepareTableLine(envi, varName, varSymbol, aField, aStru
     % Differentiate formatting for some variables
     if ismember(aField, {'delta', 'size'})
         aFormat = ' & %.3f';
+    elseif ismember(aField, {'gammau2'})
+        aFormat = ' & %.0f';        
     else
         aFormat = ' & %.2f';
     end
