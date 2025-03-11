@@ -1,14 +1,17 @@
 function outputString = prepareTableLine(envi, varName, varSymbol, aField, aStruct)
 
     % Create the array of values from the structure fields using country codes
-    values = ones(1, length(envi.Meta.ctryList));  % Changed to ones instead of zeros
+    values = nan(1, length(envi.Meta.ctryList));  % Changed to ones instead of zeros
     for i = 1:length(envi.Meta.ctryList)
         fieldName = envi.Meta.ctryList(i) + "_" + aField;
-        values(i) = aStruct.(fieldName);
+        try
+            values(i) = aStruct.(fieldName);
+        catch
+        end
     end
     
     % Differentiate formatting for some variables
-    if ismember(aField, {'delta'})
+    if ismember(aField, {'delta', 'size'})
         aFormat = ' & %.3f';
     else
         aFormat = ' & %.2f';

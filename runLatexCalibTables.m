@@ -23,3 +23,4 @@ for aVar = string(reshape(varList, 1, []))
 end
 
 hhAndFirmBehavior(envi, steady7struct, fullfile(project_path, 'docs/2025-02_working-paper/tables/hhAndFirmBehavior.tex'));
+ssNationalAccounts(envi, steady7struct, fullfile(project_path, 'docs/2025-02_working-paper/tables/ssNationalAccounts.tex'));
