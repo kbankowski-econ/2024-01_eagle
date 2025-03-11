@@ -199,6 +199,9 @@ dynare('steady4.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingT
 %%
 dynare('steady6.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
+%%
+dynare('steady7.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
+
 %% local functions
 function replaceInTextFile(originalFileName, newFileName, replaceContent, newReplaceContent, replaceContent2, newReplaceContent2)
     
