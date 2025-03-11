@@ -22,32 +22,32 @@ function hhAndFirmBehavior(envi, aStruct, fileName)
     % Households section
     fprintf(fid, '    \\multicolumn{15}{l}{\\textbf{Households}} \\\\\n');
     % Since the discount factor is with the exponent and the same for all countries, it is hard coded here.
-    fprintf(fid, '    Discount factor ($\\beta$) & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} \\\\\n');    fprintf(fid, prepareTableLine(envi, 'Inverse of the Frisch elasticity of labor', '\zeta', "zeta", aStruct.params));
-    fprintf(fid, prepareTableLine(envi, 'Habit persistence', '\kappa', "kappa", aStruct.params));
-    fprintf(fid, prepareTableLine(envi, 'Share of J-type households', '\omega', "omega", aStruct.params));
-    fprintf(fid, prepareTableLine(envi, 'Depreciation rate', '\delta', "delta", aStruct.params));
+    fprintf(fid, '    Discount factor ($\\beta$) & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} & \\begin{tabular}[c]{@{}c@{}}{1.03$^{-1}$}\\end{tabular} \\\\\n');    fprintf(fid, utils.prepareTableLine(envi, 'Inverse of the Frisch elasticity of labor', '\zeta', "zeta", aStruct.params));
+    fprintf(fid, utils.prepareTableLine(envi, 'Habit persistence', '\kappa', "kappa", aStruct.params));
+    fprintf(fid, utils.prepareTableLine(envi, 'Share of J-type households', '\omega', "omega", aStruct.params));
+    fprintf(fid, utils.prepareTableLine(envi, 'Depreciation rate', '\delta', "delta", aStruct.params));
 
     % Intermediate-good firms section
     fprintf(fid, '    \\multicolumn{15}{l}{\\textbf{Intermediate-good firms (trad. and nontrad. sectors)}} \\\\\n');
     % There is substitution btw. labor and capital in the table but it is always one in the C-D production function,
     % therefore specifying it is redundant
     % fprintf(fid, '    Substitution btw. labor and capital & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 \\\\\n');
-    fprintf(fid, prepareTableLine(envi, 'Bias towards capital', '\alpha_{\text{T}}$, $\alpha_{\text{N}}', "alphan", aStruct.params));
-    fprintf(fid, prepareTableLine(envi, 'Substitution btw. I-type and J-type labor', '\eta', "eta", aStruct.params));
+    fprintf(fid, utils.prepareTableLine(envi, 'Bias towards capital', '\alpha_{\text{T}}$, $\alpha_{\text{N}}', "alphan", aStruct.params));
+    fprintf(fid, utils.prepareTableLine(envi, 'Substitution btw. I-type and J-type labor', '\eta', "eta", aStruct.params));
 
     % Final consumption-good firms section
     fprintf(fid, '    \\multicolumn{15}{l}{\\textbf{Final consumption-good firms}} \\\\\n');
-    fprintf(fid, prepareTableLine(envi, 'Substitution btw. domestic and imported tradable goods', '\mu_{\text{TC}}', "mutc", aStruct.params));
-    fprintf(fid, prepareTableLine(envi, 'Bias towards domestic tradable goods', '\nu_{\text{TC}}', "nutc", aStruct.params));
-    fprintf(fid, prepareTableLine(envi, 'Substitution btw. tradables and nontradables', '\mu_{\text{C}}', "muc", aStruct.params));
-    fprintf(fid, prepareTableLine(envi, 'Bias towards tradable goods', '\nu_{\text{C}}', "nuc", aStruct.params));
+    fprintf(fid, utils.prepareTableLine(envi, 'Substitution btw. domestic and imported tradable goods', '\mu_{\text{TC}}', "mutc", aStruct.params));
+    fprintf(fid, utils.prepareTableLine(envi, 'Bias towards domestic tradable goods', '\nu_{\text{TC}}', "nutc", aStruct.params));
+    fprintf(fid, utils.prepareTableLine(envi, 'Substitution btw. tradables and nontradables', '\mu_{\text{C}}', "muc", aStruct.params));
+    fprintf(fid, utils.prepareTableLine(envi, 'Bias towards tradable goods', '\nu_{\text{C}}', "nuc", aStruct.params));
     
     % Final investment-good firms section
     fprintf(fid, '    \\multicolumn{15}{l}{\\textbf{Final investment-good firms}} \\\\\n');
-    fprintf(fid, prepareTableLine(envi, 'Substitution btw. domestic and imported tradable goods', '\mu_{\text{TI}}', "muti", aStruct.params));
-    fprintf(fid, prepareTableLine(envi, 'Bias towards domestic tradable goods', '\nu_{\text{TI}}', "nuti", aStruct.params));
-    fprintf(fid, prepareTableLine(envi, 'Substitution btw. tradables and nontradables', '\mu_{\text{I}}', "mui", aStruct.params));
-    fprintf(fid, prepareTableLine(envi, 'Bias towards tradable goods', '\nu_{\text{I}}', "nui", aStruct.params));
+    fprintf(fid, utils.prepareTableLine(envi, 'Substitution btw. domestic and imported tradable goods', '\mu_{\text{TI}}', "muti", aStruct.params));
+    fprintf(fid, utils.prepareTableLine(envi, 'Bias towards domestic tradable goods', '\nu_{\text{TI}}', "nuti", aStruct.params));
+    fprintf(fid, utils.prepareTableLine(envi, 'Substitution btw. tradables and nontradables', '\mu_{\text{I}}', "mui", aStruct.params));
+    fprintf(fid, utils.prepareTableLine(envi, 'Bias towards tradable goods', '\nu_{\text{I}}', "nui", aStruct.params));
 
     % Table footer
     fprintf(fid, '    \\hline\n');
@@ -57,35 +57,4 @@ function hhAndFirmBehavior(envi, aStruct, fileName)
 
     % Close the file
     fclose(fid);
-end
-
-function outputString = prepareTableLine(envi, varName, varSymbol, aField, aStruct)
-
-    % Create the array of values from the structure fields using country codes
-    values = ones(1, length(envi.Meta.ctryList));  % Changed to ones instead of zeros
-    for i = 1:length(envi.Meta.ctryList)
-        fieldName = envi.Meta.ctryList(i) + "_" + aField;
-        values(i) = aStruct.(fieldName);
-    end
-    
-    % Differentiate formatting for some variables
-    if ismember(aField, {'delta'})
-        aFormat = ' & %.3f';
-    else
-        aFormat = ' & %.2f';
-    end
-
-    % Add format specifiers for each country
-    coreString = '';
-    for i = 1:length(values)
-        coreString = [coreString, aFormat];
-    end
-    % Use sprintf with the format string and unpacked values array
-    outputString = sprintf(coreString, values);
-
-    % Start building the format string with the tab and labels
-    labelString = [varName,' ($', varSymbol, '$)'];
-    labelString = replace(labelString, '\', '\\'); % double escape characters for the printing function
-    outputString = ['\t', labelString, outputString, ' \\\\\n'];
-    
 end
