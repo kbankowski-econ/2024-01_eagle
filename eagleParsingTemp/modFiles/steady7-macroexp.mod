@@ -31,6 +31,7 @@ parameters
 ;
 // Exogenous
 varexo
+    EA_epsr
  EA_epsz
 ;
 // Endogenous
@@ -646,6 +647,7 @@ varexo
  RA_ztbar
  RA_epsgc
  RA_epsgi
+        RA_epsrp
  RA_epstauc
  RA_epstaud
  RA_epstauk
@@ -1272,6 +1274,7 @@ varexo
  AT_ztbar
  AT_epsgc
  AT_epsgi
+        AT_epsrp
  AT_epstauc
  AT_epstaud
  AT_epstauk
@@ -1898,6 +1901,7 @@ varexo
  BE_ztbar
  BE_epsgc
  BE_epsgi
+        BE_epsrp
  BE_epstauc
  BE_epstaud
  BE_epstauk
@@ -2524,6 +2528,7 @@ varexo
  ES_ztbar
  ES_epsgc
  ES_epsgi
+        ES_epsrp
  ES_epstauc
  ES_epstaud
  ES_epstauk
@@ -3150,6 +3155,7 @@ varexo
  FI_ztbar
  FI_epsgc
  FI_epsgi
+        FI_epsrp
  FI_epstauc
  FI_epstaud
  FI_epstauk
@@ -3776,6 +3782,7 @@ varexo
  FR_ztbar
  FR_epsgc
  FR_epsgi
+        FR_epsrp
  FR_epstauc
  FR_epstaud
  FR_epstauk
@@ -4402,6 +4409,7 @@ varexo
  GR_ztbar
  GR_epsgc
  GR_epsgi
+        GR_epsrp
  GR_epstauc
  GR_epstaud
  GR_epstauk
@@ -5028,6 +5036,7 @@ varexo
  IT_ztbar
  IT_epsgc
  IT_epsgi
+        IT_epsrp
  IT_epstauc
  IT_epstaud
  IT_epstauk
@@ -5654,6 +5663,7 @@ varexo
  NL_ztbar
  NL_epsgc
  NL_epsgi
+        NL_epsrp
  NL_epstauc
  NL_epstaud
  NL_epstauk
@@ -6280,6 +6290,7 @@ varexo
  PT_ztbar
  PT_epsgc
  PT_epsgi
+        PT_epsrp
  PT_epstauc
  PT_epstaud
  PT_epstauk
@@ -6906,6 +6917,7 @@ varexo
  DE_ztbar
  DE_epsgc
  DE_epsgi
+        DE_epsrp
  DE_epstauc
  DE_epstaud
  DE_epstauk
@@ -7535,6 +7547,8 @@ varexo
  RU_ztbar
  RU_epsgc
  RU_epsgi
+        RU_epsr
+        RU_epsrp
  RU_epstauc
  RU_epstaud
  RU_epstauk
@@ -8164,6 +8178,8 @@ varexo
  RW_ztbar
  RW_epsgc
  RW_epsgi
+        RW_epsr
+        RW_epsrp
  RW_epstauc
  RW_epstaud
  RW_epstauk
@@ -8785,6 +8801,7 @@ varexo
  US_ztbar
  US_epsgc
  US_epsgi
+        US_epsr
  US_epstauc
  US_epstaud
  US_epstauk
@@ -9506,317 +9523,6 @@ var
  DE_bh
 ;
 // Flip some variables
-change_type(var)
- EA_ybar
- RAAT_rerbar
- RABE_rerbar
- RAES_rerbar
- RAFI_rerbar
- RAFR_rerbar
- RAGR_rerbar
- RAIT_rerbar
- RANL_rerbar
- RAPT_rerbar
- RADE_rerbar
- RARU_rerbar
- RARW_rerbar
- RAUS_rerbar
- RA_pibar
- RA_psinbar
- RA_psitbar
- RA_pybar
- RA_qbar
- RA_trybar
- RA_ybar
- RA_ynbar
- RA_ytbar
- ATRA_rerbar
- ATBE_rerbar
- ATES_rerbar
- ATFI_rerbar
- ATFR_rerbar
- ATGR_rerbar
- ATIT_rerbar
- ATNL_rerbar
- ATPT_rerbar
- ATDE_rerbar
- ATRU_rerbar
- ATRW_rerbar
- ATUS_rerbar
- AT_pibar
- AT_psinbar
- AT_psitbar
- AT_pybar
- AT_qbar
- AT_trybar
- AT_ybar
- AT_ynbar
- AT_ytbar
- BERA_rerbar
- BEAT_rerbar
- BEES_rerbar
- BEFI_rerbar
- BEFR_rerbar
- BEGR_rerbar
- BEIT_rerbar
- BENL_rerbar
- BEPT_rerbar
- BEDE_rerbar
- BERU_rerbar
- BERW_rerbar
- BEUS_rerbar
- BE_pibar
- BE_psinbar
- BE_psitbar
- BE_pybar
- BE_qbar
- BE_trybar
- BE_ybar
- BE_ynbar
- BE_ytbar
- ESRA_rerbar
- ESAT_rerbar
- ESBE_rerbar
- ESFI_rerbar
- ESFR_rerbar
- ESGR_rerbar
- ESIT_rerbar
- ESNL_rerbar
- ESPT_rerbar
- ESDE_rerbar
- ESRU_rerbar
- ESRW_rerbar
- ESUS_rerbar
- ES_pibar
- ES_psinbar
- ES_psitbar
- ES_pybar
- ES_qbar
- ES_trybar
- ES_ybar
- ES_ynbar
- ES_ytbar
- FIRA_rerbar
- FIAT_rerbar
- FIBE_rerbar
- FIES_rerbar
- FIFR_rerbar
- FIGR_rerbar
- FIIT_rerbar
- FINL_rerbar
- FIPT_rerbar
- FIDE_rerbar
- FIRU_rerbar
- FIRW_rerbar
- FIUS_rerbar
- FI_pibar
- FI_psinbar
- FI_psitbar
- FI_pybar
- FI_qbar
- FI_trybar
- FI_ybar
- FI_ynbar
- FI_ytbar
- FRRA_rerbar
- FRAT_rerbar
- FRBE_rerbar
- FRES_rerbar
- FRFI_rerbar
- FRGR_rerbar
- FRIT_rerbar
- FRNL_rerbar
- FRPT_rerbar
- FRDE_rerbar
- FRRU_rerbar
- FRRW_rerbar
- FRUS_rerbar
- FR_pibar
- FR_psinbar
- FR_psitbar
- FR_pybar
- FR_qbar
- FR_trybar
- FR_ybar
- FR_ynbar
- FR_ytbar
- GRRA_rerbar
- GRAT_rerbar
- GRBE_rerbar
- GRES_rerbar
- GRFI_rerbar
- GRFR_rerbar
- GRIT_rerbar
- GRNL_rerbar
- GRPT_rerbar
- GRDE_rerbar
- GRRU_rerbar
- GRRW_rerbar
- GRUS_rerbar
- GR_pibar
- GR_psinbar
- GR_psitbar
- GR_pybar
- GR_qbar
- GR_trybar
- GR_ybar
- GR_ynbar
- GR_ytbar
- ITRA_rerbar
- ITAT_rerbar
- ITBE_rerbar
- ITES_rerbar
- ITFI_rerbar
- ITFR_rerbar
- ITGR_rerbar
- ITNL_rerbar
- ITPT_rerbar
- ITDE_rerbar
- ITRU_rerbar
- ITRW_rerbar
- ITUS_rerbar
- IT_pibar
- IT_psinbar
- IT_psitbar
- IT_pybar
- IT_qbar
- IT_trybar
- IT_ybar
- IT_ynbar
- IT_ytbar
- NLRA_rerbar
- NLAT_rerbar
- NLBE_rerbar
- NLES_rerbar
- NLFI_rerbar
- NLFR_rerbar
- NLGR_rerbar
- NLIT_rerbar
- NLPT_rerbar
- NLDE_rerbar
- NLRU_rerbar
- NLRW_rerbar
- NLUS_rerbar
- NL_pibar
- NL_psinbar
- NL_psitbar
- NL_pybar
- NL_qbar
- NL_trybar
- NL_ybar
- NL_ynbar
- NL_ytbar
- PTRA_rerbar
- PTAT_rerbar
- PTBE_rerbar
- PTES_rerbar
- PTFI_rerbar
- PTFR_rerbar
- PTGR_rerbar
- PTIT_rerbar
- PTNL_rerbar
- PTDE_rerbar
- PTRU_rerbar
- PTRW_rerbar
- PTUS_rerbar
- PT_pibar
- PT_psinbar
- PT_psitbar
- PT_pybar
- PT_qbar
- PT_trybar
- PT_ybar
- PT_ynbar
- PT_ytbar
- DERA_rerbar
- DEAT_rerbar
- DEBE_rerbar
- DEES_rerbar
- DEFI_rerbar
- DEFR_rerbar
- DEGR_rerbar
- DEIT_rerbar
- DENL_rerbar
- DEPT_rerbar
- DERU_rerbar
- DERW_rerbar
- DEUS_rerbar
- DE_pibar
- DE_psinbar
- DE_psitbar
- DE_pybar
- DE_qbar
- DE_trybar
- DE_ybar
- DE_ynbar
- DE_ytbar
- RURA_rerbar
- RUAT_rerbar
- RUBE_rerbar
- RUES_rerbar
- RUFI_rerbar
- RUFR_rerbar
- RUGR_rerbar
- RUIT_rerbar
- RUNL_rerbar
- RUPT_rerbar
- RUDE_rerbar
- RURW_rerbar
- RUUS_rerbar
- RU_pibar
- RU_psinbar
- RU_psitbar
- RU_pybar
- RU_qbar
- RU_trybar
- RU_ybar
- RU_ynbar
- RU_ytbar
- RWRA_rerbar
- RWAT_rerbar
- RWBE_rerbar
- RWES_rerbar
- RWFI_rerbar
- RWFR_rerbar
- RWGR_rerbar
- RWIT_rerbar
- RWNL_rerbar
- RWPT_rerbar
- RWDE_rerbar
- RWRU_rerbar
- RWUS_rerbar
- RW_pibar
- RW_psinbar
- RW_psitbar
- RW_pybar
- RW_qbar
- RW_trybar
- RW_ybar
- RW_ynbar
- RW_ytbar
- USRA_rerbar
- USAT_rerbar
- USBE_rerbar
- USES_rerbar
- USFI_rerbar
- USFR_rerbar
- USGR_rerbar
- USIT_rerbar
- USNL_rerbar
- USPT_rerbar
- USDE_rerbar
- USRU_rerbar
- USRW_rerbar
- US_pibar
- US_psinbar
- US_psitbar
- US_pybar
- US_qbar
- US_trybar
- US_ybar
- US_ynbar
- US_ytbar
-;
 var 
         RA_ccesi RA_ccesj RA_dcci RA_dccj
         AT_ccesi AT_ccesj AT_dcci AT_dccj
@@ -9881,7 +9587,7 @@ parameters
         RW_alphag RW_deltag
         US_alphag US_deltag
 ;
-model(block, bytecode, cutoff = 0);
+model(block, bytecode, cutoff=0);
 // Core model begins
 //-------------
 //-------------
@@ -9901,7 +9607,7 @@ RA_dcci = ((RA_nucces)^(1/RA_mucces)*RA_ci^(1-1/RA_mucces)+(1-RA_nucces)^(1/RA_m
 RA_lambdai*(1+RA_tauc+RA_gammavi+RA_vi*RA_gammavider) = RA_zcon*(RA_ccesi-RA_kappa*RA_ccesi(-1))^(-RA_sigma)*RA_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
-RA_r                   = RA_beta^(-1)*RA_lambdai/RA_lambdai    *RA_pic;
+RA_r*(1-RA_gammabh) = RA_beta^(-1)*RA_lambdai/RA_lambdai(+1)*RA_pic(+1);
 // Germany
 // US and the RoW
 // Euler equation for money
@@ -9912,17 +9618,23 @@ RA_vi = RA_ci/RA_mi;
 RA_gammavi = RA_gammav1*RA_vi+RA_gammav2/RA_vi-2*(RA_gammav1*RA_gammav2)^(1/2);
 // Derivative of transaction cost
 RA_gammavider = RA_gammav1-RA_gammav2*RA_vi^(-2);
-RA_delta = RA_ii/RA_ki;
-RA_gammai = 0;
-RA_gammaider = 0;
-RA_gammau = 0;
-RA_gammauder = ((RA_beta^(-1)-1+RA_delta)*RA_qbar-RA_delta*RA_taukbar*RA_pibar)/((1-RA_taukbar)*RA_pibar);
-RA_u = 1;
-RA_pi = RA_q;
+// Capital accumulation
+RA_ki = (1-RA_delta)*RA_ki(-1)+(1-RA_gammai(-1))*RA_ii(-1)*RA_zinv;
+// Investment adjustment cost
+RA_gammai = RA_gammai1/2*(RA_ii/RA_ii(-1)-1)^2;
+// Derivative of investment adjustment cost
+RA_gammaider = RA_gammai1*(RA_ii/RA_ii(-1)-1)/RA_ii(-1);
+// Capacity utilisation cost
+RA_gammau = ((RA_beta^(-1)-1+RA_delta)*RA_qbar-RA_delta*RA_taukbar*RA_pibar)/((1-RA_taukbar)*RA_pibar)*(RA_u-1)+RA_gammau2/2*(RA_u-1)^2;
+// Derivative of capacity utilisation cost
+RA_gammauder = ((RA_beta^(-1)-1+RA_delta)*RA_qbar-RA_delta*RA_taukbar*RA_pibar)/((1-RA_taukbar)*RA_pibar)+RA_gammau2*(RA_u-1);
+// Optimal capacity utilisation (FOC)
+RA_rk = RA_gammauder*RA_pi;
+// Tobin's Q
+RA_pi = RA_q*RA_zinv*(1-RA_gammai-RA_gammaider*RA_ii)+RA_beta*RA_lambdai(+1)/RA_lambdai*RA_q(+1)*RA_zinv(+1)*RA_gammaider(+1)*RA_ii(+1)^2/RA_ii;
 // Auxiliary equation for Tobin's Q in steady state
-RA_qbar = RA_q;
 // Rate of return on capital
-RA_q = RA_beta*((1-RA_tauk)*RA_rk+(RA_tauk*RA_delta)*RA_pi+(1-RA_delta)*RA_q);
+RA_q = RA_beta*RA_lambdai(+1)/RA_lambdai*((1-RA_tauk(+1))*(RA_rk(+1)*RA_u(+1)-RA_gammau(+1)*RA_pi(+1))+(RA_tauk(+1)*RA_delta)*RA_pi(+1)+(1-RA_delta)*RA_q(+1));
 // Optimal wage contract (FOC)
 RA_witilde^(1+RA_etai*RA_zeta) = RA_etai/(RA_etai-1)*RA_fi/RA_gi+RA_wcst;
 // Definition of fi
@@ -9981,11 +9693,9 @@ RA_mcn = 1/(EA_z*RA_zn*RA_kg^RA_alphag*(RA_alphan)^(RA_alphan)*(1-RA_alphan)^(1-
 // Wage Inflation (qoq)
 RA_piw = RA_w/RA_w(-1)*RA_pic;
 // Wage Inflation (yoy)
-RA_piw4 = RA_pic4;
+RA_piw4 = RA_piw*RA_piw(-1)*RA_piw(-2)*RA_piw(-3);
 // Auxiliary equation for steady-state fixed cost
-RA_psitbar = RA_psit*RA_ytbar;
 // Auxiliary equation for steady-state fixed cost
-RA_psinbar = RA_psin*RA_ynbar;
 // Capital input (FOC)
 RA_rk = RA_alphat*(RA_yst+RA_psitbar)/RA_kdt*RA_mct;
 // Capital input (FOC)
@@ -10060,7 +9770,6 @@ RA_piex = RA_pex/RA_pex(-1)*RA_pic;
 // Bilateral real exchange rate
 RAAT_rer = RA_rer/AT_rer;
 // Auxiliary equation for steady-state output
-RAAT_rerbar = RAAT_rer;
 //Terms of Trade
 RAAT_tot = AT_pex*RAAT_rer/RA_pex;
 // Optimal price contract set in foreign markets (FOC), using RA_pxtilde = BE_pimtilde
@@ -10076,7 +9785,6 @@ RAAT_tot = AT_pex*RAAT_rer/RA_pex;
 // Bilateral real exchange rate
 RABE_rer = RA_rer/BE_rer;
 // Auxiliary equation for steady-state output
-RABE_rerbar = RABE_rer;
 //Terms of Trade
 RABE_tot = BE_pex*RABE_rer/RA_pex;
 // Optimal price contract set in foreign markets (FOC), using RA_pxtilde = ES_pimtilde
@@ -10092,7 +9800,6 @@ RABE_tot = BE_pex*RABE_rer/RA_pex;
 // Bilateral real exchange rate
 RAES_rer = RA_rer/ES_rer;
 // Auxiliary equation for steady-state output
-RAES_rerbar = RAES_rer;
 //Terms of Trade
 RAES_tot = ES_pex*RAES_rer/RA_pex;
 // Optimal price contract set in foreign markets (FOC), using RA_pxtilde = FI_pimtilde
@@ -10108,7 +9815,6 @@ RAES_tot = ES_pex*RAES_rer/RA_pex;
 // Bilateral real exchange rate
 RAFI_rer = RA_rer/FI_rer;
 // Auxiliary equation for steady-state output
-RAFI_rerbar = RAFI_rer;
 //Terms of Trade
 RAFI_tot = FI_pex*RAFI_rer/RA_pex;
 // Optimal price contract set in foreign markets (FOC), using RA_pxtilde = FR_pimtilde
@@ -10124,7 +9830,6 @@ RAFI_tot = FI_pex*RAFI_rer/RA_pex;
 // Bilateral real exchange rate
 RAFR_rer = RA_rer/FR_rer;
 // Auxiliary equation for steady-state output
-RAFR_rerbar = RAFR_rer;
 //Terms of Trade
 RAFR_tot = FR_pex*RAFR_rer/RA_pex;
 // Optimal price contract set in foreign markets (FOC), using RA_pxtilde = GR_pimtilde
@@ -10140,7 +9845,6 @@ RAFR_tot = FR_pex*RAFR_rer/RA_pex;
 // Bilateral real exchange rate
 RAGR_rer = RA_rer/GR_rer;
 // Auxiliary equation for steady-state output
-RAGR_rerbar = RAGR_rer;
 //Terms of Trade
 RAGR_tot = GR_pex*RAGR_rer/RA_pex;
 // Optimal price contract set in foreign markets (FOC), using RA_pxtilde = IT_pimtilde
@@ -10156,7 +9860,6 @@ RAGR_tot = GR_pex*RAGR_rer/RA_pex;
 // Bilateral real exchange rate
 RAIT_rer = RA_rer/IT_rer;
 // Auxiliary equation for steady-state output
-RAIT_rerbar = RAIT_rer;
 //Terms of Trade
 RAIT_tot = IT_pex*RAIT_rer/RA_pex;
 // Optimal price contract set in foreign markets (FOC), using RA_pxtilde = NL_pimtilde
@@ -10172,7 +9875,6 @@ RAIT_tot = IT_pex*RAIT_rer/RA_pex;
 // Bilateral real exchange rate
 RANL_rer = RA_rer/NL_rer;
 // Auxiliary equation for steady-state output
-RANL_rerbar = RANL_rer;
 //Terms of Trade
 RANL_tot = NL_pex*RANL_rer/RA_pex;
 // Optimal price contract set in foreign markets (FOC), using RA_pxtilde = PT_pimtilde
@@ -10188,7 +9890,6 @@ RANL_tot = NL_pex*RANL_rer/RA_pex;
 // Bilateral real exchange rate
 RAPT_rer = RA_rer/PT_rer;
 // Auxiliary equation for steady-state output
-RAPT_rerbar = RAPT_rer;
 //Terms of Trade
 RAPT_tot = PT_pex*RAPT_rer/RA_pex;
 // Optimal price contract set in foreign markets (FOC), using RA_pxtilde = DE_pimtilde
@@ -10204,7 +9905,6 @@ RAPT_tot = PT_pex*RAPT_rer/RA_pex;
 // Bilateral real exchange rate
 RADE_rer = RA_rer/DE_rer;
 // Auxiliary equation for steady-state output
-RADE_rerbar = RADE_rer;
 //Terms of Trade
 RADE_tot = DE_pex*RADE_rer/RA_pex;
 // Optimal price contract set in foreign markets (FOC), using RA_pxtilde = RU_pimtilde
@@ -10220,7 +9920,6 @@ RADE_tot = DE_pex*RADE_rer/RA_pex;
 // Bilateral real exchange rate
 RARU_rer = RA_rer/RU_rer;
 // Auxiliary equation for steady-state output
-RARU_rerbar = RARU_rer;
 //Terms of Trade
 RARU_tot = RU_pex*RARU_rer/RA_pex;
 // Optimal price contract set in foreign markets (FOC), using RA_pxtilde = RW_pimtilde
@@ -10236,7 +9935,6 @@ RARU_tot = RU_pex*RARU_rer/RA_pex;
 // Bilateral real exchange rate
 RARW_rer = RA_rer/RW_rer;
 // Auxiliary equation for steady-state output
-RARW_rerbar = RARW_rer;
 //Terms of Trade
 RARW_tot = RW_pex*RARW_rer/RA_pex;
 // Optimal price contract set in foreign markets (FOC), using RA_pxtilde = US_pimtilde
@@ -10252,7 +9950,6 @@ RARW_tot = RW_pex*RARW_rer/RA_pex;
 // Bilateral real exchange rate
 RAUS_rer = RA_rer/US_rer;
 // Auxiliary equation for steady-state output
-RAUS_rerbar = RAUS_rer;
 //Terms of Trade
 RAUS_tot = US_pex*RAUS_rer/RA_pex;
 // Total imports 
@@ -12750,18 +12447,18 @@ RA_etot = 1
 //-----------------
 // Private consumption good (import)
 RA_imc^((RA_mumc-1)/RA_mumc) =
-+RAAT_numc ^(1/RA_mumc)*RAAT_imc^(1-1/RA_mumc)
-+RABE_numc ^(1/RA_mumc)*RABE_imc^(1-1/RA_mumc)
-+RAES_numc ^(1/RA_mumc)*RAES_imc^(1-1/RA_mumc)
-+RAFI_numc ^(1/RA_mumc)*RAFI_imc^(1-1/RA_mumc)
-+RAFR_numc ^(1/RA_mumc)*RAFR_imc^(1-1/RA_mumc)
-+RAGR_numc ^(1/RA_mumc)*RAGR_imc^(1-1/RA_mumc)
-+RAIT_numc ^(1/RA_mumc)*RAIT_imc^(1-1/RA_mumc)
-+RANL_numc ^(1/RA_mumc)*RANL_imc^(1-1/RA_mumc)
-+RAPT_numc ^(1/RA_mumc)*RAPT_imc^(1-1/RA_mumc)
-+RADE_numc ^(1/RA_mumc)*RADE_imc^(1-1/RA_mumc)
-+RARU_numc ^(1/RA_mumc)*RARU_imc^(1-1/RA_mumc)
-+RAUS_numc ^(1/RA_mumc)*RAUS_imc^(1-1/RA_mumc)
++RAAT_numc ^(1/RA_mumc)*((1-RAAT_gammaimc)*RAAT_imc)^(1-1/RA_mumc)
++RABE_numc ^(1/RA_mumc)*((1-RABE_gammaimc)*RABE_imc)^(1-1/RA_mumc)
++RAES_numc ^(1/RA_mumc)*((1-RAES_gammaimc)*RAES_imc)^(1-1/RA_mumc)
++RAFI_numc ^(1/RA_mumc)*((1-RAFI_gammaimc)*RAFI_imc)^(1-1/RA_mumc)
++RAFR_numc ^(1/RA_mumc)*((1-RAFR_gammaimc)*RAFR_imc)^(1-1/RA_mumc)
++RAGR_numc ^(1/RA_mumc)*((1-RAGR_gammaimc)*RAGR_imc)^(1-1/RA_mumc)
++RAIT_numc ^(1/RA_mumc)*((1-RAIT_gammaimc)*RAIT_imc)^(1-1/RA_mumc)
++RANL_numc ^(1/RA_mumc)*((1-RANL_gammaimc)*RANL_imc)^(1-1/RA_mumc)
++RAPT_numc ^(1/RA_mumc)*((1-RAPT_gammaimc)*RAPT_imc)^(1-1/RA_mumc)
++RADE_numc ^(1/RA_mumc)*((1-RADE_gammaimc)*RADE_imc)^(1-1/RA_mumc)
++RARU_numc ^(1/RA_mumc)*((1-RARU_gammaimc)*RARU_imc)^(1-1/RA_mumc)
++RAUS_numc ^(1/RA_mumc)*((1-RAUS_gammaimc)*RAUS_imc)^(1-1/RA_mumc)
 +(1
 -RAAT_numc
 -RABE_numc
@@ -12775,29 +12472,29 @@ RA_imc^((RA_mumc-1)/RA_mumc) =
 -RADE_numc
 -RARU_numc
 -RAUS_numc
-)^(1/RA_mumc)*RARW_imc^(1-1/RA_mumc);
+)^(1/RA_mumc)*((1-RARW_gammaimc)*RARW_imc)^(1-1/RA_mumc);
 // Demand for bilateral consumption import goods
-RABE_imc = RABE_numc*((BE_pex*RABE_rer)/RA_pimc)^(-RA_mumc)*RA_imc;
+RABE_imc = RABE_numc*((BE_pex*RABE_rer)/(RABE_gammaimcdag*RA_pimc))^(-RA_mumc)*RA_imc/(1-RABE_gammaimc);
 // Demand for bilateral consumption import goods
-RAES_imc = RAES_numc*((ES_pex*RAES_rer)/RA_pimc)^(-RA_mumc)*RA_imc;
+RAES_imc = RAES_numc*((ES_pex*RAES_rer)/(RAES_gammaimcdag*RA_pimc))^(-RA_mumc)*RA_imc/(1-RAES_gammaimc);
 // Demand for bilateral consumption import goods
-RAFI_imc = RAFI_numc*((FI_pex*RAFI_rer)/RA_pimc)^(-RA_mumc)*RA_imc;
+RAFI_imc = RAFI_numc*((FI_pex*RAFI_rer)/(RAFI_gammaimcdag*RA_pimc))^(-RA_mumc)*RA_imc/(1-RAFI_gammaimc);
 // Demand for bilateral consumption import goods
-RAFR_imc = RAFR_numc*((FR_pex*RAFR_rer)/RA_pimc)^(-RA_mumc)*RA_imc;
+RAFR_imc = RAFR_numc*((FR_pex*RAFR_rer)/(RAFR_gammaimcdag*RA_pimc))^(-RA_mumc)*RA_imc/(1-RAFR_gammaimc);
 // Demand for bilateral consumption import goods
-RAGR_imc = RAGR_numc*((GR_pex*RAGR_rer)/RA_pimc)^(-RA_mumc)*RA_imc;
+RAGR_imc = RAGR_numc*((GR_pex*RAGR_rer)/(RAGR_gammaimcdag*RA_pimc))^(-RA_mumc)*RA_imc/(1-RAGR_gammaimc);
 // Demand for bilateral consumption import goods
-RAIT_imc = RAIT_numc*((IT_pex*RAIT_rer)/RA_pimc)^(-RA_mumc)*RA_imc;
+RAIT_imc = RAIT_numc*((IT_pex*RAIT_rer)/(RAIT_gammaimcdag*RA_pimc))^(-RA_mumc)*RA_imc/(1-RAIT_gammaimc);
 // Demand for bilateral consumption import goods
-RANL_imc = RANL_numc*((NL_pex*RANL_rer)/RA_pimc)^(-RA_mumc)*RA_imc;
+RANL_imc = RANL_numc*((NL_pex*RANL_rer)/(RANL_gammaimcdag*RA_pimc))^(-RA_mumc)*RA_imc/(1-RANL_gammaimc);
 // Demand for bilateral consumption import goods
-RAPT_imc = RAPT_numc*((PT_pex*RAPT_rer)/RA_pimc)^(-RA_mumc)*RA_imc;
+RAPT_imc = RAPT_numc*((PT_pex*RAPT_rer)/(RAPT_gammaimcdag*RA_pimc))^(-RA_mumc)*RA_imc/(1-RAPT_gammaimc);
 // Demand for bilateral consumption import goods
-RADE_imc = RADE_numc*((DE_pex*RADE_rer)/RA_pimc)^(-RA_mumc)*RA_imc;
+RADE_imc = RADE_numc*((DE_pex*RADE_rer)/(RADE_gammaimcdag*RA_pimc))^(-RA_mumc)*RA_imc/(1-RADE_gammaimc);
 // Demand for bilateral consumption import goods
-RARU_imc = RARU_numc*((RU_pex*RARU_rer)/RA_pimc)^(-RA_mumc)*RA_imc;
+RARU_imc = RARU_numc*((RU_pex*RARU_rer)/(RARU_gammaimcdag*RA_pimc))^(-RA_mumc)*RA_imc/(1-RARU_gammaimc);
 // Demand for bilateral consumption import goods
-RAUS_imc = RAUS_numc*((US_pex*RAUS_rer)/RA_pimc)^(-RA_mumc)*RA_imc;
+RAUS_imc = RAUS_numc*((US_pex*RAUS_rer)/(RAUS_gammaimcdag*RA_pimc))^(-RA_mumc)*RA_imc/(1-RAUS_gammaimc);
 RARW_imc = (1
 -RAAT_numc
 -RABE_numc
@@ -12811,21 +12508,21 @@ RARW_imc = (1
 -RADE_numc
 -RARU_numc
 -RAUS_numc
-)*((RW_pex*RARW_rer)/RA_pimc)^(-RA_mumc)*RA_imc;
+)*((RW_pex*RARW_rer)/(RARW_gammaimcdag*RA_pimc))^(-RA_mumc)*RA_imc/(1-RARW_gammaimc);
 // Price of the consumption good (import)
 RA_pimc^(1-RA_mumc) =
-+RAAT_numc * (AT_pex*RAAT_rer)^(1-RA_mumc)
-+RABE_numc * (BE_pex*RABE_rer)^(1-RA_mumc)
-+RAES_numc * (ES_pex*RAES_rer)^(1-RA_mumc)
-+RAFI_numc * (FI_pex*RAFI_rer)^(1-RA_mumc)
-+RAFR_numc * (FR_pex*RAFR_rer)^(1-RA_mumc)
-+RAGR_numc * (GR_pex*RAGR_rer)^(1-RA_mumc)
-+RAIT_numc * (IT_pex*RAIT_rer)^(1-RA_mumc)
-+RANL_numc * (NL_pex*RANL_rer)^(1-RA_mumc)
-+RAPT_numc * (PT_pex*RAPT_rer)^(1-RA_mumc)
-+RADE_numc * (DE_pex*RADE_rer)^(1-RA_mumc)
-+RARU_numc * (RU_pex*RARU_rer)^(1-RA_mumc)
-+RAUS_numc * (US_pex*RAUS_rer)^(1-RA_mumc)
++RAAT_numc *((AT_pex*RAAT_rer)/RAAT_gammaimcdag)^(1-RA_mumc)
++RABE_numc *((BE_pex*RABE_rer)/RABE_gammaimcdag)^(1-RA_mumc)
++RAES_numc *((ES_pex*RAES_rer)/RAES_gammaimcdag)^(1-RA_mumc)
++RAFI_numc *((FI_pex*RAFI_rer)/RAFI_gammaimcdag)^(1-RA_mumc)
++RAFR_numc *((FR_pex*RAFR_rer)/RAFR_gammaimcdag)^(1-RA_mumc)
++RAGR_numc *((GR_pex*RAGR_rer)/RAGR_gammaimcdag)^(1-RA_mumc)
++RAIT_numc *((IT_pex*RAIT_rer)/RAIT_gammaimcdag)^(1-RA_mumc)
++RANL_numc *((NL_pex*RANL_rer)/RANL_gammaimcdag)^(1-RA_mumc)
++RAPT_numc *((PT_pex*RAPT_rer)/RAPT_gammaimcdag)^(1-RA_mumc)
++RADE_numc *((DE_pex*RADE_rer)/RADE_gammaimcdag)^(1-RA_mumc)
++RARU_numc *((RU_pex*RARU_rer)/RARU_gammaimcdag)^(1-RA_mumc)
++RAUS_numc *((US_pex*RAUS_rer)/RAUS_gammaimcdag)^(1-RA_mumc)
 +(1
 -RAAT_numc
 -RABE_numc
@@ -12839,23 +12536,23 @@ RA_pimc^(1-RA_mumc) =
 -RADE_numc
 -RARU_numc
 -RAUS_numc
-)*(RW_pex*RARW_rer)^(1-RA_mumc);
+)*((RW_pex*RARW_rer)/RARW_gammaimcdag)^(1-RA_mumc);
 // Private consumption good (import) inflation
 RA_piimc = RA_pimc/RA_pimc(-1)*RA_pic;
 // Private consumption good (import)
 RA_imi^((RA_mumi-1)/RA_mumi) =
-+RAAT_numi ^(1/RA_mumi)*RAAT_imi^(1-1/RA_mumi)
-+RABE_numi ^(1/RA_mumi)*RABE_imi^(1-1/RA_mumi)
-+RAES_numi ^(1/RA_mumi)*RAES_imi^(1-1/RA_mumi)
-+RAFI_numi ^(1/RA_mumi)*RAFI_imi^(1-1/RA_mumi)
-+RAFR_numi ^(1/RA_mumi)*RAFR_imi^(1-1/RA_mumi)
-+RAGR_numi ^(1/RA_mumi)*RAGR_imi^(1-1/RA_mumi)
-+RAIT_numi ^(1/RA_mumi)*RAIT_imi^(1-1/RA_mumi)
-+RANL_numi ^(1/RA_mumi)*RANL_imi^(1-1/RA_mumi)
-+RAPT_numi ^(1/RA_mumi)*RAPT_imi^(1-1/RA_mumi)
-+RADE_numi ^(1/RA_mumi)*RADE_imi^(1-1/RA_mumi)
-+RARU_numi ^(1/RA_mumi)*RARU_imi^(1-1/RA_mumi)
-+RAUS_numi ^(1/RA_mumi)*RAUS_imi^(1-1/RA_mumi)
++RAAT_numi ^(1/RA_mumi)*((1-RAAT_gammaimi)*RAAT_imi)^(1-1/RA_mumi)
++RABE_numi ^(1/RA_mumi)*((1-RABE_gammaimi)*RABE_imi)^(1-1/RA_mumi)
++RAES_numi ^(1/RA_mumi)*((1-RAES_gammaimi)*RAES_imi)^(1-1/RA_mumi)
++RAFI_numi ^(1/RA_mumi)*((1-RAFI_gammaimi)*RAFI_imi)^(1-1/RA_mumi)
++RAFR_numi ^(1/RA_mumi)*((1-RAFR_gammaimi)*RAFR_imi)^(1-1/RA_mumi)
++RAGR_numi ^(1/RA_mumi)*((1-RAGR_gammaimi)*RAGR_imi)^(1-1/RA_mumi)
++RAIT_numi ^(1/RA_mumi)*((1-RAIT_gammaimi)*RAIT_imi)^(1-1/RA_mumi)
++RANL_numi ^(1/RA_mumi)*((1-RANL_gammaimi)*RANL_imi)^(1-1/RA_mumi)
++RAPT_numi ^(1/RA_mumi)*((1-RAPT_gammaimi)*RAPT_imi)^(1-1/RA_mumi)
++RADE_numi ^(1/RA_mumi)*((1-RADE_gammaimi)*RADE_imi)^(1-1/RA_mumi)
++RARU_numi ^(1/RA_mumi)*((1-RARU_gammaimi)*RARU_imi)^(1-1/RA_mumi)
++RAUS_numi ^(1/RA_mumi)*((1-RAUS_gammaimi)*RAUS_imi)^(1-1/RA_mumi)
 +(1
 -RAAT_numi
 -RABE_numi
@@ -12869,29 +12566,29 @@ RA_imi^((RA_mumi-1)/RA_mumi) =
 -RADE_numi
 -RARU_numi
 -RAUS_numi
-)^(1/RA_mumi)*RARW_imi^(1-1/RA_mumi);
+)^(1/RA_mumi)*((1-RARW_gammaimi)*RARW_imi)^(1-1/RA_mumi);
 // Demand for bilateral consumption import goods
-RABE_imi = RABE_numi*((BE_pex*RABE_rer)/RA_pimi)^(-RA_mumi)*RA_imi;
+RABE_imi = RABE_numi*((BE_pex*RABE_rer)/(RABE_gammaimidag*RA_pimi))^(-RA_mumi)*RA_imi/(1-RABE_gammaimi);
 // Demand for bilateral consumption import goods
-RAES_imi = RAES_numi*((ES_pex*RAES_rer)/RA_pimi)^(-RA_mumi)*RA_imi;
+RAES_imi = RAES_numi*((ES_pex*RAES_rer)/(RAES_gammaimidag*RA_pimi))^(-RA_mumi)*RA_imi/(1-RAES_gammaimi);
 // Demand for bilateral consumption import goods
-RAFI_imi = RAFI_numi*((FI_pex*RAFI_rer)/RA_pimi)^(-RA_mumi)*RA_imi;
+RAFI_imi = RAFI_numi*((FI_pex*RAFI_rer)/(RAFI_gammaimidag*RA_pimi))^(-RA_mumi)*RA_imi/(1-RAFI_gammaimi);
 // Demand for bilateral consumption import goods
-RAFR_imi = RAFR_numi*((FR_pex*RAFR_rer)/RA_pimi)^(-RA_mumi)*RA_imi;
+RAFR_imi = RAFR_numi*((FR_pex*RAFR_rer)/(RAFR_gammaimidag*RA_pimi))^(-RA_mumi)*RA_imi/(1-RAFR_gammaimi);
 // Demand for bilateral consumption import goods
-RAGR_imi = RAGR_numi*((GR_pex*RAGR_rer)/RA_pimi)^(-RA_mumi)*RA_imi;
+RAGR_imi = RAGR_numi*((GR_pex*RAGR_rer)/(RAGR_gammaimidag*RA_pimi))^(-RA_mumi)*RA_imi/(1-RAGR_gammaimi);
 // Demand for bilateral consumption import goods
-RAIT_imi = RAIT_numi*((IT_pex*RAIT_rer)/RA_pimi)^(-RA_mumi)*RA_imi;
+RAIT_imi = RAIT_numi*((IT_pex*RAIT_rer)/(RAIT_gammaimidag*RA_pimi))^(-RA_mumi)*RA_imi/(1-RAIT_gammaimi);
 // Demand for bilateral consumption import goods
-RANL_imi = RANL_numi*((NL_pex*RANL_rer)/RA_pimi)^(-RA_mumi)*RA_imi;
+RANL_imi = RANL_numi*((NL_pex*RANL_rer)/(RANL_gammaimidag*RA_pimi))^(-RA_mumi)*RA_imi/(1-RANL_gammaimi);
 // Demand for bilateral consumption import goods
-RAPT_imi = RAPT_numi*((PT_pex*RAPT_rer)/RA_pimi)^(-RA_mumi)*RA_imi;
+RAPT_imi = RAPT_numi*((PT_pex*RAPT_rer)/(RAPT_gammaimidag*RA_pimi))^(-RA_mumi)*RA_imi/(1-RAPT_gammaimi);
 // Demand for bilateral consumption import goods
-RADE_imi = RADE_numi*((DE_pex*RADE_rer)/RA_pimi)^(-RA_mumi)*RA_imi;
+RADE_imi = RADE_numi*((DE_pex*RADE_rer)/(RADE_gammaimidag*RA_pimi))^(-RA_mumi)*RA_imi/(1-RADE_gammaimi);
 // Demand for bilateral consumption import goods
-RARU_imi = RARU_numi*((RU_pex*RARU_rer)/RA_pimi)^(-RA_mumi)*RA_imi;
+RARU_imi = RARU_numi*((RU_pex*RARU_rer)/(RARU_gammaimidag*RA_pimi))^(-RA_mumi)*RA_imi/(1-RARU_gammaimi);
 // Demand for bilateral consumption import goods
-RAUS_imi = RAUS_numi*((US_pex*RAUS_rer)/RA_pimi)^(-RA_mumi)*RA_imi;
+RAUS_imi = RAUS_numi*((US_pex*RAUS_rer)/(RAUS_gammaimidag*RA_pimi))^(-RA_mumi)*RA_imi/(1-RAUS_gammaimi);
 RARW_imi = (1
 -RAAT_numi
 -RABE_numi
@@ -12905,21 +12602,21 @@ RARW_imi = (1
 -RADE_numi
 -RARU_numi
 -RAUS_numi
-)*((RW_pex*RARW_rer)/RA_pimi)^(-RA_mumi)*RA_imi;
+)*((RW_pex*RARW_rer)/(RARW_gammaimidag*RA_pimi))^(-RA_mumi)*RA_imi/(1-RARW_gammaimi);
 // Price of the consumption good (import)
 RA_pimi^(1-RA_mumi) =
-+RAAT_numi * (AT_pex*RAAT_rer)^(1-RA_mumi)
-+RABE_numi * (BE_pex*RABE_rer)^(1-RA_mumi)
-+RAES_numi * (ES_pex*RAES_rer)^(1-RA_mumi)
-+RAFI_numi * (FI_pex*RAFI_rer)^(1-RA_mumi)
-+RAFR_numi * (FR_pex*RAFR_rer)^(1-RA_mumi)
-+RAGR_numi * (GR_pex*RAGR_rer)^(1-RA_mumi)
-+RAIT_numi * (IT_pex*RAIT_rer)^(1-RA_mumi)
-+RANL_numi * (NL_pex*RANL_rer)^(1-RA_mumi)
-+RAPT_numi * (PT_pex*RAPT_rer)^(1-RA_mumi)
-+RADE_numi * (DE_pex*RADE_rer)^(1-RA_mumi)
-+RARU_numi * (RU_pex*RARU_rer)^(1-RA_mumi)
-+RAUS_numi * (US_pex*RAUS_rer)^(1-RA_mumi)
++RAAT_numi *((AT_pex*RAAT_rer)/RAAT_gammaimidag)^(1-RA_mumi)
++RABE_numi *((BE_pex*RABE_rer)/RABE_gammaimidag)^(1-RA_mumi)
++RAES_numi *((ES_pex*RAES_rer)/RAES_gammaimidag)^(1-RA_mumi)
++RAFI_numi *((FI_pex*RAFI_rer)/RAFI_gammaimidag)^(1-RA_mumi)
++RAFR_numi *((FR_pex*RAFR_rer)/RAFR_gammaimidag)^(1-RA_mumi)
++RAGR_numi *((GR_pex*RAGR_rer)/RAGR_gammaimidag)^(1-RA_mumi)
++RAIT_numi *((IT_pex*RAIT_rer)/RAIT_gammaimidag)^(1-RA_mumi)
++RANL_numi *((NL_pex*RANL_rer)/RANL_gammaimidag)^(1-RA_mumi)
++RAPT_numi *((PT_pex*RAPT_rer)/RAPT_gammaimidag)^(1-RA_mumi)
++RADE_numi *((DE_pex*RADE_rer)/RADE_gammaimidag)^(1-RA_mumi)
++RARU_numi *((RU_pex*RARU_rer)/RARU_gammaimidag)^(1-RA_mumi)
++RAUS_numi *((US_pex*RAUS_rer)/RAUS_gammaimidag)^(1-RA_mumi)
 +(1
 -RAAT_numi
 -RABE_numi
@@ -12933,23 +12630,23 @@ RA_pimi^(1-RA_mumi) =
 -RADE_numi
 -RARU_numi
 -RAUS_numi
-)*(RW_pex*RARW_rer)^(1-RA_mumi);
+)*((RW_pex*RARW_rer)/RARW_gammaimidag)^(1-RA_mumi);
 // Private consumption good (import) inflation
 RA_piimi = RA_pimi/RA_pimi(-1)*RA_pic;
 // Private consumption good (import)
 RA_imcg^((RA_mumcg-1)/RA_mumcg) =
-+RAAT_numcg ^(1/RA_mumcg)*RAAT_imcg^(1-1/RA_mumcg)
-+RABE_numcg ^(1/RA_mumcg)*RABE_imcg^(1-1/RA_mumcg)
-+RAES_numcg ^(1/RA_mumcg)*RAES_imcg^(1-1/RA_mumcg)
-+RAFI_numcg ^(1/RA_mumcg)*RAFI_imcg^(1-1/RA_mumcg)
-+RAFR_numcg ^(1/RA_mumcg)*RAFR_imcg^(1-1/RA_mumcg)
-+RAGR_numcg ^(1/RA_mumcg)*RAGR_imcg^(1-1/RA_mumcg)
-+RAIT_numcg ^(1/RA_mumcg)*RAIT_imcg^(1-1/RA_mumcg)
-+RANL_numcg ^(1/RA_mumcg)*RANL_imcg^(1-1/RA_mumcg)
-+RAPT_numcg ^(1/RA_mumcg)*RAPT_imcg^(1-1/RA_mumcg)
-+RADE_numcg ^(1/RA_mumcg)*RADE_imcg^(1-1/RA_mumcg)
-+RARU_numcg ^(1/RA_mumcg)*RARU_imcg^(1-1/RA_mumcg)
-+RAUS_numcg ^(1/RA_mumcg)*RAUS_imcg^(1-1/RA_mumcg)
++RAAT_numcg ^(1/RA_mumcg)*((1-RAAT_gammaimcg)*RAAT_imcg)^(1-1/RA_mumcg)
++RABE_numcg ^(1/RA_mumcg)*((1-RABE_gammaimcg)*RABE_imcg)^(1-1/RA_mumcg)
++RAES_numcg ^(1/RA_mumcg)*((1-RAES_gammaimcg)*RAES_imcg)^(1-1/RA_mumcg)
++RAFI_numcg ^(1/RA_mumcg)*((1-RAFI_gammaimcg)*RAFI_imcg)^(1-1/RA_mumcg)
++RAFR_numcg ^(1/RA_mumcg)*((1-RAFR_gammaimcg)*RAFR_imcg)^(1-1/RA_mumcg)
++RAGR_numcg ^(1/RA_mumcg)*((1-RAGR_gammaimcg)*RAGR_imcg)^(1-1/RA_mumcg)
++RAIT_numcg ^(1/RA_mumcg)*((1-RAIT_gammaimcg)*RAIT_imcg)^(1-1/RA_mumcg)
++RANL_numcg ^(1/RA_mumcg)*((1-RANL_gammaimcg)*RANL_imcg)^(1-1/RA_mumcg)
++RAPT_numcg ^(1/RA_mumcg)*((1-RAPT_gammaimcg)*RAPT_imcg)^(1-1/RA_mumcg)
++RADE_numcg ^(1/RA_mumcg)*((1-RADE_gammaimcg)*RADE_imcg)^(1-1/RA_mumcg)
++RARU_numcg ^(1/RA_mumcg)*((1-RARU_gammaimcg)*RARU_imcg)^(1-1/RA_mumcg)
++RAUS_numcg ^(1/RA_mumcg)*((1-RAUS_gammaimcg)*RAUS_imcg)^(1-1/RA_mumcg)
 +(1
 -RAAT_numcg
 -RABE_numcg
@@ -12963,29 +12660,29 @@ RA_imcg^((RA_mumcg-1)/RA_mumcg) =
 -RADE_numcg
 -RARU_numcg
 -RAUS_numcg
-)^(1/RA_mumcg)*RARW_imcg^(1-1/RA_mumcg);
+)^(1/RA_mumcg)*((1-RARW_gammaimcg)*RARW_imcg)^(1-1/RA_mumcg);
 // Demand for bilateral consumption import goods
-RABE_imcg = RABE_numcg*((BE_pex*RABE_rer)/RA_pimcg)^(-RA_mumcg)*RA_imcg;
+RABE_imcg = RABE_numcg*((BE_pex*RABE_rer)/(RABE_gammaimcgdag*RA_pimcg))^(-RA_mumcg)*RA_imcg/(1-RABE_gammaimcg);
 // Demand for bilateral consumption import goods
-RAES_imcg = RAES_numcg*((ES_pex*RAES_rer)/RA_pimcg)^(-RA_mumcg)*RA_imcg;
+RAES_imcg = RAES_numcg*((ES_pex*RAES_rer)/(RAES_gammaimcgdag*RA_pimcg))^(-RA_mumcg)*RA_imcg/(1-RAES_gammaimcg);
 // Demand for bilateral consumption import goods
-RAFI_imcg = RAFI_numcg*((FI_pex*RAFI_rer)/RA_pimcg)^(-RA_mumcg)*RA_imcg;
+RAFI_imcg = RAFI_numcg*((FI_pex*RAFI_rer)/(RAFI_gammaimcgdag*RA_pimcg))^(-RA_mumcg)*RA_imcg/(1-RAFI_gammaimcg);
 // Demand for bilateral consumption import goods
-RAFR_imcg = RAFR_numcg*((FR_pex*RAFR_rer)/RA_pimcg)^(-RA_mumcg)*RA_imcg;
+RAFR_imcg = RAFR_numcg*((FR_pex*RAFR_rer)/(RAFR_gammaimcgdag*RA_pimcg))^(-RA_mumcg)*RA_imcg/(1-RAFR_gammaimcg);
 // Demand for bilateral consumption import goods
-RAGR_imcg = RAGR_numcg*((GR_pex*RAGR_rer)/RA_pimcg)^(-RA_mumcg)*RA_imcg;
+RAGR_imcg = RAGR_numcg*((GR_pex*RAGR_rer)/(RAGR_gammaimcgdag*RA_pimcg))^(-RA_mumcg)*RA_imcg/(1-RAGR_gammaimcg);
 // Demand for bilateral consumption import goods
-RAIT_imcg = RAIT_numcg*((IT_pex*RAIT_rer)/RA_pimcg)^(-RA_mumcg)*RA_imcg;
+RAIT_imcg = RAIT_numcg*((IT_pex*RAIT_rer)/(RAIT_gammaimcgdag*RA_pimcg))^(-RA_mumcg)*RA_imcg/(1-RAIT_gammaimcg);
 // Demand for bilateral consumption import goods
-RANL_imcg = RANL_numcg*((NL_pex*RANL_rer)/RA_pimcg)^(-RA_mumcg)*RA_imcg;
+RANL_imcg = RANL_numcg*((NL_pex*RANL_rer)/(RANL_gammaimcgdag*RA_pimcg))^(-RA_mumcg)*RA_imcg/(1-RANL_gammaimcg);
 // Demand for bilateral consumption import goods
-RAPT_imcg = RAPT_numcg*((PT_pex*RAPT_rer)/RA_pimcg)^(-RA_mumcg)*RA_imcg;
+RAPT_imcg = RAPT_numcg*((PT_pex*RAPT_rer)/(RAPT_gammaimcgdag*RA_pimcg))^(-RA_mumcg)*RA_imcg/(1-RAPT_gammaimcg);
 // Demand for bilateral consumption import goods
-RADE_imcg = RADE_numcg*((DE_pex*RADE_rer)/RA_pimcg)^(-RA_mumcg)*RA_imcg;
+RADE_imcg = RADE_numcg*((DE_pex*RADE_rer)/(RADE_gammaimcgdag*RA_pimcg))^(-RA_mumcg)*RA_imcg/(1-RADE_gammaimcg);
 // Demand for bilateral consumption import goods
-RARU_imcg = RARU_numcg*((RU_pex*RARU_rer)/RA_pimcg)^(-RA_mumcg)*RA_imcg;
+RARU_imcg = RARU_numcg*((RU_pex*RARU_rer)/(RARU_gammaimcgdag*RA_pimcg))^(-RA_mumcg)*RA_imcg/(1-RARU_gammaimcg);
 // Demand for bilateral consumption import goods
-RAUS_imcg = RAUS_numcg*((US_pex*RAUS_rer)/RA_pimcg)^(-RA_mumcg)*RA_imcg;
+RAUS_imcg = RAUS_numcg*((US_pex*RAUS_rer)/(RAUS_gammaimcgdag*RA_pimcg))^(-RA_mumcg)*RA_imcg/(1-RAUS_gammaimcg);
 RARW_imcg = (1
 -RAAT_numcg
 -RABE_numcg
@@ -12999,21 +12696,21 @@ RARW_imcg = (1
 -RADE_numcg
 -RARU_numcg
 -RAUS_numcg
-)*((RW_pex*RARW_rer)/RA_pimcg)^(-RA_mumcg)*RA_imcg;
+)*((RW_pex*RARW_rer)/(RARW_gammaimcgdag*RA_pimcg))^(-RA_mumcg)*RA_imcg/(1-RARW_gammaimcg);
 // Price of the consumption good (import)
 RA_pimcg^(1-RA_mumcg) =
-+RAAT_numcg * (AT_pex*RAAT_rer)^(1-RA_mumcg)
-+RABE_numcg * (BE_pex*RABE_rer)^(1-RA_mumcg)
-+RAES_numcg * (ES_pex*RAES_rer)^(1-RA_mumcg)
-+RAFI_numcg * (FI_pex*RAFI_rer)^(1-RA_mumcg)
-+RAFR_numcg * (FR_pex*RAFR_rer)^(1-RA_mumcg)
-+RAGR_numcg * (GR_pex*RAGR_rer)^(1-RA_mumcg)
-+RAIT_numcg * (IT_pex*RAIT_rer)^(1-RA_mumcg)
-+RANL_numcg * (NL_pex*RANL_rer)^(1-RA_mumcg)
-+RAPT_numcg * (PT_pex*RAPT_rer)^(1-RA_mumcg)
-+RADE_numcg * (DE_pex*RADE_rer)^(1-RA_mumcg)
-+RARU_numcg * (RU_pex*RARU_rer)^(1-RA_mumcg)
-+RAUS_numcg * (US_pex*RAUS_rer)^(1-RA_mumcg)
++RAAT_numcg *((AT_pex*RAAT_rer)/RAAT_gammaimcgdag)^(1-RA_mumcg)
++RABE_numcg *((BE_pex*RABE_rer)/RABE_gammaimcgdag)^(1-RA_mumcg)
++RAES_numcg *((ES_pex*RAES_rer)/RAES_gammaimcgdag)^(1-RA_mumcg)
++RAFI_numcg *((FI_pex*RAFI_rer)/RAFI_gammaimcgdag)^(1-RA_mumcg)
++RAFR_numcg *((FR_pex*RAFR_rer)/RAFR_gammaimcgdag)^(1-RA_mumcg)
++RAGR_numcg *((GR_pex*RAGR_rer)/RAGR_gammaimcgdag)^(1-RA_mumcg)
++RAIT_numcg *((IT_pex*RAIT_rer)/RAIT_gammaimcgdag)^(1-RA_mumcg)
++RANL_numcg *((NL_pex*RANL_rer)/RANL_gammaimcgdag)^(1-RA_mumcg)
++RAPT_numcg *((PT_pex*RAPT_rer)/RAPT_gammaimcgdag)^(1-RA_mumcg)
++RADE_numcg *((DE_pex*RADE_rer)/RADE_gammaimcgdag)^(1-RA_mumcg)
++RARU_numcg *((RU_pex*RARU_rer)/RARU_gammaimcgdag)^(1-RA_mumcg)
++RAUS_numcg *((US_pex*RAUS_rer)/RAUS_gammaimcgdag)^(1-RA_mumcg)
 +(1
 -RAAT_numcg
 -RABE_numcg
@@ -13027,23 +12724,23 @@ RA_pimcg^(1-RA_mumcg) =
 -RADE_numcg
 -RARU_numcg
 -RAUS_numcg
-)*(RW_pex*RARW_rer)^(1-RA_mumcg);
+)*((RW_pex*RARW_rer)/RARW_gammaimcgdag)^(1-RA_mumcg);
 // Private consumption good (import) inflation
 RA_piimcg = RA_pimcg/RA_pimcg(-1)*RA_pic;
 // Private consumption good (import)
 RA_imig^((RA_mumig-1)/RA_mumig) =
-+RAAT_numig ^(1/RA_mumig)*RAAT_imig^(1-1/RA_mumig)
-+RABE_numig ^(1/RA_mumig)*RABE_imig^(1-1/RA_mumig)
-+RAES_numig ^(1/RA_mumig)*RAES_imig^(1-1/RA_mumig)
-+RAFI_numig ^(1/RA_mumig)*RAFI_imig^(1-1/RA_mumig)
-+RAFR_numig ^(1/RA_mumig)*RAFR_imig^(1-1/RA_mumig)
-+RAGR_numig ^(1/RA_mumig)*RAGR_imig^(1-1/RA_mumig)
-+RAIT_numig ^(1/RA_mumig)*RAIT_imig^(1-1/RA_mumig)
-+RANL_numig ^(1/RA_mumig)*RANL_imig^(1-1/RA_mumig)
-+RAPT_numig ^(1/RA_mumig)*RAPT_imig^(1-1/RA_mumig)
-+RADE_numig ^(1/RA_mumig)*RADE_imig^(1-1/RA_mumig)
-+RARU_numig ^(1/RA_mumig)*RARU_imig^(1-1/RA_mumig)
-+RAUS_numig ^(1/RA_mumig)*RAUS_imig^(1-1/RA_mumig)
++RAAT_numig ^(1/RA_mumig)*((1-RAAT_gammaimig)*RAAT_imig)^(1-1/RA_mumig)
++RABE_numig ^(1/RA_mumig)*((1-RABE_gammaimig)*RABE_imig)^(1-1/RA_mumig)
++RAES_numig ^(1/RA_mumig)*((1-RAES_gammaimig)*RAES_imig)^(1-1/RA_mumig)
++RAFI_numig ^(1/RA_mumig)*((1-RAFI_gammaimig)*RAFI_imig)^(1-1/RA_mumig)
++RAFR_numig ^(1/RA_mumig)*((1-RAFR_gammaimig)*RAFR_imig)^(1-1/RA_mumig)
++RAGR_numig ^(1/RA_mumig)*((1-RAGR_gammaimig)*RAGR_imig)^(1-1/RA_mumig)
++RAIT_numig ^(1/RA_mumig)*((1-RAIT_gammaimig)*RAIT_imig)^(1-1/RA_mumig)
++RANL_numig ^(1/RA_mumig)*((1-RANL_gammaimig)*RANL_imig)^(1-1/RA_mumig)
++RAPT_numig ^(1/RA_mumig)*((1-RAPT_gammaimig)*RAPT_imig)^(1-1/RA_mumig)
++RADE_numig ^(1/RA_mumig)*((1-RADE_gammaimig)*RADE_imig)^(1-1/RA_mumig)
++RARU_numig ^(1/RA_mumig)*((1-RARU_gammaimig)*RARU_imig)^(1-1/RA_mumig)
++RAUS_numig ^(1/RA_mumig)*((1-RAUS_gammaimig)*RAUS_imig)^(1-1/RA_mumig)
 +(1
 -RAAT_numig
 -RABE_numig
@@ -13057,29 +12754,29 @@ RA_imig^((RA_mumig-1)/RA_mumig) =
 -RADE_numig
 -RARU_numig
 -RAUS_numig
-)^(1/RA_mumig)*RARW_imig^(1-1/RA_mumig);
+)^(1/RA_mumig)*((1-RARW_gammaimig)*RARW_imig)^(1-1/RA_mumig);
 // Demand for bilateral consumption import goods
-RABE_imig = RABE_numig*((BE_pex*RABE_rer)/RA_pimig)^(-RA_mumig)*RA_imig;
+RABE_imig = RABE_numig*((BE_pex*RABE_rer)/(RABE_gammaimigdag*RA_pimig))^(-RA_mumig)*RA_imig/(1-RABE_gammaimig);
 // Demand for bilateral consumption import goods
-RAES_imig = RAES_numig*((ES_pex*RAES_rer)/RA_pimig)^(-RA_mumig)*RA_imig;
+RAES_imig = RAES_numig*((ES_pex*RAES_rer)/(RAES_gammaimigdag*RA_pimig))^(-RA_mumig)*RA_imig/(1-RAES_gammaimig);
 // Demand for bilateral consumption import goods
-RAFI_imig = RAFI_numig*((FI_pex*RAFI_rer)/RA_pimig)^(-RA_mumig)*RA_imig;
+RAFI_imig = RAFI_numig*((FI_pex*RAFI_rer)/(RAFI_gammaimigdag*RA_pimig))^(-RA_mumig)*RA_imig/(1-RAFI_gammaimig);
 // Demand for bilateral consumption import goods
-RAFR_imig = RAFR_numig*((FR_pex*RAFR_rer)/RA_pimig)^(-RA_mumig)*RA_imig;
+RAFR_imig = RAFR_numig*((FR_pex*RAFR_rer)/(RAFR_gammaimigdag*RA_pimig))^(-RA_mumig)*RA_imig/(1-RAFR_gammaimig);
 // Demand for bilateral consumption import goods
-RAGR_imig = RAGR_numig*((GR_pex*RAGR_rer)/RA_pimig)^(-RA_mumig)*RA_imig;
+RAGR_imig = RAGR_numig*((GR_pex*RAGR_rer)/(RAGR_gammaimigdag*RA_pimig))^(-RA_mumig)*RA_imig/(1-RAGR_gammaimig);
 // Demand for bilateral consumption import goods
-RAIT_imig = RAIT_numig*((IT_pex*RAIT_rer)/RA_pimig)^(-RA_mumig)*RA_imig;
+RAIT_imig = RAIT_numig*((IT_pex*RAIT_rer)/(RAIT_gammaimigdag*RA_pimig))^(-RA_mumig)*RA_imig/(1-RAIT_gammaimig);
 // Demand for bilateral consumption import goods
-RANL_imig = RANL_numig*((NL_pex*RANL_rer)/RA_pimig)^(-RA_mumig)*RA_imig;
+RANL_imig = RANL_numig*((NL_pex*RANL_rer)/(RANL_gammaimigdag*RA_pimig))^(-RA_mumig)*RA_imig/(1-RANL_gammaimig);
 // Demand for bilateral consumption import goods
-RAPT_imig = RAPT_numig*((PT_pex*RAPT_rer)/RA_pimig)^(-RA_mumig)*RA_imig;
+RAPT_imig = RAPT_numig*((PT_pex*RAPT_rer)/(RAPT_gammaimigdag*RA_pimig))^(-RA_mumig)*RA_imig/(1-RAPT_gammaimig);
 // Demand for bilateral consumption import goods
-RADE_imig = RADE_numig*((DE_pex*RADE_rer)/RA_pimig)^(-RA_mumig)*RA_imig;
+RADE_imig = RADE_numig*((DE_pex*RADE_rer)/(RADE_gammaimigdag*RA_pimig))^(-RA_mumig)*RA_imig/(1-RADE_gammaimig);
 // Demand for bilateral consumption import goods
-RARU_imig = RARU_numig*((RU_pex*RARU_rer)/RA_pimig)^(-RA_mumig)*RA_imig;
+RARU_imig = RARU_numig*((RU_pex*RARU_rer)/(RARU_gammaimigdag*RA_pimig))^(-RA_mumig)*RA_imig/(1-RARU_gammaimig);
 // Demand for bilateral consumption import goods
-RAUS_imig = RAUS_numig*((US_pex*RAUS_rer)/RA_pimig)^(-RA_mumig)*RA_imig;
+RAUS_imig = RAUS_numig*((US_pex*RAUS_rer)/(RAUS_gammaimigdag*RA_pimig))^(-RA_mumig)*RA_imig/(1-RAUS_gammaimig);
 RARW_imig = (1
 -RAAT_numig
 -RABE_numig
@@ -13093,21 +12790,21 @@ RARW_imig = (1
 -RADE_numig
 -RARU_numig
 -RAUS_numig
-)*((RW_pex*RARW_rer)/RA_pimig)^(-RA_mumig)*RA_imig;
+)*((RW_pex*RARW_rer)/(RARW_gammaimigdag*RA_pimig))^(-RA_mumig)*RA_imig/(1-RARW_gammaimig);
 // Price of the consumption good (import)
 RA_pimig^(1-RA_mumig) =
-+RAAT_numig * (AT_pex*RAAT_rer)^(1-RA_mumig)
-+RABE_numig * (BE_pex*RABE_rer)^(1-RA_mumig)
-+RAES_numig * (ES_pex*RAES_rer)^(1-RA_mumig)
-+RAFI_numig * (FI_pex*RAFI_rer)^(1-RA_mumig)
-+RAFR_numig * (FR_pex*RAFR_rer)^(1-RA_mumig)
-+RAGR_numig * (GR_pex*RAGR_rer)^(1-RA_mumig)
-+RAIT_numig * (IT_pex*RAIT_rer)^(1-RA_mumig)
-+RANL_numig * (NL_pex*RANL_rer)^(1-RA_mumig)
-+RAPT_numig * (PT_pex*RAPT_rer)^(1-RA_mumig)
-+RADE_numig * (DE_pex*RADE_rer)^(1-RA_mumig)
-+RARU_numig * (RU_pex*RARU_rer)^(1-RA_mumig)
-+RAUS_numig * (US_pex*RAUS_rer)^(1-RA_mumig)
++RAAT_numig *((AT_pex*RAAT_rer)/RAAT_gammaimigdag)^(1-RA_mumig)
++RABE_numig *((BE_pex*RABE_rer)/RABE_gammaimigdag)^(1-RA_mumig)
++RAES_numig *((ES_pex*RAES_rer)/RAES_gammaimigdag)^(1-RA_mumig)
++RAFI_numig *((FI_pex*RAFI_rer)/RAFI_gammaimigdag)^(1-RA_mumig)
++RAFR_numig *((FR_pex*RAFR_rer)/RAFR_gammaimigdag)^(1-RA_mumig)
++RAGR_numig *((GR_pex*RAGR_rer)/RAGR_gammaimigdag)^(1-RA_mumig)
++RAIT_numig *((IT_pex*RAIT_rer)/RAIT_gammaimigdag)^(1-RA_mumig)
++RANL_numig *((NL_pex*RANL_rer)/RANL_gammaimigdag)^(1-RA_mumig)
++RAPT_numig *((PT_pex*RAPT_rer)/RAPT_gammaimigdag)^(1-RA_mumig)
++RADE_numig *((DE_pex*RADE_rer)/RADE_gammaimigdag)^(1-RA_mumig)
++RARU_numig *((RU_pex*RARU_rer)/RARU_gammaimigdag)^(1-RA_mumig)
++RAUS_numig *((US_pex*RAUS_rer)/RAUS_gammaimigdag)^(1-RA_mumig)
 +(1
 -RAAT_numig
 -RABE_numig
@@ -13121,7 +12818,7 @@ RA_pimig^(1-RA_mumig) =
 -RADE_numig
 -RARU_numig
 -RAUS_numig
-)*(RW_pex*RARW_rer)^(1-RA_mumig);
+)*((RW_pex*RARW_rer)/RARW_gammaimigdag)^(1-RA_mumig);
 // Private consumption good (import) inflation
 RA_piimig = RA_pimig/RA_pimig(-1)*RA_pic;
 // Private consumption good (import) inflation
@@ -13222,32 +12919,58 @@ RA_pttc^(1-RA_mutc) = (RA_nutc)*RA_pht^(1-RA_mutc)+(1-RA_nutc)*RA_pimc^(1-RA_mut
 1^(1-RA_muc) = (RA_nuc)*RA_pttc^(1-RA_muc)+(1-RA_nuc)*RA_pnt^(1-RA_muc);
 // Demand for domestic intermediate goods
 RA_htc = RA_nutc*(RA_pht/RA_pttc)^(-RA_mutc)*RA_ttc;
-RAAT_gammaimc = 0;
-RAAT_gammaimcdag = 1;
-RABE_gammaimc = 0;
-RABE_gammaimcdag = 1;
-RAES_gammaimc = 0;
-RAES_gammaimcdag = 1;
-RAFI_gammaimc = 0;
-RAFI_gammaimcdag = 1;
-RAFR_gammaimc = 0;
-RAFR_gammaimcdag = 1;
-RAGR_gammaimc = 0;
-RAGR_gammaimcdag = 1;
-RAIT_gammaimc = 0;
-RAIT_gammaimcdag = 1;
-RANL_gammaimc = 0;
-RANL_gammaimcdag = 1;
-RAPT_gammaimc = 0;
-RAPT_gammaimcdag = 1;
-RADE_gammaimc = 0;
-RADE_gammaimcdag = 1;
-RARU_gammaimc = 0;
-RARU_gammaimcdag = 1;
-RARW_gammaimc = 0;
-RARW_gammaimcdag = 1;
-RAUS_gammaimc = 0;
-RAUS_gammaimcdag = 1;
+// Import adjustment cost
+RAAT_gammaimc = RA_gammaimc1/2*((RAAT_imc/RA_qc)/(RAAT_imc(-1)/RA_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAAT_gammaimcdag = 1-RAAT_gammaimc-RA_gammaimc1*((RAAT_imc/RA_qc)/(RAAT_imc(-1)/RA_qc(-1))-1)*(RAAT_imc/RA_qc)/(RAAT_imc(-1)/RA_qc(-1));
+// Import adjustment cost
+RABE_gammaimc = RA_gammaimc1/2*((RABE_imc/RA_qc)/(RABE_imc(-1)/RA_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RABE_gammaimcdag = 1-RABE_gammaimc-RA_gammaimc1*((RABE_imc/RA_qc)/(RABE_imc(-1)/RA_qc(-1))-1)*(RABE_imc/RA_qc)/(RABE_imc(-1)/RA_qc(-1));
+// Import adjustment cost
+RAES_gammaimc = RA_gammaimc1/2*((RAES_imc/RA_qc)/(RAES_imc(-1)/RA_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAES_gammaimcdag = 1-RAES_gammaimc-RA_gammaimc1*((RAES_imc/RA_qc)/(RAES_imc(-1)/RA_qc(-1))-1)*(RAES_imc/RA_qc)/(RAES_imc(-1)/RA_qc(-1));
+// Import adjustment cost
+RAFI_gammaimc = RA_gammaimc1/2*((RAFI_imc/RA_qc)/(RAFI_imc(-1)/RA_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAFI_gammaimcdag = 1-RAFI_gammaimc-RA_gammaimc1*((RAFI_imc/RA_qc)/(RAFI_imc(-1)/RA_qc(-1))-1)*(RAFI_imc/RA_qc)/(RAFI_imc(-1)/RA_qc(-1));
+// Import adjustment cost
+RAFR_gammaimc = RA_gammaimc1/2*((RAFR_imc/RA_qc)/(RAFR_imc(-1)/RA_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAFR_gammaimcdag = 1-RAFR_gammaimc-RA_gammaimc1*((RAFR_imc/RA_qc)/(RAFR_imc(-1)/RA_qc(-1))-1)*(RAFR_imc/RA_qc)/(RAFR_imc(-1)/RA_qc(-1));
+// Import adjustment cost
+RAGR_gammaimc = RA_gammaimc1/2*((RAGR_imc/RA_qc)/(RAGR_imc(-1)/RA_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAGR_gammaimcdag = 1-RAGR_gammaimc-RA_gammaimc1*((RAGR_imc/RA_qc)/(RAGR_imc(-1)/RA_qc(-1))-1)*(RAGR_imc/RA_qc)/(RAGR_imc(-1)/RA_qc(-1));
+// Import adjustment cost
+RAIT_gammaimc = RA_gammaimc1/2*((RAIT_imc/RA_qc)/(RAIT_imc(-1)/RA_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAIT_gammaimcdag = 1-RAIT_gammaimc-RA_gammaimc1*((RAIT_imc/RA_qc)/(RAIT_imc(-1)/RA_qc(-1))-1)*(RAIT_imc/RA_qc)/(RAIT_imc(-1)/RA_qc(-1));
+// Import adjustment cost
+RANL_gammaimc = RA_gammaimc1/2*((RANL_imc/RA_qc)/(RANL_imc(-1)/RA_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RANL_gammaimcdag = 1-RANL_gammaimc-RA_gammaimc1*((RANL_imc/RA_qc)/(RANL_imc(-1)/RA_qc(-1))-1)*(RANL_imc/RA_qc)/(RANL_imc(-1)/RA_qc(-1));
+// Import adjustment cost
+RAPT_gammaimc = RA_gammaimc1/2*((RAPT_imc/RA_qc)/(RAPT_imc(-1)/RA_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAPT_gammaimcdag = 1-RAPT_gammaimc-RA_gammaimc1*((RAPT_imc/RA_qc)/(RAPT_imc(-1)/RA_qc(-1))-1)*(RAPT_imc/RA_qc)/(RAPT_imc(-1)/RA_qc(-1));
+// Import adjustment cost
+RADE_gammaimc = RA_gammaimc1/2*((RADE_imc/RA_qc)/(RADE_imc(-1)/RA_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RADE_gammaimcdag = 1-RADE_gammaimc-RA_gammaimc1*((RADE_imc/RA_qc)/(RADE_imc(-1)/RA_qc(-1))-1)*(RADE_imc/RA_qc)/(RADE_imc(-1)/RA_qc(-1));
+// Import adjustment cost
+RARU_gammaimc = RA_gammaimc1/2*((RARU_imc/RA_qc)/(RARU_imc(-1)/RA_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RARU_gammaimcdag = 1-RARU_gammaimc-RA_gammaimc1*((RARU_imc/RA_qc)/(RARU_imc(-1)/RA_qc(-1))-1)*(RARU_imc/RA_qc)/(RARU_imc(-1)/RA_qc(-1));
+// Import adjustment cost
+RARW_gammaimc = RA_gammaimc1/2*((RARW_imc/RA_qc)/(RARW_imc(-1)/RA_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RARW_gammaimcdag = 1-RARW_gammaimc-RA_gammaimc1*((RARW_imc/RA_qc)/(RARW_imc(-1)/RA_qc(-1))-1)*(RARW_imc/RA_qc)/(RARW_imc(-1)/RA_qc(-1));
+// Import adjustment cost
+RAUS_gammaimc = RA_gammaimc1/2*((RAUS_imc/RA_qc)/(RAUS_imc(-1)/RA_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAUS_gammaimcdag = 1-RAUS_gammaimc-RA_gammaimc1*((RAUS_imc/RA_qc)/(RAUS_imc(-1)/RA_qc(-1))-1)*(RAUS_imc/RA_qc)/(RAUS_imc(-1)/RA_qc(-1));
 // Private consumption good (tradable)
 RA_tti^((RA_muti-1)/RA_muti) = (RA_nuti)^(1/RA_muti)*RA_hti^(1-1/RA_muti)+(1-RA_nuti)^(1/RA_muti)*RA_imi^(1-1/RA_muti);
 // Private consumption good  (total)
@@ -13260,35 +12983,60 @@ RA_ptti^(1-RA_muti) = (RA_nuti)*RA_pht^(1-RA_muti)+(1-RA_nuti)*RA_pimi^(1-RA_mut
 RA_pi^(1-RA_mui) = (RA_nui)*RA_ptti^(1-RA_mui)+(1-RA_nui)*RA_pnt^(1-RA_mui);
 // Auxiliary equation for the price of the investment good in steady state
 // this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
-RA_pibar = RA_pi;
 // Demand for domestic intermediate goods
 RA_hti = RA_nuti*(RA_pht/RA_ptti)^(-RA_muti)*RA_tti;
-RAAT_gammaimi = 0;
-RAAT_gammaimidag = 1;
-RABE_gammaimi = 0;
-RABE_gammaimidag = 1;
-RAES_gammaimi = 0;
-RAES_gammaimidag = 1;
-RAFI_gammaimi = 0;
-RAFI_gammaimidag = 1;
-RAFR_gammaimi = 0;
-RAFR_gammaimidag = 1;
-RAGR_gammaimi = 0;
-RAGR_gammaimidag = 1;
-RAIT_gammaimi = 0;
-RAIT_gammaimidag = 1;
-RANL_gammaimi = 0;
-RANL_gammaimidag = 1;
-RAPT_gammaimi = 0;
-RAPT_gammaimidag = 1;
-RADE_gammaimi = 0;
-RADE_gammaimidag = 1;
-RARU_gammaimi = 0;
-RARU_gammaimidag = 1;
-RARW_gammaimi = 0;
-RARW_gammaimidag = 1;
-RAUS_gammaimi = 0;
-RAUS_gammaimidag = 1;
+// Import adjustment cost
+RAAT_gammaimi = RA_gammaimi1/2*((RAAT_imi/RA_qi)/(RAAT_imi(-1)/RA_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAAT_gammaimidag = 1-RAAT_gammaimi-RA_gammaimi1*((RAAT_imi/RA_qi)/(RAAT_imi(-1)/RA_qi)-1)*((RAAT_imi/RA_qi)/(RAAT_imi(-1)/RA_qi(-1)));
+// Import adjustment cost
+RABE_gammaimi = RA_gammaimi1/2*((RABE_imi/RA_qi)/(RABE_imi(-1)/RA_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RABE_gammaimidag = 1-RABE_gammaimi-RA_gammaimi1*((RABE_imi/RA_qi)/(RABE_imi(-1)/RA_qi)-1)*((RABE_imi/RA_qi)/(RABE_imi(-1)/RA_qi(-1)));
+// Import adjustment cost
+RAES_gammaimi = RA_gammaimi1/2*((RAES_imi/RA_qi)/(RAES_imi(-1)/RA_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAES_gammaimidag = 1-RAES_gammaimi-RA_gammaimi1*((RAES_imi/RA_qi)/(RAES_imi(-1)/RA_qi)-1)*((RAES_imi/RA_qi)/(RAES_imi(-1)/RA_qi(-1)));
+// Import adjustment cost
+RAFI_gammaimi = RA_gammaimi1/2*((RAFI_imi/RA_qi)/(RAFI_imi(-1)/RA_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAFI_gammaimidag = 1-RAFI_gammaimi-RA_gammaimi1*((RAFI_imi/RA_qi)/(RAFI_imi(-1)/RA_qi)-1)*((RAFI_imi/RA_qi)/(RAFI_imi(-1)/RA_qi(-1)));
+// Import adjustment cost
+RAFR_gammaimi = RA_gammaimi1/2*((RAFR_imi/RA_qi)/(RAFR_imi(-1)/RA_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAFR_gammaimidag = 1-RAFR_gammaimi-RA_gammaimi1*((RAFR_imi/RA_qi)/(RAFR_imi(-1)/RA_qi)-1)*((RAFR_imi/RA_qi)/(RAFR_imi(-1)/RA_qi(-1)));
+// Import adjustment cost
+RAGR_gammaimi = RA_gammaimi1/2*((RAGR_imi/RA_qi)/(RAGR_imi(-1)/RA_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAGR_gammaimidag = 1-RAGR_gammaimi-RA_gammaimi1*((RAGR_imi/RA_qi)/(RAGR_imi(-1)/RA_qi)-1)*((RAGR_imi/RA_qi)/(RAGR_imi(-1)/RA_qi(-1)));
+// Import adjustment cost
+RAIT_gammaimi = RA_gammaimi1/2*((RAIT_imi/RA_qi)/(RAIT_imi(-1)/RA_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAIT_gammaimidag = 1-RAIT_gammaimi-RA_gammaimi1*((RAIT_imi/RA_qi)/(RAIT_imi(-1)/RA_qi)-1)*((RAIT_imi/RA_qi)/(RAIT_imi(-1)/RA_qi(-1)));
+// Import adjustment cost
+RANL_gammaimi = RA_gammaimi1/2*((RANL_imi/RA_qi)/(RANL_imi(-1)/RA_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RANL_gammaimidag = 1-RANL_gammaimi-RA_gammaimi1*((RANL_imi/RA_qi)/(RANL_imi(-1)/RA_qi)-1)*((RANL_imi/RA_qi)/(RANL_imi(-1)/RA_qi(-1)));
+// Import adjustment cost
+RAPT_gammaimi = RA_gammaimi1/2*((RAPT_imi/RA_qi)/(RAPT_imi(-1)/RA_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAPT_gammaimidag = 1-RAPT_gammaimi-RA_gammaimi1*((RAPT_imi/RA_qi)/(RAPT_imi(-1)/RA_qi)-1)*((RAPT_imi/RA_qi)/(RAPT_imi(-1)/RA_qi(-1)));
+// Import adjustment cost
+RADE_gammaimi = RA_gammaimi1/2*((RADE_imi/RA_qi)/(RADE_imi(-1)/RA_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RADE_gammaimidag = 1-RADE_gammaimi-RA_gammaimi1*((RADE_imi/RA_qi)/(RADE_imi(-1)/RA_qi)-1)*((RADE_imi/RA_qi)/(RADE_imi(-1)/RA_qi(-1)));
+// Import adjustment cost
+RARU_gammaimi = RA_gammaimi1/2*((RARU_imi/RA_qi)/(RARU_imi(-1)/RA_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RARU_gammaimidag = 1-RARU_gammaimi-RA_gammaimi1*((RARU_imi/RA_qi)/(RARU_imi(-1)/RA_qi)-1)*((RARU_imi/RA_qi)/(RARU_imi(-1)/RA_qi(-1)));
+// Import adjustment cost
+RARW_gammaimi = RA_gammaimi1/2*((RARW_imi/RA_qi)/(RARW_imi(-1)/RA_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RARW_gammaimidag = 1-RARW_gammaimi-RA_gammaimi1*((RARW_imi/RA_qi)/(RARW_imi(-1)/RA_qi)-1)*((RARW_imi/RA_qi)/(RARW_imi(-1)/RA_qi(-1)));
+// Import adjustment cost
+RAUS_gammaimi = RA_gammaimi1/2*((RAUS_imi/RA_qi)/(RAUS_imi(-1)/RA_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAUS_gammaimidag = 1-RAUS_gammaimi-RA_gammaimi1*((RAUS_imi/RA_qi)/(RAUS_imi(-1)/RA_qi)-1)*((RAUS_imi/RA_qi)/(RAUS_imi(-1)/RA_qi(-1)));
 // Private consumption good (tradable)
 RA_ttcg^((RA_mutcg-1)/RA_mutcg) = (RA_nutcg)^(1/RA_mutcg)*RA_htcg^(1-1/RA_mutcg)+(1-RA_nutcg)^(1/RA_mutcg)*RA_imcg^(1-1/RA_mutcg);
 // Private consumption good  (total)
@@ -13301,32 +13049,58 @@ RA_pttcg^(1-RA_mutcg) = (RA_nutcg)*RA_pht^(1-RA_mutcg)+(1-RA_nutcg)*RA_pimcg^(1-
 RA_pcg^(1-RA_mucg) = (RA_nucg)*RA_pttcg^(1-RA_mucg)+(1-RA_nucg)*RA_pnt^(1-RA_mucg);
 // Demand for domestic intermediate goods
 RA_htcg = RA_nutcg*(RA_pht/RA_pttcg)^(-RA_mutcg)*RA_ttcg;
-RAAT_gammaimcg = 0;
-RAAT_gammaimcgdag = 1;
-RABE_gammaimcg = 0;
-RABE_gammaimcgdag = 1;
-RAES_gammaimcg = 0;
-RAES_gammaimcgdag = 1;
-RAFI_gammaimcg = 0;
-RAFI_gammaimcgdag = 1;
-RAFR_gammaimcg = 0;
-RAFR_gammaimcgdag = 1;
-RAGR_gammaimcg = 0;
-RAGR_gammaimcgdag = 1;
-RAIT_gammaimcg = 0;
-RAIT_gammaimcgdag = 1;
-RANL_gammaimcg = 0;
-RANL_gammaimcgdag = 1;
-RAPT_gammaimcg = 0;
-RAPT_gammaimcgdag = 1;
-RADE_gammaimcg = 0;
-RADE_gammaimcgdag = 1;
-RARU_gammaimcg = 0;
-RARU_gammaimcgdag = 1;
-RARW_gammaimcg = 0;
-RARW_gammaimcgdag = 1;
-RAUS_gammaimcg = 0;
-RAUS_gammaimcgdag = 1;
+// Import adjustment cost
+RAAT_gammaimcg = RA_gammaimcg1/2*((RAAT_imcg/RA_qcg)/(RAAT_imcg(-1)/RA_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAAT_gammaimcgdag = 1-RAAT_gammaimcg-RA_gammaimcg1*((RAAT_imcg/RA_qcg)/(RAAT_imcg(-1)/RA_qcg)-1)*((RAAT_imcg/RA_qcg)/(RAAT_imcg(-1)/RA_qcg(-1)));
+// Import adjustment cost
+RABE_gammaimcg = RA_gammaimcg1/2*((RABE_imcg/RA_qcg)/(RABE_imcg(-1)/RA_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RABE_gammaimcgdag = 1-RABE_gammaimcg-RA_gammaimcg1*((RABE_imcg/RA_qcg)/(RABE_imcg(-1)/RA_qcg)-1)*((RABE_imcg/RA_qcg)/(RABE_imcg(-1)/RA_qcg(-1)));
+// Import adjustment cost
+RAES_gammaimcg = RA_gammaimcg1/2*((RAES_imcg/RA_qcg)/(RAES_imcg(-1)/RA_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAES_gammaimcgdag = 1-RAES_gammaimcg-RA_gammaimcg1*((RAES_imcg/RA_qcg)/(RAES_imcg(-1)/RA_qcg)-1)*((RAES_imcg/RA_qcg)/(RAES_imcg(-1)/RA_qcg(-1)));
+// Import adjustment cost
+RAFI_gammaimcg = RA_gammaimcg1/2*((RAFI_imcg/RA_qcg)/(RAFI_imcg(-1)/RA_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAFI_gammaimcgdag = 1-RAFI_gammaimcg-RA_gammaimcg1*((RAFI_imcg/RA_qcg)/(RAFI_imcg(-1)/RA_qcg)-1)*((RAFI_imcg/RA_qcg)/(RAFI_imcg(-1)/RA_qcg(-1)));
+// Import adjustment cost
+RAFR_gammaimcg = RA_gammaimcg1/2*((RAFR_imcg/RA_qcg)/(RAFR_imcg(-1)/RA_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAFR_gammaimcgdag = 1-RAFR_gammaimcg-RA_gammaimcg1*((RAFR_imcg/RA_qcg)/(RAFR_imcg(-1)/RA_qcg)-1)*((RAFR_imcg/RA_qcg)/(RAFR_imcg(-1)/RA_qcg(-1)));
+// Import adjustment cost
+RAGR_gammaimcg = RA_gammaimcg1/2*((RAGR_imcg/RA_qcg)/(RAGR_imcg(-1)/RA_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAGR_gammaimcgdag = 1-RAGR_gammaimcg-RA_gammaimcg1*((RAGR_imcg/RA_qcg)/(RAGR_imcg(-1)/RA_qcg)-1)*((RAGR_imcg/RA_qcg)/(RAGR_imcg(-1)/RA_qcg(-1)));
+// Import adjustment cost
+RAIT_gammaimcg = RA_gammaimcg1/2*((RAIT_imcg/RA_qcg)/(RAIT_imcg(-1)/RA_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAIT_gammaimcgdag = 1-RAIT_gammaimcg-RA_gammaimcg1*((RAIT_imcg/RA_qcg)/(RAIT_imcg(-1)/RA_qcg)-1)*((RAIT_imcg/RA_qcg)/(RAIT_imcg(-1)/RA_qcg(-1)));
+// Import adjustment cost
+RANL_gammaimcg = RA_gammaimcg1/2*((RANL_imcg/RA_qcg)/(RANL_imcg(-1)/RA_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RANL_gammaimcgdag = 1-RANL_gammaimcg-RA_gammaimcg1*((RANL_imcg/RA_qcg)/(RANL_imcg(-1)/RA_qcg)-1)*((RANL_imcg/RA_qcg)/(RANL_imcg(-1)/RA_qcg(-1)));
+// Import adjustment cost
+RAPT_gammaimcg = RA_gammaimcg1/2*((RAPT_imcg/RA_qcg)/(RAPT_imcg(-1)/RA_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAPT_gammaimcgdag = 1-RAPT_gammaimcg-RA_gammaimcg1*((RAPT_imcg/RA_qcg)/(RAPT_imcg(-1)/RA_qcg)-1)*((RAPT_imcg/RA_qcg)/(RAPT_imcg(-1)/RA_qcg(-1)));
+// Import adjustment cost
+RADE_gammaimcg = RA_gammaimcg1/2*((RADE_imcg/RA_qcg)/(RADE_imcg(-1)/RA_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RADE_gammaimcgdag = 1-RADE_gammaimcg-RA_gammaimcg1*((RADE_imcg/RA_qcg)/(RADE_imcg(-1)/RA_qcg)-1)*((RADE_imcg/RA_qcg)/(RADE_imcg(-1)/RA_qcg(-1)));
+// Import adjustment cost
+RARU_gammaimcg = RA_gammaimcg1/2*((RARU_imcg/RA_qcg)/(RARU_imcg(-1)/RA_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RARU_gammaimcgdag = 1-RARU_gammaimcg-RA_gammaimcg1*((RARU_imcg/RA_qcg)/(RARU_imcg(-1)/RA_qcg)-1)*((RARU_imcg/RA_qcg)/(RARU_imcg(-1)/RA_qcg(-1)));
+// Import adjustment cost
+RARW_gammaimcg = RA_gammaimcg1/2*((RARW_imcg/RA_qcg)/(RARW_imcg(-1)/RA_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RARW_gammaimcgdag = 1-RARW_gammaimcg-RA_gammaimcg1*((RARW_imcg/RA_qcg)/(RARW_imcg(-1)/RA_qcg)-1)*((RARW_imcg/RA_qcg)/(RARW_imcg(-1)/RA_qcg(-1)));
+// Import adjustment cost
+RAUS_gammaimcg = RA_gammaimcg1/2*((RAUS_imcg/RA_qcg)/(RAUS_imcg(-1)/RA_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAUS_gammaimcgdag = 1-RAUS_gammaimcg-RA_gammaimcg1*((RAUS_imcg/RA_qcg)/(RAUS_imcg(-1)/RA_qcg)-1)*((RAUS_imcg/RA_qcg)/(RAUS_imcg(-1)/RA_qcg(-1)));
 // Private consumption good (tradable)
 RA_ttig^((RA_mutig-1)/RA_mutig) = (RA_nutig)^(1/RA_mutig)*RA_htig^(1-1/RA_mutig)+(1-RA_nutig)^(1/RA_mutig)*RA_imig^(1-1/RA_mutig);
 // Private consumption good  (total)
@@ -13339,32 +13113,58 @@ RA_pttig^(1-RA_mutig) = (RA_nutig)*RA_pht^(1-RA_mutig)+(1-RA_nutig)*RA_pimig^(1-
 RA_pig^(1-RA_muig) = (RA_nuig)*RA_pttig^(1-RA_muig)+(1-RA_nuig)*RA_pnt^(1-RA_muig);
 // Demand for domestic intermediate goods
 RA_htig = RA_nutig*(RA_pht/RA_pttig)^(-RA_mutig)*RA_ttig;
-RAAT_gammaimig = 0;
-RAAT_gammaimigdag = 1;
-RABE_gammaimig = 0;
-RABE_gammaimigdag = 1;
-RAES_gammaimig = 0;
-RAES_gammaimigdag = 1;
-RAFI_gammaimig = 0;
-RAFI_gammaimigdag = 1;
-RAFR_gammaimig = 0;
-RAFR_gammaimigdag = 1;
-RAGR_gammaimig = 0;
-RAGR_gammaimigdag = 1;
-RAIT_gammaimig = 0;
-RAIT_gammaimigdag = 1;
-RANL_gammaimig = 0;
-RANL_gammaimigdag = 1;
-RAPT_gammaimig = 0;
-RAPT_gammaimigdag = 1;
-RADE_gammaimig = 0;
-RADE_gammaimigdag = 1;
-RARU_gammaimig = 0;
-RARU_gammaimigdag = 1;
-RARW_gammaimig = 0;
-RARW_gammaimigdag = 1;
-RAUS_gammaimig = 0;
-RAUS_gammaimigdag = 1;
+// Import adjustment cost
+RAAT_gammaimig = RA_gammaimig1/2*((RAAT_imig/RA_qig)/(RAAT_imig(-1)/RA_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAAT_gammaimigdag = 1-RAAT_gammaimig-RA_gammaimig1*((RAAT_imig/RA_qig)/(RAAT_imig(-1)/RA_qig)-1)*((RAAT_imig/RA_qig)/(RAAT_imig(-1)/RA_qig(-1)));
+// Import adjustment cost
+RABE_gammaimig = RA_gammaimig1/2*((RABE_imig/RA_qig)/(RABE_imig(-1)/RA_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RABE_gammaimigdag = 1-RABE_gammaimig-RA_gammaimig1*((RABE_imig/RA_qig)/(RABE_imig(-1)/RA_qig)-1)*((RABE_imig/RA_qig)/(RABE_imig(-1)/RA_qig(-1)));
+// Import adjustment cost
+RAES_gammaimig = RA_gammaimig1/2*((RAES_imig/RA_qig)/(RAES_imig(-1)/RA_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAES_gammaimigdag = 1-RAES_gammaimig-RA_gammaimig1*((RAES_imig/RA_qig)/(RAES_imig(-1)/RA_qig)-1)*((RAES_imig/RA_qig)/(RAES_imig(-1)/RA_qig(-1)));
+// Import adjustment cost
+RAFI_gammaimig = RA_gammaimig1/2*((RAFI_imig/RA_qig)/(RAFI_imig(-1)/RA_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAFI_gammaimigdag = 1-RAFI_gammaimig-RA_gammaimig1*((RAFI_imig/RA_qig)/(RAFI_imig(-1)/RA_qig)-1)*((RAFI_imig/RA_qig)/(RAFI_imig(-1)/RA_qig(-1)));
+// Import adjustment cost
+RAFR_gammaimig = RA_gammaimig1/2*((RAFR_imig/RA_qig)/(RAFR_imig(-1)/RA_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAFR_gammaimigdag = 1-RAFR_gammaimig-RA_gammaimig1*((RAFR_imig/RA_qig)/(RAFR_imig(-1)/RA_qig)-1)*((RAFR_imig/RA_qig)/(RAFR_imig(-1)/RA_qig(-1)));
+// Import adjustment cost
+RAGR_gammaimig = RA_gammaimig1/2*((RAGR_imig/RA_qig)/(RAGR_imig(-1)/RA_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAGR_gammaimigdag = 1-RAGR_gammaimig-RA_gammaimig1*((RAGR_imig/RA_qig)/(RAGR_imig(-1)/RA_qig)-1)*((RAGR_imig/RA_qig)/(RAGR_imig(-1)/RA_qig(-1)));
+// Import adjustment cost
+RAIT_gammaimig = RA_gammaimig1/2*((RAIT_imig/RA_qig)/(RAIT_imig(-1)/RA_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAIT_gammaimigdag = 1-RAIT_gammaimig-RA_gammaimig1*((RAIT_imig/RA_qig)/(RAIT_imig(-1)/RA_qig)-1)*((RAIT_imig/RA_qig)/(RAIT_imig(-1)/RA_qig(-1)));
+// Import adjustment cost
+RANL_gammaimig = RA_gammaimig1/2*((RANL_imig/RA_qig)/(RANL_imig(-1)/RA_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RANL_gammaimigdag = 1-RANL_gammaimig-RA_gammaimig1*((RANL_imig/RA_qig)/(RANL_imig(-1)/RA_qig)-1)*((RANL_imig/RA_qig)/(RANL_imig(-1)/RA_qig(-1)));
+// Import adjustment cost
+RAPT_gammaimig = RA_gammaimig1/2*((RAPT_imig/RA_qig)/(RAPT_imig(-1)/RA_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAPT_gammaimigdag = 1-RAPT_gammaimig-RA_gammaimig1*((RAPT_imig/RA_qig)/(RAPT_imig(-1)/RA_qig)-1)*((RAPT_imig/RA_qig)/(RAPT_imig(-1)/RA_qig(-1)));
+// Import adjustment cost
+RADE_gammaimig = RA_gammaimig1/2*((RADE_imig/RA_qig)/(RADE_imig(-1)/RA_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RADE_gammaimigdag = 1-RADE_gammaimig-RA_gammaimig1*((RADE_imig/RA_qig)/(RADE_imig(-1)/RA_qig)-1)*((RADE_imig/RA_qig)/(RADE_imig(-1)/RA_qig(-1)));
+// Import adjustment cost
+RARU_gammaimig = RA_gammaimig1/2*((RARU_imig/RA_qig)/(RARU_imig(-1)/RA_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RARU_gammaimigdag = 1-RARU_gammaimig-RA_gammaimig1*((RARU_imig/RA_qig)/(RARU_imig(-1)/RA_qig)-1)*((RARU_imig/RA_qig)/(RARU_imig(-1)/RA_qig(-1)));
+// Import adjustment cost
+RARW_gammaimig = RA_gammaimig1/2*((RARW_imig/RA_qig)/(RARW_imig(-1)/RA_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RARW_gammaimigdag = 1-RARW_gammaimig-RA_gammaimig1*((RARW_imig/RA_qig)/(RARW_imig(-1)/RA_qig)-1)*((RARW_imig/RA_qig)/(RARW_imig(-1)/RA_qig(-1)));
+// Import adjustment cost
+RAUS_gammaimig = RA_gammaimig1/2*((RAUS_imig/RA_qig)/(RAUS_imig(-1)/RA_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RAUS_gammaimigdag = 1-RAUS_gammaimig-RA_gammaimig1*((RAUS_imig/RA_qig)/(RAUS_imig(-1)/RA_qig)-1)*((RAUS_imig/RA_qig)/(RAUS_imig(-1)/RA_qig(-1)));
 // Trade balance
 RA_tb =
 +RA_pex*AT_size/RA_size*ATRA_im
@@ -13425,18 +13225,10 @@ RA_ex =
 // Government spending, using RA_pg = RA_pht
 RA_pcg*RA_cg = RA_cgy*RA_pybar*RA_ybar;
 RA_pig*RA_ig = RA_igy*RA_pybar*RA_ybar;
-RA_t = 0;
-RA_b = RA_bytarget*RA_pybar*RA_ybar;
-// Auxiliary equation for steady-state output
-RA_ybar = RA_y;
-// Auxiliary equation for steady-state output
-RA_ytbar = RA_yst;
-// Auxiliary equation for steady-state output
-RA_ynbar = RA_ysn;
-// Auxiliary equation for steady-state output deflator
-RA_pybar = RA_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-RA_trybar = RA_tr/(RA_pybar*RA_ybar);
+// Transfers
+RA_tr = RA_try*RA_pybar*RA_ybar;
+// Fiscal rule
+RA_t/(RA_pybar*RA_ybar) = RA_phitb*(RA_b/(RA_pybar*RA_ybar)-RA_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 RA_ti = RA_upsilont*RA_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -13452,9 +13244,11 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	RA_r = DE_r;
-RA_pic4 = RA_pi4target;
-RA_rr-1 = RA_r/RA_pi4target^(1/4)-1;
+		RA_rerdep/DE_rerdep*RA_pic/DE_pic-1=0;
+// Definition of annual inflation
+RA_pic4 = RA_pic*RA_pic(-1)*RA_pic(-2)*RA_pic(-3);
+// Real interest rate
+RA_rr-1 = RA_r/RA_pic(+1)-1;
 // Equilibrium real interest rate
 RA_rrstar-1 = 1/RA_beta-1;
 //-------------
@@ -13541,68 +13335,68 @@ RA_py*RA_y =
 +RA_pcg*RA_qcg
 +RA_pig*RA_qig
 +RA_pex*AT_size/RA_size*ATRA_im
--(AT_pex*RAAT_rer)*RAAT_imc
--(AT_pex*RAAT_rer)*RAAT_imi
+-(AT_pex*RAAT_rer)*(RAAT_imc*(1-RAAT_gammaimc)/RAAT_gammaimcdag)
+-(AT_pex*RAAT_rer)*(RAAT_imi*(1-RAAT_gammaimi)/RAAT_gammaimidag)
 -(AT_pex*RAAT_rer)*RAAT_imcg
 -(AT_pex*RAAT_rer)*RAAT_imig
 +RA_pex*BE_size/RA_size*BERA_im
--(BE_pex*RABE_rer)*RABE_imc
--(BE_pex*RABE_rer)*RABE_imi
+-(BE_pex*RABE_rer)*(RABE_imc*(1-RABE_gammaimc)/RABE_gammaimcdag)
+-(BE_pex*RABE_rer)*(RABE_imi*(1-RABE_gammaimi)/RABE_gammaimidag)
 -(BE_pex*RABE_rer)*RABE_imcg
 -(BE_pex*RABE_rer)*RABE_imig
 +RA_pex*ES_size/RA_size*ESRA_im
--(ES_pex*RAES_rer)*RAES_imc
--(ES_pex*RAES_rer)*RAES_imi
+-(ES_pex*RAES_rer)*(RAES_imc*(1-RAES_gammaimc)/RAES_gammaimcdag)
+-(ES_pex*RAES_rer)*(RAES_imi*(1-RAES_gammaimi)/RAES_gammaimidag)
 -(ES_pex*RAES_rer)*RAES_imcg
 -(ES_pex*RAES_rer)*RAES_imig
 +RA_pex*FI_size/RA_size*FIRA_im
--(FI_pex*RAFI_rer)*RAFI_imc
--(FI_pex*RAFI_rer)*RAFI_imi
+-(FI_pex*RAFI_rer)*(RAFI_imc*(1-RAFI_gammaimc)/RAFI_gammaimcdag)
+-(FI_pex*RAFI_rer)*(RAFI_imi*(1-RAFI_gammaimi)/RAFI_gammaimidag)
 -(FI_pex*RAFI_rer)*RAFI_imcg
 -(FI_pex*RAFI_rer)*RAFI_imig
 +RA_pex*FR_size/RA_size*FRRA_im
--(FR_pex*RAFR_rer)*RAFR_imc
--(FR_pex*RAFR_rer)*RAFR_imi
+-(FR_pex*RAFR_rer)*(RAFR_imc*(1-RAFR_gammaimc)/RAFR_gammaimcdag)
+-(FR_pex*RAFR_rer)*(RAFR_imi*(1-RAFR_gammaimi)/RAFR_gammaimidag)
 -(FR_pex*RAFR_rer)*RAFR_imcg
 -(FR_pex*RAFR_rer)*RAFR_imig
 +RA_pex*GR_size/RA_size*GRRA_im
--(GR_pex*RAGR_rer)*RAGR_imc
--(GR_pex*RAGR_rer)*RAGR_imi
+-(GR_pex*RAGR_rer)*(RAGR_imc*(1-RAGR_gammaimc)/RAGR_gammaimcdag)
+-(GR_pex*RAGR_rer)*(RAGR_imi*(1-RAGR_gammaimi)/RAGR_gammaimidag)
 -(GR_pex*RAGR_rer)*RAGR_imcg
 -(GR_pex*RAGR_rer)*RAGR_imig
 +RA_pex*IT_size/RA_size*ITRA_im
--(IT_pex*RAIT_rer)*RAIT_imc
--(IT_pex*RAIT_rer)*RAIT_imi
+-(IT_pex*RAIT_rer)*(RAIT_imc*(1-RAIT_gammaimc)/RAIT_gammaimcdag)
+-(IT_pex*RAIT_rer)*(RAIT_imi*(1-RAIT_gammaimi)/RAIT_gammaimidag)
 -(IT_pex*RAIT_rer)*RAIT_imcg
 -(IT_pex*RAIT_rer)*RAIT_imig
 +RA_pex*NL_size/RA_size*NLRA_im
--(NL_pex*RANL_rer)*RANL_imc
--(NL_pex*RANL_rer)*RANL_imi
+-(NL_pex*RANL_rer)*(RANL_imc*(1-RANL_gammaimc)/RANL_gammaimcdag)
+-(NL_pex*RANL_rer)*(RANL_imi*(1-RANL_gammaimi)/RANL_gammaimidag)
 -(NL_pex*RANL_rer)*RANL_imcg
 -(NL_pex*RANL_rer)*RANL_imig
 +RA_pex*PT_size/RA_size*PTRA_im
--(PT_pex*RAPT_rer)*RAPT_imc
--(PT_pex*RAPT_rer)*RAPT_imi
+-(PT_pex*RAPT_rer)*(RAPT_imc*(1-RAPT_gammaimc)/RAPT_gammaimcdag)
+-(PT_pex*RAPT_rer)*(RAPT_imi*(1-RAPT_gammaimi)/RAPT_gammaimidag)
 -(PT_pex*RAPT_rer)*RAPT_imcg
 -(PT_pex*RAPT_rer)*RAPT_imig
 +RA_pex*DE_size/RA_size*DERA_im
--(DE_pex*RADE_rer)*RADE_imc
--(DE_pex*RADE_rer)*RADE_imi
+-(DE_pex*RADE_rer)*(RADE_imc*(1-RADE_gammaimc)/RADE_gammaimcdag)
+-(DE_pex*RADE_rer)*(RADE_imi*(1-RADE_gammaimi)/RADE_gammaimidag)
 -(DE_pex*RADE_rer)*RADE_imcg
 -(DE_pex*RADE_rer)*RADE_imig
 +RA_pex*RU_size/RA_size*RURA_im
--(RU_pex*RARU_rer)*RARU_imc
--(RU_pex*RARU_rer)*RARU_imi
+-(RU_pex*RARU_rer)*(RARU_imc*(1-RARU_gammaimc)/RARU_gammaimcdag)
+-(RU_pex*RARU_rer)*(RARU_imi*(1-RARU_gammaimi)/RARU_gammaimidag)
 -(RU_pex*RARU_rer)*RARU_imcg
 -(RU_pex*RARU_rer)*RARU_imig
 +RA_pex*RW_size/RA_size*RWRA_im
--(RW_pex*RARW_rer)*RARW_imc
--(RW_pex*RARW_rer)*RARW_imi
+-(RW_pex*RARW_rer)*(RARW_imc*(1-RARW_gammaimc)/RARW_gammaimcdag)
+-(RW_pex*RARW_rer)*(RARW_imi*(1-RARW_gammaimi)/RARW_gammaimidag)
 -(RW_pex*RARW_rer)*RARW_imcg
 -(RW_pex*RARW_rer)*RARW_imig
 +RA_pex*US_size/RA_size*USRA_im
--(US_pex*RAUS_rer)*RAUS_imc
--(US_pex*RAUS_rer)*RAUS_imi
+-(US_pex*RAUS_rer)*(RAUS_imc*(1-RAUS_gammaimc)/RAUS_gammaimcdag)
+-(US_pex*RAUS_rer)*(RAUS_imi*(1-RAUS_gammaimi)/RAUS_gammaimidag)
 -(US_pex*RAUS_rer)*RAUS_imcg
 -(US_pex*RAUS_rer)*RAUS_imig
 ;
@@ -13677,7 +13471,7 @@ RA_yhty = RA_pht*RA_yst/(RA_py*RA_y);
 // NT sector share
 RA_ynty = RA_pnt*RA_ysn/(RA_py*RA_y);
 // Output gap
-RA_ygap = 0;
+RA_ygap = RA_y/RA_ybar-1;
 // Output growth (gross rate)
 RA_ygrowth = RA_y/RA_y(-1);
 // Output growth (gross rate yoy)
@@ -13841,7 +13635,7 @@ AT_dcci = ((AT_nucces)^(1/AT_mucces)*AT_ci^(1-1/AT_mucces)+(1-AT_nucces)^(1/AT_m
 AT_lambdai*(1+AT_tauc+AT_gammavi+AT_vi*AT_gammavider) = AT_zcon*(AT_ccesi-AT_kappa*AT_ccesi(-1))^(-AT_sigma)*AT_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
-AT_r                   = AT_beta^(-1)*AT_lambdai/AT_lambdai    *AT_pic;
+AT_r*(1-AT_gammabh) = AT_beta^(-1)*AT_lambdai/AT_lambdai(+1)*AT_pic(+1);
 // Germany
 // US and the RoW
 // Euler equation for money
@@ -13852,17 +13646,23 @@ AT_vi = AT_ci/AT_mi;
 AT_gammavi = AT_gammav1*AT_vi+AT_gammav2/AT_vi-2*(AT_gammav1*AT_gammav2)^(1/2);
 // Derivative of transaction cost
 AT_gammavider = AT_gammav1-AT_gammav2*AT_vi^(-2);
-AT_delta = AT_ii/AT_ki;
-AT_gammai = 0;
-AT_gammaider = 0;
-AT_gammau = 0;
-AT_gammauder = ((AT_beta^(-1)-1+AT_delta)*AT_qbar-AT_delta*AT_taukbar*AT_pibar)/((1-AT_taukbar)*AT_pibar);
-AT_u = 1;
-AT_pi = AT_q;
+// Capital accumulation
+AT_ki = (1-AT_delta)*AT_ki(-1)+(1-AT_gammai(-1))*AT_ii(-1)*AT_zinv;
+// Investment adjustment cost
+AT_gammai = AT_gammai1/2*(AT_ii/AT_ii(-1)-1)^2;
+// Derivative of investment adjustment cost
+AT_gammaider = AT_gammai1*(AT_ii/AT_ii(-1)-1)/AT_ii(-1);
+// Capacity utilisation cost
+AT_gammau = ((AT_beta^(-1)-1+AT_delta)*AT_qbar-AT_delta*AT_taukbar*AT_pibar)/((1-AT_taukbar)*AT_pibar)*(AT_u-1)+AT_gammau2/2*(AT_u-1)^2;
+// Derivative of capacity utilisation cost
+AT_gammauder = ((AT_beta^(-1)-1+AT_delta)*AT_qbar-AT_delta*AT_taukbar*AT_pibar)/((1-AT_taukbar)*AT_pibar)+AT_gammau2*(AT_u-1);
+// Optimal capacity utilisation (FOC)
+AT_rk = AT_gammauder*AT_pi;
+// Tobin's Q
+AT_pi = AT_q*AT_zinv*(1-AT_gammai-AT_gammaider*AT_ii)+AT_beta*AT_lambdai(+1)/AT_lambdai*AT_q(+1)*AT_zinv(+1)*AT_gammaider(+1)*AT_ii(+1)^2/AT_ii;
 // Auxiliary equation for Tobin's Q in steady state
-AT_qbar = AT_q;
 // Rate of return on capital
-AT_q = AT_beta*((1-AT_tauk)*AT_rk+(AT_tauk*AT_delta)*AT_pi+(1-AT_delta)*AT_q);
+AT_q = AT_beta*AT_lambdai(+1)/AT_lambdai*((1-AT_tauk(+1))*(AT_rk(+1)*AT_u(+1)-AT_gammau(+1)*AT_pi(+1))+(AT_tauk(+1)*AT_delta)*AT_pi(+1)+(1-AT_delta)*AT_q(+1));
 // Optimal wage contract (FOC)
 AT_witilde^(1+AT_etai*AT_zeta) = AT_etai/(AT_etai-1)*AT_fi/AT_gi+AT_wcst;
 // Definition of fi
@@ -13921,11 +13721,9 @@ AT_mcn = 1/(EA_z*AT_zn*AT_kg^AT_alphag*(AT_alphan)^(AT_alphan)*(1-AT_alphan)^(1-
 // Wage Inflation (qoq)
 AT_piw = AT_w/AT_w(-1)*AT_pic;
 // Wage Inflation (yoy)
-AT_piw4 = AT_pic4;
+AT_piw4 = AT_piw*AT_piw(-1)*AT_piw(-2)*AT_piw(-3);
 // Auxiliary equation for steady-state fixed cost
-AT_psitbar = AT_psit*AT_ytbar;
 // Auxiliary equation for steady-state fixed cost
-AT_psinbar = AT_psin*AT_ynbar;
 // Capital input (FOC)
 AT_rk = AT_alphat*(AT_yst+AT_psitbar)/AT_kdt*AT_mct;
 // Capital input (FOC)
@@ -14000,7 +13798,6 @@ AT_piex = AT_pex/AT_pex(-1)*AT_pic;
 // Bilateral real exchange rate
 ATRA_rer = AT_rer/RA_rer;
 // Auxiliary equation for steady-state output
-ATRA_rerbar = ATRA_rer;
 //Terms of Trade
 ATRA_tot = RA_pex*ATRA_rer/AT_pex;
 // Optimal price contract set in foreign markets (FOC), using AT_pxtilde = BE_pimtilde
@@ -14016,7 +13813,6 @@ ATRA_tot = RA_pex*ATRA_rer/AT_pex;
 // Bilateral real exchange rate
 ATBE_rer = AT_rer/BE_rer;
 // Auxiliary equation for steady-state output
-ATBE_rerbar = ATBE_rer;
 //Terms of Trade
 ATBE_tot = BE_pex*ATBE_rer/AT_pex;
 // Optimal price contract set in foreign markets (FOC), using AT_pxtilde = ES_pimtilde
@@ -14032,7 +13828,6 @@ ATBE_tot = BE_pex*ATBE_rer/AT_pex;
 // Bilateral real exchange rate
 ATES_rer = AT_rer/ES_rer;
 // Auxiliary equation for steady-state output
-ATES_rerbar = ATES_rer;
 //Terms of Trade
 ATES_tot = ES_pex*ATES_rer/AT_pex;
 // Optimal price contract set in foreign markets (FOC), using AT_pxtilde = FI_pimtilde
@@ -14048,7 +13843,6 @@ ATES_tot = ES_pex*ATES_rer/AT_pex;
 // Bilateral real exchange rate
 ATFI_rer = AT_rer/FI_rer;
 // Auxiliary equation for steady-state output
-ATFI_rerbar = ATFI_rer;
 //Terms of Trade
 ATFI_tot = FI_pex*ATFI_rer/AT_pex;
 // Optimal price contract set in foreign markets (FOC), using AT_pxtilde = FR_pimtilde
@@ -14064,7 +13858,6 @@ ATFI_tot = FI_pex*ATFI_rer/AT_pex;
 // Bilateral real exchange rate
 ATFR_rer = AT_rer/FR_rer;
 // Auxiliary equation for steady-state output
-ATFR_rerbar = ATFR_rer;
 //Terms of Trade
 ATFR_tot = FR_pex*ATFR_rer/AT_pex;
 // Optimal price contract set in foreign markets (FOC), using AT_pxtilde = GR_pimtilde
@@ -14080,7 +13873,6 @@ ATFR_tot = FR_pex*ATFR_rer/AT_pex;
 // Bilateral real exchange rate
 ATGR_rer = AT_rer/GR_rer;
 // Auxiliary equation for steady-state output
-ATGR_rerbar = ATGR_rer;
 //Terms of Trade
 ATGR_tot = GR_pex*ATGR_rer/AT_pex;
 // Optimal price contract set in foreign markets (FOC), using AT_pxtilde = IT_pimtilde
@@ -14096,7 +13888,6 @@ ATGR_tot = GR_pex*ATGR_rer/AT_pex;
 // Bilateral real exchange rate
 ATIT_rer = AT_rer/IT_rer;
 // Auxiliary equation for steady-state output
-ATIT_rerbar = ATIT_rer;
 //Terms of Trade
 ATIT_tot = IT_pex*ATIT_rer/AT_pex;
 // Optimal price contract set in foreign markets (FOC), using AT_pxtilde = NL_pimtilde
@@ -14112,7 +13903,6 @@ ATIT_tot = IT_pex*ATIT_rer/AT_pex;
 // Bilateral real exchange rate
 ATNL_rer = AT_rer/NL_rer;
 // Auxiliary equation for steady-state output
-ATNL_rerbar = ATNL_rer;
 //Terms of Trade
 ATNL_tot = NL_pex*ATNL_rer/AT_pex;
 // Optimal price contract set in foreign markets (FOC), using AT_pxtilde = PT_pimtilde
@@ -14128,7 +13918,6 @@ ATNL_tot = NL_pex*ATNL_rer/AT_pex;
 // Bilateral real exchange rate
 ATPT_rer = AT_rer/PT_rer;
 // Auxiliary equation for steady-state output
-ATPT_rerbar = ATPT_rer;
 //Terms of Trade
 ATPT_tot = PT_pex*ATPT_rer/AT_pex;
 // Optimal price contract set in foreign markets (FOC), using AT_pxtilde = DE_pimtilde
@@ -14144,7 +13933,6 @@ ATPT_tot = PT_pex*ATPT_rer/AT_pex;
 // Bilateral real exchange rate
 ATDE_rer = AT_rer/DE_rer;
 // Auxiliary equation for steady-state output
-ATDE_rerbar = ATDE_rer;
 //Terms of Trade
 ATDE_tot = DE_pex*ATDE_rer/AT_pex;
 // Optimal price contract set in foreign markets (FOC), using AT_pxtilde = RU_pimtilde
@@ -14160,7 +13948,6 @@ ATDE_tot = DE_pex*ATDE_rer/AT_pex;
 // Bilateral real exchange rate
 ATRU_rer = AT_rer/RU_rer;
 // Auxiliary equation for steady-state output
-ATRU_rerbar = ATRU_rer;
 //Terms of Trade
 ATRU_tot = RU_pex*ATRU_rer/AT_pex;
 // Optimal price contract set in foreign markets (FOC), using AT_pxtilde = RW_pimtilde
@@ -14176,7 +13963,6 @@ ATRU_tot = RU_pex*ATRU_rer/AT_pex;
 // Bilateral real exchange rate
 ATRW_rer = AT_rer/RW_rer;
 // Auxiliary equation for steady-state output
-ATRW_rerbar = ATRW_rer;
 //Terms of Trade
 ATRW_tot = RW_pex*ATRW_rer/AT_pex;
 // Optimal price contract set in foreign markets (FOC), using AT_pxtilde = US_pimtilde
@@ -14192,7 +13978,6 @@ ATRW_tot = RW_pex*ATRW_rer/AT_pex;
 // Bilateral real exchange rate
 ATUS_rer = AT_rer/US_rer;
 // Auxiliary equation for steady-state output
-ATUS_rerbar = ATUS_rer;
 //Terms of Trade
 ATUS_tot = US_pex*ATUS_rer/AT_pex;
 // Total imports 
@@ -16690,18 +16475,18 @@ AT_etot = 1
 //-----------------
 // Private consumption good (import)
 AT_imc^((AT_mumc-1)/AT_mumc) =
-+ATRA_numc ^(1/AT_mumc)*ATRA_imc^(1-1/AT_mumc)
-+ATBE_numc ^(1/AT_mumc)*ATBE_imc^(1-1/AT_mumc)
-+ATES_numc ^(1/AT_mumc)*ATES_imc^(1-1/AT_mumc)
-+ATFI_numc ^(1/AT_mumc)*ATFI_imc^(1-1/AT_mumc)
-+ATFR_numc ^(1/AT_mumc)*ATFR_imc^(1-1/AT_mumc)
-+ATGR_numc ^(1/AT_mumc)*ATGR_imc^(1-1/AT_mumc)
-+ATIT_numc ^(1/AT_mumc)*ATIT_imc^(1-1/AT_mumc)
-+ATNL_numc ^(1/AT_mumc)*ATNL_imc^(1-1/AT_mumc)
-+ATPT_numc ^(1/AT_mumc)*ATPT_imc^(1-1/AT_mumc)
-+ATDE_numc ^(1/AT_mumc)*ATDE_imc^(1-1/AT_mumc)
-+ATRU_numc ^(1/AT_mumc)*ATRU_imc^(1-1/AT_mumc)
-+ATRW_numc ^(1/AT_mumc)*ATRW_imc^(1-1/AT_mumc)
++ATRA_numc ^(1/AT_mumc)*((1-ATRA_gammaimc)*ATRA_imc)^(1-1/AT_mumc)
++ATBE_numc ^(1/AT_mumc)*((1-ATBE_gammaimc)*ATBE_imc)^(1-1/AT_mumc)
++ATES_numc ^(1/AT_mumc)*((1-ATES_gammaimc)*ATES_imc)^(1-1/AT_mumc)
++ATFI_numc ^(1/AT_mumc)*((1-ATFI_gammaimc)*ATFI_imc)^(1-1/AT_mumc)
++ATFR_numc ^(1/AT_mumc)*((1-ATFR_gammaimc)*ATFR_imc)^(1-1/AT_mumc)
++ATGR_numc ^(1/AT_mumc)*((1-ATGR_gammaimc)*ATGR_imc)^(1-1/AT_mumc)
++ATIT_numc ^(1/AT_mumc)*((1-ATIT_gammaimc)*ATIT_imc)^(1-1/AT_mumc)
++ATNL_numc ^(1/AT_mumc)*((1-ATNL_gammaimc)*ATNL_imc)^(1-1/AT_mumc)
++ATPT_numc ^(1/AT_mumc)*((1-ATPT_gammaimc)*ATPT_imc)^(1-1/AT_mumc)
++ATDE_numc ^(1/AT_mumc)*((1-ATDE_gammaimc)*ATDE_imc)^(1-1/AT_mumc)
++ATRU_numc ^(1/AT_mumc)*((1-ATRU_gammaimc)*ATRU_imc)^(1-1/AT_mumc)
++ATRW_numc ^(1/AT_mumc)*((1-ATRW_gammaimc)*ATRW_imc)^(1-1/AT_mumc)
 +(1
 -ATRA_numc
 -ATBE_numc
@@ -16715,29 +16500,29 @@ AT_imc^((AT_mumc-1)/AT_mumc) =
 -ATDE_numc
 -ATRU_numc
 -ATRW_numc
-)^(1/AT_mumc)*ATUS_imc^(1-1/AT_mumc);
+)^(1/AT_mumc)*((1-ATUS_gammaimc)*ATUS_imc)^(1-1/AT_mumc);
 // Demand for bilateral consumption import goods
-ATRA_imc = ATRA_numc*((RA_pex*ATRA_rer)/AT_pimc)^(-AT_mumc)*AT_imc;
+ATRA_imc = ATRA_numc*((RA_pex*ATRA_rer)/(ATRA_gammaimcdag*AT_pimc))^(-AT_mumc)*AT_imc/(1-ATRA_gammaimc);
 // Demand for bilateral consumption import goods
-ATES_imc = ATES_numc*((ES_pex*ATES_rer)/AT_pimc)^(-AT_mumc)*AT_imc;
+ATES_imc = ATES_numc*((ES_pex*ATES_rer)/(ATES_gammaimcdag*AT_pimc))^(-AT_mumc)*AT_imc/(1-ATES_gammaimc);
 // Demand for bilateral consumption import goods
-ATFI_imc = ATFI_numc*((FI_pex*ATFI_rer)/AT_pimc)^(-AT_mumc)*AT_imc;
+ATFI_imc = ATFI_numc*((FI_pex*ATFI_rer)/(ATFI_gammaimcdag*AT_pimc))^(-AT_mumc)*AT_imc/(1-ATFI_gammaimc);
 // Demand for bilateral consumption import goods
-ATFR_imc = ATFR_numc*((FR_pex*ATFR_rer)/AT_pimc)^(-AT_mumc)*AT_imc;
+ATFR_imc = ATFR_numc*((FR_pex*ATFR_rer)/(ATFR_gammaimcdag*AT_pimc))^(-AT_mumc)*AT_imc/(1-ATFR_gammaimc);
 // Demand for bilateral consumption import goods
-ATGR_imc = ATGR_numc*((GR_pex*ATGR_rer)/AT_pimc)^(-AT_mumc)*AT_imc;
+ATGR_imc = ATGR_numc*((GR_pex*ATGR_rer)/(ATGR_gammaimcdag*AT_pimc))^(-AT_mumc)*AT_imc/(1-ATGR_gammaimc);
 // Demand for bilateral consumption import goods
-ATIT_imc = ATIT_numc*((IT_pex*ATIT_rer)/AT_pimc)^(-AT_mumc)*AT_imc;
+ATIT_imc = ATIT_numc*((IT_pex*ATIT_rer)/(ATIT_gammaimcdag*AT_pimc))^(-AT_mumc)*AT_imc/(1-ATIT_gammaimc);
 // Demand for bilateral consumption import goods
-ATNL_imc = ATNL_numc*((NL_pex*ATNL_rer)/AT_pimc)^(-AT_mumc)*AT_imc;
+ATNL_imc = ATNL_numc*((NL_pex*ATNL_rer)/(ATNL_gammaimcdag*AT_pimc))^(-AT_mumc)*AT_imc/(1-ATNL_gammaimc);
 // Demand for bilateral consumption import goods
-ATPT_imc = ATPT_numc*((PT_pex*ATPT_rer)/AT_pimc)^(-AT_mumc)*AT_imc;
+ATPT_imc = ATPT_numc*((PT_pex*ATPT_rer)/(ATPT_gammaimcdag*AT_pimc))^(-AT_mumc)*AT_imc/(1-ATPT_gammaimc);
 // Demand for bilateral consumption import goods
-ATDE_imc = ATDE_numc*((DE_pex*ATDE_rer)/AT_pimc)^(-AT_mumc)*AT_imc;
+ATDE_imc = ATDE_numc*((DE_pex*ATDE_rer)/(ATDE_gammaimcdag*AT_pimc))^(-AT_mumc)*AT_imc/(1-ATDE_gammaimc);
 // Demand for bilateral consumption import goods
-ATRU_imc = ATRU_numc*((RU_pex*ATRU_rer)/AT_pimc)^(-AT_mumc)*AT_imc;
+ATRU_imc = ATRU_numc*((RU_pex*ATRU_rer)/(ATRU_gammaimcdag*AT_pimc))^(-AT_mumc)*AT_imc/(1-ATRU_gammaimc);
 // Demand for bilateral consumption import goods
-ATRW_imc = ATRW_numc*((RW_pex*ATRW_rer)/AT_pimc)^(-AT_mumc)*AT_imc;
+ATRW_imc = ATRW_numc*((RW_pex*ATRW_rer)/(ATRW_gammaimcdag*AT_pimc))^(-AT_mumc)*AT_imc/(1-ATRW_gammaimc);
 ATUS_imc = (1
 -ATRA_numc
 -ATBE_numc
@@ -16751,21 +16536,21 @@ ATUS_imc = (1
 -ATDE_numc
 -ATRU_numc
 -ATRW_numc
-)*((US_pex*ATUS_rer)/AT_pimc)^(-AT_mumc)*AT_imc;
+)*((US_pex*ATUS_rer)/(ATUS_gammaimcdag*AT_pimc))^(-AT_mumc)*AT_imc/(1-ATUS_gammaimc);
 // Price of the consumption good (import)
 AT_pimc^(1-AT_mumc) =
-+ATRA_numc * (RA_pex*ATRA_rer)^(1-AT_mumc)
-+ATBE_numc * (BE_pex*ATBE_rer)^(1-AT_mumc)
-+ATES_numc * (ES_pex*ATES_rer)^(1-AT_mumc)
-+ATFI_numc * (FI_pex*ATFI_rer)^(1-AT_mumc)
-+ATFR_numc * (FR_pex*ATFR_rer)^(1-AT_mumc)
-+ATGR_numc * (GR_pex*ATGR_rer)^(1-AT_mumc)
-+ATIT_numc * (IT_pex*ATIT_rer)^(1-AT_mumc)
-+ATNL_numc * (NL_pex*ATNL_rer)^(1-AT_mumc)
-+ATPT_numc * (PT_pex*ATPT_rer)^(1-AT_mumc)
-+ATDE_numc * (DE_pex*ATDE_rer)^(1-AT_mumc)
-+ATRU_numc * (RU_pex*ATRU_rer)^(1-AT_mumc)
-+ATRW_numc * (RW_pex*ATRW_rer)^(1-AT_mumc)
++ATRA_numc *((RA_pex*ATRA_rer)/ATRA_gammaimcdag)^(1-AT_mumc)
++ATBE_numc *((BE_pex*ATBE_rer)/ATBE_gammaimcdag)^(1-AT_mumc)
++ATES_numc *((ES_pex*ATES_rer)/ATES_gammaimcdag)^(1-AT_mumc)
++ATFI_numc *((FI_pex*ATFI_rer)/ATFI_gammaimcdag)^(1-AT_mumc)
++ATFR_numc *((FR_pex*ATFR_rer)/ATFR_gammaimcdag)^(1-AT_mumc)
++ATGR_numc *((GR_pex*ATGR_rer)/ATGR_gammaimcdag)^(1-AT_mumc)
++ATIT_numc *((IT_pex*ATIT_rer)/ATIT_gammaimcdag)^(1-AT_mumc)
++ATNL_numc *((NL_pex*ATNL_rer)/ATNL_gammaimcdag)^(1-AT_mumc)
++ATPT_numc *((PT_pex*ATPT_rer)/ATPT_gammaimcdag)^(1-AT_mumc)
++ATDE_numc *((DE_pex*ATDE_rer)/ATDE_gammaimcdag)^(1-AT_mumc)
++ATRU_numc *((RU_pex*ATRU_rer)/ATRU_gammaimcdag)^(1-AT_mumc)
++ATRW_numc *((RW_pex*ATRW_rer)/ATRW_gammaimcdag)^(1-AT_mumc)
 +(1
 -ATRA_numc
 -ATBE_numc
@@ -16779,23 +16564,23 @@ AT_pimc^(1-AT_mumc) =
 -ATDE_numc
 -ATRU_numc
 -ATRW_numc
-)*(US_pex*ATUS_rer)^(1-AT_mumc);
+)*((US_pex*ATUS_rer)/ATUS_gammaimcdag)^(1-AT_mumc);
 // Private consumption good (import) inflation
 AT_piimc = AT_pimc/AT_pimc(-1)*AT_pic;
 // Private consumption good (import)
 AT_imi^((AT_mumi-1)/AT_mumi) =
-+ATRA_numi ^(1/AT_mumi)*ATRA_imi^(1-1/AT_mumi)
-+ATBE_numi ^(1/AT_mumi)*ATBE_imi^(1-1/AT_mumi)
-+ATES_numi ^(1/AT_mumi)*ATES_imi^(1-1/AT_mumi)
-+ATFI_numi ^(1/AT_mumi)*ATFI_imi^(1-1/AT_mumi)
-+ATFR_numi ^(1/AT_mumi)*ATFR_imi^(1-1/AT_mumi)
-+ATGR_numi ^(1/AT_mumi)*ATGR_imi^(1-1/AT_mumi)
-+ATIT_numi ^(1/AT_mumi)*ATIT_imi^(1-1/AT_mumi)
-+ATNL_numi ^(1/AT_mumi)*ATNL_imi^(1-1/AT_mumi)
-+ATPT_numi ^(1/AT_mumi)*ATPT_imi^(1-1/AT_mumi)
-+ATDE_numi ^(1/AT_mumi)*ATDE_imi^(1-1/AT_mumi)
-+ATRU_numi ^(1/AT_mumi)*ATRU_imi^(1-1/AT_mumi)
-+ATRW_numi ^(1/AT_mumi)*ATRW_imi^(1-1/AT_mumi)
++ATRA_numi ^(1/AT_mumi)*((1-ATRA_gammaimi)*ATRA_imi)^(1-1/AT_mumi)
++ATBE_numi ^(1/AT_mumi)*((1-ATBE_gammaimi)*ATBE_imi)^(1-1/AT_mumi)
++ATES_numi ^(1/AT_mumi)*((1-ATES_gammaimi)*ATES_imi)^(1-1/AT_mumi)
++ATFI_numi ^(1/AT_mumi)*((1-ATFI_gammaimi)*ATFI_imi)^(1-1/AT_mumi)
++ATFR_numi ^(1/AT_mumi)*((1-ATFR_gammaimi)*ATFR_imi)^(1-1/AT_mumi)
++ATGR_numi ^(1/AT_mumi)*((1-ATGR_gammaimi)*ATGR_imi)^(1-1/AT_mumi)
++ATIT_numi ^(1/AT_mumi)*((1-ATIT_gammaimi)*ATIT_imi)^(1-1/AT_mumi)
++ATNL_numi ^(1/AT_mumi)*((1-ATNL_gammaimi)*ATNL_imi)^(1-1/AT_mumi)
++ATPT_numi ^(1/AT_mumi)*((1-ATPT_gammaimi)*ATPT_imi)^(1-1/AT_mumi)
++ATDE_numi ^(1/AT_mumi)*((1-ATDE_gammaimi)*ATDE_imi)^(1-1/AT_mumi)
++ATRU_numi ^(1/AT_mumi)*((1-ATRU_gammaimi)*ATRU_imi)^(1-1/AT_mumi)
++ATRW_numi ^(1/AT_mumi)*((1-ATRW_gammaimi)*ATRW_imi)^(1-1/AT_mumi)
 +(1
 -ATRA_numi
 -ATBE_numi
@@ -16809,29 +16594,29 @@ AT_imi^((AT_mumi-1)/AT_mumi) =
 -ATDE_numi
 -ATRU_numi
 -ATRW_numi
-)^(1/AT_mumi)*ATUS_imi^(1-1/AT_mumi);
+)^(1/AT_mumi)*((1-ATUS_gammaimi)*ATUS_imi)^(1-1/AT_mumi);
 // Demand for bilateral consumption import goods
-ATRA_imi = ATRA_numi*((RA_pex*ATRA_rer)/AT_pimi)^(-AT_mumi)*AT_imi;
+ATRA_imi = ATRA_numi*((RA_pex*ATRA_rer)/(ATRA_gammaimidag*AT_pimi))^(-AT_mumi)*AT_imi/(1-ATRA_gammaimi);
 // Demand for bilateral consumption import goods
-ATES_imi = ATES_numi*((ES_pex*ATES_rer)/AT_pimi)^(-AT_mumi)*AT_imi;
+ATES_imi = ATES_numi*((ES_pex*ATES_rer)/(ATES_gammaimidag*AT_pimi))^(-AT_mumi)*AT_imi/(1-ATES_gammaimi);
 // Demand for bilateral consumption import goods
-ATFI_imi = ATFI_numi*((FI_pex*ATFI_rer)/AT_pimi)^(-AT_mumi)*AT_imi;
+ATFI_imi = ATFI_numi*((FI_pex*ATFI_rer)/(ATFI_gammaimidag*AT_pimi))^(-AT_mumi)*AT_imi/(1-ATFI_gammaimi);
 // Demand for bilateral consumption import goods
-ATFR_imi = ATFR_numi*((FR_pex*ATFR_rer)/AT_pimi)^(-AT_mumi)*AT_imi;
+ATFR_imi = ATFR_numi*((FR_pex*ATFR_rer)/(ATFR_gammaimidag*AT_pimi))^(-AT_mumi)*AT_imi/(1-ATFR_gammaimi);
 // Demand for bilateral consumption import goods
-ATGR_imi = ATGR_numi*((GR_pex*ATGR_rer)/AT_pimi)^(-AT_mumi)*AT_imi;
+ATGR_imi = ATGR_numi*((GR_pex*ATGR_rer)/(ATGR_gammaimidag*AT_pimi))^(-AT_mumi)*AT_imi/(1-ATGR_gammaimi);
 // Demand for bilateral consumption import goods
-ATIT_imi = ATIT_numi*((IT_pex*ATIT_rer)/AT_pimi)^(-AT_mumi)*AT_imi;
+ATIT_imi = ATIT_numi*((IT_pex*ATIT_rer)/(ATIT_gammaimidag*AT_pimi))^(-AT_mumi)*AT_imi/(1-ATIT_gammaimi);
 // Demand for bilateral consumption import goods
-ATNL_imi = ATNL_numi*((NL_pex*ATNL_rer)/AT_pimi)^(-AT_mumi)*AT_imi;
+ATNL_imi = ATNL_numi*((NL_pex*ATNL_rer)/(ATNL_gammaimidag*AT_pimi))^(-AT_mumi)*AT_imi/(1-ATNL_gammaimi);
 // Demand for bilateral consumption import goods
-ATPT_imi = ATPT_numi*((PT_pex*ATPT_rer)/AT_pimi)^(-AT_mumi)*AT_imi;
+ATPT_imi = ATPT_numi*((PT_pex*ATPT_rer)/(ATPT_gammaimidag*AT_pimi))^(-AT_mumi)*AT_imi/(1-ATPT_gammaimi);
 // Demand for bilateral consumption import goods
-ATDE_imi = ATDE_numi*((DE_pex*ATDE_rer)/AT_pimi)^(-AT_mumi)*AT_imi;
+ATDE_imi = ATDE_numi*((DE_pex*ATDE_rer)/(ATDE_gammaimidag*AT_pimi))^(-AT_mumi)*AT_imi/(1-ATDE_gammaimi);
 // Demand for bilateral consumption import goods
-ATRU_imi = ATRU_numi*((RU_pex*ATRU_rer)/AT_pimi)^(-AT_mumi)*AT_imi;
+ATRU_imi = ATRU_numi*((RU_pex*ATRU_rer)/(ATRU_gammaimidag*AT_pimi))^(-AT_mumi)*AT_imi/(1-ATRU_gammaimi);
 // Demand for bilateral consumption import goods
-ATRW_imi = ATRW_numi*((RW_pex*ATRW_rer)/AT_pimi)^(-AT_mumi)*AT_imi;
+ATRW_imi = ATRW_numi*((RW_pex*ATRW_rer)/(ATRW_gammaimidag*AT_pimi))^(-AT_mumi)*AT_imi/(1-ATRW_gammaimi);
 ATUS_imi = (1
 -ATRA_numi
 -ATBE_numi
@@ -16845,21 +16630,21 @@ ATUS_imi = (1
 -ATDE_numi
 -ATRU_numi
 -ATRW_numi
-)*((US_pex*ATUS_rer)/AT_pimi)^(-AT_mumi)*AT_imi;
+)*((US_pex*ATUS_rer)/(ATUS_gammaimidag*AT_pimi))^(-AT_mumi)*AT_imi/(1-ATUS_gammaimi);
 // Price of the consumption good (import)
 AT_pimi^(1-AT_mumi) =
-+ATRA_numi * (RA_pex*ATRA_rer)^(1-AT_mumi)
-+ATBE_numi * (BE_pex*ATBE_rer)^(1-AT_mumi)
-+ATES_numi * (ES_pex*ATES_rer)^(1-AT_mumi)
-+ATFI_numi * (FI_pex*ATFI_rer)^(1-AT_mumi)
-+ATFR_numi * (FR_pex*ATFR_rer)^(1-AT_mumi)
-+ATGR_numi * (GR_pex*ATGR_rer)^(1-AT_mumi)
-+ATIT_numi * (IT_pex*ATIT_rer)^(1-AT_mumi)
-+ATNL_numi * (NL_pex*ATNL_rer)^(1-AT_mumi)
-+ATPT_numi * (PT_pex*ATPT_rer)^(1-AT_mumi)
-+ATDE_numi * (DE_pex*ATDE_rer)^(1-AT_mumi)
-+ATRU_numi * (RU_pex*ATRU_rer)^(1-AT_mumi)
-+ATRW_numi * (RW_pex*ATRW_rer)^(1-AT_mumi)
++ATRA_numi *((RA_pex*ATRA_rer)/ATRA_gammaimidag)^(1-AT_mumi)
++ATBE_numi *((BE_pex*ATBE_rer)/ATBE_gammaimidag)^(1-AT_mumi)
++ATES_numi *((ES_pex*ATES_rer)/ATES_gammaimidag)^(1-AT_mumi)
++ATFI_numi *((FI_pex*ATFI_rer)/ATFI_gammaimidag)^(1-AT_mumi)
++ATFR_numi *((FR_pex*ATFR_rer)/ATFR_gammaimidag)^(1-AT_mumi)
++ATGR_numi *((GR_pex*ATGR_rer)/ATGR_gammaimidag)^(1-AT_mumi)
++ATIT_numi *((IT_pex*ATIT_rer)/ATIT_gammaimidag)^(1-AT_mumi)
++ATNL_numi *((NL_pex*ATNL_rer)/ATNL_gammaimidag)^(1-AT_mumi)
++ATPT_numi *((PT_pex*ATPT_rer)/ATPT_gammaimidag)^(1-AT_mumi)
++ATDE_numi *((DE_pex*ATDE_rer)/ATDE_gammaimidag)^(1-AT_mumi)
++ATRU_numi *((RU_pex*ATRU_rer)/ATRU_gammaimidag)^(1-AT_mumi)
++ATRW_numi *((RW_pex*ATRW_rer)/ATRW_gammaimidag)^(1-AT_mumi)
 +(1
 -ATRA_numi
 -ATBE_numi
@@ -16873,23 +16658,23 @@ AT_pimi^(1-AT_mumi) =
 -ATDE_numi
 -ATRU_numi
 -ATRW_numi
-)*(US_pex*ATUS_rer)^(1-AT_mumi);
+)*((US_pex*ATUS_rer)/ATUS_gammaimidag)^(1-AT_mumi);
 // Private consumption good (import) inflation
 AT_piimi = AT_pimi/AT_pimi(-1)*AT_pic;
 // Private consumption good (import)
 AT_imcg^((AT_mumcg-1)/AT_mumcg) =
-+ATRA_numcg ^(1/AT_mumcg)*ATRA_imcg^(1-1/AT_mumcg)
-+ATBE_numcg ^(1/AT_mumcg)*ATBE_imcg^(1-1/AT_mumcg)
-+ATES_numcg ^(1/AT_mumcg)*ATES_imcg^(1-1/AT_mumcg)
-+ATFI_numcg ^(1/AT_mumcg)*ATFI_imcg^(1-1/AT_mumcg)
-+ATFR_numcg ^(1/AT_mumcg)*ATFR_imcg^(1-1/AT_mumcg)
-+ATGR_numcg ^(1/AT_mumcg)*ATGR_imcg^(1-1/AT_mumcg)
-+ATIT_numcg ^(1/AT_mumcg)*ATIT_imcg^(1-1/AT_mumcg)
-+ATNL_numcg ^(1/AT_mumcg)*ATNL_imcg^(1-1/AT_mumcg)
-+ATPT_numcg ^(1/AT_mumcg)*ATPT_imcg^(1-1/AT_mumcg)
-+ATDE_numcg ^(1/AT_mumcg)*ATDE_imcg^(1-1/AT_mumcg)
-+ATRU_numcg ^(1/AT_mumcg)*ATRU_imcg^(1-1/AT_mumcg)
-+ATRW_numcg ^(1/AT_mumcg)*ATRW_imcg^(1-1/AT_mumcg)
++ATRA_numcg ^(1/AT_mumcg)*((1-ATRA_gammaimcg)*ATRA_imcg)^(1-1/AT_mumcg)
++ATBE_numcg ^(1/AT_mumcg)*((1-ATBE_gammaimcg)*ATBE_imcg)^(1-1/AT_mumcg)
++ATES_numcg ^(1/AT_mumcg)*((1-ATES_gammaimcg)*ATES_imcg)^(1-1/AT_mumcg)
++ATFI_numcg ^(1/AT_mumcg)*((1-ATFI_gammaimcg)*ATFI_imcg)^(1-1/AT_mumcg)
++ATFR_numcg ^(1/AT_mumcg)*((1-ATFR_gammaimcg)*ATFR_imcg)^(1-1/AT_mumcg)
++ATGR_numcg ^(1/AT_mumcg)*((1-ATGR_gammaimcg)*ATGR_imcg)^(1-1/AT_mumcg)
++ATIT_numcg ^(1/AT_mumcg)*((1-ATIT_gammaimcg)*ATIT_imcg)^(1-1/AT_mumcg)
++ATNL_numcg ^(1/AT_mumcg)*((1-ATNL_gammaimcg)*ATNL_imcg)^(1-1/AT_mumcg)
++ATPT_numcg ^(1/AT_mumcg)*((1-ATPT_gammaimcg)*ATPT_imcg)^(1-1/AT_mumcg)
++ATDE_numcg ^(1/AT_mumcg)*((1-ATDE_gammaimcg)*ATDE_imcg)^(1-1/AT_mumcg)
++ATRU_numcg ^(1/AT_mumcg)*((1-ATRU_gammaimcg)*ATRU_imcg)^(1-1/AT_mumcg)
++ATRW_numcg ^(1/AT_mumcg)*((1-ATRW_gammaimcg)*ATRW_imcg)^(1-1/AT_mumcg)
 +(1
 -ATRA_numcg
 -ATBE_numcg
@@ -16903,29 +16688,29 @@ AT_imcg^((AT_mumcg-1)/AT_mumcg) =
 -ATDE_numcg
 -ATRU_numcg
 -ATRW_numcg
-)^(1/AT_mumcg)*ATUS_imcg^(1-1/AT_mumcg);
+)^(1/AT_mumcg)*((1-ATUS_gammaimcg)*ATUS_imcg)^(1-1/AT_mumcg);
 // Demand for bilateral consumption import goods
-ATRA_imcg = ATRA_numcg*((RA_pex*ATRA_rer)/AT_pimcg)^(-AT_mumcg)*AT_imcg;
+ATRA_imcg = ATRA_numcg*((RA_pex*ATRA_rer)/(ATRA_gammaimcgdag*AT_pimcg))^(-AT_mumcg)*AT_imcg/(1-ATRA_gammaimcg);
 // Demand for bilateral consumption import goods
-ATES_imcg = ATES_numcg*((ES_pex*ATES_rer)/AT_pimcg)^(-AT_mumcg)*AT_imcg;
+ATES_imcg = ATES_numcg*((ES_pex*ATES_rer)/(ATES_gammaimcgdag*AT_pimcg))^(-AT_mumcg)*AT_imcg/(1-ATES_gammaimcg);
 // Demand for bilateral consumption import goods
-ATFI_imcg = ATFI_numcg*((FI_pex*ATFI_rer)/AT_pimcg)^(-AT_mumcg)*AT_imcg;
+ATFI_imcg = ATFI_numcg*((FI_pex*ATFI_rer)/(ATFI_gammaimcgdag*AT_pimcg))^(-AT_mumcg)*AT_imcg/(1-ATFI_gammaimcg);
 // Demand for bilateral consumption import goods
-ATFR_imcg = ATFR_numcg*((FR_pex*ATFR_rer)/AT_pimcg)^(-AT_mumcg)*AT_imcg;
+ATFR_imcg = ATFR_numcg*((FR_pex*ATFR_rer)/(ATFR_gammaimcgdag*AT_pimcg))^(-AT_mumcg)*AT_imcg/(1-ATFR_gammaimcg);
 // Demand for bilateral consumption import goods
-ATGR_imcg = ATGR_numcg*((GR_pex*ATGR_rer)/AT_pimcg)^(-AT_mumcg)*AT_imcg;
+ATGR_imcg = ATGR_numcg*((GR_pex*ATGR_rer)/(ATGR_gammaimcgdag*AT_pimcg))^(-AT_mumcg)*AT_imcg/(1-ATGR_gammaimcg);
 // Demand for bilateral consumption import goods
-ATIT_imcg = ATIT_numcg*((IT_pex*ATIT_rer)/AT_pimcg)^(-AT_mumcg)*AT_imcg;
+ATIT_imcg = ATIT_numcg*((IT_pex*ATIT_rer)/(ATIT_gammaimcgdag*AT_pimcg))^(-AT_mumcg)*AT_imcg/(1-ATIT_gammaimcg);
 // Demand for bilateral consumption import goods
-ATNL_imcg = ATNL_numcg*((NL_pex*ATNL_rer)/AT_pimcg)^(-AT_mumcg)*AT_imcg;
+ATNL_imcg = ATNL_numcg*((NL_pex*ATNL_rer)/(ATNL_gammaimcgdag*AT_pimcg))^(-AT_mumcg)*AT_imcg/(1-ATNL_gammaimcg);
 // Demand for bilateral consumption import goods
-ATPT_imcg = ATPT_numcg*((PT_pex*ATPT_rer)/AT_pimcg)^(-AT_mumcg)*AT_imcg;
+ATPT_imcg = ATPT_numcg*((PT_pex*ATPT_rer)/(ATPT_gammaimcgdag*AT_pimcg))^(-AT_mumcg)*AT_imcg/(1-ATPT_gammaimcg);
 // Demand for bilateral consumption import goods
-ATDE_imcg = ATDE_numcg*((DE_pex*ATDE_rer)/AT_pimcg)^(-AT_mumcg)*AT_imcg;
+ATDE_imcg = ATDE_numcg*((DE_pex*ATDE_rer)/(ATDE_gammaimcgdag*AT_pimcg))^(-AT_mumcg)*AT_imcg/(1-ATDE_gammaimcg);
 // Demand for bilateral consumption import goods
-ATRU_imcg = ATRU_numcg*((RU_pex*ATRU_rer)/AT_pimcg)^(-AT_mumcg)*AT_imcg;
+ATRU_imcg = ATRU_numcg*((RU_pex*ATRU_rer)/(ATRU_gammaimcgdag*AT_pimcg))^(-AT_mumcg)*AT_imcg/(1-ATRU_gammaimcg);
 // Demand for bilateral consumption import goods
-ATRW_imcg = ATRW_numcg*((RW_pex*ATRW_rer)/AT_pimcg)^(-AT_mumcg)*AT_imcg;
+ATRW_imcg = ATRW_numcg*((RW_pex*ATRW_rer)/(ATRW_gammaimcgdag*AT_pimcg))^(-AT_mumcg)*AT_imcg/(1-ATRW_gammaimcg);
 ATUS_imcg = (1
 -ATRA_numcg
 -ATBE_numcg
@@ -16939,21 +16724,21 @@ ATUS_imcg = (1
 -ATDE_numcg
 -ATRU_numcg
 -ATRW_numcg
-)*((US_pex*ATUS_rer)/AT_pimcg)^(-AT_mumcg)*AT_imcg;
+)*((US_pex*ATUS_rer)/(ATUS_gammaimcgdag*AT_pimcg))^(-AT_mumcg)*AT_imcg/(1-ATUS_gammaimcg);
 // Price of the consumption good (import)
 AT_pimcg^(1-AT_mumcg) =
-+ATRA_numcg * (RA_pex*ATRA_rer)^(1-AT_mumcg)
-+ATBE_numcg * (BE_pex*ATBE_rer)^(1-AT_mumcg)
-+ATES_numcg * (ES_pex*ATES_rer)^(1-AT_mumcg)
-+ATFI_numcg * (FI_pex*ATFI_rer)^(1-AT_mumcg)
-+ATFR_numcg * (FR_pex*ATFR_rer)^(1-AT_mumcg)
-+ATGR_numcg * (GR_pex*ATGR_rer)^(1-AT_mumcg)
-+ATIT_numcg * (IT_pex*ATIT_rer)^(1-AT_mumcg)
-+ATNL_numcg * (NL_pex*ATNL_rer)^(1-AT_mumcg)
-+ATPT_numcg * (PT_pex*ATPT_rer)^(1-AT_mumcg)
-+ATDE_numcg * (DE_pex*ATDE_rer)^(1-AT_mumcg)
-+ATRU_numcg * (RU_pex*ATRU_rer)^(1-AT_mumcg)
-+ATRW_numcg * (RW_pex*ATRW_rer)^(1-AT_mumcg)
++ATRA_numcg *((RA_pex*ATRA_rer)/ATRA_gammaimcgdag)^(1-AT_mumcg)
++ATBE_numcg *((BE_pex*ATBE_rer)/ATBE_gammaimcgdag)^(1-AT_mumcg)
++ATES_numcg *((ES_pex*ATES_rer)/ATES_gammaimcgdag)^(1-AT_mumcg)
++ATFI_numcg *((FI_pex*ATFI_rer)/ATFI_gammaimcgdag)^(1-AT_mumcg)
++ATFR_numcg *((FR_pex*ATFR_rer)/ATFR_gammaimcgdag)^(1-AT_mumcg)
++ATGR_numcg *((GR_pex*ATGR_rer)/ATGR_gammaimcgdag)^(1-AT_mumcg)
++ATIT_numcg *((IT_pex*ATIT_rer)/ATIT_gammaimcgdag)^(1-AT_mumcg)
++ATNL_numcg *((NL_pex*ATNL_rer)/ATNL_gammaimcgdag)^(1-AT_mumcg)
++ATPT_numcg *((PT_pex*ATPT_rer)/ATPT_gammaimcgdag)^(1-AT_mumcg)
++ATDE_numcg *((DE_pex*ATDE_rer)/ATDE_gammaimcgdag)^(1-AT_mumcg)
++ATRU_numcg *((RU_pex*ATRU_rer)/ATRU_gammaimcgdag)^(1-AT_mumcg)
++ATRW_numcg *((RW_pex*ATRW_rer)/ATRW_gammaimcgdag)^(1-AT_mumcg)
 +(1
 -ATRA_numcg
 -ATBE_numcg
@@ -16967,23 +16752,23 @@ AT_pimcg^(1-AT_mumcg) =
 -ATDE_numcg
 -ATRU_numcg
 -ATRW_numcg
-)*(US_pex*ATUS_rer)^(1-AT_mumcg);
+)*((US_pex*ATUS_rer)/ATUS_gammaimcgdag)^(1-AT_mumcg);
 // Private consumption good (import) inflation
 AT_piimcg = AT_pimcg/AT_pimcg(-1)*AT_pic;
 // Private consumption good (import)
 AT_imig^((AT_mumig-1)/AT_mumig) =
-+ATRA_numig ^(1/AT_mumig)*ATRA_imig^(1-1/AT_mumig)
-+ATBE_numig ^(1/AT_mumig)*ATBE_imig^(1-1/AT_mumig)
-+ATES_numig ^(1/AT_mumig)*ATES_imig^(1-1/AT_mumig)
-+ATFI_numig ^(1/AT_mumig)*ATFI_imig^(1-1/AT_mumig)
-+ATFR_numig ^(1/AT_mumig)*ATFR_imig^(1-1/AT_mumig)
-+ATGR_numig ^(1/AT_mumig)*ATGR_imig^(1-1/AT_mumig)
-+ATIT_numig ^(1/AT_mumig)*ATIT_imig^(1-1/AT_mumig)
-+ATNL_numig ^(1/AT_mumig)*ATNL_imig^(1-1/AT_mumig)
-+ATPT_numig ^(1/AT_mumig)*ATPT_imig^(1-1/AT_mumig)
-+ATDE_numig ^(1/AT_mumig)*ATDE_imig^(1-1/AT_mumig)
-+ATRU_numig ^(1/AT_mumig)*ATRU_imig^(1-1/AT_mumig)
-+ATRW_numig ^(1/AT_mumig)*ATRW_imig^(1-1/AT_mumig)
++ATRA_numig ^(1/AT_mumig)*((1-ATRA_gammaimig)*ATRA_imig)^(1-1/AT_mumig)
++ATBE_numig ^(1/AT_mumig)*((1-ATBE_gammaimig)*ATBE_imig)^(1-1/AT_mumig)
++ATES_numig ^(1/AT_mumig)*((1-ATES_gammaimig)*ATES_imig)^(1-1/AT_mumig)
++ATFI_numig ^(1/AT_mumig)*((1-ATFI_gammaimig)*ATFI_imig)^(1-1/AT_mumig)
++ATFR_numig ^(1/AT_mumig)*((1-ATFR_gammaimig)*ATFR_imig)^(1-1/AT_mumig)
++ATGR_numig ^(1/AT_mumig)*((1-ATGR_gammaimig)*ATGR_imig)^(1-1/AT_mumig)
++ATIT_numig ^(1/AT_mumig)*((1-ATIT_gammaimig)*ATIT_imig)^(1-1/AT_mumig)
++ATNL_numig ^(1/AT_mumig)*((1-ATNL_gammaimig)*ATNL_imig)^(1-1/AT_mumig)
++ATPT_numig ^(1/AT_mumig)*((1-ATPT_gammaimig)*ATPT_imig)^(1-1/AT_mumig)
++ATDE_numig ^(1/AT_mumig)*((1-ATDE_gammaimig)*ATDE_imig)^(1-1/AT_mumig)
++ATRU_numig ^(1/AT_mumig)*((1-ATRU_gammaimig)*ATRU_imig)^(1-1/AT_mumig)
++ATRW_numig ^(1/AT_mumig)*((1-ATRW_gammaimig)*ATRW_imig)^(1-1/AT_mumig)
 +(1
 -ATRA_numig
 -ATBE_numig
@@ -16997,29 +16782,29 @@ AT_imig^((AT_mumig-1)/AT_mumig) =
 -ATDE_numig
 -ATRU_numig
 -ATRW_numig
-)^(1/AT_mumig)*ATUS_imig^(1-1/AT_mumig);
+)^(1/AT_mumig)*((1-ATUS_gammaimig)*ATUS_imig)^(1-1/AT_mumig);
 // Demand for bilateral consumption import goods
-ATRA_imig = ATRA_numig*((RA_pex*ATRA_rer)/AT_pimig)^(-AT_mumig)*AT_imig;
+ATRA_imig = ATRA_numig*((RA_pex*ATRA_rer)/(ATRA_gammaimigdag*AT_pimig))^(-AT_mumig)*AT_imig/(1-ATRA_gammaimig);
 // Demand for bilateral consumption import goods
-ATES_imig = ATES_numig*((ES_pex*ATES_rer)/AT_pimig)^(-AT_mumig)*AT_imig;
+ATES_imig = ATES_numig*((ES_pex*ATES_rer)/(ATES_gammaimigdag*AT_pimig))^(-AT_mumig)*AT_imig/(1-ATES_gammaimig);
 // Demand for bilateral consumption import goods
-ATFI_imig = ATFI_numig*((FI_pex*ATFI_rer)/AT_pimig)^(-AT_mumig)*AT_imig;
+ATFI_imig = ATFI_numig*((FI_pex*ATFI_rer)/(ATFI_gammaimigdag*AT_pimig))^(-AT_mumig)*AT_imig/(1-ATFI_gammaimig);
 // Demand for bilateral consumption import goods
-ATFR_imig = ATFR_numig*((FR_pex*ATFR_rer)/AT_pimig)^(-AT_mumig)*AT_imig;
+ATFR_imig = ATFR_numig*((FR_pex*ATFR_rer)/(ATFR_gammaimigdag*AT_pimig))^(-AT_mumig)*AT_imig/(1-ATFR_gammaimig);
 // Demand for bilateral consumption import goods
-ATGR_imig = ATGR_numig*((GR_pex*ATGR_rer)/AT_pimig)^(-AT_mumig)*AT_imig;
+ATGR_imig = ATGR_numig*((GR_pex*ATGR_rer)/(ATGR_gammaimigdag*AT_pimig))^(-AT_mumig)*AT_imig/(1-ATGR_gammaimig);
 // Demand for bilateral consumption import goods
-ATIT_imig = ATIT_numig*((IT_pex*ATIT_rer)/AT_pimig)^(-AT_mumig)*AT_imig;
+ATIT_imig = ATIT_numig*((IT_pex*ATIT_rer)/(ATIT_gammaimigdag*AT_pimig))^(-AT_mumig)*AT_imig/(1-ATIT_gammaimig);
 // Demand for bilateral consumption import goods
-ATNL_imig = ATNL_numig*((NL_pex*ATNL_rer)/AT_pimig)^(-AT_mumig)*AT_imig;
+ATNL_imig = ATNL_numig*((NL_pex*ATNL_rer)/(ATNL_gammaimigdag*AT_pimig))^(-AT_mumig)*AT_imig/(1-ATNL_gammaimig);
 // Demand for bilateral consumption import goods
-ATPT_imig = ATPT_numig*((PT_pex*ATPT_rer)/AT_pimig)^(-AT_mumig)*AT_imig;
+ATPT_imig = ATPT_numig*((PT_pex*ATPT_rer)/(ATPT_gammaimigdag*AT_pimig))^(-AT_mumig)*AT_imig/(1-ATPT_gammaimig);
 // Demand for bilateral consumption import goods
-ATDE_imig = ATDE_numig*((DE_pex*ATDE_rer)/AT_pimig)^(-AT_mumig)*AT_imig;
+ATDE_imig = ATDE_numig*((DE_pex*ATDE_rer)/(ATDE_gammaimigdag*AT_pimig))^(-AT_mumig)*AT_imig/(1-ATDE_gammaimig);
 // Demand for bilateral consumption import goods
-ATRU_imig = ATRU_numig*((RU_pex*ATRU_rer)/AT_pimig)^(-AT_mumig)*AT_imig;
+ATRU_imig = ATRU_numig*((RU_pex*ATRU_rer)/(ATRU_gammaimigdag*AT_pimig))^(-AT_mumig)*AT_imig/(1-ATRU_gammaimig);
 // Demand for bilateral consumption import goods
-ATRW_imig = ATRW_numig*((RW_pex*ATRW_rer)/AT_pimig)^(-AT_mumig)*AT_imig;
+ATRW_imig = ATRW_numig*((RW_pex*ATRW_rer)/(ATRW_gammaimigdag*AT_pimig))^(-AT_mumig)*AT_imig/(1-ATRW_gammaimig);
 ATUS_imig = (1
 -ATRA_numig
 -ATBE_numig
@@ -17033,21 +16818,21 @@ ATUS_imig = (1
 -ATDE_numig
 -ATRU_numig
 -ATRW_numig
-)*((US_pex*ATUS_rer)/AT_pimig)^(-AT_mumig)*AT_imig;
+)*((US_pex*ATUS_rer)/(ATUS_gammaimigdag*AT_pimig))^(-AT_mumig)*AT_imig/(1-ATUS_gammaimig);
 // Price of the consumption good (import)
 AT_pimig^(1-AT_mumig) =
-+ATRA_numig * (RA_pex*ATRA_rer)^(1-AT_mumig)
-+ATBE_numig * (BE_pex*ATBE_rer)^(1-AT_mumig)
-+ATES_numig * (ES_pex*ATES_rer)^(1-AT_mumig)
-+ATFI_numig * (FI_pex*ATFI_rer)^(1-AT_mumig)
-+ATFR_numig * (FR_pex*ATFR_rer)^(1-AT_mumig)
-+ATGR_numig * (GR_pex*ATGR_rer)^(1-AT_mumig)
-+ATIT_numig * (IT_pex*ATIT_rer)^(1-AT_mumig)
-+ATNL_numig * (NL_pex*ATNL_rer)^(1-AT_mumig)
-+ATPT_numig * (PT_pex*ATPT_rer)^(1-AT_mumig)
-+ATDE_numig * (DE_pex*ATDE_rer)^(1-AT_mumig)
-+ATRU_numig * (RU_pex*ATRU_rer)^(1-AT_mumig)
-+ATRW_numig * (RW_pex*ATRW_rer)^(1-AT_mumig)
++ATRA_numig *((RA_pex*ATRA_rer)/ATRA_gammaimigdag)^(1-AT_mumig)
++ATBE_numig *((BE_pex*ATBE_rer)/ATBE_gammaimigdag)^(1-AT_mumig)
++ATES_numig *((ES_pex*ATES_rer)/ATES_gammaimigdag)^(1-AT_mumig)
++ATFI_numig *((FI_pex*ATFI_rer)/ATFI_gammaimigdag)^(1-AT_mumig)
++ATFR_numig *((FR_pex*ATFR_rer)/ATFR_gammaimigdag)^(1-AT_mumig)
++ATGR_numig *((GR_pex*ATGR_rer)/ATGR_gammaimigdag)^(1-AT_mumig)
++ATIT_numig *((IT_pex*ATIT_rer)/ATIT_gammaimigdag)^(1-AT_mumig)
++ATNL_numig *((NL_pex*ATNL_rer)/ATNL_gammaimigdag)^(1-AT_mumig)
++ATPT_numig *((PT_pex*ATPT_rer)/ATPT_gammaimigdag)^(1-AT_mumig)
++ATDE_numig *((DE_pex*ATDE_rer)/ATDE_gammaimigdag)^(1-AT_mumig)
++ATRU_numig *((RU_pex*ATRU_rer)/ATRU_gammaimigdag)^(1-AT_mumig)
++ATRW_numig *((RW_pex*ATRW_rer)/ATRW_gammaimigdag)^(1-AT_mumig)
 +(1
 -ATRA_numig
 -ATBE_numig
@@ -17061,7 +16846,7 @@ AT_pimig^(1-AT_mumig) =
 -ATDE_numig
 -ATRU_numig
 -ATRW_numig
-)*(US_pex*ATUS_rer)^(1-AT_mumig);
+)*((US_pex*ATUS_rer)/ATUS_gammaimigdag)^(1-AT_mumig);
 // Private consumption good (import) inflation
 AT_piimig = AT_pimig/AT_pimig(-1)*AT_pic;
 // Private consumption good (import) inflation
@@ -17162,32 +16947,58 @@ AT_pttc^(1-AT_mutc) = (AT_nutc)*AT_pht^(1-AT_mutc)+(1-AT_nutc)*AT_pimc^(1-AT_mut
 1^(1-AT_muc) = (AT_nuc)*AT_pttc^(1-AT_muc)+(1-AT_nuc)*AT_pnt^(1-AT_muc);
 // Demand for domestic intermediate goods
 AT_htc = AT_nutc*(AT_pht/AT_pttc)^(-AT_mutc)*AT_ttc;
-ATRA_gammaimc = 0;
-ATRA_gammaimcdag = 1;
-ATBE_gammaimc = 0;
-ATBE_gammaimcdag = 1;
-ATES_gammaimc = 0;
-ATES_gammaimcdag = 1;
-ATFI_gammaimc = 0;
-ATFI_gammaimcdag = 1;
-ATFR_gammaimc = 0;
-ATFR_gammaimcdag = 1;
-ATGR_gammaimc = 0;
-ATGR_gammaimcdag = 1;
-ATIT_gammaimc = 0;
-ATIT_gammaimcdag = 1;
-ATNL_gammaimc = 0;
-ATNL_gammaimcdag = 1;
-ATPT_gammaimc = 0;
-ATPT_gammaimcdag = 1;
-ATDE_gammaimc = 0;
-ATDE_gammaimcdag = 1;
-ATRU_gammaimc = 0;
-ATRU_gammaimcdag = 1;
-ATRW_gammaimc = 0;
-ATRW_gammaimcdag = 1;
-ATUS_gammaimc = 0;
-ATUS_gammaimcdag = 1;
+// Import adjustment cost
+ATRA_gammaimc = AT_gammaimc1/2*((ATRA_imc/AT_qc)/(ATRA_imc(-1)/AT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATRA_gammaimcdag = 1-ATRA_gammaimc-AT_gammaimc1*((ATRA_imc/AT_qc)/(ATRA_imc(-1)/AT_qc(-1))-1)*(ATRA_imc/AT_qc)/(ATRA_imc(-1)/AT_qc(-1));
+// Import adjustment cost
+ATBE_gammaimc = AT_gammaimc1/2*((ATBE_imc/AT_qc)/(ATBE_imc(-1)/AT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATBE_gammaimcdag = 1-ATBE_gammaimc-AT_gammaimc1*((ATBE_imc/AT_qc)/(ATBE_imc(-1)/AT_qc(-1))-1)*(ATBE_imc/AT_qc)/(ATBE_imc(-1)/AT_qc(-1));
+// Import adjustment cost
+ATES_gammaimc = AT_gammaimc1/2*((ATES_imc/AT_qc)/(ATES_imc(-1)/AT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATES_gammaimcdag = 1-ATES_gammaimc-AT_gammaimc1*((ATES_imc/AT_qc)/(ATES_imc(-1)/AT_qc(-1))-1)*(ATES_imc/AT_qc)/(ATES_imc(-1)/AT_qc(-1));
+// Import adjustment cost
+ATFI_gammaimc = AT_gammaimc1/2*((ATFI_imc/AT_qc)/(ATFI_imc(-1)/AT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATFI_gammaimcdag = 1-ATFI_gammaimc-AT_gammaimc1*((ATFI_imc/AT_qc)/(ATFI_imc(-1)/AT_qc(-1))-1)*(ATFI_imc/AT_qc)/(ATFI_imc(-1)/AT_qc(-1));
+// Import adjustment cost
+ATFR_gammaimc = AT_gammaimc1/2*((ATFR_imc/AT_qc)/(ATFR_imc(-1)/AT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATFR_gammaimcdag = 1-ATFR_gammaimc-AT_gammaimc1*((ATFR_imc/AT_qc)/(ATFR_imc(-1)/AT_qc(-1))-1)*(ATFR_imc/AT_qc)/(ATFR_imc(-1)/AT_qc(-1));
+// Import adjustment cost
+ATGR_gammaimc = AT_gammaimc1/2*((ATGR_imc/AT_qc)/(ATGR_imc(-1)/AT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATGR_gammaimcdag = 1-ATGR_gammaimc-AT_gammaimc1*((ATGR_imc/AT_qc)/(ATGR_imc(-1)/AT_qc(-1))-1)*(ATGR_imc/AT_qc)/(ATGR_imc(-1)/AT_qc(-1));
+// Import adjustment cost
+ATIT_gammaimc = AT_gammaimc1/2*((ATIT_imc/AT_qc)/(ATIT_imc(-1)/AT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATIT_gammaimcdag = 1-ATIT_gammaimc-AT_gammaimc1*((ATIT_imc/AT_qc)/(ATIT_imc(-1)/AT_qc(-1))-1)*(ATIT_imc/AT_qc)/(ATIT_imc(-1)/AT_qc(-1));
+// Import adjustment cost
+ATNL_gammaimc = AT_gammaimc1/2*((ATNL_imc/AT_qc)/(ATNL_imc(-1)/AT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATNL_gammaimcdag = 1-ATNL_gammaimc-AT_gammaimc1*((ATNL_imc/AT_qc)/(ATNL_imc(-1)/AT_qc(-1))-1)*(ATNL_imc/AT_qc)/(ATNL_imc(-1)/AT_qc(-1));
+// Import adjustment cost
+ATPT_gammaimc = AT_gammaimc1/2*((ATPT_imc/AT_qc)/(ATPT_imc(-1)/AT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATPT_gammaimcdag = 1-ATPT_gammaimc-AT_gammaimc1*((ATPT_imc/AT_qc)/(ATPT_imc(-1)/AT_qc(-1))-1)*(ATPT_imc/AT_qc)/(ATPT_imc(-1)/AT_qc(-1));
+// Import adjustment cost
+ATDE_gammaimc = AT_gammaimc1/2*((ATDE_imc/AT_qc)/(ATDE_imc(-1)/AT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATDE_gammaimcdag = 1-ATDE_gammaimc-AT_gammaimc1*((ATDE_imc/AT_qc)/(ATDE_imc(-1)/AT_qc(-1))-1)*(ATDE_imc/AT_qc)/(ATDE_imc(-1)/AT_qc(-1));
+// Import adjustment cost
+ATRU_gammaimc = AT_gammaimc1/2*((ATRU_imc/AT_qc)/(ATRU_imc(-1)/AT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATRU_gammaimcdag = 1-ATRU_gammaimc-AT_gammaimc1*((ATRU_imc/AT_qc)/(ATRU_imc(-1)/AT_qc(-1))-1)*(ATRU_imc/AT_qc)/(ATRU_imc(-1)/AT_qc(-1));
+// Import adjustment cost
+ATRW_gammaimc = AT_gammaimc1/2*((ATRW_imc/AT_qc)/(ATRW_imc(-1)/AT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATRW_gammaimcdag = 1-ATRW_gammaimc-AT_gammaimc1*((ATRW_imc/AT_qc)/(ATRW_imc(-1)/AT_qc(-1))-1)*(ATRW_imc/AT_qc)/(ATRW_imc(-1)/AT_qc(-1));
+// Import adjustment cost
+ATUS_gammaimc = AT_gammaimc1/2*((ATUS_imc/AT_qc)/(ATUS_imc(-1)/AT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATUS_gammaimcdag = 1-ATUS_gammaimc-AT_gammaimc1*((ATUS_imc/AT_qc)/(ATUS_imc(-1)/AT_qc(-1))-1)*(ATUS_imc/AT_qc)/(ATUS_imc(-1)/AT_qc(-1));
 // Private consumption good (tradable)
 AT_tti^((AT_muti-1)/AT_muti) = (AT_nuti)^(1/AT_muti)*AT_hti^(1-1/AT_muti)+(1-AT_nuti)^(1/AT_muti)*AT_imi^(1-1/AT_muti);
 // Private consumption good  (total)
@@ -17200,35 +17011,60 @@ AT_ptti^(1-AT_muti) = (AT_nuti)*AT_pht^(1-AT_muti)+(1-AT_nuti)*AT_pimi^(1-AT_mut
 AT_pi^(1-AT_mui) = (AT_nui)*AT_ptti^(1-AT_mui)+(1-AT_nui)*AT_pnt^(1-AT_mui);
 // Auxiliary equation for the price of the investment good in steady state
 // this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
-AT_pibar = AT_pi;
 // Demand for domestic intermediate goods
 AT_hti = AT_nuti*(AT_pht/AT_ptti)^(-AT_muti)*AT_tti;
-ATRA_gammaimi = 0;
-ATRA_gammaimidag = 1;
-ATBE_gammaimi = 0;
-ATBE_gammaimidag = 1;
-ATES_gammaimi = 0;
-ATES_gammaimidag = 1;
-ATFI_gammaimi = 0;
-ATFI_gammaimidag = 1;
-ATFR_gammaimi = 0;
-ATFR_gammaimidag = 1;
-ATGR_gammaimi = 0;
-ATGR_gammaimidag = 1;
-ATIT_gammaimi = 0;
-ATIT_gammaimidag = 1;
-ATNL_gammaimi = 0;
-ATNL_gammaimidag = 1;
-ATPT_gammaimi = 0;
-ATPT_gammaimidag = 1;
-ATDE_gammaimi = 0;
-ATDE_gammaimidag = 1;
-ATRU_gammaimi = 0;
-ATRU_gammaimidag = 1;
-ATRW_gammaimi = 0;
-ATRW_gammaimidag = 1;
-ATUS_gammaimi = 0;
-ATUS_gammaimidag = 1;
+// Import adjustment cost
+ATRA_gammaimi = AT_gammaimi1/2*((ATRA_imi/AT_qi)/(ATRA_imi(-1)/AT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATRA_gammaimidag = 1-ATRA_gammaimi-AT_gammaimi1*((ATRA_imi/AT_qi)/(ATRA_imi(-1)/AT_qi)-1)*((ATRA_imi/AT_qi)/(ATRA_imi(-1)/AT_qi(-1)));
+// Import adjustment cost
+ATBE_gammaimi = AT_gammaimi1/2*((ATBE_imi/AT_qi)/(ATBE_imi(-1)/AT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATBE_gammaimidag = 1-ATBE_gammaimi-AT_gammaimi1*((ATBE_imi/AT_qi)/(ATBE_imi(-1)/AT_qi)-1)*((ATBE_imi/AT_qi)/(ATBE_imi(-1)/AT_qi(-1)));
+// Import adjustment cost
+ATES_gammaimi = AT_gammaimi1/2*((ATES_imi/AT_qi)/(ATES_imi(-1)/AT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATES_gammaimidag = 1-ATES_gammaimi-AT_gammaimi1*((ATES_imi/AT_qi)/(ATES_imi(-1)/AT_qi)-1)*((ATES_imi/AT_qi)/(ATES_imi(-1)/AT_qi(-1)));
+// Import adjustment cost
+ATFI_gammaimi = AT_gammaimi1/2*((ATFI_imi/AT_qi)/(ATFI_imi(-1)/AT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATFI_gammaimidag = 1-ATFI_gammaimi-AT_gammaimi1*((ATFI_imi/AT_qi)/(ATFI_imi(-1)/AT_qi)-1)*((ATFI_imi/AT_qi)/(ATFI_imi(-1)/AT_qi(-1)));
+// Import adjustment cost
+ATFR_gammaimi = AT_gammaimi1/2*((ATFR_imi/AT_qi)/(ATFR_imi(-1)/AT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATFR_gammaimidag = 1-ATFR_gammaimi-AT_gammaimi1*((ATFR_imi/AT_qi)/(ATFR_imi(-1)/AT_qi)-1)*((ATFR_imi/AT_qi)/(ATFR_imi(-1)/AT_qi(-1)));
+// Import adjustment cost
+ATGR_gammaimi = AT_gammaimi1/2*((ATGR_imi/AT_qi)/(ATGR_imi(-1)/AT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATGR_gammaimidag = 1-ATGR_gammaimi-AT_gammaimi1*((ATGR_imi/AT_qi)/(ATGR_imi(-1)/AT_qi)-1)*((ATGR_imi/AT_qi)/(ATGR_imi(-1)/AT_qi(-1)));
+// Import adjustment cost
+ATIT_gammaimi = AT_gammaimi1/2*((ATIT_imi/AT_qi)/(ATIT_imi(-1)/AT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATIT_gammaimidag = 1-ATIT_gammaimi-AT_gammaimi1*((ATIT_imi/AT_qi)/(ATIT_imi(-1)/AT_qi)-1)*((ATIT_imi/AT_qi)/(ATIT_imi(-1)/AT_qi(-1)));
+// Import adjustment cost
+ATNL_gammaimi = AT_gammaimi1/2*((ATNL_imi/AT_qi)/(ATNL_imi(-1)/AT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATNL_gammaimidag = 1-ATNL_gammaimi-AT_gammaimi1*((ATNL_imi/AT_qi)/(ATNL_imi(-1)/AT_qi)-1)*((ATNL_imi/AT_qi)/(ATNL_imi(-1)/AT_qi(-1)));
+// Import adjustment cost
+ATPT_gammaimi = AT_gammaimi1/2*((ATPT_imi/AT_qi)/(ATPT_imi(-1)/AT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATPT_gammaimidag = 1-ATPT_gammaimi-AT_gammaimi1*((ATPT_imi/AT_qi)/(ATPT_imi(-1)/AT_qi)-1)*((ATPT_imi/AT_qi)/(ATPT_imi(-1)/AT_qi(-1)));
+// Import adjustment cost
+ATDE_gammaimi = AT_gammaimi1/2*((ATDE_imi/AT_qi)/(ATDE_imi(-1)/AT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATDE_gammaimidag = 1-ATDE_gammaimi-AT_gammaimi1*((ATDE_imi/AT_qi)/(ATDE_imi(-1)/AT_qi)-1)*((ATDE_imi/AT_qi)/(ATDE_imi(-1)/AT_qi(-1)));
+// Import adjustment cost
+ATRU_gammaimi = AT_gammaimi1/2*((ATRU_imi/AT_qi)/(ATRU_imi(-1)/AT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATRU_gammaimidag = 1-ATRU_gammaimi-AT_gammaimi1*((ATRU_imi/AT_qi)/(ATRU_imi(-1)/AT_qi)-1)*((ATRU_imi/AT_qi)/(ATRU_imi(-1)/AT_qi(-1)));
+// Import adjustment cost
+ATRW_gammaimi = AT_gammaimi1/2*((ATRW_imi/AT_qi)/(ATRW_imi(-1)/AT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATRW_gammaimidag = 1-ATRW_gammaimi-AT_gammaimi1*((ATRW_imi/AT_qi)/(ATRW_imi(-1)/AT_qi)-1)*((ATRW_imi/AT_qi)/(ATRW_imi(-1)/AT_qi(-1)));
+// Import adjustment cost
+ATUS_gammaimi = AT_gammaimi1/2*((ATUS_imi/AT_qi)/(ATUS_imi(-1)/AT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATUS_gammaimidag = 1-ATUS_gammaimi-AT_gammaimi1*((ATUS_imi/AT_qi)/(ATUS_imi(-1)/AT_qi)-1)*((ATUS_imi/AT_qi)/(ATUS_imi(-1)/AT_qi(-1)));
 // Private consumption good (tradable)
 AT_ttcg^((AT_mutcg-1)/AT_mutcg) = (AT_nutcg)^(1/AT_mutcg)*AT_htcg^(1-1/AT_mutcg)+(1-AT_nutcg)^(1/AT_mutcg)*AT_imcg^(1-1/AT_mutcg);
 // Private consumption good  (total)
@@ -17241,32 +17077,58 @@ AT_pttcg^(1-AT_mutcg) = (AT_nutcg)*AT_pht^(1-AT_mutcg)+(1-AT_nutcg)*AT_pimcg^(1-
 AT_pcg^(1-AT_mucg) = (AT_nucg)*AT_pttcg^(1-AT_mucg)+(1-AT_nucg)*AT_pnt^(1-AT_mucg);
 // Demand for domestic intermediate goods
 AT_htcg = AT_nutcg*(AT_pht/AT_pttcg)^(-AT_mutcg)*AT_ttcg;
-ATRA_gammaimcg = 0;
-ATRA_gammaimcgdag = 1;
-ATBE_gammaimcg = 0;
-ATBE_gammaimcgdag = 1;
-ATES_gammaimcg = 0;
-ATES_gammaimcgdag = 1;
-ATFI_gammaimcg = 0;
-ATFI_gammaimcgdag = 1;
-ATFR_gammaimcg = 0;
-ATFR_gammaimcgdag = 1;
-ATGR_gammaimcg = 0;
-ATGR_gammaimcgdag = 1;
-ATIT_gammaimcg = 0;
-ATIT_gammaimcgdag = 1;
-ATNL_gammaimcg = 0;
-ATNL_gammaimcgdag = 1;
-ATPT_gammaimcg = 0;
-ATPT_gammaimcgdag = 1;
-ATDE_gammaimcg = 0;
-ATDE_gammaimcgdag = 1;
-ATRU_gammaimcg = 0;
-ATRU_gammaimcgdag = 1;
-ATRW_gammaimcg = 0;
-ATRW_gammaimcgdag = 1;
-ATUS_gammaimcg = 0;
-ATUS_gammaimcgdag = 1;
+// Import adjustment cost
+ATRA_gammaimcg = AT_gammaimcg1/2*((ATRA_imcg/AT_qcg)/(ATRA_imcg(-1)/AT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATRA_gammaimcgdag = 1-ATRA_gammaimcg-AT_gammaimcg1*((ATRA_imcg/AT_qcg)/(ATRA_imcg(-1)/AT_qcg)-1)*((ATRA_imcg/AT_qcg)/(ATRA_imcg(-1)/AT_qcg(-1)));
+// Import adjustment cost
+ATBE_gammaimcg = AT_gammaimcg1/2*((ATBE_imcg/AT_qcg)/(ATBE_imcg(-1)/AT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATBE_gammaimcgdag = 1-ATBE_gammaimcg-AT_gammaimcg1*((ATBE_imcg/AT_qcg)/(ATBE_imcg(-1)/AT_qcg)-1)*((ATBE_imcg/AT_qcg)/(ATBE_imcg(-1)/AT_qcg(-1)));
+// Import adjustment cost
+ATES_gammaimcg = AT_gammaimcg1/2*((ATES_imcg/AT_qcg)/(ATES_imcg(-1)/AT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATES_gammaimcgdag = 1-ATES_gammaimcg-AT_gammaimcg1*((ATES_imcg/AT_qcg)/(ATES_imcg(-1)/AT_qcg)-1)*((ATES_imcg/AT_qcg)/(ATES_imcg(-1)/AT_qcg(-1)));
+// Import adjustment cost
+ATFI_gammaimcg = AT_gammaimcg1/2*((ATFI_imcg/AT_qcg)/(ATFI_imcg(-1)/AT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATFI_gammaimcgdag = 1-ATFI_gammaimcg-AT_gammaimcg1*((ATFI_imcg/AT_qcg)/(ATFI_imcg(-1)/AT_qcg)-1)*((ATFI_imcg/AT_qcg)/(ATFI_imcg(-1)/AT_qcg(-1)));
+// Import adjustment cost
+ATFR_gammaimcg = AT_gammaimcg1/2*((ATFR_imcg/AT_qcg)/(ATFR_imcg(-1)/AT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATFR_gammaimcgdag = 1-ATFR_gammaimcg-AT_gammaimcg1*((ATFR_imcg/AT_qcg)/(ATFR_imcg(-1)/AT_qcg)-1)*((ATFR_imcg/AT_qcg)/(ATFR_imcg(-1)/AT_qcg(-1)));
+// Import adjustment cost
+ATGR_gammaimcg = AT_gammaimcg1/2*((ATGR_imcg/AT_qcg)/(ATGR_imcg(-1)/AT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATGR_gammaimcgdag = 1-ATGR_gammaimcg-AT_gammaimcg1*((ATGR_imcg/AT_qcg)/(ATGR_imcg(-1)/AT_qcg)-1)*((ATGR_imcg/AT_qcg)/(ATGR_imcg(-1)/AT_qcg(-1)));
+// Import adjustment cost
+ATIT_gammaimcg = AT_gammaimcg1/2*((ATIT_imcg/AT_qcg)/(ATIT_imcg(-1)/AT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATIT_gammaimcgdag = 1-ATIT_gammaimcg-AT_gammaimcg1*((ATIT_imcg/AT_qcg)/(ATIT_imcg(-1)/AT_qcg)-1)*((ATIT_imcg/AT_qcg)/(ATIT_imcg(-1)/AT_qcg(-1)));
+// Import adjustment cost
+ATNL_gammaimcg = AT_gammaimcg1/2*((ATNL_imcg/AT_qcg)/(ATNL_imcg(-1)/AT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATNL_gammaimcgdag = 1-ATNL_gammaimcg-AT_gammaimcg1*((ATNL_imcg/AT_qcg)/(ATNL_imcg(-1)/AT_qcg)-1)*((ATNL_imcg/AT_qcg)/(ATNL_imcg(-1)/AT_qcg(-1)));
+// Import adjustment cost
+ATPT_gammaimcg = AT_gammaimcg1/2*((ATPT_imcg/AT_qcg)/(ATPT_imcg(-1)/AT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATPT_gammaimcgdag = 1-ATPT_gammaimcg-AT_gammaimcg1*((ATPT_imcg/AT_qcg)/(ATPT_imcg(-1)/AT_qcg)-1)*((ATPT_imcg/AT_qcg)/(ATPT_imcg(-1)/AT_qcg(-1)));
+// Import adjustment cost
+ATDE_gammaimcg = AT_gammaimcg1/2*((ATDE_imcg/AT_qcg)/(ATDE_imcg(-1)/AT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATDE_gammaimcgdag = 1-ATDE_gammaimcg-AT_gammaimcg1*((ATDE_imcg/AT_qcg)/(ATDE_imcg(-1)/AT_qcg)-1)*((ATDE_imcg/AT_qcg)/(ATDE_imcg(-1)/AT_qcg(-1)));
+// Import adjustment cost
+ATRU_gammaimcg = AT_gammaimcg1/2*((ATRU_imcg/AT_qcg)/(ATRU_imcg(-1)/AT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATRU_gammaimcgdag = 1-ATRU_gammaimcg-AT_gammaimcg1*((ATRU_imcg/AT_qcg)/(ATRU_imcg(-1)/AT_qcg)-1)*((ATRU_imcg/AT_qcg)/(ATRU_imcg(-1)/AT_qcg(-1)));
+// Import adjustment cost
+ATRW_gammaimcg = AT_gammaimcg1/2*((ATRW_imcg/AT_qcg)/(ATRW_imcg(-1)/AT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATRW_gammaimcgdag = 1-ATRW_gammaimcg-AT_gammaimcg1*((ATRW_imcg/AT_qcg)/(ATRW_imcg(-1)/AT_qcg)-1)*((ATRW_imcg/AT_qcg)/(ATRW_imcg(-1)/AT_qcg(-1)));
+// Import adjustment cost
+ATUS_gammaimcg = AT_gammaimcg1/2*((ATUS_imcg/AT_qcg)/(ATUS_imcg(-1)/AT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATUS_gammaimcgdag = 1-ATUS_gammaimcg-AT_gammaimcg1*((ATUS_imcg/AT_qcg)/(ATUS_imcg(-1)/AT_qcg)-1)*((ATUS_imcg/AT_qcg)/(ATUS_imcg(-1)/AT_qcg(-1)));
 // Private consumption good (tradable)
 AT_ttig^((AT_mutig-1)/AT_mutig) = (AT_nutig)^(1/AT_mutig)*AT_htig^(1-1/AT_mutig)+(1-AT_nutig)^(1/AT_mutig)*AT_imig^(1-1/AT_mutig);
 // Private consumption good  (total)
@@ -17279,32 +17141,58 @@ AT_pttig^(1-AT_mutig) = (AT_nutig)*AT_pht^(1-AT_mutig)+(1-AT_nutig)*AT_pimig^(1-
 AT_pig^(1-AT_muig) = (AT_nuig)*AT_pttig^(1-AT_muig)+(1-AT_nuig)*AT_pnt^(1-AT_muig);
 // Demand for domestic intermediate goods
 AT_htig = AT_nutig*(AT_pht/AT_pttig)^(-AT_mutig)*AT_ttig;
-ATRA_gammaimig = 0;
-ATRA_gammaimigdag = 1;
-ATBE_gammaimig = 0;
-ATBE_gammaimigdag = 1;
-ATES_gammaimig = 0;
-ATES_gammaimigdag = 1;
-ATFI_gammaimig = 0;
-ATFI_gammaimigdag = 1;
-ATFR_gammaimig = 0;
-ATFR_gammaimigdag = 1;
-ATGR_gammaimig = 0;
-ATGR_gammaimigdag = 1;
-ATIT_gammaimig = 0;
-ATIT_gammaimigdag = 1;
-ATNL_gammaimig = 0;
-ATNL_gammaimigdag = 1;
-ATPT_gammaimig = 0;
-ATPT_gammaimigdag = 1;
-ATDE_gammaimig = 0;
-ATDE_gammaimigdag = 1;
-ATRU_gammaimig = 0;
-ATRU_gammaimigdag = 1;
-ATRW_gammaimig = 0;
-ATRW_gammaimigdag = 1;
-ATUS_gammaimig = 0;
-ATUS_gammaimigdag = 1;
+// Import adjustment cost
+ATRA_gammaimig = AT_gammaimig1/2*((ATRA_imig/AT_qig)/(ATRA_imig(-1)/AT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATRA_gammaimigdag = 1-ATRA_gammaimig-AT_gammaimig1*((ATRA_imig/AT_qig)/(ATRA_imig(-1)/AT_qig)-1)*((ATRA_imig/AT_qig)/(ATRA_imig(-1)/AT_qig(-1)));
+// Import adjustment cost
+ATBE_gammaimig = AT_gammaimig1/2*((ATBE_imig/AT_qig)/(ATBE_imig(-1)/AT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATBE_gammaimigdag = 1-ATBE_gammaimig-AT_gammaimig1*((ATBE_imig/AT_qig)/(ATBE_imig(-1)/AT_qig)-1)*((ATBE_imig/AT_qig)/(ATBE_imig(-1)/AT_qig(-1)));
+// Import adjustment cost
+ATES_gammaimig = AT_gammaimig1/2*((ATES_imig/AT_qig)/(ATES_imig(-1)/AT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATES_gammaimigdag = 1-ATES_gammaimig-AT_gammaimig1*((ATES_imig/AT_qig)/(ATES_imig(-1)/AT_qig)-1)*((ATES_imig/AT_qig)/(ATES_imig(-1)/AT_qig(-1)));
+// Import adjustment cost
+ATFI_gammaimig = AT_gammaimig1/2*((ATFI_imig/AT_qig)/(ATFI_imig(-1)/AT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATFI_gammaimigdag = 1-ATFI_gammaimig-AT_gammaimig1*((ATFI_imig/AT_qig)/(ATFI_imig(-1)/AT_qig)-1)*((ATFI_imig/AT_qig)/(ATFI_imig(-1)/AT_qig(-1)));
+// Import adjustment cost
+ATFR_gammaimig = AT_gammaimig1/2*((ATFR_imig/AT_qig)/(ATFR_imig(-1)/AT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATFR_gammaimigdag = 1-ATFR_gammaimig-AT_gammaimig1*((ATFR_imig/AT_qig)/(ATFR_imig(-1)/AT_qig)-1)*((ATFR_imig/AT_qig)/(ATFR_imig(-1)/AT_qig(-1)));
+// Import adjustment cost
+ATGR_gammaimig = AT_gammaimig1/2*((ATGR_imig/AT_qig)/(ATGR_imig(-1)/AT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATGR_gammaimigdag = 1-ATGR_gammaimig-AT_gammaimig1*((ATGR_imig/AT_qig)/(ATGR_imig(-1)/AT_qig)-1)*((ATGR_imig/AT_qig)/(ATGR_imig(-1)/AT_qig(-1)));
+// Import adjustment cost
+ATIT_gammaimig = AT_gammaimig1/2*((ATIT_imig/AT_qig)/(ATIT_imig(-1)/AT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATIT_gammaimigdag = 1-ATIT_gammaimig-AT_gammaimig1*((ATIT_imig/AT_qig)/(ATIT_imig(-1)/AT_qig)-1)*((ATIT_imig/AT_qig)/(ATIT_imig(-1)/AT_qig(-1)));
+// Import adjustment cost
+ATNL_gammaimig = AT_gammaimig1/2*((ATNL_imig/AT_qig)/(ATNL_imig(-1)/AT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATNL_gammaimigdag = 1-ATNL_gammaimig-AT_gammaimig1*((ATNL_imig/AT_qig)/(ATNL_imig(-1)/AT_qig)-1)*((ATNL_imig/AT_qig)/(ATNL_imig(-1)/AT_qig(-1)));
+// Import adjustment cost
+ATPT_gammaimig = AT_gammaimig1/2*((ATPT_imig/AT_qig)/(ATPT_imig(-1)/AT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATPT_gammaimigdag = 1-ATPT_gammaimig-AT_gammaimig1*((ATPT_imig/AT_qig)/(ATPT_imig(-1)/AT_qig)-1)*((ATPT_imig/AT_qig)/(ATPT_imig(-1)/AT_qig(-1)));
+// Import adjustment cost
+ATDE_gammaimig = AT_gammaimig1/2*((ATDE_imig/AT_qig)/(ATDE_imig(-1)/AT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATDE_gammaimigdag = 1-ATDE_gammaimig-AT_gammaimig1*((ATDE_imig/AT_qig)/(ATDE_imig(-1)/AT_qig)-1)*((ATDE_imig/AT_qig)/(ATDE_imig(-1)/AT_qig(-1)));
+// Import adjustment cost
+ATRU_gammaimig = AT_gammaimig1/2*((ATRU_imig/AT_qig)/(ATRU_imig(-1)/AT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATRU_gammaimigdag = 1-ATRU_gammaimig-AT_gammaimig1*((ATRU_imig/AT_qig)/(ATRU_imig(-1)/AT_qig)-1)*((ATRU_imig/AT_qig)/(ATRU_imig(-1)/AT_qig(-1)));
+// Import adjustment cost
+ATRW_gammaimig = AT_gammaimig1/2*((ATRW_imig/AT_qig)/(ATRW_imig(-1)/AT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATRW_gammaimigdag = 1-ATRW_gammaimig-AT_gammaimig1*((ATRW_imig/AT_qig)/(ATRW_imig(-1)/AT_qig)-1)*((ATRW_imig/AT_qig)/(ATRW_imig(-1)/AT_qig(-1)));
+// Import adjustment cost
+ATUS_gammaimig = AT_gammaimig1/2*((ATUS_imig/AT_qig)/(ATUS_imig(-1)/AT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ATUS_gammaimigdag = 1-ATUS_gammaimig-AT_gammaimig1*((ATUS_imig/AT_qig)/(ATUS_imig(-1)/AT_qig)-1)*((ATUS_imig/AT_qig)/(ATUS_imig(-1)/AT_qig(-1)));
 // Trade balance
 AT_tb =
 +AT_pex*RA_size/AT_size*RAAT_im
@@ -17365,18 +17253,10 @@ AT_ex =
 // Government spending, using AT_pg = AT_pht
 AT_pcg*AT_cg = AT_cgy*AT_pybar*AT_ybar;
 AT_pig*AT_ig = AT_igy*AT_pybar*AT_ybar;
-AT_t = 0;
-AT_b = AT_bytarget*AT_pybar*AT_ybar;
-// Auxiliary equation for steady-state output
-AT_ybar = AT_y;
-// Auxiliary equation for steady-state output
-AT_ytbar = AT_yst;
-// Auxiliary equation for steady-state output
-AT_ynbar = AT_ysn;
-// Auxiliary equation for steady-state output deflator
-AT_pybar = AT_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-AT_trybar = AT_tr/(AT_pybar*AT_ybar);
+// Transfers
+AT_tr = AT_try*AT_pybar*AT_ybar;
+// Fiscal rule
+AT_t/(AT_pybar*AT_ybar) = AT_phitb*(AT_b/(AT_pybar*AT_ybar)-AT_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 AT_ti = AT_upsilont*AT_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -17392,9 +17272,11 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	AT_r = DE_r;
-AT_pic4 = AT_pi4target;
-AT_rr-1 = AT_r/AT_pi4target^(1/4)-1;
+		AT_rerdep/DE_rerdep*AT_pic/DE_pic-1=0;
+// Definition of annual inflation
+AT_pic4 = AT_pic*AT_pic(-1)*AT_pic(-2)*AT_pic(-3);
+// Real interest rate
+AT_rr-1 = AT_r/AT_pic(+1)-1;
 // Equilibrium real interest rate
 AT_rrstar-1 = 1/AT_beta-1;
 //-------------
@@ -17481,68 +17363,68 @@ AT_py*AT_y =
 +AT_pcg*AT_qcg
 +AT_pig*AT_qig
 +AT_pex*RA_size/AT_size*RAAT_im
--(RA_pex*ATRA_rer)*ATRA_imc
--(RA_pex*ATRA_rer)*ATRA_imi
+-(RA_pex*ATRA_rer)*(ATRA_imc*(1-ATRA_gammaimc)/ATRA_gammaimcdag)
+-(RA_pex*ATRA_rer)*(ATRA_imi*(1-ATRA_gammaimi)/ATRA_gammaimidag)
 -(RA_pex*ATRA_rer)*ATRA_imcg
 -(RA_pex*ATRA_rer)*ATRA_imig
 +AT_pex*BE_size/AT_size*BEAT_im
--(BE_pex*ATBE_rer)*ATBE_imc
--(BE_pex*ATBE_rer)*ATBE_imi
+-(BE_pex*ATBE_rer)*(ATBE_imc*(1-ATBE_gammaimc)/ATBE_gammaimcdag)
+-(BE_pex*ATBE_rer)*(ATBE_imi*(1-ATBE_gammaimi)/ATBE_gammaimidag)
 -(BE_pex*ATBE_rer)*ATBE_imcg
 -(BE_pex*ATBE_rer)*ATBE_imig
 +AT_pex*ES_size/AT_size*ESAT_im
--(ES_pex*ATES_rer)*ATES_imc
--(ES_pex*ATES_rer)*ATES_imi
+-(ES_pex*ATES_rer)*(ATES_imc*(1-ATES_gammaimc)/ATES_gammaimcdag)
+-(ES_pex*ATES_rer)*(ATES_imi*(1-ATES_gammaimi)/ATES_gammaimidag)
 -(ES_pex*ATES_rer)*ATES_imcg
 -(ES_pex*ATES_rer)*ATES_imig
 +AT_pex*FI_size/AT_size*FIAT_im
--(FI_pex*ATFI_rer)*ATFI_imc
--(FI_pex*ATFI_rer)*ATFI_imi
+-(FI_pex*ATFI_rer)*(ATFI_imc*(1-ATFI_gammaimc)/ATFI_gammaimcdag)
+-(FI_pex*ATFI_rer)*(ATFI_imi*(1-ATFI_gammaimi)/ATFI_gammaimidag)
 -(FI_pex*ATFI_rer)*ATFI_imcg
 -(FI_pex*ATFI_rer)*ATFI_imig
 +AT_pex*FR_size/AT_size*FRAT_im
--(FR_pex*ATFR_rer)*ATFR_imc
--(FR_pex*ATFR_rer)*ATFR_imi
+-(FR_pex*ATFR_rer)*(ATFR_imc*(1-ATFR_gammaimc)/ATFR_gammaimcdag)
+-(FR_pex*ATFR_rer)*(ATFR_imi*(1-ATFR_gammaimi)/ATFR_gammaimidag)
 -(FR_pex*ATFR_rer)*ATFR_imcg
 -(FR_pex*ATFR_rer)*ATFR_imig
 +AT_pex*GR_size/AT_size*GRAT_im
--(GR_pex*ATGR_rer)*ATGR_imc
--(GR_pex*ATGR_rer)*ATGR_imi
+-(GR_pex*ATGR_rer)*(ATGR_imc*(1-ATGR_gammaimc)/ATGR_gammaimcdag)
+-(GR_pex*ATGR_rer)*(ATGR_imi*(1-ATGR_gammaimi)/ATGR_gammaimidag)
 -(GR_pex*ATGR_rer)*ATGR_imcg
 -(GR_pex*ATGR_rer)*ATGR_imig
 +AT_pex*IT_size/AT_size*ITAT_im
--(IT_pex*ATIT_rer)*ATIT_imc
--(IT_pex*ATIT_rer)*ATIT_imi
+-(IT_pex*ATIT_rer)*(ATIT_imc*(1-ATIT_gammaimc)/ATIT_gammaimcdag)
+-(IT_pex*ATIT_rer)*(ATIT_imi*(1-ATIT_gammaimi)/ATIT_gammaimidag)
 -(IT_pex*ATIT_rer)*ATIT_imcg
 -(IT_pex*ATIT_rer)*ATIT_imig
 +AT_pex*NL_size/AT_size*NLAT_im
--(NL_pex*ATNL_rer)*ATNL_imc
--(NL_pex*ATNL_rer)*ATNL_imi
+-(NL_pex*ATNL_rer)*(ATNL_imc*(1-ATNL_gammaimc)/ATNL_gammaimcdag)
+-(NL_pex*ATNL_rer)*(ATNL_imi*(1-ATNL_gammaimi)/ATNL_gammaimidag)
 -(NL_pex*ATNL_rer)*ATNL_imcg
 -(NL_pex*ATNL_rer)*ATNL_imig
 +AT_pex*PT_size/AT_size*PTAT_im
--(PT_pex*ATPT_rer)*ATPT_imc
--(PT_pex*ATPT_rer)*ATPT_imi
+-(PT_pex*ATPT_rer)*(ATPT_imc*(1-ATPT_gammaimc)/ATPT_gammaimcdag)
+-(PT_pex*ATPT_rer)*(ATPT_imi*(1-ATPT_gammaimi)/ATPT_gammaimidag)
 -(PT_pex*ATPT_rer)*ATPT_imcg
 -(PT_pex*ATPT_rer)*ATPT_imig
 +AT_pex*DE_size/AT_size*DEAT_im
--(DE_pex*ATDE_rer)*ATDE_imc
--(DE_pex*ATDE_rer)*ATDE_imi
+-(DE_pex*ATDE_rer)*(ATDE_imc*(1-ATDE_gammaimc)/ATDE_gammaimcdag)
+-(DE_pex*ATDE_rer)*(ATDE_imi*(1-ATDE_gammaimi)/ATDE_gammaimidag)
 -(DE_pex*ATDE_rer)*ATDE_imcg
 -(DE_pex*ATDE_rer)*ATDE_imig
 +AT_pex*RU_size/AT_size*RUAT_im
--(RU_pex*ATRU_rer)*ATRU_imc
--(RU_pex*ATRU_rer)*ATRU_imi
+-(RU_pex*ATRU_rer)*(ATRU_imc*(1-ATRU_gammaimc)/ATRU_gammaimcdag)
+-(RU_pex*ATRU_rer)*(ATRU_imi*(1-ATRU_gammaimi)/ATRU_gammaimidag)
 -(RU_pex*ATRU_rer)*ATRU_imcg
 -(RU_pex*ATRU_rer)*ATRU_imig
 +AT_pex*RW_size/AT_size*RWAT_im
--(RW_pex*ATRW_rer)*ATRW_imc
--(RW_pex*ATRW_rer)*ATRW_imi
+-(RW_pex*ATRW_rer)*(ATRW_imc*(1-ATRW_gammaimc)/ATRW_gammaimcdag)
+-(RW_pex*ATRW_rer)*(ATRW_imi*(1-ATRW_gammaimi)/ATRW_gammaimidag)
 -(RW_pex*ATRW_rer)*ATRW_imcg
 -(RW_pex*ATRW_rer)*ATRW_imig
 +AT_pex*US_size/AT_size*USAT_im
--(US_pex*ATUS_rer)*ATUS_imc
--(US_pex*ATUS_rer)*ATUS_imi
+-(US_pex*ATUS_rer)*(ATUS_imc*(1-ATUS_gammaimc)/ATUS_gammaimcdag)
+-(US_pex*ATUS_rer)*(ATUS_imi*(1-ATUS_gammaimi)/ATUS_gammaimidag)
 -(US_pex*ATUS_rer)*ATUS_imcg
 -(US_pex*ATUS_rer)*ATUS_imig
 ;
@@ -17617,7 +17499,7 @@ AT_yhty = AT_pht*AT_yst/(AT_py*AT_y);
 // NT sector share
 AT_ynty = AT_pnt*AT_ysn/(AT_py*AT_y);
 // Output gap
-AT_ygap = 0;
+AT_ygap = AT_y/AT_ybar-1;
 // Output growth (gross rate)
 AT_ygrowth = AT_y/AT_y(-1);
 // Output growth (gross rate yoy)
@@ -17781,7 +17663,7 @@ BE_dcci = ((BE_nucces)^(1/BE_mucces)*BE_ci^(1-1/BE_mucces)+(1-BE_nucces)^(1/BE_m
 BE_lambdai*(1+BE_tauc+BE_gammavi+BE_vi*BE_gammavider) = BE_zcon*(BE_ccesi-BE_kappa*BE_ccesi(-1))^(-BE_sigma)*BE_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
-BE_r                   = BE_beta^(-1)*BE_lambdai/BE_lambdai    *BE_pic;
+BE_r*(1-BE_gammabh) = BE_beta^(-1)*BE_lambdai/BE_lambdai(+1)*BE_pic(+1);
 // Germany
 // US and the RoW
 // Euler equation for money
@@ -17792,17 +17674,23 @@ BE_vi = BE_ci/BE_mi;
 BE_gammavi = BE_gammav1*BE_vi+BE_gammav2/BE_vi-2*(BE_gammav1*BE_gammav2)^(1/2);
 // Derivative of transaction cost
 BE_gammavider = BE_gammav1-BE_gammav2*BE_vi^(-2);
-BE_delta = BE_ii/BE_ki;
-BE_gammai = 0;
-BE_gammaider = 0;
-BE_gammau = 0;
-BE_gammauder = ((BE_beta^(-1)-1+BE_delta)*BE_qbar-BE_delta*BE_taukbar*BE_pibar)/((1-BE_taukbar)*BE_pibar);
-BE_u = 1;
-BE_pi = BE_q;
+// Capital accumulation
+BE_ki = (1-BE_delta)*BE_ki(-1)+(1-BE_gammai(-1))*BE_ii(-1)*BE_zinv;
+// Investment adjustment cost
+BE_gammai = BE_gammai1/2*(BE_ii/BE_ii(-1)-1)^2;
+// Derivative of investment adjustment cost
+BE_gammaider = BE_gammai1*(BE_ii/BE_ii(-1)-1)/BE_ii(-1);
+// Capacity utilisation cost
+BE_gammau = ((BE_beta^(-1)-1+BE_delta)*BE_qbar-BE_delta*BE_taukbar*BE_pibar)/((1-BE_taukbar)*BE_pibar)*(BE_u-1)+BE_gammau2/2*(BE_u-1)^2;
+// Derivative of capacity utilisation cost
+BE_gammauder = ((BE_beta^(-1)-1+BE_delta)*BE_qbar-BE_delta*BE_taukbar*BE_pibar)/((1-BE_taukbar)*BE_pibar)+BE_gammau2*(BE_u-1);
+// Optimal capacity utilisation (FOC)
+BE_rk = BE_gammauder*BE_pi;
+// Tobin's Q
+BE_pi = BE_q*BE_zinv*(1-BE_gammai-BE_gammaider*BE_ii)+BE_beta*BE_lambdai(+1)/BE_lambdai*BE_q(+1)*BE_zinv(+1)*BE_gammaider(+1)*BE_ii(+1)^2/BE_ii;
 // Auxiliary equation for Tobin's Q in steady state
-BE_qbar = BE_q;
 // Rate of return on capital
-BE_q = BE_beta*((1-BE_tauk)*BE_rk+(BE_tauk*BE_delta)*BE_pi+(1-BE_delta)*BE_q);
+BE_q = BE_beta*BE_lambdai(+1)/BE_lambdai*((1-BE_tauk(+1))*(BE_rk(+1)*BE_u(+1)-BE_gammau(+1)*BE_pi(+1))+(BE_tauk(+1)*BE_delta)*BE_pi(+1)+(1-BE_delta)*BE_q(+1));
 // Optimal wage contract (FOC)
 BE_witilde^(1+BE_etai*BE_zeta) = BE_etai/(BE_etai-1)*BE_fi/BE_gi+BE_wcst;
 // Definition of fi
@@ -17861,11 +17749,9 @@ BE_mcn = 1/(EA_z*BE_zn*BE_kg^BE_alphag*(BE_alphan)^(BE_alphan)*(1-BE_alphan)^(1-
 // Wage Inflation (qoq)
 BE_piw = BE_w/BE_w(-1)*BE_pic;
 // Wage Inflation (yoy)
-BE_piw4 = BE_pic4;
+BE_piw4 = BE_piw*BE_piw(-1)*BE_piw(-2)*BE_piw(-3);
 // Auxiliary equation for steady-state fixed cost
-BE_psitbar = BE_psit*BE_ytbar;
 // Auxiliary equation for steady-state fixed cost
-BE_psinbar = BE_psin*BE_ynbar;
 // Capital input (FOC)
 BE_rk = BE_alphat*(BE_yst+BE_psitbar)/BE_kdt*BE_mct;
 // Capital input (FOC)
@@ -17940,7 +17826,6 @@ BE_piex = BE_pex/BE_pex(-1)*BE_pic;
 // Bilateral real exchange rate
 BERA_rer = BE_rer/RA_rer;
 // Auxiliary equation for steady-state output
-BERA_rerbar = BERA_rer;
 //Terms of Trade
 BERA_tot = RA_pex*BERA_rer/BE_pex;
 // Optimal price contract set in foreign markets (FOC), using BE_pxtilde = AT_pimtilde
@@ -17956,7 +17841,6 @@ BERA_tot = RA_pex*BERA_rer/BE_pex;
 // Bilateral real exchange rate
 BEAT_rer = BE_rer/AT_rer;
 // Auxiliary equation for steady-state output
-BEAT_rerbar = BEAT_rer;
 //Terms of Trade
 BEAT_tot = AT_pex*BEAT_rer/BE_pex;
 // Optimal price contract set in foreign markets (FOC), using BE_pxtilde = ES_pimtilde
@@ -17972,7 +17856,6 @@ BEAT_tot = AT_pex*BEAT_rer/BE_pex;
 // Bilateral real exchange rate
 BEES_rer = BE_rer/ES_rer;
 // Auxiliary equation for steady-state output
-BEES_rerbar = BEES_rer;
 //Terms of Trade
 BEES_tot = ES_pex*BEES_rer/BE_pex;
 // Optimal price contract set in foreign markets (FOC), using BE_pxtilde = FI_pimtilde
@@ -17988,7 +17871,6 @@ BEES_tot = ES_pex*BEES_rer/BE_pex;
 // Bilateral real exchange rate
 BEFI_rer = BE_rer/FI_rer;
 // Auxiliary equation for steady-state output
-BEFI_rerbar = BEFI_rer;
 //Terms of Trade
 BEFI_tot = FI_pex*BEFI_rer/BE_pex;
 // Optimal price contract set in foreign markets (FOC), using BE_pxtilde = FR_pimtilde
@@ -18004,7 +17886,6 @@ BEFI_tot = FI_pex*BEFI_rer/BE_pex;
 // Bilateral real exchange rate
 BEFR_rer = BE_rer/FR_rer;
 // Auxiliary equation for steady-state output
-BEFR_rerbar = BEFR_rer;
 //Terms of Trade
 BEFR_tot = FR_pex*BEFR_rer/BE_pex;
 // Optimal price contract set in foreign markets (FOC), using BE_pxtilde = GR_pimtilde
@@ -18020,7 +17901,6 @@ BEFR_tot = FR_pex*BEFR_rer/BE_pex;
 // Bilateral real exchange rate
 BEGR_rer = BE_rer/GR_rer;
 // Auxiliary equation for steady-state output
-BEGR_rerbar = BEGR_rer;
 //Terms of Trade
 BEGR_tot = GR_pex*BEGR_rer/BE_pex;
 // Optimal price contract set in foreign markets (FOC), using BE_pxtilde = IT_pimtilde
@@ -18036,7 +17916,6 @@ BEGR_tot = GR_pex*BEGR_rer/BE_pex;
 // Bilateral real exchange rate
 BEIT_rer = BE_rer/IT_rer;
 // Auxiliary equation for steady-state output
-BEIT_rerbar = BEIT_rer;
 //Terms of Trade
 BEIT_tot = IT_pex*BEIT_rer/BE_pex;
 // Optimal price contract set in foreign markets (FOC), using BE_pxtilde = NL_pimtilde
@@ -18052,7 +17931,6 @@ BEIT_tot = IT_pex*BEIT_rer/BE_pex;
 // Bilateral real exchange rate
 BENL_rer = BE_rer/NL_rer;
 // Auxiliary equation for steady-state output
-BENL_rerbar = BENL_rer;
 //Terms of Trade
 BENL_tot = NL_pex*BENL_rer/BE_pex;
 // Optimal price contract set in foreign markets (FOC), using BE_pxtilde = PT_pimtilde
@@ -18068,7 +17946,6 @@ BENL_tot = NL_pex*BENL_rer/BE_pex;
 // Bilateral real exchange rate
 BEPT_rer = BE_rer/PT_rer;
 // Auxiliary equation for steady-state output
-BEPT_rerbar = BEPT_rer;
 //Terms of Trade
 BEPT_tot = PT_pex*BEPT_rer/BE_pex;
 // Optimal price contract set in foreign markets (FOC), using BE_pxtilde = DE_pimtilde
@@ -18084,7 +17961,6 @@ BEPT_tot = PT_pex*BEPT_rer/BE_pex;
 // Bilateral real exchange rate
 BEDE_rer = BE_rer/DE_rer;
 // Auxiliary equation for steady-state output
-BEDE_rerbar = BEDE_rer;
 //Terms of Trade
 BEDE_tot = DE_pex*BEDE_rer/BE_pex;
 // Optimal price contract set in foreign markets (FOC), using BE_pxtilde = RU_pimtilde
@@ -18100,7 +17976,6 @@ BEDE_tot = DE_pex*BEDE_rer/BE_pex;
 // Bilateral real exchange rate
 BERU_rer = BE_rer/RU_rer;
 // Auxiliary equation for steady-state output
-BERU_rerbar = BERU_rer;
 //Terms of Trade
 BERU_tot = RU_pex*BERU_rer/BE_pex;
 // Optimal price contract set in foreign markets (FOC), using BE_pxtilde = RW_pimtilde
@@ -18116,7 +17991,6 @@ BERU_tot = RU_pex*BERU_rer/BE_pex;
 // Bilateral real exchange rate
 BERW_rer = BE_rer/RW_rer;
 // Auxiliary equation for steady-state output
-BERW_rerbar = BERW_rer;
 //Terms of Trade
 BERW_tot = RW_pex*BERW_rer/BE_pex;
 // Optimal price contract set in foreign markets (FOC), using BE_pxtilde = US_pimtilde
@@ -18132,7 +18006,6 @@ BERW_tot = RW_pex*BERW_rer/BE_pex;
 // Bilateral real exchange rate
 BEUS_rer = BE_rer/US_rer;
 // Auxiliary equation for steady-state output
-BEUS_rerbar = BEUS_rer;
 //Terms of Trade
 BEUS_tot = US_pex*BEUS_rer/BE_pex;
 // Total imports 
@@ -20630,18 +20503,18 @@ BE_etot = 1
 //-----------------
 // Private consumption good (import)
 BE_imc^((BE_mumc-1)/BE_mumc) =
-+BEAT_numc ^(1/BE_mumc)*BEAT_imc^(1-1/BE_mumc)
-+BEES_numc ^(1/BE_mumc)*BEES_imc^(1-1/BE_mumc)
-+BEFI_numc ^(1/BE_mumc)*BEFI_imc^(1-1/BE_mumc)
-+BEFR_numc ^(1/BE_mumc)*BEFR_imc^(1-1/BE_mumc)
-+BEGR_numc ^(1/BE_mumc)*BEGR_imc^(1-1/BE_mumc)
-+BEIT_numc ^(1/BE_mumc)*BEIT_imc^(1-1/BE_mumc)
-+BENL_numc ^(1/BE_mumc)*BENL_imc^(1-1/BE_mumc)
-+BEPT_numc ^(1/BE_mumc)*BEPT_imc^(1-1/BE_mumc)
-+BEDE_numc ^(1/BE_mumc)*BEDE_imc^(1-1/BE_mumc)
-+BERU_numc ^(1/BE_mumc)*BERU_imc^(1-1/BE_mumc)
-+BERW_numc ^(1/BE_mumc)*BERW_imc^(1-1/BE_mumc)
-+BEUS_numc ^(1/BE_mumc)*BEUS_imc^(1-1/BE_mumc)
++BEAT_numc ^(1/BE_mumc)*((1-BEAT_gammaimc)*BEAT_imc)^(1-1/BE_mumc)
++BEES_numc ^(1/BE_mumc)*((1-BEES_gammaimc)*BEES_imc)^(1-1/BE_mumc)
++BEFI_numc ^(1/BE_mumc)*((1-BEFI_gammaimc)*BEFI_imc)^(1-1/BE_mumc)
++BEFR_numc ^(1/BE_mumc)*((1-BEFR_gammaimc)*BEFR_imc)^(1-1/BE_mumc)
++BEGR_numc ^(1/BE_mumc)*((1-BEGR_gammaimc)*BEGR_imc)^(1-1/BE_mumc)
++BEIT_numc ^(1/BE_mumc)*((1-BEIT_gammaimc)*BEIT_imc)^(1-1/BE_mumc)
++BENL_numc ^(1/BE_mumc)*((1-BENL_gammaimc)*BENL_imc)^(1-1/BE_mumc)
++BEPT_numc ^(1/BE_mumc)*((1-BEPT_gammaimc)*BEPT_imc)^(1-1/BE_mumc)
++BEDE_numc ^(1/BE_mumc)*((1-BEDE_gammaimc)*BEDE_imc)^(1-1/BE_mumc)
++BERU_numc ^(1/BE_mumc)*((1-BERU_gammaimc)*BERU_imc)^(1-1/BE_mumc)
++BERW_numc ^(1/BE_mumc)*((1-BERW_gammaimc)*BERW_imc)^(1-1/BE_mumc)
++BEUS_numc ^(1/BE_mumc)*((1-BEUS_gammaimc)*BEUS_imc)^(1-1/BE_mumc)
 +(1
 -BEAT_numc
 -BEES_numc
@@ -20655,29 +20528,29 @@ BE_imc^((BE_mumc-1)/BE_mumc) =
 -BERU_numc
 -BERW_numc
 -BEUS_numc
-)^(1/BE_mumc)*BERA_imc^(1-1/BE_mumc);
+)^(1/BE_mumc)*((1-BERA_gammaimc)*BERA_imc)^(1-1/BE_mumc);
 // Demand for bilateral consumption import goods
-BEAT_imc = BEAT_numc*((AT_pex*BEAT_rer)/BE_pimc)^(-BE_mumc)*BE_imc;
+BEAT_imc = BEAT_numc*((AT_pex*BEAT_rer)/(BEAT_gammaimcdag*BE_pimc))^(-BE_mumc)*BE_imc/(1-BEAT_gammaimc);
 // Demand for bilateral consumption import goods
-BEFI_imc = BEFI_numc*((FI_pex*BEFI_rer)/BE_pimc)^(-BE_mumc)*BE_imc;
+BEFI_imc = BEFI_numc*((FI_pex*BEFI_rer)/(BEFI_gammaimcdag*BE_pimc))^(-BE_mumc)*BE_imc/(1-BEFI_gammaimc);
 // Demand for bilateral consumption import goods
-BEFR_imc = BEFR_numc*((FR_pex*BEFR_rer)/BE_pimc)^(-BE_mumc)*BE_imc;
+BEFR_imc = BEFR_numc*((FR_pex*BEFR_rer)/(BEFR_gammaimcdag*BE_pimc))^(-BE_mumc)*BE_imc/(1-BEFR_gammaimc);
 // Demand for bilateral consumption import goods
-BEGR_imc = BEGR_numc*((GR_pex*BEGR_rer)/BE_pimc)^(-BE_mumc)*BE_imc;
+BEGR_imc = BEGR_numc*((GR_pex*BEGR_rer)/(BEGR_gammaimcdag*BE_pimc))^(-BE_mumc)*BE_imc/(1-BEGR_gammaimc);
 // Demand for bilateral consumption import goods
-BEIT_imc = BEIT_numc*((IT_pex*BEIT_rer)/BE_pimc)^(-BE_mumc)*BE_imc;
+BEIT_imc = BEIT_numc*((IT_pex*BEIT_rer)/(BEIT_gammaimcdag*BE_pimc))^(-BE_mumc)*BE_imc/(1-BEIT_gammaimc);
 // Demand for bilateral consumption import goods
-BENL_imc = BENL_numc*((NL_pex*BENL_rer)/BE_pimc)^(-BE_mumc)*BE_imc;
+BENL_imc = BENL_numc*((NL_pex*BENL_rer)/(BENL_gammaimcdag*BE_pimc))^(-BE_mumc)*BE_imc/(1-BENL_gammaimc);
 // Demand for bilateral consumption import goods
-BEPT_imc = BEPT_numc*((PT_pex*BEPT_rer)/BE_pimc)^(-BE_mumc)*BE_imc;
+BEPT_imc = BEPT_numc*((PT_pex*BEPT_rer)/(BEPT_gammaimcdag*BE_pimc))^(-BE_mumc)*BE_imc/(1-BEPT_gammaimc);
 // Demand for bilateral consumption import goods
-BEDE_imc = BEDE_numc*((DE_pex*BEDE_rer)/BE_pimc)^(-BE_mumc)*BE_imc;
+BEDE_imc = BEDE_numc*((DE_pex*BEDE_rer)/(BEDE_gammaimcdag*BE_pimc))^(-BE_mumc)*BE_imc/(1-BEDE_gammaimc);
 // Demand for bilateral consumption import goods
-BERU_imc = BERU_numc*((RU_pex*BERU_rer)/BE_pimc)^(-BE_mumc)*BE_imc;
+BERU_imc = BERU_numc*((RU_pex*BERU_rer)/(BERU_gammaimcdag*BE_pimc))^(-BE_mumc)*BE_imc/(1-BERU_gammaimc);
 // Demand for bilateral consumption import goods
-BERW_imc = BERW_numc*((RW_pex*BERW_rer)/BE_pimc)^(-BE_mumc)*BE_imc;
+BERW_imc = BERW_numc*((RW_pex*BERW_rer)/(BERW_gammaimcdag*BE_pimc))^(-BE_mumc)*BE_imc/(1-BERW_gammaimc);
 // Demand for bilateral consumption import goods
-BEUS_imc = BEUS_numc*((US_pex*BEUS_rer)/BE_pimc)^(-BE_mumc)*BE_imc;
+BEUS_imc = BEUS_numc*((US_pex*BEUS_rer)/(BEUS_gammaimcdag*BE_pimc))^(-BE_mumc)*BE_imc/(1-BEUS_gammaimc);
 BERA_imc = (1
 -BEAT_numc
 -BEES_numc
@@ -20691,21 +20564,21 @@ BERA_imc = (1
 -BERU_numc
 -BERW_numc
 -BEUS_numc
-)*((RA_pex*BERA_rer)/BE_pimc)^(-BE_mumc)*BE_imc;
+)*((RA_pex*BERA_rer)/(BERA_gammaimcdag*BE_pimc))^(-BE_mumc)*BE_imc/(1-BERA_gammaimc);
 // Price of the consumption good (import)
 BE_pimc^(1-BE_mumc) =
-+BEAT_numc * (AT_pex*BEAT_rer)^(1-BE_mumc)
-+BEES_numc * (ES_pex*BEES_rer)^(1-BE_mumc)
-+BEFI_numc * (FI_pex*BEFI_rer)^(1-BE_mumc)
-+BEFR_numc * (FR_pex*BEFR_rer)^(1-BE_mumc)
-+BEGR_numc * (GR_pex*BEGR_rer)^(1-BE_mumc)
-+BEIT_numc * (IT_pex*BEIT_rer)^(1-BE_mumc)
-+BENL_numc * (NL_pex*BENL_rer)^(1-BE_mumc)
-+BEPT_numc * (PT_pex*BEPT_rer)^(1-BE_mumc)
-+BEDE_numc * (DE_pex*BEDE_rer)^(1-BE_mumc)
-+BERU_numc * (RU_pex*BERU_rer)^(1-BE_mumc)
-+BERW_numc * (RW_pex*BERW_rer)^(1-BE_mumc)
-+BEUS_numc * (US_pex*BEUS_rer)^(1-BE_mumc)
++BEAT_numc *((AT_pex*BEAT_rer)/BEAT_gammaimcdag)^(1-BE_mumc)
++BEES_numc *((ES_pex*BEES_rer)/BEES_gammaimcdag)^(1-BE_mumc)
++BEFI_numc *((FI_pex*BEFI_rer)/BEFI_gammaimcdag)^(1-BE_mumc)
++BEFR_numc *((FR_pex*BEFR_rer)/BEFR_gammaimcdag)^(1-BE_mumc)
++BEGR_numc *((GR_pex*BEGR_rer)/BEGR_gammaimcdag)^(1-BE_mumc)
++BEIT_numc *((IT_pex*BEIT_rer)/BEIT_gammaimcdag)^(1-BE_mumc)
++BENL_numc *((NL_pex*BENL_rer)/BENL_gammaimcdag)^(1-BE_mumc)
++BEPT_numc *((PT_pex*BEPT_rer)/BEPT_gammaimcdag)^(1-BE_mumc)
++BEDE_numc *((DE_pex*BEDE_rer)/BEDE_gammaimcdag)^(1-BE_mumc)
++BERU_numc *((RU_pex*BERU_rer)/BERU_gammaimcdag)^(1-BE_mumc)
++BERW_numc *((RW_pex*BERW_rer)/BERW_gammaimcdag)^(1-BE_mumc)
++BEUS_numc *((US_pex*BEUS_rer)/BEUS_gammaimcdag)^(1-BE_mumc)
 +(1
 -BEAT_numc
 -BEES_numc
@@ -20719,23 +20592,23 @@ BE_pimc^(1-BE_mumc) =
 -BERU_numc
 -BERW_numc
 -BEUS_numc
-)*(RA_pex*BERA_rer)^(1-BE_mumc);
+)*((RA_pex*BERA_rer)/BERA_gammaimcdag)^(1-BE_mumc);
 // Private consumption good (import) inflation
 BE_piimc = BE_pimc/BE_pimc(-1)*BE_pic;
 // Private consumption good (import)
 BE_imi^((BE_mumi-1)/BE_mumi) =
-+BEAT_numi ^(1/BE_mumi)*BEAT_imi^(1-1/BE_mumi)
-+BEES_numi ^(1/BE_mumi)*BEES_imi^(1-1/BE_mumi)
-+BEFI_numi ^(1/BE_mumi)*BEFI_imi^(1-1/BE_mumi)
-+BEFR_numi ^(1/BE_mumi)*BEFR_imi^(1-1/BE_mumi)
-+BEGR_numi ^(1/BE_mumi)*BEGR_imi^(1-1/BE_mumi)
-+BEIT_numi ^(1/BE_mumi)*BEIT_imi^(1-1/BE_mumi)
-+BENL_numi ^(1/BE_mumi)*BENL_imi^(1-1/BE_mumi)
-+BEPT_numi ^(1/BE_mumi)*BEPT_imi^(1-1/BE_mumi)
-+BEDE_numi ^(1/BE_mumi)*BEDE_imi^(1-1/BE_mumi)
-+BERU_numi ^(1/BE_mumi)*BERU_imi^(1-1/BE_mumi)
-+BERW_numi ^(1/BE_mumi)*BERW_imi^(1-1/BE_mumi)
-+BEUS_numi ^(1/BE_mumi)*BEUS_imi^(1-1/BE_mumi)
++BEAT_numi ^(1/BE_mumi)*((1-BEAT_gammaimi)*BEAT_imi)^(1-1/BE_mumi)
++BEES_numi ^(1/BE_mumi)*((1-BEES_gammaimi)*BEES_imi)^(1-1/BE_mumi)
++BEFI_numi ^(1/BE_mumi)*((1-BEFI_gammaimi)*BEFI_imi)^(1-1/BE_mumi)
++BEFR_numi ^(1/BE_mumi)*((1-BEFR_gammaimi)*BEFR_imi)^(1-1/BE_mumi)
++BEGR_numi ^(1/BE_mumi)*((1-BEGR_gammaimi)*BEGR_imi)^(1-1/BE_mumi)
++BEIT_numi ^(1/BE_mumi)*((1-BEIT_gammaimi)*BEIT_imi)^(1-1/BE_mumi)
++BENL_numi ^(1/BE_mumi)*((1-BENL_gammaimi)*BENL_imi)^(1-1/BE_mumi)
++BEPT_numi ^(1/BE_mumi)*((1-BEPT_gammaimi)*BEPT_imi)^(1-1/BE_mumi)
++BEDE_numi ^(1/BE_mumi)*((1-BEDE_gammaimi)*BEDE_imi)^(1-1/BE_mumi)
++BERU_numi ^(1/BE_mumi)*((1-BERU_gammaimi)*BERU_imi)^(1-1/BE_mumi)
++BERW_numi ^(1/BE_mumi)*((1-BERW_gammaimi)*BERW_imi)^(1-1/BE_mumi)
++BEUS_numi ^(1/BE_mumi)*((1-BEUS_gammaimi)*BEUS_imi)^(1-1/BE_mumi)
 +(1
 -BEAT_numi
 -BEES_numi
@@ -20749,29 +20622,29 @@ BE_imi^((BE_mumi-1)/BE_mumi) =
 -BERU_numi
 -BERW_numi
 -BEUS_numi
-)^(1/BE_mumi)*BERA_imi^(1-1/BE_mumi);
+)^(1/BE_mumi)*((1-BERA_gammaimi)*BERA_imi)^(1-1/BE_mumi);
 // Demand for bilateral consumption import goods
-BEAT_imi = BEAT_numi*((AT_pex*BEAT_rer)/BE_pimi)^(-BE_mumi)*BE_imi;
+BEAT_imi = BEAT_numi*((AT_pex*BEAT_rer)/(BEAT_gammaimidag*BE_pimi))^(-BE_mumi)*BE_imi/(1-BEAT_gammaimi);
 // Demand for bilateral consumption import goods
-BEFI_imi = BEFI_numi*((FI_pex*BEFI_rer)/BE_pimi)^(-BE_mumi)*BE_imi;
+BEFI_imi = BEFI_numi*((FI_pex*BEFI_rer)/(BEFI_gammaimidag*BE_pimi))^(-BE_mumi)*BE_imi/(1-BEFI_gammaimi);
 // Demand for bilateral consumption import goods
-BEFR_imi = BEFR_numi*((FR_pex*BEFR_rer)/BE_pimi)^(-BE_mumi)*BE_imi;
+BEFR_imi = BEFR_numi*((FR_pex*BEFR_rer)/(BEFR_gammaimidag*BE_pimi))^(-BE_mumi)*BE_imi/(1-BEFR_gammaimi);
 // Demand for bilateral consumption import goods
-BEGR_imi = BEGR_numi*((GR_pex*BEGR_rer)/BE_pimi)^(-BE_mumi)*BE_imi;
+BEGR_imi = BEGR_numi*((GR_pex*BEGR_rer)/(BEGR_gammaimidag*BE_pimi))^(-BE_mumi)*BE_imi/(1-BEGR_gammaimi);
 // Demand for bilateral consumption import goods
-BEIT_imi = BEIT_numi*((IT_pex*BEIT_rer)/BE_pimi)^(-BE_mumi)*BE_imi;
+BEIT_imi = BEIT_numi*((IT_pex*BEIT_rer)/(BEIT_gammaimidag*BE_pimi))^(-BE_mumi)*BE_imi/(1-BEIT_gammaimi);
 // Demand for bilateral consumption import goods
-BENL_imi = BENL_numi*((NL_pex*BENL_rer)/BE_pimi)^(-BE_mumi)*BE_imi;
+BENL_imi = BENL_numi*((NL_pex*BENL_rer)/(BENL_gammaimidag*BE_pimi))^(-BE_mumi)*BE_imi/(1-BENL_gammaimi);
 // Demand for bilateral consumption import goods
-BEPT_imi = BEPT_numi*((PT_pex*BEPT_rer)/BE_pimi)^(-BE_mumi)*BE_imi;
+BEPT_imi = BEPT_numi*((PT_pex*BEPT_rer)/(BEPT_gammaimidag*BE_pimi))^(-BE_mumi)*BE_imi/(1-BEPT_gammaimi);
 // Demand for bilateral consumption import goods
-BEDE_imi = BEDE_numi*((DE_pex*BEDE_rer)/BE_pimi)^(-BE_mumi)*BE_imi;
+BEDE_imi = BEDE_numi*((DE_pex*BEDE_rer)/(BEDE_gammaimidag*BE_pimi))^(-BE_mumi)*BE_imi/(1-BEDE_gammaimi);
 // Demand for bilateral consumption import goods
-BERU_imi = BERU_numi*((RU_pex*BERU_rer)/BE_pimi)^(-BE_mumi)*BE_imi;
+BERU_imi = BERU_numi*((RU_pex*BERU_rer)/(BERU_gammaimidag*BE_pimi))^(-BE_mumi)*BE_imi/(1-BERU_gammaimi);
 // Demand for bilateral consumption import goods
-BERW_imi = BERW_numi*((RW_pex*BERW_rer)/BE_pimi)^(-BE_mumi)*BE_imi;
+BERW_imi = BERW_numi*((RW_pex*BERW_rer)/(BERW_gammaimidag*BE_pimi))^(-BE_mumi)*BE_imi/(1-BERW_gammaimi);
 // Demand for bilateral consumption import goods
-BEUS_imi = BEUS_numi*((US_pex*BEUS_rer)/BE_pimi)^(-BE_mumi)*BE_imi;
+BEUS_imi = BEUS_numi*((US_pex*BEUS_rer)/(BEUS_gammaimidag*BE_pimi))^(-BE_mumi)*BE_imi/(1-BEUS_gammaimi);
 BERA_imi = (1
 -BEAT_numi
 -BEES_numi
@@ -20785,21 +20658,21 @@ BERA_imi = (1
 -BERU_numi
 -BERW_numi
 -BEUS_numi
-)*((RA_pex*BERA_rer)/BE_pimi)^(-BE_mumi)*BE_imi;
+)*((RA_pex*BERA_rer)/(BERA_gammaimidag*BE_pimi))^(-BE_mumi)*BE_imi/(1-BERA_gammaimi);
 // Price of the consumption good (import)
 BE_pimi^(1-BE_mumi) =
-+BEAT_numi * (AT_pex*BEAT_rer)^(1-BE_mumi)
-+BEES_numi * (ES_pex*BEES_rer)^(1-BE_mumi)
-+BEFI_numi * (FI_pex*BEFI_rer)^(1-BE_mumi)
-+BEFR_numi * (FR_pex*BEFR_rer)^(1-BE_mumi)
-+BEGR_numi * (GR_pex*BEGR_rer)^(1-BE_mumi)
-+BEIT_numi * (IT_pex*BEIT_rer)^(1-BE_mumi)
-+BENL_numi * (NL_pex*BENL_rer)^(1-BE_mumi)
-+BEPT_numi * (PT_pex*BEPT_rer)^(1-BE_mumi)
-+BEDE_numi * (DE_pex*BEDE_rer)^(1-BE_mumi)
-+BERU_numi * (RU_pex*BERU_rer)^(1-BE_mumi)
-+BERW_numi * (RW_pex*BERW_rer)^(1-BE_mumi)
-+BEUS_numi * (US_pex*BEUS_rer)^(1-BE_mumi)
++BEAT_numi *((AT_pex*BEAT_rer)/BEAT_gammaimidag)^(1-BE_mumi)
++BEES_numi *((ES_pex*BEES_rer)/BEES_gammaimidag)^(1-BE_mumi)
++BEFI_numi *((FI_pex*BEFI_rer)/BEFI_gammaimidag)^(1-BE_mumi)
++BEFR_numi *((FR_pex*BEFR_rer)/BEFR_gammaimidag)^(1-BE_mumi)
++BEGR_numi *((GR_pex*BEGR_rer)/BEGR_gammaimidag)^(1-BE_mumi)
++BEIT_numi *((IT_pex*BEIT_rer)/BEIT_gammaimidag)^(1-BE_mumi)
++BENL_numi *((NL_pex*BENL_rer)/BENL_gammaimidag)^(1-BE_mumi)
++BEPT_numi *((PT_pex*BEPT_rer)/BEPT_gammaimidag)^(1-BE_mumi)
++BEDE_numi *((DE_pex*BEDE_rer)/BEDE_gammaimidag)^(1-BE_mumi)
++BERU_numi *((RU_pex*BERU_rer)/BERU_gammaimidag)^(1-BE_mumi)
++BERW_numi *((RW_pex*BERW_rer)/BERW_gammaimidag)^(1-BE_mumi)
++BEUS_numi *((US_pex*BEUS_rer)/BEUS_gammaimidag)^(1-BE_mumi)
 +(1
 -BEAT_numi
 -BEES_numi
@@ -20813,23 +20686,23 @@ BE_pimi^(1-BE_mumi) =
 -BERU_numi
 -BERW_numi
 -BEUS_numi
-)*(RA_pex*BERA_rer)^(1-BE_mumi);
+)*((RA_pex*BERA_rer)/BERA_gammaimidag)^(1-BE_mumi);
 // Private consumption good (import) inflation
 BE_piimi = BE_pimi/BE_pimi(-1)*BE_pic;
 // Private consumption good (import)
 BE_imcg^((BE_mumcg-1)/BE_mumcg) =
-+BEAT_numcg ^(1/BE_mumcg)*BEAT_imcg^(1-1/BE_mumcg)
-+BEES_numcg ^(1/BE_mumcg)*BEES_imcg^(1-1/BE_mumcg)
-+BEFI_numcg ^(1/BE_mumcg)*BEFI_imcg^(1-1/BE_mumcg)
-+BEFR_numcg ^(1/BE_mumcg)*BEFR_imcg^(1-1/BE_mumcg)
-+BEGR_numcg ^(1/BE_mumcg)*BEGR_imcg^(1-1/BE_mumcg)
-+BEIT_numcg ^(1/BE_mumcg)*BEIT_imcg^(1-1/BE_mumcg)
-+BENL_numcg ^(1/BE_mumcg)*BENL_imcg^(1-1/BE_mumcg)
-+BEPT_numcg ^(1/BE_mumcg)*BEPT_imcg^(1-1/BE_mumcg)
-+BEDE_numcg ^(1/BE_mumcg)*BEDE_imcg^(1-1/BE_mumcg)
-+BERU_numcg ^(1/BE_mumcg)*BERU_imcg^(1-1/BE_mumcg)
-+BERW_numcg ^(1/BE_mumcg)*BERW_imcg^(1-1/BE_mumcg)
-+BEUS_numcg ^(1/BE_mumcg)*BEUS_imcg^(1-1/BE_mumcg)
++BEAT_numcg ^(1/BE_mumcg)*((1-BEAT_gammaimcg)*BEAT_imcg)^(1-1/BE_mumcg)
++BEES_numcg ^(1/BE_mumcg)*((1-BEES_gammaimcg)*BEES_imcg)^(1-1/BE_mumcg)
++BEFI_numcg ^(1/BE_mumcg)*((1-BEFI_gammaimcg)*BEFI_imcg)^(1-1/BE_mumcg)
++BEFR_numcg ^(1/BE_mumcg)*((1-BEFR_gammaimcg)*BEFR_imcg)^(1-1/BE_mumcg)
++BEGR_numcg ^(1/BE_mumcg)*((1-BEGR_gammaimcg)*BEGR_imcg)^(1-1/BE_mumcg)
++BEIT_numcg ^(1/BE_mumcg)*((1-BEIT_gammaimcg)*BEIT_imcg)^(1-1/BE_mumcg)
++BENL_numcg ^(1/BE_mumcg)*((1-BENL_gammaimcg)*BENL_imcg)^(1-1/BE_mumcg)
++BEPT_numcg ^(1/BE_mumcg)*((1-BEPT_gammaimcg)*BEPT_imcg)^(1-1/BE_mumcg)
++BEDE_numcg ^(1/BE_mumcg)*((1-BEDE_gammaimcg)*BEDE_imcg)^(1-1/BE_mumcg)
++BERU_numcg ^(1/BE_mumcg)*((1-BERU_gammaimcg)*BERU_imcg)^(1-1/BE_mumcg)
++BERW_numcg ^(1/BE_mumcg)*((1-BERW_gammaimcg)*BERW_imcg)^(1-1/BE_mumcg)
++BEUS_numcg ^(1/BE_mumcg)*((1-BEUS_gammaimcg)*BEUS_imcg)^(1-1/BE_mumcg)
 +(1
 -BEAT_numcg
 -BEES_numcg
@@ -20843,29 +20716,29 @@ BE_imcg^((BE_mumcg-1)/BE_mumcg) =
 -BERU_numcg
 -BERW_numcg
 -BEUS_numcg
-)^(1/BE_mumcg)*BERA_imcg^(1-1/BE_mumcg);
+)^(1/BE_mumcg)*((1-BERA_gammaimcg)*BERA_imcg)^(1-1/BE_mumcg);
 // Demand for bilateral consumption import goods
-BEAT_imcg = BEAT_numcg*((AT_pex*BEAT_rer)/BE_pimcg)^(-BE_mumcg)*BE_imcg;
+BEAT_imcg = BEAT_numcg*((AT_pex*BEAT_rer)/(BEAT_gammaimcgdag*BE_pimcg))^(-BE_mumcg)*BE_imcg/(1-BEAT_gammaimcg);
 // Demand for bilateral consumption import goods
-BEFI_imcg = BEFI_numcg*((FI_pex*BEFI_rer)/BE_pimcg)^(-BE_mumcg)*BE_imcg;
+BEFI_imcg = BEFI_numcg*((FI_pex*BEFI_rer)/(BEFI_gammaimcgdag*BE_pimcg))^(-BE_mumcg)*BE_imcg/(1-BEFI_gammaimcg);
 // Demand for bilateral consumption import goods
-BEFR_imcg = BEFR_numcg*((FR_pex*BEFR_rer)/BE_pimcg)^(-BE_mumcg)*BE_imcg;
+BEFR_imcg = BEFR_numcg*((FR_pex*BEFR_rer)/(BEFR_gammaimcgdag*BE_pimcg))^(-BE_mumcg)*BE_imcg/(1-BEFR_gammaimcg);
 // Demand for bilateral consumption import goods
-BEGR_imcg = BEGR_numcg*((GR_pex*BEGR_rer)/BE_pimcg)^(-BE_mumcg)*BE_imcg;
+BEGR_imcg = BEGR_numcg*((GR_pex*BEGR_rer)/(BEGR_gammaimcgdag*BE_pimcg))^(-BE_mumcg)*BE_imcg/(1-BEGR_gammaimcg);
 // Demand for bilateral consumption import goods
-BEIT_imcg = BEIT_numcg*((IT_pex*BEIT_rer)/BE_pimcg)^(-BE_mumcg)*BE_imcg;
+BEIT_imcg = BEIT_numcg*((IT_pex*BEIT_rer)/(BEIT_gammaimcgdag*BE_pimcg))^(-BE_mumcg)*BE_imcg/(1-BEIT_gammaimcg);
 // Demand for bilateral consumption import goods
-BENL_imcg = BENL_numcg*((NL_pex*BENL_rer)/BE_pimcg)^(-BE_mumcg)*BE_imcg;
+BENL_imcg = BENL_numcg*((NL_pex*BENL_rer)/(BENL_gammaimcgdag*BE_pimcg))^(-BE_mumcg)*BE_imcg/(1-BENL_gammaimcg);
 // Demand for bilateral consumption import goods
-BEPT_imcg = BEPT_numcg*((PT_pex*BEPT_rer)/BE_pimcg)^(-BE_mumcg)*BE_imcg;
+BEPT_imcg = BEPT_numcg*((PT_pex*BEPT_rer)/(BEPT_gammaimcgdag*BE_pimcg))^(-BE_mumcg)*BE_imcg/(1-BEPT_gammaimcg);
 // Demand for bilateral consumption import goods
-BEDE_imcg = BEDE_numcg*((DE_pex*BEDE_rer)/BE_pimcg)^(-BE_mumcg)*BE_imcg;
+BEDE_imcg = BEDE_numcg*((DE_pex*BEDE_rer)/(BEDE_gammaimcgdag*BE_pimcg))^(-BE_mumcg)*BE_imcg/(1-BEDE_gammaimcg);
 // Demand for bilateral consumption import goods
-BERU_imcg = BERU_numcg*((RU_pex*BERU_rer)/BE_pimcg)^(-BE_mumcg)*BE_imcg;
+BERU_imcg = BERU_numcg*((RU_pex*BERU_rer)/(BERU_gammaimcgdag*BE_pimcg))^(-BE_mumcg)*BE_imcg/(1-BERU_gammaimcg);
 // Demand for bilateral consumption import goods
-BERW_imcg = BERW_numcg*((RW_pex*BERW_rer)/BE_pimcg)^(-BE_mumcg)*BE_imcg;
+BERW_imcg = BERW_numcg*((RW_pex*BERW_rer)/(BERW_gammaimcgdag*BE_pimcg))^(-BE_mumcg)*BE_imcg/(1-BERW_gammaimcg);
 // Demand for bilateral consumption import goods
-BEUS_imcg = BEUS_numcg*((US_pex*BEUS_rer)/BE_pimcg)^(-BE_mumcg)*BE_imcg;
+BEUS_imcg = BEUS_numcg*((US_pex*BEUS_rer)/(BEUS_gammaimcgdag*BE_pimcg))^(-BE_mumcg)*BE_imcg/(1-BEUS_gammaimcg);
 BERA_imcg = (1
 -BEAT_numcg
 -BEES_numcg
@@ -20879,21 +20752,21 @@ BERA_imcg = (1
 -BERU_numcg
 -BERW_numcg
 -BEUS_numcg
-)*((RA_pex*BERA_rer)/BE_pimcg)^(-BE_mumcg)*BE_imcg;
+)*((RA_pex*BERA_rer)/(BERA_gammaimcgdag*BE_pimcg))^(-BE_mumcg)*BE_imcg/(1-BERA_gammaimcg);
 // Price of the consumption good (import)
 BE_pimcg^(1-BE_mumcg) =
-+BEAT_numcg * (AT_pex*BEAT_rer)^(1-BE_mumcg)
-+BEES_numcg * (ES_pex*BEES_rer)^(1-BE_mumcg)
-+BEFI_numcg * (FI_pex*BEFI_rer)^(1-BE_mumcg)
-+BEFR_numcg * (FR_pex*BEFR_rer)^(1-BE_mumcg)
-+BEGR_numcg * (GR_pex*BEGR_rer)^(1-BE_mumcg)
-+BEIT_numcg * (IT_pex*BEIT_rer)^(1-BE_mumcg)
-+BENL_numcg * (NL_pex*BENL_rer)^(1-BE_mumcg)
-+BEPT_numcg * (PT_pex*BEPT_rer)^(1-BE_mumcg)
-+BEDE_numcg * (DE_pex*BEDE_rer)^(1-BE_mumcg)
-+BERU_numcg * (RU_pex*BERU_rer)^(1-BE_mumcg)
-+BERW_numcg * (RW_pex*BERW_rer)^(1-BE_mumcg)
-+BEUS_numcg * (US_pex*BEUS_rer)^(1-BE_mumcg)
++BEAT_numcg *((AT_pex*BEAT_rer)/BEAT_gammaimcgdag)^(1-BE_mumcg)
++BEES_numcg *((ES_pex*BEES_rer)/BEES_gammaimcgdag)^(1-BE_mumcg)
++BEFI_numcg *((FI_pex*BEFI_rer)/BEFI_gammaimcgdag)^(1-BE_mumcg)
++BEFR_numcg *((FR_pex*BEFR_rer)/BEFR_gammaimcgdag)^(1-BE_mumcg)
++BEGR_numcg *((GR_pex*BEGR_rer)/BEGR_gammaimcgdag)^(1-BE_mumcg)
++BEIT_numcg *((IT_pex*BEIT_rer)/BEIT_gammaimcgdag)^(1-BE_mumcg)
++BENL_numcg *((NL_pex*BENL_rer)/BENL_gammaimcgdag)^(1-BE_mumcg)
++BEPT_numcg *((PT_pex*BEPT_rer)/BEPT_gammaimcgdag)^(1-BE_mumcg)
++BEDE_numcg *((DE_pex*BEDE_rer)/BEDE_gammaimcgdag)^(1-BE_mumcg)
++BERU_numcg *((RU_pex*BERU_rer)/BERU_gammaimcgdag)^(1-BE_mumcg)
++BERW_numcg *((RW_pex*BERW_rer)/BERW_gammaimcgdag)^(1-BE_mumcg)
++BEUS_numcg *((US_pex*BEUS_rer)/BEUS_gammaimcgdag)^(1-BE_mumcg)
 +(1
 -BEAT_numcg
 -BEES_numcg
@@ -20907,23 +20780,23 @@ BE_pimcg^(1-BE_mumcg) =
 -BERU_numcg
 -BERW_numcg
 -BEUS_numcg
-)*(RA_pex*BERA_rer)^(1-BE_mumcg);
+)*((RA_pex*BERA_rer)/BERA_gammaimcgdag)^(1-BE_mumcg);
 // Private consumption good (import) inflation
 BE_piimcg = BE_pimcg/BE_pimcg(-1)*BE_pic;
 // Private consumption good (import)
 BE_imig^((BE_mumig-1)/BE_mumig) =
-+BEAT_numig ^(1/BE_mumig)*BEAT_imig^(1-1/BE_mumig)
-+BEES_numig ^(1/BE_mumig)*BEES_imig^(1-1/BE_mumig)
-+BEFI_numig ^(1/BE_mumig)*BEFI_imig^(1-1/BE_mumig)
-+BEFR_numig ^(1/BE_mumig)*BEFR_imig^(1-1/BE_mumig)
-+BEGR_numig ^(1/BE_mumig)*BEGR_imig^(1-1/BE_mumig)
-+BEIT_numig ^(1/BE_mumig)*BEIT_imig^(1-1/BE_mumig)
-+BENL_numig ^(1/BE_mumig)*BENL_imig^(1-1/BE_mumig)
-+BEPT_numig ^(1/BE_mumig)*BEPT_imig^(1-1/BE_mumig)
-+BEDE_numig ^(1/BE_mumig)*BEDE_imig^(1-1/BE_mumig)
-+BERU_numig ^(1/BE_mumig)*BERU_imig^(1-1/BE_mumig)
-+BERW_numig ^(1/BE_mumig)*BERW_imig^(1-1/BE_mumig)
-+BEUS_numig ^(1/BE_mumig)*BEUS_imig^(1-1/BE_mumig)
++BEAT_numig ^(1/BE_mumig)*((1-BEAT_gammaimig)*BEAT_imig)^(1-1/BE_mumig)
++BEES_numig ^(1/BE_mumig)*((1-BEES_gammaimig)*BEES_imig)^(1-1/BE_mumig)
++BEFI_numig ^(1/BE_mumig)*((1-BEFI_gammaimig)*BEFI_imig)^(1-1/BE_mumig)
++BEFR_numig ^(1/BE_mumig)*((1-BEFR_gammaimig)*BEFR_imig)^(1-1/BE_mumig)
++BEGR_numig ^(1/BE_mumig)*((1-BEGR_gammaimig)*BEGR_imig)^(1-1/BE_mumig)
++BEIT_numig ^(1/BE_mumig)*((1-BEIT_gammaimig)*BEIT_imig)^(1-1/BE_mumig)
++BENL_numig ^(1/BE_mumig)*((1-BENL_gammaimig)*BENL_imig)^(1-1/BE_mumig)
++BEPT_numig ^(1/BE_mumig)*((1-BEPT_gammaimig)*BEPT_imig)^(1-1/BE_mumig)
++BEDE_numig ^(1/BE_mumig)*((1-BEDE_gammaimig)*BEDE_imig)^(1-1/BE_mumig)
++BERU_numig ^(1/BE_mumig)*((1-BERU_gammaimig)*BERU_imig)^(1-1/BE_mumig)
++BERW_numig ^(1/BE_mumig)*((1-BERW_gammaimig)*BERW_imig)^(1-1/BE_mumig)
++BEUS_numig ^(1/BE_mumig)*((1-BEUS_gammaimig)*BEUS_imig)^(1-1/BE_mumig)
 +(1
 -BEAT_numig
 -BEES_numig
@@ -20937,29 +20810,29 @@ BE_imig^((BE_mumig-1)/BE_mumig) =
 -BERU_numig
 -BERW_numig
 -BEUS_numig
-)^(1/BE_mumig)*BERA_imig^(1-1/BE_mumig);
+)^(1/BE_mumig)*((1-BERA_gammaimig)*BERA_imig)^(1-1/BE_mumig);
 // Demand for bilateral consumption import goods
-BEAT_imig = BEAT_numig*((AT_pex*BEAT_rer)/BE_pimig)^(-BE_mumig)*BE_imig;
+BEAT_imig = BEAT_numig*((AT_pex*BEAT_rer)/(BEAT_gammaimigdag*BE_pimig))^(-BE_mumig)*BE_imig/(1-BEAT_gammaimig);
 // Demand for bilateral consumption import goods
-BEFI_imig = BEFI_numig*((FI_pex*BEFI_rer)/BE_pimig)^(-BE_mumig)*BE_imig;
+BEFI_imig = BEFI_numig*((FI_pex*BEFI_rer)/(BEFI_gammaimigdag*BE_pimig))^(-BE_mumig)*BE_imig/(1-BEFI_gammaimig);
 // Demand for bilateral consumption import goods
-BEFR_imig = BEFR_numig*((FR_pex*BEFR_rer)/BE_pimig)^(-BE_mumig)*BE_imig;
+BEFR_imig = BEFR_numig*((FR_pex*BEFR_rer)/(BEFR_gammaimigdag*BE_pimig))^(-BE_mumig)*BE_imig/(1-BEFR_gammaimig);
 // Demand for bilateral consumption import goods
-BEGR_imig = BEGR_numig*((GR_pex*BEGR_rer)/BE_pimig)^(-BE_mumig)*BE_imig;
+BEGR_imig = BEGR_numig*((GR_pex*BEGR_rer)/(BEGR_gammaimigdag*BE_pimig))^(-BE_mumig)*BE_imig/(1-BEGR_gammaimig);
 // Demand for bilateral consumption import goods
-BEIT_imig = BEIT_numig*((IT_pex*BEIT_rer)/BE_pimig)^(-BE_mumig)*BE_imig;
+BEIT_imig = BEIT_numig*((IT_pex*BEIT_rer)/(BEIT_gammaimigdag*BE_pimig))^(-BE_mumig)*BE_imig/(1-BEIT_gammaimig);
 // Demand for bilateral consumption import goods
-BENL_imig = BENL_numig*((NL_pex*BENL_rer)/BE_pimig)^(-BE_mumig)*BE_imig;
+BENL_imig = BENL_numig*((NL_pex*BENL_rer)/(BENL_gammaimigdag*BE_pimig))^(-BE_mumig)*BE_imig/(1-BENL_gammaimig);
 // Demand for bilateral consumption import goods
-BEPT_imig = BEPT_numig*((PT_pex*BEPT_rer)/BE_pimig)^(-BE_mumig)*BE_imig;
+BEPT_imig = BEPT_numig*((PT_pex*BEPT_rer)/(BEPT_gammaimigdag*BE_pimig))^(-BE_mumig)*BE_imig/(1-BEPT_gammaimig);
 // Demand for bilateral consumption import goods
-BEDE_imig = BEDE_numig*((DE_pex*BEDE_rer)/BE_pimig)^(-BE_mumig)*BE_imig;
+BEDE_imig = BEDE_numig*((DE_pex*BEDE_rer)/(BEDE_gammaimigdag*BE_pimig))^(-BE_mumig)*BE_imig/(1-BEDE_gammaimig);
 // Demand for bilateral consumption import goods
-BERU_imig = BERU_numig*((RU_pex*BERU_rer)/BE_pimig)^(-BE_mumig)*BE_imig;
+BERU_imig = BERU_numig*((RU_pex*BERU_rer)/(BERU_gammaimigdag*BE_pimig))^(-BE_mumig)*BE_imig/(1-BERU_gammaimig);
 // Demand for bilateral consumption import goods
-BERW_imig = BERW_numig*((RW_pex*BERW_rer)/BE_pimig)^(-BE_mumig)*BE_imig;
+BERW_imig = BERW_numig*((RW_pex*BERW_rer)/(BERW_gammaimigdag*BE_pimig))^(-BE_mumig)*BE_imig/(1-BERW_gammaimig);
 // Demand for bilateral consumption import goods
-BEUS_imig = BEUS_numig*((US_pex*BEUS_rer)/BE_pimig)^(-BE_mumig)*BE_imig;
+BEUS_imig = BEUS_numig*((US_pex*BEUS_rer)/(BEUS_gammaimigdag*BE_pimig))^(-BE_mumig)*BE_imig/(1-BEUS_gammaimig);
 BERA_imig = (1
 -BEAT_numig
 -BEES_numig
@@ -20973,21 +20846,21 @@ BERA_imig = (1
 -BERU_numig
 -BERW_numig
 -BEUS_numig
-)*((RA_pex*BERA_rer)/BE_pimig)^(-BE_mumig)*BE_imig;
+)*((RA_pex*BERA_rer)/(BERA_gammaimigdag*BE_pimig))^(-BE_mumig)*BE_imig/(1-BERA_gammaimig);
 // Price of the consumption good (import)
 BE_pimig^(1-BE_mumig) =
-+BEAT_numig * (AT_pex*BEAT_rer)^(1-BE_mumig)
-+BEES_numig * (ES_pex*BEES_rer)^(1-BE_mumig)
-+BEFI_numig * (FI_pex*BEFI_rer)^(1-BE_mumig)
-+BEFR_numig * (FR_pex*BEFR_rer)^(1-BE_mumig)
-+BEGR_numig * (GR_pex*BEGR_rer)^(1-BE_mumig)
-+BEIT_numig * (IT_pex*BEIT_rer)^(1-BE_mumig)
-+BENL_numig * (NL_pex*BENL_rer)^(1-BE_mumig)
-+BEPT_numig * (PT_pex*BEPT_rer)^(1-BE_mumig)
-+BEDE_numig * (DE_pex*BEDE_rer)^(1-BE_mumig)
-+BERU_numig * (RU_pex*BERU_rer)^(1-BE_mumig)
-+BERW_numig * (RW_pex*BERW_rer)^(1-BE_mumig)
-+BEUS_numig * (US_pex*BEUS_rer)^(1-BE_mumig)
++BEAT_numig *((AT_pex*BEAT_rer)/BEAT_gammaimigdag)^(1-BE_mumig)
++BEES_numig *((ES_pex*BEES_rer)/BEES_gammaimigdag)^(1-BE_mumig)
++BEFI_numig *((FI_pex*BEFI_rer)/BEFI_gammaimigdag)^(1-BE_mumig)
++BEFR_numig *((FR_pex*BEFR_rer)/BEFR_gammaimigdag)^(1-BE_mumig)
++BEGR_numig *((GR_pex*BEGR_rer)/BEGR_gammaimigdag)^(1-BE_mumig)
++BEIT_numig *((IT_pex*BEIT_rer)/BEIT_gammaimigdag)^(1-BE_mumig)
++BENL_numig *((NL_pex*BENL_rer)/BENL_gammaimigdag)^(1-BE_mumig)
++BEPT_numig *((PT_pex*BEPT_rer)/BEPT_gammaimigdag)^(1-BE_mumig)
++BEDE_numig *((DE_pex*BEDE_rer)/BEDE_gammaimigdag)^(1-BE_mumig)
++BERU_numig *((RU_pex*BERU_rer)/BERU_gammaimigdag)^(1-BE_mumig)
++BERW_numig *((RW_pex*BERW_rer)/BERW_gammaimigdag)^(1-BE_mumig)
++BEUS_numig *((US_pex*BEUS_rer)/BEUS_gammaimigdag)^(1-BE_mumig)
 +(1
 -BEAT_numig
 -BEES_numig
@@ -21001,7 +20874,7 @@ BE_pimig^(1-BE_mumig) =
 -BERU_numig
 -BERW_numig
 -BEUS_numig
-)*(RA_pex*BERA_rer)^(1-BE_mumig);
+)*((RA_pex*BERA_rer)/BERA_gammaimigdag)^(1-BE_mumig);
 // Private consumption good (import) inflation
 BE_piimig = BE_pimig/BE_pimig(-1)*BE_pic;
 // Private consumption good (import) inflation
@@ -21102,32 +20975,58 @@ BE_pttc^(1-BE_mutc) = (BE_nutc)*BE_pht^(1-BE_mutc)+(1-BE_nutc)*BE_pimc^(1-BE_mut
 1^(1-BE_muc) = (BE_nuc)*BE_pttc^(1-BE_muc)+(1-BE_nuc)*BE_pnt^(1-BE_muc);
 // Demand for domestic intermediate goods
 BE_htc = BE_nutc*(BE_pht/BE_pttc)^(-BE_mutc)*BE_ttc;
-BERA_gammaimc = 0;
-BERA_gammaimcdag = 1;
-BEAT_gammaimc = 0;
-BEAT_gammaimcdag = 1;
-BEES_gammaimc = 0;
-BEES_gammaimcdag = 1;
-BEFI_gammaimc = 0;
-BEFI_gammaimcdag = 1;
-BEFR_gammaimc = 0;
-BEFR_gammaimcdag = 1;
-BEGR_gammaimc = 0;
-BEGR_gammaimcdag = 1;
-BEIT_gammaimc = 0;
-BEIT_gammaimcdag = 1;
-BENL_gammaimc = 0;
-BENL_gammaimcdag = 1;
-BEPT_gammaimc = 0;
-BEPT_gammaimcdag = 1;
-BEDE_gammaimc = 0;
-BEDE_gammaimcdag = 1;
-BERU_gammaimc = 0;
-BERU_gammaimcdag = 1;
-BERW_gammaimc = 0;
-BERW_gammaimcdag = 1;
-BEUS_gammaimc = 0;
-BEUS_gammaimcdag = 1;
+// Import adjustment cost
+BERA_gammaimc = BE_gammaimc1/2*((BERA_imc/BE_qc)/(BERA_imc(-1)/BE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BERA_gammaimcdag = 1-BERA_gammaimc-BE_gammaimc1*((BERA_imc/BE_qc)/(BERA_imc(-1)/BE_qc(-1))-1)*(BERA_imc/BE_qc)/(BERA_imc(-1)/BE_qc(-1));
+// Import adjustment cost
+BEAT_gammaimc = BE_gammaimc1/2*((BEAT_imc/BE_qc)/(BEAT_imc(-1)/BE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEAT_gammaimcdag = 1-BEAT_gammaimc-BE_gammaimc1*((BEAT_imc/BE_qc)/(BEAT_imc(-1)/BE_qc(-1))-1)*(BEAT_imc/BE_qc)/(BEAT_imc(-1)/BE_qc(-1));
+// Import adjustment cost
+BEES_gammaimc = BE_gammaimc1/2*((BEES_imc/BE_qc)/(BEES_imc(-1)/BE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEES_gammaimcdag = 1-BEES_gammaimc-BE_gammaimc1*((BEES_imc/BE_qc)/(BEES_imc(-1)/BE_qc(-1))-1)*(BEES_imc/BE_qc)/(BEES_imc(-1)/BE_qc(-1));
+// Import adjustment cost
+BEFI_gammaimc = BE_gammaimc1/2*((BEFI_imc/BE_qc)/(BEFI_imc(-1)/BE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEFI_gammaimcdag = 1-BEFI_gammaimc-BE_gammaimc1*((BEFI_imc/BE_qc)/(BEFI_imc(-1)/BE_qc(-1))-1)*(BEFI_imc/BE_qc)/(BEFI_imc(-1)/BE_qc(-1));
+// Import adjustment cost
+BEFR_gammaimc = BE_gammaimc1/2*((BEFR_imc/BE_qc)/(BEFR_imc(-1)/BE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEFR_gammaimcdag = 1-BEFR_gammaimc-BE_gammaimc1*((BEFR_imc/BE_qc)/(BEFR_imc(-1)/BE_qc(-1))-1)*(BEFR_imc/BE_qc)/(BEFR_imc(-1)/BE_qc(-1));
+// Import adjustment cost
+BEGR_gammaimc = BE_gammaimc1/2*((BEGR_imc/BE_qc)/(BEGR_imc(-1)/BE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEGR_gammaimcdag = 1-BEGR_gammaimc-BE_gammaimc1*((BEGR_imc/BE_qc)/(BEGR_imc(-1)/BE_qc(-1))-1)*(BEGR_imc/BE_qc)/(BEGR_imc(-1)/BE_qc(-1));
+// Import adjustment cost
+BEIT_gammaimc = BE_gammaimc1/2*((BEIT_imc/BE_qc)/(BEIT_imc(-1)/BE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEIT_gammaimcdag = 1-BEIT_gammaimc-BE_gammaimc1*((BEIT_imc/BE_qc)/(BEIT_imc(-1)/BE_qc(-1))-1)*(BEIT_imc/BE_qc)/(BEIT_imc(-1)/BE_qc(-1));
+// Import adjustment cost
+BENL_gammaimc = BE_gammaimc1/2*((BENL_imc/BE_qc)/(BENL_imc(-1)/BE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BENL_gammaimcdag = 1-BENL_gammaimc-BE_gammaimc1*((BENL_imc/BE_qc)/(BENL_imc(-1)/BE_qc(-1))-1)*(BENL_imc/BE_qc)/(BENL_imc(-1)/BE_qc(-1));
+// Import adjustment cost
+BEPT_gammaimc = BE_gammaimc1/2*((BEPT_imc/BE_qc)/(BEPT_imc(-1)/BE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEPT_gammaimcdag = 1-BEPT_gammaimc-BE_gammaimc1*((BEPT_imc/BE_qc)/(BEPT_imc(-1)/BE_qc(-1))-1)*(BEPT_imc/BE_qc)/(BEPT_imc(-1)/BE_qc(-1));
+// Import adjustment cost
+BEDE_gammaimc = BE_gammaimc1/2*((BEDE_imc/BE_qc)/(BEDE_imc(-1)/BE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEDE_gammaimcdag = 1-BEDE_gammaimc-BE_gammaimc1*((BEDE_imc/BE_qc)/(BEDE_imc(-1)/BE_qc(-1))-1)*(BEDE_imc/BE_qc)/(BEDE_imc(-1)/BE_qc(-1));
+// Import adjustment cost
+BERU_gammaimc = BE_gammaimc1/2*((BERU_imc/BE_qc)/(BERU_imc(-1)/BE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BERU_gammaimcdag = 1-BERU_gammaimc-BE_gammaimc1*((BERU_imc/BE_qc)/(BERU_imc(-1)/BE_qc(-1))-1)*(BERU_imc/BE_qc)/(BERU_imc(-1)/BE_qc(-1));
+// Import adjustment cost
+BERW_gammaimc = BE_gammaimc1/2*((BERW_imc/BE_qc)/(BERW_imc(-1)/BE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BERW_gammaimcdag = 1-BERW_gammaimc-BE_gammaimc1*((BERW_imc/BE_qc)/(BERW_imc(-1)/BE_qc(-1))-1)*(BERW_imc/BE_qc)/(BERW_imc(-1)/BE_qc(-1));
+// Import adjustment cost
+BEUS_gammaimc = BE_gammaimc1/2*((BEUS_imc/BE_qc)/(BEUS_imc(-1)/BE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEUS_gammaimcdag = 1-BEUS_gammaimc-BE_gammaimc1*((BEUS_imc/BE_qc)/(BEUS_imc(-1)/BE_qc(-1))-1)*(BEUS_imc/BE_qc)/(BEUS_imc(-1)/BE_qc(-1));
 // Private consumption good (tradable)
 BE_tti^((BE_muti-1)/BE_muti) = (BE_nuti)^(1/BE_muti)*BE_hti^(1-1/BE_muti)+(1-BE_nuti)^(1/BE_muti)*BE_imi^(1-1/BE_muti);
 // Private consumption good  (total)
@@ -21140,35 +21039,60 @@ BE_ptti^(1-BE_muti) = (BE_nuti)*BE_pht^(1-BE_muti)+(1-BE_nuti)*BE_pimi^(1-BE_mut
 BE_pi^(1-BE_mui) = (BE_nui)*BE_ptti^(1-BE_mui)+(1-BE_nui)*BE_pnt^(1-BE_mui);
 // Auxiliary equation for the price of the investment good in steady state
 // this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
-BE_pibar = BE_pi;
 // Demand for domestic intermediate goods
 BE_hti = BE_nuti*(BE_pht/BE_ptti)^(-BE_muti)*BE_tti;
-BERA_gammaimi = 0;
-BERA_gammaimidag = 1;
-BEAT_gammaimi = 0;
-BEAT_gammaimidag = 1;
-BEES_gammaimi = 0;
-BEES_gammaimidag = 1;
-BEFI_gammaimi = 0;
-BEFI_gammaimidag = 1;
-BEFR_gammaimi = 0;
-BEFR_gammaimidag = 1;
-BEGR_gammaimi = 0;
-BEGR_gammaimidag = 1;
-BEIT_gammaimi = 0;
-BEIT_gammaimidag = 1;
-BENL_gammaimi = 0;
-BENL_gammaimidag = 1;
-BEPT_gammaimi = 0;
-BEPT_gammaimidag = 1;
-BEDE_gammaimi = 0;
-BEDE_gammaimidag = 1;
-BERU_gammaimi = 0;
-BERU_gammaimidag = 1;
-BERW_gammaimi = 0;
-BERW_gammaimidag = 1;
-BEUS_gammaimi = 0;
-BEUS_gammaimidag = 1;
+// Import adjustment cost
+BERA_gammaimi = BE_gammaimi1/2*((BERA_imi/BE_qi)/(BERA_imi(-1)/BE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BERA_gammaimidag = 1-BERA_gammaimi-BE_gammaimi1*((BERA_imi/BE_qi)/(BERA_imi(-1)/BE_qi)-1)*((BERA_imi/BE_qi)/(BERA_imi(-1)/BE_qi(-1)));
+// Import adjustment cost
+BEAT_gammaimi = BE_gammaimi1/2*((BEAT_imi/BE_qi)/(BEAT_imi(-1)/BE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEAT_gammaimidag = 1-BEAT_gammaimi-BE_gammaimi1*((BEAT_imi/BE_qi)/(BEAT_imi(-1)/BE_qi)-1)*((BEAT_imi/BE_qi)/(BEAT_imi(-1)/BE_qi(-1)));
+// Import adjustment cost
+BEES_gammaimi = BE_gammaimi1/2*((BEES_imi/BE_qi)/(BEES_imi(-1)/BE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEES_gammaimidag = 1-BEES_gammaimi-BE_gammaimi1*((BEES_imi/BE_qi)/(BEES_imi(-1)/BE_qi)-1)*((BEES_imi/BE_qi)/(BEES_imi(-1)/BE_qi(-1)));
+// Import adjustment cost
+BEFI_gammaimi = BE_gammaimi1/2*((BEFI_imi/BE_qi)/(BEFI_imi(-1)/BE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEFI_gammaimidag = 1-BEFI_gammaimi-BE_gammaimi1*((BEFI_imi/BE_qi)/(BEFI_imi(-1)/BE_qi)-1)*((BEFI_imi/BE_qi)/(BEFI_imi(-1)/BE_qi(-1)));
+// Import adjustment cost
+BEFR_gammaimi = BE_gammaimi1/2*((BEFR_imi/BE_qi)/(BEFR_imi(-1)/BE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEFR_gammaimidag = 1-BEFR_gammaimi-BE_gammaimi1*((BEFR_imi/BE_qi)/(BEFR_imi(-1)/BE_qi)-1)*((BEFR_imi/BE_qi)/(BEFR_imi(-1)/BE_qi(-1)));
+// Import adjustment cost
+BEGR_gammaimi = BE_gammaimi1/2*((BEGR_imi/BE_qi)/(BEGR_imi(-1)/BE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEGR_gammaimidag = 1-BEGR_gammaimi-BE_gammaimi1*((BEGR_imi/BE_qi)/(BEGR_imi(-1)/BE_qi)-1)*((BEGR_imi/BE_qi)/(BEGR_imi(-1)/BE_qi(-1)));
+// Import adjustment cost
+BEIT_gammaimi = BE_gammaimi1/2*((BEIT_imi/BE_qi)/(BEIT_imi(-1)/BE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEIT_gammaimidag = 1-BEIT_gammaimi-BE_gammaimi1*((BEIT_imi/BE_qi)/(BEIT_imi(-1)/BE_qi)-1)*((BEIT_imi/BE_qi)/(BEIT_imi(-1)/BE_qi(-1)));
+// Import adjustment cost
+BENL_gammaimi = BE_gammaimi1/2*((BENL_imi/BE_qi)/(BENL_imi(-1)/BE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BENL_gammaimidag = 1-BENL_gammaimi-BE_gammaimi1*((BENL_imi/BE_qi)/(BENL_imi(-1)/BE_qi)-1)*((BENL_imi/BE_qi)/(BENL_imi(-1)/BE_qi(-1)));
+// Import adjustment cost
+BEPT_gammaimi = BE_gammaimi1/2*((BEPT_imi/BE_qi)/(BEPT_imi(-1)/BE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEPT_gammaimidag = 1-BEPT_gammaimi-BE_gammaimi1*((BEPT_imi/BE_qi)/(BEPT_imi(-1)/BE_qi)-1)*((BEPT_imi/BE_qi)/(BEPT_imi(-1)/BE_qi(-1)));
+// Import adjustment cost
+BEDE_gammaimi = BE_gammaimi1/2*((BEDE_imi/BE_qi)/(BEDE_imi(-1)/BE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEDE_gammaimidag = 1-BEDE_gammaimi-BE_gammaimi1*((BEDE_imi/BE_qi)/(BEDE_imi(-1)/BE_qi)-1)*((BEDE_imi/BE_qi)/(BEDE_imi(-1)/BE_qi(-1)));
+// Import adjustment cost
+BERU_gammaimi = BE_gammaimi1/2*((BERU_imi/BE_qi)/(BERU_imi(-1)/BE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BERU_gammaimidag = 1-BERU_gammaimi-BE_gammaimi1*((BERU_imi/BE_qi)/(BERU_imi(-1)/BE_qi)-1)*((BERU_imi/BE_qi)/(BERU_imi(-1)/BE_qi(-1)));
+// Import adjustment cost
+BERW_gammaimi = BE_gammaimi1/2*((BERW_imi/BE_qi)/(BERW_imi(-1)/BE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BERW_gammaimidag = 1-BERW_gammaimi-BE_gammaimi1*((BERW_imi/BE_qi)/(BERW_imi(-1)/BE_qi)-1)*((BERW_imi/BE_qi)/(BERW_imi(-1)/BE_qi(-1)));
+// Import adjustment cost
+BEUS_gammaimi = BE_gammaimi1/2*((BEUS_imi/BE_qi)/(BEUS_imi(-1)/BE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEUS_gammaimidag = 1-BEUS_gammaimi-BE_gammaimi1*((BEUS_imi/BE_qi)/(BEUS_imi(-1)/BE_qi)-1)*((BEUS_imi/BE_qi)/(BEUS_imi(-1)/BE_qi(-1)));
 // Private consumption good (tradable)
 BE_ttcg^((BE_mutcg-1)/BE_mutcg) = (BE_nutcg)^(1/BE_mutcg)*BE_htcg^(1-1/BE_mutcg)+(1-BE_nutcg)^(1/BE_mutcg)*BE_imcg^(1-1/BE_mutcg);
 // Private consumption good  (total)
@@ -21181,32 +21105,58 @@ BE_pttcg^(1-BE_mutcg) = (BE_nutcg)*BE_pht^(1-BE_mutcg)+(1-BE_nutcg)*BE_pimcg^(1-
 BE_pcg^(1-BE_mucg) = (BE_nucg)*BE_pttcg^(1-BE_mucg)+(1-BE_nucg)*BE_pnt^(1-BE_mucg);
 // Demand for domestic intermediate goods
 BE_htcg = BE_nutcg*(BE_pht/BE_pttcg)^(-BE_mutcg)*BE_ttcg;
-BERA_gammaimcg = 0;
-BERA_gammaimcgdag = 1;
-BEAT_gammaimcg = 0;
-BEAT_gammaimcgdag = 1;
-BEES_gammaimcg = 0;
-BEES_gammaimcgdag = 1;
-BEFI_gammaimcg = 0;
-BEFI_gammaimcgdag = 1;
-BEFR_gammaimcg = 0;
-BEFR_gammaimcgdag = 1;
-BEGR_gammaimcg = 0;
-BEGR_gammaimcgdag = 1;
-BEIT_gammaimcg = 0;
-BEIT_gammaimcgdag = 1;
-BENL_gammaimcg = 0;
-BENL_gammaimcgdag = 1;
-BEPT_gammaimcg = 0;
-BEPT_gammaimcgdag = 1;
-BEDE_gammaimcg = 0;
-BEDE_gammaimcgdag = 1;
-BERU_gammaimcg = 0;
-BERU_gammaimcgdag = 1;
-BERW_gammaimcg = 0;
-BERW_gammaimcgdag = 1;
-BEUS_gammaimcg = 0;
-BEUS_gammaimcgdag = 1;
+// Import adjustment cost
+BERA_gammaimcg = BE_gammaimcg1/2*((BERA_imcg/BE_qcg)/(BERA_imcg(-1)/BE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BERA_gammaimcgdag = 1-BERA_gammaimcg-BE_gammaimcg1*((BERA_imcg/BE_qcg)/(BERA_imcg(-1)/BE_qcg)-1)*((BERA_imcg/BE_qcg)/(BERA_imcg(-1)/BE_qcg(-1)));
+// Import adjustment cost
+BEAT_gammaimcg = BE_gammaimcg1/2*((BEAT_imcg/BE_qcg)/(BEAT_imcg(-1)/BE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEAT_gammaimcgdag = 1-BEAT_gammaimcg-BE_gammaimcg1*((BEAT_imcg/BE_qcg)/(BEAT_imcg(-1)/BE_qcg)-1)*((BEAT_imcg/BE_qcg)/(BEAT_imcg(-1)/BE_qcg(-1)));
+// Import adjustment cost
+BEES_gammaimcg = BE_gammaimcg1/2*((BEES_imcg/BE_qcg)/(BEES_imcg(-1)/BE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEES_gammaimcgdag = 1-BEES_gammaimcg-BE_gammaimcg1*((BEES_imcg/BE_qcg)/(BEES_imcg(-1)/BE_qcg)-1)*((BEES_imcg/BE_qcg)/(BEES_imcg(-1)/BE_qcg(-1)));
+// Import adjustment cost
+BEFI_gammaimcg = BE_gammaimcg1/2*((BEFI_imcg/BE_qcg)/(BEFI_imcg(-1)/BE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEFI_gammaimcgdag = 1-BEFI_gammaimcg-BE_gammaimcg1*((BEFI_imcg/BE_qcg)/(BEFI_imcg(-1)/BE_qcg)-1)*((BEFI_imcg/BE_qcg)/(BEFI_imcg(-1)/BE_qcg(-1)));
+// Import adjustment cost
+BEFR_gammaimcg = BE_gammaimcg1/2*((BEFR_imcg/BE_qcg)/(BEFR_imcg(-1)/BE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEFR_gammaimcgdag = 1-BEFR_gammaimcg-BE_gammaimcg1*((BEFR_imcg/BE_qcg)/(BEFR_imcg(-1)/BE_qcg)-1)*((BEFR_imcg/BE_qcg)/(BEFR_imcg(-1)/BE_qcg(-1)));
+// Import adjustment cost
+BEGR_gammaimcg = BE_gammaimcg1/2*((BEGR_imcg/BE_qcg)/(BEGR_imcg(-1)/BE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEGR_gammaimcgdag = 1-BEGR_gammaimcg-BE_gammaimcg1*((BEGR_imcg/BE_qcg)/(BEGR_imcg(-1)/BE_qcg)-1)*((BEGR_imcg/BE_qcg)/(BEGR_imcg(-1)/BE_qcg(-1)));
+// Import adjustment cost
+BEIT_gammaimcg = BE_gammaimcg1/2*((BEIT_imcg/BE_qcg)/(BEIT_imcg(-1)/BE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEIT_gammaimcgdag = 1-BEIT_gammaimcg-BE_gammaimcg1*((BEIT_imcg/BE_qcg)/(BEIT_imcg(-1)/BE_qcg)-1)*((BEIT_imcg/BE_qcg)/(BEIT_imcg(-1)/BE_qcg(-1)));
+// Import adjustment cost
+BENL_gammaimcg = BE_gammaimcg1/2*((BENL_imcg/BE_qcg)/(BENL_imcg(-1)/BE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BENL_gammaimcgdag = 1-BENL_gammaimcg-BE_gammaimcg1*((BENL_imcg/BE_qcg)/(BENL_imcg(-1)/BE_qcg)-1)*((BENL_imcg/BE_qcg)/(BENL_imcg(-1)/BE_qcg(-1)));
+// Import adjustment cost
+BEPT_gammaimcg = BE_gammaimcg1/2*((BEPT_imcg/BE_qcg)/(BEPT_imcg(-1)/BE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEPT_gammaimcgdag = 1-BEPT_gammaimcg-BE_gammaimcg1*((BEPT_imcg/BE_qcg)/(BEPT_imcg(-1)/BE_qcg)-1)*((BEPT_imcg/BE_qcg)/(BEPT_imcg(-1)/BE_qcg(-1)));
+// Import adjustment cost
+BEDE_gammaimcg = BE_gammaimcg1/2*((BEDE_imcg/BE_qcg)/(BEDE_imcg(-1)/BE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEDE_gammaimcgdag = 1-BEDE_gammaimcg-BE_gammaimcg1*((BEDE_imcg/BE_qcg)/(BEDE_imcg(-1)/BE_qcg)-1)*((BEDE_imcg/BE_qcg)/(BEDE_imcg(-1)/BE_qcg(-1)));
+// Import adjustment cost
+BERU_gammaimcg = BE_gammaimcg1/2*((BERU_imcg/BE_qcg)/(BERU_imcg(-1)/BE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BERU_gammaimcgdag = 1-BERU_gammaimcg-BE_gammaimcg1*((BERU_imcg/BE_qcg)/(BERU_imcg(-1)/BE_qcg)-1)*((BERU_imcg/BE_qcg)/(BERU_imcg(-1)/BE_qcg(-1)));
+// Import adjustment cost
+BERW_gammaimcg = BE_gammaimcg1/2*((BERW_imcg/BE_qcg)/(BERW_imcg(-1)/BE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BERW_gammaimcgdag = 1-BERW_gammaimcg-BE_gammaimcg1*((BERW_imcg/BE_qcg)/(BERW_imcg(-1)/BE_qcg)-1)*((BERW_imcg/BE_qcg)/(BERW_imcg(-1)/BE_qcg(-1)));
+// Import adjustment cost
+BEUS_gammaimcg = BE_gammaimcg1/2*((BEUS_imcg/BE_qcg)/(BEUS_imcg(-1)/BE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEUS_gammaimcgdag = 1-BEUS_gammaimcg-BE_gammaimcg1*((BEUS_imcg/BE_qcg)/(BEUS_imcg(-1)/BE_qcg)-1)*((BEUS_imcg/BE_qcg)/(BEUS_imcg(-1)/BE_qcg(-1)));
 // Private consumption good (tradable)
 BE_ttig^((BE_mutig-1)/BE_mutig) = (BE_nutig)^(1/BE_mutig)*BE_htig^(1-1/BE_mutig)+(1-BE_nutig)^(1/BE_mutig)*BE_imig^(1-1/BE_mutig);
 // Private consumption good  (total)
@@ -21219,32 +21169,58 @@ BE_pttig^(1-BE_mutig) = (BE_nutig)*BE_pht^(1-BE_mutig)+(1-BE_nutig)*BE_pimig^(1-
 BE_pig^(1-BE_muig) = (BE_nuig)*BE_pttig^(1-BE_muig)+(1-BE_nuig)*BE_pnt^(1-BE_muig);
 // Demand for domestic intermediate goods
 BE_htig = BE_nutig*(BE_pht/BE_pttig)^(-BE_mutig)*BE_ttig;
-BERA_gammaimig = 0;
-BERA_gammaimigdag = 1;
-BEAT_gammaimig = 0;
-BEAT_gammaimigdag = 1;
-BEES_gammaimig = 0;
-BEES_gammaimigdag = 1;
-BEFI_gammaimig = 0;
-BEFI_gammaimigdag = 1;
-BEFR_gammaimig = 0;
-BEFR_gammaimigdag = 1;
-BEGR_gammaimig = 0;
-BEGR_gammaimigdag = 1;
-BEIT_gammaimig = 0;
-BEIT_gammaimigdag = 1;
-BENL_gammaimig = 0;
-BENL_gammaimigdag = 1;
-BEPT_gammaimig = 0;
-BEPT_gammaimigdag = 1;
-BEDE_gammaimig = 0;
-BEDE_gammaimigdag = 1;
-BERU_gammaimig = 0;
-BERU_gammaimigdag = 1;
-BERW_gammaimig = 0;
-BERW_gammaimigdag = 1;
-BEUS_gammaimig = 0;
-BEUS_gammaimigdag = 1;
+// Import adjustment cost
+BERA_gammaimig = BE_gammaimig1/2*((BERA_imig/BE_qig)/(BERA_imig(-1)/BE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BERA_gammaimigdag = 1-BERA_gammaimig-BE_gammaimig1*((BERA_imig/BE_qig)/(BERA_imig(-1)/BE_qig)-1)*((BERA_imig/BE_qig)/(BERA_imig(-1)/BE_qig(-1)));
+// Import adjustment cost
+BEAT_gammaimig = BE_gammaimig1/2*((BEAT_imig/BE_qig)/(BEAT_imig(-1)/BE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEAT_gammaimigdag = 1-BEAT_gammaimig-BE_gammaimig1*((BEAT_imig/BE_qig)/(BEAT_imig(-1)/BE_qig)-1)*((BEAT_imig/BE_qig)/(BEAT_imig(-1)/BE_qig(-1)));
+// Import adjustment cost
+BEES_gammaimig = BE_gammaimig1/2*((BEES_imig/BE_qig)/(BEES_imig(-1)/BE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEES_gammaimigdag = 1-BEES_gammaimig-BE_gammaimig1*((BEES_imig/BE_qig)/(BEES_imig(-1)/BE_qig)-1)*((BEES_imig/BE_qig)/(BEES_imig(-1)/BE_qig(-1)));
+// Import adjustment cost
+BEFI_gammaimig = BE_gammaimig1/2*((BEFI_imig/BE_qig)/(BEFI_imig(-1)/BE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEFI_gammaimigdag = 1-BEFI_gammaimig-BE_gammaimig1*((BEFI_imig/BE_qig)/(BEFI_imig(-1)/BE_qig)-1)*((BEFI_imig/BE_qig)/(BEFI_imig(-1)/BE_qig(-1)));
+// Import adjustment cost
+BEFR_gammaimig = BE_gammaimig1/2*((BEFR_imig/BE_qig)/(BEFR_imig(-1)/BE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEFR_gammaimigdag = 1-BEFR_gammaimig-BE_gammaimig1*((BEFR_imig/BE_qig)/(BEFR_imig(-1)/BE_qig)-1)*((BEFR_imig/BE_qig)/(BEFR_imig(-1)/BE_qig(-1)));
+// Import adjustment cost
+BEGR_gammaimig = BE_gammaimig1/2*((BEGR_imig/BE_qig)/(BEGR_imig(-1)/BE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEGR_gammaimigdag = 1-BEGR_gammaimig-BE_gammaimig1*((BEGR_imig/BE_qig)/(BEGR_imig(-1)/BE_qig)-1)*((BEGR_imig/BE_qig)/(BEGR_imig(-1)/BE_qig(-1)));
+// Import adjustment cost
+BEIT_gammaimig = BE_gammaimig1/2*((BEIT_imig/BE_qig)/(BEIT_imig(-1)/BE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEIT_gammaimigdag = 1-BEIT_gammaimig-BE_gammaimig1*((BEIT_imig/BE_qig)/(BEIT_imig(-1)/BE_qig)-1)*((BEIT_imig/BE_qig)/(BEIT_imig(-1)/BE_qig(-1)));
+// Import adjustment cost
+BENL_gammaimig = BE_gammaimig1/2*((BENL_imig/BE_qig)/(BENL_imig(-1)/BE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BENL_gammaimigdag = 1-BENL_gammaimig-BE_gammaimig1*((BENL_imig/BE_qig)/(BENL_imig(-1)/BE_qig)-1)*((BENL_imig/BE_qig)/(BENL_imig(-1)/BE_qig(-1)));
+// Import adjustment cost
+BEPT_gammaimig = BE_gammaimig1/2*((BEPT_imig/BE_qig)/(BEPT_imig(-1)/BE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEPT_gammaimigdag = 1-BEPT_gammaimig-BE_gammaimig1*((BEPT_imig/BE_qig)/(BEPT_imig(-1)/BE_qig)-1)*((BEPT_imig/BE_qig)/(BEPT_imig(-1)/BE_qig(-1)));
+// Import adjustment cost
+BEDE_gammaimig = BE_gammaimig1/2*((BEDE_imig/BE_qig)/(BEDE_imig(-1)/BE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEDE_gammaimigdag = 1-BEDE_gammaimig-BE_gammaimig1*((BEDE_imig/BE_qig)/(BEDE_imig(-1)/BE_qig)-1)*((BEDE_imig/BE_qig)/(BEDE_imig(-1)/BE_qig(-1)));
+// Import adjustment cost
+BERU_gammaimig = BE_gammaimig1/2*((BERU_imig/BE_qig)/(BERU_imig(-1)/BE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BERU_gammaimigdag = 1-BERU_gammaimig-BE_gammaimig1*((BERU_imig/BE_qig)/(BERU_imig(-1)/BE_qig)-1)*((BERU_imig/BE_qig)/(BERU_imig(-1)/BE_qig(-1)));
+// Import adjustment cost
+BERW_gammaimig = BE_gammaimig1/2*((BERW_imig/BE_qig)/(BERW_imig(-1)/BE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BERW_gammaimigdag = 1-BERW_gammaimig-BE_gammaimig1*((BERW_imig/BE_qig)/(BERW_imig(-1)/BE_qig)-1)*((BERW_imig/BE_qig)/(BERW_imig(-1)/BE_qig(-1)));
+// Import adjustment cost
+BEUS_gammaimig = BE_gammaimig1/2*((BEUS_imig/BE_qig)/(BEUS_imig(-1)/BE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+BEUS_gammaimigdag = 1-BEUS_gammaimig-BE_gammaimig1*((BEUS_imig/BE_qig)/(BEUS_imig(-1)/BE_qig)-1)*((BEUS_imig/BE_qig)/(BEUS_imig(-1)/BE_qig(-1)));
 // Trade balance
 BE_tb =
 +BE_pex*RA_size/BE_size*RABE_im
@@ -21305,18 +21281,10 @@ BE_ex =
 // Government spending, using BE_pg = BE_pht
 BE_pcg*BE_cg = BE_cgy*BE_pybar*BE_ybar;
 BE_pig*BE_ig = BE_igy*BE_pybar*BE_ybar;
-BE_t = 0;
-BE_b = BE_bytarget*BE_pybar*BE_ybar;
-// Auxiliary equation for steady-state output
-BE_ybar = BE_y;
-// Auxiliary equation for steady-state output
-BE_ytbar = BE_yst;
-// Auxiliary equation for steady-state output
-BE_ynbar = BE_ysn;
-// Auxiliary equation for steady-state output deflator
-BE_pybar = BE_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-BE_trybar = BE_tr/(BE_pybar*BE_ybar);
+// Transfers
+BE_tr = BE_try*BE_pybar*BE_ybar;
+// Fiscal rule
+BE_t/(BE_pybar*BE_ybar) = BE_phitb*(BE_b/(BE_pybar*BE_ybar)-BE_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 BE_ti = BE_upsilont*BE_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -21332,9 +21300,11 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	BE_r = DE_r;
-BE_pic4 = BE_pi4target;
-BE_rr-1 = BE_r/BE_pi4target^(1/4)-1;
+		BE_rerdep/DE_rerdep*BE_pic/DE_pic-1=0;
+// Definition of annual inflation
+BE_pic4 = BE_pic*BE_pic(-1)*BE_pic(-2)*BE_pic(-3);
+// Real interest rate
+BE_rr-1 = BE_r/BE_pic(+1)-1;
 // Equilibrium real interest rate
 BE_rrstar-1 = 1/BE_beta-1;
 //-------------
@@ -21421,68 +21391,68 @@ BE_py*BE_y =
 +BE_pcg*BE_qcg
 +BE_pig*BE_qig
 +BE_pex*RA_size/BE_size*RABE_im
--(RA_pex*BERA_rer)*BERA_imc
--(RA_pex*BERA_rer)*BERA_imi
+-(RA_pex*BERA_rer)*(BERA_imc*(1-BERA_gammaimc)/BERA_gammaimcdag)
+-(RA_pex*BERA_rer)*(BERA_imi*(1-BERA_gammaimi)/BERA_gammaimidag)
 -(RA_pex*BERA_rer)*BERA_imcg
 -(RA_pex*BERA_rer)*BERA_imig
 +BE_pex*AT_size/BE_size*ATBE_im
--(AT_pex*BEAT_rer)*BEAT_imc
--(AT_pex*BEAT_rer)*BEAT_imi
+-(AT_pex*BEAT_rer)*(BEAT_imc*(1-BEAT_gammaimc)/BEAT_gammaimcdag)
+-(AT_pex*BEAT_rer)*(BEAT_imi*(1-BEAT_gammaimi)/BEAT_gammaimidag)
 -(AT_pex*BEAT_rer)*BEAT_imcg
 -(AT_pex*BEAT_rer)*BEAT_imig
 +BE_pex*ES_size/BE_size*ESBE_im
--(ES_pex*BEES_rer)*BEES_imc
--(ES_pex*BEES_rer)*BEES_imi
+-(ES_pex*BEES_rer)*(BEES_imc*(1-BEES_gammaimc)/BEES_gammaimcdag)
+-(ES_pex*BEES_rer)*(BEES_imi*(1-BEES_gammaimi)/BEES_gammaimidag)
 -(ES_pex*BEES_rer)*BEES_imcg
 -(ES_pex*BEES_rer)*BEES_imig
 +BE_pex*FI_size/BE_size*FIBE_im
--(FI_pex*BEFI_rer)*BEFI_imc
--(FI_pex*BEFI_rer)*BEFI_imi
+-(FI_pex*BEFI_rer)*(BEFI_imc*(1-BEFI_gammaimc)/BEFI_gammaimcdag)
+-(FI_pex*BEFI_rer)*(BEFI_imi*(1-BEFI_gammaimi)/BEFI_gammaimidag)
 -(FI_pex*BEFI_rer)*BEFI_imcg
 -(FI_pex*BEFI_rer)*BEFI_imig
 +BE_pex*FR_size/BE_size*FRBE_im
--(FR_pex*BEFR_rer)*BEFR_imc
--(FR_pex*BEFR_rer)*BEFR_imi
+-(FR_pex*BEFR_rer)*(BEFR_imc*(1-BEFR_gammaimc)/BEFR_gammaimcdag)
+-(FR_pex*BEFR_rer)*(BEFR_imi*(1-BEFR_gammaimi)/BEFR_gammaimidag)
 -(FR_pex*BEFR_rer)*BEFR_imcg
 -(FR_pex*BEFR_rer)*BEFR_imig
 +BE_pex*GR_size/BE_size*GRBE_im
--(GR_pex*BEGR_rer)*BEGR_imc
--(GR_pex*BEGR_rer)*BEGR_imi
+-(GR_pex*BEGR_rer)*(BEGR_imc*(1-BEGR_gammaimc)/BEGR_gammaimcdag)
+-(GR_pex*BEGR_rer)*(BEGR_imi*(1-BEGR_gammaimi)/BEGR_gammaimidag)
 -(GR_pex*BEGR_rer)*BEGR_imcg
 -(GR_pex*BEGR_rer)*BEGR_imig
 +BE_pex*IT_size/BE_size*ITBE_im
--(IT_pex*BEIT_rer)*BEIT_imc
--(IT_pex*BEIT_rer)*BEIT_imi
+-(IT_pex*BEIT_rer)*(BEIT_imc*(1-BEIT_gammaimc)/BEIT_gammaimcdag)
+-(IT_pex*BEIT_rer)*(BEIT_imi*(1-BEIT_gammaimi)/BEIT_gammaimidag)
 -(IT_pex*BEIT_rer)*BEIT_imcg
 -(IT_pex*BEIT_rer)*BEIT_imig
 +BE_pex*NL_size/BE_size*NLBE_im
--(NL_pex*BENL_rer)*BENL_imc
--(NL_pex*BENL_rer)*BENL_imi
+-(NL_pex*BENL_rer)*(BENL_imc*(1-BENL_gammaimc)/BENL_gammaimcdag)
+-(NL_pex*BENL_rer)*(BENL_imi*(1-BENL_gammaimi)/BENL_gammaimidag)
 -(NL_pex*BENL_rer)*BENL_imcg
 -(NL_pex*BENL_rer)*BENL_imig
 +BE_pex*PT_size/BE_size*PTBE_im
--(PT_pex*BEPT_rer)*BEPT_imc
--(PT_pex*BEPT_rer)*BEPT_imi
+-(PT_pex*BEPT_rer)*(BEPT_imc*(1-BEPT_gammaimc)/BEPT_gammaimcdag)
+-(PT_pex*BEPT_rer)*(BEPT_imi*(1-BEPT_gammaimi)/BEPT_gammaimidag)
 -(PT_pex*BEPT_rer)*BEPT_imcg
 -(PT_pex*BEPT_rer)*BEPT_imig
 +BE_pex*DE_size/BE_size*DEBE_im
--(DE_pex*BEDE_rer)*BEDE_imc
--(DE_pex*BEDE_rer)*BEDE_imi
+-(DE_pex*BEDE_rer)*(BEDE_imc*(1-BEDE_gammaimc)/BEDE_gammaimcdag)
+-(DE_pex*BEDE_rer)*(BEDE_imi*(1-BEDE_gammaimi)/BEDE_gammaimidag)
 -(DE_pex*BEDE_rer)*BEDE_imcg
 -(DE_pex*BEDE_rer)*BEDE_imig
 +BE_pex*RU_size/BE_size*RUBE_im
--(RU_pex*BERU_rer)*BERU_imc
--(RU_pex*BERU_rer)*BERU_imi
+-(RU_pex*BERU_rer)*(BERU_imc*(1-BERU_gammaimc)/BERU_gammaimcdag)
+-(RU_pex*BERU_rer)*(BERU_imi*(1-BERU_gammaimi)/BERU_gammaimidag)
 -(RU_pex*BERU_rer)*BERU_imcg
 -(RU_pex*BERU_rer)*BERU_imig
 +BE_pex*RW_size/BE_size*RWBE_im
--(RW_pex*BERW_rer)*BERW_imc
--(RW_pex*BERW_rer)*BERW_imi
+-(RW_pex*BERW_rer)*(BERW_imc*(1-BERW_gammaimc)/BERW_gammaimcdag)
+-(RW_pex*BERW_rer)*(BERW_imi*(1-BERW_gammaimi)/BERW_gammaimidag)
 -(RW_pex*BERW_rer)*BERW_imcg
 -(RW_pex*BERW_rer)*BERW_imig
 +BE_pex*US_size/BE_size*USBE_im
--(US_pex*BEUS_rer)*BEUS_imc
--(US_pex*BEUS_rer)*BEUS_imi
+-(US_pex*BEUS_rer)*(BEUS_imc*(1-BEUS_gammaimc)/BEUS_gammaimcdag)
+-(US_pex*BEUS_rer)*(BEUS_imi*(1-BEUS_gammaimi)/BEUS_gammaimidag)
 -(US_pex*BEUS_rer)*BEUS_imcg
 -(US_pex*BEUS_rer)*BEUS_imig
 ;
@@ -21557,7 +21527,7 @@ BE_yhty = BE_pht*BE_yst/(BE_py*BE_y);
 // NT sector share
 BE_ynty = BE_pnt*BE_ysn/(BE_py*BE_y);
 // Output gap
-BE_ygap = 0;
+BE_ygap = BE_y/BE_ybar-1;
 // Output growth (gross rate)
 BE_ygrowth = BE_y/BE_y(-1);
 // Output growth (gross rate yoy)
@@ -21721,7 +21691,7 @@ ES_dcci = ((ES_nucces)^(1/ES_mucces)*ES_ci^(1-1/ES_mucces)+(1-ES_nucces)^(1/ES_m
 ES_lambdai*(1+ES_tauc+ES_gammavi+ES_vi*ES_gammavider) = ES_zcon*(ES_ccesi-ES_kappa*ES_ccesi(-1))^(-ES_sigma)*ES_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
-ES_r                   = ES_beta^(-1)*ES_lambdai/ES_lambdai    *ES_pic;
+ES_r*(1-ES_gammabh) = ES_beta^(-1)*ES_lambdai/ES_lambdai(+1)*ES_pic(+1);
 // Germany
 // US and the RoW
 // Euler equation for money
@@ -21732,17 +21702,23 @@ ES_vi = ES_ci/ES_mi;
 ES_gammavi = ES_gammav1*ES_vi+ES_gammav2/ES_vi-2*(ES_gammav1*ES_gammav2)^(1/2);
 // Derivative of transaction cost
 ES_gammavider = ES_gammav1-ES_gammav2*ES_vi^(-2);
-ES_delta = ES_ii/ES_ki;
-ES_gammai = 0;
-ES_gammaider = 0;
-ES_gammau = 0;
-ES_gammauder = ((ES_beta^(-1)-1+ES_delta)*ES_qbar-ES_delta*ES_taukbar*ES_pibar)/((1-ES_taukbar)*ES_pibar);
-ES_u = 1;
-ES_pi = ES_q;
+// Capital accumulation
+ES_ki = (1-ES_delta)*ES_ki(-1)+(1-ES_gammai(-1))*ES_ii(-1)*ES_zinv;
+// Investment adjustment cost
+ES_gammai = ES_gammai1/2*(ES_ii/ES_ii(-1)-1)^2;
+// Derivative of investment adjustment cost
+ES_gammaider = ES_gammai1*(ES_ii/ES_ii(-1)-1)/ES_ii(-1);
+// Capacity utilisation cost
+ES_gammau = ((ES_beta^(-1)-1+ES_delta)*ES_qbar-ES_delta*ES_taukbar*ES_pibar)/((1-ES_taukbar)*ES_pibar)*(ES_u-1)+ES_gammau2/2*(ES_u-1)^2;
+// Derivative of capacity utilisation cost
+ES_gammauder = ((ES_beta^(-1)-1+ES_delta)*ES_qbar-ES_delta*ES_taukbar*ES_pibar)/((1-ES_taukbar)*ES_pibar)+ES_gammau2*(ES_u-1);
+// Optimal capacity utilisation (FOC)
+ES_rk = ES_gammauder*ES_pi;
+// Tobin's Q
+ES_pi = ES_q*ES_zinv*(1-ES_gammai-ES_gammaider*ES_ii)+ES_beta*ES_lambdai(+1)/ES_lambdai*ES_q(+1)*ES_zinv(+1)*ES_gammaider(+1)*ES_ii(+1)^2/ES_ii;
 // Auxiliary equation for Tobin's Q in steady state
-ES_qbar = ES_q;
 // Rate of return on capital
-ES_q = ES_beta*((1-ES_tauk)*ES_rk+(ES_tauk*ES_delta)*ES_pi+(1-ES_delta)*ES_q);
+ES_q = ES_beta*ES_lambdai(+1)/ES_lambdai*((1-ES_tauk(+1))*(ES_rk(+1)*ES_u(+1)-ES_gammau(+1)*ES_pi(+1))+(ES_tauk(+1)*ES_delta)*ES_pi(+1)+(1-ES_delta)*ES_q(+1));
 // Optimal wage contract (FOC)
 ES_witilde^(1+ES_etai*ES_zeta) = ES_etai/(ES_etai-1)*ES_fi/ES_gi+ES_wcst;
 // Definition of fi
@@ -21801,11 +21777,9 @@ ES_mcn = 1/(EA_z*ES_zn*ES_kg^ES_alphag*(ES_alphan)^(ES_alphan)*(1-ES_alphan)^(1-
 // Wage Inflation (qoq)
 ES_piw = ES_w/ES_w(-1)*ES_pic;
 // Wage Inflation (yoy)
-ES_piw4 = ES_pic4;
+ES_piw4 = ES_piw*ES_piw(-1)*ES_piw(-2)*ES_piw(-3);
 // Auxiliary equation for steady-state fixed cost
-ES_psitbar = ES_psit*ES_ytbar;
 // Auxiliary equation for steady-state fixed cost
-ES_psinbar = ES_psin*ES_ynbar;
 // Capital input (FOC)
 ES_rk = ES_alphat*(ES_yst+ES_psitbar)/ES_kdt*ES_mct;
 // Capital input (FOC)
@@ -21880,7 +21854,6 @@ ES_piex = ES_pex/ES_pex(-1)*ES_pic;
 // Bilateral real exchange rate
 ESRA_rer = ES_rer/RA_rer;
 // Auxiliary equation for steady-state output
-ESRA_rerbar = ESRA_rer;
 //Terms of Trade
 ESRA_tot = RA_pex*ESRA_rer/ES_pex;
 // Optimal price contract set in foreign markets (FOC), using ES_pxtilde = AT_pimtilde
@@ -21896,7 +21869,6 @@ ESRA_tot = RA_pex*ESRA_rer/ES_pex;
 // Bilateral real exchange rate
 ESAT_rer = ES_rer/AT_rer;
 // Auxiliary equation for steady-state output
-ESAT_rerbar = ESAT_rer;
 //Terms of Trade
 ESAT_tot = AT_pex*ESAT_rer/ES_pex;
 // Optimal price contract set in foreign markets (FOC), using ES_pxtilde = BE_pimtilde
@@ -21912,7 +21884,6 @@ ESAT_tot = AT_pex*ESAT_rer/ES_pex;
 // Bilateral real exchange rate
 ESBE_rer = ES_rer/BE_rer;
 // Auxiliary equation for steady-state output
-ESBE_rerbar = ESBE_rer;
 //Terms of Trade
 ESBE_tot = BE_pex*ESBE_rer/ES_pex;
 // Optimal price contract set in foreign markets (FOC), using ES_pxtilde = FI_pimtilde
@@ -21928,7 +21899,6 @@ ESBE_tot = BE_pex*ESBE_rer/ES_pex;
 // Bilateral real exchange rate
 ESFI_rer = ES_rer/FI_rer;
 // Auxiliary equation for steady-state output
-ESFI_rerbar = ESFI_rer;
 //Terms of Trade
 ESFI_tot = FI_pex*ESFI_rer/ES_pex;
 // Optimal price contract set in foreign markets (FOC), using ES_pxtilde = FR_pimtilde
@@ -21944,7 +21914,6 @@ ESFI_tot = FI_pex*ESFI_rer/ES_pex;
 // Bilateral real exchange rate
 ESFR_rer = ES_rer/FR_rer;
 // Auxiliary equation for steady-state output
-ESFR_rerbar = ESFR_rer;
 //Terms of Trade
 ESFR_tot = FR_pex*ESFR_rer/ES_pex;
 // Optimal price contract set in foreign markets (FOC), using ES_pxtilde = GR_pimtilde
@@ -21960,7 +21929,6 @@ ESFR_tot = FR_pex*ESFR_rer/ES_pex;
 // Bilateral real exchange rate
 ESGR_rer = ES_rer/GR_rer;
 // Auxiliary equation for steady-state output
-ESGR_rerbar = ESGR_rer;
 //Terms of Trade
 ESGR_tot = GR_pex*ESGR_rer/ES_pex;
 // Optimal price contract set in foreign markets (FOC), using ES_pxtilde = IT_pimtilde
@@ -21976,7 +21944,6 @@ ESGR_tot = GR_pex*ESGR_rer/ES_pex;
 // Bilateral real exchange rate
 ESIT_rer = ES_rer/IT_rer;
 // Auxiliary equation for steady-state output
-ESIT_rerbar = ESIT_rer;
 //Terms of Trade
 ESIT_tot = IT_pex*ESIT_rer/ES_pex;
 // Optimal price contract set in foreign markets (FOC), using ES_pxtilde = NL_pimtilde
@@ -21992,7 +21959,6 @@ ESIT_tot = IT_pex*ESIT_rer/ES_pex;
 // Bilateral real exchange rate
 ESNL_rer = ES_rer/NL_rer;
 // Auxiliary equation for steady-state output
-ESNL_rerbar = ESNL_rer;
 //Terms of Trade
 ESNL_tot = NL_pex*ESNL_rer/ES_pex;
 // Optimal price contract set in foreign markets (FOC), using ES_pxtilde = PT_pimtilde
@@ -22008,7 +21974,6 @@ ESNL_tot = NL_pex*ESNL_rer/ES_pex;
 // Bilateral real exchange rate
 ESPT_rer = ES_rer/PT_rer;
 // Auxiliary equation for steady-state output
-ESPT_rerbar = ESPT_rer;
 //Terms of Trade
 ESPT_tot = PT_pex*ESPT_rer/ES_pex;
 // Optimal price contract set in foreign markets (FOC), using ES_pxtilde = DE_pimtilde
@@ -22024,7 +21989,6 @@ ESPT_tot = PT_pex*ESPT_rer/ES_pex;
 // Bilateral real exchange rate
 ESDE_rer = ES_rer/DE_rer;
 // Auxiliary equation for steady-state output
-ESDE_rerbar = ESDE_rer;
 //Terms of Trade
 ESDE_tot = DE_pex*ESDE_rer/ES_pex;
 // Optimal price contract set in foreign markets (FOC), using ES_pxtilde = RU_pimtilde
@@ -22040,7 +22004,6 @@ ESDE_tot = DE_pex*ESDE_rer/ES_pex;
 // Bilateral real exchange rate
 ESRU_rer = ES_rer/RU_rer;
 // Auxiliary equation for steady-state output
-ESRU_rerbar = ESRU_rer;
 //Terms of Trade
 ESRU_tot = RU_pex*ESRU_rer/ES_pex;
 // Optimal price contract set in foreign markets (FOC), using ES_pxtilde = RW_pimtilde
@@ -22056,7 +22019,6 @@ ESRU_tot = RU_pex*ESRU_rer/ES_pex;
 // Bilateral real exchange rate
 ESRW_rer = ES_rer/RW_rer;
 // Auxiliary equation for steady-state output
-ESRW_rerbar = ESRW_rer;
 //Terms of Trade
 ESRW_tot = RW_pex*ESRW_rer/ES_pex;
 // Optimal price contract set in foreign markets (FOC), using ES_pxtilde = US_pimtilde
@@ -22072,7 +22034,6 @@ ESRW_tot = RW_pex*ESRW_rer/ES_pex;
 // Bilateral real exchange rate
 ESUS_rer = ES_rer/US_rer;
 // Auxiliary equation for steady-state output
-ESUS_rerbar = ESUS_rer;
 //Terms of Trade
 ESUS_tot = US_pex*ESUS_rer/ES_pex;
 // Total imports 
@@ -24570,18 +24531,18 @@ ES_etot = 1
 //-----------------
 // Private consumption good (import)
 ES_imc^((ES_mumc-1)/ES_mumc) =
-+ESRA_numc ^(1/ES_mumc)*ESRA_imc^(1-1/ES_mumc)
-+ESBE_numc ^(1/ES_mumc)*ESBE_imc^(1-1/ES_mumc)
-+ESFI_numc ^(1/ES_mumc)*ESFI_imc^(1-1/ES_mumc)
-+ESFR_numc ^(1/ES_mumc)*ESFR_imc^(1-1/ES_mumc)
-+ESGR_numc ^(1/ES_mumc)*ESGR_imc^(1-1/ES_mumc)
-+ESIT_numc ^(1/ES_mumc)*ESIT_imc^(1-1/ES_mumc)
-+ESNL_numc ^(1/ES_mumc)*ESNL_imc^(1-1/ES_mumc)
-+ESPT_numc ^(1/ES_mumc)*ESPT_imc^(1-1/ES_mumc)
-+ESDE_numc ^(1/ES_mumc)*ESDE_imc^(1-1/ES_mumc)
-+ESRU_numc ^(1/ES_mumc)*ESRU_imc^(1-1/ES_mumc)
-+ESRW_numc ^(1/ES_mumc)*ESRW_imc^(1-1/ES_mumc)
-+ESUS_numc ^(1/ES_mumc)*ESUS_imc^(1-1/ES_mumc)
++ESRA_numc ^(1/ES_mumc)*((1-ESRA_gammaimc)*ESRA_imc)^(1-1/ES_mumc)
++ESBE_numc ^(1/ES_mumc)*((1-ESBE_gammaimc)*ESBE_imc)^(1-1/ES_mumc)
++ESFI_numc ^(1/ES_mumc)*((1-ESFI_gammaimc)*ESFI_imc)^(1-1/ES_mumc)
++ESFR_numc ^(1/ES_mumc)*((1-ESFR_gammaimc)*ESFR_imc)^(1-1/ES_mumc)
++ESGR_numc ^(1/ES_mumc)*((1-ESGR_gammaimc)*ESGR_imc)^(1-1/ES_mumc)
++ESIT_numc ^(1/ES_mumc)*((1-ESIT_gammaimc)*ESIT_imc)^(1-1/ES_mumc)
++ESNL_numc ^(1/ES_mumc)*((1-ESNL_gammaimc)*ESNL_imc)^(1-1/ES_mumc)
++ESPT_numc ^(1/ES_mumc)*((1-ESPT_gammaimc)*ESPT_imc)^(1-1/ES_mumc)
++ESDE_numc ^(1/ES_mumc)*((1-ESDE_gammaimc)*ESDE_imc)^(1-1/ES_mumc)
++ESRU_numc ^(1/ES_mumc)*((1-ESRU_gammaimc)*ESRU_imc)^(1-1/ES_mumc)
++ESRW_numc ^(1/ES_mumc)*((1-ESRW_gammaimc)*ESRW_imc)^(1-1/ES_mumc)
++ESUS_numc ^(1/ES_mumc)*((1-ESUS_gammaimc)*ESUS_imc)^(1-1/ES_mumc)
 +(1
 -ESRA_numc
 -ESBE_numc
@@ -24595,29 +24556,29 @@ ES_imc^((ES_mumc-1)/ES_mumc) =
 -ESRU_numc
 -ESRW_numc
 -ESUS_numc
-)^(1/ES_mumc)*ESAT_imc^(1-1/ES_mumc);
+)^(1/ES_mumc)*((1-ESAT_gammaimc)*ESAT_imc)^(1-1/ES_mumc);
 // Demand for bilateral consumption import goods
-ESRA_imc = ESRA_numc*((RA_pex*ESRA_rer)/ES_pimc)^(-ES_mumc)*ES_imc;
+ESRA_imc = ESRA_numc*((RA_pex*ESRA_rer)/(ESRA_gammaimcdag*ES_pimc))^(-ES_mumc)*ES_imc/(1-ESRA_gammaimc);
 // Demand for bilateral consumption import goods
-ESBE_imc = ESBE_numc*((BE_pex*ESBE_rer)/ES_pimc)^(-ES_mumc)*ES_imc;
+ESBE_imc = ESBE_numc*((BE_pex*ESBE_rer)/(ESBE_gammaimcdag*ES_pimc))^(-ES_mumc)*ES_imc/(1-ESBE_gammaimc);
 // Demand for bilateral consumption import goods
-ESFR_imc = ESFR_numc*((FR_pex*ESFR_rer)/ES_pimc)^(-ES_mumc)*ES_imc;
+ESFR_imc = ESFR_numc*((FR_pex*ESFR_rer)/(ESFR_gammaimcdag*ES_pimc))^(-ES_mumc)*ES_imc/(1-ESFR_gammaimc);
 // Demand for bilateral consumption import goods
-ESGR_imc = ESGR_numc*((GR_pex*ESGR_rer)/ES_pimc)^(-ES_mumc)*ES_imc;
+ESGR_imc = ESGR_numc*((GR_pex*ESGR_rer)/(ESGR_gammaimcdag*ES_pimc))^(-ES_mumc)*ES_imc/(1-ESGR_gammaimc);
 // Demand for bilateral consumption import goods
-ESIT_imc = ESIT_numc*((IT_pex*ESIT_rer)/ES_pimc)^(-ES_mumc)*ES_imc;
+ESIT_imc = ESIT_numc*((IT_pex*ESIT_rer)/(ESIT_gammaimcdag*ES_pimc))^(-ES_mumc)*ES_imc/(1-ESIT_gammaimc);
 // Demand for bilateral consumption import goods
-ESNL_imc = ESNL_numc*((NL_pex*ESNL_rer)/ES_pimc)^(-ES_mumc)*ES_imc;
+ESNL_imc = ESNL_numc*((NL_pex*ESNL_rer)/(ESNL_gammaimcdag*ES_pimc))^(-ES_mumc)*ES_imc/(1-ESNL_gammaimc);
 // Demand for bilateral consumption import goods
-ESPT_imc = ESPT_numc*((PT_pex*ESPT_rer)/ES_pimc)^(-ES_mumc)*ES_imc;
+ESPT_imc = ESPT_numc*((PT_pex*ESPT_rer)/(ESPT_gammaimcdag*ES_pimc))^(-ES_mumc)*ES_imc/(1-ESPT_gammaimc);
 // Demand for bilateral consumption import goods
-ESDE_imc = ESDE_numc*((DE_pex*ESDE_rer)/ES_pimc)^(-ES_mumc)*ES_imc;
+ESDE_imc = ESDE_numc*((DE_pex*ESDE_rer)/(ESDE_gammaimcdag*ES_pimc))^(-ES_mumc)*ES_imc/(1-ESDE_gammaimc);
 // Demand for bilateral consumption import goods
-ESRU_imc = ESRU_numc*((RU_pex*ESRU_rer)/ES_pimc)^(-ES_mumc)*ES_imc;
+ESRU_imc = ESRU_numc*((RU_pex*ESRU_rer)/(ESRU_gammaimcdag*ES_pimc))^(-ES_mumc)*ES_imc/(1-ESRU_gammaimc);
 // Demand for bilateral consumption import goods
-ESRW_imc = ESRW_numc*((RW_pex*ESRW_rer)/ES_pimc)^(-ES_mumc)*ES_imc;
+ESRW_imc = ESRW_numc*((RW_pex*ESRW_rer)/(ESRW_gammaimcdag*ES_pimc))^(-ES_mumc)*ES_imc/(1-ESRW_gammaimc);
 // Demand for bilateral consumption import goods
-ESUS_imc = ESUS_numc*((US_pex*ESUS_rer)/ES_pimc)^(-ES_mumc)*ES_imc;
+ESUS_imc = ESUS_numc*((US_pex*ESUS_rer)/(ESUS_gammaimcdag*ES_pimc))^(-ES_mumc)*ES_imc/(1-ESUS_gammaimc);
 ESAT_imc = (1
 -ESRA_numc
 -ESBE_numc
@@ -24631,21 +24592,21 @@ ESAT_imc = (1
 -ESRU_numc
 -ESRW_numc
 -ESUS_numc
-)*((AT_pex*ESAT_rer)/ES_pimc)^(-ES_mumc)*ES_imc;
+)*((AT_pex*ESAT_rer)/(ESAT_gammaimcdag*ES_pimc))^(-ES_mumc)*ES_imc/(1-ESAT_gammaimc);
 // Price of the consumption good (import)
 ES_pimc^(1-ES_mumc) =
-+ESRA_numc * (RA_pex*ESRA_rer)^(1-ES_mumc)
-+ESBE_numc * (BE_pex*ESBE_rer)^(1-ES_mumc)
-+ESFI_numc * (FI_pex*ESFI_rer)^(1-ES_mumc)
-+ESFR_numc * (FR_pex*ESFR_rer)^(1-ES_mumc)
-+ESGR_numc * (GR_pex*ESGR_rer)^(1-ES_mumc)
-+ESIT_numc * (IT_pex*ESIT_rer)^(1-ES_mumc)
-+ESNL_numc * (NL_pex*ESNL_rer)^(1-ES_mumc)
-+ESPT_numc * (PT_pex*ESPT_rer)^(1-ES_mumc)
-+ESDE_numc * (DE_pex*ESDE_rer)^(1-ES_mumc)
-+ESRU_numc * (RU_pex*ESRU_rer)^(1-ES_mumc)
-+ESRW_numc * (RW_pex*ESRW_rer)^(1-ES_mumc)
-+ESUS_numc * (US_pex*ESUS_rer)^(1-ES_mumc)
++ESRA_numc *((RA_pex*ESRA_rer)/ESRA_gammaimcdag)^(1-ES_mumc)
++ESBE_numc *((BE_pex*ESBE_rer)/ESBE_gammaimcdag)^(1-ES_mumc)
++ESFI_numc *((FI_pex*ESFI_rer)/ESFI_gammaimcdag)^(1-ES_mumc)
++ESFR_numc *((FR_pex*ESFR_rer)/ESFR_gammaimcdag)^(1-ES_mumc)
++ESGR_numc *((GR_pex*ESGR_rer)/ESGR_gammaimcdag)^(1-ES_mumc)
++ESIT_numc *((IT_pex*ESIT_rer)/ESIT_gammaimcdag)^(1-ES_mumc)
++ESNL_numc *((NL_pex*ESNL_rer)/ESNL_gammaimcdag)^(1-ES_mumc)
++ESPT_numc *((PT_pex*ESPT_rer)/ESPT_gammaimcdag)^(1-ES_mumc)
++ESDE_numc *((DE_pex*ESDE_rer)/ESDE_gammaimcdag)^(1-ES_mumc)
++ESRU_numc *((RU_pex*ESRU_rer)/ESRU_gammaimcdag)^(1-ES_mumc)
++ESRW_numc *((RW_pex*ESRW_rer)/ESRW_gammaimcdag)^(1-ES_mumc)
++ESUS_numc *((US_pex*ESUS_rer)/ESUS_gammaimcdag)^(1-ES_mumc)
 +(1
 -ESRA_numc
 -ESBE_numc
@@ -24659,23 +24620,23 @@ ES_pimc^(1-ES_mumc) =
 -ESRU_numc
 -ESRW_numc
 -ESUS_numc
-)*(AT_pex*ESAT_rer)^(1-ES_mumc);
+)*((AT_pex*ESAT_rer)/ESAT_gammaimcdag)^(1-ES_mumc);
 // Private consumption good (import) inflation
 ES_piimc = ES_pimc/ES_pimc(-1)*ES_pic;
 // Private consumption good (import)
 ES_imi^((ES_mumi-1)/ES_mumi) =
-+ESRA_numi ^(1/ES_mumi)*ESRA_imi^(1-1/ES_mumi)
-+ESBE_numi ^(1/ES_mumi)*ESBE_imi^(1-1/ES_mumi)
-+ESFI_numi ^(1/ES_mumi)*ESFI_imi^(1-1/ES_mumi)
-+ESFR_numi ^(1/ES_mumi)*ESFR_imi^(1-1/ES_mumi)
-+ESGR_numi ^(1/ES_mumi)*ESGR_imi^(1-1/ES_mumi)
-+ESIT_numi ^(1/ES_mumi)*ESIT_imi^(1-1/ES_mumi)
-+ESNL_numi ^(1/ES_mumi)*ESNL_imi^(1-1/ES_mumi)
-+ESPT_numi ^(1/ES_mumi)*ESPT_imi^(1-1/ES_mumi)
-+ESDE_numi ^(1/ES_mumi)*ESDE_imi^(1-1/ES_mumi)
-+ESRU_numi ^(1/ES_mumi)*ESRU_imi^(1-1/ES_mumi)
-+ESRW_numi ^(1/ES_mumi)*ESRW_imi^(1-1/ES_mumi)
-+ESUS_numi ^(1/ES_mumi)*ESUS_imi^(1-1/ES_mumi)
++ESRA_numi ^(1/ES_mumi)*((1-ESRA_gammaimi)*ESRA_imi)^(1-1/ES_mumi)
++ESBE_numi ^(1/ES_mumi)*((1-ESBE_gammaimi)*ESBE_imi)^(1-1/ES_mumi)
++ESFI_numi ^(1/ES_mumi)*((1-ESFI_gammaimi)*ESFI_imi)^(1-1/ES_mumi)
++ESFR_numi ^(1/ES_mumi)*((1-ESFR_gammaimi)*ESFR_imi)^(1-1/ES_mumi)
++ESGR_numi ^(1/ES_mumi)*((1-ESGR_gammaimi)*ESGR_imi)^(1-1/ES_mumi)
++ESIT_numi ^(1/ES_mumi)*((1-ESIT_gammaimi)*ESIT_imi)^(1-1/ES_mumi)
++ESNL_numi ^(1/ES_mumi)*((1-ESNL_gammaimi)*ESNL_imi)^(1-1/ES_mumi)
++ESPT_numi ^(1/ES_mumi)*((1-ESPT_gammaimi)*ESPT_imi)^(1-1/ES_mumi)
++ESDE_numi ^(1/ES_mumi)*((1-ESDE_gammaimi)*ESDE_imi)^(1-1/ES_mumi)
++ESRU_numi ^(1/ES_mumi)*((1-ESRU_gammaimi)*ESRU_imi)^(1-1/ES_mumi)
++ESRW_numi ^(1/ES_mumi)*((1-ESRW_gammaimi)*ESRW_imi)^(1-1/ES_mumi)
++ESUS_numi ^(1/ES_mumi)*((1-ESUS_gammaimi)*ESUS_imi)^(1-1/ES_mumi)
 +(1
 -ESRA_numi
 -ESBE_numi
@@ -24689,29 +24650,29 @@ ES_imi^((ES_mumi-1)/ES_mumi) =
 -ESRU_numi
 -ESRW_numi
 -ESUS_numi
-)^(1/ES_mumi)*ESAT_imi^(1-1/ES_mumi);
+)^(1/ES_mumi)*((1-ESAT_gammaimi)*ESAT_imi)^(1-1/ES_mumi);
 // Demand for bilateral consumption import goods
-ESRA_imi = ESRA_numi*((RA_pex*ESRA_rer)/ES_pimi)^(-ES_mumi)*ES_imi;
+ESRA_imi = ESRA_numi*((RA_pex*ESRA_rer)/(ESRA_gammaimidag*ES_pimi))^(-ES_mumi)*ES_imi/(1-ESRA_gammaimi);
 // Demand for bilateral consumption import goods
-ESBE_imi = ESBE_numi*((BE_pex*ESBE_rer)/ES_pimi)^(-ES_mumi)*ES_imi;
+ESBE_imi = ESBE_numi*((BE_pex*ESBE_rer)/(ESBE_gammaimidag*ES_pimi))^(-ES_mumi)*ES_imi/(1-ESBE_gammaimi);
 // Demand for bilateral consumption import goods
-ESFR_imi = ESFR_numi*((FR_pex*ESFR_rer)/ES_pimi)^(-ES_mumi)*ES_imi;
+ESFR_imi = ESFR_numi*((FR_pex*ESFR_rer)/(ESFR_gammaimidag*ES_pimi))^(-ES_mumi)*ES_imi/(1-ESFR_gammaimi);
 // Demand for bilateral consumption import goods
-ESGR_imi = ESGR_numi*((GR_pex*ESGR_rer)/ES_pimi)^(-ES_mumi)*ES_imi;
+ESGR_imi = ESGR_numi*((GR_pex*ESGR_rer)/(ESGR_gammaimidag*ES_pimi))^(-ES_mumi)*ES_imi/(1-ESGR_gammaimi);
 // Demand for bilateral consumption import goods
-ESIT_imi = ESIT_numi*((IT_pex*ESIT_rer)/ES_pimi)^(-ES_mumi)*ES_imi;
+ESIT_imi = ESIT_numi*((IT_pex*ESIT_rer)/(ESIT_gammaimidag*ES_pimi))^(-ES_mumi)*ES_imi/(1-ESIT_gammaimi);
 // Demand for bilateral consumption import goods
-ESNL_imi = ESNL_numi*((NL_pex*ESNL_rer)/ES_pimi)^(-ES_mumi)*ES_imi;
+ESNL_imi = ESNL_numi*((NL_pex*ESNL_rer)/(ESNL_gammaimidag*ES_pimi))^(-ES_mumi)*ES_imi/(1-ESNL_gammaimi);
 // Demand for bilateral consumption import goods
-ESPT_imi = ESPT_numi*((PT_pex*ESPT_rer)/ES_pimi)^(-ES_mumi)*ES_imi;
+ESPT_imi = ESPT_numi*((PT_pex*ESPT_rer)/(ESPT_gammaimidag*ES_pimi))^(-ES_mumi)*ES_imi/(1-ESPT_gammaimi);
 // Demand for bilateral consumption import goods
-ESDE_imi = ESDE_numi*((DE_pex*ESDE_rer)/ES_pimi)^(-ES_mumi)*ES_imi;
+ESDE_imi = ESDE_numi*((DE_pex*ESDE_rer)/(ESDE_gammaimidag*ES_pimi))^(-ES_mumi)*ES_imi/(1-ESDE_gammaimi);
 // Demand for bilateral consumption import goods
-ESRU_imi = ESRU_numi*((RU_pex*ESRU_rer)/ES_pimi)^(-ES_mumi)*ES_imi;
+ESRU_imi = ESRU_numi*((RU_pex*ESRU_rer)/(ESRU_gammaimidag*ES_pimi))^(-ES_mumi)*ES_imi/(1-ESRU_gammaimi);
 // Demand for bilateral consumption import goods
-ESRW_imi = ESRW_numi*((RW_pex*ESRW_rer)/ES_pimi)^(-ES_mumi)*ES_imi;
+ESRW_imi = ESRW_numi*((RW_pex*ESRW_rer)/(ESRW_gammaimidag*ES_pimi))^(-ES_mumi)*ES_imi/(1-ESRW_gammaimi);
 // Demand for bilateral consumption import goods
-ESUS_imi = ESUS_numi*((US_pex*ESUS_rer)/ES_pimi)^(-ES_mumi)*ES_imi;
+ESUS_imi = ESUS_numi*((US_pex*ESUS_rer)/(ESUS_gammaimidag*ES_pimi))^(-ES_mumi)*ES_imi/(1-ESUS_gammaimi);
 ESAT_imi = (1
 -ESRA_numi
 -ESBE_numi
@@ -24725,21 +24686,21 @@ ESAT_imi = (1
 -ESRU_numi
 -ESRW_numi
 -ESUS_numi
-)*((AT_pex*ESAT_rer)/ES_pimi)^(-ES_mumi)*ES_imi;
+)*((AT_pex*ESAT_rer)/(ESAT_gammaimidag*ES_pimi))^(-ES_mumi)*ES_imi/(1-ESAT_gammaimi);
 // Price of the consumption good (import)
 ES_pimi^(1-ES_mumi) =
-+ESRA_numi * (RA_pex*ESRA_rer)^(1-ES_mumi)
-+ESBE_numi * (BE_pex*ESBE_rer)^(1-ES_mumi)
-+ESFI_numi * (FI_pex*ESFI_rer)^(1-ES_mumi)
-+ESFR_numi * (FR_pex*ESFR_rer)^(1-ES_mumi)
-+ESGR_numi * (GR_pex*ESGR_rer)^(1-ES_mumi)
-+ESIT_numi * (IT_pex*ESIT_rer)^(1-ES_mumi)
-+ESNL_numi * (NL_pex*ESNL_rer)^(1-ES_mumi)
-+ESPT_numi * (PT_pex*ESPT_rer)^(1-ES_mumi)
-+ESDE_numi * (DE_pex*ESDE_rer)^(1-ES_mumi)
-+ESRU_numi * (RU_pex*ESRU_rer)^(1-ES_mumi)
-+ESRW_numi * (RW_pex*ESRW_rer)^(1-ES_mumi)
-+ESUS_numi * (US_pex*ESUS_rer)^(1-ES_mumi)
++ESRA_numi *((RA_pex*ESRA_rer)/ESRA_gammaimidag)^(1-ES_mumi)
++ESBE_numi *((BE_pex*ESBE_rer)/ESBE_gammaimidag)^(1-ES_mumi)
++ESFI_numi *((FI_pex*ESFI_rer)/ESFI_gammaimidag)^(1-ES_mumi)
++ESFR_numi *((FR_pex*ESFR_rer)/ESFR_gammaimidag)^(1-ES_mumi)
++ESGR_numi *((GR_pex*ESGR_rer)/ESGR_gammaimidag)^(1-ES_mumi)
++ESIT_numi *((IT_pex*ESIT_rer)/ESIT_gammaimidag)^(1-ES_mumi)
++ESNL_numi *((NL_pex*ESNL_rer)/ESNL_gammaimidag)^(1-ES_mumi)
++ESPT_numi *((PT_pex*ESPT_rer)/ESPT_gammaimidag)^(1-ES_mumi)
++ESDE_numi *((DE_pex*ESDE_rer)/ESDE_gammaimidag)^(1-ES_mumi)
++ESRU_numi *((RU_pex*ESRU_rer)/ESRU_gammaimidag)^(1-ES_mumi)
++ESRW_numi *((RW_pex*ESRW_rer)/ESRW_gammaimidag)^(1-ES_mumi)
++ESUS_numi *((US_pex*ESUS_rer)/ESUS_gammaimidag)^(1-ES_mumi)
 +(1
 -ESRA_numi
 -ESBE_numi
@@ -24753,23 +24714,23 @@ ES_pimi^(1-ES_mumi) =
 -ESRU_numi
 -ESRW_numi
 -ESUS_numi
-)*(AT_pex*ESAT_rer)^(1-ES_mumi);
+)*((AT_pex*ESAT_rer)/ESAT_gammaimidag)^(1-ES_mumi);
 // Private consumption good (import) inflation
 ES_piimi = ES_pimi/ES_pimi(-1)*ES_pic;
 // Private consumption good (import)
 ES_imcg^((ES_mumcg-1)/ES_mumcg) =
-+ESRA_numcg ^(1/ES_mumcg)*ESRA_imcg^(1-1/ES_mumcg)
-+ESBE_numcg ^(1/ES_mumcg)*ESBE_imcg^(1-1/ES_mumcg)
-+ESFI_numcg ^(1/ES_mumcg)*ESFI_imcg^(1-1/ES_mumcg)
-+ESFR_numcg ^(1/ES_mumcg)*ESFR_imcg^(1-1/ES_mumcg)
-+ESGR_numcg ^(1/ES_mumcg)*ESGR_imcg^(1-1/ES_mumcg)
-+ESIT_numcg ^(1/ES_mumcg)*ESIT_imcg^(1-1/ES_mumcg)
-+ESNL_numcg ^(1/ES_mumcg)*ESNL_imcg^(1-1/ES_mumcg)
-+ESPT_numcg ^(1/ES_mumcg)*ESPT_imcg^(1-1/ES_mumcg)
-+ESDE_numcg ^(1/ES_mumcg)*ESDE_imcg^(1-1/ES_mumcg)
-+ESRU_numcg ^(1/ES_mumcg)*ESRU_imcg^(1-1/ES_mumcg)
-+ESRW_numcg ^(1/ES_mumcg)*ESRW_imcg^(1-1/ES_mumcg)
-+ESUS_numcg ^(1/ES_mumcg)*ESUS_imcg^(1-1/ES_mumcg)
++ESRA_numcg ^(1/ES_mumcg)*((1-ESRA_gammaimcg)*ESRA_imcg)^(1-1/ES_mumcg)
++ESBE_numcg ^(1/ES_mumcg)*((1-ESBE_gammaimcg)*ESBE_imcg)^(1-1/ES_mumcg)
++ESFI_numcg ^(1/ES_mumcg)*((1-ESFI_gammaimcg)*ESFI_imcg)^(1-1/ES_mumcg)
++ESFR_numcg ^(1/ES_mumcg)*((1-ESFR_gammaimcg)*ESFR_imcg)^(1-1/ES_mumcg)
++ESGR_numcg ^(1/ES_mumcg)*((1-ESGR_gammaimcg)*ESGR_imcg)^(1-1/ES_mumcg)
++ESIT_numcg ^(1/ES_mumcg)*((1-ESIT_gammaimcg)*ESIT_imcg)^(1-1/ES_mumcg)
++ESNL_numcg ^(1/ES_mumcg)*((1-ESNL_gammaimcg)*ESNL_imcg)^(1-1/ES_mumcg)
++ESPT_numcg ^(1/ES_mumcg)*((1-ESPT_gammaimcg)*ESPT_imcg)^(1-1/ES_mumcg)
++ESDE_numcg ^(1/ES_mumcg)*((1-ESDE_gammaimcg)*ESDE_imcg)^(1-1/ES_mumcg)
++ESRU_numcg ^(1/ES_mumcg)*((1-ESRU_gammaimcg)*ESRU_imcg)^(1-1/ES_mumcg)
++ESRW_numcg ^(1/ES_mumcg)*((1-ESRW_gammaimcg)*ESRW_imcg)^(1-1/ES_mumcg)
++ESUS_numcg ^(1/ES_mumcg)*((1-ESUS_gammaimcg)*ESUS_imcg)^(1-1/ES_mumcg)
 +(1
 -ESRA_numcg
 -ESBE_numcg
@@ -24783,29 +24744,29 @@ ES_imcg^((ES_mumcg-1)/ES_mumcg) =
 -ESRU_numcg
 -ESRW_numcg
 -ESUS_numcg
-)^(1/ES_mumcg)*ESAT_imcg^(1-1/ES_mumcg);
+)^(1/ES_mumcg)*((1-ESAT_gammaimcg)*ESAT_imcg)^(1-1/ES_mumcg);
 // Demand for bilateral consumption import goods
-ESRA_imcg = ESRA_numcg*((RA_pex*ESRA_rer)/ES_pimcg)^(-ES_mumcg)*ES_imcg;
+ESRA_imcg = ESRA_numcg*((RA_pex*ESRA_rer)/(ESRA_gammaimcgdag*ES_pimcg))^(-ES_mumcg)*ES_imcg/(1-ESRA_gammaimcg);
 // Demand for bilateral consumption import goods
-ESBE_imcg = ESBE_numcg*((BE_pex*ESBE_rer)/ES_pimcg)^(-ES_mumcg)*ES_imcg;
+ESBE_imcg = ESBE_numcg*((BE_pex*ESBE_rer)/(ESBE_gammaimcgdag*ES_pimcg))^(-ES_mumcg)*ES_imcg/(1-ESBE_gammaimcg);
 // Demand for bilateral consumption import goods
-ESFR_imcg = ESFR_numcg*((FR_pex*ESFR_rer)/ES_pimcg)^(-ES_mumcg)*ES_imcg;
+ESFR_imcg = ESFR_numcg*((FR_pex*ESFR_rer)/(ESFR_gammaimcgdag*ES_pimcg))^(-ES_mumcg)*ES_imcg/(1-ESFR_gammaimcg);
 // Demand for bilateral consumption import goods
-ESGR_imcg = ESGR_numcg*((GR_pex*ESGR_rer)/ES_pimcg)^(-ES_mumcg)*ES_imcg;
+ESGR_imcg = ESGR_numcg*((GR_pex*ESGR_rer)/(ESGR_gammaimcgdag*ES_pimcg))^(-ES_mumcg)*ES_imcg/(1-ESGR_gammaimcg);
 // Demand for bilateral consumption import goods
-ESIT_imcg = ESIT_numcg*((IT_pex*ESIT_rer)/ES_pimcg)^(-ES_mumcg)*ES_imcg;
+ESIT_imcg = ESIT_numcg*((IT_pex*ESIT_rer)/(ESIT_gammaimcgdag*ES_pimcg))^(-ES_mumcg)*ES_imcg/(1-ESIT_gammaimcg);
 // Demand for bilateral consumption import goods
-ESNL_imcg = ESNL_numcg*((NL_pex*ESNL_rer)/ES_pimcg)^(-ES_mumcg)*ES_imcg;
+ESNL_imcg = ESNL_numcg*((NL_pex*ESNL_rer)/(ESNL_gammaimcgdag*ES_pimcg))^(-ES_mumcg)*ES_imcg/(1-ESNL_gammaimcg);
 // Demand for bilateral consumption import goods
-ESPT_imcg = ESPT_numcg*((PT_pex*ESPT_rer)/ES_pimcg)^(-ES_mumcg)*ES_imcg;
+ESPT_imcg = ESPT_numcg*((PT_pex*ESPT_rer)/(ESPT_gammaimcgdag*ES_pimcg))^(-ES_mumcg)*ES_imcg/(1-ESPT_gammaimcg);
 // Demand for bilateral consumption import goods
-ESDE_imcg = ESDE_numcg*((DE_pex*ESDE_rer)/ES_pimcg)^(-ES_mumcg)*ES_imcg;
+ESDE_imcg = ESDE_numcg*((DE_pex*ESDE_rer)/(ESDE_gammaimcgdag*ES_pimcg))^(-ES_mumcg)*ES_imcg/(1-ESDE_gammaimcg);
 // Demand for bilateral consumption import goods
-ESRU_imcg = ESRU_numcg*((RU_pex*ESRU_rer)/ES_pimcg)^(-ES_mumcg)*ES_imcg;
+ESRU_imcg = ESRU_numcg*((RU_pex*ESRU_rer)/(ESRU_gammaimcgdag*ES_pimcg))^(-ES_mumcg)*ES_imcg/(1-ESRU_gammaimcg);
 // Demand for bilateral consumption import goods
-ESRW_imcg = ESRW_numcg*((RW_pex*ESRW_rer)/ES_pimcg)^(-ES_mumcg)*ES_imcg;
+ESRW_imcg = ESRW_numcg*((RW_pex*ESRW_rer)/(ESRW_gammaimcgdag*ES_pimcg))^(-ES_mumcg)*ES_imcg/(1-ESRW_gammaimcg);
 // Demand for bilateral consumption import goods
-ESUS_imcg = ESUS_numcg*((US_pex*ESUS_rer)/ES_pimcg)^(-ES_mumcg)*ES_imcg;
+ESUS_imcg = ESUS_numcg*((US_pex*ESUS_rer)/(ESUS_gammaimcgdag*ES_pimcg))^(-ES_mumcg)*ES_imcg/(1-ESUS_gammaimcg);
 ESAT_imcg = (1
 -ESRA_numcg
 -ESBE_numcg
@@ -24819,21 +24780,21 @@ ESAT_imcg = (1
 -ESRU_numcg
 -ESRW_numcg
 -ESUS_numcg
-)*((AT_pex*ESAT_rer)/ES_pimcg)^(-ES_mumcg)*ES_imcg;
+)*((AT_pex*ESAT_rer)/(ESAT_gammaimcgdag*ES_pimcg))^(-ES_mumcg)*ES_imcg/(1-ESAT_gammaimcg);
 // Price of the consumption good (import)
 ES_pimcg^(1-ES_mumcg) =
-+ESRA_numcg * (RA_pex*ESRA_rer)^(1-ES_mumcg)
-+ESBE_numcg * (BE_pex*ESBE_rer)^(1-ES_mumcg)
-+ESFI_numcg * (FI_pex*ESFI_rer)^(1-ES_mumcg)
-+ESFR_numcg * (FR_pex*ESFR_rer)^(1-ES_mumcg)
-+ESGR_numcg * (GR_pex*ESGR_rer)^(1-ES_mumcg)
-+ESIT_numcg * (IT_pex*ESIT_rer)^(1-ES_mumcg)
-+ESNL_numcg * (NL_pex*ESNL_rer)^(1-ES_mumcg)
-+ESPT_numcg * (PT_pex*ESPT_rer)^(1-ES_mumcg)
-+ESDE_numcg * (DE_pex*ESDE_rer)^(1-ES_mumcg)
-+ESRU_numcg * (RU_pex*ESRU_rer)^(1-ES_mumcg)
-+ESRW_numcg * (RW_pex*ESRW_rer)^(1-ES_mumcg)
-+ESUS_numcg * (US_pex*ESUS_rer)^(1-ES_mumcg)
++ESRA_numcg *((RA_pex*ESRA_rer)/ESRA_gammaimcgdag)^(1-ES_mumcg)
++ESBE_numcg *((BE_pex*ESBE_rer)/ESBE_gammaimcgdag)^(1-ES_mumcg)
++ESFI_numcg *((FI_pex*ESFI_rer)/ESFI_gammaimcgdag)^(1-ES_mumcg)
++ESFR_numcg *((FR_pex*ESFR_rer)/ESFR_gammaimcgdag)^(1-ES_mumcg)
++ESGR_numcg *((GR_pex*ESGR_rer)/ESGR_gammaimcgdag)^(1-ES_mumcg)
++ESIT_numcg *((IT_pex*ESIT_rer)/ESIT_gammaimcgdag)^(1-ES_mumcg)
++ESNL_numcg *((NL_pex*ESNL_rer)/ESNL_gammaimcgdag)^(1-ES_mumcg)
++ESPT_numcg *((PT_pex*ESPT_rer)/ESPT_gammaimcgdag)^(1-ES_mumcg)
++ESDE_numcg *((DE_pex*ESDE_rer)/ESDE_gammaimcgdag)^(1-ES_mumcg)
++ESRU_numcg *((RU_pex*ESRU_rer)/ESRU_gammaimcgdag)^(1-ES_mumcg)
++ESRW_numcg *((RW_pex*ESRW_rer)/ESRW_gammaimcgdag)^(1-ES_mumcg)
++ESUS_numcg *((US_pex*ESUS_rer)/ESUS_gammaimcgdag)^(1-ES_mumcg)
 +(1
 -ESRA_numcg
 -ESBE_numcg
@@ -24847,23 +24808,23 @@ ES_pimcg^(1-ES_mumcg) =
 -ESRU_numcg
 -ESRW_numcg
 -ESUS_numcg
-)*(AT_pex*ESAT_rer)^(1-ES_mumcg);
+)*((AT_pex*ESAT_rer)/ESAT_gammaimcgdag)^(1-ES_mumcg);
 // Private consumption good (import) inflation
 ES_piimcg = ES_pimcg/ES_pimcg(-1)*ES_pic;
 // Private consumption good (import)
 ES_imig^((ES_mumig-1)/ES_mumig) =
-+ESRA_numig ^(1/ES_mumig)*ESRA_imig^(1-1/ES_mumig)
-+ESBE_numig ^(1/ES_mumig)*ESBE_imig^(1-1/ES_mumig)
-+ESFI_numig ^(1/ES_mumig)*ESFI_imig^(1-1/ES_mumig)
-+ESFR_numig ^(1/ES_mumig)*ESFR_imig^(1-1/ES_mumig)
-+ESGR_numig ^(1/ES_mumig)*ESGR_imig^(1-1/ES_mumig)
-+ESIT_numig ^(1/ES_mumig)*ESIT_imig^(1-1/ES_mumig)
-+ESNL_numig ^(1/ES_mumig)*ESNL_imig^(1-1/ES_mumig)
-+ESPT_numig ^(1/ES_mumig)*ESPT_imig^(1-1/ES_mumig)
-+ESDE_numig ^(1/ES_mumig)*ESDE_imig^(1-1/ES_mumig)
-+ESRU_numig ^(1/ES_mumig)*ESRU_imig^(1-1/ES_mumig)
-+ESRW_numig ^(1/ES_mumig)*ESRW_imig^(1-1/ES_mumig)
-+ESUS_numig ^(1/ES_mumig)*ESUS_imig^(1-1/ES_mumig)
++ESRA_numig ^(1/ES_mumig)*((1-ESRA_gammaimig)*ESRA_imig)^(1-1/ES_mumig)
++ESBE_numig ^(1/ES_mumig)*((1-ESBE_gammaimig)*ESBE_imig)^(1-1/ES_mumig)
++ESFI_numig ^(1/ES_mumig)*((1-ESFI_gammaimig)*ESFI_imig)^(1-1/ES_mumig)
++ESFR_numig ^(1/ES_mumig)*((1-ESFR_gammaimig)*ESFR_imig)^(1-1/ES_mumig)
++ESGR_numig ^(1/ES_mumig)*((1-ESGR_gammaimig)*ESGR_imig)^(1-1/ES_mumig)
++ESIT_numig ^(1/ES_mumig)*((1-ESIT_gammaimig)*ESIT_imig)^(1-1/ES_mumig)
++ESNL_numig ^(1/ES_mumig)*((1-ESNL_gammaimig)*ESNL_imig)^(1-1/ES_mumig)
++ESPT_numig ^(1/ES_mumig)*((1-ESPT_gammaimig)*ESPT_imig)^(1-1/ES_mumig)
++ESDE_numig ^(1/ES_mumig)*((1-ESDE_gammaimig)*ESDE_imig)^(1-1/ES_mumig)
++ESRU_numig ^(1/ES_mumig)*((1-ESRU_gammaimig)*ESRU_imig)^(1-1/ES_mumig)
++ESRW_numig ^(1/ES_mumig)*((1-ESRW_gammaimig)*ESRW_imig)^(1-1/ES_mumig)
++ESUS_numig ^(1/ES_mumig)*((1-ESUS_gammaimig)*ESUS_imig)^(1-1/ES_mumig)
 +(1
 -ESRA_numig
 -ESBE_numig
@@ -24877,29 +24838,29 @@ ES_imig^((ES_mumig-1)/ES_mumig) =
 -ESRU_numig
 -ESRW_numig
 -ESUS_numig
-)^(1/ES_mumig)*ESAT_imig^(1-1/ES_mumig);
+)^(1/ES_mumig)*((1-ESAT_gammaimig)*ESAT_imig)^(1-1/ES_mumig);
 // Demand for bilateral consumption import goods
-ESRA_imig = ESRA_numig*((RA_pex*ESRA_rer)/ES_pimig)^(-ES_mumig)*ES_imig;
+ESRA_imig = ESRA_numig*((RA_pex*ESRA_rer)/(ESRA_gammaimigdag*ES_pimig))^(-ES_mumig)*ES_imig/(1-ESRA_gammaimig);
 // Demand for bilateral consumption import goods
-ESBE_imig = ESBE_numig*((BE_pex*ESBE_rer)/ES_pimig)^(-ES_mumig)*ES_imig;
+ESBE_imig = ESBE_numig*((BE_pex*ESBE_rer)/(ESBE_gammaimigdag*ES_pimig))^(-ES_mumig)*ES_imig/(1-ESBE_gammaimig);
 // Demand for bilateral consumption import goods
-ESFR_imig = ESFR_numig*((FR_pex*ESFR_rer)/ES_pimig)^(-ES_mumig)*ES_imig;
+ESFR_imig = ESFR_numig*((FR_pex*ESFR_rer)/(ESFR_gammaimigdag*ES_pimig))^(-ES_mumig)*ES_imig/(1-ESFR_gammaimig);
 // Demand for bilateral consumption import goods
-ESGR_imig = ESGR_numig*((GR_pex*ESGR_rer)/ES_pimig)^(-ES_mumig)*ES_imig;
+ESGR_imig = ESGR_numig*((GR_pex*ESGR_rer)/(ESGR_gammaimigdag*ES_pimig))^(-ES_mumig)*ES_imig/(1-ESGR_gammaimig);
 // Demand for bilateral consumption import goods
-ESIT_imig = ESIT_numig*((IT_pex*ESIT_rer)/ES_pimig)^(-ES_mumig)*ES_imig;
+ESIT_imig = ESIT_numig*((IT_pex*ESIT_rer)/(ESIT_gammaimigdag*ES_pimig))^(-ES_mumig)*ES_imig/(1-ESIT_gammaimig);
 // Demand for bilateral consumption import goods
-ESNL_imig = ESNL_numig*((NL_pex*ESNL_rer)/ES_pimig)^(-ES_mumig)*ES_imig;
+ESNL_imig = ESNL_numig*((NL_pex*ESNL_rer)/(ESNL_gammaimigdag*ES_pimig))^(-ES_mumig)*ES_imig/(1-ESNL_gammaimig);
 // Demand for bilateral consumption import goods
-ESPT_imig = ESPT_numig*((PT_pex*ESPT_rer)/ES_pimig)^(-ES_mumig)*ES_imig;
+ESPT_imig = ESPT_numig*((PT_pex*ESPT_rer)/(ESPT_gammaimigdag*ES_pimig))^(-ES_mumig)*ES_imig/(1-ESPT_gammaimig);
 // Demand for bilateral consumption import goods
-ESDE_imig = ESDE_numig*((DE_pex*ESDE_rer)/ES_pimig)^(-ES_mumig)*ES_imig;
+ESDE_imig = ESDE_numig*((DE_pex*ESDE_rer)/(ESDE_gammaimigdag*ES_pimig))^(-ES_mumig)*ES_imig/(1-ESDE_gammaimig);
 // Demand for bilateral consumption import goods
-ESRU_imig = ESRU_numig*((RU_pex*ESRU_rer)/ES_pimig)^(-ES_mumig)*ES_imig;
+ESRU_imig = ESRU_numig*((RU_pex*ESRU_rer)/(ESRU_gammaimigdag*ES_pimig))^(-ES_mumig)*ES_imig/(1-ESRU_gammaimig);
 // Demand for bilateral consumption import goods
-ESRW_imig = ESRW_numig*((RW_pex*ESRW_rer)/ES_pimig)^(-ES_mumig)*ES_imig;
+ESRW_imig = ESRW_numig*((RW_pex*ESRW_rer)/(ESRW_gammaimigdag*ES_pimig))^(-ES_mumig)*ES_imig/(1-ESRW_gammaimig);
 // Demand for bilateral consumption import goods
-ESUS_imig = ESUS_numig*((US_pex*ESUS_rer)/ES_pimig)^(-ES_mumig)*ES_imig;
+ESUS_imig = ESUS_numig*((US_pex*ESUS_rer)/(ESUS_gammaimigdag*ES_pimig))^(-ES_mumig)*ES_imig/(1-ESUS_gammaimig);
 ESAT_imig = (1
 -ESRA_numig
 -ESBE_numig
@@ -24913,21 +24874,21 @@ ESAT_imig = (1
 -ESRU_numig
 -ESRW_numig
 -ESUS_numig
-)*((AT_pex*ESAT_rer)/ES_pimig)^(-ES_mumig)*ES_imig;
+)*((AT_pex*ESAT_rer)/(ESAT_gammaimigdag*ES_pimig))^(-ES_mumig)*ES_imig/(1-ESAT_gammaimig);
 // Price of the consumption good (import)
 ES_pimig^(1-ES_mumig) =
-+ESRA_numig * (RA_pex*ESRA_rer)^(1-ES_mumig)
-+ESBE_numig * (BE_pex*ESBE_rer)^(1-ES_mumig)
-+ESFI_numig * (FI_pex*ESFI_rer)^(1-ES_mumig)
-+ESFR_numig * (FR_pex*ESFR_rer)^(1-ES_mumig)
-+ESGR_numig * (GR_pex*ESGR_rer)^(1-ES_mumig)
-+ESIT_numig * (IT_pex*ESIT_rer)^(1-ES_mumig)
-+ESNL_numig * (NL_pex*ESNL_rer)^(1-ES_mumig)
-+ESPT_numig * (PT_pex*ESPT_rer)^(1-ES_mumig)
-+ESDE_numig * (DE_pex*ESDE_rer)^(1-ES_mumig)
-+ESRU_numig * (RU_pex*ESRU_rer)^(1-ES_mumig)
-+ESRW_numig * (RW_pex*ESRW_rer)^(1-ES_mumig)
-+ESUS_numig * (US_pex*ESUS_rer)^(1-ES_mumig)
++ESRA_numig *((RA_pex*ESRA_rer)/ESRA_gammaimigdag)^(1-ES_mumig)
++ESBE_numig *((BE_pex*ESBE_rer)/ESBE_gammaimigdag)^(1-ES_mumig)
++ESFI_numig *((FI_pex*ESFI_rer)/ESFI_gammaimigdag)^(1-ES_mumig)
++ESFR_numig *((FR_pex*ESFR_rer)/ESFR_gammaimigdag)^(1-ES_mumig)
++ESGR_numig *((GR_pex*ESGR_rer)/ESGR_gammaimigdag)^(1-ES_mumig)
++ESIT_numig *((IT_pex*ESIT_rer)/ESIT_gammaimigdag)^(1-ES_mumig)
++ESNL_numig *((NL_pex*ESNL_rer)/ESNL_gammaimigdag)^(1-ES_mumig)
++ESPT_numig *((PT_pex*ESPT_rer)/ESPT_gammaimigdag)^(1-ES_mumig)
++ESDE_numig *((DE_pex*ESDE_rer)/ESDE_gammaimigdag)^(1-ES_mumig)
++ESRU_numig *((RU_pex*ESRU_rer)/ESRU_gammaimigdag)^(1-ES_mumig)
++ESRW_numig *((RW_pex*ESRW_rer)/ESRW_gammaimigdag)^(1-ES_mumig)
++ESUS_numig *((US_pex*ESUS_rer)/ESUS_gammaimigdag)^(1-ES_mumig)
 +(1
 -ESRA_numig
 -ESBE_numig
@@ -24941,7 +24902,7 @@ ES_pimig^(1-ES_mumig) =
 -ESRU_numig
 -ESRW_numig
 -ESUS_numig
-)*(AT_pex*ESAT_rer)^(1-ES_mumig);
+)*((AT_pex*ESAT_rer)/ESAT_gammaimigdag)^(1-ES_mumig);
 // Private consumption good (import) inflation
 ES_piimig = ES_pimig/ES_pimig(-1)*ES_pic;
 // Private consumption good (import) inflation
@@ -25042,32 +25003,58 @@ ES_pttc^(1-ES_mutc) = (ES_nutc)*ES_pht^(1-ES_mutc)+(1-ES_nutc)*ES_pimc^(1-ES_mut
 1^(1-ES_muc) = (ES_nuc)*ES_pttc^(1-ES_muc)+(1-ES_nuc)*ES_pnt^(1-ES_muc);
 // Demand for domestic intermediate goods
 ES_htc = ES_nutc*(ES_pht/ES_pttc)^(-ES_mutc)*ES_ttc;
-ESRA_gammaimc = 0;
-ESRA_gammaimcdag = 1;
-ESAT_gammaimc = 0;
-ESAT_gammaimcdag = 1;
-ESBE_gammaimc = 0;
-ESBE_gammaimcdag = 1;
-ESFI_gammaimc = 0;
-ESFI_gammaimcdag = 1;
-ESFR_gammaimc = 0;
-ESFR_gammaimcdag = 1;
-ESGR_gammaimc = 0;
-ESGR_gammaimcdag = 1;
-ESIT_gammaimc = 0;
-ESIT_gammaimcdag = 1;
-ESNL_gammaimc = 0;
-ESNL_gammaimcdag = 1;
-ESPT_gammaimc = 0;
-ESPT_gammaimcdag = 1;
-ESDE_gammaimc = 0;
-ESDE_gammaimcdag = 1;
-ESRU_gammaimc = 0;
-ESRU_gammaimcdag = 1;
-ESRW_gammaimc = 0;
-ESRW_gammaimcdag = 1;
-ESUS_gammaimc = 0;
-ESUS_gammaimcdag = 1;
+// Import adjustment cost
+ESRA_gammaimc = ES_gammaimc1/2*((ESRA_imc/ES_qc)/(ESRA_imc(-1)/ES_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESRA_gammaimcdag = 1-ESRA_gammaimc-ES_gammaimc1*((ESRA_imc/ES_qc)/(ESRA_imc(-1)/ES_qc(-1))-1)*(ESRA_imc/ES_qc)/(ESRA_imc(-1)/ES_qc(-1));
+// Import adjustment cost
+ESAT_gammaimc = ES_gammaimc1/2*((ESAT_imc/ES_qc)/(ESAT_imc(-1)/ES_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESAT_gammaimcdag = 1-ESAT_gammaimc-ES_gammaimc1*((ESAT_imc/ES_qc)/(ESAT_imc(-1)/ES_qc(-1))-1)*(ESAT_imc/ES_qc)/(ESAT_imc(-1)/ES_qc(-1));
+// Import adjustment cost
+ESBE_gammaimc = ES_gammaimc1/2*((ESBE_imc/ES_qc)/(ESBE_imc(-1)/ES_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESBE_gammaimcdag = 1-ESBE_gammaimc-ES_gammaimc1*((ESBE_imc/ES_qc)/(ESBE_imc(-1)/ES_qc(-1))-1)*(ESBE_imc/ES_qc)/(ESBE_imc(-1)/ES_qc(-1));
+// Import adjustment cost
+ESFI_gammaimc = ES_gammaimc1/2*((ESFI_imc/ES_qc)/(ESFI_imc(-1)/ES_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESFI_gammaimcdag = 1-ESFI_gammaimc-ES_gammaimc1*((ESFI_imc/ES_qc)/(ESFI_imc(-1)/ES_qc(-1))-1)*(ESFI_imc/ES_qc)/(ESFI_imc(-1)/ES_qc(-1));
+// Import adjustment cost
+ESFR_gammaimc = ES_gammaimc1/2*((ESFR_imc/ES_qc)/(ESFR_imc(-1)/ES_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESFR_gammaimcdag = 1-ESFR_gammaimc-ES_gammaimc1*((ESFR_imc/ES_qc)/(ESFR_imc(-1)/ES_qc(-1))-1)*(ESFR_imc/ES_qc)/(ESFR_imc(-1)/ES_qc(-1));
+// Import adjustment cost
+ESGR_gammaimc = ES_gammaimc1/2*((ESGR_imc/ES_qc)/(ESGR_imc(-1)/ES_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESGR_gammaimcdag = 1-ESGR_gammaimc-ES_gammaimc1*((ESGR_imc/ES_qc)/(ESGR_imc(-1)/ES_qc(-1))-1)*(ESGR_imc/ES_qc)/(ESGR_imc(-1)/ES_qc(-1));
+// Import adjustment cost
+ESIT_gammaimc = ES_gammaimc1/2*((ESIT_imc/ES_qc)/(ESIT_imc(-1)/ES_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESIT_gammaimcdag = 1-ESIT_gammaimc-ES_gammaimc1*((ESIT_imc/ES_qc)/(ESIT_imc(-1)/ES_qc(-1))-1)*(ESIT_imc/ES_qc)/(ESIT_imc(-1)/ES_qc(-1));
+// Import adjustment cost
+ESNL_gammaimc = ES_gammaimc1/2*((ESNL_imc/ES_qc)/(ESNL_imc(-1)/ES_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESNL_gammaimcdag = 1-ESNL_gammaimc-ES_gammaimc1*((ESNL_imc/ES_qc)/(ESNL_imc(-1)/ES_qc(-1))-1)*(ESNL_imc/ES_qc)/(ESNL_imc(-1)/ES_qc(-1));
+// Import adjustment cost
+ESPT_gammaimc = ES_gammaimc1/2*((ESPT_imc/ES_qc)/(ESPT_imc(-1)/ES_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESPT_gammaimcdag = 1-ESPT_gammaimc-ES_gammaimc1*((ESPT_imc/ES_qc)/(ESPT_imc(-1)/ES_qc(-1))-1)*(ESPT_imc/ES_qc)/(ESPT_imc(-1)/ES_qc(-1));
+// Import adjustment cost
+ESDE_gammaimc = ES_gammaimc1/2*((ESDE_imc/ES_qc)/(ESDE_imc(-1)/ES_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESDE_gammaimcdag = 1-ESDE_gammaimc-ES_gammaimc1*((ESDE_imc/ES_qc)/(ESDE_imc(-1)/ES_qc(-1))-1)*(ESDE_imc/ES_qc)/(ESDE_imc(-1)/ES_qc(-1));
+// Import adjustment cost
+ESRU_gammaimc = ES_gammaimc1/2*((ESRU_imc/ES_qc)/(ESRU_imc(-1)/ES_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESRU_gammaimcdag = 1-ESRU_gammaimc-ES_gammaimc1*((ESRU_imc/ES_qc)/(ESRU_imc(-1)/ES_qc(-1))-1)*(ESRU_imc/ES_qc)/(ESRU_imc(-1)/ES_qc(-1));
+// Import adjustment cost
+ESRW_gammaimc = ES_gammaimc1/2*((ESRW_imc/ES_qc)/(ESRW_imc(-1)/ES_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESRW_gammaimcdag = 1-ESRW_gammaimc-ES_gammaimc1*((ESRW_imc/ES_qc)/(ESRW_imc(-1)/ES_qc(-1))-1)*(ESRW_imc/ES_qc)/(ESRW_imc(-1)/ES_qc(-1));
+// Import adjustment cost
+ESUS_gammaimc = ES_gammaimc1/2*((ESUS_imc/ES_qc)/(ESUS_imc(-1)/ES_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESUS_gammaimcdag = 1-ESUS_gammaimc-ES_gammaimc1*((ESUS_imc/ES_qc)/(ESUS_imc(-1)/ES_qc(-1))-1)*(ESUS_imc/ES_qc)/(ESUS_imc(-1)/ES_qc(-1));
 // Private consumption good (tradable)
 ES_tti^((ES_muti-1)/ES_muti) = (ES_nuti)^(1/ES_muti)*ES_hti^(1-1/ES_muti)+(1-ES_nuti)^(1/ES_muti)*ES_imi^(1-1/ES_muti);
 // Private consumption good  (total)
@@ -25080,35 +25067,60 @@ ES_ptti^(1-ES_muti) = (ES_nuti)*ES_pht^(1-ES_muti)+(1-ES_nuti)*ES_pimi^(1-ES_mut
 ES_pi^(1-ES_mui) = (ES_nui)*ES_ptti^(1-ES_mui)+(1-ES_nui)*ES_pnt^(1-ES_mui);
 // Auxiliary equation for the price of the investment good in steady state
 // this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
-ES_pibar = ES_pi;
 // Demand for domestic intermediate goods
 ES_hti = ES_nuti*(ES_pht/ES_ptti)^(-ES_muti)*ES_tti;
-ESRA_gammaimi = 0;
-ESRA_gammaimidag = 1;
-ESAT_gammaimi = 0;
-ESAT_gammaimidag = 1;
-ESBE_gammaimi = 0;
-ESBE_gammaimidag = 1;
-ESFI_gammaimi = 0;
-ESFI_gammaimidag = 1;
-ESFR_gammaimi = 0;
-ESFR_gammaimidag = 1;
-ESGR_gammaimi = 0;
-ESGR_gammaimidag = 1;
-ESIT_gammaimi = 0;
-ESIT_gammaimidag = 1;
-ESNL_gammaimi = 0;
-ESNL_gammaimidag = 1;
-ESPT_gammaimi = 0;
-ESPT_gammaimidag = 1;
-ESDE_gammaimi = 0;
-ESDE_gammaimidag = 1;
-ESRU_gammaimi = 0;
-ESRU_gammaimidag = 1;
-ESRW_gammaimi = 0;
-ESRW_gammaimidag = 1;
-ESUS_gammaimi = 0;
-ESUS_gammaimidag = 1;
+// Import adjustment cost
+ESRA_gammaimi = ES_gammaimi1/2*((ESRA_imi/ES_qi)/(ESRA_imi(-1)/ES_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESRA_gammaimidag = 1-ESRA_gammaimi-ES_gammaimi1*((ESRA_imi/ES_qi)/(ESRA_imi(-1)/ES_qi)-1)*((ESRA_imi/ES_qi)/(ESRA_imi(-1)/ES_qi(-1)));
+// Import adjustment cost
+ESAT_gammaimi = ES_gammaimi1/2*((ESAT_imi/ES_qi)/(ESAT_imi(-1)/ES_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESAT_gammaimidag = 1-ESAT_gammaimi-ES_gammaimi1*((ESAT_imi/ES_qi)/(ESAT_imi(-1)/ES_qi)-1)*((ESAT_imi/ES_qi)/(ESAT_imi(-1)/ES_qi(-1)));
+// Import adjustment cost
+ESBE_gammaimi = ES_gammaimi1/2*((ESBE_imi/ES_qi)/(ESBE_imi(-1)/ES_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESBE_gammaimidag = 1-ESBE_gammaimi-ES_gammaimi1*((ESBE_imi/ES_qi)/(ESBE_imi(-1)/ES_qi)-1)*((ESBE_imi/ES_qi)/(ESBE_imi(-1)/ES_qi(-1)));
+// Import adjustment cost
+ESFI_gammaimi = ES_gammaimi1/2*((ESFI_imi/ES_qi)/(ESFI_imi(-1)/ES_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESFI_gammaimidag = 1-ESFI_gammaimi-ES_gammaimi1*((ESFI_imi/ES_qi)/(ESFI_imi(-1)/ES_qi)-1)*((ESFI_imi/ES_qi)/(ESFI_imi(-1)/ES_qi(-1)));
+// Import adjustment cost
+ESFR_gammaimi = ES_gammaimi1/2*((ESFR_imi/ES_qi)/(ESFR_imi(-1)/ES_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESFR_gammaimidag = 1-ESFR_gammaimi-ES_gammaimi1*((ESFR_imi/ES_qi)/(ESFR_imi(-1)/ES_qi)-1)*((ESFR_imi/ES_qi)/(ESFR_imi(-1)/ES_qi(-1)));
+// Import adjustment cost
+ESGR_gammaimi = ES_gammaimi1/2*((ESGR_imi/ES_qi)/(ESGR_imi(-1)/ES_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESGR_gammaimidag = 1-ESGR_gammaimi-ES_gammaimi1*((ESGR_imi/ES_qi)/(ESGR_imi(-1)/ES_qi)-1)*((ESGR_imi/ES_qi)/(ESGR_imi(-1)/ES_qi(-1)));
+// Import adjustment cost
+ESIT_gammaimi = ES_gammaimi1/2*((ESIT_imi/ES_qi)/(ESIT_imi(-1)/ES_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESIT_gammaimidag = 1-ESIT_gammaimi-ES_gammaimi1*((ESIT_imi/ES_qi)/(ESIT_imi(-1)/ES_qi)-1)*((ESIT_imi/ES_qi)/(ESIT_imi(-1)/ES_qi(-1)));
+// Import adjustment cost
+ESNL_gammaimi = ES_gammaimi1/2*((ESNL_imi/ES_qi)/(ESNL_imi(-1)/ES_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESNL_gammaimidag = 1-ESNL_gammaimi-ES_gammaimi1*((ESNL_imi/ES_qi)/(ESNL_imi(-1)/ES_qi)-1)*((ESNL_imi/ES_qi)/(ESNL_imi(-1)/ES_qi(-1)));
+// Import adjustment cost
+ESPT_gammaimi = ES_gammaimi1/2*((ESPT_imi/ES_qi)/(ESPT_imi(-1)/ES_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESPT_gammaimidag = 1-ESPT_gammaimi-ES_gammaimi1*((ESPT_imi/ES_qi)/(ESPT_imi(-1)/ES_qi)-1)*((ESPT_imi/ES_qi)/(ESPT_imi(-1)/ES_qi(-1)));
+// Import adjustment cost
+ESDE_gammaimi = ES_gammaimi1/2*((ESDE_imi/ES_qi)/(ESDE_imi(-1)/ES_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESDE_gammaimidag = 1-ESDE_gammaimi-ES_gammaimi1*((ESDE_imi/ES_qi)/(ESDE_imi(-1)/ES_qi)-1)*((ESDE_imi/ES_qi)/(ESDE_imi(-1)/ES_qi(-1)));
+// Import adjustment cost
+ESRU_gammaimi = ES_gammaimi1/2*((ESRU_imi/ES_qi)/(ESRU_imi(-1)/ES_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESRU_gammaimidag = 1-ESRU_gammaimi-ES_gammaimi1*((ESRU_imi/ES_qi)/(ESRU_imi(-1)/ES_qi)-1)*((ESRU_imi/ES_qi)/(ESRU_imi(-1)/ES_qi(-1)));
+// Import adjustment cost
+ESRW_gammaimi = ES_gammaimi1/2*((ESRW_imi/ES_qi)/(ESRW_imi(-1)/ES_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESRW_gammaimidag = 1-ESRW_gammaimi-ES_gammaimi1*((ESRW_imi/ES_qi)/(ESRW_imi(-1)/ES_qi)-1)*((ESRW_imi/ES_qi)/(ESRW_imi(-1)/ES_qi(-1)));
+// Import adjustment cost
+ESUS_gammaimi = ES_gammaimi1/2*((ESUS_imi/ES_qi)/(ESUS_imi(-1)/ES_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESUS_gammaimidag = 1-ESUS_gammaimi-ES_gammaimi1*((ESUS_imi/ES_qi)/(ESUS_imi(-1)/ES_qi)-1)*((ESUS_imi/ES_qi)/(ESUS_imi(-1)/ES_qi(-1)));
 // Private consumption good (tradable)
 ES_ttcg^((ES_mutcg-1)/ES_mutcg) = (ES_nutcg)^(1/ES_mutcg)*ES_htcg^(1-1/ES_mutcg)+(1-ES_nutcg)^(1/ES_mutcg)*ES_imcg^(1-1/ES_mutcg);
 // Private consumption good  (total)
@@ -25121,32 +25133,58 @@ ES_pttcg^(1-ES_mutcg) = (ES_nutcg)*ES_pht^(1-ES_mutcg)+(1-ES_nutcg)*ES_pimcg^(1-
 ES_pcg^(1-ES_mucg) = (ES_nucg)*ES_pttcg^(1-ES_mucg)+(1-ES_nucg)*ES_pnt^(1-ES_mucg);
 // Demand for domestic intermediate goods
 ES_htcg = ES_nutcg*(ES_pht/ES_pttcg)^(-ES_mutcg)*ES_ttcg;
-ESRA_gammaimcg = 0;
-ESRA_gammaimcgdag = 1;
-ESAT_gammaimcg = 0;
-ESAT_gammaimcgdag = 1;
-ESBE_gammaimcg = 0;
-ESBE_gammaimcgdag = 1;
-ESFI_gammaimcg = 0;
-ESFI_gammaimcgdag = 1;
-ESFR_gammaimcg = 0;
-ESFR_gammaimcgdag = 1;
-ESGR_gammaimcg = 0;
-ESGR_gammaimcgdag = 1;
-ESIT_gammaimcg = 0;
-ESIT_gammaimcgdag = 1;
-ESNL_gammaimcg = 0;
-ESNL_gammaimcgdag = 1;
-ESPT_gammaimcg = 0;
-ESPT_gammaimcgdag = 1;
-ESDE_gammaimcg = 0;
-ESDE_gammaimcgdag = 1;
-ESRU_gammaimcg = 0;
-ESRU_gammaimcgdag = 1;
-ESRW_gammaimcg = 0;
-ESRW_gammaimcgdag = 1;
-ESUS_gammaimcg = 0;
-ESUS_gammaimcgdag = 1;
+// Import adjustment cost
+ESRA_gammaimcg = ES_gammaimcg1/2*((ESRA_imcg/ES_qcg)/(ESRA_imcg(-1)/ES_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESRA_gammaimcgdag = 1-ESRA_gammaimcg-ES_gammaimcg1*((ESRA_imcg/ES_qcg)/(ESRA_imcg(-1)/ES_qcg)-1)*((ESRA_imcg/ES_qcg)/(ESRA_imcg(-1)/ES_qcg(-1)));
+// Import adjustment cost
+ESAT_gammaimcg = ES_gammaimcg1/2*((ESAT_imcg/ES_qcg)/(ESAT_imcg(-1)/ES_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESAT_gammaimcgdag = 1-ESAT_gammaimcg-ES_gammaimcg1*((ESAT_imcg/ES_qcg)/(ESAT_imcg(-1)/ES_qcg)-1)*((ESAT_imcg/ES_qcg)/(ESAT_imcg(-1)/ES_qcg(-1)));
+// Import adjustment cost
+ESBE_gammaimcg = ES_gammaimcg1/2*((ESBE_imcg/ES_qcg)/(ESBE_imcg(-1)/ES_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESBE_gammaimcgdag = 1-ESBE_gammaimcg-ES_gammaimcg1*((ESBE_imcg/ES_qcg)/(ESBE_imcg(-1)/ES_qcg)-1)*((ESBE_imcg/ES_qcg)/(ESBE_imcg(-1)/ES_qcg(-1)));
+// Import adjustment cost
+ESFI_gammaimcg = ES_gammaimcg1/2*((ESFI_imcg/ES_qcg)/(ESFI_imcg(-1)/ES_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESFI_gammaimcgdag = 1-ESFI_gammaimcg-ES_gammaimcg1*((ESFI_imcg/ES_qcg)/(ESFI_imcg(-1)/ES_qcg)-1)*((ESFI_imcg/ES_qcg)/(ESFI_imcg(-1)/ES_qcg(-1)));
+// Import adjustment cost
+ESFR_gammaimcg = ES_gammaimcg1/2*((ESFR_imcg/ES_qcg)/(ESFR_imcg(-1)/ES_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESFR_gammaimcgdag = 1-ESFR_gammaimcg-ES_gammaimcg1*((ESFR_imcg/ES_qcg)/(ESFR_imcg(-1)/ES_qcg)-1)*((ESFR_imcg/ES_qcg)/(ESFR_imcg(-1)/ES_qcg(-1)));
+// Import adjustment cost
+ESGR_gammaimcg = ES_gammaimcg1/2*((ESGR_imcg/ES_qcg)/(ESGR_imcg(-1)/ES_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESGR_gammaimcgdag = 1-ESGR_gammaimcg-ES_gammaimcg1*((ESGR_imcg/ES_qcg)/(ESGR_imcg(-1)/ES_qcg)-1)*((ESGR_imcg/ES_qcg)/(ESGR_imcg(-1)/ES_qcg(-1)));
+// Import adjustment cost
+ESIT_gammaimcg = ES_gammaimcg1/2*((ESIT_imcg/ES_qcg)/(ESIT_imcg(-1)/ES_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESIT_gammaimcgdag = 1-ESIT_gammaimcg-ES_gammaimcg1*((ESIT_imcg/ES_qcg)/(ESIT_imcg(-1)/ES_qcg)-1)*((ESIT_imcg/ES_qcg)/(ESIT_imcg(-1)/ES_qcg(-1)));
+// Import adjustment cost
+ESNL_gammaimcg = ES_gammaimcg1/2*((ESNL_imcg/ES_qcg)/(ESNL_imcg(-1)/ES_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESNL_gammaimcgdag = 1-ESNL_gammaimcg-ES_gammaimcg1*((ESNL_imcg/ES_qcg)/(ESNL_imcg(-1)/ES_qcg)-1)*((ESNL_imcg/ES_qcg)/(ESNL_imcg(-1)/ES_qcg(-1)));
+// Import adjustment cost
+ESPT_gammaimcg = ES_gammaimcg1/2*((ESPT_imcg/ES_qcg)/(ESPT_imcg(-1)/ES_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESPT_gammaimcgdag = 1-ESPT_gammaimcg-ES_gammaimcg1*((ESPT_imcg/ES_qcg)/(ESPT_imcg(-1)/ES_qcg)-1)*((ESPT_imcg/ES_qcg)/(ESPT_imcg(-1)/ES_qcg(-1)));
+// Import adjustment cost
+ESDE_gammaimcg = ES_gammaimcg1/2*((ESDE_imcg/ES_qcg)/(ESDE_imcg(-1)/ES_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESDE_gammaimcgdag = 1-ESDE_gammaimcg-ES_gammaimcg1*((ESDE_imcg/ES_qcg)/(ESDE_imcg(-1)/ES_qcg)-1)*((ESDE_imcg/ES_qcg)/(ESDE_imcg(-1)/ES_qcg(-1)));
+// Import adjustment cost
+ESRU_gammaimcg = ES_gammaimcg1/2*((ESRU_imcg/ES_qcg)/(ESRU_imcg(-1)/ES_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESRU_gammaimcgdag = 1-ESRU_gammaimcg-ES_gammaimcg1*((ESRU_imcg/ES_qcg)/(ESRU_imcg(-1)/ES_qcg)-1)*((ESRU_imcg/ES_qcg)/(ESRU_imcg(-1)/ES_qcg(-1)));
+// Import adjustment cost
+ESRW_gammaimcg = ES_gammaimcg1/2*((ESRW_imcg/ES_qcg)/(ESRW_imcg(-1)/ES_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESRW_gammaimcgdag = 1-ESRW_gammaimcg-ES_gammaimcg1*((ESRW_imcg/ES_qcg)/(ESRW_imcg(-1)/ES_qcg)-1)*((ESRW_imcg/ES_qcg)/(ESRW_imcg(-1)/ES_qcg(-1)));
+// Import adjustment cost
+ESUS_gammaimcg = ES_gammaimcg1/2*((ESUS_imcg/ES_qcg)/(ESUS_imcg(-1)/ES_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESUS_gammaimcgdag = 1-ESUS_gammaimcg-ES_gammaimcg1*((ESUS_imcg/ES_qcg)/(ESUS_imcg(-1)/ES_qcg)-1)*((ESUS_imcg/ES_qcg)/(ESUS_imcg(-1)/ES_qcg(-1)));
 // Private consumption good (tradable)
 ES_ttig^((ES_mutig-1)/ES_mutig) = (ES_nutig)^(1/ES_mutig)*ES_htig^(1-1/ES_mutig)+(1-ES_nutig)^(1/ES_mutig)*ES_imig^(1-1/ES_mutig);
 // Private consumption good  (total)
@@ -25159,32 +25197,58 @@ ES_pttig^(1-ES_mutig) = (ES_nutig)*ES_pht^(1-ES_mutig)+(1-ES_nutig)*ES_pimig^(1-
 ES_pig^(1-ES_muig) = (ES_nuig)*ES_pttig^(1-ES_muig)+(1-ES_nuig)*ES_pnt^(1-ES_muig);
 // Demand for domestic intermediate goods
 ES_htig = ES_nutig*(ES_pht/ES_pttig)^(-ES_mutig)*ES_ttig;
-ESRA_gammaimig = 0;
-ESRA_gammaimigdag = 1;
-ESAT_gammaimig = 0;
-ESAT_gammaimigdag = 1;
-ESBE_gammaimig = 0;
-ESBE_gammaimigdag = 1;
-ESFI_gammaimig = 0;
-ESFI_gammaimigdag = 1;
-ESFR_gammaimig = 0;
-ESFR_gammaimigdag = 1;
-ESGR_gammaimig = 0;
-ESGR_gammaimigdag = 1;
-ESIT_gammaimig = 0;
-ESIT_gammaimigdag = 1;
-ESNL_gammaimig = 0;
-ESNL_gammaimigdag = 1;
-ESPT_gammaimig = 0;
-ESPT_gammaimigdag = 1;
-ESDE_gammaimig = 0;
-ESDE_gammaimigdag = 1;
-ESRU_gammaimig = 0;
-ESRU_gammaimigdag = 1;
-ESRW_gammaimig = 0;
-ESRW_gammaimigdag = 1;
-ESUS_gammaimig = 0;
-ESUS_gammaimigdag = 1;
+// Import adjustment cost
+ESRA_gammaimig = ES_gammaimig1/2*((ESRA_imig/ES_qig)/(ESRA_imig(-1)/ES_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESRA_gammaimigdag = 1-ESRA_gammaimig-ES_gammaimig1*((ESRA_imig/ES_qig)/(ESRA_imig(-1)/ES_qig)-1)*((ESRA_imig/ES_qig)/(ESRA_imig(-1)/ES_qig(-1)));
+// Import adjustment cost
+ESAT_gammaimig = ES_gammaimig1/2*((ESAT_imig/ES_qig)/(ESAT_imig(-1)/ES_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESAT_gammaimigdag = 1-ESAT_gammaimig-ES_gammaimig1*((ESAT_imig/ES_qig)/(ESAT_imig(-1)/ES_qig)-1)*((ESAT_imig/ES_qig)/(ESAT_imig(-1)/ES_qig(-1)));
+// Import adjustment cost
+ESBE_gammaimig = ES_gammaimig1/2*((ESBE_imig/ES_qig)/(ESBE_imig(-1)/ES_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESBE_gammaimigdag = 1-ESBE_gammaimig-ES_gammaimig1*((ESBE_imig/ES_qig)/(ESBE_imig(-1)/ES_qig)-1)*((ESBE_imig/ES_qig)/(ESBE_imig(-1)/ES_qig(-1)));
+// Import adjustment cost
+ESFI_gammaimig = ES_gammaimig1/2*((ESFI_imig/ES_qig)/(ESFI_imig(-1)/ES_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESFI_gammaimigdag = 1-ESFI_gammaimig-ES_gammaimig1*((ESFI_imig/ES_qig)/(ESFI_imig(-1)/ES_qig)-1)*((ESFI_imig/ES_qig)/(ESFI_imig(-1)/ES_qig(-1)));
+// Import adjustment cost
+ESFR_gammaimig = ES_gammaimig1/2*((ESFR_imig/ES_qig)/(ESFR_imig(-1)/ES_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESFR_gammaimigdag = 1-ESFR_gammaimig-ES_gammaimig1*((ESFR_imig/ES_qig)/(ESFR_imig(-1)/ES_qig)-1)*((ESFR_imig/ES_qig)/(ESFR_imig(-1)/ES_qig(-1)));
+// Import adjustment cost
+ESGR_gammaimig = ES_gammaimig1/2*((ESGR_imig/ES_qig)/(ESGR_imig(-1)/ES_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESGR_gammaimigdag = 1-ESGR_gammaimig-ES_gammaimig1*((ESGR_imig/ES_qig)/(ESGR_imig(-1)/ES_qig)-1)*((ESGR_imig/ES_qig)/(ESGR_imig(-1)/ES_qig(-1)));
+// Import adjustment cost
+ESIT_gammaimig = ES_gammaimig1/2*((ESIT_imig/ES_qig)/(ESIT_imig(-1)/ES_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESIT_gammaimigdag = 1-ESIT_gammaimig-ES_gammaimig1*((ESIT_imig/ES_qig)/(ESIT_imig(-1)/ES_qig)-1)*((ESIT_imig/ES_qig)/(ESIT_imig(-1)/ES_qig(-1)));
+// Import adjustment cost
+ESNL_gammaimig = ES_gammaimig1/2*((ESNL_imig/ES_qig)/(ESNL_imig(-1)/ES_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESNL_gammaimigdag = 1-ESNL_gammaimig-ES_gammaimig1*((ESNL_imig/ES_qig)/(ESNL_imig(-1)/ES_qig)-1)*((ESNL_imig/ES_qig)/(ESNL_imig(-1)/ES_qig(-1)));
+// Import adjustment cost
+ESPT_gammaimig = ES_gammaimig1/2*((ESPT_imig/ES_qig)/(ESPT_imig(-1)/ES_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESPT_gammaimigdag = 1-ESPT_gammaimig-ES_gammaimig1*((ESPT_imig/ES_qig)/(ESPT_imig(-1)/ES_qig)-1)*((ESPT_imig/ES_qig)/(ESPT_imig(-1)/ES_qig(-1)));
+// Import adjustment cost
+ESDE_gammaimig = ES_gammaimig1/2*((ESDE_imig/ES_qig)/(ESDE_imig(-1)/ES_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESDE_gammaimigdag = 1-ESDE_gammaimig-ES_gammaimig1*((ESDE_imig/ES_qig)/(ESDE_imig(-1)/ES_qig)-1)*((ESDE_imig/ES_qig)/(ESDE_imig(-1)/ES_qig(-1)));
+// Import adjustment cost
+ESRU_gammaimig = ES_gammaimig1/2*((ESRU_imig/ES_qig)/(ESRU_imig(-1)/ES_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESRU_gammaimigdag = 1-ESRU_gammaimig-ES_gammaimig1*((ESRU_imig/ES_qig)/(ESRU_imig(-1)/ES_qig)-1)*((ESRU_imig/ES_qig)/(ESRU_imig(-1)/ES_qig(-1)));
+// Import adjustment cost
+ESRW_gammaimig = ES_gammaimig1/2*((ESRW_imig/ES_qig)/(ESRW_imig(-1)/ES_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESRW_gammaimigdag = 1-ESRW_gammaimig-ES_gammaimig1*((ESRW_imig/ES_qig)/(ESRW_imig(-1)/ES_qig)-1)*((ESRW_imig/ES_qig)/(ESRW_imig(-1)/ES_qig(-1)));
+// Import adjustment cost
+ESUS_gammaimig = ES_gammaimig1/2*((ESUS_imig/ES_qig)/(ESUS_imig(-1)/ES_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ESUS_gammaimigdag = 1-ESUS_gammaimig-ES_gammaimig1*((ESUS_imig/ES_qig)/(ESUS_imig(-1)/ES_qig)-1)*((ESUS_imig/ES_qig)/(ESUS_imig(-1)/ES_qig(-1)));
 // Trade balance
 ES_tb =
 +ES_pex*RA_size/ES_size*RAES_im
@@ -25245,18 +25309,10 @@ ES_ex =
 // Government spending, using ES_pg = ES_pht
 ES_pcg*ES_cg = ES_cgy*ES_pybar*ES_ybar;
 ES_pig*ES_ig = ES_igy*ES_pybar*ES_ybar;
-ES_t = 0;
-ES_b = ES_bytarget*ES_pybar*ES_ybar;
-// Auxiliary equation for steady-state output
-ES_ybar = ES_y;
-// Auxiliary equation for steady-state output
-ES_ytbar = ES_yst;
-// Auxiliary equation for steady-state output
-ES_ynbar = ES_ysn;
-// Auxiliary equation for steady-state output deflator
-ES_pybar = ES_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-ES_trybar = ES_tr/(ES_pybar*ES_ybar);
+// Transfers
+ES_tr = ES_try*ES_pybar*ES_ybar;
+// Fiscal rule
+ES_t/(ES_pybar*ES_ybar) = ES_phitb*(ES_b/(ES_pybar*ES_ybar)-ES_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 ES_ti = ES_upsilont*ES_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -25272,9 +25328,11 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	ES_r = DE_r;
-ES_pic4 = ES_pi4target;
-ES_rr-1 = ES_r/ES_pi4target^(1/4)-1;
+		ES_rerdep/DE_rerdep*ES_pic/DE_pic-1=0;
+// Definition of annual inflation
+ES_pic4 = ES_pic*ES_pic(-1)*ES_pic(-2)*ES_pic(-3);
+// Real interest rate
+ES_rr-1 = ES_r/ES_pic(+1)-1;
 // Equilibrium real interest rate
 ES_rrstar-1 = 1/ES_beta-1;
 //-------------
@@ -25361,68 +25419,68 @@ ES_py*ES_y =
 +ES_pcg*ES_qcg
 +ES_pig*ES_qig
 +ES_pex*RA_size/ES_size*RAES_im
--(RA_pex*ESRA_rer)*ESRA_imc
--(RA_pex*ESRA_rer)*ESRA_imi
+-(RA_pex*ESRA_rer)*(ESRA_imc*(1-ESRA_gammaimc)/ESRA_gammaimcdag)
+-(RA_pex*ESRA_rer)*(ESRA_imi*(1-ESRA_gammaimi)/ESRA_gammaimidag)
 -(RA_pex*ESRA_rer)*ESRA_imcg
 -(RA_pex*ESRA_rer)*ESRA_imig
 +ES_pex*AT_size/ES_size*ATES_im
--(AT_pex*ESAT_rer)*ESAT_imc
--(AT_pex*ESAT_rer)*ESAT_imi
+-(AT_pex*ESAT_rer)*(ESAT_imc*(1-ESAT_gammaimc)/ESAT_gammaimcdag)
+-(AT_pex*ESAT_rer)*(ESAT_imi*(1-ESAT_gammaimi)/ESAT_gammaimidag)
 -(AT_pex*ESAT_rer)*ESAT_imcg
 -(AT_pex*ESAT_rer)*ESAT_imig
 +ES_pex*BE_size/ES_size*BEES_im
--(BE_pex*ESBE_rer)*ESBE_imc
--(BE_pex*ESBE_rer)*ESBE_imi
+-(BE_pex*ESBE_rer)*(ESBE_imc*(1-ESBE_gammaimc)/ESBE_gammaimcdag)
+-(BE_pex*ESBE_rer)*(ESBE_imi*(1-ESBE_gammaimi)/ESBE_gammaimidag)
 -(BE_pex*ESBE_rer)*ESBE_imcg
 -(BE_pex*ESBE_rer)*ESBE_imig
 +ES_pex*FI_size/ES_size*FIES_im
--(FI_pex*ESFI_rer)*ESFI_imc
--(FI_pex*ESFI_rer)*ESFI_imi
+-(FI_pex*ESFI_rer)*(ESFI_imc*(1-ESFI_gammaimc)/ESFI_gammaimcdag)
+-(FI_pex*ESFI_rer)*(ESFI_imi*(1-ESFI_gammaimi)/ESFI_gammaimidag)
 -(FI_pex*ESFI_rer)*ESFI_imcg
 -(FI_pex*ESFI_rer)*ESFI_imig
 +ES_pex*FR_size/ES_size*FRES_im
--(FR_pex*ESFR_rer)*ESFR_imc
--(FR_pex*ESFR_rer)*ESFR_imi
+-(FR_pex*ESFR_rer)*(ESFR_imc*(1-ESFR_gammaimc)/ESFR_gammaimcdag)
+-(FR_pex*ESFR_rer)*(ESFR_imi*(1-ESFR_gammaimi)/ESFR_gammaimidag)
 -(FR_pex*ESFR_rer)*ESFR_imcg
 -(FR_pex*ESFR_rer)*ESFR_imig
 +ES_pex*GR_size/ES_size*GRES_im
--(GR_pex*ESGR_rer)*ESGR_imc
--(GR_pex*ESGR_rer)*ESGR_imi
+-(GR_pex*ESGR_rer)*(ESGR_imc*(1-ESGR_gammaimc)/ESGR_gammaimcdag)
+-(GR_pex*ESGR_rer)*(ESGR_imi*(1-ESGR_gammaimi)/ESGR_gammaimidag)
 -(GR_pex*ESGR_rer)*ESGR_imcg
 -(GR_pex*ESGR_rer)*ESGR_imig
 +ES_pex*IT_size/ES_size*ITES_im
--(IT_pex*ESIT_rer)*ESIT_imc
--(IT_pex*ESIT_rer)*ESIT_imi
+-(IT_pex*ESIT_rer)*(ESIT_imc*(1-ESIT_gammaimc)/ESIT_gammaimcdag)
+-(IT_pex*ESIT_rer)*(ESIT_imi*(1-ESIT_gammaimi)/ESIT_gammaimidag)
 -(IT_pex*ESIT_rer)*ESIT_imcg
 -(IT_pex*ESIT_rer)*ESIT_imig
 +ES_pex*NL_size/ES_size*NLES_im
--(NL_pex*ESNL_rer)*ESNL_imc
--(NL_pex*ESNL_rer)*ESNL_imi
+-(NL_pex*ESNL_rer)*(ESNL_imc*(1-ESNL_gammaimc)/ESNL_gammaimcdag)
+-(NL_pex*ESNL_rer)*(ESNL_imi*(1-ESNL_gammaimi)/ESNL_gammaimidag)
 -(NL_pex*ESNL_rer)*ESNL_imcg
 -(NL_pex*ESNL_rer)*ESNL_imig
 +ES_pex*PT_size/ES_size*PTES_im
--(PT_pex*ESPT_rer)*ESPT_imc
--(PT_pex*ESPT_rer)*ESPT_imi
+-(PT_pex*ESPT_rer)*(ESPT_imc*(1-ESPT_gammaimc)/ESPT_gammaimcdag)
+-(PT_pex*ESPT_rer)*(ESPT_imi*(1-ESPT_gammaimi)/ESPT_gammaimidag)
 -(PT_pex*ESPT_rer)*ESPT_imcg
 -(PT_pex*ESPT_rer)*ESPT_imig
 +ES_pex*DE_size/ES_size*DEES_im
--(DE_pex*ESDE_rer)*ESDE_imc
--(DE_pex*ESDE_rer)*ESDE_imi
+-(DE_pex*ESDE_rer)*(ESDE_imc*(1-ESDE_gammaimc)/ESDE_gammaimcdag)
+-(DE_pex*ESDE_rer)*(ESDE_imi*(1-ESDE_gammaimi)/ESDE_gammaimidag)
 -(DE_pex*ESDE_rer)*ESDE_imcg
 -(DE_pex*ESDE_rer)*ESDE_imig
 +ES_pex*RU_size/ES_size*RUES_im
--(RU_pex*ESRU_rer)*ESRU_imc
--(RU_pex*ESRU_rer)*ESRU_imi
+-(RU_pex*ESRU_rer)*(ESRU_imc*(1-ESRU_gammaimc)/ESRU_gammaimcdag)
+-(RU_pex*ESRU_rer)*(ESRU_imi*(1-ESRU_gammaimi)/ESRU_gammaimidag)
 -(RU_pex*ESRU_rer)*ESRU_imcg
 -(RU_pex*ESRU_rer)*ESRU_imig
 +ES_pex*RW_size/ES_size*RWES_im
--(RW_pex*ESRW_rer)*ESRW_imc
--(RW_pex*ESRW_rer)*ESRW_imi
+-(RW_pex*ESRW_rer)*(ESRW_imc*(1-ESRW_gammaimc)/ESRW_gammaimcdag)
+-(RW_pex*ESRW_rer)*(ESRW_imi*(1-ESRW_gammaimi)/ESRW_gammaimidag)
 -(RW_pex*ESRW_rer)*ESRW_imcg
 -(RW_pex*ESRW_rer)*ESRW_imig
 +ES_pex*US_size/ES_size*USES_im
--(US_pex*ESUS_rer)*ESUS_imc
--(US_pex*ESUS_rer)*ESUS_imi
+-(US_pex*ESUS_rer)*(ESUS_imc*(1-ESUS_gammaimc)/ESUS_gammaimcdag)
+-(US_pex*ESUS_rer)*(ESUS_imi*(1-ESUS_gammaimi)/ESUS_gammaimidag)
 -(US_pex*ESUS_rer)*ESUS_imcg
 -(US_pex*ESUS_rer)*ESUS_imig
 ;
@@ -25497,7 +25555,7 @@ ES_yhty = ES_pht*ES_yst/(ES_py*ES_y);
 // NT sector share
 ES_ynty = ES_pnt*ES_ysn/(ES_py*ES_y);
 // Output gap
-ES_ygap = 0;
+ES_ygap = ES_y/ES_ybar-1;
 // Output growth (gross rate)
 ES_ygrowth = ES_y/ES_y(-1);
 // Output growth (gross rate yoy)
@@ -25661,7 +25719,7 @@ FI_dcci = ((FI_nucces)^(1/FI_mucces)*FI_ci^(1-1/FI_mucces)+(1-FI_nucces)^(1/FI_m
 FI_lambdai*(1+FI_tauc+FI_gammavi+FI_vi*FI_gammavider) = FI_zcon*(FI_ccesi-FI_kappa*FI_ccesi(-1))^(-FI_sigma)*FI_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
-FI_r                   = FI_beta^(-1)*FI_lambdai/FI_lambdai    *FI_pic;
+FI_r*(1-FI_gammabh) = FI_beta^(-1)*FI_lambdai/FI_lambdai(+1)*FI_pic(+1);
 // Germany
 // US and the RoW
 // Euler equation for money
@@ -25672,17 +25730,23 @@ FI_vi = FI_ci/FI_mi;
 FI_gammavi = FI_gammav1*FI_vi+FI_gammav2/FI_vi-2*(FI_gammav1*FI_gammav2)^(1/2);
 // Derivative of transaction cost
 FI_gammavider = FI_gammav1-FI_gammav2*FI_vi^(-2);
-FI_delta = FI_ii/FI_ki;
-FI_gammai = 0;
-FI_gammaider = 0;
-FI_gammau = 0;
-FI_gammauder = ((FI_beta^(-1)-1+FI_delta)*FI_qbar-FI_delta*FI_taukbar*FI_pibar)/((1-FI_taukbar)*FI_pibar);
-FI_u = 1;
-FI_pi = FI_q;
+// Capital accumulation
+FI_ki = (1-FI_delta)*FI_ki(-1)+(1-FI_gammai(-1))*FI_ii(-1)*FI_zinv;
+// Investment adjustment cost
+FI_gammai = FI_gammai1/2*(FI_ii/FI_ii(-1)-1)^2;
+// Derivative of investment adjustment cost
+FI_gammaider = FI_gammai1*(FI_ii/FI_ii(-1)-1)/FI_ii(-1);
+// Capacity utilisation cost
+FI_gammau = ((FI_beta^(-1)-1+FI_delta)*FI_qbar-FI_delta*FI_taukbar*FI_pibar)/((1-FI_taukbar)*FI_pibar)*(FI_u-1)+FI_gammau2/2*(FI_u-1)^2;
+// Derivative of capacity utilisation cost
+FI_gammauder = ((FI_beta^(-1)-1+FI_delta)*FI_qbar-FI_delta*FI_taukbar*FI_pibar)/((1-FI_taukbar)*FI_pibar)+FI_gammau2*(FI_u-1);
+// Optimal capacity utilisation (FOC)
+FI_rk = FI_gammauder*FI_pi;
+// Tobin's Q
+FI_pi = FI_q*FI_zinv*(1-FI_gammai-FI_gammaider*FI_ii)+FI_beta*FI_lambdai(+1)/FI_lambdai*FI_q(+1)*FI_zinv(+1)*FI_gammaider(+1)*FI_ii(+1)^2/FI_ii;
 // Auxiliary equation for Tobin's Q in steady state
-FI_qbar = FI_q;
 // Rate of return on capital
-FI_q = FI_beta*((1-FI_tauk)*FI_rk+(FI_tauk*FI_delta)*FI_pi+(1-FI_delta)*FI_q);
+FI_q = FI_beta*FI_lambdai(+1)/FI_lambdai*((1-FI_tauk(+1))*(FI_rk(+1)*FI_u(+1)-FI_gammau(+1)*FI_pi(+1))+(FI_tauk(+1)*FI_delta)*FI_pi(+1)+(1-FI_delta)*FI_q(+1));
 // Optimal wage contract (FOC)
 FI_witilde^(1+FI_etai*FI_zeta) = FI_etai/(FI_etai-1)*FI_fi/FI_gi+FI_wcst;
 // Definition of fi
@@ -25741,11 +25805,9 @@ FI_mcn = 1/(EA_z*FI_zn*FI_kg^FI_alphag*(FI_alphan)^(FI_alphan)*(1-FI_alphan)^(1-
 // Wage Inflation (qoq)
 FI_piw = FI_w/FI_w(-1)*FI_pic;
 // Wage Inflation (yoy)
-FI_piw4 = FI_pic4;
+FI_piw4 = FI_piw*FI_piw(-1)*FI_piw(-2)*FI_piw(-3);
 // Auxiliary equation for steady-state fixed cost
-FI_psitbar = FI_psit*FI_ytbar;
 // Auxiliary equation for steady-state fixed cost
-FI_psinbar = FI_psin*FI_ynbar;
 // Capital input (FOC)
 FI_rk = FI_alphat*(FI_yst+FI_psitbar)/FI_kdt*FI_mct;
 // Capital input (FOC)
@@ -25820,7 +25882,6 @@ FI_piex = FI_pex/FI_pex(-1)*FI_pic;
 // Bilateral real exchange rate
 FIRA_rer = FI_rer/RA_rer;
 // Auxiliary equation for steady-state output
-FIRA_rerbar = FIRA_rer;
 //Terms of Trade
 FIRA_tot = RA_pex*FIRA_rer/FI_pex;
 // Optimal price contract set in foreign markets (FOC), using FI_pxtilde = AT_pimtilde
@@ -25836,7 +25897,6 @@ FIRA_tot = RA_pex*FIRA_rer/FI_pex;
 // Bilateral real exchange rate
 FIAT_rer = FI_rer/AT_rer;
 // Auxiliary equation for steady-state output
-FIAT_rerbar = FIAT_rer;
 //Terms of Trade
 FIAT_tot = AT_pex*FIAT_rer/FI_pex;
 // Optimal price contract set in foreign markets (FOC), using FI_pxtilde = BE_pimtilde
@@ -25852,7 +25912,6 @@ FIAT_tot = AT_pex*FIAT_rer/FI_pex;
 // Bilateral real exchange rate
 FIBE_rer = FI_rer/BE_rer;
 // Auxiliary equation for steady-state output
-FIBE_rerbar = FIBE_rer;
 //Terms of Trade
 FIBE_tot = BE_pex*FIBE_rer/FI_pex;
 // Optimal price contract set in foreign markets (FOC), using FI_pxtilde = ES_pimtilde
@@ -25868,7 +25927,6 @@ FIBE_tot = BE_pex*FIBE_rer/FI_pex;
 // Bilateral real exchange rate
 FIES_rer = FI_rer/ES_rer;
 // Auxiliary equation for steady-state output
-FIES_rerbar = FIES_rer;
 //Terms of Trade
 FIES_tot = ES_pex*FIES_rer/FI_pex;
 // Optimal price contract set in foreign markets (FOC), using FI_pxtilde = FR_pimtilde
@@ -25884,7 +25942,6 @@ FIES_tot = ES_pex*FIES_rer/FI_pex;
 // Bilateral real exchange rate
 FIFR_rer = FI_rer/FR_rer;
 // Auxiliary equation for steady-state output
-FIFR_rerbar = FIFR_rer;
 //Terms of Trade
 FIFR_tot = FR_pex*FIFR_rer/FI_pex;
 // Optimal price contract set in foreign markets (FOC), using FI_pxtilde = GR_pimtilde
@@ -25900,7 +25957,6 @@ FIFR_tot = FR_pex*FIFR_rer/FI_pex;
 // Bilateral real exchange rate
 FIGR_rer = FI_rer/GR_rer;
 // Auxiliary equation for steady-state output
-FIGR_rerbar = FIGR_rer;
 //Terms of Trade
 FIGR_tot = GR_pex*FIGR_rer/FI_pex;
 // Optimal price contract set in foreign markets (FOC), using FI_pxtilde = IT_pimtilde
@@ -25916,7 +25972,6 @@ FIGR_tot = GR_pex*FIGR_rer/FI_pex;
 // Bilateral real exchange rate
 FIIT_rer = FI_rer/IT_rer;
 // Auxiliary equation for steady-state output
-FIIT_rerbar = FIIT_rer;
 //Terms of Trade
 FIIT_tot = IT_pex*FIIT_rer/FI_pex;
 // Optimal price contract set in foreign markets (FOC), using FI_pxtilde = NL_pimtilde
@@ -25932,7 +25987,6 @@ FIIT_tot = IT_pex*FIIT_rer/FI_pex;
 // Bilateral real exchange rate
 FINL_rer = FI_rer/NL_rer;
 // Auxiliary equation for steady-state output
-FINL_rerbar = FINL_rer;
 //Terms of Trade
 FINL_tot = NL_pex*FINL_rer/FI_pex;
 // Optimal price contract set in foreign markets (FOC), using FI_pxtilde = PT_pimtilde
@@ -25948,7 +26002,6 @@ FINL_tot = NL_pex*FINL_rer/FI_pex;
 // Bilateral real exchange rate
 FIPT_rer = FI_rer/PT_rer;
 // Auxiliary equation for steady-state output
-FIPT_rerbar = FIPT_rer;
 //Terms of Trade
 FIPT_tot = PT_pex*FIPT_rer/FI_pex;
 // Optimal price contract set in foreign markets (FOC), using FI_pxtilde = DE_pimtilde
@@ -25964,7 +26017,6 @@ FIPT_tot = PT_pex*FIPT_rer/FI_pex;
 // Bilateral real exchange rate
 FIDE_rer = FI_rer/DE_rer;
 // Auxiliary equation for steady-state output
-FIDE_rerbar = FIDE_rer;
 //Terms of Trade
 FIDE_tot = DE_pex*FIDE_rer/FI_pex;
 // Optimal price contract set in foreign markets (FOC), using FI_pxtilde = RU_pimtilde
@@ -25980,7 +26032,6 @@ FIDE_tot = DE_pex*FIDE_rer/FI_pex;
 // Bilateral real exchange rate
 FIRU_rer = FI_rer/RU_rer;
 // Auxiliary equation for steady-state output
-FIRU_rerbar = FIRU_rer;
 //Terms of Trade
 FIRU_tot = RU_pex*FIRU_rer/FI_pex;
 // Optimal price contract set in foreign markets (FOC), using FI_pxtilde = RW_pimtilde
@@ -25996,7 +26047,6 @@ FIRU_tot = RU_pex*FIRU_rer/FI_pex;
 // Bilateral real exchange rate
 FIRW_rer = FI_rer/RW_rer;
 // Auxiliary equation for steady-state output
-FIRW_rerbar = FIRW_rer;
 //Terms of Trade
 FIRW_tot = RW_pex*FIRW_rer/FI_pex;
 // Optimal price contract set in foreign markets (FOC), using FI_pxtilde = US_pimtilde
@@ -26012,7 +26062,6 @@ FIRW_tot = RW_pex*FIRW_rer/FI_pex;
 // Bilateral real exchange rate
 FIUS_rer = FI_rer/US_rer;
 // Auxiliary equation for steady-state output
-FIUS_rerbar = FIUS_rer;
 //Terms of Trade
 FIUS_tot = US_pex*FIUS_rer/FI_pex;
 // Total imports 
@@ -28510,18 +28559,18 @@ FI_etot = 1
 //-----------------
 // Private consumption good (import)
 FI_imc^((FI_mumc-1)/FI_mumc) =
-+FIRA_numc ^(1/FI_mumc)*FIRA_imc^(1-1/FI_mumc)
-+FIAT_numc ^(1/FI_mumc)*FIAT_imc^(1-1/FI_mumc)
-+FIES_numc ^(1/FI_mumc)*FIES_imc^(1-1/FI_mumc)
-+FIFR_numc ^(1/FI_mumc)*FIFR_imc^(1-1/FI_mumc)
-+FIGR_numc ^(1/FI_mumc)*FIGR_imc^(1-1/FI_mumc)
-+FIIT_numc ^(1/FI_mumc)*FIIT_imc^(1-1/FI_mumc)
-+FINL_numc ^(1/FI_mumc)*FINL_imc^(1-1/FI_mumc)
-+FIPT_numc ^(1/FI_mumc)*FIPT_imc^(1-1/FI_mumc)
-+FIDE_numc ^(1/FI_mumc)*FIDE_imc^(1-1/FI_mumc)
-+FIRU_numc ^(1/FI_mumc)*FIRU_imc^(1-1/FI_mumc)
-+FIRW_numc ^(1/FI_mumc)*FIRW_imc^(1-1/FI_mumc)
-+FIUS_numc ^(1/FI_mumc)*FIUS_imc^(1-1/FI_mumc)
++FIRA_numc ^(1/FI_mumc)*((1-FIRA_gammaimc)*FIRA_imc)^(1-1/FI_mumc)
++FIAT_numc ^(1/FI_mumc)*((1-FIAT_gammaimc)*FIAT_imc)^(1-1/FI_mumc)
++FIES_numc ^(1/FI_mumc)*((1-FIES_gammaimc)*FIES_imc)^(1-1/FI_mumc)
++FIFR_numc ^(1/FI_mumc)*((1-FIFR_gammaimc)*FIFR_imc)^(1-1/FI_mumc)
++FIGR_numc ^(1/FI_mumc)*((1-FIGR_gammaimc)*FIGR_imc)^(1-1/FI_mumc)
++FIIT_numc ^(1/FI_mumc)*((1-FIIT_gammaimc)*FIIT_imc)^(1-1/FI_mumc)
++FINL_numc ^(1/FI_mumc)*((1-FINL_gammaimc)*FINL_imc)^(1-1/FI_mumc)
++FIPT_numc ^(1/FI_mumc)*((1-FIPT_gammaimc)*FIPT_imc)^(1-1/FI_mumc)
++FIDE_numc ^(1/FI_mumc)*((1-FIDE_gammaimc)*FIDE_imc)^(1-1/FI_mumc)
++FIRU_numc ^(1/FI_mumc)*((1-FIRU_gammaimc)*FIRU_imc)^(1-1/FI_mumc)
++FIRW_numc ^(1/FI_mumc)*((1-FIRW_gammaimc)*FIRW_imc)^(1-1/FI_mumc)
++FIUS_numc ^(1/FI_mumc)*((1-FIUS_gammaimc)*FIUS_imc)^(1-1/FI_mumc)
 +(1
 -FIRA_numc
 -FIAT_numc
@@ -28535,29 +28584,29 @@ FI_imc^((FI_mumc-1)/FI_mumc) =
 -FIRU_numc
 -FIRW_numc
 -FIUS_numc
-)^(1/FI_mumc)*FIBE_imc^(1-1/FI_mumc);
+)^(1/FI_mumc)*((1-FIBE_gammaimc)*FIBE_imc)^(1-1/FI_mumc);
 // Demand for bilateral consumption import goods
-FIRA_imc = FIRA_numc*((RA_pex*FIRA_rer)/FI_pimc)^(-FI_mumc)*FI_imc;
+FIRA_imc = FIRA_numc*((RA_pex*FIRA_rer)/(FIRA_gammaimcdag*FI_pimc))^(-FI_mumc)*FI_imc/(1-FIRA_gammaimc);
 // Demand for bilateral consumption import goods
-FIAT_imc = FIAT_numc*((AT_pex*FIAT_rer)/FI_pimc)^(-FI_mumc)*FI_imc;
+FIAT_imc = FIAT_numc*((AT_pex*FIAT_rer)/(FIAT_gammaimcdag*FI_pimc))^(-FI_mumc)*FI_imc/(1-FIAT_gammaimc);
 // Demand for bilateral consumption import goods
-FIES_imc = FIES_numc*((ES_pex*FIES_rer)/FI_pimc)^(-FI_mumc)*FI_imc;
+FIES_imc = FIES_numc*((ES_pex*FIES_rer)/(FIES_gammaimcdag*FI_pimc))^(-FI_mumc)*FI_imc/(1-FIES_gammaimc);
 // Demand for bilateral consumption import goods
-FIGR_imc = FIGR_numc*((GR_pex*FIGR_rer)/FI_pimc)^(-FI_mumc)*FI_imc;
+FIGR_imc = FIGR_numc*((GR_pex*FIGR_rer)/(FIGR_gammaimcdag*FI_pimc))^(-FI_mumc)*FI_imc/(1-FIGR_gammaimc);
 // Demand for bilateral consumption import goods
-FIIT_imc = FIIT_numc*((IT_pex*FIIT_rer)/FI_pimc)^(-FI_mumc)*FI_imc;
+FIIT_imc = FIIT_numc*((IT_pex*FIIT_rer)/(FIIT_gammaimcdag*FI_pimc))^(-FI_mumc)*FI_imc/(1-FIIT_gammaimc);
 // Demand for bilateral consumption import goods
-FINL_imc = FINL_numc*((NL_pex*FINL_rer)/FI_pimc)^(-FI_mumc)*FI_imc;
+FINL_imc = FINL_numc*((NL_pex*FINL_rer)/(FINL_gammaimcdag*FI_pimc))^(-FI_mumc)*FI_imc/(1-FINL_gammaimc);
 // Demand for bilateral consumption import goods
-FIPT_imc = FIPT_numc*((PT_pex*FIPT_rer)/FI_pimc)^(-FI_mumc)*FI_imc;
+FIPT_imc = FIPT_numc*((PT_pex*FIPT_rer)/(FIPT_gammaimcdag*FI_pimc))^(-FI_mumc)*FI_imc/(1-FIPT_gammaimc);
 // Demand for bilateral consumption import goods
-FIDE_imc = FIDE_numc*((DE_pex*FIDE_rer)/FI_pimc)^(-FI_mumc)*FI_imc;
+FIDE_imc = FIDE_numc*((DE_pex*FIDE_rer)/(FIDE_gammaimcdag*FI_pimc))^(-FI_mumc)*FI_imc/(1-FIDE_gammaimc);
 // Demand for bilateral consumption import goods
-FIRU_imc = FIRU_numc*((RU_pex*FIRU_rer)/FI_pimc)^(-FI_mumc)*FI_imc;
+FIRU_imc = FIRU_numc*((RU_pex*FIRU_rer)/(FIRU_gammaimcdag*FI_pimc))^(-FI_mumc)*FI_imc/(1-FIRU_gammaimc);
 // Demand for bilateral consumption import goods
-FIRW_imc = FIRW_numc*((RW_pex*FIRW_rer)/FI_pimc)^(-FI_mumc)*FI_imc;
+FIRW_imc = FIRW_numc*((RW_pex*FIRW_rer)/(FIRW_gammaimcdag*FI_pimc))^(-FI_mumc)*FI_imc/(1-FIRW_gammaimc);
 // Demand for bilateral consumption import goods
-FIUS_imc = FIUS_numc*((US_pex*FIUS_rer)/FI_pimc)^(-FI_mumc)*FI_imc;
+FIUS_imc = FIUS_numc*((US_pex*FIUS_rer)/(FIUS_gammaimcdag*FI_pimc))^(-FI_mumc)*FI_imc/(1-FIUS_gammaimc);
 FIBE_imc = (1
 -FIRA_numc
 -FIAT_numc
@@ -28571,21 +28620,21 @@ FIBE_imc = (1
 -FIRU_numc
 -FIRW_numc
 -FIUS_numc
-)*((BE_pex*FIBE_rer)/FI_pimc)^(-FI_mumc)*FI_imc;
+)*((BE_pex*FIBE_rer)/(FIBE_gammaimcdag*FI_pimc))^(-FI_mumc)*FI_imc/(1-FIBE_gammaimc);
 // Price of the consumption good (import)
 FI_pimc^(1-FI_mumc) =
-+FIRA_numc * (RA_pex*FIRA_rer)^(1-FI_mumc)
-+FIAT_numc * (AT_pex*FIAT_rer)^(1-FI_mumc)
-+FIES_numc * (ES_pex*FIES_rer)^(1-FI_mumc)
-+FIFR_numc * (FR_pex*FIFR_rer)^(1-FI_mumc)
-+FIGR_numc * (GR_pex*FIGR_rer)^(1-FI_mumc)
-+FIIT_numc * (IT_pex*FIIT_rer)^(1-FI_mumc)
-+FINL_numc * (NL_pex*FINL_rer)^(1-FI_mumc)
-+FIPT_numc * (PT_pex*FIPT_rer)^(1-FI_mumc)
-+FIDE_numc * (DE_pex*FIDE_rer)^(1-FI_mumc)
-+FIRU_numc * (RU_pex*FIRU_rer)^(1-FI_mumc)
-+FIRW_numc * (RW_pex*FIRW_rer)^(1-FI_mumc)
-+FIUS_numc * (US_pex*FIUS_rer)^(1-FI_mumc)
++FIRA_numc *((RA_pex*FIRA_rer)/FIRA_gammaimcdag)^(1-FI_mumc)
++FIAT_numc *((AT_pex*FIAT_rer)/FIAT_gammaimcdag)^(1-FI_mumc)
++FIES_numc *((ES_pex*FIES_rer)/FIES_gammaimcdag)^(1-FI_mumc)
++FIFR_numc *((FR_pex*FIFR_rer)/FIFR_gammaimcdag)^(1-FI_mumc)
++FIGR_numc *((GR_pex*FIGR_rer)/FIGR_gammaimcdag)^(1-FI_mumc)
++FIIT_numc *((IT_pex*FIIT_rer)/FIIT_gammaimcdag)^(1-FI_mumc)
++FINL_numc *((NL_pex*FINL_rer)/FINL_gammaimcdag)^(1-FI_mumc)
++FIPT_numc *((PT_pex*FIPT_rer)/FIPT_gammaimcdag)^(1-FI_mumc)
++FIDE_numc *((DE_pex*FIDE_rer)/FIDE_gammaimcdag)^(1-FI_mumc)
++FIRU_numc *((RU_pex*FIRU_rer)/FIRU_gammaimcdag)^(1-FI_mumc)
++FIRW_numc *((RW_pex*FIRW_rer)/FIRW_gammaimcdag)^(1-FI_mumc)
++FIUS_numc *((US_pex*FIUS_rer)/FIUS_gammaimcdag)^(1-FI_mumc)
 +(1
 -FIRA_numc
 -FIAT_numc
@@ -28599,23 +28648,23 @@ FI_pimc^(1-FI_mumc) =
 -FIRU_numc
 -FIRW_numc
 -FIUS_numc
-)*(BE_pex*FIBE_rer)^(1-FI_mumc);
+)*((BE_pex*FIBE_rer)/FIBE_gammaimcdag)^(1-FI_mumc);
 // Private consumption good (import) inflation
 FI_piimc = FI_pimc/FI_pimc(-1)*FI_pic;
 // Private consumption good (import)
 FI_imi^((FI_mumi-1)/FI_mumi) =
-+FIRA_numi ^(1/FI_mumi)*FIRA_imi^(1-1/FI_mumi)
-+FIAT_numi ^(1/FI_mumi)*FIAT_imi^(1-1/FI_mumi)
-+FIES_numi ^(1/FI_mumi)*FIES_imi^(1-1/FI_mumi)
-+FIFR_numi ^(1/FI_mumi)*FIFR_imi^(1-1/FI_mumi)
-+FIGR_numi ^(1/FI_mumi)*FIGR_imi^(1-1/FI_mumi)
-+FIIT_numi ^(1/FI_mumi)*FIIT_imi^(1-1/FI_mumi)
-+FINL_numi ^(1/FI_mumi)*FINL_imi^(1-1/FI_mumi)
-+FIPT_numi ^(1/FI_mumi)*FIPT_imi^(1-1/FI_mumi)
-+FIDE_numi ^(1/FI_mumi)*FIDE_imi^(1-1/FI_mumi)
-+FIRU_numi ^(1/FI_mumi)*FIRU_imi^(1-1/FI_mumi)
-+FIRW_numi ^(1/FI_mumi)*FIRW_imi^(1-1/FI_mumi)
-+FIUS_numi ^(1/FI_mumi)*FIUS_imi^(1-1/FI_mumi)
++FIRA_numi ^(1/FI_mumi)*((1-FIRA_gammaimi)*FIRA_imi)^(1-1/FI_mumi)
++FIAT_numi ^(1/FI_mumi)*((1-FIAT_gammaimi)*FIAT_imi)^(1-1/FI_mumi)
++FIES_numi ^(1/FI_mumi)*((1-FIES_gammaimi)*FIES_imi)^(1-1/FI_mumi)
++FIFR_numi ^(1/FI_mumi)*((1-FIFR_gammaimi)*FIFR_imi)^(1-1/FI_mumi)
++FIGR_numi ^(1/FI_mumi)*((1-FIGR_gammaimi)*FIGR_imi)^(1-1/FI_mumi)
++FIIT_numi ^(1/FI_mumi)*((1-FIIT_gammaimi)*FIIT_imi)^(1-1/FI_mumi)
++FINL_numi ^(1/FI_mumi)*((1-FINL_gammaimi)*FINL_imi)^(1-1/FI_mumi)
++FIPT_numi ^(1/FI_mumi)*((1-FIPT_gammaimi)*FIPT_imi)^(1-1/FI_mumi)
++FIDE_numi ^(1/FI_mumi)*((1-FIDE_gammaimi)*FIDE_imi)^(1-1/FI_mumi)
++FIRU_numi ^(1/FI_mumi)*((1-FIRU_gammaimi)*FIRU_imi)^(1-1/FI_mumi)
++FIRW_numi ^(1/FI_mumi)*((1-FIRW_gammaimi)*FIRW_imi)^(1-1/FI_mumi)
++FIUS_numi ^(1/FI_mumi)*((1-FIUS_gammaimi)*FIUS_imi)^(1-1/FI_mumi)
 +(1
 -FIRA_numi
 -FIAT_numi
@@ -28629,29 +28678,29 @@ FI_imi^((FI_mumi-1)/FI_mumi) =
 -FIRU_numi
 -FIRW_numi
 -FIUS_numi
-)^(1/FI_mumi)*FIBE_imi^(1-1/FI_mumi);
+)^(1/FI_mumi)*((1-FIBE_gammaimi)*FIBE_imi)^(1-1/FI_mumi);
 // Demand for bilateral consumption import goods
-FIRA_imi = FIRA_numi*((RA_pex*FIRA_rer)/FI_pimi)^(-FI_mumi)*FI_imi;
+FIRA_imi = FIRA_numi*((RA_pex*FIRA_rer)/(FIRA_gammaimidag*FI_pimi))^(-FI_mumi)*FI_imi/(1-FIRA_gammaimi);
 // Demand for bilateral consumption import goods
-FIAT_imi = FIAT_numi*((AT_pex*FIAT_rer)/FI_pimi)^(-FI_mumi)*FI_imi;
+FIAT_imi = FIAT_numi*((AT_pex*FIAT_rer)/(FIAT_gammaimidag*FI_pimi))^(-FI_mumi)*FI_imi/(1-FIAT_gammaimi);
 // Demand for bilateral consumption import goods
-FIES_imi = FIES_numi*((ES_pex*FIES_rer)/FI_pimi)^(-FI_mumi)*FI_imi;
+FIES_imi = FIES_numi*((ES_pex*FIES_rer)/(FIES_gammaimidag*FI_pimi))^(-FI_mumi)*FI_imi/(1-FIES_gammaimi);
 // Demand for bilateral consumption import goods
-FIGR_imi = FIGR_numi*((GR_pex*FIGR_rer)/FI_pimi)^(-FI_mumi)*FI_imi;
+FIGR_imi = FIGR_numi*((GR_pex*FIGR_rer)/(FIGR_gammaimidag*FI_pimi))^(-FI_mumi)*FI_imi/(1-FIGR_gammaimi);
 // Demand for bilateral consumption import goods
-FIIT_imi = FIIT_numi*((IT_pex*FIIT_rer)/FI_pimi)^(-FI_mumi)*FI_imi;
+FIIT_imi = FIIT_numi*((IT_pex*FIIT_rer)/(FIIT_gammaimidag*FI_pimi))^(-FI_mumi)*FI_imi/(1-FIIT_gammaimi);
 // Demand for bilateral consumption import goods
-FINL_imi = FINL_numi*((NL_pex*FINL_rer)/FI_pimi)^(-FI_mumi)*FI_imi;
+FINL_imi = FINL_numi*((NL_pex*FINL_rer)/(FINL_gammaimidag*FI_pimi))^(-FI_mumi)*FI_imi/(1-FINL_gammaimi);
 // Demand for bilateral consumption import goods
-FIPT_imi = FIPT_numi*((PT_pex*FIPT_rer)/FI_pimi)^(-FI_mumi)*FI_imi;
+FIPT_imi = FIPT_numi*((PT_pex*FIPT_rer)/(FIPT_gammaimidag*FI_pimi))^(-FI_mumi)*FI_imi/(1-FIPT_gammaimi);
 // Demand for bilateral consumption import goods
-FIDE_imi = FIDE_numi*((DE_pex*FIDE_rer)/FI_pimi)^(-FI_mumi)*FI_imi;
+FIDE_imi = FIDE_numi*((DE_pex*FIDE_rer)/(FIDE_gammaimidag*FI_pimi))^(-FI_mumi)*FI_imi/(1-FIDE_gammaimi);
 // Demand for bilateral consumption import goods
-FIRU_imi = FIRU_numi*((RU_pex*FIRU_rer)/FI_pimi)^(-FI_mumi)*FI_imi;
+FIRU_imi = FIRU_numi*((RU_pex*FIRU_rer)/(FIRU_gammaimidag*FI_pimi))^(-FI_mumi)*FI_imi/(1-FIRU_gammaimi);
 // Demand for bilateral consumption import goods
-FIRW_imi = FIRW_numi*((RW_pex*FIRW_rer)/FI_pimi)^(-FI_mumi)*FI_imi;
+FIRW_imi = FIRW_numi*((RW_pex*FIRW_rer)/(FIRW_gammaimidag*FI_pimi))^(-FI_mumi)*FI_imi/(1-FIRW_gammaimi);
 // Demand for bilateral consumption import goods
-FIUS_imi = FIUS_numi*((US_pex*FIUS_rer)/FI_pimi)^(-FI_mumi)*FI_imi;
+FIUS_imi = FIUS_numi*((US_pex*FIUS_rer)/(FIUS_gammaimidag*FI_pimi))^(-FI_mumi)*FI_imi/(1-FIUS_gammaimi);
 FIBE_imi = (1
 -FIRA_numi
 -FIAT_numi
@@ -28665,21 +28714,21 @@ FIBE_imi = (1
 -FIRU_numi
 -FIRW_numi
 -FIUS_numi
-)*((BE_pex*FIBE_rer)/FI_pimi)^(-FI_mumi)*FI_imi;
+)*((BE_pex*FIBE_rer)/(FIBE_gammaimidag*FI_pimi))^(-FI_mumi)*FI_imi/(1-FIBE_gammaimi);
 // Price of the consumption good (import)
 FI_pimi^(1-FI_mumi) =
-+FIRA_numi * (RA_pex*FIRA_rer)^(1-FI_mumi)
-+FIAT_numi * (AT_pex*FIAT_rer)^(1-FI_mumi)
-+FIES_numi * (ES_pex*FIES_rer)^(1-FI_mumi)
-+FIFR_numi * (FR_pex*FIFR_rer)^(1-FI_mumi)
-+FIGR_numi * (GR_pex*FIGR_rer)^(1-FI_mumi)
-+FIIT_numi * (IT_pex*FIIT_rer)^(1-FI_mumi)
-+FINL_numi * (NL_pex*FINL_rer)^(1-FI_mumi)
-+FIPT_numi * (PT_pex*FIPT_rer)^(1-FI_mumi)
-+FIDE_numi * (DE_pex*FIDE_rer)^(1-FI_mumi)
-+FIRU_numi * (RU_pex*FIRU_rer)^(1-FI_mumi)
-+FIRW_numi * (RW_pex*FIRW_rer)^(1-FI_mumi)
-+FIUS_numi * (US_pex*FIUS_rer)^(1-FI_mumi)
++FIRA_numi *((RA_pex*FIRA_rer)/FIRA_gammaimidag)^(1-FI_mumi)
++FIAT_numi *((AT_pex*FIAT_rer)/FIAT_gammaimidag)^(1-FI_mumi)
++FIES_numi *((ES_pex*FIES_rer)/FIES_gammaimidag)^(1-FI_mumi)
++FIFR_numi *((FR_pex*FIFR_rer)/FIFR_gammaimidag)^(1-FI_mumi)
++FIGR_numi *((GR_pex*FIGR_rer)/FIGR_gammaimidag)^(1-FI_mumi)
++FIIT_numi *((IT_pex*FIIT_rer)/FIIT_gammaimidag)^(1-FI_mumi)
++FINL_numi *((NL_pex*FINL_rer)/FINL_gammaimidag)^(1-FI_mumi)
++FIPT_numi *((PT_pex*FIPT_rer)/FIPT_gammaimidag)^(1-FI_mumi)
++FIDE_numi *((DE_pex*FIDE_rer)/FIDE_gammaimidag)^(1-FI_mumi)
++FIRU_numi *((RU_pex*FIRU_rer)/FIRU_gammaimidag)^(1-FI_mumi)
++FIRW_numi *((RW_pex*FIRW_rer)/FIRW_gammaimidag)^(1-FI_mumi)
++FIUS_numi *((US_pex*FIUS_rer)/FIUS_gammaimidag)^(1-FI_mumi)
 +(1
 -FIRA_numi
 -FIAT_numi
@@ -28693,23 +28742,23 @@ FI_pimi^(1-FI_mumi) =
 -FIRU_numi
 -FIRW_numi
 -FIUS_numi
-)*(BE_pex*FIBE_rer)^(1-FI_mumi);
+)*((BE_pex*FIBE_rer)/FIBE_gammaimidag)^(1-FI_mumi);
 // Private consumption good (import) inflation
 FI_piimi = FI_pimi/FI_pimi(-1)*FI_pic;
 // Private consumption good (import)
 FI_imcg^((FI_mumcg-1)/FI_mumcg) =
-+FIRA_numcg ^(1/FI_mumcg)*FIRA_imcg^(1-1/FI_mumcg)
-+FIAT_numcg ^(1/FI_mumcg)*FIAT_imcg^(1-1/FI_mumcg)
-+FIES_numcg ^(1/FI_mumcg)*FIES_imcg^(1-1/FI_mumcg)
-+FIFR_numcg ^(1/FI_mumcg)*FIFR_imcg^(1-1/FI_mumcg)
-+FIGR_numcg ^(1/FI_mumcg)*FIGR_imcg^(1-1/FI_mumcg)
-+FIIT_numcg ^(1/FI_mumcg)*FIIT_imcg^(1-1/FI_mumcg)
-+FINL_numcg ^(1/FI_mumcg)*FINL_imcg^(1-1/FI_mumcg)
-+FIPT_numcg ^(1/FI_mumcg)*FIPT_imcg^(1-1/FI_mumcg)
-+FIDE_numcg ^(1/FI_mumcg)*FIDE_imcg^(1-1/FI_mumcg)
-+FIRU_numcg ^(1/FI_mumcg)*FIRU_imcg^(1-1/FI_mumcg)
-+FIRW_numcg ^(1/FI_mumcg)*FIRW_imcg^(1-1/FI_mumcg)
-+FIUS_numcg ^(1/FI_mumcg)*FIUS_imcg^(1-1/FI_mumcg)
++FIRA_numcg ^(1/FI_mumcg)*((1-FIRA_gammaimcg)*FIRA_imcg)^(1-1/FI_mumcg)
++FIAT_numcg ^(1/FI_mumcg)*((1-FIAT_gammaimcg)*FIAT_imcg)^(1-1/FI_mumcg)
++FIES_numcg ^(1/FI_mumcg)*((1-FIES_gammaimcg)*FIES_imcg)^(1-1/FI_mumcg)
++FIFR_numcg ^(1/FI_mumcg)*((1-FIFR_gammaimcg)*FIFR_imcg)^(1-1/FI_mumcg)
++FIGR_numcg ^(1/FI_mumcg)*((1-FIGR_gammaimcg)*FIGR_imcg)^(1-1/FI_mumcg)
++FIIT_numcg ^(1/FI_mumcg)*((1-FIIT_gammaimcg)*FIIT_imcg)^(1-1/FI_mumcg)
++FINL_numcg ^(1/FI_mumcg)*((1-FINL_gammaimcg)*FINL_imcg)^(1-1/FI_mumcg)
++FIPT_numcg ^(1/FI_mumcg)*((1-FIPT_gammaimcg)*FIPT_imcg)^(1-1/FI_mumcg)
++FIDE_numcg ^(1/FI_mumcg)*((1-FIDE_gammaimcg)*FIDE_imcg)^(1-1/FI_mumcg)
++FIRU_numcg ^(1/FI_mumcg)*((1-FIRU_gammaimcg)*FIRU_imcg)^(1-1/FI_mumcg)
++FIRW_numcg ^(1/FI_mumcg)*((1-FIRW_gammaimcg)*FIRW_imcg)^(1-1/FI_mumcg)
++FIUS_numcg ^(1/FI_mumcg)*((1-FIUS_gammaimcg)*FIUS_imcg)^(1-1/FI_mumcg)
 +(1
 -FIRA_numcg
 -FIAT_numcg
@@ -28723,29 +28772,29 @@ FI_imcg^((FI_mumcg-1)/FI_mumcg) =
 -FIRU_numcg
 -FIRW_numcg
 -FIUS_numcg
-)^(1/FI_mumcg)*FIBE_imcg^(1-1/FI_mumcg);
+)^(1/FI_mumcg)*((1-FIBE_gammaimcg)*FIBE_imcg)^(1-1/FI_mumcg);
 // Demand for bilateral consumption import goods
-FIRA_imcg = FIRA_numcg*((RA_pex*FIRA_rer)/FI_pimcg)^(-FI_mumcg)*FI_imcg;
+FIRA_imcg = FIRA_numcg*((RA_pex*FIRA_rer)/(FIRA_gammaimcgdag*FI_pimcg))^(-FI_mumcg)*FI_imcg/(1-FIRA_gammaimcg);
 // Demand for bilateral consumption import goods
-FIAT_imcg = FIAT_numcg*((AT_pex*FIAT_rer)/FI_pimcg)^(-FI_mumcg)*FI_imcg;
+FIAT_imcg = FIAT_numcg*((AT_pex*FIAT_rer)/(FIAT_gammaimcgdag*FI_pimcg))^(-FI_mumcg)*FI_imcg/(1-FIAT_gammaimcg);
 // Demand for bilateral consumption import goods
-FIES_imcg = FIES_numcg*((ES_pex*FIES_rer)/FI_pimcg)^(-FI_mumcg)*FI_imcg;
+FIES_imcg = FIES_numcg*((ES_pex*FIES_rer)/(FIES_gammaimcgdag*FI_pimcg))^(-FI_mumcg)*FI_imcg/(1-FIES_gammaimcg);
 // Demand for bilateral consumption import goods
-FIGR_imcg = FIGR_numcg*((GR_pex*FIGR_rer)/FI_pimcg)^(-FI_mumcg)*FI_imcg;
+FIGR_imcg = FIGR_numcg*((GR_pex*FIGR_rer)/(FIGR_gammaimcgdag*FI_pimcg))^(-FI_mumcg)*FI_imcg/(1-FIGR_gammaimcg);
 // Demand for bilateral consumption import goods
-FIIT_imcg = FIIT_numcg*((IT_pex*FIIT_rer)/FI_pimcg)^(-FI_mumcg)*FI_imcg;
+FIIT_imcg = FIIT_numcg*((IT_pex*FIIT_rer)/(FIIT_gammaimcgdag*FI_pimcg))^(-FI_mumcg)*FI_imcg/(1-FIIT_gammaimcg);
 // Demand for bilateral consumption import goods
-FINL_imcg = FINL_numcg*((NL_pex*FINL_rer)/FI_pimcg)^(-FI_mumcg)*FI_imcg;
+FINL_imcg = FINL_numcg*((NL_pex*FINL_rer)/(FINL_gammaimcgdag*FI_pimcg))^(-FI_mumcg)*FI_imcg/(1-FINL_gammaimcg);
 // Demand for bilateral consumption import goods
-FIPT_imcg = FIPT_numcg*((PT_pex*FIPT_rer)/FI_pimcg)^(-FI_mumcg)*FI_imcg;
+FIPT_imcg = FIPT_numcg*((PT_pex*FIPT_rer)/(FIPT_gammaimcgdag*FI_pimcg))^(-FI_mumcg)*FI_imcg/(1-FIPT_gammaimcg);
 // Demand for bilateral consumption import goods
-FIDE_imcg = FIDE_numcg*((DE_pex*FIDE_rer)/FI_pimcg)^(-FI_mumcg)*FI_imcg;
+FIDE_imcg = FIDE_numcg*((DE_pex*FIDE_rer)/(FIDE_gammaimcgdag*FI_pimcg))^(-FI_mumcg)*FI_imcg/(1-FIDE_gammaimcg);
 // Demand for bilateral consumption import goods
-FIRU_imcg = FIRU_numcg*((RU_pex*FIRU_rer)/FI_pimcg)^(-FI_mumcg)*FI_imcg;
+FIRU_imcg = FIRU_numcg*((RU_pex*FIRU_rer)/(FIRU_gammaimcgdag*FI_pimcg))^(-FI_mumcg)*FI_imcg/(1-FIRU_gammaimcg);
 // Demand for bilateral consumption import goods
-FIRW_imcg = FIRW_numcg*((RW_pex*FIRW_rer)/FI_pimcg)^(-FI_mumcg)*FI_imcg;
+FIRW_imcg = FIRW_numcg*((RW_pex*FIRW_rer)/(FIRW_gammaimcgdag*FI_pimcg))^(-FI_mumcg)*FI_imcg/(1-FIRW_gammaimcg);
 // Demand for bilateral consumption import goods
-FIUS_imcg = FIUS_numcg*((US_pex*FIUS_rer)/FI_pimcg)^(-FI_mumcg)*FI_imcg;
+FIUS_imcg = FIUS_numcg*((US_pex*FIUS_rer)/(FIUS_gammaimcgdag*FI_pimcg))^(-FI_mumcg)*FI_imcg/(1-FIUS_gammaimcg);
 FIBE_imcg = (1
 -FIRA_numcg
 -FIAT_numcg
@@ -28759,21 +28808,21 @@ FIBE_imcg = (1
 -FIRU_numcg
 -FIRW_numcg
 -FIUS_numcg
-)*((BE_pex*FIBE_rer)/FI_pimcg)^(-FI_mumcg)*FI_imcg;
+)*((BE_pex*FIBE_rer)/(FIBE_gammaimcgdag*FI_pimcg))^(-FI_mumcg)*FI_imcg/(1-FIBE_gammaimcg);
 // Price of the consumption good (import)
 FI_pimcg^(1-FI_mumcg) =
-+FIRA_numcg * (RA_pex*FIRA_rer)^(1-FI_mumcg)
-+FIAT_numcg * (AT_pex*FIAT_rer)^(1-FI_mumcg)
-+FIES_numcg * (ES_pex*FIES_rer)^(1-FI_mumcg)
-+FIFR_numcg * (FR_pex*FIFR_rer)^(1-FI_mumcg)
-+FIGR_numcg * (GR_pex*FIGR_rer)^(1-FI_mumcg)
-+FIIT_numcg * (IT_pex*FIIT_rer)^(1-FI_mumcg)
-+FINL_numcg * (NL_pex*FINL_rer)^(1-FI_mumcg)
-+FIPT_numcg * (PT_pex*FIPT_rer)^(1-FI_mumcg)
-+FIDE_numcg * (DE_pex*FIDE_rer)^(1-FI_mumcg)
-+FIRU_numcg * (RU_pex*FIRU_rer)^(1-FI_mumcg)
-+FIRW_numcg * (RW_pex*FIRW_rer)^(1-FI_mumcg)
-+FIUS_numcg * (US_pex*FIUS_rer)^(1-FI_mumcg)
++FIRA_numcg *((RA_pex*FIRA_rer)/FIRA_gammaimcgdag)^(1-FI_mumcg)
++FIAT_numcg *((AT_pex*FIAT_rer)/FIAT_gammaimcgdag)^(1-FI_mumcg)
++FIES_numcg *((ES_pex*FIES_rer)/FIES_gammaimcgdag)^(1-FI_mumcg)
++FIFR_numcg *((FR_pex*FIFR_rer)/FIFR_gammaimcgdag)^(1-FI_mumcg)
++FIGR_numcg *((GR_pex*FIGR_rer)/FIGR_gammaimcgdag)^(1-FI_mumcg)
++FIIT_numcg *((IT_pex*FIIT_rer)/FIIT_gammaimcgdag)^(1-FI_mumcg)
++FINL_numcg *((NL_pex*FINL_rer)/FINL_gammaimcgdag)^(1-FI_mumcg)
++FIPT_numcg *((PT_pex*FIPT_rer)/FIPT_gammaimcgdag)^(1-FI_mumcg)
++FIDE_numcg *((DE_pex*FIDE_rer)/FIDE_gammaimcgdag)^(1-FI_mumcg)
++FIRU_numcg *((RU_pex*FIRU_rer)/FIRU_gammaimcgdag)^(1-FI_mumcg)
++FIRW_numcg *((RW_pex*FIRW_rer)/FIRW_gammaimcgdag)^(1-FI_mumcg)
++FIUS_numcg *((US_pex*FIUS_rer)/FIUS_gammaimcgdag)^(1-FI_mumcg)
 +(1
 -FIRA_numcg
 -FIAT_numcg
@@ -28787,23 +28836,23 @@ FI_pimcg^(1-FI_mumcg) =
 -FIRU_numcg
 -FIRW_numcg
 -FIUS_numcg
-)*(BE_pex*FIBE_rer)^(1-FI_mumcg);
+)*((BE_pex*FIBE_rer)/FIBE_gammaimcgdag)^(1-FI_mumcg);
 // Private consumption good (import) inflation
 FI_piimcg = FI_pimcg/FI_pimcg(-1)*FI_pic;
 // Private consumption good (import)
 FI_imig^((FI_mumig-1)/FI_mumig) =
-+FIRA_numig ^(1/FI_mumig)*FIRA_imig^(1-1/FI_mumig)
-+FIAT_numig ^(1/FI_mumig)*FIAT_imig^(1-1/FI_mumig)
-+FIES_numig ^(1/FI_mumig)*FIES_imig^(1-1/FI_mumig)
-+FIFR_numig ^(1/FI_mumig)*FIFR_imig^(1-1/FI_mumig)
-+FIGR_numig ^(1/FI_mumig)*FIGR_imig^(1-1/FI_mumig)
-+FIIT_numig ^(1/FI_mumig)*FIIT_imig^(1-1/FI_mumig)
-+FINL_numig ^(1/FI_mumig)*FINL_imig^(1-1/FI_mumig)
-+FIPT_numig ^(1/FI_mumig)*FIPT_imig^(1-1/FI_mumig)
-+FIDE_numig ^(1/FI_mumig)*FIDE_imig^(1-1/FI_mumig)
-+FIRU_numig ^(1/FI_mumig)*FIRU_imig^(1-1/FI_mumig)
-+FIRW_numig ^(1/FI_mumig)*FIRW_imig^(1-1/FI_mumig)
-+FIUS_numig ^(1/FI_mumig)*FIUS_imig^(1-1/FI_mumig)
++FIRA_numig ^(1/FI_mumig)*((1-FIRA_gammaimig)*FIRA_imig)^(1-1/FI_mumig)
++FIAT_numig ^(1/FI_mumig)*((1-FIAT_gammaimig)*FIAT_imig)^(1-1/FI_mumig)
++FIES_numig ^(1/FI_mumig)*((1-FIES_gammaimig)*FIES_imig)^(1-1/FI_mumig)
++FIFR_numig ^(1/FI_mumig)*((1-FIFR_gammaimig)*FIFR_imig)^(1-1/FI_mumig)
++FIGR_numig ^(1/FI_mumig)*((1-FIGR_gammaimig)*FIGR_imig)^(1-1/FI_mumig)
++FIIT_numig ^(1/FI_mumig)*((1-FIIT_gammaimig)*FIIT_imig)^(1-1/FI_mumig)
++FINL_numig ^(1/FI_mumig)*((1-FINL_gammaimig)*FINL_imig)^(1-1/FI_mumig)
++FIPT_numig ^(1/FI_mumig)*((1-FIPT_gammaimig)*FIPT_imig)^(1-1/FI_mumig)
++FIDE_numig ^(1/FI_mumig)*((1-FIDE_gammaimig)*FIDE_imig)^(1-1/FI_mumig)
++FIRU_numig ^(1/FI_mumig)*((1-FIRU_gammaimig)*FIRU_imig)^(1-1/FI_mumig)
++FIRW_numig ^(1/FI_mumig)*((1-FIRW_gammaimig)*FIRW_imig)^(1-1/FI_mumig)
++FIUS_numig ^(1/FI_mumig)*((1-FIUS_gammaimig)*FIUS_imig)^(1-1/FI_mumig)
 +(1
 -FIRA_numig
 -FIAT_numig
@@ -28817,29 +28866,29 @@ FI_imig^((FI_mumig-1)/FI_mumig) =
 -FIRU_numig
 -FIRW_numig
 -FIUS_numig
-)^(1/FI_mumig)*FIBE_imig^(1-1/FI_mumig);
+)^(1/FI_mumig)*((1-FIBE_gammaimig)*FIBE_imig)^(1-1/FI_mumig);
 // Demand for bilateral consumption import goods
-FIRA_imig = FIRA_numig*((RA_pex*FIRA_rer)/FI_pimig)^(-FI_mumig)*FI_imig;
+FIRA_imig = FIRA_numig*((RA_pex*FIRA_rer)/(FIRA_gammaimigdag*FI_pimig))^(-FI_mumig)*FI_imig/(1-FIRA_gammaimig);
 // Demand for bilateral consumption import goods
-FIAT_imig = FIAT_numig*((AT_pex*FIAT_rer)/FI_pimig)^(-FI_mumig)*FI_imig;
+FIAT_imig = FIAT_numig*((AT_pex*FIAT_rer)/(FIAT_gammaimigdag*FI_pimig))^(-FI_mumig)*FI_imig/(1-FIAT_gammaimig);
 // Demand for bilateral consumption import goods
-FIES_imig = FIES_numig*((ES_pex*FIES_rer)/FI_pimig)^(-FI_mumig)*FI_imig;
+FIES_imig = FIES_numig*((ES_pex*FIES_rer)/(FIES_gammaimigdag*FI_pimig))^(-FI_mumig)*FI_imig/(1-FIES_gammaimig);
 // Demand for bilateral consumption import goods
-FIGR_imig = FIGR_numig*((GR_pex*FIGR_rer)/FI_pimig)^(-FI_mumig)*FI_imig;
+FIGR_imig = FIGR_numig*((GR_pex*FIGR_rer)/(FIGR_gammaimigdag*FI_pimig))^(-FI_mumig)*FI_imig/(1-FIGR_gammaimig);
 // Demand for bilateral consumption import goods
-FIIT_imig = FIIT_numig*((IT_pex*FIIT_rer)/FI_pimig)^(-FI_mumig)*FI_imig;
+FIIT_imig = FIIT_numig*((IT_pex*FIIT_rer)/(FIIT_gammaimigdag*FI_pimig))^(-FI_mumig)*FI_imig/(1-FIIT_gammaimig);
 // Demand for bilateral consumption import goods
-FINL_imig = FINL_numig*((NL_pex*FINL_rer)/FI_pimig)^(-FI_mumig)*FI_imig;
+FINL_imig = FINL_numig*((NL_pex*FINL_rer)/(FINL_gammaimigdag*FI_pimig))^(-FI_mumig)*FI_imig/(1-FINL_gammaimig);
 // Demand for bilateral consumption import goods
-FIPT_imig = FIPT_numig*((PT_pex*FIPT_rer)/FI_pimig)^(-FI_mumig)*FI_imig;
+FIPT_imig = FIPT_numig*((PT_pex*FIPT_rer)/(FIPT_gammaimigdag*FI_pimig))^(-FI_mumig)*FI_imig/(1-FIPT_gammaimig);
 // Demand for bilateral consumption import goods
-FIDE_imig = FIDE_numig*((DE_pex*FIDE_rer)/FI_pimig)^(-FI_mumig)*FI_imig;
+FIDE_imig = FIDE_numig*((DE_pex*FIDE_rer)/(FIDE_gammaimigdag*FI_pimig))^(-FI_mumig)*FI_imig/(1-FIDE_gammaimig);
 // Demand for bilateral consumption import goods
-FIRU_imig = FIRU_numig*((RU_pex*FIRU_rer)/FI_pimig)^(-FI_mumig)*FI_imig;
+FIRU_imig = FIRU_numig*((RU_pex*FIRU_rer)/(FIRU_gammaimigdag*FI_pimig))^(-FI_mumig)*FI_imig/(1-FIRU_gammaimig);
 // Demand for bilateral consumption import goods
-FIRW_imig = FIRW_numig*((RW_pex*FIRW_rer)/FI_pimig)^(-FI_mumig)*FI_imig;
+FIRW_imig = FIRW_numig*((RW_pex*FIRW_rer)/(FIRW_gammaimigdag*FI_pimig))^(-FI_mumig)*FI_imig/(1-FIRW_gammaimig);
 // Demand for bilateral consumption import goods
-FIUS_imig = FIUS_numig*((US_pex*FIUS_rer)/FI_pimig)^(-FI_mumig)*FI_imig;
+FIUS_imig = FIUS_numig*((US_pex*FIUS_rer)/(FIUS_gammaimigdag*FI_pimig))^(-FI_mumig)*FI_imig/(1-FIUS_gammaimig);
 FIBE_imig = (1
 -FIRA_numig
 -FIAT_numig
@@ -28853,21 +28902,21 @@ FIBE_imig = (1
 -FIRU_numig
 -FIRW_numig
 -FIUS_numig
-)*((BE_pex*FIBE_rer)/FI_pimig)^(-FI_mumig)*FI_imig;
+)*((BE_pex*FIBE_rer)/(FIBE_gammaimigdag*FI_pimig))^(-FI_mumig)*FI_imig/(1-FIBE_gammaimig);
 // Price of the consumption good (import)
 FI_pimig^(1-FI_mumig) =
-+FIRA_numig * (RA_pex*FIRA_rer)^(1-FI_mumig)
-+FIAT_numig * (AT_pex*FIAT_rer)^(1-FI_mumig)
-+FIES_numig * (ES_pex*FIES_rer)^(1-FI_mumig)
-+FIFR_numig * (FR_pex*FIFR_rer)^(1-FI_mumig)
-+FIGR_numig * (GR_pex*FIGR_rer)^(1-FI_mumig)
-+FIIT_numig * (IT_pex*FIIT_rer)^(1-FI_mumig)
-+FINL_numig * (NL_pex*FINL_rer)^(1-FI_mumig)
-+FIPT_numig * (PT_pex*FIPT_rer)^(1-FI_mumig)
-+FIDE_numig * (DE_pex*FIDE_rer)^(1-FI_mumig)
-+FIRU_numig * (RU_pex*FIRU_rer)^(1-FI_mumig)
-+FIRW_numig * (RW_pex*FIRW_rer)^(1-FI_mumig)
-+FIUS_numig * (US_pex*FIUS_rer)^(1-FI_mumig)
++FIRA_numig *((RA_pex*FIRA_rer)/FIRA_gammaimigdag)^(1-FI_mumig)
++FIAT_numig *((AT_pex*FIAT_rer)/FIAT_gammaimigdag)^(1-FI_mumig)
++FIES_numig *((ES_pex*FIES_rer)/FIES_gammaimigdag)^(1-FI_mumig)
++FIFR_numig *((FR_pex*FIFR_rer)/FIFR_gammaimigdag)^(1-FI_mumig)
++FIGR_numig *((GR_pex*FIGR_rer)/FIGR_gammaimigdag)^(1-FI_mumig)
++FIIT_numig *((IT_pex*FIIT_rer)/FIIT_gammaimigdag)^(1-FI_mumig)
++FINL_numig *((NL_pex*FINL_rer)/FINL_gammaimigdag)^(1-FI_mumig)
++FIPT_numig *((PT_pex*FIPT_rer)/FIPT_gammaimigdag)^(1-FI_mumig)
++FIDE_numig *((DE_pex*FIDE_rer)/FIDE_gammaimigdag)^(1-FI_mumig)
++FIRU_numig *((RU_pex*FIRU_rer)/FIRU_gammaimigdag)^(1-FI_mumig)
++FIRW_numig *((RW_pex*FIRW_rer)/FIRW_gammaimigdag)^(1-FI_mumig)
++FIUS_numig *((US_pex*FIUS_rer)/FIUS_gammaimigdag)^(1-FI_mumig)
 +(1
 -FIRA_numig
 -FIAT_numig
@@ -28881,7 +28930,7 @@ FI_pimig^(1-FI_mumig) =
 -FIRU_numig
 -FIRW_numig
 -FIUS_numig
-)*(BE_pex*FIBE_rer)^(1-FI_mumig);
+)*((BE_pex*FIBE_rer)/FIBE_gammaimigdag)^(1-FI_mumig);
 // Private consumption good (import) inflation
 FI_piimig = FI_pimig/FI_pimig(-1)*FI_pic;
 // Private consumption good (import) inflation
@@ -28982,32 +29031,58 @@ FI_pttc^(1-FI_mutc) = (FI_nutc)*FI_pht^(1-FI_mutc)+(1-FI_nutc)*FI_pimc^(1-FI_mut
 1^(1-FI_muc) = (FI_nuc)*FI_pttc^(1-FI_muc)+(1-FI_nuc)*FI_pnt^(1-FI_muc);
 // Demand for domestic intermediate goods
 FI_htc = FI_nutc*(FI_pht/FI_pttc)^(-FI_mutc)*FI_ttc;
-FIRA_gammaimc = 0;
-FIRA_gammaimcdag = 1;
-FIAT_gammaimc = 0;
-FIAT_gammaimcdag = 1;
-FIBE_gammaimc = 0;
-FIBE_gammaimcdag = 1;
-FIES_gammaimc = 0;
-FIES_gammaimcdag = 1;
-FIFR_gammaimc = 0;
-FIFR_gammaimcdag = 1;
-FIGR_gammaimc = 0;
-FIGR_gammaimcdag = 1;
-FIIT_gammaimc = 0;
-FIIT_gammaimcdag = 1;
-FINL_gammaimc = 0;
-FINL_gammaimcdag = 1;
-FIPT_gammaimc = 0;
-FIPT_gammaimcdag = 1;
-FIDE_gammaimc = 0;
-FIDE_gammaimcdag = 1;
-FIRU_gammaimc = 0;
-FIRU_gammaimcdag = 1;
-FIRW_gammaimc = 0;
-FIRW_gammaimcdag = 1;
-FIUS_gammaimc = 0;
-FIUS_gammaimcdag = 1;
+// Import adjustment cost
+FIRA_gammaimc = FI_gammaimc1/2*((FIRA_imc/FI_qc)/(FIRA_imc(-1)/FI_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIRA_gammaimcdag = 1-FIRA_gammaimc-FI_gammaimc1*((FIRA_imc/FI_qc)/(FIRA_imc(-1)/FI_qc(-1))-1)*(FIRA_imc/FI_qc)/(FIRA_imc(-1)/FI_qc(-1));
+// Import adjustment cost
+FIAT_gammaimc = FI_gammaimc1/2*((FIAT_imc/FI_qc)/(FIAT_imc(-1)/FI_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIAT_gammaimcdag = 1-FIAT_gammaimc-FI_gammaimc1*((FIAT_imc/FI_qc)/(FIAT_imc(-1)/FI_qc(-1))-1)*(FIAT_imc/FI_qc)/(FIAT_imc(-1)/FI_qc(-1));
+// Import adjustment cost
+FIBE_gammaimc = FI_gammaimc1/2*((FIBE_imc/FI_qc)/(FIBE_imc(-1)/FI_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIBE_gammaimcdag = 1-FIBE_gammaimc-FI_gammaimc1*((FIBE_imc/FI_qc)/(FIBE_imc(-1)/FI_qc(-1))-1)*(FIBE_imc/FI_qc)/(FIBE_imc(-1)/FI_qc(-1));
+// Import adjustment cost
+FIES_gammaimc = FI_gammaimc1/2*((FIES_imc/FI_qc)/(FIES_imc(-1)/FI_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIES_gammaimcdag = 1-FIES_gammaimc-FI_gammaimc1*((FIES_imc/FI_qc)/(FIES_imc(-1)/FI_qc(-1))-1)*(FIES_imc/FI_qc)/(FIES_imc(-1)/FI_qc(-1));
+// Import adjustment cost
+FIFR_gammaimc = FI_gammaimc1/2*((FIFR_imc/FI_qc)/(FIFR_imc(-1)/FI_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIFR_gammaimcdag = 1-FIFR_gammaimc-FI_gammaimc1*((FIFR_imc/FI_qc)/(FIFR_imc(-1)/FI_qc(-1))-1)*(FIFR_imc/FI_qc)/(FIFR_imc(-1)/FI_qc(-1));
+// Import adjustment cost
+FIGR_gammaimc = FI_gammaimc1/2*((FIGR_imc/FI_qc)/(FIGR_imc(-1)/FI_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIGR_gammaimcdag = 1-FIGR_gammaimc-FI_gammaimc1*((FIGR_imc/FI_qc)/(FIGR_imc(-1)/FI_qc(-1))-1)*(FIGR_imc/FI_qc)/(FIGR_imc(-1)/FI_qc(-1));
+// Import adjustment cost
+FIIT_gammaimc = FI_gammaimc1/2*((FIIT_imc/FI_qc)/(FIIT_imc(-1)/FI_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIIT_gammaimcdag = 1-FIIT_gammaimc-FI_gammaimc1*((FIIT_imc/FI_qc)/(FIIT_imc(-1)/FI_qc(-1))-1)*(FIIT_imc/FI_qc)/(FIIT_imc(-1)/FI_qc(-1));
+// Import adjustment cost
+FINL_gammaimc = FI_gammaimc1/2*((FINL_imc/FI_qc)/(FINL_imc(-1)/FI_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FINL_gammaimcdag = 1-FINL_gammaimc-FI_gammaimc1*((FINL_imc/FI_qc)/(FINL_imc(-1)/FI_qc(-1))-1)*(FINL_imc/FI_qc)/(FINL_imc(-1)/FI_qc(-1));
+// Import adjustment cost
+FIPT_gammaimc = FI_gammaimc1/2*((FIPT_imc/FI_qc)/(FIPT_imc(-1)/FI_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIPT_gammaimcdag = 1-FIPT_gammaimc-FI_gammaimc1*((FIPT_imc/FI_qc)/(FIPT_imc(-1)/FI_qc(-1))-1)*(FIPT_imc/FI_qc)/(FIPT_imc(-1)/FI_qc(-1));
+// Import adjustment cost
+FIDE_gammaimc = FI_gammaimc1/2*((FIDE_imc/FI_qc)/(FIDE_imc(-1)/FI_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIDE_gammaimcdag = 1-FIDE_gammaimc-FI_gammaimc1*((FIDE_imc/FI_qc)/(FIDE_imc(-1)/FI_qc(-1))-1)*(FIDE_imc/FI_qc)/(FIDE_imc(-1)/FI_qc(-1));
+// Import adjustment cost
+FIRU_gammaimc = FI_gammaimc1/2*((FIRU_imc/FI_qc)/(FIRU_imc(-1)/FI_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIRU_gammaimcdag = 1-FIRU_gammaimc-FI_gammaimc1*((FIRU_imc/FI_qc)/(FIRU_imc(-1)/FI_qc(-1))-1)*(FIRU_imc/FI_qc)/(FIRU_imc(-1)/FI_qc(-1));
+// Import adjustment cost
+FIRW_gammaimc = FI_gammaimc1/2*((FIRW_imc/FI_qc)/(FIRW_imc(-1)/FI_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIRW_gammaimcdag = 1-FIRW_gammaimc-FI_gammaimc1*((FIRW_imc/FI_qc)/(FIRW_imc(-1)/FI_qc(-1))-1)*(FIRW_imc/FI_qc)/(FIRW_imc(-1)/FI_qc(-1));
+// Import adjustment cost
+FIUS_gammaimc = FI_gammaimc1/2*((FIUS_imc/FI_qc)/(FIUS_imc(-1)/FI_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIUS_gammaimcdag = 1-FIUS_gammaimc-FI_gammaimc1*((FIUS_imc/FI_qc)/(FIUS_imc(-1)/FI_qc(-1))-1)*(FIUS_imc/FI_qc)/(FIUS_imc(-1)/FI_qc(-1));
 // Private consumption good (tradable)
 FI_tti^((FI_muti-1)/FI_muti) = (FI_nuti)^(1/FI_muti)*FI_hti^(1-1/FI_muti)+(1-FI_nuti)^(1/FI_muti)*FI_imi^(1-1/FI_muti);
 // Private consumption good  (total)
@@ -29020,35 +29095,60 @@ FI_ptti^(1-FI_muti) = (FI_nuti)*FI_pht^(1-FI_muti)+(1-FI_nuti)*FI_pimi^(1-FI_mut
 FI_pi^(1-FI_mui) = (FI_nui)*FI_ptti^(1-FI_mui)+(1-FI_nui)*FI_pnt^(1-FI_mui);
 // Auxiliary equation for the price of the investment good in steady state
 // this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
-FI_pibar = FI_pi;
 // Demand for domestic intermediate goods
 FI_hti = FI_nuti*(FI_pht/FI_ptti)^(-FI_muti)*FI_tti;
-FIRA_gammaimi = 0;
-FIRA_gammaimidag = 1;
-FIAT_gammaimi = 0;
-FIAT_gammaimidag = 1;
-FIBE_gammaimi = 0;
-FIBE_gammaimidag = 1;
-FIES_gammaimi = 0;
-FIES_gammaimidag = 1;
-FIFR_gammaimi = 0;
-FIFR_gammaimidag = 1;
-FIGR_gammaimi = 0;
-FIGR_gammaimidag = 1;
-FIIT_gammaimi = 0;
-FIIT_gammaimidag = 1;
-FINL_gammaimi = 0;
-FINL_gammaimidag = 1;
-FIPT_gammaimi = 0;
-FIPT_gammaimidag = 1;
-FIDE_gammaimi = 0;
-FIDE_gammaimidag = 1;
-FIRU_gammaimi = 0;
-FIRU_gammaimidag = 1;
-FIRW_gammaimi = 0;
-FIRW_gammaimidag = 1;
-FIUS_gammaimi = 0;
-FIUS_gammaimidag = 1;
+// Import adjustment cost
+FIRA_gammaimi = FI_gammaimi1/2*((FIRA_imi/FI_qi)/(FIRA_imi(-1)/FI_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIRA_gammaimidag = 1-FIRA_gammaimi-FI_gammaimi1*((FIRA_imi/FI_qi)/(FIRA_imi(-1)/FI_qi)-1)*((FIRA_imi/FI_qi)/(FIRA_imi(-1)/FI_qi(-1)));
+// Import adjustment cost
+FIAT_gammaimi = FI_gammaimi1/2*((FIAT_imi/FI_qi)/(FIAT_imi(-1)/FI_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIAT_gammaimidag = 1-FIAT_gammaimi-FI_gammaimi1*((FIAT_imi/FI_qi)/(FIAT_imi(-1)/FI_qi)-1)*((FIAT_imi/FI_qi)/(FIAT_imi(-1)/FI_qi(-1)));
+// Import adjustment cost
+FIBE_gammaimi = FI_gammaimi1/2*((FIBE_imi/FI_qi)/(FIBE_imi(-1)/FI_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIBE_gammaimidag = 1-FIBE_gammaimi-FI_gammaimi1*((FIBE_imi/FI_qi)/(FIBE_imi(-1)/FI_qi)-1)*((FIBE_imi/FI_qi)/(FIBE_imi(-1)/FI_qi(-1)));
+// Import adjustment cost
+FIES_gammaimi = FI_gammaimi1/2*((FIES_imi/FI_qi)/(FIES_imi(-1)/FI_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIES_gammaimidag = 1-FIES_gammaimi-FI_gammaimi1*((FIES_imi/FI_qi)/(FIES_imi(-1)/FI_qi)-1)*((FIES_imi/FI_qi)/(FIES_imi(-1)/FI_qi(-1)));
+// Import adjustment cost
+FIFR_gammaimi = FI_gammaimi1/2*((FIFR_imi/FI_qi)/(FIFR_imi(-1)/FI_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIFR_gammaimidag = 1-FIFR_gammaimi-FI_gammaimi1*((FIFR_imi/FI_qi)/(FIFR_imi(-1)/FI_qi)-1)*((FIFR_imi/FI_qi)/(FIFR_imi(-1)/FI_qi(-1)));
+// Import adjustment cost
+FIGR_gammaimi = FI_gammaimi1/2*((FIGR_imi/FI_qi)/(FIGR_imi(-1)/FI_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIGR_gammaimidag = 1-FIGR_gammaimi-FI_gammaimi1*((FIGR_imi/FI_qi)/(FIGR_imi(-1)/FI_qi)-1)*((FIGR_imi/FI_qi)/(FIGR_imi(-1)/FI_qi(-1)));
+// Import adjustment cost
+FIIT_gammaimi = FI_gammaimi1/2*((FIIT_imi/FI_qi)/(FIIT_imi(-1)/FI_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIIT_gammaimidag = 1-FIIT_gammaimi-FI_gammaimi1*((FIIT_imi/FI_qi)/(FIIT_imi(-1)/FI_qi)-1)*((FIIT_imi/FI_qi)/(FIIT_imi(-1)/FI_qi(-1)));
+// Import adjustment cost
+FINL_gammaimi = FI_gammaimi1/2*((FINL_imi/FI_qi)/(FINL_imi(-1)/FI_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FINL_gammaimidag = 1-FINL_gammaimi-FI_gammaimi1*((FINL_imi/FI_qi)/(FINL_imi(-1)/FI_qi)-1)*((FINL_imi/FI_qi)/(FINL_imi(-1)/FI_qi(-1)));
+// Import adjustment cost
+FIPT_gammaimi = FI_gammaimi1/2*((FIPT_imi/FI_qi)/(FIPT_imi(-1)/FI_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIPT_gammaimidag = 1-FIPT_gammaimi-FI_gammaimi1*((FIPT_imi/FI_qi)/(FIPT_imi(-1)/FI_qi)-1)*((FIPT_imi/FI_qi)/(FIPT_imi(-1)/FI_qi(-1)));
+// Import adjustment cost
+FIDE_gammaimi = FI_gammaimi1/2*((FIDE_imi/FI_qi)/(FIDE_imi(-1)/FI_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIDE_gammaimidag = 1-FIDE_gammaimi-FI_gammaimi1*((FIDE_imi/FI_qi)/(FIDE_imi(-1)/FI_qi)-1)*((FIDE_imi/FI_qi)/(FIDE_imi(-1)/FI_qi(-1)));
+// Import adjustment cost
+FIRU_gammaimi = FI_gammaimi1/2*((FIRU_imi/FI_qi)/(FIRU_imi(-1)/FI_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIRU_gammaimidag = 1-FIRU_gammaimi-FI_gammaimi1*((FIRU_imi/FI_qi)/(FIRU_imi(-1)/FI_qi)-1)*((FIRU_imi/FI_qi)/(FIRU_imi(-1)/FI_qi(-1)));
+// Import adjustment cost
+FIRW_gammaimi = FI_gammaimi1/2*((FIRW_imi/FI_qi)/(FIRW_imi(-1)/FI_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIRW_gammaimidag = 1-FIRW_gammaimi-FI_gammaimi1*((FIRW_imi/FI_qi)/(FIRW_imi(-1)/FI_qi)-1)*((FIRW_imi/FI_qi)/(FIRW_imi(-1)/FI_qi(-1)));
+// Import adjustment cost
+FIUS_gammaimi = FI_gammaimi1/2*((FIUS_imi/FI_qi)/(FIUS_imi(-1)/FI_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIUS_gammaimidag = 1-FIUS_gammaimi-FI_gammaimi1*((FIUS_imi/FI_qi)/(FIUS_imi(-1)/FI_qi)-1)*((FIUS_imi/FI_qi)/(FIUS_imi(-1)/FI_qi(-1)));
 // Private consumption good (tradable)
 FI_ttcg^((FI_mutcg-1)/FI_mutcg) = (FI_nutcg)^(1/FI_mutcg)*FI_htcg^(1-1/FI_mutcg)+(1-FI_nutcg)^(1/FI_mutcg)*FI_imcg^(1-1/FI_mutcg);
 // Private consumption good  (total)
@@ -29061,32 +29161,58 @@ FI_pttcg^(1-FI_mutcg) = (FI_nutcg)*FI_pht^(1-FI_mutcg)+(1-FI_nutcg)*FI_pimcg^(1-
 FI_pcg^(1-FI_mucg) = (FI_nucg)*FI_pttcg^(1-FI_mucg)+(1-FI_nucg)*FI_pnt^(1-FI_mucg);
 // Demand for domestic intermediate goods
 FI_htcg = FI_nutcg*(FI_pht/FI_pttcg)^(-FI_mutcg)*FI_ttcg;
-FIRA_gammaimcg = 0;
-FIRA_gammaimcgdag = 1;
-FIAT_gammaimcg = 0;
-FIAT_gammaimcgdag = 1;
-FIBE_gammaimcg = 0;
-FIBE_gammaimcgdag = 1;
-FIES_gammaimcg = 0;
-FIES_gammaimcgdag = 1;
-FIFR_gammaimcg = 0;
-FIFR_gammaimcgdag = 1;
-FIGR_gammaimcg = 0;
-FIGR_gammaimcgdag = 1;
-FIIT_gammaimcg = 0;
-FIIT_gammaimcgdag = 1;
-FINL_gammaimcg = 0;
-FINL_gammaimcgdag = 1;
-FIPT_gammaimcg = 0;
-FIPT_gammaimcgdag = 1;
-FIDE_gammaimcg = 0;
-FIDE_gammaimcgdag = 1;
-FIRU_gammaimcg = 0;
-FIRU_gammaimcgdag = 1;
-FIRW_gammaimcg = 0;
-FIRW_gammaimcgdag = 1;
-FIUS_gammaimcg = 0;
-FIUS_gammaimcgdag = 1;
+// Import adjustment cost
+FIRA_gammaimcg = FI_gammaimcg1/2*((FIRA_imcg/FI_qcg)/(FIRA_imcg(-1)/FI_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIRA_gammaimcgdag = 1-FIRA_gammaimcg-FI_gammaimcg1*((FIRA_imcg/FI_qcg)/(FIRA_imcg(-1)/FI_qcg)-1)*((FIRA_imcg/FI_qcg)/(FIRA_imcg(-1)/FI_qcg(-1)));
+// Import adjustment cost
+FIAT_gammaimcg = FI_gammaimcg1/2*((FIAT_imcg/FI_qcg)/(FIAT_imcg(-1)/FI_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIAT_gammaimcgdag = 1-FIAT_gammaimcg-FI_gammaimcg1*((FIAT_imcg/FI_qcg)/(FIAT_imcg(-1)/FI_qcg)-1)*((FIAT_imcg/FI_qcg)/(FIAT_imcg(-1)/FI_qcg(-1)));
+// Import adjustment cost
+FIBE_gammaimcg = FI_gammaimcg1/2*((FIBE_imcg/FI_qcg)/(FIBE_imcg(-1)/FI_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIBE_gammaimcgdag = 1-FIBE_gammaimcg-FI_gammaimcg1*((FIBE_imcg/FI_qcg)/(FIBE_imcg(-1)/FI_qcg)-1)*((FIBE_imcg/FI_qcg)/(FIBE_imcg(-1)/FI_qcg(-1)));
+// Import adjustment cost
+FIES_gammaimcg = FI_gammaimcg1/2*((FIES_imcg/FI_qcg)/(FIES_imcg(-1)/FI_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIES_gammaimcgdag = 1-FIES_gammaimcg-FI_gammaimcg1*((FIES_imcg/FI_qcg)/(FIES_imcg(-1)/FI_qcg)-1)*((FIES_imcg/FI_qcg)/(FIES_imcg(-1)/FI_qcg(-1)));
+// Import adjustment cost
+FIFR_gammaimcg = FI_gammaimcg1/2*((FIFR_imcg/FI_qcg)/(FIFR_imcg(-1)/FI_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIFR_gammaimcgdag = 1-FIFR_gammaimcg-FI_gammaimcg1*((FIFR_imcg/FI_qcg)/(FIFR_imcg(-1)/FI_qcg)-1)*((FIFR_imcg/FI_qcg)/(FIFR_imcg(-1)/FI_qcg(-1)));
+// Import adjustment cost
+FIGR_gammaimcg = FI_gammaimcg1/2*((FIGR_imcg/FI_qcg)/(FIGR_imcg(-1)/FI_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIGR_gammaimcgdag = 1-FIGR_gammaimcg-FI_gammaimcg1*((FIGR_imcg/FI_qcg)/(FIGR_imcg(-1)/FI_qcg)-1)*((FIGR_imcg/FI_qcg)/(FIGR_imcg(-1)/FI_qcg(-1)));
+// Import adjustment cost
+FIIT_gammaimcg = FI_gammaimcg1/2*((FIIT_imcg/FI_qcg)/(FIIT_imcg(-1)/FI_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIIT_gammaimcgdag = 1-FIIT_gammaimcg-FI_gammaimcg1*((FIIT_imcg/FI_qcg)/(FIIT_imcg(-1)/FI_qcg)-1)*((FIIT_imcg/FI_qcg)/(FIIT_imcg(-1)/FI_qcg(-1)));
+// Import adjustment cost
+FINL_gammaimcg = FI_gammaimcg1/2*((FINL_imcg/FI_qcg)/(FINL_imcg(-1)/FI_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FINL_gammaimcgdag = 1-FINL_gammaimcg-FI_gammaimcg1*((FINL_imcg/FI_qcg)/(FINL_imcg(-1)/FI_qcg)-1)*((FINL_imcg/FI_qcg)/(FINL_imcg(-1)/FI_qcg(-1)));
+// Import adjustment cost
+FIPT_gammaimcg = FI_gammaimcg1/2*((FIPT_imcg/FI_qcg)/(FIPT_imcg(-1)/FI_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIPT_gammaimcgdag = 1-FIPT_gammaimcg-FI_gammaimcg1*((FIPT_imcg/FI_qcg)/(FIPT_imcg(-1)/FI_qcg)-1)*((FIPT_imcg/FI_qcg)/(FIPT_imcg(-1)/FI_qcg(-1)));
+// Import adjustment cost
+FIDE_gammaimcg = FI_gammaimcg1/2*((FIDE_imcg/FI_qcg)/(FIDE_imcg(-1)/FI_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIDE_gammaimcgdag = 1-FIDE_gammaimcg-FI_gammaimcg1*((FIDE_imcg/FI_qcg)/(FIDE_imcg(-1)/FI_qcg)-1)*((FIDE_imcg/FI_qcg)/(FIDE_imcg(-1)/FI_qcg(-1)));
+// Import adjustment cost
+FIRU_gammaimcg = FI_gammaimcg1/2*((FIRU_imcg/FI_qcg)/(FIRU_imcg(-1)/FI_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIRU_gammaimcgdag = 1-FIRU_gammaimcg-FI_gammaimcg1*((FIRU_imcg/FI_qcg)/(FIRU_imcg(-1)/FI_qcg)-1)*((FIRU_imcg/FI_qcg)/(FIRU_imcg(-1)/FI_qcg(-1)));
+// Import adjustment cost
+FIRW_gammaimcg = FI_gammaimcg1/2*((FIRW_imcg/FI_qcg)/(FIRW_imcg(-1)/FI_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIRW_gammaimcgdag = 1-FIRW_gammaimcg-FI_gammaimcg1*((FIRW_imcg/FI_qcg)/(FIRW_imcg(-1)/FI_qcg)-1)*((FIRW_imcg/FI_qcg)/(FIRW_imcg(-1)/FI_qcg(-1)));
+// Import adjustment cost
+FIUS_gammaimcg = FI_gammaimcg1/2*((FIUS_imcg/FI_qcg)/(FIUS_imcg(-1)/FI_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIUS_gammaimcgdag = 1-FIUS_gammaimcg-FI_gammaimcg1*((FIUS_imcg/FI_qcg)/(FIUS_imcg(-1)/FI_qcg)-1)*((FIUS_imcg/FI_qcg)/(FIUS_imcg(-1)/FI_qcg(-1)));
 // Private consumption good (tradable)
 FI_ttig^((FI_mutig-1)/FI_mutig) = (FI_nutig)^(1/FI_mutig)*FI_htig^(1-1/FI_mutig)+(1-FI_nutig)^(1/FI_mutig)*FI_imig^(1-1/FI_mutig);
 // Private consumption good  (total)
@@ -29099,32 +29225,58 @@ FI_pttig^(1-FI_mutig) = (FI_nutig)*FI_pht^(1-FI_mutig)+(1-FI_nutig)*FI_pimig^(1-
 FI_pig^(1-FI_muig) = (FI_nuig)*FI_pttig^(1-FI_muig)+(1-FI_nuig)*FI_pnt^(1-FI_muig);
 // Demand for domestic intermediate goods
 FI_htig = FI_nutig*(FI_pht/FI_pttig)^(-FI_mutig)*FI_ttig;
-FIRA_gammaimig = 0;
-FIRA_gammaimigdag = 1;
-FIAT_gammaimig = 0;
-FIAT_gammaimigdag = 1;
-FIBE_gammaimig = 0;
-FIBE_gammaimigdag = 1;
-FIES_gammaimig = 0;
-FIES_gammaimigdag = 1;
-FIFR_gammaimig = 0;
-FIFR_gammaimigdag = 1;
-FIGR_gammaimig = 0;
-FIGR_gammaimigdag = 1;
-FIIT_gammaimig = 0;
-FIIT_gammaimigdag = 1;
-FINL_gammaimig = 0;
-FINL_gammaimigdag = 1;
-FIPT_gammaimig = 0;
-FIPT_gammaimigdag = 1;
-FIDE_gammaimig = 0;
-FIDE_gammaimigdag = 1;
-FIRU_gammaimig = 0;
-FIRU_gammaimigdag = 1;
-FIRW_gammaimig = 0;
-FIRW_gammaimigdag = 1;
-FIUS_gammaimig = 0;
-FIUS_gammaimigdag = 1;
+// Import adjustment cost
+FIRA_gammaimig = FI_gammaimig1/2*((FIRA_imig/FI_qig)/(FIRA_imig(-1)/FI_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIRA_gammaimigdag = 1-FIRA_gammaimig-FI_gammaimig1*((FIRA_imig/FI_qig)/(FIRA_imig(-1)/FI_qig)-1)*((FIRA_imig/FI_qig)/(FIRA_imig(-1)/FI_qig(-1)));
+// Import adjustment cost
+FIAT_gammaimig = FI_gammaimig1/2*((FIAT_imig/FI_qig)/(FIAT_imig(-1)/FI_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIAT_gammaimigdag = 1-FIAT_gammaimig-FI_gammaimig1*((FIAT_imig/FI_qig)/(FIAT_imig(-1)/FI_qig)-1)*((FIAT_imig/FI_qig)/(FIAT_imig(-1)/FI_qig(-1)));
+// Import adjustment cost
+FIBE_gammaimig = FI_gammaimig1/2*((FIBE_imig/FI_qig)/(FIBE_imig(-1)/FI_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIBE_gammaimigdag = 1-FIBE_gammaimig-FI_gammaimig1*((FIBE_imig/FI_qig)/(FIBE_imig(-1)/FI_qig)-1)*((FIBE_imig/FI_qig)/(FIBE_imig(-1)/FI_qig(-1)));
+// Import adjustment cost
+FIES_gammaimig = FI_gammaimig1/2*((FIES_imig/FI_qig)/(FIES_imig(-1)/FI_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIES_gammaimigdag = 1-FIES_gammaimig-FI_gammaimig1*((FIES_imig/FI_qig)/(FIES_imig(-1)/FI_qig)-1)*((FIES_imig/FI_qig)/(FIES_imig(-1)/FI_qig(-1)));
+// Import adjustment cost
+FIFR_gammaimig = FI_gammaimig1/2*((FIFR_imig/FI_qig)/(FIFR_imig(-1)/FI_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIFR_gammaimigdag = 1-FIFR_gammaimig-FI_gammaimig1*((FIFR_imig/FI_qig)/(FIFR_imig(-1)/FI_qig)-1)*((FIFR_imig/FI_qig)/(FIFR_imig(-1)/FI_qig(-1)));
+// Import adjustment cost
+FIGR_gammaimig = FI_gammaimig1/2*((FIGR_imig/FI_qig)/(FIGR_imig(-1)/FI_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIGR_gammaimigdag = 1-FIGR_gammaimig-FI_gammaimig1*((FIGR_imig/FI_qig)/(FIGR_imig(-1)/FI_qig)-1)*((FIGR_imig/FI_qig)/(FIGR_imig(-1)/FI_qig(-1)));
+// Import adjustment cost
+FIIT_gammaimig = FI_gammaimig1/2*((FIIT_imig/FI_qig)/(FIIT_imig(-1)/FI_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIIT_gammaimigdag = 1-FIIT_gammaimig-FI_gammaimig1*((FIIT_imig/FI_qig)/(FIIT_imig(-1)/FI_qig)-1)*((FIIT_imig/FI_qig)/(FIIT_imig(-1)/FI_qig(-1)));
+// Import adjustment cost
+FINL_gammaimig = FI_gammaimig1/2*((FINL_imig/FI_qig)/(FINL_imig(-1)/FI_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FINL_gammaimigdag = 1-FINL_gammaimig-FI_gammaimig1*((FINL_imig/FI_qig)/(FINL_imig(-1)/FI_qig)-1)*((FINL_imig/FI_qig)/(FINL_imig(-1)/FI_qig(-1)));
+// Import adjustment cost
+FIPT_gammaimig = FI_gammaimig1/2*((FIPT_imig/FI_qig)/(FIPT_imig(-1)/FI_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIPT_gammaimigdag = 1-FIPT_gammaimig-FI_gammaimig1*((FIPT_imig/FI_qig)/(FIPT_imig(-1)/FI_qig)-1)*((FIPT_imig/FI_qig)/(FIPT_imig(-1)/FI_qig(-1)));
+// Import adjustment cost
+FIDE_gammaimig = FI_gammaimig1/2*((FIDE_imig/FI_qig)/(FIDE_imig(-1)/FI_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIDE_gammaimigdag = 1-FIDE_gammaimig-FI_gammaimig1*((FIDE_imig/FI_qig)/(FIDE_imig(-1)/FI_qig)-1)*((FIDE_imig/FI_qig)/(FIDE_imig(-1)/FI_qig(-1)));
+// Import adjustment cost
+FIRU_gammaimig = FI_gammaimig1/2*((FIRU_imig/FI_qig)/(FIRU_imig(-1)/FI_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIRU_gammaimigdag = 1-FIRU_gammaimig-FI_gammaimig1*((FIRU_imig/FI_qig)/(FIRU_imig(-1)/FI_qig)-1)*((FIRU_imig/FI_qig)/(FIRU_imig(-1)/FI_qig(-1)));
+// Import adjustment cost
+FIRW_gammaimig = FI_gammaimig1/2*((FIRW_imig/FI_qig)/(FIRW_imig(-1)/FI_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIRW_gammaimigdag = 1-FIRW_gammaimig-FI_gammaimig1*((FIRW_imig/FI_qig)/(FIRW_imig(-1)/FI_qig)-1)*((FIRW_imig/FI_qig)/(FIRW_imig(-1)/FI_qig(-1)));
+// Import adjustment cost
+FIUS_gammaimig = FI_gammaimig1/2*((FIUS_imig/FI_qig)/(FIUS_imig(-1)/FI_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FIUS_gammaimigdag = 1-FIUS_gammaimig-FI_gammaimig1*((FIUS_imig/FI_qig)/(FIUS_imig(-1)/FI_qig)-1)*((FIUS_imig/FI_qig)/(FIUS_imig(-1)/FI_qig(-1)));
 // Trade balance
 FI_tb =
 +FI_pex*RA_size/FI_size*RAFI_im
@@ -29185,18 +29337,10 @@ FI_ex =
 // Government spending, using FI_pg = FI_pht
 FI_pcg*FI_cg = FI_cgy*FI_pybar*FI_ybar;
 FI_pig*FI_ig = FI_igy*FI_pybar*FI_ybar;
-FI_t = 0;
-FI_b = FI_bytarget*FI_pybar*FI_ybar;
-// Auxiliary equation for steady-state output
-FI_ybar = FI_y;
-// Auxiliary equation for steady-state output
-FI_ytbar = FI_yst;
-// Auxiliary equation for steady-state output
-FI_ynbar = FI_ysn;
-// Auxiliary equation for steady-state output deflator
-FI_pybar = FI_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-FI_trybar = FI_tr/(FI_pybar*FI_ybar);
+// Transfers
+FI_tr = FI_try*FI_pybar*FI_ybar;
+// Fiscal rule
+FI_t/(FI_pybar*FI_ybar) = FI_phitb*(FI_b/(FI_pybar*FI_ybar)-FI_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 FI_ti = FI_upsilont*FI_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -29212,9 +29356,11 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	FI_r = DE_r;
-FI_pic4 = FI_pi4target;
-FI_rr-1 = FI_r/FI_pi4target^(1/4)-1;
+		FI_rerdep/DE_rerdep*FI_pic/DE_pic-1=0;
+// Definition of annual inflation
+FI_pic4 = FI_pic*FI_pic(-1)*FI_pic(-2)*FI_pic(-3);
+// Real interest rate
+FI_rr-1 = FI_r/FI_pic(+1)-1;
 // Equilibrium real interest rate
 FI_rrstar-1 = 1/FI_beta-1;
 //-------------
@@ -29301,68 +29447,68 @@ FI_py*FI_y =
 +FI_pcg*FI_qcg
 +FI_pig*FI_qig
 +FI_pex*RA_size/FI_size*RAFI_im
--(RA_pex*FIRA_rer)*FIRA_imc
--(RA_pex*FIRA_rer)*FIRA_imi
+-(RA_pex*FIRA_rer)*(FIRA_imc*(1-FIRA_gammaimc)/FIRA_gammaimcdag)
+-(RA_pex*FIRA_rer)*(FIRA_imi*(1-FIRA_gammaimi)/FIRA_gammaimidag)
 -(RA_pex*FIRA_rer)*FIRA_imcg
 -(RA_pex*FIRA_rer)*FIRA_imig
 +FI_pex*AT_size/FI_size*ATFI_im
--(AT_pex*FIAT_rer)*FIAT_imc
--(AT_pex*FIAT_rer)*FIAT_imi
+-(AT_pex*FIAT_rer)*(FIAT_imc*(1-FIAT_gammaimc)/FIAT_gammaimcdag)
+-(AT_pex*FIAT_rer)*(FIAT_imi*(1-FIAT_gammaimi)/FIAT_gammaimidag)
 -(AT_pex*FIAT_rer)*FIAT_imcg
 -(AT_pex*FIAT_rer)*FIAT_imig
 +FI_pex*BE_size/FI_size*BEFI_im
--(BE_pex*FIBE_rer)*FIBE_imc
--(BE_pex*FIBE_rer)*FIBE_imi
+-(BE_pex*FIBE_rer)*(FIBE_imc*(1-FIBE_gammaimc)/FIBE_gammaimcdag)
+-(BE_pex*FIBE_rer)*(FIBE_imi*(1-FIBE_gammaimi)/FIBE_gammaimidag)
 -(BE_pex*FIBE_rer)*FIBE_imcg
 -(BE_pex*FIBE_rer)*FIBE_imig
 +FI_pex*ES_size/FI_size*ESFI_im
--(ES_pex*FIES_rer)*FIES_imc
--(ES_pex*FIES_rer)*FIES_imi
+-(ES_pex*FIES_rer)*(FIES_imc*(1-FIES_gammaimc)/FIES_gammaimcdag)
+-(ES_pex*FIES_rer)*(FIES_imi*(1-FIES_gammaimi)/FIES_gammaimidag)
 -(ES_pex*FIES_rer)*FIES_imcg
 -(ES_pex*FIES_rer)*FIES_imig
 +FI_pex*FR_size/FI_size*FRFI_im
--(FR_pex*FIFR_rer)*FIFR_imc
--(FR_pex*FIFR_rer)*FIFR_imi
+-(FR_pex*FIFR_rer)*(FIFR_imc*(1-FIFR_gammaimc)/FIFR_gammaimcdag)
+-(FR_pex*FIFR_rer)*(FIFR_imi*(1-FIFR_gammaimi)/FIFR_gammaimidag)
 -(FR_pex*FIFR_rer)*FIFR_imcg
 -(FR_pex*FIFR_rer)*FIFR_imig
 +FI_pex*GR_size/FI_size*GRFI_im
--(GR_pex*FIGR_rer)*FIGR_imc
--(GR_pex*FIGR_rer)*FIGR_imi
+-(GR_pex*FIGR_rer)*(FIGR_imc*(1-FIGR_gammaimc)/FIGR_gammaimcdag)
+-(GR_pex*FIGR_rer)*(FIGR_imi*(1-FIGR_gammaimi)/FIGR_gammaimidag)
 -(GR_pex*FIGR_rer)*FIGR_imcg
 -(GR_pex*FIGR_rer)*FIGR_imig
 +FI_pex*IT_size/FI_size*ITFI_im
--(IT_pex*FIIT_rer)*FIIT_imc
--(IT_pex*FIIT_rer)*FIIT_imi
+-(IT_pex*FIIT_rer)*(FIIT_imc*(1-FIIT_gammaimc)/FIIT_gammaimcdag)
+-(IT_pex*FIIT_rer)*(FIIT_imi*(1-FIIT_gammaimi)/FIIT_gammaimidag)
 -(IT_pex*FIIT_rer)*FIIT_imcg
 -(IT_pex*FIIT_rer)*FIIT_imig
 +FI_pex*NL_size/FI_size*NLFI_im
--(NL_pex*FINL_rer)*FINL_imc
--(NL_pex*FINL_rer)*FINL_imi
+-(NL_pex*FINL_rer)*(FINL_imc*(1-FINL_gammaimc)/FINL_gammaimcdag)
+-(NL_pex*FINL_rer)*(FINL_imi*(1-FINL_gammaimi)/FINL_gammaimidag)
 -(NL_pex*FINL_rer)*FINL_imcg
 -(NL_pex*FINL_rer)*FINL_imig
 +FI_pex*PT_size/FI_size*PTFI_im
--(PT_pex*FIPT_rer)*FIPT_imc
--(PT_pex*FIPT_rer)*FIPT_imi
+-(PT_pex*FIPT_rer)*(FIPT_imc*(1-FIPT_gammaimc)/FIPT_gammaimcdag)
+-(PT_pex*FIPT_rer)*(FIPT_imi*(1-FIPT_gammaimi)/FIPT_gammaimidag)
 -(PT_pex*FIPT_rer)*FIPT_imcg
 -(PT_pex*FIPT_rer)*FIPT_imig
 +FI_pex*DE_size/FI_size*DEFI_im
--(DE_pex*FIDE_rer)*FIDE_imc
--(DE_pex*FIDE_rer)*FIDE_imi
+-(DE_pex*FIDE_rer)*(FIDE_imc*(1-FIDE_gammaimc)/FIDE_gammaimcdag)
+-(DE_pex*FIDE_rer)*(FIDE_imi*(1-FIDE_gammaimi)/FIDE_gammaimidag)
 -(DE_pex*FIDE_rer)*FIDE_imcg
 -(DE_pex*FIDE_rer)*FIDE_imig
 +FI_pex*RU_size/FI_size*RUFI_im
--(RU_pex*FIRU_rer)*FIRU_imc
--(RU_pex*FIRU_rer)*FIRU_imi
+-(RU_pex*FIRU_rer)*(FIRU_imc*(1-FIRU_gammaimc)/FIRU_gammaimcdag)
+-(RU_pex*FIRU_rer)*(FIRU_imi*(1-FIRU_gammaimi)/FIRU_gammaimidag)
 -(RU_pex*FIRU_rer)*FIRU_imcg
 -(RU_pex*FIRU_rer)*FIRU_imig
 +FI_pex*RW_size/FI_size*RWFI_im
--(RW_pex*FIRW_rer)*FIRW_imc
--(RW_pex*FIRW_rer)*FIRW_imi
+-(RW_pex*FIRW_rer)*(FIRW_imc*(1-FIRW_gammaimc)/FIRW_gammaimcdag)
+-(RW_pex*FIRW_rer)*(FIRW_imi*(1-FIRW_gammaimi)/FIRW_gammaimidag)
 -(RW_pex*FIRW_rer)*FIRW_imcg
 -(RW_pex*FIRW_rer)*FIRW_imig
 +FI_pex*US_size/FI_size*USFI_im
--(US_pex*FIUS_rer)*FIUS_imc
--(US_pex*FIUS_rer)*FIUS_imi
+-(US_pex*FIUS_rer)*(FIUS_imc*(1-FIUS_gammaimc)/FIUS_gammaimcdag)
+-(US_pex*FIUS_rer)*(FIUS_imi*(1-FIUS_gammaimi)/FIUS_gammaimidag)
 -(US_pex*FIUS_rer)*FIUS_imcg
 -(US_pex*FIUS_rer)*FIUS_imig
 ;
@@ -29437,7 +29583,7 @@ FI_yhty = FI_pht*FI_yst/(FI_py*FI_y);
 // NT sector share
 FI_ynty = FI_pnt*FI_ysn/(FI_py*FI_y);
 // Output gap
-FI_ygap = 0;
+FI_ygap = FI_y/FI_ybar-1;
 // Output growth (gross rate)
 FI_ygrowth = FI_y/FI_y(-1);
 // Output growth (gross rate yoy)
@@ -29601,7 +29747,7 @@ FR_dcci = ((FR_nucces)^(1/FR_mucces)*FR_ci^(1-1/FR_mucces)+(1-FR_nucces)^(1/FR_m
 FR_lambdai*(1+FR_tauc+FR_gammavi+FR_vi*FR_gammavider) = FR_zcon*(FR_ccesi-FR_kappa*FR_ccesi(-1))^(-FR_sigma)*FR_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
-FR_r                   = FR_beta^(-1)*FR_lambdai/FR_lambdai    *FR_pic;
+FR_r*(1-FR_gammabh) = FR_beta^(-1)*FR_lambdai/FR_lambdai(+1)*FR_pic(+1);
 // Germany
 // US and the RoW
 // Euler equation for money
@@ -29612,17 +29758,23 @@ FR_vi = FR_ci/FR_mi;
 FR_gammavi = FR_gammav1*FR_vi+FR_gammav2/FR_vi-2*(FR_gammav1*FR_gammav2)^(1/2);
 // Derivative of transaction cost
 FR_gammavider = FR_gammav1-FR_gammav2*FR_vi^(-2);
-FR_delta = FR_ii/FR_ki;
-FR_gammai = 0;
-FR_gammaider = 0;
-FR_gammau = 0;
-FR_gammauder = ((FR_beta^(-1)-1+FR_delta)*FR_qbar-FR_delta*FR_taukbar*FR_pibar)/((1-FR_taukbar)*FR_pibar);
-FR_u = 1;
-FR_pi = FR_q;
+// Capital accumulation
+FR_ki = (1-FR_delta)*FR_ki(-1)+(1-FR_gammai(-1))*FR_ii(-1)*FR_zinv;
+// Investment adjustment cost
+FR_gammai = FR_gammai1/2*(FR_ii/FR_ii(-1)-1)^2;
+// Derivative of investment adjustment cost
+FR_gammaider = FR_gammai1*(FR_ii/FR_ii(-1)-1)/FR_ii(-1);
+// Capacity utilisation cost
+FR_gammau = ((FR_beta^(-1)-1+FR_delta)*FR_qbar-FR_delta*FR_taukbar*FR_pibar)/((1-FR_taukbar)*FR_pibar)*(FR_u-1)+FR_gammau2/2*(FR_u-1)^2;
+// Derivative of capacity utilisation cost
+FR_gammauder = ((FR_beta^(-1)-1+FR_delta)*FR_qbar-FR_delta*FR_taukbar*FR_pibar)/((1-FR_taukbar)*FR_pibar)+FR_gammau2*(FR_u-1);
+// Optimal capacity utilisation (FOC)
+FR_rk = FR_gammauder*FR_pi;
+// Tobin's Q
+FR_pi = FR_q*FR_zinv*(1-FR_gammai-FR_gammaider*FR_ii)+FR_beta*FR_lambdai(+1)/FR_lambdai*FR_q(+1)*FR_zinv(+1)*FR_gammaider(+1)*FR_ii(+1)^2/FR_ii;
 // Auxiliary equation for Tobin's Q in steady state
-FR_qbar = FR_q;
 // Rate of return on capital
-FR_q = FR_beta*((1-FR_tauk)*FR_rk+(FR_tauk*FR_delta)*FR_pi+(1-FR_delta)*FR_q);
+FR_q = FR_beta*FR_lambdai(+1)/FR_lambdai*((1-FR_tauk(+1))*(FR_rk(+1)*FR_u(+1)-FR_gammau(+1)*FR_pi(+1))+(FR_tauk(+1)*FR_delta)*FR_pi(+1)+(1-FR_delta)*FR_q(+1));
 // Optimal wage contract (FOC)
 FR_witilde^(1+FR_etai*FR_zeta) = FR_etai/(FR_etai-1)*FR_fi/FR_gi+FR_wcst;
 // Definition of fi
@@ -29681,11 +29833,9 @@ FR_mcn = 1/(FR_zn*FR_kg^FR_alphag*(FR_alphan)^(FR_alphan)*(1-FR_alphan)^(1-FR_al
 // Wage Inflation (qoq)
 FR_piw = FR_w/FR_w(-1)*FR_pic;
 // Wage Inflation (yoy)
-FR_piw4 = FR_pic4;
+FR_piw4 = FR_piw*FR_piw(-1)*FR_piw(-2)*FR_piw(-3);
 // Auxiliary equation for steady-state fixed cost
-FR_psitbar = FR_psit*FR_ytbar;
 // Auxiliary equation for steady-state fixed cost
-FR_psinbar = FR_psin*FR_ynbar;
 // Capital input (FOC)
 FR_rk = FR_alphat*(FR_yst+FR_psitbar)/FR_kdt*FR_mct;
 // Capital input (FOC)
@@ -29760,7 +29910,6 @@ FR_piex = FR_pex/FR_pex(-1)*FR_pic;
 // Bilateral real exchange rate
 FRRA_rer = FR_rer/RA_rer;
 // Auxiliary equation for steady-state output
-FRRA_rerbar = FRRA_rer;
 //Terms of Trade
 FRRA_tot = RA_pex*FRRA_rer/FR_pex;
 // Optimal price contract set in foreign markets (FOC), using FR_pxtilde = AT_pimtilde
@@ -29776,7 +29925,6 @@ FRRA_tot = RA_pex*FRRA_rer/FR_pex;
 // Bilateral real exchange rate
 FRAT_rer = FR_rer/AT_rer;
 // Auxiliary equation for steady-state output
-FRAT_rerbar = FRAT_rer;
 //Terms of Trade
 FRAT_tot = AT_pex*FRAT_rer/FR_pex;
 // Optimal price contract set in foreign markets (FOC), using FR_pxtilde = BE_pimtilde
@@ -29792,7 +29940,6 @@ FRAT_tot = AT_pex*FRAT_rer/FR_pex;
 // Bilateral real exchange rate
 FRBE_rer = FR_rer/BE_rer;
 // Auxiliary equation for steady-state output
-FRBE_rerbar = FRBE_rer;
 //Terms of Trade
 FRBE_tot = BE_pex*FRBE_rer/FR_pex;
 // Optimal price contract set in foreign markets (FOC), using FR_pxtilde = ES_pimtilde
@@ -29808,7 +29955,6 @@ FRBE_tot = BE_pex*FRBE_rer/FR_pex;
 // Bilateral real exchange rate
 FRES_rer = FR_rer/ES_rer;
 // Auxiliary equation for steady-state output
-FRES_rerbar = FRES_rer;
 //Terms of Trade
 FRES_tot = ES_pex*FRES_rer/FR_pex;
 // Optimal price contract set in foreign markets (FOC), using FR_pxtilde = FI_pimtilde
@@ -29824,7 +29970,6 @@ FRES_tot = ES_pex*FRES_rer/FR_pex;
 // Bilateral real exchange rate
 FRFI_rer = FR_rer/FI_rer;
 // Auxiliary equation for steady-state output
-FRFI_rerbar = FRFI_rer;
 //Terms of Trade
 FRFI_tot = FI_pex*FRFI_rer/FR_pex;
 // Optimal price contract set in foreign markets (FOC), using FR_pxtilde = GR_pimtilde
@@ -29840,7 +29985,6 @@ FRFI_tot = FI_pex*FRFI_rer/FR_pex;
 // Bilateral real exchange rate
 FRGR_rer = FR_rer/GR_rer;
 // Auxiliary equation for steady-state output
-FRGR_rerbar = FRGR_rer;
 //Terms of Trade
 FRGR_tot = GR_pex*FRGR_rer/FR_pex;
 // Optimal price contract set in foreign markets (FOC), using FR_pxtilde = IT_pimtilde
@@ -29856,7 +30000,6 @@ FRGR_tot = GR_pex*FRGR_rer/FR_pex;
 // Bilateral real exchange rate
 FRIT_rer = FR_rer/IT_rer;
 // Auxiliary equation for steady-state output
-FRIT_rerbar = FRIT_rer;
 //Terms of Trade
 FRIT_tot = IT_pex*FRIT_rer/FR_pex;
 // Optimal price contract set in foreign markets (FOC), using FR_pxtilde = NL_pimtilde
@@ -29872,7 +30015,6 @@ FRIT_tot = IT_pex*FRIT_rer/FR_pex;
 // Bilateral real exchange rate
 FRNL_rer = FR_rer/NL_rer;
 // Auxiliary equation for steady-state output
-FRNL_rerbar = FRNL_rer;
 //Terms of Trade
 FRNL_tot = NL_pex*FRNL_rer/FR_pex;
 // Optimal price contract set in foreign markets (FOC), using FR_pxtilde = PT_pimtilde
@@ -29888,7 +30030,6 @@ FRNL_tot = NL_pex*FRNL_rer/FR_pex;
 // Bilateral real exchange rate
 FRPT_rer = FR_rer/PT_rer;
 // Auxiliary equation for steady-state output
-FRPT_rerbar = FRPT_rer;
 //Terms of Trade
 FRPT_tot = PT_pex*FRPT_rer/FR_pex;
 // Optimal price contract set in foreign markets (FOC), using FR_pxtilde = DE_pimtilde
@@ -29904,7 +30045,6 @@ FRPT_tot = PT_pex*FRPT_rer/FR_pex;
 // Bilateral real exchange rate
 FRDE_rer = FR_rer/DE_rer;
 // Auxiliary equation for steady-state output
-FRDE_rerbar = FRDE_rer;
 //Terms of Trade
 FRDE_tot = DE_pex*FRDE_rer/FR_pex;
 // Optimal price contract set in foreign markets (FOC), using FR_pxtilde = RU_pimtilde
@@ -29920,7 +30060,6 @@ FRDE_tot = DE_pex*FRDE_rer/FR_pex;
 // Bilateral real exchange rate
 FRRU_rer = FR_rer/RU_rer;
 // Auxiliary equation for steady-state output
-FRRU_rerbar = FRRU_rer;
 //Terms of Trade
 FRRU_tot = RU_pex*FRRU_rer/FR_pex;
 // Optimal price contract set in foreign markets (FOC), using FR_pxtilde = RW_pimtilde
@@ -29936,7 +30075,6 @@ FRRU_tot = RU_pex*FRRU_rer/FR_pex;
 // Bilateral real exchange rate
 FRRW_rer = FR_rer/RW_rer;
 // Auxiliary equation for steady-state output
-FRRW_rerbar = FRRW_rer;
 //Terms of Trade
 FRRW_tot = RW_pex*FRRW_rer/FR_pex;
 // Optimal price contract set in foreign markets (FOC), using FR_pxtilde = US_pimtilde
@@ -29952,7 +30090,6 @@ FRRW_tot = RW_pex*FRRW_rer/FR_pex;
 // Bilateral real exchange rate
 FRUS_rer = FR_rer/US_rer;
 // Auxiliary equation for steady-state output
-FRUS_rerbar = FRUS_rer;
 //Terms of Trade
 FRUS_tot = US_pex*FRUS_rer/FR_pex;
 // Total imports 
@@ -32450,18 +32587,18 @@ FR_etot = 1
 //-----------------
 // Private consumption good (import)
 FR_imc^((FR_mumc-1)/FR_mumc) =
-+FRRA_numc ^(1/FR_mumc)*FRRA_imc^(1-1/FR_mumc)
-+FRAT_numc ^(1/FR_mumc)*FRAT_imc^(1-1/FR_mumc)
-+FRBE_numc ^(1/FR_mumc)*FRBE_imc^(1-1/FR_mumc)
-+FRFI_numc ^(1/FR_mumc)*FRFI_imc^(1-1/FR_mumc)
-+FRGR_numc ^(1/FR_mumc)*FRGR_imc^(1-1/FR_mumc)
-+FRIT_numc ^(1/FR_mumc)*FRIT_imc^(1-1/FR_mumc)
-+FRNL_numc ^(1/FR_mumc)*FRNL_imc^(1-1/FR_mumc)
-+FRPT_numc ^(1/FR_mumc)*FRPT_imc^(1-1/FR_mumc)
-+FRDE_numc ^(1/FR_mumc)*FRDE_imc^(1-1/FR_mumc)
-+FRRU_numc ^(1/FR_mumc)*FRRU_imc^(1-1/FR_mumc)
-+FRRW_numc ^(1/FR_mumc)*FRRW_imc^(1-1/FR_mumc)
-+FRUS_numc ^(1/FR_mumc)*FRUS_imc^(1-1/FR_mumc)
++FRRA_numc ^(1/FR_mumc)*((1-FRRA_gammaimc)*FRRA_imc)^(1-1/FR_mumc)
++FRAT_numc ^(1/FR_mumc)*((1-FRAT_gammaimc)*FRAT_imc)^(1-1/FR_mumc)
++FRBE_numc ^(1/FR_mumc)*((1-FRBE_gammaimc)*FRBE_imc)^(1-1/FR_mumc)
++FRFI_numc ^(1/FR_mumc)*((1-FRFI_gammaimc)*FRFI_imc)^(1-1/FR_mumc)
++FRGR_numc ^(1/FR_mumc)*((1-FRGR_gammaimc)*FRGR_imc)^(1-1/FR_mumc)
++FRIT_numc ^(1/FR_mumc)*((1-FRIT_gammaimc)*FRIT_imc)^(1-1/FR_mumc)
++FRNL_numc ^(1/FR_mumc)*((1-FRNL_gammaimc)*FRNL_imc)^(1-1/FR_mumc)
++FRPT_numc ^(1/FR_mumc)*((1-FRPT_gammaimc)*FRPT_imc)^(1-1/FR_mumc)
++FRDE_numc ^(1/FR_mumc)*((1-FRDE_gammaimc)*FRDE_imc)^(1-1/FR_mumc)
++FRRU_numc ^(1/FR_mumc)*((1-FRRU_gammaimc)*FRRU_imc)^(1-1/FR_mumc)
++FRRW_numc ^(1/FR_mumc)*((1-FRRW_gammaimc)*FRRW_imc)^(1-1/FR_mumc)
++FRUS_numc ^(1/FR_mumc)*((1-FRUS_gammaimc)*FRUS_imc)^(1-1/FR_mumc)
 +(1
 -FRRA_numc
 -FRAT_numc
@@ -32475,29 +32612,29 @@ FR_imc^((FR_mumc-1)/FR_mumc) =
 -FRRU_numc
 -FRRW_numc
 -FRUS_numc
-)^(1/FR_mumc)*FRES_imc^(1-1/FR_mumc);
+)^(1/FR_mumc)*((1-FRES_gammaimc)*FRES_imc)^(1-1/FR_mumc);
 // Demand for bilateral consumption import goods
-FRRA_imc = FRRA_numc*((RA_pex*FRRA_rer)/FR_pimc)^(-FR_mumc)*FR_imc;
+FRRA_imc = FRRA_numc*((RA_pex*FRRA_rer)/(FRRA_gammaimcdag*FR_pimc))^(-FR_mumc)*FR_imc/(1-FRRA_gammaimc);
 // Demand for bilateral consumption import goods
-FRAT_imc = FRAT_numc*((AT_pex*FRAT_rer)/FR_pimc)^(-FR_mumc)*FR_imc;
+FRAT_imc = FRAT_numc*((AT_pex*FRAT_rer)/(FRAT_gammaimcdag*FR_pimc))^(-FR_mumc)*FR_imc/(1-FRAT_gammaimc);
 // Demand for bilateral consumption import goods
-FRBE_imc = FRBE_numc*((BE_pex*FRBE_rer)/FR_pimc)^(-FR_mumc)*FR_imc;
+FRBE_imc = FRBE_numc*((BE_pex*FRBE_rer)/(FRBE_gammaimcdag*FR_pimc))^(-FR_mumc)*FR_imc/(1-FRBE_gammaimc);
 // Demand for bilateral consumption import goods
-FRFI_imc = FRFI_numc*((FI_pex*FRFI_rer)/FR_pimc)^(-FR_mumc)*FR_imc;
+FRFI_imc = FRFI_numc*((FI_pex*FRFI_rer)/(FRFI_gammaimcdag*FR_pimc))^(-FR_mumc)*FR_imc/(1-FRFI_gammaimc);
 // Demand for bilateral consumption import goods
-FRIT_imc = FRIT_numc*((IT_pex*FRIT_rer)/FR_pimc)^(-FR_mumc)*FR_imc;
+FRIT_imc = FRIT_numc*((IT_pex*FRIT_rer)/(FRIT_gammaimcdag*FR_pimc))^(-FR_mumc)*FR_imc/(1-FRIT_gammaimc);
 // Demand for bilateral consumption import goods
-FRNL_imc = FRNL_numc*((NL_pex*FRNL_rer)/FR_pimc)^(-FR_mumc)*FR_imc;
+FRNL_imc = FRNL_numc*((NL_pex*FRNL_rer)/(FRNL_gammaimcdag*FR_pimc))^(-FR_mumc)*FR_imc/(1-FRNL_gammaimc);
 // Demand for bilateral consumption import goods
-FRPT_imc = FRPT_numc*((PT_pex*FRPT_rer)/FR_pimc)^(-FR_mumc)*FR_imc;
+FRPT_imc = FRPT_numc*((PT_pex*FRPT_rer)/(FRPT_gammaimcdag*FR_pimc))^(-FR_mumc)*FR_imc/(1-FRPT_gammaimc);
 // Demand for bilateral consumption import goods
-FRDE_imc = FRDE_numc*((DE_pex*FRDE_rer)/FR_pimc)^(-FR_mumc)*FR_imc;
+FRDE_imc = FRDE_numc*((DE_pex*FRDE_rer)/(FRDE_gammaimcdag*FR_pimc))^(-FR_mumc)*FR_imc/(1-FRDE_gammaimc);
 // Demand for bilateral consumption import goods
-FRRU_imc = FRRU_numc*((RU_pex*FRRU_rer)/FR_pimc)^(-FR_mumc)*FR_imc;
+FRRU_imc = FRRU_numc*((RU_pex*FRRU_rer)/(FRRU_gammaimcdag*FR_pimc))^(-FR_mumc)*FR_imc/(1-FRRU_gammaimc);
 // Demand for bilateral consumption import goods
-FRRW_imc = FRRW_numc*((RW_pex*FRRW_rer)/FR_pimc)^(-FR_mumc)*FR_imc;
+FRRW_imc = FRRW_numc*((RW_pex*FRRW_rer)/(FRRW_gammaimcdag*FR_pimc))^(-FR_mumc)*FR_imc/(1-FRRW_gammaimc);
 // Demand for bilateral consumption import goods
-FRUS_imc = FRUS_numc*((US_pex*FRUS_rer)/FR_pimc)^(-FR_mumc)*FR_imc;
+FRUS_imc = FRUS_numc*((US_pex*FRUS_rer)/(FRUS_gammaimcdag*FR_pimc))^(-FR_mumc)*FR_imc/(1-FRUS_gammaimc);
 FRES_imc = (1
 -FRRA_numc
 -FRAT_numc
@@ -32511,21 +32648,21 @@ FRES_imc = (1
 -FRRU_numc
 -FRRW_numc
 -FRUS_numc
-)*((ES_pex*FRES_rer)/FR_pimc)^(-FR_mumc)*FR_imc;
+)*((ES_pex*FRES_rer)/(FRES_gammaimcdag*FR_pimc))^(-FR_mumc)*FR_imc/(1-FRES_gammaimc);
 // Price of the consumption good (import)
 FR_pimc^(1-FR_mumc) =
-+FRRA_numc * (RA_pex*FRRA_rer)^(1-FR_mumc)
-+FRAT_numc * (AT_pex*FRAT_rer)^(1-FR_mumc)
-+FRBE_numc * (BE_pex*FRBE_rer)^(1-FR_mumc)
-+FRFI_numc * (FI_pex*FRFI_rer)^(1-FR_mumc)
-+FRGR_numc * (GR_pex*FRGR_rer)^(1-FR_mumc)
-+FRIT_numc * (IT_pex*FRIT_rer)^(1-FR_mumc)
-+FRNL_numc * (NL_pex*FRNL_rer)^(1-FR_mumc)
-+FRPT_numc * (PT_pex*FRPT_rer)^(1-FR_mumc)
-+FRDE_numc * (DE_pex*FRDE_rer)^(1-FR_mumc)
-+FRRU_numc * (RU_pex*FRRU_rer)^(1-FR_mumc)
-+FRRW_numc * (RW_pex*FRRW_rer)^(1-FR_mumc)
-+FRUS_numc * (US_pex*FRUS_rer)^(1-FR_mumc)
++FRRA_numc *((RA_pex*FRRA_rer)/FRRA_gammaimcdag)^(1-FR_mumc)
++FRAT_numc *((AT_pex*FRAT_rer)/FRAT_gammaimcdag)^(1-FR_mumc)
++FRBE_numc *((BE_pex*FRBE_rer)/FRBE_gammaimcdag)^(1-FR_mumc)
++FRFI_numc *((FI_pex*FRFI_rer)/FRFI_gammaimcdag)^(1-FR_mumc)
++FRGR_numc *((GR_pex*FRGR_rer)/FRGR_gammaimcdag)^(1-FR_mumc)
++FRIT_numc *((IT_pex*FRIT_rer)/FRIT_gammaimcdag)^(1-FR_mumc)
++FRNL_numc *((NL_pex*FRNL_rer)/FRNL_gammaimcdag)^(1-FR_mumc)
++FRPT_numc *((PT_pex*FRPT_rer)/FRPT_gammaimcdag)^(1-FR_mumc)
++FRDE_numc *((DE_pex*FRDE_rer)/FRDE_gammaimcdag)^(1-FR_mumc)
++FRRU_numc *((RU_pex*FRRU_rer)/FRRU_gammaimcdag)^(1-FR_mumc)
++FRRW_numc *((RW_pex*FRRW_rer)/FRRW_gammaimcdag)^(1-FR_mumc)
++FRUS_numc *((US_pex*FRUS_rer)/FRUS_gammaimcdag)^(1-FR_mumc)
 +(1
 -FRRA_numc
 -FRAT_numc
@@ -32539,23 +32676,23 @@ FR_pimc^(1-FR_mumc) =
 -FRRU_numc
 -FRRW_numc
 -FRUS_numc
-)*(ES_pex*FRES_rer)^(1-FR_mumc);
+)*((ES_pex*FRES_rer)/FRES_gammaimcdag)^(1-FR_mumc);
 // Private consumption good (import) inflation
 FR_piimc = FR_pimc/FR_pimc(-1)*FR_pic;
 // Private consumption good (import)
 FR_imi^((FR_mumi-1)/FR_mumi) =
-+FRRA_numi ^(1/FR_mumi)*FRRA_imi^(1-1/FR_mumi)
-+FRAT_numi ^(1/FR_mumi)*FRAT_imi^(1-1/FR_mumi)
-+FRBE_numi ^(1/FR_mumi)*FRBE_imi^(1-1/FR_mumi)
-+FRFI_numi ^(1/FR_mumi)*FRFI_imi^(1-1/FR_mumi)
-+FRGR_numi ^(1/FR_mumi)*FRGR_imi^(1-1/FR_mumi)
-+FRIT_numi ^(1/FR_mumi)*FRIT_imi^(1-1/FR_mumi)
-+FRNL_numi ^(1/FR_mumi)*FRNL_imi^(1-1/FR_mumi)
-+FRPT_numi ^(1/FR_mumi)*FRPT_imi^(1-1/FR_mumi)
-+FRDE_numi ^(1/FR_mumi)*FRDE_imi^(1-1/FR_mumi)
-+FRRU_numi ^(1/FR_mumi)*FRRU_imi^(1-1/FR_mumi)
-+FRRW_numi ^(1/FR_mumi)*FRRW_imi^(1-1/FR_mumi)
-+FRUS_numi ^(1/FR_mumi)*FRUS_imi^(1-1/FR_mumi)
++FRRA_numi ^(1/FR_mumi)*((1-FRRA_gammaimi)*FRRA_imi)^(1-1/FR_mumi)
++FRAT_numi ^(1/FR_mumi)*((1-FRAT_gammaimi)*FRAT_imi)^(1-1/FR_mumi)
++FRBE_numi ^(1/FR_mumi)*((1-FRBE_gammaimi)*FRBE_imi)^(1-1/FR_mumi)
++FRFI_numi ^(1/FR_mumi)*((1-FRFI_gammaimi)*FRFI_imi)^(1-1/FR_mumi)
++FRGR_numi ^(1/FR_mumi)*((1-FRGR_gammaimi)*FRGR_imi)^(1-1/FR_mumi)
++FRIT_numi ^(1/FR_mumi)*((1-FRIT_gammaimi)*FRIT_imi)^(1-1/FR_mumi)
++FRNL_numi ^(1/FR_mumi)*((1-FRNL_gammaimi)*FRNL_imi)^(1-1/FR_mumi)
++FRPT_numi ^(1/FR_mumi)*((1-FRPT_gammaimi)*FRPT_imi)^(1-1/FR_mumi)
++FRDE_numi ^(1/FR_mumi)*((1-FRDE_gammaimi)*FRDE_imi)^(1-1/FR_mumi)
++FRRU_numi ^(1/FR_mumi)*((1-FRRU_gammaimi)*FRRU_imi)^(1-1/FR_mumi)
++FRRW_numi ^(1/FR_mumi)*((1-FRRW_gammaimi)*FRRW_imi)^(1-1/FR_mumi)
++FRUS_numi ^(1/FR_mumi)*((1-FRUS_gammaimi)*FRUS_imi)^(1-1/FR_mumi)
 +(1
 -FRRA_numi
 -FRAT_numi
@@ -32569,29 +32706,29 @@ FR_imi^((FR_mumi-1)/FR_mumi) =
 -FRRU_numi
 -FRRW_numi
 -FRUS_numi
-)^(1/FR_mumi)*FRES_imi^(1-1/FR_mumi);
+)^(1/FR_mumi)*((1-FRES_gammaimi)*FRES_imi)^(1-1/FR_mumi);
 // Demand for bilateral consumption import goods
-FRRA_imi = FRRA_numi*((RA_pex*FRRA_rer)/FR_pimi)^(-FR_mumi)*FR_imi;
+FRRA_imi = FRRA_numi*((RA_pex*FRRA_rer)/(FRRA_gammaimidag*FR_pimi))^(-FR_mumi)*FR_imi/(1-FRRA_gammaimi);
 // Demand for bilateral consumption import goods
-FRAT_imi = FRAT_numi*((AT_pex*FRAT_rer)/FR_pimi)^(-FR_mumi)*FR_imi;
+FRAT_imi = FRAT_numi*((AT_pex*FRAT_rer)/(FRAT_gammaimidag*FR_pimi))^(-FR_mumi)*FR_imi/(1-FRAT_gammaimi);
 // Demand for bilateral consumption import goods
-FRBE_imi = FRBE_numi*((BE_pex*FRBE_rer)/FR_pimi)^(-FR_mumi)*FR_imi;
+FRBE_imi = FRBE_numi*((BE_pex*FRBE_rer)/(FRBE_gammaimidag*FR_pimi))^(-FR_mumi)*FR_imi/(1-FRBE_gammaimi);
 // Demand for bilateral consumption import goods
-FRFI_imi = FRFI_numi*((FI_pex*FRFI_rer)/FR_pimi)^(-FR_mumi)*FR_imi;
+FRFI_imi = FRFI_numi*((FI_pex*FRFI_rer)/(FRFI_gammaimidag*FR_pimi))^(-FR_mumi)*FR_imi/(1-FRFI_gammaimi);
 // Demand for bilateral consumption import goods
-FRIT_imi = FRIT_numi*((IT_pex*FRIT_rer)/FR_pimi)^(-FR_mumi)*FR_imi;
+FRIT_imi = FRIT_numi*((IT_pex*FRIT_rer)/(FRIT_gammaimidag*FR_pimi))^(-FR_mumi)*FR_imi/(1-FRIT_gammaimi);
 // Demand for bilateral consumption import goods
-FRNL_imi = FRNL_numi*((NL_pex*FRNL_rer)/FR_pimi)^(-FR_mumi)*FR_imi;
+FRNL_imi = FRNL_numi*((NL_pex*FRNL_rer)/(FRNL_gammaimidag*FR_pimi))^(-FR_mumi)*FR_imi/(1-FRNL_gammaimi);
 // Demand for bilateral consumption import goods
-FRPT_imi = FRPT_numi*((PT_pex*FRPT_rer)/FR_pimi)^(-FR_mumi)*FR_imi;
+FRPT_imi = FRPT_numi*((PT_pex*FRPT_rer)/(FRPT_gammaimidag*FR_pimi))^(-FR_mumi)*FR_imi/(1-FRPT_gammaimi);
 // Demand for bilateral consumption import goods
-FRDE_imi = FRDE_numi*((DE_pex*FRDE_rer)/FR_pimi)^(-FR_mumi)*FR_imi;
+FRDE_imi = FRDE_numi*((DE_pex*FRDE_rer)/(FRDE_gammaimidag*FR_pimi))^(-FR_mumi)*FR_imi/(1-FRDE_gammaimi);
 // Demand for bilateral consumption import goods
-FRRU_imi = FRRU_numi*((RU_pex*FRRU_rer)/FR_pimi)^(-FR_mumi)*FR_imi;
+FRRU_imi = FRRU_numi*((RU_pex*FRRU_rer)/(FRRU_gammaimidag*FR_pimi))^(-FR_mumi)*FR_imi/(1-FRRU_gammaimi);
 // Demand for bilateral consumption import goods
-FRRW_imi = FRRW_numi*((RW_pex*FRRW_rer)/FR_pimi)^(-FR_mumi)*FR_imi;
+FRRW_imi = FRRW_numi*((RW_pex*FRRW_rer)/(FRRW_gammaimidag*FR_pimi))^(-FR_mumi)*FR_imi/(1-FRRW_gammaimi);
 // Demand for bilateral consumption import goods
-FRUS_imi = FRUS_numi*((US_pex*FRUS_rer)/FR_pimi)^(-FR_mumi)*FR_imi;
+FRUS_imi = FRUS_numi*((US_pex*FRUS_rer)/(FRUS_gammaimidag*FR_pimi))^(-FR_mumi)*FR_imi/(1-FRUS_gammaimi);
 FRES_imi = (1
 -FRRA_numi
 -FRAT_numi
@@ -32605,21 +32742,21 @@ FRES_imi = (1
 -FRRU_numi
 -FRRW_numi
 -FRUS_numi
-)*((ES_pex*FRES_rer)/FR_pimi)^(-FR_mumi)*FR_imi;
+)*((ES_pex*FRES_rer)/(FRES_gammaimidag*FR_pimi))^(-FR_mumi)*FR_imi/(1-FRES_gammaimi);
 // Price of the consumption good (import)
 FR_pimi^(1-FR_mumi) =
-+FRRA_numi * (RA_pex*FRRA_rer)^(1-FR_mumi)
-+FRAT_numi * (AT_pex*FRAT_rer)^(1-FR_mumi)
-+FRBE_numi * (BE_pex*FRBE_rer)^(1-FR_mumi)
-+FRFI_numi * (FI_pex*FRFI_rer)^(1-FR_mumi)
-+FRGR_numi * (GR_pex*FRGR_rer)^(1-FR_mumi)
-+FRIT_numi * (IT_pex*FRIT_rer)^(1-FR_mumi)
-+FRNL_numi * (NL_pex*FRNL_rer)^(1-FR_mumi)
-+FRPT_numi * (PT_pex*FRPT_rer)^(1-FR_mumi)
-+FRDE_numi * (DE_pex*FRDE_rer)^(1-FR_mumi)
-+FRRU_numi * (RU_pex*FRRU_rer)^(1-FR_mumi)
-+FRRW_numi * (RW_pex*FRRW_rer)^(1-FR_mumi)
-+FRUS_numi * (US_pex*FRUS_rer)^(1-FR_mumi)
++FRRA_numi *((RA_pex*FRRA_rer)/FRRA_gammaimidag)^(1-FR_mumi)
++FRAT_numi *((AT_pex*FRAT_rer)/FRAT_gammaimidag)^(1-FR_mumi)
++FRBE_numi *((BE_pex*FRBE_rer)/FRBE_gammaimidag)^(1-FR_mumi)
++FRFI_numi *((FI_pex*FRFI_rer)/FRFI_gammaimidag)^(1-FR_mumi)
++FRGR_numi *((GR_pex*FRGR_rer)/FRGR_gammaimidag)^(1-FR_mumi)
++FRIT_numi *((IT_pex*FRIT_rer)/FRIT_gammaimidag)^(1-FR_mumi)
++FRNL_numi *((NL_pex*FRNL_rer)/FRNL_gammaimidag)^(1-FR_mumi)
++FRPT_numi *((PT_pex*FRPT_rer)/FRPT_gammaimidag)^(1-FR_mumi)
++FRDE_numi *((DE_pex*FRDE_rer)/FRDE_gammaimidag)^(1-FR_mumi)
++FRRU_numi *((RU_pex*FRRU_rer)/FRRU_gammaimidag)^(1-FR_mumi)
++FRRW_numi *((RW_pex*FRRW_rer)/FRRW_gammaimidag)^(1-FR_mumi)
++FRUS_numi *((US_pex*FRUS_rer)/FRUS_gammaimidag)^(1-FR_mumi)
 +(1
 -FRRA_numi
 -FRAT_numi
@@ -32633,23 +32770,23 @@ FR_pimi^(1-FR_mumi) =
 -FRRU_numi
 -FRRW_numi
 -FRUS_numi
-)*(ES_pex*FRES_rer)^(1-FR_mumi);
+)*((ES_pex*FRES_rer)/FRES_gammaimidag)^(1-FR_mumi);
 // Private consumption good (import) inflation
 FR_piimi = FR_pimi/FR_pimi(-1)*FR_pic;
 // Private consumption good (import)
 FR_imcg^((FR_mumcg-1)/FR_mumcg) =
-+FRRA_numcg ^(1/FR_mumcg)*FRRA_imcg^(1-1/FR_mumcg)
-+FRAT_numcg ^(1/FR_mumcg)*FRAT_imcg^(1-1/FR_mumcg)
-+FRBE_numcg ^(1/FR_mumcg)*FRBE_imcg^(1-1/FR_mumcg)
-+FRFI_numcg ^(1/FR_mumcg)*FRFI_imcg^(1-1/FR_mumcg)
-+FRGR_numcg ^(1/FR_mumcg)*FRGR_imcg^(1-1/FR_mumcg)
-+FRIT_numcg ^(1/FR_mumcg)*FRIT_imcg^(1-1/FR_mumcg)
-+FRNL_numcg ^(1/FR_mumcg)*FRNL_imcg^(1-1/FR_mumcg)
-+FRPT_numcg ^(1/FR_mumcg)*FRPT_imcg^(1-1/FR_mumcg)
-+FRDE_numcg ^(1/FR_mumcg)*FRDE_imcg^(1-1/FR_mumcg)
-+FRRU_numcg ^(1/FR_mumcg)*FRRU_imcg^(1-1/FR_mumcg)
-+FRRW_numcg ^(1/FR_mumcg)*FRRW_imcg^(1-1/FR_mumcg)
-+FRUS_numcg ^(1/FR_mumcg)*FRUS_imcg^(1-1/FR_mumcg)
++FRRA_numcg ^(1/FR_mumcg)*((1-FRRA_gammaimcg)*FRRA_imcg)^(1-1/FR_mumcg)
++FRAT_numcg ^(1/FR_mumcg)*((1-FRAT_gammaimcg)*FRAT_imcg)^(1-1/FR_mumcg)
++FRBE_numcg ^(1/FR_mumcg)*((1-FRBE_gammaimcg)*FRBE_imcg)^(1-1/FR_mumcg)
++FRFI_numcg ^(1/FR_mumcg)*((1-FRFI_gammaimcg)*FRFI_imcg)^(1-1/FR_mumcg)
++FRGR_numcg ^(1/FR_mumcg)*((1-FRGR_gammaimcg)*FRGR_imcg)^(1-1/FR_mumcg)
++FRIT_numcg ^(1/FR_mumcg)*((1-FRIT_gammaimcg)*FRIT_imcg)^(1-1/FR_mumcg)
++FRNL_numcg ^(1/FR_mumcg)*((1-FRNL_gammaimcg)*FRNL_imcg)^(1-1/FR_mumcg)
++FRPT_numcg ^(1/FR_mumcg)*((1-FRPT_gammaimcg)*FRPT_imcg)^(1-1/FR_mumcg)
++FRDE_numcg ^(1/FR_mumcg)*((1-FRDE_gammaimcg)*FRDE_imcg)^(1-1/FR_mumcg)
++FRRU_numcg ^(1/FR_mumcg)*((1-FRRU_gammaimcg)*FRRU_imcg)^(1-1/FR_mumcg)
++FRRW_numcg ^(1/FR_mumcg)*((1-FRRW_gammaimcg)*FRRW_imcg)^(1-1/FR_mumcg)
++FRUS_numcg ^(1/FR_mumcg)*((1-FRUS_gammaimcg)*FRUS_imcg)^(1-1/FR_mumcg)
 +(1
 -FRRA_numcg
 -FRAT_numcg
@@ -32663,29 +32800,29 @@ FR_imcg^((FR_mumcg-1)/FR_mumcg) =
 -FRRU_numcg
 -FRRW_numcg
 -FRUS_numcg
-)^(1/FR_mumcg)*FRES_imcg^(1-1/FR_mumcg);
+)^(1/FR_mumcg)*((1-FRES_gammaimcg)*FRES_imcg)^(1-1/FR_mumcg);
 // Demand for bilateral consumption import goods
-FRRA_imcg = FRRA_numcg*((RA_pex*FRRA_rer)/FR_pimcg)^(-FR_mumcg)*FR_imcg;
+FRRA_imcg = FRRA_numcg*((RA_pex*FRRA_rer)/(FRRA_gammaimcgdag*FR_pimcg))^(-FR_mumcg)*FR_imcg/(1-FRRA_gammaimcg);
 // Demand for bilateral consumption import goods
-FRAT_imcg = FRAT_numcg*((AT_pex*FRAT_rer)/FR_pimcg)^(-FR_mumcg)*FR_imcg;
+FRAT_imcg = FRAT_numcg*((AT_pex*FRAT_rer)/(FRAT_gammaimcgdag*FR_pimcg))^(-FR_mumcg)*FR_imcg/(1-FRAT_gammaimcg);
 // Demand for bilateral consumption import goods
-FRBE_imcg = FRBE_numcg*((BE_pex*FRBE_rer)/FR_pimcg)^(-FR_mumcg)*FR_imcg;
+FRBE_imcg = FRBE_numcg*((BE_pex*FRBE_rer)/(FRBE_gammaimcgdag*FR_pimcg))^(-FR_mumcg)*FR_imcg/(1-FRBE_gammaimcg);
 // Demand for bilateral consumption import goods
-FRFI_imcg = FRFI_numcg*((FI_pex*FRFI_rer)/FR_pimcg)^(-FR_mumcg)*FR_imcg;
+FRFI_imcg = FRFI_numcg*((FI_pex*FRFI_rer)/(FRFI_gammaimcgdag*FR_pimcg))^(-FR_mumcg)*FR_imcg/(1-FRFI_gammaimcg);
 // Demand for bilateral consumption import goods
-FRIT_imcg = FRIT_numcg*((IT_pex*FRIT_rer)/FR_pimcg)^(-FR_mumcg)*FR_imcg;
+FRIT_imcg = FRIT_numcg*((IT_pex*FRIT_rer)/(FRIT_gammaimcgdag*FR_pimcg))^(-FR_mumcg)*FR_imcg/(1-FRIT_gammaimcg);
 // Demand for bilateral consumption import goods
-FRNL_imcg = FRNL_numcg*((NL_pex*FRNL_rer)/FR_pimcg)^(-FR_mumcg)*FR_imcg;
+FRNL_imcg = FRNL_numcg*((NL_pex*FRNL_rer)/(FRNL_gammaimcgdag*FR_pimcg))^(-FR_mumcg)*FR_imcg/(1-FRNL_gammaimcg);
 // Demand for bilateral consumption import goods
-FRPT_imcg = FRPT_numcg*((PT_pex*FRPT_rer)/FR_pimcg)^(-FR_mumcg)*FR_imcg;
+FRPT_imcg = FRPT_numcg*((PT_pex*FRPT_rer)/(FRPT_gammaimcgdag*FR_pimcg))^(-FR_mumcg)*FR_imcg/(1-FRPT_gammaimcg);
 // Demand for bilateral consumption import goods
-FRDE_imcg = FRDE_numcg*((DE_pex*FRDE_rer)/FR_pimcg)^(-FR_mumcg)*FR_imcg;
+FRDE_imcg = FRDE_numcg*((DE_pex*FRDE_rer)/(FRDE_gammaimcgdag*FR_pimcg))^(-FR_mumcg)*FR_imcg/(1-FRDE_gammaimcg);
 // Demand for bilateral consumption import goods
-FRRU_imcg = FRRU_numcg*((RU_pex*FRRU_rer)/FR_pimcg)^(-FR_mumcg)*FR_imcg;
+FRRU_imcg = FRRU_numcg*((RU_pex*FRRU_rer)/(FRRU_gammaimcgdag*FR_pimcg))^(-FR_mumcg)*FR_imcg/(1-FRRU_gammaimcg);
 // Demand for bilateral consumption import goods
-FRRW_imcg = FRRW_numcg*((RW_pex*FRRW_rer)/FR_pimcg)^(-FR_mumcg)*FR_imcg;
+FRRW_imcg = FRRW_numcg*((RW_pex*FRRW_rer)/(FRRW_gammaimcgdag*FR_pimcg))^(-FR_mumcg)*FR_imcg/(1-FRRW_gammaimcg);
 // Demand for bilateral consumption import goods
-FRUS_imcg = FRUS_numcg*((US_pex*FRUS_rer)/FR_pimcg)^(-FR_mumcg)*FR_imcg;
+FRUS_imcg = FRUS_numcg*((US_pex*FRUS_rer)/(FRUS_gammaimcgdag*FR_pimcg))^(-FR_mumcg)*FR_imcg/(1-FRUS_gammaimcg);
 FRES_imcg = (1
 -FRRA_numcg
 -FRAT_numcg
@@ -32699,21 +32836,21 @@ FRES_imcg = (1
 -FRRU_numcg
 -FRRW_numcg
 -FRUS_numcg
-)*((ES_pex*FRES_rer)/FR_pimcg)^(-FR_mumcg)*FR_imcg;
+)*((ES_pex*FRES_rer)/(FRES_gammaimcgdag*FR_pimcg))^(-FR_mumcg)*FR_imcg/(1-FRES_gammaimcg);
 // Price of the consumption good (import)
 FR_pimcg^(1-FR_mumcg) =
-+FRRA_numcg * (RA_pex*FRRA_rer)^(1-FR_mumcg)
-+FRAT_numcg * (AT_pex*FRAT_rer)^(1-FR_mumcg)
-+FRBE_numcg * (BE_pex*FRBE_rer)^(1-FR_mumcg)
-+FRFI_numcg * (FI_pex*FRFI_rer)^(1-FR_mumcg)
-+FRGR_numcg * (GR_pex*FRGR_rer)^(1-FR_mumcg)
-+FRIT_numcg * (IT_pex*FRIT_rer)^(1-FR_mumcg)
-+FRNL_numcg * (NL_pex*FRNL_rer)^(1-FR_mumcg)
-+FRPT_numcg * (PT_pex*FRPT_rer)^(1-FR_mumcg)
-+FRDE_numcg * (DE_pex*FRDE_rer)^(1-FR_mumcg)
-+FRRU_numcg * (RU_pex*FRRU_rer)^(1-FR_mumcg)
-+FRRW_numcg * (RW_pex*FRRW_rer)^(1-FR_mumcg)
-+FRUS_numcg * (US_pex*FRUS_rer)^(1-FR_mumcg)
++FRRA_numcg *((RA_pex*FRRA_rer)/FRRA_gammaimcgdag)^(1-FR_mumcg)
++FRAT_numcg *((AT_pex*FRAT_rer)/FRAT_gammaimcgdag)^(1-FR_mumcg)
++FRBE_numcg *((BE_pex*FRBE_rer)/FRBE_gammaimcgdag)^(1-FR_mumcg)
++FRFI_numcg *((FI_pex*FRFI_rer)/FRFI_gammaimcgdag)^(1-FR_mumcg)
++FRGR_numcg *((GR_pex*FRGR_rer)/FRGR_gammaimcgdag)^(1-FR_mumcg)
++FRIT_numcg *((IT_pex*FRIT_rer)/FRIT_gammaimcgdag)^(1-FR_mumcg)
++FRNL_numcg *((NL_pex*FRNL_rer)/FRNL_gammaimcgdag)^(1-FR_mumcg)
++FRPT_numcg *((PT_pex*FRPT_rer)/FRPT_gammaimcgdag)^(1-FR_mumcg)
++FRDE_numcg *((DE_pex*FRDE_rer)/FRDE_gammaimcgdag)^(1-FR_mumcg)
++FRRU_numcg *((RU_pex*FRRU_rer)/FRRU_gammaimcgdag)^(1-FR_mumcg)
++FRRW_numcg *((RW_pex*FRRW_rer)/FRRW_gammaimcgdag)^(1-FR_mumcg)
++FRUS_numcg *((US_pex*FRUS_rer)/FRUS_gammaimcgdag)^(1-FR_mumcg)
 +(1
 -FRRA_numcg
 -FRAT_numcg
@@ -32727,23 +32864,23 @@ FR_pimcg^(1-FR_mumcg) =
 -FRRU_numcg
 -FRRW_numcg
 -FRUS_numcg
-)*(ES_pex*FRES_rer)^(1-FR_mumcg);
+)*((ES_pex*FRES_rer)/FRES_gammaimcgdag)^(1-FR_mumcg);
 // Private consumption good (import) inflation
 FR_piimcg = FR_pimcg/FR_pimcg(-1)*FR_pic;
 // Private consumption good (import)
 FR_imig^((FR_mumig-1)/FR_mumig) =
-+FRRA_numig ^(1/FR_mumig)*FRRA_imig^(1-1/FR_mumig)
-+FRAT_numig ^(1/FR_mumig)*FRAT_imig^(1-1/FR_mumig)
-+FRBE_numig ^(1/FR_mumig)*FRBE_imig^(1-1/FR_mumig)
-+FRFI_numig ^(1/FR_mumig)*FRFI_imig^(1-1/FR_mumig)
-+FRGR_numig ^(1/FR_mumig)*FRGR_imig^(1-1/FR_mumig)
-+FRIT_numig ^(1/FR_mumig)*FRIT_imig^(1-1/FR_mumig)
-+FRNL_numig ^(1/FR_mumig)*FRNL_imig^(1-1/FR_mumig)
-+FRPT_numig ^(1/FR_mumig)*FRPT_imig^(1-1/FR_mumig)
-+FRDE_numig ^(1/FR_mumig)*FRDE_imig^(1-1/FR_mumig)
-+FRRU_numig ^(1/FR_mumig)*FRRU_imig^(1-1/FR_mumig)
-+FRRW_numig ^(1/FR_mumig)*FRRW_imig^(1-1/FR_mumig)
-+FRUS_numig ^(1/FR_mumig)*FRUS_imig^(1-1/FR_mumig)
++FRRA_numig ^(1/FR_mumig)*((1-FRRA_gammaimig)*FRRA_imig)^(1-1/FR_mumig)
++FRAT_numig ^(1/FR_mumig)*((1-FRAT_gammaimig)*FRAT_imig)^(1-1/FR_mumig)
++FRBE_numig ^(1/FR_mumig)*((1-FRBE_gammaimig)*FRBE_imig)^(1-1/FR_mumig)
++FRFI_numig ^(1/FR_mumig)*((1-FRFI_gammaimig)*FRFI_imig)^(1-1/FR_mumig)
++FRGR_numig ^(1/FR_mumig)*((1-FRGR_gammaimig)*FRGR_imig)^(1-1/FR_mumig)
++FRIT_numig ^(1/FR_mumig)*((1-FRIT_gammaimig)*FRIT_imig)^(1-1/FR_mumig)
++FRNL_numig ^(1/FR_mumig)*((1-FRNL_gammaimig)*FRNL_imig)^(1-1/FR_mumig)
++FRPT_numig ^(1/FR_mumig)*((1-FRPT_gammaimig)*FRPT_imig)^(1-1/FR_mumig)
++FRDE_numig ^(1/FR_mumig)*((1-FRDE_gammaimig)*FRDE_imig)^(1-1/FR_mumig)
++FRRU_numig ^(1/FR_mumig)*((1-FRRU_gammaimig)*FRRU_imig)^(1-1/FR_mumig)
++FRRW_numig ^(1/FR_mumig)*((1-FRRW_gammaimig)*FRRW_imig)^(1-1/FR_mumig)
++FRUS_numig ^(1/FR_mumig)*((1-FRUS_gammaimig)*FRUS_imig)^(1-1/FR_mumig)
 +(1
 -FRRA_numig
 -FRAT_numig
@@ -32757,29 +32894,29 @@ FR_imig^((FR_mumig-1)/FR_mumig) =
 -FRRU_numig
 -FRRW_numig
 -FRUS_numig
-)^(1/FR_mumig)*FRES_imig^(1-1/FR_mumig);
+)^(1/FR_mumig)*((1-FRES_gammaimig)*FRES_imig)^(1-1/FR_mumig);
 // Demand for bilateral consumption import goods
-FRRA_imig = FRRA_numig*((RA_pex*FRRA_rer)/FR_pimig)^(-FR_mumig)*FR_imig;
+FRRA_imig = FRRA_numig*((RA_pex*FRRA_rer)/(FRRA_gammaimigdag*FR_pimig))^(-FR_mumig)*FR_imig/(1-FRRA_gammaimig);
 // Demand for bilateral consumption import goods
-FRAT_imig = FRAT_numig*((AT_pex*FRAT_rer)/FR_pimig)^(-FR_mumig)*FR_imig;
+FRAT_imig = FRAT_numig*((AT_pex*FRAT_rer)/(FRAT_gammaimigdag*FR_pimig))^(-FR_mumig)*FR_imig/(1-FRAT_gammaimig);
 // Demand for bilateral consumption import goods
-FRBE_imig = FRBE_numig*((BE_pex*FRBE_rer)/FR_pimig)^(-FR_mumig)*FR_imig;
+FRBE_imig = FRBE_numig*((BE_pex*FRBE_rer)/(FRBE_gammaimigdag*FR_pimig))^(-FR_mumig)*FR_imig/(1-FRBE_gammaimig);
 // Demand for bilateral consumption import goods
-FRFI_imig = FRFI_numig*((FI_pex*FRFI_rer)/FR_pimig)^(-FR_mumig)*FR_imig;
+FRFI_imig = FRFI_numig*((FI_pex*FRFI_rer)/(FRFI_gammaimigdag*FR_pimig))^(-FR_mumig)*FR_imig/(1-FRFI_gammaimig);
 // Demand for bilateral consumption import goods
-FRIT_imig = FRIT_numig*((IT_pex*FRIT_rer)/FR_pimig)^(-FR_mumig)*FR_imig;
+FRIT_imig = FRIT_numig*((IT_pex*FRIT_rer)/(FRIT_gammaimigdag*FR_pimig))^(-FR_mumig)*FR_imig/(1-FRIT_gammaimig);
 // Demand for bilateral consumption import goods
-FRNL_imig = FRNL_numig*((NL_pex*FRNL_rer)/FR_pimig)^(-FR_mumig)*FR_imig;
+FRNL_imig = FRNL_numig*((NL_pex*FRNL_rer)/(FRNL_gammaimigdag*FR_pimig))^(-FR_mumig)*FR_imig/(1-FRNL_gammaimig);
 // Demand for bilateral consumption import goods
-FRPT_imig = FRPT_numig*((PT_pex*FRPT_rer)/FR_pimig)^(-FR_mumig)*FR_imig;
+FRPT_imig = FRPT_numig*((PT_pex*FRPT_rer)/(FRPT_gammaimigdag*FR_pimig))^(-FR_mumig)*FR_imig/(1-FRPT_gammaimig);
 // Demand for bilateral consumption import goods
-FRDE_imig = FRDE_numig*((DE_pex*FRDE_rer)/FR_pimig)^(-FR_mumig)*FR_imig;
+FRDE_imig = FRDE_numig*((DE_pex*FRDE_rer)/(FRDE_gammaimigdag*FR_pimig))^(-FR_mumig)*FR_imig/(1-FRDE_gammaimig);
 // Demand for bilateral consumption import goods
-FRRU_imig = FRRU_numig*((RU_pex*FRRU_rer)/FR_pimig)^(-FR_mumig)*FR_imig;
+FRRU_imig = FRRU_numig*((RU_pex*FRRU_rer)/(FRRU_gammaimigdag*FR_pimig))^(-FR_mumig)*FR_imig/(1-FRRU_gammaimig);
 // Demand for bilateral consumption import goods
-FRRW_imig = FRRW_numig*((RW_pex*FRRW_rer)/FR_pimig)^(-FR_mumig)*FR_imig;
+FRRW_imig = FRRW_numig*((RW_pex*FRRW_rer)/(FRRW_gammaimigdag*FR_pimig))^(-FR_mumig)*FR_imig/(1-FRRW_gammaimig);
 // Demand for bilateral consumption import goods
-FRUS_imig = FRUS_numig*((US_pex*FRUS_rer)/FR_pimig)^(-FR_mumig)*FR_imig;
+FRUS_imig = FRUS_numig*((US_pex*FRUS_rer)/(FRUS_gammaimigdag*FR_pimig))^(-FR_mumig)*FR_imig/(1-FRUS_gammaimig);
 FRES_imig = (1
 -FRRA_numig
 -FRAT_numig
@@ -32793,21 +32930,21 @@ FRES_imig = (1
 -FRRU_numig
 -FRRW_numig
 -FRUS_numig
-)*((ES_pex*FRES_rer)/FR_pimig)^(-FR_mumig)*FR_imig;
+)*((ES_pex*FRES_rer)/(FRES_gammaimigdag*FR_pimig))^(-FR_mumig)*FR_imig/(1-FRES_gammaimig);
 // Price of the consumption good (import)
 FR_pimig^(1-FR_mumig) =
-+FRRA_numig * (RA_pex*FRRA_rer)^(1-FR_mumig)
-+FRAT_numig * (AT_pex*FRAT_rer)^(1-FR_mumig)
-+FRBE_numig * (BE_pex*FRBE_rer)^(1-FR_mumig)
-+FRFI_numig * (FI_pex*FRFI_rer)^(1-FR_mumig)
-+FRGR_numig * (GR_pex*FRGR_rer)^(1-FR_mumig)
-+FRIT_numig * (IT_pex*FRIT_rer)^(1-FR_mumig)
-+FRNL_numig * (NL_pex*FRNL_rer)^(1-FR_mumig)
-+FRPT_numig * (PT_pex*FRPT_rer)^(1-FR_mumig)
-+FRDE_numig * (DE_pex*FRDE_rer)^(1-FR_mumig)
-+FRRU_numig * (RU_pex*FRRU_rer)^(1-FR_mumig)
-+FRRW_numig * (RW_pex*FRRW_rer)^(1-FR_mumig)
-+FRUS_numig * (US_pex*FRUS_rer)^(1-FR_mumig)
++FRRA_numig *((RA_pex*FRRA_rer)/FRRA_gammaimigdag)^(1-FR_mumig)
++FRAT_numig *((AT_pex*FRAT_rer)/FRAT_gammaimigdag)^(1-FR_mumig)
++FRBE_numig *((BE_pex*FRBE_rer)/FRBE_gammaimigdag)^(1-FR_mumig)
++FRFI_numig *((FI_pex*FRFI_rer)/FRFI_gammaimigdag)^(1-FR_mumig)
++FRGR_numig *((GR_pex*FRGR_rer)/FRGR_gammaimigdag)^(1-FR_mumig)
++FRIT_numig *((IT_pex*FRIT_rer)/FRIT_gammaimigdag)^(1-FR_mumig)
++FRNL_numig *((NL_pex*FRNL_rer)/FRNL_gammaimigdag)^(1-FR_mumig)
++FRPT_numig *((PT_pex*FRPT_rer)/FRPT_gammaimigdag)^(1-FR_mumig)
++FRDE_numig *((DE_pex*FRDE_rer)/FRDE_gammaimigdag)^(1-FR_mumig)
++FRRU_numig *((RU_pex*FRRU_rer)/FRRU_gammaimigdag)^(1-FR_mumig)
++FRRW_numig *((RW_pex*FRRW_rer)/FRRW_gammaimigdag)^(1-FR_mumig)
++FRUS_numig *((US_pex*FRUS_rer)/FRUS_gammaimigdag)^(1-FR_mumig)
 +(1
 -FRRA_numig
 -FRAT_numig
@@ -32821,7 +32958,7 @@ FR_pimig^(1-FR_mumig) =
 -FRRU_numig
 -FRRW_numig
 -FRUS_numig
-)*(ES_pex*FRES_rer)^(1-FR_mumig);
+)*((ES_pex*FRES_rer)/FRES_gammaimigdag)^(1-FR_mumig);
 // Private consumption good (import) inflation
 FR_piimig = FR_pimig/FR_pimig(-1)*FR_pic;
 // Private consumption good (import) inflation
@@ -32922,32 +33059,58 @@ FR_pttc^(1-FR_mutc) = (FR_nutc)*FR_pht^(1-FR_mutc)+(1-FR_nutc)*FR_pimc^(1-FR_mut
 1^(1-FR_muc) = (FR_nuc)*FR_pttc^(1-FR_muc)+(1-FR_nuc)*FR_pnt^(1-FR_muc);
 // Demand for domestic intermediate goods
 FR_htc = FR_nutc*(FR_pht/FR_pttc)^(-FR_mutc)*FR_ttc;
-FRRA_gammaimc = 0;
-FRRA_gammaimcdag = 1;
-FRAT_gammaimc = 0;
-FRAT_gammaimcdag = 1;
-FRBE_gammaimc = 0;
-FRBE_gammaimcdag = 1;
-FRES_gammaimc = 0;
-FRES_gammaimcdag = 1;
-FRFI_gammaimc = 0;
-FRFI_gammaimcdag = 1;
-FRGR_gammaimc = 0;
-FRGR_gammaimcdag = 1;
-FRIT_gammaimc = 0;
-FRIT_gammaimcdag = 1;
-FRNL_gammaimc = 0;
-FRNL_gammaimcdag = 1;
-FRPT_gammaimc = 0;
-FRPT_gammaimcdag = 1;
-FRDE_gammaimc = 0;
-FRDE_gammaimcdag = 1;
-FRRU_gammaimc = 0;
-FRRU_gammaimcdag = 1;
-FRRW_gammaimc = 0;
-FRRW_gammaimcdag = 1;
-FRUS_gammaimc = 0;
-FRUS_gammaimcdag = 1;
+// Import adjustment cost
+FRRA_gammaimc = FR_gammaimc1/2*((FRRA_imc/FR_qc)/(FRRA_imc(-1)/FR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRRA_gammaimcdag = 1-FRRA_gammaimc-FR_gammaimc1*((FRRA_imc/FR_qc)/(FRRA_imc(-1)/FR_qc(-1))-1)*(FRRA_imc/FR_qc)/(FRRA_imc(-1)/FR_qc(-1));
+// Import adjustment cost
+FRAT_gammaimc = FR_gammaimc1/2*((FRAT_imc/FR_qc)/(FRAT_imc(-1)/FR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRAT_gammaimcdag = 1-FRAT_gammaimc-FR_gammaimc1*((FRAT_imc/FR_qc)/(FRAT_imc(-1)/FR_qc(-1))-1)*(FRAT_imc/FR_qc)/(FRAT_imc(-1)/FR_qc(-1));
+// Import adjustment cost
+FRBE_gammaimc = FR_gammaimc1/2*((FRBE_imc/FR_qc)/(FRBE_imc(-1)/FR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRBE_gammaimcdag = 1-FRBE_gammaimc-FR_gammaimc1*((FRBE_imc/FR_qc)/(FRBE_imc(-1)/FR_qc(-1))-1)*(FRBE_imc/FR_qc)/(FRBE_imc(-1)/FR_qc(-1));
+// Import adjustment cost
+FRES_gammaimc = FR_gammaimc1/2*((FRES_imc/FR_qc)/(FRES_imc(-1)/FR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRES_gammaimcdag = 1-FRES_gammaimc-FR_gammaimc1*((FRES_imc/FR_qc)/(FRES_imc(-1)/FR_qc(-1))-1)*(FRES_imc/FR_qc)/(FRES_imc(-1)/FR_qc(-1));
+// Import adjustment cost
+FRFI_gammaimc = FR_gammaimc1/2*((FRFI_imc/FR_qc)/(FRFI_imc(-1)/FR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRFI_gammaimcdag = 1-FRFI_gammaimc-FR_gammaimc1*((FRFI_imc/FR_qc)/(FRFI_imc(-1)/FR_qc(-1))-1)*(FRFI_imc/FR_qc)/(FRFI_imc(-1)/FR_qc(-1));
+// Import adjustment cost
+FRGR_gammaimc = FR_gammaimc1/2*((FRGR_imc/FR_qc)/(FRGR_imc(-1)/FR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRGR_gammaimcdag = 1-FRGR_gammaimc-FR_gammaimc1*((FRGR_imc/FR_qc)/(FRGR_imc(-1)/FR_qc(-1))-1)*(FRGR_imc/FR_qc)/(FRGR_imc(-1)/FR_qc(-1));
+// Import adjustment cost
+FRIT_gammaimc = FR_gammaimc1/2*((FRIT_imc/FR_qc)/(FRIT_imc(-1)/FR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRIT_gammaimcdag = 1-FRIT_gammaimc-FR_gammaimc1*((FRIT_imc/FR_qc)/(FRIT_imc(-1)/FR_qc(-1))-1)*(FRIT_imc/FR_qc)/(FRIT_imc(-1)/FR_qc(-1));
+// Import adjustment cost
+FRNL_gammaimc = FR_gammaimc1/2*((FRNL_imc/FR_qc)/(FRNL_imc(-1)/FR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRNL_gammaimcdag = 1-FRNL_gammaimc-FR_gammaimc1*((FRNL_imc/FR_qc)/(FRNL_imc(-1)/FR_qc(-1))-1)*(FRNL_imc/FR_qc)/(FRNL_imc(-1)/FR_qc(-1));
+// Import adjustment cost
+FRPT_gammaimc = FR_gammaimc1/2*((FRPT_imc/FR_qc)/(FRPT_imc(-1)/FR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRPT_gammaimcdag = 1-FRPT_gammaimc-FR_gammaimc1*((FRPT_imc/FR_qc)/(FRPT_imc(-1)/FR_qc(-1))-1)*(FRPT_imc/FR_qc)/(FRPT_imc(-1)/FR_qc(-1));
+// Import adjustment cost
+FRDE_gammaimc = FR_gammaimc1/2*((FRDE_imc/FR_qc)/(FRDE_imc(-1)/FR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRDE_gammaimcdag = 1-FRDE_gammaimc-FR_gammaimc1*((FRDE_imc/FR_qc)/(FRDE_imc(-1)/FR_qc(-1))-1)*(FRDE_imc/FR_qc)/(FRDE_imc(-1)/FR_qc(-1));
+// Import adjustment cost
+FRRU_gammaimc = FR_gammaimc1/2*((FRRU_imc/FR_qc)/(FRRU_imc(-1)/FR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRRU_gammaimcdag = 1-FRRU_gammaimc-FR_gammaimc1*((FRRU_imc/FR_qc)/(FRRU_imc(-1)/FR_qc(-1))-1)*(FRRU_imc/FR_qc)/(FRRU_imc(-1)/FR_qc(-1));
+// Import adjustment cost
+FRRW_gammaimc = FR_gammaimc1/2*((FRRW_imc/FR_qc)/(FRRW_imc(-1)/FR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRRW_gammaimcdag = 1-FRRW_gammaimc-FR_gammaimc1*((FRRW_imc/FR_qc)/(FRRW_imc(-1)/FR_qc(-1))-1)*(FRRW_imc/FR_qc)/(FRRW_imc(-1)/FR_qc(-1));
+// Import adjustment cost
+FRUS_gammaimc = FR_gammaimc1/2*((FRUS_imc/FR_qc)/(FRUS_imc(-1)/FR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRUS_gammaimcdag = 1-FRUS_gammaimc-FR_gammaimc1*((FRUS_imc/FR_qc)/(FRUS_imc(-1)/FR_qc(-1))-1)*(FRUS_imc/FR_qc)/(FRUS_imc(-1)/FR_qc(-1));
 // Private consumption good (tradable)
 FR_tti^((FR_muti-1)/FR_muti) = (FR_nuti)^(1/FR_muti)*FR_hti^(1-1/FR_muti)+(1-FR_nuti)^(1/FR_muti)*FR_imi^(1-1/FR_muti);
 // Private consumption good  (total)
@@ -32960,35 +33123,60 @@ FR_ptti^(1-FR_muti) = (FR_nuti)*FR_pht^(1-FR_muti)+(1-FR_nuti)*FR_pimi^(1-FR_mut
 FR_pi^(1-FR_mui) = (FR_nui)*FR_ptti^(1-FR_mui)+(1-FR_nui)*FR_pnt^(1-FR_mui);
 // Auxiliary equation for the price of the investment good in steady state
 // this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
-FR_pibar = FR_pi;
 // Demand for domestic intermediate goods
 FR_hti = FR_nuti*(FR_pht/FR_ptti)^(-FR_muti)*FR_tti;
-FRRA_gammaimi = 0;
-FRRA_gammaimidag = 1;
-FRAT_gammaimi = 0;
-FRAT_gammaimidag = 1;
-FRBE_gammaimi = 0;
-FRBE_gammaimidag = 1;
-FRES_gammaimi = 0;
-FRES_gammaimidag = 1;
-FRFI_gammaimi = 0;
-FRFI_gammaimidag = 1;
-FRGR_gammaimi = 0;
-FRGR_gammaimidag = 1;
-FRIT_gammaimi = 0;
-FRIT_gammaimidag = 1;
-FRNL_gammaimi = 0;
-FRNL_gammaimidag = 1;
-FRPT_gammaimi = 0;
-FRPT_gammaimidag = 1;
-FRDE_gammaimi = 0;
-FRDE_gammaimidag = 1;
-FRRU_gammaimi = 0;
-FRRU_gammaimidag = 1;
-FRRW_gammaimi = 0;
-FRRW_gammaimidag = 1;
-FRUS_gammaimi = 0;
-FRUS_gammaimidag = 1;
+// Import adjustment cost
+FRRA_gammaimi = FR_gammaimi1/2*((FRRA_imi/FR_qi)/(FRRA_imi(-1)/FR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRRA_gammaimidag = 1-FRRA_gammaimi-FR_gammaimi1*((FRRA_imi/FR_qi)/(FRRA_imi(-1)/FR_qi)-1)*((FRRA_imi/FR_qi)/(FRRA_imi(-1)/FR_qi(-1)));
+// Import adjustment cost
+FRAT_gammaimi = FR_gammaimi1/2*((FRAT_imi/FR_qi)/(FRAT_imi(-1)/FR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRAT_gammaimidag = 1-FRAT_gammaimi-FR_gammaimi1*((FRAT_imi/FR_qi)/(FRAT_imi(-1)/FR_qi)-1)*((FRAT_imi/FR_qi)/(FRAT_imi(-1)/FR_qi(-1)));
+// Import adjustment cost
+FRBE_gammaimi = FR_gammaimi1/2*((FRBE_imi/FR_qi)/(FRBE_imi(-1)/FR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRBE_gammaimidag = 1-FRBE_gammaimi-FR_gammaimi1*((FRBE_imi/FR_qi)/(FRBE_imi(-1)/FR_qi)-1)*((FRBE_imi/FR_qi)/(FRBE_imi(-1)/FR_qi(-1)));
+// Import adjustment cost
+FRES_gammaimi = FR_gammaimi1/2*((FRES_imi/FR_qi)/(FRES_imi(-1)/FR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRES_gammaimidag = 1-FRES_gammaimi-FR_gammaimi1*((FRES_imi/FR_qi)/(FRES_imi(-1)/FR_qi)-1)*((FRES_imi/FR_qi)/(FRES_imi(-1)/FR_qi(-1)));
+// Import adjustment cost
+FRFI_gammaimi = FR_gammaimi1/2*((FRFI_imi/FR_qi)/(FRFI_imi(-1)/FR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRFI_gammaimidag = 1-FRFI_gammaimi-FR_gammaimi1*((FRFI_imi/FR_qi)/(FRFI_imi(-1)/FR_qi)-1)*((FRFI_imi/FR_qi)/(FRFI_imi(-1)/FR_qi(-1)));
+// Import adjustment cost
+FRGR_gammaimi = FR_gammaimi1/2*((FRGR_imi/FR_qi)/(FRGR_imi(-1)/FR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRGR_gammaimidag = 1-FRGR_gammaimi-FR_gammaimi1*((FRGR_imi/FR_qi)/(FRGR_imi(-1)/FR_qi)-1)*((FRGR_imi/FR_qi)/(FRGR_imi(-1)/FR_qi(-1)));
+// Import adjustment cost
+FRIT_gammaimi = FR_gammaimi1/2*((FRIT_imi/FR_qi)/(FRIT_imi(-1)/FR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRIT_gammaimidag = 1-FRIT_gammaimi-FR_gammaimi1*((FRIT_imi/FR_qi)/(FRIT_imi(-1)/FR_qi)-1)*((FRIT_imi/FR_qi)/(FRIT_imi(-1)/FR_qi(-1)));
+// Import adjustment cost
+FRNL_gammaimi = FR_gammaimi1/2*((FRNL_imi/FR_qi)/(FRNL_imi(-1)/FR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRNL_gammaimidag = 1-FRNL_gammaimi-FR_gammaimi1*((FRNL_imi/FR_qi)/(FRNL_imi(-1)/FR_qi)-1)*((FRNL_imi/FR_qi)/(FRNL_imi(-1)/FR_qi(-1)));
+// Import adjustment cost
+FRPT_gammaimi = FR_gammaimi1/2*((FRPT_imi/FR_qi)/(FRPT_imi(-1)/FR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRPT_gammaimidag = 1-FRPT_gammaimi-FR_gammaimi1*((FRPT_imi/FR_qi)/(FRPT_imi(-1)/FR_qi)-1)*((FRPT_imi/FR_qi)/(FRPT_imi(-1)/FR_qi(-1)));
+// Import adjustment cost
+FRDE_gammaimi = FR_gammaimi1/2*((FRDE_imi/FR_qi)/(FRDE_imi(-1)/FR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRDE_gammaimidag = 1-FRDE_gammaimi-FR_gammaimi1*((FRDE_imi/FR_qi)/(FRDE_imi(-1)/FR_qi)-1)*((FRDE_imi/FR_qi)/(FRDE_imi(-1)/FR_qi(-1)));
+// Import adjustment cost
+FRRU_gammaimi = FR_gammaimi1/2*((FRRU_imi/FR_qi)/(FRRU_imi(-1)/FR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRRU_gammaimidag = 1-FRRU_gammaimi-FR_gammaimi1*((FRRU_imi/FR_qi)/(FRRU_imi(-1)/FR_qi)-1)*((FRRU_imi/FR_qi)/(FRRU_imi(-1)/FR_qi(-1)));
+// Import adjustment cost
+FRRW_gammaimi = FR_gammaimi1/2*((FRRW_imi/FR_qi)/(FRRW_imi(-1)/FR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRRW_gammaimidag = 1-FRRW_gammaimi-FR_gammaimi1*((FRRW_imi/FR_qi)/(FRRW_imi(-1)/FR_qi)-1)*((FRRW_imi/FR_qi)/(FRRW_imi(-1)/FR_qi(-1)));
+// Import adjustment cost
+FRUS_gammaimi = FR_gammaimi1/2*((FRUS_imi/FR_qi)/(FRUS_imi(-1)/FR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRUS_gammaimidag = 1-FRUS_gammaimi-FR_gammaimi1*((FRUS_imi/FR_qi)/(FRUS_imi(-1)/FR_qi)-1)*((FRUS_imi/FR_qi)/(FRUS_imi(-1)/FR_qi(-1)));
 // Private consumption good (tradable)
 FR_ttcg^((FR_mutcg-1)/FR_mutcg) = (FR_nutcg)^(1/FR_mutcg)*FR_htcg^(1-1/FR_mutcg)+(1-FR_nutcg)^(1/FR_mutcg)*FR_imcg^(1-1/FR_mutcg);
 // Private consumption good  (total)
@@ -33001,32 +33189,58 @@ FR_pttcg^(1-FR_mutcg) = (FR_nutcg)*FR_pht^(1-FR_mutcg)+(1-FR_nutcg)*FR_pimcg^(1-
 FR_pcg^(1-FR_mucg) = (FR_nucg)*FR_pttcg^(1-FR_mucg)+(1-FR_nucg)*FR_pnt^(1-FR_mucg);
 // Demand for domestic intermediate goods
 FR_htcg = FR_nutcg*(FR_pht/FR_pttcg)^(-FR_mutcg)*FR_ttcg;
-FRRA_gammaimcg = 0;
-FRRA_gammaimcgdag = 1;
-FRAT_gammaimcg = 0;
-FRAT_gammaimcgdag = 1;
-FRBE_gammaimcg = 0;
-FRBE_gammaimcgdag = 1;
-FRES_gammaimcg = 0;
-FRES_gammaimcgdag = 1;
-FRFI_gammaimcg = 0;
-FRFI_gammaimcgdag = 1;
-FRGR_gammaimcg = 0;
-FRGR_gammaimcgdag = 1;
-FRIT_gammaimcg = 0;
-FRIT_gammaimcgdag = 1;
-FRNL_gammaimcg = 0;
-FRNL_gammaimcgdag = 1;
-FRPT_gammaimcg = 0;
-FRPT_gammaimcgdag = 1;
-FRDE_gammaimcg = 0;
-FRDE_gammaimcgdag = 1;
-FRRU_gammaimcg = 0;
-FRRU_gammaimcgdag = 1;
-FRRW_gammaimcg = 0;
-FRRW_gammaimcgdag = 1;
-FRUS_gammaimcg = 0;
-FRUS_gammaimcgdag = 1;
+// Import adjustment cost
+FRRA_gammaimcg = FR_gammaimcg1/2*((FRRA_imcg/FR_qcg)/(FRRA_imcg(-1)/FR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRRA_gammaimcgdag = 1-FRRA_gammaimcg-FR_gammaimcg1*((FRRA_imcg/FR_qcg)/(FRRA_imcg(-1)/FR_qcg)-1)*((FRRA_imcg/FR_qcg)/(FRRA_imcg(-1)/FR_qcg(-1)));
+// Import adjustment cost
+FRAT_gammaimcg = FR_gammaimcg1/2*((FRAT_imcg/FR_qcg)/(FRAT_imcg(-1)/FR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRAT_gammaimcgdag = 1-FRAT_gammaimcg-FR_gammaimcg1*((FRAT_imcg/FR_qcg)/(FRAT_imcg(-1)/FR_qcg)-1)*((FRAT_imcg/FR_qcg)/(FRAT_imcg(-1)/FR_qcg(-1)));
+// Import adjustment cost
+FRBE_gammaimcg = FR_gammaimcg1/2*((FRBE_imcg/FR_qcg)/(FRBE_imcg(-1)/FR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRBE_gammaimcgdag = 1-FRBE_gammaimcg-FR_gammaimcg1*((FRBE_imcg/FR_qcg)/(FRBE_imcg(-1)/FR_qcg)-1)*((FRBE_imcg/FR_qcg)/(FRBE_imcg(-1)/FR_qcg(-1)));
+// Import adjustment cost
+FRES_gammaimcg = FR_gammaimcg1/2*((FRES_imcg/FR_qcg)/(FRES_imcg(-1)/FR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRES_gammaimcgdag = 1-FRES_gammaimcg-FR_gammaimcg1*((FRES_imcg/FR_qcg)/(FRES_imcg(-1)/FR_qcg)-1)*((FRES_imcg/FR_qcg)/(FRES_imcg(-1)/FR_qcg(-1)));
+// Import adjustment cost
+FRFI_gammaimcg = FR_gammaimcg1/2*((FRFI_imcg/FR_qcg)/(FRFI_imcg(-1)/FR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRFI_gammaimcgdag = 1-FRFI_gammaimcg-FR_gammaimcg1*((FRFI_imcg/FR_qcg)/(FRFI_imcg(-1)/FR_qcg)-1)*((FRFI_imcg/FR_qcg)/(FRFI_imcg(-1)/FR_qcg(-1)));
+// Import adjustment cost
+FRGR_gammaimcg = FR_gammaimcg1/2*((FRGR_imcg/FR_qcg)/(FRGR_imcg(-1)/FR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRGR_gammaimcgdag = 1-FRGR_gammaimcg-FR_gammaimcg1*((FRGR_imcg/FR_qcg)/(FRGR_imcg(-1)/FR_qcg)-1)*((FRGR_imcg/FR_qcg)/(FRGR_imcg(-1)/FR_qcg(-1)));
+// Import adjustment cost
+FRIT_gammaimcg = FR_gammaimcg1/2*((FRIT_imcg/FR_qcg)/(FRIT_imcg(-1)/FR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRIT_gammaimcgdag = 1-FRIT_gammaimcg-FR_gammaimcg1*((FRIT_imcg/FR_qcg)/(FRIT_imcg(-1)/FR_qcg)-1)*((FRIT_imcg/FR_qcg)/(FRIT_imcg(-1)/FR_qcg(-1)));
+// Import adjustment cost
+FRNL_gammaimcg = FR_gammaimcg1/2*((FRNL_imcg/FR_qcg)/(FRNL_imcg(-1)/FR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRNL_gammaimcgdag = 1-FRNL_gammaimcg-FR_gammaimcg1*((FRNL_imcg/FR_qcg)/(FRNL_imcg(-1)/FR_qcg)-1)*((FRNL_imcg/FR_qcg)/(FRNL_imcg(-1)/FR_qcg(-1)));
+// Import adjustment cost
+FRPT_gammaimcg = FR_gammaimcg1/2*((FRPT_imcg/FR_qcg)/(FRPT_imcg(-1)/FR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRPT_gammaimcgdag = 1-FRPT_gammaimcg-FR_gammaimcg1*((FRPT_imcg/FR_qcg)/(FRPT_imcg(-1)/FR_qcg)-1)*((FRPT_imcg/FR_qcg)/(FRPT_imcg(-1)/FR_qcg(-1)));
+// Import adjustment cost
+FRDE_gammaimcg = FR_gammaimcg1/2*((FRDE_imcg/FR_qcg)/(FRDE_imcg(-1)/FR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRDE_gammaimcgdag = 1-FRDE_gammaimcg-FR_gammaimcg1*((FRDE_imcg/FR_qcg)/(FRDE_imcg(-1)/FR_qcg)-1)*((FRDE_imcg/FR_qcg)/(FRDE_imcg(-1)/FR_qcg(-1)));
+// Import adjustment cost
+FRRU_gammaimcg = FR_gammaimcg1/2*((FRRU_imcg/FR_qcg)/(FRRU_imcg(-1)/FR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRRU_gammaimcgdag = 1-FRRU_gammaimcg-FR_gammaimcg1*((FRRU_imcg/FR_qcg)/(FRRU_imcg(-1)/FR_qcg)-1)*((FRRU_imcg/FR_qcg)/(FRRU_imcg(-1)/FR_qcg(-1)));
+// Import adjustment cost
+FRRW_gammaimcg = FR_gammaimcg1/2*((FRRW_imcg/FR_qcg)/(FRRW_imcg(-1)/FR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRRW_gammaimcgdag = 1-FRRW_gammaimcg-FR_gammaimcg1*((FRRW_imcg/FR_qcg)/(FRRW_imcg(-1)/FR_qcg)-1)*((FRRW_imcg/FR_qcg)/(FRRW_imcg(-1)/FR_qcg(-1)));
+// Import adjustment cost
+FRUS_gammaimcg = FR_gammaimcg1/2*((FRUS_imcg/FR_qcg)/(FRUS_imcg(-1)/FR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRUS_gammaimcgdag = 1-FRUS_gammaimcg-FR_gammaimcg1*((FRUS_imcg/FR_qcg)/(FRUS_imcg(-1)/FR_qcg)-1)*((FRUS_imcg/FR_qcg)/(FRUS_imcg(-1)/FR_qcg(-1)));
 // Private consumption good (tradable)
 FR_ttig^((FR_mutig-1)/FR_mutig) = (FR_nutig)^(1/FR_mutig)*FR_htig^(1-1/FR_mutig)+(1-FR_nutig)^(1/FR_mutig)*FR_imig^(1-1/FR_mutig);
 // Private consumption good  (total)
@@ -33039,32 +33253,58 @@ FR_pttig^(1-FR_mutig) = (FR_nutig)*FR_pht^(1-FR_mutig)+(1-FR_nutig)*FR_pimig^(1-
 FR_pig^(1-FR_muig) = (FR_nuig)*FR_pttig^(1-FR_muig)+(1-FR_nuig)*FR_pnt^(1-FR_muig);
 // Demand for domestic intermediate goods
 FR_htig = FR_nutig*(FR_pht/FR_pttig)^(-FR_mutig)*FR_ttig;
-FRRA_gammaimig = 0;
-FRRA_gammaimigdag = 1;
-FRAT_gammaimig = 0;
-FRAT_gammaimigdag = 1;
-FRBE_gammaimig = 0;
-FRBE_gammaimigdag = 1;
-FRES_gammaimig = 0;
-FRES_gammaimigdag = 1;
-FRFI_gammaimig = 0;
-FRFI_gammaimigdag = 1;
-FRGR_gammaimig = 0;
-FRGR_gammaimigdag = 1;
-FRIT_gammaimig = 0;
-FRIT_gammaimigdag = 1;
-FRNL_gammaimig = 0;
-FRNL_gammaimigdag = 1;
-FRPT_gammaimig = 0;
-FRPT_gammaimigdag = 1;
-FRDE_gammaimig = 0;
-FRDE_gammaimigdag = 1;
-FRRU_gammaimig = 0;
-FRRU_gammaimigdag = 1;
-FRRW_gammaimig = 0;
-FRRW_gammaimigdag = 1;
-FRUS_gammaimig = 0;
-FRUS_gammaimigdag = 1;
+// Import adjustment cost
+FRRA_gammaimig = FR_gammaimig1/2*((FRRA_imig/FR_qig)/(FRRA_imig(-1)/FR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRRA_gammaimigdag = 1-FRRA_gammaimig-FR_gammaimig1*((FRRA_imig/FR_qig)/(FRRA_imig(-1)/FR_qig)-1)*((FRRA_imig/FR_qig)/(FRRA_imig(-1)/FR_qig(-1)));
+// Import adjustment cost
+FRAT_gammaimig = FR_gammaimig1/2*((FRAT_imig/FR_qig)/(FRAT_imig(-1)/FR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRAT_gammaimigdag = 1-FRAT_gammaimig-FR_gammaimig1*((FRAT_imig/FR_qig)/(FRAT_imig(-1)/FR_qig)-1)*((FRAT_imig/FR_qig)/(FRAT_imig(-1)/FR_qig(-1)));
+// Import adjustment cost
+FRBE_gammaimig = FR_gammaimig1/2*((FRBE_imig/FR_qig)/(FRBE_imig(-1)/FR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRBE_gammaimigdag = 1-FRBE_gammaimig-FR_gammaimig1*((FRBE_imig/FR_qig)/(FRBE_imig(-1)/FR_qig)-1)*((FRBE_imig/FR_qig)/(FRBE_imig(-1)/FR_qig(-1)));
+// Import adjustment cost
+FRES_gammaimig = FR_gammaimig1/2*((FRES_imig/FR_qig)/(FRES_imig(-1)/FR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRES_gammaimigdag = 1-FRES_gammaimig-FR_gammaimig1*((FRES_imig/FR_qig)/(FRES_imig(-1)/FR_qig)-1)*((FRES_imig/FR_qig)/(FRES_imig(-1)/FR_qig(-1)));
+// Import adjustment cost
+FRFI_gammaimig = FR_gammaimig1/2*((FRFI_imig/FR_qig)/(FRFI_imig(-1)/FR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRFI_gammaimigdag = 1-FRFI_gammaimig-FR_gammaimig1*((FRFI_imig/FR_qig)/(FRFI_imig(-1)/FR_qig)-1)*((FRFI_imig/FR_qig)/(FRFI_imig(-1)/FR_qig(-1)));
+// Import adjustment cost
+FRGR_gammaimig = FR_gammaimig1/2*((FRGR_imig/FR_qig)/(FRGR_imig(-1)/FR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRGR_gammaimigdag = 1-FRGR_gammaimig-FR_gammaimig1*((FRGR_imig/FR_qig)/(FRGR_imig(-1)/FR_qig)-1)*((FRGR_imig/FR_qig)/(FRGR_imig(-1)/FR_qig(-1)));
+// Import adjustment cost
+FRIT_gammaimig = FR_gammaimig1/2*((FRIT_imig/FR_qig)/(FRIT_imig(-1)/FR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRIT_gammaimigdag = 1-FRIT_gammaimig-FR_gammaimig1*((FRIT_imig/FR_qig)/(FRIT_imig(-1)/FR_qig)-1)*((FRIT_imig/FR_qig)/(FRIT_imig(-1)/FR_qig(-1)));
+// Import adjustment cost
+FRNL_gammaimig = FR_gammaimig1/2*((FRNL_imig/FR_qig)/(FRNL_imig(-1)/FR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRNL_gammaimigdag = 1-FRNL_gammaimig-FR_gammaimig1*((FRNL_imig/FR_qig)/(FRNL_imig(-1)/FR_qig)-1)*((FRNL_imig/FR_qig)/(FRNL_imig(-1)/FR_qig(-1)));
+// Import adjustment cost
+FRPT_gammaimig = FR_gammaimig1/2*((FRPT_imig/FR_qig)/(FRPT_imig(-1)/FR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRPT_gammaimigdag = 1-FRPT_gammaimig-FR_gammaimig1*((FRPT_imig/FR_qig)/(FRPT_imig(-1)/FR_qig)-1)*((FRPT_imig/FR_qig)/(FRPT_imig(-1)/FR_qig(-1)));
+// Import adjustment cost
+FRDE_gammaimig = FR_gammaimig1/2*((FRDE_imig/FR_qig)/(FRDE_imig(-1)/FR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRDE_gammaimigdag = 1-FRDE_gammaimig-FR_gammaimig1*((FRDE_imig/FR_qig)/(FRDE_imig(-1)/FR_qig)-1)*((FRDE_imig/FR_qig)/(FRDE_imig(-1)/FR_qig(-1)));
+// Import adjustment cost
+FRRU_gammaimig = FR_gammaimig1/2*((FRRU_imig/FR_qig)/(FRRU_imig(-1)/FR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRRU_gammaimigdag = 1-FRRU_gammaimig-FR_gammaimig1*((FRRU_imig/FR_qig)/(FRRU_imig(-1)/FR_qig)-1)*((FRRU_imig/FR_qig)/(FRRU_imig(-1)/FR_qig(-1)));
+// Import adjustment cost
+FRRW_gammaimig = FR_gammaimig1/2*((FRRW_imig/FR_qig)/(FRRW_imig(-1)/FR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRRW_gammaimigdag = 1-FRRW_gammaimig-FR_gammaimig1*((FRRW_imig/FR_qig)/(FRRW_imig(-1)/FR_qig)-1)*((FRRW_imig/FR_qig)/(FRRW_imig(-1)/FR_qig(-1)));
+// Import adjustment cost
+FRUS_gammaimig = FR_gammaimig1/2*((FRUS_imig/FR_qig)/(FRUS_imig(-1)/FR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+FRUS_gammaimigdag = 1-FRUS_gammaimig-FR_gammaimig1*((FRUS_imig/FR_qig)/(FRUS_imig(-1)/FR_qig)-1)*((FRUS_imig/FR_qig)/(FRUS_imig(-1)/FR_qig(-1)));
 // Trade balance
 FR_tb =
 +FR_pex*RA_size/FR_size*RAFR_im
@@ -33125,18 +33365,10 @@ FR_ex =
 // Government spending, using FR_pg = FR_pht
 FR_pcg*FR_cg = FR_cgy*FR_pybar*FR_ybar;
 FR_pig*FR_ig = FR_igy*FR_pybar*FR_ybar;
-FR_t = 0;
-FR_b = FR_bytarget*FR_pybar*FR_ybar;
-// Auxiliary equation for steady-state output
-FR_ybar = FR_y;
-// Auxiliary equation for steady-state output
-FR_ytbar = FR_yst;
-// Auxiliary equation for steady-state output
-FR_ynbar = FR_ysn;
-// Auxiliary equation for steady-state output deflator
-FR_pybar = FR_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-FR_trybar = FR_tr/(FR_pybar*FR_ybar);
+// Transfers
+FR_tr = FR_try*FR_pybar*FR_ybar;
+// Fiscal rule
+FR_t/(FR_pybar*FR_ybar) = FR_phitb*(FR_b/(FR_pybar*FR_ybar)-FR_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 FR_ti = FR_upsilont*FR_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -33152,9 +33384,11 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	FR_r = DE_r;
-FR_pic4 = FR_pi4target;
-FR_rr-1 = FR_r/FR_pi4target^(1/4)-1;
+		FR_rerdep/DE_rerdep*FR_pic/DE_pic-1=0;
+// Definition of annual inflation
+FR_pic4 = FR_pic*FR_pic(-1)*FR_pic(-2)*FR_pic(-3);
+// Real interest rate
+FR_rr-1 = FR_r/FR_pic(+1)-1;
 // Equilibrium real interest rate
 FR_rrstar-1 = 1/FR_beta-1;
 //-------------
@@ -33241,68 +33475,68 @@ FR_py*FR_y =
 +FR_pcg*FR_qcg
 +FR_pig*FR_qig
 +FR_pex*RA_size/FR_size*RAFR_im
--(RA_pex*FRRA_rer)*FRRA_imc
--(RA_pex*FRRA_rer)*FRRA_imi
+-(RA_pex*FRRA_rer)*(FRRA_imc*(1-FRRA_gammaimc)/FRRA_gammaimcdag)
+-(RA_pex*FRRA_rer)*(FRRA_imi*(1-FRRA_gammaimi)/FRRA_gammaimidag)
 -(RA_pex*FRRA_rer)*FRRA_imcg
 -(RA_pex*FRRA_rer)*FRRA_imig
 +FR_pex*AT_size/FR_size*ATFR_im
--(AT_pex*FRAT_rer)*FRAT_imc
--(AT_pex*FRAT_rer)*FRAT_imi
+-(AT_pex*FRAT_rer)*(FRAT_imc*(1-FRAT_gammaimc)/FRAT_gammaimcdag)
+-(AT_pex*FRAT_rer)*(FRAT_imi*(1-FRAT_gammaimi)/FRAT_gammaimidag)
 -(AT_pex*FRAT_rer)*FRAT_imcg
 -(AT_pex*FRAT_rer)*FRAT_imig
 +FR_pex*BE_size/FR_size*BEFR_im
--(BE_pex*FRBE_rer)*FRBE_imc
--(BE_pex*FRBE_rer)*FRBE_imi
+-(BE_pex*FRBE_rer)*(FRBE_imc*(1-FRBE_gammaimc)/FRBE_gammaimcdag)
+-(BE_pex*FRBE_rer)*(FRBE_imi*(1-FRBE_gammaimi)/FRBE_gammaimidag)
 -(BE_pex*FRBE_rer)*FRBE_imcg
 -(BE_pex*FRBE_rer)*FRBE_imig
 +FR_pex*ES_size/FR_size*ESFR_im
--(ES_pex*FRES_rer)*FRES_imc
--(ES_pex*FRES_rer)*FRES_imi
+-(ES_pex*FRES_rer)*(FRES_imc*(1-FRES_gammaimc)/FRES_gammaimcdag)
+-(ES_pex*FRES_rer)*(FRES_imi*(1-FRES_gammaimi)/FRES_gammaimidag)
 -(ES_pex*FRES_rer)*FRES_imcg
 -(ES_pex*FRES_rer)*FRES_imig
 +FR_pex*FI_size/FR_size*FIFR_im
--(FI_pex*FRFI_rer)*FRFI_imc
--(FI_pex*FRFI_rer)*FRFI_imi
+-(FI_pex*FRFI_rer)*(FRFI_imc*(1-FRFI_gammaimc)/FRFI_gammaimcdag)
+-(FI_pex*FRFI_rer)*(FRFI_imi*(1-FRFI_gammaimi)/FRFI_gammaimidag)
 -(FI_pex*FRFI_rer)*FRFI_imcg
 -(FI_pex*FRFI_rer)*FRFI_imig
 +FR_pex*GR_size/FR_size*GRFR_im
--(GR_pex*FRGR_rer)*FRGR_imc
--(GR_pex*FRGR_rer)*FRGR_imi
+-(GR_pex*FRGR_rer)*(FRGR_imc*(1-FRGR_gammaimc)/FRGR_gammaimcdag)
+-(GR_pex*FRGR_rer)*(FRGR_imi*(1-FRGR_gammaimi)/FRGR_gammaimidag)
 -(GR_pex*FRGR_rer)*FRGR_imcg
 -(GR_pex*FRGR_rer)*FRGR_imig
 +FR_pex*IT_size/FR_size*ITFR_im
--(IT_pex*FRIT_rer)*FRIT_imc
--(IT_pex*FRIT_rer)*FRIT_imi
+-(IT_pex*FRIT_rer)*(FRIT_imc*(1-FRIT_gammaimc)/FRIT_gammaimcdag)
+-(IT_pex*FRIT_rer)*(FRIT_imi*(1-FRIT_gammaimi)/FRIT_gammaimidag)
 -(IT_pex*FRIT_rer)*FRIT_imcg
 -(IT_pex*FRIT_rer)*FRIT_imig
 +FR_pex*NL_size/FR_size*NLFR_im
--(NL_pex*FRNL_rer)*FRNL_imc
--(NL_pex*FRNL_rer)*FRNL_imi
+-(NL_pex*FRNL_rer)*(FRNL_imc*(1-FRNL_gammaimc)/FRNL_gammaimcdag)
+-(NL_pex*FRNL_rer)*(FRNL_imi*(1-FRNL_gammaimi)/FRNL_gammaimidag)
 -(NL_pex*FRNL_rer)*FRNL_imcg
 -(NL_pex*FRNL_rer)*FRNL_imig
 +FR_pex*PT_size/FR_size*PTFR_im
--(PT_pex*FRPT_rer)*FRPT_imc
--(PT_pex*FRPT_rer)*FRPT_imi
+-(PT_pex*FRPT_rer)*(FRPT_imc*(1-FRPT_gammaimc)/FRPT_gammaimcdag)
+-(PT_pex*FRPT_rer)*(FRPT_imi*(1-FRPT_gammaimi)/FRPT_gammaimidag)
 -(PT_pex*FRPT_rer)*FRPT_imcg
 -(PT_pex*FRPT_rer)*FRPT_imig
 +FR_pex*DE_size/FR_size*DEFR_im
--(DE_pex*FRDE_rer)*FRDE_imc
--(DE_pex*FRDE_rer)*FRDE_imi
+-(DE_pex*FRDE_rer)*(FRDE_imc*(1-FRDE_gammaimc)/FRDE_gammaimcdag)
+-(DE_pex*FRDE_rer)*(FRDE_imi*(1-FRDE_gammaimi)/FRDE_gammaimidag)
 -(DE_pex*FRDE_rer)*FRDE_imcg
 -(DE_pex*FRDE_rer)*FRDE_imig
 +FR_pex*RU_size/FR_size*RUFR_im
--(RU_pex*FRRU_rer)*FRRU_imc
--(RU_pex*FRRU_rer)*FRRU_imi
+-(RU_pex*FRRU_rer)*(FRRU_imc*(1-FRRU_gammaimc)/FRRU_gammaimcdag)
+-(RU_pex*FRRU_rer)*(FRRU_imi*(1-FRRU_gammaimi)/FRRU_gammaimidag)
 -(RU_pex*FRRU_rer)*FRRU_imcg
 -(RU_pex*FRRU_rer)*FRRU_imig
 +FR_pex*RW_size/FR_size*RWFR_im
--(RW_pex*FRRW_rer)*FRRW_imc
--(RW_pex*FRRW_rer)*FRRW_imi
+-(RW_pex*FRRW_rer)*(FRRW_imc*(1-FRRW_gammaimc)/FRRW_gammaimcdag)
+-(RW_pex*FRRW_rer)*(FRRW_imi*(1-FRRW_gammaimi)/FRRW_gammaimidag)
 -(RW_pex*FRRW_rer)*FRRW_imcg
 -(RW_pex*FRRW_rer)*FRRW_imig
 +FR_pex*US_size/FR_size*USFR_im
--(US_pex*FRUS_rer)*FRUS_imc
--(US_pex*FRUS_rer)*FRUS_imi
+-(US_pex*FRUS_rer)*(FRUS_imc*(1-FRUS_gammaimc)/FRUS_gammaimcdag)
+-(US_pex*FRUS_rer)*(FRUS_imi*(1-FRUS_gammaimi)/FRUS_gammaimidag)
 -(US_pex*FRUS_rer)*FRUS_imcg
 -(US_pex*FRUS_rer)*FRUS_imig
 ;
@@ -33377,7 +33611,7 @@ FR_yhty = FR_pht*FR_yst/(FR_py*FR_y);
 // NT sector share
 FR_ynty = FR_pnt*FR_ysn/(FR_py*FR_y);
 // Output gap
-FR_ygap = 0;
+FR_ygap = FR_y/FR_ybar-1;
 // Output growth (gross rate)
 FR_ygrowth = FR_y/FR_y(-1);
 // Output growth (gross rate yoy)
@@ -33541,7 +33775,7 @@ GR_dcci = ((GR_nucces)^(1/GR_mucces)*GR_ci^(1-1/GR_mucces)+(1-GR_nucces)^(1/GR_m
 GR_lambdai*(1+GR_tauc+GR_gammavi+GR_vi*GR_gammavider) = GR_zcon*(GR_ccesi-GR_kappa*GR_ccesi(-1))^(-GR_sigma)*GR_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
-GR_r                   = GR_beta^(-1)*GR_lambdai/GR_lambdai    *GR_pic;
+GR_r*(1-GR_gammabh) = GR_beta^(-1)*GR_lambdai/GR_lambdai(+1)*GR_pic(+1);
 // Germany
 // US and the RoW
 // Euler equation for money
@@ -33552,17 +33786,23 @@ GR_vi = GR_ci/GR_mi;
 GR_gammavi = GR_gammav1*GR_vi+GR_gammav2/GR_vi-2*(GR_gammav1*GR_gammav2)^(1/2);
 // Derivative of transaction cost
 GR_gammavider = GR_gammav1-GR_gammav2*GR_vi^(-2);
-GR_delta = GR_ii/GR_ki;
-GR_gammai = 0;
-GR_gammaider = 0;
-GR_gammau = 0;
-GR_gammauder = ((GR_beta^(-1)-1+GR_delta)*GR_qbar-GR_delta*GR_taukbar*GR_pibar)/((1-GR_taukbar)*GR_pibar);
-GR_u = 1;
-GR_pi = GR_q;
+// Capital accumulation
+GR_ki = (1-GR_delta)*GR_ki(-1)+(1-GR_gammai(-1))*GR_ii(-1)*GR_zinv;
+// Investment adjustment cost
+GR_gammai = GR_gammai1/2*(GR_ii/GR_ii(-1)-1)^2;
+// Derivative of investment adjustment cost
+GR_gammaider = GR_gammai1*(GR_ii/GR_ii(-1)-1)/GR_ii(-1);
+// Capacity utilisation cost
+GR_gammau = ((GR_beta^(-1)-1+GR_delta)*GR_qbar-GR_delta*GR_taukbar*GR_pibar)/((1-GR_taukbar)*GR_pibar)*(GR_u-1)+GR_gammau2/2*(GR_u-1)^2;
+// Derivative of capacity utilisation cost
+GR_gammauder = ((GR_beta^(-1)-1+GR_delta)*GR_qbar-GR_delta*GR_taukbar*GR_pibar)/((1-GR_taukbar)*GR_pibar)+GR_gammau2*(GR_u-1);
+// Optimal capacity utilisation (FOC)
+GR_rk = GR_gammauder*GR_pi;
+// Tobin's Q
+GR_pi = GR_q*GR_zinv*(1-GR_gammai-GR_gammaider*GR_ii)+GR_beta*GR_lambdai(+1)/GR_lambdai*GR_q(+1)*GR_zinv(+1)*GR_gammaider(+1)*GR_ii(+1)^2/GR_ii;
 // Auxiliary equation for Tobin's Q in steady state
-GR_qbar = GR_q;
 // Rate of return on capital
-GR_q = GR_beta*((1-GR_tauk)*GR_rk+(GR_tauk*GR_delta)*GR_pi+(1-GR_delta)*GR_q);
+GR_q = GR_beta*GR_lambdai(+1)/GR_lambdai*((1-GR_tauk(+1))*(GR_rk(+1)*GR_u(+1)-GR_gammau(+1)*GR_pi(+1))+(GR_tauk(+1)*GR_delta)*GR_pi(+1)+(1-GR_delta)*GR_q(+1));
 // Optimal wage contract (FOC)
 GR_witilde^(1+GR_etai*GR_zeta) = GR_etai/(GR_etai-1)*GR_fi/GR_gi+GR_wcst;
 // Definition of fi
@@ -33621,11 +33861,9 @@ GR_mcn = 1/(GR_zn*GR_kg^GR_alphag*(GR_alphan)^(GR_alphan)*(1-GR_alphan)^(1-GR_al
 // Wage Inflation (qoq)
 GR_piw = GR_w/GR_w(-1)*GR_pic;
 // Wage Inflation (yoy)
-GR_piw4 = GR_pic4;
+GR_piw4 = GR_piw*GR_piw(-1)*GR_piw(-2)*GR_piw(-3);
 // Auxiliary equation for steady-state fixed cost
-GR_psitbar = GR_psit*GR_ytbar;
 // Auxiliary equation for steady-state fixed cost
-GR_psinbar = GR_psin*GR_ynbar;
 // Capital input (FOC)
 GR_rk = GR_alphat*(GR_yst+GR_psitbar)/GR_kdt*GR_mct;
 // Capital input (FOC)
@@ -33700,7 +33938,6 @@ GR_piex = GR_pex/GR_pex(-1)*GR_pic;
 // Bilateral real exchange rate
 GRRA_rer = GR_rer/RA_rer;
 // Auxiliary equation for steady-state output
-GRRA_rerbar = GRRA_rer;
 //Terms of Trade
 GRRA_tot = RA_pex*GRRA_rer/GR_pex;
 // Optimal price contract set in foreign markets (FOC), using GR_pxtilde = AT_pimtilde
@@ -33716,7 +33953,6 @@ GRRA_tot = RA_pex*GRRA_rer/GR_pex;
 // Bilateral real exchange rate
 GRAT_rer = GR_rer/AT_rer;
 // Auxiliary equation for steady-state output
-GRAT_rerbar = GRAT_rer;
 //Terms of Trade
 GRAT_tot = AT_pex*GRAT_rer/GR_pex;
 // Optimal price contract set in foreign markets (FOC), using GR_pxtilde = BE_pimtilde
@@ -33732,7 +33968,6 @@ GRAT_tot = AT_pex*GRAT_rer/GR_pex;
 // Bilateral real exchange rate
 GRBE_rer = GR_rer/BE_rer;
 // Auxiliary equation for steady-state output
-GRBE_rerbar = GRBE_rer;
 //Terms of Trade
 GRBE_tot = BE_pex*GRBE_rer/GR_pex;
 // Optimal price contract set in foreign markets (FOC), using GR_pxtilde = ES_pimtilde
@@ -33748,7 +33983,6 @@ GRBE_tot = BE_pex*GRBE_rer/GR_pex;
 // Bilateral real exchange rate
 GRES_rer = GR_rer/ES_rer;
 // Auxiliary equation for steady-state output
-GRES_rerbar = GRES_rer;
 //Terms of Trade
 GRES_tot = ES_pex*GRES_rer/GR_pex;
 // Optimal price contract set in foreign markets (FOC), using GR_pxtilde = FI_pimtilde
@@ -33764,7 +33998,6 @@ GRES_tot = ES_pex*GRES_rer/GR_pex;
 // Bilateral real exchange rate
 GRFI_rer = GR_rer/FI_rer;
 // Auxiliary equation for steady-state output
-GRFI_rerbar = GRFI_rer;
 //Terms of Trade
 GRFI_tot = FI_pex*GRFI_rer/GR_pex;
 // Optimal price contract set in foreign markets (FOC), using GR_pxtilde = FR_pimtilde
@@ -33780,7 +34013,6 @@ GRFI_tot = FI_pex*GRFI_rer/GR_pex;
 // Bilateral real exchange rate
 GRFR_rer = GR_rer/FR_rer;
 // Auxiliary equation for steady-state output
-GRFR_rerbar = GRFR_rer;
 //Terms of Trade
 GRFR_tot = FR_pex*GRFR_rer/GR_pex;
 // Optimal price contract set in foreign markets (FOC), using GR_pxtilde = IT_pimtilde
@@ -33796,7 +34028,6 @@ GRFR_tot = FR_pex*GRFR_rer/GR_pex;
 // Bilateral real exchange rate
 GRIT_rer = GR_rer/IT_rer;
 // Auxiliary equation for steady-state output
-GRIT_rerbar = GRIT_rer;
 //Terms of Trade
 GRIT_tot = IT_pex*GRIT_rer/GR_pex;
 // Optimal price contract set in foreign markets (FOC), using GR_pxtilde = NL_pimtilde
@@ -33812,7 +34043,6 @@ GRIT_tot = IT_pex*GRIT_rer/GR_pex;
 // Bilateral real exchange rate
 GRNL_rer = GR_rer/NL_rer;
 // Auxiliary equation for steady-state output
-GRNL_rerbar = GRNL_rer;
 //Terms of Trade
 GRNL_tot = NL_pex*GRNL_rer/GR_pex;
 // Optimal price contract set in foreign markets (FOC), using GR_pxtilde = PT_pimtilde
@@ -33828,7 +34058,6 @@ GRNL_tot = NL_pex*GRNL_rer/GR_pex;
 // Bilateral real exchange rate
 GRPT_rer = GR_rer/PT_rer;
 // Auxiliary equation for steady-state output
-GRPT_rerbar = GRPT_rer;
 //Terms of Trade
 GRPT_tot = PT_pex*GRPT_rer/GR_pex;
 // Optimal price contract set in foreign markets (FOC), using GR_pxtilde = DE_pimtilde
@@ -33844,7 +34073,6 @@ GRPT_tot = PT_pex*GRPT_rer/GR_pex;
 // Bilateral real exchange rate
 GRDE_rer = GR_rer/DE_rer;
 // Auxiliary equation for steady-state output
-GRDE_rerbar = GRDE_rer;
 //Terms of Trade
 GRDE_tot = DE_pex*GRDE_rer/GR_pex;
 // Optimal price contract set in foreign markets (FOC), using GR_pxtilde = RU_pimtilde
@@ -33860,7 +34088,6 @@ GRDE_tot = DE_pex*GRDE_rer/GR_pex;
 // Bilateral real exchange rate
 GRRU_rer = GR_rer/RU_rer;
 // Auxiliary equation for steady-state output
-GRRU_rerbar = GRRU_rer;
 //Terms of Trade
 GRRU_tot = RU_pex*GRRU_rer/GR_pex;
 // Optimal price contract set in foreign markets (FOC), using GR_pxtilde = RW_pimtilde
@@ -33876,7 +34103,6 @@ GRRU_tot = RU_pex*GRRU_rer/GR_pex;
 // Bilateral real exchange rate
 GRRW_rer = GR_rer/RW_rer;
 // Auxiliary equation for steady-state output
-GRRW_rerbar = GRRW_rer;
 //Terms of Trade
 GRRW_tot = RW_pex*GRRW_rer/GR_pex;
 // Optimal price contract set in foreign markets (FOC), using GR_pxtilde = US_pimtilde
@@ -33892,7 +34118,6 @@ GRRW_tot = RW_pex*GRRW_rer/GR_pex;
 // Bilateral real exchange rate
 GRUS_rer = GR_rer/US_rer;
 // Auxiliary equation for steady-state output
-GRUS_rerbar = GRUS_rer;
 //Terms of Trade
 GRUS_tot = US_pex*GRUS_rer/GR_pex;
 // Total imports 
@@ -36390,18 +36615,18 @@ GR_etot = 1
 //-----------------
 // Private consumption good (import)
 GR_imc^((GR_mumc-1)/GR_mumc) =
-+GRRA_numc ^(1/GR_mumc)*GRRA_imc^(1-1/GR_mumc)
-+GRAT_numc ^(1/GR_mumc)*GRAT_imc^(1-1/GR_mumc)
-+GRBE_numc ^(1/GR_mumc)*GRBE_imc^(1-1/GR_mumc)
-+GRES_numc ^(1/GR_mumc)*GRES_imc^(1-1/GR_mumc)
-+GRFR_numc ^(1/GR_mumc)*GRFR_imc^(1-1/GR_mumc)
-+GRIT_numc ^(1/GR_mumc)*GRIT_imc^(1-1/GR_mumc)
-+GRNL_numc ^(1/GR_mumc)*GRNL_imc^(1-1/GR_mumc)
-+GRPT_numc ^(1/GR_mumc)*GRPT_imc^(1-1/GR_mumc)
-+GRDE_numc ^(1/GR_mumc)*GRDE_imc^(1-1/GR_mumc)
-+GRRU_numc ^(1/GR_mumc)*GRRU_imc^(1-1/GR_mumc)
-+GRRW_numc ^(1/GR_mumc)*GRRW_imc^(1-1/GR_mumc)
-+GRUS_numc ^(1/GR_mumc)*GRUS_imc^(1-1/GR_mumc)
++GRRA_numc ^(1/GR_mumc)*((1-GRRA_gammaimc)*GRRA_imc)^(1-1/GR_mumc)
++GRAT_numc ^(1/GR_mumc)*((1-GRAT_gammaimc)*GRAT_imc)^(1-1/GR_mumc)
++GRBE_numc ^(1/GR_mumc)*((1-GRBE_gammaimc)*GRBE_imc)^(1-1/GR_mumc)
++GRES_numc ^(1/GR_mumc)*((1-GRES_gammaimc)*GRES_imc)^(1-1/GR_mumc)
++GRFR_numc ^(1/GR_mumc)*((1-GRFR_gammaimc)*GRFR_imc)^(1-1/GR_mumc)
++GRIT_numc ^(1/GR_mumc)*((1-GRIT_gammaimc)*GRIT_imc)^(1-1/GR_mumc)
++GRNL_numc ^(1/GR_mumc)*((1-GRNL_gammaimc)*GRNL_imc)^(1-1/GR_mumc)
++GRPT_numc ^(1/GR_mumc)*((1-GRPT_gammaimc)*GRPT_imc)^(1-1/GR_mumc)
++GRDE_numc ^(1/GR_mumc)*((1-GRDE_gammaimc)*GRDE_imc)^(1-1/GR_mumc)
++GRRU_numc ^(1/GR_mumc)*((1-GRRU_gammaimc)*GRRU_imc)^(1-1/GR_mumc)
++GRRW_numc ^(1/GR_mumc)*((1-GRRW_gammaimc)*GRRW_imc)^(1-1/GR_mumc)
++GRUS_numc ^(1/GR_mumc)*((1-GRUS_gammaimc)*GRUS_imc)^(1-1/GR_mumc)
 +(1
 -GRRA_numc
 -GRAT_numc
@@ -36415,29 +36640,29 @@ GR_imc^((GR_mumc-1)/GR_mumc) =
 -GRRU_numc
 -GRRW_numc
 -GRUS_numc
-)^(1/GR_mumc)*GRFI_imc^(1-1/GR_mumc);
+)^(1/GR_mumc)*((1-GRFI_gammaimc)*GRFI_imc)^(1-1/GR_mumc);
 // Demand for bilateral consumption import goods
-GRRA_imc = GRRA_numc*((RA_pex*GRRA_rer)/GR_pimc)^(-GR_mumc)*GR_imc;
+GRRA_imc = GRRA_numc*((RA_pex*GRRA_rer)/(GRRA_gammaimcdag*GR_pimc))^(-GR_mumc)*GR_imc/(1-GRRA_gammaimc);
 // Demand for bilateral consumption import goods
-GRAT_imc = GRAT_numc*((AT_pex*GRAT_rer)/GR_pimc)^(-GR_mumc)*GR_imc;
+GRAT_imc = GRAT_numc*((AT_pex*GRAT_rer)/(GRAT_gammaimcdag*GR_pimc))^(-GR_mumc)*GR_imc/(1-GRAT_gammaimc);
 // Demand for bilateral consumption import goods
-GRBE_imc = GRBE_numc*((BE_pex*GRBE_rer)/GR_pimc)^(-GR_mumc)*GR_imc;
+GRBE_imc = GRBE_numc*((BE_pex*GRBE_rer)/(GRBE_gammaimcdag*GR_pimc))^(-GR_mumc)*GR_imc/(1-GRBE_gammaimc);
 // Demand for bilateral consumption import goods
-GRES_imc = GRES_numc*((ES_pex*GRES_rer)/GR_pimc)^(-GR_mumc)*GR_imc;
+GRES_imc = GRES_numc*((ES_pex*GRES_rer)/(GRES_gammaimcdag*GR_pimc))^(-GR_mumc)*GR_imc/(1-GRES_gammaimc);
 // Demand for bilateral consumption import goods
-GRFR_imc = GRFR_numc*((FR_pex*GRFR_rer)/GR_pimc)^(-GR_mumc)*GR_imc;
+GRFR_imc = GRFR_numc*((FR_pex*GRFR_rer)/(GRFR_gammaimcdag*GR_pimc))^(-GR_mumc)*GR_imc/(1-GRFR_gammaimc);
 // Demand for bilateral consumption import goods
-GRNL_imc = GRNL_numc*((NL_pex*GRNL_rer)/GR_pimc)^(-GR_mumc)*GR_imc;
+GRNL_imc = GRNL_numc*((NL_pex*GRNL_rer)/(GRNL_gammaimcdag*GR_pimc))^(-GR_mumc)*GR_imc/(1-GRNL_gammaimc);
 // Demand for bilateral consumption import goods
-GRPT_imc = GRPT_numc*((PT_pex*GRPT_rer)/GR_pimc)^(-GR_mumc)*GR_imc;
+GRPT_imc = GRPT_numc*((PT_pex*GRPT_rer)/(GRPT_gammaimcdag*GR_pimc))^(-GR_mumc)*GR_imc/(1-GRPT_gammaimc);
 // Demand for bilateral consumption import goods
-GRDE_imc = GRDE_numc*((DE_pex*GRDE_rer)/GR_pimc)^(-GR_mumc)*GR_imc;
+GRDE_imc = GRDE_numc*((DE_pex*GRDE_rer)/(GRDE_gammaimcdag*GR_pimc))^(-GR_mumc)*GR_imc/(1-GRDE_gammaimc);
 // Demand for bilateral consumption import goods
-GRRU_imc = GRRU_numc*((RU_pex*GRRU_rer)/GR_pimc)^(-GR_mumc)*GR_imc;
+GRRU_imc = GRRU_numc*((RU_pex*GRRU_rer)/(GRRU_gammaimcdag*GR_pimc))^(-GR_mumc)*GR_imc/(1-GRRU_gammaimc);
 // Demand for bilateral consumption import goods
-GRRW_imc = GRRW_numc*((RW_pex*GRRW_rer)/GR_pimc)^(-GR_mumc)*GR_imc;
+GRRW_imc = GRRW_numc*((RW_pex*GRRW_rer)/(GRRW_gammaimcdag*GR_pimc))^(-GR_mumc)*GR_imc/(1-GRRW_gammaimc);
 // Demand for bilateral consumption import goods
-GRUS_imc = GRUS_numc*((US_pex*GRUS_rer)/GR_pimc)^(-GR_mumc)*GR_imc;
+GRUS_imc = GRUS_numc*((US_pex*GRUS_rer)/(GRUS_gammaimcdag*GR_pimc))^(-GR_mumc)*GR_imc/(1-GRUS_gammaimc);
 GRFI_imc = (1
 -GRRA_numc
 -GRAT_numc
@@ -36451,21 +36676,21 @@ GRFI_imc = (1
 -GRRU_numc
 -GRRW_numc
 -GRUS_numc
-)*((FI_pex*GRFI_rer)/GR_pimc)^(-GR_mumc)*GR_imc;
+)*((FI_pex*GRFI_rer)/(GRFI_gammaimcdag*GR_pimc))^(-GR_mumc)*GR_imc/(1-GRFI_gammaimc);
 // Price of the consumption good (import)
 GR_pimc^(1-GR_mumc) =
-+GRRA_numc * (RA_pex*GRRA_rer)^(1-GR_mumc)
-+GRAT_numc * (AT_pex*GRAT_rer)^(1-GR_mumc)
-+GRBE_numc * (BE_pex*GRBE_rer)^(1-GR_mumc)
-+GRES_numc * (ES_pex*GRES_rer)^(1-GR_mumc)
-+GRFR_numc * (FR_pex*GRFR_rer)^(1-GR_mumc)
-+GRIT_numc * (IT_pex*GRIT_rer)^(1-GR_mumc)
-+GRNL_numc * (NL_pex*GRNL_rer)^(1-GR_mumc)
-+GRPT_numc * (PT_pex*GRPT_rer)^(1-GR_mumc)
-+GRDE_numc * (DE_pex*GRDE_rer)^(1-GR_mumc)
-+GRRU_numc * (RU_pex*GRRU_rer)^(1-GR_mumc)
-+GRRW_numc * (RW_pex*GRRW_rer)^(1-GR_mumc)
-+GRUS_numc * (US_pex*GRUS_rer)^(1-GR_mumc)
++GRRA_numc *((RA_pex*GRRA_rer)/GRRA_gammaimcdag)^(1-GR_mumc)
++GRAT_numc *((AT_pex*GRAT_rer)/GRAT_gammaimcdag)^(1-GR_mumc)
++GRBE_numc *((BE_pex*GRBE_rer)/GRBE_gammaimcdag)^(1-GR_mumc)
++GRES_numc *((ES_pex*GRES_rer)/GRES_gammaimcdag)^(1-GR_mumc)
++GRFR_numc *((FR_pex*GRFR_rer)/GRFR_gammaimcdag)^(1-GR_mumc)
++GRIT_numc *((IT_pex*GRIT_rer)/GRIT_gammaimcdag)^(1-GR_mumc)
++GRNL_numc *((NL_pex*GRNL_rer)/GRNL_gammaimcdag)^(1-GR_mumc)
++GRPT_numc *((PT_pex*GRPT_rer)/GRPT_gammaimcdag)^(1-GR_mumc)
++GRDE_numc *((DE_pex*GRDE_rer)/GRDE_gammaimcdag)^(1-GR_mumc)
++GRRU_numc *((RU_pex*GRRU_rer)/GRRU_gammaimcdag)^(1-GR_mumc)
++GRRW_numc *((RW_pex*GRRW_rer)/GRRW_gammaimcdag)^(1-GR_mumc)
++GRUS_numc *((US_pex*GRUS_rer)/GRUS_gammaimcdag)^(1-GR_mumc)
 +(1
 -GRRA_numc
 -GRAT_numc
@@ -36479,23 +36704,23 @@ GR_pimc^(1-GR_mumc) =
 -GRRU_numc
 -GRRW_numc
 -GRUS_numc
-)*(FI_pex*GRFI_rer)^(1-GR_mumc);
+)*((FI_pex*GRFI_rer)/GRFI_gammaimcdag)^(1-GR_mumc);
 // Private consumption good (import) inflation
 GR_piimc = GR_pimc/GR_pimc(-1)*GR_pic;
 // Private consumption good (import)
 GR_imi^((GR_mumi-1)/GR_mumi) =
-+GRRA_numi ^(1/GR_mumi)*GRRA_imi^(1-1/GR_mumi)
-+GRAT_numi ^(1/GR_mumi)*GRAT_imi^(1-1/GR_mumi)
-+GRBE_numi ^(1/GR_mumi)*GRBE_imi^(1-1/GR_mumi)
-+GRES_numi ^(1/GR_mumi)*GRES_imi^(1-1/GR_mumi)
-+GRFR_numi ^(1/GR_mumi)*GRFR_imi^(1-1/GR_mumi)
-+GRIT_numi ^(1/GR_mumi)*GRIT_imi^(1-1/GR_mumi)
-+GRNL_numi ^(1/GR_mumi)*GRNL_imi^(1-1/GR_mumi)
-+GRPT_numi ^(1/GR_mumi)*GRPT_imi^(1-1/GR_mumi)
-+GRDE_numi ^(1/GR_mumi)*GRDE_imi^(1-1/GR_mumi)
-+GRRU_numi ^(1/GR_mumi)*GRRU_imi^(1-1/GR_mumi)
-+GRRW_numi ^(1/GR_mumi)*GRRW_imi^(1-1/GR_mumi)
-+GRUS_numi ^(1/GR_mumi)*GRUS_imi^(1-1/GR_mumi)
++GRRA_numi ^(1/GR_mumi)*((1-GRRA_gammaimi)*GRRA_imi)^(1-1/GR_mumi)
++GRAT_numi ^(1/GR_mumi)*((1-GRAT_gammaimi)*GRAT_imi)^(1-1/GR_mumi)
++GRBE_numi ^(1/GR_mumi)*((1-GRBE_gammaimi)*GRBE_imi)^(1-1/GR_mumi)
++GRES_numi ^(1/GR_mumi)*((1-GRES_gammaimi)*GRES_imi)^(1-1/GR_mumi)
++GRFR_numi ^(1/GR_mumi)*((1-GRFR_gammaimi)*GRFR_imi)^(1-1/GR_mumi)
++GRIT_numi ^(1/GR_mumi)*((1-GRIT_gammaimi)*GRIT_imi)^(1-1/GR_mumi)
++GRNL_numi ^(1/GR_mumi)*((1-GRNL_gammaimi)*GRNL_imi)^(1-1/GR_mumi)
++GRPT_numi ^(1/GR_mumi)*((1-GRPT_gammaimi)*GRPT_imi)^(1-1/GR_mumi)
++GRDE_numi ^(1/GR_mumi)*((1-GRDE_gammaimi)*GRDE_imi)^(1-1/GR_mumi)
++GRRU_numi ^(1/GR_mumi)*((1-GRRU_gammaimi)*GRRU_imi)^(1-1/GR_mumi)
++GRRW_numi ^(1/GR_mumi)*((1-GRRW_gammaimi)*GRRW_imi)^(1-1/GR_mumi)
++GRUS_numi ^(1/GR_mumi)*((1-GRUS_gammaimi)*GRUS_imi)^(1-1/GR_mumi)
 +(1
 -GRRA_numi
 -GRAT_numi
@@ -36509,29 +36734,29 @@ GR_imi^((GR_mumi-1)/GR_mumi) =
 -GRRU_numi
 -GRRW_numi
 -GRUS_numi
-)^(1/GR_mumi)*GRFI_imi^(1-1/GR_mumi);
+)^(1/GR_mumi)*((1-GRFI_gammaimi)*GRFI_imi)^(1-1/GR_mumi);
 // Demand for bilateral consumption import goods
-GRRA_imi = GRRA_numi*((RA_pex*GRRA_rer)/GR_pimi)^(-GR_mumi)*GR_imi;
+GRRA_imi = GRRA_numi*((RA_pex*GRRA_rer)/(GRRA_gammaimidag*GR_pimi))^(-GR_mumi)*GR_imi/(1-GRRA_gammaimi);
 // Demand for bilateral consumption import goods
-GRAT_imi = GRAT_numi*((AT_pex*GRAT_rer)/GR_pimi)^(-GR_mumi)*GR_imi;
+GRAT_imi = GRAT_numi*((AT_pex*GRAT_rer)/(GRAT_gammaimidag*GR_pimi))^(-GR_mumi)*GR_imi/(1-GRAT_gammaimi);
 // Demand for bilateral consumption import goods
-GRBE_imi = GRBE_numi*((BE_pex*GRBE_rer)/GR_pimi)^(-GR_mumi)*GR_imi;
+GRBE_imi = GRBE_numi*((BE_pex*GRBE_rer)/(GRBE_gammaimidag*GR_pimi))^(-GR_mumi)*GR_imi/(1-GRBE_gammaimi);
 // Demand for bilateral consumption import goods
-GRES_imi = GRES_numi*((ES_pex*GRES_rer)/GR_pimi)^(-GR_mumi)*GR_imi;
+GRES_imi = GRES_numi*((ES_pex*GRES_rer)/(GRES_gammaimidag*GR_pimi))^(-GR_mumi)*GR_imi/(1-GRES_gammaimi);
 // Demand for bilateral consumption import goods
-GRFR_imi = GRFR_numi*((FR_pex*GRFR_rer)/GR_pimi)^(-GR_mumi)*GR_imi;
+GRFR_imi = GRFR_numi*((FR_pex*GRFR_rer)/(GRFR_gammaimidag*GR_pimi))^(-GR_mumi)*GR_imi/(1-GRFR_gammaimi);
 // Demand for bilateral consumption import goods
-GRNL_imi = GRNL_numi*((NL_pex*GRNL_rer)/GR_pimi)^(-GR_mumi)*GR_imi;
+GRNL_imi = GRNL_numi*((NL_pex*GRNL_rer)/(GRNL_gammaimidag*GR_pimi))^(-GR_mumi)*GR_imi/(1-GRNL_gammaimi);
 // Demand for bilateral consumption import goods
-GRPT_imi = GRPT_numi*((PT_pex*GRPT_rer)/GR_pimi)^(-GR_mumi)*GR_imi;
+GRPT_imi = GRPT_numi*((PT_pex*GRPT_rer)/(GRPT_gammaimidag*GR_pimi))^(-GR_mumi)*GR_imi/(1-GRPT_gammaimi);
 // Demand for bilateral consumption import goods
-GRDE_imi = GRDE_numi*((DE_pex*GRDE_rer)/GR_pimi)^(-GR_mumi)*GR_imi;
+GRDE_imi = GRDE_numi*((DE_pex*GRDE_rer)/(GRDE_gammaimidag*GR_pimi))^(-GR_mumi)*GR_imi/(1-GRDE_gammaimi);
 // Demand for bilateral consumption import goods
-GRRU_imi = GRRU_numi*((RU_pex*GRRU_rer)/GR_pimi)^(-GR_mumi)*GR_imi;
+GRRU_imi = GRRU_numi*((RU_pex*GRRU_rer)/(GRRU_gammaimidag*GR_pimi))^(-GR_mumi)*GR_imi/(1-GRRU_gammaimi);
 // Demand for bilateral consumption import goods
-GRRW_imi = GRRW_numi*((RW_pex*GRRW_rer)/GR_pimi)^(-GR_mumi)*GR_imi;
+GRRW_imi = GRRW_numi*((RW_pex*GRRW_rer)/(GRRW_gammaimidag*GR_pimi))^(-GR_mumi)*GR_imi/(1-GRRW_gammaimi);
 // Demand for bilateral consumption import goods
-GRUS_imi = GRUS_numi*((US_pex*GRUS_rer)/GR_pimi)^(-GR_mumi)*GR_imi;
+GRUS_imi = GRUS_numi*((US_pex*GRUS_rer)/(GRUS_gammaimidag*GR_pimi))^(-GR_mumi)*GR_imi/(1-GRUS_gammaimi);
 GRFI_imi = (1
 -GRRA_numi
 -GRAT_numi
@@ -36545,21 +36770,21 @@ GRFI_imi = (1
 -GRRU_numi
 -GRRW_numi
 -GRUS_numi
-)*((FI_pex*GRFI_rer)/GR_pimi)^(-GR_mumi)*GR_imi;
+)*((FI_pex*GRFI_rer)/(GRFI_gammaimidag*GR_pimi))^(-GR_mumi)*GR_imi/(1-GRFI_gammaimi);
 // Price of the consumption good (import)
 GR_pimi^(1-GR_mumi) =
-+GRRA_numi * (RA_pex*GRRA_rer)^(1-GR_mumi)
-+GRAT_numi * (AT_pex*GRAT_rer)^(1-GR_mumi)
-+GRBE_numi * (BE_pex*GRBE_rer)^(1-GR_mumi)
-+GRES_numi * (ES_pex*GRES_rer)^(1-GR_mumi)
-+GRFR_numi * (FR_pex*GRFR_rer)^(1-GR_mumi)
-+GRIT_numi * (IT_pex*GRIT_rer)^(1-GR_mumi)
-+GRNL_numi * (NL_pex*GRNL_rer)^(1-GR_mumi)
-+GRPT_numi * (PT_pex*GRPT_rer)^(1-GR_mumi)
-+GRDE_numi * (DE_pex*GRDE_rer)^(1-GR_mumi)
-+GRRU_numi * (RU_pex*GRRU_rer)^(1-GR_mumi)
-+GRRW_numi * (RW_pex*GRRW_rer)^(1-GR_mumi)
-+GRUS_numi * (US_pex*GRUS_rer)^(1-GR_mumi)
++GRRA_numi *((RA_pex*GRRA_rer)/GRRA_gammaimidag)^(1-GR_mumi)
++GRAT_numi *((AT_pex*GRAT_rer)/GRAT_gammaimidag)^(1-GR_mumi)
++GRBE_numi *((BE_pex*GRBE_rer)/GRBE_gammaimidag)^(1-GR_mumi)
++GRES_numi *((ES_pex*GRES_rer)/GRES_gammaimidag)^(1-GR_mumi)
++GRFR_numi *((FR_pex*GRFR_rer)/GRFR_gammaimidag)^(1-GR_mumi)
++GRIT_numi *((IT_pex*GRIT_rer)/GRIT_gammaimidag)^(1-GR_mumi)
++GRNL_numi *((NL_pex*GRNL_rer)/GRNL_gammaimidag)^(1-GR_mumi)
++GRPT_numi *((PT_pex*GRPT_rer)/GRPT_gammaimidag)^(1-GR_mumi)
++GRDE_numi *((DE_pex*GRDE_rer)/GRDE_gammaimidag)^(1-GR_mumi)
++GRRU_numi *((RU_pex*GRRU_rer)/GRRU_gammaimidag)^(1-GR_mumi)
++GRRW_numi *((RW_pex*GRRW_rer)/GRRW_gammaimidag)^(1-GR_mumi)
++GRUS_numi *((US_pex*GRUS_rer)/GRUS_gammaimidag)^(1-GR_mumi)
 +(1
 -GRRA_numi
 -GRAT_numi
@@ -36573,23 +36798,23 @@ GR_pimi^(1-GR_mumi) =
 -GRRU_numi
 -GRRW_numi
 -GRUS_numi
-)*(FI_pex*GRFI_rer)^(1-GR_mumi);
+)*((FI_pex*GRFI_rer)/GRFI_gammaimidag)^(1-GR_mumi);
 // Private consumption good (import) inflation
 GR_piimi = GR_pimi/GR_pimi(-1)*GR_pic;
 // Private consumption good (import)
 GR_imcg^((GR_mumcg-1)/GR_mumcg) =
-+GRRA_numcg ^(1/GR_mumcg)*GRRA_imcg^(1-1/GR_mumcg)
-+GRAT_numcg ^(1/GR_mumcg)*GRAT_imcg^(1-1/GR_mumcg)
-+GRBE_numcg ^(1/GR_mumcg)*GRBE_imcg^(1-1/GR_mumcg)
-+GRES_numcg ^(1/GR_mumcg)*GRES_imcg^(1-1/GR_mumcg)
-+GRFR_numcg ^(1/GR_mumcg)*GRFR_imcg^(1-1/GR_mumcg)
-+GRIT_numcg ^(1/GR_mumcg)*GRIT_imcg^(1-1/GR_mumcg)
-+GRNL_numcg ^(1/GR_mumcg)*GRNL_imcg^(1-1/GR_mumcg)
-+GRPT_numcg ^(1/GR_mumcg)*GRPT_imcg^(1-1/GR_mumcg)
-+GRDE_numcg ^(1/GR_mumcg)*GRDE_imcg^(1-1/GR_mumcg)
-+GRRU_numcg ^(1/GR_mumcg)*GRRU_imcg^(1-1/GR_mumcg)
-+GRRW_numcg ^(1/GR_mumcg)*GRRW_imcg^(1-1/GR_mumcg)
-+GRUS_numcg ^(1/GR_mumcg)*GRUS_imcg^(1-1/GR_mumcg)
++GRRA_numcg ^(1/GR_mumcg)*((1-GRRA_gammaimcg)*GRRA_imcg)^(1-1/GR_mumcg)
++GRAT_numcg ^(1/GR_mumcg)*((1-GRAT_gammaimcg)*GRAT_imcg)^(1-1/GR_mumcg)
++GRBE_numcg ^(1/GR_mumcg)*((1-GRBE_gammaimcg)*GRBE_imcg)^(1-1/GR_mumcg)
++GRES_numcg ^(1/GR_mumcg)*((1-GRES_gammaimcg)*GRES_imcg)^(1-1/GR_mumcg)
++GRFR_numcg ^(1/GR_mumcg)*((1-GRFR_gammaimcg)*GRFR_imcg)^(1-1/GR_mumcg)
++GRIT_numcg ^(1/GR_mumcg)*((1-GRIT_gammaimcg)*GRIT_imcg)^(1-1/GR_mumcg)
++GRNL_numcg ^(1/GR_mumcg)*((1-GRNL_gammaimcg)*GRNL_imcg)^(1-1/GR_mumcg)
++GRPT_numcg ^(1/GR_mumcg)*((1-GRPT_gammaimcg)*GRPT_imcg)^(1-1/GR_mumcg)
++GRDE_numcg ^(1/GR_mumcg)*((1-GRDE_gammaimcg)*GRDE_imcg)^(1-1/GR_mumcg)
++GRRU_numcg ^(1/GR_mumcg)*((1-GRRU_gammaimcg)*GRRU_imcg)^(1-1/GR_mumcg)
++GRRW_numcg ^(1/GR_mumcg)*((1-GRRW_gammaimcg)*GRRW_imcg)^(1-1/GR_mumcg)
++GRUS_numcg ^(1/GR_mumcg)*((1-GRUS_gammaimcg)*GRUS_imcg)^(1-1/GR_mumcg)
 +(1
 -GRRA_numcg
 -GRAT_numcg
@@ -36603,29 +36828,29 @@ GR_imcg^((GR_mumcg-1)/GR_mumcg) =
 -GRRU_numcg
 -GRRW_numcg
 -GRUS_numcg
-)^(1/GR_mumcg)*GRFI_imcg^(1-1/GR_mumcg);
+)^(1/GR_mumcg)*((1-GRFI_gammaimcg)*GRFI_imcg)^(1-1/GR_mumcg);
 // Demand for bilateral consumption import goods
-GRRA_imcg = GRRA_numcg*((RA_pex*GRRA_rer)/GR_pimcg)^(-GR_mumcg)*GR_imcg;
+GRRA_imcg = GRRA_numcg*((RA_pex*GRRA_rer)/(GRRA_gammaimcgdag*GR_pimcg))^(-GR_mumcg)*GR_imcg/(1-GRRA_gammaimcg);
 // Demand for bilateral consumption import goods
-GRAT_imcg = GRAT_numcg*((AT_pex*GRAT_rer)/GR_pimcg)^(-GR_mumcg)*GR_imcg;
+GRAT_imcg = GRAT_numcg*((AT_pex*GRAT_rer)/(GRAT_gammaimcgdag*GR_pimcg))^(-GR_mumcg)*GR_imcg/(1-GRAT_gammaimcg);
 // Demand for bilateral consumption import goods
-GRBE_imcg = GRBE_numcg*((BE_pex*GRBE_rer)/GR_pimcg)^(-GR_mumcg)*GR_imcg;
+GRBE_imcg = GRBE_numcg*((BE_pex*GRBE_rer)/(GRBE_gammaimcgdag*GR_pimcg))^(-GR_mumcg)*GR_imcg/(1-GRBE_gammaimcg);
 // Demand for bilateral consumption import goods
-GRES_imcg = GRES_numcg*((ES_pex*GRES_rer)/GR_pimcg)^(-GR_mumcg)*GR_imcg;
+GRES_imcg = GRES_numcg*((ES_pex*GRES_rer)/(GRES_gammaimcgdag*GR_pimcg))^(-GR_mumcg)*GR_imcg/(1-GRES_gammaimcg);
 // Demand for bilateral consumption import goods
-GRFR_imcg = GRFR_numcg*((FR_pex*GRFR_rer)/GR_pimcg)^(-GR_mumcg)*GR_imcg;
+GRFR_imcg = GRFR_numcg*((FR_pex*GRFR_rer)/(GRFR_gammaimcgdag*GR_pimcg))^(-GR_mumcg)*GR_imcg/(1-GRFR_gammaimcg);
 // Demand for bilateral consumption import goods
-GRNL_imcg = GRNL_numcg*((NL_pex*GRNL_rer)/GR_pimcg)^(-GR_mumcg)*GR_imcg;
+GRNL_imcg = GRNL_numcg*((NL_pex*GRNL_rer)/(GRNL_gammaimcgdag*GR_pimcg))^(-GR_mumcg)*GR_imcg/(1-GRNL_gammaimcg);
 // Demand for bilateral consumption import goods
-GRPT_imcg = GRPT_numcg*((PT_pex*GRPT_rer)/GR_pimcg)^(-GR_mumcg)*GR_imcg;
+GRPT_imcg = GRPT_numcg*((PT_pex*GRPT_rer)/(GRPT_gammaimcgdag*GR_pimcg))^(-GR_mumcg)*GR_imcg/(1-GRPT_gammaimcg);
 // Demand for bilateral consumption import goods
-GRDE_imcg = GRDE_numcg*((DE_pex*GRDE_rer)/GR_pimcg)^(-GR_mumcg)*GR_imcg;
+GRDE_imcg = GRDE_numcg*((DE_pex*GRDE_rer)/(GRDE_gammaimcgdag*GR_pimcg))^(-GR_mumcg)*GR_imcg/(1-GRDE_gammaimcg);
 // Demand for bilateral consumption import goods
-GRRU_imcg = GRRU_numcg*((RU_pex*GRRU_rer)/GR_pimcg)^(-GR_mumcg)*GR_imcg;
+GRRU_imcg = GRRU_numcg*((RU_pex*GRRU_rer)/(GRRU_gammaimcgdag*GR_pimcg))^(-GR_mumcg)*GR_imcg/(1-GRRU_gammaimcg);
 // Demand for bilateral consumption import goods
-GRRW_imcg = GRRW_numcg*((RW_pex*GRRW_rer)/GR_pimcg)^(-GR_mumcg)*GR_imcg;
+GRRW_imcg = GRRW_numcg*((RW_pex*GRRW_rer)/(GRRW_gammaimcgdag*GR_pimcg))^(-GR_mumcg)*GR_imcg/(1-GRRW_gammaimcg);
 // Demand for bilateral consumption import goods
-GRUS_imcg = GRUS_numcg*((US_pex*GRUS_rer)/GR_pimcg)^(-GR_mumcg)*GR_imcg;
+GRUS_imcg = GRUS_numcg*((US_pex*GRUS_rer)/(GRUS_gammaimcgdag*GR_pimcg))^(-GR_mumcg)*GR_imcg/(1-GRUS_gammaimcg);
 GRFI_imcg = (1
 -GRRA_numcg
 -GRAT_numcg
@@ -36639,21 +36864,21 @@ GRFI_imcg = (1
 -GRRU_numcg
 -GRRW_numcg
 -GRUS_numcg
-)*((FI_pex*GRFI_rer)/GR_pimcg)^(-GR_mumcg)*GR_imcg;
+)*((FI_pex*GRFI_rer)/(GRFI_gammaimcgdag*GR_pimcg))^(-GR_mumcg)*GR_imcg/(1-GRFI_gammaimcg);
 // Price of the consumption good (import)
 GR_pimcg^(1-GR_mumcg) =
-+GRRA_numcg * (RA_pex*GRRA_rer)^(1-GR_mumcg)
-+GRAT_numcg * (AT_pex*GRAT_rer)^(1-GR_mumcg)
-+GRBE_numcg * (BE_pex*GRBE_rer)^(1-GR_mumcg)
-+GRES_numcg * (ES_pex*GRES_rer)^(1-GR_mumcg)
-+GRFR_numcg * (FR_pex*GRFR_rer)^(1-GR_mumcg)
-+GRIT_numcg * (IT_pex*GRIT_rer)^(1-GR_mumcg)
-+GRNL_numcg * (NL_pex*GRNL_rer)^(1-GR_mumcg)
-+GRPT_numcg * (PT_pex*GRPT_rer)^(1-GR_mumcg)
-+GRDE_numcg * (DE_pex*GRDE_rer)^(1-GR_mumcg)
-+GRRU_numcg * (RU_pex*GRRU_rer)^(1-GR_mumcg)
-+GRRW_numcg * (RW_pex*GRRW_rer)^(1-GR_mumcg)
-+GRUS_numcg * (US_pex*GRUS_rer)^(1-GR_mumcg)
++GRRA_numcg *((RA_pex*GRRA_rer)/GRRA_gammaimcgdag)^(1-GR_mumcg)
++GRAT_numcg *((AT_pex*GRAT_rer)/GRAT_gammaimcgdag)^(1-GR_mumcg)
++GRBE_numcg *((BE_pex*GRBE_rer)/GRBE_gammaimcgdag)^(1-GR_mumcg)
++GRES_numcg *((ES_pex*GRES_rer)/GRES_gammaimcgdag)^(1-GR_mumcg)
++GRFR_numcg *((FR_pex*GRFR_rer)/GRFR_gammaimcgdag)^(1-GR_mumcg)
++GRIT_numcg *((IT_pex*GRIT_rer)/GRIT_gammaimcgdag)^(1-GR_mumcg)
++GRNL_numcg *((NL_pex*GRNL_rer)/GRNL_gammaimcgdag)^(1-GR_mumcg)
++GRPT_numcg *((PT_pex*GRPT_rer)/GRPT_gammaimcgdag)^(1-GR_mumcg)
++GRDE_numcg *((DE_pex*GRDE_rer)/GRDE_gammaimcgdag)^(1-GR_mumcg)
++GRRU_numcg *((RU_pex*GRRU_rer)/GRRU_gammaimcgdag)^(1-GR_mumcg)
++GRRW_numcg *((RW_pex*GRRW_rer)/GRRW_gammaimcgdag)^(1-GR_mumcg)
++GRUS_numcg *((US_pex*GRUS_rer)/GRUS_gammaimcgdag)^(1-GR_mumcg)
 +(1
 -GRRA_numcg
 -GRAT_numcg
@@ -36667,23 +36892,23 @@ GR_pimcg^(1-GR_mumcg) =
 -GRRU_numcg
 -GRRW_numcg
 -GRUS_numcg
-)*(FI_pex*GRFI_rer)^(1-GR_mumcg);
+)*((FI_pex*GRFI_rer)/GRFI_gammaimcgdag)^(1-GR_mumcg);
 // Private consumption good (import) inflation
 GR_piimcg = GR_pimcg/GR_pimcg(-1)*GR_pic;
 // Private consumption good (import)
 GR_imig^((GR_mumig-1)/GR_mumig) =
-+GRRA_numig ^(1/GR_mumig)*GRRA_imig^(1-1/GR_mumig)
-+GRAT_numig ^(1/GR_mumig)*GRAT_imig^(1-1/GR_mumig)
-+GRBE_numig ^(1/GR_mumig)*GRBE_imig^(1-1/GR_mumig)
-+GRES_numig ^(1/GR_mumig)*GRES_imig^(1-1/GR_mumig)
-+GRFR_numig ^(1/GR_mumig)*GRFR_imig^(1-1/GR_mumig)
-+GRIT_numig ^(1/GR_mumig)*GRIT_imig^(1-1/GR_mumig)
-+GRNL_numig ^(1/GR_mumig)*GRNL_imig^(1-1/GR_mumig)
-+GRPT_numig ^(1/GR_mumig)*GRPT_imig^(1-1/GR_mumig)
-+GRDE_numig ^(1/GR_mumig)*GRDE_imig^(1-1/GR_mumig)
-+GRRU_numig ^(1/GR_mumig)*GRRU_imig^(1-1/GR_mumig)
-+GRRW_numig ^(1/GR_mumig)*GRRW_imig^(1-1/GR_mumig)
-+GRUS_numig ^(1/GR_mumig)*GRUS_imig^(1-1/GR_mumig)
++GRRA_numig ^(1/GR_mumig)*((1-GRRA_gammaimig)*GRRA_imig)^(1-1/GR_mumig)
++GRAT_numig ^(1/GR_mumig)*((1-GRAT_gammaimig)*GRAT_imig)^(1-1/GR_mumig)
++GRBE_numig ^(1/GR_mumig)*((1-GRBE_gammaimig)*GRBE_imig)^(1-1/GR_mumig)
++GRES_numig ^(1/GR_mumig)*((1-GRES_gammaimig)*GRES_imig)^(1-1/GR_mumig)
++GRFR_numig ^(1/GR_mumig)*((1-GRFR_gammaimig)*GRFR_imig)^(1-1/GR_mumig)
++GRIT_numig ^(1/GR_mumig)*((1-GRIT_gammaimig)*GRIT_imig)^(1-1/GR_mumig)
++GRNL_numig ^(1/GR_mumig)*((1-GRNL_gammaimig)*GRNL_imig)^(1-1/GR_mumig)
++GRPT_numig ^(1/GR_mumig)*((1-GRPT_gammaimig)*GRPT_imig)^(1-1/GR_mumig)
++GRDE_numig ^(1/GR_mumig)*((1-GRDE_gammaimig)*GRDE_imig)^(1-1/GR_mumig)
++GRRU_numig ^(1/GR_mumig)*((1-GRRU_gammaimig)*GRRU_imig)^(1-1/GR_mumig)
++GRRW_numig ^(1/GR_mumig)*((1-GRRW_gammaimig)*GRRW_imig)^(1-1/GR_mumig)
++GRUS_numig ^(1/GR_mumig)*((1-GRUS_gammaimig)*GRUS_imig)^(1-1/GR_mumig)
 +(1
 -GRRA_numig
 -GRAT_numig
@@ -36697,29 +36922,29 @@ GR_imig^((GR_mumig-1)/GR_mumig) =
 -GRRU_numig
 -GRRW_numig
 -GRUS_numig
-)^(1/GR_mumig)*GRFI_imig^(1-1/GR_mumig);
+)^(1/GR_mumig)*((1-GRFI_gammaimig)*GRFI_imig)^(1-1/GR_mumig);
 // Demand for bilateral consumption import goods
-GRRA_imig = GRRA_numig*((RA_pex*GRRA_rer)/GR_pimig)^(-GR_mumig)*GR_imig;
+GRRA_imig = GRRA_numig*((RA_pex*GRRA_rer)/(GRRA_gammaimigdag*GR_pimig))^(-GR_mumig)*GR_imig/(1-GRRA_gammaimig);
 // Demand for bilateral consumption import goods
-GRAT_imig = GRAT_numig*((AT_pex*GRAT_rer)/GR_pimig)^(-GR_mumig)*GR_imig;
+GRAT_imig = GRAT_numig*((AT_pex*GRAT_rer)/(GRAT_gammaimigdag*GR_pimig))^(-GR_mumig)*GR_imig/(1-GRAT_gammaimig);
 // Demand for bilateral consumption import goods
-GRBE_imig = GRBE_numig*((BE_pex*GRBE_rer)/GR_pimig)^(-GR_mumig)*GR_imig;
+GRBE_imig = GRBE_numig*((BE_pex*GRBE_rer)/(GRBE_gammaimigdag*GR_pimig))^(-GR_mumig)*GR_imig/(1-GRBE_gammaimig);
 // Demand for bilateral consumption import goods
-GRES_imig = GRES_numig*((ES_pex*GRES_rer)/GR_pimig)^(-GR_mumig)*GR_imig;
+GRES_imig = GRES_numig*((ES_pex*GRES_rer)/(GRES_gammaimigdag*GR_pimig))^(-GR_mumig)*GR_imig/(1-GRES_gammaimig);
 // Demand for bilateral consumption import goods
-GRFR_imig = GRFR_numig*((FR_pex*GRFR_rer)/GR_pimig)^(-GR_mumig)*GR_imig;
+GRFR_imig = GRFR_numig*((FR_pex*GRFR_rer)/(GRFR_gammaimigdag*GR_pimig))^(-GR_mumig)*GR_imig/(1-GRFR_gammaimig);
 // Demand for bilateral consumption import goods
-GRNL_imig = GRNL_numig*((NL_pex*GRNL_rer)/GR_pimig)^(-GR_mumig)*GR_imig;
+GRNL_imig = GRNL_numig*((NL_pex*GRNL_rer)/(GRNL_gammaimigdag*GR_pimig))^(-GR_mumig)*GR_imig/(1-GRNL_gammaimig);
 // Demand for bilateral consumption import goods
-GRPT_imig = GRPT_numig*((PT_pex*GRPT_rer)/GR_pimig)^(-GR_mumig)*GR_imig;
+GRPT_imig = GRPT_numig*((PT_pex*GRPT_rer)/(GRPT_gammaimigdag*GR_pimig))^(-GR_mumig)*GR_imig/(1-GRPT_gammaimig);
 // Demand for bilateral consumption import goods
-GRDE_imig = GRDE_numig*((DE_pex*GRDE_rer)/GR_pimig)^(-GR_mumig)*GR_imig;
+GRDE_imig = GRDE_numig*((DE_pex*GRDE_rer)/(GRDE_gammaimigdag*GR_pimig))^(-GR_mumig)*GR_imig/(1-GRDE_gammaimig);
 // Demand for bilateral consumption import goods
-GRRU_imig = GRRU_numig*((RU_pex*GRRU_rer)/GR_pimig)^(-GR_mumig)*GR_imig;
+GRRU_imig = GRRU_numig*((RU_pex*GRRU_rer)/(GRRU_gammaimigdag*GR_pimig))^(-GR_mumig)*GR_imig/(1-GRRU_gammaimig);
 // Demand for bilateral consumption import goods
-GRRW_imig = GRRW_numig*((RW_pex*GRRW_rer)/GR_pimig)^(-GR_mumig)*GR_imig;
+GRRW_imig = GRRW_numig*((RW_pex*GRRW_rer)/(GRRW_gammaimigdag*GR_pimig))^(-GR_mumig)*GR_imig/(1-GRRW_gammaimig);
 // Demand for bilateral consumption import goods
-GRUS_imig = GRUS_numig*((US_pex*GRUS_rer)/GR_pimig)^(-GR_mumig)*GR_imig;
+GRUS_imig = GRUS_numig*((US_pex*GRUS_rer)/(GRUS_gammaimigdag*GR_pimig))^(-GR_mumig)*GR_imig/(1-GRUS_gammaimig);
 GRFI_imig = (1
 -GRRA_numig
 -GRAT_numig
@@ -36733,21 +36958,21 @@ GRFI_imig = (1
 -GRRU_numig
 -GRRW_numig
 -GRUS_numig
-)*((FI_pex*GRFI_rer)/GR_pimig)^(-GR_mumig)*GR_imig;
+)*((FI_pex*GRFI_rer)/(GRFI_gammaimigdag*GR_pimig))^(-GR_mumig)*GR_imig/(1-GRFI_gammaimig);
 // Price of the consumption good (import)
 GR_pimig^(1-GR_mumig) =
-+GRRA_numig * (RA_pex*GRRA_rer)^(1-GR_mumig)
-+GRAT_numig * (AT_pex*GRAT_rer)^(1-GR_mumig)
-+GRBE_numig * (BE_pex*GRBE_rer)^(1-GR_mumig)
-+GRES_numig * (ES_pex*GRES_rer)^(1-GR_mumig)
-+GRFR_numig * (FR_pex*GRFR_rer)^(1-GR_mumig)
-+GRIT_numig * (IT_pex*GRIT_rer)^(1-GR_mumig)
-+GRNL_numig * (NL_pex*GRNL_rer)^(1-GR_mumig)
-+GRPT_numig * (PT_pex*GRPT_rer)^(1-GR_mumig)
-+GRDE_numig * (DE_pex*GRDE_rer)^(1-GR_mumig)
-+GRRU_numig * (RU_pex*GRRU_rer)^(1-GR_mumig)
-+GRRW_numig * (RW_pex*GRRW_rer)^(1-GR_mumig)
-+GRUS_numig * (US_pex*GRUS_rer)^(1-GR_mumig)
++GRRA_numig *((RA_pex*GRRA_rer)/GRRA_gammaimigdag)^(1-GR_mumig)
++GRAT_numig *((AT_pex*GRAT_rer)/GRAT_gammaimigdag)^(1-GR_mumig)
++GRBE_numig *((BE_pex*GRBE_rer)/GRBE_gammaimigdag)^(1-GR_mumig)
++GRES_numig *((ES_pex*GRES_rer)/GRES_gammaimigdag)^(1-GR_mumig)
++GRFR_numig *((FR_pex*GRFR_rer)/GRFR_gammaimigdag)^(1-GR_mumig)
++GRIT_numig *((IT_pex*GRIT_rer)/GRIT_gammaimigdag)^(1-GR_mumig)
++GRNL_numig *((NL_pex*GRNL_rer)/GRNL_gammaimigdag)^(1-GR_mumig)
++GRPT_numig *((PT_pex*GRPT_rer)/GRPT_gammaimigdag)^(1-GR_mumig)
++GRDE_numig *((DE_pex*GRDE_rer)/GRDE_gammaimigdag)^(1-GR_mumig)
++GRRU_numig *((RU_pex*GRRU_rer)/GRRU_gammaimigdag)^(1-GR_mumig)
++GRRW_numig *((RW_pex*GRRW_rer)/GRRW_gammaimigdag)^(1-GR_mumig)
++GRUS_numig *((US_pex*GRUS_rer)/GRUS_gammaimigdag)^(1-GR_mumig)
 +(1
 -GRRA_numig
 -GRAT_numig
@@ -36761,7 +36986,7 @@ GR_pimig^(1-GR_mumig) =
 -GRRU_numig
 -GRRW_numig
 -GRUS_numig
-)*(FI_pex*GRFI_rer)^(1-GR_mumig);
+)*((FI_pex*GRFI_rer)/GRFI_gammaimigdag)^(1-GR_mumig);
 // Private consumption good (import) inflation
 GR_piimig = GR_pimig/GR_pimig(-1)*GR_pic;
 // Private consumption good (import) inflation
@@ -36862,32 +37087,58 @@ GR_pttc^(1-GR_mutc) = (GR_nutc)*GR_pht^(1-GR_mutc)+(1-GR_nutc)*GR_pimc^(1-GR_mut
 1^(1-GR_muc) = (GR_nuc)*GR_pttc^(1-GR_muc)+(1-GR_nuc)*GR_pnt^(1-GR_muc);
 // Demand for domestic intermediate goods
 GR_htc = GR_nutc*(GR_pht/GR_pttc)^(-GR_mutc)*GR_ttc;
-GRRA_gammaimc = 0;
-GRRA_gammaimcdag = 1;
-GRAT_gammaimc = 0;
-GRAT_gammaimcdag = 1;
-GRBE_gammaimc = 0;
-GRBE_gammaimcdag = 1;
-GRES_gammaimc = 0;
-GRES_gammaimcdag = 1;
-GRFI_gammaimc = 0;
-GRFI_gammaimcdag = 1;
-GRFR_gammaimc = 0;
-GRFR_gammaimcdag = 1;
-GRIT_gammaimc = 0;
-GRIT_gammaimcdag = 1;
-GRNL_gammaimc = 0;
-GRNL_gammaimcdag = 1;
-GRPT_gammaimc = 0;
-GRPT_gammaimcdag = 1;
-GRDE_gammaimc = 0;
-GRDE_gammaimcdag = 1;
-GRRU_gammaimc = 0;
-GRRU_gammaimcdag = 1;
-GRRW_gammaimc = 0;
-GRRW_gammaimcdag = 1;
-GRUS_gammaimc = 0;
-GRUS_gammaimcdag = 1;
+// Import adjustment cost
+GRRA_gammaimc = GR_gammaimc1/2*((GRRA_imc/GR_qc)/(GRRA_imc(-1)/GR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRRA_gammaimcdag = 1-GRRA_gammaimc-GR_gammaimc1*((GRRA_imc/GR_qc)/(GRRA_imc(-1)/GR_qc(-1))-1)*(GRRA_imc/GR_qc)/(GRRA_imc(-1)/GR_qc(-1));
+// Import adjustment cost
+GRAT_gammaimc = GR_gammaimc1/2*((GRAT_imc/GR_qc)/(GRAT_imc(-1)/GR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRAT_gammaimcdag = 1-GRAT_gammaimc-GR_gammaimc1*((GRAT_imc/GR_qc)/(GRAT_imc(-1)/GR_qc(-1))-1)*(GRAT_imc/GR_qc)/(GRAT_imc(-1)/GR_qc(-1));
+// Import adjustment cost
+GRBE_gammaimc = GR_gammaimc1/2*((GRBE_imc/GR_qc)/(GRBE_imc(-1)/GR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRBE_gammaimcdag = 1-GRBE_gammaimc-GR_gammaimc1*((GRBE_imc/GR_qc)/(GRBE_imc(-1)/GR_qc(-1))-1)*(GRBE_imc/GR_qc)/(GRBE_imc(-1)/GR_qc(-1));
+// Import adjustment cost
+GRES_gammaimc = GR_gammaimc1/2*((GRES_imc/GR_qc)/(GRES_imc(-1)/GR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRES_gammaimcdag = 1-GRES_gammaimc-GR_gammaimc1*((GRES_imc/GR_qc)/(GRES_imc(-1)/GR_qc(-1))-1)*(GRES_imc/GR_qc)/(GRES_imc(-1)/GR_qc(-1));
+// Import adjustment cost
+GRFI_gammaimc = GR_gammaimc1/2*((GRFI_imc/GR_qc)/(GRFI_imc(-1)/GR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRFI_gammaimcdag = 1-GRFI_gammaimc-GR_gammaimc1*((GRFI_imc/GR_qc)/(GRFI_imc(-1)/GR_qc(-1))-1)*(GRFI_imc/GR_qc)/(GRFI_imc(-1)/GR_qc(-1));
+// Import adjustment cost
+GRFR_gammaimc = GR_gammaimc1/2*((GRFR_imc/GR_qc)/(GRFR_imc(-1)/GR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRFR_gammaimcdag = 1-GRFR_gammaimc-GR_gammaimc1*((GRFR_imc/GR_qc)/(GRFR_imc(-1)/GR_qc(-1))-1)*(GRFR_imc/GR_qc)/(GRFR_imc(-1)/GR_qc(-1));
+// Import adjustment cost
+GRIT_gammaimc = GR_gammaimc1/2*((GRIT_imc/GR_qc)/(GRIT_imc(-1)/GR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRIT_gammaimcdag = 1-GRIT_gammaimc-GR_gammaimc1*((GRIT_imc/GR_qc)/(GRIT_imc(-1)/GR_qc(-1))-1)*(GRIT_imc/GR_qc)/(GRIT_imc(-1)/GR_qc(-1));
+// Import adjustment cost
+GRNL_gammaimc = GR_gammaimc1/2*((GRNL_imc/GR_qc)/(GRNL_imc(-1)/GR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRNL_gammaimcdag = 1-GRNL_gammaimc-GR_gammaimc1*((GRNL_imc/GR_qc)/(GRNL_imc(-1)/GR_qc(-1))-1)*(GRNL_imc/GR_qc)/(GRNL_imc(-1)/GR_qc(-1));
+// Import adjustment cost
+GRPT_gammaimc = GR_gammaimc1/2*((GRPT_imc/GR_qc)/(GRPT_imc(-1)/GR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRPT_gammaimcdag = 1-GRPT_gammaimc-GR_gammaimc1*((GRPT_imc/GR_qc)/(GRPT_imc(-1)/GR_qc(-1))-1)*(GRPT_imc/GR_qc)/(GRPT_imc(-1)/GR_qc(-1));
+// Import adjustment cost
+GRDE_gammaimc = GR_gammaimc1/2*((GRDE_imc/GR_qc)/(GRDE_imc(-1)/GR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRDE_gammaimcdag = 1-GRDE_gammaimc-GR_gammaimc1*((GRDE_imc/GR_qc)/(GRDE_imc(-1)/GR_qc(-1))-1)*(GRDE_imc/GR_qc)/(GRDE_imc(-1)/GR_qc(-1));
+// Import adjustment cost
+GRRU_gammaimc = GR_gammaimc1/2*((GRRU_imc/GR_qc)/(GRRU_imc(-1)/GR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRRU_gammaimcdag = 1-GRRU_gammaimc-GR_gammaimc1*((GRRU_imc/GR_qc)/(GRRU_imc(-1)/GR_qc(-1))-1)*(GRRU_imc/GR_qc)/(GRRU_imc(-1)/GR_qc(-1));
+// Import adjustment cost
+GRRW_gammaimc = GR_gammaimc1/2*((GRRW_imc/GR_qc)/(GRRW_imc(-1)/GR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRRW_gammaimcdag = 1-GRRW_gammaimc-GR_gammaimc1*((GRRW_imc/GR_qc)/(GRRW_imc(-1)/GR_qc(-1))-1)*(GRRW_imc/GR_qc)/(GRRW_imc(-1)/GR_qc(-1));
+// Import adjustment cost
+GRUS_gammaimc = GR_gammaimc1/2*((GRUS_imc/GR_qc)/(GRUS_imc(-1)/GR_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRUS_gammaimcdag = 1-GRUS_gammaimc-GR_gammaimc1*((GRUS_imc/GR_qc)/(GRUS_imc(-1)/GR_qc(-1))-1)*(GRUS_imc/GR_qc)/(GRUS_imc(-1)/GR_qc(-1));
 // Private consumption good (tradable)
 GR_tti^((GR_muti-1)/GR_muti) = (GR_nuti)^(1/GR_muti)*GR_hti^(1-1/GR_muti)+(1-GR_nuti)^(1/GR_muti)*GR_imi^(1-1/GR_muti);
 // Private consumption good  (total)
@@ -36900,35 +37151,60 @@ GR_ptti^(1-GR_muti) = (GR_nuti)*GR_pht^(1-GR_muti)+(1-GR_nuti)*GR_pimi^(1-GR_mut
 GR_pi^(1-GR_mui) = (GR_nui)*GR_ptti^(1-GR_mui)+(1-GR_nui)*GR_pnt^(1-GR_mui);
 // Auxiliary equation for the price of the investment good in steady state
 // this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
-GR_pibar = GR_pi;
 // Demand for domestic intermediate goods
 GR_hti = GR_nuti*(GR_pht/GR_ptti)^(-GR_muti)*GR_tti;
-GRRA_gammaimi = 0;
-GRRA_gammaimidag = 1;
-GRAT_gammaimi = 0;
-GRAT_gammaimidag = 1;
-GRBE_gammaimi = 0;
-GRBE_gammaimidag = 1;
-GRES_gammaimi = 0;
-GRES_gammaimidag = 1;
-GRFI_gammaimi = 0;
-GRFI_gammaimidag = 1;
-GRFR_gammaimi = 0;
-GRFR_gammaimidag = 1;
-GRIT_gammaimi = 0;
-GRIT_gammaimidag = 1;
-GRNL_gammaimi = 0;
-GRNL_gammaimidag = 1;
-GRPT_gammaimi = 0;
-GRPT_gammaimidag = 1;
-GRDE_gammaimi = 0;
-GRDE_gammaimidag = 1;
-GRRU_gammaimi = 0;
-GRRU_gammaimidag = 1;
-GRRW_gammaimi = 0;
-GRRW_gammaimidag = 1;
-GRUS_gammaimi = 0;
-GRUS_gammaimidag = 1;
+// Import adjustment cost
+GRRA_gammaimi = GR_gammaimi1/2*((GRRA_imi/GR_qi)/(GRRA_imi(-1)/GR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRRA_gammaimidag = 1-GRRA_gammaimi-GR_gammaimi1*((GRRA_imi/GR_qi)/(GRRA_imi(-1)/GR_qi)-1)*((GRRA_imi/GR_qi)/(GRRA_imi(-1)/GR_qi(-1)));
+// Import adjustment cost
+GRAT_gammaimi = GR_gammaimi1/2*((GRAT_imi/GR_qi)/(GRAT_imi(-1)/GR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRAT_gammaimidag = 1-GRAT_gammaimi-GR_gammaimi1*((GRAT_imi/GR_qi)/(GRAT_imi(-1)/GR_qi)-1)*((GRAT_imi/GR_qi)/(GRAT_imi(-1)/GR_qi(-1)));
+// Import adjustment cost
+GRBE_gammaimi = GR_gammaimi1/2*((GRBE_imi/GR_qi)/(GRBE_imi(-1)/GR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRBE_gammaimidag = 1-GRBE_gammaimi-GR_gammaimi1*((GRBE_imi/GR_qi)/(GRBE_imi(-1)/GR_qi)-1)*((GRBE_imi/GR_qi)/(GRBE_imi(-1)/GR_qi(-1)));
+// Import adjustment cost
+GRES_gammaimi = GR_gammaimi1/2*((GRES_imi/GR_qi)/(GRES_imi(-1)/GR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRES_gammaimidag = 1-GRES_gammaimi-GR_gammaimi1*((GRES_imi/GR_qi)/(GRES_imi(-1)/GR_qi)-1)*((GRES_imi/GR_qi)/(GRES_imi(-1)/GR_qi(-1)));
+// Import adjustment cost
+GRFI_gammaimi = GR_gammaimi1/2*((GRFI_imi/GR_qi)/(GRFI_imi(-1)/GR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRFI_gammaimidag = 1-GRFI_gammaimi-GR_gammaimi1*((GRFI_imi/GR_qi)/(GRFI_imi(-1)/GR_qi)-1)*((GRFI_imi/GR_qi)/(GRFI_imi(-1)/GR_qi(-1)));
+// Import adjustment cost
+GRFR_gammaimi = GR_gammaimi1/2*((GRFR_imi/GR_qi)/(GRFR_imi(-1)/GR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRFR_gammaimidag = 1-GRFR_gammaimi-GR_gammaimi1*((GRFR_imi/GR_qi)/(GRFR_imi(-1)/GR_qi)-1)*((GRFR_imi/GR_qi)/(GRFR_imi(-1)/GR_qi(-1)));
+// Import adjustment cost
+GRIT_gammaimi = GR_gammaimi1/2*((GRIT_imi/GR_qi)/(GRIT_imi(-1)/GR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRIT_gammaimidag = 1-GRIT_gammaimi-GR_gammaimi1*((GRIT_imi/GR_qi)/(GRIT_imi(-1)/GR_qi)-1)*((GRIT_imi/GR_qi)/(GRIT_imi(-1)/GR_qi(-1)));
+// Import adjustment cost
+GRNL_gammaimi = GR_gammaimi1/2*((GRNL_imi/GR_qi)/(GRNL_imi(-1)/GR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRNL_gammaimidag = 1-GRNL_gammaimi-GR_gammaimi1*((GRNL_imi/GR_qi)/(GRNL_imi(-1)/GR_qi)-1)*((GRNL_imi/GR_qi)/(GRNL_imi(-1)/GR_qi(-1)));
+// Import adjustment cost
+GRPT_gammaimi = GR_gammaimi1/2*((GRPT_imi/GR_qi)/(GRPT_imi(-1)/GR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRPT_gammaimidag = 1-GRPT_gammaimi-GR_gammaimi1*((GRPT_imi/GR_qi)/(GRPT_imi(-1)/GR_qi)-1)*((GRPT_imi/GR_qi)/(GRPT_imi(-1)/GR_qi(-1)));
+// Import adjustment cost
+GRDE_gammaimi = GR_gammaimi1/2*((GRDE_imi/GR_qi)/(GRDE_imi(-1)/GR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRDE_gammaimidag = 1-GRDE_gammaimi-GR_gammaimi1*((GRDE_imi/GR_qi)/(GRDE_imi(-1)/GR_qi)-1)*((GRDE_imi/GR_qi)/(GRDE_imi(-1)/GR_qi(-1)));
+// Import adjustment cost
+GRRU_gammaimi = GR_gammaimi1/2*((GRRU_imi/GR_qi)/(GRRU_imi(-1)/GR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRRU_gammaimidag = 1-GRRU_gammaimi-GR_gammaimi1*((GRRU_imi/GR_qi)/(GRRU_imi(-1)/GR_qi)-1)*((GRRU_imi/GR_qi)/(GRRU_imi(-1)/GR_qi(-1)));
+// Import adjustment cost
+GRRW_gammaimi = GR_gammaimi1/2*((GRRW_imi/GR_qi)/(GRRW_imi(-1)/GR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRRW_gammaimidag = 1-GRRW_gammaimi-GR_gammaimi1*((GRRW_imi/GR_qi)/(GRRW_imi(-1)/GR_qi)-1)*((GRRW_imi/GR_qi)/(GRRW_imi(-1)/GR_qi(-1)));
+// Import adjustment cost
+GRUS_gammaimi = GR_gammaimi1/2*((GRUS_imi/GR_qi)/(GRUS_imi(-1)/GR_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRUS_gammaimidag = 1-GRUS_gammaimi-GR_gammaimi1*((GRUS_imi/GR_qi)/(GRUS_imi(-1)/GR_qi)-1)*((GRUS_imi/GR_qi)/(GRUS_imi(-1)/GR_qi(-1)));
 // Private consumption good (tradable)
 GR_ttcg^((GR_mutcg-1)/GR_mutcg) = (GR_nutcg)^(1/GR_mutcg)*GR_htcg^(1-1/GR_mutcg)+(1-GR_nutcg)^(1/GR_mutcg)*GR_imcg^(1-1/GR_mutcg);
 // Private consumption good  (total)
@@ -36941,32 +37217,58 @@ GR_pttcg^(1-GR_mutcg) = (GR_nutcg)*GR_pht^(1-GR_mutcg)+(1-GR_nutcg)*GR_pimcg^(1-
 GR_pcg^(1-GR_mucg) = (GR_nucg)*GR_pttcg^(1-GR_mucg)+(1-GR_nucg)*GR_pnt^(1-GR_mucg);
 // Demand for domestic intermediate goods
 GR_htcg = GR_nutcg*(GR_pht/GR_pttcg)^(-GR_mutcg)*GR_ttcg;
-GRRA_gammaimcg = 0;
-GRRA_gammaimcgdag = 1;
-GRAT_gammaimcg = 0;
-GRAT_gammaimcgdag = 1;
-GRBE_gammaimcg = 0;
-GRBE_gammaimcgdag = 1;
-GRES_gammaimcg = 0;
-GRES_gammaimcgdag = 1;
-GRFI_gammaimcg = 0;
-GRFI_gammaimcgdag = 1;
-GRFR_gammaimcg = 0;
-GRFR_gammaimcgdag = 1;
-GRIT_gammaimcg = 0;
-GRIT_gammaimcgdag = 1;
-GRNL_gammaimcg = 0;
-GRNL_gammaimcgdag = 1;
-GRPT_gammaimcg = 0;
-GRPT_gammaimcgdag = 1;
-GRDE_gammaimcg = 0;
-GRDE_gammaimcgdag = 1;
-GRRU_gammaimcg = 0;
-GRRU_gammaimcgdag = 1;
-GRRW_gammaimcg = 0;
-GRRW_gammaimcgdag = 1;
-GRUS_gammaimcg = 0;
-GRUS_gammaimcgdag = 1;
+// Import adjustment cost
+GRRA_gammaimcg = GR_gammaimcg1/2*((GRRA_imcg/GR_qcg)/(GRRA_imcg(-1)/GR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRRA_gammaimcgdag = 1-GRRA_gammaimcg-GR_gammaimcg1*((GRRA_imcg/GR_qcg)/(GRRA_imcg(-1)/GR_qcg)-1)*((GRRA_imcg/GR_qcg)/(GRRA_imcg(-1)/GR_qcg(-1)));
+// Import adjustment cost
+GRAT_gammaimcg = GR_gammaimcg1/2*((GRAT_imcg/GR_qcg)/(GRAT_imcg(-1)/GR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRAT_gammaimcgdag = 1-GRAT_gammaimcg-GR_gammaimcg1*((GRAT_imcg/GR_qcg)/(GRAT_imcg(-1)/GR_qcg)-1)*((GRAT_imcg/GR_qcg)/(GRAT_imcg(-1)/GR_qcg(-1)));
+// Import adjustment cost
+GRBE_gammaimcg = GR_gammaimcg1/2*((GRBE_imcg/GR_qcg)/(GRBE_imcg(-1)/GR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRBE_gammaimcgdag = 1-GRBE_gammaimcg-GR_gammaimcg1*((GRBE_imcg/GR_qcg)/(GRBE_imcg(-1)/GR_qcg)-1)*((GRBE_imcg/GR_qcg)/(GRBE_imcg(-1)/GR_qcg(-1)));
+// Import adjustment cost
+GRES_gammaimcg = GR_gammaimcg1/2*((GRES_imcg/GR_qcg)/(GRES_imcg(-1)/GR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRES_gammaimcgdag = 1-GRES_gammaimcg-GR_gammaimcg1*((GRES_imcg/GR_qcg)/(GRES_imcg(-1)/GR_qcg)-1)*((GRES_imcg/GR_qcg)/(GRES_imcg(-1)/GR_qcg(-1)));
+// Import adjustment cost
+GRFI_gammaimcg = GR_gammaimcg1/2*((GRFI_imcg/GR_qcg)/(GRFI_imcg(-1)/GR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRFI_gammaimcgdag = 1-GRFI_gammaimcg-GR_gammaimcg1*((GRFI_imcg/GR_qcg)/(GRFI_imcg(-1)/GR_qcg)-1)*((GRFI_imcg/GR_qcg)/(GRFI_imcg(-1)/GR_qcg(-1)));
+// Import adjustment cost
+GRFR_gammaimcg = GR_gammaimcg1/2*((GRFR_imcg/GR_qcg)/(GRFR_imcg(-1)/GR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRFR_gammaimcgdag = 1-GRFR_gammaimcg-GR_gammaimcg1*((GRFR_imcg/GR_qcg)/(GRFR_imcg(-1)/GR_qcg)-1)*((GRFR_imcg/GR_qcg)/(GRFR_imcg(-1)/GR_qcg(-1)));
+// Import adjustment cost
+GRIT_gammaimcg = GR_gammaimcg1/2*((GRIT_imcg/GR_qcg)/(GRIT_imcg(-1)/GR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRIT_gammaimcgdag = 1-GRIT_gammaimcg-GR_gammaimcg1*((GRIT_imcg/GR_qcg)/(GRIT_imcg(-1)/GR_qcg)-1)*((GRIT_imcg/GR_qcg)/(GRIT_imcg(-1)/GR_qcg(-1)));
+// Import adjustment cost
+GRNL_gammaimcg = GR_gammaimcg1/2*((GRNL_imcg/GR_qcg)/(GRNL_imcg(-1)/GR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRNL_gammaimcgdag = 1-GRNL_gammaimcg-GR_gammaimcg1*((GRNL_imcg/GR_qcg)/(GRNL_imcg(-1)/GR_qcg)-1)*((GRNL_imcg/GR_qcg)/(GRNL_imcg(-1)/GR_qcg(-1)));
+// Import adjustment cost
+GRPT_gammaimcg = GR_gammaimcg1/2*((GRPT_imcg/GR_qcg)/(GRPT_imcg(-1)/GR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRPT_gammaimcgdag = 1-GRPT_gammaimcg-GR_gammaimcg1*((GRPT_imcg/GR_qcg)/(GRPT_imcg(-1)/GR_qcg)-1)*((GRPT_imcg/GR_qcg)/(GRPT_imcg(-1)/GR_qcg(-1)));
+// Import adjustment cost
+GRDE_gammaimcg = GR_gammaimcg1/2*((GRDE_imcg/GR_qcg)/(GRDE_imcg(-1)/GR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRDE_gammaimcgdag = 1-GRDE_gammaimcg-GR_gammaimcg1*((GRDE_imcg/GR_qcg)/(GRDE_imcg(-1)/GR_qcg)-1)*((GRDE_imcg/GR_qcg)/(GRDE_imcg(-1)/GR_qcg(-1)));
+// Import adjustment cost
+GRRU_gammaimcg = GR_gammaimcg1/2*((GRRU_imcg/GR_qcg)/(GRRU_imcg(-1)/GR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRRU_gammaimcgdag = 1-GRRU_gammaimcg-GR_gammaimcg1*((GRRU_imcg/GR_qcg)/(GRRU_imcg(-1)/GR_qcg)-1)*((GRRU_imcg/GR_qcg)/(GRRU_imcg(-1)/GR_qcg(-1)));
+// Import adjustment cost
+GRRW_gammaimcg = GR_gammaimcg1/2*((GRRW_imcg/GR_qcg)/(GRRW_imcg(-1)/GR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRRW_gammaimcgdag = 1-GRRW_gammaimcg-GR_gammaimcg1*((GRRW_imcg/GR_qcg)/(GRRW_imcg(-1)/GR_qcg)-1)*((GRRW_imcg/GR_qcg)/(GRRW_imcg(-1)/GR_qcg(-1)));
+// Import adjustment cost
+GRUS_gammaimcg = GR_gammaimcg1/2*((GRUS_imcg/GR_qcg)/(GRUS_imcg(-1)/GR_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRUS_gammaimcgdag = 1-GRUS_gammaimcg-GR_gammaimcg1*((GRUS_imcg/GR_qcg)/(GRUS_imcg(-1)/GR_qcg)-1)*((GRUS_imcg/GR_qcg)/(GRUS_imcg(-1)/GR_qcg(-1)));
 // Private consumption good (tradable)
 GR_ttig^((GR_mutig-1)/GR_mutig) = (GR_nutig)^(1/GR_mutig)*GR_htig^(1-1/GR_mutig)+(1-GR_nutig)^(1/GR_mutig)*GR_imig^(1-1/GR_mutig);
 // Private consumption good  (total)
@@ -36979,32 +37281,58 @@ GR_pttig^(1-GR_mutig) = (GR_nutig)*GR_pht^(1-GR_mutig)+(1-GR_nutig)*GR_pimig^(1-
 GR_pig^(1-GR_muig) = (GR_nuig)*GR_pttig^(1-GR_muig)+(1-GR_nuig)*GR_pnt^(1-GR_muig);
 // Demand for domestic intermediate goods
 GR_htig = GR_nutig*(GR_pht/GR_pttig)^(-GR_mutig)*GR_ttig;
-GRRA_gammaimig = 0;
-GRRA_gammaimigdag = 1;
-GRAT_gammaimig = 0;
-GRAT_gammaimigdag = 1;
-GRBE_gammaimig = 0;
-GRBE_gammaimigdag = 1;
-GRES_gammaimig = 0;
-GRES_gammaimigdag = 1;
-GRFI_gammaimig = 0;
-GRFI_gammaimigdag = 1;
-GRFR_gammaimig = 0;
-GRFR_gammaimigdag = 1;
-GRIT_gammaimig = 0;
-GRIT_gammaimigdag = 1;
-GRNL_gammaimig = 0;
-GRNL_gammaimigdag = 1;
-GRPT_gammaimig = 0;
-GRPT_gammaimigdag = 1;
-GRDE_gammaimig = 0;
-GRDE_gammaimigdag = 1;
-GRRU_gammaimig = 0;
-GRRU_gammaimigdag = 1;
-GRRW_gammaimig = 0;
-GRRW_gammaimigdag = 1;
-GRUS_gammaimig = 0;
-GRUS_gammaimigdag = 1;
+// Import adjustment cost
+GRRA_gammaimig = GR_gammaimig1/2*((GRRA_imig/GR_qig)/(GRRA_imig(-1)/GR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRRA_gammaimigdag = 1-GRRA_gammaimig-GR_gammaimig1*((GRRA_imig/GR_qig)/(GRRA_imig(-1)/GR_qig)-1)*((GRRA_imig/GR_qig)/(GRRA_imig(-1)/GR_qig(-1)));
+// Import adjustment cost
+GRAT_gammaimig = GR_gammaimig1/2*((GRAT_imig/GR_qig)/(GRAT_imig(-1)/GR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRAT_gammaimigdag = 1-GRAT_gammaimig-GR_gammaimig1*((GRAT_imig/GR_qig)/(GRAT_imig(-1)/GR_qig)-1)*((GRAT_imig/GR_qig)/(GRAT_imig(-1)/GR_qig(-1)));
+// Import adjustment cost
+GRBE_gammaimig = GR_gammaimig1/2*((GRBE_imig/GR_qig)/(GRBE_imig(-1)/GR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRBE_gammaimigdag = 1-GRBE_gammaimig-GR_gammaimig1*((GRBE_imig/GR_qig)/(GRBE_imig(-1)/GR_qig)-1)*((GRBE_imig/GR_qig)/(GRBE_imig(-1)/GR_qig(-1)));
+// Import adjustment cost
+GRES_gammaimig = GR_gammaimig1/2*((GRES_imig/GR_qig)/(GRES_imig(-1)/GR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRES_gammaimigdag = 1-GRES_gammaimig-GR_gammaimig1*((GRES_imig/GR_qig)/(GRES_imig(-1)/GR_qig)-1)*((GRES_imig/GR_qig)/(GRES_imig(-1)/GR_qig(-1)));
+// Import adjustment cost
+GRFI_gammaimig = GR_gammaimig1/2*((GRFI_imig/GR_qig)/(GRFI_imig(-1)/GR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRFI_gammaimigdag = 1-GRFI_gammaimig-GR_gammaimig1*((GRFI_imig/GR_qig)/(GRFI_imig(-1)/GR_qig)-1)*((GRFI_imig/GR_qig)/(GRFI_imig(-1)/GR_qig(-1)));
+// Import adjustment cost
+GRFR_gammaimig = GR_gammaimig1/2*((GRFR_imig/GR_qig)/(GRFR_imig(-1)/GR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRFR_gammaimigdag = 1-GRFR_gammaimig-GR_gammaimig1*((GRFR_imig/GR_qig)/(GRFR_imig(-1)/GR_qig)-1)*((GRFR_imig/GR_qig)/(GRFR_imig(-1)/GR_qig(-1)));
+// Import adjustment cost
+GRIT_gammaimig = GR_gammaimig1/2*((GRIT_imig/GR_qig)/(GRIT_imig(-1)/GR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRIT_gammaimigdag = 1-GRIT_gammaimig-GR_gammaimig1*((GRIT_imig/GR_qig)/(GRIT_imig(-1)/GR_qig)-1)*((GRIT_imig/GR_qig)/(GRIT_imig(-1)/GR_qig(-1)));
+// Import adjustment cost
+GRNL_gammaimig = GR_gammaimig1/2*((GRNL_imig/GR_qig)/(GRNL_imig(-1)/GR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRNL_gammaimigdag = 1-GRNL_gammaimig-GR_gammaimig1*((GRNL_imig/GR_qig)/(GRNL_imig(-1)/GR_qig)-1)*((GRNL_imig/GR_qig)/(GRNL_imig(-1)/GR_qig(-1)));
+// Import adjustment cost
+GRPT_gammaimig = GR_gammaimig1/2*((GRPT_imig/GR_qig)/(GRPT_imig(-1)/GR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRPT_gammaimigdag = 1-GRPT_gammaimig-GR_gammaimig1*((GRPT_imig/GR_qig)/(GRPT_imig(-1)/GR_qig)-1)*((GRPT_imig/GR_qig)/(GRPT_imig(-1)/GR_qig(-1)));
+// Import adjustment cost
+GRDE_gammaimig = GR_gammaimig1/2*((GRDE_imig/GR_qig)/(GRDE_imig(-1)/GR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRDE_gammaimigdag = 1-GRDE_gammaimig-GR_gammaimig1*((GRDE_imig/GR_qig)/(GRDE_imig(-1)/GR_qig)-1)*((GRDE_imig/GR_qig)/(GRDE_imig(-1)/GR_qig(-1)));
+// Import adjustment cost
+GRRU_gammaimig = GR_gammaimig1/2*((GRRU_imig/GR_qig)/(GRRU_imig(-1)/GR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRRU_gammaimigdag = 1-GRRU_gammaimig-GR_gammaimig1*((GRRU_imig/GR_qig)/(GRRU_imig(-1)/GR_qig)-1)*((GRRU_imig/GR_qig)/(GRRU_imig(-1)/GR_qig(-1)));
+// Import adjustment cost
+GRRW_gammaimig = GR_gammaimig1/2*((GRRW_imig/GR_qig)/(GRRW_imig(-1)/GR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRRW_gammaimigdag = 1-GRRW_gammaimig-GR_gammaimig1*((GRRW_imig/GR_qig)/(GRRW_imig(-1)/GR_qig)-1)*((GRRW_imig/GR_qig)/(GRRW_imig(-1)/GR_qig(-1)));
+// Import adjustment cost
+GRUS_gammaimig = GR_gammaimig1/2*((GRUS_imig/GR_qig)/(GRUS_imig(-1)/GR_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+GRUS_gammaimigdag = 1-GRUS_gammaimig-GR_gammaimig1*((GRUS_imig/GR_qig)/(GRUS_imig(-1)/GR_qig)-1)*((GRUS_imig/GR_qig)/(GRUS_imig(-1)/GR_qig(-1)));
 // Trade balance
 GR_tb =
 +GR_pex*RA_size/GR_size*RAGR_im
@@ -37065,18 +37393,10 @@ GR_ex =
 // Government spending, using GR_pg = GR_pht
 GR_pcg*GR_cg = GR_cgy*GR_pybar*GR_ybar;
 GR_pig*GR_ig = GR_igy*GR_pybar*GR_ybar;
-GR_t = 0;
-GR_b = GR_bytarget*GR_pybar*GR_ybar;
-// Auxiliary equation for steady-state output
-GR_ybar = GR_y;
-// Auxiliary equation for steady-state output
-GR_ytbar = GR_yst;
-// Auxiliary equation for steady-state output
-GR_ynbar = GR_ysn;
-// Auxiliary equation for steady-state output deflator
-GR_pybar = GR_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-GR_trybar = GR_tr/(GR_pybar*GR_ybar);
+// Transfers
+GR_tr = GR_try*GR_pybar*GR_ybar;
+// Fiscal rule
+GR_t/(GR_pybar*GR_ybar) = GR_phitb*(GR_b/(GR_pybar*GR_ybar)-GR_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 GR_ti = GR_upsilont*GR_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -37092,9 +37412,11 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	GR_r = DE_r;
-GR_pic4 = GR_pi4target;
-GR_rr-1 = GR_r/GR_pi4target^(1/4)-1;
+		GR_rerdep/DE_rerdep*GR_pic/DE_pic-1=0;
+// Definition of annual inflation
+GR_pic4 = GR_pic*GR_pic(-1)*GR_pic(-2)*GR_pic(-3);
+// Real interest rate
+GR_rr-1 = GR_r/GR_pic(+1)-1;
 // Equilibrium real interest rate
 GR_rrstar-1 = 1/GR_beta-1;
 //-------------
@@ -37181,68 +37503,68 @@ GR_py*GR_y =
 +GR_pcg*GR_qcg
 +GR_pig*GR_qig
 +GR_pex*RA_size/GR_size*RAGR_im
--(RA_pex*GRRA_rer)*GRRA_imc
--(RA_pex*GRRA_rer)*GRRA_imi
+-(RA_pex*GRRA_rer)*(GRRA_imc*(1-GRRA_gammaimc)/GRRA_gammaimcdag)
+-(RA_pex*GRRA_rer)*(GRRA_imi*(1-GRRA_gammaimi)/GRRA_gammaimidag)
 -(RA_pex*GRRA_rer)*GRRA_imcg
 -(RA_pex*GRRA_rer)*GRRA_imig
 +GR_pex*AT_size/GR_size*ATGR_im
--(AT_pex*GRAT_rer)*GRAT_imc
--(AT_pex*GRAT_rer)*GRAT_imi
+-(AT_pex*GRAT_rer)*(GRAT_imc*(1-GRAT_gammaimc)/GRAT_gammaimcdag)
+-(AT_pex*GRAT_rer)*(GRAT_imi*(1-GRAT_gammaimi)/GRAT_gammaimidag)
 -(AT_pex*GRAT_rer)*GRAT_imcg
 -(AT_pex*GRAT_rer)*GRAT_imig
 +GR_pex*BE_size/GR_size*BEGR_im
--(BE_pex*GRBE_rer)*GRBE_imc
--(BE_pex*GRBE_rer)*GRBE_imi
+-(BE_pex*GRBE_rer)*(GRBE_imc*(1-GRBE_gammaimc)/GRBE_gammaimcdag)
+-(BE_pex*GRBE_rer)*(GRBE_imi*(1-GRBE_gammaimi)/GRBE_gammaimidag)
 -(BE_pex*GRBE_rer)*GRBE_imcg
 -(BE_pex*GRBE_rer)*GRBE_imig
 +GR_pex*ES_size/GR_size*ESGR_im
--(ES_pex*GRES_rer)*GRES_imc
--(ES_pex*GRES_rer)*GRES_imi
+-(ES_pex*GRES_rer)*(GRES_imc*(1-GRES_gammaimc)/GRES_gammaimcdag)
+-(ES_pex*GRES_rer)*(GRES_imi*(1-GRES_gammaimi)/GRES_gammaimidag)
 -(ES_pex*GRES_rer)*GRES_imcg
 -(ES_pex*GRES_rer)*GRES_imig
 +GR_pex*FI_size/GR_size*FIGR_im
--(FI_pex*GRFI_rer)*GRFI_imc
--(FI_pex*GRFI_rer)*GRFI_imi
+-(FI_pex*GRFI_rer)*(GRFI_imc*(1-GRFI_gammaimc)/GRFI_gammaimcdag)
+-(FI_pex*GRFI_rer)*(GRFI_imi*(1-GRFI_gammaimi)/GRFI_gammaimidag)
 -(FI_pex*GRFI_rer)*GRFI_imcg
 -(FI_pex*GRFI_rer)*GRFI_imig
 +GR_pex*FR_size/GR_size*FRGR_im
--(FR_pex*GRFR_rer)*GRFR_imc
--(FR_pex*GRFR_rer)*GRFR_imi
+-(FR_pex*GRFR_rer)*(GRFR_imc*(1-GRFR_gammaimc)/GRFR_gammaimcdag)
+-(FR_pex*GRFR_rer)*(GRFR_imi*(1-GRFR_gammaimi)/GRFR_gammaimidag)
 -(FR_pex*GRFR_rer)*GRFR_imcg
 -(FR_pex*GRFR_rer)*GRFR_imig
 +GR_pex*IT_size/GR_size*ITGR_im
--(IT_pex*GRIT_rer)*GRIT_imc
--(IT_pex*GRIT_rer)*GRIT_imi
+-(IT_pex*GRIT_rer)*(GRIT_imc*(1-GRIT_gammaimc)/GRIT_gammaimcdag)
+-(IT_pex*GRIT_rer)*(GRIT_imi*(1-GRIT_gammaimi)/GRIT_gammaimidag)
 -(IT_pex*GRIT_rer)*GRIT_imcg
 -(IT_pex*GRIT_rer)*GRIT_imig
 +GR_pex*NL_size/GR_size*NLGR_im
--(NL_pex*GRNL_rer)*GRNL_imc
--(NL_pex*GRNL_rer)*GRNL_imi
+-(NL_pex*GRNL_rer)*(GRNL_imc*(1-GRNL_gammaimc)/GRNL_gammaimcdag)
+-(NL_pex*GRNL_rer)*(GRNL_imi*(1-GRNL_gammaimi)/GRNL_gammaimidag)
 -(NL_pex*GRNL_rer)*GRNL_imcg
 -(NL_pex*GRNL_rer)*GRNL_imig
 +GR_pex*PT_size/GR_size*PTGR_im
--(PT_pex*GRPT_rer)*GRPT_imc
--(PT_pex*GRPT_rer)*GRPT_imi
+-(PT_pex*GRPT_rer)*(GRPT_imc*(1-GRPT_gammaimc)/GRPT_gammaimcdag)
+-(PT_pex*GRPT_rer)*(GRPT_imi*(1-GRPT_gammaimi)/GRPT_gammaimidag)
 -(PT_pex*GRPT_rer)*GRPT_imcg
 -(PT_pex*GRPT_rer)*GRPT_imig
 +GR_pex*DE_size/GR_size*DEGR_im
--(DE_pex*GRDE_rer)*GRDE_imc
--(DE_pex*GRDE_rer)*GRDE_imi
+-(DE_pex*GRDE_rer)*(GRDE_imc*(1-GRDE_gammaimc)/GRDE_gammaimcdag)
+-(DE_pex*GRDE_rer)*(GRDE_imi*(1-GRDE_gammaimi)/GRDE_gammaimidag)
 -(DE_pex*GRDE_rer)*GRDE_imcg
 -(DE_pex*GRDE_rer)*GRDE_imig
 +GR_pex*RU_size/GR_size*RUGR_im
--(RU_pex*GRRU_rer)*GRRU_imc
--(RU_pex*GRRU_rer)*GRRU_imi
+-(RU_pex*GRRU_rer)*(GRRU_imc*(1-GRRU_gammaimc)/GRRU_gammaimcdag)
+-(RU_pex*GRRU_rer)*(GRRU_imi*(1-GRRU_gammaimi)/GRRU_gammaimidag)
 -(RU_pex*GRRU_rer)*GRRU_imcg
 -(RU_pex*GRRU_rer)*GRRU_imig
 +GR_pex*RW_size/GR_size*RWGR_im
--(RW_pex*GRRW_rer)*GRRW_imc
--(RW_pex*GRRW_rer)*GRRW_imi
+-(RW_pex*GRRW_rer)*(GRRW_imc*(1-GRRW_gammaimc)/GRRW_gammaimcdag)
+-(RW_pex*GRRW_rer)*(GRRW_imi*(1-GRRW_gammaimi)/GRRW_gammaimidag)
 -(RW_pex*GRRW_rer)*GRRW_imcg
 -(RW_pex*GRRW_rer)*GRRW_imig
 +GR_pex*US_size/GR_size*USGR_im
--(US_pex*GRUS_rer)*GRUS_imc
--(US_pex*GRUS_rer)*GRUS_imi
+-(US_pex*GRUS_rer)*(GRUS_imc*(1-GRUS_gammaimc)/GRUS_gammaimcdag)
+-(US_pex*GRUS_rer)*(GRUS_imi*(1-GRUS_gammaimi)/GRUS_gammaimidag)
 -(US_pex*GRUS_rer)*GRUS_imcg
 -(US_pex*GRUS_rer)*GRUS_imig
 ;
@@ -37317,7 +37639,7 @@ GR_yhty = GR_pht*GR_yst/(GR_py*GR_y);
 // NT sector share
 GR_ynty = GR_pnt*GR_ysn/(GR_py*GR_y);
 // Output gap
-GR_ygap = 0;
+GR_ygap = GR_y/GR_ybar-1;
 // Output growth (gross rate)
 GR_ygrowth = GR_y/GR_y(-1);
 // Output growth (gross rate yoy)
@@ -37481,7 +37803,7 @@ IT_dcci = ((IT_nucces)^(1/IT_mucces)*IT_ci^(1-1/IT_mucces)+(1-IT_nucces)^(1/IT_m
 IT_lambdai*(1+IT_tauc+IT_gammavi+IT_vi*IT_gammavider) = IT_zcon*(IT_ccesi-IT_kappa*IT_ccesi(-1))^(-IT_sigma)*IT_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
-IT_r                   = IT_beta^(-1)*IT_lambdai/IT_lambdai    *IT_pic;
+IT_r*(1-IT_gammabh) = IT_beta^(-1)*IT_lambdai/IT_lambdai(+1)*IT_pic(+1);
 // Germany
 // US and the RoW
 // Euler equation for money
@@ -37492,17 +37814,23 @@ IT_vi = IT_ci/IT_mi;
 IT_gammavi = IT_gammav1*IT_vi+IT_gammav2/IT_vi-2*(IT_gammav1*IT_gammav2)^(1/2);
 // Derivative of transaction cost
 IT_gammavider = IT_gammav1-IT_gammav2*IT_vi^(-2);
-IT_delta = IT_ii/IT_ki;
-IT_gammai = 0;
-IT_gammaider = 0;
-IT_gammau = 0;
-IT_gammauder = ((IT_beta^(-1)-1+IT_delta)*IT_qbar-IT_delta*IT_taukbar*IT_pibar)/((1-IT_taukbar)*IT_pibar);
-IT_u = 1;
-IT_pi = IT_q;
+// Capital accumulation
+IT_ki = (1-IT_delta)*IT_ki(-1)+(1-IT_gammai(-1))*IT_ii(-1)*IT_zinv;
+// Investment adjustment cost
+IT_gammai = IT_gammai1/2*(IT_ii/IT_ii(-1)-1)^2;
+// Derivative of investment adjustment cost
+IT_gammaider = IT_gammai1*(IT_ii/IT_ii(-1)-1)/IT_ii(-1);
+// Capacity utilisation cost
+IT_gammau = ((IT_beta^(-1)-1+IT_delta)*IT_qbar-IT_delta*IT_taukbar*IT_pibar)/((1-IT_taukbar)*IT_pibar)*(IT_u-1)+IT_gammau2/2*(IT_u-1)^2;
+// Derivative of capacity utilisation cost
+IT_gammauder = ((IT_beta^(-1)-1+IT_delta)*IT_qbar-IT_delta*IT_taukbar*IT_pibar)/((1-IT_taukbar)*IT_pibar)+IT_gammau2*(IT_u-1);
+// Optimal capacity utilisation (FOC)
+IT_rk = IT_gammauder*IT_pi;
+// Tobin's Q
+IT_pi = IT_q*IT_zinv*(1-IT_gammai-IT_gammaider*IT_ii)+IT_beta*IT_lambdai(+1)/IT_lambdai*IT_q(+1)*IT_zinv(+1)*IT_gammaider(+1)*IT_ii(+1)^2/IT_ii;
 // Auxiliary equation for Tobin's Q in steady state
-IT_qbar = IT_q;
 // Rate of return on capital
-IT_q = IT_beta*((1-IT_tauk)*IT_rk+(IT_tauk*IT_delta)*IT_pi+(1-IT_delta)*IT_q);
+IT_q = IT_beta*IT_lambdai(+1)/IT_lambdai*((1-IT_tauk(+1))*(IT_rk(+1)*IT_u(+1)-IT_gammau(+1)*IT_pi(+1))+(IT_tauk(+1)*IT_delta)*IT_pi(+1)+(1-IT_delta)*IT_q(+1));
 // Optimal wage contract (FOC)
 IT_witilde^(1+IT_etai*IT_zeta) = IT_etai/(IT_etai-1)*IT_fi/IT_gi+IT_wcst;
 // Definition of fi
@@ -37561,11 +37889,9 @@ IT_mcn = 1/(IT_zn*IT_kg^IT_alphag*(IT_alphan)^(IT_alphan)*(1-IT_alphan)^(1-IT_al
 // Wage Inflation (qoq)
 IT_piw = IT_w/IT_w(-1)*IT_pic;
 // Wage Inflation (yoy)
-IT_piw4 = IT_pic4;
+IT_piw4 = IT_piw*IT_piw(-1)*IT_piw(-2)*IT_piw(-3);
 // Auxiliary equation for steady-state fixed cost
-IT_psitbar = IT_psit*IT_ytbar;
 // Auxiliary equation for steady-state fixed cost
-IT_psinbar = IT_psin*IT_ynbar;
 // Capital input (FOC)
 IT_rk = IT_alphat*(IT_yst+IT_psitbar)/IT_kdt*IT_mct;
 // Capital input (FOC)
@@ -37640,7 +37966,6 @@ IT_piex = IT_pex/IT_pex(-1)*IT_pic;
 // Bilateral real exchange rate
 ITRA_rer = IT_rer/RA_rer;
 // Auxiliary equation for steady-state output
-ITRA_rerbar = ITRA_rer;
 //Terms of Trade
 ITRA_tot = RA_pex*ITRA_rer/IT_pex;
 // Optimal price contract set in foreign markets (FOC), using IT_pxtilde = AT_pimtilde
@@ -37656,7 +37981,6 @@ ITRA_tot = RA_pex*ITRA_rer/IT_pex;
 // Bilateral real exchange rate
 ITAT_rer = IT_rer/AT_rer;
 // Auxiliary equation for steady-state output
-ITAT_rerbar = ITAT_rer;
 //Terms of Trade
 ITAT_tot = AT_pex*ITAT_rer/IT_pex;
 // Optimal price contract set in foreign markets (FOC), using IT_pxtilde = BE_pimtilde
@@ -37672,7 +37996,6 @@ ITAT_tot = AT_pex*ITAT_rer/IT_pex;
 // Bilateral real exchange rate
 ITBE_rer = IT_rer/BE_rer;
 // Auxiliary equation for steady-state output
-ITBE_rerbar = ITBE_rer;
 //Terms of Trade
 ITBE_tot = BE_pex*ITBE_rer/IT_pex;
 // Optimal price contract set in foreign markets (FOC), using IT_pxtilde = ES_pimtilde
@@ -37688,7 +38011,6 @@ ITBE_tot = BE_pex*ITBE_rer/IT_pex;
 // Bilateral real exchange rate
 ITES_rer = IT_rer/ES_rer;
 // Auxiliary equation for steady-state output
-ITES_rerbar = ITES_rer;
 //Terms of Trade
 ITES_tot = ES_pex*ITES_rer/IT_pex;
 // Optimal price contract set in foreign markets (FOC), using IT_pxtilde = FI_pimtilde
@@ -37704,7 +38026,6 @@ ITES_tot = ES_pex*ITES_rer/IT_pex;
 // Bilateral real exchange rate
 ITFI_rer = IT_rer/FI_rer;
 // Auxiliary equation for steady-state output
-ITFI_rerbar = ITFI_rer;
 //Terms of Trade
 ITFI_tot = FI_pex*ITFI_rer/IT_pex;
 // Optimal price contract set in foreign markets (FOC), using IT_pxtilde = FR_pimtilde
@@ -37720,7 +38041,6 @@ ITFI_tot = FI_pex*ITFI_rer/IT_pex;
 // Bilateral real exchange rate
 ITFR_rer = IT_rer/FR_rer;
 // Auxiliary equation for steady-state output
-ITFR_rerbar = ITFR_rer;
 //Terms of Trade
 ITFR_tot = FR_pex*ITFR_rer/IT_pex;
 // Optimal price contract set in foreign markets (FOC), using IT_pxtilde = GR_pimtilde
@@ -37736,7 +38056,6 @@ ITFR_tot = FR_pex*ITFR_rer/IT_pex;
 // Bilateral real exchange rate
 ITGR_rer = IT_rer/GR_rer;
 // Auxiliary equation for steady-state output
-ITGR_rerbar = ITGR_rer;
 //Terms of Trade
 ITGR_tot = GR_pex*ITGR_rer/IT_pex;
 // Optimal price contract set in foreign markets (FOC), using IT_pxtilde = NL_pimtilde
@@ -37752,7 +38071,6 @@ ITGR_tot = GR_pex*ITGR_rer/IT_pex;
 // Bilateral real exchange rate
 ITNL_rer = IT_rer/NL_rer;
 // Auxiliary equation for steady-state output
-ITNL_rerbar = ITNL_rer;
 //Terms of Trade
 ITNL_tot = NL_pex*ITNL_rer/IT_pex;
 // Optimal price contract set in foreign markets (FOC), using IT_pxtilde = PT_pimtilde
@@ -37768,7 +38086,6 @@ ITNL_tot = NL_pex*ITNL_rer/IT_pex;
 // Bilateral real exchange rate
 ITPT_rer = IT_rer/PT_rer;
 // Auxiliary equation for steady-state output
-ITPT_rerbar = ITPT_rer;
 //Terms of Trade
 ITPT_tot = PT_pex*ITPT_rer/IT_pex;
 // Optimal price contract set in foreign markets (FOC), using IT_pxtilde = DE_pimtilde
@@ -37784,7 +38101,6 @@ ITPT_tot = PT_pex*ITPT_rer/IT_pex;
 // Bilateral real exchange rate
 ITDE_rer = IT_rer/DE_rer;
 // Auxiliary equation for steady-state output
-ITDE_rerbar = ITDE_rer;
 //Terms of Trade
 ITDE_tot = DE_pex*ITDE_rer/IT_pex;
 // Optimal price contract set in foreign markets (FOC), using IT_pxtilde = RU_pimtilde
@@ -37800,7 +38116,6 @@ ITDE_tot = DE_pex*ITDE_rer/IT_pex;
 // Bilateral real exchange rate
 ITRU_rer = IT_rer/RU_rer;
 // Auxiliary equation for steady-state output
-ITRU_rerbar = ITRU_rer;
 //Terms of Trade
 ITRU_tot = RU_pex*ITRU_rer/IT_pex;
 // Optimal price contract set in foreign markets (FOC), using IT_pxtilde = RW_pimtilde
@@ -37816,7 +38131,6 @@ ITRU_tot = RU_pex*ITRU_rer/IT_pex;
 // Bilateral real exchange rate
 ITRW_rer = IT_rer/RW_rer;
 // Auxiliary equation for steady-state output
-ITRW_rerbar = ITRW_rer;
 //Terms of Trade
 ITRW_tot = RW_pex*ITRW_rer/IT_pex;
 // Optimal price contract set in foreign markets (FOC), using IT_pxtilde = US_pimtilde
@@ -37832,7 +38146,6 @@ ITRW_tot = RW_pex*ITRW_rer/IT_pex;
 // Bilateral real exchange rate
 ITUS_rer = IT_rer/US_rer;
 // Auxiliary equation for steady-state output
-ITUS_rerbar = ITUS_rer;
 //Terms of Trade
 ITUS_tot = US_pex*ITUS_rer/IT_pex;
 // Total imports 
@@ -40330,18 +40643,18 @@ IT_etot = 1
 //-----------------
 // Private consumption good (import)
 IT_imc^((IT_mumc-1)/IT_mumc) =
-+ITRA_numc ^(1/IT_mumc)*ITRA_imc^(1-1/IT_mumc)
-+ITAT_numc ^(1/IT_mumc)*ITAT_imc^(1-1/IT_mumc)
-+ITBE_numc ^(1/IT_mumc)*ITBE_imc^(1-1/IT_mumc)
-+ITES_numc ^(1/IT_mumc)*ITES_imc^(1-1/IT_mumc)
-+ITFI_numc ^(1/IT_mumc)*ITFI_imc^(1-1/IT_mumc)
-+ITGR_numc ^(1/IT_mumc)*ITGR_imc^(1-1/IT_mumc)
-+ITNL_numc ^(1/IT_mumc)*ITNL_imc^(1-1/IT_mumc)
-+ITPT_numc ^(1/IT_mumc)*ITPT_imc^(1-1/IT_mumc)
-+ITDE_numc ^(1/IT_mumc)*ITDE_imc^(1-1/IT_mumc)
-+ITRU_numc ^(1/IT_mumc)*ITRU_imc^(1-1/IT_mumc)
-+ITRW_numc ^(1/IT_mumc)*ITRW_imc^(1-1/IT_mumc)
-+ITUS_numc ^(1/IT_mumc)*ITUS_imc^(1-1/IT_mumc)
++ITRA_numc ^(1/IT_mumc)*((1-ITRA_gammaimc)*ITRA_imc)^(1-1/IT_mumc)
++ITAT_numc ^(1/IT_mumc)*((1-ITAT_gammaimc)*ITAT_imc)^(1-1/IT_mumc)
++ITBE_numc ^(1/IT_mumc)*((1-ITBE_gammaimc)*ITBE_imc)^(1-1/IT_mumc)
++ITES_numc ^(1/IT_mumc)*((1-ITES_gammaimc)*ITES_imc)^(1-1/IT_mumc)
++ITFI_numc ^(1/IT_mumc)*((1-ITFI_gammaimc)*ITFI_imc)^(1-1/IT_mumc)
++ITGR_numc ^(1/IT_mumc)*((1-ITGR_gammaimc)*ITGR_imc)^(1-1/IT_mumc)
++ITNL_numc ^(1/IT_mumc)*((1-ITNL_gammaimc)*ITNL_imc)^(1-1/IT_mumc)
++ITPT_numc ^(1/IT_mumc)*((1-ITPT_gammaimc)*ITPT_imc)^(1-1/IT_mumc)
++ITDE_numc ^(1/IT_mumc)*((1-ITDE_gammaimc)*ITDE_imc)^(1-1/IT_mumc)
++ITRU_numc ^(1/IT_mumc)*((1-ITRU_gammaimc)*ITRU_imc)^(1-1/IT_mumc)
++ITRW_numc ^(1/IT_mumc)*((1-ITRW_gammaimc)*ITRW_imc)^(1-1/IT_mumc)
++ITUS_numc ^(1/IT_mumc)*((1-ITUS_gammaimc)*ITUS_imc)^(1-1/IT_mumc)
 +(1
 -ITRA_numc
 -ITAT_numc
@@ -40355,29 +40668,29 @@ IT_imc^((IT_mumc-1)/IT_mumc) =
 -ITRU_numc
 -ITRW_numc
 -ITUS_numc
-)^(1/IT_mumc)*ITFR_imc^(1-1/IT_mumc);
+)^(1/IT_mumc)*((1-ITFR_gammaimc)*ITFR_imc)^(1-1/IT_mumc);
 // Demand for bilateral consumption import goods
-ITRA_imc = ITRA_numc*((RA_pex*ITRA_rer)/IT_pimc)^(-IT_mumc)*IT_imc;
+ITRA_imc = ITRA_numc*((RA_pex*ITRA_rer)/(ITRA_gammaimcdag*IT_pimc))^(-IT_mumc)*IT_imc/(1-ITRA_gammaimc);
 // Demand for bilateral consumption import goods
-ITAT_imc = ITAT_numc*((AT_pex*ITAT_rer)/IT_pimc)^(-IT_mumc)*IT_imc;
+ITAT_imc = ITAT_numc*((AT_pex*ITAT_rer)/(ITAT_gammaimcdag*IT_pimc))^(-IT_mumc)*IT_imc/(1-ITAT_gammaimc);
 // Demand for bilateral consumption import goods
-ITBE_imc = ITBE_numc*((BE_pex*ITBE_rer)/IT_pimc)^(-IT_mumc)*IT_imc;
+ITBE_imc = ITBE_numc*((BE_pex*ITBE_rer)/(ITBE_gammaimcdag*IT_pimc))^(-IT_mumc)*IT_imc/(1-ITBE_gammaimc);
 // Demand for bilateral consumption import goods
-ITES_imc = ITES_numc*((ES_pex*ITES_rer)/IT_pimc)^(-IT_mumc)*IT_imc;
+ITES_imc = ITES_numc*((ES_pex*ITES_rer)/(ITES_gammaimcdag*IT_pimc))^(-IT_mumc)*IT_imc/(1-ITES_gammaimc);
 // Demand for bilateral consumption import goods
-ITFI_imc = ITFI_numc*((FI_pex*ITFI_rer)/IT_pimc)^(-IT_mumc)*IT_imc;
+ITFI_imc = ITFI_numc*((FI_pex*ITFI_rer)/(ITFI_gammaimcdag*IT_pimc))^(-IT_mumc)*IT_imc/(1-ITFI_gammaimc);
 // Demand for bilateral consumption import goods
-ITGR_imc = ITGR_numc*((GR_pex*ITGR_rer)/IT_pimc)^(-IT_mumc)*IT_imc;
+ITGR_imc = ITGR_numc*((GR_pex*ITGR_rer)/(ITGR_gammaimcdag*IT_pimc))^(-IT_mumc)*IT_imc/(1-ITGR_gammaimc);
 // Demand for bilateral consumption import goods
-ITPT_imc = ITPT_numc*((PT_pex*ITPT_rer)/IT_pimc)^(-IT_mumc)*IT_imc;
+ITPT_imc = ITPT_numc*((PT_pex*ITPT_rer)/(ITPT_gammaimcdag*IT_pimc))^(-IT_mumc)*IT_imc/(1-ITPT_gammaimc);
 // Demand for bilateral consumption import goods
-ITDE_imc = ITDE_numc*((DE_pex*ITDE_rer)/IT_pimc)^(-IT_mumc)*IT_imc;
+ITDE_imc = ITDE_numc*((DE_pex*ITDE_rer)/(ITDE_gammaimcdag*IT_pimc))^(-IT_mumc)*IT_imc/(1-ITDE_gammaimc);
 // Demand for bilateral consumption import goods
-ITRU_imc = ITRU_numc*((RU_pex*ITRU_rer)/IT_pimc)^(-IT_mumc)*IT_imc;
+ITRU_imc = ITRU_numc*((RU_pex*ITRU_rer)/(ITRU_gammaimcdag*IT_pimc))^(-IT_mumc)*IT_imc/(1-ITRU_gammaimc);
 // Demand for bilateral consumption import goods
-ITRW_imc = ITRW_numc*((RW_pex*ITRW_rer)/IT_pimc)^(-IT_mumc)*IT_imc;
+ITRW_imc = ITRW_numc*((RW_pex*ITRW_rer)/(ITRW_gammaimcdag*IT_pimc))^(-IT_mumc)*IT_imc/(1-ITRW_gammaimc);
 // Demand for bilateral consumption import goods
-ITUS_imc = ITUS_numc*((US_pex*ITUS_rer)/IT_pimc)^(-IT_mumc)*IT_imc;
+ITUS_imc = ITUS_numc*((US_pex*ITUS_rer)/(ITUS_gammaimcdag*IT_pimc))^(-IT_mumc)*IT_imc/(1-ITUS_gammaimc);
 ITFR_imc = (1
 -ITRA_numc
 -ITAT_numc
@@ -40391,21 +40704,21 @@ ITFR_imc = (1
 -ITRU_numc
 -ITRW_numc
 -ITUS_numc
-)*((FR_pex*ITFR_rer)/IT_pimc)^(-IT_mumc)*IT_imc;
+)*((FR_pex*ITFR_rer)/(ITFR_gammaimcdag*IT_pimc))^(-IT_mumc)*IT_imc/(1-ITFR_gammaimc);
 // Price of the consumption good (import)
 IT_pimc^(1-IT_mumc) =
-+ITRA_numc * (RA_pex*ITRA_rer)^(1-IT_mumc)
-+ITAT_numc * (AT_pex*ITAT_rer)^(1-IT_mumc)
-+ITBE_numc * (BE_pex*ITBE_rer)^(1-IT_mumc)
-+ITES_numc * (ES_pex*ITES_rer)^(1-IT_mumc)
-+ITFI_numc * (FI_pex*ITFI_rer)^(1-IT_mumc)
-+ITGR_numc * (GR_pex*ITGR_rer)^(1-IT_mumc)
-+ITNL_numc * (NL_pex*ITNL_rer)^(1-IT_mumc)
-+ITPT_numc * (PT_pex*ITPT_rer)^(1-IT_mumc)
-+ITDE_numc * (DE_pex*ITDE_rer)^(1-IT_mumc)
-+ITRU_numc * (RU_pex*ITRU_rer)^(1-IT_mumc)
-+ITRW_numc * (RW_pex*ITRW_rer)^(1-IT_mumc)
-+ITUS_numc * (US_pex*ITUS_rer)^(1-IT_mumc)
++ITRA_numc *((RA_pex*ITRA_rer)/ITRA_gammaimcdag)^(1-IT_mumc)
++ITAT_numc *((AT_pex*ITAT_rer)/ITAT_gammaimcdag)^(1-IT_mumc)
++ITBE_numc *((BE_pex*ITBE_rer)/ITBE_gammaimcdag)^(1-IT_mumc)
++ITES_numc *((ES_pex*ITES_rer)/ITES_gammaimcdag)^(1-IT_mumc)
++ITFI_numc *((FI_pex*ITFI_rer)/ITFI_gammaimcdag)^(1-IT_mumc)
++ITGR_numc *((GR_pex*ITGR_rer)/ITGR_gammaimcdag)^(1-IT_mumc)
++ITNL_numc *((NL_pex*ITNL_rer)/ITNL_gammaimcdag)^(1-IT_mumc)
++ITPT_numc *((PT_pex*ITPT_rer)/ITPT_gammaimcdag)^(1-IT_mumc)
++ITDE_numc *((DE_pex*ITDE_rer)/ITDE_gammaimcdag)^(1-IT_mumc)
++ITRU_numc *((RU_pex*ITRU_rer)/ITRU_gammaimcdag)^(1-IT_mumc)
++ITRW_numc *((RW_pex*ITRW_rer)/ITRW_gammaimcdag)^(1-IT_mumc)
++ITUS_numc *((US_pex*ITUS_rer)/ITUS_gammaimcdag)^(1-IT_mumc)
 +(1
 -ITRA_numc
 -ITAT_numc
@@ -40419,23 +40732,23 @@ IT_pimc^(1-IT_mumc) =
 -ITRU_numc
 -ITRW_numc
 -ITUS_numc
-)*(FR_pex*ITFR_rer)^(1-IT_mumc);
+)*((FR_pex*ITFR_rer)/ITFR_gammaimcdag)^(1-IT_mumc);
 // Private consumption good (import) inflation
 IT_piimc = IT_pimc/IT_pimc(-1)*IT_pic;
 // Private consumption good (import)
 IT_imi^((IT_mumi-1)/IT_mumi) =
-+ITRA_numi ^(1/IT_mumi)*ITRA_imi^(1-1/IT_mumi)
-+ITAT_numi ^(1/IT_mumi)*ITAT_imi^(1-1/IT_mumi)
-+ITBE_numi ^(1/IT_mumi)*ITBE_imi^(1-1/IT_mumi)
-+ITES_numi ^(1/IT_mumi)*ITES_imi^(1-1/IT_mumi)
-+ITFI_numi ^(1/IT_mumi)*ITFI_imi^(1-1/IT_mumi)
-+ITGR_numi ^(1/IT_mumi)*ITGR_imi^(1-1/IT_mumi)
-+ITNL_numi ^(1/IT_mumi)*ITNL_imi^(1-1/IT_mumi)
-+ITPT_numi ^(1/IT_mumi)*ITPT_imi^(1-1/IT_mumi)
-+ITDE_numi ^(1/IT_mumi)*ITDE_imi^(1-1/IT_mumi)
-+ITRU_numi ^(1/IT_mumi)*ITRU_imi^(1-1/IT_mumi)
-+ITRW_numi ^(1/IT_mumi)*ITRW_imi^(1-1/IT_mumi)
-+ITUS_numi ^(1/IT_mumi)*ITUS_imi^(1-1/IT_mumi)
++ITRA_numi ^(1/IT_mumi)*((1-ITRA_gammaimi)*ITRA_imi)^(1-1/IT_mumi)
++ITAT_numi ^(1/IT_mumi)*((1-ITAT_gammaimi)*ITAT_imi)^(1-1/IT_mumi)
++ITBE_numi ^(1/IT_mumi)*((1-ITBE_gammaimi)*ITBE_imi)^(1-1/IT_mumi)
++ITES_numi ^(1/IT_mumi)*((1-ITES_gammaimi)*ITES_imi)^(1-1/IT_mumi)
++ITFI_numi ^(1/IT_mumi)*((1-ITFI_gammaimi)*ITFI_imi)^(1-1/IT_mumi)
++ITGR_numi ^(1/IT_mumi)*((1-ITGR_gammaimi)*ITGR_imi)^(1-1/IT_mumi)
++ITNL_numi ^(1/IT_mumi)*((1-ITNL_gammaimi)*ITNL_imi)^(1-1/IT_mumi)
++ITPT_numi ^(1/IT_mumi)*((1-ITPT_gammaimi)*ITPT_imi)^(1-1/IT_mumi)
++ITDE_numi ^(1/IT_mumi)*((1-ITDE_gammaimi)*ITDE_imi)^(1-1/IT_mumi)
++ITRU_numi ^(1/IT_mumi)*((1-ITRU_gammaimi)*ITRU_imi)^(1-1/IT_mumi)
++ITRW_numi ^(1/IT_mumi)*((1-ITRW_gammaimi)*ITRW_imi)^(1-1/IT_mumi)
++ITUS_numi ^(1/IT_mumi)*((1-ITUS_gammaimi)*ITUS_imi)^(1-1/IT_mumi)
 +(1
 -ITRA_numi
 -ITAT_numi
@@ -40449,29 +40762,29 @@ IT_imi^((IT_mumi-1)/IT_mumi) =
 -ITRU_numi
 -ITRW_numi
 -ITUS_numi
-)^(1/IT_mumi)*ITFR_imi^(1-1/IT_mumi);
+)^(1/IT_mumi)*((1-ITFR_gammaimi)*ITFR_imi)^(1-1/IT_mumi);
 // Demand for bilateral consumption import goods
-ITRA_imi = ITRA_numi*((RA_pex*ITRA_rer)/IT_pimi)^(-IT_mumi)*IT_imi;
+ITRA_imi = ITRA_numi*((RA_pex*ITRA_rer)/(ITRA_gammaimidag*IT_pimi))^(-IT_mumi)*IT_imi/(1-ITRA_gammaimi);
 // Demand for bilateral consumption import goods
-ITAT_imi = ITAT_numi*((AT_pex*ITAT_rer)/IT_pimi)^(-IT_mumi)*IT_imi;
+ITAT_imi = ITAT_numi*((AT_pex*ITAT_rer)/(ITAT_gammaimidag*IT_pimi))^(-IT_mumi)*IT_imi/(1-ITAT_gammaimi);
 // Demand for bilateral consumption import goods
-ITBE_imi = ITBE_numi*((BE_pex*ITBE_rer)/IT_pimi)^(-IT_mumi)*IT_imi;
+ITBE_imi = ITBE_numi*((BE_pex*ITBE_rer)/(ITBE_gammaimidag*IT_pimi))^(-IT_mumi)*IT_imi/(1-ITBE_gammaimi);
 // Demand for bilateral consumption import goods
-ITES_imi = ITES_numi*((ES_pex*ITES_rer)/IT_pimi)^(-IT_mumi)*IT_imi;
+ITES_imi = ITES_numi*((ES_pex*ITES_rer)/(ITES_gammaimidag*IT_pimi))^(-IT_mumi)*IT_imi/(1-ITES_gammaimi);
 // Demand for bilateral consumption import goods
-ITFI_imi = ITFI_numi*((FI_pex*ITFI_rer)/IT_pimi)^(-IT_mumi)*IT_imi;
+ITFI_imi = ITFI_numi*((FI_pex*ITFI_rer)/(ITFI_gammaimidag*IT_pimi))^(-IT_mumi)*IT_imi/(1-ITFI_gammaimi);
 // Demand for bilateral consumption import goods
-ITGR_imi = ITGR_numi*((GR_pex*ITGR_rer)/IT_pimi)^(-IT_mumi)*IT_imi;
+ITGR_imi = ITGR_numi*((GR_pex*ITGR_rer)/(ITGR_gammaimidag*IT_pimi))^(-IT_mumi)*IT_imi/(1-ITGR_gammaimi);
 // Demand for bilateral consumption import goods
-ITPT_imi = ITPT_numi*((PT_pex*ITPT_rer)/IT_pimi)^(-IT_mumi)*IT_imi;
+ITPT_imi = ITPT_numi*((PT_pex*ITPT_rer)/(ITPT_gammaimidag*IT_pimi))^(-IT_mumi)*IT_imi/(1-ITPT_gammaimi);
 // Demand for bilateral consumption import goods
-ITDE_imi = ITDE_numi*((DE_pex*ITDE_rer)/IT_pimi)^(-IT_mumi)*IT_imi;
+ITDE_imi = ITDE_numi*((DE_pex*ITDE_rer)/(ITDE_gammaimidag*IT_pimi))^(-IT_mumi)*IT_imi/(1-ITDE_gammaimi);
 // Demand for bilateral consumption import goods
-ITRU_imi = ITRU_numi*((RU_pex*ITRU_rer)/IT_pimi)^(-IT_mumi)*IT_imi;
+ITRU_imi = ITRU_numi*((RU_pex*ITRU_rer)/(ITRU_gammaimidag*IT_pimi))^(-IT_mumi)*IT_imi/(1-ITRU_gammaimi);
 // Demand for bilateral consumption import goods
-ITRW_imi = ITRW_numi*((RW_pex*ITRW_rer)/IT_pimi)^(-IT_mumi)*IT_imi;
+ITRW_imi = ITRW_numi*((RW_pex*ITRW_rer)/(ITRW_gammaimidag*IT_pimi))^(-IT_mumi)*IT_imi/(1-ITRW_gammaimi);
 // Demand for bilateral consumption import goods
-ITUS_imi = ITUS_numi*((US_pex*ITUS_rer)/IT_pimi)^(-IT_mumi)*IT_imi;
+ITUS_imi = ITUS_numi*((US_pex*ITUS_rer)/(ITUS_gammaimidag*IT_pimi))^(-IT_mumi)*IT_imi/(1-ITUS_gammaimi);
 ITFR_imi = (1
 -ITRA_numi
 -ITAT_numi
@@ -40485,21 +40798,21 @@ ITFR_imi = (1
 -ITRU_numi
 -ITRW_numi
 -ITUS_numi
-)*((FR_pex*ITFR_rer)/IT_pimi)^(-IT_mumi)*IT_imi;
+)*((FR_pex*ITFR_rer)/(ITFR_gammaimidag*IT_pimi))^(-IT_mumi)*IT_imi/(1-ITFR_gammaimi);
 // Price of the consumption good (import)
 IT_pimi^(1-IT_mumi) =
-+ITRA_numi * (RA_pex*ITRA_rer)^(1-IT_mumi)
-+ITAT_numi * (AT_pex*ITAT_rer)^(1-IT_mumi)
-+ITBE_numi * (BE_pex*ITBE_rer)^(1-IT_mumi)
-+ITES_numi * (ES_pex*ITES_rer)^(1-IT_mumi)
-+ITFI_numi * (FI_pex*ITFI_rer)^(1-IT_mumi)
-+ITGR_numi * (GR_pex*ITGR_rer)^(1-IT_mumi)
-+ITNL_numi * (NL_pex*ITNL_rer)^(1-IT_mumi)
-+ITPT_numi * (PT_pex*ITPT_rer)^(1-IT_mumi)
-+ITDE_numi * (DE_pex*ITDE_rer)^(1-IT_mumi)
-+ITRU_numi * (RU_pex*ITRU_rer)^(1-IT_mumi)
-+ITRW_numi * (RW_pex*ITRW_rer)^(1-IT_mumi)
-+ITUS_numi * (US_pex*ITUS_rer)^(1-IT_mumi)
++ITRA_numi *((RA_pex*ITRA_rer)/ITRA_gammaimidag)^(1-IT_mumi)
++ITAT_numi *((AT_pex*ITAT_rer)/ITAT_gammaimidag)^(1-IT_mumi)
++ITBE_numi *((BE_pex*ITBE_rer)/ITBE_gammaimidag)^(1-IT_mumi)
++ITES_numi *((ES_pex*ITES_rer)/ITES_gammaimidag)^(1-IT_mumi)
++ITFI_numi *((FI_pex*ITFI_rer)/ITFI_gammaimidag)^(1-IT_mumi)
++ITGR_numi *((GR_pex*ITGR_rer)/ITGR_gammaimidag)^(1-IT_mumi)
++ITNL_numi *((NL_pex*ITNL_rer)/ITNL_gammaimidag)^(1-IT_mumi)
++ITPT_numi *((PT_pex*ITPT_rer)/ITPT_gammaimidag)^(1-IT_mumi)
++ITDE_numi *((DE_pex*ITDE_rer)/ITDE_gammaimidag)^(1-IT_mumi)
++ITRU_numi *((RU_pex*ITRU_rer)/ITRU_gammaimidag)^(1-IT_mumi)
++ITRW_numi *((RW_pex*ITRW_rer)/ITRW_gammaimidag)^(1-IT_mumi)
++ITUS_numi *((US_pex*ITUS_rer)/ITUS_gammaimidag)^(1-IT_mumi)
 +(1
 -ITRA_numi
 -ITAT_numi
@@ -40513,23 +40826,23 @@ IT_pimi^(1-IT_mumi) =
 -ITRU_numi
 -ITRW_numi
 -ITUS_numi
-)*(FR_pex*ITFR_rer)^(1-IT_mumi);
+)*((FR_pex*ITFR_rer)/ITFR_gammaimidag)^(1-IT_mumi);
 // Private consumption good (import) inflation
 IT_piimi = IT_pimi/IT_pimi(-1)*IT_pic;
 // Private consumption good (import)
 IT_imcg^((IT_mumcg-1)/IT_mumcg) =
-+ITRA_numcg ^(1/IT_mumcg)*ITRA_imcg^(1-1/IT_mumcg)
-+ITAT_numcg ^(1/IT_mumcg)*ITAT_imcg^(1-1/IT_mumcg)
-+ITBE_numcg ^(1/IT_mumcg)*ITBE_imcg^(1-1/IT_mumcg)
-+ITES_numcg ^(1/IT_mumcg)*ITES_imcg^(1-1/IT_mumcg)
-+ITFI_numcg ^(1/IT_mumcg)*ITFI_imcg^(1-1/IT_mumcg)
-+ITGR_numcg ^(1/IT_mumcg)*ITGR_imcg^(1-1/IT_mumcg)
-+ITNL_numcg ^(1/IT_mumcg)*ITNL_imcg^(1-1/IT_mumcg)
-+ITPT_numcg ^(1/IT_mumcg)*ITPT_imcg^(1-1/IT_mumcg)
-+ITDE_numcg ^(1/IT_mumcg)*ITDE_imcg^(1-1/IT_mumcg)
-+ITRU_numcg ^(1/IT_mumcg)*ITRU_imcg^(1-1/IT_mumcg)
-+ITRW_numcg ^(1/IT_mumcg)*ITRW_imcg^(1-1/IT_mumcg)
-+ITUS_numcg ^(1/IT_mumcg)*ITUS_imcg^(1-1/IT_mumcg)
++ITRA_numcg ^(1/IT_mumcg)*((1-ITRA_gammaimcg)*ITRA_imcg)^(1-1/IT_mumcg)
++ITAT_numcg ^(1/IT_mumcg)*((1-ITAT_gammaimcg)*ITAT_imcg)^(1-1/IT_mumcg)
++ITBE_numcg ^(1/IT_mumcg)*((1-ITBE_gammaimcg)*ITBE_imcg)^(1-1/IT_mumcg)
++ITES_numcg ^(1/IT_mumcg)*((1-ITES_gammaimcg)*ITES_imcg)^(1-1/IT_mumcg)
++ITFI_numcg ^(1/IT_mumcg)*((1-ITFI_gammaimcg)*ITFI_imcg)^(1-1/IT_mumcg)
++ITGR_numcg ^(1/IT_mumcg)*((1-ITGR_gammaimcg)*ITGR_imcg)^(1-1/IT_mumcg)
++ITNL_numcg ^(1/IT_mumcg)*((1-ITNL_gammaimcg)*ITNL_imcg)^(1-1/IT_mumcg)
++ITPT_numcg ^(1/IT_mumcg)*((1-ITPT_gammaimcg)*ITPT_imcg)^(1-1/IT_mumcg)
++ITDE_numcg ^(1/IT_mumcg)*((1-ITDE_gammaimcg)*ITDE_imcg)^(1-1/IT_mumcg)
++ITRU_numcg ^(1/IT_mumcg)*((1-ITRU_gammaimcg)*ITRU_imcg)^(1-1/IT_mumcg)
++ITRW_numcg ^(1/IT_mumcg)*((1-ITRW_gammaimcg)*ITRW_imcg)^(1-1/IT_mumcg)
++ITUS_numcg ^(1/IT_mumcg)*((1-ITUS_gammaimcg)*ITUS_imcg)^(1-1/IT_mumcg)
 +(1
 -ITRA_numcg
 -ITAT_numcg
@@ -40543,29 +40856,29 @@ IT_imcg^((IT_mumcg-1)/IT_mumcg) =
 -ITRU_numcg
 -ITRW_numcg
 -ITUS_numcg
-)^(1/IT_mumcg)*ITFR_imcg^(1-1/IT_mumcg);
+)^(1/IT_mumcg)*((1-ITFR_gammaimcg)*ITFR_imcg)^(1-1/IT_mumcg);
 // Demand for bilateral consumption import goods
-ITRA_imcg = ITRA_numcg*((RA_pex*ITRA_rer)/IT_pimcg)^(-IT_mumcg)*IT_imcg;
+ITRA_imcg = ITRA_numcg*((RA_pex*ITRA_rer)/(ITRA_gammaimcgdag*IT_pimcg))^(-IT_mumcg)*IT_imcg/(1-ITRA_gammaimcg);
 // Demand for bilateral consumption import goods
-ITAT_imcg = ITAT_numcg*((AT_pex*ITAT_rer)/IT_pimcg)^(-IT_mumcg)*IT_imcg;
+ITAT_imcg = ITAT_numcg*((AT_pex*ITAT_rer)/(ITAT_gammaimcgdag*IT_pimcg))^(-IT_mumcg)*IT_imcg/(1-ITAT_gammaimcg);
 // Demand for bilateral consumption import goods
-ITBE_imcg = ITBE_numcg*((BE_pex*ITBE_rer)/IT_pimcg)^(-IT_mumcg)*IT_imcg;
+ITBE_imcg = ITBE_numcg*((BE_pex*ITBE_rer)/(ITBE_gammaimcgdag*IT_pimcg))^(-IT_mumcg)*IT_imcg/(1-ITBE_gammaimcg);
 // Demand for bilateral consumption import goods
-ITES_imcg = ITES_numcg*((ES_pex*ITES_rer)/IT_pimcg)^(-IT_mumcg)*IT_imcg;
+ITES_imcg = ITES_numcg*((ES_pex*ITES_rer)/(ITES_gammaimcgdag*IT_pimcg))^(-IT_mumcg)*IT_imcg/(1-ITES_gammaimcg);
 // Demand for bilateral consumption import goods
-ITFI_imcg = ITFI_numcg*((FI_pex*ITFI_rer)/IT_pimcg)^(-IT_mumcg)*IT_imcg;
+ITFI_imcg = ITFI_numcg*((FI_pex*ITFI_rer)/(ITFI_gammaimcgdag*IT_pimcg))^(-IT_mumcg)*IT_imcg/(1-ITFI_gammaimcg);
 // Demand for bilateral consumption import goods
-ITGR_imcg = ITGR_numcg*((GR_pex*ITGR_rer)/IT_pimcg)^(-IT_mumcg)*IT_imcg;
+ITGR_imcg = ITGR_numcg*((GR_pex*ITGR_rer)/(ITGR_gammaimcgdag*IT_pimcg))^(-IT_mumcg)*IT_imcg/(1-ITGR_gammaimcg);
 // Demand for bilateral consumption import goods
-ITPT_imcg = ITPT_numcg*((PT_pex*ITPT_rer)/IT_pimcg)^(-IT_mumcg)*IT_imcg;
+ITPT_imcg = ITPT_numcg*((PT_pex*ITPT_rer)/(ITPT_gammaimcgdag*IT_pimcg))^(-IT_mumcg)*IT_imcg/(1-ITPT_gammaimcg);
 // Demand for bilateral consumption import goods
-ITDE_imcg = ITDE_numcg*((DE_pex*ITDE_rer)/IT_pimcg)^(-IT_mumcg)*IT_imcg;
+ITDE_imcg = ITDE_numcg*((DE_pex*ITDE_rer)/(ITDE_gammaimcgdag*IT_pimcg))^(-IT_mumcg)*IT_imcg/(1-ITDE_gammaimcg);
 // Demand for bilateral consumption import goods
-ITRU_imcg = ITRU_numcg*((RU_pex*ITRU_rer)/IT_pimcg)^(-IT_mumcg)*IT_imcg;
+ITRU_imcg = ITRU_numcg*((RU_pex*ITRU_rer)/(ITRU_gammaimcgdag*IT_pimcg))^(-IT_mumcg)*IT_imcg/(1-ITRU_gammaimcg);
 // Demand for bilateral consumption import goods
-ITRW_imcg = ITRW_numcg*((RW_pex*ITRW_rer)/IT_pimcg)^(-IT_mumcg)*IT_imcg;
+ITRW_imcg = ITRW_numcg*((RW_pex*ITRW_rer)/(ITRW_gammaimcgdag*IT_pimcg))^(-IT_mumcg)*IT_imcg/(1-ITRW_gammaimcg);
 // Demand for bilateral consumption import goods
-ITUS_imcg = ITUS_numcg*((US_pex*ITUS_rer)/IT_pimcg)^(-IT_mumcg)*IT_imcg;
+ITUS_imcg = ITUS_numcg*((US_pex*ITUS_rer)/(ITUS_gammaimcgdag*IT_pimcg))^(-IT_mumcg)*IT_imcg/(1-ITUS_gammaimcg);
 ITFR_imcg = (1
 -ITRA_numcg
 -ITAT_numcg
@@ -40579,21 +40892,21 @@ ITFR_imcg = (1
 -ITRU_numcg
 -ITRW_numcg
 -ITUS_numcg
-)*((FR_pex*ITFR_rer)/IT_pimcg)^(-IT_mumcg)*IT_imcg;
+)*((FR_pex*ITFR_rer)/(ITFR_gammaimcgdag*IT_pimcg))^(-IT_mumcg)*IT_imcg/(1-ITFR_gammaimcg);
 // Price of the consumption good (import)
 IT_pimcg^(1-IT_mumcg) =
-+ITRA_numcg * (RA_pex*ITRA_rer)^(1-IT_mumcg)
-+ITAT_numcg * (AT_pex*ITAT_rer)^(1-IT_mumcg)
-+ITBE_numcg * (BE_pex*ITBE_rer)^(1-IT_mumcg)
-+ITES_numcg * (ES_pex*ITES_rer)^(1-IT_mumcg)
-+ITFI_numcg * (FI_pex*ITFI_rer)^(1-IT_mumcg)
-+ITGR_numcg * (GR_pex*ITGR_rer)^(1-IT_mumcg)
-+ITNL_numcg * (NL_pex*ITNL_rer)^(1-IT_mumcg)
-+ITPT_numcg * (PT_pex*ITPT_rer)^(1-IT_mumcg)
-+ITDE_numcg * (DE_pex*ITDE_rer)^(1-IT_mumcg)
-+ITRU_numcg * (RU_pex*ITRU_rer)^(1-IT_mumcg)
-+ITRW_numcg * (RW_pex*ITRW_rer)^(1-IT_mumcg)
-+ITUS_numcg * (US_pex*ITUS_rer)^(1-IT_mumcg)
++ITRA_numcg *((RA_pex*ITRA_rer)/ITRA_gammaimcgdag)^(1-IT_mumcg)
++ITAT_numcg *((AT_pex*ITAT_rer)/ITAT_gammaimcgdag)^(1-IT_mumcg)
++ITBE_numcg *((BE_pex*ITBE_rer)/ITBE_gammaimcgdag)^(1-IT_mumcg)
++ITES_numcg *((ES_pex*ITES_rer)/ITES_gammaimcgdag)^(1-IT_mumcg)
++ITFI_numcg *((FI_pex*ITFI_rer)/ITFI_gammaimcgdag)^(1-IT_mumcg)
++ITGR_numcg *((GR_pex*ITGR_rer)/ITGR_gammaimcgdag)^(1-IT_mumcg)
++ITNL_numcg *((NL_pex*ITNL_rer)/ITNL_gammaimcgdag)^(1-IT_mumcg)
++ITPT_numcg *((PT_pex*ITPT_rer)/ITPT_gammaimcgdag)^(1-IT_mumcg)
++ITDE_numcg *((DE_pex*ITDE_rer)/ITDE_gammaimcgdag)^(1-IT_mumcg)
++ITRU_numcg *((RU_pex*ITRU_rer)/ITRU_gammaimcgdag)^(1-IT_mumcg)
++ITRW_numcg *((RW_pex*ITRW_rer)/ITRW_gammaimcgdag)^(1-IT_mumcg)
++ITUS_numcg *((US_pex*ITUS_rer)/ITUS_gammaimcgdag)^(1-IT_mumcg)
 +(1
 -ITRA_numcg
 -ITAT_numcg
@@ -40607,23 +40920,23 @@ IT_pimcg^(1-IT_mumcg) =
 -ITRU_numcg
 -ITRW_numcg
 -ITUS_numcg
-)*(FR_pex*ITFR_rer)^(1-IT_mumcg);
+)*((FR_pex*ITFR_rer)/ITFR_gammaimcgdag)^(1-IT_mumcg);
 // Private consumption good (import) inflation
 IT_piimcg = IT_pimcg/IT_pimcg(-1)*IT_pic;
 // Private consumption good (import)
 IT_imig^((IT_mumig-1)/IT_mumig) =
-+ITRA_numig ^(1/IT_mumig)*ITRA_imig^(1-1/IT_mumig)
-+ITAT_numig ^(1/IT_mumig)*ITAT_imig^(1-1/IT_mumig)
-+ITBE_numig ^(1/IT_mumig)*ITBE_imig^(1-1/IT_mumig)
-+ITES_numig ^(1/IT_mumig)*ITES_imig^(1-1/IT_mumig)
-+ITFI_numig ^(1/IT_mumig)*ITFI_imig^(1-1/IT_mumig)
-+ITGR_numig ^(1/IT_mumig)*ITGR_imig^(1-1/IT_mumig)
-+ITNL_numig ^(1/IT_mumig)*ITNL_imig^(1-1/IT_mumig)
-+ITPT_numig ^(1/IT_mumig)*ITPT_imig^(1-1/IT_mumig)
-+ITDE_numig ^(1/IT_mumig)*ITDE_imig^(1-1/IT_mumig)
-+ITRU_numig ^(1/IT_mumig)*ITRU_imig^(1-1/IT_mumig)
-+ITRW_numig ^(1/IT_mumig)*ITRW_imig^(1-1/IT_mumig)
-+ITUS_numig ^(1/IT_mumig)*ITUS_imig^(1-1/IT_mumig)
++ITRA_numig ^(1/IT_mumig)*((1-ITRA_gammaimig)*ITRA_imig)^(1-1/IT_mumig)
++ITAT_numig ^(1/IT_mumig)*((1-ITAT_gammaimig)*ITAT_imig)^(1-1/IT_mumig)
++ITBE_numig ^(1/IT_mumig)*((1-ITBE_gammaimig)*ITBE_imig)^(1-1/IT_mumig)
++ITES_numig ^(1/IT_mumig)*((1-ITES_gammaimig)*ITES_imig)^(1-1/IT_mumig)
++ITFI_numig ^(1/IT_mumig)*((1-ITFI_gammaimig)*ITFI_imig)^(1-1/IT_mumig)
++ITGR_numig ^(1/IT_mumig)*((1-ITGR_gammaimig)*ITGR_imig)^(1-1/IT_mumig)
++ITNL_numig ^(1/IT_mumig)*((1-ITNL_gammaimig)*ITNL_imig)^(1-1/IT_mumig)
++ITPT_numig ^(1/IT_mumig)*((1-ITPT_gammaimig)*ITPT_imig)^(1-1/IT_mumig)
++ITDE_numig ^(1/IT_mumig)*((1-ITDE_gammaimig)*ITDE_imig)^(1-1/IT_mumig)
++ITRU_numig ^(1/IT_mumig)*((1-ITRU_gammaimig)*ITRU_imig)^(1-1/IT_mumig)
++ITRW_numig ^(1/IT_mumig)*((1-ITRW_gammaimig)*ITRW_imig)^(1-1/IT_mumig)
++ITUS_numig ^(1/IT_mumig)*((1-ITUS_gammaimig)*ITUS_imig)^(1-1/IT_mumig)
 +(1
 -ITRA_numig
 -ITAT_numig
@@ -40637,29 +40950,29 @@ IT_imig^((IT_mumig-1)/IT_mumig) =
 -ITRU_numig
 -ITRW_numig
 -ITUS_numig
-)^(1/IT_mumig)*ITFR_imig^(1-1/IT_mumig);
+)^(1/IT_mumig)*((1-ITFR_gammaimig)*ITFR_imig)^(1-1/IT_mumig);
 // Demand for bilateral consumption import goods
-ITRA_imig = ITRA_numig*((RA_pex*ITRA_rer)/IT_pimig)^(-IT_mumig)*IT_imig;
+ITRA_imig = ITRA_numig*((RA_pex*ITRA_rer)/(ITRA_gammaimigdag*IT_pimig))^(-IT_mumig)*IT_imig/(1-ITRA_gammaimig);
 // Demand for bilateral consumption import goods
-ITAT_imig = ITAT_numig*((AT_pex*ITAT_rer)/IT_pimig)^(-IT_mumig)*IT_imig;
+ITAT_imig = ITAT_numig*((AT_pex*ITAT_rer)/(ITAT_gammaimigdag*IT_pimig))^(-IT_mumig)*IT_imig/(1-ITAT_gammaimig);
 // Demand for bilateral consumption import goods
-ITBE_imig = ITBE_numig*((BE_pex*ITBE_rer)/IT_pimig)^(-IT_mumig)*IT_imig;
+ITBE_imig = ITBE_numig*((BE_pex*ITBE_rer)/(ITBE_gammaimigdag*IT_pimig))^(-IT_mumig)*IT_imig/(1-ITBE_gammaimig);
 // Demand for bilateral consumption import goods
-ITES_imig = ITES_numig*((ES_pex*ITES_rer)/IT_pimig)^(-IT_mumig)*IT_imig;
+ITES_imig = ITES_numig*((ES_pex*ITES_rer)/(ITES_gammaimigdag*IT_pimig))^(-IT_mumig)*IT_imig/(1-ITES_gammaimig);
 // Demand for bilateral consumption import goods
-ITFI_imig = ITFI_numig*((FI_pex*ITFI_rer)/IT_pimig)^(-IT_mumig)*IT_imig;
+ITFI_imig = ITFI_numig*((FI_pex*ITFI_rer)/(ITFI_gammaimigdag*IT_pimig))^(-IT_mumig)*IT_imig/(1-ITFI_gammaimig);
 // Demand for bilateral consumption import goods
-ITGR_imig = ITGR_numig*((GR_pex*ITGR_rer)/IT_pimig)^(-IT_mumig)*IT_imig;
+ITGR_imig = ITGR_numig*((GR_pex*ITGR_rer)/(ITGR_gammaimigdag*IT_pimig))^(-IT_mumig)*IT_imig/(1-ITGR_gammaimig);
 // Demand for bilateral consumption import goods
-ITPT_imig = ITPT_numig*((PT_pex*ITPT_rer)/IT_pimig)^(-IT_mumig)*IT_imig;
+ITPT_imig = ITPT_numig*((PT_pex*ITPT_rer)/(ITPT_gammaimigdag*IT_pimig))^(-IT_mumig)*IT_imig/(1-ITPT_gammaimig);
 // Demand for bilateral consumption import goods
-ITDE_imig = ITDE_numig*((DE_pex*ITDE_rer)/IT_pimig)^(-IT_mumig)*IT_imig;
+ITDE_imig = ITDE_numig*((DE_pex*ITDE_rer)/(ITDE_gammaimigdag*IT_pimig))^(-IT_mumig)*IT_imig/(1-ITDE_gammaimig);
 // Demand for bilateral consumption import goods
-ITRU_imig = ITRU_numig*((RU_pex*ITRU_rer)/IT_pimig)^(-IT_mumig)*IT_imig;
+ITRU_imig = ITRU_numig*((RU_pex*ITRU_rer)/(ITRU_gammaimigdag*IT_pimig))^(-IT_mumig)*IT_imig/(1-ITRU_gammaimig);
 // Demand for bilateral consumption import goods
-ITRW_imig = ITRW_numig*((RW_pex*ITRW_rer)/IT_pimig)^(-IT_mumig)*IT_imig;
+ITRW_imig = ITRW_numig*((RW_pex*ITRW_rer)/(ITRW_gammaimigdag*IT_pimig))^(-IT_mumig)*IT_imig/(1-ITRW_gammaimig);
 // Demand for bilateral consumption import goods
-ITUS_imig = ITUS_numig*((US_pex*ITUS_rer)/IT_pimig)^(-IT_mumig)*IT_imig;
+ITUS_imig = ITUS_numig*((US_pex*ITUS_rer)/(ITUS_gammaimigdag*IT_pimig))^(-IT_mumig)*IT_imig/(1-ITUS_gammaimig);
 ITFR_imig = (1
 -ITRA_numig
 -ITAT_numig
@@ -40673,21 +40986,21 @@ ITFR_imig = (1
 -ITRU_numig
 -ITRW_numig
 -ITUS_numig
-)*((FR_pex*ITFR_rer)/IT_pimig)^(-IT_mumig)*IT_imig;
+)*((FR_pex*ITFR_rer)/(ITFR_gammaimigdag*IT_pimig))^(-IT_mumig)*IT_imig/(1-ITFR_gammaimig);
 // Price of the consumption good (import)
 IT_pimig^(1-IT_mumig) =
-+ITRA_numig * (RA_pex*ITRA_rer)^(1-IT_mumig)
-+ITAT_numig * (AT_pex*ITAT_rer)^(1-IT_mumig)
-+ITBE_numig * (BE_pex*ITBE_rer)^(1-IT_mumig)
-+ITES_numig * (ES_pex*ITES_rer)^(1-IT_mumig)
-+ITFI_numig * (FI_pex*ITFI_rer)^(1-IT_mumig)
-+ITGR_numig * (GR_pex*ITGR_rer)^(1-IT_mumig)
-+ITNL_numig * (NL_pex*ITNL_rer)^(1-IT_mumig)
-+ITPT_numig * (PT_pex*ITPT_rer)^(1-IT_mumig)
-+ITDE_numig * (DE_pex*ITDE_rer)^(1-IT_mumig)
-+ITRU_numig * (RU_pex*ITRU_rer)^(1-IT_mumig)
-+ITRW_numig * (RW_pex*ITRW_rer)^(1-IT_mumig)
-+ITUS_numig * (US_pex*ITUS_rer)^(1-IT_mumig)
++ITRA_numig *((RA_pex*ITRA_rer)/ITRA_gammaimigdag)^(1-IT_mumig)
++ITAT_numig *((AT_pex*ITAT_rer)/ITAT_gammaimigdag)^(1-IT_mumig)
++ITBE_numig *((BE_pex*ITBE_rer)/ITBE_gammaimigdag)^(1-IT_mumig)
++ITES_numig *((ES_pex*ITES_rer)/ITES_gammaimigdag)^(1-IT_mumig)
++ITFI_numig *((FI_pex*ITFI_rer)/ITFI_gammaimigdag)^(1-IT_mumig)
++ITGR_numig *((GR_pex*ITGR_rer)/ITGR_gammaimigdag)^(1-IT_mumig)
++ITNL_numig *((NL_pex*ITNL_rer)/ITNL_gammaimigdag)^(1-IT_mumig)
++ITPT_numig *((PT_pex*ITPT_rer)/ITPT_gammaimigdag)^(1-IT_mumig)
++ITDE_numig *((DE_pex*ITDE_rer)/ITDE_gammaimigdag)^(1-IT_mumig)
++ITRU_numig *((RU_pex*ITRU_rer)/ITRU_gammaimigdag)^(1-IT_mumig)
++ITRW_numig *((RW_pex*ITRW_rer)/ITRW_gammaimigdag)^(1-IT_mumig)
++ITUS_numig *((US_pex*ITUS_rer)/ITUS_gammaimigdag)^(1-IT_mumig)
 +(1
 -ITRA_numig
 -ITAT_numig
@@ -40701,7 +41014,7 @@ IT_pimig^(1-IT_mumig) =
 -ITRU_numig
 -ITRW_numig
 -ITUS_numig
-)*(FR_pex*ITFR_rer)^(1-IT_mumig);
+)*((FR_pex*ITFR_rer)/ITFR_gammaimigdag)^(1-IT_mumig);
 // Private consumption good (import) inflation
 IT_piimig = IT_pimig/IT_pimig(-1)*IT_pic;
 // Private consumption good (import) inflation
@@ -40802,32 +41115,58 @@ IT_pttc^(1-IT_mutc) = (IT_nutc)*IT_pht^(1-IT_mutc)+(1-IT_nutc)*IT_pimc^(1-IT_mut
 1^(1-IT_muc) = (IT_nuc)*IT_pttc^(1-IT_muc)+(1-IT_nuc)*IT_pnt^(1-IT_muc);
 // Demand for domestic intermediate goods
 IT_htc = IT_nutc*(IT_pht/IT_pttc)^(-IT_mutc)*IT_ttc;
-ITRA_gammaimc = 0;
-ITRA_gammaimcdag = 1;
-ITAT_gammaimc = 0;
-ITAT_gammaimcdag = 1;
-ITBE_gammaimc = 0;
-ITBE_gammaimcdag = 1;
-ITES_gammaimc = 0;
-ITES_gammaimcdag = 1;
-ITFI_gammaimc = 0;
-ITFI_gammaimcdag = 1;
-ITFR_gammaimc = 0;
-ITFR_gammaimcdag = 1;
-ITGR_gammaimc = 0;
-ITGR_gammaimcdag = 1;
-ITNL_gammaimc = 0;
-ITNL_gammaimcdag = 1;
-ITPT_gammaimc = 0;
-ITPT_gammaimcdag = 1;
-ITDE_gammaimc = 0;
-ITDE_gammaimcdag = 1;
-ITRU_gammaimc = 0;
-ITRU_gammaimcdag = 1;
-ITRW_gammaimc = 0;
-ITRW_gammaimcdag = 1;
-ITUS_gammaimc = 0;
-ITUS_gammaimcdag = 1;
+// Import adjustment cost
+ITRA_gammaimc = IT_gammaimc1/2*((ITRA_imc/IT_qc)/(ITRA_imc(-1)/IT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITRA_gammaimcdag = 1-ITRA_gammaimc-IT_gammaimc1*((ITRA_imc/IT_qc)/(ITRA_imc(-1)/IT_qc(-1))-1)*(ITRA_imc/IT_qc)/(ITRA_imc(-1)/IT_qc(-1));
+// Import adjustment cost
+ITAT_gammaimc = IT_gammaimc1/2*((ITAT_imc/IT_qc)/(ITAT_imc(-1)/IT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITAT_gammaimcdag = 1-ITAT_gammaimc-IT_gammaimc1*((ITAT_imc/IT_qc)/(ITAT_imc(-1)/IT_qc(-1))-1)*(ITAT_imc/IT_qc)/(ITAT_imc(-1)/IT_qc(-1));
+// Import adjustment cost
+ITBE_gammaimc = IT_gammaimc1/2*((ITBE_imc/IT_qc)/(ITBE_imc(-1)/IT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITBE_gammaimcdag = 1-ITBE_gammaimc-IT_gammaimc1*((ITBE_imc/IT_qc)/(ITBE_imc(-1)/IT_qc(-1))-1)*(ITBE_imc/IT_qc)/(ITBE_imc(-1)/IT_qc(-1));
+// Import adjustment cost
+ITES_gammaimc = IT_gammaimc1/2*((ITES_imc/IT_qc)/(ITES_imc(-1)/IT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITES_gammaimcdag = 1-ITES_gammaimc-IT_gammaimc1*((ITES_imc/IT_qc)/(ITES_imc(-1)/IT_qc(-1))-1)*(ITES_imc/IT_qc)/(ITES_imc(-1)/IT_qc(-1));
+// Import adjustment cost
+ITFI_gammaimc = IT_gammaimc1/2*((ITFI_imc/IT_qc)/(ITFI_imc(-1)/IT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITFI_gammaimcdag = 1-ITFI_gammaimc-IT_gammaimc1*((ITFI_imc/IT_qc)/(ITFI_imc(-1)/IT_qc(-1))-1)*(ITFI_imc/IT_qc)/(ITFI_imc(-1)/IT_qc(-1));
+// Import adjustment cost
+ITFR_gammaimc = IT_gammaimc1/2*((ITFR_imc/IT_qc)/(ITFR_imc(-1)/IT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITFR_gammaimcdag = 1-ITFR_gammaimc-IT_gammaimc1*((ITFR_imc/IT_qc)/(ITFR_imc(-1)/IT_qc(-1))-1)*(ITFR_imc/IT_qc)/(ITFR_imc(-1)/IT_qc(-1));
+// Import adjustment cost
+ITGR_gammaimc = IT_gammaimc1/2*((ITGR_imc/IT_qc)/(ITGR_imc(-1)/IT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITGR_gammaimcdag = 1-ITGR_gammaimc-IT_gammaimc1*((ITGR_imc/IT_qc)/(ITGR_imc(-1)/IT_qc(-1))-1)*(ITGR_imc/IT_qc)/(ITGR_imc(-1)/IT_qc(-1));
+// Import adjustment cost
+ITNL_gammaimc = IT_gammaimc1/2*((ITNL_imc/IT_qc)/(ITNL_imc(-1)/IT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITNL_gammaimcdag = 1-ITNL_gammaimc-IT_gammaimc1*((ITNL_imc/IT_qc)/(ITNL_imc(-1)/IT_qc(-1))-1)*(ITNL_imc/IT_qc)/(ITNL_imc(-1)/IT_qc(-1));
+// Import adjustment cost
+ITPT_gammaimc = IT_gammaimc1/2*((ITPT_imc/IT_qc)/(ITPT_imc(-1)/IT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITPT_gammaimcdag = 1-ITPT_gammaimc-IT_gammaimc1*((ITPT_imc/IT_qc)/(ITPT_imc(-1)/IT_qc(-1))-1)*(ITPT_imc/IT_qc)/(ITPT_imc(-1)/IT_qc(-1));
+// Import adjustment cost
+ITDE_gammaimc = IT_gammaimc1/2*((ITDE_imc/IT_qc)/(ITDE_imc(-1)/IT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITDE_gammaimcdag = 1-ITDE_gammaimc-IT_gammaimc1*((ITDE_imc/IT_qc)/(ITDE_imc(-1)/IT_qc(-1))-1)*(ITDE_imc/IT_qc)/(ITDE_imc(-1)/IT_qc(-1));
+// Import adjustment cost
+ITRU_gammaimc = IT_gammaimc1/2*((ITRU_imc/IT_qc)/(ITRU_imc(-1)/IT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITRU_gammaimcdag = 1-ITRU_gammaimc-IT_gammaimc1*((ITRU_imc/IT_qc)/(ITRU_imc(-1)/IT_qc(-1))-1)*(ITRU_imc/IT_qc)/(ITRU_imc(-1)/IT_qc(-1));
+// Import adjustment cost
+ITRW_gammaimc = IT_gammaimc1/2*((ITRW_imc/IT_qc)/(ITRW_imc(-1)/IT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITRW_gammaimcdag = 1-ITRW_gammaimc-IT_gammaimc1*((ITRW_imc/IT_qc)/(ITRW_imc(-1)/IT_qc(-1))-1)*(ITRW_imc/IT_qc)/(ITRW_imc(-1)/IT_qc(-1));
+// Import adjustment cost
+ITUS_gammaimc = IT_gammaimc1/2*((ITUS_imc/IT_qc)/(ITUS_imc(-1)/IT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITUS_gammaimcdag = 1-ITUS_gammaimc-IT_gammaimc1*((ITUS_imc/IT_qc)/(ITUS_imc(-1)/IT_qc(-1))-1)*(ITUS_imc/IT_qc)/(ITUS_imc(-1)/IT_qc(-1));
 // Private consumption good (tradable)
 IT_tti^((IT_muti-1)/IT_muti) = (IT_nuti)^(1/IT_muti)*IT_hti^(1-1/IT_muti)+(1-IT_nuti)^(1/IT_muti)*IT_imi^(1-1/IT_muti);
 // Private consumption good  (total)
@@ -40840,35 +41179,60 @@ IT_ptti^(1-IT_muti) = (IT_nuti)*IT_pht^(1-IT_muti)+(1-IT_nuti)*IT_pimi^(1-IT_mut
 IT_pi^(1-IT_mui) = (IT_nui)*IT_ptti^(1-IT_mui)+(1-IT_nui)*IT_pnt^(1-IT_mui);
 // Auxiliary equation for the price of the investment good in steady state
 // this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
-IT_pibar = IT_pi;
 // Demand for domestic intermediate goods
 IT_hti = IT_nuti*(IT_pht/IT_ptti)^(-IT_muti)*IT_tti;
-ITRA_gammaimi = 0;
-ITRA_gammaimidag = 1;
-ITAT_gammaimi = 0;
-ITAT_gammaimidag = 1;
-ITBE_gammaimi = 0;
-ITBE_gammaimidag = 1;
-ITES_gammaimi = 0;
-ITES_gammaimidag = 1;
-ITFI_gammaimi = 0;
-ITFI_gammaimidag = 1;
-ITFR_gammaimi = 0;
-ITFR_gammaimidag = 1;
-ITGR_gammaimi = 0;
-ITGR_gammaimidag = 1;
-ITNL_gammaimi = 0;
-ITNL_gammaimidag = 1;
-ITPT_gammaimi = 0;
-ITPT_gammaimidag = 1;
-ITDE_gammaimi = 0;
-ITDE_gammaimidag = 1;
-ITRU_gammaimi = 0;
-ITRU_gammaimidag = 1;
-ITRW_gammaimi = 0;
-ITRW_gammaimidag = 1;
-ITUS_gammaimi = 0;
-ITUS_gammaimidag = 1;
+// Import adjustment cost
+ITRA_gammaimi = IT_gammaimi1/2*((ITRA_imi/IT_qi)/(ITRA_imi(-1)/IT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITRA_gammaimidag = 1-ITRA_gammaimi-IT_gammaimi1*((ITRA_imi/IT_qi)/(ITRA_imi(-1)/IT_qi)-1)*((ITRA_imi/IT_qi)/(ITRA_imi(-1)/IT_qi(-1)));
+// Import adjustment cost
+ITAT_gammaimi = IT_gammaimi1/2*((ITAT_imi/IT_qi)/(ITAT_imi(-1)/IT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITAT_gammaimidag = 1-ITAT_gammaimi-IT_gammaimi1*((ITAT_imi/IT_qi)/(ITAT_imi(-1)/IT_qi)-1)*((ITAT_imi/IT_qi)/(ITAT_imi(-1)/IT_qi(-1)));
+// Import adjustment cost
+ITBE_gammaimi = IT_gammaimi1/2*((ITBE_imi/IT_qi)/(ITBE_imi(-1)/IT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITBE_gammaimidag = 1-ITBE_gammaimi-IT_gammaimi1*((ITBE_imi/IT_qi)/(ITBE_imi(-1)/IT_qi)-1)*((ITBE_imi/IT_qi)/(ITBE_imi(-1)/IT_qi(-1)));
+// Import adjustment cost
+ITES_gammaimi = IT_gammaimi1/2*((ITES_imi/IT_qi)/(ITES_imi(-1)/IT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITES_gammaimidag = 1-ITES_gammaimi-IT_gammaimi1*((ITES_imi/IT_qi)/(ITES_imi(-1)/IT_qi)-1)*((ITES_imi/IT_qi)/(ITES_imi(-1)/IT_qi(-1)));
+// Import adjustment cost
+ITFI_gammaimi = IT_gammaimi1/2*((ITFI_imi/IT_qi)/(ITFI_imi(-1)/IT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITFI_gammaimidag = 1-ITFI_gammaimi-IT_gammaimi1*((ITFI_imi/IT_qi)/(ITFI_imi(-1)/IT_qi)-1)*((ITFI_imi/IT_qi)/(ITFI_imi(-1)/IT_qi(-1)));
+// Import adjustment cost
+ITFR_gammaimi = IT_gammaimi1/2*((ITFR_imi/IT_qi)/(ITFR_imi(-1)/IT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITFR_gammaimidag = 1-ITFR_gammaimi-IT_gammaimi1*((ITFR_imi/IT_qi)/(ITFR_imi(-1)/IT_qi)-1)*((ITFR_imi/IT_qi)/(ITFR_imi(-1)/IT_qi(-1)));
+// Import adjustment cost
+ITGR_gammaimi = IT_gammaimi1/2*((ITGR_imi/IT_qi)/(ITGR_imi(-1)/IT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITGR_gammaimidag = 1-ITGR_gammaimi-IT_gammaimi1*((ITGR_imi/IT_qi)/(ITGR_imi(-1)/IT_qi)-1)*((ITGR_imi/IT_qi)/(ITGR_imi(-1)/IT_qi(-1)));
+// Import adjustment cost
+ITNL_gammaimi = IT_gammaimi1/2*((ITNL_imi/IT_qi)/(ITNL_imi(-1)/IT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITNL_gammaimidag = 1-ITNL_gammaimi-IT_gammaimi1*((ITNL_imi/IT_qi)/(ITNL_imi(-1)/IT_qi)-1)*((ITNL_imi/IT_qi)/(ITNL_imi(-1)/IT_qi(-1)));
+// Import adjustment cost
+ITPT_gammaimi = IT_gammaimi1/2*((ITPT_imi/IT_qi)/(ITPT_imi(-1)/IT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITPT_gammaimidag = 1-ITPT_gammaimi-IT_gammaimi1*((ITPT_imi/IT_qi)/(ITPT_imi(-1)/IT_qi)-1)*((ITPT_imi/IT_qi)/(ITPT_imi(-1)/IT_qi(-1)));
+// Import adjustment cost
+ITDE_gammaimi = IT_gammaimi1/2*((ITDE_imi/IT_qi)/(ITDE_imi(-1)/IT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITDE_gammaimidag = 1-ITDE_gammaimi-IT_gammaimi1*((ITDE_imi/IT_qi)/(ITDE_imi(-1)/IT_qi)-1)*((ITDE_imi/IT_qi)/(ITDE_imi(-1)/IT_qi(-1)));
+// Import adjustment cost
+ITRU_gammaimi = IT_gammaimi1/2*((ITRU_imi/IT_qi)/(ITRU_imi(-1)/IT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITRU_gammaimidag = 1-ITRU_gammaimi-IT_gammaimi1*((ITRU_imi/IT_qi)/(ITRU_imi(-1)/IT_qi)-1)*((ITRU_imi/IT_qi)/(ITRU_imi(-1)/IT_qi(-1)));
+// Import adjustment cost
+ITRW_gammaimi = IT_gammaimi1/2*((ITRW_imi/IT_qi)/(ITRW_imi(-1)/IT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITRW_gammaimidag = 1-ITRW_gammaimi-IT_gammaimi1*((ITRW_imi/IT_qi)/(ITRW_imi(-1)/IT_qi)-1)*((ITRW_imi/IT_qi)/(ITRW_imi(-1)/IT_qi(-1)));
+// Import adjustment cost
+ITUS_gammaimi = IT_gammaimi1/2*((ITUS_imi/IT_qi)/(ITUS_imi(-1)/IT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITUS_gammaimidag = 1-ITUS_gammaimi-IT_gammaimi1*((ITUS_imi/IT_qi)/(ITUS_imi(-1)/IT_qi)-1)*((ITUS_imi/IT_qi)/(ITUS_imi(-1)/IT_qi(-1)));
 // Private consumption good (tradable)
 IT_ttcg^((IT_mutcg-1)/IT_mutcg) = (IT_nutcg)^(1/IT_mutcg)*IT_htcg^(1-1/IT_mutcg)+(1-IT_nutcg)^(1/IT_mutcg)*IT_imcg^(1-1/IT_mutcg);
 // Private consumption good  (total)
@@ -40881,32 +41245,58 @@ IT_pttcg^(1-IT_mutcg) = (IT_nutcg)*IT_pht^(1-IT_mutcg)+(1-IT_nutcg)*IT_pimcg^(1-
 IT_pcg^(1-IT_mucg) = (IT_nucg)*IT_pttcg^(1-IT_mucg)+(1-IT_nucg)*IT_pnt^(1-IT_mucg);
 // Demand for domestic intermediate goods
 IT_htcg = IT_nutcg*(IT_pht/IT_pttcg)^(-IT_mutcg)*IT_ttcg;
-ITRA_gammaimcg = 0;
-ITRA_gammaimcgdag = 1;
-ITAT_gammaimcg = 0;
-ITAT_gammaimcgdag = 1;
-ITBE_gammaimcg = 0;
-ITBE_gammaimcgdag = 1;
-ITES_gammaimcg = 0;
-ITES_gammaimcgdag = 1;
-ITFI_gammaimcg = 0;
-ITFI_gammaimcgdag = 1;
-ITFR_gammaimcg = 0;
-ITFR_gammaimcgdag = 1;
-ITGR_gammaimcg = 0;
-ITGR_gammaimcgdag = 1;
-ITNL_gammaimcg = 0;
-ITNL_gammaimcgdag = 1;
-ITPT_gammaimcg = 0;
-ITPT_gammaimcgdag = 1;
-ITDE_gammaimcg = 0;
-ITDE_gammaimcgdag = 1;
-ITRU_gammaimcg = 0;
-ITRU_gammaimcgdag = 1;
-ITRW_gammaimcg = 0;
-ITRW_gammaimcgdag = 1;
-ITUS_gammaimcg = 0;
-ITUS_gammaimcgdag = 1;
+// Import adjustment cost
+ITRA_gammaimcg = IT_gammaimcg1/2*((ITRA_imcg/IT_qcg)/(ITRA_imcg(-1)/IT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITRA_gammaimcgdag = 1-ITRA_gammaimcg-IT_gammaimcg1*((ITRA_imcg/IT_qcg)/(ITRA_imcg(-1)/IT_qcg)-1)*((ITRA_imcg/IT_qcg)/(ITRA_imcg(-1)/IT_qcg(-1)));
+// Import adjustment cost
+ITAT_gammaimcg = IT_gammaimcg1/2*((ITAT_imcg/IT_qcg)/(ITAT_imcg(-1)/IT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITAT_gammaimcgdag = 1-ITAT_gammaimcg-IT_gammaimcg1*((ITAT_imcg/IT_qcg)/(ITAT_imcg(-1)/IT_qcg)-1)*((ITAT_imcg/IT_qcg)/(ITAT_imcg(-1)/IT_qcg(-1)));
+// Import adjustment cost
+ITBE_gammaimcg = IT_gammaimcg1/2*((ITBE_imcg/IT_qcg)/(ITBE_imcg(-1)/IT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITBE_gammaimcgdag = 1-ITBE_gammaimcg-IT_gammaimcg1*((ITBE_imcg/IT_qcg)/(ITBE_imcg(-1)/IT_qcg)-1)*((ITBE_imcg/IT_qcg)/(ITBE_imcg(-1)/IT_qcg(-1)));
+// Import adjustment cost
+ITES_gammaimcg = IT_gammaimcg1/2*((ITES_imcg/IT_qcg)/(ITES_imcg(-1)/IT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITES_gammaimcgdag = 1-ITES_gammaimcg-IT_gammaimcg1*((ITES_imcg/IT_qcg)/(ITES_imcg(-1)/IT_qcg)-1)*((ITES_imcg/IT_qcg)/(ITES_imcg(-1)/IT_qcg(-1)));
+// Import adjustment cost
+ITFI_gammaimcg = IT_gammaimcg1/2*((ITFI_imcg/IT_qcg)/(ITFI_imcg(-1)/IT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITFI_gammaimcgdag = 1-ITFI_gammaimcg-IT_gammaimcg1*((ITFI_imcg/IT_qcg)/(ITFI_imcg(-1)/IT_qcg)-1)*((ITFI_imcg/IT_qcg)/(ITFI_imcg(-1)/IT_qcg(-1)));
+// Import adjustment cost
+ITFR_gammaimcg = IT_gammaimcg1/2*((ITFR_imcg/IT_qcg)/(ITFR_imcg(-1)/IT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITFR_gammaimcgdag = 1-ITFR_gammaimcg-IT_gammaimcg1*((ITFR_imcg/IT_qcg)/(ITFR_imcg(-1)/IT_qcg)-1)*((ITFR_imcg/IT_qcg)/(ITFR_imcg(-1)/IT_qcg(-1)));
+// Import adjustment cost
+ITGR_gammaimcg = IT_gammaimcg1/2*((ITGR_imcg/IT_qcg)/(ITGR_imcg(-1)/IT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITGR_gammaimcgdag = 1-ITGR_gammaimcg-IT_gammaimcg1*((ITGR_imcg/IT_qcg)/(ITGR_imcg(-1)/IT_qcg)-1)*((ITGR_imcg/IT_qcg)/(ITGR_imcg(-1)/IT_qcg(-1)));
+// Import adjustment cost
+ITNL_gammaimcg = IT_gammaimcg1/2*((ITNL_imcg/IT_qcg)/(ITNL_imcg(-1)/IT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITNL_gammaimcgdag = 1-ITNL_gammaimcg-IT_gammaimcg1*((ITNL_imcg/IT_qcg)/(ITNL_imcg(-1)/IT_qcg)-1)*((ITNL_imcg/IT_qcg)/(ITNL_imcg(-1)/IT_qcg(-1)));
+// Import adjustment cost
+ITPT_gammaimcg = IT_gammaimcg1/2*((ITPT_imcg/IT_qcg)/(ITPT_imcg(-1)/IT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITPT_gammaimcgdag = 1-ITPT_gammaimcg-IT_gammaimcg1*((ITPT_imcg/IT_qcg)/(ITPT_imcg(-1)/IT_qcg)-1)*((ITPT_imcg/IT_qcg)/(ITPT_imcg(-1)/IT_qcg(-1)));
+// Import adjustment cost
+ITDE_gammaimcg = IT_gammaimcg1/2*((ITDE_imcg/IT_qcg)/(ITDE_imcg(-1)/IT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITDE_gammaimcgdag = 1-ITDE_gammaimcg-IT_gammaimcg1*((ITDE_imcg/IT_qcg)/(ITDE_imcg(-1)/IT_qcg)-1)*((ITDE_imcg/IT_qcg)/(ITDE_imcg(-1)/IT_qcg(-1)));
+// Import adjustment cost
+ITRU_gammaimcg = IT_gammaimcg1/2*((ITRU_imcg/IT_qcg)/(ITRU_imcg(-1)/IT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITRU_gammaimcgdag = 1-ITRU_gammaimcg-IT_gammaimcg1*((ITRU_imcg/IT_qcg)/(ITRU_imcg(-1)/IT_qcg)-1)*((ITRU_imcg/IT_qcg)/(ITRU_imcg(-1)/IT_qcg(-1)));
+// Import adjustment cost
+ITRW_gammaimcg = IT_gammaimcg1/2*((ITRW_imcg/IT_qcg)/(ITRW_imcg(-1)/IT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITRW_gammaimcgdag = 1-ITRW_gammaimcg-IT_gammaimcg1*((ITRW_imcg/IT_qcg)/(ITRW_imcg(-1)/IT_qcg)-1)*((ITRW_imcg/IT_qcg)/(ITRW_imcg(-1)/IT_qcg(-1)));
+// Import adjustment cost
+ITUS_gammaimcg = IT_gammaimcg1/2*((ITUS_imcg/IT_qcg)/(ITUS_imcg(-1)/IT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITUS_gammaimcgdag = 1-ITUS_gammaimcg-IT_gammaimcg1*((ITUS_imcg/IT_qcg)/(ITUS_imcg(-1)/IT_qcg)-1)*((ITUS_imcg/IT_qcg)/(ITUS_imcg(-1)/IT_qcg(-1)));
 // Private consumption good (tradable)
 IT_ttig^((IT_mutig-1)/IT_mutig) = (IT_nutig)^(1/IT_mutig)*IT_htig^(1-1/IT_mutig)+(1-IT_nutig)^(1/IT_mutig)*IT_imig^(1-1/IT_mutig);
 // Private consumption good  (total)
@@ -40919,32 +41309,58 @@ IT_pttig^(1-IT_mutig) = (IT_nutig)*IT_pht^(1-IT_mutig)+(1-IT_nutig)*IT_pimig^(1-
 IT_pig^(1-IT_muig) = (IT_nuig)*IT_pttig^(1-IT_muig)+(1-IT_nuig)*IT_pnt^(1-IT_muig);
 // Demand for domestic intermediate goods
 IT_htig = IT_nutig*(IT_pht/IT_pttig)^(-IT_mutig)*IT_ttig;
-ITRA_gammaimig = 0;
-ITRA_gammaimigdag = 1;
-ITAT_gammaimig = 0;
-ITAT_gammaimigdag = 1;
-ITBE_gammaimig = 0;
-ITBE_gammaimigdag = 1;
-ITES_gammaimig = 0;
-ITES_gammaimigdag = 1;
-ITFI_gammaimig = 0;
-ITFI_gammaimigdag = 1;
-ITFR_gammaimig = 0;
-ITFR_gammaimigdag = 1;
-ITGR_gammaimig = 0;
-ITGR_gammaimigdag = 1;
-ITNL_gammaimig = 0;
-ITNL_gammaimigdag = 1;
-ITPT_gammaimig = 0;
-ITPT_gammaimigdag = 1;
-ITDE_gammaimig = 0;
-ITDE_gammaimigdag = 1;
-ITRU_gammaimig = 0;
-ITRU_gammaimigdag = 1;
-ITRW_gammaimig = 0;
-ITRW_gammaimigdag = 1;
-ITUS_gammaimig = 0;
-ITUS_gammaimigdag = 1;
+// Import adjustment cost
+ITRA_gammaimig = IT_gammaimig1/2*((ITRA_imig/IT_qig)/(ITRA_imig(-1)/IT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITRA_gammaimigdag = 1-ITRA_gammaimig-IT_gammaimig1*((ITRA_imig/IT_qig)/(ITRA_imig(-1)/IT_qig)-1)*((ITRA_imig/IT_qig)/(ITRA_imig(-1)/IT_qig(-1)));
+// Import adjustment cost
+ITAT_gammaimig = IT_gammaimig1/2*((ITAT_imig/IT_qig)/(ITAT_imig(-1)/IT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITAT_gammaimigdag = 1-ITAT_gammaimig-IT_gammaimig1*((ITAT_imig/IT_qig)/(ITAT_imig(-1)/IT_qig)-1)*((ITAT_imig/IT_qig)/(ITAT_imig(-1)/IT_qig(-1)));
+// Import adjustment cost
+ITBE_gammaimig = IT_gammaimig1/2*((ITBE_imig/IT_qig)/(ITBE_imig(-1)/IT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITBE_gammaimigdag = 1-ITBE_gammaimig-IT_gammaimig1*((ITBE_imig/IT_qig)/(ITBE_imig(-1)/IT_qig)-1)*((ITBE_imig/IT_qig)/(ITBE_imig(-1)/IT_qig(-1)));
+// Import adjustment cost
+ITES_gammaimig = IT_gammaimig1/2*((ITES_imig/IT_qig)/(ITES_imig(-1)/IT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITES_gammaimigdag = 1-ITES_gammaimig-IT_gammaimig1*((ITES_imig/IT_qig)/(ITES_imig(-1)/IT_qig)-1)*((ITES_imig/IT_qig)/(ITES_imig(-1)/IT_qig(-1)));
+// Import adjustment cost
+ITFI_gammaimig = IT_gammaimig1/2*((ITFI_imig/IT_qig)/(ITFI_imig(-1)/IT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITFI_gammaimigdag = 1-ITFI_gammaimig-IT_gammaimig1*((ITFI_imig/IT_qig)/(ITFI_imig(-1)/IT_qig)-1)*((ITFI_imig/IT_qig)/(ITFI_imig(-1)/IT_qig(-1)));
+// Import adjustment cost
+ITFR_gammaimig = IT_gammaimig1/2*((ITFR_imig/IT_qig)/(ITFR_imig(-1)/IT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITFR_gammaimigdag = 1-ITFR_gammaimig-IT_gammaimig1*((ITFR_imig/IT_qig)/(ITFR_imig(-1)/IT_qig)-1)*((ITFR_imig/IT_qig)/(ITFR_imig(-1)/IT_qig(-1)));
+// Import adjustment cost
+ITGR_gammaimig = IT_gammaimig1/2*((ITGR_imig/IT_qig)/(ITGR_imig(-1)/IT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITGR_gammaimigdag = 1-ITGR_gammaimig-IT_gammaimig1*((ITGR_imig/IT_qig)/(ITGR_imig(-1)/IT_qig)-1)*((ITGR_imig/IT_qig)/(ITGR_imig(-1)/IT_qig(-1)));
+// Import adjustment cost
+ITNL_gammaimig = IT_gammaimig1/2*((ITNL_imig/IT_qig)/(ITNL_imig(-1)/IT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITNL_gammaimigdag = 1-ITNL_gammaimig-IT_gammaimig1*((ITNL_imig/IT_qig)/(ITNL_imig(-1)/IT_qig)-1)*((ITNL_imig/IT_qig)/(ITNL_imig(-1)/IT_qig(-1)));
+// Import adjustment cost
+ITPT_gammaimig = IT_gammaimig1/2*((ITPT_imig/IT_qig)/(ITPT_imig(-1)/IT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITPT_gammaimigdag = 1-ITPT_gammaimig-IT_gammaimig1*((ITPT_imig/IT_qig)/(ITPT_imig(-1)/IT_qig)-1)*((ITPT_imig/IT_qig)/(ITPT_imig(-1)/IT_qig(-1)));
+// Import adjustment cost
+ITDE_gammaimig = IT_gammaimig1/2*((ITDE_imig/IT_qig)/(ITDE_imig(-1)/IT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITDE_gammaimigdag = 1-ITDE_gammaimig-IT_gammaimig1*((ITDE_imig/IT_qig)/(ITDE_imig(-1)/IT_qig)-1)*((ITDE_imig/IT_qig)/(ITDE_imig(-1)/IT_qig(-1)));
+// Import adjustment cost
+ITRU_gammaimig = IT_gammaimig1/2*((ITRU_imig/IT_qig)/(ITRU_imig(-1)/IT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITRU_gammaimigdag = 1-ITRU_gammaimig-IT_gammaimig1*((ITRU_imig/IT_qig)/(ITRU_imig(-1)/IT_qig)-1)*((ITRU_imig/IT_qig)/(ITRU_imig(-1)/IT_qig(-1)));
+// Import adjustment cost
+ITRW_gammaimig = IT_gammaimig1/2*((ITRW_imig/IT_qig)/(ITRW_imig(-1)/IT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITRW_gammaimigdag = 1-ITRW_gammaimig-IT_gammaimig1*((ITRW_imig/IT_qig)/(ITRW_imig(-1)/IT_qig)-1)*((ITRW_imig/IT_qig)/(ITRW_imig(-1)/IT_qig(-1)));
+// Import adjustment cost
+ITUS_gammaimig = IT_gammaimig1/2*((ITUS_imig/IT_qig)/(ITUS_imig(-1)/IT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+ITUS_gammaimigdag = 1-ITUS_gammaimig-IT_gammaimig1*((ITUS_imig/IT_qig)/(ITUS_imig(-1)/IT_qig)-1)*((ITUS_imig/IT_qig)/(ITUS_imig(-1)/IT_qig(-1)));
 // Trade balance
 IT_tb =
 +IT_pex*RA_size/IT_size*RAIT_im
@@ -41005,18 +41421,10 @@ IT_ex =
 // Government spending, using IT_pg = IT_pht
 IT_pcg*IT_cg = IT_cgy*IT_pybar*IT_ybar;
 IT_pig*IT_ig = IT_igy*IT_pybar*IT_ybar;
-IT_t = 0;
-IT_b = IT_bytarget*IT_pybar*IT_ybar;
-// Auxiliary equation for steady-state output
-IT_ybar = IT_y;
-// Auxiliary equation for steady-state output
-IT_ytbar = IT_yst;
-// Auxiliary equation for steady-state output
-IT_ynbar = IT_ysn;
-// Auxiliary equation for steady-state output deflator
-IT_pybar = IT_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-IT_trybar = IT_tr/(IT_pybar*IT_ybar);
+// Transfers
+IT_tr = IT_try*IT_pybar*IT_ybar;
+// Fiscal rule
+IT_t/(IT_pybar*IT_ybar) = IT_phitb*(IT_b/(IT_pybar*IT_ybar)-IT_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 IT_ti = IT_upsilont*IT_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -41032,9 +41440,11 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	IT_r = DE_r;
-IT_pic4 = IT_pi4target;
-IT_rr-1 = IT_r/IT_pi4target^(1/4)-1;
+		IT_rerdep/DE_rerdep*IT_pic/DE_pic-1=0;
+// Definition of annual inflation
+IT_pic4 = IT_pic*IT_pic(-1)*IT_pic(-2)*IT_pic(-3);
+// Real interest rate
+IT_rr-1 = IT_r/IT_pic(+1)-1;
 // Equilibrium real interest rate
 IT_rrstar-1 = 1/IT_beta-1;
 //-------------
@@ -41121,68 +41531,68 @@ IT_py*IT_y =
 +IT_pcg*IT_qcg
 +IT_pig*IT_qig
 +IT_pex*RA_size/IT_size*RAIT_im
--(RA_pex*ITRA_rer)*ITRA_imc
--(RA_pex*ITRA_rer)*ITRA_imi
+-(RA_pex*ITRA_rer)*(ITRA_imc*(1-ITRA_gammaimc)/ITRA_gammaimcdag)
+-(RA_pex*ITRA_rer)*(ITRA_imi*(1-ITRA_gammaimi)/ITRA_gammaimidag)
 -(RA_pex*ITRA_rer)*ITRA_imcg
 -(RA_pex*ITRA_rer)*ITRA_imig
 +IT_pex*AT_size/IT_size*ATIT_im
--(AT_pex*ITAT_rer)*ITAT_imc
--(AT_pex*ITAT_rer)*ITAT_imi
+-(AT_pex*ITAT_rer)*(ITAT_imc*(1-ITAT_gammaimc)/ITAT_gammaimcdag)
+-(AT_pex*ITAT_rer)*(ITAT_imi*(1-ITAT_gammaimi)/ITAT_gammaimidag)
 -(AT_pex*ITAT_rer)*ITAT_imcg
 -(AT_pex*ITAT_rer)*ITAT_imig
 +IT_pex*BE_size/IT_size*BEIT_im
--(BE_pex*ITBE_rer)*ITBE_imc
--(BE_pex*ITBE_rer)*ITBE_imi
+-(BE_pex*ITBE_rer)*(ITBE_imc*(1-ITBE_gammaimc)/ITBE_gammaimcdag)
+-(BE_pex*ITBE_rer)*(ITBE_imi*(1-ITBE_gammaimi)/ITBE_gammaimidag)
 -(BE_pex*ITBE_rer)*ITBE_imcg
 -(BE_pex*ITBE_rer)*ITBE_imig
 +IT_pex*ES_size/IT_size*ESIT_im
--(ES_pex*ITES_rer)*ITES_imc
--(ES_pex*ITES_rer)*ITES_imi
+-(ES_pex*ITES_rer)*(ITES_imc*(1-ITES_gammaimc)/ITES_gammaimcdag)
+-(ES_pex*ITES_rer)*(ITES_imi*(1-ITES_gammaimi)/ITES_gammaimidag)
 -(ES_pex*ITES_rer)*ITES_imcg
 -(ES_pex*ITES_rer)*ITES_imig
 +IT_pex*FI_size/IT_size*FIIT_im
--(FI_pex*ITFI_rer)*ITFI_imc
--(FI_pex*ITFI_rer)*ITFI_imi
+-(FI_pex*ITFI_rer)*(ITFI_imc*(1-ITFI_gammaimc)/ITFI_gammaimcdag)
+-(FI_pex*ITFI_rer)*(ITFI_imi*(1-ITFI_gammaimi)/ITFI_gammaimidag)
 -(FI_pex*ITFI_rer)*ITFI_imcg
 -(FI_pex*ITFI_rer)*ITFI_imig
 +IT_pex*FR_size/IT_size*FRIT_im
--(FR_pex*ITFR_rer)*ITFR_imc
--(FR_pex*ITFR_rer)*ITFR_imi
+-(FR_pex*ITFR_rer)*(ITFR_imc*(1-ITFR_gammaimc)/ITFR_gammaimcdag)
+-(FR_pex*ITFR_rer)*(ITFR_imi*(1-ITFR_gammaimi)/ITFR_gammaimidag)
 -(FR_pex*ITFR_rer)*ITFR_imcg
 -(FR_pex*ITFR_rer)*ITFR_imig
 +IT_pex*GR_size/IT_size*GRIT_im
--(GR_pex*ITGR_rer)*ITGR_imc
--(GR_pex*ITGR_rer)*ITGR_imi
+-(GR_pex*ITGR_rer)*(ITGR_imc*(1-ITGR_gammaimc)/ITGR_gammaimcdag)
+-(GR_pex*ITGR_rer)*(ITGR_imi*(1-ITGR_gammaimi)/ITGR_gammaimidag)
 -(GR_pex*ITGR_rer)*ITGR_imcg
 -(GR_pex*ITGR_rer)*ITGR_imig
 +IT_pex*NL_size/IT_size*NLIT_im
--(NL_pex*ITNL_rer)*ITNL_imc
--(NL_pex*ITNL_rer)*ITNL_imi
+-(NL_pex*ITNL_rer)*(ITNL_imc*(1-ITNL_gammaimc)/ITNL_gammaimcdag)
+-(NL_pex*ITNL_rer)*(ITNL_imi*(1-ITNL_gammaimi)/ITNL_gammaimidag)
 -(NL_pex*ITNL_rer)*ITNL_imcg
 -(NL_pex*ITNL_rer)*ITNL_imig
 +IT_pex*PT_size/IT_size*PTIT_im
--(PT_pex*ITPT_rer)*ITPT_imc
--(PT_pex*ITPT_rer)*ITPT_imi
+-(PT_pex*ITPT_rer)*(ITPT_imc*(1-ITPT_gammaimc)/ITPT_gammaimcdag)
+-(PT_pex*ITPT_rer)*(ITPT_imi*(1-ITPT_gammaimi)/ITPT_gammaimidag)
 -(PT_pex*ITPT_rer)*ITPT_imcg
 -(PT_pex*ITPT_rer)*ITPT_imig
 +IT_pex*DE_size/IT_size*DEIT_im
--(DE_pex*ITDE_rer)*ITDE_imc
--(DE_pex*ITDE_rer)*ITDE_imi
+-(DE_pex*ITDE_rer)*(ITDE_imc*(1-ITDE_gammaimc)/ITDE_gammaimcdag)
+-(DE_pex*ITDE_rer)*(ITDE_imi*(1-ITDE_gammaimi)/ITDE_gammaimidag)
 -(DE_pex*ITDE_rer)*ITDE_imcg
 -(DE_pex*ITDE_rer)*ITDE_imig
 +IT_pex*RU_size/IT_size*RUIT_im
--(RU_pex*ITRU_rer)*ITRU_imc
--(RU_pex*ITRU_rer)*ITRU_imi
+-(RU_pex*ITRU_rer)*(ITRU_imc*(1-ITRU_gammaimc)/ITRU_gammaimcdag)
+-(RU_pex*ITRU_rer)*(ITRU_imi*(1-ITRU_gammaimi)/ITRU_gammaimidag)
 -(RU_pex*ITRU_rer)*ITRU_imcg
 -(RU_pex*ITRU_rer)*ITRU_imig
 +IT_pex*RW_size/IT_size*RWIT_im
--(RW_pex*ITRW_rer)*ITRW_imc
--(RW_pex*ITRW_rer)*ITRW_imi
+-(RW_pex*ITRW_rer)*(ITRW_imc*(1-ITRW_gammaimc)/ITRW_gammaimcdag)
+-(RW_pex*ITRW_rer)*(ITRW_imi*(1-ITRW_gammaimi)/ITRW_gammaimidag)
 -(RW_pex*ITRW_rer)*ITRW_imcg
 -(RW_pex*ITRW_rer)*ITRW_imig
 +IT_pex*US_size/IT_size*USIT_im
--(US_pex*ITUS_rer)*ITUS_imc
--(US_pex*ITUS_rer)*ITUS_imi
+-(US_pex*ITUS_rer)*(ITUS_imc*(1-ITUS_gammaimc)/ITUS_gammaimcdag)
+-(US_pex*ITUS_rer)*(ITUS_imi*(1-ITUS_gammaimi)/ITUS_gammaimidag)
 -(US_pex*ITUS_rer)*ITUS_imcg
 -(US_pex*ITUS_rer)*ITUS_imig
 ;
@@ -41257,7 +41667,7 @@ IT_yhty = IT_pht*IT_yst/(IT_py*IT_y);
 // NT sector share
 IT_ynty = IT_pnt*IT_ysn/(IT_py*IT_y);
 // Output gap
-IT_ygap = 0;
+IT_ygap = IT_y/IT_ybar-1;
 // Output growth (gross rate)
 IT_ygrowth = IT_y/IT_y(-1);
 // Output growth (gross rate yoy)
@@ -41421,7 +41831,7 @@ NL_dcci = ((NL_nucces)^(1/NL_mucces)*NL_ci^(1-1/NL_mucces)+(1-NL_nucces)^(1/NL_m
 NL_lambdai*(1+NL_tauc+NL_gammavi+NL_vi*NL_gammavider) = NL_zcon*(NL_ccesi-NL_kappa*NL_ccesi(-1))^(-NL_sigma)*NL_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
-NL_r                   = NL_beta^(-1)*NL_lambdai/NL_lambdai    *NL_pic;
+NL_r*(1-NL_gammabh) = NL_beta^(-1)*NL_lambdai/NL_lambdai(+1)*NL_pic(+1);
 // Germany
 // US and the RoW
 // Euler equation for money
@@ -41432,17 +41842,23 @@ NL_vi = NL_ci/NL_mi;
 NL_gammavi = NL_gammav1*NL_vi+NL_gammav2/NL_vi-2*(NL_gammav1*NL_gammav2)^(1/2);
 // Derivative of transaction cost
 NL_gammavider = NL_gammav1-NL_gammav2*NL_vi^(-2);
-NL_delta = NL_ii/NL_ki;
-NL_gammai = 0;
-NL_gammaider = 0;
-NL_gammau = 0;
-NL_gammauder = ((NL_beta^(-1)-1+NL_delta)*NL_qbar-NL_delta*NL_taukbar*NL_pibar)/((1-NL_taukbar)*NL_pibar);
-NL_u = 1;
-NL_pi = NL_q;
+// Capital accumulation
+NL_ki = (1-NL_delta)*NL_ki(-1)+(1-NL_gammai(-1))*NL_ii(-1)*NL_zinv;
+// Investment adjustment cost
+NL_gammai = NL_gammai1/2*(NL_ii/NL_ii(-1)-1)^2;
+// Derivative of investment adjustment cost
+NL_gammaider = NL_gammai1*(NL_ii/NL_ii(-1)-1)/NL_ii(-1);
+// Capacity utilisation cost
+NL_gammau = ((NL_beta^(-1)-1+NL_delta)*NL_qbar-NL_delta*NL_taukbar*NL_pibar)/((1-NL_taukbar)*NL_pibar)*(NL_u-1)+NL_gammau2/2*(NL_u-1)^2;
+// Derivative of capacity utilisation cost
+NL_gammauder = ((NL_beta^(-1)-1+NL_delta)*NL_qbar-NL_delta*NL_taukbar*NL_pibar)/((1-NL_taukbar)*NL_pibar)+NL_gammau2*(NL_u-1);
+// Optimal capacity utilisation (FOC)
+NL_rk = NL_gammauder*NL_pi;
+// Tobin's Q
+NL_pi = NL_q*NL_zinv*(1-NL_gammai-NL_gammaider*NL_ii)+NL_beta*NL_lambdai(+1)/NL_lambdai*NL_q(+1)*NL_zinv(+1)*NL_gammaider(+1)*NL_ii(+1)^2/NL_ii;
 // Auxiliary equation for Tobin's Q in steady state
-NL_qbar = NL_q;
 // Rate of return on capital
-NL_q = NL_beta*((1-NL_tauk)*NL_rk+(NL_tauk*NL_delta)*NL_pi+(1-NL_delta)*NL_q);
+NL_q = NL_beta*NL_lambdai(+1)/NL_lambdai*((1-NL_tauk(+1))*(NL_rk(+1)*NL_u(+1)-NL_gammau(+1)*NL_pi(+1))+(NL_tauk(+1)*NL_delta)*NL_pi(+1)+(1-NL_delta)*NL_q(+1));
 // Optimal wage contract (FOC)
 NL_witilde^(1+NL_etai*NL_zeta) = NL_etai/(NL_etai-1)*NL_fi/NL_gi+NL_wcst;
 // Definition of fi
@@ -41501,11 +41917,9 @@ NL_mcn = 1/(NL_zn*NL_kg^NL_alphag*(NL_alphan)^(NL_alphan)*(1-NL_alphan)^(1-NL_al
 // Wage Inflation (qoq)
 NL_piw = NL_w/NL_w(-1)*NL_pic;
 // Wage Inflation (yoy)
-NL_piw4 = NL_pic4;
+NL_piw4 = NL_piw*NL_piw(-1)*NL_piw(-2)*NL_piw(-3);
 // Auxiliary equation for steady-state fixed cost
-NL_psitbar = NL_psit*NL_ytbar;
 // Auxiliary equation for steady-state fixed cost
-NL_psinbar = NL_psin*NL_ynbar;
 // Capital input (FOC)
 NL_rk = NL_alphat*(NL_yst+NL_psitbar)/NL_kdt*NL_mct;
 // Capital input (FOC)
@@ -41580,7 +41994,6 @@ NL_piex = NL_pex/NL_pex(-1)*NL_pic;
 // Bilateral real exchange rate
 NLRA_rer = NL_rer/RA_rer;
 // Auxiliary equation for steady-state output
-NLRA_rerbar = NLRA_rer;
 //Terms of Trade
 NLRA_tot = RA_pex*NLRA_rer/NL_pex;
 // Optimal price contract set in foreign markets (FOC), using NL_pxtilde = AT_pimtilde
@@ -41596,7 +42009,6 @@ NLRA_tot = RA_pex*NLRA_rer/NL_pex;
 // Bilateral real exchange rate
 NLAT_rer = NL_rer/AT_rer;
 // Auxiliary equation for steady-state output
-NLAT_rerbar = NLAT_rer;
 //Terms of Trade
 NLAT_tot = AT_pex*NLAT_rer/NL_pex;
 // Optimal price contract set in foreign markets (FOC), using NL_pxtilde = BE_pimtilde
@@ -41612,7 +42024,6 @@ NLAT_tot = AT_pex*NLAT_rer/NL_pex;
 // Bilateral real exchange rate
 NLBE_rer = NL_rer/BE_rer;
 // Auxiliary equation for steady-state output
-NLBE_rerbar = NLBE_rer;
 //Terms of Trade
 NLBE_tot = BE_pex*NLBE_rer/NL_pex;
 // Optimal price contract set in foreign markets (FOC), using NL_pxtilde = ES_pimtilde
@@ -41628,7 +42039,6 @@ NLBE_tot = BE_pex*NLBE_rer/NL_pex;
 // Bilateral real exchange rate
 NLES_rer = NL_rer/ES_rer;
 // Auxiliary equation for steady-state output
-NLES_rerbar = NLES_rer;
 //Terms of Trade
 NLES_tot = ES_pex*NLES_rer/NL_pex;
 // Optimal price contract set in foreign markets (FOC), using NL_pxtilde = FI_pimtilde
@@ -41644,7 +42054,6 @@ NLES_tot = ES_pex*NLES_rer/NL_pex;
 // Bilateral real exchange rate
 NLFI_rer = NL_rer/FI_rer;
 // Auxiliary equation for steady-state output
-NLFI_rerbar = NLFI_rer;
 //Terms of Trade
 NLFI_tot = FI_pex*NLFI_rer/NL_pex;
 // Optimal price contract set in foreign markets (FOC), using NL_pxtilde = FR_pimtilde
@@ -41660,7 +42069,6 @@ NLFI_tot = FI_pex*NLFI_rer/NL_pex;
 // Bilateral real exchange rate
 NLFR_rer = NL_rer/FR_rer;
 // Auxiliary equation for steady-state output
-NLFR_rerbar = NLFR_rer;
 //Terms of Trade
 NLFR_tot = FR_pex*NLFR_rer/NL_pex;
 // Optimal price contract set in foreign markets (FOC), using NL_pxtilde = GR_pimtilde
@@ -41676,7 +42084,6 @@ NLFR_tot = FR_pex*NLFR_rer/NL_pex;
 // Bilateral real exchange rate
 NLGR_rer = NL_rer/GR_rer;
 // Auxiliary equation for steady-state output
-NLGR_rerbar = NLGR_rer;
 //Terms of Trade
 NLGR_tot = GR_pex*NLGR_rer/NL_pex;
 // Optimal price contract set in foreign markets (FOC), using NL_pxtilde = IT_pimtilde
@@ -41692,7 +42099,6 @@ NLGR_tot = GR_pex*NLGR_rer/NL_pex;
 // Bilateral real exchange rate
 NLIT_rer = NL_rer/IT_rer;
 // Auxiliary equation for steady-state output
-NLIT_rerbar = NLIT_rer;
 //Terms of Trade
 NLIT_tot = IT_pex*NLIT_rer/NL_pex;
 // Optimal price contract set in foreign markets (FOC), using NL_pxtilde = PT_pimtilde
@@ -41708,7 +42114,6 @@ NLIT_tot = IT_pex*NLIT_rer/NL_pex;
 // Bilateral real exchange rate
 NLPT_rer = NL_rer/PT_rer;
 // Auxiliary equation for steady-state output
-NLPT_rerbar = NLPT_rer;
 //Terms of Trade
 NLPT_tot = PT_pex*NLPT_rer/NL_pex;
 // Optimal price contract set in foreign markets (FOC), using NL_pxtilde = DE_pimtilde
@@ -41724,7 +42129,6 @@ NLPT_tot = PT_pex*NLPT_rer/NL_pex;
 // Bilateral real exchange rate
 NLDE_rer = NL_rer/DE_rer;
 // Auxiliary equation for steady-state output
-NLDE_rerbar = NLDE_rer;
 //Terms of Trade
 NLDE_tot = DE_pex*NLDE_rer/NL_pex;
 // Optimal price contract set in foreign markets (FOC), using NL_pxtilde = RU_pimtilde
@@ -41740,7 +42144,6 @@ NLDE_tot = DE_pex*NLDE_rer/NL_pex;
 // Bilateral real exchange rate
 NLRU_rer = NL_rer/RU_rer;
 // Auxiliary equation for steady-state output
-NLRU_rerbar = NLRU_rer;
 //Terms of Trade
 NLRU_tot = RU_pex*NLRU_rer/NL_pex;
 // Optimal price contract set in foreign markets (FOC), using NL_pxtilde = RW_pimtilde
@@ -41756,7 +42159,6 @@ NLRU_tot = RU_pex*NLRU_rer/NL_pex;
 // Bilateral real exchange rate
 NLRW_rer = NL_rer/RW_rer;
 // Auxiliary equation for steady-state output
-NLRW_rerbar = NLRW_rer;
 //Terms of Trade
 NLRW_tot = RW_pex*NLRW_rer/NL_pex;
 // Optimal price contract set in foreign markets (FOC), using NL_pxtilde = US_pimtilde
@@ -41772,7 +42174,6 @@ NLRW_tot = RW_pex*NLRW_rer/NL_pex;
 // Bilateral real exchange rate
 NLUS_rer = NL_rer/US_rer;
 // Auxiliary equation for steady-state output
-NLUS_rerbar = NLUS_rer;
 //Terms of Trade
 NLUS_tot = US_pex*NLUS_rer/NL_pex;
 // Total imports 
@@ -44270,18 +44671,18 @@ NL_etot = 1
 //-----------------
 // Private consumption good (import)
 NL_imc^((NL_mumc-1)/NL_mumc) =
-+NLRA_numc ^(1/NL_mumc)*NLRA_imc^(1-1/NL_mumc)
-+NLAT_numc ^(1/NL_mumc)*NLAT_imc^(1-1/NL_mumc)
-+NLBE_numc ^(1/NL_mumc)*NLBE_imc^(1-1/NL_mumc)
-+NLES_numc ^(1/NL_mumc)*NLES_imc^(1-1/NL_mumc)
-+NLFI_numc ^(1/NL_mumc)*NLFI_imc^(1-1/NL_mumc)
-+NLFR_numc ^(1/NL_mumc)*NLFR_imc^(1-1/NL_mumc)
-+NLIT_numc ^(1/NL_mumc)*NLIT_imc^(1-1/NL_mumc)
-+NLPT_numc ^(1/NL_mumc)*NLPT_imc^(1-1/NL_mumc)
-+NLDE_numc ^(1/NL_mumc)*NLDE_imc^(1-1/NL_mumc)
-+NLRU_numc ^(1/NL_mumc)*NLRU_imc^(1-1/NL_mumc)
-+NLRW_numc ^(1/NL_mumc)*NLRW_imc^(1-1/NL_mumc)
-+NLUS_numc ^(1/NL_mumc)*NLUS_imc^(1-1/NL_mumc)
++NLRA_numc ^(1/NL_mumc)*((1-NLRA_gammaimc)*NLRA_imc)^(1-1/NL_mumc)
++NLAT_numc ^(1/NL_mumc)*((1-NLAT_gammaimc)*NLAT_imc)^(1-1/NL_mumc)
++NLBE_numc ^(1/NL_mumc)*((1-NLBE_gammaimc)*NLBE_imc)^(1-1/NL_mumc)
++NLES_numc ^(1/NL_mumc)*((1-NLES_gammaimc)*NLES_imc)^(1-1/NL_mumc)
++NLFI_numc ^(1/NL_mumc)*((1-NLFI_gammaimc)*NLFI_imc)^(1-1/NL_mumc)
++NLFR_numc ^(1/NL_mumc)*((1-NLFR_gammaimc)*NLFR_imc)^(1-1/NL_mumc)
++NLIT_numc ^(1/NL_mumc)*((1-NLIT_gammaimc)*NLIT_imc)^(1-1/NL_mumc)
++NLPT_numc ^(1/NL_mumc)*((1-NLPT_gammaimc)*NLPT_imc)^(1-1/NL_mumc)
++NLDE_numc ^(1/NL_mumc)*((1-NLDE_gammaimc)*NLDE_imc)^(1-1/NL_mumc)
++NLRU_numc ^(1/NL_mumc)*((1-NLRU_gammaimc)*NLRU_imc)^(1-1/NL_mumc)
++NLRW_numc ^(1/NL_mumc)*((1-NLRW_gammaimc)*NLRW_imc)^(1-1/NL_mumc)
++NLUS_numc ^(1/NL_mumc)*((1-NLUS_gammaimc)*NLUS_imc)^(1-1/NL_mumc)
 +(1
 -NLRA_numc
 -NLAT_numc
@@ -44295,29 +44696,29 @@ NL_imc^((NL_mumc-1)/NL_mumc) =
 -NLRU_numc
 -NLRW_numc
 -NLUS_numc
-)^(1/NL_mumc)*NLGR_imc^(1-1/NL_mumc);
+)^(1/NL_mumc)*((1-NLGR_gammaimc)*NLGR_imc)^(1-1/NL_mumc);
 // Demand for bilateral consumption import goods
-NLRA_imc = NLRA_numc*((RA_pex*NLRA_rer)/NL_pimc)^(-NL_mumc)*NL_imc;
+NLRA_imc = NLRA_numc*((RA_pex*NLRA_rer)/(NLRA_gammaimcdag*NL_pimc))^(-NL_mumc)*NL_imc/(1-NLRA_gammaimc);
 // Demand for bilateral consumption import goods
-NLAT_imc = NLAT_numc*((AT_pex*NLAT_rer)/NL_pimc)^(-NL_mumc)*NL_imc;
+NLAT_imc = NLAT_numc*((AT_pex*NLAT_rer)/(NLAT_gammaimcdag*NL_pimc))^(-NL_mumc)*NL_imc/(1-NLAT_gammaimc);
 // Demand for bilateral consumption import goods
-NLBE_imc = NLBE_numc*((BE_pex*NLBE_rer)/NL_pimc)^(-NL_mumc)*NL_imc;
+NLBE_imc = NLBE_numc*((BE_pex*NLBE_rer)/(NLBE_gammaimcdag*NL_pimc))^(-NL_mumc)*NL_imc/(1-NLBE_gammaimc);
 // Demand for bilateral consumption import goods
-NLES_imc = NLES_numc*((ES_pex*NLES_rer)/NL_pimc)^(-NL_mumc)*NL_imc;
+NLES_imc = NLES_numc*((ES_pex*NLES_rer)/(NLES_gammaimcdag*NL_pimc))^(-NL_mumc)*NL_imc/(1-NLES_gammaimc);
 // Demand for bilateral consumption import goods
-NLFI_imc = NLFI_numc*((FI_pex*NLFI_rer)/NL_pimc)^(-NL_mumc)*NL_imc;
+NLFI_imc = NLFI_numc*((FI_pex*NLFI_rer)/(NLFI_gammaimcdag*NL_pimc))^(-NL_mumc)*NL_imc/(1-NLFI_gammaimc);
 // Demand for bilateral consumption import goods
-NLFR_imc = NLFR_numc*((FR_pex*NLFR_rer)/NL_pimc)^(-NL_mumc)*NL_imc;
+NLFR_imc = NLFR_numc*((FR_pex*NLFR_rer)/(NLFR_gammaimcdag*NL_pimc))^(-NL_mumc)*NL_imc/(1-NLFR_gammaimc);
 // Demand for bilateral consumption import goods
-NLIT_imc = NLIT_numc*((IT_pex*NLIT_rer)/NL_pimc)^(-NL_mumc)*NL_imc;
+NLIT_imc = NLIT_numc*((IT_pex*NLIT_rer)/(NLIT_gammaimcdag*NL_pimc))^(-NL_mumc)*NL_imc/(1-NLIT_gammaimc);
 // Demand for bilateral consumption import goods
-NLDE_imc = NLDE_numc*((DE_pex*NLDE_rer)/NL_pimc)^(-NL_mumc)*NL_imc;
+NLDE_imc = NLDE_numc*((DE_pex*NLDE_rer)/(NLDE_gammaimcdag*NL_pimc))^(-NL_mumc)*NL_imc/(1-NLDE_gammaimc);
 // Demand for bilateral consumption import goods
-NLRU_imc = NLRU_numc*((RU_pex*NLRU_rer)/NL_pimc)^(-NL_mumc)*NL_imc;
+NLRU_imc = NLRU_numc*((RU_pex*NLRU_rer)/(NLRU_gammaimcdag*NL_pimc))^(-NL_mumc)*NL_imc/(1-NLRU_gammaimc);
 // Demand for bilateral consumption import goods
-NLRW_imc = NLRW_numc*((RW_pex*NLRW_rer)/NL_pimc)^(-NL_mumc)*NL_imc;
+NLRW_imc = NLRW_numc*((RW_pex*NLRW_rer)/(NLRW_gammaimcdag*NL_pimc))^(-NL_mumc)*NL_imc/(1-NLRW_gammaimc);
 // Demand for bilateral consumption import goods
-NLUS_imc = NLUS_numc*((US_pex*NLUS_rer)/NL_pimc)^(-NL_mumc)*NL_imc;
+NLUS_imc = NLUS_numc*((US_pex*NLUS_rer)/(NLUS_gammaimcdag*NL_pimc))^(-NL_mumc)*NL_imc/(1-NLUS_gammaimc);
 NLGR_imc = (1
 -NLRA_numc
 -NLAT_numc
@@ -44331,21 +44732,21 @@ NLGR_imc = (1
 -NLRU_numc
 -NLRW_numc
 -NLUS_numc
-)*((GR_pex*NLGR_rer)/NL_pimc)^(-NL_mumc)*NL_imc;
+)*((GR_pex*NLGR_rer)/(NLGR_gammaimcdag*NL_pimc))^(-NL_mumc)*NL_imc/(1-NLGR_gammaimc);
 // Price of the consumption good (import)
 NL_pimc^(1-NL_mumc) =
-+NLRA_numc * (RA_pex*NLRA_rer)^(1-NL_mumc)
-+NLAT_numc * (AT_pex*NLAT_rer)^(1-NL_mumc)
-+NLBE_numc * (BE_pex*NLBE_rer)^(1-NL_mumc)
-+NLES_numc * (ES_pex*NLES_rer)^(1-NL_mumc)
-+NLFI_numc * (FI_pex*NLFI_rer)^(1-NL_mumc)
-+NLFR_numc * (FR_pex*NLFR_rer)^(1-NL_mumc)
-+NLIT_numc * (IT_pex*NLIT_rer)^(1-NL_mumc)
-+NLPT_numc * (PT_pex*NLPT_rer)^(1-NL_mumc)
-+NLDE_numc * (DE_pex*NLDE_rer)^(1-NL_mumc)
-+NLRU_numc * (RU_pex*NLRU_rer)^(1-NL_mumc)
-+NLRW_numc * (RW_pex*NLRW_rer)^(1-NL_mumc)
-+NLUS_numc * (US_pex*NLUS_rer)^(1-NL_mumc)
++NLRA_numc *((RA_pex*NLRA_rer)/NLRA_gammaimcdag)^(1-NL_mumc)
++NLAT_numc *((AT_pex*NLAT_rer)/NLAT_gammaimcdag)^(1-NL_mumc)
++NLBE_numc *((BE_pex*NLBE_rer)/NLBE_gammaimcdag)^(1-NL_mumc)
++NLES_numc *((ES_pex*NLES_rer)/NLES_gammaimcdag)^(1-NL_mumc)
++NLFI_numc *((FI_pex*NLFI_rer)/NLFI_gammaimcdag)^(1-NL_mumc)
++NLFR_numc *((FR_pex*NLFR_rer)/NLFR_gammaimcdag)^(1-NL_mumc)
++NLIT_numc *((IT_pex*NLIT_rer)/NLIT_gammaimcdag)^(1-NL_mumc)
++NLPT_numc *((PT_pex*NLPT_rer)/NLPT_gammaimcdag)^(1-NL_mumc)
++NLDE_numc *((DE_pex*NLDE_rer)/NLDE_gammaimcdag)^(1-NL_mumc)
++NLRU_numc *((RU_pex*NLRU_rer)/NLRU_gammaimcdag)^(1-NL_mumc)
++NLRW_numc *((RW_pex*NLRW_rer)/NLRW_gammaimcdag)^(1-NL_mumc)
++NLUS_numc *((US_pex*NLUS_rer)/NLUS_gammaimcdag)^(1-NL_mumc)
 +(1
 -NLRA_numc
 -NLAT_numc
@@ -44359,23 +44760,23 @@ NL_pimc^(1-NL_mumc) =
 -NLRU_numc
 -NLRW_numc
 -NLUS_numc
-)*(GR_pex*NLGR_rer)^(1-NL_mumc);
+)*((GR_pex*NLGR_rer)/NLGR_gammaimcdag)^(1-NL_mumc);
 // Private consumption good (import) inflation
 NL_piimc = NL_pimc/NL_pimc(-1)*NL_pic;
 // Private consumption good (import)
 NL_imi^((NL_mumi-1)/NL_mumi) =
-+NLRA_numi ^(1/NL_mumi)*NLRA_imi^(1-1/NL_mumi)
-+NLAT_numi ^(1/NL_mumi)*NLAT_imi^(1-1/NL_mumi)
-+NLBE_numi ^(1/NL_mumi)*NLBE_imi^(1-1/NL_mumi)
-+NLES_numi ^(1/NL_mumi)*NLES_imi^(1-1/NL_mumi)
-+NLFI_numi ^(1/NL_mumi)*NLFI_imi^(1-1/NL_mumi)
-+NLFR_numi ^(1/NL_mumi)*NLFR_imi^(1-1/NL_mumi)
-+NLIT_numi ^(1/NL_mumi)*NLIT_imi^(1-1/NL_mumi)
-+NLPT_numi ^(1/NL_mumi)*NLPT_imi^(1-1/NL_mumi)
-+NLDE_numi ^(1/NL_mumi)*NLDE_imi^(1-1/NL_mumi)
-+NLRU_numi ^(1/NL_mumi)*NLRU_imi^(1-1/NL_mumi)
-+NLRW_numi ^(1/NL_mumi)*NLRW_imi^(1-1/NL_mumi)
-+NLUS_numi ^(1/NL_mumi)*NLUS_imi^(1-1/NL_mumi)
++NLRA_numi ^(1/NL_mumi)*((1-NLRA_gammaimi)*NLRA_imi)^(1-1/NL_mumi)
++NLAT_numi ^(1/NL_mumi)*((1-NLAT_gammaimi)*NLAT_imi)^(1-1/NL_mumi)
++NLBE_numi ^(1/NL_mumi)*((1-NLBE_gammaimi)*NLBE_imi)^(1-1/NL_mumi)
++NLES_numi ^(1/NL_mumi)*((1-NLES_gammaimi)*NLES_imi)^(1-1/NL_mumi)
++NLFI_numi ^(1/NL_mumi)*((1-NLFI_gammaimi)*NLFI_imi)^(1-1/NL_mumi)
++NLFR_numi ^(1/NL_mumi)*((1-NLFR_gammaimi)*NLFR_imi)^(1-1/NL_mumi)
++NLIT_numi ^(1/NL_mumi)*((1-NLIT_gammaimi)*NLIT_imi)^(1-1/NL_mumi)
++NLPT_numi ^(1/NL_mumi)*((1-NLPT_gammaimi)*NLPT_imi)^(1-1/NL_mumi)
++NLDE_numi ^(1/NL_mumi)*((1-NLDE_gammaimi)*NLDE_imi)^(1-1/NL_mumi)
++NLRU_numi ^(1/NL_mumi)*((1-NLRU_gammaimi)*NLRU_imi)^(1-1/NL_mumi)
++NLRW_numi ^(1/NL_mumi)*((1-NLRW_gammaimi)*NLRW_imi)^(1-1/NL_mumi)
++NLUS_numi ^(1/NL_mumi)*((1-NLUS_gammaimi)*NLUS_imi)^(1-1/NL_mumi)
 +(1
 -NLRA_numi
 -NLAT_numi
@@ -44389,29 +44790,29 @@ NL_imi^((NL_mumi-1)/NL_mumi) =
 -NLRU_numi
 -NLRW_numi
 -NLUS_numi
-)^(1/NL_mumi)*NLGR_imi^(1-1/NL_mumi);
+)^(1/NL_mumi)*((1-NLGR_gammaimi)*NLGR_imi)^(1-1/NL_mumi);
 // Demand for bilateral consumption import goods
-NLRA_imi = NLRA_numi*((RA_pex*NLRA_rer)/NL_pimi)^(-NL_mumi)*NL_imi;
+NLRA_imi = NLRA_numi*((RA_pex*NLRA_rer)/(NLRA_gammaimidag*NL_pimi))^(-NL_mumi)*NL_imi/(1-NLRA_gammaimi);
 // Demand for bilateral consumption import goods
-NLAT_imi = NLAT_numi*((AT_pex*NLAT_rer)/NL_pimi)^(-NL_mumi)*NL_imi;
+NLAT_imi = NLAT_numi*((AT_pex*NLAT_rer)/(NLAT_gammaimidag*NL_pimi))^(-NL_mumi)*NL_imi/(1-NLAT_gammaimi);
 // Demand for bilateral consumption import goods
-NLBE_imi = NLBE_numi*((BE_pex*NLBE_rer)/NL_pimi)^(-NL_mumi)*NL_imi;
+NLBE_imi = NLBE_numi*((BE_pex*NLBE_rer)/(NLBE_gammaimidag*NL_pimi))^(-NL_mumi)*NL_imi/(1-NLBE_gammaimi);
 // Demand for bilateral consumption import goods
-NLES_imi = NLES_numi*((ES_pex*NLES_rer)/NL_pimi)^(-NL_mumi)*NL_imi;
+NLES_imi = NLES_numi*((ES_pex*NLES_rer)/(NLES_gammaimidag*NL_pimi))^(-NL_mumi)*NL_imi/(1-NLES_gammaimi);
 // Demand for bilateral consumption import goods
-NLFI_imi = NLFI_numi*((FI_pex*NLFI_rer)/NL_pimi)^(-NL_mumi)*NL_imi;
+NLFI_imi = NLFI_numi*((FI_pex*NLFI_rer)/(NLFI_gammaimidag*NL_pimi))^(-NL_mumi)*NL_imi/(1-NLFI_gammaimi);
 // Demand for bilateral consumption import goods
-NLFR_imi = NLFR_numi*((FR_pex*NLFR_rer)/NL_pimi)^(-NL_mumi)*NL_imi;
+NLFR_imi = NLFR_numi*((FR_pex*NLFR_rer)/(NLFR_gammaimidag*NL_pimi))^(-NL_mumi)*NL_imi/(1-NLFR_gammaimi);
 // Demand for bilateral consumption import goods
-NLIT_imi = NLIT_numi*((IT_pex*NLIT_rer)/NL_pimi)^(-NL_mumi)*NL_imi;
+NLIT_imi = NLIT_numi*((IT_pex*NLIT_rer)/(NLIT_gammaimidag*NL_pimi))^(-NL_mumi)*NL_imi/(1-NLIT_gammaimi);
 // Demand for bilateral consumption import goods
-NLDE_imi = NLDE_numi*((DE_pex*NLDE_rer)/NL_pimi)^(-NL_mumi)*NL_imi;
+NLDE_imi = NLDE_numi*((DE_pex*NLDE_rer)/(NLDE_gammaimidag*NL_pimi))^(-NL_mumi)*NL_imi/(1-NLDE_gammaimi);
 // Demand for bilateral consumption import goods
-NLRU_imi = NLRU_numi*((RU_pex*NLRU_rer)/NL_pimi)^(-NL_mumi)*NL_imi;
+NLRU_imi = NLRU_numi*((RU_pex*NLRU_rer)/(NLRU_gammaimidag*NL_pimi))^(-NL_mumi)*NL_imi/(1-NLRU_gammaimi);
 // Demand for bilateral consumption import goods
-NLRW_imi = NLRW_numi*((RW_pex*NLRW_rer)/NL_pimi)^(-NL_mumi)*NL_imi;
+NLRW_imi = NLRW_numi*((RW_pex*NLRW_rer)/(NLRW_gammaimidag*NL_pimi))^(-NL_mumi)*NL_imi/(1-NLRW_gammaimi);
 // Demand for bilateral consumption import goods
-NLUS_imi = NLUS_numi*((US_pex*NLUS_rer)/NL_pimi)^(-NL_mumi)*NL_imi;
+NLUS_imi = NLUS_numi*((US_pex*NLUS_rer)/(NLUS_gammaimidag*NL_pimi))^(-NL_mumi)*NL_imi/(1-NLUS_gammaimi);
 NLGR_imi = (1
 -NLRA_numi
 -NLAT_numi
@@ -44425,21 +44826,21 @@ NLGR_imi = (1
 -NLRU_numi
 -NLRW_numi
 -NLUS_numi
-)*((GR_pex*NLGR_rer)/NL_pimi)^(-NL_mumi)*NL_imi;
+)*((GR_pex*NLGR_rer)/(NLGR_gammaimidag*NL_pimi))^(-NL_mumi)*NL_imi/(1-NLGR_gammaimi);
 // Price of the consumption good (import)
 NL_pimi^(1-NL_mumi) =
-+NLRA_numi * (RA_pex*NLRA_rer)^(1-NL_mumi)
-+NLAT_numi * (AT_pex*NLAT_rer)^(1-NL_mumi)
-+NLBE_numi * (BE_pex*NLBE_rer)^(1-NL_mumi)
-+NLES_numi * (ES_pex*NLES_rer)^(1-NL_mumi)
-+NLFI_numi * (FI_pex*NLFI_rer)^(1-NL_mumi)
-+NLFR_numi * (FR_pex*NLFR_rer)^(1-NL_mumi)
-+NLIT_numi * (IT_pex*NLIT_rer)^(1-NL_mumi)
-+NLPT_numi * (PT_pex*NLPT_rer)^(1-NL_mumi)
-+NLDE_numi * (DE_pex*NLDE_rer)^(1-NL_mumi)
-+NLRU_numi * (RU_pex*NLRU_rer)^(1-NL_mumi)
-+NLRW_numi * (RW_pex*NLRW_rer)^(1-NL_mumi)
-+NLUS_numi * (US_pex*NLUS_rer)^(1-NL_mumi)
++NLRA_numi *((RA_pex*NLRA_rer)/NLRA_gammaimidag)^(1-NL_mumi)
++NLAT_numi *((AT_pex*NLAT_rer)/NLAT_gammaimidag)^(1-NL_mumi)
++NLBE_numi *((BE_pex*NLBE_rer)/NLBE_gammaimidag)^(1-NL_mumi)
++NLES_numi *((ES_pex*NLES_rer)/NLES_gammaimidag)^(1-NL_mumi)
++NLFI_numi *((FI_pex*NLFI_rer)/NLFI_gammaimidag)^(1-NL_mumi)
++NLFR_numi *((FR_pex*NLFR_rer)/NLFR_gammaimidag)^(1-NL_mumi)
++NLIT_numi *((IT_pex*NLIT_rer)/NLIT_gammaimidag)^(1-NL_mumi)
++NLPT_numi *((PT_pex*NLPT_rer)/NLPT_gammaimidag)^(1-NL_mumi)
++NLDE_numi *((DE_pex*NLDE_rer)/NLDE_gammaimidag)^(1-NL_mumi)
++NLRU_numi *((RU_pex*NLRU_rer)/NLRU_gammaimidag)^(1-NL_mumi)
++NLRW_numi *((RW_pex*NLRW_rer)/NLRW_gammaimidag)^(1-NL_mumi)
++NLUS_numi *((US_pex*NLUS_rer)/NLUS_gammaimidag)^(1-NL_mumi)
 +(1
 -NLRA_numi
 -NLAT_numi
@@ -44453,23 +44854,23 @@ NL_pimi^(1-NL_mumi) =
 -NLRU_numi
 -NLRW_numi
 -NLUS_numi
-)*(GR_pex*NLGR_rer)^(1-NL_mumi);
+)*((GR_pex*NLGR_rer)/NLGR_gammaimidag)^(1-NL_mumi);
 // Private consumption good (import) inflation
 NL_piimi = NL_pimi/NL_pimi(-1)*NL_pic;
 // Private consumption good (import)
 NL_imcg^((NL_mumcg-1)/NL_mumcg) =
-+NLRA_numcg ^(1/NL_mumcg)*NLRA_imcg^(1-1/NL_mumcg)
-+NLAT_numcg ^(1/NL_mumcg)*NLAT_imcg^(1-1/NL_mumcg)
-+NLBE_numcg ^(1/NL_mumcg)*NLBE_imcg^(1-1/NL_mumcg)
-+NLES_numcg ^(1/NL_mumcg)*NLES_imcg^(1-1/NL_mumcg)
-+NLFI_numcg ^(1/NL_mumcg)*NLFI_imcg^(1-1/NL_mumcg)
-+NLFR_numcg ^(1/NL_mumcg)*NLFR_imcg^(1-1/NL_mumcg)
-+NLIT_numcg ^(1/NL_mumcg)*NLIT_imcg^(1-1/NL_mumcg)
-+NLPT_numcg ^(1/NL_mumcg)*NLPT_imcg^(1-1/NL_mumcg)
-+NLDE_numcg ^(1/NL_mumcg)*NLDE_imcg^(1-1/NL_mumcg)
-+NLRU_numcg ^(1/NL_mumcg)*NLRU_imcg^(1-1/NL_mumcg)
-+NLRW_numcg ^(1/NL_mumcg)*NLRW_imcg^(1-1/NL_mumcg)
-+NLUS_numcg ^(1/NL_mumcg)*NLUS_imcg^(1-1/NL_mumcg)
++NLRA_numcg ^(1/NL_mumcg)*((1-NLRA_gammaimcg)*NLRA_imcg)^(1-1/NL_mumcg)
++NLAT_numcg ^(1/NL_mumcg)*((1-NLAT_gammaimcg)*NLAT_imcg)^(1-1/NL_mumcg)
++NLBE_numcg ^(1/NL_mumcg)*((1-NLBE_gammaimcg)*NLBE_imcg)^(1-1/NL_mumcg)
++NLES_numcg ^(1/NL_mumcg)*((1-NLES_gammaimcg)*NLES_imcg)^(1-1/NL_mumcg)
++NLFI_numcg ^(1/NL_mumcg)*((1-NLFI_gammaimcg)*NLFI_imcg)^(1-1/NL_mumcg)
++NLFR_numcg ^(1/NL_mumcg)*((1-NLFR_gammaimcg)*NLFR_imcg)^(1-1/NL_mumcg)
++NLIT_numcg ^(1/NL_mumcg)*((1-NLIT_gammaimcg)*NLIT_imcg)^(1-1/NL_mumcg)
++NLPT_numcg ^(1/NL_mumcg)*((1-NLPT_gammaimcg)*NLPT_imcg)^(1-1/NL_mumcg)
++NLDE_numcg ^(1/NL_mumcg)*((1-NLDE_gammaimcg)*NLDE_imcg)^(1-1/NL_mumcg)
++NLRU_numcg ^(1/NL_mumcg)*((1-NLRU_gammaimcg)*NLRU_imcg)^(1-1/NL_mumcg)
++NLRW_numcg ^(1/NL_mumcg)*((1-NLRW_gammaimcg)*NLRW_imcg)^(1-1/NL_mumcg)
++NLUS_numcg ^(1/NL_mumcg)*((1-NLUS_gammaimcg)*NLUS_imcg)^(1-1/NL_mumcg)
 +(1
 -NLRA_numcg
 -NLAT_numcg
@@ -44483,29 +44884,29 @@ NL_imcg^((NL_mumcg-1)/NL_mumcg) =
 -NLRU_numcg
 -NLRW_numcg
 -NLUS_numcg
-)^(1/NL_mumcg)*NLGR_imcg^(1-1/NL_mumcg);
+)^(1/NL_mumcg)*((1-NLGR_gammaimcg)*NLGR_imcg)^(1-1/NL_mumcg);
 // Demand for bilateral consumption import goods
-NLRA_imcg = NLRA_numcg*((RA_pex*NLRA_rer)/NL_pimcg)^(-NL_mumcg)*NL_imcg;
+NLRA_imcg = NLRA_numcg*((RA_pex*NLRA_rer)/(NLRA_gammaimcgdag*NL_pimcg))^(-NL_mumcg)*NL_imcg/(1-NLRA_gammaimcg);
 // Demand for bilateral consumption import goods
-NLAT_imcg = NLAT_numcg*((AT_pex*NLAT_rer)/NL_pimcg)^(-NL_mumcg)*NL_imcg;
+NLAT_imcg = NLAT_numcg*((AT_pex*NLAT_rer)/(NLAT_gammaimcgdag*NL_pimcg))^(-NL_mumcg)*NL_imcg/(1-NLAT_gammaimcg);
 // Demand for bilateral consumption import goods
-NLBE_imcg = NLBE_numcg*((BE_pex*NLBE_rer)/NL_pimcg)^(-NL_mumcg)*NL_imcg;
+NLBE_imcg = NLBE_numcg*((BE_pex*NLBE_rer)/(NLBE_gammaimcgdag*NL_pimcg))^(-NL_mumcg)*NL_imcg/(1-NLBE_gammaimcg);
 // Demand for bilateral consumption import goods
-NLES_imcg = NLES_numcg*((ES_pex*NLES_rer)/NL_pimcg)^(-NL_mumcg)*NL_imcg;
+NLES_imcg = NLES_numcg*((ES_pex*NLES_rer)/(NLES_gammaimcgdag*NL_pimcg))^(-NL_mumcg)*NL_imcg/(1-NLES_gammaimcg);
 // Demand for bilateral consumption import goods
-NLFI_imcg = NLFI_numcg*((FI_pex*NLFI_rer)/NL_pimcg)^(-NL_mumcg)*NL_imcg;
+NLFI_imcg = NLFI_numcg*((FI_pex*NLFI_rer)/(NLFI_gammaimcgdag*NL_pimcg))^(-NL_mumcg)*NL_imcg/(1-NLFI_gammaimcg);
 // Demand for bilateral consumption import goods
-NLFR_imcg = NLFR_numcg*((FR_pex*NLFR_rer)/NL_pimcg)^(-NL_mumcg)*NL_imcg;
+NLFR_imcg = NLFR_numcg*((FR_pex*NLFR_rer)/(NLFR_gammaimcgdag*NL_pimcg))^(-NL_mumcg)*NL_imcg/(1-NLFR_gammaimcg);
 // Demand for bilateral consumption import goods
-NLIT_imcg = NLIT_numcg*((IT_pex*NLIT_rer)/NL_pimcg)^(-NL_mumcg)*NL_imcg;
+NLIT_imcg = NLIT_numcg*((IT_pex*NLIT_rer)/(NLIT_gammaimcgdag*NL_pimcg))^(-NL_mumcg)*NL_imcg/(1-NLIT_gammaimcg);
 // Demand for bilateral consumption import goods
-NLDE_imcg = NLDE_numcg*((DE_pex*NLDE_rer)/NL_pimcg)^(-NL_mumcg)*NL_imcg;
+NLDE_imcg = NLDE_numcg*((DE_pex*NLDE_rer)/(NLDE_gammaimcgdag*NL_pimcg))^(-NL_mumcg)*NL_imcg/(1-NLDE_gammaimcg);
 // Demand for bilateral consumption import goods
-NLRU_imcg = NLRU_numcg*((RU_pex*NLRU_rer)/NL_pimcg)^(-NL_mumcg)*NL_imcg;
+NLRU_imcg = NLRU_numcg*((RU_pex*NLRU_rer)/(NLRU_gammaimcgdag*NL_pimcg))^(-NL_mumcg)*NL_imcg/(1-NLRU_gammaimcg);
 // Demand for bilateral consumption import goods
-NLRW_imcg = NLRW_numcg*((RW_pex*NLRW_rer)/NL_pimcg)^(-NL_mumcg)*NL_imcg;
+NLRW_imcg = NLRW_numcg*((RW_pex*NLRW_rer)/(NLRW_gammaimcgdag*NL_pimcg))^(-NL_mumcg)*NL_imcg/(1-NLRW_gammaimcg);
 // Demand for bilateral consumption import goods
-NLUS_imcg = NLUS_numcg*((US_pex*NLUS_rer)/NL_pimcg)^(-NL_mumcg)*NL_imcg;
+NLUS_imcg = NLUS_numcg*((US_pex*NLUS_rer)/(NLUS_gammaimcgdag*NL_pimcg))^(-NL_mumcg)*NL_imcg/(1-NLUS_gammaimcg);
 NLGR_imcg = (1
 -NLRA_numcg
 -NLAT_numcg
@@ -44519,21 +44920,21 @@ NLGR_imcg = (1
 -NLRU_numcg
 -NLRW_numcg
 -NLUS_numcg
-)*((GR_pex*NLGR_rer)/NL_pimcg)^(-NL_mumcg)*NL_imcg;
+)*((GR_pex*NLGR_rer)/(NLGR_gammaimcgdag*NL_pimcg))^(-NL_mumcg)*NL_imcg/(1-NLGR_gammaimcg);
 // Price of the consumption good (import)
 NL_pimcg^(1-NL_mumcg) =
-+NLRA_numcg * (RA_pex*NLRA_rer)^(1-NL_mumcg)
-+NLAT_numcg * (AT_pex*NLAT_rer)^(1-NL_mumcg)
-+NLBE_numcg * (BE_pex*NLBE_rer)^(1-NL_mumcg)
-+NLES_numcg * (ES_pex*NLES_rer)^(1-NL_mumcg)
-+NLFI_numcg * (FI_pex*NLFI_rer)^(1-NL_mumcg)
-+NLFR_numcg * (FR_pex*NLFR_rer)^(1-NL_mumcg)
-+NLIT_numcg * (IT_pex*NLIT_rer)^(1-NL_mumcg)
-+NLPT_numcg * (PT_pex*NLPT_rer)^(1-NL_mumcg)
-+NLDE_numcg * (DE_pex*NLDE_rer)^(1-NL_mumcg)
-+NLRU_numcg * (RU_pex*NLRU_rer)^(1-NL_mumcg)
-+NLRW_numcg * (RW_pex*NLRW_rer)^(1-NL_mumcg)
-+NLUS_numcg * (US_pex*NLUS_rer)^(1-NL_mumcg)
++NLRA_numcg *((RA_pex*NLRA_rer)/NLRA_gammaimcgdag)^(1-NL_mumcg)
++NLAT_numcg *((AT_pex*NLAT_rer)/NLAT_gammaimcgdag)^(1-NL_mumcg)
++NLBE_numcg *((BE_pex*NLBE_rer)/NLBE_gammaimcgdag)^(1-NL_mumcg)
++NLES_numcg *((ES_pex*NLES_rer)/NLES_gammaimcgdag)^(1-NL_mumcg)
++NLFI_numcg *((FI_pex*NLFI_rer)/NLFI_gammaimcgdag)^(1-NL_mumcg)
++NLFR_numcg *((FR_pex*NLFR_rer)/NLFR_gammaimcgdag)^(1-NL_mumcg)
++NLIT_numcg *((IT_pex*NLIT_rer)/NLIT_gammaimcgdag)^(1-NL_mumcg)
++NLPT_numcg *((PT_pex*NLPT_rer)/NLPT_gammaimcgdag)^(1-NL_mumcg)
++NLDE_numcg *((DE_pex*NLDE_rer)/NLDE_gammaimcgdag)^(1-NL_mumcg)
++NLRU_numcg *((RU_pex*NLRU_rer)/NLRU_gammaimcgdag)^(1-NL_mumcg)
++NLRW_numcg *((RW_pex*NLRW_rer)/NLRW_gammaimcgdag)^(1-NL_mumcg)
++NLUS_numcg *((US_pex*NLUS_rer)/NLUS_gammaimcgdag)^(1-NL_mumcg)
 +(1
 -NLRA_numcg
 -NLAT_numcg
@@ -44547,23 +44948,23 @@ NL_pimcg^(1-NL_mumcg) =
 -NLRU_numcg
 -NLRW_numcg
 -NLUS_numcg
-)*(GR_pex*NLGR_rer)^(1-NL_mumcg);
+)*((GR_pex*NLGR_rer)/NLGR_gammaimcgdag)^(1-NL_mumcg);
 // Private consumption good (import) inflation
 NL_piimcg = NL_pimcg/NL_pimcg(-1)*NL_pic;
 // Private consumption good (import)
 NL_imig^((NL_mumig-1)/NL_mumig) =
-+NLRA_numig ^(1/NL_mumig)*NLRA_imig^(1-1/NL_mumig)
-+NLAT_numig ^(1/NL_mumig)*NLAT_imig^(1-1/NL_mumig)
-+NLBE_numig ^(1/NL_mumig)*NLBE_imig^(1-1/NL_mumig)
-+NLES_numig ^(1/NL_mumig)*NLES_imig^(1-1/NL_mumig)
-+NLFI_numig ^(1/NL_mumig)*NLFI_imig^(1-1/NL_mumig)
-+NLFR_numig ^(1/NL_mumig)*NLFR_imig^(1-1/NL_mumig)
-+NLIT_numig ^(1/NL_mumig)*NLIT_imig^(1-1/NL_mumig)
-+NLPT_numig ^(1/NL_mumig)*NLPT_imig^(1-1/NL_mumig)
-+NLDE_numig ^(1/NL_mumig)*NLDE_imig^(1-1/NL_mumig)
-+NLRU_numig ^(1/NL_mumig)*NLRU_imig^(1-1/NL_mumig)
-+NLRW_numig ^(1/NL_mumig)*NLRW_imig^(1-1/NL_mumig)
-+NLUS_numig ^(1/NL_mumig)*NLUS_imig^(1-1/NL_mumig)
++NLRA_numig ^(1/NL_mumig)*((1-NLRA_gammaimig)*NLRA_imig)^(1-1/NL_mumig)
++NLAT_numig ^(1/NL_mumig)*((1-NLAT_gammaimig)*NLAT_imig)^(1-1/NL_mumig)
++NLBE_numig ^(1/NL_mumig)*((1-NLBE_gammaimig)*NLBE_imig)^(1-1/NL_mumig)
++NLES_numig ^(1/NL_mumig)*((1-NLES_gammaimig)*NLES_imig)^(1-1/NL_mumig)
++NLFI_numig ^(1/NL_mumig)*((1-NLFI_gammaimig)*NLFI_imig)^(1-1/NL_mumig)
++NLFR_numig ^(1/NL_mumig)*((1-NLFR_gammaimig)*NLFR_imig)^(1-1/NL_mumig)
++NLIT_numig ^(1/NL_mumig)*((1-NLIT_gammaimig)*NLIT_imig)^(1-1/NL_mumig)
++NLPT_numig ^(1/NL_mumig)*((1-NLPT_gammaimig)*NLPT_imig)^(1-1/NL_mumig)
++NLDE_numig ^(1/NL_mumig)*((1-NLDE_gammaimig)*NLDE_imig)^(1-1/NL_mumig)
++NLRU_numig ^(1/NL_mumig)*((1-NLRU_gammaimig)*NLRU_imig)^(1-1/NL_mumig)
++NLRW_numig ^(1/NL_mumig)*((1-NLRW_gammaimig)*NLRW_imig)^(1-1/NL_mumig)
++NLUS_numig ^(1/NL_mumig)*((1-NLUS_gammaimig)*NLUS_imig)^(1-1/NL_mumig)
 +(1
 -NLRA_numig
 -NLAT_numig
@@ -44577,29 +44978,29 @@ NL_imig^((NL_mumig-1)/NL_mumig) =
 -NLRU_numig
 -NLRW_numig
 -NLUS_numig
-)^(1/NL_mumig)*NLGR_imig^(1-1/NL_mumig);
+)^(1/NL_mumig)*((1-NLGR_gammaimig)*NLGR_imig)^(1-1/NL_mumig);
 // Demand for bilateral consumption import goods
-NLRA_imig = NLRA_numig*((RA_pex*NLRA_rer)/NL_pimig)^(-NL_mumig)*NL_imig;
+NLRA_imig = NLRA_numig*((RA_pex*NLRA_rer)/(NLRA_gammaimigdag*NL_pimig))^(-NL_mumig)*NL_imig/(1-NLRA_gammaimig);
 // Demand for bilateral consumption import goods
-NLAT_imig = NLAT_numig*((AT_pex*NLAT_rer)/NL_pimig)^(-NL_mumig)*NL_imig;
+NLAT_imig = NLAT_numig*((AT_pex*NLAT_rer)/(NLAT_gammaimigdag*NL_pimig))^(-NL_mumig)*NL_imig/(1-NLAT_gammaimig);
 // Demand for bilateral consumption import goods
-NLBE_imig = NLBE_numig*((BE_pex*NLBE_rer)/NL_pimig)^(-NL_mumig)*NL_imig;
+NLBE_imig = NLBE_numig*((BE_pex*NLBE_rer)/(NLBE_gammaimigdag*NL_pimig))^(-NL_mumig)*NL_imig/(1-NLBE_gammaimig);
 // Demand for bilateral consumption import goods
-NLES_imig = NLES_numig*((ES_pex*NLES_rer)/NL_pimig)^(-NL_mumig)*NL_imig;
+NLES_imig = NLES_numig*((ES_pex*NLES_rer)/(NLES_gammaimigdag*NL_pimig))^(-NL_mumig)*NL_imig/(1-NLES_gammaimig);
 // Demand for bilateral consumption import goods
-NLFI_imig = NLFI_numig*((FI_pex*NLFI_rer)/NL_pimig)^(-NL_mumig)*NL_imig;
+NLFI_imig = NLFI_numig*((FI_pex*NLFI_rer)/(NLFI_gammaimigdag*NL_pimig))^(-NL_mumig)*NL_imig/(1-NLFI_gammaimig);
 // Demand for bilateral consumption import goods
-NLFR_imig = NLFR_numig*((FR_pex*NLFR_rer)/NL_pimig)^(-NL_mumig)*NL_imig;
+NLFR_imig = NLFR_numig*((FR_pex*NLFR_rer)/(NLFR_gammaimigdag*NL_pimig))^(-NL_mumig)*NL_imig/(1-NLFR_gammaimig);
 // Demand for bilateral consumption import goods
-NLIT_imig = NLIT_numig*((IT_pex*NLIT_rer)/NL_pimig)^(-NL_mumig)*NL_imig;
+NLIT_imig = NLIT_numig*((IT_pex*NLIT_rer)/(NLIT_gammaimigdag*NL_pimig))^(-NL_mumig)*NL_imig/(1-NLIT_gammaimig);
 // Demand for bilateral consumption import goods
-NLDE_imig = NLDE_numig*((DE_pex*NLDE_rer)/NL_pimig)^(-NL_mumig)*NL_imig;
+NLDE_imig = NLDE_numig*((DE_pex*NLDE_rer)/(NLDE_gammaimigdag*NL_pimig))^(-NL_mumig)*NL_imig/(1-NLDE_gammaimig);
 // Demand for bilateral consumption import goods
-NLRU_imig = NLRU_numig*((RU_pex*NLRU_rer)/NL_pimig)^(-NL_mumig)*NL_imig;
+NLRU_imig = NLRU_numig*((RU_pex*NLRU_rer)/(NLRU_gammaimigdag*NL_pimig))^(-NL_mumig)*NL_imig/(1-NLRU_gammaimig);
 // Demand for bilateral consumption import goods
-NLRW_imig = NLRW_numig*((RW_pex*NLRW_rer)/NL_pimig)^(-NL_mumig)*NL_imig;
+NLRW_imig = NLRW_numig*((RW_pex*NLRW_rer)/(NLRW_gammaimigdag*NL_pimig))^(-NL_mumig)*NL_imig/(1-NLRW_gammaimig);
 // Demand for bilateral consumption import goods
-NLUS_imig = NLUS_numig*((US_pex*NLUS_rer)/NL_pimig)^(-NL_mumig)*NL_imig;
+NLUS_imig = NLUS_numig*((US_pex*NLUS_rer)/(NLUS_gammaimigdag*NL_pimig))^(-NL_mumig)*NL_imig/(1-NLUS_gammaimig);
 NLGR_imig = (1
 -NLRA_numig
 -NLAT_numig
@@ -44613,21 +45014,21 @@ NLGR_imig = (1
 -NLRU_numig
 -NLRW_numig
 -NLUS_numig
-)*((GR_pex*NLGR_rer)/NL_pimig)^(-NL_mumig)*NL_imig;
+)*((GR_pex*NLGR_rer)/(NLGR_gammaimigdag*NL_pimig))^(-NL_mumig)*NL_imig/(1-NLGR_gammaimig);
 // Price of the consumption good (import)
 NL_pimig^(1-NL_mumig) =
-+NLRA_numig * (RA_pex*NLRA_rer)^(1-NL_mumig)
-+NLAT_numig * (AT_pex*NLAT_rer)^(1-NL_mumig)
-+NLBE_numig * (BE_pex*NLBE_rer)^(1-NL_mumig)
-+NLES_numig * (ES_pex*NLES_rer)^(1-NL_mumig)
-+NLFI_numig * (FI_pex*NLFI_rer)^(1-NL_mumig)
-+NLFR_numig * (FR_pex*NLFR_rer)^(1-NL_mumig)
-+NLIT_numig * (IT_pex*NLIT_rer)^(1-NL_mumig)
-+NLPT_numig * (PT_pex*NLPT_rer)^(1-NL_mumig)
-+NLDE_numig * (DE_pex*NLDE_rer)^(1-NL_mumig)
-+NLRU_numig * (RU_pex*NLRU_rer)^(1-NL_mumig)
-+NLRW_numig * (RW_pex*NLRW_rer)^(1-NL_mumig)
-+NLUS_numig * (US_pex*NLUS_rer)^(1-NL_mumig)
++NLRA_numig *((RA_pex*NLRA_rer)/NLRA_gammaimigdag)^(1-NL_mumig)
++NLAT_numig *((AT_pex*NLAT_rer)/NLAT_gammaimigdag)^(1-NL_mumig)
++NLBE_numig *((BE_pex*NLBE_rer)/NLBE_gammaimigdag)^(1-NL_mumig)
++NLES_numig *((ES_pex*NLES_rer)/NLES_gammaimigdag)^(1-NL_mumig)
++NLFI_numig *((FI_pex*NLFI_rer)/NLFI_gammaimigdag)^(1-NL_mumig)
++NLFR_numig *((FR_pex*NLFR_rer)/NLFR_gammaimigdag)^(1-NL_mumig)
++NLIT_numig *((IT_pex*NLIT_rer)/NLIT_gammaimigdag)^(1-NL_mumig)
++NLPT_numig *((PT_pex*NLPT_rer)/NLPT_gammaimigdag)^(1-NL_mumig)
++NLDE_numig *((DE_pex*NLDE_rer)/NLDE_gammaimigdag)^(1-NL_mumig)
++NLRU_numig *((RU_pex*NLRU_rer)/NLRU_gammaimigdag)^(1-NL_mumig)
++NLRW_numig *((RW_pex*NLRW_rer)/NLRW_gammaimigdag)^(1-NL_mumig)
++NLUS_numig *((US_pex*NLUS_rer)/NLUS_gammaimigdag)^(1-NL_mumig)
 +(1
 -NLRA_numig
 -NLAT_numig
@@ -44641,7 +45042,7 @@ NL_pimig^(1-NL_mumig) =
 -NLRU_numig
 -NLRW_numig
 -NLUS_numig
-)*(GR_pex*NLGR_rer)^(1-NL_mumig);
+)*((GR_pex*NLGR_rer)/NLGR_gammaimigdag)^(1-NL_mumig);
 // Private consumption good (import) inflation
 NL_piimig = NL_pimig/NL_pimig(-1)*NL_pic;
 // Private consumption good (import) inflation
@@ -44742,32 +45143,58 @@ NL_pttc^(1-NL_mutc) = (NL_nutc)*NL_pht^(1-NL_mutc)+(1-NL_nutc)*NL_pimc^(1-NL_mut
 1^(1-NL_muc) = (NL_nuc)*NL_pttc^(1-NL_muc)+(1-NL_nuc)*NL_pnt^(1-NL_muc);
 // Demand for domestic intermediate goods
 NL_htc = NL_nutc*(NL_pht/NL_pttc)^(-NL_mutc)*NL_ttc;
-NLRA_gammaimc = 0;
-NLRA_gammaimcdag = 1;
-NLAT_gammaimc = 0;
-NLAT_gammaimcdag = 1;
-NLBE_gammaimc = 0;
-NLBE_gammaimcdag = 1;
-NLES_gammaimc = 0;
-NLES_gammaimcdag = 1;
-NLFI_gammaimc = 0;
-NLFI_gammaimcdag = 1;
-NLFR_gammaimc = 0;
-NLFR_gammaimcdag = 1;
-NLGR_gammaimc = 0;
-NLGR_gammaimcdag = 1;
-NLIT_gammaimc = 0;
-NLIT_gammaimcdag = 1;
-NLPT_gammaimc = 0;
-NLPT_gammaimcdag = 1;
-NLDE_gammaimc = 0;
-NLDE_gammaimcdag = 1;
-NLRU_gammaimc = 0;
-NLRU_gammaimcdag = 1;
-NLRW_gammaimc = 0;
-NLRW_gammaimcdag = 1;
-NLUS_gammaimc = 0;
-NLUS_gammaimcdag = 1;
+// Import adjustment cost
+NLRA_gammaimc = NL_gammaimc1/2*((NLRA_imc/NL_qc)/(NLRA_imc(-1)/NL_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLRA_gammaimcdag = 1-NLRA_gammaimc-NL_gammaimc1*((NLRA_imc/NL_qc)/(NLRA_imc(-1)/NL_qc(-1))-1)*(NLRA_imc/NL_qc)/(NLRA_imc(-1)/NL_qc(-1));
+// Import adjustment cost
+NLAT_gammaimc = NL_gammaimc1/2*((NLAT_imc/NL_qc)/(NLAT_imc(-1)/NL_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLAT_gammaimcdag = 1-NLAT_gammaimc-NL_gammaimc1*((NLAT_imc/NL_qc)/(NLAT_imc(-1)/NL_qc(-1))-1)*(NLAT_imc/NL_qc)/(NLAT_imc(-1)/NL_qc(-1));
+// Import adjustment cost
+NLBE_gammaimc = NL_gammaimc1/2*((NLBE_imc/NL_qc)/(NLBE_imc(-1)/NL_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLBE_gammaimcdag = 1-NLBE_gammaimc-NL_gammaimc1*((NLBE_imc/NL_qc)/(NLBE_imc(-1)/NL_qc(-1))-1)*(NLBE_imc/NL_qc)/(NLBE_imc(-1)/NL_qc(-1));
+// Import adjustment cost
+NLES_gammaimc = NL_gammaimc1/2*((NLES_imc/NL_qc)/(NLES_imc(-1)/NL_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLES_gammaimcdag = 1-NLES_gammaimc-NL_gammaimc1*((NLES_imc/NL_qc)/(NLES_imc(-1)/NL_qc(-1))-1)*(NLES_imc/NL_qc)/(NLES_imc(-1)/NL_qc(-1));
+// Import adjustment cost
+NLFI_gammaimc = NL_gammaimc1/2*((NLFI_imc/NL_qc)/(NLFI_imc(-1)/NL_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLFI_gammaimcdag = 1-NLFI_gammaimc-NL_gammaimc1*((NLFI_imc/NL_qc)/(NLFI_imc(-1)/NL_qc(-1))-1)*(NLFI_imc/NL_qc)/(NLFI_imc(-1)/NL_qc(-1));
+// Import adjustment cost
+NLFR_gammaimc = NL_gammaimc1/2*((NLFR_imc/NL_qc)/(NLFR_imc(-1)/NL_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLFR_gammaimcdag = 1-NLFR_gammaimc-NL_gammaimc1*((NLFR_imc/NL_qc)/(NLFR_imc(-1)/NL_qc(-1))-1)*(NLFR_imc/NL_qc)/(NLFR_imc(-1)/NL_qc(-1));
+// Import adjustment cost
+NLGR_gammaimc = NL_gammaimc1/2*((NLGR_imc/NL_qc)/(NLGR_imc(-1)/NL_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLGR_gammaimcdag = 1-NLGR_gammaimc-NL_gammaimc1*((NLGR_imc/NL_qc)/(NLGR_imc(-1)/NL_qc(-1))-1)*(NLGR_imc/NL_qc)/(NLGR_imc(-1)/NL_qc(-1));
+// Import adjustment cost
+NLIT_gammaimc = NL_gammaimc1/2*((NLIT_imc/NL_qc)/(NLIT_imc(-1)/NL_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLIT_gammaimcdag = 1-NLIT_gammaimc-NL_gammaimc1*((NLIT_imc/NL_qc)/(NLIT_imc(-1)/NL_qc(-1))-1)*(NLIT_imc/NL_qc)/(NLIT_imc(-1)/NL_qc(-1));
+// Import adjustment cost
+NLPT_gammaimc = NL_gammaimc1/2*((NLPT_imc/NL_qc)/(NLPT_imc(-1)/NL_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLPT_gammaimcdag = 1-NLPT_gammaimc-NL_gammaimc1*((NLPT_imc/NL_qc)/(NLPT_imc(-1)/NL_qc(-1))-1)*(NLPT_imc/NL_qc)/(NLPT_imc(-1)/NL_qc(-1));
+// Import adjustment cost
+NLDE_gammaimc = NL_gammaimc1/2*((NLDE_imc/NL_qc)/(NLDE_imc(-1)/NL_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLDE_gammaimcdag = 1-NLDE_gammaimc-NL_gammaimc1*((NLDE_imc/NL_qc)/(NLDE_imc(-1)/NL_qc(-1))-1)*(NLDE_imc/NL_qc)/(NLDE_imc(-1)/NL_qc(-1));
+// Import adjustment cost
+NLRU_gammaimc = NL_gammaimc1/2*((NLRU_imc/NL_qc)/(NLRU_imc(-1)/NL_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLRU_gammaimcdag = 1-NLRU_gammaimc-NL_gammaimc1*((NLRU_imc/NL_qc)/(NLRU_imc(-1)/NL_qc(-1))-1)*(NLRU_imc/NL_qc)/(NLRU_imc(-1)/NL_qc(-1));
+// Import adjustment cost
+NLRW_gammaimc = NL_gammaimc1/2*((NLRW_imc/NL_qc)/(NLRW_imc(-1)/NL_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLRW_gammaimcdag = 1-NLRW_gammaimc-NL_gammaimc1*((NLRW_imc/NL_qc)/(NLRW_imc(-1)/NL_qc(-1))-1)*(NLRW_imc/NL_qc)/(NLRW_imc(-1)/NL_qc(-1));
+// Import adjustment cost
+NLUS_gammaimc = NL_gammaimc1/2*((NLUS_imc/NL_qc)/(NLUS_imc(-1)/NL_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLUS_gammaimcdag = 1-NLUS_gammaimc-NL_gammaimc1*((NLUS_imc/NL_qc)/(NLUS_imc(-1)/NL_qc(-1))-1)*(NLUS_imc/NL_qc)/(NLUS_imc(-1)/NL_qc(-1));
 // Private consumption good (tradable)
 NL_tti^((NL_muti-1)/NL_muti) = (NL_nuti)^(1/NL_muti)*NL_hti^(1-1/NL_muti)+(1-NL_nuti)^(1/NL_muti)*NL_imi^(1-1/NL_muti);
 // Private consumption good  (total)
@@ -44780,35 +45207,60 @@ NL_ptti^(1-NL_muti) = (NL_nuti)*NL_pht^(1-NL_muti)+(1-NL_nuti)*NL_pimi^(1-NL_mut
 NL_pi^(1-NL_mui) = (NL_nui)*NL_ptti^(1-NL_mui)+(1-NL_nui)*NL_pnt^(1-NL_mui);
 // Auxiliary equation for the price of the investment good in steady state
 // this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
-NL_pibar = NL_pi;
 // Demand for domestic intermediate goods
 NL_hti = NL_nuti*(NL_pht/NL_ptti)^(-NL_muti)*NL_tti;
-NLRA_gammaimi = 0;
-NLRA_gammaimidag = 1;
-NLAT_gammaimi = 0;
-NLAT_gammaimidag = 1;
-NLBE_gammaimi = 0;
-NLBE_gammaimidag = 1;
-NLES_gammaimi = 0;
-NLES_gammaimidag = 1;
-NLFI_gammaimi = 0;
-NLFI_gammaimidag = 1;
-NLFR_gammaimi = 0;
-NLFR_gammaimidag = 1;
-NLGR_gammaimi = 0;
-NLGR_gammaimidag = 1;
-NLIT_gammaimi = 0;
-NLIT_gammaimidag = 1;
-NLPT_gammaimi = 0;
-NLPT_gammaimidag = 1;
-NLDE_gammaimi = 0;
-NLDE_gammaimidag = 1;
-NLRU_gammaimi = 0;
-NLRU_gammaimidag = 1;
-NLRW_gammaimi = 0;
-NLRW_gammaimidag = 1;
-NLUS_gammaimi = 0;
-NLUS_gammaimidag = 1;
+// Import adjustment cost
+NLRA_gammaimi = NL_gammaimi1/2*((NLRA_imi/NL_qi)/(NLRA_imi(-1)/NL_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLRA_gammaimidag = 1-NLRA_gammaimi-NL_gammaimi1*((NLRA_imi/NL_qi)/(NLRA_imi(-1)/NL_qi)-1)*((NLRA_imi/NL_qi)/(NLRA_imi(-1)/NL_qi(-1)));
+// Import adjustment cost
+NLAT_gammaimi = NL_gammaimi1/2*((NLAT_imi/NL_qi)/(NLAT_imi(-1)/NL_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLAT_gammaimidag = 1-NLAT_gammaimi-NL_gammaimi1*((NLAT_imi/NL_qi)/(NLAT_imi(-1)/NL_qi)-1)*((NLAT_imi/NL_qi)/(NLAT_imi(-1)/NL_qi(-1)));
+// Import adjustment cost
+NLBE_gammaimi = NL_gammaimi1/2*((NLBE_imi/NL_qi)/(NLBE_imi(-1)/NL_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLBE_gammaimidag = 1-NLBE_gammaimi-NL_gammaimi1*((NLBE_imi/NL_qi)/(NLBE_imi(-1)/NL_qi)-1)*((NLBE_imi/NL_qi)/(NLBE_imi(-1)/NL_qi(-1)));
+// Import adjustment cost
+NLES_gammaimi = NL_gammaimi1/2*((NLES_imi/NL_qi)/(NLES_imi(-1)/NL_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLES_gammaimidag = 1-NLES_gammaimi-NL_gammaimi1*((NLES_imi/NL_qi)/(NLES_imi(-1)/NL_qi)-1)*((NLES_imi/NL_qi)/(NLES_imi(-1)/NL_qi(-1)));
+// Import adjustment cost
+NLFI_gammaimi = NL_gammaimi1/2*((NLFI_imi/NL_qi)/(NLFI_imi(-1)/NL_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLFI_gammaimidag = 1-NLFI_gammaimi-NL_gammaimi1*((NLFI_imi/NL_qi)/(NLFI_imi(-1)/NL_qi)-1)*((NLFI_imi/NL_qi)/(NLFI_imi(-1)/NL_qi(-1)));
+// Import adjustment cost
+NLFR_gammaimi = NL_gammaimi1/2*((NLFR_imi/NL_qi)/(NLFR_imi(-1)/NL_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLFR_gammaimidag = 1-NLFR_gammaimi-NL_gammaimi1*((NLFR_imi/NL_qi)/(NLFR_imi(-1)/NL_qi)-1)*((NLFR_imi/NL_qi)/(NLFR_imi(-1)/NL_qi(-1)));
+// Import adjustment cost
+NLGR_gammaimi = NL_gammaimi1/2*((NLGR_imi/NL_qi)/(NLGR_imi(-1)/NL_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLGR_gammaimidag = 1-NLGR_gammaimi-NL_gammaimi1*((NLGR_imi/NL_qi)/(NLGR_imi(-1)/NL_qi)-1)*((NLGR_imi/NL_qi)/(NLGR_imi(-1)/NL_qi(-1)));
+// Import adjustment cost
+NLIT_gammaimi = NL_gammaimi1/2*((NLIT_imi/NL_qi)/(NLIT_imi(-1)/NL_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLIT_gammaimidag = 1-NLIT_gammaimi-NL_gammaimi1*((NLIT_imi/NL_qi)/(NLIT_imi(-1)/NL_qi)-1)*((NLIT_imi/NL_qi)/(NLIT_imi(-1)/NL_qi(-1)));
+// Import adjustment cost
+NLPT_gammaimi = NL_gammaimi1/2*((NLPT_imi/NL_qi)/(NLPT_imi(-1)/NL_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLPT_gammaimidag = 1-NLPT_gammaimi-NL_gammaimi1*((NLPT_imi/NL_qi)/(NLPT_imi(-1)/NL_qi)-1)*((NLPT_imi/NL_qi)/(NLPT_imi(-1)/NL_qi(-1)));
+// Import adjustment cost
+NLDE_gammaimi = NL_gammaimi1/2*((NLDE_imi/NL_qi)/(NLDE_imi(-1)/NL_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLDE_gammaimidag = 1-NLDE_gammaimi-NL_gammaimi1*((NLDE_imi/NL_qi)/(NLDE_imi(-1)/NL_qi)-1)*((NLDE_imi/NL_qi)/(NLDE_imi(-1)/NL_qi(-1)));
+// Import adjustment cost
+NLRU_gammaimi = NL_gammaimi1/2*((NLRU_imi/NL_qi)/(NLRU_imi(-1)/NL_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLRU_gammaimidag = 1-NLRU_gammaimi-NL_gammaimi1*((NLRU_imi/NL_qi)/(NLRU_imi(-1)/NL_qi)-1)*((NLRU_imi/NL_qi)/(NLRU_imi(-1)/NL_qi(-1)));
+// Import adjustment cost
+NLRW_gammaimi = NL_gammaimi1/2*((NLRW_imi/NL_qi)/(NLRW_imi(-1)/NL_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLRW_gammaimidag = 1-NLRW_gammaimi-NL_gammaimi1*((NLRW_imi/NL_qi)/(NLRW_imi(-1)/NL_qi)-1)*((NLRW_imi/NL_qi)/(NLRW_imi(-1)/NL_qi(-1)));
+// Import adjustment cost
+NLUS_gammaimi = NL_gammaimi1/2*((NLUS_imi/NL_qi)/(NLUS_imi(-1)/NL_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLUS_gammaimidag = 1-NLUS_gammaimi-NL_gammaimi1*((NLUS_imi/NL_qi)/(NLUS_imi(-1)/NL_qi)-1)*((NLUS_imi/NL_qi)/(NLUS_imi(-1)/NL_qi(-1)));
 // Private consumption good (tradable)
 NL_ttcg^((NL_mutcg-1)/NL_mutcg) = (NL_nutcg)^(1/NL_mutcg)*NL_htcg^(1-1/NL_mutcg)+(1-NL_nutcg)^(1/NL_mutcg)*NL_imcg^(1-1/NL_mutcg);
 // Private consumption good  (total)
@@ -44821,32 +45273,58 @@ NL_pttcg^(1-NL_mutcg) = (NL_nutcg)*NL_pht^(1-NL_mutcg)+(1-NL_nutcg)*NL_pimcg^(1-
 NL_pcg^(1-NL_mucg) = (NL_nucg)*NL_pttcg^(1-NL_mucg)+(1-NL_nucg)*NL_pnt^(1-NL_mucg);
 // Demand for domestic intermediate goods
 NL_htcg = NL_nutcg*(NL_pht/NL_pttcg)^(-NL_mutcg)*NL_ttcg;
-NLRA_gammaimcg = 0;
-NLRA_gammaimcgdag = 1;
-NLAT_gammaimcg = 0;
-NLAT_gammaimcgdag = 1;
-NLBE_gammaimcg = 0;
-NLBE_gammaimcgdag = 1;
-NLES_gammaimcg = 0;
-NLES_gammaimcgdag = 1;
-NLFI_gammaimcg = 0;
-NLFI_gammaimcgdag = 1;
-NLFR_gammaimcg = 0;
-NLFR_gammaimcgdag = 1;
-NLGR_gammaimcg = 0;
-NLGR_gammaimcgdag = 1;
-NLIT_gammaimcg = 0;
-NLIT_gammaimcgdag = 1;
-NLPT_gammaimcg = 0;
-NLPT_gammaimcgdag = 1;
-NLDE_gammaimcg = 0;
-NLDE_gammaimcgdag = 1;
-NLRU_gammaimcg = 0;
-NLRU_gammaimcgdag = 1;
-NLRW_gammaimcg = 0;
-NLRW_gammaimcgdag = 1;
-NLUS_gammaimcg = 0;
-NLUS_gammaimcgdag = 1;
+// Import adjustment cost
+NLRA_gammaimcg = NL_gammaimcg1/2*((NLRA_imcg/NL_qcg)/(NLRA_imcg(-1)/NL_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLRA_gammaimcgdag = 1-NLRA_gammaimcg-NL_gammaimcg1*((NLRA_imcg/NL_qcg)/(NLRA_imcg(-1)/NL_qcg)-1)*((NLRA_imcg/NL_qcg)/(NLRA_imcg(-1)/NL_qcg(-1)));
+// Import adjustment cost
+NLAT_gammaimcg = NL_gammaimcg1/2*((NLAT_imcg/NL_qcg)/(NLAT_imcg(-1)/NL_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLAT_gammaimcgdag = 1-NLAT_gammaimcg-NL_gammaimcg1*((NLAT_imcg/NL_qcg)/(NLAT_imcg(-1)/NL_qcg)-1)*((NLAT_imcg/NL_qcg)/(NLAT_imcg(-1)/NL_qcg(-1)));
+// Import adjustment cost
+NLBE_gammaimcg = NL_gammaimcg1/2*((NLBE_imcg/NL_qcg)/(NLBE_imcg(-1)/NL_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLBE_gammaimcgdag = 1-NLBE_gammaimcg-NL_gammaimcg1*((NLBE_imcg/NL_qcg)/(NLBE_imcg(-1)/NL_qcg)-1)*((NLBE_imcg/NL_qcg)/(NLBE_imcg(-1)/NL_qcg(-1)));
+// Import adjustment cost
+NLES_gammaimcg = NL_gammaimcg1/2*((NLES_imcg/NL_qcg)/(NLES_imcg(-1)/NL_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLES_gammaimcgdag = 1-NLES_gammaimcg-NL_gammaimcg1*((NLES_imcg/NL_qcg)/(NLES_imcg(-1)/NL_qcg)-1)*((NLES_imcg/NL_qcg)/(NLES_imcg(-1)/NL_qcg(-1)));
+// Import adjustment cost
+NLFI_gammaimcg = NL_gammaimcg1/2*((NLFI_imcg/NL_qcg)/(NLFI_imcg(-1)/NL_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLFI_gammaimcgdag = 1-NLFI_gammaimcg-NL_gammaimcg1*((NLFI_imcg/NL_qcg)/(NLFI_imcg(-1)/NL_qcg)-1)*((NLFI_imcg/NL_qcg)/(NLFI_imcg(-1)/NL_qcg(-1)));
+// Import adjustment cost
+NLFR_gammaimcg = NL_gammaimcg1/2*((NLFR_imcg/NL_qcg)/(NLFR_imcg(-1)/NL_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLFR_gammaimcgdag = 1-NLFR_gammaimcg-NL_gammaimcg1*((NLFR_imcg/NL_qcg)/(NLFR_imcg(-1)/NL_qcg)-1)*((NLFR_imcg/NL_qcg)/(NLFR_imcg(-1)/NL_qcg(-1)));
+// Import adjustment cost
+NLGR_gammaimcg = NL_gammaimcg1/2*((NLGR_imcg/NL_qcg)/(NLGR_imcg(-1)/NL_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLGR_gammaimcgdag = 1-NLGR_gammaimcg-NL_gammaimcg1*((NLGR_imcg/NL_qcg)/(NLGR_imcg(-1)/NL_qcg)-1)*((NLGR_imcg/NL_qcg)/(NLGR_imcg(-1)/NL_qcg(-1)));
+// Import adjustment cost
+NLIT_gammaimcg = NL_gammaimcg1/2*((NLIT_imcg/NL_qcg)/(NLIT_imcg(-1)/NL_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLIT_gammaimcgdag = 1-NLIT_gammaimcg-NL_gammaimcg1*((NLIT_imcg/NL_qcg)/(NLIT_imcg(-1)/NL_qcg)-1)*((NLIT_imcg/NL_qcg)/(NLIT_imcg(-1)/NL_qcg(-1)));
+// Import adjustment cost
+NLPT_gammaimcg = NL_gammaimcg1/2*((NLPT_imcg/NL_qcg)/(NLPT_imcg(-1)/NL_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLPT_gammaimcgdag = 1-NLPT_gammaimcg-NL_gammaimcg1*((NLPT_imcg/NL_qcg)/(NLPT_imcg(-1)/NL_qcg)-1)*((NLPT_imcg/NL_qcg)/(NLPT_imcg(-1)/NL_qcg(-1)));
+// Import adjustment cost
+NLDE_gammaimcg = NL_gammaimcg1/2*((NLDE_imcg/NL_qcg)/(NLDE_imcg(-1)/NL_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLDE_gammaimcgdag = 1-NLDE_gammaimcg-NL_gammaimcg1*((NLDE_imcg/NL_qcg)/(NLDE_imcg(-1)/NL_qcg)-1)*((NLDE_imcg/NL_qcg)/(NLDE_imcg(-1)/NL_qcg(-1)));
+// Import adjustment cost
+NLRU_gammaimcg = NL_gammaimcg1/2*((NLRU_imcg/NL_qcg)/(NLRU_imcg(-1)/NL_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLRU_gammaimcgdag = 1-NLRU_gammaimcg-NL_gammaimcg1*((NLRU_imcg/NL_qcg)/(NLRU_imcg(-1)/NL_qcg)-1)*((NLRU_imcg/NL_qcg)/(NLRU_imcg(-1)/NL_qcg(-1)));
+// Import adjustment cost
+NLRW_gammaimcg = NL_gammaimcg1/2*((NLRW_imcg/NL_qcg)/(NLRW_imcg(-1)/NL_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLRW_gammaimcgdag = 1-NLRW_gammaimcg-NL_gammaimcg1*((NLRW_imcg/NL_qcg)/(NLRW_imcg(-1)/NL_qcg)-1)*((NLRW_imcg/NL_qcg)/(NLRW_imcg(-1)/NL_qcg(-1)));
+// Import adjustment cost
+NLUS_gammaimcg = NL_gammaimcg1/2*((NLUS_imcg/NL_qcg)/(NLUS_imcg(-1)/NL_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLUS_gammaimcgdag = 1-NLUS_gammaimcg-NL_gammaimcg1*((NLUS_imcg/NL_qcg)/(NLUS_imcg(-1)/NL_qcg)-1)*((NLUS_imcg/NL_qcg)/(NLUS_imcg(-1)/NL_qcg(-1)));
 // Private consumption good (tradable)
 NL_ttig^((NL_mutig-1)/NL_mutig) = (NL_nutig)^(1/NL_mutig)*NL_htig^(1-1/NL_mutig)+(1-NL_nutig)^(1/NL_mutig)*NL_imig^(1-1/NL_mutig);
 // Private consumption good  (total)
@@ -44859,32 +45337,58 @@ NL_pttig^(1-NL_mutig) = (NL_nutig)*NL_pht^(1-NL_mutig)+(1-NL_nutig)*NL_pimig^(1-
 NL_pig^(1-NL_muig) = (NL_nuig)*NL_pttig^(1-NL_muig)+(1-NL_nuig)*NL_pnt^(1-NL_muig);
 // Demand for domestic intermediate goods
 NL_htig = NL_nutig*(NL_pht/NL_pttig)^(-NL_mutig)*NL_ttig;
-NLRA_gammaimig = 0;
-NLRA_gammaimigdag = 1;
-NLAT_gammaimig = 0;
-NLAT_gammaimigdag = 1;
-NLBE_gammaimig = 0;
-NLBE_gammaimigdag = 1;
-NLES_gammaimig = 0;
-NLES_gammaimigdag = 1;
-NLFI_gammaimig = 0;
-NLFI_gammaimigdag = 1;
-NLFR_gammaimig = 0;
-NLFR_gammaimigdag = 1;
-NLGR_gammaimig = 0;
-NLGR_gammaimigdag = 1;
-NLIT_gammaimig = 0;
-NLIT_gammaimigdag = 1;
-NLPT_gammaimig = 0;
-NLPT_gammaimigdag = 1;
-NLDE_gammaimig = 0;
-NLDE_gammaimigdag = 1;
-NLRU_gammaimig = 0;
-NLRU_gammaimigdag = 1;
-NLRW_gammaimig = 0;
-NLRW_gammaimigdag = 1;
-NLUS_gammaimig = 0;
-NLUS_gammaimigdag = 1;
+// Import adjustment cost
+NLRA_gammaimig = NL_gammaimig1/2*((NLRA_imig/NL_qig)/(NLRA_imig(-1)/NL_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLRA_gammaimigdag = 1-NLRA_gammaimig-NL_gammaimig1*((NLRA_imig/NL_qig)/(NLRA_imig(-1)/NL_qig)-1)*((NLRA_imig/NL_qig)/(NLRA_imig(-1)/NL_qig(-1)));
+// Import adjustment cost
+NLAT_gammaimig = NL_gammaimig1/2*((NLAT_imig/NL_qig)/(NLAT_imig(-1)/NL_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLAT_gammaimigdag = 1-NLAT_gammaimig-NL_gammaimig1*((NLAT_imig/NL_qig)/(NLAT_imig(-1)/NL_qig)-1)*((NLAT_imig/NL_qig)/(NLAT_imig(-1)/NL_qig(-1)));
+// Import adjustment cost
+NLBE_gammaimig = NL_gammaimig1/2*((NLBE_imig/NL_qig)/(NLBE_imig(-1)/NL_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLBE_gammaimigdag = 1-NLBE_gammaimig-NL_gammaimig1*((NLBE_imig/NL_qig)/(NLBE_imig(-1)/NL_qig)-1)*((NLBE_imig/NL_qig)/(NLBE_imig(-1)/NL_qig(-1)));
+// Import adjustment cost
+NLES_gammaimig = NL_gammaimig1/2*((NLES_imig/NL_qig)/(NLES_imig(-1)/NL_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLES_gammaimigdag = 1-NLES_gammaimig-NL_gammaimig1*((NLES_imig/NL_qig)/(NLES_imig(-1)/NL_qig)-1)*((NLES_imig/NL_qig)/(NLES_imig(-1)/NL_qig(-1)));
+// Import adjustment cost
+NLFI_gammaimig = NL_gammaimig1/2*((NLFI_imig/NL_qig)/(NLFI_imig(-1)/NL_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLFI_gammaimigdag = 1-NLFI_gammaimig-NL_gammaimig1*((NLFI_imig/NL_qig)/(NLFI_imig(-1)/NL_qig)-1)*((NLFI_imig/NL_qig)/(NLFI_imig(-1)/NL_qig(-1)));
+// Import adjustment cost
+NLFR_gammaimig = NL_gammaimig1/2*((NLFR_imig/NL_qig)/(NLFR_imig(-1)/NL_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLFR_gammaimigdag = 1-NLFR_gammaimig-NL_gammaimig1*((NLFR_imig/NL_qig)/(NLFR_imig(-1)/NL_qig)-1)*((NLFR_imig/NL_qig)/(NLFR_imig(-1)/NL_qig(-1)));
+// Import adjustment cost
+NLGR_gammaimig = NL_gammaimig1/2*((NLGR_imig/NL_qig)/(NLGR_imig(-1)/NL_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLGR_gammaimigdag = 1-NLGR_gammaimig-NL_gammaimig1*((NLGR_imig/NL_qig)/(NLGR_imig(-1)/NL_qig)-1)*((NLGR_imig/NL_qig)/(NLGR_imig(-1)/NL_qig(-1)));
+// Import adjustment cost
+NLIT_gammaimig = NL_gammaimig1/2*((NLIT_imig/NL_qig)/(NLIT_imig(-1)/NL_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLIT_gammaimigdag = 1-NLIT_gammaimig-NL_gammaimig1*((NLIT_imig/NL_qig)/(NLIT_imig(-1)/NL_qig)-1)*((NLIT_imig/NL_qig)/(NLIT_imig(-1)/NL_qig(-1)));
+// Import adjustment cost
+NLPT_gammaimig = NL_gammaimig1/2*((NLPT_imig/NL_qig)/(NLPT_imig(-1)/NL_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLPT_gammaimigdag = 1-NLPT_gammaimig-NL_gammaimig1*((NLPT_imig/NL_qig)/(NLPT_imig(-1)/NL_qig)-1)*((NLPT_imig/NL_qig)/(NLPT_imig(-1)/NL_qig(-1)));
+// Import adjustment cost
+NLDE_gammaimig = NL_gammaimig1/2*((NLDE_imig/NL_qig)/(NLDE_imig(-1)/NL_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLDE_gammaimigdag = 1-NLDE_gammaimig-NL_gammaimig1*((NLDE_imig/NL_qig)/(NLDE_imig(-1)/NL_qig)-1)*((NLDE_imig/NL_qig)/(NLDE_imig(-1)/NL_qig(-1)));
+// Import adjustment cost
+NLRU_gammaimig = NL_gammaimig1/2*((NLRU_imig/NL_qig)/(NLRU_imig(-1)/NL_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLRU_gammaimigdag = 1-NLRU_gammaimig-NL_gammaimig1*((NLRU_imig/NL_qig)/(NLRU_imig(-1)/NL_qig)-1)*((NLRU_imig/NL_qig)/(NLRU_imig(-1)/NL_qig(-1)));
+// Import adjustment cost
+NLRW_gammaimig = NL_gammaimig1/2*((NLRW_imig/NL_qig)/(NLRW_imig(-1)/NL_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLRW_gammaimigdag = 1-NLRW_gammaimig-NL_gammaimig1*((NLRW_imig/NL_qig)/(NLRW_imig(-1)/NL_qig)-1)*((NLRW_imig/NL_qig)/(NLRW_imig(-1)/NL_qig(-1)));
+// Import adjustment cost
+NLUS_gammaimig = NL_gammaimig1/2*((NLUS_imig/NL_qig)/(NLUS_imig(-1)/NL_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+NLUS_gammaimigdag = 1-NLUS_gammaimig-NL_gammaimig1*((NLUS_imig/NL_qig)/(NLUS_imig(-1)/NL_qig)-1)*((NLUS_imig/NL_qig)/(NLUS_imig(-1)/NL_qig(-1)));
 // Trade balance
 NL_tb =
 +NL_pex*RA_size/NL_size*RANL_im
@@ -44945,18 +45449,10 @@ NL_ex =
 // Government spending, using NL_pg = NL_pht
 NL_pcg*NL_cg = NL_cgy*NL_pybar*NL_ybar;
 NL_pig*NL_ig = NL_igy*NL_pybar*NL_ybar;
-NL_t = 0;
-NL_b = NL_bytarget*NL_pybar*NL_ybar;
-// Auxiliary equation for steady-state output
-NL_ybar = NL_y;
-// Auxiliary equation for steady-state output
-NL_ytbar = NL_yst;
-// Auxiliary equation for steady-state output
-NL_ynbar = NL_ysn;
-// Auxiliary equation for steady-state output deflator
-NL_pybar = NL_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-NL_trybar = NL_tr/(NL_pybar*NL_ybar);
+// Transfers
+NL_tr = NL_try*NL_pybar*NL_ybar;
+// Fiscal rule
+NL_t/(NL_pybar*NL_ybar) = NL_phitb*(NL_b/(NL_pybar*NL_ybar)-NL_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 NL_ti = NL_upsilont*NL_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -44972,9 +45468,11 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	NL_r = DE_r;
-NL_pic4 = NL_pi4target;
-NL_rr-1 = NL_r/NL_pi4target^(1/4)-1;
+		NL_rerdep/DE_rerdep*NL_pic/DE_pic-1=0;
+// Definition of annual inflation
+NL_pic4 = NL_pic*NL_pic(-1)*NL_pic(-2)*NL_pic(-3);
+// Real interest rate
+NL_rr-1 = NL_r/NL_pic(+1)-1;
 // Equilibrium real interest rate
 NL_rrstar-1 = 1/NL_beta-1;
 //-------------
@@ -45061,68 +45559,68 @@ NL_py*NL_y =
 +NL_pcg*NL_qcg
 +NL_pig*NL_qig
 +NL_pex*RA_size/NL_size*RANL_im
--(RA_pex*NLRA_rer)*NLRA_imc
--(RA_pex*NLRA_rer)*NLRA_imi
+-(RA_pex*NLRA_rer)*(NLRA_imc*(1-NLRA_gammaimc)/NLRA_gammaimcdag)
+-(RA_pex*NLRA_rer)*(NLRA_imi*(1-NLRA_gammaimi)/NLRA_gammaimidag)
 -(RA_pex*NLRA_rer)*NLRA_imcg
 -(RA_pex*NLRA_rer)*NLRA_imig
 +NL_pex*AT_size/NL_size*ATNL_im
--(AT_pex*NLAT_rer)*NLAT_imc
--(AT_pex*NLAT_rer)*NLAT_imi
+-(AT_pex*NLAT_rer)*(NLAT_imc*(1-NLAT_gammaimc)/NLAT_gammaimcdag)
+-(AT_pex*NLAT_rer)*(NLAT_imi*(1-NLAT_gammaimi)/NLAT_gammaimidag)
 -(AT_pex*NLAT_rer)*NLAT_imcg
 -(AT_pex*NLAT_rer)*NLAT_imig
 +NL_pex*BE_size/NL_size*BENL_im
--(BE_pex*NLBE_rer)*NLBE_imc
--(BE_pex*NLBE_rer)*NLBE_imi
+-(BE_pex*NLBE_rer)*(NLBE_imc*(1-NLBE_gammaimc)/NLBE_gammaimcdag)
+-(BE_pex*NLBE_rer)*(NLBE_imi*(1-NLBE_gammaimi)/NLBE_gammaimidag)
 -(BE_pex*NLBE_rer)*NLBE_imcg
 -(BE_pex*NLBE_rer)*NLBE_imig
 +NL_pex*ES_size/NL_size*ESNL_im
--(ES_pex*NLES_rer)*NLES_imc
--(ES_pex*NLES_rer)*NLES_imi
+-(ES_pex*NLES_rer)*(NLES_imc*(1-NLES_gammaimc)/NLES_gammaimcdag)
+-(ES_pex*NLES_rer)*(NLES_imi*(1-NLES_gammaimi)/NLES_gammaimidag)
 -(ES_pex*NLES_rer)*NLES_imcg
 -(ES_pex*NLES_rer)*NLES_imig
 +NL_pex*FI_size/NL_size*FINL_im
--(FI_pex*NLFI_rer)*NLFI_imc
--(FI_pex*NLFI_rer)*NLFI_imi
+-(FI_pex*NLFI_rer)*(NLFI_imc*(1-NLFI_gammaimc)/NLFI_gammaimcdag)
+-(FI_pex*NLFI_rer)*(NLFI_imi*(1-NLFI_gammaimi)/NLFI_gammaimidag)
 -(FI_pex*NLFI_rer)*NLFI_imcg
 -(FI_pex*NLFI_rer)*NLFI_imig
 +NL_pex*FR_size/NL_size*FRNL_im
--(FR_pex*NLFR_rer)*NLFR_imc
--(FR_pex*NLFR_rer)*NLFR_imi
+-(FR_pex*NLFR_rer)*(NLFR_imc*(1-NLFR_gammaimc)/NLFR_gammaimcdag)
+-(FR_pex*NLFR_rer)*(NLFR_imi*(1-NLFR_gammaimi)/NLFR_gammaimidag)
 -(FR_pex*NLFR_rer)*NLFR_imcg
 -(FR_pex*NLFR_rer)*NLFR_imig
 +NL_pex*GR_size/NL_size*GRNL_im
--(GR_pex*NLGR_rer)*NLGR_imc
--(GR_pex*NLGR_rer)*NLGR_imi
+-(GR_pex*NLGR_rer)*(NLGR_imc*(1-NLGR_gammaimc)/NLGR_gammaimcdag)
+-(GR_pex*NLGR_rer)*(NLGR_imi*(1-NLGR_gammaimi)/NLGR_gammaimidag)
 -(GR_pex*NLGR_rer)*NLGR_imcg
 -(GR_pex*NLGR_rer)*NLGR_imig
 +NL_pex*IT_size/NL_size*ITNL_im
--(IT_pex*NLIT_rer)*NLIT_imc
--(IT_pex*NLIT_rer)*NLIT_imi
+-(IT_pex*NLIT_rer)*(NLIT_imc*(1-NLIT_gammaimc)/NLIT_gammaimcdag)
+-(IT_pex*NLIT_rer)*(NLIT_imi*(1-NLIT_gammaimi)/NLIT_gammaimidag)
 -(IT_pex*NLIT_rer)*NLIT_imcg
 -(IT_pex*NLIT_rer)*NLIT_imig
 +NL_pex*PT_size/NL_size*PTNL_im
--(PT_pex*NLPT_rer)*NLPT_imc
--(PT_pex*NLPT_rer)*NLPT_imi
+-(PT_pex*NLPT_rer)*(NLPT_imc*(1-NLPT_gammaimc)/NLPT_gammaimcdag)
+-(PT_pex*NLPT_rer)*(NLPT_imi*(1-NLPT_gammaimi)/NLPT_gammaimidag)
 -(PT_pex*NLPT_rer)*NLPT_imcg
 -(PT_pex*NLPT_rer)*NLPT_imig
 +NL_pex*DE_size/NL_size*DENL_im
--(DE_pex*NLDE_rer)*NLDE_imc
--(DE_pex*NLDE_rer)*NLDE_imi
+-(DE_pex*NLDE_rer)*(NLDE_imc*(1-NLDE_gammaimc)/NLDE_gammaimcdag)
+-(DE_pex*NLDE_rer)*(NLDE_imi*(1-NLDE_gammaimi)/NLDE_gammaimidag)
 -(DE_pex*NLDE_rer)*NLDE_imcg
 -(DE_pex*NLDE_rer)*NLDE_imig
 +NL_pex*RU_size/NL_size*RUNL_im
--(RU_pex*NLRU_rer)*NLRU_imc
--(RU_pex*NLRU_rer)*NLRU_imi
+-(RU_pex*NLRU_rer)*(NLRU_imc*(1-NLRU_gammaimc)/NLRU_gammaimcdag)
+-(RU_pex*NLRU_rer)*(NLRU_imi*(1-NLRU_gammaimi)/NLRU_gammaimidag)
 -(RU_pex*NLRU_rer)*NLRU_imcg
 -(RU_pex*NLRU_rer)*NLRU_imig
 +NL_pex*RW_size/NL_size*RWNL_im
--(RW_pex*NLRW_rer)*NLRW_imc
--(RW_pex*NLRW_rer)*NLRW_imi
+-(RW_pex*NLRW_rer)*(NLRW_imc*(1-NLRW_gammaimc)/NLRW_gammaimcdag)
+-(RW_pex*NLRW_rer)*(NLRW_imi*(1-NLRW_gammaimi)/NLRW_gammaimidag)
 -(RW_pex*NLRW_rer)*NLRW_imcg
 -(RW_pex*NLRW_rer)*NLRW_imig
 +NL_pex*US_size/NL_size*USNL_im
--(US_pex*NLUS_rer)*NLUS_imc
--(US_pex*NLUS_rer)*NLUS_imi
+-(US_pex*NLUS_rer)*(NLUS_imc*(1-NLUS_gammaimc)/NLUS_gammaimcdag)
+-(US_pex*NLUS_rer)*(NLUS_imi*(1-NLUS_gammaimi)/NLUS_gammaimidag)
 -(US_pex*NLUS_rer)*NLUS_imcg
 -(US_pex*NLUS_rer)*NLUS_imig
 ;
@@ -45197,7 +45695,7 @@ NL_yhty = NL_pht*NL_yst/(NL_py*NL_y);
 // NT sector share
 NL_ynty = NL_pnt*NL_ysn/(NL_py*NL_y);
 // Output gap
-NL_ygap = 0;
+NL_ygap = NL_y/NL_ybar-1;
 // Output growth (gross rate)
 NL_ygrowth = NL_y/NL_y(-1);
 // Output growth (gross rate yoy)
@@ -45361,7 +45859,7 @@ PT_dcci = ((PT_nucces)^(1/PT_mucces)*PT_ci^(1-1/PT_mucces)+(1-PT_nucces)^(1/PT_m
 PT_lambdai*(1+PT_tauc+PT_gammavi+PT_vi*PT_gammavider) = PT_zcon*(PT_ccesi-PT_kappa*PT_ccesi(-1))^(-PT_sigma)*PT_dcci;
 // Euler equation for government bonds
 // all other that are not Germany, not US and not the RoW
-PT_r                   = PT_beta^(-1)*PT_lambdai/PT_lambdai    *PT_pic;
+PT_r*(1-PT_gammabh) = PT_beta^(-1)*PT_lambdai/PT_lambdai(+1)*PT_pic(+1);
 // Germany
 // US and the RoW
 // Euler equation for money
@@ -45372,17 +45870,23 @@ PT_vi = PT_ci/PT_mi;
 PT_gammavi = PT_gammav1*PT_vi+PT_gammav2/PT_vi-2*(PT_gammav1*PT_gammav2)^(1/2);
 // Derivative of transaction cost
 PT_gammavider = PT_gammav1-PT_gammav2*PT_vi^(-2);
-PT_delta = PT_ii/PT_ki;
-PT_gammai = 0;
-PT_gammaider = 0;
-PT_gammau = 0;
-PT_gammauder = ((PT_beta^(-1)-1+PT_delta)*PT_qbar-PT_delta*PT_taukbar*PT_pibar)/((1-PT_taukbar)*PT_pibar);
-PT_u = 1;
-PT_pi = PT_q;
+// Capital accumulation
+PT_ki = (1-PT_delta)*PT_ki(-1)+(1-PT_gammai(-1))*PT_ii(-1)*PT_zinv;
+// Investment adjustment cost
+PT_gammai = PT_gammai1/2*(PT_ii/PT_ii(-1)-1)^2;
+// Derivative of investment adjustment cost
+PT_gammaider = PT_gammai1*(PT_ii/PT_ii(-1)-1)/PT_ii(-1);
+// Capacity utilisation cost
+PT_gammau = ((PT_beta^(-1)-1+PT_delta)*PT_qbar-PT_delta*PT_taukbar*PT_pibar)/((1-PT_taukbar)*PT_pibar)*(PT_u-1)+PT_gammau2/2*(PT_u-1)^2;
+// Derivative of capacity utilisation cost
+PT_gammauder = ((PT_beta^(-1)-1+PT_delta)*PT_qbar-PT_delta*PT_taukbar*PT_pibar)/((1-PT_taukbar)*PT_pibar)+PT_gammau2*(PT_u-1);
+// Optimal capacity utilisation (FOC)
+PT_rk = PT_gammauder*PT_pi;
+// Tobin's Q
+PT_pi = PT_q*PT_zinv*(1-PT_gammai-PT_gammaider*PT_ii)+PT_beta*PT_lambdai(+1)/PT_lambdai*PT_q(+1)*PT_zinv(+1)*PT_gammaider(+1)*PT_ii(+1)^2/PT_ii;
 // Auxiliary equation for Tobin's Q in steady state
-PT_qbar = PT_q;
 // Rate of return on capital
-PT_q = PT_beta*((1-PT_tauk)*PT_rk+(PT_tauk*PT_delta)*PT_pi+(1-PT_delta)*PT_q);
+PT_q = PT_beta*PT_lambdai(+1)/PT_lambdai*((1-PT_tauk(+1))*(PT_rk(+1)*PT_u(+1)-PT_gammau(+1)*PT_pi(+1))+(PT_tauk(+1)*PT_delta)*PT_pi(+1)+(1-PT_delta)*PT_q(+1));
 // Optimal wage contract (FOC)
 PT_witilde^(1+PT_etai*PT_zeta) = PT_etai/(PT_etai-1)*PT_fi/PT_gi+PT_wcst;
 // Definition of fi
@@ -45441,11 +45945,9 @@ PT_mcn = 1/(PT_zn*PT_kg^PT_alphag*(PT_alphan)^(PT_alphan)*(1-PT_alphan)^(1-PT_al
 // Wage Inflation (qoq)
 PT_piw = PT_w/PT_w(-1)*PT_pic;
 // Wage Inflation (yoy)
-PT_piw4 = PT_pic4;
+PT_piw4 = PT_piw*PT_piw(-1)*PT_piw(-2)*PT_piw(-3);
 // Auxiliary equation for steady-state fixed cost
-PT_psitbar = PT_psit*PT_ytbar;
 // Auxiliary equation for steady-state fixed cost
-PT_psinbar = PT_psin*PT_ynbar;
 // Capital input (FOC)
 PT_rk = PT_alphat*(PT_yst+PT_psitbar)/PT_kdt*PT_mct;
 // Capital input (FOC)
@@ -45520,7 +46022,6 @@ PT_piex = PT_pex/PT_pex(-1)*PT_pic;
 // Bilateral real exchange rate
 PTRA_rer = PT_rer/RA_rer;
 // Auxiliary equation for steady-state output
-PTRA_rerbar = PTRA_rer;
 //Terms of Trade
 PTRA_tot = RA_pex*PTRA_rer/PT_pex;
 // Optimal price contract set in foreign markets (FOC), using PT_pxtilde = AT_pimtilde
@@ -45536,7 +46037,6 @@ PTRA_tot = RA_pex*PTRA_rer/PT_pex;
 // Bilateral real exchange rate
 PTAT_rer = PT_rer/AT_rer;
 // Auxiliary equation for steady-state output
-PTAT_rerbar = PTAT_rer;
 //Terms of Trade
 PTAT_tot = AT_pex*PTAT_rer/PT_pex;
 // Optimal price contract set in foreign markets (FOC), using PT_pxtilde = BE_pimtilde
@@ -45552,7 +46052,6 @@ PTAT_tot = AT_pex*PTAT_rer/PT_pex;
 // Bilateral real exchange rate
 PTBE_rer = PT_rer/BE_rer;
 // Auxiliary equation for steady-state output
-PTBE_rerbar = PTBE_rer;
 //Terms of Trade
 PTBE_tot = BE_pex*PTBE_rer/PT_pex;
 // Optimal price contract set in foreign markets (FOC), using PT_pxtilde = ES_pimtilde
@@ -45568,7 +46067,6 @@ PTBE_tot = BE_pex*PTBE_rer/PT_pex;
 // Bilateral real exchange rate
 PTES_rer = PT_rer/ES_rer;
 // Auxiliary equation for steady-state output
-PTES_rerbar = PTES_rer;
 //Terms of Trade
 PTES_tot = ES_pex*PTES_rer/PT_pex;
 // Optimal price contract set in foreign markets (FOC), using PT_pxtilde = FI_pimtilde
@@ -45584,7 +46082,6 @@ PTES_tot = ES_pex*PTES_rer/PT_pex;
 // Bilateral real exchange rate
 PTFI_rer = PT_rer/FI_rer;
 // Auxiliary equation for steady-state output
-PTFI_rerbar = PTFI_rer;
 //Terms of Trade
 PTFI_tot = FI_pex*PTFI_rer/PT_pex;
 // Optimal price contract set in foreign markets (FOC), using PT_pxtilde = FR_pimtilde
@@ -45600,7 +46097,6 @@ PTFI_tot = FI_pex*PTFI_rer/PT_pex;
 // Bilateral real exchange rate
 PTFR_rer = PT_rer/FR_rer;
 // Auxiliary equation for steady-state output
-PTFR_rerbar = PTFR_rer;
 //Terms of Trade
 PTFR_tot = FR_pex*PTFR_rer/PT_pex;
 // Optimal price contract set in foreign markets (FOC), using PT_pxtilde = GR_pimtilde
@@ -45616,7 +46112,6 @@ PTFR_tot = FR_pex*PTFR_rer/PT_pex;
 // Bilateral real exchange rate
 PTGR_rer = PT_rer/GR_rer;
 // Auxiliary equation for steady-state output
-PTGR_rerbar = PTGR_rer;
 //Terms of Trade
 PTGR_tot = GR_pex*PTGR_rer/PT_pex;
 // Optimal price contract set in foreign markets (FOC), using PT_pxtilde = IT_pimtilde
@@ -45632,7 +46127,6 @@ PTGR_tot = GR_pex*PTGR_rer/PT_pex;
 // Bilateral real exchange rate
 PTIT_rer = PT_rer/IT_rer;
 // Auxiliary equation for steady-state output
-PTIT_rerbar = PTIT_rer;
 //Terms of Trade
 PTIT_tot = IT_pex*PTIT_rer/PT_pex;
 // Optimal price contract set in foreign markets (FOC), using PT_pxtilde = NL_pimtilde
@@ -45648,7 +46142,6 @@ PTIT_tot = IT_pex*PTIT_rer/PT_pex;
 // Bilateral real exchange rate
 PTNL_rer = PT_rer/NL_rer;
 // Auxiliary equation for steady-state output
-PTNL_rerbar = PTNL_rer;
 //Terms of Trade
 PTNL_tot = NL_pex*PTNL_rer/PT_pex;
 // Optimal price contract set in foreign markets (FOC), using PT_pxtilde = DE_pimtilde
@@ -45664,7 +46157,6 @@ PTNL_tot = NL_pex*PTNL_rer/PT_pex;
 // Bilateral real exchange rate
 PTDE_rer = PT_rer/DE_rer;
 // Auxiliary equation for steady-state output
-PTDE_rerbar = PTDE_rer;
 //Terms of Trade
 PTDE_tot = DE_pex*PTDE_rer/PT_pex;
 // Optimal price contract set in foreign markets (FOC), using PT_pxtilde = RU_pimtilde
@@ -45680,7 +46172,6 @@ PTDE_tot = DE_pex*PTDE_rer/PT_pex;
 // Bilateral real exchange rate
 PTRU_rer = PT_rer/RU_rer;
 // Auxiliary equation for steady-state output
-PTRU_rerbar = PTRU_rer;
 //Terms of Trade
 PTRU_tot = RU_pex*PTRU_rer/PT_pex;
 // Optimal price contract set in foreign markets (FOC), using PT_pxtilde = RW_pimtilde
@@ -45696,7 +46187,6 @@ PTRU_tot = RU_pex*PTRU_rer/PT_pex;
 // Bilateral real exchange rate
 PTRW_rer = PT_rer/RW_rer;
 // Auxiliary equation for steady-state output
-PTRW_rerbar = PTRW_rer;
 //Terms of Trade
 PTRW_tot = RW_pex*PTRW_rer/PT_pex;
 // Optimal price contract set in foreign markets (FOC), using PT_pxtilde = US_pimtilde
@@ -45712,7 +46202,6 @@ PTRW_tot = RW_pex*PTRW_rer/PT_pex;
 // Bilateral real exchange rate
 PTUS_rer = PT_rer/US_rer;
 // Auxiliary equation for steady-state output
-PTUS_rerbar = PTUS_rer;
 //Terms of Trade
 PTUS_tot = US_pex*PTUS_rer/PT_pex;
 // Total imports 
@@ -48210,18 +48699,18 @@ PT_etot = 1
 //-----------------
 // Private consumption good (import)
 PT_imc^((PT_mumc-1)/PT_mumc) =
-+PTRA_numc ^(1/PT_mumc)*PTRA_imc^(1-1/PT_mumc)
-+PTAT_numc ^(1/PT_mumc)*PTAT_imc^(1-1/PT_mumc)
-+PTBE_numc ^(1/PT_mumc)*PTBE_imc^(1-1/PT_mumc)
-+PTES_numc ^(1/PT_mumc)*PTES_imc^(1-1/PT_mumc)
-+PTFI_numc ^(1/PT_mumc)*PTFI_imc^(1-1/PT_mumc)
-+PTFR_numc ^(1/PT_mumc)*PTFR_imc^(1-1/PT_mumc)
-+PTGR_numc ^(1/PT_mumc)*PTGR_imc^(1-1/PT_mumc)
-+PTNL_numc ^(1/PT_mumc)*PTNL_imc^(1-1/PT_mumc)
-+PTDE_numc ^(1/PT_mumc)*PTDE_imc^(1-1/PT_mumc)
-+PTRU_numc ^(1/PT_mumc)*PTRU_imc^(1-1/PT_mumc)
-+PTRW_numc ^(1/PT_mumc)*PTRW_imc^(1-1/PT_mumc)
-+PTUS_numc ^(1/PT_mumc)*PTUS_imc^(1-1/PT_mumc)
++PTRA_numc ^(1/PT_mumc)*((1-PTRA_gammaimc)*PTRA_imc)^(1-1/PT_mumc)
++PTAT_numc ^(1/PT_mumc)*((1-PTAT_gammaimc)*PTAT_imc)^(1-1/PT_mumc)
++PTBE_numc ^(1/PT_mumc)*((1-PTBE_gammaimc)*PTBE_imc)^(1-1/PT_mumc)
++PTES_numc ^(1/PT_mumc)*((1-PTES_gammaimc)*PTES_imc)^(1-1/PT_mumc)
++PTFI_numc ^(1/PT_mumc)*((1-PTFI_gammaimc)*PTFI_imc)^(1-1/PT_mumc)
++PTFR_numc ^(1/PT_mumc)*((1-PTFR_gammaimc)*PTFR_imc)^(1-1/PT_mumc)
++PTGR_numc ^(1/PT_mumc)*((1-PTGR_gammaimc)*PTGR_imc)^(1-1/PT_mumc)
++PTNL_numc ^(1/PT_mumc)*((1-PTNL_gammaimc)*PTNL_imc)^(1-1/PT_mumc)
++PTDE_numc ^(1/PT_mumc)*((1-PTDE_gammaimc)*PTDE_imc)^(1-1/PT_mumc)
++PTRU_numc ^(1/PT_mumc)*((1-PTRU_gammaimc)*PTRU_imc)^(1-1/PT_mumc)
++PTRW_numc ^(1/PT_mumc)*((1-PTRW_gammaimc)*PTRW_imc)^(1-1/PT_mumc)
++PTUS_numc ^(1/PT_mumc)*((1-PTUS_gammaimc)*PTUS_imc)^(1-1/PT_mumc)
 +(1
 -PTRA_numc
 -PTAT_numc
@@ -48235,29 +48724,29 @@ PT_imc^((PT_mumc-1)/PT_mumc) =
 -PTRU_numc
 -PTRW_numc
 -PTUS_numc
-)^(1/PT_mumc)*PTIT_imc^(1-1/PT_mumc);
+)^(1/PT_mumc)*((1-PTIT_gammaimc)*PTIT_imc)^(1-1/PT_mumc);
 // Demand for bilateral consumption import goods
-PTRA_imc = PTRA_numc*((RA_pex*PTRA_rer)/PT_pimc)^(-PT_mumc)*PT_imc;
+PTRA_imc = PTRA_numc*((RA_pex*PTRA_rer)/(PTRA_gammaimcdag*PT_pimc))^(-PT_mumc)*PT_imc/(1-PTRA_gammaimc);
 // Demand for bilateral consumption import goods
-PTAT_imc = PTAT_numc*((AT_pex*PTAT_rer)/PT_pimc)^(-PT_mumc)*PT_imc;
+PTAT_imc = PTAT_numc*((AT_pex*PTAT_rer)/(PTAT_gammaimcdag*PT_pimc))^(-PT_mumc)*PT_imc/(1-PTAT_gammaimc);
 // Demand for bilateral consumption import goods
-PTBE_imc = PTBE_numc*((BE_pex*PTBE_rer)/PT_pimc)^(-PT_mumc)*PT_imc;
+PTBE_imc = PTBE_numc*((BE_pex*PTBE_rer)/(PTBE_gammaimcdag*PT_pimc))^(-PT_mumc)*PT_imc/(1-PTBE_gammaimc);
 // Demand for bilateral consumption import goods
-PTES_imc = PTES_numc*((ES_pex*PTES_rer)/PT_pimc)^(-PT_mumc)*PT_imc;
+PTES_imc = PTES_numc*((ES_pex*PTES_rer)/(PTES_gammaimcdag*PT_pimc))^(-PT_mumc)*PT_imc/(1-PTES_gammaimc);
 // Demand for bilateral consumption import goods
-PTFI_imc = PTFI_numc*((FI_pex*PTFI_rer)/PT_pimc)^(-PT_mumc)*PT_imc;
+PTFI_imc = PTFI_numc*((FI_pex*PTFI_rer)/(PTFI_gammaimcdag*PT_pimc))^(-PT_mumc)*PT_imc/(1-PTFI_gammaimc);
 // Demand for bilateral consumption import goods
-PTFR_imc = PTFR_numc*((FR_pex*PTFR_rer)/PT_pimc)^(-PT_mumc)*PT_imc;
+PTFR_imc = PTFR_numc*((FR_pex*PTFR_rer)/(PTFR_gammaimcdag*PT_pimc))^(-PT_mumc)*PT_imc/(1-PTFR_gammaimc);
 // Demand for bilateral consumption import goods
-PTGR_imc = PTGR_numc*((GR_pex*PTGR_rer)/PT_pimc)^(-PT_mumc)*PT_imc;
+PTGR_imc = PTGR_numc*((GR_pex*PTGR_rer)/(PTGR_gammaimcdag*PT_pimc))^(-PT_mumc)*PT_imc/(1-PTGR_gammaimc);
 // Demand for bilateral consumption import goods
-PTNL_imc = PTNL_numc*((NL_pex*PTNL_rer)/PT_pimc)^(-PT_mumc)*PT_imc;
+PTNL_imc = PTNL_numc*((NL_pex*PTNL_rer)/(PTNL_gammaimcdag*PT_pimc))^(-PT_mumc)*PT_imc/(1-PTNL_gammaimc);
 // Demand for bilateral consumption import goods
-PTRU_imc = PTRU_numc*((RU_pex*PTRU_rer)/PT_pimc)^(-PT_mumc)*PT_imc;
+PTRU_imc = PTRU_numc*((RU_pex*PTRU_rer)/(PTRU_gammaimcdag*PT_pimc))^(-PT_mumc)*PT_imc/(1-PTRU_gammaimc);
 // Demand for bilateral consumption import goods
-PTRW_imc = PTRW_numc*((RW_pex*PTRW_rer)/PT_pimc)^(-PT_mumc)*PT_imc;
+PTRW_imc = PTRW_numc*((RW_pex*PTRW_rer)/(PTRW_gammaimcdag*PT_pimc))^(-PT_mumc)*PT_imc/(1-PTRW_gammaimc);
 // Demand for bilateral consumption import goods
-PTUS_imc = PTUS_numc*((US_pex*PTUS_rer)/PT_pimc)^(-PT_mumc)*PT_imc;
+PTUS_imc = PTUS_numc*((US_pex*PTUS_rer)/(PTUS_gammaimcdag*PT_pimc))^(-PT_mumc)*PT_imc/(1-PTUS_gammaimc);
 PTIT_imc = (1
 -PTRA_numc
 -PTAT_numc
@@ -48271,21 +48760,21 @@ PTIT_imc = (1
 -PTRU_numc
 -PTRW_numc
 -PTUS_numc
-)*((IT_pex*PTIT_rer)/PT_pimc)^(-PT_mumc)*PT_imc;
+)*((IT_pex*PTIT_rer)/(PTIT_gammaimcdag*PT_pimc))^(-PT_mumc)*PT_imc/(1-PTIT_gammaimc);
 // Price of the consumption good (import)
 PT_pimc^(1-PT_mumc) =
-+PTRA_numc * (RA_pex*PTRA_rer)^(1-PT_mumc)
-+PTAT_numc * (AT_pex*PTAT_rer)^(1-PT_mumc)
-+PTBE_numc * (BE_pex*PTBE_rer)^(1-PT_mumc)
-+PTES_numc * (ES_pex*PTES_rer)^(1-PT_mumc)
-+PTFI_numc * (FI_pex*PTFI_rer)^(1-PT_mumc)
-+PTFR_numc * (FR_pex*PTFR_rer)^(1-PT_mumc)
-+PTGR_numc * (GR_pex*PTGR_rer)^(1-PT_mumc)
-+PTNL_numc * (NL_pex*PTNL_rer)^(1-PT_mumc)
-+PTDE_numc * (DE_pex*PTDE_rer)^(1-PT_mumc)
-+PTRU_numc * (RU_pex*PTRU_rer)^(1-PT_mumc)
-+PTRW_numc * (RW_pex*PTRW_rer)^(1-PT_mumc)
-+PTUS_numc * (US_pex*PTUS_rer)^(1-PT_mumc)
++PTRA_numc *((RA_pex*PTRA_rer)/PTRA_gammaimcdag)^(1-PT_mumc)
++PTAT_numc *((AT_pex*PTAT_rer)/PTAT_gammaimcdag)^(1-PT_mumc)
++PTBE_numc *((BE_pex*PTBE_rer)/PTBE_gammaimcdag)^(1-PT_mumc)
++PTES_numc *((ES_pex*PTES_rer)/PTES_gammaimcdag)^(1-PT_mumc)
++PTFI_numc *((FI_pex*PTFI_rer)/PTFI_gammaimcdag)^(1-PT_mumc)
++PTFR_numc *((FR_pex*PTFR_rer)/PTFR_gammaimcdag)^(1-PT_mumc)
++PTGR_numc *((GR_pex*PTGR_rer)/PTGR_gammaimcdag)^(1-PT_mumc)
++PTNL_numc *((NL_pex*PTNL_rer)/PTNL_gammaimcdag)^(1-PT_mumc)
++PTDE_numc *((DE_pex*PTDE_rer)/PTDE_gammaimcdag)^(1-PT_mumc)
++PTRU_numc *((RU_pex*PTRU_rer)/PTRU_gammaimcdag)^(1-PT_mumc)
++PTRW_numc *((RW_pex*PTRW_rer)/PTRW_gammaimcdag)^(1-PT_mumc)
++PTUS_numc *((US_pex*PTUS_rer)/PTUS_gammaimcdag)^(1-PT_mumc)
 +(1
 -PTRA_numc
 -PTAT_numc
@@ -48299,23 +48788,23 @@ PT_pimc^(1-PT_mumc) =
 -PTRU_numc
 -PTRW_numc
 -PTUS_numc
-)*(IT_pex*PTIT_rer)^(1-PT_mumc);
+)*((IT_pex*PTIT_rer)/PTIT_gammaimcdag)^(1-PT_mumc);
 // Private consumption good (import) inflation
 PT_piimc = PT_pimc/PT_pimc(-1)*PT_pic;
 // Private consumption good (import)
 PT_imi^((PT_mumi-1)/PT_mumi) =
-+PTRA_numi ^(1/PT_mumi)*PTRA_imi^(1-1/PT_mumi)
-+PTAT_numi ^(1/PT_mumi)*PTAT_imi^(1-1/PT_mumi)
-+PTBE_numi ^(1/PT_mumi)*PTBE_imi^(1-1/PT_mumi)
-+PTES_numi ^(1/PT_mumi)*PTES_imi^(1-1/PT_mumi)
-+PTFI_numi ^(1/PT_mumi)*PTFI_imi^(1-1/PT_mumi)
-+PTFR_numi ^(1/PT_mumi)*PTFR_imi^(1-1/PT_mumi)
-+PTGR_numi ^(1/PT_mumi)*PTGR_imi^(1-1/PT_mumi)
-+PTNL_numi ^(1/PT_mumi)*PTNL_imi^(1-1/PT_mumi)
-+PTDE_numi ^(1/PT_mumi)*PTDE_imi^(1-1/PT_mumi)
-+PTRU_numi ^(1/PT_mumi)*PTRU_imi^(1-1/PT_mumi)
-+PTRW_numi ^(1/PT_mumi)*PTRW_imi^(1-1/PT_mumi)
-+PTUS_numi ^(1/PT_mumi)*PTUS_imi^(1-1/PT_mumi)
++PTRA_numi ^(1/PT_mumi)*((1-PTRA_gammaimi)*PTRA_imi)^(1-1/PT_mumi)
++PTAT_numi ^(1/PT_mumi)*((1-PTAT_gammaimi)*PTAT_imi)^(1-1/PT_mumi)
++PTBE_numi ^(1/PT_mumi)*((1-PTBE_gammaimi)*PTBE_imi)^(1-1/PT_mumi)
++PTES_numi ^(1/PT_mumi)*((1-PTES_gammaimi)*PTES_imi)^(1-1/PT_mumi)
++PTFI_numi ^(1/PT_mumi)*((1-PTFI_gammaimi)*PTFI_imi)^(1-1/PT_mumi)
++PTFR_numi ^(1/PT_mumi)*((1-PTFR_gammaimi)*PTFR_imi)^(1-1/PT_mumi)
++PTGR_numi ^(1/PT_mumi)*((1-PTGR_gammaimi)*PTGR_imi)^(1-1/PT_mumi)
++PTNL_numi ^(1/PT_mumi)*((1-PTNL_gammaimi)*PTNL_imi)^(1-1/PT_mumi)
++PTDE_numi ^(1/PT_mumi)*((1-PTDE_gammaimi)*PTDE_imi)^(1-1/PT_mumi)
++PTRU_numi ^(1/PT_mumi)*((1-PTRU_gammaimi)*PTRU_imi)^(1-1/PT_mumi)
++PTRW_numi ^(1/PT_mumi)*((1-PTRW_gammaimi)*PTRW_imi)^(1-1/PT_mumi)
++PTUS_numi ^(1/PT_mumi)*((1-PTUS_gammaimi)*PTUS_imi)^(1-1/PT_mumi)
 +(1
 -PTRA_numi
 -PTAT_numi
@@ -48329,29 +48818,29 @@ PT_imi^((PT_mumi-1)/PT_mumi) =
 -PTRU_numi
 -PTRW_numi
 -PTUS_numi
-)^(1/PT_mumi)*PTIT_imi^(1-1/PT_mumi);
+)^(1/PT_mumi)*((1-PTIT_gammaimi)*PTIT_imi)^(1-1/PT_mumi);
 // Demand for bilateral consumption import goods
-PTRA_imi = PTRA_numi*((RA_pex*PTRA_rer)/PT_pimi)^(-PT_mumi)*PT_imi;
+PTRA_imi = PTRA_numi*((RA_pex*PTRA_rer)/(PTRA_gammaimidag*PT_pimi))^(-PT_mumi)*PT_imi/(1-PTRA_gammaimi);
 // Demand for bilateral consumption import goods
-PTAT_imi = PTAT_numi*((AT_pex*PTAT_rer)/PT_pimi)^(-PT_mumi)*PT_imi;
+PTAT_imi = PTAT_numi*((AT_pex*PTAT_rer)/(PTAT_gammaimidag*PT_pimi))^(-PT_mumi)*PT_imi/(1-PTAT_gammaimi);
 // Demand for bilateral consumption import goods
-PTBE_imi = PTBE_numi*((BE_pex*PTBE_rer)/PT_pimi)^(-PT_mumi)*PT_imi;
+PTBE_imi = PTBE_numi*((BE_pex*PTBE_rer)/(PTBE_gammaimidag*PT_pimi))^(-PT_mumi)*PT_imi/(1-PTBE_gammaimi);
 // Demand for bilateral consumption import goods
-PTES_imi = PTES_numi*((ES_pex*PTES_rer)/PT_pimi)^(-PT_mumi)*PT_imi;
+PTES_imi = PTES_numi*((ES_pex*PTES_rer)/(PTES_gammaimidag*PT_pimi))^(-PT_mumi)*PT_imi/(1-PTES_gammaimi);
 // Demand for bilateral consumption import goods
-PTFI_imi = PTFI_numi*((FI_pex*PTFI_rer)/PT_pimi)^(-PT_mumi)*PT_imi;
+PTFI_imi = PTFI_numi*((FI_pex*PTFI_rer)/(PTFI_gammaimidag*PT_pimi))^(-PT_mumi)*PT_imi/(1-PTFI_gammaimi);
 // Demand for bilateral consumption import goods
-PTFR_imi = PTFR_numi*((FR_pex*PTFR_rer)/PT_pimi)^(-PT_mumi)*PT_imi;
+PTFR_imi = PTFR_numi*((FR_pex*PTFR_rer)/(PTFR_gammaimidag*PT_pimi))^(-PT_mumi)*PT_imi/(1-PTFR_gammaimi);
 // Demand for bilateral consumption import goods
-PTGR_imi = PTGR_numi*((GR_pex*PTGR_rer)/PT_pimi)^(-PT_mumi)*PT_imi;
+PTGR_imi = PTGR_numi*((GR_pex*PTGR_rer)/(PTGR_gammaimidag*PT_pimi))^(-PT_mumi)*PT_imi/(1-PTGR_gammaimi);
 // Demand for bilateral consumption import goods
-PTNL_imi = PTNL_numi*((NL_pex*PTNL_rer)/PT_pimi)^(-PT_mumi)*PT_imi;
+PTNL_imi = PTNL_numi*((NL_pex*PTNL_rer)/(PTNL_gammaimidag*PT_pimi))^(-PT_mumi)*PT_imi/(1-PTNL_gammaimi);
 // Demand for bilateral consumption import goods
-PTRU_imi = PTRU_numi*((RU_pex*PTRU_rer)/PT_pimi)^(-PT_mumi)*PT_imi;
+PTRU_imi = PTRU_numi*((RU_pex*PTRU_rer)/(PTRU_gammaimidag*PT_pimi))^(-PT_mumi)*PT_imi/(1-PTRU_gammaimi);
 // Demand for bilateral consumption import goods
-PTRW_imi = PTRW_numi*((RW_pex*PTRW_rer)/PT_pimi)^(-PT_mumi)*PT_imi;
+PTRW_imi = PTRW_numi*((RW_pex*PTRW_rer)/(PTRW_gammaimidag*PT_pimi))^(-PT_mumi)*PT_imi/(1-PTRW_gammaimi);
 // Demand for bilateral consumption import goods
-PTUS_imi = PTUS_numi*((US_pex*PTUS_rer)/PT_pimi)^(-PT_mumi)*PT_imi;
+PTUS_imi = PTUS_numi*((US_pex*PTUS_rer)/(PTUS_gammaimidag*PT_pimi))^(-PT_mumi)*PT_imi/(1-PTUS_gammaimi);
 PTIT_imi = (1
 -PTRA_numi
 -PTAT_numi
@@ -48365,21 +48854,21 @@ PTIT_imi = (1
 -PTRU_numi
 -PTRW_numi
 -PTUS_numi
-)*((IT_pex*PTIT_rer)/PT_pimi)^(-PT_mumi)*PT_imi;
+)*((IT_pex*PTIT_rer)/(PTIT_gammaimidag*PT_pimi))^(-PT_mumi)*PT_imi/(1-PTIT_gammaimi);
 // Price of the consumption good (import)
 PT_pimi^(1-PT_mumi) =
-+PTRA_numi * (RA_pex*PTRA_rer)^(1-PT_mumi)
-+PTAT_numi * (AT_pex*PTAT_rer)^(1-PT_mumi)
-+PTBE_numi * (BE_pex*PTBE_rer)^(1-PT_mumi)
-+PTES_numi * (ES_pex*PTES_rer)^(1-PT_mumi)
-+PTFI_numi * (FI_pex*PTFI_rer)^(1-PT_mumi)
-+PTFR_numi * (FR_pex*PTFR_rer)^(1-PT_mumi)
-+PTGR_numi * (GR_pex*PTGR_rer)^(1-PT_mumi)
-+PTNL_numi * (NL_pex*PTNL_rer)^(1-PT_mumi)
-+PTDE_numi * (DE_pex*PTDE_rer)^(1-PT_mumi)
-+PTRU_numi * (RU_pex*PTRU_rer)^(1-PT_mumi)
-+PTRW_numi * (RW_pex*PTRW_rer)^(1-PT_mumi)
-+PTUS_numi * (US_pex*PTUS_rer)^(1-PT_mumi)
++PTRA_numi *((RA_pex*PTRA_rer)/PTRA_gammaimidag)^(1-PT_mumi)
++PTAT_numi *((AT_pex*PTAT_rer)/PTAT_gammaimidag)^(1-PT_mumi)
++PTBE_numi *((BE_pex*PTBE_rer)/PTBE_gammaimidag)^(1-PT_mumi)
++PTES_numi *((ES_pex*PTES_rer)/PTES_gammaimidag)^(1-PT_mumi)
++PTFI_numi *((FI_pex*PTFI_rer)/PTFI_gammaimidag)^(1-PT_mumi)
++PTFR_numi *((FR_pex*PTFR_rer)/PTFR_gammaimidag)^(1-PT_mumi)
++PTGR_numi *((GR_pex*PTGR_rer)/PTGR_gammaimidag)^(1-PT_mumi)
++PTNL_numi *((NL_pex*PTNL_rer)/PTNL_gammaimidag)^(1-PT_mumi)
++PTDE_numi *((DE_pex*PTDE_rer)/PTDE_gammaimidag)^(1-PT_mumi)
++PTRU_numi *((RU_pex*PTRU_rer)/PTRU_gammaimidag)^(1-PT_mumi)
++PTRW_numi *((RW_pex*PTRW_rer)/PTRW_gammaimidag)^(1-PT_mumi)
++PTUS_numi *((US_pex*PTUS_rer)/PTUS_gammaimidag)^(1-PT_mumi)
 +(1
 -PTRA_numi
 -PTAT_numi
@@ -48393,23 +48882,23 @@ PT_pimi^(1-PT_mumi) =
 -PTRU_numi
 -PTRW_numi
 -PTUS_numi
-)*(IT_pex*PTIT_rer)^(1-PT_mumi);
+)*((IT_pex*PTIT_rer)/PTIT_gammaimidag)^(1-PT_mumi);
 // Private consumption good (import) inflation
 PT_piimi = PT_pimi/PT_pimi(-1)*PT_pic;
 // Private consumption good (import)
 PT_imcg^((PT_mumcg-1)/PT_mumcg) =
-+PTRA_numcg ^(1/PT_mumcg)*PTRA_imcg^(1-1/PT_mumcg)
-+PTAT_numcg ^(1/PT_mumcg)*PTAT_imcg^(1-1/PT_mumcg)
-+PTBE_numcg ^(1/PT_mumcg)*PTBE_imcg^(1-1/PT_mumcg)
-+PTES_numcg ^(1/PT_mumcg)*PTES_imcg^(1-1/PT_mumcg)
-+PTFI_numcg ^(1/PT_mumcg)*PTFI_imcg^(1-1/PT_mumcg)
-+PTFR_numcg ^(1/PT_mumcg)*PTFR_imcg^(1-1/PT_mumcg)
-+PTGR_numcg ^(1/PT_mumcg)*PTGR_imcg^(1-1/PT_mumcg)
-+PTNL_numcg ^(1/PT_mumcg)*PTNL_imcg^(1-1/PT_mumcg)
-+PTDE_numcg ^(1/PT_mumcg)*PTDE_imcg^(1-1/PT_mumcg)
-+PTRU_numcg ^(1/PT_mumcg)*PTRU_imcg^(1-1/PT_mumcg)
-+PTRW_numcg ^(1/PT_mumcg)*PTRW_imcg^(1-1/PT_mumcg)
-+PTUS_numcg ^(1/PT_mumcg)*PTUS_imcg^(1-1/PT_mumcg)
++PTRA_numcg ^(1/PT_mumcg)*((1-PTRA_gammaimcg)*PTRA_imcg)^(1-1/PT_mumcg)
++PTAT_numcg ^(1/PT_mumcg)*((1-PTAT_gammaimcg)*PTAT_imcg)^(1-1/PT_mumcg)
++PTBE_numcg ^(1/PT_mumcg)*((1-PTBE_gammaimcg)*PTBE_imcg)^(1-1/PT_mumcg)
++PTES_numcg ^(1/PT_mumcg)*((1-PTES_gammaimcg)*PTES_imcg)^(1-1/PT_mumcg)
++PTFI_numcg ^(1/PT_mumcg)*((1-PTFI_gammaimcg)*PTFI_imcg)^(1-1/PT_mumcg)
++PTFR_numcg ^(1/PT_mumcg)*((1-PTFR_gammaimcg)*PTFR_imcg)^(1-1/PT_mumcg)
++PTGR_numcg ^(1/PT_mumcg)*((1-PTGR_gammaimcg)*PTGR_imcg)^(1-1/PT_mumcg)
++PTNL_numcg ^(1/PT_mumcg)*((1-PTNL_gammaimcg)*PTNL_imcg)^(1-1/PT_mumcg)
++PTDE_numcg ^(1/PT_mumcg)*((1-PTDE_gammaimcg)*PTDE_imcg)^(1-1/PT_mumcg)
++PTRU_numcg ^(1/PT_mumcg)*((1-PTRU_gammaimcg)*PTRU_imcg)^(1-1/PT_mumcg)
++PTRW_numcg ^(1/PT_mumcg)*((1-PTRW_gammaimcg)*PTRW_imcg)^(1-1/PT_mumcg)
++PTUS_numcg ^(1/PT_mumcg)*((1-PTUS_gammaimcg)*PTUS_imcg)^(1-1/PT_mumcg)
 +(1
 -PTRA_numcg
 -PTAT_numcg
@@ -48423,29 +48912,29 @@ PT_imcg^((PT_mumcg-1)/PT_mumcg) =
 -PTRU_numcg
 -PTRW_numcg
 -PTUS_numcg
-)^(1/PT_mumcg)*PTIT_imcg^(1-1/PT_mumcg);
+)^(1/PT_mumcg)*((1-PTIT_gammaimcg)*PTIT_imcg)^(1-1/PT_mumcg);
 // Demand for bilateral consumption import goods
-PTRA_imcg = PTRA_numcg*((RA_pex*PTRA_rer)/PT_pimcg)^(-PT_mumcg)*PT_imcg;
+PTRA_imcg = PTRA_numcg*((RA_pex*PTRA_rer)/(PTRA_gammaimcgdag*PT_pimcg))^(-PT_mumcg)*PT_imcg/(1-PTRA_gammaimcg);
 // Demand for bilateral consumption import goods
-PTAT_imcg = PTAT_numcg*((AT_pex*PTAT_rer)/PT_pimcg)^(-PT_mumcg)*PT_imcg;
+PTAT_imcg = PTAT_numcg*((AT_pex*PTAT_rer)/(PTAT_gammaimcgdag*PT_pimcg))^(-PT_mumcg)*PT_imcg/(1-PTAT_gammaimcg);
 // Demand for bilateral consumption import goods
-PTBE_imcg = PTBE_numcg*((BE_pex*PTBE_rer)/PT_pimcg)^(-PT_mumcg)*PT_imcg;
+PTBE_imcg = PTBE_numcg*((BE_pex*PTBE_rer)/(PTBE_gammaimcgdag*PT_pimcg))^(-PT_mumcg)*PT_imcg/(1-PTBE_gammaimcg);
 // Demand for bilateral consumption import goods
-PTES_imcg = PTES_numcg*((ES_pex*PTES_rer)/PT_pimcg)^(-PT_mumcg)*PT_imcg;
+PTES_imcg = PTES_numcg*((ES_pex*PTES_rer)/(PTES_gammaimcgdag*PT_pimcg))^(-PT_mumcg)*PT_imcg/(1-PTES_gammaimcg);
 // Demand for bilateral consumption import goods
-PTFI_imcg = PTFI_numcg*((FI_pex*PTFI_rer)/PT_pimcg)^(-PT_mumcg)*PT_imcg;
+PTFI_imcg = PTFI_numcg*((FI_pex*PTFI_rer)/(PTFI_gammaimcgdag*PT_pimcg))^(-PT_mumcg)*PT_imcg/(1-PTFI_gammaimcg);
 // Demand for bilateral consumption import goods
-PTFR_imcg = PTFR_numcg*((FR_pex*PTFR_rer)/PT_pimcg)^(-PT_mumcg)*PT_imcg;
+PTFR_imcg = PTFR_numcg*((FR_pex*PTFR_rer)/(PTFR_gammaimcgdag*PT_pimcg))^(-PT_mumcg)*PT_imcg/(1-PTFR_gammaimcg);
 // Demand for bilateral consumption import goods
-PTGR_imcg = PTGR_numcg*((GR_pex*PTGR_rer)/PT_pimcg)^(-PT_mumcg)*PT_imcg;
+PTGR_imcg = PTGR_numcg*((GR_pex*PTGR_rer)/(PTGR_gammaimcgdag*PT_pimcg))^(-PT_mumcg)*PT_imcg/(1-PTGR_gammaimcg);
 // Demand for bilateral consumption import goods
-PTNL_imcg = PTNL_numcg*((NL_pex*PTNL_rer)/PT_pimcg)^(-PT_mumcg)*PT_imcg;
+PTNL_imcg = PTNL_numcg*((NL_pex*PTNL_rer)/(PTNL_gammaimcgdag*PT_pimcg))^(-PT_mumcg)*PT_imcg/(1-PTNL_gammaimcg);
 // Demand for bilateral consumption import goods
-PTRU_imcg = PTRU_numcg*((RU_pex*PTRU_rer)/PT_pimcg)^(-PT_mumcg)*PT_imcg;
+PTRU_imcg = PTRU_numcg*((RU_pex*PTRU_rer)/(PTRU_gammaimcgdag*PT_pimcg))^(-PT_mumcg)*PT_imcg/(1-PTRU_gammaimcg);
 // Demand for bilateral consumption import goods
-PTRW_imcg = PTRW_numcg*((RW_pex*PTRW_rer)/PT_pimcg)^(-PT_mumcg)*PT_imcg;
+PTRW_imcg = PTRW_numcg*((RW_pex*PTRW_rer)/(PTRW_gammaimcgdag*PT_pimcg))^(-PT_mumcg)*PT_imcg/(1-PTRW_gammaimcg);
 // Demand for bilateral consumption import goods
-PTUS_imcg = PTUS_numcg*((US_pex*PTUS_rer)/PT_pimcg)^(-PT_mumcg)*PT_imcg;
+PTUS_imcg = PTUS_numcg*((US_pex*PTUS_rer)/(PTUS_gammaimcgdag*PT_pimcg))^(-PT_mumcg)*PT_imcg/(1-PTUS_gammaimcg);
 PTIT_imcg = (1
 -PTRA_numcg
 -PTAT_numcg
@@ -48459,21 +48948,21 @@ PTIT_imcg = (1
 -PTRU_numcg
 -PTRW_numcg
 -PTUS_numcg
-)*((IT_pex*PTIT_rer)/PT_pimcg)^(-PT_mumcg)*PT_imcg;
+)*((IT_pex*PTIT_rer)/(PTIT_gammaimcgdag*PT_pimcg))^(-PT_mumcg)*PT_imcg/(1-PTIT_gammaimcg);
 // Price of the consumption good (import)
 PT_pimcg^(1-PT_mumcg) =
-+PTRA_numcg * (RA_pex*PTRA_rer)^(1-PT_mumcg)
-+PTAT_numcg * (AT_pex*PTAT_rer)^(1-PT_mumcg)
-+PTBE_numcg * (BE_pex*PTBE_rer)^(1-PT_mumcg)
-+PTES_numcg * (ES_pex*PTES_rer)^(1-PT_mumcg)
-+PTFI_numcg * (FI_pex*PTFI_rer)^(1-PT_mumcg)
-+PTFR_numcg * (FR_pex*PTFR_rer)^(1-PT_mumcg)
-+PTGR_numcg * (GR_pex*PTGR_rer)^(1-PT_mumcg)
-+PTNL_numcg * (NL_pex*PTNL_rer)^(1-PT_mumcg)
-+PTDE_numcg * (DE_pex*PTDE_rer)^(1-PT_mumcg)
-+PTRU_numcg * (RU_pex*PTRU_rer)^(1-PT_mumcg)
-+PTRW_numcg * (RW_pex*PTRW_rer)^(1-PT_mumcg)
-+PTUS_numcg * (US_pex*PTUS_rer)^(1-PT_mumcg)
++PTRA_numcg *((RA_pex*PTRA_rer)/PTRA_gammaimcgdag)^(1-PT_mumcg)
++PTAT_numcg *((AT_pex*PTAT_rer)/PTAT_gammaimcgdag)^(1-PT_mumcg)
++PTBE_numcg *((BE_pex*PTBE_rer)/PTBE_gammaimcgdag)^(1-PT_mumcg)
++PTES_numcg *((ES_pex*PTES_rer)/PTES_gammaimcgdag)^(1-PT_mumcg)
++PTFI_numcg *((FI_pex*PTFI_rer)/PTFI_gammaimcgdag)^(1-PT_mumcg)
++PTFR_numcg *((FR_pex*PTFR_rer)/PTFR_gammaimcgdag)^(1-PT_mumcg)
++PTGR_numcg *((GR_pex*PTGR_rer)/PTGR_gammaimcgdag)^(1-PT_mumcg)
++PTNL_numcg *((NL_pex*PTNL_rer)/PTNL_gammaimcgdag)^(1-PT_mumcg)
++PTDE_numcg *((DE_pex*PTDE_rer)/PTDE_gammaimcgdag)^(1-PT_mumcg)
++PTRU_numcg *((RU_pex*PTRU_rer)/PTRU_gammaimcgdag)^(1-PT_mumcg)
++PTRW_numcg *((RW_pex*PTRW_rer)/PTRW_gammaimcgdag)^(1-PT_mumcg)
++PTUS_numcg *((US_pex*PTUS_rer)/PTUS_gammaimcgdag)^(1-PT_mumcg)
 +(1
 -PTRA_numcg
 -PTAT_numcg
@@ -48487,23 +48976,23 @@ PT_pimcg^(1-PT_mumcg) =
 -PTRU_numcg
 -PTRW_numcg
 -PTUS_numcg
-)*(IT_pex*PTIT_rer)^(1-PT_mumcg);
+)*((IT_pex*PTIT_rer)/PTIT_gammaimcgdag)^(1-PT_mumcg);
 // Private consumption good (import) inflation
 PT_piimcg = PT_pimcg/PT_pimcg(-1)*PT_pic;
 // Private consumption good (import)
 PT_imig^((PT_mumig-1)/PT_mumig) =
-+PTRA_numig ^(1/PT_mumig)*PTRA_imig^(1-1/PT_mumig)
-+PTAT_numig ^(1/PT_mumig)*PTAT_imig^(1-1/PT_mumig)
-+PTBE_numig ^(1/PT_mumig)*PTBE_imig^(1-1/PT_mumig)
-+PTES_numig ^(1/PT_mumig)*PTES_imig^(1-1/PT_mumig)
-+PTFI_numig ^(1/PT_mumig)*PTFI_imig^(1-1/PT_mumig)
-+PTFR_numig ^(1/PT_mumig)*PTFR_imig^(1-1/PT_mumig)
-+PTGR_numig ^(1/PT_mumig)*PTGR_imig^(1-1/PT_mumig)
-+PTNL_numig ^(1/PT_mumig)*PTNL_imig^(1-1/PT_mumig)
-+PTDE_numig ^(1/PT_mumig)*PTDE_imig^(1-1/PT_mumig)
-+PTRU_numig ^(1/PT_mumig)*PTRU_imig^(1-1/PT_mumig)
-+PTRW_numig ^(1/PT_mumig)*PTRW_imig^(1-1/PT_mumig)
-+PTUS_numig ^(1/PT_mumig)*PTUS_imig^(1-1/PT_mumig)
++PTRA_numig ^(1/PT_mumig)*((1-PTRA_gammaimig)*PTRA_imig)^(1-1/PT_mumig)
++PTAT_numig ^(1/PT_mumig)*((1-PTAT_gammaimig)*PTAT_imig)^(1-1/PT_mumig)
++PTBE_numig ^(1/PT_mumig)*((1-PTBE_gammaimig)*PTBE_imig)^(1-1/PT_mumig)
++PTES_numig ^(1/PT_mumig)*((1-PTES_gammaimig)*PTES_imig)^(1-1/PT_mumig)
++PTFI_numig ^(1/PT_mumig)*((1-PTFI_gammaimig)*PTFI_imig)^(1-1/PT_mumig)
++PTFR_numig ^(1/PT_mumig)*((1-PTFR_gammaimig)*PTFR_imig)^(1-1/PT_mumig)
++PTGR_numig ^(1/PT_mumig)*((1-PTGR_gammaimig)*PTGR_imig)^(1-1/PT_mumig)
++PTNL_numig ^(1/PT_mumig)*((1-PTNL_gammaimig)*PTNL_imig)^(1-1/PT_mumig)
++PTDE_numig ^(1/PT_mumig)*((1-PTDE_gammaimig)*PTDE_imig)^(1-1/PT_mumig)
++PTRU_numig ^(1/PT_mumig)*((1-PTRU_gammaimig)*PTRU_imig)^(1-1/PT_mumig)
++PTRW_numig ^(1/PT_mumig)*((1-PTRW_gammaimig)*PTRW_imig)^(1-1/PT_mumig)
++PTUS_numig ^(1/PT_mumig)*((1-PTUS_gammaimig)*PTUS_imig)^(1-1/PT_mumig)
 +(1
 -PTRA_numig
 -PTAT_numig
@@ -48517,29 +49006,29 @@ PT_imig^((PT_mumig-1)/PT_mumig) =
 -PTRU_numig
 -PTRW_numig
 -PTUS_numig
-)^(1/PT_mumig)*PTIT_imig^(1-1/PT_mumig);
+)^(1/PT_mumig)*((1-PTIT_gammaimig)*PTIT_imig)^(1-1/PT_mumig);
 // Demand for bilateral consumption import goods
-PTRA_imig = PTRA_numig*((RA_pex*PTRA_rer)/PT_pimig)^(-PT_mumig)*PT_imig;
+PTRA_imig = PTRA_numig*((RA_pex*PTRA_rer)/(PTRA_gammaimigdag*PT_pimig))^(-PT_mumig)*PT_imig/(1-PTRA_gammaimig);
 // Demand for bilateral consumption import goods
-PTAT_imig = PTAT_numig*((AT_pex*PTAT_rer)/PT_pimig)^(-PT_mumig)*PT_imig;
+PTAT_imig = PTAT_numig*((AT_pex*PTAT_rer)/(PTAT_gammaimigdag*PT_pimig))^(-PT_mumig)*PT_imig/(1-PTAT_gammaimig);
 // Demand for bilateral consumption import goods
-PTBE_imig = PTBE_numig*((BE_pex*PTBE_rer)/PT_pimig)^(-PT_mumig)*PT_imig;
+PTBE_imig = PTBE_numig*((BE_pex*PTBE_rer)/(PTBE_gammaimigdag*PT_pimig))^(-PT_mumig)*PT_imig/(1-PTBE_gammaimig);
 // Demand for bilateral consumption import goods
-PTES_imig = PTES_numig*((ES_pex*PTES_rer)/PT_pimig)^(-PT_mumig)*PT_imig;
+PTES_imig = PTES_numig*((ES_pex*PTES_rer)/(PTES_gammaimigdag*PT_pimig))^(-PT_mumig)*PT_imig/(1-PTES_gammaimig);
 // Demand for bilateral consumption import goods
-PTFI_imig = PTFI_numig*((FI_pex*PTFI_rer)/PT_pimig)^(-PT_mumig)*PT_imig;
+PTFI_imig = PTFI_numig*((FI_pex*PTFI_rer)/(PTFI_gammaimigdag*PT_pimig))^(-PT_mumig)*PT_imig/(1-PTFI_gammaimig);
 // Demand for bilateral consumption import goods
-PTFR_imig = PTFR_numig*((FR_pex*PTFR_rer)/PT_pimig)^(-PT_mumig)*PT_imig;
+PTFR_imig = PTFR_numig*((FR_pex*PTFR_rer)/(PTFR_gammaimigdag*PT_pimig))^(-PT_mumig)*PT_imig/(1-PTFR_gammaimig);
 // Demand for bilateral consumption import goods
-PTGR_imig = PTGR_numig*((GR_pex*PTGR_rer)/PT_pimig)^(-PT_mumig)*PT_imig;
+PTGR_imig = PTGR_numig*((GR_pex*PTGR_rer)/(PTGR_gammaimigdag*PT_pimig))^(-PT_mumig)*PT_imig/(1-PTGR_gammaimig);
 // Demand for bilateral consumption import goods
-PTNL_imig = PTNL_numig*((NL_pex*PTNL_rer)/PT_pimig)^(-PT_mumig)*PT_imig;
+PTNL_imig = PTNL_numig*((NL_pex*PTNL_rer)/(PTNL_gammaimigdag*PT_pimig))^(-PT_mumig)*PT_imig/(1-PTNL_gammaimig);
 // Demand for bilateral consumption import goods
-PTRU_imig = PTRU_numig*((RU_pex*PTRU_rer)/PT_pimig)^(-PT_mumig)*PT_imig;
+PTRU_imig = PTRU_numig*((RU_pex*PTRU_rer)/(PTRU_gammaimigdag*PT_pimig))^(-PT_mumig)*PT_imig/(1-PTRU_gammaimig);
 // Demand for bilateral consumption import goods
-PTRW_imig = PTRW_numig*((RW_pex*PTRW_rer)/PT_pimig)^(-PT_mumig)*PT_imig;
+PTRW_imig = PTRW_numig*((RW_pex*PTRW_rer)/(PTRW_gammaimigdag*PT_pimig))^(-PT_mumig)*PT_imig/(1-PTRW_gammaimig);
 // Demand for bilateral consumption import goods
-PTUS_imig = PTUS_numig*((US_pex*PTUS_rer)/PT_pimig)^(-PT_mumig)*PT_imig;
+PTUS_imig = PTUS_numig*((US_pex*PTUS_rer)/(PTUS_gammaimigdag*PT_pimig))^(-PT_mumig)*PT_imig/(1-PTUS_gammaimig);
 PTIT_imig = (1
 -PTRA_numig
 -PTAT_numig
@@ -48553,21 +49042,21 @@ PTIT_imig = (1
 -PTRU_numig
 -PTRW_numig
 -PTUS_numig
-)*((IT_pex*PTIT_rer)/PT_pimig)^(-PT_mumig)*PT_imig;
+)*((IT_pex*PTIT_rer)/(PTIT_gammaimigdag*PT_pimig))^(-PT_mumig)*PT_imig/(1-PTIT_gammaimig);
 // Price of the consumption good (import)
 PT_pimig^(1-PT_mumig) =
-+PTRA_numig * (RA_pex*PTRA_rer)^(1-PT_mumig)
-+PTAT_numig * (AT_pex*PTAT_rer)^(1-PT_mumig)
-+PTBE_numig * (BE_pex*PTBE_rer)^(1-PT_mumig)
-+PTES_numig * (ES_pex*PTES_rer)^(1-PT_mumig)
-+PTFI_numig * (FI_pex*PTFI_rer)^(1-PT_mumig)
-+PTFR_numig * (FR_pex*PTFR_rer)^(1-PT_mumig)
-+PTGR_numig * (GR_pex*PTGR_rer)^(1-PT_mumig)
-+PTNL_numig * (NL_pex*PTNL_rer)^(1-PT_mumig)
-+PTDE_numig * (DE_pex*PTDE_rer)^(1-PT_mumig)
-+PTRU_numig * (RU_pex*PTRU_rer)^(1-PT_mumig)
-+PTRW_numig * (RW_pex*PTRW_rer)^(1-PT_mumig)
-+PTUS_numig * (US_pex*PTUS_rer)^(1-PT_mumig)
++PTRA_numig *((RA_pex*PTRA_rer)/PTRA_gammaimigdag)^(1-PT_mumig)
++PTAT_numig *((AT_pex*PTAT_rer)/PTAT_gammaimigdag)^(1-PT_mumig)
++PTBE_numig *((BE_pex*PTBE_rer)/PTBE_gammaimigdag)^(1-PT_mumig)
++PTES_numig *((ES_pex*PTES_rer)/PTES_gammaimigdag)^(1-PT_mumig)
++PTFI_numig *((FI_pex*PTFI_rer)/PTFI_gammaimigdag)^(1-PT_mumig)
++PTFR_numig *((FR_pex*PTFR_rer)/PTFR_gammaimigdag)^(1-PT_mumig)
++PTGR_numig *((GR_pex*PTGR_rer)/PTGR_gammaimigdag)^(1-PT_mumig)
++PTNL_numig *((NL_pex*PTNL_rer)/PTNL_gammaimigdag)^(1-PT_mumig)
++PTDE_numig *((DE_pex*PTDE_rer)/PTDE_gammaimigdag)^(1-PT_mumig)
++PTRU_numig *((RU_pex*PTRU_rer)/PTRU_gammaimigdag)^(1-PT_mumig)
++PTRW_numig *((RW_pex*PTRW_rer)/PTRW_gammaimigdag)^(1-PT_mumig)
++PTUS_numig *((US_pex*PTUS_rer)/PTUS_gammaimigdag)^(1-PT_mumig)
 +(1
 -PTRA_numig
 -PTAT_numig
@@ -48581,7 +49070,7 @@ PT_pimig^(1-PT_mumig) =
 -PTRU_numig
 -PTRW_numig
 -PTUS_numig
-)*(IT_pex*PTIT_rer)^(1-PT_mumig);
+)*((IT_pex*PTIT_rer)/PTIT_gammaimigdag)^(1-PT_mumig);
 // Private consumption good (import) inflation
 PT_piimig = PT_pimig/PT_pimig(-1)*PT_pic;
 // Private consumption good (import) inflation
@@ -48682,32 +49171,58 @@ PT_pttc^(1-PT_mutc) = (PT_nutc)*PT_pht^(1-PT_mutc)+(1-PT_nutc)*PT_pimc^(1-PT_mut
 1^(1-PT_muc) = (PT_nuc)*PT_pttc^(1-PT_muc)+(1-PT_nuc)*PT_pnt^(1-PT_muc);
 // Demand for domestic intermediate goods
 PT_htc = PT_nutc*(PT_pht/PT_pttc)^(-PT_mutc)*PT_ttc;
-PTRA_gammaimc = 0;
-PTRA_gammaimcdag = 1;
-PTAT_gammaimc = 0;
-PTAT_gammaimcdag = 1;
-PTBE_gammaimc = 0;
-PTBE_gammaimcdag = 1;
-PTES_gammaimc = 0;
-PTES_gammaimcdag = 1;
-PTFI_gammaimc = 0;
-PTFI_gammaimcdag = 1;
-PTFR_gammaimc = 0;
-PTFR_gammaimcdag = 1;
-PTGR_gammaimc = 0;
-PTGR_gammaimcdag = 1;
-PTIT_gammaimc = 0;
-PTIT_gammaimcdag = 1;
-PTNL_gammaimc = 0;
-PTNL_gammaimcdag = 1;
-PTDE_gammaimc = 0;
-PTDE_gammaimcdag = 1;
-PTRU_gammaimc = 0;
-PTRU_gammaimcdag = 1;
-PTRW_gammaimc = 0;
-PTRW_gammaimcdag = 1;
-PTUS_gammaimc = 0;
-PTUS_gammaimcdag = 1;
+// Import adjustment cost
+PTRA_gammaimc = PT_gammaimc1/2*((PTRA_imc/PT_qc)/(PTRA_imc(-1)/PT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTRA_gammaimcdag = 1-PTRA_gammaimc-PT_gammaimc1*((PTRA_imc/PT_qc)/(PTRA_imc(-1)/PT_qc(-1))-1)*(PTRA_imc/PT_qc)/(PTRA_imc(-1)/PT_qc(-1));
+// Import adjustment cost
+PTAT_gammaimc = PT_gammaimc1/2*((PTAT_imc/PT_qc)/(PTAT_imc(-1)/PT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTAT_gammaimcdag = 1-PTAT_gammaimc-PT_gammaimc1*((PTAT_imc/PT_qc)/(PTAT_imc(-1)/PT_qc(-1))-1)*(PTAT_imc/PT_qc)/(PTAT_imc(-1)/PT_qc(-1));
+// Import adjustment cost
+PTBE_gammaimc = PT_gammaimc1/2*((PTBE_imc/PT_qc)/(PTBE_imc(-1)/PT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTBE_gammaimcdag = 1-PTBE_gammaimc-PT_gammaimc1*((PTBE_imc/PT_qc)/(PTBE_imc(-1)/PT_qc(-1))-1)*(PTBE_imc/PT_qc)/(PTBE_imc(-1)/PT_qc(-1));
+// Import adjustment cost
+PTES_gammaimc = PT_gammaimc1/2*((PTES_imc/PT_qc)/(PTES_imc(-1)/PT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTES_gammaimcdag = 1-PTES_gammaimc-PT_gammaimc1*((PTES_imc/PT_qc)/(PTES_imc(-1)/PT_qc(-1))-1)*(PTES_imc/PT_qc)/(PTES_imc(-1)/PT_qc(-1));
+// Import adjustment cost
+PTFI_gammaimc = PT_gammaimc1/2*((PTFI_imc/PT_qc)/(PTFI_imc(-1)/PT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTFI_gammaimcdag = 1-PTFI_gammaimc-PT_gammaimc1*((PTFI_imc/PT_qc)/(PTFI_imc(-1)/PT_qc(-1))-1)*(PTFI_imc/PT_qc)/(PTFI_imc(-1)/PT_qc(-1));
+// Import adjustment cost
+PTFR_gammaimc = PT_gammaimc1/2*((PTFR_imc/PT_qc)/(PTFR_imc(-1)/PT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTFR_gammaimcdag = 1-PTFR_gammaimc-PT_gammaimc1*((PTFR_imc/PT_qc)/(PTFR_imc(-1)/PT_qc(-1))-1)*(PTFR_imc/PT_qc)/(PTFR_imc(-1)/PT_qc(-1));
+// Import adjustment cost
+PTGR_gammaimc = PT_gammaimc1/2*((PTGR_imc/PT_qc)/(PTGR_imc(-1)/PT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTGR_gammaimcdag = 1-PTGR_gammaimc-PT_gammaimc1*((PTGR_imc/PT_qc)/(PTGR_imc(-1)/PT_qc(-1))-1)*(PTGR_imc/PT_qc)/(PTGR_imc(-1)/PT_qc(-1));
+// Import adjustment cost
+PTIT_gammaimc = PT_gammaimc1/2*((PTIT_imc/PT_qc)/(PTIT_imc(-1)/PT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTIT_gammaimcdag = 1-PTIT_gammaimc-PT_gammaimc1*((PTIT_imc/PT_qc)/(PTIT_imc(-1)/PT_qc(-1))-1)*(PTIT_imc/PT_qc)/(PTIT_imc(-1)/PT_qc(-1));
+// Import adjustment cost
+PTNL_gammaimc = PT_gammaimc1/2*((PTNL_imc/PT_qc)/(PTNL_imc(-1)/PT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTNL_gammaimcdag = 1-PTNL_gammaimc-PT_gammaimc1*((PTNL_imc/PT_qc)/(PTNL_imc(-1)/PT_qc(-1))-1)*(PTNL_imc/PT_qc)/(PTNL_imc(-1)/PT_qc(-1));
+// Import adjustment cost
+PTDE_gammaimc = PT_gammaimc1/2*((PTDE_imc/PT_qc)/(PTDE_imc(-1)/PT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTDE_gammaimcdag = 1-PTDE_gammaimc-PT_gammaimc1*((PTDE_imc/PT_qc)/(PTDE_imc(-1)/PT_qc(-1))-1)*(PTDE_imc/PT_qc)/(PTDE_imc(-1)/PT_qc(-1));
+// Import adjustment cost
+PTRU_gammaimc = PT_gammaimc1/2*((PTRU_imc/PT_qc)/(PTRU_imc(-1)/PT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTRU_gammaimcdag = 1-PTRU_gammaimc-PT_gammaimc1*((PTRU_imc/PT_qc)/(PTRU_imc(-1)/PT_qc(-1))-1)*(PTRU_imc/PT_qc)/(PTRU_imc(-1)/PT_qc(-1));
+// Import adjustment cost
+PTRW_gammaimc = PT_gammaimc1/2*((PTRW_imc/PT_qc)/(PTRW_imc(-1)/PT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTRW_gammaimcdag = 1-PTRW_gammaimc-PT_gammaimc1*((PTRW_imc/PT_qc)/(PTRW_imc(-1)/PT_qc(-1))-1)*(PTRW_imc/PT_qc)/(PTRW_imc(-1)/PT_qc(-1));
+// Import adjustment cost
+PTUS_gammaimc = PT_gammaimc1/2*((PTUS_imc/PT_qc)/(PTUS_imc(-1)/PT_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTUS_gammaimcdag = 1-PTUS_gammaimc-PT_gammaimc1*((PTUS_imc/PT_qc)/(PTUS_imc(-1)/PT_qc(-1))-1)*(PTUS_imc/PT_qc)/(PTUS_imc(-1)/PT_qc(-1));
 // Private consumption good (tradable)
 PT_tti^((PT_muti-1)/PT_muti) = (PT_nuti)^(1/PT_muti)*PT_hti^(1-1/PT_muti)+(1-PT_nuti)^(1/PT_muti)*PT_imi^(1-1/PT_muti);
 // Private consumption good  (total)
@@ -48720,35 +49235,60 @@ PT_ptti^(1-PT_muti) = (PT_nuti)*PT_pht^(1-PT_muti)+(1-PT_nuti)*PT_pimi^(1-PT_mut
 PT_pi^(1-PT_mui) = (PT_nui)*PT_ptti^(1-PT_mui)+(1-PT_nui)*PT_pnt^(1-PT_mui);
 // Auxiliary equation for the price of the investment good in steady state
 // this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
-PT_pibar = PT_pi;
 // Demand for domestic intermediate goods
 PT_hti = PT_nuti*(PT_pht/PT_ptti)^(-PT_muti)*PT_tti;
-PTRA_gammaimi = 0;
-PTRA_gammaimidag = 1;
-PTAT_gammaimi = 0;
-PTAT_gammaimidag = 1;
-PTBE_gammaimi = 0;
-PTBE_gammaimidag = 1;
-PTES_gammaimi = 0;
-PTES_gammaimidag = 1;
-PTFI_gammaimi = 0;
-PTFI_gammaimidag = 1;
-PTFR_gammaimi = 0;
-PTFR_gammaimidag = 1;
-PTGR_gammaimi = 0;
-PTGR_gammaimidag = 1;
-PTIT_gammaimi = 0;
-PTIT_gammaimidag = 1;
-PTNL_gammaimi = 0;
-PTNL_gammaimidag = 1;
-PTDE_gammaimi = 0;
-PTDE_gammaimidag = 1;
-PTRU_gammaimi = 0;
-PTRU_gammaimidag = 1;
-PTRW_gammaimi = 0;
-PTRW_gammaimidag = 1;
-PTUS_gammaimi = 0;
-PTUS_gammaimidag = 1;
+// Import adjustment cost
+PTRA_gammaimi = PT_gammaimi1/2*((PTRA_imi/PT_qi)/(PTRA_imi(-1)/PT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTRA_gammaimidag = 1-PTRA_gammaimi-PT_gammaimi1*((PTRA_imi/PT_qi)/(PTRA_imi(-1)/PT_qi)-1)*((PTRA_imi/PT_qi)/(PTRA_imi(-1)/PT_qi(-1)));
+// Import adjustment cost
+PTAT_gammaimi = PT_gammaimi1/2*((PTAT_imi/PT_qi)/(PTAT_imi(-1)/PT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTAT_gammaimidag = 1-PTAT_gammaimi-PT_gammaimi1*((PTAT_imi/PT_qi)/(PTAT_imi(-1)/PT_qi)-1)*((PTAT_imi/PT_qi)/(PTAT_imi(-1)/PT_qi(-1)));
+// Import adjustment cost
+PTBE_gammaimi = PT_gammaimi1/2*((PTBE_imi/PT_qi)/(PTBE_imi(-1)/PT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTBE_gammaimidag = 1-PTBE_gammaimi-PT_gammaimi1*((PTBE_imi/PT_qi)/(PTBE_imi(-1)/PT_qi)-1)*((PTBE_imi/PT_qi)/(PTBE_imi(-1)/PT_qi(-1)));
+// Import adjustment cost
+PTES_gammaimi = PT_gammaimi1/2*((PTES_imi/PT_qi)/(PTES_imi(-1)/PT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTES_gammaimidag = 1-PTES_gammaimi-PT_gammaimi1*((PTES_imi/PT_qi)/(PTES_imi(-1)/PT_qi)-1)*((PTES_imi/PT_qi)/(PTES_imi(-1)/PT_qi(-1)));
+// Import adjustment cost
+PTFI_gammaimi = PT_gammaimi1/2*((PTFI_imi/PT_qi)/(PTFI_imi(-1)/PT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTFI_gammaimidag = 1-PTFI_gammaimi-PT_gammaimi1*((PTFI_imi/PT_qi)/(PTFI_imi(-1)/PT_qi)-1)*((PTFI_imi/PT_qi)/(PTFI_imi(-1)/PT_qi(-1)));
+// Import adjustment cost
+PTFR_gammaimi = PT_gammaimi1/2*((PTFR_imi/PT_qi)/(PTFR_imi(-1)/PT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTFR_gammaimidag = 1-PTFR_gammaimi-PT_gammaimi1*((PTFR_imi/PT_qi)/(PTFR_imi(-1)/PT_qi)-1)*((PTFR_imi/PT_qi)/(PTFR_imi(-1)/PT_qi(-1)));
+// Import adjustment cost
+PTGR_gammaimi = PT_gammaimi1/2*((PTGR_imi/PT_qi)/(PTGR_imi(-1)/PT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTGR_gammaimidag = 1-PTGR_gammaimi-PT_gammaimi1*((PTGR_imi/PT_qi)/(PTGR_imi(-1)/PT_qi)-1)*((PTGR_imi/PT_qi)/(PTGR_imi(-1)/PT_qi(-1)));
+// Import adjustment cost
+PTIT_gammaimi = PT_gammaimi1/2*((PTIT_imi/PT_qi)/(PTIT_imi(-1)/PT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTIT_gammaimidag = 1-PTIT_gammaimi-PT_gammaimi1*((PTIT_imi/PT_qi)/(PTIT_imi(-1)/PT_qi)-1)*((PTIT_imi/PT_qi)/(PTIT_imi(-1)/PT_qi(-1)));
+// Import adjustment cost
+PTNL_gammaimi = PT_gammaimi1/2*((PTNL_imi/PT_qi)/(PTNL_imi(-1)/PT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTNL_gammaimidag = 1-PTNL_gammaimi-PT_gammaimi1*((PTNL_imi/PT_qi)/(PTNL_imi(-1)/PT_qi)-1)*((PTNL_imi/PT_qi)/(PTNL_imi(-1)/PT_qi(-1)));
+// Import adjustment cost
+PTDE_gammaimi = PT_gammaimi1/2*((PTDE_imi/PT_qi)/(PTDE_imi(-1)/PT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTDE_gammaimidag = 1-PTDE_gammaimi-PT_gammaimi1*((PTDE_imi/PT_qi)/(PTDE_imi(-1)/PT_qi)-1)*((PTDE_imi/PT_qi)/(PTDE_imi(-1)/PT_qi(-1)));
+// Import adjustment cost
+PTRU_gammaimi = PT_gammaimi1/2*((PTRU_imi/PT_qi)/(PTRU_imi(-1)/PT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTRU_gammaimidag = 1-PTRU_gammaimi-PT_gammaimi1*((PTRU_imi/PT_qi)/(PTRU_imi(-1)/PT_qi)-1)*((PTRU_imi/PT_qi)/(PTRU_imi(-1)/PT_qi(-1)));
+// Import adjustment cost
+PTRW_gammaimi = PT_gammaimi1/2*((PTRW_imi/PT_qi)/(PTRW_imi(-1)/PT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTRW_gammaimidag = 1-PTRW_gammaimi-PT_gammaimi1*((PTRW_imi/PT_qi)/(PTRW_imi(-1)/PT_qi)-1)*((PTRW_imi/PT_qi)/(PTRW_imi(-1)/PT_qi(-1)));
+// Import adjustment cost
+PTUS_gammaimi = PT_gammaimi1/2*((PTUS_imi/PT_qi)/(PTUS_imi(-1)/PT_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTUS_gammaimidag = 1-PTUS_gammaimi-PT_gammaimi1*((PTUS_imi/PT_qi)/(PTUS_imi(-1)/PT_qi)-1)*((PTUS_imi/PT_qi)/(PTUS_imi(-1)/PT_qi(-1)));
 // Private consumption good (tradable)
 PT_ttcg^((PT_mutcg-1)/PT_mutcg) = (PT_nutcg)^(1/PT_mutcg)*PT_htcg^(1-1/PT_mutcg)+(1-PT_nutcg)^(1/PT_mutcg)*PT_imcg^(1-1/PT_mutcg);
 // Private consumption good  (total)
@@ -48761,32 +49301,58 @@ PT_pttcg^(1-PT_mutcg) = (PT_nutcg)*PT_pht^(1-PT_mutcg)+(1-PT_nutcg)*PT_pimcg^(1-
 PT_pcg^(1-PT_mucg) = (PT_nucg)*PT_pttcg^(1-PT_mucg)+(1-PT_nucg)*PT_pnt^(1-PT_mucg);
 // Demand for domestic intermediate goods
 PT_htcg = PT_nutcg*(PT_pht/PT_pttcg)^(-PT_mutcg)*PT_ttcg;
-PTRA_gammaimcg = 0;
-PTRA_gammaimcgdag = 1;
-PTAT_gammaimcg = 0;
-PTAT_gammaimcgdag = 1;
-PTBE_gammaimcg = 0;
-PTBE_gammaimcgdag = 1;
-PTES_gammaimcg = 0;
-PTES_gammaimcgdag = 1;
-PTFI_gammaimcg = 0;
-PTFI_gammaimcgdag = 1;
-PTFR_gammaimcg = 0;
-PTFR_gammaimcgdag = 1;
-PTGR_gammaimcg = 0;
-PTGR_gammaimcgdag = 1;
-PTIT_gammaimcg = 0;
-PTIT_gammaimcgdag = 1;
-PTNL_gammaimcg = 0;
-PTNL_gammaimcgdag = 1;
-PTDE_gammaimcg = 0;
-PTDE_gammaimcgdag = 1;
-PTRU_gammaimcg = 0;
-PTRU_gammaimcgdag = 1;
-PTRW_gammaimcg = 0;
-PTRW_gammaimcgdag = 1;
-PTUS_gammaimcg = 0;
-PTUS_gammaimcgdag = 1;
+// Import adjustment cost
+PTRA_gammaimcg = PT_gammaimcg1/2*((PTRA_imcg/PT_qcg)/(PTRA_imcg(-1)/PT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTRA_gammaimcgdag = 1-PTRA_gammaimcg-PT_gammaimcg1*((PTRA_imcg/PT_qcg)/(PTRA_imcg(-1)/PT_qcg)-1)*((PTRA_imcg/PT_qcg)/(PTRA_imcg(-1)/PT_qcg(-1)));
+// Import adjustment cost
+PTAT_gammaimcg = PT_gammaimcg1/2*((PTAT_imcg/PT_qcg)/(PTAT_imcg(-1)/PT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTAT_gammaimcgdag = 1-PTAT_gammaimcg-PT_gammaimcg1*((PTAT_imcg/PT_qcg)/(PTAT_imcg(-1)/PT_qcg)-1)*((PTAT_imcg/PT_qcg)/(PTAT_imcg(-1)/PT_qcg(-1)));
+// Import adjustment cost
+PTBE_gammaimcg = PT_gammaimcg1/2*((PTBE_imcg/PT_qcg)/(PTBE_imcg(-1)/PT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTBE_gammaimcgdag = 1-PTBE_gammaimcg-PT_gammaimcg1*((PTBE_imcg/PT_qcg)/(PTBE_imcg(-1)/PT_qcg)-1)*((PTBE_imcg/PT_qcg)/(PTBE_imcg(-1)/PT_qcg(-1)));
+// Import adjustment cost
+PTES_gammaimcg = PT_gammaimcg1/2*((PTES_imcg/PT_qcg)/(PTES_imcg(-1)/PT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTES_gammaimcgdag = 1-PTES_gammaimcg-PT_gammaimcg1*((PTES_imcg/PT_qcg)/(PTES_imcg(-1)/PT_qcg)-1)*((PTES_imcg/PT_qcg)/(PTES_imcg(-1)/PT_qcg(-1)));
+// Import adjustment cost
+PTFI_gammaimcg = PT_gammaimcg1/2*((PTFI_imcg/PT_qcg)/(PTFI_imcg(-1)/PT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTFI_gammaimcgdag = 1-PTFI_gammaimcg-PT_gammaimcg1*((PTFI_imcg/PT_qcg)/(PTFI_imcg(-1)/PT_qcg)-1)*((PTFI_imcg/PT_qcg)/(PTFI_imcg(-1)/PT_qcg(-1)));
+// Import adjustment cost
+PTFR_gammaimcg = PT_gammaimcg1/2*((PTFR_imcg/PT_qcg)/(PTFR_imcg(-1)/PT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTFR_gammaimcgdag = 1-PTFR_gammaimcg-PT_gammaimcg1*((PTFR_imcg/PT_qcg)/(PTFR_imcg(-1)/PT_qcg)-1)*((PTFR_imcg/PT_qcg)/(PTFR_imcg(-1)/PT_qcg(-1)));
+// Import adjustment cost
+PTGR_gammaimcg = PT_gammaimcg1/2*((PTGR_imcg/PT_qcg)/(PTGR_imcg(-1)/PT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTGR_gammaimcgdag = 1-PTGR_gammaimcg-PT_gammaimcg1*((PTGR_imcg/PT_qcg)/(PTGR_imcg(-1)/PT_qcg)-1)*((PTGR_imcg/PT_qcg)/(PTGR_imcg(-1)/PT_qcg(-1)));
+// Import adjustment cost
+PTIT_gammaimcg = PT_gammaimcg1/2*((PTIT_imcg/PT_qcg)/(PTIT_imcg(-1)/PT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTIT_gammaimcgdag = 1-PTIT_gammaimcg-PT_gammaimcg1*((PTIT_imcg/PT_qcg)/(PTIT_imcg(-1)/PT_qcg)-1)*((PTIT_imcg/PT_qcg)/(PTIT_imcg(-1)/PT_qcg(-1)));
+// Import adjustment cost
+PTNL_gammaimcg = PT_gammaimcg1/2*((PTNL_imcg/PT_qcg)/(PTNL_imcg(-1)/PT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTNL_gammaimcgdag = 1-PTNL_gammaimcg-PT_gammaimcg1*((PTNL_imcg/PT_qcg)/(PTNL_imcg(-1)/PT_qcg)-1)*((PTNL_imcg/PT_qcg)/(PTNL_imcg(-1)/PT_qcg(-1)));
+// Import adjustment cost
+PTDE_gammaimcg = PT_gammaimcg1/2*((PTDE_imcg/PT_qcg)/(PTDE_imcg(-1)/PT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTDE_gammaimcgdag = 1-PTDE_gammaimcg-PT_gammaimcg1*((PTDE_imcg/PT_qcg)/(PTDE_imcg(-1)/PT_qcg)-1)*((PTDE_imcg/PT_qcg)/(PTDE_imcg(-1)/PT_qcg(-1)));
+// Import adjustment cost
+PTRU_gammaimcg = PT_gammaimcg1/2*((PTRU_imcg/PT_qcg)/(PTRU_imcg(-1)/PT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTRU_gammaimcgdag = 1-PTRU_gammaimcg-PT_gammaimcg1*((PTRU_imcg/PT_qcg)/(PTRU_imcg(-1)/PT_qcg)-1)*((PTRU_imcg/PT_qcg)/(PTRU_imcg(-1)/PT_qcg(-1)));
+// Import adjustment cost
+PTRW_gammaimcg = PT_gammaimcg1/2*((PTRW_imcg/PT_qcg)/(PTRW_imcg(-1)/PT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTRW_gammaimcgdag = 1-PTRW_gammaimcg-PT_gammaimcg1*((PTRW_imcg/PT_qcg)/(PTRW_imcg(-1)/PT_qcg)-1)*((PTRW_imcg/PT_qcg)/(PTRW_imcg(-1)/PT_qcg(-1)));
+// Import adjustment cost
+PTUS_gammaimcg = PT_gammaimcg1/2*((PTUS_imcg/PT_qcg)/(PTUS_imcg(-1)/PT_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTUS_gammaimcgdag = 1-PTUS_gammaimcg-PT_gammaimcg1*((PTUS_imcg/PT_qcg)/(PTUS_imcg(-1)/PT_qcg)-1)*((PTUS_imcg/PT_qcg)/(PTUS_imcg(-1)/PT_qcg(-1)));
 // Private consumption good (tradable)
 PT_ttig^((PT_mutig-1)/PT_mutig) = (PT_nutig)^(1/PT_mutig)*PT_htig^(1-1/PT_mutig)+(1-PT_nutig)^(1/PT_mutig)*PT_imig^(1-1/PT_mutig);
 // Private consumption good  (total)
@@ -48799,32 +49365,58 @@ PT_pttig^(1-PT_mutig) = (PT_nutig)*PT_pht^(1-PT_mutig)+(1-PT_nutig)*PT_pimig^(1-
 PT_pig^(1-PT_muig) = (PT_nuig)*PT_pttig^(1-PT_muig)+(1-PT_nuig)*PT_pnt^(1-PT_muig);
 // Demand for domestic intermediate goods
 PT_htig = PT_nutig*(PT_pht/PT_pttig)^(-PT_mutig)*PT_ttig;
-PTRA_gammaimig = 0;
-PTRA_gammaimigdag = 1;
-PTAT_gammaimig = 0;
-PTAT_gammaimigdag = 1;
-PTBE_gammaimig = 0;
-PTBE_gammaimigdag = 1;
-PTES_gammaimig = 0;
-PTES_gammaimigdag = 1;
-PTFI_gammaimig = 0;
-PTFI_gammaimigdag = 1;
-PTFR_gammaimig = 0;
-PTFR_gammaimigdag = 1;
-PTGR_gammaimig = 0;
-PTGR_gammaimigdag = 1;
-PTIT_gammaimig = 0;
-PTIT_gammaimigdag = 1;
-PTNL_gammaimig = 0;
-PTNL_gammaimigdag = 1;
-PTDE_gammaimig = 0;
-PTDE_gammaimigdag = 1;
-PTRU_gammaimig = 0;
-PTRU_gammaimigdag = 1;
-PTRW_gammaimig = 0;
-PTRW_gammaimigdag = 1;
-PTUS_gammaimig = 0;
-PTUS_gammaimigdag = 1;
+// Import adjustment cost
+PTRA_gammaimig = PT_gammaimig1/2*((PTRA_imig/PT_qig)/(PTRA_imig(-1)/PT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTRA_gammaimigdag = 1-PTRA_gammaimig-PT_gammaimig1*((PTRA_imig/PT_qig)/(PTRA_imig(-1)/PT_qig)-1)*((PTRA_imig/PT_qig)/(PTRA_imig(-1)/PT_qig(-1)));
+// Import adjustment cost
+PTAT_gammaimig = PT_gammaimig1/2*((PTAT_imig/PT_qig)/(PTAT_imig(-1)/PT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTAT_gammaimigdag = 1-PTAT_gammaimig-PT_gammaimig1*((PTAT_imig/PT_qig)/(PTAT_imig(-1)/PT_qig)-1)*((PTAT_imig/PT_qig)/(PTAT_imig(-1)/PT_qig(-1)));
+// Import adjustment cost
+PTBE_gammaimig = PT_gammaimig1/2*((PTBE_imig/PT_qig)/(PTBE_imig(-1)/PT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTBE_gammaimigdag = 1-PTBE_gammaimig-PT_gammaimig1*((PTBE_imig/PT_qig)/(PTBE_imig(-1)/PT_qig)-1)*((PTBE_imig/PT_qig)/(PTBE_imig(-1)/PT_qig(-1)));
+// Import adjustment cost
+PTES_gammaimig = PT_gammaimig1/2*((PTES_imig/PT_qig)/(PTES_imig(-1)/PT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTES_gammaimigdag = 1-PTES_gammaimig-PT_gammaimig1*((PTES_imig/PT_qig)/(PTES_imig(-1)/PT_qig)-1)*((PTES_imig/PT_qig)/(PTES_imig(-1)/PT_qig(-1)));
+// Import adjustment cost
+PTFI_gammaimig = PT_gammaimig1/2*((PTFI_imig/PT_qig)/(PTFI_imig(-1)/PT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTFI_gammaimigdag = 1-PTFI_gammaimig-PT_gammaimig1*((PTFI_imig/PT_qig)/(PTFI_imig(-1)/PT_qig)-1)*((PTFI_imig/PT_qig)/(PTFI_imig(-1)/PT_qig(-1)));
+// Import adjustment cost
+PTFR_gammaimig = PT_gammaimig1/2*((PTFR_imig/PT_qig)/(PTFR_imig(-1)/PT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTFR_gammaimigdag = 1-PTFR_gammaimig-PT_gammaimig1*((PTFR_imig/PT_qig)/(PTFR_imig(-1)/PT_qig)-1)*((PTFR_imig/PT_qig)/(PTFR_imig(-1)/PT_qig(-1)));
+// Import adjustment cost
+PTGR_gammaimig = PT_gammaimig1/2*((PTGR_imig/PT_qig)/(PTGR_imig(-1)/PT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTGR_gammaimigdag = 1-PTGR_gammaimig-PT_gammaimig1*((PTGR_imig/PT_qig)/(PTGR_imig(-1)/PT_qig)-1)*((PTGR_imig/PT_qig)/(PTGR_imig(-1)/PT_qig(-1)));
+// Import adjustment cost
+PTIT_gammaimig = PT_gammaimig1/2*((PTIT_imig/PT_qig)/(PTIT_imig(-1)/PT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTIT_gammaimigdag = 1-PTIT_gammaimig-PT_gammaimig1*((PTIT_imig/PT_qig)/(PTIT_imig(-1)/PT_qig)-1)*((PTIT_imig/PT_qig)/(PTIT_imig(-1)/PT_qig(-1)));
+// Import adjustment cost
+PTNL_gammaimig = PT_gammaimig1/2*((PTNL_imig/PT_qig)/(PTNL_imig(-1)/PT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTNL_gammaimigdag = 1-PTNL_gammaimig-PT_gammaimig1*((PTNL_imig/PT_qig)/(PTNL_imig(-1)/PT_qig)-1)*((PTNL_imig/PT_qig)/(PTNL_imig(-1)/PT_qig(-1)));
+// Import adjustment cost
+PTDE_gammaimig = PT_gammaimig1/2*((PTDE_imig/PT_qig)/(PTDE_imig(-1)/PT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTDE_gammaimigdag = 1-PTDE_gammaimig-PT_gammaimig1*((PTDE_imig/PT_qig)/(PTDE_imig(-1)/PT_qig)-1)*((PTDE_imig/PT_qig)/(PTDE_imig(-1)/PT_qig(-1)));
+// Import adjustment cost
+PTRU_gammaimig = PT_gammaimig1/2*((PTRU_imig/PT_qig)/(PTRU_imig(-1)/PT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTRU_gammaimigdag = 1-PTRU_gammaimig-PT_gammaimig1*((PTRU_imig/PT_qig)/(PTRU_imig(-1)/PT_qig)-1)*((PTRU_imig/PT_qig)/(PTRU_imig(-1)/PT_qig(-1)));
+// Import adjustment cost
+PTRW_gammaimig = PT_gammaimig1/2*((PTRW_imig/PT_qig)/(PTRW_imig(-1)/PT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTRW_gammaimigdag = 1-PTRW_gammaimig-PT_gammaimig1*((PTRW_imig/PT_qig)/(PTRW_imig(-1)/PT_qig)-1)*((PTRW_imig/PT_qig)/(PTRW_imig(-1)/PT_qig(-1)));
+// Import adjustment cost
+PTUS_gammaimig = PT_gammaimig1/2*((PTUS_imig/PT_qig)/(PTUS_imig(-1)/PT_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+PTUS_gammaimigdag = 1-PTUS_gammaimig-PT_gammaimig1*((PTUS_imig/PT_qig)/(PTUS_imig(-1)/PT_qig)-1)*((PTUS_imig/PT_qig)/(PTUS_imig(-1)/PT_qig(-1)));
 // Trade balance
 PT_tb =
 +PT_pex*RA_size/PT_size*RAPT_im
@@ -48885,18 +49477,10 @@ PT_ex =
 // Government spending, using PT_pg = PT_pht
 PT_pcg*PT_cg = PT_cgy*PT_pybar*PT_ybar;
 PT_pig*PT_ig = PT_igy*PT_pybar*PT_ybar;
-PT_t = 0;
-PT_b = PT_bytarget*PT_pybar*PT_ybar;
-// Auxiliary equation for steady-state output
-PT_ybar = PT_y;
-// Auxiliary equation for steady-state output
-PT_ytbar = PT_yst;
-// Auxiliary equation for steady-state output
-PT_ynbar = PT_ysn;
-// Auxiliary equation for steady-state output deflator
-PT_pybar = PT_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-PT_trybar = PT_tr/(PT_pybar*PT_ybar);
+// Transfers
+PT_tr = PT_try*PT_pybar*PT_ybar;
+// Fiscal rule
+PT_t/(PT_pybar*PT_ybar) = PT_phitb*(PT_b/(PT_pybar*PT_ybar)-PT_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 PT_ti = PT_upsilont*PT_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -48912,9 +49496,11 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	PT_r = DE_r;
-PT_pic4 = PT_pi4target;
-PT_rr-1 = PT_r/PT_pi4target^(1/4)-1;
+		PT_rerdep/DE_rerdep*PT_pic/DE_pic-1=0;
+// Definition of annual inflation
+PT_pic4 = PT_pic*PT_pic(-1)*PT_pic(-2)*PT_pic(-3);
+// Real interest rate
+PT_rr-1 = PT_r/PT_pic(+1)-1;
 // Equilibrium real interest rate
 PT_rrstar-1 = 1/PT_beta-1;
 //-------------
@@ -49001,68 +49587,68 @@ PT_py*PT_y =
 +PT_pcg*PT_qcg
 +PT_pig*PT_qig
 +PT_pex*RA_size/PT_size*RAPT_im
--(RA_pex*PTRA_rer)*PTRA_imc
--(RA_pex*PTRA_rer)*PTRA_imi
+-(RA_pex*PTRA_rer)*(PTRA_imc*(1-PTRA_gammaimc)/PTRA_gammaimcdag)
+-(RA_pex*PTRA_rer)*(PTRA_imi*(1-PTRA_gammaimi)/PTRA_gammaimidag)
 -(RA_pex*PTRA_rer)*PTRA_imcg
 -(RA_pex*PTRA_rer)*PTRA_imig
 +PT_pex*AT_size/PT_size*ATPT_im
--(AT_pex*PTAT_rer)*PTAT_imc
--(AT_pex*PTAT_rer)*PTAT_imi
+-(AT_pex*PTAT_rer)*(PTAT_imc*(1-PTAT_gammaimc)/PTAT_gammaimcdag)
+-(AT_pex*PTAT_rer)*(PTAT_imi*(1-PTAT_gammaimi)/PTAT_gammaimidag)
 -(AT_pex*PTAT_rer)*PTAT_imcg
 -(AT_pex*PTAT_rer)*PTAT_imig
 +PT_pex*BE_size/PT_size*BEPT_im
--(BE_pex*PTBE_rer)*PTBE_imc
--(BE_pex*PTBE_rer)*PTBE_imi
+-(BE_pex*PTBE_rer)*(PTBE_imc*(1-PTBE_gammaimc)/PTBE_gammaimcdag)
+-(BE_pex*PTBE_rer)*(PTBE_imi*(1-PTBE_gammaimi)/PTBE_gammaimidag)
 -(BE_pex*PTBE_rer)*PTBE_imcg
 -(BE_pex*PTBE_rer)*PTBE_imig
 +PT_pex*ES_size/PT_size*ESPT_im
--(ES_pex*PTES_rer)*PTES_imc
--(ES_pex*PTES_rer)*PTES_imi
+-(ES_pex*PTES_rer)*(PTES_imc*(1-PTES_gammaimc)/PTES_gammaimcdag)
+-(ES_pex*PTES_rer)*(PTES_imi*(1-PTES_gammaimi)/PTES_gammaimidag)
 -(ES_pex*PTES_rer)*PTES_imcg
 -(ES_pex*PTES_rer)*PTES_imig
 +PT_pex*FI_size/PT_size*FIPT_im
--(FI_pex*PTFI_rer)*PTFI_imc
--(FI_pex*PTFI_rer)*PTFI_imi
+-(FI_pex*PTFI_rer)*(PTFI_imc*(1-PTFI_gammaimc)/PTFI_gammaimcdag)
+-(FI_pex*PTFI_rer)*(PTFI_imi*(1-PTFI_gammaimi)/PTFI_gammaimidag)
 -(FI_pex*PTFI_rer)*PTFI_imcg
 -(FI_pex*PTFI_rer)*PTFI_imig
 +PT_pex*FR_size/PT_size*FRPT_im
--(FR_pex*PTFR_rer)*PTFR_imc
--(FR_pex*PTFR_rer)*PTFR_imi
+-(FR_pex*PTFR_rer)*(PTFR_imc*(1-PTFR_gammaimc)/PTFR_gammaimcdag)
+-(FR_pex*PTFR_rer)*(PTFR_imi*(1-PTFR_gammaimi)/PTFR_gammaimidag)
 -(FR_pex*PTFR_rer)*PTFR_imcg
 -(FR_pex*PTFR_rer)*PTFR_imig
 +PT_pex*GR_size/PT_size*GRPT_im
--(GR_pex*PTGR_rer)*PTGR_imc
--(GR_pex*PTGR_rer)*PTGR_imi
+-(GR_pex*PTGR_rer)*(PTGR_imc*(1-PTGR_gammaimc)/PTGR_gammaimcdag)
+-(GR_pex*PTGR_rer)*(PTGR_imi*(1-PTGR_gammaimi)/PTGR_gammaimidag)
 -(GR_pex*PTGR_rer)*PTGR_imcg
 -(GR_pex*PTGR_rer)*PTGR_imig
 +PT_pex*IT_size/PT_size*ITPT_im
--(IT_pex*PTIT_rer)*PTIT_imc
--(IT_pex*PTIT_rer)*PTIT_imi
+-(IT_pex*PTIT_rer)*(PTIT_imc*(1-PTIT_gammaimc)/PTIT_gammaimcdag)
+-(IT_pex*PTIT_rer)*(PTIT_imi*(1-PTIT_gammaimi)/PTIT_gammaimidag)
 -(IT_pex*PTIT_rer)*PTIT_imcg
 -(IT_pex*PTIT_rer)*PTIT_imig
 +PT_pex*NL_size/PT_size*NLPT_im
--(NL_pex*PTNL_rer)*PTNL_imc
--(NL_pex*PTNL_rer)*PTNL_imi
+-(NL_pex*PTNL_rer)*(PTNL_imc*(1-PTNL_gammaimc)/PTNL_gammaimcdag)
+-(NL_pex*PTNL_rer)*(PTNL_imi*(1-PTNL_gammaimi)/PTNL_gammaimidag)
 -(NL_pex*PTNL_rer)*PTNL_imcg
 -(NL_pex*PTNL_rer)*PTNL_imig
 +PT_pex*DE_size/PT_size*DEPT_im
--(DE_pex*PTDE_rer)*PTDE_imc
--(DE_pex*PTDE_rer)*PTDE_imi
+-(DE_pex*PTDE_rer)*(PTDE_imc*(1-PTDE_gammaimc)/PTDE_gammaimcdag)
+-(DE_pex*PTDE_rer)*(PTDE_imi*(1-PTDE_gammaimi)/PTDE_gammaimidag)
 -(DE_pex*PTDE_rer)*PTDE_imcg
 -(DE_pex*PTDE_rer)*PTDE_imig
 +PT_pex*RU_size/PT_size*RUPT_im
--(RU_pex*PTRU_rer)*PTRU_imc
--(RU_pex*PTRU_rer)*PTRU_imi
+-(RU_pex*PTRU_rer)*(PTRU_imc*(1-PTRU_gammaimc)/PTRU_gammaimcdag)
+-(RU_pex*PTRU_rer)*(PTRU_imi*(1-PTRU_gammaimi)/PTRU_gammaimidag)
 -(RU_pex*PTRU_rer)*PTRU_imcg
 -(RU_pex*PTRU_rer)*PTRU_imig
 +PT_pex*RW_size/PT_size*RWPT_im
--(RW_pex*PTRW_rer)*PTRW_imc
--(RW_pex*PTRW_rer)*PTRW_imi
+-(RW_pex*PTRW_rer)*(PTRW_imc*(1-PTRW_gammaimc)/PTRW_gammaimcdag)
+-(RW_pex*PTRW_rer)*(PTRW_imi*(1-PTRW_gammaimi)/PTRW_gammaimidag)
 -(RW_pex*PTRW_rer)*PTRW_imcg
 -(RW_pex*PTRW_rer)*PTRW_imig
 +PT_pex*US_size/PT_size*USPT_im
--(US_pex*PTUS_rer)*PTUS_imc
--(US_pex*PTUS_rer)*PTUS_imi
+-(US_pex*PTUS_rer)*(PTUS_imc*(1-PTUS_gammaimc)/PTUS_gammaimcdag)
+-(US_pex*PTUS_rer)*(PTUS_imi*(1-PTUS_gammaimi)/PTUS_gammaimidag)
 -(US_pex*PTUS_rer)*PTUS_imcg
 -(US_pex*PTUS_rer)*PTUS_imig
 ;
@@ -49137,7 +49723,7 @@ PT_yhty = PT_pht*PT_yst/(PT_py*PT_y);
 // NT sector share
 PT_ynty = PT_pnt*PT_ysn/(PT_py*PT_y);
 // Output gap
-PT_ygap = 0;
+PT_ygap = PT_y/PT_ybar-1;
 // Output growth (gross rate)
 PT_ygrowth = PT_y/PT_y(-1);
 // Output growth (gross rate yoy)
@@ -49312,17 +49898,23 @@ DE_vi = DE_ci/DE_mi;
 DE_gammavi = DE_gammav1*DE_vi+DE_gammav2/DE_vi-2*(DE_gammav1*DE_gammav2)^(1/2);
 // Derivative of transaction cost
 DE_gammavider = DE_gammav1-DE_gammav2*DE_vi^(-2);
-DE_delta = DE_ii/DE_ki;
-DE_gammai = 0;
-DE_gammaider = 0;
-DE_gammau = 0;
-DE_gammauder = ((DE_beta^(-1)-1+DE_delta)*DE_qbar-DE_delta*DE_taukbar*DE_pibar)/((1-DE_taukbar)*DE_pibar);
-DE_u = 1;
-DE_pi = DE_q;
+// Capital accumulation
+DE_ki = (1-DE_delta)*DE_ki(-1)+(1-DE_gammai(-1))*DE_ii(-1)*DE_zinv;
+// Investment adjustment cost
+DE_gammai = DE_gammai1/2*(DE_ii/DE_ii(-1)-1)^2;
+// Derivative of investment adjustment cost
+DE_gammaider = DE_gammai1*(DE_ii/DE_ii(-1)-1)/DE_ii(-1);
+// Capacity utilisation cost
+DE_gammau = ((DE_beta^(-1)-1+DE_delta)*DE_qbar-DE_delta*DE_taukbar*DE_pibar)/((1-DE_taukbar)*DE_pibar)*(DE_u-1)+DE_gammau2/2*(DE_u-1)^2;
+// Derivative of capacity utilisation cost
+DE_gammauder = ((DE_beta^(-1)-1+DE_delta)*DE_qbar-DE_delta*DE_taukbar*DE_pibar)/((1-DE_taukbar)*DE_pibar)+DE_gammau2*(DE_u-1);
+// Optimal capacity utilisation (FOC)
+DE_rk = DE_gammauder*DE_pi;
+// Tobin's Q
+DE_pi = DE_q*DE_zinv*(1-DE_gammai-DE_gammaider*DE_ii)+DE_beta*DE_lambdai(+1)/DE_lambdai*DE_q(+1)*DE_zinv(+1)*DE_gammaider(+1)*DE_ii(+1)^2/DE_ii;
 // Auxiliary equation for Tobin's Q in steady state
-DE_qbar = DE_q;
 // Rate of return on capital
-DE_q = DE_beta*((1-DE_tauk)*DE_rk+(DE_tauk*DE_delta)*DE_pi+(1-DE_delta)*DE_q);
+DE_q = DE_beta*DE_lambdai(+1)/DE_lambdai*((1-DE_tauk(+1))*(DE_rk(+1)*DE_u(+1)-DE_gammau(+1)*DE_pi(+1))+(DE_tauk(+1)*DE_delta)*DE_pi(+1)+(1-DE_delta)*DE_q(+1));
 // Optimal wage contract (FOC)
 DE_witilde^(1+DE_etai*DE_zeta) = DE_etai/(DE_etai-1)*DE_fi/DE_gi+DE_wcst;
 // Definition of fi
@@ -49381,11 +49973,9 @@ DE_mcn = 1/(DE_zn*DE_kg^DE_alphag*(DE_alphan)^(DE_alphan)*(1-DE_alphan)^(1-DE_al
 // Wage Inflation (qoq)
 DE_piw = DE_w/DE_w(-1)*DE_pic;
 // Wage Inflation (yoy)
-DE_piw4 = DE_pic4;
+DE_piw4 = DE_piw*DE_piw(-1)*DE_piw(-2)*DE_piw(-3);
 // Auxiliary equation for steady-state fixed cost
-DE_psitbar = DE_psit*DE_ytbar;
 // Auxiliary equation for steady-state fixed cost
-DE_psinbar = DE_psin*DE_ynbar;
 // Capital input (FOC)
 DE_rk = DE_alphat*(DE_yst+DE_psitbar)/DE_kdt*DE_mct;
 // Capital input (FOC)
@@ -49460,7 +50050,6 @@ DE_piex = DE_pex/DE_pex(-1)*DE_pic;
 // Bilateral real exchange rate
 DERA_rer = DE_rer/RA_rer;
 // Auxiliary equation for steady-state output
-DERA_rerbar = DERA_rer;
 //Terms of Trade
 DERA_tot = RA_pex*DERA_rer/DE_pex;
 // Optimal price contract set in foreign markets (FOC), using DE_pxtilde = AT_pimtilde
@@ -49476,7 +50065,6 @@ DERA_tot = RA_pex*DERA_rer/DE_pex;
 // Bilateral real exchange rate
 DEAT_rer = DE_rer/AT_rer;
 // Auxiliary equation for steady-state output
-DEAT_rerbar = DEAT_rer;
 //Terms of Trade
 DEAT_tot = AT_pex*DEAT_rer/DE_pex;
 // Optimal price contract set in foreign markets (FOC), using DE_pxtilde = BE_pimtilde
@@ -49492,7 +50080,6 @@ DEAT_tot = AT_pex*DEAT_rer/DE_pex;
 // Bilateral real exchange rate
 DEBE_rer = DE_rer/BE_rer;
 // Auxiliary equation for steady-state output
-DEBE_rerbar = DEBE_rer;
 //Terms of Trade
 DEBE_tot = BE_pex*DEBE_rer/DE_pex;
 // Optimal price contract set in foreign markets (FOC), using DE_pxtilde = ES_pimtilde
@@ -49508,7 +50095,6 @@ DEBE_tot = BE_pex*DEBE_rer/DE_pex;
 // Bilateral real exchange rate
 DEES_rer = DE_rer/ES_rer;
 // Auxiliary equation for steady-state output
-DEES_rerbar = DEES_rer;
 //Terms of Trade
 DEES_tot = ES_pex*DEES_rer/DE_pex;
 // Optimal price contract set in foreign markets (FOC), using DE_pxtilde = FI_pimtilde
@@ -49524,7 +50110,6 @@ DEES_tot = ES_pex*DEES_rer/DE_pex;
 // Bilateral real exchange rate
 DEFI_rer = DE_rer/FI_rer;
 // Auxiliary equation for steady-state output
-DEFI_rerbar = DEFI_rer;
 //Terms of Trade
 DEFI_tot = FI_pex*DEFI_rer/DE_pex;
 // Optimal price contract set in foreign markets (FOC), using DE_pxtilde = FR_pimtilde
@@ -49540,7 +50125,6 @@ DEFI_tot = FI_pex*DEFI_rer/DE_pex;
 // Bilateral real exchange rate
 DEFR_rer = DE_rer/FR_rer;
 // Auxiliary equation for steady-state output
-DEFR_rerbar = DEFR_rer;
 //Terms of Trade
 DEFR_tot = FR_pex*DEFR_rer/DE_pex;
 // Optimal price contract set in foreign markets (FOC), using DE_pxtilde = GR_pimtilde
@@ -49556,7 +50140,6 @@ DEFR_tot = FR_pex*DEFR_rer/DE_pex;
 // Bilateral real exchange rate
 DEGR_rer = DE_rer/GR_rer;
 // Auxiliary equation for steady-state output
-DEGR_rerbar = DEGR_rer;
 //Terms of Trade
 DEGR_tot = GR_pex*DEGR_rer/DE_pex;
 // Optimal price contract set in foreign markets (FOC), using DE_pxtilde = IT_pimtilde
@@ -49572,7 +50155,6 @@ DEGR_tot = GR_pex*DEGR_rer/DE_pex;
 // Bilateral real exchange rate
 DEIT_rer = DE_rer/IT_rer;
 // Auxiliary equation for steady-state output
-DEIT_rerbar = DEIT_rer;
 //Terms of Trade
 DEIT_tot = IT_pex*DEIT_rer/DE_pex;
 // Optimal price contract set in foreign markets (FOC), using DE_pxtilde = NL_pimtilde
@@ -49588,7 +50170,6 @@ DEIT_tot = IT_pex*DEIT_rer/DE_pex;
 // Bilateral real exchange rate
 DENL_rer = DE_rer/NL_rer;
 // Auxiliary equation for steady-state output
-DENL_rerbar = DENL_rer;
 //Terms of Trade
 DENL_tot = NL_pex*DENL_rer/DE_pex;
 // Optimal price contract set in foreign markets (FOC), using DE_pxtilde = PT_pimtilde
@@ -49604,7 +50185,6 @@ DENL_tot = NL_pex*DENL_rer/DE_pex;
 // Bilateral real exchange rate
 DEPT_rer = DE_rer/PT_rer;
 // Auxiliary equation for steady-state output
-DEPT_rerbar = DEPT_rer;
 //Terms of Trade
 DEPT_tot = PT_pex*DEPT_rer/DE_pex;
 // Optimal price contract set in foreign markets (FOC), using DE_pxtilde = RU_pimtilde
@@ -49620,7 +50200,6 @@ DEPT_tot = PT_pex*DEPT_rer/DE_pex;
 // Bilateral real exchange rate
 DERU_rer = DE_rer/RU_rer;
 // Auxiliary equation for steady-state output
-DERU_rerbar = DERU_rer;
 //Terms of Trade
 DERU_tot = RU_pex*DERU_rer/DE_pex;
 // Optimal price contract set in foreign markets (FOC), using DE_pxtilde = RW_pimtilde
@@ -49636,7 +50215,6 @@ DERU_tot = RU_pex*DERU_rer/DE_pex;
 // Bilateral real exchange rate
 DERW_rer = DE_rer/RW_rer;
 // Auxiliary equation for steady-state output
-DERW_rerbar = DERW_rer;
 //Terms of Trade
 DERW_tot = RW_pex*DERW_rer/DE_pex;
 // Optimal price contract set in foreign markets (FOC), using DE_pxtilde = US_pimtilde
@@ -49652,7 +50230,6 @@ DERW_tot = RW_pex*DERW_rer/DE_pex;
 // Bilateral real exchange rate
 DEUS_rer = DE_rer/US_rer;
 // Auxiliary equation for steady-state output
-DEUS_rerbar = DEUS_rer;
 //Terms of Trade
 DEUS_tot = US_pex*DEUS_rer/DE_pex;
 // Total imports 
@@ -52150,18 +52727,18 @@ DE_etot = 1
 //-----------------
 // Private consumption good (import)
 DE_imc^((DE_mumc-1)/DE_mumc) =
-+DERA_numc ^(1/DE_mumc)*DERA_imc^(1-1/DE_mumc)
-+DEAT_numc ^(1/DE_mumc)*DEAT_imc^(1-1/DE_mumc)
-+DEBE_numc ^(1/DE_mumc)*DEBE_imc^(1-1/DE_mumc)
-+DEES_numc ^(1/DE_mumc)*DEES_imc^(1-1/DE_mumc)
-+DEFI_numc ^(1/DE_mumc)*DEFI_imc^(1-1/DE_mumc)
-+DEFR_numc ^(1/DE_mumc)*DEFR_imc^(1-1/DE_mumc)
-+DEGR_numc ^(1/DE_mumc)*DEGR_imc^(1-1/DE_mumc)
-+DEIT_numc ^(1/DE_mumc)*DEIT_imc^(1-1/DE_mumc)
-+DEPT_numc ^(1/DE_mumc)*DEPT_imc^(1-1/DE_mumc)
-+DERU_numc ^(1/DE_mumc)*DERU_imc^(1-1/DE_mumc)
-+DERW_numc ^(1/DE_mumc)*DERW_imc^(1-1/DE_mumc)
-+DEUS_numc ^(1/DE_mumc)*DEUS_imc^(1-1/DE_mumc)
++DERA_numc ^(1/DE_mumc)*((1-DERA_gammaimc)*DERA_imc)^(1-1/DE_mumc)
++DEAT_numc ^(1/DE_mumc)*((1-DEAT_gammaimc)*DEAT_imc)^(1-1/DE_mumc)
++DEBE_numc ^(1/DE_mumc)*((1-DEBE_gammaimc)*DEBE_imc)^(1-1/DE_mumc)
++DEES_numc ^(1/DE_mumc)*((1-DEES_gammaimc)*DEES_imc)^(1-1/DE_mumc)
++DEFI_numc ^(1/DE_mumc)*((1-DEFI_gammaimc)*DEFI_imc)^(1-1/DE_mumc)
++DEFR_numc ^(1/DE_mumc)*((1-DEFR_gammaimc)*DEFR_imc)^(1-1/DE_mumc)
++DEGR_numc ^(1/DE_mumc)*((1-DEGR_gammaimc)*DEGR_imc)^(1-1/DE_mumc)
++DEIT_numc ^(1/DE_mumc)*((1-DEIT_gammaimc)*DEIT_imc)^(1-1/DE_mumc)
++DEPT_numc ^(1/DE_mumc)*((1-DEPT_gammaimc)*DEPT_imc)^(1-1/DE_mumc)
++DERU_numc ^(1/DE_mumc)*((1-DERU_gammaimc)*DERU_imc)^(1-1/DE_mumc)
++DERW_numc ^(1/DE_mumc)*((1-DERW_gammaimc)*DERW_imc)^(1-1/DE_mumc)
++DEUS_numc ^(1/DE_mumc)*((1-DEUS_gammaimc)*DEUS_imc)^(1-1/DE_mumc)
 +(1
 -DERA_numc
 -DEAT_numc
@@ -52175,29 +52752,29 @@ DE_imc^((DE_mumc-1)/DE_mumc) =
 -DERU_numc
 -DERW_numc
 -DEUS_numc
-)^(1/DE_mumc)*DENL_imc^(1-1/DE_mumc);
+)^(1/DE_mumc)*((1-DENL_gammaimc)*DENL_imc)^(1-1/DE_mumc);
 // Demand for bilateral consumption import goods
-DERA_imc = DERA_numc*((RA_pex*DERA_rer)/DE_pimc)^(-DE_mumc)*DE_imc;
+DERA_imc = DERA_numc*((RA_pex*DERA_rer)/(DERA_gammaimcdag*DE_pimc))^(-DE_mumc)*DE_imc/(1-DERA_gammaimc);
 // Demand for bilateral consumption import goods
-DEAT_imc = DEAT_numc*((AT_pex*DEAT_rer)/DE_pimc)^(-DE_mumc)*DE_imc;
+DEAT_imc = DEAT_numc*((AT_pex*DEAT_rer)/(DEAT_gammaimcdag*DE_pimc))^(-DE_mumc)*DE_imc/(1-DEAT_gammaimc);
 // Demand for bilateral consumption import goods
-DEBE_imc = DEBE_numc*((BE_pex*DEBE_rer)/DE_pimc)^(-DE_mumc)*DE_imc;
+DEBE_imc = DEBE_numc*((BE_pex*DEBE_rer)/(DEBE_gammaimcdag*DE_pimc))^(-DE_mumc)*DE_imc/(1-DEBE_gammaimc);
 // Demand for bilateral consumption import goods
-DEES_imc = DEES_numc*((ES_pex*DEES_rer)/DE_pimc)^(-DE_mumc)*DE_imc;
+DEES_imc = DEES_numc*((ES_pex*DEES_rer)/(DEES_gammaimcdag*DE_pimc))^(-DE_mumc)*DE_imc/(1-DEES_gammaimc);
 // Demand for bilateral consumption import goods
-DEFI_imc = DEFI_numc*((FI_pex*DEFI_rer)/DE_pimc)^(-DE_mumc)*DE_imc;
+DEFI_imc = DEFI_numc*((FI_pex*DEFI_rer)/(DEFI_gammaimcdag*DE_pimc))^(-DE_mumc)*DE_imc/(1-DEFI_gammaimc);
 // Demand for bilateral consumption import goods
-DEFR_imc = DEFR_numc*((FR_pex*DEFR_rer)/DE_pimc)^(-DE_mumc)*DE_imc;
+DEFR_imc = DEFR_numc*((FR_pex*DEFR_rer)/(DEFR_gammaimcdag*DE_pimc))^(-DE_mumc)*DE_imc/(1-DEFR_gammaimc);
 // Demand for bilateral consumption import goods
-DEGR_imc = DEGR_numc*((GR_pex*DEGR_rer)/DE_pimc)^(-DE_mumc)*DE_imc;
+DEGR_imc = DEGR_numc*((GR_pex*DEGR_rer)/(DEGR_gammaimcdag*DE_pimc))^(-DE_mumc)*DE_imc/(1-DEGR_gammaimc);
 // Demand for bilateral consumption import goods
-DEIT_imc = DEIT_numc*((IT_pex*DEIT_rer)/DE_pimc)^(-DE_mumc)*DE_imc;
+DEIT_imc = DEIT_numc*((IT_pex*DEIT_rer)/(DEIT_gammaimcdag*DE_pimc))^(-DE_mumc)*DE_imc/(1-DEIT_gammaimc);
 // Demand for bilateral consumption import goods
-DEPT_imc = DEPT_numc*((PT_pex*DEPT_rer)/DE_pimc)^(-DE_mumc)*DE_imc;
+DEPT_imc = DEPT_numc*((PT_pex*DEPT_rer)/(DEPT_gammaimcdag*DE_pimc))^(-DE_mumc)*DE_imc/(1-DEPT_gammaimc);
 // Demand for bilateral consumption import goods
-DERW_imc = DERW_numc*((RW_pex*DERW_rer)/DE_pimc)^(-DE_mumc)*DE_imc;
+DERW_imc = DERW_numc*((RW_pex*DERW_rer)/(DERW_gammaimcdag*DE_pimc))^(-DE_mumc)*DE_imc/(1-DERW_gammaimc);
 // Demand for bilateral consumption import goods
-DEUS_imc = DEUS_numc*((US_pex*DEUS_rer)/DE_pimc)^(-DE_mumc)*DE_imc;
+DEUS_imc = DEUS_numc*((US_pex*DEUS_rer)/(DEUS_gammaimcdag*DE_pimc))^(-DE_mumc)*DE_imc/(1-DEUS_gammaimc);
 DENL_imc = (1
 -DERA_numc
 -DEAT_numc
@@ -52211,21 +52788,21 @@ DENL_imc = (1
 -DERU_numc
 -DERW_numc
 -DEUS_numc
-)*((NL_pex*DENL_rer)/DE_pimc)^(-DE_mumc)*DE_imc;
+)*((NL_pex*DENL_rer)/(DENL_gammaimcdag*DE_pimc))^(-DE_mumc)*DE_imc/(1-DENL_gammaimc);
 // Price of the consumption good (import)
 DE_pimc^(1-DE_mumc) =
-+DERA_numc * (RA_pex*DERA_rer)^(1-DE_mumc)
-+DEAT_numc * (AT_pex*DEAT_rer)^(1-DE_mumc)
-+DEBE_numc * (BE_pex*DEBE_rer)^(1-DE_mumc)
-+DEES_numc * (ES_pex*DEES_rer)^(1-DE_mumc)
-+DEFI_numc * (FI_pex*DEFI_rer)^(1-DE_mumc)
-+DEFR_numc * (FR_pex*DEFR_rer)^(1-DE_mumc)
-+DEGR_numc * (GR_pex*DEGR_rer)^(1-DE_mumc)
-+DEIT_numc * (IT_pex*DEIT_rer)^(1-DE_mumc)
-+DEPT_numc * (PT_pex*DEPT_rer)^(1-DE_mumc)
-+DERU_numc * (RU_pex*DERU_rer)^(1-DE_mumc)
-+DERW_numc * (RW_pex*DERW_rer)^(1-DE_mumc)
-+DEUS_numc * (US_pex*DEUS_rer)^(1-DE_mumc)
++DERA_numc *((RA_pex*DERA_rer)/DERA_gammaimcdag)^(1-DE_mumc)
++DEAT_numc *((AT_pex*DEAT_rer)/DEAT_gammaimcdag)^(1-DE_mumc)
++DEBE_numc *((BE_pex*DEBE_rer)/DEBE_gammaimcdag)^(1-DE_mumc)
++DEES_numc *((ES_pex*DEES_rer)/DEES_gammaimcdag)^(1-DE_mumc)
++DEFI_numc *((FI_pex*DEFI_rer)/DEFI_gammaimcdag)^(1-DE_mumc)
++DEFR_numc *((FR_pex*DEFR_rer)/DEFR_gammaimcdag)^(1-DE_mumc)
++DEGR_numc *((GR_pex*DEGR_rer)/DEGR_gammaimcdag)^(1-DE_mumc)
++DEIT_numc *((IT_pex*DEIT_rer)/DEIT_gammaimcdag)^(1-DE_mumc)
++DEPT_numc *((PT_pex*DEPT_rer)/DEPT_gammaimcdag)^(1-DE_mumc)
++DERU_numc *((RU_pex*DERU_rer)/DERU_gammaimcdag)^(1-DE_mumc)
++DERW_numc *((RW_pex*DERW_rer)/DERW_gammaimcdag)^(1-DE_mumc)
++DEUS_numc *((US_pex*DEUS_rer)/DEUS_gammaimcdag)^(1-DE_mumc)
 +(1
 -DERA_numc
 -DEAT_numc
@@ -52239,23 +52816,23 @@ DE_pimc^(1-DE_mumc) =
 -DERU_numc
 -DERW_numc
 -DEUS_numc
-)*(NL_pex*DENL_rer)^(1-DE_mumc);
+)*((NL_pex*DENL_rer)/DENL_gammaimcdag)^(1-DE_mumc);
 // Private consumption good (import) inflation
 DE_piimc = DE_pimc/DE_pimc(-1)*DE_pic;
 // Private consumption good (import)
 DE_imi^((DE_mumi-1)/DE_mumi) =
-+DERA_numi ^(1/DE_mumi)*DERA_imi^(1-1/DE_mumi)
-+DEAT_numi ^(1/DE_mumi)*DEAT_imi^(1-1/DE_mumi)
-+DEBE_numi ^(1/DE_mumi)*DEBE_imi^(1-1/DE_mumi)
-+DEES_numi ^(1/DE_mumi)*DEES_imi^(1-1/DE_mumi)
-+DEFI_numi ^(1/DE_mumi)*DEFI_imi^(1-1/DE_mumi)
-+DEFR_numi ^(1/DE_mumi)*DEFR_imi^(1-1/DE_mumi)
-+DEGR_numi ^(1/DE_mumi)*DEGR_imi^(1-1/DE_mumi)
-+DEIT_numi ^(1/DE_mumi)*DEIT_imi^(1-1/DE_mumi)
-+DEPT_numi ^(1/DE_mumi)*DEPT_imi^(1-1/DE_mumi)
-+DERU_numi ^(1/DE_mumi)*DERU_imi^(1-1/DE_mumi)
-+DERW_numi ^(1/DE_mumi)*DERW_imi^(1-1/DE_mumi)
-+DEUS_numi ^(1/DE_mumi)*DEUS_imi^(1-1/DE_mumi)
++DERA_numi ^(1/DE_mumi)*((1-DERA_gammaimi)*DERA_imi)^(1-1/DE_mumi)
++DEAT_numi ^(1/DE_mumi)*((1-DEAT_gammaimi)*DEAT_imi)^(1-1/DE_mumi)
++DEBE_numi ^(1/DE_mumi)*((1-DEBE_gammaimi)*DEBE_imi)^(1-1/DE_mumi)
++DEES_numi ^(1/DE_mumi)*((1-DEES_gammaimi)*DEES_imi)^(1-1/DE_mumi)
++DEFI_numi ^(1/DE_mumi)*((1-DEFI_gammaimi)*DEFI_imi)^(1-1/DE_mumi)
++DEFR_numi ^(1/DE_mumi)*((1-DEFR_gammaimi)*DEFR_imi)^(1-1/DE_mumi)
++DEGR_numi ^(1/DE_mumi)*((1-DEGR_gammaimi)*DEGR_imi)^(1-1/DE_mumi)
++DEIT_numi ^(1/DE_mumi)*((1-DEIT_gammaimi)*DEIT_imi)^(1-1/DE_mumi)
++DEPT_numi ^(1/DE_mumi)*((1-DEPT_gammaimi)*DEPT_imi)^(1-1/DE_mumi)
++DERU_numi ^(1/DE_mumi)*((1-DERU_gammaimi)*DERU_imi)^(1-1/DE_mumi)
++DERW_numi ^(1/DE_mumi)*((1-DERW_gammaimi)*DERW_imi)^(1-1/DE_mumi)
++DEUS_numi ^(1/DE_mumi)*((1-DEUS_gammaimi)*DEUS_imi)^(1-1/DE_mumi)
 +(1
 -DERA_numi
 -DEAT_numi
@@ -52269,29 +52846,29 @@ DE_imi^((DE_mumi-1)/DE_mumi) =
 -DERU_numi
 -DERW_numi
 -DEUS_numi
-)^(1/DE_mumi)*DENL_imi^(1-1/DE_mumi);
+)^(1/DE_mumi)*((1-DENL_gammaimi)*DENL_imi)^(1-1/DE_mumi);
 // Demand for bilateral consumption import goods
-DERA_imi = DERA_numi*((RA_pex*DERA_rer)/DE_pimi)^(-DE_mumi)*DE_imi;
+DERA_imi = DERA_numi*((RA_pex*DERA_rer)/(DERA_gammaimidag*DE_pimi))^(-DE_mumi)*DE_imi/(1-DERA_gammaimi);
 // Demand for bilateral consumption import goods
-DEAT_imi = DEAT_numi*((AT_pex*DEAT_rer)/DE_pimi)^(-DE_mumi)*DE_imi;
+DEAT_imi = DEAT_numi*((AT_pex*DEAT_rer)/(DEAT_gammaimidag*DE_pimi))^(-DE_mumi)*DE_imi/(1-DEAT_gammaimi);
 // Demand for bilateral consumption import goods
-DEBE_imi = DEBE_numi*((BE_pex*DEBE_rer)/DE_pimi)^(-DE_mumi)*DE_imi;
+DEBE_imi = DEBE_numi*((BE_pex*DEBE_rer)/(DEBE_gammaimidag*DE_pimi))^(-DE_mumi)*DE_imi/(1-DEBE_gammaimi);
 // Demand for bilateral consumption import goods
-DEES_imi = DEES_numi*((ES_pex*DEES_rer)/DE_pimi)^(-DE_mumi)*DE_imi;
+DEES_imi = DEES_numi*((ES_pex*DEES_rer)/(DEES_gammaimidag*DE_pimi))^(-DE_mumi)*DE_imi/(1-DEES_gammaimi);
 // Demand for bilateral consumption import goods
-DEFI_imi = DEFI_numi*((FI_pex*DEFI_rer)/DE_pimi)^(-DE_mumi)*DE_imi;
+DEFI_imi = DEFI_numi*((FI_pex*DEFI_rer)/(DEFI_gammaimidag*DE_pimi))^(-DE_mumi)*DE_imi/(1-DEFI_gammaimi);
 // Demand for bilateral consumption import goods
-DEFR_imi = DEFR_numi*((FR_pex*DEFR_rer)/DE_pimi)^(-DE_mumi)*DE_imi;
+DEFR_imi = DEFR_numi*((FR_pex*DEFR_rer)/(DEFR_gammaimidag*DE_pimi))^(-DE_mumi)*DE_imi/(1-DEFR_gammaimi);
 // Demand for bilateral consumption import goods
-DEGR_imi = DEGR_numi*((GR_pex*DEGR_rer)/DE_pimi)^(-DE_mumi)*DE_imi;
+DEGR_imi = DEGR_numi*((GR_pex*DEGR_rer)/(DEGR_gammaimidag*DE_pimi))^(-DE_mumi)*DE_imi/(1-DEGR_gammaimi);
 // Demand for bilateral consumption import goods
-DEIT_imi = DEIT_numi*((IT_pex*DEIT_rer)/DE_pimi)^(-DE_mumi)*DE_imi;
+DEIT_imi = DEIT_numi*((IT_pex*DEIT_rer)/(DEIT_gammaimidag*DE_pimi))^(-DE_mumi)*DE_imi/(1-DEIT_gammaimi);
 // Demand for bilateral consumption import goods
-DEPT_imi = DEPT_numi*((PT_pex*DEPT_rer)/DE_pimi)^(-DE_mumi)*DE_imi;
+DEPT_imi = DEPT_numi*((PT_pex*DEPT_rer)/(DEPT_gammaimidag*DE_pimi))^(-DE_mumi)*DE_imi/(1-DEPT_gammaimi);
 // Demand for bilateral consumption import goods
-DERW_imi = DERW_numi*((RW_pex*DERW_rer)/DE_pimi)^(-DE_mumi)*DE_imi;
+DERW_imi = DERW_numi*((RW_pex*DERW_rer)/(DERW_gammaimidag*DE_pimi))^(-DE_mumi)*DE_imi/(1-DERW_gammaimi);
 // Demand for bilateral consumption import goods
-DEUS_imi = DEUS_numi*((US_pex*DEUS_rer)/DE_pimi)^(-DE_mumi)*DE_imi;
+DEUS_imi = DEUS_numi*((US_pex*DEUS_rer)/(DEUS_gammaimidag*DE_pimi))^(-DE_mumi)*DE_imi/(1-DEUS_gammaimi);
 DENL_imi = (1
 -DERA_numi
 -DEAT_numi
@@ -52305,21 +52882,21 @@ DENL_imi = (1
 -DERU_numi
 -DERW_numi
 -DEUS_numi
-)*((NL_pex*DENL_rer)/DE_pimi)^(-DE_mumi)*DE_imi;
+)*((NL_pex*DENL_rer)/(DENL_gammaimidag*DE_pimi))^(-DE_mumi)*DE_imi/(1-DENL_gammaimi);
 // Price of the consumption good (import)
 DE_pimi^(1-DE_mumi) =
-+DERA_numi * (RA_pex*DERA_rer)^(1-DE_mumi)
-+DEAT_numi * (AT_pex*DEAT_rer)^(1-DE_mumi)
-+DEBE_numi * (BE_pex*DEBE_rer)^(1-DE_mumi)
-+DEES_numi * (ES_pex*DEES_rer)^(1-DE_mumi)
-+DEFI_numi * (FI_pex*DEFI_rer)^(1-DE_mumi)
-+DEFR_numi * (FR_pex*DEFR_rer)^(1-DE_mumi)
-+DEGR_numi * (GR_pex*DEGR_rer)^(1-DE_mumi)
-+DEIT_numi * (IT_pex*DEIT_rer)^(1-DE_mumi)
-+DEPT_numi * (PT_pex*DEPT_rer)^(1-DE_mumi)
-+DERU_numi * (RU_pex*DERU_rer)^(1-DE_mumi)
-+DERW_numi * (RW_pex*DERW_rer)^(1-DE_mumi)
-+DEUS_numi * (US_pex*DEUS_rer)^(1-DE_mumi)
++DERA_numi *((RA_pex*DERA_rer)/DERA_gammaimidag)^(1-DE_mumi)
++DEAT_numi *((AT_pex*DEAT_rer)/DEAT_gammaimidag)^(1-DE_mumi)
++DEBE_numi *((BE_pex*DEBE_rer)/DEBE_gammaimidag)^(1-DE_mumi)
++DEES_numi *((ES_pex*DEES_rer)/DEES_gammaimidag)^(1-DE_mumi)
++DEFI_numi *((FI_pex*DEFI_rer)/DEFI_gammaimidag)^(1-DE_mumi)
++DEFR_numi *((FR_pex*DEFR_rer)/DEFR_gammaimidag)^(1-DE_mumi)
++DEGR_numi *((GR_pex*DEGR_rer)/DEGR_gammaimidag)^(1-DE_mumi)
++DEIT_numi *((IT_pex*DEIT_rer)/DEIT_gammaimidag)^(1-DE_mumi)
++DEPT_numi *((PT_pex*DEPT_rer)/DEPT_gammaimidag)^(1-DE_mumi)
++DERU_numi *((RU_pex*DERU_rer)/DERU_gammaimidag)^(1-DE_mumi)
++DERW_numi *((RW_pex*DERW_rer)/DERW_gammaimidag)^(1-DE_mumi)
++DEUS_numi *((US_pex*DEUS_rer)/DEUS_gammaimidag)^(1-DE_mumi)
 +(1
 -DERA_numi
 -DEAT_numi
@@ -52333,23 +52910,23 @@ DE_pimi^(1-DE_mumi) =
 -DERU_numi
 -DERW_numi
 -DEUS_numi
-)*(NL_pex*DENL_rer)^(1-DE_mumi);
+)*((NL_pex*DENL_rer)/DENL_gammaimidag)^(1-DE_mumi);
 // Private consumption good (import) inflation
 DE_piimi = DE_pimi/DE_pimi(-1)*DE_pic;
 // Private consumption good (import)
 DE_imcg^((DE_mumcg-1)/DE_mumcg) =
-+DERA_numcg ^(1/DE_mumcg)*DERA_imcg^(1-1/DE_mumcg)
-+DEAT_numcg ^(1/DE_mumcg)*DEAT_imcg^(1-1/DE_mumcg)
-+DEBE_numcg ^(1/DE_mumcg)*DEBE_imcg^(1-1/DE_mumcg)
-+DEES_numcg ^(1/DE_mumcg)*DEES_imcg^(1-1/DE_mumcg)
-+DEFI_numcg ^(1/DE_mumcg)*DEFI_imcg^(1-1/DE_mumcg)
-+DEFR_numcg ^(1/DE_mumcg)*DEFR_imcg^(1-1/DE_mumcg)
-+DEGR_numcg ^(1/DE_mumcg)*DEGR_imcg^(1-1/DE_mumcg)
-+DEIT_numcg ^(1/DE_mumcg)*DEIT_imcg^(1-1/DE_mumcg)
-+DEPT_numcg ^(1/DE_mumcg)*DEPT_imcg^(1-1/DE_mumcg)
-+DERU_numcg ^(1/DE_mumcg)*DERU_imcg^(1-1/DE_mumcg)
-+DERW_numcg ^(1/DE_mumcg)*DERW_imcg^(1-1/DE_mumcg)
-+DEUS_numcg ^(1/DE_mumcg)*DEUS_imcg^(1-1/DE_mumcg)
++DERA_numcg ^(1/DE_mumcg)*((1-DERA_gammaimcg)*DERA_imcg)^(1-1/DE_mumcg)
++DEAT_numcg ^(1/DE_mumcg)*((1-DEAT_gammaimcg)*DEAT_imcg)^(1-1/DE_mumcg)
++DEBE_numcg ^(1/DE_mumcg)*((1-DEBE_gammaimcg)*DEBE_imcg)^(1-1/DE_mumcg)
++DEES_numcg ^(1/DE_mumcg)*((1-DEES_gammaimcg)*DEES_imcg)^(1-1/DE_mumcg)
++DEFI_numcg ^(1/DE_mumcg)*((1-DEFI_gammaimcg)*DEFI_imcg)^(1-1/DE_mumcg)
++DEFR_numcg ^(1/DE_mumcg)*((1-DEFR_gammaimcg)*DEFR_imcg)^(1-1/DE_mumcg)
++DEGR_numcg ^(1/DE_mumcg)*((1-DEGR_gammaimcg)*DEGR_imcg)^(1-1/DE_mumcg)
++DEIT_numcg ^(1/DE_mumcg)*((1-DEIT_gammaimcg)*DEIT_imcg)^(1-1/DE_mumcg)
++DEPT_numcg ^(1/DE_mumcg)*((1-DEPT_gammaimcg)*DEPT_imcg)^(1-1/DE_mumcg)
++DERU_numcg ^(1/DE_mumcg)*((1-DERU_gammaimcg)*DERU_imcg)^(1-1/DE_mumcg)
++DERW_numcg ^(1/DE_mumcg)*((1-DERW_gammaimcg)*DERW_imcg)^(1-1/DE_mumcg)
++DEUS_numcg ^(1/DE_mumcg)*((1-DEUS_gammaimcg)*DEUS_imcg)^(1-1/DE_mumcg)
 +(1
 -DERA_numcg
 -DEAT_numcg
@@ -52363,29 +52940,29 @@ DE_imcg^((DE_mumcg-1)/DE_mumcg) =
 -DERU_numcg
 -DERW_numcg
 -DEUS_numcg
-)^(1/DE_mumcg)*DENL_imcg^(1-1/DE_mumcg);
+)^(1/DE_mumcg)*((1-DENL_gammaimcg)*DENL_imcg)^(1-1/DE_mumcg);
 // Demand for bilateral consumption import goods
-DERA_imcg = DERA_numcg*((RA_pex*DERA_rer)/DE_pimcg)^(-DE_mumcg)*DE_imcg;
+DERA_imcg = DERA_numcg*((RA_pex*DERA_rer)/(DERA_gammaimcgdag*DE_pimcg))^(-DE_mumcg)*DE_imcg/(1-DERA_gammaimcg);
 // Demand for bilateral consumption import goods
-DEAT_imcg = DEAT_numcg*((AT_pex*DEAT_rer)/DE_pimcg)^(-DE_mumcg)*DE_imcg;
+DEAT_imcg = DEAT_numcg*((AT_pex*DEAT_rer)/(DEAT_gammaimcgdag*DE_pimcg))^(-DE_mumcg)*DE_imcg/(1-DEAT_gammaimcg);
 // Demand for bilateral consumption import goods
-DEBE_imcg = DEBE_numcg*((BE_pex*DEBE_rer)/DE_pimcg)^(-DE_mumcg)*DE_imcg;
+DEBE_imcg = DEBE_numcg*((BE_pex*DEBE_rer)/(DEBE_gammaimcgdag*DE_pimcg))^(-DE_mumcg)*DE_imcg/(1-DEBE_gammaimcg);
 // Demand for bilateral consumption import goods
-DEES_imcg = DEES_numcg*((ES_pex*DEES_rer)/DE_pimcg)^(-DE_mumcg)*DE_imcg;
+DEES_imcg = DEES_numcg*((ES_pex*DEES_rer)/(DEES_gammaimcgdag*DE_pimcg))^(-DE_mumcg)*DE_imcg/(1-DEES_gammaimcg);
 // Demand for bilateral consumption import goods
-DEFI_imcg = DEFI_numcg*((FI_pex*DEFI_rer)/DE_pimcg)^(-DE_mumcg)*DE_imcg;
+DEFI_imcg = DEFI_numcg*((FI_pex*DEFI_rer)/(DEFI_gammaimcgdag*DE_pimcg))^(-DE_mumcg)*DE_imcg/(1-DEFI_gammaimcg);
 // Demand for bilateral consumption import goods
-DEFR_imcg = DEFR_numcg*((FR_pex*DEFR_rer)/DE_pimcg)^(-DE_mumcg)*DE_imcg;
+DEFR_imcg = DEFR_numcg*((FR_pex*DEFR_rer)/(DEFR_gammaimcgdag*DE_pimcg))^(-DE_mumcg)*DE_imcg/(1-DEFR_gammaimcg);
 // Demand for bilateral consumption import goods
-DEGR_imcg = DEGR_numcg*((GR_pex*DEGR_rer)/DE_pimcg)^(-DE_mumcg)*DE_imcg;
+DEGR_imcg = DEGR_numcg*((GR_pex*DEGR_rer)/(DEGR_gammaimcgdag*DE_pimcg))^(-DE_mumcg)*DE_imcg/(1-DEGR_gammaimcg);
 // Demand for bilateral consumption import goods
-DEIT_imcg = DEIT_numcg*((IT_pex*DEIT_rer)/DE_pimcg)^(-DE_mumcg)*DE_imcg;
+DEIT_imcg = DEIT_numcg*((IT_pex*DEIT_rer)/(DEIT_gammaimcgdag*DE_pimcg))^(-DE_mumcg)*DE_imcg/(1-DEIT_gammaimcg);
 // Demand for bilateral consumption import goods
-DEPT_imcg = DEPT_numcg*((PT_pex*DEPT_rer)/DE_pimcg)^(-DE_mumcg)*DE_imcg;
+DEPT_imcg = DEPT_numcg*((PT_pex*DEPT_rer)/(DEPT_gammaimcgdag*DE_pimcg))^(-DE_mumcg)*DE_imcg/(1-DEPT_gammaimcg);
 // Demand for bilateral consumption import goods
-DERW_imcg = DERW_numcg*((RW_pex*DERW_rer)/DE_pimcg)^(-DE_mumcg)*DE_imcg;
+DERW_imcg = DERW_numcg*((RW_pex*DERW_rer)/(DERW_gammaimcgdag*DE_pimcg))^(-DE_mumcg)*DE_imcg/(1-DERW_gammaimcg);
 // Demand for bilateral consumption import goods
-DEUS_imcg = DEUS_numcg*((US_pex*DEUS_rer)/DE_pimcg)^(-DE_mumcg)*DE_imcg;
+DEUS_imcg = DEUS_numcg*((US_pex*DEUS_rer)/(DEUS_gammaimcgdag*DE_pimcg))^(-DE_mumcg)*DE_imcg/(1-DEUS_gammaimcg);
 DENL_imcg = (1
 -DERA_numcg
 -DEAT_numcg
@@ -52399,21 +52976,21 @@ DENL_imcg = (1
 -DERU_numcg
 -DERW_numcg
 -DEUS_numcg
-)*((NL_pex*DENL_rer)/DE_pimcg)^(-DE_mumcg)*DE_imcg;
+)*((NL_pex*DENL_rer)/(DENL_gammaimcgdag*DE_pimcg))^(-DE_mumcg)*DE_imcg/(1-DENL_gammaimcg);
 // Price of the consumption good (import)
 DE_pimcg^(1-DE_mumcg) =
-+DERA_numcg * (RA_pex*DERA_rer)^(1-DE_mumcg)
-+DEAT_numcg * (AT_pex*DEAT_rer)^(1-DE_mumcg)
-+DEBE_numcg * (BE_pex*DEBE_rer)^(1-DE_mumcg)
-+DEES_numcg * (ES_pex*DEES_rer)^(1-DE_mumcg)
-+DEFI_numcg * (FI_pex*DEFI_rer)^(1-DE_mumcg)
-+DEFR_numcg * (FR_pex*DEFR_rer)^(1-DE_mumcg)
-+DEGR_numcg * (GR_pex*DEGR_rer)^(1-DE_mumcg)
-+DEIT_numcg * (IT_pex*DEIT_rer)^(1-DE_mumcg)
-+DEPT_numcg * (PT_pex*DEPT_rer)^(1-DE_mumcg)
-+DERU_numcg * (RU_pex*DERU_rer)^(1-DE_mumcg)
-+DERW_numcg * (RW_pex*DERW_rer)^(1-DE_mumcg)
-+DEUS_numcg * (US_pex*DEUS_rer)^(1-DE_mumcg)
++DERA_numcg *((RA_pex*DERA_rer)/DERA_gammaimcgdag)^(1-DE_mumcg)
++DEAT_numcg *((AT_pex*DEAT_rer)/DEAT_gammaimcgdag)^(1-DE_mumcg)
++DEBE_numcg *((BE_pex*DEBE_rer)/DEBE_gammaimcgdag)^(1-DE_mumcg)
++DEES_numcg *((ES_pex*DEES_rer)/DEES_gammaimcgdag)^(1-DE_mumcg)
++DEFI_numcg *((FI_pex*DEFI_rer)/DEFI_gammaimcgdag)^(1-DE_mumcg)
++DEFR_numcg *((FR_pex*DEFR_rer)/DEFR_gammaimcgdag)^(1-DE_mumcg)
++DEGR_numcg *((GR_pex*DEGR_rer)/DEGR_gammaimcgdag)^(1-DE_mumcg)
++DEIT_numcg *((IT_pex*DEIT_rer)/DEIT_gammaimcgdag)^(1-DE_mumcg)
++DEPT_numcg *((PT_pex*DEPT_rer)/DEPT_gammaimcgdag)^(1-DE_mumcg)
++DERU_numcg *((RU_pex*DERU_rer)/DERU_gammaimcgdag)^(1-DE_mumcg)
++DERW_numcg *((RW_pex*DERW_rer)/DERW_gammaimcgdag)^(1-DE_mumcg)
++DEUS_numcg *((US_pex*DEUS_rer)/DEUS_gammaimcgdag)^(1-DE_mumcg)
 +(1
 -DERA_numcg
 -DEAT_numcg
@@ -52427,23 +53004,23 @@ DE_pimcg^(1-DE_mumcg) =
 -DERU_numcg
 -DERW_numcg
 -DEUS_numcg
-)*(NL_pex*DENL_rer)^(1-DE_mumcg);
+)*((NL_pex*DENL_rer)/DENL_gammaimcgdag)^(1-DE_mumcg);
 // Private consumption good (import) inflation
 DE_piimcg = DE_pimcg/DE_pimcg(-1)*DE_pic;
 // Private consumption good (import)
 DE_imig^((DE_mumig-1)/DE_mumig) =
-+DERA_numig ^(1/DE_mumig)*DERA_imig^(1-1/DE_mumig)
-+DEAT_numig ^(1/DE_mumig)*DEAT_imig^(1-1/DE_mumig)
-+DEBE_numig ^(1/DE_mumig)*DEBE_imig^(1-1/DE_mumig)
-+DEES_numig ^(1/DE_mumig)*DEES_imig^(1-1/DE_mumig)
-+DEFI_numig ^(1/DE_mumig)*DEFI_imig^(1-1/DE_mumig)
-+DEFR_numig ^(1/DE_mumig)*DEFR_imig^(1-1/DE_mumig)
-+DEGR_numig ^(1/DE_mumig)*DEGR_imig^(1-1/DE_mumig)
-+DEIT_numig ^(1/DE_mumig)*DEIT_imig^(1-1/DE_mumig)
-+DEPT_numig ^(1/DE_mumig)*DEPT_imig^(1-1/DE_mumig)
-+DERU_numig ^(1/DE_mumig)*DERU_imig^(1-1/DE_mumig)
-+DERW_numig ^(1/DE_mumig)*DERW_imig^(1-1/DE_mumig)
-+DEUS_numig ^(1/DE_mumig)*DEUS_imig^(1-1/DE_mumig)
++DERA_numig ^(1/DE_mumig)*((1-DERA_gammaimig)*DERA_imig)^(1-1/DE_mumig)
++DEAT_numig ^(1/DE_mumig)*((1-DEAT_gammaimig)*DEAT_imig)^(1-1/DE_mumig)
++DEBE_numig ^(1/DE_mumig)*((1-DEBE_gammaimig)*DEBE_imig)^(1-1/DE_mumig)
++DEES_numig ^(1/DE_mumig)*((1-DEES_gammaimig)*DEES_imig)^(1-1/DE_mumig)
++DEFI_numig ^(1/DE_mumig)*((1-DEFI_gammaimig)*DEFI_imig)^(1-1/DE_mumig)
++DEFR_numig ^(1/DE_mumig)*((1-DEFR_gammaimig)*DEFR_imig)^(1-1/DE_mumig)
++DEGR_numig ^(1/DE_mumig)*((1-DEGR_gammaimig)*DEGR_imig)^(1-1/DE_mumig)
++DEIT_numig ^(1/DE_mumig)*((1-DEIT_gammaimig)*DEIT_imig)^(1-1/DE_mumig)
++DEPT_numig ^(1/DE_mumig)*((1-DEPT_gammaimig)*DEPT_imig)^(1-1/DE_mumig)
++DERU_numig ^(1/DE_mumig)*((1-DERU_gammaimig)*DERU_imig)^(1-1/DE_mumig)
++DERW_numig ^(1/DE_mumig)*((1-DERW_gammaimig)*DERW_imig)^(1-1/DE_mumig)
++DEUS_numig ^(1/DE_mumig)*((1-DEUS_gammaimig)*DEUS_imig)^(1-1/DE_mumig)
 +(1
 -DERA_numig
 -DEAT_numig
@@ -52457,29 +53034,29 @@ DE_imig^((DE_mumig-1)/DE_mumig) =
 -DERU_numig
 -DERW_numig
 -DEUS_numig
-)^(1/DE_mumig)*DENL_imig^(1-1/DE_mumig);
+)^(1/DE_mumig)*((1-DENL_gammaimig)*DENL_imig)^(1-1/DE_mumig);
 // Demand for bilateral consumption import goods
-DERA_imig = DERA_numig*((RA_pex*DERA_rer)/DE_pimig)^(-DE_mumig)*DE_imig;
+DERA_imig = DERA_numig*((RA_pex*DERA_rer)/(DERA_gammaimigdag*DE_pimig))^(-DE_mumig)*DE_imig/(1-DERA_gammaimig);
 // Demand for bilateral consumption import goods
-DEAT_imig = DEAT_numig*((AT_pex*DEAT_rer)/DE_pimig)^(-DE_mumig)*DE_imig;
+DEAT_imig = DEAT_numig*((AT_pex*DEAT_rer)/(DEAT_gammaimigdag*DE_pimig))^(-DE_mumig)*DE_imig/(1-DEAT_gammaimig);
 // Demand for bilateral consumption import goods
-DEBE_imig = DEBE_numig*((BE_pex*DEBE_rer)/DE_pimig)^(-DE_mumig)*DE_imig;
+DEBE_imig = DEBE_numig*((BE_pex*DEBE_rer)/(DEBE_gammaimigdag*DE_pimig))^(-DE_mumig)*DE_imig/(1-DEBE_gammaimig);
 // Demand for bilateral consumption import goods
-DEES_imig = DEES_numig*((ES_pex*DEES_rer)/DE_pimig)^(-DE_mumig)*DE_imig;
+DEES_imig = DEES_numig*((ES_pex*DEES_rer)/(DEES_gammaimigdag*DE_pimig))^(-DE_mumig)*DE_imig/(1-DEES_gammaimig);
 // Demand for bilateral consumption import goods
-DEFI_imig = DEFI_numig*((FI_pex*DEFI_rer)/DE_pimig)^(-DE_mumig)*DE_imig;
+DEFI_imig = DEFI_numig*((FI_pex*DEFI_rer)/(DEFI_gammaimigdag*DE_pimig))^(-DE_mumig)*DE_imig/(1-DEFI_gammaimig);
 // Demand for bilateral consumption import goods
-DEFR_imig = DEFR_numig*((FR_pex*DEFR_rer)/DE_pimig)^(-DE_mumig)*DE_imig;
+DEFR_imig = DEFR_numig*((FR_pex*DEFR_rer)/(DEFR_gammaimigdag*DE_pimig))^(-DE_mumig)*DE_imig/(1-DEFR_gammaimig);
 // Demand for bilateral consumption import goods
-DEGR_imig = DEGR_numig*((GR_pex*DEGR_rer)/DE_pimig)^(-DE_mumig)*DE_imig;
+DEGR_imig = DEGR_numig*((GR_pex*DEGR_rer)/(DEGR_gammaimigdag*DE_pimig))^(-DE_mumig)*DE_imig/(1-DEGR_gammaimig);
 // Demand for bilateral consumption import goods
-DEIT_imig = DEIT_numig*((IT_pex*DEIT_rer)/DE_pimig)^(-DE_mumig)*DE_imig;
+DEIT_imig = DEIT_numig*((IT_pex*DEIT_rer)/(DEIT_gammaimigdag*DE_pimig))^(-DE_mumig)*DE_imig/(1-DEIT_gammaimig);
 // Demand for bilateral consumption import goods
-DEPT_imig = DEPT_numig*((PT_pex*DEPT_rer)/DE_pimig)^(-DE_mumig)*DE_imig;
+DEPT_imig = DEPT_numig*((PT_pex*DEPT_rer)/(DEPT_gammaimigdag*DE_pimig))^(-DE_mumig)*DE_imig/(1-DEPT_gammaimig);
 // Demand for bilateral consumption import goods
-DERW_imig = DERW_numig*((RW_pex*DERW_rer)/DE_pimig)^(-DE_mumig)*DE_imig;
+DERW_imig = DERW_numig*((RW_pex*DERW_rer)/(DERW_gammaimigdag*DE_pimig))^(-DE_mumig)*DE_imig/(1-DERW_gammaimig);
 // Demand for bilateral consumption import goods
-DEUS_imig = DEUS_numig*((US_pex*DEUS_rer)/DE_pimig)^(-DE_mumig)*DE_imig;
+DEUS_imig = DEUS_numig*((US_pex*DEUS_rer)/(DEUS_gammaimigdag*DE_pimig))^(-DE_mumig)*DE_imig/(1-DEUS_gammaimig);
 DENL_imig = (1
 -DERA_numig
 -DEAT_numig
@@ -52493,21 +53070,21 @@ DENL_imig = (1
 -DERU_numig
 -DERW_numig
 -DEUS_numig
-)*((NL_pex*DENL_rer)/DE_pimig)^(-DE_mumig)*DE_imig;
+)*((NL_pex*DENL_rer)/(DENL_gammaimigdag*DE_pimig))^(-DE_mumig)*DE_imig/(1-DENL_gammaimig);
 // Price of the consumption good (import)
 DE_pimig^(1-DE_mumig) =
-+DERA_numig * (RA_pex*DERA_rer)^(1-DE_mumig)
-+DEAT_numig * (AT_pex*DEAT_rer)^(1-DE_mumig)
-+DEBE_numig * (BE_pex*DEBE_rer)^(1-DE_mumig)
-+DEES_numig * (ES_pex*DEES_rer)^(1-DE_mumig)
-+DEFI_numig * (FI_pex*DEFI_rer)^(1-DE_mumig)
-+DEFR_numig * (FR_pex*DEFR_rer)^(1-DE_mumig)
-+DEGR_numig * (GR_pex*DEGR_rer)^(1-DE_mumig)
-+DEIT_numig * (IT_pex*DEIT_rer)^(1-DE_mumig)
-+DEPT_numig * (PT_pex*DEPT_rer)^(1-DE_mumig)
-+DERU_numig * (RU_pex*DERU_rer)^(1-DE_mumig)
-+DERW_numig * (RW_pex*DERW_rer)^(1-DE_mumig)
-+DEUS_numig * (US_pex*DEUS_rer)^(1-DE_mumig)
++DERA_numig *((RA_pex*DERA_rer)/DERA_gammaimigdag)^(1-DE_mumig)
++DEAT_numig *((AT_pex*DEAT_rer)/DEAT_gammaimigdag)^(1-DE_mumig)
++DEBE_numig *((BE_pex*DEBE_rer)/DEBE_gammaimigdag)^(1-DE_mumig)
++DEES_numig *((ES_pex*DEES_rer)/DEES_gammaimigdag)^(1-DE_mumig)
++DEFI_numig *((FI_pex*DEFI_rer)/DEFI_gammaimigdag)^(1-DE_mumig)
++DEFR_numig *((FR_pex*DEFR_rer)/DEFR_gammaimigdag)^(1-DE_mumig)
++DEGR_numig *((GR_pex*DEGR_rer)/DEGR_gammaimigdag)^(1-DE_mumig)
++DEIT_numig *((IT_pex*DEIT_rer)/DEIT_gammaimigdag)^(1-DE_mumig)
++DEPT_numig *((PT_pex*DEPT_rer)/DEPT_gammaimigdag)^(1-DE_mumig)
++DERU_numig *((RU_pex*DERU_rer)/DERU_gammaimigdag)^(1-DE_mumig)
++DERW_numig *((RW_pex*DERW_rer)/DERW_gammaimigdag)^(1-DE_mumig)
++DEUS_numig *((US_pex*DEUS_rer)/DEUS_gammaimigdag)^(1-DE_mumig)
 +(1
 -DERA_numig
 -DEAT_numig
@@ -52521,7 +53098,7 @@ DE_pimig^(1-DE_mumig) =
 -DERU_numig
 -DERW_numig
 -DEUS_numig
-)*(NL_pex*DENL_rer)^(1-DE_mumig);
+)*((NL_pex*DENL_rer)/DENL_gammaimigdag)^(1-DE_mumig);
 // Private consumption good (import) inflation
 DE_piimig = DE_pimig/DE_pimig(-1)*DE_pic;
 // Private consumption good (import) inflation
@@ -52622,32 +53199,58 @@ DE_pttc^(1-DE_mutc) = (DE_nutc)*DE_pht^(1-DE_mutc)+(1-DE_nutc)*DE_pimc^(1-DE_mut
 1^(1-DE_muc) = (DE_nuc)*DE_pttc^(1-DE_muc)+(1-DE_nuc)*DE_pnt^(1-DE_muc);
 // Demand for domestic intermediate goods
 DE_htc = DE_nutc*(DE_pht/DE_pttc)^(-DE_mutc)*DE_ttc;
-DERA_gammaimc = 0;
-DERA_gammaimcdag = 1;
-DEAT_gammaimc = 0;
-DEAT_gammaimcdag = 1;
-DEBE_gammaimc = 0;
-DEBE_gammaimcdag = 1;
-DEES_gammaimc = 0;
-DEES_gammaimcdag = 1;
-DEFI_gammaimc = 0;
-DEFI_gammaimcdag = 1;
-DEFR_gammaimc = 0;
-DEFR_gammaimcdag = 1;
-DEGR_gammaimc = 0;
-DEGR_gammaimcdag = 1;
-DEIT_gammaimc = 0;
-DEIT_gammaimcdag = 1;
-DENL_gammaimc = 0;
-DENL_gammaimcdag = 1;
-DEPT_gammaimc = 0;
-DEPT_gammaimcdag = 1;
-DERU_gammaimc = 0;
-DERU_gammaimcdag = 1;
-DERW_gammaimc = 0;
-DERW_gammaimcdag = 1;
-DEUS_gammaimc = 0;
-DEUS_gammaimcdag = 1;
+// Import adjustment cost
+DERA_gammaimc = DE_gammaimc1/2*((DERA_imc/DE_qc)/(DERA_imc(-1)/DE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DERA_gammaimcdag = 1-DERA_gammaimc-DE_gammaimc1*((DERA_imc/DE_qc)/(DERA_imc(-1)/DE_qc(-1))-1)*(DERA_imc/DE_qc)/(DERA_imc(-1)/DE_qc(-1));
+// Import adjustment cost
+DEAT_gammaimc = DE_gammaimc1/2*((DEAT_imc/DE_qc)/(DEAT_imc(-1)/DE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEAT_gammaimcdag = 1-DEAT_gammaimc-DE_gammaimc1*((DEAT_imc/DE_qc)/(DEAT_imc(-1)/DE_qc(-1))-1)*(DEAT_imc/DE_qc)/(DEAT_imc(-1)/DE_qc(-1));
+// Import adjustment cost
+DEBE_gammaimc = DE_gammaimc1/2*((DEBE_imc/DE_qc)/(DEBE_imc(-1)/DE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEBE_gammaimcdag = 1-DEBE_gammaimc-DE_gammaimc1*((DEBE_imc/DE_qc)/(DEBE_imc(-1)/DE_qc(-1))-1)*(DEBE_imc/DE_qc)/(DEBE_imc(-1)/DE_qc(-1));
+// Import adjustment cost
+DEES_gammaimc = DE_gammaimc1/2*((DEES_imc/DE_qc)/(DEES_imc(-1)/DE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEES_gammaimcdag = 1-DEES_gammaimc-DE_gammaimc1*((DEES_imc/DE_qc)/(DEES_imc(-1)/DE_qc(-1))-1)*(DEES_imc/DE_qc)/(DEES_imc(-1)/DE_qc(-1));
+// Import adjustment cost
+DEFI_gammaimc = DE_gammaimc1/2*((DEFI_imc/DE_qc)/(DEFI_imc(-1)/DE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEFI_gammaimcdag = 1-DEFI_gammaimc-DE_gammaimc1*((DEFI_imc/DE_qc)/(DEFI_imc(-1)/DE_qc(-1))-1)*(DEFI_imc/DE_qc)/(DEFI_imc(-1)/DE_qc(-1));
+// Import adjustment cost
+DEFR_gammaimc = DE_gammaimc1/2*((DEFR_imc/DE_qc)/(DEFR_imc(-1)/DE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEFR_gammaimcdag = 1-DEFR_gammaimc-DE_gammaimc1*((DEFR_imc/DE_qc)/(DEFR_imc(-1)/DE_qc(-1))-1)*(DEFR_imc/DE_qc)/(DEFR_imc(-1)/DE_qc(-1));
+// Import adjustment cost
+DEGR_gammaimc = DE_gammaimc1/2*((DEGR_imc/DE_qc)/(DEGR_imc(-1)/DE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEGR_gammaimcdag = 1-DEGR_gammaimc-DE_gammaimc1*((DEGR_imc/DE_qc)/(DEGR_imc(-1)/DE_qc(-1))-1)*(DEGR_imc/DE_qc)/(DEGR_imc(-1)/DE_qc(-1));
+// Import adjustment cost
+DEIT_gammaimc = DE_gammaimc1/2*((DEIT_imc/DE_qc)/(DEIT_imc(-1)/DE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEIT_gammaimcdag = 1-DEIT_gammaimc-DE_gammaimc1*((DEIT_imc/DE_qc)/(DEIT_imc(-1)/DE_qc(-1))-1)*(DEIT_imc/DE_qc)/(DEIT_imc(-1)/DE_qc(-1));
+// Import adjustment cost
+DENL_gammaimc = DE_gammaimc1/2*((DENL_imc/DE_qc)/(DENL_imc(-1)/DE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DENL_gammaimcdag = 1-DENL_gammaimc-DE_gammaimc1*((DENL_imc/DE_qc)/(DENL_imc(-1)/DE_qc(-1))-1)*(DENL_imc/DE_qc)/(DENL_imc(-1)/DE_qc(-1));
+// Import adjustment cost
+DEPT_gammaimc = DE_gammaimc1/2*((DEPT_imc/DE_qc)/(DEPT_imc(-1)/DE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEPT_gammaimcdag = 1-DEPT_gammaimc-DE_gammaimc1*((DEPT_imc/DE_qc)/(DEPT_imc(-1)/DE_qc(-1))-1)*(DEPT_imc/DE_qc)/(DEPT_imc(-1)/DE_qc(-1));
+// Import adjustment cost
+DERU_gammaimc = DE_gammaimc1/2*((DERU_imc/DE_qc)/(DERU_imc(-1)/DE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DERU_gammaimcdag = 1-DERU_gammaimc-DE_gammaimc1*((DERU_imc/DE_qc)/(DERU_imc(-1)/DE_qc(-1))-1)*(DERU_imc/DE_qc)/(DERU_imc(-1)/DE_qc(-1));
+// Import adjustment cost
+DERW_gammaimc = DE_gammaimc1/2*((DERW_imc/DE_qc)/(DERW_imc(-1)/DE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DERW_gammaimcdag = 1-DERW_gammaimc-DE_gammaimc1*((DERW_imc/DE_qc)/(DERW_imc(-1)/DE_qc(-1))-1)*(DERW_imc/DE_qc)/(DERW_imc(-1)/DE_qc(-1));
+// Import adjustment cost
+DEUS_gammaimc = DE_gammaimc1/2*((DEUS_imc/DE_qc)/(DEUS_imc(-1)/DE_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEUS_gammaimcdag = 1-DEUS_gammaimc-DE_gammaimc1*((DEUS_imc/DE_qc)/(DEUS_imc(-1)/DE_qc(-1))-1)*(DEUS_imc/DE_qc)/(DEUS_imc(-1)/DE_qc(-1));
 // Private consumption good (tradable)
 DE_tti^((DE_muti-1)/DE_muti) = (DE_nuti)^(1/DE_muti)*DE_hti^(1-1/DE_muti)+(1-DE_nuti)^(1/DE_muti)*DE_imi^(1-1/DE_muti);
 // Private consumption good  (total)
@@ -52660,35 +53263,60 @@ DE_ptti^(1-DE_muti) = (DE_nuti)*DE_pht^(1-DE_muti)+(1-DE_nuti)*DE_pimi^(1-DE_mut
 DE_pi^(1-DE_mui) = (DE_nui)*DE_ptti^(1-DE_mui)+(1-DE_nui)*DE_pnt^(1-DE_mui);
 // Auxiliary equation for the price of the investment good in steady state
 // this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
-DE_pibar = DE_pi;
 // Demand for domestic intermediate goods
 DE_hti = DE_nuti*(DE_pht/DE_ptti)^(-DE_muti)*DE_tti;
-DERA_gammaimi = 0;
-DERA_gammaimidag = 1;
-DEAT_gammaimi = 0;
-DEAT_gammaimidag = 1;
-DEBE_gammaimi = 0;
-DEBE_gammaimidag = 1;
-DEES_gammaimi = 0;
-DEES_gammaimidag = 1;
-DEFI_gammaimi = 0;
-DEFI_gammaimidag = 1;
-DEFR_gammaimi = 0;
-DEFR_gammaimidag = 1;
-DEGR_gammaimi = 0;
-DEGR_gammaimidag = 1;
-DEIT_gammaimi = 0;
-DEIT_gammaimidag = 1;
-DENL_gammaimi = 0;
-DENL_gammaimidag = 1;
-DEPT_gammaimi = 0;
-DEPT_gammaimidag = 1;
-DERU_gammaimi = 0;
-DERU_gammaimidag = 1;
-DERW_gammaimi = 0;
-DERW_gammaimidag = 1;
-DEUS_gammaimi = 0;
-DEUS_gammaimidag = 1;
+// Import adjustment cost
+DERA_gammaimi = DE_gammaimi1/2*((DERA_imi/DE_qi)/(DERA_imi(-1)/DE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DERA_gammaimidag = 1-DERA_gammaimi-DE_gammaimi1*((DERA_imi/DE_qi)/(DERA_imi(-1)/DE_qi)-1)*((DERA_imi/DE_qi)/(DERA_imi(-1)/DE_qi(-1)));
+// Import adjustment cost
+DEAT_gammaimi = DE_gammaimi1/2*((DEAT_imi/DE_qi)/(DEAT_imi(-1)/DE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEAT_gammaimidag = 1-DEAT_gammaimi-DE_gammaimi1*((DEAT_imi/DE_qi)/(DEAT_imi(-1)/DE_qi)-1)*((DEAT_imi/DE_qi)/(DEAT_imi(-1)/DE_qi(-1)));
+// Import adjustment cost
+DEBE_gammaimi = DE_gammaimi1/2*((DEBE_imi/DE_qi)/(DEBE_imi(-1)/DE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEBE_gammaimidag = 1-DEBE_gammaimi-DE_gammaimi1*((DEBE_imi/DE_qi)/(DEBE_imi(-1)/DE_qi)-1)*((DEBE_imi/DE_qi)/(DEBE_imi(-1)/DE_qi(-1)));
+// Import adjustment cost
+DEES_gammaimi = DE_gammaimi1/2*((DEES_imi/DE_qi)/(DEES_imi(-1)/DE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEES_gammaimidag = 1-DEES_gammaimi-DE_gammaimi1*((DEES_imi/DE_qi)/(DEES_imi(-1)/DE_qi)-1)*((DEES_imi/DE_qi)/(DEES_imi(-1)/DE_qi(-1)));
+// Import adjustment cost
+DEFI_gammaimi = DE_gammaimi1/2*((DEFI_imi/DE_qi)/(DEFI_imi(-1)/DE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEFI_gammaimidag = 1-DEFI_gammaimi-DE_gammaimi1*((DEFI_imi/DE_qi)/(DEFI_imi(-1)/DE_qi)-1)*((DEFI_imi/DE_qi)/(DEFI_imi(-1)/DE_qi(-1)));
+// Import adjustment cost
+DEFR_gammaimi = DE_gammaimi1/2*((DEFR_imi/DE_qi)/(DEFR_imi(-1)/DE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEFR_gammaimidag = 1-DEFR_gammaimi-DE_gammaimi1*((DEFR_imi/DE_qi)/(DEFR_imi(-1)/DE_qi)-1)*((DEFR_imi/DE_qi)/(DEFR_imi(-1)/DE_qi(-1)));
+// Import adjustment cost
+DEGR_gammaimi = DE_gammaimi1/2*((DEGR_imi/DE_qi)/(DEGR_imi(-1)/DE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEGR_gammaimidag = 1-DEGR_gammaimi-DE_gammaimi1*((DEGR_imi/DE_qi)/(DEGR_imi(-1)/DE_qi)-1)*((DEGR_imi/DE_qi)/(DEGR_imi(-1)/DE_qi(-1)));
+// Import adjustment cost
+DEIT_gammaimi = DE_gammaimi1/2*((DEIT_imi/DE_qi)/(DEIT_imi(-1)/DE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEIT_gammaimidag = 1-DEIT_gammaimi-DE_gammaimi1*((DEIT_imi/DE_qi)/(DEIT_imi(-1)/DE_qi)-1)*((DEIT_imi/DE_qi)/(DEIT_imi(-1)/DE_qi(-1)));
+// Import adjustment cost
+DENL_gammaimi = DE_gammaimi1/2*((DENL_imi/DE_qi)/(DENL_imi(-1)/DE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DENL_gammaimidag = 1-DENL_gammaimi-DE_gammaimi1*((DENL_imi/DE_qi)/(DENL_imi(-1)/DE_qi)-1)*((DENL_imi/DE_qi)/(DENL_imi(-1)/DE_qi(-1)));
+// Import adjustment cost
+DEPT_gammaimi = DE_gammaimi1/2*((DEPT_imi/DE_qi)/(DEPT_imi(-1)/DE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEPT_gammaimidag = 1-DEPT_gammaimi-DE_gammaimi1*((DEPT_imi/DE_qi)/(DEPT_imi(-1)/DE_qi)-1)*((DEPT_imi/DE_qi)/(DEPT_imi(-1)/DE_qi(-1)));
+// Import adjustment cost
+DERU_gammaimi = DE_gammaimi1/2*((DERU_imi/DE_qi)/(DERU_imi(-1)/DE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DERU_gammaimidag = 1-DERU_gammaimi-DE_gammaimi1*((DERU_imi/DE_qi)/(DERU_imi(-1)/DE_qi)-1)*((DERU_imi/DE_qi)/(DERU_imi(-1)/DE_qi(-1)));
+// Import adjustment cost
+DERW_gammaimi = DE_gammaimi1/2*((DERW_imi/DE_qi)/(DERW_imi(-1)/DE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DERW_gammaimidag = 1-DERW_gammaimi-DE_gammaimi1*((DERW_imi/DE_qi)/(DERW_imi(-1)/DE_qi)-1)*((DERW_imi/DE_qi)/(DERW_imi(-1)/DE_qi(-1)));
+// Import adjustment cost
+DEUS_gammaimi = DE_gammaimi1/2*((DEUS_imi/DE_qi)/(DEUS_imi(-1)/DE_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEUS_gammaimidag = 1-DEUS_gammaimi-DE_gammaimi1*((DEUS_imi/DE_qi)/(DEUS_imi(-1)/DE_qi)-1)*((DEUS_imi/DE_qi)/(DEUS_imi(-1)/DE_qi(-1)));
 // Private consumption good (tradable)
 DE_ttcg^((DE_mutcg-1)/DE_mutcg) = (DE_nutcg)^(1/DE_mutcg)*DE_htcg^(1-1/DE_mutcg)+(1-DE_nutcg)^(1/DE_mutcg)*DE_imcg^(1-1/DE_mutcg);
 // Private consumption good  (total)
@@ -52701,32 +53329,58 @@ DE_pttcg^(1-DE_mutcg) = (DE_nutcg)*DE_pht^(1-DE_mutcg)+(1-DE_nutcg)*DE_pimcg^(1-
 DE_pcg^(1-DE_mucg) = (DE_nucg)*DE_pttcg^(1-DE_mucg)+(1-DE_nucg)*DE_pnt^(1-DE_mucg);
 // Demand for domestic intermediate goods
 DE_htcg = DE_nutcg*(DE_pht/DE_pttcg)^(-DE_mutcg)*DE_ttcg;
-DERA_gammaimcg = 0;
-DERA_gammaimcgdag = 1;
-DEAT_gammaimcg = 0;
-DEAT_gammaimcgdag = 1;
-DEBE_gammaimcg = 0;
-DEBE_gammaimcgdag = 1;
-DEES_gammaimcg = 0;
-DEES_gammaimcgdag = 1;
-DEFI_gammaimcg = 0;
-DEFI_gammaimcgdag = 1;
-DEFR_gammaimcg = 0;
-DEFR_gammaimcgdag = 1;
-DEGR_gammaimcg = 0;
-DEGR_gammaimcgdag = 1;
-DEIT_gammaimcg = 0;
-DEIT_gammaimcgdag = 1;
-DENL_gammaimcg = 0;
-DENL_gammaimcgdag = 1;
-DEPT_gammaimcg = 0;
-DEPT_gammaimcgdag = 1;
-DERU_gammaimcg = 0;
-DERU_gammaimcgdag = 1;
-DERW_gammaimcg = 0;
-DERW_gammaimcgdag = 1;
-DEUS_gammaimcg = 0;
-DEUS_gammaimcgdag = 1;
+// Import adjustment cost
+DERA_gammaimcg = DE_gammaimcg1/2*((DERA_imcg/DE_qcg)/(DERA_imcg(-1)/DE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DERA_gammaimcgdag = 1-DERA_gammaimcg-DE_gammaimcg1*((DERA_imcg/DE_qcg)/(DERA_imcg(-1)/DE_qcg)-1)*((DERA_imcg/DE_qcg)/(DERA_imcg(-1)/DE_qcg(-1)));
+// Import adjustment cost
+DEAT_gammaimcg = DE_gammaimcg1/2*((DEAT_imcg/DE_qcg)/(DEAT_imcg(-1)/DE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEAT_gammaimcgdag = 1-DEAT_gammaimcg-DE_gammaimcg1*((DEAT_imcg/DE_qcg)/(DEAT_imcg(-1)/DE_qcg)-1)*((DEAT_imcg/DE_qcg)/(DEAT_imcg(-1)/DE_qcg(-1)));
+// Import adjustment cost
+DEBE_gammaimcg = DE_gammaimcg1/2*((DEBE_imcg/DE_qcg)/(DEBE_imcg(-1)/DE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEBE_gammaimcgdag = 1-DEBE_gammaimcg-DE_gammaimcg1*((DEBE_imcg/DE_qcg)/(DEBE_imcg(-1)/DE_qcg)-1)*((DEBE_imcg/DE_qcg)/(DEBE_imcg(-1)/DE_qcg(-1)));
+// Import adjustment cost
+DEES_gammaimcg = DE_gammaimcg1/2*((DEES_imcg/DE_qcg)/(DEES_imcg(-1)/DE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEES_gammaimcgdag = 1-DEES_gammaimcg-DE_gammaimcg1*((DEES_imcg/DE_qcg)/(DEES_imcg(-1)/DE_qcg)-1)*((DEES_imcg/DE_qcg)/(DEES_imcg(-1)/DE_qcg(-1)));
+// Import adjustment cost
+DEFI_gammaimcg = DE_gammaimcg1/2*((DEFI_imcg/DE_qcg)/(DEFI_imcg(-1)/DE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEFI_gammaimcgdag = 1-DEFI_gammaimcg-DE_gammaimcg1*((DEFI_imcg/DE_qcg)/(DEFI_imcg(-1)/DE_qcg)-1)*((DEFI_imcg/DE_qcg)/(DEFI_imcg(-1)/DE_qcg(-1)));
+// Import adjustment cost
+DEFR_gammaimcg = DE_gammaimcg1/2*((DEFR_imcg/DE_qcg)/(DEFR_imcg(-1)/DE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEFR_gammaimcgdag = 1-DEFR_gammaimcg-DE_gammaimcg1*((DEFR_imcg/DE_qcg)/(DEFR_imcg(-1)/DE_qcg)-1)*((DEFR_imcg/DE_qcg)/(DEFR_imcg(-1)/DE_qcg(-1)));
+// Import adjustment cost
+DEGR_gammaimcg = DE_gammaimcg1/2*((DEGR_imcg/DE_qcg)/(DEGR_imcg(-1)/DE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEGR_gammaimcgdag = 1-DEGR_gammaimcg-DE_gammaimcg1*((DEGR_imcg/DE_qcg)/(DEGR_imcg(-1)/DE_qcg)-1)*((DEGR_imcg/DE_qcg)/(DEGR_imcg(-1)/DE_qcg(-1)));
+// Import adjustment cost
+DEIT_gammaimcg = DE_gammaimcg1/2*((DEIT_imcg/DE_qcg)/(DEIT_imcg(-1)/DE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEIT_gammaimcgdag = 1-DEIT_gammaimcg-DE_gammaimcg1*((DEIT_imcg/DE_qcg)/(DEIT_imcg(-1)/DE_qcg)-1)*((DEIT_imcg/DE_qcg)/(DEIT_imcg(-1)/DE_qcg(-1)));
+// Import adjustment cost
+DENL_gammaimcg = DE_gammaimcg1/2*((DENL_imcg/DE_qcg)/(DENL_imcg(-1)/DE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DENL_gammaimcgdag = 1-DENL_gammaimcg-DE_gammaimcg1*((DENL_imcg/DE_qcg)/(DENL_imcg(-1)/DE_qcg)-1)*((DENL_imcg/DE_qcg)/(DENL_imcg(-1)/DE_qcg(-1)));
+// Import adjustment cost
+DEPT_gammaimcg = DE_gammaimcg1/2*((DEPT_imcg/DE_qcg)/(DEPT_imcg(-1)/DE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEPT_gammaimcgdag = 1-DEPT_gammaimcg-DE_gammaimcg1*((DEPT_imcg/DE_qcg)/(DEPT_imcg(-1)/DE_qcg)-1)*((DEPT_imcg/DE_qcg)/(DEPT_imcg(-1)/DE_qcg(-1)));
+// Import adjustment cost
+DERU_gammaimcg = DE_gammaimcg1/2*((DERU_imcg/DE_qcg)/(DERU_imcg(-1)/DE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DERU_gammaimcgdag = 1-DERU_gammaimcg-DE_gammaimcg1*((DERU_imcg/DE_qcg)/(DERU_imcg(-1)/DE_qcg)-1)*((DERU_imcg/DE_qcg)/(DERU_imcg(-1)/DE_qcg(-1)));
+// Import adjustment cost
+DERW_gammaimcg = DE_gammaimcg1/2*((DERW_imcg/DE_qcg)/(DERW_imcg(-1)/DE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DERW_gammaimcgdag = 1-DERW_gammaimcg-DE_gammaimcg1*((DERW_imcg/DE_qcg)/(DERW_imcg(-1)/DE_qcg)-1)*((DERW_imcg/DE_qcg)/(DERW_imcg(-1)/DE_qcg(-1)));
+// Import adjustment cost
+DEUS_gammaimcg = DE_gammaimcg1/2*((DEUS_imcg/DE_qcg)/(DEUS_imcg(-1)/DE_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEUS_gammaimcgdag = 1-DEUS_gammaimcg-DE_gammaimcg1*((DEUS_imcg/DE_qcg)/(DEUS_imcg(-1)/DE_qcg)-1)*((DEUS_imcg/DE_qcg)/(DEUS_imcg(-1)/DE_qcg(-1)));
 // Private consumption good (tradable)
 DE_ttig^((DE_mutig-1)/DE_mutig) = (DE_nutig)^(1/DE_mutig)*DE_htig^(1-1/DE_mutig)+(1-DE_nutig)^(1/DE_mutig)*DE_imig^(1-1/DE_mutig);
 // Private consumption good  (total)
@@ -52739,32 +53393,58 @@ DE_pttig^(1-DE_mutig) = (DE_nutig)*DE_pht^(1-DE_mutig)+(1-DE_nutig)*DE_pimig^(1-
 DE_pig^(1-DE_muig) = (DE_nuig)*DE_pttig^(1-DE_muig)+(1-DE_nuig)*DE_pnt^(1-DE_muig);
 // Demand for domestic intermediate goods
 DE_htig = DE_nutig*(DE_pht/DE_pttig)^(-DE_mutig)*DE_ttig;
-DERA_gammaimig = 0;
-DERA_gammaimigdag = 1;
-DEAT_gammaimig = 0;
-DEAT_gammaimigdag = 1;
-DEBE_gammaimig = 0;
-DEBE_gammaimigdag = 1;
-DEES_gammaimig = 0;
-DEES_gammaimigdag = 1;
-DEFI_gammaimig = 0;
-DEFI_gammaimigdag = 1;
-DEFR_gammaimig = 0;
-DEFR_gammaimigdag = 1;
-DEGR_gammaimig = 0;
-DEGR_gammaimigdag = 1;
-DEIT_gammaimig = 0;
-DEIT_gammaimigdag = 1;
-DENL_gammaimig = 0;
-DENL_gammaimigdag = 1;
-DEPT_gammaimig = 0;
-DEPT_gammaimigdag = 1;
-DERU_gammaimig = 0;
-DERU_gammaimigdag = 1;
-DERW_gammaimig = 0;
-DERW_gammaimigdag = 1;
-DEUS_gammaimig = 0;
-DEUS_gammaimigdag = 1;
+// Import adjustment cost
+DERA_gammaimig = DE_gammaimig1/2*((DERA_imig/DE_qig)/(DERA_imig(-1)/DE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DERA_gammaimigdag = 1-DERA_gammaimig-DE_gammaimig1*((DERA_imig/DE_qig)/(DERA_imig(-1)/DE_qig)-1)*((DERA_imig/DE_qig)/(DERA_imig(-1)/DE_qig(-1)));
+// Import adjustment cost
+DEAT_gammaimig = DE_gammaimig1/2*((DEAT_imig/DE_qig)/(DEAT_imig(-1)/DE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEAT_gammaimigdag = 1-DEAT_gammaimig-DE_gammaimig1*((DEAT_imig/DE_qig)/(DEAT_imig(-1)/DE_qig)-1)*((DEAT_imig/DE_qig)/(DEAT_imig(-1)/DE_qig(-1)));
+// Import adjustment cost
+DEBE_gammaimig = DE_gammaimig1/2*((DEBE_imig/DE_qig)/(DEBE_imig(-1)/DE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEBE_gammaimigdag = 1-DEBE_gammaimig-DE_gammaimig1*((DEBE_imig/DE_qig)/(DEBE_imig(-1)/DE_qig)-1)*((DEBE_imig/DE_qig)/(DEBE_imig(-1)/DE_qig(-1)));
+// Import adjustment cost
+DEES_gammaimig = DE_gammaimig1/2*((DEES_imig/DE_qig)/(DEES_imig(-1)/DE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEES_gammaimigdag = 1-DEES_gammaimig-DE_gammaimig1*((DEES_imig/DE_qig)/(DEES_imig(-1)/DE_qig)-1)*((DEES_imig/DE_qig)/(DEES_imig(-1)/DE_qig(-1)));
+// Import adjustment cost
+DEFI_gammaimig = DE_gammaimig1/2*((DEFI_imig/DE_qig)/(DEFI_imig(-1)/DE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEFI_gammaimigdag = 1-DEFI_gammaimig-DE_gammaimig1*((DEFI_imig/DE_qig)/(DEFI_imig(-1)/DE_qig)-1)*((DEFI_imig/DE_qig)/(DEFI_imig(-1)/DE_qig(-1)));
+// Import adjustment cost
+DEFR_gammaimig = DE_gammaimig1/2*((DEFR_imig/DE_qig)/(DEFR_imig(-1)/DE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEFR_gammaimigdag = 1-DEFR_gammaimig-DE_gammaimig1*((DEFR_imig/DE_qig)/(DEFR_imig(-1)/DE_qig)-1)*((DEFR_imig/DE_qig)/(DEFR_imig(-1)/DE_qig(-1)));
+// Import adjustment cost
+DEGR_gammaimig = DE_gammaimig1/2*((DEGR_imig/DE_qig)/(DEGR_imig(-1)/DE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEGR_gammaimigdag = 1-DEGR_gammaimig-DE_gammaimig1*((DEGR_imig/DE_qig)/(DEGR_imig(-1)/DE_qig)-1)*((DEGR_imig/DE_qig)/(DEGR_imig(-1)/DE_qig(-1)));
+// Import adjustment cost
+DEIT_gammaimig = DE_gammaimig1/2*((DEIT_imig/DE_qig)/(DEIT_imig(-1)/DE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEIT_gammaimigdag = 1-DEIT_gammaimig-DE_gammaimig1*((DEIT_imig/DE_qig)/(DEIT_imig(-1)/DE_qig)-1)*((DEIT_imig/DE_qig)/(DEIT_imig(-1)/DE_qig(-1)));
+// Import adjustment cost
+DENL_gammaimig = DE_gammaimig1/2*((DENL_imig/DE_qig)/(DENL_imig(-1)/DE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DENL_gammaimigdag = 1-DENL_gammaimig-DE_gammaimig1*((DENL_imig/DE_qig)/(DENL_imig(-1)/DE_qig)-1)*((DENL_imig/DE_qig)/(DENL_imig(-1)/DE_qig(-1)));
+// Import adjustment cost
+DEPT_gammaimig = DE_gammaimig1/2*((DEPT_imig/DE_qig)/(DEPT_imig(-1)/DE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEPT_gammaimigdag = 1-DEPT_gammaimig-DE_gammaimig1*((DEPT_imig/DE_qig)/(DEPT_imig(-1)/DE_qig)-1)*((DEPT_imig/DE_qig)/(DEPT_imig(-1)/DE_qig(-1)));
+// Import adjustment cost
+DERU_gammaimig = DE_gammaimig1/2*((DERU_imig/DE_qig)/(DERU_imig(-1)/DE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DERU_gammaimigdag = 1-DERU_gammaimig-DE_gammaimig1*((DERU_imig/DE_qig)/(DERU_imig(-1)/DE_qig)-1)*((DERU_imig/DE_qig)/(DERU_imig(-1)/DE_qig(-1)));
+// Import adjustment cost
+DERW_gammaimig = DE_gammaimig1/2*((DERW_imig/DE_qig)/(DERW_imig(-1)/DE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DERW_gammaimigdag = 1-DERW_gammaimig-DE_gammaimig1*((DERW_imig/DE_qig)/(DERW_imig(-1)/DE_qig)-1)*((DERW_imig/DE_qig)/(DERW_imig(-1)/DE_qig(-1)));
+// Import adjustment cost
+DEUS_gammaimig = DE_gammaimig1/2*((DEUS_imig/DE_qig)/(DEUS_imig(-1)/DE_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+DEUS_gammaimigdag = 1-DEUS_gammaimig-DE_gammaimig1*((DEUS_imig/DE_qig)/(DEUS_imig(-1)/DE_qig)-1)*((DEUS_imig/DE_qig)/(DEUS_imig(-1)/DE_qig(-1)));
 // Trade balance
 DE_tb =
 +DE_pex*RA_size/DE_size*RADE_im
@@ -52825,18 +53505,10 @@ DE_ex =
 // Government spending, using DE_pg = DE_pht
 DE_pcg*DE_cg = DE_cgy*DE_pybar*DE_ybar;
 DE_pig*DE_ig = DE_igy*DE_pybar*DE_ybar;
-DE_t = 0;
-DE_b = DE_bytarget*DE_pybar*DE_ybar;
-// Auxiliary equation for steady-state output
-DE_ybar = DE_y;
-// Auxiliary equation for steady-state output
-DE_ytbar = DE_yst;
-// Auxiliary equation for steady-state output
-DE_ynbar = DE_ysn;
-// Auxiliary equation for steady-state output deflator
-DE_pybar = DE_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-DE_trybar = DE_tr/(DE_pybar*DE_ybar);
+// Transfers
+DE_tr = DE_try*DE_pybar*DE_ybar;
+// Fiscal rule
+DE_t/(DE_pybar*DE_ybar) = DE_phitb*(DE_b/(DE_pybar*DE_ybar)-DE_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 DE_ti = DE_upsilont*DE_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -52852,9 +53524,13 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	DE_r^4-1 = DE_rrstar^4*DE_pi4target-1;
-DE_pic4 = DE_pi4target;
-DE_rr-1 = DE_r/DE_pi4target^(1/4)-1;
+		DE_r^4-1 = EA_phirr*(DE_r(-1)^4-1)+(1-EA_phirr)*(DE_rrstar^4*DE_pi4target-1
+		+EA_phirpi*(EA_pic4-DE_pi4target))
+		+EA_phirgy*(EA_ygrowth-1)+EA_epsr;
+// Definition of annual inflation
+DE_pic4 = DE_pic*DE_pic(-1)*DE_pic(-2)*DE_pic(-3);
+// Real interest rate
+DE_rr-1 = DE_r/DE_pic(+1)-1;
 // Equilibrium real interest rate
 DE_rrstar-1 = 1/DE_beta-1;
 //-------------
@@ -52941,68 +53617,68 @@ DE_py*DE_y =
 +DE_pcg*DE_qcg
 +DE_pig*DE_qig
 +DE_pex*RA_size/DE_size*RADE_im
--(RA_pex*DERA_rer)*DERA_imc
--(RA_pex*DERA_rer)*DERA_imi
+-(RA_pex*DERA_rer)*(DERA_imc*(1-DERA_gammaimc)/DERA_gammaimcdag)
+-(RA_pex*DERA_rer)*(DERA_imi*(1-DERA_gammaimi)/DERA_gammaimidag)
 -(RA_pex*DERA_rer)*DERA_imcg
 -(RA_pex*DERA_rer)*DERA_imig
 +DE_pex*AT_size/DE_size*ATDE_im
--(AT_pex*DEAT_rer)*DEAT_imc
--(AT_pex*DEAT_rer)*DEAT_imi
+-(AT_pex*DEAT_rer)*(DEAT_imc*(1-DEAT_gammaimc)/DEAT_gammaimcdag)
+-(AT_pex*DEAT_rer)*(DEAT_imi*(1-DEAT_gammaimi)/DEAT_gammaimidag)
 -(AT_pex*DEAT_rer)*DEAT_imcg
 -(AT_pex*DEAT_rer)*DEAT_imig
 +DE_pex*BE_size/DE_size*BEDE_im
--(BE_pex*DEBE_rer)*DEBE_imc
--(BE_pex*DEBE_rer)*DEBE_imi
+-(BE_pex*DEBE_rer)*(DEBE_imc*(1-DEBE_gammaimc)/DEBE_gammaimcdag)
+-(BE_pex*DEBE_rer)*(DEBE_imi*(1-DEBE_gammaimi)/DEBE_gammaimidag)
 -(BE_pex*DEBE_rer)*DEBE_imcg
 -(BE_pex*DEBE_rer)*DEBE_imig
 +DE_pex*ES_size/DE_size*ESDE_im
--(ES_pex*DEES_rer)*DEES_imc
--(ES_pex*DEES_rer)*DEES_imi
+-(ES_pex*DEES_rer)*(DEES_imc*(1-DEES_gammaimc)/DEES_gammaimcdag)
+-(ES_pex*DEES_rer)*(DEES_imi*(1-DEES_gammaimi)/DEES_gammaimidag)
 -(ES_pex*DEES_rer)*DEES_imcg
 -(ES_pex*DEES_rer)*DEES_imig
 +DE_pex*FI_size/DE_size*FIDE_im
--(FI_pex*DEFI_rer)*DEFI_imc
--(FI_pex*DEFI_rer)*DEFI_imi
+-(FI_pex*DEFI_rer)*(DEFI_imc*(1-DEFI_gammaimc)/DEFI_gammaimcdag)
+-(FI_pex*DEFI_rer)*(DEFI_imi*(1-DEFI_gammaimi)/DEFI_gammaimidag)
 -(FI_pex*DEFI_rer)*DEFI_imcg
 -(FI_pex*DEFI_rer)*DEFI_imig
 +DE_pex*FR_size/DE_size*FRDE_im
--(FR_pex*DEFR_rer)*DEFR_imc
--(FR_pex*DEFR_rer)*DEFR_imi
+-(FR_pex*DEFR_rer)*(DEFR_imc*(1-DEFR_gammaimc)/DEFR_gammaimcdag)
+-(FR_pex*DEFR_rer)*(DEFR_imi*(1-DEFR_gammaimi)/DEFR_gammaimidag)
 -(FR_pex*DEFR_rer)*DEFR_imcg
 -(FR_pex*DEFR_rer)*DEFR_imig
 +DE_pex*GR_size/DE_size*GRDE_im
--(GR_pex*DEGR_rer)*DEGR_imc
--(GR_pex*DEGR_rer)*DEGR_imi
+-(GR_pex*DEGR_rer)*(DEGR_imc*(1-DEGR_gammaimc)/DEGR_gammaimcdag)
+-(GR_pex*DEGR_rer)*(DEGR_imi*(1-DEGR_gammaimi)/DEGR_gammaimidag)
 -(GR_pex*DEGR_rer)*DEGR_imcg
 -(GR_pex*DEGR_rer)*DEGR_imig
 +DE_pex*IT_size/DE_size*ITDE_im
--(IT_pex*DEIT_rer)*DEIT_imc
--(IT_pex*DEIT_rer)*DEIT_imi
+-(IT_pex*DEIT_rer)*(DEIT_imc*(1-DEIT_gammaimc)/DEIT_gammaimcdag)
+-(IT_pex*DEIT_rer)*(DEIT_imi*(1-DEIT_gammaimi)/DEIT_gammaimidag)
 -(IT_pex*DEIT_rer)*DEIT_imcg
 -(IT_pex*DEIT_rer)*DEIT_imig
 +DE_pex*NL_size/DE_size*NLDE_im
--(NL_pex*DENL_rer)*DENL_imc
--(NL_pex*DENL_rer)*DENL_imi
+-(NL_pex*DENL_rer)*(DENL_imc*(1-DENL_gammaimc)/DENL_gammaimcdag)
+-(NL_pex*DENL_rer)*(DENL_imi*(1-DENL_gammaimi)/DENL_gammaimidag)
 -(NL_pex*DENL_rer)*DENL_imcg
 -(NL_pex*DENL_rer)*DENL_imig
 +DE_pex*PT_size/DE_size*PTDE_im
--(PT_pex*DEPT_rer)*DEPT_imc
--(PT_pex*DEPT_rer)*DEPT_imi
+-(PT_pex*DEPT_rer)*(DEPT_imc*(1-DEPT_gammaimc)/DEPT_gammaimcdag)
+-(PT_pex*DEPT_rer)*(DEPT_imi*(1-DEPT_gammaimi)/DEPT_gammaimidag)
 -(PT_pex*DEPT_rer)*DEPT_imcg
 -(PT_pex*DEPT_rer)*DEPT_imig
 +DE_pex*RU_size/DE_size*RUDE_im
--(RU_pex*DERU_rer)*DERU_imc
--(RU_pex*DERU_rer)*DERU_imi
+-(RU_pex*DERU_rer)*(DERU_imc*(1-DERU_gammaimc)/DERU_gammaimcdag)
+-(RU_pex*DERU_rer)*(DERU_imi*(1-DERU_gammaimi)/DERU_gammaimidag)
 -(RU_pex*DERU_rer)*DERU_imcg
 -(RU_pex*DERU_rer)*DERU_imig
 +DE_pex*RW_size/DE_size*RWDE_im
--(RW_pex*DERW_rer)*DERW_imc
--(RW_pex*DERW_rer)*DERW_imi
+-(RW_pex*DERW_rer)*(DERW_imc*(1-DERW_gammaimc)/DERW_gammaimcdag)
+-(RW_pex*DERW_rer)*(DERW_imi*(1-DERW_gammaimi)/DERW_gammaimidag)
 -(RW_pex*DERW_rer)*DERW_imcg
 -(RW_pex*DERW_rer)*DERW_imig
 +DE_pex*US_size/DE_size*USDE_im
--(US_pex*DEUS_rer)*DEUS_imc
--(US_pex*DEUS_rer)*DEUS_imi
+-(US_pex*DEUS_rer)*(DEUS_imc*(1-DEUS_gammaimc)/DEUS_gammaimcdag)
+-(US_pex*DEUS_rer)*(DEUS_imi*(1-DEUS_gammaimi)/DEUS_gammaimidag)
 -(US_pex*DEUS_rer)*DEUS_imcg
 -(US_pex*DEUS_rer)*DEUS_imig
 ;
@@ -53077,7 +53753,7 @@ DE_yhty = DE_pht*DE_yst/(DE_py*DE_y);
 // NT sector share
 DE_ynty = DE_pnt*DE_ysn/(DE_py*DE_y);
 // Output gap
-DE_ygap = 0;
+DE_ygap = DE_y/DE_ybar-1;
 // Output growth (gross rate)
 DE_ygrowth = DE_y/DE_y(-1);
 // Output growth (gross rate yoy)
@@ -53252,17 +53928,23 @@ RU_vi = RU_ci/RU_mi;
 RU_gammavi = RU_gammav1*RU_vi+RU_gammav2/RU_vi-2*(RU_gammav1*RU_gammav2)^(1/2);
 // Derivative of transaction cost
 RU_gammavider = RU_gammav1-RU_gammav2*RU_vi^(-2);
-RU_delta = RU_ii/RU_ki;
-RU_gammai = 0;
-RU_gammaider = 0;
-RU_gammau = 0;
-RU_gammauder = ((RU_beta^(-1)-1+RU_delta)*RU_qbar-RU_delta*RU_taukbar*RU_pibar)/((1-RU_taukbar)*RU_pibar);
-RU_u = 1;
-RU_pi = RU_q;
+// Capital accumulation
+RU_ki = (1-RU_delta)*RU_ki(-1)+(1-RU_gammai(-1))*RU_ii(-1)*RU_zinv;
+// Investment adjustment cost
+RU_gammai = RU_gammai1/2*(RU_ii/RU_ii(-1)-1)^2;
+// Derivative of investment adjustment cost
+RU_gammaider = RU_gammai1*(RU_ii/RU_ii(-1)-1)/RU_ii(-1);
+// Capacity utilisation cost
+RU_gammau = ((RU_beta^(-1)-1+RU_delta)*RU_qbar-RU_delta*RU_taukbar*RU_pibar)/((1-RU_taukbar)*RU_pibar)*(RU_u-1)+RU_gammau2/2*(RU_u-1)^2;
+// Derivative of capacity utilisation cost
+RU_gammauder = ((RU_beta^(-1)-1+RU_delta)*RU_qbar-RU_delta*RU_taukbar*RU_pibar)/((1-RU_taukbar)*RU_pibar)+RU_gammau2*(RU_u-1);
+// Optimal capacity utilisation (FOC)
+RU_rk = RU_gammauder*RU_pi;
+// Tobin's Q
+RU_pi = RU_q*RU_zinv*(1-RU_gammai-RU_gammaider*RU_ii)+RU_beta*RU_lambdai(+1)/RU_lambdai*RU_q(+1)*RU_zinv(+1)*RU_gammaider(+1)*RU_ii(+1)^2/RU_ii;
 // Auxiliary equation for Tobin's Q in steady state
-RU_qbar = RU_q;
 // Rate of return on capital
-RU_q = RU_beta*((1-RU_tauk)*RU_rk+(RU_tauk*RU_delta)*RU_pi+(1-RU_delta)*RU_q);
+RU_q = RU_beta*RU_lambdai(+1)/RU_lambdai*((1-RU_tauk(+1))*(RU_rk(+1)*RU_u(+1)-RU_gammau(+1)*RU_pi(+1))+(RU_tauk(+1)*RU_delta)*RU_pi(+1)+(1-RU_delta)*RU_q(+1));
 // Optimal wage contract (FOC)
 RU_witilde^(1+RU_etai*RU_zeta) = RU_etai/(RU_etai-1)*RU_fi/RU_gi+RU_wcst;
 // Definition of fi
@@ -53321,11 +54003,9 @@ RU_mcn = 1/(RU_zn*RU_kg^RU_alphag*(RU_alphan)^(RU_alphan)*(1-RU_alphan)^(1-RU_al
 // Wage Inflation (qoq)
 RU_piw = RU_w/RU_w(-1)*RU_pic;
 // Wage Inflation (yoy)
-RU_piw4 = RU_pic4;
+RU_piw4 = RU_piw*RU_piw(-1)*RU_piw(-2)*RU_piw(-3);
 // Auxiliary equation for steady-state fixed cost
-RU_psitbar = RU_psit*RU_ytbar;
 // Auxiliary equation for steady-state fixed cost
-RU_psinbar = RU_psin*RU_ynbar;
 // Capital input (FOC)
 RU_rk = RU_alphat*(RU_yst+RU_psitbar)/RU_kdt*RU_mct;
 // Capital input (FOC)
@@ -53400,7 +54080,6 @@ RU_piex = RU_pex/RU_pex(-1)*RU_pic;
 // Bilateral real exchange rate
 RURA_rer = RU_rer/RA_rer;
 // Auxiliary equation for steady-state output
-RURA_rerbar = RURA_rer;
 //Terms of Trade
 RURA_tot = RA_pex*RURA_rer/RU_pex;
 // Optimal price contract set in foreign markets (FOC), using RU_pxtilde = AT_pimtilde
@@ -53416,7 +54095,6 @@ RURA_tot = RA_pex*RURA_rer/RU_pex;
 // Bilateral real exchange rate
 RUAT_rer = RU_rer/AT_rer;
 // Auxiliary equation for steady-state output
-RUAT_rerbar = RUAT_rer;
 //Terms of Trade
 RUAT_tot = AT_pex*RUAT_rer/RU_pex;
 // Optimal price contract set in foreign markets (FOC), using RU_pxtilde = BE_pimtilde
@@ -53432,7 +54110,6 @@ RUAT_tot = AT_pex*RUAT_rer/RU_pex;
 // Bilateral real exchange rate
 RUBE_rer = RU_rer/BE_rer;
 // Auxiliary equation for steady-state output
-RUBE_rerbar = RUBE_rer;
 //Terms of Trade
 RUBE_tot = BE_pex*RUBE_rer/RU_pex;
 // Optimal price contract set in foreign markets (FOC), using RU_pxtilde = ES_pimtilde
@@ -53448,7 +54125,6 @@ RUBE_tot = BE_pex*RUBE_rer/RU_pex;
 // Bilateral real exchange rate
 RUES_rer = RU_rer/ES_rer;
 // Auxiliary equation for steady-state output
-RUES_rerbar = RUES_rer;
 //Terms of Trade
 RUES_tot = ES_pex*RUES_rer/RU_pex;
 // Optimal price contract set in foreign markets (FOC), using RU_pxtilde = FI_pimtilde
@@ -53464,7 +54140,6 @@ RUES_tot = ES_pex*RUES_rer/RU_pex;
 // Bilateral real exchange rate
 RUFI_rer = RU_rer/FI_rer;
 // Auxiliary equation for steady-state output
-RUFI_rerbar = RUFI_rer;
 //Terms of Trade
 RUFI_tot = FI_pex*RUFI_rer/RU_pex;
 // Optimal price contract set in foreign markets (FOC), using RU_pxtilde = FR_pimtilde
@@ -53480,7 +54155,6 @@ RUFI_tot = FI_pex*RUFI_rer/RU_pex;
 // Bilateral real exchange rate
 RUFR_rer = RU_rer/FR_rer;
 // Auxiliary equation for steady-state output
-RUFR_rerbar = RUFR_rer;
 //Terms of Trade
 RUFR_tot = FR_pex*RUFR_rer/RU_pex;
 // Optimal price contract set in foreign markets (FOC), using RU_pxtilde = GR_pimtilde
@@ -53496,7 +54170,6 @@ RUFR_tot = FR_pex*RUFR_rer/RU_pex;
 // Bilateral real exchange rate
 RUGR_rer = RU_rer/GR_rer;
 // Auxiliary equation for steady-state output
-RUGR_rerbar = RUGR_rer;
 //Terms of Trade
 RUGR_tot = GR_pex*RUGR_rer/RU_pex;
 // Optimal price contract set in foreign markets (FOC), using RU_pxtilde = IT_pimtilde
@@ -53512,7 +54185,6 @@ RUGR_tot = GR_pex*RUGR_rer/RU_pex;
 // Bilateral real exchange rate
 RUIT_rer = RU_rer/IT_rer;
 // Auxiliary equation for steady-state output
-RUIT_rerbar = RUIT_rer;
 //Terms of Trade
 RUIT_tot = IT_pex*RUIT_rer/RU_pex;
 // Optimal price contract set in foreign markets (FOC), using RU_pxtilde = NL_pimtilde
@@ -53528,7 +54200,6 @@ RUIT_tot = IT_pex*RUIT_rer/RU_pex;
 // Bilateral real exchange rate
 RUNL_rer = RU_rer/NL_rer;
 // Auxiliary equation for steady-state output
-RUNL_rerbar = RUNL_rer;
 //Terms of Trade
 RUNL_tot = NL_pex*RUNL_rer/RU_pex;
 // Optimal price contract set in foreign markets (FOC), using RU_pxtilde = PT_pimtilde
@@ -53544,7 +54215,6 @@ RUNL_tot = NL_pex*RUNL_rer/RU_pex;
 // Bilateral real exchange rate
 RUPT_rer = RU_rer/PT_rer;
 // Auxiliary equation for steady-state output
-RUPT_rerbar = RUPT_rer;
 //Terms of Trade
 RUPT_tot = PT_pex*RUPT_rer/RU_pex;
 // Optimal price contract set in foreign markets (FOC), using RU_pxtilde = DE_pimtilde
@@ -53560,7 +54230,6 @@ RUPT_tot = PT_pex*RUPT_rer/RU_pex;
 // Bilateral real exchange rate
 RUDE_rer = RU_rer/DE_rer;
 // Auxiliary equation for steady-state output
-RUDE_rerbar = RUDE_rer;
 //Terms of Trade
 RUDE_tot = DE_pex*RUDE_rer/RU_pex;
 // Optimal price contract set in foreign markets (FOC), using RU_pxtilde = RW_pimtilde
@@ -53576,7 +54245,6 @@ RUDE_tot = DE_pex*RUDE_rer/RU_pex;
 // Bilateral real exchange rate
 RURW_rer = RU_rer/RW_rer;
 // Auxiliary equation for steady-state output
-RURW_rerbar = RURW_rer;
 //Terms of Trade
 RURW_tot = RW_pex*RURW_rer/RU_pex;
 // Optimal price contract set in foreign markets (FOC), using RU_pxtilde = US_pimtilde
@@ -53592,7 +54260,6 @@ RURW_tot = RW_pex*RURW_rer/RU_pex;
 // Bilateral real exchange rate
 RUUS_rer = RU_rer/US_rer;
 // Auxiliary equation for steady-state output
-RUUS_rerbar = RUUS_rer;
 //Terms of Trade
 RUUS_tot = US_pex*RUUS_rer/RU_pex;
 // Total imports 
@@ -56090,18 +56757,18 @@ RU_etot = 1
 //-----------------
 // Private consumption good (import)
 RU_imc^((RU_mumc-1)/RU_mumc) =
-+RURA_numc ^(1/RU_mumc)*RURA_imc^(1-1/RU_mumc)
-+RUAT_numc ^(1/RU_mumc)*RUAT_imc^(1-1/RU_mumc)
-+RUBE_numc ^(1/RU_mumc)*RUBE_imc^(1-1/RU_mumc)
-+RUES_numc ^(1/RU_mumc)*RUES_imc^(1-1/RU_mumc)
-+RUFI_numc ^(1/RU_mumc)*RUFI_imc^(1-1/RU_mumc)
-+RUFR_numc ^(1/RU_mumc)*RUFR_imc^(1-1/RU_mumc)
-+RUGR_numc ^(1/RU_mumc)*RUGR_imc^(1-1/RU_mumc)
-+RUIT_numc ^(1/RU_mumc)*RUIT_imc^(1-1/RU_mumc)
-+RUNL_numc ^(1/RU_mumc)*RUNL_imc^(1-1/RU_mumc)
-+RUDE_numc ^(1/RU_mumc)*RUDE_imc^(1-1/RU_mumc)
-+RURW_numc ^(1/RU_mumc)*RURW_imc^(1-1/RU_mumc)
-+RUUS_numc ^(1/RU_mumc)*RUUS_imc^(1-1/RU_mumc)
++RURA_numc ^(1/RU_mumc)*((1-RURA_gammaimc)*RURA_imc)^(1-1/RU_mumc)
++RUAT_numc ^(1/RU_mumc)*((1-RUAT_gammaimc)*RUAT_imc)^(1-1/RU_mumc)
++RUBE_numc ^(1/RU_mumc)*((1-RUBE_gammaimc)*RUBE_imc)^(1-1/RU_mumc)
++RUES_numc ^(1/RU_mumc)*((1-RUES_gammaimc)*RUES_imc)^(1-1/RU_mumc)
++RUFI_numc ^(1/RU_mumc)*((1-RUFI_gammaimc)*RUFI_imc)^(1-1/RU_mumc)
++RUFR_numc ^(1/RU_mumc)*((1-RUFR_gammaimc)*RUFR_imc)^(1-1/RU_mumc)
++RUGR_numc ^(1/RU_mumc)*((1-RUGR_gammaimc)*RUGR_imc)^(1-1/RU_mumc)
++RUIT_numc ^(1/RU_mumc)*((1-RUIT_gammaimc)*RUIT_imc)^(1-1/RU_mumc)
++RUNL_numc ^(1/RU_mumc)*((1-RUNL_gammaimc)*RUNL_imc)^(1-1/RU_mumc)
++RUDE_numc ^(1/RU_mumc)*((1-RUDE_gammaimc)*RUDE_imc)^(1-1/RU_mumc)
++RURW_numc ^(1/RU_mumc)*((1-RURW_gammaimc)*RURW_imc)^(1-1/RU_mumc)
++RUUS_numc ^(1/RU_mumc)*((1-RUUS_gammaimc)*RUUS_imc)^(1-1/RU_mumc)
 +(1
 -RURA_numc
 -RUAT_numc
@@ -56115,29 +56782,29 @@ RU_imc^((RU_mumc-1)/RU_mumc) =
 -RUDE_numc
 -RURW_numc
 -RUUS_numc
-)^(1/RU_mumc)*RUPT_imc^(1-1/RU_mumc);
+)^(1/RU_mumc)*((1-RUPT_gammaimc)*RUPT_imc)^(1-1/RU_mumc);
 // Demand for bilateral consumption import goods
-RURA_imc = RURA_numc*((RA_pex*RURA_rer)/RU_pimc)^(-RU_mumc)*RU_imc;
+RURA_imc = RURA_numc*((RA_pex*RURA_rer)/(RURA_gammaimcdag*RU_pimc))^(-RU_mumc)*RU_imc/(1-RURA_gammaimc);
 // Demand for bilateral consumption import goods
-RUAT_imc = RUAT_numc*((AT_pex*RUAT_rer)/RU_pimc)^(-RU_mumc)*RU_imc;
+RUAT_imc = RUAT_numc*((AT_pex*RUAT_rer)/(RUAT_gammaimcdag*RU_pimc))^(-RU_mumc)*RU_imc/(1-RUAT_gammaimc);
 // Demand for bilateral consumption import goods
-RUBE_imc = RUBE_numc*((BE_pex*RUBE_rer)/RU_pimc)^(-RU_mumc)*RU_imc;
+RUBE_imc = RUBE_numc*((BE_pex*RUBE_rer)/(RUBE_gammaimcdag*RU_pimc))^(-RU_mumc)*RU_imc/(1-RUBE_gammaimc);
 // Demand for bilateral consumption import goods
-RUES_imc = RUES_numc*((ES_pex*RUES_rer)/RU_pimc)^(-RU_mumc)*RU_imc;
+RUES_imc = RUES_numc*((ES_pex*RUES_rer)/(RUES_gammaimcdag*RU_pimc))^(-RU_mumc)*RU_imc/(1-RUES_gammaimc);
 // Demand for bilateral consumption import goods
-RUFI_imc = RUFI_numc*((FI_pex*RUFI_rer)/RU_pimc)^(-RU_mumc)*RU_imc;
+RUFI_imc = RUFI_numc*((FI_pex*RUFI_rer)/(RUFI_gammaimcdag*RU_pimc))^(-RU_mumc)*RU_imc/(1-RUFI_gammaimc);
 // Demand for bilateral consumption import goods
-RUFR_imc = RUFR_numc*((FR_pex*RUFR_rer)/RU_pimc)^(-RU_mumc)*RU_imc;
+RUFR_imc = RUFR_numc*((FR_pex*RUFR_rer)/(RUFR_gammaimcdag*RU_pimc))^(-RU_mumc)*RU_imc/(1-RUFR_gammaimc);
 // Demand for bilateral consumption import goods
-RUGR_imc = RUGR_numc*((GR_pex*RUGR_rer)/RU_pimc)^(-RU_mumc)*RU_imc;
+RUGR_imc = RUGR_numc*((GR_pex*RUGR_rer)/(RUGR_gammaimcdag*RU_pimc))^(-RU_mumc)*RU_imc/(1-RUGR_gammaimc);
 // Demand for bilateral consumption import goods
-RUIT_imc = RUIT_numc*((IT_pex*RUIT_rer)/RU_pimc)^(-RU_mumc)*RU_imc;
+RUIT_imc = RUIT_numc*((IT_pex*RUIT_rer)/(RUIT_gammaimcdag*RU_pimc))^(-RU_mumc)*RU_imc/(1-RUIT_gammaimc);
 // Demand for bilateral consumption import goods
-RUNL_imc = RUNL_numc*((NL_pex*RUNL_rer)/RU_pimc)^(-RU_mumc)*RU_imc;
+RUNL_imc = RUNL_numc*((NL_pex*RUNL_rer)/(RUNL_gammaimcdag*RU_pimc))^(-RU_mumc)*RU_imc/(1-RUNL_gammaimc);
 // Demand for bilateral consumption import goods
-RUDE_imc = RUDE_numc*((DE_pex*RUDE_rer)/RU_pimc)^(-RU_mumc)*RU_imc;
+RUDE_imc = RUDE_numc*((DE_pex*RUDE_rer)/(RUDE_gammaimcdag*RU_pimc))^(-RU_mumc)*RU_imc/(1-RUDE_gammaimc);
 // Demand for bilateral consumption import goods
-RUUS_imc = RUUS_numc*((US_pex*RUUS_rer)/RU_pimc)^(-RU_mumc)*RU_imc;
+RUUS_imc = RUUS_numc*((US_pex*RUUS_rer)/(RUUS_gammaimcdag*RU_pimc))^(-RU_mumc)*RU_imc/(1-RUUS_gammaimc);
 RUPT_imc = (1
 -RURA_numc
 -RUAT_numc
@@ -56151,21 +56818,21 @@ RUPT_imc = (1
 -RUDE_numc
 -RURW_numc
 -RUUS_numc
-)*((PT_pex*RUPT_rer)/RU_pimc)^(-RU_mumc)*RU_imc;
+)*((PT_pex*RUPT_rer)/(RUPT_gammaimcdag*RU_pimc))^(-RU_mumc)*RU_imc/(1-RUPT_gammaimc);
 // Price of the consumption good (import)
 RU_pimc^(1-RU_mumc) =
-+RURA_numc * (RA_pex*RURA_rer)^(1-RU_mumc)
-+RUAT_numc * (AT_pex*RUAT_rer)^(1-RU_mumc)
-+RUBE_numc * (BE_pex*RUBE_rer)^(1-RU_mumc)
-+RUES_numc * (ES_pex*RUES_rer)^(1-RU_mumc)
-+RUFI_numc * (FI_pex*RUFI_rer)^(1-RU_mumc)
-+RUFR_numc * (FR_pex*RUFR_rer)^(1-RU_mumc)
-+RUGR_numc * (GR_pex*RUGR_rer)^(1-RU_mumc)
-+RUIT_numc * (IT_pex*RUIT_rer)^(1-RU_mumc)
-+RUNL_numc * (NL_pex*RUNL_rer)^(1-RU_mumc)
-+RUDE_numc * (DE_pex*RUDE_rer)^(1-RU_mumc)
-+RURW_numc * (RW_pex*RURW_rer)^(1-RU_mumc)
-+RUUS_numc * (US_pex*RUUS_rer)^(1-RU_mumc)
++RURA_numc *((RA_pex*RURA_rer)/RURA_gammaimcdag)^(1-RU_mumc)
++RUAT_numc *((AT_pex*RUAT_rer)/RUAT_gammaimcdag)^(1-RU_mumc)
++RUBE_numc *((BE_pex*RUBE_rer)/RUBE_gammaimcdag)^(1-RU_mumc)
++RUES_numc *((ES_pex*RUES_rer)/RUES_gammaimcdag)^(1-RU_mumc)
++RUFI_numc *((FI_pex*RUFI_rer)/RUFI_gammaimcdag)^(1-RU_mumc)
++RUFR_numc *((FR_pex*RUFR_rer)/RUFR_gammaimcdag)^(1-RU_mumc)
++RUGR_numc *((GR_pex*RUGR_rer)/RUGR_gammaimcdag)^(1-RU_mumc)
++RUIT_numc *((IT_pex*RUIT_rer)/RUIT_gammaimcdag)^(1-RU_mumc)
++RUNL_numc *((NL_pex*RUNL_rer)/RUNL_gammaimcdag)^(1-RU_mumc)
++RUDE_numc *((DE_pex*RUDE_rer)/RUDE_gammaimcdag)^(1-RU_mumc)
++RURW_numc *((RW_pex*RURW_rer)/RURW_gammaimcdag)^(1-RU_mumc)
++RUUS_numc *((US_pex*RUUS_rer)/RUUS_gammaimcdag)^(1-RU_mumc)
 +(1
 -RURA_numc
 -RUAT_numc
@@ -56179,23 +56846,23 @@ RU_pimc^(1-RU_mumc) =
 -RUDE_numc
 -RURW_numc
 -RUUS_numc
-)*(PT_pex*RUPT_rer)^(1-RU_mumc);
+)*((PT_pex*RUPT_rer)/RUPT_gammaimcdag)^(1-RU_mumc);
 // Private consumption good (import) inflation
 RU_piimc = RU_pimc/RU_pimc(-1)*RU_pic;
 // Private consumption good (import)
 RU_imi^((RU_mumi-1)/RU_mumi) =
-+RURA_numi ^(1/RU_mumi)*RURA_imi^(1-1/RU_mumi)
-+RUAT_numi ^(1/RU_mumi)*RUAT_imi^(1-1/RU_mumi)
-+RUBE_numi ^(1/RU_mumi)*RUBE_imi^(1-1/RU_mumi)
-+RUES_numi ^(1/RU_mumi)*RUES_imi^(1-1/RU_mumi)
-+RUFI_numi ^(1/RU_mumi)*RUFI_imi^(1-1/RU_mumi)
-+RUFR_numi ^(1/RU_mumi)*RUFR_imi^(1-1/RU_mumi)
-+RUGR_numi ^(1/RU_mumi)*RUGR_imi^(1-1/RU_mumi)
-+RUIT_numi ^(1/RU_mumi)*RUIT_imi^(1-1/RU_mumi)
-+RUNL_numi ^(1/RU_mumi)*RUNL_imi^(1-1/RU_mumi)
-+RUDE_numi ^(1/RU_mumi)*RUDE_imi^(1-1/RU_mumi)
-+RURW_numi ^(1/RU_mumi)*RURW_imi^(1-1/RU_mumi)
-+RUUS_numi ^(1/RU_mumi)*RUUS_imi^(1-1/RU_mumi)
++RURA_numi ^(1/RU_mumi)*((1-RURA_gammaimi)*RURA_imi)^(1-1/RU_mumi)
++RUAT_numi ^(1/RU_mumi)*((1-RUAT_gammaimi)*RUAT_imi)^(1-1/RU_mumi)
++RUBE_numi ^(1/RU_mumi)*((1-RUBE_gammaimi)*RUBE_imi)^(1-1/RU_mumi)
++RUES_numi ^(1/RU_mumi)*((1-RUES_gammaimi)*RUES_imi)^(1-1/RU_mumi)
++RUFI_numi ^(1/RU_mumi)*((1-RUFI_gammaimi)*RUFI_imi)^(1-1/RU_mumi)
++RUFR_numi ^(1/RU_mumi)*((1-RUFR_gammaimi)*RUFR_imi)^(1-1/RU_mumi)
++RUGR_numi ^(1/RU_mumi)*((1-RUGR_gammaimi)*RUGR_imi)^(1-1/RU_mumi)
++RUIT_numi ^(1/RU_mumi)*((1-RUIT_gammaimi)*RUIT_imi)^(1-1/RU_mumi)
++RUNL_numi ^(1/RU_mumi)*((1-RUNL_gammaimi)*RUNL_imi)^(1-1/RU_mumi)
++RUDE_numi ^(1/RU_mumi)*((1-RUDE_gammaimi)*RUDE_imi)^(1-1/RU_mumi)
++RURW_numi ^(1/RU_mumi)*((1-RURW_gammaimi)*RURW_imi)^(1-1/RU_mumi)
++RUUS_numi ^(1/RU_mumi)*((1-RUUS_gammaimi)*RUUS_imi)^(1-1/RU_mumi)
 +(1
 -RURA_numi
 -RUAT_numi
@@ -56209,29 +56876,29 @@ RU_imi^((RU_mumi-1)/RU_mumi) =
 -RUDE_numi
 -RURW_numi
 -RUUS_numi
-)^(1/RU_mumi)*RUPT_imi^(1-1/RU_mumi);
+)^(1/RU_mumi)*((1-RUPT_gammaimi)*RUPT_imi)^(1-1/RU_mumi);
 // Demand for bilateral consumption import goods
-RURA_imi = RURA_numi*((RA_pex*RURA_rer)/RU_pimi)^(-RU_mumi)*RU_imi;
+RURA_imi = RURA_numi*((RA_pex*RURA_rer)/(RURA_gammaimidag*RU_pimi))^(-RU_mumi)*RU_imi/(1-RURA_gammaimi);
 // Demand for bilateral consumption import goods
-RUAT_imi = RUAT_numi*((AT_pex*RUAT_rer)/RU_pimi)^(-RU_mumi)*RU_imi;
+RUAT_imi = RUAT_numi*((AT_pex*RUAT_rer)/(RUAT_gammaimidag*RU_pimi))^(-RU_mumi)*RU_imi/(1-RUAT_gammaimi);
 // Demand for bilateral consumption import goods
-RUBE_imi = RUBE_numi*((BE_pex*RUBE_rer)/RU_pimi)^(-RU_mumi)*RU_imi;
+RUBE_imi = RUBE_numi*((BE_pex*RUBE_rer)/(RUBE_gammaimidag*RU_pimi))^(-RU_mumi)*RU_imi/(1-RUBE_gammaimi);
 // Demand for bilateral consumption import goods
-RUES_imi = RUES_numi*((ES_pex*RUES_rer)/RU_pimi)^(-RU_mumi)*RU_imi;
+RUES_imi = RUES_numi*((ES_pex*RUES_rer)/(RUES_gammaimidag*RU_pimi))^(-RU_mumi)*RU_imi/(1-RUES_gammaimi);
 // Demand for bilateral consumption import goods
-RUFI_imi = RUFI_numi*((FI_pex*RUFI_rer)/RU_pimi)^(-RU_mumi)*RU_imi;
+RUFI_imi = RUFI_numi*((FI_pex*RUFI_rer)/(RUFI_gammaimidag*RU_pimi))^(-RU_mumi)*RU_imi/(1-RUFI_gammaimi);
 // Demand for bilateral consumption import goods
-RUFR_imi = RUFR_numi*((FR_pex*RUFR_rer)/RU_pimi)^(-RU_mumi)*RU_imi;
+RUFR_imi = RUFR_numi*((FR_pex*RUFR_rer)/(RUFR_gammaimidag*RU_pimi))^(-RU_mumi)*RU_imi/(1-RUFR_gammaimi);
 // Demand for bilateral consumption import goods
-RUGR_imi = RUGR_numi*((GR_pex*RUGR_rer)/RU_pimi)^(-RU_mumi)*RU_imi;
+RUGR_imi = RUGR_numi*((GR_pex*RUGR_rer)/(RUGR_gammaimidag*RU_pimi))^(-RU_mumi)*RU_imi/(1-RUGR_gammaimi);
 // Demand for bilateral consumption import goods
-RUIT_imi = RUIT_numi*((IT_pex*RUIT_rer)/RU_pimi)^(-RU_mumi)*RU_imi;
+RUIT_imi = RUIT_numi*((IT_pex*RUIT_rer)/(RUIT_gammaimidag*RU_pimi))^(-RU_mumi)*RU_imi/(1-RUIT_gammaimi);
 // Demand for bilateral consumption import goods
-RUNL_imi = RUNL_numi*((NL_pex*RUNL_rer)/RU_pimi)^(-RU_mumi)*RU_imi;
+RUNL_imi = RUNL_numi*((NL_pex*RUNL_rer)/(RUNL_gammaimidag*RU_pimi))^(-RU_mumi)*RU_imi/(1-RUNL_gammaimi);
 // Demand for bilateral consumption import goods
-RUDE_imi = RUDE_numi*((DE_pex*RUDE_rer)/RU_pimi)^(-RU_mumi)*RU_imi;
+RUDE_imi = RUDE_numi*((DE_pex*RUDE_rer)/(RUDE_gammaimidag*RU_pimi))^(-RU_mumi)*RU_imi/(1-RUDE_gammaimi);
 // Demand for bilateral consumption import goods
-RUUS_imi = RUUS_numi*((US_pex*RUUS_rer)/RU_pimi)^(-RU_mumi)*RU_imi;
+RUUS_imi = RUUS_numi*((US_pex*RUUS_rer)/(RUUS_gammaimidag*RU_pimi))^(-RU_mumi)*RU_imi/(1-RUUS_gammaimi);
 RUPT_imi = (1
 -RURA_numi
 -RUAT_numi
@@ -56245,21 +56912,21 @@ RUPT_imi = (1
 -RUDE_numi
 -RURW_numi
 -RUUS_numi
-)*((PT_pex*RUPT_rer)/RU_pimi)^(-RU_mumi)*RU_imi;
+)*((PT_pex*RUPT_rer)/(RUPT_gammaimidag*RU_pimi))^(-RU_mumi)*RU_imi/(1-RUPT_gammaimi);
 // Price of the consumption good (import)
 RU_pimi^(1-RU_mumi) =
-+RURA_numi * (RA_pex*RURA_rer)^(1-RU_mumi)
-+RUAT_numi * (AT_pex*RUAT_rer)^(1-RU_mumi)
-+RUBE_numi * (BE_pex*RUBE_rer)^(1-RU_mumi)
-+RUES_numi * (ES_pex*RUES_rer)^(1-RU_mumi)
-+RUFI_numi * (FI_pex*RUFI_rer)^(1-RU_mumi)
-+RUFR_numi * (FR_pex*RUFR_rer)^(1-RU_mumi)
-+RUGR_numi * (GR_pex*RUGR_rer)^(1-RU_mumi)
-+RUIT_numi * (IT_pex*RUIT_rer)^(1-RU_mumi)
-+RUNL_numi * (NL_pex*RUNL_rer)^(1-RU_mumi)
-+RUDE_numi * (DE_pex*RUDE_rer)^(1-RU_mumi)
-+RURW_numi * (RW_pex*RURW_rer)^(1-RU_mumi)
-+RUUS_numi * (US_pex*RUUS_rer)^(1-RU_mumi)
++RURA_numi *((RA_pex*RURA_rer)/RURA_gammaimidag)^(1-RU_mumi)
++RUAT_numi *((AT_pex*RUAT_rer)/RUAT_gammaimidag)^(1-RU_mumi)
++RUBE_numi *((BE_pex*RUBE_rer)/RUBE_gammaimidag)^(1-RU_mumi)
++RUES_numi *((ES_pex*RUES_rer)/RUES_gammaimidag)^(1-RU_mumi)
++RUFI_numi *((FI_pex*RUFI_rer)/RUFI_gammaimidag)^(1-RU_mumi)
++RUFR_numi *((FR_pex*RUFR_rer)/RUFR_gammaimidag)^(1-RU_mumi)
++RUGR_numi *((GR_pex*RUGR_rer)/RUGR_gammaimidag)^(1-RU_mumi)
++RUIT_numi *((IT_pex*RUIT_rer)/RUIT_gammaimidag)^(1-RU_mumi)
++RUNL_numi *((NL_pex*RUNL_rer)/RUNL_gammaimidag)^(1-RU_mumi)
++RUDE_numi *((DE_pex*RUDE_rer)/RUDE_gammaimidag)^(1-RU_mumi)
++RURW_numi *((RW_pex*RURW_rer)/RURW_gammaimidag)^(1-RU_mumi)
++RUUS_numi *((US_pex*RUUS_rer)/RUUS_gammaimidag)^(1-RU_mumi)
 +(1
 -RURA_numi
 -RUAT_numi
@@ -56273,23 +56940,23 @@ RU_pimi^(1-RU_mumi) =
 -RUDE_numi
 -RURW_numi
 -RUUS_numi
-)*(PT_pex*RUPT_rer)^(1-RU_mumi);
+)*((PT_pex*RUPT_rer)/RUPT_gammaimidag)^(1-RU_mumi);
 // Private consumption good (import) inflation
 RU_piimi = RU_pimi/RU_pimi(-1)*RU_pic;
 // Private consumption good (import)
 RU_imcg^((RU_mumcg-1)/RU_mumcg) =
-+RURA_numcg ^(1/RU_mumcg)*RURA_imcg^(1-1/RU_mumcg)
-+RUAT_numcg ^(1/RU_mumcg)*RUAT_imcg^(1-1/RU_mumcg)
-+RUBE_numcg ^(1/RU_mumcg)*RUBE_imcg^(1-1/RU_mumcg)
-+RUES_numcg ^(1/RU_mumcg)*RUES_imcg^(1-1/RU_mumcg)
-+RUFI_numcg ^(1/RU_mumcg)*RUFI_imcg^(1-1/RU_mumcg)
-+RUFR_numcg ^(1/RU_mumcg)*RUFR_imcg^(1-1/RU_mumcg)
-+RUGR_numcg ^(1/RU_mumcg)*RUGR_imcg^(1-1/RU_mumcg)
-+RUIT_numcg ^(1/RU_mumcg)*RUIT_imcg^(1-1/RU_mumcg)
-+RUNL_numcg ^(1/RU_mumcg)*RUNL_imcg^(1-1/RU_mumcg)
-+RUDE_numcg ^(1/RU_mumcg)*RUDE_imcg^(1-1/RU_mumcg)
-+RURW_numcg ^(1/RU_mumcg)*RURW_imcg^(1-1/RU_mumcg)
-+RUUS_numcg ^(1/RU_mumcg)*RUUS_imcg^(1-1/RU_mumcg)
++RURA_numcg ^(1/RU_mumcg)*((1-RURA_gammaimcg)*RURA_imcg)^(1-1/RU_mumcg)
++RUAT_numcg ^(1/RU_mumcg)*((1-RUAT_gammaimcg)*RUAT_imcg)^(1-1/RU_mumcg)
++RUBE_numcg ^(1/RU_mumcg)*((1-RUBE_gammaimcg)*RUBE_imcg)^(1-1/RU_mumcg)
++RUES_numcg ^(1/RU_mumcg)*((1-RUES_gammaimcg)*RUES_imcg)^(1-1/RU_mumcg)
++RUFI_numcg ^(1/RU_mumcg)*((1-RUFI_gammaimcg)*RUFI_imcg)^(1-1/RU_mumcg)
++RUFR_numcg ^(1/RU_mumcg)*((1-RUFR_gammaimcg)*RUFR_imcg)^(1-1/RU_mumcg)
++RUGR_numcg ^(1/RU_mumcg)*((1-RUGR_gammaimcg)*RUGR_imcg)^(1-1/RU_mumcg)
++RUIT_numcg ^(1/RU_mumcg)*((1-RUIT_gammaimcg)*RUIT_imcg)^(1-1/RU_mumcg)
++RUNL_numcg ^(1/RU_mumcg)*((1-RUNL_gammaimcg)*RUNL_imcg)^(1-1/RU_mumcg)
++RUDE_numcg ^(1/RU_mumcg)*((1-RUDE_gammaimcg)*RUDE_imcg)^(1-1/RU_mumcg)
++RURW_numcg ^(1/RU_mumcg)*((1-RURW_gammaimcg)*RURW_imcg)^(1-1/RU_mumcg)
++RUUS_numcg ^(1/RU_mumcg)*((1-RUUS_gammaimcg)*RUUS_imcg)^(1-1/RU_mumcg)
 +(1
 -RURA_numcg
 -RUAT_numcg
@@ -56303,29 +56970,29 @@ RU_imcg^((RU_mumcg-1)/RU_mumcg) =
 -RUDE_numcg
 -RURW_numcg
 -RUUS_numcg
-)^(1/RU_mumcg)*RUPT_imcg^(1-1/RU_mumcg);
+)^(1/RU_mumcg)*((1-RUPT_gammaimcg)*RUPT_imcg)^(1-1/RU_mumcg);
 // Demand for bilateral consumption import goods
-RURA_imcg = RURA_numcg*((RA_pex*RURA_rer)/RU_pimcg)^(-RU_mumcg)*RU_imcg;
+RURA_imcg = RURA_numcg*((RA_pex*RURA_rer)/(RURA_gammaimcgdag*RU_pimcg))^(-RU_mumcg)*RU_imcg/(1-RURA_gammaimcg);
 // Demand for bilateral consumption import goods
-RUAT_imcg = RUAT_numcg*((AT_pex*RUAT_rer)/RU_pimcg)^(-RU_mumcg)*RU_imcg;
+RUAT_imcg = RUAT_numcg*((AT_pex*RUAT_rer)/(RUAT_gammaimcgdag*RU_pimcg))^(-RU_mumcg)*RU_imcg/(1-RUAT_gammaimcg);
 // Demand for bilateral consumption import goods
-RUBE_imcg = RUBE_numcg*((BE_pex*RUBE_rer)/RU_pimcg)^(-RU_mumcg)*RU_imcg;
+RUBE_imcg = RUBE_numcg*((BE_pex*RUBE_rer)/(RUBE_gammaimcgdag*RU_pimcg))^(-RU_mumcg)*RU_imcg/(1-RUBE_gammaimcg);
 // Demand for bilateral consumption import goods
-RUES_imcg = RUES_numcg*((ES_pex*RUES_rer)/RU_pimcg)^(-RU_mumcg)*RU_imcg;
+RUES_imcg = RUES_numcg*((ES_pex*RUES_rer)/(RUES_gammaimcgdag*RU_pimcg))^(-RU_mumcg)*RU_imcg/(1-RUES_gammaimcg);
 // Demand for bilateral consumption import goods
-RUFI_imcg = RUFI_numcg*((FI_pex*RUFI_rer)/RU_pimcg)^(-RU_mumcg)*RU_imcg;
+RUFI_imcg = RUFI_numcg*((FI_pex*RUFI_rer)/(RUFI_gammaimcgdag*RU_pimcg))^(-RU_mumcg)*RU_imcg/(1-RUFI_gammaimcg);
 // Demand for bilateral consumption import goods
-RUFR_imcg = RUFR_numcg*((FR_pex*RUFR_rer)/RU_pimcg)^(-RU_mumcg)*RU_imcg;
+RUFR_imcg = RUFR_numcg*((FR_pex*RUFR_rer)/(RUFR_gammaimcgdag*RU_pimcg))^(-RU_mumcg)*RU_imcg/(1-RUFR_gammaimcg);
 // Demand for bilateral consumption import goods
-RUGR_imcg = RUGR_numcg*((GR_pex*RUGR_rer)/RU_pimcg)^(-RU_mumcg)*RU_imcg;
+RUGR_imcg = RUGR_numcg*((GR_pex*RUGR_rer)/(RUGR_gammaimcgdag*RU_pimcg))^(-RU_mumcg)*RU_imcg/(1-RUGR_gammaimcg);
 // Demand for bilateral consumption import goods
-RUIT_imcg = RUIT_numcg*((IT_pex*RUIT_rer)/RU_pimcg)^(-RU_mumcg)*RU_imcg;
+RUIT_imcg = RUIT_numcg*((IT_pex*RUIT_rer)/(RUIT_gammaimcgdag*RU_pimcg))^(-RU_mumcg)*RU_imcg/(1-RUIT_gammaimcg);
 // Demand for bilateral consumption import goods
-RUNL_imcg = RUNL_numcg*((NL_pex*RUNL_rer)/RU_pimcg)^(-RU_mumcg)*RU_imcg;
+RUNL_imcg = RUNL_numcg*((NL_pex*RUNL_rer)/(RUNL_gammaimcgdag*RU_pimcg))^(-RU_mumcg)*RU_imcg/(1-RUNL_gammaimcg);
 // Demand for bilateral consumption import goods
-RUDE_imcg = RUDE_numcg*((DE_pex*RUDE_rer)/RU_pimcg)^(-RU_mumcg)*RU_imcg;
+RUDE_imcg = RUDE_numcg*((DE_pex*RUDE_rer)/(RUDE_gammaimcgdag*RU_pimcg))^(-RU_mumcg)*RU_imcg/(1-RUDE_gammaimcg);
 // Demand for bilateral consumption import goods
-RUUS_imcg = RUUS_numcg*((US_pex*RUUS_rer)/RU_pimcg)^(-RU_mumcg)*RU_imcg;
+RUUS_imcg = RUUS_numcg*((US_pex*RUUS_rer)/(RUUS_gammaimcgdag*RU_pimcg))^(-RU_mumcg)*RU_imcg/(1-RUUS_gammaimcg);
 RUPT_imcg = (1
 -RURA_numcg
 -RUAT_numcg
@@ -56339,21 +57006,21 @@ RUPT_imcg = (1
 -RUDE_numcg
 -RURW_numcg
 -RUUS_numcg
-)*((PT_pex*RUPT_rer)/RU_pimcg)^(-RU_mumcg)*RU_imcg;
+)*((PT_pex*RUPT_rer)/(RUPT_gammaimcgdag*RU_pimcg))^(-RU_mumcg)*RU_imcg/(1-RUPT_gammaimcg);
 // Price of the consumption good (import)
 RU_pimcg^(1-RU_mumcg) =
-+RURA_numcg * (RA_pex*RURA_rer)^(1-RU_mumcg)
-+RUAT_numcg * (AT_pex*RUAT_rer)^(1-RU_mumcg)
-+RUBE_numcg * (BE_pex*RUBE_rer)^(1-RU_mumcg)
-+RUES_numcg * (ES_pex*RUES_rer)^(1-RU_mumcg)
-+RUFI_numcg * (FI_pex*RUFI_rer)^(1-RU_mumcg)
-+RUFR_numcg * (FR_pex*RUFR_rer)^(1-RU_mumcg)
-+RUGR_numcg * (GR_pex*RUGR_rer)^(1-RU_mumcg)
-+RUIT_numcg * (IT_pex*RUIT_rer)^(1-RU_mumcg)
-+RUNL_numcg * (NL_pex*RUNL_rer)^(1-RU_mumcg)
-+RUDE_numcg * (DE_pex*RUDE_rer)^(1-RU_mumcg)
-+RURW_numcg * (RW_pex*RURW_rer)^(1-RU_mumcg)
-+RUUS_numcg * (US_pex*RUUS_rer)^(1-RU_mumcg)
++RURA_numcg *((RA_pex*RURA_rer)/RURA_gammaimcgdag)^(1-RU_mumcg)
++RUAT_numcg *((AT_pex*RUAT_rer)/RUAT_gammaimcgdag)^(1-RU_mumcg)
++RUBE_numcg *((BE_pex*RUBE_rer)/RUBE_gammaimcgdag)^(1-RU_mumcg)
++RUES_numcg *((ES_pex*RUES_rer)/RUES_gammaimcgdag)^(1-RU_mumcg)
++RUFI_numcg *((FI_pex*RUFI_rer)/RUFI_gammaimcgdag)^(1-RU_mumcg)
++RUFR_numcg *((FR_pex*RUFR_rer)/RUFR_gammaimcgdag)^(1-RU_mumcg)
++RUGR_numcg *((GR_pex*RUGR_rer)/RUGR_gammaimcgdag)^(1-RU_mumcg)
++RUIT_numcg *((IT_pex*RUIT_rer)/RUIT_gammaimcgdag)^(1-RU_mumcg)
++RUNL_numcg *((NL_pex*RUNL_rer)/RUNL_gammaimcgdag)^(1-RU_mumcg)
++RUDE_numcg *((DE_pex*RUDE_rer)/RUDE_gammaimcgdag)^(1-RU_mumcg)
++RURW_numcg *((RW_pex*RURW_rer)/RURW_gammaimcgdag)^(1-RU_mumcg)
++RUUS_numcg *((US_pex*RUUS_rer)/RUUS_gammaimcgdag)^(1-RU_mumcg)
 +(1
 -RURA_numcg
 -RUAT_numcg
@@ -56367,23 +57034,23 @@ RU_pimcg^(1-RU_mumcg) =
 -RUDE_numcg
 -RURW_numcg
 -RUUS_numcg
-)*(PT_pex*RUPT_rer)^(1-RU_mumcg);
+)*((PT_pex*RUPT_rer)/RUPT_gammaimcgdag)^(1-RU_mumcg);
 // Private consumption good (import) inflation
 RU_piimcg = RU_pimcg/RU_pimcg(-1)*RU_pic;
 // Private consumption good (import)
 RU_imig^((RU_mumig-1)/RU_mumig) =
-+RURA_numig ^(1/RU_mumig)*RURA_imig^(1-1/RU_mumig)
-+RUAT_numig ^(1/RU_mumig)*RUAT_imig^(1-1/RU_mumig)
-+RUBE_numig ^(1/RU_mumig)*RUBE_imig^(1-1/RU_mumig)
-+RUES_numig ^(1/RU_mumig)*RUES_imig^(1-1/RU_mumig)
-+RUFI_numig ^(1/RU_mumig)*RUFI_imig^(1-1/RU_mumig)
-+RUFR_numig ^(1/RU_mumig)*RUFR_imig^(1-1/RU_mumig)
-+RUGR_numig ^(1/RU_mumig)*RUGR_imig^(1-1/RU_mumig)
-+RUIT_numig ^(1/RU_mumig)*RUIT_imig^(1-1/RU_mumig)
-+RUNL_numig ^(1/RU_mumig)*RUNL_imig^(1-1/RU_mumig)
-+RUDE_numig ^(1/RU_mumig)*RUDE_imig^(1-1/RU_mumig)
-+RURW_numig ^(1/RU_mumig)*RURW_imig^(1-1/RU_mumig)
-+RUUS_numig ^(1/RU_mumig)*RUUS_imig^(1-1/RU_mumig)
++RURA_numig ^(1/RU_mumig)*((1-RURA_gammaimig)*RURA_imig)^(1-1/RU_mumig)
++RUAT_numig ^(1/RU_mumig)*((1-RUAT_gammaimig)*RUAT_imig)^(1-1/RU_mumig)
++RUBE_numig ^(1/RU_mumig)*((1-RUBE_gammaimig)*RUBE_imig)^(1-1/RU_mumig)
++RUES_numig ^(1/RU_mumig)*((1-RUES_gammaimig)*RUES_imig)^(1-1/RU_mumig)
++RUFI_numig ^(1/RU_mumig)*((1-RUFI_gammaimig)*RUFI_imig)^(1-1/RU_mumig)
++RUFR_numig ^(1/RU_mumig)*((1-RUFR_gammaimig)*RUFR_imig)^(1-1/RU_mumig)
++RUGR_numig ^(1/RU_mumig)*((1-RUGR_gammaimig)*RUGR_imig)^(1-1/RU_mumig)
++RUIT_numig ^(1/RU_mumig)*((1-RUIT_gammaimig)*RUIT_imig)^(1-1/RU_mumig)
++RUNL_numig ^(1/RU_mumig)*((1-RUNL_gammaimig)*RUNL_imig)^(1-1/RU_mumig)
++RUDE_numig ^(1/RU_mumig)*((1-RUDE_gammaimig)*RUDE_imig)^(1-1/RU_mumig)
++RURW_numig ^(1/RU_mumig)*((1-RURW_gammaimig)*RURW_imig)^(1-1/RU_mumig)
++RUUS_numig ^(1/RU_mumig)*((1-RUUS_gammaimig)*RUUS_imig)^(1-1/RU_mumig)
 +(1
 -RURA_numig
 -RUAT_numig
@@ -56397,29 +57064,29 @@ RU_imig^((RU_mumig-1)/RU_mumig) =
 -RUDE_numig
 -RURW_numig
 -RUUS_numig
-)^(1/RU_mumig)*RUPT_imig^(1-1/RU_mumig);
+)^(1/RU_mumig)*((1-RUPT_gammaimig)*RUPT_imig)^(1-1/RU_mumig);
 // Demand for bilateral consumption import goods
-RURA_imig = RURA_numig*((RA_pex*RURA_rer)/RU_pimig)^(-RU_mumig)*RU_imig;
+RURA_imig = RURA_numig*((RA_pex*RURA_rer)/(RURA_gammaimigdag*RU_pimig))^(-RU_mumig)*RU_imig/(1-RURA_gammaimig);
 // Demand for bilateral consumption import goods
-RUAT_imig = RUAT_numig*((AT_pex*RUAT_rer)/RU_pimig)^(-RU_mumig)*RU_imig;
+RUAT_imig = RUAT_numig*((AT_pex*RUAT_rer)/(RUAT_gammaimigdag*RU_pimig))^(-RU_mumig)*RU_imig/(1-RUAT_gammaimig);
 // Demand for bilateral consumption import goods
-RUBE_imig = RUBE_numig*((BE_pex*RUBE_rer)/RU_pimig)^(-RU_mumig)*RU_imig;
+RUBE_imig = RUBE_numig*((BE_pex*RUBE_rer)/(RUBE_gammaimigdag*RU_pimig))^(-RU_mumig)*RU_imig/(1-RUBE_gammaimig);
 // Demand for bilateral consumption import goods
-RUES_imig = RUES_numig*((ES_pex*RUES_rer)/RU_pimig)^(-RU_mumig)*RU_imig;
+RUES_imig = RUES_numig*((ES_pex*RUES_rer)/(RUES_gammaimigdag*RU_pimig))^(-RU_mumig)*RU_imig/(1-RUES_gammaimig);
 // Demand for bilateral consumption import goods
-RUFI_imig = RUFI_numig*((FI_pex*RUFI_rer)/RU_pimig)^(-RU_mumig)*RU_imig;
+RUFI_imig = RUFI_numig*((FI_pex*RUFI_rer)/(RUFI_gammaimigdag*RU_pimig))^(-RU_mumig)*RU_imig/(1-RUFI_gammaimig);
 // Demand for bilateral consumption import goods
-RUFR_imig = RUFR_numig*((FR_pex*RUFR_rer)/RU_pimig)^(-RU_mumig)*RU_imig;
+RUFR_imig = RUFR_numig*((FR_pex*RUFR_rer)/(RUFR_gammaimigdag*RU_pimig))^(-RU_mumig)*RU_imig/(1-RUFR_gammaimig);
 // Demand for bilateral consumption import goods
-RUGR_imig = RUGR_numig*((GR_pex*RUGR_rer)/RU_pimig)^(-RU_mumig)*RU_imig;
+RUGR_imig = RUGR_numig*((GR_pex*RUGR_rer)/(RUGR_gammaimigdag*RU_pimig))^(-RU_mumig)*RU_imig/(1-RUGR_gammaimig);
 // Demand for bilateral consumption import goods
-RUIT_imig = RUIT_numig*((IT_pex*RUIT_rer)/RU_pimig)^(-RU_mumig)*RU_imig;
+RUIT_imig = RUIT_numig*((IT_pex*RUIT_rer)/(RUIT_gammaimigdag*RU_pimig))^(-RU_mumig)*RU_imig/(1-RUIT_gammaimig);
 // Demand for bilateral consumption import goods
-RUNL_imig = RUNL_numig*((NL_pex*RUNL_rer)/RU_pimig)^(-RU_mumig)*RU_imig;
+RUNL_imig = RUNL_numig*((NL_pex*RUNL_rer)/(RUNL_gammaimigdag*RU_pimig))^(-RU_mumig)*RU_imig/(1-RUNL_gammaimig);
 // Demand for bilateral consumption import goods
-RUDE_imig = RUDE_numig*((DE_pex*RUDE_rer)/RU_pimig)^(-RU_mumig)*RU_imig;
+RUDE_imig = RUDE_numig*((DE_pex*RUDE_rer)/(RUDE_gammaimigdag*RU_pimig))^(-RU_mumig)*RU_imig/(1-RUDE_gammaimig);
 // Demand for bilateral consumption import goods
-RUUS_imig = RUUS_numig*((US_pex*RUUS_rer)/RU_pimig)^(-RU_mumig)*RU_imig;
+RUUS_imig = RUUS_numig*((US_pex*RUUS_rer)/(RUUS_gammaimigdag*RU_pimig))^(-RU_mumig)*RU_imig/(1-RUUS_gammaimig);
 RUPT_imig = (1
 -RURA_numig
 -RUAT_numig
@@ -56433,21 +57100,21 @@ RUPT_imig = (1
 -RUDE_numig
 -RURW_numig
 -RUUS_numig
-)*((PT_pex*RUPT_rer)/RU_pimig)^(-RU_mumig)*RU_imig;
+)*((PT_pex*RUPT_rer)/(RUPT_gammaimigdag*RU_pimig))^(-RU_mumig)*RU_imig/(1-RUPT_gammaimig);
 // Price of the consumption good (import)
 RU_pimig^(1-RU_mumig) =
-+RURA_numig * (RA_pex*RURA_rer)^(1-RU_mumig)
-+RUAT_numig * (AT_pex*RUAT_rer)^(1-RU_mumig)
-+RUBE_numig * (BE_pex*RUBE_rer)^(1-RU_mumig)
-+RUES_numig * (ES_pex*RUES_rer)^(1-RU_mumig)
-+RUFI_numig * (FI_pex*RUFI_rer)^(1-RU_mumig)
-+RUFR_numig * (FR_pex*RUFR_rer)^(1-RU_mumig)
-+RUGR_numig * (GR_pex*RUGR_rer)^(1-RU_mumig)
-+RUIT_numig * (IT_pex*RUIT_rer)^(1-RU_mumig)
-+RUNL_numig * (NL_pex*RUNL_rer)^(1-RU_mumig)
-+RUDE_numig * (DE_pex*RUDE_rer)^(1-RU_mumig)
-+RURW_numig * (RW_pex*RURW_rer)^(1-RU_mumig)
-+RUUS_numig * (US_pex*RUUS_rer)^(1-RU_mumig)
++RURA_numig *((RA_pex*RURA_rer)/RURA_gammaimigdag)^(1-RU_mumig)
++RUAT_numig *((AT_pex*RUAT_rer)/RUAT_gammaimigdag)^(1-RU_mumig)
++RUBE_numig *((BE_pex*RUBE_rer)/RUBE_gammaimigdag)^(1-RU_mumig)
++RUES_numig *((ES_pex*RUES_rer)/RUES_gammaimigdag)^(1-RU_mumig)
++RUFI_numig *((FI_pex*RUFI_rer)/RUFI_gammaimigdag)^(1-RU_mumig)
++RUFR_numig *((FR_pex*RUFR_rer)/RUFR_gammaimigdag)^(1-RU_mumig)
++RUGR_numig *((GR_pex*RUGR_rer)/RUGR_gammaimigdag)^(1-RU_mumig)
++RUIT_numig *((IT_pex*RUIT_rer)/RUIT_gammaimigdag)^(1-RU_mumig)
++RUNL_numig *((NL_pex*RUNL_rer)/RUNL_gammaimigdag)^(1-RU_mumig)
++RUDE_numig *((DE_pex*RUDE_rer)/RUDE_gammaimigdag)^(1-RU_mumig)
++RURW_numig *((RW_pex*RURW_rer)/RURW_gammaimigdag)^(1-RU_mumig)
++RUUS_numig *((US_pex*RUUS_rer)/RUUS_gammaimigdag)^(1-RU_mumig)
 +(1
 -RURA_numig
 -RUAT_numig
@@ -56461,7 +57128,7 @@ RU_pimig^(1-RU_mumig) =
 -RUDE_numig
 -RURW_numig
 -RUUS_numig
-)*(PT_pex*RUPT_rer)^(1-RU_mumig);
+)*((PT_pex*RUPT_rer)/RUPT_gammaimigdag)^(1-RU_mumig);
 // Private consumption good (import) inflation
 RU_piimig = RU_pimig/RU_pimig(-1)*RU_pic;
 // Private consumption good (import) inflation
@@ -56562,32 +57229,58 @@ RU_pttc^(1-RU_mutc) = (RU_nutc)*RU_pht^(1-RU_mutc)+(1-RU_nutc)*RU_pimc^(1-RU_mut
 1^(1-RU_muc) = (RU_nuc)*RU_pttc^(1-RU_muc)+(1-RU_nuc)*RU_pnt^(1-RU_muc);
 // Demand for domestic intermediate goods
 RU_htc = RU_nutc*(RU_pht/RU_pttc)^(-RU_mutc)*RU_ttc;
-RURA_gammaimc = 0;
-RURA_gammaimcdag = 1;
-RUAT_gammaimc = 0;
-RUAT_gammaimcdag = 1;
-RUBE_gammaimc = 0;
-RUBE_gammaimcdag = 1;
-RUES_gammaimc = 0;
-RUES_gammaimcdag = 1;
-RUFI_gammaimc = 0;
-RUFI_gammaimcdag = 1;
-RUFR_gammaimc = 0;
-RUFR_gammaimcdag = 1;
-RUGR_gammaimc = 0;
-RUGR_gammaimcdag = 1;
-RUIT_gammaimc = 0;
-RUIT_gammaimcdag = 1;
-RUNL_gammaimc = 0;
-RUNL_gammaimcdag = 1;
-RUPT_gammaimc = 0;
-RUPT_gammaimcdag = 1;
-RUDE_gammaimc = 0;
-RUDE_gammaimcdag = 1;
-RURW_gammaimc = 0;
-RURW_gammaimcdag = 1;
-RUUS_gammaimc = 0;
-RUUS_gammaimcdag = 1;
+// Import adjustment cost
+RURA_gammaimc = RU_gammaimc1/2*((RURA_imc/RU_qc)/(RURA_imc(-1)/RU_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RURA_gammaimcdag = 1-RURA_gammaimc-RU_gammaimc1*((RURA_imc/RU_qc)/(RURA_imc(-1)/RU_qc(-1))-1)*(RURA_imc/RU_qc)/(RURA_imc(-1)/RU_qc(-1));
+// Import adjustment cost
+RUAT_gammaimc = RU_gammaimc1/2*((RUAT_imc/RU_qc)/(RUAT_imc(-1)/RU_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUAT_gammaimcdag = 1-RUAT_gammaimc-RU_gammaimc1*((RUAT_imc/RU_qc)/(RUAT_imc(-1)/RU_qc(-1))-1)*(RUAT_imc/RU_qc)/(RUAT_imc(-1)/RU_qc(-1));
+// Import adjustment cost
+RUBE_gammaimc = RU_gammaimc1/2*((RUBE_imc/RU_qc)/(RUBE_imc(-1)/RU_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUBE_gammaimcdag = 1-RUBE_gammaimc-RU_gammaimc1*((RUBE_imc/RU_qc)/(RUBE_imc(-1)/RU_qc(-1))-1)*(RUBE_imc/RU_qc)/(RUBE_imc(-1)/RU_qc(-1));
+// Import adjustment cost
+RUES_gammaimc = RU_gammaimc1/2*((RUES_imc/RU_qc)/(RUES_imc(-1)/RU_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUES_gammaimcdag = 1-RUES_gammaimc-RU_gammaimc1*((RUES_imc/RU_qc)/(RUES_imc(-1)/RU_qc(-1))-1)*(RUES_imc/RU_qc)/(RUES_imc(-1)/RU_qc(-1));
+// Import adjustment cost
+RUFI_gammaimc = RU_gammaimc1/2*((RUFI_imc/RU_qc)/(RUFI_imc(-1)/RU_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUFI_gammaimcdag = 1-RUFI_gammaimc-RU_gammaimc1*((RUFI_imc/RU_qc)/(RUFI_imc(-1)/RU_qc(-1))-1)*(RUFI_imc/RU_qc)/(RUFI_imc(-1)/RU_qc(-1));
+// Import adjustment cost
+RUFR_gammaimc = RU_gammaimc1/2*((RUFR_imc/RU_qc)/(RUFR_imc(-1)/RU_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUFR_gammaimcdag = 1-RUFR_gammaimc-RU_gammaimc1*((RUFR_imc/RU_qc)/(RUFR_imc(-1)/RU_qc(-1))-1)*(RUFR_imc/RU_qc)/(RUFR_imc(-1)/RU_qc(-1));
+// Import adjustment cost
+RUGR_gammaimc = RU_gammaimc1/2*((RUGR_imc/RU_qc)/(RUGR_imc(-1)/RU_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUGR_gammaimcdag = 1-RUGR_gammaimc-RU_gammaimc1*((RUGR_imc/RU_qc)/(RUGR_imc(-1)/RU_qc(-1))-1)*(RUGR_imc/RU_qc)/(RUGR_imc(-1)/RU_qc(-1));
+// Import adjustment cost
+RUIT_gammaimc = RU_gammaimc1/2*((RUIT_imc/RU_qc)/(RUIT_imc(-1)/RU_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUIT_gammaimcdag = 1-RUIT_gammaimc-RU_gammaimc1*((RUIT_imc/RU_qc)/(RUIT_imc(-1)/RU_qc(-1))-1)*(RUIT_imc/RU_qc)/(RUIT_imc(-1)/RU_qc(-1));
+// Import adjustment cost
+RUNL_gammaimc = RU_gammaimc1/2*((RUNL_imc/RU_qc)/(RUNL_imc(-1)/RU_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUNL_gammaimcdag = 1-RUNL_gammaimc-RU_gammaimc1*((RUNL_imc/RU_qc)/(RUNL_imc(-1)/RU_qc(-1))-1)*(RUNL_imc/RU_qc)/(RUNL_imc(-1)/RU_qc(-1));
+// Import adjustment cost
+RUPT_gammaimc = RU_gammaimc1/2*((RUPT_imc/RU_qc)/(RUPT_imc(-1)/RU_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUPT_gammaimcdag = 1-RUPT_gammaimc-RU_gammaimc1*((RUPT_imc/RU_qc)/(RUPT_imc(-1)/RU_qc(-1))-1)*(RUPT_imc/RU_qc)/(RUPT_imc(-1)/RU_qc(-1));
+// Import adjustment cost
+RUDE_gammaimc = RU_gammaimc1/2*((RUDE_imc/RU_qc)/(RUDE_imc(-1)/RU_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUDE_gammaimcdag = 1-RUDE_gammaimc-RU_gammaimc1*((RUDE_imc/RU_qc)/(RUDE_imc(-1)/RU_qc(-1))-1)*(RUDE_imc/RU_qc)/(RUDE_imc(-1)/RU_qc(-1));
+// Import adjustment cost
+RURW_gammaimc = RU_gammaimc1/2*((RURW_imc/RU_qc)/(RURW_imc(-1)/RU_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RURW_gammaimcdag = 1-RURW_gammaimc-RU_gammaimc1*((RURW_imc/RU_qc)/(RURW_imc(-1)/RU_qc(-1))-1)*(RURW_imc/RU_qc)/(RURW_imc(-1)/RU_qc(-1));
+// Import adjustment cost
+RUUS_gammaimc = RU_gammaimc1/2*((RUUS_imc/RU_qc)/(RUUS_imc(-1)/RU_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUUS_gammaimcdag = 1-RUUS_gammaimc-RU_gammaimc1*((RUUS_imc/RU_qc)/(RUUS_imc(-1)/RU_qc(-1))-1)*(RUUS_imc/RU_qc)/(RUUS_imc(-1)/RU_qc(-1));
 // Private consumption good (tradable)
 RU_tti^((RU_muti-1)/RU_muti) = (RU_nuti)^(1/RU_muti)*RU_hti^(1-1/RU_muti)+(1-RU_nuti)^(1/RU_muti)*RU_imi^(1-1/RU_muti);
 // Private consumption good  (total)
@@ -56600,35 +57293,60 @@ RU_ptti^(1-RU_muti) = (RU_nuti)*RU_pht^(1-RU_muti)+(1-RU_nuti)*RU_pimi^(1-RU_mut
 RU_pi^(1-RU_mui) = (RU_nui)*RU_ptti^(1-RU_mui)+(1-RU_nui)*RU_pnt^(1-RU_mui);
 // Auxiliary equation for the price of the investment good in steady state
 // this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
-RU_pibar = RU_pi;
 // Demand for domestic intermediate goods
 RU_hti = RU_nuti*(RU_pht/RU_ptti)^(-RU_muti)*RU_tti;
-RURA_gammaimi = 0;
-RURA_gammaimidag = 1;
-RUAT_gammaimi = 0;
-RUAT_gammaimidag = 1;
-RUBE_gammaimi = 0;
-RUBE_gammaimidag = 1;
-RUES_gammaimi = 0;
-RUES_gammaimidag = 1;
-RUFI_gammaimi = 0;
-RUFI_gammaimidag = 1;
-RUFR_gammaimi = 0;
-RUFR_gammaimidag = 1;
-RUGR_gammaimi = 0;
-RUGR_gammaimidag = 1;
-RUIT_gammaimi = 0;
-RUIT_gammaimidag = 1;
-RUNL_gammaimi = 0;
-RUNL_gammaimidag = 1;
-RUPT_gammaimi = 0;
-RUPT_gammaimidag = 1;
-RUDE_gammaimi = 0;
-RUDE_gammaimidag = 1;
-RURW_gammaimi = 0;
-RURW_gammaimidag = 1;
-RUUS_gammaimi = 0;
-RUUS_gammaimidag = 1;
+// Import adjustment cost
+RURA_gammaimi = RU_gammaimi1/2*((RURA_imi/RU_qi)/(RURA_imi(-1)/RU_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RURA_gammaimidag = 1-RURA_gammaimi-RU_gammaimi1*((RURA_imi/RU_qi)/(RURA_imi(-1)/RU_qi)-1)*((RURA_imi/RU_qi)/(RURA_imi(-1)/RU_qi(-1)));
+// Import adjustment cost
+RUAT_gammaimi = RU_gammaimi1/2*((RUAT_imi/RU_qi)/(RUAT_imi(-1)/RU_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUAT_gammaimidag = 1-RUAT_gammaimi-RU_gammaimi1*((RUAT_imi/RU_qi)/(RUAT_imi(-1)/RU_qi)-1)*((RUAT_imi/RU_qi)/(RUAT_imi(-1)/RU_qi(-1)));
+// Import adjustment cost
+RUBE_gammaimi = RU_gammaimi1/2*((RUBE_imi/RU_qi)/(RUBE_imi(-1)/RU_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUBE_gammaimidag = 1-RUBE_gammaimi-RU_gammaimi1*((RUBE_imi/RU_qi)/(RUBE_imi(-1)/RU_qi)-1)*((RUBE_imi/RU_qi)/(RUBE_imi(-1)/RU_qi(-1)));
+// Import adjustment cost
+RUES_gammaimi = RU_gammaimi1/2*((RUES_imi/RU_qi)/(RUES_imi(-1)/RU_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUES_gammaimidag = 1-RUES_gammaimi-RU_gammaimi1*((RUES_imi/RU_qi)/(RUES_imi(-1)/RU_qi)-1)*((RUES_imi/RU_qi)/(RUES_imi(-1)/RU_qi(-1)));
+// Import adjustment cost
+RUFI_gammaimi = RU_gammaimi1/2*((RUFI_imi/RU_qi)/(RUFI_imi(-1)/RU_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUFI_gammaimidag = 1-RUFI_gammaimi-RU_gammaimi1*((RUFI_imi/RU_qi)/(RUFI_imi(-1)/RU_qi)-1)*((RUFI_imi/RU_qi)/(RUFI_imi(-1)/RU_qi(-1)));
+// Import adjustment cost
+RUFR_gammaimi = RU_gammaimi1/2*((RUFR_imi/RU_qi)/(RUFR_imi(-1)/RU_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUFR_gammaimidag = 1-RUFR_gammaimi-RU_gammaimi1*((RUFR_imi/RU_qi)/(RUFR_imi(-1)/RU_qi)-1)*((RUFR_imi/RU_qi)/(RUFR_imi(-1)/RU_qi(-1)));
+// Import adjustment cost
+RUGR_gammaimi = RU_gammaimi1/2*((RUGR_imi/RU_qi)/(RUGR_imi(-1)/RU_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUGR_gammaimidag = 1-RUGR_gammaimi-RU_gammaimi1*((RUGR_imi/RU_qi)/(RUGR_imi(-1)/RU_qi)-1)*((RUGR_imi/RU_qi)/(RUGR_imi(-1)/RU_qi(-1)));
+// Import adjustment cost
+RUIT_gammaimi = RU_gammaimi1/2*((RUIT_imi/RU_qi)/(RUIT_imi(-1)/RU_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUIT_gammaimidag = 1-RUIT_gammaimi-RU_gammaimi1*((RUIT_imi/RU_qi)/(RUIT_imi(-1)/RU_qi)-1)*((RUIT_imi/RU_qi)/(RUIT_imi(-1)/RU_qi(-1)));
+// Import adjustment cost
+RUNL_gammaimi = RU_gammaimi1/2*((RUNL_imi/RU_qi)/(RUNL_imi(-1)/RU_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUNL_gammaimidag = 1-RUNL_gammaimi-RU_gammaimi1*((RUNL_imi/RU_qi)/(RUNL_imi(-1)/RU_qi)-1)*((RUNL_imi/RU_qi)/(RUNL_imi(-1)/RU_qi(-1)));
+// Import adjustment cost
+RUPT_gammaimi = RU_gammaimi1/2*((RUPT_imi/RU_qi)/(RUPT_imi(-1)/RU_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUPT_gammaimidag = 1-RUPT_gammaimi-RU_gammaimi1*((RUPT_imi/RU_qi)/(RUPT_imi(-1)/RU_qi)-1)*((RUPT_imi/RU_qi)/(RUPT_imi(-1)/RU_qi(-1)));
+// Import adjustment cost
+RUDE_gammaimi = RU_gammaimi1/2*((RUDE_imi/RU_qi)/(RUDE_imi(-1)/RU_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUDE_gammaimidag = 1-RUDE_gammaimi-RU_gammaimi1*((RUDE_imi/RU_qi)/(RUDE_imi(-1)/RU_qi)-1)*((RUDE_imi/RU_qi)/(RUDE_imi(-1)/RU_qi(-1)));
+// Import adjustment cost
+RURW_gammaimi = RU_gammaimi1/2*((RURW_imi/RU_qi)/(RURW_imi(-1)/RU_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RURW_gammaimidag = 1-RURW_gammaimi-RU_gammaimi1*((RURW_imi/RU_qi)/(RURW_imi(-1)/RU_qi)-1)*((RURW_imi/RU_qi)/(RURW_imi(-1)/RU_qi(-1)));
+// Import adjustment cost
+RUUS_gammaimi = RU_gammaimi1/2*((RUUS_imi/RU_qi)/(RUUS_imi(-1)/RU_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUUS_gammaimidag = 1-RUUS_gammaimi-RU_gammaimi1*((RUUS_imi/RU_qi)/(RUUS_imi(-1)/RU_qi)-1)*((RUUS_imi/RU_qi)/(RUUS_imi(-1)/RU_qi(-1)));
 // Private consumption good (tradable)
 RU_ttcg^((RU_mutcg-1)/RU_mutcg) = (RU_nutcg)^(1/RU_mutcg)*RU_htcg^(1-1/RU_mutcg)+(1-RU_nutcg)^(1/RU_mutcg)*RU_imcg^(1-1/RU_mutcg);
 // Private consumption good  (total)
@@ -56641,32 +57359,58 @@ RU_pttcg^(1-RU_mutcg) = (RU_nutcg)*RU_pht^(1-RU_mutcg)+(1-RU_nutcg)*RU_pimcg^(1-
 RU_pcg^(1-RU_mucg) = (RU_nucg)*RU_pttcg^(1-RU_mucg)+(1-RU_nucg)*RU_pnt^(1-RU_mucg);
 // Demand for domestic intermediate goods
 RU_htcg = RU_nutcg*(RU_pht/RU_pttcg)^(-RU_mutcg)*RU_ttcg;
-RURA_gammaimcg = 0;
-RURA_gammaimcgdag = 1;
-RUAT_gammaimcg = 0;
-RUAT_gammaimcgdag = 1;
-RUBE_gammaimcg = 0;
-RUBE_gammaimcgdag = 1;
-RUES_gammaimcg = 0;
-RUES_gammaimcgdag = 1;
-RUFI_gammaimcg = 0;
-RUFI_gammaimcgdag = 1;
-RUFR_gammaimcg = 0;
-RUFR_gammaimcgdag = 1;
-RUGR_gammaimcg = 0;
-RUGR_gammaimcgdag = 1;
-RUIT_gammaimcg = 0;
-RUIT_gammaimcgdag = 1;
-RUNL_gammaimcg = 0;
-RUNL_gammaimcgdag = 1;
-RUPT_gammaimcg = 0;
-RUPT_gammaimcgdag = 1;
-RUDE_gammaimcg = 0;
-RUDE_gammaimcgdag = 1;
-RURW_gammaimcg = 0;
-RURW_gammaimcgdag = 1;
-RUUS_gammaimcg = 0;
-RUUS_gammaimcgdag = 1;
+// Import adjustment cost
+RURA_gammaimcg = RU_gammaimcg1/2*((RURA_imcg/RU_qcg)/(RURA_imcg(-1)/RU_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RURA_gammaimcgdag = 1-RURA_gammaimcg-RU_gammaimcg1*((RURA_imcg/RU_qcg)/(RURA_imcg(-1)/RU_qcg)-1)*((RURA_imcg/RU_qcg)/(RURA_imcg(-1)/RU_qcg(-1)));
+// Import adjustment cost
+RUAT_gammaimcg = RU_gammaimcg1/2*((RUAT_imcg/RU_qcg)/(RUAT_imcg(-1)/RU_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUAT_gammaimcgdag = 1-RUAT_gammaimcg-RU_gammaimcg1*((RUAT_imcg/RU_qcg)/(RUAT_imcg(-1)/RU_qcg)-1)*((RUAT_imcg/RU_qcg)/(RUAT_imcg(-1)/RU_qcg(-1)));
+// Import adjustment cost
+RUBE_gammaimcg = RU_gammaimcg1/2*((RUBE_imcg/RU_qcg)/(RUBE_imcg(-1)/RU_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUBE_gammaimcgdag = 1-RUBE_gammaimcg-RU_gammaimcg1*((RUBE_imcg/RU_qcg)/(RUBE_imcg(-1)/RU_qcg)-1)*((RUBE_imcg/RU_qcg)/(RUBE_imcg(-1)/RU_qcg(-1)));
+// Import adjustment cost
+RUES_gammaimcg = RU_gammaimcg1/2*((RUES_imcg/RU_qcg)/(RUES_imcg(-1)/RU_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUES_gammaimcgdag = 1-RUES_gammaimcg-RU_gammaimcg1*((RUES_imcg/RU_qcg)/(RUES_imcg(-1)/RU_qcg)-1)*((RUES_imcg/RU_qcg)/(RUES_imcg(-1)/RU_qcg(-1)));
+// Import adjustment cost
+RUFI_gammaimcg = RU_gammaimcg1/2*((RUFI_imcg/RU_qcg)/(RUFI_imcg(-1)/RU_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUFI_gammaimcgdag = 1-RUFI_gammaimcg-RU_gammaimcg1*((RUFI_imcg/RU_qcg)/(RUFI_imcg(-1)/RU_qcg)-1)*((RUFI_imcg/RU_qcg)/(RUFI_imcg(-1)/RU_qcg(-1)));
+// Import adjustment cost
+RUFR_gammaimcg = RU_gammaimcg1/2*((RUFR_imcg/RU_qcg)/(RUFR_imcg(-1)/RU_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUFR_gammaimcgdag = 1-RUFR_gammaimcg-RU_gammaimcg1*((RUFR_imcg/RU_qcg)/(RUFR_imcg(-1)/RU_qcg)-1)*((RUFR_imcg/RU_qcg)/(RUFR_imcg(-1)/RU_qcg(-1)));
+// Import adjustment cost
+RUGR_gammaimcg = RU_gammaimcg1/2*((RUGR_imcg/RU_qcg)/(RUGR_imcg(-1)/RU_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUGR_gammaimcgdag = 1-RUGR_gammaimcg-RU_gammaimcg1*((RUGR_imcg/RU_qcg)/(RUGR_imcg(-1)/RU_qcg)-1)*((RUGR_imcg/RU_qcg)/(RUGR_imcg(-1)/RU_qcg(-1)));
+// Import adjustment cost
+RUIT_gammaimcg = RU_gammaimcg1/2*((RUIT_imcg/RU_qcg)/(RUIT_imcg(-1)/RU_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUIT_gammaimcgdag = 1-RUIT_gammaimcg-RU_gammaimcg1*((RUIT_imcg/RU_qcg)/(RUIT_imcg(-1)/RU_qcg)-1)*((RUIT_imcg/RU_qcg)/(RUIT_imcg(-1)/RU_qcg(-1)));
+// Import adjustment cost
+RUNL_gammaimcg = RU_gammaimcg1/2*((RUNL_imcg/RU_qcg)/(RUNL_imcg(-1)/RU_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUNL_gammaimcgdag = 1-RUNL_gammaimcg-RU_gammaimcg1*((RUNL_imcg/RU_qcg)/(RUNL_imcg(-1)/RU_qcg)-1)*((RUNL_imcg/RU_qcg)/(RUNL_imcg(-1)/RU_qcg(-1)));
+// Import adjustment cost
+RUPT_gammaimcg = RU_gammaimcg1/2*((RUPT_imcg/RU_qcg)/(RUPT_imcg(-1)/RU_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUPT_gammaimcgdag = 1-RUPT_gammaimcg-RU_gammaimcg1*((RUPT_imcg/RU_qcg)/(RUPT_imcg(-1)/RU_qcg)-1)*((RUPT_imcg/RU_qcg)/(RUPT_imcg(-1)/RU_qcg(-1)));
+// Import adjustment cost
+RUDE_gammaimcg = RU_gammaimcg1/2*((RUDE_imcg/RU_qcg)/(RUDE_imcg(-1)/RU_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUDE_gammaimcgdag = 1-RUDE_gammaimcg-RU_gammaimcg1*((RUDE_imcg/RU_qcg)/(RUDE_imcg(-1)/RU_qcg)-1)*((RUDE_imcg/RU_qcg)/(RUDE_imcg(-1)/RU_qcg(-1)));
+// Import adjustment cost
+RURW_gammaimcg = RU_gammaimcg1/2*((RURW_imcg/RU_qcg)/(RURW_imcg(-1)/RU_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RURW_gammaimcgdag = 1-RURW_gammaimcg-RU_gammaimcg1*((RURW_imcg/RU_qcg)/(RURW_imcg(-1)/RU_qcg)-1)*((RURW_imcg/RU_qcg)/(RURW_imcg(-1)/RU_qcg(-1)));
+// Import adjustment cost
+RUUS_gammaimcg = RU_gammaimcg1/2*((RUUS_imcg/RU_qcg)/(RUUS_imcg(-1)/RU_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUUS_gammaimcgdag = 1-RUUS_gammaimcg-RU_gammaimcg1*((RUUS_imcg/RU_qcg)/(RUUS_imcg(-1)/RU_qcg)-1)*((RUUS_imcg/RU_qcg)/(RUUS_imcg(-1)/RU_qcg(-1)));
 // Private consumption good (tradable)
 RU_ttig^((RU_mutig-1)/RU_mutig) = (RU_nutig)^(1/RU_mutig)*RU_htig^(1-1/RU_mutig)+(1-RU_nutig)^(1/RU_mutig)*RU_imig^(1-1/RU_mutig);
 // Private consumption good  (total)
@@ -56679,32 +57423,58 @@ RU_pttig^(1-RU_mutig) = (RU_nutig)*RU_pht^(1-RU_mutig)+(1-RU_nutig)*RU_pimig^(1-
 RU_pig^(1-RU_muig) = (RU_nuig)*RU_pttig^(1-RU_muig)+(1-RU_nuig)*RU_pnt^(1-RU_muig);
 // Demand for domestic intermediate goods
 RU_htig = RU_nutig*(RU_pht/RU_pttig)^(-RU_mutig)*RU_ttig;
-RURA_gammaimig = 0;
-RURA_gammaimigdag = 1;
-RUAT_gammaimig = 0;
-RUAT_gammaimigdag = 1;
-RUBE_gammaimig = 0;
-RUBE_gammaimigdag = 1;
-RUES_gammaimig = 0;
-RUES_gammaimigdag = 1;
-RUFI_gammaimig = 0;
-RUFI_gammaimigdag = 1;
-RUFR_gammaimig = 0;
-RUFR_gammaimigdag = 1;
-RUGR_gammaimig = 0;
-RUGR_gammaimigdag = 1;
-RUIT_gammaimig = 0;
-RUIT_gammaimigdag = 1;
-RUNL_gammaimig = 0;
-RUNL_gammaimigdag = 1;
-RUPT_gammaimig = 0;
-RUPT_gammaimigdag = 1;
-RUDE_gammaimig = 0;
-RUDE_gammaimigdag = 1;
-RURW_gammaimig = 0;
-RURW_gammaimigdag = 1;
-RUUS_gammaimig = 0;
-RUUS_gammaimigdag = 1;
+// Import adjustment cost
+RURA_gammaimig = RU_gammaimig1/2*((RURA_imig/RU_qig)/(RURA_imig(-1)/RU_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RURA_gammaimigdag = 1-RURA_gammaimig-RU_gammaimig1*((RURA_imig/RU_qig)/(RURA_imig(-1)/RU_qig)-1)*((RURA_imig/RU_qig)/(RURA_imig(-1)/RU_qig(-1)));
+// Import adjustment cost
+RUAT_gammaimig = RU_gammaimig1/2*((RUAT_imig/RU_qig)/(RUAT_imig(-1)/RU_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUAT_gammaimigdag = 1-RUAT_gammaimig-RU_gammaimig1*((RUAT_imig/RU_qig)/(RUAT_imig(-1)/RU_qig)-1)*((RUAT_imig/RU_qig)/(RUAT_imig(-1)/RU_qig(-1)));
+// Import adjustment cost
+RUBE_gammaimig = RU_gammaimig1/2*((RUBE_imig/RU_qig)/(RUBE_imig(-1)/RU_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUBE_gammaimigdag = 1-RUBE_gammaimig-RU_gammaimig1*((RUBE_imig/RU_qig)/(RUBE_imig(-1)/RU_qig)-1)*((RUBE_imig/RU_qig)/(RUBE_imig(-1)/RU_qig(-1)));
+// Import adjustment cost
+RUES_gammaimig = RU_gammaimig1/2*((RUES_imig/RU_qig)/(RUES_imig(-1)/RU_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUES_gammaimigdag = 1-RUES_gammaimig-RU_gammaimig1*((RUES_imig/RU_qig)/(RUES_imig(-1)/RU_qig)-1)*((RUES_imig/RU_qig)/(RUES_imig(-1)/RU_qig(-1)));
+// Import adjustment cost
+RUFI_gammaimig = RU_gammaimig1/2*((RUFI_imig/RU_qig)/(RUFI_imig(-1)/RU_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUFI_gammaimigdag = 1-RUFI_gammaimig-RU_gammaimig1*((RUFI_imig/RU_qig)/(RUFI_imig(-1)/RU_qig)-1)*((RUFI_imig/RU_qig)/(RUFI_imig(-1)/RU_qig(-1)));
+// Import adjustment cost
+RUFR_gammaimig = RU_gammaimig1/2*((RUFR_imig/RU_qig)/(RUFR_imig(-1)/RU_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUFR_gammaimigdag = 1-RUFR_gammaimig-RU_gammaimig1*((RUFR_imig/RU_qig)/(RUFR_imig(-1)/RU_qig)-1)*((RUFR_imig/RU_qig)/(RUFR_imig(-1)/RU_qig(-1)));
+// Import adjustment cost
+RUGR_gammaimig = RU_gammaimig1/2*((RUGR_imig/RU_qig)/(RUGR_imig(-1)/RU_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUGR_gammaimigdag = 1-RUGR_gammaimig-RU_gammaimig1*((RUGR_imig/RU_qig)/(RUGR_imig(-1)/RU_qig)-1)*((RUGR_imig/RU_qig)/(RUGR_imig(-1)/RU_qig(-1)));
+// Import adjustment cost
+RUIT_gammaimig = RU_gammaimig1/2*((RUIT_imig/RU_qig)/(RUIT_imig(-1)/RU_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUIT_gammaimigdag = 1-RUIT_gammaimig-RU_gammaimig1*((RUIT_imig/RU_qig)/(RUIT_imig(-1)/RU_qig)-1)*((RUIT_imig/RU_qig)/(RUIT_imig(-1)/RU_qig(-1)));
+// Import adjustment cost
+RUNL_gammaimig = RU_gammaimig1/2*((RUNL_imig/RU_qig)/(RUNL_imig(-1)/RU_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUNL_gammaimigdag = 1-RUNL_gammaimig-RU_gammaimig1*((RUNL_imig/RU_qig)/(RUNL_imig(-1)/RU_qig)-1)*((RUNL_imig/RU_qig)/(RUNL_imig(-1)/RU_qig(-1)));
+// Import adjustment cost
+RUPT_gammaimig = RU_gammaimig1/2*((RUPT_imig/RU_qig)/(RUPT_imig(-1)/RU_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUPT_gammaimigdag = 1-RUPT_gammaimig-RU_gammaimig1*((RUPT_imig/RU_qig)/(RUPT_imig(-1)/RU_qig)-1)*((RUPT_imig/RU_qig)/(RUPT_imig(-1)/RU_qig(-1)));
+// Import adjustment cost
+RUDE_gammaimig = RU_gammaimig1/2*((RUDE_imig/RU_qig)/(RUDE_imig(-1)/RU_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUDE_gammaimigdag = 1-RUDE_gammaimig-RU_gammaimig1*((RUDE_imig/RU_qig)/(RUDE_imig(-1)/RU_qig)-1)*((RUDE_imig/RU_qig)/(RUDE_imig(-1)/RU_qig(-1)));
+// Import adjustment cost
+RURW_gammaimig = RU_gammaimig1/2*((RURW_imig/RU_qig)/(RURW_imig(-1)/RU_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RURW_gammaimigdag = 1-RURW_gammaimig-RU_gammaimig1*((RURW_imig/RU_qig)/(RURW_imig(-1)/RU_qig)-1)*((RURW_imig/RU_qig)/(RURW_imig(-1)/RU_qig(-1)));
+// Import adjustment cost
+RUUS_gammaimig = RU_gammaimig1/2*((RUUS_imig/RU_qig)/(RUUS_imig(-1)/RU_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RUUS_gammaimigdag = 1-RUUS_gammaimig-RU_gammaimig1*((RUUS_imig/RU_qig)/(RUUS_imig(-1)/RU_qig)-1)*((RUUS_imig/RU_qig)/(RUUS_imig(-1)/RU_qig(-1)));
 // Trade balance
 RU_tb =
 +RU_pex*RA_size/RU_size*RARU_im
@@ -56765,18 +57535,10 @@ RU_ex =
 // Government spending, using RU_pg = RU_pht
 RU_pcg*RU_cg = RU_cgy*RU_pybar*RU_ybar;
 RU_pig*RU_ig = RU_igy*RU_pybar*RU_ybar;
-RU_t = 0;
-RU_b = RU_bytarget*RU_pybar*RU_ybar;
-// Auxiliary equation for steady-state output
-RU_ybar = RU_y;
-// Auxiliary equation for steady-state output
-RU_ytbar = RU_yst;
-// Auxiliary equation for steady-state output
-RU_ynbar = RU_ysn;
-// Auxiliary equation for steady-state output deflator
-RU_pybar = RU_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-RU_trybar = RU_tr/(RU_pybar*RU_ybar);
+// Transfers
+RU_tr = RU_try*RU_pybar*RU_ybar;
+// Fiscal rule
+RU_t/(RU_pybar*RU_ybar) = RU_phitb*(RU_b/(RU_pybar*RU_ybar)-RU_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 RU_ti = RU_upsilont*RU_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -56792,9 +57554,11 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	RU_r^4-1 = RU_rrstar^4*RU_pi4target-1;
-RU_pic4 = RU_pi4target;
-RU_rr-1 = RU_r/RU_pi4target^(1/4)-1;
+	RU_r^4-1 = RU_phirr*(RU_r(-1)^4-1)+(1-RU_phirr)*(RU_rrstar^4*RU_pi4target-1+RU_phirpi*(RU_pic4-RU_pi4target))+RU_phirgy*(RU_y/RU_y(-1)-1)+RU_epsr;
+// Definition of annual inflation
+RU_pic4 = RU_pic*RU_pic(-1)*RU_pic(-2)*RU_pic(-3);
+// Real interest rate
+RU_rr-1 = RU_r/RU_pic(+1)-1;
 // Equilibrium real interest rate
 RU_rrstar-1 = 1/RU_beta-1;
 //-------------
@@ -56881,68 +57645,68 @@ RU_py*RU_y =
 +RU_pcg*RU_qcg
 +RU_pig*RU_qig
 +RU_pex*RA_size/RU_size*RARU_im
--(RA_pex*RURA_rer)*RURA_imc
--(RA_pex*RURA_rer)*RURA_imi
+-(RA_pex*RURA_rer)*(RURA_imc*(1-RURA_gammaimc)/RURA_gammaimcdag)
+-(RA_pex*RURA_rer)*(RURA_imi*(1-RURA_gammaimi)/RURA_gammaimidag)
 -(RA_pex*RURA_rer)*RURA_imcg
 -(RA_pex*RURA_rer)*RURA_imig
 +RU_pex*AT_size/RU_size*ATRU_im
--(AT_pex*RUAT_rer)*RUAT_imc
--(AT_pex*RUAT_rer)*RUAT_imi
+-(AT_pex*RUAT_rer)*(RUAT_imc*(1-RUAT_gammaimc)/RUAT_gammaimcdag)
+-(AT_pex*RUAT_rer)*(RUAT_imi*(1-RUAT_gammaimi)/RUAT_gammaimidag)
 -(AT_pex*RUAT_rer)*RUAT_imcg
 -(AT_pex*RUAT_rer)*RUAT_imig
 +RU_pex*BE_size/RU_size*BERU_im
--(BE_pex*RUBE_rer)*RUBE_imc
--(BE_pex*RUBE_rer)*RUBE_imi
+-(BE_pex*RUBE_rer)*(RUBE_imc*(1-RUBE_gammaimc)/RUBE_gammaimcdag)
+-(BE_pex*RUBE_rer)*(RUBE_imi*(1-RUBE_gammaimi)/RUBE_gammaimidag)
 -(BE_pex*RUBE_rer)*RUBE_imcg
 -(BE_pex*RUBE_rer)*RUBE_imig
 +RU_pex*ES_size/RU_size*ESRU_im
--(ES_pex*RUES_rer)*RUES_imc
--(ES_pex*RUES_rer)*RUES_imi
+-(ES_pex*RUES_rer)*(RUES_imc*(1-RUES_gammaimc)/RUES_gammaimcdag)
+-(ES_pex*RUES_rer)*(RUES_imi*(1-RUES_gammaimi)/RUES_gammaimidag)
 -(ES_pex*RUES_rer)*RUES_imcg
 -(ES_pex*RUES_rer)*RUES_imig
 +RU_pex*FI_size/RU_size*FIRU_im
--(FI_pex*RUFI_rer)*RUFI_imc
--(FI_pex*RUFI_rer)*RUFI_imi
+-(FI_pex*RUFI_rer)*(RUFI_imc*(1-RUFI_gammaimc)/RUFI_gammaimcdag)
+-(FI_pex*RUFI_rer)*(RUFI_imi*(1-RUFI_gammaimi)/RUFI_gammaimidag)
 -(FI_pex*RUFI_rer)*RUFI_imcg
 -(FI_pex*RUFI_rer)*RUFI_imig
 +RU_pex*FR_size/RU_size*FRRU_im
--(FR_pex*RUFR_rer)*RUFR_imc
--(FR_pex*RUFR_rer)*RUFR_imi
+-(FR_pex*RUFR_rer)*(RUFR_imc*(1-RUFR_gammaimc)/RUFR_gammaimcdag)
+-(FR_pex*RUFR_rer)*(RUFR_imi*(1-RUFR_gammaimi)/RUFR_gammaimidag)
 -(FR_pex*RUFR_rer)*RUFR_imcg
 -(FR_pex*RUFR_rer)*RUFR_imig
 +RU_pex*GR_size/RU_size*GRRU_im
--(GR_pex*RUGR_rer)*RUGR_imc
--(GR_pex*RUGR_rer)*RUGR_imi
+-(GR_pex*RUGR_rer)*(RUGR_imc*(1-RUGR_gammaimc)/RUGR_gammaimcdag)
+-(GR_pex*RUGR_rer)*(RUGR_imi*(1-RUGR_gammaimi)/RUGR_gammaimidag)
 -(GR_pex*RUGR_rer)*RUGR_imcg
 -(GR_pex*RUGR_rer)*RUGR_imig
 +RU_pex*IT_size/RU_size*ITRU_im
--(IT_pex*RUIT_rer)*RUIT_imc
--(IT_pex*RUIT_rer)*RUIT_imi
+-(IT_pex*RUIT_rer)*(RUIT_imc*(1-RUIT_gammaimc)/RUIT_gammaimcdag)
+-(IT_pex*RUIT_rer)*(RUIT_imi*(1-RUIT_gammaimi)/RUIT_gammaimidag)
 -(IT_pex*RUIT_rer)*RUIT_imcg
 -(IT_pex*RUIT_rer)*RUIT_imig
 +RU_pex*NL_size/RU_size*NLRU_im
--(NL_pex*RUNL_rer)*RUNL_imc
--(NL_pex*RUNL_rer)*RUNL_imi
+-(NL_pex*RUNL_rer)*(RUNL_imc*(1-RUNL_gammaimc)/RUNL_gammaimcdag)
+-(NL_pex*RUNL_rer)*(RUNL_imi*(1-RUNL_gammaimi)/RUNL_gammaimidag)
 -(NL_pex*RUNL_rer)*RUNL_imcg
 -(NL_pex*RUNL_rer)*RUNL_imig
 +RU_pex*PT_size/RU_size*PTRU_im
--(PT_pex*RUPT_rer)*RUPT_imc
--(PT_pex*RUPT_rer)*RUPT_imi
+-(PT_pex*RUPT_rer)*(RUPT_imc*(1-RUPT_gammaimc)/RUPT_gammaimcdag)
+-(PT_pex*RUPT_rer)*(RUPT_imi*(1-RUPT_gammaimi)/RUPT_gammaimidag)
 -(PT_pex*RUPT_rer)*RUPT_imcg
 -(PT_pex*RUPT_rer)*RUPT_imig
 +RU_pex*DE_size/RU_size*DERU_im
--(DE_pex*RUDE_rer)*RUDE_imc
--(DE_pex*RUDE_rer)*RUDE_imi
+-(DE_pex*RUDE_rer)*(RUDE_imc*(1-RUDE_gammaimc)/RUDE_gammaimcdag)
+-(DE_pex*RUDE_rer)*(RUDE_imi*(1-RUDE_gammaimi)/RUDE_gammaimidag)
 -(DE_pex*RUDE_rer)*RUDE_imcg
 -(DE_pex*RUDE_rer)*RUDE_imig
 +RU_pex*RW_size/RU_size*RWRU_im
--(RW_pex*RURW_rer)*RURW_imc
--(RW_pex*RURW_rer)*RURW_imi
+-(RW_pex*RURW_rer)*(RURW_imc*(1-RURW_gammaimc)/RURW_gammaimcdag)
+-(RW_pex*RURW_rer)*(RURW_imi*(1-RURW_gammaimi)/RURW_gammaimidag)
 -(RW_pex*RURW_rer)*RURW_imcg
 -(RW_pex*RURW_rer)*RURW_imig
 +RU_pex*US_size/RU_size*USRU_im
--(US_pex*RUUS_rer)*RUUS_imc
--(US_pex*RUUS_rer)*RUUS_imi
+-(US_pex*RUUS_rer)*(RUUS_imc*(1-RUUS_gammaimc)/RUUS_gammaimcdag)
+-(US_pex*RUUS_rer)*(RUUS_imi*(1-RUUS_gammaimi)/RUUS_gammaimidag)
 -(US_pex*RUUS_rer)*RUUS_imcg
 -(US_pex*RUUS_rer)*RUUS_imig
 ;
@@ -57017,7 +57781,7 @@ RU_yhty = RU_pht*RU_yst/(RU_py*RU_y);
 // NT sector share
 RU_ynty = RU_pnt*RU_ysn/(RU_py*RU_y);
 // Output gap
-RU_ygap = 0;
+RU_ygap = RU_y/RU_ybar-1;
 // Output growth (gross rate)
 RU_ygrowth = RU_y/RU_y(-1);
 // Output growth (gross rate yoy)
@@ -57192,17 +57956,23 @@ RW_vi = RW_ci/RW_mi;
 RW_gammavi = RW_gammav1*RW_vi+RW_gammav2/RW_vi-2*(RW_gammav1*RW_gammav2)^(1/2);
 // Derivative of transaction cost
 RW_gammavider = RW_gammav1-RW_gammav2*RW_vi^(-2);
-RW_delta = RW_ii/RW_ki;
-RW_gammai = 0;
-RW_gammaider = 0;
-RW_gammau = 0;
-RW_gammauder = ((RW_beta^(-1)-1+RW_delta)*RW_qbar-RW_delta*RW_taukbar*RW_pibar)/((1-RW_taukbar)*RW_pibar);
-RW_u = 1;
-RW_pi = RW_q;
+// Capital accumulation
+RW_ki = (1-RW_delta)*RW_ki(-1)+(1-RW_gammai(-1))*RW_ii(-1)*RW_zinv;
+// Investment adjustment cost
+RW_gammai = RW_gammai1/2*(RW_ii/RW_ii(-1)-1)^2;
+// Derivative of investment adjustment cost
+RW_gammaider = RW_gammai1*(RW_ii/RW_ii(-1)-1)/RW_ii(-1);
+// Capacity utilisation cost
+RW_gammau = ((RW_beta^(-1)-1+RW_delta)*RW_qbar-RW_delta*RW_taukbar*RW_pibar)/((1-RW_taukbar)*RW_pibar)*(RW_u-1)+RW_gammau2/2*(RW_u-1)^2;
+// Derivative of capacity utilisation cost
+RW_gammauder = ((RW_beta^(-1)-1+RW_delta)*RW_qbar-RW_delta*RW_taukbar*RW_pibar)/((1-RW_taukbar)*RW_pibar)+RW_gammau2*(RW_u-1);
+// Optimal capacity utilisation (FOC)
+RW_rk = RW_gammauder*RW_pi;
+// Tobin's Q
+RW_pi = RW_q*RW_zinv*(1-RW_gammai-RW_gammaider*RW_ii)+RW_beta*RW_lambdai(+1)/RW_lambdai*RW_q(+1)*RW_zinv(+1)*RW_gammaider(+1)*RW_ii(+1)^2/RW_ii;
 // Auxiliary equation for Tobin's Q in steady state
-RW_qbar = RW_q;
 // Rate of return on capital
-RW_q = RW_beta*((1-RW_tauk)*RW_rk+(RW_tauk*RW_delta)*RW_pi+(1-RW_delta)*RW_q);
+RW_q = RW_beta*RW_lambdai(+1)/RW_lambdai*((1-RW_tauk(+1))*(RW_rk(+1)*RW_u(+1)-RW_gammau(+1)*RW_pi(+1))+(RW_tauk(+1)*RW_delta)*RW_pi(+1)+(1-RW_delta)*RW_q(+1));
 // Optimal wage contract (FOC)
 RW_witilde^(1+RW_etai*RW_zeta) = RW_etai/(RW_etai-1)*RW_fi/RW_gi+RW_wcst;
 // Definition of fi
@@ -57261,11 +58031,9 @@ RW_mcn = 1/(RW_zn*RW_kg^RW_alphag*(RW_alphan)^(RW_alphan)*(1-RW_alphan)^(1-RW_al
 // Wage Inflation (qoq)
 RW_piw = RW_w/RW_w(-1)*RW_pic;
 // Wage Inflation (yoy)
-RW_piw4 = RW_pic4;
+RW_piw4 = RW_piw*RW_piw(-1)*RW_piw(-2)*RW_piw(-3);
 // Auxiliary equation for steady-state fixed cost
-RW_psitbar = RW_psit*RW_ytbar;
 // Auxiliary equation for steady-state fixed cost
-RW_psinbar = RW_psin*RW_ynbar;
 // Capital input (FOC)
 RW_rk = RW_alphat*(RW_yst+RW_psitbar)/RW_kdt*RW_mct;
 // Capital input (FOC)
@@ -57340,7 +58108,6 @@ RW_piex = RW_pex/RW_pex(-1)*RW_pic;
 // Bilateral real exchange rate
 RWRA_rer = RW_rer/RA_rer;
 // Auxiliary equation for steady-state output
-RWRA_rerbar = RWRA_rer;
 //Terms of Trade
 RWRA_tot = RA_pex*RWRA_rer/RW_pex;
 // Optimal price contract set in foreign markets (FOC), using RW_pxtilde = AT_pimtilde
@@ -57356,7 +58123,6 @@ RWRA_tot = RA_pex*RWRA_rer/RW_pex;
 // Bilateral real exchange rate
 RWAT_rer = RW_rer/AT_rer;
 // Auxiliary equation for steady-state output
-RWAT_rerbar = RWAT_rer;
 //Terms of Trade
 RWAT_tot = AT_pex*RWAT_rer/RW_pex;
 // Optimal price contract set in foreign markets (FOC), using RW_pxtilde = BE_pimtilde
@@ -57372,7 +58138,6 @@ RWAT_tot = AT_pex*RWAT_rer/RW_pex;
 // Bilateral real exchange rate
 RWBE_rer = RW_rer/BE_rer;
 // Auxiliary equation for steady-state output
-RWBE_rerbar = RWBE_rer;
 //Terms of Trade
 RWBE_tot = BE_pex*RWBE_rer/RW_pex;
 // Optimal price contract set in foreign markets (FOC), using RW_pxtilde = ES_pimtilde
@@ -57388,7 +58153,6 @@ RWBE_tot = BE_pex*RWBE_rer/RW_pex;
 // Bilateral real exchange rate
 RWES_rer = RW_rer/ES_rer;
 // Auxiliary equation for steady-state output
-RWES_rerbar = RWES_rer;
 //Terms of Trade
 RWES_tot = ES_pex*RWES_rer/RW_pex;
 // Optimal price contract set in foreign markets (FOC), using RW_pxtilde = FI_pimtilde
@@ -57404,7 +58168,6 @@ RWES_tot = ES_pex*RWES_rer/RW_pex;
 // Bilateral real exchange rate
 RWFI_rer = RW_rer/FI_rer;
 // Auxiliary equation for steady-state output
-RWFI_rerbar = RWFI_rer;
 //Terms of Trade
 RWFI_tot = FI_pex*RWFI_rer/RW_pex;
 // Optimal price contract set in foreign markets (FOC), using RW_pxtilde = FR_pimtilde
@@ -57420,7 +58183,6 @@ RWFI_tot = FI_pex*RWFI_rer/RW_pex;
 // Bilateral real exchange rate
 RWFR_rer = RW_rer/FR_rer;
 // Auxiliary equation for steady-state output
-RWFR_rerbar = RWFR_rer;
 //Terms of Trade
 RWFR_tot = FR_pex*RWFR_rer/RW_pex;
 // Optimal price contract set in foreign markets (FOC), using RW_pxtilde = GR_pimtilde
@@ -57436,7 +58198,6 @@ RWFR_tot = FR_pex*RWFR_rer/RW_pex;
 // Bilateral real exchange rate
 RWGR_rer = RW_rer/GR_rer;
 // Auxiliary equation for steady-state output
-RWGR_rerbar = RWGR_rer;
 //Terms of Trade
 RWGR_tot = GR_pex*RWGR_rer/RW_pex;
 // Optimal price contract set in foreign markets (FOC), using RW_pxtilde = IT_pimtilde
@@ -57452,7 +58213,6 @@ RWGR_tot = GR_pex*RWGR_rer/RW_pex;
 // Bilateral real exchange rate
 RWIT_rer = RW_rer/IT_rer;
 // Auxiliary equation for steady-state output
-RWIT_rerbar = RWIT_rer;
 //Terms of Trade
 RWIT_tot = IT_pex*RWIT_rer/RW_pex;
 // Optimal price contract set in foreign markets (FOC), using RW_pxtilde = NL_pimtilde
@@ -57468,7 +58228,6 @@ RWIT_tot = IT_pex*RWIT_rer/RW_pex;
 // Bilateral real exchange rate
 RWNL_rer = RW_rer/NL_rer;
 // Auxiliary equation for steady-state output
-RWNL_rerbar = RWNL_rer;
 //Terms of Trade
 RWNL_tot = NL_pex*RWNL_rer/RW_pex;
 // Optimal price contract set in foreign markets (FOC), using RW_pxtilde = PT_pimtilde
@@ -57484,7 +58243,6 @@ RWNL_tot = NL_pex*RWNL_rer/RW_pex;
 // Bilateral real exchange rate
 RWPT_rer = RW_rer/PT_rer;
 // Auxiliary equation for steady-state output
-RWPT_rerbar = RWPT_rer;
 //Terms of Trade
 RWPT_tot = PT_pex*RWPT_rer/RW_pex;
 // Optimal price contract set in foreign markets (FOC), using RW_pxtilde = DE_pimtilde
@@ -57500,7 +58258,6 @@ RWPT_tot = PT_pex*RWPT_rer/RW_pex;
 // Bilateral real exchange rate
 RWDE_rer = RW_rer/DE_rer;
 // Auxiliary equation for steady-state output
-RWDE_rerbar = RWDE_rer;
 //Terms of Trade
 RWDE_tot = DE_pex*RWDE_rer/RW_pex;
 // Optimal price contract set in foreign markets (FOC), using RW_pxtilde = RU_pimtilde
@@ -57516,7 +58273,6 @@ RWDE_tot = DE_pex*RWDE_rer/RW_pex;
 // Bilateral real exchange rate
 RWRU_rer = RW_rer/RU_rer;
 // Auxiliary equation for steady-state output
-RWRU_rerbar = RWRU_rer;
 //Terms of Trade
 RWRU_tot = RU_pex*RWRU_rer/RW_pex;
 // Optimal price contract set in foreign markets (FOC), using RW_pxtilde = US_pimtilde
@@ -57532,7 +58288,6 @@ RWRU_tot = RU_pex*RWRU_rer/RW_pex;
 // Bilateral real exchange rate
 RWUS_rer = RW_rer/US_rer;
 // Auxiliary equation for steady-state output
-RWUS_rerbar = RWUS_rer;
 //Terms of Trade
 RWUS_tot = US_pex*RWUS_rer/RW_pex;
 // Total imports 
@@ -60030,18 +60785,18 @@ RW_etot = 1
 //-----------------
 // Private consumption good (import)
 RW_imc^((RW_mumc-1)/RW_mumc) =
-+RWRA_numc ^(1/RW_mumc)*RWRA_imc^(1-1/RW_mumc)
-+RWAT_numc ^(1/RW_mumc)*RWAT_imc^(1-1/RW_mumc)
-+RWBE_numc ^(1/RW_mumc)*RWBE_imc^(1-1/RW_mumc)
-+RWES_numc ^(1/RW_mumc)*RWES_imc^(1-1/RW_mumc)
-+RWFI_numc ^(1/RW_mumc)*RWFI_imc^(1-1/RW_mumc)
-+RWFR_numc ^(1/RW_mumc)*RWFR_imc^(1-1/RW_mumc)
-+RWGR_numc ^(1/RW_mumc)*RWGR_imc^(1-1/RW_mumc)
-+RWIT_numc ^(1/RW_mumc)*RWIT_imc^(1-1/RW_mumc)
-+RWNL_numc ^(1/RW_mumc)*RWNL_imc^(1-1/RW_mumc)
-+RWPT_numc ^(1/RW_mumc)*RWPT_imc^(1-1/RW_mumc)
-+RWRU_numc ^(1/RW_mumc)*RWRU_imc^(1-1/RW_mumc)
-+RWUS_numc ^(1/RW_mumc)*RWUS_imc^(1-1/RW_mumc)
++RWRA_numc ^(1/RW_mumc)*((1-RWRA_gammaimc)*RWRA_imc)^(1-1/RW_mumc)
++RWAT_numc ^(1/RW_mumc)*((1-RWAT_gammaimc)*RWAT_imc)^(1-1/RW_mumc)
++RWBE_numc ^(1/RW_mumc)*((1-RWBE_gammaimc)*RWBE_imc)^(1-1/RW_mumc)
++RWES_numc ^(1/RW_mumc)*((1-RWES_gammaimc)*RWES_imc)^(1-1/RW_mumc)
++RWFI_numc ^(1/RW_mumc)*((1-RWFI_gammaimc)*RWFI_imc)^(1-1/RW_mumc)
++RWFR_numc ^(1/RW_mumc)*((1-RWFR_gammaimc)*RWFR_imc)^(1-1/RW_mumc)
++RWGR_numc ^(1/RW_mumc)*((1-RWGR_gammaimc)*RWGR_imc)^(1-1/RW_mumc)
++RWIT_numc ^(1/RW_mumc)*((1-RWIT_gammaimc)*RWIT_imc)^(1-1/RW_mumc)
++RWNL_numc ^(1/RW_mumc)*((1-RWNL_gammaimc)*RWNL_imc)^(1-1/RW_mumc)
++RWPT_numc ^(1/RW_mumc)*((1-RWPT_gammaimc)*RWPT_imc)^(1-1/RW_mumc)
++RWRU_numc ^(1/RW_mumc)*((1-RWRU_gammaimc)*RWRU_imc)^(1-1/RW_mumc)
++RWUS_numc ^(1/RW_mumc)*((1-RWUS_gammaimc)*RWUS_imc)^(1-1/RW_mumc)
 +(1
 -RWRA_numc
 -RWAT_numc
@@ -60055,29 +60810,29 @@ RW_imc^((RW_mumc-1)/RW_mumc) =
 -RWPT_numc
 -RWRU_numc
 -RWUS_numc
-)^(1/RW_mumc)*RWDE_imc^(1-1/RW_mumc);
+)^(1/RW_mumc)*((1-RWDE_gammaimc)*RWDE_imc)^(1-1/RW_mumc);
 // Demand for bilateral consumption import goods
-RWRA_imc = RWRA_numc*((RA_pex*RWRA_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+RWRA_imc = RWRA_numc*((RA_pex*RWRA_rer)/(RWRA_gammaimcdag*RW_pimc))^(-RW_mumc)*RW_imc/(1-RWRA_gammaimc);
 // Demand for bilateral consumption import goods
-RWAT_imc = RWAT_numc*((AT_pex*RWAT_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+RWAT_imc = RWAT_numc*((AT_pex*RWAT_rer)/(RWAT_gammaimcdag*RW_pimc))^(-RW_mumc)*RW_imc/(1-RWAT_gammaimc);
 // Demand for bilateral consumption import goods
-RWBE_imc = RWBE_numc*((BE_pex*RWBE_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+RWBE_imc = RWBE_numc*((BE_pex*RWBE_rer)/(RWBE_gammaimcdag*RW_pimc))^(-RW_mumc)*RW_imc/(1-RWBE_gammaimc);
 // Demand for bilateral consumption import goods
-RWES_imc = RWES_numc*((ES_pex*RWES_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+RWES_imc = RWES_numc*((ES_pex*RWES_rer)/(RWES_gammaimcdag*RW_pimc))^(-RW_mumc)*RW_imc/(1-RWES_gammaimc);
 // Demand for bilateral consumption import goods
-RWFI_imc = RWFI_numc*((FI_pex*RWFI_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+RWFI_imc = RWFI_numc*((FI_pex*RWFI_rer)/(RWFI_gammaimcdag*RW_pimc))^(-RW_mumc)*RW_imc/(1-RWFI_gammaimc);
 // Demand for bilateral consumption import goods
-RWFR_imc = RWFR_numc*((FR_pex*RWFR_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+RWFR_imc = RWFR_numc*((FR_pex*RWFR_rer)/(RWFR_gammaimcdag*RW_pimc))^(-RW_mumc)*RW_imc/(1-RWFR_gammaimc);
 // Demand for bilateral consumption import goods
-RWGR_imc = RWGR_numc*((GR_pex*RWGR_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+RWGR_imc = RWGR_numc*((GR_pex*RWGR_rer)/(RWGR_gammaimcdag*RW_pimc))^(-RW_mumc)*RW_imc/(1-RWGR_gammaimc);
 // Demand for bilateral consumption import goods
-RWIT_imc = RWIT_numc*((IT_pex*RWIT_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+RWIT_imc = RWIT_numc*((IT_pex*RWIT_rer)/(RWIT_gammaimcdag*RW_pimc))^(-RW_mumc)*RW_imc/(1-RWIT_gammaimc);
 // Demand for bilateral consumption import goods
-RWNL_imc = RWNL_numc*((NL_pex*RWNL_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+RWNL_imc = RWNL_numc*((NL_pex*RWNL_rer)/(RWNL_gammaimcdag*RW_pimc))^(-RW_mumc)*RW_imc/(1-RWNL_gammaimc);
 // Demand for bilateral consumption import goods
-RWPT_imc = RWPT_numc*((PT_pex*RWPT_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+RWPT_imc = RWPT_numc*((PT_pex*RWPT_rer)/(RWPT_gammaimcdag*RW_pimc))^(-RW_mumc)*RW_imc/(1-RWPT_gammaimc);
 // Demand for bilateral consumption import goods
-RWRU_imc = RWRU_numc*((RU_pex*RWRU_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+RWRU_imc = RWRU_numc*((RU_pex*RWRU_rer)/(RWRU_gammaimcdag*RW_pimc))^(-RW_mumc)*RW_imc/(1-RWRU_gammaimc);
 RWDE_imc = (1
 -RWRA_numc
 -RWAT_numc
@@ -60091,21 +60846,21 @@ RWDE_imc = (1
 -RWPT_numc
 -RWRU_numc
 -RWUS_numc
-)*((DE_pex*RWDE_rer)/RW_pimc)^(-RW_mumc)*RW_imc;
+)*((DE_pex*RWDE_rer)/(RWDE_gammaimcdag*RW_pimc))^(-RW_mumc)*RW_imc/(1-RWDE_gammaimc);
 // Price of the consumption good (import)
 RW_pimc^(1-RW_mumc) =
-+RWRA_numc * (RA_pex*RWRA_rer)^(1-RW_mumc)
-+RWAT_numc * (AT_pex*RWAT_rer)^(1-RW_mumc)
-+RWBE_numc * (BE_pex*RWBE_rer)^(1-RW_mumc)
-+RWES_numc * (ES_pex*RWES_rer)^(1-RW_mumc)
-+RWFI_numc * (FI_pex*RWFI_rer)^(1-RW_mumc)
-+RWFR_numc * (FR_pex*RWFR_rer)^(1-RW_mumc)
-+RWGR_numc * (GR_pex*RWGR_rer)^(1-RW_mumc)
-+RWIT_numc * (IT_pex*RWIT_rer)^(1-RW_mumc)
-+RWNL_numc * (NL_pex*RWNL_rer)^(1-RW_mumc)
-+RWPT_numc * (PT_pex*RWPT_rer)^(1-RW_mumc)
-+RWRU_numc * (RU_pex*RWRU_rer)^(1-RW_mumc)
-+RWUS_numc * (US_pex*RWUS_rer)^(1-RW_mumc)
++RWRA_numc *((RA_pex*RWRA_rer)/RWRA_gammaimcdag)^(1-RW_mumc)
++RWAT_numc *((AT_pex*RWAT_rer)/RWAT_gammaimcdag)^(1-RW_mumc)
++RWBE_numc *((BE_pex*RWBE_rer)/RWBE_gammaimcdag)^(1-RW_mumc)
++RWES_numc *((ES_pex*RWES_rer)/RWES_gammaimcdag)^(1-RW_mumc)
++RWFI_numc *((FI_pex*RWFI_rer)/RWFI_gammaimcdag)^(1-RW_mumc)
++RWFR_numc *((FR_pex*RWFR_rer)/RWFR_gammaimcdag)^(1-RW_mumc)
++RWGR_numc *((GR_pex*RWGR_rer)/RWGR_gammaimcdag)^(1-RW_mumc)
++RWIT_numc *((IT_pex*RWIT_rer)/RWIT_gammaimcdag)^(1-RW_mumc)
++RWNL_numc *((NL_pex*RWNL_rer)/RWNL_gammaimcdag)^(1-RW_mumc)
++RWPT_numc *((PT_pex*RWPT_rer)/RWPT_gammaimcdag)^(1-RW_mumc)
++RWRU_numc *((RU_pex*RWRU_rer)/RWRU_gammaimcdag)^(1-RW_mumc)
++RWUS_numc *((US_pex*RWUS_rer)/RWUS_gammaimcdag)^(1-RW_mumc)
 +(1
 -RWRA_numc
 -RWAT_numc
@@ -60119,23 +60874,23 @@ RW_pimc^(1-RW_mumc) =
 -RWPT_numc
 -RWRU_numc
 -RWUS_numc
-)*(DE_pex*RWDE_rer)^(1-RW_mumc);
+)*((DE_pex*RWDE_rer)/RWDE_gammaimcdag)^(1-RW_mumc);
 // Private consumption good (import) inflation
 RW_piimc = RW_pimc/RW_pimc(-1)*RW_pic;
 // Private consumption good (import)
 RW_imi^((RW_mumi-1)/RW_mumi) =
-+RWRA_numi ^(1/RW_mumi)*RWRA_imi^(1-1/RW_mumi)
-+RWAT_numi ^(1/RW_mumi)*RWAT_imi^(1-1/RW_mumi)
-+RWBE_numi ^(1/RW_mumi)*RWBE_imi^(1-1/RW_mumi)
-+RWES_numi ^(1/RW_mumi)*RWES_imi^(1-1/RW_mumi)
-+RWFI_numi ^(1/RW_mumi)*RWFI_imi^(1-1/RW_mumi)
-+RWFR_numi ^(1/RW_mumi)*RWFR_imi^(1-1/RW_mumi)
-+RWGR_numi ^(1/RW_mumi)*RWGR_imi^(1-1/RW_mumi)
-+RWIT_numi ^(1/RW_mumi)*RWIT_imi^(1-1/RW_mumi)
-+RWNL_numi ^(1/RW_mumi)*RWNL_imi^(1-1/RW_mumi)
-+RWPT_numi ^(1/RW_mumi)*RWPT_imi^(1-1/RW_mumi)
-+RWRU_numi ^(1/RW_mumi)*RWRU_imi^(1-1/RW_mumi)
-+RWUS_numi ^(1/RW_mumi)*RWUS_imi^(1-1/RW_mumi)
++RWRA_numi ^(1/RW_mumi)*((1-RWRA_gammaimi)*RWRA_imi)^(1-1/RW_mumi)
++RWAT_numi ^(1/RW_mumi)*((1-RWAT_gammaimi)*RWAT_imi)^(1-1/RW_mumi)
++RWBE_numi ^(1/RW_mumi)*((1-RWBE_gammaimi)*RWBE_imi)^(1-1/RW_mumi)
++RWES_numi ^(1/RW_mumi)*((1-RWES_gammaimi)*RWES_imi)^(1-1/RW_mumi)
++RWFI_numi ^(1/RW_mumi)*((1-RWFI_gammaimi)*RWFI_imi)^(1-1/RW_mumi)
++RWFR_numi ^(1/RW_mumi)*((1-RWFR_gammaimi)*RWFR_imi)^(1-1/RW_mumi)
++RWGR_numi ^(1/RW_mumi)*((1-RWGR_gammaimi)*RWGR_imi)^(1-1/RW_mumi)
++RWIT_numi ^(1/RW_mumi)*((1-RWIT_gammaimi)*RWIT_imi)^(1-1/RW_mumi)
++RWNL_numi ^(1/RW_mumi)*((1-RWNL_gammaimi)*RWNL_imi)^(1-1/RW_mumi)
++RWPT_numi ^(1/RW_mumi)*((1-RWPT_gammaimi)*RWPT_imi)^(1-1/RW_mumi)
++RWRU_numi ^(1/RW_mumi)*((1-RWRU_gammaimi)*RWRU_imi)^(1-1/RW_mumi)
++RWUS_numi ^(1/RW_mumi)*((1-RWUS_gammaimi)*RWUS_imi)^(1-1/RW_mumi)
 +(1
 -RWRA_numi
 -RWAT_numi
@@ -60149,29 +60904,29 @@ RW_imi^((RW_mumi-1)/RW_mumi) =
 -RWPT_numi
 -RWRU_numi
 -RWUS_numi
-)^(1/RW_mumi)*RWDE_imi^(1-1/RW_mumi);
+)^(1/RW_mumi)*((1-RWDE_gammaimi)*RWDE_imi)^(1-1/RW_mumi);
 // Demand for bilateral consumption import goods
-RWRA_imi = RWRA_numi*((RA_pex*RWRA_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+RWRA_imi = RWRA_numi*((RA_pex*RWRA_rer)/(RWRA_gammaimidag*RW_pimi))^(-RW_mumi)*RW_imi/(1-RWRA_gammaimi);
 // Demand for bilateral consumption import goods
-RWAT_imi = RWAT_numi*((AT_pex*RWAT_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+RWAT_imi = RWAT_numi*((AT_pex*RWAT_rer)/(RWAT_gammaimidag*RW_pimi))^(-RW_mumi)*RW_imi/(1-RWAT_gammaimi);
 // Demand for bilateral consumption import goods
-RWBE_imi = RWBE_numi*((BE_pex*RWBE_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+RWBE_imi = RWBE_numi*((BE_pex*RWBE_rer)/(RWBE_gammaimidag*RW_pimi))^(-RW_mumi)*RW_imi/(1-RWBE_gammaimi);
 // Demand for bilateral consumption import goods
-RWES_imi = RWES_numi*((ES_pex*RWES_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+RWES_imi = RWES_numi*((ES_pex*RWES_rer)/(RWES_gammaimidag*RW_pimi))^(-RW_mumi)*RW_imi/(1-RWES_gammaimi);
 // Demand for bilateral consumption import goods
-RWFI_imi = RWFI_numi*((FI_pex*RWFI_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+RWFI_imi = RWFI_numi*((FI_pex*RWFI_rer)/(RWFI_gammaimidag*RW_pimi))^(-RW_mumi)*RW_imi/(1-RWFI_gammaimi);
 // Demand for bilateral consumption import goods
-RWFR_imi = RWFR_numi*((FR_pex*RWFR_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+RWFR_imi = RWFR_numi*((FR_pex*RWFR_rer)/(RWFR_gammaimidag*RW_pimi))^(-RW_mumi)*RW_imi/(1-RWFR_gammaimi);
 // Demand for bilateral consumption import goods
-RWGR_imi = RWGR_numi*((GR_pex*RWGR_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+RWGR_imi = RWGR_numi*((GR_pex*RWGR_rer)/(RWGR_gammaimidag*RW_pimi))^(-RW_mumi)*RW_imi/(1-RWGR_gammaimi);
 // Demand for bilateral consumption import goods
-RWIT_imi = RWIT_numi*((IT_pex*RWIT_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+RWIT_imi = RWIT_numi*((IT_pex*RWIT_rer)/(RWIT_gammaimidag*RW_pimi))^(-RW_mumi)*RW_imi/(1-RWIT_gammaimi);
 // Demand for bilateral consumption import goods
-RWNL_imi = RWNL_numi*((NL_pex*RWNL_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+RWNL_imi = RWNL_numi*((NL_pex*RWNL_rer)/(RWNL_gammaimidag*RW_pimi))^(-RW_mumi)*RW_imi/(1-RWNL_gammaimi);
 // Demand for bilateral consumption import goods
-RWPT_imi = RWPT_numi*((PT_pex*RWPT_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+RWPT_imi = RWPT_numi*((PT_pex*RWPT_rer)/(RWPT_gammaimidag*RW_pimi))^(-RW_mumi)*RW_imi/(1-RWPT_gammaimi);
 // Demand for bilateral consumption import goods
-RWRU_imi = RWRU_numi*((RU_pex*RWRU_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+RWRU_imi = RWRU_numi*((RU_pex*RWRU_rer)/(RWRU_gammaimidag*RW_pimi))^(-RW_mumi)*RW_imi/(1-RWRU_gammaimi);
 RWDE_imi = (1
 -RWRA_numi
 -RWAT_numi
@@ -60185,21 +60940,21 @@ RWDE_imi = (1
 -RWPT_numi
 -RWRU_numi
 -RWUS_numi
-)*((DE_pex*RWDE_rer)/RW_pimi)^(-RW_mumi)*RW_imi;
+)*((DE_pex*RWDE_rer)/(RWDE_gammaimidag*RW_pimi))^(-RW_mumi)*RW_imi/(1-RWDE_gammaimi);
 // Price of the consumption good (import)
 RW_pimi^(1-RW_mumi) =
-+RWRA_numi * (RA_pex*RWRA_rer)^(1-RW_mumi)
-+RWAT_numi * (AT_pex*RWAT_rer)^(1-RW_mumi)
-+RWBE_numi * (BE_pex*RWBE_rer)^(1-RW_mumi)
-+RWES_numi * (ES_pex*RWES_rer)^(1-RW_mumi)
-+RWFI_numi * (FI_pex*RWFI_rer)^(1-RW_mumi)
-+RWFR_numi * (FR_pex*RWFR_rer)^(1-RW_mumi)
-+RWGR_numi * (GR_pex*RWGR_rer)^(1-RW_mumi)
-+RWIT_numi * (IT_pex*RWIT_rer)^(1-RW_mumi)
-+RWNL_numi * (NL_pex*RWNL_rer)^(1-RW_mumi)
-+RWPT_numi * (PT_pex*RWPT_rer)^(1-RW_mumi)
-+RWRU_numi * (RU_pex*RWRU_rer)^(1-RW_mumi)
-+RWUS_numi * (US_pex*RWUS_rer)^(1-RW_mumi)
++RWRA_numi *((RA_pex*RWRA_rer)/RWRA_gammaimidag)^(1-RW_mumi)
++RWAT_numi *((AT_pex*RWAT_rer)/RWAT_gammaimidag)^(1-RW_mumi)
++RWBE_numi *((BE_pex*RWBE_rer)/RWBE_gammaimidag)^(1-RW_mumi)
++RWES_numi *((ES_pex*RWES_rer)/RWES_gammaimidag)^(1-RW_mumi)
++RWFI_numi *((FI_pex*RWFI_rer)/RWFI_gammaimidag)^(1-RW_mumi)
++RWFR_numi *((FR_pex*RWFR_rer)/RWFR_gammaimidag)^(1-RW_mumi)
++RWGR_numi *((GR_pex*RWGR_rer)/RWGR_gammaimidag)^(1-RW_mumi)
++RWIT_numi *((IT_pex*RWIT_rer)/RWIT_gammaimidag)^(1-RW_mumi)
++RWNL_numi *((NL_pex*RWNL_rer)/RWNL_gammaimidag)^(1-RW_mumi)
++RWPT_numi *((PT_pex*RWPT_rer)/RWPT_gammaimidag)^(1-RW_mumi)
++RWRU_numi *((RU_pex*RWRU_rer)/RWRU_gammaimidag)^(1-RW_mumi)
++RWUS_numi *((US_pex*RWUS_rer)/RWUS_gammaimidag)^(1-RW_mumi)
 +(1
 -RWRA_numi
 -RWAT_numi
@@ -60213,23 +60968,23 @@ RW_pimi^(1-RW_mumi) =
 -RWPT_numi
 -RWRU_numi
 -RWUS_numi
-)*(DE_pex*RWDE_rer)^(1-RW_mumi);
+)*((DE_pex*RWDE_rer)/RWDE_gammaimidag)^(1-RW_mumi);
 // Private consumption good (import) inflation
 RW_piimi = RW_pimi/RW_pimi(-1)*RW_pic;
 // Private consumption good (import)
 RW_imcg^((RW_mumcg-1)/RW_mumcg) =
-+RWRA_numcg ^(1/RW_mumcg)*RWRA_imcg^(1-1/RW_mumcg)
-+RWAT_numcg ^(1/RW_mumcg)*RWAT_imcg^(1-1/RW_mumcg)
-+RWBE_numcg ^(1/RW_mumcg)*RWBE_imcg^(1-1/RW_mumcg)
-+RWES_numcg ^(1/RW_mumcg)*RWES_imcg^(1-1/RW_mumcg)
-+RWFI_numcg ^(1/RW_mumcg)*RWFI_imcg^(1-1/RW_mumcg)
-+RWFR_numcg ^(1/RW_mumcg)*RWFR_imcg^(1-1/RW_mumcg)
-+RWGR_numcg ^(1/RW_mumcg)*RWGR_imcg^(1-1/RW_mumcg)
-+RWIT_numcg ^(1/RW_mumcg)*RWIT_imcg^(1-1/RW_mumcg)
-+RWNL_numcg ^(1/RW_mumcg)*RWNL_imcg^(1-1/RW_mumcg)
-+RWPT_numcg ^(1/RW_mumcg)*RWPT_imcg^(1-1/RW_mumcg)
-+RWRU_numcg ^(1/RW_mumcg)*RWRU_imcg^(1-1/RW_mumcg)
-+RWUS_numcg ^(1/RW_mumcg)*RWUS_imcg^(1-1/RW_mumcg)
++RWRA_numcg ^(1/RW_mumcg)*((1-RWRA_gammaimcg)*RWRA_imcg)^(1-1/RW_mumcg)
++RWAT_numcg ^(1/RW_mumcg)*((1-RWAT_gammaimcg)*RWAT_imcg)^(1-1/RW_mumcg)
++RWBE_numcg ^(1/RW_mumcg)*((1-RWBE_gammaimcg)*RWBE_imcg)^(1-1/RW_mumcg)
++RWES_numcg ^(1/RW_mumcg)*((1-RWES_gammaimcg)*RWES_imcg)^(1-1/RW_mumcg)
++RWFI_numcg ^(1/RW_mumcg)*((1-RWFI_gammaimcg)*RWFI_imcg)^(1-1/RW_mumcg)
++RWFR_numcg ^(1/RW_mumcg)*((1-RWFR_gammaimcg)*RWFR_imcg)^(1-1/RW_mumcg)
++RWGR_numcg ^(1/RW_mumcg)*((1-RWGR_gammaimcg)*RWGR_imcg)^(1-1/RW_mumcg)
++RWIT_numcg ^(1/RW_mumcg)*((1-RWIT_gammaimcg)*RWIT_imcg)^(1-1/RW_mumcg)
++RWNL_numcg ^(1/RW_mumcg)*((1-RWNL_gammaimcg)*RWNL_imcg)^(1-1/RW_mumcg)
++RWPT_numcg ^(1/RW_mumcg)*((1-RWPT_gammaimcg)*RWPT_imcg)^(1-1/RW_mumcg)
++RWRU_numcg ^(1/RW_mumcg)*((1-RWRU_gammaimcg)*RWRU_imcg)^(1-1/RW_mumcg)
++RWUS_numcg ^(1/RW_mumcg)*((1-RWUS_gammaimcg)*RWUS_imcg)^(1-1/RW_mumcg)
 +(1
 -RWRA_numcg
 -RWAT_numcg
@@ -60243,29 +60998,29 @@ RW_imcg^((RW_mumcg-1)/RW_mumcg) =
 -RWPT_numcg
 -RWRU_numcg
 -RWUS_numcg
-)^(1/RW_mumcg)*RWDE_imcg^(1-1/RW_mumcg);
+)^(1/RW_mumcg)*((1-RWDE_gammaimcg)*RWDE_imcg)^(1-1/RW_mumcg);
 // Demand for bilateral consumption import goods
-RWRA_imcg = RWRA_numcg*((RA_pex*RWRA_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+RWRA_imcg = RWRA_numcg*((RA_pex*RWRA_rer)/(RWRA_gammaimcgdag*RW_pimcg))^(-RW_mumcg)*RW_imcg/(1-RWRA_gammaimcg);
 // Demand for bilateral consumption import goods
-RWAT_imcg = RWAT_numcg*((AT_pex*RWAT_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+RWAT_imcg = RWAT_numcg*((AT_pex*RWAT_rer)/(RWAT_gammaimcgdag*RW_pimcg))^(-RW_mumcg)*RW_imcg/(1-RWAT_gammaimcg);
 // Demand for bilateral consumption import goods
-RWBE_imcg = RWBE_numcg*((BE_pex*RWBE_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+RWBE_imcg = RWBE_numcg*((BE_pex*RWBE_rer)/(RWBE_gammaimcgdag*RW_pimcg))^(-RW_mumcg)*RW_imcg/(1-RWBE_gammaimcg);
 // Demand for bilateral consumption import goods
-RWES_imcg = RWES_numcg*((ES_pex*RWES_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+RWES_imcg = RWES_numcg*((ES_pex*RWES_rer)/(RWES_gammaimcgdag*RW_pimcg))^(-RW_mumcg)*RW_imcg/(1-RWES_gammaimcg);
 // Demand for bilateral consumption import goods
-RWFI_imcg = RWFI_numcg*((FI_pex*RWFI_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+RWFI_imcg = RWFI_numcg*((FI_pex*RWFI_rer)/(RWFI_gammaimcgdag*RW_pimcg))^(-RW_mumcg)*RW_imcg/(1-RWFI_gammaimcg);
 // Demand for bilateral consumption import goods
-RWFR_imcg = RWFR_numcg*((FR_pex*RWFR_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+RWFR_imcg = RWFR_numcg*((FR_pex*RWFR_rer)/(RWFR_gammaimcgdag*RW_pimcg))^(-RW_mumcg)*RW_imcg/(1-RWFR_gammaimcg);
 // Demand for bilateral consumption import goods
-RWGR_imcg = RWGR_numcg*((GR_pex*RWGR_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+RWGR_imcg = RWGR_numcg*((GR_pex*RWGR_rer)/(RWGR_gammaimcgdag*RW_pimcg))^(-RW_mumcg)*RW_imcg/(1-RWGR_gammaimcg);
 // Demand for bilateral consumption import goods
-RWIT_imcg = RWIT_numcg*((IT_pex*RWIT_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+RWIT_imcg = RWIT_numcg*((IT_pex*RWIT_rer)/(RWIT_gammaimcgdag*RW_pimcg))^(-RW_mumcg)*RW_imcg/(1-RWIT_gammaimcg);
 // Demand for bilateral consumption import goods
-RWNL_imcg = RWNL_numcg*((NL_pex*RWNL_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+RWNL_imcg = RWNL_numcg*((NL_pex*RWNL_rer)/(RWNL_gammaimcgdag*RW_pimcg))^(-RW_mumcg)*RW_imcg/(1-RWNL_gammaimcg);
 // Demand for bilateral consumption import goods
-RWPT_imcg = RWPT_numcg*((PT_pex*RWPT_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+RWPT_imcg = RWPT_numcg*((PT_pex*RWPT_rer)/(RWPT_gammaimcgdag*RW_pimcg))^(-RW_mumcg)*RW_imcg/(1-RWPT_gammaimcg);
 // Demand for bilateral consumption import goods
-RWRU_imcg = RWRU_numcg*((RU_pex*RWRU_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+RWRU_imcg = RWRU_numcg*((RU_pex*RWRU_rer)/(RWRU_gammaimcgdag*RW_pimcg))^(-RW_mumcg)*RW_imcg/(1-RWRU_gammaimcg);
 RWDE_imcg = (1
 -RWRA_numcg
 -RWAT_numcg
@@ -60279,21 +61034,21 @@ RWDE_imcg = (1
 -RWPT_numcg
 -RWRU_numcg
 -RWUS_numcg
-)*((DE_pex*RWDE_rer)/RW_pimcg)^(-RW_mumcg)*RW_imcg;
+)*((DE_pex*RWDE_rer)/(RWDE_gammaimcgdag*RW_pimcg))^(-RW_mumcg)*RW_imcg/(1-RWDE_gammaimcg);
 // Price of the consumption good (import)
 RW_pimcg^(1-RW_mumcg) =
-+RWRA_numcg * (RA_pex*RWRA_rer)^(1-RW_mumcg)
-+RWAT_numcg * (AT_pex*RWAT_rer)^(1-RW_mumcg)
-+RWBE_numcg * (BE_pex*RWBE_rer)^(1-RW_mumcg)
-+RWES_numcg * (ES_pex*RWES_rer)^(1-RW_mumcg)
-+RWFI_numcg * (FI_pex*RWFI_rer)^(1-RW_mumcg)
-+RWFR_numcg * (FR_pex*RWFR_rer)^(1-RW_mumcg)
-+RWGR_numcg * (GR_pex*RWGR_rer)^(1-RW_mumcg)
-+RWIT_numcg * (IT_pex*RWIT_rer)^(1-RW_mumcg)
-+RWNL_numcg * (NL_pex*RWNL_rer)^(1-RW_mumcg)
-+RWPT_numcg * (PT_pex*RWPT_rer)^(1-RW_mumcg)
-+RWRU_numcg * (RU_pex*RWRU_rer)^(1-RW_mumcg)
-+RWUS_numcg * (US_pex*RWUS_rer)^(1-RW_mumcg)
++RWRA_numcg *((RA_pex*RWRA_rer)/RWRA_gammaimcgdag)^(1-RW_mumcg)
++RWAT_numcg *((AT_pex*RWAT_rer)/RWAT_gammaimcgdag)^(1-RW_mumcg)
++RWBE_numcg *((BE_pex*RWBE_rer)/RWBE_gammaimcgdag)^(1-RW_mumcg)
++RWES_numcg *((ES_pex*RWES_rer)/RWES_gammaimcgdag)^(1-RW_mumcg)
++RWFI_numcg *((FI_pex*RWFI_rer)/RWFI_gammaimcgdag)^(1-RW_mumcg)
++RWFR_numcg *((FR_pex*RWFR_rer)/RWFR_gammaimcgdag)^(1-RW_mumcg)
++RWGR_numcg *((GR_pex*RWGR_rer)/RWGR_gammaimcgdag)^(1-RW_mumcg)
++RWIT_numcg *((IT_pex*RWIT_rer)/RWIT_gammaimcgdag)^(1-RW_mumcg)
++RWNL_numcg *((NL_pex*RWNL_rer)/RWNL_gammaimcgdag)^(1-RW_mumcg)
++RWPT_numcg *((PT_pex*RWPT_rer)/RWPT_gammaimcgdag)^(1-RW_mumcg)
++RWRU_numcg *((RU_pex*RWRU_rer)/RWRU_gammaimcgdag)^(1-RW_mumcg)
++RWUS_numcg *((US_pex*RWUS_rer)/RWUS_gammaimcgdag)^(1-RW_mumcg)
 +(1
 -RWRA_numcg
 -RWAT_numcg
@@ -60307,23 +61062,23 @@ RW_pimcg^(1-RW_mumcg) =
 -RWPT_numcg
 -RWRU_numcg
 -RWUS_numcg
-)*(DE_pex*RWDE_rer)^(1-RW_mumcg);
+)*((DE_pex*RWDE_rer)/RWDE_gammaimcgdag)^(1-RW_mumcg);
 // Private consumption good (import) inflation
 RW_piimcg = RW_pimcg/RW_pimcg(-1)*RW_pic;
 // Private consumption good (import)
 RW_imig^((RW_mumig-1)/RW_mumig) =
-+RWRA_numig ^(1/RW_mumig)*RWRA_imig^(1-1/RW_mumig)
-+RWAT_numig ^(1/RW_mumig)*RWAT_imig^(1-1/RW_mumig)
-+RWBE_numig ^(1/RW_mumig)*RWBE_imig^(1-1/RW_mumig)
-+RWES_numig ^(1/RW_mumig)*RWES_imig^(1-1/RW_mumig)
-+RWFI_numig ^(1/RW_mumig)*RWFI_imig^(1-1/RW_mumig)
-+RWFR_numig ^(1/RW_mumig)*RWFR_imig^(1-1/RW_mumig)
-+RWGR_numig ^(1/RW_mumig)*RWGR_imig^(1-1/RW_mumig)
-+RWIT_numig ^(1/RW_mumig)*RWIT_imig^(1-1/RW_mumig)
-+RWNL_numig ^(1/RW_mumig)*RWNL_imig^(1-1/RW_mumig)
-+RWPT_numig ^(1/RW_mumig)*RWPT_imig^(1-1/RW_mumig)
-+RWRU_numig ^(1/RW_mumig)*RWRU_imig^(1-1/RW_mumig)
-+RWUS_numig ^(1/RW_mumig)*RWUS_imig^(1-1/RW_mumig)
++RWRA_numig ^(1/RW_mumig)*((1-RWRA_gammaimig)*RWRA_imig)^(1-1/RW_mumig)
++RWAT_numig ^(1/RW_mumig)*((1-RWAT_gammaimig)*RWAT_imig)^(1-1/RW_mumig)
++RWBE_numig ^(1/RW_mumig)*((1-RWBE_gammaimig)*RWBE_imig)^(1-1/RW_mumig)
++RWES_numig ^(1/RW_mumig)*((1-RWES_gammaimig)*RWES_imig)^(1-1/RW_mumig)
++RWFI_numig ^(1/RW_mumig)*((1-RWFI_gammaimig)*RWFI_imig)^(1-1/RW_mumig)
++RWFR_numig ^(1/RW_mumig)*((1-RWFR_gammaimig)*RWFR_imig)^(1-1/RW_mumig)
++RWGR_numig ^(1/RW_mumig)*((1-RWGR_gammaimig)*RWGR_imig)^(1-1/RW_mumig)
++RWIT_numig ^(1/RW_mumig)*((1-RWIT_gammaimig)*RWIT_imig)^(1-1/RW_mumig)
++RWNL_numig ^(1/RW_mumig)*((1-RWNL_gammaimig)*RWNL_imig)^(1-1/RW_mumig)
++RWPT_numig ^(1/RW_mumig)*((1-RWPT_gammaimig)*RWPT_imig)^(1-1/RW_mumig)
++RWRU_numig ^(1/RW_mumig)*((1-RWRU_gammaimig)*RWRU_imig)^(1-1/RW_mumig)
++RWUS_numig ^(1/RW_mumig)*((1-RWUS_gammaimig)*RWUS_imig)^(1-1/RW_mumig)
 +(1
 -RWRA_numig
 -RWAT_numig
@@ -60337,29 +61092,29 @@ RW_imig^((RW_mumig-1)/RW_mumig) =
 -RWPT_numig
 -RWRU_numig
 -RWUS_numig
-)^(1/RW_mumig)*RWDE_imig^(1-1/RW_mumig);
+)^(1/RW_mumig)*((1-RWDE_gammaimig)*RWDE_imig)^(1-1/RW_mumig);
 // Demand for bilateral consumption import goods
-RWRA_imig = RWRA_numig*((RA_pex*RWRA_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+RWRA_imig = RWRA_numig*((RA_pex*RWRA_rer)/(RWRA_gammaimigdag*RW_pimig))^(-RW_mumig)*RW_imig/(1-RWRA_gammaimig);
 // Demand for bilateral consumption import goods
-RWAT_imig = RWAT_numig*((AT_pex*RWAT_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+RWAT_imig = RWAT_numig*((AT_pex*RWAT_rer)/(RWAT_gammaimigdag*RW_pimig))^(-RW_mumig)*RW_imig/(1-RWAT_gammaimig);
 // Demand for bilateral consumption import goods
-RWBE_imig = RWBE_numig*((BE_pex*RWBE_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+RWBE_imig = RWBE_numig*((BE_pex*RWBE_rer)/(RWBE_gammaimigdag*RW_pimig))^(-RW_mumig)*RW_imig/(1-RWBE_gammaimig);
 // Demand for bilateral consumption import goods
-RWES_imig = RWES_numig*((ES_pex*RWES_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+RWES_imig = RWES_numig*((ES_pex*RWES_rer)/(RWES_gammaimigdag*RW_pimig))^(-RW_mumig)*RW_imig/(1-RWES_gammaimig);
 // Demand for bilateral consumption import goods
-RWFI_imig = RWFI_numig*((FI_pex*RWFI_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+RWFI_imig = RWFI_numig*((FI_pex*RWFI_rer)/(RWFI_gammaimigdag*RW_pimig))^(-RW_mumig)*RW_imig/(1-RWFI_gammaimig);
 // Demand for bilateral consumption import goods
-RWFR_imig = RWFR_numig*((FR_pex*RWFR_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+RWFR_imig = RWFR_numig*((FR_pex*RWFR_rer)/(RWFR_gammaimigdag*RW_pimig))^(-RW_mumig)*RW_imig/(1-RWFR_gammaimig);
 // Demand for bilateral consumption import goods
-RWGR_imig = RWGR_numig*((GR_pex*RWGR_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+RWGR_imig = RWGR_numig*((GR_pex*RWGR_rer)/(RWGR_gammaimigdag*RW_pimig))^(-RW_mumig)*RW_imig/(1-RWGR_gammaimig);
 // Demand for bilateral consumption import goods
-RWIT_imig = RWIT_numig*((IT_pex*RWIT_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+RWIT_imig = RWIT_numig*((IT_pex*RWIT_rer)/(RWIT_gammaimigdag*RW_pimig))^(-RW_mumig)*RW_imig/(1-RWIT_gammaimig);
 // Demand for bilateral consumption import goods
-RWNL_imig = RWNL_numig*((NL_pex*RWNL_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+RWNL_imig = RWNL_numig*((NL_pex*RWNL_rer)/(RWNL_gammaimigdag*RW_pimig))^(-RW_mumig)*RW_imig/(1-RWNL_gammaimig);
 // Demand for bilateral consumption import goods
-RWPT_imig = RWPT_numig*((PT_pex*RWPT_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+RWPT_imig = RWPT_numig*((PT_pex*RWPT_rer)/(RWPT_gammaimigdag*RW_pimig))^(-RW_mumig)*RW_imig/(1-RWPT_gammaimig);
 // Demand for bilateral consumption import goods
-RWRU_imig = RWRU_numig*((RU_pex*RWRU_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+RWRU_imig = RWRU_numig*((RU_pex*RWRU_rer)/(RWRU_gammaimigdag*RW_pimig))^(-RW_mumig)*RW_imig/(1-RWRU_gammaimig);
 RWDE_imig = (1
 -RWRA_numig
 -RWAT_numig
@@ -60373,21 +61128,21 @@ RWDE_imig = (1
 -RWPT_numig
 -RWRU_numig
 -RWUS_numig
-)*((DE_pex*RWDE_rer)/RW_pimig)^(-RW_mumig)*RW_imig;
+)*((DE_pex*RWDE_rer)/(RWDE_gammaimigdag*RW_pimig))^(-RW_mumig)*RW_imig/(1-RWDE_gammaimig);
 // Price of the consumption good (import)
 RW_pimig^(1-RW_mumig) =
-+RWRA_numig * (RA_pex*RWRA_rer)^(1-RW_mumig)
-+RWAT_numig * (AT_pex*RWAT_rer)^(1-RW_mumig)
-+RWBE_numig * (BE_pex*RWBE_rer)^(1-RW_mumig)
-+RWES_numig * (ES_pex*RWES_rer)^(1-RW_mumig)
-+RWFI_numig * (FI_pex*RWFI_rer)^(1-RW_mumig)
-+RWFR_numig * (FR_pex*RWFR_rer)^(1-RW_mumig)
-+RWGR_numig * (GR_pex*RWGR_rer)^(1-RW_mumig)
-+RWIT_numig * (IT_pex*RWIT_rer)^(1-RW_mumig)
-+RWNL_numig * (NL_pex*RWNL_rer)^(1-RW_mumig)
-+RWPT_numig * (PT_pex*RWPT_rer)^(1-RW_mumig)
-+RWRU_numig * (RU_pex*RWRU_rer)^(1-RW_mumig)
-+RWUS_numig * (US_pex*RWUS_rer)^(1-RW_mumig)
++RWRA_numig *((RA_pex*RWRA_rer)/RWRA_gammaimigdag)^(1-RW_mumig)
++RWAT_numig *((AT_pex*RWAT_rer)/RWAT_gammaimigdag)^(1-RW_mumig)
++RWBE_numig *((BE_pex*RWBE_rer)/RWBE_gammaimigdag)^(1-RW_mumig)
++RWES_numig *((ES_pex*RWES_rer)/RWES_gammaimigdag)^(1-RW_mumig)
++RWFI_numig *((FI_pex*RWFI_rer)/RWFI_gammaimigdag)^(1-RW_mumig)
++RWFR_numig *((FR_pex*RWFR_rer)/RWFR_gammaimigdag)^(1-RW_mumig)
++RWGR_numig *((GR_pex*RWGR_rer)/RWGR_gammaimigdag)^(1-RW_mumig)
++RWIT_numig *((IT_pex*RWIT_rer)/RWIT_gammaimigdag)^(1-RW_mumig)
++RWNL_numig *((NL_pex*RWNL_rer)/RWNL_gammaimigdag)^(1-RW_mumig)
++RWPT_numig *((PT_pex*RWPT_rer)/RWPT_gammaimigdag)^(1-RW_mumig)
++RWRU_numig *((RU_pex*RWRU_rer)/RWRU_gammaimigdag)^(1-RW_mumig)
++RWUS_numig *((US_pex*RWUS_rer)/RWUS_gammaimigdag)^(1-RW_mumig)
 +(1
 -RWRA_numig
 -RWAT_numig
@@ -60401,7 +61156,7 @@ RW_pimig^(1-RW_mumig) =
 -RWPT_numig
 -RWRU_numig
 -RWUS_numig
-)*(DE_pex*RWDE_rer)^(1-RW_mumig);
+)*((DE_pex*RWDE_rer)/RWDE_gammaimigdag)^(1-RW_mumig);
 // Private consumption good (import) inflation
 RW_piimig = RW_pimig/RW_pimig(-1)*RW_pic;
 // Private consumption good (import) inflation
@@ -60502,32 +61257,58 @@ RW_pttc^(1-RW_mutc) = (RW_nutc)*RW_pht^(1-RW_mutc)+(1-RW_nutc)*RW_pimc^(1-RW_mut
 1^(1-RW_muc) = (RW_nuc)*RW_pttc^(1-RW_muc)+(1-RW_nuc)*RW_pnt^(1-RW_muc);
 // Demand for domestic intermediate goods
 RW_htc = RW_nutc*(RW_pht/RW_pttc)^(-RW_mutc)*RW_ttc;
-RWRA_gammaimc = 0;
-RWRA_gammaimcdag = 1;
-RWAT_gammaimc = 0;
-RWAT_gammaimcdag = 1;
-RWBE_gammaimc = 0;
-RWBE_gammaimcdag = 1;
-RWES_gammaimc = 0;
-RWES_gammaimcdag = 1;
-RWFI_gammaimc = 0;
-RWFI_gammaimcdag = 1;
-RWFR_gammaimc = 0;
-RWFR_gammaimcdag = 1;
-RWGR_gammaimc = 0;
-RWGR_gammaimcdag = 1;
-RWIT_gammaimc = 0;
-RWIT_gammaimcdag = 1;
-RWNL_gammaimc = 0;
-RWNL_gammaimcdag = 1;
-RWPT_gammaimc = 0;
-RWPT_gammaimcdag = 1;
-RWDE_gammaimc = 0;
-RWDE_gammaimcdag = 1;
-RWRU_gammaimc = 0;
-RWRU_gammaimcdag = 1;
-RWUS_gammaimc = 0;
-RWUS_gammaimcdag = 1;
+// Import adjustment cost
+RWRA_gammaimc = RW_gammaimc1/2*((RWRA_imc/RW_qc)/(RWRA_imc(-1)/RW_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWRA_gammaimcdag = 1-RWRA_gammaimc-RW_gammaimc1*((RWRA_imc/RW_qc)/(RWRA_imc(-1)/RW_qc(-1))-1)*(RWRA_imc/RW_qc)/(RWRA_imc(-1)/RW_qc(-1));
+// Import adjustment cost
+RWAT_gammaimc = RW_gammaimc1/2*((RWAT_imc/RW_qc)/(RWAT_imc(-1)/RW_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWAT_gammaimcdag = 1-RWAT_gammaimc-RW_gammaimc1*((RWAT_imc/RW_qc)/(RWAT_imc(-1)/RW_qc(-1))-1)*(RWAT_imc/RW_qc)/(RWAT_imc(-1)/RW_qc(-1));
+// Import adjustment cost
+RWBE_gammaimc = RW_gammaimc1/2*((RWBE_imc/RW_qc)/(RWBE_imc(-1)/RW_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWBE_gammaimcdag = 1-RWBE_gammaimc-RW_gammaimc1*((RWBE_imc/RW_qc)/(RWBE_imc(-1)/RW_qc(-1))-1)*(RWBE_imc/RW_qc)/(RWBE_imc(-1)/RW_qc(-1));
+// Import adjustment cost
+RWES_gammaimc = RW_gammaimc1/2*((RWES_imc/RW_qc)/(RWES_imc(-1)/RW_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWES_gammaimcdag = 1-RWES_gammaimc-RW_gammaimc1*((RWES_imc/RW_qc)/(RWES_imc(-1)/RW_qc(-1))-1)*(RWES_imc/RW_qc)/(RWES_imc(-1)/RW_qc(-1));
+// Import adjustment cost
+RWFI_gammaimc = RW_gammaimc1/2*((RWFI_imc/RW_qc)/(RWFI_imc(-1)/RW_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWFI_gammaimcdag = 1-RWFI_gammaimc-RW_gammaimc1*((RWFI_imc/RW_qc)/(RWFI_imc(-1)/RW_qc(-1))-1)*(RWFI_imc/RW_qc)/(RWFI_imc(-1)/RW_qc(-1));
+// Import adjustment cost
+RWFR_gammaimc = RW_gammaimc1/2*((RWFR_imc/RW_qc)/(RWFR_imc(-1)/RW_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWFR_gammaimcdag = 1-RWFR_gammaimc-RW_gammaimc1*((RWFR_imc/RW_qc)/(RWFR_imc(-1)/RW_qc(-1))-1)*(RWFR_imc/RW_qc)/(RWFR_imc(-1)/RW_qc(-1));
+// Import adjustment cost
+RWGR_gammaimc = RW_gammaimc1/2*((RWGR_imc/RW_qc)/(RWGR_imc(-1)/RW_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWGR_gammaimcdag = 1-RWGR_gammaimc-RW_gammaimc1*((RWGR_imc/RW_qc)/(RWGR_imc(-1)/RW_qc(-1))-1)*(RWGR_imc/RW_qc)/(RWGR_imc(-1)/RW_qc(-1));
+// Import adjustment cost
+RWIT_gammaimc = RW_gammaimc1/2*((RWIT_imc/RW_qc)/(RWIT_imc(-1)/RW_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWIT_gammaimcdag = 1-RWIT_gammaimc-RW_gammaimc1*((RWIT_imc/RW_qc)/(RWIT_imc(-1)/RW_qc(-1))-1)*(RWIT_imc/RW_qc)/(RWIT_imc(-1)/RW_qc(-1));
+// Import adjustment cost
+RWNL_gammaimc = RW_gammaimc1/2*((RWNL_imc/RW_qc)/(RWNL_imc(-1)/RW_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWNL_gammaimcdag = 1-RWNL_gammaimc-RW_gammaimc1*((RWNL_imc/RW_qc)/(RWNL_imc(-1)/RW_qc(-1))-1)*(RWNL_imc/RW_qc)/(RWNL_imc(-1)/RW_qc(-1));
+// Import adjustment cost
+RWPT_gammaimc = RW_gammaimc1/2*((RWPT_imc/RW_qc)/(RWPT_imc(-1)/RW_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWPT_gammaimcdag = 1-RWPT_gammaimc-RW_gammaimc1*((RWPT_imc/RW_qc)/(RWPT_imc(-1)/RW_qc(-1))-1)*(RWPT_imc/RW_qc)/(RWPT_imc(-1)/RW_qc(-1));
+// Import adjustment cost
+RWDE_gammaimc = RW_gammaimc1/2*((RWDE_imc/RW_qc)/(RWDE_imc(-1)/RW_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWDE_gammaimcdag = 1-RWDE_gammaimc-RW_gammaimc1*((RWDE_imc/RW_qc)/(RWDE_imc(-1)/RW_qc(-1))-1)*(RWDE_imc/RW_qc)/(RWDE_imc(-1)/RW_qc(-1));
+// Import adjustment cost
+RWRU_gammaimc = RW_gammaimc1/2*((RWRU_imc/RW_qc)/(RWRU_imc(-1)/RW_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWRU_gammaimcdag = 1-RWRU_gammaimc-RW_gammaimc1*((RWRU_imc/RW_qc)/(RWRU_imc(-1)/RW_qc(-1))-1)*(RWRU_imc/RW_qc)/(RWRU_imc(-1)/RW_qc(-1));
+// Import adjustment cost
+RWUS_gammaimc = RW_gammaimc1/2*((RWUS_imc/RW_qc)/(RWUS_imc(-1)/RW_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWUS_gammaimcdag = 1-RWUS_gammaimc-RW_gammaimc1*((RWUS_imc/RW_qc)/(RWUS_imc(-1)/RW_qc(-1))-1)*(RWUS_imc/RW_qc)/(RWUS_imc(-1)/RW_qc(-1));
 // Private consumption good (tradable)
 RW_tti^((RW_muti-1)/RW_muti) = (RW_nuti)^(1/RW_muti)*RW_hti^(1-1/RW_muti)+(1-RW_nuti)^(1/RW_muti)*RW_imi^(1-1/RW_muti);
 // Private consumption good  (total)
@@ -60540,35 +61321,60 @@ RW_ptti^(1-RW_muti) = (RW_nuti)*RW_pht^(1-RW_muti)+(1-RW_nuti)*RW_pimi^(1-RW_mut
 RW_pi^(1-RW_mui) = (RW_nui)*RW_ptti^(1-RW_mui)+(1-RW_nui)*RW_pnt^(1-RW_mui);
 // Auxiliary equation for the price of the investment good in steady state
 // this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
-RW_pibar = RW_pi;
 // Demand for domestic intermediate goods
 RW_hti = RW_nuti*(RW_pht/RW_ptti)^(-RW_muti)*RW_tti;
-RWRA_gammaimi = 0;
-RWRA_gammaimidag = 1;
-RWAT_gammaimi = 0;
-RWAT_gammaimidag = 1;
-RWBE_gammaimi = 0;
-RWBE_gammaimidag = 1;
-RWES_gammaimi = 0;
-RWES_gammaimidag = 1;
-RWFI_gammaimi = 0;
-RWFI_gammaimidag = 1;
-RWFR_gammaimi = 0;
-RWFR_gammaimidag = 1;
-RWGR_gammaimi = 0;
-RWGR_gammaimidag = 1;
-RWIT_gammaimi = 0;
-RWIT_gammaimidag = 1;
-RWNL_gammaimi = 0;
-RWNL_gammaimidag = 1;
-RWPT_gammaimi = 0;
-RWPT_gammaimidag = 1;
-RWDE_gammaimi = 0;
-RWDE_gammaimidag = 1;
-RWRU_gammaimi = 0;
-RWRU_gammaimidag = 1;
-RWUS_gammaimi = 0;
-RWUS_gammaimidag = 1;
+// Import adjustment cost
+RWRA_gammaimi = RW_gammaimi1/2*((RWRA_imi/RW_qi)/(RWRA_imi(-1)/RW_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWRA_gammaimidag = 1-RWRA_gammaimi-RW_gammaimi1*((RWRA_imi/RW_qi)/(RWRA_imi(-1)/RW_qi)-1)*((RWRA_imi/RW_qi)/(RWRA_imi(-1)/RW_qi(-1)));
+// Import adjustment cost
+RWAT_gammaimi = RW_gammaimi1/2*((RWAT_imi/RW_qi)/(RWAT_imi(-1)/RW_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWAT_gammaimidag = 1-RWAT_gammaimi-RW_gammaimi1*((RWAT_imi/RW_qi)/(RWAT_imi(-1)/RW_qi)-1)*((RWAT_imi/RW_qi)/(RWAT_imi(-1)/RW_qi(-1)));
+// Import adjustment cost
+RWBE_gammaimi = RW_gammaimi1/2*((RWBE_imi/RW_qi)/(RWBE_imi(-1)/RW_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWBE_gammaimidag = 1-RWBE_gammaimi-RW_gammaimi1*((RWBE_imi/RW_qi)/(RWBE_imi(-1)/RW_qi)-1)*((RWBE_imi/RW_qi)/(RWBE_imi(-1)/RW_qi(-1)));
+// Import adjustment cost
+RWES_gammaimi = RW_gammaimi1/2*((RWES_imi/RW_qi)/(RWES_imi(-1)/RW_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWES_gammaimidag = 1-RWES_gammaimi-RW_gammaimi1*((RWES_imi/RW_qi)/(RWES_imi(-1)/RW_qi)-1)*((RWES_imi/RW_qi)/(RWES_imi(-1)/RW_qi(-1)));
+// Import adjustment cost
+RWFI_gammaimi = RW_gammaimi1/2*((RWFI_imi/RW_qi)/(RWFI_imi(-1)/RW_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWFI_gammaimidag = 1-RWFI_gammaimi-RW_gammaimi1*((RWFI_imi/RW_qi)/(RWFI_imi(-1)/RW_qi)-1)*((RWFI_imi/RW_qi)/(RWFI_imi(-1)/RW_qi(-1)));
+// Import adjustment cost
+RWFR_gammaimi = RW_gammaimi1/2*((RWFR_imi/RW_qi)/(RWFR_imi(-1)/RW_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWFR_gammaimidag = 1-RWFR_gammaimi-RW_gammaimi1*((RWFR_imi/RW_qi)/(RWFR_imi(-1)/RW_qi)-1)*((RWFR_imi/RW_qi)/(RWFR_imi(-1)/RW_qi(-1)));
+// Import adjustment cost
+RWGR_gammaimi = RW_gammaimi1/2*((RWGR_imi/RW_qi)/(RWGR_imi(-1)/RW_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWGR_gammaimidag = 1-RWGR_gammaimi-RW_gammaimi1*((RWGR_imi/RW_qi)/(RWGR_imi(-1)/RW_qi)-1)*((RWGR_imi/RW_qi)/(RWGR_imi(-1)/RW_qi(-1)));
+// Import adjustment cost
+RWIT_gammaimi = RW_gammaimi1/2*((RWIT_imi/RW_qi)/(RWIT_imi(-1)/RW_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWIT_gammaimidag = 1-RWIT_gammaimi-RW_gammaimi1*((RWIT_imi/RW_qi)/(RWIT_imi(-1)/RW_qi)-1)*((RWIT_imi/RW_qi)/(RWIT_imi(-1)/RW_qi(-1)));
+// Import adjustment cost
+RWNL_gammaimi = RW_gammaimi1/2*((RWNL_imi/RW_qi)/(RWNL_imi(-1)/RW_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWNL_gammaimidag = 1-RWNL_gammaimi-RW_gammaimi1*((RWNL_imi/RW_qi)/(RWNL_imi(-1)/RW_qi)-1)*((RWNL_imi/RW_qi)/(RWNL_imi(-1)/RW_qi(-1)));
+// Import adjustment cost
+RWPT_gammaimi = RW_gammaimi1/2*((RWPT_imi/RW_qi)/(RWPT_imi(-1)/RW_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWPT_gammaimidag = 1-RWPT_gammaimi-RW_gammaimi1*((RWPT_imi/RW_qi)/(RWPT_imi(-1)/RW_qi)-1)*((RWPT_imi/RW_qi)/(RWPT_imi(-1)/RW_qi(-1)));
+// Import adjustment cost
+RWDE_gammaimi = RW_gammaimi1/2*((RWDE_imi/RW_qi)/(RWDE_imi(-1)/RW_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWDE_gammaimidag = 1-RWDE_gammaimi-RW_gammaimi1*((RWDE_imi/RW_qi)/(RWDE_imi(-1)/RW_qi)-1)*((RWDE_imi/RW_qi)/(RWDE_imi(-1)/RW_qi(-1)));
+// Import adjustment cost
+RWRU_gammaimi = RW_gammaimi1/2*((RWRU_imi/RW_qi)/(RWRU_imi(-1)/RW_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWRU_gammaimidag = 1-RWRU_gammaimi-RW_gammaimi1*((RWRU_imi/RW_qi)/(RWRU_imi(-1)/RW_qi)-1)*((RWRU_imi/RW_qi)/(RWRU_imi(-1)/RW_qi(-1)));
+// Import adjustment cost
+RWUS_gammaimi = RW_gammaimi1/2*((RWUS_imi/RW_qi)/(RWUS_imi(-1)/RW_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWUS_gammaimidag = 1-RWUS_gammaimi-RW_gammaimi1*((RWUS_imi/RW_qi)/(RWUS_imi(-1)/RW_qi)-1)*((RWUS_imi/RW_qi)/(RWUS_imi(-1)/RW_qi(-1)));
 // Private consumption good (tradable)
 RW_ttcg^((RW_mutcg-1)/RW_mutcg) = (RW_nutcg)^(1/RW_mutcg)*RW_htcg^(1-1/RW_mutcg)+(1-RW_nutcg)^(1/RW_mutcg)*RW_imcg^(1-1/RW_mutcg);
 // Private consumption good  (total)
@@ -60581,32 +61387,58 @@ RW_pttcg^(1-RW_mutcg) = (RW_nutcg)*RW_pht^(1-RW_mutcg)+(1-RW_nutcg)*RW_pimcg^(1-
 RW_pcg^(1-RW_mucg) = (RW_nucg)*RW_pttcg^(1-RW_mucg)+(1-RW_nucg)*RW_pnt^(1-RW_mucg);
 // Demand for domestic intermediate goods
 RW_htcg = RW_nutcg*(RW_pht/RW_pttcg)^(-RW_mutcg)*RW_ttcg;
-RWRA_gammaimcg = 0;
-RWRA_gammaimcgdag = 1;
-RWAT_gammaimcg = 0;
-RWAT_gammaimcgdag = 1;
-RWBE_gammaimcg = 0;
-RWBE_gammaimcgdag = 1;
-RWES_gammaimcg = 0;
-RWES_gammaimcgdag = 1;
-RWFI_gammaimcg = 0;
-RWFI_gammaimcgdag = 1;
-RWFR_gammaimcg = 0;
-RWFR_gammaimcgdag = 1;
-RWGR_gammaimcg = 0;
-RWGR_gammaimcgdag = 1;
-RWIT_gammaimcg = 0;
-RWIT_gammaimcgdag = 1;
-RWNL_gammaimcg = 0;
-RWNL_gammaimcgdag = 1;
-RWPT_gammaimcg = 0;
-RWPT_gammaimcgdag = 1;
-RWDE_gammaimcg = 0;
-RWDE_gammaimcgdag = 1;
-RWRU_gammaimcg = 0;
-RWRU_gammaimcgdag = 1;
-RWUS_gammaimcg = 0;
-RWUS_gammaimcgdag = 1;
+// Import adjustment cost
+RWRA_gammaimcg = RW_gammaimcg1/2*((RWRA_imcg/RW_qcg)/(RWRA_imcg(-1)/RW_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWRA_gammaimcgdag = 1-RWRA_gammaimcg-RW_gammaimcg1*((RWRA_imcg/RW_qcg)/(RWRA_imcg(-1)/RW_qcg)-1)*((RWRA_imcg/RW_qcg)/(RWRA_imcg(-1)/RW_qcg(-1)));
+// Import adjustment cost
+RWAT_gammaimcg = RW_gammaimcg1/2*((RWAT_imcg/RW_qcg)/(RWAT_imcg(-1)/RW_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWAT_gammaimcgdag = 1-RWAT_gammaimcg-RW_gammaimcg1*((RWAT_imcg/RW_qcg)/(RWAT_imcg(-1)/RW_qcg)-1)*((RWAT_imcg/RW_qcg)/(RWAT_imcg(-1)/RW_qcg(-1)));
+// Import adjustment cost
+RWBE_gammaimcg = RW_gammaimcg1/2*((RWBE_imcg/RW_qcg)/(RWBE_imcg(-1)/RW_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWBE_gammaimcgdag = 1-RWBE_gammaimcg-RW_gammaimcg1*((RWBE_imcg/RW_qcg)/(RWBE_imcg(-1)/RW_qcg)-1)*((RWBE_imcg/RW_qcg)/(RWBE_imcg(-1)/RW_qcg(-1)));
+// Import adjustment cost
+RWES_gammaimcg = RW_gammaimcg1/2*((RWES_imcg/RW_qcg)/(RWES_imcg(-1)/RW_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWES_gammaimcgdag = 1-RWES_gammaimcg-RW_gammaimcg1*((RWES_imcg/RW_qcg)/(RWES_imcg(-1)/RW_qcg)-1)*((RWES_imcg/RW_qcg)/(RWES_imcg(-1)/RW_qcg(-1)));
+// Import adjustment cost
+RWFI_gammaimcg = RW_gammaimcg1/2*((RWFI_imcg/RW_qcg)/(RWFI_imcg(-1)/RW_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWFI_gammaimcgdag = 1-RWFI_gammaimcg-RW_gammaimcg1*((RWFI_imcg/RW_qcg)/(RWFI_imcg(-1)/RW_qcg)-1)*((RWFI_imcg/RW_qcg)/(RWFI_imcg(-1)/RW_qcg(-1)));
+// Import adjustment cost
+RWFR_gammaimcg = RW_gammaimcg1/2*((RWFR_imcg/RW_qcg)/(RWFR_imcg(-1)/RW_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWFR_gammaimcgdag = 1-RWFR_gammaimcg-RW_gammaimcg1*((RWFR_imcg/RW_qcg)/(RWFR_imcg(-1)/RW_qcg)-1)*((RWFR_imcg/RW_qcg)/(RWFR_imcg(-1)/RW_qcg(-1)));
+// Import adjustment cost
+RWGR_gammaimcg = RW_gammaimcg1/2*((RWGR_imcg/RW_qcg)/(RWGR_imcg(-1)/RW_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWGR_gammaimcgdag = 1-RWGR_gammaimcg-RW_gammaimcg1*((RWGR_imcg/RW_qcg)/(RWGR_imcg(-1)/RW_qcg)-1)*((RWGR_imcg/RW_qcg)/(RWGR_imcg(-1)/RW_qcg(-1)));
+// Import adjustment cost
+RWIT_gammaimcg = RW_gammaimcg1/2*((RWIT_imcg/RW_qcg)/(RWIT_imcg(-1)/RW_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWIT_gammaimcgdag = 1-RWIT_gammaimcg-RW_gammaimcg1*((RWIT_imcg/RW_qcg)/(RWIT_imcg(-1)/RW_qcg)-1)*((RWIT_imcg/RW_qcg)/(RWIT_imcg(-1)/RW_qcg(-1)));
+// Import adjustment cost
+RWNL_gammaimcg = RW_gammaimcg1/2*((RWNL_imcg/RW_qcg)/(RWNL_imcg(-1)/RW_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWNL_gammaimcgdag = 1-RWNL_gammaimcg-RW_gammaimcg1*((RWNL_imcg/RW_qcg)/(RWNL_imcg(-1)/RW_qcg)-1)*((RWNL_imcg/RW_qcg)/(RWNL_imcg(-1)/RW_qcg(-1)));
+// Import adjustment cost
+RWPT_gammaimcg = RW_gammaimcg1/2*((RWPT_imcg/RW_qcg)/(RWPT_imcg(-1)/RW_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWPT_gammaimcgdag = 1-RWPT_gammaimcg-RW_gammaimcg1*((RWPT_imcg/RW_qcg)/(RWPT_imcg(-1)/RW_qcg)-1)*((RWPT_imcg/RW_qcg)/(RWPT_imcg(-1)/RW_qcg(-1)));
+// Import adjustment cost
+RWDE_gammaimcg = RW_gammaimcg1/2*((RWDE_imcg/RW_qcg)/(RWDE_imcg(-1)/RW_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWDE_gammaimcgdag = 1-RWDE_gammaimcg-RW_gammaimcg1*((RWDE_imcg/RW_qcg)/(RWDE_imcg(-1)/RW_qcg)-1)*((RWDE_imcg/RW_qcg)/(RWDE_imcg(-1)/RW_qcg(-1)));
+// Import adjustment cost
+RWRU_gammaimcg = RW_gammaimcg1/2*((RWRU_imcg/RW_qcg)/(RWRU_imcg(-1)/RW_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWRU_gammaimcgdag = 1-RWRU_gammaimcg-RW_gammaimcg1*((RWRU_imcg/RW_qcg)/(RWRU_imcg(-1)/RW_qcg)-1)*((RWRU_imcg/RW_qcg)/(RWRU_imcg(-1)/RW_qcg(-1)));
+// Import adjustment cost
+RWUS_gammaimcg = RW_gammaimcg1/2*((RWUS_imcg/RW_qcg)/(RWUS_imcg(-1)/RW_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWUS_gammaimcgdag = 1-RWUS_gammaimcg-RW_gammaimcg1*((RWUS_imcg/RW_qcg)/(RWUS_imcg(-1)/RW_qcg)-1)*((RWUS_imcg/RW_qcg)/(RWUS_imcg(-1)/RW_qcg(-1)));
 // Private consumption good (tradable)
 RW_ttig^((RW_mutig-1)/RW_mutig) = (RW_nutig)^(1/RW_mutig)*RW_htig^(1-1/RW_mutig)+(1-RW_nutig)^(1/RW_mutig)*RW_imig^(1-1/RW_mutig);
 // Private consumption good  (total)
@@ -60619,32 +61451,58 @@ RW_pttig^(1-RW_mutig) = (RW_nutig)*RW_pht^(1-RW_mutig)+(1-RW_nutig)*RW_pimig^(1-
 RW_pig^(1-RW_muig) = (RW_nuig)*RW_pttig^(1-RW_muig)+(1-RW_nuig)*RW_pnt^(1-RW_muig);
 // Demand for domestic intermediate goods
 RW_htig = RW_nutig*(RW_pht/RW_pttig)^(-RW_mutig)*RW_ttig;
-RWRA_gammaimig = 0;
-RWRA_gammaimigdag = 1;
-RWAT_gammaimig = 0;
-RWAT_gammaimigdag = 1;
-RWBE_gammaimig = 0;
-RWBE_gammaimigdag = 1;
-RWES_gammaimig = 0;
-RWES_gammaimigdag = 1;
-RWFI_gammaimig = 0;
-RWFI_gammaimigdag = 1;
-RWFR_gammaimig = 0;
-RWFR_gammaimigdag = 1;
-RWGR_gammaimig = 0;
-RWGR_gammaimigdag = 1;
-RWIT_gammaimig = 0;
-RWIT_gammaimigdag = 1;
-RWNL_gammaimig = 0;
-RWNL_gammaimigdag = 1;
-RWPT_gammaimig = 0;
-RWPT_gammaimigdag = 1;
-RWDE_gammaimig = 0;
-RWDE_gammaimigdag = 1;
-RWRU_gammaimig = 0;
-RWRU_gammaimigdag = 1;
-RWUS_gammaimig = 0;
-RWUS_gammaimigdag = 1;
+// Import adjustment cost
+RWRA_gammaimig = RW_gammaimig1/2*((RWRA_imig/RW_qig)/(RWRA_imig(-1)/RW_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWRA_gammaimigdag = 1-RWRA_gammaimig-RW_gammaimig1*((RWRA_imig/RW_qig)/(RWRA_imig(-1)/RW_qig)-1)*((RWRA_imig/RW_qig)/(RWRA_imig(-1)/RW_qig(-1)));
+// Import adjustment cost
+RWAT_gammaimig = RW_gammaimig1/2*((RWAT_imig/RW_qig)/(RWAT_imig(-1)/RW_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWAT_gammaimigdag = 1-RWAT_gammaimig-RW_gammaimig1*((RWAT_imig/RW_qig)/(RWAT_imig(-1)/RW_qig)-1)*((RWAT_imig/RW_qig)/(RWAT_imig(-1)/RW_qig(-1)));
+// Import adjustment cost
+RWBE_gammaimig = RW_gammaimig1/2*((RWBE_imig/RW_qig)/(RWBE_imig(-1)/RW_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWBE_gammaimigdag = 1-RWBE_gammaimig-RW_gammaimig1*((RWBE_imig/RW_qig)/(RWBE_imig(-1)/RW_qig)-1)*((RWBE_imig/RW_qig)/(RWBE_imig(-1)/RW_qig(-1)));
+// Import adjustment cost
+RWES_gammaimig = RW_gammaimig1/2*((RWES_imig/RW_qig)/(RWES_imig(-1)/RW_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWES_gammaimigdag = 1-RWES_gammaimig-RW_gammaimig1*((RWES_imig/RW_qig)/(RWES_imig(-1)/RW_qig)-1)*((RWES_imig/RW_qig)/(RWES_imig(-1)/RW_qig(-1)));
+// Import adjustment cost
+RWFI_gammaimig = RW_gammaimig1/2*((RWFI_imig/RW_qig)/(RWFI_imig(-1)/RW_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWFI_gammaimigdag = 1-RWFI_gammaimig-RW_gammaimig1*((RWFI_imig/RW_qig)/(RWFI_imig(-1)/RW_qig)-1)*((RWFI_imig/RW_qig)/(RWFI_imig(-1)/RW_qig(-1)));
+// Import adjustment cost
+RWFR_gammaimig = RW_gammaimig1/2*((RWFR_imig/RW_qig)/(RWFR_imig(-1)/RW_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWFR_gammaimigdag = 1-RWFR_gammaimig-RW_gammaimig1*((RWFR_imig/RW_qig)/(RWFR_imig(-1)/RW_qig)-1)*((RWFR_imig/RW_qig)/(RWFR_imig(-1)/RW_qig(-1)));
+// Import adjustment cost
+RWGR_gammaimig = RW_gammaimig1/2*((RWGR_imig/RW_qig)/(RWGR_imig(-1)/RW_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWGR_gammaimigdag = 1-RWGR_gammaimig-RW_gammaimig1*((RWGR_imig/RW_qig)/(RWGR_imig(-1)/RW_qig)-1)*((RWGR_imig/RW_qig)/(RWGR_imig(-1)/RW_qig(-1)));
+// Import adjustment cost
+RWIT_gammaimig = RW_gammaimig1/2*((RWIT_imig/RW_qig)/(RWIT_imig(-1)/RW_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWIT_gammaimigdag = 1-RWIT_gammaimig-RW_gammaimig1*((RWIT_imig/RW_qig)/(RWIT_imig(-1)/RW_qig)-1)*((RWIT_imig/RW_qig)/(RWIT_imig(-1)/RW_qig(-1)));
+// Import adjustment cost
+RWNL_gammaimig = RW_gammaimig1/2*((RWNL_imig/RW_qig)/(RWNL_imig(-1)/RW_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWNL_gammaimigdag = 1-RWNL_gammaimig-RW_gammaimig1*((RWNL_imig/RW_qig)/(RWNL_imig(-1)/RW_qig)-1)*((RWNL_imig/RW_qig)/(RWNL_imig(-1)/RW_qig(-1)));
+// Import adjustment cost
+RWPT_gammaimig = RW_gammaimig1/2*((RWPT_imig/RW_qig)/(RWPT_imig(-1)/RW_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWPT_gammaimigdag = 1-RWPT_gammaimig-RW_gammaimig1*((RWPT_imig/RW_qig)/(RWPT_imig(-1)/RW_qig)-1)*((RWPT_imig/RW_qig)/(RWPT_imig(-1)/RW_qig(-1)));
+// Import adjustment cost
+RWDE_gammaimig = RW_gammaimig1/2*((RWDE_imig/RW_qig)/(RWDE_imig(-1)/RW_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWDE_gammaimigdag = 1-RWDE_gammaimig-RW_gammaimig1*((RWDE_imig/RW_qig)/(RWDE_imig(-1)/RW_qig)-1)*((RWDE_imig/RW_qig)/(RWDE_imig(-1)/RW_qig(-1)));
+// Import adjustment cost
+RWRU_gammaimig = RW_gammaimig1/2*((RWRU_imig/RW_qig)/(RWRU_imig(-1)/RW_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWRU_gammaimigdag = 1-RWRU_gammaimig-RW_gammaimig1*((RWRU_imig/RW_qig)/(RWRU_imig(-1)/RW_qig)-1)*((RWRU_imig/RW_qig)/(RWRU_imig(-1)/RW_qig(-1)));
+// Import adjustment cost
+RWUS_gammaimig = RW_gammaimig1/2*((RWUS_imig/RW_qig)/(RWUS_imig(-1)/RW_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+RWUS_gammaimigdag = 1-RWUS_gammaimig-RW_gammaimig1*((RWUS_imig/RW_qig)/(RWUS_imig(-1)/RW_qig)-1)*((RWUS_imig/RW_qig)/(RWUS_imig(-1)/RW_qig(-1)));
 // Trade balance
 RW_tb =
 +RW_pex*RA_size/RW_size*RARW_im
@@ -60705,18 +61563,10 @@ RW_ex =
 // Government spending, using RW_pg = RW_pht
 RW_pcg*RW_cg = RW_cgy*RW_pybar*RW_ybar;
 RW_pig*RW_ig = RW_igy*RW_pybar*RW_ybar;
-RW_t = 0;
-RW_b = RW_bytarget*RW_pybar*RW_ybar;
-// Auxiliary equation for steady-state output
-RW_ybar = RW_y;
-// Auxiliary equation for steady-state output
-RW_ytbar = RW_yst;
-// Auxiliary equation for steady-state output
-RW_ynbar = RW_ysn;
-// Auxiliary equation for steady-state output deflator
-RW_pybar = RW_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-RW_trybar = RW_tr/(RW_pybar*RW_ybar);
+// Transfers
+RW_tr = RW_try*RW_pybar*RW_ybar;
+// Fiscal rule
+RW_t/(RW_pybar*RW_ybar) = RW_phitb*(RW_b/(RW_pybar*RW_ybar)-RW_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 RW_ti = RW_upsilont*RW_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -60732,9 +61582,11 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	RW_r^4-1 = RW_rrstar^4*RW_pi4target-1;
-RW_pic4 = RW_pi4target;
-RW_rr-1 = RW_r/RW_pi4target^(1/4)-1;
+	RW_r^4-1 = RW_phirr*(RW_r(-1)^4-1)+(1-RW_phirr)*(RW_rrstar^4*RW_pi4target-1+RW_phirpi*(RW_pic4-RW_pi4target))+RW_phirgy*(RW_y/RW_y(-1)-1)+RW_epsr;
+// Definition of annual inflation
+RW_pic4 = RW_pic*RW_pic(-1)*RW_pic(-2)*RW_pic(-3);
+// Real interest rate
+RW_rr-1 = RW_r/RW_pic(+1)-1;
 // Equilibrium real interest rate
 RW_rrstar-1 = 1/RW_beta-1;
 //-------------
@@ -60821,68 +61673,68 @@ RW_py*RW_y =
 +RW_pcg*RW_qcg
 +RW_pig*RW_qig
 +RW_pex*RA_size/RW_size*RARW_im
--(RA_pex*RWRA_rer)*RWRA_imc
--(RA_pex*RWRA_rer)*RWRA_imi
+-(RA_pex*RWRA_rer)*(RWRA_imc*(1-RWRA_gammaimc)/RWRA_gammaimcdag)
+-(RA_pex*RWRA_rer)*(RWRA_imi*(1-RWRA_gammaimi)/RWRA_gammaimidag)
 -(RA_pex*RWRA_rer)*RWRA_imcg
 -(RA_pex*RWRA_rer)*RWRA_imig
 +RW_pex*AT_size/RW_size*ATRW_im
--(AT_pex*RWAT_rer)*RWAT_imc
--(AT_pex*RWAT_rer)*RWAT_imi
+-(AT_pex*RWAT_rer)*(RWAT_imc*(1-RWAT_gammaimc)/RWAT_gammaimcdag)
+-(AT_pex*RWAT_rer)*(RWAT_imi*(1-RWAT_gammaimi)/RWAT_gammaimidag)
 -(AT_pex*RWAT_rer)*RWAT_imcg
 -(AT_pex*RWAT_rer)*RWAT_imig
 +RW_pex*BE_size/RW_size*BERW_im
--(BE_pex*RWBE_rer)*RWBE_imc
--(BE_pex*RWBE_rer)*RWBE_imi
+-(BE_pex*RWBE_rer)*(RWBE_imc*(1-RWBE_gammaimc)/RWBE_gammaimcdag)
+-(BE_pex*RWBE_rer)*(RWBE_imi*(1-RWBE_gammaimi)/RWBE_gammaimidag)
 -(BE_pex*RWBE_rer)*RWBE_imcg
 -(BE_pex*RWBE_rer)*RWBE_imig
 +RW_pex*ES_size/RW_size*ESRW_im
--(ES_pex*RWES_rer)*RWES_imc
--(ES_pex*RWES_rer)*RWES_imi
+-(ES_pex*RWES_rer)*(RWES_imc*(1-RWES_gammaimc)/RWES_gammaimcdag)
+-(ES_pex*RWES_rer)*(RWES_imi*(1-RWES_gammaimi)/RWES_gammaimidag)
 -(ES_pex*RWES_rer)*RWES_imcg
 -(ES_pex*RWES_rer)*RWES_imig
 +RW_pex*FI_size/RW_size*FIRW_im
--(FI_pex*RWFI_rer)*RWFI_imc
--(FI_pex*RWFI_rer)*RWFI_imi
+-(FI_pex*RWFI_rer)*(RWFI_imc*(1-RWFI_gammaimc)/RWFI_gammaimcdag)
+-(FI_pex*RWFI_rer)*(RWFI_imi*(1-RWFI_gammaimi)/RWFI_gammaimidag)
 -(FI_pex*RWFI_rer)*RWFI_imcg
 -(FI_pex*RWFI_rer)*RWFI_imig
 +RW_pex*FR_size/RW_size*FRRW_im
--(FR_pex*RWFR_rer)*RWFR_imc
--(FR_pex*RWFR_rer)*RWFR_imi
+-(FR_pex*RWFR_rer)*(RWFR_imc*(1-RWFR_gammaimc)/RWFR_gammaimcdag)
+-(FR_pex*RWFR_rer)*(RWFR_imi*(1-RWFR_gammaimi)/RWFR_gammaimidag)
 -(FR_pex*RWFR_rer)*RWFR_imcg
 -(FR_pex*RWFR_rer)*RWFR_imig
 +RW_pex*GR_size/RW_size*GRRW_im
--(GR_pex*RWGR_rer)*RWGR_imc
--(GR_pex*RWGR_rer)*RWGR_imi
+-(GR_pex*RWGR_rer)*(RWGR_imc*(1-RWGR_gammaimc)/RWGR_gammaimcdag)
+-(GR_pex*RWGR_rer)*(RWGR_imi*(1-RWGR_gammaimi)/RWGR_gammaimidag)
 -(GR_pex*RWGR_rer)*RWGR_imcg
 -(GR_pex*RWGR_rer)*RWGR_imig
 +RW_pex*IT_size/RW_size*ITRW_im
--(IT_pex*RWIT_rer)*RWIT_imc
--(IT_pex*RWIT_rer)*RWIT_imi
+-(IT_pex*RWIT_rer)*(RWIT_imc*(1-RWIT_gammaimc)/RWIT_gammaimcdag)
+-(IT_pex*RWIT_rer)*(RWIT_imi*(1-RWIT_gammaimi)/RWIT_gammaimidag)
 -(IT_pex*RWIT_rer)*RWIT_imcg
 -(IT_pex*RWIT_rer)*RWIT_imig
 +RW_pex*NL_size/RW_size*NLRW_im
--(NL_pex*RWNL_rer)*RWNL_imc
--(NL_pex*RWNL_rer)*RWNL_imi
+-(NL_pex*RWNL_rer)*(RWNL_imc*(1-RWNL_gammaimc)/RWNL_gammaimcdag)
+-(NL_pex*RWNL_rer)*(RWNL_imi*(1-RWNL_gammaimi)/RWNL_gammaimidag)
 -(NL_pex*RWNL_rer)*RWNL_imcg
 -(NL_pex*RWNL_rer)*RWNL_imig
 +RW_pex*PT_size/RW_size*PTRW_im
--(PT_pex*RWPT_rer)*RWPT_imc
--(PT_pex*RWPT_rer)*RWPT_imi
+-(PT_pex*RWPT_rer)*(RWPT_imc*(1-RWPT_gammaimc)/RWPT_gammaimcdag)
+-(PT_pex*RWPT_rer)*(RWPT_imi*(1-RWPT_gammaimi)/RWPT_gammaimidag)
 -(PT_pex*RWPT_rer)*RWPT_imcg
 -(PT_pex*RWPT_rer)*RWPT_imig
 +RW_pex*DE_size/RW_size*DERW_im
--(DE_pex*RWDE_rer)*RWDE_imc
--(DE_pex*RWDE_rer)*RWDE_imi
+-(DE_pex*RWDE_rer)*(RWDE_imc*(1-RWDE_gammaimc)/RWDE_gammaimcdag)
+-(DE_pex*RWDE_rer)*(RWDE_imi*(1-RWDE_gammaimi)/RWDE_gammaimidag)
 -(DE_pex*RWDE_rer)*RWDE_imcg
 -(DE_pex*RWDE_rer)*RWDE_imig
 +RW_pex*RU_size/RW_size*RURW_im
--(RU_pex*RWRU_rer)*RWRU_imc
--(RU_pex*RWRU_rer)*RWRU_imi
+-(RU_pex*RWRU_rer)*(RWRU_imc*(1-RWRU_gammaimc)/RWRU_gammaimcdag)
+-(RU_pex*RWRU_rer)*(RWRU_imi*(1-RWRU_gammaimi)/RWRU_gammaimidag)
 -(RU_pex*RWRU_rer)*RWRU_imcg
 -(RU_pex*RWRU_rer)*RWRU_imig
 +RW_pex*US_size/RW_size*USRW_im
--(US_pex*RWUS_rer)*RWUS_imc
--(US_pex*RWUS_rer)*RWUS_imi
+-(US_pex*RWUS_rer)*(RWUS_imc*(1-RWUS_gammaimc)/RWUS_gammaimcdag)
+-(US_pex*RWUS_rer)*(RWUS_imi*(1-RWUS_gammaimi)/RWUS_gammaimidag)
 -(US_pex*RWUS_rer)*RWUS_imcg
 -(US_pex*RWUS_rer)*RWUS_imig
 ;
@@ -60957,7 +61809,7 @@ RW_yhty = RW_pht*RW_yst/(RW_py*RW_y);
 // NT sector share
 RW_ynty = RW_pnt*RW_ysn/(RW_py*RW_y);
 // Output gap
-RW_ygap = 0;
+RW_ygap = RW_y/RW_ybar-1;
 // Output growth (gross rate)
 RW_ygrowth = RW_y/RW_y(-1);
 // Output growth (gross rate yoy)
@@ -61132,17 +61984,23 @@ US_vi = US_ci/US_mi;
 US_gammavi = US_gammav1*US_vi+US_gammav2/US_vi-2*(US_gammav1*US_gammav2)^(1/2);
 // Derivative of transaction cost
 US_gammavider = US_gammav1-US_gammav2*US_vi^(-2);
-US_delta = US_ii/US_ki;
-US_gammai = 0;
-US_gammaider = 0;
-US_gammau = 0;
-US_gammauder = ((US_beta^(-1)-1+US_delta)*US_qbar-US_delta*US_taukbar*US_pibar)/((1-US_taukbar)*US_pibar);
-US_u = 1;
-US_pi = US_q;
+// Capital accumulation
+US_ki = (1-US_delta)*US_ki(-1)+(1-US_gammai(-1))*US_ii(-1)*US_zinv;
+// Investment adjustment cost
+US_gammai = US_gammai1/2*(US_ii/US_ii(-1)-1)^2;
+// Derivative of investment adjustment cost
+US_gammaider = US_gammai1*(US_ii/US_ii(-1)-1)/US_ii(-1);
+// Capacity utilisation cost
+US_gammau = ((US_beta^(-1)-1+US_delta)*US_qbar-US_delta*US_taukbar*US_pibar)/((1-US_taukbar)*US_pibar)*(US_u-1)+US_gammau2/2*(US_u-1)^2;
+// Derivative of capacity utilisation cost
+US_gammauder = ((US_beta^(-1)-1+US_delta)*US_qbar-US_delta*US_taukbar*US_pibar)/((1-US_taukbar)*US_pibar)+US_gammau2*(US_u-1);
+// Optimal capacity utilisation (FOC)
+US_rk = US_gammauder*US_pi;
+// Tobin's Q
+US_pi = US_q*US_zinv*(1-US_gammai-US_gammaider*US_ii)+US_beta*US_lambdai(+1)/US_lambdai*US_q(+1)*US_zinv(+1)*US_gammaider(+1)*US_ii(+1)^2/US_ii;
 // Auxiliary equation for Tobin's Q in steady state
-US_qbar = US_q;
 // Rate of return on capital
-US_q = US_beta*((1-US_tauk)*US_rk+(US_tauk*US_delta)*US_pi+(1-US_delta)*US_q);
+US_q = US_beta*US_lambdai(+1)/US_lambdai*((1-US_tauk(+1))*(US_rk(+1)*US_u(+1)-US_gammau(+1)*US_pi(+1))+(US_tauk(+1)*US_delta)*US_pi(+1)+(1-US_delta)*US_q(+1));
 // Optimal wage contract (FOC)
 US_witilde^(1+US_etai*US_zeta) = US_etai/(US_etai-1)*US_fi/US_gi+US_wcst;
 // Definition of fi
@@ -61201,11 +62059,9 @@ US_mcn = 1/(US_zn*US_kg^US_alphag*(US_alphan)^(US_alphan)*(1-US_alphan)^(1-US_al
 // Wage Inflation (qoq)
 US_piw = US_w/US_w(-1)*US_pic;
 // Wage Inflation (yoy)
-US_piw4 = US_pic4;
+US_piw4 = US_piw*US_piw(-1)*US_piw(-2)*US_piw(-3);
 // Auxiliary equation for steady-state fixed cost
-US_psitbar = US_psit*US_ytbar;
 // Auxiliary equation for steady-state fixed cost
-US_psinbar = US_psin*US_ynbar;
 // Capital input (FOC)
 US_rk = US_alphat*(US_yst+US_psitbar)/US_kdt*US_mct;
 // Capital input (FOC)
@@ -61280,7 +62136,6 @@ US_piex = US_pex/US_pex(-1)*US_pic;
 // Bilateral real exchange rate
 USRA_rer = US_rer/RA_rer;
 // Auxiliary equation for steady-state output
-USRA_rerbar = USRA_rer;
 //Terms of Trade
 USRA_tot = RA_pex*USRA_rer/US_pex;
 // Optimal price contract set in foreign markets (FOC), using US_pxtilde = AT_pimtilde
@@ -61296,7 +62151,6 @@ USRA_tot = RA_pex*USRA_rer/US_pex;
 // Bilateral real exchange rate
 USAT_rer = US_rer/AT_rer;
 // Auxiliary equation for steady-state output
-USAT_rerbar = USAT_rer;
 //Terms of Trade
 USAT_tot = AT_pex*USAT_rer/US_pex;
 // Optimal price contract set in foreign markets (FOC), using US_pxtilde = BE_pimtilde
@@ -61312,7 +62166,6 @@ USAT_tot = AT_pex*USAT_rer/US_pex;
 // Bilateral real exchange rate
 USBE_rer = US_rer/BE_rer;
 // Auxiliary equation for steady-state output
-USBE_rerbar = USBE_rer;
 //Terms of Trade
 USBE_tot = BE_pex*USBE_rer/US_pex;
 // Optimal price contract set in foreign markets (FOC), using US_pxtilde = ES_pimtilde
@@ -61328,7 +62181,6 @@ USBE_tot = BE_pex*USBE_rer/US_pex;
 // Bilateral real exchange rate
 USES_rer = US_rer/ES_rer;
 // Auxiliary equation for steady-state output
-USES_rerbar = USES_rer;
 //Terms of Trade
 USES_tot = ES_pex*USES_rer/US_pex;
 // Optimal price contract set in foreign markets (FOC), using US_pxtilde = FI_pimtilde
@@ -61344,7 +62196,6 @@ USES_tot = ES_pex*USES_rer/US_pex;
 // Bilateral real exchange rate
 USFI_rer = US_rer/FI_rer;
 // Auxiliary equation for steady-state output
-USFI_rerbar = USFI_rer;
 //Terms of Trade
 USFI_tot = FI_pex*USFI_rer/US_pex;
 // Optimal price contract set in foreign markets (FOC), using US_pxtilde = FR_pimtilde
@@ -61360,7 +62211,6 @@ USFI_tot = FI_pex*USFI_rer/US_pex;
 // Bilateral real exchange rate
 USFR_rer = US_rer/FR_rer;
 // Auxiliary equation for steady-state output
-USFR_rerbar = USFR_rer;
 //Terms of Trade
 USFR_tot = FR_pex*USFR_rer/US_pex;
 // Optimal price contract set in foreign markets (FOC), using US_pxtilde = GR_pimtilde
@@ -61376,7 +62226,6 @@ USFR_tot = FR_pex*USFR_rer/US_pex;
 // Bilateral real exchange rate
 USGR_rer = US_rer/GR_rer;
 // Auxiliary equation for steady-state output
-USGR_rerbar = USGR_rer;
 //Terms of Trade
 USGR_tot = GR_pex*USGR_rer/US_pex;
 // Optimal price contract set in foreign markets (FOC), using US_pxtilde = IT_pimtilde
@@ -61392,7 +62241,6 @@ USGR_tot = GR_pex*USGR_rer/US_pex;
 // Bilateral real exchange rate
 USIT_rer = US_rer/IT_rer;
 // Auxiliary equation for steady-state output
-USIT_rerbar = USIT_rer;
 //Terms of Trade
 USIT_tot = IT_pex*USIT_rer/US_pex;
 // Optimal price contract set in foreign markets (FOC), using US_pxtilde = NL_pimtilde
@@ -61408,7 +62256,6 @@ USIT_tot = IT_pex*USIT_rer/US_pex;
 // Bilateral real exchange rate
 USNL_rer = US_rer/NL_rer;
 // Auxiliary equation for steady-state output
-USNL_rerbar = USNL_rer;
 //Terms of Trade
 USNL_tot = NL_pex*USNL_rer/US_pex;
 // Optimal price contract set in foreign markets (FOC), using US_pxtilde = PT_pimtilde
@@ -61424,7 +62271,6 @@ USNL_tot = NL_pex*USNL_rer/US_pex;
 // Bilateral real exchange rate
 USPT_rer = US_rer/PT_rer;
 // Auxiliary equation for steady-state output
-USPT_rerbar = USPT_rer;
 //Terms of Trade
 USPT_tot = PT_pex*USPT_rer/US_pex;
 // Optimal price contract set in foreign markets (FOC), using US_pxtilde = DE_pimtilde
@@ -61440,7 +62286,6 @@ USPT_tot = PT_pex*USPT_rer/US_pex;
 // Bilateral real exchange rate
 USDE_rer = US_rer/DE_rer;
 // Auxiliary equation for steady-state output
-USDE_rerbar = USDE_rer;
 //Terms of Trade
 USDE_tot = DE_pex*USDE_rer/US_pex;
 // Optimal price contract set in foreign markets (FOC), using US_pxtilde = RU_pimtilde
@@ -61456,7 +62301,6 @@ USDE_tot = DE_pex*USDE_rer/US_pex;
 // Bilateral real exchange rate
 USRU_rer = US_rer/RU_rer;
 // Auxiliary equation for steady-state output
-USRU_rerbar = USRU_rer;
 //Terms of Trade
 USRU_tot = RU_pex*USRU_rer/US_pex;
 // Optimal price contract set in foreign markets (FOC), using US_pxtilde = RW_pimtilde
@@ -61472,7 +62316,6 @@ USRU_tot = RU_pex*USRU_rer/US_pex;
 // Bilateral real exchange rate
 USRW_rer = US_rer/RW_rer;
 // Auxiliary equation for steady-state output
-USRW_rerbar = USRW_rer;
 //Terms of Trade
 USRW_tot = RW_pex*USRW_rer/US_pex;
 // Total imports 
@@ -63970,18 +64813,18 @@ US_etot = 1
 //-----------------
 // Private consumption good (import)
 US_imc^((US_mumc-1)/US_mumc) =
-+USRA_numc ^(1/US_mumc)*USRA_imc^(1-1/US_mumc)
-+USAT_numc ^(1/US_mumc)*USAT_imc^(1-1/US_mumc)
-+USBE_numc ^(1/US_mumc)*USBE_imc^(1-1/US_mumc)
-+USES_numc ^(1/US_mumc)*USES_imc^(1-1/US_mumc)
-+USFI_numc ^(1/US_mumc)*USFI_imc^(1-1/US_mumc)
-+USFR_numc ^(1/US_mumc)*USFR_imc^(1-1/US_mumc)
-+USGR_numc ^(1/US_mumc)*USGR_imc^(1-1/US_mumc)
-+USIT_numc ^(1/US_mumc)*USIT_imc^(1-1/US_mumc)
-+USNL_numc ^(1/US_mumc)*USNL_imc^(1-1/US_mumc)
-+USPT_numc ^(1/US_mumc)*USPT_imc^(1-1/US_mumc)
-+USDE_numc ^(1/US_mumc)*USDE_imc^(1-1/US_mumc)
-+USRW_numc ^(1/US_mumc)*USRW_imc^(1-1/US_mumc)
++USRA_numc ^(1/US_mumc)*((1-USRA_gammaimc)*USRA_imc)^(1-1/US_mumc)
++USAT_numc ^(1/US_mumc)*((1-USAT_gammaimc)*USAT_imc)^(1-1/US_mumc)
++USBE_numc ^(1/US_mumc)*((1-USBE_gammaimc)*USBE_imc)^(1-1/US_mumc)
++USES_numc ^(1/US_mumc)*((1-USES_gammaimc)*USES_imc)^(1-1/US_mumc)
++USFI_numc ^(1/US_mumc)*((1-USFI_gammaimc)*USFI_imc)^(1-1/US_mumc)
++USFR_numc ^(1/US_mumc)*((1-USFR_gammaimc)*USFR_imc)^(1-1/US_mumc)
++USGR_numc ^(1/US_mumc)*((1-USGR_gammaimc)*USGR_imc)^(1-1/US_mumc)
++USIT_numc ^(1/US_mumc)*((1-USIT_gammaimc)*USIT_imc)^(1-1/US_mumc)
++USNL_numc ^(1/US_mumc)*((1-USNL_gammaimc)*USNL_imc)^(1-1/US_mumc)
++USPT_numc ^(1/US_mumc)*((1-USPT_gammaimc)*USPT_imc)^(1-1/US_mumc)
++USDE_numc ^(1/US_mumc)*((1-USDE_gammaimc)*USDE_imc)^(1-1/US_mumc)
++USRW_numc ^(1/US_mumc)*((1-USRW_gammaimc)*USRW_imc)^(1-1/US_mumc)
 +(1
 -USRA_numc
 -USAT_numc
@@ -63995,29 +64838,29 @@ US_imc^((US_mumc-1)/US_mumc) =
 -USPT_numc
 -USDE_numc
 -USRW_numc
-)^(1/US_mumc)*USRU_imc^(1-1/US_mumc);
+)^(1/US_mumc)*((1-USRU_gammaimc)*USRU_imc)^(1-1/US_mumc);
 // Demand for bilateral consumption import goods
-USAT_imc = USAT_numc*((AT_pex*USAT_rer)/US_pimc)^(-US_mumc)*US_imc;
+USAT_imc = USAT_numc*((AT_pex*USAT_rer)/(USAT_gammaimcdag*US_pimc))^(-US_mumc)*US_imc/(1-USAT_gammaimc);
 // Demand for bilateral consumption import goods
-USBE_imc = USBE_numc*((BE_pex*USBE_rer)/US_pimc)^(-US_mumc)*US_imc;
+USBE_imc = USBE_numc*((BE_pex*USBE_rer)/(USBE_gammaimcdag*US_pimc))^(-US_mumc)*US_imc/(1-USBE_gammaimc);
 // Demand for bilateral consumption import goods
-USES_imc = USES_numc*((ES_pex*USES_rer)/US_pimc)^(-US_mumc)*US_imc;
+USES_imc = USES_numc*((ES_pex*USES_rer)/(USES_gammaimcdag*US_pimc))^(-US_mumc)*US_imc/(1-USES_gammaimc);
 // Demand for bilateral consumption import goods
-USFI_imc = USFI_numc*((FI_pex*USFI_rer)/US_pimc)^(-US_mumc)*US_imc;
+USFI_imc = USFI_numc*((FI_pex*USFI_rer)/(USFI_gammaimcdag*US_pimc))^(-US_mumc)*US_imc/(1-USFI_gammaimc);
 // Demand for bilateral consumption import goods
-USFR_imc = USFR_numc*((FR_pex*USFR_rer)/US_pimc)^(-US_mumc)*US_imc;
+USFR_imc = USFR_numc*((FR_pex*USFR_rer)/(USFR_gammaimcdag*US_pimc))^(-US_mumc)*US_imc/(1-USFR_gammaimc);
 // Demand for bilateral consumption import goods
-USGR_imc = USGR_numc*((GR_pex*USGR_rer)/US_pimc)^(-US_mumc)*US_imc;
+USGR_imc = USGR_numc*((GR_pex*USGR_rer)/(USGR_gammaimcdag*US_pimc))^(-US_mumc)*US_imc/(1-USGR_gammaimc);
 // Demand for bilateral consumption import goods
-USIT_imc = USIT_numc*((IT_pex*USIT_rer)/US_pimc)^(-US_mumc)*US_imc;
+USIT_imc = USIT_numc*((IT_pex*USIT_rer)/(USIT_gammaimcdag*US_pimc))^(-US_mumc)*US_imc/(1-USIT_gammaimc);
 // Demand for bilateral consumption import goods
-USNL_imc = USNL_numc*((NL_pex*USNL_rer)/US_pimc)^(-US_mumc)*US_imc;
+USNL_imc = USNL_numc*((NL_pex*USNL_rer)/(USNL_gammaimcdag*US_pimc))^(-US_mumc)*US_imc/(1-USNL_gammaimc);
 // Demand for bilateral consumption import goods
-USPT_imc = USPT_numc*((PT_pex*USPT_rer)/US_pimc)^(-US_mumc)*US_imc;
+USPT_imc = USPT_numc*((PT_pex*USPT_rer)/(USPT_gammaimcdag*US_pimc))^(-US_mumc)*US_imc/(1-USPT_gammaimc);
 // Demand for bilateral consumption import goods
-USDE_imc = USDE_numc*((DE_pex*USDE_rer)/US_pimc)^(-US_mumc)*US_imc;
+USDE_imc = USDE_numc*((DE_pex*USDE_rer)/(USDE_gammaimcdag*US_pimc))^(-US_mumc)*US_imc/(1-USDE_gammaimc);
 // Demand for bilateral consumption import goods
-USRW_imc = USRW_numc*((RW_pex*USRW_rer)/US_pimc)^(-US_mumc)*US_imc;
+USRW_imc = USRW_numc*((RW_pex*USRW_rer)/(USRW_gammaimcdag*US_pimc))^(-US_mumc)*US_imc/(1-USRW_gammaimc);
 USRU_imc = (1
 -USRA_numc
 -USAT_numc
@@ -64031,21 +64874,21 @@ USRU_imc = (1
 -USPT_numc
 -USDE_numc
 -USRW_numc
-)*((RU_pex*USRU_rer)/US_pimc)^(-US_mumc)*US_imc;
+)*((RU_pex*USRU_rer)/(USRU_gammaimcdag*US_pimc))^(-US_mumc)*US_imc/(1-USRU_gammaimc);
 // Price of the consumption good (import)
 US_pimc^(1-US_mumc) =
-+USRA_numc * (RA_pex*USRA_rer)^(1-US_mumc)
-+USAT_numc * (AT_pex*USAT_rer)^(1-US_mumc)
-+USBE_numc * (BE_pex*USBE_rer)^(1-US_mumc)
-+USES_numc * (ES_pex*USES_rer)^(1-US_mumc)
-+USFI_numc * (FI_pex*USFI_rer)^(1-US_mumc)
-+USFR_numc * (FR_pex*USFR_rer)^(1-US_mumc)
-+USGR_numc * (GR_pex*USGR_rer)^(1-US_mumc)
-+USIT_numc * (IT_pex*USIT_rer)^(1-US_mumc)
-+USNL_numc * (NL_pex*USNL_rer)^(1-US_mumc)
-+USPT_numc * (PT_pex*USPT_rer)^(1-US_mumc)
-+USDE_numc * (DE_pex*USDE_rer)^(1-US_mumc)
-+USRW_numc * (RW_pex*USRW_rer)^(1-US_mumc)
++USRA_numc *((RA_pex*USRA_rer)/USRA_gammaimcdag)^(1-US_mumc)
++USAT_numc *((AT_pex*USAT_rer)/USAT_gammaimcdag)^(1-US_mumc)
++USBE_numc *((BE_pex*USBE_rer)/USBE_gammaimcdag)^(1-US_mumc)
++USES_numc *((ES_pex*USES_rer)/USES_gammaimcdag)^(1-US_mumc)
++USFI_numc *((FI_pex*USFI_rer)/USFI_gammaimcdag)^(1-US_mumc)
++USFR_numc *((FR_pex*USFR_rer)/USFR_gammaimcdag)^(1-US_mumc)
++USGR_numc *((GR_pex*USGR_rer)/USGR_gammaimcdag)^(1-US_mumc)
++USIT_numc *((IT_pex*USIT_rer)/USIT_gammaimcdag)^(1-US_mumc)
++USNL_numc *((NL_pex*USNL_rer)/USNL_gammaimcdag)^(1-US_mumc)
++USPT_numc *((PT_pex*USPT_rer)/USPT_gammaimcdag)^(1-US_mumc)
++USDE_numc *((DE_pex*USDE_rer)/USDE_gammaimcdag)^(1-US_mumc)
++USRW_numc *((RW_pex*USRW_rer)/USRW_gammaimcdag)^(1-US_mumc)
 +(1
 -USRA_numc
 -USAT_numc
@@ -64059,23 +64902,23 @@ US_pimc^(1-US_mumc) =
 -USPT_numc
 -USDE_numc
 -USRW_numc
-)*(RU_pex*USRU_rer)^(1-US_mumc);
+)*((RU_pex*USRU_rer)/USRU_gammaimcdag)^(1-US_mumc);
 // Private consumption good (import) inflation
 US_piimc = US_pimc/US_pimc(-1)*US_pic;
 // Private consumption good (import)
 US_imi^((US_mumi-1)/US_mumi) =
-+USRA_numi ^(1/US_mumi)*USRA_imi^(1-1/US_mumi)
-+USAT_numi ^(1/US_mumi)*USAT_imi^(1-1/US_mumi)
-+USBE_numi ^(1/US_mumi)*USBE_imi^(1-1/US_mumi)
-+USES_numi ^(1/US_mumi)*USES_imi^(1-1/US_mumi)
-+USFI_numi ^(1/US_mumi)*USFI_imi^(1-1/US_mumi)
-+USFR_numi ^(1/US_mumi)*USFR_imi^(1-1/US_mumi)
-+USGR_numi ^(1/US_mumi)*USGR_imi^(1-1/US_mumi)
-+USIT_numi ^(1/US_mumi)*USIT_imi^(1-1/US_mumi)
-+USNL_numi ^(1/US_mumi)*USNL_imi^(1-1/US_mumi)
-+USPT_numi ^(1/US_mumi)*USPT_imi^(1-1/US_mumi)
-+USDE_numi ^(1/US_mumi)*USDE_imi^(1-1/US_mumi)
-+USRW_numi ^(1/US_mumi)*USRW_imi^(1-1/US_mumi)
++USRA_numi ^(1/US_mumi)*((1-USRA_gammaimi)*USRA_imi)^(1-1/US_mumi)
++USAT_numi ^(1/US_mumi)*((1-USAT_gammaimi)*USAT_imi)^(1-1/US_mumi)
++USBE_numi ^(1/US_mumi)*((1-USBE_gammaimi)*USBE_imi)^(1-1/US_mumi)
++USES_numi ^(1/US_mumi)*((1-USES_gammaimi)*USES_imi)^(1-1/US_mumi)
++USFI_numi ^(1/US_mumi)*((1-USFI_gammaimi)*USFI_imi)^(1-1/US_mumi)
++USFR_numi ^(1/US_mumi)*((1-USFR_gammaimi)*USFR_imi)^(1-1/US_mumi)
++USGR_numi ^(1/US_mumi)*((1-USGR_gammaimi)*USGR_imi)^(1-1/US_mumi)
++USIT_numi ^(1/US_mumi)*((1-USIT_gammaimi)*USIT_imi)^(1-1/US_mumi)
++USNL_numi ^(1/US_mumi)*((1-USNL_gammaimi)*USNL_imi)^(1-1/US_mumi)
++USPT_numi ^(1/US_mumi)*((1-USPT_gammaimi)*USPT_imi)^(1-1/US_mumi)
++USDE_numi ^(1/US_mumi)*((1-USDE_gammaimi)*USDE_imi)^(1-1/US_mumi)
++USRW_numi ^(1/US_mumi)*((1-USRW_gammaimi)*USRW_imi)^(1-1/US_mumi)
 +(1
 -USRA_numi
 -USAT_numi
@@ -64089,29 +64932,29 @@ US_imi^((US_mumi-1)/US_mumi) =
 -USPT_numi
 -USDE_numi
 -USRW_numi
-)^(1/US_mumi)*USRU_imi^(1-1/US_mumi);
+)^(1/US_mumi)*((1-USRU_gammaimi)*USRU_imi)^(1-1/US_mumi);
 // Demand for bilateral consumption import goods
-USAT_imi = USAT_numi*((AT_pex*USAT_rer)/US_pimi)^(-US_mumi)*US_imi;
+USAT_imi = USAT_numi*((AT_pex*USAT_rer)/(USAT_gammaimidag*US_pimi))^(-US_mumi)*US_imi/(1-USAT_gammaimi);
 // Demand for bilateral consumption import goods
-USBE_imi = USBE_numi*((BE_pex*USBE_rer)/US_pimi)^(-US_mumi)*US_imi;
+USBE_imi = USBE_numi*((BE_pex*USBE_rer)/(USBE_gammaimidag*US_pimi))^(-US_mumi)*US_imi/(1-USBE_gammaimi);
 // Demand for bilateral consumption import goods
-USES_imi = USES_numi*((ES_pex*USES_rer)/US_pimi)^(-US_mumi)*US_imi;
+USES_imi = USES_numi*((ES_pex*USES_rer)/(USES_gammaimidag*US_pimi))^(-US_mumi)*US_imi/(1-USES_gammaimi);
 // Demand for bilateral consumption import goods
-USFI_imi = USFI_numi*((FI_pex*USFI_rer)/US_pimi)^(-US_mumi)*US_imi;
+USFI_imi = USFI_numi*((FI_pex*USFI_rer)/(USFI_gammaimidag*US_pimi))^(-US_mumi)*US_imi/(1-USFI_gammaimi);
 // Demand for bilateral consumption import goods
-USFR_imi = USFR_numi*((FR_pex*USFR_rer)/US_pimi)^(-US_mumi)*US_imi;
+USFR_imi = USFR_numi*((FR_pex*USFR_rer)/(USFR_gammaimidag*US_pimi))^(-US_mumi)*US_imi/(1-USFR_gammaimi);
 // Demand for bilateral consumption import goods
-USGR_imi = USGR_numi*((GR_pex*USGR_rer)/US_pimi)^(-US_mumi)*US_imi;
+USGR_imi = USGR_numi*((GR_pex*USGR_rer)/(USGR_gammaimidag*US_pimi))^(-US_mumi)*US_imi/(1-USGR_gammaimi);
 // Demand for bilateral consumption import goods
-USIT_imi = USIT_numi*((IT_pex*USIT_rer)/US_pimi)^(-US_mumi)*US_imi;
+USIT_imi = USIT_numi*((IT_pex*USIT_rer)/(USIT_gammaimidag*US_pimi))^(-US_mumi)*US_imi/(1-USIT_gammaimi);
 // Demand for bilateral consumption import goods
-USNL_imi = USNL_numi*((NL_pex*USNL_rer)/US_pimi)^(-US_mumi)*US_imi;
+USNL_imi = USNL_numi*((NL_pex*USNL_rer)/(USNL_gammaimidag*US_pimi))^(-US_mumi)*US_imi/(1-USNL_gammaimi);
 // Demand for bilateral consumption import goods
-USPT_imi = USPT_numi*((PT_pex*USPT_rer)/US_pimi)^(-US_mumi)*US_imi;
+USPT_imi = USPT_numi*((PT_pex*USPT_rer)/(USPT_gammaimidag*US_pimi))^(-US_mumi)*US_imi/(1-USPT_gammaimi);
 // Demand for bilateral consumption import goods
-USDE_imi = USDE_numi*((DE_pex*USDE_rer)/US_pimi)^(-US_mumi)*US_imi;
+USDE_imi = USDE_numi*((DE_pex*USDE_rer)/(USDE_gammaimidag*US_pimi))^(-US_mumi)*US_imi/(1-USDE_gammaimi);
 // Demand for bilateral consumption import goods
-USRW_imi = USRW_numi*((RW_pex*USRW_rer)/US_pimi)^(-US_mumi)*US_imi;
+USRW_imi = USRW_numi*((RW_pex*USRW_rer)/(USRW_gammaimidag*US_pimi))^(-US_mumi)*US_imi/(1-USRW_gammaimi);
 USRU_imi = (1
 -USRA_numi
 -USAT_numi
@@ -64125,21 +64968,21 @@ USRU_imi = (1
 -USPT_numi
 -USDE_numi
 -USRW_numi
-)*((RU_pex*USRU_rer)/US_pimi)^(-US_mumi)*US_imi;
+)*((RU_pex*USRU_rer)/(USRU_gammaimidag*US_pimi))^(-US_mumi)*US_imi/(1-USRU_gammaimi);
 // Price of the consumption good (import)
 US_pimi^(1-US_mumi) =
-+USRA_numi * (RA_pex*USRA_rer)^(1-US_mumi)
-+USAT_numi * (AT_pex*USAT_rer)^(1-US_mumi)
-+USBE_numi * (BE_pex*USBE_rer)^(1-US_mumi)
-+USES_numi * (ES_pex*USES_rer)^(1-US_mumi)
-+USFI_numi * (FI_pex*USFI_rer)^(1-US_mumi)
-+USFR_numi * (FR_pex*USFR_rer)^(1-US_mumi)
-+USGR_numi * (GR_pex*USGR_rer)^(1-US_mumi)
-+USIT_numi * (IT_pex*USIT_rer)^(1-US_mumi)
-+USNL_numi * (NL_pex*USNL_rer)^(1-US_mumi)
-+USPT_numi * (PT_pex*USPT_rer)^(1-US_mumi)
-+USDE_numi * (DE_pex*USDE_rer)^(1-US_mumi)
-+USRW_numi * (RW_pex*USRW_rer)^(1-US_mumi)
++USRA_numi *((RA_pex*USRA_rer)/USRA_gammaimidag)^(1-US_mumi)
++USAT_numi *((AT_pex*USAT_rer)/USAT_gammaimidag)^(1-US_mumi)
++USBE_numi *((BE_pex*USBE_rer)/USBE_gammaimidag)^(1-US_mumi)
++USES_numi *((ES_pex*USES_rer)/USES_gammaimidag)^(1-US_mumi)
++USFI_numi *((FI_pex*USFI_rer)/USFI_gammaimidag)^(1-US_mumi)
++USFR_numi *((FR_pex*USFR_rer)/USFR_gammaimidag)^(1-US_mumi)
++USGR_numi *((GR_pex*USGR_rer)/USGR_gammaimidag)^(1-US_mumi)
++USIT_numi *((IT_pex*USIT_rer)/USIT_gammaimidag)^(1-US_mumi)
++USNL_numi *((NL_pex*USNL_rer)/USNL_gammaimidag)^(1-US_mumi)
++USPT_numi *((PT_pex*USPT_rer)/USPT_gammaimidag)^(1-US_mumi)
++USDE_numi *((DE_pex*USDE_rer)/USDE_gammaimidag)^(1-US_mumi)
++USRW_numi *((RW_pex*USRW_rer)/USRW_gammaimidag)^(1-US_mumi)
 +(1
 -USRA_numi
 -USAT_numi
@@ -64153,23 +64996,23 @@ US_pimi^(1-US_mumi) =
 -USPT_numi
 -USDE_numi
 -USRW_numi
-)*(RU_pex*USRU_rer)^(1-US_mumi);
+)*((RU_pex*USRU_rer)/USRU_gammaimidag)^(1-US_mumi);
 // Private consumption good (import) inflation
 US_piimi = US_pimi/US_pimi(-1)*US_pic;
 // Private consumption good (import)
 US_imcg^((US_mumcg-1)/US_mumcg) =
-+USRA_numcg ^(1/US_mumcg)*USRA_imcg^(1-1/US_mumcg)
-+USAT_numcg ^(1/US_mumcg)*USAT_imcg^(1-1/US_mumcg)
-+USBE_numcg ^(1/US_mumcg)*USBE_imcg^(1-1/US_mumcg)
-+USES_numcg ^(1/US_mumcg)*USES_imcg^(1-1/US_mumcg)
-+USFI_numcg ^(1/US_mumcg)*USFI_imcg^(1-1/US_mumcg)
-+USFR_numcg ^(1/US_mumcg)*USFR_imcg^(1-1/US_mumcg)
-+USGR_numcg ^(1/US_mumcg)*USGR_imcg^(1-1/US_mumcg)
-+USIT_numcg ^(1/US_mumcg)*USIT_imcg^(1-1/US_mumcg)
-+USNL_numcg ^(1/US_mumcg)*USNL_imcg^(1-1/US_mumcg)
-+USPT_numcg ^(1/US_mumcg)*USPT_imcg^(1-1/US_mumcg)
-+USDE_numcg ^(1/US_mumcg)*USDE_imcg^(1-1/US_mumcg)
-+USRW_numcg ^(1/US_mumcg)*USRW_imcg^(1-1/US_mumcg)
++USRA_numcg ^(1/US_mumcg)*((1-USRA_gammaimcg)*USRA_imcg)^(1-1/US_mumcg)
++USAT_numcg ^(1/US_mumcg)*((1-USAT_gammaimcg)*USAT_imcg)^(1-1/US_mumcg)
++USBE_numcg ^(1/US_mumcg)*((1-USBE_gammaimcg)*USBE_imcg)^(1-1/US_mumcg)
++USES_numcg ^(1/US_mumcg)*((1-USES_gammaimcg)*USES_imcg)^(1-1/US_mumcg)
++USFI_numcg ^(1/US_mumcg)*((1-USFI_gammaimcg)*USFI_imcg)^(1-1/US_mumcg)
++USFR_numcg ^(1/US_mumcg)*((1-USFR_gammaimcg)*USFR_imcg)^(1-1/US_mumcg)
++USGR_numcg ^(1/US_mumcg)*((1-USGR_gammaimcg)*USGR_imcg)^(1-1/US_mumcg)
++USIT_numcg ^(1/US_mumcg)*((1-USIT_gammaimcg)*USIT_imcg)^(1-1/US_mumcg)
++USNL_numcg ^(1/US_mumcg)*((1-USNL_gammaimcg)*USNL_imcg)^(1-1/US_mumcg)
++USPT_numcg ^(1/US_mumcg)*((1-USPT_gammaimcg)*USPT_imcg)^(1-1/US_mumcg)
++USDE_numcg ^(1/US_mumcg)*((1-USDE_gammaimcg)*USDE_imcg)^(1-1/US_mumcg)
++USRW_numcg ^(1/US_mumcg)*((1-USRW_gammaimcg)*USRW_imcg)^(1-1/US_mumcg)
 +(1
 -USRA_numcg
 -USAT_numcg
@@ -64183,29 +65026,29 @@ US_imcg^((US_mumcg-1)/US_mumcg) =
 -USPT_numcg
 -USDE_numcg
 -USRW_numcg
-)^(1/US_mumcg)*USRU_imcg^(1-1/US_mumcg);
+)^(1/US_mumcg)*((1-USRU_gammaimcg)*USRU_imcg)^(1-1/US_mumcg);
 // Demand for bilateral consumption import goods
-USAT_imcg = USAT_numcg*((AT_pex*USAT_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
+USAT_imcg = USAT_numcg*((AT_pex*USAT_rer)/(USAT_gammaimcgdag*US_pimcg))^(-US_mumcg)*US_imcg/(1-USAT_gammaimcg);
 // Demand for bilateral consumption import goods
-USBE_imcg = USBE_numcg*((BE_pex*USBE_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
+USBE_imcg = USBE_numcg*((BE_pex*USBE_rer)/(USBE_gammaimcgdag*US_pimcg))^(-US_mumcg)*US_imcg/(1-USBE_gammaimcg);
 // Demand for bilateral consumption import goods
-USES_imcg = USES_numcg*((ES_pex*USES_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
+USES_imcg = USES_numcg*((ES_pex*USES_rer)/(USES_gammaimcgdag*US_pimcg))^(-US_mumcg)*US_imcg/(1-USES_gammaimcg);
 // Demand for bilateral consumption import goods
-USFI_imcg = USFI_numcg*((FI_pex*USFI_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
+USFI_imcg = USFI_numcg*((FI_pex*USFI_rer)/(USFI_gammaimcgdag*US_pimcg))^(-US_mumcg)*US_imcg/(1-USFI_gammaimcg);
 // Demand for bilateral consumption import goods
-USFR_imcg = USFR_numcg*((FR_pex*USFR_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
+USFR_imcg = USFR_numcg*((FR_pex*USFR_rer)/(USFR_gammaimcgdag*US_pimcg))^(-US_mumcg)*US_imcg/(1-USFR_gammaimcg);
 // Demand for bilateral consumption import goods
-USGR_imcg = USGR_numcg*((GR_pex*USGR_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
+USGR_imcg = USGR_numcg*((GR_pex*USGR_rer)/(USGR_gammaimcgdag*US_pimcg))^(-US_mumcg)*US_imcg/(1-USGR_gammaimcg);
 // Demand for bilateral consumption import goods
-USIT_imcg = USIT_numcg*((IT_pex*USIT_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
+USIT_imcg = USIT_numcg*((IT_pex*USIT_rer)/(USIT_gammaimcgdag*US_pimcg))^(-US_mumcg)*US_imcg/(1-USIT_gammaimcg);
 // Demand for bilateral consumption import goods
-USNL_imcg = USNL_numcg*((NL_pex*USNL_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
+USNL_imcg = USNL_numcg*((NL_pex*USNL_rer)/(USNL_gammaimcgdag*US_pimcg))^(-US_mumcg)*US_imcg/(1-USNL_gammaimcg);
 // Demand for bilateral consumption import goods
-USPT_imcg = USPT_numcg*((PT_pex*USPT_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
+USPT_imcg = USPT_numcg*((PT_pex*USPT_rer)/(USPT_gammaimcgdag*US_pimcg))^(-US_mumcg)*US_imcg/(1-USPT_gammaimcg);
 // Demand for bilateral consumption import goods
-USDE_imcg = USDE_numcg*((DE_pex*USDE_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
+USDE_imcg = USDE_numcg*((DE_pex*USDE_rer)/(USDE_gammaimcgdag*US_pimcg))^(-US_mumcg)*US_imcg/(1-USDE_gammaimcg);
 // Demand for bilateral consumption import goods
-USRW_imcg = USRW_numcg*((RW_pex*USRW_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
+USRW_imcg = USRW_numcg*((RW_pex*USRW_rer)/(USRW_gammaimcgdag*US_pimcg))^(-US_mumcg)*US_imcg/(1-USRW_gammaimcg);
 USRU_imcg = (1
 -USRA_numcg
 -USAT_numcg
@@ -64219,21 +65062,21 @@ USRU_imcg = (1
 -USPT_numcg
 -USDE_numcg
 -USRW_numcg
-)*((RU_pex*USRU_rer)/US_pimcg)^(-US_mumcg)*US_imcg;
+)*((RU_pex*USRU_rer)/(USRU_gammaimcgdag*US_pimcg))^(-US_mumcg)*US_imcg/(1-USRU_gammaimcg);
 // Price of the consumption good (import)
 US_pimcg^(1-US_mumcg) =
-+USRA_numcg * (RA_pex*USRA_rer)^(1-US_mumcg)
-+USAT_numcg * (AT_pex*USAT_rer)^(1-US_mumcg)
-+USBE_numcg * (BE_pex*USBE_rer)^(1-US_mumcg)
-+USES_numcg * (ES_pex*USES_rer)^(1-US_mumcg)
-+USFI_numcg * (FI_pex*USFI_rer)^(1-US_mumcg)
-+USFR_numcg * (FR_pex*USFR_rer)^(1-US_mumcg)
-+USGR_numcg * (GR_pex*USGR_rer)^(1-US_mumcg)
-+USIT_numcg * (IT_pex*USIT_rer)^(1-US_mumcg)
-+USNL_numcg * (NL_pex*USNL_rer)^(1-US_mumcg)
-+USPT_numcg * (PT_pex*USPT_rer)^(1-US_mumcg)
-+USDE_numcg * (DE_pex*USDE_rer)^(1-US_mumcg)
-+USRW_numcg * (RW_pex*USRW_rer)^(1-US_mumcg)
++USRA_numcg *((RA_pex*USRA_rer)/USRA_gammaimcgdag)^(1-US_mumcg)
++USAT_numcg *((AT_pex*USAT_rer)/USAT_gammaimcgdag)^(1-US_mumcg)
++USBE_numcg *((BE_pex*USBE_rer)/USBE_gammaimcgdag)^(1-US_mumcg)
++USES_numcg *((ES_pex*USES_rer)/USES_gammaimcgdag)^(1-US_mumcg)
++USFI_numcg *((FI_pex*USFI_rer)/USFI_gammaimcgdag)^(1-US_mumcg)
++USFR_numcg *((FR_pex*USFR_rer)/USFR_gammaimcgdag)^(1-US_mumcg)
++USGR_numcg *((GR_pex*USGR_rer)/USGR_gammaimcgdag)^(1-US_mumcg)
++USIT_numcg *((IT_pex*USIT_rer)/USIT_gammaimcgdag)^(1-US_mumcg)
++USNL_numcg *((NL_pex*USNL_rer)/USNL_gammaimcgdag)^(1-US_mumcg)
++USPT_numcg *((PT_pex*USPT_rer)/USPT_gammaimcgdag)^(1-US_mumcg)
++USDE_numcg *((DE_pex*USDE_rer)/USDE_gammaimcgdag)^(1-US_mumcg)
++USRW_numcg *((RW_pex*USRW_rer)/USRW_gammaimcgdag)^(1-US_mumcg)
 +(1
 -USRA_numcg
 -USAT_numcg
@@ -64247,23 +65090,23 @@ US_pimcg^(1-US_mumcg) =
 -USPT_numcg
 -USDE_numcg
 -USRW_numcg
-)*(RU_pex*USRU_rer)^(1-US_mumcg);
+)*((RU_pex*USRU_rer)/USRU_gammaimcgdag)^(1-US_mumcg);
 // Private consumption good (import) inflation
 US_piimcg = US_pimcg/US_pimcg(-1)*US_pic;
 // Private consumption good (import)
 US_imig^((US_mumig-1)/US_mumig) =
-+USRA_numig ^(1/US_mumig)*USRA_imig^(1-1/US_mumig)
-+USAT_numig ^(1/US_mumig)*USAT_imig^(1-1/US_mumig)
-+USBE_numig ^(1/US_mumig)*USBE_imig^(1-1/US_mumig)
-+USES_numig ^(1/US_mumig)*USES_imig^(1-1/US_mumig)
-+USFI_numig ^(1/US_mumig)*USFI_imig^(1-1/US_mumig)
-+USFR_numig ^(1/US_mumig)*USFR_imig^(1-1/US_mumig)
-+USGR_numig ^(1/US_mumig)*USGR_imig^(1-1/US_mumig)
-+USIT_numig ^(1/US_mumig)*USIT_imig^(1-1/US_mumig)
-+USNL_numig ^(1/US_mumig)*USNL_imig^(1-1/US_mumig)
-+USPT_numig ^(1/US_mumig)*USPT_imig^(1-1/US_mumig)
-+USDE_numig ^(1/US_mumig)*USDE_imig^(1-1/US_mumig)
-+USRW_numig ^(1/US_mumig)*USRW_imig^(1-1/US_mumig)
++USRA_numig ^(1/US_mumig)*((1-USRA_gammaimig)*USRA_imig)^(1-1/US_mumig)
++USAT_numig ^(1/US_mumig)*((1-USAT_gammaimig)*USAT_imig)^(1-1/US_mumig)
++USBE_numig ^(1/US_mumig)*((1-USBE_gammaimig)*USBE_imig)^(1-1/US_mumig)
++USES_numig ^(1/US_mumig)*((1-USES_gammaimig)*USES_imig)^(1-1/US_mumig)
++USFI_numig ^(1/US_mumig)*((1-USFI_gammaimig)*USFI_imig)^(1-1/US_mumig)
++USFR_numig ^(1/US_mumig)*((1-USFR_gammaimig)*USFR_imig)^(1-1/US_mumig)
++USGR_numig ^(1/US_mumig)*((1-USGR_gammaimig)*USGR_imig)^(1-1/US_mumig)
++USIT_numig ^(1/US_mumig)*((1-USIT_gammaimig)*USIT_imig)^(1-1/US_mumig)
++USNL_numig ^(1/US_mumig)*((1-USNL_gammaimig)*USNL_imig)^(1-1/US_mumig)
++USPT_numig ^(1/US_mumig)*((1-USPT_gammaimig)*USPT_imig)^(1-1/US_mumig)
++USDE_numig ^(1/US_mumig)*((1-USDE_gammaimig)*USDE_imig)^(1-1/US_mumig)
++USRW_numig ^(1/US_mumig)*((1-USRW_gammaimig)*USRW_imig)^(1-1/US_mumig)
 +(1
 -USRA_numig
 -USAT_numig
@@ -64277,29 +65120,29 @@ US_imig^((US_mumig-1)/US_mumig) =
 -USPT_numig
 -USDE_numig
 -USRW_numig
-)^(1/US_mumig)*USRU_imig^(1-1/US_mumig);
+)^(1/US_mumig)*((1-USRU_gammaimig)*USRU_imig)^(1-1/US_mumig);
 // Demand for bilateral consumption import goods
-USAT_imig = USAT_numig*((AT_pex*USAT_rer)/US_pimig)^(-US_mumig)*US_imig;
+USAT_imig = USAT_numig*((AT_pex*USAT_rer)/(USAT_gammaimigdag*US_pimig))^(-US_mumig)*US_imig/(1-USAT_gammaimig);
 // Demand for bilateral consumption import goods
-USBE_imig = USBE_numig*((BE_pex*USBE_rer)/US_pimig)^(-US_mumig)*US_imig;
+USBE_imig = USBE_numig*((BE_pex*USBE_rer)/(USBE_gammaimigdag*US_pimig))^(-US_mumig)*US_imig/(1-USBE_gammaimig);
 // Demand for bilateral consumption import goods
-USES_imig = USES_numig*((ES_pex*USES_rer)/US_pimig)^(-US_mumig)*US_imig;
+USES_imig = USES_numig*((ES_pex*USES_rer)/(USES_gammaimigdag*US_pimig))^(-US_mumig)*US_imig/(1-USES_gammaimig);
 // Demand for bilateral consumption import goods
-USFI_imig = USFI_numig*((FI_pex*USFI_rer)/US_pimig)^(-US_mumig)*US_imig;
+USFI_imig = USFI_numig*((FI_pex*USFI_rer)/(USFI_gammaimigdag*US_pimig))^(-US_mumig)*US_imig/(1-USFI_gammaimig);
 // Demand for bilateral consumption import goods
-USFR_imig = USFR_numig*((FR_pex*USFR_rer)/US_pimig)^(-US_mumig)*US_imig;
+USFR_imig = USFR_numig*((FR_pex*USFR_rer)/(USFR_gammaimigdag*US_pimig))^(-US_mumig)*US_imig/(1-USFR_gammaimig);
 // Demand for bilateral consumption import goods
-USGR_imig = USGR_numig*((GR_pex*USGR_rer)/US_pimig)^(-US_mumig)*US_imig;
+USGR_imig = USGR_numig*((GR_pex*USGR_rer)/(USGR_gammaimigdag*US_pimig))^(-US_mumig)*US_imig/(1-USGR_gammaimig);
 // Demand for bilateral consumption import goods
-USIT_imig = USIT_numig*((IT_pex*USIT_rer)/US_pimig)^(-US_mumig)*US_imig;
+USIT_imig = USIT_numig*((IT_pex*USIT_rer)/(USIT_gammaimigdag*US_pimig))^(-US_mumig)*US_imig/(1-USIT_gammaimig);
 // Demand for bilateral consumption import goods
-USNL_imig = USNL_numig*((NL_pex*USNL_rer)/US_pimig)^(-US_mumig)*US_imig;
+USNL_imig = USNL_numig*((NL_pex*USNL_rer)/(USNL_gammaimigdag*US_pimig))^(-US_mumig)*US_imig/(1-USNL_gammaimig);
 // Demand for bilateral consumption import goods
-USPT_imig = USPT_numig*((PT_pex*USPT_rer)/US_pimig)^(-US_mumig)*US_imig;
+USPT_imig = USPT_numig*((PT_pex*USPT_rer)/(USPT_gammaimigdag*US_pimig))^(-US_mumig)*US_imig/(1-USPT_gammaimig);
 // Demand for bilateral consumption import goods
-USDE_imig = USDE_numig*((DE_pex*USDE_rer)/US_pimig)^(-US_mumig)*US_imig;
+USDE_imig = USDE_numig*((DE_pex*USDE_rer)/(USDE_gammaimigdag*US_pimig))^(-US_mumig)*US_imig/(1-USDE_gammaimig);
 // Demand for bilateral consumption import goods
-USRW_imig = USRW_numig*((RW_pex*USRW_rer)/US_pimig)^(-US_mumig)*US_imig;
+USRW_imig = USRW_numig*((RW_pex*USRW_rer)/(USRW_gammaimigdag*US_pimig))^(-US_mumig)*US_imig/(1-USRW_gammaimig);
 USRU_imig = (1
 -USRA_numig
 -USAT_numig
@@ -64313,21 +65156,21 @@ USRU_imig = (1
 -USPT_numig
 -USDE_numig
 -USRW_numig
-)*((RU_pex*USRU_rer)/US_pimig)^(-US_mumig)*US_imig;
+)*((RU_pex*USRU_rer)/(USRU_gammaimigdag*US_pimig))^(-US_mumig)*US_imig/(1-USRU_gammaimig);
 // Price of the consumption good (import)
 US_pimig^(1-US_mumig) =
-+USRA_numig * (RA_pex*USRA_rer)^(1-US_mumig)
-+USAT_numig * (AT_pex*USAT_rer)^(1-US_mumig)
-+USBE_numig * (BE_pex*USBE_rer)^(1-US_mumig)
-+USES_numig * (ES_pex*USES_rer)^(1-US_mumig)
-+USFI_numig * (FI_pex*USFI_rer)^(1-US_mumig)
-+USFR_numig * (FR_pex*USFR_rer)^(1-US_mumig)
-+USGR_numig * (GR_pex*USGR_rer)^(1-US_mumig)
-+USIT_numig * (IT_pex*USIT_rer)^(1-US_mumig)
-+USNL_numig * (NL_pex*USNL_rer)^(1-US_mumig)
-+USPT_numig * (PT_pex*USPT_rer)^(1-US_mumig)
-+USDE_numig * (DE_pex*USDE_rer)^(1-US_mumig)
-+USRW_numig * (RW_pex*USRW_rer)^(1-US_mumig)
++USRA_numig *((RA_pex*USRA_rer)/USRA_gammaimigdag)^(1-US_mumig)
++USAT_numig *((AT_pex*USAT_rer)/USAT_gammaimigdag)^(1-US_mumig)
++USBE_numig *((BE_pex*USBE_rer)/USBE_gammaimigdag)^(1-US_mumig)
++USES_numig *((ES_pex*USES_rer)/USES_gammaimigdag)^(1-US_mumig)
++USFI_numig *((FI_pex*USFI_rer)/USFI_gammaimigdag)^(1-US_mumig)
++USFR_numig *((FR_pex*USFR_rer)/USFR_gammaimigdag)^(1-US_mumig)
++USGR_numig *((GR_pex*USGR_rer)/USGR_gammaimigdag)^(1-US_mumig)
++USIT_numig *((IT_pex*USIT_rer)/USIT_gammaimigdag)^(1-US_mumig)
++USNL_numig *((NL_pex*USNL_rer)/USNL_gammaimigdag)^(1-US_mumig)
++USPT_numig *((PT_pex*USPT_rer)/USPT_gammaimigdag)^(1-US_mumig)
++USDE_numig *((DE_pex*USDE_rer)/USDE_gammaimigdag)^(1-US_mumig)
++USRW_numig *((RW_pex*USRW_rer)/USRW_gammaimigdag)^(1-US_mumig)
 +(1
 -USRA_numig
 -USAT_numig
@@ -64341,7 +65184,7 @@ US_pimig^(1-US_mumig) =
 -USPT_numig
 -USDE_numig
 -USRW_numig
-)*(RU_pex*USRU_rer)^(1-US_mumig);
+)*((RU_pex*USRU_rer)/USRU_gammaimigdag)^(1-US_mumig);
 // Private consumption good (import) inflation
 US_piimig = US_pimig/US_pimig(-1)*US_pic;
 // Private consumption good (import) inflation
@@ -64442,32 +65285,58 @@ US_pttc^(1-US_mutc) = (US_nutc)*US_pht^(1-US_mutc)+(1-US_nutc)*US_pimc^(1-US_mut
 1^(1-US_muc) = (US_nuc)*US_pttc^(1-US_muc)+(1-US_nuc)*US_pnt^(1-US_muc);
 // Demand for domestic intermediate goods
 US_htc = US_nutc*(US_pht/US_pttc)^(-US_mutc)*US_ttc;
-USRA_gammaimc = 0;
-USRA_gammaimcdag = 1;
-USAT_gammaimc = 0;
-USAT_gammaimcdag = 1;
-USBE_gammaimc = 0;
-USBE_gammaimcdag = 1;
-USES_gammaimc = 0;
-USES_gammaimcdag = 1;
-USFI_gammaimc = 0;
-USFI_gammaimcdag = 1;
-USFR_gammaimc = 0;
-USFR_gammaimcdag = 1;
-USGR_gammaimc = 0;
-USGR_gammaimcdag = 1;
-USIT_gammaimc = 0;
-USIT_gammaimcdag = 1;
-USNL_gammaimc = 0;
-USNL_gammaimcdag = 1;
-USPT_gammaimc = 0;
-USPT_gammaimcdag = 1;
-USDE_gammaimc = 0;
-USDE_gammaimcdag = 1;
-USRU_gammaimc = 0;
-USRU_gammaimcdag = 1;
-USRW_gammaimc = 0;
-USRW_gammaimcdag = 1;
+// Import adjustment cost
+USRA_gammaimc = US_gammaimc1/2*((USRA_imc/US_qc)/(USRA_imc(-1)/US_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USRA_gammaimcdag = 1-USRA_gammaimc-US_gammaimc1*((USRA_imc/US_qc)/(USRA_imc(-1)/US_qc(-1))-1)*(USRA_imc/US_qc)/(USRA_imc(-1)/US_qc(-1));
+// Import adjustment cost
+USAT_gammaimc = US_gammaimc1/2*((USAT_imc/US_qc)/(USAT_imc(-1)/US_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USAT_gammaimcdag = 1-USAT_gammaimc-US_gammaimc1*((USAT_imc/US_qc)/(USAT_imc(-1)/US_qc(-1))-1)*(USAT_imc/US_qc)/(USAT_imc(-1)/US_qc(-1));
+// Import adjustment cost
+USBE_gammaimc = US_gammaimc1/2*((USBE_imc/US_qc)/(USBE_imc(-1)/US_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USBE_gammaimcdag = 1-USBE_gammaimc-US_gammaimc1*((USBE_imc/US_qc)/(USBE_imc(-1)/US_qc(-1))-1)*(USBE_imc/US_qc)/(USBE_imc(-1)/US_qc(-1));
+// Import adjustment cost
+USES_gammaimc = US_gammaimc1/2*((USES_imc/US_qc)/(USES_imc(-1)/US_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USES_gammaimcdag = 1-USES_gammaimc-US_gammaimc1*((USES_imc/US_qc)/(USES_imc(-1)/US_qc(-1))-1)*(USES_imc/US_qc)/(USES_imc(-1)/US_qc(-1));
+// Import adjustment cost
+USFI_gammaimc = US_gammaimc1/2*((USFI_imc/US_qc)/(USFI_imc(-1)/US_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USFI_gammaimcdag = 1-USFI_gammaimc-US_gammaimc1*((USFI_imc/US_qc)/(USFI_imc(-1)/US_qc(-1))-1)*(USFI_imc/US_qc)/(USFI_imc(-1)/US_qc(-1));
+// Import adjustment cost
+USFR_gammaimc = US_gammaimc1/2*((USFR_imc/US_qc)/(USFR_imc(-1)/US_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USFR_gammaimcdag = 1-USFR_gammaimc-US_gammaimc1*((USFR_imc/US_qc)/(USFR_imc(-1)/US_qc(-1))-1)*(USFR_imc/US_qc)/(USFR_imc(-1)/US_qc(-1));
+// Import adjustment cost
+USGR_gammaimc = US_gammaimc1/2*((USGR_imc/US_qc)/(USGR_imc(-1)/US_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USGR_gammaimcdag = 1-USGR_gammaimc-US_gammaimc1*((USGR_imc/US_qc)/(USGR_imc(-1)/US_qc(-1))-1)*(USGR_imc/US_qc)/(USGR_imc(-1)/US_qc(-1));
+// Import adjustment cost
+USIT_gammaimc = US_gammaimc1/2*((USIT_imc/US_qc)/(USIT_imc(-1)/US_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USIT_gammaimcdag = 1-USIT_gammaimc-US_gammaimc1*((USIT_imc/US_qc)/(USIT_imc(-1)/US_qc(-1))-1)*(USIT_imc/US_qc)/(USIT_imc(-1)/US_qc(-1));
+// Import adjustment cost
+USNL_gammaimc = US_gammaimc1/2*((USNL_imc/US_qc)/(USNL_imc(-1)/US_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USNL_gammaimcdag = 1-USNL_gammaimc-US_gammaimc1*((USNL_imc/US_qc)/(USNL_imc(-1)/US_qc(-1))-1)*(USNL_imc/US_qc)/(USNL_imc(-1)/US_qc(-1));
+// Import adjustment cost
+USPT_gammaimc = US_gammaimc1/2*((USPT_imc/US_qc)/(USPT_imc(-1)/US_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USPT_gammaimcdag = 1-USPT_gammaimc-US_gammaimc1*((USPT_imc/US_qc)/(USPT_imc(-1)/US_qc(-1))-1)*(USPT_imc/US_qc)/(USPT_imc(-1)/US_qc(-1));
+// Import adjustment cost
+USDE_gammaimc = US_gammaimc1/2*((USDE_imc/US_qc)/(USDE_imc(-1)/US_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USDE_gammaimcdag = 1-USDE_gammaimc-US_gammaimc1*((USDE_imc/US_qc)/(USDE_imc(-1)/US_qc(-1))-1)*(USDE_imc/US_qc)/(USDE_imc(-1)/US_qc(-1));
+// Import adjustment cost
+USRU_gammaimc = US_gammaimc1/2*((USRU_imc/US_qc)/(USRU_imc(-1)/US_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USRU_gammaimcdag = 1-USRU_gammaimc-US_gammaimc1*((USRU_imc/US_qc)/(USRU_imc(-1)/US_qc(-1))-1)*(USRU_imc/US_qc)/(USRU_imc(-1)/US_qc(-1));
+// Import adjustment cost
+USRW_gammaimc = US_gammaimc1/2*((USRW_imc/US_qc)/(USRW_imc(-1)/US_qc(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USRW_gammaimcdag = 1-USRW_gammaimc-US_gammaimc1*((USRW_imc/US_qc)/(USRW_imc(-1)/US_qc(-1))-1)*(USRW_imc/US_qc)/(USRW_imc(-1)/US_qc(-1));
 // Private consumption good (tradable)
 US_tti^((US_muti-1)/US_muti) = (US_nuti)^(1/US_muti)*US_hti^(1-1/US_muti)+(1-US_nuti)^(1/US_muti)*US_imi^(1-1/US_muti);
 // Private consumption good  (total)
@@ -64480,35 +65349,60 @@ US_ptti^(1-US_muti) = (US_nuti)*US_pht^(1-US_muti)+(1-US_nuti)*US_pimi^(1-US_mut
 US_pi^(1-US_mui) = (US_nui)*US_ptti^(1-US_mui)+(1-US_nui)*US_pnt^(1-US_mui);
 // Auxiliary equation for the price of the investment good in steady state
 // this only appears in the capacity utilisation cost; not needed for consumption where it is one by assumption; neither for gov demand components where there is no adjustment cost
-US_pibar = US_pi;
 // Demand for domestic intermediate goods
 US_hti = US_nuti*(US_pht/US_ptti)^(-US_muti)*US_tti;
-USRA_gammaimi = 0;
-USRA_gammaimidag = 1;
-USAT_gammaimi = 0;
-USAT_gammaimidag = 1;
-USBE_gammaimi = 0;
-USBE_gammaimidag = 1;
-USES_gammaimi = 0;
-USES_gammaimidag = 1;
-USFI_gammaimi = 0;
-USFI_gammaimidag = 1;
-USFR_gammaimi = 0;
-USFR_gammaimidag = 1;
-USGR_gammaimi = 0;
-USGR_gammaimidag = 1;
-USIT_gammaimi = 0;
-USIT_gammaimidag = 1;
-USNL_gammaimi = 0;
-USNL_gammaimidag = 1;
-USPT_gammaimi = 0;
-USPT_gammaimidag = 1;
-USDE_gammaimi = 0;
-USDE_gammaimidag = 1;
-USRU_gammaimi = 0;
-USRU_gammaimidag = 1;
-USRW_gammaimi = 0;
-USRW_gammaimidag = 1;
+// Import adjustment cost
+USRA_gammaimi = US_gammaimi1/2*((USRA_imi/US_qi)/(USRA_imi(-1)/US_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USRA_gammaimidag = 1-USRA_gammaimi-US_gammaimi1*((USRA_imi/US_qi)/(USRA_imi(-1)/US_qi)-1)*((USRA_imi/US_qi)/(USRA_imi(-1)/US_qi(-1)));
+// Import adjustment cost
+USAT_gammaimi = US_gammaimi1/2*((USAT_imi/US_qi)/(USAT_imi(-1)/US_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USAT_gammaimidag = 1-USAT_gammaimi-US_gammaimi1*((USAT_imi/US_qi)/(USAT_imi(-1)/US_qi)-1)*((USAT_imi/US_qi)/(USAT_imi(-1)/US_qi(-1)));
+// Import adjustment cost
+USBE_gammaimi = US_gammaimi1/2*((USBE_imi/US_qi)/(USBE_imi(-1)/US_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USBE_gammaimidag = 1-USBE_gammaimi-US_gammaimi1*((USBE_imi/US_qi)/(USBE_imi(-1)/US_qi)-1)*((USBE_imi/US_qi)/(USBE_imi(-1)/US_qi(-1)));
+// Import adjustment cost
+USES_gammaimi = US_gammaimi1/2*((USES_imi/US_qi)/(USES_imi(-1)/US_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USES_gammaimidag = 1-USES_gammaimi-US_gammaimi1*((USES_imi/US_qi)/(USES_imi(-1)/US_qi)-1)*((USES_imi/US_qi)/(USES_imi(-1)/US_qi(-1)));
+// Import adjustment cost
+USFI_gammaimi = US_gammaimi1/2*((USFI_imi/US_qi)/(USFI_imi(-1)/US_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USFI_gammaimidag = 1-USFI_gammaimi-US_gammaimi1*((USFI_imi/US_qi)/(USFI_imi(-1)/US_qi)-1)*((USFI_imi/US_qi)/(USFI_imi(-1)/US_qi(-1)));
+// Import adjustment cost
+USFR_gammaimi = US_gammaimi1/2*((USFR_imi/US_qi)/(USFR_imi(-1)/US_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USFR_gammaimidag = 1-USFR_gammaimi-US_gammaimi1*((USFR_imi/US_qi)/(USFR_imi(-1)/US_qi)-1)*((USFR_imi/US_qi)/(USFR_imi(-1)/US_qi(-1)));
+// Import adjustment cost
+USGR_gammaimi = US_gammaimi1/2*((USGR_imi/US_qi)/(USGR_imi(-1)/US_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USGR_gammaimidag = 1-USGR_gammaimi-US_gammaimi1*((USGR_imi/US_qi)/(USGR_imi(-1)/US_qi)-1)*((USGR_imi/US_qi)/(USGR_imi(-1)/US_qi(-1)));
+// Import adjustment cost
+USIT_gammaimi = US_gammaimi1/2*((USIT_imi/US_qi)/(USIT_imi(-1)/US_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USIT_gammaimidag = 1-USIT_gammaimi-US_gammaimi1*((USIT_imi/US_qi)/(USIT_imi(-1)/US_qi)-1)*((USIT_imi/US_qi)/(USIT_imi(-1)/US_qi(-1)));
+// Import adjustment cost
+USNL_gammaimi = US_gammaimi1/2*((USNL_imi/US_qi)/(USNL_imi(-1)/US_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USNL_gammaimidag = 1-USNL_gammaimi-US_gammaimi1*((USNL_imi/US_qi)/(USNL_imi(-1)/US_qi)-1)*((USNL_imi/US_qi)/(USNL_imi(-1)/US_qi(-1)));
+// Import adjustment cost
+USPT_gammaimi = US_gammaimi1/2*((USPT_imi/US_qi)/(USPT_imi(-1)/US_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USPT_gammaimidag = 1-USPT_gammaimi-US_gammaimi1*((USPT_imi/US_qi)/(USPT_imi(-1)/US_qi)-1)*((USPT_imi/US_qi)/(USPT_imi(-1)/US_qi(-1)));
+// Import adjustment cost
+USDE_gammaimi = US_gammaimi1/2*((USDE_imi/US_qi)/(USDE_imi(-1)/US_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USDE_gammaimidag = 1-USDE_gammaimi-US_gammaimi1*((USDE_imi/US_qi)/(USDE_imi(-1)/US_qi)-1)*((USDE_imi/US_qi)/(USDE_imi(-1)/US_qi(-1)));
+// Import adjustment cost
+USRU_gammaimi = US_gammaimi1/2*((USRU_imi/US_qi)/(USRU_imi(-1)/US_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USRU_gammaimidag = 1-USRU_gammaimi-US_gammaimi1*((USRU_imi/US_qi)/(USRU_imi(-1)/US_qi)-1)*((USRU_imi/US_qi)/(USRU_imi(-1)/US_qi(-1)));
+// Import adjustment cost
+USRW_gammaimi = US_gammaimi1/2*((USRW_imi/US_qi)/(USRW_imi(-1)/US_qi(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USRW_gammaimidag = 1-USRW_gammaimi-US_gammaimi1*((USRW_imi/US_qi)/(USRW_imi(-1)/US_qi)-1)*((USRW_imi/US_qi)/(USRW_imi(-1)/US_qi(-1)));
 // Private consumption good (tradable)
 US_ttcg^((US_mutcg-1)/US_mutcg) = (US_nutcg)^(1/US_mutcg)*US_htcg^(1-1/US_mutcg)+(1-US_nutcg)^(1/US_mutcg)*US_imcg^(1-1/US_mutcg);
 // Private consumption good  (total)
@@ -64521,32 +65415,58 @@ US_pttcg^(1-US_mutcg) = (US_nutcg)*US_pht^(1-US_mutcg)+(1-US_nutcg)*US_pimcg^(1-
 US_pcg^(1-US_mucg) = (US_nucg)*US_pttcg^(1-US_mucg)+(1-US_nucg)*US_pnt^(1-US_mucg);
 // Demand for domestic intermediate goods
 US_htcg = US_nutcg*(US_pht/US_pttcg)^(-US_mutcg)*US_ttcg;
-USRA_gammaimcg = 0;
-USRA_gammaimcgdag = 1;
-USAT_gammaimcg = 0;
-USAT_gammaimcgdag = 1;
-USBE_gammaimcg = 0;
-USBE_gammaimcgdag = 1;
-USES_gammaimcg = 0;
-USES_gammaimcgdag = 1;
-USFI_gammaimcg = 0;
-USFI_gammaimcgdag = 1;
-USFR_gammaimcg = 0;
-USFR_gammaimcgdag = 1;
-USGR_gammaimcg = 0;
-USGR_gammaimcgdag = 1;
-USIT_gammaimcg = 0;
-USIT_gammaimcgdag = 1;
-USNL_gammaimcg = 0;
-USNL_gammaimcgdag = 1;
-USPT_gammaimcg = 0;
-USPT_gammaimcgdag = 1;
-USDE_gammaimcg = 0;
-USDE_gammaimcgdag = 1;
-USRU_gammaimcg = 0;
-USRU_gammaimcgdag = 1;
-USRW_gammaimcg = 0;
-USRW_gammaimcgdag = 1;
+// Import adjustment cost
+USRA_gammaimcg = US_gammaimcg1/2*((USRA_imcg/US_qcg)/(USRA_imcg(-1)/US_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USRA_gammaimcgdag = 1-USRA_gammaimcg-US_gammaimcg1*((USRA_imcg/US_qcg)/(USRA_imcg(-1)/US_qcg)-1)*((USRA_imcg/US_qcg)/(USRA_imcg(-1)/US_qcg(-1)));
+// Import adjustment cost
+USAT_gammaimcg = US_gammaimcg1/2*((USAT_imcg/US_qcg)/(USAT_imcg(-1)/US_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USAT_gammaimcgdag = 1-USAT_gammaimcg-US_gammaimcg1*((USAT_imcg/US_qcg)/(USAT_imcg(-1)/US_qcg)-1)*((USAT_imcg/US_qcg)/(USAT_imcg(-1)/US_qcg(-1)));
+// Import adjustment cost
+USBE_gammaimcg = US_gammaimcg1/2*((USBE_imcg/US_qcg)/(USBE_imcg(-1)/US_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USBE_gammaimcgdag = 1-USBE_gammaimcg-US_gammaimcg1*((USBE_imcg/US_qcg)/(USBE_imcg(-1)/US_qcg)-1)*((USBE_imcg/US_qcg)/(USBE_imcg(-1)/US_qcg(-1)));
+// Import adjustment cost
+USES_gammaimcg = US_gammaimcg1/2*((USES_imcg/US_qcg)/(USES_imcg(-1)/US_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USES_gammaimcgdag = 1-USES_gammaimcg-US_gammaimcg1*((USES_imcg/US_qcg)/(USES_imcg(-1)/US_qcg)-1)*((USES_imcg/US_qcg)/(USES_imcg(-1)/US_qcg(-1)));
+// Import adjustment cost
+USFI_gammaimcg = US_gammaimcg1/2*((USFI_imcg/US_qcg)/(USFI_imcg(-1)/US_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USFI_gammaimcgdag = 1-USFI_gammaimcg-US_gammaimcg1*((USFI_imcg/US_qcg)/(USFI_imcg(-1)/US_qcg)-1)*((USFI_imcg/US_qcg)/(USFI_imcg(-1)/US_qcg(-1)));
+// Import adjustment cost
+USFR_gammaimcg = US_gammaimcg1/2*((USFR_imcg/US_qcg)/(USFR_imcg(-1)/US_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USFR_gammaimcgdag = 1-USFR_gammaimcg-US_gammaimcg1*((USFR_imcg/US_qcg)/(USFR_imcg(-1)/US_qcg)-1)*((USFR_imcg/US_qcg)/(USFR_imcg(-1)/US_qcg(-1)));
+// Import adjustment cost
+USGR_gammaimcg = US_gammaimcg1/2*((USGR_imcg/US_qcg)/(USGR_imcg(-1)/US_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USGR_gammaimcgdag = 1-USGR_gammaimcg-US_gammaimcg1*((USGR_imcg/US_qcg)/(USGR_imcg(-1)/US_qcg)-1)*((USGR_imcg/US_qcg)/(USGR_imcg(-1)/US_qcg(-1)));
+// Import adjustment cost
+USIT_gammaimcg = US_gammaimcg1/2*((USIT_imcg/US_qcg)/(USIT_imcg(-1)/US_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USIT_gammaimcgdag = 1-USIT_gammaimcg-US_gammaimcg1*((USIT_imcg/US_qcg)/(USIT_imcg(-1)/US_qcg)-1)*((USIT_imcg/US_qcg)/(USIT_imcg(-1)/US_qcg(-1)));
+// Import adjustment cost
+USNL_gammaimcg = US_gammaimcg1/2*((USNL_imcg/US_qcg)/(USNL_imcg(-1)/US_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USNL_gammaimcgdag = 1-USNL_gammaimcg-US_gammaimcg1*((USNL_imcg/US_qcg)/(USNL_imcg(-1)/US_qcg)-1)*((USNL_imcg/US_qcg)/(USNL_imcg(-1)/US_qcg(-1)));
+// Import adjustment cost
+USPT_gammaimcg = US_gammaimcg1/2*((USPT_imcg/US_qcg)/(USPT_imcg(-1)/US_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USPT_gammaimcgdag = 1-USPT_gammaimcg-US_gammaimcg1*((USPT_imcg/US_qcg)/(USPT_imcg(-1)/US_qcg)-1)*((USPT_imcg/US_qcg)/(USPT_imcg(-1)/US_qcg(-1)));
+// Import adjustment cost
+USDE_gammaimcg = US_gammaimcg1/2*((USDE_imcg/US_qcg)/(USDE_imcg(-1)/US_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USDE_gammaimcgdag = 1-USDE_gammaimcg-US_gammaimcg1*((USDE_imcg/US_qcg)/(USDE_imcg(-1)/US_qcg)-1)*((USDE_imcg/US_qcg)/(USDE_imcg(-1)/US_qcg(-1)));
+// Import adjustment cost
+USRU_gammaimcg = US_gammaimcg1/2*((USRU_imcg/US_qcg)/(USRU_imcg(-1)/US_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USRU_gammaimcgdag = 1-USRU_gammaimcg-US_gammaimcg1*((USRU_imcg/US_qcg)/(USRU_imcg(-1)/US_qcg)-1)*((USRU_imcg/US_qcg)/(USRU_imcg(-1)/US_qcg(-1)));
+// Import adjustment cost
+USRW_gammaimcg = US_gammaimcg1/2*((USRW_imcg/US_qcg)/(USRW_imcg(-1)/US_qcg(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USRW_gammaimcgdag = 1-USRW_gammaimcg-US_gammaimcg1*((USRW_imcg/US_qcg)/(USRW_imcg(-1)/US_qcg)-1)*((USRW_imcg/US_qcg)/(USRW_imcg(-1)/US_qcg(-1)));
 // Private consumption good (tradable)
 US_ttig^((US_mutig-1)/US_mutig) = (US_nutig)^(1/US_mutig)*US_htig^(1-1/US_mutig)+(1-US_nutig)^(1/US_mutig)*US_imig^(1-1/US_mutig);
 // Private consumption good  (total)
@@ -64559,32 +65479,58 @@ US_pttig^(1-US_mutig) = (US_nutig)*US_pht^(1-US_mutig)+(1-US_nutig)*US_pimig^(1-
 US_pig^(1-US_muig) = (US_nuig)*US_pttig^(1-US_muig)+(1-US_nuig)*US_pnt^(1-US_muig);
 // Demand for domestic intermediate goods
 US_htig = US_nutig*(US_pht/US_pttig)^(-US_mutig)*US_ttig;
-USRA_gammaimig = 0;
-USRA_gammaimigdag = 1;
-USAT_gammaimig = 0;
-USAT_gammaimigdag = 1;
-USBE_gammaimig = 0;
-USBE_gammaimigdag = 1;
-USES_gammaimig = 0;
-USES_gammaimigdag = 1;
-USFI_gammaimig = 0;
-USFI_gammaimigdag = 1;
-USFR_gammaimig = 0;
-USFR_gammaimigdag = 1;
-USGR_gammaimig = 0;
-USGR_gammaimigdag = 1;
-USIT_gammaimig = 0;
-USIT_gammaimigdag = 1;
-USNL_gammaimig = 0;
-USNL_gammaimigdag = 1;
-USPT_gammaimig = 0;
-USPT_gammaimigdag = 1;
-USDE_gammaimig = 0;
-USDE_gammaimigdag = 1;
-USRU_gammaimig = 0;
-USRU_gammaimigdag = 1;
-USRW_gammaimig = 0;
-USRW_gammaimigdag = 1;
+// Import adjustment cost
+USRA_gammaimig = US_gammaimig1/2*((USRA_imig/US_qig)/(USRA_imig(-1)/US_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USRA_gammaimigdag = 1-USRA_gammaimig-US_gammaimig1*((USRA_imig/US_qig)/(USRA_imig(-1)/US_qig)-1)*((USRA_imig/US_qig)/(USRA_imig(-1)/US_qig(-1)));
+// Import adjustment cost
+USAT_gammaimig = US_gammaimig1/2*((USAT_imig/US_qig)/(USAT_imig(-1)/US_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USAT_gammaimigdag = 1-USAT_gammaimig-US_gammaimig1*((USAT_imig/US_qig)/(USAT_imig(-1)/US_qig)-1)*((USAT_imig/US_qig)/(USAT_imig(-1)/US_qig(-1)));
+// Import adjustment cost
+USBE_gammaimig = US_gammaimig1/2*((USBE_imig/US_qig)/(USBE_imig(-1)/US_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USBE_gammaimigdag = 1-USBE_gammaimig-US_gammaimig1*((USBE_imig/US_qig)/(USBE_imig(-1)/US_qig)-1)*((USBE_imig/US_qig)/(USBE_imig(-1)/US_qig(-1)));
+// Import adjustment cost
+USES_gammaimig = US_gammaimig1/2*((USES_imig/US_qig)/(USES_imig(-1)/US_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USES_gammaimigdag = 1-USES_gammaimig-US_gammaimig1*((USES_imig/US_qig)/(USES_imig(-1)/US_qig)-1)*((USES_imig/US_qig)/(USES_imig(-1)/US_qig(-1)));
+// Import adjustment cost
+USFI_gammaimig = US_gammaimig1/2*((USFI_imig/US_qig)/(USFI_imig(-1)/US_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USFI_gammaimigdag = 1-USFI_gammaimig-US_gammaimig1*((USFI_imig/US_qig)/(USFI_imig(-1)/US_qig)-1)*((USFI_imig/US_qig)/(USFI_imig(-1)/US_qig(-1)));
+// Import adjustment cost
+USFR_gammaimig = US_gammaimig1/2*((USFR_imig/US_qig)/(USFR_imig(-1)/US_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USFR_gammaimigdag = 1-USFR_gammaimig-US_gammaimig1*((USFR_imig/US_qig)/(USFR_imig(-1)/US_qig)-1)*((USFR_imig/US_qig)/(USFR_imig(-1)/US_qig(-1)));
+// Import adjustment cost
+USGR_gammaimig = US_gammaimig1/2*((USGR_imig/US_qig)/(USGR_imig(-1)/US_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USGR_gammaimigdag = 1-USGR_gammaimig-US_gammaimig1*((USGR_imig/US_qig)/(USGR_imig(-1)/US_qig)-1)*((USGR_imig/US_qig)/(USGR_imig(-1)/US_qig(-1)));
+// Import adjustment cost
+USIT_gammaimig = US_gammaimig1/2*((USIT_imig/US_qig)/(USIT_imig(-1)/US_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USIT_gammaimigdag = 1-USIT_gammaimig-US_gammaimig1*((USIT_imig/US_qig)/(USIT_imig(-1)/US_qig)-1)*((USIT_imig/US_qig)/(USIT_imig(-1)/US_qig(-1)));
+// Import adjustment cost
+USNL_gammaimig = US_gammaimig1/2*((USNL_imig/US_qig)/(USNL_imig(-1)/US_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USNL_gammaimigdag = 1-USNL_gammaimig-US_gammaimig1*((USNL_imig/US_qig)/(USNL_imig(-1)/US_qig)-1)*((USNL_imig/US_qig)/(USNL_imig(-1)/US_qig(-1)));
+// Import adjustment cost
+USPT_gammaimig = US_gammaimig1/2*((USPT_imig/US_qig)/(USPT_imig(-1)/US_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USPT_gammaimigdag = 1-USPT_gammaimig-US_gammaimig1*((USPT_imig/US_qig)/(USPT_imig(-1)/US_qig)-1)*((USPT_imig/US_qig)/(USPT_imig(-1)/US_qig(-1)));
+// Import adjustment cost
+USDE_gammaimig = US_gammaimig1/2*((USDE_imig/US_qig)/(USDE_imig(-1)/US_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USDE_gammaimigdag = 1-USDE_gammaimig-US_gammaimig1*((USDE_imig/US_qig)/(USDE_imig(-1)/US_qig)-1)*((USDE_imig/US_qig)/(USDE_imig(-1)/US_qig(-1)));
+// Import adjustment cost
+USRU_gammaimig = US_gammaimig1/2*((USRU_imig/US_qig)/(USRU_imig(-1)/US_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USRU_gammaimigdag = 1-USRU_gammaimig-US_gammaimig1*((USRU_imig/US_qig)/(USRU_imig(-1)/US_qig)-1)*((USRU_imig/US_qig)/(USRU_imig(-1)/US_qig(-1)));
+// Import adjustment cost
+USRW_gammaimig = US_gammaimig1/2*((USRW_imig/US_qig)/(USRW_imig(-1)/US_qig(-1))-1)^2;
+// Auxiliary equation for transformation of import adjustment cost
+USRW_gammaimigdag = 1-USRW_gammaimig-US_gammaimig1*((USRW_imig/US_qig)/(USRW_imig(-1)/US_qig)-1)*((USRW_imig/US_qig)/(USRW_imig(-1)/US_qig(-1)));
 // Trade balance
 US_tb =
 +US_pex*RA_size/US_size*RAUS_im
@@ -64645,18 +65591,10 @@ US_ex =
 // Government spending, using US_pg = US_pht
 US_pcg*US_cg = US_cgy*US_pybar*US_ybar;
 US_pig*US_ig = US_igy*US_pybar*US_ybar;
-US_t = 0;
-US_b = US_bytarget*US_pybar*US_ybar;
-// Auxiliary equation for steady-state output
-US_ybar = US_y;
-// Auxiliary equation for steady-state output
-US_ytbar = US_yst;
-// Auxiliary equation for steady-state output
-US_ynbar = US_ysn;
-// Auxiliary equation for steady-state output deflator
-US_pybar = US_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-US_trybar = US_tr/(US_pybar*US_ybar);
+// Transfers
+US_tr = US_try*US_pybar*US_ybar;
+// Fiscal rule
+US_t/(US_pybar*US_ybar) = US_phitb*(US_b/(US_pybar*US_ybar)-US_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 US_ti = US_upsilont*US_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -64672,9 +65610,11 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 //-------------
 // Monetary authority
 //-------------
-	US_r^4-1 = US_rrstar^4*US_pi4target-1;
-US_pic4 = US_pi4target;
-US_rr-1 = US_r/US_pi4target^(1/4)-1;
+	US_r^4-1 = US_phirr*(US_r(-1)^4-1)+(1-US_phirr)*(US_rrstar^4*US_pi4target-1+US_phirpi*(US_pic4-US_pi4target))+US_phirgy*(US_y/US_y(-1)-1)+US_epsr;
+// Definition of annual inflation
+US_pic4 = US_pic*US_pic(-1)*US_pic(-2)*US_pic(-3);
+// Real interest rate
+US_rr-1 = US_r/US_pic(+1)-1;
 // Equilibrium real interest rate
 US_rrstar-1 = 1/US_beta-1;
 //-------------
@@ -64761,68 +65701,68 @@ US_py*US_y =
 +US_pcg*US_qcg
 +US_pig*US_qig
 +US_pex*RA_size/US_size*RAUS_im
--(RA_pex*USRA_rer)*USRA_imc
--(RA_pex*USRA_rer)*USRA_imi
+-(RA_pex*USRA_rer)*(USRA_imc*(1-USRA_gammaimc)/USRA_gammaimcdag)
+-(RA_pex*USRA_rer)*(USRA_imi*(1-USRA_gammaimi)/USRA_gammaimidag)
 -(RA_pex*USRA_rer)*USRA_imcg
 -(RA_pex*USRA_rer)*USRA_imig
 +US_pex*AT_size/US_size*ATUS_im
--(AT_pex*USAT_rer)*USAT_imc
--(AT_pex*USAT_rer)*USAT_imi
+-(AT_pex*USAT_rer)*(USAT_imc*(1-USAT_gammaimc)/USAT_gammaimcdag)
+-(AT_pex*USAT_rer)*(USAT_imi*(1-USAT_gammaimi)/USAT_gammaimidag)
 -(AT_pex*USAT_rer)*USAT_imcg
 -(AT_pex*USAT_rer)*USAT_imig
 +US_pex*BE_size/US_size*BEUS_im
--(BE_pex*USBE_rer)*USBE_imc
--(BE_pex*USBE_rer)*USBE_imi
+-(BE_pex*USBE_rer)*(USBE_imc*(1-USBE_gammaimc)/USBE_gammaimcdag)
+-(BE_pex*USBE_rer)*(USBE_imi*(1-USBE_gammaimi)/USBE_gammaimidag)
 -(BE_pex*USBE_rer)*USBE_imcg
 -(BE_pex*USBE_rer)*USBE_imig
 +US_pex*ES_size/US_size*ESUS_im
--(ES_pex*USES_rer)*USES_imc
--(ES_pex*USES_rer)*USES_imi
+-(ES_pex*USES_rer)*(USES_imc*(1-USES_gammaimc)/USES_gammaimcdag)
+-(ES_pex*USES_rer)*(USES_imi*(1-USES_gammaimi)/USES_gammaimidag)
 -(ES_pex*USES_rer)*USES_imcg
 -(ES_pex*USES_rer)*USES_imig
 +US_pex*FI_size/US_size*FIUS_im
--(FI_pex*USFI_rer)*USFI_imc
--(FI_pex*USFI_rer)*USFI_imi
+-(FI_pex*USFI_rer)*(USFI_imc*(1-USFI_gammaimc)/USFI_gammaimcdag)
+-(FI_pex*USFI_rer)*(USFI_imi*(1-USFI_gammaimi)/USFI_gammaimidag)
 -(FI_pex*USFI_rer)*USFI_imcg
 -(FI_pex*USFI_rer)*USFI_imig
 +US_pex*FR_size/US_size*FRUS_im
--(FR_pex*USFR_rer)*USFR_imc
--(FR_pex*USFR_rer)*USFR_imi
+-(FR_pex*USFR_rer)*(USFR_imc*(1-USFR_gammaimc)/USFR_gammaimcdag)
+-(FR_pex*USFR_rer)*(USFR_imi*(1-USFR_gammaimi)/USFR_gammaimidag)
 -(FR_pex*USFR_rer)*USFR_imcg
 -(FR_pex*USFR_rer)*USFR_imig
 +US_pex*GR_size/US_size*GRUS_im
--(GR_pex*USGR_rer)*USGR_imc
--(GR_pex*USGR_rer)*USGR_imi
+-(GR_pex*USGR_rer)*(USGR_imc*(1-USGR_gammaimc)/USGR_gammaimcdag)
+-(GR_pex*USGR_rer)*(USGR_imi*(1-USGR_gammaimi)/USGR_gammaimidag)
 -(GR_pex*USGR_rer)*USGR_imcg
 -(GR_pex*USGR_rer)*USGR_imig
 +US_pex*IT_size/US_size*ITUS_im
--(IT_pex*USIT_rer)*USIT_imc
--(IT_pex*USIT_rer)*USIT_imi
+-(IT_pex*USIT_rer)*(USIT_imc*(1-USIT_gammaimc)/USIT_gammaimcdag)
+-(IT_pex*USIT_rer)*(USIT_imi*(1-USIT_gammaimi)/USIT_gammaimidag)
 -(IT_pex*USIT_rer)*USIT_imcg
 -(IT_pex*USIT_rer)*USIT_imig
 +US_pex*NL_size/US_size*NLUS_im
--(NL_pex*USNL_rer)*USNL_imc
--(NL_pex*USNL_rer)*USNL_imi
+-(NL_pex*USNL_rer)*(USNL_imc*(1-USNL_gammaimc)/USNL_gammaimcdag)
+-(NL_pex*USNL_rer)*(USNL_imi*(1-USNL_gammaimi)/USNL_gammaimidag)
 -(NL_pex*USNL_rer)*USNL_imcg
 -(NL_pex*USNL_rer)*USNL_imig
 +US_pex*PT_size/US_size*PTUS_im
--(PT_pex*USPT_rer)*USPT_imc
--(PT_pex*USPT_rer)*USPT_imi
+-(PT_pex*USPT_rer)*(USPT_imc*(1-USPT_gammaimc)/USPT_gammaimcdag)
+-(PT_pex*USPT_rer)*(USPT_imi*(1-USPT_gammaimi)/USPT_gammaimidag)
 -(PT_pex*USPT_rer)*USPT_imcg
 -(PT_pex*USPT_rer)*USPT_imig
 +US_pex*DE_size/US_size*DEUS_im
--(DE_pex*USDE_rer)*USDE_imc
--(DE_pex*USDE_rer)*USDE_imi
+-(DE_pex*USDE_rer)*(USDE_imc*(1-USDE_gammaimc)/USDE_gammaimcdag)
+-(DE_pex*USDE_rer)*(USDE_imi*(1-USDE_gammaimi)/USDE_gammaimidag)
 -(DE_pex*USDE_rer)*USDE_imcg
 -(DE_pex*USDE_rer)*USDE_imig
 +US_pex*RU_size/US_size*RUUS_im
--(RU_pex*USRU_rer)*USRU_imc
--(RU_pex*USRU_rer)*USRU_imi
+-(RU_pex*USRU_rer)*(USRU_imc*(1-USRU_gammaimc)/USRU_gammaimcdag)
+-(RU_pex*USRU_rer)*(USRU_imi*(1-USRU_gammaimi)/USRU_gammaimidag)
 -(RU_pex*USRU_rer)*USRU_imcg
 -(RU_pex*USRU_rer)*USRU_imig
 +US_pex*RW_size/US_size*RWUS_im
--(RW_pex*USRW_rer)*USRW_imc
--(RW_pex*USRW_rer)*USRW_imi
+-(RW_pex*USRW_rer)*(USRW_imc*(1-USRW_gammaimc)/USRW_gammaimcdag)
+-(RW_pex*USRW_rer)*(USRW_imi*(1-USRW_gammaimi)/USRW_gammaimidag)
 -(RW_pex*USRW_rer)*USRW_imcg
 -(RW_pex*USRW_rer)*USRW_imig
 ;
@@ -64897,7 +65837,7 @@ US_yhty = US_pht*US_yst/(US_py*US_y);
 // NT sector share
 US_ynty = US_pnt*US_ysn/(US_py*US_y);
 // Output gap
-US_ygap = 0;
+US_ygap = US_y/US_ybar-1;
 // Output growth (gross rate)
 US_ygrowth = US_y/US_y(-1);
 // Output growth (gross rate yoy)
@@ -65046,11 +65986,12 @@ US_internalrer = US_pnt/US_pttc;
 // Bilateral equations versus country N
 //-------------
 // Euler equation for internationally traded bonds
-RA_gammab = 0;
+1 = US_r*(1-RA_gammab)*RA_beta*RA_lambdai(+1)/RA_lambdai*RA_rerdep(+1)/US_pic(+1);
 // International transaction cost ('risk premium')
-RA_bf = (RA_bfytarget*RA_py*RA_y)/RA_rer*US_pic;
+RA_gammab = RA_gammab1*(exp(RA_rer*RA_bf/US_pic/(RA_py*RA_y)-RA_bfytarget)-1)
+;
 // Risk premium shock
-RA_rp = 0;
+RA_rp = RA_rhorp*RA_rp(-1)+RA_epsrp;
 // Definition of the rate of real exchange-rate depreciation
 RA_rerdep = RA_rer/RA_rer(-1);
 // Definition of the terms of trade
@@ -65059,11 +66000,12 @@ RA_tot = US_pex*RA_rer/RA_pex;
 // Bilateral equations versus country N
 //-------------
 // Euler equation for internationally traded bonds
-AT_gammab = 0;
+1 = US_r*(1-AT_gammab)*AT_beta*AT_lambdai(+1)/AT_lambdai*AT_rerdep(+1)/US_pic(+1);
 // International transaction cost ('risk premium')
-AT_bf = (AT_bfytarget*AT_py*AT_y)/AT_rer*US_pic;
+AT_gammab = AT_gammab1*(exp(AT_rer*AT_bf/US_pic/(AT_py*AT_y)-AT_bfytarget)-1)
+;
 // Risk premium shock
-AT_rp = 0;
+AT_rp = AT_rhorp*AT_rp(-1)+AT_epsrp;
 // Definition of the rate of real exchange-rate depreciation
 AT_rerdep = AT_rer/AT_rer(-1);
 // Definition of the terms of trade
@@ -65072,11 +66014,12 @@ AT_tot = US_pex*AT_rer/AT_pex;
 // Bilateral equations versus country N
 //-------------
 // Euler equation for internationally traded bonds
-BE_gammab = 0;
+1 = US_r*(1-BE_gammab)*BE_beta*BE_lambdai(+1)/BE_lambdai*BE_rerdep(+1)/US_pic(+1);
 // International transaction cost ('risk premium')
-BE_bf = (BE_bfytarget*BE_py*BE_y)/BE_rer*US_pic;
+BE_gammab = BE_gammab1*(exp(BE_rer*BE_bf/US_pic/(BE_py*BE_y)-BE_bfytarget)-1)
+;
 // Risk premium shock
-BE_rp = 0;
+BE_rp = BE_rhorp*BE_rp(-1)+BE_epsrp;
 // Definition of the rate of real exchange-rate depreciation
 BE_rerdep = BE_rer/BE_rer(-1);
 // Definition of the terms of trade
@@ -65085,11 +66028,12 @@ BE_tot = US_pex*BE_rer/BE_pex;
 // Bilateral equations versus country N
 //-------------
 // Euler equation for internationally traded bonds
-ES_gammab = 0;
+1 = US_r*(1-ES_gammab)*ES_beta*ES_lambdai(+1)/ES_lambdai*ES_rerdep(+1)/US_pic(+1);
 // International transaction cost ('risk premium')
-ES_bf = (ES_bfytarget*ES_py*ES_y)/ES_rer*US_pic;
+ES_gammab = ES_gammab1*(exp(ES_rer*ES_bf/US_pic/(ES_py*ES_y)-ES_bfytarget)-1)
+;
 // Risk premium shock
-ES_rp = 0;
+ES_rp = ES_rhorp*ES_rp(-1)+ES_epsrp;
 // Definition of the rate of real exchange-rate depreciation
 ES_rerdep = ES_rer/ES_rer(-1);
 // Definition of the terms of trade
@@ -65098,11 +66042,12 @@ ES_tot = US_pex*ES_rer/ES_pex;
 // Bilateral equations versus country N
 //-------------
 // Euler equation for internationally traded bonds
-FI_gammab = 0;
+1 = US_r*(1-FI_gammab)*FI_beta*FI_lambdai(+1)/FI_lambdai*FI_rerdep(+1)/US_pic(+1);
 // International transaction cost ('risk premium')
-FI_bf = (FI_bfytarget*FI_py*FI_y)/FI_rer*US_pic;
+FI_gammab = FI_gammab1*(exp(FI_rer*FI_bf/US_pic/(FI_py*FI_y)-FI_bfytarget)-1)
+;
 // Risk premium shock
-FI_rp = 0;
+FI_rp = FI_rhorp*FI_rp(-1)+FI_epsrp;
 // Definition of the rate of real exchange-rate depreciation
 FI_rerdep = FI_rer/FI_rer(-1);
 // Definition of the terms of trade
@@ -65111,11 +66056,12 @@ FI_tot = US_pex*FI_rer/FI_pex;
 // Bilateral equations versus country N
 //-------------
 // Euler equation for internationally traded bonds
-FR_gammab = 0;
+1 = US_r*(1-FR_gammab)*FR_beta*FR_lambdai(+1)/FR_lambdai*FR_rerdep(+1)/US_pic(+1);
 // International transaction cost ('risk premium')
-FR_bf = (FR_bfytarget*FR_py*FR_y)/FR_rer*US_pic;
+FR_gammab = FR_gammab1*(exp(FR_rer*FR_bf/US_pic/(FR_py*FR_y)-FR_bfytarget)-1)
+;
 // Risk premium shock
-FR_rp = 0;
+FR_rp = FR_rhorp*FR_rp(-1)+FR_epsrp;
 // Definition of the rate of real exchange-rate depreciation
 FR_rerdep = FR_rer/FR_rer(-1);
 // Definition of the terms of trade
@@ -65124,11 +66070,12 @@ FR_tot = US_pex*FR_rer/FR_pex;
 // Bilateral equations versus country N
 //-------------
 // Euler equation for internationally traded bonds
-GR_gammab = 0;
+1 = US_r*(1-GR_gammab)*GR_beta*GR_lambdai(+1)/GR_lambdai*GR_rerdep(+1)/US_pic(+1);
 // International transaction cost ('risk premium')
-GR_bf = (GR_bfytarget*GR_py*GR_y)/GR_rer*US_pic;
+GR_gammab = GR_gammab1*(exp(GR_rer*GR_bf/US_pic/(GR_py*GR_y)-GR_bfytarget)-1)
+;
 // Risk premium shock
-GR_rp = 0;
+GR_rp = GR_rhorp*GR_rp(-1)+GR_epsrp;
 // Definition of the rate of real exchange-rate depreciation
 GR_rerdep = GR_rer/GR_rer(-1);
 // Definition of the terms of trade
@@ -65137,11 +66084,12 @@ GR_tot = US_pex*GR_rer/GR_pex;
 // Bilateral equations versus country N
 //-------------
 // Euler equation for internationally traded bonds
-IT_gammab = 0;
+1 = US_r*(1-IT_gammab)*IT_beta*IT_lambdai(+1)/IT_lambdai*IT_rerdep(+1)/US_pic(+1);
 // International transaction cost ('risk premium')
-IT_bf = (IT_bfytarget*IT_py*IT_y)/IT_rer*US_pic;
+IT_gammab = IT_gammab1*(exp(IT_rer*IT_bf/US_pic/(IT_py*IT_y)-IT_bfytarget)-1)
+;
 // Risk premium shock
-IT_rp = 0;
+IT_rp = IT_rhorp*IT_rp(-1)+IT_epsrp;
 // Definition of the rate of real exchange-rate depreciation
 IT_rerdep = IT_rer/IT_rer(-1);
 // Definition of the terms of trade
@@ -65150,11 +66098,12 @@ IT_tot = US_pex*IT_rer/IT_pex;
 // Bilateral equations versus country N
 //-------------
 // Euler equation for internationally traded bonds
-NL_gammab = 0;
+1 = US_r*(1-NL_gammab)*NL_beta*NL_lambdai(+1)/NL_lambdai*NL_rerdep(+1)/US_pic(+1);
 // International transaction cost ('risk premium')
-NL_bf = (NL_bfytarget*NL_py*NL_y)/NL_rer*US_pic;
+NL_gammab = NL_gammab1*(exp(NL_rer*NL_bf/US_pic/(NL_py*NL_y)-NL_bfytarget)-1)
+;
 // Risk premium shock
-NL_rp = 0;
+NL_rp = NL_rhorp*NL_rp(-1)+NL_epsrp;
 // Definition of the rate of real exchange-rate depreciation
 NL_rerdep = NL_rer/NL_rer(-1);
 // Definition of the terms of trade
@@ -65163,11 +66112,12 @@ NL_tot = US_pex*NL_rer/NL_pex;
 // Bilateral equations versus country N
 //-------------
 // Euler equation for internationally traded bonds
-PT_gammab = 0;
+1 = US_r*(1-PT_gammab)*PT_beta*PT_lambdai(+1)/PT_lambdai*PT_rerdep(+1)/US_pic(+1);
 // International transaction cost ('risk premium')
-PT_bf = (PT_bfytarget*PT_py*PT_y)/PT_rer*US_pic;
+PT_gammab = PT_gammab1*(exp(PT_rer*PT_bf/US_pic/(PT_py*PT_y)-PT_bfytarget)-1)
+;
 // Risk premium shock
-PT_rp = 0;
+PT_rp = PT_rhorp*PT_rp(-1)+PT_epsrp;
 // Definition of the rate of real exchange-rate depreciation
 PT_rerdep = PT_rer/PT_rer(-1);
 // Definition of the terms of trade
@@ -65176,11 +66126,12 @@ PT_tot = US_pex*PT_rer/PT_pex;
 // Bilateral equations versus country N
 //-------------
 // Euler equation for internationally traded bonds
-DE_gammab = 0;
+1 = US_r*(1-DE_gammab)*DE_beta*DE_lambdai(+1)/DE_lambdai*DE_rerdep(+1)/US_pic(+1);
 // International transaction cost ('risk premium')
-DE_bf = (DE_bfytarget*DE_py*DE_y)/DE_rer*US_pic;
+DE_gammab = DE_gammab1*(exp(DE_rer*DE_bf/US_pic/(DE_py*DE_y)-DE_bfytarget)-1)
+;
 // Risk premium shock
-DE_rp = 0;
+DE_rp = DE_rhorp*DE_rp(-1)+DE_epsrp;
 // Definition of the rate of real exchange-rate depreciation
 DE_rerdep = DE_rer/DE_rer(-1);
 // Definition of the terms of trade
@@ -65189,11 +66140,12 @@ DE_tot = US_pex*DE_rer/DE_pex;
 // Bilateral equations versus country N
 //-------------
 // Euler equation for internationally traded bonds
-RU_gammab = 0;
+1 = US_r*(1-RU_gammab)*RU_beta*RU_lambdai(+1)/RU_lambdai*RU_rerdep(+1)/US_pic(+1);
 // International transaction cost ('risk premium')
-RU_bf = (RU_bfytarget*RU_py*RU_y)/RU_rer*US_pic;
+RU_gammab = RU_gammab1*(exp(RU_rer*RU_bf/US_pic/(RU_py*RU_y)-RU_bfytarget)-1)
+;
 // Risk premium shock
-RU_rp = 0;
+RU_rp = RU_rhorp*RU_rp(-1)+RU_epsrp;
 // Definition of the rate of real exchange-rate depreciation
 RU_rerdep = RU_rer/RU_rer(-1);
 // Definition of the terms of trade
@@ -65202,11 +66154,13 @@ RU_tot = US_pex*RU_rer/RU_pex;
 // Bilateral equations versus country N
 //-------------
 // Euler equation for internationally traded bonds
-RW_gammab = 0;
+1 = US_r*(1-RW_gammab)*RW_beta*RW_lambdai(+1)/RW_lambdai*RW_rerdep(+1)/US_pic(+1);
 // International transaction cost ('risk premium')
-RW_bf = (RW_bfytarget*RW_py*RW_y)/RW_rer*US_pic;
+RW_gammab = RW_gammab1*(exp(RW_rer*RW_bf/US_pic/(RW_py*RW_y)-RW_bfytarget)-1)
+-RW_rp
+;
 // Risk premium shock
-RW_rp = 0;
+RW_rp = RW_rhorp*RW_rp(-1)+RW_epsrp;
 // Definition of the rate of real exchange-rate depreciation
 RW_rerdep = RW_rer/RW_rer(-1);
 // Definition of the terms of trade
@@ -65291,44 +66245,44 @@ US_size*US_bf =
 US_rer = 1;
 		RADE_nerdep = RA_rerdep/DE_rerdep*RA_pic/DE_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
-			RA_gammabh = 0;
-			RA_bh = (RA_bhytarget*RA_py*RA_y)/RADE_rer*DE_pic;
+			1 = DE_r*(1-RA_gammabh)*RA_beta*RA_lambdai(+1)/RA_lambdai*RADE_rer(+1)/RADE_rer/DE_pic(+1);
+			RA_gammabh = DE_gammab1*(exp(RADE_rer*RA_bh/DE_pic/(RA_py*RA_y)-RA_bhytarget)-1);
 		ATDE_nerdep = AT_rerdep/DE_rerdep*AT_pic/DE_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
-			AT_gammabh = 0;
-			AT_bh = (AT_bhytarget*AT_py*AT_y)/ATDE_rer*DE_pic;
+			1 = DE_r*(1-AT_gammabh)*AT_beta*AT_lambdai(+1)/AT_lambdai*ATDE_rer(+1)/ATDE_rer/DE_pic(+1);
+			AT_gammabh = DE_gammab1*(exp(ATDE_rer*AT_bh/DE_pic/(AT_py*AT_y)-AT_bhytarget)-1);
 		BEDE_nerdep = BE_rerdep/DE_rerdep*BE_pic/DE_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
-			BE_gammabh = 0;
-			BE_bh = (BE_bhytarget*BE_py*BE_y)/BEDE_rer*DE_pic;
+			1 = DE_r*(1-BE_gammabh)*BE_beta*BE_lambdai(+1)/BE_lambdai*BEDE_rer(+1)/BEDE_rer/DE_pic(+1);
+			BE_gammabh = DE_gammab1*(exp(BEDE_rer*BE_bh/DE_pic/(BE_py*BE_y)-BE_bhytarget)-1);
 		ESDE_nerdep = ES_rerdep/DE_rerdep*ES_pic/DE_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
-			ES_gammabh = 0;
-			ES_bh = (ES_bhytarget*ES_py*ES_y)/ESDE_rer*DE_pic;
+			1 = DE_r*(1-ES_gammabh)*ES_beta*ES_lambdai(+1)/ES_lambdai*ESDE_rer(+1)/ESDE_rer/DE_pic(+1);
+			ES_gammabh = DE_gammab1*(exp(ESDE_rer*ES_bh/DE_pic/(ES_py*ES_y)-ES_bhytarget)-1);
 		FIDE_nerdep = FI_rerdep/DE_rerdep*FI_pic/DE_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
-			FI_gammabh = 0;
-			FI_bh = (FI_bhytarget*FI_py*FI_y)/FIDE_rer*DE_pic;
+			1 = DE_r*(1-FI_gammabh)*FI_beta*FI_lambdai(+1)/FI_lambdai*FIDE_rer(+1)/FIDE_rer/DE_pic(+1);
+			FI_gammabh = DE_gammab1*(exp(FIDE_rer*FI_bh/DE_pic/(FI_py*FI_y)-FI_bhytarget)-1);
 		FRDE_nerdep = FR_rerdep/DE_rerdep*FR_pic/DE_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
-			FR_gammabh = 0;
-			FR_bh = (FR_bhytarget*FR_py*FR_y)/FRDE_rer*DE_pic;
+			1 = DE_r*(1-FR_gammabh)*FR_beta*FR_lambdai(+1)/FR_lambdai*FRDE_rer(+1)/FRDE_rer/DE_pic(+1);
+			FR_gammabh = DE_gammab1*(exp(FRDE_rer*FR_bh/DE_pic/(FR_py*FR_y)-FR_bhytarget)-1);
 		GRDE_nerdep = GR_rerdep/DE_rerdep*GR_pic/DE_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
-			GR_gammabh = 0;
-			GR_bh = (GR_bhytarget*GR_py*GR_y)/GRDE_rer*DE_pic;
+			1 = DE_r*(1-GR_gammabh)*GR_beta*GR_lambdai(+1)/GR_lambdai*GRDE_rer(+1)/GRDE_rer/DE_pic(+1);
+			GR_gammabh = DE_gammab1*(exp(GRDE_rer*GR_bh/DE_pic/(GR_py*GR_y)-GR_bhytarget)-1);
 		ITDE_nerdep = IT_rerdep/DE_rerdep*IT_pic/DE_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
-			IT_gammabh = 0;
-			IT_bh = (IT_bhytarget*IT_py*IT_y)/ITDE_rer*DE_pic;
+			1 = DE_r*(1-IT_gammabh)*IT_beta*IT_lambdai(+1)/IT_lambdai*ITDE_rer(+1)/ITDE_rer/DE_pic(+1);
+			IT_gammabh = DE_gammab1*(exp(ITDE_rer*IT_bh/DE_pic/(IT_py*IT_y)-IT_bhytarget)-1);
 		NLDE_nerdep = NL_rerdep/DE_rerdep*NL_pic/DE_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
-			NL_gammabh = 0;
-			NL_bh = (NL_bhytarget*NL_py*NL_y)/NLDE_rer*DE_pic;
+			1 = DE_r*(1-NL_gammabh)*NL_beta*NL_lambdai(+1)/NL_lambdai*NLDE_rer(+1)/NLDE_rer/DE_pic(+1);
+			NL_gammabh = DE_gammab1*(exp(NLDE_rer*NL_bh/DE_pic/(NL_py*NL_y)-NL_bhytarget)-1);
 		PTDE_nerdep = PT_rerdep/DE_rerdep*PT_pic/DE_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
-			PT_gammabh = 0;
-			PT_bh = (PT_bhytarget*PT_py*PT_y)/PTDE_rer*DE_pic;
+			1 = DE_r*(1-PT_gammabh)*PT_beta*PT_lambdai(+1)/PT_lambdai*PTDE_rer(+1)/PTDE_rer/DE_pic(+1);
+			PT_gammabh = DE_gammab1*(exp(PTDE_rer*PT_bh/DE_pic/(PT_py*PT_y)-PT_bhytarget)-1);
 0 =
 	+ RA_size*RA_bh
 	+ AT_size*AT_bh
@@ -65585,7 +66539,6 @@ EA_pic4 = 1
 // Productivity
 log(EA_z) = (1-EA_rhoz)*log(EA_zbar)+EA_rhoz*log(EA_z(-1))+EA_epsz;
 // Auxiliary equation for steady-state output
-EA_ybar = EA_y;
 end;
 load_params_and_steady_state('eagle_steady_stage_trade.txt');
 // filters the output to show only the equations where the residual is significantly different from zero, highlighting potential problems.

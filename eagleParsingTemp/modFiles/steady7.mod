@@ -6,7 +6,7 @@ options_.solve_algo = 5;
 options_.markowitz = 5;
 */
 
-@#define steady = 1
+@#define steady = 0
 
 @#include "init.mod"
 
