@@ -43,4 +43,58 @@ homotopy_setup;
 end;
 steady(homotopy_steps = 15);
 
+//---------------------------------------------------------//
+// Change parameters that appear only in the dynamic model //
+//---------------------------------------------------------//
+
+// Fiscal policy rule
+@#for co in countries
+@{co}_phitb = 0.1;
+@#endfor
+
+// Monetary policy rule
+EA_phirr  = 0.87;
+EA_phirpi = 1.70;
+EA_phirgy = 0.10;
+US_phirr  = 0.87;
+US_phirpi = 1.70;
+US_phirgy = 0.10;
+RW_phirr  = 0.87;
+RW_phirpi = 1.70;
+RW_phirgy = 0.10;
+
+// Adjustment and transaction cost
+@#for co in countries
+    @#if co=="RW" || co=="US"
+        @{co}_gammai1= 4.00;
+    @#else
+        @{co}_gammai1= 6.00;
+    @#endif
+@#endfor
+
+@#for co in countries
+@{co}_gammau2= 2000;
+@#endfor
+
+@#for co in countries
+@{co}_gammaimc1= 2.00;
+@#endfor
+
+@#for co in countries
+@{co}_gammaimcg1= 2.00;
+@#endfor
+
+@#for co in countries
+@{co}_gammaimi1= 1.00;
+@#endfor
+
+@#for co in countries
+@{co}_gammaimig1= 1.00;
+@#endfor
+
+@#for co in countries
+@{co}_gammab1= 0.01;
+@#endfor
+
+
 save_params_and_steady_state('eagle_steady_stage_trade.txt');
