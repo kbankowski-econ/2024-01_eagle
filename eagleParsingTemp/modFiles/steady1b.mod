@@ -134,49 +134,25 @@ steady(homotopy_steps = 5);
 
 disp('taucbar')
 homotopy_setup;
-@#for co in countries
-    @#if co=="RW" || co=="US"
-        @{co}_taucbar, 0.077;
-    @#else
-        @{co}_taucbar, 0.183;
-    @#endif
-@#endfor
+    @#include "tax_rates_taucbar.mod"
 end;
 steady(homotopy_steps = 5);
 
 disp('taunbar')
 homotopy_setup;
-@#for co in countries
-    @#if co=="RW" || co=="US"
-        @{co}_taunbar, 0.154;
-    @#else
-        @{co}_taunbar, 0.122;
-    @#endif
-@#endfor
+    @#include "tax_rates_taunbar.mod"
 end;
 steady(homotopy_steps = 5);
 
 disp('tauwhbar')
 homotopy_setup;
-@#for co in countries
-    @#if co=="RW" || co=="US"
-        @{co}_tauwhbar, 0.071;
-    @#else
-        @{co}_tauwhbar, 0.118;
-    @#endif
-@#endfor
+    @#include "tax_rates_tauwhbar.mod"
 end;
 steady(homotopy_steps = 5);
 
 disp('tauwfbar')
 homotopy_setup;
-@#for co in countries
-    @#if co=="RW" || co=="US"
-        @{co}_tauwfbar, 0.071;
-    @#else
-        @{co}_tauwfbar, 0.219;
-    @#endif
-@#endfor
+    @#include "tax_rates_tauwfbar.mod"
 end;
 steady(homotopy_steps = 5);
 
