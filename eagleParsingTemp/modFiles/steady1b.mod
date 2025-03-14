@@ -156,6 +156,12 @@ homotopy_setup;
 end;
 steady(homotopy_steps = 5);
 
+disp('taukbar')
+homotopy_setup;
+    @#include "tax_rates_taukbar.mod"
+end;
+steady(homotopy_steps = 5);
+
 /* Commented out because right value already set in params.mod
 // Size of household J
 disp('omega')
