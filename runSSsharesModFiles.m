@@ -2,8 +2,8 @@
 ctryList = ["RA", "AT", "BE", "ES", "FI", "FR", "GR", "IT", "NL", "PT", "DE", "RU", "RW", "US"];
 itemListShares = ["public_consumption", "private_consumption", "private_investment", "public_investment"];
 itemModelListShares = ["cgybar", "cy", "iy", "igybar"];
-itemListTaxRates = ["consumption", "income", "SSC_firms", "SSC_households"];
-itemModelListTaxRates = ["taucbar", "taunbar", "tauwfbar", "tauwhbar"];
+itemListTaxRates = ["consumption", "income", "SSC_firms", "SSC_households", "capital"];
+itemModelListTaxRates = ["taucbar", "taunbar", "tauwfbar", "tauwhbar", "taukbar"];
 
 % import values for calibration
 importCalibValues(ctryList, itemListShares, itemModelListShares, "shares");

@@ -1,0 +1,14 @@
+RA_taukbar, 0.0650;
+AT_taukbar, 0.0974;
+BE_taukbar, 0.1385;
+ES_taukbar, 0.0798;
+FI_taukbar, 0.1022;
+FR_taukbar, 0.1261;
+GR_taukbar, 0.1192;
+IT_taukbar, 0.1001;
+NL_taukbar, 0.1034;
+PT_taukbar, 0.1466;
+DE_taukbar, 0.0766;
+RU_taukbar, 0.1178;
+RW_taukbar, 0.1223;
+US_taukbar, 0.0763;
