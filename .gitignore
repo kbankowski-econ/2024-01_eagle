@@ -1,6 +1,10 @@
 # Specify filepatterns you want git to ignore.
 subroutines/+utils/+call/paths.m
 +utils/+call/paths.m
+
+# Local latex path to specify bibliography
+docs/2025-02_working-paper/draftPaper_localBibliographyPath.tex
+
 *.bin
 *.cod
 *.asv
