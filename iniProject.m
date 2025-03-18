@@ -29,6 +29,8 @@ function iniProject()
     % adding paths
     % project
     addpath(genpath(project_path));
+    % Matlab utils
+    addpath(matlabUtils_path);
     % iris
     addpath(iris_path);
 
