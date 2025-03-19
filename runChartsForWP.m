@@ -8,4 +8,5 @@ modelResults = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'stea
 steady7struct = dynareFunc.retrieveSteadyState(modelResults);
 
 %% Plotting for the paper
-plotting.WP.importContent(envi, steady7struct);
+csv_path = fullfile(project_path_io, 'databases', 'tables', 'oecd', 'eu', 'imports_graph.csv');
+plotting.WP.importContent_csv(envi, csv_path);
