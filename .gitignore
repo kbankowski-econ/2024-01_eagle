@@ -5,6 +5,9 @@ subroutines/+utils/+call/paths.m
 # Local latex path to specify bibliography
 docs/2025-02_working-paper/draftPaper_localBibliographyPath.tex
 
+# Log files can't be tracked, they are so large that they crash git repo
+*.log
+
 *.bin
 *.cod
 *.asv
@@ -23,17 +26,22 @@ docs/**/*.log
 *.bbl
 *.ptc
 *.blg
-Dynare_4-4-3/modFiles/+shock_eab_gy1/*
-Dynare_4-4-3/modFiles/+steady1/*
-Dynare_4-4-3/modFiles/+steady2/*
-Fiscal_ext/modFiles/+shock_eab_gy1/*
-Fiscal_ext/modFiles/+steady1_EAGLE_Fiscal/*
-Fiscal_ext/modFiles/+steady2/*
-Fiscal_ext/modFiles/+*/
-eagleParsingTemp/modFiles/+*/
-eagleParsingTemp_sim_BIG1/modFiles/+*/
+Dynare_4-4-1/modFiles/+*/
+Dynare_4-4-1/modFiles/*/model/json/
 Dynare_4-4-3/modFiles/+*/
+Dynare_4-4-3/modFiles/*/model/json/
+eagleParsing/modFiles/+*/
+eagleParsing/modFiles/*/model/json/
+eagleParsingTemp/modFiles/+*/
+eagleParsingTemp/modFiles/*/model/json/
+eagleParsingTemp_sim_BIG1/modFiles/+*/
+eagleParsingTemp_sim_BIG1/modFiles/*/model/json/
 eagleToy/+*/
+eagleToy/modFiles/*/model/json/
+ecbBase/modFiles/+*/
+ecbBase/modFiles/*/model/json/
+Fiscal_ext/modFiles/+*/
+Fiscal_ext/modFiles/*/model/json/
 
 # Dismissing abundant files automatically generated
 * 2.*
@@ -72,3 +80,5 @@ docs/fiscalContributions_Big12.png
 docs/monetaryContributions_Big1.png
 docs/monetaryContributions_Big12.png
 docs/vertModelComparison.png
+
+.DS_Store
