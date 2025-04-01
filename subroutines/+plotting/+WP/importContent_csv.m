@@ -2,7 +2,7 @@ function importContent(envi, csvFilePath)
     utils.call.paths;
     
     % Declaring items for plotting
-    itemList = ["private_investment", "private_consumption", "public_investment", "public_consumption"];
+    itemList = ["imiy", "imcy", "imigy", "imcgy"];
     labelList = ["Private investment", "Private consumption", "Gov. investment", "Gov. consumption"];
 
 

@@ -158,20 +158,20 @@ function writeTradeModFile(aFileName, aTable, sizeStruct, countries, countriesAu
     % Append the additional text at the end of the file
     % //TODO: to be delted at some point once we have a more elegant way to
     % do it
-    fprintf(fileID, 'RA_tby, 0.373208996454428;\n');
-    fprintf(fileID, 'AT_tby, 0.0747460664920413;\n');
-    fprintf(fileID, 'BE_tby, 0.0872880171282875;\n');
-    fprintf(fileID, 'ES_tby, 0.0470211082952423;\n');
-    fprintf(fileID, 'FI_tby, 0.0148495040011288;\n');
-    fprintf(fileID, 'FR_tby, -0.00568074534380902;\n');
-    fprintf(fileID, 'GR_tby, 0.0101564903814751;\n');
-    fprintf(fileID, 'IT_tby, 0.0317390329437055;\n');
-    fprintf(fileID, 'NL_tby, 0.135151581391313;\n');
-    fprintf(fileID, 'PT_tby, 0.0274803612158965;\n');
-    fprintf(fileID, 'DE_tby, 0.0828120982419315;\n');
-    fprintf(fileID, 'RU_tby, 0.076296025979859;\n');
-    fprintf(fileID, 'RW_tby, -0.0114282752350795;\n');
-    fprintf(fileID, 'RA_nuc, 0.9999;\n');
+    fprintf(fileID, 'RA_tby, 0.295845481096323;\n');
+    fprintf(fileID, 'AT_tby, 0.0590048273247692;;\n');
+    fprintf(fileID, 'BE_tby, 0.097760354486184;;\n');
+    fprintf(fileID, 'ES_tby, 0.0149158507329361;\n');
+    fprintf(fileID, 'FI_tby, 0.0523095729115864;\n');
+    fprintf(fileID, 'FR_tby, 0.0024733397043501;\n');
+    fprintf(fileID, 'GR_tby, -0.0466028705274942;\n');
+    fprintf(fileID, 'IT_tby, 0.0222376408197778;\n');
+    fprintf(fileID, 'NL_tby, 0.113012105819699;\n');
+    fprintf(fileID, 'PT_tby, -0.0242200598497534;\n');
+    fprintf(fileID, 'DE_tby, 0.0623161050500509;\n');
+    fprintf(fileID, 'RU_tby, 0.0594985182084918;\n');
+    fprintf(fileID, 'RW_tby, -0.00544586845861045;\n');
+    fprintf(fileID, 'RA_nuc, 0.90;\n');
     fprintf(fileID, 'AT_nuc, 0.65;\n');
     fprintf(fileID, 'BE_nuc, 0.65;\n');
     fprintf(fileID, 'ES_nuc, 0.65;\n');
