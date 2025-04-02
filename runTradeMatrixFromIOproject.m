@@ -159,8 +159,8 @@ function writeTradeModFile(aFileName, aTable, sizeStruct, countries, countriesAu
     % //TODO: to be delted at some point once we have a more elegant way to
     % do it
     fprintf(fileID, 'RA_tby, 0.295845481096323;\n');
-    fprintf(fileID, 'AT_tby, 0.0590048273247692;;\n');
-    fprintf(fileID, 'BE_tby, 0.097760354486184;;\n');
+    fprintf(fileID, 'AT_tby, 0.0590048273247692;\n');
+    fprintf(fileID, 'BE_tby, 0.097760354486184;\n');
     fprintf(fileID, 'ES_tby, 0.0149158507329361;\n');
     fprintf(fileID, 'FI_tby, 0.0523095729115864;\n');
     fprintf(fileID, 'FR_tby, 0.0024733397043501;\n');
