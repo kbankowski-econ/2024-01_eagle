@@ -154,7 +154,7 @@ A crucial aspect to be incorporated into our model extension is the significant 
     \centering
     \caption{The magnitude of imports across euro area countries, compared to Japan and the US. \label{fig1}}
     \includegraphics[width=150mm]{figures/importMagnitude.png}
-    \vspace{5mm} \source{World Integrated Trade Solution Database of the World Bank.}
+    \vspace{5mm} \source{World Integrated Trade Solution Database of the World Bank, 2022 data.}
     % \\TODO: check the data source
     %\desc{The fiscal shock is based on a comparable increase in government purchases in both regions, representing an ex-ante 1\% of GDP fiscal expansion at the union level.}
 \end{figure}
@@ -195,14 +195,18 @@ To capture both the direct and indirect effects in the steady-steady bilateral t
 
 The short-coming of the OECD Input-Output tables is that it only provides data for total gross fixed capital formation in the economy, while the EAGLE model with fiscal extension also requires the imported share of government and private investment separately. To accurately estimate the steady-state split between the two types of gross fixed capital formation, we use IMF's Investment and Capital Stock dataset (\citet{FAS2025}), which holds information about government and private investments, and apply the proportional ratios to the import share calculated from the ICIO tables.
 
-The trade data-based estimates reveal that the import content, expressed as a share of national GDP, varies across countries and demand components. In this context, small open economies such as Austria, Belgium, and countries in the rest of euro area exhibit higher import intensities compared to larger economies, implying a relatively greater leakage of national economic policies. Also, government demand components tend to be less import-intensive than private demand components, a pattern that holds consistently across all countries. The data suggest that government sectors display a relatively strong home bias in their spending preferences. The figure below presents 
+The trade data-based estimates reveal that the import content, expressed as a share of national GDP, varies across countries and demand components. In this context, small open economies such as Austria, Belgium, and countries in the rest of euro area exhibit higher import intensities compared to larger economies, implying a relatively greater leakage of national economic policies. Also, government demand components tend to be less import-intensive than private demand components, a pattern that holds consistently across all countries. The data suggest that government sectors display a relatively strong home bias in their spending preferences. The figure below presents share of imports in the final demand of each demand components. 
 
 \begin{figure}[H]
     \centering
     \caption{Import content of final demand components (share of the import content). \label{fig7}}
     \includegraphics{figures/importContent.png}
-    \vspace{5mm} \source{Own calculations based on OECD input-output tables.}
+    \vspace{5mm} \source{Own calculations based on OECD and IMF data.}
 \end{figure}
+
+%Taxes 
+Beyond the bilateral shares, we also calibrate shares of final demand components as a share of GDP, using the same input-output tables, as well as tax rates, using OECD datasets (\citet{OECD_data}). The tax rates in the model include labour, capital, consumption tax, and social security contributions both by the employers, and the employees. 
+
 
 \section{Macroeconomic model properties}
 
