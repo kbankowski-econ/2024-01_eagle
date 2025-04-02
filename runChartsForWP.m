@@ -2,7 +2,6 @@
 clear all; close all; clc;
 utils.call.paths;
 envi = environment.setup;
-project_path = 'D:\2024-01_eagle'
 
 %% Loading the staedy state results
 modelResults = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'steady7', 'Output', 'steady7_results.mat'));
