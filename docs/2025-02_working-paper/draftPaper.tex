@@ -126,6 +126,14 @@
 % 1 Importance of heterogenity and interdependence
 Interdependence and heterogeneity in the euro area are central to understanding the region's macroeconomic dynamics, given its unique institutional framework, where a common monetary policy operates alongside decentralized fiscal and structural policies. Interdependence arises primarily through strong trade linkages and the transmission of monetary policy, implying that shocks in one member state—such as fiscal adjustments—can propagate across the union, amplifying volatility and influencing policy effectiveness. At the same time, persistent heterogeneity, reflected in disparities in productivity, debt dynamics, and structural rigidities, stems from differentiated policy priorities, institutional legacies, and varying degrees of economic resilience. These asymmetries pose challenges for union-wide stabilization efforts and risk exacerbating economic fragmentation. A comprehensive understanding of both interdependence and heterogeneity within the Economic and Monetary Union (EMU) is therefore essential for designing policies that mitigate fragmentation risks, enhance shock absorption, and reconcile national policy autonomy with collective stability. In this context, the development of analytical tools to improve euro area-wide institutions' capacity—such as the European Central Bank (ECB)—to assess and address these dynamics is of critical importance.
 
+\begin{figure}[H]
+    \centering
+    \caption{The magnitude of imports across euro area countries, compared to Japan and the US. \label{fig1}}
+    \includegraphics[width=150mm]{figures/importMagnitude.png}
+    \vspace{5mm} \source{World Integrated Trade Solution Database of the World Bank, 2022 data.}
+    % \\TODO: check the data source
+    %\desc{The fiscal shock is based on a comparable increase in government purchases in both regions, representing an ex-ante 1\% of GDP fiscal expansion at the union level.}
+\end{figure}
 
 % 2 We establish a more granular version of EAGLE with 11 original member states
 A key macroeconomic framework employed within the Eurosystem to analyze both interdependence and heterogeneity in the EMU has been the EAGLE model, developed in the 2010s (\citet{Gomesaetal2012}). This multi-country extension of the seminal New Area-Wide Model initially represented the euro area as a two-region economy—Germany and the rest of the euro area—alongside the United States and the rest of the world. While EAGLE has proven valuable for assessing economic policies within a multi-country setting, its structure limits its ability to evaluate large-scale initiatives such as the Next Generation EU (NGEU) program, which involves complex cross-country interactions. Moreover, the model abstracts from the role of individual euro area economies (except for Germany), despite their significant contributions to the union's aggregate dynamics. 
@@ -133,7 +141,20 @@ A key macroeconomic framework employed within the Eurosystem to analyze both int
 To address these limitations, we extend the EAGLE framework by distinguishing 10 early euro-adopting countries—Austria, Belgium, Finland, France, Germany, Greece, Italy, the Netherlands, Portugal, and Spain. In addition, we explicitly single out the rest of the European Union (i.e., EU countries outside the euro area), given its strong economic ties with the Eurozone. This extension enhances the model's ability to capture country-specific dynamics and provides a more granular representation of economic interdependencies within the EMU.
 
 
-\section{Model extension}
+\section{The model}
+
+\subsection{The model extension}
+
+% 3 The model embdes a meaningful fiscal policy
+Our model extension incorporates a meaningful role for fiscal policy, which was absent in the original EAGLE framework but introduced in later extensions (see \citet{Clancyetal2016}). Specifically, government expenditure is disaggregated into government consumption and investment. Government consumption enters the utility function as part of a composite consumption basket alongside private consumption, thereby generating utility for households. In this setup, public consumption is not wasteful but exhibits complementarity with private consumption. Similarly, government investment brings benefits as it contributes to the accumulation of public capital, which enhances the productive capacity of the economy over time. Additionally, our model accounts for the direct import content of both types of government spending, recognizing that, a share of public purchases is allocated to imported goods, especially in small open economies.
+
+% 4 Trade calibration is a major challenge
+A crucial aspect to be incorporated into our model extension is the significant role of trade in interconnecting the euro area and linking it to the global economy. The euro area is characterized by deep regional integration, facilitated by the single currency and the European Single Market. Intra-euro area trade constitutes a substantial share of member states' total trade flows, with Germany often serving as a central node, both as a major exporter and importer. At the same time, the euro area maintains a strong trade presence globally, ranking among the world's largest trading blocs. Its openness to trade, with total trade exceeding 30\% of GDP, underscores its importance as a global trading hub. When measured by the import-to-GDP ratio, euro area economies exhibit significantly higher openness compared to other major advanced economies, such as Japan and the United States (see Figure \ref{fig1}). Additionally, the euro area has historically maintained on aggregate sizable trade surpluses, largely driven by its strong manufacturing sector. These trade dynamics are critical for understanding macroeconomic shock transmission within the euro area and beyond, and we aim to incorporate these features comprehensively in our extended model.
+
+All demand components in the EAGLE model (i.e., private consumption, government consumption, private investment, and government investment) consist of both tradable and non-tradable goods. Tradable goods, in turn, are further divided into domestically produced and imported goods. Accurately representing trade dynamics requires a precise estimation of the import content for each country and each demand component. To achieve this, we follow the methodology established by \citet{Bussiere-et-al_2013_aejMacro} and utilize Inter-Country Input-Output (ICIO) tables published by the \citet{ICIO2024}. 
+
+
+\subsection{The model calibration}
 
 \begin{landscape}
     \input{tables/hhAndFirmBehavior.tex}
@@ -147,27 +168,9 @@ To address these limitations, we extend the EAGLE framework by distinguishing 10
     \input{tables/monetaryFiscalPolicy.tex}
 \end{landscape}
 
-% 3 The model embdes a meaningful fiscal policy
-Our model extension incorporates a meaningful role for fiscal policy, which was absent in the original EAGLE framework but introduced in later extensions (see \citet{Clancyetal2016}). Specifically, government expenditure is disaggregated into government consumption and investment. Government consumption enters the utility function as part of a composite consumption basket alongside private consumption, thereby generating utility for households. In this setup, public consumption is not wasteful but exhibits complementarity with private consumption. Similarly, government investment brings benefits as it contributes to the accumulation of public capital, which enhances the productive capacity of the economy over time. Additionally, our model accounts for the direct import content of both types of government spending, recognizing that, a share of public purchases is allocated to imported goods, especially in small open economies.
-
-% 4 Trade calibration is a major challenge
-A crucial aspect to be incorporated into our model extension is the significant role of trade in interconnecting the euro area and linking it to the global economy. The euro area is characterized by deep regional integration, facilitated by the single currency and the European Single Market. Intra-euro area trade constitutes a substantial share of member states' total trade flows, with Germany often serving as a central node, both as a major exporter and importer. At the same time, the euro area maintains a strong trade presence globally, ranking among the world's largest trading blocs. Its openness to trade, with total trade exceeding 30\% of GDP, underscores its importance as a global trading hub. When measured by the import-to-GDP ratio, euro area economies exhibit significantly higher openness compared to other major advanced economies, such as Japan and the United States (see Figure \ref{fig1}). Additionally, the euro area has historically maintained on aggregate sizable trade surpluses, largely driven by its strong manufacturing sector. These trade dynamics are critical for understanding macroeconomic shock transmission within the euro area and beyond, and we aim to incorporate these features comprehensively in our extended model.
-
-\begin{figure}[H]
-    \centering
-    \caption{The magnitude of imports across euro area countries, compared to Japan and the US. \label{fig1}}
-    \includegraphics[width=150mm]{figures/importMagnitude.png}
-    \vspace{5mm} \source{World Integrated Trade Solution Database of the World Bank, 2022 data.}
-    % \\TODO: check the data source
-    %\desc{The fiscal shock is based on a comparable increase in government purchases in both regions, representing an ex-ante 1\% of GDP fiscal expansion at the union level.}
-\end{figure}
-
 Calibrating the trade matrix is a major technical challenge in extending the EAGLE framework. The expanded model, which includes 12 euro area countries, the rest of the world, and the United States, encompasses nearly 10,000 endogenous variables. Computing the steady state for a model of this scale remains a complex task, requiring the application of a "divide-and-conquer" algorithm, also known as homotopy in Dynare (see \citet{Adjemianetal2024}). We first solve for the steady state of a simplified version of the model, where all regions are symmetric and economic sectors are dominated by a single type of good. From this initial steady state, we gradually adjust parameters toward their target values, ensuring a smooth transition to an equilibrium where all economic ratios and trade specifications align with observed data. Among the various calibration steps, the adjustment of bilateral trade flows presents the greatest challenge. Successfully calibrating the model requires computing multiple intermediate steady states before converging on the final set of bilateral shares.
 
 % 5 This is how we calibrate trade
-%Introduction 
-
-All demand components in the EAGLE model (i.e., private consumption, government consumption, private investment, and government investment) consist of both tradable and non-tradable goods. Tradable goods, in turn, are further divided into domestically produced and imported goods. Accurately representing trade dynamics requires a precise estimation of the import content for each country and each demand component. To achieve this, we follow the methodology established by \citet{Bussiere-et-al_2013_aejMacro} and utilize Inter-Country Input-Output (ICIO) tables published by the \citet{ICIO2024}. 
 
 %Inter-Output tables
 
