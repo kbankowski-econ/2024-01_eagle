@@ -29,9 +29,9 @@ dynare('shock_ea_epsr1.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleP
 
 %%
 eaepsrDatabank = databank.fromArray(oo_.endo_simul', M_.endo_names, qq(0,4));
-serToPlot = (eaepsrDatabank.EAM_r-eaepsrDatabank.EAM_r(qq(0,4)))*100;
+serToPlot = (eaepsrDatabank.DE_r-eaepsrDatabank.DE_r(qq(0,4)))*100;
 plot(serToPlot{qq(1,1): qq(50,4)});
-title('EAM r')
+title('DE r')
 ylabel('p.p. deviation from steady state')
 
 %% analying the output of the simulation
@@ -55,19 +55,13 @@ for aParam = string(reshape(monetarySimOutput.M_.param_names, 1, []))
     paramStruct.(aParam) = monetarySimOutput.M_.params(strcmp(aParam, monetarySimOutput.M_.param_names));
 end
 
-[endoStruct.EAA_ysn, ssStruct.EAA_ysn]
-[endoStruct.EAB_ysn, ssStruct.EAB_ysn]
-[endoStruct.EAA_cgy, ssStruct.EAA_cgy]
-[endoStruct.EAB_cgy, ssStruct.EAB_cgy]
-[endoStruct.EAB_y, ssStruct.EAB_y]
-[endoStruct.EAA_y, ssStruct.EAA_y]
-
+[endoStruct.RA_ysn, ssStruct.DE_ysn]
 
 aEndoVar = "EA_y";
 irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)/ssStruct.(aEndoVar)-1)*100;
 irfStruct.(aEndoVar) 
 
-aItemList = ["EA_y", "EA_pic4"];
+aItemList = ["EA_y"];
 allItemList = aItemList;
 
 for aItem = aItemList
@@ -77,8 +71,8 @@ for aItem = aItemList
         , contributionSeries.lhs.(aItem) ...
         ] = createContributions( ...
             char(aItem) ...
-            , Series2Dseries(endoStruct) ...
-            , Series2Dseries(ssStruct) ...
+            , functions.plotting1.Series2Dseries(endoStruct) ...
+            , functions.plotting1.Series2Dseries(ssStruct) ...
         );
     allItemList = [allItemList, contributionSeries.contrib.(aItem).Comment];
 end

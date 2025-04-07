@@ -6,7 +6,7 @@
 
 @#include "modeqs_govInv.mod"
 
-load_params_and_steady_state('eagle_steady_govInv_refined.txt');
+load_params_and_steady_state('eagle_steady_stage_trade.txt');
 
 steady(solve_algo = 5, markowitz = 5);
 
