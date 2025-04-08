@@ -66293,6 +66293,7 @@ US_rer = 1;
 // Euroarea-wide variables
 //-------------
 // GDP
+[name = 'EA_y']
 EA_y = 
 	(
 	RA_size*RA_pybar*RA_y
@@ -66384,6 +66385,7 @@ EA_bf =
 	+ DE_size
 );
 // Annual inflation
+[name = 'EA_pic4']
 EA_pic4 = 1 
 		* RA_pic4^(RA_size/(
 				+ RA_size
