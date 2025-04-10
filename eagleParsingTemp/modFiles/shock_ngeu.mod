@@ -6,65 +6,62 @@
 
 @#include "modeqs_govInv.mod"
 
-load_params_and_steady_state('eagle_steady_govInv_refined.txt');
+load_params_and_steady_state('eagle_steady_stage_trade.txt');
 
-EAB_rhoig = 0; //if we don't want persistent shock
-EAC_rhoig = 0; //if we don't want persistent shock
-EAD_rhoig = 0; //if we don't want persistent shock
-EAE_rhoig = 0; //if we don't want persistent shock
-EAG_rhoig = 0; //if we don't want persistent shock
-EAH_rhoig = 0; //if we don't want persistent shock
-EAI_rhoig = 0; //if we don't want persistent shock
-EAJ_rhoig = 0; //if we don't want persistent shock
-EAK_rhoig = 0; //if we don't want persistent shock
-EAL_rhoig = 0; //if we don't want persistent shock
-EAM_rhoig = 0; //if we don't want persistent shock
+RA_rhoig = 0; //if we don't want persistent shock
+AT_rhoig = 0; //if we don't want persistent shock
+BE_rhoig = 0; //if we don't want persistent shock
+FI_rhoig = 0; //if we don't want persistent shock
+FR_rhoig = 0; //if we don't want persistent shock
+NL_rhoig = 0; //if we don't want persistent shock
+ES_rhoig = 0; //if we don't want persistent shock
+GR_rhoig = 0; //if we don't want persistent shock
+IT_rhoig = 0; //if we don't want persistent shock
+PT_rhoig = 0; //if we don't want persistent shock
+DE_rhoig = 0; //if we don't want persistent shock
+RU_rhoig = 0; //if we don't want persistent shock
 
 steady(solve_algo = 5, markowitz = 5);
 
 shocks;
 
-var EAB_epsgi;
+var AT_epsgi;
 periods 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32;
 values 0 0 0 0 0.00069 0.00069 0.00069 0.00069 0.00134 0.00134 0.00134 0.00134 0.00094 0.00094 0.00094 0.00094 0.00069 0.00069 0.00069 0.00069 0.00028 0.00028 0.00028 0.00028 0 0 0 0 0 0 0 0;
 
-var EAC_epsgi;
+var BE_epsgi;
 periods 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32;
 values 0.00031 0.00031 0.00031 0.00031 0.0009 0.0009 0.0009 0.0009 0.00062 0.00062 0.00062 0.00062 0.00118 0.00118 0.00118 0.00118 0.00147 0.00147 0.00147 0.00147 0.00128 0.00128 0.00128 0.00128 0 0 0 0 0 0 0 0;
 
-var EAD_epsgi;
+var FI_epsgi;
 periods 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32;
 values 0.00003 0.00003 0.00003 0.00003 0.00014 0.00014 0.00014 0.00014 0.00045 0.00045 0.00045 0.00045 0.00151 0.00151 0.00151 0.00151 0.00161 0.00161 0.00161 0.00161 0.00046 0.00046 0.00046 0.00046 0 0 0 0 0 0 0 0;
 
-var EAE_epsgi;
+var FR_epsgi;
 periods 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32;
 values 0.00306 0.00306 0.00306 0.00306 0.00341 0.00341 0.00341 0.00341 0.00189 0.00189 0.00189 0.00189 0.00139 0.00139 0.00139 0.00139 0.00024 0.00024 0.00024 0.00024 0.00092 0.00092 0.00092 0.00092 0 0 0 0 0 0 0 0;
 
-var EAG_epsgi;
+var NL_epsgi;
 periods 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32;
 values 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 
-var EAH_epsgi;
+var ES_epsgi;
 periods 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32;
 values 0.00182 0.00182 0.00182 0.00182 0.00298 0.00298 0.00298 0.00298 0.00545 0.00545 0.00545 0.00545 0.00825 0.00825 0.00825 0.00825 0.01022 0.01022 0.01022 0.01022 0.01083 0.01083 0.01083 0.01083 0.00483 0.00483 0.00483 0.00483 0 0 0 0;
 
-var EAI_epsgi;
+var GR_epsgi;
 periods 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32;
 values 0.00115 0.00115 0.00115 0.00115 0.00442 0.00442 0.00442 0.00442 0.00757 0.00757 0.00757 0.00757 0.01326 0.01326 0.01326 0.01326 0.01929 0.01929 0.01929 0.01929 0.02775 0.02775 0.02775 0.02775 0 0 0 0 0 0 0 0;
 
-var EAJ_epsgi;
-periods 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32;
-values 0 0 0 0 0.00037 0.00037 0.00037 0.00037 0.00038 0.00038 0.00038 0.00038 0.00034 0.00034 0.00034 0.00034 0.00033 0.00033 0.00033 0.00033 0.00029 0.00029 0.00029 0.00029 0 0 0 0 0 0 0 0;
-
-var EAK_epsgi;
+var IT_epsgi;
 periods 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32;
 values 0.00055 0.00055 0.00055 0.00055 0.00354 0.00354 0.00354 0.00354 0.00521 0.00521 0.00521 0.00521 0.01086 0.01086 0.01086 0.01086 0.01472 0.01472 0.01472 0.01472 0.01403 0.01403 0.01403 0.01403 0 0 0 0 0 0 0 0;
 
-var EAL_epsgi;
+var PT_epsgi;
 periods 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32;
 values 0.00031 0.00031 0.00031 0.00031 0.00188 0.00188 0.00188 0.00188 0.00464 0.00464 0.00464 0.00464 0.01053 0.01053 0.01053 0.01053 0.0177 0.0177 0.0177 0.0177 0.0198 0.0198 0.0198 0.0198 0 0 0 0 0 0 0 0;
 
-var EAM_epsgi;
+var DE_epsgi;
 periods 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32;
 values 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 

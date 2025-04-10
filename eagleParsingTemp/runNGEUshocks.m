@@ -1,17 +1,15 @@
 utils.call.paths;
-
-ngeuCtryListModNames = ["EAB", "EAC", "EAD", "EAE", "EAG", "EAH", "EAI", "EAJ", "EAK", "EAL", "EAM"];
-ngeuCtryListStdNames = ["AT", "BE", "FI", "FR", "NL", "ES", "GR", "IE", "IT", "PT", "DE"];
+ngeuCtryListStdNames = ["AT", "BE", "FI", "FR", "NL", "ES", "GR", "IT", "PT", "DE"];
 
 % cding to a proper folder
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 
 %%
-ngeuInput = load("/Users/kk/Documents/0000-00_work/2021-05_ECB-MC/ecb-mc/databases/FiscalBMENote/shockInput_NGEU_24repFQ_AEJun24.mat");
-gdpInput = load("/Users/kk/Documents/0000-00_work/2021-05_ECB-MC/ecb-mc/databases/FiscalBMENote/ltGDP_GovCo2024.mat");
+ngeuInput = load(fullfile(project_path, "shockInput_NGEU_24repFQ_AEJun24.mat"));
+gdpInput = load(fullfile(project_path, "ltGDP_GovCo2024.mat"));
 
 for aCtry = ngeuCtryListStdNames
-    ngeuEagleInput.(ngeuCtryListModNames(aCtry == ngeuCtryListStdNames)) = ngeuInput.shockInput.Qrat.(aCtry).GovInv;
+    ngeuEagleInput.(aCtry) = ngeuInput.shockInput.Qrat.(aCtry).GovInv;
 end
 
 for aCtryName = databank.fieldNames(ngeuInput.shockInput.A)
@@ -19,6 +17,7 @@ for aCtryName = databank.fieldNames(ngeuInput.shockInput.A)
 end
 
 databank.toCSV(ngeuChartInput, fullfile(project_path, "databases/inputNGEUchart.csv"), "Decimal", 3, "Comments", false, "Class", false);
+databank.toCSV(ngeuEagleInput, fullfile(project_path, "databases/inputNGEUshock.csv"), "Decimal", 5, "Comments", false, "Class", false);
 
 %% deterministic simulation
 dynare('shock_ngeu.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
@@ -57,13 +56,13 @@ end
 
 aEndoVar = "EA_y";
 irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)/ssStruct.(aEndoVar)-1)*100;
-aEndoVar = "EAH_y";
+aEndoVar = "ES_y";
 irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)/ssStruct.(aEndoVar)-1)*100;
-aEndoVar = "EAM_y";
+aEndoVar = "DE_y";
 irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)/ssStruct.(aEndoVar)-1)*100;
-aEndoVar = "EAM_ex";
+aEndoVar = "DE_ex";
 irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)/ssStruct.(aEndoVar)-1)*100;
-aEndoVar = "EAM_r";
+aEndoVar = "DE_r";
 irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)-ssStruct.(aEndoVar))*100;
 aEndoVar = "EA_pic4";
 irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)-ssStruct.(aEndoVar))*100;
@@ -126,8 +125,8 @@ dynare('eagleModelFiscalShocksStoch.mod', sprintf('-I%s/%s/submodules', project_
 function panelContributions(contributionSeries, projectPath)
 
     % ctry lists
-    ctryListModNames = ["EAA", "EAB", "EAC", "EAD", "EAE", "EAF", "EAG", "EAH", "EAI", "EAJ", "EAK", "EAL", "EAM"];
-    ctryListStdNames = ["EA rest", "AT", "BE", "FI", "FR", "LU", "NL", "ES", "GR", "IE", "IT", "PT", "DE"]; 
+    ctryListModNames = ["RA", "AT", "BE", "FI", "FR", "NL", "ES", "GR", "IT", "PT", "DE"];
+    ctryListStdNames = ["EA rest", "AT", "BE", "FI", "FR", "NL", "ES", "GR", "IT", "PT", "DE"]; 
     contributionSeries.contrib = databank.redate(contributionSeries.contrib, qq(1, 1), qq(2021, 1));
     contributionSeries.total = databank.redate(contributionSeries.total, qq(1, 1), qq(2021, 1));
 
@@ -218,7 +217,7 @@ function panelSpillOvers(irfStruct, projectPath)
     irfStruct = databank.redate(irfStruct, qq(1, 1), qq(2021, 1));
     
     % Please specify the list of the variables to plot   
-    VarListToPlot = ["EAH_y", "EAM_y", "EAM_ex", "EAM_r"];
+    VarListToPlot = ["ES_y", "DE_y", "DE_ex", "DE_r"];
     TitleList = ["Spanish GDP", "German GDP", "German exports", "EA nominal rate"];
     
     % Please specify the date range of the series
