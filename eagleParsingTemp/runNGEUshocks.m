@@ -125,8 +125,8 @@ dynare('eagleModelFiscalShocksStoch.mod', sprintf('-I%s/%s/submodules', project_
 function panelContributions(contributionSeries, projectPath)
 
     % ctry lists
-    ctryListModNames = ["RA", "AT", "BE", "FI", "FR", "NL", "ES", "GR", "IT", "PT", "DE"];
-    ctryListStdNames = ["EA rest", "AT", "BE", "FI", "FR", "NL", "ES", "GR", "IT", "PT", "DE"]; 
+    % ctryListModNames = ["RA", "AT", "BE", "FI", "FR", "NL", "ES", "GR", "IT", "PT", "DE"];
+    % ctryListStdNames = ["AT", "BE", "DE", "ES", "FI", "FR", "GR", "IT", "NL", "PT", "EA rest"]; 
     contributionSeries.contrib = databank.redate(contributionSeries.contrib, qq(1, 1), qq(2021, 1));
     contributionSeries.total = databank.redate(contributionSeries.total, qq(1, 1), qq(2021, 1));
 
@@ -165,11 +165,17 @@ function panelContributions(contributionSeries, projectPath)
             , 'Fontweight', 'normal' ...
         );
     
-        % actual data
-            bars_ = barcon( ...
-                contributionSeries.contrib.(aItem){DateRange} ...
-                , "ColorMap", cell2mat(contributionSeries.colorTable{contributionSeries.contrib.(aItem).Comment, :}) ...
-                , 'EdgeColor', 'none');
+        % Get the order of contributors
+        contribNames = contributionSeries.contrib.(aItem).Comment;
+        
+        % Extract color map in that same order
+        colorMapOrdered = cell2mat(contributionSeries.colorTable{contribNames, :});
+        
+        % Plot
+        bars_ = barcon( ...
+            contributionSeries.contrib.(aItem){DateRange} ...
+            , "ColorMap", colorMapOrdered ...
+            , 'EdgeColor', 'none');
         % targets
             line_ = plot( ...
                 contributionSeries.total.(aItem){DateRange} ...
@@ -195,7 +201,14 @@ function panelContributions(contributionSeries, projectPath)
     
     end 
 
-    legendLabels = [ctryListStdNames, "EA total"];
+    % Remove suffix (e.g., "_pic4") and keep only country codes
+    legendLabels = regexprep(contribNames, '_.*$', '');
+    
+    % Escape underscores in case some remain (just in case)
+    legendLabels = replace(legendLabels, '_', '\\_');
+    
+    % Add "EA total"
+    legendLabels = [legendLabels, "EA total"];
     leg = legend( ...
         [bars_, line_] ...
         , legendLabels ...
@@ -207,7 +220,7 @@ function panelContributions(contributionSeries, projectPath)
     leg.Layout.Tile = 'north'; 
 
     % Save graph
-    fileName = fullfile(projectPath, "docs/2024-12_RCC-workshop/figures/effectNGEU");
+    fileName = fullfile(projectPath, "docs/2025-02_working-paper/figures/effectNGEU");
     exportgraphics(t, sprintf('%s.png',fileName),'BackgroundColor','none');
 end
 
@@ -273,7 +286,7 @@ function panelSpillOvers(irfStruct, projectPath)
     end 
 
     % Save graph
-    fileName = fullfile(projectPath, "docs/2024-12_RCC-workshop/figures/effectNGEUspillovers");
+    fileName = fullfile(projectPath, "docs/2025-02_working-paper/figures/effectNGEUspillovers");
     exportgraphics(t, sprintf('%s.png',fileName),'BackgroundColor','none');
 end
 
@@ -339,6 +352,6 @@ function panelTotal(irfStruct, projectPath)
     end 
 
     % Save graph
-    fileName = fullfile(projectPath, "docs/2024-12_RCC-workshop/figures/effectNGEUtotal");
+    fileName = fullfile(projectPath, "docs/2025-02_working-paper/figures/effectNGEUtotal");
     exportgraphics(t, sprintf('%s.png',fileName),'BackgroundColor','none');
 end

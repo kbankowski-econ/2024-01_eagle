@@ -8,7 +8,6 @@
 
 load_params_and_steady_state('eagle_steady_stage_trade.txt');
 
-RA_rhoig = 0; //if we don't want persistent shock
 AT_rhoig = 0; //if we don't want persistent shock
 BE_rhoig = 0; //if we don't want persistent shock
 FI_rhoig = 0; //if we don't want persistent shock
@@ -19,7 +18,7 @@ GR_rhoig = 0; //if we don't want persistent shock
 IT_rhoig = 0; //if we don't want persistent shock
 PT_rhoig = 0; //if we don't want persistent shock
 DE_rhoig = 0; //if we don't want persistent shock
-RU_rhoig = 0; //if we don't want persistent shock
+
 
 steady(solve_algo = 5, markowitz = 5);
 
