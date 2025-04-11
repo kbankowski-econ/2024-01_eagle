@@ -24,6 +24,8 @@ function ssNationalAccounts(envi, aStruct, fileName)
     fprintf(fid, utils.prepareTableLine(envi, 'Private consumption', 'cy', "cy", aStruct.ssValues));
     fprintf(fid, utils.prepareTableLine(envi, 'Private investment', 'iy', "iy", aStruct.ssValues));
     fprintf(fid, utils.prepareTableLine(envi, 'Public consumption', 'cgy', "cgy", aStruct.ssValues));
+    fprintf(fid, utils.prepareTableLine(envi, 'Private investment', 'igy', "igy", aStruct.ssValues));
+
 
     % Trade section
     fprintf(fid, '    \\multicolumn{15}{l}{\\textbf{Trade}} \\\\\n');
