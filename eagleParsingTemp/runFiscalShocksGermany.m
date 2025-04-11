@@ -28,9 +28,9 @@ cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 dynare('shock_germany_gy.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
 eabGyDatabank = databank.fromArray(oo_.endo_simul', M_.endo_names, qq(0,4));
 %%
-serToPlot = (eabGyDatabank.EAA_cgy-eabGyDatabank.EAA_cgy(qq(0,4)))*100;
+serToPlot = (eabGyDatabank.EA_cgy-eabGyDatabank.EA_cgy(qq(0,4)))*100;
 plot(serToPlot{qq(1,1): qq(50,4)});
-title('EAA GY')
+title('EA GY')
 ylabel('p.p. deviation from steady state')
 
 %% analying the output of the simulation
@@ -54,12 +54,12 @@ for aParam = string(reshape(DeFiscalSimOutput.M_.param_names, 1, []))
     paramStruct.(aParam) = DeFiscalSimOutput.M_.params(strcmp(aParam, DeFiscalSimOutput.M_.param_names));
 end
 
-[endoStruct.EAA_ysn, ssStruct.EAA_ysn]
-[endoStruct.EAB_ysn, ssStruct.EAB_ysn]
-[endoStruct.EAA_cgy, ssStruct.EAA_cgy]
-[endoStruct.EAB_cgy, ssStruct.EAB_cgy]
-[endoStruct.EAB_y, ssStruct.EAB_y]
-[endoStruct.EAA_y, ssStruct.EAA_y]
+% [endoStruct.EAA_ysn, ssStruct.EAA_ysn]
+% [endoStruct.EAB_ysn, ssStruct.EAB_ysn]
+% [endoStruct.EAA_cgy, ssStruct.EAA_cgy]
+% [endoStruct.EAB_cgy, ssStruct.EAB_cgy]
+% [endoStruct.EAB_y, ssStruct.EAB_y]
+% [endoStruct.EAA_y, ssStruct.EAA_y]
 
 
 aEndoVar = "EA_y";
@@ -189,6 +189,6 @@ function panelContributions(contributionSeries, projectPath, subProjectPath)
     end 
         
     % Save graph
-    fileName = fullfile(projectPath, "docs/GermanyfiscalContributions_Big12");
+    fileName = fullfile(projectPath, "docs/2025-02_working-paper/figures/GermanyfiscalContributions");
     exportgraphics(t, sprintf('%s.png',fileName),'BackgroundColor','none');
 end

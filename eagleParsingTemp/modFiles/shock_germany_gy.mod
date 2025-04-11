@@ -6,14 +6,14 @@
 
 @#include "modeqs_govInv.mod"
 
-load_params_and_steady_state('eagle_steady_govInv_refined.txt');
+load_params_and_steady_state('eagle_steady_stage_trade.txt');
 
-EAM_rhocg=0; //if we don't want persistent shock
+DE_rhocg=0; //if we don't want persistent shock
 
 steady(solve_algo = 5, markowitz = 5);
 
 shocks;
-var EAM_epsgc;
+var DE_epsgc;
 periods 1:4;
 values 0.01;
 end;
