@@ -65734,6 +65734,7 @@ US_rer = 1;
 // Euroarea-wide variables
 //-------------
 // GDP
+[name = 'EA_y']
 EA_y = 
 	(
 	RA_size*RA_pybar*RA_y
@@ -65825,6 +65826,7 @@ EA_bf =
 	+ DE_size
 );
 // Annual inflation
+[name = 'EA_pic4']
 EA_pic4 = 1 
 		* RA_pic4^(RA_size/(
 				+ RA_size
@@ -66721,19 +66723,19 @@ DE_size, 0.051284;
 RU_size, 0.025804;
 RW_size, 0.533315;
 US_size, 0.255838;
-RA_tby, 0.295845481096323;
-AT_tby, 0.0590048273247692;
-BE_tby, 0.097760354486184;
-ES_tby, 0.0149158507329361;
-FI_tby, 0.0523095729115864;
-FR_tby, 0.0024733397043501;
-GR_tby, -0.0466028705274942;
-IT_tby, 0.0222376408197778;
-NL_tby, 0.113012105819699;
-PT_tby, -0.0242200598497534;
-DE_tby, 0.0623161050500509;
-RU_tby, 0.0594985182084918;
-RW_tby, -0.00544586845861045;
+RA_tby, 0.295845;
+AT_tby, 0.059005;
+BE_tby, 0.097760;
+ES_tby, 0.014916;
+FI_tby, 0.052310;
+FR_tby, 0.002473;
+GR_tby, -0.046603;
+IT_tby, 0.022238;
+NL_tby, 0.113012;
+PT_tby, -0.024220;
+DE_tby, 0.062316;
+RU_tby, 0.059499;
+RW_tby, -0.005446;
 RA_nuc, 0.90;
 AT_nuc, 0.65;
 BE_nuc, 0.65;
