@@ -187,6 +187,6 @@ function panelContributions(contributionSeries, projectPath, subProjectPath)
     end 
         
     % Save graph
-    fileName = fullfile(projectPath, "docs/monetaryContributions_Big12");
+    fileName = fullfile(projectPath, "docs/2025-02_working-paper/figures/monetaryContributions");
     exportgraphics(t, sprintf('%s.png',fileName),'BackgroundColor','none');
 end
