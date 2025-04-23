@@ -28,9 +28,9 @@ cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 dynare('shock_germany_gy.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
 eabGyDatabank = databank.fromArray(oo_.endo_simul', M_.endo_names, qq(0,4));
 %%
-serToPlot = (eabGyDatabank.EA_cgy-eabGyDatabank.EA_cgy(qq(0,4)))*100;
+serToPlot = (eabGyDatabank.DE_cgy-eabGyDatabank.DE_cgy(qq(0,4)))*100;
 plot(serToPlot{qq(1,1): qq(50,4)});
-title('EA GY')
+title('DE GY')
 ylabel('p.p. deviation from steady state')
 
 %% analying the output of the simulation
