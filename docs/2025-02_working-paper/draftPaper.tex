@@ -171,38 +171,81 @@ Regarding the general government specification, the budget encompasses multiple 
 % (6)
 Our model distinguishes four types of final goods: private consumption, private investment, government consumption, and government investment. Each type of good is assembled by firms operating under perfect competition. At the origin of the process, the inputs for assembly are intermediate goods produced by firms under monopolistic competition in two sectors—non-tradable (akin to services) and tradable (akin to manufacturing). Tradable goods are also subject to international trade. Consequently, goods purchased by the government may contain imported components, with the extent of import content determined by a home-bias parameter. Although all final goods ultimately originate from the intermediate tradable and non-tradable sectors, the assembly processes are independent across categories. In practice, this implies, for example, that the import content of government consumption differs from that of private consumption, reflecting the tendency of governments to purchase domestically produced goods. Further details on the calibration of these parameters are provided in Subsection~\ref{sec:model_calibration}, with the specification of the multi-country trade structure constituting a major contribution of this paper.
 
-Concretely, each of four types of good $Q_t^i$ is assembled with a constant elasticity of substitution (CES) technology (see Eq. \ref{eq1}), using tradable goods $T T_t^i$ and domestically produced non-tradable goods $N T_t^i$. The parameter $v_i$ governs the share of each good in the bundle and the parameter $\mu_{i}$ is the elasticity of substitution between each of them.
+Specifically, each of the four types of goods $Q_t^i$ is assembled using a constant elasticity of substitution (CES) technology (see Eq.~\ref{eq1}), combining tradable goods $TT_t^i$ and domestically produced non-tradable goods $NT_t^i$. The parameter $v_i$ governs the share of each input in the bundle, while $\mu_i$ denotes the elasticity of substitution between them:
 \begin{equation}
     \label{eq1}
-    Q_t^i=\left[v_i^{\frac{1}{\mu_{i}}}\left(T T_t^i\right)^{\frac{\mu_{i-1}}{\mu_{i}}}+\left(1-v_i\right)^{\frac{1}{\mu_{i}}}\left(N T_t^i\right)^{\frac{\mu_i-1}{\mu_{i}}}\right]^{\frac{\mu_{i}}{\mu_{i-1}}}
+    Q_t^i = \left[v_i^{\frac{1}{\mu_i}}\left(TT_t^i\right)^{\frac{\mu_i-1}{\mu_i}} + \left(1-v_i\right)^{\frac{1}{\mu_i}}\left(NT_t^i\right)^{\frac{\mu_i-1}{\mu_i}}\right]^{\frac{\mu_i}{\mu_i-1}}.
 \end{equation}
-Tradable good $T T_t^{i}$, in turn, is produced analogously as a composite of home-produced tradable goods $H T_t^{i}$ and goods that are imported $I M_t^{i}$ (see Eq. \ref{eqTT}). The  preference for domestic goods, or the degree of home bias, in the tradable sector is represented by $v_{T i}$, with $\mu_{T i}$ being the elasticity of substitution between domestic and foreign goods. 
+The tradable good $TT_t^i$, in turn, is produced analogously as a CES composite of home-produced tradable goods $HT_t^i$ and imported goods $IM_t^i$ (see Eq.~\ref{eqTT}). The parameter $v_{Ti}$ captures the home bias in tradable goods, and $\mu_{Ti}$ measures the elasticity of substitution between domestic and imported goods:
 \begin{equation}
     \label{eqTT}
-    T T_t^{i}=\left[v_{T i}^{\frac{1}{\mu_{T i}}}\left(H T_t^{i}\right)^{\frac{\mu_{T i-1}^{\mu_{T i}}}{\mu}}+\left(1-v_{T i}\right)^{\frac{1}{\mu_{T i}}}\left(I M_t^{i}\right)^{\frac{\mu_{T i}-1}{\mu_{T i}}}\right]^{\frac{\mu_{T i}}{\mu_{T i}-1}}
+    TT_t^i = \left[v_{Ti}^{\frac{1}{\mu_{Ti}}}\left(HT_t^i\right)^{\frac{\mu_{Ti}-1}{\mu_{Ti}}} + \left(1-v_{Ti}\right)^{\frac{1}{\mu_{Ti}}}\left(IM_t^i\right)^{\frac{\mu_{Ti}-1}{\mu_{Ti}}}\right]^{\frac{\mu_{Ti}}{\mu_{Ti}-1}}.
 \end{equation}
-Finally, imported good $I M_t^{i}$ consists of a bundle of bilateral imports of tradable goods $I M_t^{i, C O}$ (see Eq. \ref{eqIM}). The parameter $v_{M i}^{H, C O}$ represents the share of imports from country/region $CO$ with $\sum_{C O \neq H}\left(v_{M i}^{H, C O}\right) = 1.$ The parameter $\mu_{M i}$ is the elasticity of substitution between goods imported from various regions/ countries.
+Finally, the imported good $IM_t^i$ consists of a bundle of bilateral imports $IM_t^{i,CO}$ (see Eq.~\ref{eqIM}). The parameter $v_{Mi}^{H,CO}$ represents the share of imports from country or region $CO$, satisfying $\sum_{CO \neq H} v_{Mi}^{H,CO} = 1$, and $\mu_{Mi}$ is the elasticity of substitution between imports from different trading partners:
+\footnote{The country-specific import weights $v_{Mi}^{H,CO}$ are determined as a function of the relative economic size and the degree of openness. Accordingly, even if Germany exhibits the same degree of openness to imports from Austria and France, the weight $v_{Mi}^{DE,AT}$ is expected to be significantly smaller than $v_{Mi}^{DE,FR}$, reflecting the larger size of the French economy.}
 \begin{equation}
     \label{eqIM}
-    I M_t^{i}=\left[\sum_{C O \neq H}\left(v_{M i}^{H, C O}\right)^{\frac{1}{\mu_{M i}}}\left(I M_t^{i, C O}\right)^{\frac{\mu_{M C_C-1}}{\mu_M i}}\right]^{\frac{\mu_{M i}}{\mu_{M C_C}-1}}
+    IM_t^i = \left[\sum_{CO \neq H} \left(v_{Mi}^{H,CO}\right)^{\frac{1}{\mu_{Mi}}} \left(IM_t^{i,CO}\right)^{\frac{\mu_{Mi}-1}{\mu_{Mi}}}\right]^{\frac{\mu_{Mi}}{\mu_{Mi}-1}}.
 \end{equation}
+Figure~\ref{finalGoodProduction} offers a detailed schematic representation of the production of a final good of type $i$.
+\footnote{The CES aggregation framework also implies that the prices of final goods are composite indices of the prices of their underlying components. Specifically, the price of a final good of type $i$, denoted $P_{i,t}$, the price of the tradable component $P_{TTi,t}$, and the price of imported tradable goods $P_{IMi,t}$ are defined as follows: 
+\[
+P_{i,t} = \left[v_i\left(P_{TTi,t}\right)^{1-\mu_i} + \left(1-v_i\right)\left(P_{NT,t}\right)^{1-\mu_i}\right]^{\frac{1}{1-\mu_i}},
+\]
+\[
+P_{TTi,t} = \left[v_{Ti}\left(P_{HT,t}\right)^{1-\mu_{Ti}} + \left(1-v_{Ti}\right)\left(P_{IMi,t}\right)^{1-\mu_{Ti}}\right]^{\frac{1}{1-\mu_{Ti}}},
+\]
+\[
+P_{IMi,t} = \left[\sum_{CO \neq H} v_{Mi}^{H,CO}\left(P_{IM,t}^{CO}\right)^{1-\mu_{Mi}}\right]^{\frac{1}{1-\mu_{Mi}}}.
+\]
+Here, $v_i$, $v_{Ti}$, and $v_{Mi}^{H,CO}$ are the share parameters governing the aggregation at each respective level, and $\mu_i$, $\mu_{Ti}$, and $\mu_{Mi}$ denote the elasticities of substitution. The price $P_{NT,t}$ corresponds to domestically produced non-tradable goods, $P_{HT,t}$ denotes the price of home-produced tradable goods, and $P_{IM,t}^{CO}$ refers to the price of imports from country or region $CO$. The structure of price aggregation mirrors the quantity aggregation.}
 
 \begin{figure}[H]
     \centering
-    \caption{The magnitude of imports across euro area countries, compared to Japan and the US. \label{diagram}}
-\begin{tikzpicture}[node distance=1cm, every node/.style={draw, rounded corners, minimum width=1.5cm, minimum height=0.6cm, align=center}]
-  % Nodes
-  \node (qt) {$Q_t$};
-  \node[above right=of qt] (a1) {};
-  \node[below right=of qt] (a2) {};
-  \node[right=of a1] (b1) {};
-
-  % Edges
-  \draw[-] (qt) -- (a1);
-
-\end{tikzpicture}
-\vspace{5mm} \source{World Integrated Trade Solution Database of the World Bank, 2022 data.}
+    \caption{Production of final goods in the EAGLE model.
+    \label{finalGoodProduction}}
+    \begin{tikzpicture}[
+        node distance=0.8cm and 1.2cm, % tighter horizontal and vertical distances
+        every node/.style={draw, rounded corners, minimum width=1.5cm, minimum height=0.6cm, align=center, font=\small},
+        every path/.style={draw, thick} % thick lines, no arrows
+      ]
+      
+      % Nodes
+      \node (qt) {$Q_t^i$};
+      \node[above right=of qt] (tt) {$TT_t^i$};
+      \node[below right=of qt] (nt) {$NT_t^i$};
+      \node[above right=of tt] (ht) {$HT_t^i$};
+      \node[below right=of tt, yshift=-0.4cm] (im) {$IM_t^i$};
+      \node[above right=of im] (im_CO1) {$IM_t^{i,CO^2}$};
+      \node[right=of im] (im_CO2) {$\dots$};
+      \node[below right=of im] (im_CO3) {$IM_t^{i,CO^{14}}$};
+    
+      % Edges
+      \draw (qt) -- (tt);
+      \draw (qt) -- (nt);
+      \draw (tt) -- (ht);
+      \draw (tt) -- (im);
+      \draw (im) -- (im_CO1);
+      \draw (im) -- (im_CO2);
+      \draw (im) -- (im_CO3);
+    
+    \end{tikzpicture}
+    
+    \vspace{5mm}
+    \small
+    \begin{minipage}{0.9\textwidth}
+    \textit{Notes}: $Q_t^i$ denotes the final good of type $i$; $TT_t^i$ is the tradable component used in the bundling of good $i$; $NT_t^i$ is the non-tradable component; $HT_t^i$ represents the home-produced tradable good; $IM_t^i$ denotes the imported tradable good; $IM_t^{i,CO^2}$ and $IM_t^{i,CO^{14}}$ represent imports from countries $CO^2$ and $CO^{14}$, respectively, used in the production of good $i$.
+    \end{minipage}
 \end{figure}
+
+Each country or region in the EAGLE model may experience a mismatch between the value of imported and exported goods, resulting in a trade surplus or deficit. The trade balance in nominal terms is defined as the difference between exports and imports (see Eq.~\ref{eqTradeBalance}):
+\footnote{$S_t^{H,CO}$ in Eq.~\ref{eqTradeBalance} denotes the nominal exchange rate that converts the price $P_{X,t}^{H,CO}$, expressed in the currency of country $CO$, into the currency of country $H$.}
+\begin{equation} \label{eqTradeBalance}
+    TB_t \equiv \sum_{CO \neq H} S_t^{H,CO} P_{X,t}^{H,CO} \underbrace{\frac{s^{CO}}{s^H} IM_t^{CO,H}}_{\equiv X_t^{H,CO}} - \sum_{CO \neq H} P_{IM,t}^{H,CO} IM_t^{H,CO}.
+\end{equation}
+From Eq.~\ref{eqTradeBalance}, it follows that exports from country $H$ to country $CO$ ($X_t^{H,CO}$) correspond to the imports of country $CO$ from $H$, adjusted by the ratio of their economic sizes $\left(\frac{s^{CO}}{s^H}\right)$. If country $CO$ is significantly larger than country $H$, even minor changes in its bilateral imports from $H$ can generate substantial fluctuations in $H$'s exports. This feature presents a major challenge for calibrating and solving the steady state of the model when incorporating countries of vastly different sizes (see Section~\ref{sec:model_calibration} for further discussion).
+
+
 \subsection{The model calibration} \label{sec:model_calibration}
 
 \begin{landscape}
