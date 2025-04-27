@@ -56,6 +56,8 @@
 \usepackage{eurosym}
 \usepackage{pdflscape} % Added package for landscape pages
 \usepackage{array} % Added package to ensure landscape tables with fixed width
+\usepackage{tikz}
+\usetikzlibrary{positioning}
 
 
 \titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
@@ -169,9 +171,38 @@ Regarding the general government specification, the budget encompasses multiple 
 % (6)
 Our model distinguishes four types of final goods: private consumption, private investment, government consumption, and government investment. Each type of good is assembled by firms operating under perfect competition. At the origin of the process, the inputs for assembly are intermediate goods produced by firms under monopolistic competition in two sectors—non-tradable (akin to services) and tradable (akin to manufacturing). Tradable goods are also subject to international trade. Consequently, goods purchased by the government may contain imported components, with the extent of import content determined by a home-bias parameter. Although all final goods ultimately originate from the intermediate tradable and non-tradable sectors, the assembly processes are independent across categories. In practice, this implies, for example, that the import content of government consumption differs from that of private consumption, reflecting the tendency of governments to purchase domestically produced goods. Further details on the calibration of these parameters are provided in Subsection~\ref{sec:model_calibration}, with the specification of the multi-country trade structure constituting a major contribution of this paper.
 
+Concretely, each of four types of good $Q_t^i$ is assembled with a constant elasticity of substitution (CES) technology (see Eq. \ref{eq1}), using tradable goods $T T_t^i$ and domestically produced non-tradable goods $N T_t^i$. The parameter $v_i$ governs the share of each good in the bundle and the parameter $\mu_{i}$ is the elasticity of substitution between each of them.
+\begin{equation}
+    \label{eq1}
+    Q_t^i=\left[v_i^{\frac{1}{\mu_{i}}}\left(T T_t^i\right)^{\frac{\mu_{i-1}}{\mu_{i}}}+\left(1-v_i\right)^{\frac{1}{\mu_{i}}}\left(N T_t^i\right)^{\frac{\mu_i-1}{\mu_{i}}}\right]^{\frac{\mu_{i}}{\mu_{i-1}}}
+\end{equation}
+Tradable good $T T_t^{i}$, in turn, is produced analogously as a composite of home-produced tradable goods $H T_t^{i}$ and goods that are imported $I M_t^{i}$ (see Eq. \ref{eqTT}). The  preference for domestic goods, or the degree of home bias, in the tradable sector is represented by $v_{T i}$, with $\mu_{T i}$ being the elasticity of substitution between domestic and foreign goods. 
+\begin{equation}
+    \label{eqTT}
+    T T_t^{i}=\left[v_{T i}^{\frac{1}{\mu_{T i}}}\left(H T_t^{i}\right)^{\frac{\mu_{T i-1}^{\mu_{T i}}}{\mu}}+\left(1-v_{T i}\right)^{\frac{1}{\mu_{T i}}}\left(I M_t^{i}\right)^{\frac{\mu_{T i}-1}{\mu_{T i}}}\right]^{\frac{\mu_{T i}}{\mu_{T i}-1}}
+\end{equation}
+Finally, imported good $I M_t^{i}$ consists of a bundle of bilateral imports of tradable goods $I M_t^{i, C O}$ (see Eq. \ref{eqIM}). The parameter $v_{M i}^{H, C O}$ represents the share of imports from country/region $CO$ with $\sum_{C O \neq H}\left(v_{M i}^{H, C O}\right) = 1.$ The parameter $\mu_{M i}$ is the elasticity of substitution between goods imported from various regions/ countries.
+\begin{equation}
+    \label{eqIM}
+    I M_t^{i}=\left[\sum_{C O \neq H}\left(v_{M i}^{H, C O}\right)^{\frac{1}{\mu_{M i}}}\left(I M_t^{i, C O}\right)^{\frac{\mu_{M C_C-1}}{\mu_M i}}\right]^{\frac{\mu_{M i}}{\mu_{M C_C}-1}}
+\end{equation}
 
+\begin{figure}[H]
+    \centering
+    \caption{The magnitude of imports across euro area countries, compared to Japan and the US. \label{diagram}}
+\begin{tikzpicture}[node distance=1cm, every node/.style={draw, rounded corners, minimum width=1.5cm, minimum height=0.6cm, align=center}]
+  % Nodes
+  \node (qt) {$Q_t$};
+  \node[above right=of qt] (a1) {};
+  \node[below right=of qt] (a2) {};
+  \node[right=of a1] (b1) {};
 
+  % Edges
+  \draw[-] (qt) -- (a1);
 
+\end{tikzpicture}
+\vspace{5mm} \source{World Integrated Trade Solution Database of the World Bank, 2022 data.}
+\end{figure}
 \subsection{The model calibration} \label{sec:model_calibration}
 
 \begin{landscape}
