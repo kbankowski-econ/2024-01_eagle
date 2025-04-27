@@ -238,6 +238,48 @@ Here, $v_i$, $v_{Ti}$, and $v_{Mi}^{H,CO}$ are the share parameters governing th
     \end{minipage}
 \end{figure}
 
+Countries or regions in the EAGLE model are subject to the following aggregate resource constraint, which can be expressed in nominal terms as shown in Eq.~\ref{eqResourceConstraint}. Total production $Y_t$ is allocated to satisfy the domestic share of final demand from the private sector ($C_t$ and $I_t$) and the general government ($G_{C,t}$ and $G_{I,t}$), as well as to meet external demand through exports.\footnote{Some of the production is absorbed by transaction costs and capital utilization costs, represented by $\Gamma_{v,t}$ and $\Gamma_u(u_t)K_t$, respectively.} Figure~\ref{figAggResourceConstraint} provides a schematic representation of the creation and utilization of resources within a country or region in the EAGLE model.
+\begin{equation} \label{eqResourceConstraint}
+    \begin{aligned}
+        P_{Y,t} Y_t =\ & P_{C,t} \left(C_t + \Gamma_{v,t}\right) + P_{I,t} \left(I_t + \Gamma_u(u_t) K_t\right) + P_{G_C,t} G_{C,t} + P_{G_I,t} G_{I,t} \\
+        & + \sum_{CO \neq H} \frac{s^{CO}}{s^H} S_t^{H,CO} P_{X,t}^{H,CO} IM_t^{CO,H} - \sum_{CO \neq H} P_{IM,t}^{H,CO} IM_t^{H,CO}.
+    \end{aligned}
+\end{equation}
+
+
+\begin{figure}[H]
+    \centering
+    \caption{Production of final goods in the EAGLE model.
+    \label{figAggResourceConstraint}}
+    \begin{tikzpicture}[
+        node distance=0.8cm and 1.2cm, % tighter horizontal and vertical distances
+        every node/.style={draw, rounded corners, minimum width=1.5cm, minimum height=0.6cm, align=center, font=\small},
+        every path/.style={draw, thick} % thick lines, no arrows
+      ]
+      
+      % Nodes
+      \node (tb) {trade\\ balance};
+      \node[above right=of tb] (demand) {final\\ demand};
+      \node[below right=of tb] (y) {production\\ $\left(y_t\right)$};
+      \node[right=of demand, yshift=+2cm] (im1) {$IM_t^i$};
+      \node[right=of demand, yshift=+1cm] (im2) {$IM_t^i$};
+      \node[right=of demand, yshift=-1cm] (im3) {$IM_t^i$};
+      \node[right=of demand, yshift=-2cm] (im4) {$IM_t^i$};
+
+    
+      % Edges
+      \draw (tb) -- (demand);
+      \draw (tb) -- (y);
+    
+    \end{tikzpicture}
+    
+    \vspace{5mm}
+    \small
+    \begin{minipage}{0.9\textwidth}
+    \textit{Notes}: $Q_t^i$ denotes the final good of type $i$; $TT_t^i$ is the tradable component used in the bundling of good $i$; $NT_t^i$ is the non-tradable component; $HT_t^i$ represents the home-produced tradable good; $IM_t^i$ denotes the imported tradable good; $IM_t^{i,CO^2}$ and $IM_t^{i,CO^{14}}$ represent imports from countries $CO^2$ and $CO^{14}$, respectively, used in the production of good $i$.
+    \end{minipage}
+\end{figure}
+
 Each country or region in the EAGLE model may experience a mismatch between the value of imported and exported goods, resulting in a trade surplus or deficit. The trade balance in nominal terms is defined as the difference between exports and imports (see Eq.~\ref{eqTradeBalance}):
 \footnote{$S_t^{H,CO}$ in Eq.~\ref{eqTradeBalance} denotes the nominal exchange rate that converts the price $P_{X,t}^{H,CO}$, expressed in the currency of country $CO$, into the currency of country $H$.}
 \begin{equation} \label{eqTradeBalance}
