@@ -352,10 +352,10 @@ where $R_t^*$ denotes the gross return on the internationally traded bond $B_{t+
 \paragraph{Euro area aggregation} As the euro area is composed of ten individual countries and a residual region, each modeled as an open economy, it is necessary to construct aggregate indicators for the monetary union. In particular, aggregation is required for euro area-wide output $(Y_t^{EA})$ and inflation $(\Pi_t^{EA,4})$, as defined in Equations~\ref{eqEAoutput} and~\ref{eqEAinflation}, respectively. The set of countries and the residual region constituting the euro area is denoted by \(\mathcal{I}^{EA} = \{ \text{AT}, \text{BE}, \text{FI}, \text{FR}, \text{DE}, \text{GR}, \text{IT}, \text{NL}, \text{PT}, \text{ES}, \text{RA} \}\), where \(s^i\) represents the relative size of country or region \(i\).
 
 \begin{equation} \label{eqEAoutput}
-    Y_t^{EA} \equiv \frac{\sum\limits_{i \in \mathcal{I}^{EA}} s^i \overline{P_Y^{i}} Y_t^i}{\sum\limits_{i \in \mathcal{I}^{EA}} s^i},
+    Y_t^{EA} \equiv \frac{\sum\limits_{\mathrm{CO} \in \mathcal{I}^{EA}} s^\mathrm{CO} \overline{P_Y^{\mathrm{CO}}} Y_t^\mathrm{CO}}{\sum\limits_{\mathrm{CO} \in \mathcal{I}^{EA}} s^\mathrm{CO}},
 \end{equation}
 \begin{equation} \label{eqEAinflation}
-    \Pi_t^{EA,4} \equiv \prod\limits_{i \in \mathcal{I}^{EA}} \left( \frac{P_{C,t}^i}{P_{C,t-4}^i} \right)^{\frac{s^i}{\sum\limits_{i \in \mathcal{I}^{EA}} s^i}}.
+    \Pi_t^{EA,4} \equiv \prod\limits_{\mathrm{CO} \in \mathcal{I}^{EA}} \left( \frac{P_{C,t}^\mathrm{CO}}{P_{C,t-4}^\mathrm{CO}} \right)^{\frac{s^\mathrm{CO}}{\sum\limits_{\mathrm{CO} \in \mathcal{I}^{EA}} s^\mathrm{CO}}}.
 \end{equation}
 
 \paragraph{Fiscal and monetary policy rules} Regarding the general government specification, the budget encompasses multiple tax and expenditure instruments. With the possibility to issue bonds, governments are not required to balance the budget in each period. Following the extension by \citet{Clancyetal2016}, both government consumption and investment play a meaningful role in the model. Specifically, government consumption exhibits complementarity with private consumption, while government investment contributes to the stock of productive capital, thereby enhancing the production capacity of the private sector.
