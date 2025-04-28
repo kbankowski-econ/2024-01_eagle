@@ -164,60 +164,60 @@ The EAGLE model has been extensively employed to analyze a wide range of economi
 As in other large-scale DSGE models, our version incorporates a share of non-Ricardian households and features several real and nominal rigidities, including habit formation, adjustment costs for investment and imports, and Calvo-type pricing of intermediate goods and wage setting with partial indexation. In this subsection, we limit the description of the model to those elements that are crucial for our extension and policy application, with particular focus on the bundling of final goods, trade specification, and policy rules. For all other aspects, we refer the reader to \citet{Gomesaetal2012} for the general model characteristics and to \citet{Clancyetal2016} for the enhanced fiscal policy specification.
 
 % (6)
-\paragraph{Final good production.} 
+\paragraph{Final good production.}
 
-Our model distinguishes four types of final goods: private consumption, private investment, government consumption, and government investment. Each type of good is assembled by firms operating under perfect competition. At the origin of the process, the inputs for assembly are intermediate goods produced by firms under monopolistic competition in two sectors—non-tradable (akin to services) and tradable (akin to manufacturing). Tradable goods are also subject to international trade. Consequently, goods purchased by the government may contain imported components, with the extent of import content determined by a home-bias parameter. Although all final goods ultimately originate from the intermediate tradable and non-tradable sectors, the assembly processes are independent across categories. In practice, this implies, for example, that the import content of government consumption differs from that of private consumption, reflecting the tendency of governments to purchase domestically produced goods. Further details on the calibration of these parameters are provided in Subsection~\ref{sec:model_calibration}, with the specification of the multi-country trade structure constituting a major contribution of this paper.
+Our model distinguishes four types of final goods: private consumption, private investment, government consumption, and government investment. Each type of good is assembled by firms operating under perfect competition. At the origin of the process, the inputs for assembly are intermediate goods produced by firms under monopolistic competition in two production sectors—non-tradable (akin to services) and tradable (akin to manufacturing). Tradable goods are also subject to international trade. Consequently, goods purchased by the government may contain imported components, with the extent of import content determined by a home-bias parameter. Although all final goods ultimately originate from the intermediate tradable and non-tradable production sectors, the assembly processes are independent across categories. In practice, this implies, for example, that the import content of government consumption differs from that of private consumption, reflecting the tendency of governments to purchase domestically produced goods. Further details on the calibration of these parameters are provided in Subsection~\ref{sec:model_calibration}, with the specification of the multi-country trade structure constituting a major contribution of this paper.
 
-Specifically, each of the four types of goods $Q_t^i$ is assembled using a constant elasticity of substitution (CES) technology (see Eq.~\ref{eq1}), combining tradable goods $TT_t^i$ and domestically produced non-tradable goods $NT_t^i$. The parameter $v_i$ governs the share of each input in the bundle, while $\mu_i$ denotes the elasticity of substitution between them:
+Specifically, each of the four types of final goods $Q_t^s$ is assembled using a constant elasticity of substitution (CES) technology (see Eq.~\ref{eq1}), combining tradable goods $TT_t^s$ and domestically produced non-tradable goods $NT_t^s$. The parameter $v_s$ governs the share of each input in the bundle, while $\mu_s$ denotes the elasticity of substitution between them:
 \begin{equation}
     \label{eq1}
-    Q_t^i = \left[v_i^{\frac{1}{\mu_i}}\left(TT_t^i\right)^{\frac{\mu_i-1}{\mu_i}} + \left(1-v_i\right)^{\frac{1}{\mu_i}}\left(NT_t^i\right)^{\frac{\mu_i-1}{\mu_i}}\right]^{\frac{\mu_i}{\mu_i-1}}.
+    Q_t^s = \left[v_s^{\frac{1}{\mu_s}}\left(TT_t^s\right)^{\frac{\mu_s-1}{\mu_s}} + \left(1-v_s\right)^{\frac{1}{\mu_s}}\left(NT_t^s\right)^{\frac{\mu_s-1}{\mu_s}}\right]^{\frac{\mu_s}{\mu_s-1}}.
 \end{equation}
-The tradable good $TT_t^i$, in turn, is produced analogously as a CES composite of home-produced tradable goods $HT_t^i$ and imported goods $IM_t^i$ (see Eq.~\ref{eqTT}). The parameter $v_{Ti}$ captures the home bias in tradable goods, and $\mu_{Ti}$ measures the elasticity of substitution between domestic and imported goods:
+The tradable good $TT_t^s$, in turn, is produced analogously as a CES composite of home-produced tradable goods $HT_t^s$ and imported goods $IM_t^s$ (see Eq.~\ref{eqTT}). The parameter $v_{Ts}$ captures the home bias in tradable goods, and $\mu_{Ts}$ measures the elasticity of substitution between domestic and imported goods:
 \begin{equation}
     \label{eqTT}
-    TT_t^i = \left[v_{Ti}^{\frac{1}{\mu_{Ti}}}\left(HT_t^i\right)^{\frac{\mu_{Ti}-1}{\mu_{Ti}}} + \left(1-v_{Ti}\right)^{\frac{1}{\mu_{Ti}}}\left(IM_t^i\right)^{\frac{\mu_{Ti}-1}{\mu_{Ti}}}\right]^{\frac{\mu_{Ti}}{\mu_{Ti}-1}}.
+    TT_t^s = \left[v_{Ts}^{\frac{1}{\mu_{Ts}}}\left(HT_t^s\right)^{\frac{\mu_{Ts}-1}{\mu_{Ts}}} + \left(1-v_{Ts}\right)^{\frac{1}{\mu_{Ts}}}\left(IM_t^s\right)^{\frac{\mu_{Ts}-1}{\mu_{Ts}}}\right]^{\frac{\mu_{Ts}}{\mu_{Ts}-1}}.
 \end{equation}
-Finally, the imported good $IM_t^i$ consists of a bundle of bilateral imports $IM_t^{i,CO}$ (see Eq.~\ref{eqIM}). The parameter $v_{Mi}^{H,CO}$ represents the share of imports from country or region $CO$, satisfying $\sum_{CO \neq H} v_{Mi}^{H,CO} = 1$, and $\mu_{Mi}$ is the elasticity of substitution between imports from different trading partners:
-\footnote{The country-specific import weights $v_{Mi}^{H,CO}$ are determined as a function of the relative economic size and the degree of openness. Accordingly, even if Germany exhibits the same degree of openness to imports from Austria and France, the weight $v_{Mi}^{DE,AT}$ is expected to be significantly smaller than $v_{Mi}^{DE,FR}$, reflecting the larger size of the French economy.}
+Finally, the imported good $IM_t^s$ consists of a bundle of bilateral imports $IM_t^{s,CO}$ (see Eq.~\ref{eqIM}). The parameter $v_{Ms}^{H,CO}$ represents the share of imports from country or region $CO$, satisfying $\sum_{CO \neq H} v_{Ms}^{H,CO} = 1$, and $\mu_{Ms}$ is the elasticity of substitution between imports from different trading partners:
 \begin{equation}
     \label{eqIM}
-    IM_t^i = \left[\sum_{CO \neq H} \left(v_{Mi}^{H,CO}\right)^{\frac{1}{\mu_{Mi}}} \left(IM_t^{i,CO}\right)^{\frac{\mu_{Mi}-1}{\mu_{Mi}}}\right]^{\frac{\mu_{Mi}}{\mu_{Mi}-1}}.
+    IM_t^s = \left[\sum_{CO \neq H} \left(v_{Ms}^{H,CO}\right)^{\frac{1}{\mu_{Ms}}} \left(IM_t^{s,CO}\right)^{\frac{\mu_{Ms}-1}{\mu_{Ms}}}\right]^{\frac{\mu_{Ms}}{\mu_{Ms}-1}}.
 \end{equation}
-Figure~\ref{finalGoodProduction} offers a detailed schematic representation of the production of a final good of type $i$.
-\footnote{The CES aggregation framework also implies that the prices of final goods are composite indices of the prices of their underlying components. Specifically, the price of a final good of type $i$, denoted $P_{i,t}$, the price of the tradable component $P_{TTi,t}$, and the price of imported tradable goods $P_{IMi,t}$ are defined as follows: 
+
+\footnote{The country-specific import weights $v_{Ms}^{H,CO}$ are determined as a function of the relative economic size and degree of openness. Accordingly, even if Germany exhibits the same degree of openness to imports from Austria and France, the weight $v_{Ms}^{DE,AT}$ is expected to be significantly smaller than $v_{Ms}^{DE,FR}$, reflecting the larger size of the French economy.}
+
+Figure~\ref{finalGoodProduction} offers a detailed schematic representation of the production of a final good of type $s$.
+
+\footnote{The CES aggregation framework also implies that the prices of final goods are composite indices of the prices of their underlying components. Specifically, the price of a final good of type $s$, denoted $P_{s,t}$, the price of the tradable component $P_{TTs,t}$, and the price of imported tradable goods $P_{IMs,t}$ are defined as follows:
 \[
-P_{i,t} = \left[v_i\left(P_{TTi,t}\right)^{1-\mu_i} + \left(1-v_i\right)\left(P_{NT,t}\right)^{1-\mu_i}\right]^{\frac{1}{1-\mu_i}},
+P_{s,t} = \left[v_s\left(P_{TTs,t}\right)^{1-\mu_s} + \left(1-v_s\right)\left(P_{NT,t}\right)^{1-\mu_s}\right]^{\frac{1}{1-\mu_s}},
 \]
 \[
-P_{TTi,t} = \left[v_{Ti}\left(P_{HT,t}\right)^{1-\mu_{Ti}} + \left(1-v_{Ti}\right)\left(P_{IMi,t}\right)^{1-\mu_{Ti}}\right]^{\frac{1}{1-\mu_{Ti}}},
+P_{TTs,t} = \left[v_{Ts}\left(P_{HT,t}\right)^{1-\mu_{Ts}} + \left(1-v_{Ts}\right)\left(P_{IMs,t}\right)^{1-\mu_{Ts}}\right]^{\frac{1}{1-\mu_{Ts}}},
 \]
 \[
-P_{IMi,t} = \left[\sum_{CO \neq H} v_{Mi}^{H,CO}\left(P_{IM,t}^{CO}\right)^{1-\mu_{Mi}}\right]^{\frac{1}{1-\mu_{Mi}}}.
+P_{IMs,t} = \left[\sum_{CO \neq H} v_{Ms}^{H,CO}\left(P_{IM,t}^{CO}\right)^{1-\mu_{Ms}}\right]^{\frac{1}{1-\mu_{Ms}}}.
 \]
-Here, $v_i$, $v_{Ti}$, and $v_{Mi}^{H,CO}$ are the share parameters governing the aggregation at each respective level, and $\mu_i$, $\mu_{Ti}$, and $\mu_{Mi}$ denote the elasticities of substitution. The price $P_{NT,t}$ corresponds to domestically produced non-tradable goods, $P_{HT,t}$ denotes the price of home-produced tradable goods, and $P_{IM,t}^{CO}$ refers to the price of imports from country or region $CO$. The structure of price aggregation mirrors the quantity aggregation.}
+Here, $v_s$, $v_{Ts}$, and $v_{Ms}^{H,CO}$ are the share parameters governing the aggregation at each respective level, and $\mu_s$, $\mu_{Ts}$, and $\mu_{Ms}$ denote the elasticities of substitution. The price $P_{NT,t}$ corresponds to domestically produced non-tradable goods, $P_{HT,t}$ denotes the price of home-produced tradable goods, and $P_{IM,t}^{CO}$ refers to the price of imports from country or region $CO$. The structure of price aggregation mirrors the quantity aggregation.}
 
 \begin{figure}[H]
     \centering
-    \caption{Production of final goods in the EAGLE model.
-    \label{finalGoodProduction}}
+    \caption{Production of final goods in the EAGLE model.\label{finalGoodProduction}}
     \begin{tikzpicture}[
-        node distance=0.8cm and 1.2cm, % tighter horizontal and vertical distances
+        node distance=0.8cm and 1.2cm,
         every node/.style={draw, rounded corners, minimum width=1.5cm, minimum height=0.6cm, align=center, font=\small},
-        every path/.style={draw, thick} % thick lines, no arrows
+        every path/.style={draw, thick}
       ]
       
-      % Nodes
-      \node (qt) {$Q_t^i$};
-      \node[above right=of qt] (tt) {$TT_t^i$};
-      \node[below right=of qt] (nt) {$NT_t^i$};
-      \node[above right=of tt] (ht) {$HT_t^i$};
-      \node[below right=of tt, yshift=-0.4cm] (im) {$IM_t^i$};
-      \node[above right=of im] (im_CO1) {$IM_t^{i,CO^2}$};
+      \node (qt) {$Q_t^s$};
+      \node[above right=of qt] (tt) {$TT_t^s$};
+      \node[below right=of qt] (nt) {$NT_t^s$};
+      \node[above right=of tt] (ht) {$HT_t^s$};
+      \node[below right=of tt, yshift=-0.4cm] (im) {$IM_t^s$};
+      \node[above right=of im] (im_CO1) {$IM_t^{s,CO^2}$};
       \node[right=of im] (im_CO2) {$\dots$};
-      \node[below right=of im] (im_CO3) {$IM_t^{i,CO^{14}}$};
+      \node[below right=of im] (im_CO3) {$IM_t^{s,CO^{14}}$};
     
-      % Edges
       \draw (qt) -- (tt);
       \draw (qt) -- (nt);
       \draw (tt) -- (ht);
@@ -231,7 +231,7 @@ Here, $v_i$, $v_{Ti}$, and $v_{Mi}^{H,CO}$ are the share parameters governing th
     \vspace{5mm}
     \small
     \begin{minipage}{0.9\textwidth}
-    \textit{Notes}: $Q_t^i$ denotes the final good of type $i$; $TT_t^i$ is the tradable component used in the bundling of good $i$; $NT_t^i$ is the non-tradable component; $HT_t^i$ represents the home-produced tradable good; $IM_t^i$ denotes the imported tradable good; $IM_t^{i,CO^2}$ and $IM_t^{i,CO^{14}}$ represent imports from countries $CO^2$ and $CO^{14}$, respectively, used in the production of good $i$.
+    \textit{Notes}: $Q_t^s$ denotes the final good of type $s$; $TT_t^s$ is the tradable component used in the bundling of good $s$; $NT_t^s$ is the non-tradable component; $HT_t^s$ represents the home-produced tradable good; $IM_t^s$ denotes the imported tradable good; $IM_t^{s,CO^2}$ and $IM_t^{s,CO^{14}}$ represent imports from countries $CO^2$ and $CO^{14}$, respectively, used in the production of good $s$.
     \end{minipage}
 \end{figure}
 
