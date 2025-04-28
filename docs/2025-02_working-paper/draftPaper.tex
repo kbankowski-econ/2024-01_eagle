@@ -346,6 +346,14 @@ Each country or region in the EAGLE model may experience a mismatch between the 
 \end{equation}
 From Eq.~\ref{eqTradeBalance}, it follows that exports from country $H$ to country $CO$ ($X_t^{H,CO}$) correspond to the imports of country $CO$ from $H$, adjusted by the ratio of their economic sizes $\left(\frac{s^{CO}}{s^H}\right)$. If country $CO$ is significantly larger than country $H$, even minor changes in its bilateral imports from $H$ can generate substantial fluctuations in $H$'s exports. This feature presents a major challenge for calibrating and solving the steady state of the model when incorporating countries of vastly different sizes (see Section~\ref{sec:model_calibration} for further discussion).
 
+As the euro area is composed of ten individual countries and a residual region, each modeled as an open economy, it is necessary to construct aggregate indicators for the monetary union. In particular, aggregation is required for euro area-wide output $(Y_t^{EA})$ and inflation $(\Pi_t^{EA,4})$, as defined in Equations~\ref{eqEAoutput} and~\ref{eqEAinflation}, respectively. The set of countries and the residual region constituting the euro area is denoted by \(\mathcal{I}^{EA} = \{ \text{AT}, \text{BE}, \text{FI}, \text{FR}, \text{DE}, \text{GR}, \text{IT}, \text{NL}, \text{PT}, \text{ES}, \text{RA} \}\), where \(s^i\) represents the relative size of country or region \(i\).
+
+\begin{equation} \label{eqEAoutput}
+    Y_t^{EA} \equiv \frac{\sum\limits_{i \in \mathcal{I}^{EA}} s^i \overline{P_Y^{i}} Y_t^i}{\sum\limits_{i \in \mathcal{I}^{EA}} s^i},
+\end{equation}
+\begin{equation} \label{eqEAinflation}
+    \Pi_t^{EA,4} \equiv \prod\limits_{i \in \mathcal{I}^{EA}} \left( \frac{P_{C,t}^i}{P_{C,t-4}^i} \right)^{\frac{s^i}{\sum\limits_{i \in \mathcal{I}^{EA}} s^i}}.
+\end{equation}
 
 \subsection{The model calibration} \label{sec:model_calibration}
 
