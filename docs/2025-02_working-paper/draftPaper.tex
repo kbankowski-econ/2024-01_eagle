@@ -56,6 +56,8 @@
 \usepackage{eurosym}
 \usepackage{pdflscape} % Added package for landscape pages
 \usepackage{array} % Added package to ensure landscape tables with fixed width
+\usepackage{tikz}
+\usetikzlibrary{positioning}
 
 
 \titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
@@ -140,21 +142,153 @@ A key macroeconomic framework employed within the Eurosystem to analyze both int
 
 To address these limitations, we extend the EAGLE framework by distinguishing 10 early euro-adopting countries—Austria, Belgium, Finland, France, Germany, Greece, Italy, the Netherlands, Portugal, and Spain. In addition, we explicitly single out the rest of the European Union (i.e., EU countries outside the euro area), given its strong economic ties with the Eurozone. This extension enhances the model's ability to capture country-specific dynamics and provides a more granular representation of economic interdependencies within the EMU.
 
+% 4 This is just moved from the model section (see whether it fits when working on the introduction)
+A crucial aspect to be incorporated into our model extension is the significant role of trade in interconnecting the euro area and linking it to the global economy. The euro area is characterized by deep regional integration, facilitated by the single currency and the European Single Market. Intra-euro area trade constitutes a substantial share of member states' total trade flows, with Germany often serving as a central node, both as a major exporter and importer. At the same time, the euro area maintains a strong trade presence globally, ranking among the world's largest trading blocs. Its openness to trade, with total trade exceeding 30\% of GDP, underscores its importance as a global trading hub. When measured by the import-to-GDP ratio, euro area economies exhibit significantly higher openness compared to other major advanced economies, such as Japan and the United States (see Figure \ref{fig1}). Additionally, the euro area has historically maintained on aggregate sizable trade surpluses, largely driven by its strong manufacturing sector. These trade dynamics are critical for understanding macroeconomic shock transmission within the euro area and beyond, and we aim to incorporate these features comprehensively in our extended model.
 
 \section{The model}
 
 \subsection{The model extension}
 
-% 3 The model embdes a meaningful fiscal policy
-Our model extension incorporates a meaningful role for fiscal policy, which was absent in the original EAGLE framework but introduced in later extensions (see \citet{Clancyetal2016}). Specifically, government expenditure is disaggregated into government consumption and investment. Government consumption enters the utility function as part of a composite consumption basket alongside private consumption, thereby generating utility for households. In this setup, public consumption is not wasteful but exhibits complementarity with private consumption. Similarly, government investment brings benefits as it contributes to the accumulation of public capital, which enhances the productive capacity of the economy over time. Additionally, our model accounts for the direct import content of both types of government spending, recognizing that, a share of public purchases is allocated to imported goods, especially in small open economies.
+% (1)
+The EAGLE model portrays the global economy as composed of multiple countries/regions, some of which form a monetary union. The original version, initially introduced in \citet{Gomesaetal2010ecbwp} and later published in \citet{Gomesaetal2012}, included Germany, the rest of the euro area, the United States, and the rest of the world. Subsequent versions of the model have modified the country composition to focus on different economic contexts, such as small open economies like Ireland and Slovenia (\citealp{Clancyetal2016}), the four largest euro area economies—Germany, France, Italy, and Spain (\citealp{BokanEtAl2018em})—or non-euro area countries like Hungary (\citealp{BekesiEtAl2017mnbwp}). Regardless of the specific configuration, regions within the EAGLE framework are modeled as open economies, interconnected through bilateral trade relationships and a common monetary policy for euro area members.
 
-% 4 Trade calibration is a major challenge
-A crucial aspect to be incorporated into our model extension is the significant role of trade in interconnecting the euro area and linking it to the global economy. The euro area is characterized by deep regional integration, facilitated by the single currency and the European Single Market. Intra-euro area trade constitutes a substantial share of member states' total trade flows, with Germany often serving as a central node, both as a major exporter and importer. At the same time, the euro area maintains a strong trade presence globally, ranking among the world's largest trading blocs. Its openness to trade, with total trade exceeding 30\% of GDP, underscores its importance as a global trading hub. When measured by the import-to-GDP ratio, euro area economies exhibit significantly higher openness compared to other major advanced economies, such as Japan and the United States (see Figure \ref{fig1}). Additionally, the euro area has historically maintained on aggregate sizable trade surpluses, largely driven by its strong manufacturing sector. These trade dynamics are critical for understanding macroeconomic shock transmission within the euro area and beyond, and we aim to incorporate these features comprehensively in our extended model.
+% (2)
+% \\TODO: for Emile, check the numbers on the EA shares
+% \\TODO: having a chart with the GDP shares could be nice here
+Our version of the EAGLE model advances the representation of the euro area by disaggregating it into ten member states—Austria, Belgium, Finland, France, Germany, Greece, Italy, the Netherlands, Portugal, and Spain—which together account for approximately 95\% of the EMU's GDP, alongside a residual bloc representing the remaining 5\%. In addition to the United States, we distinguish the non-euro area EU region, reflecting its close economic ties with the euro area. Overall, our version of EAGLE comprises 14 countries or regions, constituting, to the best of our knowledge, the most extensive extension of the model to date in terms of country disaggregation.
 
-All demand components in the EAGLE model (i.e., private consumption, government consumption, private investment, and government investment) consist of both tradable and non-tradable goods. Tradable goods, in turn, are further divided into domestically produced and imported goods. Accurately representing trade dynamics requires a precise estimation of the import content for each country and each demand component. To achieve this, we follow the methodology established by \citet{Bussiere-et-al_2013_aejMacro} and utilize Inter-Country Input-Output (ICIO) tables published by the \citet{ICIO2024}. 
+% (3)
+The EAGLE model has been extensively employed to analyze a wide range of economic policy issues, including global fiscal stimulus (\citealp{GomesEtAl2015jimf}), structural reforms (\citealp{Gomesetal2013if}; \citealp{Jacquinot2018springer}; \citealp{Gomes2018jm}), monetary union accession (\citealp{BrzozaBrzezinaEtAl2014oer}), fiscal devaluations (\citealp{GomesEtAl2016em}), trade tariffs and protectionism (\citealp{BoltEtAl2019dnbwp}; \citealp{JacquinotEtAl2022jimf}; \citealp{ClancyEtAl2024ijcb}), financial interlinkages (\citealp{Pariesetal2016ecbwp}; \citealp{BokanEtAl2018em}), and economic risks associated with high government debt (\citealp{BurielEtAl2020ecbwp}). This paper applies the extended version of the EAGLE model to assess the macroeconomic impact of the recently launched multi-year EU-wide investment initiative—Next Generation EU (NGEU). In doing so, it complements existing analyses involving the EAGLE framework (\citealp{Bankowskietal2021ecbOP}; \citealp{Bankowskietal2022ecbOP}; \citealp{Bankowskietal2025ecbOP}) by leveraging the detailed country disaggregation. This enhanced structure enables the assessment of the program's effects on smaller member states, such as Greece and Portugal, which are among the major beneficiaries of the NGEU.
+
+% (4)
+In this subsection, we restrict the description of the model to the elements crucial for our extension, focusing particularly on the trade specification and the construction of aggregates. For all other aspects, we refer the reader to \citet{Gomesaetal2012} for the general model characteristics, and to \citet{Clancyetal2016} for the enhanced fiscal policy specification. The model incorporates a share of non-Ricardian households and features several real and nominal rigidities, including habit formation, adjustment costs for investment and imports, and Calvo-type pricing of intermediate goods and wage setting, with partial indexation. 
+
+% (5)
+Regarding the general government specification, the budget encompasses multiple tax and expenditure instruments. With the possibility to issue bonds, governments are not required to balance the budget in each period. Following the extension by \citet{Clancyetal2016}, both government consumption and investment play a meaningful role in the model. Specifically, government consumption exhibits complementarity with private consumption, while government investment contributes to the stock of productive capital, thereby enhancing the production capacity of the private sector.
+\footnote{The complementarity between government and private consumption is introduced through the specification of a composite good consumed by households, following the approach of \citet{Coenen-et-al_AER_2012}. Specifically, the composite consumption good $\tilde{C}_t$ is modeled as a CES aggregate of final private consumption and final government consumption goods: $\tilde{C}_t = \left[v_{\text{CCES}}^{\frac{1}{\mu_{\text{CCES}}}}\left(C_t\right)^{\frac{\mu_{\text{CCES}}-1}{\mu_{\text{CCES}}}} + \left(1-v_{\text{CCES}}\right)^{\frac{1}{\mu_{\text{CCES}}}}\left(G_{C,t}\right)^{\frac{\mu_{\text{CCES}}-1}{\mu_{\text{CCES}}}}\right]^{\frac{\mu_{\text{CCES}}}{\mu_{\text{CCES}}-1}}$,where $v_{\text{CCES}}$ denotes the share parameter, and $\mu_{\text{CCES}}$ represents the elasticity of substitution between the two component goods.}
+\footnote{The assumption that government investment enhances productivity builds on the work of \citet{LeeperEtAl2010jme}, where public capital accumulation is governed by $K_{G,t+1} = (1-\delta_G)K_{G,t} + G_{I,t}$. This formulation implies that government investment $G_{I,t}$ builds up the stock of public capital $K_{G,t+1}$, which depreciates at the rate $\delta_G$. Public capital, in turn, enters the production function of both tradable and non-tradable goods, specified respectively as $Y_{T,t}^S = z_{T,t} K_{G,t}^{\alpha_G} (K_{T,t}^D)^{\alpha_T} (N_{T,t}^D)^{1-\alpha_T} - \psi_T$ and $Y_{N,t}^S = z_{N,t} K_{G,t}^{\alpha_G} (K_{N,t}^D)^{\alpha_N} (N_{N,t}^D)^{1-\alpha_N} - \psi_N$, thereby enhancing the productive capacity of the private sector. Here, $Y_{T,t}^S$ and $Y_{N,t}^S$ denote sectoral outputs, $z_{T,t}$ and $z_{N,t}$ represent sector-specific productivity levels, $\alpha_G$ measures the contribution of public capital to production, $K_{T,t}^D$ and $K_{N,t}^D$ are private capital inputs, $N_{T,t}^D$ and $N_{N,t}^D$ are labor inputs, $\alpha_T$ and $\alpha_N$ denote the capital shares in the tradable and non-tradable sectors, respectively, and $\psi_T$ and $\psi_N$ capture fixed costs.}
+
+% (6)
+Our model distinguishes four types of final goods: private consumption, private investment, government consumption, and government investment. Each type of good is assembled by firms operating under perfect competition. At the origin of the process, the inputs for assembly are intermediate goods produced by firms under monopolistic competition in two sectors—non-tradable (akin to services) and tradable (akin to manufacturing). Tradable goods are also subject to international trade. Consequently, goods purchased by the government may contain imported components, with the extent of import content determined by a home-bias parameter. Although all final goods ultimately originate from the intermediate tradable and non-tradable sectors, the assembly processes are independent across categories. In practice, this implies, for example, that the import content of government consumption differs from that of private consumption, reflecting the tendency of governments to purchase domestically produced goods. Further details on the calibration of these parameters are provided in Subsection~\ref{sec:model_calibration}, with the specification of the multi-country trade structure constituting a major contribution of this paper.
+
+Specifically, each of the four types of goods $Q_t^i$ is assembled using a constant elasticity of substitution (CES) technology (see Eq.~\ref{eq1}), combining tradable goods $TT_t^i$ and domestically produced non-tradable goods $NT_t^i$. The parameter $v_i$ governs the share of each input in the bundle, while $\mu_i$ denotes the elasticity of substitution between them:
+\begin{equation}
+    \label{eq1}
+    Q_t^i = \left[v_i^{\frac{1}{\mu_i}}\left(TT_t^i\right)^{\frac{\mu_i-1}{\mu_i}} + \left(1-v_i\right)^{\frac{1}{\mu_i}}\left(NT_t^i\right)^{\frac{\mu_i-1}{\mu_i}}\right]^{\frac{\mu_i}{\mu_i-1}}.
+\end{equation}
+The tradable good $TT_t^i$, in turn, is produced analogously as a CES composite of home-produced tradable goods $HT_t^i$ and imported goods $IM_t^i$ (see Eq.~\ref{eqTT}). The parameter $v_{Ti}$ captures the home bias in tradable goods, and $\mu_{Ti}$ measures the elasticity of substitution between domestic and imported goods:
+\begin{equation}
+    \label{eqTT}
+    TT_t^i = \left[v_{Ti}^{\frac{1}{\mu_{Ti}}}\left(HT_t^i\right)^{\frac{\mu_{Ti}-1}{\mu_{Ti}}} + \left(1-v_{Ti}\right)^{\frac{1}{\mu_{Ti}}}\left(IM_t^i\right)^{\frac{\mu_{Ti}-1}{\mu_{Ti}}}\right]^{\frac{\mu_{Ti}}{\mu_{Ti}-1}}.
+\end{equation}
+Finally, the imported good $IM_t^i$ consists of a bundle of bilateral imports $IM_t^{i,CO}$ (see Eq.~\ref{eqIM}). The parameter $v_{Mi}^{H,CO}$ represents the share of imports from country or region $CO$, satisfying $\sum_{CO \neq H} v_{Mi}^{H,CO} = 1$, and $\mu_{Mi}$ is the elasticity of substitution between imports from different trading partners:
+\footnote{The country-specific import weights $v_{Mi}^{H,CO}$ are determined as a function of the relative economic size and the degree of openness. Accordingly, even if Germany exhibits the same degree of openness to imports from Austria and France, the weight $v_{Mi}^{DE,AT}$ is expected to be significantly smaller than $v_{Mi}^{DE,FR}$, reflecting the larger size of the French economy.}
+\begin{equation}
+    \label{eqIM}
+    IM_t^i = \left[\sum_{CO \neq H} \left(v_{Mi}^{H,CO}\right)^{\frac{1}{\mu_{Mi}}} \left(IM_t^{i,CO}\right)^{\frac{\mu_{Mi}-1}{\mu_{Mi}}}\right]^{\frac{\mu_{Mi}}{\mu_{Mi}-1}}.
+\end{equation}
+Figure~\ref{finalGoodProduction} offers a detailed schematic representation of the production of a final good of type $i$.
+\footnote{The CES aggregation framework also implies that the prices of final goods are composite indices of the prices of their underlying components. Specifically, the price of a final good of type $i$, denoted $P_{i,t}$, the price of the tradable component $P_{TTi,t}$, and the price of imported tradable goods $P_{IMi,t}$ are defined as follows: 
+\[
+P_{i,t} = \left[v_i\left(P_{TTi,t}\right)^{1-\mu_i} + \left(1-v_i\right)\left(P_{NT,t}\right)^{1-\mu_i}\right]^{\frac{1}{1-\mu_i}},
+\]
+\[
+P_{TTi,t} = \left[v_{Ti}\left(P_{HT,t}\right)^{1-\mu_{Ti}} + \left(1-v_{Ti}\right)\left(P_{IMi,t}\right)^{1-\mu_{Ti}}\right]^{\frac{1}{1-\mu_{Ti}}},
+\]
+\[
+P_{IMi,t} = \left[\sum_{CO \neq H} v_{Mi}^{H,CO}\left(P_{IM,t}^{CO}\right)^{1-\mu_{Mi}}\right]^{\frac{1}{1-\mu_{Mi}}}.
+\]
+Here, $v_i$, $v_{Ti}$, and $v_{Mi}^{H,CO}$ are the share parameters governing the aggregation at each respective level, and $\mu_i$, $\mu_{Ti}$, and $\mu_{Mi}$ denote the elasticities of substitution. The price $P_{NT,t}$ corresponds to domestically produced non-tradable goods, $P_{HT,t}$ denotes the price of home-produced tradable goods, and $P_{IM,t}^{CO}$ refers to the price of imports from country or region $CO$. The structure of price aggregation mirrors the quantity aggregation.}
+
+\begin{figure}[H]
+    \centering
+    \caption{Production of final goods in the EAGLE model.
+    \label{finalGoodProduction}}
+    \begin{tikzpicture}[
+        node distance=0.8cm and 1.2cm, % tighter horizontal and vertical distances
+        every node/.style={draw, rounded corners, minimum width=1.5cm, minimum height=0.6cm, align=center, font=\small},
+        every path/.style={draw, thick} % thick lines, no arrows
+      ]
+      
+      % Nodes
+      \node (qt) {$Q_t^i$};
+      \node[above right=of qt] (tt) {$TT_t^i$};
+      \node[below right=of qt] (nt) {$NT_t^i$};
+      \node[above right=of tt] (ht) {$HT_t^i$};
+      \node[below right=of tt, yshift=-0.4cm] (im) {$IM_t^i$};
+      \node[above right=of im] (im_CO1) {$IM_t^{i,CO^2}$};
+      \node[right=of im] (im_CO2) {$\dots$};
+      \node[below right=of im] (im_CO3) {$IM_t^{i,CO^{14}}$};
+    
+      % Edges
+      \draw (qt) -- (tt);
+      \draw (qt) -- (nt);
+      \draw (tt) -- (ht);
+      \draw (tt) -- (im);
+      \draw (im) -- (im_CO1);
+      \draw (im) -- (im_CO2);
+      \draw (im) -- (im_CO3);
+    
+    \end{tikzpicture}
+    
+    \vspace{5mm}
+    \small
+    \begin{minipage}{0.9\textwidth}
+    \textit{Notes}: $Q_t^i$ denotes the final good of type $i$; $TT_t^i$ is the tradable component used in the bundling of good $i$; $NT_t^i$ is the non-tradable component; $HT_t^i$ represents the home-produced tradable good; $IM_t^i$ denotes the imported tradable good; $IM_t^{i,CO^2}$ and $IM_t^{i,CO^{14}}$ represent imports from countries $CO^2$ and $CO^{14}$, respectively, used in the production of good $i$.
+    \end{minipage}
+\end{figure}
+
+Countries or regions in the EAGLE model are subject to the following aggregate resource constraint, which can be expressed in nominal terms as shown in Eq.~\ref{eqResourceConstraint}. Total production $Y_t$ is allocated to satisfy the domestic share of final demand from the private sector ($C_t$ and $I_t$) and the general government ($G_{C,t}$ and $G_{I,t}$), as well as to meet external demand through exports.\footnote{Some of the production is absorbed by transaction costs and capital utilization costs, represented by $\Gamma_{v,t}$ and $\Gamma_u(u_t)K_t$, respectively.} Figure~\ref{figAggResourceConstraint} provides a schematic representation of the creation and utilization of resources within a country or region in the EAGLE model.
+\begin{equation} \label{eqResourceConstraint}
+    \begin{aligned}
+        P_{Y,t} Y_t =\ & P_{C,t} \left(C_t + \Gamma_{v,t}\right) + P_{I,t} \left(I_t + \Gamma_u(u_t) K_t\right) + P_{G_C,t} G_{C,t} + P_{G_I,t} G_{I,t} \\
+        & + \sum_{CO \neq H} \frac{s^{CO}}{s^H} S_t^{H,CO} P_{X,t}^{H,CO} IM_t^{CO,H} - \sum_{CO \neq H} P_{IM,t}^{H,CO} IM_t^{H,CO}.
+    \end{aligned}
+\end{equation}
 
 
-\subsection{The model calibration}
+\begin{figure}[H]
+    \centering
+    \caption{Production of final goods in the EAGLE model.
+    \label{figAggResourceConstraint}}
+    \begin{tikzpicture}[
+        node distance=0.8cm and 1.2cm, % tighter horizontal and vertical distances
+        every node/.style={draw, rounded corners, minimum width=1.5cm, minimum height=0.6cm, align=center, font=\small},
+        every path/.style={draw, thick} % thick lines, no arrows
+      ]
+      
+      % Nodes
+      \node (tb) {trade\\ balance};
+      \node[above right=of tb] (demand) {final\\ demand};
+      \node[below right=of tb] (y) {production\\ $\left(y_t\right)$};
+      \node[right=of demand, yshift=+2cm] (im1) {$IM_t^i$};
+      \node[right=of demand, yshift=+1cm] (im2) {$IM_t^i$};
+      \node[right=of demand, yshift=-1cm] (im3) {$IM_t^i$};
+      \node[right=of demand, yshift=-2cm] (im4) {$IM_t^i$};
+
+    
+      % Edges
+      \draw (tb) -- (demand);
+      \draw (tb) -- (y);
+    
+    \end{tikzpicture}
+    
+    \vspace{5mm}
+    \small
+    \begin{minipage}{0.9\textwidth}
+    \textit{Notes}: $Q_t^i$ denotes the final good of type $i$; $TT_t^i$ is the tradable component used in the bundling of good $i$; $NT_t^i$ is the non-tradable component; $HT_t^i$ represents the home-produced tradable good; $IM_t^i$ denotes the imported tradable good; $IM_t^{i,CO^2}$ and $IM_t^{i,CO^{14}}$ represent imports from countries $CO^2$ and $CO^{14}$, respectively, used in the production of good $i$.
+    \end{minipage}
+\end{figure}
+
+Each country or region in the EAGLE model may experience a mismatch between the value of imported and exported goods, resulting in a trade surplus or deficit. The trade balance in nominal terms is defined as the difference between exports and imports (see Eq.~\ref{eqTradeBalance}):
+\footnote{$S_t^{H,CO}$ in Eq.~\ref{eqTradeBalance} denotes the nominal exchange rate that converts the price $P_{X,t}^{H,CO}$, expressed in the currency of country $CO$, into the currency of country $H$.}
+\begin{equation} \label{eqTradeBalance}
+    TB_t \equiv \sum_{CO \neq H} S_t^{H,CO} P_{X,t}^{H,CO} \underbrace{\frac{s^{CO}}{s^H} IM_t^{CO,H}}_{\equiv X_t^{H,CO}} - \sum_{CO \neq H} P_{IM,t}^{H,CO} IM_t^{H,CO}.
+\end{equation}
+From Eq.~\ref{eqTradeBalance}, it follows that exports from country $H$ to country $CO$ ($X_t^{H,CO}$) correspond to the imports of country $CO$ from $H$, adjusted by the ratio of their economic sizes $\left(\frac{s^{CO}}{s^H}\right)$. If country $CO$ is significantly larger than country $H$, even minor changes in its bilateral imports from $H$ can generate substantial fluctuations in $H$'s exports. This feature presents a major challenge for calibrating and solving the steady state of the model when incorporating countries of vastly different sizes (see Section~\ref{sec:model_calibration} for further discussion).
+
+
+\subsection{The model calibration} \label{sec:model_calibration}
 
 \begin{landscape}
     \input{tables/hhAndFirmBehavior.tex}
@@ -169,6 +303,9 @@ All demand components in the EAGLE model (i.e., private consumption, government 
 \end{landscape}
 
 Calibrating the trade matrix is a major technical challenge in extending the EAGLE framework. The expanded model, which includes 12 euro area countries, the rest of the world, and the United States, encompasses nearly 10,000 endogenous variables. Computing the steady state for a model of this scale remains a complex task, requiring the application of a "divide-and-conquer" algorithm, also known as homotopy in Dynare (see \citet{Adjemianetal2024}). We first solve for the steady state of a simplified version of the model, where all regions are symmetric and economic sectors are dominated by a single type of good. From this initial steady state, we gradually adjust parameters toward their target values, ensuring a smooth transition to an equilibrium where all economic ratios and trade specifications align with observed data. Among the various calibration steps, the adjustment of bilateral trade flows presents the greatest challenge. Successfully calibrating the model requires computing multiple intermediate steady states before converging on the final set of bilateral shares.
+
+% this is moved from the previous subsection (see whether this fits optimally)
+Accurately representing trade dynamics requires a precise estimation of the import content for each country and each demand component. To achieve this, we follow the methodology established by \citet{Bussiere-et-al_2013_aejMacro} and utilize Inter-Country Input-Output (ICIO) tables published by the \citet{ICIO2024}. 
 
 % 5 This is how we calibrate trade
 
