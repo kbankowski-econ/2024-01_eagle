@@ -355,6 +355,81 @@ As the euro area is composed of ten individual countries and a residual region, 
     \Pi_t^{EA,4} \equiv \prod\limits_{i \in \mathcal{I}^{EA}} \left( \frac{P_{C,t}^i}{P_{C,t-4}^i} \right)^{\frac{s^i}{\sum\limits_{i \in \mathcal{I}^{EA}} s^i}}.
 \end{equation}
 
+%//TODO: it would be good to have a paragraph on the special role of the US in the trade and bond holding; this is something I do not understand 100\%
+
+%//NOTE: here is the decomposed budget constraint of the government > based on that we have 10 fisccal instruments
+% (1) DE_pcg(-1)*DE_cg(-1)
+% (2) +DE_pig(-1)*DE_ig(-1)
+% (3) +DE_tr(-1)
+% ( ) +DE_b(-1)*DE_pic(-1)^(-1)
+% ( ) +DE_m(-2)*DE_pic(-1)^(-1) 
+% (4) = DE_tauc(-1)*DE_c(-1)
+% (5 & 6) +(DE_taun(-1)+DE_tauwh(-1))*(DE_wi(-1)*DE_ndi(-1)+DE_wj(-1)*DE_ndj(-1))
+% (7) +DE_tauwf(-1)*DE_w(-1)*DE_nd(-1)
+% (8) +DE_tauk(-1)*(DE_rk(-1)*DE_u(-1)-(DE_gammau(-1)+DE_delta)*DE_pi(-1))*DE_k(-1)
+% (9) +DE_taud(-1)*DE_d(-1)
+% (10) +DE_t(-1)
+% ( ) +(DE_r(-1)*(1-DE_gammab(-1)))^(-1)*DE_b
+% ( ) +DE_m(-1);
+
+%//NOTE: let's see how each of these instruments is modelled
+% (1): DE_pcg*DE_cg = DE_cgy*DE_pybar*DE_ybar; > DE_cgy = (1-DE_rhocg)*DE_cgybar+DE_rhocg*DE_cgy(-1)+DE_epsgc;
+% (2): DE_pig*DE_ig = DE_igy*DE_pybar*DE_ybar; > DE_igy = (1-DE_rhoig)*DE_igybar+DE_rhoig*DE_igy(-1)+DE_epsgi;
+% (3) DE_tr = DE_try*DE_pybar*DE_ybar; DE_try = (1-DE_rhotr)*DE_trybar+DE_rhotr*DE_try(-1)+DE_epstr;
+% (4) DE_tauc = (1-DE_rhotauc)*DE_taucbar+DE_rhotauc*DE_tauc(-1)+DE_epstauc;
+% (5) DE_taun = (1-DE_rhotaun)*DE_taunbar+DE_rhotaun*DE_taun(-1)+DE_epstaun;
+% (6) DE_tauwh = (1-DE_rhotauwh)*DE_tauwhbar+DE_rhotauwh*DE_tauwh(-1)+DE_epstauwh;
+% (7) DE_tauwf = (1-DE_rhotauwf)*DE_tauwfbar+DE_rhotauwf*DE_tauwf(-1)+DE_epstauwf;
+% (8) DE_tauk = (1-DE_rhotauk)*DE_taukbar+DE_rhotauk*DE_tauk(-1)+DE_epstauk;
+% (9) DE_taud = (1-DE_rhotaud)*DE_taudbar+DE_rhotaud*DE_taud(-1)+DE_epstaud;
+% (10) DE_ty = DE_t/(DE_pybar*DE_ybar); > DE_t/(DE_pybar*DE_ybar) = DE_phitb*(DE_b/(DE_pybar*DE_ybar)-DE_bytarget);
+
+In our version of the EAGLE model, the government is equipped with ten fiscal instruments. Seven of these operate on the revenue side of the budget: the consumption tax rate, $\tau_t^C$; the wage tax rate, $\tau_t^N$; the social contribution rate paid by employees, $\tau_t^{Wh}$; the social contribution rate paid by employers, $\tau_t^{Wf}$; the tax rate on capital returns, $\tau_t^k$; the tax rate on bond returns, $\tau_t^b$; and lump-sum taxes, $T_t$. The remaining three instruments are on the expenditure side of the budget: government consumption, $G_{C,t}$; government investment, $G_{I,t}$; and government transfers, $TR_t$.
+
+For all fiscal instruments except for lump-sum taxes, we assume a fiscal rule of the following form:
+\begin{equation}
+    \label{eqFiscalRule}
+    X_t = (1-\rho_X) \bar{X} + \rho_X X_{t-1} + \varepsilon_{X,t},
+\end{equation}
+where \(X \in \left\{ \tau_t^C, \tau_t^N, \tau_t^{Wh}, \tau_t^{Wf}, \tau_t^k, \tau_t^b, \frac{P_{G_C,t} G_{C,t}}{\overline{P_Y Y}}, \frac{P_{G_I,t} G_{I,t}}{\overline{P_Y Y}}, \frac{TR_t}{\overline{P_Y Y}} \right\}\). For expenditure instruments, the fiscal rule in Eq.~\ref{eqFiscalRule} operates on nominal ratios relative to steady-state nominal GDP. Here, $\bar{X}$ denotes the long-run target for the fiscal instrument, $\rho_X$ is the smoothing parameter, and $\varepsilon_{X,t}$ represents an i.i.d. fiscal shock specific to the instrument.
+
+The fiscal rule governing lump-sum taxes is designed to ensure that government debt converges towards a long-run target level, $\overline{B_Y}$, which is calibrated. Stability of the debt stock is achieved through a gradual adjustment of lump-sum taxes relative to output, with the speed of adjustment governed by the parameter $\phi_{B_Y}$, as specified in Eq.~\ref{eqDebtRule}:
+\begin{equation}
+    \label{eqDebtRule}
+    \frac{T_t}{\overline{P_Y Y}} = \phi_{B_Y} \left( \frac{B_t}{\overline{P_Y Y}} - \overline{B_Y} \right).
+\end{equation}
+
+%//NOTE: Let's talk about the monetary policy now.
+% Here are the rules for the US.
+% (for the US) 
+% US_r^4-1 = US_phirr*(US_r(-1)^4-1)+(1-US_phirr)*(US_rrstar^4*US_pi4target-1+US_phirpi*(US_pic4-US_pi4target))+US_phirgy*(US_y/US_y(-1)-1)+US_epsr;
+% (for the rest of the EU) 
+% RU_r^4-1 = RU_phirr*(RU_r(-1)^4-1)+(1-RU_phirr)*(RU_rrstar^4*RU_pi4target-1+RU_phirpi*(RU_pic4-RU_pi4target))+RU_phirgy*(RU_y/RU_y(-1)-1)+RU_epsr;
+% (for the rest of the world) 
+% RW_r^4-1 = RW_phirr*(RW_r(-1)^4-1)+(1-RW_phirr)*(RW_rrstar^4*RW_pi4target-1+RW_phirpi*(RW_pic4-RW_pi4target))+RW_phirgy*(RW_y/RW_y(-1)-1)+RW_epsr;
+% (for the EA) 
+% DE_r^4-1 = EA_phirr*(DE_r(-1)^4-1)+(1-EA_phirr)*(DE_rrstar^4*DE_pi4target-1+EA_phirpi*(EA_pic4-DE_pi4target))	+EA_phirgy*(EA_ygrowth-1)+EA_epsr;
+% The above rules fortunately coincide with what is in the EM paper.
+
+Monetary authorities in the model conduct policy according to a Taylor-type interest rate rule, specified in terms of annual CPI inflation, $\Pi_{C,t}^{\mathrm{CO},4}$ \,($\Pi_{C,t}^{\mathrm{CO},4} \equiv P_{C,t}^{\mathrm{CO}} / P_{C,t-4}^{\mathrm{CO}}$), and quarterly output growth, $\mathrm{Ygr}_t^{\mathrm{CO}}$ \,($\mathrm{Ygr}_t^{\mathrm{CO}} \equiv Y_t^{\mathrm{CO}} / Y_{t-1}^{\mathrm{CO}}$), as formalized in Eq.~\ref{eqPolicyRule}:
+\begin{equation} \label{eqPolicyRule}
+    \begin{aligned}
+    \left(R_t^{\mathrm{CO}}\right)^4 =\ & \phi_{R}^{\mathrm{CO}} \left(R_{t-1}^{\mathrm{CO}}\right)^4 
+    + \left(1-\phi_{R}^{\mathrm{CO}}\right) \left[\left(\bar{R}^{\mathrm{CO}}\right)^4 
+    + \phi_{\Pi}^{\mathrm{CO}} \left(\Pi_{C,t}^{\mathrm{CO},4} - \bar{\Pi}^{\mathrm{CO},4}\right)\right] \\
+    & + \phi_{gY}^{\mathrm{CO}} \left(\mathrm{Ygr}_t^{\mathrm{CO}} - 1\right)
+    + \varepsilon_{R,t}^{\mathrm{CO}}.
+    \end{aligned}
+\end{equation}
+
+Here, $\left(\bar{R}^{\mathrm{CO}}\right)^4 = \beta^{-4} \bar{\Pi}^{\mathrm{CO},4}$ denotes the equilibrium nominal interest rate in country or region $\mathrm{CO}$, $\bar{\Pi}^{\mathrm{CO},4}$ is the monetary authority's annual inflation target, and $\varepsilon_{R,t}^{\mathrm{CO}}$ represents a serially uncorrelated monetary policy shock. The parameters $\phi_{R}^{\mathrm{CO}}$, $\phi_{\Pi}^{\mathrm{CO}}$, and $\phi_{gY}^{\mathrm{CO}}$ respectively determine the smoothing of the interest rate and the sensitivity to deviations in inflation and output. In the case of the euro area, the same rule applies, but based on union-wide aggregates as defined in Eqs.~\ref{eqEAoutput} and~\ref{eqEAinflation}.
+
+%//NOTE: There seems to be a typo in the EM paper, the annual steady-state nominal interest rate shoudl be a function on annual inflation. This can be seen by looking at the below equations in the moddel.
+% // Real interest rate
+% DE_rr-1 = DE_r/DE_pic(+1)-1;
+% // Equilibrium real interest rate
+% DE_rrstar-1 = 1/DE_beta-1;
+
 \subsection{The model calibration} \label{sec:model_calibration}
 
 \begin{landscape}
