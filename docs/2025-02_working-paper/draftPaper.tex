@@ -241,42 +241,101 @@ Here, $v_i$, $v_{Ti}$, and $v_{Mi}^{H,CO}$ are the share parameters governing th
 Countries or regions in the EAGLE model are subject to the following aggregate resource constraint, which can be expressed in nominal terms as shown in Eq.~\ref{eqResourceConstraint}. Total production $Y_t$ is allocated to satisfy the domestic share of final demand from the private sector ($C_t$ and $I_t$) and the general government ($G_{C,t}$ and $G_{I,t}$), as well as to meet external demand through exports.\footnote{Some of the production is absorbed by transaction costs and capital utilization costs, represented by $\Gamma_{v,t}$ and $\Gamma_u(u_t)K_t$, respectively.} Figure~\ref{figAggResourceConstraint} provides a schematic representation of the creation and utilization of resources within a country or region in the EAGLE model.
 \begin{equation} \label{eqResourceConstraint}
     \begin{aligned}
-        P_{Y,t} Y_t =\ & P_{C,t} \left(C_t + \Gamma_{v,t}\right) + P_{I,t} \left(I_t + \Gamma_u(u_t) K_t\right) + P_{G_C,t} G_{C,t} + P_{G_I,t} G_{I,t} \\
+        P_{Y,t} Y_t =\ & P_{C,t} \underbrace{\left(C_t + \Gamma_{v,t}\right)}_{Q_t^{C}} + P_{I,t} \underbrace{\left(I_t + \Gamma_u(u_t) K_t\right)}_{Q_t^{I}} + P_{G_C,t} \underbrace{G_{C,t}}_{Q_t^{G_c}} + P_{G_I,t} \underbrace{G_{I,t}}_{Q_t^{G_i}} \\
         & + \sum_{CO \neq H} \frac{s^{CO}}{s^H} S_t^{H,CO} P_{X,t}^{H,CO} IM_t^{CO,H} - \sum_{CO \neq H} P_{IM,t}^{H,CO} IM_t^{H,CO}.
     \end{aligned}
 \end{equation}
 
+%// NOTE: In the budget constraint the equations refer to Qs variables, which include adjustment costs.
 
 \begin{figure}[H]
     \centering
-    \caption{Production of final goods in the EAGLE model.
+    \caption{Production and utilization of resources within a country or region in the EAGLE model.
     \label{figAggResourceConstraint}}
     \begin{tikzpicture}[
         node distance=0.8cm and 1.2cm, % tighter horizontal and vertical distances
         every node/.style={draw, rounded corners, minimum width=1.5cm, minimum height=0.6cm, align=center, font=\small},
         every path/.style={draw, thick} % thick lines, no arrows
-      ]
-      
-      % Nodes
-      \node (tb) {trade\\ balance};
-      \node[above right=of tb] (demand) {final\\ demand};
-      \node[below right=of tb] (y) {production\\ $\left(y_t\right)$};
-      \node[right=of demand, yshift=+2cm] (im1) {$IM_t^i$};
-      \node[right=of demand, yshift=+1cm] (im2) {$IM_t^i$};
-      \node[right=of demand, yshift=-1cm] (im3) {$IM_t^i$};
-      \node[right=of demand, yshift=-2cm] (im4) {$IM_t^i$};
-
+    ]
     
-      % Edges
-      \draw (tb) -- (demand);
-      \draw (tb) -- (y);
+    % Nodes
+    \node (tb) {Trade\\ Balance};
+    \node[above right=of tb] (demand) {Final\\ Demand};
+    \node[right=of tb, yshift=-7cm] (y) {Production\\ $(Y_t)$};
+    
+    \node[right=of demand, yshift=4.5cm] (qc) {Private Cons.\\ $(Q_t^C)$};
+    \node[right=of demand, yshift=1.5cm] (qi) {Private Inv.\\ $(Q_t^I)$};
+    \node[right=of demand, yshift=-1.5cm] (qcg) {Gov. Cons.\\ $(Q_t^{Cg})$};
+    \node[right=of demand, yshift=-4.5cm] (qig) {Gov. Inv.\\ $(Q_t^{Ig})$};
+    
+    \node[below right=of qc] (ttc) {$TT_t^C$};
+    \node[below right=of qi] (tti) {$TT_t^I$};
+    \node[below right=of qcg] (ttcg) {$TT_t^{Cg}$};
+    \node[below right=of qig] (ttig) {$TT_t^{Ig}$};
+    
+    \node[right=of ttc, yshift=1.5cm, fill=blue!20] (ntc) {$NT_t^C$};
+    \node[right=of tti, yshift=1.5cm, fill=blue!20] (nti) {$NT_t^I$};
+    \node[right=of ttcg, yshift=1.5cm, fill=blue!20] (ntcg) {$NT_t^{Cg}$};
+    \node[right=of ttig, yshift=1.5cm, fill=blue!20] (ntig) {$NT_t^{Ig}$};
+    
+    \node[right=of ttc, yshift=0.5cm, fill=green!20] (htc) {$HT_t^C$};
+    \node[right=of tti, yshift=0.5cm, fill=green!20] (hti) {$HT_t^I$};
+    \node[right=of ttcg, yshift=0.5cm, fill=green!20] (htcg) {$HT_t^{Cg}$};
+    \node[right=of ttig, yshift=0.5cm, fill=green!20] (htig) {$HT_t^{Ig}$};
+    
+    \node[right=of ttc, yshift=-0.5cm, fill=gray!20] (imc) {$IM_t^C$};
+    \node[right=of tti, yshift=-0.5cm, fill=gray!20] (imi) {$IM_t^I$};
+    \node[right=of ttcg, yshift=-0.5cm, fill=gray!20] (imcg) {$IM_t^{Cg}$};
+    \node[right=of ttig, yshift=-0.5cm, fill=gray!20] (imig) {$IM_t^{Ig}$};
+    
+    \node[right=of y, yshift=0.75cm, fill=blue!20] (ysn) {Production,\\ Non-Tradable\\ $(Y_{N,t}^S = NT_t = NT_t^C + NT_t^I + NT_t^{Cg} + NT_t^{Ig})$};
+    \node[right=of y, yshift=-1.25cm] (yst) {Production,\\ Tradable\\ $(Y_{T,t}^S)$};
+    
+    \node[right=of yst, yshift=0.5cm, fill=green!20] (nt) {Home Tradable\\ $HT_t = HT_t^C + HT_t^I + HT_t^{Cg} + HT_t^{Ig}$};
+    \node[right=of yst, yshift=-0.5cm, fill=yellow!20] (xt) {Exports\\ $(X_t)$};
+    
+    % Edges
+    \draw (tb) -- (demand);
+    \draw (tb) -- (y);
+    
+    \draw (demand) -- (qc);
+    \draw (demand) -- (qi);
+    \draw (demand) -- (qcg);
+    \draw (demand) -- (qig);
+    
+    \draw (qc) -- (ttc);
+    \draw (qi) -- (tti);
+    \draw (qcg) -- (ttcg);
+    \draw (qig) -- (ttig);
+    
+    \draw (qc) -- (ntc);
+    \draw (qi) -- (nti);
+    \draw (qcg) -- (ntcg);
+    \draw (qig) -- (ntig);
+    
+    \draw (ttc) -- (htc);
+    \draw (tti) -- (hti);
+    \draw (ttcg) -- (htcg);
+    \draw (ttig) -- (htig);
+    
+    \draw (ttc) -- (imc);
+    \draw (tti) -- (imi);
+    \draw (ttcg) -- (imcg);
+    \draw (ttig) -- (imig);
+    
+    \draw (y) -- (ysn);
+    \draw (y) -- (yst);
+    
+    \draw (yst) -- (nt);
+    \draw (yst) -- (xt);
     
     \end{tikzpicture}
-    
+        
     \vspace{5mm}
     \small
     \begin{minipage}{0.9\textwidth}
-    \textit{Notes}: $Q_t^i$ denotes the final good of type $i$; $TT_t^i$ is the tradable component used in the bundling of good $i$; $NT_t^i$ is the non-tradable component; $HT_t^i$ represents the home-produced tradable good; $IM_t^i$ denotes the imported tradable good; $IM_t^{i,CO^2}$ and $IM_t^{i,CO^{14}}$ represent imports from countries $CO^2$ and $CO^{14}$, respectively, used in the production of good $i$.
+        \textit{Notes}: $TT_t^i$ denotes the tradable good for each type of good $i$, where $i \in \{C, I, Cg, Ig\}$. Analogously, $NT_t^i$, $HT_t^i$, and $IM_t^i$ represent, respectively, the non-tradable good, the home tradable good, and imported goods for the various sectors. Since the production of non-tradables and home tradable goods is used to meet final demand domestically, any trade imbalance arises from the difference between imports and the production allocated to exports (indicated by the grey and yellow nodes).
+
     \end{minipage}
 \end{figure}
 
