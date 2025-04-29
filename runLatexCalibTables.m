@@ -8,8 +8,10 @@ steady7struct = dynareFunc.retrieveSteadyState(modelResults);
 
 
 %%
-hhAndFirmBehavior(envi, steady7struct, fullfile(project_path, 'docs/2025-02_working-paper/tables/hhAndFirmBehavior.tex'));
+% Table 1
 ssNationalAccounts(envi, steady7struct, fullfile(project_path, 'docs/2025-02_working-paper/tables/ssNationalAccounts.tex'));
+
+hhAndFirmBehavior(envi, steady7struct, fullfile(project_path, 'docs/2025-02_working-paper/tables/hhAndFirmBehavior.tex'));
 realNominalRigidities(envi, steady7struct, fullfile(project_path, 'docs/2025-02_working-paper/tables/realNominalRigidities.tex'));
 priceAndWageMarkups(envi, steady7struct, fullfile(project_path, 'docs/2025-02_working-paper/tables/priceAndWageMarkups.tex'));
 monetaryFiscalPolicy(envi, steady7struct, fullfile(project_path, 'docs/2025-02_working-paper/tables/monetaryFiscalPolicy.tex'));

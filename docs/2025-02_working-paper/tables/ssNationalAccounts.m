@@ -11,7 +11,7 @@ function ssNationalAccounts(envi, aStruct, fileName)
     % Table header
     fprintf(fid, '\\begin{table}[htbp]\n');
     fprintf(fid, '    \\centering\n');
-    fprintf(fid, '    \\caption{Steady-state national accounts (ratio to GDP, \\%%).}\n');
+    fprintf(fid, '    \\caption{Steady-state great ratios (ratio to GDP, \\%%).}\n');
     fprintf(fid, '    \\label{tab:national_accounts}\n');
     fprintf(fid, '    {\\small\n');
     fprintf(fid, '    \\begin{tabular}{>{\\raggedright\\arraybackslash}p{6.2cm}*{14}{>{\\centering\\arraybackslash}p{0.8cm}}}\n');
@@ -21,18 +21,18 @@ function ssNationalAccounts(envi, aStruct, fileName)
 
     % Domestic demand section
     fprintf(fid, '    \\multicolumn{15}{l}{\\textbf{Domestic demand}} \\\\\n');
-    fprintf(fid, utils.prepareTableLine(envi, 'Private consumption', 'cy', "cy", aStruct.ssValues));
-    fprintf(fid, utils.prepareTableLine(envi, 'Private investment', 'iy', "iy", aStruct.ssValues));
-    fprintf(fid, utils.prepareTableLine(envi, 'Public consumption', 'cgy', "cgy", aStruct.ssValues));
-    fprintf(fid, utils.prepareTableLine(envi, 'Private investment', 'igy', "igy", aStruct.ssValues));
+    fprintf(fid, utils.prepareTableLine(envi, 'Private consumption', '\bar{cy}', "cy", aStruct.ssValues));
+    fprintf(fid, utils.prepareTableLine(envi, 'Private investment', '\bar{iy}', "iy", aStruct.ssValues));
+    fprintf(fid, utils.prepareTableLine(envi, 'Public consumption', '\bar{cgy}', "cgy", aStruct.ssValues));
+    fprintf(fid, utils.prepareTableLine(envi, 'Private investment', '\bar{igy}', "igy", aStruct.ssValues));
 
 
     % Trade section
     fprintf(fid, '    \\multicolumn{15}{l}{\\textbf{Trade}} \\\\\n');
-    fprintf(fid, utils.prepareTableLine(envi, 'Imports (total)', 'imy', "imy", aStruct.ssValues));
-    fprintf(fid, utils.prepareTableLine(envi, 'Imports of consumption goods', 'imcy', "imcy", aStruct.ssValues));
-    fprintf(fid, utils.prepareTableLine(envi, 'Imports of investment goods', 'imiy', "imiy", aStruct.ssValues));
-    fprintf(fid, utils.prepareTableLine(envi, 'Net foreign assets (ratio to annual GDP)', 'bfytarget', "bfytarget", aStruct.params));
+    fprintf(fid, utils.prepareTableLine(envi, 'Imports (total)', '\bar{imy}', "imy", aStruct.ssValues));
+    fprintf(fid, utils.prepareTableLine(envi, 'Exports (total)', '\bar{exy}', "exy", aStruct.ssValues));
+    fprintf(fid, utils.prepareTableLine(envi, 'Trade balance', '\overline{tby}', "tby", aStruct.ssValues));
+    fprintf(fid, utils.prepareTableLine(envi, 'Net foreign assets (ratio to annual GDP)', '\overline{B_Y^{*}}', "bfytarget", aStruct.params));
 
     % Production section
     fprintf(fid, '    \\multicolumn{15}{l}{\\textbf{Production}} \\\\\n');

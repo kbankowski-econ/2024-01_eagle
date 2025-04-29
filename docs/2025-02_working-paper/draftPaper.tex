@@ -438,16 +438,13 @@ Here, $\left(\bar{R}^{\mathrm{CO}}\right)^4 = \beta^{-4} \bar{\Pi}^{\mathrm{CO},
 \subsection{The model calibration} \label{sec:model_calibration}
 
 \begin{landscape}
-    \input{tables/hhAndFirmBehavior.tex}
     \input{tables/ssNationalAccounts.tex}
-    \input{tables/realNominalRigidities.tex}
-    \input{tables/priceAndWageMarkups.tex}
-    \input{tables/internationalLinkages_MC.tex}
-    \input{tables/internationalLinkages_MI.tex}
-    \input{tables/internationalLinkages_MCG.tex}
-    \input{tables/internationalLinkages_MIG.tex}
+\end{landscape}
+
+\begin{landscape}
     \input{tables/monetaryFiscalPolicy.tex}
 \end{landscape}
+
 
 Calibrating the trade matrix is a major technical challenge in extending the EAGLE framework. The expanded model, which includes 12 euro area countries, the rest of the world, and the United States, encompasses nearly 10,000 endogenous variables. Computing the steady state for a model of this scale remains a complex task, requiring the application of a "divide-and-conquer" algorithm, also known as homotopy in Dynare (see \citet{Adjemianetal2024}). We first solve for the steady state of a simplified version of the model, where all regions are symmetric and economic sectors are dominated by a single type of good. From this initial steady state, we gradually adjust parameters toward their target values, ensuring a smooth transition to an equilibrium where all economic ratios and trade specifications align with observed data. Among the various calibration steps, the adjustment of bilateral trade flows presents the greatest challenge. Successfully calibrating the model requires computing multiple intermediate steady states before converging on the final set of bilateral shares.
 
@@ -593,6 +590,17 @@ Technical Appendix
 \section{Model Specification Details}
 
 \section{Calibration Details}
+
+\begin{landscape}
+    \input{tables/hhAndFirmBehavior.tex}
+    \input{tables/realNominalRigidities.tex}
+    \input{tables/priceAndWageMarkups.tex}
+    \input{tables/internationalLinkages_MC.tex}
+    \input{tables/internationalLinkages_MI.tex}
+    \input{tables/internationalLinkages_MCG.tex}
+    \input{tables/internationalLinkages_MIG.tex}
+
+\end{landscape}
 
 \section{Sensitivity Analysis}
 
