@@ -161,66 +161,63 @@ Our version of the EAGLE model advances the representation of the euro area by d
 The EAGLE model has been extensively employed to analyze a wide range of economic policy issues, including global fiscal stimulus (\citealp{GomesEtAl2015jimf}), structural reforms (\citealp{Gomesetal2013if}; \citealp{Jacquinot2018springer}; \citealp{Gomes2018jm}), monetary union accession (\citealp{BrzozaBrzezinaEtAl2014oer}), fiscal devaluations (\citealp{GomesEtAl2016em}), trade tariffs and protectionism (\citealp{BoltEtAl2019dnbwp}; \citealp{JacquinotEtAl2022jimf}; \citealp{ClancyEtAl2024ijcb}), financial interlinkages (\citealp{Pariesetal2016ecbwp}; \citealp{BokanEtAl2018em}), and economic risks associated with high government debt (\citealp{BurielEtAl2020ecbwp}). This paper applies the extended version of the EAGLE model to assess the macroeconomic impact of the recently launched multi-year EU-wide investment initiative—Next Generation EU (NGEU). In doing so, it complements existing analyses involving the EAGLE framework (\citealp{Bankowskietal2021ecbOP}; \citealp{Bankowskietal2022ecbOP}; \citealp{Bankowskietal2025ecbOP}) by leveraging the detailed country disaggregation. This enhanced structure enables the assessment of the program's effects on smaller member states, such as Greece and Portugal, which are among the major beneficiaries of the NGEU.
 
 % (4)
-In this subsection, we restrict the description of the model to the elements crucial for our extension, focusing particularly on the trade specification and the construction of aggregates. For all other aspects, we refer the reader to \citet{Gomesaetal2012} for the general model characteristics, and to \citet{Clancyetal2016} for the enhanced fiscal policy specification. The model incorporates a share of non-Ricardian households and features several real and nominal rigidities, including habit formation, adjustment costs for investment and imports, and Calvo-type pricing of intermediate goods and wage setting, with partial indexation. 
-
-% (5)
-Regarding the general government specification, the budget encompasses multiple tax and expenditure instruments. With the possibility to issue bonds, governments are not required to balance the budget in each period. Following the extension by \citet{Clancyetal2016}, both government consumption and investment play a meaningful role in the model. Specifically, government consumption exhibits complementarity with private consumption, while government investment contributes to the stock of productive capital, thereby enhancing the production capacity of the private sector.
-\footnote{The complementarity between government and private consumption is introduced through the specification of a composite good consumed by households, following the approach of \citet{Coenen-et-al_AER_2012}. Specifically, the composite consumption good $\tilde{C}_t$ is modeled as a CES aggregate of final private consumption and final government consumption goods: $\tilde{C}_t = \left[v_{\text{CCES}}^{\frac{1}{\mu_{\text{CCES}}}}\left(C_t\right)^{\frac{\mu_{\text{CCES}}-1}{\mu_{\text{CCES}}}} + \left(1-v_{\text{CCES}}\right)^{\frac{1}{\mu_{\text{CCES}}}}\left(G_{C,t}\right)^{\frac{\mu_{\text{CCES}}-1}{\mu_{\text{CCES}}}}\right]^{\frac{\mu_{\text{CCES}}}{\mu_{\text{CCES}}-1}}$,where $v_{\text{CCES}}$ denotes the share parameter, and $\mu_{\text{CCES}}$ represents the elasticity of substitution between the two component goods.}
-\footnote{The assumption that government investment enhances productivity builds on the work of \citet{LeeperEtAl2010jme}, where public capital accumulation is governed by $K_{G,t+1} = (1-\delta_G)K_{G,t} + G_{I,t}$. This formulation implies that government investment $G_{I,t}$ builds up the stock of public capital $K_{G,t+1}$, which depreciates at the rate $\delta_G$. Public capital, in turn, enters the production function of both tradable and non-tradable goods, specified respectively as $Y_{T,t}^S = z_{T,t} K_{G,t}^{\alpha_G} (K_{T,t}^D)^{\alpha_T} (N_{T,t}^D)^{1-\alpha_T} - \psi_T$ and $Y_{N,t}^S = z_{N,t} K_{G,t}^{\alpha_G} (K_{N,t}^D)^{\alpha_N} (N_{N,t}^D)^{1-\alpha_N} - \psi_N$, thereby enhancing the productive capacity of the private sector. Here, $Y_{T,t}^S$ and $Y_{N,t}^S$ denote sectoral outputs, $z_{T,t}$ and $z_{N,t}$ represent sector-specific productivity levels, $\alpha_G$ measures the contribution of public capital to production, $K_{T,t}^D$ and $K_{N,t}^D$ are private capital inputs, $N_{T,t}^D$ and $N_{N,t}^D$ are labor inputs, $\alpha_T$ and $\alpha_N$ denote the capital shares in the tradable and non-tradable sectors, respectively, and $\psi_T$ and $\psi_N$ capture fixed costs.}
+As in other large-scale DSGE models, our framework incorporates non-Ricardian households and several real and nominal rigidities, including habit formation, investment and import adjustment costs, and Calvo-type pricing of intermediate goods and wages with partial indexation. Owing to the substantial scale of the model (approximately 9,999 endogenous variables), we adopt a simplifying assumption relative to the original version by imposing the law of one price for exported goods, whereby firms do not differentiate prices across export destinations. Nonetheless, pricing in the export sector remains distinct from that in the non-tradable and home-tradable sectors. This subsection focuses on the model components critical to our extension and policy application, particularly the bundling of final goods, trade specification, and policy rules. For all remaining model features, we refer the reader to \citet{Gomesaetal2012} for the general structure and to \citet{Clancyetal2016} for the enhanced fiscal policy specification.
 
 % (6)
-Our model distinguishes four types of final goods: private consumption, private investment, government consumption, and government investment. Each type of good is assembled by firms operating under perfect competition. At the origin of the process, the inputs for assembly are intermediate goods produced by firms under monopolistic competition in two sectors—non-tradable (akin to services) and tradable (akin to manufacturing). Tradable goods are also subject to international trade. Consequently, goods purchased by the government may contain imported components, with the extent of import content determined by a home-bias parameter. Although all final goods ultimately originate from the intermediate tradable and non-tradable sectors, the assembly processes are independent across categories. In practice, this implies, for example, that the import content of government consumption differs from that of private consumption, reflecting the tendency of governments to purchase domestically produced goods. Further details on the calibration of these parameters are provided in Subsection~\ref{sec:model_calibration}, with the specification of the multi-country trade structure constituting a major contribution of this paper.
+\paragraph{Final good production.}
 
-Specifically, each of the four types of goods $Q_t^i$ is assembled using a constant elasticity of substitution (CES) technology (see Eq.~\ref{eq1}), combining tradable goods $TT_t^i$ and domestically produced non-tradable goods $NT_t^i$. The parameter $v_i$ governs the share of each input in the bundle, while $\mu_i$ denotes the elasticity of substitution between them:
+Our model distinguishes four types of final goods: private consumption, private investment, government consumption, and government investment. Each type of good is assembled by firms operating under perfect competition. At the origin of the process, the inputs for assembly are intermediate goods produced by firms under monopolistic competition in two production sectors—non-tradable (akin to services) and tradable (akin to manufacturing). Tradable goods are also subject to international trade. Consequently, goods purchased by the government may contain imported components, with the extent of import content determined by a home-bias parameter. Although all final goods ultimately originate from the intermediate tradable and non-tradable production sectors, the assembly processes are independent across categories. In practice, this implies, for example, that the import content of government consumption differs from that of private consumption, reflecting the tendency of governments to purchase domestically produced goods. Further details on the calibration of these parameters are provided in Subsection~\ref{sec:model_calibration}, with the specification of the multi-country trade structure constituting a major contribution of this paper.
+
+Specifically, each of the four types of final goods $Q_t^s$ is assembled using a constant elasticity of substitution (CES) technology (see Eq.~\ref{eq1}), combining tradable goods $TT_t^s$ and domestically produced non-tradable goods $NT_t^s$. The parameter $v_s$ governs the share of each input in the bundle, while $\mu_s$ denotes the elasticity of substitution between them:
 \begin{equation}
     \label{eq1}
-    Q_t^i = \left[v_i^{\frac{1}{\mu_i}}\left(TT_t^i\right)^{\frac{\mu_i-1}{\mu_i}} + \left(1-v_i\right)^{\frac{1}{\mu_i}}\left(NT_t^i\right)^{\frac{\mu_i-1}{\mu_i}}\right]^{\frac{\mu_i}{\mu_i-1}}.
+    Q_t^s = \left[v_s^{\frac{1}{\mu_s}}\left(TT_t^s\right)^{\frac{\mu_s-1}{\mu_s}} + \left(1-v_s\right)^{\frac{1}{\mu_s}}\left(NT_t^s\right)^{\frac{\mu_s-1}{\mu_s}}\right]^{\frac{\mu_s}{\mu_s-1}}.
 \end{equation}
-The tradable good $TT_t^i$, in turn, is produced analogously as a CES composite of home-produced tradable goods $HT_t^i$ and imported goods $IM_t^i$ (see Eq.~\ref{eqTT}). The parameter $v_{Ti}$ captures the home bias in tradable goods, and $\mu_{Ti}$ measures the elasticity of substitution between domestic and imported goods:
+The tradable good $TT_t^s$, in turn, is produced analogously as a CES composite of home-produced tradable goods $HT_t^s$ and imported goods $IM_t^s$ (see Eq.~\ref{eqTT}). The parameter $v_{Ts}$ captures the home bias in tradable goods, and $\mu_{Ts}$ measures the elasticity of substitution between domestic and imported goods:
 \begin{equation}
     \label{eqTT}
-    TT_t^i = \left[v_{Ti}^{\frac{1}{\mu_{Ti}}}\left(HT_t^i\right)^{\frac{\mu_{Ti}-1}{\mu_{Ti}}} + \left(1-v_{Ti}\right)^{\frac{1}{\mu_{Ti}}}\left(IM_t^i\right)^{\frac{\mu_{Ti}-1}{\mu_{Ti}}}\right]^{\frac{\mu_{Ti}}{\mu_{Ti}-1}}.
+    TT_t^s = \left[v_{Ts}^{\frac{1}{\mu_{Ts}}}\left(HT_t^s\right)^{\frac{\mu_{Ts}-1}{\mu_{Ts}}} + \left(1-v_{Ts}\right)^{\frac{1}{\mu_{Ts}}}\left(IM_t^s\right)^{\frac{\mu_{Ts}-1}{\mu_{Ts}}}\right]^{\frac{\mu_{Ts}}{\mu_{Ts}-1}}.
 \end{equation}
-Finally, the imported good $IM_t^i$ consists of a bundle of bilateral imports $IM_t^{i,CO}$ (see Eq.~\ref{eqIM}). The parameter $v_{Mi}^{H,CO}$ represents the share of imports from country or region $CO$, satisfying $\sum_{CO \neq H} v_{Mi}^{H,CO} = 1$, and $\mu_{Mi}$ is the elasticity of substitution between imports from different trading partners:
-\footnote{The country-specific import weights $v_{Mi}^{H,CO}$ are determined as a function of the relative economic size and the degree of openness. Accordingly, even if Germany exhibits the same degree of openness to imports from Austria and France, the weight $v_{Mi}^{DE,AT}$ is expected to be significantly smaller than $v_{Mi}^{DE,FR}$, reflecting the larger size of the French economy.}
+Finally, the imported good $IM_t^s$ consists of a bundle of bilateral imports $IM_t^{s,CO}$ (see Eq.~\ref{eqIM}). The parameter $v_{Ms}^{H,CO}$ represents the share of imports from country or region $CO$, satisfying $\sum_{CO \neq H} v_{Ms}^{H,CO} = 1$, and $\mu_{Ms}$ is the elasticity of substitution between imports from different trading partners:
 \begin{equation}
     \label{eqIM}
-    IM_t^i = \left[\sum_{CO \neq H} \left(v_{Mi}^{H,CO}\right)^{\frac{1}{\mu_{Mi}}} \left(IM_t^{i,CO}\right)^{\frac{\mu_{Mi}-1}{\mu_{Mi}}}\right]^{\frac{\mu_{Mi}}{\mu_{Mi}-1}}.
+    IM_t^s = \left[\sum_{CO \neq H} \left(v_{Ms}^{H,CO}\right)^{\frac{1}{\mu_{Ms}}} \left(IM_t^{s,CO}\right)^{\frac{\mu_{Ms}-1}{\mu_{Ms}}}\right]^{\frac{\mu_{Ms}}{\mu_{Ms}-1}}.
 \end{equation}
-Figure~\ref{finalGoodProduction} offers a detailed schematic representation of the production of a final good of type $i$.
-\footnote{The CES aggregation framework also implies that the prices of final goods are composite indices of the prices of their underlying components. Specifically, the price of a final good of type $i$, denoted $P_{i,t}$, the price of the tradable component $P_{TTi,t}$, and the price of imported tradable goods $P_{IMi,t}$ are defined as follows: 
+
+\footnote{The country-specific import weights $v_{Ms}^{H,CO}$ are determined as a function of the relative economic size and degree of openness. Accordingly, even if Germany exhibits the same degree of openness to imports from Austria and France, the weight $v_{Ms}^{DE,AT}$ is expected to be significantly smaller than $v_{Ms}^{DE,FR}$, reflecting the larger size of the French economy.}
+
+Figure~\ref{finalGoodProduction} offers a detailed schematic representation of the production of a final good of type $s$.
+
+\footnote{The CES aggregation framework also implies that the prices of final goods are composite indices of the prices of their underlying components. Specifically, the price of a final good of type $s$, denoted $P_{s,t}$, the price of the tradable component $P_{TTs,t}$, and the price of imported tradable goods $P_{IMs,t}$ are defined as follows:
 \[
-P_{i,t} = \left[v_i\left(P_{TTi,t}\right)^{1-\mu_i} + \left(1-v_i\right)\left(P_{NT,t}\right)^{1-\mu_i}\right]^{\frac{1}{1-\mu_i}},
+P_{s,t} = \left[v_s\left(P_{TTs,t}\right)^{1-\mu_s} + \left(1-v_s\right)\left(P_{NT,t}\right)^{1-\mu_s}\right]^{\frac{1}{1-\mu_s}},
 \]
 \[
-P_{TTi,t} = \left[v_{Ti}\left(P_{HT,t}\right)^{1-\mu_{Ti}} + \left(1-v_{Ti}\right)\left(P_{IMi,t}\right)^{1-\mu_{Ti}}\right]^{\frac{1}{1-\mu_{Ti}}},
+P_{TTs,t} = \left[v_{Ts}\left(P_{HT,t}\right)^{1-\mu_{Ts}} + \left(1-v_{Ts}\right)\left(P_{IMs,t}\right)^{1-\mu_{Ts}}\right]^{\frac{1}{1-\mu_{Ts}}},
 \]
 \[
-P_{IMi,t} = \left[\sum_{CO \neq H} v_{Mi}^{H,CO}\left(P_{IM,t}^{CO}\right)^{1-\mu_{Mi}}\right]^{\frac{1}{1-\mu_{Mi}}}.
+P_{IMs,t} = \left[\sum_{CO \neq H} v_{Ms}^{H,CO}\left(P_{IM,t}^{CO}\right)^{1-\mu_{Ms}}\right]^{\frac{1}{1-\mu_{Ms}}}.
 \]
-Here, $v_i$, $v_{Ti}$, and $v_{Mi}^{H,CO}$ are the share parameters governing the aggregation at each respective level, and $\mu_i$, $\mu_{Ti}$, and $\mu_{Mi}$ denote the elasticities of substitution. The price $P_{NT,t}$ corresponds to domestically produced non-tradable goods, $P_{HT,t}$ denotes the price of home-produced tradable goods, and $P_{IM,t}^{CO}$ refers to the price of imports from country or region $CO$. The structure of price aggregation mirrors the quantity aggregation.}
+Here, $v_s$, $v_{Ts}$, and $v_{Ms}^{H,CO}$ are the share parameters governing the aggregation at each respective level, and $\mu_s$, $\mu_{Ts}$, and $\mu_{Ms}$ denote the elasticities of substitution. The price $P_{NT,t}$ corresponds to domestically produced non-tradable goods, $P_{HT,t}$ denotes the price of home-produced tradable goods, and $P_{IM,t}^{CO}$ refers to the price of imports from country or region $CO$. The structure of price aggregation mirrors the quantity aggregation.}
 
 \begin{figure}[H]
     \centering
-    \caption{Production of final goods in the EAGLE model.
-    \label{finalGoodProduction}}
+    \caption{Production of final goods in the EAGLE model.\label{finalGoodProduction}}
     \begin{tikzpicture}[
-        node distance=0.8cm and 1.2cm, % tighter horizontal and vertical distances
+        node distance=0.8cm and 1.2cm,
         every node/.style={draw, rounded corners, minimum width=1.5cm, minimum height=0.6cm, align=center, font=\small},
-        every path/.style={draw, thick} % thick lines, no arrows
+        every path/.style={draw, thick}
       ]
       
-      % Nodes
-      \node (qt) {$Q_t^i$};
-      \node[above right=of qt] (tt) {$TT_t^i$};
-      \node[below right=of qt] (nt) {$NT_t^i$};
-      \node[above right=of tt] (ht) {$HT_t^i$};
-      \node[below right=of tt, yshift=-0.4cm] (im) {$IM_t^i$};
-      \node[above right=of im] (im_CO1) {$IM_t^{i,CO^2}$};
+      \node (qt) {$Q_t^s$};
+      \node[above right=of qt] (tt) {$TT_t^s$};
+      \node[below right=of qt] (nt) {$NT_t^s$};
+      \node[above right=of tt] (ht) {$HT_t^s$};
+      \node[below right=of tt, yshift=-0.4cm] (im) {$IM_t^s$};
+      \node[above right=of im] (im_CO1) {$IM_t^{s,CO^2}$};
       \node[right=of im] (im_CO2) {$\dots$};
-      \node[below right=of im] (im_CO3) {$IM_t^{i,CO^{14}}$};
+      \node[below right=of im] (im_CO3) {$IM_t^{s,CO^{14}}$};
     
-      % Edges
       \draw (qt) -- (tt);
       \draw (qt) -- (nt);
       \draw (tt) -- (ht);
@@ -234,59 +231,209 @@ Here, $v_i$, $v_{Ti}$, and $v_{Mi}^{H,CO}$ are the share parameters governing th
     \vspace{5mm}
     \small
     \begin{minipage}{0.9\textwidth}
-    \textit{Notes}: $Q_t^i$ denotes the final good of type $i$; $TT_t^i$ is the tradable component used in the bundling of good $i$; $NT_t^i$ is the non-tradable component; $HT_t^i$ represents the home-produced tradable good; $IM_t^i$ denotes the imported tradable good; $IM_t^{i,CO^2}$ and $IM_t^{i,CO^{14}}$ represent imports from countries $CO^2$ and $CO^{14}$, respectively, used in the production of good $i$.
+    \textit{Notes}: $Q_t^s$ denotes the final good of type $s$; $TT_t^s$ is the tradable component used in the bundling of good $s$; $NT_t^s$ is the non-tradable component; $HT_t^s$ represents the home-produced tradable good; $IM_t^s$ denotes the imported tradable good; $IM_t^{s,CO^2}$ and $IM_t^{s,CO^{14}}$ represent imports from countries $CO^2$ and $CO^{14}$, respectively, used in the production of good $s$.
     \end{minipage}
 \end{figure}
 
-Countries or regions in the EAGLE model are subject to the following aggregate resource constraint, which can be expressed in nominal terms as shown in Eq.~\ref{eqResourceConstraint}. Total production $Y_t$ is allocated to satisfy the domestic share of final demand from the private sector ($C_t$ and $I_t$) and the general government ($G_{C,t}$ and $G_{I,t}$), as well as to meet external demand through exports.\footnote{Some of the production is absorbed by transaction costs and capital utilization costs, represented by $\Gamma_{v,t}$ and $\Gamma_u(u_t)K_t$, respectively.} Figure~\ref{figAggResourceConstraint} provides a schematic representation of the creation and utilization of resources within a country or region in the EAGLE model.
+\paragraph{Resource constraint} Countries or regions in the EAGLE model are subject to the following aggregate resource constraint, which can be expressed in nominal terms as shown in Eq.~\ref{eqResourceConstraint}. Total production $Y_t$ is allocated to satisfy the domestic share of final demand from the private sector ($C_t$ and $I_t$) and the general government ($G_{C,t}$ and $G_{I,t}$), as well as to meet external demand through exports.\footnote{Some of the production is absorbed by transaction costs and capital utilization costs, represented by $\Gamma_{v,t}$ and $\Gamma_u(u_t)K_t$, respectively.} Figure~\ref{figAggResourceConstraint} provides a schematic representation of the creation and utilization of resources within a country or region in the EAGLE model.
 \begin{equation} \label{eqResourceConstraint}
     \begin{aligned}
-        P_{Y,t} Y_t =\ & P_{C,t} \left(C_t + \Gamma_{v,t}\right) + P_{I,t} \left(I_t + \Gamma_u(u_t) K_t\right) + P_{G_C,t} G_{C,t} + P_{G_I,t} G_{I,t} \\
+        P_{Y,t} Y_t =\ & P_{C,t} \underbrace{\left(C_t + \Gamma_{v,t}\right)}_{Q_t^{C}} + P_{I,t} \underbrace{\left(I_t + \Gamma_u(u_t) K_t\right)}_{Q_t^{I}} + P_{G_C,t} \underbrace{G_{C,t}}_{Q_t^{G_c}} + P_{G_I,t} \underbrace{G_{I,t}}_{Q_t^{G_i}} \\
         & + \sum_{CO \neq H} \frac{s^{CO}}{s^H} S_t^{H,CO} P_{X,t}^{H,CO} IM_t^{CO,H} - \sum_{CO \neq H} P_{IM,t}^{H,CO} IM_t^{H,CO}.
     \end{aligned}
 \end{equation}
 
+%// NOTE: In the budget constraint the equations refer to Qs variables, which include adjustment costs.
 
 \begin{figure}[H]
     \centering
-    \caption{Production of final goods in the EAGLE model.
+    \caption{Production and utilization of resources within a country or region in the EAGLE model.
     \label{figAggResourceConstraint}}
     \begin{tikzpicture}[
         node distance=0.8cm and 1.2cm, % tighter horizontal and vertical distances
         every node/.style={draw, rounded corners, minimum width=1.5cm, minimum height=0.6cm, align=center, font=\small},
         every path/.style={draw, thick} % thick lines, no arrows
-      ]
-      
-      % Nodes
-      \node (tb) {trade\\ balance};
-      \node[above right=of tb] (demand) {final\\ demand};
-      \node[below right=of tb] (y) {production\\ $\left(y_t\right)$};
-      \node[right=of demand, yshift=+2cm] (im1) {$IM_t^i$};
-      \node[right=of demand, yshift=+1cm] (im2) {$IM_t^i$};
-      \node[right=of demand, yshift=-1cm] (im3) {$IM_t^i$};
-      \node[right=of demand, yshift=-2cm] (im4) {$IM_t^i$};
-
+    ]
     
-      % Edges
-      \draw (tb) -- (demand);
-      \draw (tb) -- (y);
+    % Nodes
+    \node (tb) {Trade\\ Balance};
+    \node[above right=of tb] (demand) {Final\\ Demand};
+    \node[right=of tb, yshift=-7cm] (y) {Production\\ $(Y_t)$};
+    
+    \node[right=of demand, yshift=4.5cm] (qc) {Private Cons.\\ $(Q_t^C)$};
+    \node[right=of demand, yshift=1.5cm] (qi) {Private Inv.\\ $(Q_t^I)$};
+    \node[right=of demand, yshift=-1.5cm] (qcg) {Gov. Cons.\\ $(Q_t^{Cg})$};
+    \node[right=of demand, yshift=-4.5cm] (qig) {Gov. Inv.\\ $(Q_t^{Ig})$};
+    
+    \node[below right=of qc] (ttc) {$TT_t^C$};
+    \node[below right=of qi] (tti) {$TT_t^I$};
+    \node[below right=of qcg] (ttcg) {$TT_t^{Cg}$};
+    \node[below right=of qig] (ttig) {$TT_t^{Ig}$};
+    
+    \node[right=of ttc, yshift=1.5cm, fill=blue!20] (ntc) {$NT_t^C$};
+    \node[right=of tti, yshift=1.5cm, fill=blue!20] (nti) {$NT_t^I$};
+    \node[right=of ttcg, yshift=1.5cm, fill=blue!20] (ntcg) {$NT_t^{Cg}$};
+    \node[right=of ttig, yshift=1.5cm, fill=blue!20] (ntig) {$NT_t^{Ig}$};
+    
+    \node[right=of ttc, yshift=0.5cm, fill=green!20] (htc) {$HT_t^C$};
+    \node[right=of tti, yshift=0.5cm, fill=green!20] (hti) {$HT_t^I$};
+    \node[right=of ttcg, yshift=0.5cm, fill=green!20] (htcg) {$HT_t^{Cg}$};
+    \node[right=of ttig, yshift=0.5cm, fill=green!20] (htig) {$HT_t^{Ig}$};
+    
+    \node[right=of ttc, yshift=-0.5cm, fill=gray!20] (imc) {$IM_t^C$};
+    \node[right=of tti, yshift=-0.5cm, fill=gray!20] (imi) {$IM_t^I$};
+    \node[right=of ttcg, yshift=-0.5cm, fill=gray!20] (imcg) {$IM_t^{Cg}$};
+    \node[right=of ttig, yshift=-0.5cm, fill=gray!20] (imig) {$IM_t^{Ig}$};
+    
+    \node[right=of y, yshift=0.75cm, fill=blue!20] (ysn) {Production,\\ Non-Tradable\\ $(Y_{N,t}^S = NT_t = NT_t^C + NT_t^I + NT_t^{Cg} + NT_t^{Ig})$};
+    \node[right=of y, yshift=-1.25cm] (yst) {Production,\\ Tradable\\ $(Y_{T,t}^S)$};
+    
+    \node[right=of yst, yshift=0.5cm, fill=green!20] (nt) {Home Tradable\\ $HT_t = HT_t^C + HT_t^I + HT_t^{Cg} + HT_t^{Ig}$};
+    \node[right=of yst, yshift=-0.5cm, fill=yellow!20] (xt) {Exports\\ $(X_t)$};
+    
+    % Edges
+    \draw (tb) -- (demand);
+    \draw (tb) -- (y);
+    
+    \draw (demand) -- (qc);
+    \draw (demand) -- (qi);
+    \draw (demand) -- (qcg);
+    \draw (demand) -- (qig);
+    
+    \draw (qc) -- (ttc);
+    \draw (qi) -- (tti);
+    \draw (qcg) -- (ttcg);
+    \draw (qig) -- (ttig);
+    
+    \draw (qc) -- (ntc);
+    \draw (qi) -- (nti);
+    \draw (qcg) -- (ntcg);
+    \draw (qig) -- (ntig);
+    
+    \draw (ttc) -- (htc);
+    \draw (tti) -- (hti);
+    \draw (ttcg) -- (htcg);
+    \draw (ttig) -- (htig);
+    
+    \draw (ttc) -- (imc);
+    \draw (tti) -- (imi);
+    \draw (ttcg) -- (imcg);
+    \draw (ttig) -- (imig);
+    
+    \draw (y) -- (ysn);
+    \draw (y) -- (yst);
+    
+    \draw (yst) -- (nt);
+    \draw (yst) -- (xt);
     
     \end{tikzpicture}
-    
+        
     \vspace{5mm}
     \small
     \begin{minipage}{0.9\textwidth}
-    \textit{Notes}: $Q_t^i$ denotes the final good of type $i$; $TT_t^i$ is the tradable component used in the bundling of good $i$; $NT_t^i$ is the non-tradable component; $HT_t^i$ represents the home-produced tradable good; $IM_t^i$ denotes the imported tradable good; $IM_t^{i,CO^2}$ and $IM_t^{i,CO^{14}}$ represent imports from countries $CO^2$ and $CO^{14}$, respectively, used in the production of good $i$.
+        \textit{Notes}: $TT_t^i$ denotes the tradable good for each type of good $s$, where $s \in \{C, I, Cg, Ig\}$. Analogously, $NT_t^s$, $HT_t^s$, and $IM_t^s$ represent, respectively, the non-tradable good, the home tradable good, and imported goods for the various sectors. Since the production of non-tradables and home tradable goods is used to meet final demand domestically, any trade imbalance arises from the difference between imports and the production allocated to exports (indicated by the grey and yellow nodes).
+
     \end{minipage}
 \end{figure}
 
-Each country or region in the EAGLE model may experience a mismatch between the value of imported and exported goods, resulting in a trade surplus or deficit. The trade balance in nominal terms is defined as the difference between exports and imports (see Eq.~\ref{eqTradeBalance}):
+\paragraph{Trade and net foreign assets position} Each country or region in the EAGLE model may experience a mismatch between the value of imported and exported goods, resulting in a trade surplus or deficit. The trade balance in nominal terms is defined as the difference between exports and imports (see Eq.~\ref{eqTradeBalance}):
 \footnote{$S_t^{H,CO}$ in Eq.~\ref{eqTradeBalance} denotes the nominal exchange rate that converts the price $P_{X,t}^{H,CO}$, expressed in the currency of country $CO$, into the currency of country $H$.}
 \begin{equation} \label{eqTradeBalance}
     TB_t \equiv \sum_{CO \neq H} S_t^{H,CO} P_{X,t}^{H,CO} \underbrace{\frac{s^{CO}}{s^H} IM_t^{CO,H}}_{\equiv X_t^{H,CO}} - \sum_{CO \neq H} P_{IM,t}^{H,CO} IM_t^{H,CO}.
 \end{equation}
 From Eq.~\ref{eqTradeBalance}, it follows that exports from country $H$ to country $CO$ ($X_t^{H,CO}$) correspond to the imports of country $CO$ from $H$, adjusted by the ratio of their economic sizes $\left(\frac{s^{CO}}{s^H}\right)$. If country $CO$ is significantly larger than country $H$, even minor changes in its bilateral imports from $H$ can generate substantial fluctuations in $H$'s exports. This feature presents a major challenge for calibrating and solving the steady state of the model when incorporating countries of vastly different sizes (see Section~\ref{sec:model_calibration} for further discussion).
 
+Trade imbalances between countries are reflected in their net foreign asset (NFA) positions, which materialize through international bond holdings. In the model, internationally traded bonds are denominated in the currency of the core country—the United States—and thus in U.S. dollars. Under this setup, a country's NFA position evolves according to Eq.~\ref{eqNetForeignAssetPosition}:
+\begin{equation} \label{eqNetForeignAssetPosition}
+    R_t^{*-1} B_{t+1}^* = B_t^* + \frac{TB_t^{\mathrm{CO}}}{S_t^{\mathrm{CO},\mathrm{US}}},
+\end{equation}
+where $R_t^*$ denotes the gross return on the internationally traded bond $B_{t+1}^*$, and $S_t^{\mathrm{CO},\mathrm{US}}$ represents the nominal exchange rate, defined as the price of one U.S. dollar in terms of the currency of country or region $\mathrm{CO}$. Finally, the assumption of zero net supply of international bonds implies the global market clearing condition $\sum_{\mathrm{CO}} s^{\mathrm{CO}} B_t^{*\mathrm{CO}} = 0$, with $\sum_{\mathrm{CO}} s^{\mathrm{CO}} = 1$.
+
+\paragraph{Euro area aggregation} As the euro area is composed of ten individual countries and a residual region, each modeled as an open economy, it is necessary to construct aggregate indicators for the monetary union. In particular, aggregation is required for euro area-wide output $(Y_t^{EA})$ and inflation $(\Pi_t^{EA,4})$, as defined in Equations~\ref{eqEAoutput} and~\ref{eqEAinflation}, respectively. The set of countries and the residual region constituting the euro area is denoted by \(\mathcal{I}^{EA} = \{ \text{AT}, \text{BE}, \text{FI}, \text{FR}, \text{DE}, \text{GR}, \text{IT}, \text{NL}, \text{PT}, \text{ES}, \text{RA} \}\), where \(s^i\) represents the relative size of country or region \(i\).
+
+\begin{equation} \label{eqEAoutput}
+    Y_t^{EA} \equiv \frac{\sum\limits_{\mathrm{CO} \in \mathcal{I}^{EA}} s^\mathrm{CO} \overline{P_Y^{\mathrm{CO}}} Y_t^\mathrm{CO}}{\sum\limits_{\mathrm{CO} \in \mathcal{I}^{EA}} s^\mathrm{CO}},
+\end{equation}
+\begin{equation} \label{eqEAinflation}
+    \Pi_t^{EA,4} \equiv \prod\limits_{\mathrm{CO} \in \mathcal{I}^{EA}} \left( \frac{P_{C,t}^\mathrm{CO}}{P_{C,t-4}^\mathrm{CO}} \right)^{\frac{s^\mathrm{CO}}{\sum\limits_{\mathrm{CO} \in \mathcal{I}^{EA}} s^\mathrm{CO}}}.
+\end{equation}
+
+\paragraph{Fiscal and monetary policy rules} Regarding the general government specification, the budget encompasses multiple tax and expenditure instruments. With the possibility to issue bonds, governments are not required to balance the budget in each period. Following the extension by \citet{Clancyetal2016}, both government consumption and investment play a meaningful role in the model. Specifically, government consumption exhibits complementarity with private consumption, while government investment contributes to the stock of productive capital, thereby enhancing the production capacity of the private sector.
+\footnote{The complementarity between government and private consumption is introduced through the specification of a composite good consumed by households, following the approach of \citet{Coenen-et-al_AER_2012}. Specifically, the composite consumption good $\tilde{C}_t$ is modeled as a CES aggregate of final private consumption and final government consumption goods: $\tilde{C}_t = \left[v_{\text{CCES}}^{\frac{1}{\mu_{\text{CCES}}}}\left(C_t\right)^{\frac{\mu_{\text{CCES}}-1}{\mu_{\text{CCES}}}} + \left(1-v_{\text{CCES}}\right)^{\frac{1}{\mu_{\text{CCES}}}}\left(G_{C,t}\right)^{\frac{\mu_{\text{CCES}}-1}{\mu_{\text{CCES}}}}\right]^{\frac{\mu_{\text{CCES}}}{\mu_{\text{CCES}}-1}}$,where $v_{\text{CCES}}$ denotes the share parameter, and $\mu_{\text{CCES}}$ represents the elasticity of substitution between the two component goods.}
+\footnote{The assumption that government investment enhances productivity builds on the work of \citet{LeeperEtAl2010jme}, where public capital accumulation is governed by $K_{G,t+1} = (1-\delta_G)K_{G,t} + G_{I,t}$. This formulation implies that government investment $G_{I,t}$ builds up the stock of public capital $K_{G,t+1}$, which depreciates at the rate $\delta_G$. Public capital, in turn, enters the production function of both tradable and non-tradable goods, specified respectively as $Y_{T,t}^S = z_{T,t} K_{G,t}^{\alpha_G} (K_{T,t}^D)^{\alpha_T} (N_{T,t}^D)^{1-\alpha_T} - \psi_T$ and $Y_{N,t}^S = z_{N,t} K_{G,t}^{\alpha_G} (K_{N,t}^D)^{\alpha_N} (N_{N,t}^D)^{1-\alpha_N} - \psi_N$, thereby enhancing the productive capacity of the private sector. Here, $Y_{T,t}^S$ and $Y_{N,t}^S$ denote sectoral outputs, $z_{T,t}$ and $z_{N,t}$ represent sector-specific productivity levels, $\alpha_G$ measures the contribution of public capital to production, $K_{T,t}^D$ and $K_{N,t}^D$ are private capital inputs, $N_{T,t}^D$ and $N_{N,t}^D$ are labor inputs, $\alpha_T$ and $\alpha_N$ denote the capital shares in the tradable and non-tradable sectors, respectively, and $\psi_T$ and $\psi_N$ capture fixed costs.}
+
+%//NOTE: here is the decomposed budget constraint of the government > based on that we have 10 fiscal instruments
+% (1) DE_pcg(-1)*DE_cg(-1)
+% (2) +DE_pig(-1)*DE_ig(-1)
+% (3) +DE_tr(-1)
+% ( ) +DE_b(-1)*DE_pic(-1)^(-1)
+% ( ) +DE_m(-2)*DE_pic(-1)^(-1) 
+% (4) = DE_tauc(-1)*DE_c(-1)
+% (5 & 6) +(DE_taun(-1)+DE_tauwh(-1))*(DE_wi(-1)*DE_ndi(-1)+DE_wj(-1)*DE_ndj(-1))
+% (7) +DE_tauwf(-1)*DE_w(-1)*DE_nd(-1)
+% (8) +DE_tauk(-1)*(DE_rk(-1)*DE_u(-1)-(DE_gammau(-1)+DE_delta)*DE_pi(-1))*DE_k(-1)
+% (9) +DE_taud(-1)*DE_d(-1)
+% (10) +DE_t(-1)
+% ( ) +(DE_r(-1)*(1-DE_gammab(-1)))^(-1)*DE_b
+% ( ) +DE_m(-1);
+
+%//NOTE: let's see how each of these instruments is modelled
+% (1): DE_pcg*DE_cg = DE_cgy*DE_pybar*DE_ybar; > DE_cgy = (1-DE_rhocg)*DE_cgybar+DE_rhocg*DE_cgy(-1)+DE_epsgc;
+% (2): DE_pig*DE_ig = DE_igy*DE_pybar*DE_ybar; > DE_igy = (1-DE_rhoig)*DE_igybar+DE_rhoig*DE_igy(-1)+DE_epsgi;
+% (3) DE_tr = DE_try*DE_pybar*DE_ybar; DE_try = (1-DE_rhotr)*DE_trybar+DE_rhotr*DE_try(-1)+DE_epstr;
+% (4) DE_tauc = (1-DE_rhotauc)*DE_taucbar+DE_rhotauc*DE_tauc(-1)+DE_epstauc;
+% (5) DE_taun = (1-DE_rhotaun)*DE_taunbar+DE_rhotaun*DE_taun(-1)+DE_epstaun;
+% (6) DE_tauwh = (1-DE_rhotauwh)*DE_tauwhbar+DE_rhotauwh*DE_tauwh(-1)+DE_epstauwh;
+% (7) DE_tauwf = (1-DE_rhotauwf)*DE_tauwfbar+DE_rhotauwf*DE_tauwf(-1)+DE_epstauwf;
+% (8) DE_tauk = (1-DE_rhotauk)*DE_taukbar+DE_rhotauk*DE_tauk(-1)+DE_epstauk;
+% (9) DE_taud = (1-DE_rhotaud)*DE_taudbar+DE_rhotaud*DE_taud(-1)+DE_epstaud;
+% (10) DE_ty = DE_t/(DE_pybar*DE_ybar); > DE_t/(DE_pybar*DE_ybar) = DE_phitb*(DE_b/(DE_pybar*DE_ybar)-DE_bytarget);
+
+In our version of the EAGLE model, the government is equipped with ten fiscal instruments. Seven of these operate on the revenue side of the budget: the consumption tax rate, $\tau_t^C$; the wage tax rate, $\tau_t^N$; the social contribution rate paid by employees, $\tau_t^{Wh}$; the social contribution rate paid by employers, $\tau_t^{Wf}$; the tax rate on capital returns, $\tau_t^k$; the tax rate on bond returns, $\tau_t^b$; and lump-sum taxes, $T_t$. The remaining three instruments are on the expenditure side of the budget: government consumption, $G_{C,t}$; government investment, $G_{I,t}$; and government transfers, $TR_t$.
+
+For all fiscal instruments except for lump-sum taxes, we assume a fiscal rule of the following form:
+\begin{equation}
+    \label{eqFiscalRule}
+    X_t = (1-\rho_X) \bar{X} + \rho_X X_{t-1} + \varepsilon_{X,t},
+\end{equation}
+where \(X \in \left\{ \tau_t^C, \tau_t^N, \tau_t^{Wh}, \tau_t^{Wf}, \tau_t^k, \tau_t^b, \frac{P_{G_C,t} G_{C,t}}{\overline{P_Y Y}}, \frac{P_{G_I,t} G_{I,t}}{\overline{P_Y Y}}, \frac{TR_t}{\overline{P_Y Y}} \right\}\). For expenditure instruments, the fiscal rule in Eq.~\ref{eqFiscalRule} operates on nominal ratios relative to steady-state nominal GDP. Here, $\bar{X}$ denotes the long-run target for the fiscal instrument, $\rho_X$ is the smoothing parameter, and $\varepsilon_{X,t}$ represents an i.i.d. fiscal shock specific to the instrument.
+
+The fiscal rule governing lump-sum taxes is designed to ensure that government debt converges towards a long-run target level, $\overline{B_Y}$, which is calibrated. Stability of the debt stock is achieved through a gradual adjustment of lump-sum taxes relative to output, with the speed of adjustment governed by the parameter $\phi_{B_Y}$, as specified in Eq.~\ref{eqDebtRule}:
+\begin{equation}
+    \label{eqDebtRule}
+    \frac{T_t}{\overline{P_Y Y}} = \phi_{B_Y} \left( \frac{B_t}{\overline{P_Y Y}} - \overline{B_Y} \right).
+\end{equation}
+
+%//NOTE: Let's talk about the monetary policy now.
+% Here are the rules for the US.
+% (for the US) 
+% US_r^4-1 = US_phirr*(US_r(-1)^4-1)+(1-US_phirr)*(US_rrstar^4*US_pi4target-1+US_phirpi*(US_pic4-US_pi4target))+US_phirgy*(US_y/US_y(-1)-1)+US_epsr;
+% (for the rest of the EU) 
+% RU_r^4-1 = RU_phirr*(RU_r(-1)^4-1)+(1-RU_phirr)*(RU_rrstar^4*RU_pi4target-1+RU_phirpi*(RU_pic4-RU_pi4target))+RU_phirgy*(RU_y/RU_y(-1)-1)+RU_epsr;
+% (for the rest of the world) 
+% RW_r^4-1 = RW_phirr*(RW_r(-1)^4-1)+(1-RW_phirr)*(RW_rrstar^4*RW_pi4target-1+RW_phirpi*(RW_pic4-RW_pi4target))+RW_phirgy*(RW_y/RW_y(-1)-1)+RW_epsr;
+% (for the EA) 
+% DE_r^4-1 = EA_phirr*(DE_r(-1)^4-1)+(1-EA_phirr)*(DE_rrstar^4*DE_pi4target-1+EA_phirpi*(EA_pic4-DE_pi4target))	+EA_phirgy*(EA_ygrowth-1)+EA_epsr;
+% The above rules fortunately coincide with what is in the EM paper.
+
+Monetary authorities in the model conduct policy according to a Taylor-type interest rate rule, specified in terms of annual CPI inflation, $\Pi_{C,t}^{\mathrm{CO},4}$ \,($\Pi_{C,t}^{\mathrm{CO},4} \equiv P_{C,t}^{\mathrm{CO}} / P_{C,t-4}^{\mathrm{CO}}$), and quarterly output growth, $\mathrm{Ygr}_t^{\mathrm{CO}}$ \,($\mathrm{Ygr}_t^{\mathrm{CO}} \equiv Y_t^{\mathrm{CO}} / Y_{t-1}^{\mathrm{CO}}$), as formalized in Eq.~\ref{eqPolicyRule}:
+\begin{equation} \label{eqPolicyRule}
+    \begin{aligned}
+    \left(R_t^{\mathrm{CO}}\right)^4 =\ & \phi_{R}^{\mathrm{CO}} \left(R_{t-1}^{\mathrm{CO}}\right)^4 
+    + \left(1-\phi_{R}^{\mathrm{CO}}\right) \left[\left(\bar{R}^{\mathrm{CO}}\right)^4 
+    + \phi_{\Pi}^{\mathrm{CO}} \left(\Pi_{C,t}^{\mathrm{CO},4} - \bar{\Pi}^{\mathrm{CO},4}\right)\right] \\
+    & + \phi_{gY}^{\mathrm{CO}} \left(\mathrm{Ygr}_t^{\mathrm{CO}} - 1\right)
+    + \varepsilon_{R,t}^{\mathrm{CO}}.
+    \end{aligned}
+\end{equation}
+
+Here, $\left(\bar{R}^{\mathrm{CO}}\right)^4 = \beta^{-4} \bar{\Pi}^{\mathrm{CO},4}$ denotes the equilibrium nominal interest rate in country or region $\mathrm{CO}$, $\bar{\Pi}^{\mathrm{CO},4}$ is the monetary authority's annual inflation target, and $\varepsilon_{R,t}^{\mathrm{CO}}$ represents a serially uncorrelated monetary policy shock. The parameters $\phi_{R}^{\mathrm{CO}}$, $\phi_{\Pi}^{\mathrm{CO}}$, and $\phi_{gY}^{\mathrm{CO}}$ respectively determine the smoothing of the interest rate and the sensitivity to deviations in inflation and output. In the case of the euro area, the same rule applies, but based on union-wide aggregates as defined in Eqs.~\ref{eqEAoutput} and~\ref{eqEAinflation}.
+
+%//NOTE: There seems to be a typo in the EM paper, the annual steady-state nominal interest rate shoudl be a function on annual inflation. This can be seen by looking at the below equations in the moddel.
+% // Real interest rate
+% DE_rr-1 = DE_r/DE_pic(+1)-1;
+% // Equilibrium real interest rate
+% DE_rrstar-1 = 1/DE_beta-1;
 
 \subsection{The model calibration} \label{sec:model_calibration}
 
