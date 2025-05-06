@@ -173,22 +173,7 @@ Specifically, each of the four types of final goods $Q_t^s$ is assembled using a
     \label{eq1}
     Q_t^s = \left[v_s^{\frac{1}{\mu_s}}\left(TT_t^s\right)^{\frac{\mu_s-1}{\mu_s}} + \left(1-v_s\right)^{\frac{1}{\mu_s}}\left(NT_t^s\right)^{\frac{\mu_s-1}{\mu_s}}\right]^{\frac{\mu_s}{\mu_s-1}}.
 \end{equation}
-The tradable good $TT_t^s$, in turn, is produced analogously as a CES composite of home-produced tradable goods $HT_t^s$ and imported goods $IM_t^s$ (see Eq.~\ref{eqTT}). The parameter $v_{Ts}$ captures the home bias in tradable goods, and $\mu_{Ts}$ measures the elasticity of substitution between domestic and imported goods:
-\begin{equation}
-    \label{eqTT}
-    TT_t^s = \left[v_{Ts}^{\frac{1}{\mu_{Ts}}}\left(HT_t^s\right)^{\frac{\mu_{Ts}-1}{\mu_{Ts}}} + \left(1-v_{Ts}\right)^{\frac{1}{\mu_{Ts}}}\left(IM_t^s\right)^{\frac{\mu_{Ts}-1}{\mu_{Ts}}}\right]^{\frac{\mu_{Ts}}{\mu_{Ts}-1}}.
-\end{equation}
-Finally, the imported good $IM_t^s$ consists of a bundle of bilateral imports $IM_t^{s,CO}$ (see Eq.~\ref{eqIM}). The parameter $v_{Ms}^{H,CO}$ represents the share of imports from country or region $CO$, satisfying $\sum_{CO \neq H} v_{Ms}^{H,CO} = 1$, and $\mu_{Ms}$ is the elasticity of substitution between imports from different trading partners:
-\begin{equation}
-    \label{eqIM}
-    IM_t^s = \left[\sum_{CO \neq H} \left(v_{Ms}^{H,CO}\right)^{\frac{1}{\mu_{Ms}}} \left(IM_t^{s,CO}\right)^{\frac{\mu_{Ms}-1}{\mu_{Ms}}}\right]^{\frac{\mu_{Ms}}{\mu_{Ms}-1}}.
-\end{equation}
-
-\footnote{The country-specific import weights $v_{Ms}^{H,CO}$ are determined as a function of the relative economic size and degree of openness. Accordingly, even if Germany exhibits the same degree of openness to imports from Austria and France, the weight $v_{Ms}^{DE,AT}$ is expected to be significantly smaller than $v_{Ms}^{DE,FR}$, reflecting the larger size of the French economy.}
-
-Figure~\ref{finalGoodProduction} offers a detailed schematic representation of the production of a final good of type $s$.
-
-\footnote{The CES aggregation framework also implies that the prices of final goods are composite indices of the prices of their underlying components. Specifically, the price of a final good of type $s$, denoted $P_{s,t}$, the price of the tradable component $P_{TTs,t}$, and the price of imported tradable goods $P_{IMs,t}$ are defined as follows:
+The tradable good $TT_t^s$, in turn, is produced analogously as a CES composite of home-produced tradable goods $HT_t^s$ and imported goods $IM_t^s$ (see Eq.~\ref{eqTT}). The parameter $v_{Ts}$ captures the home bias in tradable goods, and $\mu_{Ts}$ measures the elasticity of substitution between domestic and imported goods:\footnote{The CES aggregation framework also implies that the prices of final goods are composite indices of the prices of their underlying components. Specifically, the price of a final good of type $s$, denoted $P_{s,t}$, the price of the tradable component $P_{TTs,t}$, and the price of imported tradable goods $P_{IMs,t}$ are defined as follows:
 \[
 P_{s,t} = \left[v_s\left(P_{TTs,t}\right)^{1-\mu_s} + \left(1-v_s\right)\left(P_{NT,t}\right)^{1-\mu_s}\right]^{\frac{1}{1-\mu_s}},
 \]
@@ -199,6 +184,19 @@ P_{TTs,t} = \left[v_{Ts}\left(P_{HT,t}\right)^{1-\mu_{Ts}} + \left(1-v_{Ts}\righ
 P_{IMs,t} = \left[\sum_{CO \neq H} v_{Ms}^{H,CO}\left(P_{IM,t}^{CO}\right)^{1-\mu_{Ms}}\right]^{\frac{1}{1-\mu_{Ms}}}.
 \]
 Here, $v_s$, $v_{Ts}$, and $v_{Ms}^{H,CO}$ are the share parameters governing the aggregation at each respective level, and $\mu_s$, $\mu_{Ts}$, and $\mu_{Ms}$ denote the elasticities of substitution. The price $P_{NT,t}$ corresponds to domestically produced non-tradable goods, $P_{HT,t}$ denotes the price of home-produced tradable goods, and $P_{IM,t}^{CO}$ refers to the price of imports from country or region $CO$. The structure of price aggregation mirrors the quantity aggregation.}
+\begin{equation}
+    \label{eqTT}
+    TT_t^s = \left[v_{Ts}^{\frac{1}{\mu_{Ts}}}\left(HT_t^s\right)^{\frac{\mu_{Ts}-1}{\mu_{Ts}}} + \left(1-v_{Ts}\right)^{\frac{1}{\mu_{Ts}}}\left(IM_t^s\right)^{\frac{\mu_{Ts}-1}{\mu_{Ts}}}\right]^{\frac{\mu_{Ts}}{\mu_{Ts}-1}}.
+\end{equation}
+Finally, the imported good $IM_t^s$ consists of a bundle of bilateral imports $IM_t^{s,CO}$ (see Eq.~\ref{eqIM}). The parameter $v_{Ms}^{H,CO}$ represents the share of imports from country or region $CO$, satisfying $\sum_{CO \neq H} v_{Ms}^{H,CO} = 1$, and $\mu_{Ms}$ is the elasticity of substitution between imports from different trading partners:\footnote{The country-specific import weights $v_{Ms}^{H,CO}$ are determined as a function of the relative economic size and degree of openness. Accordingly, even if Germany exhibits the same degree of openness to imports from Austria and France, the weight $v_{Ms}^{DE,AT}$ is expected to be significantly smaller than $v_{Ms}^{DE,FR}$, reflecting the larger size of the French economy.}
+\begin{equation}
+    \label{eqIM}
+    IM_t^s = \left[\sum_{CO \neq H} \left(v_{Ms}^{H,CO}\right)^{\frac{1}{\mu_{Ms}}} \left(IM_t^{s,CO}\right)^{\frac{\mu_{Ms}-1}{\mu_{Ms}}}\right]^{\frac{\mu_{Ms}}{\mu_{Ms}-1}}.
+\end{equation}
+
+
+Figure~\ref{finalGoodProduction} offers a detailed schematic representation of the production of a final good of type $s$.
+
 
 \begin{figure}[H]
     \centering
