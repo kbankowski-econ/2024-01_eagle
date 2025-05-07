@@ -12,7 +12,7 @@ function hhBehavior(envi, aStruct, fileName)
     fprintf(fid, '\\begin{table}[htbp]\n');
     fprintf(fid, '    \\centering\n');
     fprintf(fid, '    \\caption{Households behavior.}\n');
-    fprintf(fid, '    \\label{tab:hhAndFirmBehavior}\n');
+    fprintf(fid, '    \\label{tab:hhBehavior}\n');
     fprintf(fid, '    {\\small\n');
     fprintf(fid, '    \\begin{tabular}{>{\\raggedright\\arraybackslash}p{6.2cm}*{14}{>{\\centering\\arraybackslash}p{0.8cm}}}\n');
     fprintf(fid, '    \\hline\n');
