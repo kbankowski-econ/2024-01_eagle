@@ -57,6 +57,7 @@
 \usepackage{pdflscape} % Added package for landscape pages
 \usepackage{array} % Added package to ensure landscape tables with fixed width
 \usepackage{tikz}
+\usepackage{adjustbox}
 \usetikzlibrary{positioning}
 
 
@@ -443,17 +444,14 @@ Here, $\left(\bar{R}^{\mathrm{CO}}\right)^4 = \beta^{-4} \bar{\Pi}^{\mathrm{CO},
     \input{tables/internationalLinkages_MIG.tex}
 \end{landscape}
 
-\paragraph{Key steady-state ratios}
+% Key steady ratios
 We calibrate the model for 14 separate regions: Austria, Belgium, Finland, France, Germany, Greece, Italy, the Netherlands, Portugal, Spain, rest of Euro area, non-Euro area EU, the US, and rest of world. We adhere to the established calibration methodology prevalent in academic literature, aiming to align the primary steady-state ratios of different expenditure components with GDP, commonly known as the Great Ratios. These ratios were calculated in alignment with other calibrated data and is reported in Table \ref{tab:national_accounts}. 
-\begin{landscape}
-    \input{tables/ssNationalAccounts.tex}
-\end{landscape}
+\input{tables/ssNationalAccounts}
 
-\paragraph{Household, firms and government behaviour}
+
+%Household, firms and government behaviour
 Some parameters of the model regarding household, firm, and government behaviour are kept consistent with the original model (see \citet{Gomesaetal2012}), which employs standard values prevelant in the literature. Table on household, and firms' bias between capital, labour, and different types of households are reported in Table \ref{tab:hhBehavior} in the calibration section of the technical appendix. Government parameters, such as tax rates, are calibrated using OECD datasets (\citet{OECD_data}). The tax rates in the model include labour, capital, consumption tax, and social security contributions both by the employers, and the employees, and are reported together with other monetary and fiscal authority parameters in Table \ref{tab:policy} below. 
-\begin{landscape}
-    \input{tables/monetaryFiscalPolicy.tex}
-\end{landscape}
+\input{tables/monetaryFiscalPolicy.tex}
 Lastly, for nominal and real rigidities, as well as the price and wage markup parameters refer to Table \ref{tab:rigidities} and Table \ref{tab:markups_transposed}. 
 
 Calibrating the trade matrix is a major technical challenge in extending the EAGLE framework. The expanded model, which includes 12 euro area countries, the rest of the world, and the United States, encompasses nearly 10,000 endogenous variables. Computing the steady state for a model of this scale remains a complex task, requiring the application of a "divide-and-conquer" algorithm, also known as homotopy in Dynare (see \citet{Adjemianetal2024}). We first solve for the steady state of a simplified version of the model, where all regions are symmetric and economic sectors are dominated by a single type of good. From this initial steady state, we gradually adjust parameters toward their target values, ensuring a smooth transition to an equilibrium where all economic ratios and trade specifications align with observed data. Among the various calibration steps, the adjustment of bilateral trade flows presents the greatest challenge. Successfully calibrating the model requires computing multiple intermediate steady states before converging on the final set of bilateral shares.
@@ -603,7 +601,11 @@ Technical Appendix
 \section{Calibration Details}
 \begin{landscape}
     \input{tables/hhBehavior.tex}
+\end{landscape}
+\begin{landscape}
     \input{tables/realNominalRigidities.tex}
+\end{landscape}
+\begin{landscape}
     \input{tables/priceAndWageMarkups.tex}
 \end{landscape}
 
