@@ -450,8 +450,9 @@ We calibrate the model for 14 separate regions: Austria, Belgium, Finland, Franc
 \input{tables/ssNationalAccounts}
 
 %Household, firms and government behaviour
-Some parameters of the model regarding household, firm, and government behaviour are kept consistent with the original model (see \citet{Gomesaetal2012}), which employs standard values prevelant in the literature. Table on household, and firms' bias between capital, labour, and different types of households are reported in Table \ref{tab:hhBehavior} in the calibration section of the technical appendix. Government parameters, such as tax rates, are calibrated using OECD datasets (\citet{OECD_data}). The tax rates in the model include labour, capital, consumption tax, and social security contributions both by the employers, and the employees, and are reported together with other monetary and fiscal authority parameters in Table \ref{tab:policy} below. 
+Some parameters of the model regarding household, firm, and government behaviour are kept consistent with the original model (see \citet{Gomesaetal2012}), which employs standard values prevelant in the literature. Table on household, and firms' bias between capital, labour, different types of households, and intermediate goodsa are reported in Table \ref{tab:hhAndFirmBehavior} in the calibration section of the technical appendix. Government parameters, such as tax rates, are calibrated using OECD datasets (\citet{OECD_data}). The tax rates in the model include labour, capital, consumption tax, and social security contributions both by the employers, and the employees, and are reported together with other monetary and fiscal authority parameters in Table \ref{tab:policy} below. 
 \input{tables/monetaryFiscalPolicy.tex}
+
 Lastly, for nominal and real rigidities, as well as the price and wage markup parameters refer to Table \ref{tab:rigidities} and Table \ref{tab:markups_transposed}. 
 
 \paragraph{Trade data}
@@ -470,6 +471,8 @@ The structure of the input output table is represented in the figure \ref{fig8}.
     \vspace{5mm} \source{OECD}
 \end{figure}
 
+\paragraph{Differences between countries}
+One major difference across the economies in our model lies in the composition of domestic demand, particularly the share of government consumption. Several countries, such as Belgium, France, Finland, and the Netherlands, exhibit relatively high government spending ratios, while others, such as the US or Rest of World, show comparatively smaller shares. Significant heterogeneity also arises in the share of imports in final demand components as seen in table 6. Smaller economies, such as countries in the rest of Euro Area, Belgium, and the Netherlands, showcase more openness and import up to over 30\% of their GDP, while others have import share closer to 20\%, with the US and Rest of World having relatively low openness. Net foreign asset position is calibrated endogenously accordingly, with many Euro Area countries having a negative position.  In addition, countries differ in the degree of nominal and real rigidities, with the Rest of World and the US exhibiting lower price and wage stickiness compared to euro area economies. Finally, the relative size of each economy is recalibrated to reflect its share of global GDP, which, in contrast to the original EAGLE setup, provides a more granular transmission channel.
 
 Calibrating the trade matrix is a major technical challenge in extending the EAGLE framework. The expanded model, which includes 12 euro area countries, the rest of the world, and the United States, encompasses nearly 10,000 endogenous variables. Computing the steady state for a model of this scale remains a complex task, requiring the application of a "divide-and-conquer" algorithm, also known as homotopy in Dynare (see \citet{Adjemianetal2024}). We first solve for the steady state of a simplified version of the model, where all regions are symmetric and economic sectors are dominated by a single type of good. From this initial steady state, we gradually adjust parameters toward their target values, ensuring a smooth transition to an equilibrium where all economic ratios and trade specifications align with observed data. Among the various calibration steps, the adjustment of bilateral trade flows presents the greatest challenge. Successfully calibrating the model requires computing multiple intermediate steady states before converging on the final set of bilateral shares.
 
@@ -595,7 +598,7 @@ Technical Appendix
 
 \section{Calibration Details}
 \begin{landscape}
-    \input{tables/hhBehavior.tex}
+    \input{tables/hhAndFirmBehavior.tex}
 \end{landscape}
 \begin{landscape}
     \input{tables/realNominalRigidities.tex}
