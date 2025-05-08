@@ -444,34 +444,24 @@ Here, $\left(\bar{R}^{\mathrm{CO}}\right)^4 = \beta^{-4} \bar{\Pi}^{\mathrm{CO},
     \input{tables/internationalLinkages_MIG.tex}
 \end{landscape}
 
+\paragraph{Households, firms, and governmnet parameters} 
 % Key steady ratios
 We calibrate the model for 14 separate regions: Austria, Belgium, Finland, France, Germany, Greece, Italy, the Netherlands, Portugal, Spain, rest of Euro area, non-Euro area EU, the US, and rest of world. We adhere to the established calibration methodology prevalent in academic literature, aiming to align the primary steady-state ratios of different expenditure components with GDP, commonly known as the Great Ratios. These ratios were calculated in alignment with other calibrated data and is reported in Table \ref{tab:national_accounts}. 
 \input{tables/ssNationalAccounts}
-
 
 %Household, firms and government behaviour
 Some parameters of the model regarding household, firm, and government behaviour are kept consistent with the original model (see \citet{Gomesaetal2012}), which employs standard values prevelant in the literature. Table on household, and firms' bias between capital, labour, and different types of households are reported in Table \ref{tab:hhBehavior} in the calibration section of the technical appendix. Government parameters, such as tax rates, are calibrated using OECD datasets (\citet{OECD_data}). The tax rates in the model include labour, capital, consumption tax, and social security contributions both by the employers, and the employees, and are reported together with other monetary and fiscal authority parameters in Table \ref{tab:policy} below. 
 \input{tables/monetaryFiscalPolicy.tex}
 Lastly, for nominal and real rigidities, as well as the price and wage markup parameters refer to Table \ref{tab:rigidities} and Table \ref{tab:markups_transposed}. 
 
-Calibrating the trade matrix is a major technical challenge in extending the EAGLE framework. The expanded model, which includes 12 euro area countries, the rest of the world, and the United States, encompasses nearly 10,000 endogenous variables. Computing the steady state for a model of this scale remains a complex task, requiring the application of a "divide-and-conquer" algorithm, also known as homotopy in Dynare (see \citet{Adjemianetal2024}). We first solve for the steady state of a simplified version of the model, where all regions are symmetric and economic sectors are dominated by a single type of good. From this initial steady state, we gradually adjust parameters toward their target values, ensuring a smooth transition to an equilibrium where all economic ratios and trade specifications align with observed data. Among the various calibration steps, the adjustment of bilateral trade flows presents the greatest challenge. Successfully calibrating the model requires computing multiple intermediate steady states before converging on the final set of bilateral shares.
-
-% this is moved from the previous subsection (see whether this fits optimally)
-Accurately representing trade dynamics requires a precise estimation of the import content for each country and each demand component. To achieve this, we follow the methodology established by \citet{Bussiere-et-al_2013_aejMacro} and utilize Inter-Country Input-Output (ICIO) tables published by the \citet{ICIO2024}. 
-
-% 5 This is how we calibrate trade
+\paragraph{Trade data}
+Accurately representing trade dynamics requires a precise estimation of the import content for each country and each demand component. To achieve this, we follow the methodology established by \citet{Bussiere-et-al_2013_aejMacro} and utilize Inter-Country Input-Output (ICIO) tables published by the \citet{ICIO2024}. We choose the OECD inter-country input-output tables as it has a broad and recent coverage of years, regions, and sectors. The latest OECD release covers years up to 2020, 77 regions, including a 'Rest of World' region, and 45 sectors. To keep consistency within the calibrated data, we also employed the tables to extract the Great Ratios. 
 
 %Inter-Output tables
 
-Input-output tables are a systematic representation of the economic transactions between different sectors within an economy. They detail how the output of one industry is used as an input in another, capturing the flow of goods and services within the economy. These tables provide insights into the production processes, the interdependencies between industries, and the distribution of final goods and services to consumers, businesses, and governments.
+Input-output tables detail how the output of one industry is used as an input in another, capturing the flow of goods and services within the economy. Inter-country tables extend beyond national borders, incorporating data on economic interactions between multiple countries, capturing a comprehensive view of cross-border flows of goods and services. They include detailed information on the import content of each country's production processes, highlighting how domestic industries rely on foreign inputs. 
 
-Inter-country input-output tables extend this concept beyond national borders, incorporating data on economic interactions between multiple countries. These tables offer a comprehensive view of global supply chains by capturing the cross-border flows of goods and services. They include detailed information on the import content of each country's production processes, highlighting how domestic industries rely on foreign inputs. Furthermore, these tables elucidate trade relationships by revealing the composition of final demand components—such as private and public consumption, and investment—across different countries. By integrating data from multiple nations, ICIO tables allow to assess the impact of international trade on economic activity, track the propagation of economic shocks across borders, and evaluate the global interconnectedness of industries.
-
-%Choice for OECD data and data description
-
-For these reasons, multi-region DSGE models often rely input-output tables. For example, the European Commission's QUEST model (\citet{pfeifferetal2021eedp}) base its steady-state import shares in tradables and non-tradables from WIOD database (\citet{Timmer2015}). The Pfeiffer et al. paper also highlights the importance of inclusion of intermediate goods in modelling trade to better capture the economic linkages in evaluating fiscal spillovers. We choose OECD dataset over the WIOD as it is more recent and has a more detailed covered. The latest OECD release covers years up to 2020, while WIOD latest data is from 2014. Moreover, OECD tables are 77 regions, including a 'Rest of World' region, by 45 sectors, with WIOD only covering 43 countries. The OECD ICIO tables were previously used by OECD own research, both in their CGE METRO model calibrations (see \citet{metro2023}), and as a stand-alone tool to estimate, for example, \citet{alsamawi2024} paper on spillovers of tourist expenditures on other industries. 
-
-The structure of the input out table is represented in the figure below. As depicted, the tables are structured around intermediate use and final demand, distinguishing between inputs used in production processes and goods/services consumed by households, governments, and investments. The framework includes value-added  and taxes less subsidies, which contribute to total output at basic prices. Final demand components, such as Household Final Consumption Expenditure (HFCE), General Government Final Consumption (GGFC), and Gross Fixed Capital Formation (GFCF), reflect the end use of products across different economic agents. In our calibrations, we extracted the tables for years 2011 to 2020 and found average values across the years to capture medium-run characteristics of trade.
+The structure of the input output table is represented in the figure \ref{fig8}. As depicted, the tables are structured around intermediate use and final demand. In our calibrations, we extracted the tables for years 1995 to 2020 and found average values across the years to capture medium-run characteristics of trade.
 
 \begin{figure}[H]
     \centering
@@ -479,6 +469,11 @@ The structure of the input out table is represented in the figure below. As depi
     \includegraphics[width=1\textwidth]{figures/OECD_table.png}
     \vspace{5mm} \source{OECD}
 \end{figure}
+
+
+Calibrating the trade matrix is a major technical challenge in extending the EAGLE framework. The expanded model, which includes 12 euro area countries, the rest of the world, and the United States, encompasses nearly 10,000 endogenous variables. Computing the steady state for a model of this scale remains a complex task, requiring the application of a "divide-and-conquer" algorithm, also known as homotopy in Dynare (see \citet{Adjemianetal2024}). We first solve for the steady state of a simplified version of the model, where all regions are symmetric and economic sectors are dominated by a single type of good. From this initial steady state, we gradually adjust parameters toward their target values, ensuring a smooth transition to an equilibrium where all economic ratios and trade specifications align with observed data. Among the various calibration steps, the adjustment of bilateral trade flows presents the greatest challenge. Successfully calibrating the model requires computing multiple intermediate steady states before converging on the final set of bilateral shares.
+
+% 5 This is how we calibrate trade
 
 %Methodology to extract the shares 
 
