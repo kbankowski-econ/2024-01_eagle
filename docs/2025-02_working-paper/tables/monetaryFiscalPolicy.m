@@ -13,7 +13,8 @@ function monetaryFiscalPolicy(envi, aStruct, fileName)
     fprintf(fid, '    \\centering\n');
     fprintf(fid, '    \\caption{Fiscal policy specification.}\n');
     fprintf(fid, '    \\label{tab:policy}\n');
-    fprintf(fid, '    {\\small\n');
+    fprintf(fid, '    \\begin{adjustbox}{width=\\textwidth}\n');
+    fprintf(fid, '    \\small\n');
     fprintf(fid, '    \\begin{tabular}{>{\\raggedright\\arraybackslash}p{6.2cm}*{14}{>{\\centering\\arraybackslash}p{0.8cm}}}\n');
     fprintf(fid, '    \\hline\n');
     fprintf(fid, '     & %s \\\\\n', strjoin(envi.Meta.ctryList, ' & '));
@@ -36,7 +37,7 @@ function monetaryFiscalPolicy(envi, aStruct, fileName)
     % Table footer
     fprintf(fid, '    \\hline\n');
     fprintf(fid, '    \\end{tabular}\n');
-    fprintf(fid, '    }\n');
+    fprintf(fid, '    \\end{adjustbox}\n');
     fprintf(fid, '\\end{table}');
 
     % Close the file
