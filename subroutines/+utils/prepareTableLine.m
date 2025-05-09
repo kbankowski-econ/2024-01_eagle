@@ -1,24 +1,20 @@
-function outputString = prepareTableLine(envi, varName, varSymbol, aField, aStruct)
+function outputString = prepareTableLine(ctryList, varName, varSymbol, aField, aStruct, aFormat, transfFunction)
+
+    % an option to have a multiplying factor
+    if nargin < 7 || isempty(transfFunction)
+        transfFunction = @(x) x;
+    end    
 
     % Create the array of values from the structure fields using country codes
-    values = nan(1, length(envi.Meta.ctryList));  % Changed to ones instead of zeros
-    for i = 1:length(envi.Meta.ctryList)
-        fieldName = envi.Meta.ctryList(i) + "_" + aField;
+    values = nan(1, length(ctryList));  % Changed to ones instead of zeros
+    for i = 1:length(ctryList)
+        fieldName = ctryList(i) + "_" + aField;
         try
-            values(i) = aStruct.(fieldName);
+            values(i) = transfFunction(aStruct.(fieldName));
         catch
         end
     end
     
-    % Differentiate formatting for some variables
-    if ismember(aField, {'delta', 'size'})
-        aFormat = ' & %.3f';
-    elseif ismember(aField, {'gammau2'})
-        aFormat = ' & %.0f';        
-    else
-        aFormat = ' & %.2f';
-    end
-
     % Add format specifiers for each country
     coreString = '';
     for i = 1:length(values)
@@ -26,6 +22,9 @@ function outputString = prepareTableLine(envi, varName, varSymbol, aField, aStru
     end
     % Use sprintf with the format string and unpacked values array
     outputString = sprintf(coreString, values);
+    % Replace NaN with -- so that missing values look better in the latex
+    % tables
+    outputString = strrep(outputString, 'NaN', '--');
 
     % Start building the format string with the tab and labels
     labelString = [varName,' ($', varSymbol, '$)'];

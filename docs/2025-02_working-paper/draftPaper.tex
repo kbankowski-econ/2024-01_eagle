@@ -73,6 +73,18 @@
 
 \fancyfoot[RO,LE]{\thepage} % Custom footer text
 \usepackage{natbib}
+\newcommand{\CountryCodes}{%
+RA = Rest of euro area; AT = Austria; BE = Belgium; ES = Spain; FI = Finland; FR = France; GR = Greece; IT = Italy; NL = Netherlands; PT = Portugal; DE = Germany; RU = Non-euro area EU; RW = Rest of world; US = United States%
+}
+\newcommand{\CountryCodesForMP}{%
+EA = Euro area; RU = Non-euro area EU; RW = Rest of world; US = United States%
+}
+\newcommand{\TradeTablesNote}{%
+Column headers are the importing countries $(H)$. Row labels indicate countries of origin $(CO)$—exporting countries.%
+}
+\newcommand{\TradeTablesBiasNote}{%
+The import bias parameter must be specified for all trading partners except one, which is determined residually to ensure consistency with the country's total imports.%
+}
 
 % Define the path as a variable at the beginning of your document
 \input{draftPaper_localBibliographyPath.tex}
@@ -171,34 +183,34 @@ As in other large-scale DSGE models, our framework incorporates non-Ricardian ho
 
 Our model distinguishes four types of final goods: private consumption, private investment, government consumption, and government investment. Each type of good is assembled by firms operating under perfect competition. At the origin of the process, the inputs for assembly are intermediate goods produced by firms under monopolistic competition in two production sectors—non-tradable (akin to services) and tradable (akin to manufacturing). Tradable goods are also subject to international trade. Consequently, goods purchased by the government may contain imported components, with the extent of import content determined by a home-bias parameter. Although all final goods ultimately originate from the intermediate tradable and non-tradable production sectors, the assembly processes are independent across categories. In practice, this implies, for example, that the import content of government consumption differs from that of private consumption, reflecting the tendency of governments to purchase domestically produced goods. Further details on the calibration of these parameters are provided in Subsection~\ref{sec:model_calibration}, with the specification of the multi-country trade structure constituting a major contribution of this paper.
 
-Specifically, each of the four types of final goods $Q_t^s$ is assembled using a constant elasticity of substitution (CES) technology (see Eq.~\ref{eq1}), combining tradable goods $TT_t^s$ and domestically produced non-tradable goods $NT_t^s$. The parameter $v_s$ governs the share of each input in the bundle, while $\mu_s$ denotes the elasticity of substitution between them:
+Specifically, each of the four types of final goods $Q_t^s$ is assembled using a constant elasticity of substitution (CES) technology (see Eq.~\ref{eq1}), combining tradable goods $TT_t^s$ and domestically produced non-tradable goods $NT_t^s$. The parameter $\nu_s$ governs the share of each input in the bundle, while $\mu_s$ denotes the elasticity of substitution between them:
 \begin{equation}
     \label{eq1}
-    Q_t^s = \left[v_s^{\frac{1}{\mu_s}}\left(TT_t^s\right)^{\frac{\mu_s-1}{\mu_s}} + \left(1-v_s\right)^{\frac{1}{\mu_s}}\left(NT_t^s\right)^{\frac{\mu_s-1}{\mu_s}}\right]^{\frac{\mu_s}{\mu_s-1}}.
+    Q_t^s = \left[\nu_s^{\frac{1}{\mu_s}}\left(TT_t^s\right)^{\frac{\mu_s-1}{\mu_s}} + \left(1-\nu_s\right)^{\frac{1}{\mu_s}}\left(NT_t^s\right)^{\frac{\mu_s-1}{\mu_s}}\right]^{\frac{\mu_s}{\mu_s-1}}.
 \end{equation}
-The tradable good $TT_t^s$, in turn, is produced analogously as a CES composite of home-produced tradable goods $HT_t^s$ and imported goods $IM_t^s$ (see Eq.~\ref{eqTT}). The parameter $v_{Ts}$ captures the home bias in tradable goods, and $\mu_{Ts}$ measures the elasticity of substitution between domestic and imported goods:
+The tradable good $TT_t^s$, in turn, is produced analogously as a CES composite of home-produced tradable goods $HT_t^s$ and imported goods $IM_t^s$ (see Eq.~\ref{eqTT}). The parameter $\nu_{Ts}$ captures the home bias in tradable goods, and $\mu_{Ts}$ measures the elasticity of substitution between domestic and imported goods:
 \begin{equation}
     \label{eqTT}
-    TT_t^s = \left[v_{Ts}^{\frac{1}{\mu_{Ts}}}\left(HT_t^s\right)^{\frac{\mu_{Ts}-1}{\mu_{Ts}}} + \left(1-v_{Ts}\right)^{\frac{1}{\mu_{Ts}}}\left(IM_t^s\right)^{\frac{\mu_{Ts}-1}{\mu_{Ts}}}\right]^{\frac{\mu_{Ts}}{\mu_{Ts}-1}}.
+    TT_t^s = \left[\nu_{Ts}^{\frac{1}{\mu_{Ts}}}\left(HT_t^s\right)^{\frac{\mu_{Ts}-1}{\mu_{Ts}}} + \left(1-\nu_{Ts}\right)^{\frac{1}{\mu_{Ts}}}\left(IM_t^s\right)^{\frac{\mu_{Ts}-1}{\mu_{Ts}}}\right]^{\frac{\mu_{Ts}}{\mu_{Ts}-1}}.
 \end{equation}
-Finally, the imported good $IM_t^s$ consists of a bundle of bilateral imports $IM_t^{s,CO}$ (see Eq.~\ref{eqIM}). The parameter $v_{Ms}^{H,CO}$ represents the share of imports from country or region $CO$, satisfying $\sum_{CO \neq H} v_{Ms}^{H,CO} = 1$, and $\mu_{Ms}$ is the elasticity of substitution between imports from different trading partners:\footnote{The country-specific import weights $v_{Ms}^{H,CO}$ are determined as a function of the relative economic size and degree of openness. Accordingly, even if Germany exhibits the same degree of openness to imports from Austria and France, the weight $v_{Ms}^{DE,AT}$ is expected to be significantly smaller than $v_{Ms}^{DE,FR}$, reflecting the larger size of the French economy.}
+Finally, the imported good $IM_t^s$ consists of a bundle of bilateral imports $IM_t^{s,CO}$ (see Eq.~\ref{eqIM}). The parameter $\nu_{Ms}^{H,CO}$ represents the share of imports from country or region $CO$, satisfying $\sum_{CO \neq H} \nu_{Ms}^{H,CO} = 1$, and $\mu_{Ms}$ is the elasticity of substitution between imports from different trading partners:\footnote{The country-specific import weights $\nu_{Ms}^{H,CO}$ are determined as a function of the relative economic size and degree of openness. Accordingly, even if Germany exhibits the same degree of openness to imports from Austria and France, the weight $\nu_{Ms}^{DE,AT}$ is expected to be significantly smaller than $\nu_{Ms}^{DE,FR}$, reflecting the larger size of the French economy.}
 \begin{equation}
     \label{eqIM}
-    IM_t^s = \left[\sum_{CO \neq H} \left(v_{Ms}^{H,CO}\right)^{\frac{1}{\mu_{Ms}}} \left(IM_t^{s,CO}\right)^{\frac{\mu_{Ms}-1}{\mu_{Ms}}}\right]^{\frac{\mu_{Ms}}{\mu_{Ms}-1}}.
+    IM_t^s = \left[\sum_{CO \neq H} \left(\nu_{Ms}^{H,CO}\right)^{\frac{1}{\mu_{Ms}}} \left(IM_t^{s,CO}\right)^{\frac{\mu_{Ms}-1}{\mu_{Ms}}}\right]^{\frac{\mu_{Ms}}{\mu_{Ms}-1}}.
 \end{equation}
 
 
 Figure~\ref{finalGoodProduction} offers a detailed schematic representation of the production of a final good of type $s$.\footnote{The CES aggregation framework also implies that the prices of final goods are composite indices of the prices of their underlying components. Specifically, the price of a final good of type $s$, denoted $P_{s,t}$, the price of the tradable component $P_{TTs,t}$, and the price of imported tradable goods $P_{IMs,t}$ are defined as follows:
 \[
-P_{s,t} = \left[v_s\left(P_{TTs,t}\right)^{1-\mu_s} + \left(1-v_s\right)\left(P_{NT,t}\right)^{1-\mu_s}\right]^{\frac{1}{1-\mu_s}},
+P_{s,t} = \left[\nu_s\left(P_{TTs,t}\right)^{1-\mu_s} + \left(1-\nu_s\right)\left(P_{NT,t}\right)^{1-\mu_s}\right]^{\frac{1}{1-\mu_s}},
 \]
 \[
-P_{TTs,t} = \left[v_{Ts}\left(P_{HT,t}\right)^{1-\mu_{Ts}} + \left(1-v_{Ts}\right)\left(P_{IMs,t}\right)^{1-\mu_{Ts}}\right]^{\frac{1}{1-\mu_{Ts}}},
+P_{TTs,t} = \left[\nu_{Ts}\left(P_{HT,t}\right)^{1-\mu_{Ts}} + \left(1-\nu_{Ts}\right)\left(P_{IMs,t}\right)^{1-\mu_{Ts}}\right]^{\frac{1}{1-\mu_{Ts}}},
 \]
 \[
-P_{IMs,t} = \left[\sum_{CO \neq H} v_{Ms}^{H,CO}\left(P_{IM,t}^{CO}\right)^{1-\mu_{Ms}}\right]^{\frac{1}{1-\mu_{Ms}}}.
+P_{IMs,t} = \left[\sum_{CO \neq H} \nu_{Ms}^{H,CO}\left(P_{IM,t}^{CO}\right)^{1-\mu_{Ms}}\right]^{\frac{1}{1-\mu_{Ms}}}.
 \]
-Here, $v_s$, $v_{Ts}$, and $v_{Ms}^{H,CO}$ are the share parameters governing the aggregation at each respective level, and $\mu_s$, $\mu_{Ts}$, and $\mu_{Ms}$ denote the elasticities of substitution. The price $P_{NT,t}$ corresponds to domestically produced non-tradable goods, $P_{HT,t}$ denotes the price of home-produced tradable goods, and $P_{IM,t}^{CO}$ refers to the price of imports from country or region $CO$. The structure of price aggregation mirrors the quantity aggregation.}
+Here, $\nu_s$, $\nu_{Ts}$, and $\nu_{Ms}^{H,CO}$ are the share parameters governing the aggregation at each respective level, and $\mu_s$, $\mu_{Ts}$, and $\mu_{Ms}$ denote the elasticities of substitution. The price $P_{NT,t}$ corresponds to domestically produced non-tradable goods, $P_{HT,t}$ denotes the price of home-produced tradable goods, and $P_{IM,t}^{CO}$ refers to the price of imports from country or region $CO$. The structure of price aggregation mirrors the quantity aggregation.}
 
 
 \begin{figure}[H]
@@ -360,7 +372,7 @@ where $R_t^*$ denotes the gross return on the internationally traded bond $B_{t+
 \end{equation}
 
 \paragraph{Fiscal and monetary policy rules} Regarding the general government specification, the budget encompasses multiple tax and expenditure instruments. With the possibility to issue bonds, governments are not required to balance the budget in each period. Following the extension by \citet{Clancyetal2016}, both government consumption and investment play a meaningful role in the model. Specifically, government consumption exhibits complementarity with private consumption, while government investment contributes to the stock of productive capital, thereby enhancing the production capacity of the private sector.
-\footnote{The complementarity between government and private consumption is introduced through the specification of a composite good consumed by households, following the approach of \citet{Coenen-et-al_AER_2012}. Specifically, the composite consumption good $\tilde{C}_t$ is modeled as a CES aggregate of final private consumption and final government consumption goods: $\tilde{C}_t = \left[v_{\text{CCES}}^{\frac{1}{\mu_{\text{CCES}}}}\left(C_t\right)^{\frac{\mu_{\text{CCES}}-1}{\mu_{\text{CCES}}}} + \left(1-v_{\text{CCES}}\right)^{\frac{1}{\mu_{\text{CCES}}}}\left(G_{C,t}\right)^{\frac{\mu_{\text{CCES}}-1}{\mu_{\text{CCES}}}}\right]^{\frac{\mu_{\text{CCES}}}{\mu_{\text{CCES}}-1}}$,where $v_{\text{CCES}}$ denotes the share parameter, and $\mu_{\text{CCES}}$ represents the elasticity of substitution between the two component goods.}
+\footnote{The complementarity between government and private consumption is introduced through the specification of a composite good consumed by households, following the approach of \citet{Coenen-et-al_AER_2012}. Specifically, the composite consumption good $\tilde{C}_t$ is modeled as a CES aggregate of final private consumption and final government consumption goods: $\tilde{C}_t = \left[\nu_{\text{CCES}}^{\frac{1}{\mu_{\text{CCES}}}}\left(C_t\right)^{\frac{\mu_{\text{CCES}}-1}{\mu_{\text{CCES}}}} + \left(1-\nu_{\text{CCES}}\right)^{\frac{1}{\mu_{\text{CCES}}}}\left(G_{C,t}\right)^{\frac{\mu_{\text{CCES}}-1}{\mu_{\text{CCES}}}}\right]^{\frac{\mu_{\text{CCES}}}{\mu_{\text{CCES}}-1}}$,where $\nu_{\text{CCES}}$ denotes the share parameter, and $\mu_{\text{CCES}}$ represents the elasticity of substitution between the two component goods.}
 \footnote{The assumption that government investment enhances productivity builds on the work of \citet{LeeperEtAl2010jme}, where public capital accumulation is governed by $K_{G,t+1} = (1-\delta_G)K_{G,t} + G_{I,t}$. This formulation implies that government investment $G_{I,t}$ builds up the stock of public capital $K_{G,t+1}$, which depreciates at the rate $\delta_G$. Public capital, in turn, enters the production function of both tradable and non-tradable goods, specified respectively as $Y_{T,t}^S = z_{T,t} K_{G,t}^{\alpha_G} (K_{T,t}^D)^{\alpha_T} (N_{T,t}^D)^{1-\alpha_T} - \psi_T$ and $Y_{N,t}^S = z_{N,t} K_{G,t}^{\alpha_G} (K_{N,t}^D)^{\alpha_N} (N_{N,t}^D)^{1-\alpha_N} - \psi_N$, thereby enhancing the productive capacity of the private sector. Here, $Y_{T,t}^S$ and $Y_{N,t}^S$ denote sectoral outputs, $z_{T,t}$ and $z_{N,t}$ represent sector-specific productivity levels, $\alpha_G$ measures the contribution of public capital to production, $K_{T,t}^D$ and $K_{N,t}^D$ are private capital inputs, $N_{T,t}^D$ and $N_{N,t}^D$ are labor inputs, $\alpha_T$ and $\alpha_N$ denote the capital shares in the tradable and non-tradable sectors, respectively, and $\psi_T$ and $\psi_N$ capture fixed costs.}
 
 %//NOTE: here is the decomposed budget constraint of the government > based on that we have 10 fiscal instruments
@@ -399,10 +411,10 @@ For all fiscal instruments except for lump-sum taxes, we assume a fiscal rule of
 \end{equation}
 where \(X \in \left\{ \tau_t^C, \tau_t^N, \tau_t^{Wh}, \tau_t^{Wf}, \tau_t^k, \tau_t^b, \frac{P_{G_C,t} G_{C,t}}{\overline{P_Y Y}}, \frac{P_{G_I,t} G_{I,t}}{\overline{P_Y Y}}, \frac{TR_t}{\overline{P_Y Y}} \right\}\). For expenditure instruments, the fiscal rule in Eq.~\ref{eqFiscalRule} operates on nominal ratios relative to steady-state nominal GDP. Here, $\bar{X}$ denotes the long-run target for the fiscal instrument, $\rho_X$ is the smoothing parameter, and $\varepsilon_{X,t}$ represents an i.i.d. fiscal shock specific to the instrument.
 
-The fiscal rule governing lump-sum taxes is designed to ensure that government debt converges towards a long-run target level, $\overline{B_Y}$, which is calibrated. Stability of the debt stock is achieved through a gradual adjustment of lump-sum taxes relative to output, with the speed of adjustment governed by the parameter $\phi_{B_Y}$, as specified in Eq.~\ref{eqDebtRule}:
+The fiscal rule governing lump-sum taxes is designed to ensure that government debt converges towards a long-run target level, $\overline{B_Y}$, which is calibrated. Stability of the debt stock is achieved through a gradual adjustment of lump-sum taxes relative to output, with the speed of adjustment governed by the parameter $\phi_{\text{B}_{\text{Y}}}$, as specified in Eq.~\ref{eqDebtRule}:
 \begin{equation}
     \label{eqDebtRule}
-    \frac{T_t}{\overline{P_Y Y}} = \phi_{B_Y} \left( \frac{B_t}{\overline{P_Y Y}} - \overline{B_Y} \right).
+    \frac{T_t}{\overline{P_Y Y}} = \phi_{\text{B}_{\text{Y}}} \left( \frac{B_t}{\overline{P_Y Y}} - \overline{B_Y} \right).
 \end{equation}
 
 %//NOTE: Let's talk about the monetary policy now.
@@ -437,22 +449,90 @@ Here, $\left(\bar{R}^{\mathrm{CO}}\right)^4 = \beta^{-4} \bar{\Pi}^{\mathrm{CO},
 % DE_rrstar-1 = 1/DE_beta-1;
 
 \subsection{The model calibration} \label{sec:model_calibration}
+The model is calibrated to reflect our enhanced geographical structure, most notably the detailed decomposition of the euro area. Specifically, we distinguish ten individual euro area member states—Austria, Belgium, Finland, France, Germany, Greece, Italy, the Netherlands, Portugal, and Spain—alongside a residual region representing the remaining countries. Going beyond the EMU, the calibration also includes the non-euro area European Union, the United States and the rest of the world, resulting in a total of 14 country or regional blocks. Calibration proceeds in line with the established practices, with a focus on matching a set of key ratios to output—often referred to as the “Great Ratios.” These targets are derived from macroeconomic data corresponding to model variables.
 
 \begin{landscape}
-    \input{tables/hhAndFirmBehavior.tex}
-    \input{tables/internationalLinkages_MC.tex}
-    \input{tables/internationalLinkages_MI.tex}
-    \input{tables/internationalLinkages_MCG.tex}
-    \input{tables/internationalLinkages_MIG.tex}
+    \begin{table}[htbp]
+        \input{tables/ssNationalAccounts.tex}
+        \begin{minipage}{0.9\linewidth}
+            \vspace{0.5em}
+            \textit{Note}: \CountryCodes.
+        \end{minipage}
+    \end{table}
 \end{landscape}
+
+
+\begin{landscape}
+    \begin{table}[htbp]
+        \input{tables/govBehaviour.tex}
+        \begin{minipage}{0.9\linewidth}
+            \vspace{0.5em}
+            \textit{Note}: \CountryCodes.
+        \end{minipage}
+    \end{table}
+\end{landscape}
+
+%//NOTE: We agree that the following order will followed throughout the paper; it is good to keep gov. consumptin and gov. investment because most likely we would like to devote a bit more space to them:
+% private cons.
+% private inv.
+% gov. cons.
+% gov. inv.
+
+\begin{landscape}
+    \begin{table}[htbp]
+        \input{tables/internationalLinkagesShare_MC.tex}
+        \begin{minipage}{0.9\linewidth}
+            \vspace{0.5em}
+            \textit{Note}: \CountryCodes.\\
+            \TradeTablesNote
+        \end{minipage}
+    \end{table}    
+\end{landscape}
+
+\begin{landscape}
+    \begin{table}[htbp]
+        \input{tables/internationalLinkagesShare_MI.tex}
+        \begin{minipage}{0.9\linewidth}
+            \vspace{0.5em}
+            \textit{Note}: \CountryCodes.\\
+            \TradeTablesNote
+        \end{minipage}
+    \end{table}        
+\end{landscape}
+\begin{landscape}
+    \begin{table}[htbp]
+        \input{tables/internationalLinkagesShare_MCG.tex}
+        \begin{minipage}{0.9\linewidth}
+            \vspace{0.5em}
+            \textit{Note}: \CountryCodes.\\
+            \TradeTablesNote
+        \end{minipage}
+    \end{table}        
+\end{landscape}
+\begin{landscape}
+    \begin{table}[htbp]
+        \input{tables/internationalLinkagesShare_MIG.tex}
+        \begin{minipage}{0.9\linewidth}
+            \vspace{0.5em}
+            \textit{Note}: \CountryCodes.\\
+            \TradeTablesNote
+        \end{minipage}
+    \end{table}        
+\end{landscape}
+
+\begin{table}[htbp]
+\input{tables/monetaryPolicy.tex}
+\begin{minipage}{0.9\textwidth}
+    \vspace{0.5em}
+    \textit{Note}: \CountryCodesForMP.\\
+\end{minipage}
+\end{table}        
 
 % Key steady ratios
 We calibrate the model for 14 separate regions: Austria, Belgium, Finland, France, Germany, Greece, Italy, the Netherlands, Portugal, Spain, rest of Euro area, non-Euro area EU, the US, and rest of world. We adhere to the established calibration methodology prevalent in academic literature, aiming to align the primary steady-state ratios of different expenditure components with GDP, commonly known as the Great Ratios. These ratios were calculated in alignment with other calibrated data and is reported in Table \ref{tab:national_accounts}. 
-\input{tables/ssNationalAccounts}
 
 %Household, firms and government behaviour
-Some parameters of the model regarding household, firm, and government behaviour are kept consistent with the original model (see \citet{Gomesaetal2012}), which employs standard values prevelant in the literature. Table on household, and firms' bias between capital, labour, different types of households, and intermediate goodsa are reported in Table \ref{tab:hhAndFirmBehavior} in the calibration section of the technical appendix. Government parameters, such as tax rates, are calibrated using OECD datasets (\citet{OECD_data}). The tax rates in the model include labour, capital, consumption tax, and social security contributions both by the employers, and the employees, and are reported together with other monetary and fiscal authority parameters in Table \ref{tab:policy} below. 
-\input{tables/monetaryFiscalPolicy.tex}
+Some parameters of the model regarding household, firm, and government behaviour are kept consistent with the original model (see \citet{Gomesaetal2012}), which employs standard values prevelant in the literature. Table on household, and firms' bias between capital, labour, different types of households, and intermediate goodsa are reported in Table \ref{tab:selectedHhFirmGov} in the calibration section of the technical appendix. Government parameters, such as tax rates, are calibrated using OECD datasets (\citet{OECD_data}). The tax rates in the model include labour, capital, consumption tax, and social security contributions both by the employers, and the employees, and are reported together with other monetary and fiscal authority parameters in Table \ref{tab:policy} below. 
 
 Lastly, for nominal and real rigidities, as well as the price and wage markup parameters refer to Table \ref{tab:rigidities} and Table \ref{tab:markups_transposed}. 
 
@@ -600,15 +680,98 @@ Technical Appendix
 \section{Model Specification Details}
 
 \section{Calibration Details}
+
 \begin{landscape}
-    \input{tables/hhAndFirmBehavior.tex}
+    \begin{table}[htbp]
+        \input{tables/selectedHhFirmGov.tex}
+        \begin{minipage}{0.9\linewidth}
+            \vspace{0.5em}
+            \textit{Note}: \CountryCodes.\\
+            Abbreviations — dom. = domestic, imp. = imported, trad. = tradables, nontrad. = nontradables, subst. = substitution, bilat. = bilateral.
+        \end{minipage}
+    \end{table}
 \end{landscape}
+
+%//TODO: we should check in general the paramters for biases and elasticities to make sure they are consistent with Clancy and original EAGLE
 \begin{landscape}
-    \input{tables/realNominalRigidities.tex}
+    \begin{table}[htbp]
+        \input{tables/finalGoodProduction.tex}
+        \begin{minipage}{0.9\linewidth}
+            \vspace{0.5em}
+            \textit{Note}: \CountryCodes.
+        \end{minipage}
+    \end{table}
 \end{landscape}
+
 \begin{landscape}
-    \input{tables/priceAndWageMarkups.tex}
+    \begin{table}[htbp]
+        \input{tables/realNominalRigidities.tex}
+        \begin{minipage}{0.9\linewidth}
+            \vspace{0.5em}
+            \textit{Note}: \CountryCodes.
+        \end{minipage}
+    \end{table}
 \end{landscape}
+
+\begin{landscape}
+    \begin{table}[htbp]
+        \input{tables/priceAndWageMarkups.tex}
+        \begin{minipage}{0.9\linewidth}
+            \vspace{0.5em}
+            \textit{Note}: \CountryCodes.\\
+            Each cell shows the markup and, in parentheses, the implied elasticity of substitution.
+        \end{minipage}
+    \end{table}
+\end{landscape}
+
+\begin{landscape}
+    \begin{table}[htbp]
+        \input{tables/internationalLinkagesNu_MC.tex}
+        \begin{minipage}{0.9\linewidth}
+            \vspace{0.5em}
+            \textit{Note}: \CountryCodes.\\
+            \TradeTablesNote\\
+            \TradeTablesBiasNote
+        \end{minipage}
+    \end{table}    
+\end{landscape}
+
+\begin{landscape}
+    \begin{table}[htbp]
+        \input{tables/internationalLinkagesNu_MI.tex}
+        \begin{minipage}{0.9\linewidth}
+            \vspace{0.5em}
+            \textit{Note}: \CountryCodes.\\
+            \TradeTablesNote\\
+            \TradeTablesBiasNote
+        \end{minipage}
+    \end{table}    
+\end{landscape}
+
+\begin{landscape}
+    \begin{table}[htbp]
+        \input{tables/internationalLinkagesNu_MCG.tex}
+        \begin{minipage}{0.9\linewidth}
+            \vspace{0.5em}
+            \textit{Note}: \CountryCodes.\\
+            \TradeTablesNote\\
+            \TradeTablesBiasNote
+        \end{minipage}
+    \end{table}    
+\end{landscape}
+
+\begin{landscape}
+    \begin{table}[htbp]
+        \input{tables/internationalLinkagesNu_MIG.tex}
+        \begin{minipage}{0.9\linewidth}
+            \vspace{0.5em}
+            \textit{Note}: \CountryCodes.\\
+            \TradeTablesNote\\
+            \TradeTablesBiasNote
+        \end{minipage}
+    \end{table}    
+\end{landscape}
+
 
 \section{Sensitivity Analysis}
 

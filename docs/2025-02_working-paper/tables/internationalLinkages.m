@@ -17,7 +17,7 @@ function internationalLinkages(envi, aStruct, goodType, goodName)
     fprintf(fid, '    \\hline\n');
 
     % Consumption-good imports section
-    fprintf(fid, utils.prepareTableLine(envi, 'Substitution btw. consumption good imports', ['\mu_{\text{', char(goodType),'}}'], "mumc", aStruct.params));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Substitution btw. consumption good imports', ['\mu_{\text{', char(goodType),'}}'], "mumc", aStruct.params));
 
     % Bias towards imported consumption goods
     fprintf(fid, ['    \\multicolumn{15}{l}{\\textbf{Bias towards imported goods from} ($\\nu_{\\text{', char(goodType),'}}^{\\text{H,CO}}$)} \\\\\n']);

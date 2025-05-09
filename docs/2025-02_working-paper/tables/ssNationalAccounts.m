@@ -1,55 +1,46 @@
-% Creates a LaTeX file for a table of steady-state national accounts
 function ssNationalAccounts(envi, aStruct, fileName)
-    % Default file name if none provided
-    if nargin < 3
-        fileName = 'ssNationalAccounts.tex';
-    end
 
     % Open file for writing
     fid = fopen(fileName, 'w');
 
     % Table header
-    fprintf(fid, '\\begin{table}[htbp]\n');
     fprintf(fid, '    \\centering\n');
-    fprintf(fid, '    \\caption{Steady-state great ratios (ratio to GDP, \\%%).}\n');
+    fprintf(fid, '    \\caption{Steady-state great ratios (percent of GDP).}\n');
     fprintf(fid, '    \\label{tab:national_accounts}\n');
-    fprintf(fid, '    \\begin{adjustbox}{width=\\textwidth}\n');
-    fprintf(fid, '    \\small\n');
-    fprintf(fid, '    \\begin{tabular}{>{\\raggedright\\arraybackslash}p{6.2cm}*{14}{>{\\centering\\arraybackslash}p{0.8cm}}}\n');
-    fprintf(fid, '    \\hline\n');
-    fprintf(fid, '     & %s \\\\\n', strjoin(envi.Meta.ctryList, ' & '));
-    fprintf(fid, '    \\hline\n');
+    fprintf(fid, '    \\footnotesize\n');
+    fprintf(fid, '    \\renewcommand{\\arraystretch}{1.2}\n');
+    fprintf(fid, '    \\begin{tabular}{>{\\raggedright}p{5.5cm}*{14}{>{\\centering\\arraybackslash}p{0.8cm}}}\n');
+    fprintf(fid, '        \\toprule\n');
+    fprintf(fid, '         & %s \\\\\n', strjoin(envi.Meta.ctryList, ' & '));
+    fprintf(fid, '        \\midrule\n');
 
     % Domestic demand section
-    fprintf(fid, '    \\multicolumn{15}{l}{\\textbf{Domestic demand}} \\\\\n');
-    fprintf(fid, utils.prepareTableLine(envi, 'Private consumption', '\bar{cy}', "cy", aStruct.ssValues));
-    fprintf(fid, utils.prepareTableLine(envi, 'Private investment', '\bar{iy}', "iy", aStruct.ssValues));
-    fprintf(fid, utils.prepareTableLine(envi, 'Public consumption', '\bar{cgy}', "cgy", aStruct.ssValues));
-    fprintf(fid, utils.prepareTableLine(envi, 'Private investment', '\bar{igy}', "igy", aStruct.ssValues));
-
+    fprintf(fid, '        \\multicolumn{15}{l}{\\textbf{Domestic demand}} \\\\\n');
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Private consumption', '\overline{cy}', "cy", aStruct.ssValues, ' & %.1f', @(x) x*100));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Gov. consumption', '\overline{cgy}', "cgy", aStruct.ssValues, ' & %.1f', @(x) x*100));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Private investment', '\overline{iy}', "iy", aStruct.ssValues, ' & %.1f', @(x) x*100));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Gov. investment', '\overline{igy}', "igy", aStruct.ssValues, ' & %.1f', @(x) x*100));
 
     % Trade section
-    fprintf(fid, '    \\multicolumn{15}{l}{\\textbf{Trade}} \\\\\n');
-    fprintf(fid, utils.prepareTableLine(envi, 'Imports (total)', '\bar{imy}', "imy", aStruct.ssValues));
-    fprintf(fid, utils.prepareTableLine(envi, 'Exports (total)', '\bar{exy}', "exy", aStruct.ssValues));
-    fprintf(fid, utils.prepareTableLine(envi, 'Trade balance', '\overline{tby}', "tby", aStruct.ssValues));
-    fprintf(fid, utils.prepareTableLine(envi, 'Net foreign assets (ratio to annual GDP)', '\overline{B_Y^{*}}', "bfytarget", aStruct.params));
+    fprintf(fid, '        \\multicolumn{15}{l}{\\textbf{Trade}} \\\\\n');
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Imports (total)', '\overline{imy}', "imy", aStruct.ssValues, ' & %.1f', @(x) x*100));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Exports (total)', '\overline{exy}', "exy", aStruct.ssValues, ' & %.1f', @(x) x*100));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Trade balance', '\overline{tby}', "tby", aStruct.ssValues, ' & %.1f', @(x) x*100));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Net foreign assets', '\overline{B_Y^{*}}', "bfytarget", aStruct.params, ' & %.1f', @(x) x*100));
 
     % Production section
-    fprintf(fid, '    \\multicolumn{15}{l}{\\textbf{Production}} \\\\\n');
-    fprintf(fid, utils.prepareTableLine(envi, 'Tradables', 'yst', "yst", aStruct.ssValues));
-    fprintf(fid, utils.prepareTableLine(envi, 'Nontradables', 'ysn', "ysn", aStruct.ssValues));
-    fprintf(fid, utils.prepareTableLine(envi, 'Labor', 'nd', "nd", aStruct.ssValues));
+    fprintf(fid, '        \\multicolumn{15}{l}{\\textbf{Production}} \\\\\n');
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Tradables output', 'yst', "yst", aStruct.ssValues, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Non-tradables output', 'ysn', "ysn", aStruct.ssValues, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Labor', 'nd', "nd", aStruct.ssValues, ' & %.2f'));
 
     % Other section
-    fprintf(fid, '    \\multicolumn{15}{l}{\\textbf{Other}} \\\\\n');
-    fprintf(fid, utils.prepareTableLine(envi, 'Share of World GDP', 'size', "size", aStruct.params));
+    fprintf(fid, '        \\multicolumn{15}{l}{\\textbf{Other}} \\\\\n');
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Share of World GDP', 'size', "size", aStruct.params, ' & %.1f', @(x) x*100));
 
     % Table footer
-    fprintf(fid, '    \\hline\n');
+    fprintf(fid, '        \\bottomrule\n');
     fprintf(fid, '    \\end{tabular}\n');
-    fprintf(fid, '    \\end{adjustbox}\n');
-    fprintf(fid, '\\end{table}');
 
     % Close the file
     fclose(fid);

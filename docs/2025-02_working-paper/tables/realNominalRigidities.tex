@@ -1,29 +1,29 @@
-\begin{table}[htbp]
     \centering
     \caption{Real and nominal rigidities.}
     \label{tab:rigidities}
-    {\small
-    \begin{tabular}{>{\raggedright\arraybackslash}p{6.2cm}*{14}{>{\centering\arraybackslash}p{0.8cm}}}
-    \hline
-     & RA & AT & BE & ES & FI & FR & GR & IT & NL & PT & DE & RU & RW & US \\
-    \hline
-    \multicolumn{15}{l}{\textbf{Adjustment costs}} \\
-	Imports of consumption goods ($\gamma_{\text{IMC}}$) & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 \\
-	Imports of investment goods ($\gamma_{\text{IMI}}$) & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 \\
+    \footnotesize
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{>{\raggedright}p{6.9cm}*{14}{>{\centering\arraybackslash}p{0.7cm}}}
+        \toprule
+         & RA & AT & BE & ES & FI & FR & GR & IT & NL & PT & DE & RU & RW & US \\
+        \midrule
+        \multicolumn{15}{l}{\textbf{Adjustment costs}} \\
+	Investment adj. cost ($\gamma_{\text{I}}$) & 6.00 & 6.00 & 6.00 & 6.00 & 6.00 & 6.00 & 6.00 & 6.00 & 6.00 & 6.00 & 6.00 & 6.00 & 4.00 & 4.00 \\
 	Capital utilization ($\gamma_{\text{u2}}$) & 2000 & 2000 & 2000 & 2000 & 2000 & 2000 & 2000 & 2000 & 2000 & 2000 & 2000 & 2000 & 2000 & 2000 \\
-	Investment ($\gamma_{\text{I}}$) & 6.00 & 6.00 & 6.00 & 6.00 & 6.00 & 6.00 & 6.00 & 6.00 & 6.00 & 6.00 & 6.00 & 6.00 & 4.00 & 4.00 \\
-	Transaction cost function ($\gamma_{\text{v1}}$) & 0.03 & 0.03 & 0.03 & 0.03 & 0.03 & 0.03 & 0.03 & 0.03 & 0.03 & 0.03 & 0.03 & 0.03 & 0.03 & 0.03 \\
-	\quad ($\gamma_{\text{v2}}$) & 0.15 & 0.15 & 0.15 & 0.15 & 0.15 & 0.15 & 0.15 & 0.15 & 0.15 & 0.15 & 0.15 & 0.15 & 0.15 & 0.15 \\
-	Intermediation cost function ($\gamma_{\text{B}^*}$) & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & NaN \\
-    \multicolumn{15}{l}{\textbf{Calvo parameters}} \\
-	Wages—households $I$ and $J$ ($\xi_{\text{I}}$ and $\xi_{\text{J}}$) & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 \\
-	Prices—domestic tradables and nontradables ($\xi_{\text{H}}$) and nontradables ($\xi_{\text{N}}$) & 0.92 & 0.92 & 0.92 & 0.92 & 0.92 & 0.92 & 0.92 & 0.92 & 0.92 & 0.92 & 0.92 & 0.92 & 0.75 & 0.75 \\
-	Prices—exports ($\xi_{\text{X}}$) & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 \\
-    \multicolumn{15}{l}{\textbf{Degree of indexation}} \\
-	Wages—households $I$ and $J$ ($\chi_{\text{I}}$ and $\chi_{\text{J}}$) & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 \\
-	Prices—domestic tradables and nontradables ($\chi_{\text{H}}$) and nontradables ($\chi_{\text{N}}$) & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 \\
-	Prices—exports ($\chi_{\text{X}}$) & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 \\
-    \hline
+	Transaction cost (level) ($\gamma_{\text{v1}}$) & 0.03 & 0.03 & 0.03 & 0.03 & 0.03 & 0.03 & 0.03 & 0.03 & 0.03 & 0.03 & 0.03 & 0.03 & 0.03 & 0.03 \\
+	Transaction cost (curvature) ($\gamma_{\text{v2}}$) & 0.15 & 0.15 & 0.15 & 0.15 & 0.15 & 0.15 & 0.15 & 0.15 & 0.15 & 0.15 & 0.15 & 0.15 & 0.15 & 0.15 \\
+	Intermediation cost ($\gamma_{\text{B}^*}$) & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & -- \\
+	Imports (priv. cons.) ($\gamma_{\text{IMC}}$) & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 \\
+	Imports (priv. inv.) ($\gamma_{\text{IMI}}$) & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 \\
+	Imports (gov. cons.) ($\gamma_{\text{IMCG}}$) & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 & 2.00 \\
+	Imports (gov. inv.) ($\gamma_{\text{IMIG}}$) & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 \\
+        \multicolumn{15}{l}{\textbf{Calvo parameters}} \\
+	Wages (I and J households) ($\xi_{\text{I}}$ and $\xi_{\text{J}}$) & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 \\
+	Prices (dom. trad./nontrad.) ($\xi_{\text{H}}$ and $\xi_{\text{N}}$) & 0.92 & 0.92 & 0.92 & 0.92 & 0.92 & 0.92 & 0.92 & 0.92 & 0.92 & 0.92 & 0.92 & 0.92 & 0.75 & 0.75 \\
+	Prices (exports) ($\xi_{\text{X}}$) & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 \\
+        \multicolumn{15}{l}{\textbf{Degree of indexation}} \\
+	Wages (I and J households) ($\chi_{\text{I}}$ and $\chi_{\text{J}}$) & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 & 0.75 \\
+	Prices (dom. trad./nontrad.) ($\chi_{\text{H}}$ and $\chi_{\text{N}}$) & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 \\
+	Prices (exports) ($\chi_{\text{X}}$) & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 & 0.50 \\
+        \bottomrule
     \end{tabular}
-    }
-\end{table}

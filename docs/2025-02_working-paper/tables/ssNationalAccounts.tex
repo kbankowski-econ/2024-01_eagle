@@ -1,30 +1,27 @@
-\begin{table}[htbp]
     \centering
-    \caption{Steady-state national accounts (ratio to GDP, \%).}
+    \caption{Steady-state great ratios (percent of GDP).}
     \label{tab:national_accounts}
-    \begin{adjustbox}{width=\textwidth}
-    \small
-    \begin{tabular}{>{\raggedright\arraybackslash}p{6.2cm}*{14}{>{\centering\arraybackslash}p{0.8cm}}}
-    \hline
-     & RA & AT & BE & ES & FI & FR & GR & IT & NL & PT & DE & RU & RW & US \\
-    \hline
-    \multicolumn{15}{l}{\textbf{Domestic demand}} \\
-	Private consumption ($cy$) & 0.30 & 0.48 & 0.43 & 0.57 & 0.47 & 0.54 & 0.67 & 0.59 & 0.41 & 0.63 & 0.51 & 0.49 & 0.56 & 0.67 \\
-	Private investment ($iy$) & 0.20 & 0.22 & 0.20 & 0.19 & 0.19 & 0.18 & 0.13 & 0.16 & 0.17 & 0.17 & 0.19 & 0.18 & 0.19 & 0.17 \\
-	Public consumption ($cgy$) & 0.17 & 0.21 & 0.25 & 0.19 & 0.25 & 0.25 & 0.20 & 0.20 & 0.26 & 0.19 & 0.21 & 0.23 & 0.17 & 0.15 \\
-	Private investment ($igy$) & 0.04 & 0.03 & 0.02 & 0.03 & 0.04 & 0.04 & 0.04 & 0.03 & 0.04 & 0.03 & 0.02 & 0.04 & 0.08 & 0.04 \\
-    \multicolumn{15}{l}{\textbf{Trade}} \\
-	Imports (total) ($imy$) & 0.35 & 0.30 & 0.34 & 0.21 & 0.25 & 0.21 & 0.24 & 0.20 & 0.27 & 0.27 & 0.22 & 0.26 & 0.09 & 0.12 \\
-	Imports of consumption goods ($imcy$) & 0.19 & 0.17 & 0.20 & 0.13 & 0.14 & 0.13 & 0.16 & 0.13 & 0.16 & 0.18 & 0.14 & 0.15 & 0.05 & 0.08 \\
-	Imports of investment goods ($imiy$) & 0.12 & 0.10 & 0.10 & 0.06 & 0.08 & 0.05 & 0.05 & 0.05 & 0.07 & 0.07 & 0.06 & 0.08 & 0.03 & 0.03 \\
-	Net foreign assets (ratio to annual GDP) ($bfytarget$) & -24.00 & -4.79 & -7.93 & -1.21 & -4.24 & -0.20 & 3.78 & -1.80 & -9.17 & 1.97 & -5.06 & -4.83 & 0.44 & NaN \\
-    \multicolumn{15}{l}{\textbf{Production}} \\
-	Tradables ($yst$) & 4.74 & 2.86 & 3.26 & 3.27 & 3.36 & 3.35 & 3.75 & 3.27 & 4.14 & 3.18 & 3.19 & 3.27 & 2.92 & 3.59 \\
-	Nontradables ($ysn$) & 0.57 & 0.99 & 1.03 & 1.22 & 1.12 & 1.22 & 1.52 & 1.22 & 1.19 & 1.28 & 1.09 & 1.14 & 2.44 & 2.76 \\
+    \footnotesize
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{>{\raggedright}p{5.5cm}*{14}{>{\centering\arraybackslash}p{0.8cm}}}
+        \toprule
+         & RA & AT & BE & ES & FI & FR & GR & IT & NL & PT & DE & RU & RW & US \\
+        \midrule
+        \multicolumn{15}{l}{\textbf{Domestic demand}} \\
+	Private consumption ($\overline{cy}$) & 29.6 & 48.0 & 43.0 & 57.4 & 46.7 & 53.7 & 67.0 & 58.9 & 41.5 & 63.1 & 51.3 & 48.8 & 56.4 & 67.0 \\
+	Gov. consumption ($\overline{cgy}$) & 17.3 & 21.4 & 24.6 & 19.1 & 24.8 & 24.6 & 20.5 & 19.8 & 26.5 & 19.3 & 21.1 & 23.0 & 16.9 & 15.1 \\
+	Private investment ($\overline{iy}$) & 19.7 & 21.6 & 20.4 & 18.6 & 19.1 & 17.6 & 12.9 & 16.4 & 16.8 & 16.7 & 19.1 & 18.3 & 19.5 & 16.9 \\
+	Gov. investment ($\overline{igy}$) & 3.8 & 3.1 & 2.3 & 3.4 & 4.1 & 3.9 & 4.2 & 2.7 & 3.9 & 3.3 & 2.4 & 4.0 & 7.8 & 4.1 \\
+        \multicolumn{15}{l}{\textbf{Trade}} \\
+	Imports (total) ($\overline{imy}$) & 35.1 & 30.2 & 34.4 & 20.9 & 25.3 & 20.8 & 24.0 & 19.5 & 27.3 & 27.5 & 22.1 & 25.5 & 8.9 & 12.2 \\
+	Exports (total) ($\overline{exy}$) & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+	Trade balance ($\overline{tby}$) & 29.6 & 5.9 & 9.8 & 1.5 & 5.2 & 0.2 & -4.7 & 2.2 & 11.3 & -2.4 & 6.2 & 5.9 & -0.5 & -3.1 \\
+	Net foreign assets ($\overline{B_Y^{*}}$) & -2400.3 & -478.7 & -793.1 & -121.0 & -424.4 & -20.1 & 378.1 & -180.4 & -916.9 & 196.5 & -505.6 & -482.7 & 44.2 & -- \\
+        \multicolumn{15}{l}{\textbf{Production}} \\
+	Tradables output ($yst$) & 4.74 & 2.86 & 3.26 & 3.27 & 3.36 & 3.35 & 3.75 & 3.27 & 4.14 & 3.18 & 3.19 & 3.27 & 2.92 & 3.59 \\
+	Non-tradables output ($ysn$) & 0.57 & 0.99 & 1.03 & 1.22 & 1.12 & 1.22 & 1.52 & 1.22 & 1.19 & 1.28 & 1.09 & 1.14 & 2.44 & 2.76 \\
 	Labor ($nd$) & 2.12 & 1.72 & 1.86 & 1.76 & 1.77 & 1.68 & 1.43 & 1.57 & 1.89 & 1.58 & 1.73 & 1.67 & 1.97 & 2.10 \\
-    \multicolumn{15}{l}{\textbf{Other}} \\
-	Share of World GDP ($size$) & 0.009 & 0.006 & 0.007 & 0.020 & 0.003 & 0.039 & 0.004 & 0.031 & 0.012 & 0.003 & 0.051 & 0.026 & 0.533 & 0.256 \\
-    \hline
+        \multicolumn{15}{l}{\textbf{Other}} \\
+	Share of World GDP ($size$) & 0.9 & 0.6 & 0.7 & 2.0 & 0.3 & 3.9 & 0.4 & 3.1 & 1.2 & 0.3 & 5.1 & 2.6 & 53.3 & 25.6 \\
+        \bottomrule
     \end{tabular}
-    \end{adjustbox}
-\end{table}
