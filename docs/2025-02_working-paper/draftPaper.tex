@@ -161,6 +161,8 @@ Our version of the EAGLE model advances the representation of the euro area by d
 % (3)
 The EAGLE model has been extensively employed to analyze a wide range of economic policy issues, including global fiscal stimulus (\citealp{GomesEtAl2015jimf}), structural reforms (\citealp{Gomesetal2013if}; \citealp{Jacquinot2018springer}; \citealp{Gomes2018jm}), monetary union accession (\citealp{BrzozaBrzezinaEtAl2014oer}), fiscal devaluations (\citealp{GomesEtAl2016em}), trade tariffs and protectionism (\citealp{BoltEtAl2019dnbwp}; \citealp{JacquinotEtAl2022jimf}; \citealp{ClancyEtAl2024ijcb}), financial interlinkages (\citealp{Pariesetal2016ecbwp}; \citealp{BokanEtAl2018em}), and economic risks associated with high government debt (\citealp{BurielEtAl2020ecbwp}). This paper applies the extended version of the EAGLE model to assess the macroeconomic impact of the recently launched multi-year EU-wide investment initiative—Next Generation EU (NGEU). In doing so, it complements existing analyses involving the EAGLE framework (\citealp{Bankowskietal2021ecbOP}; \citealp{Bankowskietal2022ecbOP}; \citealp{Bankowskietal2025ecbOP}) by leveraging the detailed country disaggregation. This enhanced structure enables the assessment of the program's effects on smaller member states, such as Greece and Portugal, which are among the major beneficiaries of the NGEU.
 
+%//TODO: quote maybe some other papers for the NGEU to avoid the imporession that all come from one author
+
 % (4)
 As in other large-scale DSGE models, our framework incorporates non-Ricardian households and several real and nominal rigidities, including habit formation, investment and import adjustment costs, and Calvo-type pricing of intermediate goods and wages with partial indexation. Owing to the substantial scale of the model (approximately 9,999 endogenous variables), we adopt a simplifying assumption relative to the original version by imposing the law of one price for exported goods, whereby firms do not differentiate prices across export destinations. Nonetheless, pricing in the export sector remains distinct from that in the non-tradable and home-tradable sectors. This subsection focuses on the model components critical to our extension and policy application, particularly the bundling of final goods, trade specification, and policy rules. For all remaining model features, we refer the reader to \citet{Gomesaetal2012} for the general structure and to \citet{Clancyetal2016} for the enhanced fiscal policy specification.
 
@@ -174,17 +176,7 @@ Specifically, each of the four types of final goods $Q_t^s$ is assembled using a
     \label{eq1}
     Q_t^s = \left[v_s^{\frac{1}{\mu_s}}\left(TT_t^s\right)^{\frac{\mu_s-1}{\mu_s}} + \left(1-v_s\right)^{\frac{1}{\mu_s}}\left(NT_t^s\right)^{\frac{\mu_s-1}{\mu_s}}\right]^{\frac{\mu_s}{\mu_s-1}}.
 \end{equation}
-The tradable good $TT_t^s$, in turn, is produced analogously as a CES composite of home-produced tradable goods $HT_t^s$ and imported goods $IM_t^s$ (see Eq.~\ref{eqTT}). The parameter $v_{Ts}$ captures the home bias in tradable goods, and $\mu_{Ts}$ measures the elasticity of substitution between domestic and imported goods:\footnote{The CES aggregation framework also implies that the prices of final goods are composite indices of the prices of their underlying components. Specifically, the price of a final good of type $s$, denoted $P_{s,t}$, the price of the tradable component $P_{TTs,t}$, and the price of imported tradable goods $P_{IMs,t}$ are defined as follows:
-\[
-P_{s,t} = \left[v_s\left(P_{TTs,t}\right)^{1-\mu_s} + \left(1-v_s\right)\left(P_{NT,t}\right)^{1-\mu_s}\right]^{\frac{1}{1-\mu_s}},
-\]
-\[
-P_{TTs,t} = \left[v_{Ts}\left(P_{HT,t}\right)^{1-\mu_{Ts}} + \left(1-v_{Ts}\right)\left(P_{IMs,t}\right)^{1-\mu_{Ts}}\right]^{\frac{1}{1-\mu_{Ts}}},
-\]
-\[
-P_{IMs,t} = \left[\sum_{CO \neq H} v_{Ms}^{H,CO}\left(P_{IM,t}^{CO}\right)^{1-\mu_{Ms}}\right]^{\frac{1}{1-\mu_{Ms}}}.
-\]
-Here, $v_s$, $v_{Ts}$, and $v_{Ms}^{H,CO}$ are the share parameters governing the aggregation at each respective level, and $\mu_s$, $\mu_{Ts}$, and $\mu_{Ms}$ denote the elasticities of substitution. The price $P_{NT,t}$ corresponds to domestically produced non-tradable goods, $P_{HT,t}$ denotes the price of home-produced tradable goods, and $P_{IM,t}^{CO}$ refers to the price of imports from country or region $CO$. The structure of price aggregation mirrors the quantity aggregation.}
+The tradable good $TT_t^s$, in turn, is produced analogously as a CES composite of home-produced tradable goods $HT_t^s$ and imported goods $IM_t^s$ (see Eq.~\ref{eqTT}). The parameter $v_{Ts}$ captures the home bias in tradable goods, and $\mu_{Ts}$ measures the elasticity of substitution between domestic and imported goods:
 \begin{equation}
     \label{eqTT}
     TT_t^s = \left[v_{Ts}^{\frac{1}{\mu_{Ts}}}\left(HT_t^s\right)^{\frac{\mu_{Ts}-1}{\mu_{Ts}}} + \left(1-v_{Ts}\right)^{\frac{1}{\mu_{Ts}}}\left(IM_t^s\right)^{\frac{\mu_{Ts}-1}{\mu_{Ts}}}\right]^{\frac{\mu_{Ts}}{\mu_{Ts}-1}}.
@@ -196,7 +188,17 @@ Finally, the imported good $IM_t^s$ consists of a bundle of bilateral imports $I
 \end{equation}
 
 
-Figure~\ref{finalGoodProduction} offers a detailed schematic representation of the production of a final good of type $s$.
+Figure~\ref{finalGoodProduction} offers a detailed schematic representation of the production of a final good of type $s$.\footnote{The CES aggregation framework also implies that the prices of final goods are composite indices of the prices of their underlying components. Specifically, the price of a final good of type $s$, denoted $P_{s,t}$, the price of the tradable component $P_{TTs,t}$, and the price of imported tradable goods $P_{IMs,t}$ are defined as follows:
+\[
+P_{s,t} = \left[v_s\left(P_{TTs,t}\right)^{1-\mu_s} + \left(1-v_s\right)\left(P_{NT,t}\right)^{1-\mu_s}\right]^{\frac{1}{1-\mu_s}},
+\]
+\[
+P_{TTs,t} = \left[v_{Ts}\left(P_{HT,t}\right)^{1-\mu_{Ts}} + \left(1-v_{Ts}\right)\left(P_{IMs,t}\right)^{1-\mu_{Ts}}\right]^{\frac{1}{1-\mu_{Ts}}},
+\]
+\[
+P_{IMs,t} = \left[\sum_{CO \neq H} v_{Ms}^{H,CO}\left(P_{IM,t}^{CO}\right)^{1-\mu_{Ms}}\right]^{\frac{1}{1-\mu_{Ms}}}.
+\]
+Here, $v_s$, $v_{Ts}$, and $v_{Ms}^{H,CO}$ are the share parameters governing the aggregation at each respective level, and $\mu_s$, $\mu_{Ts}$, and $\mu_{Ms}$ denote the elasticities of substitution. The price $P_{NT,t}$ corresponds to domestically produced non-tradable goods, $P_{HT,t}$ denotes the price of home-produced tradable goods, and $P_{IM,t}^{CO}$ refers to the price of imports from country or region $CO$. The structure of price aggregation mirrors the quantity aggregation.}
 
 
 \begin{figure}[H]
@@ -330,7 +332,7 @@ Figure~\ref{finalGoodProduction} offers a detailed schematic representation of t
     \vspace{5mm}
     \small
     \begin{minipage}{0.9\textwidth}
-        \textit{Notes}: $TT_t^i$ denotes the tradable good for each type of good $s$, where $s \in \{C, I, Cg, Ig\}$. Analogously, $NT_t^s$, $HT_t^s$, and $IM_t^s$ represent, respectively, the non-tradable good, the home tradable good, and imported goods for the various sectors. Since the production of non-tradables and home tradable goods is used to meet final demand domestically, any trade imbalance arises from the difference between imports and the production allocated to exports (indicated by the grey and yellow nodes).
+        \textit{Notes}: $TT_t^s$ denotes the tradable good for each type of good $s$, where $s \in \{C, I, Cg, Ig\}$. Analogously, $NT_t^s$, $HT_t^s$, and $IM_t^s$ represent, respectively, the non-tradable good, the home tradable good, and imported goods for the various sectors. Since the production of non-tradables and home tradable goods is used to meet final demand domestically, any trade imbalance arises from the difference between imports and the production allocated to exports (indicated by the grey and yellow nodes).
 
     \end{minipage}
 \end{figure}
