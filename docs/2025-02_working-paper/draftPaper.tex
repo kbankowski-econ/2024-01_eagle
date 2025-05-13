@@ -248,7 +248,7 @@ Here, $\nu_s$, $\nu_{Ts}$, and $\nu_{Ms}^{H,CO}$ are the share parameters govern
     \end{minipage}
 \end{figure}
 
-\paragraph{Resource constraint} Countries or regions in the EAGLE model are subject to the following aggregate resource constraint, which can be expressed in nominal terms as shown in Eq.~\ref{eqResourceConstraint}. Total production $Y_t$ is allocated to satisfy the domestic share of final demand from the private sector ($C_t$ and $I_t$) and the general government ($G_{C,t}$ and $G_{I,t}$), as well as to meet external demand through exports.\footnote{Some of the production is absorbed by transaction costs and capital utilization costs, represented by $\Gamma_{v,t}$ and $\Gamma_u(u_t)K_t$, respectively.} Figure~\ref{figAggResourceConstraint} provides a schematic representation of the creation and utilization of resources within a country or region in the EAGLE model.
+\paragraph{Resource constraint} Countries or regions in the EAGLE model are subject to the following aggregate resource constraint, which can be expressed in nominal terms as shown in Eq.~\ref{eqResourceConstraint}. Total production $Y_t$ is allocated to satisfy the domestic share of final demand from the private sector ($C_t$ and $I_t$) and the general government ($G_{C,t}$ and $G_{I,t}$), as well as to meet external demand through exports.\footnote{Some of the production is absorbed by transaction costs and capital utilization costs, represented by $\Gamma_{v,t}$ and $\Gamma_u(u_t)K_t$, respectively.} Figure~\ref{fig:AggResourceConstraint} provides a schematic representation of the creation and utilization of resources within a country or region in the EAGLE model.
 \begin{equation} \label{eqResourceConstraint}
     \begin{aligned}
         P_{Y,t} Y_t =\ & P_{C,t} \underbrace{\left(C_t + \Gamma_{v,t}\right)}_{Q_t^{C}} + P_{I,t} \underbrace{\left(I_t + \Gamma_u(u_t) K_t\right)}_{Q_t^{I}} + P_{G_C,t} \underbrace{G_{C,t}}_{Q_t^{G_c}} + P_{G_I,t} \underbrace{G_{I,t}}_{Q_t^{G_i}} \\
@@ -261,7 +261,7 @@ Here, $\nu_s$, $\nu_{Ts}$, and $\nu_{Ms}^{H,CO}$ are the share parameters govern
 \begin{figure}[H]
     \centering
     \caption{Production and utilization of resources within a country or region in the EAGLE model.
-    \label{figAggResourceConstraint}}
+    \label{fig:AggResourceConstraint}}
     \begin{tikzpicture}[
         node distance=0.8cm and 1.2cm, % tighter horizontal and vertical distances
         every node/.style={draw, rounded corners, minimum width=1.5cm, minimum height=0.6cm, align=center, font=\small},
@@ -449,7 +449,13 @@ Here, $\left(\bar{R}^{\mathrm{CO}}\right)^4 = \beta^{-4} \bar{\Pi}^{\mathrm{CO},
 % DE_rrstar-1 = 1/DE_beta-1;
 
 \subsection{The model calibration} \label{sec:model_calibration}
-The model is calibrated to reflect our enhanced geographical structure, most notably the detailed decomposition of the euro area. Specifically, we distinguish ten individual euro area member states—Austria, Belgium, Finland, France, Germany, Greece, Italy, the Netherlands, Portugal, and Spain—alongside a residual region representing the remaining countries. Going beyond the EMU, the calibration also includes the non-euro area European Union, the United States and the rest of the world, resulting in a total of 14 country or regional blocks. Calibration proceeds in line with the established practices, with a focus on matching a set of key ratios to output—often referred to as the “Great Ratios.” These targets are derived from macroeconomic data corresponding to model variables.
+
+The model is calibrated to reflect an enhanced geographical structure, with particular emphasis on a detailed decomposition of the euro area. Specifically, we distinguish ten individual euro area member states—Austria, Belgium, Finland, France, Germany, Greece, Italy, the Netherlands, Portugal, and Spain—alongside a residual region representing the remaining countries. Beyond the euro area, the calibration also includes the non-euro area European Union, the United States, and the rest of the world, resulting in a total of 14 country or regional blocks. The calibration follows established practices in the literature, targeting a set of key output ratios—commonly referred to as the “great ratios.” These targets are derived from macroeconomic data aligned with their counterparts in the model.
+
+\paragraph{Country-Specific Great Ratios and Fiscal Variables}
+The calibration of the great ratios (see Table~\ref{tab:national_accounts}) is primarily based on national accounts data, with illustrative values presented in Figure~\ref{figApp:nationalAccountsData}. Long-run averages are computed over the period 1980-2019. The initial year reflects the data availability, while 2019 is chosen as the end year to exclude the extraordinary observations associated with the COVID-19 pandemic. Finally, the relative size of each economy in the model is scaled to match its share in global GDP.
+
+The countries and regions incorporated in the model exhibit substantial heterogeneity in the composition of domestic demand (see values in Table \ref{tab:national_accounts}). Several economies—such as Belgium, France, Finland, and the Netherlands—exhibit relatively high public expenditure-to-GDP ratios, while others—such as the United States and the Rest of the World—display more limited public sectors. Additionally, there is marked variation in trade openness, as indicated by differing import and export shares across economies. Smaller and more open economies, such as Belgium, the Netherlands, and countries in the residual euro area group, import in excess of 30\% of GDP. In contrast, larger economies, including the United States and the Rest of the World, exhibit significantly lower import penetration, with shares closer to 20\%. The net foreign asset position is calibrated endogenously, reflecting observed imbalances, with many euro area economies showing negative positions.
 
 \begin{landscape}
     \begin{table}[htbp]
@@ -461,6 +467,9 @@ The model is calibrated to reflect our enhanced geographical structure, most not
     \end{table}
 \end{landscape}
 
+As part of the calibration, we also set country-specific steady-state values for key government-related variables (see Table \ref{tab:gov_ratios}). Government spending-to-GDP ratios are used to capture the relative size of the public sector across countries and regions, with illustrative data presented in Figure \ref{figApp:govSpending}. Tax rates are computed as average implicit rates, defined as the ratio of government revenues from a given tax category to its corresponding macroeconomic base, thereby reflecting the effective tax burden (see Figure \ref{figApp:govTaxRates}). Finally, each country or region is assigned a target debt-to-GDP ratio, calibrated on the basis of historical averages over the sample period. The underlying fiscal data are drawn from the Government Finance Statistics.
+
+The model captures significant cross-country variation in government size and tax structures (see values in Table \ref{tab:gov_ratios}). Government consumption, for instance, exceeds 24\% of GDP in Finland, France, and the Netherlands, reflecting relatively large public sectors, whereas it falls below 17\% in the United States and the Rest of the World. Government investment also varies markedly, ranging from around 2.3\% of GDP in Belgium to nearly 8\% in the Rest of the World. Transfers display even greater dispersion, with values exceeding 16\% in Austria but turning negative in the United States. Tax policy parameters reveal pronounced differences as well. Social security contributions paid by employers are highest in France and Italy—exceeding 30\% in the latter—while remaining below 8\% in the United States. Similarly, labor and consumption tax rates are considerably higher in most European economies than in non-European ones. Finally, country-specific steady-state debt-to-GDP ratios reflect varying average levels of government indebtedness, ranging from low-debt countries such as Germany (60\% of GDP) to high-debt cases such as Greece (120\% of GDP).
 
 \begin{landscape}
     \begin{table}[htbp]
@@ -471,6 +480,37 @@ The model is calibrated to reflect our enhanced geographical structure, most not
         \end{minipage}
     \end{table}
 \end{landscape}
+
+\paragraph{Trade calibration} Calibrating the trade linkages in a setup with as many countries is a major challenge in extending the EAGLE framework. Two crucial trade data characteristics need to be reflected in our model. First, there is a necessity to capture the amount of imports within each category of final good (see the gray nodes in Figure \ref{fig:AggResourceConstraint}). Here it is crucial to reflect the fact that demand components differ in terms of import content, notably private investment tends to be much more import reach than government consoumption. Second, these imported amounts need to be decomposed into bilateral imports to capture trade flows between all countries. This is to capture, for example, that import dependencies between European countries are much tighter than these involving less open US and the rest of the world region.
+
+In order to gauge the import content of each aggregate demand components we follow the methodology established by \citet{Bussiere-et-al_2013_aejMacro} and utilize Inter-Country Input-Output (ICIO) tables published by the \citet{ICIO2024}. 
+
+Input-output tables detail how the output of one industry is used as an input in another, capturing the flow of goods and services within the economy. Inter-country tables extend beyond national borders, incorporating data on economic interactions between multiple countries, capturing a comprehensive view of cross-border flows of goods and services. They include detailed information on the import content of each country's production processes, highlighting how domestic industries rely on foreign inputs. We choose the OECD inter-country input-output tables as it has a broad and recent coverage of years, regions, and sectors. The latest OECD release covers years up to 2020, 77 regions, including a 'Rest of World' region, and 45 sectors. The structure of the input output table is represented in the figure \ref{fig8}. As depicted, the tables are structured around intermediate use and final demand. In our calibrations, we extracted the tables for years 1995 to 2020 and found average values across the years to capture medium-run characteristics of trade.
+
+%The model steady state requires calibration of bilateral and total import shares of demand components (public consumption, private consumption, public investment, and private investment). Simply basing it on the imported final demand components from the ICIO tables, as noted above, would not fully capture spillover effects across borders. To properly account for these effects, we employ a more comprehensive approach that integrates both direct and indirect linkages within the global input-output framework. Direct effects refer to the immediate impact on an industry when demand for its output changes, whereas indirect effects capture the subsequent repercussions across interconnected industries within and across countries. This analysis is formalized using the Leontief framework, which models inter-industry dependencies through the input-output coefficient matrix. 
+
+%The Bussière et al. paper uses the intermediate trade matrix to compute the value of indirect imports, or the amount of imports "induced" by the expenditure on domestically provided goods and services. The calculated indirect imports are then added to the direct imports of final demand components, providing a better approximation of trade dynamics to capture the spillover effects. 
+
+
+\begin{figure}[H]
+    \centering
+    \caption{OECD Inter-Country Input-Output table structure \label{fig8}}
+    \includegraphics[width=1\textwidth]{figures/OECD_table.png}
+    \vspace{5mm} \source{OECD}
+\end{figure}
+
+%Government investment split
+
+%The short-coming of the OECD Input-Output tables is that it only provides data for total gross fixed capital formation in the economy, while the EAGLE model with fiscal extension also requires the imported share of government and private investment separately. To accurately estimate the steady-state split between the two types of gross fixed capital formation, we use IMF's Investment and Capital Stock dataset (\citet{FAS2025}), which holds information about government and private investments, and apply the proportional ratios to the import share calculated from the ICIO tables.
+
+%The trade data-based estimates reveal that the import content, expressed as a share of national GDP, varies across countries and demand components. In this context, small open economies such as Austria, Belgium, and countries in the rest of euro area exhibit higher import intensities compared to larger economies, implying a relatively greater leakage of national economic policies. Also, government demand components tend to be less import-intensive than private demand components, a pattern that holds consistently across all countries. The data suggest that government sectors display a relatively strong home bias in their spending preferences. The figure below presents share of imports in the final demand of each demand components. 
+
+\begin{figure}[H]
+    \centering
+    \caption{Import content of final demand components (share of the import content). \label{fig7}}
+    \includegraphics{figures/importContent.png}
+    \vspace{5mm} \source{Own calculations based on OECD and IMF data.}
+\end{figure}
 
 %//NOTE: We agree that the following order will followed throughout the paper; it is good to keep gov. consumptin and gov. investment because most likely we would like to devote a bit more space to them:
 % private cons.
@@ -520,6 +560,18 @@ The model is calibrated to reflect our enhanced geographical structure, most not
     \end{table}        
 \end{landscape}
 
+% a paragraph about how we use home bias paramter to calibrate trade
+
+%Household, firms and government behaviour
+\paragraph{Other model parameters} Some parameters of the model regarding household, firm, and government behaviour are kept consistent with the original model (see \citet{Gomesaetal2012}), which employs standard values prevelant in the literature. Table on household, and firms' bias between capital, labour, different types of households, and intermediate goodsa are reported in Table \ref{tab:selectedHhFirmGov} in the calibration section of the technical appendix. Government parameters, such as tax rates, are calibrated using OECD datasets (\citet{OECD_data}). The tax rates in the model include labour, capital, consumption tax, and social security contributions both by the employers, and the employees, and are reported together with other monetary and fiscal authority parameters in Table \ref{tab:policy} below. 
+
+Lastly, for nominal and real rigidities, as well as the price and wage markup parameters refer to Table \ref{tab:rigidities} and Table \ref{tab:markups_transposed}. 
+
+In addition, countries differ in the degree of nominal and real rigidities, with the Rest of World and the US exhibiting lower price and wage stickiness compared to euro area economies. 
+
+%Substitution elasticities
+In calibrating substitution elasticities in the private sector, we adopt the standard assumption that substitution between tradable and non-tradable goods is considerably more limited than between different types of tradable goods. Following \citet{Clancyetal2016} and \citet{Gomesaetal2012}, we keep the same long-run elasticity of substitution between tradable goods at 2.5 and between tradable and non-tradable goods at 0.5. 
+
 \begin{table}[htbp]
 \input{tables/monetaryPolicy.tex}
 \begin{minipage}{0.9\textwidth}
@@ -528,61 +580,12 @@ The model is calibrated to reflect our enhanced geographical structure, most not
 \end{minipage}
 \end{table}        
 
-% Key steady ratios
-We calibrate the model for 14 separate regions: Austria, Belgium, Finland, France, Germany, Greece, Italy, the Netherlands, Portugal, Spain, rest of Euro area, non-Euro area EU, the US, and rest of world. We adhere to the established calibration methodology prevalent in academic literature, aiming to align the primary steady-state ratios of different expenditure components with GDP, commonly known as the Great Ratios. These ratios were calculated in alignment with other calibrated data and is reported in Table \ref{tab:national_accounts}. 
 
-%Household, firms and government behaviour
-Some parameters of the model regarding household, firm, and government behaviour are kept consistent with the original model (see \citet{Gomesaetal2012}), which employs standard values prevelant in the literature. Table on household, and firms' bias between capital, labour, different types of households, and intermediate goodsa are reported in Table \ref{tab:selectedHhFirmGov} in the calibration section of the technical appendix. Government parameters, such as tax rates, are calibrated using OECD datasets (\citet{OECD_data}). The tax rates in the model include labour, capital, consumption tax, and social security contributions both by the employers, and the employees, and are reported together with other monetary and fiscal authority parameters in Table \ref{tab:policy} below. 
+\subsection{Steady steady solution strategy}
 
-Lastly, for nominal and real rigidities, as well as the price and wage markup parameters refer to Table \ref{tab:rigidities} and Table \ref{tab:markups_transposed}. 
+The expanded model, which includes 12 euro area countries, the rest of the world, and the United States, encompasses nearly 10,000 endogenous variables. Computing the steady state for a model of this scale remains a complex task, requiring the application of a "divide-and-conquer" algorithm, also known as homotopy in Dynare (see \citet{Adjemianetal2024}). We first solve for the steady state of a simplified version of the model, where all regions are symmetric and economic sectors are dominated by a single type of good. From this initial steady state, we gradually adjust parameters toward their target values, ensuring a smooth transition to an equilibrium where all economic ratios and trade specifications align with observed data. 
 
-%Trade data
-Accurately representing trade dynamics requires a precise estimation of the import content for each country and each demand component. To achieve this, we follow the methodology established by \citet{Bussiere-et-al_2013_aejMacro} and utilize Inter-Country Input-Output (ICIO) tables published by the \citet{ICIO2024}. We choose the OECD inter-country input-output tables as it has a broad and recent coverage of years, regions, and sectors. The latest OECD release covers years up to 2020, 77 regions, including a 'Rest of World' region, and 45 sectors. To keep consistency within the calibrated data, we also employed the tables to extract the Great Ratios. 
-
-Input-output tables detail how the output of one industry is used as an input in another, capturing the flow of goods and services within the economy. Inter-country tables extend beyond national borders, incorporating data on economic interactions between multiple countries, capturing a comprehensive view of cross-border flows of goods and services. They include detailed information on the import content of each country's production processes, highlighting how domestic industries rely on foreign inputs. 
-
-The structure of the input output table is represented in the figure \ref{fig8}. As depicted, the tables are structured around intermediate use and final demand. In our calibrations, we extracted the tables for years 1995 to 2020 and found average values across the years to capture medium-run characteristics of trade.
-
-\begin{figure}[H]
-    \centering
-    \caption{OECD Inter-Country Input-Output table structure \label{fig8}}
-    \includegraphics[width=1\textwidth]{figures/OECD_table.png}
-    \vspace{5mm} \source{OECD}
-\end{figure}
-
-%Differences between countries
-One major difference across the economies in our model lies in the composition of domestic demand, particularly the share of government consumption. Several countries, such as Belgium, France, Finland, and the Netherlands, exhibit relatively high government spending ratios, while others, such as the US or Rest of World, show comparatively smaller shares. Significant heterogeneity also arises in the share of imports in final demand components as seen in table 6. Smaller economies, such as countries in the rest of Euro Area, Belgium, and the Netherlands, showcase more openness and import up to over 30\% of their GDP, while others have import share closer to 20\%, with the US and Rest of World having relatively low openness. Net foreign asset position is calibrated endogenously accordingly, with many Euro Area countries having a negative position.  In addition, countries differ in the degree of nominal and real rigidities, with the Rest of World and the US exhibiting lower price and wage stickiness compared to euro area economies. Finally, the relative size of each economy is recalibrated to reflect its share of global GDP, which, in contrast to the original EAGLE setup, provides a more granular transmission channel.
-
-%Substitution elasticities
-In calibrating substitution elasticities in the private sector, we adopt the standard assumption that substitution between tradable and non-tradable goods is considerably more limited than between different types of tradable goods. Following \citet{Clancyetal2016} and \citet{Gomesaetal2012}, we keep the same long-run elasticity of substitution between tradable goods at 2.5 and between tradable and non-tradable goods at 0.5. 
-
-%Draft
-%Calibrating the trade matrix is a major technical challenge in extending the EAGLE framework. The expanded model, which includes 12 euro area countries, the rest of the world, and the United States, encompasses nearly 10,000 endogenous variables. Computing the steady state for a model of this scale remains a complex task, requiring the application of a "divide-and-conquer" algorithm, also known as homotopy in Dynare (see \citet{Adjemianetal2024}). We first solve for the steady state of a simplified version of the model, where all regions are symmetric and economic sectors are dominated by a single type of good. From this initial steady state, we gradually adjust parameters toward their target values, ensuring a smooth transition to an equilibrium where all economic ratios and trade specifications align with observed data. Among the various calibration steps, the adjustment of bilateral trade flows presents the greatest challenge. Successfully calibrating the model requires computing multiple intermediate steady states before converging on the final set of bilateral shares.
-
-% 5 This is how we calibrate trade
-
-%Methodology to extract the shares 
-
-%The model steady state requires calibration of bilateral and total import shares of demand components (public consumption, private consumption, public investment, and private investment). Simply basing it on the imported final demand components from the ICIO tables, as noted above, would not fully capture spillover effects across borders. To properly account for these effects, we employ a more comprehensive approach that integrates both direct and indirect linkages within the global input-output framework. Direct effects refer to the immediate impact on an industry when demand for its output changes, whereas indirect effects capture the subsequent repercussions across interconnected industries within and across countries. This analysis is formalized using the Leontief framework, which models inter-industry dependencies through the input-output coefficient matrix. 
-
-%To capture both the direct and indirect effects in the steady-steady bilateral trade shares we use methodology established in \citet{Bussiere-et-al_2013_aejMacro}, which is also based on OECD ICIO tables structure. The Bussière et al. paper uses the intermediate trade matrix to compute the value of indirect imports, or the amount of imports "induced" by the expenditure on domestically provided goods and services. The calculated indirect imports are then added to the direct imports of final demand components, providing a better approximation of trade dynamics to capture the spillover effects. 
-
-%Government investment split
-
-%The short-coming of the OECD Input-Output tables is that it only provides data for total gross fixed capital formation in the economy, while the EAGLE model with fiscal extension also requires the imported share of government and private investment separately. To accurately estimate the steady-state split between the two types of gross fixed capital formation, we use IMF's Investment and Capital Stock dataset (\citet{FAS2025}), which holds information about government and private investments, and apply the proportional ratios to the import share calculated from the ICIO tables.
-
-%The trade data-based estimates reveal that the import content, expressed as a share of national GDP, varies across countries and demand components. In this context, small open economies such as Austria, Belgium, and countries in the rest of euro area exhibit higher import intensities compared to larger economies, implying a relatively greater leakage of national economic policies. Also, government demand components tend to be less import-intensive than private demand components, a pattern that holds consistently across all countries. The data suggest that government sectors display a relatively strong home bias in their spending preferences. The figure below presents share of imports in the final demand of each demand components. 
-
-\begin{figure}[H]
-    \centering
-    \caption{Import content of final demand components (share of the import content). \label{fig7}}
-    \includegraphics{figures/importContent.png}
-    \vspace{5mm} \source{Own calculations based on OECD and IMF data.}
-\end{figure}
-
-%Taxes 
-%Beyond the bilateral shares, we also calibrate shares of final demand components as a share of GDP, using the same input-output tables, as well as tax rates, using OECD datasets (\citet{OECD_data}). The tax rates in the model include labour, capital, consumption tax, and social security contributions both by the employers, and the employees. 
-
+Among the various calibration steps, the adjustment of bilateral trade flows presents the greatest challenge. Successfully calibrating the model requires computing multiple intermediate steady states before converging on the final set of bilateral shares.
 
 \section{Macroeconomic model properties}
 
@@ -677,7 +680,30 @@ Technical Appendix
 \setcounter{equation}{0} 
 \renewcommand{\theequation}{\thesection.\arabic{equation}} 
 
-\section{Model Specification Details}
+\section{Calibration Data}
+\begin{figure}[H]
+    \centering
+    \caption{Data for the great ratios. \label{figApp:nationalAccountsData}}
+    \includegraphics[]{figures/placeholder.jpg}
+    \vspace{5mm} \source{EAGLE model simulations.}
+    \desc{...}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \caption{Data for government spending. \label{figApp:govSpending}}
+    \includegraphics[]{figures/placeholder.jpg}
+    \vspace{5mm} \source{EAGLE model simulations.}
+    \desc{...}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \caption{Data for tax rates. \label{figApp:govTaxRates}}
+    \includegraphics[]{figures/placeholder.jpg}
+    \vspace{5mm} \source{EAGLE model simulations.}
+    \desc{...}
+\end{figure}
 
 \section{Calibration Details}
 
