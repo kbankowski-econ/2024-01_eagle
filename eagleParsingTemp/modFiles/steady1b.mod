@@ -22,9 +22,20 @@ load_params_and_steady_state('eagle_steady_stage1a.txt');
 
 disp('bytarget')
 homotopy_setup;
-@#for co in countries
-@{co}_bytarget, 2.40;
-@#endfor
+    BE_bytarget, 4.23;
+    DE_bytarget, 2.64;
+    GR_bytarget, 5.51;
+    ES_bytarget, 2.81;
+    FR_bytarget, 3.13;
+    IT_bytarget, 4.78;
+    NL_bytarget, 2.28;
+    AT_bytarget, 2.94;
+    PT_bytarget, 3.6;
+    FI_bytarget, 2.1;
+    US_bytarget, 3.98;
+    RA_bytarget, 1.88;
+    RU_bytarget, 1.76;
+    RW_bytarget, 4.49;
 end;
 steady(homotopy_steps = 5);
 

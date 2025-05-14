@@ -1022,6 +1022,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 //-------------
 
 // GDP
+[name = 'EA_y']
 @{ea}_y = 
 	(
 	@{co}_size*@{co}_pybar*@{co}_y
@@ -1075,6 +1076,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 );
 
 // Annual inflation
+[name = 'EA_pic4']
 @{ea}_pic4 = 1 
 	@#for it in countries[1: ctryNumber-3]
 		* @{it}_pic4^(@{it}_size/(

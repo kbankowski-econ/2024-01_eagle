@@ -65468,20 +65468,20 @@ load_params_and_steady_state('eagle_steady_stage1a.txt');
 // Fiscal policy
 disp('bytarget')
 homotopy_setup;
-RA_bytarget, 2.40;
-AT_bytarget, 2.40;
-BE_bytarget, 2.40;
-ES_bytarget, 2.40;
-FI_bytarget, 2.40;
-FR_bytarget, 2.40;
-GR_bytarget, 2.40;
-IT_bytarget, 2.40;
-NL_bytarget, 2.40;
-PT_bytarget, 2.40;
-DE_bytarget, 2.40;
-RU_bytarget, 2.40;
-RW_bytarget, 2.40;
-US_bytarget, 2.40;
+    BE_bytarget, 4.23;
+    DE_bytarget, 2.64;
+    GR_bytarget, 5.51;
+    ES_bytarget, 2.81;
+    FR_bytarget, 3.13;
+    IT_bytarget, 4.78;
+    NL_bytarget, 2.28;
+    AT_bytarget, 2.94;
+    PT_bytarget, 3.6;
+    FI_bytarget, 2.1;
+    US_bytarget, 3.98;
+    RA_bytarget, 1.88;
+    RU_bytarget, 1.76;
+    RW_bytarget, 4.49;
 end;
 steady(homotopy_steps = 5);
 disp('cgybar')
