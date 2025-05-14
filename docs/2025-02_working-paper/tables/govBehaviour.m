@@ -34,7 +34,7 @@ function govBehaviour(envi, aStruct, fileName)
     % Budget section
     fprintf(fid, '        \\multicolumn{15}{l}{\\textbf{Government budget balance and debt}} \\\\\n');
     fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Budget balance-to-GDP ratio', '\overline{bb}', "bb", aStruct.ssValues, ' & %.1f', @(x) x*100));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Government debt-to-GDP ratio', '\overline{by}', "by", aStruct.ssValues, ' & %.1f', @(x) x*100));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Government debt-to-GDP ratio, annualized', '\overline{by}', "by", aStruct.ssValues, ' & %.1f', @(x) x*100/4));
 
     % Table footer
     fprintf(fid, '        \\bottomrule\n');
