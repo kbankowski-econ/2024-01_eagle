@@ -65223,6 +65223,7 @@ US_rer = 1;
 // Euroarea-wide variables
 //-------------
 // GDP
+[name = 'EA_y']
 EA_y = 
 	(
 	RA_size*RA_pybar*RA_y
@@ -65314,6 +65315,7 @@ EA_bf =
 	+ DE_size
 );
 // Annual inflation
+[name = 'EA_pic4']
 EA_pic4 = 1 
 		* RA_pic4^(RA_size/(
 				+ RA_size
@@ -65468,20 +65470,20 @@ load_params_and_steady_state('eagle_steady_stage1a.txt');
 // Fiscal policy
 disp('bytarget')
 homotopy_setup;
-    BE_bytarget, 4.23;
-    DE_bytarget, 2.64;
-    GR_bytarget, 5.51;
-    ES_bytarget, 2.81;
-    FR_bytarget, 3.13;
-    IT_bytarget, 4.78;
-    NL_bytarget, 2.28;
-    AT_bytarget, 2.94;
-    PT_bytarget, 3.6;
-    FI_bytarget, 2.1;
-    US_bytarget, 3.98;
-    RA_bytarget, 1.88;
-    RU_bytarget, 1.76;
-    RW_bytarget, 4.49;
+RA_bytarget, 1.8880;
+AT_bytarget, 2.9149;
+BE_bytarget, 4.2327;
+ES_bytarget, 2.8097;
+FI_bytarget, 2.0639;
+FR_bytarget, 3.1211;
+GR_bytarget, 5.4590;
+IT_bytarget, 4.7807;
+NL_bytarget, 2.2809;
+PT_bytarget, 3.6151;
+DE_bytarget, 2.6180;
+RU_bytarget, 1.6544;
+RW_bytarget, 2.8772;
+US_bytarget, 3.3328;
 end;
 steady(homotopy_steps = 5);
 disp('cgybar')
