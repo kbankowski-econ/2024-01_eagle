@@ -1,0 +1,14 @@
+RA_bytarget, 1.8880;
+AT_bytarget, 2.9149;
+BE_bytarget, 4.2327;
+ES_bytarget, 2.8097;
+FI_bytarget, 2.0639;
+FR_bytarget, 3.1211;
+GR_bytarget, 5.4590;
+IT_bytarget, 4.7807;
+NL_bytarget, 2.2809;
+PT_bytarget, 3.6151;
+DE_bytarget, 2.6180;
+RU_bytarget, 1.6544;
+RW_bytarget, 2.8772;
+US_bytarget, 3.3328;

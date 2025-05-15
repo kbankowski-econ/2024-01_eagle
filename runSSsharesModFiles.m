@@ -4,10 +4,12 @@ itemListShares = ["public_consumption", "private_consumption", "private_investme
 itemModelListShares = ["cgybar", "cy", "iy", "igybar"];
 itemListTaxRates = ["consumption", "income", "SSC_firms", "SSC_households", "capital"];
 itemModelListTaxRates = ["taucbar", "taunbar", "tauwfbar", "tauwhbar", "taukbar"];
+itemModelListDebt = ["bytarget"]
 
 % import values for calibration
 importCalibValues(ctryList, itemListShares, itemModelListShares, "shares");
 importCalibValues(ctryList, itemListTaxRates, itemModelListTaxRates, "tax_rates");
+importCalibValues(ctryList, itemModelListDebt, itemModelListDebt, "debt");
 
 %% Local function
 function importCalibValues(ctryList, itemList, itemModelList, valueCalibType)
