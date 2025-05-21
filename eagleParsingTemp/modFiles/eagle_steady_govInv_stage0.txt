@@ -2190,6 +2190,7 @@ RA_imcgy 0.068444
 RA_imig 0.055854
 RA_imigy 0.015135
 RA_imy 0.493878
+RA_exy 0.495726
 RA_internalrer 1.266380
 RA_iy 0.196799
 RA_igy 0.038300
@@ -2703,6 +2704,7 @@ AT_imcgy 0.085815
 AT_imig 0.044647
 AT_imigy 0.012495
 AT_imy 0.495058
+AT_exy 0.496907
 AT_internalrer 1.291521
 AT_iy 0.216009
 AT_igy 0.031100
@@ -3216,6 +3218,7 @@ BE_imcgy 0.096362
 BE_imig 0.033631
 BE_imigy 0.008860
 BE_imy 0.486953
+BE_exy 0.488801
 BE_internalrer 1.254656
 BE_iy 0.204114
 BE_igy 0.022600
@@ -3729,6 +3732,7 @@ ES_imcgy 0.073105
 ES_imig 0.051137
 ES_imigy 0.012827
 ES_imy 0.485283
+ES_exy 0.487132
 ES_internalrer 1.217482
 ES_iy 0.186308
 ES_igy 0.033600
@@ -4242,6 +4246,7 @@ FI_imcgy 0.096633
 FI_imig 0.062409
 FI_imigy 0.016073
 FI_imy 0.482142
+FI_exy 0.483990
 FI_internalrer 1.244168
 FI_iy 0.191300
 FI_igy 0.041300
@@ -4755,6 +4760,7 @@ FR_imcgy 0.093696
 FR_imig 0.059600
 FR_imigy 0.014682
 FR_imy 0.477415
+FR_exy 0.479264
 FR_internalrer 1.216048
 FR_iy 0.175884
 FR_igy 0.038500
@@ -5268,6 +5274,7 @@ GR_imcgy 0.073597
 GR_imig 0.069648
 GR_imigy 0.015222
 GR_imy 0.466350
+GR_exy 0.468199
 GR_internalrer 1.141104
 GR_iy 0.129114
 GR_igy 0.042400
@@ -5781,6 +5788,7 @@ IT_imcgy 0.074982
 IT_imig 0.041789
 IT_imigy 0.010327
 IT_imy 0.482498
+IT_exy 0.484346
 IT_internalrer 1.210120
 IT_iy 0.164119
 IT_igy 0.027200
@@ -6294,6 +6302,7 @@ NL_imcgy 0.099679
 NL_imig 0.061920
 NL_imigy 0.014756
 NL_imy 0.471863
+NL_exy 0.473711
 NL_internalrer 1.198938
 NL_iy 0.168371
 NL_igy 0.039200
@@ -6807,6 +6816,7 @@ PT_imcgy 0.073079
 PT_imig 0.051113
 PT_imigy 0.012578
 PT_imy 0.482178
+PT_exy 0.484026
 PT_internalrer 1.207286
 PT_iy 0.167020
 PT_igy 0.033200
@@ -7320,6 +7330,7 @@ DE_imcgy 0.081962
 DE_imig 0.035151
 DE_imigy 0.009128
 DE_imy 0.487774
+DE_exy 0.489622
 DE_internalrer 1.241484
 DE_iy 0.190503
 DE_igy 0.023500
@@ -7833,6 +7844,7 @@ RU_imcgy 0.090068
 RU_imig 0.044322
 RU_imigy 0.011466
 RU_imy 0.484305
+RU_exy 0.479376
 RU_internalrer 1.254951
 RU_iy 0.182996
 RU_igy 0.039900
@@ -8346,6 +8358,7 @@ RW_imcgy 0.069351
 RW_imig 0.152822
 RW_imigy 0.031828
 RW_imy 0.372755
+RW_exy 0.367826
 RW_internalrer 1.103213
 RW_iy 0.194799
 RW_igy 0.077700
@@ -8858,6 +8871,7 @@ US_imcgy 0.071592
 US_imig 0.157859
 US_imigy 0.019560
 US_imy 0.164481
+US_exy 0.159648
 US_internalrer 1.122366
 US_iy 0.168829
 US_igy 0.041200

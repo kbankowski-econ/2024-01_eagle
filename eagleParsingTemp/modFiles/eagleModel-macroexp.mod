@@ -398,6 +398,7 @@ RA_sx
  RA_imig
  RA_imigy
  RA_imy
+ RA_exy
  RA_internalrer
  RA_iy
  RA_igy
@@ -1025,6 +1026,7 @@ AT_sx
  AT_imig
  AT_imigy
  AT_imy
+ AT_exy
  AT_internalrer
  AT_iy
  AT_igy
@@ -1652,6 +1654,7 @@ BE_sx
  BE_imig
  BE_imigy
  BE_imy
+ BE_exy
  BE_internalrer
  BE_iy
  BE_igy
@@ -2279,6 +2282,7 @@ ES_sx
  ES_imig
  ES_imigy
  ES_imy
+ ES_exy
  ES_internalrer
  ES_iy
  ES_igy
@@ -2906,6 +2910,7 @@ FI_sx
  FI_imig
  FI_imigy
  FI_imy
+ FI_exy
  FI_internalrer
  FI_iy
  FI_igy
@@ -3533,6 +3538,7 @@ FR_sx
  FR_imig
  FR_imigy
  FR_imy
+ FR_exy
  FR_internalrer
  FR_iy
  FR_igy
@@ -4160,6 +4166,7 @@ GR_sx
  GR_imig
  GR_imigy
  GR_imy
+ GR_exy
  GR_internalrer
  GR_iy
  GR_igy
@@ -4787,6 +4794,7 @@ IT_sx
  IT_imig
  IT_imigy
  IT_imy
+ IT_exy
  IT_internalrer
  IT_iy
  IT_igy
@@ -5414,6 +5422,7 @@ NL_sx
  NL_imig
  NL_imigy
  NL_imy
+ NL_exy
  NL_internalrer
  NL_iy
  NL_igy
@@ -6041,6 +6050,7 @@ PT_sx
  PT_imig
  PT_imigy
  PT_imy
+ PT_exy
  PT_internalrer
  PT_iy
  PT_igy
@@ -6668,6 +6678,7 @@ DE_sx
  DE_imig
  DE_imigy
  DE_imy
+ DE_exy
  DE_internalrer
  DE_iy
  DE_igy
@@ -7295,6 +7306,7 @@ RU_sx
  RU_imig
  RU_imigy
  RU_imy
+ RU_exy
  RU_internalrer
  RU_iy
  RU_igy
@@ -7926,6 +7938,7 @@ RW_sx
  RW_imig
  RW_imigy
  RW_imy
+ RW_exy
  RW_internalrer
  RW_iy
  RW_igy
@@ -8556,6 +8569,7 @@ US_sx
  US_imig
  US_imigy
  US_imy
+ US_exy
  US_internalrer
  US_iy
  US_igy
@@ -13373,6 +13387,10 @@ RA_imy = (
 +RA_pimcg*RA_imcg
 +RA_pimig*RA_imig
 )/(RA_py*RA_y);
+// Aggregate nominal export share  
+RA_exy = (
++RA_pex*RA_ex
+)/(RA_py*RA_y);
 // Aggregate nominal import share
 RA_imcy = RA_pimc*RA_imc/(RA_py*RA_y);
 RA_imiy = RA_pimi*RA_imi/(RA_py*RA_y);
@@ -17394,6 +17412,10 @@ AT_imy = (
 +AT_pimi*AT_imi
 +AT_pimcg*AT_imcg
 +AT_pimig*AT_imig
+)/(AT_py*AT_y);
+// Aggregate nominal export share  
+AT_exy = (
++AT_pex*AT_ex
 )/(AT_py*AT_y);
 // Aggregate nominal import share
 AT_imcy = AT_pimc*AT_imc/(AT_py*AT_y);
@@ -21417,6 +21439,10 @@ BE_imy = (
 +BE_pimcg*BE_imcg
 +BE_pimig*BE_imig
 )/(BE_py*BE_y);
+// Aggregate nominal export share  
+BE_exy = (
++BE_pex*BE_ex
+)/(BE_py*BE_y);
 // Aggregate nominal import share
 BE_imcy = BE_pimc*BE_imc/(BE_py*BE_y);
 BE_imiy = BE_pimi*BE_imi/(BE_py*BE_y);
@@ -25438,6 +25464,10 @@ ES_imy = (
 +ES_pimi*ES_imi
 +ES_pimcg*ES_imcg
 +ES_pimig*ES_imig
+)/(ES_py*ES_y);
+// Aggregate nominal export share  
+ES_exy = (
++ES_pex*ES_ex
 )/(ES_py*ES_y);
 // Aggregate nominal import share
 ES_imcy = ES_pimc*ES_imc/(ES_py*ES_y);
@@ -29461,6 +29491,10 @@ FI_imy = (
 +FI_pimcg*FI_imcg
 +FI_pimig*FI_imig
 )/(FI_py*FI_y);
+// Aggregate nominal export share  
+FI_exy = (
++FI_pex*FI_ex
+)/(FI_py*FI_y);
 // Aggregate nominal import share
 FI_imcy = FI_pimc*FI_imc/(FI_py*FI_y);
 FI_imiy = FI_pimi*FI_imi/(FI_py*FI_y);
@@ -33482,6 +33516,10 @@ FR_imy = (
 +FR_pimi*FR_imi
 +FR_pimcg*FR_imcg
 +FR_pimig*FR_imig
+)/(FR_py*FR_y);
+// Aggregate nominal export share  
+FR_exy = (
++FR_pex*FR_ex
 )/(FR_py*FR_y);
 // Aggregate nominal import share
 FR_imcy = FR_pimc*FR_imc/(FR_py*FR_y);
@@ -37505,6 +37543,10 @@ GR_imy = (
 +GR_pimcg*GR_imcg
 +GR_pimig*GR_imig
 )/(GR_py*GR_y);
+// Aggregate nominal export share  
+GR_exy = (
++GR_pex*GR_ex
+)/(GR_py*GR_y);
 // Aggregate nominal import share
 GR_imcy = GR_pimc*GR_imc/(GR_py*GR_y);
 GR_imiy = GR_pimi*GR_imi/(GR_py*GR_y);
@@ -41526,6 +41568,10 @@ IT_imy = (
 +IT_pimi*IT_imi
 +IT_pimcg*IT_imcg
 +IT_pimig*IT_imig
+)/(IT_py*IT_y);
+// Aggregate nominal export share  
+IT_exy = (
++IT_pex*IT_ex
 )/(IT_py*IT_y);
 // Aggregate nominal import share
 IT_imcy = IT_pimc*IT_imc/(IT_py*IT_y);
@@ -45549,6 +45595,10 @@ NL_imy = (
 +NL_pimcg*NL_imcg
 +NL_pimig*NL_imig
 )/(NL_py*NL_y);
+// Aggregate nominal export share  
+NL_exy = (
++NL_pex*NL_ex
+)/(NL_py*NL_y);
 // Aggregate nominal import share
 NL_imcy = NL_pimc*NL_imc/(NL_py*NL_y);
 NL_imiy = NL_pimi*NL_imi/(NL_py*NL_y);
@@ -49570,6 +49620,10 @@ PT_imy = (
 +PT_pimi*PT_imi
 +PT_pimcg*PT_imcg
 +PT_pimig*PT_imig
+)/(PT_py*PT_y);
+// Aggregate nominal export share  
+PT_exy = (
++PT_pex*PT_ex
 )/(PT_py*PT_y);
 // Aggregate nominal import share
 PT_imcy = PT_pimc*PT_imc/(PT_py*PT_y);
@@ -53595,6 +53649,10 @@ DE_imy = (
 +DE_pimcg*DE_imcg
 +DE_pimig*DE_imig
 )/(DE_py*DE_y);
+// Aggregate nominal export share  
+DE_exy = (
++DE_pex*DE_ex
+)/(DE_py*DE_y);
 // Aggregate nominal import share
 DE_imcy = DE_pimc*DE_imc/(DE_py*DE_y);
 DE_imiy = DE_pimi*DE_imi/(DE_py*DE_y);
@@ -57616,6 +57674,10 @@ RU_imy = (
 +RU_pimi*RU_imi
 +RU_pimcg*RU_imcg
 +RU_pimig*RU_imig
+)/(RU_py*RU_y);
+// Aggregate nominal export share  
+RU_exy = (
++RU_pex*RU_ex
 )/(RU_py*RU_y);
 // Aggregate nominal import share
 RU_imcy = RU_pimc*RU_imc/(RU_py*RU_y);
@@ -61639,6 +61701,10 @@ RW_imy = (
 +RW_pimcg*RW_imcg
 +RW_pimig*RW_imig
 )/(RW_py*RW_y);
+// Aggregate nominal export share  
+RW_exy = (
++RW_pex*RW_ex
+)/(RW_py*RW_y);
 // Aggregate nominal import share
 RW_imcy = RW_pimc*RW_imc/(RW_py*RW_y);
 RW_imiy = RW_pimi*RW_imi/(RW_py*RW_y);
@@ -65661,6 +65727,10 @@ US_imy = (
 +US_pimcg*US_imcg
 +US_pimig*US_imig
 )/(US_py*US_y);
+// Aggregate nominal export share  
+US_exy = (
++US_pex*US_ex
+)/(US_py*US_y);
 // Aggregate nominal import share
 US_imcy = US_pimc*US_imc/(US_py*US_y);
 US_imiy = US_pimi*US_imi/(US_py*US_y);
@@ -66146,6 +66216,7 @@ US_rer = 1;
 // Euroarea-wide variables
 //-------------
 // GDP
+[name = 'EA_y']
 EA_y = 
 	(
 	RA_size*RA_pybar*RA_y
@@ -66237,6 +66308,7 @@ EA_bf =
 	+ DE_size
 );
 // Annual inflation
+[name = 'EA_pic4']
 EA_pic4 = 1 
 		* RA_pic4^(RA_size/(
 				+ RA_size

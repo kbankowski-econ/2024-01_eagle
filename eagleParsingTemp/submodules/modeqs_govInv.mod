@@ -845,6 +845,11 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @#endfor
 )/(@{co}_py*@{co}_y);
 
+// Aggregate nominal export share  
+@{co}_exy = (
++@{co}_pex*@{co}_ex
+)/(@{co}_py*@{co}_y);
+
 // Aggregate nominal import share
 @#for aItem in demandItems
 @{co}_im@{aItem}y = @{co}_pim@{aItem}*@{co}_im@{aItem}/(@{co}_py*@{co}_y);

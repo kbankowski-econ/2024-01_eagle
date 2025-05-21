@@ -24,28 +24,6 @@ function ssNationalAccounts(envi, aStruct, fileName)
     % Trade section
     fprintf(fid, '        \\multicolumn{15}{l}{\\textbf{Trade}} \\\\\n');
     fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Imports (total)', '\overline{imy}', "imy", aStruct.ssValues, ' & %.1f', @(x) x*100));
-
-    % Compute exy = tby + imy
-    
-    for i = 1:length(envi.Meta.ctryList)
-        ctry = envi.Meta.ctryList{i};
-        varTBY = [ctry '_tby'];
-        varIMY = [ctry '_imy'];
-        varEXY = [ctry '_exy'];
-        
-        hasTBY = isfield(aStruct.ssValues, varTBY);
-        hasIMY = isfield(aStruct.ssValues, varIMY);
-        
-        if hasTBY && hasIMY
-            tby_val = aStruct.ssValues.(varTBY);
-            imy_val = aStruct.ssValues.(varIMY);
-            aStruct.ssValues.(varEXY) = tby_val + imy_val;
-        else
-            % Leave as NaN for now — will convert later if needed
-             aStruct.ssValues.(varEXY) = NaN;
-        end
-    end
-
     fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Exports (total)', '\overline{exy}', "exy", aStruct.ssValues, ' & %.1f', @(x) x*100));
     fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Trade balance', '\overline{tby}', "tby", aStruct.ssValues, ' & %.1f', @(x) x*100));
     fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Net foreign assets', '\overline{B_Y^{*}}', "bfytarget", aStruct.params, ' & %.1f', @(x) x*100));

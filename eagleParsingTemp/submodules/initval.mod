@@ -24,6 +24,7 @@ initval;
   @{COUNTRY}_epsilonm = -1.11375;
   @{COUNTRY}_etot = 1;
   @{COUNTRY}_ex = 0.081148;
+  @{COUNTRY}_exy = 0.25;
 
   @{COUNTRY}_fh = 0.008;
   @{COUNTRY}_fx = 0.008;
