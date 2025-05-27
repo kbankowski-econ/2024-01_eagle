@@ -29,7 +29,9 @@ finalGoodProduction(envi, steady7struct, fullfile(project_path, 'docs/2025-02_wo
 realNominalRigidities(envi, steady7struct, fullfile(project_path, 'docs/2025-02_working-paper/tables/realNominalRigidities.tex'));
 % A4
 priceAndWageMarkups(envi, steady7struct, fullfile(project_path, 'docs/2025-02_working-paper/tables/priceAndWageMarkups.tex'));
-% A5-A8
+% A5
+ssFiscalInstruments(envi, steady7struct, fullfile(project_path, 'docs/2025-02_working-paper/tables/ssFiscalInstruments.tex'));
+% A6-A9
 internationalLinkagesNu(envi, steady7struct, "MC", "private consumption");
 internationalLinkagesNu(envi, steady7struct, "MI", "private investment");
 internationalLinkagesNu(envi, steady7struct, "MCG", "government consumption");
