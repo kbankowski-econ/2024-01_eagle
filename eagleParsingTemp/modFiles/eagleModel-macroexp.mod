@@ -522,6 +522,16 @@ RA_sx
  RA_zinv
  RA_zn
  RA_zt
+ RA_grev
+ RA_gexp
+ RA_grevy
+ RA_gexpy
+ RA_gbal
+ RA_gbaly
+ RA_br
+ RA_bry
+ RA_gpbal
+ RA_gpbaly
 ;
 // Parameters
 parameters
@@ -1150,6 +1160,16 @@ AT_sx
  AT_zinv
  AT_zn
  AT_zt
+ AT_grev
+ AT_gexp
+ AT_grevy
+ AT_gexpy
+ AT_gbal
+ AT_gbaly
+ AT_br
+ AT_bry
+ AT_gpbal
+ AT_gpbaly
 ;
 // Parameters
 parameters
@@ -1778,6 +1798,16 @@ BE_sx
  BE_zinv
  BE_zn
  BE_zt
+ BE_grev
+ BE_gexp
+ BE_grevy
+ BE_gexpy
+ BE_gbal
+ BE_gbaly
+ BE_br
+ BE_bry
+ BE_gpbal
+ BE_gpbaly
 ;
 // Parameters
 parameters
@@ -2406,6 +2436,16 @@ ES_sx
  ES_zinv
  ES_zn
  ES_zt
+ ES_grev
+ ES_gexp
+ ES_grevy
+ ES_gexpy
+ ES_gbal
+ ES_gbaly
+ ES_br
+ ES_bry
+ ES_gpbal
+ ES_gpbaly
 ;
 // Parameters
 parameters
@@ -3034,6 +3074,16 @@ FI_sx
  FI_zinv
  FI_zn
  FI_zt
+ FI_grev
+ FI_gexp
+ FI_grevy
+ FI_gexpy
+ FI_gbal
+ FI_gbaly
+ FI_br
+ FI_bry
+ FI_gpbal
+ FI_gpbaly
 ;
 // Parameters
 parameters
@@ -3662,6 +3712,16 @@ FR_sx
  FR_zinv
  FR_zn
  FR_zt
+ FR_grev
+ FR_gexp
+ FR_grevy
+ FR_gexpy
+ FR_gbal
+ FR_gbaly
+ FR_br
+ FR_bry
+ FR_gpbal
+ FR_gpbaly
 ;
 // Parameters
 parameters
@@ -4290,6 +4350,16 @@ GR_sx
  GR_zinv
  GR_zn
  GR_zt
+ GR_grev
+ GR_gexp
+ GR_grevy
+ GR_gexpy
+ GR_gbal
+ GR_gbaly
+ GR_br
+ GR_bry
+ GR_gpbal
+ GR_gpbaly
 ;
 // Parameters
 parameters
@@ -4918,6 +4988,16 @@ IT_sx
  IT_zinv
  IT_zn
  IT_zt
+ IT_grev
+ IT_gexp
+ IT_grevy
+ IT_gexpy
+ IT_gbal
+ IT_gbaly
+ IT_br
+ IT_bry
+ IT_gpbal
+ IT_gpbaly
 ;
 // Parameters
 parameters
@@ -5546,6 +5626,16 @@ NL_sx
  NL_zinv
  NL_zn
  NL_zt
+ NL_grev
+ NL_gexp
+ NL_grevy
+ NL_gexpy
+ NL_gbal
+ NL_gbaly
+ NL_br
+ NL_bry
+ NL_gpbal
+ NL_gpbaly
 ;
 // Parameters
 parameters
@@ -6174,6 +6264,16 @@ PT_sx
  PT_zinv
  PT_zn
  PT_zt
+ PT_grev
+ PT_gexp
+ PT_grevy
+ PT_gexpy
+ PT_gbal
+ PT_gbaly
+ PT_br
+ PT_bry
+ PT_gpbal
+ PT_gpbaly
 ;
 // Parameters
 parameters
@@ -6802,6 +6902,16 @@ DE_sx
  DE_zinv
  DE_zn
  DE_zt
+ DE_grev
+ DE_gexp
+ DE_grevy
+ DE_gexpy
+ DE_gbal
+ DE_gbaly
+ DE_br
+ DE_bry
+ DE_gpbal
+ DE_gpbaly
 ;
 // Parameters
 parameters
@@ -7430,6 +7540,16 @@ RU_sx
  RU_zinv
  RU_zn
  RU_zt
+ RU_grev
+ RU_gexp
+ RU_grevy
+ RU_gexpy
+ RU_gbal
+ RU_gbaly
+ RU_br
+ RU_bry
+ RU_gpbal
+ RU_gpbaly
 ;
 // Parameters
 parameters
@@ -8062,6 +8182,16 @@ RW_sx
  RW_zinv
  RW_zn
  RW_zt
+ RW_grev
+ RW_gexp
+ RW_grevy
+ RW_gexpy
+ RW_gbal
+ RW_gbaly
+ RW_br
+ RW_bry
+ RW_gpbal
+ RW_gpbaly
 ;
 // Parameters
 parameters
@@ -8690,6 +8820,16 @@ US_sx
  US_zinv
  US_zn
  US_zt
+ US_grev
+ US_gexp
+ US_grevy
+ US_gexpy
+ US_gbal
+ US_gbaly
+ US_br
+ US_bry
+ US_gpbal
+ US_gpbaly
 ;
 // Parameters
 parameters
@@ -13215,6 +13355,12 @@ RA_tj =
 ;
 // Aggregate transaction costs
 RA_gammav = (1-RA_omega)*RA_ci*RA_gammavi+RA_omega*RA_cj*RA_gammavj;
+// Aggregate governmnet expenditure 
+RA_gexp = -(RA_r^(-1)-1)*RA_b(+1) + RA_pcg*RA_cg+RA_pig*RA_ig+RA_tr;
+RA_gexpy = RA_gexp/(RA_pybar*RA_ybar);
+// Aggregate government revenue
+RA_grev = RA_tauc*RA_c+(RA_taun+RA_tauwh)*(RA_wi*RA_ndi+RA_wj*RA_ndj)+RA_tauwf*RA_w*RA_nd+RA_tauk*(RA_rk*RA_u-(RA_gammau+RA_delta)*RA_pi)*RA_k+RA_taud*RA_d+RA_t;
+RA_grevy = RA_grev/(RA_pybar*RA_ybar);
 //-------------
 // Market clearing
 //-------------
@@ -13558,6 +13704,15 @@ RAUS_excy  = US_size/RA_size*RA_pex*USRA_imc/(RA_py*RA_y);
 RAUS_exiy  = US_size/RA_size*RA_pex*USRA_imi/(RA_py*RA_y);
 // Internal real exchange rate
 RA_internalrer = RA_pnt/RA_pttc;
+//Debt interest repayments 
+RA_br = RA_b * (1-(RA_r(-1))^(-1));
+RA_bry = RA_br/(RA_pybar*RA_ybar);
+//Government balance 
+RA_gbal = RA_grev - RA_gexp;
+RA_gbaly = RA_gbal/(RA_pybar*RA_ybar);
+//Government primary balance 
+RA_gpbal = RA_gbal + RA_br;
+RA_gpbaly = RA_gpbal/(RA_pybar*RA_ybar);
 // Core model begins
 //-------------
 //-------------
@@ -17241,6 +17396,12 @@ AT_tj =
 ;
 // Aggregate transaction costs
 AT_gammav = (1-AT_omega)*AT_ci*AT_gammavi+AT_omega*AT_cj*AT_gammavj;
+// Aggregate governmnet expenditure 
+AT_gexp = -(AT_r^(-1)-1)*AT_b(+1) + AT_pcg*AT_cg+AT_pig*AT_ig+AT_tr;
+AT_gexpy = AT_gexp/(AT_pybar*AT_ybar);
+// Aggregate government revenue
+AT_grev = AT_tauc*AT_c+(AT_taun+AT_tauwh)*(AT_wi*AT_ndi+AT_wj*AT_ndj)+AT_tauwf*AT_w*AT_nd+AT_tauk*(AT_rk*AT_u-(AT_gammau+AT_delta)*AT_pi)*AT_k+AT_taud*AT_d+AT_t;
+AT_grevy = AT_grev/(AT_pybar*AT_ybar);
 //-------------
 // Market clearing
 //-------------
@@ -17584,6 +17745,15 @@ ATUS_excy  = US_size/AT_size*AT_pex*USAT_imc/(AT_py*AT_y);
 ATUS_exiy  = US_size/AT_size*AT_pex*USAT_imi/(AT_py*AT_y);
 // Internal real exchange rate
 AT_internalrer = AT_pnt/AT_pttc;
+//Debt interest repayments 
+AT_br = AT_b * (1-(AT_r(-1))^(-1));
+AT_bry = AT_br/(AT_pybar*AT_ybar);
+//Government balance 
+AT_gbal = AT_grev - AT_gexp;
+AT_gbaly = AT_gbal/(AT_pybar*AT_ybar);
+//Government primary balance 
+AT_gpbal = AT_gbal + AT_br;
+AT_gpbaly = AT_gpbal/(AT_pybar*AT_ybar);
 // Core model begins
 //-------------
 //-------------
@@ -21267,6 +21437,12 @@ BE_tj =
 ;
 // Aggregate transaction costs
 BE_gammav = (1-BE_omega)*BE_ci*BE_gammavi+BE_omega*BE_cj*BE_gammavj;
+// Aggregate governmnet expenditure 
+BE_gexp = -(BE_r^(-1)-1)*BE_b(+1) + BE_pcg*BE_cg+BE_pig*BE_ig+BE_tr;
+BE_gexpy = BE_gexp/(BE_pybar*BE_ybar);
+// Aggregate government revenue
+BE_grev = BE_tauc*BE_c+(BE_taun+BE_tauwh)*(BE_wi*BE_ndi+BE_wj*BE_ndj)+BE_tauwf*BE_w*BE_nd+BE_tauk*(BE_rk*BE_u-(BE_gammau+BE_delta)*BE_pi)*BE_k+BE_taud*BE_d+BE_t;
+BE_grevy = BE_grev/(BE_pybar*BE_ybar);
 //-------------
 // Market clearing
 //-------------
@@ -21610,6 +21786,15 @@ BEUS_excy  = US_size/BE_size*BE_pex*USBE_imc/(BE_py*BE_y);
 BEUS_exiy  = US_size/BE_size*BE_pex*USBE_imi/(BE_py*BE_y);
 // Internal real exchange rate
 BE_internalrer = BE_pnt/BE_pttc;
+//Debt interest repayments 
+BE_br = BE_b * (1-(BE_r(-1))^(-1));
+BE_bry = BE_br/(BE_pybar*BE_ybar);
+//Government balance 
+BE_gbal = BE_grev - BE_gexp;
+BE_gbaly = BE_gbal/(BE_pybar*BE_ybar);
+//Government primary balance 
+BE_gpbal = BE_gbal + BE_br;
+BE_gpbaly = BE_gpbal/(BE_pybar*BE_ybar);
 // Core model begins
 //-------------
 //-------------
@@ -25293,6 +25478,12 @@ ES_tj =
 ;
 // Aggregate transaction costs
 ES_gammav = (1-ES_omega)*ES_ci*ES_gammavi+ES_omega*ES_cj*ES_gammavj;
+// Aggregate governmnet expenditure 
+ES_gexp = -(ES_r^(-1)-1)*ES_b(+1) + ES_pcg*ES_cg+ES_pig*ES_ig+ES_tr;
+ES_gexpy = ES_gexp/(ES_pybar*ES_ybar);
+// Aggregate government revenue
+ES_grev = ES_tauc*ES_c+(ES_taun+ES_tauwh)*(ES_wi*ES_ndi+ES_wj*ES_ndj)+ES_tauwf*ES_w*ES_nd+ES_tauk*(ES_rk*ES_u-(ES_gammau+ES_delta)*ES_pi)*ES_k+ES_taud*ES_d+ES_t;
+ES_grevy = ES_grev/(ES_pybar*ES_ybar);
 //-------------
 // Market clearing
 //-------------
@@ -25636,6 +25827,15 @@ ESUS_excy  = US_size/ES_size*ES_pex*USES_imc/(ES_py*ES_y);
 ESUS_exiy  = US_size/ES_size*ES_pex*USES_imi/(ES_py*ES_y);
 // Internal real exchange rate
 ES_internalrer = ES_pnt/ES_pttc;
+//Debt interest repayments 
+ES_br = ES_b * (1-(ES_r(-1))^(-1));
+ES_bry = ES_br/(ES_pybar*ES_ybar);
+//Government balance 
+ES_gbal = ES_grev - ES_gexp;
+ES_gbaly = ES_gbal/(ES_pybar*ES_ybar);
+//Government primary balance 
+ES_gpbal = ES_gbal + ES_br;
+ES_gpbaly = ES_gpbal/(ES_pybar*ES_ybar);
 // Core model begins
 //-------------
 //-------------
@@ -29319,6 +29519,12 @@ FI_tj =
 ;
 // Aggregate transaction costs
 FI_gammav = (1-FI_omega)*FI_ci*FI_gammavi+FI_omega*FI_cj*FI_gammavj;
+// Aggregate governmnet expenditure 
+FI_gexp = -(FI_r^(-1)-1)*FI_b(+1) + FI_pcg*FI_cg+FI_pig*FI_ig+FI_tr;
+FI_gexpy = FI_gexp/(FI_pybar*FI_ybar);
+// Aggregate government revenue
+FI_grev = FI_tauc*FI_c+(FI_taun+FI_tauwh)*(FI_wi*FI_ndi+FI_wj*FI_ndj)+FI_tauwf*FI_w*FI_nd+FI_tauk*(FI_rk*FI_u-(FI_gammau+FI_delta)*FI_pi)*FI_k+FI_taud*FI_d+FI_t;
+FI_grevy = FI_grev/(FI_pybar*FI_ybar);
 //-------------
 // Market clearing
 //-------------
@@ -29662,6 +29868,15 @@ FIUS_excy  = US_size/FI_size*FI_pex*USFI_imc/(FI_py*FI_y);
 FIUS_exiy  = US_size/FI_size*FI_pex*USFI_imi/(FI_py*FI_y);
 // Internal real exchange rate
 FI_internalrer = FI_pnt/FI_pttc;
+//Debt interest repayments 
+FI_br = FI_b * (1-(FI_r(-1))^(-1));
+FI_bry = FI_br/(FI_pybar*FI_ybar);
+//Government balance 
+FI_gbal = FI_grev - FI_gexp;
+FI_gbaly = FI_gbal/(FI_pybar*FI_ybar);
+//Government primary balance 
+FI_gpbal = FI_gbal + FI_br;
+FI_gpbaly = FI_gpbal/(FI_pybar*FI_ybar);
 // Core model begins
 //-------------
 //-------------
@@ -33345,6 +33560,12 @@ FR_tj =
 ;
 // Aggregate transaction costs
 FR_gammav = (1-FR_omega)*FR_ci*FR_gammavi+FR_omega*FR_cj*FR_gammavj;
+// Aggregate governmnet expenditure 
+FR_gexp = -(FR_r^(-1)-1)*FR_b(+1) + FR_pcg*FR_cg+FR_pig*FR_ig+FR_tr;
+FR_gexpy = FR_gexp/(FR_pybar*FR_ybar);
+// Aggregate government revenue
+FR_grev = FR_tauc*FR_c+(FR_taun+FR_tauwh)*(FR_wi*FR_ndi+FR_wj*FR_ndj)+FR_tauwf*FR_w*FR_nd+FR_tauk*(FR_rk*FR_u-(FR_gammau+FR_delta)*FR_pi)*FR_k+FR_taud*FR_d+FR_t;
+FR_grevy = FR_grev/(FR_pybar*FR_ybar);
 //-------------
 // Market clearing
 //-------------
@@ -33688,6 +33909,15 @@ FRUS_excy  = US_size/FR_size*FR_pex*USFR_imc/(FR_py*FR_y);
 FRUS_exiy  = US_size/FR_size*FR_pex*USFR_imi/(FR_py*FR_y);
 // Internal real exchange rate
 FR_internalrer = FR_pnt/FR_pttc;
+//Debt interest repayments 
+FR_br = FR_b * (1-(FR_r(-1))^(-1));
+FR_bry = FR_br/(FR_pybar*FR_ybar);
+//Government balance 
+FR_gbal = FR_grev - FR_gexp;
+FR_gbaly = FR_gbal/(FR_pybar*FR_ybar);
+//Government primary balance 
+FR_gpbal = FR_gbal + FR_br;
+FR_gpbaly = FR_gpbal/(FR_pybar*FR_ybar);
 // Core model begins
 //-------------
 //-------------
@@ -37371,6 +37601,12 @@ GR_tj =
 ;
 // Aggregate transaction costs
 GR_gammav = (1-GR_omega)*GR_ci*GR_gammavi+GR_omega*GR_cj*GR_gammavj;
+// Aggregate governmnet expenditure 
+GR_gexp = -(GR_r^(-1)-1)*GR_b(+1) + GR_pcg*GR_cg+GR_pig*GR_ig+GR_tr;
+GR_gexpy = GR_gexp/(GR_pybar*GR_ybar);
+// Aggregate government revenue
+GR_grev = GR_tauc*GR_c+(GR_taun+GR_tauwh)*(GR_wi*GR_ndi+GR_wj*GR_ndj)+GR_tauwf*GR_w*GR_nd+GR_tauk*(GR_rk*GR_u-(GR_gammau+GR_delta)*GR_pi)*GR_k+GR_taud*GR_d+GR_t;
+GR_grevy = GR_grev/(GR_pybar*GR_ybar);
 //-------------
 // Market clearing
 //-------------
@@ -37714,6 +37950,15 @@ GRUS_excy  = US_size/GR_size*GR_pex*USGR_imc/(GR_py*GR_y);
 GRUS_exiy  = US_size/GR_size*GR_pex*USGR_imi/(GR_py*GR_y);
 // Internal real exchange rate
 GR_internalrer = GR_pnt/GR_pttc;
+//Debt interest repayments 
+GR_br = GR_b * (1-(GR_r(-1))^(-1));
+GR_bry = GR_br/(GR_pybar*GR_ybar);
+//Government balance 
+GR_gbal = GR_grev - GR_gexp;
+GR_gbaly = GR_gbal/(GR_pybar*GR_ybar);
+//Government primary balance 
+GR_gpbal = GR_gbal + GR_br;
+GR_gpbaly = GR_gpbal/(GR_pybar*GR_ybar);
 // Core model begins
 //-------------
 //-------------
@@ -41397,6 +41642,12 @@ IT_tj =
 ;
 // Aggregate transaction costs
 IT_gammav = (1-IT_omega)*IT_ci*IT_gammavi+IT_omega*IT_cj*IT_gammavj;
+// Aggregate governmnet expenditure 
+IT_gexp = -(IT_r^(-1)-1)*IT_b(+1) + IT_pcg*IT_cg+IT_pig*IT_ig+IT_tr;
+IT_gexpy = IT_gexp/(IT_pybar*IT_ybar);
+// Aggregate government revenue
+IT_grev = IT_tauc*IT_c+(IT_taun+IT_tauwh)*(IT_wi*IT_ndi+IT_wj*IT_ndj)+IT_tauwf*IT_w*IT_nd+IT_tauk*(IT_rk*IT_u-(IT_gammau+IT_delta)*IT_pi)*IT_k+IT_taud*IT_d+IT_t;
+IT_grevy = IT_grev/(IT_pybar*IT_ybar);
 //-------------
 // Market clearing
 //-------------
@@ -41740,6 +41991,15 @@ ITUS_excy  = US_size/IT_size*IT_pex*USIT_imc/(IT_py*IT_y);
 ITUS_exiy  = US_size/IT_size*IT_pex*USIT_imi/(IT_py*IT_y);
 // Internal real exchange rate
 IT_internalrer = IT_pnt/IT_pttc;
+//Debt interest repayments 
+IT_br = IT_b * (1-(IT_r(-1))^(-1));
+IT_bry = IT_br/(IT_pybar*IT_ybar);
+//Government balance 
+IT_gbal = IT_grev - IT_gexp;
+IT_gbaly = IT_gbal/(IT_pybar*IT_ybar);
+//Government primary balance 
+IT_gpbal = IT_gbal + IT_br;
+IT_gpbaly = IT_gpbal/(IT_pybar*IT_ybar);
 // Core model begins
 //-------------
 //-------------
@@ -45423,6 +45683,12 @@ NL_tj =
 ;
 // Aggregate transaction costs
 NL_gammav = (1-NL_omega)*NL_ci*NL_gammavi+NL_omega*NL_cj*NL_gammavj;
+// Aggregate governmnet expenditure 
+NL_gexp = -(NL_r^(-1)-1)*NL_b(+1) + NL_pcg*NL_cg+NL_pig*NL_ig+NL_tr;
+NL_gexpy = NL_gexp/(NL_pybar*NL_ybar);
+// Aggregate government revenue
+NL_grev = NL_tauc*NL_c+(NL_taun+NL_tauwh)*(NL_wi*NL_ndi+NL_wj*NL_ndj)+NL_tauwf*NL_w*NL_nd+NL_tauk*(NL_rk*NL_u-(NL_gammau+NL_delta)*NL_pi)*NL_k+NL_taud*NL_d+NL_t;
+NL_grevy = NL_grev/(NL_pybar*NL_ybar);
 //-------------
 // Market clearing
 //-------------
@@ -45766,6 +46032,15 @@ NLUS_excy  = US_size/NL_size*NL_pex*USNL_imc/(NL_py*NL_y);
 NLUS_exiy  = US_size/NL_size*NL_pex*USNL_imi/(NL_py*NL_y);
 // Internal real exchange rate
 NL_internalrer = NL_pnt/NL_pttc;
+//Debt interest repayments 
+NL_br = NL_b * (1-(NL_r(-1))^(-1));
+NL_bry = NL_br/(NL_pybar*NL_ybar);
+//Government balance 
+NL_gbal = NL_grev - NL_gexp;
+NL_gbaly = NL_gbal/(NL_pybar*NL_ybar);
+//Government primary balance 
+NL_gpbal = NL_gbal + NL_br;
+NL_gpbaly = NL_gpbal/(NL_pybar*NL_ybar);
 // Core model begins
 //-------------
 //-------------
@@ -49449,6 +49724,12 @@ PT_tj =
 ;
 // Aggregate transaction costs
 PT_gammav = (1-PT_omega)*PT_ci*PT_gammavi+PT_omega*PT_cj*PT_gammavj;
+// Aggregate governmnet expenditure 
+PT_gexp = -(PT_r^(-1)-1)*PT_b(+1) + PT_pcg*PT_cg+PT_pig*PT_ig+PT_tr;
+PT_gexpy = PT_gexp/(PT_pybar*PT_ybar);
+// Aggregate government revenue
+PT_grev = PT_tauc*PT_c+(PT_taun+PT_tauwh)*(PT_wi*PT_ndi+PT_wj*PT_ndj)+PT_tauwf*PT_w*PT_nd+PT_tauk*(PT_rk*PT_u-(PT_gammau+PT_delta)*PT_pi)*PT_k+PT_taud*PT_d+PT_t;
+PT_grevy = PT_grev/(PT_pybar*PT_ybar);
 //-------------
 // Market clearing
 //-------------
@@ -49792,6 +50073,15 @@ PTUS_excy  = US_size/PT_size*PT_pex*USPT_imc/(PT_py*PT_y);
 PTUS_exiy  = US_size/PT_size*PT_pex*USPT_imi/(PT_py*PT_y);
 // Internal real exchange rate
 PT_internalrer = PT_pnt/PT_pttc;
+//Debt interest repayments 
+PT_br = PT_b * (1-(PT_r(-1))^(-1));
+PT_bry = PT_br/(PT_pybar*PT_ybar);
+//Government balance 
+PT_gbal = PT_grev - PT_gexp;
+PT_gbaly = PT_gbal/(PT_pybar*PT_ybar);
+//Government primary balance 
+PT_gpbal = PT_gbal + PT_br;
+PT_gpbaly = PT_gpbal/(PT_pybar*PT_ybar);
 // Core model begins
 //-------------
 //-------------
@@ -53477,6 +53767,12 @@ DE_tj =
 ;
 // Aggregate transaction costs
 DE_gammav = (1-DE_omega)*DE_ci*DE_gammavi+DE_omega*DE_cj*DE_gammavj;
+// Aggregate governmnet expenditure 
+DE_gexp = -(DE_r^(-1)-1)*DE_b(+1) + DE_pcg*DE_cg+DE_pig*DE_ig+DE_tr;
+DE_gexpy = DE_gexp/(DE_pybar*DE_ybar);
+// Aggregate government revenue
+DE_grev = DE_tauc*DE_c+(DE_taun+DE_tauwh)*(DE_wi*DE_ndi+DE_wj*DE_ndj)+DE_tauwf*DE_w*DE_nd+DE_tauk*(DE_rk*DE_u-(DE_gammau+DE_delta)*DE_pi)*DE_k+DE_taud*DE_d+DE_t;
+DE_grevy = DE_grev/(DE_pybar*DE_ybar);
 //-------------
 // Market clearing
 //-------------
@@ -53820,6 +54116,15 @@ DEUS_excy  = US_size/DE_size*DE_pex*USDE_imc/(DE_py*DE_y);
 DEUS_exiy  = US_size/DE_size*DE_pex*USDE_imi/(DE_py*DE_y);
 // Internal real exchange rate
 DE_internalrer = DE_pnt/DE_pttc;
+//Debt interest repayments 
+DE_br = DE_b * (1-(DE_r(-1))^(-1));
+DE_bry = DE_br/(DE_pybar*DE_ybar);
+//Government balance 
+DE_gbal = DE_grev - DE_gexp;
+DE_gbaly = DE_gbal/(DE_pybar*DE_ybar);
+//Government primary balance 
+DE_gpbal = DE_gbal + DE_br;
+DE_gpbaly = DE_gpbal/(DE_pybar*DE_ybar);
 // Core model begins
 //-------------
 //-------------
@@ -57503,6 +57808,12 @@ RU_tj =
 ;
 // Aggregate transaction costs
 RU_gammav = (1-RU_omega)*RU_ci*RU_gammavi+RU_omega*RU_cj*RU_gammavj;
+// Aggregate governmnet expenditure 
+RU_gexp = -(RU_r^(-1)-1)*RU_b(+1) + RU_pcg*RU_cg+RU_pig*RU_ig+RU_tr;
+RU_gexpy = RU_gexp/(RU_pybar*RU_ybar);
+// Aggregate government revenue
+RU_grev = RU_tauc*RU_c+(RU_taun+RU_tauwh)*(RU_wi*RU_ndi+RU_wj*RU_ndj)+RU_tauwf*RU_w*RU_nd+RU_tauk*(RU_rk*RU_u-(RU_gammau+RU_delta)*RU_pi)*RU_k+RU_taud*RU_d+RU_t;
+RU_grevy = RU_grev/(RU_pybar*RU_ybar);
 //-------------
 // Market clearing
 //-------------
@@ -57846,6 +58157,15 @@ RUUS_excy  = US_size/RU_size*RU_pex*USRU_imc/(RU_py*RU_y);
 RUUS_exiy  = US_size/RU_size*RU_pex*USRU_imi/(RU_py*RU_y);
 // Internal real exchange rate
 RU_internalrer = RU_pnt/RU_pttc;
+//Debt interest repayments 
+RU_br = RU_b * (1-(RU_r(-1))^(-1));
+RU_bry = RU_br/(RU_pybar*RU_ybar);
+//Government balance 
+RU_gbal = RU_grev - RU_gexp;
+RU_gbaly = RU_gbal/(RU_pybar*RU_ybar);
+//Government primary balance 
+RU_gpbal = RU_gbal + RU_br;
+RU_gpbaly = RU_gpbal/(RU_pybar*RU_ybar);
 // Core model begins
 //-------------
 //-------------
@@ -61529,6 +61849,12 @@ RW_tj =
 ;
 // Aggregate transaction costs
 RW_gammav = (1-RW_omega)*RW_ci*RW_gammavi+RW_omega*RW_cj*RW_gammavj;
+// Aggregate governmnet expenditure 
+RW_gexp = -(RW_r^(-1)-1)*RW_b(+1) + RW_pcg*RW_cg+RW_pig*RW_ig+RW_tr;
+RW_gexpy = RW_gexp/(RW_pybar*RW_ybar);
+// Aggregate government revenue
+RW_grev = RW_tauc*RW_c+(RW_taun+RW_tauwh)*(RW_wi*RW_ndi+RW_wj*RW_ndj)+RW_tauwf*RW_w*RW_nd+RW_tauk*(RW_rk*RW_u-(RW_gammau+RW_delta)*RW_pi)*RW_k+RW_taud*RW_d+RW_t;
+RW_grevy = RW_grev/(RW_pybar*RW_ybar);
 //-------------
 // Market clearing
 //-------------
@@ -61872,6 +62198,15 @@ RWUS_excy  = US_size/RW_size*RW_pex*USRW_imc/(RW_py*RW_y);
 RWUS_exiy  = US_size/RW_size*RW_pex*USRW_imi/(RW_py*RW_y);
 // Internal real exchange rate
 RW_internalrer = RW_pnt/RW_pttc;
+//Debt interest repayments 
+RW_br = RW_b * (1-(RW_r(-1))^(-1));
+RW_bry = RW_br/(RW_pybar*RW_ybar);
+//Government balance 
+RW_gbal = RW_grev - RW_gexp;
+RW_gbaly = RW_gbal/(RW_pybar*RW_ybar);
+//Government primary balance 
+RW_gpbal = RW_gbal + RW_br;
+RW_gpbaly = RW_gpbal/(RW_pybar*RW_ybar);
 // Core model begins
 //-------------
 //-------------
@@ -65555,6 +65890,12 @@ US_tj =
 ;
 // Aggregate transaction costs
 US_gammav = (1-US_omega)*US_ci*US_gammavi+US_omega*US_cj*US_gammavj;
+// Aggregate governmnet expenditure 
+US_gexp = -(US_r^(-1)-1)*US_b(+1) + US_pcg*US_cg+US_pig*US_ig+US_tr;
+US_gexpy = US_gexp/(US_pybar*US_ybar);
+// Aggregate government revenue
+US_grev = US_tauc*US_c+(US_taun+US_tauwh)*(US_wi*US_ndi+US_wj*US_ndj)+US_tauwf*US_w*US_nd+US_tauk*(US_rk*US_u-(US_gammau+US_delta)*US_pi)*US_k+US_taud*US_d+US_t;
+US_grevy = US_grev/(US_pybar*US_ybar);
 //-------------
 // Market clearing
 //-------------
@@ -65898,6 +66239,15 @@ USRW_excy  = RW_size/US_size*US_pex*RWUS_imc/(US_py*US_y);
 USRW_exiy  = RW_size/US_size*US_pex*RWUS_imi/(US_py*US_y);
 // Internal real exchange rate
 US_internalrer = US_pnt/US_pttc;
+//Debt interest repayments 
+US_br = US_b * (1-(US_r(-1))^(-1));
+US_bry = US_br/(US_pybar*US_ybar);
+//Government balance 
+US_gbal = US_grev - US_gexp;
+US_gbaly = US_gbal/(US_pybar*US_ybar);
+//Government primary balance 
+US_gpbal = US_gbal + US_br;
+US_gpbaly = US_gpbal/(US_pybar*US_ybar);
 //-------------
 // Bilateral equations versus country N
 //-------------

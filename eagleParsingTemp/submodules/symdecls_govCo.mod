@@ -249,6 +249,24 @@ var
  @{co}_zinv
  @{co}_zn
  @{co}_zt
+ @{co}_grev
+ @{co}_gexp
+ @{co}_grevy
+ @{co}_gexpy
+ @{co}_gbal
+ @{co}_gbaly
+ @{co}_br
+ @{co}_bry
+ @{co}_gpbal
+ @{co}_gpbaly
+ @{co}_tn
+ @{co}_tny 
+ @{co}_tc 
+ @{co}_tcy 
+ @{co}_twf 
+ @{co}_twfy 
+ @{co}_tk 
+ @{co}_tky 
 ;
 
 // Parameters

@@ -11,6 +11,17 @@ initval;
   @{COUNTRY}_b = 0;
   @{COUNTRY}_bf = 0;
   @{COUNTRY}_by = 0;
+  @{COUNTRY}_br = 0;
+  @{COUNTRY}_bry = 0;
+
+  @{COUNTRY}_grev = 0;
+  @{COUNTRY}_grevy = 0;
+  @{COUNTRY}_gexp = 0;
+  @{COUNTRY}_gexpy = 0;
+  @{COUNTRY}_gbal = 0;
+  @{COUNTRY}_gbaly = 0;
+  @{COUNTRY}_gpbal = 0;
+  @{COUNTRY}_gpbaly = 0;
 
   @{COUNTRY}_c = 0.32158748924289;
   @{COUNTRY}_ci = 0.426239346856029;
@@ -158,6 +169,14 @@ initval;
   @{COUNTRY}_tby= 0;
   @{COUNTRY}_ti = 0;
   @{COUNTRY}_tj = 0;
+  @{COUNTRY}_tn = 0;
+  @{COUNTRY}_tny = 0;
+  @{COUNTRY}_tc = 0;
+  @{COUNTRY}_tcy = 0;
+  @{COUNTRY}_twf = 0;
+  @{COUNTRY}_twfy = 0;
+  @{COUNTRY}_tk = 0;
+  @{COUNTRY}_tky = 0;
   @#if(COUNTRY != "US")
     @{COUNTRY}_tot = 1;
   @#endif

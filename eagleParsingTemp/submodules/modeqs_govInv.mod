@@ -683,6 +683,14 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 // Aggregate transaction costs
 @{co}_gammav = (1-@{co}_omega)*@{co}_ci*@{co}_gammavi+@{co}_omega*@{co}_cj*@{co}_gammavj;
 
+// Aggregate governmnet expenditure 
+@{co}_gexp = -(@{co}_r^(-1)-1)*@{co}_b(+1) + @{co}_pcg*@{co}_cg+@{co}_pig*@{co}_ig+@{co}_tr;
+@{co}_gexpy = @{co}_gexp/(@{co}_pybar*@{co}_ybar);
+
+// Aggregate government revenue
+@{co}_grev = @{co}_tauc*@{co}_c+(@{co}_taun+@{co}_tauwh)*(@{co}_wi*@{co}_ndi+@{co}_wj*@{co}_ndj)+@{co}_tauwf*@{co}_w*@{co}_nd+@{co}_tauk*(@{co}_rk*@{co}_u-(@{co}_gammau+@{co}_delta)*@{co}_pi)*@{co}_k+@{co}_taud*@{co}_d+@{co}_t;
+@{co}_grevy = @{co}_grev/(@{co}_pybar*@{co}_ybar);
+
 //-------------
 // Market clearing
 //-------------
@@ -861,6 +869,22 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 // Aggregate lump-sum tax-to-output ratio
 @{co}_ty = @{co}_t/(@{co}_pybar*@{co}_ybar);
 
+// Aggregate income taxes 
+@{co}_tn = (@{co}_taun+@{co}_tauwh)*(@{co}_wi*@{co}_ndi+@{co}_wj*@{co}_ndj);
+@{co}_tny = @{co}_tn/(@{co}_pybar*@{co}_ybar);
+
+// Aggregate consumption taxes
+@{co}_tc =  @{co}_tauc*@{co}_c;
+@{co}_tcy = @{co}_tc/(@{co}_pybar*@{co}_ybar);
+
+// Aggregate social contribution by employers 
+@{co}_twf = @{co}_tauwf*@{co}_w*@{co}_nd;
+@{co}_twfy = @{co}_twf/(@{co}_pybar*@{co}_ybar);
+
+// Aggregate capital taxes
+@{co}_tk = @{co}_tauk*(@{co}_rk*@{co}_u-(@{co}_gammau+@{co}_delta)*@{co}_pi)*@{co}_k;
+@{co}_tky = @{co}_tk/(@{co}_pybar*@{co}_ybar);
+
 // Aggregate labour cost share
 @{co}_lcy = ((1+@{co}_tauwf)*@{co}_w*@{co}_nd)/(@{co}_py*@{co}_y);
 
@@ -923,6 +947,18 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 
 // Internal real exchange rate
 @{co}_internalrer = @{co}_pnt/@{co}_pttc;
+
+//Debt interest repayments 
+@{co}_br = @{co}_b * (1-(@{co}_r(-1))^(-1));
+@{co}_bry = @{co}_br/(@{co}_pybar*@{co}_ybar);
+
+//Government balance 
+@{co}_gbal = @{co}_grev - @{co}_gexp;
+@{co}_gbaly = @{co}_gbal/(@{co}_pybar*@{co}_ybar);
+
+//Government primary balance 
+@{co}_gpbal = @{co}_gbal + @{co}_br;
+@{co}_gpbaly = @{co}_gpbal/(@{co}_pybar*@{co}_ybar);
 
 @#endfor // End of main country loop
 
