@@ -14,6 +14,7 @@ initval;
   @{COUNTRY}_br = 0;
   @{COUNTRY}_bry = 0;
 
+
   @{COUNTRY}_grev = 0;
   @{COUNTRY}_grevy = 0;
   @{COUNTRY}_gexp = 0;
@@ -89,6 +90,8 @@ initval;
   @{COUNTRY}_mct = 0.0909090909090905;
   @{COUNTRY}_mi = 0.181749068177306;
   @{COUNTRY}_mj = 0.0032542600887726;
+  @{COUNTRY}_mp = 0; 
+  @{COUNTRY}_mpy = 0;
 
   @{COUNTRY}_nd = 0.376144431057379;
   @{COUNTRY}_ndi = 0.158787199981097;

@@ -28,6 +28,7 @@ function ssFiscalInstruments(envi, aStruct, fileName)
     fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Social contribution from employers', '\overline{twfy}', "twfy", aStruct.ssValues, ' & %.1f', @(x) x*100));
     fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Capital taxes', '\overline{tky}', "tky", aStruct.ssValues, ' & %.1f', @(x) x*100));
     fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Lump sum taxes', '\overline{ty}', "ty", aStruct.ssValues, ' & %.1f', @(x) x*100));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Seigniorage', '\overline{mpy}', "mpy", aStruct.ssValues, ' & %.1f', @(x) x*100));
 
     % Government balances
     fprintf(fid, '        \\multicolumn{15}{l}{\\textbf{Government balances}} \\\\\n');

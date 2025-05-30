@@ -688,7 +688,7 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 @{co}_gexpy = @{co}_gexp/(@{co}_pybar*@{co}_ybar);
 
 // Aggregate government revenue
-@{co}_grev = @{co}_tauc*@{co}_c+(@{co}_taun+@{co}_tauwh)*(@{co}_wi*@{co}_ndi+@{co}_wj*@{co}_ndj)+@{co}_tauwf*@{co}_w*@{co}_nd+@{co}_tauk*(@{co}_rk*@{co}_u-(@{co}_gammau+@{co}_delta)*@{co}_pi)*@{co}_k+@{co}_taud*@{co}_d+@{co}_t+@{co}_m*(1-1/@{co}_pic);
+@{co}_grev = @{co}_tauc*@{co}_c+(@{co}_taun+@{co}_tauwh)*(@{co}_wi*@{co}_ndi+@{co}_wj*@{co}_ndj)+@{co}_tauwf*@{co}_w*@{co}_nd+@{co}_tauk*(@{co}_rk*@{co}_u-(@{co}_gammau+@{co}_delta)*@{co}_pi)*@{co}_k+@{co}_taud*@{co}_d+@{co}_t+@{co}_m(-1)*(1-(@{co}_pic)^(-1));
 @{co}_grevy = @{co}_grev/(@{co}_pybar*@{co}_ybar);
 
 // Aggregate lhs and rhs of budget constraint
@@ -951,6 +951,10 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 
 // Internal real exchange rate
 @{co}_internalrer = @{co}_pnt/@{co}_pttc;
+
+//Proceeds from money holding 
+@{co}_mp = @{co}_m(-1)*(1-(@{co}_pic)^(-1));
+@{co}_mpy = @{co}_mp/(@{co}_pybar*@{co}_ybar);
 
 //Debt interest repayments 
 @{co}_br = @{co}_b * (1/@{co}_pic-(@{co}_r(-1))^(-1));
