@@ -684,12 +684,16 @@ upsilontr = 1/(1-omega):  tri = 1/(1-omega) tr, trj = 0. */
 @{co}_gammav = (1-@{co}_omega)*@{co}_ci*@{co}_gammavi+@{co}_omega*@{co}_cj*@{co}_gammavj;
 
 // Aggregate governmnet expenditure 
-@{co}_gexp = -(@{co}_r^(-1)-1)*@{co}_b(+1) + @{co}_pcg*@{co}_cg+@{co}_pig*@{co}_ig+@{co}_tr;
+@{co}_gexp = -(@{co}_r^(-1)-1/@{co}_pic)*@{co}_b(+1) + @{co}_pcg*@{co}_cg+@{co}_pig*@{co}_ig+@{co}_tr;
 @{co}_gexpy = @{co}_gexp/(@{co}_pybar*@{co}_ybar);
 
 // Aggregate government revenue
-@{co}_grev = @{co}_tauc*@{co}_c+(@{co}_taun+@{co}_tauwh)*(@{co}_wi*@{co}_ndi+@{co}_wj*@{co}_ndj)+@{co}_tauwf*@{co}_w*@{co}_nd+@{co}_tauk*(@{co}_rk*@{co}_u-(@{co}_gammau+@{co}_delta)*@{co}_pi)*@{co}_k+@{co}_taud*@{co}_d+@{co}_t;
+@{co}_grev = @{co}_tauc*@{co}_c+(@{co}_taun+@{co}_tauwh)*(@{co}_wi*@{co}_ndi+@{co}_wj*@{co}_ndj)+@{co}_tauwf*@{co}_w*@{co}_nd+@{co}_tauk*(@{co}_rk*@{co}_u-(@{co}_gammau+@{co}_delta)*@{co}_pi)*@{co}_k+@{co}_taud*@{co}_d+@{co}_t+@{co}_m*(1-1/@{co}_pic);
 @{co}_grevy = @{co}_grev/(@{co}_pybar*@{co}_ybar);
+
+// Aggregate lhs and rhs of budget constraint
+@{co}_lhs = @{co}_pcg(-1)*@{co}_cg(-1)+@{co}_pig(-1)*@{co}_ig(-1)+@{co}_tr(-1) +@{co}_b(-1)*@{co}_pic(-1)^(-1)+@{co}_m(-2)*@{co}_pic(-1)^(-1);
+@{co}_rhs = @{co}_tauc(-1)*@{co}_c(-1)+(@{co}_taun(-1)+@{co}_tauwh(-1))*(@{co}_wi(-1)*@{co}_ndi(-1)+@{co}_wj(-1)*@{co}_ndj(-1))+@{co}_tauwf(-1)*@{co}_w(-1)*@{co}_nd(-1)+@{co}_tauk(-1)*(@{co}_rk(-1)*@{co}_u(-1)-(@{co}_gammau(-1)+@{co}_delta)*@{co}_pi(-1))*@{co}_k(-1)+@{co}_taud(-1)*@{co}_d(-1)+@{co}_t(-1)+(@{co}_r(-1))^(-1)*@{co}_b+@{co}_m(-1);
 
 //-------------
 // Market clearing
@@ -949,7 +953,7 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @{co}_internalrer = @{co}_pnt/@{co}_pttc;
 
 //Debt interest repayments 
-@{co}_br = @{co}_b * (1-(@{co}_r(-1))^(-1));
+@{co}_br = @{co}_b * (1/@{co}_pic-(@{co}_r(-1))^(-1));
 @{co}_bry = @{co}_br/(@{co}_pybar*@{co}_ybar);
 
 //Government balance 

@@ -23,11 +23,18 @@ function ssFiscalInstruments(envi, aStruct, fileName)
 
     % Government revenues
     fprintf(fid, '        \\multicolumn{15}{l}{\\textbf{Government revenues}} \\\\\n');
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Consumption taxes', '\overline{tcy}', "tcy", aStruct.ssValues, ' & %.1f', @(x) x*100));
     fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Income taxes', '\overline{tny}', "tny", aStruct.ssValues, ' & %.1f', @(x) x*100));
     fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Social contribution from employers', '\overline{twfy}', "twfy", aStruct.ssValues, ' & %.1f', @(x) x*100));
     fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Capital taxes', '\overline{tky}', "tky", aStruct.ssValues, ' & %.1f', @(x) x*100));
     fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Lump sum taxes', '\overline{ty}', "ty", aStruct.ssValues, ' & %.1f', @(x) x*100));
 
+    % Government balances
+    fprintf(fid, '        \\multicolumn{15}{l}{\\textbf{Government balances}} \\\\\n');
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Government revenues', '\overline{grevy}', "grevy", aStruct.ssValues, ' & %.1f', @(x) x*100));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Government expenses', '\overline{gexpy}', "gexpy", aStruct.ssValues, ' & %.1f', @(x) x*100));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Budget balance', '\overline{gbaly}', "gbaly", aStruct.ssValues, ' & %.1f', @(x) x*100));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Primary budget balance', '\overline{gpbaly}', "gpbaly", aStruct.ssValues, ' & %.1f', @(x) x*100));
     % Table footer
     fprintf(fid, '        \\bottomrule\n');
     fprintf(fid, '    \\end{tabular}\n');

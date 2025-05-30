@@ -267,6 +267,8 @@ var
  @{co}_twfy 
  @{co}_tk 
  @{co}_tky 
+ @{co}_lhs
+ @{co}_rhs
 ;
 
 // Parameters

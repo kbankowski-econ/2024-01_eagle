@@ -22,6 +22,8 @@ initval;
   @{COUNTRY}_gbaly = 0;
   @{COUNTRY}_gpbal = 0;
   @{COUNTRY}_gpbaly = 0;
+  @{COUNTRY}_lhs = 0; 
+  @{COUNTRY}_rhs = 0; 
 
   @{COUNTRY}_c = 0.32158748924289;
   @{COUNTRY}_ci = 0.426239346856029;
