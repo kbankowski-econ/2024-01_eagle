@@ -192,6 +192,7 @@ initval;
   @{COUNTRY}_trybar = 2.20962209625084E-030;
 
   @{COUNTRY}_ty = 0;
+  @{COUNTRY}_tybar = 0;
 
   @{COUNTRY}_u = 1;
   @{COUNTRY}_utili = -85.4088763809503;

@@ -563,7 +563,7 @@ model(block, bytecode, cutoff=0);
 @{co}_t/(@{co}_pybar*@{co}_ybar) = @{co}_phitb*(@{co}_b/(@{co}_pybar*@{co}_ybar)-@{co}_bytarget);
 
 @#else // !steady
-@{co}_t = 0;
+@{co}_tr = @{co}_trybar*@{co}_pybar*@{co}_ybar;
 @{co}_b = @{co}_bytarget*@{co}_pybar*@{co}_ybar;
 @#endif // !steady
 
@@ -581,8 +581,8 @@ model(block, bytecode, cutoff=0);
 // Auxiliary equation for steady-state output deflator
 @{co}_pybar = @{co}_py;
 
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-@{co}_trybar = @{co}_tr/(@{co}_pybar*@{co}_ybar);
+// Auxiliary equation for the steady-state lump-sum taxes-to-output ratio
+@{co}_tybar = @{co}_t/(@{co}_pybar*@{co}_ybar);
 
 @#endif // steady
 

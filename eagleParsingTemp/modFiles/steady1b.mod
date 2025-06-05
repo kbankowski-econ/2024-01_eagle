@@ -26,6 +26,12 @@ homotopy_setup;
 end;
 steady(homotopy_steps = 5);
 
+disp('trybar')
+homotopy_setup;
+    @#include "transfers_trybar.mod"
+end;
+steady(homotopy_steps = 5);
+
 disp('cgybar')
 homotopy_setup;
     @#include "shares_cgybar.mod"

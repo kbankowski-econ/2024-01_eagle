@@ -357,7 +357,7 @@ parameters
  @{co}_psitbar
  @{co}_pybar
  @{co}_qbar
- @{co}_trybar
+ @{co}_tybar
  @{co}_ybar
  @{co}_ynbar
  @{co}_ytbar
@@ -378,6 +378,7 @@ varexo
  @{co}_zinvbar
  @{co}_znbar
  @{co}_ztbar
+ @{co}_trybar
 
  @{co}_epsgc
  @{co}_epsgi
@@ -445,7 +446,7 @@ change_type(var)
  @{co}_psitbar
  @{co}_pybar
  @{co}_qbar
- @{co}_trybar
+ @{co}_tybar
  @{co}_ybar
  @{co}_ynbar
  @{co}_ytbar

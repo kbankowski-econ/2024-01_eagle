@@ -5,7 +5,7 @@ itemModelListShares = ["cgybar", "cy", "iy", "igybar"];
 itemListTaxRates = ["consumption", "income", "SSC_firms", "SSC_households", "capital"];
 itemModelListTaxRates = ["taucbar", "taunbar", "tauwfbar", "tauwhbar", "taukbar"];
 itemModelListDebt = ["bytarget"]
-itemModelListTransfers = ["trybar"]
+itemModelListTransfers = ["try"]
 
 % import values for calibration
 importCalibValues(ctryList, itemListShares, itemModelListShares, "shares");

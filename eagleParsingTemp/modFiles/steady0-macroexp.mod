@@ -644,7 +644,7 @@ parameters
  RA_psitbar
  RA_pybar
  RA_qbar
- RA_trybar
+ RA_tybar
  RA_ybar
  RA_ynbar
  RA_ytbar
@@ -664,6 +664,7 @@ varexo
  RA_zinvbar
  RA_znbar
  RA_ztbar
+ RA_trybar
  RA_epsgc
  RA_epsgi
  RA_epstauc
@@ -1293,7 +1294,7 @@ parameters
  AT_psitbar
  AT_pybar
  AT_qbar
- AT_trybar
+ AT_tybar
  AT_ybar
  AT_ynbar
  AT_ytbar
@@ -1313,6 +1314,7 @@ varexo
  AT_zinvbar
  AT_znbar
  AT_ztbar
+ AT_trybar
  AT_epsgc
  AT_epsgi
  AT_epstauc
@@ -1942,7 +1944,7 @@ parameters
  BE_psitbar
  BE_pybar
  BE_qbar
- BE_trybar
+ BE_tybar
  BE_ybar
  BE_ynbar
  BE_ytbar
@@ -1962,6 +1964,7 @@ varexo
  BE_zinvbar
  BE_znbar
  BE_ztbar
+ BE_trybar
  BE_epsgc
  BE_epsgi
  BE_epstauc
@@ -2591,7 +2594,7 @@ parameters
  ES_psitbar
  ES_pybar
  ES_qbar
- ES_trybar
+ ES_tybar
  ES_ybar
  ES_ynbar
  ES_ytbar
@@ -2611,6 +2614,7 @@ varexo
  ES_zinvbar
  ES_znbar
  ES_ztbar
+ ES_trybar
  ES_epsgc
  ES_epsgi
  ES_epstauc
@@ -3240,7 +3244,7 @@ parameters
  FI_psitbar
  FI_pybar
  FI_qbar
- FI_trybar
+ FI_tybar
  FI_ybar
  FI_ynbar
  FI_ytbar
@@ -3260,6 +3264,7 @@ varexo
  FI_zinvbar
  FI_znbar
  FI_ztbar
+ FI_trybar
  FI_epsgc
  FI_epsgi
  FI_epstauc
@@ -3889,7 +3894,7 @@ parameters
  FR_psitbar
  FR_pybar
  FR_qbar
- FR_trybar
+ FR_tybar
  FR_ybar
  FR_ynbar
  FR_ytbar
@@ -3909,6 +3914,7 @@ varexo
  FR_zinvbar
  FR_znbar
  FR_ztbar
+ FR_trybar
  FR_epsgc
  FR_epsgi
  FR_epstauc
@@ -4538,7 +4544,7 @@ parameters
  GR_psitbar
  GR_pybar
  GR_qbar
- GR_trybar
+ GR_tybar
  GR_ybar
  GR_ynbar
  GR_ytbar
@@ -4558,6 +4564,7 @@ varexo
  GR_zinvbar
  GR_znbar
  GR_ztbar
+ GR_trybar
  GR_epsgc
  GR_epsgi
  GR_epstauc
@@ -5187,7 +5194,7 @@ parameters
  IT_psitbar
  IT_pybar
  IT_qbar
- IT_trybar
+ IT_tybar
  IT_ybar
  IT_ynbar
  IT_ytbar
@@ -5207,6 +5214,7 @@ varexo
  IT_zinvbar
  IT_znbar
  IT_ztbar
+ IT_trybar
  IT_epsgc
  IT_epsgi
  IT_epstauc
@@ -5836,7 +5844,7 @@ parameters
  NL_psitbar
  NL_pybar
  NL_qbar
- NL_trybar
+ NL_tybar
  NL_ybar
  NL_ynbar
  NL_ytbar
@@ -5856,6 +5864,7 @@ varexo
  NL_zinvbar
  NL_znbar
  NL_ztbar
+ NL_trybar
  NL_epsgc
  NL_epsgi
  NL_epstauc
@@ -6485,7 +6494,7 @@ parameters
  PT_psitbar
  PT_pybar
  PT_qbar
- PT_trybar
+ PT_tybar
  PT_ybar
  PT_ynbar
  PT_ytbar
@@ -6505,6 +6514,7 @@ varexo
  PT_zinvbar
  PT_znbar
  PT_ztbar
+ PT_trybar
  PT_epsgc
  PT_epsgi
  PT_epstauc
@@ -7134,7 +7144,7 @@ parameters
  DE_psitbar
  DE_pybar
  DE_qbar
- DE_trybar
+ DE_tybar
  DE_ybar
  DE_ynbar
  DE_ytbar
@@ -7154,6 +7164,7 @@ varexo
  DE_zinvbar
  DE_znbar
  DE_ztbar
+ DE_trybar
  DE_epsgc
  DE_epsgi
  DE_epstauc
@@ -7786,7 +7797,7 @@ parameters
  RU_psitbar
  RU_pybar
  RU_qbar
- RU_trybar
+ RU_tybar
  RU_ybar
  RU_ynbar
  RU_ytbar
@@ -7806,6 +7817,7 @@ varexo
  RU_zinvbar
  RU_znbar
  RU_ztbar
+ RU_trybar
  RU_epsgc
  RU_epsgi
  RU_epstauc
@@ -8438,7 +8450,7 @@ parameters
  RW_psitbar
  RW_pybar
  RW_qbar
- RW_trybar
+ RW_tybar
  RW_ybar
  RW_ynbar
  RW_ytbar
@@ -8458,6 +8470,7 @@ varexo
  RW_zinvbar
  RW_znbar
  RW_ztbar
+ RW_trybar
  RW_epsgc
  RW_epsgi
  RW_epstauc
@@ -9082,7 +9095,7 @@ parameters
  US_psitbar
  US_pybar
  US_qbar
- US_trybar
+ US_tybar
  US_ybar
  US_ynbar
  US_ytbar
@@ -9102,6 +9115,7 @@ varexo
  US_zinvbar
  US_znbar
  US_ztbar
+ US_trybar
  US_epsgc
  US_epsgi
  US_epstauc
@@ -9845,7 +9859,7 @@ change_type(var)
  RA_psitbar
  RA_pybar
  RA_qbar
- RA_trybar
+ RA_tybar
  RA_ybar
  RA_ynbar
  RA_ytbar
@@ -9867,7 +9881,7 @@ change_type(var)
  AT_psitbar
  AT_pybar
  AT_qbar
- AT_trybar
+ AT_tybar
  AT_ybar
  AT_ynbar
  AT_ytbar
@@ -9889,7 +9903,7 @@ change_type(var)
  BE_psitbar
  BE_pybar
  BE_qbar
- BE_trybar
+ BE_tybar
  BE_ybar
  BE_ynbar
  BE_ytbar
@@ -9911,7 +9925,7 @@ change_type(var)
  ES_psitbar
  ES_pybar
  ES_qbar
- ES_trybar
+ ES_tybar
  ES_ybar
  ES_ynbar
  ES_ytbar
@@ -9933,7 +9947,7 @@ change_type(var)
  FI_psitbar
  FI_pybar
  FI_qbar
- FI_trybar
+ FI_tybar
  FI_ybar
  FI_ynbar
  FI_ytbar
@@ -9955,7 +9969,7 @@ change_type(var)
  FR_psitbar
  FR_pybar
  FR_qbar
- FR_trybar
+ FR_tybar
  FR_ybar
  FR_ynbar
  FR_ytbar
@@ -9977,7 +9991,7 @@ change_type(var)
  GR_psitbar
  GR_pybar
  GR_qbar
- GR_trybar
+ GR_tybar
  GR_ybar
  GR_ynbar
  GR_ytbar
@@ -9999,7 +10013,7 @@ change_type(var)
  IT_psitbar
  IT_pybar
  IT_qbar
- IT_trybar
+ IT_tybar
  IT_ybar
  IT_ynbar
  IT_ytbar
@@ -10021,7 +10035,7 @@ change_type(var)
  NL_psitbar
  NL_pybar
  NL_qbar
- NL_trybar
+ NL_tybar
  NL_ybar
  NL_ynbar
  NL_ytbar
@@ -10043,7 +10057,7 @@ change_type(var)
  PT_psitbar
  PT_pybar
  PT_qbar
- PT_trybar
+ PT_tybar
  PT_ybar
  PT_ynbar
  PT_ytbar
@@ -10065,7 +10079,7 @@ change_type(var)
  DE_psitbar
  DE_pybar
  DE_qbar
- DE_trybar
+ DE_tybar
  DE_ybar
  DE_ynbar
  DE_ytbar
@@ -10087,7 +10101,7 @@ change_type(var)
  RU_psitbar
  RU_pybar
  RU_qbar
- RU_trybar
+ RU_tybar
  RU_ybar
  RU_ynbar
  RU_ytbar
@@ -10109,7 +10123,7 @@ change_type(var)
  RW_psitbar
  RW_pybar
  RW_qbar
- RW_trybar
+ RW_tybar
  RW_ybar
  RW_ynbar
  RW_ytbar
@@ -10131,7 +10145,7 @@ change_type(var)
  US_psitbar
  US_pybar
  US_qbar
- US_trybar
+ US_tybar
  US_ybar
  US_ynbar
  US_ytbar
@@ -13674,7 +13688,7 @@ RA_ex =
 // Government spending, using RA_pg = RA_pht
 RA_pcg*RA_cg = RA_cgy*RA_pybar*RA_ybar;
 RA_pig*RA_ig = RA_igy*RA_pybar*RA_ybar;
-RA_t = 0;
+RA_tr = RA_trybar*RA_pybar*RA_ybar;
 RA_b = RA_bytarget*RA_pybar*RA_ybar;
 // Auxiliary equation for steady-state output
 RA_ybar = RA_y;
@@ -13684,8 +13698,8 @@ RA_ytbar = RA_yst;
 RA_ynbar = RA_ysn;
 // Auxiliary equation for steady-state output deflator
 RA_pybar = RA_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-RA_trybar = RA_tr/(RA_pybar*RA_ybar);
+// Auxiliary equation for the steady-state lump-sum taxes-to-output ratio
+RA_tybar = RA_t/(RA_pybar*RA_ybar);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 RA_ti = RA_upsilont*RA_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -14096,7 +14110,7 @@ RAUS_excy  = US_size/RA_size*RA_pex*USRA_imc/(RA_py*RA_y);
 RAUS_exiy  = US_size/RA_size*RA_pex*USRA_imi/(RA_py*RA_y);
 // Internal real exchange rate
 RA_internalrer = RA_pnt/RA_pttc;
-//Proceeds from money holding
+//Proceeds from money holding 
 RA_mp = RA_m(-1)*(1-(RA_pic)^(-1));
 RA_mpy = RA_mp/(RA_pybar*RA_ybar);
 //Debt interest repayments 
@@ -17645,7 +17659,7 @@ AT_ex =
 // Government spending, using AT_pg = AT_pht
 AT_pcg*AT_cg = AT_cgy*AT_pybar*AT_ybar;
 AT_pig*AT_ig = AT_igy*AT_pybar*AT_ybar;
-AT_t = 0;
+AT_tr = AT_trybar*AT_pybar*AT_ybar;
 AT_b = AT_bytarget*AT_pybar*AT_ybar;
 // Auxiliary equation for steady-state output
 AT_ybar = AT_y;
@@ -17655,8 +17669,8 @@ AT_ytbar = AT_yst;
 AT_ynbar = AT_ysn;
 // Auxiliary equation for steady-state output deflator
 AT_pybar = AT_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-AT_trybar = AT_tr/(AT_pybar*AT_ybar);
+// Auxiliary equation for the steady-state lump-sum taxes-to-output ratio
+AT_tybar = AT_t/(AT_pybar*AT_ybar);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 AT_ti = AT_upsilont*AT_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -18067,7 +18081,7 @@ ATUS_excy  = US_size/AT_size*AT_pex*USAT_imc/(AT_py*AT_y);
 ATUS_exiy  = US_size/AT_size*AT_pex*USAT_imi/(AT_py*AT_y);
 // Internal real exchange rate
 AT_internalrer = AT_pnt/AT_pttc;
-//Proceeds from money holding
+//Proceeds from money holding 
 AT_mp = AT_m(-1)*(1-(AT_pic)^(-1));
 AT_mpy = AT_mp/(AT_pybar*AT_ybar);
 //Debt interest repayments 
@@ -21616,7 +21630,7 @@ BE_ex =
 // Government spending, using BE_pg = BE_pht
 BE_pcg*BE_cg = BE_cgy*BE_pybar*BE_ybar;
 BE_pig*BE_ig = BE_igy*BE_pybar*BE_ybar;
-BE_t = 0;
+BE_tr = BE_trybar*BE_pybar*BE_ybar;
 BE_b = BE_bytarget*BE_pybar*BE_ybar;
 // Auxiliary equation for steady-state output
 BE_ybar = BE_y;
@@ -21626,8 +21640,8 @@ BE_ytbar = BE_yst;
 BE_ynbar = BE_ysn;
 // Auxiliary equation for steady-state output deflator
 BE_pybar = BE_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-BE_trybar = BE_tr/(BE_pybar*BE_ybar);
+// Auxiliary equation for the steady-state lump-sum taxes-to-output ratio
+BE_tybar = BE_t/(BE_pybar*BE_ybar);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 BE_ti = BE_upsilont*BE_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -22038,7 +22052,7 @@ BEUS_excy  = US_size/BE_size*BE_pex*USBE_imc/(BE_py*BE_y);
 BEUS_exiy  = US_size/BE_size*BE_pex*USBE_imi/(BE_py*BE_y);
 // Internal real exchange rate
 BE_internalrer = BE_pnt/BE_pttc;
-//Proceeds from money holding
+//Proceeds from money holding 
 BE_mp = BE_m(-1)*(1-(BE_pic)^(-1));
 BE_mpy = BE_mp/(BE_pybar*BE_ybar);
 //Debt interest repayments 
@@ -25587,7 +25601,7 @@ ES_ex =
 // Government spending, using ES_pg = ES_pht
 ES_pcg*ES_cg = ES_cgy*ES_pybar*ES_ybar;
 ES_pig*ES_ig = ES_igy*ES_pybar*ES_ybar;
-ES_t = 0;
+ES_tr = ES_trybar*ES_pybar*ES_ybar;
 ES_b = ES_bytarget*ES_pybar*ES_ybar;
 // Auxiliary equation for steady-state output
 ES_ybar = ES_y;
@@ -25597,8 +25611,8 @@ ES_ytbar = ES_yst;
 ES_ynbar = ES_ysn;
 // Auxiliary equation for steady-state output deflator
 ES_pybar = ES_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-ES_trybar = ES_tr/(ES_pybar*ES_ybar);
+// Auxiliary equation for the steady-state lump-sum taxes-to-output ratio
+ES_tybar = ES_t/(ES_pybar*ES_ybar);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 ES_ti = ES_upsilont*ES_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -26009,7 +26023,7 @@ ESUS_excy  = US_size/ES_size*ES_pex*USES_imc/(ES_py*ES_y);
 ESUS_exiy  = US_size/ES_size*ES_pex*USES_imi/(ES_py*ES_y);
 // Internal real exchange rate
 ES_internalrer = ES_pnt/ES_pttc;
-//Proceeds from money holding
+//Proceeds from money holding 
 ES_mp = ES_m(-1)*(1-(ES_pic)^(-1));
 ES_mpy = ES_mp/(ES_pybar*ES_ybar);
 //Debt interest repayments 
@@ -29558,7 +29572,7 @@ FI_ex =
 // Government spending, using FI_pg = FI_pht
 FI_pcg*FI_cg = FI_cgy*FI_pybar*FI_ybar;
 FI_pig*FI_ig = FI_igy*FI_pybar*FI_ybar;
-FI_t = 0;
+FI_tr = FI_trybar*FI_pybar*FI_ybar;
 FI_b = FI_bytarget*FI_pybar*FI_ybar;
 // Auxiliary equation for steady-state output
 FI_ybar = FI_y;
@@ -29568,8 +29582,8 @@ FI_ytbar = FI_yst;
 FI_ynbar = FI_ysn;
 // Auxiliary equation for steady-state output deflator
 FI_pybar = FI_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-FI_trybar = FI_tr/(FI_pybar*FI_ybar);
+// Auxiliary equation for the steady-state lump-sum taxes-to-output ratio
+FI_tybar = FI_t/(FI_pybar*FI_ybar);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 FI_ti = FI_upsilont*FI_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -29980,7 +29994,7 @@ FIUS_excy  = US_size/FI_size*FI_pex*USFI_imc/(FI_py*FI_y);
 FIUS_exiy  = US_size/FI_size*FI_pex*USFI_imi/(FI_py*FI_y);
 // Internal real exchange rate
 FI_internalrer = FI_pnt/FI_pttc;
-//Proceeds from money holding
+//Proceeds from money holding 
 FI_mp = FI_m(-1)*(1-(FI_pic)^(-1));
 FI_mpy = FI_mp/(FI_pybar*FI_ybar);
 //Debt interest repayments 
@@ -33529,7 +33543,7 @@ FR_ex =
 // Government spending, using FR_pg = FR_pht
 FR_pcg*FR_cg = FR_cgy*FR_pybar*FR_ybar;
 FR_pig*FR_ig = FR_igy*FR_pybar*FR_ybar;
-FR_t = 0;
+FR_tr = FR_trybar*FR_pybar*FR_ybar;
 FR_b = FR_bytarget*FR_pybar*FR_ybar;
 // Auxiliary equation for steady-state output
 FR_ybar = FR_y;
@@ -33539,8 +33553,8 @@ FR_ytbar = FR_yst;
 FR_ynbar = FR_ysn;
 // Auxiliary equation for steady-state output deflator
 FR_pybar = FR_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-FR_trybar = FR_tr/(FR_pybar*FR_ybar);
+// Auxiliary equation for the steady-state lump-sum taxes-to-output ratio
+FR_tybar = FR_t/(FR_pybar*FR_ybar);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 FR_ti = FR_upsilont*FR_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -33951,7 +33965,7 @@ FRUS_excy  = US_size/FR_size*FR_pex*USFR_imc/(FR_py*FR_y);
 FRUS_exiy  = US_size/FR_size*FR_pex*USFR_imi/(FR_py*FR_y);
 // Internal real exchange rate
 FR_internalrer = FR_pnt/FR_pttc;
-//Proceeds from money holding
+//Proceeds from money holding 
 FR_mp = FR_m(-1)*(1-(FR_pic)^(-1));
 FR_mpy = FR_mp/(FR_pybar*FR_ybar);
 //Debt interest repayments 
@@ -37500,7 +37514,7 @@ GR_ex =
 // Government spending, using GR_pg = GR_pht
 GR_pcg*GR_cg = GR_cgy*GR_pybar*GR_ybar;
 GR_pig*GR_ig = GR_igy*GR_pybar*GR_ybar;
-GR_t = 0;
+GR_tr = GR_trybar*GR_pybar*GR_ybar;
 GR_b = GR_bytarget*GR_pybar*GR_ybar;
 // Auxiliary equation for steady-state output
 GR_ybar = GR_y;
@@ -37510,8 +37524,8 @@ GR_ytbar = GR_yst;
 GR_ynbar = GR_ysn;
 // Auxiliary equation for steady-state output deflator
 GR_pybar = GR_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-GR_trybar = GR_tr/(GR_pybar*GR_ybar);
+// Auxiliary equation for the steady-state lump-sum taxes-to-output ratio
+GR_tybar = GR_t/(GR_pybar*GR_ybar);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 GR_ti = GR_upsilont*GR_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -37922,7 +37936,7 @@ GRUS_excy  = US_size/GR_size*GR_pex*USGR_imc/(GR_py*GR_y);
 GRUS_exiy  = US_size/GR_size*GR_pex*USGR_imi/(GR_py*GR_y);
 // Internal real exchange rate
 GR_internalrer = GR_pnt/GR_pttc;
-//Proceeds from money holding
+//Proceeds from money holding 
 GR_mp = GR_m(-1)*(1-(GR_pic)^(-1));
 GR_mpy = GR_mp/(GR_pybar*GR_ybar);
 //Debt interest repayments 
@@ -41471,7 +41485,7 @@ IT_ex =
 // Government spending, using IT_pg = IT_pht
 IT_pcg*IT_cg = IT_cgy*IT_pybar*IT_ybar;
 IT_pig*IT_ig = IT_igy*IT_pybar*IT_ybar;
-IT_t = 0;
+IT_tr = IT_trybar*IT_pybar*IT_ybar;
 IT_b = IT_bytarget*IT_pybar*IT_ybar;
 // Auxiliary equation for steady-state output
 IT_ybar = IT_y;
@@ -41481,8 +41495,8 @@ IT_ytbar = IT_yst;
 IT_ynbar = IT_ysn;
 // Auxiliary equation for steady-state output deflator
 IT_pybar = IT_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-IT_trybar = IT_tr/(IT_pybar*IT_ybar);
+// Auxiliary equation for the steady-state lump-sum taxes-to-output ratio
+IT_tybar = IT_t/(IT_pybar*IT_ybar);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 IT_ti = IT_upsilont*IT_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -41893,7 +41907,7 @@ ITUS_excy  = US_size/IT_size*IT_pex*USIT_imc/(IT_py*IT_y);
 ITUS_exiy  = US_size/IT_size*IT_pex*USIT_imi/(IT_py*IT_y);
 // Internal real exchange rate
 IT_internalrer = IT_pnt/IT_pttc;
-//Proceeds from money holding
+//Proceeds from money holding 
 IT_mp = IT_m(-1)*(1-(IT_pic)^(-1));
 IT_mpy = IT_mp/(IT_pybar*IT_ybar);
 //Debt interest repayments 
@@ -45442,7 +45456,7 @@ NL_ex =
 // Government spending, using NL_pg = NL_pht
 NL_pcg*NL_cg = NL_cgy*NL_pybar*NL_ybar;
 NL_pig*NL_ig = NL_igy*NL_pybar*NL_ybar;
-NL_t = 0;
+NL_tr = NL_trybar*NL_pybar*NL_ybar;
 NL_b = NL_bytarget*NL_pybar*NL_ybar;
 // Auxiliary equation for steady-state output
 NL_ybar = NL_y;
@@ -45452,8 +45466,8 @@ NL_ytbar = NL_yst;
 NL_ynbar = NL_ysn;
 // Auxiliary equation for steady-state output deflator
 NL_pybar = NL_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-NL_trybar = NL_tr/(NL_pybar*NL_ybar);
+// Auxiliary equation for the steady-state lump-sum taxes-to-output ratio
+NL_tybar = NL_t/(NL_pybar*NL_ybar);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 NL_ti = NL_upsilont*NL_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -45864,7 +45878,7 @@ NLUS_excy  = US_size/NL_size*NL_pex*USNL_imc/(NL_py*NL_y);
 NLUS_exiy  = US_size/NL_size*NL_pex*USNL_imi/(NL_py*NL_y);
 // Internal real exchange rate
 NL_internalrer = NL_pnt/NL_pttc;
-//Proceeds from money holding
+//Proceeds from money holding 
 NL_mp = NL_m(-1)*(1-(NL_pic)^(-1));
 NL_mpy = NL_mp/(NL_pybar*NL_ybar);
 //Debt interest repayments 
@@ -49413,7 +49427,7 @@ PT_ex =
 // Government spending, using PT_pg = PT_pht
 PT_pcg*PT_cg = PT_cgy*PT_pybar*PT_ybar;
 PT_pig*PT_ig = PT_igy*PT_pybar*PT_ybar;
-PT_t = 0;
+PT_tr = PT_trybar*PT_pybar*PT_ybar;
 PT_b = PT_bytarget*PT_pybar*PT_ybar;
 // Auxiliary equation for steady-state output
 PT_ybar = PT_y;
@@ -49423,8 +49437,8 @@ PT_ytbar = PT_yst;
 PT_ynbar = PT_ysn;
 // Auxiliary equation for steady-state output deflator
 PT_pybar = PT_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-PT_trybar = PT_tr/(PT_pybar*PT_ybar);
+// Auxiliary equation for the steady-state lump-sum taxes-to-output ratio
+PT_tybar = PT_t/(PT_pybar*PT_ybar);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 PT_ti = PT_upsilont*PT_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -49835,7 +49849,7 @@ PTUS_excy  = US_size/PT_size*PT_pex*USPT_imc/(PT_py*PT_y);
 PTUS_exiy  = US_size/PT_size*PT_pex*USPT_imi/(PT_py*PT_y);
 // Internal real exchange rate
 PT_internalrer = PT_pnt/PT_pttc;
-//Proceeds from money holding
+//Proceeds from money holding 
 PT_mp = PT_m(-1)*(1-(PT_pic)^(-1));
 PT_mpy = PT_mp/(PT_pybar*PT_ybar);
 //Debt interest repayments 
@@ -53384,7 +53398,7 @@ DE_ex =
 // Government spending, using DE_pg = DE_pht
 DE_pcg*DE_cg = DE_cgy*DE_pybar*DE_ybar;
 DE_pig*DE_ig = DE_igy*DE_pybar*DE_ybar;
-DE_t = 0;
+DE_tr = DE_trybar*DE_pybar*DE_ybar;
 DE_b = DE_bytarget*DE_pybar*DE_ybar;
 // Auxiliary equation for steady-state output
 DE_ybar = DE_y;
@@ -53394,8 +53408,8 @@ DE_ytbar = DE_yst;
 DE_ynbar = DE_ysn;
 // Auxiliary equation for steady-state output deflator
 DE_pybar = DE_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-DE_trybar = DE_tr/(DE_pybar*DE_ybar);
+// Auxiliary equation for the steady-state lump-sum taxes-to-output ratio
+DE_tybar = DE_t/(DE_pybar*DE_ybar);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 DE_ti = DE_upsilont*DE_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -53806,7 +53820,7 @@ DEUS_excy  = US_size/DE_size*DE_pex*USDE_imc/(DE_py*DE_y);
 DEUS_exiy  = US_size/DE_size*DE_pex*USDE_imi/(DE_py*DE_y);
 // Internal real exchange rate
 DE_internalrer = DE_pnt/DE_pttc;
-//Proceeds from money holding
+//Proceeds from money holding 
 DE_mp = DE_m(-1)*(1-(DE_pic)^(-1));
 DE_mpy = DE_mp/(DE_pybar*DE_ybar);
 //Debt interest repayments 
@@ -57355,7 +57369,7 @@ RU_ex =
 // Government spending, using RU_pg = RU_pht
 RU_pcg*RU_cg = RU_cgy*RU_pybar*RU_ybar;
 RU_pig*RU_ig = RU_igy*RU_pybar*RU_ybar;
-RU_t = 0;
+RU_tr = RU_trybar*RU_pybar*RU_ybar;
 RU_b = RU_bytarget*RU_pybar*RU_ybar;
 // Auxiliary equation for steady-state output
 RU_ybar = RU_y;
@@ -57365,8 +57379,8 @@ RU_ytbar = RU_yst;
 RU_ynbar = RU_ysn;
 // Auxiliary equation for steady-state output deflator
 RU_pybar = RU_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-RU_trybar = RU_tr/(RU_pybar*RU_ybar);
+// Auxiliary equation for the steady-state lump-sum taxes-to-output ratio
+RU_tybar = RU_t/(RU_pybar*RU_ybar);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 RU_ti = RU_upsilont*RU_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -57777,7 +57791,7 @@ RUUS_excy  = US_size/RU_size*RU_pex*USRU_imc/(RU_py*RU_y);
 RUUS_exiy  = US_size/RU_size*RU_pex*USRU_imi/(RU_py*RU_y);
 // Internal real exchange rate
 RU_internalrer = RU_pnt/RU_pttc;
-//Proceeds from money holding
+//Proceeds from money holding 
 RU_mp = RU_m(-1)*(1-(RU_pic)^(-1));
 RU_mpy = RU_mp/(RU_pybar*RU_ybar);
 //Debt interest repayments 
@@ -61326,7 +61340,7 @@ RW_ex =
 // Government spending, using RW_pg = RW_pht
 RW_pcg*RW_cg = RW_cgy*RW_pybar*RW_ybar;
 RW_pig*RW_ig = RW_igy*RW_pybar*RW_ybar;
-RW_t = 0;
+RW_tr = RW_trybar*RW_pybar*RW_ybar;
 RW_b = RW_bytarget*RW_pybar*RW_ybar;
 // Auxiliary equation for steady-state output
 RW_ybar = RW_y;
@@ -61336,8 +61350,8 @@ RW_ytbar = RW_yst;
 RW_ynbar = RW_ysn;
 // Auxiliary equation for steady-state output deflator
 RW_pybar = RW_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-RW_trybar = RW_tr/(RW_pybar*RW_ybar);
+// Auxiliary equation for the steady-state lump-sum taxes-to-output ratio
+RW_tybar = RW_t/(RW_pybar*RW_ybar);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 RW_ti = RW_upsilont*RW_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -61748,7 +61762,7 @@ RWUS_excy  = US_size/RW_size*RW_pex*USRW_imc/(RW_py*RW_y);
 RWUS_exiy  = US_size/RW_size*RW_pex*USRW_imi/(RW_py*RW_y);
 // Internal real exchange rate
 RW_internalrer = RW_pnt/RW_pttc;
-//Proceeds from money holding
+//Proceeds from money holding 
 RW_mp = RW_m(-1)*(1-(RW_pic)^(-1));
 RW_mpy = RW_mp/(RW_pybar*RW_ybar);
 //Debt interest repayments 
@@ -65297,7 +65311,7 @@ US_ex =
 // Government spending, using US_pg = US_pht
 US_pcg*US_cg = US_cgy*US_pybar*US_ybar;
 US_pig*US_ig = US_igy*US_pybar*US_ybar;
-US_t = 0;
+US_tr = US_trybar*US_pybar*US_ybar;
 US_b = US_bytarget*US_pybar*US_ybar;
 // Auxiliary equation for steady-state output
 US_ybar = US_y;
@@ -65307,8 +65321,8 @@ US_ytbar = US_yst;
 US_ynbar = US_ysn;
 // Auxiliary equation for steady-state output deflator
 US_pybar = US_py;
-// Auxiliary equation for the steady-state lump-sum transfers-to-output ratio
-US_trybar = US_tr/(US_pybar*US_ybar);
+// Auxiliary equation for the steady-state lump-sum taxes-to-output ratio
+US_tybar = US_t/(US_pybar*US_ybar);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 US_ti = US_upsilont*US_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -65719,7 +65733,7 @@ USRW_excy  = RW_size/US_size*US_pex*RWUS_imc/(US_py*US_y);
 USRW_exiy  = RW_size/US_size*US_pex*RWUS_imi/(US_py*US_y);
 // Internal real exchange rate
 US_internalrer = US_pnt/US_pttc;
-//Proceeds from money holding
+//Proceeds from money holding 
 US_mp = US_m(-1)*(1-(US_pic)^(-1));
 US_mpy = US_mp/(US_pybar*US_ybar);
 //Debt interest repayments 
@@ -70555,6 +70569,7 @@ RA_igy = 0.01/10;
   RA_try = 2.20962209625084E-030;
   RA_trybar = 2.20962209625084E-030;
   RA_ty = 0;
+  RA_tybar = 0;
   RA_u = 1;
   RA_utili = -85.4088763809503;
   RA_utilj = -490.559067770525; 
@@ -70972,6 +70987,7 @@ AT_igy = 0.01/10;
   AT_try = 2.20962209625084E-030;
   AT_trybar = 2.20962209625084E-030;
   AT_ty = 0;
+  AT_tybar = 0;
   AT_u = 1;
   AT_utili = -85.4088763809503;
   AT_utilj = -490.559067770525; 
@@ -71389,6 +71405,7 @@ BE_igy = 0.01/10;
   BE_try = 2.20962209625084E-030;
   BE_trybar = 2.20962209625084E-030;
   BE_ty = 0;
+  BE_tybar = 0;
   BE_u = 1;
   BE_utili = -85.4088763809503;
   BE_utilj = -490.559067770525; 
@@ -71806,6 +71823,7 @@ ES_igy = 0.01/10;
   ES_try = 2.20962209625084E-030;
   ES_trybar = 2.20962209625084E-030;
   ES_ty = 0;
+  ES_tybar = 0;
   ES_u = 1;
   ES_utili = -85.4088763809503;
   ES_utilj = -490.559067770525; 
@@ -72223,6 +72241,7 @@ FI_igy = 0.01/10;
   FI_try = 2.20962209625084E-030;
   FI_trybar = 2.20962209625084E-030;
   FI_ty = 0;
+  FI_tybar = 0;
   FI_u = 1;
   FI_utili = -85.4088763809503;
   FI_utilj = -490.559067770525; 
@@ -72640,6 +72659,7 @@ FR_igy = 0.01/10;
   FR_try = 2.20962209625084E-030;
   FR_trybar = 2.20962209625084E-030;
   FR_ty = 0;
+  FR_tybar = 0;
   FR_u = 1;
   FR_utili = -85.4088763809503;
   FR_utilj = -490.559067770525; 
@@ -73057,6 +73077,7 @@ GR_igy = 0.01/10;
   GR_try = 2.20962209625084E-030;
   GR_trybar = 2.20962209625084E-030;
   GR_ty = 0;
+  GR_tybar = 0;
   GR_u = 1;
   GR_utili = -85.4088763809503;
   GR_utilj = -490.559067770525; 
@@ -73474,6 +73495,7 @@ IT_igy = 0.01/10;
   IT_try = 2.20962209625084E-030;
   IT_trybar = 2.20962209625084E-030;
   IT_ty = 0;
+  IT_tybar = 0;
   IT_u = 1;
   IT_utili = -85.4088763809503;
   IT_utilj = -490.559067770525; 
@@ -73891,6 +73913,7 @@ NL_igy = 0.01/10;
   NL_try = 2.20962209625084E-030;
   NL_trybar = 2.20962209625084E-030;
   NL_ty = 0;
+  NL_tybar = 0;
   NL_u = 1;
   NL_utili = -85.4088763809503;
   NL_utilj = -490.559067770525; 
@@ -74308,6 +74331,7 @@ PT_igy = 0.01/10;
   PT_try = 2.20962209625084E-030;
   PT_trybar = 2.20962209625084E-030;
   PT_ty = 0;
+  PT_tybar = 0;
   PT_u = 1;
   PT_utili = -85.4088763809503;
   PT_utilj = -490.559067770525; 
@@ -74725,6 +74749,7 @@ DE_igy = 0.01/10;
   DE_try = 2.20962209625084E-030;
   DE_trybar = 2.20962209625084E-030;
   DE_ty = 0;
+  DE_tybar = 0;
   DE_u = 1;
   DE_utili = -85.4088763809503;
   DE_utilj = -490.559067770525; 
@@ -75142,6 +75167,7 @@ RU_igy = 0.01/10;
   RU_try = 2.20962209625084E-030;
   RU_trybar = 2.20962209625084E-030;
   RU_ty = 0;
+  RU_tybar = 0;
   RU_u = 1;
   RU_utili = -85.4088763809503;
   RU_utilj = -490.559067770525; 
@@ -75559,6 +75585,7 @@ RW_igy = 0.01/10;
   RW_try = 2.20962209625084E-030;
   RW_trybar = 2.20962209625084E-030;
   RW_ty = 0;
+  RW_tybar = 0;
   RW_u = 1;
   RW_utili = -85.4088763809503;
   RW_utilj = -490.559067770525; 
@@ -75972,6 +75999,7 @@ US_igy = 0.01/10;
   US_try = 2.20962209625084E-030;
   US_trybar = 2.20962209625084E-030;
   US_ty = 0;
+  US_tybar = 0;
   US_u = 1;
   US_utili = -85.4088763809503;
   US_utilj = -490.559067770525; 
