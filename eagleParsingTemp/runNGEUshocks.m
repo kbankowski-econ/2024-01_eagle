@@ -70,6 +70,11 @@ irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)-ssStruct.(aEndoVar))*100;
 
 aItemList = ["EA_y", "EA_pic4"];
 
+customTitles = containers.Map( ...
+    {'EA_y', 'EA_pic4'}, ...
+    {'Real GDP in EA', 'Inflation in EA'} ...
+);
+
 allItemList = aItemList;
 % //TODO: move createContributions, Series2Dseries to some function folder
 for aItem = aItemList
@@ -110,7 +115,7 @@ end
 contributionSeries.colorTable = colorTable;
 
 %% investigating interest rate reaction upon the request from Sandra
-panelContributions(contributionSeries, project_path);
+panelContributions(contributionSeries, project_path, customTitles);
 
 %% chart with spill-overs
 panelSpillOvers(irfStruct, project_path)
@@ -122,7 +127,7 @@ panelTotal(irfStruct, project_path)
 dynare('eagleModelFiscalShocksStoch.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
 
 %%
-function panelContributions(contributionSeries, projectPath)
+function panelContributions(contributionSeries, projectPath, customTitles)
 
     % ctry lists
     % ctryListModNames = ["RA", "AT", "BE", "FI", "FR", "NL", "ES", "GR", "IT", "PT", "DE"];
@@ -158,13 +163,12 @@ function panelContributions(contributionSeries, projectPath)
         hold on 
     
         % Seeting of the title
-        aTitle = sprintf('Decomposition of %s', contributionSeries.lhs.(aItem));        
-        title( ...
-            aTitle ...
-            , 'Fontsize', 7 ...
-            , 'Fontweight', 'normal' ...
-        );
-    
+        if exist('customTitles', 'var') && isKey(customTitles, char(aItem))
+            aTitle = sprintf('Decomposition of %s', customTitles(char(aItem)));
+        else
+            aTitle = sprintf('Decomposition of %s', contributionSeries.lhs.(aItem));
+        end
+
         % Get the order of contributors
         contribNames = contributionSeries.contrib.(aItem).Comment;
         
@@ -186,7 +190,20 @@ function panelContributions(contributionSeries, projectPath)
                 , 'MarkerEdgeColor', rgb('black') ...
                 , 'MarkerSize', 4 ...
                 );
+        % Setting of the title
+        if exist('customTitles', 'var') && isKey(customTitles, char(aItem))
+            aTitle = sprintf('Decomposition of %s', customTitles(char(aItem)));
+        else
+            aTitle = sprintf('Decomposition of %s', contributionSeries.lhs.(aItem));
+        end
         
+        title( ...
+            aTitle ...
+            , 'Fontsize', 7 ...
+            , 'Fontweight', 'normal' ...
+            , 'Interpreter', 'latex' ...
+        );
+
         hold off
     
         % Setting of the x and y axis
@@ -352,6 +369,6 @@ function panelTotal(irfStruct, projectPath)
     end 
 
     % Save graph
-    fileName = fullfile(projectPath, "docs/2025-02_working-paper/figures/effectNGEUtotal");
+    fileName = fullfile(projectPath, "docs/2025-06-WGPF-workshop/figures/effectNGEUtotal");
     exportgraphics(t, sprintf('%s.png',fileName),'BackgroundColor','none');
 end

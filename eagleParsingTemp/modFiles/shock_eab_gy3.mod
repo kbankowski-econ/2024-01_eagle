@@ -6,62 +6,58 @@
 
 @#include "modeqs_govInv.mod"
 
-load_params_and_steady_state('eagle_steady_govInv_refined.txt');
+load_params_and_steady_state('eagle_steady_stage_trade.txt');
 
-EAA_rhoig=0; //if we don't want persistent shock
-EAB_rhoig=0; //if we don't want persistent shock
-EAC_rhoig=0; //if we don't want persistent shock
-EAD_rhoig=0; //if we don't want persistent shock
-EAE_rhoig=0; //if we don't want persistent shock
-EAF_rhoig=0; //if we don't want persistent shock
-EAG_rhoig=0; //if we don't want persistent shock
-EAH_rhoig=0; //if we don't want persistent shock
-EAI_rhoig=0; //if we don't want persistent shock
-EAJ_rhoig=0; //if we don't want persistent shock
-EAK_rhoig=0; //if we don't want persistent shock
-EAL_rhoig=0; //if we don't want persistent shock
-EAM_rhoig=0; //if we don't want persistent shock
+RA_rhoig=0; //if we don't want persistent shock
+AT_rhoig=0; //if we don't want persistent shock
+BE_rhoig=0; //if we don't want persistent shock
+ES_rhoig=0; //if we don't want persistent shock
+FI_rhoig=0; //if we don't want persistent shock
+FR_rhoig=0; //if we don't want persistent shock
+GR_rhoig=0; //if we don't want persistent shock
+IT_rhoig=0; //if we don't want persistent shock
+NL_rhoig=0; //if we don't want persistent shock
+PT_rhoig=0; //if we don't want persistent shock
+DE_rhoig=0; //if we don't want persistent shock
+RU_rhoig=0; //if we don't want persistent shock
 
 steady(solve_algo = 5, markowitz = 5);
 
 shocks;
-var EAA_epsgi;
+var RA_epsgi;
 periods 1:4;
 values 0.01;
-var EAB_epsgi;
+var AT_epsgi;
 periods 1:4;
 values 0.01;
-var EAC_epsgi;
+var BE_epsgi;
 periods 1:4;
 values 0.01;
-var EAD_epsgi;
+var ES_epsgi;
 periods 1:4;
 values 0.01;
-var EAE_epsgi;
+var FI_epsgi;
 periods 1:4;
 values 0.01;
-var EAF_epsgi;
+var FR_epsgi;
 periods 1:4;
 values 0.01;
-var EAG_epsgi;
+var GR_epsgi;
 periods 1:4;
 values 0.01;
-var EAH_epsgi;
+var IT_epsgi;
 periods 1:4;
 values 0.01;
-var EAI_epsgi;
+var NL_epsgi;
 periods 1:4;
 values 0.01;
-var EAJ_epsgi;
+var PT_epsgi;
 periods 1:4;
 values 0.01;
-var EAK_epsgi;
+var DE_epsgi;
 periods 1:4;
 values 0.01;
-var EAL_epsgi;
-periods 1:4;
-values 0.01;
-var EAM_epsgi;
+var RU_epsgi;
 periods 1:4;
 values 0.01;
 end;
