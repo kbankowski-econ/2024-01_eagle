@@ -68,10 +68,8 @@
   \frametitle{The EAGLE model with individual countries}
   \vspace{-1ex}
   \begin{itemize}
-  \item The original EAGLE model is a DSGE model representing the global economy as interconnected open economies, with 4 regions: Germany, rest of Euro Area, the US, and Rest of World, and portrays a shared monetary policy for euro countries. 
-  \item The model embeds meaningful fiscal policy (notably, complementary government consumption and productive government investment), which makes it a suitable tool to analyse fiscal initiatives.
-  \item We recognize the importance of heterogeneity and silmutaneous interdependence in the euro area.
-  \item Against this background, we establish a more country-granular version with 10 EA countries and add a non-EA area EU region, making it in total a 14 region model. 
+  \item We extend the original DSGE EAGLE model from 4 to 14 regions to better capture the heterogeneity and interdependence in the euro area. 
+  \item The model embeds complementary government consumption and productive government investment, which makes it a suitable tool to analyse fiscal initiatives.
   \item This presentation focuses on trade extension, properties of main fiscal shocks, and the study of the Next Generation EU (NGEU) programme in our setup as a policy application.
   \end{itemize}
   \end{frame}
@@ -83,13 +81,11 @@
   \textbf{Related Literature}
   \begin{itemize}
   \item Multitude of papers documenting and applying \textcolor{royalblue}{EAGLE} by Pascal Jacquinot and members of EAGLE network.
-  \item Variety of applications of \textcolor{royalblue}{QUEST} model by colleagues from the EC.
-  \item \textcolor{royalblue}{ECB-MC} already exists in the form of a linked version at the ECB.
-  \item Other models like \textcolor{royalblue}{GIMF} at the IMF documented in Kumhof et al. (2010).
+  \item Other models used at ECB and other international institutions for application of fiscal analysis, including \textcolor{royalblue}{QUEST} model from the EC, \textcolor{royalblue}{ECB-MC} and \textcolor{royalblue}{GIMF} at the IMF (Kumhof et al. (2010)).
   \end{itemize}
   \textbf{Our Contribution}
   \begin{itemize}
-  \item The 4 region EAGLE model can be calibrated for any EA country, but it does so only relating the country to EA as a whole, not grasping the heterogeneity within EA, and so is unsuited for multiple country fiscal programmes such as the NGEU programme, or defence spending. 
+  \item The 4 region EAGLE model does not entail the heterogeneity within EA, and so is unsuited for multiple country fiscal programmes such as the NGEU programme.
   \item We present a more granular version of the model operating in Dynare, equiped to analyse granular spill-over effects across Euro Area. 
   \end{itemize}
   \end{frame}
@@ -100,11 +96,10 @@
 \begin{frame}
   \frametitle{Final goods in the model}
   \begin{itemize}
-  \item The model includes four final goods: private consumption, private investment, government consumption, and government investment.
-  \item Final goods are assembled by perfectly competitive firms using intermediate inputs.
-  \item Intermediate goods come from monopolistically competitive sectors: tradable (e.g. manufacturing) and non-tradable (e.g. services).
-   \item Tradable goods can be imported and each good has a home-bias parameter. For example, government purchases have a higher home-bias parameter and use more of domestically produced goods.
-   \item The model's multi-country trade structure and calibration of import content, which varies throughout the four goods for each region are key contributions.
+  \item Four final goods: private consumption, private investment, government consumption, and government investment.
+  \item Two intermediate goods: tradable (e.g. manufacturing) and non-tradable (e.g. services).
+   \item Tradable goods can be imported and each good has a home-bias parameter. 
+   \item Key contribution:  multi-country trade structure and calibration of import content, which varies throughout the four goods for each region.
   \end{itemize}
 \end{frame}
 
@@ -174,7 +169,7 @@
 \begin{frame}
   \frametitle{Trade and net foregin asset position}
 \begin{itemize}
-  \item Each country may run a trade surplus or deficit: exports and imports can differ in value.
+  \item Each country may run a trade surplus or deficit. Trade imbalances between countries are reflected in their net foreign asset positions.
   \item The nominal trade balance is defined as:
 \end{itemize}
 
@@ -187,46 +182,40 @@
 \begin{itemize}
   \item $X_t^{H,CO}$: Exports from $H$ to $CO$, defined as $CO$'s imports from $H$ adjusted by the size ratio $\left(\frac{s^{CO}}{s^H}\right)$. $S_t^{H,CO}$ is the nominal exchange rate converting prices from $CO$'s to $H$'s currency.
   \item This scaling reflects how small economies can be heavily affected by trade with large partners.
-  \item Important for steady-state calibration when countries differ significantly in size.
-  \item Trade imbalances between countries are reflected in their net foreign asset (NFA) positions,
-which materialize through international bond holdings.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Fiscal and Monetary Policy rules}
 \begin{itemize}
-  \item Governments are not required to balance the budget in each period with the possibility of issue bonds. 
-  \item Following Clancy et al. (2016) EAGLE extension, government consumption exhibits complementarity with private consumption, and government investment contributes to the stock of productive capital.
-  \item For all fiscal instruments, except for lump-sum taxes, we assume a fiscal rule, whereby the fiscal instrument in year t is determined by the calibrated long-run target, smoothing parameter, and an i.i.d. shock to the instrument. 
-  \item The fiscal rule governing lump-sum taxes is designed to ensure that government debt converges towards a long-run target level. Stability of the debt stock is
-achieved through a gradual adjustment of lump-sum taxes relative to output.
-  \item Central banks follow a Taylor-type interest rate rule, specified in terms of annual CPI inflation, and quarterly
+  \item Governments are not required to balance the budget in each period with the possibility to issue bonds. 
+  \item Following Clancy et al. (2016) EAGLE extension, government consumption and investment are productive.
+  \item Fiscal instruments are calibrated using exogenous long-run target, and a smoothing parameter. 
+  \item The lump-sum taxes are designed to ensure that government debt converges towards a long-run target level.
+  \item Central banks follow a Taylor-type interest rate rule.
 output growth.
 \end{itemize}
 \end{frame}
 
 \section{Model calibration}
 
-\begin{frame}
-  \frametitle{Import content of final demand components}
-  \framesubtitle{Following the methodology of Bussière et al. (2013)}
-  \begin{figure}
-  \centering
-  \includegraphics[width=0.9\textwidth]{figures/import_content2.png}
-  \caption{\scriptsize Source: Own calculations based on the Eurostat Input-Output annual data.}
-  \end{figure}
+\begin{frame}{Calibrated variables}
+\begin{itemize}
+  \item We calibrate the great ratios and fiscal instruments of countries, based on OECD, IMF and EUROSTAT data using long-run averages  over the period of 1995-2020.
+  \item Granular calibration allow for heterogeneity of country properties such as govenrmnet spending, and trade openness. 
+  \item  Some parameters of the model regarding household, firm, and
+government behaviour are kept consistent with the original model, which employs standard values prevelant in the literature
+\item To estimate import shares across demand components, we used the methodology of Bussière et al. (2013) to capture both direct and indirect imports using OECD Inter-Country Input-Output (ICIO).
+\end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Import structure in EAGLE}
-  \framesubtitle{Example for Spain}
-  \vspace{-3ex}  % Added negative vertical space
+  \frametitle{Calibrated import content of final demand components}
   \begin{figure}
-  \includegraphics[width=\textwidth, height=0.75\textheight]{figures/trade_values.png}
-  \vspace{-9ex}  % Added negative vertical space
-  \caption{\scriptsize Note: The numbers in grey are parameter values in trade aggregators. Otherwise, the figures are GDP shares of relevant components.}
+  \centering
+  \includegraphics[width=0.9\textwidth]{figures/importContent.png}
+  \caption{\scriptsize Source: Own calculations based on the OECD Input-Output annual data.}
   \end{figure}
-  \end{frame}
+\end{frame}
 
 \section[Model properties]{Model properties}
 
@@ -308,14 +297,24 @@ output growth.
  
 \end{frame}
 
-\section{Way forward}
+\section{Conclusions}
 \begin{frame}
-  \frametitle{Way Forward}
-  \begin{itemize}
-      \item Dynare is reaching its limits; scaling to include 1–2 additional countries could be sensible.
-      \item Trade calibration remains a major challenge, and efforts to find a robust procedure are still ongoing.
-      \item Introducing country heterogeneity across different dimensions, such as debt-to-GDP levels, could enhance economic analysis.
-  \end{itemize}
+  \frametitle{Conclusions and way forward}
+\begin{itemize}
+
+    \item When applied to NGEU, the model projects a peak increase in euro area GDP of 0.45\%.
+   
+    \item NGEU provides substantial stimulus, but the reduction of economic divergences may be constrained by relatively weak spillover effects.
+    
+    \item This underscores the importance of tailoring resource allocation to country-specific needs and structural features to maximize impact.
+    
+    \item Future research could extend the framework to include:
+    \begin{itemize}
+        \item Interactions between fiscal and monetary policy, especially at the effective lower
+bound.
+        \item The role of structural reforms in boosting the efficacy of fiscal stimulus.
+    \end{itemize}
+\end{itemize}
 \end{frame}
 
 

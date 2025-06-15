@@ -1,32 +1,31 @@
-% % cding to a proper folder
-% cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
+% cding to a proper folder
+utils.call.paths;
+cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 % 
-% %% deterministic simulation
-% dynare('shock_eab_gy1.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
-% 
-% %% deterministic simulation
-% dynare('shock_eab_gy2.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
-% 
-% %% deterministic simulation (ea investment)
-% dynare('shock_eab_gy3.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
-% 
-% %% deterministic simulation (ea consumption)
-% dynare('shock_eab_gy4.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+%% deterministic simulation
+dynare('shock_eab_gy1.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+
+%% deterministic simulation
+dynare('shock_eab_gy2.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+ 
+%% deterministic simulation (ea investment)
+dynare('shock_eab_gy3.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+ 
+%% deterministic simulation (ea consumption)
+dynare('shock_eab_gy4.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
 
 %% analying the output of the simulation
-% contribStructure = struct();
-% contribStructureEs.Gc = brignSimulationResults('shock_eab_gy2');
-% contribStructureEs.Gi = brignSimulationResults('shock_eab_gy1');
-contribStructureEa.Gc = brignSimulationResults('shock_eab_gy4');
-% contribStructureEa.Gi = brignSimulationResults('shock_eab_gy3');
+contribStructure = struct();
+contribStructureEs.Gi = brignSimulationResults('shock_eab_gy2');
+contribStructureEs.Gc = brignSimulationResults('shock_eab_gy1');
+%contribStructureEa.Gc = brignSimulationResults('shock_eab_gy4');
+%contribStructureEa.Gi = brignSimulationResults('shock_eab_gy3');
 
 
-% %% investigating interest rate reaction upon the request from Sandra
-% panelContributions(contribStructureEs, project_path, "ES");
-% 
-% %%
-% panelContributions(contribStructureEa, project_path, "EA");
-
+%% investigating interest rate reaction upon the request from Sandra
+panelContributions(contribStructureEs, project_path, "ES"); 
+%%
+panelContributions(contribStructureEa, project_path, "EA");
 %%
 function contributionSeries = brignSimulationResults(simName)
 
@@ -53,14 +52,6 @@ function contributionSeries = brignSimulationResults(simName)
     
     aEndoVar = "EA_y";
     irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)/ssStruct.(aEndoVar)-1)*100;
-    % aEndoVar = "EAH_y";
-    % irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)/ssStruct.(aEndoVar)-1)*100;
-    % aEndoVar = "EAM_y";
-    % irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)/ssStruct.(aEndoVar)-1)*100;
-    % aEndoVar = "EAM_ex";
-    % irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)/ssStruct.(aEndoVar)-1)*100;
-    % aEndoVar = "EAM_r";
-    % irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)-ssStruct.(aEndoVar))*100;
     aEndoVar = "EA_pic4";
     irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)-ssStruct.(aEndoVar))*100;
     
@@ -110,8 +101,8 @@ end
 function panelContributions(contribStructure, projectPath, shockedCtry)
 
     % ctry lists
-    ctryListModNames = ["RA", "AT", "BE", "FI", "FR", "NL", "ES", "GR", "IT", "PT", "DE"];
-    ctryListStdNames = ["EA rest", "AT", "BE", "FI", "FR", "NL", "ES", "GR", "IT", "PT", "DE"]; 
+    ctryListModNames = ["AT", "BE", "DE", "ES", "FI", "FR", "GR", "IT", "NL", "PT", "RA"];
+    ctryListStdNames = ["AT", "BE", "DE", "ES", "FI", "FR", "GR", "IT", "NL", "PT", "EA rest"]; 
     simulationList = ["Gc", "Gi"];
     simulationTitles = ["gov. consumption", "gov. investment"]
     % Please specify the list of the variables to plot   
@@ -152,7 +143,7 @@ function panelContributions(contribStructure, projectPath, shockedCtry)
             );
         
             % actual data
-                bars_ = barcon( ...
+            bars_ = barcon( ...
                     contribStructure.(aSimulation).contrib.(aItem){DateRange} ...
                     , "ColorMap", cell2mat(contribStructure.(aSimulation).colorTable{contribStructure.(aSimulation).contrib.(aItem).Comment, :}) ...
                     , 'EdgeColor', 'none');
@@ -198,6 +189,6 @@ function panelContributions(contribStructure, projectPath, shockedCtry)
     leg.Layout.Tile = 'north'; 
 
     % Save graph
-    fileName = fullfile(projectPath, "docs/2024-12_RCC-workshop/figures/effectGov"+shockedCtry);
+    fileName = fullfile(projectPath, "docs/2025-06-WGPF-workshop/figures/effectGov"+shockedCtry);
     exportgraphics(t, sprintf('%s.png',fileName),'BackgroundColor','none');
 end
