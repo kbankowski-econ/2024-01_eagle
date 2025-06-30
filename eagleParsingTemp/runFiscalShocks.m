@@ -18,8 +18,8 @@ dynare('shock_eab_gy4.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleP
 contribStructure = struct();
 contribStructureEs.Gi = brignSimulationResults('shock_eab_gy2');
 contribStructureEs.Gc = brignSimulationResults('shock_eab_gy1');
-%contribStructureEa.Gc = brignSimulationResults('shock_eab_gy4');
-%contribStructureEa.Gi = brignSimulationResults('shock_eab_gy3');
+contribStructureEa.Gc = brignSimulationResults('shock_eab_gy4');
+contribStructureEa.Gi = brignSimulationResults('shock_eab_gy3');
 
 
 %% investigating interest rate reaction upon the request from Sandra
@@ -189,6 +189,6 @@ function panelContributions(contribStructure, projectPath, shockedCtry)
     leg.Layout.Tile = 'north'; 
 
     % Save graph
-    fileName = fullfile(projectPath, "docs/2025-06-WGPF-workshop/figures/effectGov"+shockedCtry);
+    fileName = fullfile(projectPath, "docs/2025-02_working-paper/figures/effectGov"+shockedCtry);
     exportgraphics(t, sprintf('%s.png',fileName),'BackgroundColor','none');
 end
