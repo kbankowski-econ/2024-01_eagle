@@ -28,6 +28,12 @@
 \usepackage{blindtext}
 \usepackage{graphicx} 
 \usepackage{caption}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{array}
+
 \newcommand{\source}[1]{\vspace{-10pt} \caption*{\footnotesize{\emph{Sources: }{#1}}}}
 \newcommand{\desc}[1]{\vspace{-10pt} \caption*{\footnotesize{\emph{Notes: }{#1}}}}
 \usepackage{subcaption}
@@ -681,6 +687,63 @@ Technical Appendix
 \renewcommand{\theequation}{\thesection.\arabic{equation}} 
 
 \section{Calibration Data}
+\begin{landscape}
+\begin{table}[htbp]
+\centering
+\scriptsize
+\makebox[\linewidth]{%
+\begin{tabular}{
+  >{\raggedright\arraybackslash}p{5cm}  % Item
+  >{\raggedright\arraybackslash}p{6.5cm}    % Source
+  >{\raggedright\arraybackslash}p{7cm}    % Code
+  >{\raggedright\arraybackslash}p{6cm}    % Notes
+}
+\toprule
+\textbf{Item} & \textbf{Source} & \textbf{Code/Indicator} & \textbf{Notes} \\
+\midrule
+\textbf{Domestic demand} & & & \\ [0.2em]
+Private consumption & OECD ICIO & & \\ [0.2em]
+Government consumption & OECD ICIO & & \\ [0.2em] 
+Private Investment & OECD ICIO & & \\ [0.2em] 
+Government Investment & \makecell[l]{OECD ICIO} &  & 
+\multirow{2}{6cm}{IMF ICSD dataset has now been archived. Input-output tables give total investment; split between public and private using IMF ICSD shares of investment as \% of GDP.} \\ [0.2em]
+& \makecell[l]{IMF ICSD} && \\ [15pt] 
+
+\textbf{Trade} & & & \\ [0.2em]
+Imports & \makecell[l]{OECD ICIO} &  & 
+\multirow{2}{6cm}{Leontief framework used to calculate direct and indirect imports (Bussiere et al., 2013). Investment split between public/private using IMF ICSD shares. Same import content assumed due to data gaps.} \\ [0.2em] 
+& \makecell[l]{IMF ICSD} &  & \\ [30pt] 
+Trade Balance & OECD ICIO & & \\ [0.2em]
+
+\textbf{Government revenue and expenditure} & & &  \\ [0.2em]
+Consumption tax rate & \makecell[l]{Revenue: OECD;} & \makecell[l]{CTP.TPS:DSD\_REV\_COMP\_GLOBAL \\(taxes on goods and services)} & 
+\multirow{12}{6cm}{Calculated as tax revenue over base. Data for ES and PT capital and labur tax extracted from SDW due to missing OECD data.} \\ [0.5em]
+ & \makecell[l]{Base: Final consumption of HH and NPISH} & \makecell[l]{SDD.NAD:DSD\_NAMAIN10} &  \\ [0.5em]
+Labour income tax rate & Revenue: OECD, SDW (For ES \& PT); & CTP.TPS:DSD\_REV\_COMP\_GLOBAL \newline (taxes on income and profits of individuals);  GFS.A.N.XX.W0.S13.S1.N.C.D5.\_Z.\_Z.\_Z.\newline XDC.\_Z.S.V.N.\_T; & \\ [0.5em]
+ & \makecell[l]{Base: Wage income (OECD)} & \makecell[l]{SDD.NAD:DSD\_NAMAIN10} &  \\ [0.5em]
+SSC rate (employees) & Revenue: OECD & \makecell[l]{CTP.TPS:DSD\_REV\_COMP\_GLOBAL \\(employee SSC)} & \\ [0.5em]
+&Base: Wage income (OECD) &  \makecell[l]{SDD.NAD:DSD\_NAMAIN10} & \\[0.5em]
+SSC rate (employers) & Revenue: OECD & \makecell[l]{CTP.TPS:DSD\_REV\_COMP\_GLOBAL\\(employer SSC)} & \\ [0.5em]
+& Base: Wage income (OECD) & \makecell[l]{SDD.NAD:DSD\_NAMAIN10} & \\ [0.5em]
+Capital tax rate & \makecell[l]{Revenue: OECD, SDW (for ES \& PT)} & \makecell[l]{CTP.TPS:DSD\_REV\_COMP\_GLOBAL; \\ GFS.Q.N.BG.W0.S13.S1.N.C.D91.\_Z.\_Z.\_Z.\\XDC.\_Z.S.V.N.\_T} & \\[35pt]
+ & \makecell[l]{Base: Operating surplus (OECD)} & \makecell[l]{SDD.NAD:DSD\_NAMAIN10} & \\ [0.5em]
+Government Transfers & \makecell[l]{EU: EUROSTAT} & \makecell[l]{ESTAT:GOV\_10A\_EXP(1.0), item D62\_D632;} & \\ [0.5em]
+& \makecell[l]{RW/US: OECD} & \makecell[l]{SDD.NAD:DSD\_NAAG\_VI (D62S13)} & \\ [0.5em]
+
+\textbf{Government debt} & & & \\ [0.2em]
+Debt-to-GDP ratio & IMF (WEO) & & \\ [0.2em]
+
+\textbf{Other} & &  & \\ [0.2em]
+Share of World GDP & IMF & NGDPD.A & \\
+
+\bottomrule
+\end{tabular}}
+\caption{Data sources}
+\label{tab:data_sources}
+\end{table}
+\end{landscape}
+
+
 \begin{figure}[H]
     \centering
     \caption{Data for the great ratios. \label{figApp:nationalAccountsData}}
