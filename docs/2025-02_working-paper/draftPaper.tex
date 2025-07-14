@@ -33,6 +33,7 @@
 \usepackage{makecell}
 \usepackage{multirow}
 \usepackage{array}
+\usepackage{subcaption}
 
 \newcommand{\source}[1]{\vspace{-10pt} \caption*{\footnotesize{\emph{Sources: }{#1}}}}
 \newcommand{\desc}[1]{\vspace{-10pt} \caption*{\footnotesize{\emph{Notes: }{#1}}}}
@@ -689,6 +690,8 @@ Technical Appendix
 \section{Calibration Data}
 \begin{landscape}
 \begin{table}[htbp]
+\caption{Data sources}
+\label{tab:data_sources}
 \centering
 \scriptsize
 \makebox[\linewidth]{%
@@ -725,21 +728,17 @@ SSC rate (employees) & Revenue: OECD & \makecell[l]{CTP.TPS:DSD\_REV\_COMP\_GLOB
 &Base: Wage income (OECD) &  \makecell[l]{SDD.NAD:DSD\_NAMAIN10} & \\[0.5em]
 SSC rate (employers) & Revenue: OECD & \makecell[l]{CTP.TPS:DSD\_REV\_COMP\_GLOBAL\\(employer SSC)} & \\ [0.5em]
 & Base: Wage income (OECD) & \makecell[l]{SDD.NAD:DSD\_NAMAIN10} & \\ [0.5em]
-Capital tax rate & \makecell[l]{Revenue: OECD, SDW (for ES \& PT)} & \makecell[l]{CTP.TPS:DSD\_REV\_COMP\_GLOBAL; \\ GFS.Q.N.BG.W0.S13.S1.N.C.D91.\_Z.\_Z.\_Z.\\XDC.\_Z.S.V.N.\_T} & \\[35pt]
+Capital tax rate & \makecell[l]{Revenue: OECD, SDW (for ES \& PT)} & \makecell[l]{CTP.TPS:DSD\_REV\_COMP\_GLOBAL; \\ GFS.Q.N.XX.W0.S13.S1.N.C.D91.\_Z.\_Z.\_Z.\\XDC.\_Z.S.V.N.\_T} & \\[35pt]
  & \makecell[l]{Base: Operating surplus (OECD)} & \makecell[l]{SDD.NAD:DSD\_NAMAIN10} & \\ [0.5em]
-Government Transfers & \makecell[l]{EU: EUROSTAT} & \makecell[l]{ESTAT:GOV\_10A\_EXP(1.0), item D62\_D632;} & \\ [0.5em]
+Government Transfers & makecell[l]{EU: EUROSTAT} & \makecell[l]{ESTAT:GOV\_10A\_EXP(1.0), item D62\_D632;} & \\ [0.5em]
 & \makecell[l]{RW/US: OECD} & \makecell[l]{SDD.NAD:DSD\_NAAG\_VI (D62S13)} & \\ [0.5em]
-
 \textbf{Government debt} & & & \\ [0.2em]
 Debt-to-GDP ratio & IMF (WEO) & & \\ [0.2em]
-
 \textbf{Other} & &  & \\ [0.2em]
 Share of World GDP & IMF & NGDPD.A & \\
 
 \bottomrule
 \end{tabular}}
-\caption{Data sources}
-\label{tab:data_sources}
 \end{table}
 \end{landscape}
 
@@ -873,6 +872,42 @@ Share of World GDP & IMF & NGDPD.A & \\
 
 
 \section{Sensitivity Analysis}
+
+\begin{table}[htbp]
+\centering
+\caption{Single-country temporary fiscal shocks}
+\label{tab:sensitivity_shock_all_combined}
+
+\begin{subtable}[t]{0.48\textwidth}
+  \caption{Gov. consumption shock – Effect on EA GDP (\% deviation from baseline)}
+  \input{tables/sensitivityShocks_gc_EA_y.tex}
+\end{subtable}
+\hfill
+\begin{subtable}[t]{0.48\textwidth}
+  \caption{Gov. consumption shock – Effect on EA inflation (p.p absolute deviation)}
+  \input{tables/sensitivityShocks_gc_EA_pic4.tex}
+\end{subtable}
+
+\vspace{3mm}
+
+\begin{subtable}[t]{0.48\textwidth}
+  \caption{Gov. investment shock – Effect on EA GDP (\% deviation from baseline)}
+  \input{tables/sensitivityShocks_gi_EA_y.tex}
+\end{subtable}
+\hfill
+\begin{subtable}[t]{0.48\textwidth}
+  \caption{Gov. investment shock – Effect on EA inflation (p.p absolute deviation)}
+  \input{tables/sensitivityShocks_gi_EA_pic4.tex}
+\end{subtable}
+
+\vspace{5mm}
+\source{EAGLE model simulations.}
+\desc{Fiscal expansions are based on an increase in government consumption or investment amounting to 1\% of GDP ex-ante and lasting for four quarters.}
+\textit{Note}: \CountryCodes.\\
+\end{table}
+
+
+
 
 %----------------------------------------------------------------------------------------
 %\end{multicols}

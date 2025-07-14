@@ -3,27 +3,69 @@ utils.call.paths;
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 % 
 %% deterministic simulation
-dynare('shock_eab_gy1.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
-
-%% deterministic simulation
-dynare('shock_eab_gy2.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+dynare('shock_at_gc.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+dynare('shock_at_gi.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+dynare('shock_be_gc.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+dynare('shock_be_gi.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+dynare('shock_es_gc.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+dynare('shock_es_gi.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+dynare('shock_fi_gc.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+dynare('shock_fi_gi.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+dynare('shock_fr_gc.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+dynare('shock_fr_gi.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+dynare('shock_gr_gc.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+dynare('shock_gr_gi.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+dynare('shock_it_gc.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+dynare('shock_it_gi.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+dynare('shock_nl_gc.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+dynare('shock_nl_gi.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+dynare('shock_pt_gc.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+dynare('shock_pt_gi.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+dynare('shock_de_gc.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+dynare('shock_de_gi.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
  
 %% deterministic simulation (ea investment)
-dynare('shock_eab_gy3.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+%dynare('shock_eab_gy3.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
  
 %% deterministic simulation (ea consumption)
-dynare('shock_eab_gy4.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
+%dynare('shock_eab_gy4.mod',  sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
 
 %% analying the output of the simulation
 contribStructure = struct();
-contribStructureEs.Gi = brignSimulationResults('shock_eab_gy2');
-contribStructureEs.Gc = brignSimulationResults('shock_eab_gy1');
+contribStructureAT.Gc = brignSimulationResults('shock_at_gc');
+contribStructureAT.Gi = brignSimulationResults('shock_at_gi');
+contribStructureBE.Gc = brignSimulationResults('shock_be_gc');
+contribStructureBE.Gi = brignSimulationResults('shock_be_gi');
+contribStructureES.Gc = brignSimulationResults('shock_es_gc');
+contribStructureES.Gi = brignSimulationResults('shock_es_gi');
+contribStructureFI.Gc = brignSimulationResults('shock_fi_gc');
+contribStructureFI.Gi = brignSimulationResults('shock_fi_gi');
+contribStructureFR.Gc = brignSimulationResults('shock_fr_gc');
+contribStructureFR.Gi = brignSimulationResults('shock_fr_gi');
+contribStructureGR.Gc = brignSimulationResults('shock_gr_gc');
+contribStructureGR.Gi = brignSimulationResults('shock_gr_gi');
+contribStructureIT.Gc = brignSimulationResults('shock_it_gc');
+contribStructureIT.Gi = brignSimulationResults('shock_it_gi');
+contribStructureNL.Gc = brignSimulationResults('shock_nl_gc');
+contribStructureNL.Gi = brignSimulationResults('shock_nl_gi');
+contribStructurePT.Gc = brignSimulationResults('shock_pt_gc');
+contribStructurePT.Gi = brignSimulationResults('shock_pt_gi');
+contribStructureDE.Gc = brignSimulationResults('shock_de_gc');
+contribStructureDE.Gi = brignSimulationResults('shock_de_gi');
+%% ea 
 contribStructureEa.Gc = brignSimulationResults('shock_eab_gy4');
 contribStructureEa.Gi = brignSimulationResults('shock_eab_gy3');
-
-
 %% investigating interest rate reaction upon the request from Sandra
-panelContributions(contribStructureEs, project_path, "ES"); 
+ panelContributions(contribStructureAT, project_path, "AT"); 
+ panelContributions(contribStructureBE, project_path, "BE");  
+ panelContributions(contribStructureES, project_path, "ES"); 
+ panelContributions(contribStructureFI, project_path, "FI"); 
+ panelContributions(contribStructureFR, project_path, "FR"); 
+ panelContributions(contribStructureGR, project_path, "GR"); 
+ panelContributions(contribStructureIT, project_path, "IT"); 
+ panelContributions(contribStructureNL, project_path, "NL"); 
+ panelContributions(contribStructurePT, project_path, "PT"); 
+ panelContributions(contribStructureDE, project_path, "DE");
 %%
 panelContributions(contribStructureEa, project_path, "EA");
 %%
