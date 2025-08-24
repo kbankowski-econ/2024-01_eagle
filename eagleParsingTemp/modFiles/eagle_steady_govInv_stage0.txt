@@ -2856,8 +2856,8 @@ AT_grev 1.519766
 AT_gexp 1.519766
 AT_grevy 0.488655
 AT_gexpy 0.488655
-AT_gbal -0.000000
-AT_gbaly -0.000000
+AT_gbal 0.000000
+AT_gbaly 0.000000
 AT_br 0.066417
 AT_bry 0.021355
 AT_gpbal 0.066417
@@ -4464,8 +4464,8 @@ FI_grev 1.680242
 FI_gexp 1.680242
 FI_grevy 0.505121
 FI_gexpy 0.505121
-FI_gbal -0.000000
-FI_gbaly -0.000000
+FI_gbal 0.000000
+FI_gbaly 0.000000
 FI_br 0.050297
 FI_bry 0.015121
 FI_gpbal 0.050297
@@ -5000,8 +5000,8 @@ FR_grev 1.923728
 FR_gexp 1.923728
 FR_grevy 0.547866
 FR_gexpy 0.547866
-FR_gbal 0.000000
-FR_gbaly 0.000000
+FR_gbal -0.000000
+FR_gbaly -0.000000
 FR_br 0.080289
 FR_bry 0.022866
 FR_gpbal 0.080289
@@ -5536,8 +5536,8 @@ GR_grev 1.884399
 GR_gexp 1.884399
 GR_grevy 0.472794
 GR_gexpy 0.472794
-GR_gbal -0.000000
-GR_gbaly -0.000000
+GR_gbal 0.000000
+GR_gbaly 0.000000
 GR_br 0.159402
 GR_bry 0.039994
 GR_gpbal 0.159402
@@ -7144,8 +7144,8 @@ PT_grev 1.520157
 PT_gexp 1.520157
 PT_grevy 0.418285
 PT_gexpy 0.418285
-PT_gbal 0.000000
-PT_gbaly 0.000000
+PT_gbal -0.000000
+PT_gbaly -0.000000
 PT_br 0.096253
 PT_bry 0.026485
 PT_gpbal 0.096253
@@ -7680,8 +7680,8 @@ DE_grev 1.648427
 DE_gexp 1.648427
 DE_grevy 0.495980
 DE_gexpy 0.495980
-DE_gbal -0.000000
-DE_gbaly -0.000000
+DE_gbal 0.000000
+DE_gbaly 0.000000
 DE_br 0.063746
 DE_bry 0.019180
 DE_gpbal 0.063746
@@ -8216,8 +8216,8 @@ RU_grev 1.486291
 RU_gexp 1.486291
 RU_grevy 0.429720
 RU_gexpy 0.429720
-RU_gbal 0.000000
-RU_gbaly 0.000000
+RU_gbal -0.000000
+RU_gbaly -0.000000
 RU_br 0.041922
 RU_bry 0.012120
 RU_gpbal 0.041922
@@ -8752,8 +8752,8 @@ RW_grev 1.534027
 RW_gexp 1.534027
 RW_grevy 0.367979
 RW_gexpy 0.367979
-RW_gbal -0.000000
-RW_gbaly -0.000000
+RW_gbal 0.000000
+RW_gbaly 0.000000
 RW_br 0.087874
 RW_bry 0.021079
 RW_gpbal 0.087874

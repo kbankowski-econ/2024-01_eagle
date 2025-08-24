@@ -603,7 +603,7 @@ parameters
  RA_rhotaun
  RA_rhotauwf
  RA_rhotauwh
- RA_rhot
+ RA_rhotr
  RA_rhowcst
  RA_rhozcon
  RA_rhozinv
@@ -662,6 +662,7 @@ varexo
  RA_zinvbar
  RA_znbar
  RA_ztbar
+ RA_trybar
  RA_epsgc
  RA_epsgi
         RA_epsrp
@@ -671,7 +672,7 @@ varexo
  RA_epstaun
  RA_epstauwf
  RA_epstauwh
- RA_epst
+ RA_epstr
  RA_epswcst
  RA_epszcon
  RA_epszinv
@@ -1253,7 +1254,7 @@ parameters
  AT_rhotaun
  AT_rhotauwf
  AT_rhotauwh
- AT_rhot
+ AT_rhotr
  AT_rhowcst
  AT_rhozcon
  AT_rhozinv
@@ -1312,6 +1313,7 @@ varexo
  AT_zinvbar
  AT_znbar
  AT_ztbar
+ AT_trybar
  AT_epsgc
  AT_epsgi
         AT_epsrp
@@ -1321,7 +1323,7 @@ varexo
  AT_epstaun
  AT_epstauwf
  AT_epstauwh
- AT_epst
+ AT_epstr
  AT_epswcst
  AT_epszcon
  AT_epszinv
@@ -1903,7 +1905,7 @@ parameters
  BE_rhotaun
  BE_rhotauwf
  BE_rhotauwh
- BE_rhot
+ BE_rhotr
  BE_rhowcst
  BE_rhozcon
  BE_rhozinv
@@ -1962,6 +1964,7 @@ varexo
  BE_zinvbar
  BE_znbar
  BE_ztbar
+ BE_trybar
  BE_epsgc
  BE_epsgi
         BE_epsrp
@@ -1971,7 +1974,7 @@ varexo
  BE_epstaun
  BE_epstauwf
  BE_epstauwh
- BE_epst
+ BE_epstr
  BE_epswcst
  BE_epszcon
  BE_epszinv
@@ -2553,7 +2556,7 @@ parameters
  ES_rhotaun
  ES_rhotauwf
  ES_rhotauwh
- ES_rhot
+ ES_rhotr
  ES_rhowcst
  ES_rhozcon
  ES_rhozinv
@@ -2612,6 +2615,7 @@ varexo
  ES_zinvbar
  ES_znbar
  ES_ztbar
+ ES_trybar
  ES_epsgc
  ES_epsgi
         ES_epsrp
@@ -2621,7 +2625,7 @@ varexo
  ES_epstaun
  ES_epstauwf
  ES_epstauwh
- ES_epst
+ ES_epstr
  ES_epswcst
  ES_epszcon
  ES_epszinv
@@ -3203,7 +3207,7 @@ parameters
  FI_rhotaun
  FI_rhotauwf
  FI_rhotauwh
- FI_rhot
+ FI_rhotr
  FI_rhowcst
  FI_rhozcon
  FI_rhozinv
@@ -3262,6 +3266,7 @@ varexo
  FI_zinvbar
  FI_znbar
  FI_ztbar
+ FI_trybar
  FI_epsgc
  FI_epsgi
         FI_epsrp
@@ -3271,7 +3276,7 @@ varexo
  FI_epstaun
  FI_epstauwf
  FI_epstauwh
- FI_epst
+ FI_epstr
  FI_epswcst
  FI_epszcon
  FI_epszinv
@@ -3853,7 +3858,7 @@ parameters
  FR_rhotaun
  FR_rhotauwf
  FR_rhotauwh
- FR_rhot
+ FR_rhotr
  FR_rhowcst
  FR_rhozcon
  FR_rhozinv
@@ -3912,6 +3917,7 @@ varexo
  FR_zinvbar
  FR_znbar
  FR_ztbar
+ FR_trybar
  FR_epsgc
  FR_epsgi
         FR_epsrp
@@ -3921,7 +3927,7 @@ varexo
  FR_epstaun
  FR_epstauwf
  FR_epstauwh
- FR_epst
+ FR_epstr
  FR_epswcst
  FR_epszcon
  FR_epszinv
@@ -4503,7 +4509,7 @@ parameters
  GR_rhotaun
  GR_rhotauwf
  GR_rhotauwh
- GR_rhot
+ GR_rhotr
  GR_rhowcst
  GR_rhozcon
  GR_rhozinv
@@ -4562,6 +4568,7 @@ varexo
  GR_zinvbar
  GR_znbar
  GR_ztbar
+ GR_trybar
  GR_epsgc
  GR_epsgi
         GR_epsrp
@@ -4571,7 +4578,7 @@ varexo
  GR_epstaun
  GR_epstauwf
  GR_epstauwh
- GR_epst
+ GR_epstr
  GR_epswcst
  GR_epszcon
  GR_epszinv
@@ -5153,7 +5160,7 @@ parameters
  IT_rhotaun
  IT_rhotauwf
  IT_rhotauwh
- IT_rhot
+ IT_rhotr
  IT_rhowcst
  IT_rhozcon
  IT_rhozinv
@@ -5212,6 +5219,7 @@ varexo
  IT_zinvbar
  IT_znbar
  IT_ztbar
+ IT_trybar
  IT_epsgc
  IT_epsgi
         IT_epsrp
@@ -5221,7 +5229,7 @@ varexo
  IT_epstaun
  IT_epstauwf
  IT_epstauwh
- IT_epst
+ IT_epstr
  IT_epswcst
  IT_epszcon
  IT_epszinv
@@ -5803,7 +5811,7 @@ parameters
  NL_rhotaun
  NL_rhotauwf
  NL_rhotauwh
- NL_rhot
+ NL_rhotr
  NL_rhowcst
  NL_rhozcon
  NL_rhozinv
@@ -5862,6 +5870,7 @@ varexo
  NL_zinvbar
  NL_znbar
  NL_ztbar
+ NL_trybar
  NL_epsgc
  NL_epsgi
         NL_epsrp
@@ -5871,7 +5880,7 @@ varexo
  NL_epstaun
  NL_epstauwf
  NL_epstauwh
- NL_epst
+ NL_epstr
  NL_epswcst
  NL_epszcon
  NL_epszinv
@@ -6453,7 +6462,7 @@ parameters
  PT_rhotaun
  PT_rhotauwf
  PT_rhotauwh
- PT_rhot
+ PT_rhotr
  PT_rhowcst
  PT_rhozcon
  PT_rhozinv
@@ -6512,6 +6521,7 @@ varexo
  PT_zinvbar
  PT_znbar
  PT_ztbar
+ PT_trybar
  PT_epsgc
  PT_epsgi
         PT_epsrp
@@ -6521,7 +6531,7 @@ varexo
  PT_epstaun
  PT_epstauwf
  PT_epstauwh
- PT_epst
+ PT_epstr
  PT_epswcst
  PT_epszcon
  PT_epszinv
@@ -7103,7 +7113,7 @@ parameters
  DE_rhotaun
  DE_rhotauwf
  DE_rhotauwh
- DE_rhot
+ DE_rhotr
  DE_rhowcst
  DE_rhozcon
  DE_rhozinv
@@ -7162,6 +7172,7 @@ varexo
  DE_zinvbar
  DE_znbar
  DE_ztbar
+ DE_trybar
  DE_epsgc
  DE_epsgi
         DE_epsrp
@@ -7171,7 +7182,7 @@ varexo
  DE_epstaun
  DE_epstauwf
  DE_epstauwh
- DE_epst
+ DE_epstr
  DE_epswcst
  DE_epszcon
  DE_epszinv
@@ -7756,7 +7767,7 @@ parameters
  RU_rhotaun
  RU_rhotauwf
  RU_rhotauwh
- RU_rhot
+ RU_rhotr
  RU_rhowcst
  RU_rhozcon
  RU_rhozinv
@@ -7815,6 +7826,7 @@ varexo
  RU_zinvbar
  RU_znbar
  RU_ztbar
+ RU_trybar
  RU_epsgc
  RU_epsgi
         RU_epsr
@@ -7825,7 +7837,7 @@ varexo
  RU_epstaun
  RU_epstauwf
  RU_epstauwh
- RU_epst
+ RU_epstr
  RU_epswcst
  RU_epszcon
  RU_epszinv
@@ -8410,7 +8422,7 @@ parameters
  RW_rhotaun
  RW_rhotauwf
  RW_rhotauwh
- RW_rhot
+ RW_rhotr
  RW_rhowcst
  RW_rhozcon
  RW_rhozinv
@@ -8469,6 +8481,7 @@ varexo
  RW_zinvbar
  RW_znbar
  RW_ztbar
+ RW_trybar
  RW_epsgc
  RW_epsgi
         RW_epsr
@@ -8479,7 +8492,7 @@ varexo
  RW_epstaun
  RW_epstauwf
  RW_epstauwh
- RW_epst
+ RW_epstr
  RW_epswcst
  RW_epszcon
  RW_epszinv
@@ -9056,7 +9069,7 @@ parameters
  US_rhotaun
  US_rhotauwf
  US_rhotauwh
- US_rhot
+ US_rhotr
  US_rhowcst
  US_rhozcon
  US_rhozinv
@@ -9115,6 +9128,7 @@ varexo
  US_zinvbar
  US_znbar
  US_ztbar
+ US_trybar
  US_epsgc
  US_epsgi
         US_epsr
@@ -9124,7 +9138,7 @@ varexo
  US_epstaun
  US_epstauwf
  US_epstauwh
- US_epst
+ US_epstr
  US_epswcst
  US_epszcon
  US_epszinv
@@ -13668,8 +13682,8 @@ log(RA_zn) = (1-RA_rhozn)*log(RA_znbar)+RA_rhozn*log(RA_zn(-1))+RA_epszn;
 // Government spending shock
 RA_cgy = (1-RA_rhocg)*RA_cgybar+RA_rhocg*RA_cgy(-1)+RA_epsgc;
 RA_igy = (1-RA_rhoig)*RA_igybar+RA_rhoig*RA_igy(-1)+RA_epsgi;
-// Lump sum taxes shock
-RA_ty = (1-RA_rhot)*RA_tybar+RA_rhot*RA_ty(-1)+RA_epst;
+// Transfer shock
+RA_try = (1-RA_rhotr)*RA_trybar+RA_rhotr*RA_try(-1)+RA_epstr;
 // Consumption tax shock
 RA_tauc = (1-RA_rhotauc)*RA_taucbar+RA_rhotauc*RA_tauc(-1)+RA_epstauc;
 // Dividend income tax shock
@@ -17727,8 +17741,8 @@ log(AT_zn) = (1-AT_rhozn)*log(AT_znbar)+AT_rhozn*log(AT_zn(-1))+AT_epszn;
 // Government spending shock
 AT_cgy = (1-AT_rhocg)*AT_cgybar+AT_rhocg*AT_cgy(-1)+AT_epsgc;
 AT_igy = (1-AT_rhoig)*AT_igybar+AT_rhoig*AT_igy(-1)+AT_epsgi;
-// Lump sum taxes shock
-AT_ty = (1-AT_rhot)*AT_tybar+AT_rhot*AT_ty(-1)+AT_epst;
+// Transfer shock
+AT_try = (1-AT_rhotr)*AT_trybar+AT_rhotr*AT_try(-1)+AT_epstr;
 // Consumption tax shock
 AT_tauc = (1-AT_rhotauc)*AT_taucbar+AT_rhotauc*AT_tauc(-1)+AT_epstauc;
 // Dividend income tax shock
@@ -21786,8 +21800,8 @@ log(BE_zn) = (1-BE_rhozn)*log(BE_znbar)+BE_rhozn*log(BE_zn(-1))+BE_epszn;
 // Government spending shock
 BE_cgy = (1-BE_rhocg)*BE_cgybar+BE_rhocg*BE_cgy(-1)+BE_epsgc;
 BE_igy = (1-BE_rhoig)*BE_igybar+BE_rhoig*BE_igy(-1)+BE_epsgi;
-// Lump sum taxes shock
-BE_ty = (1-BE_rhot)*BE_tybar+BE_rhot*BE_ty(-1)+BE_epst;
+// Transfer shock
+BE_try = (1-BE_rhotr)*BE_trybar+BE_rhotr*BE_try(-1)+BE_epstr;
 // Consumption tax shock
 BE_tauc = (1-BE_rhotauc)*BE_taucbar+BE_rhotauc*BE_tauc(-1)+BE_epstauc;
 // Dividend income tax shock
@@ -25845,8 +25859,8 @@ log(ES_zn) = (1-ES_rhozn)*log(ES_znbar)+ES_rhozn*log(ES_zn(-1))+ES_epszn;
 // Government spending shock
 ES_cgy = (1-ES_rhocg)*ES_cgybar+ES_rhocg*ES_cgy(-1)+ES_epsgc;
 ES_igy = (1-ES_rhoig)*ES_igybar+ES_rhoig*ES_igy(-1)+ES_epsgi;
-// Lump sum taxes shock
-ES_ty = (1-ES_rhot)*ES_tybar+ES_rhot*ES_ty(-1)+ES_epst;
+// Transfer shock
+ES_try = (1-ES_rhotr)*ES_trybar+ES_rhotr*ES_try(-1)+ES_epstr;
 // Consumption tax shock
 ES_tauc = (1-ES_rhotauc)*ES_taucbar+ES_rhotauc*ES_tauc(-1)+ES_epstauc;
 // Dividend income tax shock
@@ -29904,8 +29918,8 @@ log(FI_zn) = (1-FI_rhozn)*log(FI_znbar)+FI_rhozn*log(FI_zn(-1))+FI_epszn;
 // Government spending shock
 FI_cgy = (1-FI_rhocg)*FI_cgybar+FI_rhocg*FI_cgy(-1)+FI_epsgc;
 FI_igy = (1-FI_rhoig)*FI_igybar+FI_rhoig*FI_igy(-1)+FI_epsgi;
-// Lump sum taxes shock
-FI_ty = (1-FI_rhot)*FI_tybar+FI_rhot*FI_ty(-1)+FI_epst;
+// Transfer shock
+FI_try = (1-FI_rhotr)*FI_trybar+FI_rhotr*FI_try(-1)+FI_epstr;
 // Consumption tax shock
 FI_tauc = (1-FI_rhotauc)*FI_taucbar+FI_rhotauc*FI_tauc(-1)+FI_epstauc;
 // Dividend income tax shock
@@ -33963,8 +33977,8 @@ log(FR_zn) = (1-FR_rhozn)*log(FR_znbar)+FR_rhozn*log(FR_zn(-1))+FR_epszn;
 // Government spending shock
 FR_cgy = (1-FR_rhocg)*FR_cgybar+FR_rhocg*FR_cgy(-1)+FR_epsgc;
 FR_igy = (1-FR_rhoig)*FR_igybar+FR_rhoig*FR_igy(-1)+FR_epsgi;
-// Lump sum taxes shock
-FR_ty = (1-FR_rhot)*FR_tybar+FR_rhot*FR_ty(-1)+FR_epst;
+// Transfer shock
+FR_try = (1-FR_rhotr)*FR_trybar+FR_rhotr*FR_try(-1)+FR_epstr;
 // Consumption tax shock
 FR_tauc = (1-FR_rhotauc)*FR_taucbar+FR_rhotauc*FR_tauc(-1)+FR_epstauc;
 // Dividend income tax shock
@@ -38022,8 +38036,8 @@ log(GR_zn) = (1-GR_rhozn)*log(GR_znbar)+GR_rhozn*log(GR_zn(-1))+GR_epszn;
 // Government spending shock
 GR_cgy = (1-GR_rhocg)*GR_cgybar+GR_rhocg*GR_cgy(-1)+GR_epsgc;
 GR_igy = (1-GR_rhoig)*GR_igybar+GR_rhoig*GR_igy(-1)+GR_epsgi;
-// Lump sum taxes shock
-GR_ty = (1-GR_rhot)*GR_tybar+GR_rhot*GR_ty(-1)+GR_epst;
+// Transfer shock
+GR_try = (1-GR_rhotr)*GR_trybar+GR_rhotr*GR_try(-1)+GR_epstr;
 // Consumption tax shock
 GR_tauc = (1-GR_rhotauc)*GR_taucbar+GR_rhotauc*GR_tauc(-1)+GR_epstauc;
 // Dividend income tax shock
@@ -42081,8 +42095,8 @@ log(IT_zn) = (1-IT_rhozn)*log(IT_znbar)+IT_rhozn*log(IT_zn(-1))+IT_epszn;
 // Government spending shock
 IT_cgy = (1-IT_rhocg)*IT_cgybar+IT_rhocg*IT_cgy(-1)+IT_epsgc;
 IT_igy = (1-IT_rhoig)*IT_igybar+IT_rhoig*IT_igy(-1)+IT_epsgi;
-// Lump sum taxes shock
-IT_ty = (1-IT_rhot)*IT_tybar+IT_rhot*IT_ty(-1)+IT_epst;
+// Transfer shock
+IT_try = (1-IT_rhotr)*IT_trybar+IT_rhotr*IT_try(-1)+IT_epstr;
 // Consumption tax shock
 IT_tauc = (1-IT_rhotauc)*IT_taucbar+IT_rhotauc*IT_tauc(-1)+IT_epstauc;
 // Dividend income tax shock
@@ -46140,8 +46154,8 @@ log(NL_zn) = (1-NL_rhozn)*log(NL_znbar)+NL_rhozn*log(NL_zn(-1))+NL_epszn;
 // Government spending shock
 NL_cgy = (1-NL_rhocg)*NL_cgybar+NL_rhocg*NL_cgy(-1)+NL_epsgc;
 NL_igy = (1-NL_rhoig)*NL_igybar+NL_rhoig*NL_igy(-1)+NL_epsgi;
-// Lump sum taxes shock
-NL_ty = (1-NL_rhot)*NL_tybar+NL_rhot*NL_ty(-1)+NL_epst;
+// Transfer shock
+NL_try = (1-NL_rhotr)*NL_trybar+NL_rhotr*NL_try(-1)+NL_epstr;
 // Consumption tax shock
 NL_tauc = (1-NL_rhotauc)*NL_taucbar+NL_rhotauc*NL_tauc(-1)+NL_epstauc;
 // Dividend income tax shock
@@ -50199,8 +50213,8 @@ log(PT_zn) = (1-PT_rhozn)*log(PT_znbar)+PT_rhozn*log(PT_zn(-1))+PT_epszn;
 // Government spending shock
 PT_cgy = (1-PT_rhocg)*PT_cgybar+PT_rhocg*PT_cgy(-1)+PT_epsgc;
 PT_igy = (1-PT_rhoig)*PT_igybar+PT_rhoig*PT_igy(-1)+PT_epsgi;
-// Lump sum taxes shock
-PT_ty = (1-PT_rhot)*PT_tybar+PT_rhot*PT_ty(-1)+PT_epst;
+// Transfer shock
+PT_try = (1-PT_rhotr)*PT_trybar+PT_rhotr*PT_try(-1)+PT_epstr;
 // Consumption tax shock
 PT_tauc = (1-PT_rhotauc)*PT_taucbar+PT_rhotauc*PT_tauc(-1)+PT_epstauc;
 // Dividend income tax shock
@@ -54260,8 +54274,8 @@ log(DE_zn) = (1-DE_rhozn)*log(DE_znbar)+DE_rhozn*log(DE_zn(-1))+DE_epszn;
 // Government spending shock
 DE_cgy = (1-DE_rhocg)*DE_cgybar+DE_rhocg*DE_cgy(-1)+DE_epsgc;
 DE_igy = (1-DE_rhoig)*DE_igybar+DE_rhoig*DE_igy(-1)+DE_epsgi;
-// Lump sum taxes shock
-DE_ty = (1-DE_rhot)*DE_tybar+DE_rhot*DE_ty(-1)+DE_epst;
+// Transfer shock
+DE_try = (1-DE_rhotr)*DE_trybar+DE_rhotr*DE_try(-1)+DE_epstr;
 // Consumption tax shock
 DE_tauc = (1-DE_rhotauc)*DE_taucbar+DE_rhotauc*DE_tauc(-1)+DE_epstauc;
 // Dividend income tax shock
@@ -58319,8 +58333,8 @@ log(RU_zn) = (1-RU_rhozn)*log(RU_znbar)+RU_rhozn*log(RU_zn(-1))+RU_epszn;
 // Government spending shock
 RU_cgy = (1-RU_rhocg)*RU_cgybar+RU_rhocg*RU_cgy(-1)+RU_epsgc;
 RU_igy = (1-RU_rhoig)*RU_igybar+RU_rhoig*RU_igy(-1)+RU_epsgi;
-// Lump sum taxes shock
-RU_ty = (1-RU_rhot)*RU_tybar+RU_rhot*RU_ty(-1)+RU_epst;
+// Transfer shock
+RU_try = (1-RU_rhotr)*RU_trybar+RU_rhotr*RU_try(-1)+RU_epstr;
 // Consumption tax shock
 RU_tauc = (1-RU_rhotauc)*RU_taucbar+RU_rhotauc*RU_tauc(-1)+RU_epstauc;
 // Dividend income tax shock
@@ -62378,8 +62392,8 @@ log(RW_zn) = (1-RW_rhozn)*log(RW_znbar)+RW_rhozn*log(RW_zn(-1))+RW_epszn;
 // Government spending shock
 RW_cgy = (1-RW_rhocg)*RW_cgybar+RW_rhocg*RW_cgy(-1)+RW_epsgc;
 RW_igy = (1-RW_rhoig)*RW_igybar+RW_rhoig*RW_igy(-1)+RW_epsgi;
-// Lump sum taxes shock
-RW_ty = (1-RW_rhot)*RW_tybar+RW_rhot*RW_ty(-1)+RW_epst;
+// Transfer shock
+RW_try = (1-RW_rhotr)*RW_trybar+RW_rhotr*RW_try(-1)+RW_epstr;
 // Consumption tax shock
 RW_tauc = (1-RW_rhotauc)*RW_taucbar+RW_rhotauc*RW_tauc(-1)+RW_epstauc;
 // Dividend income tax shock
@@ -66437,8 +66451,8 @@ log(US_zn) = (1-US_rhozn)*log(US_znbar)+US_rhozn*log(US_zn(-1))+US_epszn;
 // Government spending shock
 US_cgy = (1-US_rhocg)*US_cgybar+US_rhocg*US_cgy(-1)+US_epsgc;
 US_igy = (1-US_rhoig)*US_igybar+US_rhoig*US_igy(-1)+US_epsgi;
-// Lump sum taxes shock
-US_ty = (1-US_rhot)*US_tybar+US_rhot*US_ty(-1)+US_epst;
+// Transfer shock
+US_try = (1-US_rhotr)*US_trybar+US_rhotr*US_try(-1)+US_epstr;
 // Consumption tax shock
 US_tauc = (1-US_rhotauc)*US_taucbar+US_rhotauc*US_tauc(-1)+US_epstauc;
 // Dividend income tax shock
@@ -67316,7 +67330,7 @@ load("paramsToBeSaved", 'ctryNumberDouble')
    RA_rhorp       = 0.90;
    RA_rhocg        = 0.90;
    RA_rhoig        = 0.90;
-   RA_rhot        = 0.90;
+   RA_rhotr       = 0.90;
    RA_rhotauc     = 0.90;
    RA_rhotauk     = 0.90;
    RA_rhotaun     = 0.90;
@@ -67416,7 +67430,7 @@ load("paramsToBeSaved", 'ctryNumberDouble')
    AT_rhorp       = 0.90;
    AT_rhocg        = 0.90;
    AT_rhoig        = 0.90;
-   AT_rhot        = 0.90;
+   AT_rhotr       = 0.90;
    AT_rhotauc     = 0.90;
    AT_rhotauk     = 0.90;
    AT_rhotaun     = 0.90;
@@ -67516,7 +67530,7 @@ load("paramsToBeSaved", 'ctryNumberDouble')
    BE_rhorp       = 0.90;
    BE_rhocg        = 0.90;
    BE_rhoig        = 0.90;
-   BE_rhot        = 0.90;
+   BE_rhotr       = 0.90;
    BE_rhotauc     = 0.90;
    BE_rhotauk     = 0.90;
    BE_rhotaun     = 0.90;
@@ -67616,7 +67630,7 @@ load("paramsToBeSaved", 'ctryNumberDouble')
    ES_rhorp       = 0.90;
    ES_rhocg        = 0.90;
    ES_rhoig        = 0.90;
-   ES_rhot        = 0.90;
+   ES_rhotr       = 0.90;
    ES_rhotauc     = 0.90;
    ES_rhotauk     = 0.90;
    ES_rhotaun     = 0.90;
@@ -67716,7 +67730,7 @@ load("paramsToBeSaved", 'ctryNumberDouble')
    FI_rhorp       = 0.90;
    FI_rhocg        = 0.90;
    FI_rhoig        = 0.90;
-   FI_rhot        = 0.90;
+   FI_rhotr       = 0.90;
    FI_rhotauc     = 0.90;
    FI_rhotauk     = 0.90;
    FI_rhotaun     = 0.90;
@@ -67816,7 +67830,7 @@ load("paramsToBeSaved", 'ctryNumberDouble')
    FR_rhorp       = 0.90;
    FR_rhocg        = 0.90;
    FR_rhoig        = 0.90;
-   FR_rhot        = 0.90;
+   FR_rhotr       = 0.90;
    FR_rhotauc     = 0.90;
    FR_rhotauk     = 0.90;
    FR_rhotaun     = 0.90;
@@ -67916,7 +67930,7 @@ load("paramsToBeSaved", 'ctryNumberDouble')
    GR_rhorp       = 0.90;
    GR_rhocg        = 0.90;
    GR_rhoig        = 0.90;
-   GR_rhot        = 0.90;
+   GR_rhotr       = 0.90;
    GR_rhotauc     = 0.90;
    GR_rhotauk     = 0.90;
    GR_rhotaun     = 0.90;
@@ -68016,7 +68030,7 @@ load("paramsToBeSaved", 'ctryNumberDouble')
    IT_rhorp       = 0.90;
    IT_rhocg        = 0.90;
    IT_rhoig        = 0.90;
-   IT_rhot        = 0.90;
+   IT_rhotr       = 0.90;
    IT_rhotauc     = 0.90;
    IT_rhotauk     = 0.90;
    IT_rhotaun     = 0.90;
@@ -68116,7 +68130,7 @@ load("paramsToBeSaved", 'ctryNumberDouble')
    NL_rhorp       = 0.90;
    NL_rhocg        = 0.90;
    NL_rhoig        = 0.90;
-   NL_rhot        = 0.90;
+   NL_rhotr       = 0.90;
    NL_rhotauc     = 0.90;
    NL_rhotauk     = 0.90;
    NL_rhotaun     = 0.90;
@@ -68216,7 +68230,7 @@ load("paramsToBeSaved", 'ctryNumberDouble')
    PT_rhorp       = 0.90;
    PT_rhocg        = 0.90;
    PT_rhoig        = 0.90;
-   PT_rhot        = 0.90;
+   PT_rhotr       = 0.90;
    PT_rhotauc     = 0.90;
    PT_rhotauk     = 0.90;
    PT_rhotaun     = 0.90;
@@ -68321,7 +68335,7 @@ load("paramsToBeSaved", 'ctryNumberDouble')
    DE_rhorp       = 0.90;
    DE_rhocg        = 0.90;
    DE_rhoig        = 0.90;
-   DE_rhot        = 0.90;
+   DE_rhotr       = 0.90;
    DE_rhotauc     = 0.90;
    DE_rhotauk     = 0.90;
    DE_rhotaun     = 0.90;
@@ -68426,7 +68440,7 @@ load("paramsToBeSaved", 'ctryNumberDouble')
    RU_rhorp       = 0.90;
    RU_rhocg        = 0.90;
    RU_rhoig        = 0.90;
-   RU_rhot        = 0.90;
+   RU_rhotr       = 0.90;
    RU_rhotauc     = 0.90;
    RU_rhotauk     = 0.90;
    RU_rhotaun     = 0.90;
@@ -68531,7 +68545,7 @@ load("paramsToBeSaved", 'ctryNumberDouble')
    RW_rhorp       = 0.90;
    RW_rhocg        = 0.90;
    RW_rhoig        = 0.90;
-   RW_rhot        = 0.90;
+   RW_rhotr       = 0.90;
    RW_rhotauc     = 0.90;
    RW_rhotauk     = 0.90;
    RW_rhotaun     = 0.90;
@@ -68634,7 +68648,7 @@ load("paramsToBeSaved", 'ctryNumberDouble')
    US_rhorp       = 0.90;
    US_rhocg        = 0.90;
    US_rhoig        = 0.90;
-   US_rhot        = 0.90;
+   US_rhotr       = 0.90;
    US_rhotauc     = 0.90;
    US_rhotauk     = 0.90;
    US_rhotaun     = 0.90;
