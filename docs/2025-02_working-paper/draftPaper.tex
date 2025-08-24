@@ -78,8 +78,12 @@
 \fancyhead[C]{} % Custom header text
 \renewcommand{\headrulewidth}{0pt}
 
-\fancyfoot[RO,LE]{\thepage} % Custom footer text
+\fancyfoot[R]{\thepage} % Custom footer text
 \usepackage{natbib}
+
+% Set up equation numbering to use section numbers throughout the document
+\numberwithin{equation}{section}
+
 \newcommand{\CountryCodes}{%
 RA = Rest of euro area; AT = Austria; BE = Belgium; ES = Spain; FI = Finland; FR = France; GR = Greece; IT = Italy; NL = Netherlands; PT = Portugal; DE = Germany; RU = Non-euro area EU; RW = Rest of world; US = United States%
 }
@@ -99,15 +103,15 @@ The import bias parameter must be specified for all trading partners except one,
 %----------------------------------------------------------------------------------------
 %       TITLE SECTION
 %----------------------------------------------------------------------------------------
-\title{\vspace{-15mm}\fontsize{20pt}{18pt}\selectfont\textbf{The EAGLE model with individual euro area countries: a framework for fiscal policy analysis}} % Article title
+\title{\texorpdfstring{\vspace{-15mm}\fontsize{20pt}{18pt}\selectfont\textbf{The EAGLE model with individual euro area countries: a framework for fiscal policy analysis}}{The EAGLE model with individual euro area countries: a framework for fiscal policy analysis}} % Article title
 \author{
 \large
-{\textsc{Krzysztof~Ba\'nkowski\footnote{European Central Bank, Fiscal Policies Division - DG Economic Developements, Sonnemannstraße 20, 60314 Frankfurt am Main, E-Mail: krzysztof.bankowski@ecb.europa.eu}}}\\[2mm]
-{\textsc{Emilė Petravičiūtė\footnote{European Central Bank, Fiscal Policies Division - DG Economic Developements, Sonnemannstraße 20, 60314 Frankfurt am Main, E-Mail: emile.petraviciute@ecb.europa.eu}}}\\[2mm]
+{\textsc{\texorpdfstring{Krzysztof~Ba\'nkowski}{Krzysztof Bankowski}\footnote{European Central Bank, Fiscal Policies Division - DG Economic Developements, Sonnemannstraße 20, 60314 Frankfurt am Main, E-Mail: krzysztof.bankowski@ecb.europa.eu}}}\\[2mm]
+{\textsc{\texorpdfstring{Emilė Petravičiūtė}{Emile Petraviciute}\footnote{European Central Bank, Fiscal Policies Division - DG Economic Developements, Sonnemannstraße 20, 60314 Frankfurt am Main, E-Mail: emile.petraviciute@ecb.europa.eu}}}\\[2mm]
 %\thanks{A thank you or further information}\\ % Your name
 %\normalsize \href{mailto:marco.torres.810@gmail.com}{marco.torres.810@gmail.com}\\[2mm] % Your email address
 }
-\date{\today}
+\date{August 2025}
 
 %----------------------------------------------------------------------------------------
 \begin{document}
@@ -122,23 +126,24 @@ The import bias parameter must be specified for all trading partners except one,
 \begin{abstract}
     This paper presents an extension of the EAGLE (Euro Area and Global Economy) model that singles out 10 early-adopting euro area countries, enhancing the model’s capacity to analyze fiscal policy dynamics and cross-country spillovers. The extended framework incorporates meaningful fiscal policy channels, most notably, government consumption and investment, while carefully calibrating trade relationships using input-output tables to capture the heterogeneous import content across countries and demand components. Model simulations demonstrate that union-wide fiscal expansions generate significant multiplier effects, with government consumption showing stronger immediate impact than government investment. When applied to evaluate the Next Generation EU (NGEU) program, the model projects a peak increase in euro area GDP of 0.5\% relative to baseline, with effects persisting beyond the program's implementation period. The program's impact is concentrated in primary beneficiary countries like Spain and Italy as cross-border spillover effects through trade channels remain limited. The analysis highlights the model's utility in assessing complex policy initiatives within the Economic and Monetary Union while accounting for country-specific characteristics and interdependencies.
 
-    \bigskip{}
+    \bigskip
 
     \noindent\textbf{Keywords:} EAGLE model, Fiscal policy, Euro area, Cross-country spillovers, Next Generation EU
 
-    \bigskip{}
+    \bigskip
 
     \noindent\textbf{JEL Codes:} E62, F41, F42, F45
 
-    \bigskip{}
+    \bigskip
     
-    \clearpage{}
+    \clearpage
     
-    \pagebreak{}    
+    \pagebreak    
 
 \end{abstract}
 
 \startcontents 
+\pdfbookmark[1]{Table of content}{toc}
 \printcontents{ }{1}{\section*{Table of content}}
 
 \thispagestyle{fancy} % All pages have headers and footers
@@ -474,9 +479,9 @@ The countries and regions incorporated in the model exhibit substantial heteroge
     \end{table}
 \end{landscape}
 
-As part of the calibration, we also set country-specific steady-state values for key government-related variables (see Table \ref{tab:gov_ratios}). Government spending-to-GDP ratios are used to capture the relative size of the public sector across countries and regions, with illustrative data presented in Figure \ref{figApp:govSpending}. Tax rates are computed as average implicit rates, defined as the ratio of government revenues from a given tax category to its corresponding macroeconomic base, thereby reflecting the effective tax burden (see Figure \ref{figApp:govTaxRates}). Finally, each country or region is assigned a target debt-to-GDP ratio, calibrated on the basis of historical averages over the sample period. The underlying fiscal data are drawn from the Government Finance Statistics.
+As part of the calibration, we also set country\-specific steady-state values for key government-related variables (see Table \ref{tab:gov_ratios}). Government spending-to-GDP ratios are used to capture the relative size of the public sector across countries and regions, with illustrative data presented in Figure \ref{figApp:govSpending}. Tax rates are computed as average implicit rates, defined as the ratio of government revenues from a given tax category to its corresponding macro\-economic base, thereby reflecting the effective tax burden (see Figure \ref{figApp:govTaxRates}). Finally, each country or region is assigned a target debt-to-GDP ratio, calibrated on the basis of historical averages over the sample period. The underlying fiscal data are drawn from the Government Finance Statistics.
 
-The model captures significant cross-country variation in government size and tax structures (see values in Table \ref{tab:gov_ratios}). Government consumption, for instance, exceeds 24\% of GDP in Finland, France, and the Netherlands, reflecting relatively large public sectors, whereas it falls below 17\% in the United States and the Rest of the World. Government investment also varies markedly, ranging from around 2.3\% of GDP in Belgium to nearly 8\% in the Rest of the World. Transfers display even greater dispersion, with values exceeding 16\% in Austria but turning negative in the United States. Tax policy parameters reveal pronounced differences as well. Social security contributions paid by employers are highest in France and Italy—exceeding 30\% in the latter—while remaining below 8\% in the United States. Similarly, labor and consumption tax rates are considerably higher in most European economies than in non-European ones. Finally, country-specific steady-state debt-to-GDP ratios reflect varying average levels of government indebtedness, ranging from low-debt countries such as Germany (60\% of GDP) to high-debt cases such as Greece (120\% of GDP).
+The model captures significant cross-country variation in government size and tax structures (see values in Table \ref{tab:gov_ratios}). Government consumption, for instance, exceeds 24\% of GDP in Finland, France, and the Netherlands, reflecting relatively large public sectors, whereas it falls below 17\% in the United States and the Rest of the World. Government investment also varies markedly, ranging from around 2.3\% of GDP in Belgium to nearly 8\% in the Rest of the World. Transfers display even greater dispersion, with values exceeding 16\% in Austria but turning negative in the United States. Tax policy parameters reveal pronounced differences as well. Social security contributions paid by employers are highest in France and Italy—exceeding 30\% in the latter—while remaining below 8\% in the United States. Similarly, labor and consumption tax rates are considerably higher in most European economies than in non-European ones. Finally, country\-specific steady-state debt-to-GDP ratios reflect varying average levels of government indebtedness, ranging from low-debt countries such as Germany (60\% of GDP) to high-debt cases such as Greece (120\% of GDP).
 
 \begin{landscape}
     \begin{table}[htbp]
@@ -583,7 +588,7 @@ In calibrating substitution elasticities in the private sector, we adopt the sta
 \input{tables/monetaryPolicy.tex}
 \begin{minipage}{0.9\textwidth}
     \vspace{0.5em}
-    \textit{Note}: \CountryCodesForMP.\\
+    \textit{Note}: \CountryCodesForMP.
 \end{minipage}
 \end{table}        
 
@@ -620,7 +625,7 @@ While union-wide fiscal shocks serve as a useful validation of the model, simila
 \section{NGEU evaluation as a policy application}
 
 % 7(a) NGEU description
-As a key policy application within the extended EAGLE framework in this paper, we assess the macroeconomic effects of government investment in the euro area financed through the Next Generation EU (NGEU) program. NGEU represents a landmark initiative in European economic policy, particularly for the euro area. Introduced in response to the COVID-19 pandemic, it constitutes a \euro750 billion recovery package, combining grants and loans, with implementation spanning from 2021 to 2026 (see \citet{Bankowskietal2022ecbOP}). The program's primary objectives include mitigating the immediate economic fallout from the pandemic, supporting the green and digital transitions, and fostering sustainable growth and job creation. Additionally, NGEU aims to reduce economic divergences within the euro area, with larger allocations directed toward countries with lower pre-pandemic GDP per capita. The program operates through three main channels: lowering risk premia, providing fiscal stimulus, and facilitating structural reforms. An overwhelming share of the fiscal stimulus takes the form of government investment, which, given its scale, is expected to generate substantial positive effects for both the euro area as a whole and its individual member states. These effects are likely to be particularly pronounced in the program's main beneficiaries, Italy and Spain, which receive the largest nominal allocations (see Figure \ref{fig4}).
+As a key policy application within the extended EAGLE framework in this paper, we assess the macroeconomic effects of government investment in the euro area financed through the Next Generation EU (NGEU) program. NGEU represents a landmark initiative in European economic policy, particularly for the euro area. Introduced in response to the COVID-19 pandemic, it constitutes a \texorpdfstring{\euro}{EUR}750 billion recovery package, combining grants and loans, with implementation spanning from 2021 to 2026 (see \citet{Bankowskietal2022ecbOP}). The program's primary objectives include mitigating the immediate economic fallout from the pandemic, supporting the green and digital transitions, and fostering sustainable growth and job creation. Additionally, NGEU aims to reduce economic divergences within the euro area, with larger allocations directed toward countries with lower pre-pandemic GDP per capita. The program operates through three main channels: lowering risk premia, providing fiscal stimulus, and facilitating structural reforms. An overwhelming share of the fiscal stimulus takes the form of government investment, which, given its scale, is expected to generate substantial positive effects for both the euro area as a whole and its individual member states. These effects are likely to be particularly pronounced in the program's main beneficiaries, Italy and Spain, which receive the largest nominal allocations (see Figure \ref{fig4}).
 \begin{figure}[H]
     \centering
     \caption{NGEU-financed investment in the euro area (\% of the euro area GDP, 2021-26). \label{fig4}}
@@ -677,15 +682,16 @@ Technical Appendix
 \baselineskip=0.85\baselineskip
 
 \startcontents 
-\printcontents{ }{1}{\section*{Content}}
+\printcontents{ }{1}{\texorpdfstring{\section*{Content}}{Content}}
 
 \renewcommand{\thesection}{\Alph{section}} 
 \renewcommand{\thefigure}{\Alph{section}.\arabic{figure}} 
 \renewcommand{\thetable}{\Alph{section}.\arabic{table}}
 \setcounter{figure}{0} 
 \setcounter{table}{0} 
-\setcounter{equation}{0} 
-\renewcommand{\theequation}{\thesection.\arabic{equation}} 
+% Comment out equation renumbering to avoid hyperref conflicts
+% \setcounter{equation}{0} 
+% \renewcommand{\theequation}{\thesection.\arabic{equation}} 
 
 \section{Calibration Data}
 \begin{landscape}
@@ -693,13 +699,14 @@ Technical Appendix
 \caption{Data sources}
 \label{tab:data_sources}
 \centering
-\scriptsize
+\tiny
+\renewcommand{\arraystretch}{0.75}
 \makebox[\linewidth]{%
 \begin{tabular}{
-  >{\raggedright\arraybackslash}p{5cm}  % Item
-  >{\raggedright\arraybackslash}p{6.5cm}    % Source
-  >{\raggedright\arraybackslash}p{7cm}    % Code
-  >{\raggedright\arraybackslash}p{6cm}    % Notes
+  >{\raggedright\arraybackslash}p{4.8cm}  % Item
+  >{\raggedright\arraybackslash}p{6.0cm}    % Source
+  >{\raggedright\arraybackslash}p{6.5cm}    % Code
+  >{\raggedright\arraybackslash}p{5.5cm}    % Notes
 }
 \toprule
 \textbf{Item} & \textbf{Source} & \textbf{Code/Indicator} & \textbf{Notes} \\
@@ -709,18 +716,18 @@ Private consumption & OECD ICIO & & \\ [0.2em]
 Government consumption & OECD ICIO & & \\ [0.2em] 
 Private Investment & OECD ICIO & & \\ [0.2em] 
 Government Investment & \makecell[l]{OECD ICIO} &  & 
-\multirow{2}{6cm}{IMF ICSD dataset has now been archived. Input-output tables give total investment; split between public and private using IMF ICSD shares of investment as \% of GDP.} \\ [0.2em]
-& \makecell[l]{IMF ICSD} && \\ [15pt] 
+\multirow{2}{5.5cm}{IMF ICSD dataset has now been archived. Input-output tables give total investment; split between public and private using IMF ICSD shares of investment as \% of GDP.} \\ [0.2em]
+& \makecell[l]{IMF ICSD} && \\ [4pt] 
 
 \textbf{Trade} & & & \\ [0.2em]
 Imports & \makecell[l]{OECD ICIO} &  & 
-\multirow{2}{6cm}{Leontief framework used to calculate direct and indirect imports (Bussiere et al., 2013). Investment split between public/private using IMF ICSD shares. Same import content assumed due to data gaps.} \\ [0.2em] 
-& \makecell[l]{IMF ICSD} &  & \\ [30pt] 
+\multirow{2}{5.5cm}{Leontief framework used to calculate direct and indirect imports (Bussiere et al., 2013). Investment split between public/private using IMF ICSD shares. Same import content assumed due to data gaps.} \\ [0.2em] 
+& \makecell[l]{IMF ICSD} &  & \\ [8pt] 
 Trade Balance & OECD ICIO & & \\ [0.2em]
 
-\textbf{Government revenue and expenditure} & & &  \\ [0.2em]
+\textbf{Government revenue and expenditure} & & &  \\
 Consumption tax rate & \makecell[l]{Revenue: OECD;} & \makecell[l]{CTP.TPS:DSD\_REV\_COMP\_GLOBAL \\(taxes on goods and services)} & 
-\multirow{12}{6cm}{Calculated as tax revenue over base. Data for ES and PT capital and labur tax extracted from SDW due to missing OECD data.} \\ [0.5em]
+\multirow{12}{5.5cm}{Calculated as tax revenue over base. Data for ES and PT capital and labur tax extracted from SDW due to missing OECD data.} \\ [0.3em]
  & \makecell[l]{Base: Final consumption of HH and NPISH} & \makecell[l]{SDD.NAD:DSD\_NAMAIN10} &  \\ [0.5em]
 Labour income tax rate & Revenue: OECD, SDW (For ES \& PT); & CTP.TPS:DSD\_REV\_COMP\_GLOBAL \newline (taxes on income and profits of individuals);  GFS.A.N.XX.W0.S13.S1.N.C.D5.\_Z.\_Z.\_Z.\newline XDC.\_Z.S.V.N.\_T; & \\ [0.5em]
  & \makecell[l]{Base: Wage income (OECD)} & \makecell[l]{SDD.NAD:DSD\_NAMAIN10} &  \\ [0.5em]
@@ -728,13 +735,13 @@ SSC rate (employees) & Revenue: OECD & \makecell[l]{CTP.TPS:DSD\_REV\_COMP\_GLOB
 &Base: Wage income (OECD) &  \makecell[l]{SDD.NAD:DSD\_NAMAIN10} & \\[0.5em]
 SSC rate (employers) & Revenue: OECD & \makecell[l]{CTP.TPS:DSD\_REV\_COMP\_GLOBAL\\(employer SSC)} & \\ [0.5em]
 & Base: Wage income (OECD) & \makecell[l]{SDD.NAD:DSD\_NAMAIN10} & \\ [0.5em]
-Capital tax rate & \makecell[l]{Revenue: OECD, SDW (for ES \& PT)} & \makecell[l]{CTP.TPS:DSD\_REV\_COMP\_GLOBAL; \\ GFS.Q.N.XX.W0.S13.S1.N.C.D91.\_Z.\_Z.\_Z.\\XDC.\_Z.S.V.N.\_T} & \\[35pt]
+Capital tax rate & \makecell[l]{Revenue: OECD, SDW (for ES \& PT)} & \makecell[l]{CTP.TPS:DSD\_REV\_COMP\_GLOBAL; \\ GFS.Q.N.XX.W0.S13.S1.N.C.D91.\_Z.\_Z.\_Z.\\XDC.\_Z.S.V.N.\_T} & \\[6pt]
  & \makecell[l]{Base: Operating surplus (OECD)} & \makecell[l]{SDD.NAD:DSD\_NAMAIN10} & \\ [0.5em]
 Government Transfers & makecell[l]{EU: EUROSTAT} & \makecell[l]{ESTAT:GOV\_10A\_EXP(1.0), item D62\_D632;} & \\ [0.5em]
 & \makecell[l]{RW/US: OECD} & \makecell[l]{SDD.NAD:DSD\_NAAG\_VI (D62S13)} & \\ [0.5em]
-\textbf{Government debt} & & & \\ [0.2em]
+\textbf{Government debt} & & & \\
 Debt-to-GDP ratio & IMF (WEO) & & \\ [0.2em]
-\textbf{Other} & &  & \\ [0.2em]
+\textbf{Other} & &  & \\
 Share of World GDP & IMF & NGDPD.A & \\
 
 \bottomrule
@@ -742,28 +749,29 @@ Share of World GDP & IMF & NGDPD.A & \\
 \end{table}
 \end{landscape}
 
+\newpage
 
-\begin{figure}[H]
+\begin{figure}[p]
     \centering
     \caption{Data for the great ratios. \label{figApp:nationalAccountsData}}
-    \includegraphics[]{figures/placeholder.jpg}
-    \vspace{5mm} \source{EAGLE model simulations.}
+    \includegraphics[width=0.7\textwidth]{figures/placeholder.jpg}
+    \source{EAGLE model simulations.}
     \desc{...}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[p]
     \centering
     \caption{Data for government spending. \label{figApp:govSpending}}
-    \includegraphics[]{figures/placeholder.jpg}
-    \vspace{5mm} \source{EAGLE model simulations.}
+    \includegraphics[width=0.7\textwidth]{figures/placeholder.jpg}
+    \source{EAGLE model simulations.}
     \desc{...}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[p]
     \centering
     \caption{Data for tax rates. \label{figApp:govTaxRates}}
-    \includegraphics[]{figures/placeholder.jpg}
-    \vspace{5mm} \source{EAGLE model simulations.}
+    \includegraphics[width=0.7\textwidth]{figures/placeholder.jpg}
+    \source{EAGLE model simulations.}
     \desc{...}
 \end{figure}
 
@@ -910,5 +918,4 @@ Share of World GDP & IMF & NGDPD.A & \\
 
 
 %----------------------------------------------------------------------------------------
-%\end{multicols}
 \end{document}

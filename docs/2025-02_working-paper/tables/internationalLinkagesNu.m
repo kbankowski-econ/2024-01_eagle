@@ -8,7 +8,7 @@ function internationalLinkagesNu(envi, aStruct, goodType, goodName)
     % Table header
     fprintf(fid, '    \\centering\n');
     fprintf(fid, '    \\caption{International linkages in %s: bias parameters.}\n', goodName);
-    fprintf(fid, '    \\label{tab:linkages_%s}\n', lower(goodType));
+    fprintf(fid, '    \\label{tab:linkagesNu_%s}\n', lower(goodType));
     fprintf(fid, '    \\footnotesize\n');
     fprintf(fid, '    \\renewcommand{\\arraystretch}{1.2}\n');
     fprintf(fid, '    \\begin{tabular}{>{\\raggedright}p{5.5cm}*{14}{>{\\centering\\arraybackslash}p{0.8cm}}}\n');
