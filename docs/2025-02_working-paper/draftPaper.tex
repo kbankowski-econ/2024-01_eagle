@@ -228,10 +228,10 @@ The tradable good $TT_t^s$, in turn, is produced analogously as a CES composite 
     \label{eqTT}
     TT_t^s = \left[\nu_{Ts}^{\frac{1}{\mu_{Ts}}}\left(HT_t^s\right)^{\frac{\mu_{Ts}-1}{\mu_{Ts}}} + \left(1-\nu_{Ts}\right)^{\frac{1}{\mu_{Ts}}}\left(IM_t^s\right)^{\frac{\mu_{Ts}-1}{\mu_{Ts}}}\right]^{\frac{\mu_{Ts}}{\mu_{Ts}-1}}.
 \end{equation}
-Finally, the imported good $IM_t^s$ consists of a bundle of bilateral imports $IM_t^{s,CO}$ (see Eq.~\ref{eqIM}). The parameter $\nu_{Ms}^{H,CO}$ represents the share of imports from country or region $CO$, satisfying $\sum_{CO \neq H} \nu_{Ms}^{H,CO} = 1$, and $\mu_{Ms}$ is the elasticity of substitution between imports from different trading partners:\footnote{The country-specific import weights $\nu_{Ms}^{H,CO}$ are determined as a function of the relative economic size and degree of openness. Accordingly, even if Germany exhibits the same degree of openness to imports from Austria and France, the weight $\nu_{Ms}^{DE,AT}$ is expected to be significantly smaller than $\nu_{Ms}^{DE,FR}$, reflecting the larger size of the French economy.}
+Finally, the imported good $IM_t^s$ consists of a bundle of bilateral imports $IM_t^{s,CO}$ (see Eq.~\ref{eqIM}). The parameter $\nu_{Ms}^{\{H,CO\}}$ represents the share of imports from country or region $CO$, satisfying $\sum_{CO \neq H} \nu_{Ms}^{\{H,CO\}} = 1$, and $\mu_{Ms}$ is the elasticity of substitution between imports from different trading partners:\footnote{The country-specific import weights $\nu_{Ms}^{\{H,CO\}}$ are determined as a function of the relative economic size and degree of openness. Accordingly, even if Germany exhibits the same degree of openness to imports from Austria and France, the weight $\nu_{Ms}^{\{DE,AT\}}$ is expected to be significantly smaller than $\nu_{Ms}^{\{DE,FR\}}$, reflecting the larger size of the French economy.}
 \begin{equation}
     \label{eqIM}
-    IM_t^s = \left[\sum_{CO \neq H} \left(\nu_{Ms}^{H,CO}\right)^{\frac{1}{\mu_{Ms}}} \left(IM_t^{s,CO}\right)^{\frac{\mu_{Ms}-1}{\mu_{Ms}}}\right]^{\frac{\mu_{Ms}}{\mu_{Ms}-1}}.
+    IM_t^s = \left[\sum_{CO \neq H} \left(\nu_{Ms}^{\{H,CO\}}\right)^{\frac{1}{\mu_{Ms}}} \left(IM_t^{s,CO}\right)^{\frac{\mu_{Ms}-1}{\mu_{Ms}}}\right]^{\frac{\mu_{Ms}}{\mu_{Ms}-1}}.
 \end{equation}
 Figure~\ref{finalGoodProduction} offers a detailed schematic representation of the production of a final good of type $s$.\footnote{The CES aggregation framework also implies that the prices of final goods are composite indices of the prices of their underlying components. Specifically, the price of a final good of type $s$, denoted $P_{s,t}$, the price of the tradable component $P_{TTs,t}$, and the price of imported tradable goods $P_{IMs,t}$ are defined as follows:
 \[
@@ -241,9 +241,9 @@ P_{s,t} = \left[\nu_s\left(P_{TTs,t}\right)^{1-\mu_s} + \left(1-\nu_s\right)\lef
 P_{TTs,t} = \left[\nu_{Ts}\left(P_{HT,t}\right)^{1-\mu_{Ts}} + \left(1-\nu_{Ts}\right)\left(P_{IMs,t}\right)^{1-\mu_{Ts}}\right]^{\frac{1}{1-\mu_{Ts}}},
 \]
 \[
-P_{IMs,t} = \left[\sum_{CO \neq H} \nu_{Ms}^{H,CO}\left(P_{IM,t}^{CO}\right)^{1-\mu_{Ms}}\right]^{\frac{1}{1-\mu_{Ms}}}.
+P_{IMs,t} = \left[\sum_{CO \neq H} \nu_{Ms}^{\{H,CO\}}\left(P_{IM,t}^{CO}\right)^{1-\mu_{Ms}}\right]^{\frac{1}{1-\mu_{Ms}}}.
 \]
-Here, $\nu_s$, $\nu_{Ts}$, and $\nu_{Ms}^{H,CO}$ are the share parameters governing the aggregation at each respective level, and $\mu_s$, $\mu_{Ts}$, and $\mu_{Ms}$ denote the elasticities of substitution. The price $P_{NT,t}$ corresponds to domestically produced non-tradable goods, $P_{HT,t}$ denotes the price of home-produced tradable goods, and $P_{IM,t}^{CO}$ refers to the price of imports from country or region $CO$. The structure of price aggregation mirrors the quantity aggregation.}
+Here, $\nu_s$, $\nu_{Ts}$, and $\nu_{Ms}^{\{H,CO\}}$ are the share parameters governing the aggregation at each respective level, and $\mu_s$, $\mu_{Ts}$, and $\mu_{Ms}$ denote the elasticities of substitution. The price $P_{NT,t}$ corresponds to domestically produced non-tradable goods, $P_{HT,t}$ denotes the price of home-produced tradable goods, and $P_{IM,t}^{CO}$ refers to the price of imports from country or region $CO$. The structure of price aggregation mirrors the quantity aggregation.}
 
 
 \begin{figure}[H]
@@ -285,7 +285,7 @@ Here, $\nu_s$, $\nu_{Ts}$, and $\nu_{Ms}^{H,CO}$ are the share parameters govern
 \begin{equation} \label{eqResourceConstraint}
     \begin{aligned}
         P_{Y,t} Y_t =\ & P_{C,t} \underbrace{\left(C_t + \Gamma_{v,t}\right)}_{Q_t^{C}} + P_{I,t} \underbrace{\left(I_t + \Gamma_u(u_t) K_t\right)}_{Q_t^{I}} + P_{G_C,t} \underbrace{G_{C,t}}_{Q_t^{G_c}} + P_{G_I,t} \underbrace{G_{I,t}}_{Q_t^{G_i}} \\
-        & + \sum_{CO \neq H} \frac{s^{CO}}{s^H} S_t^{H,CO} P_{X,t}^{H,CO} IM_t^{CO,H} - \sum_{CO \neq H} P_{IM,t}^{H,CO} IM_t^{H,CO}.
+        & + \sum_{CO \neq H} \frac{s^{CO}}{s^H} S_t^{\{H,CO\}} P_{X,t}^{\{H,CO\}} IM_t^{\{CO,H\}} - \sum_{CO \neq H} P_{IM,t}^{\{H,CO\}} IM_t^{\{H,CO\}}.
     \end{aligned}
 \end{equation}
 
@@ -383,15 +383,15 @@ Here, $\nu_s$, $\nu_{Ts}$, and $\nu_{Ms}^{H,CO}$ are the share parameters govern
 \end{figure}
 
 \paragraph{Trade and net foreign assets position} Each country or region in the EAGLE model may experience a mismatch between the value of imported and exported goods, resulting in a trade surplus or deficit. The trade balance in nominal terms is defined as the difference between exports and imports (see Eq.~\ref{eqTradeBalance}):
-\footnote{$S_t^{H,CO}$ in Eq.~\ref{eqTradeBalance} denotes the nominal exchange rate that converts the price $P_{X,t}^{H,CO}$, expressed in the currency of country $CO$, into the currency of country $H$.}
+\footnote{$S_t^{\{H,CO\}}$ in Eq.~\ref{eqTradeBalance} denotes the nominal exchange rate that converts the price $P_{X,t}^{\{H,CO\}}$, expressed in the currency of country $CO$, into the currency of country $H$.}
 \begin{equation} \label{eqTradeBalance}
-    TB_t \equiv \sum_{CO \neq H} S_t^{H,CO} P_{X,t}^{H,CO} \underbrace{\frac{s^{CO}}{s^H} IM_t^{CO,H}}_{\equiv X_t^{H,CO}} - \sum_{CO \neq H} P_{IM,t}^{H,CO} IM_t^{H,CO}.
+    TB_t \equiv \sum_{CO \neq H} S_t^{\{H,CO\}} P_{X,t}^{\{H,CO\}} \underbrace{\frac{s^{CO}}{s^H} IM_t^{\{CO,H\}}}_{\equiv X_t^{\{H,CO\}}} - \sum_{CO \neq H} P_{IM,t}^{\{H,CO\}} IM_t^{\{H,CO\}}.
 \end{equation}
 From Eq.~\ref{eqTradeBalance}, it follows that exports from country $H$ to country $CO$ ($X_t^{H,CO}$) correspond to the imports of country $CO$ from $H$, adjusted by the ratio of their economic sizes $\left(\frac{s^{CO}}{s^H}\right)$. If country $CO$ is significantly larger than country $H$, even minor changes in its bilateral imports from $H$ can generate substantial fluctuations in $H$'s exports. This feature presents a major challenge for calibrating and solving the steady state of the model when incorporating countries of vastly different sizes (see Section~\ref{sec:model_calibration} for further discussion).
 
 Trade imbalances between countries are reflected in their net foreign asset (NFA) positions, which materialize through international bond holdings. In the model, internationally traded bonds are denominated in the currency of the core country—the United States—and thus in U.S. dollars. Under this setup, a country's NFA position evolves according to Eq.~\ref{eqNetForeignAssetPosition}:
 \begin{equation} \label{eqNetForeignAssetPosition}
-    R_t^{*-1} B_{t+1}^* = B_t^* + \frac{TB_t^{\mathrm{CO}}}{S_t^{\mathrm{CO},\mathrm{US}}},
+    R_t^{*-1} B_{t+1}^* = B_t^* + \frac{TB_t^{\mathrm{CO}}}{S_t^{\{\mathrm{CO},\mathrm{US}\}}},
 \end{equation}
 where $R_t^*$ denotes the gross return on the internationally traded bond $B_{t+1}^*$, and $S_t^{\mathrm{CO},\mathrm{US}}$ represents the nominal exchange rate, defined as the price of one U.S. dollar in terms of the currency of country or region $\mathrm{CO}$. Finally, the assumption of zero net supply of international bonds implies the global market clearing condition $\sum_{\mathrm{CO}} s^{\mathrm{CO}} B_t^{*\mathrm{CO}} = 0$, with $\sum_{\mathrm{CO}} s^{\mathrm{CO}} = 1$.
 
