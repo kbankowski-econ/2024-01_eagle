@@ -281,7 +281,7 @@ Here, $\nu_s$, $\nu_{Ts}$, and $\nu_{Ms}^{\{H,CO\}}$ are the share parameters go
     \end{minipage}
 \end{figure}
 
-\paragraph{Resource constraint} Countries or regions in the EAGLE model are subject to the following aggregate resource constraint, which can be expressed in nominal terms as shown in Eq.~\ref{eqResourceConstraint}. Total production $Y_t$ is allocated to satisfy the domestic share of final demand from the private sector ($C_t$ and $I_t$) and the general government ($G_{C,t}$ and $G_{I,t}$), as well as to meet external demand through exports.\footnote{Some of the production is absorbed by transaction costs and capital utilization costs, represented by $\Gamma_{v,t}$ and $\Gamma_u(u_t)K_t$, respectively.} Figure~\ref{fig:AggResourceConstraint} provides a schematic representation of the creation and utilization of resources within a country or region in the EAGLE model.
+\paragraph{Resource constraint} Countries and regions in the EAGLE model satisfy an aggregate resource constraint which, in nominal terms, is given by Eq.~\ref{eqResourceConstraint}. Total production $Y_t$ is allocated to: (i) domestic final demand of the private sector ($C_t$ and $I_t$) and the general government ($G_{C,t}$ and $G_{I,t}$); and (ii) external demand via exports.\footnote{A portion of production is absorbed by transaction costs and capital utilization costs, represented by $\Gamma_{v,t}$ and $\Gamma_u(u_t)K_t$, respectively.} Figure~\ref{fig:AggResourceConstraint} illustrates the creation and use of resources within a country or region in the EAGLE model.
 \begin{equation} \label{eqResourceConstraint}
     \begin{aligned}
         P_{Y,t} Y_t =\ & P_{C,t} \underbrace{\left(C_t + \Gamma_{v,t}\right)}_{Q_t^{C}} + P_{I,t} \underbrace{\left(I_t + \Gamma_u(u_t) K_t\right)}_{Q_t^{I}} + P_{G_C,t} \underbrace{G_{C,t}}_{Q_t^{G_c}} + P_{G_I,t} \underbrace{G_{I,t}}_{Q_t^{G_i}} \\
@@ -293,7 +293,7 @@ Here, $\nu_s$, $\nu_{Ts}$, and $\nu_{Ms}^{\{H,CO\}}$ are the share parameters go
 
 \begin{figure}[H]
     \centering
-    \caption{Production and utilization of resources within a country or region in the EAGLE model.
+\caption{Production and use of resources within a country or region in the EAGLE model.
     \label{fig:AggResourceConstraint}}
     \begin{tikzpicture}[
         node distance=0.8cm and 1.2cm, % tighter horizontal and vertical distances
@@ -387,13 +387,13 @@ Here, $\nu_s$, $\nu_{Ts}$, and $\nu_{Ms}^{\{H,CO\}}$ are the share parameters go
 \begin{equation} \label{eqTradeBalance}
     TB_t \equiv \sum_{CO \neq H} S_t^{\{H,CO\}} P_{X,t}^{\{H,CO\}} \underbrace{\frac{s^{CO}}{s^H} IM_t^{\{CO,H\}}}_{\equiv X_t^{\{H,CO\}}} - \sum_{CO \neq H} P_{IM,t}^{\{H,CO\}} IM_t^{\{H,CO\}}.
 \end{equation}
-From Eq.~\ref{eqTradeBalance}, it follows that exports from country $H$ to country $CO$ ($X_t^{H,CO}$) correspond to the imports of country $CO$ from $H$, adjusted by the ratio of their economic sizes $\left(\frac{s^{CO}}{s^H}\right)$. If country $CO$ is significantly larger than country $H$, even minor changes in its bilateral imports from $H$ can generate substantial fluctuations in $H$'s exports. This feature presents a major challenge for calibrating and solving the steady state of the model when incorporating countries of vastly different sizes (see Section~\ref{sec:model_calibration} for further discussion).
+From Eq.~\ref{eqTradeBalance}, it follows that exports from country $H$ to country $CO$ ($X_t^{\{H,CO\}}$) correspond to the imports of country $CO$ from $H$, adjusted by the ratio of their economic sizes $\left(\frac{s^{CO}}{s^H}\right)$. If country $CO$ is significantly larger than country $H$, even minor changes in its bilateral imports from $H$ can generate substantial fluctuations in $H$'s exports. This feature presents a major challenge for calibrating and solving the steady state of the model when incorporating countries of vastly different sizes (see Section~\ref{sec:model_calibration} for further discussion).
 
 Trade imbalances between countries are reflected in their net foreign asset (NFA) positions, which materialize through international bond holdings. In the model, internationally traded bonds are denominated in the currency of the core country—the United States—and thus in U.S. dollars. Under this setup, a country's NFA position evolves according to Eq.~\ref{eqNetForeignAssetPosition}:
 \begin{equation} \label{eqNetForeignAssetPosition}
     R_t^{*-1} B_{t+1}^* = B_t^* + \frac{TB_t^{\mathrm{CO}}}{S_t^{\{\mathrm{CO},\mathrm{US}\}}},
 \end{equation}
-where $R_t^*$ denotes the gross return on the internationally traded bond $B_{t+1}^*$, and $S_t^{\mathrm{CO},\mathrm{US}}$ represents the nominal exchange rate, defined as the price of one U.S. dollar in terms of the currency of country or region $\mathrm{CO}$. Finally, the assumption of zero net supply of international bonds implies the global market clearing condition $\sum_{\mathrm{CO}} s^{\mathrm{CO}} B_t^{*\mathrm{CO}} = 0$, with $\sum_{\mathrm{CO}} s^{\mathrm{CO}} = 1$.
+where $R_t^*$ denotes the gross return on the internationally traded bond $B_{t+1}^*$, and $S_t^{\{\mathrm{CO},\mathrm{US}\}}$ represents the nominal exchange rate, defined as the price of one U.S. dollar in terms of the currency of country or region $\mathrm{CO}$. Finally, the assumption of zero net supply of international bonds implies the global market clearing condition $\sum_{\mathrm{CO}} s^{\mathrm{CO}} B_t^{*\mathrm{CO}} = 0$, with $\sum_{\mathrm{CO}} s^{\mathrm{CO}} = 1$.
 
 \paragraph{Euro area aggregation} As the euro area is composed of ten individual countries and a residual region, each modeled as an open economy, it is necessary to construct aggregate indicators for the monetary union. In particular, aggregation is required for euro area-wide output $(Y_t^{EA})$ and inflation $(\Pi_t^{EA,4})$, as defined in Equations~\ref{eqEAoutput} and~\ref{eqEAinflation}, respectively. The set of countries and the residual region constituting the euro area is denoted by \(\mathcal{I}^{EA} = \{ \text{AT}, \text{BE}, \text{FI}, \text{FR}, \text{DE}, \text{GR}, \text{IT}, \text{NL}, \text{PT}, \text{ES}, \text{RA} \}\), where \(s^i\) represents the relative size of country or region \(i\).
 
