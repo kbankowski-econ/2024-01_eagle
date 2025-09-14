@@ -100,6 +100,29 @@ The import bias parameter must be specified for all trading partners except one,
 % Define the path as a variable at the beginning of your document
 \input{draftPaper_localBibliographyPath.tex}
 
+% -----------------------------------------------------------------------------
+% Notation conventions (variables and indices)
+% -----------------------------------------------------------------------------
+% Time is indexed by t. Country/region indices are H (home) and CO (partner).
+% Unless otherwise stated, the following conventions apply throughout the paper:
+%
+% • Quantities (volumes) carry the sector/type index as a superscript.
+%   Examples: Q_t^s, TT_t^s, NT_t^s, HT_t^s, IM_t^{s,CO}.
+%
+% • Prices carry the sector/type index as a subscript (for both final and
+%   intermediate sectors), with the time index t remaining in subscript.
+%   Examples: P_{C,t}, P_{I,t}, P_{G_c,t}, P_{G_i,t}, P_{TTs,t}, P_{NT,t},
+%   P_{HT,t}, P_{IMs,t}.
+%   When prices are bilateral, country indices are grouped in braces as
+%   P_{X,t}^{\{H,CO\}} or P_{IMs,t}^{\{H,CO\}}.
+%
+% • For bilateral quantities, we analogously group country indices in braces
+%   (e.g., IM_t^{s,\{H,CO\}} or X_t^{\{H,CO\}}) to emphasize the ordered pair.
+%
+% These conventions are adopted to keep a visual distinction between quantities
+% (superscript sector/type) and prices (subscript sector/type), while keeping
+% time subscripts uniform across variables. They are consistent with Clancy et al. (2016)
+
 %----------------------------------------------------------------------------------------
 %       TITLE SECTION
 %----------------------------------------------------------------------------------------
