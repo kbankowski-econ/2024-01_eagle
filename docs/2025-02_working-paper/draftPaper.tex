@@ -420,10 +420,10 @@ where $R_t^*$ denotes the gross return on the internationally traded bond $B_{t+
 \end{equation}
 
 \paragraph{Fiscal and monetary policy rules} 
-Regarding the general government specification, the budget encompasses multiple tax and expenditure instruments. 
-With the possibility to issue bonds, governments are not required to balance the budget in each period. 
-Following the extension by \citet{Clancyetal2016}, both government consumption and investment play a meaningful role in the model. 
-Specifically, government consumption exhibits complementarity with private consumption, while government investment contributes to the stock of productive capital, thereby enhancing the production capacity of the private sector.
+The government budget in the model encompasses multiple tax and expenditure instruments. 
+With the possibility of issuing bonds, governments are not required to balance the budget in each period. 
+Following the extension by \citet{Clancyetal2016}, both government consumption and investment play economically meaningful roles in the model. 
+Government consumption exhibits complementarity with private consumption, while government investment contributes to the stock of productive capital, thereby enhancing the production capacity of the private sector.
 \footnote{
     The complementarity between government and private consumption is introduced through the specification of a composite good consumed by households, following the approach of \citet{Coenen-et-al_AER_2012}. 
     Specifically, the composite consumption good $\tilde{C}_t$ is modeled as a CES aggregate of final private consumption and final government consumption goods: $\tilde{C}_t = \left[\nu_{\text{CCES}}^{\frac{1}{\mu_{\text{CCES}}}}\left(C_t\right)^{\frac{\mu_{\text{CCES}}-1}{\mu_{\text{CCES}}}} + \left(1-\nu_{\text{CCES}}\right)^{\frac{1}{\mu_{\text{CCES}}}}\left(G_{C,t}\right)^{\frac{\mu_{\text{CCES}}-1}{\mu_{\text{CCES}}}}\right]^{\frac{\mu_{\text{CCES}}}{\mu_{\text{CCES}}-1}}$, where $\nu_{\text{CCES}}$ denotes the share parameter, and $\mu_{\text{CCES}}$ represents the elasticity of substitution between the two component goods.
@@ -463,20 +463,20 @@ Specifically, government consumption exhibits complementarity with private consu
 % (10) DE_ty = DE_t/(DE_pybar*DE_ybar); > DE_t/(DE_pybar*DE_ybar) = DE_phitb*(DE_b/(DE_pybar*DE_ybar)-DE_bytarget);
 
 In our version of the EAGLE model, the government is equipped with ten fiscal instruments. 
-Seven of these operate on the revenue side of the budget: the consumption tax rate, $\tau_t^C$; the wage tax rate, $\tau_t^N$; the social contribution rate paid by employees, $\tau_t^{Wh}$; the social contribution rate paid by employers, $\tau_t^{Wf}$; the tax rate on capital returns, $\tau_t^k$; the tax rate on bond returns, $\tau_t^b$; and lump-sum taxes, $T_t$.
- The remaining three instruments are on the expenditure side of the budget: government consumption, $G_{C,t}$; government investment, $G_{I,t}$; and government transfers, $TR_t$.
+Seven of these operate on the revenue side of the budget: the consumption tax rate, $\tau_t^C$; the wage tax rate, $\tau_t^N$; the social contribution rate paid by employees, $\tau_t^{Wh}$; the social contribution rate paid by employers, $\tau_t^{Wf}$; the tax rate on capital returns, $\tau_t^k$; the tax rate on bond returns, $\tau_t^d$; and lump-sum taxes, $T_t$.
+ The remaining three instruments operate on the expenditure side of the budget: government consumption, $G_{C,t}$; government investment, $G_{I,t}$; and government transfers, $TR_t$.
 
 For all fiscal instruments except for lump-sum taxes, we assume a fiscal rule of the following form:
 \begin{equation}
     \label{eqFiscalRule}
     X_t = (1-\rho_X) \bar{X} + \rho_X X_{t-1} + \varepsilon_{X,t},
 \end{equation}
-where \(X \in \left\{ \tau_t^C, \tau_t^N, \tau_t^{Wh}, \tau_t^{Wf}, \tau_t^k, \tau_t^b, \frac{P_{G_C,t} G_{C,t}}{\overline{P_Y Y}}, \frac{P_{G_I,t} G_{I,t}}{\overline{P_Y Y}}, \frac{TR_t}{\overline{P_Y Y}} \right\}\). 
+where \(X \in \left\{ \tau_t^C, \tau_t^N, \tau_t^{Wh}, \tau_t^{Wf}, \tau_t^k, \tau_t^d, \frac{P_{G_C,t} G_{C,t}}{\overline{P_Y Y}}, \frac{P_{G_I,t} G_{I,t}}{\overline{P_Y Y}}, \frac{TR_t}{\overline{P_Y Y}} \right\}\). 
 For expenditure instruments, the fiscal rule in Eq.~\ref{eqFiscalRule} operates on nominal ratios relative to steady-state nominal GDP. 
-Here, $\bar{X}$ denotes the long-run target for the fiscal instrument, $\rho_X$ is the smoothing parameter, and $\varepsilon_{X,t}$ represents an i.i.d. fiscal shock specific to the instrument.
+Here, $\bar{X}$ denotes the long-run target for the fiscal instrument, $\rho_X$ is the smoothing parameter, and $\varepsilon_{X,t}$ represents an independently and identically distributed (i.i.d.) fiscal shock specific to the instrument.
 
-The fiscal rule governing lump-sum taxes is designed to ensure that government debt converges towards a long-run target level, $\overline{B_Y}$, which is calibrated. 
-Stability of the debt stock is achieved through a gradual adjustment of lump-sum taxes relative to output, with the speed of adjustment governed by the parameter $\phi_{\text{B}_{\text{Y}}}$, as specified in Eq.~\ref{eqDebtRule}:
+The fiscal rule governing lump-sum taxes is designed to ensure that government debt converges towards a calibrated long-run target level, $\overline{B_Y}$. 
+Debt stock stability is achieved through a gradual adjustment of lump-sum taxes relative to output, with the speed of adjustment governed by the parameter $\phi_{\text{B}_{\text{Y}}}$, as specified in Eq.~\ref{eqDebtRule}:
 \begin{equation}
     \label{eqDebtRule}
     \frac{T_t}{\overline{P_Y Y}} = \phi_{\text{B}_{\text{Y}}} \left( \frac{B_t}{\overline{P_Y Y}} - \overline{B_Y} \right).
@@ -494,7 +494,7 @@ Stability of the debt stock is achieved through a gradual adjustment of lump-sum
 % DE_r^4-1 = EA_phirr*(DE_r(-1)^4-1)+(1-EA_phirr)*(DE_rrstar^4*DE_pi4target-1+EA_phirpi*(EA_pic4-DE_pi4target))	+EA_phirgy*(EA_ygrowth-1)+EA_epsr;
 % The above rules fortunately coincide with what is in the EM paper.
 
-Monetary authorities in the model conduct policy according to a Taylor-type interest rate rule, specified in terms of annual CPI inflation, $\Pi_{C,t}^{\mathrm{CO},4}$ \,($\Pi_{C,t}^{\mathrm{CO},4} \equiv P_{C,t}^{\mathrm{CO}} / P_{C,t-4}^{\mathrm{CO}}$), and quarterly output growth, $\mathrm{Ygr}_t^{\mathrm{CO}}$ \,($\mathrm{Ygr}_t^{\mathrm{CO}} \equiv Y_t^{\mathrm{CO}} / Y_{t-1}^{\mathrm{CO}}$), as formalized in Eq.~\ref{eqPolicyRule}:
+Monetary authorities in the model conduct policy according to a Taylor-type interest rate rule, specified in terms of annual CPI inflation, $\Pi_{C,t}^{\mathrm{CO},4} \equiv P_{C,t}^{\mathrm{CO}} / P_{C,t-4}^{\mathrm{CO}}$, and quarterly output growth, $\mathrm{Ygr}_t^{\mathrm{CO}} \equiv Y_t^{\mathrm{CO}} / Y_{t-1}^{\mathrm{CO}}$, as formalized in Eq.~\ref{eqPolicyRule}:
 \begin{equation} \label{eqPolicyRule}
     \begin{aligned}
     \left(R_t^{\mathrm{CO}}\right)^4 =\ & \phi_{R}^{\mathrm{CO}} \left(R_{t-1}^{\mathrm{CO}}\right)^4 
@@ -504,9 +504,8 @@ Monetary authorities in the model conduct policy according to a Taylor-type inte
     + \varepsilon_{R,t}^{\mathrm{CO}}.
     \end{aligned}
 \end{equation}
-
-Here, $\left(\bar{R}^{\mathrm{CO}}\right)^4 = \beta^{-4} \bar{\Pi}^{\mathrm{CO},4}$ denotes the equilibrium nominal interest rate in country or region $\mathrm{CO}$, $\bar{\Pi}^{\mathrm{CO},4}$ is the monetary authority's annual inflation target, and $\varepsilon_{R,t}^{\mathrm{CO}}$ represents a serially uncorrelated monetary policy shock. 
-The parameters $\phi_{R}^{\mathrm{CO}}$, $\phi_{\Pi}^{\mathrm{CO}}$, and $\phi_{gY}^{\mathrm{CO}}$ respectively determine the smoothing of the interest rate and the sensitivity to deviations in inflation and output. 
+Here, $\left(\bar{R}^{\mathrm{CO}}\right)^4 = \beta^{-4} \bar{\Pi}^{\mathrm{CO},4}$ denotes the equilibrium nominal interest rate in country or region $\mathrm{CO}$, $\bar{\Pi}^{\mathrm{CO},4}$ is the monetary authority's annual inflation target, and $\varepsilon_{R,t}^{\mathrm{CO}}$ represents an i.i.d. monetary policy shock. 
+The parameters $\phi_{R}^{\mathrm{CO}}$, $\phi_{\Pi}^{\mathrm{CO}}$, and $\phi_{gY}^{\mathrm{CO}}$ govern the degree of interest rate smoothing and the sensitivity to deviations in inflation and output, respectively.
 In the case of the euro area, the same rule applies, but based on union-wide aggregates as defined in Eqs.~\ref{eqEAoutput} and~\ref{eqEAinflation}.
 
 %//NOTE: There seems to be a typo in the EM paper, the annual steady-state nominal interest rate shoudl be a function on annual inflation. This can be seen by looking at the below equations in the moddel.
