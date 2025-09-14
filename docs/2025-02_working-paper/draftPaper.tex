@@ -242,8 +242,6 @@ This paper applies the extended version of the EAGLE model to assess the macroec
 This application complements existing EAGLE-based analyses, specifically \citealp{Bankowskietal2025ecbOP}, by leveraging the detailed country disaggregation.
 This enhanced structure enables the assessment of the program's effects on smaller member states, such as Greece and Portugal, which are among the major beneficiaries of the NGEU.
 
-%//TODO: quote maybe some other papers for the NGEU to avoid the imporession that all come from one author
-
 % (4)
 As in other large-scale DSGE models, our framework features non-Ricardian households and several real and nominal rigidities, including habit formation, adjustment costs on investment and imports, and Calvo-type pricing of intermediate goods and wages with partial indexation.
 Given the substantial scale of the model (approximately 10,000 endogenous variables), we introduce a simplifying assumption relative to the original version by imposing the law of one price on exported goods, whereby firms do not differentiate prices across destinations.
@@ -273,15 +271,26 @@ The tradable good $TT_t^s$, in turn, is produced analogously as a CES composite 
     \label{eqTT}
     TT_t^s = \left[\nu_{Ts}^{\frac{1}{\mu_{Ts}}}\left(HT_t^s\right)^{\frac{\mu_{Ts}-1}{\mu_{Ts}}} + \left(1-\nu_{Ts}\right)^{\frac{1}{\mu_{Ts}}}\left(IM_t^s\right)^{\frac{\mu_{Ts}-1}{\mu_{Ts}}}\right]^{\frac{\mu_{Ts}}{\mu_{Ts}-1}}.
 \end{equation}
-Finally, the imported good $IM_t^s$ consists of a bundle of bilateral imports $IM_t^{s,CO}$ (see Eq.~\ref{eqIM}). The parameter $\nu_{Ms}^{\{H,CO\}}$ represents the share of imports from country or region $CO$, satisfying $\sum_{CO \neq H} \nu_{Ms}^{\{H,CO\}} = 1$, and $\mu_{Ms}$ is the elasticity of substitution between imports from different trading partners:\footnote{The country-specific import weights $\nu_{Ms}^{\{H,CO\}}$ are determined as a function of the relative economic size and degree of openness. Accordingly, even if Germany exhibits the same degree of openness to imports from Austria and France, the weight $\nu_{Ms}^{\{DE,AT\}}$ is expected to be significantly smaller than $\nu_{Ms}^{\{DE,FR\}}$, reflecting the larger size of the French economy.}
+Finally, the imported good $IM_t^s$ consists of a bundle of bilateral imports $IM_t^{s,CO}$ (see Eq.~\ref{eqIM}). The parameter $\nu_{Ms}^{\{H,CO\}}$ represents the share of imports from country or region $CO$, satisfying $\sum_{CO \neq H} \nu_{Ms}^{\{H,CO\}} = 1$, and $\mu_{Ms}$ is the elasticity of substitution between imports from different trading partners.
+\footnote{
+    The country-specific import weights $\nu_{Ms}^{\{H,CO\}}$ are determined as a function of the relative economic size and degree of openness. 
+    Accordingly, even if Germany exhibits the same degree of openness to imports from Austria and France, the weight $\nu_{Ms}^{\{DE,AT\}}$ is expected to be significantly smaller than $\nu_{Ms}^{\{DE,FR\}}$, reflecting the larger size of the French economy.
+}
 \begin{equation}
     \label{eqIM}
     IM_t^s = \left[\sum_{CO \neq H} \left(\nu_{Ms}^{\{H,CO\}}\right)^{\frac{1}{\mu_{Ms}}} \left(IM_t^{s,CO}\right)^{\frac{\mu_{Ms}-1}{\mu_{Ms}}}\right]^{\frac{\mu_{Ms}}{\mu_{Ms}-1}}.
 \end{equation}
-Figure~\ref{finalGoodProduction} offers a detailed schematic representation of the production of a final good of type $s$.\footnote{The CES aggregation framework also implies that the prices of final goods are composite indices of the prices of their underlying components. Specifically, the price of a final good of type $s$, denoted $P_{s,t}$, the price of the tradable component $P_{TTs,t}$, and the price of imported tradable goods $P_{IMs,t}$ are defined as follows:
-Here, $\nu_s$, $\nu_{Ts}$, and $\nu_{Ms}^{\{H,CO\}}$ are the share parameters governing the aggregation at each respective level, and $\mu_s$, $\mu_{Ts}$, and $\mu_{Ms}$ denote the elasticities of substitution. The price $P_{NT,t}$ corresponds to domestically produced non-tradable goods, $P_{HT,t}$ denotes the price of home-produced tradable goods, and $P_{IM,t}^{CO}$ refers to the price of imports from country or region $CO$. The structure of price aggregation mirrors the quantity aggregation.}
-\[ P_{s,t} = \left[\nu_s\left(P_{TTs,t}\right)^{1-\mu_s} + \left(1-\nu_s\right)\left(P_{NT,t}\right)^{1-\mu_s}\right]^{\frac{1}{1-\mu_s}}, \] \[ P_{TTs,t} = \left[\nu_{Ts}\left(P_{HT,t}\right)^{1-\mu_{Ts}} + \left(1-\nu_{Ts}\right)\left(P_{IMs,t}\right)^{1-\mu_{Ts}}\right]^{\frac{1}{1-\mu_{Ts}}}, \] \[ P_{IMs,t} = \left[\sum_{CO \neq H} \nu_{Ms}^{\{H,CO\}}\left(P_{IM,t}^{CO}\right)^{1-\mu_{Ms}}\right]^{\frac{1}{1-\mu_{Ms}}}. \]
-
+Figure~\ref{finalGoodProduction} offers a detailed schematic representation of the production of a final good of type $s$.
+\footnote{
+    The CES aggregation framework also implies that the prices of final goods are composite indices of the prices of their underlying components. 
+    Specifically, the price of a final good of type $s$, denoted $P_{s,t}$, the price of the tradable component $P_{TTs,t}$, and the price of imported tradable goods $P_{IMs,t}$ are defined as follows:
+    \[ P_{s,t} = \left[\nu_s\left(P_{TTs,t}\right)^{1-\mu_s} + \left(1-\nu_s\right)\left(P_{NT,t}\right)^{1-\mu_s}\right]^{\frac{1}{1-\mu_s}}, \] 
+    \[ P_{TTs,t} = \left[\nu_{Ts}\left(P_{HT,t}\right)^{1-\mu_{Ts}} + \left(1-\nu_{Ts}\right)\left(P_{IMs,t}\right)^{1-\mu_{Ts}}\right]^{\frac{1} {1-\mu_{Ts}}}, \] 
+    \[ P_{IMs,t} = \left[\sum_{CO \neq H} \nu_{Ms}^{\{H,CO\}}\left(P_{IM,t}^{CO}\right)^{1-\mu_{Ms}}\right]^{\frac{1}{1-\mu_{Ms}}}. \]
+    Here, $\nu_s$, $\nu_{Ts}$, and $\nu_{Ms}^{\{H,CO\}}$ are the share parameters governing the aggregation at each respective level, and $\mu_s$, $\mu_{Ts}$, and $\mu_{Ms}$ denote the elasticities of substitution. 
+    The price $P_{NT,t}$ corresponds to domestically produced non-tradable goods, $P_{HT,t}$ denotes the price of home-produced tradable goods, and $P_{IM,t}^{CO}$ refers to the price of imports from country or region $CO$. 
+    The structure of price aggregation mirrors the quantity aggregation.
+}
 
 \begin{figure}[H]
     \centering
@@ -444,7 +453,7 @@ Accordingly, a country's NFA position evolves according to Eq.~\ref{eqNetForeign
 \end{equation}
 where $R_t^*$ denotes the gross return on the internationally traded bond $B_{t+1}^*$, and $S_t^{\{\mathrm{CO},\mathrm{US}\}}$ represents the nominal exchange rate, defined as the price of one U.S. dollar in terms of country $\mathrm{CO}$'s currency. Finally, the assumption of zero net supply of international bonds implies the global market-clearing condition $\sum_{\mathrm{CO}} s^{\mathrm{CO}} B_t^{*\mathrm{CO}} = 0$, with $\sum_{\mathrm{CO}} s^{\mathrm{CO}} = 1$.
 
-\paragraph{Euro area aggregation} Since the euro area comprises of ten individual countries and a residual region, each modeled as an open economy, we construct aggregate indicators for the monetary union. Specifically, we aggregate euro area-wide output $(Y_t^{EA})$ and inflation $(\Pi_t^{EA,4})$, as defined in Equations~\ref{eqEAoutput} and~\ref{eqEAinflation}, respectively. The set of countries and the residual region constituting the euro area is denoted by \(\mathcal{I}^{EA} = \{ \text{AT}, \text{BE}, \text{FI}, \text{FR}, \text{DE}, \text{GR}, \text{IT}, \text{NL}, \text{PT}, \text{ES}, \text{RA} \}\), where \(s^i\) represents the relative size of country or region \(i\).
+\paragraph{Euro area aggregation} Since the euro area comprises ten individual countries and a residual region, each modeled as an open economy, we construct aggregate indicators for the monetary union. Specifically, we aggregate euro area-wide output $(Y_t^{EA})$ and inflation $(\Pi_t^{EA,4})$, as defined in Equations~\ref{eqEAoutput} and~\ref{eqEAinflation}, respectively. The set of countries and the residual region constituting the euro area is denoted by \(\mathcal{I}^{EA} = \{ \text{AT}, \text{BE}, \text{FI}, \text{FR}, \text{DE}, \text{GR}, \text{IT}, \text{NL}, \text{PT}, \text{ES}, \text{RA} \}\), where \(s^i\) represents the relative size of country or region \(i\).
 
 \begin{equation} \label{eqEAoutput}
     Y_t^{EA} \equiv \frac{\sum\limits_{\mathrm{CO} \in \mathcal{I}^{EA}} s^\mathrm{CO} \overline{P_Y^{\mathrm{CO}}} Y_t^\mathrm{CO}}{\sum\limits_{\mathrm{CO} \in \mathcal{I}^{EA}} s^\mathrm{CO}},
@@ -460,7 +469,8 @@ Following the extension by \citet{Clancyetal2016}, both government consumption a
 Government consumption exhibits complementarity with private consumption, while government investment contributes to the stock of productive capital, thereby enhancing the production capacity of the private sector.
 \footnote{
     Specifically, the composite consumption good $\tilde{C}_t$ is modeled as a CES aggregate of final private consumption and final government consumption goods: $\tilde{C}_t = \left[\nu_{\text{CCES}}^{\frac{1}{\mu_{\text{CCES}}}}\left(C_t\right)^{\frac{\mu_{\text{CCES}}-1}{\mu_{\text{CCES}}}} + \left(1-\nu_{\text{CCES}}\right)^{\frac{1}{\mu_{\text{CCES}}}}\left(G_{C,t}\right)^{\frac{\mu_{\text{CCES}}-1}{\mu_{\text{CCES}}}}\right]^{\frac{\mu_{\text{CCES}}}{\mu_{\text{CCES}}-1}}$, where $\nu_{\text{CCES}}$ denotes the share parameter, and $\mu_{\text{CCES}}$ represents the elasticity of substitution between the two component goods.
-The complementarity between government and private consumption is introduced through the specification of a composite good consumed by households, following the approach of \citet{Coenen-et-al_AER_2012}. }
+    The complementarity bet ween government and private consumption is introduced through the specification of a composite good consumed by households, following the approach of \citet{Coenen-et-al_AER_2012}.
+}
 \footnote{
     The assumption that government investment enhances productivity builds on the work of \citet{LeeperEtAl2010jme}, where public capital accumulation is governed by $K_{G,t+1} = (1-\delta_G)K_{G,t} + G_{I,t}$. 
     This formulation implies that government investment $G_{I,t}$ builds up the stock of public capital $K_{G,t+1}$, which depreciates at the rate $\delta_G$. 
@@ -495,9 +505,9 @@ The complementarity between government and private consumption is introduced thr
 % (9) DE_taud = (1-DE_rhotaud)*DE_taudbar+DE_rhotaud*DE_taud(-1)+DE_epstaud;
 % (10) DE_ty = DE_t/(DE_pybar*DE_ybar); > DE_t/(DE_pybar*DE_ybar) = DE_phitb*(DE_b/(DE_pybar*DE_ybar)-DE_bytarget);
 
+In our version of the EAGLE model, the government is equipped with ten fiscal instruments. 
 Seven of these operate on the revenue side of the budget: the consumption tax rate, $\tau_t^C$; the wage tax rate, $\tau_t^N$; the social contribution rate paid by employees, $\tau_t^{Wh}$; the social contribution rate paid by employers, $\tau_t^{Wf}$; the tax rate on capital returns, $\tau_t^k$; the tax rate on bond returns, $\tau_t^d$; and lump-sum taxes, $T_t$.
- The remaining three instruments operate on the expenditure side of the budget: government consumption, $G_{C,t}$; government investment, $G_{I,t}$; and government transfers, $TR_t$.
-In our version of the EAGLE model, the government is equipped with ten fiscal instruments.
+The remaining three instruments operate on the expenditure side of the budget: government consumption, $G_{C,t}$; government investment, $G_{I,t}$; and government transfers, $TR_t$.
 
 For all fiscal instruments except for lump-sum taxes, we assume a fiscal rule of the following form:
 \begin{equation}
