@@ -122,6 +122,11 @@ The import bias parameter must be specified for all trading partners except one,
 % These conventions are adopted to keep a visual distinction between quantities
 % (superscript sector/type) and prices (subscript sector/type), while keeping
 % time subscripts uniform across variables. They are consistent with Clancy et al. (2016)
+%
+% • Sectoral output notation: We do not use an additional superscript S on output
+%   variables (e.g., we write Y_{N,t}, Y_{T,t} rather than Y_{N,t}^S, Y_{T,t}^S), as the
+%   sector is already identified by the N/T subscript. This avoids redundant notation
+%   and improves readability.
 
 %----------------------------------------------------------------------------------------
 %       TITLE SECTION
@@ -331,11 +336,11 @@ Here, $\nu_s$, $\nu_{Ts}$, and $\nu_{Ms}^{\{H,CO\}}$ are the share parameters go
     \node[right=of ttcg, yshift=-0.5cm, fill=gray!20] (imcg) {$IM_t^{Cg}$};
     \node[right=of ttig, yshift=-0.5cm, fill=gray!20] (imig) {$IM_t^{Ig}$};
     
-    \node[right=of y, yshift=0.75cm, fill=blue!20] (ysn) {Production,\\ Non-Tradable\\ $(Y_{N,t}^S = NT_t = NT_t^C + NT_t^I + NT_t^{Cg} + NT_t^{Ig})$};
-    \node[right=of y, yshift=-1.25cm] (yst) {Production,\\ Tradable\\ $(Y_{T,t}^S)$};
+    \node[right=of y, yshift=0.75cm, fill=blue!20] (ysn) {Production,\\ Non-Tradable\\ $Y_{N,t} = s_{N,t} NT_t = s_{N,t}(NT_t^C + NT_t^I + NT_t^{Cg} + NT_t^{Ig})$};
+    \node[right=of y, yshift=-1.25cm] (yst) {Production,\\ Tradable\\ $(Y_{T,t})$};
     
-    \node[right=of yst, yshift=0.5cm, fill=green!20] (nt) {Home Tradable\\ $HT_t = HT_t^C + HT_t^I + HT_t^{Cg} + HT_t^{Ig}$};
-    \node[right=of yst, yshift=-0.5cm, fill=yellow!20] (xt) {Exports\\ $(X_t)$};
+    \node[right=of yst, yshift=0.5cm, fill=green!20] (nt) {Home Tradable\\ $s_{H, t}HT_t = s_{H, t}(HT_t^C + HT_t^I + HT_t^{Cg} + HT_t^{Ig})$};
+    \node[right=of yst, yshift=-0.5cm, fill=yellow!20] (xt) {Exports\\ $s_{X, t}(X_t)$};
     
     % Edges
     \draw (tb) -- (demand);
@@ -382,6 +387,16 @@ Here, $\nu_s$, $\nu_{Ts}$, and $\nu_{Ms}^{\{H,CO\}}$ are the share parameters go
     \end{minipage}
 \end{figure}
 
+%//NOTE: Equestions that underpin the above graph
+% AT_nt = +AT_ntc+AT_nti+AT_ntcg+AT_ntig
+% AT_ysn = AT_snt*AT_nt; (there is a price dispersion between demand and supply, typical to a NK model)
+
+% AT_ht = +AT_htc+AT_hti+AT_htcg+AT_htig
+% AT_yst = AT_sh*AT_ht+AT_sx*AT_ex; (there is a price dispersion between demand and supply, typical to a NK model)
+
+% AT_y = AT_yst+AT_ysn;
+
+
 \paragraph{Trade and net foreign assets position} Each country or region in the EAGLE model may experience a mismatch between the value of imported and exported goods, resulting in a trade surplus or deficit. The trade balance in nominal terms is defined as the difference between exports and imports (see Eq.~\ref{eqTradeBalance}):
 \footnote{$S_t^{\{H,CO\}}$ in Eq.~\ref{eqTradeBalance} denotes the nominal exchange rate that converts the price $P_{X,t}^{\{H,CO\}}$, expressed in the currency of country $CO$, into the currency of country $H$.}
 \begin{equation} \label{eqTradeBalance}
@@ -406,7 +421,7 @@ where $R_t^*$ denotes the gross return on the internationally traded bond $B_{t+
 
 \paragraph{Fiscal and monetary policy rules} Regarding the general government specification, the budget encompasses multiple tax and expenditure instruments. With the possibility to issue bonds, governments are not required to balance the budget in each period. Following the extension by \citet{Clancyetal2016}, both government consumption and investment play a meaningful role in the model. Specifically, government consumption exhibits complementarity with private consumption, while government investment contributes to the stock of productive capital, thereby enhancing the production capacity of the private sector.
 \footnote{The complementarity between government and private consumption is introduced through the specification of a composite good consumed by households, following the approach of \citet{Coenen-et-al_AER_2012}. Specifically, the composite consumption good $\tilde{C}_t$ is modeled as a CES aggregate of final private consumption and final government consumption goods: $\tilde{C}_t = \left[\nu_{\text{CCES}}^{\frac{1}{\mu_{\text{CCES}}}}\left(C_t\right)^{\frac{\mu_{\text{CCES}}-1}{\mu_{\text{CCES}}}} + \left(1-\nu_{\text{CCES}}\right)^{\frac{1}{\mu_{\text{CCES}}}}\left(G_{C,t}\right)^{\frac{\mu_{\text{CCES}}-1}{\mu_{\text{CCES}}}}\right]^{\frac{\mu_{\text{CCES}}}{\mu_{\text{CCES}}-1}}$,where $\nu_{\text{CCES}}$ denotes the share parameter, and $\mu_{\text{CCES}}$ represents the elasticity of substitution between the two component goods.}
-\footnote{The assumption that government investment enhances productivity builds on the work of \citet{LeeperEtAl2010jme}, where public capital accumulation is governed by $K_{G,t+1} = (1-\delta_G)K_{G,t} + G_{I,t}$. This formulation implies that government investment $G_{I,t}$ builds up the stock of public capital $K_{G,t+1}$, which depreciates at the rate $\delta_G$. Public capital, in turn, enters the production function of both tradable and non-tradable goods, specified respectively as $Y_{T,t}^S = z_{T,t} K_{G,t}^{\alpha_G} (K_{T,t}^D)^{\alpha_T} (N_{T,t}^D)^{1-\alpha_T} - \psi_T$ and $Y_{N,t}^S = z_{N,t} K_{G,t}^{\alpha_G} (K_{N,t}^D)^{\alpha_N} (N_{N,t}^D)^{1-\alpha_N} - \psi_N$, thereby enhancing the productive capacity of the private sector. Here, $Y_{T,t}^S$ and $Y_{N,t}^S$ denote sectoral outputs, $z_{T,t}$ and $z_{N,t}$ represent sector-specific productivity levels, $\alpha_G$ measures the contribution of public capital to production, $K_{T,t}^D$ and $K_{N,t}^D$ are private capital inputs, $N_{T,t}^D$ and $N_{N,t}^D$ are labor inputs, $\alpha_T$ and $\alpha_N$ denote the capital shares in the tradable and non-tradable sectors, respectively, and $\psi_T$ and $\psi_N$ capture fixed costs.}
+\footnote{The assumption that government investment enhances productivity builds on the work of \citet{LeeperEtAl2010jme}, where public capital accumulation is governed by $K_{G,t+1} = (1-\delta_G)K_{G,t} + G_{I,t}$. This formulation implies that government investment $G_{I,t}$ builds up the stock of public capital $K_{G,t+1}$, which depreciates at the rate $\delta_G$. Public capital, in turn, enters the production function of both tradable and non-tradable goods, specified respectively as $Y_{T,t} = z_{T,t} K_{G,t}^{\alpha_G} (K_{T,t}^D)^{\alpha_T} (N_{T,t}^D)^{1-\alpha_T} - \psi_T$ and $Y_{N,t} = z_{N,t} K_{G,t}^{\alpha_G} (K_{N,t}^D)^{\alpha_N} (N_{N,t}^D)^{1-\alpha_N} - \psi_N$, thereby enhancing the productive capacity of the private sector. Here, $Y_{T,t}$ and $Y_{N,t}$ denote sectoral outputs, $z_{T,t}$ and $z_{N,t}$ represent sector-specific productivity levels, $\alpha_G$ measures the contribution of public capital to production, $K_{T,t}^D$ and $K_{N,t}^D$ are private capital inputs, $N_{T,t}^D$ and $N_{N,t}^D$ are labor inputs, $\alpha_T$ and $\alpha_N$ denote the capital shares in the tradable and non-tradable sectors, respectively, and $\psi_T$ and $\psi_N$ capture fixed costs.}
 
 %//NOTE: here is the decomposed budget constraint of the government > based on that we have 10 fiscal instruments
 % (1) DE_pcg(-1)*DE_cg(-1)
