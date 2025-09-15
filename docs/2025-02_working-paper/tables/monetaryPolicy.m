@@ -1,7 +1,7 @@
 function monetaryPolicy(envi, aStruct, fileName)
 
     % Define country list with independent monetary policy
-    ctryList = ["EA", "RU", "RW", "US"];
+    ctryList = ["EA", "RU", "US", "RW"];
 
     % Open file for writing
     fid = fopen(fileName, 'w');
@@ -9,7 +9,7 @@ function monetaryPolicy(envi, aStruct, fileName)
     % Table header
     fprintf(fid, '    \\centering\n');
     fprintf(fid, '    \\caption{Monetary policy parameters in regions with independent monetary policy.}\n');
-    fprintf(fid, '    \\label{tab:policy}\n');
+    fprintf(fid, '    \\label{tab:MPpolicy}\n');
     fprintf(fid, '    \\footnotesize\n');
     fprintf(fid, '    \\renewcommand{\\arraystretch}{1.2}\n');
     fprintf(fid, '    \\begin{tabular}{lcccc}\n');

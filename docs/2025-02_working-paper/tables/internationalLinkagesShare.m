@@ -12,21 +12,21 @@ function internationalLinkagesShare(envi, aStruct, goodType, goodName)
     fprintf(fid, '    \\renewcommand{\\arraystretch}{1.2}\n');
     fprintf(fid, '    \\begin{tabular}{>{\\raggedright}p{5.5cm}*{14}{>{\\centering\\arraybackslash}p{0.8cm}}}\n');
     fprintf(fid, '        \\toprule\n');
-    fprintf(fid, '         & %s \\\\\n', strjoin(envi.Meta.ctryList, ' & '));
+    fprintf(fid, '         & %s \\\\\n', strjoin(envi.Meta.ctryListForReport, ' & '));
     fprintf(fid, '        \\midrule\n');
 
     % Total imports for the given good type
     varSymbol = sprintf('\\overline{\\text{i%sy}}', lower(goodType));
     fieldName = sprintf('i%sy', lower(goodType));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Total imports', varSymbol, fieldName, aStruct.ssValues, ' & %.1f', @(x) x*100));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Total imports', varSymbol, fieldName, aStruct.ssValues, ' & %.1f', @(x) x*100));
 
     % Bilateral imports section
     fprintf(fid, '        \\multicolumn{15}{l}{\\textbf{Bilateral imports} ($%s^{\\text{H,CO}}$)} \\\\\n', varSymbol);
 
     % Print one row for each exporting country (row index), values by importing country (column index)
     paramName = sprintf('i%sy', lower(goodType));
-    for i = 1:numel(envi.Meta.ctryList)
-        fprintf(fid, utils.prepareTableTradeLine(envi, char(envi.Meta.ctryList(i)), paramName, aStruct.ssValues, ' & %.2f', @(x) x*100));
+    for i = 1:numel(envi.Meta.ctryListForReport)
+        fprintf(fid, utils.prepareTableTradeLine(envi, char(envi.Meta.ctryListForReport(i)), paramName, aStruct.ssValues, ' & %.2f', @(x) x*100));
     end
 
     % Table footer

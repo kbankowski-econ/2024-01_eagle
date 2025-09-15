@@ -11,40 +11,40 @@ function finalGoodProduction(envi, aStruct, fileName)
     fprintf(fid, '    \\renewcommand{\\arraystretch}{1.2}\n');
     fprintf(fid, '    \\begin{tabular}{>{\\raggedright}p{5.5cm}*{14}{>{\\centering\\arraybackslash}p{0.8cm}}}\n');
     fprintf(fid, '        \\toprule\n');
-    fprintf(fid, '         & %s \\\\\n', strjoin(envi.Meta.ctryList, ' & '));
+    fprintf(fid, '         & %s \\\\\n', strjoin(envi.Meta.ctryListForReport, ' & '));
     fprintf(fid, '        \\midrule\n');
 
     % Final private consumption good
     fprintf(fid, '        \\multicolumn{15}{l}{\\textbf{Final private consumption good}} \\\\\n');
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Bias towards tradables' , '\nu_C', "nuc", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Subst. trad./nontrad.', '\mu_C', "muc", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Bias towards dom. tradables', '\nu_{TC}', "nutc", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Subst. dom./imp. trad.', '\mu_{TC}', "mutc", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Subst. bilat. imports', '\mu_{MC}', "mumc", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Bias towards tradables' , '\nu_C', "nuc", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Subst. trad./nontrad.', '\mu_C', "muc", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Bias towards dom. tradables', '\nu_{TC}', "nutc", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Subst. dom./imp. trad.', '\mu_{TC}', "mutc", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Subst. bilat. imports', '\mu_{MC}', "mumc", aStruct.params, ' & %.2f'));
     
     % Final private investment good
     fprintf(fid, '        \\multicolumn{15}{l}{\\textbf{Final private investment good}} \\\\\n');
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Bias towards tradables', '\nu_I', "nui", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Subst. trad./nontrad.', '\mu_I', "mui", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Bias towards dom. tradables', '\nu_{TI}', "nuti", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Subst. dom./imp. trad.', '\mu_{TI}', "muti", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Subst. bilat. imports', '\mu_{MI}', "mumi", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Bias towards tradables', '\nu_I', "nui", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Subst. trad./nontrad.', '\mu_I', "mui", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Bias towards dom. tradables', '\nu_{TI}', "nuti", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Subst. dom./imp. trad.', '\mu_{TI}', "muti", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Subst. bilat. imports', '\mu_{MI}', "mumi", aStruct.params, ' & %.2f'));
 
     % Final government consumption good
     fprintf(fid, '        \\multicolumn{15}{l}{\\textbf{Final government consumption good}} \\\\\n');
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Bias towards tradables', '\nu_{CG}', "nucg", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Subst. trad./nontrad.', '\mu_{CG}', "mucg", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Bias towards dom. tradables', '\nu_{TCG}', "nutcg", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Subst. dom./imp. trad.', '\mu_{TCG}', "mutcg", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Subst. bilat. imports', '\mu_{MCG}', "mumcg", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Bias towards tradables', '\nu_{CG}', "nucg", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Subst. trad./nontrad.', '\mu_{CG}', "mucg", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Bias towards dom. tradables', '\nu_{TCG}', "nutcg", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Subst. dom./imp. trad.', '\mu_{TCG}', "mutcg", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Subst. bilat. imports', '\mu_{MCG}', "mumcg", aStruct.params, ' & %.2f'));
 
     % Final government investment good
     fprintf(fid, '        \\multicolumn{15}{l}{\\textbf{Final government investment good}} \\\\\n');
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Bias towards tradables', '\nu_{IG}', "nuig", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Subst. trad./nontrad.', '\mu_{IG}', "muig", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Bias towards dom. tradables', '\nu_{TIG}', "nutig", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Subst. dom./imp. trad.', '\mu_{TIG}', "mutig", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Subst. bilat. imports', '\mu_{MIG}', "mumig", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Bias towards tradables', '\nu_{IG}', "nuig", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Subst. trad./nontrad.', '\mu_{IG}', "muig", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Bias towards dom. tradables', '\nu_{TIG}', "nutig", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Subst. dom./imp. trad.', '\mu_{TIG}', "mutig", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Subst. bilat. imports', '\mu_{MIG}', "mumig", aStruct.params, ' & %.2f'));
 
     % Table footer
     fprintf(fid, '        \\bottomrule\n');

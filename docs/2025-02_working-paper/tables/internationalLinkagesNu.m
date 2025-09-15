@@ -13,7 +13,7 @@ function internationalLinkagesNu(envi, aStruct, goodType, goodName)
     fprintf(fid, '    \\renewcommand{\\arraystretch}{1.2}\n');
     fprintf(fid, '    \\begin{tabular}{>{\\raggedright}p{5.5cm}*{14}{>{\\centering\\arraybackslash}p{0.8cm}}}\n');
     fprintf(fid, '        \\toprule\n');
-    fprintf(fid, '         & %s \\\\\n', strjoin(envi.Meta.ctryList, ' & '));
+    fprintf(fid, '         & %s \\\\\n', strjoin(envi.Meta.ctryListForReport, ' & '));
     fprintf(fid, '        \\midrule\n');
 
     % Row label
@@ -22,8 +22,8 @@ function internationalLinkagesNu(envi, aStruct, goodType, goodName)
 
     % Table content: one row per exporting country
     paramName = "nu" + lower(goodType);
-    for i = 1:numel(envi.Meta.ctryList)
-        fprintf(fid, utils.prepareTableTradeLine(envi, char(envi.Meta.ctryList(i)), paramName, aStruct.params, ' & %.2f'));
+    for i = 1:numel(envi.Meta.ctryListForReport)
+        fprintf(fid, utils.prepareTableTradeLine(envi, char(envi.Meta.ctryListForReport(i)), paramName, aStruct.params, ' & %.2f'));
     end
 
     % Table footer

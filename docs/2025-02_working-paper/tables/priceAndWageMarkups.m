@@ -11,7 +11,7 @@ function priceAndWageMarkups(envi, aStruct, fileName)
     fprintf(fid, '    \\renewcommand{\\arraystretch}{1.2}\n');
     fprintf(fid, '    \\begin{tabular}{>{\\raggedright}p{5.5cm}*{14}{>{\\centering\\arraybackslash}p{0.8cm}}}\n');
     fprintf(fid, '        \\toprule\n');
-    fprintf(fid, '         & %s \\\\\n', strjoin(envi.Meta.ctryList, ' & '));
+    fprintf(fid, '         & %s \\\\\n', strjoin(envi.Meta.ctryListForReport, ' & '));
     fprintf(fid, '        \\midrule\n');
 
     % Rows: markup and elasticity (shown together)
@@ -28,11 +28,11 @@ function priceAndWageMarkups(envi, aStruct, fileName)
 end
 
 function outputString = prepareMarkupLine(envi, varName, varSymbol, aField, aStruct)
-    markupValues = nan(1, length(envi.Meta.ctryList));
-    elastValues  = nan(1, length(envi.Meta.ctryList));
+    markupValues = nan(1, length(envi.Meta.ctryListForReport));
+    elastValues  = nan(1, length(envi.Meta.ctryListForReport));
 
-    for i = 1:length(envi.Meta.ctryList)
-        field = envi.Meta.ctryList(i) + "_" + aField;
+    for i = 1:length(envi.Meta.ctryListForReport)
+        field = envi.Meta.ctryListForReport(i) + "_" + aField;
         try
             elast = aStruct.(field);
             elastValues(i) = elast;

@@ -17,7 +17,6 @@
 %       PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 \documentclass[a4paper,11pt]{article}
-%//TODO: pages have to be switched off before the ECB submission
 %\pagenumbering{gobble}
 \usepackage[english]{babel} % English language/hyphenation
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
@@ -85,7 +84,7 @@
 \numberwithin{equation}{section}
 
 \newcommand{\CountryCodes}{%
-RA = Rest of euro area; AT = Austria; BE = Belgium; ES = Spain; FI = Finland; FR = France; GR = Greece; IT = Italy; NL = Netherlands; PT = Portugal; DE = Germany; RU = Non-euro area EU; RW = Rest of world; US = United States%
+AT = Austria; BE = Belgium; FI = Finland; FR = France; DE = Germany; GR = Greece; IT = Italy; NL = Netherlands; PT = Portugal; ES = Spain; RA = Rest of euro area; RU = Non-euro area EU; US = United States; RW = Rest of world%
 }
 \newcommand{\CountryCodesForMP}{%
 EA = Euro area; RU = Non-euro area EU; RW = Rest of world; US = United States%
@@ -250,7 +249,7 @@ This subsection focuses on the model components most relevant for our extension 
 For all remaining features, we refer the reader to \citet{GomesEtAl2012} for the general structure and to \citet{Clancyetal2016} for the enhanced fiscal policy specification.
 
 % (6)
-\paragraph{Final good production.}
+\paragraph{Final good production}
 
 Our model distinguishes four types of final goods: private consumption, private investment, government consumption, and government investment.
 Each type of good is assembled by firms operating under perfect competition.
@@ -567,21 +566,32 @@ In the case of the euro area, the same rule applies, but based on union-wide agg
 
 The model is calibrated to reflect an enhanced geographical structure, with particular emphasis on a detailed decomposition of the euro area.
 Specifically, we distinguish ten individual euro area member states—Austria, Belgium, Finland, France, Germany, Greece, Italy, the Netherlands, Portugal, and Spain—alongside a residual region representing the remaining countries.
-Beyond the euro area, the calibration also includes the non-euro area European Union, the United States, and the rest of the world, resulting in a total of 14 country or regional blocks.
-The calibration follows established practices in the literature, targeting a set of key output ratios—commonly referred to as the “great ratios.” These targets are derived from macroeconomic data aligned with their counterparts in the model.
+Beyond the euro area, the calibration also includes the non-euro area European Union, the United States, and the rest of the world, resulting in a total of 14 country or regional blocs.
+The calibration follows established practices in the literature, targeting a set of key output ratios—commonly referred to as the "great ratios." These targets are derived from macroeconomic data and matched to the corresponding countries and regions in the model.
 
-\paragraph{Country-Specific Great Ratios and Fiscal Variables}
-The calibration of the great ratios (see Table~\ref{tab:national_accounts}) is primarily based on national accounts data, with illustrative values presented in Figure~\ref{figApp:nationalAccountsData}.
+\paragraph{Country-Specific Great Ratios}
+The calibration of the great ratios (see Table~\ref{tab:national_accounts}) is primarily based on national accounts data from the sources detailed in Table~\ref{tab:data_sources}, with illustrative values presented in Figure~\ref{figApp:nationalAccountsData}.
 Long-run averages are computed over the period 1980-2019.
-The initial year reflects the data availability, while 2019 is chosen as the end year to exclude the extraordinary observations associated with the COVID-19 pandemic.
-Finally, the relative size of each economy in the model is scaled to match its share in global GDP.
+The initial year reflects data availability, while 2019 is chosen as the end year to exclude the extraordinary observations associated with the COVID-19 pandemic.
+The relative size of each economy in the model is scaled to match its share in global GDP.
 
-The countries and regions incorporated in the model exhibit substantial heterogeneity in the composition of domestic demand (see values in Table \ref{tab:national_accounts}).
-Several economies—such as Belgium, France, Finland, and the Netherlands—exhibit relatively high public expenditure-to-GDP ratios, while others—such as the United States and the Rest of the World—display more limited public sectors.
+The countries and regions incorporated in the model exhibit substantial heterogeneity in the composition of domestic demand (see values in Table~\ref{tab:national_accounts}).
+Several economies—such as Greece, Portugal, and the United States—exhibit relatively high private consumption shares, while others—notably Austria, Belgium, Finland, and Germany—are characterized by relatively high private investment shares. The relative size of public versus private demand also varies substantially across countries, with government demand components reaching particularly high values—approaching 30\% of GDP—in Finland, France, and the Netherlands.
 Additionally, there is marked variation in trade openness, as indicated by differing import and export shares across economies.
-Smaller and more open economies, such as Belgium, the Netherlands, and countries in the residual euro area group, import in excess of 30\% of GDP.
-In contrast, larger economies, including the United States and the Rest of the World, exhibit significantly lower import penetration, with shares closer to 20\%.
-The net foreign asset position is calibrated endogenously, reflecting observed imbalances, with many euro area economies showing negative positions.
+Smaller and more open economies, such as Austria, Belgium, and countries in the residual euro area group, import in excess of 30\% of GDP.
+In contrast, larger economies, including the United States and the Rest of the World, exhibit significantly lower import penetration, with shares closer to 10\%.
+Net foreign asset positions are calibrated endogenously to reflect observed imbalances, with many euro area economies showing negative values.
+\footnote{
+    The negative net foreign asset position for many European countries running trade surpluses may seem counterintuitive at first. 
+    The key to understanding this is to realize that in the steady state, for the NFA position to remain constant, its value must be negative so that the positive trade balance is offset by the interest payments on international bonds. 
+    With the trade balance being positive and interest payments being made on the negative NFA position, the two effects balance out to ensure that the NFA remains constant over time. 
+    Naturally, the relation between the improvement in the trade balance and the improvement in the NFA holds outside the steady state, as per Eq.~\ref{eqNetForeignAssetPosition}.
+}
+
+%//NOTE: values of public demand the highest in the following countries
+% FI: 24.8 + 4.1 = 28.9 
+% FR: 24.6 + 3.9 = 28.5
+% NL: 26.5 + 3.9 = 30.4
 
 \begin{landscape}
     \begin{table}[htbp]
@@ -593,20 +603,35 @@ The net foreign asset position is calibrated endogenously, reflecting observed i
     \end{table}
 \end{landscape}
 
-As part of the calibration, we also set country\-specific steady-state values for key government-related variables (see Table \ref{tab:gov_ratios}).
-Government spending-to-GDP ratios are used to capture the relative size of the public sector across countries and regions, with illustrative data presented in Figure \ref{figApp:govSpending}.
-Tax rates are computed as average implicit rates, defined as the ratio of government revenues from a given tax category to its corresponding macro\-economic base, thereby reflecting the effective tax burden (see Figure \ref{figApp:govTaxRates}).
-Finally, each country or region is assigned a target debt-to-GDP ratio, calibrated on the basis of historical averages over the sample period.
-The underlying fiscal data are drawn from the Government Finance Statistics.
+%//NOTES: Just trying to understand the values for RA, which has very positive trade balance
+% Model equation from eagleParsingTemp/modFiles/eagleModel-macroexp.mod
+% RA_bf/US_r(-1) = -RA_bh/DE_r(-1)*RADE_rer(-1)/RA_rer(-1) + RA_bh(-1)*RADE_rer(-2) / RA_rer(-2) + RA_bf(-1) + RA_tb(-1)/RA_rer(-1);
+% Below is just replacing it with ss-values:
+% RA_bf/US_r(-1) = -RA_bh/DE_r(-1)*RADE_rer(-1)/RA_rer(-1) + RA_bh(-1)*RADE_rer(-2) / RA_rer(-2) + RA_bf(-1) + RA_tb(-1)/RA_rer(-1);
+% aa.ssValues.RA_bf/aa.ssValues.US_r(-1) = -aa.ssValues.RA_bh/aa.ssValues.DE_r(-1)*aa.ssValues.RADE_rer(-1)/aa.ssValues.RA_rer(-1) + aa.ssValues.RA_bh(-1)*aa.ssValues.RADE_rer(-2) / aa.ssValues.RA_rer(-2) + aa.ssValues.RA_bf(-1) + aa.ssValues.RA_tb(-1)/aa.ssValues.RA_rer(-1)
+% -116.1580/1.0124 = -0/1.0124*1.1838/0.9899 + 0*1.1838/0.9899 + -116.1580 + 1.4103/0.9899
+% -116.1580/1.0124 = 0 + 0 + -116.1580 + 1.4103/0.9899
+% -116.1580/1.0124 + 116.1580 = + 1.4103/0.9899
+% -116.1580*(1/1.0124 - 1) = + 1.4103/0.9899
+% -116.1580*(-0.012248123271434208) = + 1.4103/0.9899
+% 1.4227175029632548 = 1.424689362561875 > equation broadly holds!
+% It maybe counterintuitive but in the steady state a trade surplus country (i.e., country running a trade surplus) must run a negative asset position so that the interest payments accruing on the international bonds can offset the positive trade surplus. The obvious relation about the improvement in the trade balance leading to a btter NFA still holds outside the steady state. Footnote added in the above paragraph to clarify this point.
 
-The model captures significant cross-country variation in government size and tax structures (see values in Table \ref{tab:gov_ratios}).
-Government consumption, for instance, exceeds 24\% of GDP in Finland, France, and the Netherlands, reflecting relatively large public sectors, whereas it falls below 17\% in the United States and the Rest of the World.
-Government investment also varies markedly, ranging from around 2.3\% of GDP in Belgium to nearly 8\% in the Rest of the World.
-Transfers display even greater dispersion, with values exceeding 16\% in Austria but turning negative in the United States.
+\paragraph{Fiscal Variables}
+As part of the calibration, we also set country-specific steady-state values for key government-related variables (see Table~\ref{tab:gov_ratios}), with the underlying data drawn from the sources detailed in Table~\ref{tab:data_sources}.
+Government spending-to-GDP ratios capture the relative size of the public sector across countries and regions, with illustrative data presented in Figure~\ref{figApp:govSpending}.
+Tax rates are computed as average implicit rates, defined as the ratio of government revenues from a given tax category to its corresponding macroeconomic base, thereby reflecting the effective tax burden (see Figure~\ref{figApp:govTaxRates}).
+Each country or region is assigned a target debt-to-GDP ratio, calibrated on the basis of historical averages over the sample period.
+
+The model captures significant cross-country variation in government size and tax structures (see values in Table~\ref{tab:gov_ratios}).
+Government consumption, for instance, reaches values around 25\% of GDP in Belgium, Finland, France, and the Netherlands, reflecting relatively large public sectors, whereas it is a little over 15\% in the United States and the Rest of the World.
+Government investment also varies markedly, ranging from just above 2\% of GDP in Belgium and Germany to nearly 8\% in the Rest of the World.
+Transfers display even greater dispersion, with values approaching 25\% in France but remaining at 10\% in the Rest of the World.
 Tax policy parameters reveal pronounced differences as well.
 Social security contributions paid by employers are highest in France and Italy—exceeding 30\% in the latter—while remaining below 8\% in the United States.
 Similarly, labor and consumption tax rates are considerably higher in most European economies than in non-European ones.
-Finally, country\-specific steady-state debt-to-GDP ratios reflect varying average levels of government indebtedness, ranging from low-debt countries such as Germany (60\% of GDP) to high-debt cases such as Greece (120\% of GDP).
+Country-specific steady-state debt-to-GDP ratios reflect varying levels of government indebtedness, ranging from around 50\% in the non-euro area EU to high-debt cases such as Greece (180\% of GDP).
+The calibrated debt-to-GDP ratios in the steady state are achieved through lump-sum tax levels that ensure a balanced budget position consistent with debt stabilization.
 
 \begin{landscape}
     \begin{table}[htbp]
@@ -707,15 +732,9 @@ In our calibrations, we extracted the tables for years 1995 to 2020 and found av
 % a paragraph about how we use home bias paramter to calibrate trade
 
 %Household, firms and government behaviour
-\paragraph{Other model parameters} Some parameters of the model regarding household, firm, and government behaviour are kept consistent with the original model (see \citet{Gomesaetal2012}), which employs standard values prevelant in the literature. Table on household, and firms' bias between capital, labour, different types of households, and intermediate goodsa are reported in Table \ref{tab:selectedHhFirmGov} in the calibration section of the technical appendix. Government parameters, such as tax rates, are calibrated using OECD datasets (\citet{OECD_data}). The tax rates in the model include labour, capital, consumption tax, and social security contributions both by the employers, and the employees, and are reported together with other monetary and fiscal authority parameters in Table \ref{tab:policy} below. 
-
-Lastly, for nominal and real rigidities, as well as the price and wage markup parameters refer to Table \ref{tab:rigidities} and Table \ref{tab:markups_transposed}.
-
-In addition, countries differ in the degree of nominal and real rigidities, with the Rest of World and the US exhibiting lower price and wage stickiness compared to euro area economies.
-
-%Substitution elasticities
-In calibrating substitution elasticities in the private sector, we adopt the standard assumption that substitution between tradable and non-tradable goods is considerably more limited than between different types of tradable goods.
-Following \citet{Clancyetal2016} and \citet{Gomesaetal2012}, we keep the same long-run elasticity of substitution between tradable goods at 2.5 and between tradable and non-tradable goods at 0.5.
+\paragraph{Other model parameters} 
+The coefficients of the monetary and fiscal policy rules employ standard values from the literature, consistent with the original EAGLE model (\citet{GomesEtAl2016em}), as shown in Table~\ref{tab:MPpolicy} for monetary policy. 
+The parameter controlling the speed of adjustment towards debt-to-GDP targets in the lump-sum tax fiscal rule ($\phi_{\text{B}_{\text{Y}}}$) is set to 0.1 for all countries and regions (see Table~\ref{tab:gov_ratios}).
 
 \begin{table}[htbp]
 \input{tables/monetaryPolicy.tex}
@@ -725,6 +744,14 @@ Following \citet{Clancyetal2016} and \citet{Gomesaetal2012}, we keep the same lo
 \end{minipage}
 \end{table}        
 
+Parameters governing household, firm, and government behavior remain consistent with the original model (see \citet{Gomesaetal2012}), employing standard values prevalent in the literature. 
+Parameters related to household and firm preferences—including biases between capital and labor, different household types, and intermediate goods—are reported in Table~\ref{tab:selectedHhFirmGov} in Appendix~\ref{sec:appendix_calibration_details}. 
+Similarly, all parameters governing the aggregation of final goods are summarized in Table~\ref{tab:finalGoodProduction}. 
+In calibrating substitution elasticities in the private sector, we adopt the standard assumption that substitution between tradable and non-tradable goods is considerably more limited than between different types of tradable goods.
+Following \citet{Clancyetal2016} and \citet{Gomesaetal2012}, we keep the same long-run elasticity of substitution between tradable goods at 2.5 and between tradable and non-tradable goods at 0.5.
+Nominal and real rigidities, along with price and wage markups—which are calibrated to be higher in European countries than in the United States and the rest of the world, consistent with previous EAGLE model applications—are detailed in Tables~\ref{tab:rigidities} and~\ref{tab:markups_transposed}. 
+Appendix Table~\ref{tab:fiscal_instruments} complements Table~\ref{tab:gov_ratios} by providing detailed steady-state-to-GDP ratios of fiscal instruments on both sides of the government budget. 
+Finally, the Appendix contains trade share parameters (Tables~\ref{tab:linkagesNu_mc}–\ref{tab:linkagesNu_mig}) compatible with the calibrated import structure presented in Tables~\ref{tab:linkagesShare_mc}–\ref{tab:linkagesShare_mig} of the main text.
 
 \subsection{Steady steady solution strategy}
 
@@ -871,7 +898,7 @@ Moreover, further refinements to the model's calibration, particularly regarding
 % \setcounter{equation}{0} 
 % \renewcommand{\theequation}{\thesection.\arabic{equation}} 
 
-\section{Calibration Data}
+\section{Calibration Data}\label{sec:appendix_calibration_data}
 \begin{landscape}
 \begin{table}[htbp]
 \caption{Data sources}
@@ -953,7 +980,8 @@ Share of World GDP & IMF & NGDPD.A & \\
     \desc{...}
 \end{figure}
 
-\section{Calibration Details}
+\section{Calibration Details}\label{sec:appendix_calibration_details}
+\setcounter{table}{0} 
 
 \begin{landscape}
     \begin{table}[htbp]
@@ -1057,7 +1085,7 @@ Share of World GDP & IMF & NGDPD.A & \\
 \end{landscape}
 
 
-\section{Sensitivity Analysis}
+\section{Sensitivity Analysis}\label{sec:appendix_sensitivity}
 
 \begin{table}[htbp]
 \centering

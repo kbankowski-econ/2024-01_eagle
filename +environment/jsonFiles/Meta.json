@@ -1,3 +1,4 @@
 {
-  "ctryList"     : [ "RA", "AT", "BE", "ES", "FI", "FR", "GR", "IT", "NL", "PT", "DE", "RU", "RW", "US"]
+  "ctryList"     : [ "RA", "AT", "BE", "ES", "FI", "FR", "GR", "IT", "NL", "PT", "DE", "RU", "RW", "US"],
+  "ctryListForReport"     : ["AT", "BE", "FI", "FR", "DE", "GR", "IT", "NL", "PT", "ES", "RA", "RU", "US", "RW"]
 }

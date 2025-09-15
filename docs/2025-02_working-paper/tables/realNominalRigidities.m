@@ -11,7 +11,7 @@ function realNominalRigidities(envi, aStruct, fileName)
     fprintf(fid, '    \\renewcommand{\\arraystretch}{1.2}\n');
     fprintf(fid, '    \\begin{tabular}{>{\\raggedright}p{6.9cm}*{14}{>{\\centering\\arraybackslash}p{0.7cm}}}\n');
     fprintf(fid, '        \\toprule\n');
-    fprintf(fid, '         & %s \\\\\n', strjoin(envi.Meta.ctryList, ' & '));
+    fprintf(fid, '         & %s \\\\\n', strjoin(envi.Meta.ctryListForReport, ' & '));
     fprintf(fid, '        \\midrule\n');
 
     % Adjustment costs
@@ -29,27 +29,27 @@ function realNominalRigidities(envi, aStruct, fileName)
     %         AT_gammaimig1
 
     fprintf(fid, '        \\multicolumn{15}{l}{\\textbf{Adjustment costs}} \\\\\n');
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Investment adj. cost', '\gamma_{\text{I}}', "gammai1", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Capital utilization', '\gamma_{\text{u2}}', "gammau2", aStruct.params, ' & %.0f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Transaction cost (level)', '\gamma_{\text{v1}}', "gammav1", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Transaction cost (curvature)', '\gamma_{\text{v2}}', "gammav2", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Intermediation cost', '\gamma_{\text{B}^*}', "gammab1", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Imports (priv. cons.)', '\gamma_{\text{IMC}}', "gammaimc1", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Imports (priv. inv.)', '\gamma_{\text{IMI}}', "gammaimi1", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Imports (gov. cons.)', '\gamma_{\text{IMCG}}', "gammaimcg1", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Imports (gov. inv.)', '\gamma_{\text{IMIG}}', "gammaimig1", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Investment adj. cost', '\gamma_{\text{I}}', "gammai1", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Capital utilization', '\gamma_{\text{u2}}', "gammau2", aStruct.params, ' & %.0f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Transaction cost (level)', '\gamma_{\text{v1}}', "gammav1", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Transaction cost (curvature)', '\gamma_{\text{v2}}', "gammav2", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Intermediation cost', '\gamma_{\text{B}^*}', "gammab1", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Imports (priv. cons.)', '\gamma_{\text{IMC}}', "gammaimc1", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Imports (priv. inv.)', '\gamma_{\text{IMI}}', "gammaimi1", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Imports (gov. cons.)', '\gamma_{\text{IMCG}}', "gammaimcg1", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Imports (gov. inv.)', '\gamma_{\text{IMIG}}', "gammaimig1", aStruct.params, ' & %.2f'));
 
     % Calvo parameters
     fprintf(fid, '        \\multicolumn{15}{l}{\\textbf{Calvo parameters}} \\\\\n');
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Wages (I and J households)', '\xi_{\text{I}}$ and $\xi_{\text{J}}', "xii", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Prices (dom. trad./nontrad.)', '\xi_{\text{H}}$ and $\xi_{\text{N}}', "xin", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Prices (exports)', '\xi_{\text{X}}', "xix", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Wages (I and J households)', '\xi_{\text{I}}$ and $\xi_{\text{J}}', "xii", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Prices (dom. trad./nontrad.)', '\xi_{\text{H}}$ and $\xi_{\text{N}}', "xin", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Prices (exports)', '\xi_{\text{X}}', "xix", aStruct.params, ' & %.2f'));
 
     % Degree of indexation
     fprintf(fid, '        \\multicolumn{15}{l}{\\textbf{Degree of indexation}} \\\\\n');
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Wages (I and J households)', '\chi_{\text{I}}$ and $\chi_{\text{J}}', "chii", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Prices (dom. trad./nontrad.)', '\chi_{\text{H}}$ and $\chi_{\text{N}}', "chin", aStruct.params, ' & %.2f'));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryList, 'Prices (exports)', '\chi_{\text{X}}', "chix", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Wages (I and J households)', '\chi_{\text{I}}$ and $\chi_{\text{J}}', "chii", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Prices (dom. trad./nontrad.)', '\chi_{\text{H}}$ and $\chi_{\text{N}}', "chin", aStruct.params, ' & %.2f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Prices (exports)', '\chi_{\text{X}}', "chix", aStruct.params, ' & %.2f'));
 
     % Table footer
     fprintf(fid, '        \\bottomrule\n');
