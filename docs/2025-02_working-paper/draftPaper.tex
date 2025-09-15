@@ -224,7 +224,7 @@ These trade dynamics are critical for understanding macroeconomic shock transmis
 
 % (1)
 The EAGLE model represents the global economy as being composed of multiple countries/regions, some of which form a monetary union.
-The original version, initially introduced in \citet{Gomesaetal2010ecbwp} and later published in \citet{Gomesaetal2012}, included Germany, the rest of the euro area, the United States, and the rest of the world.
+The original version, initially introduced in \citet{GomesEtAl2010ecbwp} and later published in \citet{GomesEtAl2012}, included Germany, the rest of the euro area, the United States, and the rest of the world.
 Subsequent versions of the model have modified the country composition to focus on different economic contexts, such as small open economies like Ireland and Slovenia (\citealp{Clancyetal2016}), the four largest euro area economies—Germany, France, Italy, and Spain (\citealp{BokanEtAl2018em})—or non-euro area countries like Hungary (\citealp{BekesiEtAl2017mnbwp}).
 Regardless of the specific configuration, regions within the EAGLE framework are modeled as open economies, interconnected through bilateral trade relationships and a common monetary policy for euro area members.
 
@@ -247,7 +247,7 @@ As in other large-scale DSGE models, our framework features non-Ricardian househ
 Given the substantial scale of the model (approximately 10,000 endogenous variables), we introduce a simplifying assumption relative to the original version by imposing the law of one price on exported goods, whereby firms do not differentiate prices across destinations.
 Pricing in the export sector nevertheless remains distinct from pricing in the non-tradable and home-tradable sectors.
 This subsection focuses on the model components most relevant for our extension and policy applications, in particular the bundling of final goods, the trade specification, and the policy rules.
-For all remaining features, we refer the reader to \citet{Gomesaetal2012} for the general structure and to \citet{Clancyetal2016} for the enhanced fiscal policy specification.
+For all remaining features, we refer the reader to \citet{GomesEtAl2012} for the general structure and to \citet{Clancyetal2016} for the enhanced fiscal policy specification.
 
 % (6)
 \paragraph{Final good production.}
@@ -285,7 +285,7 @@ Figure~\ref{finalGoodProduction} offers a detailed schematic representation of t
     The CES aggregation framework also implies that the prices of final goods are composite indices of the prices of their underlying components. 
     Specifically, the price of a final good of type $s$, denoted $P_{s,t}$, the price of the tradable component $P_{TTs,t}$, and the price of imported tradable goods $P_{IMs,t}$ are defined as follows:
     \[ P_{s,t} = \left[\nu_s\left(P_{TTs,t}\right)^{1-\mu_s} + \left(1-\nu_s\right)\left(P_{NT,t}\right)^{1-\mu_s}\right]^{\frac{1}{1-\mu_s}}, \] 
-    \[ P_{TTs,t} = \left[\nu_{Ts}\left(P_{HT,t}\right)^{1-\mu_{Ts}} + \left(1-\nu_{Ts}\right)\left(P_{IMs,t}\right)^{1-\mu_{Ts}}\right]^{\frac{1} {1-\mu_{Ts}}}, \] 
+    \[ P_{TTs,t} = \left[\nu_{Ts}\left(P_{HT,t}\right)^{1-\mu_{Ts}} + \left(1-\nu_{Ts}\right)\left(P_{IMs,t}\right)^{1-\mu_{Ts}}\right]^{\frac{1}{1-\mu_{Ts}}}, \]
     \[ P_{IMs,t} = \left[\sum_{CO \neq H} \nu_{Ms}^{\{H,CO\}}\left(P_{IM,t}^{CO}\right)^{1-\mu_{Ms}}\right]^{\frac{1}{1-\mu_{Ms}}}. \]
     Here, $\nu_s$, $\nu_{Ts}$, and $\nu_{Ms}^{\{H,CO\}}$ are the share parameters governing the aggregation at each respective level, and $\mu_s$, $\mu_{Ts}$, and $\mu_{Ms}$ denote the elasticities of substitution. 
     The price $P_{NT,t}$ corresponds to domestically produced non-tradable goods, $P_{HT,t}$ denotes the price of home-produced tradable goods, and $P_{IM,t}^{CO}$ refers to the price of imports from country or region $CO$. 
@@ -432,7 +432,7 @@ Figure~\ref{fig:AggResourceConstraint} illustrates the creation and use of resou
     \end{minipage}
 \end{figure}
 
-%//NOTE: Equestions that underpin the above graph
+%//NOTE: Equations that underpin the above graph
 % AT_nt = +AT_ntc+AT_nti+AT_ntcg+AT_ntig
 % AT_ysn = AT_snt*AT_nt; (there is a price dispersion between demand and supply, typical to a NK model)
 
@@ -475,7 +475,7 @@ Following the extension by \citet{Clancyetal2016}, both government consumption a
 Government consumption exhibits complementarity with private consumption, while government investment contributes to the stock of productive capital, thereby enhancing the production capacity of the private sector.
 \footnote{
     Specifically, the composite consumption good $\tilde{C}_t$ is modeled as a CES aggregate of final private consumption and final government consumption goods: $\tilde{C}_t = \left[\nu_{\text{CCES}}^{\frac{1}{\mu_{\text{CCES}}}}\left(C_t\right)^{\frac{\mu_{\text{CCES}}-1}{\mu_{\text{CCES}}}} + \left(1-\nu_{\text{CCES}}\right)^{\frac{1}{\mu_{\text{CCES}}}}\left(G_{C,t}\right)^{\frac{\mu_{\text{CCES}}-1}{\mu_{\text{CCES}}}}\right]^{\frac{\mu_{\text{CCES}}}{\mu_{\text{CCES}}-1}}$, where $\nu_{\text{CCES}}$ denotes the share parameter, and $\mu_{\text{CCES}}$ represents the elasticity of substitution between the two component goods.
-    The complementarity bet ween government and private consumption is introduced through the specification of a composite good consumed by households, following the approach of \citet{Coenen-et-al_AER_2012}.
+    The complementarity between government and private consumption is introduced through the specification of a composite good consumed by households, following the approach of \citet{Coenen-et-al_AER_2012}.
 }
 \footnote{
     The assumption that government investment enhances productivity builds on the work of \citet{LeeperEtAl2010jme}, where public capital accumulation is governed by $K_{G,t+1} = (1-\delta_G)K_{G,t} + G_{I,t}$. 
@@ -557,7 +557,7 @@ Here, $\left(\bar{R}^{\mathrm{CO}}\right)^4 = \beta^{-4} \bar{\Pi}^{\mathrm{CO},
 The parameters $\phi_{R}^{\mathrm{CO}}$, $\phi_{\Pi}^{\mathrm{CO}}$, and $\phi_{gY}^{\mathrm{CO}}$ govern the degree of interest rate smoothing and the sensitivity to deviations in inflation and output, respectively.
 In the case of the euro area, the same rule applies, but based on union-wide aggregates as defined in Eqs.~\ref{eqEAoutput} and~\ref{eqEAinflation}.
 
-%//NOTE: There seems to be a typo in the EM paper, the annual steady-state nominal interest rate shoudl be a function on annual inflation. This can be seen by looking at the below equations in the moddel.
+%//NOTE: There seems to be a typo in the EM paper, the annual steady-state nominal interest rate should be a function of annual inflation. This can be seen by looking at the below equations in the model.
 % // Real interest rate
 % DE_rr-1 = DE_r/DE_pic(+1)-1;
 % // Equilibrium real interest rate
