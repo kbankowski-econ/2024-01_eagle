@@ -327,7 +327,11 @@ Figure~\ref{finalGoodProduction} offers a detailed schematic representation of t
     \end{minipage}
 \end{figure}
 
-\paragraph{Resource constraint} Countries and regions in the EAGLE model satisfy an aggregate resource constraint which is given in nominal terms by Eq.~\ref{eqResourceConstraint}. Total production $Y_t$ is allocated to: (i) domestic final demand of the private sector ($C_t$ and $I_t$) and the general government ($G_{C,t}$ and $G_{I,t}$); and (ii) external demand via exports.\footnote{A portion of production is absorbed by transaction costs and capital utilization costs, represented by $\Gamma_{v,t}$ and $\Gamma_u(u_t)K_t$, respectively.} Figure~\ref{fig:AggResourceConstraint} illustrates the creation and use of resources within a country or region in the EAGLE model.
+\paragraph{Resource constraint} Countries and regions in the EAGLE model satisfy an aggregate resource constraint which is given in nominal terms by Eq.~\ref{eqResourceConstraint}. Total production $Y_t$ is allocated to: (i) domestic final demand of the private sector ($C_t$ and $I_t$) and the general government ($G_{C,t}$ and $G_{I,t}$); and (ii) external demand via exports.
+\footnote{
+    A portion of production is absorbed by transaction costs and capital utilization costs, represented by $\Gamma_{v,t}$ and $\Gamma_u(u_t)K_t$, respectively.
+} 
+Figure~\ref{fig:AggResourceConstraint} illustrates the creation and use of resources within a country or region in the EAGLE model.
 \begin{equation} \label{eqResourceConstraint}
     \begin{aligned}
         P_{Y,t} Y_t =\ & P_{C,t} \underbrace{\left(C_t + \Gamma_{v,t}\right)}_{Q_t^{C}} + P_{I,t} \underbrace{\left(I_t + \Gamma_u(u_t) K_t\right)}_{Q_t^{I}} + P_{G_C,t} \underbrace{G_{C,t}}_{Q_t^{G_c}} + P_{G_I,t} \underbrace{G_{I,t}}_{Q_t^{G_i}} \\
@@ -439,7 +443,9 @@ Figure~\ref{finalGoodProduction} offers a detailed schematic representation of t
 
 
 \paragraph{Trade and net foreign asset position} Each country or region in the EAGLE model may experience a mismatch between the value of imported and exported goods, resulting in a trade surplus or deficit. The trade balance in nominal terms is defined as the difference between exports and imports (see Eq.~\ref{eqTradeBalance}):
-\footnote{$S_t^{\{H,CO\}}$ in Eq.~\ref{eqTradeBalance} denotes the nominal exchange rate that converts the price $P_{X,t}^{\{H,CO\}}$, expressed in the currency of country $CO$, into the currency of country $H$.}
+\footnote{
+    $S_t^{\{H,CO\}}$ in Eq.~\ref{eqTradeBalance} denotes the nominal exchange rate that converts the price $P_{X,t}^{\{H,CO\}}$, expressed in the currency of country $CO$, into the currency of country $H$.
+}
 \begin{equation} \label{eqTradeBalance}
     TB_t \equiv \sum_{CO \neq H} S_t^{\{H,CO\}} P_{X,t}^{\{H,CO\}} \underbrace{\frac{s^{CO}}{s^H} IM_t^{\{CO,H\}}}_{\equiv X_t^{\{H,CO\}}} - \sum_{CO \neq H} P_{IM,t}^{\{H,CO\}} IM_t^{\{H,CO\}}.
 \end{equation}
