@@ -127,6 +127,7 @@ steady(homotopy_steps = 5);
 
 // Price setting (domestic markets followed by foreign markets)
 
+// Fixed-cost parameters
 disp('psit')
 homotopy_setup;
 @#for co in countries
