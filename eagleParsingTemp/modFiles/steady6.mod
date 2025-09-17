@@ -12,8 +12,8 @@ options_.markowitz = 5;
 // Flip variables
 
 @#for co in countries
-change_type(parameters) @{co}_epsilonm @{co}_vi @{co}_iy @{co}_imcy @{co}_imiy @{co}_imcgy @{co}_imigy;
-change_type(var) @{co}_gammav2 @{co}_gammav1 @{co}_psit @{co}_nutc @{co}_nuti @{co}_nutcg @{co}_nutig;
+change_type(parameters) @{co}_iy @{co}_imcy @{co}_imiy @{co}_imcgy @{co}_imigy;
+change_type(var) @{co}_psit @{co}_nutc @{co}_nuti @{co}_nutcg @{co}_nutig;
 @#endfor
 
 @#for co in countries  - [ countries[ctryNumber]]
