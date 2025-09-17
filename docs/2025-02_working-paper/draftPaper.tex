@@ -755,8 +755,14 @@ Finally, the Appendix contains trade share parameters (Tables~\ref{tab:linkagesN
 
 \subsection{Steady steady solution strategy}
 
-The expanded model, which includes 12 euro area countries, the rest of the world, and the United States, encompasses nearly 10,000 endogenous variables.
-Computing the steady state for a model of this scale remains a complex task, requiring the application of a "divide-and-conquer" algorithm, also known as homotopy in Dynare (see \citet{Adjemianetal2024}).
+The expanded model, which utltimately totals 14 countries/ regions, encompasses nearly 10,000 endogenous variables.
+Even before the extension the original model does not have a closed-form analitical steady-state solution, hence it has to be solved numerically.
+Computing the steady state for a model of this scale remains a complex task.
+It requires both the application of a "divide-and-conquer" (DAC) algorithm, also known as homotopy in Dynare (see \citet{Adjemianetal2024}).
+\footnote{
+    The DAC algorithm has been used to obtain steady states numerically not only in the EAGLE model but also in other large-scale DSGE models. A prominent example is the IMF's Global Integrated Monetary and Fiscal Model (GIMF); see educational material on Douglas Laxton's website at \url{http://www.douglaslaxton.org}.
+}
+Furthermore, it  and several model simplifications that allow for a numerical steady state solution, which then can be used as a basis for a more complete .
 We first solve for the steady state of a simplified version of the model, where all regions are symmetric and economic sectors are dominated by a single type of good.
 From this initial steady state, we gradually adjust parameters toward their target values, ensuring a smooth transition to an equilibrium where all economic ratios and trade specifications align with observed data.
 
