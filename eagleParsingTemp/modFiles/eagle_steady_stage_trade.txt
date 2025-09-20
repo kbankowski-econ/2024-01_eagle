@@ -1470,9 +1470,9 @@ RU_mumig 2.5
 RU_mutig 2.5
 RU_nuig 0.6
 RU_omega 0.25
-RU_phirgy 0
-RU_phirpi 1.5
-RU_phirr 0.75
+RU_phirgy 0.1
+RU_phirpi 1.7
+RU_phirr 0.87
 RU_phitb 0.1
 RU_pi4target 1.02
 RU_psin 0.28

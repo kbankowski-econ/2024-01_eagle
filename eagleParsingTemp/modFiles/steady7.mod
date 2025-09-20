@@ -24,3 +24,6 @@ steady;
 
 // Verifies local stability (eigenvalues of the linearized system).
 check;
+
+// check residuals again
+resid(non_zero);
