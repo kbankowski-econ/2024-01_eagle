@@ -22,7 +22,7 @@
 //    - phirpi:   Monetary policy inflation response (1.5 → 1.70, except for RU unchanged)
 //    - phirgy:   Monetary policy output gap response (0 → 0.10, except for RU unchanged)
 //
-// 3. Adjustment and Transaction Cost Parameters:
+// 3. Adjustment and Transaction Cost Parameters (for dynamic model):
 //    - gammai1:   Investment adjustment costs (1 → US/RW: 4.00, others: 6.00)
 //    - gammau2:   Capacity utilization costs (1 → 2000)
 //    - gammaimc1:  Import consumption adjustment costs (1 → 2.00)
@@ -67640,6 +67640,7 @@ end;
 steady(homotopy_steps = 15);
 //---------------------------------------------------------//
 // Change parameters that appear only in the dynamic model //
+// (no SS solution needed)                                 //
 //---------------------------------------------------------//
 // Fiscal policy rule
 RA_phitb = 0.1;
@@ -67657,15 +67658,18 @@ RU_phitb = 0.1;
 RW_phitb = 0.1;
 US_phitb = 0.1;
 // Monetary policy rule
-EA_phirr  = 0.87;
-EA_phirpi = 1.70;
-EA_phirgy = 0.10;
-US_phirr  = 0.87;
-US_phirpi = 1.70;
-US_phirgy = 0.10;
-RW_phirr  = 0.87;
-RW_phirpi = 1.70;
-RW_phirgy = 0.10;
+    RU_phirr  = 0.87;
+    RU_phirpi = 1.70;
+    RU_phirgy = 0.10;
+    RW_phirr  = 0.87;
+    RW_phirpi = 1.70;
+    RW_phirgy = 0.10;
+    US_phirr  = 0.87;
+    US_phirpi = 1.70;
+    US_phirgy = 0.10;
+    EA_phirr  = 0.87;
+    EA_phirpi = 1.70;
+    EA_phirgy = 0.10;
 // Adjustment and transaction cost
         RA_gammai1= 6.00;
         AT_gammai1= 6.00;
