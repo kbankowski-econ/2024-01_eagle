@@ -3,7 +3,7 @@ utils.call.paths;
 % Cding to a relevant directory
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 
-%% SS version of the model; just loading to make sure it works
+%% SS version of the model; just loading to make sure it works, no solution here
 dynare('load0.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
 %% non-SS version of the model; also loading to make sure it works

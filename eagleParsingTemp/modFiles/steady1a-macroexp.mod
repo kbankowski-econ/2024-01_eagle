@@ -1,3 +1,56 @@
+// =============================================================================
+// STEADY STATE HOMOTOPY METHOD - STAGE 1A
+// =============================================================================
+//
+// 1. Technology Parameters:
+//    - alphat: Tradable sector technology parameter (0.1 → 0.3)
+//    - alphan: Non-tradable sector technology parameter (0.1 → 0.3)
+//
+// 2. Final-Goods Demand Elasticities:
+//    - muc:   Consumption elasticity of substitution (1.001 → 0.5)
+//    - mutc:  Tradable consumption elasticity (1.001 → 2.5)  
+//    - mumc:  Import consumption elasticity (1.001 → 2.5)
+//    - mui:   Investment elasticity of substitution (1.001 → 0.5)
+//    - muti:  Tradable investment elasticity (1.001 → 2.5)
+//    - mumi:  Import investment elasticity (1.001 → 2.5)
+//
+// 3. Home-Bias Parameters:
+//    - nuc:   Consumption home bias (0.5 → US/RW: 0.35, others: 0.65)
+//    - nui:   Investment home bias (0.5 → 0.75)
+//    - nutc:  Tradable consumption home bias (0.5 → US: 0.85, others: 0.20)
+//    - nuti:  Tradable investment home bias (0.5 → US: 0.85, others: 0.20)
+//
+// 4. Price Setting - Fixed Costs:
+//    - psit:  Tradable sector fixed costs (0 → 0.2)
+//    - psin:  Non-tradable sector fixed costs (0 → US/RW: 0.08, others: 0.28)
+//
+// 5. Calvo Price Stickiness Parameters:
+//    - xin:   Non-tradable domestic Calvo parameter (0.1 → US/RW: 0.75, others: 0.92)
+//    - xih:   Tradable domestic Calvo parameter (0.1 → US/RW: 0.75, others: 0.92)
+//    - xix:   Export Calvo parameter (0.1 → 0.75)
+//    - xii:   Wage of HH i Calvo parameter (0.1 → 0.75)
+//    - xij:   Wage of HH j Calvo parameter (0.1 → 0.75)
+//
+// 6. Price Indexation Parameters:
+//    - chin:  Non-tradable domestic indexation (0 → 0.5)
+//    - chih:  Tradable domestic indexation (0 → 0.5)
+//    - chix:  Export indexation (0 → 0.5)
+//    - chii:  Wage of HH i indexation (0 → 0.75)
+//    - chij:  Wage of HH j indexation (0 → 0.75)
+//
+// 7. Additional Structural Parameters:
+//    - sigma:    Risk aversion parameter (SKIPPED - already at target value 1.0)
+//    - kappa:    Habit formation (0 → 0.70)
+//    - zeta:     Inverse Frisch elasticity (SKIPPED - already at target value 2.0)
+//    - gammav1:  Transaction cost 1 (0.02 → 0.0267)
+//    - gammav2:  Transaction cost 2 (0.1 → 0.1284)
+//    - thetan:   Non-tradable goods markup elasticity (1.1 → US/RW: 4.60, others: 3.00)
+//    - thetat:   Tradable goods markup elasticity (1.1 → 6.00)
+//    - eta:      Substitution btw. I-type and J-type labor (1.1 → US/RW: 7.25, others: 4.33)
+//    - etai:     HH i wage markup elasticity (1.1 → US/RW: 7.25, others: 4.33)
+//    - etaj:     HH j wage markup elasticity (1.1 → US/RW: 7.25, others: 4.33)
+//
+// =============================================================================
 options_.maxit_ = 20
 options_.homotopy_mode = 1;
 options_.solve_algo = 5;

@@ -1,3 +1,12 @@
+// =============================================================================
+// STEADY STATE HOMOTOPY METHOD - STAGE 4
+// =============================================================================
+//
+// 1. Introducing meaningful government investment:
+//    - alphag: Productivity of public capital (NaN → 0.05)
+//    - nucces: Depretiation of public capital (NaN → 0.025)
+//
+// =============================================================================
 //options_.maxit_ = 20
 options_.homotopy_mode = 1;
 options_.solve_algo = 5;
