@@ -1,3 +1,13 @@
+// =============================================================================
+// STEADY STATE HOMOTOPY METHOD - STAGE 3
+// =============================================================================
+//
+// 1. Introducing meaningful government consumption:
+//    - mucces: Elastiticity of subst. between private and public consumption (NaN → 0.3)
+//    - nucces: Quasi-share of private cons. (NaN → 0.75)
+//
+// =============================================================================
+
 //options_.maxit_ = 20
 options_.homotopy_mode = 1;
 options_.solve_algo = 5;

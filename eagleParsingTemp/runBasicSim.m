@@ -1,19 +1,15 @@
-%// NOTE: next step is to introduce the missing elements of the
-% import content that may be not covered in the loops (see also
-% some TODO items; first to load the model and then later to
-% solve for its SS)
-
+% Loading necessary path variables
 utils.call.paths;
 % Cding to a relevant directory
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 
-%% SS version of the model
+%% SS version of the model; just loading to make sure it works
 dynare('load0.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
-%% non-SS version of the model
+%% non-SS version of the model; also loading to make sure it works
 dynare('eagleModel.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
-%%
+%% solving for the initial version of the stady state
 dynare('steady0.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
 %% 

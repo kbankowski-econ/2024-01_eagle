@@ -1,3 +1,38 @@
+// =============================================================================
+// STEADY STATE HOMOTOPY METHOD - STAGE 6
+// =============================================================================
+//
+// STAGE 6 PARAMETER GROUPS:
+// 1. Trade Matrix Calibration:
+//    - imcy:  Bilateral import ratios (country-specific)
+//    - imcgy: Bilateral import ratios (country-specific)
+//    - imiy:  Bilateral import ratios (country-specific)
+//    - imigy: Bilateral import ratios (country-specific)
+//    - imcy:  Country total import ratios (country-specific)
+//    - imcgy: Country total import ratios (country-specific)
+//    - imiy:  Country total import ratios (country-specific)
+//    - imigy: Country total import ratios (country-specific)
+//    - size:  Country size (0.07143 → country-specific)
+//    - tby:   Trade balance (RU: -0.00493, RW: -0.00493, US: -0.005068, others: 0.001849 → country-specific)
+//    - nuc:   Consumption home bias (US/RW: 0.35, others: 0.65 → RA: 0.9, US: 0.45)
+//
+// 2. Policy Rule Parameters (for dynamic model):
+//    - phitb:    Fiscal rule parameter (0.1 → 0.1)
+//    - phirr:    Monetary policy interest rate smoothing (0.75 → 0.87, except for RU unchanged)
+//    - phirpi:   Monetary policy inflation response (1.5 → 1.70, except for RU unchanged)
+//    - phirgy:   Monetary policy output gap response (0 → 0.10, except for RU unchanged)
+//
+// 3. Adjustment and Transaction Cost Parameters:
+//    - gammai1:   Investment adjustment costs (1 → US/RW: 4.00, others: 6.00)
+//    - gammau2:   Capacity utilization costs (1 → 2000)
+//    - gammaimc1:  Import consumption adjustment costs (1 → 2.00)
+//    - gammaimcg1: Government import consumption adjustment costs (1 → 2.00)
+//    - gammaimi1:  Import investment adjustment costs (1 → 1.00)
+//    - gammaimig1: Government import investment adjustment costs (1 → 1.00)
+//    - gammab1:   Foreign bond adjustment costs (0.2 → 0.01)
+//
+// =============================================================================
+
 //options_.maxit_ = 20
 options_.homotopy_mode = 1;
 options_.solve_algo = 5;

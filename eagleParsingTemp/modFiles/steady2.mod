@@ -1,3 +1,13 @@
+// =============================================================================
+// STEADY STATE HOMOTOPY METHOD - STAGE 2
+// =============================================================================
+//
+// 1. Money Demand Parameters:
+//    - epsilonm: Interest (semi-)elasticity of money demand (-0.867 → -0.75)
+//    - vi:       Consumption-based velocity parameter (2.295 → 2.38)
+//
+// =============================================================================
+
 //options_.maxit_ = 20
 options_.homotopy_mode = 1;
 options_.solve_algo = 5;
