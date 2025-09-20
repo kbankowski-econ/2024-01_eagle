@@ -202,6 +202,71 @@ dynare('steady6.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingT
 %%
 dynare('steady7.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
+%% Printing the evolution of the SS solution to a txt file so that it can be tracked (if needed)
+
+% Load the model results (so that the block can be run separately)
+lastestModelResults = load(strcat(project_path, '/', 'eagleParsingTemp/modFiles/steady7/Output/steady7_results.mat'));
+
+% Define steady state step names and corresponding text file names
+ssStepList = {'steady0', 'steady1a', 'steady1b', 'steady2', 'steady3', 'steady4', 'steady6', 'steady7'};
+ssTextFile = {'eagle_steady_stage0', 'eagle_steady_stage1a', 'eagle_steady_stage1b', 'eagle_steady', ...
+              'eagle_steady_govCo', 'eagle_steady_govInv', 'eagle_steady_stage_trade', 'eagle_steady_stage_trade'};
+
+% Initialize parameter table with NaN values
+paraTable = table('Size', [size(lastestModelResults.M_.param_names, 1), size(ssStepList, 2)], ...
+                  'VariableTypes', repmat({'double'}, 1, size(ssStepList, 2)), ...
+                  'RowNames', lastestModelResults.M_.param_names, ...
+                  'VariableNames', ssStepList);
+paraTable{:, :} = NaN;
+
+% Initialize endogenous variables table with NaN values (exclude auxiliary variables)
+endoTable = table('Size', [size(lastestModelResults.M_.endo_names(~startsWith(lastestModelResults.M_.endo_names, "AUX_")), 1), size(ssStepList, 2)], ...
+                  'VariableTypes', repmat({'double'}, 1, size(ssStepList, 2)), ...
+                  'RowNames', lastestModelResults.M_.endo_names(~startsWith(lastestModelResults.M_.endo_names, "AUX_")), ...
+                  'VariableNames', ssStepList);
+endoTable{:, :} = NaN;
+
+%% Creating tables containing steady state values of all steps
+for aStepIndex = 1:numel(ssStepList)
+    
+    % Read steady state values from text file
+    tempTable = readSteadyStateFile(fullfile(project_path, sprintf('eagleParsingTemp/modFiles/%s.txt', ssTextFile{aStepIndex})));
+    
+    % Fill parameter table with values (skip missing parameters)
+    for aParam = reshape(string(paraTable.Properties.RowNames), 1, [])
+        try
+            paraTable{aParam, ssStepList{aStepIndex}} = tempTable{aParam, "Value"};
+        catch
+            % Skip parameters not found in current step
+        end
+    end
+    
+    % Fill endogenous variables table with values (skip missing variables)
+    for aEndo = reshape(string(endoTable.Properties.RowNames), 1, [])
+        try
+            endoTable{aEndo, ssStepList{aStepIndex}} = tempTable{aEndo, "Value"};
+        catch
+            % Skip variables not found in current step
+        end
+    end
+    
+end
+
+%% Save steady state evolution tables to text file
+outputFile = fullfile(project_path, 'eagleParsingTemp/runBasicSim_ssValueEvolution.txt');
+fileID = fopen(outputFile, 'w');
+
+% Write parameter table with formatting
+fprintf(fileID, 'PARAMETER VALUES EVOLUTION\n');
+fprintf(fileID, '==========================\n\n');
+writeFormattedTable(fileID, paraTable);
+
+fprintf(fileID, '\n\n\nENDOGENOUS VARIABLES EVOLUTION\n');
+fprintf(fileID, '==============================\n\n');
+writeFormattedTable(fileID, endoTable);
+
+fclose(fileID);
+
 %% local functions
 function replaceInTextFile(originalFileName, newFileName, replaceContent, newReplaceContent, replaceContent2, newReplaceContent2)
     
@@ -248,4 +313,56 @@ function appendTextFile(originalFileName, newFileName, linesToAppend)
 
     % Close the file
     fclose(fileID);
+end
+
+function dataTable = readSteadyStateFile(filename)
+      % Read steady state file and create a table with row names and values
+
+      % Read the file
+      fileData = readtable(filename, 'Delimiter', ' ', 'ReadVariableNames', false);
+
+      % Extract variable names and values
+      varNames = fileData.Var1;
+      values = fileData.Var2;
+
+      % Create table with row names
+      dataTable = table(values, 'RowNames', varNames, 'VariableNames', {'Value'});
+end
+
+function writeFormattedTable(fileID, dataTable)
+    % Write formatted table with aligned columns
+    
+    % Get table properties
+    rowNames = dataTable.Properties.RowNames;
+    colNames = dataTable.Properties.VariableNames;
+    tableData = table2array(dataTable);
+    
+    % Calculate column widths
+    maxRowNameWidth = max(cellfun(@length, rowNames));
+    colWidths = zeros(1, length(colNames));
+    
+    for i = 1:length(colNames)
+        colWidths(i) = max([length(colNames{i}), ...
+                           max(arrayfun(@(x) length(sprintf('%.4g', x)), tableData(:, i)))]);
+    end
+    
+    % Write column headers
+    fprintf(fileID, sprintf('%%-%ds', maxRowNameWidth), '');
+    for i = 1:length(colNames)
+        fprintf(fileID, sprintf('    %%-%ds', colWidths(i)), colNames{i});
+    end
+    fprintf(fileID, '\n');
+    
+    % Write table data
+    for i = 1:size(tableData, 1)
+        fprintf(fileID, sprintf('%%-%ds', maxRowNameWidth), rowNames{i});
+        for j = 1:size(tableData, 2)
+            if isnan(tableData(i, j))
+                fprintf(fileID, sprintf('    %%-%ds', colWidths(j)), 'NaN');
+            else
+                fprintf(fileID, sprintf('    %%-%ds', colWidths(j)), sprintf('%.4g', tableData(i, j)));
+            end
+        end
+        fprintf(fileID, '\n');
+    end
 end
