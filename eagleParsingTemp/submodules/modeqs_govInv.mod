@@ -560,7 +560,7 @@ model(block, bytecode, cutoff=0);
 @{co}_tr = @{co}_try*@{co}_pybar*@{co}_ybar;
 
 // Fiscal rule
-@{co}_t/(@{co}_pybar*@{co}_ybar) = @{co}_phitb*(@{co}_b/(@{co}_pybar*@{co}_ybar)-@{co}_bytarget);
+@{co}_t/(@{co}_pybar*@{co}_ybar) = @{co}_tybar + @{co}_phitb*(@{co}_b/(@{co}_pybar*@{co}_ybar)-@{co}_bytarget);
 
 @#else // !steady
 @{co}_tr = @{co}_trybar*@{co}_pybar*@{co}_ybar;
