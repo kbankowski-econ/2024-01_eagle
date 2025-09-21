@@ -201,7 +201,7 @@ dynare('steady7.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingT
 %% Printing the evolution of the SS solution to a txt file so that it can be tracked (if needed)
 
 % Load the model results (so that the block can be run separately)
-lastestModelResults = load(strcat(project_path, '/', 'eagleParsingTemp/modFiles/steady7/Output/steady7_results.mat'));
+lastestModelResults = load(fullfile(project_path, 'eagleParsingTemp/modFiles/steady7/Output/steady7_results.mat'));
 
 % Define steady state step names and corresponding text file names
 ssStepList = {'steady0', 'steady1a', 'steady1b', 'steady2', 'steady3', 'steady4', 'steady6', 'steady7'};
@@ -221,6 +221,13 @@ endoTable = table('Size', [size(lastestModelResults.M_.endo_names(~startsWith(la
                   'RowNames', lastestModelResults.M_.endo_names(~startsWith(lastestModelResults.M_.endo_names, "AUX_")), ...
                   'VariableNames', ssStepList);
 endoTable{:, :} = NaN;
+
+% Initialize exogenous variables table with NaN values
+exoTable = table('Size', [size(lastestModelResults.M_.exo_names, 1), size(ssStepList, 2)], ...
+                  'VariableTypes', repmat({'double'}, 1, size(ssStepList, 2)), ...
+                  'RowNames', lastestModelResults.M_.exo_names, ...
+                  'VariableNames', ssStepList);
+exoTable{:, :} = NaN;
 
 %% Creating tables containing steady state values of all steps
 for aStepIndex = 1:numel(ssStepList)
@@ -245,6 +252,15 @@ for aStepIndex = 1:numel(ssStepList)
             % Skip variables not found in current step
         end
     end
+
+    % Fill exogenous variables table with values (skip missing variables)
+    for aExo = reshape(string(exoTable.Properties.RowNames), 1, [])
+        try
+            exoTable{aExo, ssStepList{aStepIndex}} = tempTable{aExo, "Value"};
+        catch
+            % Skip variables not found in current step
+        end
+    end    
     
 end
 
@@ -260,6 +276,10 @@ writeFormattedTable(fileID, paraTable);
 fprintf(fileID, '\n\n\nENDOGENOUS VARIABLES EVOLUTION\n');
 fprintf(fileID, '==============================\n\n');
 writeFormattedTable(fileID, endoTable);
+
+fprintf(fileID, '\n\n\nEXOGENOUS VARIABLES EVOLUTION\n');
+fprintf(fileID, '=============================\n\n');
+writeFormattedTable(fileID, exoTable);
 
 fclose(fileID);
 
