@@ -753,39 +753,81 @@ Nominal and real rigidities, along with price and wage markups—which are calib
 Appendix Table~\ref{tab:fiscal_instruments} complements Table~\ref{tab:gov_ratios} by providing detailed steady-state-to-GDP ratios of fiscal instruments on both sides of the government budget. 
 Finally, the Appendix contains trade share parameters (Tables~\ref{tab:linkagesNu_mc}–\ref{tab:linkagesNu_mig}) compatible with the calibrated import structure presented in Tables~\ref{tab:linkagesShare_mc}–\ref{tab:linkagesShare_mig} of the main text.
 
-\subsection{Steady steady solution strategy}
+\subsection{Steady state solution strategy}
 
-The expanded model, which utltimately totals 14 countries/ regions, encompasses nearly 10,000 endogenous variables.
-Even before the extension the original model does not have a closed-form analitical steady-state solution, hence it has to be solved numerically.
+The expanded model, which ultimately comprises 14 countries/regions, encompasses nearly 10,000 endogenous variables.
+Even before the extension, the original model lacks a closed-form analytical steady-state solution and must therefore be solved numerically.
 Computing the steady state for a model of this scale remains a complex task.
 It requires the application of a "divide-and-conquer" (DAC) algorithm, also known as homotopy in Dynare (see \citet{Adjemianetal2024}).
 \footnote{
     The DAC algorithm has been used to obtain steady states numerically not only in the EAGLE model but also in other large-scale DSGE models. A prominent example is the IMF's Global Integrated Monetary and Fiscal Model (GIMF); see educational material on Douglas Laxton's website at \url{http://www.douglaslaxton.org}.
 }
-For our extended model it also involves simplifying the entire model first to obtain a starting steady-state values, which will serve as basis for the extended version of the model.
+For our extended model, this approach involves first simplifying the entire model to obtain initial steady-state values, which serve as the foundation for the extended version.
 
-We begin the solution strategy with obtaining a steady state for a simplified version of the model (i.e., closer to the original EAGLE version) where all regions are symmetric and economic sectors are dominated by a single type of good. From this initial steady state, we gradually adjust parameters toward their target values, ensuring a smooth transition to an equilibrium where all economic ratios and trade specifications align with observed data.
+Figure \ref{diagram:ssSolutionStrategy} illustrates the step-by-step strategy employed to obtain the model's steady state.
+We begin the solution strategy by obtaining a steady state for a simplified version of the model (i.e., closer to the original EAGLE specification) where all regions and production sectors are symmetric. 
+From this initial steady state, we gradually adjust parameters toward their target values, ensuring a smooth transition to an equilibrium where all economic ratios and trade specifications align with observed data.
+In certain steps, we also advance the model by introducing desired features, such as complementary government consumption and productive government investment.
+Based on our experience, solving for the steady state with these features incorporated from the outset proves considerably more challenging.
+In this context, obtaining steady-state values that serve as the foundation for calculating the extended model is essential.
 
-Among the various calibration steps, the adjustment of bilateral trade flows presents the greatest challenge.
-Successfully calibrating the model requires computing multiple intermediate steady states before converging on the final set of bilateral shares.
+Among the various calibration steps, the adjustment of bilateral trade flows presents the greatest challenge (Step 6 in Figure \ref{diagram:ssSolutionStrategy}).
+Given the interconnectedness of trade linkages between countries, aligning the model with the trade calibration matrix must occur simultaneously.
+The calibration of bilateral and total import shares relies on a technique called model flipping.
+Since trade shares are endogenous variables in the model, obtaining their specific values under the standard approach is not feasible—they cannot be directly imposed like parameters.
+One approach that effectively accomplishes this is to exploit the direct relationship between the shares and weight parameters in import equations (see Equation \ref{eqFlippingExample}, which specifies the bilateral import share of government consumption goods by country $H$ from country $CO$ as an example).
+Model flipping transforms the weight $v_{M G_C}^{H, C O}$ into an endogenous variable and import shares $\frac{P_{IM,t}^{CO}I M_t^{G_C}}{P_{Y,t} Y_t}$ into a parameter, the values of which can be imposed.
+In addition to total and bilateral trade shares, this step must also involve calibration of trade balances and country sizes, both of which are directly related to the shares.
+Given the large number of countries in our model, this step involves the simultaneous calibration of 755 parameters.
+
+%//NOTE: The below equation is copied from Clancy (eq. 6)
+\begin{equation} \label{eqFlippingExample}
+I M_t^{G_C, C O}=v_{M G_C}^{H, C O}\left(\frac{P_{I M, t}^{C O}}{P_{I M G_C, t}}\right)^{-\mu_{M G_C}} I M_t^{G_C}\end{equation}
+
+%//NOTE: on how to write down bilateral import share
+% the below is the equation for bilateral import share from the model
+% GRRW_imigy = (RW_pex*GRRW_rer)*GRRW_imig/(GR_py*GR_y);
+% the relevant import price from the above equation: (RW_pex*GRRW_rer)
+% and here is the one for trade balance
+% GR_tb = GR_pex*RA_size/GR_size*RAGR_im - RA_pex*GRRA_rer*GRRA_im + ...
+% to ensure consistent notation with the trade balance we have in the paper, which is
+%    TB_t \equiv \sum_{CO \neq H} S_t^{\{H,CO\}} P_{X,t}^{\{H,CO\}} \underbrace{\frac{s^{CO}}{s^H} IM_t^{\{CO,H\}}}_{\equiv X_t^{\{H,CO\}}} - \sum_{CO \neq H} P_{IM,t}^{\{H,CO\}} IM_t^{\{H,CO\}}.
+% price of imports > RW_pex*GRRW_rer > in Latex from trade equation > P_{IM,t}^{\{H,CO\}}
+% nominal GDP > P_{Y,t} Y_t > from resource constraint (eqResourceConstraint) > P_{Y,t} Y_t
+% all in all bilateral share > \frac{P_{IM,t}^{\{H,CO\}}I M_t^{G_C}}{P_{Y,t} Y_t}
+% one simplification: given the law of one price P_{IM,t}^{\{H,CO\} = P_{IM,t}^{\{CO\} (each country imports from country CO at the same price)
+% therefore:  \frac{P_{IM,t}^{CO}I M_t^{G_C}}{P_{Y,t} Y_t}, which makes it more consistent with the equation from Clancy
 
 \begin{figure}[H]
     \centering
-    \caption{Production of final goods in the EAGLE model.\label{diagram:ssSolutionStrategy}}
+    \caption{Sequential steady state solution strategy.\label{diagram:ssSolutionStrategy}}
     \begin{tikzpicture}[
         node distance=0.8cm and 1.2cm,
-        every node/.style={draw, rounded corners, minimum width=1.5cm, minimum height=0.6cm, align=center, font=\small},
+        every node/.style={draw, rounded corners, text width=0.85\textwidth, minimum height=0.8cm, align=center, font=\small},
         every path/.style={draw, thick}
       ]
       
-      \node (step0) {Step 0: Pre-extention, symetric, one production sector model with multiple parameters simplifying the model.};
-      \node[below=of step0] (step1) {Step 1: Realistic labour/ capital shares; two production sectors and final good aggregation, realistic Calvo parameters; price indexation; habit formation; more realistic substituion elsticities};
-      \node[below=of step1] (step2) {Step 2: Realistic demand shares and fiscal variables, positive inflation; non-zero NFA};
-      \node[below=of step2] (step3) {Step 3: Realistic demand shares and fiscal variables, positive inflation; non-zero NFA};
+      % steady0
+      \node (step0) {\textbf{Step 0:} Solve for the initial steady state using a simplified model specification with symmetric production sectors, simplified price and wage setting, selected features (e.g., habit formation) effectively eliminated, fiscal variables set to zero with no government debt, pre-extension configuration without complementary government consumption and productive government investment, simplified trade structure, and identical country/region sizes.};
+      % steady1a
+      \node[below=of step0] (step1) {\textbf{Step 1:} Calibrate labor and capital shares; specify final goods production with appropriate shares and elasticities; introduce fixed costs; implement realistic price and wage setting behavior with standard Calvo parameters and indexation; specify additional structural parameters including habit formation and markups in intermediate goods and labor markets.};
+      % steady1b
+      \node[below=of step1] (step2) {\textbf{Step 2:} Calibrate fiscal spending ratios (maintaining non-complementary government consumption and unproductive government investment), tax rates, government debt ratios, transfer and lump-sum tax distribution parameters, and inflation rates.};
+      % steady 2
+      \node[below=of step2] (step3) {\textbf{Step 3:} Fine-tune the interest semi-elasticity of money demand and consumption-based velocity parameters.};
+      % steady 3
+      \node[below=of step3] (step4) {\textbf{Step 4:} Introduce complementary government consumption with quasi-share parameter $\nu_{\text{CCES}}$ and complementarity degree $\mu_{\text{CCES}}$.};
+      % steady 4
+      \node[below=of step4] (step5) {\textbf{Step 5:} Introduce productive public capital stock with productivity parameter $\alpha_{\text{G}}$ and depreciation rate $\delta_{\text{G}}$.};
+      % steady 6
+      \node[below=of step5] (step6) {\textbf{Step 6:} Calibrate total and bilateral import shares, trade balances, and country/region sizes.};
     
       \draw (step0) -- (step1);
       \draw (step1) -- (step2);
       \draw (step2) -- (step3);
+      \draw (step3) -- (step4);
+      \draw (step4) -- (step5);
+      \draw (step5) -- (step6);
     
     \end{tikzpicture}
     
