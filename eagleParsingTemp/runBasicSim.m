@@ -66,7 +66,7 @@ end
 for i = 1:length(countries)
     aCountry = countries(i);
     steady2struct.params.(aCountry+"_nucces") = 0.75;
-    steady2struct.params.(aCountry+"_mucces") = 0.3;
+    steady2struct.params.(aCountry+"_mucces") = 0.2;
 end
 
 varList = steady2output.M_.endo_names(~startsWith(steady2output.M_.endo_names, 'AUX_ENDO_'));

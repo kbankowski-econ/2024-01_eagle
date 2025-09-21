@@ -39,7 +39,7 @@ steady(homotopy_steps = 5);
 disp('alphag')
 homotopy_setup;
 @#for co in countries
-@{co}_alphag, 0.05;
+@{co}_alphag, 0.1;
 @#endfor  
 end;
 steady(homotopy_steps = 5);
