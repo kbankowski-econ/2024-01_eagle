@@ -1,6 +1,7 @@
 // Endogenous
 var
  @{ea}_bf
+ @{ea}_bfy
  @{ea}_m
  @{ea}_pic4
  @{ea}_y
@@ -79,6 +80,7 @@ var
 @# endfor
  @{co}_b
  @{co}_bf
+ @{co}_bfy
  @{co}_by
  @{co}_c
  @{co}_ci
