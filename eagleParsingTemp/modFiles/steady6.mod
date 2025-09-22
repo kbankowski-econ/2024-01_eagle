@@ -85,7 +85,7 @@ steady(homotopy_steps = 15);
 
 // Fiscal policy rule
 @#for co in countries
-@{co}_phitb = 0.1;
+@{co}_phitb = 0.2;
 @#endfor
 
 // Monetary policy rule

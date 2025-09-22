@@ -67643,20 +67643,20 @@ steady(homotopy_steps = 15);
 // (no SS solution needed)                                 //
 //---------------------------------------------------------//
 // Fiscal policy rule
-RA_phitb = 0.1;
-AT_phitb = 0.1;
-BE_phitb = 0.1;
-ES_phitb = 0.1;
-FI_phitb = 0.1;
-FR_phitb = 0.1;
-GR_phitb = 0.1;
-IT_phitb = 0.1;
-NL_phitb = 0.1;
-PT_phitb = 0.1;
-DE_phitb = 0.1;
-RU_phitb = 0.1;
-RW_phitb = 0.1;
-US_phitb = 0.1;
+RA_phitb = 0.2;
+AT_phitb = 0.2;
+BE_phitb = 0.2;
+ES_phitb = 0.2;
+FI_phitb = 0.2;
+FR_phitb = 0.2;
+GR_phitb = 0.2;
+IT_phitb = 0.2;
+NL_phitb = 0.2;
+PT_phitb = 0.2;
+DE_phitb = 0.2;
+RU_phitb = 0.2;
+RW_phitb = 0.2;
+US_phitb = 0.2;
 // Monetary policy rule
     RU_phirr  = 0.87;
     RU_phirpi = 1.70;
