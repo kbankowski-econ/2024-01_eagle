@@ -10,6 +10,7 @@ initval;
 
   @{COUNTRY}_b = 0;
   @{COUNTRY}_bf = 0;
+  @{COUNTRY}_bfy = 0;
   @{COUNTRY}_by = 0;
   @{COUNTRY}_br = 0;
   @{COUNTRY}_bry = 0;
@@ -403,6 +404,7 @@ initval;
 @#endfor
 
 EA_bf = 0;
+EA_bfy = 0;
 @# if !steady
   EA_epsr =  0;
 @#endif

@@ -994,6 +994,9 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 @{co}_bf = (@{co}_bfytarget*@{co}_py*@{co}_y)/@{co}_rer*@{coUSA}_pic;
 @#endif
 
+// Just a reporting variable
+@{co}_bfy = @{co}_rer*@{co}_bf/@{coUSA}_pic/(@{co}_py*@{co}_y);
+
 // Risk premium shock
 @#if !steady
 @{co}_rp = @{co}_rhorp*@{co}_rp(-1)+@{co}_epsrp;
