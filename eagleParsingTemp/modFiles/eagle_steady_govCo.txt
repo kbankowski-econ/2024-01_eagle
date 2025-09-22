@@ -9318,7 +9318,7 @@ RA_bh 0
 AT_bh 0
 BE_bh 0
 ES_bh 0
-FI_bh -0
+FI_bh 0
 FR_bh 0
 GR_bh 0
 IT_bh 0

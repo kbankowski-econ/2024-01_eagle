@@ -3,7 +3,7 @@
 // =============================================================================
 //
 // 1. Introducing meaningful government consumption:
-//    - mucces: Elastiticity of subst. between private and public consumption (NaN → 0.3)
+//    - mucces: Elastiticity of subst. between private and public consumption (NaN → 0.2)
 //    - nucces: Quasi-share of private cons. (NaN → 0.75)
 //
 // =============================================================================
