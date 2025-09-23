@@ -20,9 +20,9 @@ from final_demand import process_year_data
 from functions import rename_column
 from functions import filter_columns_by_suffix
 
-directory = r'/Users/emilepetraviciute/2025-03_eagle/data' 
-raw_data_directory = r'/Users/emilepetraviciute/2025-03_eagle/data/raw_data'
-raw_io_directory = r'/Users/emilepetraviciute/2025-03_eagle/data/raw_data/io'
+directory = os.path.join(os.path.dirname(__file__), '..')
+raw_data_directory = os.path.join(directory, 'raw_data')
+raw_io_directory = os.path.join(raw_data_directory, 'io')
 
 country_codes_map = {
     'REA': 'RA',
