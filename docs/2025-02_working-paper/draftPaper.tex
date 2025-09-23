@@ -569,6 +569,11 @@ Specifically, we distinguish ten individual euro area member states—Austria, B
 Beyond the euro area, the calibration also includes the non-euro area European Union, the United States, and the rest of the world, resulting in a total of 14 country or regional blocs.
 The calibration follows established practices in the literature, targeting a set of key output ratios—commonly referred to as the "great ratios." These targets are derived from macroeconomic data and matched to the corresponding countries and regions in the model.
 
+Most parameters follow the original model of \citet{Gomesaetal2012} and adopt standard values widely used in the literature.
+Parameters specific to the fiscal extension (complementary government consumption and productive government investment) are drawn primarily from \citet{Clancyetal2016}.
+A complete list of parameter values is provided in the Appendix: Table~\ref{tab:selectedHhFirmGov} (household and intermediate-goods firm behavior and the role of government spending), Table~\ref{tab:finalGoodProduction} (aggregation of final goods), Table~\ref{tab:rigidities} (real and nominal rigidities), and Table~\ref{tab:markups_transposed} (price and wage markups).
+
+
 \paragraph{Country-Specific Great Ratios}
 The calibration of the great ratios (see Table~\ref{tab:national_accounts}) is primarily based on national accounts data from the sources detailed in Table~\ref{tab:data_sources}, with illustrative values presented in Figure~\ref{figApp:nationalAccountsData}.
 Long-run averages are computed over the period 1980-2019.
@@ -622,6 +627,8 @@ As part of the calibration, we also set country-specific steady-state values for
 Government spending-to-GDP ratios capture the relative size of the public sector across countries and regions, with illustrative data presented in Figure~\ref{figApp:govSpending}.
 Tax rates are computed as average implicit rates, defined as the ratio of government revenues from a given tax category to its corresponding macroeconomic base, thereby reflecting the effective tax burden (see Figure~\ref{figApp:govTaxRates}).
 Each country or region is assigned a target debt-to-GDP ratio, calibrated on the basis of historical averages over the sample period.
+Appendix Table~\ref{tab:fiscal_instruments} provides also detailed steady-state-to-GDP ratios of fiscal revenue and spneding components, as well as fiscal balances consistent with the calibrated values of fiscal instruments. 
+
 
 The model captures significant cross-country variation in government size and tax structures (see values in Table~\ref{tab:gov_ratios}).
 Government consumption, for instance, reaches values around 25\% of GDP in Belgium, Finland, France, and the Netherlands, reflecting relatively large public sectors, whereas it is a little over 15\% in the United States and the Rest of the World.
@@ -646,6 +653,9 @@ The calibrated debt-to-GDP ratios in the steady state are achieved through lump-
 \paragraph{Trade calibration} Calibrating the trade linkages in a setup with as many countries is a major challenge in extending the EAGLE framework. Two crucial trade data characteristics need to be reflected in our model. First, there is a necessity to capture the amount of imports within each category of final good (see the gray nodes in Figure \ref{fig:AggResourceConstraint}). Here it is crucial to reflect the fact that demand components differ in terms of import content, notably private investment tends to be much more import reach than government consoumption. Second, these imported amounts need to be decomposed into bilateral imports to capture trade flows between all countries. This is to capture, for example, that import dependencies between European countries are much tighter than these involving less open US and the rest of the world region.
 
 In order to gauge the import content of each aggregate demand components we follow the methodology established by \citet{Bussiere-et-al_2013_aejMacro} and utilize Inter-Country Input-Output (ICIO) tables published by the \citet{ICIO2024}.
+
+Finally, the Appendix contains trade share parameters (Tables~\ref{tab:linkagesNu_mc}–\ref{tab:linkagesNu_mig}) compatible with the calibrated import structure presented in Tables~\ref{tab:linkagesShare_mc}–\ref{tab:linkagesShare_mig} of the main text.
+
 
 Input-output tables detail how the output of one industry is used as an input in another, capturing the flow of goods and services within the economy.
 Inter-country tables extend beyond national borders, incorporating data on economic interactions between multiple countries, capturing a comprehensive view of cross-border flows of goods and services.
@@ -743,15 +753,6 @@ The parameter controlling the speed of adjustment towards debt-to-GDP targets in
     \textit{Note}: \CountryCodesForMP.
 \end{minipage}
 \end{table}        
-
-Parameters governing household, firm, and government behavior remain consistent with the original model (see \citet{Gomesaetal2012}), employing standard values prevalent in the literature. 
-Parameters related to household and firm preferences—including biases between capital and labor, different household types, and intermediate goods—are reported in Table~\ref{tab:selectedHhFirmGov} in Appendix~\ref{sec:appendix_calibration_details}. 
-Similarly, all parameters governing the aggregation of final goods are summarized in Table~\ref{tab:finalGoodProduction}. 
-In calibrating substitution elasticities in the private sector, we adopt the standard assumption that substitution between tradable and non-tradable goods is considerably more limited than between different types of tradable goods.
-Following \citet{Clancyetal2016} and \citet{Gomesaetal2012}, we keep the same long-run elasticity of substitution between tradable goods at 2.5 and between tradable and non-tradable goods at 0.5.
-Nominal and real rigidities, along with price and wage markups—which are calibrated to be higher in European countries than in the United States and the rest of the world, consistent with previous EAGLE model applications—are detailed in Tables~\ref{tab:rigidities} and~\ref{tab:markups_transposed}. 
-Appendix Table~\ref{tab:fiscal_instruments} complements Table~\ref{tab:gov_ratios} by providing detailed steady-state-to-GDP ratios of fiscal instruments on both sides of the government budget. 
-Finally, the Appendix contains trade share parameters (Tables~\ref{tab:linkagesNu_mc}–\ref{tab:linkagesNu_mig}) compatible with the calibrated import structure presented in Tables~\ref{tab:linkagesShare_mc}–\ref{tab:linkagesShare_mig} of the main text.
 
 \subsection{Steady state solution strategy}
 
