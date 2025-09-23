@@ -404,7 +404,6 @@ initval;
 @#endfor
 
 EA_bf = 0;
-EA_bfy = 0;
 @# if !steady
   EA_epsr =  0;
 @#endif

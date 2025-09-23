@@ -1,7 +1,6 @@
 // Endogenous
 var
  @{ea}_bf
- @{ea}_bfy
  @{ea}_m
  @{ea}_pic4
  @{ea}_y
