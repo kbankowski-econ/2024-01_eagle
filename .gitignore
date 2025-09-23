@@ -82,3 +82,4 @@ docs/monetaryContributions_Big12.png
 docs/vertModelComparison.png
 
 .DS_Store
+*.pyc
