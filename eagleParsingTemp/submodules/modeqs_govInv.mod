@@ -1044,6 +1044,13 @@ log(@{co}_zinv) = (1-@{co}_rhozinv)*log(@{co}_zinvbar)+@{co}_rhozinv*log(@{co}_z
 	
 @#endfor
 
+@#for it in countries
+
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	@{it}_bfy = @{it}_rer*@{it}_bf/@{coUSA}_pic/(@{it}_py*@{it}_y);
+
+@#endfor
+
 @{coUSA}_rer = 1;
 
 @#for it in countries

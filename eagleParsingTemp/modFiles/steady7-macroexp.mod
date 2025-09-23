@@ -355,6 +355,7 @@ RA_sx
  RAUS_weightim
  RA_b
  RA_bf
+ RA_bfy
  RA_by
  RA_c
  RA_ci
@@ -1006,6 +1007,7 @@ AT_sx
  ATUS_weightim
  AT_b
  AT_bf
+ AT_bfy
  AT_by
  AT_c
  AT_ci
@@ -1657,6 +1659,7 @@ BE_sx
  BEUS_weightim
  BE_b
  BE_bf
+ BE_bfy
  BE_by
  BE_c
  BE_ci
@@ -2308,6 +2311,7 @@ ES_sx
  ESUS_weightim
  ES_b
  ES_bf
+ ES_bfy
  ES_by
  ES_c
  ES_ci
@@ -2959,6 +2963,7 @@ FI_sx
  FIUS_weightim
  FI_b
  FI_bf
+ FI_bfy
  FI_by
  FI_c
  FI_ci
@@ -3610,6 +3615,7 @@ FR_sx
  FRUS_weightim
  FR_b
  FR_bf
+ FR_bfy
  FR_by
  FR_c
  FR_ci
@@ -4261,6 +4267,7 @@ GR_sx
  GRUS_weightim
  GR_b
  GR_bf
+ GR_bfy
  GR_by
  GR_c
  GR_ci
@@ -4912,6 +4919,7 @@ IT_sx
  ITUS_weightim
  IT_b
  IT_bf
+ IT_bfy
  IT_by
  IT_c
  IT_ci
@@ -5563,6 +5571,7 @@ NL_sx
  NLUS_weightim
  NL_b
  NL_bf
+ NL_bfy
  NL_by
  NL_c
  NL_ci
@@ -6214,6 +6223,7 @@ PT_sx
  PTUS_weightim
  PT_b
  PT_bf
+ PT_bfy
  PT_by
  PT_c
  PT_ci
@@ -6865,6 +6875,7 @@ DE_sx
  DEUS_weightim
  DE_b
  DE_bf
+ DE_bfy
  DE_by
  DE_c
  DE_ci
@@ -7516,6 +7527,7 @@ RU_sx
  RUUS_weightim
  RU_b
  RU_bf
+ RU_bfy
  RU_by
  RU_c
  RU_ci
@@ -8171,6 +8183,7 @@ RW_sx
  RWUS_weightim
  RW_b
  RW_bf
+ RW_bfy
  RW_by
  RW_c
  RW_ci
@@ -8826,6 +8839,7 @@ US_sx
  USRW_weightim
  US_b
  US_bf
+ US_bfy
  US_by
  US_c
  US_ci
@@ -67096,6 +67110,34 @@ US_size*US_bf =
 	
 		RW_bf/US_r(-1) = RW_bf(-1)+RW_tb(-1)/RW_rer(-1);
 	
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	RA_bfy = RA_rer*RA_bf/US_pic/(RA_py*RA_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	AT_bfy = AT_rer*AT_bf/US_pic/(AT_py*AT_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	BE_bfy = BE_rer*BE_bf/US_pic/(BE_py*BE_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	ES_bfy = ES_rer*ES_bf/US_pic/(ES_py*ES_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	FI_bfy = FI_rer*FI_bf/US_pic/(FI_py*FI_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	FR_bfy = FR_rer*FR_bf/US_pic/(FR_py*FR_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	GR_bfy = GR_rer*GR_bf/US_pic/(GR_py*GR_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	IT_bfy = IT_rer*IT_bf/US_pic/(IT_py*IT_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	NL_bfy = NL_rer*NL_bf/US_pic/(NL_py*NL_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	PT_bfy = PT_rer*PT_bf/US_pic/(PT_py*PT_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	DE_bfy = DE_rer*DE_bf/US_pic/(DE_py*DE_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	RU_bfy = RU_rer*RU_bf/US_pic/(RU_py*RU_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	RW_bfy = RW_rer*RW_bf/US_pic/(RW_py*RW_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	US_bfy = US_rer*US_bf/US_pic/(US_py*US_y);
 US_rer = 1;
 		RADE_nerdep = RA_rerdep/DE_rerdep*RA_pic/DE_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')
