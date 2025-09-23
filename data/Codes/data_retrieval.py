@@ -10,8 +10,8 @@ import pandas as pd
 import numpy as np
 
 
-directory = r'/Users/emilepetraviciute/2025-03_eagle/data/raw_data'
-out_directory = r'/Users/emilepetraviciute/2025-03_eagle/data' 
+directory = os.path.join(os.path.dirname(__file__), '..', 'raw_data')
+out_directory = os.path.join(os.path.dirname(__file__), '..') 
 
 
 #%% Investment split between governmnt and private
