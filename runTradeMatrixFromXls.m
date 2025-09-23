@@ -19,7 +19,7 @@ rangeStruct = struct('imcy', rangeMatrix(1), 'imcgy', rangeMatrix(2), 'imiy', ra
 
 %% loading the size structure, but first as a table
 sizeStruct = struct();
-csvFileName = fullfile(project_path_io, "databases/tables/oecd/eu", "size.csv");
+csvFileName = fullfile(project_path, "data", "size.csv");
 sizeTable = table();
 sizeTable = readtable(csvFileName, 'ReadRowNames', true, 'Range', 'A1:b15');
 % Convert table to structure

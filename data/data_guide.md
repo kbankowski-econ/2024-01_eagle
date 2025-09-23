@@ -78,4 +78,7 @@ Folder raw data contains all of the raw data used in to produce .csv files throu
             GDP (World Bank)
 
 ## Next steps
-    To change the produced .csv files into the format readable by the model, .m files found in the main model folder must be run (follow separate .md file in the main folder)
+    To create .mod files for data calibration, run, from the main model folder:
+        -runChartsForWP.m (create charts for the paper)
+        -runSSsharesModFiles (creates .mod files for calibration data)
+        -runTradeMatrixFromIoProject (created trade matrix. mod file)

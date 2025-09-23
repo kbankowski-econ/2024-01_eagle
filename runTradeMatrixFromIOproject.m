@@ -8,7 +8,7 @@ countriesAux = [countries, countries];  % Double array for circular indexing
 
 % loading the size structure, but first as a table
 sizeStruct = struct();
-csvFileName = fullfile(project_path_io, "databases/tables/oecd/eu", "size.csv");
+csvFileName = fullfile(project_path, "data", "size.csv");
 sizeTable = table();
 sizeTable = readtable(csvFileName, 'ReadRowNames', true, 'Range', 'A1:b15');
 % Convert table to structure
@@ -17,7 +17,7 @@ sizeStruct = cell2struct(struct2cell(sizeStruct)', sizeTable.Properties.RowNames
 
 % loading the tby structure, but first as a table
 tbyStruct = struct();
-csvFileName = fullfile(project_path_io, "databases/tables/oecd/eu", "tby.csv");
+csvFileName = fullfile(project_path, "data", "tby.csv");
 tbyTable = table();
 tbyTable = readtable(csvFileName, 'ReadRowNames', true, 'Range', 'A1:b15');
 % Convert table to structure
@@ -28,7 +28,7 @@ tbyStruct = cell2struct(struct2cell(tbyStruct)', tbyTable.Properties.RowNames);
 
 newTable = struct();
 for aItem = ["imcy", "imiy", "imcgy", "imigy"]
-    csvFileName = fullfile(project_path_io, "databases/tables/oecd/eu", aItem+".csv");
+    csvFileName = fullfile(project, "data", aItem+".csv");
     newTable.(aItem) = table();
     newTable.(aItem) = readtable(csvFileName, 'ReadRowNames', true, 'Range', 'A1:o15');
 end

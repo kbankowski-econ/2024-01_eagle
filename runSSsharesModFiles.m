@@ -20,7 +20,7 @@ function importCalibValues(ctryList, itemList, itemModelList, valueCalibType)
     utils.call.paths;
 
     % Load shares from CSV
-    csvFileName = fullfile(project_path_io, "databases/tables/oecd/eu", valueCalibType + ".csv");
+    csvFileName = fullfile(project_path, "data", valueCalibType + ".csv");
     shareTable = readtable(csvFileName, 'ReadRowNames', true);
     
     % Convert table to structure
