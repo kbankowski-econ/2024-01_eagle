@@ -159,6 +159,9 @@ def main():
     # Create consolidated dataframe
     consolidated_df = create_consolidated_dataframe(calibration_data)
     
+    # Round values to 4 decimal places
+    consolidated_df['value'] = consolidated_df['value'].round(4)
+    
     # Save to CSV
     output_path = os.path.join(data_directory, '_calibDataCollectedFromSingleFiles.csv')
     consolidated_df.to_csv(output_path, index=False)
