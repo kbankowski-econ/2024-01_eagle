@@ -14,7 +14,7 @@
 //    - imigy: Country total import ratios (country-specific)
 //    - size:  Country size (0.07143 → country-specific)
 //    - tby:   Trade balance (RU: -0.00493, RW: -0.00493, US: -0.005068, others: 0.001849 → country-specific)
-//    - nuc:   Consumption home bias (US/RW: 0.35, others: 0.65 → RA: 0.9, US: 0.45)
+//    - nuc:   Consumption home bias (US/RW: 0.35, others: 0.65, RA: 0.65 → 0.9, US: 0.35 → 0.45)
 //
 // 2. Policy Rule Parameters (for dynamic model):
 //    - phitb:    Fiscal rule parameter (0.1 → 0.1)
