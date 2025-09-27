@@ -1,5 +1,7 @@
-% Loading necessary path variables
+% Loading necessary path variables and environment variables
 utils.call.paths;
+envi = environment.setup;
+
 % Cding to a relevant directory
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
 
@@ -22,7 +24,6 @@ dynare('steady1b.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsing
 dynare('steady2.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
 %%
-countries = [ "RA", "AT", "BE", "ES", "FI", "FR", "GR", "IT", "NL", "PT", "DE", "RU", "RW", "US"];
 
 replaceInTextFile( ...
     fullfile(project_path, "eagleParsingTemp", "submodules", "modeqs.mod") ...
@@ -63,8 +64,8 @@ end
 for aParam = string(reshape(steady2output.M_.param_names, 1, []))
     steady2struct.params.(aParam) = steady2output.M_.params(strcmp(aParam, steady2output.M_.param_names));
 end
-for i = 1:length(countries)
-    aCountry = countries(i);
+for i = 1:length(envi.Meta.ctryList)
+    aCountry = envi.Meta.ctryList(i);
     steady2struct.params.(aCountry+"_nucces") = 0.75;
     steady2struct.params.(aCountry+"_mucces") = 0.2;
 end
@@ -73,8 +74,8 @@ varList = steady2output.M_.endo_names(~startsWith(steady2output.M_.endo_names, '
 for aVar = string(reshape(varList, 1, []))
     steady2struct.ssValues.(aVar) = steady2output.oo_.steady_state(strcmp(aVar, varList));
 end
-for i = 1:length(countries)
-    aCountry = countries(i);
+for i = 1:length(envi.Meta.ctryList)
+    aCountry = envi.Meta.ctryList(i);
     steady2struct.ssValues.(aCountry+"_ccesi") = ((0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_ci")^(1-1/0.3)+(1-0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cg")^(1-1/0.3))^(1/(1-1/0.3));
     steady2struct.ssValues.(aCountry+"_ccesj") = ((0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cj")^(1-1/0.3)+(1-0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cg")^(1-1/0.3))^(1/(1-1/0.3));
     steady2struct.ssValues.(aCountry+"_dcci") = ((0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_ci")^(1-1/0.3)+(1-0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cg")^(1-1/0.3))^(1/(0.3-1))*(0.75^(1/0.3))*(steady2struct.ssValues.(aCountry+"_ci")^(-1/0.3));
@@ -107,6 +108,8 @@ end
 
 % Close the file
 fclose(fileID);
+%%
+
 
 dynare('steady3.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
@@ -189,6 +192,8 @@ end
 
 % Close the file
 fclose(fileID);
+
+%%
 
 dynare('steady4.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
