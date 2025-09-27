@@ -26,7 +26,7 @@ function ssNationalAccounts(envi, aStruct, fileName)
     fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Imports (total)', '\overline{imy}', "imy", aStruct.ssValues, ' & %.1f', @(x) x*100));
     fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Exports (total)', '\overline{exy}', "exy", aStruct.ssValues, ' & %.1f', @(x) x*100));
     fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Trade balance', '\overline{tby}', "tby", aStruct.ssValues, ' & %.1f', @(x) x*100));
-    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Net foreign assets', '\overline{B_Y^{*}}', "bfytarget", aStruct.params, ' & %.0f', @(x) x*100));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Net foreign assets', '\overline{B_Y^{*}}', "bfy", aStruct.ssValues, ' & %.0f', @(x) x*100));
 
     % Production section
     fprintf(fid, '        \\multicolumn{15}{l}{\\textbf{Production}} \\\\\n');
