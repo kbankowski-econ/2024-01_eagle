@@ -41,6 +41,7 @@ function selectedHhFirmGov(envi, aStruct, fileName)
     fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Share gov. goods in utility', '\nu_{\text{CCES}}', "nucces", aStruct.params, ' & %.2f', @(x) 1 - x));
     fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Gov./priv. cons. complementarity', '\mu_{\text{CCES}}', "mucces", aStruct.params, ' & %.2f'));
     fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Depreciation, public capital', '\delta_{\text{G}}', "deltag", aStruct.params, ' & %.3f'));
+    fprintf(fid, utils.prepareTableLine(envi.Meta.ctryListForReport, 'Productivity, public capital', '\alpha_{\text{G}}', "alphag", aStruct.params, ' & %.2f'));
 
     % Table footer
     fprintf(fid, '        \\bottomrule\n');
