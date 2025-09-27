@@ -107,31 +107,9 @@ for i = 1:length(envi.Meta.ctryList)
     steady2struct.ssValues.(countryCode+"_dccj") = ces_base_j^common_derivative_factor * nucces_power * cj_val^(-inv_elasticity);
 end
 
-% Write steady state structure to file with error handling
+% Write steady state structure to file
 outputFilename = fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'eagle_steady_govCo_stage0.txt');
-fileID = fopen(outputFilename, 'w');
-if fileID == -1
-    error('Failed to open file for writing: %s', outputFilename);
-end
-
-try
-    % Loop through each field type in the structure
-    for fieldType = ["params", "ssValues", "exo_names"]
-        if isfield(steady2struct, fieldType)
-            fields = fieldnames(steady2struct.(fieldType));
-            for i = 1:length(fields)
-                fieldName = fields{i};
-                fieldValue = steady2struct.(fieldType).(fieldName);
-                fprintf(fileID, '%s %f\n', fieldName, fieldValue);
-            end
-        end
-    end
-catch ME
-    fclose(fileID);
-    rethrow(ME);
-end
-
-fclose(fileID);
+writeSteadyStateStruct(steady2struct, outputFilename);
 %%
 
 
@@ -198,31 +176,9 @@ for i = 1:length(envi.Meta.ctryList)
     steady3struct.ssValues.(countryCode+"_kg") = investmentValue / DELTAG_VALUE;
 end
 
-% Write steady state structure to file with error handling
+% Write steady state structure to file
 outputFilename = fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'eagle_steady_govInv_stage0.txt');
-fileID = fopen(outputFilename, 'w');
-if fileID == -1
-    error('Failed to open file for writing: %s', outputFilename);
-end
-
-try
-    % Loop through each field type in the structure
-    for fieldType = ["params", "ssValues", "exo_names"]
-        if isfield(steady3struct, fieldType)
-            fields = fieldnames(steady3struct.(fieldType));
-            for i = 1:length(fields)
-                fieldName = fields{i};
-                fieldValue = steady3struct.(fieldType).(fieldName);
-                fprintf(fileID, '%s %f\n', fieldName, fieldValue);
-            end
-        end
-    end
-catch ME
-    fclose(fileID);
-    rethrow(ME);
-end
-
-fclose(fileID);
+writeSteadyStateStruct(steady3struct, outputFilename);
 
 %%
 
@@ -379,6 +335,34 @@ function dataTable = readSteadyStateFile(filename)
 
       % Create table with row names
       dataTable = table(values, 'RowNames', varNames, 'VariableNames', {'Value'});
+end
+
+function writeSteadyStateStruct(steadyStruct, filename)
+    % Write steady state structure to file with error handling
+    
+    fileID = fopen(filename, 'w');
+    if fileID == -1
+        error('Failed to open file for writing: %s', filename);
+    end
+    
+    try
+        % Loop through each field type in the structure
+        for fieldType = ["params", "ssValues", "exo_names"]
+            if isfield(steadyStruct, fieldType)
+                fields = fieldnames(steadyStruct.(fieldType));
+                for i = 1:length(fields)
+                    fieldName = fields{i};
+                    fieldValue = steadyStruct.(fieldType).(fieldName);
+                    fprintf(fileID, '%s %f\n', fieldName, fieldValue);
+                end
+            end
+        end
+    catch ME
+        fclose(fileID);
+        rethrow(ME);
+    end
+    
+    fclose(fileID);
 end
 
 function writeFormattedTable(fileID, dataTable)
