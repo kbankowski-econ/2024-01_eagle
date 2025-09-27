@@ -13,7 +13,7 @@ steady(solve_algo = 5, markowitz = 5);
 shocks;
 var EA_epsr;
 periods 1;
-values 0.01;
+values -0.01;
 end;
 
 perfect_foresight_setup(periods = 100);
