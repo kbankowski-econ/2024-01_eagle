@@ -13,12 +13,22 @@
 //    - mui:   Investment elasticity of substitution (1.001 → 0.5)
 //    - muti:  Tradable investment elasticity (1.001 → 2.5)
 //    - mumi:  Import investment elasticity (1.001 → 2.5)
+//    - mutcg: Government tradable consumption elasticity (1.001 → 2.5)
+//    - mutig: Government tradable investment elasticity (1.001 → 2.5)
+//    - mumcg: Government import consumption elasticity (1.001 → 2.5)
+//    - mumig: Government import investment elasticity (1.001 → 2.5)
+//    - mucg:  Government consumption elasticity (1.001 → 0.5)
+//    - muig:  Government investment elasticity (1.001 → 0.5)
 //
 // 3. Home-Bias Parameters:
 //    - nuc:   Consumption home bias (0.5 → US/RW: 0.35, others: 0.65)
 //    - nui:   Investment home bias (0.5 → 0.75)
+//    - nucg:  Government consumption home bias (0.5 → 0.8)
+//    - nuig:  Government investment home bias (0.5 → specific country: 0.6, others: 0.8)
 //    - nutc:  Tradable consumption home bias (0.5 → US: 0.85, others: 0.20)
 //    - nuti:  Tradable investment home bias (0.5 → US: 0.85, others: 0.20)
+//    - nutcg: Tradable government consumption home bias (0.5 → 0.5, NOT CALIBRATED HERE but in steady6 togther with trade matrix)
+//    - nutig: Tradable government investment home bias (0.5 → 0.5, NOT CALIBRATED HERE but in steady6 togther with trade matrix)
 //
 // 4. Price Setting - Fixed Costs:
 //    - psit:  Tradable sector fixed costs (0 → 0.2)

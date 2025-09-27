@@ -95,7 +95,7 @@ RA_mumig 2.5
 RA_mutig 2.5
 RA_nuig 0.8
 RA_omega 0.25
-RA_phitb 0.2
+RA_phitb 0.1
 RA_pi4target 1.02
 RA_psin 0.28
 RA_rhocg 0.9
@@ -220,7 +220,7 @@ AT_mumig 2.5
 AT_mutig 2.5
 AT_nuig 0.8
 AT_omega 0.25
-AT_phitb 0.2
+AT_phitb 0.1
 AT_pi4target 1.02
 AT_psin 0.28
 AT_rhocg 0.9
@@ -345,7 +345,7 @@ BE_mumig 2.5
 BE_mutig 2.5
 BE_nuig 0.8
 BE_omega 0.25
-BE_phitb 0.2
+BE_phitb 0.1
 BE_pi4target 1.02
 BE_psin 0.28
 BE_rhocg 0.9
@@ -470,7 +470,7 @@ ES_mumig 2.5
 ES_mutig 2.5
 ES_nuig 0.8
 ES_omega 0.25
-ES_phitb 0.2
+ES_phitb 0.1
 ES_pi4target 1.02
 ES_psin 0.28
 ES_rhocg 0.9
@@ -595,7 +595,7 @@ FI_mumig 2.5
 FI_mutig 2.5
 FI_nuig 0.8
 FI_omega 0.25
-FI_phitb 0.2
+FI_phitb 0.1
 FI_pi4target 1.02
 FI_psin 0.28
 FI_rhocg 0.9
@@ -720,7 +720,7 @@ FR_mumig 2.5
 FR_mutig 2.5
 FR_nuig 0.8
 FR_omega 0.25
-FR_phitb 0.2
+FR_phitb 0.1
 FR_pi4target 1.02
 FR_psin 0.28
 FR_rhocg 0.9
@@ -845,7 +845,7 @@ GR_mumig 2.5
 GR_mutig 2.5
 GR_nuig 0.8
 GR_omega 0.25
-GR_phitb 0.2
+GR_phitb 0.1
 GR_pi4target 1.02
 GR_psin 0.28
 GR_rhocg 0.9
@@ -970,7 +970,7 @@ IT_mumig 2.5
 IT_mutig 2.5
 IT_nuig 0.8
 IT_omega 0.25
-IT_phitb 0.2
+IT_phitb 0.1
 IT_pi4target 1.02
 IT_psin 0.28
 IT_rhocg 0.9
@@ -1095,7 +1095,7 @@ NL_mumig 2.5
 NL_mutig 2.5
 NL_nuig 0.8
 NL_omega 0.25
-NL_phitb 0.2
+NL_phitb 0.1
 NL_pi4target 1.02
 NL_psin 0.28
 NL_rhocg 0.9
@@ -1220,7 +1220,7 @@ PT_mumig 2.5
 PT_mutig 2.5
 PT_nuig 0.8
 PT_omega 0.25
-PT_phitb 0.2
+PT_phitb 0.1
 PT_pi4target 1.02
 PT_psin 0.28
 PT_rhocg 0.9
@@ -1345,7 +1345,7 @@ DE_mumig 2.5
 DE_mutig 2.5
 DE_nuig 0.8
 DE_omega 0.25
-DE_phitb 0.2
+DE_phitb 0.1
 DE_pi4target 1.02
 DE_psin 0.28
 DE_rhocg 0.9
@@ -1473,7 +1473,7 @@ RU_omega 0.25
 RU_phirgy 0.1
 RU_phirpi 1.7
 RU_phirr 0.87
-RU_phitb 0.2
+RU_phitb 0.1
 RU_pi4target 1.02
 RU_psin 0.28
 RU_rhocg 0.9
@@ -1601,7 +1601,7 @@ RW_omega 0.25
 RW_phirgy 0.1
 RW_phirpi 1.7
 RW_phirr 0.87
-RW_phitb 0.2
+RW_phitb 0.1
 RW_pi4target 1.02
 RW_psin 0.08
 RW_rhocg 0.9
@@ -1726,7 +1726,7 @@ US_omega 0.25
 US_phirgy 0.1
 US_phirpi 1.7
 US_phirr 0.87
-US_phitb 0.2
+US_phitb 0.1
 US_pi4target 1.02
 US_psin 0.08
 US_rhocg 0.9

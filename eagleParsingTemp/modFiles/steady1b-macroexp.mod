@@ -8,39 +8,27 @@
 //    - cgybar:    Government consumption-to-GDP ratios (0.001 → country-specific)
 //    - igybar:    Government investment-to-GDP ratios (0.001 → country-specific)
 //
-// 2. Government Demand Elasticities:
-//    - mutcg:  Government tradable consumption elasticity (1.001 → 2.5)
-//    - mutig:  Government tradable investment elasticity (1.001 → 2.5)
-//    - mumcg:  Government import consumption elasticity (1.001 → 2.5)
-//    - mumig:  Government import investment elasticity (1.001 → 2.5)
-//    - mucg:   Government consumption elasticity (1.001 → 0.5)
-//    - muig:   Government investment elasticity (1.001 → 0.5)
-//
-// 3. Government Home-Bias Parameters:
-//    - nuig:   Government investment home bias (0.5 → specific country: 0.6, others: 0.8)
-//    - nucg:   Government consumption home bias (0.5 → 0.8)
-//
-// 4. Monetary Policy:
+// 2. Monetary Policy:
 //    - pi4target: Annual inflation targets (1.0 → 1.02, i.e., 2% annual inflation)
 //
-// 5. Discount Factor:
+// 3. Discount Factor:
 //    - beta:   Time preference parameter (0.99 → 0.99263754, implies 3% annual real rate)
 //
-// 6. Tax Rates (from included files):
+// 4. Tax Rates (from included files):
 //    - taucbar:  Consumption tax rates (0 → country-specific)
 //    - taunbar:  Tax rates on non-tradable sector (0 → country-specific)
 //    - tauwhbar: Home household labor tax rates (0 → country-specific)
 //    - tauwfbar: Foreign household labor tax rates (0 → country-specific)
 //    - taukbar:  Capital tax rates (0 → country-specific)
 //
-// 7. Household Heterogeneity (SKIPPED):
+// 5. Household Heterogeneity (SKIPPED):
 //    - omega:    Share of J-type households (already at target 0.25)
 //
-// 8. Transfer Distribution:
+// 6. Transfer Distribution:
 //    - upsilontr: Transfer distribution parameter (1 → 0.66666666)
 //    - upsilont:  Lump-sum tax distribution parameter (1 → 1.20)
 //
-// 9. External Finance:
+// 7. External Finance:
 //    - bfytarget: Foreign bond holdings targets (0 → US/RW/specific: 0.4, others: -0.15)
 //
 // =============================================================================
