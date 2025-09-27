@@ -138,6 +138,11 @@ fclose(fileID);
 dynare('steady3.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
 
 %%
+
+% Define constants for hardcoded parameters
+DELTAG_VALUE = 0.025;
+ALPHAG_VALUE = 0;
+
 replaceInTextFile( ...
     fullfile(project_path, "eagleParsingTemp", "submodules", "modeqs_govCo.mod") ...
     , fullfile(project_path, "eagleParsingTemp", "submodules", "modeqs_govInv.mod") ...
@@ -148,8 +153,7 @@ replaceInTextFile( ...
 );
 
 % Define the new lines to append as a single string with the updated format
-linesToAppend = [
-    "var " + newline + ...
+linesToAppend = "var " + newline + ...
     "    @#for co in countries" + newline + ...
     "        @{co}_kg" + newline + ...
     "    @#endfor" + newline + ...
@@ -158,8 +162,7 @@ linesToAppend = [
     "    @#for co in countries" + newline + ...
     "        @{co}_alphag @{co}_deltag" + newline + ...
     "    @#endfor" + newline + ...
-    ";" + newline
-];
+    ";" + newline;
 
 appendTextFile( ...
     fullfile(project_path, "eagleParsingTemp", "submodules", "symdecls_govCo.mod"), ...
@@ -170,51 +173,55 @@ appendTextFile( ...
 steady3output = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'steady3', 'Output', 'steady3_results.mat'));
 steady3struct = struct();
 
-for aExoVar = string(reshape(steady3output.M_.exo_names, 1, []))
-    steady3struct.exo_names.(aExoVar) = steady3output.oo_.exo_steady_state(strcmp(aExoVar, steady3output.M_.exo_names));
+for exoVar = string(reshape(steady3output.M_.exo_names, 1, []))
+    steady3struct.exo_names.(exoVar) = steady3output.oo_.exo_steady_state(strcmp(exoVar, steady3output.M_.exo_names));
 end
 
-for aParam = string(reshape(steady3output.M_.param_names, 1, []))
-    steady3struct.params.(aParam) = steady3output.M_.params(strcmp(aParam, steady3output.M_.param_names));
+for paramName = string(reshape(steady3output.M_.param_names, 1, []))
+    steady3struct.params.(paramName) = steady3output.M_.params(strcmp(paramName, steady3output.M_.param_names));
 end
 
 for i = 1:length(envi.Meta.ctryList)
-    aCountry = envi.Meta.ctryList(i);
-    steady3struct.params.(aCountry+"_deltag") = 0.025;
-    steady3struct.params.(aCountry+"_alphag") = 0;
+    countryCode = envi.Meta.ctryList(i);
+    steady3struct.params.(countryCode+"_deltag") = DELTAG_VALUE;
+    steady3struct.params.(countryCode+"_alphag") = ALPHAG_VALUE;
 end
 
 varList = steady3output.M_.endo_names(~startsWith(steady3output.M_.endo_names, 'AUX_ENDO_'));
-for aVar = string(reshape(varList, 1, []))
-    steady3struct.ssValues.(aVar) = steady3output.oo_.steady_state(strcmp(aVar, varList));
+for varName = string(reshape(varList, 1, []))
+    steady3struct.ssValues.(varName) = steady3output.oo_.steady_state(strcmp(varName, varList));
 end
+% Calculate capital stock from investment and depreciation rate
 for i = 1:length(envi.Meta.ctryList)
-    aCountry = envi.Meta.ctryList(i);
-    steady3struct.ssValues.(aCountry+"_kg") = steady3struct.ssValues.(aCountry+"_ig")/steady3struct.params.(aCountry+"_deltag");
+    countryCode = envi.Meta.ctryList(i);
+    investmentValue = steady3struct.ssValues.(countryCode+"_ig");
+    steady3struct.ssValues.(countryCode+"_kg") = investmentValue / DELTAG_VALUE;
 end
 
-% Specify the output file name
-filename = fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'eagle_steady_govInv_stage0.txt');
-% Open the file for writing
-fileID = fopen(filename, 'w');
-% Check if the file was opened successfully
+% Write steady state structure to file with error handling
+outputFilename = fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'eagle_steady_govInv_stage0.txt');
+fileID = fopen(outputFilename, 'w');
 if fileID == -1
-    error('Failed to open the file.');
-end
-% Loop through each field in the structure
-for aType = ["params", "ssValues", "exo_names"]
-    fields = fieldnames(steady3struct.(aType));
-    for i = 1:length(fields)
-        % Get the field name
-        fieldName = fields{i};
-        % Get the value associated with the field
-        fieldValue = steady3struct.(aType).(fieldName);
-        % Write the field name and value to the file
-        fprintf(fileID, '%s %f\n', fieldName, fieldValue);
-    end
+    error('Failed to open file for writing: %s', outputFilename);
 end
 
-% Close the file
+try
+    % Loop through each field type in the structure
+    for fieldType = ["params", "ssValues", "exo_names"]
+        if isfield(steady3struct, fieldType)
+            fields = fieldnames(steady3struct.(fieldType));
+            for i = 1:length(fields)
+                fieldName = fields{i};
+                fieldValue = steady3struct.(fieldType).(fieldName);
+                fprintf(fileID, '%s %f\n', fieldName, fieldValue);
+            end
+        end
+    end
+catch ME
+    fclose(fileID);
+    rethrow(ME);
+end
+
 fclose(fileID);
 
 %%
