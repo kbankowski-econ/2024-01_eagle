@@ -25,6 +25,11 @@ dynare('steady2.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingT
 
 %%
 
+% Define constants for hardcoded parameters
+NUCCES_VALUE = 0.75;
+MUCCES_VALUE = 0.2;
+ELASTICITY_SUBSTITUTION = 0.3;
+
 replaceInTextFile( ...
     fullfile(project_path, "eagleParsingTemp", "submodules", "modeqs.mod") ...
     , fullfile(project_path, "eagleParsingTemp", "submodules", "modeqs_govCo.mod") ...
@@ -35,8 +40,7 @@ replaceInTextFile( ...
 );
 
 % Define the new lines to append as a single string with the updated format
-linesToAppend = [
-    "var " + newline + ...
+linesToAppend = "var " + newline + ...
     "    @#for co in countries" + newline + ...
     "        @{co}_ccesi @{co}_ccesj @{co}_dcci @{co}_dccj" + newline + ...
     "    @#endfor" + newline + ...
@@ -45,8 +49,7 @@ linesToAppend = [
     "    @#for co in countries" + newline + ...
     "        @{co}_mucces @{co}_nucces" + newline + ...
     "    @#endfor" + newline + ...
-    ";" + newline
-];
+    ";" + newline;
 
 appendTextFile( ...
     fullfile(project_path, "eagleParsingTemp", "submodules", "symdecls.mod"), ...
@@ -57,56 +60,77 @@ appendTextFile( ...
 steady2output = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'steady2', 'Output', 'steady2_results.mat'));
 steady2struct = struct();
 
-for aExoVar = string(reshape(steady2output.M_.exo_names, 1, []))
-    steady2struct.exo_names.(aExoVar) = steady2output.oo_.exo_steady_state(strcmp(aExoVar, steady2output.M_.exo_names));
+for exoVar = string(reshape(steady2output.M_.exo_names, 1, []))
+    steady2struct.exo_names.(exoVar) = steady2output.oo_.exo_steady_state(strcmp(exoVar, steady2output.M_.exo_names));
 end
 
-for aParam = string(reshape(steady2output.M_.param_names, 1, []))
-    steady2struct.params.(aParam) = steady2output.M_.params(strcmp(aParam, steady2output.M_.param_names));
+for paramName = string(reshape(steady2output.M_.param_names, 1, []))
+    steady2struct.params.(paramName) = steady2output.M_.params(strcmp(paramName, steady2output.M_.param_names));
 end
+
 for i = 1:length(envi.Meta.ctryList)
-    aCountry = envi.Meta.ctryList(i);
-    steady2struct.params.(aCountry+"_nucces") = 0.75;
-    steady2struct.params.(aCountry+"_mucces") = 0.2;
+    countryCode = envi.Meta.ctryList(i);
+    steady2struct.params.(countryCode+"_nucces") = NUCCES_VALUE;
+    steady2struct.params.(countryCode+"_mucces") = MUCCES_VALUE;
 end
 
 varList = steady2output.M_.endo_names(~startsWith(steady2output.M_.endo_names, 'AUX_ENDO_'));
-for aVar = string(reshape(varList, 1, []))
-    steady2struct.ssValues.(aVar) = steady2output.oo_.steady_state(strcmp(aVar, varList));
+for varName = string(reshape(varList, 1, []))
+    steady2struct.ssValues.(varName) = steady2output.oo_.steady_state(strcmp(varName, varList));
 end
+
+% Calculate CES aggregation parameters
+inv_elasticity = 1/ELASTICITY_SUBSTITUTION;
+elasticity_exp = 1 - inv_elasticity;
+nucces_power = NUCCES_VALUE^inv_elasticity;
+one_minus_nucces_power = (1-NUCCES_VALUE)^inv_elasticity;
+
 for i = 1:length(envi.Meta.ctryList)
-    aCountry = envi.Meta.ctryList(i);
-    steady2struct.ssValues.(aCountry+"_ccesi") = ((0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_ci")^(1-1/0.3)+(1-0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cg")^(1-1/0.3))^(1/(1-1/0.3));
-    steady2struct.ssValues.(aCountry+"_ccesj") = ((0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cj")^(1-1/0.3)+(1-0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cg")^(1-1/0.3))^(1/(1-1/0.3));
-    steady2struct.ssValues.(aCountry+"_dcci") = ((0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_ci")^(1-1/0.3)+(1-0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cg")^(1-1/0.3))^(1/(0.3-1))*(0.75^(1/0.3))*(steady2struct.ssValues.(aCountry+"_ci")^(-1/0.3));
-    steady2struct.ssValues.(aCountry+"_dccj") = ((0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cj")^(1-1/0.3)+(1-0.75)^(1/0.3)*steady2struct.ssValues.(aCountry+"_cg")^(1-1/0.3))^(1/(0.3-1))*(0.75^(1/0.3))*(steady2struct.ssValues.(aCountry+"_cj")^(-1/0.3));
-
-end
-
+    countryCode = envi.Meta.ctryList(i);
     
+    % Extract consumption values for readability
+    ci_val = steady2struct.ssValues.(countryCode+"_ci");
+    cj_val = steady2struct.ssValues.(countryCode+"_cj");
+    cg_val = steady2struct.ssValues.(countryCode+"_cg");
+    
+    % CES aggregation for household i
+    ces_base_i = nucces_power * ci_val^elasticity_exp + one_minus_nucces_power * cg_val^elasticity_exp;
+    steady2struct.ssValues.(countryCode+"_ccesi") = ces_base_i^(1/elasticity_exp);
+    
+    % CES aggregation for household j
+    ces_base_j = nucces_power * cj_val^elasticity_exp + one_minus_nucces_power * cg_val^elasticity_exp;
+    steady2struct.ssValues.(countryCode+"_ccesj") = ces_base_j^(1/elasticity_exp);
+    
+    % Derivative calculations
+    common_derivative_factor = 1/(ELASTICITY_SUBSTITUTION-1);
+    steady2struct.ssValues.(countryCode+"_dcci") = ces_base_i^common_derivative_factor * nucces_power * ci_val^(-inv_elasticity);
+    steady2struct.ssValues.(countryCode+"_dccj") = ces_base_j^common_derivative_factor * nucces_power * cj_val^(-inv_elasticity);
+end
 
-% Specify the output file name
-filename = fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'eagle_steady_govCo_stage0.txt');
-% Open the file for writing
-fileID = fopen(filename, 'w');
-% Check if the file was opened successfully
+% Write steady state structure to file with error handling
+outputFilename = fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'eagle_steady_govCo_stage0.txt');
+fileID = fopen(outputFilename, 'w');
 if fileID == -1
-    error('Failed to open the file.');
-end
-% Loop through each field in the structure
-for aType = ["params", "ssValues", "exo_names"]
-    fields = fieldnames(steady2struct.(aType));
-    for i = 1:length(fields)
-        % Get the field name
-        fieldName = fields{i};
-        % Get the value associated with the field
-        fieldValue = steady2struct.(aType).(fieldName);
-        % Write the field name and value to the file
-        fprintf(fileID, '%s %f\n', fieldName, fieldValue);
-    end
+    error('Failed to open file for writing: %s', outputFilename);
 end
 
-% Close the file
+try
+    % Loop through each field type in the structure
+    for fieldType = ["params", "ssValues", "exo_names"]
+        if isfield(steady2struct, fieldType)
+            fields = fieldnames(steady2struct.(fieldType));
+            for i = 1:length(fields)
+                fieldName = fields{i};
+                fieldValue = steady2struct.(fieldType).(fieldName);
+                fprintf(fileID, '%s %f\n', fieldName, fieldValue);
+            end
+        end
+    end
+catch ME
+    fclose(fileID);
+    rethrow(ME);
+end
+
 fclose(fileID);
 %%
 
@@ -154,8 +178,8 @@ for aParam = string(reshape(steady3output.M_.param_names, 1, []))
     steady3struct.params.(aParam) = steady3output.M_.params(strcmp(aParam, steady3output.M_.param_names));
 end
 
-for i = 1:length(countries)
-    aCountry = countries(i);
+for i = 1:length(envi.Meta.ctryList)
+    aCountry = envi.Meta.ctryList(i);
     steady3struct.params.(aCountry+"_deltag") = 0.025;
     steady3struct.params.(aCountry+"_alphag") = 0;
 end
@@ -164,8 +188,8 @@ varList = steady3output.M_.endo_names(~startsWith(steady3output.M_.endo_names, '
 for aVar = string(reshape(varList, 1, []))
     steady3struct.ssValues.(aVar) = steady3output.oo_.steady_state(strcmp(aVar, varList));
 end
-for i = 1:length(countries)
-    aCountry = countries(i);
+for i = 1:length(envi.Meta.ctryList)
+    aCountry = envi.Meta.ctryList(i);
     steady3struct.ssValues.(aCountry+"_kg") = steady3struct.ssValues.(aCountry+"_ig")/steady3struct.params.(aCountry+"_deltag");
 end
 
