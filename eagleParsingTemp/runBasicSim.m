@@ -25,11 +25,9 @@ dynare('steady2.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingT
 
 %%
 
-% Define constants for hardcoded parameters
-NUCCES_VALUE = 0.75;
-MUCCES_VALUE = 0.2;
-ELASTICITY_SUBSTITUTION = 0.3;
+% Modifying the mod files
 
+% mod files with equations
 replaceInTextFile( ...
     fullfile(project_path, "eagleParsingTemp", "submodules", "modeqs.mod") ...
     , fullfile(project_path, "eagleParsingTemp", "submodules", "modeqs_govCo.mod") ...
@@ -38,6 +36,7 @@ replaceInTextFile( ...
     , '@#include "modeqs_hhJ.mod"' ...
     , '@#include "modeqs_hhJ_govCons.mod"' ...    
 );
+
 
 % Define the new lines to append as a single string with the updated format
 linesToAppend = "var " + newline + ...
@@ -50,33 +49,28 @@ linesToAppend = "var " + newline + ...
     "        @{co}_mucces @{co}_nucces" + newline + ...
     "    @#endfor" + newline + ...
     ";" + newline;
-
 appendTextFile( ...
     fullfile(project_path, "eagleParsingTemp", "submodules", "symdecls.mod"), ...
     fullfile(project_path, "eagleParsingTemp", "submodules", "symdecls_govCo.mod"), ...
     linesToAppend ...
 );
 
+% Calculating the initial SS values for the initial ss txt file
+
+% Define constants for hardcoded parameters
+NUCCES_VALUE = 0.75;
+MUCCES_VALUE = 0.2;
+ELASTICITY_SUBSTITUTION = 0.3;
+
+% Retrieve previous steady state
 steady2output = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'steady2', 'Output', 'steady2_results.mat'));
-steady2struct = struct();
+steady2struct = dynareFunc.retrieveSteadyState(steady2output);
 
-for exoVar = string(reshape(steady2output.M_.exo_names, 1, []))
-    steady2struct.exo_names.(exoVar) = steady2output.oo_.exo_steady_state(strcmp(exoVar, steady2output.M_.exo_names));
-end
-
-for paramName = string(reshape(steady2output.M_.param_names, 1, []))
-    steady2struct.params.(paramName) = steady2output.M_.params(strcmp(paramName, steady2output.M_.param_names));
-end
-
+% Define new parameters
 for i = 1:length(envi.Meta.ctryList)
     countryCode = envi.Meta.ctryList(i);
     steady2struct.params.(countryCode+"_nucces") = NUCCES_VALUE;
     steady2struct.params.(countryCode+"_mucces") = MUCCES_VALUE;
-end
-
-varList = steady2output.M_.endo_names(~startsWith(steady2output.M_.endo_names, 'AUX_ENDO_'));
-for varName = string(reshape(varList, 1, []))
-    steady2struct.ssValues.(varName) = steady2output.oo_.steady_state(strcmp(varName, varList));
 end
 
 % Calculate CES aggregation parameters
@@ -117,10 +111,6 @@ dynare('steady3.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingT
 
 %%
 
-% Define constants for hardcoded parameters
-DELTAG_VALUE = 0.025;
-ALPHAG_VALUE = 0;
-
 replaceInTextFile( ...
     fullfile(project_path, "eagleParsingTemp", "submodules", "modeqs_govCo.mod") ...
     , fullfile(project_path, "eagleParsingTemp", "submodules", "modeqs_govInv.mod") ...
@@ -148,16 +138,12 @@ appendTextFile( ...
     linesToAppend ...
 );
 
+% Define constants for hardcoded parameters
+DELTAG_VALUE = 0.025;
+ALPHAG_VALUE = 0;
+
 steady3output = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'steady3', 'Output', 'steady3_results.mat'));
-steady3struct = struct();
-
-for exoVar = string(reshape(steady3output.M_.exo_names, 1, []))
-    steady3struct.exo_names.(exoVar) = steady3output.oo_.exo_steady_state(strcmp(exoVar, steady3output.M_.exo_names));
-end
-
-for paramName = string(reshape(steady3output.M_.param_names, 1, []))
-    steady3struct.params.(paramName) = steady3output.M_.params(strcmp(paramName, steady3output.M_.param_names));
-end
+steady3struct = dynareFunc.retrieveSteadyState(steady3output);
 
 for i = 1:length(envi.Meta.ctryList)
     countryCode = envi.Meta.ctryList(i);
@@ -165,10 +151,6 @@ for i = 1:length(envi.Meta.ctryList)
     steady3struct.params.(countryCode+"_alphag") = ALPHAG_VALUE;
 end
 
-varList = steady3output.M_.endo_names(~startsWith(steady3output.M_.endo_names, 'AUX_ENDO_'));
-for varName = string(reshape(varList, 1, []))
-    steady3struct.ssValues.(varName) = steady3output.oo_.steady_state(strcmp(varName, varList));
-end
 % Calculate capital stock from investment and depreciation rate
 for i = 1:length(envi.Meta.ctryList)
     countryCode = envi.Meta.ctryList(i);
