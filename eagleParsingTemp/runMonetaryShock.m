@@ -36,34 +36,19 @@ ylabel('p.p. deviation from steady state')
 
 %% analying the output of the simulation
 monetarySimOutput = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'shock_ea_epsr1', 'Output', 'shock_ea_epsr1_results.mat'));
-M_ = monetarySimOutput.M_;
+monetarySimStruct = dynareFunc.retrieveDeterSimul(monetarySimOutput);
 
-dataRange = qq(0, 4): qq(0, 4)+size(monetarySimOutput.oo_.endo_simul', 1) - 1;
-endoStruct = struct(); ssStruct = struct(); irfStruct = struct();
 
-endoStruct = databank.fromArray( ...
-    monetarySimOutput.oo_.endo_simul' ...
-    , M_.endo_names ...
-    , dataRange(1) ...
-);
-ssStruct = databank.fromArray( ...
-    repmat(monetarySimOutput.oo_.steady_state', numel(dataRange), 1) ...
-    , M_.endo_names ...
-    , dataRange(1) ...
-);
-for aParam = string(reshape(monetarySimOutput.M_.param_names, 1, []))
-    paramStruct.(aParam) = monetarySimOutput.M_.params(strcmp(aParam, monetarySimOutput.M_.param_names));
-end
-
-[endoStruct.RA_ysn, ssStruct.DE_ysn]
-
+irfStruct = struct();
 aEndoVar = "EA_y";
 irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)/ssStruct.(aEndoVar)-1)*100;
 irfStruct.(aEndoVar) 
 
+
+%%
+
 aItemList = ["EA_y"];
 allItemList = aItemList;
-%%
 
 for aItem = aItemList
     [ ...
