@@ -8,6 +8,8 @@ function environment = setup()
     environment.Meta = convertCellToStringStruct(metaData);
     % Merge with empty struct (allows for potential overrides)
     environment.Meta = hereDeepMerge(environment.Meta, struct());
+    % import variable dictionary
+    environment.varDict = importVarDict(project_path);
 end
 
 % Recursively merges two structures, with s2 taking precedence
@@ -49,4 +51,18 @@ function sOut = convertCellToStringStruct(sIn)
             sOut.(fields{i}) = string(sIn.(fields{i})(:)');  % Force horizontal string array
         end
     end
+end
+
+function Table = importVarDict(project_path)
+
+    fileName = sprintf('%s/+environment/csvFiles/varDict.csv', project_path); 
+    
+    opts = detectImportOptions(fileName, 'ReadRowNames', true,  'ReadVariableNames', true, 'Delimiter', ',');
+    opts = setvartype( ...
+        opts ...
+        , {'description', 'diffTransf', 'diffDesc'}, 'string' ...
+    );
+
+    Table = readtable(fileName, opts);
+
 end

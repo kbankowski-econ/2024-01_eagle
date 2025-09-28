@@ -1,51 +1,27 @@
-%// NOTE: next step is to introduce the missing elements of the
-% import content that may be not covered in the loops (see also
-% some TODO items; first to load the model and then later to
-% solve for its SS)
-
-%% preamble
-clear all; close all; clc; restoredefaultpath
-% Add some paths
-currentFolder = pwd; % Get current directory
-[parentFolder, ~, ~] = fileparts(currentFolder);
-addpath(genpath(parentFolder));
-
-%% performing data transformation
-fprintf('\n\n\n+++ Initialising the project ...\n');
-% calling a specific user input not tracked by GIT
+% Loading necessary path variables and environment variables
 utils.call.paths;
-% Call Iris
-addpath(iris_path);
-iris.startup
-% Call Dynare
-addpath(dynare_6_0);
-dynare_config
+envi = environment.setup;
 
-%% cding to a proper folder
-cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
+% Change to relevant directory
+cd(fullfile(project_path, 'eagleParsingTemp', 'modFiles'));
 
-%% deterministic simulation
+%% deterministic simulation of the monetary policy shock
 dynare('shock_ea_epsr1.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro', 'json=compute');
-
-%%
-eaepsrDatabank = databank.fromArray(oo_.endo_simul', M_.endo_names, qq(0,4));
-serToPlot = (eaepsrDatabank.DE_r-eaepsrDatabank.DE_r(qq(0,4)))*100;
-plot(serToPlot{qq(1,1): qq(50,4)});
-title('DE r')
-ylabel('p.p. deviation from steady state')
 
 %% analying the output of the simulation
 monetarySimOutput = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'shock_ea_epsr1', 'Output', 'shock_ea_epsr1_results.mat'));
 monetarySimStruct = dynareFunc.retrieveDeterSimul(monetarySimOutput);
 
 
+
+
+
+%%
+
 irfStruct = struct();
 aEndoVar = "EA_y";
 irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)/ssStruct.(aEndoVar)-1)*100;
 irfStruct.(aEndoVar) 
-
-
-%%
 
 aItemList = ["EA_y"];
 allItemList = aItemList;
