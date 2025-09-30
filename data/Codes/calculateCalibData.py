@@ -29,7 +29,7 @@ raw_io_directory = os.path.join(raw_data_directory, 'io')
 def calculate_investment_shares():
     """Calculate investment shares using data_retrieval.py logic"""
     
-    # Country groupings from data_retrieval.py
+    # Country groupings from data_retrieval.pyƒƒ
     individual_countries = ['Austria', 'Belgium', 'Germany', 'Spain', 'Finland', 'France', 'Greece', 'Italy', 'Netherlands', 'Portugal', 'United States']
     other_eea = ['Croatia', 'Estonia', 'Latvia', 'Lithuania', 'Luxembourg', 'Malta', 'Slovak Republic', 'Slovenia', 'Cyprus', 'Ireland']
     other_eu = ['Bulgaria', 'Czech Republic', 'Denmark', 'Hungary', 'Poland', 'Romania', 'Sweden']
@@ -124,130 +124,445 @@ def calculate_investment_shares():
     return investment_final
 
 def calculate_tax_rates():
-    """Calculate tax rates using existing processed file, returns both yearly and average data"""
-    
-    # For now, read existing tax rates file and return empty yearly data
-    # This avoids the complexity of reprocessing raw OECD tax data
-    # In a full implementation, you would copy all the tax processing logic from data_retrieval.py
-    
-    tax_rates_df = pd.read_csv(os.path.join(data_directory, 'tax_rates.csv'), index_col=0)
-    
-    # Return empty yearly tax data for now (to be implemented later)
+    """
+    Calculate tax rates for each year (1995–2020) and cross-year averages.
+
+    Returns
+    -------
+    tax_rates_df : pd.DataFrame
+        Rows: ['consumption','income','capital','SSC_firms','SSC_households']
+        Cols: model country/region codes (AT, BE, ..., RA, RU, RW, US)
+        Values: cross-year mean tax rates.
+
+    yearly_taxes : dict[int, dict[str, float]]
+        For each year: mapping like
+            {
+              'AT_consumption': ...,
+              'AT_income': ...,
+              'AT_SSC_firms': ...,
+              'AT_SSC_households': ...,
+              'AT_capital': ...,
+              'RA_consumption': ...,
+              ...
+            }
+    """
+    YEAR_RANGE = list(range(1995, 2021))  # keep in sync with the rest of the pipeline
+
+    # Country groupings (same as other functions)
+    individual_countries = [
+        'Austria','Belgium','Germany','Spain','Finland','France','Greece',
+        'Italy','Netherlands','Portugal','United States'
+    ]
+    other_eea = [
+        'Croatia','Estonia','Latvia','Lithuania','Luxembourg','Malta',
+        'Slovak Republic','Slovenia','Cyprus','Ireland'
+    ]
+    other_eu = [
+        'Bulgaria','Czech Republic','Denmark','Hungary','Poland','Romania','Sweden'
+    ]
+
+    # Code mapping (+ passthrough for regions)
+    country_codes = {
+        'Austria':'AT','Belgium':'BE','Spain':'ES','Finland':'FI','France':'FR','Greece':'GR',
+        'Italy':'IT','Netherlands':'NL','Portugal':'PT','Germany':'DE','United States':'US',
+        'RA':'RA','RU':'RU','RW':'RW'
+    }
+    code_order = ['RA','AT','BE','ES','FI','FR','GR','IT','NL','PT','DE','RU','RW','US']
+
+    # ---------- helpers ----------
+    def _to_int_year_cols(df):
+        """Keep only numeric year columns in YEAR_RANGE, robust across pandas versions."""
+        if df.empty:
+            return df
+        cols_num = pd.to_numeric(pd.Index(df.columns), errors='coerce')
+        mask = cols_num.isin(YEAR_RANGE)
+        if not mask.any():
+            return df.iloc[:, 0:0]           # empty, same index
+        df2 = df.iloc[:, mask].copy()
+        df2.columns = cols_num[mask].astype(int)
+        df2 = df2.reindex(sorted(df2.columns), axis=1)
+        return df2
+
+
+    def _pivot(df, index, columns, values):
+        out = df.pivot(index=index, columns=columns, values=values)
+        return out
+
+    def _region_series_from_rev_base(rev_df, base_df, countries):
+        # Weighted rate per year = sum(revenue)/sum(base)
+        sub_rev = rev_df.loc[rev_df.index.intersection(countries)]
+        sub_base = base_df.loc[base_df.index.intersection(countries)]
+        years = sorted(set(sub_rev.columns).intersection(sub_base.columns).intersection(YEAR_RANGE))
+        vals = {}
+        for y in years:
+            den = sub_base[y].sum(skipna=True)
+            num = sub_rev[y].sum(skipna=True)
+            vals[y] = (num / den) if (den and den != 0) else np.nan
+        return pd.Series(vals)
+
+    def _add_yearly_entries(yearly_dict, series_by_code, label):
+        # series_by_code: dict code -> pd.Series(year -> value)
+        for code, s in series_by_code.items():
+            for y, v in s.items():
+                yearly_dict.setdefault(int(y), {})
+                yearly_dict[int(y)][f"{code}_{label}"] = float(v) if pd.notna(v) else np.nan
+
+    # ---------- load & preprocess RAW ----------
+    # taxes.csv (all revenue categories)
+    taxes_raw = pd.read_csv(os.path.join(raw_data_directory, 'taxes.csv'))
+    taxes_df = taxes_raw[['Reference area','Revenue category','TIME_PERIOD','OBS_VALUE','Unit multiplier']].copy()
+
+    # Unit fixes
+    taxes_df.loc[taxes_df['Unit multiplier'] == 'Billions', 'OBS_VALUE'] *= 1000
+    # Dataset quirk
+    taxes_df.loc[taxes_df['Reference area'].isin(['Hungary','Slovenia','Switzerland']), 'OBS_VALUE'] *= 1000
+    # Drop unwanted aggregates
+    taxes_df = taxes_df[~taxes_df['Reference area'].isin(['Africa','OECD average country','Latin America and the Caribbean'])]
+    taxes_df = taxes_df.drop(columns=['Unit multiplier'])
+
+    # Split into revenue-category pivot tables
+    taxes_dict = {}
+    for category, group in taxes_df.groupby('Revenue category'):
+        pvt = _pivot(group, index='Reference area', columns='TIME_PERIOD', values='OBS_VALUE')
+        pvt = _to_int_year_cols(pvt)
+        taxes_dict[category] = pvt
+
+    # Bases
+    cons_raw = pd.read_csv(os.path.join(raw_data_directory, 'consumption.csv'))
+    cons_df = _pivot(cons_raw[['Reference area','TIME_PERIOD','OBS_VALUE']],
+                     index='Reference area', columns='TIME_PERIOD', values='OBS_VALUE')
+    cons_df = _to_int_year_cols(cons_df)
+
+    wages_raw = pd.read_csv(os.path.join(raw_data_directory, 'wage_income.csv'))
+    wages_df = _pivot(wages_raw[['Reference area','TIME_PERIOD','OBS_VALUE']],
+                      index='Reference area', columns='TIME_PERIOD', values='OBS_VALUE')
+    wages_df = _to_int_year_cols(wages_df)
+
+    # Capital base (operating surplus)
+    cap_tax_raw = pd.read_csv(os.path.join(raw_data_directory, 'capital_tax_loc.csv'))
+    cap_rev = cap_tax_raw[['Reference area','TIME_PERIOD','OBS_VALUE','Unit multiplier']].copy()
+    cap_rev.loc[cap_rev['Unit multiplier'] == 'Billions', 'OBS_VALUE'] *= 1000
+    cap_rev.loc[cap_rev['Reference area'].isin(['Slovenia','Switzerland']), 'OBS_VALUE'] *= 1000
+    cap_rev = cap_rev.drop(columns=['Unit multiplier'])
+    cap_rev = _pivot(cap_rev, index='Reference area', columns='TIME_PERIOD', values='OBS_VALUE')
+    cap_rev = _to_int_year_cols(cap_rev)
+
+    # Operating surplus (local currency)
+    os_local_raw = pd.read_csv(os.path.join(raw_data_directory, 'operating_surplus_local.csv'))
+    os_local = _pivot(os_local_raw[['Reference area','Institutional sector','TIME_PERIOD','OBS_VALUE']],
+                      index='Reference area', columns='TIME_PERIOD', values='OBS_VALUE')
+    os_local = _to_int_year_cols(os_local)
+
+    # Operating surplus (USD) – used only as in your original code for weighting; here we’ll weight per-year anyway
+    os_usd_raw = pd.read_csv(os.path.join(raw_data_directory, 'operating_surplus.csv'))
+    os_usd = _pivot(os_usd_raw[['Reference area','Institutional sector','TIME_PERIOD','OBS_VALUE']],
+                    index='Reference area', columns='TIME_PERIOD', values='OBS_VALUE')
+    os_usd = _to_int_year_cols(os_usd)
+
+    # Optional overrides (Spain/Portugal)
+    es_pt_inc_path = os.path.join(raw_data_directory, 'es_pt_inc_tax.csv')
+    if os.path.exists(es_pt_inc_path):
+        es_pt_inc = pd.read_csv(es_pt_inc_path, index_col=0)
+        es_pt_inc = _to_int_year_cols(es_pt_inc)
+    else:
+        es_pt_inc = None
+
+    es_pt_cap_path = os.path.join(raw_data_directory, 'es_pt_cap_tax.csv')
+    if os.path.exists(es_pt_cap_path):
+        es_pt_cap = pd.read_csv(es_pt_cap_path, index_col=0)
+        es_pt_cap.index = ['Spain','Portugal']
+        es_pt_cap = _to_int_year_cols(es_pt_cap)
+    else:
+        es_pt_cap = None
+
+    # ---------- build per-category rates ----------
+    # Consumption tax rate = (Taxes on goods & services) / (Consumption)
+    cons_tax_rev = taxes_dict.get('Taxes on goods and services', pd.DataFrame())
+    # Align to common countries & years
+    cons_countries = cons_df.index.intersection(cons_tax_rev.index)
+    cons_base = cons_df.loc[cons_countries]
+    cons_rev = cons_tax_rev.loc[cons_countries]
+    cons_base = _to_int_year_cols(cons_base)
+    cons_rev = _to_int_year_cols(cons_rev)
+    cons_years = sorted(set(cons_base.columns).intersection(cons_rev.columns).intersection(YEAR_RANGE))
+    cons_base = cons_base[cons_years]
+    cons_rev = cons_rev[cons_years]
+    cons_rate = cons_rev.divide(cons_base).replace([np.inf, -np.inf], np.nan)
+
+    # Income tax rate = (Taxes on income & profits of individuals) / (Wages)
+    inc_rev0 = taxes_dict.get('Taxes on income and profits of individuals', pd.DataFrame()).copy()
+    if es_pt_inc is not None:
+        for ctry in ['Spain','Portugal']:
+            if ctry in es_pt_inc.index:
+                inc_rev0.loc[ctry, es_pt_inc.columns] = es_pt_inc.loc[ctry]
+    inc_countries = wages_df.index.intersection(inc_rev0.index)
+    inc_base = wages_df.loc[inc_countries]
+    inc_rev = inc_rev0.loc[inc_countries]
+    inc_base = _to_int_year_cols(inc_base)
+    inc_rev = _to_int_year_cols(inc_rev)
+    inc_years = sorted(set(inc_base.columns).intersection(inc_rev.columns).intersection(YEAR_RANGE))
+    inc_base = inc_base[inc_years]
+    inc_rev = inc_rev[inc_years]
+    inc_rate = inc_rev.divide(inc_base).replace([np.inf, -np.inf], np.nan)
+
+    # SSC (firms) = SSC by employers / Wages
+    sscf_rev0 = taxes_dict.get('Social security contributions (SSC) by employers', pd.DataFrame())
+    if not sscf_rev0.empty:
+        sscf_rev0 = sscf_rev0.loc[~(sscf_rev0.isna() | (sscf_rev0 == 0)).all(axis=1)]
+    sscf_countries = wages_df.index.intersection(sscf_rev0.index)
+    sscf_base = wages_df.loc[sscf_countries]
+    sscf_rev = sscf_rev0.loc[sscf_countries]
+    sscf_base = _to_int_year_cols(sscf_base)
+    sscf_rev = _to_int_year_cols(sscf_rev)
+    sscf_years = sorted(set(sscf_base.columns).intersection(sscf_rev.columns).intersection(YEAR_RANGE))
+    sscf_base = sscf_base[sscf_years]
+    sscf_rev = sscf_rev[sscf_years]
+    sscf_rate = sscf_rev.divide(sscf_base).replace([np.inf, -np.inf], np.nan)
+
+    # SSC (households) = SSC by employees / Wages
+    ssch_rev0 = taxes_dict.get('Social security contributions (SSC) by employees', pd.DataFrame())
+    if not ssch_rev0.empty:
+        ssch_rev0 = ssch_rev0.loc[~(ssch_rev0.isna() | (ssch_rev0 == 0)).all(axis=1)]
+    ssch_countries = wages_df.index.intersection(ssch_rev0.index)
+    ssch_base = wages_df.loc[ssch_countries]
+    ssch_rev = ssch_rev0.loc[ssch_countries]
+    ssch_base = _to_int_year_cols(ssch_base)
+    ssch_rev = _to_int_year_cols(ssch_rev)
+    ssch_years = sorted(set(ssch_base.columns).intersection(ssch_rev.columns).intersection(YEAR_RANGE))
+    ssch_base = ssch_base[ssch_years]
+    ssch_rev = ssch_rev[ssch_years]
+    ssch_rate = ssch_rev.divide(ssch_base).replace([np.inf, -np.inf], np.nan)
+
+    # Capital tax rate = (Capital tax revenue local) / (Operating surplus local)
+    if es_pt_cap is not None:
+        for ctry in ['Spain','Portugal']:
+            if ctry in es_pt_cap.index:
+                cap_rev.loc[ctry, es_pt_cap.columns] = es_pt_cap.loc[ctry]
+    cap_countries = os_local.index.intersection(cap_rev.index)
+    cap_base = os_local.loc[cap_countries]
+    cap_rev2 = cap_rev.loc[cap_countries]
+    cap_base = _to_int_year_cols(cap_base)
+    cap_rev2 = _to_int_year_cols(cap_rev2)
+    cap_years = sorted(set(cap_base.columns).intersection(cap_rev2.columns).intersection(YEAR_RANGE))
+    cap_base = cap_base[cap_years]
+    cap_rev2 = cap_rev2[cap_years]
+    cap_rate = cap_rev2.divide(cap_base).replace([np.inf, -np.inf], np.nan)
+
+    # ---------- build RA/RU/RW series (per year, proper base weights) ----------
+    def _region_codes_series(rate_df, base_df):
+        # Return dict: code -> pd.Series[year -> value]
+        series = {}
+        # Individual countries first
+        for name in rate_df.index.intersection(individual_countries):
+            code = country_codes[name]
+            series[code] = rate_df.loc[name]
+        # RA, RU, RW
+        ra = _region_series_from_rev_base(
+            rev_df=rate_df.multiply(base_df),  # we don't actually need this; see below
+            base_df=base_df,
+            countries=other_eea
+        )
+        # Note: _region_series_from_rev_base expects revenue & base; pass actual rev & base:
+        ra = _region_series_from_rev_base(rev_df=rate_df*base_df, base_df=base_df, countries=other_eea)
+        ru = _region_series_from_rev_base(rev_df=rate_df*base_df, base_df=base_df, countries=other_eu)
+        # RW = everyone else outside individual + other_eea + other_eu
+        rest = set(base_df.index) - set(individual_countries + other_eea + other_eu)
+        rw = _region_series_from_rev_base(rev_df=rate_df*base_df, base_df=base_df, countries=list(rest))
+        series['RA'] = ra
+        series['RU'] = ru
+        series['RW'] = rw
+        return series
+
+    # Important: for regions we want (sum revenue) / (sum base). We have rate = rev/base.
+    # We can pass "rev = rate * base" to the helper to reconstruct revenue cleanly.
+    cons_series = _region_codes_series(cons_rate, cons_base)
+    inc_series  = _region_codes_series(inc_rate,  inc_base)
+    sscf_series = _region_codes_series(sscf_rate, sscf_base)
+    ssch_series = _region_codes_series(ssch_rate, ssch_base)
+    cap_series  = _region_codes_series(cap_rate,  cap_base)
+
+    # ---------- assemble yearly_taxes ----------
     yearly_taxes = {}
-    
+    _add_yearly_entries(yearly_taxes, cons_series, 'consumption')
+    _add_yearly_entries(yearly_taxes, inc_series,  'income')
+    _add_yearly_entries(yearly_taxes, sscf_series, 'SSC_firms')
+    _add_yearly_entries(yearly_taxes, ssch_series, 'SSC_households')
+    _add_yearly_entries(yearly_taxes, cap_series,  'capital')
+
+    # ---------- build average matrix (rows = tax types, cols = codes) ----------
+    def _mean_by_code(series_by_code):
+        # returns dict code -> average (across available years)
+        out = {}
+        for code, s in series_by_code.items():
+            out[code] = float(pd.to_numeric(s, errors='coerce').mean(skipna=True))
+        return out
+
+    avg_consumption = _mean_by_code(cons_series)
+    avg_income      = _mean_by_code(inc_series)
+    avg_capital     = _mean_by_code(cap_series)
+    avg_ssc_firms   = _mean_by_code(sscf_series)
+    avg_ssc_house   = _mean_by_code(ssch_series)
+
+    # Build DataFrame in the shape your pipeline expects
+    tax_rates_df = pd.DataFrame(
+        {
+            'consumption': {code: avg_consumption.get(code, np.nan) for code in code_order},
+            'income':      {code: avg_income.get(code, np.nan)      for code in code_order},
+            'capital':     {code: avg_capital.get(code, np.nan)     for code in code_order},
+            'SSC_firms':   {code: avg_ssc_firms.get(code, np.nan)   for code in code_order},
+            'SSC_households': {code: avg_ssc_house.get(code, np.nan) for code in code_order},
+        }
+    ).T
+
     return tax_rates_df, yearly_taxes
 
+
 def calculate_debt_ratios():
-    """Calculate debt ratios using data_retrieval.py logic, returns both yearly and average data"""
-    
-    # Country groupings from data_retrieval.py
-    individual_countries = ['Austria', 'Belgium', 'Germany', 'Spain', 'Finland', 'France', 'Greece', 'Italy', 'Netherlands', 'Portugal', 'United States']
-    other_eea = ['Croatia', 'Estonia', 'Latvia', 'Lithuania', 'Luxembourg', 'Malta', 'Slovak Republic', 'Slovenia', 'Cyprus', 'Ireland']
-    other_eu = ['Bulgaria', 'Czech Republic', 'Denmark', 'Hungary', 'Poland', 'Romania', 'Sweden']
-    
-    # Read debt data
-    debt = pd.read_excel(os.path.join(raw_data_directory, 'debt.xlsx'), header=0)
+    """Calculate debt ratios (yearly + average) like in data_retrieval.py.
+
+    Returns
+    -------
+    debtratio : pd.DataFrame
+        1×N dataframe (index 'bytarget') with columns as country/region codes.
+        Values are (avg debt% / 100) * 4, matching your model target scaling.
+
+    yearly_debt : dict[int, dict[str, float]]
+        For each year (1995..2020): mapping of {country_or_region: debt_percent_of_GDP}.
+        Country keys are full names for individuals, and 'RA'/'RU'/'RW' for regions.
+    """
+    # Groups
+    individual_countries = [
+        'Austria', 'Belgium', 'Germany', 'Spain', 'Finland', 'France',
+        'Greece', 'Italy', 'Netherlands', 'Portugal', 'United States'
+    ]
+    other_eea = [
+        'Croatia','Estonia','Latvia','Lithuania','Luxembourg','Malta',
+        'Slovak Republic','Slovenia','Cyprus','Ireland'
+    ]
+    other_eu = ['Bulgaria','Czech Republic','Denmark','Hungary','Poland','Romania','Sweden']
+
+    # Country -> code mapping
+    country_codes = {
+        'Austria': 'AT', 'Belgium': 'BE', 'Spain': 'ES', 'Finland':'FI',
+        'France':'FR', 'Greece': 'GR', 'Italy': 'IT', 'Netherlands': 'NL',
+        'Portugal': 'PT', 'Germany': 'DE', 'United States': 'US'
+    }
+
+    # ---- Load debt (% of GDP) and coerce year columns to ints ----
+    debt_path = os.path.join(raw_data_directory, 'debt.xlsx')
+    try:
+        debt = pd.read_excel(debt_path, header=0, engine='openpyxl')
+    except Exception:
+        debt = pd.read_excel(debt_path, header=0)  # fallback if engine kw not supported
     debt.set_index(debt.columns[0], inplace=True)
-    debt = debt[[col for col in debt.columns if str(col).isdigit() and 1995 <= int(col) <= 2020]]
-    debt = debt.dropna(axis=0, how='all')
+
+    year_cols = [c for c in debt.columns if str(c).isdigit() and 1995 <= int(c) <= 2020]
+    debt = debt[year_cols].copy()
+    debt.columns = [int(c) for c in debt.columns]
     debt = debt.replace('no data', np.nan)
-    
-    # Load GDP data for weighting
-    gdp = pd.read_csv(os.path.join(raw_data_directory, 'imf_gdp.csv'), header=0, index_col=3).dropna(axis=1, how='all')
-    gdp.index = gdp.index.where(gdp.index.str.startswith('Congo'), gdp.index.str.split(',').str[0])
+    debt = debt.apply(pd.to_numeric, errors='coerce')
+    debt = debt.dropna(axis=0, how='all')
+
+    # ---- Load GDP for weights (mean GDP across available years) ----
+    gdp = pd.read_csv(os.path.join(raw_data_directory, 'imf_gdp.csv'),
+                      header=0, index_col=3).dropna(axis=1, how='all')
+    # Harmonize names like "Congo, Dem. Rep. of the"
+    gdp.index = gdp.index.where(gdp.index.str.startswith('Congo'),
+                                gdp.index.str.split(',').str[0])
     gdp = gdp[[col for col in gdp.columns if col.isdigit()]]
     gdp['GDP'] = gdp.mean(axis=1, skipna=True)
-    gdp = pd.DataFrame(gdp.iloc[:,-1])
-    
-    # Calculate yearly debt ratios for regions
+    gdp = pd.DataFrame(gdp.iloc[:, -1])  # single 'GDP' col
+
+    # ---- Build yearly regional/country debt ratios ----
     yearly_debt = {}
-    
     for year in range(1995, 2021):
-        year_str = str(year)
-        if year_str in debt.columns:
-            year_debt = {}
-            
-            # Individual countries
-            for country in individual_countries:
-                if country in debt.index and not pd.isna(debt.loc[country, year_str]):
-                    year_debt[country] = debt.loc[country, year_str]
-            
-            # Rest of EU
-            debt_ru = debt[debt.index.isin(other_eu)].copy()
-            if not debt_ru.empty:
-                gdp_ru = gdp[gdp.index.isin(other_eu)].copy()
-                if not gdp_ru.empty:
-                    debt_ru_year = debt_ru[year_str].dropna()
-                    gdp_ru_matched = gdp_ru.loc[debt_ru_year.index]
-                    debt_ru_year = debt_ru_year * gdp_ru_matched['GDP']
-                    debtratio_ru = debt_ru_year.sum() / gdp_ru_matched['GDP'].sum()
-                    year_debt['RU'] = debtratio_ru
-            
-            # Rest of EA
-            debt_ra = debt[debt.index.isin(other_eea)].copy()
-            if not debt_ra.empty:
-                gdp_ra = gdp[gdp.index.isin(other_eea)].copy()
-                if not gdp_ra.empty:
-                    debt_ra_year = debt_ra[year_str].dropna()
-                    gdp_ra_matched = gdp_ra.loc[debt_ra_year.index]
-                    debt_ra_year = debt_ra_year * gdp_ra_matched['GDP']
-                    debtratio_ra = debt_ra_year.sum() / gdp_ra_matched['GDP'].sum()
-                    year_debt['RA'] = debtratio_ra
-            
-            # Rest of World
-            rw_countries = set(debt.index) - set(individual_countries + other_eea + other_eu)
-            debt_rw = debt[debt.index.isin(rw_countries)].copy()
+        if year not in debt.columns:
+            continue
+
+        year_debt = {}
+
+        # Individual countries
+        for country in individual_countries:
+            if (country in debt.index) and pd.notna(debt.loc[country, year]):
+                year_debt[country] = float(debt.loc[country, year])
+
+        # RU (other EU)
+        debt_ru = debt.loc[debt.index.isin(other_eu), year].dropna()
+        if not debt_ru.empty:
+            gdp_ru = gdp.loc[gdp.index.intersection(debt_ru.index)]
+            if not gdp_ru.empty and gdp_ru['GDP'].sum() != 0:
+                ru_ratio = (debt_ru * gdp_ru['GDP']).sum() / gdp_ru['GDP'].sum()
+                year_debt['RU'] = float(ru_ratio)
+
+        # RA (other EEA)
+        debt_ra = debt.loc[debt.index.isin(other_eea), year].dropna()
+        if not debt_ra.empty:
+            gdp_ra = gdp.loc[gdp.index.intersection(debt_ra.index)]
+            if not gdp_ra.empty and gdp_ra['GDP'].sum() != 0:
+                ra_ratio = (debt_ra * gdp_ra['GDP']).sum() / gdp_ra['GDP'].sum()
+                year_debt['RA'] = float(ra_ratio)
+
+        # RW (rest of world)
+        rw_countries = list(set(debt.index) - set(individual_countries + other_eea + other_eu))
+        if rw_countries:
+            debt_rw = debt.loc[debt.index.isin(rw_countries), :].copy()
             if not debt_rw.empty:
-                debt_rw.index = debt_rw.index.where(debt_rw.index.str.startswith('Congo'), debt_rw.index.str.split(',').str[0])
-                debt_rw = debt_rw.rename(index={'Congo, Dem. Rep. of the':'Congo, Democratic Republic of the'})
-                common_countries = gdp.index.intersection(debt_rw.index)
-                if len(common_countries) > 0:
-                    gdp_rw = gdp.loc[common_countries]
-                    debt_rw_year = debt_rw.loc[common_countries, year_str].dropna()
-                    gdp_rw_matched = gdp_rw.loc[debt_rw_year.index]
-                    debt_rw_year = debt_rw_year * gdp_rw_matched['GDP']
-                    debtratio_rw = debt_rw_year.sum() / gdp_rw_matched['GDP'].sum()
-                    year_debt['RW'] = debtratio_rw
-            
+                # Harmonize to GDP naming
+                debt_rw.index = debt_rw.index.where(debt_rw.index.str.startswith('Congo'),
+                                                    debt_rw.index.str.split(',').str[0])
+                debt_rw = debt_rw.rename(index={'Congo, Dem. Rep. of the': 'Congo, Democratic Republic of the'})
+                common = gdp.index.intersection(debt_rw.index)
+                if len(common) > 0 and year in debt_rw.columns:
+                    d = debt_rw.loc[common, year].dropna()
+                    if not d.empty:
+                        g = gdp.loc[d.index, 'GDP']
+                        if g.sum() != 0:
+                            rw_ratio = (d * g).sum() / g.sum()
+                            year_debt['RW'] = float(rw_ratio)
+
+        if year_debt:
             yearly_debt[year] = year_debt
-    
-    # Calculate averages
+
+    # ---- Cross-year averages & model scaling ----
     debt['average'] = debt.mean(axis=1)
-    
-    # Calculate weighted aggregates for regions (same as before)
-    debt_ru = debt[debt.index.isin(other_eu)].copy()
-    gdp_ru = gdp[gdp.index.isin(other_eu)].copy()
-    debt_ru['Weight'] = gdp_ru['GDP']/gdp_ru["GDP"].sum()
-    debtratio_ru = (debt_ru['average'] * debt_ru['Weight']).sum() 
-    
-    debt_ra = debt[debt.index.isin(other_eea)].copy()
-    gdp_ra = gdp[gdp.index.isin(other_eea)].copy()
-    debt_ra['Weight'] = gdp_ra['GDP']/gdp_ra["GDP"].sum()
-    debtratio_ra = (debt_ra['average'] * debt_ra['Weight']).sum() 
-    
-    debt_rw = debt[~debt.index.isin(set(individual_countries + other_eea + other_eu))].copy()
-    debt_rw.index = debt_rw.index.where(debt_rw.index.str.startswith('Congo'), debt_rw.index.str.split(',').str[0])
-    debt_rw = debt_rw.rename(index={'Congo, Dem. Rep. of the':'Congo, Democratic Republic of the'})
-    common_countries = gdp.index.intersection(debt_rw.index)
-    gdp_rw = gdp.loc[common_countries]
-    debt_rw['Weight'] = gdp_rw['GDP']/gdp_rw["GDP"].sum()
-    debtratio_rw = (debt_rw['average'] * debt_rw['Weight']).sum()
-    
-    # Combine with individual countries
-    debtratio = debt[debt.index.isin(individual_countries)].copy()
-    debtratio = pd.DataFrame(debtratio['average'])
-    
-    # Country code mapping
-    country_codes = {'Austria': 'AT', 'Belgium': 'BE', 'Spain': 'ES', 'Finland':'FI', 'France':'FR', 'Greece': 'GR', 'Italy': 'IT', 'Netherlands': 'NL', 'Portugal': 'PT', 'Germany': 'DE', 'United States': 'US'}
+
+    # RU average
+    avg_ru = debt.loc[debt.index.isin(other_eu), 'average'].dropna()
+    g_ru = gdp.loc[gdp.index.intersection(avg_ru.index), 'GDP']
+    debtratio_ru = float((avg_ru * g_ru).sum() / g_ru.sum()) if not g_ru.empty else np.nan
+
+    # RA average
+    avg_ra = debt.loc[debt.index.isin(other_eea), 'average'].dropna()
+    g_ra = gdp.loc[gdp.index.intersection(avg_ra.index), 'GDP']
+    debtratio_ra = float((avg_ra * g_ra).sum() / g_ra.sum()) if not g_ra.empty else np.nan
+
+    # RW average
+    rw_countries = list(set(debt.index) - set(individual_countries + other_eea + other_eu))
+    debt_rw = debt.loc[debt.index.isin(rw_countries), :].copy()
+    debt_rw.index = debt_rw.index.where(debt_rw.index.str.startswith('Congo'),
+                                        debt_rw.index.str.split(',').str[0])
+    debt_rw = debt_rw.rename(index={'Congo, Dem. Rep. of the': 'Congo, Democratic Republic of the'})
+    common = gdp.index.intersection(debt_rw.index)
+    avg_rw = debt_rw.loc[common, 'average'].dropna()
+    g_rw = gdp.loc[avg_rw.index, 'GDP'] if not avg_rw.empty else pd.Series(dtype=float)
+    debtratio_rw = float((avg_rw * g_rw).sum() / g_rw.sum()) if not g_rw.empty else np.nan
+
+    # Individuals' averages
+    debtratio = pd.DataFrame(debt.loc[debt.index.isin(individual_countries), 'average'])
     debtratio.index = debtratio.index.map(country_codes)
+
+    # Add regions
     debtratio.loc['RA', 'average'] = debtratio_ra
     debtratio.loc['RU', 'average'] = debtratio_ru
     debtratio.loc['RW', 'average'] = debtratio_rw
-    debtratio = (debtratio/100)*4
+
+    # Scale to model target and shape (1×N with index 'bytarget')
+    debtratio = (debtratio / 100.0) * 4.0
     debtratio = debtratio.T
-    debtratio = debtratio.rename(index={'average':'bytarget'})
-    
+    debtratio = debtratio.rename(index={'average': 'bytarget'})
+
     return debtratio, yearly_debt
+
 
 def calculate_shares_and_size():
     """Calculate shares and sizes using main.py logic, returns both yearly and average data"""
@@ -393,21 +708,225 @@ def calculate_shares_and_size():
     return shares, sizes, yearly_shares, yearly_sizes
 
 def calculate_trade_balance():
-    """Calculate trade balance using main.py logic, returns both yearly and average data"""
-    
-    # This function would ideally recalculate trade balance from IO data
-    # For now, we'll return the existing average data and note that yearly
-    # trade balance would be calculated from yearly IO data in main.py logic
-    
-    # Read existing tby as average
-    tby_df = pd.read_csv(os.path.join(data_directory, 'tby.csv'), index_col=0)
-    
-    # Yearly trade balance would be calculated from yearly IO processing
-    # This requires the full IO processing pipeline from main.py for each year
-    # For now, returning empty yearly data (to be implemented)
+    """
+    Calculate trade balance (TBY) for each year from IO data, plus a cross-year average.
+
+    Returns
+    -------
+    tby_avg_df : pd.DataFrame
+        Index = ['RA','AT','BE','ES','FI','FR','GR','IT','NL','PT','DE','RU','RW','US'], column 'tby'
+        Values = average TBY (share of output), same shape as your previous tby.csv.
+
+    yearly_tby : dict[int, dict[str, float]]
+        {year: {'AT': val, 'BE': val, ..., 'RA': val, ...}}
+    """
+    import re
+
+    country_codes_map = {
+        'REA': 'RA', 'AUT': 'AT', 'BEL': 'BE', 'ESP': 'ES', 'FIN': 'FI', 'FRA': 'FR',
+        'GRC': 'GR', 'ITA': 'IT', 'NLD': 'NL', 'PRT': 'PT', 'DEU': 'DE', 'USA': 'US',
+        'RoW': 'RW', 'REU': 'RU'
+    }
+    country_codes = ['RA','AT','BE','ES','FI','FR','GR','IT','NL','PT','DE','RU','RW','US']
+    regions_src = ['AUT','BEL','DEU','ESP','FIN','FRA','GRC','ITA','NLD','PRT','USA','RoW','REA','REU']
+
+    # Average investment shares (we use same split each year, like your average pipeline)
+    investment_split = calculate_investment_shares()
+
+    # Load IO-by-year and NORMALIZE keys to ints
+    final_demand_io_raw = process_year_data(raw_io_directory)
+    final_demand_io = {}
+    for k, v in final_demand_io_raw.items():
+        y = None
+        try:
+            y = int(k)
+        except Exception:
+            m = re.search(r'(\d{4})', str(k))
+            if m: y = int(m.group(1))
+        if y is not None:
+            final_demand_io[y] = v
+
     yearly_tby = {}
-    
-    return tby_df, yearly_tby
+
+    # Collect IO files and extract year robustly
+    filenames = []
+    for f in os.listdir(raw_io_directory):
+        if f.lower().endswith('.csv') and ('sml' in f.lower()):  # accept *SML*.csv
+            m = re.search(r'(\d{4})', f)
+            if m:
+                filenames.append((int(m.group(1)), f))
+    filenames.sort()
+
+    for year, file_name in filenames:
+        file_path = os.path.join(raw_io_directory, file_name)
+
+        # If we don't have a matching final demand table for that year, skip
+        if year not in final_demand_io:
+            # Try lenient fallback for string keys just in case
+            if str(year) in final_demand_io_raw:
+                final_demand_io[year] = final_demand_io_raw[str(year)]
+            else:
+                continue
+
+        # --- Build bilateral imports (absolute) for this year ---
+        result_final = aggregate_year_data(file_path)
+
+        yearly_results = {}
+        for ccode in regions_src:
+            if ccode == 'RoW':
+                imports_df = process_country_data_RoW(result_final, ccode, regions_src)
+            elif ccode == 'REA':
+                imports_df = process_country_data_REA(result_final, ccode, regions_src)
+            elif ccode == 'REU':
+                imports_df = process_country_data_REU(result_final, ccode, regions_src)
+            else:
+                imports_df = process_country_data(result_final, ccode, regions_src)
+            # ensure all rows present
+            for r in regions_src:
+                if r not in imports_df.index:
+                    imports_df.loc[r] = 0
+            yearly_results[ccode] = imports_df.reindex(regions_src)
+
+        combined = pd.concat(yearly_results.values(), axis=1)
+        combined.index = combined.index.map(country_codes_map)
+        combined = combined.reindex(country_codes)
+        combined.columns = [rename_column(col) for col in combined.columns]
+
+        # Collapse consumption, drop inventories, rename GGFC -> imcgy
+        for reg in country_codes:
+            reg_cols = [c for c in combined.columns if c.startswith(reg) and c.split('_')[1] in ['HFCE','NPISH','DPABR']]
+            if reg_cols:
+                combined[f'{reg}_imcy'] = combined[reg_cols].sum(axis=1)
+                combined = combined.drop(columns=reg_cols)
+            invnt = [c for c in combined.columns if c.startswith(reg) and c.split('_')[1] == 'INVNT']
+            if invnt:
+                combined = combined.drop(columns=invnt)
+            ggfc = f'{reg}_GGFC'
+            if ggfc in combined.columns:
+                combined = combined.rename(columns={ggfc: f'{reg}_imcgy'})
+
+        combined = combined.reindex(sorted(combined.columns), axis=1)
+        combined.loc['Total'] = combined.sum(axis=0)
+
+        # --- Year-specific final demand & output (pre-INVNT) ---
+        yfd = final_demand_io[year].copy()
+        yfd.columns = [rename_column(c) for c in yfd.columns]
+        yfd.index = yfd.index.map(country_codes_map)
+        yfd.loc['TOTAL'] = yfd.sum()
+        year_output = pd.DataFrame(yfd.sum(axis=1))  # denom for shares
+
+        # Disaggregate final demand (private/public; split investment by average shares)
+        yfd_agg = yfd.copy()
+        for reg in country_codes:
+            # private consumption
+            pcols = [c for c in yfd_agg.columns if c.startswith(reg) and c.split('_')[1] in ['HFCE','NPISH','DPABR']]
+            if pcols:
+                yfd_agg[f'{reg}_private_consumption'] = yfd_agg[pcols].sum(axis=1)
+                yfd_agg = yfd_agg.drop(columns=pcols)
+            # investment -> split by avg shares
+            inv_cols = [c for c in yfd_agg.columns if c.startswith(reg) and c.split('_')[1] == 'GFCF']
+            if inv_cols:
+                yfd_agg[f'{reg}_investment'] = yfd_agg[inv_cols].sum(axis=1)
+                yfd_agg = yfd_agg.drop(columns=inv_cols)
+                priv_share = investment_split.loc[reg][investment_split.loc[reg]['investment_type']=='Private investment share']['share'].values[0]
+                gov_share  = investment_split.loc[reg][investment_split.loc[reg]['investment_type']=='Government investment share']['share'].values[0]
+                yfd_agg[f'{reg}_private_investment'] = yfd_agg[f'{reg}_investment'] * priv_share
+                yfd_agg[f'{reg}_public_investment']  = yfd_agg[f'{reg}_investment'] * gov_share
+                yfd_agg = yfd_agg.drop(columns=[f'{reg}_investment'])
+            # inventories
+            invnt = [c for c in yfd_agg.columns if c.startswith(reg) and c.split('_')[1] == 'INVNT']
+            if invnt:
+                yfd_agg = yfd_agg.drop(columns=invnt)
+            # government consumption
+            ggfc = f'{reg}_GGFC'
+            if ggfc in yfd_agg.columns:
+                yfd_agg = yfd_agg.rename(columns={ggfc: f'{reg}_public_consumption'})
+
+        yfd_agg = yfd_agg.reindex(country_codes)
+
+        # Year sizes (share of world output)
+        year_sizes = pd.DataFrame(year_output.iloc[:-1, 0] / year_output.iloc[-1, 0]).rename(columns={0:'size'}).reindex(country_codes)
+
+        # --- Split GFCF imports into private/public using gov-cons import share logic ---
+        imports_totals = pd.DataFrame(combined.iloc[-1, :]).rename(columns={'Total':'imports'})
+        gov_share_dict = {}
+        for reg in country_codes:
+            imcgy_key = f'{reg}_imcgy'
+            imports_imcgy = float(imports_totals.loc[imcgy_key, 'imports']) if imcgy_key in imports_totals.index else 0.0
+            local_pubc = float(yfd_agg.loc[reg, f'{reg}_public_consumption']) if f'{reg}_public_consumption' in yfd_agg.columns else 0.0
+            denom = imports_imcgy + local_pubc
+            gov_share_dict[reg] = (imports_imcgy / denom) if denom else 0.0
+
+        gov_inv_imports = {}
+        private_inv_imports = {}
+        split_private = {}
+        for reg in country_codes:
+            pub_inv = float(yfd_agg.loc[reg, f'{reg}_public_investment']) if f'{reg}_public_investment' in yfd_agg.columns else 0.0
+            s = gov_share_dict.get(reg, 0.0)
+            gov_inv_imports[reg] = (s * pub_inv) / (1.0 - s) if (1.0 - s) != 0 else 0.0
+            gfcf_key = f'{reg}_GFCF'
+            total_gfcf_imp = float(imports_totals.loc[gfcf_key, 'imports']) if gfcf_key in imports_totals.index else 0.0
+            private_inv_imports[reg] = total_gfcf_imp - gov_inv_imports[reg]
+            split_private[reg] = (private_inv_imports[reg] / total_gfcf_imp) if total_gfcf_imp else 0.0
+
+        for reg in country_codes:
+            gfcf_key = f'{reg}_GFCF'
+            if gfcf_key in combined.columns:
+                combined[f'{reg}_imiy']  = combined[gfcf_key] * split_private[reg]
+                combined[f'{reg}_imigy'] = combined[gfcf_key] * (1.0 - split_private[reg])
+                combined = combined.drop(columns=gfcf_key)
+
+        # --- Trade matrix as share of output for this year ---
+        trade_matrix = combined.copy()
+        for col in trade_matrix.columns:
+            reg = col.split('_')[0]
+            denom = float(year_output.loc[reg, 0]) if reg in year_output.index else np.nan
+            trade_matrix[col] = trade_matrix[col] / denom if denom and not np.isnan(denom) else 0.0
+
+        imcy = filter_columns_by_suffix(trade_matrix, '_imcy', country_codes)
+        imiy = filter_columns_by_suffix(trade_matrix, '_imiy', country_codes)
+        imcgy = filter_columns_by_suffix(trade_matrix, '_imcgy', country_codes)
+        imigy = filter_columns_by_suffix(trade_matrix, '_imigy', country_codes)
+
+        # Bilateral imports → totals per importer
+        imy_bilateral = {c1: {} for c1 in country_codes}
+        for c1 in country_codes:
+            for c2 in country_codes:
+                imy_bilateral[c1][c2] = (
+                    (imcy.loc[c2, c1]  if (c1 in imcy.columns  and c2 in imcy.index)  else 0.0) +
+                    (imcgy.loc[c2, c1] if (c1 in imcgy.columns and c2 in imcgy.index) else 0.0) +
+                    (imiy.loc[c2, c1]  if (c1 in imiy.columns  and c2 in imiy.index)  else 0.0) +
+                    (imigy.loc[c2, c1] if (c1 in imigy.columns and c2 in imigy.index) else 0.0)
+                )
+        imy = {c1: sum(imy_bilateral[c1].values()) for c1 in country_codes}
+
+        # Exports inferred via size ratios using THIS YEAR's sizes
+        exy_bilateral = {c2: {} for c2 in country_codes}
+        for c2 in country_codes:
+            for c1 in country_codes:
+                s1 = float(year_sizes.loc[c1, 'size']) if c1 in year_sizes.index else 0.0
+                s2 = float(year_sizes.loc[c2, 'size']) if c2 in year_sizes.index else 0.0
+                exy_bilateral[c2][c1] = (imy_bilateral[c1][c2] * (s1 / s2)) if s2 else 0.0
+        exy = {c1: sum(exy_bilateral[c1].values()) for c1 in country_codes}
+
+        # Yearly TBY (already "share of output")
+        tby_year = {c1: float(exy[c1] - imy[c1]) for c1 in country_codes}
+        yearly_tby[year] = tby_year
+
+    # Average across years (simple mean over available years)
+    if not yearly_tby:
+        # keep previous behavior if nothing was computed
+        tby_avg_df = pd.read_csv(os.path.join(data_directory, 'tby.csv'), index_col=0)
+        return tby_avg_df, {}
+
+    years_sorted = sorted(yearly_tby.keys())
+    mat = pd.DataFrame([{c: yearly_tby[y].get(c, np.nan) for c in country_codes} for y in years_sorted],
+                       index=years_sorted)
+    tby_avg = mat.mean(axis=0, skipna=True)
+    tby_avg_df = tby_avg.to_frame(name='tby')
+
+    return tby_avg_df, yearly_tby
+
 
 def create_consolidated_dataframe_from_calculations():
     """Create consolidated dataframe from calculated data in long format with time dimension"""
@@ -451,14 +970,22 @@ def create_consolidated_dataframe_from_calculations():
                 years.append(str(year))
                 values.append(year_size.loc[idx, col])
     
-    # Process yearly debt data
+    # Process yearly debt data — scale to model units: (percent of GDP / 100) * 4
     for year, year_debt_data in yearly_debt.items():
         for country, debt_value in year_debt_data.items():
-            country_code = country if len(country) == 2 else {'Austria': 'AT', 'Belgium': 'BE', 'Spain': 'ES', 'Finland':'FI', 'France':'FR', 'Greece': 'GR', 'Italy': 'IT', 'Netherlands': 'NL', 'Portugal': 'PT', 'Germany': 'DE', 'United States': 'US'}.get(country, country)
+            if pd.isna(debt_value):
+                continue
+            country_code = country if len(country) == 2 else {
+                'Austria': 'AT', 'Belgium': 'BE', 'Spain': 'ES', 'Finland':'FI', 'France':'FR',
+                'Greece': 'GR', 'Italy': 'IT', 'Netherlands': 'NL', 'Portugal': 'PT',
+                'Germany': 'DE', 'United States': 'US', 'RA': 'RA', 'RU': 'RU', 'RW': 'RW'
+            }.get(country, country)
+    
             countries.append(country_code)
             variables.append('debt')
             years.append(str(year))
-            values.append(debt_value)
+            values.append((float(debt_value) / 100.0) * 4.0)
+
     
     # Process yearly tax data
     for year, year_tax_data in yearly_taxes.items():
@@ -520,6 +1047,16 @@ def create_consolidated_dataframe_from_calculations():
             values.append(tax_rates.loc[idx, col])
     
     # Process average trade balance data
+    # === Yearly TBY (already normalized as share of output) ===
+    for year, tby_year in yearly_tby.items():
+        for code, val in tby_year.items():
+            if pd.isna(val):
+                continue
+            countries.append(code)      # e.g., 'AT', 'RA', 'US'
+            variables.append('tby')     # variable name
+            years.append(str(year))     # '1995'..'2020'
+            values.append(float(val))   # share of output
+
     for idx in tby.index:
         for col in tby.columns:
             countries.append(idx)
