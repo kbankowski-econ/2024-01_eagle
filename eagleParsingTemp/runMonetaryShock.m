@@ -12,6 +12,15 @@ dynare('shock_ea_epsr1.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleP
 monetarySimOutput = load(fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'shock_ea_epsr1', 'Output', 'shock_ea_epsr1_results.mat'));
 monetarySimStruct = dynareFunc.retrieveDeterSimul(monetarySimOutput);
 
+%% calculate IRFs
+modelVarLists = dynareFunc.retrieveModelVarList(monetarySimOutput.M_);
+
+aVarSubList
+for aVarIndex = 1:length(envi.varDict(strcmp(envi.varDict{:, "diffTransf"}, "pctDev") ,:).Properties.RowNames)
+    aVar = envi.varDict.Properties.RowNames{aVarIndex};
+    aVarSubList = modelVarLists.endo(endsWith(modelVarLists.endo, ['_', aVar]));
+end
+resDynareSimult_ = dbfun(@(x, y) x - y, aSeriesY_, aSeriesSS);
 
 
 
