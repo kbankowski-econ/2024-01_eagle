@@ -1,0 +1,38 @@
+{
+  "variables": [
+    "y",
+    "yst", 
+    "ysn",
+    "c",
+    "ci",
+    "cj",
+    "i",
+    "pic4",
+    "tot",
+    "reer",
+    "tby",
+    "by",
+    "w",
+    "nd",
+    "rr",
+    "r",
+    "cg",
+    "ig"
+  ],
+  "countries": [
+    "AT",
+    "BE",
+    "FI",
+    "FR",
+    "DE",
+    "GR",
+    "IT",
+    "NL",
+    "PT",
+    "ES",
+    "RA",
+    "RU",
+    "US",
+    "RW"
+  ]
+}

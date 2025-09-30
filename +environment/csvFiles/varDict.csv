@@ -1,19 +1,19 @@
 ﻿,description,diffTransf,diffDesc
-y,Output,pctDev,\% deviation
-yst,Tradable ouput,pctDev,\% deviation
-ysn,Non-tradable output,pctDev,\% deviation
-c,Consumption,pctDev,\% deviation
-ci,Consumption: Ricardian,pctDev,\% deviation
-cj,Consumption: Non-Ricardian,pctDev,\% deviation
-i,Private investmetn,pctDev,\% deviation
-pic4,Annual CPI inflation,dev,abs. deviation
-tot,Terms of trade,pctDev,\% deviation
-reer,Real effective exchange rate,pctDev,\% deviation
-tby,Trade balance,dev,abs. deviation
-by,Government debt ratio,dev,abs. deviation
-w,Real wage,pctDev,\% deviation
-nd,Hours worked,pctDev,\% deviation
-rr,Real interest rate,pctDev,\% deviation
-r,Nominal interest rate,pctDev,\% deviation
-cg,Government consumption,pctDev,\% deviation
-ig,Government investment,pctDev,\% deviation
+y,Output,(x/y-1)*100,\% deviation
+yst,Tradable ouput,(x/y-1)*100,\% deviation
+ysn,Non-tradable output,(x/y-1)*100,\% deviation
+c,Consumption,(x/y-1)*100,\% deviation
+ci,Consumption: Ricardian,(x/y-1)*100,\% deviation
+cj,Consumption: Non-Ricardian,(x/y-1)*100,\% deviation
+i,Private investmetn,(x/y-1)*100,\% deviation
+pic4,Annual CPI inflation,(x-y)*100,abs. deviation in percent
+tot,Terms of trade,(x/y-1)*100,\% deviation
+reer,Real effective exchange rate,(x/y-1)*100,\% deviation
+tby,Trade balance,(x-y)*100,abs. deviation in percent
+by,Government debt ratio,(x-y)*100,abs. deviation
+w,Real wage,(x/y-1)*100,\% deviation
+nd,Hours worked,(x/y-1)*100,\% deviation
+rr,Real interest rate,(x-y)*100,abs. deviation in percent
+r,Nominal interest rate,(x-y)*100,abs. deviation in percent
+cg,Government consumption,(x/y-1)*100,\% deviation
+ig,Government investment,(x/y-1)*100,\% deviation
