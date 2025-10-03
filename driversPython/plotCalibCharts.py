@@ -74,8 +74,8 @@ def setup_axes(fig, variables, year_ticks=[1995, 2000, 2005, 2010, 2015, 2020]):
             fig.update_yaxes(matches=f'y{2*row-1}', row=row, col=2)
 
 def create_single_panel_charts(
+    variables,
     data_file='data/_calibDataCalculated.csv',
-    variables=['private_consumption', 'public_consumption', 'private_investment', 'public_investment', 'tby'],
     output_prefix='docs/2025-02_working-paper/figures/calibration_charts',
     year_range=(1995, 2019),
     scale_factor=100,
@@ -152,8 +152,8 @@ def create_calibration_charts(
     """Create two panels of calibration charts."""
     
     # Define variable sets
-    panel1_variables = ['private_consumption', 'public_consumption', 'private_investment', 'public_investment', 'tby']
-    panel2_variables = ['public_investment', 'tax_consumption', 'tax_income', 'tax_SSC_households', 'tax_SSC_firms', 'tax_capital', 'debt']
+    panel1_variables = ['private_consumption', 'public_consumption', 'private_investment', 'public_investment', 'imy', 'tby']
+    panel2_variables = ['trybar', 'tax_consumption', 'tax_income', 'tax_SSC_households', 'tax_SSC_firms', 'tax_capital', 'debt']
     
     # Create first panel
     create_single_panel_charts(
