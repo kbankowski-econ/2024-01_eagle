@@ -141,12 +141,16 @@ def create_irf_plots(
         fig.add_hline(y=0, line_dash="dash", line_color="gray", line_width=1,
                      row=row, col=col)
     
-    # Configure layout - A4 page dimensions for LaTeX
+    # Fixed dimensions: 16 cm width, 22 cm height
+    cm_to_px = 37.8  # 1 cm ≈ 37.8 pixels (96 DPI)
+    optimal_width = int(16 * cm_to_px)   # 16 cm
+    optimal_height = int(22 * cm_to_px)  # 22 cm
+    
     fig.update_layout(
-        width=800,  # Optimized width for A4 documents
-        height=600,  # Optimized height based on number of subplot rows
+        width=optimal_width,
+        height=optimal_height,
         template='simple_white',
-        font=dict(family="Times New Roman"),
+        font=dict(family="Times New Roman", size=12),
         showlegend=True,
         legend=dict(
             orientation="h",
@@ -156,7 +160,8 @@ def create_irf_plots(
             y=1.02,
             xanchor="center",
             x=0.5
-        )
+        ),
+        margin=dict(l=50, r=50, t=80, b=50)  # Balanced margins
     )
     
     # Save outputs
