@@ -10,8 +10,8 @@ function extractSSsharesFromCSV()
     countries = envi.Meta.ctryList;
 
     %% Variable → model mappings
-    shareNames = ["public_consumption","private_consumption","private_investment","public_investment"];
-    shareMods  = ["cgybar","cy","iy","igybar"];
+    shareNames = ["public_consumption","private_investment","public_investment"];
+    shareMods  = ["cgybar","iy","igybar"];
 
     taxNames   = ["tax_consumption","tax_income","tax_SSC_firms","tax_SSC_households","tax_capital"];
     taxMods    = ["taucbar","taunbar","tauwfbar","tauwhbar","taukbar"];
