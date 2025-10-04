@@ -81,10 +81,9 @@ def create_irf_plots(
     max_row = df_plot['row_number'].max()
     tick_values = [t for t in tick_values if t <= max_row]
     
-    # Use specified country order
+    # Use only countries specified in configuration
     available_countries = set(df_plot['country'].unique())
     countries = [c for c in country_order if c in available_countries]
-    countries.extend([c for c in available_countries if c not in country_order])
     
     colors = px.colors.qualitative.Vivid
     
