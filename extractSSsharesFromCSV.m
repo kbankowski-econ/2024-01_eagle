@@ -1,4 +1,4 @@
-function extractSSsharesfromCSV()
+function extractSSsharesFromCSV()
     %% Paths
     utils.call.paths; % defines project_path
     inCSV  = fullfile(project_path,'data','_calibDataCalculated.csv');
