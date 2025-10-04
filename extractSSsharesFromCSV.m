@@ -1,12 +1,13 @@
 function extractSSsharesFromCSV()
     %% Paths
     utils.call.paths; % defines project_path
+    envi = environment.setup;
     inCSV  = fullfile(project_path,'data','_calibDataCalculated.csv');
     outDir = fullfile(project_path,'eagleParsingTemp','modFiles');
     if ~exist(outDir,'dir'), mkdir(outDir); end
 
     %% Countries (for ordering)
-    countries = ["RA","AT","BE","ES","FI","FR","GR","IT","NL","PT","DE","RU","RW","US"];
+    countries = envi.Meta.ctryList;
 
     %% Variable → model mappings
     shareNames = ["public_consumption","private_consumption","private_investment","public_investment"];
