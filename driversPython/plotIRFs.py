@@ -119,7 +119,7 @@ def create_irf_plots(
                             y=country_data['value'],
                             mode='lines',
                             name=country,
-                            line=dict(color=colors[j % len(colors)]),
+                            line=dict(color=colors[j % len(colors)], width=3),
                             showlegend=(i == 0),  # Only show legend for first plot
                             legendgroup=country
                         ),
@@ -132,10 +132,11 @@ def create_irf_plots(
             tickvals=tick_values,
             ticktext=tick_values,
             range=[0.5, max_row + 0.5],  # Start x-axis before first point
-            tickfont=dict(size=9),
+            tickfont=dict(size=10),
             showgrid=True,
             gridwidth=0.3,
             gridcolor='#e8e8e8',
+            ticks="inside",
             row=row, col=col
         )
         fig.update_yaxes(
@@ -144,6 +145,7 @@ def create_irf_plots(
             showgrid=True,
             gridwidth=0.3,
             gridcolor='#e8e8e8',
+            ticks="inside",
             row=row, col=col
         )
         
@@ -151,10 +153,10 @@ def create_irf_plots(
         fig.add_hline(y=0, line_dash="dash", line_color="gray", line_width=1,
                      row=row, col=col)
     
-    # Fixed dimensions: 24 cm width, 33 cm height (16 x 1.5, 22 x 1.5)
+    # Fixed dimensions
     cm_to_px = 37.8  # 1 cm ≈ 37.8 pixels (96 DPI)
-    optimal_width = int(16 * 1.0 * cm_to_px)   # 24 cm
-    optimal_height = int(22 * 1.0 * cm_to_px)  # 33 cm
+    optimal_width = int(16 * 1.0 * cm_to_px)
+    optimal_height = int(16 * 1.0 * cm_to_px)
     
     fig.update_layout(
         width=optimal_width,
