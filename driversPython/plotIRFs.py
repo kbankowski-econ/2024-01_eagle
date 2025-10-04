@@ -133,9 +133,14 @@ def create_irf_plots(
             tickvals=tick_values,
             ticktext=tick_values,
             range=[0.5, max_row + 0.5],  # Start x-axis before first point
+            tickfont=dict(size=9),
             row=row, col=col
         )
-        fig.update_yaxes(title_text="", row=row, col=col)
+        fig.update_yaxes(
+            title_text="",
+            tickfont=dict(size=10),
+            row=row, col=col
+        )
         
         # Add horizontal line at zero
         fig.add_hline(y=0, line_dash="dash", line_color="gray", line_width=1,
@@ -163,6 +168,9 @@ def create_irf_plots(
         ),
         margin=dict(l=0, r=0, t=0, b=0)  # Minimal margins
     )
+    
+    # Update subplot title font size
+    fig.update_annotations(font_size=12)
     
     # Save outputs
     fig.write_html(f'{output_prefix}.html', auto_open=auto_open)
