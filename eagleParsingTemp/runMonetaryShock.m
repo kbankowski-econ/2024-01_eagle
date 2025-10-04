@@ -69,8 +69,12 @@ databank.toCSV( ...
 
 irfStruct = struct();
 aEndoVar = "EA_y";
-irfStruct.(aEndoVar) = (endoStruct.(aEndoVar)/ssStruct.(aEndoVar)-1)*100;
+irfStruct.(aEndoVar) = (monetarySimStruct.endoValues.(aEndoVar)/monetarySimStruct.ssValues.(aEndoVar)-1)*100;
 irfStruct.(aEndoVar) 
+
+% global variable has to be declared so that it is passed on to
+% createContributions function
+M_ = monetarySimOutput.M_;
 
 aItemList = ["EA_y"];
 allItemList = aItemList;
@@ -82,15 +86,12 @@ for aItem = aItemList
         , contributionSeries.lhs.(aItem) ...
         ] = createContributions( ...
             char(aItem) ...
-            , convertFunc.Series2Dseries(endoStruct) ...
-            , convertFunc.Series2Dseries(ssStruct) ...
+            , convertFunc.Series2Dseries(monetarySimStruct.endoValues) ...
+            , convertFunc.Series2Dseries(monetarySimStruct.ssValues) ...
         );
     allItemList = [allItemList, contributionSeries.contrib.(aItem).Comment];
 end
 
-
-%%
-fprintf('DONE')
 meta.allItemList = unique(allItemList);
 
 colorTable = table( ...
