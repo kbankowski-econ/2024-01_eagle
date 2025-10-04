@@ -143,9 +143,9 @@ def create_irf_plots(
     
     # Configure layout - A4 page dimensions for LaTeX
     fig.update_layout(
+        width=800,  # Optimized width for A4 documents
+        height=600,  # Optimized height based on number of subplot rows
         template='simple_white',
-        height=1122,  # A4 height in pixels (297mm * 3.78 pixels/mm)
-        width=794,    # A4 width in pixels (210mm * 3.78 pixels/mm)
         font=dict(family="Times New Roman"),
         showlegend=True,
         legend=dict(
