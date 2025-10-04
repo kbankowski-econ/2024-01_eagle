@@ -1,4 +1,4 @@
-RA_taunbar, 0.1893;
+RA_taunbar, 0.188;
 AT_taunbar, 0.2388;
 BE_taunbar, 0.3437;
 ES_taunbar, 0.1928;
@@ -9,6 +9,6 @@ IT_taunbar, 0.3814;
 NL_taunbar, 0.1753;
 PT_taunbar, 0.1795;
 DE_taunbar, 0.2146;
-RU_taunbar, 0.3267;
-RW_taunbar, 0.1597;
+RU_taunbar, 0.3575;
+RW_taunbar, 0.1608;
 US_taunbar, 0.2073;

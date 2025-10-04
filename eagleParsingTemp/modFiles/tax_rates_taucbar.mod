@@ -1,7 +1,7 @@
-RA_taucbar, 0.2443;
+RA_taucbar, 0.2425;
 AT_taucbar, 0.2285;
 BE_taucbar, 0.2127;
-ES_taucbar, 0.1620;
+ES_taucbar, 0.162;
 FI_taucbar, 0.2686;
 FR_taucbar, 0.2135;
 GR_taucbar, 0.1927;
@@ -9,6 +9,6 @@ IT_taucbar, 0.1874;
 NL_taucbar, 0.2372;
 PT_taucbar, 0.2036;
 DE_taucbar, 0.1921;
-RU_taucbar, 0.2405;
-RW_taucbar, 0.1624;
+RU_taucbar, 0.2451;
+RW_taucbar, 0.1437;
 US_taucbar, 0.0661;

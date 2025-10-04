@@ -1,5 +1,5 @@
-RA_tauwfbar, 0.1465;
-AT_tauwfbar, 0.1720;
+RA_tauwfbar, 0.1413;
+AT_tauwfbar, 0.172;
 BE_tauwfbar, 0.2247;
 ES_tauwfbar, 0.2265;
 FI_tauwfbar, 0.2221;
@@ -9,6 +9,6 @@ IT_tauwfbar, 0.3089;
 NL_tauwfbar, 0.1098;
 PT_tauwfbar, 0.1325;
 DE_tauwfbar, 0.1553;
-RU_tauwfbar, 0.1606;
-RW_tauwfbar, 0.1001;
+RU_tauwfbar, 0.1445;
+RW_tauwfbar, 0.0994;
 US_tauwfbar, 0.0723;
