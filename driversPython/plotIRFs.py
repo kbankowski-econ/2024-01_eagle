@@ -161,7 +161,7 @@ def create_irf_plots(
             xanchor="center",
             x=0.5
         ),
-        margin=dict(l=50, r=50, t=80, b=50)  # Balanced margins
+        margin=dict(l=0, r=0, t=0, b=0)  # Minimal margins
     )
     
     # Save outputs
