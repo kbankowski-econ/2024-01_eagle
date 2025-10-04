@@ -141,10 +141,10 @@ def create_irf_plots(
         fig.add_hline(y=0, line_dash="dash", line_color="gray", line_width=1,
                      row=row, col=col)
     
-    # Fixed dimensions: 16 cm width, 22 cm height
+    # Fixed dimensions: 24 cm width, 33 cm height (16 x 1.5, 22 x 1.5)
     cm_to_px = 37.8  # 1 cm ≈ 37.8 pixels (96 DPI)
-    optimal_width = int(16 * cm_to_px)   # 16 cm
-    optimal_height = int(22 * cm_to_px)  # 22 cm
+    optimal_width = int(16 * 1.0 * cm_to_px)   # 24 cm
+    optimal_height = int(22 * 1.0 * cm_to_px)  # 33 cm
     
     fig.update_layout(
         width=optimal_width,
