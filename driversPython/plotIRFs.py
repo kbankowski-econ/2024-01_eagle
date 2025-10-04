@@ -97,8 +97,8 @@ def create_irf_plots(
     fig = make_subplots(
         rows=rows, cols=cols,
         subplot_titles=[var_dict.get(var, var.replace('_', ' ').title()) for var in plot_variables],
-        vertical_spacing=0.08,
-        horizontal_spacing=0.08
+        vertical_spacing=0.07,
+        horizontal_spacing=0.06
     )
     
     # Plot each variable
@@ -127,18 +127,24 @@ def create_irf_plots(
                         row=row, col=col
                     )
         
-        # Update axes
+        # Update axes with grid lines
         fig.update_xaxes(
             title_text="",
             tickvals=tick_values,
             ticktext=tick_values,
             range=[0.5, max_row + 0.5],  # Start x-axis before first point
             tickfont=dict(size=9),
+            showgrid=True,
+            gridwidth=0.3,
+            gridcolor='#e8e8e8',
             row=row, col=col
         )
         fig.update_yaxes(
             title_text="",
             tickfont=dict(size=10),
+            showgrid=True,
+            gridwidth=0.3,
+            gridcolor='#e8e8e8',
             row=row, col=col
         )
         
@@ -159,14 +165,15 @@ def create_irf_plots(
         showlegend=True,
         legend=dict(
             orientation="h",
-            entrywidth=1/7,  # 1/7 of legend width per item (7 columns)
-            entrywidthmode='fraction',
             yanchor="bottom",
-            y=1.02,
+            y=1.05,
             xanchor="center",
-            x=0.5
+            x=0.5,
+            font=dict(size=9),
+            bordercolor="black",
+            borderwidth=0.5
         ),
-        margin=dict(l=0, r=0, t=0, b=0)  # Minimal margins
+        margin=dict(l=0, r=35, t=0, b=0)  # Add top margin for legend
     )
     
     # Update subplot title font size
