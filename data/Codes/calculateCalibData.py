@@ -124,19 +124,7 @@ def calculate_investment_shares():
     return investment_final
 
 def calculate_transfers():
-    """
-    Government transfers as share of GDP: yearly series (1995–2020) + cross-year average.
 
-    Returns
-    -------
-    transfers_avg : pd.DataFrame
-        1×N DF with index 'trybar' and columns = country/region codes.
-        Values are ratios (percent/100).
-
-    yearly_transfers : dict[int, dict[str, float]]
-        { year: { 'AT': ratio, 'BE': ratio, ..., 'RA': ratio, 'RU': ratio, 'RW': ratio } }
-        Ratios are percent-of-GDP divided by 100.
-    """
     YEAR_RANGE = list(range(1995, 2021))
 
     # Groups (match other functions)
@@ -318,28 +306,7 @@ def calculate_transfers():
     return transfers_avg, yearly_transfers
 
 def calculate_tax_rates():
-    """
-    Calculate tax rates for each year (1995–2020) and cross-year averages.
 
-    Returns
-    -------
-    tax_rates_df : pd.DataFrame
-        Rows: ['consumption','income','capital','SSC_firms','SSC_households']
-        Cols: model country/region codes (AT, BE, ..., RA, RU, RW, US)
-        Values: cross-year mean tax rates.
-
-    yearly_taxes : dict[int, dict[str, float]]
-        For each year: mapping like
-            {
-              'AT_consumption': ...,
-              'AT_income': ...,
-              'AT_SSC_firms': ...,
-              'AT_SSC_households': ...,
-              'AT_capital': ...,
-              'RA_consumption': ...,
-              ...
-            }
-    """
     YEAR_RANGE = list(range(1995, 2021))  # keep in sync with the rest of the pipeline
 
     # Country groupings (same as other functions)
@@ -612,18 +579,8 @@ def calculate_tax_rates():
 
 
 def calculate_debt_ratios():
-    """Calculate debt ratios (yearly + average) like in data_retrieval.py.
-
-    Returns
-    -------
-    debtratio : pd.DataFrame
-        1×N dataframe (index 'bytarget') with columns as country/region codes.
-        Values are (avg debt% / 100) * 4, matching your model target scaling.
-
-    yearly_debt : dict[int, dict[str, float]]
-        For each year (1995..2020): mapping of {country_or_region: debt_percent_of_GDP}.
-        Country keys are full names for individuals, and 'RA'/'RU'/'RW' for regions.
-    """
+    """Calculate debt ratios (yearly + average) like in data_retrieval.py.""" 
+    
     # Groups
     individual_countries = [
         'Austria', 'Belgium', 'Germany', 'Spain', 'Finland', 'France',
@@ -903,24 +860,8 @@ def calculate_shares_and_size():
 
 def calculate_import_components():
     """
-      Yearly (per year y):
-        - Build bilateral absolute imports with aggregate_year_data + process_country_data*
-        - Collapse to imcy, imcgy, split GFCF → imiy/imigy with gov-cons import share trick
-        - Normalize by that year's output (pre-INVNT)
-        - Return column sums (importer totals) for imcy, imcgy, imiy, imigy, and imy=sum
-
-      Average:
-        - Average absolute imports across years first (not shares)
-        - Collapse/split exactly as above
-        - Normalize by average output (pre-INVNT)
-        - Return importer totals as the average components
-
-    Returns
-    -------
-    avg_components : dict[str, pd.Series]
-        keys: 'imcy','imcgy','imiy','imigy','imy' (Series indexed by ['RA','AT',...,'US'])
-    yearly_components : dict[int, dict[str, pd.Series]]
-        {year: {'imcy':Series, 'imcgy':Series, 'imiy':Series, 'imigy':Series, 'imy':Series}}
+    Build bilateral import components and compute trade balances from those shares,
+    mirroring main.py logic.
     """
     import re
 
@@ -984,6 +925,8 @@ def calculate_import_components():
 
     # === YEARLY: transform absolute -> components -> shares-of-output ===
     yearly_components: dict[int, dict[str, pd.Series]] = {}
+    yearly_bilateral: dict[int, dict[str, pd.DataFrame]] = {}
+    yearly_tby: dict[int, dict[str, float]] = {}
 
     for year, combined_abs in abs_imports_per_year.items():
         # 1) Collapse HFCE/NPISH/DPABR → imcy; drop INVNT; rename GGFC → imcgy
@@ -1009,6 +952,8 @@ def calculate_import_components():
         yfd.index = yfd.index.map(country_codes_map)
         yfd.loc['TOTAL'] = yfd.sum()
         year_output = pd.DataFrame(yfd.sum(axis=1))  # denom
+        world_output_y = float(year_output.iloc[-1, 0])
+        sizes_y = (year_output.iloc[:-1, 0].reindex(country_codes).astype(float) / world_output_y).to_frame('size')
 
         # 3) Build yfd_agg (public/private consumption & investment) using average investment split
         yfd_agg = yfd.copy()
@@ -1057,28 +1002,33 @@ def calculate_import_components():
                 combined[f'{reg}_imigy'] = combined[gfcf_key] * (1.0 - split_private)
                 combined = combined.drop(columns=gfcf_key)
 
-        # 5) Normalize to share of output
-        trade_matrix = combined.copy()
-        for col in trade_matrix.columns:
+        # 5) Normalize to share of output (drop 'Total' exporter row before matrices)
+        tm = combined.drop(index='Total', errors='ignore').copy()
+        for col in tm.columns:
             reg = col.split('_')[0]
             denom = float(year_output.loc[reg, 0]) if reg in year_output.index else np.nan
-            trade_matrix[col] = trade_matrix[col] / denom if denom and not np.isnan(denom) else 0.0
-        
-        # IMPORTANT: drop the 'Total' exporter row before summing to importer totals
-        tm_no_total = trade_matrix.drop(index='Total', errors='ignore')
-        
-        # 6) Extract component matrices and sum by importer (columns)
-        imcy  = filter_columns_by_suffix(tm_no_total, '_imcy',  country_codes)
-        imcgy = filter_columns_by_suffix(tm_no_total, '_imcgy', country_codes)
-        imiy  = filter_columns_by_suffix(tm_no_total, '_imiy',  country_codes)
-        imigy = filter_columns_by_suffix(tm_no_total, '_imigy', country_codes)
-        
-        s_imcy  = imcy.sum(axis=0)
-        s_imcgy = imcgy.sum(axis=0)
-        s_imiy  = imiy.sum(axis=0)
-        s_imigy = imigy.sum(axis=0)
-        s_imy   = s_imcy + s_imcgy + s_imiy + s_imigy
+            tm[col] = tm[col] / denom if denom and not np.isnan(denom) else 0.0
 
+        # 6) Extract component matrices (shares) and importer totals (shares)
+        imcy_mat  = filter_columns_by_suffix(tm, '_imcy',  country_codes)
+        imcgy_mat = filter_columns_by_suffix(tm, '_imcgy', country_codes)
+        imiy_mat  = filter_columns_by_suffix(tm, '_imiy',  country_codes)
+        imigy_mat = filter_columns_by_suffix(tm, '_imigy', country_codes)
+
+        # Save yearly bilateral matrices
+        yearly_bilateral[year] = {
+            'imcy' : imcy_mat,
+            'imcgy': imcgy_mat,
+            'imiy' : imiy_mat,
+            'imigy': imigy_mat,
+        }
+
+        # Importer totals (columns sums)
+        s_imcy  = imcy_mat.sum(axis=0)
+        s_imcgy = imcgy_mat.sum(axis=0)
+        s_imiy  = imiy_mat.sum(axis=0)
+        s_imigy = imigy_mat.sum(axis=0)
+        s_imy   = s_imcy + s_imcgy + s_imiy + s_imigy
 
         yearly_components[year] = {
             'imcy' : s_imcy.reindex(country_codes, fill_value=0.0),
@@ -1088,12 +1038,34 @@ def calculate_import_components():
             'imy'  : s_imy.reindex(country_codes,  fill_value=0.0),
         }
 
-    # === AVERAGE: rebuild EXACTLY like your script (average absolute → then share of avg output) ===
+        # 7) TBY from share matrices (exactly like main.py)
+        imy_bilat_y = imcy_mat + imcgy_mat + imiy_mat + imigy_mat
+        import_share_y = imy_bilat_y.sum(axis=0)  # importer totals (shares)
+
+        exy_bilat_y = pd.DataFrame(0.0, index=country_codes, columns=country_codes)
+        for exp in country_codes:
+            for imp in country_codes:
+                size_exp = float(sizes_y.loc[exp, 'size'])
+                size_imp = float(sizes_y.loc[imp, 'size'])
+                exy_bilat_y.loc[exp, imp] = 0.0 if size_exp == 0.0 else \
+                    imy_bilat_y.loc[exp, imp] * (size_imp / size_exp)
+        export_share_y = exy_bilat_y.sum(axis=1)
+
+        tby_series_y = (export_share_y - import_share_y.reindex(country_codes)).to_dict()
+        yearly_tby[year] = tby_series_y
+
+    # === AVERAGE: average absolute -> collapse/split -> shares of average output ===
     if not abs_imports_per_year:
         empty = pd.Series({c: np.nan for c in country_codes})
-        return ({'imcy': empty, 'imcgy': empty, 'imiy': empty, 'imigy': empty, 'imy': empty}, {})
+        return (
+            {'imcy': empty, 'imcgy': empty, 'imiy': empty, 'imigy': empty, 'imy': empty},
+            {},
+            {'imcy': pd.DataFrame(), 'imcgy': pd.DataFrame(), 'imiy': pd.DataFrame(), 'imigy': pd.DataFrame()},
+            {},
+            empty,
+            {}
+        )
 
-    # average absolute imports across years
     years_list = list(abs_imports_per_year.keys())
     avg_abs = sum(abs_imports_per_year[y] for y in years_list) / len(years_list)
 
@@ -1120,6 +1092,8 @@ def calculate_import_components():
     average_final_demand_io.index = average_final_demand_io.index.map(country_codes_map)
     average_final_demand_io.loc['TOTAL'] = average_final_demand_io.sum()
     avg_output = pd.DataFrame(average_final_demand_io.sum(axis=1))
+    world_output_avg = float(avg_output.iloc[-1, 0])
+    sizes_avg = (avg_output.iloc[:-1, 0].reindex(country_codes).astype(float) / world_output_avg).to_frame('size')
 
     # disaggregate average final demand with the SAME investment split
     avg_fd = average_final_demand_io.copy()
@@ -1145,7 +1119,7 @@ def calculate_import_components():
             avg_fd = avg_fd.rename(columns={ggfc: f'{reg}_public_consumption'})
     avg_fd = avg_fd.reindex(country_codes)
 
-    # split GFCF on averages
+    # split GFCF on averages (same as yearly but with averages)
     totals_avg = pd.DataFrame(avg_combined.iloc[-1, :]).rename(columns={'Total':'imports'})
     for reg in country_codes:
         gfcf_key = f'{reg}_GFCF'
@@ -1162,20 +1136,31 @@ def calculate_import_components():
             avg_combined[f'{reg}_imigy'] = avg_combined[gfcf_key] * (1.0 - split_private)
             avg_combined = avg_combined.drop(columns=gfcf_key)
 
-    # turn averages into share of average output
-    trade_matrix_avg = avg_combined.copy()
-    for col in trade_matrix_avg.columns:
+    # turn averages into shares of average output; drop 'Total' exporter row
+    tm_avg = avg_combined.drop(index='Total', errors='ignore').copy()
+    for col in tm_avg.columns:
         reg = col.split('_')[0]
         denom = float(avg_output.loc[reg, 0]) if reg in avg_output.index else np.nan
-        trade_matrix_avg[col] = trade_matrix_avg[col] / denom if denom and not np.isnan(denom) else 0.0
-    
-    # Drop 'Total' row before importer sums
-    tma = trade_matrix_avg.drop(index='Total', errors='ignore')
-    
-    imcy_avg  = filter_columns_by_suffix(tma, '_imcy',  country_codes).sum(axis=0)
-    imcgy_avg = filter_columns_by_suffix(tma, '_imcgy', country_codes).sum(axis=0)
-    imiy_avg  = filter_columns_by_suffix(tma, '_imiy',  country_codes).sum(axis=0)
-    imigy_avg = filter_columns_by_suffix(tma, '_imigy', country_codes).sum(axis=0)
+        tm_avg[col] = tm_avg[col] / denom if denom and not np.isnan(denom) else 0.0
+
+    # Average bilateral share matrices
+    imcy_avg_mat  = filter_columns_by_suffix(tm_avg, '_imcy',  country_codes)
+    imcgy_avg_mat = filter_columns_by_suffix(tm_avg, '_imcgy', country_codes)
+    imiy_avg_mat  = filter_columns_by_suffix(tm_avg, '_imiy',  country_codes)
+    imigy_avg_mat = filter_columns_by_suffix(tm_avg, '_imigy', country_codes)
+
+    bilateral_avg = {
+        'imcy' : imcy_avg_mat,
+        'imcgy': imcgy_avg_mat,
+        'imiy' : imiy_avg_mat,
+        'imigy': imigy_avg_mat,
+    }
+
+    # Importer totals from average matrices (shares)
+    imcy_avg  = imcy_avg_mat.sum(axis=0)
+    imcgy_avg = imcgy_avg_mat.sum(axis=0)
+    imiy_avg  = imiy_avg_mat.sum(axis=0)
+    imigy_avg = imigy_avg_mat.sum(axis=0)
     imy_avg   = imcy_avg + imcgy_avg + imiy_avg + imigy_avg
 
     avg_components = {
@@ -1186,366 +1171,22 @@ def calculate_import_components():
         'imy'  : imy_avg.reindex(country_codes),
     }
 
-    return avg_components, yearly_components
+    # TBY from average share matrices (same as main.py)
+    imy_bilat_avg = imcy_avg_mat + imcgy_avg_mat + imiy_avg_mat + imigy_avg_mat
+    import_share_avg = imy_bilat_avg.sum(axis=0)
 
-def calculate_trade_balance():
-    """
-    Calculate TBY (yearly and average) and also return bilateral import-share
-    matrices per year and for the average:
-      yearly_bilateral: {year: {'imcy':DF,'imcgy':DF,'imiy':DF,'imigy':DF}}
-      bilateral_avg:    {'imcy':DF,'imcgy':DF,'imiy':DF,'imigy':DF}
-    Each DF is shares of importer output, with rows=exporter, cols=importer.
-    """
-
-    # --- constants & helpers (match the rest of your script) ---
-    country_codes_map = {
-        'REA': 'RA','AUT': 'AT','BEL': 'BE','ESP': 'ES','FIN': 'FI','FRA': 'FR',
-        'GRC': 'GR','ITA': 'IT','NLD': 'NL','PRT': 'PT','DEU': 'DE','USA': 'US',
-        'RoW': 'RW','REU': 'RU'
-    }
-    country_codes = ['RA','AT','BE','ES','FI','FR','GR','IT','NL','PT','DE','RU','RW','US']
-
-    # -- (A) Build average final demand (to compute "average" tm and shares) --
-    final_demand_io = process_year_data(raw_io_directory)
-    avg_fd = sum(final_demand_io.values())/len(final_demand_io)
-    avg_fd.columns = [rename_column(c) for c in avg_fd.columns]
-    avg_fd.index = avg_fd.index.map(country_codes_map)
-    avg_fd.loc['TOTAL'] = avg_fd.sum()
-
-    # output (average) before dropping inventories
-    output_avg = pd.DataFrame(avg_fd.sum(axis=1))
-    sizes_avg = pd.DataFrame(output_avg.iloc[:-1, 0] / output_avg.iloc[-1,0]).reindex(country_codes)
-    sizes_avg.columns = ['size']
-
-    # investment split (average)
-    inv_split = calculate_investment_shares()
-
-    # collapse average fd into private/public consumption + private/public investment
-    fd_avg_proc = avg_fd.copy()
-    for reg in country_codes:
-        # private consumption = HFCE+NPISH+DPABR
-        cols = [c for c in fd_avg_proc.columns if c.startswith(reg) and c.split('_')[1] in ['HFCE','NPISH','DPABR']]
-        fd_avg_proc[f'{reg}_private_consumption'] = fd_avg_proc[cols].sum(axis=1)
-        fd_avg_proc.drop(columns=cols, inplace=True)
-
-        # investment → split using inv_split
-        inv_cols = [c for c in fd_avg_proc.columns if c.startswith(reg) and c.split('_')[1] == 'GFCF']
-        fd_avg_proc[f'{reg}_investment'] = fd_avg_proc[inv_cols].sum(axis=1)
-        fd_avg_proc.drop(columns=inv_cols, inplace=True)
-
-        p_share = inv_split.loc[reg][inv_split.loc[reg]['investment_type']=='Private investment share']['share'].values[0]
-        g_share = inv_split.loc[reg][inv_split.loc[reg]['investment_type']=='Government investment share']['share'].values[0]
-        fd_avg_proc[f'{reg}_private_investment'] = fd_avg_proc[f'{reg}_investment'] * p_share
-        fd_avg_proc[f'{reg}_public_investment']  = fd_avg_proc[f'{reg}_investment'] * g_share
-        fd_avg_proc.drop(columns=[f'{reg}_investment'], inplace=True)
-
-        # drop inventories
-        invnt_cols = [c for c in fd_avg_proc.columns if c.startswith(reg) and c.split('_')[1] == 'INVNT']
-        fd_avg_proc.drop(columns=invnt_cols, inplace=True)
-
-        # rename GGFC → public_consumption
-        ggfc = f'{reg}_GGFC'
-        if ggfc in fd_avg_proc.columns:
-            fd_avg_proc.rename(columns={ggfc: f'{reg}_public_consumption'}, inplace=True)
-
-    fd_avg_proc = fd_avg_proc.reindex(country_codes)
-    fd_avg_proc.loc['Total'] = fd_avg_proc.sum(axis=0)
-
-    # (B) Build average bilateral imports (your original pipeline)
-    # Read/import per-year IO and compute per-year imports
-    imports_per_year = {}
-    regions_raw = ['AUT','BEL','DEU','ESP','FIN','FRA','GRC','ITA','NLD','PRT','USA','RoW','REA','REU']
-
-    for file_name in os.listdir(raw_io_directory):
-        if file_name.endswith('_SML.csv'):
-            year = file_name.split('_')[0]
-            fp = os.path.join(raw_io_directory, file_name)
-            res_final = aggregate_year_data(fp)
-
-            yearly_res = {}
-            for cc in regions_raw:
-                if cc == 'RoW':
-                    imp = process_country_data_RoW(res_final, cc, regions_raw)
-                elif cc == 'REA':
-                    imp = process_country_data_REA(res_final, cc, regions_raw)
-                elif cc == 'REU':
-                    imp = process_country_data_REU(res_final, cc, regions_raw)
-                else:
-                    imp = process_country_data(res_final, cc, regions_raw)
-                yearly_res[cc] = imp
-            imports_per_year[year] = yearly_res
-
-    # Average across years (absolute imports by component)
-    avg_imports_abs = {c: None for c in regions_raw}
-    for c in regions_raw:
-        acc, n = None, 0
-        for yr in imports_per_year:
-            if c in imports_per_year[yr]:
-                acc = imports_per_year[yr][c].copy() if acc is None else acc + imports_per_year[yr][c]
-                n += 1
-        if acc is not None and n > 0:
-            avg_imports_abs[c] = acc / n
-
-    # Align & concatenate
-    adj = {}
-    for c, df in avg_imports_abs.items():
-        if df is None:
-            continue
-        for r in regions_raw:
-            if r not in df.index:
-                df.loc[r] = 0
-        adj[c] = df.reindex(regions_raw)
-    avg_combined = pd.concat(adj.values(), axis=1)
-
-    # map to model codes and rename columns
-    avg_combined.index = avg_combined.index.map(country_codes_map)
-    avg_combined = avg_combined.reindex(country_codes)
-    avg_combined.columns = [rename_column(c) for c in avg_combined.columns]
-
-    # collapse to components
-    fc = avg_combined.copy()
-    for reg in country_codes:
-        # private cons imports
-        cols = [c for c in fc.columns if c.startswith(reg) and c.split('_')[1] in ['HFCE','NPISH','DPABR']]
-        fc[f'{reg}_imcy'] = fc[cols].sum(axis=1); fc.drop(columns=cols, inplace=True)
-        # public cons imports
-        ggfc = f'{reg}_GGFC'
-        if ggfc in fc.columns:
-            fc.rename(columns={ggfc: f'{reg}_imcgy'}, inplace=True)
-        # drop inventories
-        invnt = f'{reg}_INVNT'
-        if invnt in fc.columns:
-            fc.drop(columns=[invnt], inplace=True)
-
-    fc = fc.reindex(sorted(fc.columns), axis=1)
-    fc.loc['Total'] = fc.sum(axis=0)
-
-    # Split GFCF imports into private/public using gov-cons import share
-    # 1) government-cons import share
-    imports_gov = pd.DataFrame(fc.iloc[-1, :], columns=['imports'])
-    imports_gov = imports_gov[imports_gov.index.astype(str).str.endswith('_imcgy')]
-    
-    # Ensure every region has a row; missing ones (e.g., 'RA_imcgy') become 0
-    needed_idx = [f'{reg}_imcgy' for reg in country_codes]
-    imports_gov = imports_gov.reindex(needed_idx, fill_value=0.0)
-    
-    imports_gov['total'] = 0.0
-    for reg in country_codes:
-        colname = f'{reg}_public_consumption'
-        local_gc = float(fd_avg_proc[colname].loc[reg]) if colname in fd_avg_proc.columns else 0.0
-        imports_val = float(imports_gov.at[f'{reg}_imcgy', 'imports'])
-        imports_gov.at[f'{reg}_imcgy', 'total'] = local_gc + imports_val
-    
-    # Robust division to avoid inf/NaN when total==0
-    imports_gov['share'] = np.divide(
-        imports_gov['imports'], imports_gov['total'],
-        out=np.zeros_like(imports_gov['imports'], dtype=float),
-        where=imports_gov['total'] != 0
-    )
-
-    gov_share = {idx.split('_')[0]: imports_gov.loc[idx, 'share'] for idx in imports_gov.index}
-
-    # 2) absolute gov investment imports; 3) private inv imports; 4) split GFCF column
-    gov_inv_abs = {}
-    for reg in country_codes:
-        gc_share = gov_share.get(reg, 0.0)
-        gov_inv_abs[reg] = (gc_share * fd_avg_proc.loc[reg, f'{reg}_public_investment']) / (1 - gc_share) if (1 - gc_share) != 0 else 0.0
-
-    priv_inv_abs = {}
-    for reg in country_codes:
-        priv_inv_abs[reg] = fc.loc['Total', f'{reg}_GFCF'] - gov_inv_abs[reg] if f'{reg}_GFCF' in fc.columns else 0.0
-
-    split_priv = {}
-    for reg in country_codes:
-        denom = fc.loc['Total', f'{reg}_GFCF'] if f'{reg}_GFCF' in fc.columns else 0.0
-        split_priv[reg] = priv_inv_abs[reg] / denom if denom != 0 else 0.0
-
-    for reg in country_codes:
-        gfcf = f'{reg}_GFCF'
-        if gfcf in fc.columns:
-            fc[f'{reg}_imiy']  = fc[gfcf] * split_priv[reg]
-            fc[f'{reg}_imigy'] = fc[gfcf] * (1 - split_priv[reg])
-            fc.drop(columns=gfcf, inplace=True)
-
-    # Normalize by importer output (average)
-    tm_avg = fc.copy()
-    for col in tm_avg.columns:
-        importer = col.split('_')[0]
-        tm_avg[col] = tm_avg[col] / output_avg.loc[importer, 0]
-
-    # slice four bilateral average matrices (rows=exporter, cols=importer)
-    imcy_avg  = filter_columns_by_suffix(tm_avg, '_imcy',  country_codes)
-    imcgy_avg = filter_columns_by_suffix(tm_avg, '_imcgy', country_codes)
-    imiy_avg  = filter_columns_by_suffix(tm_avg, '_imiy',  country_codes)
-    imigy_avg = filter_columns_by_suffix(tm_avg, '_imigy', country_codes)
-
-    bilateral_avg = {'imcy': imcy_avg, 'imcgy': imcgy_avg, 'imiy': imiy_avg, 'imigy': imigy_avg}
-
-    # (C) Yearly bilateral matrices + yearly TBY (mirror your average pipeline, but per-year)
-    yearly_bilateral = {}   # year -> { 'imcy':DF, ... }
-    yearly_tby = {}         # year -> {code -> tby_value}
-
-    # Pre-compute yearly outputs
-    fd_year_proc = {}   # same structure as fd_avg_proc, but per year
-    output_year = {}    # code -> scalar output per year
-    sizes_year = {}     # for completeness
-
-    for yr, ydf in final_demand_io.items():
-        y = int(yr)
-        fdy = ydf.copy()
-        fdy.columns = [rename_column(c) for c in fdy.columns]
-        fdy.index   = fdy.index.map(country_codes_map)
-        fdy.loc['TOTAL'] = fdy.sum()
-
-        out = pd.DataFrame(fdy.sum(axis=1))
-        output_year[y] = out  # keep whole series
-        sz = pd.DataFrame(out.iloc[:-1, 0] / out.iloc[-1,0]).reindex(country_codes)
-        sz.columns = ['size']
-        sizes_year[y] = sz
-
-        # collapse as above
-        for reg in country_codes:
-            cols = [c for c in fdy.columns if c.startswith(reg) and c.split('_')[1] in ['HFCE','NPISH','DPABR']]
-            fdy[f'{reg}_private_consumption'] = fdy[cols].sum(axis=1); fdy.drop(columns=cols, inplace=True)
-            inv_cols = [c for c in fdy.columns if c.startswith(reg) and c.split('_')[1] == 'GFCF']
-            fdy[f'{reg}_investment'] = fdy[inv_cols].sum(axis=1); fdy.drop(columns=inv_cols, inplace=True)
-            p_share = inv_split.loc[reg][inv_split.loc[reg]['investment_type']=='Private investment share']['share'].values[0]
-            g_share = inv_split.loc[reg][inv_split.loc[reg]['investment_type']=='Government investment share']['share'].values[0]
-            fdy[f'{reg}_private_investment'] = fdy[f'{reg}_investment'] * p_share
-            fdy[f'{reg}_public_investment']  = fdy[f'{reg}_investment'] * g_share
-            fdy.drop(columns=[f'{reg}_investment'], inplace=True)
-            invnt_cols = [c for c in fdy.columns if c.startswith(reg) and c.split('_')[1] == 'INVNT']
-            fdy.drop(columns=invnt_cols, inplace=True)
-            ggfc = f'{reg}_GGFC'
-            if ggfc in fdy.columns:
-                fdy.rename(columns={ggfc: f'{reg}_public_consumption'}, inplace=True)
-
-        fdy = fdy.reindex(country_codes); fdy.loc['Total'] = fdy.sum(axis=0)
-        fd_year_proc[y] = fdy
-
-    # rebuild per-year absolute imports and normalize per-year
-    # (reuse imports_per_year already loaded)
-    for yr, yearly_res in imports_per_year.items():
-        y = int(yr)
-
-        # combine absolute imports for this year (like avg path but no averaging)
-        adj_y = {}
-        for c in regions_raw:
-            df = yearly_res.get(c)
-            if df is None:
-                continue
-            for r in regions_raw:
-                if r not in df.index:
-                    df.loc[r] = 0
-            adj_y[c] = df.reindex(regions_raw)
-        if not adj_y:
-            continue
-        comb = pd.concat(adj_y.values(), axis=1)
-
-        comb.index  = comb.index.map(country_codes_map)
-        comb = comb.reindex(country_codes)
-        comb.columns = [rename_column(c) for c in comb.columns]
-
-        # collapse to imcy/imcgy & drop INVNT
-        for reg in country_codes:
-            cols = [c for c in comb.columns if c.startswith(reg) and c.split('_')[1] in ['HFCE','NPISH','DPABR']]
-            comb[f'{reg}_imcy'] = comb[cols].sum(axis=1); comb.drop(columns=cols, inplace=True)
-            ggfc = f'{reg}_GGFC'
-            if ggfc in comb.columns:
-                comb.rename(columns={ggfc: f'{reg}_imcgy'}, inplace=True)
-            invnt = f'{reg}_INVNT'
-            if invnt in comb.columns:
-                comb.drop(columns=[invnt], inplace=True)
-
-        comb = comb.reindex(sorted(comb.columns), axis=1)
-        comb.loc['Total'] = comb.sum(axis=0)
-
-        # gov-cons import share this year
-        imports_gov_y = pd.DataFrame(comb.iloc[-1, :], columns=['imports'])
-        imports_gov_y = imports_gov_y[imports_gov_y.index.astype(str).str.endswith('_imcgy')]
-        
-        needed_idx = [f'{reg}_imcgy' for reg in country_codes]
-        imports_gov_y = imports_gov_y.reindex(needed_idx, fill_value=0.0)
-        
-        imports_gov_y['total'] = 0.0
-        fdy = fd_year_proc[y]
-        for reg in country_codes:
-            colname = f'{reg}_public_consumption'
-            local_gc = float(fdy[colname].loc[reg]) if colname in fdy.columns else 0.0
-            imports_val = float(imports_gov_y.at[f'{reg}_imcgy', 'imports'])
-            imports_gov_y.at[f'{reg}_imcgy', 'total'] = local_gc + imports_val
-        
-        imports_gov_y['share'] = np.divide(
-            imports_gov_y['imports'], imports_gov_y['total'],
-            out=np.zeros_like(imports_gov_y['imports'], dtype=float),
-            where=imports_gov_y['total'] != 0
-        )
-        
-        gov_share_y = {idx.split('_')[0]: float(imports_gov_y.at[idx, 'share']) for idx in imports_gov_y.index}
-
-
-        # split GFCF column this year
-        gov_inv_abs_y, priv_inv_abs_y, split_priv_y = {}, {}, {}
-        for reg in country_codes:
-            gc_s = gov_share_y.get(reg, 0.0)
-            gov_inv_abs_y[reg] = (gc_s * fdy.loc[reg, f'{reg}_public_investment']) / (1 - gc_s) if (1 - gc_s) != 0 else 0.0
-        for reg in country_codes:
-            priv_inv_abs_y[reg] = comb.loc['Total', f'{reg}_GFCF'] - gov_inv_abs_y[reg] if f'{reg}_GFCF' in comb.columns else 0.0
-        for reg in country_codes:
-            denom = comb.loc['Total', f'{reg}_GFCF'] if f'{reg}_GFCF' in comb.columns else 0.0
-            split_priv_y[reg] = priv_inv_abs_y[reg] / denom if denom != 0 else 0.0
-        for reg in country_codes:
-            gfcf = f'{reg}_GFCF'
-            if gfcf in comb.columns:
-                comb[f'{reg}_imiy']  = comb[gfcf] * split_priv_y[reg]
-                comb[f'{reg}_imigy'] = comb[gfcf] * (1 - split_priv_y[reg])
-                comb.drop(columns=gfcf, inplace=True)
-
-        # Normalize by importer output (this year)
-        tm_y = comb.copy()
-        out_y = output_year[y]
-        for col in tm_y.columns:
-            importer = col.split('_')[0]
-            tm_y[col] = tm_y[col] / out_y.loc[importer, 0]
-
-        imcy_y  = filter_columns_by_suffix(tm_y, '_imcy',  country_codes)
-        imcgy_y = filter_columns_by_suffix(tm_y, '_imcgy', country_codes)
-        imiy_y  = filter_columns_by_suffix(tm_y, '_imiy',  country_codes)
-        imigy_y = filter_columns_by_suffix(tm_y, '_imigy', country_codes)
-
-        yearly_bilateral[y] = {'imcy': imcy_y, 'imcgy': imcgy_y, 'imiy': imiy_y, 'imigy': imigy_y}
-
-        # TBY this year = exports - imports (your existing logic)
-        # imports by importer: sum across exporter rows for each importer column group
-        imy_bilat = imcy_y + imcgy_y + imiy_y + imigy_y
-        imy_by_importer = imy_bilat.sum(axis=0)  # col sum
-
-        # exports (bilateral) using sizes (gravity scaling you had)
-        sizes_y = sizes_year[y]
-        # Build bilateral exports by exporter row
-        exy_bilat = pd.DataFrame(0.0, index=country_codes, columns=country_codes)
-        for exp in country_codes:
-            for imp in country_codes:
-                # scale importer->exporter flow by size ratio as in your main.py
-                # You used: ex(country) = sum_{partners} imy_bilateral(partner->country) * (size_country / size_partner)
-                exy_bilat.loc[exp, imp] = imy_bilat.loc[imp, exp] * (sizes_y.loc[exp, 'size'] / sizes_y.loc[imp, 'size'])
-
-        exy_by_exporter = exy_bilat.sum(axis=1)   # row sum
-        tby_year_series = exy_by_exporter - imy_by_importer.reindex(country_codes)
-        yearly_tby[y] = tby_year_series.to_dict()
-
-    # Average TBY from average bilaterals (keep consistent with your main.py)
-    imy_bilat_avg = imcy_avg + imcgy_avg + imiy_avg + imigy_avg
-    imy_avg = imy_bilat_avg.sum(axis=0)
     exy_bilat_avg = pd.DataFrame(0.0, index=country_codes, columns=country_codes)
     for exp in country_codes:
         for imp in country_codes:
-            exy_bilat_avg.loc[exp, imp] = imy_bilat_avg.loc[imp, exp] * (sizes_avg.loc[exp, 'size'] / sizes_avg.loc[imp, 'size'])
-    exy_avg = exy_bilat_avg.sum(axis=1)
-    tby_avg_series = exy_avg - imy_avg.reindex(country_codes)
-    tby_avg = pd.DataFrame([tby_avg_series.reindex(country_codes)], index=['tby'])
+            size_exp = float(sizes_avg.loc[exp, 'size'])
+            size_imp = float(sizes_avg.loc[imp, 'size'])
+            exy_bilat_avg.loc[exp, imp] = 0.0 if size_exp == 0.0 else \
+                imy_bilat_avg.loc[exp, imp] * (size_imp / size_exp)
+    export_share_avg = exy_bilat_avg.sum(axis=1)
+    tby_avg = (export_share_avg - import_share_avg.reindex(country_codes)).reindex(country_codes)
 
-    return tby_avg, yearly_tby, yearly_bilateral, bilateral_avg
+    return avg_components, yearly_components, bilateral_avg, yearly_bilateral, tby_avg, yearly_tby
+
 
 
 def create_consolidated_dataframe_from_calculations():
@@ -1563,14 +1204,12 @@ def create_consolidated_dataframe_from_calculations():
     print("Calculating debt ratios...")
     debt, yearly_debt = calculate_debt_ratios()
 
-    print("Calculating trade balance...")
-    tby, yearly_tby, yearly_bilateral, bilateral_avg = calculate_trade_balance()
-    
+    print("Calculating import components (incl. bilaterals & TBY)...")
+    avg_components, yearly_components, bilateral_avg, yearly_bilateral, tby, yearly_tby = calculate_import_components()
+      
     print("Calculating transfers...")
     transfers_avg, yearly_transfers = calculate_transfers()
     
-    print("Calculating import components...")
-    avg_components, yearly_components = calculate_import_components()
     
     # model country/region code order used everywhere else
     country_codes = ['RA','AT','BE','ES','FI','FR','GR','IT','NL','PT','DE','RU','RW','US']
