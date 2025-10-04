@@ -74,6 +74,7 @@ irfStruct.(aEndoVar)
 
 % global variable has to be declared so that it is passed on to
 % createContributions function
+global M_
 M_ = monetarySimOutput.M_;
 
 aItemList = ["EA_y"];
