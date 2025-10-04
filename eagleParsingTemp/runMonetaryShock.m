@@ -67,17 +67,12 @@ databank.toCSV( ...
 
 %%
 
-irfStruct = struct();
-aEndoVar = "EA_y";
-irfStruct.(aEndoVar) = (monetarySimStruct.endoValues.(aEndoVar)/monetarySimStruct.ssValues.(aEndoVar)-1)*100;
-irfStruct.(aEndoVar) 
-
 % global variable has to be declared so that it is passed on to
 % createContributions function
 global M_
 M_ = monetarySimOutput.M_;
 
-aItemList = ["EA_y"];
+aItemList = ["EA_y", "EA_pic4"];
 allItemList = aItemList;
 
 for aItem = aItemList
@@ -91,6 +86,16 @@ for aItem = aItemList
             , convertFunc.Series2Dseries(monetarySimStruct.ssValues) ...
         );
     allItemList = [allItemList, contributionSeries.contrib.(aItem).Comment];
+
+    % Dynare decomposition is always an absolute difference; for this
+    % reason we need this transformation with rescaling of
+    % contributions
+    tempComment = contributionSeries.contrib.(aItem).Comment;
+    contributionSeries.total.(aItem) = monetarySimStruct.irfValues.(aItem);
+    contributionSeries.contrib.(aItem) = contributionSeries.contrib.(aItem)/sum(contributionSeries.contrib.(aItem), 2)*monetarySimStruct.irfValues.(aItem);
+    % we have to do it because it is overwritten and blank
+    contributionSeries.contrib.(aItem).Comment = tempComment;
+    
 end
 
 meta.allItemList = unique(allItemList);
@@ -108,13 +113,13 @@ end
 contributionSeries.colorTable = colorTable;
 
 %% investigating interest rate reaction upon the request from Sandra
-panelContributions(contributionSeries, project_path);
-
-%% stochastic simulation
-dynare('eagleModelFiscalShocksStoch.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'));
+panelContributions(contributionSeries);
 
 %%
-function panelContributions(contributionSeries, projectPath, subProjectPath)
+function panelContributions(contributionSeries)
+
+    % raeding global variables
+    utils.call.paths;
 
     % Please specify the list of the variables to plot   
     VarListToPlot = string(reshape(fieldnames(contributionSeries.total), 1, []));
@@ -129,14 +134,13 @@ function panelContributions(contributionSeries, projectPath, subProjectPath)
     figure
     
     % Defining the shape of the figure
-    tiledlayout_width = 1; %Specify the # of columns desired
-    tiledlayout_height = 2;
+    tiledlayout_width = 2; %Specify the # of columns desired
+    tiledlayout_height = 1;
     
     t = tiledlayout(tiledlayout_height, tiledlayout_width, 'TileSpacing', 'compact','Padding','compact');
     
     h = gcf;
-    FigureHeight = min(29.7, tiledlayout_height*6.5);
-    set(h, 'Units','centimeters', 'Position',[0 0 21-2*2.5 20-2*2.5])
+    set(h, 'Units','centimeters', 'Position',[0 0 16 6])
     set(h,'defaulttextinterpreter','latex');
     
     for aItem = VarListToPlot %for each panel
@@ -204,4 +208,5 @@ function panelContributions(contributionSeries, projectPath, subProjectPath)
     % Save graph
     fileName = fullfile(projectPath, "docs/2025-02_working-paper/figures/monetaryContributions");
     exportgraphics(t, sprintf('%s.png',fileName),'BackgroundColor','none');
+    exportgraphics(t, sprintf('%s.pdf',fileName),'BackgroundColor','none');
 end
