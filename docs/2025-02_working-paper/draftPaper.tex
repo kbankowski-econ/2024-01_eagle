@@ -675,7 +675,7 @@ In our calibrations, we extracted the tables for years 1995 to 2020 and found av
 \begin{figure}[H]
     \centering
     \caption{OECD Inter-Country Input-Output table structure \label{fig8}}
-    \includegraphics[width=1\textwidth]{figures/OECD_table.png}
+    \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/OECD_table.png}}
     \vspace{5mm} \source{OECD}
 \end{figure}
 
@@ -690,6 +690,15 @@ In our calibrations, we extracted the tables for years 1995 to 2020 and found av
     \caption{Import content of final demand components (share of the import content). \label{fig7}}
     \includegraphics{figures/importContent.png}
     \vspace{5mm} \source{Own calculations based on OECD and IMF data.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \caption{(...). \label{fig:trade_network_imcy}}
+    \vspace{-5mm}
+    \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/trade_network_imcy.pdf}}
+    \vspace{-5mm}
+    \source{bla bla bla.}
 \end{figure}
 
 %//NOTE: We agree that the following order will followed throughout the paper; it is good to keep gov. consumptin and gov. investment because most likely we would like to devote a bit more space to them:
@@ -845,10 +854,12 @@ I M_t^{G_C, C O}=v_{M G_C}^{H, C O}\left(\frac{P_{I M, t}^{C O}}{P_{I M G_C, t}}
 \begin{figure}[H]
     \centering
     \caption{EA monetary policy shock. \label{fig:monPolicyShock}}
-    \includegraphics[]{figures/irf_charts.pdf}
-    \vspace{-5mm} \source{EAGLE model simulations.}
-    \desc{Horizontal axis: quarters. Vertical axis: percentage deviations from the baseline, except for inflation and in- terest rates (annualized percentage-point deviations), and the trade balance-to-GDP ratio (percentage-point deviations). GDP and its components are reported in real terms.}
-    \label{fig:monPolicyShock}
+    \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/irf_charts.pdf}}
+    \vspace{-5mm}
+    \begin{minipage}{0.9\textwidth}
+        \source{EAGLE model simulations.}
+        \desc{Horizontal axis: quarters. Vertical axis: percentage deviations from the baseline, except for inflation and in- terest rates (annualized percentage-point deviations), and the trade balance-to-GDP ratio (percentage-point deviations). GDP and its components are reported in real terms.}
+    \end{minipage}
 \end{figure}
 
 % 6(a) Having the model we study fiscal shocks (union wide)
@@ -866,8 +877,11 @@ Inflationary pressures, while present, are more subdued compared to those genera
     \centering
     \caption{Euro area-wide temporary fiscal expansion. \label{fig2}}
     \includegraphics[width=150mm]{figures/effectGovEA.png}
-    \vspace{5mm} \source{EAGLE model simulations.}
-    \desc{Fiscal expansion is based on an increase in government expenditure amounting to 1\% of GDP ex-ante and lasting for four quarters.}
+    \vspace{5mm}
+    \begin{minipage}{0.9\textwidth}
+        \source{EAGLE model simulations.}
+        \desc{Fiscal expansion is based on an increase in government expenditure amounting to 1\% of GDP ex-ante and lasting for four quarters.}
+    \end{minipage}
 \end{figure}
 
 % 6(b) National shocks
@@ -883,8 +897,11 @@ As domestic demand in Spain increases, prices rise, leading to a transmission of
     \centering
     \caption{Single-country (Spain) temporary fiscal expansion. \label{fig3}}
     \includegraphics[width=150mm]{figures/effectGovES.png}
-    \vspace{5mm} \source{EAGLE model simulations.}
-    \desc{Fiscal expansion is based on an increase in government expenditure amounting to 1\% of GDP ex-ante and lasting for four quarters.}
+    \vspace{5mm}
+    \begin{minipage}{0.9\textwidth}
+        \source{EAGLE model simulations.}
+        \desc{Fiscal expansion is based on an increase in government expenditure amounting to 1\% of GDP ex-ante and lasting for four quarters.}
+    \end{minipage}
 \end{figure}
 
 \section{NGEU evaluation as a policy application}
@@ -918,8 +935,11 @@ Over time, the nature of government investment transitions from a demand-type sh
     \centering
     \caption{The estimated macroeconomic effect of NGEU on the euro area output and inflation, country decomposition. \label{fig5}}
     \includegraphics[width=150mm]{figures/effectNGEU.png}
-    \vspace{5mm} \source{EAGLE model simulations.}
-    \desc{The GDP values are expressed as a percentage of deviation from the baseline values. The inflation rate is an absolute deviation in percentage points.}
+    \vspace{5mm}
+    \begin{minipage}{0.9\textwidth}
+        \source{EAGLE model simulations.}
+        \desc{The GDP values are expressed as a percentage of deviation from the baseline values. The inflation rate is an absolute deviation in percentage points.}
+    \end{minipage}
 \end{figure}
 
 % 7(c) NGEU spill-overs
@@ -938,8 +958,11 @@ Additionally, the German economy experiences a mild adverse effect from the mone
     \centering
     \caption{The estimated macroeconomic effect of NGEU, spill-over effects. \label{fig6}}
     \includegraphics[width=150mm]{figures/effectNGEUspillovers.png}
-    \vspace{5mm} \source{EAGLE model simulations.}
-    \desc{The GDP and export values are expressed as a percentage deviation from the baseline values. The interest rate is an absolute deviation in percentage points.}
+    \vspace{5mm}
+    \begin{minipage}{0.9\textwidth}
+        \source{EAGLE model simulations.}
+        \desc{The GDP and export values are expressed as a percentage deviation from the baseline values. The interest rate is an absolute deviation in percentage points.}
+    \end{minipage}
 \end{figure}
 
 \section{Conclusions}
@@ -1045,17 +1068,21 @@ Share of World GDP & IMF & NGDPD.A & \\
 \begin{figure}[p]
     \centering
     \caption{Data for the great ratios. \label{figApp:nationalAccountsData}}
-    \includegraphics[width=1\textwidth]{figures/calibration_charts_panel1.png}
-    \source{See Table \ref{sec:appendix_calibration_data}.}
-    \desc{The numbers next to country labels on right-hand charts represent 1995-2019 averages used in the calibration of the model.}
+    \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/calibration_charts_panel1.pdf}}
+    \begin{minipage}{0.9\textwidth}
+        \source{See Table \ref{sec:appendix_calibration_data}.}
+        \desc{The numbers next to country labels on right-hand charts represent 1995-2019 averages used in the calibration of the model.}
+    \end{minipage}
 \end{figure}
 
 \begin{figure}[p]
     \centering
     \caption{Data for government spending, tax rates and government debt. \label{figApp:govSpending}}
-    \includegraphics[width=1\textwidth]{figures/calibration_charts_panel2.png}
-    \source{See Table \ref{sec:appendix_calibration_data}.}
-    \desc{The numbers next to country labels on right-hand charts represent 1995-2019 averages used in the calibration of the model.}
+    \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/calibration_charts_panel2.pdf}}
+    \begin{minipage}{0.9\textwidth}
+        \source{See Table \ref{sec:appendix_calibration_data}.}
+        \desc{The numbers next to country labels on right-hand charts represent 1995-2019 averages used in the calibration of the model.}
+    \end{minipage}
 \end{figure}
 
 \section{Calibration Details}\label{sec:appendix_calibration_details}

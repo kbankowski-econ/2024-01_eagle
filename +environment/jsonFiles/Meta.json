@@ -1,4 +1,26 @@
 {
-  "ctryList"     : [ "RA", "AT", "BE", "ES", "FI", "FR", "GR", "IT", "NL", "PT", "DE", "RU", "RW", "US"],
-  "ctryListForReport"     : ["AT", "BE", "FI", "FR", "DE", "GR", "IT", "NL", "PT", "ES", "RA", "RU", "US", "RW"]
+  "ctryList": [
+    "RA", "AT", "BE", "ES", "FI", "FR", "GR", "IT", "NL", "PT", "DE", "RU", "RW", "US"
+  ],
+  "ctryListForReport": [
+    "AT", "BE", "FI", "FR", "DE", "GR", "IT", "NL", "PT", "ES", "RA", "RU", "US", "RW"
+  ],
+  "colors": {
+    "AT": "#5E4FA2",
+    "BE": "#347BBC",
+    "FI": "#47AAB0",
+    "FR": "#7ACCA5",
+    "DE": "#B0DFA4",
+    "GR": "#E1F499",
+    "IT": "#EEF4AC",
+    "NL": "#F8EEAB",
+    "PT": "#FEDB84",
+    "ES": "#FDB364",
+    "RA": "#F88048",
+    "RU": "#E95748",
+    "US": "#CB314E",
+    "RW": "#9E0142",
+    "EA": "#4B4B4B"
+  },
+  "notes": "EA stands for Euro Area aggregate, shown in neutral gray. Color palette is sequential from violet to red produced with linspecer()."
 }
