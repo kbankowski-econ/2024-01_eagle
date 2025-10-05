@@ -694,60 +694,14 @@ In our calibrations, we extracted the tables for years 1995 to 2020 and found av
 
 \begin{figure}[H]
     \centering
-    \caption{(...). \label{fig:trade_network_imcy}}
+    \caption{Import shares - graphical representation (percent of GDP). \label{fig:trade_network_combined}}
     \vspace{-5mm}
-    \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/trade_network_imcy.pdf}}
+    \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/trade_network_combined.pdf}}
     \vspace{-5mm}
-    \source{bla bla bla.}
+    \source{Own calculations based on ....}
+    \desc{\CountryCodes.}
 \end{figure}
 
-%//NOTE: We agree that the following order will followed throughout the paper; it is good to keep gov. consumptin and gov. investment because most likely we would like to devote a bit more space to them:
-% private cons.
-% private inv.
-% gov. cons.
-% gov. inv.
-
-\begin{landscape}
-    \begin{table}[htbp]
-        \input{tables/internationalLinkagesShare_MC.tex}
-        \begin{minipage}{0.9\linewidth}
-            \vspace{0.5em}
-            \textit{Note}: \CountryCodes.\\
-            \TradeTablesNote
-        \end{minipage}
-    \end{table}    
-\end{landscape}
-
-\begin{landscape}
-    \begin{table}[htbp]
-        \input{tables/internationalLinkagesShare_MI.tex}
-        \begin{minipage}{0.9\linewidth}
-            \vspace{0.5em}
-            \textit{Note}: \CountryCodes.\\
-            \TradeTablesNote
-        \end{minipage}
-    \end{table}        
-\end{landscape}
-\begin{landscape}
-    \begin{table}[htbp]
-        \input{tables/internationalLinkagesShare_MCG.tex}
-        \begin{minipage}{0.9\linewidth}
-            \vspace{0.5em}
-            \textit{Note}: \CountryCodes.\\
-            \TradeTablesNote
-        \end{minipage}
-    \end{table}        
-\end{landscape}
-\begin{landscape}
-    \begin{table}[htbp]
-        \input{tables/internationalLinkagesShare_MIG.tex}
-        \begin{minipage}{0.9\linewidth}
-            \vspace{0.5em}
-            \textit{Note}: \CountryCodes.\\
-            \TradeTablesNote
-        \end{minipage}
-    \end{table}        
-\end{landscape}
 
 % a paragraph about how we use home bias paramter to calibrate trade
 
@@ -1141,6 +1095,33 @@ Share of World GDP & IMF & NGDPD.A & \\
     \end{table}
 \end{landscape}
 
+%//NOTE: We agree that the following order will followed throughout the paper; it is good to keep gov. consumptin and gov. investment because most likely we would like to devote a bit more space to them:
+% private cons.
+% private inv.
+% gov. cons.
+% gov. inv.
+
+\begin{figure}[H]
+    \centering
+    \caption{Import shares, private consumption - graphical representation (percent of GDP). \label{fig:trade_network_imcy}}
+    \vspace{-5mm}
+    \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/trade_network_imcy.pdf}}
+    \vspace{-5mm}
+    \source{Own calculations based on ....}
+    \desc{\CountryCodes.}
+\end{figure}
+
+\begin{landscape}
+    \begin{table}[htbp]
+        \input{tables/internationalLinkagesShare_MC.tex}
+        \begin{minipage}{0.9\linewidth}
+            \vspace{0.5em}
+            \textit{Note}: \CountryCodes.\\
+            \TradeTablesNote
+        \end{minipage}
+    \end{table}    
+\end{landscape}
+
 \begin{landscape}
     \begin{table}[htbp]
         \input{tables/internationalLinkagesNu_MC.tex}
@@ -1151,6 +1132,27 @@ Share of World GDP & IMF & NGDPD.A & \\
             \TradeTablesBiasNote
         \end{minipage}
     \end{table}    
+\end{landscape}
+
+\begin{figure}[H]
+    \centering
+    \caption{Import shares, private investment - graphical representation (percent of GDP). \label{fig:trade_network_imiy}}
+    \vspace{-5mm}
+    \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/trade_network_imiy.pdf}}
+    \vspace{-5mm}
+    \source{Own calculations based on ....}
+    \desc{\CountryCodes.}
+\end{figure}
+
+\begin{landscape}
+    \begin{table}[htbp]
+        \input{tables/internationalLinkagesShare_MI.tex}
+        \begin{minipage}{0.9\linewidth}
+            \vspace{0.5em}
+            \textit{Note}: \CountryCodes.\\
+            \TradeTablesNote
+        \end{minipage}
+    \end{table}        
 \end{landscape}
 
 \begin{landscape}
@@ -1165,6 +1167,28 @@ Share of World GDP & IMF & NGDPD.A & \\
     \end{table}    
 \end{landscape}
 
+\begin{figure}[H]
+    \centering
+    \caption{Import shares, government consumption - graphical representation (percent of GDP). \label{fig:trade_network_imcgy}}
+    \vspace{-5mm}
+    \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/trade_network_imcgy.pdf}}
+    \vspace{-5mm}
+    \source{Own calculations based on ....}
+    \desc{\CountryCodes.}
+\end{figure}
+
+\begin{landscape}
+    \begin{table}[htbp]
+        \input{tables/internationalLinkagesShare_MCG.tex}
+        \begin{minipage}{0.9\linewidth}
+            \vspace{0.5em}
+            \textit{Note}: \CountryCodes.\\
+            \TradeTablesNote
+        \end{minipage}
+    \end{table}        
+\end{landscape}
+
+
 \begin{landscape}
     \begin{table}[htbp]
         \input{tables/internationalLinkagesNu_MCG.tex}
@@ -1177,6 +1201,16 @@ Share of World GDP & IMF & NGDPD.A & \\
     \end{table}    
 \end{landscape}
 
+\begin{figure}[H]
+    \centering
+    \caption{Import shares, government investment - graphical representation (percent of GDP). \label{fig:trade_network_imigy}}
+    \vspace{-5mm}
+    \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/trade_network_imigy.pdf}}
+    \vspace{-5mm}
+    \source{Own calculations based on ....}
+    \desc{\CountryCodes.}
+\end{figure}
+
 \begin{landscape}
     \begin{table}[htbp]
         \input{tables/internationalLinkagesNu_MIG.tex}
@@ -1187,6 +1221,17 @@ Share of World GDP & IMF & NGDPD.A & \\
             \TradeTablesBiasNote
         \end{minipage}
     \end{table}    
+\end{landscape}
+
+\begin{landscape}
+    \begin{table}[htbp]
+        \input{tables/internationalLinkagesShare_MIG.tex}
+        \begin{minipage}{0.9\linewidth}
+            \vspace{0.5em}
+            \textit{Note}: \CountryCodes.\\
+            \TradeTablesNote
+        \end{minipage}
+    \end{table}        
 \end{landscape}
 
 
