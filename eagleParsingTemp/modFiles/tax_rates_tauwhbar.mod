@@ -1,6 +1,6 @@
 RA_tauwhbar, 0.0802;
 AT_tauwhbar, 0.1482;
-BE_tauwhbar, 0.112;
+BE_tauwhbar, 0.1120;
 ES_tauwhbar, 0.0485;
 FI_tauwhbar, 0.0668;
 FR_tauwhbar, 0.1109;

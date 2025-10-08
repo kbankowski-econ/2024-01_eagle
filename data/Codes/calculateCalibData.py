@@ -1448,8 +1448,16 @@ def main():
     # Calculate consolidated dataframe
     consolidated_df = create_consolidated_dataframe_from_calculations()
     
-    # Round values to 4 decimal places
-    consolidated_df['value'] = consolidated_df['value'].round(4)
+    #Setting decimal numbers
+    v = consolidated_df['variable'].astype(str)
+    m = (v == 'size') | (v == 'tby') | v.str.contains('imcy|imcgy|imiy|imigy|imy', case=False)
+    x = pd.to_numeric(consolidated_df['value'], errors='coerce').fillna(0).to_numpy(float)
+    a6 = np.char.array(np.round(x, 6)).astype(str)
+    a4 = np.char.array(np.round(x, 4)).astype(str)
+    a6 = np.char.mod('%.6f', x)
+    a4 = np.char.mod('%.4f', x)
+    consolidated_df['value'] = np.where(m, a6, a4)
+
     
     # Save to CSV
     output_path = os.path.join(data_directory, '_calibDataCalculated.csv')

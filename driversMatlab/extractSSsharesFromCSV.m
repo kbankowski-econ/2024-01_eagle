@@ -56,30 +56,84 @@ function extractSSsharesFromCSV()
     tradeFile = fullfile(outDir,'trade_matrix_values_calibrated_new.mod');
     fid = fopen(tradeFile,'w'); assert(fid~=-1,'Cannot open %s', tradeFile);
 
-    % (a) Bilateral: write variable as-is (e.g., USAT_imcy, no country prefix)
+    % (a) Bilateral
+    % Note: set shiftAmount to the same value used in old code (12)
+    shiftAmount = 12;
+    
+    % Ensure countries is a row string array
+    if iscell(countries), countries = string(countries); end
+    countries = string(countries(:))';    % 1 x N
+    
+    % build circular doubled array for indexing
+    countriesAux = [countries, countries];
+    
+    % build mapping origin -> residual destination
+    n = numel(countries);
+    residMap = containers.Map; % key: origin string -> value: residual dest string
+    for idx = 1:n
+        origin = countries(idx);
+        resid = countriesAux(idx + shiftAmount);
+        residMap(char(origin)) = char(resid);
+    end
+    
+    % Prepare bilateral table Tb (as before)
     isBilat = ~cellfun(@isempty, regexp(cellstr(T.variable), bilatRegex, 'once'));
     Tb = T(isBilat,:);
-    for i = 1:height(Tb)
-        fprintf(fid, '%s, %.10g;\n', Tb.variable(i), Tb.value(i));
+    
+    % Helper: function-like inline to parse origin/dest from variable name robustly
+    % We attempt to match any origin+dest combination from the countries list.
+    parseOriginDest = @(v) deal("", ""); % default
+    parseOriginDest = @(v) localParseOriginDest(v, countries);
+    
+    % Now iterate Tb and skip diagonal + residual pair for each origin
+    for k = 1:height(Tb)
+        varname = string(Tb.variable(k));
+        val = Tb.value(k);
+    
+        [origin, dest] = parseOriginDest(varname);
+        if origin=="" || dest=="" 
+            % couldn't parse — print and continue to avoid silent data loss
+            warning('Could not parse origin/destination from variable "%s". Writing it anyway.', varname);
+            fprintf(fid, '%s, %.6f;\n', varname, val);
+            continue;
+        end
+    
+        % skip diagonal
+        if origin == dest
+            continue;
+        end
+    
+        % skip origin -> its residual destination
+        % residMap keys are char, so convert
+        if isKey(residMap, char(origin))
+            if dest == string(residMap(char(origin)))
+                % omit this pair (same omission as old wide code)
+                continue;
+            end
+        end
+    
+        % otherwise write the bilateral value
+        fprintf(fid, '%s, %.6f;\n', varname, val);
     end
 
-    % (b) Totals per country: country_variable (e.g., US_imcy)
+
+    % (b) Totals per country
     for c = countries
         for v = tradeTotals
             r = T(T.country==c & T.variable==v, :);
-            if ~isempty(r), fprintf(fid, '%s_%s, %.10g;\n', c, v, r.value(1)); end
+            if ~isempty(r), fprintf(fid, '%s_%s, %.6f;\n', c, v, r.value(1)); end
         end
     end
 
-    % (c) size + tby (tby excludes US)
+    % (c) size + tby 
     for c = countries
         r = T(T.country==c & T.variable=="size", :);
-        if ~isempty(r), fprintf(fid, '%s_size, %.10g;\n', c, r.value(1)); end
+        if ~isempty(r), fprintf(fid, '%s_size, %.6f;\n', c, r.value(1)); end
     end
     for c = countries
         if c ~= "US"
             r = T(T.country==c & T.variable=="tby", :);
-            if ~isempty(r), fprintf(fid, '%s_tby, %.10g;\n', c, r.value(1)); end
+            if ~isempty(r), fprintf(fid, '%s_tby, %.6f;\n', c, r.value(1)); end
         end
     end
 
@@ -92,7 +146,7 @@ function extractSSsharesFromCSV()
     fprintf('Wrote %s\n', tradeFile);
 end
 
-%% ===== tiny helper =====
+%% ===== helpers =====
 function write_group(outDir, groupName, csvVars, modelVars, countries, T)
     if isstring(csvVars), csvVars = cellstr(csvVars); end
     if isstring(modelVars), modelVars = cellstr(modelVars); end
@@ -103,10 +157,39 @@ function write_group(outDir, groupName, csvVars, modelVars, countries, T)
         fid = fopen(f,'w'); assert(fid~=-1,'Cannot open %s', f);
         for c = countries
             r = sub(sub.country==c, :);
-            if ~isempty(r), fprintf(fid, '%s_%s, %.10g;\n', c, mName, r.value(1)); end
+            if ~isempty(r), fprintf(fid, '%s_%s, %.4f;\n', c, mName, r.value(1)); end
         end
         fclose(fid);
         fprintf('Wrote %s\n', f);
+    end
+end
+
+
+function [origin, dest] = localParseOriginDest(varname, countryList)
+    % varname: string or char, e.g. "USAT_imcy" or "ATUS_imiy"
+    % countryList: 1xN string array of country codes e.g. ["RA","AT",...]
+    origin = "";
+    dest = "";
+    s = char(varname);
+    % remove trailing item suffix (e.g. "_imcy") so we only match the XYZW part
+    underscorePos = find(s == '_', 1, 'first');
+    if ~isempty(underscorePos)
+        prefix = s(1:underscorePos-1);
+    else
+        prefix = s;
+    end
+    % try every pairing of countryList (origin,dest) and test prefix startsWith origin+dest
+    for oi = 1:numel(countryList)
+        o = char(countryList(oi));
+        for di = 1:numel(countryList)
+            d = char(countryList(di));
+            cand = [o d];
+            if startsWith(prefix, cand)
+                origin = string(o);
+                dest = string(d);
+                return;
+            end
+        end
     end
 end
 

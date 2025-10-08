@@ -1,5 +1,5 @@
 RA_tauwfbar, 0.1413;
-AT_tauwfbar, 0.172;
+AT_tauwfbar, 0.1720;
 BE_tauwfbar, 0.2247;
 ES_tauwfbar, 0.2265;
 FI_tauwfbar, 0.2221;

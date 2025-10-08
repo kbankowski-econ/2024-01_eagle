@@ -1,4 +1,4 @@
-RA_taunbar, 0.188;
+RA_taunbar, 0.1880;
 AT_taunbar, 0.2388;
 BE_taunbar, 0.3437;
 ES_taunbar, 0.1928;
