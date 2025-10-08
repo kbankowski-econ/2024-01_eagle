@@ -329,7 +329,7 @@ function writeSteadyStateStruct(steadyStruct, filename)
     
     try
         % Loop through each field type in the structure
-        for fieldType = ["params", "ssValues", "exo_names"]
+        for fieldType = ["params", "ssValues", "exoValues"]
             if isfield(steadyStruct, fieldType)
                 fields = fieldnames(steadyStruct.(fieldType));
                 for i = 1:length(fields)
