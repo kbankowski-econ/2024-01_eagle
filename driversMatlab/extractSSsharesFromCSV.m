@@ -1,196 +1,187 @@
 function extractSSsharesFromCSV()
-    %% Paths
-    utils.call.paths; % defines project_path
-    envi = environment.setup;
-    inCSV  = fullfile(project_path,'data','_calibDataCalculated.csv');
-    outDir = fullfile(project_path,'eagleParsingTemp','modFiles');
-    if ~exist(outDir,'dir'), mkdir(outDir); end
+utils.call.paths;
+envi = environment.setup;
+inCSV  = fullfile(project_path,'data','_calibDataCalculated.csv');
+outDir = fullfile(project_path,'eagleParsingTemp','modFiles');
+if ~exist(outDir,'dir'), mkdir(outDir); end
 
-    %% Countries (for ordering)
-    countries = envi.Meta.ctryList;
+% import options
+opts = detectImportOptions(inCSV,'TextType','string');
+vn = string(opts.VariableNames); lk = lower(vn);
+if any(lk=="year"),     opts = setvartype(opts, cellstr(vn(lk=="year")),"string"); end
+if any(lk=="country"),  opts = setvartype(opts, cellstr(vn(lk=="country")),"string"); end
+if any(lk=="variable"), opts = setvartype(opts, cellstr(vn(lk=="variable")),"string"); end
+if any(lk=="value"),    opts = setvartype(opts, cellstr(vn(lk=="value")),"double"); end
+if any(lk=="year"), opts = setvaropts(opts, cellstr(vn(lk=="year")),'TreatAsMissing',{}); end
 
-    %% Variable → model mappings
-    shareNames = ["public_consumption","private_investment","public_investment"];
-    shareMods  = ["cgybar","iy","igybar"];
+T = readtable(inCSV, opts);
+T.Properties.VariableNames = lower(strtrim(erase(string(T.Properties.VariableNames), char(160))));
+if ~any(strcmpi('variable', T.Properties.VariableNames)), error('No variable column'); end
+T.variable = string(strtrim(T.variable));
+if any(strcmpi('year', T.Properties.VariableNames))
+    T.year = string(T.year); yr = lower(strtrim(replace(T.year, char(160)," ")));
+    T = T(yr=="average", :);
+    assert(~isempty(T),'No rows with year=="average"');
+end
+if any(strcmpi('value', T.Properties.VariableNames)), T.value = double(T.value); else error('No value column'); end
 
-    taxNames   = ["tax_consumption","tax_income","tax_SSC_firms","tax_SSC_households","tax_capital"];
-    taxMods    = ["taucbar","taunbar","tauwfbar","tauwhbar","taukbar"];
+countries = string(envi.Meta.ctryList);
+bilatRegex  = '^[A-Z]{4,}_im(cy|cgy|iy|igy)$';
 
-    debtNames  = "debt";   debtMods  = "bytarget";
-    trsfNames  = "trybar"; trsfMods  = "trybar";
-
-    tradeTotals = ["imcy","imcgy","imiy","imigy"];
-    bilatRegex  = '^[A-Z]{4,}_im(cy|cgy|iy|igy)$'; % e.g. USAT_imcy
-
-    %% Robust import: keep YEAR as string so "average" isn't NaN
-    opts = detectImportOptions(inCSV,'TextType','string');
-    vn   = string(opts.VariableNames); lk = lower(vn);
-    % Force specific types
-    if any(lk=="year"),     opts = setvartype(opts, cellstr(vn(lk=="year")),"string"); end
-    if any(lk=="country"),  opts = setvartype(opts, cellstr(vn(lk=="country")),"string"); end
-    if any(lk=="variable"), opts = setvartype(opts, cellstr(vn(lk=="variable")),"string"); end
-    if any(lk=="value"),    opts = setvartype(opts, cellstr(vn(lk=="value")),"double"); end
-    % Don't mark any tokens in 'year' as missing
-    if any(lk=="year"), opts = setvaropts(opts, cellstr(vn(lk=="year")),'TreatAsMissing',{}); end
-
-    T = readtable(inCSV, opts);
-    % Normalize headers + values
-    T.Properties.VariableNames = lower(strtrim(erase(string(T.Properties.VariableNames), char(160))));
-    T.country  = string(T.country);
-    T.variable = string(T.variable);
-    T.year     = string(T.year);
-    T.value    = double(T.value);
-
-    % Keep only 'average' rows (trim/normalize)
-    yr = lower(strtrim(replace(T.year, char(160), " ")));
-    T  = T(yr=="average", :);
-    assert(~isempty(T), 'No rows with year=="average" found after import.');
-
-    %% ---- Per-country .mod files ----
-    write_group(outDir,"shares",    shareNames, shareMods, countries, T);
-    write_group(outDir,"tax_rates", taxNames,   taxMods,   countries, T);
-    write_group(outDir,"debt",      debtNames,  debtMods,  countries, T);
-    write_group(outDir,"transfers", trsfNames,  trsfMods,  countries, T);
-
-    %% ---- Trade matrix file ----
-    tradeFile = fullfile(outDir,'trade_matrix_values_calibrated_new.mod');
-    fid = fopen(tradeFile,'w'); assert(fid~=-1,'Cannot open %s', tradeFile);
-
-    % (a) Bilateral
-    % Note: set shiftAmount to the same value used in old code (12)
-    shiftAmount = 12;
-    
-    % Ensure countries is a row string array
-    if iscell(countries), countries = string(countries); end
-    countries = string(countries(:))';    % 1 x N
-    
-    % build circular doubled array for indexing
-    countriesAux = [countries, countries];
-    
-    % build mapping origin -> residual destination
-    n = numel(countries);
-    residMap = containers.Map; % key: origin string -> value: residual dest string
-    for idx = 1:n
-        origin = countries(idx);
-        resid = countriesAux(idx + shiftAmount);
-        residMap(char(origin)) = char(resid);
-    end
-    
-    % Prepare bilateral table Tb (as before)
-    isBilat = ~cellfun(@isempty, regexp(cellstr(T.variable), bilatRegex, 'once'));
-    Tb = T(isBilat,:);
-    
-    % Helper: function-like inline to parse origin/dest from variable name robustly
-    % We attempt to match any origin+dest combination from the countries list.
-    parseOriginDest = @(v) deal("", ""); % default
-    parseOriginDest = @(v) localParseOriginDest(v, countries);
-    
-    % Now iterate Tb and skip diagonal + residual pair for each origin
-    for k = 1:height(Tb)
-        varname = string(Tb.variable(k));
-        val = Tb.value(k);
-    
-        [origin, dest] = parseOriginDest(varname);
-        if origin=="" || dest=="" 
-            % couldn't parse — print and continue to avoid silent data loss
-            warning('Could not parse origin/destination from variable "%s". Writing it anyway.', varname);
-            fprintf(fid, '%s, %.6f;\n', varname, val);
-            continue;
-        end
-    
-        % skip diagonal
-        if origin == dest
-            continue;
-        end
-    
-        % skip origin -> its residual destination
-        % residMap keys are char, so convert
-        if isKey(residMap, char(origin))
-            if dest == string(residMap(char(origin)))
-                % omit this pair (same omission as old wide code)
-                continue;
+% if no country column, parse per-country rows (COUNTRY_var) and bilateral prefix
+if ~any(strcmpi('country', T.Properties.VariableNames))
+    n = height(T);
+    parsedCountry = strings(n,1);
+    parsedVar = strings(n,1);
+    parsedOrigin = strings(n,1);
+    parsedDest   = strings(n,1);
+    for r = 1:n
+        v = char(T.variable(r));
+        if ~isempty(regexp(v, bilatRegex, 'once'))
+            u = find(v=='_',1); prefix = v(1:max(1,u-1));
+            found = false;
+            for oi=1:numel(countries)
+                o = char(countries(oi));
+                for di=1:numel(countries)
+                    d = char(countries(di));
+                    if strcmp(prefix,[o d])
+                        parsedOrigin(r)=string(o); parsedDest(r)=string(d); found=true; break;
+                    end
+                end
+                if found, break; end
             end
-        end
-    
-        % otherwise write the bilateral value
-        fprintf(fid, '%s, %.6f;\n', varname, val);
-    end
-
-
-    % (b) Totals per country
-    for c = countries
-        for v = tradeTotals
-            r = T(T.country==c & T.variable==v, :);
-            if ~isempty(r), fprintf(fid, '%s_%s, %.6f;\n', c, v, r.value(1)); end
-        end
-    end
-
-    % (c) size + tby 
-    for c = countries
-        r = T(T.country==c & T.variable=="size", :);
-        if ~isempty(r), fprintf(fid, '%s_size, %.6f;\n', c, r.value(1)); end
-    end
-    for c = countries
-        if c ~= "US"
-            r = T(T.country==c & T.variable=="tby", :);
-            if ~isempty(r), fprintf(fid, '%s_tby, %.6f;\n', c, r.value(1)); end
+            parsedVar(r)=string(v);
+        else
+            found=false;
+            for ci=1:numel(countries)
+                c=char(countries(ci)); prefix=[c '_'];
+                if startsWith(v,prefix)
+                    parsedCountry(r)=string(c);
+                    parsedVar(r)=string(v(length(prefix)+1:end));
+                    found=true; break;
+                end
+            end
+            if ~found, parsedVar(r)=string(v); end
         end
     end
-
-    % (d) _nuc constants
-    fprintf(fid, 'RA_nuc, 0.90;\nAT_nuc, 0.65;\nBE_nuc, 0.65;\nES_nuc, 0.65;\nFI_nuc, 0.65;\n');
-    fprintf(fid, 'GR_nuc, 0.65;\nIT_nuc, 0.65;\nNL_nuc, 0.65;\nPT_nuc, 0.65;\nDE_nuc, 0.65;\n');
-    fprintf(fid, 'RU_nuc, 0.65;\nUS_nuc, 0.45;\n');
-
-    fclose(fid);
-    fprintf('Wrote %s\n', tradeFile);
+    T.country = parsedCountry;
+    T.variable = parsedVar;
+    T.origin = parsedOrigin;
+    T.dest = parsedDest;
+else
+    T.country = string(T.country);
 end
 
-%% ===== helpers =====
+% per-country groups
+shareNames = ["public_consumption","private_investment","public_investment"];
+shareMods  = ["cgybar","iy","igybar"];
+taxNames   = ["tax_consumption","tax_income","tax_SSC_firms","tax_SSC_households","tax_capital"];
+taxMods    = ["taucbar","taunbar","tauwfbar","tauwhbar","taukbar"];
+debtNames  = "debt";   debtMods  = "bytarget";
+trsfNames  = "trybar"; trsfMods  = "trybar";
+
+write_group(outDir,"shares",    shareNames, shareMods, countries, T);
+write_group(outDir,"tax_rates", taxNames,   taxMods,   countries, T);
+write_group(outDir,"debt",      debtNames,  debtMods,  countries, T);
+write_group(outDir,"transfers", trsfNames,  trsfMods,  countries, T);
+
+% trade file
+tradeFile = fullfile(outDir,'trade_matrix_values_calibrated_new.mod');
+fid = fopen(tradeFile,'w'); assert(fid~=-1,'Cannot open %s',tradeFile);
+
+% (a) bilateral with omissions (shiftAmount = 12)
+shiftAmount = 12;
+countries = string(countries(:)'); countriesAux = [countries, countries];
+residMap = containers.Map;
+for ii=1:numel(countries), residMap(char(countries(ii))) = char(countriesAux(ii+shiftAmount)); end
+
+isBilat = ~cellfun(@isempty, regexp(cellstr(T.variable), bilatRegex, 'once'));
+Tb = T(isBilat,:);
+if ~ismember('origin',Tb.Properties.VariableNames) || ~ismember('dest',Tb.Properties.VariableNames)
+    Tb.origin = strings(height(Tb),1); Tb.dest = strings(height(Tb),1);
+    for k=1:height(Tb)
+        v = char(Tb.variable(k)); u = find(v=='_',1); prefix = v(1:max(1,u-1));
+        for oi=1:numel(countries)
+            o=char(countries(oi));
+            for di=1:numel(countries)
+                d=char(countries(di));
+                if strcmp(prefix,[o d]), Tb.origin(k)=string(o); Tb.dest(k)=string(d); break; end
+            end
+            if Tb.origin(k)~="", break; end
+        end
+    end
+end
+
+for k=1:height(Tb)
+    varname = string(Tb.variable(k)); val = Tb.value(k);
+    origin = string(Tb.origin(k)); dest = string(Tb.dest(k));
+    if origin=="" || dest=="" % fallback parse
+        parsedOrigin=""; parsedDest="";
+        for oi=1:numel(countries)
+            for di=1:numel(countries)
+                cand = countries(oi)+countries(di);
+                if startsWith(varname,cand), parsedOrigin=countries(oi); parsedDest=countries(di); break; end
+            end
+            if parsedOrigin~="", break; end
+        end
+        origin=parsedOrigin; dest=parsedDest;
+    end
+    if origin=="" || dest=="" 
+        warning('Could not parse "%s". Writing it.',varname);
+        fprintf(fid,'%s, %.6f;\n',varname,val); continue;
+    end
+    if origin==dest, continue; end
+    if isKey(residMap,char(origin)) && dest==string(residMap(char(origin))), continue; end
+    fprintf(fid,'%s, %.6f;\n',varname,val);
+end
+
+% (b) totals per country
+tradeTotals = ["imcy","imcgy","imiy","imigy"];
+for c = countries
+    for v = tradeTotals
+        r = T(T.country==c & T.variable==v,:);
+        if ~isempty(r), fprintf(fid,'%s_%s, %.6f;\n', c, v, r.value(1)); end
+    end
+end
+
+% (c) size + tby
+for c = countries
+    r = T(T.country==c & T.variable=="size",:);
+    if ~isempty(r), fprintf(fid,'%s_size, %.6f;\n', c, r.value(1)); end
+end
+for c = countries
+    if c~="US"
+        r = T(T.country==c & T.variable=="tby",:);
+        if ~isempty(r), fprintf(fid,'%s_tby, %.6f;\n', c, r.value(1)); end
+    end
+end
+
+% (d) _nuc constants
+fprintf(fid, 'RA_nuc, 0.90;\nAT_nuc, 0.65;\nBE_nuc, 0.65;\nES_nuc, 0.65;\nFI_nuc, 0.65;\n');
+fprintf(fid, 'GR_nuc, 0.65;\nIT_nuc, 0.65;\nNL_nuc, 0.65;\nPT_nuc, 0.65;\nDE_nuc, 0.65;\n');
+fprintf(fid, 'RU_nuc, 0.65;\nUS_nuc, 0.45;\n');
+
+fclose(fid);
+fprintf('Wrote %s\n',tradeFile);
+end
+
+%% helper
 function write_group(outDir, groupName, csvVars, modelVars, countries, T)
-    if isstring(csvVars), csvVars = cellstr(csvVars); end
-    if isstring(modelVars), modelVars = cellstr(modelVars); end
-    for k = 1:numel(csvVars)
-        vName = string(csvVars{k}); mName = string(modelVars{k});
-        sub = T(T.variable==vName & ismember(T.country, countries), :);
-        f = fullfile(outDir, sprintf('%s_%s.mod', groupName, mName));
-        fid = fopen(f,'w'); assert(fid~=-1,'Cannot open %s', f);
-        for c = countries
-            r = sub(sub.country==c, :);
-            if ~isempty(r), fprintf(fid, '%s_%s, %.4f;\n', c, mName, r.value(1)); end
-        end
-        fclose(fid);
-        fprintf('Wrote %s\n', f);
+if isstring(csvVars), csvVars = cellstr(csvVars); end
+if isstring(modelVars), modelVars = cellstr(modelVars); end
+for k=1:numel(csvVars)
+    vName = string(csvVars{k}); mName = string(modelVars{k});
+    sub = T(T.variable==vName & ismember(T.country,countries), :);
+    f = fullfile(outDir, sprintf('%s_%s.mod', groupName, mName));
+    fid = fopen(f,'w'); assert(fid~=-1,'Cannot open %s', f);
+    for c = countries
+        r = sub(sub.country==c,:);
+        if ~isempty(r), fprintf(fid, '%s_%s, %.4f;\n', c, mName, r.value(1)); end
     end
+    fclose(fid);
+    fprintf('Wrote %s\n', f);
+end
 end
 
-
-function [origin, dest] = localParseOriginDest(varname, countryList)
-    % varname: string or char, e.g. "USAT_imcy" or "ATUS_imiy"
-    % countryList: 1xN string array of country codes e.g. ["RA","AT",...]
-    origin = "";
-    dest = "";
-    s = char(varname);
-    % remove trailing item suffix (e.g. "_imcy") so we only match the XYZW part
-    underscorePos = find(s == '_', 1, 'first');
-    if ~isempty(underscorePos)
-        prefix = s(1:underscorePos-1);
-    else
-        prefix = s;
-    end
-    % try every pairing of countryList (origin,dest) and test prefix startsWith origin+dest
-    for oi = 1:numel(countryList)
-        o = char(countryList(oi));
-        for di = 1:numel(countryList)
-            d = char(countryList(di));
-            cand = [o d];
-            if startsWith(prefix, cand)
-                origin = string(o);
-                dest = string(d);
-                return;
-            end
-        end
-    end
-end
 
 
