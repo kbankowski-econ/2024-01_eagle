@@ -1236,7 +1236,7 @@ def create_consolidated_dataframe_from_calculations():
             return
         for (exp, imp), val in s.items():
             countries.append(imp)                     # importer in 'country'
-            variables.append(f"{imp}{exp}_{label}")   # e.g., BEAT_imcy
+            variables.append(f"{imp}{exp}_{label}")   # e.g., BEAT_imcy (already importer+exporter)
             years.append(year_str)
             values.append(float(val))
 
@@ -1422,7 +1422,7 @@ def create_consolidated_dataframe_from_calculations():
             values.append(float(val))
 
     
-    # Create dataframe
+    # Create dataframe (initially include country for easy prefixing)
     df = pd.DataFrame({
         'country': countries,
         'variable': variables,
@@ -1430,14 +1430,49 @@ def create_consolidated_dataframe_from_calculations():
         'value': values
     })
     
-    # Sort by country, variable, then year for better organization
+    # Now transform: prefix variable names with country code where not already prefixed.
+    # Recognized codes (two-letter + region codes) used across the pipeline:
+    code_set = {'RA','AT','BE','ES','FI','FR','GR','IT','NL','PT','DE','RU','RW','US'}
+    def _already_prefixed(varname):
+        # consider a variable already prefixed if it starts with any code in code_set
+        if not isinstance(varname, str) or len(varname) < 2:
+            return False
+        # check first two chars
+        prefix2 = varname[:2]
+        if prefix2 in code_set:
+            return True
+        # also accept three-letter edge cases if any (not expected) - fallback False
+        return False
+
+    # Build new variable names: if variable already starts with a code (e.g. BEAT_imcy, RURW_imiy),
+    # leave as-is. Otherwise prefix with country + '_' (e.g., 'AT_tby', 'FR_tax_income').
+    df['variable'] = [
+        v if _already_prefixed(v) else f"{c}_{v}"
+        for c, v in zip(df['country'].astype(str), df['variable'].astype(str))
+    ]
+
+    # Drop the country column as requested
+    df = df.drop(columns=['country'])
+
+    # Sort by country (now embedded in variable), variable, then year for better organization
     # Use custom sorting for year to put 'average' last
     year_order = [str(y) for y in range(1995, 2021)] + ['average']
     df['year'] = pd.Categorical(df['year'], categories=year_order, ordered=True)
-    df = df.sort_values(['country', 'variable', 'year']).reset_index(drop=True)
+    # Sorting by variable will effectively sort by country-prefix first
+    df = df.sort_values(['variable', 'year']).reset_index(drop=True)
     # Convert year back to string for output
     df['year'] = df['year'].astype(str)
-    
+
+    # Adjust numeric formatting mask to find variables that need 6 decimals:
+    # any variable containing size, tby, imcy/imcgy/imiy/imigy/imy anywhere in the name.
+    v = df['variable'].astype(str)
+    m = v.str.contains(r'(size|tby|imcy|imcgy|imiy|imigy|imy)', case=False, regex=True)
+    x = pd.to_numeric(df['value'], errors='coerce').fillna(0).to_numpy(float)
+    # Format numbers: 6 decimals for the flagged vars, 4 decimals otherwise
+    a6 = np.char.mod('%.6f', x)
+    a4 = np.char.mod('%.4f', x)
+    df['value'] = np.where(m, a6, a4)
+
     return df
 
 def main():
@@ -1448,17 +1483,6 @@ def main():
     # Calculate consolidated dataframe
     consolidated_df = create_consolidated_dataframe_from_calculations()
     
-    #Setting decimal numbers
-    v = consolidated_df['variable'].astype(str)
-    m = (v == 'size') | (v == 'tby') | v.str.contains('imcy|imcgy|imiy|imigy|imy', case=False)
-    x = pd.to_numeric(consolidated_df['value'], errors='coerce').fillna(0).to_numpy(float)
-    a6 = np.char.array(np.round(x, 6)).astype(str)
-    a4 = np.char.array(np.round(x, 4)).astype(str)
-    a6 = np.char.mod('%.6f', x)
-    a4 = np.char.mod('%.4f', x)
-    consolidated_df['value'] = np.where(m, a6, a4)
-
-    
     # Save to CSV
     output_path = os.path.join(data_directory, '_calibDataCalculated.csv')
     consolidated_df.to_csv(output_path, index=False)
@@ -1466,7 +1490,14 @@ def main():
     print(f"Calibration data calculated and saved to: {output_path}")
     print(f"Total parameters: {len(consolidated_df)}")
     print(f"Data shape: {consolidated_df.shape}")
-    print(f"Countries: {sorted(consolidated_df['country'].unique())}")
+
+    # Infer countries from variable prefixes (first two characters before underscore or start)
+    def _extract_country_from_var(var):
+        if not isinstance(var, str) or len(var) < 2:
+            return var
+        return var[:2]
+    inferred_countries = sorted({_extract_country_from_var(v) for v in consolidated_df['variable'].unique()})
+    print(f"Countries (inferred from variable prefixes): {inferred_countries}")
     print(f"Variables: {sorted(consolidated_df['variable'].unique())}")
     print(f"Years: {sorted(consolidated_df['year'].unique())}")
     
@@ -1479,7 +1510,7 @@ def main():
     
     # Show structure summary
     print(f"\nData structure:")
-    print(f"- {len(consolidated_df['country'].unique())} countries")
+    print(f"- {len(inferred_countries)} countries (inferred from variable prefixes)")
     print(f"- {len(consolidated_df['variable'].unique())} variables") 
     print(f"- {len(consolidated_df['year'].unique())} time period (currently only averages)")
     print(f"- Calculated from raw data using embedded functions")
