@@ -34,8 +34,8 @@
 \usepackage{array}
 \usepackage{subcaption}
 
-\newcommand{\source}[1]{\vspace{-10pt} \caption*{\footnotesize{\emph{Sources: }{#1}}}}
-\newcommand{\desc}[1]{\vspace{-10pt} \caption*{\footnotesize{\emph{Notes: }{#1}}}}
+\newcommand{\source}[1]{\vspace{2mm} \small \begin{minipage}{0.9\textwidth} \emph{Sources: }{#1} \end{minipage}}
+\newcommand{\desc}[1]{\vspace{0mm} \small \begin{minipage}{0.9\textwidth} \emph{Notes: }{#1} \end{minipage}}
 \usepackage{subcaption}
 \usepackage[sc]{mathpazo} % Use the Palatino font
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
@@ -94,6 +94,9 @@ Column headers are the importing countries $(H)$. Row labels indicate countries 
 }
 \newcommand{\TradeTablesBiasNote}{%
 The import bias parameter must be specified for all trading partners except one, which is determined residually to ensure consistency with the country's total imports.%
+}
+\newcommand{\TradeNetworkExplanation}{%
+This circular network visualizes bilateral trade flows between 14 countries/regions based on average values across the dataset period, where node size represents total import volume and edge thickness shows bilateral import flows. Only the top 5 import flows per country are displayed to reduce clutter, with edge colors matching the importing country.%
 }
 
 % Define the path as a variable at the beginning of your document
@@ -192,7 +195,7 @@ In this context, the development of analytical tools to improve euro area-wide i
     \centering
     \caption{The magnitude of imports across euro area countries, compared to Japan and the US. \label{fig1}}
     \includegraphics[width=150mm]{figures/importMagnitude.png}
-    \vspace{5mm} \source{World Integrated Trade Solution Database of the World Bank, 2022 data.}
+    \source{World Integrated Trade Solution Database of the World Bank, 2022 data.}
     % \\TODO: check the data source
     %\desc{The fiscal shock is based on a comparable increase in government purchases in both regions, representing an ex-ante 1\% of GDP fiscal expansion at the union level.}
 \end{figure}
@@ -319,11 +322,7 @@ Figure~\ref{finalGoodProduction} offers a detailed schematic representation of t
     
     \end{tikzpicture}
     
-    \vspace{5mm}
-    \small
-    \begin{minipage}{0.9\textwidth}
-    \textit{Notes}: $Q_t^s$ denotes the final good of type $s$; $TT_t^s$ is the tradable component used in the bundling of good $s$; $NT_t^s$ is the non-tradable component; $HT_t^s$ represents the home-produced tradable good; $IM_t^s$ denotes the imported tradable good; $IM_t^{s,CO^2}$ and $IM_t^{s,CO^{14}}$ represent imports from countries $CO^2$ and $CO^{14}$, respectively, used in the production of good $s$.
-    \end{minipage}
+    \desc{$Q_t^s$ denotes the final good of type $s$; $TT_t^s$ is the tradable component used in the bundling of good $s$; $NT_t^s$ is the non-tradable component; $HT_t^s$ represents the home-produced tradable good; $IM_t^s$ denotes the imported tradable good; $IM_t^{s,CO^2}$ and $IM_t^{s,CO^{14}}$ represent imports from countries $CO^2$ and $CO^{14}$, respectively, used in the production of good $s$.}
 \end{figure}
 
 \paragraph{Resource constraint} Countries and regions in the EAGLE model satisfy an aggregate resource constraint which is given in nominal terms by Eq.~\ref{eqResourceConstraint}. Total production $Y_t$ is allocated to: (i) domestic final demand of the private sector ($C_t$ and $I_t$) and the general government ($G_{C,t}$ and $G_{I,t}$); and (ii) external demand via exports.
@@ -423,12 +422,7 @@ Figure~\ref{fig:AggResourceConstraint} illustrates the creation and use of resou
     
     \end{tikzpicture}
         
-    \vspace{5mm}
-    \small
-    \begin{minipage}{0.9\textwidth}
-        \textit{Notes}: $TT_t^s$ denotes the tradable good for each type of good $s$, where $s \in \{C, I, Cg, Ig\}$. Analogously, $NT_t^s$, $HT_t^s$, and $IM_t^s$ represent, respectively, the non-tradable good, the home tradable good, and imported goods for the various sectors. Since the production of non-tradable and home tradable goods is used to meet final demand domestically, any trade imbalance arises from the difference between imports and the production allocated to exports (indicated by the grey and yellow nodes). The terms $s_{N,t}$, $s_{H,t}$, and $s_{X,t}$ represent price dispersion in the non-tradable, home-tradable, and export sectors, respectively. In a New Keynesian framework with Calvo-style staggered pricing, these terms arise because not all firms can re-optimize their prices each period, creating a wedge between aggregate supply and demand.
-
-    \end{minipage}
+        \desc{$TT_t^s$ denotes the tradable good for each type of good $s$, where $s \in \{C, I, Cg, Ig\}$. Analogously, $NT_t^s$, $HT_t^s$, and $IM_t^s$ represent, respectively, the non-tradable good, the home tradable good, and imported goods for the various sectors. Since the production of non-tradable and home tradable goods is used to meet final demand domestically, any trade imbalance arises from the difference between imports and the production allocated to exports (indicated by the grey and yellow nodes). The terms $s_{N,t}$, $s_{H,t}$, and $s_{X,t}$ represent price dispersion in the non-tradable, home-tradable, and export sectors, respectively. In a New Keynesian framework with Calvo-style staggered pricing, these terms arise because not all firms can re-optimize their prices each period, creating a wedge between aggregate supply and demand.}
 \end{figure}
 
 %//NOTE: Equations that underpin the above graph
@@ -676,7 +670,7 @@ In our calibrations, we extracted the tables for years 1995 to 2020 and found av
     \centering
     \caption{OECD Inter-Country Input-Output table structure \label{fig8}}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/OECD_table.png}}
-    \vspace{5mm} \source{OECD}
+    \source{OECD}
 \end{figure}
 
 %Government investment split
@@ -689,17 +683,16 @@ In our calibrations, we extracted the tables for years 1995 to 2020 and found av
     \centering
     \caption{Import content of final demand components (share of the import content). \label{fig7}}
     \includegraphics{figures/importContent.png}
-    \vspace{5mm} \source{Own calculations based on OECD and IMF data.}
+    \source{Own calculations based on OECD and IMF data.}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \caption{Import shares - graphical representation (percent of GDP). \label{fig:trade_network_combined}}
-    \vspace{-5mm}
+    \vspace{-2mm}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/trade_network_combined.pdf}}
-    \vspace{-5mm}
     \source{Own calculations based on ....}
-    \desc{\CountryCodes.}
+    \desc{\TradeNetworkExplanation \\ \CountryCodes.}
 \end{figure}
 
 
@@ -809,11 +802,8 @@ I M_t^{G_C, C O}=v_{M G_C}^{H, C O}\left(\frac{P_{I M, t}^{C O}}{P_{I M G_C, t}}
     \centering
     \caption{EA monetary policy shock. \label{fig:monPolicyShock}}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/irf_charts.pdf}}
-    \vspace{-5mm}
-    \begin{minipage}{0.9\textwidth}
         \source{EAGLE model simulations.}
         \desc{Horizontal axis: quarters. Vertical axis: percentage deviations from the baseline, except for inflation and in- terest rates (annualized percentage-point deviations), and the trade balance-to-GDP ratio (percentage-point deviations). GDP and its components are reported in real terms.}
-    \end{minipage}
 \end{figure}
 
 % 6(a) Having the model we study fiscal shocks (union wide)
@@ -831,11 +821,8 @@ Inflationary pressures, while present, are more subdued compared to those genera
     \centering
     \caption{Euro area-wide temporary fiscal expansion. \label{fig2}}
     \includegraphics[width=150mm]{figures/effectGovEA.png}
-    \vspace{5mm}
-    \begin{minipage}{0.9\textwidth}
         \source{EAGLE model simulations.}
         \desc{Fiscal expansion is based on an increase in government expenditure amounting to 1\% of GDP ex-ante and lasting for four quarters.}
-    \end{minipage}
 \end{figure}
 
 % 6(b) National shocks
@@ -851,11 +838,8 @@ As domestic demand in Spain increases, prices rise, leading to a transmission of
     \centering
     \caption{Single-country (Spain) temporary fiscal expansion. \label{fig3}}
     \includegraphics[width=150mm]{figures/effectGovES.png}
-    \vspace{5mm}
-    \begin{minipage}{0.9\textwidth}
         \source{EAGLE model simulations.}
         \desc{Fiscal expansion is based on an increase in government expenditure amounting to 1\% of GDP ex-ante and lasting for four quarters.}
-    \end{minipage}
 \end{figure}
 
 \section{NGEU evaluation as a policy application}
@@ -872,7 +856,7 @@ These effects are likely to be particularly pronounced in the program's main ben
     \centering
     \caption{NGEU-financed investment in the euro area (\% of the euro area GDP, 2021-26). \label{fig4}}
     \includegraphics[width=150mm]{figures/NGEU_input.png}
-    \vspace{5mm} \source{Data collected within the European System of Central Banks.}
+    \source{Data collected within the European System of Central Banks.}
 \end{figure}
 
 % 7(b) NGEU macro effects
@@ -889,11 +873,8 @@ Over time, the nature of government investment transitions from a demand-type sh
     \centering
     \caption{The estimated macroeconomic effect of NGEU on the euro area output and inflation, country decomposition. \label{fig5}}
     \includegraphics[width=150mm]{figures/effectNGEU.png}
-    \vspace{5mm}
-    \begin{minipage}{0.9\textwidth}
         \source{EAGLE model simulations.}
         \desc{The GDP values are expressed as a percentage of deviation from the baseline values. The inflation rate is an absolute deviation in percentage points.}
-    \end{minipage}
 \end{figure}
 
 % 7(c) NGEU spill-overs
@@ -912,11 +893,8 @@ Additionally, the German economy experiences a mild adverse effect from the mone
     \centering
     \caption{The estimated macroeconomic effect of NGEU, spill-over effects. \label{fig6}}
     \includegraphics[width=150mm]{figures/effectNGEUspillovers.png}
-    \vspace{5mm}
-    \begin{minipage}{0.9\textwidth}
         \source{EAGLE model simulations.}
         \desc{The GDP and export values are expressed as a percentage deviation from the baseline values. The interest rate is an absolute deviation in percentage points.}
-    \end{minipage}
 \end{figure}
 
 \section{Conclusions}
@@ -1023,20 +1001,16 @@ Share of World GDP & IMF & NGDPD.A & \\
     \centering
     \caption{Data for the great ratios. \label{figApp:nationalAccountsData}}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/calibration_charts_panel1.pdf}}
-    \begin{minipage}{0.9\textwidth}
         \source{See Table \ref{sec:appendix_calibration_data}.}
         \desc{The numbers next to country labels on right-hand charts represent 1995-2019 averages used in the calibration of the model.}
-    \end{minipage}
 \end{figure}
 
 \begin{figure}[p]
     \centering
     \caption{Data for government spending, tax rates and government debt. \label{figApp:govSpending}}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/calibration_charts_panel2.pdf}}
-    \begin{minipage}{0.9\textwidth}
         \source{See Table \ref{sec:appendix_calibration_data}.}
         \desc{The numbers next to country labels on right-hand charts represent 1995-2019 averages used in the calibration of the model.}
-    \end{minipage}
 \end{figure}
 
 \section{Calibration Details}\label{sec:appendix_calibration_details}
@@ -1104,11 +1078,10 @@ Share of World GDP & IMF & NGDPD.A & \\
 \begin{figure}[H]
     \centering
     \caption{Import shares, private consumption - graphical representation (percent of GDP). \label{fig:trade_network_imcy}}
-    \vspace{-5mm}
+    \vspace{-2mm}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/trade_network_imcy.pdf}}
-    \vspace{-5mm}
     \source{Own calculations based on ....}
-    \desc{\CountryCodes.}
+    \desc{\TradeNetworkExplanation \\ \CountryCodes.}
 \end{figure}
 
 \begin{landscape}
@@ -1137,11 +1110,10 @@ Share of World GDP & IMF & NGDPD.A & \\
 \begin{figure}[H]
     \centering
     \caption{Import shares, private investment - graphical representation (percent of GDP). \label{fig:trade_network_imiy}}
-    \vspace{-5mm}
+    \vspace{-2mm}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/trade_network_imiy.pdf}}
-    \vspace{-5mm}
     \source{Own calculations based on ....}
-    \desc{\CountryCodes.}
+    \desc{\TradeNetworkExplanation \\ \CountryCodes.}
 \end{figure}
 
 \begin{landscape}
@@ -1170,11 +1142,10 @@ Share of World GDP & IMF & NGDPD.A & \\
 \begin{figure}[H]
     \centering
     \caption{Import shares, government consumption - graphical representation (percent of GDP). \label{fig:trade_network_imcgy}}
-    \vspace{-5mm}
+    \vspace{-2mm}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/trade_network_imcgy.pdf}}
-    \vspace{-5mm}
     \source{Own calculations based on ....}
-    \desc{\CountryCodes.}
+    \desc{\TradeNetworkExplanation \\ \CountryCodes.}
 \end{figure}
 
 \begin{landscape}
@@ -1204,11 +1175,10 @@ Share of World GDP & IMF & NGDPD.A & \\
 \begin{figure}[H]
     \centering
     \caption{Import shares, government investment - graphical representation (percent of GDP). \label{fig:trade_network_imigy}}
-    \vspace{-5mm}
+    \vspace{-2mm}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/trade_network_imigy.pdf}}
-    \vspace{-5mm}
     \source{Own calculations based on ....}
-    \desc{\CountryCodes.}
+    \desc{\TradeNetworkExplanation \\ \CountryCodes.}
 \end{figure}
 
 \begin{landscape}

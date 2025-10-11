@@ -5,7 +5,7 @@ import json
 from math import pi, cos, sin
 
 
-def load_trade_data(data_file, variable_suffix='_imcy', year=2019):
+def load_trade_data(data_file, variable_suffix='_imcy', year='average'):
     """Load and process trade flow data."""
     df = pd.read_csv(data_file)
     
@@ -16,6 +16,8 @@ def load_trade_data(data_file, variable_suffix='_imcy', year=2019):
         
         for suffix in suffixes:
             trade_vars = df[df['variable'].str.endswith(suffix)]
+            # Filter for bilateral flows only (4-character country codes + suffix)
+            trade_vars = trade_vars[trade_vars['variable'].str.len() == (4 + len(suffix))]
             trade_data = trade_vars[trade_vars['year'] == year].copy()
             
             if trade_data.empty:
@@ -33,6 +35,8 @@ def load_trade_data(data_file, variable_suffix='_imcy', year=2019):
     else:
         # Single variable case
         trade_vars = df[df['variable'].str.endswith(variable_suffix)]
+        # Filter for bilateral flows only (4-character country codes + suffix)
+        trade_vars = trade_vars[trade_vars['variable'].str.len() == (4 + len(variable_suffix))]
         trade_data = trade_vars[trade_vars['year'] == year].copy()
         
         if trade_data.empty:
@@ -131,7 +135,7 @@ def create_edge_path(x0, y0, x1, y1, has_reverse=False):
 def calculate_edge_width(value, global_max, global_min):
     """Calculate edge width based on value and global range."""
     if global_max > global_min:
-        return 0.5 + ((value - global_min) / (global_max - global_min)) * 5.5
+        return 0.3 + ((value - global_min) / (global_max - global_min)) * 9.7
     else:
         return 2
 
@@ -229,7 +233,7 @@ def save_outputs(fig, output_prefix, auto_open=True):
 def create_trade_network(
     data_file='data/_calibDataCalculated.csv',
     variable_suffix='_imcy',
-    year=2019,
+    year='average',
     output_prefix=None,
     auto_open=True,
     top_flows_per_country=5
@@ -275,8 +279,8 @@ def create_trade_network(
 
 def create_all_trade_networks(
     data_file='data/_calibDataCalculated.csv',
-    year=2019,
-    auto_open=False,
+    year='average',
+    auto_open=True,
     top_flows_per_country=5
 ):
     """Create trade network visualizations for all variable types."""
