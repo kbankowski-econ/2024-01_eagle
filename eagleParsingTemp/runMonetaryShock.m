@@ -90,6 +90,7 @@ for aItem = aItemList
     % Dynare decomposition is always an absolute difference; for this
     % reason we need this transformation with rescaling of
     % contributions
+    % the explanation on the validity of re-scaling is here: investigations/contribution-rescaling.pdf
     tempComment = contributionSeries.contrib.(aItem).Comment;
     contributionSeries.total.(aItem) = monetarySimStruct.irfValues.(aItem);
     contributionSeries.contrib.(aItem) = contributionSeries.contrib.(aItem)/sum(contributionSeries.contrib.(aItem), 2)*monetarySimStruct.irfValues.(aItem);
@@ -113,100 +114,4 @@ end
 contributionSeries.colorTable = colorTable;
 
 %% investigating interest rate reaction upon the request from Sandra
-panelContributions(contributionSeries);
-
-%%
-function panelContributions(contributionSeries)
-
-    % raeding global variables
-    utils.call.paths;
-
-    % Please specify the list of the variables to plot   
-    VarListToPlot = string(reshape(fieldnames(contributionSeries.total), 1, []));
-    
-    % Please specify the date range of the series
-    DateRange = qq(1,1):qq(5,4);
-    aShift = 0;
-    DateRangeNorm = DateRange - aShift;
-    DateRangeDateTime = dater.toMatlab(DateRangeNorm);
-    
-    % Plotting
-    figure
-    
-    % Defining the shape of the figure
-    tiledlayout_width = 2; %Specify the # of columns desired
-    tiledlayout_height = 1;
-    
-    t = tiledlayout(tiledlayout_height, tiledlayout_width, 'TileSpacing', 'compact','Padding','compact');
-    
-    h = gcf;
-    set(h, 'Units','centimeters', 'Position',[0 0 16 6])
-    set(h,'defaulttextinterpreter','latex');
-    
-    for aItem = VarListToPlot %for each panel
-        nexttile;
-        grid on
-        hold on 
-    
-        % Seeting of the title
-        aTitle = sprintf('Decomposition of %s', contributionSeries.lhs.(aItem));        
-        title( ...
-            aTitle ...
-            , 'Fontsize', 7 ...
-            , 'Fontweight', 'normal' ...
-        );
-    
-        % actual data
-        try
-            bars_ = barcon( ...
-                DateRange ...
-                , contributionSeries.contrib.(aItem) ...
-                , "ColorMap", cell2mat(contributionSeries.colorTable{contributionSeries.contrib.(aItem).Comment, :}) ...
-                , 'EdgeColor', 'none');
-        catch
-        end  
-        % targets
-        try
-            line_ = plot( ...
-                DateRange ...
-                , contributionSeries.total.(aItem) ...
-                , 'color', cell2mat(contributionSeries.colorTable{aItem, :}) ...
-                , 'linewidth', 2 ...
-                , 'Marker', '_' ...
-                , 'MarkerFaceColor', rgb('black') ...
-                , 'MarkerEdgeColor', rgb('black') ...
-                , 'MarkerSize', 4 ...
-                );
-        catch
-        end
-        
-        hold off
-    
-        % Setting of the x and y axis
-        xtickformat(gca,'yyQQQ')
-    
-        set(gca ...
-            , 'Xtick', DateRangeDateTime(1:4:end) ...
-            , 'Fontsize', 7 ...
-            , 'Box', 'off' ...
-            , 'TickLabelInterpreter','latex' ...
-        );
-    
-        legendLabels = replace([contributionSeries.contrib.(aItem).Comment, aItem], "_", "\_");
-        legend( ...
-            [bars_, line_] ...
-            , legendLabels ...
-            , 'location', 'northoutside' ...
-            , 'Interpreter','latex' ...
-            , 'Fontsize', 6 ...
-            , 'NumColumns', 2 ...
-            );
-    
-    
-    end 
-        
-    % Save graph
-    fileName = fullfile(projectPath, "docs/2025-02_working-paper/figures/monetaryContributions");
-    exportgraphics(t, sprintf('%s.png',fileName),'BackgroundColor','none');
-    exportgraphics(t, sprintf('%s.pdf',fileName),'BackgroundColor','none');
-end
+plotting.WP.eaCntryDecomposition(contributionSeries);

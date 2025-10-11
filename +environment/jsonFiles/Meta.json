@@ -5,6 +5,9 @@
   "ctryListForReport": [
     "AT", "BE", "FI", "FR", "DE", "GR", "IT", "NL", "PT", "ES", "RA", "RU", "US", "RW"
   ],
+    "eaListForReport": [
+    "AT", "BE", "FI", "FR", "DE", "GR", "IT", "NL", "PT", "ES", "RA"
+  ],
   "colors": {
     "AT": "#5E4FA2",
     "BE": "#347BBC",
