@@ -1,4 +1,4 @@
-function eaCntryDecomposition(contributionSeriesOriginal)
+function eaCntryDecomposition(contributionSeriesOriginal, modelName)
 
     % reading global variables
     utils.call.paths;
@@ -65,7 +65,7 @@ function eaCntryDecomposition(contributionSeriesOriginal)
     lgd.Layout.Tile = 'north'; 
         
     % Save graph
-    fileName = fullfile(project_path, "docs/2025-02_working-paper/figures/monetaryContributions");
+    fileName = fullfile(project_path, "docs/2025-02_working-paper/figures/" + modelName + "_contributions");
     exportgraphics(t, sprintf('%s.png', fileName), 'BackgroundColor', 'none');
     exportgraphics(t, sprintf('%s.pdf', fileName), 'BackgroundColor', 'none');
 end

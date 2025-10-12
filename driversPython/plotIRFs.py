@@ -48,10 +48,10 @@ def load_country_colors(meta_file='+environment/jsonFiles/Meta.json'):
     return meta['colors']
 
 def create_irf_plots(
-    irf_file='docs/2025-02_working-paper/figures/irfsMonPolShock.csv',
+    irf_file='docs/2025-02_working-paper/figures/shock_ea_epsr1.csv',
     dict_file='+environment/csvFiles/varDict.csv',
     config_file=None,  # Will be derived from irf_file if not provided
-    output_prefix='docs/2025-02_working-paper/figures/irf_charts',
+    output_prefix='docs/2025-02_working-paper/figures/shock_ea_epsr1_irfs',
     auto_open=True
 ):
     """Create IRF charts with 6x3 grid layout."""
