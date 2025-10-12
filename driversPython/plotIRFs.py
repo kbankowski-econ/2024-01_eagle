@@ -41,31 +41,39 @@ def load_config(config_file):
         config = json.load(f)
     return config
 
-def load_country_colors(meta_file='+environment/jsonFiles/Meta.json'):
+def load_country_colors(project_path, meta_file='+environment/jsonFiles/Meta.json'):
     """Load country color mappings from Meta.json file."""
+    import os
+    meta_file = os.path.join(project_path, meta_file)
     with open(meta_file, 'r') as f:
         meta = json.load(f)
     return meta['colors']
 
 def create_irf_plots(
-    irf_file='docs/2025-02_working-paper/figures/shock_ea_epsr1.csv',
+    project_path,
+    model_name='shock_ea_epsr1',
     dict_file='+environment/csvFiles/varDict.csv',
-    config_file=None,  # Will be derived from irf_file if not provided
-    output_prefix='docs/2025-02_working-paper/figures/shock_ea_epsr1_irfs',
+    config_file=None,  # Will be derived from model_name if not provided
     auto_open=True
 ):
     """Create IRF charts with 6x3 grid layout."""
+    
+    # Construct file paths using model name
+    import os
+    irf_file = os.path.join(project_path, f'docs/2025-02_working-paper/figures/{model_name}.csv')
+    dict_file = os.path.join(project_path, dict_file)
+    output_prefix = os.path.join(project_path, f'docs/2025-02_working-paper/figures/{model_name}_irfs')
     
     # Load data and configuration
     df_long = load_irf_data(irf_file)
     var_dict = load_variable_descriptions(dict_file)
     
-    # Derive config filename from CSV filename if not provided
+    # Derive config filename from model name if not provided
     if config_file is None:
-        config_file = irf_file.replace('.csv', '.json')
+        config_file = os.path.join(project_path, f'docs/2025-02_working-paper/figures/{model_name}.json')
     
     config = load_config(config_file)
-    country_colors = load_country_colors()
+    country_colors = load_country_colors(project_path)
     
     # Extract country and variable information
     df_long['country'], df_long['base_var'] = zip(*df_long['variable'].apply(extract_country_and_var))
@@ -75,7 +83,7 @@ def create_irf_plots(
     country_order = config['countries']
     
     # Filter data for selected variables
-    df_plot = df_long[df_long['base_var'].isin(plot_variables)]
+    df_plot = df_long[df_long['base_var'].isin(plot_variables)].copy()
     
     # Add row numbers (starting from 1 to match CSV row numbers)
     unique_periods = df_plot['period'].unique()
@@ -200,7 +208,7 @@ def create_irf_plots(
 
 if __name__ == "__main__":
     try:
-        create_irf_plots()
+        create_irf_plots(project_path, model_name)
     except FileNotFoundError as e:
         print(f"Error: Could not find required file. {e}")
     except Exception as e:

@@ -35,3 +35,6 @@ contributionSeries = dynareFunc.calculateContributions(["EA_y", "EA_pic4"], simR
 
 %% investigating interest rate reaction upon the request from Sandra
 plotting.WP.eaCntryDecomposition(contributionSeries, modelName);
+
+%% generate IRF plots using Python
+pyrunfile(fullfile(project_path, 'driversPython/plotIRFs.py'), project_path=project_path, model_name=modelName);
