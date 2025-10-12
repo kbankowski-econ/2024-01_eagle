@@ -1430,6 +1430,21 @@ def create_consolidated_dataframe_from_calculations():
         'value': values
     })
     
+    rename_map = {
+    'public_consumption': 'cgybar',
+    'private_investment': 'iy',
+    'public_investment': 'igybar',
+    'debt': 'bytarget',
+    'tax_consumption': 'taucbar',
+    'tax_income': 'taunbar',
+    'tax_SSC_firms': 'tauwfbar',
+    'tax_SSC_households': 'tauwhbar',
+    'tax_capital': 'taukbar'
+    }
+    
+    df['variable'] = df['variable'].astype(str).map(lambda v: rename_map.get(v, v))
+    
+        
     # Now transform: prefix variable names with country code where not already prefixed.
     # Recognized codes (two-letter + region codes) used across the pipeline:
     code_set = {'RA','AT','BE','ES','FI','FR','GR','IT','NL','PT','DE','RU','RW','US'}

@@ -73,12 +73,12 @@ else
 end
 
 % per-country groups
-shareNames = ["public_consumption","private_investment","public_investment"];
+shareNames = ["cgybar","iy","igybar"];
 shareMods  = ["cgybar","iy","igybar"];
-taxNames   = ["tax_consumption","tax_income","tax_SSC_firms","tax_SSC_households","tax_capital"];
+taxNames   = ["taucbar","taunbar","tauwfbar","tauwhbar","taukbar"];
 taxMods    = ["taucbar","taunbar","tauwfbar","tauwhbar","taukbar"];
-debtNames  = "debt";   debtMods  = "bytarget";
-trsfNames  = "trybar"; trsfMods  = "trybar";
+debtNames  = "bytarget";   debtMods  = "bytarget";
+trsfNames  = "trybar";     trsfMods  = "trybar";
 
 write_group(outDir,"shares",    shareNames, shareMods, countries, T);
 write_group(outDir,"tax_rates", taxNames,   taxMods,   countries, T);
