@@ -41,6 +41,12 @@ def load_config(config_file):
         config = json.load(f)
     return config
 
+def load_country_colors(meta_file='+environment/jsonFiles/Meta.json'):
+    """Load country color mappings from Meta.json file."""
+    with open(meta_file, 'r') as f:
+        meta = json.load(f)
+    return meta['colors']
+
 def create_irf_plots(
     irf_file='docs/2025-02_working-paper/figures/irfsMonPolShock.csv',
     dict_file='+environment/csvFiles/varDict.csv',
@@ -59,6 +65,7 @@ def create_irf_plots(
         config_file = irf_file.replace('.csv', '.json')
     
     config = load_config(config_file)
+    country_colors = load_country_colors()
     
     # Extract country and variable information
     df_long['country'], df_long['base_var'] = zip(*df_long['variable'].apply(extract_country_and_var))
@@ -84,8 +91,6 @@ def create_irf_plots(
     # Use only countries specified in configuration
     available_countries = set(df_plot['country'].unique())
     countries = [c for c in country_order if c in available_countries]
-    
-    colors = px.colors.qualitative.Vivid
     
     # Calculate grid dimensions based on number of variables
     num_vars = len(plot_variables)
@@ -113,13 +118,16 @@ def create_irf_plots(
             for j, country in enumerate(countries):
                 country_data = var_data[var_data['country'] == country]
                 if not country_data.empty:
+                    # Get color for this country from Meta.json, fallback to default if not found
+                    country_color = country_colors.get(country, '#000000')
+                    
                     fig.add_trace(
                         go.Scatter(
                             x=country_data['row_number'],
                             y=country_data['value'],
                             mode='lines',
                             name=country,
-                            line=dict(color=colors[j % len(colors)], width=3),
+                            line=dict(color=country_color, width=3),
                             showlegend=(i == 0),  # Only show legend for first plot
                             legendgroup=country
                         ),
