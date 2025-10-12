@@ -1,44 +1,74 @@
 function irfStructure = calculateIRFsForCountries(monetarySimOutput, monetarySimStruct)
+% CALCULATEIRFSFORCOUNTRIES Calculate impulse response functions for all countries
+%
+% Syntax:
+%   irfStructure = calculateIRFsForCountries(monetarySimOutput, monetarySimStruct)
+%
+% Inputs:
+%   monetarySimOutput - Dynare model output structure containing model metadata
+%   monetarySimStruct - Structure containing endogenous values and steady-state values
+%                      from monetary simulation
+%
+% Outputs:
+%   irfStructure - Structure containing transformed IRF data for all countries
+%                 and variables, organized by transformation type
+%
+% Description:
+%   This function processes IRF data for all countries by applying various
+%   transformations defined in the variable dictionary. It filters variables
+%   by country prefixes and applies transformations like log differences,
+%   percentage deviations, etc.
 
-    % reding in global variables/ settings
+    % Load environment settings and metadata
     envi = environment.setup();
 
-    % defining country pattern for filtering the variables
+    % Create regex pattern to match country codes (including EA for Euro Area)
+    % Pattern matches variables starting with any country code from ctryList
     prefixPattern = strcat("^(", strjoin([envi.Meta.ctryList, "EA"], '|'), ")");
 
-    % bringing model variable list
+    % Retrieve list of endogenous variables from Dynare model
     modelVarLists = dynareFunc.retrieveModelVarList(monetarySimOutput.M_);
 
-    % creating a list of transformations to be conducted
+    % Get unique transformation types from variable dictionary
     transfList = reshape(unique(envi.varDict.diffTransf), 1, []);
 
-    % restarting the databank
+    % Initialize output structure
     irfStructure = struct();
 
-    % looping through transformations
+    % Process each transformation type
     for aTransf = transfList
         aVarSubList = {};
-        % selecting a table with the relevant variables to be transformed
-        tempVarTable = envi.varDict(strcmp(envi.varDict{:, "diffTransf"}, aTransf) ,:);
+        
+        % Filter variable dictionary for current transformation type
+        tempVarTable = envi.varDict(strcmp(envi.varDict{:, "diffTransf"}, aTransf), :);
+        
+        % Build list of model variables that need this transformation
         for aVarIndex = 1:length(tempVarTable.Properties.RowNames)
-            % looping through variables of the selected tables and selecting
-            % any of them that shows up in the model for any country
             aVar = tempVarTable.Properties.RowNames{aVarIndex};
-            aVarSubList = [aVarSubList; modelVarLists.endo( ~cellfun('isempty', regexp(modelVarLists.endo, prefixPattern + '_' + aVar + '$')))];
+            
+            % Find all country-specific versions of this variable in the model
+            % Uses regex to match: COUNTRY_VARIABLE pattern
+            matchingVars = modelVarLists.endo(~cellfun('isempty', ...
+                regexp(modelVarLists.endo, prefixPattern + '_' + aVar + '$')));
+            aVarSubList = [aVarSubList; matchingVars];
         end
-        % performing the transformation
+        
+        % Create function handle for current transformation
         transfFunc = str2func(['@(x,y) ' char(aTransf)]);
+        
+        % Apply transformation to selected variables
+        % dbfun applies function to endogenous values relative to steady state
         tempDatabank = dbfun( ...
-            transfFunc ...
-            , monetarySimStruct.endoValues ...
-            , monetarySimStruct.ssValues ...
-            , 'NameList', aVarSubList ...
+            transfFunc, ...
+            monetarySimStruct.endoValues, ...
+            monetarySimStruct.ssValues, ...
+            'NameList', aVarSubList ...
         );
-        % since dbFunc keeps all series in the databank, even these not
-        % transformed we have to purge the rest
+        
+        % Extract only the transformed variables (dbfun keeps all variables)
         tempDatabank = databank.retrieve(tempDatabank, aVarSubList);
-        % merging databanks with all types of transformations into one
-        % structure
+        
+        % Merge transformed data into main output structure
         irfStructure = dbmerge(irfStructure, tempDatabank);
     end
 
