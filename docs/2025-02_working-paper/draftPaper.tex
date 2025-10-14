@@ -647,24 +647,14 @@ The calibrated steady-state debt-to-GDP ratios are achieved through lump-sum tax
 
 \paragraph{Trade calibration} Calibrating the trade linkages in a setup with as many countries is a major challenge in extending the EAGLE framework. Two crucial trade data characteristics need to be reflected in our model. First, there is a necessity to capture the amount of imports within each category of final good (see the gray nodes in Figure \ref{fig:AggResourceConstraint}). Here it is crucial to reflect the fact that demand components differ in terms of import content, notably private investment tends to be much more import reach than government consoumption. Second, these imported amounts need to be decomposed into bilateral imports to capture trade flows between all countries. This is to capture, for example, that import dependencies between European countries are much tighter than these involving less open US and the rest of the world region.
 
-In order to gauge the import content of each aggregate demand components we follow the methodology established by \citet{Bussiere-et-al_2013_aejMacro} and utilize Inter-Country Input-Output (ICIO) tables published by the \citet{ICIO2024}.
-
-Finally, the Appendix contains trade share parameters (Tables~\ref{tab:linkagesNu_mc}–\ref{tab:linkagesNu_mig}) compatible with the calibrated import structure presented in Tables~\ref{tab:linkagesShare_mc}–\ref{tab:linkagesShare_mig} of the main text.
-
-
-Input-output tables detail how the output of one industry is used as an input in another, capturing the flow of goods and services within the economy.
-Inter-country tables extend beyond national borders, incorporating data on economic interactions between multiple countries, capturing a comprehensive view of cross-border flows of goods and services.
+In order to gauge the import content of each aggregate demand components we utilize utilize Inter-Country Input-Output (ICIO) tables published by the \citet{ICIO2024}. Input-output tables detail how the output of one industry is used as an input in another, capturing the flow of goods and services within the economy.
+Inter-country tables extend beyond national borders, incorporating data on economic interactions between multiple countries, providing a comprehensive view of cross-border flows of goods and services.
 They include detailed information on the import content of each country's production processes, highlighting how domestic industries rely on foreign inputs.
 We choose the OECD inter-country input-output tables as it has a broad and recent coverage of years, regions, and sectors.
 The latest OECD release covers years up to 2020, 77 regions, including a 'Rest of World' region, and 45 sectors.
 The structure of the input output table is represented in the figure \ref{fig8}.
 As depicted, the tables are structured around intermediate use and final demand.
 In our calibrations, we extracted the tables for years 1995 to 2020 and found average values across the years to capture medium-run characteristics of trade.
-
-%The model steady state requires calibration of bilateral and total import shares of demand components (public consumption, private consumption, public investment, and private investment). Simply basing it on the imported final demand components from the ICIO tables, as noted above, would not fully capture spillover effects across borders. To properly account for these effects, we employ a more comprehensive approach that integrates both direct and indirect linkages within the global input-output framework. Direct effects refer to the immediate impact on an industry when demand for its output changes, whereas indirect effects capture the subsequent repercussions across interconnected industries within and across countries. This analysis is formalized using the Leontief framework, which models inter-industry dependencies through the input-output coefficient matrix. 
-
-%The Bussière et al. paper uses the intermediate trade matrix to compute the value of indirect imports, or the amount of imports "induced" by the expenditure on domestically provided goods and services. The calculated indirect imports are then added to the direct imports of final demand components, providing a better approximation of trade dynamics to capture the spillover effects. 
-
 
 \begin{figure}[H]
     \centering
@@ -673,11 +663,24 @@ In our calibrations, we extracted the tables for years 1995 to 2020 and found av
     \source{OECD}
 \end{figure}
 
-%Government investment split
+The matrix structure of the ICIO tables are useful to extract trade dynamics between countries, and the corresponding effects on their final demand components. We do it using using methodology established by \citet{Bussiere-et-al_2013_aejMacro} .  
 
-%The short-coming of the OECD Input-Output tables is that it only provides data for total gross fixed capital formation in the economy, while the EAGLE model with fiscal extension also requires the imported share of government and private investment separately. To accurately estimate the steady-state split between the two types of gross fixed capital formation, we use IMF's Investment and Capital Stock dataset (\citet{FAS2025}), which holds information about government and private investments, and apply the proportional ratios to the import share calculated from the ICIO tables.
+Applying the Leontief input-output framework \citet{Leontief1936,Leontief1941}, the \citet{Bussiere-et-al_2013_aejMacro} methodology uses the intermediate trade matrix to compute the value of indirect imports, defined as the imported inputs embodied in the domestic production of goods and services that ultimately satisfy final demand. The calculated indirect imports are then added to the direct imports of each final demand component, yielding a more comprehensive measure of import content that better reflects trade dynamics and the spillover effects of global value chain linkages. For example, a rise in investment, for instance, increases demand for domestically produced capital goods, which in turn require intermediate inputs, some of which are imported. As these domestic industries expand to meet new demand, they also increase their use of intermediate goods from other domestic sectors, which themselves contain imported inputs. The total import requirement therefore reflects this cascade of indirect linkages along global and domestic supply chains.
 
-%The trade data-based estimates reveal that the import content, expressed as a share of national GDP, varies across countries and demand components. In this context, small open economies such as Austria, Belgium, and countries in the rest of euro area exhibit higher import intensities compared to larger economies, implying a relatively greater leakage of national economic policies. Also, government demand components tend to be less import-intensive than private demand components, a pattern that holds consistently across all countries. The data suggest that government sectors display a relatively strong home bias in their spending preferences. The figure below presents share of imports in the final demand of each demand components. 
+In technical terms,  let $A_d$ denote the matrix of domestic input coefficients, whose elements $a_{ij}^d$ represent domestic intermediate inputs from sector $i$ required to produce one unit of output in sector $j$, and $A_m$ the corresponding matrix of imported input coefficients. Denote by $F$ the vector (or matrix) of final demand components, disaggregated by category (household consumption, government consumption, investment, etc.). The total gross output needed to satisfy $F$ is given by
+\[X = (I - A_d)^{-1} F,\]
+where $(I - A_d)^{-1}$ is the Leontief inverse capturing both direct and higher-order domestic production linkages. The import content associated with this production can then be expressed as
+\[M = A_m (I - A_d)^{-1} F,\]
+which yields the total (direct and indirect) imports embodied in each component of final demand. In this setup, the first term $A_m F$ captures the direct import content of final goods, while $A_m (A_d F)$, $A_m (A_d^2 F)$, and higher-order terms embedded in the matrix inverse capture indirect import requirements arising from imported inputs used in domestic intermediate production.
+
+In our implementation, we construct $A_d$ and $A_m$ from the OECD ICIO tables, aggregating intermediate-use by total output across industries, distinguishing between domestic and imported sources. We then compute the Leontief inverse $(I - A_d)^{-1}$ and post-multiply it by $A_m$ and the partitioned final demand vectors to obtain the total import contents for each demand component. The resulting import intensities reflect sectoral interlinkages and cross-country dependencies embedded in global value chains.
+
+\paragraph{Government investment split}
+The short-coming of the OECD Input-Output tables is that it only provides data for total gross fixed capital formation in the economy, while the EAGLE model with fiscal extension also requires the imported share of government and private investment separately. To proxy estimate the steady-state split between the two types of gross fixed capital formation, we use IMF's Investment and Capital Stock dataset (\citet{FAS2025}), which holds information about government and private investments, and apply the proportional ratios to the import share calculated from the ICIO tables.
+
+The trade data-based estimates reveal that the import content, expressed as a share of national GDP, varies across countries and demand components. In this context, small open economies such as Austria, Belgium, and countries in the rest of euro area exhibit higher import intensities compared to larger economies, implying a relatively greater leakage of national economic policies. Also, government demand components tend to be less import-intensive than private demand components, a pattern that holds consistently across all countries. The data suggest that government sectors display a relatively strong home bias in their spending preferences. The figure below presents share of imports in the final demand of each demand components. 
+
+The Appendix contains trade share parameters (Tables~\ref{tab:linkagesNu_mc}–\ref{tab:linkagesNu_mig}) compatible with the calibrated import structure presented in Tables~\ref{tab:linkagesShare_mc}–\ref{tab:linkagesShare_mig} of the main text.
 
 \begin{figure}[H]
     \centering
