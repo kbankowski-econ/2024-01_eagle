@@ -1,4 +1,4 @@
-function runMonetaryShock(modelName)
+function runEAGLEsimul(modelName)
 %RUNMONETARYSHOCK Execute monetary policy shock simulation and analysis.
 %   runMonetaryShock(MODELNAME) runs the end-to-end analysis for the
 %   supported Dynare models specified by MODELNAME.
