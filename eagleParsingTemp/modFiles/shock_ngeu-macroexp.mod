@@ -348,6 +348,7 @@ RA_sx
  RAUS_weightim
  RA_b
  RA_bf
+ RA_bfy
  RA_by
  RA_c
  RA_ci
@@ -999,6 +1000,7 @@ AT_sx
  ATUS_weightim
  AT_b
  AT_bf
+ AT_bfy
  AT_by
  AT_c
  AT_ci
@@ -1650,6 +1652,7 @@ BE_sx
  BEUS_weightim
  BE_b
  BE_bf
+ BE_bfy
  BE_by
  BE_c
  BE_ci
@@ -2301,6 +2304,7 @@ ES_sx
  ESUS_weightim
  ES_b
  ES_bf
+ ES_bfy
  ES_by
  ES_c
  ES_ci
@@ -2952,6 +2956,7 @@ FI_sx
  FIUS_weightim
  FI_b
  FI_bf
+ FI_bfy
  FI_by
  FI_c
  FI_ci
@@ -3603,6 +3608,7 @@ FR_sx
  FRUS_weightim
  FR_b
  FR_bf
+ FR_bfy
  FR_by
  FR_c
  FR_ci
@@ -4254,6 +4260,7 @@ GR_sx
  GRUS_weightim
  GR_b
  GR_bf
+ GR_bfy
  GR_by
  GR_c
  GR_ci
@@ -4905,6 +4912,7 @@ IT_sx
  ITUS_weightim
  IT_b
  IT_bf
+ IT_bfy
  IT_by
  IT_c
  IT_ci
@@ -5556,6 +5564,7 @@ NL_sx
  NLUS_weightim
  NL_b
  NL_bf
+ NL_bfy
  NL_by
  NL_c
  NL_ci
@@ -6207,6 +6216,7 @@ PT_sx
  PTUS_weightim
  PT_b
  PT_bf
+ PT_bfy
  PT_by
  PT_c
  PT_ci
@@ -6858,6 +6868,7 @@ DE_sx
  DEUS_weightim
  DE_b
  DE_bf
+ DE_bfy
  DE_by
  DE_c
  DE_ci
@@ -7509,6 +7520,7 @@ RU_sx
  RUUS_weightim
  RU_b
  RU_bf
+ RU_bfy
  RU_by
  RU_c
  RU_ci
@@ -8164,6 +8176,7 @@ RW_sx
  RWUS_weightim
  RW_b
  RW_bf
+ RW_bfy
  RW_by
  RW_c
  RW_ci
@@ -8819,6 +8832,7 @@ US_sx
  USRW_weightim
  US_b
  US_bf
+ US_bfy
  US_by
  US_c
  US_ci
@@ -13557,7 +13571,7 @@ RA_pig*RA_ig = RA_igy*RA_pybar*RA_ybar;
 // Transfers
 RA_tr = RA_try*RA_pybar*RA_ybar;
 // Fiscal rule
-RA_t/(RA_pybar*RA_ybar) = RA_phitb*(RA_b/(RA_pybar*RA_ybar)-RA_bytarget);
+RA_t/(RA_pybar*RA_ybar) = RA_tybar + RA_phitb*(RA_b/(RA_pybar*RA_ybar)-RA_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 RA_ti = RA_upsilont*RA_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -17622,7 +17636,7 @@ AT_pig*AT_ig = AT_igy*AT_pybar*AT_ybar;
 // Transfers
 AT_tr = AT_try*AT_pybar*AT_ybar;
 // Fiscal rule
-AT_t/(AT_pybar*AT_ybar) = AT_phitb*(AT_b/(AT_pybar*AT_ybar)-AT_bytarget);
+AT_t/(AT_pybar*AT_ybar) = AT_tybar + AT_phitb*(AT_b/(AT_pybar*AT_ybar)-AT_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 AT_ti = AT_upsilont*AT_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -21687,7 +21701,7 @@ BE_pig*BE_ig = BE_igy*BE_pybar*BE_ybar;
 // Transfers
 BE_tr = BE_try*BE_pybar*BE_ybar;
 // Fiscal rule
-BE_t/(BE_pybar*BE_ybar) = BE_phitb*(BE_b/(BE_pybar*BE_ybar)-BE_bytarget);
+BE_t/(BE_pybar*BE_ybar) = BE_tybar + BE_phitb*(BE_b/(BE_pybar*BE_ybar)-BE_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 BE_ti = BE_upsilont*BE_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -25752,7 +25766,7 @@ ES_pig*ES_ig = ES_igy*ES_pybar*ES_ybar;
 // Transfers
 ES_tr = ES_try*ES_pybar*ES_ybar;
 // Fiscal rule
-ES_t/(ES_pybar*ES_ybar) = ES_phitb*(ES_b/(ES_pybar*ES_ybar)-ES_bytarget);
+ES_t/(ES_pybar*ES_ybar) = ES_tybar + ES_phitb*(ES_b/(ES_pybar*ES_ybar)-ES_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 ES_ti = ES_upsilont*ES_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -29817,7 +29831,7 @@ FI_pig*FI_ig = FI_igy*FI_pybar*FI_ybar;
 // Transfers
 FI_tr = FI_try*FI_pybar*FI_ybar;
 // Fiscal rule
-FI_t/(FI_pybar*FI_ybar) = FI_phitb*(FI_b/(FI_pybar*FI_ybar)-FI_bytarget);
+FI_t/(FI_pybar*FI_ybar) = FI_tybar + FI_phitb*(FI_b/(FI_pybar*FI_ybar)-FI_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 FI_ti = FI_upsilont*FI_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -33882,7 +33896,7 @@ FR_pig*FR_ig = FR_igy*FR_pybar*FR_ybar;
 // Transfers
 FR_tr = FR_try*FR_pybar*FR_ybar;
 // Fiscal rule
-FR_t/(FR_pybar*FR_ybar) = FR_phitb*(FR_b/(FR_pybar*FR_ybar)-FR_bytarget);
+FR_t/(FR_pybar*FR_ybar) = FR_tybar + FR_phitb*(FR_b/(FR_pybar*FR_ybar)-FR_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 FR_ti = FR_upsilont*FR_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -37947,7 +37961,7 @@ GR_pig*GR_ig = GR_igy*GR_pybar*GR_ybar;
 // Transfers
 GR_tr = GR_try*GR_pybar*GR_ybar;
 // Fiscal rule
-GR_t/(GR_pybar*GR_ybar) = GR_phitb*(GR_b/(GR_pybar*GR_ybar)-GR_bytarget);
+GR_t/(GR_pybar*GR_ybar) = GR_tybar + GR_phitb*(GR_b/(GR_pybar*GR_ybar)-GR_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 GR_ti = GR_upsilont*GR_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -42012,7 +42026,7 @@ IT_pig*IT_ig = IT_igy*IT_pybar*IT_ybar;
 // Transfers
 IT_tr = IT_try*IT_pybar*IT_ybar;
 // Fiscal rule
-IT_t/(IT_pybar*IT_ybar) = IT_phitb*(IT_b/(IT_pybar*IT_ybar)-IT_bytarget);
+IT_t/(IT_pybar*IT_ybar) = IT_tybar + IT_phitb*(IT_b/(IT_pybar*IT_ybar)-IT_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 IT_ti = IT_upsilont*IT_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -46077,7 +46091,7 @@ NL_pig*NL_ig = NL_igy*NL_pybar*NL_ybar;
 // Transfers
 NL_tr = NL_try*NL_pybar*NL_ybar;
 // Fiscal rule
-NL_t/(NL_pybar*NL_ybar) = NL_phitb*(NL_b/(NL_pybar*NL_ybar)-NL_bytarget);
+NL_t/(NL_pybar*NL_ybar) = NL_tybar + NL_phitb*(NL_b/(NL_pybar*NL_ybar)-NL_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 NL_ti = NL_upsilont*NL_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -50142,7 +50156,7 @@ PT_pig*PT_ig = PT_igy*PT_pybar*PT_ybar;
 // Transfers
 PT_tr = PT_try*PT_pybar*PT_ybar;
 // Fiscal rule
-PT_t/(PT_pybar*PT_ybar) = PT_phitb*(PT_b/(PT_pybar*PT_ybar)-PT_bytarget);
+PT_t/(PT_pybar*PT_ybar) = PT_tybar + PT_phitb*(PT_b/(PT_pybar*PT_ybar)-PT_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 PT_ti = PT_upsilont*PT_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -54207,7 +54221,7 @@ DE_pig*DE_ig = DE_igy*DE_pybar*DE_ybar;
 // Transfers
 DE_tr = DE_try*DE_pybar*DE_ybar;
 // Fiscal rule
-DE_t/(DE_pybar*DE_ybar) = DE_phitb*(DE_b/(DE_pybar*DE_ybar)-DE_bytarget);
+DE_t/(DE_pybar*DE_ybar) = DE_tybar + DE_phitb*(DE_b/(DE_pybar*DE_ybar)-DE_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 DE_ti = DE_upsilont*DE_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -58274,7 +58288,7 @@ RU_pig*RU_ig = RU_igy*RU_pybar*RU_ybar;
 // Transfers
 RU_tr = RU_try*RU_pybar*RU_ybar;
 // Fiscal rule
-RU_t/(RU_pybar*RU_ybar) = RU_phitb*(RU_b/(RU_pybar*RU_ybar)-RU_bytarget);
+RU_t/(RU_pybar*RU_ybar) = RU_tybar + RU_phitb*(RU_b/(RU_pybar*RU_ybar)-RU_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 RU_ti = RU_upsilont*RU_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -62339,7 +62353,7 @@ RW_pig*RW_ig = RW_igy*RW_pybar*RW_ybar;
 // Transfers
 RW_tr = RW_try*RW_pybar*RW_ybar;
 // Fiscal rule
-RW_t/(RW_pybar*RW_ybar) = RW_phitb*(RW_b/(RW_pybar*RW_ybar)-RW_bytarget);
+RW_t/(RW_pybar*RW_ybar) = RW_tybar + RW_phitb*(RW_b/(RW_pybar*RW_ybar)-RW_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 RW_ti = RW_upsilont*RW_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -66404,7 +66418,7 @@ US_pig*US_ig = US_igy*US_pybar*US_ybar;
 // Transfers
 US_tr = US_try*US_pybar*US_ybar;
 // Fiscal rule
-US_t/(US_pybar*US_ybar) = US_phitb*(US_b/(US_pybar*US_ybar)-US_bytarget);
+US_t/(US_pybar*US_ybar) = US_tybar + US_phitb*(US_b/(US_pybar*US_ybar)-US_bytarget);
 // Auxiliary equation for determining the distribution of lump-sum taxes
 US_ti = US_upsilont*US_t;
 /* Note: Valid parameter space: 0 <= upsilont <= 1/(1-omega) with
@@ -67089,6 +67103,34 @@ US_size*US_bf =
 	
 		RW_bf/US_r(-1) = RW_bf(-1)+RW_tb(-1)/RW_rer(-1);
 	
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	RA_bfy = RA_rer*RA_bf/US_pic/(RA_py*RA_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	AT_bfy = AT_rer*AT_bf/US_pic/(AT_py*AT_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	BE_bfy = BE_rer*BE_bf/US_pic/(BE_py*BE_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	ES_bfy = ES_rer*ES_bf/US_pic/(ES_py*ES_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	FI_bfy = FI_rer*FI_bf/US_pic/(FI_py*FI_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	FR_bfy = FR_rer*FR_bf/US_pic/(FR_py*FR_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	GR_bfy = GR_rer*GR_bf/US_pic/(GR_py*GR_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	IT_bfy = IT_rer*IT_bf/US_pic/(IT_py*IT_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	NL_bfy = NL_rer*NL_bf/US_pic/(NL_py*NL_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	PT_bfy = PT_rer*PT_bf/US_pic/(PT_py*PT_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	DE_bfy = DE_rer*DE_bf/US_pic/(DE_py*DE_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	RU_bfy = RU_rer*RU_bf/US_pic/(RU_py*RU_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	RW_bfy = RW_rer*RW_bf/US_pic/(RW_py*RW_y);
+	// A reporting variable in relation to output; defined based on the deviation in the international transaction cost ('risk premium')
+	US_bfy = US_rer*US_bf/US_pic/(US_py*US_y);
 US_rer = 1;
 		RADE_nerdep = RA_rerdep/DE_rerdep*RA_pic/DE_pic;
 		// Euler equation for euroarea traded bonds and International transaction cost ('risk premium')

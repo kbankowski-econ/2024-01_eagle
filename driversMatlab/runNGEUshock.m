@@ -15,7 +15,7 @@ utils.call.paths;
 envi = environment.setup();
 
 % Model configuration
-modelName = 'shock_ea_epsr1';
+modelName = 'shock_ngeu';
 modFilesDir = fullfile(project_path, 'eagleParsingTemp', 'modFiles');
 outputDir = fullfile(project_path, 'docs', '2025-02_working-paper', 'figures');
 
