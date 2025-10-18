@@ -1,25 +1,32 @@
-%% RUNMONETARYSHOCK - Execute monetary policy shock simulation and analysis
-%
-% This script performs a complete monetary policy shock analysis including:
-% - Dynare model simulation
-% - IRF calculation and export
-% - Contribution analysis
-% - Visualization generation
-%
-% The script generates output files in docs/2025-02_working-paper/figures/
-% including CSV data, MATLAB plots, and Python-generated IRF charts.
+function runMonetaryShock(modelName)
+%RUNMONETARYSHOCK Execute monetary policy shock simulation and analysis.
+%   runMonetaryShock(MODELNAME) runs the end-to-end analysis for the
+%   supported Dynare models specified by MODELNAME.
+
+arguments
+    modelName {mustBeTextScalar(modelName)}
+end
+
+validModels = ["shock_ea_epsr1", "shock_ngeu"];
+modelNameStr = string(modelName);
+if ~ismember(modelNameStr, validModels)
+    error('runMonetaryShock:InvalidModel', ...
+        'modelName must be one of: %s.', strjoin(validModels, ', '));
+end
+modelName = char(modelNameStr);
 
 %% Setup and Configuration
 % Initialize project paths and environment settings
 utils.call.paths;
-envi = environment.setup();
+envi = environment.setup(); %#ok<NASGU> We keep environment metadata accessible if needed
 
 % Model configuration
-modelName = 'shock_ea_epsr1';
 modFilesDir = fullfile(project_path, 'eagleParsingTemp', 'modFiles');
 outputDir = fullfile(project_path, 'docs', '2025-02_working-paper', 'figures');
 
 % Change to model files directory for Dynare execution
+previousDir = pwd;
+cleanupObj = onCleanup(@() cd(previousDir)); %#ok<NASGU> Ensure directory is restored
 cd(modFilesDir);
 
 %% Dynare Model Simulation
@@ -89,3 +96,4 @@ fprintf('  - %s.csv (IRF data)\n', modelName);
 fprintf('  - %s_irfs.html/pdf/png (IRF charts)\n', modelName);
 fprintf('  - Country decomposition plots\n');
 fprintf('==========================================\n');
+end
