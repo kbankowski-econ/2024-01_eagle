@@ -13,7 +13,7 @@ tby,Trade balance,(x-y)*100,abs. deviation in percent
 by,Government debt ratio,(x-y)*100,abs. deviation
 w,Real wage,(x/y-1)*100,\% deviation
 nd,Hours worked,(x/y-1)*100,\% deviation
-rr,Real interest rate,(x-y)*100,abs. deviation in percent
-r,Nominal interest rate,(x-y)*100,abs. deviation in percent
+rr,Real interest rate (ann.),(x-y)*400,abs. deviation in percent
+r,Nominal interest rate (ann.),(x-y)*400,abs. deviation in percent
 cg,Government consumption,(x/y-1)*100,\% deviation
 ig,Government investment,(x/y-1)*100,\% deviation
