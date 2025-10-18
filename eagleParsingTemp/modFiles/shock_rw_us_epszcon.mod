@@ -13,10 +13,10 @@ steady(solve_algo = 5, markowitz = 5);
 shocks;
     var US_epszcon;
     periods 1;
-    values 0.01;
+    values 0.1;
     var RW_epszcon;
     periods 1;
-    values 0.01;
+    values 0.1;
 end;
 
 perfect_foresight_setup(periods = 100);
