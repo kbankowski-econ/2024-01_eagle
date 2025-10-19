@@ -11,7 +11,7 @@ function environment = setup()
     % import variable dictionary
     environment.varDict = importVarDict(project_path);
     % import variable dictionary
-    environment.varDict = importShockDict(project_path);
+    environment.shockDict = importShockDict(project_path);
 end
 
 % Recursively merges two structures, with s2 taking precedence
