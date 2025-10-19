@@ -70,7 +70,14 @@ def create_irf_plots(
     
     # Derive config filename from model name if not provided
     if config_file is None:
-        config_file = os.path.join(project_path, f'docs/2025-02_working-paper/figures/{model_name}.json')
+        # Try shock-specific JSON file first
+        shock_specific_config = os.path.join(project_path, f'docs/2025-02_working-paper/figures/{model_name}.json')
+        general_config = os.path.join(project_path, 'docs/2025-02_working-paper/figures/shock_general.json')
+        
+        if os.path.exists(shock_specific_config):
+            config_file = shock_specific_config
+        else:
+            config_file = general_config
     
     config = load_config(config_file)
     country_colors = load_country_colors(project_path)
