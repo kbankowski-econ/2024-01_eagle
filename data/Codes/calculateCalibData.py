@@ -1433,6 +1433,7 @@ def create_consolidated_dataframe_from_calculations():
     rename_map = {
     'public_consumption': 'cgybar',
     'private_investment': 'iy',
+    'private_consumption': 'cy',
     'public_investment': 'igybar',
     'debt': 'bytarget',
     'tax_consumption': 'taucbar',

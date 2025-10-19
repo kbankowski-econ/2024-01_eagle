@@ -73,8 +73,8 @@ else
 end
 
 % per-country groups
-shareNames = ["cgybar","iy","igybar"];
-shareMods  = ["cgybar","iy","igybar"];
+shareNames = ["cy", "cgybar","iy","igybar"];
+shareMods  = ["cy", "cgybar","iy","igybar"];
 taxNames   = ["taucbar","taunbar","tauwfbar","tauwhbar","taukbar"];
 taxMods    = ["taucbar","taunbar","tauwfbar","tauwhbar","taukbar"];
 debtNames  = "bytarget";   debtMods  = "bytarget";
