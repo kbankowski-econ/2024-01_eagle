@@ -10,9 +10,15 @@ def load_and_prepare_data(data_file, variables, year_range=(1995, 2019), scale_f
     df['year'] = pd.to_numeric(df['year'])
     df['value'] = df['value'] * scale_factor
     
-    # Filter by variables and year range
-    df = df[df['variable'].isin(variables)]
+    # Extract country from variable name (format: COUNTRY_variable)
+    df[['country', 'base_variable']] = df['variable'].str.split('_', n=1, expand=True)
+    
+    # Filter by base variables and year range
+    df = df[df['base_variable'].isin(variables)]
     df = df[(df['year'] >= year_range[0]) & (df['year'] <= year_range[1])]
+    
+    # Use base_variable as the variable column
+    df['variable'] = df['base_variable']
     
     return df
 
@@ -151,9 +157,9 @@ def create_calibration_charts(
 ):
     """Create two panels of calibration charts."""
     
-    # Define variable sets
-    panel1_variables = ['private_consumption', 'public_consumption', 'private_investment', 'public_investment', 'imy', 'tby']
-    panel2_variables = ['trybar', 'tax_consumption', 'tax_income', 'tax_SSC_households', 'tax_SSC_firms', 'tax_capital', 'debt']
+    # Define variable sets using actual dataset variable names
+    panel1_variables = ['private_consumption', 'cgybar', 'iy', 'igybar', 'imy', 'tby']
+    panel2_variables = ['trybar', 'taucbar', 'taunbar', 'tauwhbar', 'tauwfbar', 'taukbar', 'bytarget']
     
     # Create first panel
     create_single_panel_charts(
