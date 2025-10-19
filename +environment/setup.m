@@ -10,6 +10,8 @@ function environment = setup()
     environment.Meta = hereDeepMerge(environment.Meta, struct());
     % import variable dictionary
     environment.varDict = importVarDict(project_path);
+    % import variable dictionary
+    environment.varDict = importShockDict(project_path);
 end
 
 % Recursively merges two structures, with s2 taking precedence
@@ -61,6 +63,20 @@ function Table = importVarDict(project_path)
     opts = setvartype( ...
         opts ...
         , {'description', 'diffTransf', 'diffDesc'}, 'string' ...
+    );
+
+    Table = readtable(fileName, opts);
+
+end
+
+function Table = importShockDict(project_path)
+
+    fileName = sprintf('%s/+environment/csvFiles/shockDict.csv', project_path); 
+    
+    opts = detectImportOptions(fileName, 'ReadRowNames', true,  'ReadVariableNames', true, 'Delimiter', ',');
+    opts = setvartype( ...
+        opts ...
+        , {'description'}, 'string' ...
     );
 
     Table = readtable(fileName, opts);
