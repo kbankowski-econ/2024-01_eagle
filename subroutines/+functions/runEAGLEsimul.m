@@ -7,12 +7,6 @@ arguments
     modelName {mustBeTextScalar(modelName)}
 end
 
-validModels = ["shock_ea_epsr1", "shock_ngeu"];
-modelNameStr = string(modelName);
-if ~ismember(modelNameStr, validModels)
-    error('runMonetaryShock:InvalidModel', ...
-        'modelName must be one of: %s.', strjoin(validModels, ', '));
-end
 modelName = char(modelNameStr);
 
 %% Setup and Configuration
