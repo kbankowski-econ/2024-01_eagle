@@ -1,4 +1,4 @@
-RA_trybar, 0.1387;
+RA_trybar, 0.1384;
 AT_trybar, 0.2226;
 BE_trybar, 0.2302;
 ES_trybar, 0.1628;
@@ -9,6 +9,6 @@ IT_trybar, 0.2024;
 NL_trybar, 0.2042;
 PT_trybar, 0.1657;
 DE_trybar, 0.2423;
-RU_trybar, 0.1640;
-RW_trybar, 0.0990;
+RU_trybar, 0.1654;
+RW_trybar, 0.0840;
 US_trybar, 0.1351;

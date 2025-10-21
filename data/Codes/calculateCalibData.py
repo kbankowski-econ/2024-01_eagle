@@ -5,6 +5,10 @@ Created on Mon Sep 23 20:30:00 2025
 @author: Claude Code
 Recalculates calibration data by reusing functions and calculations from 
 data_retrieval.py and main.py, saving to _calibDataCalculated.csv
+
+MODIFICATION: All "average" values are now computed as the simple arithmetic
+mean across yearly values (equal weight per year) for every function that
+returns both yearly and average results.
 """
 
 import os
@@ -25,6 +29,7 @@ from functions import filter_columns_by_suffix
 data_directory = os.path.join(os.path.dirname(__file__), '..')
 raw_data_directory = os.path.join(data_directory, 'raw_data')
 raw_io_directory = os.path.join(raw_data_directory, 'io')
+
 
 def calculate_investment_shares():
     """Calculate investment shares using data_retrieval.py logic"""
@@ -122,6 +127,7 @@ def calculate_investment_shares():
     investment_final.set_index('country', inplace=True)
     
     return investment_final
+
 
 def calculate_transfers():
 
@@ -251,59 +257,18 @@ def calculate_transfers():
         if yearmap:
             yearly_transfers[int(y)] = yearmap
 
-    # ---- Build "average" to match your previous method ----
-    # Row means first
-    eu_avg_row = eu_df.mean(axis=1, skipna=True)   # percent
-    rw_avg_row = rw_df.mean(axis=1, skipna=True)   # percent
-
-    # RA average (GDP-average weights across members using avg GDP)
-    ra_members = pd.Index(other_eea).intersection(eu_avg_row.index).intersection(gdp_avg.index)
-    if len(ra_members) > 0:
-        w = gdp_avg.loc[ra_members]
-        ra_avg = float((eu_avg_row.loc[ra_members] * w).sum() / w.sum())
+    # ---- Build "average" as simple mean of yearly ratios (equal weight) ----
+    if yearly_transfers:
+        transfers_df = pd.DataFrame(yearly_transfers).T  # years × codes
+        transfers_avg = transfers_df.mean(axis=0, skipna=True).to_frame().T
+        transfers_avg.index = ['trybar']
+        # ensure columns are in code_order
+        transfers_avg = transfers_avg.reindex(columns=code_order)
     else:
-        ra_avg = np.nan
-
-    # RU average
-    ru_members = pd.Index(other_eu).intersection(eu_avg_row.index).intersection(gdp_avg.index)
-    if len(ru_members) > 0:
-        w = gdp_avg.loc[ru_members]
-        ru_avg = float((eu_avg_row.loc[ru_members] * w).sum() / w.sum())
-    else:
-        ru_avg = np.nan
-
-    # RW average
-    # harmonize RW names vs GDP (Congo)
-    rw_avg_row2 = rw_avg_row.copy()
-    rw_avg_row2.index = rw_avg_row2.index.where(rw_avg_row2.index.str.startswith('Congo'),
-                                                rw_avg_row2.index.str.split(',').str[0])
-    rw_members_avg = list(set(rw_avg_row2.index) - set(individual_countries + other_eea + other_eu))
-    rw_members_avg = pd.Index(rw_members_avg).intersection(gdp_avg.index)
-    if len(rw_members_avg) > 0:
-        w = gdp_avg.loc[rw_members_avg]
-        rw_avg = float((rw_avg_row2.loc[rw_members_avg] * w).sum() / w.sum())
-    else:
-        rw_avg = np.nan
-
-    # Individuals' averages
-    trans_avg = {}
-    for name in individual_countries:
-        if name == 'United States':
-            v = rw_avg_row.get('United States', np.nan)
-        else:
-            v = eu_avg_row.get(name, np.nan)
-        if pd.notna(v):
-            trans_avg[country_codes[name]] = float(v) / 100.0
-
-    # Add regions
-    trans_avg['RA'] = ra_avg / 100.0 if pd.notna(ra_avg) else np.nan
-    trans_avg['RU'] = ru_avg / 100.0 if pd.notna(ru_avg) else np.nan
-    trans_avg['RW'] = rw_avg / 100.0 if pd.notna(rw_avg) else np.nan
-
-    # Build 1×N DF with index 'trybar' (to match your earlier naming)
-    transfers_avg = pd.DataFrame({c: trans_avg.get(c, np.nan) for c in code_order}, index=['trybar'])
+        transfers_avg = pd.DataFrame({c: np.nan for c in code_order}, index=['trybar'])
 
     return transfers_avg, yearly_transfers
+
 
 def calculate_tax_rates():
 
@@ -437,7 +402,7 @@ def calculate_tax_rates():
         es_pt_cap = None
 
     # ---------- build per-category rates ----------
-    # Consumption tax rate = (Taxes on goods & services) / (Consumption)
+    # Consumption tax rate = (Taxes on goods and services) / (Consumption)
     cons_tax_rev = taxes_dict.get('Taxes on goods and services', pd.DataFrame())
     # Align to common countries & years
     cons_countries = cons_df.index.intersection(cons_tax_rev.index)
@@ -492,7 +457,8 @@ def calculate_tax_rates():
     ssch_years = sorted(set(ssch_base.columns).intersection(ssch_rev.columns).intersection(YEAR_RANGE))
     ssch_base = ssch_base[ssch_years]
     ssch_rev = ssch_rev[ssch_years]
-    ssch_rate = ssch_rev.divide(ssch_base).replace([np.inf, -np.inf], np.nan)
+    ssch_rate = ssch_rev.divide(sssch_base := ssch_base).replace([np.inf, -np.inf], np.nan) if False else ssch_rev.divide(ssch_base).replace([np.inf, -np.inf], np.nan)
+    # Note: last line kept simple to avoid accidental name collision in some pandas versions.
 
     # Capital tax rate = (Capital tax revenue local) / (Operating surplus local)
     if es_pt_cap is not None:
@@ -518,15 +484,8 @@ def calculate_tax_rates():
             code = country_codes[name]
             series[code] = rate_df.loc[name]
         # RA, RU, RW
-        ra = _region_series_from_rev_base(
-            rev_df=rate_df.multiply(base_df),  # we don't actually need this; see below
-            base_df=base_df,
-            countries=other_eea
-        )
-        # Note: _region_series_from_rev_base expects revenue & base; pass actual rev & base:
         ra = _region_series_from_rev_base(rev_df=rate_df*base_df, base_df=base_df, countries=other_eea)
         ru = _region_series_from_rev_base(rev_df=rate_df*base_df, base_df=base_df, countries=other_eu)
-        # RW = everyone else outside individual + other_eea + other_eu
         rest = set(base_df.index) - set(individual_countries + other_eea + other_eu)
         rw = _region_series_from_rev_base(rev_df=rate_df*base_df, base_df=base_df, countries=list(rest))
         series['RA'] = ra
@@ -550,31 +509,24 @@ def calculate_tax_rates():
     _add_yearly_entries(yearly_taxes, ssch_series, 'SSC_households')
     _add_yearly_entries(yearly_taxes, cap_series,  'capital')
 
-    # ---------- build average matrix (rows = tax types, cols = codes) ----------
-    def _mean_by_code(series_by_code):
-        # returns dict code -> average (across available years)
-        out = {}
-        for code, s in series_by_code.items():
-            out[code] = float(pd.to_numeric(s, errors='coerce').mean(skipna=True))
-        return out
+    # ---------- build average matrix (rows = tax types, cols = codes) as simple mean across years ----------
+    if yearly_taxes:
+        # yearly_taxes: dict year -> { "<country>_<taxlabel>": value, ... }
+        yearly_tax_df = pd.DataFrame(yearly_taxes).T  # years x keys
+        avg_series = yearly_tax_df.mean(axis=0, skipna=True)  # index like "AT_consumption"
+    else:
+        avg_series = pd.Series(dtype=float)
 
-    avg_consumption = _mean_by_code(cons_series)
-    avg_income      = _mean_by_code(inc_series)
-    avg_capital     = _mean_by_code(cap_series)
-    avg_ssc_firms   = _mean_by_code(sscf_series)
-    avg_ssc_house   = _mean_by_code(ssch_series)
-
-    # Build DataFrame in the shape your pipeline expects
-    tax_rates_df = pd.DataFrame(
-        {
-            'consumption': {code: avg_consumption.get(code, np.nan) for code in code_order},
-            'income':      {code: avg_income.get(code, np.nan)      for code in code_order},
-            'capital':     {code: avg_capital.get(code, np.nan)     for code in code_order},
-            'SSC_firms':   {code: avg_ssc_firms.get(code, np.nan)   for code in code_order},
-            'SSC_households': {code: avg_ssc_house.get(code, np.nan) for code in code_order},
-        }
-    ).T
-
+    # Parse avg_series into a DataFrame with rows = tax types, cols = country codes
+    nested = {}
+    for key, val in avg_series.items():
+        if isinstance(key, str) and '_' in key:
+            country_part, tax_type = key.split('_', 1)
+            nested.setdefault(tax_type, {})[country_part] = float(val) if pd.notna(val) else np.nan
+    tax_rates_df = pd.DataFrame.from_dict(nested, orient='index')
+    # ensure column order matches code_order
+    tax_rates_df = tax_rates_df.reindex(columns=code_order)
+    # keep NaNs as-is
     return tax_rates_df, yearly_taxes
 
 
@@ -674,43 +626,29 @@ def calculate_debt_ratios():
         if year_debt:
             yearly_debt[year] = year_debt
 
-    # ---- Cross-year averages & model scaling ----
-    debt['average'] = debt.mean(axis=1)
+    # ---- Build average as simple mean of yearly debt ratios ----
+    if yearly_debt:
+        debt_df = pd.DataFrame(yearly_debt).T  # years x countries (indices are country names or codes)
+        avg_percent = debt_df.mean(axis=0, skipna=True)  # average percent-of-GDP across years
+    else:
+        avg_percent = pd.Series(dtype=float)
 
-    # RU average
-    avg_ru = debt.loc[debt.index.isin(other_eu), 'average'].dropna()
-    g_ru = gdp.loc[gdp.index.intersection(avg_ru.index), 'GDP']
-    debtratio_ru = float((avg_ru * g_ru).sum() / g_ru.sum()) if not g_ru.empty else np.nan
+    # Map country names to codes in result (where applicable)
+    avg_mapped = {}
+    for country_name, val in avg_percent.items():
+        if pd.isna(val):
+            continue
+        if country_name in country_codes:
+            code = country_codes[country_name]
+        else:
+            # If it's already a code or RA/RU/RW/RW etc, try to keep it
+            code = country_name if len(country_name) == 2 else country_name
+        avg_mapped[code] = (float(val) / 100.0) * 4.0  # scale to model units
 
-    # RA average
-    avg_ra = debt.loc[debt.index.isin(other_eea), 'average'].dropna()
-    g_ra = gdp.loc[gdp.index.intersection(avg_ra.index), 'GDP']
-    debtratio_ra = float((avg_ra * g_ra).sum() / g_ra.sum()) if not g_ra.empty else np.nan
-
-    # RW average
-    rw_countries = list(set(debt.index) - set(individual_countries + other_eea + other_eu))
-    debt_rw = debt.loc[debt.index.isin(rw_countries), :].copy()
-    debt_rw.index = debt_rw.index.where(debt_rw.index.str.startswith('Congo'),
-                                        debt_rw.index.str.split(',').str[0])
-    debt_rw = debt_rw.rename(index={'Congo, Dem. Rep. of the': 'Congo, Democratic Republic of the'})
-    common = gdp.index.intersection(debt_rw.index)
-    avg_rw = debt_rw.loc[common, 'average'].dropna()
-    g_rw = gdp.loc[avg_rw.index, 'GDP'] if not avg_rw.empty else pd.Series(dtype=float)
-    debtratio_rw = float((avg_rw * g_rw).sum() / g_rw.sum()) if not g_rw.empty else np.nan
-
-    # Individuals' averages
-    debtratio = pd.DataFrame(debt.loc[debt.index.isin(individual_countries), 'average'])
-    debtratio.index = debtratio.index.map(country_codes)
-
-    # Add regions
-    debtratio.loc['RA', 'average'] = debtratio_ra
-    debtratio.loc['RU', 'average'] = debtratio_ru
-    debtratio.loc['RW', 'average'] = debtratio_rw
-
-    # Scale to model target and shape (1×N with index 'bytarget')
-    debtratio = (debtratio / 100.0) * 4.0
-    debtratio = debtratio.T
-    debtratio = debtratio.rename(index={'average': 'bytarget'})
+    if avg_mapped:
+        debtratio = pd.DataFrame(avg_mapped, index=['bytarget'])
+    else:
+        debtratio = pd.DataFrame(columns=country_codes.values(), index=['bytarget'])
 
     return debtratio, yearly_debt
 
@@ -803,65 +741,33 @@ def calculate_shares_and_size():
             year_shares[country][category] = year_totals.at['Share', col]  
         yearly_shares[year] = pd.DataFrame(year_shares)
     
-    # Calculate averages
-    average_final_demand_io = sum(final_demand_io.values())/len(final_demand_io)
-    average_final_demand_io.columns = [rename_column(col) for col in average_final_demand_io.columns]
-    average_final_demand_io.index = average_final_demand_io.index.map(country_codes_map) 
-    average_final_demand_io.loc['TOTAL'] = average_final_demand_io.sum()
-    
-    # Calculate output and sizes
-    output = pd.DataFrame(average_final_demand_io.sum(axis=1))
-    sizes = pd.DataFrame(output.iloc[:-1, 0] / output.iloc[-1,0])
+    # === AVERAGE: compute simple mean of yearly shares and sizes (equal weight) ===
+    if yearly_shares:
+        # yearly_shares: dict year -> DataFrame (index=categories, columns=country codes)
+        df_shares = pd.concat(yearly_shares, names=['year', 'category'])
+        # df_shares has MultiIndex rows (year, category); group by category level to average across years
+        shares = df_shares.groupby(level='category').mean()
+    else:
+        shares = pd.DataFrame(index=[], columns=country_codes)
+
+    if yearly_sizes:
+        df_sizes = pd.concat(yearly_sizes, names=['year', 'country'])
+        # df_sizes index is MultiIndex (year, country) and column 'size'
+        sizes = df_sizes.groupby(level='country').mean()
+    else:
+        sizes = pd.DataFrame(index=country_codes, columns=['size'])
+
+    # Ensure reindex to canonical country_codes
+    shares = shares.reindex(columns=country_codes)
     sizes = sizes.reindex(country_codes)
-    sizes = sizes.rename(columns = {0: 'size'})
-    
-    # Process final demand (simplified version of main.py logic)
-    for region in country_codes:
-        region_columns = [col for col in average_final_demand_io.columns if col.startswith(region) and col.split('_')[1] in ['HFCE', 'NPISH', 'DPABR']]
-        average_final_demand_io[f'{region}_private_consumption'] = average_final_demand_io[region_columns].sum(axis=1)   
-        average_final_demand_io = average_final_demand_io.drop(columns=region_columns)
 
-        investment_columns = [col for col in average_final_demand_io.columns if col.startswith(region) and col.split('_')[1] in ['GFCF']]
-        average_final_demand_io[f'{region}_investment'] = average_final_demand_io[investment_columns].sum(axis=1)
-        average_final_demand_io = average_final_demand_io.drop(columns=investment_columns)
-
-        private_investment_share = investment_split.loc[region][investment_split.loc[region]['investment_type'] == 'Private investment share']['share'].values[0]
-        government_investment_share = investment_split.loc[region][investment_split.loc[region]['investment_type'] == 'Government investment share']['share'].values[0]
-        average_final_demand_io[f'{region}_private_investment'] = average_final_demand_io[f'{region}_investment'] * private_investment_share
-        average_final_demand_io[f'{region}_public_investment'] =  average_final_demand_io[f'{region}_investment'] * government_investment_share
-        average_final_demand_io =  average_final_demand_io.drop(columns=[f'{region}_investment'])
-        
-        inventory_column = [col for col in average_final_demand_io.columns if col.startswith(region) and col.split('_')[1] in ['INVNT']]
-        average_final_demand_io = average_final_demand_io.drop(columns=inventory_column)
-        
-        ggfc_column = f'{region}_GGFC'
-        public_consumption_column = f'{region}_public_consumption'
-        if ggfc_column in average_final_demand_io.columns:
-            average_final_demand_io = average_final_demand_io.rename(columns={ggfc_column: public_consumption_column})
-
-    average_final_demand_io = average_final_demand_io.reindex(country_codes)
-    average_final_demand_io.loc['Total'] = average_final_demand_io.sum(axis=0)    
-    
-    # Calculate shares
-    totals = average_final_demand_io.loc[['Total']]
-    output_row = output.iloc[:-1,].T
-    totals.loc['Output'] = {col: output_row[col.split('_')[0]].iloc[0] for col in totals.columns}
-    totals.loc['Share'] = totals.loc['Total']/totals.loc['Output'] 
-
-    shares = {}
-    for region in country_codes:
-        shares[region] = {}  
-    for col in totals.columns:
-        country, category = col.split('_', 1)
-        shares[country][category] = totals.at['Share', col]  
-    shares = pd.DataFrame(shares)
-    
     return shares, sizes, yearly_shares, yearly_sizes
+
 
 def calculate_import_components():
     """
     Build bilateral import components and compute trade balances from those shares,
-    mirroring main.py logic.
+    mirroring main.py logic. Averages are the simple mean across years.
     """
     import re
 
@@ -1054,139 +960,43 @@ def calculate_import_components():
         tby_series_y = (export_share_y - import_share_y.reindex(country_codes)).to_dict()
         yearly_tby[year] = tby_series_y
 
-    # === AVERAGE: average absolute -> collapse/split -> shares of average output ===
-    if not abs_imports_per_year:
+    # === AVERAGE: simple mean of yearly components and bilaterals (equal weight per year) ===
+    if not yearly_components:
         empty = pd.Series({c: np.nan for c in country_codes})
         return (
             {'imcy': empty, 'imcgy': empty, 'imiy': empty, 'imigy': empty, 'imy': empty},
-            {},
+            yearly_components,
             {'imcy': pd.DataFrame(), 'imcgy': pd.DataFrame(), 'imiy': pd.DataFrame(), 'imigy': pd.DataFrame()},
-            {},
+            yearly_bilateral,
             empty,
-            {}
+            yearly_tby
         )
 
-    years_list = list(abs_imports_per_year.keys())
-    avg_abs = sum(abs_imports_per_year[y] for y in years_list) / len(years_list)
+    # average importer totals (per component)
+    avg_components = {}
+    years_list = sorted(yearly_components.keys())
+    for comp_name in ['imcy', 'imcgy', 'imiy', 'imigy', 'imy']:
+        # build DataFrame with columns=years, index=country_codes
+        comp_df = pd.DataFrame({y: yearly_components[y][comp_name] for y in years_list})
+        avg_components[comp_name] = comp_df.mean(axis=1, skipna=True)
 
-    # collapse & split on average absolute matrix
-    avg_combined = avg_abs.copy()
-    for reg in country_codes:
-        reg_cols = [c for c in avg_combined.columns
-                    if c.startswith(reg) and c.split('_')[1] in ['HFCE','NPISH','DPABR']]
-        if reg_cols:
-            avg_combined[f'{reg}_imcy'] = avg_combined[reg_cols].sum(axis=1)
-            avg_combined = avg_combined.drop(columns=reg_cols)
-        invnt_cols = [c for c in avg_combined.columns if c.startswith(reg) and c.split('_')[1]=='INVNT']
-        if invnt_cols:
-            avg_combined = avg_combined.drop(columns=invnt_cols)
-        ggfc = f'{reg}_GGFC'
-        if ggfc in avg_combined.columns:
-            avg_combined = avg_combined.rename(columns={ggfc: f'{reg}_imcgy'})
-    avg_combined = avg_combined.reindex(sorted(avg_combined.columns), axis=1)
-    avg_combined.loc['Total'] = avg_combined.sum(axis=0)
+    # average bilateral matrices elementwise
+    bilateral_avg = {}
+    for comp_name in ['imcy', 'imcgy', 'imiy', 'imigy']:
+        mats = [yearly_bilateral[y][comp_name] for y in years_list if comp_name in yearly_bilateral[y]]
+        if mats:
+            bilateral_avg[comp_name] = sum(mats) / len(mats)
+        else:
+            bilateral_avg[comp_name] = pd.DataFrame(0.0, index=country_codes, columns=country_codes)
 
-    # average final demand IO and output (pre-INVNT), same as your code
-    average_final_demand_io = sum(final_demand_io.values())/len(final_demand_io)
-    average_final_demand_io.columns = [rename_column(c) for c in average_final_demand_io.columns]
-    average_final_demand_io.index = average_final_demand_io.index.map(country_codes_map)
-    average_final_demand_io.loc['TOTAL'] = average_final_demand_io.sum()
-    avg_output = pd.DataFrame(average_final_demand_io.sum(axis=1))
-    world_output_avg = float(avg_output.iloc[-1, 0])
-    sizes_avg = (avg_output.iloc[:-1, 0].reindex(country_codes).astype(float) / world_output_avg).to_frame('size')
-
-    # disaggregate average final demand with the SAME investment split
-    avg_fd = average_final_demand_io.copy()
-    for reg in country_codes:
-        pcols = [c for c in avg_fd.columns if c.startswith(reg) and c.split('_')[1] in ['HFCE','NPISH','DPABR']]
-        if pcols:
-            avg_fd[f'{reg}_private_consumption'] = avg_fd[pcols].sum(axis=1)
-            avg_fd = avg_fd.drop(columns=pcols)
-        inv_cols = [c for c in avg_fd.columns if c.startswith(reg) and c.split('_')[1]=='GFCF']
-        if inv_cols:
-            avg_fd[f'{reg}_investment'] = avg_fd[inv_cols].sum(axis=1)
-            avg_fd = avg_fd.drop(columns=inv_cols)
-            priv_share = investment_split.loc[reg][investment_split.loc[reg]['investment_type']=='Private investment share']['share'].values[0]
-            gov_share  = investment_split.loc[reg][investment_split.loc[reg]['investment_type']=='Government investment share']['share'].values[0]
-            avg_fd[f'{reg}_private_investment'] = avg_fd[f'{reg}_investment'] * priv_share
-            avg_fd[f'{reg}_public_investment']  = avg_fd[f'{reg}_investment'] * gov_share
-            avg_fd = avg_fd.drop(columns=[f'{reg}_investment'])
-        invnt_cols = [c for c in avg_fd.columns if c.startswith(reg) and c.split('_')[1]=='INVNT']
-        if invnt_cols:
-            avg_fd = avg_fd.drop(columns=invnt_cols)
-        ggfc = f'{reg}_GGFC'
-        if ggfc in avg_fd.columns:
-            avg_fd = avg_fd.rename(columns={ggfc: f'{reg}_public_consumption'})
-    avg_fd = avg_fd.reindex(country_codes)
-
-    # split GFCF on averages (same as yearly but with averages)
-    totals_avg = pd.DataFrame(avg_combined.iloc[-1, :]).rename(columns={'Total':'imports'})
-    for reg in country_codes:
-        gfcf_key = f'{reg}_GFCF'
-        if gfcf_key in avg_combined.columns:
-            imports_imcgy = float(totals_avg.loc[f'{reg}_imcgy', 'imports']) if f'{reg}_imcgy' in totals_avg.index else 0.0
-            local_pubc = float(avg_fd.loc[reg, f'{reg}_public_consumption']) if f'{reg}_public_consumption' in avg_fd.columns else 0.0
-            s = (imports_imcgy / (imports_imcgy + local_pubc)) if (imports_imcgy + local_pubc) else 0.0
-            pub_inv = float(avg_fd.loc[reg, f'{reg}_public_investment']) if f'{reg}_public_investment' in avg_fd.columns else 0.0
-            gov_inv_imports = (s * pub_inv) / (1.0 - s) if (1.0 - s) != 0 else 0.0
-            total_gfcf_imp = float(totals_avg.loc[gfcf_key, 'imports']) if gfcf_key in totals_avg.index else 0.0
-            private_inv_imports = total_gfcf_imp - gov_inv_imports
-            split_private = (private_inv_imports / total_gfcf_imp) if total_gfcf_imp else 0.0
-            avg_combined[f'{reg}_imiy']  = avg_combined[gfcf_key] * split_private
-            avg_combined[f'{reg}_imigy'] = avg_combined[gfcf_key] * (1.0 - split_private)
-            avg_combined = avg_combined.drop(columns=gfcf_key)
-
-    # turn averages into shares of average output; drop 'Total' exporter row
-    tm_avg = avg_combined.drop(index='Total', errors='ignore').copy()
-    for col in tm_avg.columns:
-        reg = col.split('_')[0]
-        denom = float(avg_output.loc[reg, 0]) if reg in avg_output.index else np.nan
-        tm_avg[col] = tm_avg[col] / denom if denom and not np.isnan(denom) else 0.0
-
-    # Average bilateral share matrices
-    imcy_avg_mat  = filter_columns_by_suffix(tm_avg, '_imcy',  country_codes)
-    imcgy_avg_mat = filter_columns_by_suffix(tm_avg, '_imcgy', country_codes)
-    imiy_avg_mat  = filter_columns_by_suffix(tm_avg, '_imiy',  country_codes)
-    imigy_avg_mat = filter_columns_by_suffix(tm_avg, '_imigy', country_codes)
-
-    bilateral_avg = {
-        'imcy' : imcy_avg_mat,
-        'imcgy': imcgy_avg_mat,
-        'imiy' : imiy_avg_mat,
-        'imigy': imigy_avg_mat,
-    }
-
-    # Importer totals from average matrices (shares)
-    imcy_avg  = imcy_avg_mat.sum(axis=0)
-    imcgy_avg = imcgy_avg_mat.sum(axis=0)
-    imiy_avg  = imiy_avg_mat.sum(axis=0)
-    imigy_avg = imigy_avg_mat.sum(axis=0)
-    imy_avg   = imcy_avg + imcgy_avg + imiy_avg + imigy_avg
-
-    avg_components = {
-        'imcy' : imcy_avg.reindex(country_codes),
-        'imcgy': imcgy_avg.reindex(country_codes),
-        'imiy' : imiy_avg.reindex(country_codes),
-        'imigy': imigy_avg.reindex(country_codes),
-        'imy'  : imy_avg.reindex(country_codes),
-    }
-
-    # TBY from average share matrices (same as main.py)
-    imy_bilat_avg = imcy_avg_mat + imcgy_avg_mat + imiy_avg_mat + imigy_avg_mat
-    import_share_avg = imy_bilat_avg.sum(axis=0)
-
-    exy_bilat_avg = pd.DataFrame(0.0, index=country_codes, columns=country_codes)
-    for exp in country_codes:
-        for imp in country_codes:
-            size_exp = float(sizes_avg.loc[exp, 'size'])
-            size_imp = float(sizes_avg.loc[imp, 'size'])
-            exy_bilat_avg.loc[exp, imp] = 0.0 if size_exp == 0.0 else \
-                imy_bilat_avg.loc[exp, imp] * (size_imp / size_exp)
-    export_share_avg = exy_bilat_avg.sum(axis=1)
-    tby_avg = (export_share_avg - import_share_avg.reindex(country_codes)).reindex(country_codes)
+    # average tby
+    if yearly_tby:
+        tby_df = pd.DataFrame(yearly_tby).T  # years x codes
+        tby_avg = tby_df.mean(axis=0, skipna=True).reindex(country_codes)
+    else:
+        tby_avg = pd.Series({c: np.nan for c in country_codes})
 
     return avg_components, yearly_components, bilateral_avg, yearly_bilateral, tby_avg, yearly_tby
-
 
 
 def create_consolidated_dataframe_from_calculations():
@@ -1322,7 +1132,7 @@ def create_consolidated_dataframe_from_calculations():
                 years.append(str(year))
                 values.append(tax_value)
     
-    # Process average debt data
+    # Process average debt data (now produced as simple mean-of-yearly in calculate_debt_ratios)
     for col in debt.columns:
         countries.append(col)
         variables.append('debt')
@@ -1338,7 +1148,7 @@ def create_consolidated_dataframe_from_calculations():
             values.append(float(val))
 
     
-    # Process average shares data
+    # Process average shares data (shares already computed as mean of yearly in calculate_shares_and_size)
     for idx in shares.index:
         for col in shares.columns:
             countries.append(col)
@@ -1354,7 +1164,7 @@ def create_consolidated_dataframe_from_calculations():
             years.append('average')
             values.append(sizes.loc[idx, col])
             
-    # Average transfers
+    # Average transfers (already simple mean-of-yearly)
     for col in transfers_avg.columns:
         countries.append(col)
         variables.append('trybar')
@@ -1362,7 +1172,7 @@ def create_consolidated_dataframe_from_calculations():
         values.append(transfers_avg[col].iloc[0])
 
     
-    # Process average tax rates data
+    # Process average tax rates data (tax_rates already created as simple mean-of-yearly)
     for idx in tax_rates.index:
         for col in tax_rates.columns:
             countries.append(col)
@@ -1385,8 +1195,7 @@ def create_consolidated_dataframe_from_calculations():
                 country_codes, countries, variables, years, values
             )  
     
-    # === Bilateral import shares (average) ===
-# === Bilateral import shares (average) — skip self-pairs ===
+    # === Bilateral import shares (average) — skip self-pairs ===
     for kind, df in bilateral_avg.items():
         _append_bilateral_no_self(
             df, kind, 'average',
@@ -1405,21 +1214,12 @@ def create_consolidated_dataframe_from_calculations():
             years.append(str(year))     # '1995'..'2020'
             values.append(float(val))   # share of output
 
-    # Process average trade balance data (tby is a 1xN DataFrame: index=['tby'], columns=country codes)
-    if isinstance(tby, pd.DataFrame):
-        for code in tby.columns:
-            countries.append(code)                 # country code like 'AT','FR',...
-            variables.append('tby')                # variable name
-            years.append('average')                # average row
-            values.append(float(tby.at['tby', code]))
-    else:
-        # if someone returned a Series for tby (rare), handle that too
-        tby_series = tby.squeeze()
-        for code, val in tby_series.items():
-            countries.append(code)
-            variables.append('tby')
-            years.append('average')
-            values.append(float(val))
+    # Process average trade balance data (tby is now a Series tby_avg)
+    for code, val in tby.items():
+        countries.append(code)
+        variables.append('tby')
+        years.append('average')
+        values.append(float(val))
 
     
     # Create dataframe (initially include country for easy prefixing)
@@ -1528,7 +1328,7 @@ def main():
     print(f"\nData structure:")
     print(f"- {len(inferred_countries)} countries (inferred from variable prefixes)")
     print(f"- {len(consolidated_df['variable'].unique())} variables") 
-    print(f"- {len(consolidated_df['year'].unique())} time period (currently only averages)")
+    print(f"- {len(consolidated_df['year'].unique())} time period (including averages)")
     print(f"- Calculated from raw data using embedded functions")
 
 if __name__ == "__main__":

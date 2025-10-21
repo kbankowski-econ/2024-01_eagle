@@ -1,4 +1,4 @@
-RA_bytarget, 1.8880;
+RA_bytarget, 1.8835;
 AT_bytarget, 2.9149;
 BE_bytarget, 4.2327;
 ES_bytarget, 2.8097;
@@ -9,6 +9,6 @@ IT_bytarget, 4.7807;
 NL_bytarget, 2.2809;
 PT_bytarget, 3.6151;
 DE_bytarget, 2.6180;
-RU_bytarget, 1.7747;
-RW_bytarget, 2.8879;
+RU_bytarget, 1.7758;
+RW_bytarget, 2.9234;
 US_bytarget, 3.3328;
