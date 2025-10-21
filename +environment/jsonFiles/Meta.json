@@ -8,22 +8,22 @@
     "eaListForReport": [
     "AT", "BE", "FI", "FR", "DE", "GR", "IT", "NL", "PT", "ES", "RA"
   ],
-  "colors": {
-    "AT": "#5E4FA2",
-    "BE": "#347BBC",
-    "FI": "#47AAB0",
-    "FR": "#7ACCA5",
-    "DE": "#B0DFA4",
-    "GR": "#E1F499",
-    "IT": "#EEF4AC",
-    "NL": "#F8EEAB",
-    "PT": "#FEDB84",
-    "ES": "#FDB364",
-    "RA": "#F88048",
-    "RU": "#E95748",
-    "US": "#CB314E",
-    "RW": "#9E0142",
-    "EA": "#4B4B4B"
-  },
-  "notes": "EA stands for Euro Area aggregate, shown in neutral gray. Color palette is sequential from violet to red produced with linspecer()."
+"colors": {
+  "AT": "#4E3FA6",
+  "BE": "#2E6CC1",
+  "FI": "#25A0B4",
+  "FR": "#4FC88E",
+  "DE": "#85D65F",
+  "GR": "#C6E54A",
+  "IT": "#E9E746",
+  "NL": "#F9D234",
+  "PT": "#FCB02F",
+  "ES": "#F8841C",
+  "RA": "#F25B1D",
+  "RU": "#D93329",
+  "US": "#A12447",
+  "RW": "#7B0F4C",
+  "EA": "#3C3C3C" 
+},
+  "notes": "EA stands for Euro Area aggregate, shown in neutral gray. Color palette is sequential from violet to red produced with linspecer() and subsequently fine tuned to to make it even better."
 }

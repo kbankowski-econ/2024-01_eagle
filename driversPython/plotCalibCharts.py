@@ -16,6 +16,16 @@ def load_country_colors():
         print(f"Warning: Could not load colors from Meta.json: {e}")
         return {}
 
+def load_variable_descriptions():
+    """Load variable descriptions from varDataDict.csv file."""
+    var_dict_path = os.path.join(os.path.dirname(__file__), '..', '+environment', 'csvFiles', 'varDataDict.csv')
+    try:
+        df = pd.read_csv(var_dict_path, index_col=0)
+        return df['description'].to_dict()
+    except (FileNotFoundError, KeyError) as e:
+        print(f"Warning: Could not load variable descriptions from varDataDict.csv: {e}")
+        return {}
+
 def load_and_prepare_data(data_file, variables, year_range=(1995, 2019), scale_factor=100):
     """Load and prepare data for plotting."""
     df = pd.read_csv(data_file)
@@ -25,6 +35,10 @@ def load_and_prepare_data(data_file, variables, year_range=(1995, 2019), scale_f
     
     # Extract country from variable name (format: COUNTRY_variable)
     df[['country', 'base_variable']] = df['variable'].str.split('_', n=1, expand=True)
+    
+    # Special handling for bytarget: divide by 4
+    bytarget_mask = df['base_variable'] == 'bytarget'
+    df.loc[bytarget_mask, 'value'] = df.loc[bytarget_mask, 'value'] / 4
     
     # Filter by base variables and year range
     df = df[df['base_variable'].isin(variables)]
@@ -74,16 +88,26 @@ def create_box_plot(fig, data, countries, colors, row):
     # Update x-axis with custom labels
     fig.update_xaxes(ticktext=tick_labels, tickvals=list(range(len(countries))), row=row, col=2)
 
-def setup_axes(fig, variables, year_ticks=[1995, 2000, 2005, 2010, 2015, 2020]):
+def setup_axes(fig, variables, var_descriptions, year_ticks=[1995, 2000, 2005, 2010, 2015, 2020]):
     """Configure axes for all subplots."""
+    def wrap_text(text, max_length=15):
+        """Wrap text if it exceeds max_length."""
+        if len(text) <= max_length:
+            return text
+        # Find the middle space and wrap there
+        words = text.split()
+        mid = len(words) // 2
+        return ' '.join(words[:mid]) + '<br>' + ' '.join(words[mid:])
+    
     for i, var in enumerate(variables):
         row = i + 1
-        var_title = var.replace("_", " ").title()
+        var_title = var_descriptions.get(var, var.replace("_", " ").title())
+        wrapped_title = wrap_text(var_title)
         
         # Configure axes
         fig.update_xaxes(title_text="", tickvals=year_ticks, row=row, col=1)
         fig.update_xaxes(title_text="", row=row, col=2)
-        fig.update_yaxes(title_text=var_title, row=row, col=1)
+        fig.update_yaxes(title_text=wrapped_title, row=row, col=1)
         fig.update_yaxes(title_text="", showticklabels=False, row=row, col=2)
         
         # Align y-axes within each row
@@ -115,6 +139,9 @@ def create_single_panel_charts(
     # Load country colors from Meta.json
     country_colors = load_country_colors()
     
+    # Load variable descriptions
+    var_descriptions = load_variable_descriptions()
+    
     # Create color mapping for countries
     def get_country_color(country):
         return country_colors.get(country, px.colors.qualitative.Vivid[hash(country) % len(px.colors.qualitative.Vivid)])
@@ -140,12 +167,15 @@ def create_single_panel_charts(
             create_box_plot(fig, var_data, countries, colors, row)
     
     # Configure axes
-    setup_axes(fig, variables)
+    setup_axes(fig, variables, var_descriptions)
     
-    # Configure layout
+    # Configure layout with height proportional to number of variables
+    base_height_per_variable = 140  # Base height per variable in pixels
+    chart_height = len(variables) * base_height_per_variable
+    
     fig.update_layout(
         template='simple_white',
-        height=1200,
+        height=chart_height,
         width=850,
         font=dict(family="Times New Roman"),
         showlegend=True,
@@ -155,7 +185,8 @@ def create_single_panel_charts(
             y=1.02,
             xanchor="right",
             x=1
-        )
+        ),
+        margin=dict(l=60, r=60, t=0, b=0)
     )
     
     # Save outputs
@@ -178,7 +209,7 @@ def create_calibration_charts(
     """Create two panels of calibration charts."""
     
     # Define variable sets using actual dataset variable names
-    panel1_variables = ['private_consumption', 'cgybar', 'iy', 'igybar', 'imy', 'tby']
+    panel1_variables = ['cy', 'cgybar', 'iy', 'igybar', 'imy', 'tby']
     panel2_variables = ['trybar', 'taucbar', 'taunbar', 'tauwhbar', 'tauwfbar', 'taukbar', 'bytarget']
     
     # Create first panel
