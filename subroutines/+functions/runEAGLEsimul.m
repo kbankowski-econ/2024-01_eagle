@@ -7,7 +7,7 @@ arguments
     modelName {mustBeTextScalar(modelName)}
 end
 
-modelName = char(modelNameStr);
+modelName = char(modelName);
 
 %% Setup and Configuration
 % Initialize project paths and environment settings
