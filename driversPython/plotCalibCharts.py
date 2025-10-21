@@ -2,6 +2,19 @@ import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px
 from plotly.subplots import make_subplots
+import json
+import os
+
+def load_country_colors():
+    """Load country colors from Meta.json file."""
+    meta_file_path = os.path.join(os.path.dirname(__file__), '..', '+environment', 'jsonFiles', 'Meta.json')
+    try:
+        with open(meta_file_path, 'r') as f:
+            meta_data = json.load(f)
+        return meta_data.get('colors', {})
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print(f"Warning: Could not load colors from Meta.json: {e}")
+        return {}
 
 def load_and_prepare_data(data_file, variables, year_range=(1995, 2019), scale_factor=100):
     """Load and prepare data for plotting."""
@@ -33,7 +46,7 @@ def create_time_series_plot(fig, data, countries, colors, var, row):
                     y=country_data['value'],
                     mode='lines',
                     name=country,
-                    line=dict(color=colors[j % len(colors)]),
+                    line=dict(color=colors[j]),
                     showlegend=(row == 1),
                     legendgroup=country
                 ),
@@ -52,7 +65,7 @@ def create_box_plot(fig, data, countries, colors, row):
                 go.Box(
                     y=country_values,
                     name=country,
-                    marker_color=colors[j % len(colors)],
+                    marker_color=colors[j],
                     showlegend=False
                 ),
                 row=row, col=2
@@ -99,7 +112,14 @@ def create_single_panel_charts(
     # Add any countries in data but not in specified order
     countries.extend([c for c in available_countries if c not in country_order])
     
-    colors = px.colors.qualitative.Vivid
+    # Load country colors from Meta.json
+    country_colors = load_country_colors()
+    
+    # Create color mapping for countries
+    def get_country_color(country):
+        return country_colors.get(country, px.colors.qualitative.Vivid[hash(country) % len(px.colors.qualitative.Vivid)])
+    
+    colors = [get_country_color(country) for country in countries]
     
     # Create subplot structure
     fig = make_subplots(
