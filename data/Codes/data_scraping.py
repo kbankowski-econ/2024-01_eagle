@@ -1,159 +1,159 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Oct 19 22:03:31 2025
-
-@author: emilepetraviciute
-
-Data scrapping for EAGLE 
 """
 
+How to use:
+1. Put this file and your `oecd_requests.csv` in the same folder.
+2. Edit `oecd_requests.csv` to include your jobs (see example below).
+3. Run: `data_scraping.py`
+4. Downloaded files are written to the paths in the CSV's output_file column.
+   CSV outputs are automatically loaded into pandas DataFrames and stored in `dataframes`.
+
+Requirements:
+    pip install requests pandas
 """
-Input output tables 
-"""
+import time, requests, pandas as pd
+from pathlib import Path
+from urllib.parse import quote_plus
+from io import StringIO
 
-import os, time, re
-from urllib.parse import urlparse
-from hashlib import md5
-import requests
+# === CONFIG ===
+INPUT_DIR  = Path(r"/Users/emilepetraviciute/2025-03_eagle/data/Codes")      # folder containing oecd_requests.csv
+OUTPUT_DIR = Path(r"/Users/emilepetraviciute/2025-03_eagle/data/raw_data")   # where downloaded data will be saved
+CSV_FILE = "oecd_requests.csv"                      # name of the dictionary CSV
+OECD_HOST  = "https://sdmx.oecd.org/public/rest"
+HEADERS    = {"User-Agent": "short-downloader/1.0"}
 
-OUT = r"/Users/emilepetraviciute/2025-03_eagle/data/raw_data"
-os.makedirs(OUT, exist_ok=True)
-LOG = os.path.join(OUT, "download_log.txt")
-
-s = requests.Session()
-s.headers.update({"User-Agent": "OECD-API-downloader/1.0 (petraviciute.emile@gmail.com)"})
-
-
-# # Paste your stats.oecd.org ZIP links here
-
-# URLS = [ "https://stats.oecd.org/wbos/fileview2.aspx?IDFile=643231e9-a2b2-4742-a926-74ecfca616d0",
-#         "https://stats.oecd.org/wbos/fileview2.aspx?IDFile=56fec3e0-37f1-46f0-bdfe-55a55a77ac2e", 
-#         "https://stats.oecd.org/wbos/fileview2.aspx?IDFile=7128221e-df6a-4b07-b007-1d24f626325e",
-#       "https://stats.oecd.org/wbos/fileview2.aspx?IDFile=522c2892-d649-4cf9-881a-5731de638b8b", 
-#       "https://stats.oecd.org/wbos/fileview2.aspx?IDFile=74a7f69b-7390-4a6f-86cd-ca4dce0ae480"]
-
-# SKIP_YEARS = ["2021", "2022"]   #
-
-# s = requests.Session()
-# s.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"})
-
-# for url in URLS:
-#     print("->", url)
-#     try:
-#         r = s.get(url, timeout=120, stream=True)
-#         r.raise_for_status()
-#     except Exception as e:
-#         print("   failed:", e)
-#         continue
-
-#     # infer filename
-#     cd = r.headers.get("content-disposition", "")
-#     if "filename=" in cd:
-#         fname = cd.split("filename=")[-1].strip(' "')
-#     else:
-#         fname = os.path.basename(urlparse(r.url).path) or "download.zip"
-
-#     # skip unwanted years
-#     if any(y in fname for y in SKIP_YEARS):
-#         print(f"   skipped (matches skip list): {fname}")
-#         continue
-
-#     local = os.path.join(OUT, fname)
-#     base, ext = os.path.splitext(local)
-#     i = 1
-#     while os.path.exists(local):
-#         local = f"{base}_{i}{ext}"; i += 1
-
-#     # save zip file
-#     with open(local, "wb") as f:
-#         for chunk in r.iter_content(8192):
-#             if chunk:
-#                 f.write(chunk)
-#     print("   saved:", local)
-
-#     # unzip then delete zip
-#     if local.lower().endswith(".zip"):
-#         try:
-#             with zipfile.ZipFile(local, "r") as z:
-#                 z.extractall(OUT)
-#             print(f"   extracted contents to {OUT}")
-#             os.remove(local)
-#             print("   deleted zip file after extraction")
-#         except zipfile.BadZipFile:
-#             print("   error: not a valid zip file")
-
-#     time.sleep(0.5)
-
-# print("done.")
-
-# OECD 
-
-''' 
-OECD:
-    Capital tax loc. currency, consumption, debt?, operating surplus +, 
-    operating surplus loc. currency, taxes, transfers, wage income
-'''
-API_TASKS = [
-    {"url":'https://sdmx.oecd.org/public/rest/data/OECD.SDD.NAD,DSD_NAMAIN10@DF_TABLE1_INCOME,2.0/A.EA20+EU27_2020+WXOECD+AUT+BEL+CAN+CHL+COL+CRI+CZE+DNK+EST+FIN+FRA+DEU+GRC+HUN+ISL+IRL+ISR+ITA+JPN+KOR+LVA+LTU+LUX+MEX+NLD+NZL+NOR+POL+PRT+SVK+SVN+ESP+SWE+CHE+TUR+GBR+USA+ALB+BRA+BGR+CPV+CMR+CHN+HRV+CYP+GEO+HKG+KAZ+MLT+MAR+MKD+ROU+RUS+SAU+SEN+SRB+SGP+ZAF+ZMB+AUS...B2A3G.._T..USD_EXC.V..?startPeriod=1995&endPeriod=2020&dimensionAtObservation=AllDimensions&format=csvfilewithlabels',
-     "name": "operating_surplus.csv"},
-    {"url":'https://sdmx.oecd.org/public/rest/data/OECD.SDD.NAD,DSD_NAMAIN10@DF_TABLE1_INCOME,2.0/A.EA20+EU27_2020+WXOECD+AUT+BEL+CAN+CHL+COL+CRI+CZE+DNK+EST+FIN+FRA+DEU+GRC+HUN+ISL+IRL+ISR+ITA+JPN+KOR+LVA+LTU+LUX+MEX+NLD+NZL+NOR+POL+PRT+SVK+SVN+ESP+SWE+CHE+TUR+GBR+USA+ALB+BRA+BGR+CPV+CMR+CHN+HRV+CYP+GEO+HKG+KAZ+MLT+MAR+MKD+ROU+RUS+SAU+SEN+SRB+SGP+ZAF+ZMB+AUS...B2A3G.._T..XDC.V..?startPeriod=1995&endPeriod=2020&dimensionAtObservation=AllDimensions&format=csvfilewithlabels',
-     "name": "operating_surplus_local.csv"}
-    ]
+def read_jobs():
+    p = INPUT_DIR / CSV_FILE
+    return pd.read_csv(p, dtype=str).fillna("").to_dict(orient="records")
 
 
-''' Debt''' 
-''' Transfers '''
-''' Taxes ''' 
 
-'''
-IMF
-'''
+def try_get(url, params=None, attempts=6):
+    import time
+    for i in range(attempts):
+        try:
+            r = requests.get(url, params=params, headers=HEADERS, timeout=60)
+        except requests.RequestException as e:
+            # network error — back off a bit and retry
+            wait = 5 * (i + 1)
+            print(f"Request exception: {e}. sleeping {wait}s")
+            time.sleep(wait)
+            continue
+
+        if r.status_code == 200:
+            return r
+
+        if r.status_code == 429:
+            # show headers so we can inspect Retry-After etc.
+            ra = r.headers.get("Retry-After")
+            print("Received 429. Response headers:", dict(r.headers))
+            # If server suggests a numeric Retry-After, use it; otherwise fallback to exponential
+            try:
+                ra_val = int(str(ra).strip()) if ra is not None else None
+            except Exception:
+                ra_val = None
+            # enforce a safe minimum wait (e.g. 10s) to avoid immediate retries
+            if ra_val is not None and ra_val > 0:
+                wait = max(ra_val, 10)
+            else:
+                # no valid numeric RA or RA==0 -> fall back to exponential backoff (60s,120s,...)
+                wait = 60 * (i + 1)
+                # but still enforce a minimum in case i==0
+                wait = max(wait, 10)
+            print(f"429 => sleeping {wait} seconds before retry (attempt {i+1}/{attempts})")
+            time.sleep(wait)
+            continue
+
+        # other non-200 codes: wait and retry (exponential)
+        wait = 10 * (i + 1)
+        print(f"HTTP {r.status_code} received. Sleeping {wait}s before retry.")
+        time.sleep(wait)
+
+    return None
 
 
-''' 
-Eurostat
-'''
-
-def _safe(name, prefer_ext=".csv"):
-    name = re.sub(r'[\\/:"*?<>|]+', '_', name).strip()
-    root, ext = os.path.splitext(name)
-    if not ext:
-        ext = prefer_ext
-    name = (root + ext) if root else ("oecd" + ext)
-    if len(name) > 100:
-        h = md5(name.encode()).hexdigest()[:8]
-        name = (root[:60] if root else "oecd") + "_" + h + ext
-    return name
-
-with open(LOG, "a") as lf:
-    lf.write("\n=== run at {} ===\n".format(time.strftime("%Y-%m-%d %H:%M:%S")))
-
-for t in API_TASKS:
-    url = t["url"]
-    user_name = t.get("name", None)
-    print("Fetching:", url)
+def discover_country_codes(ds_part, row):
+    order = [s.strip() for s in (row.get("selection_order") or "").split(",") if s.strip()] or \
+            ["countries","standard_revenue","country_specific_revenue","sector","measure","unit"]
+    sel = quote_plus(".".join([".."]*len(order)), safe="+.,_/()")
+    url = f"{OECD_HOST}/data/{ds_part}/{sel}"
+    params = {"format": row.get("format","csvfile"), "dimensionAtObservation": row.get("dimensionAtObservation","AllDimensions")}
+    if row.get("endPeriod"): params["startPeriod"]=params["endPeriod"]=row["endPeriod"]
+    r = try_get(url, params=params)
+    if not r: return None
     try:
-        r = s.get(url, timeout=120, stream=True)
-        r.raise_for_status()
-        ctype = r.headers.get("content-type","").lower()
-        pref_ext = ".json" if "json" in ctype else ".csv"
-        raw_name = user_name if user_name else os.path.basename(urlparse(r.url).path) or "oecd_download"
-        fname = _safe(raw_name, prefer_ext=pref_ext)
-        out = os.path.join(OUT, fname)
-        base, ext = os.path.splitext(out); i = 1
-        while os.path.exists(out):
-            out = f"{base}_{i}{ext}"; i += 1
-        with open(out, "wb") as fh:
-            for chunk in r.iter_content(8192):
-                if chunk: fh.write(chunk)
-        print("  saved ->", out)
-        with open(LOG, "a") as lf:
-            lf.write(f"OK: {url} -> {out}\n")
-    except Exception as e:
-        print("  FAILED:", e)
-        with open(LOG, "a") as lf:
-            lf.write(f"FAILED: {url} -> {e}\n")
-    time.sleep(0.3)
+        df = pd.read_csv(StringIO(r.text), dtype=str)
+    except: return None
+    for c in df.columns:
+        if c.upper().replace(" ","_") in ("REF_AREA","REF_AREA_CODE","REFERENCE_AREA"):
+            return sorted(df[c].dropna().unique().tolist())
+    # fallback: take the shortest-string column as codes
+    cand = sorted(df.columns, key=lambda x: df[x].dropna().astype(str).map(len).median() if len(df[x].dropna())>0 else 999)
+    return sorted(df[cand[0]].dropna().unique().tolist()) if cand else None
 
-print("Done. Files in:", OUT)
+def make_ds_part(row):
+    ds = (row.get("dataset") or "").strip()
+    agency = (row.get("agency") or "OECD").strip()
+    if not ds: raise ValueError("dataset missing")
+    if not ds.startswith(agency+".") and not ds.upper().startswith("OECD."): ds = f"{agency}.{ds}"
+    ver = (row.get("version") or "").strip()
+    if ver and not ds.endswith(ver): ds = f"{ds},{ver}"
+    return ds
+
+def build_selection(row, available=None):
+    # countries logic
+    raw = (row.get("countries") or "").strip()
+    inc = (row.get("countries_include") or "").strip()
+    exc = (row.get("countries_exclude") or "").strip()
+    if inc: countries = inc
+    elif raw: countries = raw
+    elif exc:
+        if not available: raise RuntimeError("cannot apply countries_exclude - available codes unknown")
+        exc_set = {c.strip() for c in exc.split("+") if c.strip()}
+        keep = [c for c in available if c not in exc_set]
+        countries = "+".join(keep) if keep else ".."
+    else:
+        countries = ".."
+    order = [s.strip() for s in (row.get("selection_order") or "").split(",") if s.strip()] or \
+            ["countries","standard_revenue","country_specific_revenue","sector","measure","unit"]
+    parts = []
+    for name in order:
+        parts.append(countries if name=="countries" else ((row.get(name) or "").strip() or ".."))
+    return quote_plus(".".join(parts), safe="+.,_/()")
+
+def save_text(text, path):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(text, encoding="utf-8")
+
+def main():
+    jobs = read_jobs()
+    loaded = {}
+    for i,row in enumerate(jobs,1):
+        job = (row.get("job_name") or f"job_{i}").strip()
+        print(f"[{i}/{len(jobs)}] {job}")
+        ds = make_ds_part(row)
+        need_discover = not row.get("countries") and not row.get("countries_include") and row.get("countries_exclude")
+        avail = discover_country_codes(ds, row) if need_discover else None
+        try:
+            sel = build_selection(row, available=avail)
+        except Exception as e:
+            print(" skip:", e); continue
+        url = f"{OECD_HOST}/data/{ds}/{sel}"
+        params = {k: row[k] for k in ("startPeriod","endPeriod","format","dimensionAtObservation") if row.get(k)}
+        print(" URL:", url)
+        r = try_get(url, params=params)
+        if not r: print(" failed"); continue
+        out = OUTPUT_DIR / (row.get("output_file") or f"{job}.out")
+        save_text(r.text, out)
+        print(" saved:", out)
+        if out.suffix.lower() == ".csv":
+            try: loaded[job] = pd.read_csv(out, dtype=str)
+            except: pass
+        time.sleep(0.35)
+    print("Done. Loaded:", list(loaded.keys()))
+    return loaded
+
+if __name__ == "__main__":
+    main()
+
+
