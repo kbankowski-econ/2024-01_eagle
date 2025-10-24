@@ -185,7 +185,7 @@ Finding the optimal block decomposition of the dynamic model...
                                  and 3779 feedback variable(s).
 JSON written after Computing step.
 Preprocessing completed.
-Preprocessing time: 0h00m31s.
+Preprocessing time: 0h00m33s.
 
 STEADY-STATE RESULTS:
 
@@ -7510,28 +7510,28 @@ MODEL SIMULATION: (method=Sparse LU solver on stacked system)
       2-norm error   = 2.805e-01
       1-norm error   = 1.858e+00
 ------------------------------------
-(** 74.92 seconds **)
+(** 116.47 seconds **)
 ------------------------------------
       Iteration no. 2
       Inf-norm error = 7.474e-02
       2-norm error   = 5.327e-01
       1-norm error   = 1.832e+01
 ------------------------------------
-(** 71.73 seconds **)
+(** 119.74 seconds **)
 ------------------------------------
       Iteration no. 3
       Inf-norm error = 5.612e-03
       2-norm error   = 9.788e-03
       1-norm error   = 1.129e-01
 ------------------------------------
-(** 71.45 seconds **)
+(** 118.60 seconds **)
 ------------------------------------
       Iteration no. 4
       Inf-norm error = 4.014e-03
       2-norm error   = 4.518e-03
       1-norm error   = 9.479e-03
 ------------------------------------
-(** 71.57 seconds **)
+(** 119.46 seconds **)
 ------------------------------------
       Iteration no. 5
       Inf-norm error = 7.661e-06
@@ -7541,5 +7541,5 @@ MODEL SIMULATION: (method=Sparse LU solver on stacked system)
 
 Perfect foresight solution found.
 
-Total computing time : 0h04m55s
+Total computing time : 0h08m00s
 Note: 164 warning(s) encountered in the preprocessor
