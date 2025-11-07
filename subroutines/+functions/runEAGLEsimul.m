@@ -1,10 +1,13 @@
-function runEAGLEsimul(modelName)
+function runEAGLEsimul(modelName, options)
 %RUNMONETARYSHOCK Execute monetary policy shock simulation and analysis.
 %   runMonetaryShock(MODELNAME) runs the end-to-end analysis for the
 %   supported Dynare models specified by MODELNAME.
 
 arguments
     modelName {mustBeTextScalar(modelName)}
+    % 'skipSimulation' defaults to 'false' to run simulation; set to 'true' to
+    % skip simulation and only process existing results
+    options.skipSimulation (1,1) logical = false
 end
 
 modelName = char(modelName);
@@ -24,13 +27,18 @@ cleanupObj = onCleanup(@() cd(previousDir)); %#ok<NASGU> Ensure directory is res
 cd(modFilesDir);
 
 %% Dynare Model Simulation
-% Execute deterministic simulation of monetary policy shock
-fprintf('Running Dynare simulation for model: %s\n', modelName);
-
-dynare([modelName, '.mod'], ...
-    sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), ...
-    'savemacro', ...
-    'json=compute');
+% Run simulation unless explicitly skipped
+if ~options.skipSimulation
+    % Execute deterministic simulation of monetary policy shock
+    fprintf('Running Dynare simulation for model: %s\n', modelName);
+    
+    dynare([modelName, '.mod'], ...
+        sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), ...
+        'savemacro', ...
+        'json=compute');
+else
+    fprintf('Skipping Dynare simulation for model: %s (skipSimulation=true)\n', modelName);
+end
 
 %% Load and Process Simulation Results
 % Load raw Dynare output

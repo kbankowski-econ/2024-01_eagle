@@ -5,5 +5,5 @@ envi = environment.setup();
 
 %% Running all simulations in a loop
 for aSimul = string(envi.shockDict.Properties.RowNames)'
-    functions.runEAGLEsimul(aSimul);
+    functions.runEAGLEsimul(aSimul, "skipSimulation", true);
 end
