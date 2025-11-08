@@ -81,7 +81,7 @@ contributionSeries = dynareFunc.calculateContributions( ...
 fprintf('Generating plots and charts...\n');
 
 % Generate MATLAB-based country decomposition plots
-plotting.WP.eaCntryDecomposition(contributionSeries, modelName);
+plotting.WP.eaCntryDecomposition(contributionSeries, modelName, "plottingRange", yy(1):yy(10));
 
 % Generate Python-based IRF charts with custom styling
 pythonScript = fullfile(project_path, 'driversPython', 'plotIRFs.py');

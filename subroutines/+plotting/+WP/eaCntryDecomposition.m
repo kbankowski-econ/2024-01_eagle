@@ -56,9 +56,17 @@ function eaCntryDecomposition(contributionSeriesOriginal, modelName, options)
                 
         hold off
     
-        % Axis formatting - display quarters 1, 10, and 20
-        tickPositions = [dateRangeDateTime(1), dateRangeDateTime(10), dateRangeDateTime(20)];
-        quarterLabels = {'1', '10', '20'};
+        % Axis formatting - display quarters 1, 10, and 20 for quarterly
+        % and each data reference for annnual
+        if dateRangeFrequency == "YEARLY"
+            tickPositions = dateRangeDateTime;
+            quarterLabels = cellstr(string(1:length(dateRangeDateTime)));
+        elseif dateRangeFrequency == "QUARTERLY"
+            tickPositions = [dateRangeDateTime(1), dateRangeDateTime(10), dateRangeDateTime(20)];
+            quarterLabels = {'1', '10', '20'};
+        else
+        end
+
         set(gca, 'Xtick', tickPositions, 'XTickLabel', quarterLabels, ...
             'Fontsize', 7, 'Box', 'off', 'TickLabelInterpreter','latex');
     
