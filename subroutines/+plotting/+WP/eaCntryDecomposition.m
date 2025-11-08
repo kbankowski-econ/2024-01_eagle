@@ -1,4 +1,10 @@
-function eaCntryDecomposition(contributionSeriesOriginal, modelName)
+function eaCntryDecomposition(contributionSeriesOriginal, modelName, options)
+
+    arguments
+        contributionSeriesOriginal
+        modelName {mustBeTextScalar}
+        options.plottingRange Dater = qq(1,1):qq(5,4)
+    end
 
     % reading global variables
     utils.call.paths;
@@ -12,8 +18,7 @@ function eaCntryDecomposition(contributionSeriesOriginal, modelName)
     varList = string(reshape(fieldnames(contributionSeries.total), 1, []));
     
     % Date range
-    dateRange = qq(1,1):qq(5,4);
-    dateRangeDateTime = dater.toMatlab(dateRange);
+    dateRangeDateTime = dater.toMatlab(options.plottingRange);
     
     % Plotting
     figure
@@ -35,7 +40,7 @@ function eaCntryDecomposition(contributionSeriesOriginal, modelName)
             'Fontsize', 7, 'Fontweight', 'normal');
     
         % Plot contributions
-        bars = bar(dateRange, contributionSeries.contrib.(item), "Stacked", ...
+        bars = bar(options.plottingRange, contributionSeries.contrib.(item), "Stacked", ...
             'EdgeColor', 'none');
 
         % adjusting colors
@@ -44,7 +49,7 @@ function eaCntryDecomposition(contributionSeriesOriginal, modelName)
         end
         
         % Plot total
-        line = plot(dateRange, contributionSeries.total.(item), ...
+        line = plot(options.plottingRange, contributionSeries.total.(item), ...
             'color', plottingFunc.hex2rgb(envi.Meta.colors.("EA")), ...
             'linewidth', 2);
                 
