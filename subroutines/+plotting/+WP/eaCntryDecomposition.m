@@ -3,6 +3,7 @@ function eaCntryDecomposition(contributionSeriesOriginal, modelName, options)
     arguments
         contributionSeriesOriginal
         modelName {mustBeTextScalar}
+        options.redateNewDate (1, 1) Dater = qq(1, 1)
         options.plottingRange Dater = qq(1,1):qq(5,4)
     end
 
@@ -41,7 +42,7 @@ function eaCntryDecomposition(contributionSeriesOriginal, modelName, options)
             'Fontsize', 7, 'Fontweight', 'normal');
     
         % Plot contributions
-        bars = bar(options.plottingRange, convert(contributionSeries.contrib.(item), dateRangeFrequency, Inf, "Method", "mean"), "Stacked", ...
+        bars = bar(options.plottingRange, convert(redate(contributionSeries.contrib.(item), qq(1, 1), options.redateNewDate), dateRangeFrequency, Inf, "Method", "mean"), "Stacked", ...
             'EdgeColor', 'none');
 
         % adjusting colors
@@ -50,7 +51,7 @@ function eaCntryDecomposition(contributionSeriesOriginal, modelName, options)
         end
         
         % Plot total
-        line = plot(options.plottingRange, convert(contributionSeries.total.(item), dateRangeFrequency, Inf, "Method", "mean"), ...
+        line = plot(options.plottingRange, convert(redate(contributionSeries.total.(item), qq(1, 1), options.redateNewDate), dateRangeFrequency, Inf, "Method", "mean"), ...
             'color', plottingFunc.hex2rgb(envi.Meta.colors.("EA")), ...
             'linewidth', 2);
                 
@@ -60,14 +61,15 @@ function eaCntryDecomposition(contributionSeriesOriginal, modelName, options)
         % and each data reference for annnual
         if dateRangeFrequency == "YEARLY"
             tickPositions = dateRangeDateTime;
-            quarterLabels = cellstr(string(1:length(dateRangeDateTime)));
+            dateLabels = compose("%02d", mod(year(dateRangeDateTime), 100));
         elseif dateRangeFrequency == "QUARTERLY"
             tickPositions = [dateRangeDateTime(1), dateRangeDateTime(10), dateRangeDateTime(20)];
-            quarterLabels = {'1', '10', '20'};
+            dateLabels = {'1', '10', '20'};
         else
+            error('Unsupported frequency: %s. Only YEARLY and QUARTERLY frequencies are supported.', dateRangeFrequency);
         end
 
-        set(gca, 'Xtick', tickPositions, 'XTickLabel', quarterLabels, ...
+        set(gca, 'Xtick', tickPositions, 'XTickLabel', dateLabels, ...
             'Fontsize', 7, 'Box', 'off', 'TickLabelInterpreter','latex');
     
     end
