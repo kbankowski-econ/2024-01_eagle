@@ -185,7 +185,7 @@ Finding the optimal block decomposition of the dynamic model...
                                  and 3779 feedback variable(s).
 JSON written after Computing step.
 Preprocessing completed.
-Preprocessing time: 0h00m31s.
+Preprocessing time: 0h00m32s.
 
 STEADY-STATE RESULTS:
 
@@ -7508,38 +7508,38 @@ MODEL SIMULATION: (method=Sparse LU solver on stacked system)
       Iteration no. 1
       Inf-norm error = 1.245e-01
       2-norm error   = 4.796e-01
-      1-norm error   = 4.115e+00
+      1-norm error   = 4.118e+00
 ------------------------------------
-(** 80.55 seconds **)
+(** 365.05 seconds **)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 1.574e-01
-      2-norm error   = 1.048e+00
-      1-norm error   = 3.166e+01
+      Inf-norm error = 1.559e-01
+      2-norm error   = 9.166e-01
+      1-norm error   = 2.802e+01
 ------------------------------------
-(** 75.14 seconds **)
+(** 411.53 seconds **)
 ------------------------------------
       Iteration no. 3
-      Inf-norm error = 1.679e-02
-      2-norm error   = 2.560e-02
-      1-norm error   = 2.135e-01
+      Inf-norm error = 1.681e-02
+      2-norm error   = 2.559e-02
+      1-norm error   = 2.036e-01
 ------------------------------------
-(** 69.58 seconds **)
+(** 351.19 seconds **)
 ------------------------------------
       Iteration no. 4
-      Inf-norm error = 1.100e-03
-      2-norm error   = 1.473e-03
-      1-norm error   = 4.274e-03
+      Inf-norm error = 1.107e-03
+      2-norm error   = 1.482e-03
+      1-norm error   = 4.296e-03
 ------------------------------------
-(** 73.53 seconds **)
+(** 362.37 seconds **)
 ------------------------------------
       Iteration no. 5
-      Inf-norm error = 1.029e-06
-      2-norm error   = 1.398e-06
-      1-norm error   = 3.839e-06
+      Inf-norm error = 1.035e-06
+      2-norm error   = 1.405e-06
+      1-norm error   = 3.870e-06
 ------------------------------------
 
 Perfect foresight solution found.
 
-Total computing time : 0h05m04s
+Total computing time : 0h25m02s
 Note: 164 warning(s) encountered in the preprocessor
