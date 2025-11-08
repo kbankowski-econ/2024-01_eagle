@@ -1,4 +1,0 @@
-Starting Dynare (version 6.0).
-Calling Dynare with arguments: savemacro json=compute
-ERROR: Could not open file: shock_ea_monpol_exp.mod
-Preprocessing time: 0h00m00s.

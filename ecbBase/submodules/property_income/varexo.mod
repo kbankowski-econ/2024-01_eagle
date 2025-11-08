@@ -1,1 +1,0 @@
-U2_S_RW_NFAN    //'last', 'constant', 'constant', '';

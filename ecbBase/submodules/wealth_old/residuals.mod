@@ -1,8 +1,0 @@
-res_U2_HH_B_APN
-res_U2_HH_B_KTN
-res_U2_HH_IVN
-res_U2_HH_ITN
-res_U2_HH_NPN
-res_U2_HH_D_IHN
-res_U2_HH_TRV
-res_U2_HWN

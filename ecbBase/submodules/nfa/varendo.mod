@@ -1,9 +1,0 @@
-U2_NFAN         //'last', 'nominal', 'nominal', '';
-U2_IR_TAN       //'last', 'constant', 'constant', '';
-U2_IR_TLN       //'last', 'constant', 'constant', '';
-U2_IR_TANRV     //'0', 'constant', '', '';
-U2_IR_TLNRV     //'0', 'constant', '', '';
-U2_NFANRV_S     //'0', 'constant', '', '';
-U2_NFANRV       //'0', 'constant', '', '';
-U2_TBR          //'last', 'real', 'real', '';
-U2_TBN          //'last', 'nominal', 'nominal', '';
