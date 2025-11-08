@@ -16,7 +16,7 @@ gdpInput = load(fullfile(project_path, "ltGDP_GovCo2024.mat"));
 ngeuEagleInput = struct();
 
 for aCtry = ngeuCtryListStdNames
-    ngeuEagleInput.(aCtry + "_" + bridgeMap("GovInv")) = ngeuInput.shockInput.Qrat.(aCtry).GovInv;
+    ngeuEagleInput.(aCtry + "_" + bridgeMap("GovInv")) = ngeuInput.shockInput.Arat.(aCtry).GovInv;
 end
 
 for aCtryName = databank.fieldNames(ngeuInput.shockInput.A)
@@ -36,17 +36,20 @@ function generateNGEUModFile()
     utils.call.paths;
 
     % Read CSV data
-    ngeuShockDatabank = databank.fromCSV(fullfile(project_path, "databases/inputNGEUshock.csv"));
-    
+    ngeuShockDatabankAnn = databank.fromCSV(fullfile(project_path, "databases/inputNGEUshock.csv"));
+
+    % Interpolate databank to quarterly frequency for the model
+    ngeuShockDatabankQrt = databank.apply(ngeuShockDatabankAnn, @(x) convert(x, "QUARTERLY", "Method", "flat"));
+
     % Get variable names (excluding the date column)
-    varNames = databank.fieldNames(ngeuShockDatabank);
+    varNames = databank.fieldNames(ngeuShockDatabankQrt);
     
     % Number of periods (32 quarters from 2021Q1 to 2028Q4)
-    dataRange = databank.range(ngeuShockDatabank);
+    dataRange = databank.range(ngeuShockDatabankQrt);
     numPeriods = length(dataRange);
     
     % Open file for writing
-    outputFile = fullfile(project_path, "eagleParsingTemp/modFiles/ngeu_shock_values.mod");
+    outputFile = fullfile(project_path, "eagleParsingTemp/submodules/ngeu_shock_values.mod");
     fid = fopen(outputFile, 'w');
     
     if fid == -1
@@ -70,7 +73,7 @@ function generateNGEUModFile()
         % Write values line
         fprintf(fid, 'values');
         for periodDateRange = dataRange
-            value = ngeuShockDatabank.(aVarName)(periodDateRange);
+            value = ngeuShockDatabankQrt.(aVarName)(periodDateRange);
             % Convert percentage to decimal and format with 5 decimal places
             fprintf(fid, ' %.5f', value/100);
         end
