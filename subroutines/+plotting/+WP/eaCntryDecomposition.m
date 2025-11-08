@@ -19,7 +19,8 @@ function eaCntryDecomposition(contributionSeriesOriginal, modelName, options)
     
     % Date range
     dateRangeDateTime = dater.toMatlab(options.plottingRange);
-    
+    dateRangeFrequency = getFrequency(options.plottingRange(1));
+
     % Plotting
     figure
     
@@ -40,7 +41,7 @@ function eaCntryDecomposition(contributionSeriesOriginal, modelName, options)
             'Fontsize', 7, 'Fontweight', 'normal');
     
         % Plot contributions
-        bars = bar(options.plottingRange, contributionSeries.contrib.(item), "Stacked", ...
+        bars = bar(options.plottingRange, convert(contributionSeries.contrib.(item), dateRangeFrequency, Inf, "Method", "mean"), "Stacked", ...
             'EdgeColor', 'none');
 
         % adjusting colors
@@ -49,7 +50,7 @@ function eaCntryDecomposition(contributionSeriesOriginal, modelName, options)
         end
         
         % Plot total
-        line = plot(options.plottingRange, contributionSeries.total.(item), ...
+        line = plot(options.plottingRange, convert(contributionSeries.total.(item), dateRangeFrequency, Inf, "Method", "mean"), ...
             'color', plottingFunc.hex2rgb(envi.Meta.colors.("EA")), ...
             'linewidth', 2);
                 
