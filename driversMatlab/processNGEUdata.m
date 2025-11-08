@@ -27,3 +27,58 @@ databank.toCSV(ngeuChartInput, fullfile(project_path, "databases/inputNGEUchart.
 databank.toCSV(ngeuEagleInput, fullfile(project_path, "databases/inputNGEUshock.csv"), "Decimal", 5, "Comments", false, "Class", false);
 
 %% generating a mod file macro to be included in teh NGEU model with all the shock values
+generateNGEUModFile();
+
+%% local functions
+function generateNGEUModFile()
+
+    % Reading in some global variables
+    utils.call.paths;
+
+    % Read CSV data
+    csvData = readtable(fullfile(project_path, "databases/inputNGEUshock.csv"));
+    
+    % Get variable names (excluding the date column)
+    varNames = csvData.Properties.VariableNames(2:end);
+    
+    % Number of periods (32 quarters from 2021Q1 to 2028Q4)
+    numPeriods = height(csvData);
+    
+    % Open file for writing
+    outputFile = fullfile(project_path, "eagleParsingTemp/modFiles/ngeu_shock_values.mod");
+    fid = fopen(outputFile, 'w');
+    
+    if fid == -1
+        error('Could not open file for writing: %s', outputFile);
+    end
+    
+
+    % Process each variable
+    for i = 1:length(varNames)
+        varName = varNames{i};
+        
+        % Write variable declaration
+        fprintf(fid, 'var %s;\n', varName);
+        
+        % Write periods line
+        fprintf(fid, 'periods');
+        for period = 1:numPeriods
+            fprintf(fid, ' %d', period);
+        end
+        fprintf(fid, ';\n');
+        
+        % Write values line
+        fprintf(fid, 'values');
+        for period = 1:numPeriods
+            value = csvData.(varName)(period);
+            % Convert percentage to decimal and format with 5 decimal places
+            fprintf(fid, ' %.5f', value/100);
+        end
+        fprintf(fid, ';\n');
+    end
+    
+    fprintf('NGEU mod file generated successfully: %s\n', outputFile);
+        
+    
+    fclose(fid);
+end
