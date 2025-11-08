@@ -1,5 +1,6 @@
 utils.call.paths;
-ngeuCtryListStdNames = ["AT", "BE", "FI", "FR", "NL", "ES", "GR", "IT", "PT", "DE"];
+% //TODO: there is no RA aggregate and this has to be fixed
+ctryList = envi.Meta.eaListForReport(1: end-1);
 
 % cding to a proper folder
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
@@ -23,11 +24,14 @@ for aCtryName = databank.fieldNames(ngeuInput.shockInput.A)
     ngeuChartInput.(aCtryName) = ngeuInput.shockInput.A.(aCtryName).GovInv/gdpInput.ltGDP.A.U2*100;
 end
 
-databank.toCSV(ngeuChartInput, fullfile(project_path, "databases/inputNGEUchart.csv"), "Decimal", 3, "Comments", false, "Class", false);
+databank.toCSV(ngeuChartInput, fullfile(project_path, "databases/inputNGEUchart.csv"), "Decimal", 5, "Comments", false, "Class", false);
 databank.toCSV(ngeuEagleInput, fullfile(project_path, "databases/inputNGEUshock.csv"), "Decimal", 5, "Comments", false, "Class", false);
 
 %% generating a mod file macro to be included in teh NGEU model with all the shock values
 generateNGEUModFile();
+
+%% plotting NGEU input
+plotNGEUinput();
 
 %% local functions
 function generateNGEUModFile()
@@ -84,4 +88,70 @@ function generateNGEUModFile()
         
     
     fclose(fid);
+end
+
+function plotNGEUinput()
+
+    % reading global variables
+    utils.call.paths;
+    envi = environment.setup;
+
+    % //TODO: there is no RA aggregate and this has to be fixed
+    ctryList = envi.Meta.eaListForReport(1: end-1);
+
+    % Read CSV data
+    ngeuInputValuesRaw = databank.fromCSV(fullfile(project_path, "databases/inputNGEUchart.csv"));
+
+    % Retrieve countries consistent with the model
+    ngeuInputValues = databank.copy(ngeuInputValuesRaw, "SourceNames", ctryList);
+
+    % Date range
+    dateRangeDateTime = dater.toMatlab(databank.range(ngeuInputValues));
+
+    % Plotting
+    figure
+    
+    % Figure layout
+    t = tiledlayout(1, 1, 'TileSpacing', 'compact','Padding','normal');
+    
+    h = gcf;
+    set(h, 'Units','centimeters', 'Position',[0 0 16 4])
+    set(h,'defaulttextinterpreter','latex');
+    
+    nexttile;
+    grid on
+    hold on 
+
+    % Plot contributions
+    bars = bar(dateRangeDateTime, databank.toSeries(ngeuInputValues), "Stacked", ...
+        'EdgeColor', 'none');
+
+    % adjusting colors
+    for k = 1:numel(bars)
+        bars(k).FaceColor = plottingFunc.hex2rgb(envi.Meta.colors.(ctryList(k)));
+    end
+    
+    % Plot total
+    % line = plot(options.plottingRange, convert(redate(contributionSeries.total.(item), qq(1, 1), options.redateNewDate), dateRangeFrequency, Inf, "Method", "mean"), ...
+    %     'color', plottingFunc.hex2rgb(envi.Meta.colors.("EA")), ...
+    %     'linewidth', 2);
+            
+    hold off
+
+    % Axis formatting - display quarters 1, 10, and 20 for quarterly
+    % and each data reference for annnual
+    tickPositions = dateRangeDateTime;
+    dateLabels = compose("%02d", mod(year(dateRangeDateTime), 100));
+    set(gca, 'Xtick', tickPositions, 'XTickLabel', dateLabels, ...
+        'Fontsize', 7, 'Box', 'off', 'TickLabelInterpreter','latex');
+    
+    % Create shared legend for entire figure
+    lgd = legend(bars, ctryList, 'Interpreter','latex', ...
+        'Fontsize', 6, 'NumColumns', 6, 'Orientation', 'horizontal');
+    lgd.Layout.Tile = 'north'; 
+        
+    % Save graph
+    fileName = fullfile(project_path, "docs/2025-02_working-paper/figures/NGEU_input");
+    exportgraphics(t, sprintf('%s.png', fileName), 'BackgroundColor', 'none');
+    exportgraphics(t, sprintf('%s.pdf', fileName), 'BackgroundColor', 'none');
 end
