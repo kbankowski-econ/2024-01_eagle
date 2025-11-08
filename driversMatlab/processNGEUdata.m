@@ -36,13 +36,14 @@ function generateNGEUModFile()
     utils.call.paths;
 
     % Read CSV data
-    csvData = readtable(fullfile(project_path, "databases/inputNGEUshock.csv"));
+    ngeuShockDatabank = databank.fromCSV(fullfile(project_path, "databases/inputNGEUshock.csv"));
     
     % Get variable names (excluding the date column)
-    varNames = csvData.Properties.VariableNames(2:end);
+    varNames = databank.fieldNames(ngeuShockDatabank);
     
     % Number of periods (32 quarters from 2021Q1 to 2028Q4)
-    numPeriods = height(csvData);
+    dataRange = databank.range(ngeuShockDatabank);
+    numPeriods = length(dataRange);
     
     % Open file for writing
     outputFile = fullfile(project_path, "eagleParsingTemp/modFiles/ngeu_shock_values.mod");
@@ -54,23 +55,22 @@ function generateNGEUModFile()
     
 
     % Process each variable
-    for i = 1:length(varNames)
-        varName = varNames{i};
+    for aVarName = varNames
         
         % Write variable declaration
-        fprintf(fid, 'var %s;\n', varName);
+        fprintf(fid, 'var %s;\n', aVarName);
         
         % Write periods line
         fprintf(fid, 'periods');
-        for period = 1:numPeriods
-            fprintf(fid, ' %d', period);
+        for periodInteger = 1:numPeriods
+            fprintf(fid, ' %d', periodInteger);
         end
         fprintf(fid, ';\n');
         
         % Write values line
         fprintf(fid, 'values');
-        for period = 1:numPeriods
-            value = csvData.(varName)(period);
+        for periodDateRange = dataRange
+            value = ngeuShockDatabank.(aVarName)(periodDateRange);
             % Convert percentage to decimal and format with 5 decimal places
             fprintf(fid, ' %.5f', value/100);
         end
