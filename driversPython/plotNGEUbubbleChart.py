@@ -63,7 +63,10 @@ def create_bubble_chart(
     all_countries = set(df_summed['Country'].unique()) | set(df_A_summed['Country'].unique())
     all_variables = set(df_summed['Variable'].unique()) | set(df_A_summed['Variable'].unique())
     countries = sorted(all_countries)
-    variables = sorted(all_variables)
+    
+    # Custom ordering for variables - reversed so visual order matches list order
+    variable_order = ['OtherSpend', 'GovInv', 'GovTransf', 'TaxDirectFirm', 'TaxDirectHH']
+    variables = [var for var in variable_order if var in all_variables]
     
     # Create categorical mappings for positioning
     country_map = {country: i for i, country in enumerate(countries)}
@@ -77,14 +80,14 @@ def create_bubble_chart(
     df_A_summed['country_pos'] = df_A_summed['Country'].map(country_map)
     df_A_summed['variable_pos'] = df_A_summed['Variable'].map(variable_map)
     
-    # Calculate bubble sizes independently for each dataset - no minimum size
+    # Calculate bubble sizes independently for each dataset - moderate size increase
     df_summed['abs_value'] = abs(df_summed['Value'])
     max_val_circles = df_summed['abs_value'].max()
-    df_summed['bubble_size'] = (df_summed['abs_value'] / max_val_circles) * 60  # Max size 60, min approaches 0
+    df_summed['bubble_size'] = (df_summed['abs_value'] / max_val_circles) * 100  # Max size 100, min approaches 0
     
     df_A_summed['abs_value'] = abs(df_A_summed['Value'])
     max_val_squares = df_A_summed['abs_value'].max()
-    df_A_summed['square_size'] = (df_A_summed['abs_value'] / max_val_squares) * 60  # Max size 60, min approaches 0
+    df_A_summed['square_size'] = (df_A_summed['abs_value'] / max_val_squares) * 100  # Max size 100, min approaches 0
     
     # Debug: Check AT GovTransf specifically
     at_govtransf_arat = df_summed[(df_summed['Country'] == 'AT') & (df_summed['Variable'] == 'GovTransf')]
