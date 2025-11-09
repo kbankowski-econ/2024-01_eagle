@@ -14,7 +14,7 @@ steady(solve_algo = 5, markowitz = 5);
 
 shocks;
 var DE_epsgi;
-periods 1:4;
+periods 1:12;
 values 0.01;
 end;
 
