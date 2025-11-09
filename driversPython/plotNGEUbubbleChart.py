@@ -33,8 +33,8 @@ def create_bubble_chart(
     df = load_ngeu_data(data_file)
     country_colors = load_country_colors(project_path)
     
-    # Filter out columns we don't want to plot (Time and Country are metadata)
-    value_columns = [col for col in df.columns if col not in ['Time', 'Country']]
+    # Filter out columns we don't want to plot (Time, Country, and OtherRev)
+    value_columns = [col for col in df.columns if col not in ['Time', 'Country', 'OtherRev']]
     
     # Filter data for years 2021-2026
     df_filtered = df[df['Time'].isin([2021, 2022, 2023, 2024, 2025, 2026])]
