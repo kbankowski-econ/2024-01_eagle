@@ -17,3 +17,4 @@ rr,Real interest rate (ann.),(x-y)*400,abs. deviation in percent
 r,Nominal interest rate (ann.),(x-y)*400,abs. deviation in percent
 cg,Government consumption,(x/y-1)*100,\% deviation
 ig,Government investment,(x/y-1)*100,\% deviation
+igy,Government investment-to-GDP ratio,(x-y)*100,abs. deviation in percent

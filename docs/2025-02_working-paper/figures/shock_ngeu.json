@@ -15,12 +15,16 @@
     "w",
     "nd",
     "rr",
-    "r"
+    "r",
+    "igy"
   ],
   "countries": [
-    "FI",
-    "DE",
     "ES",
+    "FR",
+    "GR",
+    "IT",
+    "PT",
+    "RA",
     "RU",
     "US"
   ]
