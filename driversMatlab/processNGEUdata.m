@@ -57,6 +57,15 @@ function pringAllNGEUtoCSVfile(ngeuDatabank, csvFileName)
         
         ctryTable.Time = string(year(ctryTable.Time));
 
+        % multiplying by -1 for a revenue measure
+        ctryTable.TaxDirectFirm = -1 * ctryTable.TaxDirectFirm;
+
+        columnSums = sum(ctryTable(:, vartype('numeric')));
+
+        columnSums.Time = "Total";
+
+        ctryTable = [ctryTable; columnSums];
+
         ctryTable.Country = repmat(aCtry, height(ctryTable), 1);
 
         allCtryNGEUinputTable = [allCtryNGEUinputTable; ctryTable];
