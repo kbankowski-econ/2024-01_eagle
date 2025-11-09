@@ -33,7 +33,7 @@ def load_ngeu_data(data_file):
 
 
 def melt_total_rows(df, value_columns):
-    """Keep total rows, melt to long format, and drop zero values."""
+    """Keep total rows, melt to long format, including zero values."""
     total_rows = df[df['Time'] == 'Total']
     long_df = total_rows.melt(
         id_vars=['Time', 'Country'],
@@ -41,7 +41,7 @@ def melt_total_rows(df, value_columns):
         var_name='Variable',
         value_name='Value'
     )
-    return long_df[long_df['Value'].abs() > 1e-6].copy()
+    return long_df.copy()
 
 
 def assign_positions(df, country_map, variable_map):
