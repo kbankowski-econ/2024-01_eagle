@@ -39,27 +39,25 @@ def create_bubble_chart(
     # Filter out columns we don't want to plot (Time, Country, and OtherRev)
     value_columns = [col for col in df.columns if col not in ['Time', 'Country', 'OtherRev']]
     
-    # Process first dataset (circles)
-    df_filtered = df[df['Time'].isin([2021, 2022, 2023, 2024, 2025, 2026])]
-    df_long = df_filtered.melt(
+    # Process first dataset - use only "Total" rows
+    df_total = df[df['Time'] == 'Total']
+    df_long = df_total.melt(
         id_vars=['Time', 'Country'], 
         value_vars=value_columns,
         var_name='Variable', 
         value_name='Value'
     )
-    df_summed = df_long.groupby(['Country', 'Variable'])['Value'].sum().reset_index()
-    df_summed = df_summed[abs(df_summed['Value']) > 1e-6]
+    df_summed = df_long[abs(df_long['Value']) > 1e-6]
     
-    # Process second dataset (squares) - same structure
-    df_A_filtered = df_A[df_A['Time'].isin([2021, 2022, 2023, 2024, 2025, 2026])]
-    df_A_long = df_A_filtered.melt(
+    # Process second dataset - use only "Total" rows
+    df_A_total = df_A[df_A['Time'] == 'Total']
+    df_A_long = df_A_total.melt(
         id_vars=['Time', 'Country'], 
         value_vars=value_columns,
         var_name='Variable', 
         value_name='Value'
     )
-    df_A_summed = df_A_long.groupby(['Country', 'Variable'])['Value'].sum().reset_index()
-    df_A_summed = df_A_summed[abs(df_A_summed['Value']) > 1e-6]
+    df_A_summed = df_A_long[abs(df_A_long['Value']) > 1e-6]
     
     # Get unique countries and variables for axis ordering (combine both datasets)
     all_countries = set(df_summed['Country'].unique()) | set(df_A_summed['Country'].unique())
@@ -109,7 +107,7 @@ def create_bubble_chart(
                 f"Country: {row['Country']}<br>" +
                 f"Variable: {row['Variable']}<br>" +
                 f"Dataset: Arat<br>" +
-                f"Total Value (2021-2026): {row['Value']:.5f}"
+                f"Total Value: {row['Value']:.5f}"
                 for _, row in country_data.iterrows()
             ]
             
@@ -145,7 +143,7 @@ def create_bubble_chart(
                 f"Country: {row['Country']}<br>" +
                 f"Variable: {row['Variable']}<br>" +
                 f"Dataset: A<br>" +
-                f"Total Value (2021-2026): {row['Value']:.5f}"
+                f"Total Value: {row['Value']:.5f}"
                 for _, row in country_data_A.iterrows()
             ]
             
