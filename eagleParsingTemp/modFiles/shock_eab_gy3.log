@@ -7507,39 +7507,46 @@ MODEL SIMULATION: (method=Sparse LU solver on stacked system)
 ------------------------------------
       Iteration no. 1
       Inf-norm error = 4.871e-02
-      2-norm error   = 2.805e-01
-      1-norm error   = 1.858e+00
+      2-norm error   = 4.858e-01
+      1-norm error   = 5.570e+00
 ------------------------------------
-(** 89.04 seconds **)
+(** 83.13 seconds **)
 ------------------------------------
       Iteration no. 2
-      Inf-norm error = 7.474e-02
-      2-norm error   = 5.327e-01
-      1-norm error   = 1.832e+01
+      Inf-norm error = 1.417e-01
+      2-norm error   = 1.180e+00
+      1-norm error   = 5.190e+01
 ------------------------------------
-(** 86.78 seconds **)
+(** 89.21 seconds **)
 ------------------------------------
       Iteration no. 3
-      Inf-norm error = 5.612e-03
-      2-norm error   = 9.788e-03
-      1-norm error   = 1.129e-01
+      Inf-norm error = 7.686e-03
+      2-norm error   = 1.351e-02
+      1-norm error   = 1.877e-01
 ------------------------------------
-(** 83.40 seconds **)
+(** 76.49 seconds **)
 ------------------------------------
       Iteration no. 4
-      Inf-norm error = 4.014e-03
-      2-norm error   = 4.518e-03
-      1-norm error   = 9.479e-03
+      Inf-norm error = 7.704e-03
+      2-norm error   = 9.438e-03
+      1-norm error   = 2.510e-02
 ------------------------------------
-(** 78.69 seconds **)
+(** 72.99 seconds **)
 ------------------------------------
       Iteration no. 5
-      Inf-norm error = 7.661e-06
-      2-norm error   = 9.749e-06
-      1-norm error   = 2.063e-05
+      Inf-norm error = 1.810e-05
+      2-norm error   = 2.198e-05
+      1-norm error   = 4.439e-05
+------------------------------------
+(** 68.93 seconds **)
+------------------------------------
+      Iteration no. 6
+      Inf-norm error = 1.855e-10
+      2-norm error   = 9.799e-10
+      1-norm error   = 1.245e-08
 ------------------------------------
 
 Perfect foresight solution found.
 
-Total computing time : 0h05m43s
+Total computing time : 0h06m37s
 Note: 164 warning(s) encountered in the preprocessor
