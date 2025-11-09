@@ -32,6 +32,36 @@ generateNGEUModFile();
 %% plotting NGEU input
 plotNGEUinput();
 
+%% print all categories to a csv file so that i can use this for plotting
+pringAllNGEUtoCSVfile(ngeuInput.shockInput.Arat)
+
+%% print all categories to a csv file
+function pringAllNGEUtoCSVfile(ngeuDatabank)
+
+    % reading in envi variabel
+    utils.call.paths;
+
+    envi = environment.setup();
+    dataRange = yy(2021): yy(2026);
+
+    % merged table
+    allCtryNGEUinputTable = table();
+
+    for aCtry = envi.Meta.eaListForReport
+    
+        ctryTable = databank.toTable(databank.apply(ngeuDatabank.(aCtry), @(x)x{dataRange}));
+        
+        ctryTable.Time = string(year(ctryTable.Time));
+
+        ctryTable.Country = repmat(aCtry, height(ctryTable), 1);
+
+        allCtryNGEUinputTable = [allCtryNGEUinputTable; ctryTable];
+    end
+
+    writetable(allCtryNGEUinputTable, fullfile(project_path, "databases/allCtryNGEUinputTable.csv"));
+
+end
+
 %% local functions
 function generateNGEUModFile()
 
