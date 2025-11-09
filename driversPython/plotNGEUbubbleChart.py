@@ -21,60 +21,78 @@ def load_ngeu_data(data_file):
 def create_bubble_chart(
     project_path,
     data_file='databases/allCtryNGEUinputTable_Arat.csv',
+    data_file_A='databases/allCtryNGEUinputTable_A.csv',
     auto_open=True
 ):
     """Create categorical bubble chart with countries on horizontal axis and variables on vertical axis."""
     
     # Construct file paths
     data_file = os.path.join(project_path, data_file)
+    data_file_A = os.path.join(project_path, data_file_A)
     output_prefix = os.path.join(project_path, 'docs/2025-02_working-paper/figures/NGEU_bubble_chart')
     
     # Load data and colors
     df = load_ngeu_data(data_file)
+    df_A = load_ngeu_data(data_file_A)
     country_colors = load_country_colors(project_path)
     
     # Filter out columns we don't want to plot (Time, Country, and OtherRev)
     value_columns = [col for col in df.columns if col not in ['Time', 'Country', 'OtherRev']]
     
-    # Filter data for years 2021-2026
+    # Process first dataset (circles)
     df_filtered = df[df['Time'].isin([2021, 2022, 2023, 2024, 2025, 2026])]
-    
-    # Create a long format DataFrame for plotting
     df_long = df_filtered.melt(
         id_vars=['Time', 'Country'], 
         value_vars=value_columns,
         var_name='Variable', 
         value_name='Value'
     )
-    
-    # Sum values by Country and Variable across all years (2021-2026)
     df_summed = df_long.groupby(['Country', 'Variable'])['Value'].sum().reset_index()
-    
-    # Remove rows with zero or very small values to avoid clutter
     df_summed = df_summed[abs(df_summed['Value']) > 1e-6]
     
-    # Get unique countries and variables for axis ordering
-    countries = sorted(df_summed['Country'].unique())
-    variables = sorted(df_summed['Variable'].unique())
+    # Process second dataset (squares) - same structure
+    df_A_filtered = df_A[df_A['Time'].isin([2021, 2022, 2023, 2024, 2025, 2026])]
+    df_A_long = df_A_filtered.melt(
+        id_vars=['Time', 'Country'], 
+        value_vars=value_columns,
+        var_name='Variable', 
+        value_name='Value'
+    )
+    df_A_summed = df_A_long.groupby(['Country', 'Variable'])['Value'].sum().reset_index()
+    df_A_summed = df_A_summed[abs(df_A_summed['Value']) > 1e-6]
+    
+    # Get unique countries and variables for axis ordering (combine both datasets)
+    all_countries = set(df_summed['Country'].unique()) | set(df_A_summed['Country'].unique())
+    all_variables = set(df_summed['Variable'].unique()) | set(df_A_summed['Variable'].unique())
+    countries = sorted(all_countries)
+    variables = sorted(all_variables)
     
     # Create categorical mappings for positioning
     country_map = {country: i for i, country in enumerate(countries)}
     variable_map = {var: i for i, var in enumerate(variables)}
     
-    # Add positional coordinates
+    # Add positional coordinates for first dataset (circles)
     df_summed['country_pos'] = df_summed['Country'].map(country_map)
     df_summed['variable_pos'] = df_summed['Variable'].map(variable_map)
     
-    # Calculate bubble sizes (scale absolute values for visibility)
+    # Add positional coordinates for second dataset (squares)
+    df_A_summed['country_pos'] = df_A_summed['Country'].map(country_map)
+    df_A_summed['variable_pos'] = df_A_summed['Variable'].map(variable_map)
+    
+    # Calculate bubble sizes for first dataset (circles)
     df_summed['abs_value'] = abs(df_summed['Value'])
-    # Scale bubble sizes - adjust multiplier as needed for visual balance
-    max_val = df_summed['abs_value'].max()
-    df_summed['bubble_size'] = (df_summed['abs_value'] / max_val) * 50 + 10  # Min size 10, max size 60
+    max_val_circles = df_summed['abs_value'].max()
+    df_summed['bubble_size'] = (df_summed['abs_value'] / max_val_circles) * 50 + 10  # Min size 10, max size 60
+    
+    # Calculate square sizes for second dataset (squares)
+    df_A_summed['abs_value'] = abs(df_A_summed['Value'])
+    max_val_squares = df_A_summed['abs_value'].max()
+    df_A_summed['square_size'] = (df_A_summed['abs_value'] / max_val_squares) * 40 + 8  # Min size 8, max size 48
     
     # Create the bubble chart
     fig = go.Figure()
     
-    # Add bubbles for each country
+    # Add circles for first dataset
     for country in countries:
         country_data = df_summed[df_summed['Country'] == country]
         if not country_data.empty:
@@ -85,6 +103,7 @@ def create_bubble_chart(
             hover_text = [
                 f"Country: {row['Country']}<br>" +
                 f"Variable: {row['Variable']}<br>" +
+                f"Dataset: Arat<br>" +
                 f"Total Value (2021-2026): {row['Value']:.5f}"
                 for _, row in country_data.iterrows()
             ]
@@ -94,12 +113,48 @@ def create_bubble_chart(
                     x=country_data['country_pos'],
                     y=country_data['variable_pos'],
                     mode='markers',
-                    name=country,
+                    name=f"{country}_circles",
                     marker=dict(
+                        symbol='circle',
                         size=country_data['bubble_size'],
                         color=country_color,
                         opacity=0.7,
                         line=dict(width=1, color='white')
+                    ),
+                    text=hover_text,
+                    hovertemplate='%{text}<extra></extra>',
+                    showlegend=False
+                )
+            )
+    
+    # Add overlapping squares for second dataset
+    for country in countries:
+        country_data_A = df_A_summed[df_A_summed['Country'] == country]
+        if not country_data_A.empty:
+            # Get color for this country from Meta.json, fallback to default if not found
+            country_color = country_colors.get(country, '#000000')
+            
+            # Create hover text with more information
+            hover_text = [
+                f"Country: {row['Country']}<br>" +
+                f"Variable: {row['Variable']}<br>" +
+                f"Dataset: A<br>" +
+                f"Total Value (2021-2026): {row['Value']:.5f}"
+                for _, row in country_data_A.iterrows()
+            ]
+            
+            fig.add_trace(
+                go.Scatter(
+                    x=country_data_A['country_pos'],
+                    y=country_data_A['variable_pos'],
+                    mode='markers',
+                    name=f"{country}_squares",
+                    marker=dict(
+                        symbol='square',
+                        size=country_data_A['square_size'],
+                        color=country_color,
+                        opacity=0.5,  # More transparent to see overlap
+                        line=dict(width=1, color='black')
                     ),
                     text=hover_text,
                     hovertemplate='%{text}<extra></extra>',
@@ -161,8 +216,10 @@ def create_bubble_chart(
     print(f"\nData summary:")
     print(f"  - Countries: {len(countries)}")
     print(f"  - Variables: {len(variables)}")
-    print(f"  - Total data points: {len(df_summed)}")
-    print(f"  - Value range: {df_summed['Value'].min():.5f} to {df_summed['Value'].max():.5f}")
+    print(f"  - Circle data points (Arat): {len(df_summed)}")
+    print(f"  - Square data points (A): {len(df_A_summed)}")
+    print(f"  - Circle value range: {df_summed['Value'].min():.5f} to {df_summed['Value'].max():.5f}")
+    print(f"  - Square value range: {df_A_summed['Value'].min():.5f} to {df_A_summed['Value'].max():.5f}")
     print(f"  - Time period: 2021-2026 (summed values)")
 
 if __name__ == "__main__":
