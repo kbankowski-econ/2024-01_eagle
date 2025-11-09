@@ -4,7 +4,7 @@ function eaCntryDecomposition(contributionSeriesOriginal, modelName, options)
         contributionSeriesOriginal
         modelName {mustBeTextScalar}
         options.redateNewDate (1, 1) Dater = qq(1, 1)
-        options.plottingRange Dater = qq(1,1):qq(5,4)
+        options.plottingRange Dater = qq(1,1):qq(10,4)
     end
 
     % reading global variables
@@ -63,8 +63,8 @@ function eaCntryDecomposition(contributionSeriesOriginal, modelName, options)
             tickPositions = dateRangeDateTime;
             dateLabels = compose("%02d", mod(year(dateRangeDateTime), 100));
         elseif dateRangeFrequency == "QUARTERLY"
-            tickPositions = [dateRangeDateTime(1), dateRangeDateTime(10), dateRangeDateTime(20)];
-            dateLabels = {'1', '10', '20'};
+            tickPositions = [dateRangeDateTime(1), dateRangeDateTime(10), dateRangeDateTime(20), dateRangeDateTime(30), dateRangeDateTime(40)];
+            dateLabels = {'1', '10', '20', '30', '40'};
         else
             error('Unsupported frequency: %s. Only YEARLY and QUARTERLY frequencies are supported.', dateRangeFrequency);
         end
