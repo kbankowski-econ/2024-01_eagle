@@ -77,15 +77,31 @@ def create_bubble_chart(
     df_A_summed['country_pos'] = df_A_summed['Country'].map(country_map)
     df_A_summed['variable_pos'] = df_A_summed['Variable'].map(variable_map)
     
-    # Calculate bubble sizes for first dataset (circles)
+    # Calculate bubble sizes independently for each dataset - no minimum size
     df_summed['abs_value'] = abs(df_summed['Value'])
     max_val_circles = df_summed['abs_value'].max()
-    df_summed['bubble_size'] = (df_summed['abs_value'] / max_val_circles) * 50 + 10  # Min size 10, max size 60
+    df_summed['bubble_size'] = (df_summed['abs_value'] / max_val_circles) * 60  # Max size 60, min approaches 0
     
-    # Calculate square sizes for second dataset (squares)
     df_A_summed['abs_value'] = abs(df_A_summed['Value'])
     max_val_squares = df_A_summed['abs_value'].max()
-    df_A_summed['square_size'] = (df_A_summed['abs_value'] / max_val_squares) * 40 + 8  # Min size 8, max size 48
+    df_A_summed['square_size'] = (df_A_summed['abs_value'] / max_val_squares) * 60  # Max size 60, min approaches 0
+    
+    # Debug: Check AT GovTransf specifically
+    at_govtransf_arat = df_summed[(df_summed['Country'] == 'AT') & (df_summed['Variable'] == 'GovTransf')]
+    if not at_govtransf_arat.empty:
+        value = at_govtransf_arat.iloc[0]['Value']
+        bubble_size = at_govtransf_arat.iloc[0]['bubble_size']
+        print(f"Debug AT GovTransf Arat: Value={value:.10f}, Max in dataset={max_val_circles:.10f}")
+        print(f"Debug AT GovTransf Arat: Relative size={(value/max_val_circles):.4f}, Bubble size={bubble_size:.1f}")
+    
+    # Show top 5 values in Arat dataset for context
+    print("Top 5 values in Arat dataset:")
+    top_arat = df_summed.nlargest(5, 'abs_value')[['Country', 'Variable', 'Value', 'bubble_size']]
+    for _, row in top_arat.iterrows():
+        print(f"  {row['Country']} {row['Variable']}: {row['Value']:.6f} (bubble: {row['bubble_size']:.1f})")
+    
+    print(f"\nArat dataset stats: min={df_summed['abs_value'].min():.10f}, max={df_summed['abs_value'].max():.10f}")
+    print(f"Total data points in Arat: {len(df_summed)}")
     
     # Create two-panel subplot (top: Arat, bottom: A)
     fig = make_subplots(
