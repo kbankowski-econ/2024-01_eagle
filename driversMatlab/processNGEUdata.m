@@ -35,6 +35,9 @@ plotNGEUinput();
 %% print all categories to a csv file so that i can use this for plotting
 pringAllNGEUtoCSVfile(ngeuInput.shockInput.Arat)
 
+%% plot a bubble chart with the NGEU amounts
+
+
 %% print all categories to a csv file
 function pringAllNGEUtoCSVfile(ngeuDatabank)
 
