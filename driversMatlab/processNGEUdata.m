@@ -1,6 +1,5 @@
 utils.call.paths;
-% //TODO: there is no RA aggregate and this has to be fixed
-ctryList = envi.Meta.eaListForReport(1: end-1);
+ctryList = envi.Meta.eaListForReport;
 
 % cding to a proper folder
 cd(fullfile(project_path, 'eagleParsingTemp','modFiles'));
@@ -12,11 +11,11 @@ bridgeMap = containers.Map(dataKeys, modelKeys);
 
 %% Read in data from Matlab and save in csv files for further processing
 ngeuInput = load(fullfile(project_path_ecbMC, "databases/FiscalBMENote", "shockInput_NGEU_24repFQ_AEJun24.mat"));
-gdpInput = load(fullfile(project_path_ecbMC, "databases/FiscalBMENote", "ltGDP_GovCo2024.mat"));
+gdpInput.ltGDP.A = databank.fromCSV(fullfile(project_path_ecbMC, 'databases/FiscalBMENote', 'weo_data.csv'));
 
 ngeuEagleInput = struct();
 
-for aCtry = ngeuCtryListStdNames
+for aCtry = envi.Meta.eaListForReport
     ngeuEagleInput.(aCtry + "_" + bridgeMap("GovInv")) = ngeuInput.shockInput.Arat.(aCtry).GovInv;
 end
 
@@ -95,9 +94,7 @@ function plotNGEUinput()
     % reading global variables
     utils.call.paths;
     envi = environment.setup;
-
-    % //TODO: there is no RA aggregate and this has to be fixed
-    ctryList = envi.Meta.eaListForReport(1: end-1);
+    ctryList = envi.Meta.eaListForReport;
 
     % Read CSV data
     ngeuInputValuesRaw = databank.fromCSV(fullfile(project_path, "databases/inputNGEUchart.csv"));
