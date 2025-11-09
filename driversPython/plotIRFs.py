@@ -194,8 +194,7 @@ def create_irf_plots(
             xanchor="center",
             x=0.5,
             font=dict(size=9),
-            bordercolor="black",
-            borderwidth=0.5
+            borderwidth=0
         ),
         margin=dict(l=0, r=35, t=0, b=0)  # Add top margin for legend
     )

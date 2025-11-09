@@ -98,6 +98,12 @@ The import bias parameter must be specified for all trading partners except one,
 \newcommand{\TradeNetworkExplanation}{%
 This circular network visualizes bilateral trade flows between 14 countries/regions based on average values across the dataset period, where node size represents total import volume and edge thickness shows bilateral import flows. Only the top 5 import flows per country are displayed to reduce clutter, with edge colors matching the importing country.%
 }
+\newcommand{\IRFnote}{%
+Horizontal axis: Quarters. GDP and its components are in real terms. Vertical axis shows percentage deviations from baseline; inflation, interest rates, and GDP ratios are in percentage-point deviations.
+}
+\newcommand{\EAdecompositionNote}{%
+Bars represent country-specific contributions to the euro area aggregate.
+}
 
 % Define the path as a variable at the beginning of your document
 \input{draftPaper_localBibliographyPath.tex}
@@ -816,15 +822,15 @@ I M_t^{G_C, C O}=v_{M G_C}^{H, C O}\left(\frac{P_{I M, t}^{C O}}{P_{I M G_C, t}}
     \caption{Euro area monetary policy shock -- IRFs \label{fig:shock_ea_epsr1_irfs}}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/shock_ea_epsr1_irfs.pdf}}
         \source{EAGLE model simulations.}
-        \desc{Horizontal axis: quarters. Vertical axis: percentage deviations from the baseline, except for inflation and in- terest rates (annualized percentage-point deviations), and the trade balance-to-GDP ratio (percentage-point deviations). GDP and its components are reported in real terms.}
+        \desc{\IRFnote}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \caption{Euro area monetary policy shock -- decomposition \label{fig:shock_ea_epsr1_contributions}}
+    \caption{Euro area monetary policy shock -- EA decomposition \label{fig:shock_ea_epsr1_contributions}}
     \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{figures/shock_ea_epsr1_contributions.pdf}}
         \source{EAGLE model simulations.}
-        \desc{...}
+        \desc{\EAdecompositionNote}
 \end{figure}
 
 
@@ -846,15 +852,15 @@ Inflationary pressures, while present, are more subdued compared to those genera
     \caption{US and rest of world consumption shock -- IRFs \label{fig:shock_rw_us_epszcon_irfs}}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/shock_rw_us_epszcon_irfs.pdf}}
         \source{EAGLE model simulations.}
-        \desc{Horizontal axis: quarters. Vertical axis: percentage deviations from the baseline, except for inflation and in- terest rates (annualized percentage-point deviations), and the trade balance-to-GDP ratio (percentage-point deviations). GDP and its components are reported in real terms.}
+        \desc{\IRFnote}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \caption{US and rest of world consumption shock -- decomposition \label{fig:shock_rw_us_epszcon_contributions}}
+    \caption{US and rest of world consumption shock -- EA decomposition \label{fig:shock_rw_us_epszcon_contributions}}
     \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{figures/shock_rw_us_epszcon_contributions.pdf}}
         \source{EAGLE model simulations.}
-        \desc{...}
+        \desc{\EAdecompositionNote}
 \end{figure}
 
 \subsection{EA-wide fiscal shock}
@@ -864,15 +870,15 @@ Inflationary pressures, while present, are more subdued compared to those genera
     \caption{Euro area government investment shock -- IRFs \label{fig:shock_eab_gy3_irfs}}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/shock_eab_gy3_irfs.pdf}}
         \source{EAGLE model simulations.}
-        \desc{Horizontal axis: quarters. Vertical axis: percentage deviations from the baseline, except for inflation and in- terest rates (annualized percentage-point deviations), and the trade balance-to-GDP ratio (percentage-point deviations). GDP and its components are reported in real terms.}
+        \desc{\IRFnote}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \caption{Euro area government investment shock -- decomposition \label{fig:shock_eab_gy3_contributions}}
+    \caption{Euro area government investment shock -- EA decomposition \label{fig:shock_eab_gy3_contributions}}
     \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{figures/shock_eab_gy3_contributions.pdf}}
         \source{EAGLE model simulations.}
-        \desc{...}
+        \desc{\EAdecompositionNote}
 \end{figure}
 
 \subsection{EA-single-country fiscal shock}
@@ -882,15 +888,15 @@ Inflationary pressures, while present, are more subdued compared to those genera
     \caption{Single country government investment shock \label{fig:shock_es_gc_irfs}}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/shock_it_gi_irfs.pdf}}
         \source{EAGLE model simulations.}
-        \desc{Horizontal axis: quarters. Vertical axis: percentage deviations from the baseline, except for inflation and in- terest rates (annualized percentage-point deviations), and the trade balance-to-GDP ratio (percentage-point deviations). GDP and its components are reported in real terms.}
+        \desc{\IRFnote}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \caption{Single country government investment shock decomposition \label{fig:shock_es_gc_contributions}}
+    \caption{Single country government investment shock -- EA decomposition \label{fig:shock_es_gc_contributions}}
     \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{figures/shock_it_gi_contributions.pdf}}
         \source{EAGLE model simulations.}
-        \desc{...}
+        \desc{\EAdecompositionNote}
 \end{figure}
 
 % 6(b) National shocks

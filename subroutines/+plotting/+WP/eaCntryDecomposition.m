@@ -74,10 +74,10 @@ function eaCntryDecomposition(contributionSeriesOriginal, modelName, options)
     
     end
     
-    % Create shared legend for entire figure
-    legendLabels = replace([contributionSeries.contrib.(item).Comment, item], "_", "\_");
+    % Create shared legend for entire figure; just extract country label
+    legendLabels = extractBetween([contributionSeries.contrib.(item).Comment, item], 1, 2);
     lgd = legend([bars, line], legendLabels, 'Interpreter','latex', ...
-        'Fontsize', 6, 'NumColumns', 6, 'Orientation', 'horizontal');
+        'Fontsize', 6, 'NumColumns', 6, 'Orientation', 'horizontal', 'Box', 'off');
     lgd.Layout.Tile = 'north'; 
         
     % Save graph
