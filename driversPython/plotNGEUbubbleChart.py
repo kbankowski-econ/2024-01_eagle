@@ -89,10 +89,15 @@ def create_bubble_chart(
     max_val_squares = df_A_summed['abs_value'].max()
     df_A_summed['square_size'] = (df_A_summed['abs_value'] / max_val_squares) * 40 + 8  # Min size 8, max size 48
     
-    # Create the bubble chart
-    fig = go.Figure()
+    # Create two-panel subplot (top: Arat, bottom: A)
+    fig = make_subplots(
+        rows=2, cols=1,
+        subplot_titles=('Dataset: Arat', 'Dataset: A'),
+        vertical_spacing=0.1,
+        shared_xaxes=True
+    )
     
-    # Add circles for first dataset
+    # Add circles for first dataset (top panel)
     for country in countries:
         country_data = df_summed[df_summed['Country'] == country]
         if not country_data.empty:
@@ -113,7 +118,7 @@ def create_bubble_chart(
                     x=country_data['country_pos'],
                     y=country_data['variable_pos'],
                     mode='markers',
-                    name=f"{country}_circles",
+                    name=f"{country}_arat",
                     marker=dict(
                         symbol='circle',
                         size=country_data['bubble_size'],
@@ -124,10 +129,11 @@ def create_bubble_chart(
                     text=hover_text,
                     hovertemplate='%{text}<extra></extra>',
                     showlegend=False
-                )
+                ),
+                row=1, col=1  # Top panel
             )
     
-    # Add overlapping squares for second dataset
+    # Add circles for second dataset (bottom panel)
     for country in countries:
         country_data_A = df_A_summed[df_A_summed['Country'] == country]
         if not country_data_A.empty:
@@ -148,24 +154,25 @@ def create_bubble_chart(
                     x=country_data_A['country_pos'],
                     y=country_data_A['variable_pos'],
                     mode='markers',
-                    name=f"{country}_squares",
+                    name=f"{country}_a",
                     marker=dict(
-                        symbol='square',
+                        symbol='circle',
                         size=country_data_A['square_size'],
                         color=country_color,
-                        opacity=0.5,  # More transparent to see overlap
-                        line=dict(width=1, color='black')
+                        opacity=0.7,
+                        line=dict(width=1, color='white')
                     ),
                     text=hover_text,
                     hovertemplate='%{text}<extra></extra>',
                     showlegend=False
-                )
+                ),
+                row=2, col=1  # Bottom panel
             )
     
-    # Fixed dimensions matching plotIRFs.py
+    # Fixed dimensions - stretched vertically for two panels
     cm_to_px = 37.8  # 1 cm ≈ 37.8 pixels (96 DPI)
     optimal_width = int(16 * 1.0 * cm_to_px)
-    optimal_height = int(16 * 1.0 * cm_to_px)
+    optimal_height = int(12 * 1.0 * cm_to_px)  # Increased height to 12cm for two panels
     
     # Update layout with styling consistent with plotIRFs.py
     fig.update_layout(
@@ -177,7 +184,22 @@ def create_bubble_chart(
         margin=dict(l=80, r=35, t=80, b=80)
     )
     
-    # Configure axes
+    # Configure axes for both panels
+    # Top panel x-axis (no labels, shared with bottom)
+    fig.update_xaxes(
+        title_text="",
+        tickvals=list(range(len(countries))),
+        ticktext=[""] * len(countries),  # No labels on top panel
+        tickfont=dict(size=10),
+        showgrid=True,
+        gridwidth=0.3,
+        gridcolor='#e8e8e8',
+        ticks="outside",
+        range=[-0.5, len(countries) - 0.5],
+        row=1, col=1
+    )
+    
+    # Bottom panel x-axis (with country labels)
     fig.update_xaxes(
         title_text="",
         tickvals=list(range(len(countries))),
@@ -187,9 +209,11 @@ def create_bubble_chart(
         gridwidth=0.3,
         gridcolor='#e8e8e8',
         ticks="outside",
-        range=[-0.5, len(countries) - 0.5]
+        range=[-0.5, len(countries) - 0.5],
+        row=2, col=1
     )
     
+    # Top panel y-axis
     fig.update_yaxes(
         title_text="",
         tickvals=list(range(len(variables))),
@@ -199,7 +223,22 @@ def create_bubble_chart(
         gridwidth=0.3,
         gridcolor='#e8e8e8',
         ticks="outside",
-        range=[-0.5, len(variables) - 0.5]
+        range=[-0.5, len(variables) - 0.5],
+        row=1, col=1
+    )
+    
+    # Bottom panel y-axis
+    fig.update_yaxes(
+        title_text="",
+        tickvals=list(range(len(variables))),
+        ticktext=variables,
+        tickfont=dict(size=10),
+        showgrid=True,
+        gridwidth=0.3,
+        gridcolor='#e8e8e8',
+        ticks="outside",
+        range=[-0.5, len(variables) - 0.5],
+        row=2, col=1
     )
     
     # Save outputs
