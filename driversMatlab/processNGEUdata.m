@@ -33,13 +33,14 @@ generateNGEUModFile();
 plotNGEUinput();
 
 %% print all categories to a csv file so that i can use this for plotting
-pringAllNGEUtoCSVfile(ngeuInput.shockInput.Arat)
+pringAllNGEUtoCSVfile(ngeuInput.shockInput.Arat, "allCtryNGEUinputTable_Arat.csv")
+pringAllNGEUtoCSVfile(ngeuInput.shockInput.A, "allCtryNGEUinputTable_A.csv")
 
 %% plot a bubble chart with the NGEU amounts
 
 
 %% print all categories to a csv file
-function pringAllNGEUtoCSVfile(ngeuDatabank)
+function pringAllNGEUtoCSVfile(ngeuDatabank, csvFileName)
 
     % reading in envi variabel
     utils.call.paths;
@@ -61,7 +62,7 @@ function pringAllNGEUtoCSVfile(ngeuDatabank)
         allCtryNGEUinputTable = [allCtryNGEUinputTable; ctryTable];
     end
 
-    writetable(allCtryNGEUinputTable, fullfile(project_path, "databases/allCtryNGEUinputTable.csv"));
+    writetable(allCtryNGEUinputTable, fullfile(project_path, "databases", csvFileName));
 
 end
 

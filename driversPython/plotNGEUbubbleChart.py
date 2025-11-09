@@ -20,7 +20,7 @@ def load_ngeu_data(data_file):
 
 def create_bubble_chart(
     project_path,
-    data_file='databases/allCtryNGEUinputTable.csv',
+    data_file='databases/allCtryNGEUinputTable_Arat.csv',
     auto_open=True
 ):
     """Create categorical bubble chart with countries on horizontal axis and variables on vertical axis."""
