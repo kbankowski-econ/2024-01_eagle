@@ -68,6 +68,19 @@ def create_bubble_chart(
     variable_order = ['OtherSpend', 'GovInv', 'GovTransf', 'TaxDirectFirm', 'TaxDirectHH']
     variables = [var for var in variable_order if var in all_variables]
     
+    # Create mapping for readable variable labels
+    variable_label_map = {
+        'TaxDirectHH': 'Direct Taxes on Households',
+        'GovTransf': 'Gov. Transfers', 
+        'TaxDirectFirm': 'Direct Taxes on Firms',
+        'GovInv': 'Gov. Investment',
+        'OtherSpend': 'Other Gov. Spending',
+        'OtherRev': 'Oth. Gov Revenue'
+    }
+    
+    # Create readable labels for the variables in our data
+    variable_labels = [variable_label_map.get(var, var) for var in variables]
+    
     # Create categorical mappings for positioning
     country_map = {country: i for i, country in enumerate(countries)}
     variable_map = {var: i for i, var in enumerate(variables)}
@@ -109,7 +122,7 @@ def create_bubble_chart(
     # Create two-panel subplot (top: Arat, bottom: A)
     fig = make_subplots(
         rows=2, cols=1,
-        subplot_titles=('Dataset: Arat', 'Dataset: A'),
+        subplot_titles=('(Percentage of National GDP)', '(EUR billions)'),
         vertical_spacing=0.1,
         shared_xaxes=True
     )
@@ -140,7 +153,7 @@ def create_bubble_chart(
                         symbol='circle',
                         size=country_data['bubble_size'],
                         color=country_color,
-                        opacity=0.7,
+                        opacity=1.0,
                         line=dict(width=1, color='white')
                     ),
                     text=hover_text,
@@ -176,7 +189,7 @@ def create_bubble_chart(
                         symbol='circle',
                         size=country_data_A['square_size'],
                         color=country_color,
-                        opacity=0.7,
+                        opacity=1.0,
                         line=dict(width=1, color='white')
                     ),
                     text=hover_text,
@@ -186,19 +199,67 @@ def create_bubble_chart(
                 row=2, col=1  # Bottom panel
             )
     
+    # Add simple size reference bubbles at the top center of each panel
+    legend_x_pos = (len(countries) - 1) / 2  # Position at center horizontally
+    legend_y_pos = len(variables) + 0.3  # Position above the top variable
+    
+    # Top panel: Show what size 1 would be
+    size_1_arat = (1 / max_val_circles) * 100  # True proportional size
+    fig.add_trace(
+        go.Scatter(
+            x=[legend_x_pos],
+            y=[legend_y_pos],
+            mode='markers+text',
+            marker=dict(
+                symbol='circle',
+                size=size_1_arat,
+                color='lightgray',
+                line=dict(width=2, color='gray')
+            ),
+            text="1% of GDP",
+            textposition="middle right",
+            textfont=dict(size=10, color='black'),
+            showlegend=False,
+            hoverinfo='skip'
+        ),
+        row=1, col=1
+    )
+    
+    # Bottom panel: Show what size 1,000 would be
+    size_1k_a = (10000 / max_val_squares) * 100  # True proportional size
+    fig.add_trace(
+        go.Scatter(
+            x=[legend_x_pos],
+            y=[legend_y_pos],
+            mode='markers+text',
+            marker=dict(
+                symbol='circle',
+                size=size_1k_a,
+                color='lightgray',
+                line=dict(width=2, color='gray')
+            ),
+            text="EUR 10 billion",
+            textposition="middle right",
+            textfont=dict(size=10, color='black'),
+            showlegend=False,
+            hoverinfo='skip'
+        ),
+        row=2, col=1
+    )
+    
     # Fixed dimensions - stretched vertically for two panels
     cm_to_px = 37.8  # 1 cm ≈ 37.8 pixels (96 DPI)
     optimal_width = int(16 * 1.0 * cm_to_px)
-    optimal_height = int(12 * 1.0 * cm_to_px)  # Increased height to 12cm for two panels
+    optimal_height = int(10 * 1.0 * cm_to_px)  # Increased height to 12cm for two panels
     
-    # Update layout with styling consistent with plotIRFs.py
+    # Update layout with reduced margins
     fig.update_layout(
         width=optimal_width,
         height=optimal_height,
         template='simple_white',
         font=dict(family="Times New Roman", size=12),
         showlegend=False,
-        margin=dict(l=80, r=35, t=80, b=80)
+        margin=dict(l=0, r=0, t=20, b=0)
     )
     
     # Configure axes for both panels
@@ -230,31 +291,31 @@ def create_bubble_chart(
         row=2, col=1
     )
     
-    # Top panel y-axis
+    # Top panel y-axis - extend range to show legend
     fig.update_yaxes(
         title_text="",
         tickvals=list(range(len(variables))),
-        ticktext=variables,
+        ticktext=variable_labels,
         tickfont=dict(size=10),
         showgrid=True,
         gridwidth=0.3,
         gridcolor='#e8e8e8',
         ticks="outside",
-        range=[-0.5, len(variables) - 0.5],
+        range=[-0.5, len(variables) + 0.7],  # Extended to show legend
         row=1, col=1
     )
     
-    # Bottom panel y-axis
+    # Bottom panel y-axis - extend range to show legend
     fig.update_yaxes(
         title_text="",
         tickvals=list(range(len(variables))),
-        ticktext=variables,
+        ticktext=variable_labels,
         tickfont=dict(size=10),
         showgrid=True,
         gridwidth=0.3,
         gridcolor='#e8e8e8',
         ticks="outside",
-        range=[-0.5, len(variables) - 0.5],
+        range=[-0.5, len(variables) + 0.7],  # Extended to show legend
         row=2, col=1
     )
     
