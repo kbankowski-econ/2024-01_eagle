@@ -36,16 +36,3 @@ internationalLinkagesNu(envi, steady7struct, "MC", "private consumption");
 internationalLinkagesNu(envi, steady7struct, "MI", "private investment");
 internationalLinkagesNu(envi, steady7struct, "MCG", "government consumption");
 internationalLinkagesNu(envi, steady7struct, "MIG", "government investment");
-
-%% 
-resultFolder = 'D:\2025-03_eagle\eagleParsingTemp\modFiles';
-outputFolder = 'D:\2025-03_eagle\docs\2025-02_working-paper\tables';
-countryList = {'AT','BE','ES','FI','FR','GR','IT','NL','PT','DE'};
-
-% Government consumption shocks (Gc)
-shocksTables(resultFolder, outputFolder, countryList, 'gc', 'EA_y');
-shocksTables(resultFolder, outputFolder, countryList, 'gc', 'EA_pic4');
-
-% Government investment shocks (Gi)
-shocksTables(resultFolder, outputFolder, countryList, 'gi', 'EA_y');
-shocksTables(resultFolder, outputFolder, countryList, 'gi', 'EA_pic4');

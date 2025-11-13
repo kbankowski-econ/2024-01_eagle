@@ -1,0 +1,91 @@
+function multiplGovSpending(simulation_results, output_filename)
+% MULTIPLGOVSPENDING Generate LaTeX table for government investment and consumption multipliers
+%
+% This function creates a comprehensive LaTeX table showing the output effects of 
+% government investment and consumption shocks across European countries. The table
+% includes both union-wide and single-country shock scenarios.
+%
+% INPUTS:
+%   simulation_results - Struct: Processed simulation results containing IRF values
+%                       for all shock scenarios (union-wide and country-specific)
+%   output_filename   - String: Full path where the LaTeX table file will be saved
+%
+% OUTPUT:
+%   Creates a .tex file with formatted table showing:
+%   - Government investment multipliers (1Y, 3Y, 5Y, 7Y, 10Y, cumulative 1-10Y)
+%   - Government consumption multipliers (same periods)
+%   - Union-wide shock effects (EA aggregate)
+%   - Individual country shock effects (AT, BE, FI, FR, DE, GR, IT, NL, PT, ES, RA)
+%
+% EXAMPLE:
+%   multiplGovSpending(results, 'tables/government_multipliers.tex');
+
+    % Load environment configuration
+    environment_config = environment.setup();
+
+    % Open output file for writing
+    file_handle = fopen(output_filename, 'w');
+    if file_handle == -1
+        error('Cannot open file for writing: %s', output_filename);
+    end
+
+    %% LATEX TABLE HEADER SECTION
+    % Write table preamble with formatting specifications
+    fprintf(file_handle, '    \\centering\n');
+    fprintf(file_handle, '    \\caption{Output effects of gov. investment and consumption shocks (percentage deviations from the steady-state values).}\n');
+    fprintf(file_handle, '    \\label{tab:government_multipliers}\n');
+    fprintf(file_handle, '    \\footnotesize\n');
+    fprintf(file_handle, '    \\renewcommand{\\arraystretch}{1.2}\n');
+    
+    % Define table structure: 1 label column + 12 data columns  
+    fprintf(file_handle, '    \\begin{tabular}{>{\\raggedright}p{5.5cm}*{12}{>{\\centering\\arraybackslash}p{0.8cm}}}\n');
+    
+    % Create table header with column groups
+    fprintf(file_handle, '        \\toprule\n');
+    fprintf(file_handle, '         & \\multicolumn{6}{c}{Gov. investment} & \\multicolumn{6}{c}{Gov. consumption} \\\\\n');
+    fprintf(file_handle, '        \\cmidrule(lr){2-7} \\cmidrule(lr){8-13}\n');
+    fprintf(file_handle, '         & 1Y & 3Y & 5Y & 7Y & 10Y & 1-10Y & 1Y & 3Y & 5Y & 7Y & 10Y & 1-10Y \\\\\n');
+    fprintf(file_handle, '        \\midrule\n');
+
+    %% UNION-WIDE SHOCK SECTION
+    % Display effects when all EA countries implement fiscal policy simultaneously
+    fprintf(file_handle, '        \\multicolumn{13}{l}{\\textbf{Union-wide spending shocks}} \\\\\n');
+    
+    % Extract union-wide shock results (investment: gy3, consumption: gy4)
+    union_investment_results = simulation_results.shock_eab_gy3.irfValues;
+    union_consumption_results = simulation_results.shock_eab_gy4.irfValues;
+    
+    % Generate table row for EA aggregate results (converted to percentages)
+    fprintf(file_handle, utils.prepareTableMultLine('EA', ...
+        union_investment_results, union_consumption_results, ' & %.1f', @(x) x*1));
+
+    %% SINGLE-COUNTRY SHOCK SECTION  
+    % Display effects when individual countries implement fiscal policy
+    fprintf(file_handle, '        \\multicolumn{13}{l}{\\textbf{Single-country spending shocks}} \\\\\n');
+    
+    % Process each European country in the reporting list
+    for country = environment_config.Meta.eaListForReport
+        country_code = char(country);
+        
+        % Construct shock field names (gi: government investment, gc: government consumption)
+        investment_shock_name = "shock_" + lower(country_code) + "_gi";
+        consumption_shock_name = "shock_" + lower(country_code) + "_gc";
+        
+        % Extract country-specific simulation results
+        country_investment_results = simulation_results.(investment_shock_name).irfValues;
+        country_consumption_results = simulation_results.(consumption_shock_name).irfValues;
+        
+        % Generate table row for this country (converted to percentages)
+        fprintf(file_handle, utils.prepareTableMultLine(country_code, ...
+            country_investment_results, country_consumption_results, ' & %.1f', @(x) x*1));
+    end
+
+    %% LATEX TABLE FOOTER SECTION
+    fprintf(file_handle, '        \\bottomrule\n');
+    fprintf(file_handle, '    \\end{tabular}\n');
+
+    % Close file and ensure data is written
+    fclose(file_handle);
+    
+    fprintf('Successfully generated government multipliers table: %s\n', output_filename);
+end

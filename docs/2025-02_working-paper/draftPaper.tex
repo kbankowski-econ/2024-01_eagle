@@ -89,6 +89,9 @@ AT = Austria; BE = Belgium; FI = Finland; FR = France; DE = Germany; GR = Greece
 \newcommand{\CountryCodesForMP}{%
 EA = Euro area; RU = Non-euro area EU; RW = Rest of world; US = United States%
 }
+\newcommand{\CountryCodesEA}{%
+EA = Euro area; AT = Austria; BE = Belgium; FI = Finland; FR = France; DE = Germany; GR = Greece; IT = Italy; NL = Netherlands; PT = Portugal; ES = Spain; RA = Rest of euro area%
+}
 \newcommand{\TradeTablesNote}{%
 Column headers are the importing countries $(H)$. Row labels indicate countries of origin $(CO)$—exporting countries.%
 }
@@ -1287,41 +1290,15 @@ Share of World GDP & IMF & NGDPD.A & \\
 
 \section{Sensitivity Analysis}\label{sec:appendix_sensitivity}
 
-\begin{table}[htbp]
-\centering
-\caption{Single country temporary fiscal shocks}
-\label{tab:sensitivityShocks}
-
-\begin{subtable}[t]{0.48\textwidth}
-  \caption{Government consumption shock effects on euro area GDP}
-  \input{tables/sensitivityShocks_gc_EA_y.tex}
-\end{subtable}
-\hfill
-\begin{subtable}[t]{0.48\textwidth}
-  \caption{Government consumption shock effects on euro area inflation}
-  \input{tables/sensitivityShocks_gc_EA_pic4.tex}
-\end{subtable}
-
-\vspace{3mm}
-
-\begin{subtable}[t]{0.48\textwidth}
-  \caption{Government investment shock effects on euro area GDP}
-  \input{tables/sensitivityShocks_gi_EA_y.tex}
-\end{subtable}
-\hfill
-\begin{subtable}[t]{0.48\textwidth}
-  \caption{Government investment shock effects on euro area inflation}
-  \input{tables/sensitivityShocks_gi_EA_pic4.tex}
-\end{subtable}
-
-\vspace{5mm}
-\source{EAGLE model simulations.}
-\desc{Fiscal expansions are based on an increase in government consumption or investment amounting to 1\% of GDP ex-ante and lasting for four quarters.}
-\textit{Note}: \CountryCodes.\\
-\end{table}
-
-
-
+\begin{landscape}
+    \begin{table}[htbp]
+        \input{tables/multiplGovSpending.tex}
+        \begin{minipage}{0.9\linewidth}
+            \vspace{0.5em}
+            \textit{Note}: \CountryCodesEA. The 1-10Y column represents the cumulative sum over the 1-10 year period.
+        \end{minipage}
+    \end{table}
+\end{landscape}
 
 %----------------------------------------------------------------------------------------
 \end{document}
