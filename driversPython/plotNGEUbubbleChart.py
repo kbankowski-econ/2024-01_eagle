@@ -56,7 +56,7 @@ def scale_marker_sizes(df, size_col):
     if max_val == 0:
         df[size_col] = 0
     else:
-        df[size_col] = (df['abs_value'] / max_val) * 100
+        df[size_col] = (df['abs_value'] / max_val) * 70
     return max_val
 
 
