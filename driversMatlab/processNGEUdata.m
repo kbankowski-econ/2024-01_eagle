@@ -51,7 +51,7 @@ function pringAllNGEUtoCSVfile(ngeuDatabank, csvFileName)
     % merged table
     allCtryNGEUinputTable = table();
 
-    for aCtry = envi.Meta.eaListForReport
+    for aCtry = [envi.Meta.eaListForReport, "RU"]
     
         ctryTable = databank.toTable(databank.apply(ngeuDatabank.(aCtry), @(x)x{dataRange}));
         
