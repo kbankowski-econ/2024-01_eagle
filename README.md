@@ -75,7 +75,10 @@ start-up on top of the figures given.
    shock reads from `modFiles/steady7/Output/steady7_results.mat`.
    To iterate on the steady state without reloading the model use
    `eagleParsingTemp/runHomothopyValuesModify.m`.
-   *Run time: not yet measured.*
+   *Run time: about 40 min for the whole chain.* The driver also performs the
+   model-parsing step (stage 2) on the way, so stage 2 need not be run
+   separately. Any change to the calibration mod files (stage 8) invalidates
+   everything from here down.
 4. **Shocks**:
    - `driversMatlab/runAllSimul.m` loops `functions.runEAGLEsimul` over rows
      6 to 16 of `shockDict.csv` (the 11 single-country consumption shocks).
@@ -135,6 +138,30 @@ Running list. Remove entries as they are fixed.
 **Pipeline**
 - No meta driver. A `driversMatlab/runPipeline.m` with one switch per stage is
   the plan.
+- **Downstream results predate the current steady state.** On 2026-09-06 the
+  whole pipeline was re-run in reverse order. The steady-state chain, run last,
+  used the tax-rate mod files regenerated from the 2025-10-24 calibration CSV
+  (four values moved by 0.0001) and moved the steady state by up to 0.63 %
+  (RW and DE transfer ratios). The 27 shock results, the tables and the paper
+  were produced with the previous steady state. Either re-run stages 4 to 7
+  (about 6 h) or restore the 2025-10-08 tax-rate mod files.
+- `data/Codes/data_retrieval.py` is not reproducible to the last digit:
+  re-running it on unchanged inputs moves the aggregate (RA, RU, RW) and DE
+  tax rates in the fourth decimal, which then propagates to the calibration
+  mod files. Probably a pandas aggregation difference; pin the behaviour.
+- `driversMatlab/processNGEUdata.m` uses `envi` on line 2 without calling
+  `environment.setup`, so it only runs if `envi` already exists in the
+  workspace.
+- `runTradeMatrixFromIOproject.m` and `runTradeMatrixFromXls.m` are the old
+  calibration route and give a materially different trade matrix (up to 0.036
+  on single shares) from `extractSSsharesFromCSV.m`, which is what the model
+  uses. Move them to `aDeprecatedFunctions/`.
+- The single-country government-investment IRF CSVs and charts committed in
+  October 2025 predated the extension of the shock horizon to 12 quarters;
+  they were regenerated on 2026-09-06.
+- `matlab -batch` segfaults on exit after `calculateSteadyState.m` (crash dump
+  in the home folder) once all outputs are written. Harmless, but check the
+  output timestamps rather than the exit code.
 - Two incompatible preambles. Root and `driversMatlab` scripts use
   `utils.call.paths` and `environment.setup`; the older scripts in
   `eagleParsingTemp` call `restoredefaultpath` and add Dynare themselves,
@@ -142,12 +169,16 @@ Running list. Remove entries as they are fixed.
 - `runModelParsing.m`, `runFiscalShocksGermany.m` and
   `runPlotsCompareOriginalBig1.m` add `dynare_6_0`, a variable that no longer
   exists in `paths.m` (it is `dynare_6_0_official`). They fail on that line.
+  `runModelParsing.m` also uses two undefined `options_ecb` fields, and its
+  job is done by `calculateSteadyState.m` anyway.
 - Dynare version is not pinned: `iniProject` uses 6.1, the parsing scripts want
   6.0, and 6.2 and two 7.x snapshots are installed.
 - Every shock driver hardcodes its model name and `cd`s into `modFiles`
   without returning.
 - `runAllSimul.m` covers only rows 6 to 16 of the shock dictionary. The
   investment shocks (rows 17 to 27) and the headline shocks are run by hand.
+  Looping `functions.runEAGLEsimul` over all 27 rows in one MATLAB session
+  runs out of memory on 16 GB after five shocks; use one process per shock.
 - The root-level `runPlots.m`, `runPlotsmonetary.m`,
   `runPlotsCompareOriginalBig1.m` and `runShareVisualisation.m` compare legacy
   vintages (`Dynare_4-4-3`, `eagleParsingTemp_sim_BIG1`) that are no longer
@@ -162,6 +193,9 @@ Running list. Remove entries as they are fixed.
 - Six leftover iCloud `" 2"` files with no original: `steady1 2.log`,
   `draftPaper 2.synctex(busy)` and four `shock_* 2.json` in the paper's
   `figures/`. Delete if unrecognised.
+- The bibliography path in `draftPaper_localBibliographyPath.tex` still
+  points into `~/Documents`, which is fine as long as the literature repo
+  stays there.
 - Stray `.log` files at the root and in `eagleParsingTemp` are gitignored
   Dynare output and can be deleted at any time.
 
