@@ -1,5 +1,4 @@
 timestamp,machine,stage,item,seconds,status,commit,note
-2026-09-06T10:02:00,kk-m1-16gb,paper,latexmk,60,ok,c3c1e221,approx
 2026-09-06T10:03:00,kk-m1-16gb,charts,python-all,120,ok,c3c1e221,approx; 27 plotIRFs + calib + trade + NGEU bubble
 2026-09-06T10:03:00,kk-m1-16gb,charts,runChartsForWP,180,ok,c3c1e221,approx incl. MATLAB start-up
 2026-09-06T10:05:00,kk-m1-16gb,tables,runLatexCalibTables,120,ok,c3c1e221,approx incl. MATLAB start-up
@@ -38,3 +37,6 @@ timestamp,machine,stage,item,seconds,status,commit,note
 2026-09-06T13:38:42,kk-m1-16gb,shock,shock_es_gi,461,ok,bce18c11,own MATLAB process
 2026-09-06T13:46:23,kk-m1-16gb,shock,shock_ra_gi,512,ok,bce18c11,own MATLAB process
 2026-09-06T13:55:52,kk-m1-16gb,steady,chain,2397,ok,04f36121,steady0..steady7 incl. parsing; MATLAB segfaulted on exit after all outputs were written
+2026-09-06T16:34:59,kk-m1-16gb,calibmod,extractSSsharesFromCSV,2,ok,edbe5f33,
+2026-09-06T16:35:57,kk-m1-16gb,paper,latexmk,6,ok,edbe5f33,
+2026-09-06T16:35:57,kk-m1-16gb,pipeline,all,7,ok,edbe5f33,stages=paper

@@ -55,9 +55,23 @@ Country codes in the model: `EAA`=RA (rest of EA), `EAB`=AT, `EAC`=BE,
 
 ## Pipeline
 
-There is no single meta driver yet. Each stage is a script you run by hand,
-from the project root, in this order. Every stage after the first reads the
-output of the previous ones from `eagleParsingTemp/modFiles/<model>/Output/`.
+`driversMatlab/runPipeline.m` runs the whole chain or any subset of stages,
+in order, after `iniProject`:
+
+```matlab
+iniProject
+runPipeline("all", true)                                   % everything, ~6.5 h
+runPipeline("shocks", true, "tables", true, "paper", true)  % a subset
+runPipeline("shocks", true, "shockList", ["shock_ngeu", "shock_eab_gy4"])
+```
+
+Stage switches are `calibdata`, `calibmod`, `steady`, `shocks`, `ngeu`,
+`tables`, `charts`, `paper`. Shocks run one `matlab -batch` process each by
+default (`"separateProcesses", false` to stay in-session). Every stage logs
+its run time (see Timing log). The stages themselves are the scripts below,
+which can still be run by hand from the project root, in this order. Every
+stage after the first reads the output of the previous ones from
+`eagleParsingTemp/modFiles/<model>/Output/`.
 
 Run times below were measured on 2026-09-06 on a 16 GB Apple-silicon Mac with
 MATLAB R2024b and Dynare 6.1. Each `matlab -batch` call adds roughly 40 s of
@@ -164,8 +178,8 @@ machine.
 Running list. Remove entries as they are fixed.
 
 **Pipeline**
-- No meta driver. A `driversMatlab/runPipeline.m` with one switch per stage is
-  the plan.
+- `runPipeline.m` covers the working-paper chain only; the legacy comparison
+  scripts at the root are not part of it.
 - **Downstream results predate the current steady state.** On 2026-09-06 the
   whole pipeline was re-run in reverse order. The steady-state chain, run last,
   used the tax-rate mod files regenerated from the 2025-10-24 calibration CSV

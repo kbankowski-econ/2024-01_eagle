@@ -1,10 +1,10 @@
 #!/bin/zsh
-# Build the working paper with latexmk and log the run time to timings/timings.csv.
+# Build the working paper from scratch with latexmk and log the run time to timings/timings.csv.
 # Usage: bashScripts/buildPaper.sh   (from anywhere)
 R="$(cd "$(dirname "$0")/.." && pwd)"
 TEX="$R/docs/2025-02_working-paper/draftPaper.tex"
 t0=$(date +%s)
-latexmk -pdf -cd -interaction=nonstopmode "$TEX"
+latexmk -gg -pdf -cd -interaction=nonstopmode "$TEX"   # -gg: full rebuild, so timings are comparable
 rc=$?
 secs=$(( $(date +%s) - t0 ))
 st=ok; [ $rc -ne 0 ] && st=failed

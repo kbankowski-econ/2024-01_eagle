@@ -1,6 +1,7 @@
+% Charts for the working paper. Run after iniProject; do not clear the
+% workspace here so that runPipeline can call this script in-process.
 tScript = tic;
-% Clearing workspace.
-clear all; close all; clc;
+close all;
 utils.call.paths;
 envi = environment.setup;
 
