@@ -31,7 +31,7 @@ DE,public_investment,average,0.0235
 DE,size,average,0.0513
 DE,tax_SSC_firms,average,0.1553
 DE,tax_SSC_households,average,0.1427
-DE,tax_capital,average,0.0413
+DE,tax_capital,average,0.0412
 DE,tax_consumption,average,0.1921
 DE,tax_income,average,0.2146
 DE,tby,average,0.0623
@@ -128,7 +128,7 @@ RA,size,average,0.0092
 RA,tax_SSC_firms,average,0.1465
 RA,tax_SSC_households,average,0.0797
 RA,tax_capital,average,0.061
-RA,tax_consumption,average,0.2443
+RA,tax_consumption,average,0.2444
 RA,tax_income,average,0.1893
 RA,tby,average,0.2958
 RU,debt,average,1.6544
@@ -139,7 +139,7 @@ RU,public_investment,average,0.0399
 RU,size,average,0.0258
 RU,tax_SSC_firms,average,0.1606
 RU,tax_SSC_households,average,0.0789
-RU,tax_capital,average,0.0637
+RU,tax_capital,average,0.0638
 RU,tax_consumption,average,0.2405
 RU,tax_income,average,0.3267
 RU,tby,average,0.0595
@@ -151,8 +151,8 @@ RW,public_investment,average,0.0777
 RW,size,average,0.5333
 RW,tax_SSC_firms,average,0.1001
 RW,tax_SSC_households,average,0.0755
-RW,tax_capital,average,0.0831
-RW,tax_consumption,average,0.1624
+RW,tax_capital,average,0.0833
+RW,tax_consumption,average,0.1627
 RW,tax_income,average,0.1597
 RW,tby,average,-0.0054
 US,debt,average,3.3328

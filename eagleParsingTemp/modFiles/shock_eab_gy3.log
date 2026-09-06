@@ -1,5 +1,5 @@
 Starting Dynare (version 6.1).
-Calling Dynare with arguments: -I/Users/kk/Documents/0000-00_work/2024-01_eagle/eagleParsingTemp/submodules savemacro json=compute
+Calling Dynare with arguments: -I/Users/kk/Developer/2024-01_eagle/eagleParsingTemp/submodules savemacro json=compute
 Starting preprocessing of the model file ...
 Reading eagle_steady_stage_trade.txt.
 WARNING: Unknown symbol AUX_ENDO_LAG_430_1 in eagle_steady_stage_trade.txt
@@ -185,7 +185,7 @@ Finding the optimal block decomposition of the dynamic model...
                                  and 3779 feedback variable(s).
 JSON written after Computing step.
 Preprocessing completed.
-Preprocessing time: 0h00m32s.
+Preprocessing time: 0h00m36s.
 
 STEADY-STATE RESULTS:
 
@@ -7510,35 +7510,35 @@ MODEL SIMULATION: (method=Sparse LU solver on stacked system)
       2-norm error   = 4.858e-01
       1-norm error   = 5.570e+00
 ------------------------------------
-(** 83.13 seconds **)
+(** 111.02 seconds **)
 ------------------------------------
       Iteration no. 2
       Inf-norm error = 1.417e-01
       2-norm error   = 1.180e+00
       1-norm error   = 5.190e+01
 ------------------------------------
-(** 89.21 seconds **)
+(** 106.91 seconds **)
 ------------------------------------
       Iteration no. 3
       Inf-norm error = 7.686e-03
       2-norm error   = 1.351e-02
       1-norm error   = 1.877e-01
 ------------------------------------
-(** 76.49 seconds **)
+(** 109.30 seconds **)
 ------------------------------------
       Iteration no. 4
       Inf-norm error = 7.704e-03
       2-norm error   = 9.438e-03
       1-norm error   = 2.510e-02
 ------------------------------------
-(** 72.99 seconds **)
+(** 114.59 seconds **)
 ------------------------------------
       Iteration no. 5
       Inf-norm error = 1.810e-05
       2-norm error   = 2.198e-05
       1-norm error   = 4.439e-05
 ------------------------------------
-(** 68.93 seconds **)
+(** 115.47 seconds **)
 ------------------------------------
       Iteration no. 6
       Inf-norm error = 1.855e-10
@@ -7548,5 +7548,5 @@ MODEL SIMULATION: (method=Sparse LU solver on stacked system)
 
 Perfect foresight solution found.
 
-Total computing time : 0h06m37s
+Total computing time : 0h09m24s
 Note: 164 warning(s) encountered in the preprocessor

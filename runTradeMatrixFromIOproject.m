@@ -28,7 +28,7 @@ tbyStruct = cell2struct(struct2cell(tbyStruct)', tbyTable.Properties.RowNames);
 
 newTable = struct();
 for aItem = ["imcy", "imiy", "imcgy", "imigy"]
-    csvFileName = fullfile(project, "data", aItem+".csv");
+    csvFileName = fullfile(project_path, "data", aItem+".csv");
     newTable.(aItem) = table();
     newTable.(aItem) = readtable(csvFileName, 'ReadRowNames', true, 'Range', 'A1:o15');
 end

@@ -9,7 +9,7 @@ import os
 import pandas as pd
 
 # Set the working directory
-directory = r'/Users/emilepetraviciute/2025-03_eagle/data/raw_data'
+directory = os.path.join(os.path.dirname(__file__), '..', 'raw_data')
 
 #%% 
 
