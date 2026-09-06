@@ -67436,7 +67436,7 @@ AT_rhoig=0; //if we don't want persistent shock
 steady(solve_algo = 5, markowitz = 5);
 shocks;
 var AT_epsgi;
-periods 1:4;
+periods 1:12;
 values 0.01;
 end;
 perfect_foresight_setup(periods = 100);
