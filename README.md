@@ -1,10 +1,145 @@
-# Project Name
+# EAGLE, multi-country extension
 
-The extension of EAGLE to a multi-country set-up.
+Extension of the ECB's EAGLE model to **11 individual euro-area countries** plus
+the US and the rest of the world, used to evaluate NGEU. The main output is the
+working paper in `docs/2025-02_working-paper/draftPaper.tex`.
+
+This README describes the project *as it is*. The "Known issues" section at the
+end is the running list of what still needs fixing; trim it as items get done.
+Session-level notes for the paper itself live in
+`docs/2025-02_working-paper/.eagle.md`.
 
 ---
 
-## Main drivers
+## Requirements
 
-- `eagleParsingTemp/runHomothopyValuesModify.m`: a driver to calculate the steady state without a need to re-load the model
-- `eagleParsingTemp/modFiles/TradeMatrix_calibrated_temp.m`: a driver to create a mod file with calibrated values based on import-content share tables
+| Tool | Version in use | Where it is configured |
+|---|---|---|
+| MATLAB | R2024b | |
+| Dynare | 6.1 (arm64) | `iniProject.m`; several older scripts still ask for 6.0, see Known issues |
+| IRIS toolbox | `iris_live` checkout | `subroutines/+utils/+call/paths.m` |
+| matlabUtils | separate repo, `2025-03_matlabUtils` | `paths.m` |
+| Python 3 | pandas, numpy, plotly | called from MATLAB via `pyrunfile`, or run directly |
+| LaTeX | latexmk, `ecta` style | bibliography path is machine-local, see Build |
+| Git LFS | 3.x | `.mat`, `.pdf`, `.png`, `.xls*` are LFS-tracked |
+
+`paths.m` is gitignored and machine-specific. It must define `project_path`,
+`iris_path`, `matlabUtils_path` and the `dynare_*_official` variables.
+
+---
+
+## Layout
+
+| Path | What it holds |
+|---|---|
+| `iniProject.m` | Session setup: paths, IRIS, Dynare. Run first. |
+| `eagleParsingTemp/` | The model. `submodules/*.mod` are the equation blocks, `modFiles/*.mod` the runnable mod files (steady-state chain and every shock). Dynare output folders `modFiles/+*/` and `modFiles/*/` are gitignored. |
+| `driversMatlab/` | Stage drivers for the paper pipeline (steady state, shocks, tables, NGEU inputs). |
+| `driversPython/` | Plotly chart scripts writing into the paper's `figures/`. |
+| `subroutines/` | MATLAB packages: `+functions` (simulation, IRFs), `+plotting` (`+WP` for paper figures), `+utils` (parsing, table helpers, `+call/paths.m`). |
+| `+environment/` | `setup.m` plus the dictionaries it loads: `shockDict.csv` (27 shocks and captions), `varDict.csv`, `varDataDict.csv`, `Meta.json`. |
+| `data/` | Calibration inputs as CSV, produced from `data/raw_data/` by the Python code in `data/Codes/`. See `data/data_guide.md`. |
+| `databases/` | NGEU shock inputs and chart tables. |
+| `docs/` | The working paper (`2025-02_working-paper`), two workshop slide decks, the IMF extended abstract. |
+| `aMyNotes/` | Model notes and diagrams (Markdown, Mermaid). |
+| `investigations/` | One-off analyses referenced from the paper. |
+| `bashScripts/` | Small helpers for editing mod files in bulk. |
+| `aDeprecatedFunctions/` | Old code kept for reference. Not on the pipeline. |
+| `run*.m` at the root | Older, mostly legacy scripts. See Known issues. |
+
+Country codes in the model: `EAA`=RA (rest of EA), `EAB`=AT, `EAC`=BE,
+`EAD`=FI, `EAE`=FR, `EAG`=NL, `EAH`=ES, `EAI`=GR, `EAJ`=IE, `EAK`=IT, `EAL`=PT,
+`EAM`=DE, plus `US` and `RW`.
+
+---
+
+## Pipeline
+
+There is no single meta driver yet. Each stage is a script you run by hand,
+from the project root, in this order. Every stage after the first reads the
+output of the previous ones from `eagleParsingTemp/modFiles/<model>/Output/`.
+
+1. **Environment**: `iniProject`.
+2. **Parse the model**: `eagleParsingTemp/runModelParsing.m` runs Dynare on
+   `eagleModel.mod` and writes the macro-expanded `eagleModel_macroexp.mod`.
+   Currently broken from a clean session, see Known issues.
+3. **Steady state**: `driversMatlab/calculateSteadyState.m` walks the homotopy
+   chain `steady0 → 1a → 1b → 2 → 3 → 4 → 6 → steady7`.
+   **`steady7` is the calibrated terminal steady state** that every table and
+   shock reads from `modFiles/steady7/Output/steady7_results.mat`.
+   To iterate on the steady state without reloading the model use
+   `eagleParsingTemp/runHomothopyValuesModify.m`.
+4. **Shocks**:
+   - `driversMatlab/runAllSimul.m` loops `functions.runEAGLEsimul` over rows
+     6 to 16 of `shockDict.csv` (the 11 single-country consumption shocks).
+   - The headline shocks each have a driver with a hardcoded model name:
+     `runNGEUshock.m`, `runEaWideFiscalShock.m`, `runEAsingleCountryShock.m`,
+     `runEAexternalShock.m`. Each one runs Dynare, computes IRFs and
+     contributions, writes the CSV, and calls the Python plot.
+5. **NGEU inputs**: `driversMatlab/processNGEUdata.m` writes the chart tables
+   in `databases/`.
+6. **Tables**: `driversMatlab/runLatexCalibTables.m` and
+   `runLatexSimulTables.m` write straight into
+   `docs/2025-02_working-paper/tables/`. Other tables are generated by the
+   `.m` file of the same name inside `tables/`.
+7. **Charts**: `runChartsForWP.m` (MATLAB, `plotting.WP.*`) and
+   `driversPython/{plotIRFs,plotCalibCharts,plotTradeFlows,plotNGEUbubbleChart}.py`
+   write into `docs/2025-02_working-paper/figures/`.
+8. **Trade matrix** (calibration, rarely rerun):
+   `runTradeMatrixFromIOproject.m` or `runTradeMatrixFromXls.m` generate
+   `eagleParsingTemp/modFiles/TradeMatrix_calibrated_temp.m`.
+9. **Calibration data** (rarely rerun): the Python code in `data/Codes/`
+   turns `data/raw_data/` into the CSVs in `data/`. See `data/data_guide.md`.
+
+## Build the paper
+
+```
+latexmk -pdf -cd docs/2025-02_working-paper/draftPaper.tex
+```
+
+The bibliography is external. `draftPaper_localBibliographyPath.tex`
+(gitignored) sets `\bibliopath` to the shared literature folder on this
+machine.
+
+---
+
+## Known issues
+
+Running list. Remove entries as they are fixed.
+
+**Pipeline**
+- No meta driver. A `driversMatlab/runPipeline.m` with one switch per stage is
+  the plan.
+- Two incompatible preambles. Root and `driversMatlab` scripts use
+  `utils.call.paths` and `environment.setup`; the older scripts in
+  `eagleParsingTemp` call `restoredefaultpath` and add Dynare themselves,
+  wiping what `iniProject` set up.
+- `runModelParsing.m`, `runFiscalShocksGermany.m` and
+  `runPlotsCompareOriginalBig1.m` add `dynare_6_0`, a variable that no longer
+  exists in `paths.m` (it is `dynare_6_0_official`). They fail on that line.
+- Dynare version is not pinned: `iniProject` uses 6.1, the parsing scripts want
+  6.0, and 6.2 and two 7.x snapshots are installed.
+- Every shock driver hardcodes its model name and `cd`s into `modFiles`
+  without returning.
+- `runAllSimul.m` covers only rows 6 to 16 of the shock dictionary. The
+  investment shocks (rows 17 to 27) and the headline shocks are run by hand.
+- The root-level `runPlots.m`, `runPlotsmonetary.m`,
+  `runPlotsCompareOriginalBig1.m` and `runShareVisualisation.m` compare legacy
+  vintages (`Dynare_4-4-3`, `eagleParsingTemp_sim_BIG1`) that are no longer
+  in the tree. Decide whether to keep or delete.
+
+**Repository**
+- Git history carries about 7.4 GB of old LFS `.mat` results under
+  `eagleParsingTemp` that are no longer tracked. Strip before the first push
+  to GitHub, or accept the LFS quota hit.
+- Both GitLab remotes (`origin`, `originGitLab`, `originOld`) are dead. A
+  GitHub remote is to be added.
+- Six leftover iCloud `" 2"` files with no original: `steady1 2.log`,
+  `draftPaper 2.synctex(busy)` and four `shock_* 2.json` in the paper's
+  `figures/`. Delete if unrecognised.
+- Stray `.log` files at the root and in `eagleParsingTemp` are gitignored
+  Dynare output and can be deleted at any time.
+
+**Paper** (details in `docs/2025-02_working-paper/.eagle.md`)
+- Undefined `\ref`s and three missing citations block circulation.
+- One unfilled `\source{}` note in Appendix B.
