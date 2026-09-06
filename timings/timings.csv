@@ -1,0 +1,40 @@
+timestamp,machine,stage,item,seconds,status,commit,note
+2026-09-06T10:02:00,kk-m1-16gb,paper,latexmk,60,ok,c3c1e221,approx
+2026-09-06T10:03:00,kk-m1-16gb,charts,python-all,120,ok,c3c1e221,approx; 27 plotIRFs + calib + trade + NGEU bubble
+2026-09-06T10:03:00,kk-m1-16gb,charts,runChartsForWP,180,ok,c3c1e221,approx incl. MATLAB start-up
+2026-09-06T10:05:00,kk-m1-16gb,tables,runLatexCalibTables,120,ok,c3c1e221,approx incl. MATLAB start-up
+2026-09-06T10:07:00,kk-m1-16gb,tables,runLatexSimulTables,480,ok,c3c1e221,approx; loads 27 result files
+2026-09-06T10:08:00,kk-m1-16gb,ngeu,processNGEUdata,300,ok,c3c1e221,approx incl. MATLAB start-up
+2026-09-06T10:08:00,kk-m1-16gb,shock,shock_ea_epsr1,763,ok,bce18c11,shared MATLAB session
+2026-09-06T10:08:00,kk-m1-16gb,shock,shock_eab_gy3,623,ok,bce18c11,shared MATLAB session
+2026-09-06T10:08:00,kk-m1-16gb,shock,shock_eab_gy4,398,ok,bce18c11,shared MATLAB session
+2026-09-06T10:08:00,kk-m1-16gb,shock,shock_ngeu,526,ok,bce18c11,shared MATLAB session
+2026-09-06T10:08:00,kk-m1-16gb,shock,shock_rw_us_epszcon,680,ok,bce18c11,shared MATLAB session
+2026-09-06T10:22:27,kk-m1-16gb,calibdata,data_retrieval.py,2,ok,c3c1e221,
+2026-09-06T10:22:29,kk-m1-16gb,calibdata,main.py,122,ok,c3c1e221,
+2026-09-06T10:24:31,kk-m1-16gb,calibdata,calculateCalibData.py,121,ok,c3c1e221,
+2026-09-06T10:26:32,kk-m1-16gb,calibdata,collectCalibData.py,1,ok,c3c1e221,
+2026-09-06T10:30:00,kk-m1-16gb,calibmod,extractSSsharesFromCSV,60,ok,c3c1e221,approx incl. MATLAB start-up
+2026-09-06T11:01:55,kk-m1-16gb,shock,shock_at_gc,460,ok,bce18c11,own MATLAB process
+2026-09-06T11:09:35,kk-m1-16gb,shock,shock_be_gc,378,ok,bce18c11,own MATLAB process
+2026-09-06T11:15:53,kk-m1-16gb,shock,shock_fi_gc,372,ok,bce18c11,own MATLAB process
+2026-09-06T11:22:05,kk-m1-16gb,shock,shock_fr_gc,391,ok,bce18c11,own MATLAB process
+2026-09-06T11:28:36,kk-m1-16gb,shock,shock_de_gc,332,ok,bce18c11,own MATLAB process
+2026-09-06T11:34:08,kk-m1-16gb,shock,shock_gr_gc,420,ok,bce18c11,own MATLAB process
+2026-09-06T11:41:08,kk-m1-16gb,shock,shock_it_gc,409,ok,bce18c11,own MATLAB process
+2026-09-06T11:47:57,kk-m1-16gb,shock,shock_nl_gc,308,ok,bce18c11,own MATLAB process
+2026-09-06T11:53:05,kk-m1-16gb,shock,shock_pt_gc,466,ok,bce18c11,own MATLAB process
+2026-09-06T12:00:51,kk-m1-16gb,shock,shock_es_gc,461,ok,bce18c11,own MATLAB process
+2026-09-06T12:08:32,kk-m1-16gb,shock,shock_ra_gc,316,ok,bce18c11,own MATLAB process
+2026-09-06T12:13:48,kk-m1-16gb,shock,shock_at_gi,612,ok,bce18c11,own MATLAB process
+2026-09-06T12:24:00,kk-m1-16gb,shock,shock_be_gi,584,ok,bce18c11,own MATLAB process
+2026-09-06T12:33:44,kk-m1-16gb,shock,shock_fi_gi,414,ok,bce18c11,own MATLAB process
+2026-09-06T12:40:38,kk-m1-16gb,shock,shock_fr_gi,613,ok,bce18c11,own MATLAB process
+2026-09-06T12:50:51,kk-m1-16gb,shock,shock_de_gi,523,ok,bce18c11,own MATLAB process
+2026-09-06T12:59:34,kk-m1-16gb,shock,shock_gr_gi,424,ok,bce18c11,own MATLAB process
+2026-09-06T13:06:38,kk-m1-16gb,shock,shock_it_gi,1063,ok,bce18c11,own MATLAB process
+2026-09-06T13:24:21,kk-m1-16gb,shock,shock_nl_gi,439,ok,bce18c11,own MATLAB process
+2026-09-06T13:31:40,kk-m1-16gb,shock,shock_pt_gi,422,ok,bce18c11,own MATLAB process
+2026-09-06T13:38:42,kk-m1-16gb,shock,shock_es_gi,461,ok,bce18c11,own MATLAB process
+2026-09-06T13:46:23,kk-m1-16gb,shock,shock_ra_gi,512,ok,bce18c11,own MATLAB process
+2026-09-06T13:55:52,kk-m1-16gb,steady,chain,2397,ok,04f36121,steady0..steady7 incl. parsing; MATLAB segfaulted on exit after all outputs were written

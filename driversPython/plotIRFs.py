@@ -213,8 +213,12 @@ def create_irf_plots(
     print(f"  - {output_prefix}.png")
 
 if __name__ == "__main__":
+    import sys, os
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from timinglog import timed
     try:
-        create_irf_plots(project_path, model_name)
+        with timed('charts', f'plotIRFs {model_name}'):
+            create_irf_plots(project_path, model_name)
     except FileNotFoundError as e:
         print(f"Error: Could not find required file. {e}")
     except Exception as e:

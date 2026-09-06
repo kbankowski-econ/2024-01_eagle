@@ -317,8 +317,12 @@ def create_all_trade_networks(
 
 
 if __name__ == "__main__":
+    import sys, os
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from timinglog import timed
     try:
-        create_all_trade_networks()
+        with timed('charts', 'plotTradeFlows'):
+            create_all_trade_networks()
     except FileNotFoundError as e:
         print(f"Error: Could not find required file. {e}")
     except Exception as e:

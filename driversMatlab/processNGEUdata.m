@@ -1,3 +1,4 @@
+tScript = tic;
 utils.call.paths;
 ctryList = envi.Meta.eaListForReport;
 
@@ -38,6 +39,8 @@ pringAllNGEUtoCSVfile(ngeuInput.shockInput.A, "allCtryNGEUinputTable_A.csv")
 
 %% plot a bubble chart with the NGEU amounts
 
+
+utils.logTiming("ngeu", "processNGEUdata", tScript);
 
 %% print all categories to a csv file
 function pringAllNGEUtoCSVfile(ngeuDatabank, csvFileName)

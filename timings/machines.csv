@@ -1,0 +1,2 @@
+machine,hostname,chip,cores,ram_gb,os,matlab,dynare,python,notes
+kk-m1-16gb,Katarzynas-MacBook-Pro,Apple M1 (4P+4E),8,16,macOS 14.6,R2024b,6.1-arm64,3.11,"one matlab -batch per shock; a single session runs out of memory after ~5 shocks"

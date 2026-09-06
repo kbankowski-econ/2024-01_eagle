@@ -120,10 +120,38 @@ start-up on top of the figures given.
 ## Build the paper
 
 ```
-latexmk -pdf -cd docs/2025-02_working-paper/draftPaper.tex
+bashScripts/buildPaper.sh
 ```
 
-Run time: about 1 min.
+which runs `latexmk -pdf -cd docs/2025-02_working-paper/draftPaper.tex` and
+logs the run time. Run time: about 1 min.
+
+## Timing log
+
+Every stage appends one line to `timings/timings.csv` (committed):
+
+```
+timestamp,machine,stage,item,seconds,status,commit,note
+```
+
+- `machine` is the label set as `machine_label` in `paths.m` (host name if
+  unset; the `EAGLE_MACHINE` environment variable for Python and shell).
+  Describe each label once in `timings/machines.csv`.
+- `item` is the shock, steady-state step, or script name; `commit` is the
+  code that produced the run; `status` is `ok` or `failed`.
+- MATLAB: `utils.logTiming(stage, item, tStart)` with `tStart = tic`.
+  Python: `from timinglog import timed` and `with timed(stage, item): ...`.
+  Shell: see `bashScripts/buildPaper.sh`.
+- Wired in: `functions.runEAGLEsimul` (one row per shock),
+  `calculateSteadyState.m` (one row per Dynare step plus `chain`), the table,
+  chart and NGEU drivers, `extractSSsharesFromCSV.m`, and the four Python
+  chart scripts when run directly.
+- Compare machines with `python3 driversPython/summariseTimings.py --minutes`
+  (add `--all` to include failed runs).
+
+The 2026-09-06 rows are the baseline for `kk-m1-16gb`; the ones marked
+`approx` were reconstructed from session logs rather than measured by the
+helper.
 
 The bibliography is external. `draftPaper_localBibliographyPath.tex`
 (gitignored) sets `\bibliopath` to the shared literature folder on this

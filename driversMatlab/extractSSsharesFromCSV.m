@@ -1,4 +1,5 @@
 function extractSSsharesFromCSV()
+tScript = tic;
 utils.call.paths;
 envi = environment.setup;
 inCSV  = fullfile(project_path,'data','_calibDataCalculated.csv');
@@ -163,6 +164,7 @@ fprintf(fid, 'RU_nuc, 0.65;\nUS_nuc, 0.45;\n');
 
 fclose(fid);
 fprintf('Wrote %s\n',tradeFile);
+utils.logTiming("calibmod", "extractSSsharesFromCSV", tScript);
 end
 
 %% helper

@@ -1,3 +1,4 @@
+tScript = tic;
 % Clearing workspace.
 clear all; close all; clc;
 utils.call.paths;
@@ -12,3 +13,4 @@ csv_path = fullfile(project_path, 'data', 'imports_graph.csv');
 plotting.WP.importContent_csv(envi, csv_path);
 csv_path = fullfile(project_path, 'data', 'raw_data', 'import_graph.csv');
 plotting.WP.importGdpShare_csv(envi, csv_path);
+utils.logTiming("charts", "runChartsForWP", tScript);

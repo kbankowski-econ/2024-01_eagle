@@ -1,3 +1,4 @@
+tScript = tic;
 utils.call.paths;
 cd(project_path);
 envi = environment.setup;
@@ -36,3 +37,4 @@ internationalLinkagesNu(envi, steady7struct, "MC", "private consumption");
 internationalLinkagesNu(envi, steady7struct, "MI", "private investment");
 internationalLinkagesNu(envi, steady7struct, "MCG", "government consumption");
 internationalLinkagesNu(envi, steady7struct, "MIG", "government investment");
+utils.logTiming("tables", "runLatexCalibTables", tScript);

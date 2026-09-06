@@ -235,8 +235,12 @@ def create_calibration_charts(
     )
 
 if __name__ == "__main__":
+    import sys, os
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from timinglog import timed
     try:
-        create_calibration_charts()
+        with timed('charts', 'plotCalibCharts'):
+            create_calibration_charts()
     except FileNotFoundError as e:
         print(f"Error: Could not find data file. {e}")
     except Exception as e:

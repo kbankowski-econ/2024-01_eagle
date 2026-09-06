@@ -1,3 +1,4 @@
+tScript = tic;
 %% LaTeX Simulation Tables Generator
 % This script processes simulation results and generates LaTeX tables 
 % for government investment and consumption multipliers analysis
@@ -59,3 +60,4 @@ fprintf('Creating multipliers table: %s\n', output_table_path);
 multiplGovSpending(simulation_processed_results, output_table_path);
 
 fprintf('LaTeX table generation completed successfully.\n');
+utils.logTiming("tables", "runLatexSimulTables", tScript);

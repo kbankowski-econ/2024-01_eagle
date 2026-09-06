@@ -1,27 +1,40 @@
 % Loading necessary path variables and environment variables
 utils.call.paths;
 envi = environment.setup;
+tChain = tic;   % run time of the whole chain, logged at the end
 
 % Change to relevant directory
 cd(fullfile(project_path, 'eagleParsingTemp', 'modFiles'));
 
 %% SS version of the model; just loading to make sure it works, no solution here
+tStep = tic;
 dynare('load0.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
+utils.logTiming("steady", "load0", tStep);
 
 %% non-SS version of the model; also loading to make sure it works
+tStep = tic;
 dynare('eagleModel.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
+utils.logTiming("steady", "eagleModel", tStep);
 
 %% Solving for the initial version of the steady state
+tStep = tic;
 dynare('steady0.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
+utils.logTiming("steady", "steady0", tStep);
 
 %% Steady state 1a
+tStep = tic;
 dynare('steady1a.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
+utils.logTiming("steady", "steady1a", tStep);
 
 %% Steady state 1b
+tStep = tic;
 dynare('steady1b.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
+utils.logTiming("steady", "steady1b", tStep);
 
 %% Steady state 2
+tStep = tic;
 dynare('steady2.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
+utils.logTiming("steady", "steady2", tStep);
 
 %% State 3 preparation (including complementary government consumption)
 
@@ -105,7 +118,9 @@ writeSteadyStateStruct(steady2struct, outputFilename);
 
 
 %% Steady state 3
+tStep = tic;
 dynare('steady3.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
+utils.logTiming("steady", "steady3", tStep);
 
 %% State 4 preparation (productive government investment)
 
@@ -161,13 +176,19 @@ outputFilename = fullfile(project_path, 'eagleParsingTemp', 'modFiles', 'eagle_s
 writeSteadyStateStruct(steady3struct, outputFilename);
 
 %% Steady state 4
+tStep = tic;
 dynare('steady4.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
+utils.logTiming("steady", "steady4", tStep);
 
 %% Steady state 6
+tStep = tic;
 dynare('steady6.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
+utils.logTiming("steady", "steady6", tStep);
 
 %% Steady state 7 (this steps makes sure that non-ss version of the model works)
+tStep = tic;
 dynare('steady7.mod', sprintf('-I%s/%s/submodules', project_path, 'eagleParsingTemp'), 'savemacro');
+utils.logTiming("steady", "steady7", tStep);
 
 %% Printing the evolution of the SS solution to a txt file so that it can be tracked (if needed)
 
@@ -253,6 +274,8 @@ fprintf(fileID, '=============================\n\n');
 writeFormattedTable(fileID, exoTable);
 
 fclose(fileID);
+
+utils.logTiming("steady", "chain", tChain, "ok", "steady0..steady7 incl. model parsing");
 
 %% Local functions
 function replaceInTextFile(originalFileName, newFileName, replaceContent, newReplaceContent, replaceContent2, newReplaceContent2)

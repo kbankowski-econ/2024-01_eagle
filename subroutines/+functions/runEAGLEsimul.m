@@ -11,6 +11,9 @@ arguments
 end
 
 modelName = char(modelName);
+tRun = tic;
+timingNote = "skipSimulation=" + string(options.skipSimulation);
+try
 
 %% Setup and Configuration
 % Initialize project paths and environment settings
@@ -106,4 +109,9 @@ fprintf('  - %s.csv (IRF data)\n', modelName);
 fprintf('  - %s_irfs.html/pdf/png (IRF charts)\n', modelName);
 fprintf('  - Country decomposition plots\n');
 fprintf('==========================================\n');
+catch ME
+    utils.logTiming("shock", modelName, tRun, "failed", timingNote + "; " + ME.message);
+    rethrow(ME);
+end
+utils.logTiming("shock", modelName, tRun, "ok", timingNote);
 end

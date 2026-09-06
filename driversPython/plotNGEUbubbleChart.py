@@ -265,11 +265,15 @@ def create_bubble_chart(
     print("  - Time period: 2021-2026 (summed values)")
 
 if __name__ == "__main__":
+    import sys, os
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from timinglog import timed
     # Set project path - adjust this path as needed
     project_path = "/Users/kk/Developer/2024-01_eagle"
     
     try:
-        create_bubble_chart(project_path)
+        with timed('charts', 'plotNGEUbubbleChart'):
+            create_bubble_chart(project_path)
     except FileNotFoundError as e:
         print(f"Error: Could not find required file. {e}")
     except Exception as e:
