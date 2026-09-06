@@ -266,7 +266,7 @@ def create_bubble_chart(
 
 if __name__ == "__main__":
     # Set project path - adjust this path as needed
-    project_path = "/Users/kk/Documents/0000-00_work/2024-01_eagle"
+    project_path = "/Users/kk/Developer/2024-01_eagle"
     
     try:
         create_bubble_chart(project_path)
