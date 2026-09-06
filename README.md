@@ -21,7 +21,7 @@ Session-level notes for the paper itself live in
 | matlabUtils | separate repo, `2025-03_matlabUtils` | `paths.m` |
 | Python 3 | pandas, numpy, plotly | called from MATLAB via `pyrunfile`, or run directly |
 | LaTeX | latexmk, `ecta` style | bibliography path is machine-local, see Build |
-| Git LFS | 3.x | `.mat`, `.pdf`, `.png`, `.xls*` are LFS-tracked |
+| Git LFS | 3.x | `.mat`, `.pdf`, `.png`, `.xls*` and `data/raw_data/io/*.csv` are LFS-tracked |
 
 `paths.m` is gitignored and machine-specific. It must define `project_path`,
 `iris_path`, `matlabUtils_path` and the `dynare_*_official` variables.
@@ -193,9 +193,14 @@ Running list. Remove entries as they are fixed.
   `~/Developer/_backups/2024-01_eagle_pre-filter-repo_2026-09-06.bundle`.
   The old LFS objects are still in `.git/lfs` (about 10 GB) until
   `git lfs prune` is run after a successful push.
-- The GitLab remotes are dead (`filter-repo` removed `origin`;
-  `originGitLab` and `originOld` remain as dead entries). A GitHub remote is
-  to be added.
+- Later the same day the 33 OECD input-output tables in `data/raw_data/io/`
+  (50 to 66 MiB each) were moved into LFS across the whole history with
+  `git lfs migrate import`, so no plain blob exceeds GitHub's 50 MiB warning.
+  Backup bundle: `~/Developer/_backups/2024-01_eagle_pre-lfs-migrate_2026-09-06.bundle`.
+  Push payload is now about 300 MiB of git objects plus 2.5 GB of LFS.
+- All GitLab remotes have been removed (they were dead; URLs are kept in
+  `~/Developer/_backups/2024-01_eagle_remotes-before_2026-09-06.txt`). A
+  GitHub remote is to be added.
 - Six leftover iCloud `" 2"` files with no original: `steady1 2.log`,
   `draftPaper 2.synctex(busy)` and four `shock_* 2.json` in the paper's
   `figures/`. Delete if unrecognised.
