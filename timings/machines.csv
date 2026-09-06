@@ -1,2 +1,3 @@
 machine,hostname,chip,cores,ram_gb,os,matlab,dynare,python,notes
 kk-m1-16gb,Katarzynas-MacBook-Pro,Apple M1 (4P+4E),8,16,macOS 14.6,R2024b,6.1-arm64,3.11,"one matlab -batch per shock; a single session runs out of memory after ~5 shocks"
+kk-m4-16gb,Krzsztofs-Mini,Apple M4,10,16,macOS 26.5,R2024b,6.1-arm64,3.9,"cloned 2026-09-06 from the MacBook checkout over Tailscale; stock python3 with pandas/plotly 6.5/kaleido 0.2.1 installed --user"
