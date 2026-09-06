@@ -185,11 +185,17 @@ Running list. Remove entries as they are fixed.
   in the tree. Decide whether to keep or delete.
 
 **Repository**
-- Git history carries about 7.4 GB of old LFS `.mat` results under
-  `eagleParsingTemp` that are no longer tracked. Strip before the first push
-  to GitHub, or accept the LFS quota hit.
-- Both GitLab remotes (`origin`, `originGitLab`, `originOld`) are dead. A
-  GitHub remote is to be added.
+- History was rewritten on 2026-09-06 with `git filter-repo` to drop 1,190
+  stale LFS pointers (old versions of the Dynare result files under
+  `eagleParsingTemp`), taking the LFS payload referenced by history from
+  8.05 GB to 0.86 GB. Commit hashes changed and 34 commits that only updated
+  those files disappeared. The pre-rewrite history is in
+  `~/Developer/_backups/2024-01_eagle_pre-filter-repo_2026-09-06.bundle`.
+  The old LFS objects are still in `.git/lfs` (about 10 GB) until
+  `git lfs prune` is run after a successful push.
+- The GitLab remotes are dead (`filter-repo` removed `origin`;
+  `originGitLab` and `originOld` remain as dead entries). A GitHub remote is
+  to be added.
 - Six leftover iCloud `" 2"` files with no original: `steady1 2.log`,
   `draftPaper 2.synctex(busy)` and four `shock_* 2.json` in the paper's
   `figures/`. Delete if unrecognised.
