@@ -198,9 +198,11 @@ Running list. Remove entries as they are fixed.
   `git lfs migrate import`, so no plain blob exceeds GitHub's 50 MiB warning.
   Backup bundle: `~/Developer/_backups/2024-01_eagle_pre-lfs-migrate_2026-09-06.bundle`.
   Push payload is now about 300 MiB of git objects plus 2.5 GB of LFS.
-- All GitLab remotes have been removed (they were dead; URLs are kept in
-  `~/Developer/_backups/2024-01_eagle_remotes-before_2026-09-06.txt`). A
-  GitHub remote is to be added.
+- The remote is now `origin` = `https://github.com/kbankowski-econ/2024-01_eagle`
+  (private), first pushed 2026-09-06. The dead GitLab remotes were removed;
+  their URLs are kept in
+  `~/Developer/_backups/2024-01_eagle_remotes-before_2026-09-06.txt`.
+  `git lfs prune` can now reclaim about 10 GB in `.git/lfs`.
 - Six leftover iCloud `" 2"` files with no original: `steady1 2.log`,
   `draftPaper 2.synctex(busy)` and four `shock_* 2.json` in the paper's
   `figures/`. Delete if unrecognised.
