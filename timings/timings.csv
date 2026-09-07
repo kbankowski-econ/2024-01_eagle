@@ -40,3 +40,89 @@ timestamp,machine,stage,item,seconds,status,commit,note
 2026-09-06T16:34:59,kk-m1-16gb,calibmod,extractSSsharesFromCSV,2,ok,edbe5f33,
 2026-09-06T16:35:57,kk-m1-16gb,paper,latexmk,6,ok,edbe5f33,
 2026-09-06T16:35:57,kk-m1-16gb,pipeline,all,7,ok,edbe5f33,stages=paper
+2026-09-07T04:39:44,kk-m4-16gb,calibmod,extractSSsharesFromCSV,3,ok,591a2a61,
+2026-09-07T04:42:07,kk-m4-16gb,steady,load0,142,ok,591a2a61,
+2026-09-07T04:44:33,kk-m4-16gb,steady,eagleModel,146,ok,591a2a61,
+2026-09-07T04:46:58,kk-m4-16gb,steady,steady0,145,ok,591a2a61,
+2026-09-07T04:50:53,kk-m4-16gb,steady,steady1a,235,ok,591a2a61,
+2026-09-07T04:54:06,kk-m4-16gb,steady,steady1b,193,ok,591a2a61,
+2026-09-07T04:56:29,kk-m4-16gb,steady,steady2,143,ok,591a2a61,
+2026-09-07T04:58:58,kk-m4-16gb,steady,steady3,148,ok,591a2a61,
+2026-09-07T05:01:31,kk-m4-16gb,steady,steady4,153,ok,591a2a61,
+2026-09-07T05:05:20,kk-m4-16gb,steady,steady6,230,ok,591a2a61,
+2026-09-07T05:09:11,kk-m4-16gb,steady,steady7,231,ok,591a2a61,
+2026-09-07T05:09:20,kk-m4-16gb,steady,chain,1776,ok,591a2a61,steady0..steady7 incl. model parsing
+2026-09-07T05:17:07,kk-m4-16gb,shock,shock_ea_epsr1,460,failed,591a2a61,skipSimulation=false; Execution of script retrieveDeterSimul as a function is not supported:
+/Users/kk/Documents/0000-00_work/2025-03_matlabUtils/+dynareFunc/retrieveDeterSimul.m
+2026-09-07T05:17:16,kk-m4-16gb,pipeline,all,2328,failed,591a2a61,stages=calibdata+calibmod+steady+shocks+ngeu+tables+charts+paper; failed at shocks
+2026-09-07T05:32:44,kk-m4-16gb,shock,shock_ea_epsr1,325,failed,591a2a61,skipSimulation=false; Python Error: NameError: name '__file__' is not defined
+2026-09-07T05:32:52,kk-m4-16gb,pipeline,all,337,failed,591a2a61,stages=shocks+ngeu+tables+charts+paper; failed at shocks
+2026-09-07T05:39:35,kk-m4-16gb,charts,plotIRFs shock_ea_epsr1,5,ok,591a2a61,
+2026-09-07T05:39:35,kk-m4-16gb,shock,shock_ea_epsr1,346,ok,591a2a61,skipSimulation=false
+2026-09-07T05:44:53,kk-m4-16gb,charts,plotIRFs shock_rw_us_epszcon,3,ok,591a2a61,
+2026-09-07T05:44:53,kk-m4-16gb,shock,shock_rw_us_epszcon,304,ok,591a2a61,skipSimulation=false
+2026-09-07T05:51:22,kk-m4-16gb,shock,shock_eab_gy3,374,failed,591a2a61,skipSimulation=false; Error: File: /Users/kk/Documents/0000-00_work/2025-03_matlabUtils/+dynareFunc/retrieveDeterSimul.m Line: 3 Column: 1
+Invalid text character. Check for unsupported symbol; invisible character; or pasting of non-ASCII characters.
+2026-09-07T05:51:30,kk-m4-16gb,pipeline,all,1066,failed,591a2a61,stages=shocks+ngeu+tables+charts+paper; failed at shocks
+2026-09-07T05:59:21,kk-m4-16gb,charts,plotIRFs shock_eab_gy3,3,ok,591a2a61,
+2026-09-07T05:59:21,kk-m4-16gb,shock,shock_eab_gy3,363,ok,591a2a61,skipSimulation=false
+2026-09-07T06:03:38,kk-m4-16gb,charts,plotIRFs shock_eab_gy4,3,ok,591a2a61,
+2026-09-07T06:03:38,kk-m4-16gb,shock,shock_eab_gy4,243,ok,591a2a61,skipSimulation=false
+2026-09-07T06:08:39,kk-m4-16gb,charts,plotIRFs shock_ngeu,3,ok,591a2a61,
+2026-09-07T06:08:40,kk-m4-16gb,shock,shock_ngeu,290,ok,591a2a61,skipSimulation=false
+2026-09-07T06:11:37,kk-m4-16gb,charts,plotIRFs shock_at_gc,3,ok,591a2a61,
+2026-09-07T06:11:38,kk-m4-16gb,shock,shock_at_gc,167,ok,591a2a61,skipSimulation=false
+2026-09-07T06:14:37,kk-m4-16gb,charts,plotIRFs shock_be_gc,2,ok,591a2a61,
+2026-09-07T06:14:37,kk-m4-16gb,shock,shock_be_gc,167,ok,591a2a61,skipSimulation=false
+2026-09-07T06:17:37,kk-m4-16gb,charts,plotIRFs shock_fi_gc,2,ok,591a2a61,
+2026-09-07T06:17:37,kk-m4-16gb,shock,shock_fi_gc,167,ok,591a2a61,skipSimulation=false
+2026-09-07T06:20:38,kk-m4-16gb,charts,plotIRFs shock_fr_gc,3,ok,591a2a61,
+2026-09-07T06:20:38,kk-m4-16gb,shock,shock_fr_gc,170,ok,591a2a61,skipSimulation=false
+2026-09-07T06:23:36,kk-m4-16gb,charts,plotIRFs shock_de_gc,3,ok,591a2a61,
+2026-09-07T06:23:36,kk-m4-16gb,shock,shock_de_gc,167,ok,591a2a61,skipSimulation=false
+2026-09-07T06:27:35,kk-m4-16gb,charts,plotIRFs shock_gr_gc,2,ok,591a2a61,
+2026-09-07T06:27:35,kk-m4-16gb,shock,shock_gr_gc,228,ok,591a2a61,skipSimulation=false
+2026-09-07T06:31:35,kk-m4-16gb,charts,plotIRFs shock_it_gc,3,ok,591a2a61,
+2026-09-07T06:31:35,kk-m4-16gb,shock,shock_it_gc,228,ok,591a2a61,skipSimulation=false
+2026-09-07T06:34:32,kk-m4-16gb,charts,plotIRFs shock_nl_gc,2,ok,591a2a61,
+2026-09-07T06:34:32,kk-m4-16gb,shock,shock_nl_gc,165,ok,591a2a61,skipSimulation=false
+2026-09-07T06:38:45,kk-m4-16gb,charts,plotIRFs shock_pt_gc,3,ok,591a2a61,
+2026-09-07T06:38:45,kk-m4-16gb,shock,shock_pt_gc,242,ok,591a2a61,skipSimulation=false
+2026-09-07T06:42:47,kk-m4-16gb,charts,plotIRFs shock_es_gc,2,ok,591a2a61,
+2026-09-07T06:42:47,kk-m4-16gb,shock,shock_es_gc,229,ok,591a2a61,skipSimulation=false
+2026-09-07T06:45:46,kk-m4-16gb,charts,plotIRFs shock_ra_gc,3,ok,591a2a61,
+2026-09-07T06:45:46,kk-m4-16gb,shock,shock_ra_gc,166,ok,591a2a61,skipSimulation=false
+2026-09-07T06:50:54,kk-m4-16gb,charts,plotIRFs shock_at_gi,3,ok,591a2a61,
+2026-09-07T06:50:54,kk-m4-16gb,shock,shock_at_gi,296,ok,591a2a61,skipSimulation=false
+2026-09-07T06:56:02,kk-m4-16gb,charts,plotIRFs shock_be_gi,2,ok,591a2a61,
+2026-09-07T06:56:02,kk-m4-16gb,shock,shock_be_gi,295,ok,591a2a61,skipSimulation=false
+2026-09-07T07:00:03,kk-m4-16gb,charts,plotIRFs shock_fi_gi,4,ok,591a2a61,
+2026-09-07T07:00:03,kk-m4-16gb,shock,shock_fi_gi,228,ok,591a2a61,skipSimulation=false
+2026-09-07T07:06:52,kk-m4-16gb,charts,plotIRFs shock_fr_gi,3,ok,591a2a61,
+2026-09-07T07:06:53,kk-m4-16gb,shock,shock_fr_gi,397,ok,591a2a61,skipSimulation=false
+2026-09-07T07:12:19,kk-m4-16gb,charts,plotIRFs shock_de_gi,2,ok,591a2a61,
+2026-09-07T07:12:20,kk-m4-16gb,shock,shock_de_gi,314,ok,591a2a61,skipSimulation=false
+2026-09-07T07:16:13,kk-m4-16gb,charts,plotIRFs shock_gr_gi,3,ok,591a2a61,
+2026-09-07T07:16:13,kk-m4-16gb,shock,shock_gr_gi,221,ok,591a2a61,skipSimulation=false
+2026-09-07T07:21:25,kk-m4-16gb,charts,plotIRFs shock_it_gi,3,ok,591a2a61,
+2026-09-07T07:21:25,kk-m4-16gb,shock,shock_it_gi,300,ok,591a2a61,skipSimulation=false
+2026-09-07T07:26:43,kk-m4-16gb,charts,plotIRFs shock_nl_gi,3,ok,591a2a61,
+2026-09-07T07:26:43,kk-m4-16gb,shock,shock_nl_gi,303,ok,591a2a61,skipSimulation=false
+2026-09-07T07:30:43,kk-m4-16gb,charts,plotIRFs shock_pt_gi,3,ok,591a2a61,
+2026-09-07T07:30:43,kk-m4-16gb,shock,shock_pt_gi,227,ok,591a2a61,skipSimulation=false
+2026-09-07T07:35:58,kk-m4-16gb,charts,plotIRFs shock_es_gi,3,ok,591a2a61,
+2026-09-07T07:35:59,kk-m4-16gb,shock,shock_es_gi,301,ok,591a2a61,skipSimulation=false
+2026-09-07T07:41:14,kk-m4-16gb,charts,plotIRFs shock_ra_gi,3,ok,591a2a61,
+2026-09-07T07:41:14,kk-m4-16gb,shock,shock_ra_gi,303,ok,591a2a61,skipSimulation=false
+2026-09-07T07:41:23,kk-m4-16gb,pipeline,all,6489,failed,591a2a61,stages=shocks+ngeu+tables+charts+paper; failed at ngeu
+2026-09-07T07:42:22,kk-m4-16gb,ngeu,processNGEUdata,6,ok,591a2a61,
+2026-09-07T07:42:22,kk-m4-16gb,tables,runLatexCalibTables,1,ok,591a2a61,
+2026-09-07T07:42:47,kk-m4-16gb,tables,runLatexSimulTables,25,ok,591a2a61,
+2026-09-07T07:42:50,kk-m4-16gb,charts,runChartsForWP,3,ok,591a2a61,
+2026-09-07T07:42:55,kk-m4-16gb,charts,plotCalibCharts,4,ok,591a2a61,
+2026-09-07T07:42:58,kk-m4-16gb,charts,plotTradeFlows,2,ok,591a2a61,
+2026-09-07T07:42:59,kk-m4-16gb,charts,plotNGEUbubbleChart,1,ok,591a2a61,
+2026-09-07T07:43:04,kk-m4-16gb,paper,latexmk,4,ok,591a2a61,
+2026-09-07T07:43:04,kk-m4-16gb,pipeline,all,49,ok,591a2a61,stages=ngeu+tables+charts+paper
+2026-09-07T07:44:10,kk-m4-16gb,paper,latexmk,4,ok,591a2a61,
+2026-09-07T07:44:37,kk-m4-16gb,paper,latexmk,5,ok,591a2a61,
