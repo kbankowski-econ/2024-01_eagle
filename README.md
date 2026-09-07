@@ -215,6 +215,77 @@ the 2026-09-07 build; details and line numbers in
 
 ---
 
+## Review of the draft (2026-09-07)
+
+Referee-style reading of the 57-page build. The model extension (14 regions,
+ICIO-based trade calibration, homotopy solution with model flipping) is a
+solid technical contribution. The draft is not yet a paper: the results
+sections are unfinished, the NGEU exercise is under-documented, several
+quantitative claims do not match the tables, and there is no sensitivity
+analysis. Points in rough order of importance.
+
+**Major**
+1. **Section 3 is unfinished.** Subsections 3.1 (monetary policy shock) and
+   3.2 (external shock) contain figures and no text. The fiscal-shock text
+   ("With the model extension completed ...") sits under 3.1 but describes
+   3.3. Subsection 3.3 shows only the investment shock although the text
+   discusses consumption too (the `shock_eab_gy4` figures exist). Say why
+   the IRF panels show DE, FI, IT, RU and US and not the other countries.
+2. **NGEU exercise under-specified.** State what is simulated: grants only
+   or loans too, the yearly absorption profile by country, why only
+   government investment, and the source behind "data collected within the
+   ESCB". State the financing assumption (EU debt, no national debt) and
+   how the multi-year announced path enters a fiscal rule with i.i.d.
+   shocks (anticipation). State the monetary policy assumption for 2021 to
+   2026 (Taylor rule versus effective lower bound); the reported tightening
+   drives the German result.
+3. **Claims versus tables.** Government consumption: "GDP rises by 1.5
+   percent, multiplier well above unity" versus the multiplier table (EA
+   1.3 in year 1, negative afterwards, 1.0 cumulative). Government
+   investment: "minor but persistent long-term gains" versus 4.9 cumulative
+   over ten years. Define the multiplier; the table reports percent
+   deviations and a sum of annual deviations, not multipliers. Greece debt
+   "180 percent" versus 136.5 in the table; non-euro area EU "about 50"
+   versus 44.4.
+4. **No sensitivity analysis.** Appendix C holds one table. Show
+   sensitivity to the trade elasticities, the public-capital elasticity
+   $\alpha_G$, the share of non-Ricardian households, the debt-rule speed,
+   and the law-of-one-price export pricing assumption, which bears directly
+   on spillovers. Five generated sensitivity tables sit unused.
+5. **Spillovers versus the literature.** Report the numbers (peak effect on
+   German GDP and exports) and confront them with Pfeiffer et al. (2021),
+   who find larger spillovers, explaining why final-demand import content
+   from ICIO tables gives smaller effects than intermediate-goods trade.
+6. **Positioning.** The introduction has no contribution statement, no
+   related literature beyond EAGLE (GIMF, QUEST, other multi-country
+   fiscal-spillover models) and no roadmap. Abstract and introduction say
+   10 countries, the conclusions 11 (10 plus a residual region); title,
+   abstract and conclusions must agree.
+7. **Law of one price for exports.** Justify the simplification relative
+   to the original EAGLE and state what it does to terms-of-trade and
+   spillover effects.
+8. **Calibration sample.** Text says 1980 to 2019, figure notes 1995 to
+   2019, ICIO averages 1995 to 2020 (including the pandemic year). Use one
+   window or explain. Give the vintage of the archived IMF investment
+   dataset used for the public/private investment split.
+
+**Minor**
+9. Appendix front matter: an empty `\LARGE` block, a second "Content"
+   table and a bare "Appendix" heading; the data-sources table is in
+   `\tiny`.
+10. Figures often precede the text that introduces them (bubble chart,
+    NGEU input); the bubble chart and the NGEU input figure show the same
+    data twice.
+11. Explain "model flipping" once formally (the 755-parameter step) and
+    drop the duplicated Bussière paragraph in the trade calibration.
+12. Typos and wording: "import reach", "consoumption", "utilize utilize",
+    "using using", "bussiere", "The short-coming", "proxy estimate",
+    "these involving", "the figure \ref", "Source: OECD" without a table
+    reference. A bare `%` in the conclusions cut a sentence in the PDF
+    (fixed 2026-09-07).
+
+---
+
 ## Known issues
 
 Two lists: what is still outstanding, and what was fixed (kept for the
