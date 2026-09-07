@@ -11,8 +11,11 @@ modelKeys = ["x", "xx", "xxx", "epsgi", "xxxx", "xxxxx"];
 bridgeMap = containers.Map(dataKeys, modelKeys);
 
 %% Read in data from Matlab and save in csv files for further processing
-ngeuInput = load(fullfile(project_path_ecbMC, "databases/FiscalBMENote", "shockInput_NGEU_24repFQ_AEJun24.mat"));
-gdpInput.ltGDP.A = databank.fromCSV(fullfile(project_path_ecbMC, 'databases/FiscalBMENote', 'weo_data.csv'));
+% Inputs copied from the ECB-MC project (databases/FiscalBMENote) on 2026-09-07;
+% see databases/ngeuInputs/README.md for their origin.
+ngeuInputDir = fullfile(project_path, 'databases', 'ngeuInputs');
+ngeuInput = load(fullfile(ngeuInputDir, "shockInput_NGEU_24repFQ_AEJun24.mat"));
+gdpInput.ltGDP.A = databank.fromCSV(fullfile(ngeuInputDir, 'weo_data.csv'));
 
 ngeuEagleInput = struct();
 

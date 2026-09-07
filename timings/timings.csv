@@ -126,3 +126,5 @@ Invalid text character. Check for unsupported symbol; invisible character; or pa
 2026-09-07T07:43:04,kk-m4-16gb,pipeline,all,49,ok,591a2a61,stages=ngeu+tables+charts+paper
 2026-09-07T07:44:10,kk-m4-16gb,paper,latexmk,4,ok,591a2a61,
 2026-09-07T07:44:37,kk-m4-16gb,paper,latexmk,5,ok,591a2a61,
+2026-09-07T14:51:57,kk-m4-16gb,paper,latexmk,4,ok,e66393ff,
+2026-09-07T14:55:46,kk-m4-16gb,ngeu,processNGEUdata,6,ok,e66393ff,

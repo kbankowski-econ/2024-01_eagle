@@ -39,7 +39,7 @@ Session-level notes for the paper itself live in
 | `subroutines/` | MATLAB packages: `+functions` (simulation, IRFs), `+plotting` (`+WP` for paper figures), `+utils` (parsing, table helpers, `+call/paths.m`). |
 | `+environment/` | `setup.m` plus the dictionaries it loads: `shockDict.csv` (27 shocks and captions), `varDict.csv`, `varDataDict.csv`, `Meta.json`. |
 | `data/` | Calibration inputs as CSV, produced from `data/raw_data/` by the Python code in `data/Codes/`. See `data/data_guide.md`. |
-| `databases/` | NGEU shock inputs and chart tables. |
+| `databases/` | NGEU shock inputs and chart tables. `ngeuInputs/` holds the two ECB-MC input files (copied 2026-09-07, origin in its README). |
 | `docs/` | The working paper (`2025-02_working-paper`), two workshop slide decks, the IMF extended abstract. |
 | `aMyNotes/` | Model notes and diagrams (Markdown, Mermaid). |
 | `investigations/` | One-off analyses referenced from the paper. |
@@ -104,8 +104,9 @@ start-up on top of the figures given.
      Running all 27 inside one MATLAB session runs out of memory on a 16 GB
      machine after five or six shocks. Run one `matlab -batch` process per
      shock instead.
-5. **NGEU inputs**: `driversMatlab/processNGEUdata.m` writes the chart tables
-   in `databases/`. Needs `envi = environment.setup` in the workspace first.
+5. **NGEU inputs**: `driversMatlab/processNGEUdata.m` reads
+   `databases/ngeuInputs/` (copied from the ECB-MC project, see the README
+   there) and writes the chart tables in `databases/`. Needs `envi = environment.setup` in the workspace first.
    *Run time: about 5 min.*
 6. **Tables**: `driversMatlab/runLatexCalibTables.m` and
    `runLatexSimulTables.m` write straight into
