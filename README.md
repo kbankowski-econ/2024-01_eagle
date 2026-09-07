@@ -177,6 +177,43 @@ machine.
 
 ---
 
+## What is left
+
+Goal: a polished, citable draft of `docs/2025-02_working-paper/draftPaper.tex`
+(61 pages, dated November 2025, banner "Preliminary Draft"). Checked against
+the 2026-09-07 build; details and line numbers in
+`docs/2025-02_working-paper/.eagle.md`.
+
+**Blocking before circulation**
+- 8 undefined `\ref`s: `fig1`, `fig3` to `fig6`, `fig8`, `figApp:govSpending`,
+  `diagram:ssSolutionStrategy`. Relabel to the current figure labels
+  (the NGEU ones are `fig:NGEU_input`, `fig:effectNGEU`, `fig:effectNGEUspillovers`).
+- 2 undefined citations, `GomesEtAl2012` and `Gomesaetal2012`: add to the
+  shared bib or fix the keys.
+- 5 unfilled `\source{Own calculations based on ....}` notes (lines 714,
+  1167, 1199, 1231, 1264).
+- 4 inline `TODO`s: data source (l.216), EA shares to be checked by Emile
+  (l.251), GDP-shares chart (l.252), biases and elasticities versus Clancy and
+  the original EAGLE (l.1114).
+
+**Content**
+- Sensitivity appendix only inputs `multiplGovSpending.tex`; five generated
+  tables are unused (`sensitivityShocks_{gc,gi}_EA_{y,pic4}`, `shocksTable`).
+  Wire them in or delete them.
+- `effectNGEUspillovers.png` and `OECD_table.png` are the only figures the
+  pipeline does not regenerate; produce them as vector files from a script.
+- Trade-matrix calibration is named in the Conclusions as the main precision
+  limit; open questions in `aMyNotes/Trade_questions.md`.
+- Final pass: bump `\date`, drop the preliminary banner, proofread.
+
+**Pipeline and repository** (see Known issues for details)
+- Pin the Dynare version and retire the legacy scripts that fail on
+  `dynare_6_0`.
+- Make `data_retrieval.py` reproducible to the last digit.
+- Run `git lfs prune` to reclaim about 10 GB.
+
+---
+
 ## Known issues
 
 Running list. Remove entries as they are fixed.
@@ -252,9 +289,9 @@ Running list. Remove entries as they are fixed.
 - Six leftover iCloud `" 2"` files with no original: `steady1 2.log`,
   `draftPaper 2.synctex(busy)` and four `shock_* 2.json` in the paper's
   `figures/`. Delete if unrecognised.
-- The bibliography path in `draftPaper_localBibliographyPath.tex` still
-  points into `~/Documents`, which is fine as long as the literature repo
-  stays there.
+- The bibliography path in `draftPaper_localBibliographyPath.tex` is
+  machine-local; on the Mac mini it points to `~/Developer/2021-08_literature`
+  (moved out of iCloud on 2026-09-07).
 - Stray `.log` files at the root and in `eagleParsingTemp` are gitignored
   Dynare output and can be deleted at any time.
 
