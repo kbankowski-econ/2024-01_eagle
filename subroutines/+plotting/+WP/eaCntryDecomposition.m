@@ -29,7 +29,7 @@ function eaCntryDecomposition(contributionSeriesOriginal, modelName, options)
     t = tiledlayout(1, 2, 'TileSpacing', 'compact','Padding','normal');
     
     h = gcf;
-    set(h, 'Units','centimeters', 'Position',[0 0 16 4])
+    set(h, 'Units','centimeters', 'Position',[0 0 15 4])
     set(h,'defaulttextinterpreter','latex');
     
     for item = varList
@@ -82,8 +82,7 @@ function eaCntryDecomposition(contributionSeriesOriginal, modelName, options)
         
     % Save graph
     fileName = fullfile(project_path, "docs/2025-02_working-paper/figures/" + modelName + "_contributions");
-    exportgraphics(t, sprintf('%s.png', fileName), 'BackgroundColor', 'none');
-    exportgraphics(t, sprintf('%s.pdf', fileName), 'BackgroundColor', 'none');
+    plotting.WP.exportVector(h, fileName, [15 4]);   % vector PDF + PNG at 15 x 4 cm
 end
 
 

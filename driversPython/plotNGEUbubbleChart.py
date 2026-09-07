@@ -1,6 +1,15 @@
 from pathlib import Path
 import json
 
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+from wp_charts import chart_render_px, chart_display_cm, font_px_for_pt, smart_save_image, write_pdf, FONT_FAMILY
+
+_STEM = 'NGEU_bubble_chart'
+WIDTH_PX, HEIGHT_PX = chart_render_px(_STEM, (15.0, 9.4))
+DISPLAY_CM = chart_display_cm(_STEM, (15.0, 9.4))
+FONT_PX = font_px_for_pt(8, WIDTH_PX, DISPLAY_CM[0])
+
 import pandas as pd
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
@@ -109,7 +118,7 @@ def add_reference_marker(fig, x_pos, y_pos, marker_size, text, row_idx):
             ),
             text=text,
             textposition="middle right",
-            textfont=dict(size=10, color='black'),
+            textfont=dict(size=FONT_PX, color='black'),
             showlegend=False,
             hoverinfo='skip'
         ),
@@ -189,14 +198,12 @@ def create_bubble_chart(
     size_1k_a = (10000 / max_val_squares) * 100 if max_val_squares else 0
     add_reference_marker(fig, legend_x_pos, legend_y_pos, size_1k_a, "EUR 10 billion", 2)
 
-    optimal_width = int(16 * CM_TO_PX)
-    optimal_height = int(10 * CM_TO_PX)
 
     fig.update_layout(
-        width=optimal_width,
-        height=optimal_height,
+        width=WIDTH_PX,
+        height=HEIGHT_PX,
         template='simple_white',
-        font=dict(family="Times New Roman", size=12),
+        font=dict(family=FONT_FAMILY, size=FONT_PX),
         showlegend=False,
         margin=dict(l=0, r=0, t=20, b=0)
     )
@@ -206,7 +213,7 @@ def create_bubble_chart(
         title_text="",
         tickvals=tick_positions,
         ticktext=[""] * len(countries),
-        tickfont=dict(size=10),
+        tickfont=dict(size=FONT_PX),
         showgrid=True,
         gridwidth=0.3,
         gridcolor='#e8e8e8',
@@ -220,7 +227,7 @@ def create_bubble_chart(
         title_text="",
         tickvals=tick_positions,
         ticktext=countries,
-        tickfont=dict(size=10),
+        tickfont=dict(size=FONT_PX),
         showgrid=True,
         gridwidth=0.3,
         gridcolor='#e8e8e8',
@@ -236,7 +243,7 @@ def create_bubble_chart(
             title_text="",
             tickvals=tick_vals_y,
             ticktext=variable_labels,
-            tickfont=dict(size=10),
+            tickfont=dict(size=FONT_PX),
             showgrid=True,
             gridwidth=0.3,
             gridcolor='#e8e8e8',
@@ -247,8 +254,8 @@ def create_bubble_chart(
         )
 
     fig.write_html(f'{output_prefix}.html', auto_open=auto_open)
-    fig.write_image(f'{output_prefix}.pdf')
-    fig.write_image(f'{output_prefix}.png')
+    write_pdf(fig, f'{output_prefix}.pdf', WIDTH_PX, DISPLAY_CM[0])   # vector PDF at the display size
+    smart_save_image(fig, f'{output_prefix}.png', DISPLAY_CM)
 
     print("NGEU bubble chart saved to:")
     print(f"  - {output_prefix}.html (interactive)")

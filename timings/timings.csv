@@ -128,3 +128,58 @@ Invalid text character. Check for unsupported symbol; invisible character; or pa
 2026-09-07T07:44:37,kk-m4-16gb,paper,latexmk,5,ok,591a2a61,
 2026-09-07T14:51:57,kk-m4-16gb,paper,latexmk,4,ok,e66393ff,
 2026-09-07T14:55:46,kk-m4-16gb,ngeu,processNGEUdata,6,ok,e66393ff,
+2026-09-07T16:24:12,Krzsztofs-Mini,charts,plotIRFs shock_ea_epsr1,3,ok,324a0c75,
+2026-09-07T16:24:12,kk-m4-16gb,shock,shock_ea_epsr1,16,ok,324a0c75,skipSimulation=true
+2026-09-07T16:24:20,Krzsztofs-Mini,charts,plotIRFs shock_rw_us_epszcon,1,ok,324a0c75,
+2026-09-07T16:24:20,kk-m4-16gb,shock,shock_rw_us_epszcon,8,ok,324a0c75,skipSimulation=true
+2026-09-07T16:24:28,Krzsztofs-Mini,charts,plotIRFs shock_eab_gy3,1,ok,324a0c75,
+2026-09-07T16:24:28,kk-m4-16gb,shock,shock_eab_gy3,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:24:34,Krzsztofs-Mini,charts,plotIRFs shock_eab_gy4,1,ok,324a0c75,
+2026-09-07T16:24:34,kk-m4-16gb,shock,shock_eab_gy4,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:24:42,Krzsztofs-Mini,charts,plotIRFs shock_ngeu,1,ok,324a0c75,
+2026-09-07T16:24:42,kk-m4-16gb,shock,shock_ngeu,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:24:49,Krzsztofs-Mini,charts,plotIRFs shock_at_gc,1,ok,324a0c75,
+2026-09-07T16:24:49,kk-m4-16gb,shock,shock_at_gc,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:24:56,Krzsztofs-Mini,charts,plotIRFs shock_be_gc,1,ok,324a0c75,
+2026-09-07T16:24:56,kk-m4-16gb,shock,shock_be_gc,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:25:03,Krzsztofs-Mini,charts,plotIRFs shock_fi_gc,1,ok,324a0c75,
+2026-09-07T16:25:03,kk-m4-16gb,shock,shock_fi_gc,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:25:10,Krzsztofs-Mini,charts,plotIRFs shock_fr_gc,1,ok,324a0c75,
+2026-09-07T16:25:11,kk-m4-16gb,shock,shock_fr_gc,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:25:17,Krzsztofs-Mini,charts,plotIRFs shock_de_gc,1,ok,324a0c75,
+2026-09-07T16:25:17,kk-m4-16gb,shock,shock_de_gc,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:25:24,Krzsztofs-Mini,charts,plotIRFs shock_gr_gc,1,ok,324a0c75,
+2026-09-07T16:25:24,kk-m4-16gb,shock,shock_gr_gc,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:25:31,Krzsztofs-Mini,charts,plotIRFs shock_it_gc,1,ok,324a0c75,
+2026-09-07T16:25:31,kk-m4-16gb,shock,shock_it_gc,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:25:38,Krzsztofs-Mini,charts,plotIRFs shock_nl_gc,1,ok,324a0c75,
+2026-09-07T16:25:38,kk-m4-16gb,shock,shock_nl_gc,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:25:45,Krzsztofs-Mini,charts,plotIRFs shock_pt_gc,1,ok,324a0c75,
+2026-09-07T16:25:45,kk-m4-16gb,shock,shock_pt_gc,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:25:52,Krzsztofs-Mini,charts,plotIRFs shock_es_gc,1,ok,324a0c75,
+2026-09-07T16:25:52,kk-m4-16gb,shock,shock_es_gc,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:25:59,Krzsztofs-Mini,charts,plotIRFs shock_ra_gc,1,ok,324a0c75,
+2026-09-07T16:25:59,kk-m4-16gb,shock,shock_ra_gc,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:26:06,Krzsztofs-Mini,charts,plotIRFs shock_at_gi,1,ok,324a0c75,
+2026-09-07T16:26:06,kk-m4-16gb,shock,shock_at_gi,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:26:13,Krzsztofs-Mini,charts,plotIRFs shock_be_gi,1,ok,324a0c75,
+2026-09-07T16:26:13,kk-m4-16gb,shock,shock_be_gi,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:26:20,Krzsztofs-Mini,charts,plotIRFs shock_fi_gi,1,ok,324a0c75,
+2026-09-07T16:26:20,kk-m4-16gb,shock,shock_fi_gi,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:26:27,Krzsztofs-Mini,charts,plotIRFs shock_fr_gi,1,ok,324a0c75,
+2026-09-07T16:26:27,kk-m4-16gb,shock,shock_fr_gi,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:26:34,Krzsztofs-Mini,charts,plotIRFs shock_de_gi,1,ok,324a0c75,
+2026-09-07T16:26:34,kk-m4-16gb,shock,shock_de_gi,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:26:40,Krzsztofs-Mini,charts,plotIRFs shock_gr_gi,1,ok,324a0c75,
+2026-09-07T16:26:41,kk-m4-16gb,shock,shock_gr_gi,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:26:47,Krzsztofs-Mini,charts,plotIRFs shock_it_gi,1,ok,324a0c75,
+2026-09-07T16:26:48,kk-m4-16gb,shock,shock_it_gi,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:26:54,Krzsztofs-Mini,charts,plotIRFs shock_nl_gi,1,ok,324a0c75,
+2026-09-07T16:26:55,kk-m4-16gb,shock,shock_nl_gi,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:27:02,Krzsztofs-Mini,charts,plotIRFs shock_pt_gi,1,ok,324a0c75,
+2026-09-07T16:27:02,kk-m4-16gb,shock,shock_pt_gi,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:27:09,Krzsztofs-Mini,charts,plotIRFs shock_es_gi,1,ok,324a0c75,
+2026-09-07T16:27:09,kk-m4-16gb,shock,shock_es_gi,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:27:16,Krzsztofs-Mini,charts,plotIRFs shock_ra_gi,1,ok,324a0c75,
+2026-09-07T16:27:16,kk-m4-16gb,shock,shock_ra_gi,7,ok,324a0c75,skipSimulation=true
+2026-09-07T16:27:19,kk-m4-16gb,ngeu,processNGEUdata,3,ok,324a0c75,

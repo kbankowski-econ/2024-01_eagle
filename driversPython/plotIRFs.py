@@ -49,6 +49,15 @@ def load_country_colors(project_path, meta_file='+environment/jsonFiles/Meta.jso
         meta = json.load(f)
     return meta['colors']
 
+def _load_wp_charts(project_path):
+    """Import driversPython/wp_charts (works under pyrunfile, where __file__ is undefined)."""
+    import importlib, os, sys
+    here = os.path.join(project_path, 'driversPython')
+    if here not in sys.path:
+        sys.path.insert(0, here)
+    return importlib.import_module('wp_charts')
+
+
 def create_irf_plots(
     project_path,
     model_name='shock_ea_epsr1',
@@ -65,6 +74,13 @@ def create_irf_plots(
     output_prefix = os.path.join(project_path, f'docs/2025-02_working-paper/figures/{model_name}_irfs')
     
     # Load data and configuration
+    wp = _load_wp_charts(project_path)
+    stem = f'{model_name}_irfs'
+    width_px, height_px = wp.chart_render_px(stem, (15.0, 16.0))
+    display_cm = wp.chart_display_cm(stem, (15.0, 16.0))
+    font_px = wp.font_px_for_pt(7, width_px, display_cm[0])     # tick labels (dense 3-column grid)
+    title_px = wp.font_px_for_pt(8, width_px, display_cm[0])    # subplot titles
+    legend_px = wp.font_px_for_pt(8, width_px, display_cm[0])
     df_long = load_irf_data(irf_file)
     var_dict = load_variable_descriptions(dict_file)
     
@@ -142,7 +158,7 @@ def create_irf_plots(
                             y=country_data['value'],
                             mode='lines',
                             name=country,
-                            line=dict(color=country_color, width=3),
+                            line=dict(color=country_color, width=2),
                             showlegend=(i == 0),  # Only show legend for first plot
                             legendgroup=country
                         ),
@@ -155,7 +171,7 @@ def create_irf_plots(
             tickvals=tick_values,
             ticktext=tick_values,
             range=[0.5, max_row + 0.5],  # Start x-axis before first point
-            tickfont=dict(size=10),
+            tickfont=dict(size=font_px),
             showgrid=True,
             gridwidth=0.3,
             gridcolor='#e8e8e8',
@@ -164,7 +180,7 @@ def create_irf_plots(
         )
         fig.update_yaxes(
             title_text="",
-            tickfont=dict(size=10),
+            tickfont=dict(size=font_px),
             showgrid=True,
             gridwidth=0.3,
             gridcolor='#e8e8e8',
@@ -176,36 +192,30 @@ def create_irf_plots(
         fig.add_hline(y=0, line_dash="dash", line_color="gray", line_width=1,
                      row=row, col=col)
     
-    # Fixed dimensions
-    cm_to_px = 37.8  # 1 cm ≈ 37.8 pixels (96 DPI)
-    optimal_width = int(16 * 1.0 * cm_to_px)
-    optimal_height = int(16 * 1.0 * cm_to_px)
-    
+    # Sizes and fonts from wp_charts / chartTable.csv (fonts at a fixed point size on the page)
     fig.update_layout(
-        width=optimal_width,
-        height=optimal_height,
+        width=width_px,
+        height=height_px,
         template='simple_white',
-        font=dict(family="Times New Roman", size=12),
+        font=dict(family=wp.FONT_FAMILY, size=font_px),
         showlegend=True,
         legend=dict(
             orientation="h",
             yanchor="bottom",
-            y=1.05,
+            y=1.03,
             xanchor="center",
             x=0.5,
-            font=dict(size=9),
+            font=dict(size=legend_px),
             borderwidth=0
         ),
-        margin=dict(l=0, r=35, t=0, b=0)  # Add top margin for legend
+        margin=dict(l=0, r=35, t=0, b=0)
     )
-    
-    # Update subplot title font size
-    fig.update_annotations(font_size=12)
+    fig.update_annotations(font=dict(family=wp.FONT_FAMILY, size=title_px))
     
     # Save outputs
     fig.write_html(f'{output_prefix}.html', auto_open=auto_open)
-    fig.write_image(f'{output_prefix}.pdf')
-    fig.write_image(f'{output_prefix}.png')
+    wp.write_pdf(fig, f'{output_prefix}.pdf', width_px, display_cm[0])   # vector PDF at the display size
+    wp.smart_save_image(fig, f'{output_prefix}.png', display_cm)
     
     print(f"IRF charts saved to:")
     print(f"  - {output_prefix}.html (interactive)")

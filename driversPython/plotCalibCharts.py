@@ -5,6 +5,10 @@ from plotly.subplots import make_subplots
 import json
 import os
 
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+from wp_charts import chart_render_px, chart_display_cm, font_px_for_pt, smart_save_image, write_pdf, FONT_FAMILY
+
 def load_country_colors():
     """Load country colors from Meta.json file."""
     meta_file_path = os.path.join(os.path.dirname(__file__), '..', '+environment', 'jsonFiles', 'Meta.json')
@@ -169,15 +173,19 @@ def create_single_panel_charts(
     # Configure axes
     setup_axes(fig, variables, var_descriptions)
     
-    # Configure layout with height proportional to number of variables
-    base_height_per_variable = 140  # Base height per variable in pixels
-    chart_height = len(variables) * base_height_per_variable
-    
+    # Sizes from chartTable.csv: dense panels are drawn on a 22.5 cm canvas and
+    # shown at 15 cm; fonts are set so they render at 8 pt on the page.
+    stem = _os.path.basename(output_prefix)
+    default_cm = (22.5, len(variables) * 3.7)
+    width_px, height_px = chart_render_px(stem, default_cm)
+    display_cm = chart_display_cm(stem, (15.0, default_cm[1] * 15.0 / 22.5))
+    font_px = font_px_for_pt(8, width_px, display_cm[0])
+
     fig.update_layout(
         template='simple_white',
-        height=chart_height,
-        width=850,
-        font=dict(family="Times New Roman"),
+        height=height_px,
+        width=width_px,
+        font=dict(family=FONT_FAMILY, size=font_px),
         showlegend=True,
         legend=dict(
             orientation="h",
@@ -191,8 +199,8 @@ def create_single_panel_charts(
     
     # Save outputs
     fig.write_html(f'{output_prefix}.html', auto_open=auto_open)
-    fig.write_image(f'{output_prefix}.pdf')
-    fig.write_image(f'{output_prefix}.png')
+    write_pdf(fig, f'{output_prefix}.pdf', width_px, display_cm[0])   # vector PDF at the display size
+    smart_save_image(fig, f'{output_prefix}.png', display_cm)
     
     print(f"Charts saved to:")
     print(f"  - {output_prefix}.html (interactive)")

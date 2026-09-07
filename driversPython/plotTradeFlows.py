@@ -4,6 +4,16 @@ import numpy as np
 import json
 from math import pi, cos, sin
 
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+from wp_charts import chart_render_px, chart_display_cm, font_px_for_pt, smart_save_image, write_pdf, FONT_FAMILY
+
+# Sizes from chartTable.csv (all five networks share one size); fonts at 8 pt on the page.
+_STEM = 'trade_network_combined'
+WIDTH_PX, HEIGHT_PX = chart_render_px(_STEM, (15.0, 15.0))
+DISPLAY_CM = chart_display_cm(_STEM, (15.0, 15.0))
+FONT_PX = font_px_for_pt(8, WIDTH_PX, DISPLAY_CM[0])
+
 
 def load_trade_data(data_file, variable_suffix='_imcy', year='average'):
     """Load and process trade flow data."""
@@ -183,7 +193,7 @@ def add_nodes(fig, positions, all_countries, node_sizes, node_colors, import_val
         ),
         text=text_labels,
         textposition="middle center",
-        textfont=dict(size=9, color='black'),
+        textfont=dict(size=FONT_PX, color='black'),
         hovertemplate='<b>%{customdata[0]}</b><br>Total Imports: %{customdata[1]:.1f}%<extra></extra>',
         customdata=list(zip(all_countries, import_values)),
         showlegend=False
@@ -191,18 +201,17 @@ def add_nodes(fig, positions, all_countries, node_sizes, node_colors, import_val
 
 
 def configure_layout(fig, width=None, height=None):
-    """Configure the plot layout and styling."""
-    # Default dimensions: 16 cm x 16 cm
+    """Configure the plot layout and styling (sizes from chartTable.csv)."""
     if width is None:
-        width = int(16 * 37.8)  # cm to px conversion
+        width = WIDTH_PX
     if height is None:
-        height = int(16 * 37.8)
+        height = HEIGHT_PX
     
     fig.update_layout(
         width=width,
         height=height,
         template='simple_white',
-        font=dict(family="Times New Roman", size=12),
+        font=dict(family=FONT_FAMILY, size=FONT_PX),
         showlegend=False,
         xaxis=dict(
             showgrid=False, zeroline=False, showticklabels=False,
@@ -221,8 +230,8 @@ def configure_layout(fig, width=None, height=None):
 def save_outputs(fig, output_prefix, auto_open=True):
     """Save visualization in multiple formats."""
     fig.write_html(f'{output_prefix}.html', auto_open=auto_open)
-    fig.write_image(f'{output_prefix}.pdf')
-    fig.write_image(f'{output_prefix}.png')
+    write_pdf(fig, f'{output_prefix}.pdf', WIDTH_PX, DISPLAY_CM[0])   # vector PDF at the display size
+    smart_save_image(fig, f'{output_prefix}.png', DISPLAY_CM)
     
     print(f"Trade network charts saved to:")
     print(f"  - {output_prefix}.html (interactive)")

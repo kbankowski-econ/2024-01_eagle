@@ -1,0 +1,9 @@
+id,pngFile,task,RenderWidth,RenderHeight,DisplayWidth,DisplayHeight
+fig_calib_panel1,docs/2025-02_working-paper/figures/calibration_charts_panel1.png,plotCalibCharts,22.5,22.2,15,14.8
+fig_calib_panel2,docs/2025-02_working-paper/figures/calibration_charts_panel2.png,plotCalibCharts,22.5,25.9,15,17.3
+fig_trade_combined,docs/2025-02_working-paper/figures/trade_network_combined.png,plotTradeFlows,15,15,15,15
+fig_trade_imcy,docs/2025-02_working-paper/figures/trade_network_imcy.png,plotTradeFlows,15,15,15,15
+fig_trade_imiy,docs/2025-02_working-paper/figures/trade_network_imiy.png,plotTradeFlows,15,15,15,15
+fig_trade_imcgy,docs/2025-02_working-paper/figures/trade_network_imcgy.png,plotTradeFlows,15,15,15,15
+fig_trade_imigy,docs/2025-02_working-paper/figures/trade_network_imigy.png,plotTradeFlows,15,15,15,15
+fig_ngeu_bubble,docs/2025-02_working-paper/figures/NGEU_bubble_chart.png,plotNGEUbubbleChart,15,9.4,15,9.4
