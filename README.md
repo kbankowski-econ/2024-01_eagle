@@ -179,13 +179,11 @@ extracted from the shared literature bib on 2026-09-07. Add new entries there.
 ## What is left
 
 Goal: a polished, citable draft of `docs/2025-02_working-paper/draftPaper.tex`
-(61 pages, dated November 2025, banner "Preliminary Draft"). Checked against
+(57 pages, dated November 2025, banner "Preliminary Draft"). Checked against
 the 2026-09-07 build; details and line numbers in
 `docs/2025-02_working-paper/.eagle.md`.
 
 **Blocking before circulation**
-- 5 unfilled `\source{Own calculations based on ....}` notes (lines 714,
-  1167, 1199, 1231, 1264).
 - 4 inline `TODO`s: data source (l.216), EA shares to be checked by Emile
   (l.251), GDP-shares chart (l.252), biases and elasticities versus Clancy and
   the original EAGLE (l.1114).
