@@ -233,7 +233,7 @@ The euro area is characterized by deep regional integration, facilitated by the 
 Intra-euro area trade constitutes a substantial share of member states' total trade flows, with Germany often serving as a central node, both as a major exporter and importer.
 At the same time, the euro area maintains a strong trade presence globally, ranking among the world's largest trading blocs.
 Its openness to trade, with total trade exceeding 30\% of GDP, underscores its importance as a global trading hub.
-When measured by the import-to-GDP ratio, euro area economies exhibit significantly higher openness compared to other major advanced economies, such as Japan and the United States (see Figure \ref{fig1}).
+When measured by the import-to-GDP ratio, euro area economies exhibit significantly higher openness compared to other major advanced economies, such as Japan and the United States (see Figure \ref{fig:importMagnitude}).
 Additionally, the euro area has historically maintained on aggregate sizable trade surpluses, largely driven by its strong manufacturing sector.
 These trade dynamics are critical for understanding macroeconomic shock transmission within the euro area and beyond, and we aim to incorporate these features comprehensively in our extended model.
 
@@ -299,7 +299,7 @@ Finally, the imported good $IM_t^s$ consists of a bundle of bilateral imports $I
     \label{eqIM}
     IM_t^s = \left[\sum_{CO \neq H} \left(\nu_{Ms}^{\{H,CO\}}\right)^{\frac{1}{\mu_{Ms}}} \left(IM_t^{s,CO}\right)^{\frac{\mu_{Ms}-1}{\mu_{Ms}}}\right]^{\frac{\mu_{Ms}}{\mu_{Ms}-1}}.
 \end{equation}
-Figure~\ref{finalGoodProduction} offers a detailed schematic representation of the production of a final good of type $s$.
+Figure~\ref{fig:finalGoodProduction} offers a detailed schematic representation of the production of a final good of type $s$.
 \footnote{
     The CES aggregation framework also implies that the prices of final goods are composite indices of the prices of their underlying components. 
     Specifically, the price of a final good of type $s$, denoted $P_{s,t}$, the price of the tradable component $P_{TTs,t}$, and the price of imported tradable goods $P_{IMs,t}$ are defined as follows:
@@ -587,7 +587,7 @@ The following description of the calibrated values focuses on the aspects most r
 
 
 \paragraph{Country-Specific Great Ratios}
-The calibration of the great ratios (see Table~\ref{tab:national_accounts}) is primarily based on national accounts data from the sources detailed in Table~\ref{tab:data_sources}, with illustrative values presented in Figure~\ref{figApp:nationalAccountsData}.
+The calibration of the great ratios (see Table~\ref{tab:national_accounts}) is primarily based on national accounts data from the sources detailed in Table~\ref{tab:data_sources}, with illustrative values presented in Figure~\ref{fig:calibration_charts_panel1}.
 Long-run averages are computed over the period 1980-2019.
 The initial year reflects data availability, while 2019 is chosen as the end year to exclude the extraordinary observations associated with the COVID-19 pandemic.
 The relative size of each economy in the model is scaled to match its share in global GDP.
@@ -636,8 +636,8 @@ Net foreign asset positions are calibrated endogenously to reflect observed imba
 
 \paragraph{Fiscal Variables}
 The calibration procedure establishes country-specific steady-state values for key fiscal variables (see Table~\ref{tab:gov_ratios}), drawing on data from the sources detailed in Table~\ref{tab:data_sources}.
-Government expenditure-to-GDP ratios characterize the relative size of the public sector across countries and regions, with descriptive statistics presented in Figure~\ref{figApp:govSpending}.
-Tax rates are computed as implicit average rates, defined as the ratio of government revenues from each tax category to its corresponding macroeconomic base, thus capturing the effective tax burden (see Figure~\ref{figApp:govTaxRates}).
+Government expenditure-to-GDP ratios characterize the relative size of the public sector across countries and regions, with descriptive statistics presented in Figure~\ref{fig:calibration_charts_panel1}.
+Tax rates are computed as implicit average rates, defined as the ratio of government revenues from each tax category to its corresponding macroeconomic base, thus capturing the effective tax burden (see Figure~\ref{fig:calibration_charts_panel2}).
 Each country or region is assigned a target debt-to-GDP ratio, calibrated based on historical averages over the sample period.
 Appendix Table~\ref{tab:fiscal_instruments} provides comprehensive steady-state-to-GDP ratios for fiscal revenue and expenditure components, along with fiscal balances consistent with the calibrated fiscal instrument values.
 
@@ -669,7 +669,7 @@ Inter-country tables extend beyond national borders, incorporating data on econo
 They include detailed information on the import content of each country's production processes, highlighting how domestic industries rely on foreign inputs.
 We choose the OECD inter-country input-output tables as it has a broad and recent coverage of years, regions, and sectors.
 The latest OECD release covers years up to 2020, 77 regions, including a 'Rest of World' region, and 45 sectors.
-The structure of the input output table is represented in the figure \ref{fig8}.
+The structure of the input output table is represented in the figure \ref{fig:OECD_table}.
 As depicted, the tables are structured around intermediate use and final demand.
 In our calibrations, we extracted the tables for years 1995 to 2020 and found average values across the years to capture medium-run characteristics of trade.
 
@@ -742,14 +742,14 @@ It requires the application of a "divide-and-conquer" (DAC) algorithm, also know
 }
 For our extended model, this approach involves first simplifying the entire model to obtain initial steady-state values, which serve as the foundation for the extended version.
 
-Figure \ref{diagram:ssSolutionStrategy} illustrates the step-by-step strategy employed to obtain the model's steady state.
+Figure \ref{fig:ssSolutionStrategy} illustrates the step-by-step strategy employed to obtain the model's steady state.
 We begin the solution strategy by obtaining a steady state for a simplified version of the model (i.e., closer to the original EAGLE specification) where all regions and production sectors are symmetric. 
 From this initial steady state, we gradually adjust parameters toward their target values, ensuring a smooth transition to an equilibrium where all economic ratios and trade specifications align with observed data.
 In certain steps, we also advance the model by introducing desired features, such as complementary government consumption and productive government investment.
 Based on our experience, solving for the steady state with these features incorporated from the outset proves considerably more challenging.
 In this context, obtaining steady-state values that serve as the foundation for calculating the extended model is essential.
 
-Among the various calibration steps, the adjustment of bilateral trade flows presents the greatest challenge (Step 6 in Figure \ref{diagram:ssSolutionStrategy}).
+Among the various calibration steps, the adjustment of bilateral trade flows presents the greatest challenge (Step 6 in Figure \ref{fig:ssSolutionStrategy}).
 Given the interconnectedness of trade linkages between countries, aligning the model with the trade calibration matrix must occur simultaneously.
 The calibration of bilateral and total import shares relies on a technique called model flipping.
 Since trade shares are endogenous variables in the model, obtaining their specific values under the standard approach is not feasible—they cannot be directly imposed like parameters.
@@ -906,7 +906,7 @@ Inflationary pressures, while present, are more subdued compared to those genera
 While union-wide fiscal shocks serve as a useful validation of the model, similar analyses could be conducted using single-country models for the euro area.
 The added value of the extended EAGLE framework lies in its ability to capture country-specific policies, allowing for an assessment of their domestic impact as well as their spillover effects on neighboring countries and the broader global economy.
 Given the close economic linkages among euro area member states, understanding the implications of national policies for the monetary union is of particular interest, as outlined above.
-To illustrate this, we examine the effects of a standard (1\% of ex-ante GDP) government spending shock in Spain, which accounts for approximately 10\% of the euro area's GDP (see Figure \ref{fig3}).
+To illustrate this, we examine the effects of a standard (1\% of ex-ante GDP) government spending shock in Spain, which accounts for approximately 10\% of the euro area's GDP (see Figure \ref{fig:shock_es_gc_irfs}).
 The output response follows a similar dynamic to the union-wide stimulus, with effects roughly proportional to Spain's share in EMU GDP.
 Given the import content of Spanish government spending, the spillover effects on output in other euro area countries remain negligible.
 However, notable price spillovers emerge, contributing to higher inflation across the monetary union.
@@ -928,7 +928,7 @@ Introduced in response to the COVID-19 pandemic, it constitutes a \texorpdfstrin
 The program's primary objectives include mitigating the immediate economic fallout from the pandemic, supporting the green and digital transitions, and fostering sustainable growth and job creation.
 Additionally, NGEU aims to reduce economic divergences within the euro area, with larger allocations directed toward countries with lower pre-pandemic GDP per capita.
 The program operates through three main channels: lowering risk premia, providing fiscal stimulus, and facilitating structural reforms. An overwhelming share of the fiscal stimulus takes the form of government investment, which, given its scale, is expected to generate substantial positive effects for both the euro area as a whole and its individual member states.
-These effects are likely to be particularly pronounced in the program's main beneficiaries, Italy and Spain, which receive the largest nominal allocations (see Figure \ref{fig4}).
+These effects are likely to be particularly pronounced in the program's main beneficiaries, Italy and Spain, which receive the largest nominal allocations (see Figure \ref{fig:NGEU_input}).
 \begin{figure}[H]
     \centering
     \caption{NGEU-financed investment in euro area \label{fig:NGEU_input}}
@@ -938,7 +938,7 @@ These effects are likely to be particularly pronounced in the program's main ben
 
 
 % 7(b) NGEU macro effects
-Macroeconomic simulations indicate that NGEU-financed investment will yield significant benefits for the euro area economy (see Figure \ref{fig5}).
+Macroeconomic simulations indicate that NGEU-financed investment will yield significant benefits for the euro area economy (see Figure \ref{fig:effectNGEU}).
 EMU output is projected to increase by up to 0.5\% relative to the non-program baseline.
 Given the nature of investment and its contribution to public capital accumulation, these effects are long-lasting, extending well beyond the program's implementation period, which concludes in 2026.
 The majority of the stimulus impact originates from member states with the largest spending allocations, most notably Spain and Italy.
@@ -963,7 +963,7 @@ Analyzing trade data provides insight into this issue.
 Of the approximately 4\% of GDP allocated to government investment in Spain, only 0.5\% is covered by imported goods.
 This share is notably higher for smaller, more open economies such as Austria and Ireland, where it exceeds 1\% of GDP.
 In the case of Spain, only 0.1\% of GDP in German imports is utilized for government investment, suggesting that the impact on the German economy is likely to be minimal (for an alternative evaluation based on intermediate goods trading and pointing to significantly larger spill-over effects see \citet{pfeifferetal2021eedp}).
-Our macroeconomic simulations confirm this hypothesis, indicating limited spillover effects (see Figure \ref{fig6}).
+Our macroeconomic simulations confirm this hypothesis, indicating limited spillover effects (see Figure \ref{fig:effectNGEUspillovers}).
 German exports increase slightly in the first year of the program but decline thereafter as the country's price competitiveness weakens due to price spillovers.
 Additionally, the German economy experiences a mild adverse effect from the monetary authority's response to the NGEU stimulus, which involves a slight tightening of policy.
 
