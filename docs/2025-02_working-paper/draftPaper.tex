@@ -224,7 +224,7 @@ The euro area is characterized by deep regional integration, facilitated by the 
 Intra-euro area trade constitutes a substantial share of member states' total trade flows, with Germany often serving as a central node, both as a major exporter and importer.
 At the same time, the euro area maintains a strong trade presence globally, ranking among the world's largest trading blocs.
 Its openness to trade, with total trade exceeding 30\% of GDP, underscores its importance as a global trading hub.
-When measured by the import-to-GDP ratio, euro area economies exhibit significantly higher openness compared to other major advanced economies, such as Japan and the United States (see Figure \ref{fig:importMagnitude}).
+When measured by the import-to-GDP ratio, euro area economies exhibit significantly higher openness compared to other major advanced economies, such as Japan and the United States (see Figure~\ref{fig:importMagnitude}).
 Additionally, the euro area has historically maintained on aggregate sizable trade surpluses, largely driven by its strong manufacturing sector.
 These trade dynamics are critical for understanding macroeconomic shock transmission within the euro area and beyond, and we aim to incorporate these features comprehensively in our extended model.
 
@@ -236,7 +236,7 @@ These trade dynamics are critical for understanding macroeconomic shock transmis
 The EAGLE model represents the global economy as being composed of multiple countries/regions, some of which form a monetary union.
 % Bib key quirk (shared bib): GomesEtAl2010ecbwp = the 2012 Economic Modelling article, Gomesaetal2010ecbwp = ECB WP 1195 (2010).
 The original version, initially introduced in \citet{Gomesaetal2010ecbwp} and later published in \citet{GomesEtAl2010ecbwp}, included Germany, the rest of the euro area, the United States, and the rest of the world.
-Subsequent versions of the model have modified the country composition to focus on different economic contexts, such as small open economies like Ireland and Slovenia (\citealp{Clancyetal2016}), the four largest euro area economies—Germany, France, Italy, and Spain (\citealp{BokanEtAl2018em})—or non-euro area countries like Hungary (\citealp{BekesiEtAl2017mnbwp}).
+Subsequent versions of the model have modified the country composition to focus on different economic contexts, such as small open economies like Ireland and Slovenia \citep{Clancyetal2016}, the four largest euro area economies—Germany, France, Italy, and Spain \citep{BokanEtAl2018em}—or non-euro area countries like Hungary \citep{BekesiEtAl2017mnbwp}.
 Regardless of the specific configuration, regions within the EAGLE framework are modeled as open economies, interconnected through bilateral trade relationships and a common monetary policy for euro area members.
 
 % (2)
@@ -248,9 +248,9 @@ Overall, our version of EAGLE comprises 14 countries or regions, constituting, t
 
 % (3)
 The EAGLE model has been extensively employed to analyze a wide range of economic policy issues.
-These include global fiscal stimulus (\citealp{GomesEtAl2015jimf}), structural reforms (\citealp{Gomesetal2013if}; \citealp{Jacquinot2018springer}; \citealp{Gomes2018jm}), monetary union accession (\citealp{BrzozaBrzezinaEtAl2014oer}), fiscal devaluations (\citealp{GomesEtAl2016em}), trade tariffs and protectionism (\citealp{BoltEtAl2019dnbwp}; \citealp{JacquinotEtAl2022jimf}; \citealp{ClancyEtAl2024ijcb}), financial interlinkages (\citealp{Pariesetal2016ecbwp}; \citealp{BokanEtAl2018em}), and economic risks associated with high government debt (\citealp{BurielEtAl2020ecbwp}).
+These include global fiscal stimulus \citep{GomesEtAl2015jimf}, structural reforms \citep{Gomesetal2013if,Jacquinot2018springer,Gomes2018jm}, monetary union accession \citep{BrzozaBrzezinaEtAl2014oer}, fiscal devaluations \citep{GomesEtAl2016em}, trade tariffs and protectionism \citep{BoltEtAl2019dnbwp,JacquinotEtAl2022jimf,ClancyEtAl2024ijcb}, financial interlinkages \citep{Pariesetal2016ecbwp,BokanEtAl2018em}, and economic risks associated with high government debt \citep{BurielEtAl2020ecbwp}.
 This paper applies the extended version of the EAGLE model to assess the macroeconomic impact of the recently launched multi-year EU-wide investment initiative—Next Generation EU (NGEU).
-This application complements existing EAGLE-based analyses, specifically \citealp{Bankowskietal2025ecbOP}, by leveraging the detailed country disaggregation.
+This application complements existing EAGLE-based analyses, specifically \citet{Bankowskietal2025ecbOP}, by leveraging the detailed country disaggregation.
 This enhanced structure enables the assessment of the program's effects on smaller member states, such as Greece and Portugal, which are among the major beneficiaries of the NGEU.
 
 % (4)
@@ -656,7 +656,7 @@ The calibrated steady-state debt-to-GDP ratios are achieved through lump-sum tax
     \end{table}
 \end{landscape}
 
-\paragraph{Trade calibration.} Calibrating the trade linkages in a setup with as many countries is a major challenge in extending the EAGLE framework. Two crucial trade data characteristics need to be reflected in our model. First, there is a necessity to capture the amount of imports within each category of final good (see the gray nodes in Figure \ref{fig:AggResourceConstraint}). Here it is crucial to reflect the fact that demand components differ in terms of import content, notably private investment tends to be much more import reach than government consoumption. Second, these imported amounts need to be decomposed into bilateral imports to capture trade flows between all countries. This is to capture, for example, that import dependencies between European countries are much tighter than these involving less open US and the rest of the world region.
+\paragraph{Trade calibration.} Calibrating the trade linkages in a setup with as many countries is a major challenge in extending the EAGLE framework. Two crucial trade data characteristics need to be reflected in our model. First, there is a necessity to capture the amount of imports within each category of final good (see the gray nodes in Figure~\ref{fig:AggResourceConstraint}). Here it is crucial to reflect the fact that demand components differ in terms of import content, notably private investment tends to be much more import reach than government consoumption. Second, these imported amounts need to be decomposed into bilateral imports to capture trade flows between all countries. This is to capture, for example, that import dependencies between European countries are much tighter than these involving less open US and the rest of the world region.
 
 In order to gauge the import content of each aggregate demand components we utilize utilize Inter-Country Input-Output (ICIO) tables published by the \citet{ICIO2024}. Input-output tables detail how the output of one industry is used as an input in another, capturing the flow of goods and services within the economy.
 Inter-country tables extend beyond national borders, incorporating data on economic interactions between multiple countries, providing a comprehensive view of cross-border flows of goods and services.
@@ -737,18 +737,18 @@ It requires the application of a "divide-and-conquer" (DAC) algorithm, also know
 }
 For our extended model, this approach involves first simplifying the entire model to obtain initial steady-state values, which serve as the foundation for the extended version.
 
-Figure \ref{fig:ssSolutionStrategy} illustrates the step-by-step strategy employed to obtain the model's steady state.
+Figure~\ref{fig:ssSolutionStrategy} illustrates the step-by-step strategy employed to obtain the model's steady state.
 We begin the solution strategy by obtaining a steady state for a simplified version of the model (i.e., closer to the original EAGLE specification) where all regions and production sectors are symmetric. 
 From this initial steady state, we gradually adjust parameters toward their target values, ensuring a smooth transition to an equilibrium where all economic ratios and trade specifications align with observed data.
 In certain steps, we also advance the model by introducing desired features, such as complementary government consumption and productive government investment.
 Based on our experience, solving for the steady state with these features incorporated from the outset proves considerably more challenging.
 In this context, obtaining steady-state values that serve as the foundation for calculating the extended model is essential.
 
-Among the various calibration steps, the adjustment of bilateral trade flows presents the greatest challenge (Step 6 in Figure \ref{fig:ssSolutionStrategy}).
+Among the various calibration steps, the adjustment of bilateral trade flows presents the greatest challenge (Step 6 in Figure~\ref{fig:ssSolutionStrategy}).
 Given the interconnectedness of trade linkages between countries, aligning the model with the trade calibration matrix must occur simultaneously.
 The calibration of bilateral and total import shares relies on a technique called model flipping.
 Since trade shares are endogenous variables in the model, obtaining their specific values under the standard approach is not feasible—they cannot be directly imposed like parameters.
-One approach that effectively accomplishes this is to exploit the direct relationship between the shares and weight parameters in import equations (see Equation \ref{eqFlippingExample}, which specifies the bilateral import share of government consumption goods by country $H$ from country $CO$ as an example).
+One approach that effectively accomplishes this is to exploit the direct relationship between the shares and weight parameters in import equations (see Equation~\ref{eqFlippingExample}, which specifies the bilateral import share of government consumption goods by country $H$ from country $CO$ as an example).
 Model flipping transforms the weight $v_{M G_C}^{H, C O}$ into an endogenous variable and import shares $\frac{P_{IM,t}^{CO}I M_t^{G_C}}{P_{Y,t} Y_t}$ into a parameter, the values of which can be imposed.
 In addition to total and bilateral trade shares, this step must also involve calibration of trade balances and country sizes, both of which are directly related to the shares.
 Given the large number of countries in our model, this step involves the simultaneous calibration of 755 parameters.
@@ -901,7 +901,7 @@ Inflationary pressures, while present, are more subdued compared to those genera
 While union-wide fiscal shocks serve as a useful validation of the model, similar analyses could be conducted using single-country models for the euro area.
 The added value of the extended EAGLE framework lies in its ability to capture country-specific policies, allowing for an assessment of their domestic impact as well as their spillover effects on neighboring countries and the broader global economy.
 Given the close economic linkages among euro area member states, understanding the implications of national policies for the monetary union is of particular interest, as outlined above.
-To illustrate this, we examine the effects of a standard (1\% of ex-ante GDP) government spending shock in Spain, which accounts for approximately 10\% of the euro area's GDP (see Figure \ref{fig:shock_es_gc_irfs}).
+To illustrate this, we examine the effects of a standard (1\% of ex-ante GDP) government spending shock in Spain, which accounts for approximately 10\% of the euro area's GDP (see Figure~\ref{fig:shock_es_gc_irfs}).
 The output response follows a similar dynamic to the union-wide stimulus, with effects roughly proportional to Spain's share in EMU GDP.
 Given the import content of Spanish government spending, the spillover effects on output in other euro area countries remain negligible.
 However, notable price spillovers emerge, contributing to higher inflation across the monetary union.
@@ -923,7 +923,7 @@ Introduced in response to the COVID-19 pandemic, it constitutes a \texorpdfstrin
 The program's primary objectives include mitigating the immediate economic fallout from the pandemic, supporting the green and digital transitions, and fostering sustainable growth and job creation.
 Additionally, NGEU aims to reduce economic divergences within the euro area, with larger allocations directed toward countries with lower pre-pandemic GDP per capita.
 The program operates through three main channels: lowering risk premia, providing fiscal stimulus, and facilitating structural reforms. An overwhelming share of the fiscal stimulus takes the form of government investment, which, given its scale, is expected to generate substantial positive effects for both the euro area as a whole and its individual member states.
-These effects are likely to be particularly pronounced in the program's main beneficiaries, Italy and Spain, which receive the largest nominal allocations (see Figure \ref{fig:NGEU_input}).
+These effects are likely to be particularly pronounced in the program's main beneficiaries, Italy and Spain, which receive the largest nominal allocations (see Figure~\ref{fig:NGEU_input}).
 \begin{figure}[H]
     \centering
     \caption{NGEU-Financed Investment in the Euro Area \label{fig:NGEU_input}}
@@ -933,7 +933,7 @@ These effects are likely to be particularly pronounced in the program's main ben
 
 
 % 7(b) NGEU macro effects
-Macroeconomic simulations indicate that NGEU-financed investment will yield significant benefits for the euro area economy (see Figure \ref{fig:effectNGEU}).
+Macroeconomic simulations indicate that NGEU-financed investment will yield significant benefits for the euro area economy (see Figure~\ref{fig:effectNGEU}).
 EMU output is projected to increase by up to 0.5\% relative to the non-program baseline.
 Given the nature of investment and its contribution to public capital accumulation, these effects are long-lasting, extending well beyond the program's implementation period, which concludes in 2026.
 The majority of the stimulus impact originates from member states with the largest spending allocations, most notably Spain and Italy.
@@ -958,7 +958,7 @@ Analyzing trade data provides insight into this issue.
 Of the approximately 4\% of GDP allocated to government investment in Spain, only 0.5\% is covered by imported goods.
 This share is notably higher for smaller, more open economies such as Austria and Ireland, where it exceeds 1\% of GDP.
 In the case of Spain, only 0.1\% of GDP in German imports is utilized for government investment, suggesting that the impact on the German economy is likely to be minimal (for an alternative evaluation based on intermediate goods trading and pointing to significantly larger spill-over effects see \citet{pfeifferetal2021eedp}).
-Our macroeconomic simulations confirm this hypothesis, indicating limited spillover effects (see Figure \ref{fig:effectNGEUspillovers}).
+Our macroeconomic simulations confirm this hypothesis, indicating limited spillover effects (see Figure~\ref{fig:effectNGEUspillovers}).
 German exports increase slightly in the first year of the program but decline thereafter as the country's price competitiveness weakens due to price spillovers.
 Additionally, the German economy experiences a mild adverse effect from the monetary authority's response to the NGEU stimulus, which involves a slight tightening of policy.
 
