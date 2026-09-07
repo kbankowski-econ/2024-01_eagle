@@ -53,8 +53,10 @@
 \usepackage{adjustbox}
 \usetikzlibrary{positioning}
 
-\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
-\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
+\titleformat{\section}[block]{\large\bfseries\raggedright}{\textcolor{linkcol}{\thesection.}}{0.6em}{} % left-aligned bold; blue number
+\titleformat{\subsection}[block]{\normalsize\bfseries\raggedright}{\textcolor{linkcol}{\thesubsection}}{0.6em}{}
+\titlespacing*{\section}{0pt}{2.4ex plus 1ex minus .2ex}{1.2ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{1.8ex plus 1ex minus .2ex}{0.8ex plus .2ex}
 \newcommand{\horrule}[1]{\rule{\linewidth}{#1}}
 \captionsetup{labelfont=bf,font=small,labelsep=period} % bold, smaller figure/table labels
 \usepackage{fancyhdr} % Headers and footers
@@ -184,7 +186,7 @@ The analysis highlights the model's utility in assessing complex policy initiati
 
 \thispagestyle{fancy} % All pages have headers and footers
 
-\section{Introduction and motivation}
+\section{Introduction and Motivation}
 
 % 1 Importance of heterogenity and interdependence
 Interdependence and heterogeneity in the euro area are central to understanding the region's macroeconomic dynamics, given its unique institutional framework, where a common monetary policy operates alongside decentralized fiscal and structural policies.
@@ -223,9 +225,9 @@ When measured by the import-to-GDP ratio, euro area economies exhibit significan
 Additionally, the euro area has historically maintained on aggregate sizable trade surpluses, largely driven by its strong manufacturing sector.
 These trade dynamics are critical for understanding macroeconomic shock transmission within the euro area and beyond, and we aim to incorporate these features comprehensively in our extended model.
 
-\section{The model}
+\section{The Model}
 
-\subsection{The model extension}
+\subsection{The Model Extension}
 
 % (1)
 The EAGLE model represents the global economy as being composed of multiple countries/regions, some of which form a monetary union.
@@ -256,7 +258,7 @@ This subsection focuses on the model components most relevant for our extension 
 For all remaining features, we refer the reader to \citet{GomesEtAl2010ecbwp} for the general structure and to \citet{Clancyetal2016} for the enhanced fiscal policy specification.
 
 % (6)
-\paragraph{Final good production}
+\paragraph{Final good production.}
 
 Our model distinguishes four types of final goods: private consumption, private investment, government consumption, and government investment.
 Each type of good is assembled by firms operating under perfect competition.
@@ -329,7 +331,7 @@ Figure~\ref{fig:finalGoodProduction} offers a detailed schematic representation 
     \desc{$Q_t^s$ denotes the final good of type $s$; $TT_t^s$ is the tradable component used in the bundling of good $s$; $NT_t^s$ is the non-tradable component; $HT_t^s$ represents the home-produced tradable good; $IM_t^s$ denotes the imported tradable good; $IM_t^{s,CO^2}$ and $IM_t^{s,CO^{14}}$ represent imports from countries $CO^2$ and $CO^{14}$, respectively, used in the production of good $s$.}
 \end{figure}
 
-\paragraph{Resource constraint} Countries and regions in the EAGLE model satisfy an aggregate resource constraint which is given in nominal terms by Eq.~\ref{eqResourceConstraint}. Total production $Y_t$ is allocated to: (i) domestic final demand of the private sector ($C_t$ and $I_t$) and the general government ($G_{C,t}$ and $G_{I,t}$); and (ii) external demand via exports.
+\paragraph{Resource constraint.} Countries and regions in the EAGLE model satisfy an aggregate resource constraint which is given in nominal terms by Eq.~\ref{eqResourceConstraint}. Total production $Y_t$ is allocated to: (i) domestic final demand of the private sector ($C_t$ and $I_t$) and the general government ($G_{C,t}$ and $G_{I,t}$); and (ii) external demand via exports.
 \footnote{
     A portion of production is absorbed by transaction costs and capital utilization costs, represented by $\Gamma_{v,t}$ and $\Gamma_u(u_t)K_t$, respectively.
 } 
@@ -439,7 +441,7 @@ Figure~\ref{fig:AggResourceConstraint} illustrates the creation and use of resou
 % AT_y = AT_yst+AT_ysn;
 
 
-\paragraph{Trade and net foreign asset position} Each country or region in the EAGLE model may experience a mismatch between the value of imported and exported goods, resulting in a trade surplus or deficit. The trade balance in nominal terms is defined as the difference between exports and imports (see Eq.~\ref{eqTradeBalance}):
+\paragraph{Trade and net foreign asset position.} Each country or region in the EAGLE model may experience a mismatch between the value of imported and exported goods, resulting in a trade surplus or deficit. The trade balance in nominal terms is defined as the difference between exports and imports (see Eq.~\ref{eqTradeBalance}):
 \footnote{
     $S_t^{\{H,CO\}}$ in Eq.~\ref{eqTradeBalance} denotes the nominal exchange rate that converts the price $P_{X,t}^{\{H,CO\}}$, expressed in the currency of country $CO$, into the currency of country $H$.
 }
@@ -456,7 +458,7 @@ Accordingly, a country's NFA position evolves according to Eq.~\ref{eqNetForeign
 \end{equation}
 where $R_t^*$ denotes the gross return on the internationally traded bond $B_{t+1}^*$, and $S_t^{\{\mathrm{CO},\mathrm{US}\}}$ represents the nominal exchange rate, defined as the price of one U.S. dollar in terms of country $\mathrm{CO}$'s currency. Finally, the assumption of zero net supply of international bonds implies the global market-clearing condition $\sum_{\mathrm{CO}} s^{\mathrm{CO}} B_t^{*\mathrm{CO}} = 0$, with $\sum_{\mathrm{CO}} s^{\mathrm{CO}} = 1$.
 
-\paragraph{Euro area aggregation} Since the euro area comprises ten individual countries and a residual region, each modeled as an open economy, we construct aggregate indicators for the monetary union. Specifically, we aggregate euro area-wide output $(Y_t^{EA})$ and inflation $(\Pi_t^{EA,4})$, as defined in Equations~\ref{eqEAoutput} and~\ref{eqEAinflation}, respectively. The set of countries and the residual region constituting the euro area is denoted by \(\mathcal{I}^{EA} = \{ \text{AT}, \text{BE}, \text{FI}, \text{FR}, \text{DE}, \text{GR}, \text{IT}, \text{NL}, \text{PT}, \text{ES}, \text{RA} \}\), where \(s^i\) represents the relative size of country or region \(i\).
+\paragraph{Euro area aggregation.} Since the euro area comprises ten individual countries and a residual region, each modeled as an open economy, we construct aggregate indicators for the monetary union. Specifically, we aggregate euro area-wide output $(Y_t^{EA})$ and inflation $(\Pi_t^{EA,4})$, as defined in Equations~\ref{eqEAoutput} and~\ref{eqEAinflation}, respectively. The set of countries and the residual region constituting the euro area is denoted by \(\mathcal{I}^{EA} = \{ \text{AT}, \text{BE}, \text{FI}, \text{FR}, \text{DE}, \text{GR}, \text{IT}, \text{NL}, \text{PT}, \text{ES}, \text{RA} \}\), where \(s^i\) represents the relative size of country or region \(i\).
 
 \begin{equation} \label{eqEAoutput}
     Y_t^{EA} \equiv \frac{\sum\limits_{\mathrm{CO} \in \mathcal{I}^{EA}} s^\mathrm{CO} \overline{P_Y^{\mathrm{CO}}} Y_t^\mathrm{CO}}{\sum\limits_{\mathrm{CO} \in \mathcal{I}^{EA}} s^\mathrm{CO}},
@@ -465,7 +467,7 @@ where $R_t^*$ denotes the gross return on the internationally traded bond $B_{t+
     \Pi_t^{EA,4} \equiv \prod\limits_{\mathrm{CO} \in \mathcal{I}^{EA}} \left( \frac{P_{C,t}^\mathrm{CO}}{P_{C,t-4}^\mathrm{CO}} \right)^{\frac{s^\mathrm{CO}}{\sum\limits_{\mathrm{CO} \in \mathcal{I}^{EA}} s^\mathrm{CO}}}.
 \end{equation}
 
-\paragraph{Fiscal and monetary policy rules} 
+\paragraph{Fiscal and monetary policy rules.} 
 The government budget in the model encompasses multiple tax and expenditure instruments.
 With the possibility of issuing bonds, governments are not required to balance the budget in each period.
 Following the extension by \citet{Clancyetal2016}, both government consumption and investment play economically meaningful roles in the model.
@@ -560,7 +562,7 @@ In the case of the euro area, the same rule applies, but based on union-wide agg
 % // Equilibrium real interest rate
 % DE_rrstar-1 = 1/DE_beta-1;
 
-\subsection{The model calibration} \label{sec:model_calibration}
+\subsection{The Model Calibration} \label{sec:model_calibration}
 
 The model is calibrated to reflect an enhanced geographical structure, with particular emphasis on a detailed decomposition of the euro area.
 Specifically, we distinguish ten individual euro area member states—Austria, Belgium, Finland, France, Germany, Greece, Italy, the Netherlands, Portugal, and Spain—alongside a residual region representing the remaining countries.
@@ -573,7 +575,7 @@ A complete list of parameter values is provided in the Appendix: Table~\ref{tab:
 The following description of the calibrated values focuses on the aspects most relevant to the model extension presented in this paper, namely country-specific great ratios, fiscal variables, and trade calibration.
 
 
-\paragraph{Country-Specific Great Ratios}
+\paragraph{Country-specific great ratios.}
 The calibration of the great ratios (see Table~\ref{tab:national_accounts}) is primarily based on national accounts data from the sources detailed in Table~\ref{tab:data_sources}, with illustrative values presented in Figure~\ref{fig:calibration_charts_panel1}.
 Long-run averages are computed over the period 1980-2019.
 The initial year reflects data availability, while 2019 is chosen as the end year to exclude the extraordinary observations associated with the COVID-19 pandemic.
@@ -621,7 +623,7 @@ Net foreign asset positions are calibrated endogenously to reflect observed imba
 % 1.4227175029632548 = 1.424689362561875 > equation broadly holds!
 % It maybe counterintuitive but in the steady state a trade surplus country (i.e., country running a trade surplus) must run a negative asset position so that the interest payments accruing on the international bonds can offset the positive trade surplus. The obvious relation about the improvement in the trade balance leading to a btter NFA still holds outside the steady state. Footnote added in the above paragraph to clarify this point.
 
-\paragraph{Fiscal Variables}
+\paragraph{Fiscal variables.}
 The calibration procedure establishes country-specific steady-state values for key fiscal variables (see Table~\ref{tab:gov_ratios}), drawing on data from the sources detailed in Table~\ref{tab:data_sources}.
 Government expenditure-to-GDP ratios characterize the relative size of the public sector across countries and regions, with descriptive statistics presented in Figure~\ref{fig:calibration_charts_panel1}.
 Tax rates are computed as implicit average rates, defined as the ratio of government revenues from each tax category to its corresponding macroeconomic base, thus capturing the effective tax burden (see Figure~\ref{fig:calibration_charts_panel2}).
@@ -649,7 +651,7 @@ The calibrated steady-state debt-to-GDP ratios are achieved through lump-sum tax
     \end{table}
 \end{landscape}
 
-\paragraph{Trade calibration} Calibrating the trade linkages in a setup with as many countries is a major challenge in extending the EAGLE framework. Two crucial trade data characteristics need to be reflected in our model. First, there is a necessity to capture the amount of imports within each category of final good (see the gray nodes in Figure \ref{fig:AggResourceConstraint}). Here it is crucial to reflect the fact that demand components differ in terms of import content, notably private investment tends to be much more import reach than government consoumption. Second, these imported amounts need to be decomposed into bilateral imports to capture trade flows between all countries. This is to capture, for example, that import dependencies between European countries are much tighter than these involving less open US and the rest of the world region.
+\paragraph{Trade calibration.} Calibrating the trade linkages in a setup with as many countries is a major challenge in extending the EAGLE framework. Two crucial trade data characteristics need to be reflected in our model. First, there is a necessity to capture the amount of imports within each category of final good (see the gray nodes in Figure \ref{fig:AggResourceConstraint}). Here it is crucial to reflect the fact that demand components differ in terms of import content, notably private investment tends to be much more import reach than government consoumption. Second, these imported amounts need to be decomposed into bilateral imports to capture trade flows between all countries. This is to capture, for example, that import dependencies between European countries are much tighter than these involving less open US and the rest of the world region.
 
 In order to gauge the import content of each aggregate demand components we utilize utilize Inter-Country Input-Output (ICIO) tables published by the \citet{ICIO2024}. Input-output tables detail how the output of one industry is used as an input in another, capturing the flow of goods and services within the economy.
 Inter-country tables extend beyond national borders, incorporating data on economic interactions between multiple countries, providing a comprehensive view of cross-border flows of goods and services.
@@ -679,7 +681,7 @@ which yields the total (direct and indirect) imports embodied in each component 
 
 In our implementation, we construct $A_d$ and $A_m$ from the OECD ICIO tables, aggregating intermediate-use by total output across industries, distinguishing between domestic and imported sources. We then compute the Leontief inverse $(I - A_d)^{-1}$ and post-multiply it by $A_m$ and the partitioned final demand vectors to obtain the total import contents for each demand component. The resulting import intensities reflect sectoral interlinkages and cross-country dependencies embedded in global value chains.
 
-\paragraph{Government investment split}
+\paragraph{Government investment split.}
 The short-coming of the OECD Input-Output tables is that it only provides data for total gross fixed capital formation in the economy, while the EAGLE model with fiscal extension also requires the imported share of government and private investment separately. To proxy estimate the steady-state split between the two types of gross fixed capital formation, we use IMF's Investment and Capital Stock dataset (\citet{FAS2025}), which holds information about government and private investments, and apply the proportional ratios to the import share calculated from the ICIO tables.
 
 The trade data-based estimates reveal that the import content, expressed as a share of national GDP, varies across countries and demand components. In this context, small open economies such as Austria, Belgium, and countries in the rest of euro area exhibit higher import intensities compared to larger economies, implying a relatively greater leakage of national economic policies. Also, government demand components tend to be less import-intensive than private demand components, a pattern that holds consistently across all countries. The data suggest that government sectors display a relatively strong home bias in their spending preferences. The figure below presents share of imports in the final demand of each demand components. 
@@ -706,7 +708,7 @@ The Appendix contains trade share parameters (Tables~\ref{tab:linkagesNu_mc}–\
 % a paragraph about how we use home bias paramter to calibrate trade
 
 %Household, firms and government behaviour
-\paragraph{Policy rule parameters} 
+\paragraph{Policy rule parameters.} 
 The coefficients of the monetary and fiscal policy rules employ standard values from the literature, consistent with the original EAGLE model (\citet{GomesEtAl2016em}), as shown in Table~\ref{tab:MPpolicy} for monetary policy. 
 The parameter controlling the speed of adjustment towards debt-to-GDP targets in the lump-sum tax fiscal rule ($\phi_{\text{B}_{\text{Y}}}$) is set to 0.1 for all countries and regions (see Table~\ref{tab:gov_ratios}).
 
@@ -718,7 +720,7 @@ The parameter controlling the speed of adjustment towards debt-to-GDP targets in
 \end{minipage}
 \end{table}        
 
-\subsection{Steady state solution strategy}
+\subsection{Steady-State Solution Strategy}
 
 The expanded model, which ultimately comprises 14 countries/regions, encompasses nearly 10,000 endogenous variables.
 Even before the extension, the original model lacks a closed-form analytical steady-state solution and must therefore be solved numerically.
@@ -803,9 +805,9 @@ I M_t^{G_C, C O}=v_{M G_C}^{H, C O}\left(\frac{P_{I M, t}^{C O}}{P_{I M G_C, t}}
     \end{minipage}
 \end{figure}
 
-\section{Macroeconomic model properties}
+\section{Macroeconomic Model Properties}
 
-\subsection{Monetary policy shock}
+\subsection{Monetary Policy Shock}
 
 \begin{figure}[H]
     \centering
@@ -835,7 +837,7 @@ A shock to government investment, while also yielding a strong stimulus effect, 
 Moreover, government investment produces minor but persistent long-term gains, as it contributes to the accumulation of productive public capital.
 Inflationary pressures, while present, are more subdued compared to those generated by government consumption, as the enhanced productive capacity of the economy helps to offset demand-driven price increases.
 
-\subsection{External shock}
+\subsection{External Shock}
 
 \begin{figure}[H]
     \centering
@@ -853,7 +855,7 @@ Inflationary pressures, while present, are more subdued compared to those genera
         \desc{\EAdecompositionNote}
 \end{figure}
 
-\subsection{EA-wide fiscal shock}
+\subsection{Euro Area-Wide Fiscal Shock}
 
 \begin{figure}[H]
     \centering
@@ -871,7 +873,7 @@ Inflationary pressures, while present, are more subdued compared to those genera
         \desc{\EAdecompositionNote}
 \end{figure}
 
-\subsection{Single-country fiscal shock}
+\subsection{Single-Country Fiscal Shock}
 
 \begin{figure}[H]
     \centering
@@ -899,7 +901,7 @@ Given the import content of Spanish government spending, the spillover effects o
 However, notable price spillovers emerge, contributing to higher inflation across the monetary union.
 As domestic demand in Spain increases, prices rise, leading to a transmission of higher costs to other countries.
 
-\section{NGEU evaluation as a policy application}
+\section{NGEU Evaluation as a Policy Application}
 
 \begin{figure}[H]
     \centering
