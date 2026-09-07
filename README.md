@@ -185,11 +185,10 @@ the 2026-09-07 build; details and line numbers in
 `docs/2025-02_working-paper/.eagle.md`.
 
 **Blocking before circulation**
-- 8 undefined `\ref`s: `fig1`, `fig3` to `fig6`, `fig8`, `figApp:govSpending`,
-  `diagram:ssSolutionStrategy`. Relabel to the current figure labels
-  (the NGEU ones are `fig:NGEU_input`, `fig:effectNGEU`, `fig:effectNGEUspillovers`).
-- 2 undefined citations, `GomesEtAl2012` and `Gomesaetal2012`: add to the
-  shared bib or fix the keys.
+- The figure labelled `fig:shock_es_gc_irfs` (and its decomposition) is
+  captioned and plotted as the Italy government-investment shock, while the
+  text around it discusses a Spanish government-spending shock. Align text,
+  caption and file.
 - 5 unfilled `\source{Own calculations based on ....}` notes (lines 714,
   1167, 1199, 1231, 1264).
 - 4 inline `TODO`s: data source (l.216), EA shares to be checked by Emile
