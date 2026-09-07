@@ -23,8 +23,12 @@
 \usepackage{subcaption}
 \usepackage{eso-pic}
 
-\newcommand{\source}[1]{\vspace{2mm} \small \begin{minipage}{0.9\textwidth} \emph{Sources: }{#1} \end{minipage}}
-\newcommand{\desc}[1]{\vspace{0mm} \small \begin{minipage}{0.9\textwidth} \emph{Notes: }{#1} \end{minipage}}
+\newcommand{\source}[1]{\vspace{2mm} \footnotesize \begin{minipage}{0.9\textwidth} \emph{Sources: }{#1} \end{minipage}}
+\newcommand{\desc}[1]{\vspace{0mm} \footnotesize \begin{minipage}{0.9\textwidth} \emph{Note: }{#1} \end{minipage}}
+\newcommand{\fignote}[2]{\vspace{2mm}\par\noindent\begin{minipage}{0.9\textwidth}\footnotesize\setlength{\parindent}{0pt}\emph{Sources: }#1\par\vspace{1mm}\emph{Note: }#2\end{minipage}}
+% Combined source+note for tables: both in one left-aligned box so they share the
+% left margin exactly, with a fixed gap between them (matches the figures' look).
+\newcommand{\tabnote}[2]{\vspace{2mm}\par\noindent\begin{minipage}{0.9\textwidth}\footnotesize\setlength{\parindent}{0pt}\emph{Sources: }#1\par\vspace{2mm}\emph{Note: }#2\end{minipage}}
 \usepackage[sc]{mathpazo} % Use the Palatino font
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 \usepackage{setspace}
@@ -602,10 +606,7 @@ Net foreign asset positions are calibrated endogenously to reflect observed imba
 \begin{landscape}
     \begin{table}[htbp]
         \input{tables/ssNationalAccounts.tex}
-        \begin{minipage}{0.9\linewidth}
-            \vspace{0.5em}
-            \textit{Note}: \CountryCodes.
-        \end{minipage}
+        \tabnote{Own calculations based on the data sources in Table~\ref{tab:data_sources}.}{\CountryCodes.}
     \end{table}
 \end{landscape}
 
@@ -644,10 +645,7 @@ The calibrated steady-state debt-to-GDP ratios are achieved through lump-sum tax
 \begin{landscape}
     \begin{table}[htbp]
         \input{tables/govBehaviour.tex}
-        \begin{minipage}{0.9\linewidth}
-            \vspace{0.5em}
-            \textit{Note}: \CountryCodes.
-        \end{minipage}
+        \tabnote{Own calculations based on the data sources in Table~\ref{tab:data_sources}.}{\CountryCodes.}
     \end{table}
 \end{landscape}
 
@@ -700,7 +698,7 @@ The Appendix contains trade share parameters (Tables~\ref{tab:linkagesNu_mc}–\
     \caption{Trade flows between countries \label{fig:trade_network_combined}}
     \vspace{-2mm}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/trade_network_combined.pdf}}
-    \source{Own calculations based on ....}
+    \source{Own calculations based on OECD Inter-Country Input-Output tables.}
     \desc{\TradeNetworkExplanation \\ \CountryCodes.}
 \end{figure}
 
@@ -714,10 +712,7 @@ The parameter controlling the speed of adjustment towards debt-to-GDP targets in
 
 \begin{table}[htbp]
 \input{tables/monetaryPolicy.tex}
-\begin{minipage}{0.9\textwidth}
-    \vspace{0.5em}
-    \textit{Note}: \CountryCodesForMP.
-\end{minipage}
+\tabnote{\citet{GomesEtAl2010ecbwp}; \citet{Clancyetal2016}; authors' calibration.}{\CountryCodesForMP.}
 \end{table}        
 
 \subsection{Steady-State Solution Strategy}
@@ -1074,7 +1069,7 @@ Share of World GDP & IMF & NGDPD.A & \\
     \centering
     \caption{Great ratios data \label{fig:calibration_charts_panel1}}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/calibration_charts_panel1.pdf}}
-        \source{See Table \ref{sec:appendix_calibration_data}.}
+        \source{Data sources listed in Table~\ref{tab:data_sources}.}
         \desc{The numbers next to country labels on right-hand charts represent 1995-2019 averages used in the calibration of the model.}
 \end{figure}
 
@@ -1082,7 +1077,7 @@ Share of World GDP & IMF & NGDPD.A & \\
     \centering
     \caption{Government fiscal variables data \label{fig:calibration_charts_panel2}}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/calibration_charts_panel2.pdf}}
-        \source{See Table \ref{sec:appendix_calibration_data}.}
+        \source{Data sources listed in Table~\ref{tab:data_sources}.}
         \desc{The numbers next to country labels on right-hand charts represent 1995-2019 averages used in the calibration of the model.}
 \end{figure}
 
@@ -1092,11 +1087,7 @@ Share of World GDP & IMF & NGDPD.A & \\
 \begin{landscape}
     \begin{table}[htbp]
         \input{tables/selectedHhFirmGov.tex}
-        \begin{minipage}{0.9\linewidth}
-            \vspace{0.5em}
-            \textit{Note}: \CountryCodes.\\
-            Abbreviations — dom. = domestic, imp. = imported, trad. = tradables, nontrad. = nontradables, subst. = substitution, bilat. = bilateral.
-        \end{minipage}
+        \tabnote{\citet{GomesEtAl2010ecbwp}; \citet{Clancyetal2016}; authors' calibration.}{\CountryCodes.\\ Abbreviations — dom. = domestic, imp. = imported, trad. = tradables, nontrad. = nontradables, subst. = substitution, bilat. = bilateral.}
     \end{table}
 \end{landscape}
 
@@ -1104,41 +1095,28 @@ Share of World GDP & IMF & NGDPD.A & \\
 \begin{landscape}
     \begin{table}[htbp]
         \input{tables/finalGoodProduction.tex}
-        \begin{minipage}{0.9\linewidth}
-            \vspace{0.5em}
-            \textit{Note}: \CountryCodes.
-        \end{minipage}
+        \tabnote{\citet{GomesEtAl2010ecbwp}; \citet{Clancyetal2016}; authors' calibration.}{\CountryCodes.}
     \end{table}
 \end{landscape}
 
 \begin{landscape}
     \begin{table}[htbp]
         \input{tables/realNominalRigidities.tex}
-        \begin{minipage}{0.9\linewidth}
-            \vspace{0.5em}
-            \textit{Note}: \CountryCodes.
-        \end{minipage}
+        \tabnote{\citet{GomesEtAl2010ecbwp}; \citet{Clancyetal2016}; authors' calibration.}{\CountryCodes.}
     \end{table}
 \end{landscape}
 
 \begin{landscape}
     \begin{table}[htbp]
         \input{tables/priceAndWageMarkups.tex}
-        \begin{minipage}{0.9\linewidth}
-            \vspace{0.5em}
-            \textit{Note}: \CountryCodes.\\
-            Each cell shows the markup and, in parentheses, the implied elasticity of substitution.
-        \end{minipage}
+        \tabnote{\citet{GomesEtAl2010ecbwp}; \citet{Clancyetal2016}; authors' calibration.}{\CountryCodes.\\ Each cell shows the markup and, in parentheses, the implied elasticity of substitution.}
     \end{table}
 \end{landscape}
 
 \begin{landscape}
     \begin{table}[htbp]
         \input{tables/ssFiscalInstruments.tex}
-        \begin{minipage}{0.9\linewidth}
-            \vspace{0.5em}
-            \textit{Note}: \CountryCodes.
-        \end{minipage}
+        \tabnote{Own calculations based on the data sources in Table~\ref{tab:data_sources}.}{\CountryCodes.}
     \end{table}
 \end{landscape}
 
@@ -1153,30 +1131,21 @@ Share of World GDP & IMF & NGDPD.A & \\
     \caption{Private consumption import shares \label{fig:trade_network_imcy}}
     \vspace{-2mm}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/trade_network_imcy.pdf}}
-    \source{Own calculations based on ....}
+    \source{Own calculations based on OECD Inter-Country Input-Output tables.}
     \desc{\TradeNetworkExplanation \\ \CountryCodes.}
 \end{figure}
 
 \begin{landscape}
     \begin{table}[htbp]
         \input{tables/internationalLinkagesShare_MC.tex}
-        \begin{minipage}{0.9\linewidth}
-            \vspace{0.5em}
-            \textit{Note}: \CountryCodes.\\
-            \TradeTablesNote
-        \end{minipage}
+        \tabnote{Own calculations based on OECD Inter-Country Input-Output tables.}{\CountryCodes.\\ \TradeTablesNote}
     \end{table}    
 \end{landscape}
 
 \begin{landscape}
     \begin{table}[htbp]
         \input{tables/internationalLinkagesNu_MC.tex}
-        \begin{minipage}{0.9\linewidth}
-            \vspace{0.5em}
-            \textit{Note}: \CountryCodes.\\
-            \TradeTablesNote\\
-            \TradeTablesBiasNote
-        \end{minipage}
+        \tabnote{Own calculations based on OECD Inter-Country Input-Output tables.}{\CountryCodes.\\ \TradeTablesNote\\ \TradeTablesBiasNote}
     \end{table}    
 \end{landscape}
 
@@ -1185,30 +1154,21 @@ Share of World GDP & IMF & NGDPD.A & \\
     \caption{Private investment import shares \label{fig:trade_network_imiy}}
     \vspace{-2mm}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/trade_network_imiy.pdf}}
-    \source{Own calculations based on ....}
+    \source{Own calculations based on OECD Inter-Country Input-Output tables.}
     \desc{\TradeNetworkExplanation \\ \CountryCodes.}
 \end{figure}
 
 \begin{landscape}
     \begin{table}[htbp]
         \input{tables/internationalLinkagesShare_MI.tex}
-        \begin{minipage}{0.9\linewidth}
-            \vspace{0.5em}
-            \textit{Note}: \CountryCodes.\\
-            \TradeTablesNote
-        \end{minipage}
+        \tabnote{Own calculations based on OECD Inter-Country Input-Output tables.}{\CountryCodes.\\ \TradeTablesNote}
     \end{table}        
 \end{landscape}
 
 \begin{landscape}
     \begin{table}[htbp]
         \input{tables/internationalLinkagesNu_MI.tex}
-        \begin{minipage}{0.9\linewidth}
-            \vspace{0.5em}
-            \textit{Note}: \CountryCodes.\\
-            \TradeTablesNote\\
-            \TradeTablesBiasNote
-        \end{minipage}
+        \tabnote{Own calculations based on OECD Inter-Country Input-Output tables.}{\CountryCodes.\\ \TradeTablesNote\\ \TradeTablesBiasNote}
     \end{table}    
 \end{landscape}
 
@@ -1217,18 +1177,14 @@ Share of World GDP & IMF & NGDPD.A & \\
     \caption{Government consumption import shares \label{fig:trade_network_imcgy}}
     \vspace{-2mm}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/trade_network_imcgy.pdf}}
-    \source{Own calculations based on ....}
+    \source{Own calculations based on OECD Inter-Country Input-Output tables.}
     \desc{\TradeNetworkExplanation \\ \CountryCodes.}
 \end{figure}
 
 \begin{landscape}
     \begin{table}[htbp]
         \input{tables/internationalLinkagesShare_MCG.tex}
-        \begin{minipage}{0.9\linewidth}
-            \vspace{0.5em}
-            \textit{Note}: \CountryCodes.\\
-            \TradeTablesNote
-        \end{minipage}
+        \tabnote{Own calculations based on OECD Inter-Country Input-Output tables.}{\CountryCodes.\\ \TradeTablesNote}
     \end{table}        
 \end{landscape}
 
@@ -1236,12 +1192,7 @@ Share of World GDP & IMF & NGDPD.A & \\
 \begin{landscape}
     \begin{table}[htbp]
         \input{tables/internationalLinkagesNu_MCG.tex}
-        \begin{minipage}{0.9\linewidth}
-            \vspace{0.5em}
-            \textit{Note}: \CountryCodes.\\
-            \TradeTablesNote\\
-            \TradeTablesBiasNote
-        \end{minipage}
+        \tabnote{Own calculations based on OECD Inter-Country Input-Output tables.}{\CountryCodes.\\ \TradeTablesNote\\ \TradeTablesBiasNote}
     \end{table}    
 \end{landscape}
 
@@ -1250,30 +1201,21 @@ Share of World GDP & IMF & NGDPD.A & \\
     \caption{Government investment import shares \label{fig:trade_network_imigy}}
     \vspace{-2mm}
     \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{figures/trade_network_imigy.pdf}}
-    \source{Own calculations based on ....}
+    \source{Own calculations based on OECD Inter-Country Input-Output tables.}
     \desc{\TradeNetworkExplanation \\ \CountryCodes.}
 \end{figure}
 
 \begin{landscape}
     \begin{table}[htbp]
         \input{tables/internationalLinkagesNu_MIG.tex}
-        \begin{minipage}{0.9\linewidth}
-            \vspace{0.5em}
-            \textit{Note}: \CountryCodes.\\
-            \TradeTablesNote\\
-            \TradeTablesBiasNote
-        \end{minipage}
+        \tabnote{Own calculations based on OECD Inter-Country Input-Output tables.}{\CountryCodes.\\ \TradeTablesNote\\ \TradeTablesBiasNote}
     \end{table}    
 \end{landscape}
 
 \begin{landscape}
     \begin{table}[htbp]
         \input{tables/internationalLinkagesShare_MIG.tex}
-        \begin{minipage}{0.9\linewidth}
-            \vspace{0.5em}
-            \textit{Note}: \CountryCodes.\\
-            \TradeTablesNote
-        \end{minipage}
+        \tabnote{Own calculations based on OECD Inter-Country Input-Output tables.}{\CountryCodes.\\ \TradeTablesNote}
     \end{table}        
 \end{landscape}
 
@@ -1282,10 +1224,7 @@ Share of World GDP & IMF & NGDPD.A & \\
 \begin{landscape}
     \begin{table}[htbp]
         \input{tables/multiplGovSpending.tex}
-        \begin{minipage}{0.9\linewidth}
-            \vspace{0.5em}
-            \textit{Note}: \CountryCodesEA. The 1-10Y column represents the cumulative sum over the 1-10 year period.
-        \end{minipage}
+        \tabnote{EAGLE model simulations.}{\CountryCodesEA. The 1-10Y column represents the cumulative sum over the 1-10 year period.}
     \end{table}
 \end{landscape}
 
