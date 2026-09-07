@@ -214,7 +214,11 @@ def create_irf_plots(
 
 if __name__ == "__main__":
     import sys, os
-    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    try:
+        _here = os.path.dirname(os.path.abspath(__file__))
+    except NameError:  # run through MATLAB pyrunfile: no __file__, but project_path is passed in
+        _here = os.path.join(project_path, 'driversPython')
+    sys.path.insert(0, _here)
     from timinglog import timed
     try:
         with timed('charts', f'plotIRFs {model_name}'):
