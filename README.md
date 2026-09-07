@@ -73,9 +73,12 @@ which can still be run by hand from the project root, in this order. Every
 stage after the first reads the output of the previous ones from
 `eagleParsingTemp/modFiles/<model>/Output/`.
 
-Run times below were measured on 2026-09-06 on a 16 GB Apple-silicon Mac with
+Run times below were measured on 2026-09-06 on a 16 GB M1 MacBook Pro with
 MATLAB R2024b and Dynare 6.1. Each `matlab -batch` call adds roughly 40 s of
-start-up on top of the figures given.
+start-up on top of the figures given. On the 16 GB M4 Mac mini
+(`kk-m4-16gb`, 2026-09-07) the full `runPipeline("all")` took about 2.6 h:
+steady-state chain 30 min, 27 shocks 1.9 h (2.8 to 6.6 min each), every other
+stage under 2 min.
 
 1. **Environment**: `iniProject`.
 2. **Parse the model**: `eagleParsingTemp/runModelParsing.m` runs Dynare on
@@ -166,7 +169,7 @@ timestamp,machine,stage,item,seconds,status,commit,note
 
 The 2026-09-06 rows are the baseline for `kk-m1-16gb`; the ones marked
 `approx` were reconstructed from session logs rather than measured by the
-helper.
+helper. The 2026-09-07 rows are a complete run on `kk-m4-16gb`.
 
 The bibliography is external. `draftPaper_localBibliographyPath.tex`
 (gitignored) sets `\bibliopath` to the shared literature folder on this
@@ -181,13 +184,13 @@ Running list. Remove entries as they are fixed.
 **Pipeline**
 - `runPipeline.m` covers the working-paper chain only; the legacy comparison
   scripts at the root are not part of it.
-- **Downstream results predate the current steady state.** On 2026-09-06 the
-  whole pipeline was re-run in reverse order. The steady-state chain, run last,
-  used the tax-rate mod files regenerated from the 2025-10-24 calibration CSV
-  (four values moved by 0.0001) and moved the steady state by up to 0.63 %
-  (RW and DE transfer ratios). The 27 shock results, the tables and the paper
-  were produced with the previous steady state. Either re-run stages 4 to 7
-  (about 6 h) or restore the 2025-10-08 tax-rate mod files.
+- **Dependencies on iCloud.** On the Mac mini, IRIS, matlabUtils and the
+  literature folder lived under `~/Documents`, and "Optimize Mac Storage"
+  evicted files mid-run (MATLAB then reports a function as "a script" or a
+  MAT-file as "not binary"). They were copied to `~/Developer` and `paths.m`
+  points there; the NGEU inputs were copied into `databases/ngeuInputs/`.
+  Keep every pipeline input off iCloud. A shell-launched MATLAB also hangs
+  until the macOS "access Documents folder" dialog is answered.
 - `data/Codes/data_retrieval.py` is not reproducible to the last digit:
   re-running it on unchanged inputs moves the aggregate (RA, RU, RW) and DE
   tax rates in the fourth decimal, which then propagates to the calibration
