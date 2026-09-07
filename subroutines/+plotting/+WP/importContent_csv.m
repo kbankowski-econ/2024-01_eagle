@@ -11,7 +11,7 @@ function importContent(envi, csvFilePath)
 
     % Get the current figure handle and set dimensions
     h = gcf;
-    set(h, 'Units', 'centimeters', 'Position', [0 0 16 6])
+    set(h, 'Units', 'centimeters', 'Position', [0 0 15 6])
     set(h, 'defaulttextinterpreter','latex');
 
     % Country list, to be reversed given the chart construction
@@ -67,5 +67,5 @@ function importContent(envi, csvFilePath)
     % Export the graphics to a file
     fileName = sprintf('%s/docs/2025-02_working-paper/figures/importContent', project_path);
     % exportgraphics(h, sprintf('%s.png', fileName), 'BackgroundColor', 'none', 'Resolution', 300, 'ContentType', 'image');
-    print(fig, sprintf('%s.png', fileName), '-dpng', '-r300');
+    plotting.WP.exportVector(fig, fileName, [15 6]);   % vector PDF + PNG at 15 x 6 cm
 end

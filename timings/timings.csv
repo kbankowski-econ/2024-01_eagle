@@ -183,3 +183,6 @@ Invalid text character. Check for unsupported symbol; invisible character; or pa
 2026-09-07T16:27:16,Krzsztofs-Mini,charts,plotIRFs shock_ra_gi,1,ok,324a0c75,
 2026-09-07T16:27:16,kk-m4-16gb,shock,shock_ra_gi,7,ok,324a0c75,skipSimulation=true
 2026-09-07T16:27:19,kk-m4-16gb,ngeu,processNGEUdata,3,ok,324a0c75,
+2026-09-07T16:29:08,kk-m4-16gb,charts,runChartsForWP,8,ok,bd54b37b,
+2026-09-07T16:29:22,Krzsztofs-Mini,charts,plotIRFs shock_ngeu,2,ok,bd54b37b,
+2026-09-07T16:29:22,kk-m4-16gb,shock,shock_ngeu,14,ok,bd54b37b,skipSimulation=true

@@ -39,7 +39,7 @@ function importContent(envi, csvFilePath)
     fig = figure;
 
     % Set figure dimensions and properties
-    set(fig, 'Units', 'centimeters', 'Position', [0 0 16 6]);
+    set(fig, 'Units', 'centimeters', 'Position', [0 0 15 6]);
     set(fig, 'defaulttextinterpreter', 'latex');
 
     % Create stacked bar chart
@@ -64,7 +64,6 @@ function importContent(envi, csvFilePath)
 
     % Set axis labels and title
     ylabel('Imports (% of importer''s GDP)', 'Interpreter', 'latex');
-    title('Magnitude of imports across euro area countries, compared to Japan and the US', 'Interpreter', 'latex');
 
     % Adjust font size and tick label interpreter
     set(gca, 'TickLabelInterpreter', 'latex', 'FontSize', 8);
@@ -88,5 +87,5 @@ function importContent(envi, csvFilePath)
 
     % Export the graphics to a file
     fileName = sprintf('%s/docs/2025-02_working-paper/figures/importMagnitude', project_path);
-    print(fig, sprintf('%s.png', fileName), '-dpng', '-r300');
+    plotting.WP.exportVector(fig, fileName, [15 6]);   % vector PDF + PNG at 15 x 6 cm
 end

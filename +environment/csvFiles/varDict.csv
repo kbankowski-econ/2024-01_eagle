@@ -10,6 +10,7 @@ pic4,Annual CPI inflation,(x-y)*100,abs. deviation in percent
 tot,Terms of trade,(x/y-1)*100,\% deviation
 reer,Real effective exchange rate,(x/y-1)*100,\% deviation
 tby,Trade balance,(x-y)*100,abs. deviation in percent
+ex,Exports,(x/y-1)*100,\% deviation
 by,Government debt ratio,(x-y)*100,abs. deviation
 w,Real wage,(x/y-1)*100,\% deviation
 nd,Hours worked,(x/y-1)*100,\% deviation
