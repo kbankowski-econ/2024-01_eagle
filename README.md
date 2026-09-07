@@ -217,18 +217,12 @@ the 2026-09-07 build; details and line numbers in
 
 ## Known issues
 
-Running list. Remove entries as they are fixed.
+Two lists: what is still outstanding, and what was fixed (kept for the
+record, with the date). Move an entry down when it is done.
+
+### Outstanding
 
 **Pipeline**
-- `runPipeline.m` covers the working-paper chain only; the legacy comparison
-  scripts at the root are not part of it.
-- **Dependencies on iCloud.** On the Mac mini, IRIS, matlabUtils and the
-  literature folder lived under `~/Documents`, and "Optimize Mac Storage"
-  evicted files mid-run (MATLAB then reports a function as "a script" or a
-  MAT-file as "not binary"). They were copied to `~/Developer` and `paths.m`
-  points there; the NGEU inputs were copied into `databases/ngeuInputs/`.
-  Keep every pipeline input off iCloud. A shell-launched MATLAB also hangs
-  until the macOS "access Documents folder" dialog is answered.
 - `data/Codes/data_retrieval.py` is not reproducible to the last digit:
   re-running it on unchanged inputs moves the aggregate (RA, RU, RW) and DE
   tax rates in the fourth decimal, which then propagates to the calibration
@@ -236,6 +230,12 @@ Running list. Remove entries as they are fixed.
 - `matlab -batch` segfaults on exit after `calculateSteadyState.m` (crash dump
   in the home folder) once all outputs are written. Harmless, but check the
   output timestamps rather than the exit code.
+- Dynare version is not pinned: `iniProject` uses 6.1, the parsing scripts want
+  6.0, and 6.2 and two 7.x snapshots are installed.
+- Every shock driver hardcodes its model name and `cd`s into `modFiles`
+  without returning.
+
+**Legacy scripts** (not on the pipeline; decide whether to fix or delete)
 - Two incompatible preambles. Root and `driversMatlab` scripts use
   `utils.call.paths` and `environment.setup`; the older scripts in
   `eagleParsingTemp` call `restoredefaultpath` and add Dynare themselves,
@@ -245,10 +245,6 @@ Running list. Remove entries as they are fixed.
   exists in `paths.m` (it is `dynare_6_0_official`). They fail on that line.
   `runModelParsing.m` also uses two undefined `options_ecb` fields, and its
   job is done by `calculateSteadyState.m` anyway.
-- Dynare version is not pinned: `iniProject` uses 6.1, the parsing scripts want
-  6.0, and 6.2 and two 7.x snapshots are installed.
-- Every shock driver hardcodes its model name and `cd`s into `modFiles`
-  without returning.
 - `runAllSimul.m` covers only rows 6 to 16 of the shock dictionary; use
   `runPipeline("shocks", true)`, which runs all 27 in one process each
   (looping them in one MATLAB session runs out of memory on 16 GB after
@@ -256,29 +252,49 @@ Running list. Remove entries as they are fixed.
 - The root-level `runPlots.m`, `runPlotsmonetary.m`,
   `runPlotsCompareOriginalBig1.m` and `runShareVisualisation.m` compare legacy
   vintages (`Dynare_4-4-3`, `eagleParsingTemp_sim_BIG1`) that are no longer
-  in the tree. Decide whether to keep or delete.
+  in the tree.
 
-**Repository**
-- History was rewritten on 2026-09-06 with `git filter-repo` to drop 1,190
-  stale LFS pointers (old versions of the Dynare result files under
-  `eagleParsingTemp`), taking the LFS payload referenced by history from
-  8.05 GB to 0.86 GB. Commit hashes changed and 34 commits that only updated
-  those files disappeared. The pre-rewrite history is in
-  `~/Developer/_backups/2024-01_eagle_pre-filter-repo_2026-09-06.bundle`.
-- Later the same day the 33 OECD input-output tables in `data/raw_data/io/`
-  (50 to 66 MiB each) were moved into LFS across the whole history with
-  `git lfs migrate import`, so no plain blob exceeds GitHub's 50 MiB warning.
-  Backup bundle: `~/Developer/_backups/2024-01_eagle_pre-lfs-migrate_2026-09-06.bundle`.
-  Push payload is now about 300 MiB of git objects plus 2.5 GB of LFS.
-- The remote is now `origin` = `https://github.com/kbankowski-econ/2024-01_eagle`
-  (private), first pushed 2026-09-06. The dead GitLab remotes were removed;
-  their URLs are kept in
-  `~/Developer/_backups/2024-01_eagle_remotes-before_2026-09-06.txt`.
-  `.git/lfs` holds 2.3 GB on the Mac mini.
+**Paper**
+- Content items only; see "What is left". The build is clean and the
+  formatting follows the spending-model paper.
+
+**Things to keep in mind** (not bugs)
+- `runPipeline.m` covers the working-paper chain only; the legacy scripts
+  at the root are not part of it.
+- Keep every pipeline input off iCloud. "Optimize Mac Storage" evicts files
+  mid-run, and MATLAB then reports a function as "a script" or a MAT-file as
+  "not binary". A shell-launched MATLAB also hangs until the macOS "access
+  Documents folder" dialog is answered.
 - Stray `.log` files at the root and in `eagleParsingTemp` are gitignored
   Dynare output and can be deleted at any time.
 
-**Paper** (details in `docs/2025-02_working-paper/.eagle.md`)
-- The build is clean (no undefined references or citations) and the
-  formatting follows the spending-model paper since 2026-09-07. What remains
-  is content: see "What is left".
+### Resolved
+
+- **2026-09-07** Downstream results predating the steady state: the whole
+  pipeline was rerun on the Mac mini, so shocks, tables and paper match the
+  current steady state.
+- **2026-09-07** iCloud dependencies: IRIS and matlabUtils copied to
+  `~/Developer` (`paths.m` points there), the literature folder moved there,
+  the NGEU inputs copied into `databases/ngeuInputs/`.
+- **2026-09-07** `plotIRFs.py` crashed under MATLAB's `pyrunfile`
+  (`__file__` undefined), a regression from the timing-log commit.
+- **2026-09-07** Paper: 11 undefined cross-references, 2 undefined citations,
+  5 empty source notes, the Spain/Italy figure mismatch; bibliography made
+  local (`references.bib`); formatting aligned with the spending-model
+  paper in 13 steps (preamble, headings, notes, title page, figures at paper
+  size, vector figures, captions, tables, numbering, citations, prose).
+- **2026-09-07** `processNGEUdata.m` sets up its own environment, so it runs
+  standalone; the superseded `runTradeMatrixFrom*.m` scripts moved to
+  `aDeprecatedFunctions/`.
+- **2026-09-06** Single-country investment IRFs that predated the 12-quarter
+  horizon were regenerated.
+- **2026-09-06** Six leftover iCloud `" 2"` duplicate files swept.
+- **2026-09-06** Repository: history rewritten with `git filter-repo` to drop
+  1,190 stale LFS pointers (LFS payload in history 8.05 GB to 0.86 GB; 34
+  commits that only updated those files disappeared); the 33 OECD
+  input-output tables moved into LFS across history with
+  `git lfs migrate import`; remote now `origin` =
+  `https://github.com/kbankowski-econ/2024-01_eagle` (private), dead GitLab
+  remotes removed. Backups in `~/Developer/_backups/` (pre-filter-repo and
+  pre-lfs-migrate bundles, old remote URLs). `.git/lfs` holds 2.3 GB on the
+  Mac mini.
