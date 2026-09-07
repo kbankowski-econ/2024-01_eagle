@@ -200,13 +200,32 @@ the 2026-09-07 build; details and line numbers in
   (l.251), GDP-shares chart (l.252), biases and elasticities versus Clancy and
   the original EAGLE (l.1114).
 
-**Content**
-- Sensitivity appendix only inputs `multiplGovSpending.tex`; five generated
-  tables are unused (`sensitivityShocks_{gc,gi}_EA_{y,pic4}`, `shocksTable`).
-  Wire them in or delete them.
-- Trade-matrix calibration is named in the Conclusions as the main precision
-  limit; open questions in `aMyNotes/Trade_questions.md`.
-- Final pass: bump `\date`, drop the preliminary banner, proofread.
+**Paper to-do, one by one** (numbers refer to the review below; tick
+when done)
+- [ ] R1 Finish Section 3: write 3.1 and 3.2, move the fiscal text to 3.3,
+      add the consumption-shock figures, justify the IRF country selection.
+- [ ] R2 Document the NGEU exercise: inputs and source, grants/loans,
+      financing, anticipation, monetary policy assumption.
+- [ ] R3 Reconcile every number in the text with the tables; define the
+      multiplier and relabel the multiplier table.
+- [ ] R4 Add a sensitivity appendix (trade elasticities, $\alpha_G$,
+      non-Ricardian share, debt-rule speed, export pricing); wire in or
+      delete the five unused `sensitivityShocks_*`/`shocksTable` tables.
+- [ ] R5 Report the spillover numbers and confront them with Pfeiffer et
+      al. (2021).
+- [ ] R6 Introduction: contribution statement, related literature, roadmap;
+      one country count throughout.
+- [ ] R7 Justify the law-of-one-price export pricing and its implications.
+- [ ] R8 One calibration window; vintage of the IMF investment dataset.
+- [ ] Redo the first chart (Figure 1, import magnitude across countries).
+- [ ] Compare the fiscal multipliers against the Macroeconomic Model Data
+      Base (Wieland et al.).
+- [ ] Improve the input-output table content in the paper (Figure 4 and the
+      trade-calibration paragraph).
+- [ ] Trade-matrix calibration caveat named in the Conclusions; open
+      questions in `aMyNotes/Trade_questions.md`.
+- [ ] Minor review points R9 to R12, then the final pass: bump `\date`, drop
+      the preliminary banner, proofread.
 
 **Pipeline and repository** (see Known issues for details)
 - Pin the Dynare version and retire the legacy scripts that fail on
