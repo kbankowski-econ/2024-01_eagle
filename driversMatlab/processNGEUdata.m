@@ -1,5 +1,6 @@
 tScript = tic;
 utils.call.paths;
+envi = environment.setup();
 ctryList = envi.Meta.eaListForReport;
 
 % cding to a proper folder

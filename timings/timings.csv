@@ -188,3 +188,4 @@ Invalid text character. Check for unsupported symbol; invisible character; or pa
 2026-09-07T16:29:22,kk-m4-16gb,shock,shock_ngeu,14,ok,bd54b37b,skipSimulation=true
 2026-09-07T16:31:01,kk-m4-16gb,tables,runLatexCalibTables,1,ok,70e8303f,
 2026-09-07T16:31:26,kk-m4-16gb,tables,runLatexSimulTables,25,ok,70e8303f,
+2026-09-07T16:52:19,kk-m4-16gb,ngeu,processNGEUdata,8,ok,d3983a79,

@@ -138,8 +138,9 @@ stage under 2 min.
    and writes the trade matrix (`trade_matrix_values_calibrated_new.mod`) and
    the `shares_*`, `tax_rates_*`, `debt_bytarget` and `transfers_trybar` mod
    files that the steady-state chain includes. The older
-   `runTradeMatrixFromIOproject.m` and `runTradeMatrixFromXls.m` at the root
-   are a superseded route and give different numbers. *Run time: about 1 min.*
+   `runTradeMatrixFromIOproject.m` and `runTradeMatrixFromXls.m` (now in
+   `aDeprecatedFunctions/`) are a superseded route and give materially
+   different numbers (up to 0.036 on single shares). *Run time: about 1 min.*
 9. **Calibration data** (rarely rerun): the Python code in `data/Codes/`
    turns `data/raw_data/` into the CSVs in `data/`, in the order
    `data_retrieval.py`, `main.py`, `calculateCalibData.py`,
@@ -211,7 +212,6 @@ the 2026-09-07 build; details and line numbers in
 - Pin the Dynare version and retire the legacy scripts that fail on
   `dynare_6_0`.
 - Make `data_retrieval.py` reproducible to the last digit.
-- Run `git lfs prune` to reclaim about 10 GB.
 
 ---
 
@@ -233,16 +233,6 @@ Running list. Remove entries as they are fixed.
   re-running it on unchanged inputs moves the aggregate (RA, RU, RW) and DE
   tax rates in the fourth decimal, which then propagates to the calibration
   mod files. Probably a pandas aggregation difference; pin the behaviour.
-- `driversMatlab/processNGEUdata.m` uses `envi` on line 2 without calling
-  `environment.setup`, so it only runs if `envi` already exists in the
-  workspace.
-- `runTradeMatrixFromIOproject.m` and `runTradeMatrixFromXls.m` are the old
-  calibration route and give a materially different trade matrix (up to 0.036
-  on single shares) from `extractSSsharesFromCSV.m`, which is what the model
-  uses. Move them to `aDeprecatedFunctions/`.
-- The single-country government-investment IRF CSVs and charts committed in
-  October 2025 predated the extension of the shock horizon to 12 quarters;
-  they were regenerated on 2026-09-06.
 - `matlab -batch` segfaults on exit after `calculateSteadyState.m` (crash dump
   in the home folder) once all outputs are written. Harmless, but check the
   output timestamps rather than the exit code.
@@ -259,10 +249,10 @@ Running list. Remove entries as they are fixed.
   6.0, and 6.2 and two 7.x snapshots are installed.
 - Every shock driver hardcodes its model name and `cd`s into `modFiles`
   without returning.
-- `runAllSimul.m` covers only rows 6 to 16 of the shock dictionary. The
-  investment shocks (rows 17 to 27) and the headline shocks are run by hand.
-  Looping `functions.runEAGLEsimul` over all 27 rows in one MATLAB session
-  runs out of memory on 16 GB after five shocks; use one process per shock.
+- `runAllSimul.m` covers only rows 6 to 16 of the shock dictionary; use
+  `runPipeline("shocks", true)`, which runs all 27 in one process each
+  (looping them in one MATLAB session runs out of memory on 16 GB after
+  five shocks).
 - The root-level `runPlots.m`, `runPlotsmonetary.m`,
   `runPlotsCompareOriginalBig1.m` and `runShareVisualisation.m` compare legacy
   vintages (`Dynare_4-4-3`, `eagleParsingTemp_sim_BIG1`) that are no longer
@@ -275,8 +265,6 @@ Running list. Remove entries as they are fixed.
   8.05 GB to 0.86 GB. Commit hashes changed and 34 commits that only updated
   those files disappeared. The pre-rewrite history is in
   `~/Developer/_backups/2024-01_eagle_pre-filter-repo_2026-09-06.bundle`.
-  The old LFS objects are still in `.git/lfs` (about 10 GB) until
-  `git lfs prune` is run after a successful push.
 - Later the same day the 33 OECD input-output tables in `data/raw_data/io/`
   (50 to 66 MiB each) were moved into LFS across the whole history with
   `git lfs migrate import`, so no plain blob exceeds GitHub's 50 MiB warning.
@@ -286,7 +274,7 @@ Running list. Remove entries as they are fixed.
   (private), first pushed 2026-09-06. The dead GitLab remotes were removed;
   their URLs are kept in
   `~/Developer/_backups/2024-01_eagle_remotes-before_2026-09-06.txt`.
-  `git lfs prune` can now reclaim about 10 GB in `.git/lfs`.
+  `.git/lfs` holds 2.3 GB on the Mac mini.
 - Stray `.log` files at the root and in `eagleParsingTemp` are gitignored
   Dynare output and can be deleted at any time.
 
